@@ -8,12 +8,12 @@ ms.author: natinimn
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/08/2020
-ms.openlocfilehash: f6bda61960efd9a5e176f8792601e315ba96bcca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 13ffd1eeb2df3c21a6167b056557b9141444f7c2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85553289"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87038585"
 ---
 # <a name="encryption-at-rest-of-content-in-azure-cognitive-search-using-customer-managed-keys-in-azure-key-vault"></a>Шифрование неактивных содержимого в Azure Когнитивный поиск с помощью ключей, управляемых клиентом, в Azure Key Vault
 
@@ -28,7 +28,7 @@ ms.locfileid: "85553289"
 > [!IMPORTANT] 
 > Эта функция доступна на [REST API](https://docs.microsoft.com/rest/api/searchservice/) и [пакете SDK для .NET версии 8,0-Preview](search-dotnet-sdk-migration-version-9.md). Сейчас не поддерживается настройка ключей шифрования, управляемых клиентом, в портал Azure. Служба поиска должна быть создана после января 2019 и не может быть бесплатной (общей) службой.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 В этом примере используются следующие службы. 
 
@@ -36,7 +36,7 @@ ms.locfileid: "85553289"
 
 + [Создайте Azure Key Vault ресурс](https://docs.microsoft.com/azure/key-vault/quick-create-portal#create-a-vault) или найдите существующее хранилище в подписке.
 
-+ Для задач настройки используется [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) или [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) .
++ Для задач настройки используется [Azure PowerShell](https://docs.microsoft.com/powershell/azure/) или [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) .
 
 + [POST](search-get-started-postman.md), [Azure PowerShell](search-create-index-rest-api.md) и [Предварительная версия пакета SDK для .net](https://aka.ms/search-sdk-preview) можно использовать для вызова REST API. В настоящее время портал для шифрования, управляемого клиентом, не поддерживается.
 
@@ -231,7 +231,7 @@ az keyvault update -n <vault_name> -g <resource_group> --enable-soft-delete --en
 > При изменении приложения AAD или его ключа проверки подлинности любой индекс Когнитивный поиск Azure или схема синонимов, которая использует это приложение, должна сначала быть обновлена для использования нового приложения Ид\кэй **перед** удалением предыдущего приложения или его ключа авторизации, а также до отмены Key Vault доступа к нему.
 > Если не выполнить это действие, будет отображена схема индекса или синонима, которую нельзя использовать, так как она не сможет расшифровать содержимое после потери доступа к ключу.   
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не знакомы с архитектурой безопасности Azure, ознакомьтесь с [документацией по безопасности Azure](https://docs.microsoft.com/azure/security/)и в частности, в этой статье:
 

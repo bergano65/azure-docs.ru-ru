@@ -4,16 +4,16 @@ description: Сведения о создании и развертывании 
 ms.devlang: java
 ms.date: 08/01/2019
 ms.topic: conceptual
-ms.openlocfilehash: fa09fbe8d239bbe10c0762d3aad7e19df23a9044
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: bce3d8ff2662ff62e1493cb26d797619b65c2762
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057455"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87040738"
 ---
 # <a name="create-and-deploy-arm-templates-by-using-the-intellij-idea"></a>Создание и развертывание шаблонов ARM с помощью IntelliJ идеи
 
-Узнайте, как развернуть шаблон Azure Resource Manager (ARM) в Azure с помощью идеи IntelliJ, а также в процессе редактирования и обновления шаблона непосредственно из интегрированной среды разработки. Шаблоны ARM — это файлы JSON, которые определяют ресурсы, которые необходимо развернуть для решения. Основные понятия, связанные с развертыванием и администрированием решений Azure, см. в статье с [общими сведениями о развертывании шаблонов](overview.md).
+Узнайте, как развернуть шаблон Azure Resource Manager (ARM) в Azure с помощью идеи IntelliJ, а также в процессе редактирования и обновления шаблона непосредственно из интегрированной среды разработки. Шаблоны ARM — это JSON-файлы, которые определяют ресурсы, необходимые для развертывания решения. Основные понятия, связанные с развертыванием и администрированием решений Azure, см. в статье с [общими сведениями о развертывании шаблонов](overview.md).
 
 ![Схема портала шаблона диспетчер ресурсов](./media/quickstart-create-templates-use-the-portal/azure-resource-manager-export-deploy-template-portal.png)
 
@@ -27,7 +27,7 @@ ms.locfileid: "86057455"
 
 * Установленный [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Ultimate Edition или Community Edition.
 * См. подробнее об [Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053) в руководстве по [управлению подключаемыми модулями IntelliJ](https://www.jetbrains.com/help/idea/managing-plugins.html).
-* [Войдите](/java/azure/intellij/azure-toolkit-for-intellij-sign-in-instructions) в свою учетную запись Azure для работы с Azure Toolkit for IntelliJ.
+* [Войдите](/azure/developer/java/toolkit-for-intellij/sign-in-instructions) в свою учетную запись Azure для работы с Azure Toolkit for IntelliJ.
 
 ## <a name="deploy-a-quickstart-template"></a>Развертывание шаблона быстрого запуска
 
@@ -78,7 +78,7 @@ ms.locfileid: "86057455"
 > [!NOTE]
 > Обратите внимание, что удаление развертывания никоим образом не повлияет на ресурсы, созданные при развертывании. Если соответствующая группа ресурсов или определенные ресурсы вам больше не нужны, удалите их.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Основная задача этой статьи — использовать IntelliJную идею для развертывания существующего шаблона из шаблонов быстрого запуска Azure. Кроме того, в нем содержатся сведения о просмотре и обновлении имеющегося развертывания в Azure. Шаблоны быстрого запуска Azure могут не обеспечить вас всем необходимым. Дополнительные сведения о разработке шаблонов см. в новой серии
 

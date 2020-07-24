@@ -7,11 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 02/25/2019
 ms.author: charwen
-ms.openlocfilehash: 5c4bbdde04176edf693fc58d172a7dcc250c495a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3d094f614cbaf75158c38b86345fd5f925310d6b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84725007"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87039316"
 ---
 # <a name="move-expressroute-circuits-from-classic-to-resource-manager-deployment-model-using-powershell"></a>Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager с использованием PowerShell
 
@@ -21,7 +22,7 @@ ms.locfileid: "84725007"
 
 [!INCLUDE [updated-for-az](../../includes/hybrid-az-ps.md)]
 
-* Убедитесь, что на компьютере установлены компоненты Classic и AZ Azure PowerShell modules. Подробнее: [Установка и настройка Azure PowerShell](/powershell/azure/overview).
+* Убедитесь, что на компьютере установлены компоненты Classic и AZ Azure PowerShell modules. Подробнее: [Установка и настройка Azure PowerShell](/powershell/azure/).
 * Не забудьте изучить [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md), прежде чем приступать к настройке.
 * Просмотрите сведения в статье [Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](expressroute-move.md). Убедитесь, что вам полностью понятны пределы и ограничения.
 * Убедитесь, что канал полноценно работает в классической модели развертывания.
@@ -33,7 +34,7 @@ ms.locfileid: "84725007"
 
 Войдите в классическую среду Azure и получите ключ службы.
 
-1. Войдите в учетную запись Azure.
+1. Войдите в свою учетную запись Azure.
 
    ```powershell
    Add-AzureAccount
@@ -153,7 +154,7 @@ Move-AzExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "DemoRG" -Locati
    Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
    ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание и изменение маршрутизации для канала ExpressRoute](expressroute-howto-routing-arm.md)
 * [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md)

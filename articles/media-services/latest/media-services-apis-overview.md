@@ -13,15 +13,16 @@ ms.topic: article
 ms.date: 10/21/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 7ea74c85af062ce00dbccf8a486ce39cbd524bb0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 703c08cd5a884c8bfdd027b4ecf457c9e954a2dc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85515071"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87043405"
 ---
 # <a name="develop-with-media-services-v3-apis"></a>Разработка с помощью API Служб мультимедиа версии 3
 
-Как разработчик вы можете использовать [REST API](https://docs.microsoft.com/rest/api/media/) Служб мультимедиа или клиентские библиотеки, которые позволяют взаимодействовать с REST API для простого создания, контроля и обслуживания настраиваемых рабочих процессов. API [Служб мультимедиа версии 3](https://aka.ms/ams-v3-rest-sdk) основан на спецификации OpenAPI (ранее известной как Swagger).
+Как разработчик вы можете использовать [REST API](/rest/api/media/) Служб мультимедиа или клиентские библиотеки, которые позволяют взаимодействовать с REST API для простого создания, контроля и обслуживания настраиваемых рабочих процессов. API [Служб мультимедиа версии 3](https://aka.ms/ams-v3-rest-sdk) основан на спецификации OpenAPI (ранее известной как Swagger).
 
 Эта статья содержит сведения о правилах для работы с сущностями и API при разработке с использованием Служб мультимедиа версии 3.
 
@@ -53,7 +54,7 @@ API Служб мультимедиа требует, чтобы у пользо
    * Универсальный код ресурса (URI) для ресурса REST служб мультимедиа.
    * Значения для приложения Azure AD: идентификатор и секрет клиента.
 
-   Чтобы получить все необходимые значения, воспользуйтесь инструкцией из [этой статьи](access-api-cli-how-to.md).
+   Чтобы получить все необходимые значения, воспользуйтесь инструкцией из [этой статьи](./access-api-howto.md).
 
 2. Маркер доступа Azure AD передается на средний уровень.
 4. Средний уровень отправляет запрос к REST API служб мультимедиа Azure с помощью маркера Azure AD.
@@ -79,36 +80,36 @@ API Служб мультимедиа требует, чтобы у пользо
 
 ### <a name="names-of-filesblobs-within-an-asset"></a>Имена файлов и больших двоичных объектов в ресурсе
 
-Имена файлов и больших двоичных объектов в ресурсе должны соответствовать как [требованиям к именованию больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata), так и [требованиям к именованию для NTFS](https://docs.microsoft.com/windows/win32/fileio/naming-a-file). Это связано с тем, что такие файлы могут копироваться для обработки из хранилища BLOB-объектов на локальный диск NTFS.
+Имена файлов и больших двоичных объектов в ресурсе должны соответствовать как [требованиям к именованию больших двоичных объектов](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata), так и [требованиям к именованию для NTFS](/windows/win32/fileio/naming-a-file). Это связано с тем, что такие файлы могут копироваться для обработки из хранилища BLOB-объектов на локальный диск NTFS.
 
 ## <a name="long-running-operations"></a>Длительные операции
 
 Операции, для которых в [файлах Swagger](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2018-07-01/streamingservice.json) для Служб мультимедиа Azure указан атрибут `x-ms-long-running-operation`, считаются длительными. 
 
-Сведения об отслеживании асинхронных операций в Azure см. в [этой статье](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations#monitor-status-of-operation).
+Сведения об отслеживании асинхронных операций в Azure см. в [этой статье](../../azure-resource-manager/management/async-operations.md#monitor-status-of-operation).
 
 Службы мультимедиа используют следующие длительные операции:
 
-* [Создание трансляции](https://docs.microsoft.com/rest/api/media/liveevents/create)
-* [Обновление трансляции](https://docs.microsoft.com/rest/api/media/liveevents/update)
-* [Удаление трансляции](https://docs.microsoft.com/rest/api/media/liveevents/delete)
-* [Запуск трансляции](https://docs.microsoft.com/rest/api/media/liveevents/start)
-* [Остановка трансляции](https://docs.microsoft.com/rest/api/media/liveevents/stop)
+* [Создание трансляции](/rest/api/media/liveevents/create)
+* [Обновление трансляции](/rest/api/media/liveevents/update)
+* [Удаление трансляции](/rest/api/media/liveevents/delete)
+* [Запуск трансляции](/rest/api/media/liveevents/start)
+* [Остановка трансляции](/rest/api/media/liveevents/stop)
 
   Используйте параметр `removeOutputsOnStop`, чтобы удалить все связанные записи трансляции при ее остановке.  
-* [Перезапуск трансляции](https://docs.microsoft.com/rest/api/media/liveevents/reset)
-* [Создание записи трансляции](https://docs.microsoft.com/rest/api/media/liveevents/create)
-* [Удаление записи трансляции](https://docs.microsoft.com/rest/api/media/liveevents/delete)
-* [Создание конечной точки потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints/create)
-* [Обновление конечной точки потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints/update)
-* [Удаление конечной точки потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints/delete)
-* [Запуск конечной точки потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints/start)
-* [Остановка конечной точки потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints/stop)
-* [Масштабирование конечной точки потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints/scale)
+* [Перезапуск трансляции](/rest/api/media/liveevents/reset)
+* [Создание записи трансляции](/rest/api/media/liveevents/create)
+* [Удаление записи трансляции](/rest/api/media/liveevents/delete)
+* [Создание конечной точки потоковой передачи](/rest/api/media/streamingendpoints/create)
+* [Обновление конечной точки потоковой передачи](/rest/api/media/streamingendpoints/update)
+* [Удаление конечной точки потоковой передачи](/rest/api/media/streamingendpoints/delete)
+* [Запуск конечной точки потоковой передачи](/rest/api/media/streamingendpoints/start)
+* [Остановка конечной точки потоковой передачи](/rest/api/media/streamingendpoints/stop)
+* [Масштабирование конечной точки потоковой передачи](/rest/api/media/streamingendpoints/scale)
 
 После успешной передачи длительной операции вы получите ответ "202 Принято" и должны будете выполнить опрос на завершение операции с помощью возвращенного идентификатора операции.
 
-В статье [Track asynchronous Azure operations](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations) (Отслеживание асинхронных операций Azure) приведены подробные сведения о том, как отслеживать состояние асинхронных операций Azure с помощью значений, возвращаемых в ответе.
+В статье [Track asynchronous Azure operations](../../azure-resource-manager/management/async-operations.md) (Отслеживание асинхронных операций Azure) приведены подробные сведения о том, как отслеживать состояние асинхронных операций Azure с помощью значений, возвращаемых в ответе.
 
 Для каждого события трансляции или любой из связанной с ним записи трансляции поддерживается только одна длительная операция. Запущенная длительная операция должна завершиться, прежде чем удастся запустить следующую длительную операцию для того же события трансляции или любой из связанной с ним записи трансляции. Для трансляций с несколькими записями необходимо дождаться завершения длительной операции в одной из записей трансляции, прежде чем начинать длительную операцию в другой записи. 
 
@@ -147,7 +148,7 @@ AMSE — это проект с открытым кодом, поддержка
 
 ## <a name="see-also"></a>См. также раздел
 
-Чтобы получить все необходимые значения, воспользуйтесь инструкцией из [этой статьи](access-api-cli-how-to.md).
+Чтобы получить все необходимые значения, воспользуйтесь инструкцией из [этой статьи](./access-api-howto.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

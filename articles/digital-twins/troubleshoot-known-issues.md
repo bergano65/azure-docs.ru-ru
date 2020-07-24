@@ -6,32 +6,16 @@ ms.author: baanders
 ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
-ms.openlocfilehash: 8fce451d9b806d2fa9a4f3d9e1c117de0aaa9fc0
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: bdde2076039a6f7687e06edef6dfd6f6f5148ce4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86532293"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87044143"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Известные проблемы в службе Digital двойников
 
 В этой статье содержатся сведения об известных проблемах, связанных с Azure Digital двойников.
-
-## <a name="managing-event-routes-in-the-azure-portal"></a>Управление маршрутами событий в портал Azure
-
-Если вы вошли на портал с помощью личного [**учетная запись Майкрософт (MSA)**](https://account.microsoft.com/account/Account), например *@outlook.com* учетной записи, вы увидите экран с сообщением, *что вам нужно разрешение на просмотр маршрутов событий* при попытке управления маршрутами событий на портале, независимо от уровня разрешений.
-
-:::image type="content" source="media/troubleshoot-known-issues/event-route-need-permission.png" alt-text="Снимок экрана портал Azure ошибки разрешения при попытке создать маршруты событий в экземпляре цифрового двойников Azure":::
-
-### <a name="troubleshooting-steps"></a>Действия по устранению неполадок
-
-Пользователи, которым в настоящее время не удается управлять маршрутами событий на портале, могут управлять маршрутизацией событий с помощью API-интерфейсов или интерфейса командной строки Azure Digital двойников. Для устранения этой проблемы рекомендуется перейти к одному из этих средств для управления маршрутами событий.
-
-Инструкции для этого можно найти в разделе [*руководство. Управление конечными точками и маршрутами*](how-to-manage-routes.md).
-
-### <a name="possible-causes"></a>Возможные причины
-
-Вы вошли на портал с помощью личного [учетная запись Майкрософт (MSA)](https://account.microsoft.com/account/Account), например *@outlook.com* учетной записи. Управление маршрутами событий в портал Azure в настоящее время доступно только пользователям Azure с учетными записями корпоративного домена.
 
 ## <a name="400-client-error-bad-request-in-cloud-shell"></a>"ошибка клиента 400: недопустимый запрос" в Cloud Shell
 

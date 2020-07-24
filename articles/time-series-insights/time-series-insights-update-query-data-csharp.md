@@ -1,29 +1,29 @@
 ---
-title: Запрос данных из среды предварительной версии с помощью кода C# — Аналитика временных рядов Azure | Документация Майкрософт
-description: Узнайте, как запрашивать данные из среды службы Аналитики временных рядов Azure с помощью приложения, написанного на C#.
+title: Запрос данных из среды Gen2 с помощью C# — Azure Time Series Insights | Документация Майкрософт
+description: Узнайте, как запрашивать данные из среды Gen2 службы "аналитика временных рядов Azure" с помощью приложения, написанного на языке C#.
 ms.service: time-series-insights
 services: time-series-insights
 author: deepakpalled
 ms.author: dpalled
-manager: cshankar
+manager: diviso
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 04/14/2020
 ms.custom: seodec18
-ms.openlocfilehash: fbc2cbc29cb23a21e7d3713091fc22f01bb1b15a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: aa3faad88fb5474b34ff6855690882141b2e4843
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81379817"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87046306"
 ---
-# <a name="query-data-from-the-azure-time-series-insights-preview-environment-using-c"></a>Запрос данных из среды Аналитика временных рядов Azure (предварительная версия) с помощью C#
+# <a name="query-data-from-the-azure-time-series-insights-gen2-environment-using-c"></a>Запрос данных из среды Gen2 "аналитика временных рядов Azure" с помощью C #
 
-В этом C# примере показано, как запросить данные из [предварительной версии API доступа к данным](https://docs.microsoft.com/rest/api/time-series-insights/preview) в средах службы Аналитики временных рядов Azure (предварительная версия).
+В этом примере на C# показано, как запрашивать данные из [API-интерфейсов Gen2 доступа к данным](https://docs.microsoft.com/rest/api/time-series-insights/preview) в средах Gen2 "аналитика временных рядов Azure".
 
 > [!TIP]
-> Ознакомьтесь с примерами кода предварительной версии C# на сайте [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-preview-sample).
+> Просмотрите примеры кода C# Gen2 по адресу [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-preview-sample) .
 
 ## <a name="summary"></a>Сводка
 
@@ -34,23 +34,23 @@ ms.locfileid: "81379817"
 * Передача полученного маркера доступа в заголовок `Authorization` последующих запросов API доступа к данным. 
 * В примере показан интерфейс консоли, демонстрирующий, как выполняются HTTP-запросы к:
 
-    * [API сред предварительной версии](https://docs.microsoft.com/rest/api/time-series-insights/preview#preview-environments-apis)
-        * [API получения сведений о доступности сред](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/getavailability) и [API получения схемы событий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/geteventschema)
-    * [API запросов предварительной версии](https://docs.microsoft.com/rest/api/time-series-insights/preview#query-apis)
-        * [API получения событий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/execute#getevents), [API получения последовательности](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/execute#getseries) и [API получения последовательности статических выражений](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/execute#aggregateseries)
-    * [API модели временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/execute#aggregateseries)
-        * [API получения иерархий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/timeserieshierarchies/get) и [API пакета иерархий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/timeserieshierarchies/executebatch)
-        * [API получения типов](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/timeseriestypes/get) и [API пакета типов](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/timeseriestypes/executebatch)
-        * [API получения экземпляров](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/timeseriesinstances/get) и [API пакета экземпляров](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/timeseriesinstances/executebatch)
+    * [API окружений Gen2](https://docs.microsoft.com/rest/api/time-series-insights/preview#preview-environments-apis)
+        * [API получения сведений о доступности сред](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/getavailability) и [API получения схемы событий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/geteventschema)
+    * [API запросов Gen2](https://docs.microsoft.com/rest/api/time-series-insights/preview#query-apis)
+        * [API получения событий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents), [API получения последовательности](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getseries) и [API получения последовательности статических выражений](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#aggregateseries)
+    * [API модели временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#aggregateseries)
+        * [API получения иерархий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeserieshierarchies/get) и [API пакета иерархий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeserieshierarchies/executebatch)
+        * [API получения типов](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/get) и [API пакета типов](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch)
+        * [API получения экземпляров](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/get) и [API пакета экземпляров](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/executebatch)
 * Возможности расширенного [поиска](https://docs.microsoft.com/rest/api/time-series-insights/preview#search-features) и [TSX](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax).
 
 ## <a name="prerequisites-and-setup"></a>Предварительные требования и настройка
 
 Перед компиляцией и запуском примера кода выполните следующие шаги.
 
-1. [Подготовьте предварительную версию среды Аналитики временных рядов Azure к работе](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-how-to-manage#create-the-environment).
+1. [Подготавливает среду Gen2 "аналитика временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-how-to-manage#create-the-environment) ".
 1. Настройте среду службы Аналитики временных рядов Azure для Azure Active Directory, как описано в разделе [Проверка подлинности и авторизация](time-series-insights-authentication-and-authorization.md). 
-1. Запустите файл [GenerateCode.bat](https://github.com/Azure-Samples/Azure-Time-Series-Insights/blob/master/csharp-tsi-preview-sample/DataPlaneClient/GenerateCode.bat), как указано в [Readme.md](https://github.com/Azure-Samples/Azure-Time-Series-Insights/blob/master/csharp-tsi-preview-sample/DataPlaneClient/Readme.md), чтобы создать зависимости клиентов Аналитики временных рядов Azure (предварительная версия).
+1. Запустите [GenerateCode.bat](https://github.com/Azure-Samples/Azure-Time-Series-Insights/blob/master/csharp-tsi-preview-sample/DataPlaneClient/GenerateCode.bat) , как указано в [readme.md](https://github.com/Azure-Samples/Azure-Time-Series-Insights/blob/master/csharp-tsi-preview-sample/DataPlaneClient/Readme.md) , чтобы создать клиентские зависимости Gen2 временных рядов Azure.
 1. Откройте решение `TSIPreviewDataPlaneclient.sln` и задайте `DataPlaneClientSampleApp` в качестве проекта по умолчанию в Visual Studio.
 1. Установите необходимые зависимости проекта, выполнив действия, описанные [ниже](#project-dependencies), и скомпилируйте пример в исполняемый файл `.exe`.
 1. Запустите файл `.exe`, дважды щелкнув его.
@@ -81,4 +81,4 @@ ms.locfileid: "81379817"
 
 - Дополнительные сведения о запросах см. в [справочнике по API запросов](https://docs.microsoft.com/rest/api/time-series-insights/preview-query).
 
-- Узнайте, как [подключить приложение JavaScript с помощью клиентского пакета SDK](https://github.com/microsoft/tsiclient) к службе Аналитики временных рядов Azure.
+- Узнайте, как [подключить приложение JavaScript с помощью клиентского пакета SDK](https://github.com/microsoft/tsiclient) к службе "аналитика временных рядов Azure".

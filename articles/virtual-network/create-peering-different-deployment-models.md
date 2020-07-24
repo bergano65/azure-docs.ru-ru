@@ -16,11 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 11/15/2018
 ms.author: kumud
 ms.reviewer: anavin
-ms.openlocfilehash: 318e51f12653b5cbe6bd47b9c48a57d72286a4a7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 148d57da549e8364620c8417cbd61d975cea1498
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84710054"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87046100"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-same-subscription"></a>Создание пиринга виртуальных сетей с разными моделями развертывания в одной подписке
 
@@ -52,7 +53,7 @@ ms.locfileid: "84710054"
     - **Подписка**: выберите подписку.
     - **Группа ресурсов**: установите флажок **Создать** и введите *myResourceGroup*.
     - **Расположение.** *восточная часть США*.
-4. Щелкните **+ Создать**. В поле **Поиск по Marketplace** введите *Виртуальная сеть*. Когда в результатах поиска появится пункт **Виртуальная сеть**, щелкните его.
+4. Щелкните **+ Создать**. В поле **Поиск по Marketplace** введите *Виртуальная сеть*. Когда в результатах поиска появится пункт **Виртуальная сеть**, щелкните его.
 5. В колонке **Виртуальная сеть** в поле **Выбор модели развертывания** выберите **Классический** и нажмите кнопку **Создать**.
 6. В колонке **Создание виртуальной сети** введите или выберите значения для приведенных ниже параметров и щелкните **Создать**.
     - **Имя**: *myVnet2*.
@@ -144,7 +145,7 @@ ms.locfileid: "84710054"
 
 ## <a name="create-peering---powershell"></a><a name="powershell"></a>Создание пиринга с помощью PowerShell
 
-1. Установите последнюю версию модулей PowerShell [Azure](https://www.powershellgallery.com/packages/Azure) и [AZ](https://www.powershellgallery.com/packages/Az/) . Если вы еще не работали с Azure PowerShell, ознакомьтесь со статьей [Overview of Azure PowerShell](/powershell/azure/overview?toc=%2fazure%2fvirtual-network%2ftoc.json) (Общие сведения об Azure PowerShell).
+1. Установите последнюю версию модулей PowerShell [Azure](https://www.powershellgallery.com/packages/Azure) и [AZ](https://www.powershellgallery.com/packages/Az/) . Если вы еще не работали с Azure PowerShell, ознакомьтесь со статьей [Overview of Azure PowerShell](/powershell/azure/?toc=%2fazure%2fvirtual-network%2ftoc.json) (Общие сведения об Azure PowerShell).
 2. Запустите сеанс PowerShell.
 3. В PowerShell войдите в Azure, выполнив команду `Add-AzureAccount`. У учетной записи, используемой для входа, должны быть необходимые разрешения для создания пиринга виртуальных сетей. Список разрешений см. в разделе [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#requirements-and-constraints).
 4. Чтобы создать классическую виртуальную сеть с помощью PowerShell, необходимо создать новый или изменить существующий файл конфигурации сети. Узнайте, как [экспортировать, обновлять и импортировать файлы конфигурации сети](virtual-networks-using-network-configuration-file.md). Файл должен содержать приведенный ниже элемент **VirtualNetworkSite** для виртуальной сети, используемой в этом руководстве.

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: hasshah
-ms.openlocfilehash: 0a6df626f9567b51a8371c17004b454f9c5b4597
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 60bcdac0d7e19c424b007980294898638814d586
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83202049"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87044874"
 ---
 # <a name="what-is-a-keyword"></a>Что такое ключевое слово?
 
@@ -25,7 +25,7 @@ ms.locfileid: "83202049"
 
 Благодаря настройке, производительности и возможностям интеграции с помощью пользовательского ключевого слова можно настроить активацию голоса в соответствии с особенностями вашего продукта и требованиями пользователей.
 
-| Компонент | Описание |
+| Функция | Описание |
 |----------|----------|
 | Настройка ключевого слова | Как расширение вашей торговой марки, ключевое слово подкрепляет собственные средства, созданные для ваших клиентов. Пользовательский портал ключевых слов в Speech Studio позволяет указать любое слово или краткую фразу, которая лучше соответствует вашей торговой марке. Вы можете еще больше персонализировать ключевое слово, выбирая правильные произношения, которые будут учитываться при создании модели ключевых слов.
 | Проверка ключевого слова | При наличии высокой достоверности по ключевому слову, которое обнаруживается локально, в облако отправляется аудио для дальнейшей проверки того, что пользователь сказал ключевое слово. Проверка ключевых слов обеспечивает дополнительный уровень безопасности, уменьшая влияние неверного локального обнаружения и защиту конфиденциальности пользователей.
@@ -33,10 +33,13 @@ ms.locfileid: "83202049"
 
 ## <a name="get-started-with-custom-keywords"></a>Начало работы с пользовательскими ключевыми словами
 
-* Учебник. [Создание пользовательского ключевого слова с помощью Speech Studio](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk-create-kws)
-* Учебник. как выполнить [голосовую активацию продукта с помощью пакета SDK для распознавания речи, на C#](tutorial-voice-enable-your-bot-speech-sdk.md)
-* Краткое руководство. [Распознавание ключевых слов с помощью пакета SDK для распознавания речи, на универсальная платформа Windows с помощью C#](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/csharp/uwp/keyword-recognizer)
-* Краткое руководство. [Распознавание ключевых слов с помощью пакета SDK для распознавания речи в Android с использованием Java](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/java/android/keyword-recognizer)
+* Ознакомьтесь с [основными понятиями по ключевым словам](custom-keyword-basics.md) для основных шаблонов использования и проектирования.
+* Как выполнить [голосовую активацию продукта с помощью пакета SDK для распознавания речи, на C#](tutorial-voice-enable-your-bot-speech-sdk.md)
+
+## <a name="see-samples-on-github"></a>См. примеры на GitHub
+
+* [Распознавание ключевых слов с помощью пакета SDK для распознавания речи, на универсальная платформа Windows с помощью C #](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/csharp/uwp/keyword-recognizer)
+* [Распознавание ключевых слов с помощью пакета SDK для распознавания речи, в Android с использованием Java](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/java/android/keyword-recognizer)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

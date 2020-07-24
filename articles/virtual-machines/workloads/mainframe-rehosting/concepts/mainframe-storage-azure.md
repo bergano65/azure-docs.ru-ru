@@ -6,11 +6,12 @@ ms.author: larryme
 ms.date: 04/02/2019
 ms.topic: article
 ms.service: storage
-ms.openlocfilehash: 86419811cdf2c11204caae0ca5bf6f65fba063d2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7f83d798bbffeb232b45701beee828114ad3db7d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76288920"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87042589"
 ---
 # <a name="move-mainframe-storage-to-azure"></a>Перемещение хранилища мэйнфреймов в Azure
 
@@ -44,13 +45,13 @@ Azure предоставляет функции и емкость хранили
 
 Корпорация Майкрософт предлагает петабайтов хранилище для приложений, размещенных в Azure, и вы можете использовать несколько вариантов хранения. Эти диапазоны из хранилища SSD позволяют обеспечить высокую производительность хранилища BLOB-объектов с низкими затратами для массового хранения и архивов. Кроме того, Azure предоставляет параметр избыточности данных для хранения — что требует больше усилий для настройки в среде мэйнфрейма.
 
-Служба хранилища Azure доступна как [диски Azure](/azure/virtual-machines/windows/managed-disks-overview), службы [файлов Azure](/azure/storage/files/storage-files-introduction)и [большие двоичные объекты Azure](/azure/storage/blobs/storage-blobs-overview) , как показано в следующей таблице. Узнайте больше о [том, когда использовать каждый из них](https://docs.microsoft.com/azure/storage/common/storage-decide-blobs-files-disks).
+Служба хранилища Azure доступна как [диски Azure](../../../windows/managed-disks-overview.md), службы [файлов Azure](../../../../storage/files/storage-files-introduction.md)и [большие двоичные объекты Azure](../../../../storage/blobs/storage-blobs-overview.md) , как показано в следующей таблице. Узнайте больше о [том, когда использовать каждый из них](../../../../storage/common/storage-introduction.md).
 
 <!-- markdownlint-disable MD033 -->
 
 <table>
 <thead>
-    <tr><th>Type</th><th>Описание:</th><th>Используйте, если хотите:</th></tr>
+    <tr><th>Type</th><th>Описание</th><th>Используйте, если хотите:</th></tr>
 </thead>
 <tbody>
 <tr><td>Файлы Azure
@@ -93,21 +94,21 @@ Azure предоставляет функции и емкость хранили
 
 Службы SSDs обеспечивают наивысшую производительность хранилища в Azure. Доступны следующие параметры (на момент написания этого документа):
 
-| Тип         | Размер           | ОПЕРАЦИЙ ВВОДА-ВЫВОДА                  |
+| Тип         | Размер           | Количество операций ввода-вывода в секунду                  |
 |--------------|----------------|-----------------------|
 | SSD ценовой категории "Ультра"    | от 4 ГБ до 64 ТБ  | 1 200 до 160 000 операций ввода-вывода |
-| SSD (цен. категория "Премиум")  | 32 ГБ до 32 ТБ | от 12 до 15 000 операций ввода-вывода     |
-| SSD (цен. категория "Стандартный") | 32 ГБ до 32 ТБ | от 12 до 2 000 операций ввода-вывода      |
+| SSD ценовой категории "Премиум"  | 32 ГБ до 32 ТБ | от 12 до 15 000 операций ввода-вывода     |
+| SSD ценовой категории "Стандартный" | 32 ГБ до 32 ТБ | от 12 до 2 000 операций ввода-вывода      |
 
 Хранилище BLOB-объектов предоставляет самый большой объем хранилища в Azure. В дополнение к размеру хранилища Azure предлагает как управляемое, так и неуправляемое хранилище. С помощью управляемого хранилища Azure управляет базовыми учетными записями хранения. В неуправляемом хранилище пользователь несет ответственность за настройку учетных записей хранения Azure соответствующего размера в соответствии с требованиями к хранилищу.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Миграция мэйнфреймов](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/overview)
-- [Повторное размещение мэйнфреймов на виртуальных машинах Azure](/azure/virtual-machines/workloads/mainframe-rehosting/overview)
+- [Повторное размещение мэйнфреймов на виртуальных машинах Azure](../overview.md)
 - [Перемещение вычислений мэйнфреймов в Azure](mainframe-compute-Azure.md)
-- [Выбор между большими двоичными объектами Azure, службой файлов Azure и дисками Azure](https://docs.microsoft.com/azure/storage/common/storage-decide-blobs-files-disks)
-- [SSD (цен. категория "Стандартный") управляемых дисков для рабочих нагрузок виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/windows/disks-standard-ssd)
+- [Выбор между большими двоичными объектами Azure, службой файлов Azure и дисками Azure](../../../../storage/common/storage-introduction.md)
+- [SSD (цен. категория "Стандартный") управляемых дисков для рабочих нагрузок виртуальных машин Azure](../../../windows/disks-types.md#standard-ssd)
 
 ### <a name="ibm-resources"></a>Ресурсы по IBM
 

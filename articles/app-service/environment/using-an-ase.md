@@ -7,11 +7,12 @@ ms.topic: article
 ms.date: 5/10/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: fd1ffc8636e11ca20bc32b4b6f600e03d923d8b5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f9bfd601642ff9d6b5b5c5a1c2c508d1821e19c7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83125814"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87042194"
 ---
 # <a name="use-an-app-service-environment"></a>Использование среды службы приложений
 
@@ -49,9 +50,9 @@ ms.locfileid: "83125814"
 
 1. Выберите имеющийся план службы приложений в своей среде ASE или создайте его, сделав следующее:
 
-    а. В портал Azure левой части меню выберите **создать ресурс > веб-приложение**.
+    А. В портал Azure левой части меню выберите **создать ресурс > веб-приложение**.
 
-    b. Выберите подписку.
+    Б. Выберите подписку.
 
     c. Выберите или создайте группу ресурсов.
 
@@ -217,7 +218,7 @@ URL-адрес SCM используется для доступа к консо�
 1. Перейдите по адресу resources.azure.com и войдите с помощью своей учетной записи Azure.
 1. Пройдите по адресу подписки Resources to Subscriptions \/ \[ Name \] \/ resourceGroups имя \/ \[ группы ресурсов \] \/ providers \/ Microsoft. Web \/ hostingEnvironments \/ \[ ASE Name \] .
 1. В верхней части выберите **чтение и запись** .
-1. Выберите команду **Изменить**.
+1. Нажмите кнопку **Изменить**.
 1. Задайте для **упградепреференце** любое из трех значений.
 1. Выберите **исправление**.
 
@@ -249,7 +250,31 @@ SKU ценообразования под названием " *изолиров
 
     ![Удаление ASE][3]
 
-1. Щелкните **ОК**.
+1. Нажмите кнопку **ОК**.
+
+## <a name="ase-cli"></a>ASE CLI
+
+Существуют возможности командной строки для администрирования в ASE.  Ниже перечислены команды AZ CLI.
+
+```azurecli
+C:\>az appservice ase --help
+
+Group
+    az appservice ase : Manage App Service Environments v2.
+        This command group is in preview. It may be changed/removed in a future release.
+Commands:
+    create         : Create app service environment.
+    delete         : Delete app service environment.
+    list           : List app service environments.
+    list-addresses : List VIPs associated with an app service environment.
+    list-plans     : List app service plans associated with an app service environment.
+    show           : Show details of an app service environment.
+    update         : Update app service environment.
+
+For more specific examples, use: az find "az appservice ase"
+```
+
+
 
 <!--Image references-->
 [1]: ./media/using_an_app_service_environment/usingase-appcreate.png

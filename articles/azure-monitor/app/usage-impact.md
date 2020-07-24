@@ -6,11 +6,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 01/08/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 5d775e876a0cce1ba13964d6d4777307a34fdf3f
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.openlocfilehash: 4481e62fb15b5ec21b48deb00f1438abf01aa27a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83797911"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87041472"
 ---
 # <a name="impact-analysis-with-application-insights"></a>Анализ влияния с помощью Application Insights
 
@@ -79,7 +80,7 @@ Impact можно рассматривать как абсолютный инс�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Чтобы обеспечить оптимальное использование, начните отправлять [пользовательские события](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackevent) или [сведения о просмотрах страниц](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#page-views).
+- Чтобы обеспечить оптимальное использование, начните отправлять [пользовательские события](./api-custom-events-metrics.md#trackevent) или [сведения о просмотрах страниц](./api-custom-events-metrics.md#page-views).
 - Если вы уже сделали это, изучите инструменты использования, чтобы узнать, как пользователи используют службу.
     - [Воронки](usage-funnels.md)
     - [Сохранение](usage-retention.md)

@@ -1,5 +1,5 @@
 ---
-title: Вместо ETL, проектирование ELT для пула SQL синапсе | Документация Майкрософт
+title: Проектирование стратегии загрузки данных Polybase для пула SQL
 description: Вместо ETL Создайте процесс извлечения, загрузки и преобразования (ELT) для загрузки данных или пула SQL.
 services: synapse-analytics
 author: kevinvngo
@@ -10,16 +10,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 49ffb848dbcbed72776a5d767bb4b4872978af20
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: ca1f535c7f2d949e1f71a06ba9efab2818ee0201
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85965580"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87046777"
 ---
 # <a name="designing-a-polybase-data-loading-strategy-for-azure-synapse-sql-pool"></a>Проектирование стратегии загрузки данных Polybase для пула SQL Azure синапсе
 
-Традиционные хранилища данных SMP используют процесс извлечения, преобразования и загрузки (ETL) для загрузки данных. Пул SQL Azure — это архитектура с массовой параллельной обработкой (MPP), которая использует преимущества масштабируемости и гибкости ресурсов вычислений и хранилища. Применяя процесс извлечения, загрузки и преобразования (ELT), можно воспользоваться преимуществами MPP и исключить ресурсы, необходимые для преобразования данных перед загрузкой.
+Традиционные хранилища данных SMP используют процесс извлечения, преобразования и загрузки (ETL) для загрузки данных. Пул SQL Azure — это архитектура с массовой параллельной обработкой (MPP), которая использует преимущества масштабируемости и гибкости ресурсов вычислений и хранилища. С помощью процесса извлечения, загрузки и преобразования (ELT) можно воспользоваться преимуществами MPP и устранить ресурсы, необходимые для преобразования данных перед их загрузкой.
 
 Хотя пул SQL поддерживает множество методов загрузки, включая параметры, отличные от polybase, такие как BCP и SQL BulkCopy API, самый быстрый и наиболее масштабируемый способ загрузки даты — с помощью Polybase.  PolyBase — это технология, которая обращается к внешним данным, хранящимся в хранилище BLOB-объектов Azure или Azure Data Lake Storage, с помощью языка T-SQL.
 
@@ -27,7 +27,7 @@ ms.locfileid: "85965580"
 
 ## <a name="what-is-elt"></a>Что такое ELT?
 
-Извлечение, загрузка и преобразование (ELT) — это процесс, с помощью которого данные извлекаются из исходной системы, загружаются в хранилище данных, а затем преобразовываются.
+Извлечение, Загрузка и преобразование (ELT) — это процесс, с помощью которого данные извлекаются из исходной системы, загружаются в хранилище данных, а затем преобразуются.
 
 Ниже приведены основные шаги для реализации ELT в пуле SQL для Polybase.
 
@@ -50,7 +50,7 @@ ms.locfileid: "85965580"
 
 PolyBase загружает данные из текстовых файлов с разделителями в кодировке UTF-8 и UTF-16. Кроме текстовых файлов с разделителями данные также загружаются из форматов файлов Hadoop: RC, ORC и PARQUET. PolyBase также может загрузить данные из сжатых файлов Gzip и Snappy. PolyBase в настоящее время не поддерживает расширенную кодировку ASCII, форматы с фиксированной шириной и вложенные форматы, такие как WinZip, JSON и XML.
 
-Если вы выполняете экспорт из SQL Server, можно воспользоваться [программой командной строки bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для экспорта данных в текстовые файлы с разделителями. Сопоставление типов данных Parquet и SQL DW имеет следующий вид:
+Если вы выполняете экспорт из SQL Server, можно воспользоваться [программой командной строки bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для экспорта данных в текстовые файлы с разделителями. Сопоставление типов данных Parquet и SQL DW выглядит следующим образом:
 
 | **Тип данных Parquet** |                      **Тип данных SQL**                       |
 | :-------------------: | :----------------------------------------------------------: |
@@ -58,15 +58,15 @@ PolyBase загружает данные из текстовых файлов с
 |       smallint        |                           smallint                           |
 |          INT          |                             INT                              |
 |        BIGINT         |                            BIGINT                            |
-|        Логическое        |                             bit                              |
+|        boolean        |                             bit                              |
 |        double         |                            FLOAT                             |
 |         FLOAT         |                             real                             |
 |        double         |                            money                             |
 |        double         |                          smallmoney                          |
-|        string         |                            nchar                             |
-|        string         |                           nvarchar                           |
-|        string         |                             char                             |
-|        string         |                           varchar                            |
+|        строка         |                            nchar                             |
+|        строка         |                           nvarchar                           |
+|        строка         |                             char                             |
+|        строка         |                           varchar                            |
 |        binary         |                            binary                            |
 |        binary         |                          varbinary                           |
 |       TIMESTAMP       |                             Дата                             |
@@ -95,7 +95,7 @@ PolyBase загружает данные из текстовых файлов с
 
 Перед загрузкой данных необходимо определить внешние таблицы в хранилище данных. PolyBase использует внешние таблицы для определения данных и доступа к ним в службе хранилища Azure. Внешняя таблица аналогична представлению базы данных. Внешняя таблица содержит схему таблицы и указывает на данные, хранящиеся за пределами хранилища данных.
 
-Определение внешних таблиц включает указание источника данных, формата текстовых файлов и определений таблицы. Ниже приведены разделы синтаксиса T-SQL, которые вам понадобятся:
+Определение внешних таблиц включает указание источника данных, формата текстовых файлов и определений таблицы. Ниже приведены подразделы синтаксиса T-SQL, которые вам понадобятся:
 
 - [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)

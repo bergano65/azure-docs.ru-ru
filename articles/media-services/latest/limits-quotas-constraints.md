@@ -11,11 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 04/01/2020
 ms.author: juliako
-ms.openlocfilehash: 055f651552313732c000a2e91d2862cda22a9c26
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e358742635d9ed939bbc62bb0d54e8169382e7de
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82995879"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87043491"
 ---
 <!-- If you update limits in this topic, make sure to also update https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#media-services-limits -->
 # <a name="azure-media-services-quotas-and-limits"></a>Квоты и ограничения служб мультимедиа Azure
@@ -92,7 +93,7 @@ ms.locfileid: "82995879"
 | [Политики потоковой передачи](streaming-policy-concept.md) | 100 <sup>(6)</sup> |
 | Уникальные [указатели потоковой передачи](streaming-locators-concept.md) , связанные с активом за один раз | 100<sup>(7)</sup> (исправлено) |
 
-<sup>6</sup> при использовании настраиваемой [политики потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies)необходимо разработать ограниченный набор таких политик для учетной записи службы мультимедиа и повторно использовать их для стреаминглокаторс, когда требуются одни и те же параметры шифрования и протоколы. Вы не должны создавать новую политику потоковой передачи для каждого указателя потоковой передачи.
+<sup>6</sup> при использовании настраиваемой [политики потоковой передачи](/rest/api/media/streamingpolicies)необходимо разработать ограниченный набор таких политик для учетной записи службы мультимедиа и повторно использовать их для стреаминглокаторс, когда требуются одни и те же параметры шифрования и протоколы. Вы не должны создавать новую политику потоковой передачи для каждого указателя потоковой передачи.
 
 <sup>7</sup> указатели потоковой передачи не предназначены для управления доступом на уровне пользователей. Для предоставления различных прав доступа отдельным пользователям используйте решения для управления цифровыми правами (DRM).
 

@@ -14,11 +14,12 @@ ms.topic: article
 ms.date: 12/21/2018
 ms.author: willzhan
 ms.custom: seodec18
-ms.openlocfilehash: 3d02c335f6e950300a7ced36643e6276c3d8d16a
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 79f06bd5d6af05e334faf4e1f6d8cd3e358f89ba
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85957381"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87039197"
 ---
 # <a name="design-of-a-multi-drm-content-protection-system-with-access-control"></a>Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом 
 
@@ -132,12 +133,12 @@ ms.locfileid: "85957381"
 
 | **Стандартный блок** | **Технология** |
 | --- | --- |
-| **Многопользовательские** |[Проигрыватель мультимедиа Azure](https://azure.microsoft.com/services/media-services/media-player/) |
+| **Игрок** |[Проигрыватель мультимедиа Azure](https://azure.microsoft.com/services/media-services/media-player/) |
 | **Поставщик удостоверений (IDP)** |Azure Active Directory (Azure AD) |
 | **Служба маркеров безопасности (STS)** |Azure AD |
 | **Рабочий процесс защиты DRM** |Динамическая защита служб мультимедиа Azure |
 | **Доставка лицензий DRM** |* Доставка лицензий Служб мультимедиа (PlayReady, Widevine, FairPlay) <br/>* Сервер лицензирования Axinom <br/>* Пользовательский сервер лицензирования PlayReady |
-| **Исходный домен** |Конечная точка потоковой передачи Служб мультимедиа Azure |
+| **Лета** |Конечная точка потоковой передачи Служб мультимедиа Azure |
 | **Управление ключами** |Не требуется для справочной реализации |
 | **Управление содержимым** |Консольное приложение C# |
 
@@ -213,7 +214,7 @@ ms.locfileid: "85957381"
 Сведения об Azure AD:
 
 * Сведения для разработчиков см. в [руководстве разработчика по Azure Active Directory](../../active-directory/develop/v2-overview.md).
-* Сведения для администраторов см. в статье [Управление каталогом Azure AD](../../active-directory/fundamentals/active-directory-administer.md).
+* Сведения для администраторов см. в статье [Управление каталогом Azure AD](../../active-directory/fundamentals/active-directory-whatis.md).
 
 ### <a name="some-issues-in-implementation"></a>Некоторые проблемы в реализации
 
@@ -355,7 +356,7 @@ Widevine не запрещает делать снимок экрана защи
 
 В обоих указанных случаях проверка подлинности пользователя остается неизменной. Она происходит через Azure AD. Единственное различие состоит в том, что маркеры JWT выдаются пользовательской STS вместо Azure AD. При настройке динамической защиты CENC ограничение службы доставки лицензий указывает тип маркера JWT — симметричный или асимметричный ключи.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Вопросы и ответы](frequently-asked-questions.md)
 * [Обзор системы защиты содержимого](content-protection-overview.md)

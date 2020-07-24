@@ -3,24 +3,25 @@ title: Подключение среды к Power BIам Azure Time Series Insig
 description: Узнайте, как подключить службу "аналитика временных рядов Azure", чтобы Power BI для совместного использования, создания диаграмм и отображения данных в Организации.
 author: deepakpalled
 ms.author: dpalled
-manager: cshankar
+manager: diviso
 services: time-series-insights
 ms.service: time-series-insights
 ms.topic: conceptual
-ms.date: 06/01/2020
-ms.openlocfilehash: ea46f37b0c09ca655b29ac3cfa2f168e18c85590
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 06/30/2020
+ms.openlocfilehash: b9d91921fc375a1209e8fa8df6e3c6ff56e55be0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85052449"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87046700"
 ---
-# <a name="visualize-data-from-time-series-insights-in-power-bi"></a>Визуализация данных из Аналитики временных рядов в Power BI
+# <a name="visualize-data-from-azure-time-series-insights-in-power-bi"></a>Визуализация данных из службы "аналитика временных рядов Azure" в Power BI
 
-Служба "аналитика временных рядов Azure" — это платформа для хранения, управления, запроса и визуализации данных временных рядов в облаке. [Power BI](https://powerbi.microsoft.com) — это средство бизнес-аналитики с богатыми возможностями визуализации, которое позволяет обмениваться ценными сведениями и результатами в Организации. Обе службы теперь можно интегрировать, чтобы получить лучшее из встроенных функций визуализации временных рядов, а также Power BI.
+Служба "аналитика временных рядов Azure" — это платформа для хранения, управления, запроса и визуализации данных временных рядов в облаке. [Power BI](https://powerbi.microsoft.com) — это средство бизнес-аналитики с богатыми возможностями визуализации, которое позволяет обмениваться ценными сведениями и результатами в Организации. Обе службы теперь можно интегрировать, чтобы получить лучшее из встроенных возможностей визуализации "аналитика временных рядов Azure", а также Power BI.
 
-Вы научитесь:
+Вы узнаете, как:
 
-* Подключение Time Series Insights к Power BI с помощью облачного соединителя
+* Подключение службы "аналитика временных рядов Azure" к Power BI с помощью облачного соединителя
 * Создание визуальных элементов с помощью данных в Power BI
 * Публикация отчета в Power BI и совместное использование с остальной частью Организации
 
@@ -28,31 +29,33 @@ ms.locfileid: "85052449"
 
 Обязательно подпишитесь на [бесплатную подписку Azure](https://azure.microsoft.com/free/) , если у вас ее еще нет.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 * Скачайте и установите последнюю версию [Power BI Desktop](https://powerbi.microsoft.com/downloads/)
-* Создание [экземпляра предварительной версии службы "аналитика временных рядов Azure](time-series-insights-update-how-to-manage.md) "
+* Или создайте [среду Gen2 "аналитика временных рядов Azure](time-series-insights-update-how-to-manage.md) ".
 
 > [!IMPORTANT]
-> Соединитель Power BI в настоящее время поддерживается в средах "аналитика временных рядов" Предварительная версия *"с оплатой по мере использования"* , настроенных для **горячего хранения**.
+>
+> * Соединитель в настоящее время поддерживается в средах Azure Time Series Insights Gen2, настроенных **только для горячего хранения**.
+> * Если у вас есть гостевой доступ к среде Gen2 "аналитика временных рядов Azure" из другого клиента Azure AD, доступ к соединителю будет невозможен. Ознакомьтесь с [политиками доступа к среде](./concepts-access-policies.md).
 
-## <a name="connect-data-from-time-series-insights-to-power-bi"></a>Подключение данных из Time Series Insights к Power BI
+## <a name="connect-data-from-azure-time-series-insights-to-power-bi"></a>Подключение данных из службы "аналитика временных рядов Azure" к Power BI
 
-Чтобы подключить среду "аналитика временных рядов" к Power BI, выполните следующие действия.
+Чтобы подключить среду службы "аналитика временных рядов Azure" к Power BI, выполните следующие действия.
 
-1. Открыть обозреватель аналитики временных рядов
+1. Открытие обозревателя службы "аналитика временных рядов Azure"
 1. Экспорт данных в виде запроса или необработанных данных
-1. Открыть Power BI Desktop
+1. открывать Power BI Desktop;
 1. Загрузка из пользовательского запроса
 
 ### <a name="export-data-into-power-bi-desktop"></a>Экспорт данных в Power BI Desktop
 
 Чтобы начать работу:
 
-1. Откройте обозреватель предварительного просмотра "аналитика временных рядов" и проучите данные.
+1. Откройте обозреватель "аналитика временных рядов Azure" Gen2 Explorer и проучите данные.
 1. После создания представления, с которым вы удовлетворены, перейдите в раскрывающееся меню **More Actions (дополнительные действия** ) и выберите **подключиться к Power BI**.
 
-    [![Экспорт обозревателя предварительной версии аналитики временных рядов](media/how-to-connect-power-bi/time-series-insights-export-option.png)](media/how-to-connect-power-bi/time-series-insights-export-option.png#lightbox)
+    [![Экспорт обозревателя "аналитика временных рядов Azure Gen2"](media/how-to-connect-power-bi/time-series-insights-export-option.png)](media/how-to-connect-power-bi/time-series-insights-export-option.png#lightbox)
 
 1. Задайте параметры на этой вкладке:
 
@@ -64,11 +67,11 @@ ms.locfileid: "85052449"
        > Вы всегда можете выполнять статистическую обработку данных позже в Power BI, но нельзя вернуться к необработанным данным после статистической обработки. 
        
        > [!NOTE]
-       > Для данных на уровне необработанных событий существует ограничение в 100 КБ.
+       > Существует ограничение числа событий 250 000 для необработанных данных на уровне событий.
 
-       [![Соединиться](media/how-to-connect-power-bi/connect-to-power-bi.png)](media/how-to-connect-power-bi/connect-to-power-bi.png#lightbox)
+       [![Подключение](media/how-to-connect-power-bi/connect-to-power-bi.png)](media/how-to-connect-power-bi/connect-to-power-bi.png#lightbox)
 
-   1. Если вы не настроили экземпляр "аналитика временных рядов" для " **горячего" хранилища**, вы получите предупреждение.
+   1. Если вы не настроили среду "аналитика временных рядов Azure" с помощью " **горячего" хранилища**, вы получите предупреждение.
 
        [![Предупреждение о горячем хранении](media/how-to-connect-power-bi/connect-to-power-bi-warning.png)](media/how-to-connect-power-bi/connect-to-power-bi-warning.png#lightbox)
 
@@ -81,9 +84,9 @@ ms.locfileid: "85052449"
 
     [![Раскрывающийся список домашней страницы](media/how-to-connect-power-bi/power-bi-home-drop-down.png)](media/how-to-connect-power-bi/power-bi-home-drop-down.png#lightbox)
 
-1. Выполните поиск по запросу " **аналитика временных рядов**", выберите **"аналитика временных рядов Azure" (бета-версия)**, а затем **подключитесь**.
+1. Выполните поиск по запросу " **аналитика временных рядов Azure**", выберите **"аналитика временных рядов Azure" (бета-версия)**, а затем **подключитесь**.
 
-    [![Подключение Power BI к службе "аналитика временных рядов"](media/how-to-connect-power-bi/connect-to-time-series-insights.png)](media/how-to-connect-power-bi/connect-to-time-series-insights.png#lightbox)
+    [![Подключение Power BI к службе "аналитика временных рядов Azure"](media/how-to-connect-power-bi/connect-to-time-series-insights.png)](media/how-to-connect-power-bi/connect-to-time-series-insights.png#lightbox)
 
     Кроме того, перейдите на вкладку **Azure** , выберите **Azure Time Series Insights (бета-версия)**, а затем **подключитесь**.
     
@@ -141,10 +144,8 @@ ms.locfileid: "85052449"
 
 Теперь интерфейс будет отражать примененные необходимые изменения.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте о [концепциях соединителей Power BI](https://docs.microsoft.com/power-bi/desktop-query-overview) для Azure Time Series Insights.
 
 * Дополнительные сведения о [Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-query-overview).
-
-* Ознакомьтесь со сведениями в обозревателе " [аналитика временных рядов](https://docs.microsoft.com/azure/time-series-insights/time-series-quickstart) " — "Глобальный обозреватель" и " [аналитика временных рядов Insights](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-quickstart)".

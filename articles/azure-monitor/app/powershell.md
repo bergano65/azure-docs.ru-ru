@@ -3,11 +3,12 @@ title: Автоматизация Azure Application Insights с помощью P
 description: Автоматизация создания ресурсов, оповещений и тестов доступности и управления ими с помощью PowerShell и шаблона Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 05/02/2020
-ms.openlocfilehash: c4e7c4fe14d829338e98a4b7e73726b1e605707c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1a0a3a5b186d57e8670201e601eee48ee858c976
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84485424"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87041622"
 ---
 #  <a name="manage-application-insights-resources-using-powershell"></a>Управление ресурсами Application Insights с помощью PowerShell
 
@@ -25,7 +26,7 @@ ms.locfileid: "84485424"
 1. Установите [установщик веб-платформы Майкрософт (версии 5 или более поздней)](https://www.microsoft.com/web/downloads/platform.aspx).
 2. Используйте его для установки Microsoft Azure PowerShell.
 
-Кроме шаблонов Resource Manager, вы можете использовать обширный набор [командлетов PowerShell для Application Insights](https://docs.microsoft.com/powershell/module/az.applicationinsights), которые упрощают настройку ресурсов Application Insights программными средствами. Командлеты предоставляют следующие возможности:
+Кроме шаблонов Resource Manager, вы можете использовать обширный набор [командлетов PowerShell для Application Insights](/powershell/module/az.applicationinsights), которые упрощают настройку ресурсов Application Insights программными средствами. Командлеты предоставляют следующие возможности:
 
 * создание и удаление ресурсов Application Insights;
 * получение списков и свойств ресурсов Application Insights;
@@ -36,7 +37,7 @@ ms.locfileid: "84485424"
 
 ## <a name="create-application-insights-resources-using-a-powershell-cmdlet"></a>Создание ресурсов Application Insights с помощью командлета PowerShell
 
-Далее показано, как создать новый ресурс Application Insights в центре обработки данных в регионе "Восточная часть США" с помощью командлета [New-AzApplicationInsights](https://docs.microsoft.com/powershell/module/az.applicationinsights/New-AzApplicationInsights).
+Далее показано, как создать новый ресурс Application Insights в центре обработки данных в регионе "Восточная часть США" с помощью командлета [New-AzApplicationInsights](/powershell/module/az.applicationinsights/new-azapplicationinsights).
 
 ```PS
 New-AzApplicationInsights -ResourceGroupName <resource group> -Name <resource name> -location eastus
@@ -226,7 +227,7 @@ Get-AzApplicationInsights -ResourceGroupName Fabrikam -Name FabrikamProd | Forma
 * `Get-AzApplicationInsightsApiKey`
 * `Get-AzApplicationInsightsContinuousExport`
 
-Параметры этих командлетов описаны в [подробной документации](https://docs.microsoft.com/powershell/module/az.applicationinsights).  
+Параметры этих командлетов описаны в [подробной документации](/powershell/module/az.applicationinsights).  
 
 ## <a name="set-the-data-retention"></a>Настройка срока хранения данных
 
@@ -329,7 +330,7 @@ Set-ApplicationInsightsRetention `
 
 ## <a name="set-the-daily-cap"></a>Установка ежедневного ограничения
 
-Чтобы получить свойства ежедневного ограничения, используйте командлет [Set-AzApplicationInsightsPricingPlan](https://docs.microsoft.com/powershell/module/az.applicationinsights/Set-AzApplicationInsightsPricingPlan). 
+Чтобы получить свойства ежедневного ограничения, используйте командлет [Set-AzApplicationInsightsPricingPlan](/powershell/module/az.applicationinsights/set-azapplicationinsightspricingplan). 
 
 ```PS
 Set-AzApplicationInsightsDailyCap -ResourceGroupName <resource group> -Name <resource name> | Format-List
@@ -358,7 +359,7 @@ armclient PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/
 <a id="price"></a>
 ## <a name="set-the-pricing-plan"></a>Выбор тарифного плана 
 
-Чтобы получить значение тарифного плана, используйте командлет [Set-AzApplicationInsightsPricingPlan](https://docs.microsoft.com/powershell/module/az.applicationinsights/Set-AzApplicationInsightsPricingPlan).
+Чтобы получить значение тарифного плана, используйте командлет [Set-AzApplicationInsightsPricingPlan](/powershell/module/az.applicationinsights/set-azapplicationinsightspricingplan).
 
 ```PS
 Set-AzApplicationInsightsPricingPlan -ResourceGroupName <resource group> -Name <resource name> | Format-List
@@ -403,12 +404,12 @@ armclient PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/
 
 ## <a name="add-a-metric-alert"></a>Добавление оповещения метрики
 
-Сведения об автоматизации генерации оповещений по метрикам см. [здесь](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-create-templates#template-for-a-simple-static-threshold-metric-alert).
+Сведения об автоматизации генерации оповещений по метрикам см. [здесь](../platform/alerts-metric-create-templates.md#template-for-a-simple-static-threshold-metric-alert).
 
 
 ## <a name="add-an-availability-test"></a>Добавление теста доступности
 
-Сведения об автоматизации тестов доступности см. [здесь](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-create-templates#template-for-an-availability-test-along-with-a-metric-alert).
+Сведения об автоматизации тестов доступности см. [здесь](../platform/alerts-metric-create-templates.md#template-for-an-availability-test-along-with-a-metric-alert).
 
 ## <a name="add-more-resources"></a>Добавление дополнительных ресурсов
 
@@ -468,7 +469,7 @@ armclient PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/
 ## <a name="next-steps"></a>Дальнейшие действия
 Другие статьи об автоматизации:
 
-* [Создание ресурса Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource#creating-a-resource-automatically) — быстрый метод без использования шаблона.
+* [Создание ресурса Application Insights](./create-new-resource.md#creating-a-resource-automatically) — быстрый метод без использования шаблона.
 * [Настройка оповещений](powershell-alerts.md)
 * [Creating an Application Insights Web Test and Alert Programmatically](https://azure.microsoft.com/blog/creating-a-web-test-alert-programmatically-with-application-insights/)
 * [Отправка данных системы диагностики Azure в Application Insights](powershell-azure-diagnostics.md)

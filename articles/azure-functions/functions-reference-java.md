@@ -3,20 +3,26 @@ title: Справочник для разработчика Java по Функц
 description: Информация о разработке функций на языке Java.
 ms.topic: conceptual
 ms.date: 09/14/2018
-ms.openlocfilehash: 339615ac99f231fd293a7ea15c853d43da8f998a
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: f1c2c3a3b6c28813cc9ecd9eb794e26e1e60d5e2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057608"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87041530"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
-Среда выполнения Функций Azure поддерживает версию [Java SE 8 LTS (zulu8.31.0.2-jre8.0.181-win_x64)](https://repos.azul.com/azure-only/zulu/packages/zulu-8/8u181/). Это руководство содержит сведения об особенностях работы с Функциями Azure на языке Java.
+Это краткое описание содержит подробные сведения, помогающие в разработке функций Azure с помощью Java.
 
-Как и в случае с другими языками, приложение-функция может содержать одну или несколько функций. Функцией в Java называется метод `public`, дополненный аннотацией `@FunctionName`. Такой метод определяет запись для функции Java и должен быть уникальным в пределах пакета. Одно приложение-функция на языке Java может иметь несколько классов с несколькими открытыми методами, помеченными заметкой `@FunctionName`.
+Если вы не знакомы с функциями Azure в качестве разработчика Java, сначала ознакомьтесь с одной из следующих статей:
 
-В этой статье предполагается, что вы уже прочли [руководство для разработчиков по Функциям Azure](functions-reference.md). Также нужно выполнить инструкции одного из следующих кратких руководств по Функциям Azure: [Создание первой функции Java с помощью Visual Studio Code](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java) или [Создание первой функции Java с помощью командной строки с использованием Maven](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-java).
+| Начало работы | Основные понятия| 
+| -- | -- |  
+| <ul><li>[Функция Java с использованием Visual Studio Code](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java)</li><li>[Функция Java/Maven с терминалом/Командная строка](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-java)</li><li>[Функция Java с использованием Gradle](functions-create-first-java-gradle.md)</li><li>[Функция Java с использованием Eclipse](functions-create-maven-eclipse.md)</li><li>[Функция Java, использующая идею IntelliJ](functions-create-maven-intellij.md)</li></ul> | <ul><li>[Руководство для разработчиков](functions-reference.md)</li><li>[Сравнение вариантов размещения](functions-scale.md)</li><li>[&nbsp;Вопросы производительности](functions-best-practices.md)</li></ul> |
+
+## <a name="java-function-basics"></a>Основы функций Java
+
+Функцией в Java называется метод `public`, дополненный аннотацией `@FunctionName`. Такой метод определяет запись для функции Java и должен быть уникальным в пределах пакета. Пакет может иметь несколько классов с несколькими открытыми методами, заметками в `@FunctionName` . Один пакет развертывается в приложении-функции в Azure. При работе в Azure приложение функции предоставляет контекст развертывания, выполнения и управления для отдельных функций Java.
 
 ## <a name="programming-model"></a>Модель программирования 
 
@@ -48,7 +54,7 @@ mvn archetype:generate \
     -DarchetypeArtifactId=azure-functions-archetype 
 ```
 
-Чтобы приступить к использованию архетипа, воспользуйтесь [кратким руководством по Java](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-java). 
+Чтобы приступить к использованию архетипа, воспользуйтесь [кратким руководством по Java](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-java). 
 
 ## <a name="folder-structure"></a>Структура папок
 
@@ -87,9 +93,9 @@ FunctionsProject
 Используйте заметки Java, включенные в пакет [com.microsoft.azure.functions.annotation.*](/java/api/com.microsoft.azure.functions.annotation), чтобы привязать входные и выходные данные к своим методам. Дополнительные сведения см. в [справочной документации по Java](/java/api/com.microsoft.azure.functions.annotation).
 
 > [!IMPORTANT] 
-> Чтобы локально обрабатывать триггеры хранилища BLOB-объектов, очередей или таблиц Azure, необходимо указать учетную запись хранения Azure в файле [local.settings.json](/azure/azure-functions/functions-run-local#local-settings-file).
+> Чтобы локально обрабатывать триггеры хранилища BLOB-объектов, очередей или таблиц Azure, необходимо указать учетную запись хранения Azure в файле [local.settings.json](./functions-run-local.md#local-settings-file).
 
-Пример.
+Пример
 
 ```java
 public class Function {
@@ -125,9 +131,58 @@ public class Function {
 
 ```
 
+## <a name="java-versions"></a>Версии Java
+
+_Поддержка Java 11 сейчас доступна в предварительной версии_
+
+Версия Java, используемая при создании приложения-функции, в которой выполняются функции в Azure, указывается в файле pom.xml. Maven архетипа в настоящее время создает pom.xml для Java 8, который можно изменить перед публикацией. Версия Java в pom.xml должна соответствовать версии, на которой локально разрабатывается и протестировано приложение. 
+
+### <a name="supported-versions"></a>Поддерживаемые версии
+
+В следующей таблице показаны текущие поддерживаемые версии Java для каждой основной версии среды выполнения функций по операционной системе:
+
+| Версия службы "Функции" | Версии Java (Windows) | Версии Java (Linux) |
+| ----- | ----- | --- |
+| 3.x | 11 (Предварительная версия)<br/>8<sup>\*</sup> | 11 (Предварительная версия)<br/>8 |
+| 2.x | 8 | н/д |
+
+<sup>\*</sup>Это текущее значение по умолчанию для pom.xml, созданного архетипаом Maven.
+
+### <a name="specify-the-deployment-version"></a>Укажите версию развертывания
+
+В настоящее время Maven архетипа создает pom.xml, предназначенный для Java 8. Чтобы создать приложение-функцию, запускающее Java 11, необходимо обновить следующие элементы в pom.xml.
+
+| Элемент |  Значение Java 8 | Значение Java 11 | Описание |
+| ---- | ---- | ---- | --- |
+| **`Java.version`** | 1.8 | 11 | Версия Java, используемая подключаемым модулем Maven-компилятора. |
+| **`JavaVersion`** | 8 | 11 | Версия Java, размещенная в приложении функции в Azure. |
+
+В следующих примерах показаны параметры для Java 8 в соответствующих разделах файла pom.xml:
+
+#### `Java.version`
+:::code language="xml" source="~/functions-quickstart-java/functions-add-output-binding-storage-queue/pom.xml" range="12-19" highlight="14":::
+
+#### `JavaVersion`
+:::code language="xml" source="~/functions-quickstart-java/functions-add-output-binding-storage-queue/pom.xml" range="77-85" highlight="80":::
+
+> [!IMPORTANT]
+> Необходимо правильно установить JAVA_HOME переменную среды в каталог JDK, используемый во время компиляции кода с помощью Maven. Убедитесь, что версия JDK не меньше максимальной, чем значение `Java.version` параметра. 
+
+### <a name="specify-the-deployment-os"></a>Укажите ОС развертывания
+
+Maven также позволяет указать операционную систему, в которой выполняется приложение функции в Azure. Используйте `os` элемент, чтобы выбрать операционную систему. 
+
+| Элемент |  Windows | Linux | Docker |
+| ---- | ---- | ---- | --- |
+| **`os`** | Windows | Linux | docker |
+
+В следующем примере показан параметр операционной системы в `runtime` разделе файла pom.xml:
+
+:::code language="xml" source="~/functions-quickstart-java/functions-add-output-binding-storage-queue/pom.xml" range="77-85" highlight="79":::
+ 
 ## <a name="jdk-runtime-availability-and-support"></a>Обеспечения доступности и предоставления поддержки времени выполнения пакета JDK 
 
-Для локальной разработки приложений-функций Java примените пакеты JDK [Azul Zulu Enterprise for Azure](https://assets.azul.com/files/Zulu-for-Azure-FAQ.pdf) для Java 8, которые можно скачать из [Azul Systems](https://www.azul.com/downloads/azure-only/zulu/). Функции Azure используют среду выполнения Azul Java 8 JDK, если вы развертываете приложения-функции в облако.
+Для локальной разработки приложений функций Java Скачайте и используйте соответствующее [Azul Zulu Enterprise для Azure](https://assets.azul.com/files/Zulu-for-Azure-FAQ.pdf) Java JDK от [Azul Systems](https://www.azul.com/downloads/azure-only/zulu/). В функциях Azure используется Azul Java JDK Runtime при развертывании приложения функции в облаке.
 
 [Поддержка Azure](https://azure.microsoft.com/support/) для устранения проблем с пакетами JDK и приложениями-функциями предоставляется, если у вас есть [соответствующий план поддержки](https://azure.microsoft.com/support/plans/).
 
@@ -334,7 +389,7 @@ public class Function {
 
 ## <a name="metadata"></a>Метаданные
 
-Несколько триггеров отправляют [метаданные триггеров](/azure/azure-functions/functions-triggers-bindings) вместе с входными данными. Вы можете использовать аннотацию `@BindingName` для привязки к метаданным триггера.
+Несколько триггеров отправляют [метаданные триггеров](./functions-triggers-bindings.md) вместе с входными данными. Вы можете использовать аннотацию `@BindingName` для привязки к метаданным триггера.
 
 
 ```Java

@@ -11,16 +11,17 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: 523fd3103585865a969f6463b3dc41fe362b9130
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e76ccc83be8f269cb14826b5e3e8873d4c7c427a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84324731"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87045031"
 ---
 # <a name="tutorial-implement-a-geo-distributed-database-azure-sql-database"></a>Учебник. Реализация геораспределенной базы данных (база данных SQL Azure)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-Настройте базу данных в базе данных SQL и клиентском приложении для отработки отказа в удаленный регион и протестируйте план отработки отказа. Вы научитесь:
+Настройте базу данных в базе данных SQL и клиентском приложении для отработки отказа в удаленный регион и протестируйте план отработки отказа. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 >
@@ -39,7 +40,7 @@ ms.locfileid: "84324731"
 
 Для работы с этим руководством необходимо убедиться, что установлены следующие компоненты:
 
-- [Azure PowerShell](/powershell/azureps-cmdlets-docs)
+- [Azure PowerShell](/powershell/azure/)
 - Отдельная база данных в базе данных SQL Azure. Чтобы создать ее, можно использовать:
   - [Портал Azure](single-database-create-quickstart.md)
   - [CLI Azure.](az-cli-script-samples-content-guide.md)
@@ -367,7 +368,7 @@ az sql failover-group show --name $failoverGroup --resource-group $resourceGroup
 
 * * *
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы настроили базу данных в базе данных SQL Azure и приложение для отработки отказа в удаленный регион и проверили план отработки отказа. Вы ознакомились с выполнением следующих задач:
 

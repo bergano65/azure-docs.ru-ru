@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 88f06bd30c97f857cd5a81068322a95c480a7b34
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 3b86c249630f7bfa5c2d319577c66d750b0f6268
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86187427"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87045909"
 ---
 # <a name="azure-security-baseline-for-automation"></a>Базовый уровень безопасности Azure для автоматизации
 
@@ -918,7 +918,7 @@ ms.locfileid: "86187427"
 
 * [Действия политик Azure](../governance/policy/concepts/effects.md)
 
-* [Развертывание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](./automation-create-account-template.md#deploy-the-template)
+* [Развертывание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](./quickstart-create-automation-account-template.md#deploy-the-template)
 
 * [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-samples.md)
 
@@ -1064,7 +1064,7 @@ ms.locfileid: "86187427"
 
 **Руководство**. Реализуйте сканер учетных данных для обнаружения учетных данных в коде. Сканер учетных данных также рекомендует перемещать обнаруженные учетные данные в более безопасные расположения, такие как Azure Key Vault.
 
-* [Как настроить сканер учетных данных](https://secdevtools.azurewebsites.net/helpcredscan.htm)
+* [Как настроить сканер учетных данных](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -1124,7 +1124,7 @@ ms.locfileid: "86187427"
 
 * [Справочник по шаблону Azure Resource Manager для ресурсов службы автоматизации Azure](/azure/templates/microsoft.automation/allversions)
 
-* [Создание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](./automation-create-account-template.md)
+* [Создание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](./quickstart-create-automation-account-template.md)
 
 * [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](../azure-resource-manager/templates/export-template-portal.md)
 
@@ -1150,7 +1150,7 @@ ms.locfileid: "86187427"
 
 * [Справочник по шаблону Azure Resource Manager для ресурсов службы автоматизации Azure](/azure/templates/microsoft.automation/allversions)
 
-* [Создание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](./automation-create-account-template.md)
+* [Создание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](./quickstart-create-automation-account-template.md)
 
 * [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](../azure-resource-manager/templates/export-template-portal.md)
 
@@ -1232,7 +1232,7 @@ ms.locfileid: "86187427"
 
 ### <a name="103-test-security-response-procedures"></a>10.3. Проверка процедур реагирования на угрозы
 
-**Руководство**. Выполняйте упражнения, чтобы периодически тестировать возможности ваших систем реагировать на угрозы для защиты ресурсов Azure. Выявите слабые точки и пробелов и пересмотрите план по мере необходимости.
+**Руководство**. проведение упражнений по тестированию возможностей реагирования на инциденты систем с регулярным интервалом для защиты ресурсов Azure. Выявите слабые точки и пробелов и пересмотрите план по мере необходимости.
 
 * [Публикация NIST — руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей](https://csrc.nist.gov/publications/detail/sp/800-84/final)
 

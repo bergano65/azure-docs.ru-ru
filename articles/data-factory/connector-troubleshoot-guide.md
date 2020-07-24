@@ -5,15 +5,16 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 01/09/2020
+ms.date: 07/20/2020
 ms.author: jingwang
 ms.reviewer: craigg
 ms.custom: has-adal-ref
-ms.openlocfilehash: a1b2f74af02db1560dbcdd0bf0c72976dc6dcea8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c8edb36345de4516077b3c857cff33389062cc7f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84022339"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87044541"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Устранение неполадок с соединителями Фабрики данных Azure
 
@@ -156,12 +157,28 @@ ms.locfileid: "84022339"
 - **Сообщение**: `Error occurred when trying to upload a file. It's possible because you have multiple concurrent copy activities runs writing to the same file '%name;'. Check your ADF configuration.`
 
 
-### <a name="error-code--adlsgen2timeouterror"></a>Код ошибки:  AdlsGen2TimeoutError
+### <a name="error-code-adlsgen2timeouterror"></a>Код ошибки: AdlsGen2TimeoutError
 
 - **Сообщение**: `Request to ADLS Gen2 account '%account;' met timeout error. It is mostly caused by the poor network between the Self-hosted IR machine and the ADLS Gen2 account. Check the network to resolve such error.`
 
 
 ## <a name="azure-data-lake-storage-gen1"></a>Хранилище Azure Data Lake Storage 1-го поколения
+
+### <a name="error-message-the-underlying-connection-was-closed-could-not-establish-trust-relationship-for-the-ssltls-secure-channel"></a>Сообщение об ошибке: базовое соединение закрыто: не удалось установить доверительные отношения для защищенного канала SSL/TLS.
+
+- **Симптомы**. сбой действия копирования со следующей ошибкой: 
+
+    ```
+    Message: Failure happened on 'Sink' side. ErrorCode=UserErrorFailedFileOperation,'Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,Message=Upload file failed at path STAGING/PLANT/INDIARENEWABLE/LiveData/2020/01/14\\20200114-0701-oem_gibtvl_mannur_data_10min.csv.,Source=Microsoft.DataTransfer.ClientLibrary,''Type=System.Net.WebException,Message=The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.,Source=System,''Type=System.Security.Authentication.AuthenticationException,Message=The remote certificate is invalid according to the validation procedure.,Source=System,'.
+    ```
+
+- **Причина**: сбой проверки сертификата во время подтверждения TLS.
+
+- **Решение**. Используйте промежуточное копирование, чтобы пропустить проверку TLS для ADLS 1-го поколения. Необходимо воспроизвести эту неполадку и собрать трассировку NetMon, а затем обратиться в службу сети, чтобы проверить конфигурацию локальной сети, следуя [этой статье](self-hosted-integration-runtime-troubleshoot-guide.md#how-to-collect-netmon-trace).
+
+
+    ![Устранение неполадок ADLS 1-го поколения](./media/connector-troubleshoot-guide/adls-troubleshoot.png)
+
 
 ### <a name="error-message-the-remote-server-returned-an-error-403-forbidden"></a>Сообщение об ошибке: Удаленный сервер вернул ошибку: (403) Запрещено
 
@@ -194,7 +211,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--sqlfailedtoconnect"></a>Код ошибки:  SqlFailedToConnect
 
-- **Сообщение**: `Cannot connect to SQL Database: '%server;', Database: '%database;', User: '%user;'. Check the linked service configuration is correct, and make sure the SQL Database firewall allows the integration runtime to access.`
+- **Сообщение.** `Cannot connect to SQL Database: '%server;', Database: '%database;', User: '%user;'. Check the linked service configuration is correct, and make sure the SQL Database firewall allows the integration runtime to access.`
 
 - **Причина.** Если в сообщении об ошибке есть слово SqlException, база данных SQL выдает ошибку, указывающую на сбой определенной операции.
 
@@ -207,7 +224,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--sqloperationfailed"></a>Код ошибки:  SqlOperationFailed
 
-- **Сообщение**: `A database operation failed. Please search error to get more details.`
+- **Сообщение.** `A database operation failed. Please search error to get more details.`
 
 - **Причина.** Если в сообщении об ошибке есть слово SqlException, база данных SQL выдает ошибку, указывающую на сбой определенной операции.
 
@@ -223,9 +240,10 @@ ms.locfileid: "84022339"
 - **Рекомендация**.  Чтобы узнать, в какой строке возникает проблема, включите функцию отказоустойчивости для действия копирования, которая может перенаправлять проблемные строки в хранилище для дальнейшего изучения. Справочный документ: https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance.
 
 
+
 ### <a name="error-code--sqlunauthorizedaccess"></a>Код ошибки:  SqlUnauthorizedAccess
 
-- **Сообщение**: `Cannot connect to '%connectorName;'. Detail Message: '%message;'`
+- **Сообщение.** `Cannot connect to '%connectorName;'. Detail Message: '%message;'`
 
 - **Причина.** Учетные данные неверны, или учетная запись входа не может получить доступ к базе данных SQL.
 
@@ -234,7 +252,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--sqlopenconnectiontimeout"></a>Код ошибки:  SqlOpenConnectionTimeout
 
-- **Сообщение**: `Open connection to database timeout after '%timeoutValue;' seconds.`
+- **Сообщение.** `Open connection to database timeout after '%timeoutValue;' seconds.`
 
 - **Причина.** Мог произойти временный сбой базы данных SQL.
 
@@ -243,7 +261,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--sqlautocreatetabletypemapfailed"></a>Код ошибки:  SqlAutoCreateTableTypeMapFailed
 
-- **Сообщение**: `Type '%dataType;' in source side cannot be mapped to a type that supported by sink side(column name:'%columnName;') in autocreate table.`
+- **Сообщение.** `Type '%dataType;' in source side cannot be mapped to a type that supported by sink side(column name:'%columnName;') in autocreate table.`
 
 - **Причина.** Таблица автоматического создания не соответствует требованию к источнику.
 
@@ -283,7 +301,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--sqlinvalidcolumnname"></a>Код ошибки:  SqlInvalidColumnName
 
-- **Сообщение**: `Column '%column;' does not exist in the table '%tableName;', ServerName: '%serverName;', DatabaseName: '%dbName;'.`
+- **Сообщение.** `Column '%column;' does not exist in the table '%tableName;', ServerName: '%serverName;', DatabaseName: '%dbName;'.`
 
 - **Причина.** Не удается найти столбец. Возможно, конфигурация неправильна.
 
@@ -292,12 +310,12 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--sqlcolumnnamemismatchbycasesensitive"></a>Код ошибки:  SqlColumnNameMismatchByCaseSensitive
 
-- **Сообщение**: `Column '%column;' in DataSet '%dataSetName;' cannot be found in physical SQL Database. Column matching is case-sensitive. Column '%columnInTable;' appears similar. Check the DataSet(s) configuration to proceed further.`
+- **Сообщение.** `Column '%column;' in DataSet '%dataSetName;' cannot be found in physical SQL Database. Column matching is case-sensitive. Column '%columnInTable;' appears similar. Check the DataSet(s) configuration to proceed further.`
 
 
 ### <a name="error-code--sqlbatchwritetimeout"></a>Код ошибки:  SqlBatchWriteTimeout
 
-- **Сообщение**: `Timeouts in SQL write operation.`
+- **Сообщение.** `Timeouts in SQL write operation.`
 
 - **Причина.** Мог произойти временный сбой базы данных SQL.
 
@@ -319,7 +337,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--sqlbulkcopyinvalidcolumnlength"></a>Код ошибки:  SqlBulkCopyInvalidColumnLength
 
-- **Сообщение**: `SQL Bulk Copy failed due to receive an invalid column length from the bcp client.`
+- **Сообщение.** `SQL Bulk Copy failed due to receive an invalid column length from the bcp client.`
 
 - **Причина.** Не удалось выполнить массовое копирование SQL, так как от BCP-клиента получена недопустимая длина столбца.
 
@@ -371,7 +389,7 @@ ms.locfileid: "84022339"
 
 - **Решение**. В приемнике действия копирования в разделе параметров PolyBase задайте для параметра, определяющего **использование типа по умолчанию**, значение false.
 
-### <a name="error-message-java-exception-messagehdfsbridgecreaterecordreader"></a>Сообщение об ошибке: Сообщение об исключении Java:HdfsBridge::CreateRecordReader
+### <a name="error-message-java-exception-message-hdfsbridgecreaterecordreader"></a>Сообщение об ошибке: сообщение исключения Java: Хдфсбридже:: Креатерекордреадер
 
 - **Проблема.** Данные копируются в Хранилище данных SQL Azure с помощью PolyBase, и при этом возникает следующая ошибка:
 
@@ -423,14 +441,14 @@ ms.locfileid: "84022339"
 
 - **Сообщение**: `The name of column index %index; is empty. Make sure column name is properly specified in the header row.`
 
-- **Причина.** Если в действии задать firstRowAsHeader, в качестве имени столбца будет использоваться первая строка. Эта ошибка означает, что первая строка содержит пустое значение. Пример: "ColumnA,,ColumnB".
+- **Причина.** Если в действии задать firstRowAsHeader, в качестве имени столбца будет использоваться первая строка. Эта ошибка означает, что первая строка содержит пустое значение. Например: "Column a, Столбецb".
 
 - **Рекомендация**.  Проверьте первую строку и исправьте пустое значение.
 
 
 ### <a name="error-code--delimitedtextmorecolumnsthandefined"></a>Код ошибки:  DelimitedTextMoreColumnsThanDefined
 
-- **Сообщение**: `Error found when processing '%function;' source '%name;' with row number %rowCount;: found more columns than expected column count: %columnCount;.`
+- **Сообщение.** `Error found when processing '%function;' source '%name;' with row number %rowCount;: found more columns than expected column count: %columnCount;.`
 
 - **Причина.** Число столбцов в проблемной строке больше, чем в первой. Это может быть вызвано проблемой с данными или неправильными настройками разделителей столбцов или символов кавычек.
 
@@ -447,17 +465,17 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--delimitedtextincorrectrowdelimiter"></a>Код ошибки:  DelimitedTextIncorrectRowDelimiter
 
-- **Сообщение**: `The specified row delimiter %rowDelimiter; is incorrect. Cannot detect a row after parse %size; MB data.`
+- **Сообщение.** `The specified row delimiter %rowDelimiter; is incorrect. Cannot detect a row after parse %size; MB data.`
 
 
 ### <a name="error-code--delimitedtexttoolargecolumncount"></a>Код ошибки:  DelimitedTextTooLargeColumnCount
 
-- **Сообщение**: `Column count reaches limitation when deserializing csv file. Maximum size is '%size;'. Check the column delimiter and row delimiter provided. (Column delimiter: '%columnDelimiter;', Row delimiter: '%rowDelimiter;')`
+- **Сообщение.** `Column count reaches limitation when deserializing csv file. Maximum size is '%size;'. Check the column delimiter and row delimiter provided. (Column delimiter: '%columnDelimiter;', Row delimiter: '%rowDelimiter;')`
 
 
 ### <a name="error-code--delimitedtextinvalidsettings"></a>Код ошибки:  DelimitedTextInvalidSettings
 
-- **Сообщение**: `%settingIssues;`
+- **Сообщение.** `%settingIssues;`
 
 
 
@@ -465,7 +483,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--dynamicscreateserviceclienterror"></a>Код ошибки:  DynamicsCreateServiceClientError
 
-- **Сообщение**: `This is a transient issue on dynamics server side. Try to rerun the pipeline.`
+- **Сообщение.** `This is a transient issue on dynamics server side. Try to rerun the pipeline.`
 
 - **Причина.** Это временная проблема на стороне сервера Dynamics.
 
@@ -497,17 +515,17 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--jsonconflictpartitiondiscoveryschema"></a>Код ошибки:  JsonConflictPartitionDiscoverySchema
 
-- **Сообщение**: `Conflicting partition column names detected.'%schema;', '%partitionDiscoverySchema;'`
+- **Сообщение.** `Conflicting partition column names detected.'%schema;', '%partitionDiscoverySchema;'`
 
 
 ### <a name="error-code--jsoninvaliddataformat"></a>Код ошибки:  JsonInvalidDataFormat
 
-- **Сообщение**: `Error occurred when deserializing source JSON file '%fileName;'. Check if the data is in valid JSON object format.`
+- **Сообщение.** `Error occurred when deserializing source JSON file '%fileName;'. Check if the data is in valid JSON object format.`
 
 
 ### <a name="error-code--jsoninvaliddatamixedarrayandobject"></a>Код ошибки:  JsonInvalidDataMixedArrayAndObject
 
-- **Сообщение**: `Error occurred when deserializing source JSON file '%fileName;'. The JSON format doesn't allow mixed arrays and objects.`
+- **Сообщение.** `Error occurred when deserializing source JSON file '%fileName;'. The JSON format doesn't allow mixed arrays and objects.`
 
 
 
@@ -515,7 +533,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--parquetjavainvocationexception"></a>Код ошибки:  ParquetJavaInvocationException
 
-- **Сообщение**: `An error occurred when invoking java, message: %javaException;.`
+- **Сообщение.** `An error occurred when invoking java, message: %javaException;.`
 
 - **Причина.** Если в сообщении об ошибке есть строки "java.lang.OutOfMemory", "пространство кучи Java" и "doubleCapacity", обычно это ошибка управления памятью в старой версии среды выполнения интеграции.
 
@@ -532,7 +550,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--parquetinvalidfile"></a>Код ошибки:  ParquetInvalidFile
 
-- **Сообщение**: `File is not a valid parquet file.`
+- **Сообщение.** `File is not a valid parquet file.`
 
 - **Причина.** Ошибка в файле Parquet.
 
@@ -541,7 +559,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--parquetnotsupportedtype"></a>Код ошибки:  ParquetNotSupportedType
 
-- **Сообщение**: `Unsupported Parquet type. PrimitiveType: %primitiveType; OriginalType: %originalType;.`
+- **Сообщение.** `Unsupported Parquet type. PrimitiveType: %primitiveType; OriginalType: %originalType;.`
 
 - **Причина.** Формат Parquet не поддерживается в Фабрике данных Azure.
 
@@ -550,7 +568,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--parquetmisseddecimalprecisionscale"></a>Код ошибки:  ParquetMissedDecimalPrecisionScale
 
-- **Сообщение**: `Decimal Precision or Scale information is not found in schema for column: %column;.`
+- **Сообщение.** `Decimal Precision or Scale information is not found in schema for column: %column;.`
 
 - **Причина.** Была предпринята попытка проанализировать точность числа и количество знаков после запятой, но эти сведения не были предоставлены.
 
@@ -559,7 +577,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--parquetinvaliddecimalprecisionscale"></a>Код ошибки:  ParquetInvalidDecimalPrecisionScale
 
-- **Сообщение**: `Invalid Decimal Precision or Scale. Precision: %precision; Scale: %scale;.`
+- **Сообщение.** `Invalid Decimal Precision or Scale. Precision: %precision; Scale: %scale;.`
 
 - **Причина.** Недопустимая схема.
 
@@ -577,7 +595,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--parquetinvaliddataformat"></a>Код ошибки:  ParquetInvalidDataFormat
 
-- **Сообщение**: `Incorrect format of %srcValue; for converting to %dstType;.`
+- **Сообщение.** `Incorrect format of %srcValue; for converting to %dstType;.`
 
 - **Причина.** Невозможно преобразовать данные в тип, указанный в mappings.source.
 
@@ -586,7 +604,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--parquetdatacountnotmatchcolumncount"></a>Код ошибки:  ParquetDataCountNotMatchColumnCount
 
-- **Сообщение**: `The data count in a row '%sourceColumnCount;' does not match the column count '%sinkColumnCount;' in given schema.`
+- **Сообщение.** `The data count in a row '%sourceColumnCount;' does not match the column count '%sinkColumnCount;' in given schema.`
 
 - **Причина.** Несоответствие числа столбцов в источнике и приемнике
 
@@ -604,7 +622,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--parquetbridgeinvaliddata"></a>Код ошибки:  ParquetBridgeInvalidData
 
-- **Сообщение**: `%message;`
+- **Сообщение.** `%message;`
 
 - **Причина.** Значение данных превысило ограничение.
 
@@ -613,7 +631,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--parquetunsupportedinterpretation"></a>Код ошибки:  ParquetUnsupportedInterpretation
 
-- **Сообщение**: `The given interpretation '%interpretation;' of parquet format is not supported.`
+- **Сообщение.** `The given interpretation '%interpretation;' of parquet format is not supported.`
 
 - **Причина.** Неподдерживаемый сценарий
 
@@ -622,7 +640,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--parquetunsupportfilelevelcompressionoption"></a>Код ошибки:  ParquetUnsupportFileLevelCompressionOption
 
-- **Сообщение**: `File level compression is not supported for Parquet.`
+- **Сообщение.** `File level compression is not supported for Parquet.`
 
 - **Причина.** Неподдерживаемый сценарий
 
@@ -634,7 +652,7 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--jrenotfound"></a>Код ошибки:  JreNotFound
 
-- **Сообщение**: `Java Runtime Environment cannot be found on the Self-hosted Integration Runtime machine. It is required for parsing or writing to Parquet/ORC files. Make sure Java Runtime Environment has been installed on the Self-hosted Integration Runtime machine.`
+- **Сообщение.** `Java Runtime Environment cannot be found on the Self-hosted Integration Runtime machine. It is required for parsing or writing to Parquet/ORC files. Make sure Java Runtime Environment has been installed on the Self-hosted Integration Runtime machine.`
 
 - **Причина.** Локальной среде выполнения интеграции не удается найти среду выполнения Java. Среда выполнения Java требуется для чтения определенного источника.
 
@@ -657,12 +675,12 @@ ms.locfileid: "84022339"
 
 ### <a name="error-code--mappinginvalidpropertywithnamepathandordinal"></a>Код ошибки:  MappingInvalidPropertyWithNamePathAndOrdinal
 
-- **Сообщение**: `Mixed properties are used to reference '%sourceOrSink;' columns/fields in copy activity mapping. Please only choose one of the three properties 'name', 'path' and 'ordinal'. The problematic mapping setting is 'name': '%name;', 'path': '%path;','ordinal': '%ordinal;'.`
+- **Сообщение.** `Mixed properties are used to reference '%sourceOrSink;' columns/fields in copy activity mapping. Please only choose one of the three properties 'name', 'path' and 'ordinal'. The problematic mapping setting is 'name': '%name;', 'path': '%path;','ordinal': '%ordinal;'.`
 
 
 ### <a name="error-code--mappingduplicatedordinal"></a>Код ошибки:  MappingDuplicatedOrdinal
 
-- **Сообщение**: `Copy activity 'mappings' has duplicated ordinal value "%Ordinal;". Fix the setting in 'mappings'.`
+- **Сообщение.** `Copy activity 'mappings' has duplicated ordinal value "%Ordinal;". Fix the setting in 'mappings'.`
 
 
 ### <a name="error-code--mappinginvalidordinalforsinkcolumn"></a>Код ошибки:  MappingInvalidOrdinalForSinkColumn

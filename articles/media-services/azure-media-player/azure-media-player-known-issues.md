@@ -6,11 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: reference
 ms.date: 05/11/2020
-ms.openlocfilehash: 4d0d56dc4d6e7fa7765439e7387d67bb80a6ec9f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a31c089971b7e70e70c5906480deb2b17c197b9f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83124641"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87043621"
 ---
 # <a name="known-issues"></a>Известные проблемы #
 
@@ -49,7 +50,7 @@ ms.locfileid: "83124641"
 
 - Ресурсы, которые являются звуками, не воспроизводятся через AzureHtml5JS Tech.
   - Если вы хотите воспроизводить ресурсы без звука, вы можете вставить чистый звук с помощью [средства обозревателя служб мультимедиа Azure](https://aka.ms/amse) .
-  - Инструкции по вставке звукового звука можно найти [здесь](https://azure.microsoft.com/documentation/articles/media-services-advanced-encoding-with-mes/#silent_audio) .
+  - Инструкции по вставке звукового звука можно найти [здесь](../previous/media-services-advanced-encoding-with-mes.md#silent_audio) .
 
 ## <a name="flash"></a>Мигание ##
 

@@ -6,11 +6,12 @@ ms.author: harelbr
 ms.topic: conceptual
 ms.date: 03/13/2020
 ms.subservice: alerts
-ms.openlocfilehash: cefccd08ea66638f08f00e280fe2704444a7f916
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b535cda8fe7d98748eb0657a599a61ed1f8549d2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79369392"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87045366"
 ---
 # <a name="create-view-and-manage-metric-alerts-using-azure-monitor"></a>Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -89,7 +90,7 @@ ms.locfileid: "79369392"
 
 ## <a name="with-azure-cli"></a>С помощью Azure CLI
 
-В предыдущих разделах были описаны способы создания, просмотра и управления правилами оповещений метрик с помощью портал Azure. В этом разделе вы узнаете, как сделать то же самое с помощью кроссплатформенного [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest). Самый быстрый способ начать использовать Azure CLI посредством [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest). В этой статье мы будем использовать Cloud Shell.
+В предыдущих разделах были описаны способы создания, просмотра и управления правилами оповещений метрик с помощью портал Azure. В этом разделе вы узнаете, как сделать то же самое с помощью кроссплатформенного [Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest). Самый быстрый способ начать использовать Azure CLI посредством [Azure Cloud Shell](../../cloud-shell/overview.md?view=azure-cli-latest). В этой статье мы будем использовать Cloud Shell.
 
 1. Перейдите в портал Azure, щелкните **Cloud Shell**.
 
@@ -133,10 +134,9 @@ ms.locfileid: "79369392"
     az monitor metrics alert delete -g {ResourceGroup} -n {AlertRuleName}
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание классического оповещения метрики с помощью шаблона Resource Manager](../../azure-monitor/platform/alerts-metric-create-templates.md).
 - [Сведения о работе оповещений метрики в Azure Monitor](alerts-metric-overview.md).
 - [Оповещения с динамическими пороговыми значениями в Azure Monitor (ограниченная закрытая предварительная версия)](alerts-dynamic-thresholds.md).
 - [Схема полезных данных](../../azure-monitor/platform/alerts-metric-near-real-time.md#payload-schema)
-

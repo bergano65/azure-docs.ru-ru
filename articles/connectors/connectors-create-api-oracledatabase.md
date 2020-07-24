@@ -7,12 +7,12 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 05/20/2020
 tags: connectors
-ms.openlocfilehash: e7055964f9515189450fac5c993f6acda946bfd4
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: f4bca70fbec5cf847a6bb5c0b97ed3496d6c2f8c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86524171"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87039990"
 ---
 # <a name="get-started-with-the-oracle-database-connector"></a>Начало работы с соединителем базы данных Oracle
 
@@ -77,7 +77,7 @@ ms.locfileid: "86524171"
 
     Следующий пример возвращает данные о задании из базы данных "Human Resources": 
 
-    ![Диалоговое окно "получить строку (Предварительная версия)" содержит два текстовых поля: "имя таблицы", которое содержит "ХРЖОБС" и раскрывающийся список, и "идентификатор строки", который содержит "SA_REP".](./media/connectors-create-api-oracledatabase/table-rowid.png)
+    ![Диалоговое окно "получить строку (Предварительная версия)" имеет два текстовых поля: "имя таблицы", которое содержит "H R", и содержит раскрывающийся список, а "строка i d", которая содержит "S A _ представитель".](./media/connectors-create-api-oracledatabase/table-rowid.png)
 
 7. На этом шаге в создаваемый рабочий процесс можно добавить любой другой соединитель. Если вы хотите проверить получение данных из Oracle, отправьте себе сообщение электронной почты с данными Oracle с помощью одного из соединителей отправки электронной почты, например Office 365 Outlook. Используйте динамические маркеры из таблицы Oracle для формирования полей `Subject` и `Body` в сообщении электронной почты:
 

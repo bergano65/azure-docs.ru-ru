@@ -7,11 +7,12 @@ ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 9a7aa512c636f700cf9c6d990814d9367007c942
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 76f73df01b34cb20be48aefa3b5b3a6392a35b8b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83125780"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87045190"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-by-using-an-azure-resource-manager-template-for-a-windows-virtual-machine-scale-set"></a>Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Azure Resource Manager для масштабируемого набора виртуальных машин Windows
 
@@ -25,9 +26,9 @@ ms.locfileid: "83125780"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
+- Подписку необходимо зарегистрировать в [Microsoft.Insights](../../azure-resource-manager/management/resource-providers-and-types.md). 
 
-- Требуется установить [Azure PowerShell](/powershell/azure) или использовать [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview). 
+- Требуется установить [Azure PowerShell](/powershell/azure) или использовать [Azure Cloud Shell](../../cloud-shell/overview.md). 
 
 - Ресурс виртуальной машины должен находиться в [регионе, поддерживающем пользовательские метрики](metrics-custom-overview.md#supported-regions).
 
@@ -292,5 +293,3 @@ ms.locfileid: "83125780"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
-
-

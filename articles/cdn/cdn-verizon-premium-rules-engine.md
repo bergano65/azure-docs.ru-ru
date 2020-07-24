@@ -7,12 +7,12 @@ ms.service: azure-cdn
 ms.topic: how-to
 ms.date: 05/31/2019
 ms.author: allensu
-ms.openlocfilehash: 3c61407b2a0c9d0423d1f856101400771e27d846
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a49912bc2275e478d657f06587c4ddc830210d3a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84887423"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87040210"
 ---
 # <a name="override-http-behavior-using-the-azure-cdn-from-verizon-premium-rules-engine"></a>Переопределение режима HTTP с помощью правил Azure CDN от Verizon Premium
 
@@ -55,7 +55,7 @@ ms.locfileid: "84887423"
     ![Параметры нового правила CDN](./media/cdn-rules-engine/cdn-new-rule.png)
    
    > [!IMPORTANT]
-   > Порядок перечисления правил влияет на способ их обработки. Последующее правило может переопределить действия, заданные предыдущим правилом.
+   > Порядок перечисления правил влияет на способ их обработки. Последующее правило может переопределить действия, заданные предыдущим правилом. Например, если имеется правило, разрешающее доступ к ресурсу на основе свойства запроса и правила, запрещающего доступ ко всем запросам, второе правило переопределяет первое из них. Правила будут переопределять предыдущие правила только в том случае, если они взаимодействуют с одними и теми же свойствами.
    >
 
 3. В поле **Имя и описание** введите имя.

@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 04/20/2020
 ms.author: juliako
-ms.openlocfilehash: 40a2510fcb6fd5fe51cebc702604e2d09df7b061
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 56c6b3732d0a77580c27f6cc8720b414e8e49d23
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84982175"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87038993"
 ---
 # <a name="azure-media-services-v3-documentation-updates"></a>Обновления документации служб мультимедиа Azure v3
 
@@ -24,9 +24,9 @@ ms.locfileid: "84982175"
 
 В этой статье рассказывается о последних обновлениях документации по службам мультимедиа версии 3.
 
-## <a name="june-2020"></a>июнь 2020 г.
+## <a name="june-2020"></a>Июнь 2020 г.
 
-* Предварительная версия функции Live Video Analytics на IoT Edge стала общедоступной. Дополнительные сведения см. в разделе " [интерактивная аналитика видео" в](https://docs.microsoft.com/azure/media-services/live-video-analytics-edge/) документации по IOT Edge.
+* Предварительная версия функции Live Video Analytics на IoT Edge стала общедоступной. Дополнительные сведения см. в разделе " [интерактивная аналитика видео" в](../live-video-analytics-edge/index.yml) документации по IOT Edge.
 * Новые краткие руководства:
 
     * [Отправка, кодирование и потоковая передача содержимого с помощью портала](manage-assets-quickstart.md)

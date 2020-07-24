@@ -13,16 +13,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 8e1aeaf105ce371e965b433ac78e2b257f4bc18b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9d73c280e3f5639b11e0d07b9ef2f775f48cd3c3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81682044"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87038494"
 ---
 # <a name="access-the-azure-media-services-api-with-azure-ad-authentication"></a>Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD  
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 API служб мультимедиа Azure — это REST API. Его можно использовать для выполнения операций с ресурсами мультимедиа с помощью REST API или доступных клиентских пакетов SDK. Службы мультимедиа Azure предлагают клиентский пакет SDK служб мультимедиа для Microsoft .NET. Чтобы получить разрешение для доступа к ресурсам служб мультимедиа и API служб мультимедиа, вы должны пройти аутентификацию. 
 
@@ -138,7 +139,7 @@ API служб мультимедиа Azure — это REST API. Его можн
 
 Если вы не используете клиентский пакет SDK служб мультимедиа для .NET, то вам необходимо вручную создать запрос маркера Azure AD, указав параметры, описанные на шаге 1. Дополнительные сведения см. в разделе [Библиотеки проверки подлинности Azure Active Directory](../../active-directory/azuread-dev/active-directory-authentication-libraries.md).
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Исключение: "Удаленный сервер возвратил ошибку: 401 - Не санкционировано"
 
@@ -148,12 +149,11 @@ API служб мультимедиа Azure — это REST API. Его можн
 
 Ниже приведены обзорные статьи, посвященные понятиям аутентификации Azure AD: 
 
-- [Основы проверки подлинности в Azure AD](../../active-directory/develop/authentication-scenarios.md)
-- [Интеграция приложений с Azure Active Directory](../../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md)
+- [Основы проверки подлинности в Azure AD](../../active-directory/develop/authentication-vs-authorization.md)
+- [Интеграция приложений с Azure Active Directory](../../active-directory/develop/quickstart-register-app.md)
 - [Управление доступом на основе ролей с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как использовать [аутентификацию Azure AD для работы с API служб мультимедиа Azure](media-services-portal-get-started-with-aad.md) с помощью портала Azure.
 * Используйте аутентификацию Azure AD для [доступа к API служб мультимедиа Azure с помощью .NET](media-services-dotnet-get-started-with-aad.md).
-

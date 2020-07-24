@@ -12,11 +12,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 06/02/2020
 ms.author: juliako
-ms.openlocfilehash: 5bd4c9aa3fde9e3fa596ce5a18b892edfab60af5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d7667f7c5194762b227c3cddd5bea5ed9d50a96e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84325071"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87042621"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Заметки о выпуске индексатора видео служб мультимедиа Azure
 
@@ -29,7 +30,19 @@ ms.locfileid: "84325071"
 * Исправления ошибок
 * Нерекомендуемые функции.
 
-## <a name="may-2020"></a>Май 2020 г.
+## <a name="june-2020"></a>Июнь 2020 г.
+
+### <a name="search-by-topics"></a>Поиск по темам
+
+Теперь можно использовать API поиска для поиска видео с конкретными разделами (только API).
+
+Разделы добавляются как часть `textScope` (необязательный параметр). Дополнительные сведения см. в разделе [API](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Search-Videos) .  
+
+### <a name="labels-enhancement"></a>Расширение меток
+
+Средство создания тегов меток Обновлено и теперь содержит больше визуальных меток, которые можно определить.
+
+## <a name="may-2020"></a>Май 2020 г.
 
 ### <a name="video-indexer-deployed-in-the-east-us"></a>Индексатор видео, развернутый в восточной части США
 
@@ -173,7 +186,7 @@ ms.locfileid: "84325071"
     
     Модель, в которой описывается тема, теперь поддерживает более глубокую детализацию таксономии IPTC. Ознакомьтесь с полными сведениями о [новых нововведениях на основе искусственного интеллекта в службах мультимедиа Azure](https://azure.microsoft.com/blog/azure-media-services-new-ai-powered-innovation/).
 
-## <a name="august-2019"></a>Август 2019 г.
+## <a name="august-2019"></a>Август 2019 г.
  
 ### <a name="video-indexer-deployed-in-uk-south"></a>Индексатор видео, развернутый в южная часть Соединенного Королевства
 

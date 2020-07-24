@@ -4,13 +4,14 @@ description: Список типов ресурсов Azure, которые мо
 author: rayne-wiselman
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 05/31/2020
+ms.date: 07/21/2020
 ms.author: raynew
-ms.openlocfilehash: 0510df504c8de70cfb6a486f394db6da65dbfce2
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 70f981f2763dd36f0f417faec6c81e168e9856e7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057693"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87040966"
 ---
 # <a name="support-for-moving-azure-resources-across-regions"></a>Поддержка перемещения ресурсов Azure в разных регионах
 
@@ -542,14 +543,14 @@ ms.locfileid: "86057693"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | servers | Если служба подготовлена с геоизбыточным хранилищем резервных копий, можно использовать геовосстановление для восстановления в других регионах. [Подробнее](../../mariadb/concepts-business-continuity.md#recover-from-an-azure-regional-data-center-outage)
+> | servers | Для перемещения существующего сервера можно использовать реплику чтения между регионами. [Подробнее.](../../postgresql/howto-move-regions-portal.md)<br/><br/> Если служба подготовлена с геоизбыточным хранилищем резервных копий, можно использовать геовосстановление для восстановления в других регионах. [Подробнее.](../../mariadb/concepts-business-continuity.md#recover-from-an-azure-regional-data-center-outage)
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | servers | Нет |  
+> | servers | Для перемещения существующего сервера можно использовать реплику чтения между регионами. [Подробнее.](../../mysql/howto-move-regions-portal.md)
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
 
@@ -557,7 +558,7 @@ ms.locfileid: "86057693"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | servergroups | Нет | 
-> | servers | Нет |  
+> | servers | Для перемещения существующего сервера можно использовать реплику чтения между регионами. Дополнительные [сведения](../../postgresql/howto-move-regions-portal.md).
 > | serversv2 | Нет | 
 
 ## <a name="microsoftdeploymentmanager"></a>Microsoft.DeploymentManager
@@ -666,14 +667,14 @@ ms.locfileid: "86057693"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | services; | Нет |  
+> | services; | нет |  
 
 ## <a name="microsofthybridcompute"></a>Microsoft.HybridCompute
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | machines | нет | 
+> | machines | Нет | 
 
 ## <a name="microsofthybriddata"></a>Microsoft.HybridData
 
@@ -717,7 +718,7 @@ ms.locfileid: "86057693"
 > | checknameavailability |  Нет.<br/><br/> IoT Central работает с географическими и не регионами.
 > | graph | Нет
 
-## <a name="microsoftiothub"></a>Microsoft. IoTHub
+## <a name="microsoftiothub"></a>Microsoft.IoTHub
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
@@ -884,7 +885,7 @@ ms.locfileid: "86057693"
 > | netappaccounts / capacitypools | Нет | 
 > | netappaccounts / capacitypools / volumes | Нет | 
 > | netappaccounts / capacitypools / volumes / mounttargets | Нет | 
-> | netappaccounts / capacitypools / volumes / snapshots | Нет | 
+> | netappaccounts / capacitypools / volumes / snapshots | нет | 
 
 ## <a name="microsoftnetwork"></a>Microsoft.Network.
 
@@ -892,7 +893,7 @@ ms.locfileid: "86057693"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | applicationgateways | Нет | 
-> | applicationgatewaywebapplicationfirewallpolicies | нет | 
+> | applicationgatewaywebapplicationfirewallpolicies | Нет | 
 > | applicationsecuritygroups |  Нет |  
 > | azurefirewalls |  Нет |  
 > | bastionhosts | Нет | 

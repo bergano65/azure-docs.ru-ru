@@ -2,13 +2,13 @@
 title: Как управлять агентом Azure Monitor для контейнеров | Документация Майкрософт
 description: В этой статье описывается управление наиболее распространенными задачами обслуживания с помощью контейнерного агента Log Analytics, используемого решением "Azure Monitor для контейнеров".
 ms.topic: conceptual
-ms.date: 06/15/2020
-ms.openlocfilehash: fc5bc0d60cb4ef1e375a997cbb3fe4bd2aed3235
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.date: 07/21/2020
+ms.openlocfilehash: 1a397dbc5ebc4952b09c504b70df6ad99c00b216
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86107416"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87041264"
 ---
 # <a name="how-to-manage-the-azure-monitor-for-containers-agent"></a>Как управлять агентом Azure Monitor для контейнеров
 
@@ -30,31 +30,12 @@ ms.locfileid: "86107416"
 
 Чтобы установить новую версию агента, выполните действия, описанные в статье о [включении мониторинга с помощью Azure CLI](container-insights-enable-new-cluster.md#enable-using-azure-cli).  
 
-После включения мониторинга может пройти около 15 минут, прежде чем вы сможете просмотреть обновленные метрики работоспособности кластера. Чтобы проверить, успешно ли обновлен агент, выполните эту команду: `kubectl logs omsagent-484hw --namespace=kube-system`.
+После включения мониторинга может пройти около 15 минут, прежде чем вы сможете просмотреть обновленные метрики работоспособности кластера. Чтобы проверить успешность обновления агента, можно выполнить одно из следующих действий.
 
-Состояние должно выглядеть примерно так, как в следующем примере, где значения *omi* и *omsagent* должны соответствовать последней версии, указанной в [журнале выпусков агентов](https://github.com/microsoft/docker-provider/tree/ci_feature_prod).  
+* Выполните команду: `kubectl get pod <omsagent-pod-name> -n kube-system -o=jsonpath='{.spec.containers[0].image}'` . В возвращенном состоянии Обратите внимание на значение в разделе **Image** for omsagent в разделе *Containers (контейнеры* ) выходных данных.
+* На вкладке **узлы** выберите узел кластера и на панели **свойства** справа запишите значение в поле **тег образа агента**.
 
-```console
-User@aksuser:~$ kubectl logs omsagent-484hw --namespace=kube-system
-:
-:
-instance of Container_HostInventory
-{
-    [Key] InstanceID=3a4407a5-d840-4c59-b2f0-8d42e07298c2
-    Computer=aks-nodepool1-39773055-0
-    DockerVersion=1.13.1
-    OperatingSystem=Ubuntu 16.04.3 LTS
-    Volume=local
-    Network=bridge host macvlan null overlay
-    NodeRole=Not Orchestrated
-    OrchestratorType=Kubernetes
-}
-Primary Workspace: b438b4f6-912a-46d5-9cb1-b44069212abc
-Status: Onboarded(OMSAgent Running)
-omi 1.4.2.5
-omsagent 1.6.0-163
-docker-cimprov 1.0.0.31
-```
+Указанная версия агента должна соответствовать последней версии, указанной на странице [журнала выпусков](https://github.com/microsoft/docker-provider/tree/ci_feature_prod) .
 
 ### <a name="upgrade-agent-on-hybrid-kubernetes-cluster"></a>Обновление агента в гибридном кластере Kubernetes
 

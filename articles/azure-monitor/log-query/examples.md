@@ -6,16 +6,17 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/16/2020
-ms.openlocfilehash: 18cd74ac9298b7dd058de2b224f677ec0d8f2d64
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 736daa8a09a8f08721c7b7d9c20f012f274b384a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79480289"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87045513"
 ---
 # <a name="azure-monitor-log-query-examples"></a>Примеры запроса журнала Azure Monitor
 Эта статья содержит несколько примеров [запросов](log-query-overview.md), составленных на основе [языка запросов Kusto](/azure/kusto/query/) для получения разных типов данных журнала из Azure Monitor. Для консолидации и анализа данных используются разные методы, и на основе этих примеров вы сможете определить, какие стратегии лучше всего подойдут под ваши конкретные требования.  
 
-Дополнительные сведения о ключевых словах, используемых в этих примерах, можно получить в [справочнике по языку Kusto](https://docs.microsoft.com/azure/kusto/query/). Изучите [эту статью](get-started-queries.md) по созданию запросов, если вы еще не работали с Azure Monitor.
+Дополнительные сведения о ключевых словах, используемых в этих примерах, можно получить в [справочнике по языку Kusto](/azure/kusto/query/). Изучите [эту статью](get-started-queries.md) по созданию запросов, если вы еще не работали с Azure Monitor.
 
 ## <a name="events"></a>События
 
@@ -150,7 +151,7 @@ AzureDiagnostics
 | summarize arg_max(TimeGenerated, *) by Category
 ```
 
-## <a name="network-monitoring"></a>Мониторинг сетей.
+## <a name="network-monitoring"></a>Мониторинг сетей
 
 ### <a name="computers-with-unhealthy-latency"></a>Компьютеры с ненормальной задержкой
 Этот пример создает список уникальных компьютеров, демонстрирующих ненормальную задержку.
@@ -374,7 +375,7 @@ suspicious_users_that_later_logged_in
 
 ## <a name="usage"></a>Использование
 
-`Usage`Тип данных можно использовать для отслеживания принимаемого объема данных по решению или типу данных. Существуют и другие способы изучения полученных томов данных по [компьютерам](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#data-volume-by-computer) или [подпискам Azure, группам ресурсов или ресурсам](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#data-volume-by-azure-resource-resource-group-or-subscription).
+`Usage`Тип данных можно использовать для отслеживания принимаемого объема данных по решению или типу данных. Существуют и другие способы изучения полученных томов данных по [компьютерам](../platform/manage-cost-storage.md#data-volume-by-computer) или [подпискам Azure, группам ресурсов или ресурсам](../platform/manage-cost-storage.md#data-volume-by-azure-resource-resource-group-or-subscription).
 
 #### <a name="data-volume-by-solution"></a>объем данных для каждого решения;
 
@@ -434,7 +435,7 @@ Update
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о языке можно получить в [справочнике по языку Kusto](/azure/kusto/query).
 - Ознакомьтесь со статьей [Начало работы с запросами журнала Azure Monitor](get-started-queries.md).

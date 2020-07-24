@@ -5,11 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 9bb22b12a7b3e972ff144bd121db4288801e2488
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 07b5ae99b98c6c6bbf4dc903cd1b583eb655a825
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81732941"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87041400"
 ---
 # <a name="troubleshooting-application-insights-agent-formerly-named-status-monitor-v2"></a>Устранение неполадок агента Application Insights (прежнее название — монитор состояния v2)
 
@@ -54,7 +55,7 @@ ms.locfileid: "81732941"
 
 ### <a name="conflict-with-iis-shared-configuration"></a>Конфликт с общей конфигурацией IIS
 
-Если у вас есть кластер веб-серверов, возможно, используется [Общая конфигурация](https://docs.microsoft.com/iis/web-hosting/configuring-servers-in-the-windows-web-platform/shared-configuration_211).
+Если у вас есть кластер веб-серверов, возможно, используется [Общая конфигурация](/iis/web-hosting/configuring-servers-in-the-windows-web-platform/shared-configuration_211).
 Не удается внедрить HttpModule в эту общую конфигурацию.
 Выполните команду enable на каждом веб-сервере, чтобы установить библиотеку DLL в глобальный кэш сборок каждого сервера.
 
@@ -80,7 +81,7 @@ ms.locfileid: "81732941"
 
     
     
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
     
 ### <a name="troubleshooting-powershell"></a>Устранение неполадок PowerShell
 
@@ -152,7 +153,7 @@ Cmdlet          Start-ApplicationInsightsMonitoringTrace           0.4.0      Az
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со [справочником по API](status-monitor-v2-overview.md#powershell-api-reference) , чтобы узнать о параметрах, которые могли быть пропущены.
 - Если вы перейдете по вопросу, не указанному здесь, вы можете связаться с нами на [GitHub](https://github.com/Microsoft/ApplicationInsights-Home/issues).

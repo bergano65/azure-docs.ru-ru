@@ -3,819 +3,125 @@ title: Создание функций определения пользоват
 description: Сведения о функциях, используемых при создании определений пользовательского интерфейса для управляемых приложений Azure.
 author: tfitzmac
 ms.topic: conceptual
-ms.date: 10/12/2017
+ms.date: 07/13/2020
 ms.author: tomfitz
-ms.openlocfilehash: a93f4ff2ddc0737692de9e5619cf7a7521936224
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e4255f0d42e28a72ad55d9b7f81d0dc49b2950cb
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82980819"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87040993"
 ---
 # <a name="createuidefinition-functions"></a>Функции CreateUiDefinition
-Этот раздел содержит подписи для всех поддерживаемых функций CreateUiDefinition.
 
-Чтобы использовать функцию, заключите вызов в квадратные скобки. Пример:
+В этой статье представлен обзор поддерживаемых функций для CreateUiDefinition.
+
+## <a name="function-syntax"></a>Синтаксис функции
+
+Чтобы использовать функцию, заключите вызов в квадратные скобки. Например.
 
 ```json
 "[function()]"
 ```
 
-На строки и другие функции можно ссылаться как на параметры функции, но строки должны быть заключены в одинарные кавычки. Пример:
+На строки и другие функции можно ссылаться как на параметры функции, но строки должны быть заключены в одинарные кавычки. Например.
 
 ```json
-"[fn1(fn2(), 'foobar')]"
+"[fn1(fn2(), 'demo text')]"
 ```
 
-Там, где это применимо, вы можете ссылаться на свойства выходных данных функции с помощью оператора "точка". Пример:
+Там, где это применимо, вы можете ссылаться на свойства выходных данных функции с помощью оператора "точка". Например.
 
 ```json
 "[func().prop1]"
 ```
 
-## <a name="referencing-functions"></a>Функции для ссылки
-Эти функции можно использовать для ссылки на выходные данные из свойств или контекста CreateUiDefinition.
-
-### <a name="basics"></a>basics
-Возвращает значения выходных данных элемента, определенного на шаге basics.
-
-В следующем примере возвращаются выходные данные элемента с именем `foo` на шаге basics.
-
-```json
-"[basics('foo')]"
-```
-
-### <a name="steps"></a>steps
-Возвращает значения выходных данных элемента, определенного на указанном шаге. Чтобы получить выходные значения элементов на шаге basics, используйте `basics()`.
-
-В следующем примере возвращаются выходные данные элемента с именем `bar` на шаге с именем `foo`.
-
-```json
-"[steps('foo').bar]"
-```
-
-### <a name="location"></a>location
-Возвращает расположение, выбранное на шаге basics или в текущем контексте.
-
-В следующем примере может вернуться `"westus"`.
-
-```json
-"[location()]"
-```
-
-## <a name="string-functions"></a>Строковые функции
-Эти функции могут использоваться только со строками JSON.
-
-### <a name="concat"></a>concat
-Объединяет одну или несколько строк.
-
-Например, если выходным значением `element1` является `"bar"`, то этот пример возвращает строку `"foobar!"`:
-
-```json
-"[concat('foo', steps('step1').element1, '!')]"
-```
-
-### <a name="substring"></a>substring
-Возвращает подстроку указанной строки. Подстрока начинается с указанного индекса и имеет указанную длину.
-
-В следующем примере возвращается `"ftw"`.
-
-```json
-"[substring('azure-ftw!!!1one', 6, 3)]"
-```
-
-### <a name="replace"></a>replace
-Возвращает строку, в которой все вхождения указанной строки в текущей строке заменены другой строкой.
-
-В следующем примере возвращается `"Everything is awesome!"`.
-
-```json
-"[replace('Everything is terrible!', 'terrible', 'awesome')]"
-```
-
-### <a name="guid"></a>guid
-Создает глобально уникальную строку (идентификатор GUID).
-
-В следующем примере может вернуться `"c7bc8bdc-7252-4a82-ba53-7c468679a511"`.
-
-```json
-"[guid()]"
-```
-
-### <a name="tolower"></a>toLower
-Возвращает строку, преобразованную в нижний регистр.
-
-В следующем примере возвращается `"foobar"`.
-
-```json
-"[toLower('FOOBAR')]"
-```
-
-### <a name="toupper"></a>toUpper
-Возвращает строку, преобразованную в верхний регистр.
-
-В следующем примере возвращается `"FOOBAR"`.
-
-```json
-"[toUpper('foobar')]"
-```
-
 ## <a name="collection-functions"></a>Функции для коллекций
+
 Эти функции могут использоваться с коллекциями, такими как строки, массивы и объекты JSON.
 
-### <a name="contains"></a>содержит
-Возвращает `true`, если строка содержит указанную подстроку, массив содержит указанное значение или объект содержит указанный ключ.
-
-#### <a name="example-1-string"></a>Пример 1: строка
-В следующем примере возвращается `true`.
-
-```json
-"[contains('foobar', 'foo')]"
-```
-
-#### <a name="example-2-array"></a>Пример 2: массив
-Предположим, что `element1` возвращает `[1, 2, 3]`. В следующем примере возвращается `false`.
-
-```json
-"[contains(steps('foo').element1, 4)]"
-```
-
-#### <a name="example-3-object"></a>Пример 3: объект
-Предположим, что `element1` возвращает:
-
-```json
-{
-  "key1": "foobar",
-  "key2": "raboof"
-}
-```
-
-В следующем примере возвращается `true`.
-
-```json
-"[contains(steps('foo').element1, 'key1')]"
-```
-
-### <a name="length"></a>length
-Возвращает количество символов в строке, количество значений в массиве или количество ключей в объекте.
-
-#### <a name="example-1-string"></a>Пример 1: строка
-В следующем примере возвращается `6`.
-
-```json
-"[length('foobar')]"
-```
-
-#### <a name="example-2-array"></a>Пример 2: массив
-Предположим, что `element1` возвращает `[1, 2, 3]`. В следующем примере возвращается `3`.
-
-```json
-"[length(steps('foo').element1)]"
-```
-
-#### <a name="example-3-object"></a>Пример 3: объект
-Предположим, что `element1` возвращает:
-
-```json
-{
-  "key1": "foobar",
-  "key2": "raboof"
-}
-```
-
-В следующем примере возвращается `2`.
-
-```json
-"[length(steps('foo').element1)]"
-```
-
-### <a name="empty"></a>empty
-Возвращает `true`, если строка, массив или объект имеет значение null или является пустым.
-
-#### <a name="example-1-string"></a>Пример 1: строка
-В следующем примере возвращается `true`.
-
-```json
-"[empty('')]"
-```
-
-#### <a name="example-2-array"></a>Пример 2: массив
-Предположим, что `element1` возвращает `[1, 2, 3]`. В следующем примере возвращается `false`.
-
-```json
-"[empty(steps('foo').element1)]"
-```
-
-#### <a name="example-3-object"></a>Пример 3: объект
-Предположим, что `element1` возвращает:
-
-```json
-{
-  "key1": "foobar",
-  "key2": "raboof"
-}
-```
-
-В следующем примере возвращается `false`.
-
-```json
-"[empty(steps('foo').element1)]"
-```
-
-#### <a name="example-4-null-and-undefined"></a>Пример 4: null и не определено
-Предположим, что `element1` имеет значение `null` или не определено. В следующем примере возвращается `true`.
-
-```json
-"[empty(steps('foo').element1)]"
-```
-
-### <a name="first"></a>first
-Возвращает первый знак указанной строки, первое значение указанного массива или первый ключ и значение указанного объекта.
-
-#### <a name="example-1-string"></a>Пример 1: строка
-В следующем примере возвращается `"f"`.
-
-```json
-"[first('foobar')]"
-```
-
-#### <a name="example-2-array"></a>Пример 2: массив
-Предположим, что `element1` возвращает `[1, 2, 3]`. В следующем примере возвращается `1`.
-
-```json
-"[first(steps('foo').element1)]"
-```
-
-#### <a name="example-3-object"></a>Пример 3: объект
-Предположим, что `element1` возвращает:
-
-```json
-{
-  "key1": "foobar",
-  "key2": "raboof"
-}
-```
-В следующем примере возвращается `{"key1": "foobar"}`.
-
-```json
-"[first(steps('foo').element1)]"
-```
-
-### <a name="last"></a>last
-Возвращает последний знак указанной строки, последнее значение указанного массива или последний ключ и значение указанного объекта.
-
-#### <a name="example-1-string"></a>Пример 1: строка
-В следующем примере возвращается `"r"`.
-
-```json
-"[last('foobar')]"
-```
-
-#### <a name="example-2-array"></a>Пример 2: массив
-Предположим, что `element1` возвращает `[1, 2, 3]`. В следующем примере возвращается `2`.
-
-```json
-"[last(steps('foo').element1)]"
-```
-
-#### <a name="example-3-object"></a>Пример 3: объект
-Предположим, что `element1` возвращает:
-
-```json
-{
-  "key1": "foobar",
-  "key2": "raboof"
-}
-```
-
-В следующем примере возвращается `{"key2": "raboof"}`.
-
-```json
-"[last(steps('foo').element1)]"
-```
-
-### <a name="take"></a>take
-Возвращает указанное число последовательных знаков, считая от начала строки, указанное число непрерывных значений от начала массива или указанное число последовательных ключей и значений от начала объекта.
-
-#### <a name="example-1-string"></a>Пример 1: строка
-В следующем примере возвращается `"foo"`.
-
-```json
-"[take('foobar', 3)]"
-```
-
-#### <a name="example-2-array"></a>Пример 2: массив
-Предположим, что `element1` возвращает `[1, 2, 3]`. В следующем примере возвращается `[1, 2]`.
-
-```json
-"[take(steps('foo').element1, 2)]"
-```
-
-#### <a name="example-3-object"></a>Пример 3: объект
-Предположим, что `element1` возвращает:
-
-```json
-{
-  "key1": "foobar",
-  "key2": "raboof"
-}
-```
-
-В следующем примере возвращается `{"key1": "foobar"}`.
-
-```json
-"[take(steps('foo').element1, 1)]"
-```
-
-### <a name="skip"></a>skip
-Пропускает заданное число элементов в коллекции и возвращает остальные элементы.
-
-#### <a name="example-1-string"></a>Пример 1: строка
-В следующем примере возвращается `"bar"`.
-
-```json
-"[skip('foobar', 3)]"
-```
-
-#### <a name="example-2-array"></a>Пример 2: массив
-Предположим, что `element1` возвращает `[1, 2, 3]`. В следующем примере возвращается `[3]`.
-
-```json
-"[skip(steps('foo').element1, 2)]"
-```
-
-#### <a name="example-3-object"></a>Пример 3: объект
-Предположим, что `element1` возвращает:
-
-```json
-{
-  "key1": "foobar",
-  "key2": "raboof"
-}
-```
-В следующем примере возвращается `{"key2": "raboof"}`.
-
-```json
-"[skip(steps('foo').element1, 1)]"
-```
-
-## <a name="logical-functions"></a>Логические функции
-Эти функции можно использовать в условных выражениях. Некоторые функции не поддерживают все типы данных JSON.
-
-### <a name="equals"></a>equals (равно)
-Возвращает `true`, если оба параметра имеют один и тот же тип и значение. Эта функция поддерживает все типы данных JSON.
-
-В следующем примере возвращается `true`.
-
-```json
-"[equals(0, 0)]"
-```
-
-В следующем примере возвращается `true`.
-
-```json
-"[equals('foo', 'foo')]"
-```
-
-В следующем примере возвращается `false`.
-
-```json
-"[equals('abc', ['a', 'b', 'c'])]"
-```
-
-### <a name="less"></a>less
-Возвращает `true`, если первый параметр строго меньше значения второго параметра. Эта функция поддерживает только параметры типа "число" и "строка".
-
-В следующем примере возвращается `true`.
-
-```json
-"[less(1, 2)]"
-```
-
-В следующем примере возвращается `false`.
-
-```json
-"[less('9', '10')]"
-```
-
-### <a name="lessorequals"></a>lessOrEquals
-Возвращает `true`, если первый параметр меньше или равен значению второго параметра. Эта функция поддерживает только параметры типа "число" и "строка".
-
-В следующем примере возвращается `true`.
-
-```json
-"[lessOrEquals(2, 2)]"
-```
-
-### <a name="greater"></a>greater
-Возвращает `true`, если первый параметр строго больше значения второго параметра. Эта функция поддерживает только параметры типа "число" и "строка".
-
-В следующем примере возвращается `false`.
-
-```json
-"[greater(1, 2)]"
-```
-
-В следующем примере возвращается `true`.
-
-```json
-"[greater('9', '10')]"
-```
-
-### <a name="greaterorequals"></a>greaterOrEquals
-Возвращает `true`, если первый параметр больше или равен значению второго параметра. Эта функция поддерживает только параметры типа "число" и "строка".
-
-В следующем примере возвращается `true`.
-
-```json
-"[greaterOrEquals(2, 2)]"
-```
-
-### <a name="and"></a>и
-Возвращает `true`, если все параметры имеют значение `true`. Эта функция поддерживает два или более параметров только логического типа.
-
-В следующем примере возвращается `true`.
-
-```json
-"[and(equals(0, 0), equals('foo', 'foo'), less(1, 2))]"
-```
-
-В следующем примере возвращается `false`.
-
-```json
-"[and(equals(0, 0), greater(1, 2))]"
-```
-
-### <a name="or"></a>или
-Возвращает `true`, если хотя бы один из параметров имеет значение `true`. Эта функция поддерживает два или более параметров только логического типа.
-
-В следующем примере возвращается `true`.
-
-```json
-"[or(equals(0, 0), equals('foo', 'foo'), less(1, 2))]"
-```
-
-В следующем примере возвращается `true`.
-
-```json
-"[or(equals(0, 0), greater(1, 2))]"
-```
-
-### <a name="not"></a>not
-Возвращает `true`, если параметр имеет значение `false`. Эта функция поддерживает только параметры логического типа.
-
-В следующем примере возвращается `true`.
-
-```json
-"[not(false)]"
-```
-
-В следующем примере возвращается `false`.
-
-```json
-"[not(equals(0, 0))]"
-```
-
-### <a name="coalesce"></a>coalesce
-Возвращает значение первого параметра, отличное от null. Эта функция поддерживает все типы данных JSON.
-
-Предположим, что `element1` и `element2` не определены. В следующем примере возвращается `"foobar"`.
-
-```json
-"[coalesce(steps('foo').element1, steps('foo').element2, 'foobar')]"
-```
-
-Эта функция особенно полезна в контексте необязательного вызова, который происходит из-за действия пользователя после загрузки страницы. Например, если ограничения, накладываемые на одно поле в пользовательском интерфейсе, зависят от текущего выбранного значения другого, **изначально невидимого** поля. В этом случае `coalesce()` можно использовать функцию, чтобы разрешить синтаксически правильную работу функции при загрузке страницы, при этом при взаимодействии пользователя с полем.
-
-Рассмотрим это `DropDown` , что позволяет пользователю выбрать один из нескольких различных типов баз данных:
-
-```
-{
-    "name": "databaseType",
-    "type": "Microsoft.Common.DropDown",
-    "label": "Choose database type",
-    "toolTip": "Choose database type",
-    "defaultValue": "Oracle Database",
-    "visible": "[bool(steps('section_database').connectToDatabase)]"
-    "constraints": {
-        "allowedValues": [
-            {
-                "label": "Azure Database for PostgreSQL",
-                "value": "postgresql"
-            },
-            {
-                "label": "Oracle Database",
-                "value": "oracle"
-            },
-            {
-                "label": "Azure SQL",
-                "value": "sqlserver"
-            }
-        ],
-        "required": true
-    },
-```
-
-Чтобы применить условие к действию другого поля в текущем выбранном значении этого поля, используйте `coalesce()` , как показано ниже:
-
-```
-"regex": "[concat('^jdbc:', coalesce(steps('section_database').databaseConnectionInfo.databaseType, ''), '.*$')]",
-```
-
-Это необходимо потому, что `databaseType` изначально не является видимым и, следовательно, не имеет значения. Это приводит к неправильной оценке всего выражения.
+* [contains](create-ui-definition-collection-functions.md#contains)
+* [empty](create-ui-definition-collection-functions.md#empty)
+* [Фильтрация](create-ui-definition-collection-functions.md#filter)
+* [first](create-ui-definition-collection-functions.md#first)
+* [last](create-ui-definition-collection-functions.md#last)
+* [length](create-ui-definition-collection-functions.md#length)
+* [Таблица](create-ui-definition-collection-functions.md#map)
+* [skip](create-ui-definition-collection-functions.md#skip)
+* [split](create-ui-definition-collection-functions.md#split)
+* [take](create-ui-definition-collection-functions.md#take)
 
 ## <a name="conversion-functions"></a>Функции преобразования
+
 Эти функции можно использовать для преобразования значений между типами данных JSON и кодировками.
 
-### <a name="int"></a>INT
-Преобразует параметр в целое число. Эта функция поддерживает параметры типа "число" и "строка".
-
-В следующем примере возвращается `1`.
-
-```json
-"[int('1')]"
-```
-
-В следующем примере возвращается `2`.
-
-```json
-"[int(2.9)]"
-```
-
-### <a name="float"></a>FLOAT
-Преобразует параметр в число с плавающей точкой. Эта функция поддерживает параметры типа "число" и "строка".
-
-В следующем примере возвращается `1.0`.
-
-```json
-"[float('1.0')]"
-```
-
-В следующем примере возвращается `2.9`.
-
-```json
-"[float(2.9)]"
-```
-
-### <a name="string"></a>string
-Преобразует параметр в строку. Эта функция поддерживает параметры всех типов данных JSON.
-
-В следующем примере возвращается `"1"`.
-
-```json
-"[string(1)]"
-```
-
-В следующем примере возвращается `"2.9"`.
-
-```json
-"[string(2.9)]"
-```
-
-В следующем примере возвращается `"[1,2,3]"`.
-
-```json
-"[string([1,2,3])]"
-```
-
-В следующем примере возвращается `"{"foo":"bar"}"`.
-
-```json
-"[string({\"foo\":\"bar\"})]"
-```
-
-### <a name="bool"></a>bool
-Преобразует параметр в логическое значение. Эта функция поддерживает параметры типа "число", "строка" и "логическое значение". Как и логические значения в JavaScript, любое значение, кроме `0` или `'false'`, возвращает `true`.
-
-В следующем примере возвращается `true`.
-
-```json
-"[bool(1)]"
-```
-
-В следующем примере возвращается `false`.
-
-```json
-"[bool(0)]"
-```
-
-В следующем примере возвращается `true`.
-
-```json
-"[bool(true)]"
-```
-
-В следующем примере возвращается `true`.
-
-```json
-"[bool('true')]"
-```
-
-### <a name="parse"></a>parse
-Преобразует параметр в собственный тип. Другими словами, эта функция является обратной функцией `string()`. Эта функция поддерживает только параметры типа "строка".
-
-В следующем примере возвращается `1`.
-
-```json
-"[parse('1')]"
-```
-
-В следующем примере возвращается `true`.
-
-```json
-"[parse('true')]"
-```
-
-В следующем примере возвращается `[1,2,3]`.
-
-```json
-"[parse('[1,2,3]')]"
-```
-
-В следующем примере возвращается `{"foo":"bar"}`.
-
-```json
-"[parse('{\"foo\":\"bar\"}')]"
-```
-
-### <a name="encodebase64"></a>encodeBase64
-Кодирует параметр в строку в кодировке Base-64. Эта функция поддерживает только параметры типа "строка".
-
-В следующем примере возвращается `"Zm9vYmFy"`.
-
-```json
-"[encodeBase64('foobar')]"
-```
-
-### <a name="decodebase64"></a>decodeBase64
-Декодирует параметр из строки в кодировке Base-64. Эта функция поддерживает только параметры типа "строка".
-
-В следующем примере возвращается `"foobar"`.
-
-```json
-"[decodeBase64('Zm9vYmFy')]"
-```
-
-### <a name="encodeuricomponent"></a>encodeUriComponent
-Кодирует параметр в закодированную строку URL-адреса. Эта функция поддерживает только параметры типа "строка".
-
-В следующем примере возвращается `"https%3A%2F%2Fportal.azure.com%2F"`.
-
-```json
-"[encodeUriComponent('https://portal.azure.com/')]"
-```
-
-### <a name="decodeuricomponent"></a>decodeUriComponent
-Декодирует параметр из закодированной строки URL-адреса. Эта функция поддерживает только параметры типа "строка".
-
-В следующем примере возвращается `"https://portal.azure.com/"`.
-
-```json
-"[decodeUriComponent('https%3A%2F%2Fportal.azure.com%2F')]"
-```
-
-## <a name="math-functions"></a>Математические функции
-### <a name="add"></a>add
-Складывает два числа и возвращает результат.
-
-В следующем примере возвращается `3`.
-
-```json
-"[add(1, 2)]"
-```
-
-### <a name="sub"></a>sub
-Вычитает второе число из первого числа и возвращает результат.
-
-В следующем примере возвращается `1`.
-
-```json
-"[sub(3, 2)]"
-```
-
-### <a name="mul"></a>mul
-Умножает два числа и возвращает результат.
-
-В следующем примере возвращается `6`.
-
-```json
-"[mul(2, 3)]"
-```
-
-### <a name="div"></a>div
-Делит первое число на второе число и возвращает результат. Результат всегда представляет собой целое число.
-
-В следующем примере возвращается `2`.
-
-```json
-"[div(6, 3)]"
-```
-
-### <a name="mod"></a>mod
-Делит первое число на второе число и возвращает остаток.
-
-В следующем примере возвращается `0`.
-
-```json
-"[mod(6, 3)]"
-```
-
-В следующем примере возвращается `2`.
-
-```json
-"[mod(6, 4)]"
-```
-
-### <a name="min"></a>мин
-Возвращает меньшее из двух чисел.
-
-В следующем примере возвращается `1`.
-
-```json
-"[min(1, 2)]"
-```
-
-### <a name="max"></a>max
-Возвращает большее из двух чисел.
-
-В следующем примере возвращается `2`.
-
-```json
-"[max(1, 2)]"
-```
-
-### <a name="range"></a>range
-Создает последовательность целых чисел в пределах заданного диапазона.
-
-В следующем примере возвращается `[1,2,3]`.
-
-```json
-"[range(1, 3)]"
-```
-
-### <a name="rand"></a>rand
-Возвращает случайное целое число в пределах заданного диапазона. Эта функция не создает криптографически безопасное случайное число.
-
-В следующем примере может вернуться `42`.
-
-```json
-"[rand(-100, 100)]"
-```
-
-### <a name="floor"></a>floor
-Возвращает наибольшее целочисленное значение, которое меньше или равно указанному числу.
-
-В следующем примере возвращается `3`.
-
-```json
-"[floor(3.14)]"
-```
-
-### <a name="ceil"></a>ceil
-Возвращает наибольшее целочисленное значение, которое больше или равно указанному числу.
-
-В следующем примере возвращается `4`.
-
-```json
-"[ceil(3.14)]"
-```
+* [bool](create-ui-definition-conversion-functions.md#bool)
+* [decodeBase64](create-ui-definition-conversion-functions.md#decodebase64)
+* [decodeUriComponent](create-ui-definition-conversion-functions.md#decodeuricomponent)
+* [encodeBase64](create-ui-definition-conversion-functions.md#encodebase64)
+* [encodeUriComponent](create-ui-definition-conversion-functions.md#encodeuricomponent)
+* [float](create-ui-definition-conversion-functions.md#float)
+* [int](create-ui-definition-conversion-functions.md#int)
+* [проанализировать](create-ui-definition-conversion-functions.md#parse)
+* [строка](create-ui-definition-conversion-functions.md#string)
 
 ## <a name="date-functions"></a>Функции данных
-### <a name="utcnow"></a>utcnow
-Возвращает строку текущей даты и времени на локальном компьютере в формате ISO 8601.
 
-В следующем примере может вернуться `"1990-12-31T23:59:59.000Z"`.
+* [addHours](create-ui-definition-date-functions.md#addhours)
+* [addMinutes](create-ui-definition-date-functions.md#addminutes)
+* [addSeconds](create-ui-definition-date-functions.md#addseconds)
+* [utcNow](create-ui-definition-date-functions.md#utcnow)
 
-```json
-"[utcNow()]"
-```
+## <a name="logical-functions"></a>Логические функции
 
-### <a name="addseconds"></a>addseconds
-Добавляет к указанной отметке времени целое количество секунд.
+Эти функции можно использовать в условных выражениях. Некоторые функции не поддерживают все типы данных JSON.
 
-В следующем примере возвращается `"1991-01-01T00:00:00.000Z"`.
+* [and](create-ui-definition-logical-functions.md#and) (и);
+* [coalesce](create-ui-definition-logical-functions.md#coalesce)
+* [equals](create-ui-definition-logical-functions.md#equals)
+* [greater](create-ui-definition-logical-functions.md#greater)
+* [greaterOrEquals](create-ui-definition-logical-functions.md#greaterorequals)
+* [if](create-ui-definition-logical-functions.md#if)
+* [less](create-ui-definition-logical-functions.md#less)
+* [lessOrEquals](create-ui-definition-logical-functions.md#lessorequals)
+* [not](create-ui-definition-logical-functions.md#not) (не);
+* [или диспетчер конфигурации служб](create-ui-definition-logical-functions.md#or)
 
-```json
-"[addSeconds('1990-12-31T23:59:60Z', 1)]"
-```
+## <a name="math-functions"></a>Математические функции
 
-### <a name="addminutes"></a>addminutes
-Добавляет к указанной отметке времени целое количество минут.
+* [add](create-ui-definition-math-functions.md#add)
+* [ceil](create-ui-definition-math-functions.md#ceil)
+* [div](create-ui-definition-math-functions.md#div)
+* [фабрич](create-ui-definition-math-functions.md#floor)
+* [max](create-ui-definition-math-functions.md#max)
+* [min](create-ui-definition-math-functions.md#min)
+* [mod (модуль)](create-ui-definition-math-functions.md#mod)
+* [mul](create-ui-definition-math-functions.md#mul)
+* [rand](create-ui-definition-math-functions.md#rand)
+* [range](create-ui-definition-math-functions.md#range)
+* [sub](create-ui-definition-math-functions.md#sub)
 
-В следующем примере возвращается `"1991-01-01T00:00:59.000Z"`.
+## <a name="referencing-functions"></a>Функции для ссылки
 
-```json
-"[addMinutes('1990-12-31T23:59:59Z', 1)]"
-```
+* [основы](create-ui-definition-referencing-functions.md#basics)
+* [расположение](create-ui-definition-referencing-functions.md#location)
+* [resourceGroup](create-ui-definition-referencing-functions.md#resourcegroup)
+* [выполнены](create-ui-definition-referencing-functions.md#steps)
+* [subscription](create-ui-definition-referencing-functions.md#subscription)
 
-### <a name="addhours"></a>addhours
-Добавляет к указанной отметке времени целое количество часов.
+## <a name="string-functions"></a>Строковые функции
 
-В следующем примере возвращается `"1991-01-01T00:59:59.000Z"`.
+* [concat](create-ui-definition-string-functions.md#concat)
+* [endsWith](create-ui-definition-string-functions.md#endswith)
+* [guid](create-ui-definition-string-functions.md#guid)
+* [indexOf](create-ui-definition-string-functions.md#indexof)
+* [lastIndexOf](create-ui-definition-string-functions.md#lastindexof)
+* [replace](create-ui-definition-string-functions.md#replace)
+* [startsWith](create-ui-definition-string-functions.md#startswith)
+* [substring](create-ui-definition-string-functions.md#substring)
+* [toLower](create-ui-definition-string-functions.md#tolower)
+* [toUpper](create-ui-definition-string-functions.md#toupper)
 
-```json
-"[addHours('1990-12-31T23:59:59Z', 1)]"
-```
+## <a name="next-steps"></a>Дальнейшие действия
 
-## <a name="next-steps"></a>Дальнейшие шаги
 * Общие сведения об Azure Resource Manager см. в [этой статье](../management/overview.md).
-

@@ -3,26 +3,27 @@ title: Создание настраиваемой роли Azure Resource Manag
 description: В этой статье содержатся инструкции по созданию настраиваемой роли Azure Resource Manager и назначению субъекту-службе для службы Live Video Analytics на IoT Edge с помощью Azure CLI.
 ms.topic: how-to
 ms.date: 05/27/2020
-ms.openlocfilehash: be317ac1e86fd38c72b87734909004a64dc2938b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eb4c9a1f90ab50f7070184fc9a394d9e6edb833a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84260517"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87043167"
 ---
 # <a name="create-custom-azure-resource-manager-role-and-assign-to-service-principal"></a>Создание настраиваемой роли Azure Resource Manager и назначение ее субъекту-службе
 
-Для правильной работы службы "Анализ видео в реальном времени" в экземпляре модуля IoT Edge требуется активная учетная запись служб мультимедиа Azure. Связь между проживая видео-аналитикой в модуле IoT Edge и учетной записью службы мультимедиа Azure устанавливается с помощью набора свойств модуля двойника. Одно из этих свойств двойника — это [субъект-служба](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) , который позволяет экземпляру модуля взаимодействовать с и активировать необходимые операции в учетной записи служб мультимедиа. Чтобы снизить вероятность неправильного использования и/или случайной раскрытия данных от пограничных устройств, этот субъект-служба должен иметь наименьший уровень привилегий.
+Для правильной работы службы "Анализ видео в реальном времени" в экземпляре модуля IoT Edge требуется активная учетная запись служб мультимедиа Azure. Связь между проживая видео-аналитикой в модуле IoT Edge и учетной записью службы мультимедиа Azure устанавливается с помощью набора свойств модуля двойника. Одно из этих свойств двойника — это [субъект-служба](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) , который позволяет экземпляру модуля взаимодействовать с и активировать необходимые операции в учетной записи служб мультимедиа. Чтобы снизить вероятность неправильного использования и/или случайной раскрытия данных от пограничных устройств, этот субъект-служба должен иметь наименьший уровень привилегий.
 
 В этой статье описаны действия по созданию пользовательской роли Azure Resource Manager с Azure Cloud Shell, которая затем используется для создания субъекта-службы.
 
-## <a name="prerequisites"></a>Предварительные условия  
+## <a name="prerequisites"></a>Обязательные условия  
 
 Ниже приведены необходимые условия для этой статьи.
 
 * Подписка Azure с подпиской владельца.
 * Azure Active Directory с правами на создание приложения и назначение роли субъекта-службы.
 
-Проверить, есть ли у вас соответствующие разрешения, проще всего на портале. Ознакомьтесь с [проверкой наличия необходимых разрешений](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions).
+Проверить, есть ли у вас соответствующие разрешения, проще всего на портале. Ознакомьтесь с [проверкой наличия необходимых разрешений](../../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app).
 
 ## <a name="overview"></a>Обзор  
 
@@ -48,7 +49,7 @@ ms.locfileid: "84260517"
     ```
     az account set --subscription " <yourSubscriptionName or yourSubscriptionId>"
     ```
-1. Создайте [группу ресурсов](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-create) и [учетную запись хранения](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create).
+1. Создайте [группу ресурсов](/cli/azure/group?view=azure-cli-latest#az-group-create) и [учетную запись хранения](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create).
 1. Теперь создайте учетную запись службы мультимедиа Azure с помощью следующего шаблона команды в Cloud Shell:
 
     ```
@@ -84,8 +85,8 @@ az ams account sp create --account-name < yourAMSAccountName > --resource-group 
 ```
 1. Выходные данные для субъекта-службы с проверкой пароля включают в себя ключ пароля, который в данном случае является параметром "Аадсекрет". 
 
-    Обязательно скопируйте это значение, так как его нельзя получить повторно. Если вы забыли пароль, [сбросьте учетные данные для субъекта-службы](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#reset-credentials).
-1. Идентификатор appId и ключ клиента отображаются в выходных данных как "Аадклиентид" и "Aadtenantid и" соответственно. Они используются в проверке подлинности субъекта-службы. Запишите их значения, но при необходимости вы можете получить их в любой момент с помощью команды [az ad sp list](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-list).
+    Обязательно скопируйте это значение, так как его нельзя получить повторно. Если вы забыли пароль, [сбросьте учетные данные для субъекта-службы](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#reset-credentials).
+1. Идентификатор appId и ключ клиента отображаются в выходных данных как "Аадклиентид" и "Aadtenantid и" соответственно. Они используются в проверке подлинности субъекта-службы. Запишите их значения, но при необходимости вы можете получить их в любой момент с помощью команды [az ad sp list](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-list).
 
 ### <a name="create-a-custom-role-definition"></a>Создание пользовательского определения роли  
 
@@ -170,7 +171,7 @@ az ad sp show --id "<appId>" | Select-String "objectId"
 “objectId” : “<yourObjectId>”,
 ```
 
-Используйте [команду AZ Role назначение Create](https://docs.microsoft.com/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) , чтобы связать настраиваемую роль с субъектом-службой.
+Используйте [команду AZ Role назначение Create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) , чтобы связать настраиваемую роль с субъектом-службой.
 
 ```
 az role assignment create --role “LVAEdge User” --assignee-object-id < objectId>    
@@ -252,7 +253,7 @@ az role assignment list  --assignee < objectId>
     The client '<AadClientId>' with object id '<AadClientId>' does not have authorization to perform action 'Microsoft.Resources/subscriptions/resourcegroups/write' over scope '/subscriptions/<yourSubscriptionId>/resourcegroups/testresourcegroup' or the scope is invalid. If access was recently granted, please refresh your credentials.
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 Обратите внимание на следующие значения из этой статьи. Эти значения будут необходимы для настройки свойств двойника в модуле Live Video Analytics для IoT Edge модуля. см. раздел [ДВОЙНИКА JSON Schema](module-twin-configuration-schema.md).
 

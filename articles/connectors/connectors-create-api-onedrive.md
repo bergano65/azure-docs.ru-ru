@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/18/2016
 tags: connectors
-ms.openlocfilehash: 8dd54fec963b8f4775a8ade6277b071d62ca3850
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 9fe4988b5499943f4b11ec5d640209ceb68e84ec
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86524218"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87040222"
 ---
 # <a name="access-and-manage-files-in-onedrive-connector-by-using-azure-logic-apps"></a>Доступ к файлам в соединители OneDrive и управление ими с помощью Azure Logic Apps
 
@@ -40,7 +40,7 @@ ms.locfileid: "86524218"
 
 1. В конструкторе приложений логики введите, `onedrive` чтобы получить список триггеров:  
 
-   ![Диалоговое окно "Отображение интерфейсов API, управляемых Майкрософт" содержит поле "onedrive". Ниже приведен список четырех триггеров. Первый из них — "OneDrive — при создании файла". Во-вторых, выбран параметр "OneDrive — при изменении файла".](./media/connectors-create-api-onedrive/onedrive-1.png)
+   ![Диалоговое окно "отображать управляемый Майкрософт A P I" содержит поле "onedrive". Ниже приведен список четырех триггеров. Первый из них — "OneDrive — при создании файла". Во-вторых, выбран параметр "OneDrive — при изменении файла".](./media/connectors-create-api-onedrive/onedrive-1.png)
 
 2. Выберите триггер **When a file is modified** (При изменении файла). Если подключение уже существует, нажмите кнопку "Выбрать", чтобы указать папку.
 
@@ -68,7 +68,7 @@ ms.locfileid: "86524218"
 
 3. В поле поиска введите, `onedrive` чтобы получить список всех доступных действий.
 
-   ![Диалоговое окно "Отображение интерфейсов API, управляемых Майкрософт" содержит поле "onedrive". Ниже приведен список из восьми действий. Первый — "OneDrive — создать файл" и он выбран.](./media/connectors-create-api-onedrive/onedrive-actions.png) 
+   ![Диалоговое окно "отображать управляемый Майкрософт A P I" содержит поле "onedrive". Ниже приведен список из восьми действий. Первый — "OneDrive — создать файл" и он выбран.](./media/connectors-create-api-onedrive/onedrive-actions.png) 
 
 4. В этом примере для OneDrive мы выберем действие **Создать файл**. Если подключение уже существует, укажите **путь к папке**, в которую необходимо поместить файл, введите **имя файла** и выберите тип **содержимого файла**.  
 

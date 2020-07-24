@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein, carlrab
 ms.date: 06/19/2019
-ms.openlocfilehash: 53645b6ba9f1463eac14ea974a17c356c1791db6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ad4ef93b34639abffaf15c806fd86d550e03f0bc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85255319"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87045259"
 ---
 # <a name="tutorial-add-an-azure-sql-database-to-an-autofailover-group"></a>Учебник. Добавление базы данных SQL Azure в группу автоперехода на другой ресурс
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "85255319"
 > - Создайте группу отработки отказа для базы данных между двумя серверами.
 > - Тестовая отработка отказа.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 # <a name="the-portal"></a>[Портал](#tab/azure-portal)
 
@@ -42,7 +42,7 @@ ms.locfileid: "85255319"
 Чтобы завершить работу с этим руководством, убедитесь, что у вас есть следующие элементы:
 
 - Подписка Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/) , если она еще не создана.
-- [Azure PowerShell](/powershell/azureps-cmdlets-docs)
+- [Azure PowerShell](/powershell/azure/)
 
 # <a name="the-azure-cli"></a>[CLI Azure.](#tab/azure-cli)
 
@@ -427,7 +427,7 @@ ms.locfileid: "85255319"
 
 Другие скрипты базы данных SQL Azure можно найти здесь: [Azure PowerShell](powershell-script-content-guide.md) и [Azure CLI](az-cli-script-samples-content-guide.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы добавили базу данных в базу данных SQL Azure в группу отработки отказа и проверили отработку отказа. Вы ознакомились с выполнением следующих задач:
 

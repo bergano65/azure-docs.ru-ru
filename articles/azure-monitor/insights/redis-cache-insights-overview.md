@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/21/2020
-ms.openlocfilehash: 469b402c694bcfae5a826c03ea35dbef2c365148
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 70bf39011761bcf59c8270ecdcc0542e326aef42
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84945415"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87045862"
 ---
 # <a name="explore-azure-monitor-for-azure-cache-for-redis-preview"></a>Узнайте об Azure Monitor для Кэша Azure для Redis (предварительная версия)
 
@@ -120,7 +120,7 @@ Azure Monitor для Кэша Azure для Redis (предварительная
 
 ### <a name="metric-definitions"></a>Определения метрик
 
-Полный список определений метрик, которые формируют эти книги, см. в статье [Доступные метрики и интервалы отчетности](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-monitor#available-metrics-and-reporting-intervals).
+Полный список определений метрик, которые формируют эти книги, см. в статье [Доступные метрики и интервалы отчетности](../../azure-cache-for-redis/cache-how-to-monitor.md#available-metrics-and-reporting-intervals).
 
 ## <a name="view-from-an-azure-cache-for-redis-resource"></a>Представления ресурса Кэша Azure для Redis
 
@@ -156,7 +156,7 @@ Azure Monitor для Кэша Azure для Redis (предварительная
 
 ## <a name="pin-export-and-expand"></a>Закрепление, экспорт и развертывание
 
-Чтобы закрепить любой раздел метрики на [панели мониторинга Azure](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards), щелкните символ канцелярской кнопки в правом верхнем углу раздела.
+Чтобы закрепить любой раздел метрики на [панели мониторинга Azure](../../azure-portal/azure-portal-dashboards.md), щелкните символ канцелярской кнопки в правом верхнем углу раздела.
 
 ![Раздел метрики с выделенным символом канцелярской кнопки](./media/cosmosdb-insights-overview/pin.png)
 
@@ -180,12 +180,12 @@ Azure Monitor для Кэша Azure для Redis (предварительная
 
 ![Панель команд с выделенным элементом "Коллекция"](./media/cosmosdb-insights-overview/gallery.png)
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Инструкции по устранению неполадок см. в соответствующей [статье по устранению неполадок](troubleshoot-workbooks.md)на основе книги.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Настройте [оповещения метрик](../platform/alerts-metric.md) и [уведомления о работоспособности служб](../../service-health/alerts-activity-log-service-notifications.md), чтобы получать автоматизированные оповещения для обнаружения проблем.
+* Настройте [оповещения метрик](../platform/alerts-metric.md) и [уведомления о работоспособности служб](../../service-health/alerts-activity-log-service-notifications-portal.md), чтобы получать автоматизированные оповещения для обнаружения проблем.
 
 * Узнайте, в каких ситуациях можно применять книги, как создавать и настраивать отчеты и др., изучив статью [Создание интерактивных отчетов с использованием книг Azure Monitor](../platform/workbooks-overview.md).

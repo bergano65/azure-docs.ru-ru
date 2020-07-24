@@ -6,11 +6,12 @@ ms.author: ofmanor
 ms.topic: reference
 ms.date: 03/16/2020
 ms.subservice: alerts
-ms.openlocfilehash: 3e9eb9d0910e4c0e00e57eac80c09910f214db6a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c3eed095d87d1e1fa1f210b360822ceefdbe0521
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84300779"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87045254"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-alerts"></a>Устранение неполадок в Azure Monitor оповещениях
 
@@ -240,13 +241,13 @@ Azure Monitor оповещения заблаговременно уведомл
 
 1. **Вы получили ошибку разрешения?**  
 
-    У вас должна быть [Встроенная роль участника мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor)или конкретные разрешения, связанные с правилами действий и оповещениями.
+    У вас должна быть [Встроенная роль участника мониторинга](../../role-based-access-control/built-in-roles.md#monitoring-contributor)или конкретные разрешения, связанные с правилами действий и оповещениями.
 
 1. **Вы проверяли параметры правила действий?**  
 
-    Проверьте [документацию по правилу действий](alerts-action-rules.md)или команду [PowerShell Set-азактионруле в правиле действий](https://docs.microsoft.com/powershell/module/az.alertsmanagement/Set-AzActionRule?view=azps-3.5.0) . 
+    Проверьте [документацию по правилу действий](alerts-action-rules.md)или команду [PowerShell Set-азактионруле в правиле действий](/powershell/module/az.alertsmanagement/set-azactionrule?view=azps-3.5.0) . 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
-- Если используется оповещение журнала, см. также раздел [Устранение неполадок с оповещениями журнала](alert-log-troubleshoot.md).
+## <a name="next-steps"></a>Дальнейшие действия
+- Если используется оповещение журнала, см. также раздел [Устранение неполадок с оповещениями журнала](./alerts-troubleshoot-log.md).
 - Вернитесь к [портал Azure](https://portal.azure.com) , чтобы проверить, решена ли ваша ошибка с помощью приведенных выше инструкций. 

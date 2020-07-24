@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/25/2018
-ms.openlocfilehash: 94251dfa2d9fa732912ed20d825e64f542d79188
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b71c6d8e0890bde377fae761f4486803229ceff4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80055409"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87045682"
 ---
 # <a name="optimize-your-environment-with-the-system-center-operations-manager-health-check-preview-solution"></a>Оптимизация среды с помощью решения для проверки работоспособности System Center Operations Manager (предварительная версия)
 
@@ -64,7 +64,7 @@ ms.locfileid: "80055409"
 
 ## <a name="operations-manager-run-as-accounts-for-log-analytics"></a>Учетные записи запуска от имени в Operations Manager для службы Log Analytics
 
-Для предоставления качественных услуг служба Log Analytics основывается на пакетах управления для рабочих нагрузок. Каждой рабочей нагрузке требуются отдельные права для запуска пакетов управления в другом контексте безопасности, например в учетной записи пользователя домена. Настройте учетную запись запуска от имени Operations Manager с привилегированными учетными данными. Дополнительные сведения см. в разделе [Создание учетной записи запуска от имени](https://technet.microsoft.com/library/hh321655(v=sc.12).aspx) в документации по Operations Manager.
+Для предоставления качественных услуг служба Log Analytics основывается на пакетах управления для рабочих нагрузок. Каждой рабочей нагрузке требуются отдельные права для запуска пакетов управления в другом контексте безопасности, например в учетной записи пользователя домена. Настройте учетную запись запуска от имени Operations Manager с привилегированными учетными данными. Дополнительные сведения см. в разделе [Создание учетной записи запуска от имени](/previous-versions/system-center/system-center-2012-R2/hh321655(v=sc.12)) в документации по Operations Manager.
 
 Для настройки учетной записи запуска от имени Operations Manager для проверки работоспособности System Center Operations Manager используйте сведения, указанные ниже.
 
@@ -147,7 +147,7 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
 
 Пакет управления Проверка работоспособности System Center Operations Managerного решения включает правило с именем *Microsoft System Center Operations Manager выполнение правила проверки работоспособности*. Это правило отвечает за проверку работоспособности. Чтобы включить правило и настроить частоту, используйте приведенные ниже процедуры.
 
-По умолчанию правило проверки работоспособности запуска Microsoft System Center Operations Manager отключено. Чтобы выполнить проверку работоспособности, необходимо включить это правило на сервере управления. Для этого выполните следующие действия:
+По умолчанию правило проверки работоспособности запуска Microsoft System Center Operations Manager отключено. Чтобы выполнить проверку работоспособности, необходимо включить это правило на сервере управления. Выполните следующие действия.
 
 #### <a name="enable-the-rule-for-a-specific-management-server"></a>Включение правила для определенного сервера управления
 

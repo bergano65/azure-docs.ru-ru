@@ -12,16 +12,16 @@ ms.date: 06/29/2020
 tags: ''
 keywords: ''
 ms.service: multiple
-ms.openlocfilehash: 900e76fff3e5ccf88fa1e25ebea97f26e406a358
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6780942d922f885c7afebd8e64f4f28654c3800e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85610376"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87042536"
 ---
 # <a name="deploy-micro-focus-enterprise-server-50-to-aks"></a>Развертывание Micro Focus Enterprise Server 5,0 в AKS
 
-В другой [статье](https://docs.microsoft.com/azure/virtual-machines/workloads/mainframe-rehosting/microfocus/run-enterprise-server-container)я принимаю инструкции по запуску Micro Focus Enterprise Server 5,0 в контейнере DOCKER. В качестве дальнейших действий я хотел бы продемонстрировать, как сделать это на один шаг дальше и развернуть созданный образ DOCKER в службе Azure Kubernetes Service (AKS).
+В другой [статье](./run-enterprise-server-container.md)я принимаю инструкции по запуску Micro Focus Enterprise Server 5,0 в контейнере DOCKER. В качестве дальнейших действий я хотел бы продемонстрировать, как сделать это на один шаг дальше и развернуть созданный образ DOCKER в службе Azure Kubernetes Service (AKS).
 
 Служба Kubernetes Azure — это управляемая служба оркестрации на основе Kubernetes. Она позволяет развертывать, масштабировать и управлять контейнерами DOCKER (и другими приложениями на основе контейнеров) в кластере узлов контейнеров.
 

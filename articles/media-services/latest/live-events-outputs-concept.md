@@ -14,11 +14,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 04/08/2020
 ms.author: juliako
-ms.openlocfilehash: 8eca95f9fca47fca4d54bacbab35f3a0ffc3ba31
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c41538acdb8ed94ee4995ad8d5f5e4cebb2e14d6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81010585"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87043441"
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>Динамические события и динамические выходные данные в службах мультимедиа
 
@@ -29,11 +30,11 @@ ms.locfileid: "81010585"
 
 ## <a name="live-events"></a>Динамические события
 
-[События потоковой трансляции](https://docs.microsoft.com/rest/api/media/liveevents) отвечают за прием и обработку видеопотоков. При создании интерактивного события создается первичная и вторичная входная конечная точка, которую можно использовать для отправки сигнала в реальном времени с удаленного кодировщика. Удаленный динамический кодировщик отправляет канал вклада в эту входную конечную точку с помощью протокола ввода [RTMP](https://www.adobe.com/devnet/rtmp.html) или [Smooth Streaming](https://msdn.microsoft.com/library/ff469518.aspx) (фрагментированного MP4). Для протокола приема RTMP содержимое может быть отправлено в виде Clear ( `rtmp://` ) или безопасно зашифровано на канале передачи ( `rtmps://` ). Для протокола приема Smooth Streaming поддерживаются следующие схемы URL-адресов: `http://` или `https://`.  
+[События потоковой трансляции](/rest/api/media/liveevents) отвечают за прием и обработку видеопотоков. При создании интерактивного события создается первичная и вторичная входная конечная точка, которую можно использовать для отправки сигнала в реальном времени с удаленного кодировщика. Удаленный динамический кодировщик отправляет канал вклада в эту входную конечную точку с помощью протокола ввода [RTMP](https://www.adobe.com/devnet/rtmp.html) или [Smooth Streaming](/openspecs/windows_protocols/ms-sstr/8383f27f-7efe-4c60-832a-387274457251) (фрагментированного MP4). Для протокола приема RTMP содержимое может быть отправлено в виде Clear ( `rtmp://` ) или безопасно зашифровано на канале передачи ( `rtmps://` ). Для протокола приема Smooth Streaming поддерживаются следующие схемы URL-адресов: `http://` или `https://`.  
 
 ## <a name="live-event-types"></a>Типы событий потоковой трансляции
 
-Для [события Live](https://docs.microsoft.com/rest/api/media/liveevents) можно задать *транзитный* (локальный динамический кодировщик отправляет поток с несколькими скоростями) или *кодирование в реальном времени* (локальный динамический кодировщик отправляет односкоростной поток). Типы задаются во время создания с помощью [лививентенкодингтипе](https://docs.microsoft.com/rest/api/media/liveevents/create#liveeventencodingtype):
+Для [события Live](/rest/api/media/liveevents) можно задать *транзитный* (локальный динамический кодировщик отправляет поток с несколькими скоростями) или *кодирование в реальном времени* (локальный динамический кодировщик отправляет односкоростной поток). Типы задаются во время создания с помощью [лививентенкодингтипе](/rest/api/media/liveevents/create#liveeventencodingtype):
 
 * **Лививентенкодингтипе. None**: локальный динамический кодировщик отправляет поток с несколькими скоростями. Принимающий поток проходит через событие Live без дальнейшей обработки. Также называется сквозным режимом.
 * **Лививентенкодингтипе. Standard**. локальный динамический кодировщик отправляет односкоростной поток в Live Event, а службы мультимедиа — несколько потоков с несколькими скоростями. Если веб-канал публикации имеет 720p или более высокое разрешение, Предустановка **Default720p** кодирует набор из 6 пар "разрешение/скорость".
@@ -68,7 +69,7 @@ ms.locfileid: "81010585"
 
 ## <a name="creating-live-events"></a>Создание событий Live
 
-### <a name="options"></a>Параметры
+### <a name="options"></a>Варианты
 
 При создании события потоковой трансляции можно указать следующие параметры.
 
@@ -86,7 +87,7 @@ ms.locfileid: "81010585"
 ### <a name="naming-rules"></a>Правила именования
 
 * Максимальное имя события в реальном времени — 32 символов.
-* Имя должно соответствовать этому шаблону [регулярного выражения](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference) : `^[a-zA-Z0-9]+(-*[a-zA-Z0-9])*$` .
+* Имя должно соответствовать этому шаблону [регулярного выражения](/dotnet/standard/base-types/regular-expression-language-quick-reference) : `^[a-zA-Z0-9]+(-*[a-zA-Z0-9])*$` .
 
 См. также [соглашения об именовании конечных точек потоковой передачи](streaming-endpoint-concept.md#naming-convention).
 
@@ -121,11 +122,11 @@ ms.locfileid: "81010585"
 
     Используйте следующие интерфейсы API, чтобы включить URL-адрес именного и задать для маркера доступа допустимый идентификатор GUID (например, `"accessToken": "1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"` ).  
 
-    |Язык|Включить URL-адрес именного|Задание маркера доступа.|
+    |Language|Включить URL-адрес именного|Задание маркера доступа.|
     |---|---|---|
-    |REST|[Properties. Ванитюрл](https://docs.microsoft.com/rest/api/media/liveevents/create#liveevent)|[Лививентинпут. accessToken](https://docs.microsoft.com/rest/api/media/liveevents/create#liveeventinput)|
-    |CLI|[--именного — URL-адрес](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest#az-ams-live-event-create)|[--Access — токен](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest#optional-parameters)|
-    |.NET|[Лививент. Ванитюрл](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.models.liveevent.vanityurl?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEvent_VanityUrl)|[Лививентинпут. AccessToken](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.models.liveeventinput.accesstoken?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEventInput_AccessToken)|
+    |REST|[Properties. Ванитюрл](/rest/api/media/liveevents/create#liveevent)|[Лививентинпут. accessToken](/rest/api/media/liveevents/create#liveeventinput)|
+    |CLI|[--именного — URL-адрес](/cli/azure/ams/live-event?view=azure-cli-latest#az-ams-live-event-create)|[--Access — токен](/cli/azure/ams/live-event?view=azure-cli-latest#optional-parameters)|
+    |.NET|[Лививент. Ванитюрл](/dotnet/api/microsoft.azure.management.media.models.liveevent.vanityurl?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEvent_VanityUrl)|[Лививентинпут. AccessToken](/dotnet/api/microsoft.azure.management.media.models.liveeventinput.accesstoken?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEventInput_AccessToken)|
     
 ### <a name="live-ingest-url-naming-rules"></a>Правила именования URL-адресов динамического приема
 
@@ -163,7 +164,7 @@ ms.locfileid: "81010585"
 
 ## <a name="live-event-preview-url"></a>URL-адрес для предварительного просмотра событий потоковой трансляции
 
-Когда событие Live начнет получать канал вклада, вы можете использовать его конечную точку предварительной версии для предварительного просмотра и проверки того, что вы получаете динамический поток перед дальнейшей публикацией. Убедившись в том, что поток предварительной версии является хорошим, можно использовать событие Live, чтобы сделать поток доступным для доставки через одну или несколько конечных точек потоковой передачи. Чтобы сделать это, создайте новый [динамический выход](https://docs.microsoft.com/rest/api/media/liveoutputs) для события Live.
+Когда событие Live начнет получать канал вклада, вы можете использовать его конечную точку предварительной версии для предварительного просмотра и проверки того, что вы получаете динамический поток перед дальнейшей публикацией. Убедившись в том, что поток предварительной версии является хорошим, можно использовать событие Live, чтобы сделать поток доступным для доставки через одну или несколько конечных точек потоковой передачи. Чтобы сделать это, создайте новый [динамический выход](/rest/api/media/liveoutputs) для события Live.
 
 > [!IMPORTANT]
 > Прежде чем продолжить, убедитесь, что видео правильно передается на URL-адрес предварительного просмотра.
@@ -174,7 +175,7 @@ ms.locfileid: "81010585"
 
 ## <a name="live-outputs"></a>Динамичесие выходные данные
 
-Когда поток переводится в интерактивное событие, вы можете начать потоковую передачу события, создав [ресурс](https://docs.microsoft.com/rest/api/media/assets), [динамический выход](https://docs.microsoft.com/rest/api/media/liveoutputs)и [указатель потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators). Выходные данные потоковой трансляции запустят архивирование потока и предложат его зрителям через [конечную точку потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints).  
+Когда поток переводится в интерактивное событие, вы можете начать потоковую передачу события, создав [ресурс](/rest/api/media/assets), [динамический выход](/rest/api/media/liveoutputs)и [указатель потоковой передачи](/rest/api/media/streaminglocators). Выходные данные потоковой трансляции запустят архивирование потока и предложат его зрителям через [конечную точку потоковой передачи](/rest/api/media/streamingendpoints).  
 
 Подробные сведения о динамических выходных данных см. в разделе [Использование DVR для облака](live-event-cloud-dvr.md).
 
