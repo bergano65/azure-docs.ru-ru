@@ -2,19 +2,19 @@
 title: Как защитить управляющую программу
 titleSuffix: Azure Maps
 description: Используйте портал Azure для управления проверкой подлинности, чтобы настроить доверенное приложение-управляющее.
-author: philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 06/12/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 4fa3492b0cd71e61900dc4be150cd0f0169379ac
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 066118622f19d7efac71ddd66ac1abe058008b55
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84988479"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87126777"
 ---
 # <a name="secure-a-daemon-application"></a>Защита управляющего приложения
 
@@ -114,7 +114,7 @@ ms.locfileid: "84988479"
 > [!div class="mx-imgBorder"]
 > ![Просмотр доступных ролей](./media/how-to-manage-authentication/how-to-view-avail-roles.png)
 
-1. Перейдите к **учетной записи Azure Maps**. Выберите назначения ролей **управления доступом (IAM)**  >  **Role assignments**.
+1. Перейдите к **учетной записи Azure Maps**. Выберите **Управление доступом (IAM)** > **Назначения ролей**.
 
     > [!div class="mx-imgBorder"]
     > ![Предоставление RBAC](./media/how-to-manage-authentication/how-to-grant-rbac.png)
@@ -124,7 +124,7 @@ ms.locfileid: "84988479"
     > [!div class="mx-imgBorder"]
     > ![Добавление назначения роли](./media/how-to-manage-authentication/add-role-assignment.png)
 
-3. Выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В разделе **назначить доступ к**выберите **пользователь Azure AD, группа или субъект-служба** или управляемое удостоверение с назначенным пользователем управляемым удостоверением назначенная система **управляемого удостоверения**  /  **System assigned Managed identity**. Выберите участника. Затем нажмите кнопку **Save** (Сохранить).
+3. Выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В разделе **назначить доступ к**выберите **пользователь Azure AD, группа или субъект-служба** или управляемое удостоверение с назначенным пользователем управляемым удостоверением назначенная система **управляемого удостоверения**  /  **System assigned Managed identity**. Выберите участника. Затем нажмите кнопку **Сохранить**.
 
     > [!div class="mx-imgBorder"]
     > ![Добавление назначения роли](./media/how-to-manage-authentication/how-to-add-role-assignment.png)
@@ -170,7 +170,7 @@ client_id=<Azure AD App ID>&resource=https://atlas.microsoft.com/&client_secret=
 
 Более подробные примеры см. в статье [сценарии проверки подлинности в Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Найдите метрики использования API для учетной записи Azure Maps:
 > [!div class="nextstepaction"]

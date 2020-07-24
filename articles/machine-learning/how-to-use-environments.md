@@ -1,5 +1,5 @@
 ---
-title: Создание повторно используемых сред машинного обучения
+title: Использование программных сред
 titleSuffix: Azure Machine Learning
 description: Создание сред для обучения и развертывания модели и управление ими. Управление пакетами Python и другими параметрами для среды.
 services: machine-learning
@@ -9,16 +9,16 @@ ms.reviewer: nibaccam
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: how-to
-ms.date: 07/08/2020
+ms.date: 07/23/2020
 ms.custom: tracking-python
-ms.openlocfilehash: f9ddc498fdcfe3d1b6da57e012166066feec933e
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: c7229aaeef8b756b244e55920263eb046ed87f13
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86207029"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87129497"
 ---
-# <a name="how-to-use-environments-in-azure-machine-learning"></a>Использование сред в Машинное обучение Azure
+# <a name="create--use-software-environments-in-azure-machine-learning"></a>Создание & использование программных сред в Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этой статье вы узнаете, как создавать [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py)машинное обучение Azure и управлять ими. Используйте среды для мониторинга и воспроизведения зависимостей программного обеспечения проектов по мере их развития.
@@ -34,7 +34,7 @@ ms.locfileid: "86207029"
 
 Общий обзор работы сред в Машинное обучение Azure см. в статье [что такое среды машинного обучения](concept-environments.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * [Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md)
@@ -93,9 +93,9 @@ Environment(name="myenv")
 
 При определении собственной среды необходимо перечислить `azureml-defaults` версию >= 1.0.45 в качестве зависимости PIP. Этот пакет содержит функциональные возможности, необходимые для размещения модели в качестве веб-службы.
 
-### <a name="use-conda-pip-and-docker-files"></a>Использование Conda, PIP и файлов DOCKER
+### <a name="use-conda-and-pip-specification-files"></a>Использование файлов спецификации Conda и PIP
 
-Среду можно создать на основе спецификации Conda или файла требований PIP. Используйте [`from_conda_specification()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#from-conda-specification-name--file-path-) метод или [`from_pip_requirements()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#from-pip-requirements-name--file-path-) метод. В аргументе метода укажите имя среды и путь к нужному файлу. Среду можно также создать из файла DOCKER с помощью [`load_from_directory()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#load-from-directory-path-) метода. В аргументе метода включите путь к исходному каталогу, содержащему файл DOCKER. 
+Среду можно создать на основе спецификации Conda или файла требований PIP. Используйте [`from_conda_specification()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#from-conda-specification-name--file-path-) метод или [`from_pip_requirements()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#from-pip-requirements-name--file-path-) метод. В аргументе метода укажите имя среды и путь к нужному файлу. 
 
 ```python
 # From a Conda specification file
@@ -104,10 +104,7 @@ myenv = Environment.from_conda_specification(name = "myenv",
 
 # From a pip requirements file
 myenv = Environment.from_pip_requirements(name = "myenv"
-                                          file_path = "path-to-pip-requirements-file")
-                                          
-# From a Docker file
-myenv = Environment.load_from_directory(path = "path-to-dockerfile-directory")
+                                          file_path = "path-to-pip-requirements-file")                                          
 ```
 
 ### <a name="use-existing-environments"></a>Использование существующих сред
@@ -180,6 +177,12 @@ conda_dep.add_pip_package("pillow")
 myenv.python.conda_dependencies=conda_dep
 ```
 
+В среду также можно добавить переменные среды. Затем они становятся доступными с помощью функции OS. environ. Get в обучающем скрипте.
+
+```python
+myenv.environment_variables = {"MESSAGE":"Hello from Azure Machine Learning"}
+```
+
 >[!IMPORTANT]
 > Если вы используете одно и то же определение среды для другого запуска, служба Машинное обучение Azure повторно использует кэшированное изображение среды. Например, при создании среды с незакрепленной зависимостью пакета ```numpy``` Эта среда будет использовать версию пакета, установленную _во время создания среды_. Кроме того, любая будущая среда с соответствующим определением будет использовать старую версию. Дополнительные сведения см. в статье [Создание среды, кэширование и повторное использование](https://docs.microsoft.com/azure/machine-learning/concept-environments#environment-building-caching-and-reuse).
 
@@ -248,9 +251,9 @@ build.wait_for_completion(show_output=True)
 
 ## <a name="enable-docker"></a>Включение DOCKER
 
-[`DockerSection`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.dockersection?view=azure-ml-py) `Environment` Класс машинное обучение Azure позволяет точно настраивать и контролировать операционную систему на виртуальной машине, в которой выполняется обучение. `arguments`Переменная может использоваться для указания дополнительных аргументов для передачи в команду DOCKER Run.
+Контейнер DOCKER обеспечивает эффективный способ инкапсуляции зависимостей. При включении DOCKER Azure ML выполняет сборку образа DOCKER и создает среду Python в этом контейнере с учетом ваших спецификаций. Образы DOCKER кэшируются и используются повторно: первый запуск в новой среде обычно занимает больше времени, чем сборка образа.
 
-При включении DOCKER служба создает образ DOCKER. Он также создает среду Python, которая использует ваши спецификации в контейнере DOCKER. Эта функция обеспечивает дополнительную изоляцию и воспроизводимость для учебных запусков.
+[`DockerSection`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.dockersection?view=azure-ml-py) `Environment` Класс машинное обучение Azure позволяет точно настраивать и контролировать операционную систему на виртуальной машине, в которой выполняется обучение. `arguments`Переменная может использоваться для указания дополнительных аргументов для передачи в команду DOCKER Run.
 
 ```python
 # Creates the environment inside a Docker container.
@@ -267,10 +270,16 @@ myenv.docker.base_image="your_base-image"
 myenv.docker.base_image_registry="your_registry_location"
 ```
 
+>[!IMPORTANT]
+> Машинное обучение Azure поддерживает только образы DOCKER, которые предоставляют следующее программное обеспечение:
+> * Ubuntu 16,04 или более поздней версии.
+> * Conda 4.5. # или более поздней версии.
+> * Python 3.5. #, 3.6. # или 3.7. #.
+
 Можно также указать пользовательский Dockerfile. Проще всего начать с одного из Машинное обучение Azure базовых образов с помощью ```FROM``` команды DOCKER, а затем добавить пользовательские шаги. Используйте этот подход, если необходимо установить пакеты, отличные от Python, как зависимости. Не забудьте задать для базового образа значение None.
 
 ```python
-# Specify docker steps as a string. Alternatively, load the string from a file.
+# Specify docker steps as a string. 
 dockerfile = r"""
 FROM mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
 RUN echo "Hello from custom container!"
@@ -279,13 +288,15 @@ RUN echo "Hello from custom container!"
 # Set base image to None, because the image is defined by dockerfile.
 myenv.docker.base_image = None
 myenv.docker.base_dockerfile = dockerfile
+
+# Alternatively, load the string from a file.
+myenv.docker.base_image = None
+myenv.docker.base_dockerfile = "./Dockerfile"
 ```
 
-### <a name="use-user-managed-dependencies"></a>Использование управляемых пользователем зависимостей
+### <a name="specify-your-own-python-interpreter"></a>Укажите собственный интерпретатор Python
 
 В некоторых ситуациях пользовательский базовый образ может уже содержать среду Python с пакетами, которые вы хотите использовать.
-
-По умолчанию Машинное обучение Azure служба будет создавать среду Conda с указанными зависимостями и будет выполнять выполнение в этой среде вместо использования библиотек Python, установленных на базовом образе. Так как среда Conda изолирована от пользовательского базового образа, пакеты, установленные в другой части, не будут включаться в него.
 
 Чтобы использовать свои установленные пакеты и отключить Conda, задайте параметр `Environment.python.user_managed_dependencies = True` . Убедитесь, что базовый образ содержит интерпретатор Python и содержит пакеты, необходимые для вашего сценария обучения.
 
@@ -304,6 +315,9 @@ myenv.docker.base_dockerfile = dockerfile
 myenv.python.user_managed_dependencies=True
 myenv.python.interpreter_path = "/opt/miniconda/bin/python"
 ```
+
+> [!WARNING]
+> Если в образе DOCKER установлены некоторые зависимости Python и не забудьте установить user_managed_dependencies = true, эти пакеты не будут существовать в среде выполнения, что приведет к сбоям во время выполнения. По умолчанию служба машинного обучения Azure создает среду Conda с указанными зависимостями и выполняет запуск в этой среде вместо использования библиотек Python, установленных на базовом образе.
 
 ## <a name="use-environments-for-training"></a>Использование сред для обучения
 
@@ -397,6 +411,8 @@ service = Model.deploy(
 
 В этом [примере Записная книжка](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training/using-environments) расширяет концепции и методы, продемонстрированные в этой статье.
 
+В этом [примере записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-on-local/train-on-local.ipynb) показано, как обучить модель локально с различными типами сред.
+
 [Развертывание модели с помощью пользовательского базового образа DOCKER](how-to-deploy-custom-docker-image.md) демонстрирует развертывание модели с помощью пользовательского базового образа DOCKER.
 
 В этом [примере записной книжки](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/spark) показано, как развернуть модель Spark в качестве веб-службы.
@@ -434,4 +450,3 @@ az ml environment download -n myenv -d downloaddir
 * Сведения об использовании управляемого целевого объекта вычислений для обучения модели см. в разделе [учебник. Обучение модели](tutorial-train-models-with-aml.md).
 * После создания обученной модели Узнайте, [как и где развертываются модели](how-to-deploy-and-where.md).
 * Просмотрите [ `Environment` ссылку на пакет SDK для класса](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment(class)?view=azure-ml-py).
-* Дополнительные сведения о концепциях и методах, описанных в этой статье, см. в [примере записной книжки](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training/using-environments).

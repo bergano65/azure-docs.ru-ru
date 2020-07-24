@@ -2,19 +2,19 @@
 title: Управление аутентификацией
 titleSuffix: Azure Maps
 description: Используйте портал Azure для управления проверкой подлинности в картах Microsoft Azure.
-author: philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 06/12/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 174606b4b070b69aba94f438a3f7177f0d5897f8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 69dda537beda1d1bec4f019e1d5cadd16bdd5b39
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84981729"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87126862"
 ---
 # <a name="manage-authentication-in-azure-maps"></a>Управление аутентификацией в Azure Maps
 
@@ -43,14 +43,14 @@ ms.locfileid: "84981729"
 > [!IMPORTANT]
 > Корпорация Майкрософт рекомендует реализовать Azure Active Directory (Azure AD) с управлением доступом на основе ролей (RBAC) для рабочих приложений.
 
-| Сценарий                                                                                    | Аутентификация | Авторизация | Усилия по разработке | Рабочие усилия |
+| Сценарий                                                                                    | Проверка подлинности | Авторизация | Усилия по разработке | Рабочие усилия |
 | ------------------------------------------------------------------------------------------- | -------------- | ------------- | ------------------ | ------------------ |
 | [Доверенная управляющая программа/неинтерактивное клиентское приложение](./how-to-secure-daemon-app.md)        | Общий ключ     | Н/Д           | Средний             | Высокий               |
 | [Доверенная управляющая программа/неинтерактивное клиентское приложение](./how-to-secure-daemon-app.md)        | Azure AD       | Высокий          | Низкий                | Средний             |
-| [Одностраничное веб-приложение с интерактивным единым входом](./how-to-secure-spa-users.md) | Azure AD       | Высокий          | Средний             | Средний             |
-| [Одностраничное приложение Web с неинтерактивным входом](./how-to-secure-spa-app.md)      | Azure AD       | Высокий          | Средний             | Средний             |
+| [Одностраничное веб-приложение с интерактивным единым входом](./how-to-secure-spa-users.md) | Azure AD       | Высокий          | Средний             | Средн.             |
+| [Одностраничное приложение Web с неинтерактивным входом](./how-to-secure-spa-app.md)      | Azure AD       | Высокий          | Средний             | Средн.             |
 | [Веб-приложение с интерактивным единым входом](./how-to-secure-webapp-users.md)          | Azure AD       | Высокий          | Высокий               | Средний             |
-| [Устройство с ограниченным входным устройством IoT](./how-to-secure-device-code.md)                     | Azure AD       | Высокий          | Средний             | Средний             |
+| [Устройство с ограниченным входным устройством IoT](./how-to-secure-device-code.md)                     | Azure AD       | Высокий          | Средний             | Средн.             |
 
 Ссылки в таблице ведут к подробным сведениям о конфигурации для каждого сценария.
 
@@ -74,12 +74,12 @@ ms.locfileid: "84981729"
 
 | Среда Azure      | Конечная точка маркера Azure AD             | Идентификатор ресурса Azure              |
 | ---------------------- | ----------------------------------- | ------------------------------ |
-| Общедоступное облако Azure:     | `https://login.microsoftonline.com` | `https://atlas.microsoft.com/` |
+| Общедоступное облако Azure     | `https://login.microsoftonline.com` | `https://atlas.microsoft.com/` |
 | Облако Azure для государственных организаций | `https://login.microsoftonline.us`  | `https://atlas.microsoft.com/` |
 
 Дополнительные сведения о запросе маркеров доступа из Azure AD для пользователей и субъектов-служб см. в статье [сценарии проверки подлинности для Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios) и просмотрите конкретные сценарии в таблице [сценариев](./how-to-manage-authentication.md#determine-authentication-and-authorization).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Azure AD и Azure Maps веб-пакет SDK](https://docs.microsoft.com/azure/azure-maps/how-to-use-map-control).
 

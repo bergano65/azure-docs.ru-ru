@@ -3,25 +3,23 @@ title: Управление Azure Data Lake Analytics с помощью паке
 description: В этой статье описано, как с помощью пакета SDK Azure для Java создавать приложения, которые управляют источниками данных, пользователями и заданиями Data Lake Analytics.
 services: data-lake-analytics
 ms.service: data-lake-analytics
-author: saveenr
-ms.author: saveenr
-ms.reviewer: jasonwhowell
+ms.reviewer: jasonh
 ms.assetid: 07830b36-2fe3-4809-a846-129cf67b6a9e
 ms.topic: how-to
 ms.date: 08/20/2019
-ms.openlocfilehash: 6409ac10a524f75709cbbf185efb03359606e88c
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: e5ff12479333c4b36cc7712e0e363a055b9f6dc6
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86121373"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87127661"
 ---
 # <a name="manage-azure-data-lake-analytics-using-a-java-app"></a>Управление Azure Data Lake Analytics с помощью приложения Java
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
 
 Из этой статьи вы узнаете, как управлять учетными записями, источниками данных, пользователями и заданиями Azure Data Lake Analytics, используя приложение, написанное с помощью пакета SDK Azure для Java. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 * **Пакет Java Development Kit (JDK) 8** (с использованием Java версии 1,8).
 * **IntelliJ** или другая подходящая среда разработки Java. В инструкциях в этом документе используется IntelliJ.
 * Создайте приложение Azure Active Directory (AAD) и получите его **идентификатор клиента**, **код клиента** и **ключ**. Дополнительные сведения о приложениях AAD и указания о том, как получить идентификатор клиента, см. в статье [Создание приложения Active Directory и субъекта-службы с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md). Когда будут созданы приложение и ключ, URI ответа и ключ также будут доступны на портале.

@@ -7,12 +7,12 @@ ms.reviewer: estfan, jonfan, logicappspm
 ms.topic: article
 ms.custom: mvc
 ms.date: 04/29/2020
-ms.openlocfilehash: 62807ef25fe6ee70844e72c90751eb383d0ece7c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9cf964b8b5ebbfe5f790a1e325b48cd4179cf4ee
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82598442"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87127678"
 ---
 # <a name="manage-logic-apps-with-visual-studio"></a>Управление приложениями логики в Visual Studio
 
@@ -25,7 +25,7 @@ ms.locfileid: "82598442"
 
 <a name="requirements"></a>
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -35,9 +35,9 @@ ms.locfileid: "82598442"
 
     > [!IMPORTANT]
     > При установке Visual Studio 2019 или 2017 обязательно выберите рабочую нагрузку **разработки Azure**.
-    > Дополнительные сведения см. [в разделе Управление ресурсами, связанными с учетными записями Azure в Visual Studio Cloud Explorer](https://docs.microsoft.com/visualstudio/azure/vs-azure-tools-resources-managing-with-cloud-explorer?view).
+    > Дополнительные сведения см. [в разделе Управление ресурсами, связанными с учетными записями Azure в Visual Studio Cloud Explorer](/visualstudio/azure/vs-azure-tools-resources-managing-with-cloud-explorer).
 
-    Чтобы установить Cloud Explorer для Visual Studio 2015, [скачайте Cloud Explorer из Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MicrosoftCloudExplorer.CloudExplorerforVisualStudio2015). Дополнительные сведения см. [в статье Управление ресурсами, связанными с учетными записями Azure в Visual Studio Cloud Explorer (2015)](https://docs.microsoft.com/visualstudio/azure/vs-azure-tools-resources-managing-with-cloud-explorer?view=vs-2015).
+    Чтобы установить Cloud Explorer для Visual Studio 2015, [скачайте Cloud Explorer из Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MicrosoftCloudExplorer.CloudExplorerforVisualStudio2015). Дополнительные сведения см. [в статье Управление ресурсами, связанными с учетными записями Azure в Visual Studio Cloud Explorer (2015)](/visualstudio/azure/vs-azure-tools-resources-managing-with-cloud-explorer?view=vs-2015).
 
   * [Пакет SDK для Azure (2.9.1 или более поздней версии)](https://azure.microsoft.com/downloads/)
 
@@ -51,44 +51,46 @@ ms.locfileid: "82598442"
 
     * [Visual Studio 2015](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2015)
 
-    Вы можете скачать и установить Azure Logic Apps средства непосредственно из Visual Studio Marketplace или узнать, [как установить это расширение в Visual Studio](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions). После завершения установки перезагрузите Visual Studio.
+    Вы можете скачать и установить Azure Logic Apps средства непосредственно из Visual Studio Marketplace или узнать, [как установить это расширение в Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions). После завершения установки перезагрузите Visual Studio.
+
+  * Чтобы использовать подписки Azure для государственных организаций в Visual Studio, см. следующие разделы для получения дополнительных настроек:
+
+    * Visual Studio 2019: [Краткое руководство. подключение к Azure для государственных организаций с помощью Visual Studio](../azure-government/documentation-government-connect-vs.md)
+
+    * Visual Studio 2017: [Знакомство с расширением среды Azure Selector для Visual Studio](https://devblogs.microsoft.com/azuregov/introducing-the-azure-environment-selector-visual-studio-extension/), которое можно скачать и установить из [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SteveMichelotti.AzureEnvironmentSelector).
 
 * Доступ к Интернету при использовании встроенного конструктора Logic Apps
 
-  Конструктору требуется подключение к Интернету, чтобы создать ресурсы в Azure и считать свойства и данные из соединителей в приложении логики. Например, если вы используете соединитель Dynamics CRM Online, конструктор проверяет экземпляр CRM и получает информацию для отображения доступных свойств по умолчанию и пользовательских свойств.
+  Конструктору требуется подключение к Интернету, чтобы создать ресурсы в Azure и считать свойства и данные из соединителей в приложении логики.
 
 <a name="find-logic-apps-vs"></a>
 
-## <a name="find-your-logic-apps"></a>Поиск приложений логики
+## <a name="find-logic-apps"></a>Поиск приложений логики
 
 В Visual Studio с помощью Cloud Explorer можно найти все приложения логики, которые связаны с подпиской Azure и развернуты на портале Azure.
 
 1. Запустите Visual Studio. В меню **Представление** выберите **Cloud Explorer**.
 
-1. В Cloud Explorer выберите **Управление учетными записями**. Выберите подписку Azure, связанную с приложениями логики, и нажмите кнопку **Применить**. Пример:
+1. В Cloud Explorer выберите значок **Управление учетной записью** . Выберите подписку Azure, связанную с приложениями логики, и нажмите кнопку **Применить**. Например.
 
    ![Выберите "Управление учетными записями".](./media/manage-logic-apps-with-visual-studio/account-management-select-Azure-subscription.png)
 
-1. В зависимости от выполняемого поиска (по **группам ресурсов** или **их типам**), выполните действия ниже.
+1. Рядом со значком **Управление учетной записью** выберите **типы ресурсов**. В подписке Azure разверните узел **Logic Apps** , чтобы просмотреть все развернутые приложения логики, связанные с вашей подпиской.
 
-   * **Группы ресурсов**: Cloud Explorer отображает все группы ресурсов, связанные с выбранной подпиской Azure. Разверните группу ресурсов, содержащую приложение логики, а затем выберите приложение логики.
-
-   * **Типы ресурсов**: после выбора своей подписки Azure разверните **Приложения логики**. Когда Cloud Explorer отобразит все развернутые приложения логики, связанные с подпиской, выберите свое приложение логики.
+Затем откройте приложение логики в редакторе приложений логики.
 
 <a name="open-designer"></a>
 
-## <a name="open-in-visual-studio"></a>Открытие в Visual Studio
+## <a name="open-logic-apps-in-visual-studio"></a>Открытие приложений логики в Visual Studio
 
 В Visual Studio можно открыть ранее созданные и развернутые приложения логики непосредственно через портал Azure или как проекты группы ресурсов Azure с помощью Visual Studio.
 
-1. Откройте Cloud Explorer и найдите свое приложение логики.
+1. [Откройте Cloud Explorer и найдите свое приложение логики](#find-logic-apps-vs).
 
 1. В контекстном меню приложения логики выберите **Открыть в редакторе приложений логики**.
 
    > [!TIP]
    > Если у вас нет этой команды в Visual Studio 2019, убедитесь, что установлены последние обновления для Visual Studio.
-
-   В этом примере показаны приложения логики по типу ресурсов, поэтому они будут отображаться в разделе **Приложения логики**.
 
    ![Открытие развернутого приложения логики с портала Azure](./media/manage-logic-apps-with-visual-studio/open-logic-app-in-editor.png)
 
@@ -100,14 +102,14 @@ ms.locfileid: "82598442"
 
 Вы можете загрузить приложения логики с [портала Azure](https://portal.azure.com) и сохранить их в виде шаблонов [Azure Resource Manager](../azure-resource-manager/management/overview.md). Затем вы можете локально изменить шаблоны в Visual Studio и настроить приложения логики для разных сред развертывания.  При загрузке приложений логики автоматически *параметризуются* их определения внутри [шаблонов Resource Manager](../azure-resource-manager/templates/overview.md), которые также используют формат JSON.
 
-1. В Visual Studio откройте Cloud Explorer. Найдите и выберите приложение логики, которое необходимо скачать из Azure.
+1. В Visual Studio с помощью Cloud Explorer [откройте приложение логики, которое необходимо скачать из Azure](#open-designer).
 
-1. В контекстном меню этого приложения выберите **Открыть в редакторе приложений логики**.
+1. В контекстном меню приложения логики выберите **Открыть в редакторе приложений логики**.
 
    > [!TIP]
    > Если у вас нет этой команды в Visual Studio 2019, убедитесь, что установлены последние обновления для Visual Studio.
 
-   Откроется конструктор приложений логики, отображая соответствующее приложение. Чтобы просмотреть базовое определение и структуру приложения логики, в нижней части конструктора выберите **представление кода**.
+   Приложение логики откроется в конструкторе приложений логики.
 
 1. На панели инструментов конструктора нажмите кнопку **загрузить**.
 
@@ -202,7 +204,7 @@ ms.locfileid: "82598442"
 
 * В Visual Studio на панели инструментов конструктора приложений логики выберите **Обновить**.
 
-  -или-
+  или
 
 * В Cloud Explorer Visual Studio откройте контекстное меню приложения логики и выберите **Обновить**.
 
@@ -228,7 +230,7 @@ ms.locfileid: "82598442"
 
    ![Открытие журнала выполнения для приложения логики](./media/manage-logic-apps-with-visual-studio/open-run-history-for-logic-app.png)
 
-1. Чтобы просмотреть сведения об определенном запуске, дважды щелкните его. Пример:
+1. Чтобы просмотреть сведения об определенном запуске, дважды щелкните его. Например.
 
    ![Просмотр сведений о конкретном запуске](./media/manage-logic-apps-with-visual-studio/view-run-history-details.png)
   
@@ -265,7 +267,7 @@ ms.locfileid: "82598442"
 > При удалении и повторном создании дочернего приложения логики необходимо повторно сохранить родительское приложение логики. Повторно созданное дочернее приложение будет иметь разные метаданные.
 > Если вы не пересохраняете родительское приложение логики после повторного создания своего дочернего приложения, вызов дочернего приложения логики завершится ошибкой "несанкционированный". Это поведение относится к приложениям логики родительского и дочернего приложения, например к тем, которые используют артефакты в учетных записях интеграции или вызывают функции Azure.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 При открытии проекта приложения логики в конструкторе Logic Apps может не отображаться параметр для выбора подписки Azure. Вместо этого приложение логики откроется не с той подпиской Azure, которую вы хотите использовать. Это происходит, потому что после открытия JSON-файла для приложения логики Visual Studio кэширует первую выбранную подписку для использования в будущем. Чтобы устранить эту проблему, попробуйте одно из этих действий:
 

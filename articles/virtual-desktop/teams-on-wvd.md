@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: d482b3335b31d116846ec64883b43897fcc4e43d
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: baab0160247e17556f0928f12f26a5ecca767210
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86255665"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87129310"
 ---
 # <a name="use-microsoft-teams-on-windows-virtual-desktop"></a>Использование Microsoft Teams в Windows виртуальный рабочий стол
 
@@ -47,13 +47,21 @@ Microsoft Teams на виртуальных рабочих столах Windows 
 1. В меню Пуск запустите **программу Regedit** от имени администратора. Перейдите к **HKEY_LOCAL_MACHINE \софтваре\микрософт\теамс**.
 2. Создайте следующее значение для ключа команд:
 
-| Имя             | Тип   | Данные и значение  |
+| Имя             | Type   | Данные и значение  |
 |------------------|--------|-------------|
 | исввденвиронмент | DWORD  | 1           |
 
 ### <a name="install-the-teams-websocket-service"></a>Установка службы WebSocket команд
 
 Установите [службу WebSocket](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4yj0i) в ОБРАЗЕ виртуальной машины. При возникновении ошибки установки установите [последнюю версию Microsoft Visual C++ распространяемый пакет](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads) и повторите попытку.
+
+#### <a name="latest-websocket-service-versions"></a>Последние версии службы WebSocket
+
+В следующей таблице перечислены текущие версии, доступные для каждой из групп пользователей.
+
+|Версия    |Дата выпуска  |
+|-----------|--------------|
+|0.11.0     |05/29/2020    |
 
 ### <a name="install-microsoft-teams"></a>Установка Microsoft Teams
 

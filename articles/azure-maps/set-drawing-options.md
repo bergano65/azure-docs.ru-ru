@@ -1,19 +1,19 @@
 ---
 title: Модуль средств рисования | Карты Microsoft Azure
 description: В этой статье вы узнаете, как задать данные параметров рисования с помощью веб-пакета SDK для карт Microsoft Azure.
-author: philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 01/29/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 711609f9382e2153cbc738d544933796dbbe2e99
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 261202173a0692c66a24091b2173f5d4fe271058
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80334313"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87129514"
 ---
 # <a name="use-the-drawing-tools-module"></a>Использование модуля средств рисования
 
@@ -30,7 +30,7 @@ ms.locfileid: "80334313"
         <script src="https://atlas.microsoft.com/sdk/javascript/drawing/0/atlas-drawing.min.js"></script>
         ```
 
-    - Также можно загрузить модуль средств рисования для исходного кода веб-пакета SDK Azure Maps с помощью пакета [Azure-Maps-Drawing-Tools](https://www.npmjs.com/package/azure-maps-drawing-tools) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Выполните эту команду:
+    - Также можно загрузить модуль средств рисования для исходного кода веб-пакета SDK Azure Maps с помощью пакета [Azure-Maps-Drawing-Tools](https://www.npmjs.com/package/azure-maps-drawing-tools) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Используйте следующую команду:
     
         > **NPM. Установка Azure-Maps-Drawing-Tools**
     

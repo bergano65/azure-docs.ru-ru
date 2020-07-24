@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: b7739320fa23bf4469548f61486da1a5ee6110da
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 075837d0c382f5bc6f436a63dfe227c17f0a57a3
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86507167"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87128664"
 ---
 # <a name="access-and-identity-options-for-azure-kubernetes-service-aks"></a>Возможности контроля доступа и идентификации в Службе Azure Kubernetes (AKS)
 
@@ -105,7 +105,7 @@ RBAC Azure — это система авторизации на основе [
 
 С помощью управления доступом на основе ролей Azure можно создать *определение роли*, описывающее предоставляемые разрешения. Затем пользователю или группе назначается это определение роли с помощью *назначения роли* для определенной *области*, которая может быть отдельным ресурсом, группой ресурсов или в рамках подписки.
 
-Дополнительные сведения см. в статье [Что такое управление доступом на основе ролей (RBAC)?][azure-rbac]
+Дополнительные сведения см. в статье [что такое управление доступом на основе ролей Azure (Azure RBAC)?][azure-rbac]
 
 Для полной работы с кластером AKS требуется два уровня доступа: 
 1. [Получите доступ к ресурсу AKS в подписке Azure](#azure-rbac-to-authorize-access-to-the-aks-resource). Этот процесс позволяет управлять масштабированием или обновлением кластера с помощью интерфейсов API AKS, а также извлекать kubeconfig.

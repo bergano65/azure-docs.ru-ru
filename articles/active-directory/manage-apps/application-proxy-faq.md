@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
-ms.date: 10/03/2019
+ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 839ce418fa8ad72e18537cf673c8af0479409ba7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5b95ae3c7fcf52a732304bb835f91c52b015801e
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85386289"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87128936"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
@@ -53,6 +53,9 @@ ms.locfileid: "85386289"
 
 Соединитель прокси приложения выполняет проверку подлинности на основе сертификата в Azure. Прерывание TLS (проверка или ускорение TLS/HTTPS) прерывает этот метод проверки подлинности и не поддерживается. Трафик из соединителя в Azure должен обходить любые устройства, выполняющие завершение TLS.  
 
+### <a name="is-tls-12-required-for-all-connections"></a>Требуется ли TLS 1,2 для всех подключений?
+Да. Для обеспечения лучшего в своем классе шифрования прокси-служба приложения поддерживает доступ только по протоколам TLS 1.2. Эти изменения внедрялись поэтапно и окончательно вступили в силу 31 августа 2019 г. Убедитесь, что все ваши комбинации "клиент-сервер" и "браузер-сервер" обновлены для использования протокола TLS 1.2 и смогут обеспечить подключение к прокси-службе приложения. Это также касается клиентов, с помощью которых ваши пользователи получают доступ к приложениям, опубликованным через прокси приложения. Полезные ссылки и ресурсы см. в статье [Подготовка к использованию TLS 1.2 в Office 365](https://docs.microsoft.com/microsoft-365/compliance/prepare-tls-1.2-in-office-365).
+
 ### <a name="can-i-place-a-forward-proxy-device-between-the-connector-servers-and-the-back-end-application-server"></a>Можно ли разместить устройство с прямым прокси-сервером между серверами соединителей и сервером серверных приложений?
 Да, этот сценарий поддерживается начиная с соединителя версии 1.5.1526.0. См. раздел [Работа с существующими локальными прокси-серверами](application-proxy-configure-connectors-with-proxy-servers.md).
 
@@ -79,7 +82,7 @@ ms.locfileid: "85386289"
     ```
 
 
-## <a name="application-configuration"></a>Настройка приложения
+## <a name="application-configuration"></a>Конфигурация приложений
 
 ### <a name="what-is-the-length-of-the-default-and-long-back-end-timeout-can-the-timeout-be-extended"></a>Какова длина значения по умолчанию и времени ожидания серверной части "Long"? Можно ли увеличить время ожидания?
 
@@ -92,6 +95,9 @@ ms.locfileid: "85386289"
 ### <a name="can-only-iis-based-applications-be-published-what-about-web-applications-running-on-non-windows-web-servers-does-the-connector-have-to-be-installed-on-a-server-with-iis-installed"></a>Можно ли публиковать только приложения на основе IIS? Как насчет веб-приложений, работающих на веб-серверах, отличных от Windows? Нужно ли устанавливать соединитель на сервере с установленными службами IIS?
 
 Нет, для опубликованных приложений не требуется IIS. Можно публиковать веб-приложения, работающие на серверах, отличных от Windows Server. Однако использование предварительной проверки подлинности на сервере, отличном от Windows Server, может оказаться невозможным в зависимости от того, поддерживает ли веб-сервер согласование (проверка подлинности Kerberos). Службы IIS не требуются на сервере, на котором установлен соединитель.
+
+### <a name="can-i-configure-application-proxy-to-add-the-hsts-header"></a>Можно ли настроить прокси приложения для добавления заголовка HSTS?
+Прокси приложения не добавляет в ответы HTTPS заголовок HTTP с ограниченным транспортом, но он будет поддерживать заголовок, если он находится в исходном ответе, отправленном опубликованным приложением. Чтобы включить эту функцию, следует проделать этот параметр в соответствии с планом. Если вы заинтересованы в предварительной версии, которая позволяет добавить это к ответам, обратитесь к aadapfeedback@microsoft.com для получения дополнительных сведений.
 
 ## <a name="integrated-windows-authentication"></a>Встроенная проверка подлинности Windows
 
@@ -107,7 +113,7 @@ ms.locfileid: "85386289"
 
 Проверку подлинности NTLM нельзя использовать в качестве метода предварительной проверки подлинности или единого входа. Проверка подлинности NTLM может использоваться только в том случае, если ее можно согласовать непосредственно между клиентом и опубликованным веб-приложением. Использование проверки подлинности NTLM обычно приводит к отображению запроса на вход в браузере.
 
-## <a name="pass-through-authentication"></a>Сквозная аутентификация
+## <a name="pass-through-authentication"></a>Сквозная проверка подлинности
 
 ### <a name="can-i-use-conditional-access-policies-for-applications-published-with-pass-through-authentication"></a>Можно ли использовать политики условного доступа для приложений, опубликованных с помощью сквозной проверки подлинности?
 
@@ -133,7 +139,7 @@ ms.locfileid: "85386289"
 
 ### <a name="is-the-remote-desktop-web-client-html5-supported"></a>Поддерживается ли удаленный рабочий стол веб-клиентом (HTML5)?
 
-Нет, в настоящее время этот сценарий не поддерживается. Ознакомьтесь с нашим форумом по обратной связи [UserVoice](https://aka.ms/aadapuservoice) , чтобы получить обновления для этой функции.
+Да, этот сценарий сейчас находится в общедоступной предварительной версии. См. статью [публикация удаленный рабочий стол с помощью AD application proxy Azure](application-proxy-integrate-with-remote-desktop-services.md).
 
 ### <a name="after-i-configured-the-pre-authentication-scenario-i-realized-that-the-user-has-to-authenticate-twice-first-on-the-azure-ad-sign-in-form-and-then-on-the-rdweb-sign-in-form-is-this-expected-how-can-i-reduce-this-to-one-sign-in"></a>После настройки сценария предварительной проверки подлинности я понял, что пользователь должен пройти проверку подлинности дважды: сначала на форме входа в Azure AD, а затем на форме входа RDWeb. Так и должно быть? Как можно сократить это до одного входа?
 
@@ -171,7 +177,7 @@ ms.locfileid: "85386289"
 
 Для лучшей производительности рекомендуется использовать идентичные внутренние и внешние URL-адреса, настроив [Личные домены](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-custom-domain). Если использование пользовательских доменов невозможно, можно улучшить производительность преобразования ссылок с помощью расширения для безопасного входа в мои приложения или браузера Microsoft ребра на мобильных устройствах. См. раздел [Перенаправление жестко закодированных ссылок для приложений, опубликованных с помощью Azure AD application proxy](application-proxy-configure-hard-coded-link-translation.md).
 
-## <a name="wildcards"></a>Знаки подстановки
+## <a name="wildcards"></a>подстановочные знаки;
 
 ### <a name="how-do-i-use-wildcards-to-publish-two-applications-with-the-same-custom-domain-name-but-with-different-protocols-one-for-http-and-one-for-https"></a>Разделы справки использовать подстановочные знаки для публикации двух приложений с одним и тем же именем личного домена, но с разными протоколами, одним для HTTP и одним для HTTPS?
 

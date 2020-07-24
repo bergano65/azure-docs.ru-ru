@@ -7,11 +7,12 @@ ms.subservice: files
 ms.topic: conceptual
 ms.date: 05/29/2020
 ms.author: rogarana
-ms.openlocfilehash: db256c8361af740ac536e059969a5085e57df485
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cb57606259fe674519015fd2de741d6c1d08c5e9
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84263375"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87127202"
 ---
 # <a name="overview-of-azure-files-identity-based-authentication-options-for-smb-access"></a>Обзор параметров проверки подлинности на основе удостоверений службы файлов Azure для доступа к SMB
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -45,7 +46,7 @@ ms.locfileid: "84263375"
 
 -   **Управление доступом на основе ролей (RBAC) в Azure**
 
-    Контроль доступа на основе ролей (RBAC) Azure обеспечивает точное управление доступом для Azure. С помощью RBAC можно управлять доступом к ресурсам, предоставляя пользователям минимальные разрешения, необходимые для выполнения поставленных задач. Дополнительные сведения о RBAC см. [в статье что такое управление доступом на основе ролей (RBAC) в Azure?](../../role-based-access-control/overview.md).
+    Управление доступом на основе ролей в Azure (Azure RBAC) обеспечивает детальное управление доступом для Azure. С помощью RBAC можно управлять доступом к ресурсам, предоставляя пользователям минимальные разрешения, необходимые для выполнения поставленных задач. Дополнительные сведения о RBAC см. [в статье что такое управление доступом на основе ролей Azure (Azure RBAC) в Azure?](../../role-based-access-control/overview.md).
 
 ## <a name="common-use-cases"></a>Распространенные варианты использования
 
@@ -90,7 +91,7 @@ ms.locfileid: "84263375"
 -   **Резервное копирование списков управления доступом Windows (также известных как NTFS) вместе с данными**  
     Вы можете использовать файловые ресурсы Azure для резервного копирования существующих локальных файловых ресурсов. Служба файлов Azure сохраняет списки ACL вместе с данными при резервном копировании общей папки в файловые ресурсы Azure через SMB.
 
-## <a name="how-it-works"></a>Принцип работы
+## <a name="how-it-works"></a>Принципы работы
 
 Файловые ресурсы Azure используют протокол Kerberos для проверки подлинности с помощью локальных AD DS или Azure AD DS. Когда удостоверение, связанное с пользователем или приложением, работающим на клиенте, пытается получить доступ к данным в общих файловых ресурсах Azure, запрос отправляется в службу домена AD DS или Azure AD DS для проверки подлинности удостоверения. Если проверка подлинности прошла успешно, она возвращает токен Kerberos. Клиент отправляет запрос, включающий маркер Kerberos, и файловые ресурсы Azure. Используйте этот маркер для авторизации запроса. Файловые ресурсы Azure получают только маркер Kerberos, а не доступ к учетным данным.
 
@@ -104,7 +105,7 @@ ms.locfileid: "84263375"
 
 :::image type="content" source="media/storage-files-active-directory-overview/Files-on-premises-AD-DS-Diagram.png" alt-text="Схема":::
 
-### <a name="azure-ad-ds"></a>Azure AD DS
+### <a name="azure-ad-ds"></a>Azure AD DS
 
 Для проверки подлинности Azure AD DS необходимо включить доменные службы Azure AD и присоединить к домену виртуальные машины, из которых планируется получать доступ к данным файлов. Виртуальная машина, присоединенная к домену, должна находиться в той же виртуальной сети, что и AD DS Azure. 
 
@@ -142,10 +143,10 @@ ms.locfileid: "84263375"
 ## <a name="pricing"></a>Цены
 Для включения проверки подлинности на основе удостоверений через SMB в вашей учетной записи хранения дополнительная плата за обслуживание не взимается. Дополнительные сведения о ценах см. в статье цены на службу [файлов Azure](https://azure.microsoft.com/pricing/details/storage/files/) и [цены на доменные службы Azure AD](https://azure.microsoft.com/pricing/details/active-directory-ds/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе файлов Azure и аутентификации на основе удостоверений по протоколу SMB см. в следующих ресурсах:
 
-- [Планирование развертывания службы файлов Azure](storage-files-planning.md)
+- [Планирование развертывания Файлов Azure](storage-files-planning.md)
 - [Включение проверки подлинности локальных служб домен Active Directory Services по протоколу SMB для файловых ресурсов Azure](storage-files-identity-auth-active-directory-enable.md)
 - [Включение проверки подлинности доменных служб Azure Active Directory в службе файлов Azure](storage-files-identity-auth-active-directory-domain-service-enable.md)
 - [Часто задаваемые вопросы](storage-files-faq.md)

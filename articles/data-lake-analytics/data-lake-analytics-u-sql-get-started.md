@@ -2,19 +2,17 @@
 title: Начало работы с языком U-SQL в Azure Data Lake Analytics
 description: Ознакомьтесь с основами работы с языком U-SQL в Azure Data Lake Analytics. Напишите первый запрос, используя переменные для дополнительных данных из файлов, преобразуйте набор строк и статистические данные.
 services: data-lake-analytics
-author: saveenr
-ms.author: saveenr
-ms.reviewer: jasonwhowell
+ms.reviewer: jasonh
 ms.assetid: 57143396-ab86-47dd-b6f8-613ba28c28d2
 ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 06/23/2017
-ms.openlocfilehash: e80ecac68c3352c7f067fcbfcedb9a07aed729a8
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 6f2af2eed8aa01f35e1813bcd910f3ea22e2a335
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86120863"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87128851"
 ---
 # <a name="get-started-with-u-sql-in-azure-data-lake-analytics"></a>Начало работы с языком U-SQL в Azure Data Lake Analytics
 
@@ -26,7 +24,7 @@ U-SQL — это язык, который объединяет декларат
 * Дополнительные сведения о **синтаксисе языка U-SQL** см. в [справочнике по языку U-SQL](https://docs.microsoft.com/u-sql/).
 * Чтобы понять **принципы разработки на U-SQL**, см. запись блога Visual Studio, посвященную [использованию языка U-SQL для простой обработки больших данных](https://blogs.msdn.microsoft.com/visualstudio/2015/09/28/introducing-u-sql-a-language-that-makes-big-data-processing-easy/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Прежде чем переходить к примерам в этом документе, ознакомьтесь с [руководством по разработке скриптов U-SQL с помощью средств Data Lake для Visual Studio](data-lake-analytics-data-lake-tools-get-started.md). Это руководство описывает механизм использования U-SQL с помощью средств Azure Data Lake для Visual Studio.
 

@@ -10,12 +10,12 @@ ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 69e88aed1485d07bc4adc57abc0bda02a1def728
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2434c5b80fedb7fd5ae61357cadf5d23f9b00934
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84808884"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87127185"
 ---
 # <a name="authorize-access-to-blob-and-queue-data-with-managed-identities-for-azure-resources"></a>Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "84808884"
 
 #### <a name="create-the-service-principal"></a>Создание субъекта-службы
 
-Чтобы создать субъект-службу с Azure CLI и назначить роль RBAC, вызовите команду [AZ AD SP Create-for-RBAC](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) . Укажите роль доступа к данным службы хранилища Azure для назначения новому субъекту-службе. Кроме того, укажите область для назначения роли. Дополнительные сведения о встроенных ролях, предоставляемых для службы хранилища Azure, см. [в статье встроенные роли для ресурсов Azure](../../role-based-access-control/built-in-roles.md).
+Чтобы создать субъект-службу с Azure CLI и назначить роль RBAC, вызовите команду [AZ AD SP Create-for-RBAC](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) . Укажите роль доступа к данным службы хранилища Azure для назначения новому субъекту-службе. Кроме того, укажите область для назначения роли. Дополнительные сведения о встроенных ролях, предоставляемых для службы хранилища Azure, см. [в статье встроенные роли Azure](../../role-based-access-control/built-in-roles.md).
 
 Если у вас нет достаточных разрешений для назначения роли субъекту-службе, может потребоваться попросить владельца или администратора учетной записи выполнить назначение ролей.
 
@@ -160,7 +160,7 @@ async static Task CreateBlockBlobAsync(string accountName, string containerName,
 > [!NOTE]
 > Для авторизации запросов к данным большого двоичного объекта или очереди с помощью Azure AD необходимо использовать протокол HTTPS для этих запросов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление правами доступа к данным хранилища с помощью RBAC](storage-auth-aad-rbac.md).
 - [Используйте Azure AD с приложениями службы хранилища](storage-auth-aad-app.md).

@@ -3,19 +3,17 @@ title: Оценка характеристик — Персонализация
 titleSuffix: Azure Cognitive Services
 description: При выполнении оценки в ресурсе персонализации из портал Azure Персонализация предоставляет сведения о том, какие функции контекста и действия проводятся на модель.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 07/29/2019
-ms.author: diberry
-ms.openlocfilehash: 31243b5e9da55aafbc376fa416c1b00a4499c116
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c0e47a2943cf8c934d201f76aefc41868adf0b25
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "70242416"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87127729"
 ---
 # <a name="feature-evaluation"></a>Оценка возможностей
 
@@ -79,7 +77,7 @@ ms.locfileid: "70242416"
 * При большом количестве пользователей маловероятно, что взаимодействие с каждым пользователем будет взвесить больше, чем все взаимодействие с Генеральной совокупностью, так что отправка идентификаторов пользователей (даже если они не являются PII), вероятно, повышают уровень шума, чем значение для модели.
 * Отправка полей даты и времени в виде точных меток времени вместо значений времени признаками. Использование таких функций, как context. TimeStamp. Day = понедельник или "Context. TimeStamp. Hour" = "13", является более полезным. Для каждого из них будет не более 7 или 24 значений компонентов. Но "Context. TimeStamp": "1985-04-12T23:20:50.52 Z" настолько точно, что из него не будет изучено, так как это никогда не будет происходить повторно.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие сведения о [масштабируемости и производительности](concepts-scalability-performance.md) с помощью персонализации.
 

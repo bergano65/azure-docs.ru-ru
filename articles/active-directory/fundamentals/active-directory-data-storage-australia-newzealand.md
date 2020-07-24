@@ -9,30 +9,26 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/13/2019
-ms.custom: it-pro, seodec18
+ms.date: 7/21/2020
+ms.custom: it-pro, seodec18, references_regions
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0dc659f3d580646c1e86e5e97940268311e5546f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 749ee479f19b0855700cf1ca15aefd9b983dd7f7
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79460540"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87129548"
 ---
-# <a name="identity-data-storage-for-australian-and-new-zealand-customers-in-azure-active-directory"></a>Хранилище данных удостоверений для клиентов Австралии и Новой Зеландии в Azure Active Directory
+# <a name="customer-data-storage-for-australian-and-new-zealand-customers-in-azure-active-directory"></a>Хранилище данных клиентов для клиентов в Австралии и новых Зеландия в Azure Active Directory
 
-Данные удостоверений хранятся в службе Azure AD в географическом расположении на основе адреса, предоставленного вашей организацией, при подписке на Microsoft Online Service, например Office 365 и Azure. Сведения о том, где хранятся данные клиентов удостоверений, можно найти в разделе [где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) центра управления безопасностью Майкрософт.
+Azure Active Directory (Azure AD) хранит свои данные клиента в географическом расположении в зависимости от страны, которую вы указали при регистрации в Microsoft Online Service. Microsoft Online Services включает в себя Office 365 и Azure. 
+
+Сведения о расположении данных Azure AD и других служб Майкрософт см. в разделе где находятся [ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) центра управления безопасностью Майкрософт.
+
+С 26 февраля 2020 г. Корпорация Майкрософт приступила к хранению данных клиента Azure AD для новых клиентов с помощью адреса выставления счетов в Австралии или Новой Зеландии в пределах австралийских центров обработки данных. С 1 мая 2020 до 31 октября 2020 Корпорация Майкрософт перенесет существующие клиенты, у которых в австралийском центре обработки данных есть Австралийский или новый адрес для выставления счетов, без каких бы то ни было каких либо действий клиента. Процесс миграции не затрагивает время простоя клиентов и не влияет на функциональность клиента во время миграции.
+
+Кроме того, некоторые функции Azure AD пока не поддерживают хранение данных клиентов в Австралии. Сведения о конкретных функциях см. в [карте данных Azure AD](https://msit.powerbi.com/view?r=eyJrIjoiYzEyZTc5OTgtNTdlZS00ZTVkLWExN2ItOTM0OWU4NjljOGVjIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9). Например, Многофакторная идентификация Microsoft Azure хранит данные клиентов в США и обрабатывает их глобально. См. [местонахождение данных и данные клиента для многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-data-residency).
 
 > [!NOTE]
-> Службы и приложения, которые интегрируются с Azure AD, имеют доступ к данным клиента удостоверений. Оцените каждую службу и приложение, используемые для определения способа обработки данных пользователей удостоверений с помощью конкретной службы и приложения, а также укажите, соответствуют ли они требованиям к хранению данных вашей компании. Дополнительные сведения о местонахождении данных служб Майкрософт см. в разделе Где находятся ваши данные? Центра управления безопасностью Майкрософт.
+> Продукты, службы и сторонние приложения Майкрософт, которые интегрируются с Azure AD, имеют доступ к данным клиента. Оцените каждый продукт, службу и приложение, используемые для определения того, как данные клиента обрабатываются конкретным продуктом, службой и приложением, и должны ли они соответствовать требованиям к хранению данных вашей компании. Дополнительные сведения о местонахождении данных служб Майкрософт см. в разделе [Где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) Центра управления безопасностью Майкрософт.
 
-Для клиентов, которые указали адрес в Австралии и Новой Зеландии и используют Azure AD Free Edition, Azure AD сохраняет данные персональных данных в австралийских центрах данных. 
-
-Все остальные службы Azure AD Premium хранят данные клиентов в глобальных центрах обработки данных. Чтобы найти центр обработки данных для службы, см [. раздел Azure Active Directory – где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located)
-
-## <a name="microsoft-azure-multi-factor-authentication-mfa"></a>Многофакторная проверка подлинности Microsoft Azure (MFA)
-
-Служба MFA в Azure AD хранит данные клиентов удостоверений в глобальных центрах обработки данных. Дополнительные сведения о сведениях о пользователе, собираемых и хранимых в облачных Azure MFA и сервере Azure MFA, см. в статье [сбор данных пользователей многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-data-residency). Если клиенты используют MFA, их данные будут храниться за пределами неактивных центров обработки данных Австралии. 
-
-## <a name="next-steps"></a>Дальнейшие шаги
-Дополнительные сведения об этих функциях и возможностях, описанных выше, смотрите в следующих статьях.
-- [Что такое Многофакторная идентификация Azure?](https://docs.microsoft.com/azure/active-directory/authentication/multi-factor-authentication)

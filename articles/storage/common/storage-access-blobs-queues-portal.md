@@ -10,12 +10,12 @@ ms.date: 04/14/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 9b2de4f320801b20de5bcc9687a723dadb182ef8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: db65ba904cdce7bec83b851c6b50316c89fcedfd
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84807709"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87128732"
 ---
 # <a name="use-the-azure-portal-to-access-blob-or-queue-data"></a>Использование портал Azure для доступа к данным BLOB-объектов или очередей
 
@@ -25,7 +25,7 @@ ms.locfileid: "84807709"
 
 ## <a name="permissions-needed-to-access-blob-or-queue-data"></a>Разрешения, необходимые для доступа к данным BLOB-объектов или очередей
 
-В зависимости от того, как вы хотите авторизовать доступ к данным большого двоичного объекта или очереди в портал Azure, вам потребуются определенные разрешения. В большинстве случаев эти разрешения предоставляются с помощью управления доступом на основе ролей (RBAC). Дополнительные сведения о RBAC см. в статье [что такое управление доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md).
+В зависимости от того, как вы хотите авторизовать доступ к данным большого двоичного объекта или очереди в портал Azure, вам потребуются определенные разрешения. В большинстве случаев эти разрешения предоставляются с помощью управления доступом на основе ролей (RBAC). Дополнительные сведения о RBAC см. в статье [что такое управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md).
 
 ### <a name="use-the-account-access-key"></a>Использование ключа доступа к учетной записи
 
@@ -57,7 +57,7 @@ ms.locfileid: "84807709"
 - [Участник данных очереди хранилища](../../role-based-access-control/built-in-roles.md#storage-queue-data-contributor): разрешения на чтение, запись и удаление для очередей.
 - [Модуль чтения очереди хранилища](../../role-based-access-control/built-in-roles.md#storage-queue-data-reader): разрешения только на чтение для очередей.
 
-Пользовательские роли могут поддерживать различные сочетания тех же разрешений, которые предоставляются встроенными ролями. Дополнительные сведения о создании настраиваемых ролей RBAC см. в статьях [пользовательские роли для ресурсов Azure](../../role-based-access-control/custom-roles.md) и [Определение ролей для ресурсов Azure](../../role-based-access-control/role-definitions.md).
+Пользовательские роли могут поддерживать различные сочетания тех же разрешений, которые предоставляются встроенными ролями. Дополнительные сведения о создании пользовательских ролей Azure см. в статьях [пользовательские роли Azure](../../role-based-access-control/custom-roles.md) и [Определение ролей для ресурсов Azure](../../role-based-access-control/role-definitions.md).
 
 Вывод списка очередей с ролью администратора классической подписки не поддерживается. Чтобы получить список очередей, пользователю должны быть назначены роль **читателя** Azure Resource Manager, роль **чтения данных очереди хранилища** или роль **участника данных очереди хранилища** .
 
@@ -113,7 +113,7 @@ ms.locfileid: "84807709"
 
     :::image type="content" source="media/storage-access-blobs-queues-portal/auth-blob-upload.png" alt-text="Снимок экрана, показывающий, как изменить метод авторизации при передаче BLOB-объекта":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Проверка подлинности доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](storage-auth-aad.md)
 - [Предоставление доступа к контейнерам и очередям Azure с RBAC в портал Azure](storage-auth-aad-rbac-portal.md)

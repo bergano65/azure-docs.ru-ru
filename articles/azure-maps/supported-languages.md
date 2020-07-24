@@ -1,18 +1,19 @@
 ---
 title: Поддержка локализации | Microsoft Azure Maps
 description: В этой статье собраны сведения о языках, поддерживаемых в Microsoft Azure Maps.
-author: philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 11/20/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 2bab7b101b5461d854bb2db509b5cb243012a592
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 0d3adc4bc49379a9ec3408ab76b913a096840dbb
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83746020"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87127899"
 ---
 # <a name="localization-support-in-azure-maps"></a>Поддержка локализации в Azure Maps
 

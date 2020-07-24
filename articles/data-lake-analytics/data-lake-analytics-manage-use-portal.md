@@ -3,18 +3,16 @@ title: Управление Azure Data Lake Analytics с помощью порт
 description: В этой статье описано, как с помощью портала Azure управлять учетными записями, источниками данных, пользователями и заданиями Data Lake Analytics.
 services: data-lake-analytics
 ms.service: data-lake-analytics
-author: saveenr
-ms.author: saveenr
-ms.reviewer: jasonwhowell
+ms.reviewer: jasonh
 ms.assetid: a0e045f1-73d6-427f-868d-7b55c10f811b
 ms.topic: how-to
 ms.date: 12/05/2016
-ms.openlocfilehash: e9709f8ee700958b310b2fa94a546bb3ea4fc511
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 7761da75c16e2f89ae145bad3b04cc179f415751
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86121322"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87127542"
 ---
 # <a name="manage-azure-data-lake-analytics-using-the-azure-portal"></a>Управление Azure Data Lake Analytics с помощью портала Azure
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
@@ -44,9 +42,9 @@ ms.locfileid: "86121322"
 Перед удалением учетной записи Data Lake Analytics необходимо удалить учетную запись Data Lake Store по умолчанию.
 
 1. На портале Azure выберите свою учетную запись Data Lake Analytics.
-2. Щелкните **Delete** (Удалить).
+2. Щелкните **Удалить**.
 3. Введите имя учетной записи.
-4. Щелкните **Delete** (Удалить).
+4. Щелкните **Удалить**.
 
 <!-- ################################ -->
 <!-- ################################ -->
@@ -56,7 +54,7 @@ ms.locfileid: "86121322"
 Data Lake Analytics в настоящее время поддерживает следующие источники данных:
 
 * Data Lake Storage
-* Хранилище Azure
+* Служба хранилища Azure
 
 Вы можете использовать обозреватель данных для просмотра источников данных и выполнения основных операций управления файлами. 
 
@@ -163,6 +161,6 @@ Data Lake Analytics позволяет дополнительно блокиро
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
+* [Обзор Azure Data Lake Analytics](data-lake-analytics-overview.md)
 * [Управление Azure Data Lake Analytics с помощью Azure PowerShell](data-lake-analytics-manage-use-powershell.md)
 * [Управление Azure Data Lake Analytics с использованием политик](data-lake-analytics-account-policies.md)

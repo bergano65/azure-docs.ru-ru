@@ -2,18 +2,17 @@
 title: Устранение неполадок при сбоях среды выполнения U-SQL Azure Data Lake Analytics
 description: Узнайте, как устранять неполадки во время выполнения U-SQL.
 services: data-lake-analytics
-author: guyhay
-ms.author: guyhay
-ms.reviewer: jasonwhowell
+ms.reviewer: jasonh
 ms.service: data-lake-analytics
 ms.topic: troubleshooting
 ms.workload: big-data
 ms.date: 10/10/2019
-ms.openlocfilehash: 1e3fb218e6cda5619bfa1a0936e07d6731a9cc93
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 54524b0528f94ca9386c2d0d45ba4393c965fa88
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73648458"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87128817"
 ---
 # <a name="learn-how-to-troubleshoot-u-sql-runtime-failures-due-to-runtime-changes"></a>Сведения об устранении сбоев среды выполнения U-SQL из-за изменений среды выполнения
 
@@ -61,7 +60,7 @@ release_YYYYMMDD_adl_buildno [_modifier]
 
 2. Вы использовали среду выполнения, отличную от среды по умолчанию, явно или неявно, если она была закреплена в вашей учетной записи, и эта среда выполнения была удалена через некоторое время. Если вы столкнулись с отсутствующими средами выполнения, обновите скрипты для запуска с текущей средой выполнения по умолчанию. Если вам требуется дополнительное время, обратитесь в службу служба поддержки Майкрософт.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 - [Обзор аналитики озера данных Azure](data-lake-analytics-overview.md)
 - [Управление Azure Data Lake Analytics с помощью портал Azure](data-lake-analytics-manage-use-portal.md)

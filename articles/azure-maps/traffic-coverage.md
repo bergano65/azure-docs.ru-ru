@@ -1,19 +1,19 @@
 ---
 title: Объем трафика | Карты Microsoft Azure
 description: В этой статье вы узнаете о покрытии трафика в картах Microsoft Azure.
-author: philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 09/22/2018
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 836a924bb371aaf2879e951501c6febbe51e182e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 346cd13c021b70dac1501e5ca5a9e6930d407e6e
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80333944"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87129429"
 ---
 # <a name="azure-maps-traffic-coverage"></a>Покрытие для отслеживания дорожного движения в службе "Карты Azure"
 
@@ -27,7 +27,7 @@ ms.locfileid: "80333944"
 |---------|:---------:|:---------:|
 |Аргентина      |✓         |✓         |
 |Бразилия     |✓         |✓         |
-|Canada     |✓         |✓         |
+|Канада     |✓         |✓         |
 |Чили     |✓         |✓         |
 |Колумбия      |✓         |✓         |
 |Мексика     |✓         |✓         |

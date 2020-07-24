@@ -10,18 +10,18 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: cdd1cf255c943c8dc6d55a5b749b30357bdcd373
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 24e04e166c13f787f756c97716e2bf0143eecbdb
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80876731"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87128579"
 ---
 # <a name="deploy-the-text-analytics-language-detection-container-to-azure-kubernetes-service"></a>Развертывание контейнера обнаружения языка Анализ текста в службе Kubernetes Azure
 
 Узнайте, как развертывать контейнер распознавания языка. В статье описано, как создавать локальные контейнеры Docker, отправлять их в закрытый реестр контейнеров и запускать в кластере Kubernetes, а также тестировать в веб-браузере.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Для выполнения этой процедуры необходимо установить и запустить несколько средств локально. Не используйте Azure CloudShell.
 
@@ -46,7 +46,7 @@ ms.locfileid: "80876731"
 
 ### <a name="the-language-frontend-container"></a>Контейнер интерфейса для распознавания языка
 
-Этот веб-сайт выполняет те же функции, что и клиентское приложение, то есть направляет запросы к конечной точки распознавания языка. Когда процедура будет завершена, вы сможете определить язык для строки символов, обращаясь к контейнеру веб-сайта через браузер по адресу `http://<external-IP>/<text-to-analyze>`. Пример URL-адреса: `http://132.12.23.255/helloworld!`. В браузере отображается результат `English`.
+Этот веб-сайт выполняет те же функции, что и клиентское приложение, то есть направляет запросы к конечной точки распознавания языка. Когда процедура будет завершена, вы сможете определить язык для строки символов, обращаясь к контейнеру веб-сайта через браузер по адресу `http://<external-IP>/<text-to-analyze>`. Примером такого URL-адреса является `http://132.12.23.255/helloworld!`. В браузере отображается результат `English`.
 
 ### <a name="the-language-container"></a>Контейнер распознавания языка
 
@@ -313,17 +313,17 @@ ms.locfileid: "80876731"
 
     Параметры развертывания интерфейса распознавания языка|Назначение|
     |--|--|
-    |Строка 32<br> Свойство`image`|Расположение образа интерфейса в Реестре контейнеров<br>`<container-registry-name>.azurecr.io/language-frontend:v1`|
-    |Строка 44<br> Свойство`name`|Секрет Реестра контейнера для образа, который указан в параметре `<client-secret>` в предыдущем разделе.|
+    |Строка 32<br> Свойство `image`|Расположение образа интерфейса в Реестре контейнеров<br>`<container-registry-name>.azurecr.io/language-frontend:v1`|
+    |Строка 44<br> Свойство `name`|Секрет Реестра контейнера для образа, который указан в параметре `<client-secret>` в предыдущем разделе.|
 
 1. Измените строки развертывания распознавания языка в файле `language.yml`, используя данные из следующей таблицы, чтобы добавить имена образов реестров контейнеров, секрет клиента и параметры анализа текста.
 
     |Параметры развертывания распознавания языка|Назначение|
     |--|--|
-    |Строка 78<br> Свойство`image`|Расположение образа распознавания языка в Реестре контейнеров<br>`<container-registry-name>.azurecr.io/language:1.1.006770001-amd64-preview`|
-    |Строка 95<br> Свойство`name`|Секрет Реестра контейнера для образа, который указан в параметре `<client-secret>` в предыдущем разделе.|
-    |Строка 91<br> Свойство`apiKey`|Ключ ресурса анализа текста|
-    |Строка 92<br> Свойство`billing`|Конечная точка выставления счетов для ресурса анализа текста.<br>`https://westus.api.cognitive.microsoft.com/text/analytics/v2.1`|
+    |Строка 78<br> Свойство `image`|Расположение образа распознавания языка в Реестре контейнеров<br>`<container-registry-name>.azurecr.io/language:1.1.006770001-amd64-preview`|
+    |Строка 95<br> Свойство `name`|Секрет Реестра контейнера для образа, который указан в параметре `<client-secret>` в предыдущем разделе.|
+    |Строка 91<br> Свойство `apiKey`|Ключ ресурса анализа текста|
+    |Строка 92<br> Свойство `billing`|Конечная точка выставления счетов для ресурса анализа текста.<br>`https://westus.api.cognitive.microsoft.com/text/analytics/v2.1`|
 
     Параметр **apiKey** и **конечная точка выставления счетов** задаются в определении оркестрации Kubernetes, поэтому контейнеру веб-сайта не нужно знать их значения или передавать их в запросе. Контейнер веб-сайта обращается к контейнеру распознавания языка по имени оркестратора `language`.
 
@@ -405,15 +405,3 @@ az group delete --name cogserv-container-rg
 
 > [!div class="nextstepaction"]
 > [Контейнеры Cognitive Services](../cognitive-services-container-support.md)
-
-<!--
-kubectl get secrets
-
->az aks browse --resource-group diberry-cogserv-container-rg --name diberry-kubernetes-languagedetection
-
-kubectl proxy
-
-http://localhost:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy/#!/pod/default/language-frontend-6d65bdb77c-8f4qv?namespace=default
-
-kubectl describe pod language-frontend-6d65bdb77c
--->

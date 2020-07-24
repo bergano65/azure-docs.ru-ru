@@ -15,11 +15,12 @@ ms.date: 05/01/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: seohack1
-ms.openlocfilehash: ac5c19866a164bbc927d23495e9d6ec9a1ef6bfe
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8d6c9ab2bacf94b3a27bfd1de0189d8b89b5efaf
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84790710"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87129446"
 ---
 # <a name="troubleshoot-azure-rbac"></a>Устранение неполадок в Azure RBAC
 
@@ -65,7 +66,7 @@ $ras.Count
 - В пользовательской роли можно определить только одну группу управления `AssignableScopes` . Добавление группы управления в `AssignableScopes` сейчас находится на этапе предварительной версии.
 - Пользовательские роли с `DataActions` не могут быть назначены в области группы управления.
 - Azure Resource Manager не проверяет существование группы управления в назначаемой области определения роли.
-- Дополнительные сведения о настраиваемых ролях и группах управления см. в статье [организация ресурсов с помощью групп управления Azure](../governance/management-groups/overview.md#custom-rbac-role-definition-and-assignment).
+- Дополнительные сведения о настраиваемых ролях и группах управления см. в статье [организация ресурсов с помощью групп управления Azure](../governance/management-groups/overview.md#azure-custom-role-definition-and-assignment).
 
 ## <a name="transferring-a-subscription-to-a-different-directory"></a>Передача подписки в другой каталог
 
@@ -204,7 +205,7 @@ Azure Resource Manager иногда кэширует конфигурации и
 * Конечные точки  
 * IP-адреса  
 * Диски  
-* Расширения  
+* Модули  
 
 Элементы, требующие доступа на **запись** как к **виртуальной машине**, так и к **группе ресурсов**, в которой она находится (а также к доменному имени):  
 
@@ -222,7 +223,7 @@ Azure Resource Manager иногда кэширует конфигурации и
 
 Пользователь с ролью читателя может щелкнуть вкладку **Функции платформы** и выбрать **Все параметры**, чтобы просмотреть некоторые параметры, связанные с приложением-функцией (так же, как для веб-приложения), но не может изменить эти параметры. Для доступа к этим возможностям потребуется роль [участника](built-in-roles.md#contributor) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Устранение неполадок для гостевых пользователей](role-assignments-external-users.md#troubleshoot)
 - [Добавление и удаление назначений ролей Azure с помощью портала Azure](role-assignments-portal.md)
