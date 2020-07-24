@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/13/2019
-ms.openlocfilehash: c143d8aa24d3479f4619ea2c220d4a0c593f9cb1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0b18c34f8c0378d22d138b865d72fa4f351d7b8f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77665163"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073637"
 ---
 # <a name="application-insights-connector-management-solution-deprecated"></a>Решение по управлению Соединителем Application Insights (устарело)
 
@@ -46,15 +47,15 @@ ms.locfileid: "77665163"
 | [Агенты Windows](../../azure-monitor/platform/agent-windows.md) | Нет | Решение не собирает сведения из агентов Windows. |
 | [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения из агентов Linux. |
 | [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Нет | Решение не собирает сведения из агентов в подключенной группе управления SCOM. |
-| [Учетная запись хранения Azure](collect-azure-metrics-logs.md) | Нет | Решение не собирает сведения из службы хранилища Azure. |
+| [Учетная запись хранения Azure](./resource-logs.md#send-to-log-analytics-workspace) | Нет | Решение не собирает сведения из службы хранилища Azure. |
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 - Для доступа к сведениям о соединителе Application Insights необходима подписка Azure.
 - Необходимо иметь хотя бы один настроенный ресурс Application Insights.
 - Необходимо быть владельцем или участником ресурса Application Insights.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 1. Включите решение "Аналитика веб-приложений Azure" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AppInsights?tab=Overview) или выполните инструкции по [добавлению решений Log Analytics из коллекции решений](../../azure-monitor/insights/solutions.md).
 2. Перейдите на [портал Azure](https://portal.azure.com). Выберите **Все службы**, чтобы открыть Application Insights. Затем выполните поиск по запросу "Application Insights". 
@@ -173,7 +174,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="generic-fields"></a>Универсальные поля
 
-| Свойство. | Описание |
+| Свойство | Описание |
 | --- | --- |
 | Type | ApplicationInsights |
 | ClientIP |   |
@@ -199,7 +200,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="availability-specific-fields"></a>Поля со сведениями о доступности
 
-| Свойство. | Описание: |
+| Свойство | Описание |
 | --- | --- |
 | TelemetryType | Доступность |
 | AvailabilityTestName | Имя веб-теста |
@@ -241,7 +242,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="request-specific-fields"></a>Поля со сведениями о запросах
 
-| Свойство. | Описание |
+| Свойство | Описание |
 | --- | --- |
 | Type | ApplicationInsights |
 | TelemetryType | Запрос |
@@ -303,7 +304,7 @@ $Headers = @{
 $Connections = Invoke-RestMethod -Method "GET" -Uri "https://management.azure.com$($LAWorkspace.ResourceId)/dataSources/?%24filter=kind%20eq%20'ApplicationInsights'&api-version=2015-11-01-preview" -Headers $Headers
 $ConnectionsJson = $Connections | ConvertTo-Json
 ```
-Этот сценарий требует маркер проверки подлинности носителя, используемый в процессе проверки подлинности в Azure Active Directory. Одним из способов получения токена описан в статье [Data Sources — Create Or Update](https://docs.microsoft.com/rest/api/loganalytics/datasources/createorupdate) (Источники данных: создание или обновление). Щелкните **Попробовать** и войдите в свою подписку Azure. Вы можете скопировать маркер носителя из **предварительного запроса**, как показано на следующем рисунке.
+Этот сценарий требует маркер проверки подлинности носителя, используемый в процессе проверки подлинности в Azure Active Directory. Одним из способов получения токена описан в статье [Data Sources — Create Or Update](/rest/api/loganalytics/datasources/createorupdate) (Источники данных: создание или обновление). Щелкните **Попробовать** и войдите в свою подписку Azure. Вы можете скопировать маркер носителя из **предварительного запроса**, как показано на следующем рисунке.
 
 
 ![Маркер носителя](media/app-insights-connector/bearer-token.png)
@@ -315,6 +316,6 @@ $ConnectionsJson = $Connections | ConvertTo-Json
 ApplicationInsights | summarize by ApplicationName
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Используйте [поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просматривать подробные сведения о приложениях Application Insights.

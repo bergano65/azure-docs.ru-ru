@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.service: service-bus
 ms.date: 07/02/2020
 ms.author: alvidela
-ms.openlocfilehash: df0541802dfc331ffc94e95be112ea7e005960b5
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: cf21030fbf1aaa9f36e4d34aac918c4604066ec2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86049998"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87071637"
 ---
 # <a name="how-to-integrate-rabbitmq-with-azure-service-bus"></a>Как интегрировать RabbitMQ с служебной шиной Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "86049998"
 
 Теперь, когда у вас есть пространство имен служебной шины Azure, нажмите кнопку `Queues` слева в разделе `Entities` , чтобы можно было добавить новую очередь:
 
-:::image type="content" source="./media/service-bus-integrate-with-rabbitmq/create-queue.png" alt-text="Создание очереди":::
+:::image type="content" source="./media/service-bus-integrate-with-rabbitmq/create-queue.png" alt-text="Создать очередь":::
 
 Имя очереди будет таким `from-rabbitmq` же, как напоминание о том, откуда поступают сообщения. Можно оставить все остальные параметры по умолчанию, но вы можете изменить их в соответствии с потребностями приложения.
 
@@ -90,7 +90,7 @@ rabbitmq-plugins enable rabbitmq_shovel_management
 
 :::image type="content" source="./media/service-bus-integrate-with-rabbitmq/converter.png" alt-text="Преобразовать строку подключения":::
 
-Теперь откройте подключаемый модуль управления RabbitMQ в наших браузерах [http://localhost:15672/#/dynamic-shovels](http://localhost:15672/#/dynamic-shovels) и перейдите к `Admin -> Shovel Management` , где можно добавить новый шовел, который будет отсылать сообщения из очереди RabbitMQ в очередь служебной шины Azure.
+Теперь откройте подключаемый модуль управления RabbitMQ в наших браузерах `http://localhost:15672/#/dynamic-shovels` и перейдите к `Admin -> Shovel Management` , где можно добавить новый шовел, который будет отсылать сообщения из очереди RabbitMQ в очередь служебной шины Azure.
 
 :::image type="content" source="./media/service-bus-integrate-with-rabbitmq/add-shovel.png" alt-text="Добавить RabbitMQ Шовел":::
 

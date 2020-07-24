@@ -10,12 +10,13 @@ ms.topic: conceptual
 author: MladjoA
 ms.author: mlandzic
 ms.reviewer: carlrab, jovanpop
-ms.date: 04/25/2019
-ms.openlocfilehash: c9a9b42d6f6d8c89847b03f5eda858c75d198c58
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/21/2020
+ms.openlocfilehash: ba2dd167cdf49b5f1a4b4f2dcd0edd48ea969fae
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84711397"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073325"
 ---
 # <a name="migrate-a-certificate-of-a-tde-protected-database-to-azure-sql-managed-instance"></a>Перенос сертификата базы данных, защищенной TDE, в Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -33,7 +34,7 @@ ms.locfileid: "84711397"
 > [!IMPORTANT]
 > Перенесенный сертификат используется только для восстановления базы данных, защищенной только для TDE. Вскоре после восстановления перенесенный сертификат заменяется другим предохранителем, либо управляемым службой сертификатом, либо асимметричным ключом из хранилища ключей в зависимости от типа TDE, установленного в экземпляре.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
@@ -148,7 +149,7 @@ Update-Module -Name Az.Sql
 2. После завершения всех подготовительных действий выполните следующие команды, чтобы передать сертификат в кодировке Base-64 в целевой управляемый экземпляр:
 
    ```azurepowershell
-   $fileContentBytes = Get-Content 'C:/full_path/TDE_Cert.pfx' -Encoding Byte
+   $fileContentBytes = Get-Content 'C:/full_path/TDE_Cert.pfx' -AsByteStream
    $base64EncodedCert = [System.Convert]::ToBase64String($fileContentBytes)
    $securePrivateBlob = $base64EncodedCert  | ConvertTo-SecureString -AsPlainText -Force
    $password = "<password>"
@@ -185,7 +186,7 @@ Update-Module -Name Az.Sql
 
 Теперь сертификат доступен для указанного управляемого экземпляра, и резервная копия соответствующей базы данных, защищенной с помощью TDE, может быть успешно восстановлена.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как выполнить миграцию сертификата, защищающего ключ шифрования базы данных, с прозрачное шифрование данных, из локального или экземпляра SQL Server IaaS в Управляемый экземпляр Azure SQL.
 

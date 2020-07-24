@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 07/01/2020
+ms.date: 07/16/2020
 ms.author: tamram
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: e8857da1410ca68a695a9d7995aeb375fb154cd2
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 61c2b2b8bce676bd7032eb65fcf48b5ad07092ad
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86080029"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87070667"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -388,6 +388,7 @@ ms.locfileid: "86080029"
 
 | Служба                        | Имя поставщика ресурсов                 | Назначение            |
 | :----------------------------- | :------------------------------------- | :----------------- |
+| Служба управления Azure API           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее.](/azure/api-management/api-management-authentication-policies#use-managed-identity-in-send-request-policy) |
 | Когнитивный поиск Azure         | Microsoft.Search/searchServices        | Разрешает службам Когнитивного поиска доступ к учетным записям хранения для индексирования, обработки и выполнения запросов. |
 | Задачи Реестра контейнеров Azure | Microsoft.ContainerRegistry/registries | Задачи Реестра контейнеров Azure могут получать доступ к учетным записям хранения при создании образов контейнеров. |
 | Фабрика данных Azure             | Microsoft.DataFactory/factories;        | Разрешает доступ к учетным записям хранения через среду ADF. |
@@ -395,7 +396,7 @@ ms.locfileid: "86080029"
 | Центр Интернета вещей Azure                  | Microsoft.Devices/IotHubs              | Позволяет записывать данные из центра Интернета вещей в хранилище BLOB-объектов. [Дополнительные сведения](../../iot-hub/virtual-network-support.md#egress-connectivity-to-storage-account-endpoints-for-routing) |
 | Azure Logic Apps               | Microsoft.Logic/workflows              | Позволяет приложениям логики получать доступ к учетным записям хранения. [Подробнее](/azure/logic-apps/create-managed-service-identity#authenticate-access-with-managed-identity). |
 | Служба "Машинное обучение Azure" | Microsoft.MachineLearningServices      | Авторизованные рабочие области Машинного обучения Azure записывают выходные данные эксперимента, модели и журналы в хранилище BLOB-объектов и читают данные. [Подробнее](/azure/machine-learning/how-to-enable-virtual-network#use-a-storage-account-for-your-workspace). | 
-| Хранилище данных SQL Azure       | Microsoft.Sql                          | Позволяет выполнять импорт и экспорт данных в конкретных экземплярах базы данных SQL с помощью PolyBase. [Подробнее](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview). |
+| Хранилище данных SQL Azure       | Microsoft.Sql                          | Позволяет выполнять импорт и экспорт данных в конкретных экземплярах базы данных SQL с помощью PolyBase. [Подробнее.](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview) |
 | База данных SQL Azure       | Microsoft.Sql                          | Позволяет [импортировать](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver15#f-importing-data-from-a-file-in-azure-blob-storage) данные из учетных записей хранения и [записывать](https://docs.microsoft.com/azure/azure-sql/database/audit-write-storage-account-behind-vnet-firewall) данные аудита в учетные записи хранения, защищенные брандмауэром. |
 | Azure Stream Analytics         | Microsoft.StreamAnalytics             | Позволяет записывать данные из задания потоковой передачи в хранилище BLOB-объектов. Эта функция в настоящее время находится на стадии предварительной версии. [Подробнее](/azure/stream-analytics/blob-output-managed-identity). |
 | Azure Synapse Analytics        | Microsoft.Synapse/workspaces          | Обеспечивает доступ к данным в службе хранилища Azure из Synapse Analytics. |

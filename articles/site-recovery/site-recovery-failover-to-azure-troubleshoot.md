@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: storage-backup-recovery
 ms.date: 01/08/2020
 ms.author: mayg
-ms.openlocfilehash: 09a4700ce794458ee4dcad2291a93e0b13ca5feb
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 39a92dbdc0bdcd0fdd2bb06efe3fbd4bfe33069d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86133776"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87071188"
 ---
 # <a name="troubleshoot-errors-when-failing-over-vmware-vm-or-physical-machine-to-azure"></a>Устранение ошибок при отработке отказа виртуальной машины VMware или физического компьютера в Azure
 
@@ -54,9 +54,11 @@ ms.locfileid: "86133776"
 
     Если расконсервация требуется, появится следующий результат:
 
-        REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\storvsc           start =  3 expected value =  0
+    ```output
+    REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\storvsc           start =  3 expected value =  0
 
-        This system doesn't meet no-hydration requirement.
+    This system doesn't meet no-hydration requirement.
+    ```
 
     Если виртуальная машина соответствует требованиям отсутствия расконсервации, скрипт выдаст результат "Эта система соответствует требованиям отсутствия расконсервации". В этом случае все драйверы и службы находятся в состоянии, соответствующем требованиям Azure, и расконсервация на виртуальной машине не требуется.
 
@@ -65,12 +67,14 @@ ms.locfileid: "86133776"
     `.\Script-no-hydration.ps1 -set`
     
     Это преобразует тип загрузки драйверов, и будет получен результат, аналогичный следующему:
-    
-        REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\storvsc           start =  3 expected value =  0 
 
-        Updating registry:  REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\storvsc   start =  0 
+    ```output
+    REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\storvsc           start =  3 expected value =  0
 
-        This system is now no-hydration compatible. 
+    Updating registry:  REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\storvsc   start =  0
+
+    This system is now no-hydration compatible.
+    ```
 
 ## <a name="unable-to-connectrdpssh-to-the-failed-over-virtual-machine-due-to-grayed-out-connect-button-on-the-virtual-machine"></a>Не удается подключиться по протоколу RDP или SSH к виртуальной машине, для которой выполнена отработка отказа, поскольку кнопка подключения неактивна на виртуальной машине
 
@@ -98,7 +102,7 @@ ms.locfileid: "86133776"
 
     а. Создайте виртуальную машину в той же сети.
 
-    b.  Убедитесь, что ее можно присоединить к тому же домену, где должна находиться виртуальная машина, для которой выполнена отработка отказа.
+    Б.  Убедитесь, что ее можно присоединить к тому же домену, где должна находиться виртуальная машина, для которой выполнена отработка отказа.
 
     c. Если контроллер домена работает **неправильно**, попробуйте войти на виртуальную машину, для которой выполнена отработка отказа, используя учетную запись локального администратора.
 4. Если вы работаете с пользовательским DNS-сервером, убедитесь, что он доступен. Следуйте приведенным инструкциям.
@@ -116,11 +120,15 @@ ms.locfileid: "86133776"
 
 * Если ОС компьютера — Red Hat или Oracle Linux 7.*/8.0, выполните следующую команду на виртуальной машине для отработки отказа Azure с корневыми разрешениями. Перезагрузите виртуальную машину после команды.
 
-        grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
+  ```console
+  grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
+  ```
 
 * Если ОС компьютера — CentOS 7.*, выполните следующую команду на виртуальной машине для отработки отказа Azure с корневыми разрешениями. Перезагрузите виртуальную машину после команды.
 
-        grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
+  ```console
+  grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
+  ```
 
 ## <a name="unexpected-shutdown-message-event-id-6008"></a>Сообщение о непредвиденном завершении работы (идентификатор события 6008)
 

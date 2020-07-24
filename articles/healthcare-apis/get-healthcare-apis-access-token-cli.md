@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: mihansen
-ms.openlocfilehash: 4eb4c10a6c98aa847c9fa6c239aacde891db5aae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bdecf0dafa80f72eb528b4771c00befff8355e83
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84871144"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87072855"
 ---
 # <a name="get-access-token-for-azure-api-for-fhir-using-azure-cli"></a>Получение маркера доступа для API Azure для FHIR с помощью Azure CLI
 
@@ -34,7 +34,7 @@ az login
 API Azure для FHIR использует `resource` или `Audience` с URI, равным универсальному коду ресурса (URI) сервера FHIR `https://<FHIR ACCOUNT NAME>.azurehealthcareapis.com` . Вы можете получить маркер и сохранить его в переменной (с именем `$token` ) с помощью следующей команды:
 
 ```azurecli-interactive
-token=$(az account get-access-token --resource=https://<FHIR ACCOUNT NAME>.azurehealthcareapis.com | jq -r .accessToken)
+token=$(az account get-access-token --resource=https://<FHIR ACCOUNT NAME>.azurehealthcareapis.com --query accessToken --output tsv)
 ```
 
 ## <a name="use-with-azure-api-for-fhir"></a>Использование с API Azure для FHIR

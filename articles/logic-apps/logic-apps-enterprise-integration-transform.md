@@ -8,11 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 07/08/2016
-ms.openlocfilehash: 500769a39ba7658b35c1abb80101f6234170c941
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 38861ed941d49317e69bfab9afd17638a790bf7b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74792378"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87072426"
 ---
 # <a name="create-maps-that-transform-xml-between-formats-in-azure-logic-apps-with-enterprise-integration-pack"></a>Создание преобразований или сопоставлений, которые изменяют форматы данных XML в Azure Logic Apps с Пакетом интеграции Enterprise
 
@@ -29,7 +30,7 @@ ms.locfileid: "74792378"
 
 **Ниже приведены указания по использованию преобразования**.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Обязательные условия
 
 * Создание учетной записи интеграции и добавление карты в нее  
 
@@ -37,11 +38,11 @@ ms.locfileid: "74792378"
 
 1. Создайте приложение логики и [свяжите его с учетной записью интеграции](../logic-apps/logic-apps-enterprise-integration-accounts.md "Сведения о связывании учетной записи интеграции с приложением логики") , содержащей карту.
 2. Добавление триггера **запроса** в приложение логики  
-   ![](./media/logic-apps-enterprise-integration-transforms/transform-1.png)    
+   ![Снимок экрана: раскрывающийся список "отображать управляемые API Майкрософт" с выбранным триггером запроса. Раскрывающийся список находится в приложении логики, созданном с помощью пакета SDK для интеграции Visual Studio Enterprise.](./media/logic-apps-enterprise-integration-transforms/transform-1.png)    
 3. Добавьте действие **Преобразовать XML**, щелкнув **Добавить действие** .  
-   ![](./media/logic-apps-enterprise-integration-transforms/transform-2.png)   
+   ![Снимок экрана, показывающий кнопку "добавить действие", выбранную на экране триггера запроса.](./media/logic-apps-enterprise-integration-transforms/transform-2.png)   
 4. Введите слово *transform* в поле поиска, чтобы отфильтровать все действия и оставить только то, которое необходимо использовать.  
-   ![](./media/logic-apps-enterprise-integration-transforms/transform-3.png)  
+   ![Снимок экрана, показывающий, как выполнить поиск действия преобразования XML в раскрывающемся списке "Показать управляемые API Майкрософт", чтобы его можно было добавить в триггер запроса.](./media/logic-apps-enterprise-integration-transforms/transform-3.png)  
 5. Выберите действие **Преобразовать XML**.   
 6. Добавьте **содержимое** XML, которое будет преобразовано. В качестве **содержимого** можно использовать любые данные XML, получаемые в HTTP-запросе. В этом примере выберите текст HTTP-запроса, активировавшего приложение логики.
 
@@ -50,9 +51,9 @@ ms.locfileid: "74792378"
  
 
 7. Выберите имя **карты** , которую вы хотите использовать для преобразования. Эта карта должна находиться в вашей учетной записи интеграции. На предыдущем шаге вы уже предоставили приложению логики доступ к своей учетной записи интеграции, содержащей карту.      
-   ![](./media/logic-apps-enterprise-integration-transforms/transform-4.png) 
+   ![Снимок экрана, показывающий поля содержимого и карт на экране преобразования XML для триггера запроса.](./media/logic-apps-enterprise-integration-transforms/transform-4.png) 
 8. Сохраните результаты своих действий.  
-    ![](./media/logic-apps-enterprise-integration-transforms/transform-5.png) 
+    ![Снимок экрана, показывающий кнопку "Сохранить" в конструкторе Logic Apps.](./media/logic-apps-enterprise-integration-transforms/transform-5.png) 
 
 На этом настройка карты завершена. В случае реального приложения может потребоваться сохранить преобразованные данные в бизнес-приложении, например Salesforce. Можно легко добавить действие для отправки выходных данных преобразования в Salesforce. 
 
@@ -68,7 +69,7 @@ ms.locfileid: "74792378"
 * Передача существующих карт  
 * Включена поддержка формата XML.
 
-## <a name="advanced-features"></a>Дополнительные возможности
+## <a name="advanced-features"></a>Дополнительные функции
 
 ### <a name="reference-assembly-or-custom-code-from-maps"></a>Базовая сборка или настраиваемый код из карт 
 Действие преобразования также поддерживает карты или преобразования со ссылкой на внешнюю сборку. Эта возможность позволяет вызывать настраиваемый код .NET непосредственно из карт XSLT. Ниже приведены предварительные требования для использования сборки в картах.
@@ -132,7 +133,7 @@ ms.locfileid: "74792378"
 
 
 
-## <a name="learn-more"></a>Подробнее
+## <a name="learn-more"></a>Дополнительные сведения
 * [Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise")  
 * [Дополнительные сведения о сопоставлениях](../logic-apps/logic-apps-enterprise-integration-maps.md "Сведения о картах интеграции Enterprise")  
 

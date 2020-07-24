@@ -6,11 +6,12 @@ ms.date: 07/10/2019
 ms.author: yalavi
 author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: d31c856e17348c23ad61130869af6ae440d3050d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c9696167d9addc3029a53f25e289d17bd3add263
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81114303"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073629"
 ---
 # <a name="understand-how-the-migration-tool-works"></a>Принцип работы средства миграции
 
@@ -63,7 +64,7 @@ ms.locfileid: "81114303"
 - SASThrottlingError
 - ThrottlingError
 
-Классические правила генерации оповещений для метрик процента должны быть перенесены на основе [сопоставления старых и новых метрик хранилища](https://docs.microsoft.com/azure/storage/common/storage-metrics-migration#metrics-mapping-between-old-metrics-and-new-metrics). Необходимо соответствующим образом изменить пороговые значения, так как новая метрика станет абсолютной.
+Классические правила генерации оповещений для метрик процента должны быть перенесены на основе [сопоставления старых и новых метрик хранилища](../../storage/common/storage-metrics-migration.md#metrics-mapping-between-old-metrics-and-new-metrics). Необходимо соответствующим образом изменить пороговые значения, так как новая метрика станет абсолютной.
 
 Классические правила генерации оповещений на Анонимауссроттлинжеррор, Сассроттлинжеррор и Сроттлинжеррор должны быть разделены на два новых оповещения, поскольку не существует Объединенных метрик, предоставляющая те же функциональные возможности. Пороговые значения потребуется адаптировать соответствующим образом.
 
@@ -269,7 +270,7 @@ ms.locfileid: "81114303"
 - Исключение подписок или групп ресурсов на время процесса миграции из назначения политики. Дополнительные [сведения об управлении областью исключения политик](../../governance/policy/tutorials/create-and-manage.md#exempt-a-non-compliant-or-denied-resource-using-exclusion).
 - Удаление или изменение влияния на "Audit" или "Append" (например, может решить проблемы, связанные с отсутствующими тегами). Дополнительные [сведения об управлении последствиями политик](../../governance/policy/concepts/definition-structure.md#policy-rule).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Как использовать средство миграции](alerts-using-migration-tool.md)
 - [Подготовка к миграции](alerts-prepare-migration.md)

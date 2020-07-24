@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 03/20/2020
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 847de2c2c8916558d542473d9b7c80fd5552dbf7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 51b6be8b4deffd81da6c0b714bc6afeff4b06ab2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80437237"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073945"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Непрерывное развертывание в службе приложений Azure
 
@@ -78,7 +78,7 @@ ms.locfileid: "80437237"
      > [!NOTE]
      > Если ваша организация Azure DevOps отсутствует в списке, убедитесь, что она связана с вашей подпиской Azure. Дополнительные сведения см. [в статье Настройка учетной записи Azure DevOps Services для ее развертывания в веб-приложении](https://docs.microsoft.com/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops).
      
-1. Выберите **Continue** (Продолжить).
+1. Выберите пункт **Продолжить**.
    
    ![Заполните сведения о репозитории и нажмите кнопку продолжить.](media/app-service-continuous-deployment/configure-kudu.png)
    
@@ -92,7 +92,7 @@ ms.locfileid: "80437237"
 
 Если у вашей учетной записи есть необходимые разрешения, можно настроить Azure Pipelines для непрерывного развертывания из GitHub или Azure Repos. Дополнительные сведения о развертывании с помощью Azure Pipelines см. [в статье Развертывание веб-приложения в службах приложений Azure](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps).
 
-#### <a name="prerequisites"></a>Предварительные требования
+#### <a name="prerequisites"></a>Обязательные условия
 
 Чтобы служба приложений Azure была создана непрерывной поставкой с помощью Azure Pipelines, ваша организация Azure DevOps должна иметь следующие разрешения: 
 
@@ -177,7 +177,7 @@ ms.locfileid: "80437237"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Исследование распространенных проблем с непрерывным развертыванием](https://github.com/projectkudu/kudu/wiki/Investigating-continuous-deployment)
-* [Использование Azure PowerShell](/powershell/azureps-cmdlets-docs)
+* [Использование Azure PowerShell](/powershell/azure/)
 * [Документация по Git](https://git-scm.com/documentation)
 * [Проект Kudu](https://github.com/projectkudu/kudu/wiki)
 

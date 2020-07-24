@@ -1,14 +1,14 @@
 ---
-title: Тестирование для DevOps-LUIS
+title: Непрерывные рабочие процессы для приложений LUIS
 description: Как реализовать рабочие процессы CI/CD для DevOps для Language Understanding (LUIS).
 ms.topic: conceptual
 ms.date: 06/5/2020
-ms.openlocfilehash: 87b922d176f3ef11f25e46c8e076c88d5f3854c3
-ms.sourcegitcommit: 52d2f06ecec82977a1463d54a9000a68ff26b572
+ms.openlocfilehash: 4cedf0cbe3f9ab675c191f8e4639688bb7916ee0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84783687"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87072987"
 ---
 # <a name="continuous-integration-and-continuous-delivery-workflows-for-luis-devops"></a>Рабочие процессы непрерывной интеграции и непрерывной поставки для LUIS DevOps
 

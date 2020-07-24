@@ -7,17 +7,18 @@ ms.topic: reference
 ms.date: 07/03/2019
 ms.author: vitalyg
 ms.subservice: application-insights
-ms.openlocfilehash: 12bc51e800ef5ccd4ad3c72d3860fb22bac5b749
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ca8aa62c4119b9b0b7bbed53cf722c694696ef5b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77664921"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073574"
 ---
 # <a name="application-insights-log-based-metrics"></a>Метрики на основе журналов Application Insights
 
 Application Insights метрики на основе журналов позволяют анализировать работоспособность наблюдаемых приложений, создавать мощные панели мониторинга и настраивать оповещения. Существует два вида метрик:
 
-* [Метрики на основе журнала](../../azure-monitor/app/pre-aggregated-metrics-log-metrics.md#log-based-metrics) , расположенные за сценой, преобразуются в [запросы Kusto](https://docs.microsoft.com/azure/kusto/query/) из хранимых событий.
+* [Метрики на основе журнала](../../azure-monitor/app/pre-aggregated-metrics-log-metrics.md#log-based-metrics) , расположенные за сценой, преобразуются в [запросы Kusto](/azure/kusto/query/) из хранимых событий.
 * [Стандартные метрики](../../azure-monitor/app/pre-aggregated-metrics-log-metrics.md#pre-aggregated-metrics) хранятся в виде предварительно агрегированных временных рядов.
 
 Так как *Стандартные метрики* предварительно агрегированы во время сбора, они имеют лучшую производительность во время выполнения запроса. Это делает их лучшим выбором для панелей мониторинга и оповещений в режиме реального времени. *Метрики на основе журнала* имеют больше измерений, что делает их главным вариантом для анализа данных и автоматизированной диагностики. С помощью [селектора пространства имен](metrics-getting-started.md#create-your-first-metric-chart) можно переключаться между метриками на основе журнала и стандартными показателями в [обозревателе метрик](metrics-getting-started.md).

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: 65e1fa07d2af15e9ccb5f85ce4645e3e6c287952
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 44f10bd49a768004fc63a3287799e6b79dd5bae1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85960373"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87071897"
 ---
 # <a name="how-to-build-a-smooth-streaming-windows-store-application"></a>Создание приложения для магазина Windows с бесперебойной потоковой передачей  
 
@@ -32,7 +32,7 @@ ms.locfileid: "85960373"
 3. Выбор потоков для бесперебойной потоковой передачи
 4. Выбор дорожек для бесперебойной потоковой передачи
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 > [!NOTE]
 > Проекты для Магазина Windows версии 8.1 и более ранней версии не поддерживаются в Visual Studio 2017.  Дополнительные сведения см. в статье [Целевая платформа и совместимость для Visual Studio 2017](https://www.visualstudio.com/en-us/productinfo/vs2017-compatibility-vs).
 
@@ -53,7 +53,7 @@ ms.locfileid: "85960373"
 
 ![Пример приложения для магазина Windows с бесперебойной потоковой передачей][PlayerApplication]
 
-Дополнительные сведения о разработке приложений Магазина Windows см. в разделе, посвященном [разработке потрясающих приложений для Windows 8](https://msdn.microsoft.com/windows/apps/br229512.aspx). Это занятие содержит следующие процедуры:
+Дополнительные сведения о разработке приложений Магазина Windows см. в разделе, посвященном [разработке потрясающих приложений для Windows 8](https://developer.microsoft.com/en-us/windows/). Это занятие содержит следующие процедуры:
 
 1. Создание проекта для магазина Windows
 2. Проектирование пользовательского интерфейса (XAML)
@@ -66,11 +66,11 @@ ms.locfileid: "85960373"
 1. В меню **файл** выберите пункт **создать**, а затем выберите пункт **проект**.
 1. В диалоговом окне "Новый проект" введите или выберите следующие значения:
 
-    | name | Значение |
+    | Имя | Значение |
     | --- | --- |
     | Группа шаблонов |Installed/Templates/Visual C#/Windows Store |
     | Шаблон |Пустое приложение (XAML) |
-    | name |SSPlayer |
+    | Имя |SSPlayer |
     | Расположение |C:\SSTutorials |
     | Имя решения |SSPlayer |
     | Создать каталог для решения |(выбрано) |
@@ -82,10 +82,10 @@ ms.locfileid: "85960373"
 1. В обозревателе решений щелкните правой кнопкой мыши **SSPlayer**, а затем выберите команду **Добавить ссылку**.
 1. Введите или выберите следующие значения:
 
-    | name | Значение |
+    | Имя | Значение |
     | --- | --- |
     | Ссылочная группа |Windows/Расширения |
-    | Справка |Выберите клиентский пакет SDK бесперебойной потоковой передачи Microsoft для Windows 8 и пакет среды выполнения Microsoft Visual C++ |
+    | Справочник |Выберите клиентский пакет SDK бесперебойной потоковой передачи Microsoft для Windows 8 и пакет среды выполнения Microsoft Visual C++ |
 
 1. Нажмите кнопку **ОК**. 
 
@@ -141,7 +141,7 @@ ms.locfileid: "85960373"
          </StackPanel>
    ```
    Элемент управления MediaElement используется для воспроизведения мультимедиа. Для управления мультимедиа в следующем уроке будет использоваться ползунок с именем sliderProgress.
-3. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
+3. Нажмите клавиши **CTRL + S** , чтобы сохранить файл.
 
 Элемент управления MediaElement поддерживает бесперебойную потоковую передачу контента без дополнительной настройки. Чтобы включить поддержку бесперебойной потоковой передачи, необходимо зарегистрировать обработчик потока байтов для бесперебойной потоковой передачи по расширению файла и MIME-типу.  Для регистрации используется метод MediaExtensionManager.RegisterByteStreamHandler в пространстве имен Windows.Media.
 
@@ -214,7 +214,7 @@ ms.locfileid: "85960373"
          # endregion
    ```
    Здесь определяется обработчик события sliderProgress_PointerPressed.  Для его запуска требуется выполнить ряд дополнительных действий, которые будут рассматриваться на следующем уроке этого учебного курса.
-6. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
+6. Нажмите клавиши **CTRL + S** , чтобы сохранить файл.
 
 Готовый код файла должен выглядеть следующим образом:
 
@@ -291,7 +291,7 @@ ms.locfileid: "85960373"
             "application/vnd.ms-sstr+xml", 
          propertySet);
    ```
-6. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
+6. Нажмите клавиши **CTRL + S** , чтобы сохранить файл.
 
 ### <a name="to-add-the-adaptive-source-manager-level-event-handler"></a>Добавление обработчиков событий уровня диспетчера адаптивных источников
 
@@ -319,7 +319,7 @@ ms.locfileid: "85960373"
          adaptiveSourceManager.AdaptiveSourceOpenedEvent += 
            new AdaptiveSourceOpenedEventHandler(mediaElement_AdaptiveSourceOpened);
    ```
-5. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
+5. Нажмите клавиши **CTRL + S** , чтобы сохранить файл.
 
 ### <a name="to-add-adaptive-source-level-event-handlers"></a>Добавление обработчиков событий уровня адаптивного источника
 
@@ -368,7 +368,7 @@ ms.locfileid: "85960373"
 
             mediaElement_AdaptiveSourceFailed;
    ```
-5. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
+5. Нажмите клавиши **CTRL + S** , чтобы сохранить файл.
 
 Эти же события доступны на уровне диспетчера адаптивных источников, который может использоваться для обработки функций, общих для всех элементов мультимедиа в приложении. Каждый адаптивный источник имеет свои собственные события, и все события AdaptiveSource будут передаваться каскадом в диспетчер AdaptiveSourceManager.
 
@@ -406,7 +406,7 @@ ms.locfileid: "85960373"
          mediaElement.MediaEnded += MediaEnded;
          mediaElement.MediaFailed += MediaFailed;
    ```
-4. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
+4. Нажмите клавиши **CTRL + S** , чтобы сохранить файл.
 
 ### <a name="to-add-slider-bar-related-code"></a>Добавление кода, связанного с ползунком
 
@@ -516,7 +516,7 @@ ms.locfileid: "85960373"
    ```
 
    > [!NOTE]
-   > CoreDispatcher используется для внесения изменений в поток пользовательского интерфейса из других потоков. В случае узкого места в потоке Dispatcher разработчик может использовать Dispatcher, предоставляемый элементом пользовательского интерфейса, который предполагается обновить.  Пример:
+   > CoreDispatcher используется для внесения изменений в поток пользовательского интерфейса из других потоков. В случае узкого места в потоке Dispatcher разработчик может использовать Dispatcher, предоставляемый элементом пользовательского интерфейса, который предполагается обновить.  Например.
 
    ```csharp
          await sliderProgress.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => { TimeSpan 
@@ -539,7 +539,7 @@ ms.locfileid: "85960373"
          sliderProgress.Width = mediaElement.Width;
          setupTimer();
    ```
-8. Нажмите клавиши **CTRL+S** , чтобы сохранить файл.
+8. Нажмите клавиши **CTRL + S** , чтобы сохранить файл.
 
 ### <a name="to-compile-and-test-the-application"></a>Компиляция и тестирование приложения
 
@@ -1045,4 +1045,3 @@ ms.locfileid: "85960373"
 
 [PlayerApplication]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-1.png
 [CodeViewPic]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-2.png
-

@@ -1,14 +1,14 @@
 ---
 title: Мониторинг делегированных ресурсов в масштабе
 description: Узнайте, как эффективно использовать журналы Azure Monitor в масштабируемом способе между клиентами клиентов, которыми вы управляете.
-ms.date: 07/07/2020
+ms.date: 07/15/2020
 ms.topic: how-to
-ms.openlocfilehash: 3be7494f929fc91e2b01bde0b4f26f7c2e4b907b
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 758437fdc7a32fd5937434ce10f16a8c792423d3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86133485"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87072721"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Мониторинг делегированных ресурсов в масштабе
 
@@ -34,10 +34,11 @@ ms.locfileid: "86133485"
 
 ## <a name="analyze-the-gathered-data"></a>Анализ собранных данных
 
-После развертывания политик данные будут регистрироваться в Log Analytics рабочих областях, созданных в каждом клиенте клиента. Для получения подробных сведений обо всех управляемых клиентах можно использовать такие средства, как [Azure Monitor книги](../../azure-monitor/platform/workbooks-overview.md) , для сбора и анализа информации из нескольких источников данных.
+После развертывания политик данные будут регистрироваться в Log Analytics рабочих областях, созданных в каждом клиенте клиента. Для получения подробных сведений обо всех управляемых клиентах можно использовать такие средства, как [Azure Monitor книги](../../azure-monitor/platform/workbooks-overview.md) , для сбора и анализа информации из нескольких источников данных. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+- Изучите [образец книги, созданной](https://github.com/scautomation/Azure-Automation-Update-Management-Workbooks)с помощью MVP, которая отслеживает отчеты о соответствии требованиям, [запросив журналы Управление обновлениями](../../automation/automation-update-management-query-logs.md) в нескольких log Analytics рабочих областях. 
 - Дополнительные сведения об [Azure Monitor](../../azure-monitor/index.yml).
 - Сведения о [журналах Azure Monitor](../../azure-monitor/platform/data-platform-logs.md).
 - Узнайте больше об [интерфейсах управления для различных клиентов](../concepts/cross-tenant-management-experience.md).

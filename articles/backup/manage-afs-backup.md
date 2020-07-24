@@ -3,15 +3,16 @@ title: Управление резервными копиями файловых
 description: В этой статье описаны распространенные задачи по управлению файловыми ресурсами Azure, которые архивируются с помощью Azure Backup.
 ms.topic: conceptual
 ms.date: 01/07/2020
-ms.openlocfilehash: cb764fa441c063328dc350cf26f42c5bc7a0ca99
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6684cb348c9edb35b5f3e46fb7922e9aa265c725
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84712094"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073305"
 ---
 # <a name="manage-azure-file-share-backups"></a>Управление резервными копиями файловых ресурсов Azure
 
-В этой статье описаны распространенные задачи по управлению файловыми ресурсами Azure, которые архивируются с помощью [Azure Backup](https://docs.microsoft.com/azure/backup/backup-overview). Вы узнаете, как выполнять задачи управления в хранилище служб восстановления.
+В этой статье описаны распространенные задачи по управлению файловыми ресурсами Azure, которые архивируются с помощью [Azure Backup](./backup-overview.md). Вы узнаете, как выполнять задачи управления в хранилище служб восстановления.
 
 ## <a name="monitor-jobs"></a>Мониторинг заданий
 
@@ -162,6 +163,6 @@ ms.locfileid: "84712094"
 
    ![Выбрать отмену регистрации](./media/manage-afs-backup/select-unregister.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в статье [Устранение неполадок резервного копирования файловых ресурсов Azure](https://docs.microsoft.com/azure/backup/troubleshoot-azure-files).
+Дополнительные сведения см. в статье [Устранение неполадок резервного копирования файловых ресурсов Azure](./troubleshoot-azure-files.md).

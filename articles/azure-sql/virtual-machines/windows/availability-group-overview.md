@@ -14,11 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 01/13/2017
 ms.author: mikeray
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f3c7009e5ecb43a809b9a3f703fc5ba289a2fd00
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 50be33bf0cb89c7baff58e5f8e4a2a23b9a1ecef
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84669279"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073283"
 ---
 # <a name="introducing-sql-server-always-on-availability-groups-on-azure-virtual-machines"></a>Введение группы доступности Always On SQL Server на виртуальных машинах Azure
 
@@ -40,10 +41,9 @@ ms.locfileid: "84669279"
 
 |  | Версия Windows Server | Версия SQL Server | Выпуск SQL Server | Конфигурация кворума WSFC | Аварийное восстановление с несколькими регионами | Поддержка нескольких подсетей | Поддержка существующего каталога AD | Аварийное восстановление с несколькими зонами в одном регионе | Поддержка Dist-AG без домена AD | Поддержка Dist-AG без кластера |  
 | :------ | :-----| :-----| :-----| :-----| :-----| :-----| :-----| :-----| :-----| :-----|
-| [CLI для виртуальных машин SQL](availability-group-az-cli-configure.md) | 2016 | 2017 </br>2016   | Enterprise | Облако-свидетель | Нет | Да | Да | Да | Нет | Нет |
-| [Шаблоны быстрого запуска](availability-group-quickstart-template-configure.md) | 2016 | 2017</br>2016  | Enterprise | Облако-свидетель | Нет | Да | Да | Да | Нет | Нет |
-| [Вручную](availability-group-manually-configure-prerequisites-tutorial.md) | All | Все | Все | All | Да | Да | Да | Да | Да | Да |
-| &nbsp; | &nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |
+| **[CLI для виртуальных машин SQL](availability-group-az-cli-configure.md)** | 2016 | 2017 </br>2016   | Enterprise | Облако-свидетель | Нет | Да | Да | Да | Нет | Нет |
+| **[Шаблоны быстрого запуска](availability-group-quickstart-template-configure.md)** | 2016 | 2017</br>2016  | Enterprise | Облако-свидетель | Нет | Да | Да | Да | Нет | Нет |
+| **[Вручную](availability-group-manually-configure-prerequisites-tutorial.md)** | Все | All | All | All | Да | Да | Да | Да | Да | Да |
 
 Шаблон **кластера SQL Server AlwaysOn (Предварительная версия)** удален из Azure Marketplace и более недоступен. 
 

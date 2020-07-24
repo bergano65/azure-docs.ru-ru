@@ -4,11 +4,12 @@ description: Маршрутизация данных Azure Monitor и Applicatio
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 11/06/2017
-ms.openlocfilehash: 142e3e19c13710963d239a75bc237b63713c29cc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 23bba091628eee767fbf292a8a8d772ffab674cb
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77672214"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073474"
 ---
 # <a name="monitor-your-azure-services-in-grafana"></a>Мониторинг служб Azure в Grafana
 Теперь можно отслеживать службы Azure и приложения из [Grafana](https://grafana.com/) с помощью [подключаемого модуля источника данных Azure Monitor](https://grafana.com/plugins/grafana-azure-monitor-datasource). Подключаемый модуль собирает данные производительности приложения, собранные Azure Monitor, включая различные журналы и метрики. Затем эти данные можно отобразить на панели мониторинга Grafana.
@@ -23,7 +24,7 @@ ms.locfileid: "77672214"
 ### <a name="set-up-grafana-on-azure-through-the-azure-marketplace"></a>Настройка Grafana в Azure с помощью Azure Marketplace
 1. Перейдите в Azure Marketplace и выберите Grafana от Grafana Labs.
 
-2. Введите названия и подробные сведения. Создайте новую группу ресурсов. Запомните значения, которые вы выбираете для имени и пароля виртуальной машины, а также пароля администратора сервера Grafana.  
+2. Введите названия и подробные сведения. Создание группы ресурсов Запомните значения, которые вы выбираете для имени и пароля виртуальной машины, а также пароля администратора сервера Grafana.  
 
 3. Выберите размер виртуальной машины и учетную запись хранения.
 
@@ -58,9 +59,9 @@ ms.locfileid: "77672214"
 2. Выберите имя для источника данных и **Azure Monitor** в качестве типа из раскрывающегося списка.
 
 3. Создайте субъект-службу. Grafana использует субъект-службу Azure Active Directory для подключения к API Azure Monitor и сбора данных. Необходимо создать или использовать существующий субъект-службу для управления доступом к ресурсам Azure.
-    * Инструкции по созданию субъекта-службы см. в [этой статье](../../azure-resource-manager/resource-group-create-service-principal-portal.md). Скопируйте и сохраните идентификатор арендатора (идентификатор каталога), идентификатор клиента (идентификатор приложения) и секрет клиента (значение ключа приложения).
-    * См. раздел о [назначении роли для приложения](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal), чтобы узнать, как назначить роль читателя приложению Azure Active Directory для подписки, группы ресурсов или ресурса, который нужно отслеживать. 
-    Для Log Analytics API требуется [роль читателя Log Analytics](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-reader), которая включает разрешения роли читателя и добавляется к ней.
+    * Инструкции по созданию субъекта-службы см. в [этой статье](../../active-directory/develop/howto-create-service-principal-portal.md). Скопируйте и сохраните идентификатор арендатора (идентификатор каталога), идентификатор клиента (идентификатор приложения) и секрет клиента (значение ключа приложения).
+    * См. раздел о [назначении роли для приложения](../../active-directory/develop/howto-create-service-principal-portal.md), чтобы узнать, как назначить роль читателя приложению Azure Active Directory для подписки, группы ресурсов или ресурса, который нужно отслеживать. 
+    Для Log Analytics API требуется [роль читателя Log Analytics](../../role-based-access-control/built-in-roles.md#log-analytics-reader), которая включает разрешения роли читателя и добавляется к ней.
 
 4. Передайте сведения о подключении в интерфейсы API, которые вы хотите использовать. Можно подключиться ко всем или некоторым из них. 
     * Если вы подключаетесь к обеим метрикам и журналам в Azure Monitor, вы можете повторно использовать те же учетные данные, выбрав **те же сведения, что и Azure Monitor API**.
@@ -156,6 +157,5 @@ Usage
 1. В меню слева на портале Azure щелкните **Группы ресурсов**, а затем выберите **Grafana**.
 2. На странице группы ресурсов щелкните **Удалить**, в текстовом поле введите **Grafana** и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Обзор метрик в Microsoft Azure](data-platform.md)
-

@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 06/03/2020
 ms.author: juliako
-ms.openlocfilehash: d09fba2130dc302378a59200349a569cc248234b
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 53e337cf4ccbabf7f0b7a227632ba5e996e2b4f3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86075439"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87072146"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -36,6 +36,20 @@ ms.locfileid: "86075439"
 >
 > Дополнительные сведения см. [в разделе ограничения портал Azure для служб мультимедиа v3](frequently-asked-questions.md#what-are-the-azure-portal-limitations-for-media-services-v3).
 
+## <a name="july-2020"></a>Июль 2020 г.
+
+### <a name="live-transcriptions"></a>Динамические транскрипции
+
+Интерактивные записи теперь поддерживают 19 языков и 8 регионов.
+
+## <a name="protecting-your-content-with-media-services-and-azure-ad"></a>Защита содержимого с помощью служб мультимедиа и Azure AD
+
+Мы опубликовали учебник [с именем сквозной защиты содержимого с помощью Azure AD](./azure-ad-content-protection.md).
+
+### <a name="high-availablity"></a>Высокий доступность
+
+Мы опубликовали высокий уровень доступности со службами мультимедиа и [обзором](./media-services-high-availability-encoding.md) видео по запросу (VOD) и [примерами](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/HighAvailabilityEncodingStreaming).
+
 ## <a name="june-2020"></a>Июнь 2020 г.
 
 ### <a name="live-video-analytics-on-iot-edge-preview-release"></a>Интерактивная аналитика видео в предварительной версии IoT Edge
@@ -43,16 +57,6 @@ ms.locfileid: "86075439"
 Предварительная версия функции Live Video Analytics на IoT Edge стала общедоступной. Дополнительные сведения см. в разделе [заметки о выпуске](../live-video-analytics-edge/release-notes.md).
 
 Интерактивная аналитика видео на IoT Edge — это расширение семейства служб мультимедиа. Она позволяет анализировать видео в реальном времени с помощью моделей искусственного интеллекта на своих пограничных устройствах, а также при необходимости записывать и записывать это видео. Теперь вы можете создавать приложения с помощью анализа видео в реальном времени на границе, не беспокоясь о сложности создания и работы конвейера видео.
-
-### <a name="search-by-topics"></a>Поиск по темам
-
-Теперь можно использовать API поиска для поиска видео с конкретными разделами (только API).
-
-Разделы добавляются как часть `textScope` (необязательный параметр). Дополнительные сведения см. в разделе [API](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Search-Videos) .  
-
-### <a name="labels-enhancement"></a>Расширение меток
-
-Средство создания тегов меток Обновлено и теперь содержит больше визуальных меток, которые можно определить.
 
 ## <a name="may-2020"></a>Май 2020 г.
 
@@ -137,7 +141,7 @@ ms.locfileid: "86075439"
 
 #### <a name="deprecation-of-media-processors"></a>Устаревшие обработчики мультимедиа
 
-Мы сообщаем о прекращении использования *Azure Media Indexer* и *Azure Media Indexer 2 (предварительная версия)* . Даты прекращения поддержки см. в разделе, посвященном [устаревшим компонентам](../previous/legacy-components.md). Вместо этих устаревших компонентах теперь используется [индексатор видео Служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/).
+Мы сообщаем о прекращении использования *Azure Media Indexer* и *Azure Media Indexer 2 (предварительная версия)* . Даты прекращения поддержки см. в разделе, посвященном [устаревшим компонентам](../previous/legacy-components.md). Вместо этих устаревших компонентах теперь используется [индексатор видео Служб мультимедиа Azure](../video-indexer/index.yml).
 
 Дополнительные сведения см. в статье [Переход с Azure Media Indexer и Azure Media Indexer 2 на Индексатор видео Служб мультимедиа Azure](../previous/migrate-indexer-v1-v2.md).
 
@@ -171,9 +175,9 @@ ms.locfileid: "86075439"
 
 ### <a name="video-subclipping"></a>Создание субклипов из видео
 
-Теперь при кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs) можно обрезать видео или создавать из него субклипы. 
+Теперь при кодировании с помощью [задания](/rest/api/media/jobs) можно обрезать видео или создавать из него субклипы. 
 
-Эта функция работает с любыми [преобразованиями](https://docs.microsoft.com/rest/api/media/transforms), созданными с помощью предустановок [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset). 
+Эта функция работает с любыми [преобразованиями](/rest/api/media/transforms), созданными с помощью предустановок [BuiltInStandardEncoderPreset](/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [StandardEncoderPreset](/rest/api/media/transforms/createorupdate#standardencoderpreset). 
 
 См. примеры:
 
@@ -212,8 +216,8 @@ ms.locfileid: "86075439"
 
 ### <a name="new-presets"></a>Новые предустановки
 
-* В список предустановок встроенного анализатора добавлена предустановка [FaceDetectorPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#facedetectorpreset).
-* В список предустановок встроенного кодировщика добавлена предустановка [ContentAwareEncodingExperimental](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#encodernamedpreset). Дополнительные сведения см. в разделе [Кодирование с учетом содержимого](content-aware-encoding.md). 
+* В список предустановок встроенного анализатора добавлена предустановка [FaceDetectorPreset](/rest/api/media/transforms/createorupdate#facedetectorpreset).
+* В список предустановок встроенного кодировщика добавлена предустановка [ContentAwareEncodingExperimental](/rest/api/media/transforms/createorupdate#encodernamedpreset). Дополнительные сведения см. в разделе [Кодирование с учетом содержимого](content-aware-encoding.md). 
 
 ## <a name="march-2019"></a>Март 2019 г.
 
@@ -246,21 +250,21 @@ ms.locfileid: "86075439"
 
 ## <a name="november-2018"></a>Ноябрь 2018 г.
 
-Модуль CLI 2.0 теперь доступен для [Службы мультимедиа Azure, общедоступная версия 3](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest) — версия 2.0.50.
+Модуль CLI 2.0 теперь доступен для [Службы мультимедиа Azure, общедоступная версия 3](/cli/azure/ams?view=azure-cli-latest) — версия 2.0.50.
 
 ### <a name="new-commands"></a>Новые команды
 
-- [az ams account](https://docs.microsoft.com/cli/azure/ams/account?view=azure-cli-latest)
-- [az ams account-filter](https://docs.microsoft.com/cli/azure/ams/account-filter?view=azure-cli-latest)
-- [az ams asset](https://docs.microsoft.com/cli/azure/ams/asset?view=azure-cli-latest)
-- [az ams asset-filter](https://docs.microsoft.com/cli/azure/ams/asset-filter?view=azure-cli-latest)
-- [az ams content-key-policy](https://docs.microsoft.com/cli/azure/ams/content-key-policy?view=azure-cli-latest)
-- [az ams job](https://docs.microsoft.com/cli/azure/ams/job?view=azure-cli-latest)
-- [az ams live-event](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest)
-- [az ams live-output](https://docs.microsoft.com/cli/azure/ams/live-output?view=azure-cli-latest)
-- [az ams streaming-endpoint](https://docs.microsoft.com/cli/azure/ams/streaming-endpoint?view=azure-cli-latest)
-- [az ams streaming-locator](https://docs.microsoft.com/cli/azure/ams/streaming-locator?view=azure-cli-latest)
-- [az ams account mru](https://docs.microsoft.com/cli/azure/ams/account/mru?view=azure-cli-latest) позволяет управлять зарезервированными единицами мультимедиа. Дополнительные сведения см. в статье [Масштабирование при обработке мультимедиа](media-reserved-units-cli-how-to.md).
+- [az ams account](/cli/azure/ams/account?view=azure-cli-latest)
+- [az ams account-filter](/cli/azure/ams/account-filter?view=azure-cli-latest)
+- [az ams asset](/cli/azure/ams/asset?view=azure-cli-latest)
+- [az ams asset-filter](/cli/azure/ams/asset-filter?view=azure-cli-latest)
+- [az ams content-key-policy](/cli/azure/ams/content-key-policy?view=azure-cli-latest)
+- [az ams job](/cli/azure/ams/job?view=azure-cli-latest)
+- [az ams live-event](/cli/azure/ams/live-event?view=azure-cli-latest)
+- [az ams live-output](/cli/azure/ams/live-output?view=azure-cli-latest)
+- [az ams streaming-endpoint](/cli/azure/ams/streaming-endpoint?view=azure-cli-latest)
+- [az ams streaming-locator](/cli/azure/ams/streaming-locator?view=azure-cli-latest)
+- [az ams account mru](/cli/azure/ams/account/mru?view=azure-cli-latest) позволяет управлять зарезервированными единицами мультимедиа. Дополнительные сведения см. в статье [Масштабирование при обработке мультимедиа](media-reserved-units-cli-how-to.md).
 
 ### <a name="new-features-and-breaking-changes"></a>Новые функции и критические изменения
 
@@ -351,7 +355,7 @@ ms.locfileid: "86075439"
 
 ### <a name="video-indexer"></a>Индексатор видео
 
-Общедоступный выпуск службы "Индексатор видео" вышел в августе. Новые сведения о поддерживаемых функциях см. в статье [Что такое Индексатор видео?](../../cognitive-services/video-indexer/video-indexer-overview.md?toc=/azure/media-services/video-indexer/toc.json&bc=/azure/media-services/video-indexer/breadcrumb/toc.json) 
+Общедоступный выпуск службы "Индексатор видео" вышел в августе. Новые сведения о поддерживаемых функциях см. в статье [Что такое Индексатор видео?](../video-indexer/video-indexer-overview.md?bc=/azure/media-services/video-indexer/breadcrumb/toc.json&toc=/azure/media-services/video-indexer/toc.json) 
 
 ### <a name="plans-for-changes"></a>Планы по изменениям.
 

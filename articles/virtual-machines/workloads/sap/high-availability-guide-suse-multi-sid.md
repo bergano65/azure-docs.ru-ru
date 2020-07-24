@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/26/2020
 ms.author: radeltch
-ms.openlocfilehash: 793851780e1154b6b6a21c88ea8cae063a277790
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 89d7ca3e37b107dce3f832499db45e0506c3fa64
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80350058"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074015"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-for-sap-applications-multi-sid-guide"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server для многоид безопасности приложений SAP
 
@@ -91,7 +91,7 @@ ms.locfileid: "80350058"
 
 Виртуальные машины, участвующие в кластере, должны иметь размер, чтобы иметь возможность выполнять все ресурсы, в случае отработки отказа. Каждый идентификатор безопасности SAP может отключаться при сбое независимо друг от друга в высокодоступном кластере с несколькими ИД безопасности.  При использовании ограждения SBD устройства SBD могут совместно использоваться несколькими кластерами.  
 
-Для обеспечения высокого уровня доступности SAP NetWeaver требует высокой доступности общих папок NFS. В этом примере предполагается, что общие папки SAP NFS размещены на [файловом сервере NFS](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-nfs)высокой доступности, который может использоваться несколькими системами SAP. Или общие ресурсы развертываются на [томах Azure NETAPP Files NFS](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes).  
+Для обеспечения высокого уровня доступности SAP NetWeaver требует высокой доступности общих папок NFS. В этом примере предполагается, что общие папки SAP NFS размещены на [файловом сервере NFS](./high-availability-guide-suse-nfs.md)высокой доступности, который может использоваться несколькими системами SAP. Или общие ресурсы развертываются на [томах Azure NETAPP Files NFS](../../../azure-netapp-files/azure-netapp-files-create-volumes.md).  
 
 ![Общие сведения о высоком уровне доступности SAP NetWeaver](./media/high-availability-guide-suse/ha-suse-multi-sid.png)
 
@@ -101,7 +101,7 @@ ms.locfileid: "80350058"
 > [!TIP]
 > Кластеризация SAP ASCS/ERS с несколькими ИД безопасности — это решение с более высокой степенью сложности. Реализация реализуется более сложно. Он также включает в себя более высокие усилия по администрированию при выполнении действий по обслуживанию (например, по исправлению ОС). Прежде чем начать фактическую реализацию, уделите время тщательному планированию развертывания и всех связанных компонентов, например виртуальных машин, подключений NFS, виртуальных IP-адресов, конфигураций подсистемы балансировки нагрузки и т. д.  
 
-NFS-сервер, SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и база данных SAP HANA используют виртуальное имя узла и виртуальные IP-адреса. Балансировщику нагрузки в Azure нужен виртуальный IP-адрес. Мы рекомендуем [Load Balancer (цен. категория "Стандартный")](https://docs.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal).  
+NFS-сервер, SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и база данных SAP HANA используют виртуальное имя узла и виртуальные IP-адреса. Балансировщику нагрузки в Azure нужен виртуальный IP-адрес. Мы рекомендуем [Load Balancer (цен. категория "Стандартный")](../../../load-balancer/quickstart-load-balancer-standard-public-portal.md).  
 
 В следующем списке показана конфигурация подсистемы балансировки нагрузки (A) SCS и ERS для этого кластера с несколькими идентификаторами безопасности с тремя системами SAP. Вам потребуется отдельный интерфейсный IP-адрес, зонды работоспособности и правила балансировки нагрузки для каждого экземпляра ASCS и ERS для каждого из идентификаторов безопасности. Назначьте всем виртуальным машинам, которые являются частью кластера ASCS/ASCS, один серверный пул.  
 
@@ -147,23 +147,23 @@ NFS-сервер, SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и б
 
 
 > [!Note]
-> Если в серверный пул внутреннего (без общедоступного IP-адреса) Azure Load Balancer ценовой категории "Стандартный" помещаются виртуальные машины без общедоступных IP-адресов, у них не будет исходящего подключения к Интернету без дополнительной настройки, разрешающей маршрутизацию к общедоступным конечным точкам. Подробные сведения о такой настройке см. в статье [Подключение к общедоступной конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. категория "Стандартный") в сценариях обеспечения высокого уровня доступности SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-standard-load-balancer-outbound-connections).  
+> Если в серверный пул внутреннего (без общедоступного IP-адреса) Azure Load Balancer ценовой категории "Стандартный" помещаются виртуальные машины без общедоступных IP-адресов, у них не будет исходящего подключения к Интернету без дополнительной настройки, разрешающей маршрутизацию к общедоступным конечным точкам. Подробные сведения о такой настройке см. в статье [Подключение к общедоступной конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. категория "Стандартный") в сценариях обеспечения высокого уровня доступности SAP](./high-availability-guide-standard-load-balancer-outbound-connections.md).  
 
 > [!IMPORTANT]
-> Не включайте метки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение меток времени TCP помешает работе проб работоспособности. Установите для параметра **net.ipv4.tcp_timestamps** значение **0**. Дополнительные сведения см. в статье [Пробы работоспособности Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview).
+> Не включайте метки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение меток времени TCP помешает работе проб работоспособности. Установите для параметра **net.ipv4.tcp_timestamps** значение **0**. Дополнительные сведения см. в статье [Пробы работоспособности Load Balancer](../../../load-balancer/load-balancer-custom-probe-overview.md).
 
 ## <a name="sap-nfs-shares"></a>Общие папки SAP NFS
 
 SAP NetWeaver требует наличия общего хранилища для транспорта, каталога профиля и т. д. Для высокодоступной системы SAP важно иметь высокодоступные общие папки NFS. Вам потребуется выбрать архитектуру для общих ресурсов SAP NFS. Один из вариантов — создать [высокодоступный кластер NFS на виртуальных машинах Azure на SUSE Linux Enterprise Server][nfs-ha], которые могут совместно использоваться несколькими системами SAP. 
 
-Другой вариант — развернуть общие папки на [томах Azure NETAPP Files NFS](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes).  С Azure NetApp Files вы получите встроенную высокую доступность общих ресурсов SAP NFS.
+Другой вариант — развернуть общие папки на [томах Azure NETAPP Files NFS](../../../azure-netapp-files/azure-netapp-files-create-volumes.md).  С Azure NetApp Files вы получите встроенную высокую доступность общих ресурсов SAP NFS.
 
 ## <a name="deploy-the-first-sap-system-in-the-cluster"></a>Развертывание первой системы SAP в кластере
 
 Теперь, когда вы решили архитектуру для общих ресурсов SAP NFS, разверните первую систему SAP в кластере, следуя соответствующей документации.
 
-* Если используется высокодоступный NFS Server, следуйте [высокой доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse).  
-* При использовании томов Azure NetApp Files NFS используйте [высокий уровень доступности для SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files) .
+* Если используется высокодоступный NFS Server, следуйте [высокой доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server для приложений SAP](./high-availability-guide-suse.md).  
+* При использовании томов Azure NetApp Files NFS используйте [высокий уровень доступности для SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP](./high-availability-guide-suse-netapp-files.md) .
 
 Приведенные выше документы помогут вам выполнить необходимые действия по подготовке необходимых инфраструктур, созданию кластера, подготовке ОС к запуску приложения SAP.  
 
@@ -176,7 +176,7 @@ SAP NetWeaver требует наличия общего хранилища дл
 
 Ниже приведены элементы с префиксами: **[A]**  — применяется ко всем узлам, **[1**] — применяется только к узлу 1, **[2]**  — применяется только к узлу 2.
 
-### <a name="prerequisites"></a>Предварительные требования 
+### <a name="prerequisites"></a>Обязательные условия 
 
 > [!IMPORTANT]
 > Прежде чем следовать инструкциям по развертыванию дополнительных систем SAP в кластере, следуйте инструкциям по развертыванию первой системы SAP в кластере, так как существуют шаги, необходимые только при первом развертывании системы.  
@@ -189,7 +189,7 @@ SAP NetWeaver требует наличия общего хранилища дл
 
 ### <a name="prepare-for-sap-netweaver-installation"></a>Подготовка к установке SAP NetWeaver
 
-1. Добавьте конфигурацию для новой развернутой системы (т. е. **NW2.**, **NW3**) в существующую Azure Load Balancer, следуя инструкциям по [развертыванию Azure Load Balancer вручную с помощью портал Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files#deploy-azure-load-balancer-manually-via-azure-portal). Настройте IP-адреса, порты пробы работоспособности, правила балансировки нагрузки для вашей конфигурации.  
+1. Добавьте конфигурацию для новой развернутой системы (т. е. **NW2.**, **NW3**) в существующую Azure Load Balancer, следуя инструкциям по [развертыванию Azure Load Balancer вручную с помощью портал Azure](./high-availability-guide-suse-netapp-files.md#deploy-azure-load-balancer-manually-via-azure-portal). Настройте IP-адреса, порты пробы работоспособности, правила балансировки нагрузки для вашей конфигурации.  
 
 2. **[A]** настройте разрешение имен для дополнительных систем SAP. Можно либо использовать DNS-сервер, либо изменить `/etc/hosts` на всех узлах. В этом примере показано, как использовать `/etc/hosts` файл.  Адаптируйте IP-адреса и имена узлов к вашей среде. 
 
@@ -236,8 +236,8 @@ SAP NetWeaver требует наличия общего хранилища дл
 
    Обновите файл `/etc/auto.direct` с помощью файловых систем для дополнительных систем SAP, которые развертываются в кластере.  
 
-   * Если используется файловый сервер NFS, следуйте приведенным [здесь](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse#prepare-for-sap-netweaver-installation) инструкциям.
-   * Если используется Azure NetApp Files, следуйте приведенным [здесь](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files#prepare-for-sap-netweaver-installation) инструкциям. 
+   * Если используется файловый сервер NFS, следуйте приведенным [здесь](./high-availability-guide-suse.md#prepare-for-sap-netweaver-installation) инструкциям.
+   * Если используется Azure NetApp Files, следуйте приведенным [здесь](./high-availability-guide-suse-netapp-files.md#prepare-for-sap-netweaver-installation) инструкциям. 
 
    Необходимо перезапустить `autofs` службу, чтобы подключить только что добавленные общие папки.  
 
@@ -561,17 +561,17 @@ SAP NetWeaver требует наличия общего хранилища дл
 
 Завершите установку SAP, выполнив следующие действия.
 
-* [Подготовка серверов приложений SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse#2d6008b0-685d-426c-b59e-6cd281fd45d7)
-* [Установка экземпляра СУБД](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse#install-database)
-* [Установка основного сервера приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse#sap-netweaver-application-server-installation)
+* [Подготовка серверов приложений SAP NetWeaver](./high-availability-guide-suse.md#2d6008b0-685d-426c-b59e-6cd281fd45d7)
+* [Установка экземпляра СУБД](./high-availability-guide-suse.md#install-database)
+* [Установка основного сервера приложений SAP](./high-availability-guide-suse.md#sap-netweaver-application-server-installation)
 * Установка одного или нескольких дополнительных экземпляров приложений SAP
 
 ## <a name="test-the-multi-sid-cluster-setup"></a>Тестирование установки кластера с несколькими ИД безопасности
 
 Следующие тесты являются подмножеством тестовых случаев в практических руководствах SUSE. Они включены для вашего удобства. Полный список тестов кластера см. в следующей документации:
 
-* Если используется высокодоступный NFS Server, следуйте [высокой доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse).  
-* При использовании томов Azure NetApp Files NFS используйте [высокий уровень доступности для SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files) .
+* Если используется высокодоступный NFS Server, следуйте [высокой доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server для приложений SAP](./high-availability-guide-suse.md).  
+* При использовании томов Azure NetApp Files NFS используйте [высокий уровень доступности для SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP](./high-availability-guide-suse-netapp-files.md) .
 
 Всегда прочтите руководства и ознакомьтесь с рекомендациями SUSE и выполните все дополнительные тесты, которые могли быть добавлены.  
 Представленные тесты находятся в двух узлах, кластер с несколькими ИД безопасности и тремя системами SAP.  

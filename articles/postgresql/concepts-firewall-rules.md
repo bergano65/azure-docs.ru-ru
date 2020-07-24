@@ -5,12 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 01/15/2020
-ms.openlocfilehash: 5d462be1caa3787cb7ff9a455be595ec5784eefe
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/17/2020
+ms.openlocfilehash: 38edbfcb8800843b43678e99d6817595ccba3235
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76157276"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87071534"
 ---
 # <a name="firewall-rules-in-azure-database-for-postgresql---single-server"></a>Правила брандмауэра в базе данных Azure для PostgreSQL — один сервер
 Брандмауэр сервера базы данных Azure для PostgreSQL предотвращает доступ к серверу базы данных, пока вы не укажете, какие компьютеры имеют разрешение. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса.
@@ -64,10 +65,13 @@ ms.locfileid: "76157276"
 
    * Получите статические IP-адреса для клиентских компьютеров, а затем добавьте статические IP-адреса как правила брандмауэра.
 
-* **IP-адрес сервера выглядит как общедоступный:** Подключения к серверу базы данных Azure для PostgreSQL направляются через общедоступный шлюз Azure. Однако фактический IP-адрес сервера защищен брандмауэром. Дополнительные сведения см. в статье об [архитектуре подключения](concepts-connectivity-architecture.md). 
+* **IP-адрес сервера выглядит как общедоступный:** Подключения к серверу базы данных Azure для PostgreSQL направляются через общедоступный шлюз Azure. Однако фактический IP-адрес сервера защищен брандмауэром. Дополнительные сведения см. в статье об [архитектуре подключения](concepts-connectivity-architecture.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Ниже перечислены статьи о создании правил брандмауэра уровня сервера и уровня базы данных.
+* **Не удается подключиться из ресурса Azure с разрешенным IP-адресом:** Проверьте, включена ли конечная точка службы **Microsoft. SQL** для подсети, из которой вы подключаетесь. Если **Microsoft. SQL** включен, то это означает, что для этой подсети нужно использовать только [правила конечной точки службы VNet](concepts-data-access-and-security-vnet.md) .
+
+   Например, если вы подключаетесь из виртуальной машины Azure в подсети с включенным **Microsoft. SQL** , но не имеет соответствующего правила виртуальной сети, может появиться следующее сообщение об ошибке:`FATAL: Client from Azure Virtual Networks is not allowed to access the server`
+
+## <a name="next-steps"></a>Дальнейшие действия
 * [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью портала Azure](howto-manage-firewall-using-portal.md)
 * [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью Azure CLI](howto-manage-firewall-using-cli.md)
-- [Конечные точки службы виртуальной сети в базе данных Azure для PostgreSQL](./concepts-data-access-and-security-vnet.md)
+* [Конечные точки службы виртуальной сети в базе данных Azure для PostgreSQL](./concepts-data-access-and-security-vnet.md)

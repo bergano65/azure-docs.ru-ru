@@ -5,13 +5,13 @@ author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 10/30/2019
-ms.author: rohogue
-ms.openlocfilehash: ac963fd01016506193aae0fab5582224b3957de8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: v-erkel
+ms.openlocfilehash: 0da8a4fc1b59976c50cd96f2155715a4cb178cc9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85508968"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87072767"
 ---
 # <a name="move-data-to-azure-blob-storage"></a>Перемещение данных в хранилище BLOB-объектов Azure
 
@@ -81,7 +81,7 @@ ms.locfileid: "85508968"
 
 * Создание скриптов для копирования с помощью ``parallelcp`` — Узнайте, как создать и запустить скрипт параллельного копирования в [методе создания скрипта приема данных в КЭШЕ Azure HPC](hpc-cache-ingest-parallelcp.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После настройки хранилища Узнайте, как клиенты могут подключать кэш.
 

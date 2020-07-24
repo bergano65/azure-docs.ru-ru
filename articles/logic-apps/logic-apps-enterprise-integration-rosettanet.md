@@ -8,11 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 06/22/2019
-ms.openlocfilehash: 2cc2ac08b9624c1d1d9bee9ce91a7c91189d7f2c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 833e2a6f64301c39ba2b9e7959585c3edeab9445
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74792416"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87072577"
 ---
 # <a name="exchange-rosettanet-messages-for-b2b-enterprise-integration-in-azure-logic-apps"></a>Обмен сообщениями RosettaNet для интеграции B2B Enterprise в Azure Logic Apps
 
@@ -50,7 +51,7 @@ ms.locfileid: "74792416"
 
   Для однодействийной PIP единственным ответом является сообщение с подтверждением. Для последовательности двойных действий инициатор получает ответное сообщение и ответ с подтверждением в дополнение к потоку сообщений с одним действием.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [получите бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 
@@ -80,8 +81,8 @@ ms.locfileid: "74792416"
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
-   | **Name** | Да | Имя PIP |
-   | **Код PIP** | Да | Код с тремя цифрами PIP. Дополнительные сведения см. в разделе [RosettaNet пипс](https://docs.microsoft.com/biztalk/adapters-and-accelerators/accelerator-rosettanet/rosettanet-pips). |
+   | **имя**; | Да | Имя PIP |
+   | **Код PIP** | Да | Код с тремя цифрами PIP. Дополнительные сведения см. в разделе [RosettaNet пипс](/biztalk/adapters-and-accelerators/accelerator-rosettanet/rosettanet-pips). |
    | **Версия PIP** | Да | Номер версии PIP, доступный на основе выбранного кода PIP |
    ||||
 
@@ -111,7 +112,7 @@ ms.locfileid: "74792416"
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
-   | **Name** | Да | Имя соглашения |
+   | **имя**; | Да | Имя соглашения |
    | **Тип соглашения** | Да | Выберите **RosettaNet**. |
    | **"Host Partner" (Главный партнер)** | Да | Для соглашения нужно указать главного партнера и гостевого партнера. Главный партнер представляет организацию, которая настраивает соглашение. |
    | **"Host Identity" (Идентификатор главного партнера)** | Да | Идентификатор главного партнера. |
@@ -255,7 +256,7 @@ ms.locfileid: "74792416"
 
    ![Цикл Until с действиями RosettaNet](media/logic-apps-enterprise-integration-rosettanet/rosettanet-loop.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о проверке, преобразовании и других операциях с сообщениями, выполняемых с помощью [пакета интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md).
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

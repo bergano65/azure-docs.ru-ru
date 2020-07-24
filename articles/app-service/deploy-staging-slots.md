@@ -5,12 +5,12 @@ ms.assetid: e224fc4f-800d-469a-8d6a-72bcde612450
 ms.topic: article
 ms.date: 04/30/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 17ba8f5bbbf0ac17e0ccb6881379a511afc7c1c3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 19a7bc70bd782f9b684cb48672147f5009e4a08f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85833278"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073853"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Настройка промежуточных сред в службе приложений Azure
 <a name="Overview"></a>
@@ -238,7 +238,7 @@ ms.locfileid: "85833278"
 
 1. Перейдите на страницу ресурсов приложения и выберите **слоты развертывания**.
 
-2. В столбце **Процент трафика** для слота, в который нужно направить часть трафика, укажите значение в процентах (от 0 до 100) от общего объема распределяемого трафика. Нажмите кнопку **Сохранить**.
+2. В столбце **Процент трафика** для слота, в который нужно направить часть трафика, укажите значение в процентах (от 0 до 100) от общего объема распределяемого трафика. Щелкните **Сохранить**.
 
     ![Установка процента трафика](./media/web-sites-staged-publishing/RouteTraffic.png)
 
@@ -262,7 +262,7 @@ ms.locfileid: "85833278"
 
 Строка `x-ms-routing-name=self` определяет рабочий слот. После того как браузер клиента попытается получить доступ к ссылке, он перенаправляется в рабочий слот. Каждый последующий запрос имеет `x-ms-routing-name=self` файл cookie, который закрепляет сеанс в рабочем слоте.
 
-Чтобы разрешить пользователям использовать бета-версию приложения, задайте для одного и того же параметра запроса имя нерабочего слота. Ниже приведен пример:
+Чтобы разрешить пользователям использовать бета-версию приложения, задайте для одного и того же параметра запроса имя нерабочего слота. Ниже приведен пример.
 
 ```
 <webappname>.azurewebsites.net/?x-ms-routing-name=staging
@@ -288,7 +288,7 @@ ms.locfileid: "85833278"
 
 Azure PowerShell — это модуль, который предоставляет командлеты для управления Azure с помощью Windows PowerShell, а также поддерживает управление слотами развертывания в службе приложений Azure.
 
-Сведения об установке и настройке Azure PowerShell и об аутентификации Azure PowerShell с использованием подписки Azure см. в разделе [Установка и настройка Microsoft Azure PowerShell](/powershell/azure/overview).  
+Сведения об установке и настройке Azure PowerShell и об аутентификации Azure PowerShell с использованием подписки Azure см. в разделе [Установка и настройка Microsoft Azure PowerShell](/powershell/azure/).  
 
 ---
 ### <a name="create-a-web-app"></a>Создание веб-приложения
@@ -427,5 +427,5 @@ Remove-AzResource -ResourceGroupName [resource group name] -ResourceType Microso
 
 - После переключения слотов приложение может столкнуться с неожиданным перезапуском. Это обусловлено тем, что после переключения конфигурация привязки имени узла не синхронизирована, что сама по себе не приводит к перезапуску. Однако некоторые базовые события хранилища (такие как отказоустойчивость тома хранилища) могут обнаружить эти расхождения и принудительно перезапустить все рабочие процессы. Чтобы избежать перезагрузки этих типов, задайте [ `WEBSITE_ADD_SITENAME_BINDINGS_IN_APPHOST_CONFIG=1` параметр приложения](https://github.com/projectkudu/kudu/wiki/Configurable-settings#disable-the-generation-of-bindings-in-applicationhostconfig) во *всех слотах*. Однако этот параметр приложения *не* работает с приложениями Windows Communication Foundation (WCF).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Ограничения статических IP-адресов в службе приложений Azure](app-service-ip-restrictions.md)

@@ -10,11 +10,12 @@ ms.subservice: core
 ms.topic: how-to
 ms.date: 01/31/2020
 ms.custom: tracking-python
-ms.openlocfilehash: 6b74f9cdc5b3317edc8bf2339ba1d2c29f43e55b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 90ad8cc87f1d6a1893b96f6201a4260c03c94fee
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84560173"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87072200"
 ---
 # <a name="create-run-and-delete-azure-ml-resources-using-rest"></a>Создание, запуск и удаление ресурсов машинного обучения Azure с помощью функции "ОСТАВШАЯся"
 
@@ -32,7 +33,7 @@ ms.locfileid: "84560173"
 > * Использование запросов на удаление для очистки ресурсов 
 > * Использование авторизации на основе ключей для оценки развернутых моделей
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 - **Подписка Azure** , для которой у вас есть права администратора. Если у вас нет такой подписки, попробуйте использовать [бесплатную или платную личную подписку](https://aka.ms/AMLFree) .
 - [Рабочая область машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace)
@@ -47,7 +48,7 @@ ms.locfileid: "84560173"
 - Идентификатор клиента (который будет связан с созданным токеном)
 - Секрет клиента (который следует защитить)
 
-Эти значения должны быть предоставлены из ответа на создание субъекта-службы, как описано в разделе [Настройка проверки подлинности для машинное обучение Azure ресурсов и рабочих процессов](https://docs.microsoft.com/azure/machine-learning/how-to-setup-authentication#set-up-service-principal-authentication). Если вы используете подписку компании, возможно, у вас нет разрешения на создание субъекта-службы. В этом случае следует использовать [бесплатную или платную личную подписку](https://aka.ms/AMLFree).
+Эти значения должны быть предоставлены из ответа на создание субъекта-службы. Эти значения обсуждаются в разделе [Настройка проверки подлинности для машинное обучение Azureных ресурсов и рабочих процессов](https://docs.microsoft.com/azure/machine-learning/how-to-setup-authentication#set-up-service-principal-authentication). Если вы используете подписку компании, возможно, у вас нет разрешения на создание субъекта-службы. В этом случае следует использовать [бесплатную или платную личную подписку](https://aka.ms/AMLFree).
 
 Получение токена:
 
@@ -199,15 +200,15 @@ providers/Microsoft.MachineLearningServices/workspaces/{your-workspace-name}/mod
 -H "Authorization:Bearer {your-access-token}"
 ```
 
-Обратите внимание, что для перечисления экспериментов путь начинается с `history/v1.0` , когда для вывода списка моделей путь начинается с `modelmanagement/v1.0` . REST API разделена на несколько операционных групп, каждый из которых имеет отдельный путь. В справочных документах по API по ссылкам ниже перечислены операции, параметры и коды ответов для различных операций.
+Обратите внимание, что для перечисления экспериментов путь начинается с `history/v1.0` , когда для вывода списка моделей путь начинается с `modelmanagement/v1.0` . REST API разделена на несколько операционных групп, каждый из которых имеет отдельный путь. 
 
-|Область|Path|Справка|
-|-|-|-|
-|Artifacts|артефакт/версия 2.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/artifacts)|
-|Хранилища данных|хранилище данных/v 1.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/datastores)|
-|Настройка гиперпараметров|устройство/v 1.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/hyperparametertuning)|
-|Модели|моделманажемент/v 1.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/modelsanddeployments/mlmodels)|
-|Журнал выполнения|выполнение/v 1.0/и журнал/версия 1.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/runs)|
+|Область|Путь|
+|-|-|
+|Artifacts|артефакт/версия 2.0/|
+|Хранилища данных|хранилище данных/v 1.0/|
+|Настройка гиперпараметров|устройство/v 1.0/|
+|Модели|моделманажемент/v 1.0/|
+|Журнал выполнения|выполнение/v 1.0/и журнал/версия 1.0/|
 
 Вы можете исследовать REST API, используя общий шаблон:
 

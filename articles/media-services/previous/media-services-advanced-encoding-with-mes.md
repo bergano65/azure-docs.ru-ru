@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: 1d1ac838befc905c3c2b860551b26928f5114e96
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 8142ef5e2aaaf5831c01215d28eecf8d06e1d8ab
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85955180"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87071924"
 ---
 # <a name="perform-advanced-encoding-by-customizing-mes-presets"></a>Настройка предустановок MES для расширенного кодирования 
 
@@ -29,7 +30,7 @@ ms.locfileid: "85955180"
 При использовании предустановки XML обязательно сохраните порядок элементов, как показано в примерах XML ниже (например, элемент KeyFrameInterval должен предшествовать элементу SceneChangeDetection).
 
 > [!NOTE] 
-> Многие расширенные функции служб мультимедиа версии 2 Media Encoder Standard в настоящее время недоступны в версии 3. Дополнительные сведения см. в разделе [зазоры компонентов](https://docs.microsoft.com/azure/media-services/latest/media-services-v2-vs-v3#feature-gaps-with-respect-to-v2-apis).
+> Многие расширенные функции служб мультимедиа версии 2 Media Encoder Standard в настоящее время недоступны в версии 3. Дополнительные сведения см. в разделе [зазоры компонентов](../latest/media-services-v2-vs-v3.md#feature-gaps-with-respect-to-v2-apis).
 
 ## <a name="support-for-relative-sizes"></a>Поддержка относительных размеров
 
@@ -240,7 +241,7 @@ ms.locfileid: "85955180"
 </Preset>
 ```
 
-### <a name="considerations"></a>Особенности
+### <a name="considerations"></a>Рекомендации
 
 Действительны следующие условия.
 

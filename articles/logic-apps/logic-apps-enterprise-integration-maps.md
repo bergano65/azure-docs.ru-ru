@@ -8,11 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 02/06/2019
-ms.openlocfilehash: e186b9713c8464f8f37e1e0bf112c4118621925c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ff6bd1a52e05d55d43969644141f39aed8c8eb63
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75979403"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87072645"
 ---
 # <a name="transform-xml-with-maps-in-azure-logic-apps-with-enterprise-integration-pack"></a>Преобразование XML с помощью карт в Azure Logic Apps с использованием Пакета интеграции Enterprise
 
@@ -22,7 +23,7 @@ ms.locfileid: "75979403"
 
 Сведения об ограничениях, связанных с учетными записями интеграции и артефактами, такими как карты, см. в статье [Ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -35,14 +36,14 @@ ms.locfileid: "75979403"
   * Для сборок необходим контейнер больших двоичных объектов Azure, в который можно отправить сборку, и расположение этого контейнера. Так вы сможете указать это расположение позже — при добавлении сборки в учетную запись интеграции. 
   Чтобы сделать это, вам понадобятся следующие элементы:
 
-    | Item | Описание: |
+    | Элемент | Описание |
     |------|-------------|
     | [Учетная запись хранения Azure](../storage/common/storage-account-overview.md) | В этой учетной записи создайте контейнер больших двоичных объектов Azure для сборки. Узнайте, как [создать учетную запись хранения](../storage/common/storage-account-create.md). |
     | Контейнер BLOB-объектов | В этот контейнер можно передать сборку. Расположение этого контейнера также требуется при добавлении сборки в учетную запись интеграции. Узнайте, как [создать контейнер больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-portal.md). |
     | [Обозреватель службы хранилища Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) | Это средство упрощает управление учетными записями хранения и контейнерами больших двоичных объектов. Чтобы использовать Обозреватель службы хранилища Azure, [скачайте и установите его](https://www.storageexplorer.com/). Затем подключите Обозреватель службы хранилища к учетной записи хранения, следуя шагам из статьи [Начало работы с Обозревателем службы хранилища](../vs-azure-tools-storage-manage-with-storage-explorer.md). Дополнительные сведения см. в разделе [Краткое руководство. Создание большого двоичного объекта в хранилище объектов с помощью обозреватель службы хранилища Azure](../storage/blobs/storage-quickstart-blobs-storage-explorer.md). <p>Можно также найти и выбрать свою учетную запись хранения на портале Azure. В меню учетной записи хранения выберите **Обозреватель службы хранилища**. |
     |||
 
-  * Сейчас можно добавить карты большего размера с помощью [REST API Azure Logic Apps для работы с картами](https://docs.microsoft.com/rest/api/logic/maps/createorupdate).
+  * Сейчас можно добавить карты большего размера с помощью [REST API Azure Logic Apps для работы с картами](/rest/api/logic/maps/createorupdate).
 
 Приложение логики при создании и добавлении карт не требуется. Чтобы использовать карту, приложению логики требуется связь с учетной записью интеграции, в которой хранится эта карта. Узнайте, как [связать приложения логики с учетными записями интеграции](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md#link-account). Если у вас еще нет приложения логики, узнайте, как [его создать](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
@@ -219,7 +220,7 @@ ms.locfileid: "75979403"
 
 ### <a name="add-maps-more-than-2-mb"></a>Добавление карт размером более 2 МБ
 
-Сейчас для добавления карт большого размера используйте [REST API Azure Logic Apps для работы с картами](https://docs.microsoft.com/rest/api/logic/maps/createorupdate).
+Сейчас для добавления карт большого размера используйте [REST API Azure Logic Apps для работы с картами](/rest/api/logic/maps/createorupdate).
 
 <!--
 
@@ -343,7 +344,7 @@ the map appears in the **Maps** list.
 
 1. Чтобы подтвердить удаление карты, щелкните **Да**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md)  
 * [Дополнительные сведения о схемах](../logic-apps/logic-apps-enterprise-integration-schemas.md)

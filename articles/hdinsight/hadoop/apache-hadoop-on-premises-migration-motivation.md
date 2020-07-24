@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 11/15/2019
-ms.openlocfilehash: b975ee8cebdac3855c3fca88b20c01145d11baeb
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 1de9fc480c753b2497a1ea4e3438583b3582bc96
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86080199"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87072788"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---motivation-and-benefits"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — мотивация и преимущества
 
@@ -163,9 +163,9 @@ Azure HDInsight является облачным дистрибутивом к�
 
 ### <a name="azure-requirements-questionnaire"></a>Вопросник по требованиям Azure
 
-|**Раздел**: **инфраструктура** |||
-|---|---|---|
 |**Вопрос**|**Пример**|**Ответ**|
+|---|---|---|
+|**Раздел**: **инфраструктура** |||
 | Предпочтительный регион|Восточная часть США||
 |Есть ли предпочитаемая виртуальная сеть?|Да||
 |Требуется ли аварийное восстановление и высокая доступность?|Да||

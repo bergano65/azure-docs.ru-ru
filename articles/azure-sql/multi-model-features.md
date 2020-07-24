@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: ''
 ms.date: 12/17/2018
-ms.openlocfilehash: d50a9a064e6fa279d65f196c0f031e60081d86bf
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 59a709a206eb29b875272674ee19e414023cc37f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85980004"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073316"
 ---
 # <a name="multi-model-capabilities-of-azure-sql-database--sql-managed-instance"></a>Многомодельные возможности базы данных SQL Azure & SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -96,9 +96,6 @@ JSON – это распространенный формат данных, ко
 
 Пространственные данные представляют сведения о физическом расположении и форме геометрических объектов. Эти объекты могут быть расположениями точек или более сложными объектами, такими как страны, регионы, дороги или озера.
 
-Семейство продуктов Azure SQL позволяет анализировать и запрашивать данные, представленные в формате нотация объектов JavaScript [(JSON)](https://www.json.org/) , а также экспортировать реляционные данные в виде текста JSON.
-
-
  Два поддерживаемых пространственных типа данных: 
 
 - Геометрический тип данных представляет данные в евклидовой (плоской) системе координат,
@@ -147,7 +144,7 @@ CREATE TABLE Collection (
 
 Ознакомьтесь с тем, [как BWin использует выполняющуюся в памяти OLTP для достижения беспрецедентной производительности и масштаба](https://blogs.msdn.microsoft.com/sqlcat/20../../how-bwin-is-using-sql-server-2016-in-memory-oltp-to-achieve-unprecedented-performance-and-scale/) для своих решений кэширования ASP.NET, кэширующих 1 200 000 пакетов в секунду, для примера того, как реляционные модели могут эффективно использоваться в качестве решения пар "ключ — значение" на практике.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Многомодельные возможности в семействе продуктов Azure SQL также являются основными SQL Server функциями ядра СУБД, которые являются общими для семейства продуктов Azure SQL. Чтобы получить дополнительные сведения об этих возможностях, посетите страницы документации по реляционной базе данных SQL:
 

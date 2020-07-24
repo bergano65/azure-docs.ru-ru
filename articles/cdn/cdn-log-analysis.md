@@ -1,28 +1,38 @@
 ---
-title: Анализ вариантов использования Azure CDN | Документация Майкрософт
+title: Анализ вариантов использования CDN Azure
 description: В этой статье описываются разные типы аналитических отчетов, доступные для продуктов Azure CDN.
 services: cdn
-documentationcenter: ''
 author: asudbring
-manager: danielgi
-editor: ''
-ms.assetid: 95e18b3c-b987-46c2-baa8-a27a029e3076
+manager: KumudD
 ms.service: azure-cdn
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/05/2017
+ms.date: 7/22/2020
 ms.author: allensu
-ms.openlocfilehash: c78dff9f5258023d90100c70bd244e8e0d016d6f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 169889dbb87d00fdde44ff72c0d2004c331604ab
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81253617"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073040"
 ---
 # <a name="analyze-azure-cdn-usage-patterns"></a>Анализ вариантов использования CDN Azure
 
 Когда вы включите CDN для вашего приложения, вам, скорее всего, нужно будет отслеживать использование CDN, проверять работоспособность службы доставки и устранять возможные неполадки. Azure CDN позволяет делать это следующим образом. 
+
+## <a name="raw-logs-for-azure-cdn-from-microsoft"></a>Необработанные журналы для Azure CDN от Майкрософт
+Используя стандартный профиль Майкрософт, можно включить необработанные журналы и выбрать потоковую передачу журналов в:
+
+* Служба хранилища Azure
+* Центры событий
+* Azure Log Analytics
+
+С помощью Azure Log Analytics можно просматривать метрики мониторинга и настраивать оповещения. 
+
+Дополнительные сведения см. в разделе [Azure CDN необработанных журналов HTTP](enable-raw-logs.md).
+
 
 ## <a name="core-analytics-via-azure-diagnostic-logs"></a>Базовая аналитика с использованием журналов диагностики Azure
 
@@ -30,16 +40,27 @@ ms.locfileid: "81253617"
 
 ## <a name="verizon-core-reports"></a>С помощью базовых отчетов Verizon
 
-Как пользователь с Azure CDN с профилем Verizon **Стандартный** или **Премиум** вы можете просматривать базовые отчеты Verizon на вспомогательном портале Verizon. Verizon основные отчеты доступны через параметр **управления** в портал Azure и предлагает разнообразные графики и представления. См. дополнительные сведения о [базовых отчетах Verizon](cdn-analyze-usage-patterns.md).
+**Azure CDN уровня "Стандартный" из Verizon** или **Azure CDN "Премиум" из профилей Verizon** предоставляют основные отчеты. Основные отчеты можно просмотреть на вспомогательном портале Verizon. Verizon основные отчеты доступны через параметр **управления** из портал Azure и предлагают различные виды диаграмм и представлений. См. дополнительные сведения о [базовых отчетах Verizon](cdn-analyze-usage-patterns.md).
 
 ## <a name="verizon-custom-reports"></a>Настраиваемые отчеты Verizon
 
-Как пользователь с Azure CDN с профилем Verizon **Стандартный** или **Премиум** вы можете просматривать настраиваемые отчеты Verizon на вспомогательном портале Verizon. Пользовательские отчеты Verizon доступны через параметр **управления** из портал Azure. На странице настраиваемых отчетов Verizon отображается число попаданий или данных, передаваемых для каждой граничной записи CName, принадлежащей профилю Azure CDN. Данные можно группировать по HTTP-коду ответа или состоянию кэша за любой период времени. См. дополнительные сведения о [настраиваемых отчетах Verizon](cdn-verizon-custom-reports.md).
+**Azure CDN Standard от Verizon** или **Azure CDN Premium из профилей Verizon** предоставляют настраиваемые отчеты. Вы можете просматривать пользовательские отчеты на вспомогательном портале Verizon. Пользовательские отчеты Verizon доступны через параметр **управления** из портал Azure. 
+
+В пользовательских отчетах отображается количество попаданий или данных, передаваемых для каждой пограничной записи CNAME. Данные группируются по коду ответа HTTP или состоянию кэша за определенный период времени. См. дополнительные сведения о [настраиваемых отчетах Verizon](cdn-verizon-custom-reports.md).
 
 ## <a name="azure-cdn-premium-from-verizon-reports"></a>Отчеты Azure CDN уровня "Премиум" от Verizon
 
 С помощью **Azure CDN от Verizon уровня "Премиум"** можно получить доступ к следующим отчетам:
    * [Расширенные HTTP-отчеты.](cdn-advanced-http-reports.md)
    * [Статистика в режиме реального времени.](cdn-real-time-stats.md)
-   * [Производительность граничного узла](cdn-edge-performance.md)
+   * [Производительность Azure CDN граничных узлов](cdn-edge-performance.md)
+
+## <a name="next-steps"></a>Дальнейшие действия
+В этой статье вы узнали о различных вариантах аналитических отчетов для Azure CDN.
+
+Дополнительные сведения о Azure CDN и других службах Azure, упомянутых в этой статье, см. в следующих статьях:
+
+* [Что такое Azure CDN?](cdn-overview.md)
+* [Необработанные журналы HTTP (Azure CDN)](enable-raw-logs.md)
+
 

@@ -6,20 +6,21 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 5/31/2019
 ms.subservice: alerts
-ms.openlocfilehash: 0e81d48f4e709a9a0bb8ebb33c7029d3841167b6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0d080c18a1af9549373750b787093fec03b32006
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84609052"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073609"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Оповещения журнала в Azure Monitor
 
 Оповещения журнала — это один из типов оповещений, которые поддерживаются в [оповещениях Azure](../../azure-monitor/platform/alerts-overview.md). Оповещения журнала позволяют пользователям использовать платформу Azure Analytics в качестве основания для создания оповещений.
 
-Оповещение журнала состоит из правил поиска по журналам, созданных для [Azure Monitor Logs](../../azure-monitor/learn/tutorial-viewdata.md) или [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostics-events). Дополнительные сведения о его использовании см. в сведениях о [создании оповещений журнала в Azure](../../azure-monitor/platform/alerts-log.md).
+Оповещение журнала состоит из правил поиска по журналам, созданных для [Azure Monitor Logs](../log-query/get-started-portal.md) или [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostics-events). Дополнительные сведения о его использовании см. в сведениях о [создании оповещений журнала в Azure](../../azure-monitor/platform/alerts-log.md).
 
 > [!NOTE]
-> Часто используемые данные из [Azure Monitor Logs](../../azure-monitor/learn/tutorial-viewdata.md) теперь доступны на платформе метрик в Azure Monitor. Более подробную информацию см. в статье [Create Metric Alerts for Logs in Azure Monitor](../../azure-monitor/platform/alerts-metric-logs.md) (Создание оповещений метрик для журналов в Azure Monitor).
+> Часто используемые данные из [Azure Monitor Logs](../log-query/get-started-portal.md) теперь доступны на платформе метрик в Azure Monitor. Более подробную информацию см. в статье [Create Metric Alerts for Logs in Azure Monitor](../../azure-monitor/platform/alerts-metric-logs.md) (Создание оповещений метрик для журналов в Azure Monitor).
 
 
 ## <a name="log-search-alert-rule---definition-and-types"></a>Правило генерации оповещений для поиска по журналам: определения и типы
@@ -40,7 +41,7 @@ ms.locfileid: "84609052"
 
 - **Пороговое значение**.  Чтобы определить, следует ли создавать оповещение, оцениваются результаты поиска по журналам.  Для каждого типа правил генерации оповещений для поиска по журналам определяется собственное пороговое значение.
 
-Для [Azure Monitor Logs](../../azure-monitor/learn/tutorial-viewdata.md) и для [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostics-events) используются правила поиска по журналам двух типов. Каждый из этих типов подробно описан в последующих разделах.
+Для [Azure Monitor Logs](../log-query/get-started-portal.md) и для [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostics-events) используются правила поиска по журналам двух типов. Каждый из этих типов подробно описан в последующих разделах.
 
 - **[Число результатов](#number-of-results-alert-rules)**. Если число записей, возвращенных в результатах поиска по журналам, превышает указанное количество, создается оповещение.
 - **[Измерение метрик](#metric-measurement-alert-rules)**.  Оповещение, созданное для каждого объекта в результатах поиска по журналам со значением, превышающим указанное пороговое значение.
@@ -89,7 +90,7 @@ ms.locfileid: "84609052"
     
 - **Порог.** Порог для правил генерации оповещений "Измерение метрик" определяется на основе объединенного значения и числа нарушений.  Если любая точка данных в результатах поиска по журналам превышает это значение, она рассматривается как нарушение.  Когда число нарушений в результатах для любого объекта превышает указанное значение, для этого объекта создается оповещение.
 
-Неправильная настройка параметра *Агрегация по* или *metricColumn* может привести к сбою правила генерации оповещений. Дополнительные сведения см. в разделе, посвященном [устранению неполадок в случае неправильной работы правила генерации оповещений типа "Измерение метрик"](alert-log-troubleshoot.md#metric-measurement-alert-rule-is-incorrect).
+Неправильная настройка параметра *Агрегация по* или *metricColumn* может привести к сбою правила генерации оповещений. Дополнительные сведения см. в разделе, посвященном [устранению неполадок в случае неправильной работы правила генерации оповещений типа "Измерение метрик"](./alerts-troubleshoot-log.md#metric-measurement-alert-rule-is-incorrect).
 
 #### <a name="example-of-metric-measurement-type-log-alert"></a>Пример оповещения журнала типа "Измерение метрик"
 
@@ -131,7 +132,7 @@ ms.locfileid: "84609052"
 С каждым интервалом, указанным ниже, система оповещений Azure оценивает условие для *оповещения Contoso-log*.
 
 
-| Время    | Число записей, возвращенных запросом поиска по журналам | Журнал условий евалутион | Результат 
+| Time    | Число записей, возвращенных запросом поиска по журналам | Журнал условий евалутион | Результат 
 | ------- | ----------| ----------| ------- 
 | 1:05 РМ | 0 записей | 0 не > 0, поэтому FALSE |  Предупреждение не срабатывает. Действия не вызваны.
 | 1:10 РМ | 2 записи | 2 > 0 — да  | Оповещение срабатывает и группы действий с именем. Состояние оповещения активно.
@@ -149,7 +150,7 @@ ms.locfileid: "84609052"
 Цены, применимые к оповещениям журнала, установлены на странице [цен Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/). В счетах Azure оповещения журнала представлены типом `microsoft.insights/scheduledqueryrules`. Кроме того:
 
 - Для оповещений журнала Application Insights указываются точное имя оповещения, группа ресурсов и свойства оповещения.
-- При создании оповещений журнала Log Analytics с помощью [API scheduledQueryRules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) для них указываются точное имя оповещения, а также группа ресурсов и свойства оповещения.
+- При создании оповещений журнала Log Analytics с помощью [API scheduledQueryRules](/rest/api/monitor/scheduledqueryrules) для них указываются точное имя оповещения, а также группа ресурсов и свойства оповещения.
 
 [Устаревший API Log Analytics](../../azure-monitor/platform/api-alerts.md) использует действия оповещения и расписания в составе сохраненных поисков Log Analytics, а не как полноценные [ресурсы Azure](../../azure-resource-manager/management/overview.md). Поэтому для того, чтобы включить выставление счетов для прежних версий оповещений журнала, созданных для Log Analytics с помощью портала Azure **без** [перехода на новый интерфейс API](../../azure-monitor/platform/alerts-log-api-switch.md) или через [устаревший API Log Analytics](../../azure-monitor/platform/api-alerts.md), потребуется создать на странице `microsoft.insights/scheduledqueryrules` скрытые фиктивные правила генерации оповещений, которые будут отслеживаться для выставления счетов в Azure. Скрытые фиктивные правила генерации оповещений, созданные для выставления счетов на `microsoft.insights/scheduledqueryrules`, отображаются как `<WorkspaceName>|<savedSearchId>|<scheduleId>|<ActionId>` вместе с группой ресурсов и свойствами оповещения.
 
@@ -158,15 +159,15 @@ ms.locfileid: "84609052"
 
 Чтобы удалить скрытые ресурсы scheduleQueryRules, созданные для выставления счетов за правила генерации оповещений, созданные в [устаревшем API Log Analytics](api-alerts.md), пользователь может выполнить любое из следующих действий:
 
-- [Изменить используемый API для правил генерации оповещений в рабочей области Log Analytics](../../azure-monitor/platform/alerts-log-api-switch.md) и перейти на совместимый с Azure Resource Manager [API-интерфейс scheduledQueryRules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) без потери существующих правил генерации оповещений или мониторинга. Это действие позволит отказаться от скрытых фиктивных правил генерации оповещений, которые вы создавали для выставления счетов.
+- [Изменить используемый API для правил генерации оповещений в рабочей области Log Analytics](../../azure-monitor/platform/alerts-log-api-switch.md) и перейти на совместимый с Azure Resource Manager [API-интерфейс scheduledQueryRules](/rest/api/monitor/scheduledqueryrules) без потери существующих правил генерации оповещений или мониторинга. Это действие позволит отказаться от скрытых фиктивных правил генерации оповещений, которые вы создавали для выставления счетов.
 - Если нет желания переключать используемый API, следует **удалить** исходное расписание и действие оповещения через [устаревший API Log Analytics](api-alerts.md) или [удалить исходное правило генерации оповещений для журнала через портал Azure](../../azure-monitor/platform/alerts-log.md#view--manage-log-alerts-in-azure-portal).
 
-Кроме того, для скрытых ресурсов Счедулекуерирулес, созданных для выставления счетов по правилам генерации оповещений с помощью [устаревшего log Analytics API](api-alerts.md), любые операции изменения, такие как операция вставки, завершатся ошибкой. Так как `microsoft.insights/scheduledqueryrules` псевдо-правила типа предназначены для выставления счетов по правилам генерации оповещений, созданным с помощью [устаревших log Analytics API](api-alerts.md). Все изменения правил генерации оповещений следует выполнять с помощью [устаревшего log Analytics API](api-alerts.md) (или) пользователь может [Переключить предпочтение API для правил генерации оповещений](../../azure-monitor/platform/alerts-log-api-switch.md) для использования [API счедуледкуерирулес](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) .
+Кроме того, для скрытых ресурсов Счедулекуерирулес, созданных для выставления счетов по правилам генерации оповещений с помощью [устаревшего log Analytics API](api-alerts.md), любые операции изменения, такие как операция вставки, завершатся ошибкой. Так как `microsoft.insights/scheduledqueryrules` псевдо-правила типа предназначены для выставления счетов по правилам генерации оповещений, созданным с помощью [устаревших log Analytics API](api-alerts.md). Все изменения правил генерации оповещений следует выполнять с помощью [устаревшего log Analytics API](api-alerts.md) (или) пользователь может [Переключить предпочтение API для правил генерации оповещений](../../azure-monitor/platform/alerts-log-api-switch.md) для использования [API счедуледкуерирулес](/rest/api/monitor/scheduledqueryrules) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [создании оповещений журнала в Azure](../../azure-monitor/platform/alerts-log.md).
 * Информация о [веб-перехватчиках в оповещениях журналов в Azure](alerts-log-webhook.md).
 * Сведения об [оповещениях Azure](../../azure-monitor/platform/alerts-overview.md).
-* Дополнительные сведения об [Application Insights](../../azure-monitor/app/analytics.md).
+* Дополнительные сведения об [Application Insights](../log-query/log-query-overview.md).
 * Дополнительные сведения о [log Analytics](../../azure-monitor/log-query/log-query-overview.md).

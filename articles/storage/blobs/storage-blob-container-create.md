@@ -5,14 +5,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/17/2019
+ms.date: 07/22/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 24e754a583125c962e67f849edcec8f8609746a0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: abf4cb33fa953ec9a257397551b3d17752fe67f5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84464918"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87070722"
 ---
 # <a name="create-or-delete-a-container-in-azure-storage-with-net"></a>Создание или удаление контейнера в службе хранилища Azure с помощью .NET
 
@@ -34,10 +35,20 @@ ms.locfileid: "84464918"
 
 Чтобы создать контейнер, вызовите один из следующих методов.
 
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+- [Создание](/dotnet/api/azure.storage.blobs.blobcontainerclient.create)
+- [CreateAsync](/dotnet/api/azure.storage.blobs.blobcontainerclient.createasync)
+- [CreateIfNotExists](/dotnet/api/azure.storage.blobs.blobcontainerclient.createifnotexists)
+- [CreateIfNotExistsAsync](/dotnet/api/azure.storage.blobs.blobcontainerclient.createifnotexistsasync)
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
+
 - [Создание](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.create)
 - [CreateAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createasync)
 - [CreateIfNotExists](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createifnotexists)
 - [CreateIfNotExistsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createifnotexistsasync)
+---
 
 Методы **CREATE** и **CreateAsync** вызовут исключение, если контейнер с таким именем уже существует.
 
@@ -46,6 +57,12 @@ ms.locfileid: "84464918"
 Контейнеры создаются для учетной записи хранилища немедленно. Нельзя вложить один контейнер в другой.
 
 В следующем примере контейнер создается асинхронно:
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Containers.cs" id="CreateSampleContainerAsync":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
 ```csharp
 private static async Task<CloudBlobContainer> CreateSampleContainerAsync(CloudBlobClient blobClient)
@@ -77,16 +94,23 @@ private static async Task<CloudBlobContainer> CreateSampleContainerAsync(CloudBl
     return container;
 }
 ```
+---
 
 ## <a name="create-the-root-container"></a>Создание корневого контейнера
 
-Корневой контейнер является контейнером по умолчанию для вашей учетной записи хранилища. Каждая учетная запись хранения может иметь один корневой контейнер, который должен иметь имя *$root.*. Необходимо явно создать или удалить корневой контейнер.
+Корневой контейнер является контейнером по умолчанию для вашей учетной записи хранилища. Каждая учетная запись хранения может иметь один корневой контейнер, который должен иметь имя *$root*. Корневой контейнер должен быть явно создан или удален.
 
-Вы можете ссылаться на большой двоичный объект, хранящийся в корневом контейнере, без включения имени корневого контейнера. Корневой контейнер позволяет сослаться на большой двоичный объект на верхнем уровне иерархии учетной записи хранения. Например, теперь вы можете обратиться к BLOB-объекту, который находится в корневом контейнере, следующим образом.
+Вы можете ссылаться на большой двоичный объект, хранящийся в корневом контейнере, без включения имени корневого контейнера. Корневой контейнер позволяет сослаться на большой двоичный объект на верхнем уровне иерархии учетной записи хранения. Например, можно ссылаться на большой двоичный объект, который находится в корневом контейнере, следующим образом:
 
 `https://myaccount.blob.core.windows.net/default.html`
 
 В следующем примере корневой контейнер создается синхронно:
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Containers.cs" id="CreateRootContainer":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
 ```csharp
 private static void CreateRootContainer(CloudBlobClient blobClient)
@@ -113,23 +137,40 @@ private static void CreateRootContainer(CloudBlobClient blobClient)
     }
 }
 ```
+---
 
 ## <a name="delete-a-container"></a>Удаление контейнера
 
 Чтобы удалить контейнер в .NET, используйте один из следующих методов.
 
-- [Удалить](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.delete)
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+- [Удаление](/dotnet/api/azure.storage.blobs.blobcontainerclient.delete)
+- [DeleteAsync](/dotnet/api/azure.storage.blobs.blobcontainerclient.deleteasync)
+- [DeleteIfExists](/dotnet/api/azure.storage.blobs.blobcontainerclient.deleteifexists)
+- [DeleteIfExistsAsync](/dotnet/api/azure.storage.blobs.blobcontainerclient.deleteifexistsasync)
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
+
+- [Удаление](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.delete)
 - [DeleteAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.deleteasync)
 - [DeleteIfExists](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.deleteifexists)
 - [DeleteIfExistsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.deleteifexistsasync)
+---
 
 Методы **Delete** и **DeleteAsync** вызовут исключение, если контейнер не существует.
 
 Методы **DeleteIfExists** и **DeleteIfExistsAsync** возвращают логическое значение, указывающее, был ли удален контейнер. Если указанный контейнер не существует, эти методы возвращают **значение false** , чтобы указать, что контейнер не был удален.
 
-После удаления контейнера нельзя создать контейнер с тем же именем в течение не менее 30 секунд и, возможно, дольше. Во время удаления контейнера попытка создать контейнер с тем же именем завершится с кодом ошибки HTTP 409 (конфликт). Любые другие операции с контейнером или BLOB-объектами, которые он содержит, завершатся ошибкой HTTP с кодом 404 (не найдено) во время удаления контейнера.
+После удаления контейнера нельзя создать контейнер с тем же именем в течение не *менее* 30 секунд. Попытка создать контейнер с тем же именем завершится с кодом ошибки HTTP 409 (конфликт). Любые другие операции с контейнером или BLOB-объектами, которые он содержит, завершатся ошибкой HTTP с кодом 404 (не найдено).
 
 В следующем примере удаляется указанный контейнер и обрабатывается исключение, если контейнер не существует:
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Containers.cs" id="DeleteSampleContainerAsync":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
 ```csharp
 private static async Task DeleteSampleContainerAsync(CloudBlobClient blobClient, string containerName)
@@ -151,8 +192,15 @@ private static async Task DeleteSampleContainerAsync(CloudBlobClient blobClient,
     }
 }
 ```
+---
 
-В следующем примере показано, как удалить все контейнеры, начинающиеся с указанного префикса. Этот пример прерывает аренду, если в контейнере есть аренда.
+В следующем примере показано, как удалить все контейнеры, начинающиеся с указанного префикса.
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Containers.cs" id="DeleteContainersWithPrefixAsync":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
 ```csharp
 private static async Task DeleteContainersWithPrefixAsync(CloudBlobClient blobClient, string prefix)
@@ -163,11 +211,6 @@ private static async Task DeleteContainersWithPrefixAsync(CloudBlobClient blobCl
         foreach (var container in blobClient.ListContainers(prefix))
         {
             Console.WriteLine("\tContainer:" + container.Name);
-            if (container.Properties.LeaseState == LeaseState.Leased)
-            {
-                await container.BreakLeaseAsync(null);
-            }
-
             await container.DeleteAsync();
         }
 
@@ -181,10 +224,11 @@ private static async Task DeleteContainersWithPrefixAsync(CloudBlobClient blobCl
     }
 }
 ```
+---
 
 [!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 - [Операция создания контейнера](/rest/api/storageservices/create-container)
 - [Операция удаления контейнера](/rest/api/storageservices/delete-container)

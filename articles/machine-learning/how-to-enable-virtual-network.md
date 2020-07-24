@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.date: 07/07/2020
 ms.custom: contperfq4, tracking-python
-ms.openlocfilehash: 2193584996ed9f2c4cf5e858b8855c6878159a84
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: fa99a5c78fb533d17cb7f70b3545aa9ef6439b32
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86520704"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87072615"
 ---
 # <a name="network-isolation-during-training--inference-with-private-virtual-networks"></a>Сетевая изоляция во время обучения & вывода с частными виртуальными сетями
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -126,7 +126,7 @@ __Виртуальная сеть__ выполняет роль границы �
 1. Разверните раздел **Параметры вывода** .
 1. Выберите **параметр переопределить параметры вывода по умолчанию**.
 1. Выберите **задать параметры вывода**.
-1. Укажите новый датсторе.
+1. Укажите новое хранилище данных.
 
 ### <a name="azure-data-lake-storage-gen2-access-control"></a>Azure Data Lake Storage 2-го поколения контроля доступа
 
@@ -429,6 +429,8 @@ except ComputeTargetException:
 ```
 
 Когда завершится процесс создания, переходите в своем эксперименте к обучению модели с помощью кластера. Дополнительные сведения вы найдете в статье [Настройка целевых объектов вычислений для обучения моделей](how-to-set-up-training-targets.md).
+
+[!INCLUDE [low-pri-note](../../includes/machine-learning-low-pri-vm.md)]
 
 ### <a name="access-data-in-a-compute-instance-notebook"></a>Доступ к данным в записной книжке экземпляра COMPUTE
 

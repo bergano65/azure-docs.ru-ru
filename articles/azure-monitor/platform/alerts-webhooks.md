@@ -6,11 +6,12 @@ ms.author: harelbr
 ms.topic: conceptual
 ms.date: 04/03/2017
 ms.subservice: alerts
-ms.openlocfilehash: 0677c7a0521fe1f63c9c2c9fce65d8dbd8e6d5c4
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 5561dfee3ede72f9cd28adbd47caf2db4e634360
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83826916"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073585"
 ---
 # <a name="call-a-webhook-with-a-classic-metric-alert-in-azure-monitor"></a>Вызов веб-перехватчика с помощью классического оповещения метрики в Azure Monitor
 
@@ -25,7 +26,7 @@ ms.locfileid: "83826916"
 
 ![Добавление панели правил генерации оповещений](./media/alerts-webhooks/Alertwebhook.png)
 
-Вы также можете настроить оповещение так, чтобы при его активации в URI веб-перехватчика добавлялись соответствующие сведения. Для этого можно использовать [командлеты Azure PowerShell](../samples/powershell-samples.md#create-metric-alerts), [кроссплатформенный интерфейс командной строки](../samples/cli-samples.md#work-with-alerts) или [REST API Azure Monitor](https://msdn.microsoft.com/library/azure/dn933805.aspx).
+Вы также можете настроить оповещение так, чтобы при его активации в URI веб-перехватчика добавлялись соответствующие сведения. Для этого можно использовать [командлеты Azure PowerShell](../samples/powershell-samples.md#create-metric-alerts), [кроссплатформенный интерфейс командной строки](../samples/cli-samples.md#work-with-alerts) или [REST API Azure Monitor](/rest/api/monitor/alertrules).
 
 ## <a name="authenticate-the-webhook"></a>Аутентификация веб-перехватчика
 Для веб-перехватчика может использоваться аутентификация на основе маркеров. Универсальный код ресурса (URI) веб-перехватчика сохраняется вместе с идентификатором маркера. Например: `https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue`
@@ -78,11 +79,11 @@ ms.locfileid: "83826916"
 | conditionType |Да |Metric, Event |Поддерживаются два типа оповещений: метрики и события. Оповещения метрики основаны на условии метрики. Оповещения событий основаны на событиях в журнале действий. Таким образом, это значение позволяет узнать тип оповещения — метрики или события. |
 | condition |Да | |Специальные поля для проверки с учетом параметра **conditionType**. |
 | metricName |Для оповещений на основе метрик | |Имя метрики, определяющей, что контролирует метрика. |
-| metricUnit |Для оповещений на основе метрик |Bytes, BytesPerSecond, Count, CountPerSecond, Percent, Seconds |Допустимая метрикой единица Список допустимых значений см. См. [допустимые значения](https://msdn.microsoft.com/library/microsoft.azure.insights.models.unit.aspx). |
+| metricUnit |Для оповещений на основе метрик |Bytes, BytesPerSecond, Count, CountPerSecond, Percent, Seconds |Допустимая метрикой единица Список допустимых значений см. См. [допустимые значения](/previous-versions/azure/reference/dn802430(v=azure.100)). |
 | metricValue |Для оповещений на основе метрик | |Фактическое значение метрики, которая вызвала оповещение. |
 | threshold |Для оповещений на основе метрик | |Пороговое значение, при котором активируется оповещение. |
 | windowSize |Для оповещений на основе метрик | |Период времени, используемый для отслеживания активности оповещения по пороговому значению. Значение должно составлять от 5 минут до 24 часов. Значение должно быть в формате длительности ISO 8601. |
-| timeAggregation |Для оповещений на основе метрик |Average, Last, Maximum, Minimum, None, Total |Порядок объединения данных, собранных за определенный период. Значение по умолчанию — Average (Среднее). См. [допустимые значения](https://msdn.microsoft.com/library/microsoft.azure.insights.models.aggregationtype.aspx). |
+| timeAggregation |Для оповещений на основе метрик |Average, Last, Maximum, Minimum, None, Total |Порядок объединения данных, собранных за определенный период. Значение по умолчанию — Average (Среднее). См. [допустимые значения](/previous-versions/azure/reference/dn802410(v=azure.100)). |
 | оператор |Для оповещений на основе метрик | |Оператор, используемый для сравнения текущих данных метрик с заданным пороговым значением. |
 | subscriptionId |Да | |Идентификатор подписки Azure. |
 | имя_группы_ресурсов |Да | |Имя группы ресурсов для затронутого ресурса. |
@@ -94,7 +95,7 @@ ms.locfileid: "83826916"
 | properties |Нет |Необязательно |Набор пар "ключ — значение", содержащих подробные сведения о событии. Например, `Dictionary<String, String>`. Поле свойства не является обязательным. В настраиваемом пользовательском интерфейсе или в рабочем процессе на основе приложения логики пользователи могут вводить пары "ключ — значение" для передачи в виде полезных сведений. Еще один способ передачи пользовательских свойств в веб-перехватчик — через сам универсальный код ресурса (URI) веб-перехватчика (в виде параметров запросов). |
 
 > [!NOTE]
-> Значение в поле **свойства** можно задать только с помощью [REST API Azure Monitor](https://msdn.microsoft.com/library/azure/dn933805.aspx).
+> Значение в поле **свойства** можно задать только с помощью [REST API Azure Monitor](/rest/api/monitor/alertrules).
 >
 >
 
@@ -104,4 +105,3 @@ ms.locfileid: "83826916"
 * Узнайте, как [использовать приложение логики для отправки сообщения SMS с помощью Twilio из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app).
 * Узнайте, как [использовать приложение логики для отправки сообщения Slack из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app).
 * Узнайте, как [использовать приложение логики для отправки сообщения в очередь Azure из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app).
-

@@ -3,16 +3,16 @@ title: Управление резервным копированием файл
 description: Узнайте, как использовать REST API для управления и мониторинга файловых ресурсов Azure, резервное копирование которых выполняется Azure Backup.
 ms.topic: conceptual
 ms.date: 02/17/2020
-ms.openlocfilehash: 1e1d3463aa5d6ee10782e2ee17a7c17ffd64cb61
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c4d1ee187fd1c45dfd043b28c0d4b3d5935f50e1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82184917"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073254"
 ---
 # <a name="manage-azure-file-share-backup-with-rest-api"></a>Управление резервным копированием файловых ресурсов Azure с помощью REST API
 
-В этой статье объясняется, как выполнять задачи по управлению файловыми ресурсами Azure, которые архивируются с помощью [Azure Backup](https://docs.microsoft.com/azure/backup/backup-overview).
+В этой статье объясняется, как выполнять задачи по управлению файловыми ресурсами Azure, которые архивируются с помощью [Azure Backup](./backup-overview.md).
 
 ## <a name="monitor-jobs"></a>Мониторинг заданий
 
@@ -38,7 +38,7 @@ ms.locfileid: "82184917"
 }
 ```
 
-Задание резервного копирования файлового ресурса Azure определяется полем **JOBID** и может быть записано [с помощью запроса](https://docs.microsoft.com/rest/api/backup/jobdetails/) Get.
+Задание резервного копирования файлового ресурса Azure определяется полем **JOBID** и может быть записано [с помощью запроса](/rest/api/backup/jobdetails/) Get.
 
 ### <a name="tracking-the-job"></a>Отслеживание задания
 
@@ -54,7 +54,7 @@ GET https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48af
 
 #### <a name="response"></a>Ответ
 
-Имя  | Тип  |  Описание
+Имя  | Type  |  Описание
 --- | --- | ----
 200 ОК |  JobResource  | ОК
 
@@ -190,7 +190,7 @@ GET https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48af
 
 ## <a name="stop-protection-and-delete-data"></a>Снятие защиты и удаление данных
 
-Чтобы снять защиту с защищенного файлового ресурса и удалить данные резервной копии, выполните операцию удаления, как описано [здесь](https://docs.microsoft.com/rest/api/backup/protecteditems/delete).
+Чтобы снять защиту с защищенного файлового ресурса и удалить данные резервной копии, выполните операцию удаления, как описано [здесь](/rest/api/backup/protecteditems/delete).
 
 ```http
 DELETE https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}?api-version=2019-05-13

@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/03/2019
 ms.author: damaerte
-ms.openlocfilehash: 513c3da8031774f5f111ee357b5a3c43e1d09d95
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d0cfd428e1bd380d17049cbc229bb8850793056e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75832472"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073034"
 ---
 # <a name="overview-of-azure-cloud-shell"></a>Обзор Azure Cloud Shell
 Azure Cloud Shell — это интерактивная, аутентифицированная, доступная в браузере оболочка для управления ресурсами Azure.
@@ -32,7 +33,7 @@ Azure Cloud Shell — это интерактивная, аутентифици
 
 ![Запуск с помощью портала](media/overview/portal-launch-icon.png)
 
-## <a name="features"></a>Функции
+## <a name="features"></a>Компоненты
 
 ### <a name="browser-based-shell-experience"></a>Оболочка на основе браузера
 Cloud Shell предоставляет доступ к браузерному интерфейсу командной строки, созданному с учетом задач управления Azure.
@@ -60,15 +61,15 @@ Cloud Shell предоставляет интегрированный графи
 
 ### <a name="integrated-with-docsmicrosoftcom"></a>Интеграция с docs.microsoft.com
 
-Cloud Shell можно использовать непосредственно из документации, размещенной на сайте [docs.microsoft.com](https://docs.microsoft.com). Эта оболочка интегрирована с документацией по [Microsoft Learn](https://docs.microsoft.com/learn/), [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) и [Azure CLI](https://docs.microsoft.com/cli/azure). Нажмите кнопку "Попробуйте!" в блоке с фрагментом кода, чтобы открыть иммерсивный интерфейс оболочки. 
+Cloud Shell можно использовать непосредственно из документации, размещенной на сайте [docs.microsoft.com](https://docs.microsoft.com). Эта оболочка интегрирована с документацией по [Microsoft Learn](https://docs.microsoft.com/learn/), [Azure PowerShell](https://docs.microsoft.com/powershell/azure/) и [Azure CLI](https://docs.microsoft.com/cli/azure). Нажмите кнопку "Попробуйте!" в блоке с фрагментом кода, чтобы открыть иммерсивный интерфейс оболочки. 
 
-### <a name="multiple-access-points"></a>Доступность в нескольких расположениях
+### <a name="multiple-access-points"></a>Несколько точек доступа
 Cloud Shell представляет собой гибкий инструмент, который можно использовать с помощью таких элементов:
 * [portal.azure.com](https://portal.azure.com)
 * [shell.azure.com](https://shell.azure.com);
 * [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
-* [Документация по Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview)
-* [мобильные приложения Azure](https://azure.microsoft.com/features/azure-portal/mobile-app/);
+* [Документация по Azure PowerShell](https://docs.microsoft.com/powershell/azure/)
+* [Мобильное приложение Azure](https://azure.microsoft.com/features/azure-portal/mobile-app/)
 * [Расширение учетной записи Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
 
 ### <a name="connect-your-microsoft-azure-files-storage"></a>Подключение хранилища файлов Microsoft Azure
@@ -93,6 +94,6 @@ Cloud Shell машины являются временными, но файлы 
 ## <a name="pricing"></a>Цены
 За использование компьютера, на котором размещена среда Cloud Shell, плата не взимается. На этом компьютере должен быть подключен файловый ресурс Azure. Применяются расходы на обычное хранение.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Краткое руководство по использованию Bash в Azure Cloud Shell](quickstart.md) <br>
 [Краткое руководство по использованию PowerShell в Azure Cloud Shell (предварительная версия)](quickstart-powershell.md)
