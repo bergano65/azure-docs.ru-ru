@@ -14,18 +14,19 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.date: 09/10/2019
 ms.author: v-miegge
-ms.openlocfilehash: a7357ef3b0151096746e37bddd235f0db53baed7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c7fbe46d378d45f49a8510f9fdd01a9cae665d0b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85444817"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074394"
 ---
 # <a name="repair-a-linux-vm-by-using-the-azure-virtual-machine-repair-commands"></a>Восстановление виртуальной машины Linux с помощью команд восстановления виртуальной машины Azure
 
 Если возникает проблема с загрузкой или диском на виртуальной машине Linux в Azure, возможно, вам нужно устранить неполадки, связанные с самим диском. Например, такая ситуация может возникнуть из-за сбоя обновления приложения, который мешает успешно загрузить виртуальную машину. В этой статье подробно описано, как с помощью команд исправления виртуальной машины Azure подключить диск к другой виртуальной машине Linux для устранения ошибок, а затем перестроить исходную виртуальную машину.
 
 > [!IMPORTANT]
-> * Сценарии в этой статье применяются только к виртуальным машинам, которые используют [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).
+> * Сценарии в этой статье применяются только к виртуальным машинам, которые используют [Azure Resource Manager](../../azure-resource-manager/management/overview.md).
 > * Для выполнения скрипта требуется исходящее подключение из виртуальной машины (порт 443).
 > * Одновременно может выполняться только один скрипт.
 > * Выполнение скрипта не может быть отменено.
@@ -44,7 +45,7 @@ ms.locfileid: "85444817"
 4. Выполните действия для устранения проблемы.
 5. Выполните команду az vm repair restore.
 
-Дополнительную документацию и инструкции см. в описании [az vm repair](https://docs.microsoft.com/cli/azure/ext/vm-repair/vm/repair).
+Дополнительную документацию и инструкции см. в описании [az vm repair](/cli/azure/ext/vm-repair/vm/repair).
 
 ## <a name="repair-process-example"></a>Пример процесса исправления
 
@@ -56,9 +57,9 @@ ms.locfileid: "85444817"
 
    Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу **ВВОД**, чтобы выполнить его.
 
-   Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду ``az --version``. Если вам необходимо установить или обновить Azure CLI, см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+   Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду ``az --version``. Если вам необходимо установить или обновить Azure CLI, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
    
-   Если вам нужно войти в Cloud Shell с учетной записью, отличной от той, которую вы вошли на портал Azure, можно использовать команду ``az login`` [AZ login Reference](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest#az-login).  Для переключения между подписками, связанными с вашей учетной записью, можно использовать команду ``az account set --subscription`` [AZ Account Set Reference](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az-account-set).
+   Если вам нужно войти в Cloud Shell с учетной записью, отличной от той, которую вы вошли на портал Azure, можно использовать команду ``az login`` [AZ login Reference](/cli/azure/reference-index?view=azure-cli-latest#az-login).  Для переключения между подписками, связанными с вашей учетной записью, можно использовать команду ``az account set --subscription`` [AZ Account Set Reference](/cli/azure/account?view=azure-cli-latest#az-account-set).
 
 2. Если вы используете команды `az vm repair` в первый раз, добавьте расширение CLI vm-repair.
 
@@ -72,7 +73,7 @@ ms.locfileid: "85444817"
    az extension update -n vm-repair
    ```
 
-3. Выполните `az vm repair create`. Эта команда создает копию диска ОС для неработающей виртуальной машины, создает виртуальную машину для исправления в новой группе ресурсов и подключает копию диска ОС.  Виртуальная машина для исправления будет иметь тот же размер и регион, что и неработающая виртуальная машина. Используемые здесь группа ресурсов и имя виртуальной машины относятся к неработающей виртуальной машине. Если виртуальная машина использует шифрование дисков Azure, команда будет пытаться разблокировать зашифрованный диск, чтобы он был доступен при подключении к виртуальной машине восстановления.
+3. Запустите `az vm repair create`. Эта команда создает копию диска ОС для неработающей виртуальной машины, создает виртуальную машину для исправления в новой группе ресурсов и подключает копию диска ОС.  Виртуальная машина для исправления будет иметь тот же размер и регион, что и неработающая виртуальная машина. Используемые здесь группа ресурсов и имя виртуальной машины относятся к неработающей виртуальной машине. Если виртуальная машина использует шифрование дисков Azure, команда будет пытаться разблокировать зашифрованный диск, чтобы он был доступен при подключении к виртуальной машине восстановления.
 
    ```azurecli-interactive
    az vm repair create -g MyResourceGroup -n myVM --repair-username username --repair-password password!234 --verbose
@@ -98,6 +99,6 @@ az vm boot-diagnostics enable --name myVMDeployed --resource-group myResourceGro
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* При возникновении проблем с подключением к виртуальной машине ознакомьтесь со статьей [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-rdp-connection).
-* Для решения проблем с доступом к приложениям, выполняющимся на виртуальной машине, см. статью [Устранение проблем с подключением к приложениям на виртуальных машинах в Azure](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-app-connection).
-* Дополнительные сведения об использовании Resource Manager вы найдете в статье [Общие сведения об Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).
+* При возникновении проблем с подключением к виртуальной машине ознакомьтесь со статьей [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](./troubleshoot-rdp-connection.md).
+* Для решения проблем с доступом к приложениям, выполняющимся на виртуальной машине, см. статью [Устранение проблем с подключением к приложениям на виртуальных машинах в Azure](./troubleshoot-app-connection.md).
+* Дополнительные сведения об использовании Resource Manager вы найдете в статье [Общие сведения об Azure Resource Manager](../../azure-resource-manager/management/overview.md).

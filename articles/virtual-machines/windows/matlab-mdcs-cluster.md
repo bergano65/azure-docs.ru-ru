@@ -8,11 +8,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 05/09/2016
 ms.author: markscu
-ms.openlocfilehash: d34481587fd48e2eddfd268c39f6bc4f7c4e0c76
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a3f3dbd74ef74f091ca923f8c09680c6913ac300
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81869425"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074236"
 ---
 # <a name="create-matlab-distributed-computing-server-clusters-on-azure-vms"></a>Создание кластеров MATLAB Distributed Computing Server на виртуальных машинах Azure
 Используя виртуальные машины Microsoft Azure, вы можете создать один или несколько кластеров MATLAB Distributed Computing Server, в которых можно запускать параллельные рабочие нагрузки MATLAB для ресурсоемких вычислений. Установите программное обеспечение MATLAB Distributed Computing Server на виртуальную машину для использования в качестве базового образа. Затем примените шаблон быстрого запуска Azure или сценарий Azure PowerShell (доступный на [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/matlab-cluster)) для развертывания кластера и управления им. После развертывания подключитесь к кластеру, чтобы запустить рабочие нагрузки.
@@ -22,9 +23,9 @@ ms.locfileid: "81869425"
 
 Используя виртуальные машины Azure, можно создавать кластеры MATLAB Distributed Computing Server, в которых доступны те же механизмы для отправки параллельных рабочих нагрузок, что и в локальных кластерах. Такими рабочими нагрузками могут быть интерактивные задания, пакетные задания, независимые задачи и взаимодействующие задачи. Использование Azure в сочетании с платформой MATLAB имеет множество преимуществ по сравнению с подготовкой и использованием традиционного локального оборудования. Среди этих преимуществ: поддержка широкого диапазона размеров виртуальных машин, возможность создавать кластеры по требованию для оплаты только тех вычислительных ресурсов, которые используются, а также возможность тестировать модели в масштабе.  
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 * **Клиентский компьютер** — необходим клиентский компьютер на базе Windows для обмена данными с Azure и кластером MATLAB Distributed Computing Server после развертывания.
-* **Azure PowerShell** — ознакомьтесь с разделом [Установка и настройка Azure PowerShell](/powershell/azure/overview) , чтобы установить этот компонент на клиентском компьютере.
+* **Azure PowerShell** — ознакомьтесь с разделом [Установка и настройка Azure PowerShell](/powershell/azure/) , чтобы установить этот компонент на клиентском компьютере.
 * **Подписка Azure** — если ее нет, можно за пару минут создать [бесплатную учетную запись](https://azure.microsoft.com/free/) . Для больших кластеров можно использовать подписку с оплатой по мере использования или другие варианты приобретения.
 * **Квота на виртуальные ЦП** — чтобы развернуть большой кластер или несколько кластеров MATLAB Distributed Computing Server, вам, возможно, потребуется увеличить квоту на виртуальные ЦП. Чтобы увеличить квоту, [открывайте запрос в службу поддержки клиентов](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) бесплатно.
 * **Лицензии MATLAB, Parallel Computing Toolbox и MATLAB Distributed Computing Server** — скрипты предполагают использование [MathWorks Hosted License Manager](https://www.mathworks.com/help/install/license-management.html) для всех лицензий.  
@@ -63,6 +64,6 @@ ms.locfileid: "81869425"
 
 ![Диспетчер профилей кластеров](./media/matlab-mdcs-cluster/cluster_profile_manager.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Подробные инструкции по развертыванию и управлению кластерами MATLAB Distributed Computing Server в Azure см. в репозитории [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/matlab-cluster), содержащем шаблоны и сценарии.
 * Посетите [сайт MathWorks](https://www.mathworks.com/) с подробной документацией по MATLAB и MATLAB Distributed Computing Server.

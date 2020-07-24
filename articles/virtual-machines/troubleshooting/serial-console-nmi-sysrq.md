@@ -13,13 +13,14 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: 3ad68438f5fc015b6a9150d67485b90a095f1a4a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 545399e1d7941351ce861ac98d995d5e57006ea1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79250092"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074377"
 ---
-# <a name="use-serial-console-for-sysrq-and-nmi-calls"></a>Использование последовательной консоли для вызовов SysRq и NMI
+# <a name="use-the-azure-serial-console-for-sysrq-and-nmi-calls"></a>Использование последовательной консоли Azure для вызовов Сисрк и NMI
 
 ## <a name="system-request-sysrq"></a>Системный запрос (SysRq)
 SysRq — это последовательность клавиш, понятная ядру операционной системы Linux, которая может инициировать набор предопределенных действий. Эти команды часто используются при устранении неполадок или восстановлении виртуальных машин с помощью традиционных средств администрирования (например, если виртуальная машина не отвечает). Использование функции SysRq в последовательной консоли Azure будет имитировать нажатие клавиши SysRq и ввод символов на физической клавиатуре.
@@ -28,11 +29,11 @@ SysRq — это последовательность клавиш, понятн
 
 Последовательную консоль Azure можно использовать для отправки SysRq на виртуальную машину Azure с использованием значка клавиатуры в показанной ниже командной строке.
 
-![](../media/virtual-machines-serial-console/virtual-machine-serial-console-command-menu.jpg)
+![Снимок экрана с последовательной консолью Azure. Значок клавиатуры выделяется, и его меню отображается. Это меню содержит элемент команды send Сисрк.](../media/virtual-machines-serial-console/virtual-machine-serial-console-command-menu.jpg)
 
 При выборе команды Send SysRq Command (Отправить команду SysRq) откроется диалоговое окно, которое предоставит общие параметры SysRq или примет последовательность команд SysRq, введенных в диалоговое окно.  Это позволяет сериям SysRq выполнять высокоуровневую операцию, такую ​​как безопасная перезагрузка с использованием: `REISUB`.
 
-![](../media/virtual-machines-serial-console/virtual-machine-serial-console-sysreq_UI.png)
+![Снимок экрана: диалоговое окно "Команда отправки Сисрк в Guest". Выбран параметр для ввода команд, а поле команда содержит РЕИСУБ.](../media/virtual-machines-serial-console/virtual-machine-serial-console-sysreq_UI.png)
 
 Команда SysRq не может использоваться на остановленных виртуальных машинах или на таких, ядро которых ​​находится в неотвечающем состоянии (например, критическое состояние ядра).
 
@@ -101,7 +102,7 @@ echo "1" >/proc/sys/kernel/sysrq
 
 Последовательную консоль можно использовать для отправки немаскируемого прерывания на виртуальную машину Azure с помощью значка клавиатуры, показанного ниже в командной строке. Как только немаскируемое прерывание будет запущено, конфигурация виртуальной машины будет контролировать реакцию системы.  Операционные системы Linux можно настроить для аварийного завершения и создания дампа памяти, когда операционная система получает немаскируемое прерывание.
 
-![](../media/virtual-machines-serial-console/virtual-machine-serial-console-command-menu.jpg) <br>
+![Снимок экрана последовательной консоли. Значок клавиатуры выделяется, и его меню отображается. Это меню содержит элемент прерывания, не являющийся маской.](../media/virtual-machines-serial-console/virtual-machine-serial-console-command-menu.jpg) <br>
 
 ### <a name="enable-nmi"></a>Включение немаскируемого прерывания
 Для систем Linux, которые поддерживают sysctl для настройки параметров ядра, можно включить аварийный сигнал при получении этого немаскируемого прерывания, выполнив следующее:
@@ -126,7 +127,7 @@ echo "1" >/proc/sys/kernel/sysrq
 ### <a name="coreos"></a>CoreOS
 - [Сбор журналов сбоев](https://coreos.com/os/docs/latest/collecting-crash-logs.html)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * См. страницу документации по работе с [последовательной консолью Linux](serial-console-linux.md).
 * Используйте последовательную консоль для [перехода в режим GRUB и однопользовательский режим](serial-console-grub-single-user-mode.md).
 * Последовательная консоль также доступна для виртуальных машин [Windows](serial-console-windows.md).

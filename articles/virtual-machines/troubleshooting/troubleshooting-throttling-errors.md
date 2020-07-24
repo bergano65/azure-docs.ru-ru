@@ -13,11 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 09/18/2018
 ms.author: changov
 ms.reviewer: vashan, rajraj
-ms.openlocfilehash: f5fbd80fc9a8e519cf8f49ab16d7e747c6a8171b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b1cc8a43423ecd33218948aaa001fc34877eac60
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76045357"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074292"
 ---
 # <a name="troubleshooting-api-throttling-errors"></a>Устранение ошибок регулирования API 
 
@@ -25,7 +26,7 @@ ms.locfileid: "76045357"
 
 ## <a name="throttling-by-azure-resource-manager-vs-resource-providers"></a>Регулирование Azure Resource Manager и поставщиками ресурсов  
 
-Azure Resource Manager в качестве "входной двери" Azure выполняет аутентификацию и первоочередную проверку, а также регулирование всех входящих запросов API. [Здесь](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling) описываются ограничения частоты вызовов Azure Resource Manager и связанные диагностические HTTP-заголовки ответа.
+Azure Resource Manager в качестве "входной двери" Azure выполняет аутентификацию и первоочередную проверку, а также регулирование всех входящих запросов API. [Здесь](../../azure-resource-manager/management/request-limits-and-throttling.md) описываются ограничения частоты вызовов Azure Resource Manager и связанные диагностические HTTP-заголовки ответа.
  
 При получении клиентом API Azure ошибки регулирования состояние HTTP следующее: "429 —слишком много запросов". Чтобы понять, с помощью чего выполняется регулирование запросов (Azure Resource Manager или поставщика базовых ресурсов, например CRP), проверьте `x-ms-ratelimit-remaining-subscription-reads` для запросов GET и заголовки ответа `x-ms-ratelimit-remaining-subscription-writes` для запросов, отличных от GET. Если оставшееся количество вызовов приближается к 0, значит достигнут определенный Azure Resource Manager предел вызовов в подписке. Действия по всем клиентам подписки учитываются вместе. В противном случае регулирование поступает от поставщика целевых ресурсов (указанного в сегменте `/providers/<RP>` URL-адреса запроса). 
 
@@ -78,8 +79,8 @@ Content-Type: application/json; charset=utf-8
 
 ## <a name="api-call-rate-and-throttling-error-analyzer"></a>Анализатор частоты вызова API и ошибок регулирования
 Доступна предварительная версия средства устранения неполадок для API поставщика вычислительных ресурсов. Эти командлеты PowerShell предоставляют статистику о частоте запросов API за интервал времени на операцию и о нарушении регулирования на группу операций (политику):
--   [Export-AzLogAnalyticRequestRateByInterval](https://docs.microsoft.com/powershell/module/az.compute/export-azloganalyticrequestratebyinterval)
--   [Export-Азлоганалитиксроттледрекуест](https://docs.microsoft.com/powershell/module/az.compute/export-azloganalyticthrottledrequest)
+-   [Export-AzLogAnalyticRequestRateByInterval](/powershell/module/az.compute/export-azloganalyticrequestratebyinterval)
+-   [Export-Азлоганалитиксроттледрекуест](/powershell/module/az.compute/export-azloganalyticthrottledrequest)
 
 Статистика вызовов API позволяет подробно изучить поведение клиентов подписки и легко определить шаблоны вызова, которые приводят к регулированию.
 
@@ -97,6 +98,6 @@ Content-Type: application/json; charset=utf-8
 - Если для кода клиента нужны виртуальные машины, диски и моментальные снимки из определенного расположения Azure, то используйте форму на основе расположения вместо запрашивания всех виртуальных машин в подписке, а затем примените фильтр по расположению на стороне клиента: запрос региональных конечных точек поставщика вычислительных ресурсов `GET /subscriptions/<subId>/providers/Microsoft.Compute/locations/<location>/virtualMachines?api-version=2017-03-30`. 
 -   При создании или обновлении ресурсов API, в частности виртуальных машин и масштабируемого набора виртуальных машин, гораздо более эффективно отслеживать завершение возвращаемой асинхронной операции, а не опрашивать URL-адрес ресурса (на основе `provisioningState`).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о механизме повторов для других служб в Azure см. [здесь](https://docs.microsoft.com/azure/architecture/best-practices/retry-service-specific).
+Дополнительные сведения о механизме повторов для других служб в Azure см. [здесь](/azure/architecture/best-practices/retry-service-specific).

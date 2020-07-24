@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 03/31/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 16c8eed3377c2191b4345ec59ec1eba8be01369d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 76c3f729a8520c7bff7b49a1d2200d7950f8a9f4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80633961"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074307"
 ---
 # <a name="vm-is-unresponsive-with-c01a001d-error-when-applying-windows-update"></a>Виртуальная машина не отвечает на ошибку "C01A001D" при применении Центр обновления Windows
 
@@ -27,11 +27,11 @@ ms.locfileid: "80633961"
 
 ## <a name="symptoms"></a>Симптомы
 
-При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины отображается Центр обновления Windows (КБ), но завершается с кодом ошибки: "C01A001D".
+При использовании [диагностики загрузки](./boot-diagnostics.md) для просмотра снимка экрана виртуальной машины отображается Центр обновления Windows (КБ), но завершается с кодом ошибки: "C01A001D".
 
 ![не отвечает Центр обновления Windows](./media/unresponsive-vm-apply-windows-update/unresponsive-windows-update.png)
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Невозможно создать основной файл в файловой системе. Операционной системе не удается записать файлы на диск.
 
@@ -49,17 +49,17 @@ ms.locfileid: "80633961"
 
 ### <a name="create-and-access-a-repair-vm"></a>Создание виртуальной машины для восстановления и вход на нее
 
-1. Выполните [шаги 1-3 команды восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands) , чтобы подготовить виртуальную машину восстановления.
+1. Выполните [шаги 1-3 команды восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md) , чтобы подготовить виртуальную машину восстановления.
 2. Подключитесь к виртуальной машине восстановления с помощью подключение к удаленному рабочему столу.
 
 ### <a name="free-up-space-on-the-hard-disk"></a>Освободите место на жестком диске
 
 Если диск еще не 1 ТБ, его размер необходимо изменить. Если диск равен 1 ТБ, выполните очистку диска и дефрагментацию диска.
 
-1. Проверьте, есть ли свободное место на диске. Если размер диска меньше 1 ТБ, [его можно развернуть до 1 ТБ с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/expand-os-disk?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json).
+1. Проверьте, есть ли свободное место на диске. Если размер диска меньше 1 ТБ, [его можно развернуть до 1 ТБ с помощью PowerShell](../windows/expand-os-disk.md?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json).
 2. Когда диск будет равен 1 ТБ, выполните очистку диска.
-    - [Отключите диск данных от поврежденной виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/windows/detach-disk).
-    - [Подключите диск данных к работающей виртуальной машине](https://docs.microsoft.com/azure/virtual-machines/windows/attach-disk-ps#attach-an-existing-data-disk-to-a-vm).
+    - [Отключите диск данных от поврежденной виртуальной машины](../windows/detach-disk.md).
+    - [Подключите диск данных к работающей виртуальной машине](../windows/attach-disk-ps.md#attach-an-existing-data-disk-to-a-vm).
     - Освободите место с помощью [средства очистки диска](https://support.microsoft.com/help/4026616/windows-10-disk-cleanup).
 3. После изменения размера и очистки диска выполните дефрагментацию.
 
@@ -115,4 +115,4 @@ ms.locfileid: "80633961"
 
 ### <a name="rebuild-the-vm"></a>Перестроение виртуальной машины
 
-Чтобы заново собрать виртуальную машину, используйте [Шаг 5 команд восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands#repair-process-example) .
+Чтобы заново собрать виртуальную машину, используйте [Шаг 5 команд восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example) .

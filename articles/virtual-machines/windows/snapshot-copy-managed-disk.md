@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 10/08/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 92957bd078c04a9bb7ac35f9d30f042a44e10764
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e5ecb99c7f64d81d57c5d6d2cb25967913a752b4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82100640"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074132"
 ---
 # <a name="create-a-snapshot"></a>Создание моментального снимка
 
@@ -33,11 +33,11 @@ ms.locfileid: "82100640"
 6. Выберите **расположение** центра обработки данных Azure.  
 7. В поле **Исходный диск** выберите управляемый диск, моментальный снимок которого необходимо создать.
 8. Выберите **тип учетной записи**, которая будет использоваться для хранения моментального снимка. Выберите **Standard_HDD**, если вам не нужно хранить моментальный снимок на высокопроизводительном диске.
-9. Нажмите кнопку **создания**.
+9. Выберите **Создать**.
 
-## <a name="use-powershell"></a>Использование PowerShell
+## <a name="use-powershell"></a>PowerShell
 
-В следующих шагах показано, как скопировать диск виртуального жесткого диска и создать конфигурацию моментального снимка. Затем можно создать моментальный снимок диска с помощью командлета [New-азснапшот](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshot) . 
+В следующих шагах показано, как скопировать диск виртуального жесткого диска и создать конфигурацию моментального снимка. Затем можно создать моментальный снимок диска с помощью командлета [New-азснапшот](/powershell/module/az.compute/new-azsnapshot) . 
 
  
 
@@ -53,18 +53,18 @@ ms.locfileid: "82100640"
 2. Получите виртуальную машину.
 
    ```azurepowershell-interactive
-   $vm = get-azvm `
-   -ResourceGroupName $resourceGroupName 
-   -Name $vmName
+   $vm = Get-AzVM `
+       -ResourceGroupName $resourceGroupName `
+       -Name $vmName
    ```
 
 3. Создайте конфигурацию моментального снимка. В этом примере моментальный снимок — это снимок диска операционной системы:
 
    ```azurepowershell-interactive
-   $snapshot =  New-AzSnapshotConfig 
-   -SourceUri $vm.StorageProfile.OsDisk.ManagedDisk.Id 
-   -Location $location 
-   -CreateOption copy
+   $snapshot =  New-AzSnapshotConfig `
+       -SourceUri $vm.StorageProfile.OsDisk.ManagedDisk.Id `
+       -Location $location `
+       -CreateOption copy
    ```
    
    > [!NOTE]
@@ -73,10 +73,10 @@ ms.locfileid: "82100640"
 4. Создайте моментальный снимок.
 
    ```azurepowershell-interactive
-   New-AzSnapshot 
-   -Snapshot $snapshot 
-   -SnapshotName $snapshotName 
-   -ResourceGroupName $resourceGroupName 
+   New-AzSnapshot `
+       -Snapshot $snapshot `
+       -SnapshotName $snapshotName `
+       -ResourceGroupName $resourceGroupName 
    ```
 
 
