@@ -14,11 +14,12 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.reviewer: anilmur
-ms.openlocfilehash: e2ccce13e4ef09426d0f3a02dcbce2f330b0ead8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f34e3a3d1e0245180ce923fc3ec7353ab1a176be
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84712298"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086359"
 ---
 # <a name="media-encoder-standard-formats-and-codecs"></a>Форматы и кодеки Media Encoder Standard
 
@@ -38,7 +39,7 @@ ms.locfileid: "84712298"
 | Windows Media Video (WMV)/ASF (.wmv, .asf) |Да |
 | AVI (без сжатия 8 бит/10 бит) (.avi) |Да |
 | MP4 (MP4, M4A, M4V) и ISMV (ISMA, ISMV) |Да |
-| [Microsoft Digital Video Recording(DVR-MS)](https://msdn.microsoft.com/library/windows/desktop/dd692984) (.dvr-ms) |Да |
+| [Microsoft Digital Video Recording(DVR-MS)](/previous-versions/windows/desktop/mstv/about-the-dvr-ms-file-format) (.dvr-ms) |Да |
 | Matroska/WebM (.mkv) |Да |
 | WAVE/WAV (.wav) |Да |
 | QuickTime (.mov) |Да |
@@ -53,7 +54,7 @@ ms.locfileid: "84712298"
 
 * файлы MXF, GXF и QuickTime со звуковыми дорожками с чередованием стерео или форматом 5.1;
 
-или
+or
 
 * файлы MXF, GXF и QuickTime, где звук переносится как отдельные дорожки PCM, но сопоставление каналов (стерео или 5.1) можно определить по метаданным файла.
 
@@ -111,8 +112,7 @@ ms.locfileid: "84712298"
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 [Кодирование содержимого по запросу с помощью служб мультимедиа Azure](media-services-encode-asset.md)
 
 [Кодирование с помощью стандартного кодировщика мультимедиа](media-services-dotnet-encode-with-media-encoder-standard.md)
-

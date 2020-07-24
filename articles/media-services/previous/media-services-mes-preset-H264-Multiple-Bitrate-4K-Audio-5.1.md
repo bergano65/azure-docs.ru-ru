@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 2466edb3d14ebbe9296fad087fce432b83005437
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dace6c2e60ca5fd93be915bde98d08a606e9c876
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "61463690"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086325"
 ---
 # <a name="h264-multiple-bitrate-4k-audio-51"></a>H264 Multiple Bitrate 4K Audio 5.1
 `Media Encoder Standard` определяет набор предустановок кодирования, которые можно использовать при создании заданий кодирования. Можно также использовать `preset name`, чтобы указать, в какой формат нужно закодировать файл мультимедиа. Или можно создать собственные предустановки в формате JSON или XML (с использованием кодировки UTF-8 или UTF-16). Затем следует передавать пользовательскую предустановку в кодировщик. Список предустановок, поддерживаемых данным кодировщиком `Media Encoder Standard`, приведен в разделе [Предустановки задач для Media Encoder Standard](media-services-mes-presets-overview.md).  
@@ -29,7 +29,7 @@ ms.locfileid: "61463690"
  Данная предустановка создает набор из 12 MP4-файлов с одинаковыми группами GOP, скоростями 1000–20 000 Кбит/с и звуком в формате AAC 5.1. Чтобы получить дополнительные сведения о профиле, скорости, частоте выборки и т. п. данной предустановки, ознакомьтесь с кодом XML или JSON ниже. Описание каждого элемента и его допустимых значений см. в разделе [Схема Media Encoder Standard](media-services-mes-schema.md).  
   
 > [!NOTE]
->  Для кодирования в формат 4K необходимы зарезервированные единицы типа "Премиум". Дополнительные сведения см. в статье [Масштабирование кодирования](https://azure.microsoft.com/documentation/articles/media-services-portal-encoding-units).  
+>  Для кодирования в формат 4K необходимы зарезервированные единицы типа "Премиум". Дополнительные сведения см. в статье [Масштабирование кодирования](./media-services-scale-media-processing-overview.md).  
   
 > [!NOTE]
 >  При изменении значений `Width` и `Height` слоев убедитесь в сохранении пропорций. Например: 1920x1080, 1280x720, 1080x576, 640x360. Не следует использовать смешанные сочетания пропорций, например: 1280x720, 720x480, 640x360.  

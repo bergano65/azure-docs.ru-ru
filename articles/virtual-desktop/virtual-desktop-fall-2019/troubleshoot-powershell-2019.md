@@ -1,6 +1,6 @@
 ---
-title: Виртуальные рабочие столы Windows PowerShell — Azure
-description: Устранение неполадок с PowerShell при настройке среды клиента виртуальных рабочих столов Windows.
+title: Виртуальные рабочие столы Windows PowerShell (попадают 2019) — Azure
+description: Устранение неполадок с PowerShell при настройке среды клиента Windows для виртуальных рабочих столов (выпуски 2019).
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,14 +8,14 @@ ms.topic: troubleshooting
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: de3933b1686b433a720e78d89bd3e50c0ce5e5dd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3171cc54de57b70a18a3f1b9ee3317cf29f79d4b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82615504"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085815"
 ---
-# <a name="windows-virtual-desktop-powershell"></a>Виртуальный рабочий стол Windows — PowerShell
+# <a name="windows-virtual-desktop-powershell-fall-2019-release"></a>Windows Virtual Desktop PowerShell (выпуски 2019)
 
 >[!IMPORTANT]
 >Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../troubleshoot-powershell.md).

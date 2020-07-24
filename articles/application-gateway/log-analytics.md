@@ -8,14 +8,14 @@ ms.service: application-gateway
 ms.topic: troubleshooting
 ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: 072640f5ba34b2782f75bbe4169567ade823f406
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 88e360c5630c24dd997f72bda3fc4a480264763d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84806691"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086920"
 ---
-# <a name="use-log-analytics-to-examine-application-gateway-web-application-firewall-logs"></a>Использование Log Analytics для проверки журналов брандмауэра веб-приложения Шлюза приложений
+# <a name="use-log-analytics-to-examine-application-gateway-web-application-firewall-waf-logs"></a>Использование Log Analytics для проверки журналов брандмауэра веб-приложения шлюза приложений (WAF)
 
 После работоспособности WAF шлюза приложений можно включить журналы, чтобы проверить, что происходит с каждым запросом. Журналы брандмауэра дают представление об оценке, сопоставлении и блокировке WAF. С помощью Log Analytics можно просмотреть данные в журналах брандмауэра, чтобы получить еще больше ценных сведений. Дополнительные сведения о создании рабочей области Log Analytics см. в разделе [создание log Analytics рабочей области на портал Azure](../azure-monitor/learn/quick-create-workspace.md). Дополнительные сведения о запросах журналов см. [в разделе Общие сведения о запросах журналов в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
 
@@ -82,6 +82,6 @@ AzureDiagnostics
 
 ![Панель мониторинга](media/log-analytics/dashboard.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Работоспособность серверной части, журналы диагностики и метрики для шлюза приложений](application-gateway-diagnostics.md)

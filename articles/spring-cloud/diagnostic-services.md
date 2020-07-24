@@ -6,11 +6,13 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: brendm
-ms.openlocfilehash: 57850b45820ec259337a8ad5b67bfebfd6762c24
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-java
+ms.openlocfilehash: 56f392210aac6045a9dc8cc3522d36092162f26c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84790591"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086121"
 ---
 # <a name="analyze-logs-and-metrics-with-diagnostics-settings"></a>Анализ журналов и метрик с помощью параметров диагностики
 
@@ -27,7 +29,7 @@ ms.locfileid: "84790591"
 
 ## <a name="logs"></a>Журналы
 
-|Журнал | Описание: |
+|Журнал | Описание |
 |----|----|
 | **аппликатионконсоле** | Журнал консоли для всех приложений клиента. |
 | **системлогс** | В настоящее время в этой категории регистрируются только журналы [сервера конфигурации "Весна Cloud Configuration](https://cloud.spring.io/spring-cloud-config/reference/html/#_spring_cloud_config_server) ". |
@@ -48,7 +50,7 @@ ms.locfileid: "84790591"
     * **Отправить в Log Analytics.**
 
 1. Выберите категорию журнала и категорию метрик, которые требуется отслеживать, а затем укажите время хранения (в днях). Время хранения применяется только к учетной записи хранения.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 > [!NOTE]
 > 1. Между созданием журналов и метрик и их появлением в учетной записи хранения, концентраторе событий или Log Analytics может существовать промежуток в течение 15 минут.
@@ -174,7 +176,7 @@ AppPlatformLogsforSpring
 
 Azure Monitor предоставляет обширную поддержку для запросов журналов приложений с помощью Log Analytics. Дополнительные сведения об этой службе см. в разделе Начало [работы с запросами журналов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md). Дополнительные сведения о создании запросов для анализа журналов приложений см. в разделе [Обзор запросов журналов в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
 
-## <a name="frequently-asked-questions-faq"></a>Вопросы и ответы
+## <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
 
 ### <a name="how-to-convert-multi-line-java-stack-traces-into-a-single-line"></a>Как преобразовать многострочные трассировки стека Java в одну строку?
 

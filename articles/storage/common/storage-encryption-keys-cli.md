@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 04/02/2020
+ms.date: 07/13/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: d2390cbf41f9a93515f994040a287d69f0036168
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d6fa4bbaf9b37c93ef4efbe405087c39395df63d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85506211"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086019"
 ---
 # <a name="configure-customer-managed-keys-with-azure-key-vault-by-using-azure-cli"></a>Настройка ключей, управляемых клиентом, с помощью Azure Key Vault Azure CLI
 
@@ -30,6 +30,7 @@ ms.locfileid: "85506211"
 Чтобы назначить управляемое удостоверение с помощью Azure CLI, вызовите команду [AZ Storage учетная запись Update](/cli/azure/storage/account#az-storage-account-update). Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями.
 
 ```azurecli-interactive
+az login
 az account set --subscription <subscription-id>
 
 az storage account update \
@@ -90,9 +91,33 @@ az keyvault key create \
 
 ## <a name="configure-encryption-with-customer-managed-keys"></a>Настройка шифрования с помощью управляемых клиентом ключей
 
-По умолчанию шифрование службы хранилища Azure использует ключи, управляемые корпорацией Майкрософт. Настройте учетную запись хранения Azure для ключей, управляемых клиентом, и укажите ключ, связываемый с учетной записью хранения.
+По умолчанию шифрование службы хранилища Azure использует ключи, управляемые корпорацией Майкрософт. На этом шаге настройте учетную запись хранения Azure для использования ключей, управляемых клиентом, с Azure Key Vault, а затем укажите ключ, связываемый с учетной записью хранения.
 
-Чтобы обновить параметры шифрования учетной записи хранения, вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update), как показано в следующем примере. Включите `--encryption-key-source` параметр и установите его в значение, `Microsoft.Keyvault` чтобы включить управляемые клиентом ключи для учетной записи хранения. Пример также запрашивает универсальный код ресурса (URI) хранилища ключей и последнюю версию ключа. Эти значения необходимы для связывания ключа с учетной записью хранения. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями.
+При настройке шифрования с помощью управляемых клиентом ключей можно выбрать автоматический поворот ключа, используемого для шифрования при изменении версии в связанном хранилище ключей. Кроме того, можно явно указать версию ключа, которая будет использоваться для шифрования до тех пор, пока не будет обновлена версия ключа вручную.
+
+### <a name="configure-encryption-for-automatic-rotation-of-customer-managed-keys"></a>Настройка шифрования для автоматического вращения ключей, управляемых клиентом
+
+Чтобы настроить шифрование для автоматического вращения ключей, управляемых клиентом, установите [Azure CLI версии 2.4.0](/cli/azure/release-notes-azure-cli#april-21-2020) или более поздней. Дополнительные сведения см. в статье [Установка Azure CLI](/azure/install-azure-cli).
+
+Чтобы автоматически поворачивать ключи, управляемые клиентом, не указывайте версию ключа при настройке ключей, управляемых клиентом, для учетной записи хранения. Чтобы обновить параметры шифрования учетной записи хранения, вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update) , как показано в следующем примере. Включите `--encryption-key-source` параметр и установите его в значение, `Microsoft.Keyvault` чтобы включить управляемые клиентом ключи для учетной записи. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями.
+
+```azurecli-interactive
+key_vault_uri=$(az keyvault show \
+    --name <key-vault> \
+    --resource-group <resource_group> \
+    --query properties.vaultUri \
+    --output tsv)
+az storage account update
+    --name <storage-account> \
+    --resource-group <resource_group> \
+    --encryption-key-name <key> \
+    --encryption-key-source Microsoft.Keyvault \
+    --encryption-key-vault $key_vault_uri
+```
+
+### <a name="configure-encryption-for-manual-rotation-of-key-versions"></a>Настройка шифрования для ручного смены основных версий
+
+Чтобы явно указать версию ключа, используемую для шифрования, укажите версию ключа при настройке шифрования с помощью управляемых клиентом ключей для учетной записи хранения. Чтобы обновить параметры шифрования учетной записи хранения, вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update) , как показано в следующем примере. Включите `--encryption-key-source` параметр и установите его в значение, `Microsoft.Keyvault` чтобы включить управляемые клиентом ключи для учетной записи. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями.
 
 ```azurecli-interactive
 key_vault_uri=$(az keyvault show \
@@ -114,9 +139,7 @@ az storage account update
     --encryption-key-vault $key_vault_uri
 ```
 
-## <a name="update-the-key-version"></a>Обновление версии ключа
-
-При создании новой версии ключа необходимо обновить учетную запись хранения, чтобы она использовала новую версию. Сначала запросите универсальный код ресурса (URI) хранилища ключей, вызвав команду [AZ keyvault показывать](/cli/azure/keyvault#az-keyvault-show), а для версии key [— вызов AZ keyvault Key List-Versions](/cli/azure/keyvault/key#az-keyvault-key-list-versions). Затем вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update) , чтобы обновить параметры шифрования учетной записи хранения для использования новой версии ключа, как показано в предыдущем разделе.
+При ручном повороте версии ключа необходимо обновить параметры шифрования учетной записи хранения, чтобы использовать новую версию. Сначала запросите универсальный код ресурса (URI) хранилища ключей, вызвав команду [AZ keyvault показывать](/cli/azure/keyvault#az-keyvault-show), а для версии key [— вызов AZ keyvault Key List-Versions](/cli/azure/keyvault/key#az-keyvault-key-list-versions). Затем вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update) , чтобы обновить параметры шифрования учетной записи хранения для использования новой версии ключа, как показано в предыдущем примере.
 
 ## <a name="use-a-different-key"></a>Использовать другой ключ
 
@@ -124,7 +147,7 @@ az storage account update
 
 ## <a name="revoke-customer-managed-keys"></a>Отозвать ключи, управляемые клиентом
 
-Если вы считаете, что ключ может быть скомпрометирован, можно отозвать ключи, управляемые клиентом, удалив политику доступа к хранилищу ключей. Чтобы отозвать ключ, управляемый клиентом, вызовите команду [AZ keyvault Delete-Policy](/cli/azure/keyvault#az-keyvault-delete-policy) , как показано в следующем примере. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
+Вы можете отозвать ключи, управляемые клиентом, удалив политику доступа к хранилищу ключей. Чтобы отозвать ключ, управляемый клиентом, вызовите команду [AZ keyvault Delete-Policy](/cli/azure/keyvault#az-keyvault-delete-policy) , как показано в следующем примере. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
 
 ```azurecli-interactive
 az keyvault delete-policy \
@@ -143,7 +166,7 @@ az storage account update
     --encryption-key-source Microsoft.Storage
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Шифрование службы хранилища Azure для неактивных данных](storage-service-encryption.md) 
 - [Об Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)

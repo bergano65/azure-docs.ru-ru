@@ -7,14 +7,14 @@ ms.service: firewall
 ms.topic: article
 ms.date: 06/30/2020
 ms.author: victorh
-ms.openlocfilehash: aef6fb52aaad3dd20db63f1d9023745169e84fcb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7a30238250c9fcb86f1cc01226d44ab385c61843
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85568284"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086631"
 ---
-# <a name="fqdn-filtering-in-network-rules-preview"></a>Фильтрация FQDN в правилах сети (Предварительная версия)
+# <a name="use-fqdn-filtering-in-network-rules-preview"></a>Использование фильтрации FQDN в правилах сети (Предварительная версия)
 
 > [!IMPORTANT]
 > Фильтрация FQDN в правилах сети в настоящее время доступна в общедоступной предварительной версии.
@@ -22,7 +22,7 @@ ms.locfileid: "85568284"
 
 Полное доменное имя (FQDN) представляет доменное имя узла. Доменное имя связано с одним или несколькими IP-адресами. Вы можете разрешить или заблокировать полные доменные имена и теги FQDN в правилах приложений. Используя пользовательские параметры DNS и DNS-прокси, можно также использовать фильтрацию FQDN в правилах сети.
 
-## <a name="how-it-works"></a>Принцип работы
+## <a name="how-it-works"></a>Принципы работы
 
 Брандмауэр Azure преобразует полное доменное имя в IP-адреса, используя его параметры DNS и обрабатывает правила на основе Azure DNS или пользовательской конфигурации DNS.
 
@@ -30,6 +30,6 @@ ms.locfileid: "85568284"
 
 Можно переопределить это требование, подтверждая риск перед выбором параметра **сохранить** в коллекции правил.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Параметры DNS брандмауэра Azure](dns-settings.md)

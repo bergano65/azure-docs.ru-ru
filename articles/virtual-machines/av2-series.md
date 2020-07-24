@@ -7,11 +7,12 @@ ms.subservice: sizes
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 7d2064ec89e107aa219f34520f71ed8704bb7aeb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1b5b77bb9bdf679fe0fd8bf73966dd45acc80155
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84676936"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085781"
 ---
 # <a name="av2-series"></a>Серия Av2
 
@@ -27,19 +28,21 @@ ACU: 100
 
 Обновления с сохранением памяти: Поддерживается
 
-| Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальная пропускная способность хранилища: операций ввода-вывода/чтения Мбит/с | Максимальное число дисков данных/пропускная способность: операций ввода-вывода | Максимальное число сетевых карт/ожидаемая пропускная способность сети (Мбит/с) |
-|---|---|---|---|---|---|---|
-| Standard_A1_v2  | 1 | 2  | 10 | 1000/20/10  | 2 или 2x500   | 2/250  |
-| Standard_A2_v2  | 2 | 4  | 20 | 2000/40/20  | 4 и 4x500   | 2/500  |
-| Standard_A4_v2  | 4 | 8  | 40 | 4000/80/40  | 8 или 8x500   | 4/1000 |
-| Standard_A8_v2  | 8 | 16 | 80 | 8000/160/80 | 16 или 16x500 | 8/2000 |
-| Standard_A2m_v2 | 2 | 16 | 20 | 2000/40/20  | 4 и 4x500   | 2/500  |
-| Standard_A4m_v2 | 4 | 32 | 40 | 4000/80/40  | 8 или 8x500   | 4/1000 |
-| Standard_A8m_v2 | 8 | 64 | 80 | 8000/160/80 | 16 или 16x500 | 8/2000 |
+Расчет цен и сведения о доступности регионов: <a href="https://azure.microsoft.com/en-us/pricing/calculator/">Калькулятор цен</a>
+
+| Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальная пропускная способность хранилища: операций ввода-вывода/чтения Мбит/с | Максимальное число дисков данных/пропускная способность: операций ввода-вывода | Максимальное число сетевых адаптеров | Ожидаемая пропускная способность сети (Мбит/с)
+|---|---|---|---|---|---|---|---|
+| Standard_A1_v2  | 1 | 2  | 10 | 1000/20/10  | 2 или 2x500   | 2 | 250  |
+| Standard_A2_v2  | 2 | 4  | 20 | 2000/40/20  | 4 и 4x500   | 2 | 500  |
+| Standard_A4_v2  | 4 | 8  | 40 | 4000/80/40  | 8 или 8x500   | 4 | 1000 |
+| Standard_A8_v2  | 8 | 16 | 80 | 8000/160/80 | 16 или 16x500 | 8 | 2000 |
+| Standard_A2m_v2 | 2 | 16 | 20 | 2000/40/20  | 4 и 4x500   | 2 | 500  |
+| Standard_A4m_v2 | 4 | 32 | 40 | 4000/80/40  | 8 или 8x500   | 4 | 1000 |
+| Standard_A8m_v2 | 8 | 64 | 80 | 8000/160/80 | 16 или 16x500 | 8 | 2000 |
 
 [!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
 
-## <a name="other-sizes"></a>Остальные размеры
+## <a name="other-sizes-and-information"></a>Другие размеры и сведения
 
 - [Универсальные](sizes-general.md)
 - [Оптимизированные для памяти](sizes-memory.md)
@@ -47,6 +50,10 @@ ACU: 100
 - [Оптимизированные для GPU](sizes-gpu.md)
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
+
+Расчет цен и сведения о доступности регионов: <a href="https://azure.microsoft.com/en-us/pricing/calculator/">Калькулятор цен</a>
+
+Дополнительные сведения о типах дисков: <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/disks-types#ultra-ssd-preview/">типы дисков</a>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

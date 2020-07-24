@@ -1,5 +1,5 @@
 ---
-title: Развертывание виртуального рабочего стола Windows 7 виртуальная машина Windows в Azure
+title: Развертывание виртуальной машины Windows 7 виртуальный рабочий стол — 2019 — Azure
 description: Настройка и развертывание виртуальной машины Windows 7 в виртуальном рабочем столе Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -8,14 +8,14 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 92ab8e006ab7fef3c7e856cc34467b4510055174
-ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
+ms.openlocfilehash: 3d8ce67f129844c09a93b29c8100fe28096c520c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86275892"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085883"
 ---
-# <a name="deploy-a-windows-7-virtual-machine-on-windows-virtual-desktop"></a>Развертывание виртуальной машины Windows 7 в службе "Виртуальный рабочий стол Windows"
+# <a name="deploy-a-windows-7-virtual-machine-on-windows-virtual-desktop---fall-2019"></a>Развертывание виртуальной машины Windows 7 в виртуальном рабочем столе Windows — выпадение 2019
 
 >[!IMPORTANT]
 >Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../deploy-windows-7-virtual-machine.md).

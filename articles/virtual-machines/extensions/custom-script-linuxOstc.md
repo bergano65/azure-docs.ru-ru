@@ -1,5 +1,5 @@
 ---
-title: Выполнение пользовательских скриптов на виртуальных машинах Linux в Azure
+title: Запуск расширения пользовательских скриптов версии 1 (не рекомендуется) на виртуальных машинах Linux в Azure
 description: Автоматизируйте задачи настройки виртуальных машин Linux с помощью расширения настраиваемых скриптов версии 1
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: danis
-ms.openlocfilehash: 1ca20f2c8cda84c241391f67ac542faa4a1f5ecd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1fe915fd58f60e4ad5b1e28b51911678ef2f866c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82594718"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085713"
 ---
 # <a name="use-the-azure-custom-script-extension-version-1-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 1 на виртуальных машинах Linux
 
@@ -258,7 +258,7 @@ az vm extension set
   --protected-settings ./protected-config.json
 ```
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Расширение пользовательских сценариев при выполнении создает или загружает сценарий в каталог, как показано в примере ниже. Выходные данные команды также сохраняются в этот каталог в файлах `stdout` и `stderr`.
 

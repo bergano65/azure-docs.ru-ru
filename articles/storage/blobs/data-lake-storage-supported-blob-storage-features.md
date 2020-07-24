@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/29/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 15e6cf7adfda995148a75ec21b8d8e5d8a5cab2e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c79bca86ba253217012abd24d509d365a076b183
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85559077"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086036"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения
 
@@ -41,18 +41,22 @@ ms.locfileid: "85559077"
 |Журналы диагностики|Общедоступная версия|Preview (Предварительный просмотр) <div role="complementary" aria-labelledby="diagnostic-logging"><sup>1</sup></div> |[Ведение журнала аналитики службы хранилища Azure](../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Архивный уровень доступа|Общедоступная версия|Не поддерживается|[Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](storage-blob-storage-tiers.md)|
 |Вход в Azure Monitor|Preview (Предварительный просмотр) |Еще не поддерживается|[Мониторинг службы хранилища Azure](../common/monitor-storage.md)|
-|Моментальные снимки|Preview (Предварительный просмотр)|Еще не поддерживается|[Моментальные снимки BLOB-объектов](snapshots-overview.md)|
-|Статические веб-сайты|Preview (Предварительный просмотр)|Еще не поддерживается|[Размещение статических веб-сайтов в службе хранилища Azure](storage-blob-static-website.md)|
-|Неизменяемое хранилище|Preview (Предварительный просмотр)|Еще не поддерживается|[Хранение критически важных для бизнеса данных большого двоичного объекта с помощью неизменяемого хранилища](storage-blob-immutable-storage.md)|
+|Моментальные снимки|Preview (Предварительный просмотр)<div role="complementary" aria-labelledby="preview-form"><sup>3</sup></div>|Еще не поддерживается|[Моментальные снимки BLOB-объектов](snapshots-overview.md)|
+|Статические веб-сайты|Предварительный просмотр<div role="complementary" aria-labelledby="preview-form"><sup>3</sup></div>|Еще не поддерживается|[Размещение статических веб-сайтов в службе хранилища Azure](storage-blob-static-website.md)|
+|Неизменяемое хранилище|Предварительный просмотр<div role="complementary" aria-labelledby="preview-form"><sup>3</sup></div>|Еще не поддерживается|[Хранение критически важных для бизнеса данных большого двоичного объекта с помощью неизменяемого хранилища](storage-blob-immutable-storage.md)|
 |Политики управления жизненным циклом|Preview (Предварительный просмотр)|Еще не поддерживается|[Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](storage-lifecycle-management-concepts.md)|
 |Blobfuse|Preview (Предварительный просмотр)|Еще не поддерживается|[Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse](storage-how-to-mount-container-linux.md)|
 |Канал изменений|Еще не поддерживается|Еще не поддерживается|[Поддержка канала изменений в хранилище BLOB-объектов Azure](storage-blob-change-feed.md)|
 |Отработка отказа учетной записи|Еще не поддерживается|Еще не поддерживается|[Аварийное восстановление и отработка отказа учетной записи](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
-|Список управления доступом для контейнера больших двоичных объектов|Еще не поддерживается|Еще не поддерживается|[Set Container ACL](https://docs.microsoft.com/rest/api/storageservices/set-container-acl)|
+|Список управления доступом для контейнера больших двоичных объектов|Еще не поддерживается<div role="complementary" aria-labelledby="blob-container-ACL"><sup>2</sup></div>|Еще не поддерживается<div role="complementary" aria-labelledby="blob-container-ACL"><sup>2</sup></div>|[Set Container ACL](https://docs.microsoft.com/rest/api/storageservices/set-container-acl)|
 |Личные домены|Еще не поддерживается|Еще не поддерживается|[Сопоставление личного домена с конечной точкой хранилища BLOB-объектов Azure](storage-custom-domain-name.md)|
 |обратимое удаление.|Еще не поддерживается|Еще не поддерживается|[Soft delete for Azure Storage blobs](storage-blob-soft-delete.md) (Обратимое удаление больших двоичных объектов службы хранилища Azure)|
 
-<div id="diagnostic-logging"><sup>1</sup> для учетных записей хранения блочных BLOB-объектов уровня "Премиум" невозможно включить журналы диагностики (классические) с помощью портал Azure. Их можно включить с помощью PowerShell.</div>
+<div id="diagnostic-logging"><sup>1</sup> для учетных записей хранения блочных BLOB-объектов уровня "Премиум" невозможно включить журналы диагностики (классические) с помощью портал Azure. Их можно включить с помощью PowerShell.</div><br>
+
+<div id="blob-container-ACL"><sup>2</sup> списки управления доступом можно задать в корневой папке контейнера, но не в самом контейнере.</div><br>
+
+<div id="preview-form"><sup>3</sup> Чтобы использовать моментальные снимки, неизменяемое хранилище или статические веб-сайты с Data Lake Storage 2-го поколения, необходимо зарегистрироваться в предварительной версии, выполнив эту <a href=https://forms.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2EUNXd_ZNJCq_eDwZGaF5VUOUc3NTNQSUdOTjgzVUlVT1pDTzU4WlRKRy4u>форму</a>.  </div>
 
 ## <a name="see-also"></a>См. также раздел
 

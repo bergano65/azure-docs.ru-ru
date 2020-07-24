@@ -8,15 +8,16 @@ ms.topic: how-to
 ms.service: virtual-machines-linux
 ms.subservice: imaging
 ms.reviewer: danis
-ms.openlocfilehash: b0df0fc43fcd125c6fc96fd2abbe3857d0d23afa
-ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
+ms.openlocfilehash: 9bd5e9075d15d0f559f674694fc867cd661450d8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84141982"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085543"
 ---
-# <a name="preview-create-a-linux-image-and-distribute-it-to-a-shared-image-gallery"></a>Предварительный просмотр: Создание образа Linux и его распространение в Общей коллекции образов 
+# <a name="preview-create-a-linux-image-and-distribute-it-to-a-shared-image-gallery-by-using-azure-cli"></a>Предварительная версия. Создайте образ Linux и распространите его в общую коллекцию образов с помощью Azure CLI
 
-В этой статье описано, как можно использовать Конструктор образов Azure и Azure CLI для создания версии образа в [Общей коллекции образов](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries) и глобального распространения этого образа. Это также можно сделать [с помощью Azure PowerShell](../windows/image-builder-gallery.md).
+В этой статье описано, как можно использовать Конструктор образов Azure и Azure CLI для создания версии образа в [Общей коллекции образов](../windows/shared-image-galleries.md) и глобального распространения этого образа. Это также можно сделать [с помощью Azure PowerShell](../windows/image-builder-gallery.md).
 
 
 Для настройки образа мы будем использовать простой шаблон JSON. JSON-файл, который мы используем, доступен здесь: [helloImageTemplateforSIG.json](https://github.com/danielsollondon/azvmimagebuilder/blob/master/quickquickstarts/1_Creating_a_Custom_Linux_Shared_Image_Gallery_Image/helloImageTemplateforSIG.json). 
@@ -92,7 +93,7 @@ az group create -n $sigResourceGroup -l $location
 ```
 
 ## <a name="create-a-user-assigned-identity-and-set-permissions-on-the-resource-group"></a>Создание назначаемого пользователем удостоверения и задание разрешений для группы ресурсов
-Для вставки образа в Общую коллекцию образов Azure Конструктор образов будет использовать предоставленное [удостоверение пользователя](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm#user-assigned-managed-identity). В этом примере вы создадите определение роли Azure с детализированными действиями для распространения образа в Общую коллекцию образов. Затем определение роли будет назначено удостоверению пользователя.
+Для вставки образа в Общую коллекцию образов Azure Конструктор образов будет использовать предоставленное [удостоверение пользователя](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#user-assigned-managed-identity). В этом примере вы создадите определение роли Azure с детализированными действиями для распространения образа в Общую коллекцию образов. Затем определение роли будет назначено удостоверению пользователя.
 
 ```bash
 # create user assigned identity for image builder to access the storage account where the script is located

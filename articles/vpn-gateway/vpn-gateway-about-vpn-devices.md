@@ -5,13 +5,14 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 01/10/2020
+ms.date: 07/13/2020
 ms.author: yushwang
-ms.openlocfilehash: dd73c6a388cde55db5437442492d53768eb03866
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 86f040ab4735276e77d537f65130ae125c4757e6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84343155"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086954"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз
 
@@ -38,6 +39,7 @@ ms.locfileid: "84343155"
 | ---                | ---                  | ---                   | ---            | ---           |
 | A10 Networks, Inc. |Thunder CFW           |ACOS 4.1.1             |Не совместимо  |[Руководство по настройке](https://www.a10networks.com/wp-content/uploads/A10-DG-16161-EN.pdf)|
 | Allied Telesis     |VPN-маршрутизаторы серии AR |Серии AR 5.4.7+               | [Руководство по настройке](https://www.alliedtelesis.com/documents/how-to/configure/site-to-site-vpn-between-azure-and-ar-series-router) |[Руководство по настройке](https://www.alliedtelesis.com/documents/how-to/configure/site-to-site-vpn-between-azure-and-ar-series-router)|
+| Arista | Маршрутизатор Клаудеос | Веос 4.24.0 FX | (не протестировано) | [Руководство по настройке](https://www.arista.com/en/cg-veos-router/veos-router-cloudeos-ipsec-connectivity-to-azure-virtual-network-gateway) |
 | Barracuda Networks, Inc. |Barracuda CloudGen Firewall |PolicyBased: 5.4.3<br>RouteBased: 6.2.0 |[Руководство по настройке](https://campus.barracuda.com/product/cloudgenfirewall/doc/79462887/how-to-configure-an-ikev1-ipsec-site-to-site-vpn-to-the-static-microsoft-azure-vpn-gateway/) |[Руководство по настройке](https://campus.barracuda.com/product/cloudgenfirewall/doc/79462889/how-to-configure-bgp-over-ikev2-ipsec-site-to-site-vpn-to-an-azure-vpn-gateway/) |
 | Check Point |Security Gateway |R80.10 |[Руководство по настройке](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |[Руководство по настройке](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |
 | Cisco              |ASA       |8.3<br>8.4+ (IKEv2*) |Поддерживается |[Инструкции по настройке *](https://www.cisco.com/c/en/us/support/docs/security/adaptive-security-appliance-asa-software/214109-configure-asa-ipsec-vti-connection-to-az.html) |
@@ -56,7 +58,7 @@ ms.locfileid: "84343155"
 | Juniper |ISG |ScreenOS 6.3 |Поддерживается |[Сценарий конфигурации](vpn-gateway-download-vpndevicescript.md) |
 | Juniper |SSG |ScreenOS 6.2 |Поддерживается |[Сценарий конфигурации](vpn-gateway-download-vpndevicescript.md) |
 | Juniper |MX |JunOS 12.x|Поддерживается |[Сценарий конфигурации](vpn-gateway-download-vpndevicescript.md) |
-| Майкрософт |Служба маршрутизации и удаленного доступа |Windows Server 2012 |Не совместимо |Поддерживается |
+| Майкрософт |Служба маршрутизации и удаленного доступа |Windows Server 2012 |Не совместимо |Поддерживается |
 | Open Systems AG |Шлюз безопасности Mission Control |Н/Д |[Руководство по настройке](https://www.open.ch/_pdf/Azure/AzureVPNSetup_Installation_Guide.pdf) |Не совместимо |
 | Palo Alto Networks |Все устройства под управлением PAN-OS |PAN-OS<br>PolicyBased: 6.1.5 или более поздней версии<br>RouteBased: 7.1.4 |Поддерживается |[Руководство по настройке](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000Cm6WCAS) |
 | Сентриум (разработчик) | вйос | Вйос 1.2.2 | (не протестировано) | [Руководству по настройке](https://vyos.readthedocs.io/en/latest/appendix/examples/azure-vpn-bgp.html)|

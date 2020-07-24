@@ -6,14 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 05/05/2020
+ms.date: 07/15/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 0e24bcb54fd26d4a3d983681b3348ef736b277cf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7ff0bb6d593a199bd249441cf484d1f0580774ac
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82884349"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086053"
 ---
 # <a name="enable-and-manage-blob-versioning"></a>Включение управления версиями BLOB-объектов и работа с ним
 
@@ -67,7 +68,7 @@ ms.locfileid: "82884349"
 
 ## <a name="modify-a-blob-to-trigger-a-new-version"></a>Изменение большого двоичного объекта для активации новой версии
 
-В следующем примере кода показано, как активировать создание новой версии с помощью клиентской библиотеки службы хранилища Azure для .NET версии 12. Перед запуском этого примера убедитесь, что вы включили управление версиями для учетной записи хранения.
+В следующем примере кода показано, как активировать создание новой версии с помощью клиентской библиотеки службы хранилища Azure для .NET версии [12.5.0-Preview. 5](https://www.nuget.org/packages/Azure.Storage.Blobs/12.5.0-preview.5) или более поздней. Перед запуском этого примера убедитесь, что вы включили управление версиями для учетной записи хранения.
 
 В примере создается блочный BLOB-объект, а затем обновляются метаданные большого двоичного объекта. Обновление метаданных большого двоичного объекта инициирует создание новой версии. В примере извлекается исходная и текущая версии, и показывается, что метаданные содержат только текущая версия.
 
@@ -151,7 +152,7 @@ static void PrintMetadata(Response<BlobProperties> propertiesResponse)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление версиями BLOB-объектов (предварительная версия)](versioning-overview.md)
 - [Soft delete for Azure Storage blobs](soft-delete-overview.md) (Обратимое удаление больших двоичных объектов службы хранилища Azure)

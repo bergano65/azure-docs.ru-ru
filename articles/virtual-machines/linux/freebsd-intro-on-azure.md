@@ -7,11 +7,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 09/13/2017
 ms.author: mimckitt
-ms.openlocfilehash: 0825a29b45ea701315a57ff5248731e64e29de32
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c7ca47e0fbb9acbac67f2cc9af6e1e7555690046
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81261641"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085611"
 ---
 # <a name="introduction-to-freebsd-on-azure"></a>Введение в FreeBSD в Azure
 В этой статье представлен обзор запуска виртуальной машины FreeBSD в Azure.
@@ -30,7 +31,7 @@ FreeBSD для Microsoft Azure — это расширенная операци�
 Стратегия в отношении текущей и будущих версий FreeBSD — обеспечивать актуальность и предоставлять последние версии вскоре после их публикации командой технических специалистов по выпуску FreeBSD.
 
 ### <a name="create-a-freebsd-vm-through-azure-cli-on-freebsd"></a>Создайте виртуальную машину FreeBSD с помощью Azure CLI в FreeBSD.
-Сначала необходимо установить [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli), выполнив следующую команду на компьютере FreeBSD.
+Сначала необходимо установить [Azure CLI](/cli/azure/get-started-with-azure-cli), выполнив следующую команду на компьютере FreeBSD.
 
 ```bash 
 curl -L https://aka.ms/InstallAzureCli | bash

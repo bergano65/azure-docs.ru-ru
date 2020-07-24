@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 06/03/2020
 ms.author: mjbrown
-ms.openlocfilehash: cbb97dd260e5aee53595afc24e577ce08334e2b2
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 858e185a0e4fa406fb4645475673acc13a0d37f3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027024"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086679"
 ---
 # <a name="role-based-access-control-in-azure-cosmos-db"></a>Управление доступом на основе ролей в Azure Cosmos DB
 
@@ -21,7 +21,7 @@ Azure Cosmos DB предоставляет встроенные возможно
 
 Ниже перечислены встроенные роли, поддерживаемые Azure Cosmos DB.
 
-|**Встроенные роли**  |**Описание**  |
+|**Встроенная роль**  |**Описание**  |
 |---------|---------|
 |[Участник учетной записи DocumentDB](../role-based-access-control/built-in-roles.md#documentdb-account-contributor)|Может управлять учетными записями Azure Cosmos DB|
 |[Средство чтения учетных записей Cosmos DB](../role-based-access-control/built-in-roles.md#cosmos-db-account-reader-role)|Позволяет считывать данные учетных записей Azure Cosmos DB.|
@@ -41,14 +41,14 @@ Azure Cosmos DB предоставляет встроенные возможно
 
 В дополнение к встроенным ролям пользователи также могут создавать [пользовательские роли](../role-based-access-control/custom-roles.md) в Azure и применять эти роли к субъектам-службам во всех подписках в их Active Directory клиенте. Пользовательские роли предоставляют пользователям способ создания определений ролей RBAC с настраиваемым набором операций поставщика ресурсов. Чтобы узнать, какие операции доступны для создания пользовательских ролей для Azure Cosmos DB см. [Azure Cosmos DB операции с поставщиками ресурсов](../role-based-access-control/resource-provider-operations.md#microsoftdocumentdb) .
 
-## <a name="preventing-changes-from-cosmos-sdk"></a>Предотвращение изменений из пакета SDK для Cosmos
+## <a name="preventing-changes-from-the-azure-cosmos-db-sdks"></a><a id="prevent-sdk-changes"></a>Предотвращение изменений в пакетах SDK для Azure Cosmos DB
+
+Поставщик ресурсов Azure Cosmos DB можно заблокировать, чтобы предотвратить любые изменения в ресурсах, подключающихся с помощью ключей учетной записи (которые подключаются через пакет SDK Azure Cosmos). Сюда также входят изменения, внесенные из портал Azure. Эта функция может быть предпочтительна для пользователей, которым требуется более высокий уровень контроля и управления для рабочих сред. Предотвращение изменений в пакете SDK также включает такие функции, как блокировки ресурсов и журналы диагностики для операций управления плоскостью. Клиенты, подключающиеся из пакета SDK для Azure Cosmos DB, не смогут изменять свойства для учетных записей, баз данных, контейнеров и пропускной способности Azure Cosmos. Операции, включающие чтение и запись данных в контейнеры Cosmos, не затрагиваются.
+
+Если эта функция включена, изменения в любом ресурсе могут выполняться только от пользователя с правой ролью RBAC и Azure Active Directory учетными данными, включая управляемые удостоверения службы.
 
 > [!WARNING]
-> Включение этой функции может оказать небезопасное воздействие на ваше приложение. Внимательно прочитайте перед включением этой функции.
-
-Поставщик ресурсов Azure Cosmos DB может быть заблокирован, чтобы предотвратить любые изменения в ресурсах, которые не подключаются с помощью ключей учетной записи (т. е. приложений, подключающихся через пакет SDK Cosmos). Это также включает изменения, внесенные в портал Azure. Это может быть желательным для пользователей, которым требуется более высокий уровень контроля и управления для рабочих сред и включения таких функций, как блокировки ресурсов, а также включения журналов диагностики для операций управления плоскостью. Клиенты, подключающиеся через пакет SDK для Cosmos DB, не смогут изменять свойства для учетных записей, баз данных, контейнеров и пропускной способности Cosmos. Операции, включающие чтение и запись данных в контейнеры Cosmos, не затрагиваются.
-
-После установки изменения в любом ресурсе могут выполняться только от пользователя с правильной ролью RBAC и Azure Active Directory учетными данными, включая управляемые удостоверения службы.
+> Включение этой функции может оказать влияние на приложение. Убедитесь, что вы понимаете последствия, прежде чем включать его.
 
 ### <a name="check-list-before-enabling"></a>Проверить список перед включением
 
@@ -56,7 +56,7 @@ Azure Cosmos DB предоставляет встроенные возможно
 
 - Любое изменение в учетной записи Cosmos, включая любые свойства или добавление или удаление регионов.
 
-- Создание, удаление дочерних ресурсов, таких как базы данных и контейнеры. Сюда входят ресурсы для других API, таких как Cassandra, MongoDB, Gremlin и Table Resources.
+- Создание, удаление дочерних ресурсов, таких как базы данных и контейнеры. Сюда входят ресурсы для других API, таких как Cassandra, MongoDB, Gremlin и табличные ресурсы.
 
 - Обновление пропускной способности для ресурсов уровня базы данных или контейнера.
 
@@ -64,11 +64,11 @@ Azure Cosmos DB предоставляет встроенные возможно
 
 - Изменение хранимых процедур, триггеров или определяемых пользователем функций.
 
-Если приложения (или пользователи с помощью портал Azure) выполняют любое из этих действий, их необходимо перенести для выполнения с помощью [шаблонов ARM](manage-sql-with-resource-manager.md), [PowerShell](manage-with-powershell.md), [Azure CLI](manage-with-cli.md), службы [RESTful](/rest/api/cosmos-db-resource-provider/) или [библиотеки управления Azure](https://github.com/Azure-Samples/cosmos-management-net). Обратите внимание, что Управление Azure доступно на [нескольких языках](https://docs.microsoft.com/azure/?product=featured#languages-and-tools).
+Если приложения (или пользователи с помощью портал Azure) выполняют любое из этих действий, их необходимо перенести для выполнения с помощью [шаблонов ARM](manage-sql-with-resource-manager.md), [PowerShell](manage-with-powershell.md), [Azure CLI](manage-with-cli.md), службы "оставшаяся" или [библиотеки управления Azure](https://github.com/Azure-Samples/cosmos-management-net). Обратите внимание, что Управление Azure доступно на [нескольких языках](https://docs.microsoft.com/azure/?product=featured#languages-and-tools).
 
 ### <a name="set-via-arm-template"></a>Задать с помощью шаблона ARM
 
-Чтобы задать это свойство с помощью шаблона ARM, обновите существующий шаблон или экспортируйте новый шаблон для текущего развертывания, а затем включите в `"disableKeyBasedMetadataWriteAccess": true` свойства ресурсов databaseAccounts. Ниже приведен простой пример шаблона Azure Resource Manager с этим параметром свойства.
+Чтобы задать это свойство с помощью шаблона ARM, обновите существующий шаблон или экспортируйте новый шаблон для текущего развертывания, а затем включите в `"disableKeyBasedMetadataWriteAccess": true` свойства `databaseAccounts` ресурсов. Ниже приведен простой пример шаблона Azure Resource Manager с этим параметром свойства.
 
 ```json
 {
@@ -93,7 +93,7 @@ Azure Cosmos DB предоставляет встроенные возможно
 
 ### <a name="set-via-azure-cli"></a>Задать через Azure CLI
 
-Чтобы включить использование Azure CLI используйте следующую команду:
+Чтобы включить использование Azure CLI, используйте следующую команду:
 
 ```azurecli-interactive
 az cosmosdb update  --name [CosmosDBAccountName] --resource-group [ResourceGroupName]  --disable-key-based-metadata-write-access true
@@ -108,8 +108,8 @@ az cosmosdb update  --name [CosmosDBAccountName] --resource-group [ResourceGroup
 Update-AzCosmosDBAccount -ResourceGroupName [ResourceGroupName] -Name [CosmosDBAccountName] -DisableKeyBasedMetadataWriteAccess true
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое управление доступом на основе ролей в Azure (Azure RBAC)](../role-based-access-control/overview.md)
-- [Пользовательские роли для ресурсов Azure](../role-based-access-control/custom-roles.md)
+- [Настраиваемые роли Azure](../role-based-access-control/custom-roles.md)
 - [Операции поставщика ресурсов Azure Cosmos DB](../role-based-access-control/resource-provider-operations.md#microsoftdocumentdb)

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 9c4b133ae74438def30f4fcd9e49a5ca5e6f9cd4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2e1153b58063f85b57fba99da495d6842a75a819
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "61463571"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086291"
 ---
 # <a name="h264-single-bitrate-4k-audio-51"></a>H264 Single Bitrate 4K Audio 5.1
 `Media Encoder Standard` определяет набор предустановок кодирования, которые можно использовать при создании заданий кодирования. Можно также использовать `preset name`, чтобы указать, в какой формат нужно закодировать файл мультимедиа. Или можно создать собственные предустановки в формате JSON или XML (с использованием кодировки UTF-8 или UTF-16). Затем следует передавать пользовательскую предустановку в кодировщик. Список предустановок, поддерживаемых данным кодировщиком `Media Encoder Standard`, приведен в разделе [Предустановки задач для Media Encoder Standard](media-services-mes-presets-overview.md).  
@@ -29,7 +29,7 @@ ms.locfileid: "61463571"
  Данная предустановка создает отдельный MP4-файл со скоростью 18 000 Кбит/с и звуком в формате AAC 5.1. Чтобы получить дополнительные сведения о профиле, скорости, частоте выборки и т. п. данной предустановки, ознакомьтесь с кодом XML или JSON ниже. Описание каждого элемента и его допустимых значений см. в разделе [Схема Media Encoder Standard](media-services-mes-schema.md).  
   
 > [!NOTE]
->  Для кодирования в формат 4K необходимы зарезервированные единицы типа "Премиум". Дополнительные сведения см. в статье [Масштабирование кодирования](https://azure.microsoft.com/documentation/articles/media-services-portal-encoding-units).  
+>  Для кодирования в формат 4K необходимы зарезервированные единицы типа "Премиум". Дополнительные сведения см. в статье [Масштабирование кодирования](./media-services-scale-media-processing-overview.md).  
   
  XML  
   

@@ -6,11 +6,12 @@ ms.suite: integration
 ms.reviewer: deli, logicappspm
 ms.topic: conceptual
 ms.date: 04/13/2020
-ms.openlocfilehash: fbfd52065bc0522668488492de2181f252f86a4e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 495847d31682aff64fed3c81b1d5d68cf67dfd38
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81272684"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086445"
 ---
 # <a name="handle-throttling-problems-429---too-many-requests-errors-in-azure-logic-apps"></a>Обработку проблем регулирования (429-"слишком много запросов") в Azure Logic Apps
 
@@ -21,7 +22,7 @@ ms.locfileid: "81272684"
 Ниже приведены некоторые распространенные типы регулирования, которые могут возникнуть в приложении логики.
 
 * [Приложение логики](#logic-app-throttling)
-* [Другую](#connector-throttling)
+* [Соединитель](#connector-throttling)
 * [Целевая служба или система](#destination-throttling)
 
 <a name="logic-app-throttling"></a>
@@ -76,7 +77,7 @@ ms.locfileid: "81272684"
 
 ## <a name="connector-throttling"></a>Регулирование соединителя
 
-Каждый соединитель имеет собственные ограничения регулирования, которые можно найти на странице технического справочника по соединителю. Например, [соединитель служебной шины Azure](https://docs.microsoft.com/connectors/servicebus/) имеет ограничение регулирования, которое разрешает до 6 000 вызовов в минуту, в то время как соединитель SQL Server имеет [ограничения регулирования в зависимости от типа операции](https://docs.microsoft.com/connectors/sql/).
+Каждый соединитель имеет собственные ограничения регулирования, которые можно найти на странице технического справочника по соединителю. Например, [соединитель служебной шины Azure](/connectors/servicebus/) имеет ограничение регулирования, которое разрешает до 6 000 вызовов в минуту, в то время как соединитель SQL Server имеет [ограничения регулирования в зависимости от типа операции](/connectors/sql/).
 
 Некоторые триггеры и действия, такие как HTTP, имеют [политику повтора](../logic-apps/logic-apps-exception-handling.md#retry-policies) , которую можно настроить в зависимости от [ограничений политики повтора](../logic-apps/logic-apps-limits-and-config.md#retry-policy-limits) для реализации обработки исключений. Эта политика указывает, должна ли и как часто триггер или действие повторяет запрос в случае сбоя или истечения времени ожидания исходного запроса и приводит к ответу 408, 429 или 5xx. Таким образом, когда регулирование начинается и возвращает ошибку 429, Logic Apps соответствует политике повтора, где поддерживается.
 
@@ -167,6 +168,6 @@ ms.locfileid: "81272684"
   
   Таким образом, если целевая служба или система поддерживает веб-перехватчики или предоставляет соединитель с версией веб-перехватчика, этот вариант лучше, чем использование версии опроса. Чтобы определить триггеры и действия веб-перехватчика, убедитесь, что они имеют `ApiConnectionWebhook` тип или не нуждаются в указании периодичности. Дополнительные сведения см. в статье [триггер APIConnectionWebhook](../logic-apps/logic-apps-workflow-actions-triggers.md#apiconnectionwebhook-trigger) и [действие APIConnectionWebhook](../logic-apps/logic-apps-workflow-actions-triggers.md#apiconnectionwebhook-action).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об [ограничениях Logic Apps и конфигурации](../logic-apps/logic-apps-limits-and-config.md)

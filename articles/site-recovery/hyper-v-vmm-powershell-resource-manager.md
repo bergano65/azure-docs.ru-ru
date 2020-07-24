@@ -7,12 +7,12 @@ manager: rochakm
 ms.topic: article
 ms.date: 1/10/2020
 ms.author: sutalasi
-ms.openlocfilehash: d7a2d21dcd8c9474bdf068d7940e497333f35115
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: a4f7d330db9a4a0d9b435ebe7527e55e37c254e2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86130217"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086223"
 ---
 # <a name="set-up-disaster-recovery-of-hyper-v-vms-to-a-secondary-site-by-using-powershell-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт с помощью PowerShell (Resource Manager)
 
@@ -20,7 +20,7 @@ ms.locfileid: "86130217"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 - Ознакомьтесь с [архитектурой и компонентами сценария](hyper-v-vmm-architecture.md).
 - Ознакомьтесь с [требованиями к поддержке](./vmware-physical-secondary-support-matrix.md) для всех компонентов.
@@ -47,8 +47,8 @@ ms.locfileid: "86130217"
 
 Прежде чем приступать, убедитесь, что среда Azure PowerShell готова к работе.
 
-- Если вы уже используете PowerShell, выполните обновление до версии 0.8.10 или более поздней. Дополнительные сведения о настройке PowerShell см. [здесь](/powershell/azureps-cmdlets-docs).
-- После установки и настройки PowerShell проверьте [командлеты службы](/powershell/azure/overview).
+- Если вы уже используете PowerShell, выполните обновление до версии 0.8.10 или более поздней. Дополнительные сведения о настройке PowerShell см. [здесь](/powershell/azure/).
+- После установки и настройки PowerShell проверьте [командлеты службы](/powershell/azure/).
 - Дополнительные сведения о том, как использовать значения параметров, входных и выходных данных в PowerShell, см. в руководстве [по началу работы](/powershell/azure/get-started-azureps).
 
 ## <a name="set-up-a-subscription"></a>Настройка подписки

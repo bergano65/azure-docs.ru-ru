@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 03/24/2020
-ms.openlocfilehash: 68480f5b3b52d2347369f878802c71672213940a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/13/2020
+ms.openlocfilehash: 292d80f7fad796b2ee4f80478c55099148d7f855
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82146877"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086716"
 ---
 # <a name="copy-data-from-and-to-salesforce-by-using-azure-data-factory"></a>Копирование данных в Salesforce и обратно с помощью фабрики данных Azure
 
@@ -42,9 +42,9 @@ ms.locfileid: "82146877"
 - Выпуски Salesforce Developer, Professional, Enterprise и Unlimited.
 - Копирование данных в рабочую среду, песочницу или личный домен Salesforce, а также из них.
 
-Соединитель Salesforce создан на основе API-интерфейса SalesForce RESTFUL или групповой обработки (соединитель автоматически выбирает один из них для повышения производительности). По умолчанию соединитель использует [V45](https://developer.salesforce.com/docs/atlas.en-us.218.0.api_rest.meta/api_rest/dome_versions.htm) для копирования данных из Salesforce и использует [V40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api_asynch.meta/api_asynch/asynch_api_intro.htm) для копирования данных в Salesforce. Можно также явно задать версию API, используемую для чтения и записи данных через [ `apiVersion` свойство](#linked-service-properties) в связанной службе.
+Соединитель Salesforce построен на основе API-интерфейса SalesForce RESTFUL/Массовы. По умолчанию соединитель использует [V45](https://developer.salesforce.com/docs/atlas.en-us.218.0.api_rest.meta/api_rest/dome_versions.htm) для копирования данных из Salesforce и использует [V40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api_asynch.meta/api_asynch/asynch_api_intro.htm) для копирования данных в Salesforce. Можно также явно задать версию API, используемую для чтения и записи данных через [ `apiVersion` свойство](#linked-service-properties) в связанной службе.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 В Salesforce требуется включить разрешение API. Дополнительные сведения о включении доступа к API в Salesforce с помощью набора разрешений см. [здесь](https://www.data2crm.com/migration/faqs/enable-api-access-salesforce-permission-set/).
 
@@ -55,7 +55,7 @@ ms.locfileid: "82146877"
 - Если количество одновременных запросов превышает ограничение, выполняется регулирование и возникают случайные ошибки.
 - В случае превышения ограничения на общее число запросов учетная запись Salesforce блокируется на 24 часа.
 
-Кроме того, в обоих случаях вы можете получить сообщение об ошибке "REQUEST_LIMIT_EXCEEDED". Дополнительные сведения см. в разделе API request limits (Ограничения запросов API) руководства об [ограничениях для разработчика Salesforce](https://resources.docs.salesforce.com/200/20/en-us/sfdc/pdf/salesforce_app_limits_cheatsheet.pdf).
+Кроме того, в обоих случаях вы можете получить сообщение об ошибке "REQUEST_LIMIT_EXCEEDED". Дополнительные сведения см. в разделе API request limits (Ограничения запросов API) руководства об [ограничениях для разработчика Salesforce](https://developer.salesforce.com/docs/atlas.en-us.218.0.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm).
 
 ## <a name="get-started"></a>Начало работы
 
@@ -156,7 +156,7 @@ ms.locfileid: "82146877"
 
 ![Фабрика данных — подключение к Salesforce: имя API](media/copy-data-from-salesforce/data-factory-salesforce-api-name.png)
 
-**Пример.**
+**Пример**.
 
 ```json
 {
@@ -202,7 +202,7 @@ ms.locfileid: "82146877"
 
 ![Фабрика данных — подключение к Salesforce: список имен API](media/copy-data-from-salesforce/data-factory-salesforce-api-name-2.png)
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[
@@ -245,7 +245,7 @@ ms.locfileid: "82146877"
 |:--- |:--- |:--- |
 | type | Свойство type приемника действия копирования должно иметь значение **SalesforceSink**. | Да |
 | writeBehavior | Поведение операции при записи.<br/>Допустимые значения: **Insert** (Вставка) и **Upsert** (Вставка-обновление). | Нет (по умолчанию используется Insert) |
-| externalIdFieldName | Имя поля для внешнего идентификатора при операции upsert. Это поле должно быть определено в объекте Salesforce как External Id Field (Поле внешнего идентификатора). Оно не может иметь значения NULL в соответствующих входных данных. | "Да" для операции Upsert (Вставка-обновление) |
+| externalIdFieldName | Имя поля для внешнего идентификатора при операции upsert. Указанное поле должно быть определено как "поле внешнего идентификатора" в объекте Salesforce. Оно не может иметь значения NULL в соответствующих входных данных. | "Да" для операции Upsert (Вставка-обновление) |
 | writeBatchSize | Количество строк данных, записываемых в Salesforce одним пакетом. | Нет (значение по умолчанию — 5,000) |
 | ignoreNullValues | Указывает, следует ли игнорировать значения NULL из входных данных во время операции записи.<br/>Допустимые значения: **true** и **false**.<br>- **True**: при выполнении операции upsert или обновления (update) оставьте данные в целевом объекте без изменений. При выполнении операции вставки (insert) вставьте определенное значение по умолчанию.<br/>- **False**: при выполнении операции upsert или обновления (update) обновите данные в целевом объекте до значения NULL. При выполнении операции вставки (insert) вставьте значение NULL. | Нет (по умолчанию используется значение false) |
 
@@ -296,7 +296,7 @@ ms.locfileid: "82146877"
 
 ### <a name="difference-between-soql-and-sql-query-syntax"></a>Различия между синтаксисом запросов SOQL и SQL
 
-При копировании данных из Salesforce можно использовать SOQL или SQL-запрос. Обратите внимание, что эти два запроса имеют различную поддержку синтаксиса и функциональности, их не следует смешивать. Рекомендуется использовать SOQL-запрос, который поддерживается корпорацией Salesforce. Главные различия показаны в следующей таблице.
+При копировании данных из Salesforce можно использовать SOQL или SQL-запрос. Обратите внимание, что эти два запроса имеют различную поддержку синтаксиса и функциональности, их не следует смешивать. Рекомендуется использовать запрос SOQL, изначально поддерживаемый Salesforce. Главные различия показаны в следующей таблице.
 
 | Синтаксис | Режим SOQL | Режим SQL |
 |:--- |:--- |:--- |
@@ -309,12 +309,12 @@ ms.locfileid: "82146877"
 
 ### <a name="retrieve-data-by-using-a-where-clause-on-the-datetime-column"></a>Извлечение данных с использованием предложения where для столбца даты и времени
 
-При указании запроса SOQL или SQL обратите внимание на различие в формате даты и времени. Пример:
+При указании запроса SOQL или SQL обратите внимание на различие в формате даты и времени. Например.
 
 * **Пример SOQL**:`SELECT Id, Name, BillingCity FROM Account WHERE LastModifiedDate >= @{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-ddTHH:mm:ssZ')} AND LastModifiedDate < @{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-ddTHH:mm:ssZ')}`
 * **Пример SQL**:`SELECT * FROM Account WHERE LastModifiedDate >= {ts'@{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-dd HH:mm:ss')}'} AND LastModifiedDate < {ts'@{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-dd HH:mm:ss')}'}`
 
-### <a name="error-of-malformed_querytruncated"></a>Ошибка MALFORMED_QUERY: усечено
+### <a name="error-of-malformed_query-truncated"></a>Ошибка MALFORMED_QUERY: усечено
 
 Если вы столкнулись с ошибкой "MALFORMED_QUERY: truncated", обычно это связано с тем, что в данных имеется столбец типа Жунктионидлист, а Salesforce имеет ограничение на поддержку таких данных с большим количеством строк. Чтобы устранить эту проблемы, попробуйте исключить столбец Жунктионидлист или ограничить число копируемых строк (можно разделить на несколько запусков действия копирования).
 
@@ -325,15 +325,15 @@ ms.locfileid: "82146877"
 | Тип данных Salesforce | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | Автонумерация |Строка |
-| Флажок |Логическое |
+| Флажок |Логический |
 | Валюта |Decimal |
 | Дата |Дата и время |
 | Дата и время |Дата и время |
-| Электронная почта |Строка |
-| Идентификатор |Строка |
+| Адрес электронной почты |Строка |
+| ID |Строка |
 | Связь для подстановки |Строка |
 | Список множественного выбора |Строка |
-| number |Decimal |
+| Number |Decimal |
 | Процент |Decimal |
 | Номер телефона |Строка |
 | Список выбора |Строка |

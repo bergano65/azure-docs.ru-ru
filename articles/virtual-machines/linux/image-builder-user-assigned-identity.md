@@ -7,17 +7,18 @@ ms.date: 05/02/2019
 ms.topic: how-to
 ms.service: virtual-machines-linux
 ms.subservice: imaging
-ms.openlocfilehash: 0c0e688c628d553c8b732081f1a8b8debff8846e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 79349f9da45a623581c40276c8e69d490c1dd253
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82930664"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085560"
 ---
 # <a name="create-an-image-and-use-a-user-assigned-managed-identity-to-access-files-in-azure-storage"></a>Создание образа и использование управляемого удостоверения, назначенного пользователем, для доступа к файлам в службе хранилища Azure 
 
 Построитель образов Azure поддерживает использование сценариев или копирование файлов из нескольких расположений, таких как GitHub и хранилище Azure, и т. д. Чтобы использовать их, они должны быть доступны для построителя образов Azure извне, но вы можете защитить большие двоичные объекты службы хранилища Azure с помощью маркеров SAS.
 
-В этой статье показано, как создать настраиваемый образ с помощью построителя образов виртуальных машин Azure, где служба будет использовать [назначенное пользователем управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для доступа к файлам в службе хранилища Azure для настройки образа без необходимости делать эти файлы общедоступными или настроить маркеры SAS.
+В этой статье показано, как создать настраиваемый образ с помощью построителя образов виртуальных машин Azure, где служба будет использовать [назначенное пользователем управляемое удостоверение](../../active-directory/managed-identities-azure-resources/overview.md) для доступа к файлам в службе хранилища Azure для настройки образа без необходимости делать эти файлы общедоступными или настроить маркеры SAS.
 
 В приведенном ниже примере вы создадите две группы ресурсов, одна из которых будет использоваться для пользовательского образа, а другая будет размещать учетную запись хранения Azure, содержащую файл скрипта. Это имитирует реальный сценарий, в котором могут находиться артефакты сборки или файлы изображений в разных учетных записях хранения вне построителя образов. Вы создадите пользовательское удостоверение, затем предоставите ему разрешения на чтение файла скрипта, но не будете устанавливать общий доступ к этому файлу. Затем с помощью программы настройки оболочки вы сможете скачать и запустить этот скрипт из учетной записи хранения.
 
@@ -94,7 +95,7 @@ az group create -n $strResourceGroup -l $location
 
 Создание назначенного пользователем удостоверения и задание разрешений для группы ресурсов.
 
-Построитель образов будет использовать предоставленное [удостоверение пользователя](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm#user-assigned-managed-identity) для внедрения образа в группу ресурсов. В этом примере вы создадите определение роли Azure с детализированными действиями для распространения образа. Затем определение роли будет назначено удостоверению пользователя.
+Построитель образов будет использовать предоставленное [удостоверение пользователя](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#user-assigned-managed-identity) для внедрения образа в группу ресурсов. В этом примере вы создадите определение роли Azure с детализированными действиями для распространения образа. Затем определение роли будет назначено удостоверению пользователя.
 
 ```console
 # create user assigned identity for image builder to access the storage account where the script is located
@@ -253,6 +254,6 @@ az group delete -n $imageResourceGroup
 az group delete -n $strResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас возникли проблемы с построителем образов Azure, см. раздел [Устранение неполадок](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md?toc=%2fazure%2fvirtual-machines%context%2ftoc.json).

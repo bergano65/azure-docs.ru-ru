@@ -14,16 +14,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 5ef9b3d6f13de70cdf2fff87d9aed0a8efc2b782
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4422c7d360db401233d0cf4c072e88cd4aff16b5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74895800"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086274"
 ---
 # <a name="set-up-your-media-services-development-environment"></a>Настройка среды разработки для служб мультимедиа  
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 В этой статье описаны действия, которые необходимо выполнить, чтобы получить возможность разрабатывать решения с использованием служб мультимедиа Azure.
 
@@ -44,7 +45,7 @@ ms.locfileid: "74895800"
 
 Дополнительные сведения о подключении к API служб мультимедиа Azure см. в статье [Access the Azure Media Services API with Azure AD authentication](media-services-use-aad-auth-to-access-ams-api.md) (Получение доступа к API служб мультимедиа Azure с помощью проверки подлинности Azure AD).  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Найдите несколько примеров кода в коллекции **образцов кода Azure**: [Примеры кода Azure](https://azure.microsoft.com/resources/samples/?service=media-services&sort=0).
 
@@ -52,4 +53,3 @@ ms.locfileid: "74895800"
 
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
-

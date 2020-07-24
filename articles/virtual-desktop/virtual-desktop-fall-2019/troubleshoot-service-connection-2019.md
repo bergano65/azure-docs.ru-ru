@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок с подключением к службе Виртуального рабочего стола Windows (Azure)
+title: Устранение неполадок подключения к службе виртуальная система Windows — 2019 — Azure
 description: Сведения об устранении проблем при настройке клиентских подключений в среде клиента Виртуального рабочего стола Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -8,13 +8,14 @@ ms.topic: troubleshooting
 ms.date: 05/20/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 356506224a0273eeea65f0f901fbc79c338498d2
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: ad5e740a2874d398f3947fe755024bedc897ec73
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83743601"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085798"
 ---
-# <a name="windows-virtual-desktop-service-connections"></a>Подключения к службе Виртуального рабочего стола Windows
+# <a name="troubleshoot-windows-virtual-desktop-service-connections"></a>Устранение неполадок подключения к службе виртуальных рабочих столов Windows
 
 >[!IMPORTANT]
 >Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../troubleshoot-service-connection.md).

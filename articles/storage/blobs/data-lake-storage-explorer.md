@@ -5,20 +5,21 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/23/2019
+ms.date: 07/16/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 4e8b99d4a9c48692551e3aba06aba1a3db385e60
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 088618c0f23f5cfd1b14c3c946ef735fadb893d2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84466057"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086104"
 ---
-# <a name="use-azure-storage-explorer-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование Обозреватель службы хранилища Azure для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
+# <a name="use-azure-storage-explorer-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование Обозревателя службы хранилища Azure для управления каталогами, файлами и списками управления доступом в Azure Data Lake Storage 2-го поколения
 
 В этой статье показано, как использовать [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) для создания каталогов, файлов и разрешений в учетных записях хранения с включенным иерархическое пространством имен (HNS) и управления ими.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 > [!div class="checklist"]
 > * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -29,7 +30,7 @@ ms.locfileid: "84466057"
 
 При первом запуске Обозревателя службы хранилища Microsoft Azure появляется окно **подключения**. Хотя Обозреватель службы хранилища предоставляет несколько способов подключения к учетным записям хранения, в настоящее время поддерживается только один из способов управления ACL.
 
-|Задача|Цель|
+|Задача|Назначение|
 |---|---|
 |Добавление учетной записи Azure | Перенаправляет вас на страницу входа организации для аутентификации в Azure. В настоящее время это единственный поддерживаемый метод проверки подлинности, если вы хотите задавать списки ACL и управлять ими.|
 |Создание строки подключения или URI подписанного URL-адреса | Можно использовать для прямого доступа к контейнеру или учетной записи хранения с токеном SAS или общей строкой подключения. |
@@ -39,7 +40,7 @@ ms.locfileid: "84466057"
 
 ![Обозреватель службы хранилища Microsoft Azure — окно подключения](media/storage-quickstart-blobs-storage-explorer/connect.png)
 
-После подключения загружается обозреватель службы хранилища Azure с вкладкой **Обозреватель**. В этом представлении вы можете просматривать сведения обо всех учетных записях хранения Azure, а также о локальном хранилище, настроенном с помощью учетных записей [эмулятора службы хранилища Azure](../common/storage-use-emulator.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json), [Cosmos DB](../../cosmos-db/storage-explorer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) или сред [Azure Stack](/azure-stack/user/azure-stack-storage-connect-se?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
+После подключения загружается обозреватель службы хранилища Azure с вкладкой **Обозреватель**. Это представление позволяет получить представление обо всех учетных записях хранения Azure, а также о локальном хранилище, настроенном с помощью [эмулятора хранения азурите](../common/storage-use-azurite.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json), [Cosmos DB](../../cosmos-db/storage-explorer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) учетных записей или сред [Azure Stack](/azure-stack/user/azure-stack-storage-connect-se?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) .
 
 ![Обозреватель службы хранилища Microsoft Azure — окно подключения](media/storage-quickstart-blobs-storage-explorer/mainpage.png)
 
@@ -105,7 +106,7 @@ ms.locfileid: "84466057"
 
 Вы можете назначать разрешения для отдельных каталогов, а также для отдельных файлов, что позволяет вам детально управлять доступом. Процесс управления разрешениями для каталогов и файлов такой же, как описано выше. Щелкните правой кнопкой мыши файл или каталог, разрешениями к которому вы хотите управлять, и выполните тот же процесс.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о списках управления доступом в Data Lake Storage 2-го поколения.
 

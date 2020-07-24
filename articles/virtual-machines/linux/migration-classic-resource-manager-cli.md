@@ -8,19 +8,19 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: a5a9ace105e56d9db61470c35f665954812c3825
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 92543383ad530242eab59387e658e7b9d137f328
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134266"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085509"
 ---
 # <a name="migrate-iaas-resources-from-classic-to-azure-resource-manager-by-using-azure-cli"></a>Перенос ресурсов IaaS из классического развертывания в развертывание с помощью Azure Resource Manager с использованием Azure CLI
 
 > [!IMPORTANT]
-> Сегодня около 90% виртуальных машин IaaS используют [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/). По состоянию на 28 февраля 2020, классические виртуальные машины являются устаревшими и будут полностью сняты с 1 марта 2023. [Узнайте больше]( https://aka.ms/classicvmretirement) об этой нерекомендуемости и [о том, как она влияет на вас](https://docs.microsoft.com/azure/virtual-machines/classic-vm-deprecation#how-does-this-affect-me).
+> Сегодня около 90% виртуальных машин IaaS используют [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/). По состоянию на 28 февраля 2020, классические виртуальные машины являются устаревшими и будут полностью сняты с 1 марта 2023. [Узнайте больше]( https://aka.ms/classicvmretirement) об этой нерекомендуемости и [о том, как она влияет на вас](../classic-vm-deprecation.md#how-does-this-affect-me).
 
-Ниже последовательно описано, как использовать команды интерфейса командной строки Azure (CLI) для переноса ресурсов IaaS из классической модели развертывания в модель развертывания с помощью Azure Resource Manager. Для выполнения инструкций в этой статье требуется [классический Azure CLI](../../cli-install-nodejs.md). Так как Azure CLI применим только для ресурсов Azure Resource Manager, его нельзя использовать для этой миграции.
+Ниже последовательно описано, как использовать команды интерфейса командной строки Azure (CLI) для переноса ресурсов IaaS из классической модели развертывания в модель развертывания с помощью Azure Resource Manager. Для выполнения инструкций в этой статье требуется [классический Azure CLI](/cli/azure/install-classic-cli). Так как Azure CLI применим только для ресурсов Azure Resource Manager, его нельзя использовать для этой миграции.
 
 > [!NOTE]
 > Все операции, описанные здесь, являются идемпотентными. Если вы столкнетесь с какой-либо проблемой, не связанной с неподдерживаемой функцией или ошибкой конфигурации, мы рекомендуем повторить подготовку, прервать или зафиксировать текущую операцию. Платформа повторит попытку.
@@ -46,7 +46,7 @@ ms.locfileid: "86134266"
 > 
 
 ## <a name="step-2-set-your-subscription-and-register-the-provider"></a>Шаг 2. Настройка подписки и регистрация поставщика
-Для сценариев миграции следует настроить среду для классической модели и модели Resource Manager. [Установите интерфейс командной строки Azure](../../cli-install-nodejs.md) (Azure CLI) и [выберите подписку](/cli/azure/authenticate-azure-cli).
+Для сценариев миграции следует настроить среду для классической модели и модели Resource Manager. [Установите интерфейс командной строки Azure](/cli/azure/install-classic-cli) (Azure CLI) и [выберите подписку](/cli/azure/authenticate-azure-cli).
 
 Выполните вход со своей учетной записью.
 
@@ -164,7 +164,7 @@ azure service deployment commit-migration <serviceName> <deploymentName>
 azure network vnet list
 ```
 
-Результат должен выглядеть следующим образом.
+Результат будет выглядеть примерно следующим образом:
 
 ![Снимок экрана командной строки с выделенным полным именем виртуальной сети.](../media/virtual-machines-linux-cli-migration-classic-resource-manager/vnet.png)
 

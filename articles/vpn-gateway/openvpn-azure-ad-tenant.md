@@ -2,16 +2,17 @@
 title: 'VPN-шлюз: клиент Azure AD для VPN-подключений P2S: проверка подлинности Azure AD'
 description: VPN-подключение P2S можно использовать для подключения к виртуальной сети с помощью проверки подлинности Azure AD.
 services: vpn-gateway
-author: anzaman
+author: kumudD
 ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 04/17/2020
 ms.author: alzam
-ms.openlocfilehash: 2dda6cb84fc881b4ca628ff1cecdec7c00555e8b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 74999b2bf1a34e3c7b8190dd04206b2b541c465f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85414319"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087039"
 ---
 # <a name="create-an-azure-active-directory-tenant-for-p2s-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory для подключений "точка — сеть" по протоколу OpenVPN
 
@@ -111,6 +112,6 @@ ms.locfileid: "85414319"
 
 13. Запишите расположение файла "azurevpnconfig.xml". azurevpnconfig.xml содержит параметр для VPN-подключения и может быть импортирован непосредственно в клиентское приложение VPN Azure. Этот файл также можно передать всем пользователям, которым требуется подключение по электронной почте или другим средствам. Для успешного подключения пользователю понадобятся действительные учетные данные Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы подключиться к виртуальной сети, необходимо создать и настроить профиль клиента VPN. См. раздел [Настройка VPN-клиента для P2S VPN-подключений](openvpn-azure-ad-client.md).
