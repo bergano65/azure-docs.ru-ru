@@ -6,14 +6,14 @@ manager: carmonm
 services: azure-monitor
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 10/23/2019
+ms.date: 07/23/2020
 ms.author: mbullwin
-ms.openlocfilehash: b06f39de9f977a9f777b21a53e93ca744fccdd93
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 044786d6a6aa4f9f3d163090c0edfa3832023b10
+ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85560163"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87116966"
 ---
 # <a name="azure-monitor-workbooks"></a>Изучение и предоставление общего доступа к данным об использовании c интерактивными книгами в Application Insights
 
@@ -52,9 +52,9 @@ ms.locfileid: "85560163"
 
 Чтобы исследовать работу с книгами, сначала перейдите в службу Azure Monitor. Это можно сделать, введя **Monitor** в поле поиска в портал Azure.
 
-Затем выберите **книги (Предварительная версия)**.
+Затем выберите пункт **книги**.
 
-![Снимок экрана: Кнопка предварительного просмотра книг, выделенная красным прямоугольником](./media/workbooks-overview/workbooks-preview.png)
+![Снимок экрана: кнопка "книги", выделенная красным прямоугольником](./media/workbooks-overview/workbooks.png)
 
 ### <a name="gallery"></a>Коллекции
 
@@ -124,7 +124,7 @@ ms.locfileid: "85560163"
 
 Создав собственные шаблоны книг, вы можете поделиться им с более широким сообществом. Чтобы узнать больше, а также просмотреть другие шаблоны, которые не входят в представление коллекции по умолчанию Azure Monitor, посетите наш [репозиторий GitHub](https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/README.md). Чтобы просмотреть существующие книги, посетите [библиотеку книг](https://github.com/microsoft/Application-Insights-Workbooks/tree/master/Workbooks) на сайте GitHub.
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 
 * [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.

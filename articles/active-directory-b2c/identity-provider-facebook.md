@@ -9,14 +9,15 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.date: 09/26/2019
+ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 394af855b7968d38bf99afada246ae661dc0459a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5879d745de85fe702267dce109e26ebcb07195ce
+ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85549486"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87116269"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-facebook-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Facebook через Azure Active Directory B2C
 
@@ -46,8 +47,8 @@ ms.locfileid: "85549486"
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
 1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
-1. Выберите **поставщики удостоверений**, а затем выберите **Facebook**.
+1. Щелкните элемент **Поставщики удостоверений** и выберите вариант **Facebook**.
 1. Введите **Имя**. Например, *Facebook*.
-1. В качестве **идентификатора клиента** введите идентификатор приложения Facebook, созданного ранее.
-1. В качестве **секрета клиента** введите секрет приложения, записанный ранее.
+1. В поле **Идентификатор клиента** введите идентификатор созданного ранее приложения Facebook.
+1. В поле **Секрет клиента** введите секрет приложения, записанный ранее.
 1. Щелкните **Сохранить**.

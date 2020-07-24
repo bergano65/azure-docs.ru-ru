@@ -8,13 +8,15 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/30/2018
+ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c11bc48742c398d2048a236c7d00af044971f845
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1dc0e297ca16bf2605993e36942de9d31c331680
+ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78185623"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87115862"
 ---
 # <a name="user-flows-in-azure-active-directory-b2c"></a>Потоки пользователей в Azure Active Directory B2C
 
@@ -26,7 +28,7 @@ ms.locfileid: "78185623"
 
 - типы учетных записей, используемые для входа в систему, такие как учетные записи социальных сетей, например Facebook, или локальные учетные записи;
 - атрибуты, которые нужно получить от пользователя, например имя, почтовый индекс и размер обуви;
-- Многофакторная идентификация Azure
+- Многофакторная проверка подлинности Azure
 - настройка пользовательского интерфейса;
 - сведения, которые приложение получает в виде утверждений в токене.
 
@@ -82,6 +84,6 @@ client_id=2d4d11a2-f814-46a7-890a-274a72a7309e      // Your registered Applicati
 
 Через API Microsoft Graph доступны только свойства **осермаилс** и **signInNames** . Адрес электронной почты в свойстве сведений строгой проверки подлинности недоступен.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы создать рекомендованные пользовательские потоки, следуйте инструкциям в разделе [учебник. Создание потока пользователя](tutorial-create-user-flows.md).

@@ -8,13 +8,15 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 06/06/2019
+ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 1a7cb964064e229ee29591ca14aa8ef33e393a7d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 043cf83d804803e1b5b47d3ac51bbccaa06e4e87
+ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84484181"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87116419"
 ---
 # <a name="custom-policies-in-azure-active-directory-b2c"></a>Пользовательские политики в Azure Active Directory B2C
 
@@ -64,7 +66,7 @@ Azure AD B2C взаимодействует с поставщиками удос
 
 Когда приложение вызывает файл политики проверяющей стороны, Identity Experience Framework в Azure AD B2C добавит все элементы из базового файла, затем из файла расширений и, наконец, из файла политики проверяющей стороны, чтобы создать действующую политику.  Элементы одного и того же типа и имени в файле проверяющей стороны будут переопределять те, что находятся в файле расширений, а последние переопределят значения в базовом файле.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Начало работы с настраиваемыми политиками](custom-policy-get-started.md)

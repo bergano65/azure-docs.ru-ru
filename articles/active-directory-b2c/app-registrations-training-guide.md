@@ -8,14 +8,15 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 05/25/2020
+ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c89ed98d8100df270f09f1d2d1b621e71e326fe3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f9b493e862ed70bbeab9ac509c79003a535366d0
+ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85386306"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87116550"
 ---
 # <a name="the-new-app-registrations-experience-for-azure-active-directory-b2c"></a>Новый интерфейс Регистрация приложений для Azure Active Directory B2C
 
@@ -109,7 +110,7 @@ URI перенаправления должны быть связаны с ти�
 <!-- - Azure AD B2C doesn't currently support the single-page application "SPA" app type.  -->
 - Изменение значения для поддерживаемых учетных записей не поддерживается в пользовательском интерфейсе. Вам потребуется использовать манифест приложения, если вы не переключаетесь между одним клиентом Azure AD и несколькими клиентами.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с новым интерфейсом регистрации приложения, выполните следующие действия.
 * Узнайте, [как зарегистрировать веб-приложение](tutorial-register-applications.md).

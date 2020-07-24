@@ -12,12 +12,12 @@ ms.date: 06/26/2020
 ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: aaddev, seoapril2019, identityplatformtop40
-ms.openlocfilehash: 12389484f63d35eb31b38d5067061dc99b7284f0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 479222cc9b67775d359182740dc78865da8cee38
+ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85505993"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87115933"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Практическое руководство. Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала
 
@@ -55,7 +55,7 @@ ms.locfileid: "85505993"
 
 1. Найдите и выберите **подписки**или выберите **подписки** на **домашней** странице.
 
-   ![Найти](./media/howto-create-service-principal-portal/select-subscription.png)
+   ![Поиск](./media/howto-create-service-principal-portal/select-subscription.png)
 
 1. Выберите подписку, в которой необходимо создать субъект-службу.
 
@@ -178,14 +178,14 @@ $cert=New-SelfSignedCertificate -Subject "CN=DaemonConsoleCert" -CertStoreLocati
    ![Скопируйте значение секрета, так как вы не сможете получить его позже](./media/howto-create-service-principal-portal/copy-secret.png)
 
 ## <a name="configure-access-policies-on-resources"></a>Настройка политик доступа к ресурсам
-Помните, что может потребоваться настроить разрешения на добавление для ресурсов, к которым требуется доступ приложению. Например, необходимо также [обновить политики доступа для хранилища ключей](/azure/key-vault/key-vault-secure-your-key-vault#data-plane-and-access-policies) , чтобы предоставить приложению доступ к ключам, секретам или сертификатам.  
+Помните, что может потребоваться настроить дополнительные разрешения для ресурсов, к которым приложению требуется доступ. Например, необходимо также [обновить политики доступа для хранилища ключей](/azure/key-vault/key-vault-secure-your-key-vault#data-plane-and-access-policies) , чтобы предоставить приложению доступ к ключам, секретам или сертификатам.  
 
 1. В [портал Azure](https://portal.azure.com)перейдите к своему хранилищу ключей и выберите **политики доступа**.  
 1. Выберите **Добавить политику доступа**, а затем выберите разрешения ключа, секрета и сертификата, которые вы хотите предоставить приложению.  Выберите ранее созданный субъект-службу.
 1. Выберите **Добавить** , чтобы добавить политику доступа, а затем нажмите кнопку **сохранить** , чтобы зафиксировать изменения.
     ![Добавление политики доступа](./media/howto-create-service-principal-portal/add-access-policy.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [использовать Azure PowerShell для создания субъекта-службы](howto-authenticate-service-principal-powershell.md).
 * Дополнительные сведения о настройке политик безопасности см. в статье о [контроле доступа на основе ролей Azure](../../role-based-access-control/role-assignments-portal.md).  
 * Список доступных действий, которые можно разрешить или запретить пользователям, см. в разделе [Операции поставщиков ресурсов Azure Resource Manager](../../role-based-access-control/resource-provider-operations.md).

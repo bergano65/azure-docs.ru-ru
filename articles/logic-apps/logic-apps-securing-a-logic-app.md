@@ -6,16 +6,16 @@ ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
 ms.date: 07/03/2020
-ms.openlocfilehash: 902c48f2edcca6eb25958a9f22d6760faf1fcbc2
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 5b25c56591e64d66901dbcf79dc629f0beb2bbb0
+ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86248719"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87117010"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
-Azure Logic Apps использует [хранилище Azure](https://docs.microsoft.com/azure/storage/) для хранения и автоматического [шифрования неактивных данных](../security/fundamentals/encryption-atrest.md). Это шифрование защищает ваши данные и помогает удовлетворить ваши обязательства по обеспечению безопасности и соответствия требованиям Организации. По умолчанию служба хранилища Azure использует ключи, управляемые корпорацией Майкрософт, для шифрования данных. Дополнительные сведения см. в статье [Шифрование службы хранилища Azure для неактивных данных](../storage/common/storage-service-encryption.md).
+Azure Logic Apps использует [хранилище Azure](../storage/index.yml) для хранения и автоматического [шифрования неактивных данных](../security/fundamentals/encryption-atrest.md). Это шифрование защищает ваши данные и помогает удовлетворить ваши обязательства по обеспечению безопасности и соответствия требованиям Организации. По умолчанию служба хранилища Azure использует ключи, управляемые корпорацией Майкрософт, для шифрования данных. Дополнительные сведения см. в статье [Шифрование службы хранилища Azure для неактивных данных](../storage/common/storage-service-encryption.md).
 
 Для дальнейшего управления доступом и защитой конфиденциальных данных в Azure Logic Apps можно настроить дополнительную безопасность в следующих областях:
 
@@ -51,7 +51,7 @@ Azure Logic Apps использует [хранилище Azure](https://docs.mi
 
 ### <a name="generate-shared-access-signatures-sas"></a>Создание подписанных URL-адресов (SAS)
 
-Каждая конечная точка запроса в приложении логики содержит [подписанный URL-адрес (SAS)](https://docs.microsoft.com/rest/api/storageservices/constructing-a-service-sas) в своем URL-адресе, который имеет следующий формат.
+Каждая конечная точка запроса в приложении логики содержит [подписанный URL-адрес (SAS)](/rest/api/storageservices/constructing-a-service-sas) в своем URL-адресе, который имеет следующий формат.
 
 `https://<request-endpoint-URI>sp=<permissions>sv=<SAS-version>sig=<signature>`
 
@@ -86,7 +86,7 @@ Azure Logic Apps использует [хранилище Azure](https://docs.mi
 
 #### <a name="create-expiring-callback-urls"></a>Создание URL-адресов обратного вызова с истекающим сроком действия
 
-Если URL-адрес конечной точки триггера на основе запросов используется совместно с другими сторонами, можно создать URL-адреса обратного вызова, использующие определенные ключи и имеющие даты истечения срока действия. Таким образом можно легко менять ключи или ограничивать доступ для запуска приложения логики в определенные периоды времени. Для установки даты окончания срока действия для URL-адреса используйте [REST API для Logic Apps](https://docs.microsoft.com/rest/api/logic/workflowtriggers), например, следующим образом:
+Если URL-адрес конечной точки триггера на основе запросов используется совместно с другими сторонами, можно создать URL-адреса обратного вызова, использующие определенные ключи и имеющие даты истечения срока действия. Таким образом можно легко менять ключи или ограничивать доступ для запуска приложения логики в определенные периоды времени. Для установки даты окончания срока действия для URL-адреса используйте [REST API для Logic Apps](/rest/api/logic/workflowtriggers), например, следующим образом:
 
 ```http
 POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group-name>/providers/Microsoft.Logic/workflows/<workflow-name>/triggers/<trigger-name>/listCallbackUrl?api-version=2016-06-01
@@ -98,7 +98,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 #### <a name="create-urls-with-primary-or-secondary-secret-key"></a>Создание URL-адресов с использованием первичного или вторичного секретного ключа
 
-При создании или перечислении URL-адресов обратного вызова для триггера на основе запросов можно указать ключ, который нужно использовать для подписи URL-адреса. Для создания URL-адреса, подписанного с использованием конкретного ключа, используйте [REST API для Logic Apps](https://docs.microsoft.com/rest/api/logic/workflowtriggers), например, следующим образом:
+При создании или перечислении URL-адресов обратного вызова для триггера на основе запросов можно указать ключ, который нужно использовать для подписи URL-адреса. Для создания URL-адреса, подписанного с использованием конкретного ключа, используйте [REST API для Logic Apps](/rest/api/logic/workflowtriggers), например, следующим образом:
 
 ```http
 POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group-name>/providers/Microsoft.Logic/workflows/<workflow-name>/triggers/<trigger-name>/listCallbackUrl?api-version=2016-06-01
@@ -110,7 +110,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 ### <a name="enable-azure-active-directory-oauth"></a>Включение Azure Active Directory OAuth
 
-Если приложение логики запускается с помощью [триггера запроса](../connectors/connectors-native-reqres.md), можно включить [Azure Active Directory Open authentication](/azure/active-directory/develop/) (Azure AD OAuth), создав политику авторизации для входящих вызовов триггера запроса. Перед включением этой проверки подлинности ознакомьтесь с приведенными ниже замечаниями.
+Если приложение логики запускается с помощью [триггера запроса](../connectors/connectors-native-reqres.md), можно включить [Azure Active Directory Open authentication](../active-directory/develop/index.yml) (Azure AD OAuth), создав политику авторизации для входящих вызовов триггера запроса. Перед включением этой проверки подлинности ознакомьтесь с приведенными ниже замечаниями.
 
 * Входящий вызов приложения логики может использовать только одну схему авторизации: Azure AD OAuth или [подписанные URL-адреса (SAS)](#sas). Для маркеров OAuth поддерживаются только схемы авторизации [типа носителя](../active-directory/develop/active-directory-v2-protocols.md#tokens) , которые поддерживаются только для триггера запроса.
 
@@ -212,7 +212,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 Если вы хотите, чтобы приложение логики активировалось только как вложенное приложение, в списке **Разрешенные IP-адреса для входящего трафика** выберите **Только другие приложения Logic Apps**. Этот параметр записывает пустой массив в ресурс приложения логики. Таким образом, только вызовы из службы Logic Apps (родительские приложения логики) могут активировать вложенное приложение логики.
 
 > [!NOTE]
-> Независимо от IP-адреса вы по-прежнему можете запускать приложение логики с триггером на основе запроса, используя [Logic Apps REST API: триггеры рабочего процесса —](https://docs.microsoft.com/rest/api/logic/workflowtriggers/run) запрос на выполнение или с помощью управления API. Однако для этого потребуется [аутентификация](../active-directory/develop/authentication-scenarios.md) с помощью Azure REST API. Все события отобразятся в журнале аудита Azure. Убедитесь, что политики управления доступом настроены соответствующим образом.
+> Независимо от IP-адреса вы по-прежнему можете запускать приложение логики с триггером на основе запроса, используя [Logic Apps REST API: триггеры рабочего процесса —](/rest/api/logic/workflowtriggers/run) запрос на выполнение или с помощью управления API. Однако для этого потребуется [аутентификация](../active-directory/develop/authentication-vs-authorization.md) с помощью Azure REST API. Все события отобразятся в журнале аудита Azure. Убедитесь, что политики управления доступом настроены соответствующим образом.
 
 #### <a name="restrict-inbound-ip-ranges-in-azure-resource-manager-template"></a>Ограничение диапазонов входящих IP-адресов в шаблоне Azure Resource Manager
 
@@ -263,13 +263,13 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 ### <a name="add-azure-active-directory-open-authentication-or-other-security"></a>Добавление открытой проверки подлинности Azure Active Directory или других служб безопасности
 
-Чтобы добавить дополнительные протоколы [проверки подлинности](../active-directory/develop/authentication-scenarios.md) в приложение логики, используйте службу [Управление API Azure](../api-management/api-management-key-concepts.md). Эта служба позволяет предоставлять приложение логики в качестве API и обеспечивает обширные возможности мониторинга, дополнительные средства безопасности, политики и документацию для любой конечной точки. Управление API может предоставлять общедоступную или частную конечную точку для приложения логики. Для авторизации доступа к этой конечной точке можно использовать [открытую проверку подлинности Azure Active Directory](#azure-active-directory-oauth-authentication) (Azure AD OAuth), [сертификат клиента](#client-certificate-authentication) или другие стандарты безопасности. Когда служба "Управление API" получает запрос, она отправляет его в приложение логики, выполняя при этом необходимые преобразования или устанавливая ограничения. Чтобы разрешить приложению логики запускаться только с помощью службы "Управление API", можно использовать параметры диапазона входящих IP-адресов для приложения логики.
+Чтобы добавить дополнительные протоколы [проверки подлинности](../active-directory/develop/authentication-vs-authorization.md) в приложение логики, используйте службу [Управление API Azure](../api-management/api-management-key-concepts.md). Эта служба позволяет предоставлять приложение логики в качестве API и обеспечивает обширные возможности мониторинга, дополнительные средства безопасности, политики и документацию для любой конечной точки. Управление API может предоставлять общедоступную или частную конечную точку для приложения логики. Для авторизации доступа к этой конечной точке можно использовать [открытую проверку подлинности Azure Active Directory](#azure-active-directory-oauth-authentication) (Azure AD OAuth), [сертификат клиента](#client-certificate-authentication) или другие стандарты безопасности. Когда служба "Управление API" получает запрос, она отправляет его в приложение логики, выполняя при этом необходимые преобразования или устанавливая ограничения. Чтобы разрешить приложению логики запускаться только с помощью службы "Управление API", можно использовать параметры диапазона входящих IP-адресов для приложения логики.
 
 <a name="secure-operations"></a>
 
 ## <a name="access-to-logic-app-operations"></a>Доступ к операциям приложения логики
 
-Вы можете разрешить только определенным пользователям или группам запускать определенные задачи, такие как управление, редактирование и просмотр приложений логики. Чтобы управлять их разрешениями, используйте [управление доступом на основе ролей Azure (RBAC)](../role-based-access-control/role-assignments-portal.md), чтобы можно было назначить настраиваемые или встроенные роли членам подписки Azure.
+Вы можете разрешить только определенным пользователям или группам запускать определенные задачи, такие как управление, редактирование и просмотр приложений логики. Для управления их разрешениями используйте [Управление доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/role-assignments-portal.md) , чтобы можно было назначить настраиваемые или встроенные роли членам в вашей подписке Azure:
 
 * [Создатель приложений логики](../role-based-access-control/built-in-roles.md#logic-app-contributor). Позволяет управлять приложениями логики, но не доступом к ним.
 
@@ -427,7 +427,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 * При скрытии входных или выходных данных триггера или действия Logic Apps не отправляет защищенные данные в Azure Log Analytics. Кроме того, к такому триггеру или действию нельзя добавить [отслеживаемые свойства](../logic-apps/monitor-logic-apps-log-analytics.md#extend-data) для мониторинга.
 
-* [API Logic Apps для обработки журнала рабочего процесса](https://docs.microsoft.com/rest/api/logic/) не возвращает защищенные выходные данные.
+* [API Logic Apps для обработки журнала рабочего процесса](/rest/api/logic/) не возвращает защищенные выходные данные.
 
 * Чтобы защитить выходные данные из действия, которое скрывает входные данные или явно их маскирует, вручную включите в этом действии **Безопасные выходные данные**.
 
@@ -613,7 +613,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
          "apiVersion": "2016-06-01",
          "properties": {
             "definition": {
-               "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-0601/workflowdefinition.json#",
+               "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
                "actions": {
                   "HTTP": {
                      "type": "Http",
@@ -816,7 +816,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 ### <a name="azure-active-directory-open-authentication"></a>Открытая проверка подлинности Azure Active Directory
 
-В триггерах запроса можно использовать [открытую проверку подлинности Azure Active Directory](/azure/active-directory/develop/) (Azure AD OAuth) для входящих вызовов после [настройки политик авторизации Azure AD](#enable-oauth) для приложения логики. Для всех других триггеров и действий, для которых можно выбрать **Active Directory OAuth** в качестве типа проверки подлинности, укажите следующие значения свойств.
+В триггерах запроса можно использовать [открытую проверку подлинности Azure Active Directory](../active-directory/develop/index.yml) (Azure AD OAuth) для входящих вызовов после [настройки политик авторизации Azure AD](#enable-oauth) для приложения логики. Для всех других триггеров и действий, для которых можно выбрать **Active Directory OAuth** в качестве типа проверки подлинности, укажите следующие значения свойств.
 
 | Свойство (конструктор) | Свойство (JSON) | Обязательно | Значение | Описание |
 |---------------------|-----------------|----------|-------|-------------|
@@ -825,7 +825,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 | **Клиент** | `tenant` | Да | <*ИД клиента*> | Идентификатор клиента Azure Active Directory. |
 | **Аудитория** | `audience` | Да | <*ресурс для авторизации*> | Ресурс, который нужно использовать для авторизации, например `https://management.core.windows.net/`. |
 | **Идентификатор клиента** | `clientId` | Да | <*ИД клиента*> | Идентификатор клиента для приложения, запрашивающего авторизацию. |
-| **Тип учетных данных** | `credentialType` | Да | Сертификат <br>или диспетчер конфигурации служб <br>Секрет | Тип учетных данных, который клиент использует для запроса авторизации. Это свойство и значение не отображаются в базовом определении приложения логики, но определяет свойства, отображаемые для выбранного типа учетных данных. |
+| **Тип учетных данных** | `credentialType` | Да | Сертификат <br>or <br>Секрет | Тип учетных данных, который клиент использует для запроса авторизации. Это свойство и значение не отображаются в базовом определении приложения логики, но определяет свойства, отображаемые для выбранного типа учетных данных. |
 | **Секрет** | `secret` | Да, но только для учетных данных типа "Секрет" | <*секрет-клиента*> | Секрет клиента для запроса на авторизацию |
 | **Pfx** | `pfx` | Да, но только для учетных данных типа "Сертификат" | <*закодированное-содержимое-файла-pfx*> | Содержимое файла обмена личной информацией (PFX-файла) с кодировкой base64. |
 | **Пароль** | `password` | Да, но только для учетных данных типа "Сертификат" | <*пароль-для-файла-pfx*> | Пароль для доступа к PFX-файлу |
@@ -909,7 +909,7 @@ Authorization: OAuth realm="Photos",
 
    | Свойство (конструктор) | Свойство (JSON) | Обязательно | Значение | Описание |
    |---------------------|-----------------|----------|-------|-------------|
-   | **Аутентификация** | `type` | Да | **Управляемое удостоверение** <br>или диспетчер конфигурации служб <br>`ManagedServiceIdentity` | Тип проверки подлинности |
+   | **Аутентификация** | `type` | Да | **Управляемое удостоверение** <br>or <br>`ManagedServiceIdentity` | Тип проверки подлинности |
    | **Управляемое удостоверение** | `identity` | Да | * **Управляемое удостоверение, назначенное системой** <br>или диспетчер конфигурации служб <br>`SystemAssigned` <p><p>* <*назначенное-пользователем-имя-удостоверения*> | Управляемое удостоверение |
    | **Аудитория** | `audience` | Да | <*идентификатор-целевого-ресурса*> | Идентификатор целевого ресурса, к которому требуется получить доступ. <p>Например, значение `https://storage.azure.com/` делает [маркеры доступа](../active-directory/develop/access-tokens.md) действительными для проверки подлинности для всех учетных записей хранения. Однако можно также указать URL-адрес корневой службы для конкретной учетной записи хранения, например `https://fabrikamstorageaccount.blob.core.windows.net`. <p>**Примечание.** Свойство **Аудитория** может быть скрыто в некоторых триггерах или действиях. Чтобы отобразить это свойство, в триггере или действии откройте список **Добавить новый параметр** и выберите **Аудитория**. <p><p>**Важно!** Убедитесь, что значение идентификатора ресурса *точно совпадает* со значением, ожидаемым Azure AD, включая все необходимые знаки косой черты. Например, для идентификатора ресурса `https://storage.azure.com/` для всех учетных записей хранилища BLOB-объектов Azure требуется завершающая косая черта. Но для идентификатора ресурса конкретной учетной записи хранения завершающая косая черта не требуется. Сведения о том, как найти эти идентификаторы ресурсов, см. в разделе [Службы Azure, которые поддерживают Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication). |
    |||||
@@ -953,7 +953,7 @@ Authorization: OAuth realm="Photos",
   * [Планы службы приложений Azure](../app-service/overview-hosting-plans.md)
   * [Параметры сети для Функций Azure](../azure-functions/functions-networking-options.md)
   * [Выделенные узлы Azure для виртуальных машин](../virtual-machines/windows/dedicated-hosts.md)
-  * [Изоляция виртуальных машин в Azure](../virtual-machines/windows/isolation.md)
+  * [Изоляция виртуальных машин в Azure](../virtual-machines/isolation.md)
   * [Развертывание выделенных служб Azure в виртуальных сетях](../virtual-network/virtual-network-for-azure-services.md)
 
 * Для создания приложений логики, которые выполняются на выделенных ресурсах и могут получать доступ к ресурсам, защищенным виртуальной сетью Azure, можно создать [среду службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md).
@@ -965,7 +965,7 @@ Authorization: OAuth realm="Photos",
 Дополнительные сведения см. в следующих статьях:
 
 * [Изоляция в общедоступном облаке Azure](../security/fundamentals/isolation-choices.md)
-* [Безопасность для приложений IaaS с высоким уровнем безопасности в Azure](https://docs.microsoft.com/azure/architecture/reference-architectures/n-tier/high-security-iaas)
+* [Безопасность для приложений IaaS с высоким уровнем безопасности в Azure](/azure/architecture/reference-architectures/n-tier/high-security-iaas)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

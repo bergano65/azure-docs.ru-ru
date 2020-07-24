@@ -7,12 +7,12 @@ ms.date: 05/27/2020
 ms.author: mahender
 ms.reviewer: yevbronsh
 ms.custom: tracking-python
-ms.openlocfilehash: 87e4d67086ea9f260becb2d63765e807e2b73546
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: e6965cef0257ee472c08b19e3a9b1c2ec2860128
+ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85985758"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87116904"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Использование управляемых удостоверений в Службе приложений и Функциях Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "85985758"
 
 #### <a name="using-azure-powershell-for-a-web-app"></a>Использование Azure PowerShell для веб-приложения
 
-1. При необходимости установите Azure PowerShell с помощью инструкций из [руководства по Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Login-AzAccount`, чтобы создать подключение к Azure.
+1. При необходимости установите Azure PowerShell с помощью инструкций из [руководства по Azure PowerShell](/powershell/azure/), а затем выполните команду `Login-AzAccount`, чтобы создать подключение к Azure.
 
 2. Создайте веб-приложение с помощью Azure PowerShell. Дополнительные примеры применения Azure PowerShell со службой приложений см. в статье [Примеры сценариев Azure PowerShell](../app-service/samples-powershell.md).
 
@@ -107,7 +107,7 @@ ms.locfileid: "85985758"
 
 #### <a name="using-azure-powershell-for-a-function-app"></a>Использование Azure PowerShell для приложения-функции
 
-1. При необходимости установите Azure PowerShell с помощью инструкций из [руководства по Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Login-AzAccount`, чтобы создать подключение к Azure.
+1. При необходимости установите Azure PowerShell с помощью инструкций из [руководства по Azure PowerShell](/powershell/azure/), а затем выполните команду `Login-AzAccount`, чтобы создать подключение к Azure.
 
 2. Создание приложения-функции с помощью Azure PowerShell. Дополнительные примеры использования Azure PowerShell с функциями Azure см. в [справочнике по AZ. functions](https://docs.microsoft.com/powershell/module/az.functions/?view=azps-4.1.0#functions):
 
@@ -208,7 +208,7 @@ ms.locfileid: "85985758"
 > [!NOTE]
 > Текущая версия Azure PowerShell командлеты для службы приложений Azure не поддерживает назначенные пользователю удостоверения. Приведенные ниже инструкции предназначены для функций Azure.
 
-1. При необходимости установите Azure PowerShell с помощью инструкций из [руководства по Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Login-AzAccount`, чтобы создать подключение к Azure.
+1. При необходимости установите Azure PowerShell с помощью инструкций из [руководства по Azure PowerShell](/powershell/azure/), а затем выполните команду `Login-AzAccount`, чтобы создать подключение к Azure.
 
 2. Создание приложения-функции с помощью Azure PowerShell. Дополнительные примеры использования Azure PowerShell с функциями Azure см. в [справочнике по AZ. functions](https://docs.microsoft.com/powershell/module/az.functions/?view=azps-4.1.0#functions). В приведенном ниже скрипте также используется, `New-AzUserAssignedIdentity` который должен быть установлен отдельно при [создании, перечислении или удалении назначенного пользователем управляемого удостоверения с помощью Azure PowerShell](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md).
 
@@ -431,7 +431,7 @@ $accessToken = $tokenResponse.access_token
 
 ### <a name="using-the-microsoftazureservicesappauthentication-library-for-net"></a><a name="asal"></a>Использование библиотеки Microsoft.Azure.Services.AppAuthentication для .NET
 
-Самый простой способ для приложений и функций .NET работать с управляемыми удостоверениями заключается в использовании пакета Microsoft.Azure.Services.AppAuthentication. Эта библиотека также позволяет локально тестировать код на компьютере разработки с использованием учетной записи пользователя из Visual Studio, [Azure CLI](/cli/azure) или встроенной проверки подлинности Active Directory. Дополнительные сведения о параметрах локальной разработки с помощью этой библиотеки см. в [Справочник Microsoft.Azure.Services.AppAuthentication]. В этом разделе показано, как начать работу с библиотекой в коде.
+Самый простой способ для приложений и функций .NET работать с управляемыми удостоверениями заключается в использовании пакета Microsoft.Azure.Services.AppAuthentication. Эта библиотека также позволяет локально тестировать код на компьютере разработки с использованием учетной записи пользователя из Visual Studio, [Azure CLI](/cli/azure) или встроенной проверки подлинности Active Directory. При размещении в облаке по умолчанию будет использоваться назначенное системой удостоверение, но это поведение можно изменить с помощью переменной среды строки подключения, которая ссылается на идентификатор клиента для назначенного пользователю удостоверения. Дополнительные сведения о вариантах разработки с этой библиотекой см. в [справочнике по Microsoft. Azure. Services. AppAuthentication]. В этом разделе показано, как начать работу с библиотекой в коде.
 
 1. Добавьте ссылки на пакет [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) и другие пакеты NuGet в приложение. В примерах ниже также используется [Microsoft.Azure.KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault).
 
@@ -447,7 +447,17 @@ $accessToken = $tokenResponse.access_token
     var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
     ```
 
-Дополнительные сведения о пакете Microsoft.Azure.Services.AppAuthentication и операциях, которые он предоставляет, см. в [Справочник Microsoft.Azure.Services.AppAuthentication] и [примерах службы приложений и хранилищах ключей с управляемым удостоверением службы .NET](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
+Если вы хотите использовать управляемое пользователем удостоверение, можно задать `AzureServicesAuthConnectionString` для параметра приложения значение `RunAs=App;AppId=<clientId-guid>` . Замените `<clientId-guid>` идентификатором клиента идентификатора, который вы хотите использовать. Можно определить несколько таких строк подключения с помощью пользовательских параметров приложения и передать их значения в конструктор AzureServiceTokenProvider.
+
+```csharp
+    var identityConnectionString1 = Environment.GetEnvironmentVariable("UA1_ConnectionString");
+    var azureServiceTokenProvider1 = new AzureServiceTokenProvider(identityConnectionString1);
+    
+    var identityConnectionString2 = Environment.GetEnvironmentVariable("UA2_ConnectionString");
+    var azureServiceTokenProvider2 = new AzureServiceTokenProvider(identityConnectionString2);
+```
+
+Дополнительные сведения о настройке AzureServiceTokenProvider и предоставляемых ею операциях см. в [справочнике по Microsoft. Azure. Services. AppAuthentication] и [службе приложений и KEYVAULT с примером MSI .NET](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
 
 ### <a name="using-the-azure-sdk-for-java"></a>Использование пакета Azure SDK для Java
 
