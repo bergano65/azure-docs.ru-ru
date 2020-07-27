@@ -53,8 +53,10 @@
       href: ../../mysql/security-baseline.md
     - name: Базовые средства безопасности Базы данных Azure для MariaDB
       href: ../../mariadb/security-baseline.md
-    - name: Базовые средства безопасности Базы данных Azure для PostgreSQL
+    - name: 'База данных Azure для PostgreSQL: базовые показатели безопасности для отдельного сервера'
       href: ../../postgresql/security-baseline.md
+    - name: 'База данных Azure для PostgreSQL: базовые показатели безопасности для гипермасштабирования'
+      href: ../../postgresql/postgresql-hyperscale-security-baseline.md
     - name: Базовые средства безопасности Azure Databricks
       href: ../../azure-databricks/security-baseline.md
     - name: Базовые средства безопасности Функций Azure
@@ -79,6 +81,8 @@
       href: ../../cosmos-db/security-baseline.md
     - name: Базовые уровень безопасности защищенного хранилища
       href: ../fundamentals/customer-lockbox-security-baseline.md
+    - name: Базовые средства безопасности Synapse Analytics
+      href: ../../data-lake-analytics/security-baseline.md
     - name: Базовые показатели безопасности Центров событий
       href: ../../event-hubs/security-baseline.md
     - name: Базовые показатели безопасности ExpressRoute
@@ -91,7 +95,15 @@
       href: ../../logic-apps/security-baseline.md
     - name: Базовые показатели безопасности Наблюдателя за сетями
       href: ../../network-watcher/security-baseline.md
+    - name: Базовые средства безопасности Service Fabric
+      href: ../../service-fabric/security-baseline.md
     - name: Базовые уровень безопасности Stream Analytics
       href: ../../stream-analytics/security-baseline.md
     - name: Базовые показатели безопасности Synapse Analytics
       href: ../../synapse-analytics/security-baseline.md
+    - name: Базовые средства безопасности Масштабируемых наборов виртуальных машин
+      href: ../../virtual-machine-scale-sets/security-baseline.md
+    - name: Базовые средства безопасности виртуальных машин Linux
+      href: ../../virtual-machines/linux/security-baseline.md
+    - name: Базовые средства безопасности виртуальных машин Windows
+      href: ../../virtual-machines/windows/security-baseline.md

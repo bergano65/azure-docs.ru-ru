@@ -3,24 +3,27 @@ title: Анализ затрат на Azure с помощью приложени
 description: В этой статье объясняется, как установить и использовать приложение Power BI Azure Cost Management.
 author: bandersmsft
 ms.author: banders
-ms.date: 06/16/2020
+ms.date: 07/13/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: benshy
-ms.openlocfilehash: 53340c72a6456b24b52cff6d7eda9d4a34db6564
-ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
+ms.openlocfilehash: bd5e2c999df180c80c58711a6428678b2bb4fefa
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84888206"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86537924"
 ---
 # <a name="analyze-cost-with-the-azure-cost-management-power-bi-app-for-enterprise-agreements-ea"></a>Анализ затрат с помощью приложения Power BI Azure Cost Management для Соглашений Enterprise (EA)
 
 В этой статье объясняется, как установить и использовать приложение Power BI Azure Cost Management. Это приложение помогает анализировать затраты на Azure в Power BI и управлять ими. Вы можете использовать это приложение для мониторинга затрат и тенденций использования, а также для поиска возможностей оптимизации затрат для снижения расходов.
 
-Вы можете скачать приложение в Power BI Desktop. Вы можете использовать это приложение "как есть" или изменить его, чтобы расширить возможности фильтров, представлений и визуализаций по умолчанию и настроить их в соответствии с вашими потребностями. Затем можно использовать приложение для объединения дополнительных данных и создания настраиваемых отчетов, чтобы получить комплексное представление об общих затратах компании.
+Вы можете использовать это приложение "как есть" или изменить его, чтобы расширить возможности фильтров, представлений и визуализаций по умолчанию и настроить их в соответствии с вашими потребностями. Затем можно использовать приложение для объединения дополнительных данных и создания настраиваемых отчетов, чтобы получить комплексное представление об общих затратах компании.
 
 В настоящее время приложение Power BI Azure Cost Management доступно только клиентам с [Соглашением Enterprise](https://azure.microsoft.com/pricing/enterprise-agreement/).
+
+> [!NOTE]
+> Приложения-шаблоны Power BI не поддерживают скачивание PBIX-файла.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

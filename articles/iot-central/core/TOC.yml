@@ -67,6 +67,8 @@
       href: concepts-app-templates.md
     - name: Что представляют собой шаблоны устройств?
       href: concepts-device-templates.md
+    - name: Полезные данные сообщения
+      href: concepts-telemetry-properties-commands.md
     - name: Взаимодействие устройств
       href: concepts-get-connected.md
     - name: Подключение устройств IoT Edge

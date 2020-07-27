@@ -1,21 +1,22 @@
 ---
-title: Создание лаборатории с помощью Azure DevTest Labs и шаблона Resource Manager
-description: В рамках этого руководства вы создадите лабораторию в Azure DevTest Labs с помощью шаблона Azure Resource Manager. Администратор лаборатории настраивает лабораторию, в которой он создает виртуальные машины и настраивает политики.
-ms.topic: tutorial
+title: Создание лаборатории с помощью Azure DevTest Labs и шаблона Azure Resource Manager
+description: В рамках этого руководства вы создадите лабораторию в Azure DevTest Labs с помощью шаблона Azure Resource Manager (шаблона ARM). Администратор лаборатории настраивает лабораторию, в которой он создает виртуальные машины и настраивает политики.
+ms.topic: quickstart
+ms.custom: subject-armqs
 ms.date: 06/26/2020
-ms.openlocfilehash: 22ba4ffeec22a45c07b096b0a754d08c8230dd8f
-ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
+ms.openlocfilehash: 8688b8265a8ca00a36a569ff4e067c9f36834c6d
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85476212"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86537553"
 ---
-# <a name="tutorial-set-up-a-lab-by-using-azure-devtest-labs-resource-manager-template"></a>Руководство по Настройка лаборатории с помощью Azure DevTest Labs (на основе шаблона Resource Manager)
-В рамках этого руководства вы создадите лабораторию с виртуальной машиной Windows Server 2019 Datacenter на основе шаблона Azure Resource Manager. 
+# <a name="quickstart-set-up-a-lab-by-using-azure-devtest-labs-arm-template"></a>Краткое руководство. Настройка лаборатории с помощью Azure DevTest Labs и шаблона ARM
+В рамках этого краткого руководства вы создадите лабораторию с виртуальной машиной Windows Server 2019 Datacenter на основе шаблона Azure Resource Manager (ARM). 
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Вот какие действия выполняются в этом руководстве:
+В этом кратком руководстве вы выполните следующие действия:
 
 > [!div class="checklist"]
 > * Изучение шаблона 
@@ -23,11 +24,13 @@ ms.locfileid: "85476212"
 > * Проверка шаблона
 > * Очистка ресурсов
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-dtl-create-lab-windows-vm%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Нет.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="review-the-template"></a>Изучение шаблона
 
@@ -46,7 +49,7 @@ ms.locfileid: "85476212"
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 Чтобы выполнить развертывание автоматически, нажмите кнопку ниже. 
 
-[![Развертывание в Azure](./media/create-lab-windows-vm-template/deploy-button.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-dtl-create-lab-windows-vm%2Fazuredeploy.json)
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-dtl-create-lab-windows-vm%2Fazuredeploy.json)
 
 1. Создайте **новую группу ресурсов**, чтобы ее можно было легко удалить позднее.
 1. Выберите **расположение** группы ресурсов. 
@@ -59,7 +62,7 @@ ms.locfileid: "85476212"
 
     :::image type="content" source="./media/create-lab-windows-vm-template/deploy-template-page.png" alt-text="Страница развертывания шаблона":::
 
-## <a name="verify-the-deployment"></a>Проверка развертывания
+## <a name="validate-the-deployment"></a>Проверка развертывания
 1. Выберите элемент **Уведомления** в верхней части экрана, чтобы просмотреть состояние развертывания, и щелкните ссылку **Развертывание выполняется**.
 
     :::image type="content" source="./media/create-lab-windows-vm-template/deployment-notification.png" alt-text="Развертывание уведомления":::
@@ -76,7 +79,7 @@ ms.locfileid: "85476212"
     > [!IMPORTANT] 
     > Не закрывайте эту страницу и выполните инструкции, приведенные в следующем разделе, чтобы удалить ненужные ресурсы и избежать затрат на работу лаборатории, а также виртуальной машины в Azure. Если вы хотите пройти следующее руководство, в рамках которого вы проверите доступ к виртуальной машине в лаборатории, очистку ресурсов лучше выполнить после этого. 
 
-## <a name="cleanup-resources"></a>Очистка ресурсов
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 1. Прежде всего удалите лабораторию, чтобы вы могли удалить группу ресурсов. Вы не сможете удалить группу ресурсов, если в ней содержится лаборатория. Чтобы удалить лабораторию, нажмите кнопку **Удалить** на панели инструментов. 
 
@@ -90,8 +93,7 @@ ms.locfileid: "85476212"
     :::image type="content" source="./media/create-lab-windows-vm-template/delete-resource-group-button.png" alt-text="Кнопка удаления группы ресурсов":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В рамках этого руководства вы создали лабораторию на виртуальной машине. Сведения о доступе к лаборатории см. в следующем руководстве:
+Из этого краткого руководства вы узнали, как создать лабораторию с виртуальной машиной. Сведения о доступе к лаборатории см. в следующем руководстве:
 
 > [!div class="nextstepaction"]
 > [Руководство. Доступ к лаборатории](tutorial-use-custom-lab.md)
-

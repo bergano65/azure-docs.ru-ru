@@ -83,10 +83,10 @@
       href: application-provisioning-config-problem-scim-compatibility.md
     - name: Сценарии использования SCIM и Graph
       href: scim-graph-scenarios.md
-    - name: Выбор метода подготовки
-      href: isv-automatic-provisioning-multi-tenant-apps.md
     - name: Подготовка к управлению кадрами
       items:
+        - name: Интеграция SuccessFactors
+          href: sap-successfactors-integration-reference.md
         - name: Справочник по атрибутам SuccessFactors
           href: sap-successfactors-attribute-reference.md
         - name: Справочник по атрибутам Workday

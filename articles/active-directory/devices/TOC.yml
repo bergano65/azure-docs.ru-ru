@@ -75,6 +75,8 @@
           href: enterprise-state-roaming-faqs.md
 - name: Справочник
   items:
+    - name: "Принудительное применение TLS\_1.2"
+      href: reference-device-registration-tls-1-2.md
     - name: Параметры GPO для службы Enterprise State Roaming
       href: enterprise-state-roaming-group-policy-settings.md
     - name: Параметры Windows для службы Enterprise State Roaming

@@ -96,6 +96,7 @@
     - name: Выпуски Enterprise и Basic
       href: concept-editions.md
     - name: Планирование затрат и управление ими
+      displayName: low priority VM
       href: concept-plan-manage-cost.md
     - name: Конструктор (перетаскивание ML)
       items:
@@ -166,6 +167,9 @@
             - name: Защита веб-служб с помощью TLS
               displayName: ssl
               href: how-to-secure-web-service.md
+            - name: Повышения устойчивости
+              displayName: 'high availability, disaster recovery'
+              href: how-to-high-availability-machine-learning.md
             - name: "Использование удостоверений Azure\_AD в развертываниях AKS"
               href: how-to-use-azure-ad-identity.md
             - name: Повторное создание ключей доступа к хранилищу
@@ -217,6 +221,9 @@
         - name: Настройка программных сред
           displayName: 'pip, Conda, anaconda'
           href: how-to-use-environments.md
+        - name: Использование частных пакетов Python
+          displayName: 'pip, Conda, anaconda'
+          href: how-to-use-private-python-packages.md
         - name: Включение ведения журналов
           displayName: 'troubleshoot, log, files, tracing'
           href: how-to-enable-logging.md
@@ -356,6 +363,9 @@
           href: how-to-deploy-and-where.md
         - name: Сценарии развертывания
           items:
+            - name: Использование существующих моделей
+              displayName: publish existing model
+              href: how-to-deploy-existing-model.md
             - name: Вычислительные операции Машинного обучения Azure
               href: how-to-deploy-local-container-notebook-vm.md
             - name: Служба Azure Kubernetes
@@ -374,18 +384,15 @@
               href: how-to-deploy-functions.md
             - name: Когнитивный поиск Azure
               href: how-to-deploy-model-cognitive-search.md
-            - name: устройство Azure IoT Edge.
-              href: /azure/iot-edge/tutorial-deploy-machine-learning?context=azure/machine-learning/context/ml-context
+            - name: Использование пользовательского образа Docker
+              href: how-to-deploy-custom-docker-image.md
+            - name: IoT Edge
+              href: /azure/iot-edge/tutorial-deploy-machine-learning?context=azure/machine-learning/service/context/ml-context
             - name: Вывод ППВМ
               href: how-to-deploy-fpga-web-service.md
-            - name: Пользовательские образы Docker
-              href: how-to-deploy-custom-docker-image.md
-            - name: 'Модели Машинного обучения, отличающиеся от Azure'
-              displayName: publish existing model
-              href: how-to-deploy-existing-model.md
         - name: Устранение неполадок и отладка
           href: how-to-troubleshoot-deployment.md
-        - name: Вызов конечной точки службы
+        - name: Создание клиентов
           displayName: create client consume request response synchronous
           href: how-to-consume-web-service.md
         - name: Мониторинг моделей
@@ -393,8 +400,6 @@
             - name: Сбор и оценка данных модели
               displayName: track production
               href: how-to-enable-data-collection.md
-            - name: Определение смещения данных
-              href: how-to-monitor-data-drift.md
             - name: Мониторинг с помощью Application Insights
               href: how-to-enable-app-insights.md
         - name: Развертывание зашифрованной службы для операций вывода

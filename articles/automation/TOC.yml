@@ -14,6 +14,9 @@
       href: automation-quickstart-create-runbook.md
     - name: Включение Desired State Configuration для виртуальной машины
       href: automation-quickstart-dsc-configuration.md
+    - name: 'Создание учетной записи службы автоматизации: шаблон Resource Manager'
+      displayName: Resource Manager
+      href: quickstart-create-automation-account-template.md
 - name: Учебники
   items:
     - name: Создание графического модуля runbook
@@ -26,7 +29,7 @@
       href: learn/automation-tutorial-runbook-textual-python2.md
 - name: Примеры
   items:
-    - name: Встроенные компоненты Политики Azure
+    - name: Встроенные политики службы "Политика Azure"
       displayName: 'samples, policies, definitions'
       href: ./policy-samples.md
 - name: Основные понятия
@@ -58,7 +61,7 @@
         - name: Создание учетной записи службы автоматизации на портале Azure
           href: automation-create-standalone-account.md
         - name: Создание учетной записи службы автоматизации с помощью шаблона Resource Manager
-          href: automation-create-account-template.md
+          href: quickstart-create-automation-account-template.md
         - name: Настройка аутентификации с помощью Amazon Web Services
           href: automation-config-aws-account.md
         - name: "Настройка проверки подлинности с помощью Azure\_AD"
@@ -177,6 +180,18 @@
               href: automation-dsc-extension-history.md
             - name: Устранение неполадок со State Configuration
               href: troubleshoot/desired-state-configuration.md
+            - name: Сценарии
+              items:
+                - name: Настройка данных на основе STIG
+                  href: automation-dsc-configuration-based-on-stig.md
+                - name: Настройка данных в большом масштабе
+                  href: automation-dsc-config-data-at-scale.md
+                - name: Создание конфигурации на основе существующих серверов
+                  href: automation-dsc-config-from-server.md
+                - name: Преобразование конфигураций в составные ресурсы
+                  href: automation-dsc-create-composite.md
+                - name: Исправление несоответствующих серверов
+                  href: automation-dsc-remediate.md
         - name: Отслеживание изменений и инвентаризация
           items:
             - name: Обзор

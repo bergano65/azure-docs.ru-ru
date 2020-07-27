@@ -1,6 +1,6 @@
 ---
-title: Azure Front Door
-description: В этой статье приведен актуальный список последних изменений, внесенных в переднюю дверцу Azure.
+title: Последние изменения в Azure Front Door
+description: В этой статье приведен актуальный список последних изменений, внесенных в Azure Front Door.
 services: frontdoor
 documentationcenter: ''
 author: megan-beatty
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 4/30/2020
 ms.author: mebeatty
-ms.openlocfilehash: d00ed607322205daefd80c111b83483524c4a742
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 26e3e242a5085e228e426ad2cba51b1f1982ad74
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85321526"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86521485"
 ---
 # <a name="whats-new-in-azure-front-door"></a>Новые возможности в Azure Front Door
 
@@ -32,7 +32,7 @@ ms.locfileid: "85321526"
 
 |Компонент  |Описание  |Дата добавления  |
 |---------|---------|---------|
-| Обработчик правил, общедоступный | Настройка обработки HTTP-запросов в пограничной среде. Дополнительные сведения см. в [обзоре обработчика правил](front-door-rules-engine.md). |июнь 2020 г. |
+| Общедоступная версия обработчика правил | Настройка обработки HTTP-запросов в пограничной среде. Дополнительные сведения см. в [обзоре обработчика правил](front-door-rules-engine.md). |Июнь 2020 г. |
 | Обработчик правил (предварительная версия) | Настройка обработки HTTP-запросов в пограничной среде. Дополнительные сведения см. в [обзоре обработчика правил](front-door-rules-engine.md). |Апрель 2020 г. |
 
 

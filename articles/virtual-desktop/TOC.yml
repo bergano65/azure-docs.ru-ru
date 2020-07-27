@@ -46,6 +46,8 @@
           href: expand-existing-host-pool.md
         - name: Управление группами приложений с помощью PowerShell
           href: manage-app-groups-powershell.md
+    - name: Удаление пула узлов
+      href: delete-host-pool.md
     - name: Создание контейнера профилей
       items:
         - name: Использование файлового ресурса на основе виртуальной машины
@@ -72,6 +74,8 @@
           href: set-up-customize-master-image.md
         - name: Установка Office в главный образ VHD
           href: install-office-on-wvd-master-image.md
+    - name: Автоматическое масштабирование узлов сеанса
+      href: set-up-scaling-script.md
     - name: Настройка веб-канала
       href: customize-feed-for-virtual-desktop-users.md
     - name: Использование функций диагностики службы
@@ -108,6 +112,8 @@
       href: store-fslogix-profile.md
     - name: Интеграция с партнерскими решениями
       href: partners.md
+    - name: Вопросы и ответы о Виртуальном рабочем столе Windows
+      href: faq.md
     - name: "Windows\_10 Корпоративная с поддержкой нескольких сеансов: часто задаваемые вопросы"
       href: windows-10-multisession-faq.md
     - name: Расположения данных

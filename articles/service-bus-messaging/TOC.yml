@@ -13,7 +13,7 @@
       items:
         - name: Создание очереди служебной шины
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: service-bus-quickstart-portal.md
             - name: Azure PowerShell
               href: service-bus-quickstart-powershell.md
@@ -110,6 +110,9 @@
                   href: authenticate-application.md
         - name: Встроенные средства управления безопасностью
           href: service-bus-messaging-security-controls.md
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
         - name: Безопасность сети
           href: network-security.md
 - name: Практические руководства

@@ -46,9 +46,9 @@
       items:
         - name: "1.\_Проектирование базы данных"
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: tutorial-design-database-using-azure-portal.md
-            - name: Azure CLI
+            - name: Azure CLI;
               href: tutorial-design-database-using-azure-cli.md
             - name: Azure PowerShell
               href: tutorial-design-database-using-powershell.md
@@ -231,15 +231,15 @@
               href: howto-optimize-query-time-with-toast-table-storage-strategy.md
         - name: Управление брандмауэром
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: howto-manage-firewall-using-portal.md
             - name: Azure CLI
               href: howto-manage-firewall-using-cli.md
         - name: Восстановление сервера
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: howto-restore-server-portal.md
-            - name: Azure CLI
+            - name: Azure CLI;
               href: howto-restore-server-cli.md
             - name: Azure PowerShell
               href: howto-restore-server-powershell.md
@@ -257,23 +257,23 @@
               href: howto-tls-configurations.md
         - name: Настройка параметров сервера
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: howto-configure-server-parameters-using-portal.md
-            - name: Azure CLI
+            - name: Azure CLI;
               href: howto-configure-server-parameters-using-cli.md
             - name: Azure PowerShell
               href: howto-configure-server-parameters-using-powershell.md
         - name: Автоматическое увеличение хранилища
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: howto-auto-grow-storage-portal.md
-            - name: Azure CLI
+            - name: Azure CLI;
               href: howto-auto-grow-storage-cli.md
             - name: Azure PowerShell
               href: howto-auto-grow-storage-powershell.md
         - name: Журналы доступа
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: howto-configure-server-logs-in-portal.md
             - name: Azure CLI
               href: howto-configure-server-logs-using-cli.md
@@ -293,19 +293,19 @@
               href: howto-database-threat-protection-portal.md
         - name: Виртуальная сеть
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: howto-manage-vnet-using-portal.md
             - name: Azure CLI
               href: howto-manage-vnet-using-cli.md
         - name: Приватный канал
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: howto-configure-privatelink-portal.md
             - name: Azure CLI
               href: howto-configure-privatelink-cli.md
         - name: Шифрование данных
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: howto-data-encryption-portal.md
             - name: Azure CLI
               href: howto-data-encryption-cli.md
@@ -317,9 +317,9 @@
               href: howto-double-encryption.md
         - name: Перезапуск сервера
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: howto-restart-server-portal.md
-            - name: Azure CLI
+            - name: Azure CLI;
               href: howto-restart-server-cli.md
             - name: Azure PowerShell
               href: howto-restart-server-powershell.md
@@ -351,6 +351,8 @@
           items:
             - name: Создание оповещений на основе метрик
               href: howto-hyperscale-alert-on-metric.md
+            - name: Журналы баз данных Access
+              href: howto-hyperscale-logging.md
         - name: Диагностика
           items:
             - name: Устранение ошибок подключения

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/02/2018
 ms.author: memildin
-ms.openlocfilehash: 3b7181550fd76f158ec04e9779f4301bd74484e1
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.openlocfilehash: 72c0c33c973219a9701c8a7c8d45324681e14850
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80435978"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86529783"
 ---
 # <a name="quickstart-onboard-linux-computers-to-azure-security-center"></a>Краткое руководство. Подключение компьютеров Linux к Центру безопасности Azure
 Когда вы подключите подписки Azure, можно включить Центр безопасности для ресурсов Linux, работающих за пределами среды Azure (например, в локальной среде или других облаках), подготовив агент Linux. Агент называется агентом Log Analytics, но он также известен как агент OMS.
@@ -56,7 +56,7 @@ ms.locfileid: "80435978"
 
    ![Установка агента.][5]
 
-Журналы для агента можно найти здесь: */var/opt/microsoft/omsagent/\<ИД_рабочей_области>/log/* .
+Журналы для агента можно найти здесь: */var/opt/microsoft/omsagent/\<workspace id>/log/*
 
   ![Журналы агента][6]
 

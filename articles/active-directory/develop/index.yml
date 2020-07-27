@@ -9,12 +9,12 @@ metadata:
   ms.service: active-directory
   ms.subservice: develop
   ms.workload: identity
-  ms.openlocfilehash: 689fb9953f6de9c717d774e222824c5b3701527e
-  ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+  ms.openlocfilehash: e17e6195d629238c9c719d8e34780593129ae244
+  ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 07/10/2020
-  ms.locfileid: "86230355"
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "87027076"
 landingContent:
 - title: Общие сведения о платформе удостоверений Майкрософт
   linkLists:
@@ -62,7 +62,7 @@ landingContent:
     links:
     - text: ASP.NET
       url: quickstart-v2-aspnet-webapp.md
-    - text: ASP.NET Core
+    - text: ASP.NET Core
       url: quickstart-v2-aspnet-core-webapp.md
     - text: Python
       url: quickstart-v2-python-webapp.md
@@ -76,7 +76,7 @@ landingContent:
       url: quickstart-v2-ios.md
     - text: Классическое приложение Windows (WPF)
       url: quickstart-v2-windows-desktop.md
-- title: Защита веб-API
+- title: Веб-API
   linkLists:
   - linkListType: get-started
     links:
@@ -92,11 +92,27 @@ landingContent:
       url: microsoft-graph-intro.md
     - text: Общие сведения об аутентификации Microsoft Graph
       url: https://docs.microsoft.com/graph/auth/
-- title: SAML 2.0
+- title: Протоколы
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: OAuth 2.0 и OpenID Connect
+      url: active-directory-v2-protocols.md
+    - text: SAML 2.0
+      url: active-directory-saml-protocol-reference.md
+- title: Бизнес — клиент (B2C)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет Azure AD B2C?
+      url: ../../active-directory-b2c/overview.md
+    - text: Обзор технических возможностей и компонентов
+      url: ../../active-directory-b2c/technical-overview.md
+- title: Управляемые удостоверения
   linkLists:
   - linkListType: get-started
     links:
-    - text: Как в Azure AD используется протокол SAML
-      url: active-directory-saml-protocol-reference.md
-    - text: Единый вход SAML в Azure AD
-      url: single-sign-on-saml-protocol.md
+    - text: Сведения об управляемых удостоверениях для ресурсов Azure
+      url: ../managed-identities-azure-resources/overview.md
+    - text: Управляемые удостоверения и виртуальные машины Azure
+      url: ../managed-identities-azure-resources/how-managed-identities-work-vm.md

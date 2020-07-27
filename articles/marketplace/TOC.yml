@@ -60,6 +60,8 @@
         - name: Преимущества использования Marketplace
           href: ./gtm-your-marketplace-benefits.md
           items:
+            - name: Преимущество обязательства потребления Azure
+              href: ./azure-consumption-commitment-benefit.md
             - name: Участие партнеров в совместных продажах
               href: ./marketplace-co-sell.md
             - name: Предпочтительные решения

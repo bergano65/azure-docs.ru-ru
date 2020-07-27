@@ -10,6 +10,8 @@
       href: quickstart-create-templates-use-the-portal.md
     - name: Создание шаблонов — VS Code
       href: quickstart-create-templates-use-visual-studio-code.md
+    - name: Создание и развертывание спецификации шаблона
+      href: quickstart-create-template-specs.md
     - name: Службы Azure
       items:
         - name: Искусственный интеллект и машинное обучение
@@ -28,6 +30,8 @@
               href: ../../analysis-services/analysis-services-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Databricks
               href: /azure/databricks/scenarios/quickstart-create-databricks-workspace-resource-manager-template?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Фабрика данных
+              href: ../../data-factory/quickstart-create-data-factory-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Центры событий
               href: ../../event-hubs/event-hubs-resource-manager-namespace-event-hub.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: "HDInsight\_— Hadoop"
@@ -114,6 +118,8 @@
           items:
             - name: Помощник
               href: ../../advisor/advisor-alerts-arm.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Автоматизация
+              href: ../../automation/quickstart-create-automation-account-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Резервное копирование
               href: ../../backup/quick-backup-vm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Управление затратами и выставление счетов
@@ -201,11 +207,17 @@
         - name: 3. Создание конвейера
           displayName: Devop
           href: deployment-tutorial-pipeline.md
+    - name: Спецификации шаблонов
+      items:
+        - name: Создание решений с использованием связанных шаблонов
+          href: template-specs-create-linked.md
+        - name: Развертывание в качестве связанного шаблона
+          href: template-specs-deploy-linked-template.md
     - name: Дополнительные шаблоны
       items:
         - name: Использование справочника по шаблонам
           href: template-tutorial-use-template-reference.md
-        - name: Создание нескольких экземпляров
+        - name: Развертывание нескольких экземпляров
           displayName: 'iteration,copy'
           href: template-tutorial-create-multiple-instances.md
         - name: Настройка развертывания ресурсов по порядку
@@ -240,6 +252,8 @@
       href: template-best-practices.md
     - name: Часто задаваемые вопросы
       href: frequently-asked-questions.md
+    - name: Спецификации шаблонов
+      href: template-specs.md
     - name: Шаблоны для обеспечения согласованности данных в облаке
       href: templates-cloud-consistency.md
     - name: Режимы развертывания

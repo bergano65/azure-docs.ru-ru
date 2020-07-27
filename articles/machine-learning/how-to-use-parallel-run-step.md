@@ -6,17 +6,17 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-ms.reviewer: trbye, jmartens, larryfr
+ms.reviewer: jmartens, larryfr
 ms.author: tracych
 author: tracychms
-ms.date: 06/23/2020
+ms.date: 07/16/2020
 ms.custom: Build2020, tracking-python
-ms.openlocfilehash: e5665bd5ad2baa35b497c8b4fe19b0cb93bdb2a7
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: bf0aa51c64eea0aa58e679c4f9f44686ce7b9ffb
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86023386"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86520635"
 ---
 # <a name="run-batch-inference-on-large-amounts-of-data-by-using-azure-machine-learning"></a>Выполнение пакетного вывода больших объемов данных с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -33,6 +33,7 @@ ms.locfileid: "86023386"
 > * Создание пользовательского скрипта вывода
 > * Создание [конвейера машинного обучения](concept-ml-pipelines.md), содержащего функцию ParallelRunStep пакетный вывод, на тестовых изображениях MNIST 
 > * Повторная отправка пакетного вывода с новыми входными данными и параметрами 
+> * Просмотрите результаты.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -159,9 +160,7 @@ input_mnist_ds_consumption = DatasetConsumptionConfig("minist_param_config", pip
 ```python
 from azureml.pipeline.core import Pipeline, PipelineData
 
-output_dir = PipelineData(name="inferences", 
-                          datastore=def_data_store, 
-                          output_path_on_compute="mnist/results")
+output_dir = PipelineData(name="inferences", datastore=def_data_store)
 ```
 
 ## <a name="prepare-the-model"></a>Подготовка модели
@@ -266,17 +265,17 @@ file_path = os.path.join(script_dir, "<file_name>")
 
 ### <a name="prepare-the-environment"></a>Подготовка среды
 
-Для начала укажите зависимости для скрипта. Это позволяет установить пакеты PIP, а также настроить среду. Всегда добавляйте пакеты **azureml-core** и **azureml-dataprep[pandas, fuse]** .
+Для начала укажите зависимости для скрипта. Это позволяет установить пакеты PIP, а также настроить среду.
 
-Если вы используете пользовательский образ Docker (user_managed_dependencies=True), также необходимо установить Conda.
+Обязательно включайте **azureml-core** и **azureml-dataset-runtime[pandas, fuse]** в список пакетов pip. Если вы используете пользовательский образ Docker (user_managed_dependencies=True), также необходимо установить Conda.
 
 ```python
 from azureml.core.environment import Environment
 from azureml.core.conda_dependencies import CondaDependencies
 from azureml.core.runconfig import DEFAULT_GPU_IMAGE
 
-batch_conda_deps = CondaDependencies.create(pip_packages=["tensorflow==1.13.1", "pillow",
-                                                          "azureml-core", "azureml-dataprep[pandas, fuse]"])
+batch_conda_deps = CondaDependencies.create(pip_packages=["tensorflow==1.15.2", "pillow", 
+                                                          "azureml-core", "azureml-dataset-runtime[pandas, fuse]"])
 
 batch_env = Environment(name="batch_environment")
 batch_env.python.conda_dependencies = batch_conda_deps
@@ -286,7 +285,7 @@ batch_env.docker.base_image = DEFAULT_GPU_IMAGE
 
 ### <a name="specify-the-parameters-using-parallelrunconfig"></a>Укажите параметры с помощью скрипта ParallelRunConfig
 
-`ParallelRunConfig` — это основная конфигурация для экземпляра `ParallelRunStep` в конвейере Машинного обучения Azure. Он пригодится вам как оболочка скрипта для настройки необходимых параметров, включая перечисленные ниже.
+`ParallelRunConfig` — это основная конфигурация для экземпляра `ParallelRunStep` в конвейере Машинного обучения Azure. Он пригодится вам как оболочка скрипта для настройки необходимых параметров, включая перечисленные ниже записи:
 - `entry_script`: Локальный путь к пользовательскому скрипту, который будет выполняться параллельно на нескольких узлах. Если присутствует `source_directory`, используйте относительный путь. В противном случае используйте любой путь, доступный на компьютере.
 - `mini_batch_size`: Размер мини-пакета, который передается в одном вызове `run()`. (необязательно; значение по умолчанию — файлы `10` для FileDataset и `1MB` для TabularDataset.)
     - Для `FileDataset` здесь указывается количество файлов; минимальное допустимое значение — `1`. Несколько файлов можно объединить в один мини-пакет.
@@ -392,6 +391,28 @@ pipeline_run_2 = experiment.submit(pipeline,
 )
 
 pipeline_run_2.wait_for_completion(show_output=True)
+```
+## <a name="view-the-results"></a>Просмотр результатов
+
+Результаты приведенного выше запуска записываются в хранилище данных, указанное в объекте PipelineData, как выходные данные, которые в этом случае называются *выводами*. Результаты хранятся в контейнере больших двоичных объектов по умолчанию. Вы можете перейти к учетной записи хранения и просмотреть ее с помощью Обозревателя службы хранилища (путь к файлу: azureml-blobstore-*GUID*/azureml/*RunId*/*output_dir*).
+
+Вы также можете скачать эти данные для просмотра результатов. Ниже приведен пример кода для просмотра первых 10 строк.
+
+```python
+import pandas as pd
+import tempfile
+
+batch_run = pipeline_run.find_step_run(parallelrun_step.name)[0]
+batch_output = batch_run.get_output_data(output_dir.name)
+
+target_dir = tempfile.mkdtemp()
+batch_output.download(local_path=target_dir)
+result_file = os.path.join(target_dir, batch_output.path_on_datastore, parallel_run_config.append_row_file_name)
+
+df = pd.read_csv(result_file, delimiter=":", header=None)
+df.columns = ["Filename", "Prediction"]
+print("Prediction has ", df.shape[0], " rows")
+df.head(10) 
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

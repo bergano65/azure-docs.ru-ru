@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: a5829057aed913ea824cbd2fd6b52369b5e70d88
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: fada393dcab61cf00a0a3befcf4af3660bf625dc
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85801854"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536527"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-linux-device"></a>Краткое руководство. Развертывание модуля IoT Edge на виртуальном устройстве Linux
 
@@ -63,7 +63,7 @@ ms.locfileid: "85801854"
 
 Для целей этого руководства можно использовать бесплатный уровень. Если у вас уже есть центр Интернета вещей, который вы использовали ранее, вы можете продолжить работу с ним.
 
-При помощи следующего кода создается бесплатный центр **F1** в группе ресурсов **IoTEdgeResources**. Замените `{hub_name}` уникальным именем центра Интернета вещей.
+При помощи следующего кода создается бесплатный центр **F1** в группе ресурсов **IoTEdgeResources**. Замените `{hub_name}` уникальным именем центра Интернета вещей. Создание Центра Интернета вещей может занять несколько минут.
 
    ```azurecli-interactive
    az iot hub create --resource-group IoTEdgeResources --name {hub_name} --sku F1 --partition-count 2
@@ -81,7 +81,7 @@ ms.locfileid: "85801854"
 
 Так как поведение и управление устройств IoT Edge и обычных устройств Интернета вещей отличаются, укажите в удостоверении, что это устройство IoT Edge, с помощью флага `--edge-enabled`.
 
-1. Чтобы создать устройство с именем **myEdgeDevice** в Центре Интернета вещей, введите следующую команду в Azure Cloud Shell.
+1. Чтобы создать устройство с именем **myEdgeDevice** в своем центре, введите следующую команду в Azure Cloud Shell.
 
    ```azurecli-interactive
    az iot hub device-identity create --device-id myEdgeDevice --edge-enabled --hub-name {hub_name}
@@ -233,10 +233,19 @@ ms.locfileid: "85801854"
 
 Если вы создали виртуальную машину и Центр Интернета вещей в новой группе ресурсов, можно удалить эту группу и все связанные с ней ресурсы. Внимательно проверьте содержимое группы ресурсов. В ней не должно быть важных ресурсов. Если вы не хотите удалять всю группу, можно удалить отдельные ресурсы.
 
-Удалите группу **IoTEdgeResources**.
+> [!IMPORTANT]
+> Удаление группы ресурсов — процесс необратимый.
+
+Удалите группу **IoTEdgeResources**. Удаление группы ресурсов может занять несколько минут.
 
 ```azurecli-interactive
 az group delete --name IoTEdgeResources
+```
+
+Чтобы проверить, удалена ли группа ресурсов, просмотрите список групп ресурсов.
+
+```azurecli-interactive
+az group list
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

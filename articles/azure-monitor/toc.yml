@@ -143,7 +143,7 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: видны узлы
+    - name: Предупреждения
       items:
         - name: Обзор
           href: platform/alerts-overview.md
@@ -157,6 +157,11 @@
       href: visualizations.md
     - name: Интеграция с партнерскими решениями
       href: platform/partners.md
+    - name: Безопасность
+      items:
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./platform/security-controls-policy.md
 - name: Практические руководства
   items:
     - name: Сценарии
@@ -244,8 +249,6 @@
                       href: platform/diagnostics-extension-to-application-insights.md
                     - name: Журнал версий
                       href: platform/diagnostics-extension-versions.md
-                    - name: Формат JSON Lines для журналов ресурсов
-                      href: platform/resource-logs-append-blobs.md
                     - name: Устранение неполадок
                       href: platform/diagnostics-extension-troubleshooting.md
                 - name: Linux
@@ -264,9 +267,9 @@
                 - name: Агенты Linux
                   href: platform/agent-linux.md
                 - name: Расширение виртуальной машины для Windows
-                  href: ../virtual-machines/windows/extensions-oms.md?toc=/azure/azure-monitor/toc.json
+                  href: ../virtual-machines/extensions/oms-windows.md?toc=/azure/azure-monitor/toc.json
                 - name: Расширение виртуальной машины для Linux
-                  href: ../virtual-machines/linux/extensions-oms.md?toc=/azure/azure-monitor/toc.json
+                  href: ../virtual-machines/extensions/oms-linux.md?toc=/azure/azure-monitor/toc.json
                 - name: Шлюз службы анализа журналов
                   href: platform/gateway.md
                 - name: Управление агентами
@@ -430,7 +433,7 @@
         - name: Масштабирование с использованием пользовательских метрик
           href: platform/autoscale-custom-metric.md
         - name: Масштабирование масштабируемых наборов виртуальных машин
-          href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md?toc=/azure/azure-monitor/toc.json
+          href: ../virtual-machine-scale-sets/tutorial-autoscale-powershell.md?toc=/azure/azure-monitor/toc.json
         - name: Масштабирование масштабируемых наборов виртуальных машин с помощью шаблонов Resource Manager
           href: platform/autoscale-virtual-machine-scale-sets.md
         - name: Использование веб-перехватчиков и уведомлений по электронной почте
@@ -446,7 +449,7 @@
             - name: Доступность
               href: app/monitor-web-app-availability.md
             - name: Оповещения о метриках
-              href: app/alerts.md
+              href: ./platform/alerts-log.md
         - name: Правила генерации оповещений метрик
           items:
             - name: Управление оповещениями метрик
@@ -474,19 +477,20 @@
             - name: Оповещение о событии журнала действий
               href: platform/alerts-activity-log.md
             - name: Перенос событий управления в оповещения журнала действий
-              href: platform/migrate-management-alerts.md
+              href: ./platform/activity-log-alerts.md
             - name: Схема веб-перехватчика
               href: platform/activity-log-alerts-webhook.md
         - name: Оповещения о работоспособности служб
           items:
             - name: Просмотр уведомлений
-              href: platform/service-notifications.md
+              href: ../service-health/service-notifications.md
             - name: Настройка оповещений о событиях уведомлений
               href: platform/alerts-activity-log-service-notifications.md
         - name: Уведомления и действия
           items:
             - name: Правила действий (предварительная версия)
               href: platform/alerts-action-rules.md
+              displayName: 'Azure CLI, az monitor action rule'
             - name: Создание группы действий
               href: platform/action-groups.md
             - name: Общая схема оповещений
@@ -556,7 +560,7 @@
         - name: Обзор Application Insights
           href: app/app-insights-overview.md
         - name: ВОПРОСЫ И ОТВЕТЫ
-          href: app/troubleshoot-faq.md
+          href: ./faq.md
         - name: Мониторинг на основе кода
           items:
             - name: ASP.NET Core
@@ -970,7 +974,11 @@
         - name: Анализ данных с помощью запросов к журналу
           href: insights/container-insights-log-search.md
         - name: Оповещение
-          href: insights/container-insights-alerts.md
+          items:
+            - name: Создание правил генерации оповещений для журнала
+              href: insights/container-insights-log-alerts.md
+            - name: Создание правил генерации оповещений для метрик
+              href: insights/container-insights-metric-alerts.md
         - name: Управление агентами
           href: insights/container-insights-manage-agent.md
         - name: Настройка очистки метрик Prometheus
@@ -1016,6 +1024,7 @@
       items:
         - name: Обзор
           href: insights/solutions.md
+          displayName: 'Azure CLI, az monitor log-analytics'
         - name: Целевые решения
           href: insights/solution-targeting.md
         - name: Доступные решения
@@ -1028,8 +1037,6 @@
               href: insights/capacity-performance.md
             - name: Мониторинг контейнеров Docker и Windows
               href: insights/containers.md
-            - name: Аналитика Key Vault
-              href: insights/azure-key-vault.md
             - name: Сети
               items:
                 - name: Анализ сетевой активности
@@ -1173,7 +1180,7 @@
     - name: Изменения в терминологии
       href: terminology.md
     - name: Описание данных
-      href: 'https://docs.microsoft.com/azure/azure-monitor/reference/'
+      href: /azure/azure-monitor/reference/
     - name: Поддерживаемые метрики
       items:
         - name: Метрики платформы
@@ -1288,6 +1295,8 @@
         - name: Изменение формата хранилища BLOB-объектов
           displayname: Diagnostic settings
           href: platform/resource-logs-blob-format.md
+        - name: Аналитика Key Vault (нерекомендуемый компонент)
+          href: insights/azure-key-vault-deprecated.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

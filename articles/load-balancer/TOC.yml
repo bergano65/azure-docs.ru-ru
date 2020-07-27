@@ -18,17 +18,19 @@
       href: quickstart-create-standard-load-balancer-powershell.md
     - name: Создание подсистемы балансировки нагрузки (шаблон ARM)
       href: quickstart-load-balancer-standard-public-template.md
-    - name: "Создание внутренней подсистемы балансировки нагрузки\_— портал"
-      href: tutorial-load-balancer-standard-internal-portal.md
-    - name: "Создание внутренней подсистемы балансировки нагрузки\_— Azure\_CLI"
-      href: load-balancer-get-started-ilb-arm-cli.md
-    - name: "Создание внутренней подсистемы балансировки нагрузки\_— Azure PowerShell"
-      href: load-balancer-get-started-ilb-arm-ps.md
-    - name: "Создание внутренней подсистемы балансировки нагрузки\_— шаблон ARM"
-      href: load-balancer-get-started-ilb-arm-template.md
   expanded: true
 - name: Учебники
   items:
+    - name: Внутренний балансировщик нагрузки
+      items:
+        - name: "Создание внутренней подсистемы балансировки нагрузки\_— портал"
+          href: tutorial-load-balancer-standard-internal-portal.md
+        - name: "Создание внутренней подсистемы балансировки нагрузки\_— Azure\_CLI"
+          href: load-balancer-get-started-ilb-arm-cli.md
+        - name: "Создание внутренней подсистемы балансировки нагрузки\_— Azure PowerShell"
+          href: load-balancer-get-started-ilb-arm-ps.md
+        - name: "Создание внутренней подсистемы балансировки нагрузки\_— шаблон ARM"
+          href: load-balancer-get-started-ilb-arm-template.md
     - name: Распределение нагрузки виртуальных машин в пределах зон доступности
       href: tutorial-load-balancer-standard-public-zone-redundant-portal.md
     - name: Балансировка нагрузки виртуальных машин в пределах определенной зоны доступности
@@ -37,9 +39,9 @@
       href: tutorial-load-balancer-port-forwarding-portal.md
 - name: Примеры
   items:
-    - name: Azure CLI
+    - name: Azure CLI;
       href: cli-samples.md
-    - name: Azure PowerShell
+    - name: Azure PowerShell;
       href: powershell-samples.md
 - name: Основные понятия
   items:
@@ -73,6 +75,8 @@
       href: load-balancer-security-controls.md
     - name: Управление серверным пулом
       href: backend-pool-management.md
+    - name: Load Balancer ценовой категории "Стандартный" и Масштабируемые наборы виртуальных машин
+      href: load-balancer-standard-virtual-machine-scale-sets.md
 - name: Практическое руководство
   items:
     - name: Масштабируемые наборы виртуальных машин
@@ -97,13 +101,13 @@
           href: configure-load-balancer-outbound-portal.md
         - name: Azure CLI
           href: configure-load-balancer-outbound-cli.md
-        - name: Azure PowerShell
+        - name: Azure PowerShell;
           href: configure-load-balancer-outbound-powershell.md
     - name: Создание общедоступной службы Azure Load Balancer с поддержкой IPv6
       items:
-        - name: Azure CLI
+        - name: Azure CLI;
           href: 'https://docs.microsoft.com/azure/virtual-network/virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-cli'
-        - name: Azure PowerShell
+        - name: Azure PowerShell;
           href: 'https://docs.microsoft.com/azure/virtual-network/virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell'
         - name: Шаблон Azure Resource Manager
           href: 'https://docs.microsoft.com/azure/virtual-network/ipv6-configure-standard-load-balancer-template-json'

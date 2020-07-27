@@ -11,7 +11,7 @@
 - name: Практические руководства
   items:
     - name: Предварительные требования
-      href: hpc-cache-prereqs.md
+      href: hpc-cache-prerequisites.md
     - name: Создание кэша
       href: hpc-cache-create.md
     - name: Добавление хранилища
@@ -46,6 +46,8 @@
   items:
     - name: Открытие запроса в службу поддержки
       href: hpc-cache-support-ticket.md
+    - name: Настройка Azure CLI для Azure HPC Cache
+      href: az-cli-prerequisites.md
     - name: Обход параметров брандмауэра для учетной записи хранения больших двоичных объектов
       href: hpc-cache-blob-firewall-fix.md
     - name: Устранение неполадок с созданием целевого расположения хранилища NFS
@@ -56,5 +58,5 @@
       href: customer-keys.md
     - name: Использование Azure NetApp Files с Azure HPC Cache
       href: hpc-cache-netapp.md
-    - name: Видео
+    - name: Видеоролики
       href: 'https://azure.microsoft.com/resources/videos/index/?service=hpc-cache'

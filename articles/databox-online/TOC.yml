@@ -123,8 +123,10 @@
           href: azure-stack-edge-contact-microsoft-support.md
         - name: Монитор
           href: azure-stack-edge-monitor.md
-        - name: Возврат или замена устройства
+        - name: Возврат устройства
           href: azure-stack-edge-return-device.md
+        - name: Замена устройства
+          href: azure-stack-edge-replace-device.md
     - name: Заметки о выпуске
       items:
         - name: "2007\_— текущая версия"
@@ -137,6 +139,14 @@
           href: data-box-gateway-1905-release-notes.md
         - name: Общедоступная версия
           href: data-box-gateway-release-notes.md
+    - name: Справочник
+      items:
+        - name: Azure PowerShell
+          href: 'https://docs.microsoft.com/powershell/module/az.stackedge/?view=azps-4.4.0#stack_edge'
+        - name: REST API
+          href: 'https://docs.microsoft.com/rest/api/databoxedgegateway'
+        - name: Пакет SDK для .NET
+          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/databoxedge/databoxgateway?view=azure-dotnet'
 - name: Ресурсы
   items:
     - name: Примеры модуля Azure Stack Edge на C# (.NET)

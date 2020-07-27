@@ -939,8 +939,6 @@
           href: ./control-network-traffic.md
         - name: Необходимые IP-адреса для групп безопасности сети и определяемых пользователем маршрутов
           href: ./hdinsight-management-ip-addresses.md
-        - name: Теги службы для Брандмауэра Azure
-          href: ./hdinsight-service-tags.md
         - name: Шифрование управляемых клиентом ключей
           href: ./disk-encryption.md
         - name: Синхронизация по протоколу LDAP в Ranger и Apache Ambari
@@ -967,8 +965,12 @@
           href: ./hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md
         - name: Ограничение исходящего трафика с помощью брандмауэра
           href: ./hdinsight-restrict-outbound-traffic.md
+        - name: Создание политик для конечных точек служб
+          href: ./service-endpoint-policies.md
         - name: Настройка сетевого виртуального устройства
           href: ./network-virtual-appliance.md
+        - name: Теги службы для Брандмауэра Azure
+          href: ./hdinsight-service-tags.md
         - name: Диагностика
           items:
             - name: Проблемы с аутентификацией ESP

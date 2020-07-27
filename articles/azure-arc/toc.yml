@@ -2,43 +2,45 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Сведения об Arc для Kubernetes
+    - name: Сведения о Kubernetes с поддержкой Arc
       href: ./kubernetes/overview.md
-    - name: Сведения об Azure Arc для серверов
+    - name: Сведения о серверах с поддержкой Azure Arc?
       href: ./servers/overview.md
 - name: Примеры
   items:
-    - name: Встроенные компоненты Политики Azure
+    - name: Встроенные политики службы "Политика Azure"
       items:
-        - name: Arc для Kubernetes
+        - name: Kubernetes с поддержкой Arc
           href: ./kubernetes/policy-samples.md
-        - name: Arc для серверов
+        - name: Серверы с поддержкой Arc
           href: ./servers/policy-samples.md
 - name: Практические руководства
   items:
-    - name: Arc для Kubernetes
+    - name: Kubernetes с поддержкой Arc
       items:
-        - name: Операции с кластером
+        - name: Подключение к Azure Arc
           items:
             - name: Подключение кластера
               href: ./kubernetes/connect-cluster.md
-            - name: Использование GitOps для подключенных кластеров
+            - name: Подключение субъекта-службы
+              href: ./kubernetes/create-onboarding-service-principal.md
+        - name: Управление
+          items:
+            - name: Развертывание конфигураций с использованием GitOps
               href: ./kubernetes/use-gitops-connected-cluster.md
-            - name: Использование GitOps с Helm
+            - name: Развертывание диаграмм Helm с использованием GitOps
               href: ./kubernetes/use-gitops-with-helm.md
             - name: Принудительное применение GitOps с помощью службы "Политика Azure"
               href: ./kubernetes/use-azure-policy.md
             - name: Мониторинг с использованием Azure Monitor для контейнеров
-              href: ../azure-monitor/insights/container-insights-enable-arc-enabled-clusters.md
+              href: ../azure-monitor/insights/container-insights-enable-arc-enabled-clusters.md?toc=/azure/azure-arc/toc.json
             - name: Применение политик управления допуском с помощью службы "Политика Azure"
-              href: ../governance/policy/concepts/policy-for-kubernetes.md?toc=/azure/azure-arc/kubernetes/toc.json
+              href: ../governance/policy/concepts/policy-for-kubernetes.md?toc=/azure/azure-arc/toc.json
             - name: Развертывание рабочих нагрузок для Интернета вещей
               href: ./kubernetes/deploy-azure-iot-edge-workloads.md
-            - name: Подключение субъекта-службы
-              href: ./kubernetes/create-onboarding-service-principal.md
-            - name: Устранение неполадок
-              href: ./kubernetes/Troubleshooting.md
-    - name: Arc для серверов
+        - name: Устранение неполадок
+          href: ./kubernetes/Troubleshooting.md
+    - name: Серверы с поддержкой Arc
       items:
         - name: Подключение к Azure Arc
           items:

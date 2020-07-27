@@ -124,6 +124,9 @@
           href: network-security.md
         - name: Встроенные средства управления безопасностью
           href: event-hubs-security-controls.md
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
         - name: Базовые средства безопасности
           href: security-baseline.md
     - name: "Руководство по использованию протокола AMQP\_1.0"
@@ -196,7 +199,7 @@
         - name: Настройка журналов диагностики
           href: event-hubs-diagnostic-logs.md
         - name: Потоковая передача данных системы диагностики Azure с помощью Центров событий
-          href: event-hubs-streaming-azure-diags-data.md
+          href: ../azure-monitor/platform/diagnostics-extension-stream-event-hubs.md
         - name: Автоматическое масштабирование единиц пропускной способности
           href: event-hubs-auto-inflate.md
         - name: Библиотеки управления Центров событий
@@ -289,6 +292,8 @@
       href: /azure/templates/microsoft.eventhub/allversions
     - name: Квоты
       href: event-hubs-quotas.md
+    - name: Конфигурации Apache Kafka
+      href: apache-kafka-configurations.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

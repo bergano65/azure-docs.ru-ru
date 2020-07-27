@@ -1,6 +1,6 @@
 ---
-title: Обновление службы в пуле узлов Виртуального рабочего стола Windows (Azure)
-description: Сведения о создании пула узлов проверки для мониторинга обновлений службы перед их развертыванием в рабочую среду.
+title: Обновление службы в пуле узлов Виртуального рабочего стола Windows (осень 2019 г.) — Azure
+description: Узнайте, как создать пул узлов проверки для мониторинга обновлений службы перед их развертыванием в рабочую среду.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 05/27/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: fe6b047d10b8aef8faf81365cae940b05b3d798c
-ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
+ms.openlocfilehash: 806c3396d9188ea6abc5f779a26d99247d802ebe
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84117741"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527596"
 ---
-# <a name="tutorial-create-a-host-pool-to-validate-service-updates"></a>Руководство по Создание пула узлов для проверки обновлений службы
+# <a name="tutorial-create-a-host-pool-to-validate-service-updates-fall-2019-release"></a>Руководство по Руководство по созданию пула узлов для проверки обновлений службы (выпуск за осень 2019 г.)
 
 >[!IMPORTANT]
 >Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../create-validation-host-pool.md).

@@ -7,16 +7,19 @@ ms.date: 07/20/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: d52877129fe256253410f1d38011fa0343dd433d
-ms.sourcegitcommit: ba8df8424d73c8c4ac43602678dae4273af8b336
+ms.openlocfilehash: 5205506e3e7a32423dd9b438b648ff4af5136caa
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84455949"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86528559"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v11-for-net"></a>Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 11 для .NET
 
 Приступите к работе с клиентской библиотекой хранилища BLOB-объектов Azure версии 11 для .NET. Хранилище BLOB-объектов Azure — это решение корпорации Майкрософт для хранения объектов в облаке. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните приведенные здесь действия. Хранилище BLOB-объектов оптимизировано для хранения больших объемов неструктурированных данных.
+
+> [!NOTE]
+> В этом кратком руководстве используется устаревшая версия клиентской библиотеки Хранилища BLOB-объектов Azure. Сведения о том, как начать работу с последней версией, см. в статье [Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure для .NET](storage-quickstart-blobs-dotnet.md).
 
 Клиентскую библиотеку хранилища BLOB-объектов Azure для .NET можно использовать для выполнения таких задач:
 
@@ -27,7 +30,12 @@ ms.locfileid: "84455949"
 * перечисление всех больших двоичных объектов в контейнере;
 * Удаление контейнера
 
-[Справочная документация по API](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet) | [исходный код библиотеки](https://github.com/Azure/azure-storage-net/tree/master/Blob) | [пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/) | [примеры](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=dotnet&term=blob)
+Дополнительные ресурсы:
+
+* [Справочная документация по API](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet)
+* [Исходный код библиотеки](https://github.com/Azure/azure-storage-net/tree/master/Blob)
+* [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/)
+* [Примеры](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=dotnet&term=blob)
 
 [!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 

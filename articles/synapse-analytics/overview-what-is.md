@@ -9,12 +9,12 @@ ms.subservice: overview
 ms.date: 04/15/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 96bb624472aa2053599765d5bfedeb96339d0973
-ms.sourcegitcommit: 374d1533ea2f2d9d3f8b6e6a8e65c6a5cd4aea47
+ms.openlocfilehash: be124bdde4427113d56f44f0c1fa19c600bd768e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85808052"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86496057"
 ---
 # <a name="what-is-azure-synapse-analytics-workspaces-preview"></a>Что такое Azure Synapse Analytics (предварительная версия рабочих областей)?
 
@@ -40,7 +40,7 @@ Azure Synapse предоставляет самый простой и быстр
 
 * Synapse SQL предлагает как **бессерверные** модели, так и модели **подготовленных ресурсов**, предоставляя вам возможность выбрать варианты использования и выставления счетов в соответствии с потребностями. Для прогнозируемой производительности и затрат можно подготавливать пулы, чтобы резервировать вычислительные мощности для данных, хранящихся в таблицах SQL. Для незапланированных или пакетных рабочих нагрузок используйте бессерверную конечную точку SQL, которая всегда доступна.
 * Используйте встроенные возможности **потоковой передачи** для передачи данных из облачных источников данных в таблицы SQL.
-* Объедините возможности искусственного интеллекта с SQL с помощью моделей **машинного обучения** для оценки данных с использованием функции PREDICT T-SQL.
+* Объедините возможности искусственного интеллекта с SQL с помощью моделей **машинного обучения** для оценки данных с использованием [функции PREDICT T-SQL](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest).
 
 ### <a name="industry-standard-apache-spark"></a>Подсистема Apache Spark, являющаяся отраслевым стандартом
 

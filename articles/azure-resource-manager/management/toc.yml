@@ -6,7 +6,7 @@
       href: overview.md
 - name: Примеры
   items:
-    - name: Встроенные компоненты Политики Azure
+    - name: Встроенные политики службы "Политика Azure"
       displayName: 'samples, policies, definitions'
       href: ./policy-samples.md
 - name: Основные понятия
@@ -93,6 +93,12 @@
               href: ../../site-recovery/move-vaults-across-regions.md?toc=/azure/azure-resource-manager/management/toc.json
             - name: Виртуальная сеть
               href: ../../virtual-network/move-across-regions-nsg-portal.md?toc=/azure/azure-resource-manager/management/toc.json
+            - name: Сервер Базы данных Azure для PostgreSQL
+              href: ../../postgresql/howto-move-regions-portal.md?toc=/azure/azure-resource-manager/management/toc.json
+            - name: Сервер Базы данных Azure для MariaDB
+              href: ../../mariadb/howto-move-regions-portal.md?toc=/azure/azure-resource-manager/management/toc.json
+            - name: Сервер Базы данных Azure для MySQL
+              href: ../../mysql/howto-move-regions-portal.md?toc=/azure/azure-resource-manager/management/toc.json
     - name: Теги
       items:
         - name: Рекомендации по принятию решений
@@ -105,13 +111,13 @@
           href: tag-support.md
     - name: Управление группами ресурсов
       items:
-        - name: Портал Azure
+        - name: портал Azure;
           displayName: 'create,list,open,delete,deploy,move,lock,tag,export'
           href: manage-resource-groups-portal.md
-        - name: Azure CLI
+        - name: Azure CLI;
           displayName: 'create,list,open,delete,deploy,move,lock,tag,export'
           href: manage-resource-groups-cli.md
-        - name: Azure PowerShell
+        - name: Azure PowerShell;
           displayName: 'create,list,open,delete,deploy,move,lock,tag,export'
           href: manage-resource-groups-powershell.md
     - name: Управление ресурсами
@@ -119,7 +125,7 @@
         - name: Портал Azure
           displayName: 'open,delete,deploy,move,lock,tag,monitor'
           href: manage-resources-portal.md
-        - name: Azure CLI
+        - name: Azure CLI;
           displayName: 'open,delete,deploy,move,lock,tag'
           href: manage-resources-cli.md
         - name: Azure PowerShell

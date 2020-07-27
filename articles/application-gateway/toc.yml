@@ -36,7 +36,7 @@
       href: tutorial-ingress-controller-add-on-existing.md
 - name: Примеры
   items:
-    - name: Azure PowerShell
+    - name: Azure PowerShell;
       href: powershell-samples.md
     - name: Azure CLI
       href: cli-samples.md
@@ -68,8 +68,8 @@
           href: url-route-overview.md
         - name: Перенаправление
           href: redirect-overview.md
-        - name: Перезапись заголовков HTTP
-          href: rewrite-http-headers.md
+        - name: Перезапись заголовков HTTP и URL-адреса
+          href: rewrite-http-headers-url.md
     - name: SSL
       items:
         - name: Завершение запросов SSL и сквозное шифрование SSL
@@ -98,13 +98,13 @@
   items:
     - name: Размещение одного веб-сайта
       items:
-        - name: Azure PowerShell
+        - name: Azure PowerShell;
           href: tutorial-manage-web-traffic-powershell.md
         - name: Azure CLI
           href: tutorial-manage-web-traffic-cli.md
     - name: Настройка внутреннего балансировщика нагрузки
       items:
-        - name: Портал Azure
+        - name: портал Azure;
           href: configure-application-gateway-with-private-frontend-ip.md
         - name: Azure PowerShell
           href: application-gateway-ilb-arm.md
@@ -164,13 +164,13 @@
           href: ingress-controller-autoscale-pods.md
     - name: Маршрутизация на основе URL-адреса
       items:
-        - name: Azure PowerShell
+        - name: Azure PowerShell;
           href: tutorial-url-route-powershell.md
         - name: Azure CLI
           href: tutorial-url-route-cli.md
     - name: Размещение нескольких сайтов
       items:
-        - name: Azure PowerShell
+        - name: Azure PowerShell;
           href: tutorial-multiple-sites-powershell.md
         - name: Azure CLI
           href: tutorial-multiple-sites-cli.md
@@ -178,7 +178,7 @@
       items:
         - name: Внешний трафик
           items:
-            - name: Azure PowerShell
+            - name: Azure PowerShell;
               href: redirect-external-site-powershell.md
             - name: Azure CLI
               href: redirect-external-site-cli.md
@@ -186,7 +186,7 @@
           items:
             - name: Портал Azure
               href: redirect-http-to-https-portal.md
-            - name: Azure PowerShell
+            - name: Azure PowerShell;
               href: redirect-http-to-https-powershell.md
             - name: Azure CLI
               href: redirect-http-to-https-cli.md
@@ -198,14 +198,20 @@
               href: redirect-internal-site-cli.md
         - name: Перенаправление веб-трафика с помощью Azure PowerShell
           href: tutorial-url-redirect-powershell.md
-    - name: Перезапись заголовков HTTP
+    - name: Перезапись заголовков HTTP и URL-адреса
       items:
-        - name: Портал Azure
-          href: rewrite-http-headers-portal.md
-        - name: Azure PowerShell
-          href: add-http-header-rewrite-rule-powershell.md
-        - name: Создание и перезапись заголовков HTTP
-          href: tutorial-http-header-rewrite-powershell.md
+        - name: Перезапись заголовков
+          items:
+            - name: портал Azure;
+              href: rewrite-http-headers-portal.md
+            - name: Azure PowerShell;
+              href: add-http-header-rewrite-rule-powershell.md
+            - name: Создание и перезапись заголовков HTTP
+              href: tutorial-http-header-rewrite-powershell.md
+        - name: Переопределение URL-адреса
+          items:
+            - name: Портал Azure
+              href: rewrite-url-portal.md
     - name: Настройка веб-приложения Службы приложений и мультитенантной службы
       items:
         - name: Портал
@@ -249,7 +255,7 @@
     - name: Azure CLI
       href: /cli/azure/network/application-gateway
     - name: Azure PowerShell
-      href: /powershell/azure/overview
+      href: /powershell/azure/
     - name: .NET
       href: /dotnet/api
     - name: Java

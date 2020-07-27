@@ -1,20 +1,28 @@
 - name: Общие сведения
   href: index.yml
 - name: Обзор
-  expanded: true
   items:
     - name: Об Azure Key Vault
       href: overview.md
     - name: 'Сведения о ключах, секретах и сертификатах'
       href: about-keys-secrets-certificates.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: CLI
+      href: quick-create-cli.md
+    - name: PowerShell
+      href: quick-create-powershell.md
+    - name: Портал
+      href: quick-create-portal.md
 - name: Учебники
   items:
     - name: Виртуальная машина Azure
       items:
-        - name: Использование Azure Key Vault с виртуальной машиной Windows в .NET
-          href: tutorial-net-windows-virtual-machine.md
-        - name: Использование Azure Key Vault с виртуальной машиной Windows на языке Python
-          href: tutorial-python-windows-virtual-machine.md
+        - name: Использование Azure Key Vault с виртуальной машиной в .NET
+          href: tutorial-net-virtual-machine.md
+        - name: Использование Azure Key Vault с виртуальной машиной в Python
+          href: tutorial-python-virtual-machine.md
     - name: Служба Azure Kubernetes
       items:
         - name: "Интеграция Azure Key\_Vault с Kubernetes"
@@ -117,15 +125,11 @@
     - name: Перемещение хранилища ключей
       items:
         - name: Перемещение Key Vault в другую группу ресурсов
-          href: keyvault-moveresourcegroup.md
+          href: move-resourcegroup.md
         - name: Перемещение Key Vault в другую подписку
-          href: keyvault-move-subscription.md
+          href: move-subscription.md
         - name: Перемещение хранилища ключей в другой регион
-          href: keyvault-moveregion.md
-    - name: Диагностика
-      items:
-        - name: Изменение идентификатора клиента хранилища ключей после перемещения подписки
-          href: subscription-move-fix.md
+          href: move-region.md
 - name: Справочник
   items:
     - name: "Коды ошибок REST API\_— Azure Key Vault"

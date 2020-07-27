@@ -2,19 +2,19 @@
 title: Azure Arc
 summary: В Azure Arc добавлена поддержка возможностей Azure Resource Manager для серверов Linux и Windows, а также возможность использовать кластеры Kubernetes в любой инфраструктуре в локальной среде, в нескольких облаках и на пограничных устройствах. Кроме того, Azure Arc позволяет клиентам запускать службы данных Azure в любом расположении. При этом предоставляются преимущества облачных инноваций, включая постоянно поддерживаемые в актуальном состоянии средства работы с данными, развертывание за считаные секунды (а не часы) и динамическую масштабируемость в любой инфраструктуре.
 metadata:
-  title: Azure Arc для серверов
+  title: Azure Arc
   description: Узнайте, как управлять локальными компьютерами в Azure
   author: mgoedtel
   ms.service: azure-arc
   ms.topic: landing-page
   ms.date: 06/26/2020
   ms.author: magoedte
-  ms.openlocfilehash: 8493a5d90656206c5498fafbc2b0a2743cd973a7
-  ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
+  ms.openlocfilehash: f9d4da85185d3a8541c165b407d276af0a25ccc6
+  ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 06/27/2020
-  ms.locfileid: "85482349"
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "87008495"
 landingContent:
 - title: Общие сведения об Azure Arc
   linkLists:
@@ -22,11 +22,11 @@ landingContent:
     links:
     - text: Дополнительные сведения об Azure Arc
       url: https://aka.ms/Azure-Arc-Info
-- title: Подключение компьютеров к Azure с помощью Azure Arc для серверов
+- title: Подключение компьютеров к Azure с помощью серверов с поддержкой Azure Arc
   linkLists:
   - linkListType: overview
     links:
-    - text: Что собой представляет Azure Arc для серверов?
+    - text: Что такое серверы с поддержкой Azure Arc?
       url: ./servers/overview.md
   - linkListType: quickstart
     links:
@@ -42,19 +42,21 @@ landingContent:
     links:
     - text: Что представляет собой Azure Arc с поддержкой Kubernetes?
       url: ./kubernetes/overview.md
-  - linkListType: how-to-guide
+  - linkListType: quickstart
     links:
     - text: Подключение кластера
       url: ./kubernetes/connect-cluster.md
-    - text: Использование GitOps в подключенном кластере
+  - linkListType: how-to-guide
+    links:
+    - text: Развертывание конфигураций с использованием GitOps
       url: ./kubernetes/use-gitops-connected-cluster.md
-    - text: Использование GitOps с Helm
+    - text: Развертывание диаграмм Helm с использованием GitOps
       url: ./kubernetes/use-gitops-with-helm.md
-    - text: Использование Azure Monitor для контейнеров
-      url: ../azure-monitor/insights/container-insights-enable-arc-enabled-clusters.md
-    - text: Использование Политики Azure
+    - text: Принудительное применение GitOps с помощью службы "Политика Azure"
       url: ./kubernetes/use-azure-policy.md
+    - text: Мониторинг с использованием Azure Monitor для контейнеров
+      url: ../azure-monitor/insights/container-insights-enable-arc-enabled-clusters.md?toc=/azure/azure-arc/toc.json
+    - text: Применение политик управления допуском с помощью службы "Политика Azure"
+      url: ../governance/policy/concepts/policy-for-kubernetes.md?toc=/azure/azure-arc/toc.json
     - text: Развертывание рабочих нагрузок Azure IoT Edge
       url: ./kubernetes/deploy-azure-iot-edge-workloads.md
-    - text: Подключение субъекта-службы
-      url: ./kubernetes/create-onboarding-service-principal.md

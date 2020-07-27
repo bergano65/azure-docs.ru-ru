@@ -53,6 +53,9 @@
       href: develop-locally.md
     - name: Безопасность
       items:
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
         - name: Базовые средства безопасности
           href: security-baseline.md
     - name: Типы входных данных для задания

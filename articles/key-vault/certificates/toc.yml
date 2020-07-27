@@ -4,6 +4,8 @@
   items:
     - name: Сведения о сертификатах
       href: about-certificates.md
+    - name: Сведения об обновлении сертификата
+      href: overview-renew-certificate.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -42,6 +44,8 @@
   items:
     - name: Интеграция Key Vault с центром сертификации DigiCert
       href: how-to-integrate-certificate-authority.md
+    - name: "Устранение неполадок\_— импорт сертификатов"
+      href: import-cert-faqs.md
 - name: Справочник
   items:
     - name: Azure PowerShell
@@ -53,7 +57,7 @@
     - name: Java
       href: /java/api/overview/azure/keyvault?view=azure-java-stable
     - name: Node.js
-      href: /javascript/api/overview/azure/key-vault?view=azure-node-latest
+      href: 'https://docs.microsoft.com/javascript/api/overview/azure/key-vault-index?view=azure-node-latest'
     - name: Python
       href: /python/api/overview/azure/keyvault-certificates-readme?view=azure-python
     - name: REST

@@ -5,6 +5,8 @@
   items:
     - name: Архитектура решения
       href: architecture.md
+    - name: Решение по обеспечению безопасности для ОСРВ Azure
+      href: iot-security-azure-rtos.md
     - name: Агенты безопасности
       href: security-agent-architecture.md
     - name: Модуль безопасности Edge
@@ -53,9 +55,9 @@
       items:
         - name: Выбор агента для развертывания
           href: how-to-deploy-agent.md
-        - name: 'Развертывание агента безопасности на основе C# на устройстве Windows'
+        - name: Развертывание агента безопасности на основе C# на устройстве Windows
           href: how-to-deploy-windows-cs.md
-        - name: 'Развертывание агента безопасности на основе C# на устройстве Linux'
+        - name: Развертывание агента безопасности на основе C# на устройстве Linux
           href: how-to-deploy-linux-cs.md
         - name: Развертывание агента безопасности на основе C на устройстве Linux
           href: how-to-deploy-linux-c.md
@@ -65,7 +67,7 @@
           href: troubleshoot-agent.md
         - name: Локальная конфигурация C
           href: azure-iot-security-local-configuration-c.md
-        - name: 'Локальная конфигурация C#'
+        - name: Локальная конфигурация C#
           href: azure-iot-security-local-configuration-csharp.md
     - name: Развертывание модуля безопасности Edge
       href: how-to-deploy-edge.md

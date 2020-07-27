@@ -68,10 +68,14 @@
           href: boosted-decision-tree-regression.md
         - name: Регрессия с использованием модели леса принятия решений
           href: decision-forest-regression.md
+        - name: Быстрая квантильная регрессия леса
+          href: fast-forest-quantile-regression.md
         - name: Линейная регрессия
           href: linear-regression.md
         - name: Регрессия нейронной сети
           href: neural-network-regression.md
+        - name: Регрессия Пуассона
+          href: poisson-regression.md
     - name: Кластеризация
       items:
         - name: Кластеризация методом K-средних

@@ -1,18 +1,18 @@
 ---
-title: Мониторинг ресурса Azure с помощью Azure Monitor
-description: Узнайте, как выполнять сбор и анализ данных для ресурсов Azure в Azure Monitor.
+title: Мониторинг виртуальной машины Azure с помощью Azure Monitor
+description: Узнайте, как выполнять сбор и анализ данных для виртуальных машин Azure в Azure Monitor.
 ms.service: azure-monitor
 ms. subservice: logs
 ms.topic: quickstart
 author: bwren
 ms.author: bwren
 ms.date: 03/10/2020
-ms.openlocfilehash: 99e8afa0a92ba8bb53505e2519efec7baafbcf48
-ms.sourcegitcommit: ad66392df535c370ba22d36a71e1bbc8b0eedbe3
+ms.openlocfilehash: 40c7b9e5a8b7c38c9468d54e69ca7a73c5f2d46b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84805104"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86516402"
 ---
 # <a name="quickstart-monitor-an-azure-virtual-machine-with-azure-monitor"></a>Краткое руководство. Мониторинг виртуальной машины Azure с помощью Azure Monitor
 [Azure Monitor](../overview.md) начинает сбор данных из виртуальных машин Azure с момента их создания. В этом кратком руководстве описываются данные, которые автоматически собираются для каждой виртуальной машины Azure, и показано, как просматривать эти данные на портале Azure. Затем вы включите для виртуальной машины [Azure Monitor для виртуальных машин](../insights/vminsights-overview.md), чтобы агенты на виртуальной машине могли получать и анализировать данные из гостевой операционной системы, в том числе сведения о процессах и зависимостях.
@@ -107,4 +107,4 @@ ms.locfileid: "84805104"
 В этом кратком руководстве показано, как включить для требуемой виртуальной машины Azure Monitor для виртуальных машин и включить в рабочей области Log Analytics получение сведений о событиях для операционной системы на виртуальной машине. Чтобы узнать, как просматривать и анализировать данные, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Просмотр и анализ данных, собранных с помощью поиска по журналам Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md)
+> [Просмотр и анализ данных, собранных с помощью поиска по журналам Log Analytics](../log-query/get-started-portal.md)

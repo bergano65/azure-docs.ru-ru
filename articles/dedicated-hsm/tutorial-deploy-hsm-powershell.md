@@ -11,14 +11,14 @@ ms.topic: tutorial
 ms.custom: mvc, seodec18
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/11/2019
-ms.author: mbaldwin
-ms.openlocfilehash: c1a847a315a264591c0d003ff691d9938c2bf0f5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.date: 07/14/2020
+ms.author: johndaw
+ms.openlocfilehash: e7958a722f7010d63794cacc072289030a72ed99
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79474430"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86512509"
 ---
 # <a name="tutorial--deploying-hsms-into-an-existing-virtual-network-using-powershell"></a>Руководство. Развертывание выделенных устройств HSM в существующей виртуальной сети с помощью PowerShell
 
@@ -62,13 +62,7 @@ ms.locfileid: "79474430"
 Get-AzProviderFeature -ProviderNamespace Microsoft.HardwareSecurityModules -FeatureName AzureDedicatedHsm
 ```
 
-Следующая команда позволяет проверить сетевые возможности, необходимые для службы выделенных устройств HSM.
-
-```powershell
-Get-AzProviderFeature -ProviderNamespace Microsoft.Network -FeatureName AllowBaremetalServers
-```
-
-Обе команды должны вернуть состояние Registered (как показано ниже), чтобы вы могли продолжить работу.  Если вам нужно зарегистрироваться для использования службы, свяжитесь со своим менеджером Майкрософт по работе с клиентами.
+Команда должны вернуть состояние Registered (как показано ниже), чтобы вы могли продолжить работу.  Если вы не зарегистрированы для использования этой службы, обратитесь к своему менеджеру Майкрософт по работе с клиентами.
 
 ![Состояние подписки](media/tutorial-deploy-hsm-powershell/subscription-status.png)
 
@@ -190,7 +184,7 @@ New-AzResourceGroupDeployment -ResourceGroupName myRG `
 
 ![Состояние подготовки](media/tutorial-deploy-hsm-powershell/progress-status.png)
 
-После успешного завершения отобразится сообщение "provisioningState": "Succeeded". Теперь можно подключиться к существующей виртуальной машине и проверить доступность устройства HSM с помощью SSH.
+После успешного выполнения команды, о чем свидетельствует параметр "provisioningState": "Succeeded", можно выполнить вход в существующую виртуальную машину и использовать SSH, чтобы обеспечить доступность устройства HSM.
 
 ## <a name="verifying-the-deployment"></a>Проверка развертывания
 
@@ -217,7 +211,7 @@ Get-AzResource -Resourceid /subscriptions/$subId/resourceGroups/$resourceGroupNa
 `ssh adminuser@hsmlinuxvm.westus.cloudapp.azure.com`
 
 Используйте пароль, указанный в файле параметров.
-После входа на виртуальную машину Linux вы можете войти в устройство HSM, воспользовавшись частным IP-адресом, который указан на портале для ресурса \<префикс>hsm_vnic.
+После входа на виртуальную машину Linux можно войти в устройство HSM, воспользовавшись частным IP-адресом, который указан на портале для ресурса \<prefix>hsm_vnic.
 
 ```powershell
 

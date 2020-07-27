@@ -9,14 +9,14 @@ ms.service: iot-dps
 services: iot-dps
 manager: eliotgra
 ms.custom: mvc
-ms.openlocfilehash: aaa1a4423363255536db7d53a1f8f8fa9ba686ff
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 8b54f216850b77473ea8c272311e3f135f256518
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76961191"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536510"
 ---
-# <a name="quickstart-provision-a-simulated-device-with-symmetric-keys"></a>Краткое руководство. Подготовка имитированного устройства с использованием симметричных ключей
+# <a name="quickstart-provision-a-simulated-device-to-iot-hub-with-symmetric-keys"></a>Краткое руководство. Подготовка имитированного устройства в Центре Интернета вещей с использованием симметричных ключей
 
 В этом кратком руководстве вы узнаете, как создать и запустить симулятор устройств на компьютере для разработки Windows. Вы настроите имитированное устройство на использование симметричного ключа для прохождения аутентификации в экземпляре Службы подготовки устройств (DPS) и назначения центру Интернета вещей. Для моделирования последовательности загрузки устройства, которая инициирует подготовку, будет использоваться пример кода из [пакетов SDK Azure IoT для Java](https://github.com/Azure/azure-iot-sdk-java). Устройство будет распознано по отдельной регистрации в экземпляре службы DPS и назначено Центру Интернета вещей.
 

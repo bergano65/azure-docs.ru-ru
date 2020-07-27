@@ -10,11 +10,11 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: 6cd7d6dcc6cb5b6d7e86b441106f45e09bae6146
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: 7a0d3d9e31268e1a91f3a505ed812a68f73fdc35
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82980413"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86544727"
 ---
-Если вы предпочитаете сразу перейти к работе, просмотрите или скачайте все <a href="https://aka.ms/speech/github-javascript">примеры для пакета SDK службы "Речь" для JavaScript</a> на сайте GitHub. В противном случае ознакомьтесь с инструкциями.
+Вы можете просмотреть или скачать <a href="https://aka.ms/speech/github-javascript">все примеры для пакета SDK службы "Речь" для JavaScript</a> на сайте GitHub. 

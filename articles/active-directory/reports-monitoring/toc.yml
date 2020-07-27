@@ -84,6 +84,8 @@
           href: troubleshoot-missing-data-download.md
         - name: Не удается получить доступ к интерфейсам API Graph для создания отчетов
           href: troubleshoot-graph-api.md
+        - name: Аудит данных при изменении проверенного домена
+          href: troubleshoot-audit-data-verified-domain.md
 - name: Справочник
   expanded: true
   items:

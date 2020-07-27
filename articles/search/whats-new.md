@@ -6,19 +6,27 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
-ms.date: 07/10/2020
-ms.openlocfilehash: d2567a5a0374fd05f17e1153c3b2d7f3df50e0d9
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.date: 07/15/2020
+ms.openlocfilehash: 238ede3e79b7d7c5a22d24dfc52530fe391b600b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86247002"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86519632"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Новые возможности в Когнитивном поиске Azure
 
 Узнайте о новых возможностях службы. Создайте закладку для этой страницы, чтобы получать последние сведения об обновлениях службы.
 
-## <a name="feature-announcements"></a>Объявления о новых возможностях
+## <a name="feature-announcements-in-2020"></a>Объявления о новых возможностях за 2020 год
+
+### <a name="july-2020"></a>Июль 2020 г.
+
+|Функция&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Категория | Описание | Доступность  |
+|---------|------------------|-------------|---------------|
+| [**Клиентская библиотека .NET**](https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet) | Пакет SDK Azure | Новая клиентская библиотека, выпущенная командой Azure SDK, предназначенная для обеспечения согласованности с другими клиентскими библиотеками .NET. Версия 11 | Общедоступная версия. </br> Установите [пакет Azure.Search.Documents](https://www.nuget.org/packages/Azure.Search.Documents/) из NuGet. |
+| [**Клиентская библиотека Python**](https://docs.microsoft.com/python/api/overview/azure/search-documents-readme?view=azure-python)  | Пакет SDK Azure | Новая клиентская библиотека, выпущенная командой разработчиков пакетов Azure SDK и предназначенная для обеспечения согласованности с другими клиентскими библиотеками Python. Версия 11 | Общедоступная версия. </br> Установите [пакет azure-search-documents](https://pypi.org/project/azure-search-documents/) из PyPI. |
+| [**Клиентская библиотека JavaScript**](https://azuresdkdocs.blob.core.windows.net/$web/javascript/azure-search-documents/11.0.0/index.html)  | Пакет SDK Azure | Новая клиентская библиотека, выпущенная командой разработчиков пакетов Azure SDK и предназначенная для обеспечения согласованности с другими клиентскими библиотеками JavaScript. Версия 11 | Общедоступная версия. </br> Установите [пакет @azure/search-documents](https://www.npmjs.com/package/@azure/search-documents) из npm. |
 
 ### <a name="june-2020"></a>Июнь 2020 г.
 

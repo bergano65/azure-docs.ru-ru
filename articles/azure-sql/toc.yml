@@ -44,6 +44,9 @@
               displayName: 'compliance, fedramp, soc, fact, fisc, hitrust, pci, iso'
             - name: Рекомендации
               href: database/security-best-practice.md
+            - name: Элементы управления безопасностью службы "Политика Azure"
+              displayName: 'regulatory, compliance, standards, domains'
+              href: ./database/security-controls-policy.md
             - name: Базовые средства безопасности
               href: database/security-baseline.md
             - name: Атрибуты безопасности
@@ -201,9 +204,11 @@
             - name: Java
               items:
                 - name: Использование JDBC Spring Data
-                  href: /java/azure/spring-framework/configure-spring-data-jdbc-with-azure-sql-server?toc=/azure/sql-database/toc.json
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json
                 - name: Использование JPA Spring Data
-                  href: /java/azure/spring-framework/configure-spring-data-jpa-with-azure-sql-server?toc=/azure/sql-database/toc.json
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                - name: Использование R2DBC Spring Data
+                  href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json
 - name: База данных SQL (SQL DB)
   items:
     - name: Документация
@@ -230,8 +235,6 @@
               href: database/service-tier-hyperscale.md
             - name: Часто задаваемые вопросы о гипермасштабировании
               href: database/service-tier-hyperscale-frequently-asked-questions-faq.md
-            - name: "Переход с уровня \"Премиум\_RS\""
-              href: database/service-tiers-prs.md
     - name: Краткие руководства
       href: database/quickstart-content-reference-guide.md
       items:
@@ -392,6 +395,12 @@
                   href: database/connect-query-go.md
                 - name: Java
                   href: database/connect-query-java.md
+                - name: Java с JDBC Spring Data
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                - name: Java с JPA Spring Data
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                - name: Java с R2DBC Spring Data
+                  href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json
                 - name: Node.js
                   href: database/connect-query-nodejs.md
                 - name: PHP
@@ -680,16 +689,20 @@
               href: managed-instance/replication-two-instances-and-sql-server-configure-tutorial.md
     - name: Основные понятия
       items:
-        - name: Репликация транзакций
-          href: managed-instance/replication-transactional-overview.md
-        - name: Справочник по API управления
-          href: managed-instance/api-references-create-manage-instance.md
         - name: Ограничения ресурсов
           href: managed-instance/resource-limits.md
         - name: Архитектура подключения
           href: managed-instance/connectivity-architecture-overview.md
         - name: Отличия T-SQL
           href: managed-instance/transact-sql-tsql-differences-sql-server.md
+        - name: Репликация транзакций
+          href: managed-instance/replication-transactional-overview.md
+        - name: Операции управления
+          items:
+            - name: Обзор
+              href: managed-instance/management-operations-overview.md
+            - name: Справочник по API
+              href: managed-instance/api-references-create-manage-instance.md
         - name: Служба машинного обучения
           items:
             - name: Обзор
@@ -708,6 +721,8 @@
                       href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/quickstart-python-functions?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
                     - name: Обучение и оценка модели
                       href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/quickstart-python-train-score-model?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: Развертывание моделей ONNX
+                      href: /azure/azure-sql-edge/deploy-onnx?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current
                 - name: R
                   items:
                     - name: Запуск сценариев R
@@ -834,7 +849,7 @@
           href: managed-instance/alerts-create.md
     - name: Примеры
       items:
-        - name: Azure CLI
+        - name: Azure CLI;
           href: database/az-cli-script-samples-content-guide.md?tabs=managed-instance
         - name: Azure PowerShell
           href: database/powershell-script-content-guide.md?tabs=managed-instance
@@ -866,6 +881,7 @@
             - name: PowerShell
               href: virtual-machines/windows/sql-vm-create-powershell-quickstart.md
             - name: Шаблон ARM
+              displayName: Resource Manager
               href: virtual-machines/windows/create-sql-vm-resource-manager-template.md
         - name: Основные понятия
           items:
@@ -952,8 +968,8 @@
                       href: virtual-machines/windows/automated-backup-sql-2014.md
                 - name: Группа доступности AlwaysOn
                   items:
-                    - name: Использование CLI виртуальной машины SQL в Azure
-                      href: virtual-machines/windows/availability-group-az-cli-configure.md
+                    - name: PowerShell или Az CLI
+                      href: virtual-machines/windows/availability-group-az-commandline-configure.md
                     - name: Шаблоны быстрого запуска Azure
                       href: virtual-machines/windows/availability-group-quickstart-template-configure.md
                     - name: Различные регионы
@@ -995,7 +1011,7 @@
         - name: Справочник
           items:
             - name: Azure PowerShell
-              href: /powershell/azure/overview
+              href: /powershell/azure/
             - name: Azure CLI
               href: /cli/azure/
             - name: T-SQL
@@ -1010,6 +1026,8 @@
               href: virtual-machines/windows/frequently-asked-questions-faq.md
             - name: Цены
               href: virtual-machines/windows/pricing-guidance.md
+            - name: Архивные документы по классическому развертыванию и развертыванию с использованием RM
+              href: /previous-versions/azure/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-ps-sql-create
             - name: SQL Server Data Tools (SSDT)
               href: '/https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt'
             - name: SQL Server Management Studio (SSMS)

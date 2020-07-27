@@ -7,12 +7,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 06/11/2020
 ms.author: banders
-ms.openlocfilehash: cd6e075448c68b6d2c65832d128e14c016c69c7c
-ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
+ms.openlocfilehash: 28080517a33f1bbf9bee3436493f178b60c0d161
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85601417"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86523610"
 ---
 # <a name="get-billing-ownership-of-azure-subscriptions-to-your-mpa-account"></a>Получение права владения на выставление счетов в подписках Azure по учетной записи MPA
 
@@ -155,6 +155,12 @@ Azure Reserved Virtual Machine Instances не перемещаются с под
 Каталог передаваемых подписок Azure должен соответствовать каталогу клиента, который был выбран при установлении отношений с поставщиком облачных решений.
 
 Если эти два каталога не совпадают, подписку передать не удастся. В этом случае придется либо установить новую связь клиента с торговым посредником CSP, выбрав каталог подписок Azure, либо изменить каталог подписок Azure в соответствии с каталогом, действующим для текущей связи клиента с поставщиком облачных решений. Дополнительные сведения см. в разделе о [связывании существующей подписки с каталогом Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory#to-associate-an-existing-subscription-to-your-azure-ad-directory).
+
+### <a name="ea-subscription-in-the-non-orgnization-directory"></a>Подписка EA в каталоге, не относящемся к организации
+
+Подписки EA из каталогов, не относящихся к организациям, могут быть переданы при условии, что для каталога настроено отношение торгового посредника с CSP. Если в каталоге отсутствует отношение торгового посредника, вам потребуется обеспечить наличие в нем пользователя организации с правами *глобального администратора*, который может принять отношение с партнером. Часть имени домена в имени пользователя должна быть первоначальным именем домена по умолчанию "[имя домена]. onmicrosoft.com" или проверенным именем нефедеративного личного домена, например "contoso.com".  
+
+Чтобы добавить нового пользователя в каталог, см. статью [Краткое руководство. Добавление новых пользователей в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/add-users-azure-active-directory).
 
 ## <a name="check-access-to-a-microsoft-partner-agreement"></a>Проверка доступа к Соглашению с партнером Майкрософт
 

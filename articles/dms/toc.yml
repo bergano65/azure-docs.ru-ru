@@ -59,6 +59,10 @@
           href: tutorial-postgresql-azure-postgresql-online-portal.md
         - name: в Базу данных Azure для PostgreSQL (Az CLI)
           href: tutorial-postgresql-azure-postgresql-online.md
+    - name: Миграция в Базу данных Azure для PostgreSQL (отдельный сервер)
+      items:
+        - name: в Базу данных Azure для PostgreSQL (портал)
+          href: tutorial-azure-postgresql-to-azure-postgresql-online-portal.md
     - name: Миграция из RDS PostgreSQL
       items:
         - name: в Базу данных Azure для PostgreSQL

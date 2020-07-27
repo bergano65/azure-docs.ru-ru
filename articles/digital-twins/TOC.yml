@@ -40,9 +40,11 @@
       items:
         - name: Использование CLI для Azure Digital Twins
           href: how-to-use-cli.md
-        - name: Создание экземпляра Azure Digital Twins
-          href: how-to-set-up-instance.md
-        - name: Аутентификация клиентского приложения
+        - name: Настройка экземпляра и проверки подлинности (с использованием скрипта)
+          href: how-to-set-up-instance-scripted.md
+        - name: Настройка экземпляра и проверки подлинности (вручную)
+          href: how-to-set-up-instance-manual.md
+        - name: Написание кода проверки подлинности приложения
           href: how-to-authenticate-client.md
     - name: Проектирование моделей
       items:
@@ -50,6 +52,8 @@
           href: how-to-manage-model.md
         - name: Анализ и проверка моделей
           href: how-to-use-parser.md
+        - name: Добавление тегов
+          href: how-to-use-tags.md
     - name: Использование динамической среды выполнения
       items:
         - name: Управление цифровыми двойниками
@@ -72,10 +76,16 @@
           href: how-to-manage-routes.md
         - name: Интеграция с Azure Maps
           href: how-to-integrate-maps.md
+        - name: Интеграция со службой "Аналитика временных рядов Azure"
+          href: how-to-integrate-time-series-insights.md
     - name: Диагностика
       items:
         - name: Известные проблемы
           href: troubleshoot-known-issues.md
+        - name: Решение проблем
+          items:
+            - name: 403 (Forbidden (Запрещено))
+              href: troubleshoot-error-403.md
 - name: Справочник
   items:
     - name: Ограничения службы Digital Twins
@@ -145,7 +155,7 @@
         - name: Примеры Azure Digital Twins
           href: 'https://docs.microsoft.com/samples/azure-samples/digital-twins-samples/digital-twins-samples/'
         - name: Обозреватель Azure Digital Twins (примеры)
-          href: 'https://github.com/Azure-Samples/digital-twins-explorer'
+          href: 'https://docs.microsoft.com/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/'
         - name: Проверяющий элемент управления DTDL (пример)
           href: 'https://docs.microsoft.com/samples/azure-samples/dtdl-validator/dtdl-validator/'
     - name: Инструменты Azure

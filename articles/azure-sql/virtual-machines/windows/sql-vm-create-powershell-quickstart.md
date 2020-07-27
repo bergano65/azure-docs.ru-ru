@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: e821c650bae7694070624aeebe7fcc3482f7a3b9
-ms.sourcegitcommit: eeba08c8eaa1d724635dcf3a5e931993c848c633
+ms.openlocfilehash: eafbf102c092b180a1f3c882f5ae626e60b80f30
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84667409"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86514617"
 ---
 # <a name="quickstart-create-sql-server-on-a-windows-virtual-machine-with-azure-powershell"></a>Краткое руководство. Создание виртуальной машины SQL Server под управлением Windows с помощью Azure PowerShell
 
@@ -147,13 +147,34 @@ ms.locfileid: "84667409"
    > [!TIP]
    > Создание виртуальной машины занимает несколько минут.
 
-## <a name="install-the-sql-iaas-agent"></a>Установка агента SQL IaaS
+## <a name="register-with-sql-vm-rp"></a>Регистрация через поставщика ресурсов виртуальной машины SQL 
 
-Для интеграции с порталом и получения компонентов виртуальной машины SQL необходимо установить [расширение агента SQL Server IaaS](sql-server-iaas-agent-extension-automate-management.md). Чтобы установить агент на новую виртуальную машину, после ее создания выполните следующую команду.
+Для интеграции с порталом и получения компонентов виртуальной машины SQL необходимо зарегистрироваться через [поставщика ресурсов виртуальной машины SQL](sql-vm-resource-provider-register.md).
 
-   ```powershell
-   Set-AzVMSqlServerExtension -ResourceGroupName $ResourceGroupName -VMName $VMName -name "SQLIaasExtension" -version "2.0" -Location $Location
-   ```
+Для получения всех функций необходимо выполнить регистрацию через поставщика ресурсов в полном режиме. Но при этом произойдет перезапуск службы SQL Server. Поэтому рекомендуется выполнить регистрацию в упрощенном режиме, а затем выполнить обновление до полного режима в течение периода обслуживания. 
+
+Сначала зарегистрируйте виртуальную машину SQL Server в упрощенном режиме: 
+
+```powershell-interactive
+# Get the existing compute VM
+$vm = Get-AzVM -Name <vm_name> -ResourceGroupName <resource_group_name>
+        
+# Register SQL VM with 'Lightweight' SQL IaaS agent
+New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $vm.Location `
+  -LicenseType PAYG -SqlManagementType LightWeight
+```
+
+Затем в течение периода обслуживания выполните обновление до полного режима: 
+
+```powershell-interactive
+# Get the existing Compute VM
+$vm = Get-AzVM -Name <vm_name> -ResourceGroupName <resource_group_name>
+      
+# Register with SQL VM resource provider in full mode
+New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -SqlManagementType Full
+```
+
+
 
 ## <a name="remote-desktop-into-the-vm"></a>Подключение к виртуальной машине с помощью удаленного рабочего стола
 

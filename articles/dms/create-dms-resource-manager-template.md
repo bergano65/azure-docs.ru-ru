@@ -1,30 +1,34 @@
 ---
 title: Создание экземпляра DMS (шаблон Azure Resource Manager)
-description: Узнайте, как создать Database Migration Service с помощью шаблона Azure Resource Manager.
+description: Узнайте, как создать экземпляр Database Migration Service с помощью шаблона Azure Resource Manager (шаблона ARM).
 author: MashaMSFT
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mathoma
 ms.date: 06/29/2020
 ms.service: dms
-ms.openlocfilehash: 9e0d537a948e960c90737cc3f367940a0ffca74c
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: dbc09c3fa1dc1878d4feea5c5e7fd8b68e0c11f1
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85852482"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86537451"
 ---
-# <a name="create-instance-of-azure-database-migration-service-azure-resource-manager-template"></a>Создание экземпляра Azure Database Migration Service (шаблон Azure Resource Manager)
+# <a name="quickstart-create-instance-of-azure-database-migration-service-using-arm-template"></a>Краткое руководство. Создание экземпляра Azure Database Migration Service с помощью шаблона ARM
 
-Используйте этот шаблон Azure Resource Manager для развертывания экземпляра Azure Database Migration Service. 
+Используйте этот шаблон Azure Resource Manager (шаблон ARM) для развертывания экземпляра Azure Database Migration Service. 
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
+
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-azure-database-migration-simple-deploy%2fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для использования шаблона Azure Database Migration Service ARM требуется следующее: 
 
-- Последняя версия [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) и (или) [PowerShell](/powershell/scripting/install/installing-powershell?view=powershell-7). 
+- Последняя версия [Azure CLI](/cli/azure/install-azure-cli) и (или) [PowerShell](/powershell/scripting/install/installing-powershell). 
 - Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начать работу.
 
 ## <a name="review-the-template"></a>Изучение шаблона
@@ -39,7 +43,7 @@ ms.locfileid: "85852482"
 - [Microsoft.Network/virtualNetworks/subnets.](/azure/templates/microsoft.network/virtualnetworks/subnets) Создает подсеть. 
 - [Microsoft.DataMigration/services.](/azure/templates/microsoft.datamigration/services) Развертывает экземпляр Azure Database Migration Service. 
 
-Дополнительные шаблоны Azure Database Migration Service доступны в [коллекции шаблонов быстрого запуска](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Datamigration).
+Дополнительные шаблоны Azure Database Migration Service доступны в [коллекции шаблонов быстрого запуска](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Datamigration&pageNumber=1&sort=Popular).
 
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
@@ -105,7 +109,7 @@ Write-Host "Press [ENTER] to continue..."
 Пошаговые инструкции по созданию шаблона см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание и развертывание первого шаблона Azure Resource Manager](/azure/azure-resource-manager/templates/template-tutorial-create-first-template)
+> [Руководство. Создание и развертывание первого шаблона ARM](/azure/azure-resource-manager/templates/template-tutorial-create-first-template)
 
 Другие способы развертывания Azure Database Migration Service описаны в следующих статьях: 
 - [Портал Azure](quickstart-create-data-migration-service-portal.md)

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 06/19/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41f42b053181f4115770cd9973621706b248baab
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: a09cc83259a6fbb07b8c88e1d8f82b720400c0d1
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86168309"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507749"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-servicenow"></a>Руководство по интеграции единого входа Azure Active Directory с приложением ServiceNow
 
@@ -43,6 +43,9 @@ ms.locfileid: "86168309"
 * В клиенте ServiceNow должен быть включен [подключаемый модуль единого входа для нескольких поставщиков](https://wiki.servicenow.com/index.php?title=Multiple_Provider_Single_Sign-On#gsc.tab=0). Это можно сделать, [отправив запрос на обслуживание](https://hi.service-now.com).
 * Чтобы применить автоматическую настройку, включите подключаемый модуль поддержки нескольких поставщиков для ServiceNow.
 * Для установки приложения ServiceNow Classic (Mobile) перейдите в соответствующее хранилище и выполните поиск по запросу ServiceNow Classic. Скачайте это приложение.
+
+> [!NOTE]
+> Эту интеграцию также можно использовать в облачной среде Azure AD для государственных организаций США. Это приложение можно найти в коллекции облачных приложений с поддержкой Azure AD для государственных организаций США и настроить таким же образом, как и в общедоступном облаке.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -101,8 +104,10 @@ ms.locfileid: "86168309"
 
     c. В качестве **URL-адреса ответа** введите один из следующих URL-адресов:
 
-    - `https://instancename.service-now.com/navpage.do`
-    - `https://instancename.service-now.com/customer.do`
+    | URL-адрес ответа|
+    |----------|
+    | `https://instancename.service-now.com/navpage.do` |
+    | `https://instancename.service-now.com/customer.do` | 
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Необходимо заменить эти значения фактическим URL-адресом для входа и идентификатором, как описано ниже. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -171,8 +176,10 @@ ms.locfileid: "86168309"
 
     c. В качестве **URL-адреса ответа** введите один из следующих URL-адресов:
 
-    - `https://instancename.service-now.com/navpage.do`
-    - `https://instancename.service-now.com/customer.do`
+    | URL-адрес ответа |
+    |-----------|
+    | `https://instancename.service-now.com/navpage.do` |
+    | `https://instancename.service-now.com/customer.do` |
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Необходимо заменить эти значения фактическим URL-адресом для входа и идентификатором, как описано ниже. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

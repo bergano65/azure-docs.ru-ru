@@ -5,7 +5,6 @@
     - name: Что такое наборы масштабирования виртуальных машин?
       href: overview.md
 - name: Краткие руководства
-  expanded: true
   items:
     - name: Создание с помощью портала Azure
       href: quick-create-portal.md
@@ -21,29 +20,30 @@
         - name: Масштабируемый набор Windows
           displayName: 'ARM, resource manager'
           href: quick-create-template-windows.md
+  expanded: true
 - name: Учебники
   items:
     - name: 1. Создание масштабируемого набора и управление им
       items:
-        - name: Azure CLI
+        - name: Azure CLI;
           href: tutorial-create-and-manage-cli.md
         - name: Azure PowerShell
           href: tutorial-create-and-manage-powershell.md
     - name: 2. Использование дисков данных
       items:
-        - name: Azure CLI
+        - name: Azure CLI;
           href: tutorial-use-disks-cli.md
         - name: Azure PowerShell
           href: tutorial-use-disks-powershell.md
     - name: 3. Использование пользовательского образа виртуальной машины
       items:
-        - name: Azure CLI
+        - name: Azure CLI;
           href: tutorial-use-custom-image-cli.md
         - name: Azure PowerShell
           href: tutorial-use-custom-image-powershell.md
     - name: 4. Развертывание приложений в масштабируемый набор
       items:
-        - name: Azure CLI
+        - name: Azure CLI;
           href: tutorial-install-apps-cli.md
         - name: Azure PowerShell
           href: tutorial-install-apps-powershell.md
@@ -102,65 +102,71 @@
       href: ../azure-resource-manager/management/overview.md
       maintainContext: true
     - name: Регионы
-      href: ../virtual-machines/windows/regions.md
+      href: ../virtual-machines/regions.md
     - name: Доступность и производительность
-      maintainContext: true
       items:
         - name: Доступность
-          href: availability.md
+          href: ../virtual-machines/availability.md?toc=%2fazure%2fvirtual-machine-scale-sets%2ftoc.json
         - name: Совместное размещение
           href: co-location.md
         - name: проблемы с производительностью сети;
           href: ../virtual-network/virtual-network-optimize-network-bandwidth.md?toc=%2fazure%2fvirtual-machine-scale-sets%2fwindows%2ftoc.json
         - name: Управление доменами сбоя в масштабируемых наборах
           href: virtual-machine-scale-sets-manage-fault-domains.md
+      maintainContext: true
     - name: Изображения
       href: shared-image-galleries.md
     - name: Типы и размеры виртуальных машин
       href: ../virtual-machines/windows/sizes.md
-      maintainContext: true
       items:
         - name: Общего назначения
-          href: ../virtual-machines/windows/sizes-general.md
+          href: ../virtual-machines/sizes-general.md
           maintainContext: true
           items:
             - name: Серия B с накапливаемыми ресурсами
-              href: ../virtual-machines/windows/b-series-burstable.md
+              href: ../virtual-machines/sizes-b-series-burstable.md
               maintainContext: true
         - name: Оптимизированные для вычислений
-          href: ../virtual-machines/windows/sizes-compute.md
+          href: ../virtual-machines/sizes-compute.md
           maintainContext: true
         - name: Оптимизированные для операций в памяти
-          href: ../virtual-machines/windows/sizes-memory.md
+          href: ../virtual-machines/sizes-memory.md
           maintainContext: true
           items:
             - name: Ограниченное число виртуальных ЦП
               href: ../virtual-machines/windows/constrained-vcpu.md
               maintainContext: true
         - name: Оптимизированные для операций в хранилище
-          href: ../virtual-machines/windows/sizes-storage.md
+          href: ../virtual-machines/sizes-storage.md
           maintainContext: true
         - name: Оптимизированные для GPU
-          href: ../virtual-machines/windows/sizes-gpu.md
+          href: ../virtual-machines/sizes-gpu.md
           maintainContext: true
           items:
             - name: Настройка драйверов NVIDIA для GPU
               href: ../virtual-machines/windows/n-series-driver-setup.md
               maintainContext: true
         - name: Для высокопроизводительных вычислений
-          href: ../virtual-machines/windows/sizes-hpc.md
+          href: ../virtual-machines/sizes-hpc.md
+          maintainContext: true
+        - name: Виртуальные машины Azure без временных дисков
+          href: ../virtual-machines/azure-vms-no-temp-disk.md
+          maintainContext: true
+        - name: Соглашения об именовании для размеров виртуальных машин Azure
+          href: ../virtual-machines/vm-naming-conventions.md
           maintainContext: true
         - name: Единицы вычислений Azure (ACU)
-          href: ../virtual-machines/windows/acu.md
+          href: ../virtual-machines/acu.md
           maintainContext: true
         - name: Результаты теста производительности
           href: ../virtual-machines/windows/compute-benchmark-scores.md
           maintainContext: true
+      maintainContext: true
     - name: Поддерживаемые дистрибутивы Linux
       href: ../virtual-machines/linux/endorsed-distros.md
       maintainContext: true
     - name: Обслуживание и обновления
-      href: ../virtual-machines/windows/maintenance-and-updates.md
+      href: ../virtual-machines/maintenance-and-updates.md?bc=/azure/virtual-machines/windows/breadcrumb/toc.json&toc=/azure/virtual-machines/windows/toc.json
       maintainContext: true
     - name: Режимы оркестрации
       href: orchestration-modes.md
@@ -198,11 +204,13 @@
           href: ../virtual-machines/windows/security-policy.md
         - name: Шифрование дисков Azure
           href: disk-encryption-overview.md
+        - name: Базовые средства безопасности Azure
+          href: security-baseline.md
         - name: Встроенные средства управления безопасностью
           href: virtual-machine-scale-sets-security-controls.md
       maintainContext: true
     - name: Наблюдение
-      href: ../virtual-machines/windows/monitor.md
+      href: ../azure-monitor/insights/monitor-vm-azure.md
       maintainContext: true
     - name: Рекомендации по развертыванию
       items:
@@ -381,9 +389,7 @@
 - name: Справочник
   items:
     - name: Azure PowerShell
-      href: /powershell/azure/overview
-    - name: Azure CLI
-      href: ../virtual-machines/azure-cli-arm-commands.md
+      href: /powershell/azure/
     - name: REST
       href: /rest/api/virtualmachinescalesets/
     - name: Шаблоны Azure

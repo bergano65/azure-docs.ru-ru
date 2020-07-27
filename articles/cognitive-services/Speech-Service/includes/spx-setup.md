@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: b0f70fccf3f7f4a6856ae64d0946c2c473fed93c
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: abfb4f6ba9452581811db1f462089cbafc771266
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86050238"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86544257"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -27,6 +27,11 @@ ms.locfileid: "86050238"
 3. Перейдите в извлеченный корневой каталог `spx-zips` и извлеките необходимый подкаталог (`spx-net471` для .NET Framework 4.7 или `spx-netcore-win-x64` для .NET Core 3.0 на ЦП с архитектурой x64).
 
 В командной строке измените каталог на это расположение, а затем введите `spx`, чтобы открыть справку по интерфейсу командной строки службы "Речь".
+
+> [!NOTE]
+> В Windows в интерфейсе командной строки службы "Речь" могут отображаться только шрифты, доступные для командной строки на локальном компьютере.
+> [Терминал Windows](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701) поддерживает все шрифты, создаваемые интерфейсом командной строки службы "Речь" в интерактивном режиме.
+> При выводе результатов в файл текстовый редактор, например Блокнот, или веб-браузер, например Microsoft Edge, будут также отображать все шрифты.
 
 > [!NOTE]
 > При поиске команды PowerShell не проверяет локальный каталог. В PowerShell измените каталог на расположение `spx` и вызовите средство, введя `.\spx`.

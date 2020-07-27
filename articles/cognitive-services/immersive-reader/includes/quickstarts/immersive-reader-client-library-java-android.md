@@ -9,49 +9,49 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 06/10/2020
 ms.author: dylankil
-ms.openlocfilehash: f1d5a5cf6fb23ce3ccf92faf75d80cbe760b9bdc
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: d7b027ead90c0bde8611fc08f19f261c934de2e8
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86038708"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86544699"
 ---
 [Иммерсивное средство чтения](https://www.onenote.com/learningtools) — это включительно разработанное решение, в котором реализованы проверенные методы, улучшающие понимание при чтении.
 
-В рамках этого краткого руководства вы создадите с нуля приложение Android и интегрируете в него иммерсивное средство чтения. Полностью рабочий пример этого краткого руководства доступен [здесь](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/quickstart-java-android).
+В рамках этого краткого руководства вы создадите с нуля приложение Android и интегрируете в него иммерсивное средство чтения. Полностью рабочий пример этого краткого руководства доступен [на GitHub](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/quickstart-java-android).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Ресурс "Иммерсивное средство чтения", настроенный для проверки подлинности Azure Active Directory. Инструкции по настройке см. [здесь](../../how-to-create-immersive-reader.md). Вам потребуются некоторые значения, созданные здесь при настройке свойств среды. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.
-* [Git](https://git-scm.com/);
-* [Пакет SDK иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk)
-* [Android Studio](https://developer.android.com/studio)
+* Ресурс "Иммерсивное средство чтения", настроенный для проверки подлинности Azure Active Directory. Инструкции по настройке см. [здесь](../../how-to-create-immersive-reader.md). Некоторые из созданных здесь значений вам потребуются при настройке свойств среды. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.
+* [Git](https://git-scm.com/).
+* [Пакет SDK иммерсивного средства чтения.](https://github.com/microsoft/immersive-reader-sdk)
+* [Android Studio](https://developer.android.com/studio).
 
 ## <a name="create-an-android-project"></a>Создание проекта Android
 
 Создайте новый проект в Android Studio. Исходный код для этого примера доступен в составе [пакета SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/quickstart-java-android).
 
-![Создать проект](../../media/android/java/android-studio-create-project.png)
+![Новый проект](../../media/android/java/android-studio-create-project.png)
 
-В окне выбора проекта выберите **Empty Activity** (Пустое действие), а затем щелкните Next (Далее).
+В окне **Choose your project** (Выбор проекта) выберите **Empty Activity** (Пустое действие) и щелкните **Next** (Далее).
 
 ![Пустой проект действия](../../media/android/java/android-studio-empty-activity.png)
 
 ## <a name="configure-the-project"></a>Настройка проекта
 
-Присвойте проекту имя QuickstartJava, выберите место для его сохранения и укажите язык программирования Java, а затем щелкните "Готово".
+Присвойте проекту имя **QuickstartJava** и выберите расположение для его сохранения. Выберите язык программирования **Java**, а затем щелкните **Finish** (Завершить).
 
 ![Настройка проекта](../../media/android/java/android-studio-configure-project.png)
 
 ## <a name="set-up-assets-and-authentication"></a>Настройка папки assets и аутентификации
 
-Создание новой папки **/assets**
+Создайте новую папку **/assets**.
 
 ![Создание новой папки assets](../../media/android/java/android-studio-assets-folder.png)
 
- Создайте файл с расширением **env** внутри папки assets. Добавьте в него следующий код, подставив соответствующие значения. Не забудьте, что этот ENV-файл нельзя фиксировать в системе управления версиями, так как он содержит секреты, не предназначенные для публикации.
+ Создайте файл с расширением **env** внутри папки assets. Добавьте следующие имена и значения, используя данные о вашей среде. Не фиксируйте этот ENV-файл в системе управления версиями, так как он содержит секреты, не предназначенные для публикации.
 
 ![Создание ENV-файла](../../media/android/java/android-studio-create-env-file.png)
 
@@ -65,7 +65,7 @@ SUBDOMAIN=<YOUR_SUBDOMAIN>
 
 ## <a name="add-dependencies"></a>Добавление зависимостей
 
-Замените существующие зависимости в файле **build.gradle** приведенными ниже реализациями, чтобы средства gson (синтаксический анализ JSON и сериализация) и dotenv могли ссылаться на переменные, определенные в ENV-файле. Возможно, при реализации действий позднее в этом кратком руководстве вам придется повторно синхронизировать проект.
+Замените существующие зависимости в файле **build.gradle** указанными ниже реализациями, чтобы средства gson (синтаксический анализ JSON и сериализация) и dotenv могли ссылаться на переменные, определенные в ENV-файле. Возможно, при выполнении последующих действий в этом кратком руководстве вам придется повторно синхронизировать проект.
 
 ```build.gradle
 dependencies {
@@ -84,7 +84,7 @@ dependencies {
 
 ## <a name="update-app-strings-and-layout-resources"></a>Обновление ресурсов строк и макета для приложения
 
-Замените содержимое файла **res/strings/strings.xml** строками, которые будут использоваться в приложении.
+Замените содержимое файла **res/strings/strings.xml** следующими строками, которые будут использоваться в приложении.
 
 ![Файл strings.xml для приложения](../../media/android/java/android-studio-strings.png)
 
@@ -102,7 +102,7 @@ dependencies {
 </resources>
 ```
 
-Замените содержимое файла **res/layout/activity_main.xml** приведенным ниже кодом XML, который будет использоваться в приложении. Это макет пользовательского интерфейса для приложения.
+Замените содержимое файла **res/layout/activity_main.xml** следующим кодом XML, который будет использоваться в приложении. Это макет пользовательского интерфейса для приложения в формате XML.
 
 ![Файл activity_main.xml для приложения](../../media/android/java/android-studio-activity-main-xml.png)
 
@@ -203,7 +203,7 @@ dependencies {
 
 ## <a name="add-the-web-view-layout"></a>Добавление макета веб-представления
 
-В папке **res/layout/** создайте новый файл ресурсов макета и присвойте ему имя **activity_immersive_reader**, а затем замените его содержимое приведенным ниже кодом XML. Это действие добавляет компонент WebView, который будет использоваться кодом Java для IRActivity (мы создадим его позже). Пока его определение отсутствует, он будет вызывать ошибки.
+В папке **res/layout/** создайте новый файл ресурсов макета и присвойте ему имя **activity_immersive_reader**. Затем замените содержимое приведенным ниже кодом XML. Этот код XML добавляет компонент WebView, который будет использоваться кодом Java для IRActivity (мы создадим его позже). Пока его определение отсутствует, что будет вызывать ошибки.
 
 ![Создание нового файла ресурсов макета](../../media/android/java/android-studio-new-layout-resource.png)
 
@@ -256,9 +256,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Creates a new activity, finds its content and the Immersive Reader button
- * when clicked the app sends the content to the Immersive Reader SDK and
- * Launches the Immersive Reader
+ * Creates a new activity, finds its content and the Immersive Reader button.
+ * When clicked, the app sends the content to the Immersive Reader SDK and
+ * launches the Immersive Reader.
  */
 public class MainActivity extends Activity {
 
@@ -287,9 +287,9 @@ public class MainActivity extends Activity {
 }
 ```
 
-Нам нужно создать еще 16 файлов для классов Java в папке **/Java/com.example.quickstartjava**. Каждый из этих классов используется приложением для интеграции пакета SDK для иммерсивного средства чтения. В каждом новом файле есть ссылки на несколько классов, которые еще не существуют и будут созданы позже. Когда вы завершите создание всех классов, ошибки пустых ссылок должны исчезнуть.
+Мы создадим еще 16 файлов для классов Java в папке **/Java/com.example.quickstartjava**. Каждый из этих классов используется приложением для интеграции пакета SDK для иммерсивного средства чтения. В каждом новом файле есть ссылки на несколько классов, которые еще не существуют и будут созданы позже. Когда вы завершите создание всех классов, ошибки пустых ссылок должны исчезнуть.
 
-Создайте новый файл класса Java **ImmersiveReader.java**, щелкнув правой кнопкой мыши папку в Android Studio, выбрав действие "Создать" и вариант "Класс Java". Этот же метод создания файлов для классов Java вы примените для каждого создаваемого файла класса Java.
+Чтобы создать новый файл с классом **ImmersiveReader.java**, щелкните правой кнопкой мыши папку в Android Studio, выберите **New** (Создать), а затем **Class Java** (Класс Java). Этот же метод создания файлов для классов Java вы примените для каждого создаваемого файла класса Java.
 
 ![ImmersiveReader](../../media/android/java/android-studio-immersivereader-java.png)
 
@@ -347,7 +347,7 @@ public class ImmersiveReader {
      * @param dataToRead - Content to be read
      * @return IRError - IRError, with following error codes:
      * a) Error.NONE in case of successful launch of Immersive Reader
-     * b) Error.INVALID_ACCESS_TOKEN in case of empty access token.
+     * b) Error.INVALID_ACCESS_TOKEN in case of empty access token
      * c) Error.INVALID_STATE in case of empty activity
      * d) Error.INVALID_CONTENT in case of empty list of text chunks
      */
@@ -408,8 +408,8 @@ public class ImmersiveReader {
 
     /**
      * Interface to accept access token from client app.
-     * Note that it is client's responsibility to give a valid Access Token whenever getAccessToken() is requested.
-     * In favor of latency perf, there would be no further validation by Immersive Reader module except to ensure that the provided access token is non-empty string
+     * Note that it is the client's responsibility to give a valid Access Token whenever getAccessToken() is requested.
+     * In favor of latency perf, there would be no further validation by Immersive Reader module except to ensure that the provided access token is non-empty string.
      */
     @Keep
     public interface IAuthenticator {
@@ -663,7 +663,7 @@ import androidx.annotation.Keep;
  * A thin singleton class that is used to hold the Client's IAuthenticator's implementation and the Content to be read.
  * This is required for two reasons:
  * 1) As per Android guidelines, data being passed via intent should be limited to a few KBs. Alternative is to use Singleton holder classes like this one.
- * 2) We need a way to make callbacks survive app configuration changes and killed in background scenarios
+ * 2) We need a way to make callbacks survive app configuration changes and killed in background scenarios.
  */
 
 @Keep
@@ -739,10 +739,10 @@ import java.net.URL;
 
 import static java.net.HttpURLConnection.HTTP_OK;
 
-// This sample app uses the Dotenv is a module that loads environment variables from a .env file to better manage secrets.
+// This sample app uses the Dotenv. It's a module that loads environment variables from a .env file to better manage secrets.
 // https://github.com/cdimascio/java-dotenv
-// Be sure to add a "env" file to the /assets folder
-// instead of '.env', use 'env'
+// Be sure to add a "env" file to the /assets folder.
+// Instead of '.env', use 'env'.
 
 public class IRAuthenticator implements ImmersiveReader.IAuthenticator {
     private static final String LOG_TAG = "IRAuthenticator";
@@ -853,7 +853,7 @@ import java.util.concurrent.Callable;
 import io.github.cdimascio.dotenv.Dotenv;
 
 /**
- * Responsible for setting up the web view with appropriate bridging between JS and Java to launch the Immersive reader url for reading the content
+ * Responsible for setting up the web view with appropriate bridging between JavaScript and Java to launch the Immersive Reader url for reading the content.
  */
 
 public class IRLauncher {
@@ -876,7 +876,7 @@ public class IRLauncher {
         // Invoked in case of empty access token or empty content request to be read
         void onFailure(IRError error);
 
-        // Invoked when Immersive reader is exiting (e.g.) user pressed back in the immersive reader experience
+        // Invoked when Immersive Reader is exiting (e.g.) user pressed back in the Immersive Reader experience
         void onExit();
     }
 
@@ -981,7 +981,7 @@ public class IRLauncher {
             }
         });
 
-        // Prepare and set the WebAppInterface to hear back from the JS
+        // Prepare and set the WebAppInterface to hear back from the JavaScript
         WebAppInterface jsInterface = new WebAppInterface(new WebAppInterface.WebAppListener() {
             @Override
             public void onShowToast(String toast) {
@@ -1112,8 +1112,8 @@ import androidx.annotation.Keep;
 
 /**
  * The chunk object that will be sent to the Immersive Reader SDK.
- * The content is a string of text, the lang is a string, e.g. 'll-cc'
- * and the mimeType is also a string, e.g. 'text/plain'
+ * The content is a string of text, the lang is a string, e.g. 'll-cc',
+ * and the mimeType is also a string, e.g. 'text/plain'.
  */
 
 @Keep
@@ -1217,7 +1217,7 @@ import androidx.annotation.Keep;
 
 /**
  * The message object that will be sent to the Immersive Reader SDK.
- * This object contains the access token, sub domain, Content and Options.
+ * This object contains the access token, sub domain, Content, and Options.
  */
 
 @Keep
@@ -1257,7 +1257,7 @@ import androidx.annotation.Keep;
 import android.webkit.JavascriptInterface;
 
 /**
- * JavaScript interface implementation passed to the WebView to enable talking between JS and Java
+ * JavaScript interface implementation passed to the WebView to enable talking between JavaScript and Java.
  */
 
 @Keep
@@ -1296,7 +1296,7 @@ public class WebAppInterface {
 
 ![Расположение ресурса HTML](../../media/android/java/android-studio-immersive-reader-html-assets.png)
 
-Добавьте представленный ниже HTML-код с JavaScript. Этот код добавляет в приложение пакет SDK для иммерсивного средства чтения, а затем с помощью этого пакета и созданного нами кода приложения запускает иммерсивное средство чтения.
+Добавьте следующий код HTML и JavaScript. Этот код добавляет в приложение пакет SDK для иммерсивного средства чтения, а затем с помощью этого пакета и созданного нами кода приложения открывает иммерсивное средство чтения.
 
 ```immersiveReader.html
 <!-- Copyright (c) Microsoft Corporation. All rights reserved.
@@ -1353,7 +1353,7 @@ Licensed under the MIT License. -->
 
 ![AndroidManifest](../../media/android/java/android-studio-android-manifest-xml.png)
 
-При работе это приложение будет выполнять сетевые вызовы пакета SDK для иммерсивного средства чтения, поэтому нам нужно настроить разрешения приложения для предоставления доступа к сети. Замените содержимое файла **/manifests/AndroidManifest.xml** приведенным ниже кодом XML.
+При работе это приложение будет выполнять сетевые вызовы к пакету SDK для иммерсивного средства чтения, поэтому нам нужно предоставить приложению разрешения на доступ к сети. Замените содержимое файла **/manifests/AndroidManifest.xml** следующим кодом XML.
 
 ```AndroidManifest.xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -1384,12 +1384,12 @@ Licensed under the MIT License. -->
 </manifest>
 ```
 
-## <a name="running-the-app"></a>Выполнение приложения
+## <a name="run-the-app"></a>Запустите приложение
 
-С помощью Android Studio запустите приложение на эмуляторе устройства. При нажатии кнопки **Иммерсивное средство чтения** появится запущенное Иммерсивное средство чтения с содержимым приложения.
+С помощью Android Studio запустите приложение на эмуляторе устройства. Теперь, когда вы выберете **иммерсивное средство чтения**, откроется иммерсивное средство чтения с содержимым приложения.
 
 ![Иммерсивное средство чтения](../../media/android/java/android-studio-device-emulator.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [справочнике по этому пакету](../../reference.md).
+Изучите статью [о пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [документацию по этому пакету](../../reference.md).

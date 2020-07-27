@@ -9,14 +9,14 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: quickstart
 ms.date: 04/15/2020
-ms.openlocfilehash: 1ec73c07d97a0e400e048e77ba6a30a6a12c0fc4
-ms.sourcegitcommit: 3988965cc52a30fc5fed0794a89db15212ab23d7
+ms.openlocfilehash: d89033a8d26c5ee71d505b85a4ebbe91b86d3e50
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85194915"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86496253"
 ---
-# <a name="quickstart-create-an-apache-spark-pool-preview-in-azure-synapse-analytics-using-web-tools"></a>Краткое руководство. Создание пула Apache Spark (предварительная версия) в Azure Synapse Analytics с помощью веб-инструментов
+# <a name="quickstart-create-an-apache-spark-pool-in-azure-synapse-analytics-using-web-tools"></a>Краткое руководство. Создание пула Apache Spark в Azure Synapse Analytics с помощью веб-инструментов
 
 Из этого краткого руководства вы узнаете, как создать пул Apache Spark (предварительная версия) в Azure Synapse с помощью веб-инструментов. Затем вы научитесь подключаться к этому пулу Apache Spark и выполнять SQL-запросы Spark по файлам и таблицам. Apache Spark обеспечивает быстрый анализ данных и кластерные вычисления, используя обработку в памяти. Сведения о Spark в Azure Synapse см. в статье [Что такое Apache Spark в Azure Synapse Analytics](./spark/apache-spark-overview.md).
 

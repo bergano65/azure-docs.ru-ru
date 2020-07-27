@@ -19,7 +19,7 @@
       href: tutorial-create-managed-app-with-custom-provider.md
 - name: Примеры
   items:
-    - name: Azure CLI
+    - name: Azure CLI;
       href: cli-samples.md
     - name: Azure PowerShell
       href: powershell-samples.md
@@ -81,24 +81,44 @@
     - name: REST
       href: /rest/api/resources/
     - name: Функции пользовательского интерфейса
-      href: create-uidefinition-functions.md
+      items:
+        - name: Все функции
+          href: create-uidefinition-functions.md
+        - name: Функции для коллекций
+          href: create-ui-definition-collection-functions.md
+        - name: Функции преобразования
+          href: create-ui-definition-conversion-functions.md
+        - name: Функции данных
+          href: create-ui-definition-date-functions.md
+        - name: Логические функции
+          href: create-ui-definition-logical-functions.md
+        - name: Математические функции
+          href: create-ui-definition-math-functions.md
+        - name: Функции для ссылки
+          href: create-ui-definition-referencing-functions.md
+        - name: Строковые функции
+          href: create-ui-definition-string-functions.md
     - name: Элементы пользовательского интерфейса
       href: create-uidefinition-elements.md
       items:
         - name: Распространенные
           items:
+            - name: CheckBox
+              href: microsoft-common-checkbox.md
             - name: DropDown
               href: microsoft-common-dropdown.md
             - name: FileUpload
               href: microsoft-common-fileupload.md
             - name: InfoBox
               href: microsoft-common-infobox.md
-            - name: OptionsGroup
+            - name: OptionsGroup (переключатель)
               href: microsoft-common-optionsgroup.md
             - name: PasswordBox
               href: microsoft-common-passwordbox.md
             - name: Section
               href: microsoft-common-section.md
+            - name: Ползунок
+              href: microsoft-common-slider.md
             - name: TagsByResource
               href: microsoft-common-tagsbyresource.md
             - name: TextBlock
@@ -123,6 +143,12 @@
               href: microsoft-network-publicipaddresscombo.md
             - name: VirtualNetworkCombo
               href: microsoft-network-virtualnetworkcombo.md
+        - name: Решения
+          items:
+            - name: ArmApiControl
+              href: microsoft-solutions-armapicontrol.md
+            - name: ResourceSelector
+              href: microsoft-solutions-resourceselector.md
         - name: Память
           items:
             - name: MultiStorageAccountCombo

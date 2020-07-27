@@ -60,9 +60,9 @@
       items:
         - name: Создание VPN-шлюза на основе маршрутов
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: create-routebased-vpn-gateway-portal.md
-            - name: Azure PowerShell
+            - name: Azure PowerShell;
               href: create-routebased-vpn-gateway-powershell.md
             - name: Azure CLI
               href: create-routebased-vpn-gateway-cli.md
@@ -72,9 +72,9 @@
           href: vpn-gateway-resetgw-classic.md
         - name: Удаление VPN-шлюза
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: vpn-gateway-delete-vnet-gateway-portal.md
-            - name: Azure PowerShell
+            - name: Azure PowerShell;
               href: vpn-gateway-delete-vnet-gateway-powershell.md
         - name: Управление устаревшими номерами SKU шлюза
           href: vpn-gateway-about-skus-legacy.md
@@ -82,9 +82,9 @@
       items:
         - name: "Настройка подключений \"сеть\_— сеть\""
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: vpn-gateway-howto-site-to-site-resource-manager-portal.md
-            - name: Azure PowerShell
+            - name: Azure PowerShell;
               href: vpn-gateway-create-site-to-site-rm-powershell.md
             - name: Azure CLI
               href: vpn-gateway-howto-site-to-site-resource-manager-cli.md
@@ -98,17 +98,17 @@
       items:
         - name: Настройка подключений между виртуальными сетями
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: vpn-gateway-howto-vnet-vnet-resource-manager-portal.md
-            - name: Azure PowerShell
+            - name: Azure PowerShell;
               href: vpn-gateway-vnet-vnet-rm-ps.md
             - name: Azure CLI
               href: vpn-gateway-howto-vnet-vnet-cli.md
         - name: Настройка подключения между виртуальными сетями для разных моделей развертывания
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: vpn-gateway-connect-different-deployment-models-portal.md
-            - name: Azure PowerShell
+            - name: Azure PowerShell;
               href: vpn-gateway-connect-different-deployment-models-powershell.md
     - name: "Подключения \"точка\_— сеть\""
       items:
@@ -116,9 +116,9 @@
           items:
             - name: "Настройка VPN-подключений \"точка\_— сеть\""
               items:
-                - name: Портал Azure
+                - name: портал Azure;
                   href: vpn-gateway-howto-point-to-site-resource-manager-portal.md
-                - name: Azure PowerShell
+                - name: Azure PowerShell;
                   href: vpn-gateway-howto-point-to-site-rm-ps.md
             - name: Настройка сертификатов и клиентов P2S
               items:
@@ -180,7 +180,7 @@
       items:
         - name: Настройка BGP для VPN-шлюза
           items:
-            - name: Azure PowerShell
+            - name: Azure PowerShell;
               href: vpn-gateway-bgp-resource-manager-ps.md
             - name: Azure CLI
               href: bgp-how-to-cli.md
@@ -196,7 +196,7 @@
       items:
         - name: Портал Azure
           href: vpn-gateway-modify-local-network-gateway-portal.md
-        - name: Azure PowerShell
+        - name: Azure PowerShell;
           href: vpn-gateway-modify-local-network-gateway.md
         - name: Azure CLI
           href: vpn-gateway-modify-local-network-gateway-cli.md
@@ -210,6 +210,8 @@
           href: vpn-gateway-3rdparty-device-config-cisco-asa.md
     - name: Мониторинг и оповещения
       items:
+        - name: Просмотр метрик VPN-шлюза
+          href: vpn-gateway-howto-view-virtual-network-gateway-metrics.md
         - name: Настройка оповещений на основе метрик
           href: vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric.md
         - name: Настройка оповещений на основе журналов ресурсов
@@ -260,9 +262,9 @@
 - name: Справочник
   items:
     - name: Azure PowerShell
-      href: '/powershell/module/az.network#vpn'
+      href: /powershell/module/az.network#vpn
     - name: Azure PowerShell (классическая модель)
-      href: '/powershell/module/servicemanagement/azure/?view=azuresmps-4.0.0#azure'
+      href: /powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0#azure
     - name: REST
       href: /rest/api/network/virtualnetworkgateways
     - name: REST (классическая модель)

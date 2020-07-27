@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74cf0c1e055570df7702465df79dcdfbd8ea9e9f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 20b1de1b643a3cc0b3dbcf9d33c21924a7fe50e6
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74232091"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86500078"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-arcgis-online"></a>Руководство по интеграции Azure Active Directory с ArcGIS Online
 
@@ -41,6 +41,9 @@ ms.locfileid: "74232091"
 
 * подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка ArcGIS Online с поддержкой единого входа
+
+> [!NOTE]
+> Эту интеграцию также можно использовать в облачной среде Azure AD для государственных организаций США. Это приложение можно найти в коллекции облачных приложений с поддержкой Azure AD для государственных организаций США и настроить таким же образом, как и в общедоступном облаке.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -100,7 +103,7 @@ ms.locfileid: "74232091"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
@@ -119,7 +122,7 @@ ms.locfileid: "74232091"
 
 6. Для автоматизации настройки в **ArcGIS Online** необходимо установить **Расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
 
-    ![image](./media/arcgis-tutorial/install_extension.png)
+    ![Изображение](./media/arcgis-tutorial/install_extension.png)
 
 7. После добавления расширения в браузере щелкните **Установка ArcGIS Online**, чтобы перейти к приложению ArcGIS Online. После этого укажите учетные данные администратора для входа в ArcGIS Online. Расширение браузера автоматически настроит приложение и автоматизирует шаги в разделе **Настройка единого входа ArcGIS Online**.
 
@@ -133,7 +136,7 @@ ms.locfileid: "74232091"
 
 3. Перейдите на вкладку **Безопасность**.
 
-    ![Безопасность](./media/arcgis-tutorial/ic784743.png "безопасность")
+    ![Безопасность](./media/arcgis-tutorial/ic784743.png "Безопасность")
 
 4. В разделе **Enterprise Logins** (Корпоративные имена для входа) установите флажок **Set Identity Provider** (Задать поставщик удостоверений).
 

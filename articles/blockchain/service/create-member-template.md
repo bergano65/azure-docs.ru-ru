@@ -2,18 +2,16 @@
 title: Создание участника Блокчейна Azure с помощью шаблона Azure Resource Manager
 description: Узнайте, как создать участника Блокчейна Azure с помощью шаблона Azure Resource Manager.
 services: azure-resource-manager
-author: PatAltimore
 ms.service: azure-resource-manager
 ms.topic: quickstart
-ms.custom: subject-armqs
-ms.author: patricka
-ms.date: 06/04/2020
-ms.openlocfilehash: 8eabb6806dee96871648ea419ba36d768d32a2ab
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.custom: subject-armqs, references_regions
+ms.date: 07/16/2020
+ms.openlocfilehash: fb7f91a0670d99170656c0c3a2c1b73d96095762
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86078172"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86513036"
 ---
 # <a name="quickstart-create-an-azure-blockchain-service-member-using-an-arm-template"></a>Краткое руководство. Создание участника в службе "Блокчейн Azure" с помощью шаблона ARM
 
@@ -51,7 +49,7 @@ ms.locfileid: "86078172"
     --------|------------
     Подписка | Выберите подписку Azure, которую нужно использовать для службы. Если у вас есть несколько подписок, выберите ту, в которой взимается плата за использование ресурса.
     Группа ресурсов | Создайте группу ресурсов или используйте имеющуюся группу из подписки.
-    Расположение | Выберите расположение для создания участника. Все участники консорциума должны находится в одном расположении. Доступные расположения для развертывания: *westeurope, eastus, southeastasia, westeurope, northeurope, westus2* и *japaneast*.
+    Расположение | Выберите расположение для создания участника. Все участники консорциума должны находится в одном расположении. Доступные расположения для развертывания: *westeurope, eastus, southeastasia, westeurope, northeurope, westus2* и *japaneast*. Компоненты могут быть недоступны в некоторых регионах. Диспетчер данных блокчейна Azure доступен в таких регионах Azure: восточная часть США и Западная Европа.
     Имя участника | Выберите уникальное имя для участника в службе "Блокчейн Azure". Имя участника блокчейн-сети может содержать только строчные буквы и цифры. Первый символ должен быть буквой. Значение должно иметь длину от 2 до 20 символов.
     Имя консорциума | Укажите уникальное имя. Дополнительные сведения о консорциумах см. в разделе [Консорциум службы "Блокчейн Azure"](consortium.md).
     Пароль участника | Пароль учетной записи участника используется для шифрования закрытого ключа для учетной записи Ethereum, созданного для вашего участника. Учетная запись участника и ее пароль используются для управления консорциумом.

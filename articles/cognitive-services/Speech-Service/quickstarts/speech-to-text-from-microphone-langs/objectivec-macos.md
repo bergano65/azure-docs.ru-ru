@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Распознавание речи с микрофона в службе "Речь" с помощью Objective-C
+title: Краткое руководство. Распознавание речи с помощью Objective-C в службе "Речь" (macOS)
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как распознавать речь в macOS с помощью Objective-C и пакета SDK службы "Речь"
+description: Узнайте, как создать приложение для распознавания речи на Objective-C для компьютера macOS с помощью пакета SDK службы "Речь" в Cognitive Services.
 services: cognitive-services
 author: chlandsi
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 06/25/2020
 ms.author: chlandsi
-ms.openlocfilehash: 8f94f2ed810204d739dfd2e6d5e88ef0977ad9a4
-ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
+ms.openlocfilehash: b73925165552fe428be7df465b33701eeed157cc
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85391525"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86524239"
 ---
 # <a name="quickstart-recognize-speech-in-objective-c-on-macos-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в macOS с помощью Objective-C и пакета SDK службы "Речь"
 

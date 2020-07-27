@@ -1,18 +1,18 @@
 ---
-title: Создание оповещения метрики с помощью шаблона Resource Manager
-description: Сведения об использовании шаблона Resource Manager для создания оповещения метрики.
+title: Примеры шаблонов Resource Manager для оповещений о метриках
+description: В этой статье представлены примеры шаблонов Resource Manager для оповещений о метриках в Azure Monitor.
 author: bwren
 ms.author: bwren
 services: azure-monitor
 ms.topic: sample
 ms.date: 05/18/2020
 ms.subservice: alerts
-ms.openlocfilehash: 27d592a2702f9e2e8fda9094796cf2e37400621b
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.openlocfilehash: 793a4b3e8ea0dde2e4ad755cbff5a07a36c44cb9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83853307"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86515382"
 ---
 # <a name="resource-manager-template-samples-for-metric-alert-rules-in-azure-monitor"></a>Примеры шаблонов Resource Manager для правил генерации оповещений метрик в Azure Monitor
 
@@ -20,7 +20,7 @@ ms.locfileid: "83853307"
 
 [!INCLUDE [azure-monitor-samples](../../../includes/azure-monitor-resource-manager-samples.md)]
 
-Список ресурсов, которые можно использовать с правилами генерации оповещений метрик, см. в разделе [Поддерживаемые ресурсы для оповещений метрик в Azure Monitor](../platform/alerts-metric-near-real-time.md). Описание схемы и свойств правила генерации оповещений см. в статье [Оповещения метрик: создание или обновление](https://docs.microsoft.com/rest/api/monitor/metricalerts/createorupdate).
+Список ресурсов, которые можно использовать с правилами генерации оповещений метрик, см. в разделе [Поддерживаемые ресурсы для оповещений метрик в Azure Monitor](../platform/alerts-metric-near-real-time.md). Описание схемы и свойств правила генерации оповещений см. в статье [Оповещения метрик: создание или обновление](/rest/api/monitor/metricalerts/createorupdate).
 
 > [!NOTE]
 > Шаблон ресурсов для создания оповещений метрик для типа ресурса: для рабочей области Azure Log Analytics (т. е. `Microsoft.OperationalInsights/workspaces`) требуется выполнить дополнительные шаги. Дополнительные сведения см. в статье: [Оповещения метрик для журналов: шаблон ресурса](../../azure-monitor/platform/alerts-metric-logs.md#resource-template-for-metric-alerts-for-logs).
@@ -1094,7 +1094,7 @@ ms.locfileid: "83853307"
 
 Приведенный ниже шаблон можно использовать для создания более сложного правила генерации оповещений метрики со статическим порогом для своей метрики.
 
-Дополнительные сведения о пользовательских метриках в Azure Monitor см. в разделе [Пользовательские метрики в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-custom-overview).
+Дополнительные сведения о пользовательских метриках в Azure Monitor см. в разделе [Пользовательские метрики в Azure Monitor](../platform/metrics-custom-overview.md).
 
 При создании правила генерации оповещений для пользовательской метрики необходимо указать как имя метрики, так и пространство имен метрик. Также следует убедиться, что эта пользовательская метрика уже передает данные, так как невозможно создать правило генерации оповещений для пользовательской метрики, которая еще не существует.
 
@@ -1325,7 +1325,7 @@ ms.locfileid: "83853307"
 
 >[!NOTE]
 >
-> Пространство имен метрик определенной пользовательской метрики можно найти, [просмотрев пользовательские метрики на портале Azure](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-custom-overview#browse-your-custom-metrics-via-the-azure-portal)
+> Пространство имен метрик определенной пользовательской метрики можно найти, [просмотрев пользовательские метрики на портале Azure](../platform/metrics-custom-overview.md#browse-your-custom-metrics-via-the-azure-portal)
 
 
 ## <a name="multiple-resources"></a>Несколько ресурсов

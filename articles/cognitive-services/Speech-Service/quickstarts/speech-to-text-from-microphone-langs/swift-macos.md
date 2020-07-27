@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Распознавание речи с микрофона в службе "Речь" с помощью Swift
+title: Краткое руководство. Распознавание речи с помощью Swift в службе "Речь" (macOS)
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как распознавать речь в Swift, используя macOS и пакет SDK службы "Речь"
+description: Узнайте, как создать приложение для распознавания речи на Swift для компьютера macOS с помощью пакета SDK службы "Речь" в Cognitive Services.
 services: cognitive-services
 author: cbasoglu
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 06/25/2020
 ms.author: cbasoglu
-ms.openlocfilehash: 440addd017e7a819d9d3d02a8b77b9432b68b9af
-ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
+ms.openlocfilehash: 68947446d18ce1632b63ac3ba27311f648f3deea
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85391423"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86524120"
 ---
 # <a name="quickstart-recognize-speech-in-swift-on-macos-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в Swift с использованием macOS и пакета SDK службы "Речь"
 

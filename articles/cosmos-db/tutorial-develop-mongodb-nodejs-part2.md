@@ -10,12 +10,12 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
-ms.openlocfilehash: f9ce90a64ca038c99fe4ba63e66f7e5abbd196f6
-ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
+ms.openlocfilehash: a796ae32033dbc09b1f5b888ded9ea5e1f4c457e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2020
-ms.locfileid: "85119177"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86523491"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---create-a-nodejs-express-app"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание приложения Express Node.js
 
@@ -147,11 +147,11 @@ ms.locfileid: "85119177"
 
 7. Сохраните все измененные файлы. 
 
-8. В Visual Studio Code нажмите кнопку **отладки**![значок отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part2/debug-button.png), затем нажмите кнопку шестеренки ![значок шестеренки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part2/gear-button.png). В Visual Studio Code откроется новый файл launch.json.
+8. В Visual Studio Code нажмите кнопку **Отладка** (:::image type="icon" source="./media/tutorial-develop-mongodb-nodejs-part2/debug-button.png":::), а затем нажмите кнопку с шестеренкой :::image type="icon" source="./media/tutorial-develop-mongodb-nodejs-part2/gear-button.png":::. В Visual Studio Code откроется новый файл launch.json. 
 
 8. В 11-й строке файла launch.json замените `"${workspaceFolder}\\server"` на `"program": "${workspaceRoot}/src/server/index.js"` и сохраните файл.
 
-9. Нажмите кнопку **Начать отладку**![значок отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part2/start-debugging-button.png), чтобы запустить приложение.
+9. Чтобы запустить приложение, нажмите кнопку **Начать отладку** (:::image type="icon" source="./media/tutorial-develop-mongodb-nodejs-part2/start-debugging-button.png":::).
 
     Приложение должно запуститься без ошибок.
 

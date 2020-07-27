@@ -6,12 +6,12 @@ ms.topic: quickstart
 description: В этом кратком руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения .NET Core в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: b38562879fa67d7ee82e3251ea2fcaa57a2075d6
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: b8ddf2e484b3d1525825f8df3b738091564b0a78
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80240213"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86512458"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-visual-studio-code-and-net-core---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация в Kubernetes: Использование Visual Studio Code и .NET Core в Azure Dev Spaces
 
@@ -102,7 +102,7 @@ git clone https://github.com/Azure/dev-spaces
 
 Щелкните значок *Отладка* слева, а затем *.NET Core Launch (AZDS)* (Запуск .NET Core (AZDS)) вверху.
 
-![](media/get-started-netcore/debug-configuration.png)
+![Снимок экрана: левый верхний угол окна Visual Studio Code Выделен значок отладки, заголовок панели слева — DEBUG (Отладка), а в раскрывающемся списке справа от заголовка отображается элемент ".NET Core Launch (AZDS)" (Запуск .NET Core (AZDS)).](media/get-started-netcore/debug-configuration.png)
 
 Эта команда создает службы в Azure Dev Spaces и запускает их в режиме отладки. В окне *Терминал* внизу показаны выходные данные сборки и URL-адрес для службы, запущенной в Azure Dev Spaces. В *консоли отладки* показаны выходные данные журнала.
 
@@ -155,7 +155,7 @@ ViewData["Message"] = "Your application description page in Azure while debuggin
 
 Сохраните файл. Выберите *Отладка*, а затем — *Restart Debugging* (Перезапустить отладку) или на *панели инструментов отладки* нажмите кнопку *Restart Debugging* (Перезапустить отладку).
 
-![](media/common/debug-action-refresh.png)
+![Панель инструментов "Отладка"представляет собой небольшую панель, которая отображается по центру вверху страницы (сразу под заголовком страницы). Кнопка "Перезапуск" выделена и представляет собой круглую стрелку. При наведении указателя на кнопку отображается надпись "Перезапустить (CTRL+SHIFT+F5)".](media/common/debug-action-refresh.png)
 
 Откройте службу в браузере и обратите внимание, что отображается обновленное сообщение.
 

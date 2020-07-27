@@ -1,6 +1,6 @@
 ---
 title: Создание службы приватного канала в Приватном канале Azure
-description: В этом кратком руководстве показано, как создать службу приватного канала с помощью шаблона Azure Resource Manager.
+description: В этом кратком руководстве показано, как создать службу "Приватный канал" с помощью шаблона Azure Resource Manager (шаблона ARM).
 services: private-link
 author: mblanco77
 ms.service: private-link
@@ -8,32 +8,34 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 05/29/2020
 ms.author: allensu
-ms.openlocfilehash: c9ed628501e8fa02b816a1564b91620404dfc379
-ms.sourcegitcommit: 1383842d1ea4044e1e90bd3ca8a7dc9f1b439a54
+ms.openlocfilehash: 2a3c7245a4e6c69e87791ca3364ad588b82572c6
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84817621"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86529613"
 ---
-# <a name="quickstart-create-a-private-link-service-by-using-an-azure-resource-manager-template"></a>Краткое руководство. Создание службы приватного канала с помощью шаблона Azure Resource Manager
+# <a name="quickstart-create-a-private-link-service-by-using-an-arm-template"></a>Краткое руководство. Создание службы "Приватный канал" с помощью шаблона ARM
 
-В этом кратком руководстве показано, как создать службу приватного канала с помощью шаблона Azure Resource Manager.
+В этом кратком руководстве показано, как создать службу "Приватный канал" с помощью шаблона Azure Resource Manager (шаблона ARM).
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
 Инструкции в этом кратком руководстве можно также выполнить с помощью [портала Azure](create-private-link-service-portal.md), [Azure PowerShell](create-private-link-service-powershell.md) или [Azure CLI](create-private-link-service-cli.md).
 
-## <a name="prerequisite"></a>Предварительные требования
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-privatelink-service%2Fazuredeploy.json)
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Вам потребуется учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 
-## <a name="create-a-private-link-service"></a>Создание службы "Приватный канал"
+## <a name="review-the-template"></a>Изучение шаблона
 
 Этот шаблон создает службу приватного канала.
 
-### <a name="review-the-template"></a>Изучение шаблона
-
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/).
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-privatelink-service/).
 
 :::code language="json" source="~/quickstart-templates/101-privatelink-service/azuredeploy.json" range="001-432" highlight="263-289":::
 
@@ -48,13 +50,13 @@ ms.locfileid: "84817621"
 - [**Microsoft.Network/publicIpAddresses.** ](/azure/templates/microsoft.network/publicIpAddresses) Два общедоступных IP-адреса, по одному для каждой виртуальной машины.
 - [**Microsoft.Network/privateendpoints.** ](/azure/templates/microsoft.network/privateendpoints) Частная конечная точка для обращения к службе.
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Ниже показано, как развернуть шаблон Azure Resource Manager в Azure.
+Чтобы развернуть шаблон ARM в Azure, сделайте следующее:
 
 1. Выберите элемент **Развертывание в Azure**, чтобы войти в Azure и открыть шаблон. Шаблон создает виртуальную машину, стандартную подсистему балансировки нагрузки, службу приватного канала, частную конечную точку, сеть и виртуальную машину для проверки.
 
-   [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-private-endpoint-sql%2Fazuredeploy.json)
+   [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-privatelink-service%2Fazuredeploy.json)
 
 2. Выберите или создайте группу ресурсов.
 3. Введите имя и пароль администратора для виртуальной машины.
@@ -63,7 +65,7 @@ ms.locfileid: "84817621"
 ## <a name="validate-the-deployment"></a>Проверка развертывания
 
 > [!NOTE]
-> Шаблон Azure Resource Manager создает уникальное имя для ресурса виртуальной машины myConsumerVm<b>{uniqueid}</b>. Подставьте созданное значение вместо **{uniqueid}** .
+> Шаблон ARM создает уникальное имя для ресурса виртуальной машины myConsumerVm<b>{uniqueid}</b>. Подставьте созданное значение вместо **{uniqueid}** .
 
 ### <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
 
@@ -95,7 +97,7 @@ ms.locfileid: "84817621"
 Ниже показано, как подключиться к службе HTTP с виртуальной машины с помощью частной конечной точки.
 
 1.  Перейдите на удаленный рабочий стол _myConsumerVm{uniqueid}_ .
-2.  Откройте браузер и введите адрес частной конечной точки: http://10.0.0.5/.
+2.  Откройте браузер и введите адрес частной конечной точки: `http://10.0.0.5/`.
 3.  Откроется страница IIS по умолчанию.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
