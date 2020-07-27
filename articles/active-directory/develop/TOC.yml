@@ -618,6 +618,14 @@
           href: vs-active-directory-webapi-what-happened.md
         - name: Диагностика ошибок при проверки подлинности
           href: vs-active-directory-error.md
+    - name: Вывод приложения на рынок
+      items:
+        - name: Публикация в AppSource
+          href: v2-howto-get-appsource-certified.md
+        - name: "Публикация в коллекции приложений Azure\_AD"
+          href: v2-howto-app-gallery-listing.md
+        - name: "Публикация в службе \"Панель мониторинга продаж\" для Office\_365"
+          href: 'https://docs.microsoft.com/office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store'
 - name: Справочник
   items:
     - name: Манифест приложения

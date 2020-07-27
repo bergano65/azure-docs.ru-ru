@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 05/29/2020
+ms.date: 07/24/2020
 ms.author: b-juche
-ms.openlocfilehash: 6bd6ddc8b75b83355f6761ef0567ea949c86b61a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 848a5779538f4754ef038a1e88be63c33177bc82
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85483709"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87169971"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Создание тома SMB для Azure NetApp Files
 
@@ -215,6 +215,12 @@ Azure NetApp Files поддерживает тома NFS и SMBv3. Потреб�
         ![Создание тома](../media/azure-netapp-files/azure-netapp-files-new-volume.png)
     
         ![Создание подсети](../media/azure-netapp-files/azure-netapp-files-create-subnet.png)
+
+    * Если вы хотите применить существующую политику моментальных снимков к тому, щелкните " **отобразить дополнительно** ", чтобы развернуть его, и выберите политику моментальных снимков в раскрывающемся меню. 
+
+        Дополнительные сведения о создании политики моментальных снимков см. в разделе [Управление моментальными снимками](azure-netapp-files-manage-snapshots.md).
+
+        ![Отобразить расширенный выбор](../media/azure-netapp-files/volume-create-advanced-selection.png)
 
 4. Нажмите **Протокол** и введите следующие сведения.  
     * Выберите **SMB** в качестве типа протокола тома. 

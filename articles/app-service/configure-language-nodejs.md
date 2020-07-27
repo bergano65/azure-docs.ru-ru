@@ -1,15 +1,16 @@
 ---
 title: Настройка приложений Node.js Windows
 description: Узнайте, как настроить Node.js приложение в собственных экземплярах Windows службы приложений. В этой статье показаны наиболее распространенные задачи настройки.
+ms.custom: devx-track-javascript
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 06/02/2020
-ms.openlocfilehash: 9f4ccdd04b8d57784f452dc28fa4507fb7ea94c2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0fc6ed5cb090653e381d82f484d355a514520c62
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84907992"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87170914"
 ---
 # <a name="configure-a-windows-nodejs-app-for-azure-app-service"></a>Настройка приложения Node.js Windows для службы приложений Azure
 
@@ -160,7 +161,7 @@ if (req.secure) {
     - Некоторые веб-платформы могут использовать специальные скрипты запуска в рабочем режиме.
 - Запустите приложение в службе приложений в режиме разработки. Например, в [MEAN.js](https://meanjs.org/)можно настроить приложение в режиме разработки в среде выполнения, [задав `NODE_ENV` параметр приложения](configure-common.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. Приложение Node.js с MongoDB](app-service-web-tutorial-nodejs-mongodb-app.md)

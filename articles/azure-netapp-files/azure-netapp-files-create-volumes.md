@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 12/01/2019
+ms.date: 07/24/2020
 ms.author: b-juche
-ms.openlocfilehash: b8935dd4138095aa9b8e84ddf75c06307f9ce00d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7f14ac279f14feb3f83490ab96965d4355bed125
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85483641"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87169466"
 ---
 # <a name="create-an-nfs-volume-for-azure-netapp-files"></a>Создание тома NFS для Azure NetApp Files
 
@@ -31,7 +31,7 @@ Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1)
 Подсеть должна быть делегирована службе Azure NetApp Files.  
 [Делегирование подсети службе Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
 
-## <a name="considerations"></a>Особенности 
+## <a name="considerations"></a>Рекомендации 
 
 * Выбор используемой версии NFS  
   NFSv3 может поддерживать широкий спектр вариантов использования и обычно развертывается в большинстве корпоративных приложений. Необходимо проверить, какая версия (NFSv3 или Нфсв 4.1) требуется приложению, и создать том с использованием соответствующей версии. Например, при использовании [Apache активемк](https://activemq.apache.org/shared-file-system-master-slave)рекомендуется блокировать файл с помощью нфсв 4.1 вместо NFSv3. 
@@ -76,7 +76,7 @@ Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1)
         В поле **Доступная квота** отображается объем неиспользуемого пространства выбранного пула емкости, которое можно использовать для создания нового тома. Размер нового тома не должен превышать доступную квоту.  
 
     * **Виртуальная сеть**  
-        Укажите Виртуальную сеть Azure, из которой будет осуществляться доступ к тому.  
+        Укажите виртуальную сеть Azure, из которой будет осуществляться доступ к тому.  
 
         В указанной виртуальной сети должна быть подсеть, делегированная службе Azure NetApp Files. Доступ к службе Azure NetApp Files можно получить только из той же виртуальной сети либо из виртуальной сети, которая находится в том же расположении, что и том, через пиринговую связь. Доступ к тому также можно получить из локальной сети через Express Route.   
 
@@ -89,6 +89,12 @@ Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1)
         ![Создание тома](../media/azure-netapp-files/azure-netapp-files-new-volume.png)
     
         ![Создание подсети](../media/azure-netapp-files/azure-netapp-files-create-subnet.png)
+
+    * Если вы хотите применить существующую политику моментальных снимков к тому, щелкните " **отобразить дополнительно** ", чтобы развернуть его, и выберите политику моментальных снимков в раскрывающемся меню. 
+
+        Дополнительные сведения о создании политики моментальных снимков см. в разделе [Управление моментальными снимками](azure-netapp-files-manage-snapshots.md).
+
+        ![Отобразить расширенный выбор](../media/azure-netapp-files/volume-create-advanced-selection.png)
 
 4. Щелкните **Протокол**, а затем выполните приведенные ниже действия.  
     * Выберите **NFS** в качестве типа протокола тома.   
@@ -110,7 +116,7 @@ Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1)
     От пула емкости том наследует атрибуты подписки, группы ресурсов и расположения. Состояние развертывания можно отслеживать на вкладке уведомлений.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 * [Настройка домена по умолчанию NFSv4.1 для Azure NetApp Files](azure-netapp-files-configure-nfsv41-domain.md)
 * [Подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)

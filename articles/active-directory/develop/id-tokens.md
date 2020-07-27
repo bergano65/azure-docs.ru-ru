@@ -14,12 +14,12 @@ ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
 ms:custom: fasttrack-edit
-ms.openlocfilehash: 2fbbf5f9d01ed4a469967dac87faa3b130905757
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: aca2e0a878470a644aff3a42411b69da9096fc78
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87027110"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87170517"
 ---
 # <a name="microsoft-identity-platform-id-tokens"></a>Маркеры ИДЕНТИФИКАТОРов платформы Microsoft Identity
 
@@ -87,7 +87,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjFMVE16YWtpaGlSbGFfOHoyQkVKVlhlV01x
 |`ver` | Строка со значением 1.0 или 2.0 | Указывает номер версии маркера "id_token". |
 
 > [!NOTE]
-> V 1.0 и v 22.0 id_token имеют различия в объеме информации, которая будет рассматриваться в приведенных выше примерах. В версии фактически указана конечная точка платформы Azure AD, из которой она была выдана. [Реализация OAuth Azure AD](about-microsoft-identity-platform.md) развивалась по годам. В настоящее время существуют две разные конечные точки АУС для приложений Azure AD. Можно использовать любую из новых конечных точек, отнесенных к категории v 2.0 или v 1.0. Конечные точки OAuth для обоих типов различаются. Конечная точка версии 2.0 более новая, и функции конечной точки версии 1.0 переносятся в эту конечную точку. Новые разработчики должны использовать конечную точку версии 2.0.
+> Версии 1.0 и 2.0 id_token имеют различия в объеме информации, которая будет рассматриваться в приведенных выше примерах. В версии фактически указана конечная точка платформы Azure AD, из которой она была выдана. [Реализация OAuth Azure AD](about-microsoft-identity-platform.md) развивалась по годам. В настоящее время существуют две разные конечные точки АУС для приложений Azure AD. Можно использовать любую из новых конечных точек, отнесенных к категории v 2.0 или v 1.0. Конечные точки OAuth для обоих типов различаются. Конечная точка версии 2.0 более новая, и функции конечной точки версии 1.0 переносятся в эту конечную точку. Новые разработчики должны использовать конечную точку версии 2.0.
 >
 > - v 1.0: конечные точки Azure AD:`https://login.microsoftonline.com/common/oauth2/authorize`
 > - Версия 2.0: конечные точки Microsoft Идентитипплатформ:`https://login.microsoftonline.com/common/oauth2/v2.0/authorize`

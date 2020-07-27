@@ -7,21 +7,25 @@ ms.author: b-juche
 ms.service: azure-netapp-files
 ms.workload: storage
 ms.topic: how-to
-ms.date: 10/18/2019
-ms.openlocfilehash: e59648ee76b6715029c690329cbf8f4f1eee7243
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/24/2020
+ms.openlocfilehash: 6d990b94210383ba4b30569693f4471f43306ed2
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85483658"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87169830"
 ---
 # <a name="configure-export-policy-for-an-nfs-volume"></a>Настройка политики экспорта для тома NFS
 
-При необходимости можно настроить политику экспорта для управления доступом к тому Azure NetApp Files. Azure NetApp Files политика экспорта поддерживает только тома NFS.  Поддерживаются NFSv3 и NFSv4. 
+Вы можете настроить политику экспорта для управления доступом к Azure NetApp Files тому. Azure NetApp Files политика экспорта поддерживает тома, использующие протокол NFS (NFSv3 и Нфсв 4.1) и двойные протоколы (NFSv3 и SMB). 
+
+Можно создать до пяти правил политики экспорта.
 
 ## <a name="steps"></a>Шаги 
 
-1.  Нажмите кнопку **Экспорт политики** в области навигации Azure NetApp Files. 
+1.  На странице тома выберите том, для которого требуется настроить политику экспорта, и нажмите кнопку **Экспорт политики**. 
+
+    Политику экспорта также можно настроить во время создания тома.
 
 2.  Чтобы создать правило политики экспорта, заполните следующие поля.   
     *  **Номер**   
@@ -39,10 +43,14 @@ ms.locfileid: "85483658"
         * Чтение и запись
         * Только для чтения
 
-    ![Экспортировать политику](../media/azure-netapp-files/azure-netapp-files-export-policy.png) 
+    * **Корневой доступ**  
+        Укажите, `root` может ли учетная запись получать доступ к тому.  По умолчанию корневой доступ имеет значение **On**, а `root` учетная запись имеет доступ к тому.
+
+        ![Экспортировать политику](../media/azure-netapp-files/azure-netapp-files-export-policy.png) 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+
+## <a name="next-steps"></a>Дальнейшие действия 
 * [Управление томами](azure-netapp-files-manage-volumes.md)
 * [Подключение и отключение тома для виртуальных машин](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 * [Управление моментальными снимками](azure-netapp-files-manage-snapshots.md)

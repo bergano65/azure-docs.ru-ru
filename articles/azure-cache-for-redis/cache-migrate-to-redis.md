@@ -4,16 +4,16 @@ description: Узнайте, как перенести приложения уп
 author: yegu-ms
 ms.service: cache
 ms.topic: conceptual
-ms.date: 05/30/2017
+ms.date: 07/23/2020
 ms.author: yegu
-ms.openlocfilehash: 909329a4326354a890c3c4645002f7248f30e8fa
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 3f5cfccd1f85f68c619192496c62bf80ea8d4785
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86184792"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87170180"
 ---
-# <a name="migrate-from-managed-cache-service-to-azure-cache-for-redis"></a>Перенос из управляемой службы кэша в кэш Azure для Redis
+# <a name="migrate-from-managed-cache-service-to-azure-cache-for-redis-deprecated"></a>Миграция из управляемой службы кэша в кэш Azure для Redis (не рекомендуется)
 Перенести приложения, которые используют управляемую службу кэша Azure, в кэш Azure для Redis можно, не внося в приложения существенных изменений. Объем изменений зависит от того, какие функции управляемой службы кэша использует ваше приложение кэширования. Хотя интерфейсы API не идентичны, они похожи, поэтому большую часть вашего кода, использующего управляемую службу кэша для доступа к кэшу, можно использовать повторно с минимальными изменениями. В этой статье показано, как внести необходимые изменения в конфигурацию и приложения, чтобы перенести приложения управляемой службы кэша для использования кэша Azure для Redis. Здесь также объясняется, как с помощью некоторых функций кэша Azure для Redis реализовать функции кэша управляемой службы кэша.
 
 >[!NOTE]

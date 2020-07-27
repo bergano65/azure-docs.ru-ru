@@ -8,12 +8,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 07/21/2020
 ms.author: jushiman
-ms.openlocfilehash: b964ea596f6cc2a86cfa9bbd5196ee6187c74b79
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 04f139e7e747d2c0566ffada9e080bf4abb1ac86
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87098412"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87171671"
 ---
 # <a name="sizes-for-virtual-machines-in-azure"></a>Размеры виртуальных машин в Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "87098412"
 
 | Тип | Размеры | Описание |
 |------|-------|-------------|
-| [Общего назначения](sizes-general.md)   | B, Dsv3, Dv3, Dasv4, Dav4, DSv2, Dv2, Av2, DC, DCv2, dv4, Dsv4, Ddv4, Ddsv4  | Сбалансированное соотношение ресурсов ЦП и памяти. Идеальное решение для тестирования и разработки, небольших и средних баз данных, а также веб-серверов с небольшим или средним объемом трафика. |
+| [Универсальные](sizes-general.md)   | B, Dsv3, Dv3, Dasv4, Dav4, DSv2, Dv2, Av2, DC, DCv2, dv4, Dsv4, Ddv4, Ddsv4  | Сбалансированное соотношение ресурсов ЦП и памяти. Идеальное решение для тестирования и разработки, небольших и средних баз данных, а также веб-серверов с небольшим или средним объемом трафика. |
 | [Оптимизированные для вычислений](sizes-compute.md) | Fsv2 | Высокое соотношение ресурсов ЦП и памяти. Подходят для веб-серверов со средним объемом трафика, сетевых устройств, пакетных процессов и серверов приложений. |
 | [Оптимизированные для памяти](sizes-memory.md) | Esv3, Ev3, Easv4, Eav4, Ev4, Esv4, Edv4, Edsv4, Mv2, M, DSv2, Dv2 | Высокое соотношение ресурсов памяти и ядра. Отлично подходят для серверов реляционной базы данных, кэша среднего и большого объема, а также выполняющейся в памяти аналитики.                 |
 | [Оптимизированные для хранилища](sizes-storage.md) | Lsv2 | Высокая пропускная способность и количество операций ввода-вывода. Идеальный вариант для работы с большими данными, с базами данных SQL и NoSQL, системами хранения данных и большими транзакционными базами данных.  |
@@ -32,6 +32,8 @@ ms.locfileid: "87098412"
 - Доступность размеров виртуальных машин см. в статье [Доступность продуктов по регионам](https://azure.microsoft.com/regions/services/).
 - Сведения об общих ограничениях виртуальных машин Azure см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md).
 
+> [!NOTE]
+  > Дополнительные сведения об именах виртуальных машин в Azure см. в статье [соглашения об именовании размеров виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/vm-naming-conventions).
 
 ## <a name="rest-api"></a>REST API
 

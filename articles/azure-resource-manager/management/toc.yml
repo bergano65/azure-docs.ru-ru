@@ -6,7 +6,7 @@
       href: overview.md
 - name: Примеры
   items:
-    - name: Встроенные политики службы "Политика Azure"
+    - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-samples.md
 - name: Основные понятия
@@ -25,6 +25,11 @@
       href: extension-resource-types.md
     - name: Ограничение количества экземпляров ресурса
       href: resources-without-resource-group-limit.md
+    - name: Безопасность
+      items:
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
 - name: Практическое руководство
   items:
     - name: Перемещение групп ресурсов и подписок
@@ -114,7 +119,7 @@
         - name: портал Azure;
           displayName: 'create,list,open,delete,deploy,move,lock,tag,export'
           href: manage-resource-groups-portal.md
-        - name: Azure CLI;
+        - name: Azure CLI
           displayName: 'create,list,open,delete,deploy,move,lock,tag,export'
           href: manage-resource-groups-cli.md
         - name: Azure PowerShell;
@@ -125,7 +130,7 @@
         - name: Портал Azure
           displayName: 'open,delete,deploy,move,lock,tag,monitor'
           href: manage-resources-portal.md
-        - name: Azure CLI;
+        - name: Azure CLI
           displayName: 'open,delete,deploy,move,lock,tag'
           href: manage-resources-cli.md
         - name: Azure PowerShell
