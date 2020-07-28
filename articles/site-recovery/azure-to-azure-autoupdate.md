@@ -460,12 +460,12 @@ Write-Tracing -Level Succeeded -Message ("Modify cloud pairing completed.") -Dis
 
 1. Если на виртуальных машинах установлены новые обновления для службы Mobility Service, вы увидите следующее уведомление: **новое Site Recovery доступно обновление агента репликации. Щелкните, чтобы установить.**
 
-   :::image type="content" source="./media/vmware-azure-install-mobility-service/replicated-item-notif.png" alt-text="Окно "Реплицированные элементы"":::
+   :::image type="content" source="./media/vmware-azure-install-mobility-service/replicated-item-notif.png" alt-text="Окно Реплицированные элементы":::
 
 1. Выберите уведомление, чтобы открыть страницу выбора виртуальной машины.
 1. Выберите виртуальные машины, которые требуется обновить, и нажмите кнопку **ОК**. Служба обновления Mobility Service будет запущена для каждой выбранной виртуальной машины.
 
-   :::image type="content" source="./media/vmware-azure-install-mobility-service/update-okpng.png" alt-text="Список виртуальных машин "Реплицированные элементы"":::
+   :::image type="content" source="./media/vmware-azure-install-mobility-service/update-okpng.png" alt-text="Список виртуальных машин Реплицированные элементы":::
 
 ## <a name="common-issues-and-troubleshooting"></a>Распространенные проблемы и устранение неполадок
 
