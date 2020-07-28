@@ -22,7 +22,7 @@ ms.locfileid: "87098951"
     :::image type="content" source="./media/activity-logs/search-monitor.png" alt-text="Поиск монитора":::        
 1. Выберите **оповещения** в меню слева, а затем на панели инструментов выберите **новое правило генерации оповещений** . 
 
-    :::image type="content" source="./media/activity-logs/alerts-page.png" alt-text="Страница "оповещения"":::    
+    :::image type="content" source="./media/activity-logs/alerts-page.png" alt-text="Страница оповещения":::    
 1. На странице **Создание правила генерации оповещений** щелкните **выбрать ресурс**. 
 
     :::image type="content" source="./media/activity-logs/select-resource-link.png" alt-text="Выберите ресурс для оповещения":::        
