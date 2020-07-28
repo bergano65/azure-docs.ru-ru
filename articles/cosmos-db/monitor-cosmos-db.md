@@ -62,7 +62,7 @@ Azure Cosmos DB собирает данные мониторинга тех же
 
 На странице **Обзор** на портале Azure приводится сводка использования каждой базы данных Azure Cosmos, включая количество запросов и стоимость в час. Это полезная информация, которая, однако, представляет собой лишь небольшую часть доступных данных мониторинга. Некоторые из этих данных собираются автоматически и доступны для анализа сразу же после создания базы данных, но для сбора дополнительных данных требуется настройка.
 
-:::image type="content" source="media/monitor-cosmos-db/overview-page.png" alt-text="Страница "Обзор"":::
+:::image type="content" source="media/monitor-cosmos-db/overview-page.png" alt-text="Страница Обзор":::
 
 ## <a name="analyzing-metric-data"></a><a id="analyze-metric-data"></a>Анализ данных метрик
 
@@ -102,7 +102,7 @@ Azure Cosmos DB предоставляет пользовательский ин
 
 Метрики можно группировать с помощью параметра **Применить разделение**. Например, можно сгруппировать единицы запросов по типу операции и просмотреть граф для всех операций сразу, как показано на следующем рисунке:
 
-:::image type="content" source="./media/monitor-cosmos-db/apply-metrics-splitting.png" alt-text="Добавление фильтра "Применить разделение"":::
+:::image type="content" source="./media/monitor-cosmos-db/apply-metrics-splitting.png" alt-text="Добавление фильтра Применить разделение":::
 
 ## <a name="analyzing-log-data"></a><a id="analyze-log-data"></a>Анализ данных журнала
 
