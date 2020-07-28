@@ -34,7 +34,7 @@ ms.locfileid: "87081922"
 
 1. На странице приложения-функции в разделе **Средства разработки** на левой панели выберите **Дополнительные инструменты**.
 
-   :::image type="content" source="./media/durable-functions-create-portal/function-app-platform-features-choose-kudu.png" alt-text="Выбор Функций, элемента "Функции платформы" и "Дополнительные инструменты (Kudu)"":::
+   :::image type="content" source="./media/durable-functions-create-portal/function-app-platform-features-choose-kudu.png" alt-text="Выбор Функций, элемента Функции платформы и Дополнительные инструменты (Kudu)":::
 
 2. На странице **Дополнительные инструменты** выберите **Перейти**.
 
@@ -64,7 +64,7 @@ ms.locfileid: "87081922"
 
 1. В поле поиска на странице **Новая функция** введите `durable`, а затем выберите шаблон **Начальный объект HTTP устойчивых функций**.
 
-   :::image type="content" source="./media/durable-functions-create-portal/durable-functions-http-starter-template.png" alt-text="Выбор "Начальный объект HTTP Устойчивых функций"":::
+   :::image type="content" source="./media/durable-functions-create-portal/durable-functions-http-starter-template.png" alt-text="Выбор Начальный объект HTTP Устойчивых функций":::
 
 1. Для имени **новой функции** введите `HttpStart`, а затем выберите **Создать функцию**.
 
