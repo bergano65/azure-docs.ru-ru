@@ -30,16 +30,16 @@ ms.locfileid: "87097853"
     :::image type="content" source="./media/activity-logs/activity-log.png" alt-text="Журнал действий":::    
 1. Выберите событие, чтобы просмотреть сведения о нем. На странице **Сводка** отображаются такие сведения, как имя операции, метка времени и кто выполнил операцию. 
     
-    :::image type="content" source="./media/activity-logs/stop-vm-event.png" alt-text="Событие "завершение виртуальной машины" — Сводка":::        
+    :::image type="content" source="./media/activity-logs/stop-vm-event.png" alt-text="Событие завершение виртуальной машины — Сводка":::        
 1. Перейдите на вкладку **JSON** , чтобы просмотреть дополнительные сведения. В следующем примере вы видите имя виртуальной машины и операцию, выполненную на виртуальной машине (остановлена).
 
-    :::image type="content" source="./media/activity-logs/stop-vm-event-json.png" alt-text="Событие "останавливает виртуальную машину — JSON"":::           
+    :::image type="content" source="./media/activity-logs/stop-vm-event-json.png" alt-text="Событие останавливает виртуальную машину — JSON":::           
 1. Перейдите на вкладку **Журнал изменений (Предварительная версия)** , чтобы просмотреть историю изменений. В следующем примере показано изменение, выполненное на виртуальной машине. 
 
-    :::image type="content" source="./media/activity-logs/change-history.png" alt-text="Журнал изменений события "останавливает виртуальную машину"":::             
+    :::image type="content" source="./media/activity-logs/change-history.png" alt-text="Журнал изменений события останавливает виртуальную машину":::             
 1. Выберите изменение в списке Журнал изменений, чтобы просмотреть дополнительные сведения об изменении. 
 
-    :::image type="content" source="./media/activity-logs/change-details.png" alt-text="Событие "останавливает виртуальную машину" — сведения об изменении":::             
+    :::image type="content" source="./media/activity-logs/change-details.png" alt-text="Событие останавливает виртуальную машину — сведения об изменении":::             
 
 Дополнительные сведения о журналах действий см. в статье [Журнал действий Azure](../azure-monitor/platform/activity-log.md).
 
