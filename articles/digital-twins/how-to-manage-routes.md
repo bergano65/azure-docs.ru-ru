@@ -184,7 +184,7 @@ catch (RequestFailedException e)
 
 На домашней странице портала найдите свой экземпляр Azure Digital двойников, чтобы получить сведения о нем. Выберите параметр **метрики** в меню экземпляра Azure Digital двойников, чтобы открыть страницу *метрики* .
 
-:::image type="content" source="media/how-to-manage-routes/metrics.png" alt-text="Страница "метрики" для экземпляра цифрового двойников Azure в портал Azure":::
+:::image type="content" source="media/how-to-manage-routes/metrics.png" alt-text="Страница метрики для экземпляра цифрового двойников Azure в портал Azure":::
 
 Здесь можно просмотреть метрики для своего экземпляра и создать пользовательские представления.
 
