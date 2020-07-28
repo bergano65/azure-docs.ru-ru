@@ -184,7 +184,7 @@ az eventgrid topic key list --name <topic_name> -g eventResourceGroup --query "k
 
 1. Нажмите кнопку **создания**.
 
-    :::image type="content" source="./media/durable-functions-event-publishing/event-grid-subscription-details.png" alt-text="Создайте подписку в службе "Сетка событий"." border="true":::
+    :::image type="content" source="./media/durable-functions-event-publishing/event-grid-subscription-details.png" alt-text="Создайте подписку в службе Сетка событий." border="true":::
 
 Теперь все готово для получения событий жизненного цикла.
 
