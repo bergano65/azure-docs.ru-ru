@@ -406,7 +406,7 @@ ms.locfileid: "87053656"
 
 **Имя администратора для реестра контейнеров Azure**: укажите [имя администратора](../../container-registry/container-registry-authentication.md#admin-account), связанное с реестром контейнеров Azure, в котором находится образ контейнера. Имя пользователя и пароль необходимы, чтобы обеспечить компании доступ к реестру. Чтобы получить имя пользователя и пароль администратора, задайте для свойства **admin-enabled** значение **True** с помощью интерфейса командной строки Azure (Azure CLI). При необходимости можно на портале Azure выбрать для параметра **Пользователь-администратор** значение **Включить**.
 
-:::image type="content" source="media/example-iot-update-container-registry.png" alt-text="Показано диалоговое окно "Обновить реестр контейнеров".":::
+:::image type="content" source="media/example-iot-update-container-registry.png" alt-text="Показано диалоговое окно Обновить реестр контейнеров.":::
 
 #### <a name="call-out-description"></a>Описание вызова
 
