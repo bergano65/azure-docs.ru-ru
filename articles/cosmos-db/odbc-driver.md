@@ -86,7 +86,7 @@ Azure Cosmos DB является базой данных без схемы, ко
 
 1. Когда вы завершите настройку и закроете окно **настройки имени источника данных драйвера ODBC для Azure Cosmos DB**, новое пользовательское имя источника данных будет добавлено на соответствующую вкладку.
 
-    :::image type="content" source="./media/odbc-driver/odbc-driver-user-dsn.png" alt-text="Новое имя источника данных ODBC для Azure Cosmos DB на вкладке "DSN пользователя"":::
+    :::image type="content" source="./media/odbc-driver/odbc-driver-user-dsn.png" alt-text="Новое имя источника данных ODBC для Azure Cosmos DB на вкладке DSN пользователя":::
 
 ## <a name="step-3-create-a-schema-definition-using-the-container-mapping-method"></a><a id="#container-mapping"></a>Шаг 3. Создание определения схемы с помощью метода сопоставления контейнеров
 
@@ -94,7 +94,7 @@ Azure Cosmos DB является базой данных без схемы, ко
 
 1. После выполнения шагов 1-4 в разделе [Подключение к базе данных Azure Cosmos](#connect)щелкните **редактор схем** в окне **установки Azure Cosmos DB драйвера ODBC** .
 
-    :::image type="content" source="./media/odbc-driver/odbc-driver-schema-editor.png" alt-text="Кнопка "Редактор схем" в окне настройки имени источника данных драйвера ODBC для Azure Cosmos DB":::
+    :::image type="content" source="./media/odbc-driver/odbc-driver-schema-editor.png" alt-text="Кнопка Редактор схем в окне настройки имени источника данных драйвера ODBC для Azure Cosmos DB":::
 1. В окне **Редактор схем** нажмите кнопку **Создать**.
     В окне **Создание схемы** отображаются все контейнеры в учетной записи Azure Cosmos DB. 
 
