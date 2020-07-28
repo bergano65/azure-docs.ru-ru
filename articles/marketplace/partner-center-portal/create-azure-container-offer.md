@@ -118,7 +118,7 @@ ms.locfileid: "87086478"
 > [!NOTE]
 > После публикации предложения с использованием Стандартного контракта для коммерческой платформы Майкрософт вы не сможете использовать собственные условия. Вы можете предложить свое решение либо в по Стандартному контракту, либо на собственных условиях.
 
-:::image type="content" source="media/azure-create-container-offer-images/azure-create-1-standard-contract.png" alt-text="Показано использование флажка "Использовать Стандартный контракт для коммерческой платформы корпорации Майкрософт".":::
+:::image type="content" source="media/azure-create-container-offer-images/azure-create-1-standard-contract.png" alt-text="Показано использование флажка Использовать Стандартный контракт для коммерческой платформы корпорации Майкрософт.":::
 
 ##### <a name="your-own-terms-and-conditions"></a>Собственные условия
 
@@ -218,7 +218,7 @@ ms.locfileid: "87086478"
 
 Здесь показана страница **Описание предложения** в Azure Marketplace.
 
-:::image type="content" source="media/azure-create-container-offer-images/azure-create-6-offer-listing-mkt-plc.png" alt-text="Показана страница "Описание предложения" в Azure Marketplace." :::
+:::image type="content" source="media/azure-create-container-offer-images/azure-create-6-offer-listing-mkt-plc.png" alt-text="Показана страница Описание предложения в Azure Marketplace." :::
 
 Здесь показаны результаты поиска в Azure Marketplace.
 
@@ -226,7 +226,7 @@ ms.locfileid: "87086478"
 
 Здесь показана страница **Описание предложения** на портале Azure.
 
-:::image type="content" source="media/azure-create-container-offer-images/azure-create-8-offer-listing-portal.png" alt-text="Показана страница "Описание предложения" на портале Azure.":::
+:::image type="content" source="media/azure-create-container-offer-images/azure-create-8-offer-listing-portal.png" alt-text="Показана страница Описание предложения на портале Azure.":::
 
 Здесь показаны результаты поиска на портале Azure.
 
@@ -358,7 +358,7 @@ ms.locfileid: "87086478"
 
 **Имя администратора для реестра контейнеров Azure** — укажите [имя администратора](../../container-registry/container-registry-authentication.md#admin-account), связанное с реестром контейнеров Azure, в котором находится образ контейнера. Имя пользователя и пароль необходимы, чтобы обеспечить компании доступ к реестру. Чтобы получить имя пользователя и пароль администратора, задайте для свойства **admin-enabled** значение **True** с помощью интерфейса командной строки Azure (Azure CLI). При необходимости можно на портале Azure выбрать для параметра **Пользователь-администратор** значение **Включить**.
 
- :::image type="content" source="media/azure-create-container-offer-images/azure-create-12-update-container-registry-edit.png" alt-text="Показано диалоговое окно "Обновить реестр контейнеров".":::
+ :::image type="content" source="media/azure-create-container-offer-images/azure-create-12-update-container-registry-edit.png" alt-text="Показано диалоговое окно Обновить реестр контейнеров.":::
 
 **Пароль для Реестра контейнеров Azure**. Укажите имя администратора, связанное с Реестром контейнеров Azure, в котором находится ваш образ контейнера. Имя пользователя и пароль необходимы, чтобы обеспечить компании доступ к реестру. Чтобы получить пароль на портале Azure, последовательно выберите **Реестр контейнеров** > **Ключи доступа** или воспользуйтесь в Azure CLI командой [show](https://docs.microsoft.com/cli/azure/acr/credential?view=azure-cli-latest#az-acr-credential-show).
 
