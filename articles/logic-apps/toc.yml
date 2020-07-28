@@ -49,8 +49,13 @@
       href: connect-virtual-network-vnet-isolated-environment-overview.md
     - name: Непрерывность бизнес-процессов и аварийное восстановление
       href: business-continuity-disaster-recovery-guidance.md
-    - name: Базовые средства безопасности
-      href: security-baseline.md
+    - name: Безопасность
+      items:
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
+        - name: Базовые средства безопасности
+          href: security-baseline.md
 - name: Практические руководства
   items:
     - name: Разработка

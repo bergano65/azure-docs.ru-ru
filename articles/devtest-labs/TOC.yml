@@ -131,9 +131,9 @@
           items:
             - name: Портал Azure
               href: devtest-lab-add-vm.md
-            - name: Azure PowerShell
+            - name: Azure PowerShell;
               href: devtest-lab-vm-powershell.md
-            - name: Azure CLI
+            - name: Azure CLI;
               href: devtest-lab-vmcli.md
             - name: Шаблон Resource Manager
               href: devtest-lab-use-resource-manager-template.md
@@ -291,7 +291,7 @@
     - name: PowerShell. Пример модуля Az.DevTestLabs2
       href: 'https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Modules/Library'
     - name: REST API
-      href: 'https://docs.microsoft.com/rest/api/dtl/'
+      href: /rest/api/dtl/
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.devtestlab/allversions
 - name: Ресурсы
@@ -301,7 +301,7 @@
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/devtest-lab/'
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-devtestlabs.html'
+      href: /answers/topics/azure-devtestlabs.html
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-devtest-labs'
     - name: Видео

@@ -39,7 +39,7 @@
       href: tutorial-load-balancer-port-forwarding-portal.md
 - name: Примеры
   items:
-    - name: Azure CLI;
+    - name: Azure CLI
       href: cli-samples.md
     - name: Azure PowerShell;
       href: powershell-samples.md
@@ -95,14 +95,6 @@
           href: upgrade-basicInternal-standard.md
         - name: Обновление внутренней подсистемы балансировки нагрузки с исходящим подключением
           href: upgrade-InternalBasic-To-PublicStandard.md
-    - name: Настройка правил для исходящего трафика
-      items:
-        - name: Портал
-          href: configure-load-balancer-outbound-portal.md
-        - name: Azure CLI
-          href: configure-load-balancer-outbound-cli.md
-        - name: Azure PowerShell;
-          href: configure-load-balancer-outbound-powershell.md
     - name: Создание общедоступной службы Azure Load Balancer с поддержкой IPv6
       items:
         - name: Azure CLI;
