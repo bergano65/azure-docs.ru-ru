@@ -4,12 +4,12 @@ description: Использование управления доступом н
 ms.reviewer: utraghuv
 ms.topic: conceptual
 ms.date: 06/24/2019
-ms.openlocfilehash: dd6930a0228829f376140d515a3035afebad0f27
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 89e5cf7c6b46d63b10bd358fc078f8f87db689c8
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87032431"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87371708"
 ---
 # <a name="use-role-based-access-control-to-manage-azure-backup-recovery-points"></a>Использование управления доступом на основе ролей для управления точками восстановления службы архивации Azure
 
@@ -18,7 +18,7 @@ ms.locfileid: "87032431"
 > [!IMPORTANT]
 > Роли, предоставляемые Azure Backup, ограничены действиями, которые могут быть выполнены в портал Azure или с помощью REST API или командлетов PowerShell или хранилища служб восстановления. Эти роли не управляют действиями, выполняемыми в пользовательском интерфейсе клиента агента службы Azure Backup, System Center Data Protection Manager или Azure Backup Server.
 
-Azure Backup предоставляет три встроенных роли для управления операциями управления резервным копированием. Дополнительные сведения см. в статье о [встроенных ролях RBAC в Azure](../role-based-access-control/built-in-roles.md).
+Azure Backup предоставляет три встроенных роли для управления операциями управления резервным копированием. Дополнительные сведения о [встроенных ролях Azure](../role-based-access-control/built-in-roles.md)
 
 * [Участник резервного копирования](../role-based-access-control/built-in-roles.md#backup-contributor) . Эта роль имеет все разрешения на создание резервной копии и управление ею, за исключением удаления хранилища служб восстановления и предоставления доступа другим пользователям. Эта роль представляет собой администратора управления архивацией, который может выполнять любую операцию управления архивацией.
 * [Оператор архивации.](../role-based-access-control/built-in-roles.md#backup-operator) Эта роль имеет те же разрешения, что и участник, но не может удалять резервные копии и управлять политикой архивации. Эта роль эквивалентна роли участника, за исключением того, что пользователь с этой ролью не может выполнять операции удаления, такие как прекращение архивации с удалением данных или удаление регистрации локальных ресурсов.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 02/20/2018
-ms.openlocfilehash: 126cca9d3606b378e59e4f4e1c5b52d985d19d94
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2c20f668c57e8c2e74c320ca535aea18e633daf8
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80055691"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326126"
 ---
 # <a name="network-performance-monitor-solution-performance-monitoring"></a>Решение "Монитор производительности сети": мониторинг производительности
 
@@ -26,7 +26,7 @@ ms.locfileid: "80055691"
 
 ![Монитор производительности сети](media/network-performance-monitor-performance-monitor/npm-performance-monitor.png)
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 Чтобы открыть конфигурацию Монитора производительности сети, откройте решение [Монитор производительности сети](network-performance-monitor.md) и нажмите кнопку **Настройка**.
 
 ![Настройка Монитора производительности сети](media/network-performance-monitor-performance-monitor/npm-configure-button.png)
@@ -128,4 +128,5 @@ ms.locfileid: "80055691"
 ![Карта топологии с выбранными свойствами узла](media/network-performance-monitor-performance-monitor/topology-dashboard-root-cause.png) 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Выполните поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.
+[Выполните поиск по журналам](../log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.
+

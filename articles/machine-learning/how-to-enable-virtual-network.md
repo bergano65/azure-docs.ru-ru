@@ -5,18 +5,18 @@ description: Используйте изолированную виртуаль�
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
 ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.date: 07/07/2020
-ms.custom: contperfq4, tracking-python
-ms.openlocfilehash: fa99a5c78fb533d17cb7f70b3545aa9ef6439b32
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.topic: conceptual
+ms.custom: how-to, contperfq4, tracking-python
+ms.openlocfilehash: 79db00216ffb54b8c71ef78cc745ec37c353f1cc
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87072615"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87320176"
 ---
 # <a name="network-isolation-during-training--inference-with-private-virtual-networks"></a>Сетевая изоляция во время обучения & вывода с частными виртуальными сетями
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -304,8 +304,8 @@ validate=False)
 - Запретите исходящие интернет-подключения с помощью правил NSG.
 
 - Ограничьте исходящий трафик для __экземпляра вычислительных ресурсов__ или __кластера вычислительных ресурсов__ следующими элементами.
-   - Служба хранилища Azure с помощью __тега службы__ __хранилища__.
-   - Реестр контейнеров Azure с помощью __тега службы__ __азуреконтаинеррегистри__.
+   - Служба хранилища Azure, с помощью __тега службы__ __Storage.RegionName__, где `{RegionName}` — имя региона Azure.
+   - Реестр контейнеров Azure, с помощью __тега службы__ __AzureContainerRegistry.RegionName__, где `{RegionName}` — имя региона Azure.
    - Машинное обучение Azure, с помощью __тега службы__ __AzureMachineLearning__
    - Azure Resource Manager, с помощью __тега службы__ __AzureResourceManager__
    - Azure Active Directory, с помощью __тега службы__ __AzureActiveDirectory__

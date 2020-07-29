@@ -1,6 +1,6 @@
 ---
-title: Средство управления виртуальными рабочими столами Windows — Azure
-description: Устранение неполадок с помощью средства управления виртуальными рабочими столами Windows.
+title: Средство управления виртуальными рабочими столами Windows (классическая модель) — Azure
+description: Устранение неполадок в средстве управления виртуальными рабочими столами Windows (классическая модель).
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: troubleshooting
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: bb9206d2c2c15c036b0cf1184b79ed126966eb3b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 442cdce2ebb6c1a3e38932411dfa2b081a44ef9f
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82614802"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87283373"
 ---
-# <a name="troubleshoot-the-windows-virtual-desktop-management-tool"></a>Устранение неполадок со средством управления Виртуального рабочего стола Windows
+# <a name="troubleshoot-the-windows-virtual-desktop-classic-management-tool"></a>Устранение неполадок в средстве управления виртуальными рабочими столами Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows.
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows.
 
 В этой статье описываются проблемы, которые могут возникнуть при развертывании средства управления виртуальными рабочими столами Windows, и способы их устранения.
 

@@ -8,22 +8,19 @@ ms.topic: how-to
 ms.date: 04/08/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: bcd7bf46a3def963a4f9fe8913c4f8afcdce743f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 80d75357baeb3f8afd910e22abca8b11af2d80b3
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87075652"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285175"
 ---
 # <a name="connect-to-windows-virtual-desktop-with-the-macos-client"></a>Подключение к виртуальному рабочему столу Windows с помощью клиента macOS
 
 > Применимо к: macOS 10,12 или более поздней версии
 
 >[!IMPORTANT]
->Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/connect-macos-2019.md).
->
-> Обновление Виртуального рабочего стола Windows за весну 2020 года пока предоставляется как общедоступная предварительная версия. без соглашений об уровне обслуживания. Мы не рекомендуем использовать ее для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+>Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/connect-macos-2019.md).
 
 Доступ к ресурсам виртуальных рабочих столов Windows с устройств macOS можно получить с помощью скачиваемого клиента. В этом руководство вы узнаете, как настроить клиент.
 
@@ -48,6 +45,6 @@ ms.locfileid: "87075652"
 
 Когда вы подпишетесь на веб-канал, его содержимое будет регулярно автоматически обновляться. Ресурсы могут добавляться, изменяться или удаляться в соответствии с изменениями, внесенными администратором.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о клиенте macOS см. в статье [Приступая к работе с клиентской](/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac/) документацией по macOS.

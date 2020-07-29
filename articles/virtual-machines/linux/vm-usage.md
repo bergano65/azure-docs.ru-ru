@@ -10,17 +10,17 @@ tags: azure-virtual-machine
 ms.assetid: ''
 ms.service: virtual-machines-linux
 ms.devlang: ''
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: vm
 ms.workload: infrastructure-services
 ms.date: 12/04/2017
 ms.author: memccror
-ms.openlocfilehash: 8e63ff434b4367875324a26d80c937992a8c0331
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 9abb6948a91545439b429316dc2b71c14a1792d2
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87080035"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284835"
 ---
 # <a name="understanding-azure-virtual-machine-usage"></a>Основные сведения об использовании виртуальных машин Azure
 Анализируя сведения об использовании Azure, можно получить важные аналитические данные, которые помогут оптимизировать управление затратами и их распределение в организации. В этом документе предоставлены подробные сведения об использовании вычислительных ресурсов Azure. Дополнительные сведения об использовании Azure см. в статье об [анализе счета](../../cost-management-billing/understand/review-individual-bill.md).

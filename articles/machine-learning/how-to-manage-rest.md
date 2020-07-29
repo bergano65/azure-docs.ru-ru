@@ -7,15 +7,15 @@ ms.author: laobri
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
 ms.date: 01/31/2020
-ms.custom: tracking-python
-ms.openlocfilehash: 90ad8cc87f1d6a1893b96f6201a4260c03c94fee
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.topic: conceptual
+ms.custom: how-to, tracking-python
+ms.openlocfilehash: 8aebcfc2a46de3922dbc41942e63e71844de6e83
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87072200"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87319751"
 ---
 # <a name="create-run-and-delete-azure-ml-resources-using-rest"></a>Создание, запуск и удаление ресурсов машинного обучения Azure с помощью функции "ОСТАВШАЯся"
 
@@ -33,7 +33,7 @@ ms.locfileid: "87072200"
 > * Использование запросов на удаление для очистки ресурсов 
 > * Использование авторизации на основе ключей для оценки развернутых моделей
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Подписка Azure** , для которой у вас есть права администратора. Если у вас нет такой подписки, попробуйте использовать [бесплатную или платную личную подписку](https://aka.ms/AMLFree) .
 - [Рабочая область машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace)
@@ -202,10 +202,10 @@ providers/Microsoft.MachineLearningServices/workspaces/{your-workspace-name}/mod
 
 Обратите внимание, что для перечисления экспериментов путь начинается с `history/v1.0` , когда для вывода списка моделей путь начинается с `modelmanagement/v1.0` . REST API разделена на несколько операционных групп, каждый из которых имеет отдельный путь. 
 
-|Область|Путь|
+|Область|путь|
 |-|-|
-|Artifacts|артефакт/версия 2.0/|
-|Хранилища данных|хранилище данных/v 1.0/|
+|Artifacts|/рест/апи/азуремл|
+|Хранилища данных|/азуре/мачине-леарнинг/хов-то-акцесс-дата|
 |Настройка гиперпараметров|устройство/v 1.0/|
 |Модели|моделманажемент/v 1.0/|
 |Журнал выполнения|выполнение/v 1.0/и журнал/версия 1.0/|

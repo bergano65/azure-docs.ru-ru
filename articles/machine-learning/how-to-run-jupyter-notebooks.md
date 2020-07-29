@@ -8,14 +8,15 @@ ms.author: osomorog
 ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
+ms.topic: conceptual
+ms.custom: how-to
 ms.date: 06/27/2020
-ms.openlocfilehash: 476f3925886a6de68b49e1861d22e6cfaf594202
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c794b87a88cec20b75923e1f251c1e309a43ef1c
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85601465"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87319598"
 ---
 # <a name="how-to-run-jupyter-notebooks-in-your-workspace"></a>Выполнение веб-приложений Jupyter Notebook в рабочей области
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -198,7 +199,7 @@ ms.locfileid: "85601465"
 
 Индикатор рядом с раскрывающимся списком **Compute** (Вычисление) отображает его состояние.  Состояние также отображается в самом раскрывающемся списке.  
 
-|Цвет |Состояние вычисления |
+|Color |Состояние вычисления |
 |---------|---------| 
 | Зеленый | Вычисление выполняется |
 | Красный |Сбой при вычислении | 

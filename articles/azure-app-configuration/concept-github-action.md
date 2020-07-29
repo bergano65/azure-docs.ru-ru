@@ -6,11 +6,12 @@ ms.author: lcozzens
 ms.date: 02/20/2020
 ms.topic: conceptual
 ms.service: azure-app-configuration
-ms.openlocfilehash: 6d072cd03fa0e5c8da4593d8633a268d3b5a50fb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 66d0e32e7dfdd5ab2abee5108ac8ce54c5222747
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84197063"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87371827"
 ---
 # <a name="sync-your-github-repository-to-app-configuration"></a>Синхронизация репозитория GitHub с Конфигурацией приложений
 
@@ -24,7 +25,7 @@ ms.locfileid: "84197063"
 [Документация](https://help.github.com/actions/automating-your-workflow-with-github-actions/configuring-a-workflow) на сайте GitHub содержит подробные сведения о рабочих процессах и действиях GitHub. 
 
 ## <a name="enable-github-actions-in-your-repository"></a>Включение GitHub Actions в репозитории
-Чтобы приступить к работе с этим действием GitHub, перейдите в репозиторий и выберите вкладку **Actions** (Действия). Щелкните **New workflow** (Создать рабочий процесс), затем выберите **Set up a workflow yourself** (Настроить рабочий процесс). Наконец, выполните поиск по запросу "Azure App Configuration Sync" в marketplace.
+Чтобы начать работу с этим действием GitHub, перейдите в репозиторий и перейдите на вкладку " **действия** ". Выберите **новый рабочий процесс**, а затем **Настройте рабочий процесс самостоятельно**. Наконец, выполните поиск по запросу "Azure App Configuration Sync" в marketplace.
 > [!div class="mx-imgBorder"]
 > ![Откройте вкладку "Action" (Действие).](media/find-github-action.png)
 
