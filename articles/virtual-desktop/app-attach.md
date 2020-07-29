@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 06/16/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 76edc88f127d7e52514ab72539f7212ac982b5e4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6f8e20f97ae19a33674631e4dee18901d54462b3
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85204479"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87291509"
 ---
 # <a name="set-up-msix-app-attach"></a>Настройка присоединения приложения MSIX
 
@@ -29,7 +29,7 @@ ms.locfileid: "85204479"
 Чтобы настроить подключение приложения MSIX, необходимо следующее.
 
 - Доступ к порталу для участников программы предварительной оценки Windows, чтобы загрузить версию Windows 10 с поддержкой API для подключения приложения MSIX.
-- Работающее развертывание виртуального рабочего стола Windows. Чтобы узнать, как развернуть виртуальный рабочий стол Windows 2019, см. раздел [Создание клиента в виртуальном рабочем столе Windows](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md). Сведения о том, как развернуть выпуски 2020 виртуального рабочего стола Windows, см. в статье [Создание пула узлов с портал Azure](./create-host-pools-azure-marketplace.md).
+- Работающее развертывание виртуального рабочего стола Windows. Сведения о развертывании виртуальных рабочих столов Windows (классическая модель) см. в статье [Создание клиента в виртуальном рабочем столе Windows](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md). Чтобы узнать, как развернуть виртуальный рабочий стол Windows с Azure Resource Managerной интеграцией, см. раздел [Создание пула узлов с портал Azure](./create-host-pools-azure-marketplace.md).
 - Средство упаковки MSIX.
 - Сетевая папка в развертывании виртуальных рабочих столов Windows, где будет храниться пакет MSIX.
 

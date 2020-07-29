@@ -6,21 +6,21 @@ author: cweining
 ms.author: cweining
 ms.date: 11/08/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 8beb1d60ca8dcc18978ffeb523a7d63f90ca6c01
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f514dd7b54ac091535aeab43a8a7d2a645b50a09
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87049810"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87315841"
 ---
 # <a name="profile-web-apps-running-on-an-azure-virtual-machine-or-a-virtual-machine-scale-set-by-using-application-insights-profiler"></a>Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с использованием Application Insights Profiler
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 Вы можете развернуть Azure Application Insights Profiler для таких служб:
-* [Служба приложений Azure](../../azure-monitor/app/profiler.md?toc=/azure/azure-monitor/toc.json)
+* [Служба приложений Azure](./profiler.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
 * [Oблачныe службы Azure2](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
-* [Azure Service Fabric](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
+* [Azure Service Fabric](?toc=%2fazure%2fazure-monitor%2ftoc.json)
 
 ## <a name="deploy-profiler-on-a-virtual-machine-or-a-virtual-machine-scale-set"></a>Развертывание Profiler на виртуальной машине или в масштабируемом наборе виртуальных машин
 В этой статье показано, как запустить Application Insights Profiler на виртуальной машине Azure или в масштабируемом наборе виртуальных машин Azure. Profiler поставляется с расширением системы диагностики Azure для виртуальных машин. Настройте расширение для выполнения Profiler и встройте пакет SDK для Application Insights в приложение.
@@ -67,12 +67,12 @@ ms.locfileid: "87049810"
 
 1. Если нужное приложение выполняется с помощью [IIS](https://www.microsoft.com/web/downloads/platform.aspx), необходимо включить компонент Windows `IIS Http Tracing`.
 
-   А. Установите удаленный доступ к среде, а затем используйте окно [Добавить функции Windows]( https://docs.microsoft.com/iis/configuration/system.webserver/tracing/) или выполните следующую команду в PowerShell (с правами администратора):  
+   a. Установите удаленный доступ к среде, а затем используйте окно [Добавить функции Windows](/iis/configuration/system.webserver/tracing/) или выполните следующую команду в PowerShell (с правами администратора):  
 
     ```powershell
     Enable-WindowsOptionalFeature -FeatureName IIS-HttpTracing -Online -All
     ```  
-   Б. Если не удается установить удаленный доступ, можно использовать [Azure CLI](/cli/azure/get-started-with-azure-cli), чтобы выполнить следующую команду:  
+   b. Если не удается установить удаленный доступ, можно использовать [Azure CLI](/cli/azure/get-started-with-azure-cli), чтобы выполнить следующую команду:  
 
     ```powershell
     az vm run-command invoke -g MyResourceGroupName -n MyVirtualMachineName --command-id RunPowerShellScript --scripts "Enable-WindowsOptionalFeature -FeatureName IIS-HttpTracing -Online -All"
@@ -117,3 +117,4 @@ ms.locfileid: "87049810"
 [resourceexplorerput]: ./media/profiler-vm/resource-explorer-put.png
 [resourceexplorersinksconfig]: ./media/profiler-vm/resource-explorer-sinks-config.png
 [wadextension]: ./media/profiler-vm/wad-extension.png
+

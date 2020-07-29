@@ -7,11 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 08/24/2018
 tags: connectors
-ms.openlocfilehash: 73aeef24fde9fe58b89f1aa7789970e77e985d50
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 9950951ab5189c8c7b72de78bca9465ec5f22748
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83834838"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290599"
 ---
 # <a name="monitor-create-and-manage-salesforce-resources-by-using-azure-logic-apps"></a>Мониторинг и создание ресурсов Salesforce, а также управление ими с помощью Azure Logic Apps
 
@@ -59,7 +60,7 @@ ms.locfileid: "83834838"
 
 ## <a name="get-support"></a>Получение поддержки
 
-* В случае наличия вопросов посетите страницу [Вопросы и ответы Майкрософт по Azure Logic Apps](https://docs.microsoft.com/answers/topics/azure-logic-apps.html).
+* В случае наличия вопросов посетите страницу [Вопросы и ответы Майкрософт по Azure Logic Apps](/answers/topics/azure-logic-apps.html).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дальнейшие действия

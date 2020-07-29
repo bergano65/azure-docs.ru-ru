@@ -7,12 +7,12 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 05/20/2020
 tags: connectors
-ms.openlocfilehash: f4bca70fbec5cf847a6bb5c0b97ed3496d6c2f8c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 988d1efd348fe8e85dd33fbe35cc8dc9362c081b
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87039990"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290602"
 ---
 # <a name="get-started-with-the-oracle-database-connector"></a>Начало работы с соединителем базы данных Oracle
 
@@ -122,10 +122,11 @@ ms.locfileid: "87039990"
 
 ## <a name="get-some-help"></a>Справочные сведения
 
-Мы рекомендуем посетить [страницу Майкрософт с вопросами и ответами по Azure Logic Apps](https://docs.microsoft.com/answers/topics/azure-logic-apps.html), где вы сможете задать вопросы, помочь другим пользователям и узнать, что они делают. 
+Мы рекомендуем посетить [страницу Майкрософт с вопросами и ответами по Azure Logic Apps](/answers/topics/azure-logic-apps.html), где вы сможете задать вопросы, помочь другим пользователям и узнать, что они делают. 
 
 Чтобы улучшить Logic Apps и соединители, внесите свои предложения или проголосуйте за уже внесенные на сайте [https://aka.ms/logicapps-wish](https://aka.ms/logicapps-wish). 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [Создайте приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) и просмотрите в [списке интерфейсов API](apis-list.md) другие доступные соединители в Logic Apps.
+

@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок подключения к службе Windows Virtual Desktop пружины 2020 — Azure
+title: Устранение неполадок с подключением к службе Виртуального рабочего стола Windows (Azure)
 description: Сведения об устранении проблем при настройке клиентских подключений в среде клиента Виртуального рабочего стола Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -8,26 +8,23 @@ ms.topic: troubleshooting
 ms.date: 06/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 9aced0e420826cd73526a54da728c20d8d8e0142
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 875f39653c5240e3a1b571b531eb2bb08c4811d0
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87020429"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289850"
 ---
 # <a name="windows-virtual-desktop-service-connections"></a>Подключения к службе Виртуального рабочего стола Windows
 
 >[!IMPORTANT]
->Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/troubleshoot-service-connection-2019.md).
->
-> Обновление Виртуального рабочего стола Windows за весну 2020 года пока предоставляется как общедоступная предварительная версия. без соглашений об уровне обслуживания. Мы не рекомендуем использовать ее для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+>Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/troubleshoot-service-connection-2019.md).
 
 Эта статья поможет вам в устранении проблем при настройке клиентских подключений к Виртуальному рабочему столу Windows.
 
 ## <a name="provide-feedback"></a>Отзывы
 
-Вы можете оставить отзыв и обсудить службу "Виртуальный рабочий стол Windows" с группой ее разработчиков и активными членами сообщества на [странице технического сообщества Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
+Вы можете оставить отзыв и обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества, посетив [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
 
 ## <a name="user-connects-but-nothing-is-displayed-no-feed"></a>Пользователь подключается, но изображение отсутствует (нет веб-канала)
 

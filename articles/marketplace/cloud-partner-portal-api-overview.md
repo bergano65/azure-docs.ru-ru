@@ -4,15 +4,15 @@ description: Описание предварительных требовани�
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
-author: dsindona
-ms.author: dsindona
+author: mingshen-ms
+ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: 51c8b91ccf85087f965d632dee9296076aba0d86
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: bfb6e9cb510f5fe887f108dfdea5932406aafe0d
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87011964"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87292922"
 ---
 # <a name="cloud-partner-portal-api-reference"></a>Справочные материалы по API портала Cloud Partner
 
@@ -63,6 +63,6 @@ REST API портала Cloud Partner позволяют осуществлят�
 
 - [Настройка цен на предложения виртуальных машин](./cloud-partner-portal-api-setting-price.md)
 
-### <a name="troubleshooting"></a>Диагностика
+### <a name="troubleshooting"></a>Устранение неполадок
 
 - [Устранение неполадок с аутентификацией](./cloud-partner-portal-api-troubleshooting-authentication-errors.md)

@@ -6,12 +6,12 @@ author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 4c9907555301c55cd5e55f421f27518fd4a9960d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4f5328bbe21bb5f4a7947d5a495f4a0c8759c8da
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87085063"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87315643"
 ---
 # <a name="profile-live-azure-app-service-apps-with-application-insights"></a>Профилирование динамических приложений службы приложений Azure с помощью Application Insights
 
@@ -19,9 +19,9 @@ ms.locfileid: "87085063"
 
 ## <a name="enable-profiler-for-your-app"></a><a id="installation"></a> Включение Profiler для приложений
 Чтобы включить Profiler для приложения, сделайте следующее. Далее приведены сведения по включению Profiler на других поддерживаемых платформах при выполнении службы Azure другого типа.
-* [Облачные службы](../../azure-monitor/app/profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
-* [Приложения Service Fabric](../../azure-monitor/app/profiler-servicefabric.md?toc=/azure/azure-monitor/toc.json)
-* [Виртуальные машины](../../azure-monitor/app/profiler-vm.md?toc=/azure/azure-monitor/toc.json)
+* [Облачные службы](./profiler-cloudservice.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
+* [Приложения Service Fabric](./profiler-servicefabric.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
+* [Виртуальные машины](./profiler-vm.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
 
 Application Insights Profiler устанавливается в составе среды выполнения служб приложений. Ниже показано, как включить его для своей Службы приложений. Выполните эти действия, даже если вы включили пакет SDK для App Insights в свое приложение во время сборки.
 
@@ -50,7 +50,7 @@ Application Insights Profiler можно включить, создав пара
 |DiagnosticServices_EXTENSION_VERSION | ~3 |
 
 
-Эти значения можно задать с помощью [шаблонов Azure Resource Manager](../../azure-monitor/app/azure-web-apps.md#app-service-application-settings-with-azure-resource-manager), [Azure PowerShell](/powershell/module/az.websites/set-azwebapp) [Azure CLI](/cli/azure/webapp/config/appsettings?view=azure-cli-latest).
+Эти значения можно задать с помощью [шаблонов Azure Resource Manager](./azure-web-apps.md#app-service-application-settings-with-azure-resource-manager), [Azure PowerShell](/powershell/module/az.websites/set-azwebapp) [Azure CLI](/cli/azure/webapp/config/appsettings?view=azure-cli-latest).
 
 ### <a name="enabling-profiler-for-other-clouds-manually"></a>Включение Profiler для других облаков вручную
 
@@ -79,3 +79,4 @@ Application Insights Profiler можно включить, создав пара
 [Enablement UI]: ./media/profiler/Enablement_UI.png
 [profiler-app-setting]:./media/profiler/profiler-app-setting.png
 [disable-profiler-webjob]: ./media/profiler/disable-profiler-webjob.png
+

@@ -6,12 +6,12 @@ ms.author: sngun
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/28/2019
-ms.openlocfilehash: ad5ed2b45a182c1f33f33ca1f6d4e3212c61b6a2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4507b3f3338dccbf51f7342081997549e62f13fe
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82791737"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290084"
 ---
 # <a name="azure-cosmos-db-nosql-migration-and-application-development-partners"></a>Партнеры по разработке миграции и приложения Azure Cosmos DB для NoSQL
 
@@ -19,14 +19,13 @@ ms.locfileid: "82791737"
 
 ## <a name="systems-integrator-partners"></a>Партнеры системных интеграторов
 
-|**Партнер**  |**Возможности и опыт**  |**Поддерживаемые страны или регионы**  |
+|**Майкрософт**  |**Возможности и опыт**  |**Поддерживаемые страны или регионы**  |
 |---------|---------|---------|
 |[стриим](https://www.striim.com/)    |  Непрерывное перемещение данных в режиме реального времени, перенос данных|   США   |
 | [10thMagnitude](https://www.10thmagnitude.com/) | IoT, розница (Инвентаризация), операционная аналитика (Spark), бессерверная архитектура, разработка приложений | США |
 |[Altoros Development LLC](https://www.altoros.com/)  |  IoT, розница для персонализации (Инвентаризация), бессерверные архитектуры NoSQL миграция, разработка приложений|   США |
 |[Avanade](https://www.avanade.com/) | IoT, розница (Инвентаризация), бессерверная архитектура, разработка приложений | Австрия, Германия, Швейцария, Италия, Норвегия, Испания, Великобритания, Канада |
-|[Accenture](https://www.accenture.com/) | IoT, розница (Инвентаризация), бессерверная архитектура, разработка приложений |Глобальный|
-|[Bluemetal](https://www.bluemetal.com/)     |  IoT, розница для персонализации (Инвентаризация), операционная аналитика для Enterprise & SMC, аннотация изображений AI, управление активами, NoSQL миграция, разработка приложений     |    Северная Америка и Азиатско-Тихоокеанский регион     |
+|[Accenture](https://www.accenture.com/) | IoT, розница (Инвентаризация), бессерверная архитектура, разработка приложений |Global|
 |[Capax Global LLC](https://www.capaxglobal.com/) | IoT, персонализация, розничная торговля (Инвентаризация), операционная аналитика (Spark), бессерверная архитектура, разработка приложений|    США     |  
 | [Capgemini](https://www.capgemini.com/) | Розничная торговля (Инвентаризация), IoT, операционная аналитика (Spark), разработка приложений | США, Франция, Великобритания, Нидерланды, Финляндия  |
 | [Cognizant](https://www.cognizant.com/) | IoT, персонализация, розничная торговля (Инвентаризация), операционная аналитика (Spark), разработка приложений |США, Канада, Великобритания, Дания, Нидерланды, Швейцария, Австралия, Япония |
@@ -49,15 +48,14 @@ ms.locfileid: "82791737"
 | [Нециклическое программное обеспечение](https://www.incyclesoftware.com/) | NoSQL миграция, бессерверная архитектура, разработка приложений| США|
 | [Orion](https://www.orioninc.com/) | Персонализация, розничная торговля (Инвентаризация), операционная аналитика (Spark), IoT, разработка приложений| США, Канада|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Дополнительные сведения о других партнерах Майкрософт можно получить [на сайте партнеров Майкрософт](https://partner.microsoft.com/en-US/).
+Дополнительные сведения о других партнерах Майкрософт можно получить [на сайте партнеров Майкрософт](https://partner.microsoft.com/).
 
 <!--Image references-->
 [2]: ./media/partners-migration-cosmosdb/striim_logo.png
 [3]: ./media/partners-migration-cosmosdb/altoros_logo.png
 [4]: ./media/partners-migration-cosmosdb/attunix_logo.png
-[5]: ./media/partners-migration-cosmosdb/bluemetal_logo.png
 [6]: ./media/partners-migration-cosmosdb/capaxglobal_logo.png
 [7]: ./media/partners-migration-cosmosdb/coeo_logo.png
 [8]: ./media/partners-migration-cosmosdb/infosys_logo.png

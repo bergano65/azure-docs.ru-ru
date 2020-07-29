@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 03/31/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 0efff05f84bf02908dfc8b966b80539d309f491d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f91e68ec2bd4b0b5400ee3e8e380d91ea6f31f36
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87059135"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87291317"
 ---
 # <a name="troubleshoot-the-remote-desktop-client"></a>Устранение неполадок клиента удаленный рабочий стол
 
@@ -64,7 +64,7 @@ nslookup rdweb.wvd.microsoft.com
 
 Сначала проверьте используемую учетную запись Azure Active Directory. Если вы уже вошли в систему под учетной записью Azure Active Directory, отличной от той, которую вы хотите использовать для виртуальных рабочих столов Windows, то следует либо подписать наш или использовать частное окно браузера.
 
-Если вы используете выпуск 2019 для виртуальных рабочих столов Windows, используйте ссылку на веб-клиент в [этой статье](./virtual-desktop-fall-2019/connect-web-2019.md) для подключения к ресурсам.
+Если вы используете виртуальный рабочий стол Windows (классическая модель), используйте ссылку на веб-клиент в [этой статье](./virtual-desktop-fall-2019/connect-web-2019.md) для подключения к ресурсам.
 
 ## <a name="web-client-stops-responding-or-disconnects"></a>Веб-клиент перестает отвечать или отключается
 

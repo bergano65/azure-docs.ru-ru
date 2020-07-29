@@ -11,11 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: previous-author=fboylu, previous-ms.author=fboylu
-ms.openlocfilehash: 6452a826cfb6f7ceb65e6e89cdd42d683ee463b1
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 9520369861623e60a0118baa20a7871437433a4b
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83682722"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290707"
 ---
 # <a name="technical-guide-to-the-solution-template-for-predictive-maintenance-in-aerospace"></a>Техническое руководство по шаблону решения для прогнозного обслуживания в аэрокосмических компаниях
 
@@ -57,7 +58,7 @@ ms.locfileid: "83682722"
 Используйте [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/), чтобы обеспечить аналитику в режиме, близком к реальному времени, для входного потока из службы [концентратора событий Azure](#azure-event-hub). Затем опубликуйте результаты на панели мониторинга [Power BI](https://powerbi.microsoft.com), а также заархивируйте все необработанные входящие события и сохраните их в службе [хранилища Azure](https://azure.microsoft.com/services/storage/) для последующей обработки службой [фабрики данных Azure](https://azure.microsoft.com/documentation/services/data-factory/).
 
 ### <a name="hdinsight-custom-aggregation"></a>Пользовательская агрегация HD Insight
-Запустите скрипты [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) (оркестрированные Фабрикой данных Azure) с помощью HDInsight, чтобы предоставить агрегаты необработанных событий, которые были заархивированы с помощью ресурса Azure Stream Analytics.
+Запустите скрипты [Hive](https://docs.microsoft.com/archive/blogs/uk_faculty_connection/getting-started-with-microsoft-big-data-hive-hdinsight-jump-start) (оркестрированные Фабрикой данных Azure) с помощью HDInsight, чтобы предоставить агрегаты необработанных событий, которые были заархивированы с помощью ресурса Azure Stream Analytics.
 
 ### <a name="azure-machine-learning"></a>Машинное обучение Azure
 С помощью [службы "Машинное обучение Azure"](https://azure.microsoft.com/services/machine-learning/) (оркестрация с помощью фабрики данных Azure) создайте прогнозы на оставшийся период эксплуатации (RUL) конкретного двигателя самолета с учетом полученных входных данных. 
@@ -112,22 +113,22 @@ ms.locfileid: "83682722"
 
 ![Фабрика данных Azure](./media/predictive-maintenance-technical-guide/azure-data-factory.png)
 
-Два конвейера этой фабрики содержат сценарии [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx), которые используются для секционирования и агрегирования данных. Если указано, тогда сценарии находятся в учетной записи [хранения Azure](https://azure.microsoft.com/services/storage/), созданной во время установки. Их расположение: maintenancesascript\\\\script\\\\hive\\\\ (или https://[имя вашего решения].blob.core.windows.net/maintenancesascript).
+Два конвейера этой фабрики содержат сценарии [Hive](https://docs.microsoft.com/archive/blogs/uk_faculty_connection/getting-started-with-microsoft-big-data-hive-hdinsight-jump-start), которые используются для секционирования и агрегирования данных. Если указано, тогда сценарии находятся в учетной записи [хранения Azure](https://azure.microsoft.com/services/storage/), созданной во время установки. Их расположение: maintenancesascript\\\\script\\\\hive\\\\ (или https://[имя вашего решения].blob.core.windows.net/maintenancesascript).
 
-Аналогично запросам [Azure Stream Analytics](#azure-stream-analytics-1) скрипты [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) имеют неявные сведения о формате входящих данных. Эти запросы нужно изменить в зависимости от вашего формата данных.
+Аналогично запросам [Azure Stream Analytics](#azure-stream-analytics-1) скрипты [Hive](https://docs.microsoft.com/archive/blogs/uk_faculty_connection/getting-started-with-microsoft-big-data-hive-hdinsight-jump-start) имеют неявные сведения о формате входящих данных. Эти запросы нужно изменить в зависимости от вашего формата данных.
 
 #### <a name="aggregateflightinfopipeline"></a>*AggregateFlightInfoPipeline*
-Этот [конвейер](../../data-factory/concepts-pipelines-activities.md) содержит одно действие — действие [HDInsightHive](../../data-factory/transform-data-using-hadoop-hive.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет сценарий [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для секционирования данных в [службе хранилища Azure](https://azure.microsoft.com/services/storage/) во время задания [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/).
+Этот [конвейер](../../data-factory/concepts-pipelines-activities.md) содержит одно действие — действие [HDInsightHive](../../data-factory/transform-data-using-hadoop-hive.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет сценарий [Hive](https://docs.microsoft.com/archive/blogs/uk_faculty_connection/getting-started-with-microsoft-big-data-hive-hdinsight-jump-start) для секционирования данных в [службе хранилища Azure](https://azure.microsoft.com/services/storage/) во время задания [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/).
 
-Сценарий [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для этой задачи секционирования — ***AggregateFlightInfo.hql***.
+Сценарий [Hive](https://docs.microsoft.com/archive/blogs/uk_faculty_connection/getting-started-with-microsoft-big-data-hive-hdinsight-jump-start) для этой задачи секционирования — ***AggregateFlightInfo.hql***.
 
 #### <a name="mlscoringpipeline"></a>*MLScoringPipeline*
 Этот [конвейер](../../data-factory/concepts-pipelines-activities.md) содержит несколько действий, и его конечным результатом является оцененный прогноз из эксперимента [Машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/), связанного с этим шаблоном решения.
 
 Эти действия включают в себя:
 
-* Действие [HDInsightHive](../../data-factory/transform-data-using-hadoop-hive.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет сценарий [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для агрегирования и проектирования характеристик, необходимых для эксперимента [Машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/).
-  Сценарий [Hive](https://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для этой задачи секционирования — ***PrepareMLInput.hql***.
+* Действие [HDInsightHive](../../data-factory/transform-data-using-hadoop-hive.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет сценарий [Hive](https://docs.microsoft.com/archive/blogs/uk_faculty_connection/getting-started-with-microsoft-big-data-hive-hdinsight-jump-start) для агрегирования и проектирования характеристик, необходимых для эксперимента [Машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/).
+  Сценарий [Hive](https://docs.microsoft.com/archive/blogs/uk_faculty_connection/getting-started-with-microsoft-big-data-hive-hdinsight-jump-start) для этой задачи секционирования — ***PrepareMLInput.hql***.
 * Действие [Copy](https://msdn.microsoft.com/library/azure/dn835035.aspx), которое перемещает результаты действия [HDInsightHive](../../data-factory/transform-data-using-hadoop-hive.md) в один большой двоичный объект [службы хранилища Azure](https://azure.microsoft.com/services/storage/), к которому может получить доступ действие [AzureMLBatchScoring](https://msdn.microsoft.com/library/azure/dn894009.aspx).
 * Действие [AzureMLBatchScoring](https://msdn.microsoft.com/library/azure/dn894009.aspx) вызывает эксперимент [Машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/) с результатами, размещенными в одном большом двоичном объекте службы [хранилища Azure](https://azure.microsoft.com/services/storage/).
 

@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/22/2020
 ms.author: spelluru
-ms.openlocfilehash: a7822d6ea46b7efc21f43e944d0a96f609df389a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 242e2a2bf743777dd43a4c84194ebd894b5edd3c
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84892532"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290402"
 ---
 # <a name="use-powershell-to-create-a-custom-role-in-a-lab-in-azure-devtest-labs"></a>Создание настраиваемой роли в лаборатории Azure DevTest Labs с помощью PowerShell
 
@@ -27,7 +27,7 @@ ms.locfileid: "84892532"
 
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 * **Лаборатория.** Этот сценарий требует наличия лаборатории. 
 
 ## <a name="sample-script"></a>Пример скрипта
@@ -46,6 +46,6 @@ ms.locfileid: "84892532"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
+Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](/powershell/).
 
 Дополнительные примеры сценариев PowerShell для службы "Службы лабораторий Azure" приведены [здесь](../samples-powershell.md).

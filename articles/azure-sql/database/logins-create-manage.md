@@ -13,12 +13,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 ms.date: 03/23/2020
-ms.openlocfilehash: fbcec1ace45927561c56449cd8ca0c8d3306b3bd
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 8408025478e2776423b0d1f10cc70828e408f87e
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85986289"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290108"
 ---
 # <a name="authorize-database-access-to-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Авторизация доступа к базе данных SQL, SQL Управляемый экземпляр и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "85986289"
 > [!IMPORTANT]
 > В оставшейся части этой статьи в качестве баз данных используются базы данных SQL Azure, Azure SQL Управляемый экземпляр и Azure синапсе, и сервер ссылается на [сервер](logical-servers.md) , который управляет базами данных для базы Azure SQL и Azure синапсе.
 
-## <a name="authentication-and-authorization"></a>Аутентификация и авторизация
+## <a name="authentication-and-authorization"></a>Проверка подлинности и авторизация
 
 [**Проверка подлинности**](security-overview.md#authentication) — это процесс проверки пользователя на то, что он заказывает. Пользователь подключается к базе данных с помощью учетной записи пользователя.
 Когда пользователь пытается подключиться к базе данных, он предоставляет учетную запись пользователя и сведения о проверке подлинности. Проверка подлинности пользователя выполняется с помощью одного из следующих двух методов проверки подлинности:
@@ -169,6 +169,6 @@ ms.locfileid: "85986289"
 - [Маскирование данных](dynamic-data-masking-overview.md) позволяет снизить уязвимость конфиденциальных данных.
 - [хранимые процедуры](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Обзор всех баз данных SQL Azure и функций безопасности SQL Управляемый экземпляр см. в статье [Общие сведения о безопасности](security-overview.md).

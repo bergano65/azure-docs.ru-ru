@@ -13,18 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/14/2019
 ms.author: kumud
-ms.openlocfilehash: 67bc7994d2628790e84d3b3752f894a36486ca86
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c224332eec31b343bdc53564ef4075a0620ac340
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84707520"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289579"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-using-standard-internal-load-balancer-in-azure---powershell-preview"></a>Развертывание приложения с двумя стеками IPv6 с помощью стандартного внутреннего Load Balancer в Azure PowerShell (Предварительная версия)
 
 В этой статье показано, как развернуть приложение с двойным стеком (IPv4 + IPv6) в Azure, которое включает в себя виртуальную сеть и подсеть с двумя стеками, стандартную внутреннюю Load Balancer с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальные машины с сетевыми картами с двумя IP-конфигурациями, группой безопасности сети и общедоступными IP.
-
-> [!Important]
-> Поддержка IPv6 для виртуальной сети Azure в настоящее время доступна в общедоступной предварительной версии. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Процедура создания внутренних Load Balancer, поддерживающих IPv6, практически идентична процессу создания IPv6-Load Balancer, который описан [здесь](virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md). Единственные отличия при создании внутренней подсистемы балансировки нагрузки находятся в конфигурации интерфейса пользователя, как показано в примере PowerShell ниже:
 
@@ -45,7 +43,7 @@ ms.locfileid: "84707520"
 
 Чтобы установить и использовать PowerShell локально для работы с этой статьей, вам понадобится модуль Azure PowerShell 6.9.0 или более поздней версии. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Перед развертыванием приложения с двойным стеком в Azure необходимо настроить подписку для этой предварительной версии, используя следующие Azure PowerShell:
 
 Зарегистрируйтесь следующим образом:

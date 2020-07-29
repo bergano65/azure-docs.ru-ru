@@ -1,7 +1,7 @@
 ---
 title: Azure PowerShell пример скрипта. Настройка внешнего интерфейса IPv6 с помощью Load Balancer (цен. категория "Стандартный") (Предварительная версия)
 titlesuffix: Azure Virtual Network
-description: Включение конечных точек IPv6 с помощью PowerShell в виртуальной сети Azure
+description: Узнайте, как настроить интерфейс IPv6 в примере сценария виртуальной сети с помощью Load Balancer (цен. категория "Стандартный").
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -11,12 +11,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 07/15/2019
 ms.author: kumud
-ms.openlocfilehash: 2de93f66bdb2647bcc612322d90eb9197e0ad63e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 24057c494d76cf9435ed60ecf2a13db4eab36fbf
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87068665"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87291910"
 ---
 # <a name="configure-ipv6-frontend-in-virtual-network-script-sample-with-standard-load-balancerpreview"></a>Настройка внешнего интерфейса IPv6 в примере сценария виртуальной сети с помощью Load Balancer (цен. категория "Стандартный") (Предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "87068665"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 Перед развертыванием приложения с двойным стеком в Azure необходимо настроить подписку только один раз для этой предварительной версии, используя следующие Azure PowerShell:
 
 Зарегистрируйтесь следующим образом:

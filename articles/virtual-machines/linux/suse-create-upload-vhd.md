@@ -5,15 +5,15 @@ author: gbowerman
 ms.service: virtual-machines-linux
 ms.subservice: imaging
 ms.workload: infrastructure-services
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/12/2018
 ms.author: guybo
-ms.openlocfilehash: ed14aee756456e35198a501df309fc9eb032898e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 73e07c612486d5f48b1ad3eca8044a561549092b
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87080086"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87292121"
 ---
 # <a name="prepare-a-sles-or-opensuse-virtual-machine-for-azure"></a>Подготовка виртуальной машины SLES или openSUSE для Azure
 
@@ -133,7 +133,7 @@ ms.locfileid: "87080086"
 2. Щелкните **Подключение** , чтобы открыть окно виртуальной машины.
 3. В консоли оболочки выполните команду`zypper lr`. Если эта команда возвращает результат следующего вида, то репозитории настроены надлежащим образом, и никаких изменений не требуется (обратите внимание, что номера версий могут отличаться):
 
-   | # | Псевдоним                 | Имя                  | Активировано | Обновить
+   | # | Псевдоним                 | Имя                  | Включен | Обновить
    | - | :-------------------- | :-------------------- | :------ | :------
    | 1 | Облако: Tools_13.1      | Облако: Tools_13.1      | Да     | Да
    | 2 | openSUSE_13.1_OSS     | openSUSE_13.1_OSS     | Да     | Да

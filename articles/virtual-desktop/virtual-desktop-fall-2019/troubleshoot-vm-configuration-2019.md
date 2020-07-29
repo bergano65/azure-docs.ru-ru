@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок узла сеансов виртуальных рабочих столов Windows — 2019 — Azure
-description: Устранение проблем при настройке виртуальных машин узла сеансов виртуальных рабочих столов Windows.
+title: Устранение неполадок узла сеансов виртуальных рабочих столов Windows (классическая модель) — Azure
+description: Устранение проблем при настройке виртуальных машин узла сеансов Windows для виртуальных рабочих столов (классическая модель).
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,21 +8,21 @@ ms.topic: troubleshooting
 ms.date: 05/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: b2f4a288ab83ca9f20434c55a180c2d9b30be5d4
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 0155c9cf6b5d9df8a6a8831896093c4c6b074cd6
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86527665"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87291256"
 ---
-# <a name="troubleshoot-session-host-virtual-machine-configuration"></a>Устранение неполадок конфигурации виртуальной машины узла сеансов
+# <a name="windows-virtual-desktop-classic-session-host-virtual-machine-configuration"></a>Конфигурация виртуальной машины узла сеансов Windows Virtual Desktop (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../troubleshoot-vm-configuration.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../troubleshoot-vm-configuration.md).
 
 Используйте эту статью для устранения неполадок, возникающих при настройке виртуальных машин узла сеансов виртуальных рабочих столов Windows.
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 

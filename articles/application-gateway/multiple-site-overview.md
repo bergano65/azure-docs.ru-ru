@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.date: 07/20/2020
 ms.author: amsriva
 ms.topic: conceptual
-ms.openlocfilehash: b3e6bc6d2dd5568dcc11a37c6ab44bd3b4089c66
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 23f76f18256ecadcbef59a498292222ea358008f
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87067957"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290986"
 ---
 # <a name="application-gateway-multiple-site-hosting"></a>Размещение нескольких сайтов с помощью шлюза приложений
 
@@ -40,12 +40,8 @@ ms.locfileid: "87067957"
 >[!NOTE]
 > Эта функция доступна в предварительной версии и доступна только для Standard_v2 и WAF_v2 SKU шлюза приложений. Дополнительные сведения о предварительных версиях см. в [статье условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-В [портал Azure](create-multiple-sites-portal.md)можно определить их в отдельных текстовых полях, как показано на снимке экрана ниже.
-
-:::image type="content" source="./media/multiple-site-overview/wildcard-listener-example.png" alt-text="Пример конфигурации прослушивателя с подстановочными знаками":::
-
 >[!NOTE]
->Если вы создаете прослушиватель с несколькими сайтами или добавляете в существующий прослушиватель портал Azure с несколькими сайтами несколько имен узлов, по умолчанию он будет добавлен к `HostNames` параметру конфигурации прослушивателя, что расширяет возможности существующего `HostName` параметра в конфигурации.
+>В настоящее время эта функция доступна только с помощью [Azure PowerShell](tutorial-multiple-sites-powershell.md) и [Azure CLI](tutorial-multiple-sites-cli.md). Поддержка портала скоро появится.
 
 В [Azure PowerShell](tutorial-multiple-sites-powershell.md)необходимо использовать `-HostNames` вместо `-HostName` . При использовании имен узлов можно указать до 5 имен узлов в виде значений с разделителями-запятыми и использовать подстановочные знаки. Например `-HostNames "*.contoso.com,*.fabrikam.com"`.
 
@@ -77,7 +73,7 @@ ms.locfileid: "87067957"
 *   Свойства "Hostname" принимают в качестве входных данных одну строку, где можно указать только одно имя домена без подстановочных знаков, а "Hostname" принимает массив строк в качестве входных данных, где можно указать до 5 доменных имен с подстановочными знаками. Однако оба свойства нельзя использовать одновременно.
 *   Нельзя создать правило [перенаправления](redirect-overview.md) с целевым прослушивателем, который использует подстановочный знак или несколько имен узлов.
 
-Пошаговое руководство по настройке имен узлов с подстановочными знаками в многосайтовых прослушивателях см. в статье [Создание нескольких сайтов с помощью портал Azure](create-multiple-sites-portal.md) или [с помощью Azure PowerShell](tutorial-multiple-sites-powershell.md) или [Azure CLI](tutorial-multiple-sites-cli.md) .
+Пошаговое руководство по настройке имен узлов с подстановочными знаками в многосайтовых прослушивателях см. в статье [Создание нескольких сайтов с помощью Azure PowerShell](tutorial-multiple-sites-powershell.md) или [Использование Azure CLI](tutorial-multiple-sites-cli.md) .
 
 ## <a name="host-headers-and-server-name-indication-sni"></a>Заголовки узлов и указание имени сервера (SNI)
 
@@ -95,6 +91,9 @@ ms.locfileid: "87067957"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После изучения нескольких размещений сайтов перейдите к разделу [Создание многосайтового приложения с помощью портал Azure](create-multiple-sites-portal.md) или [с помощью Azure PowerShell](tutorial-multiple-sites-powershell.md) или [с помощью Azure CLI](tutorial-multiple-sites-cli.md) для пошагового указания по созданию шлюза приложений для размещения нескольких веб-сайтов.
+Узнайте, как настроить размещение нескольких сайтов в шлюзе приложений.
+* [Использование портала Azure](create-multiple-sites-portal.md)
+* [Использование Azure PowerShell](tutorial-multiple-sites-powershell.md) 
+* [Использование Azure CLI](tutorial-multiple-sites-cli.md)
 
 Комплексное развертывание с помощью шаблона можно изучить на примере [шаблона Resource Manager, использующего размещение нескольких сайтов](https://github.com/Azure/azure-quickstart-templates/blob/master/201-application-gateway-multihosting).

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: d53818c91d32bc7435d1328c2ae73a8eb3172cd4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: af70b1746b2ac847d964975aaf1b2186aa89be01
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87029796"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87292741"
 ---
 # <a name="use-customer-managed-keys-with-azure-key-vault-to-manage-azure-storage-encryption"></a>Использование управляемых клиентом ключей с Azure Key Vault для управления шифрованием службы хранилища Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "87029796"
 
 Шифрование службы хранилища Azure поддерживает ключи RSA и RSA-HSM размером 2048, 3072 и 4096. Дополнительные сведения о ключах см. в разделе **Key Vault Keys** раздела [о Azure Key Vault ключах, секретах и сертификатах](../../key-vault/about-keys-secrets-and-certificates.md#key-vault-keys).
 
-Использование Azure Key Vault связано с затратами. Дополнительные сведения см. в разделе [цены на Key Vault](/pricing/details/key-vault/).
+Использование Azure Key Vault связано с затратами. Дополнительные сведения см. в разделе [цены на Key Vault](https://azure.microsoft.com/pricing/details/key-vault/).
 
 ## <a name="rotate-customer-managed-keys"></a>Смена ключей, управляемых клиентом
 
