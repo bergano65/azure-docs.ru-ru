@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: cd7e7df5c789743cf6bd84c6150fd901490bdedd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4e10843eab8ac2ccbda3d6876f51c88a598d7139
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84751632"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87371691"
 ---
 # <a name="azure-security-baseline-for-azure-storage"></a>Базовые показатели безопасности Azure для службы хранилища Azure
 
@@ -240,7 +240,7 @@ ms.locfileid: "84751632"
 
 - [Как оповещать данные журнала Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response)
 
-- [Ведение журнала аналитики службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
+- [Ведение журнала Аналитики Службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -428,7 +428,7 @@ ms.locfileid: "84751632"
 
 Создайте параметры диагностики для Azure Active Directory учетных записей пользователей, отправив журналы аудита и журналы входа в рабочую область Log Analytics. Вы можете настроить необходимые оповещения в рабочей области Log Analytics. Чтобы отслеживать ошибки проверки подлинности в учетных записях хранения Azure, можно создавать оповещения, уведомляющие вас о достижении определенных пороговых значений для метрик ресурсов хранилища. Кроме того, используйте Azure Monitor, чтобы оповещать об анонимном доступе учетных записей хранения, используя условия анонимной проверки подлинности.
 
-- [Ведение журнала аналитики службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
+- [Ведение журнала Аналитики Службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
 
 - [Как интегрировать журналы действий Azure в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
 
@@ -534,7 +534,7 @@ ms.locfileid: "84751632"
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью управления доступом на основе РОЛЕЙ (RBAC). Служба хранилища Azure определяет набор встроенных ролей RBAC, охватывающих общие наборы разрешений, используемых для доступа к данным BLOB-объектов или очередей. 
+**Руководство**. Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью управления доступом на основе РОЛЕЙ (RBAC). Служба хранилища Azure определяет набор встроенных ролей Azure, охватывающих общие наборы разрешений, используемых для доступа к данным BLOB-объектов или очередей. 
 
 - [Назначение ролей RBAC для учетной записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal#assign-rbac-roles-using-the-azure-portal)
 
@@ -574,7 +574,7 @@ ms.locfileid: "84751632"
 
 - [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
 
-- [Ведение журнала аналитики службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
+- [Ведение журнала Аналитики Службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
 
 - [Настройка оповещений метрик для учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account)
 
@@ -974,7 +974,7 @@ ms.locfileid: "84751632"
 
 **Руководство**. для резервного копирования данных из поддерживаемых служб учетной записи хранения доступны несколько методов, включая использование azcopy или сторонних средств. Функция хранения данных в неизменяемом виде хранилища BLOB-объектов Azure дает пользователям возможность хранить критически важные для бизнеса объекты данных в состоянии WORM. Это состояние делает их нестираемыми и неизменяемыми в течение определенного пользователем интервала времени.
 
-- [Get started with AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10) (Начало работы с AzCopy)
+- [Начало работы с AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10)
 
 - [Настройка и администрирование политик неизменяемости для хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutability-policies-manage?tabs=azure-portal)
 

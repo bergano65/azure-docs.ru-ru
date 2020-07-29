@@ -8,15 +8,15 @@ ms.author: sgilley
 ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
 ms.date: 07/08/2020
-ms.custom: seodec18, tracking-python
-ms.openlocfilehash: 0f3682338c9373f3ba30c8b32ea5cf4132c18949
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.topic: conceptual
+ms.custom: how-to, tracking-python
+ms.openlocfilehash: be4211d793c593dac50d5764d7a15e7daa21c3f4
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87048280"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87320159"
 ---
 # <a name="set-up-and-use-compute-targets-for-model-training"></a>Настройка и использование целевых объектов вычислений для обучения моделей 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -98,7 +98,7 @@ ms.locfileid: "87048280"
 
 Вычислительную среду Машинного обучения Azure можно использовать для распространения процесса обучения в кластере вычислительных узлов на основе ЦП или GPU, размещенном в облаке. Дополнительные сведения о размерах виртуальных машин, которые содержат GPU, см. в статье [Размеры виртуальных машин, оптимизированных для GPU](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-gpu). 
 
-Вычислительная среда Машинного обучения Azure имеет ограничения по умолчанию, такие как количество ядер, которые могут быть выделены. Дополнительные сведения см. в статье [Управление квотами для ресурсов Azure и их запрашивание](/how-to-manage-quotas.md).
+Вычислительная среда Машинного обучения Azure имеет ограничения по умолчанию, такие как количество ядер, которые могут быть выделены. Дополнительные сведения см. в статье [Управление квотами для ресурсов Azure и их запрашивание](how-to-manage-quotas.md).
 
 
 > [!TIP]

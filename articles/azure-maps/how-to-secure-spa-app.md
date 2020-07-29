@@ -9,12 +9,13 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 96dd1cf6a5d6cea69899bf920c86018384ebbc3c
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 5b7f26a03c117620be7c16abaf689763e370e5ba
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87126468"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285702"
 ---
 # <a name="how-to-secure-a-single-page-application-with-non-interactive-sign-in"></a>Как защитить одностраничное приложение с помощью неинтерактивного входа
 
@@ -108,7 +109,7 @@ ms.locfileid: "87126468"
     > [!div class="mx-imgBorder"]
     > ![Предоставление RBAC](./media/how-to-manage-authentication/how-to-grant-rbac.png)
 
-2. На вкладке **назначения ролей** в разделе **роль**выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В разделе **назначение доступа к**выберите **приложение-функция**. Выберите участника по имени. Затем нажмите кнопку **Сохранить**.
+2. На вкладке **назначения ролей** в разделе **роль**выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В разделе **назначение доступа к**выберите **приложение-функция**. Выберите участника по имени. Нажмите кнопку **Сохранить**.
 
    * См. Дополнительные сведения о [добавлении и удалении назначений ролей](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal).
 

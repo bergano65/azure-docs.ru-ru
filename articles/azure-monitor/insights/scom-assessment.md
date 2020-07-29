@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/25/2018
-ms.openlocfilehash: b71c6d8e0890bde377fae761f4486803229ceff4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 97d7d21374062462248e1b86f2bde2fef2d25331
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87045682"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326058"
 ---
 # <a name="optimize-your-environment-with-the-system-center-operations-manager-health-check-preview-solution"></a>Оптимизация среды с помощью решения для проверки работоспособности System Center Operations Manager (предварительная версия)
 
@@ -203,7 +203,7 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
 
 ## <a name="use-health-check-focus-area-recommendations"></a>Рекомендации по использованию приоритетной области проверки работоспособности
 
-Чтобы использовать решение для проверки работоспособности в Log Analytics, его необходимо установить. Дополнительные сведения об установке решений см. в разделе [Установка решения по управлению](../../azure-monitor/insights/solutions.md). После установки можно просматривать сводку рекомендаций с помощью плитки проверки работоспособности System Center Operations Manager на странице **Обзор** в рабочей области на портале Azure.
+Чтобы использовать решение для проверки работоспособности в Log Analytics, его необходимо установить. Дополнительные сведения об установке решений см. в разделе [Установка решения по управлению](./solutions.md). После установки можно просматривать сводку рекомендаций с помощью плитки проверки работоспособности System Center Operations Manager на странице **Обзор** в рабочей области на портале Azure.
 
 Вы можете посматривать сводку оценок соответствия для инфраструктуры, а затем глубже изучить рекомендации.
 
@@ -229,7 +229,7 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
     ```
 
     >[!NOTE]
-    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../../azure-monitor/log-query/log-query-overview.md), приведенный выше запрос будет изменен следующим образом.
+    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../log-query/log-query-overview.md), приведенный выше запрос будет изменен следующим образом.
     >
     > `SCOMAssessmentRecommendationRecommendation | where RecommendationResult == "Failed" | sort by Computer asc | project Computer, RecommendationId, Recommendation`
 
@@ -254,7 +254,7 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
     ```
 
     >[!NOTE]
-    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../../azure-monitor/log-query/log-query-overview.md), приведенный выше запрос будет изменен следующим образом.
+    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../log-query/log-query-overview.md), приведенный выше запрос будет изменен следующим образом.
     >
     > `SCOMAssessmentRecommendationRecommendation | where RecommendationResult == "Ignore" | sort by Computer asc | project Computer, RecommendationId, Recommendation`
 
@@ -295,4 +295,5 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Выполняйте [поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные данные проверки работоспособности System Center Operations Manager и соответствующие рекомендации.
+- Выполняйте [поиск по журналам](../log-query/log-query-overview.md), чтобы просмотреть подробные данные проверки работоспособности System Center Operations Manager и соответствующие рекомендации.
+

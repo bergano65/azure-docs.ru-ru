@@ -8,18 +8,18 @@ ms.subservice: iomt
 ms.topic: conceptual
 ms.date: 07/16/2020
 ms.author: jasteppe
-ms.openlocfilehash: e74e3475256858955a5ab0dc99e7b858548e2485
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: eff1272318413da7855134b0a8a44dd0a0711a6c
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87100419"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285583"
 ---
-# <a name="iot-connector-preview-troubleshooting-guide-and-how-to"></a>Руководство по устранению неполадок соединителя IoT (Предварительная версия) и инструкции
+# <a name="iot-connector-preview-troubleshooting-guide"></a>Руководство по устранению неполадок соединителя IoT (Предварительная версия)
 
-В этой статье вы узнаете, как устранять стандартные сообщения об ошибках и условия для соединителя Интернета вещей (Предварительная версия).
+В этой статье описаны действия по устранению распространенных условий и сообщений об ошибках для соединителя Интернета вещей (Предварительная версия).  
 
-Вы также узнаете, как создавать копии сопоставления JSON для соединителя Интернета вещей (Предварительная версия).
+Вы также узнаете, как создавать копии файлов сопоставления JSON соединителя IoT (Предварительная версия) для редактирования и архивации за пределами портал Azure.
 
 ## <a name="error-messages-and-fixes"></a>Сообщения об ошибках и исправления
 

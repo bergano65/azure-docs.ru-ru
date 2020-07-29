@@ -11,12 +11,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Operations'
 - 'Role: Technical Support'
-ms.openlocfilehash: 675391a92c991f80faadf8b75abc79dcb4cd19d7
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: bee22391664250888816dc2b4bbb93622cab7942
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322964"
+ms.locfileid: "87335568"
 ---
 # <a name="reference---iot-hub-quotas-and-throttling"></a>Руководство. Квоты и регулирование в Центре Интернета вещей
 
@@ -30,9 +30,9 @@ ms.locfileid: "87322964"
 
 Уровень также определяет пределы регулирования, устанавливаемые Центром Интернета вещей для выполнения всех операций.
 
-### <a name="iot-plug-and-play"></a>IoT Plug and Play
+## <a name="iot-plug-and-play"></a>IoT Plug and Play
 
-Во время общедоступной предварительной версии устройства IoT Plug and Play будут отсылать отдельные сообщения на интерфейс, что может увеличить количество сообщений, подсчитанных в отношении квоты сообщений.
+Устройства IoT Plug and Play отправляют по крайней мере одно сообщение телеметрии для каждого интерфейса, включая корень, что может увеличить количество сообщений, подсчитанных в отношении квоты сообщений.
 
 ## <a name="operation-throttles"></a>Регулирование операций
 

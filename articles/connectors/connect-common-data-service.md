@@ -7,15 +7,16 @@ ms.reviewer: jdaly, logicappspm
 ms.topic: conceptual
 ms.date: 05/08/2020
 tags: connectors
-ms.openlocfilehash: 98da7e959e4b59ad2d0f3f3f79364391b4ceddbd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8cce90a8a65a7f070459e220e6d92ef0be57e909
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82997104"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284121"
 ---
 # <a name="create-and-manage-records-in-common-data-service-by-using-azure-logic-apps"></a>Создание записей и управление ими в Common Data Service с помощью Azure Logic Apps
 
-С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [соединителя Common Data Service](https://docs.microsoft.com/connectors/commondataservice/)можно создавать автоматизированные рабочие процессы, управляющие записями в базе данных [Common Data Service](https://docs.microsoft.com/powerapps/maker/common-data-service/data-platform-intro) . Эти рабочие процессы могут создавать записи, обновлять записи и выполнять другие операции. Вы также можете получить сведения из базы данных Common Data Service и сделать выходные данные доступными для других действий в приложении логики. Например, при обновлении записи в базе данных Common Data Service можно отправить сообщение электронной почты с помощью соединителя Outlook для Office 365.
+С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [соединителя Common Data Service](/connectors/commondataservice/)можно создавать автоматизированные рабочие процессы, управляющие записями в базе данных [Common Data Service](/powerapps/maker/common-data-service/data-platform-intro) . Эти рабочие процессы могут создавать записи, обновлять записи и выполнять другие операции. Вы также можете получить сведения из базы данных Common Data Service и сделать выходные данные доступными для других действий в приложении логики. Например, при обновлении записи в базе данных Common Data Service можно отправить сообщение электронной почты с помощью соединителя Outlook для Office 365.
 
 В этой статье показано, как создать приложение логики, которое создает запись задачи при создании новой записи интереса.
 
@@ -23,10 +24,10 @@ ms.locfileid: "82997104"
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
-* [Среда Common Data Service](https://docs.microsoft.com/power-platform/admin/environments-overview), представляющая собой пространство, в котором организация хранит, управляет и совместно использует бизнес-данные и базу данных Common Data Service. Для получения дополнительных сведений см. следующие ресурсы.<p>
+* [Среда Common Data Service](/power-platform/admin/environments-overview), представляющая собой пространство, в котором организация хранит, управляет и совместно использует бизнес-данные и базу данных Common Data Service. Для получения дополнительных сведений см. следующие ресурсы.<p>
 
-  * [Дополнительные сведения: Начало работы с Common Data Service](https://docs.microsoft.com/learn/modules/get-started-with-powerapps-common-data-service/)
-  * [Платформа питания — Обзор сред](https://docs.microsoft.com/power-platform/admin/environments-overview)
+  * [Дополнительные сведения: Начало работы с Common Data Service](/learn/modules/get-started-with-powerapps-common-data-service/)
+  * [Платформа питания — Обзор сред](/power-platform/admin/environments-overview)
 
 * Основные сведения о [создании приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) и приложении логики, из которых требуется получить доступ к записям в базе данных Common Data Service. Чтобы запустить приложение логики с помощью триггера Common Data Service, требуется пустое приложение логики. Если вы не знакомы с Azure Logic Apps, ознакомьтесь с [кратким руководством: создание первого рабочего процесса с помощью Azure Logic Apps](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
@@ -50,9 +51,9 @@ ms.locfileid: "82997104"
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
-   | **Среда** | Да | Наблюдаемая среда, например "Fabrikam Sales Production". Дополнительные сведения см. в разделе [Power Platform-](https://docs.microsoft.com/power-platform/admin/environments-overview)Environments Overview. |
+   | **Среда** | Да | Наблюдаемая среда, например "Fabrikam Sales Production". Дополнительные сведения см. в разделе [Power Platform-](/power-platform/admin/environments-overview)Environments Overview. |
    | **Имя сущности** | Да | Сущность для отслеживания, например "интересы" |
-   | **Область действия** | Да | Источник, создавший новую запись, например пользователь в подразделении или любой пользователь в Организации. В этом примере используется "бизнес-единица". |
+   | **Область** | Да | Источник, создавший новую запись, например пользователь в подразделении или любой пользователь в Организации. В этом примере используется "бизнес-единица". |
    ||||
 
 ## <a name="add-common-data-service-action"></a>Добавить Common Data Service действие
@@ -125,7 +126,7 @@ ms.locfileid: "82997104"
 
    ![Введите запрос фильтра ODATA для фильтрации записей](./media/connect-common-data-service/list-records-action-filter-query-value.png)
 
-Дополнительные сведения о `$filter` параметрах запросов системы см. в разделе [Common Data Service-Filter Results](https://docs.microsoft.com/powerapps/developer/common-data-service/webapi/query-data-web-api#filter-results).
+Дополнительные сведения о `$filter` параметрах запросов системы см. в разделе [Common Data Service-Filter Results](/powerapps/developer/common-data-service/webapi/query-data-web-api#filter-results).
 
 ## <a name="list-records-based-on-an-order"></a>Вывод списка записей на основе заказа
 
@@ -139,7 +140,7 @@ ms.locfileid: "82997104"
 
    ![Введите запрос фильтра ODATA для упорядочения записей](./media/connect-common-data-service/list-records-action-order-by-value.png)
 
-Дополнительные сведения о `$orderby` параметрах запросов системы см. в разделе [Common Data Service-Order Results](https://docs.microsoft.com/powerapps/developer/common-data-service/webapi/query-data-web-api#order-results).
+Дополнительные сведения о `$orderby` параметрах запросов системы см. в разделе [Common Data Service-Order Results](/powerapps/developer/common-data-service/webapi/query-data-web-api#order-results).
 
 ## <a name="field-data-types"></a>Типы данных полей
 
@@ -165,7 +166,7 @@ ms.locfileid: "82997104"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Технические сведения на основе описания Swagger соединителя, например триггеров, действий, ограничений и других сведений, см. [на странице справочника по соединителю](https://docs.microsoft.com/connectors/commondataservice/).
+Технические сведения на основе описания Swagger соединителя, например триггеров, действий, ограничений и других сведений, см. [на странице справочника по соединителю](/connectors/commondataservice/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
