@@ -3,16 +3,16 @@ title: Отслеживание зависимостей в Azure Application In
 description: Отслеживайте вызовы зависимостей из локального или Microsoft Azure веб-приложения с помощью Application Insights.
 ms.topic: conceptual
 ms.date: 06/26/2020
-ms.openlocfilehash: 9980db352e5d2c342131e0d6a2cd1248adb10810
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a7f42c19c835e4f5c49f4d7aa91504b606a09f5b
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87067722"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321383"
 ---
 # <a name="dependency-tracking-in-azure-application-insights"></a>Отслеживание зависимостей в Azure Application Insights 
 
-*Зависимость* — это компонент, который вызывается приложением. Как правило, это служба, вызываемая с использованием HTTP, база данных или файловая система. [Application Insights](../../azure-monitor/app/app-insights-overview.md) измеряет продолжительность вызовов зависимостей, вне зависимости от того, произошел ли сбой, а также дополнительные сведения, такие как имя зависимости и т. д. Можно исследовать конкретные вызовы зависимостей и сопоставлять их с запросами и исключениями.
+*Зависимость* — это компонент, который вызывается приложением. Как правило, это служба, вызываемая с использованием HTTP, база данных или файловая система. [Application Insights](./app-insights-overview.md) измеряет продолжительность вызовов зависимостей, вне зависимости от того, произошел ли сбой, а также дополнительные сведения, такие как имя зависимости и т. д. Можно исследовать конкретные вызовы зависимостей и сопоставлять их с запросами и исключениями.
 
 ## <a name="automatically-tracked-dependencies"></a>Автоматически отслеживание зависимостей
 
@@ -20,7 +20,7 @@ ms.locfileid: "87067722"
 
  `DependencyTrackingTelemetryModule`в настоящее время отслеживает следующие зависимости автоматически:
 
-|Зависимости |Подробности|
+|Зависимости |Сведения|
 |---------------|-------|
 |HTTP/HTTPS | Локальные или удаленные вызовы HTTP/HTTPS |
 |Вызовы WCF| Отслеживание выполняется автоматически только при использовании привязок на основе HTTP.|
@@ -154,7 +154,7 @@ services.ConfigureTelemetryModule<DependencyTrackingTelemetryModule>((module, o)
 
 ## <a name="logs-analytics"></a>Журналы (Analytics)
 
-Вы можете отслеживать зависимости, используя [язык запросов Kusto](/azure/kusto/query/). Вот несколько примеров.
+Вы можете отслеживать зависимости, используя [язык запросов Kusto](/azure/kusto/query/). Ниже приведено несколько примеров.
 
 * Поиск неудачно завершенных вызовов зависимостей:
 
@@ -202,6 +202,7 @@ services.ConfigureTelemetryModule<DependencyTrackingTelemetryModule>((module, o)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Исключения](../../azure-monitor/app/asp-net-exceptions.md)
-* [Данные пользователей и страниц](../../azure-monitor/app/javascript.md)
-* [Доступность](../../azure-monitor/app/monitor-web-app-availability.md)
+* [Исключения](./asp-net-exceptions.md)
+* [Данные пользователей и страниц](./javascript.md)
+* [Доступность](./monitor-web-app-availability.md)
+

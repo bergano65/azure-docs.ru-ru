@@ -3,12 +3,12 @@ title: Использование Azure DevTest Labs для виртуальны
 description: Сведения об использовании Azure DevTest Labs для виртуальных машин и тестовых сред PaaS.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: f364c227c1b53b7887b34c8a3c92ad9045526328
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9207c070c13c5e276a6ab95e3bcf1bb8671dc382
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85484168"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87272902"
 ---
 # <a name="use-azure-devtest-labs-for-vm-and-paas-test-environments"></a>Использование Azure DevTest Labs для виртуальных машин и тестовых сред PaaS
 
@@ -48,7 +48,7 @@ Azure DevTest Labs можно использовать для реализаци
    | --- | --- |
    | [Настройка образов Azure Marketplace](devtest-lab-configure-marketplace-images.md) |Сведения о том, как добавить образы Azure Marketplace в список разрешений, а также сделать доступными необходимые образы для тестировщиков.|
    | [Создание пользовательского образа](devtest-lab-create-template.md) |Сведения о том, как создать пользовательский образ путем предварительной установки необходимого ПО. С помощью пользовательского образа тестеры смогут быстро создавать виртуальные машины.|
-   | [Дополнительные сведения о фабрике образов](https://blogs.msdn.microsoft.com/devtestlab/2017/04/17/video-custom-image-factory-with-azure-devtest-labs/) |Как настроить и использовать фабрику образов (видео).|
+   | [Дополнительные сведения о фабрике образов](./devtest-lab-faq.md#blog-post) |Как настроить и использовать фабрику образов (видео).|
 
 3. **Создание многократно используемых шаблонов для виртуальных машин тестировщиков** 
    
@@ -139,4 +139,3 @@ Azure DevTest Labs можно использовать для реализаци
    | [Создание лаборатории с помощью шаблона Resource Manager](devtest-lab-faq.md#how-do-i-create-a-lab-from-a-resource-manager-template) |Как создать лабораторию в Azure DevTest Labs с помощью шаблона Resource Manager. |
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
-

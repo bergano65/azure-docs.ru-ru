@@ -2,43 +2,65 @@
 title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
-ms.date: 07/01/2020
-ms.openlocfilehash: ab39fed11ee53849e7d588d16749de96172b234d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/27/2020
+ms.openlocfilehash: a4e21f29762a30baec8d5cf6e3914da2b5faadeb
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85832820"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321774"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
-Чтобы упростить управление ресурсами, можно развернуть ресурсы на уровне подписки Azure. Например, можно развернуть в подписке [политики](../../governance/policy/overview.md) и [управления доступом на основе ролей](../../role-based-access-control/overview.md), и эти ресурсы будут применяться в рамках всей подписки. Вы также можете создавать группы ресурсов и развертывать в них ресурсы.
+Чтобы упростить управление ресурсами, можно использовать шаблон Azure Resource Manager (шаблон ARM) для развертывания ресурсов на уровне подписки Azure. Например, можно развернуть [политики](../../governance/policy/overview.md) и [элементы управления доступом на основе ролей](../../role-based-access-control/overview.md) в подписке, которые применяют их в рамках подписки. Вы также можете создавать группы ресурсов в подписке и развертывать ресурсы в группах ресурсов в подписке.
 
 > [!NOTE]
 > На уровне подписки можно развернуть до 800 различных групп ресурсов.
 
-Чтобы развернуть шаблоны на уровне подписки, используйте Azure CLI, PowerShell или REST API.
+Чтобы развернуть шаблоны на уровне подписки, используйте Azure CLI, PowerShell, REST API или портал.
 
 ## <a name="supported-resources"></a>Поддерживаемые ресурсы
 
-На уровне подписки можно развернуть ресурсы следующих типов:
+Не все типы ресурсов можно развернуть на уровне подписки. В этом разделе перечислены поддерживаемые типы ресурсов.
 
+Для чертежей Azure используйте:
+
+* [artifacts](/azure/templates/microsoft.blueprint/blueprints/artifacts)
 * [blueprints](/azure/templates/microsoft.blueprint/blueprints);
-* [budgets](/azure/templates/microsoft.consumption/budgets);
-* [deployments](/azure/templates/microsoft.resources/deployments) — для вложенных шаблонов, которые развертываются в группах ресурсов;
-* [eventSubscriptions](/azure/templates/microsoft.eventgrid/eventsubscriptions);
-* [peerAsns](/azure/templates/microsoft.peering/2019-09-01-preview/peerasns);
+* [блуепринтассигнментс](/azure/templates/microsoft.blueprint/blueprintassignments)
+* [версии (проекты)](/azure/templates/microsoft.blueprint/blueprints/versions)
+
+Для политик Azure используйте:
+
 * [policyAssignments](/azure/templates/microsoft.authorization/policyassignments);
 * [policyDefinitions](/azure/templates/microsoft.authorization/policydefinitions);
 * [policySetDefinitions](/azure/templates/microsoft.authorization/policysetdefinitions);
-* [remediations](/azure/templates/microsoft.policyinsights/2019-07-01/remediations);
-* [resourceGroups](/azure/templates/microsoft.resources/resourcegroups);
+* [remediations](/azure/templates/microsoft.policyinsights/remediations);
+
+Для управления доступом на основе ролей используйте:
+
 * [roleAssignments](/azure/templates/microsoft.authorization/roleassignments);
 * [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions).
-* [scopeAssignments](/azure/templates/microsoft.managednetwork/scopeassignments);
+
+Для вложенных шаблонов, которые развертываются в группах ресурсов, используйте:
+
+* [размещения](/azure/templates/microsoft.resources/deployments)
+
+Для создания новых групп ресурсов используйте:
+
+* [resourceGroups](/azure/templates/microsoft.resources/resourcegroups)
+
+Для управления подпиской используйте:
+
+* [budgets](/azure/templates/microsoft.consumption/budgets);
 * [supportPlanTypes](/azure/templates/microsoft.addons/supportproviders/supportplantypes);
 * [теги](/azure/templates/microsoft.resources/tags)
-* [workspacesettings](/azure/templates/microsoft.security/workspacesettings).
+
+К другим поддерживаемым типам относятся:
+
+* [scopeAssignments](/azure/templates/microsoft.managednetwork/scopeassignments);
+* [eventSubscriptions](/azure/templates/microsoft.eventgrid/eventsubscriptions);
+* [peerAsns](/azure/templates/microsoft.peering/2019-09-01-preview/peerasns);
 
 ### <a name="schema"></a>схема
 
@@ -91,6 +113,47 @@ New-AzSubscriptionDeployment `
 
 Для каждого имени развертывания расположение остается неизменным. Нельзя создать развертывание в одном расположении, если в другом уже есть развертывание с таким же именем. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
 
+## <a name="deployment-scopes"></a>Области развертывания
+
+При развертывании в подписке можно ориентироваться на подписку или любые группы ресурсов в подписке. Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
+
+Ресурсы, определенные в разделе ресурсов шаблона, применяются к подписке.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [
+        subscription-level-resources
+    ],
+    "outputs": {}
+}
+```
+
+Чтобы назначить группу ресурсов в подписке, добавьте вложенное развертывание и включите `resourceGroup` свойство. В следующем примере вложенное развертывание предназначено для группы ресурсов с именем `rg2` .
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-06-01",
+            "name": "nestedDeployment",
+            "resourceGroup": "rg2",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    nested-template
+                }
+            }
+        }
+    ],
+    "outputs": {}
+}
+```
+
 ## <a name="use-template-functions"></a>Использование функций шаблонов
 
 Важные рекомендации при использовании функций шаблонов для развертываний на уровне подписки:
@@ -111,9 +174,11 @@ New-AzSubscriptionDeployment `
   /subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
   ```
 
-## <a name="create-resource-groups"></a>Создание группы ресурсов
+## <a name="resource-groups"></a>Группы ресурсов
 
-Чтобы создать группу ресурсов в шаблоне Azure Resource Manager, определите для ресурса [Microsoft.Resources/resourceGroups](/azure/templates/microsoft.resources/allversions) имя и расположение. Вы можете создать группу ресурсов и развернуть ресурсы в нее в одном шаблоне.
+### <a name="create-resource-groups"></a>Создание группы ресурсов
+
+Чтобы создать группу ресурсов в шаблоне ARM, определите ресурс [Microsoft. Resources/resourceGroups](/azure/templates/microsoft.resources/allversions) с именем и расположением группы ресурсов.
 
 В следующем примере создается пустая группа ресурсов.
 
@@ -133,7 +198,7 @@ New-AzSubscriptionDeployment `
   "resources": [
     {
       "type": "Microsoft.Resources/resourceGroups",
-      "apiVersion": "2019-10-01",
+      "apiVersion": "2020-06-01",
       "name": "[parameters('rgName')]",
       "location": "[parameters('rgLocation')]",
       "properties": {}
@@ -164,7 +229,7 @@ New-AzSubscriptionDeployment `
   "resources": [
     {
       "type": "Microsoft.Resources/resourceGroups",
-      "apiVersion": "2019-10-01",
+      "apiVersion": "2020-06-01",
       "location": "[parameters('rgLocation')]",
       "name": "[concat(parameters('rgNamePrefix'), copyIndex())]",
       "copy": {
@@ -180,7 +245,7 @@ New-AzSubscriptionDeployment `
 
 Дополнительные сведения см. в статьях [Развертывание нескольких экземпляров ресурса в шаблонах Azure Resource Manager](./copy-resources.md) и [Руководство. Создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](./template-tutorial-create-multiple-instances.md).
 
-## <a name="resource-group-and-resources"></a>Группа ресурсов и ресурсы
+### <a name="create-resource-group-and-resources"></a>Создание группы ресурсов и ресурсов
 
 Чтобы создать группу ресурсов и развернуть в нее ресурсы, используйте вложенный шаблон. Вложенный шаблон определяет ресурсы для развертывания в группе ресурсов. Установите вложенный шаблон как зависимый от группы ресурсов, чтобы группа существовала до развертывания ресурсов. Можно выполнить развертывание до 800 групп ресурсов.
 
@@ -208,14 +273,14 @@ New-AzSubscriptionDeployment `
   "resources": [
     {
       "type": "Microsoft.Resources/resourceGroups",
-      "apiVersion": "2019-10-01",
+      "apiVersion": "2020-06-01",
       "name": "[parameters('rgName')]",
       "location": "[parameters('rgLocation')]",
       "properties": {}
     },
     {
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2019-10-01",
+      "apiVersion": "2020-06-01",
       "name": "storageDeployment",
       "resourceGroup": "[parameters('rgName')]",
       "dependsOn": [
@@ -406,14 +471,16 @@ New-AzSubscriptionDeployment `
   -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/subscription-deployments/blueprints-new-blueprint/azuredeploy.json"
 ```
 
-## <a name="template-samples"></a>Примеры шаблона
+## <a name="access-control"></a>Управление доступом
 
-* [Создание группы ресурсов, ее блокировка и предоставление ей разрешений](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-deployments/create-rg-lock-role-assignment).
-* [Создание группы ресурсов, политики и назначения политики](https://github.com/Azure/azure-docs-json-samples/blob/master/subscription-level-deployment/azuredeploy.json).
+Сведения о назначении ролей см. в статье об [управлении доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager](../../role-based-access-control/role-assignments-template.md).
+
+Следующий пример создает группу ресурсов, применяет к ней блокировку и назначает роль участнику.
+
+:::code language="json" source="~/quickstart-templates/subscription-deployments/create-rg-lock-role-assignment/azuredeploy.json":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения о назначении ролей см. в статье об [управлении доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager](../../role-based-access-control/role-assignments-template.md).
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).
 * Примеры шаблонов можно найти на [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-deployments).
 * Кроме того, можно развернуть шаблоны на [уровне группы управления](deploy-to-management-group.md) и на [уровне клиента](deploy-to-tenant.md).

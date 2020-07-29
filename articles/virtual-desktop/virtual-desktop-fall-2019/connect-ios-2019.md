@@ -1,6 +1,6 @@
 ---
-title: Подключение к виртуальному рабочему столу Windows — 2019 из iOS — Azure
-description: Как подключиться к виртуальному рабочему столу Windows с помощью клиента iOS.
+title: Подключение к виртуальному рабочему столу Windows (классическая модель) из iOS — Azure
+description: Как подключиться к виртуальному рабочему столу Windows (классическая модель) с помощью клиента iOS.
 services: virtual-desktop
 author: heidilohr
 ms.service: virtual-desktop
@@ -8,19 +8,19 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 26c031710c96c42b1d5236332e445992de87616e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 06de85e23b1d6350a48735506c8931922d40b799
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087141"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87270742"
 ---
-# <a name="connect-with-the-ios-client"></a>Подключение с помощью клиента iOS
+# <a name="connect-to-windows-virtual-desktop-classic-with-the-ios-client"></a>Подключение к виртуальному рабочему столу Windows (классическая модель) с помощью клиента iOS
 
 > Применимо к: iOS 13,0 или более поздней версии. Совместимо с iPhone, iPad и iPod Touch.
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../connect-ios.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../connect-ios.md).
 
 Доступ к ресурсам виртуальных рабочих столов Windows можно получить с вашего устройства iOS с помощью скачиваемого клиента. В этом руководство вы узнаете, как настроить клиент iOS.
 

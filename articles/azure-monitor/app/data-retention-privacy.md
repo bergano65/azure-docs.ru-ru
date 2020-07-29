@@ -3,12 +3,12 @@ title: Хранилища и хранение данных в Azure Application 
 description: Заявление о политике хранении и конфиденциальности
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 16483c9417c08ea60853d7e70b7121cd0af9db71
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 039e86f964649441967dff82270a3a6c460612f0
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86540066"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324477"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Сбор, хранение и хранение данных в Application Insights
 
@@ -38,24 +38,24 @@ ms.locfileid: "86540066"
 ## <a name="what-data-does-it-collect"></a>Какие данные собираются?
 Есть три источника данных:
 
-* Пакет SDK, который вы интегрируете в свое приложение [во время разработки](../../azure-monitor/app/asp-net.md) или [в среде выполнения](../../azure-monitor/app/monitor-performance-live-website-now.md). Существуют разные пакеты SDK для различных типов приложений. Есть также [пакет SDK для веб-страниц](../../azure-monitor/app/javascript.md), который загружается в браузер конечного пользователя вместе со страницей.
+* Пакет SDK, который вы интегрируете в свое приложение [во время разработки](./asp-net.md) или [в среде выполнения](./monitor-performance-live-website-now.md). Существуют разные пакеты SDK для различных типов приложений. Есть также [пакет SDK для веб-страниц](./javascript.md), который загружается в браузер конечного пользователя вместе со страницей.
   
-  * В каждый пакет SDK входит ряд [модулей](../../azure-monitor/app/configuration-with-applicationinsights-config.md), которые используют различные методики для сбора разных типов телеметрических данных.
+  * В каждый пакет SDK входит ряд [модулей](./configuration-with-applicationinsights-config.md), которые используют различные методики для сбора разных типов телеметрических данных.
   * Если пакет SDK устанавливается на этапе разработки, для отправки собственных телеметрических данных, помимо стандартных модулей, можно использовать API. Такая пользовательские телеметрические данные могут включать все данные, которые требуется отправить.
-* На некоторых веб-серверах также установлены агенты, которые работают вместе с приложениями и отправляют телеметрические данные о ЦП, памяти и загрузке сети. Например, такие агенты могут быть установлены на виртуальных машинах Azure, узлах Docker и [серверах Java EE](../../azure-monitor/app/java-agent.md).
-* [Тесты доступности](../../azure-monitor/app/monitor-web-app-availability.md) — это процессы, выполняемые компанией Майкрософт, которые отправляют запросы к веб-приложению через одинаковые интервалы. Результаты отправляются в службу Application Insights.
+* На некоторых веб-серверах также установлены агенты, которые работают вместе с приложениями и отправляют телеметрические данные о ЦП, памяти и загрузке сети. Например, такие агенты могут быть установлены на виртуальных машинах Azure, узлах Docker и [серверах Java EE](./java-agent.md).
+* [Тесты доступности](./monitor-web-app-availability.md) — это процессы, выполняемые компанией Майкрософт, которые отправляют запросы к веб-приложению через одинаковые интервалы. Результаты отправляются в службу Application Insights.
 
 ### <a name="what-kinds-of-data-are-collected"></a>Какие типы данных собираются?
 Вот основные категории данных.
 
-* [Телеметрия веб-сервера](../../azure-monitor/app/asp-net.md) : HTTP-запросы.  URI, время обработки запроса, код ответа, IP-адрес клиента. `Session id`.
-* [Веб-страницы](../../azure-monitor/app/javascript.md) : количество страниц, пользователей и сеансов. Время загрузки страницы. Исключения. Вызовы AJAX.
+* [Телеметрия веб-сервера](./asp-net.md) : HTTP-запросы.  URI, время обработки запроса, код ответа, IP-адрес клиента. `Session id`.
+* [Веб-страницы](./javascript.md) : количество страниц, пользователей и сеансов. Время загрузки страницы. Исключения. Вызовы AJAX.
 * Счетчики производительности: загрузка памяти, ЦП, сети, количество операций ввода-вывода.
 * Контекст клиента и сервера: ОС, языковой стандарт, тип устройства, браузер и разрешение экрана.
-* [Исключения](../../azure-monitor/app/asp-net-exceptions.md) и сбои — **дампы стека**, `build id` , тип ЦП. 
-* [Зависимости](../../azure-monitor/app/asp-net-dependencies.md) : вызовы внешних служб, например REST, SQL и AJAX. URI или строка подключения, длительность, успешное выполнение, команда.
-* [Тесты доступности](../../azure-monitor/app/monitor-web-app-availability.md) : длительность теста и его шагов, ответы.
-* [Журналы трассировки](../../azure-monitor/app/asp-net-trace-logs.md) и [пользовательские данные телеметрии](../../azure-monitor/app/api-custom-events-metrics.md):  - **все данные, которые программно добавляются в журналы или данные телеметрии**.
+* [Исключения](./asp-net-exceptions.md) и сбои — **дампы стека**, `build id` , тип ЦП. 
+* [Зависимости](./asp-net-dependencies.md) : вызовы внешних служб, например REST, SQL и AJAX. URI или строка подключения, длительность, успешное выполнение, команда.
+* [Тесты доступности](./monitor-web-app-availability.md) : длительность теста и его шагов, ответы.
+* [Журналы трассировки](./asp-net-trace-logs.md) и [пользовательские данные телеметрии](./api-custom-events-metrics.md):  - **все данные, которые программно добавляются в журналы или данные телеметрии**.
 
 [Дополнительные сведения](#data-sent-by-application-insights).
 
@@ -71,16 +71,16 @@ ms.locfileid: "86540066"
 ![Нажмите клавишу F12 и откройте вкладку «Сеть».](./media/data-retention-privacy/08-browser.png)
 
 ### <a name="can-i-write-code-to-filter-the-telemetry-before-it-is-sent"></a>Можно ли написать код, чтобы отфильтровать телеметрические данные перед отправкой?
-Можно написать [подключаемый модуль обработчика телеметрических данных](../../azure-monitor/app/api-filtering-sampling.md).
+Можно написать [подключаемый модуль обработчика телеметрических данных](./api-filtering-sampling.md).
 
 ## <a name="how-long-is-the-data-kept"></a>Как долго хранятся данные?
-Необработанные точки данных (т. е. элементы, которые можно запросить в аналитике и проверке в поиске) хранятся в течение 730 дней. Можно [выбрать срок хранения](./pricing.md#change-the-data-retention-period) 30, 60, 90, 120, 180, 270, 365, 550 или 730 дней. Если необходимо хранить данные дольше 730 дней, можно использовать [непрерывный экспорт](../../azure-monitor/app/export-telemetry.md) , чтобы скопировать его в учетную запись хранения во время приема данных. 
+Необработанные точки данных (т. е. элементы, которые можно запросить в аналитике и проверке в поиске) хранятся в течение 730 дней. Можно [выбрать срок хранения](./pricing.md#change-the-data-retention-period) 30, 60, 90, 120, 180, 270, 365, 550 или 730 дней. Если необходимо хранить данные дольше 730 дней, можно использовать [непрерывный экспорт](./export-telemetry.md) , чтобы скопировать его в учетную запись хранения во время приема данных. 
 
 За данные, хранящиеся дольше 90 дней, взимается дополнительная плата. Дополнительные сведения о ценах на Application Insights см. на [странице цен на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).
 
 Статистические данные (то есть счетчики, средние значения и другие статистические данные, которые отображаются в обозревателе метрик) сохраняются со степенью детализации в 1 минуту в течение 90 дней.
 
-[Отладочные моментальные снимки](../../azure-monitor/app/snapshot-debugger.md) хранятся в течение 15 дней. Такая политика хранения задается для каждого приложения отдельно. Если нужно изменить этот параметр, вы можете запросить изменения, открыв окно Службы Поддержки на портале Microsoft Azure.
+[Отладочные моментальные снимки](./snapshot-debugger.md) хранятся в течение 15 дней. Такая политика хранения задается для каждого приложения отдельно. Если нужно изменить этот параметр, вы можете запросить изменения, открыв окно Службы Поддержки на портале Microsoft Azure.
 
 ## <a name="who-can-access-the-data"></a>Кто имеет доступ к данным?
 Данные видны вам и, если у вас есть учетная запись организации, членам вашей группы. 
@@ -213,7 +213,7 @@ AzureLogHandler(
 | Windows Server 2012–2016 | Поддерживается и включена по умолчанию. | Проверка того, что все еще используются [параметры по умолчанию](/windows-server/security/tls/tls-registry-settings) |
 | Windows 7 с пакетом обновления 1 и Windows Server 2008 R2 с пакетом обновления 1 | Поддерживается, но не включена по умолчанию. | Информацию о том, как ее включить, см. на странице [Transport Layer Security (TLS) registry settings](/windows-server/security/tls/tls-registry-settings) (Параметры реестра TLS).  |
 | Windows Server 2008 с пакетом обновления 2 (SP2) | Для поддержки протокола TLS 1.2 требуется обновление. | См. статью об [обновлении для добавления поддержки TLS 1.2 в Windows Server 2008 с пакетом обновления 2](https://support.microsoft.com/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows-server-2008-s). |
-|Windows Vista | Не поддерживается. | Недоступно
+|Windows Vista | Не поддерживается. | Н/Д
 
 ### <a name="check-what-version-of-openssl-your-linux-distribution-is-running"></a>Проверка версии OpenSSL, используемой дистрибутивом Linux
 
@@ -233,7 +233,7 @@ openssl s_client -connect bing.com:443 -tls1_2
 
 ## <a name="personal-data-stored-in-application-insights"></a>Персональные данные, хранимые в Application Insights
 
-Этот вопрос подробно рассмотрен в нашей [статье о персональных данных в Application Insights](../../azure-monitor/platform/personal-data-mgmt.md).
+Этот вопрос подробно рассмотрен в нашей [статье о персональных данных в Application Insights](../platform/personal-data-mgmt.md).
 
 #### <a name="can-my-users-turn-off-application-insights"></a>Могут ли мои пользователи отключить Application Insights?
 Не напрямую. Мы не предоставляем параметр, с помощью которого пользователи могут отключить Application Insights.
@@ -247,15 +247,15 @@ openssl s_client -connect bing.com:443 -tls1_2
 
 | Ваше действие | Собираемые классы данных (см. следующую таблицу) |
 | --- | --- |
-| [Добавление пакета SDK для Application Insights в веб-проект .NET][greenbrown] |ServerContext<br/>Выводимые<br/>Счетчики производительности<br/>Requests<br/>**Исключения**<br/>Сеанс<br/>users |
+| [Добавление пакета SDK для Application Insights в веб-проект .NET][greenbrown] |ServerContext<br/>Выводимые<br/>Счетчики производительности<br/>Requests<br/>**Исключения**<br/>Сеанс<br/>пользователи |
 | [Установка монитора состояния на сервере IIS][redfield] |Зависимости<br/>ServerContext<br/>Выводимые<br/>Счетчики производительности |
-| [Добавление пакета SDK для Application Insights в веб-приложение Java][java] |ServerContext<br/>Выводимые<br/>Запрос<br/>Сеанс<br/>users |
+| [Добавление пакета SDK для Application Insights в веб-приложение Java][java] |ServerContext<br/>Выводимые<br/>Запрос<br/>Сеанс<br/>пользователи |
 | [Добавление пакета SDK для JavaScript на веб-страницу][client] |ClientContext <br/>Выводимые<br/>Страница<br/>ClientPerf<br/>Ajax |
 | [Определение свойств по умолчанию][apiproperties] |**Свойства** всех стандартных и настраиваемых событий |
 | [Вызов TrackMetric][api] |Числовые значения<br/>**Свойства** |
-| [Вызов Track*][api] |Имя события<br/>**Свойства** |
+| [Вызов Track*][api] |Имя события.<br/>**Свойства** |
 | [Вызов TrackException][api] |**Исключения**<br/>Дамп стека<br/>**Свойства** |
-| Пакету SDK не может собрать данные. Вот несколько примеров: <br/> не удается получить доступ к счетчикам производительности;<br/> порождается исключение в инициализаторе телеметрии. |Диагностика SDK |
+| Пакету SDK не может собрать данные. Пример: <br/> не удается получить доступ к счетчикам производительности;<br/> порождается исключение в инициализаторе телеметрии. |Диагностика SDK |
 
 Сведения о [пакетах SDK для других платформ][platforms] можно получить в соответствующей документации.
 
@@ -286,7 +286,7 @@ openssl s_client -connect bing.com:443 -tls1_2
 Вы можете [отключить некоторые данные, изменив файл ApplicationInsights.config][config].
 
 > [!NOTE]
-> IP-адрес клиента используется для определения географического расположения, но сейчас данные об IP-адресах больше не сохраняются по умолчанию, а в соответствующее поле записываются нули. Дополнительные сведения об обработке персональных данных см. в этой [статье](../../azure-monitor/platform/personal-data-mgmt.md#application-data). Если необходимо сохранить данные IP-адреса, в [статье о коллекции IP-адресов](./ip-collection.md) мы пошаговым руководство по Вашим параметрам.
+> IP-адрес клиента используется для определения географического расположения, но сейчас данные об IP-адресах больше не сохраняются по умолчанию, а в соответствующее поле записываются нули. Дополнительные сведения об обработке персональных данных см. в этой [статье](../platform/personal-data-mgmt.md#application-data). Если необходимо сохранить данные IP-адреса, в [статье о коллекции IP-адресов](./ip-collection.md) мы пошаговым руководство по Вашим параметрам.
 
 ## <a name="credits"></a>Благодарности
 Этот продукт включает в себя GeoLite2 данные, созданные Максминд, доступные в [https://www.maxmind.com](https://www.maxmind.com) .
@@ -295,13 +295,14 @@ openssl s_client -connect bing.com:443 -tls1_2
 
 <!--Link references-->
 
-[api]: ../../azure-monitor/app/api-custom-events-metrics.md
-[apiproperties]: ../../azure-monitor/app/api-custom-events-metrics.md#properties
-[client]: ../../azure-monitor/app/javascript.md
-[config]: ../../azure-monitor/app/configuration-with-applicationinsights-config.md
-[greenbrown]: ../../azure-monitor/app/asp-net.md
-[java]: ../../azure-monitor/app/java-get-started.md
-[platforms]: ../../azure-monitor/app/platforms.md
+[api]: ./api-custom-events-metrics.md
+[apiproperties]: ./api-custom-events-metrics.md#properties
+[client]: ./javascript.md
+[config]: ./configuration-with-applicationinsights-config.md
+[greenbrown]: ./asp-net.md
+[java]: ./java-get-started.md
+[platforms]: ./platforms.md
 [pricing]: https://azure.microsoft.com/pricing/details/application-insights/
-[redfield]: ../../azure-monitor/app/monitor-performance-live-website-now.md
-[start]: ../../azure-monitor/app/app-insights-overview.md
+[redfield]: ./monitor-performance-live-website-now.md
+[start]: ./app-insights-overview.md
+

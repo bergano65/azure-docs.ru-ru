@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/16/2019
-ms.openlocfilehash: f34389785c0f4a43bfcab3e50f2dcd132b2cb629
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 8abd9d7f33a07141418ad67cc2128af40ad0bd51
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86505811"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324766"
 ---
 # <a name="transition-from-log-analytics-log-search-to-azure-monitor-logs"></a>Переход с поиска по журналам Log Analytics на анализ журналов Azure Monitor
 Поиск по журналам в Log Analytics недавно был заменен новым интерфейсом для анализа журналов Azure Monitor. Страница поиска по журналам по-прежнему доступна через пункт меню **Журналы (классические)** на странице **Рабочие области Log Analytics** портала Azure, но она будет удалена 15 февраля 2019 г. В этой статье описываются различия между двумя интерфейсами, чтобы помочь вам перейти с поиска по журналам. 
@@ -44,7 +44,7 @@ ms.locfileid: "86505811"
 ![Сохранение запроса к журналу](media/log-search-transition/save-query-logs.png)
 
 ## <a name="saved-queries"></a>Сохраненные запросы
-В поиске по журналам ваши сохраненные запросы доступны через элемент **Сохраненные условия поиска** на панели действий. В журналах Azure Monitor получите доступ к сохраненным запросам из [обозревателя запросов](../log-query/get-started-portal.md#save-queries).
+В поиске по журналам ваши сохраненные запросы доступны через элемент **Сохраненные условия поиска** на панели действий. В журналах Azure Monitor получите доступ к сохраненным запросам из [обозревателя запросов](./get-started-portal.md#save-queries).
 
 ![Обозреватель запросов](media/log-search-transition/query-explorer.png)
 
@@ -69,3 +69,4 @@ ms.locfileid: "86505811"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье о [работе с журналами Azure Monitor](get-started-portal.md).
+

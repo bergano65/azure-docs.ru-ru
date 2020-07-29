@@ -4,15 +4,15 @@ description: API для получения всех операций в пред
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
-author: dsindona
-ms.author: dsindona
+author: mingshen-ms
+ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: 90ff7c4a85fd9e48ac3aa49ace99f43eb0244603
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: cb44d977407a7e854603e6bbacf3591752b109c2
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86520295"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87271949"
 ---
 # <a name="retrieve-operations"></a>Получение операций
 
@@ -33,8 +33,8 @@ ms.locfileid: "86520295"
 
 |  **Имя**          |      **Описание**                                                                                           | **Data type** |
 |  ----------------  |     --------------------------------------------------------------------------------------------------------   |  -----------  |
-|  publisherid       |  Идентификатор издателя, например `Contoso`                                                                   |  Строка       |
-|  offerId           |  Идентификатор предложения                                                                                              |  Строка       |
+|  publisherid       |  Идентификатор издателя, например `Contoso`                                                                   |  Тип String       |
+|  offerId           |  Идентификатор предложения                                                                                              |  Тип String       |
 |  operationId       |  Глобальный уникальный идентификатор (GUID) идентифицирует предложение. OperationId можно получить с помощью этого API, а также она возвращается в заголовок ответа HTTP для любой долго выполняющиеся операции, например, [публикации предложения](./cloud-partner-portal-api-publish-offer.md) API.  |   Guid   |
 |  api-version       | API последней версии |    Дата      |
 |  |  |  |
@@ -176,7 +176,7 @@ ms.locfileid: "86520295"
 |  createdDateTime             | Дата и время создания операции в формате UTC.                                                       |
 |  lastActionDateTime          | Дата и время выполнения последнего обновления операции в формате UTC.                                       |
 |  status                      | Состояние операции: `not started` \| `running` \| `failed` \| `completed` . Только одна операция может иметь состояние `running` за раз. |
-|  error                       | Сообщение об ошибке, появившееся при сбое операций                                                               |
+|  Ошибка                       | Сообщение об ошибке, появившееся при сбое операций                                                               |
 |  |  |
 
 ### <a name="response-step-properties"></a>Свойства шага ответа

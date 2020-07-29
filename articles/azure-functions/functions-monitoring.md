@@ -5,12 +5,12 @@ ms.assetid: 501722c3-f2f7-4224-a220-6d59da08a320
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: c3d43bc20c31475a00a0ea81e4abdeb5405162a7
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a1e72fba4ece24afffba573d954c7627af46a6cd
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87081803"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87273380"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -596,6 +596,9 @@ module.exports = function (context, req) {
 Для отображения зависимостей можно написать пользовательский код. Пример такого кода см. в [разделе о пользовательских данных телеметрии на C#](#log-custom-telemetry-in-c-functions). Этот пример кода создает в Application Insights *карту приложения* следующего вида.
 
 ![Схема сопоставления приложений](./media/functions-monitoring/app-map.png)
+
+> [!NOTE]
+> Зависимости записываются на уровне информации. Если фильтр выполняется по предупреждению или выше, эти данные отображаться не будут. Кроме того, автоматическая коллекция зависимостей происходит в области, отличной от пользовательской. Поэтому убедитесь, что для уровня задано по меньшей мере **информация** вне области пользователя в host.js(т. е. за пределами функции. <YOUR_FUNCTION_NAME>. Ключ пользователя), если необходимо записать эти зависимости.
 
 ## <a name="enable-application-insights-integration"></a>Включение интеграции с Application Insights
 

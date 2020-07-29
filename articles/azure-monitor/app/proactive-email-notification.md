@@ -6,12 +6,12 @@ author: harelbr
 ms.author: harelbr
 ms.date: 03/13/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 41298be1b0288f429647d8b38a1cc75dd2c40b0a
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 8e2bf4e451ebc3c9ebba2c01dae6703fc79aa606
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86516759"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324137"
 ---
 # <a name="smart-detection-e-mail-notification-change"></a>Изменение уведомлений по электронной почте для службы интеллектуального обнаружения
 
@@ -44,6 +44,7 @@ ms.locfileid: "86516759"
 
 Дополнительные сведения об интеллектуальном обнаружении:
 
-- [Аномальные сбои](../../azure-monitor/app/proactive-failure-diagnostics.md)
-- [Утечки памяти](../../azure-monitor/app/proactive-potential-memory-leak.md)
-- [Аномалии производительности](../../azure-monitor/app/proactive-performance-diagnostics.md)
+- [Аномальные сбои](./proactive-failure-diagnostics.md)
+- [Утечки памяти](./proactive-potential-memory-leak.md)
+- [Аномалии производительности](./proactive-performance-diagnostics.md)
+

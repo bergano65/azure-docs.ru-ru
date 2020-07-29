@@ -31,6 +31,8 @@
       href: powershell-create-instance.md
     - name: Создание управляемого домена с помощью шаблона
       href: template-create-instance.md
+    - name: Настройка синхронизации определенных учетных записей с помощью Azure AD PowerShell
+      href: powershell-scoped-synchronization.md
 - name: Основные понятия
   items:
     - name: Основы администрирования

@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
-ms.date: 06/25/2020
-ms.openlocfilehash: 4235e948dba76c0b2926d9965ccd2fcb072cad62
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.date: 07/28/2020
+ms.openlocfilehash: 2aa267f3c04225699d3ce65b5f8ee3b573ac0c78
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86520789"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323763"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Ограничения и сведения о конфигурации для Azure Logic Apps
 
@@ -389,8 +389,7 @@ IP-адреса, которые служба Azure Logic Apps используе
 
 > [!TIP]
 > Чтобы упростить создание правил безопасности, можно использовать [тег службы](../virtual-network/service-tags-overview.md) **LogicApps** вместо указания префиксов исходящих IP-адресов Logic Apps для каждого региона.
-> Этот тег работает в регионах, где доступна служба Logic Apps.
-> Для управляемых соединителей необходимо продолжать использовать IP-адреса.
+> Для управляемых соединителей при необходимости можно использовать тег службы **азуреконнекторс** вместо указания ПРЕФИКСОВ IP-адресов для исходящих управляемых соединителей для каждого региона. Эти теги работают в регионах, где доступна служба Logic Apps. 
 
 <a name="multi-tenant-outbound"></a>
 

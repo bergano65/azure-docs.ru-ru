@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: tokaplan
 ms.author: alkaplan
 ms.date: 04/25/2019
-ms.openlocfilehash: 4bb1af6ca2126b7ae58a6c836624ec78a071a5a5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3cd43963175594fcdc1c3c67d6b2493ce1ccd313
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87075280"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321927"
 ---
 # <a name="zero-instrumentation-application-monitoring-for-kubernetes-hosted-applications-with-istio---deprecated"></a>Мониторинг приложений, размещенных в Kubernetes, без инструментирования с помощью Istio (НЕРЕКОМЕНДУЕМЫЙ МЕТОД)
 
@@ -18,10 +18,10 @@ ms.locfileid: "87075280"
 > Эта функциональность предоставляется в режиме нерекомендуемой, а после 1 августа 2020 года ее поддержка прекратится.
 > В настоящее время мониторинг без кода можно включить только для [Java через автономный агент](./java-in-process-agent.md). Для мониторинга приложений в AKS на других языках используйте пакеты средств разработки: [ASP.Net Core](./asp-net-core.md), [ASP.Net](./asp-net.md), [Node.js](./nodejs.md), [JavaScript](./javascript.md) и [Python](./opencensus-python.md).
 
-Azure Monitor теперь использует технологию сетки служб Istio для кластера Kubernetes, что позволяет без дополнительной настройки поддерживать мониторинг для любого размещенного в Kubernetes приложения. Вы можете использовать стандартные возможности Application Insights, такие как [схема приложений](../../azure-monitor/app/app-map.md) для моделирования зависимостей, [Live Metrics Stream](../../azure-monitor/app/live-stream.md) для мониторинга в режиме реального времени, мощные визуализации на [панели мониторинга](../../azure-monitor/app/overview-dashboard.md), [Обозреватель метрик](../../azure-monitor/platform/metrics-getting-started.md)и [Книги](../../azure-monitor/platform/workbooks-overview.md). Эта возможность поможет пользователям выявлять узкие места производительности и точки вероятного отказа для всех рабочих нагрузок Kubernetes, размещенных в выбранном пространстве имен Kubernetes. Используя возможности имеющихся сеток с служб и совмещая их с такими решениями, как Istio, служба Azure Monitor способна поддерживать мониторинг приложений с автоматическим инструментированием, не внося никаких изменений в код приложения.
+Azure Monitor теперь использует технологию сетки служб Istio для кластера Kubernetes, что позволяет без дополнительной настройки поддерживать мониторинг для любого размещенного в Kubernetes приложения. Вы можете использовать стандартные возможности Application Insights, такие как [схема приложений](./app-map.md) для моделирования зависимостей, [Live Metrics Stream](./live-stream.md) для мониторинга в режиме реального времени, мощные визуализации на [панели мониторинга](./overview-dashboard.md), [Обозреватель метрик](../platform/metrics-getting-started.md)и [Книги](../platform/workbooks-overview.md). Эта возможность поможет пользователям выявлять узкие места производительности и точки вероятного отказа для всех рабочих нагрузок Kubernetes, размещенных в выбранном пространстве имен Kubernetes. Используя возможности имеющихся сеток с служб и совмещая их с такими решениями, как Istio, служба Azure Monitor способна поддерживать мониторинг приложений с автоматическим инструментированием, не внося никаких изменений в код приложения.
 
 > [!NOTE]
-> Это один из многих способов выполнять мониторинг приложений в Kubernetes. Вы также можете инструментировать любое размещенное в Kubernetes приложение с помощью [пакета SDK для Application Insights ](../../azure-monitor/azure-monitor-app-hub.yml) даже без сетки служб. Чтобы организовать мониторинг в Kubernetes без инструментирования приложения с помощью пакета SDK, попробуйте использовать приведенный ниже метод.
+> Это один из многих способов выполнять мониторинг приложений в Kubernetes. Вы также можете инструментировать любое размещенное в Kubernetes приложение с помощью [пакета SDK для Application Insights ](../azure-monitor-app-hub.yml) даже без сетки служб. Чтобы организовать мониторинг в Kubernetes без инструментирования приложения с помощью пакета SDK, попробуйте использовать приведенный ниже метод.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -34,12 +34,12 @@ Azure Monitor теперь использует технологию сетки 
 
 Используя мониторинг без инструментирования для приложений, размещенных в Kubernetes, вы сможете применить следующие компоненты.
 
-- [Схема сопоставления приложений](../../azure-monitor/app/app-map.md)
-- [Live Metrics Stream](../../azure-monitor/app/live-stream.md)
-- [Панели мониторинга](../../azure-monitor/app/overview-dashboard.md)
-- [Обозреватель метрик](../../azure-monitor/platform/metrics-getting-started.md)
-- [Распределенная трассировка](../../azure-monitor/app/distributed-tracing.md)
-- [Сквозной мониторинг транзакций](../../azure-monitor/learn/tutorial-performance.md#identify-slow-server-operations)
+- [Схема сопоставления приложений](./app-map.md)
+- [Live Metrics Stream](./live-stream.md)
+- [Панели мониторинга](./overview-dashboard.md)
+- [Обозреватель метрик](../platform/metrics-getting-started.md)
+- [Распределенная трассировка](./distributed-tracing.md)
+- [Сквозной мониторинг транзакций](../learn/tutorial-performance.md#identify-slow-server-operations)
 
 ## <a name="installation-steps"></a>Шаги установки
 
@@ -141,4 +141,5 @@ kubectl delete -f <filename.yaml>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о совместной работе Azure Monitor и контейнеров см. в статье [Обзор службы "Azure Monitor для контейнеров"](../../azure-monitor/insights/container-insights-overview.md).
+Дополнительные сведения о совместной работе Azure Monitor и контейнеров см. в статье [Обзор службы "Azure Monitor для контейнеров"](../insights/container-insights-overview.md).
+

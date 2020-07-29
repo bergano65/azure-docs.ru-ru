@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 121b3ced2e021f3907983623ea60185286797670
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: a74fe2bf6b326dac782ac75418a7f4960e66501a
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86024464"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87275009"
 ---
 # <a name="conditional-access-conditions"></a>Условный доступ. Условия
 
@@ -46,7 +46,7 @@ ms.locfileid: "86024464"
 - iOS
 - Windows Phone
 - Windows
-- MacOS
+- macOS
 
 Если вы блокируете устаревшую проверку подлинности с помощью условия **другие клиенты** , можно также задать условие платформы устройства.
 
@@ -63,6 +63,9 @@ ms.locfileid: "86024464"
 ## <a name="client-apps-preview"></a>Клиентские приложения (предварительная версия)
 
 Политики условного доступа по умолчанию применяются к приложениям на основе браузера и приложениям, использующим современные протоколы проверки подлинности. Помимо этих приложений, администраторы могут включать клиентов Exchange ActiveSync и других клиентов, использующих устаревшие протоколы.
+
+> [!NOTE]
+> Параметр настроить да/нет в условиях клиентских приложений был удален, чтобы было проще увидеть, какие клиентские приложения выбраны. Это не влияет на клиентские приложения, к которым применяется существующая политика.
 
 - Браузер
    - К ним относятся веб-приложения, использующие такие протоколы, как SAML, WS-Federation, OpenID Connect Connect или службы, зарегистрированные как конфиденциальный клиент OAuth.
@@ -94,7 +97,7 @@ ms.locfileid: "86024464"
 
 | Операционная система | Браузеры |
 | :-- | :-- |
-| быть под управлением ОС Windows 10; | Microsoft ребро, Internet Explorer, Chrome |
+| Windows 10 | Microsoft ребро, Internet Explorer, Chrome |
 | Windows 8, Windows 8.1 | Internet Explorer, Chrome |
 | Windows 7 | Internet Explorer, Chrome |
 | iOS | Microsoft ребро, Intune Managed Browser, Safari |
@@ -102,7 +105,7 @@ ms.locfileid: "86024464"
 | Windows Phone | Microsoft ребро, Internet Explorer |
 | Windows Server 2019 | Microsoft ребро, Internet Explorer, Chrome |
 | Windows Server 2016 | Internet Explorer |
-| Windows Server 2012 R2 | Internet Explorer |
+| Windows Server 2012 R2 | Internet Explorer |
 | Windows Server 2008 R2 | Internet Explorer |
 | macOS | Chrome, Safari |
 
@@ -139,11 +142,11 @@ ms.locfileid: "86024464"
 | Клиентские приложения | Целевая служба | Платформа |
 | --- | --- | --- |
 | Приложение Dynamics CRM | Dynamics CRM | Windows 10, Windows 8.1, iOS и Android |
-| Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | быть под управлением ОС Windows 10; |
+| Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | Windows 10 |
 | MFA и политика расположения для приложений Политики на основе устройств не поддерживаются.| Все службы приложения "Мои приложения" | Android и iOS |
 | Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
 | Приложения Office 2016, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | Windows 8.1, Windows 7 |
-| Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | быть под управлением ОС Windows 10; |
+| Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | Windows 10 |
 | Office 2016 (только Word, Excel, PowerPoint, OneNote). | Office 365 SharePoint Online | macOS |
 | Office 2019| Office 365 SharePoint Online | Windows 10, macOS |
 | Мобильные приложения Office | Office 365 SharePoint Online | Android, iOS |
@@ -180,7 +183,7 @@ ms.locfileid: "86024464"
 Например, *все пользователи* , обращающиеся к облачному приложению *Microsoft Azure Management* , включая **все состояние устройства** , за исключением **гибридного устройства, присоединенного к Azure AD** , и **устройства, помеченные как соответствующие** и для *элементов управления доступом*, **блок**. 
    - В этом примере создается политика, которая разрешает доступ к управлению Microsoft Azure только с устройств, присоединенных к гибридной службе Azure AD или устройств, помеченных как соответствующие требованиям.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Условный доступ: предоставление](concept-conditional-access-grant.md)
 

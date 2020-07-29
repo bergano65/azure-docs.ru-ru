@@ -6,18 +6,18 @@ author: cweining
 ms.author: cweining
 ms.date: 02/23/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 6ef67addba2bcc96cfb51f9f217d7d43e729bdf4
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: f01eaf879e70406c6dbe17e6fc544f7aed367e8b
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86539913"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324120"
 ---
 # <a name="profile-aspnet-core-azure-linux-web-apps-with-application-insights-profiler"></a>Профилирование веб-приложений ASP.NET Core в Azure для Linux с помощью Application Insights Profiler
 
 Эта функция в настоящее время находится на стадии предварительной версии.
 
-Узнайте, сколько времени выполняется каждый метод в динамическом веб-приложении с помощью [Application Insights](../../azure-monitor/app/app-insights-overview.md). Application Insights Profiler теперь доступен для веб-приложений ASP.NET Core, размещенных в службах приложений Azure для Linux. В этом руководстве описано, как выполнить сбор трассировок профилировщика для веб-приложений ASP.NET Core для Linux.
+Узнайте, сколько времени выполняется каждый метод в динамическом веб-приложении с помощью [Application Insights](./app-insights-overview.md). Application Insights Profiler теперь доступен для веб-приложений ASP.NET Core, размещенных в службах приложений Azure для Linux. В этом руководстве описано, как выполнить сбор трассировок профилировщика для веб-приложений ASP.NET Core для Linux.
 
 Когда вы завершите работу с этим руководством, ваше приложение сможет собирать трассировки профилировщика, как показано на рисунке ниже. В этом примере трассировка профилировщика указывает на то, что определенный веб-запрос выполняется медленно, так как время тратится на ожидание. *Горячий путь* в коде, который замедляет работу приложения, отмечен значком пламени. Метод **About** в разделе **HomeController** замедляет работу веб-приложения, так как он вызывает функцию **Thread.Sleep**.
 
@@ -149,7 +149,7 @@ ms.locfileid: "86539913"
 
 ## <a name="add-application-insights-to-monitor-your-web-apps"></a>Добавление Application Insights для мониторинга веб-приложений
 
-1. [Создайте ресурс Application Insights](./../../azure-monitor/app/create-new-resource.md ).
+1. [Создайте ресурс Application Insights](./create-new-resource.md).
 
 2. Скопируйте значение **iKey** ресурса Application Insights и задайте следующие параметры в веб-приложениях.
 
@@ -171,3 +171,4 @@ ms.locfileid: "86539913"
 Если вы используете пользовательские контейнеры, размещенные в Службе приложений Azure, чтобы включить Application Insights Profiler, следуйте инструкциям из статьи [Enable Service Profiler for containerized ASP.NET Core application](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/tree/master/examples/EnableServiceProfilerForContainerApp) (Включение профилировщика службы для контейнерного приложения ASP.NET Core).
 
 О каких-либо проблемах или предложениях сообщайте в репозиторий Github: [ApplicationInsights-Profiler-AspNetCore: Issues](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/issues) (ApplicationInsights-Profiler-AspNetCore: вопросы)
+

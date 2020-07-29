@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: pafarley
-ms.openlocfilehash: 68f7ec9aaffa2bad73d77d730749642a1b57f50b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 22eab216714d45e4b8a91fd58325424d4baef95e
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87044858"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87272952"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Новые возможности Распознавателя документов
 
@@ -26,7 +26,7 @@ ms.locfileid: "87044858"
 ## <a name="july-2020"></a>Июль 2020 г.
 
 ### <a name="new-features"></a>новые функции;
-* **доступна ссылка на версии 2.0** Ознакомьтесь со [справочником по API версии 2.0](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm) и обновленными пакетами SDK для [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/formrecognizer), [Python](https://docs.microsoft.com/python/api/overview/azure/formrecognizer), [Java](https://docs.microsoft.com/java/api/overview/azure/ai-formrecognizer-readme-pre?view=azure-java-preview)и [JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/formrecognizer).
+* **доступна ссылка на версии 2.0** Ознакомьтесь со [справочником по API версии 2.0](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm) и обновленными пакетами SDK для [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/ai.formrecognizer-readme-pre?view=azure-dotnet), [Python](https://docs.microsoft.com/python/api/overview/azure/?view=azure-python), [Java](https://docs.microsoft.com/java/api/overview/azure/ai-formrecognizer-readme-pre?view=azure-java-preview)и [JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/?view=azure-node-latest).
 * Улучшения **таблиц и улучшений извлечения** включают улучшения точности и улучшения извлечения таблиц, в частности, возможность изучения заголовков и структур таблиц в пользовательском обучении без меток. 
 * **Поддержка валюты** Обнаружение и извлечение символов глобальной валюты.
 * **Azure gov** Средство распознавания форм теперь также доступно в Azure gov.
@@ -50,10 +50,10 @@ ms.locfileid: "87044858"
 
 ### <a name="new-features"></a>новые функции;
 * **Поддержка пакета SDK для API распознавателя форм (общедоступная Предварительная версия 2.0** ) В этом месяце мы расширили поддержку службы, включив в нее предварительную версию пакета SDK для выпуска распознавателя версии 2.0 (Предварительная версия). Воспользуйтесь приведенными ниже ссылками, чтобы начать работу с выбранным языком: 
-   * [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/formrecognizer)
+   * [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/ai.formrecognizer-readme-pre?view=azure-dotnet)
    * [пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/ai-formrecognizer-readme-pre?view=azure-java-preview)
-   * [Пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/formrecognizer)
-   * [Пакет SDK для JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/formrecognizer)
+   * [Пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/?view=azure-python)
+   * [Пакет SDK для JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/?view=azure-node-latest)
 
   Новый пакет SDK поддерживает все функции REST API версии 2.0 для распознавателя форм. Например, можно обучить модель с метками или без них, а также извлечь текст, пары "ключ-значение" и таблицы из форм, извлечь данные из чеков с помощью предварительно построенной службы получения и извлечь текст и таблицы со службой макета из документов. Вы можете поделиться своими отзывами о [пакетах SDK в форме отзывов SDK](https://aka.ms/FR_SDK_v1_feedback).
  

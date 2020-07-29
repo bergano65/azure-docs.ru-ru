@@ -1,4 +1,4 @@
-- name: "Виртуальный рабочий стол Windows, выпуск за весну 2020\_года"
+- name: Виртуальный рабочий стол Windows
   href: index.yml
 - name: Обзор
   items:
@@ -6,7 +6,7 @@
       href: overview.md
     - name: Новые возможности
       href: whats-new.md
-    - name: "Документация по выпуску за осень 2019\_года"
+    - name: Документация по Виртуальному рабочему столу Windows (классическая версия)
       href: ./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md
 - name: Учебники
   items:

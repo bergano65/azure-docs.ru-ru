@@ -1,6 +1,6 @@
 ---
-title: Подключение к виртуальному рабочему столу Windows — 2019 из Android — Azure
-description: Как подключиться к виртуальному рабочему столу Windows с помощью клиента Android.
+title: Подключение к виртуальному рабочему столу Windows (классическая модель) из Android — Azure
+description: Как подключиться к виртуальному рабочему столу Windows (классическая модель) с помощью клиента Android.
 services: virtual-desktop
 author: heidilohr
 ms.service: virtual-desktop
@@ -8,19 +8,19 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ccea4e39146500cb9d3796c4ca99725e2e2ac429
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fd319c7a6b356052f91e779e2f2a67eff4c4b6de
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087158"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87270759"
 ---
-# <a name="connect-with-the-android-client"></a>Подключение к клиенту Android
+# <a name="connect-to-windows-virtual-desktop-classic-with-the-android-client"></a>Подключение к виртуальному рабочему столу Windows (классическая модель) с помощью клиента Android
 
 > Применимо к: Android 4,1 и более поздней версии, Чромебукс с Чромеос 53 и более поздними версиями.
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../connect-android.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../connect-android.md).
 
 >[!NOTE]
 > Возможность доступа к ресурсам виртуальных рабочих столов Windows из клиента Android в настоящее время доступна в предварительной версии.

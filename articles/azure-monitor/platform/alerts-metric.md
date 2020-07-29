@@ -6,12 +6,12 @@ ms.author: harelbr
 ms.topic: conceptual
 ms.date: 03/13/2020
 ms.subservice: alerts
-ms.openlocfilehash: b535cda8fe7d98748eb0657a599a61ed1f8549d2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c040958d9518485bc5d583fc01aedd50d5c6e57a
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87045366"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321128"
 ---
 # <a name="create-view-and-manage-metric-alerts-using-azure-monitor"></a>Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -32,7 +32,7 @@ ms.locfileid: "87045366"
 
 3. Щелкните **Выбор цели**, в загружаемой контекстной области выберите целевой ресурс, для которого следует создать оповещение. В раскрывающихся списках **Подписка** и **Тип ресурса** найдите ресурс, который вы хотите отслеживать. Вы также можете найти ресурс с помощью панели поиска.
 
-4. Если выбранный ресурс имеет метрики, по которым можно создавать оповещения, эти метрики будут отображаться на вкладке **Available signals** (Доступные сигналы) в правом нижнем углу. Полный список типов ресурсов, поддерживаемых для оповещений метрик, см. в этой [статье](../../azure-monitor/platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported).
+4. Если выбранный ресурс имеет метрики, по которым можно создавать оповещения, эти метрики будут отображаться на вкладке **Available signals** (Доступные сигналы) в правом нижнем углу. Полный список типов ресурсов, поддерживаемых для оповещений метрик, см. в этой [статье](./alerts-metric-near-real-time.md#metrics-and-dimensions-supported).
 
 5. После выбора целевого ресурса щелкните **Добавить условие**.
 
@@ -136,7 +136,8 @@ ms.locfileid: "87045366"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создание классического оповещения метрики с помощью шаблона Resource Manager](../../azure-monitor/platform/alerts-metric-create-templates.md).
+- [Создание классического оповещения метрики с помощью шаблона Resource Manager](./alerts-metric-create-templates.md).
 - [Сведения о работе оповещений метрики в Azure Monitor](alerts-metric-overview.md).
 - [Оповещения с динамическими пороговыми значениями в Azure Monitor (ограниченная закрытая предварительная версия)](alerts-dynamic-thresholds.md).
-- [Схема полезных данных](../../azure-monitor/platform/alerts-metric-near-real-time.md#payload-schema)
+- [Схема полезных данных](./alerts-metric-near-real-time.md#payload-schema)
+

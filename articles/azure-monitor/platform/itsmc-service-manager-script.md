@@ -6,16 +6,16 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 01/23/2018
-ms.openlocfilehash: bb21bcefa0f9fb6f691ebfb578177c64543c1403
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 46c219a82d45129ed0856d22d88be819938e5240
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85549656"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325310"
 ---
 # <a name="create-service-manager-web-app-using-the-automated-script"></a>Создание веб-приложения Service Manager с помощью автоматизированного скрипта
 
-Чтобы создать веб-приложение для экземпляра Service Manager используйте следующий скрипт. См. дополнительные сведения о подключении [Service Manager](../../azure-monitor/platform/itsmc-connections.md#create-and-deploy-service-manager-web-app-service).
+Чтобы создать веб-приложение для экземпляра Service Manager используйте следующий скрипт. См. дополнительные сведения о подключении [Service Manager](./itsmc-connections.md#create-and-deploy-service-manager-web-app-service).
 
 Запустите скрипт, указав следующие данные:
 
@@ -32,7 +32,7 @@ ms.locfileid: "85549656"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
  Windows Management Framework версии 5.0 или выше.
 По умолчанию в Windows 10 используется версия 5.1. Скачать нужную версию можно [отсюда](https://www.microsoft.com/download/details.aspx?id=50395):
@@ -317,5 +317,6 @@ if(!$err)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
-[Настройте гибридное подключение](../../azure-monitor/platform/itsmc-connections.md#configure-the-hybrid-connection).
+## <a name="next-steps"></a>Дальнейшие действия
+[Настройте гибридное подключение](./itsmc-connections.md#configure-the-hybrid-connection).
+

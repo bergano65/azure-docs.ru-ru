@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/25/2020
-ms.openlocfilehash: 4cdb9390b3146df74f2cbe8eba7b170a5d11fb2c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d4f14280f38a2389809477b84461eb3174909316
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85507064"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323899"
 ---
 # <a name="enable-azure-monitor-for-single-vm-or-vmss-in-the-azure-portal"></a>Включение Azure Monitor для одной виртуальной машины или VMSS в портал Azure
 В этой статье описывается, как включить Azure Monitor для виртуальных машин для одной виртуальной машины или масштабируемого набора виртуальных машин с помощью портал Azure. Эту процедуру можно использовать для следующих действий:
@@ -34,7 +34,7 @@ ms.locfileid: "85507064"
 
     ![Включение Azure Monitor для виртуальной машины](media/vminsights-enable-single-vm/enable-vminsights-vm-portal.png)
 
-1. Если виртуальная машина еще не подключена к рабочей области Log Analytics, вам будет предложено выбрать ее. Если вы еще не [создали рабочую область](../../azure-monitor/learn/quick-create-workspace.md), вы можете выбрать значение по умолчанию для расположения, в котором развернута виртуальная машина или VMSS в подписке. Эта Рабочая область будет создана и настроена, если она еще не создана.
+1. Если виртуальная машина еще не подключена к рабочей области Log Analytics, вам будет предложено выбрать ее. Если вы еще не [создали рабочую область](../learn/quick-create-workspace.md), вы можете выбрать значение по умолчанию для расположения, в котором развернута виртуальная машина или VMSS в подписке. Эта Рабочая область будет создана и настроена, если она еще не создана.
 
 2. При выполнении конфигурации вы получите сообщения о состоянии.
 
@@ -45,7 +45,8 @@ ms.locfileid: "85507064"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы просмотреть зависимости обнаруженных приложений, см. статью [использование Azure Monitor для виртуальных машин Map](vminsights-maps.md). 
 * Чтобы определить узкие места, общее использование и производительность виртуальной машины, см. статью [Просмотр производительности виртуальной машины Azure](vminsights-performance.md).
+

@@ -7,11 +7,12 @@ manager: craigg
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/07/2018
-ms.openlocfilehash: f9b3cde8ff0f3a1b97d53a1de72cb6c5c48a800c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5c2de10f5fbacd689a9ae92eb1f7295cccea3fb6
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76289787"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87279267"
 ---
 # <a name="azure-database-for-postgresql-migration-partners"></a>Партнеры по миграции для базы данных Azure для PostgreSQL
 Чтобы существенно расширить поддержку вашего решения Базы данных Azure для PostgreSQL, выберите инструменты и партнеров из обширного списка ведущих в отрасли партнеров. В данной статье рассматриваются партнеры корпорации Майкрософт, которые предлагают решения миграции, поддерживающие Базу данных Azure для PostgreSQL.
@@ -26,8 +27,8 @@ ms.locfileid: "76289787"
 | ![credativ][5] |**credativ**<br>credativ – независимая компания, оказывающая консалтинговые услуги и техническую поддержку. Она основана в 1999 году для предоставления комплексных консалтинговых услуг и технической поддержки по внедрению и использованию программного обеспечения с открытым исходным кодом в бизнес-приложениях. Ее широкий спектр услуг включает стратегический консалтинг, экспертные технические рекомендации, квалифицированное обучение и индивидуальную поддержку всех ИТ-нужд предприятия, в том числе круглосуточно.|[Marketplace][credativ_marketplace]<br>[Веб-сайт][credativ_website]<br>[Twitter][credative_twitter]<br>[YouTube][credativ_youtube]<br>[Contact][credativ_contact] | |
 | ![Pactera][6] |**Pactera**<br>Pactera — это глобальная компания, предлагающая консалтинговые, цифровые, технологические и эксплуатационные услуги ведущим мировым предприятиям. Начиная с первых разработок в инженерии и заканчивая новейшими цифровыми преобразованиями, она предоставляет клиентам конкурентное преимущество. Проверенные методы и инструменты обеспечивают защиту данных, их подлинность и точность.|[Веб-сайт][pactera_website]<br>[Twitter][pactera_twitter]<br>[Contact][pactera_contact] | |
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Дополнительные сведения о других партнерах Майкрософт можно получить [на сайте партнеров Майкрософт](https://partner.microsoft.com/en-US/).
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные сведения о других партнерах Майкрософт можно получить [на сайте партнеров Майкрософт](https://partner.microsoft.com/).
 
 <!--Image references-->
 [1]: ./media/partner-migration-postgresql/SNP_Logo.png

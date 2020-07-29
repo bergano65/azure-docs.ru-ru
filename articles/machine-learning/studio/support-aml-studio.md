@@ -1,6 +1,5 @@
 ---
-title: Поддержка и обучение
-titleSuffix: ML Studio (classic) - Azure
+title: '& руководство по началу работы со средой МАШИНного обучения (классический) в Azure'
 description: Получение поддержки и обучение и предоставление отзывов о Машинное обучение Azure Studio (классическая модель)
 services: machine-learning
 ms.service: machine-learning
@@ -9,13 +8,17 @@ ms.topic: troubleshooting
 author: peterclu
 ms.author: peterlu
 ms.date: 01/18/2019
-ms.openlocfilehash: 708f337ebc627f863f632a677a2186a9d7fe99f8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 84aff48ad1313939761ad23b14c41d31313ebd36
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85213182"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324919"
 ---
 # <a name="get-support-and-training-for-azure-machine-learning-studio-classic"></a>Техническая поддержка и обучение для Машинное обучение Azure Studio (классическая модель)
+
+**применимо к:** ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-azure-ml.md) ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) 
+
 
 [!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 

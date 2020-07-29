@@ -1,6 +1,5 @@
 ---
-title: Превращение модели в веб-службу
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): как она превращается в веб-службу Azure'
 description: Обзор процесса развития модели в Студии машинного обучения Azure (классической) от эксперимента по разработке до готовой веб-службы.
 services: machine-learning
 ms.service: machine-learning
@@ -10,13 +9,17 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 03/20/2017
-ms.openlocfilehash: 4d7ab5cada77ccebc214e09b43fbb70b3ad8bb59
-ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
+ms.openlocfilehash: 6a02ac6db7e560fcb90a87b7bc96284c279c1654
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84117192"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325004"
 ---
 # <a name="how-a-machine-learning-studio-classic-model-progresses-from-an-experiment-to-a-web-service"></a>Развитие модели в Студии машинного обучения (классической) от эксперимента до веб-службы
+
+**применимо к:** ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-azure-ml.md) ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) 
+
 
 Студия машинного обучения Azure (классическая) предоставляет интерактивный холст, который позволяет выполнять разработку, запуск, тестирование и интеграцию ***эксперимента*** модели прогнозной аналитики. Существует множество модулей для следующих задач:
 

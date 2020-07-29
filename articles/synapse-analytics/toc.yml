@@ -10,19 +10,19 @@
       items:
         - name: Введение
           href: get-started.md
-        - name: "Шаг\_1. Создание рабочей области Synapse"
+        - name: 1. Создание рабочей области Synapse
           href: get-started-create-workspace.md
-        - name: "Шаг\_2. Анализ с использованием пула SQL"
+        - name: 2. Анализ с использованием пула SQL
           href: get-started-analyze-sql-pool.md
-        - name: "Шаг\_3. Анализ с использованием Spark"
+        - name: 3. Анализ с использованием Spark
           href: get-started-analyze-spark.md
-        - name: "Шаг\_4. Анализ с использованием SQL по запросу"
+        - name: 4. Анализ с использованием SQL по запросу
           href: get-started-analyze-sql-on-demand.md
-        - name: "Шаг\_5. Анализ данных в учетной записи хранения"
+        - name: 5. Анализ данных в учетной записи хранения
           href: get-started-analyze-storage.md
-        - name: "Шаг\_6. Оркестрация с использованием конвейеров"
+        - name: 6. Оркестрация с использованием конвейеров
           href: get-started-pipelines.md
-        - name: "Шаг\_7. Визуализация с помощью Power\_BI"
+        - name: 7. Визуализация с помощью Power BI
           href: get-started-visualize-power-bi.md
     - name: Краткий справочник
       href: overview-cheat-sheet.md
@@ -264,6 +264,8 @@
                   href: /sql/t-sql/statements/alter-materialized-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Кэширование результирующего набора
               href: /sql/t-sql/statements/set-result-set-caching-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Прогнозы машинного обучения
+              href: ./sql-data-warehouse/sql-data-warehouse-predict.md
             - name: Таблицы
               items:
                 - name: Обзор

@@ -1,6 +1,6 @@
 ---
-title: Подключение к веб-клиенту Виртуального рабочего стола Windows — Azure
-description: Сведения о подключении к Виртуальному рабочему столу Windows с помощью веб-клиента.
+title: Подключение веб-клиента Windows Virtual Desktop (классическая модель) к Azure
+description: Как подключиться к виртуальному рабочему столу Windows (классическая модель) с помощью веб-клиента.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: e95498498fd15d7a6e73630e218f9bdd1b892f09
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: efe97c86ebfac8e130489b3105a97302866d6822
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85204801"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87270385"
 ---
-# <a name="connect-with-the-web-client"></a>Подключение к веб-клиенту
+# <a name="connect-to-windows-virtual-desktop-classic-with-the-web-client"></a>Подключение к виртуальному рабочему столу Windows (классическая модель) с помощью веб-клиента
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../connect-web.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../connect-web.md).
 
 Веб-клиент позволяет получать доступ к ресурсам Виртуального рабочего стола Windows из веб-браузера без необходимости устанавливать программное обеспечение.
 
@@ -42,7 +42,7 @@ ms.locfileid: "85204801"
 В браузере перейдите к веб-клиенту Виртуального рабочего стола Windows по адресу <https://rdweb.wvd.microsoft.com/webclient> и выполните вход с помощью учетной записи пользователя.
 
 >[!NOTE]
->Если вы используете весенний выпуск Виртуального рабочего стола Windows 2020 года с интеграцией с Azure Resource Manager, то для подключения к ресурсам следует использовать адрес <https://rdweb.wvd.microsoft.com/arm/webclient>.
+>Если вы используете виртуальный рабочий стол Windows с Azure Resource Managerной интеграцией, подключитесь к ресурсам по адресу <https://rdweb.wvd.microsoft.com/arm/webclient> .
 
 >[!NOTE]
 >Если вы уже вошли, используя другую учетную запись Azure Active Directory, отличную от той, которую вы хотите использовать для Виртуального рабочего стола Windows, необходимо выйти из системы или использовать вкладку браузера в режиме конфиденциального просмотра.

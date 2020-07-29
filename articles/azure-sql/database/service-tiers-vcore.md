@@ -10,12 +10,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
 ms.date: 07/21/2020
-ms.openlocfilehash: c54979efbbd164a11614b92d9a337a86e2f221fd
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 24c7e0a3c9a7d3c28823db0418e17cb94bc101ec
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87007747"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325072"
 ---
 # <a name="vcore-model-overview---azure-sql-database-and-azure-sql-managed-instance"></a>Общие сведения о модели Виртуальное ядро: база данных SQL Azure и Azure SQL Управляемый экземпляр 
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -83,7 +83,7 @@ ms.locfileid: "87007747"
 - В зависимости от рабочей нагрузки серия fsv2-Series может доставлять больше производительности ЦП на виртуальное ядро, чем го поколения, а размер 72 Виртуальное ядро может обеспечить дополнительную производительность ЦП для менее затрат, чем 80 виртуальных ядер на го поколения. 
 - Серия fsv2 предоставляет меньше памяти и tempdb на виртуальное ядро по сравнению с другим оборудованием, поэтому для рабочих нагрузок, зависящих от этих ограничений, может потребоваться использовать вместо него го поколения или серии M.  
 
-Серия серия fsv2 поддерживается только на уровне общего назначения. Для регионов, где доступна серия серия fsv2, см. статью [доступность серии серия fsv2](#fsv2-series).
+Серия серия fsv2 поддерживается только на уровне общего назначения. Для регионов, где доступна серия серия fsv2, см. статью [доступность серии серия fsv2](#fsv2-series-1).
 
 
 ### <a name="m-series"></a>Серия M
@@ -91,7 +91,7 @@ ms.locfileid: "87007747"
 - Серия M — это оптимизированное для памяти оборудование для рабочих нагрузок, которым требуется больший объем памяти и более высокие ограничения вычислений, чем предоставлено го поколения.
 - Серия M предоставляет 29 ГБ на виртуальное ядро и до 128 виртуальных ядер, что увеличивает предельную объем памяти относительно го поколения до 4 ТБ.
 
-Серия M поддерживается только на уровне критически важный для бизнеса и не поддерживает избыточность зоны.  Подписка должна быть платным типом предложения, включая оплату по мере использования или Соглашение Enterprise (EA). Для регионов, где доступна серия M, см. статью [доступность рядов m](#m-series).
+Серия M поддерживается только на уровне критически важный для бизнеса и не поддерживает избыточность зоны.  Подписка должна быть платным типом предложения, включая оплату по мере использования или Соглашение Enterprise (EA). Для регионов, где доступна серия M, см. статью [доступность рядов m](#m-series-1).
 
 <!--
 To enable M-series hardware for a subscription and region, a support request must be opened. The subscription must be a paid offer type including Pay-As-You-Go or Enterprise Agreement (EA).  If the support request is approved, then the selection and provisioning experience of M-series follows the same pattern as for other hardware generations. For regions where M-series is available, see [M-series availability](#m-series).

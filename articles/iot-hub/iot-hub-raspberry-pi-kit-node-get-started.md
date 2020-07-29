@@ -10,11 +10,14 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 03/13/2020
 ms.author: wesmc
-ms.openlocfilehash: 3175956e35603cc4ad3a938f3d316c0af8f2d227
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom:
+- 'Role: Cloud Development'
+ms.openlocfilehash: 1188c597b3e46af140173d59b2cbac972d0c018c
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81640533"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324035"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-nodejs"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)
 
@@ -44,9 +47,9 @@ ms.locfileid: "81640533"
 
 * Как отправить данные датчика в Центр Интернета вещей.
 
-## <a name="what-you-need"></a>Необходимые элементы
+## <a name="what-you-need"></a>Что нужно
 
-![Необходимые элементы](./media/iot-hub-raspberry-pi-kit-node-get-started/0-starter-kit.png)
+![Что нужно](./media/iot-hub-raspberry-pi-kit-node-get-started/0-starter-kit.png)
 
 * Плата Raspberry Pi 2 или Raspberry Pi 3.
 
@@ -253,7 +256,7 @@ ms.locfileid: "81640533"
 
 Чтобы узнать больше о способах обработки данных, отправляемых устройством, перейдите к следующему разделу.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы запустили пример приложения для регистрации данных датчика и их отправки в центр Интернета вещей.
 

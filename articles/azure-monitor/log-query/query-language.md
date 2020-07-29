@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/11/2019
-ms.openlocfilehash: 1dda2df64dc116a950498aaf581ec39a86db72bb
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 080af271870362e6e0633aaf590820f2fadb6144
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86505743"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325395"
 ---
 # <a name="azure-monitor-log-queries"></a>Запросы к журналу в Azure Monitor
 
@@ -26,15 +26,15 @@ ms.locfileid: "86505743"
 
 ## <a name="concepts"></a>Основные понятия
 
-- В статье об [анализе данных журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md) кратко описаны запросы к журналам и структура данных в журналах Azure Monitor.
+- В статье об [анализе данных журналов в Azure Monitor](./log-query-overview.md) кратко описаны запросы к журналам и структура данных в журналах Azure Monitor.
 - В статье о [просмотре и анализе данных журналов в Azure Monitor](./log-query-overview.md) описаны порталы, на которых создаются и выполняются запросы к журналам.
 
 ## <a name="reference"></a>Справочник
 
 - [Справочник по языку запросов](/azure/kusto/query) содержит подробную и полную информацию о языке запросов Kusto.
 - В статье о [различиях в языках запросов к журналам Azure Monitor](data-explorer-difference.md) сравниваются разные версии языка запросов Kusto.
-- В статье о [стандартных свойствах в записях журналов Azure Monitor](../../azure-monitor/platform/log-standard-properties.md) описаны стандартные свойства для всех данных журналов Azure Monitor.
-- В статье о [выполнении запросов к журналам нескольких ресурсов в Azure Monitor](../../azure-monitor/log-query/cross-workspace-query.md) описано создание запросов с использованием данных из нескольких рабочих областей Log Analytics и приложений Application Insights.
+- В статье о [стандартных свойствах в записях журналов Azure Monitor](../platform/log-standard-properties.md) описаны стандартные свойства для всех данных журналов Azure Monitor.
+- В статье о [выполнении запросов к журналам нескольких ресурсов в Azure Monitor](./cross-workspace-query.md) описано создание запросов с использованием данных из нескольких рабочих областей Log Analytics и приложений Application Insights.
 
 ## <a name="examples"></a>Примеры
 
@@ -58,3 +58,4 @@ ms.locfileid: "86505743"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с полной [справочной документацией по языку запросов Kusto](/azure/kusto/query/).
+

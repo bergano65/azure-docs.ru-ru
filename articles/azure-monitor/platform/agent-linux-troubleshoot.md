@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
-ms.openlocfilehash: 2343de97d06abdefed2c2977a7341aa411429319
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 98ef2b416c809789307f946ed90fb3138d9a20c1
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80520740"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325378"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
 
@@ -27,7 +27,7 @@ ms.locfileid: "80520740"
 
 ## <a name="important-log-locations-and-log-collector-tool"></a>Расположение важных журналов и сборщик журналируемых данных
 
- Файл | Path
+ Файл | путь
  ---- | -----
  Файл журнала агента Log Analytics для Linux | `/var/opt/microsoft/omsagent/<workspace id>/log/omsagent.log`
  Файл журнала конфигурации агента Log Analytics | `/var/opt/microsoft/omsconfig/omsconfig.log`
@@ -43,7 +43,7 @@ ms.locfileid: "80520740"
  Дополнительные конфигурации | `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.d/*.conf`
 
  >[!NOTE]
- >Измененные файлы конфигурации для счетчиков производительности и системный журнал будут перезаписаны при настройке сбора в [меню "Данные" в дополнительных параметрах Log Analytics](../../azure-monitor/platform/agent-data-sources.md#configuring-data-sources) для рабочей области на портале Azure. Чтобы отключить конфигурацию для всех агентов, отключите сбор в разделе **Дополнительные параметры** Log Analytics, а для одного агента выполните следующую команду:  
+ >Измененные файлы конфигурации для счетчиков производительности и системный журнал будут перезаписаны при настройке сбора в [меню "Данные" в дополнительных параметрах Log Analytics](./agent-data-sources.md#configuring-data-sources) для рабочей области на портале Azure. Чтобы отключить конфигурацию для всех агентов, отключите сбор в разделе **Дополнительные параметры** Log Analytics, а для одного агента выполните следующую команду:  
 > `sudo su omsagent -c 'python /opt/microsoft/omsconfig/Scripts/OMS_MetaConfigHelper.py --disable'`
 
 ## <a name="installation-error-codes"></a>Коды ошибок установки
@@ -53,7 +53,7 @@ ms.locfileid: "80520740"
 | NOT_DEFINED | Подключаемый модуль auoms auditd не будет установлен, так как не установлены необходимые зависимости | Установить auoms не удалось, установите пакет auditd. |
 | 2 | Набору оболочки предоставлен недопустимый параметр. Запустите `sudo sh ./omsagent-*.universal*.sh --help` для информации об использовании |
 | 3 | Набору оболочки не предоставлен параметр. Выполните `sudo sh ./omsagent-*.universal*.sh --help`, чтобы получить сведения об использовании. |
-| 4 | Недопустимый тип пакета ИЛИ недопустимые настройки прокси-сервера; пакеты omsagent-*rpm*.sh можно установить только в системах на базе RPM, а пакеты omsagent-*deb*.sh — только в системах на базе Debian. Мы рекомендуем использовать универсальный установщик из [последнего выпуска](../../azure-monitor/learn/quick-collect-linux-computer.md#install-the-agent-for-linux). Кроме того, просмотрите и проверьте настройки прокси-сервера. |
+| 4 | Недопустимый тип пакета ИЛИ недопустимые настройки прокси-сервера; пакеты omsagent-*rpm*.sh можно установить только в системах на базе RPM, а пакеты omsagent-*deb*.sh — только в системах на базе Debian. Мы рекомендуем использовать универсальный установщик из [последнего выпуска](../learn/quick-collect-linux-computer.md#install-the-agent-for-linux). Кроме того, просмотрите и проверьте настройки прокси-сервера. |
 | 5 | Набор оболочки должен выполняться от имени привилегированного пользователя, ИЛИ получена ошибка 403 во время подключения. Выполните команду с использованием `sudo`. |
 | 6 | Недопустимая архитектура пакета, ИЛИ получена ошибка 200 во время подключения; пакеты omsagent-*x64.sh можно установить только в 64-разрядных системах, а пакеты omsagent-* x86.sh — только в 32-разрядных системах. Скачайте правильный пакет для используемой архитектуры из [последнего выпуска](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/latest). |
 | 17 | Не удалось установить пакет OMS. Просмотрите выходные данные команды, чтобы определить причину сбоя. |
@@ -228,7 +228,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 * Количество сообщений, перенаправленных за одну секунду, слишком большое, и агент Log Analytics для Linux в базовой конфигурации не может их обработать.
 
 ### <a name="resolution"></a>Решение
-* Убедитесь, что в рабочей области Log Analytics для системного журнала предоставлены все средства и правильно настроены уровни ведения журнала. Изучите статью о [настройке сбора системного журнала на портале Azure](../../azure-monitor/platform/data-sources-syslog.md#configure-syslog-in-the-azure-portal).
+* Убедитесь, что в рабочей области Log Analytics для системного журнала предоставлены все средства и правильно настроены уровни ведения журнала. Изучите статью о [настройке сбора системного журнала на портале Azure](./data-sources-syslog.md#configure-syslog-in-the-azure-portal).
 * Настройте получение перенаправленных сообщений в управляющих программах обмена сообщениями системных журналов (`rsyslog`, `syslog-ng`).
 * Отключите блокировку сообщений в параметрах брандмауэра на сервере системного журнала.
 * Смоделируйте отправку сообщения системного журнала в Log Analytics с помощью команды `logger`.
@@ -405,7 +405,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 ```
 sudo sh ./omsagent-*.universal.x64.sh --purge
 ```
-либо
+Или
 
 ```
 sudo sh ./onboard_agent.sh --purge
@@ -422,7 +422,7 @@ sudo sh ./onboard_agent.sh --purge
 ### <a name="resolution"></a>Решение 
 Выполните описанные ниже действия, чтобы устранить проблему.
 1. Удалите расширение с помощью портала Azure.
-2. Установите агент в соответствии с [этими инструкциями](../../azure-monitor/learn/quick-collect-linux-computer.md).
+2. Установите агент в соответствии с [этими инструкциями](../learn/quick-collect-linux-computer.md).
 3. Перезапустите агент, выполнив следующую команду: `sudo /opt/microsoft/omsagent/bin/service_control restart`.
 * Подождите несколько минут, пока для состояния не отобразится значение **Provisioning succeeded** (Подготовка выполнена успешно).
 
@@ -444,3 +444,4 @@ sudo sh ./onboard_agent.sh --purge
     ```
 
 3. Обновите пакеты, выполнив команду `sudo sh ./omsagent-*.universal.x64.sh --upgrade`.
+

@@ -5,18 +5,18 @@ description: Создание, проверка и развертывание м
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
 ms.author: nibaccam
 author: aniththa
-manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/10/2020
-ms.openlocfilehash: ac5357d0f8ba03943af14d7dd4ce6928b20db128
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.topic: conceptual
+ms.custom: how-to
+ms.openlocfilehash: 1e87eec4384887ebd82d5f70c0897add250f31fb
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87074649"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87320805"
 ---
 # <a name="create-review-and-deploy-automated-machine-learning-models-with-azure-machine-learning"></a>Создание, проверка и развертывание моделей автоматизированного машинного обучения с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -109,7 +109,7 @@ ms.locfileid: "87074649"
     Тип виртуальной машины| Выберите ЦП или GPU для типа виртуальной машины.
     размер виртуальной машины;| Выберите размер виртуальной машины для вычислительной среды.
     Узлы min и Max| Для профилирования данных необходимо указать один или больше узлов. Введите максимальное число узлов для вычислительной среды. Значение по умолчанию — 6 узлов для вычислительной среды AML.
-    Дополнительные параметры | Эти параметры позволяют настроить учетную запись пользователя и существующую виртуальную сеть для эксперимента. 
+    Дополнительные настройки | Эти параметры позволяют настроить учетную запись пользователя и существующую виртуальную сеть для эксперимента. 
     
     Нажмите кнопку **создания**. Создание вычислительной среды может занять несколько минут.
 

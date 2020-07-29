@@ -302,6 +302,8 @@
         - name: Скрипт развертывания
           displayName: custom script
           href: deployment-script-template.md
+        - name: Создание скрипта развертывания для среды разработки
+          href: deployment-script-template-configure-dev.md
         - name: Разбиение шаблонов на модули
           displayName: 'linked templates, nested templates'
           href: linked-templates.md

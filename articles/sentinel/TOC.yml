@@ -156,6 +156,8 @@
       href: customer-managed-keys.md
     - name: Создание инцидентов на основе оповещений
       href: create-incidents-from-alerts.md
+    - name: Улучшенное управление SOC с помощью метрик инцидентов
+      href: manage-soc-with-incident-metrics.md
     - name: Поиск
       href: hunting.md
       items:

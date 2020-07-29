@@ -3,12 +3,12 @@ title: Фильтрация и предварительная обработка
 description: Напишите обработчики телеметрии и инициализаторы телеметрии для пакета SDK, чтобы отфильтровать или добавить свойства в данные перед отправкой данных телеметрии на портал Application Insights.
 ms.topic: conceptual
 ms.date: 11/23/2016
-ms.openlocfilehash: adaada3589fd0db1c7d47b788ad50d570defe780
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a16dc7bc9f6f3c49640d320fbfbffaa7acbed6b9
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87014632"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323219"
 ---
 # <a name="filter-and-preprocess-telemetry-in-the-application-insights-sdk"></a>Фильтрация и предварительная обработка телеметрии в пакете SDK для Application Insights
 
@@ -17,7 +17,7 @@ ms.locfileid: "87014632"
 * [Выборка](sampling.md) сокращает объем данных телеметрии, не искажая статистические данные. Он сохраняет вместе связанные точки данных, что позволяет перемещаться между ними при диагностике проблемы. На портале общее количество умножается, чтобы компенсировать выборку.
 * Фильтрация с помощью обработчиков телеметрии позволяет отфильтровывать данные телеметрии в пакете SDK перед отправкой на сервер. Например, можно уменьшить объем данных телеметрии, исключив запросы от роботов. Фильтрация — это более простой подход к сокращению трафика по сравнению с выборкой. Он обеспечивает более полный контроль над передаваемыми данными, но влияет на статистику. Например, вы можете отфильтровать все успешные запросы.
 * [Инициализаторы телеметрии добавляют или изменяют свойства](#add-properties) к любым данным телеметрии, отправляемым из приложения, включая данные телеметрии из стандартных модулей. Например, можно добавить вычисляемые значения или номера версий для фильтрации данных на портале.
-* [API пакета SDK](../../azure-monitor/app/api-custom-events-metrics.md) используется для отправки пользовательских событий и показателей.
+* [API пакета SDK](./api-custom-events-metrics.md) используется для отправки пользовательских событий и показателей.
 
 Перед началом работы
 
@@ -34,7 +34,7 @@ ms.locfileid: "87014632"
 > [!WARNING]
 > Фильтрация данных телеметрии, отправленных из пакета SDK с помощью процессоров, может привести к искажению статистики, отображаемой на портале, и затруднять отслеживание связанных элементов.
 >
-> Вместо этого попробуйте использовать [выборку](../../azure-monitor/app/sampling.md).
+> Вместо этого попробуйте использовать [выборку](./sampling.md).
 >
 >
 
@@ -352,7 +352,7 @@ ASP.NET **Core/App Service Apps: Загрузка инициализатора**
 </script>
 ```
 
-Сводные сведения о ненастраиваемых свойствах, доступных для элемента телеметрии, см. в разделе [Application Insights Export Data Model](../../azure-monitor/app/export-data-model.md).
+Сводные сведения о ненастраиваемых свойствах, доступных для элемента телеметрии, см. в разделе [Application Insights Export Data Model](./export-data-model.md).
 
 Вы можете добавить любое количество инициализаторов по своему усмотрению. Они вызываются в том порядке, в котором они были добавлены.
 
@@ -542,7 +542,7 @@ public class HttpContextRequestTelemetryInitializer : ITelemetryInitializer
 
 ## <a name="reference-docs"></a>Справочная документация
 
-* [Обзор API](../../azure-monitor/app/api-custom-events-metrics.md)
+* [Обзор API](./api-custom-events-metrics.md)
 * [Справочник по ASP.NET](/previous-versions/azure/dn817570(v=azure.100))
 
 ## <a name="sdk-code"></a>Код пакета SDK
@@ -552,6 +552,7 @@ public class HttpContextRequestTelemetryInitializer : ITelemetryInitializer
 * [Пакет SDK для JavaScript](https://github.com/Microsoft/ApplicationInsights-JS)
 
 ## <a name="next-steps"></a><a name="next"></a>Следующие шаги
-* [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md)
-* [Выборка](../../azure-monitor/app/sampling.md)
+* [Поиск событий и журналов](./diagnostic-search.md)
+* [ресамплинга](./sampling.md)
 * [Устранение неполадок](../faq.md)
+

@@ -3,11 +3,12 @@ title: Панель мониторинга общих сведений об Azur
 description: Мониторинг приложений с помощью Azure Application Insights и функции "Панель мониторинга общих сведений".
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: e5188972d9058b85a9765c7d33f6209b37245d7e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c8aa4460a545f032eaa60560de00efff27ae1ef
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77669902"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87322539"
 ---
 # <a name="application-insights-overview-dashboard"></a>Обзорная панель мониторинга Application Insights
 
@@ -54,8 +55,9 @@ Application Insights всегда предоставляло сводную па
 
 Если выбрать **параметр настроить параметры плитки** и задать настраиваемый диапазон времени, превышающий 31 день, на панели мониторинга не будут отображаться данные за 31 день, даже если срок хранения данных по умолчанию 90 дней. В настоящее время обходной путь для этого поведения отсутствует.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Воронки](../../azure-monitor/app/usage-funnels.md)
-- [Сохранение](../../azure-monitor/app/usage-retention.md)
-- [Средство "Маршруты пользователей"](../../azure-monitor/app/usage-flows.md)
+- [Воронки](./usage-funnels.md)
+- [Сохранение](./usage-retention.md)
+- [Средство "Маршруты пользователей"](./usage-flows.md)
+

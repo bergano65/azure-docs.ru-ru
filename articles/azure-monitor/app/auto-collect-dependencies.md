@@ -5,12 +5,12 @@ ms.topic: reference
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/06/2020
-ms.openlocfilehash: ba7830cc1c0a3e6a563b4343b37ec07f7d508af4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2227facfcf469bc22034da0da504b390cc0deee1
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087991"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324188"
 ---
 # <a name="dependency-auto-collection"></a>Автоматический сбор зависимостей
 
@@ -23,7 +23,7 @@ ms.locfileid: "87087991"
 | Веб-формы ASP.NET | 4.5+ |
 | ASP.NET MVC 3 | 4+ |
 | ASP.NET WebAPI | 4.5+ |
-| ASP.NET Core | 1.1+ |
+| ASP.NET Core | 1.1+ |
 | <b>Библиотеки обмена данными</b> |
 | [HttpClient](https://www.microsoft.com/net/) | 4.5+, .NET Core 1.1+ |
 | [SqlClient](https://www.nuget.org/packages/System.Data.SqlClient) | .NET Core 1.0+, NuGet 4.3.0 |
@@ -88,9 +88,10 @@ ms.locfileid: "87087991"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Настройка отслеживания зависимостей для платформы [.NET](../../azure-monitor/app/asp-net-dependencies.md).
-- Настройка отслеживания зависимостей для [Java](../../azure-monitor/app/java-agent.md).
-- Настройка пользовательского отслеживания зависимостей для [Опенценсус Python](../../azure-monitor/app/opencensus-python-dependency.md).
-- [Создание телеметрии настраиваемых зависимостей](../../azure-monitor/app/api-custom-events-metrics.md#trackdependency)
-- В [этой статье](../../azure-monitor/app/data-model.md) представлены типы данных и модель данных для Application Insights.
-- Ознакомление с [платформами](../../azure-monitor/app/platforms.md), поддерживаемыми Application Insights.
+- Настройка отслеживания зависимостей для платформы [.NET](./asp-net-dependencies.md).
+- Настройка отслеживания зависимостей для [Java](./java-agent.md).
+- Настройка пользовательского отслеживания зависимостей для [Опенценсус Python](./opencensus-python-dependency.md).
+- [Создание телеметрии настраиваемых зависимостей](./api-custom-events-metrics.md#trackdependency)
+- В [этой статье](./data-model.md) представлены типы данных и модель данных для Application Insights.
+- Ознакомление с [платформами](./platforms.md), поддерживаемыми Application Insights.
+

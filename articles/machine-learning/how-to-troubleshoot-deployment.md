@@ -11,12 +11,12 @@ ms.author: clauren
 ms.reviewer: jmartens
 ms.date: 03/05/2020
 ms.custom: contperfq4, tracking-python
-ms.openlocfilehash: 68c328bde853bbf4e48ab7ab1a6e2c7b51198f59
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 47daf331c717ebb9752644deac826330681bb31a
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87030697"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87320822"
 ---
 # <a name="troubleshoot-docker-deployment-of-models-with-azure-kubernetes-service-and-azure-container-instances"></a>Устранение неполадок при развертывании в DOCKER моделей с помощью службы Kubernetes Azure и экземпляров контейнеров Azure 
 
@@ -184,7 +184,9 @@ print(service.get_logs())
 # if you only know the name of the service (note there might be multiple services with the same name but different version number)
 print(ws.webservices['mysvc'].get_logs())
 ```
-
+Если строка `Booting worker with pid: <pid>` в журналах встречается несколько раз, это означает, что недостаточно памяти для запуска рабочей роли.
+Эту ошибку можно устранить, увеличив значение `memory_gb` в`deployment_config`
+ 
 ## <a name="container-cannot-be-scheduled"></a>Контейнер невозможно запланировать
 
 При развертывании службы в целевой объект вычислений Службы Azure Kubernetes Машинное обучение Azure попытается запланировать службу с запрошенным количеством ресурсов. Если через 5 минут в кластере нет доступных узлов с соответствующим объемом доступных ресурсов, развертывание завершится с сообщением `Couldn't Schedule because the kubernetes cluster didn't have available resources after trying for 00:05:00` . Вы можете устранить эту ошибку, добавив больше узлов, изменив SKU своих узлов или изменив требования к ресурсам службы. 

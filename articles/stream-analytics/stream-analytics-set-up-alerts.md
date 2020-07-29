@@ -7,11 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 06/21/2019
-ms.openlocfilehash: d701a518dfa0bd21b33aa2f13f533ad6ef49430d
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: de8b69cbe3117a3ec248cee4808b676b39c56658
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86037823"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324800"
 ---
 # <a name="set-up-alerts-for-azure-stream-analytics-jobs"></a>Настройка оповещений для заданий Azure Stream Analytics
 
@@ -63,16 +64,8 @@ ms.locfileid: "86037823"
 |Предельная задержка|Больше|Максимальная|Если среднее значение метрики за последние 15 минут больше допустимого интервала поступления с задержкой (в секундах). Если вы не изменили допустимый интервал поступления с задержкой, значение по умолчанию устанавливается на 5 секунд.|Попробуйте увеличить число единиц потоковой передачи или выполнить параллелизацию запроса. Дополнительные сведения о единицах потоковой передачи см. в статье [Обзор и настройка единиц потоковой передачи](stream-analytics-streaming-unit-consumption.md#how-many-sus-are-required-for-a-job). Дополнительные сведения см. в статье [Использование параллелизации запросов в Azure Stream Analytics](stream-analytics-parallelization.md).|
 |Ошибки десериализации входных данных|Больше|Итог|0|Изучите журналы действий или ресурсов и внесите соответствующие изменения во входные данные. Дополнительные сведения о журналах ресурсов см. в статье [Устранение неполадок Azure Stream Analytics с помощью журналов ресурсов](stream-analytics-job-diagnostic-logs.md).|
 
-## <a name="get-help"></a>Получить справку
-
-Дополнительные сведения о настройке оповещений на портале Azure см. в статье [Получение уведомлений](../azure-monitor/platform/alerts-overview.md).  
-
-За дополнительной информацией перейдите на [страницу вопросов и ответов об Azure Stream Analytics](https://docs.microsoft.com/answers/topics/azure-stream-analytics.html).
-
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
-* [Приступая к работе с Azure Stream Analytics](stream-analytics-get-started.md)
+
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
-* [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 

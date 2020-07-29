@@ -6,17 +6,17 @@ ms.author: robb
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.subservice: alerts
-ms.openlocfilehash: fef975c9822cd44b94074874621e1c87a60ed27d
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 380a1366994e970c208a6c3ad505414cb12bc0c2
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86505454"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324103"
 ---
 # <a name="create-a-classic-metric-alert-with-a-resource-manager-template"></a>Создание классического оповещения метрики с помощью шаблона Resource Manager
 > [!WARNING]
 > 
-> В этой статье описывается создание **классических оповещений на основе метрик** с помощью шаблонов Resource Manager. Классические предупреждения были прекращены в августе 2019 и полностью устарели в июне 2020. Нельзя создавать новые классические предупреждения общедоступные Azure. Некоторые региональные версии Azure по-прежнему могут иметь вариант, но мы рекомендуем создавать [новые оповещения о метриках](../../azure-monitor/platform/alerts-metric-near-real-time.md) с помощью шаблонов, если это возможно. [Эта статья](alerts-metric-create-templates.md) содержит подробные сведения.
+> В этой статье описывается создание **классических оповещений на основе метрик** с помощью шаблонов Resource Manager. Классические предупреждения были прекращены в августе 2019 и полностью устарели в июне 2020. Нельзя создавать новые классические предупреждения общедоступные Azure. Некоторые региональные версии Azure по-прежнему могут иметь вариант, но мы рекомендуем создавать [новые оповещения о метриках](./alerts-metric-near-real-time.md) с помощью шаблонов, если это возможно. [Эта статья](alerts-metric-create-templates.md) содержит подробные сведения.
 >
 
 В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) , чтобы настроить классические оповещения метрик Azure. Это позволяет автоматически настраивать оповещения для ресурсов при их создании, чтобы обеспечить правильный мониторинг всех ресурсов.
@@ -400,5 +400,6 @@ ms.locfileid: "86505454"
 
 ## <a name="next-steps"></a>Next Steps
 * [Узнайте больше об оповещениях](alerts-overview.md)
-* [Добавьте параметры диагностики](../../azure-monitor/platform/diagnostic-settings-template.md) в шаблон Resource Manager.
+* [Добавьте параметры диагностики](./diagnostic-settings-template.md) в шаблон Resource Manager.
 * Синтаксис и свойства JSON см. в справочнике по шаблонам [Microsoft.Insights/metricAlerts](/azure/templates/microsoft.insights/alertrules).
+

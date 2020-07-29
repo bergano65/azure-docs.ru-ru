@@ -7,18 +7,19 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 84709c022631543101889f784231158ebb96b6f3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c315cc8c9dfcfa66999ff263fab95f414061e54e
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77662270"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321264"
 ---
 # <a name="send-custom-metrics-for-an-azure-resource-to-the-azure-monitor-metric-store-by-using-a-rest-api"></a>Отправка пользовательских метрик для ресурса Azure в хранилище метрик Azure Monitor с использованием REST API
 
 В этой статье показано, как отправлять пользовательские метрики для ресурсов Azure в хранилище метрик Azure Monitor с помощью REST API. Получив метрики в Azure Monitor, вы можете выполнять с ними любые действия, поддерживаемые для стандартных метрик. Например, создавать диаграммы или предупреждения и отправлять данные в другие внешние средства.  
 
 >[!NOTE]  
->REST API позволяет отправлять пользовательские метрики только для ресурсов Azure. Чтобы отправлять метрики для ресурсов в разных средах или локально, можно использовать [Application Insights](../../azure-monitor/app/api-custom-events-metrics.md).    
+>REST API позволяет отправлять пользовательские метрики только для ресурсов Azure. Чтобы отправлять метрики для ресурсов в разных средах или локально, можно использовать [Application Insights](../app/api-custom-events-metrics.md).    
 
 
 ## <a name="create-and-authorize-a-service-principal-to-emit-metrics"></a>Создание и авторизация субъекта-службы для генерации метрик 
@@ -92,7 +93,7 @@ curl -X POST https://login.microsoftonline.com/<yourtenantid>/oauth2/token -F "g
 1. Вы не можете генерировать метрики для таких ресурсов Azure, как подписки или группы ресурсов. 
 1. Вы не можете поместить в хранилище метрику, которая старше 20 минут. Хранилище метрик оптимизировано для оповещений и создания диаграмм в режиме реального времени. 
 2. Число имен измерений должно соответствовать числу значений, и наоборот. Проверьте значения. 
-2. Возможно, метрики генерируются для региона, в котором не поддерживаются пользовательские метрики. См. раздел [Поддерживаемые регионы](../../azure-monitor/platform/metrics-custom-overview.md#supported-regions). 
+2. Возможно, метрики генерируются для региона, в котором не поддерживаются пользовательские метрики. См. раздел [Поддерживаемые регионы](./metrics-custom-overview.md#supported-regions). 
 
 
 
@@ -116,5 +117,5 @@ curl -X POST https://login.microsoftonline.com/<yourtenantid>/oauth2/token -F "g
 
  
 ## <a name="next-steps"></a>Дальнейшие действия
-- Дополнительные сведения о настраиваемых метриках см. в [этой статье](../../azure-monitor/platform/metrics-custom-overview.md).
+- Дополнительные сведения о настраиваемых метриках см. в [этой статье](./metrics-custom-overview.md).
 

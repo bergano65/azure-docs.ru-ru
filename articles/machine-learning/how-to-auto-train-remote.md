@@ -9,13 +9,15 @@ ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
 ms.workload: data-services
-ms.topic: how-to
+ms.topic: conceptual
+ms.custom: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 1ab36683fcd95474428b0a005e1a39d4c8536d77
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 0dcb8f1f484f9c24a6376aef8836b6dc50d5278a
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85959115"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321570"
 ---
 # <a name="train-models-with-automated-machine-learning-in-the-cloud"></a>Обучение моделей с помощью автоматического машинного обучения в облаке
 
@@ -226,7 +228,7 @@ remote_run.get_portal_url()
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, [как настроить параметры автоматического обучения](how-to-configure-auto-train.md)
 * См. [практические руководства](how-to-machine-learning-interpretability-automl.md) по включению функций интерпретации модели в автоматизированных экспериментах ml.
