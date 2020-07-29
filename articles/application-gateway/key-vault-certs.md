@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: conceptual
-ms.date: 4/25/2019
+ms.date: 07/27/2020
 ms.author: victorh
-ms.openlocfilehash: a214dae7c80cbc520fc6aff5a492466a77261167
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c1f6cc21c7a45dbc5c7be7e3f3cc46b4ec4e8c39
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85255370"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282353"
 ---
 # <a name="tls-termination-with-key-vault-certificates"></a>Завершение TLS с сертификатами Key Vault
 
@@ -43,7 +43,7 @@ ms.locfileid: "85255370"
 
 1. **Создание управляемого удостоверения, назначаемого пользователем**
 
-   Вы создаете или повторно используете существующее назначенное пользователем управляемое удостоверение, которое шлюз приложений использует для получения сертификатов от Key Vault от вашего имени. Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md). На этом шаге создается новое удостоверение в клиенте Azure Active Directory. Удостоверение является доверенным для подписки, которая используется для создания удостоверения.
+   Вы создаете или повторно используете существующее назначенное пользователем управляемое удостоверение, которое шлюз приложений использует для получения сертификатов от Key Vault от вашего имени. Дополнительные сведения см. [в разделе Создание, перечисление, удаление или назначение роли назначенному пользователем управляемому удостоверению с помощью портал Azure](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md). На этом шаге создается новое удостоверение в клиенте Azure Active Directory. Удостоверение является доверенным для подписки, которая используется для создания удостоверения.
 
 1. **Настройка хранилища ключей**
 
@@ -72,6 +72,6 @@ ms.locfileid: "85255370"
 
    ![Сертификаты хранилища ключей](media/key-vault-certs/ag-kv.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка завершения TLS с использованием Key Vault сертификатов с помощью Azure PowerShell](configure-keyvault-ps.md)

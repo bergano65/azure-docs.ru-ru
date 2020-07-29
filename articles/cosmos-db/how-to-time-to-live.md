@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 03/27/2020
 ms.author: anfeldma
-ms.openlocfilehash: bbddcb8627c78544d603e1ea3ca33bc410419da1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d145892c1fa0d71b462c5aab42ba89685d7a91a9
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85263628"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282302"
 ---
 # <a name="configure-time-to-live-in-azure-cosmos-db"></a>Настройка срока жизни в Azure Cosmos DB
 
@@ -143,7 +143,7 @@ await client.GetDatabase("database").CreateContainerAsync(new ContainerPropertie
 {
     Id = "container",
     PartitionKeyPath = "/myPartitionKey",
-    DefaultTimeToLive = 90 * 60 * 60 * 24; // expire all documents after 90 days
+    DefaultTimeToLive = 90 * 60 * 60 * 24 // expire all documents after 90 days
 });
 ```
 ---
@@ -216,7 +216,7 @@ async function createcontainerWithTTL(db: Database, containerDefinition: Contain
    * Откройте окно **Scale & Settings** (Параметры масштабирования).
    * В разделе **Параметры** найдите **Срок жизни**.
    * Выберите **вкл. (нет значения по умолчанию)** **, а затем** установите значение TTL. 
-   * Щелкните **Сохранить** , чтобы сохранить изменения.
+   * **Сохраните** изменения.
 
 5. Затем перейдите к элементу, для которого нужно установить срок жизни, добавьте свойство `ttl` и выберите **Обновить**. 
 
@@ -555,7 +555,7 @@ container = database.createContainerIfNotExists(containerProperties, 400).block(
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о сроке жизни см. в следующей статье:
 

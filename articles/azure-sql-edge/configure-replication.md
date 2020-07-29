@@ -9,11 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: a33933e63cc7c15de7d60430521f810f8546988c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ad92f796205d84a372de610cb210bbf8878a6c9b
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84667885"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282778"
 ---
 # <a name="configure-replication-to-azure-sql-edge-preview"></a>Настройка репликации в SQL Azure для пограничных вычислений (предварительная версия) 
 
@@ -23,7 +24,7 @@ ms.locfileid: "84667885"
   
 - Экземпляр Azure SQL ребр должен быть принудительным подписчиком для издателя.
 - Издатель и распространитель могут быть либо:
-   - Экземпляр SQL Server, выполняющегося в локальной среде, или экземпляр SQL Server, выполняющийся на виртуальной машине Azure. Дополнительные сведения см. в статье [Обзор SQL Server на виртуальных машинах Azure](https://azure.microsoft.com/documentation/articles/virtual-machines-sql-server-infrastructure-services/). Экземпляры SQL Server должны использовать версию более поздней, чем SQL Server 2016.
+   - Экземпляр SQL Server, выполняющегося в локальной среде, или экземпляр SQL Server, выполняющийся на виртуальной машине Azure. Дополнительные сведения см. в статье [Обзор SQL Server на виртуальных машинах Azure](https://docs.microsoft.com/azure/azure-sql/virtual-machines/). Экземпляры SQL Server должны использовать версию более поздней, чем SQL Server 2016.
    - Экземпляр Управляемый экземпляр Azure SQL. SQL Управляемый экземпляр может размещать базы данных издателя, распространителя и подписчика. Дополнительные сведения см. в статье [Replication to SQL Database single and pooled databases](https://docs.microsoft.com/azure/sql-database/replication-with-sql-database-managed-instance/) (Репликация в одну базу данных и базы данных в составе пула службы "База данных SQL").
 
 - Базу данных распространителя и агенты репликации нельзя разместить на экземпляре Azure SQL Server.  
@@ -31,7 +32,7 @@ ms.locfileid: "84667885"
 > [!NOTE]
 > При попытке настроить репликацию с использованием неподдерживаемой версии могут возникать следующие две ошибки: MSSQL_REPL20084 ("процессу не удалось подключиться к подписчику") и MSSQL_REPL40532 ("не удается открыть сервер, \<name> запрошенный именем для входа. Ошибка входа. ").  
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Remarks
 
 Следующие требования и рекомендации важны для понимания при настройке репликации.
 
@@ -84,7 +85,7 @@ ms.locfileid: "84667885"
 - [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
 - [Создайте принудительную подписку](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/) , используя имя сервера SQL Azure и IP-адрес в качестве подписчика (например, **меджеинстанце, 1433**), а также имя базы данных в экземпляре SQL Azure в качестве целевой базы данных (например, **AdventureWorks**).  
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
 - [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/)

@@ -3,12 +3,13 @@ title: Справочник для разработчика Java по Функц
 description: Информация о разработке функций на языке Java.
 ms.topic: conceptual
 ms.date: 09/14/2018
-ms.openlocfilehash: f1c2c3a3b6c28813cc9ecd9eb794e26e1e60d5e2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-java
+ms.openlocfilehash: 121a3263a28da5e17b1ab918529aa9f285089687
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87041530"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87372422"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
@@ -100,7 +101,7 @@ FunctionsProject
 ```java
 public class Function {
     public String echo(@HttpTrigger(name = "req", 
-      methods = {"post"},  authLevel = AuthorizationLevel.ANONYMOUS) 
+      methods = {HttpMethod.POST},  authLevel = AuthorizationLevel.ANONYMOUS) 
         String req, ExecutionContext context) {
         return String.format(req);
     }
@@ -152,7 +153,7 @@ _Поддержка Java 11 сейчас доступна в предварит�
 
 В настоящее время Maven архетипа создает pom.xml, предназначенный для Java 8. Чтобы создать приложение-функцию, запускающее Java 11, необходимо обновить следующие элементы в pom.xml.
 
-| Элемент |  Значение Java 8 | Значение Java 11 | Описание |
+| Элемент |  Значение Java 8 | Значение Java 11 | Описание: |
 | ---- | ---- | ---- | --- |
 | **`Java.version`** | 1.8 | 11 | Версия Java, используемая подключаемым модулем Maven-компилятора. |
 | **`JavaVersion`** | 8 | 11 | Версия Java, размещенная в приложении функции в Azure. |
@@ -272,7 +273,7 @@ import com.microsoft.azure.functions.annotation.*;
 public class Function {
     @FunctionName("echo")
     public static String echo(
-        @HttpTrigger(name = "req", methods = { "put" }, authLevel = AuthorizationLevel.ANONYMOUS, route = "items/{id}") String inputReq,
+        @HttpTrigger(name = "req", methods = { HttpMethod.PUT }, authLevel = AuthorizationLevel.ANONYMOUS, route = "items/{id}") String inputReq,
         @TableInput(name = "item", tableName = "items", partitionKey = "Example", rowKey = "{id}", connection = "AzureWebJobsStorage") TestInputData inputData
         @TableOutput(name = "myOutputTable", tableName = "Person", connection = "AzureWebJobsStorage") OutputBinding<Person> testOutputData,
     ) {
@@ -402,7 +403,7 @@ import com.microsoft.azure.functions.annotation.*;
 public class Function {
     @FunctionName("metadata")
     public static String metadata(
-        @HttpTrigger(name = "req", methods = { "get", "post" }, authLevel = AuthorizationLevel.ANONYMOUS) Optional<String> body,
+        @HttpTrigger(name = "req", methods = { HttpMethod.GET, HttpMethod.POST }, authLevel = AuthorizationLevel.ANONYMOUS) Optional<String> body,
         @BindingName("name") String queryValue
     ) {
         return body.orElse(queryValue);
@@ -444,7 +445,7 @@ import com.microsoft.azure.functions.*;
 import com.microsoft.azure.functions.annotation.*;
 
 public class Function {
-    public String echo(@HttpTrigger(name = "req", methods = {"post"}, authLevel = AuthorizationLevel.ANONYMOUS) String req, ExecutionContext context) {
+    public String echo(@HttpTrigger(name = "req", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) String req, ExecutionContext context) {
         if (req.isEmpty()) {
             context.getLogger().warning("Empty request body received by function " + context.getFunctionName() + " with invocation " + context.getInvocationId());
         }
@@ -487,7 +488,7 @@ az webapp log download --resource-group resourcegroupname --name functionappname
 ```java
 
 public class Function {
-    public String echo(@HttpTrigger(name = "req", methods = {"post"}, authLevel = AuthorizationLevel.ANONYMOUS) String req, ExecutionContext context) {
+    public String echo(@HttpTrigger(name = "req", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) String req, ExecutionContext context) {
         context.getLogger().info("My app setting value: "+ System.getenv("myAppSetting"));
         return String.format(req);
     }

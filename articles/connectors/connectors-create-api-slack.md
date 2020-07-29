@@ -7,11 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 08/25/2018
 tags: connectors
-ms.openlocfilehash: 194f75fbb486d5c53a8e650631c16fcf2649f277
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 75f4cea0e5cd2b0bf42c28cbd81e199115834e11
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83826032"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87283968"
 ---
 # <a name="monitor-and-manage-slack-with-azure-logic-apps"></a>Мониторинг приложения Slack и управление им с помощью Azure Logic Apps
 
@@ -69,9 +70,10 @@ ms.locfileid: "83826032"
 
 ## <a name="get-support"></a>Получение поддержки
 
-* В случае наличия вопросов посетите страницу [Вопросы и ответы Майкрософт по Azure Logic Apps](https://docs.microsoft.com/answers/topics/azure-logic-apps.html).
+* В случае наличия вопросов посетите страницу [Вопросы и ответы Майкрософт по Azure Logic Apps](/answers/topics/azure-logic-apps.html).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).
+

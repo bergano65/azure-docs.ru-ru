@@ -7,11 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 12/15/2019
 tags: connectors
-ms.openlocfilehash: 5b61b51e79c71736e18aaa63ab032c05c512c8d7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f4cad2b658547d56d00efdd5e1496110f8e4a5e6
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80656335"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284019"
 ---
 # <a name="create-monitor-and-manage-ftp-files-by-using-azure-logic-apps"></a>Создание и отслеживание FTP-файлов, а также управление ими с помощью Azure Logic Apps
 
@@ -170,7 +171,7 @@ ms.locfileid: "80656335"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Дополнительные технические сведения об этом соединителе, такие как триггеры, действия и ограничения, описанные в файле Swagger соединителя, см. на [странице справочника по соединителю](https://docs.microsoft.com/connectors/ftpconnector/).
+Дополнительные технические сведения об этом соединителе, такие как триггеры, действия и ограничения, описанные в файле Swagger соединителя, см. на [странице справочника по соединителю](/connectors/ftpconnector/).
 
 > [!NOTE]
 > Для приложений логики в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)эта версия этого соединителя использует [ограничения сообщений интегрированной](../logic-apps/logic-apps-limits-and-config.md#message-size-limits) среды сценариев.
@@ -178,3 +179,4 @@ ms.locfileid: "80656335"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).
+

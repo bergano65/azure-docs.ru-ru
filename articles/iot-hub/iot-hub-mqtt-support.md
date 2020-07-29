@@ -10,12 +10,14 @@ ms.author: robinsh
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 72c012ba9ce28c0ca5dd5a315cf94b8895558a0b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+- 'Role: IoT Device'
+- 'Role: Cloud Development'
+ms.openlocfilehash: df6de62eefc0971ece0e0035299425689af5f784
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87001695"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87307630"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
 
@@ -47,7 +49,7 @@ ms.locfileid: "87001695"
 
 В следующей таблице содержатся ссылки на примеры кода для каждого поддерживаемого языка и указаны параметры, используемые для подключения к Центру Интернета вещей по протоколу MQTT и MQTT через веб-сокеты.
 
-| Language | Параметр протокола MQTT | Параметр протокола MQTT через веб-сокеты
+| Язык | Параметр протокола MQTT | Параметр протокола MQTT через веб-сокеты
 | --- | --- | --- |
 | [Node.js](https://github.com/Azure/azure-iot-sdk-node/blob/master/device/samples/simple_sample_device.js) | azure-iot-device-mqtt.Mqtt | azure-iot-device-mqtt.MqttWs |
 | [Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-samples/send-receive-sample/src/main/java/samples/com/microsoft/azure/sdk/iot/SendReceive.java) |[IotHubClientProtocol](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.iothubclientprotocol?view=azure-java-stable).MQTT | IotHubClientProtocol.MQTT_WS |
@@ -80,7 +82,7 @@ device_client = IoTHubDeviceClient.create_from_connection_string(deviceConnectio
 |Java     |    230 секунд     |     Нет    |
 |C     | 240 секунд |  [Да](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/Iothub_sdk_options.md#mqtt-transport)   |
 |C#     | 300 секунд |  [Да](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/iothub/device/src/Transport/Mqtt/MqttTransportSettings.cs#L89)   |
-|Python (версия 2)   | 60 секунд |  нет   |
+|Python   | 60 секунд |  нет   |
 
 Согласно [спецификациям MQTT](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718081) интервал проверки связи в Центре Интернета вещей в 1,5 раза превышает интервал проверки связи клиента. При этом Центр Интернета вещей ограничивает максимальное время ожидания на стороне сервера значением 29,45 минут (1767 секунд), так как все службы Azure привязаны к времени ожидания неактивного подключения TCP в Azure Load Balancer, которое составляет 29,45 минут. 
 
@@ -308,7 +310,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 В сообщениях, отправляемых из облака на устройство, значения в контейнере свойств представлены в следующей таблице.
 
-| Значение свойства | Представление | Описание |
+| Значение свойства | Представление | Описание: |
 |----|----|----|
 | `null` | `key` | В контейнере свойств отображается только ключ. |
 | пустая строка | `key=` | Ключ, за которым следует знак равенства без значения |
@@ -366,7 +368,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 3. Затем служба отправляет ответное сообщение, содержащее новое значение ETag для коллекции сообщаемых свойств в разделе `$iothub/twin/res/{status}/?$rid={request id}`. В этом ответном сообщении используется то же значение **request ID**, что и в запросе.
 
-Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Например.
+Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Например:
 
 ```json
 {

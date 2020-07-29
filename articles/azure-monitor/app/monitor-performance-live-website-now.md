@@ -3,12 +3,12 @@ title: Мониторинг активного веб-приложения ASP.N
 description: Мониторинг производительности веб-сайта без необходимости его повторного развертывания. Работает с веб-приложениями ASP.NET, размещенными локально или в виртуальных машинах.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 93b150b831a01989093fd916d17e31aee27beb3a
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 70a405d2c32641be2ed4038fbffebce0e1340f83
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86499534"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87310452"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Инструментирование веб-приложений во время выполнения с помощью Application Insights бескодового подключения
 
@@ -22,7 +22,7 @@ ms.locfileid: "86499534"
 - Если приложение развернуто в ВИРТУАЛЬНОЙ машине Azure или в масштабируемом наборе виртуальных машин Azure, следуйте [этим инструкциям](azure-vm-vmss-apps.md).
 - Если ваше приложение развернуто в службах приложений Azure, выполните [эти инструкции](azure-web-apps.md).
 - Если приложение развернуто на виртуальной машине Azure, вы можете включить мониторинг Application Insights на панели управления Azure.
-- (Существуют также отдельные статьи о инструментировании [облачных служб Azure](../../azure-monitor/app/cloudservices.md).)
+- (Существуют также отдельные статьи о инструментировании [облачных служб Azure](./cloudservices.md).)
 
 
 ![Снимок экрана App Insights: графики, содержащие сведения о неудачных запросах, времени отклика сервера и запросов сервера](./media/monitor-performance-live-website-now/overview-graphs.png)
@@ -39,13 +39,13 @@ ms.locfileid: "86499534"
 
 |  | Во время сборки | Во время выполнения |
 | --- | --- | --- |
-| **Запросы, & исключения** |Да |Да |
-| **[Более подробные исключения](../../azure-monitor/app/asp-net-exceptions.md)** | |Да |
-| **[Диагностика зависимостей](../../azure-monitor/app/asp-net-dependencies.md)** |На платформе .NET 4.6 или более поздней, неполные сведения |Да, полные сведения: коды результатов, текст команд SQL, HTTP-команда|
-| **[Счетчики производительности системы](../../azure-monitor/app/performance-counters.md)** |Да |Да |
+| **Запросы, & исключения** |да |Да |
+| **[Более подробные исключения](./asp-net-exceptions.md)** | |Да |
+| **[Диагностика зависимостей](./asp-net-dependencies.md)** |На платформе .NET 4.6 или более поздней, неполные сведения |Да, полные сведения: коды результатов, текст команд SQL, HTTP-команда|
+| **[Счетчики производительности системы](./performance-counters.md)** |да |Да |
 | **[API для пользовательской телеметрии][api]** |Да |Нет |
-| **[Интеграция журнала трассировки](../../azure-monitor/app/asp-net-trace-logs.md)** |Да |Нет |
-| **[Просмотр страницы & данных пользователя](../../azure-monitor/app/javascript.md)** |Да |Нет |
+| **[Интеграция журнала трассировки](./asp-net-trace-logs.md)** |Да |Нет |
+| **[Просмотр страницы & данных пользователя](./javascript.md)** |Да |Нет |
 | **Требуется повторная сборка кода** |Да | Нет |
 
 
@@ -70,7 +70,7 @@ ms.locfileid: "86499534"
 
 ## <a name="customize-monitoring-options"></a>Настройка параметров мониторинга
 
-Если включить Application Insights, в веб-приложение будут добавлены библиотеки DLL и файл ApplicationInsights.config. Вы можете [отредактировать CONFIG-файл](../../azure-monitor/app/configuration-with-applicationinsights-config.md), чтобы изменить некоторые параметры.
+Если включить Application Insights, в веб-приложение будут добавлены библиотеки DLL и файл ApplicationInsights.config. Вы можете [отредактировать CONFIG-файл](./configuration-with-applicationinsights-config.md), чтобы изменить некоторые параметры.
 
 ## <a name="when-you-re-publish-your-app-re-enable-application-insights"></a>При повторной публикации приложения необходимо повторно включить Application Insights
 
@@ -106,7 +106,7 @@ ms.locfileid: "86499534"
 
 ### <a name="cant-connect-no-telemetry"></a>Проблемы с подключением? Отсутствие данных телеметрии
 
-* Чтобы монитор состояний работал, в брандмауэре сервера необходимо открыть [некоторые исходящие порты](../../azure-monitor/app/ip-addresses.md#outgoing-ports) .
+* Чтобы монитор состояний работал, в брандмауэре сервера необходимо открыть [некоторые исходящие порты](./ip-addresses.md#outgoing-ports) .
 
 ### <a name="unable-to-login"></a>Не удалось войти в систему
 
@@ -173,12 +173,12 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 
 * Ознакомьтесь с дополнительными [сведениями об устранении неполадок][qna].
 
-## <a name="system-requirements"></a>Требования к системе
+## <a name="system-requirements"></a>Системные требования
 Операционные системы, которые поддерживаются для монитора состояний Application Insights на сервере:
 
-* Windows Server 2008
-* Windows Server 2008 R2
-* Windows Server 2012
+* Windows Server 2008
+* Windows Server 2008 R2
+* Windows Server 2012
 * Windows Server 2012 R2.
 * Windows Server 2016
 
@@ -261,7 +261,7 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
 ### <a name="when-do-i-use-status-monitor"></a>В каких случаях нужно использовать монитор состояния?
 
 * Для инструментирования любого веб-приложения на сервере IIS (даже если оно уже запущено).
-* Чтобы включить дополнительные данные телеметрии для веб-приложений, [созданных с помощью пакета SDK для Application Insights](../../azure-monitor/app/asp-net.md) во время компиляции. 
+* Чтобы включить дополнительные данные телеметрии для веб-приложений, [созданных с помощью пакета SDK для Application Insights](./asp-net.md) во время компиляции. 
 
 ### <a name="can-i-close-it-after-it-runs"></a>Можно ли его закрыть после выполнения?
 
@@ -303,9 +303,9 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
  * вызовы зависимостей (.NET 4.5) и возвращаемые значения в вызовах зависимостей (.NET 4.6);
  * значения трассировки стека исключений.
 
-[Дополнительные сведения](https://apmtips.com/posts/2016-11-18-how-application-insights-status-monitor-not-monitors-dependencies/)
+[Подробнее](https://apmtips.com/posts/2016-11-18-how-application-insights-status-monitor-not-monitors-dependencies/)
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
@@ -319,7 +319,7 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
 
 Просмотр телеметрии:
 
-* [Изучите метрики](../../azure-monitor/platform/metrics-charts.md), чтобы отслеживать производительность и использование.
+* [Изучите метрики](../platform/metrics-charts.md), чтобы отслеживать производительность и использование.
 * [Выполняйте поиск событий и журналов][diagnostic] для диагностики неполадок.
 * [Аналитика](../log-query/log-query-overview.md) для создания расширенных запросов.
 
@@ -331,11 +331,12 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
 
 <!--Link references-->
 
-[api]: ../../azure-monitor/app/api-custom-events-metrics.md
+[api]: ./api-custom-events-metrics.md
 [availability]: monitor-web-app-availability.md
-[client]: ../../azure-monitor/app/javascript.md
-[diagnostic]: ../../azure-monitor/app/diagnostic-search.md
-[greenbrown]: ../../azure-monitor/app/asp-net.md
+[client]: ./javascript.md
+[diagnostic]: ./diagnostic-search.md
+[greenbrown]: ./asp-net.md
 [qna]: ../faq.md
-[roles]: ../../azure-monitor/app/resources-roles-access-control.md
-[usage]: ../../azure-monitor/app/javascript.md
+[roles]: ./resources-roles-access-control.md
+[usage]: ./javascript.md
+

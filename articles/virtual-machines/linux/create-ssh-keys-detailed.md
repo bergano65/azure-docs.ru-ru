@@ -3,15 +3,15 @@ title: Подробные инструкции по созданию пары к
 description: Узнайте, как создать пару из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure и как управлять этими ключами.
 author: cynthn
 ms.service: virtual-machines-linux
-ms.topic: article
+ms.topic: how-to
 ms.date: 12/06/2019
 ms.author: cynthn
-ms.openlocfilehash: 8c826f5e0e36d693dd3ba98640bceae228ba34e8
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: ebce641aa7cb59deaf74490fb934b3f1536911a9
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119214"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87372779"
 ---
 # <a name="detailed-steps-create-and-manage-ssh-keys-for-authentication-to-a-linux-vm-in-azure"></a>Подробные инструкции. Создание ключей SSH для аутентификации на виртуальной машине Linux в Azure и управление этими ключами 
 С помощью пары ключей Secure Shell (SSH) в Azure можно создать виртуальную машину Linux, по умолчанию использующую эти ключи для аутентификации, что позволяет обойтись без паролей для входа. Виртуальные машины, созданные с помощью портала Azure, Azure CLI, шаблонов Resource Manager или других инструментов, при развертывании могут включать в себя собственный открытый ключ SSH, который используется для настройки аутентификации на основе ключей SSH для SSH-подключений. 

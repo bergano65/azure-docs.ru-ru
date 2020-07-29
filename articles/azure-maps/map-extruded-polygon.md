@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.custom: codepen
-ms.openlocfilehash: 11d4d9a6f9afee801b4f6bb4d764efe9365ae8e7
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.custom: codepen, devx-track-javascript
+ms.openlocfilehash: cd12242367c6f3b5b2c64df28f7f5e52cf1a4f97
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87130432"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282880"
 ---
 # <a name="add-a-polygon-extrusion-layer-to-the-map"></a>Добавление слоя объема фигуры многоугольника к карте
 
@@ -45,7 +45,7 @@ ms.locfileid: "87130432"
 
 ## <a name="add-a-circle-to-the-map"></a>Добавление круга на карту
 
-Azure Maps использует расширенную версию схемы геоjson, которая предоставляет определение для кругов, как указано [здесь](https://docs.microsoft.com/azure/azure-maps/extend-geojson#circle). Вытянутый круг может быть визуализирован на карте путем создания `point` функции со `subType` свойством `Circle` и пронумерованным `Radius` свойством, представляющим радиус в **метрах**. Например.
+Azure Maps использует расширенную версию схемы геоjson, которая предоставляет определение для кругов, как указано [здесь](https://docs.microsoft.com/azure/azure-maps/extend-geojson#circle). Вытянутый круг может быть визуализирован на карте путем создания `point` функции со `subType` свойством `Circle` и пронумерованным `Radius` свойством, представляющим радиус в **метрах**. Например:
 
 ```Javascript
 {

@@ -8,12 +8,13 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 261202173a0692c66a24091b2173f5d4fe271058
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 4c00639c02f8834a24a3828ac5b8ba828d0e1733
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87129514"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282829"
 ---
 # <a name="use-the-drawing-tools-module"></a>Использование модуля средств рисования
 
@@ -30,7 +31,7 @@ ms.locfileid: "87129514"
         <script src="https://atlas.microsoft.com/sdk/javascript/drawing/0/atlas-drawing.min.js"></script>
         ```
 
-    - Также можно загрузить модуль средств рисования для исходного кода веб-пакета SDK Azure Maps с помощью пакета [Azure-Maps-Drawing-Tools](https://www.npmjs.com/package/azure-maps-drawing-tools) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Используйте следующую команду:
+    - Также можно загрузить модуль средств рисования для исходного кода веб-пакета SDK Azure Maps с помощью пакета [Azure-Maps-Drawing-Tools](https://www.npmjs.com/package/azure-maps-drawing-tools) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Используйте эту команду:
     
         > **NPM. Установка Azure-Maps-Drawing-Tools**
     

@@ -3,15 +3,15 @@ title: Развертывание IBM DB2 pureScale в Azure
 description: Узнайте, как развернуть пример архитектуры, который недавно использовался для переноса данных предприятия из среды IBM DB2 на z/OS в IBM DB2 pureScale в Azure.
 author: njray
 ms.service: virtual-machines-linux
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/09/2018
 ms.author: edprice
-ms.openlocfilehash: 7e2ec4bfe04112d300a63e6326f0391968e385f7
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 17ea965758150adb72d8e8f9fee9937bd5387a48
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86510741"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87371929"
 ---
 # <a name="deploy-ibm-db2-purescale-on-azure"></a>Развертывание IBM DB2 pureScale в Azure
 
@@ -75,7 +75,7 @@ ms.locfileid: "86510741"
 |---------------------------|----------------------------------------------|-------------------------------------------------------------------------------------------------------|
 | Экран приветствия                   |                                              | "New Install" (Новая установка)                                                                                           |
 | "Choose a Product" (Выбор продукта)          |                                              | "DB2 Version 11.1.3.3. Server Editions with Db2 pureScale" (Db2 версии 11.1.3.3, серверные выпуски с Db2 pureScale)                                              |
-| Параметр Configuration             | Каталог                                    | /data1/opt/ibm/db2/V11.1                                                                              |
+| Конфигурация             | Каталог                                    | /data1/opt/ibm/db2/V11.1                                                                              |
 |                           | "Select the installation type" (Выбор типа установки)                 | "Typical" (Стандартный)                                                                                               |
 |                           | "I agree to the IBM terms" (Я принимаю условия IBM)                     | Флажок установлен                                                                                               |
 | "Instance Owner" (Владелец экземпляра)            | "Existing User For Instance, User name" (Существующий пользователь экземпляра, имя пользователя)        | DB2sdin1                                                                                              |

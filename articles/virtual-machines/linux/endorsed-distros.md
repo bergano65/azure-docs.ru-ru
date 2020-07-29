@@ -10,15 +10,15 @@ ms.assetid: 2777a526-c260-4cb9-a31a-bdfe1a55fffc
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
-ms.topic: article
+ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: guybo
-ms.openlocfilehash: a2edc8d0116778e292f0e44761100d3c1e9212ff
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: fd21170c4edc1ed0587ea4d4e067e61590530623
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86527393"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87283322"
 ---
 # <a name="endorsed-linux-distributions-on-azure"></a>Рекомендуемые дистрибутивы Linux в Azure
 
@@ -59,7 +59,7 @@ Azure тесно работает с различными дистрибутив
 - [SLES ядро, настроенное Azure](https://www.suse.com/c/a-different-builtin-kernel-for-azure-on-demand-images/)
 - [Ядро, настраиваемое Azure Ubuntu](https://blog.ubuntu.com/2017/09/21/microsoft-and-canonical-increase-velocity-with-azure-tailored-kernel)
 
-## <a name="partners"></a>Партнеры
+## <a name="partners"></a>Участники
 
 ### <a name="coreos"></a>CoreOS
 
@@ -75,7 +75,7 @@ CoreOS по [окончании срока жизни](https://coreos.com/os/eol
 
 Credativ представляет собой независимую компанию, оказывающую консалтинговые и прочие услуги, которая специализируется на разработке и реализации профессиональных решений с помощью бесплатного программного обеспечения. Эксперты Credative получили международное признание многих использующих наши услуги ИТ-отделов как ведущие специалисты по открытому коду. Сейчас Credativ совместно с Майкрософт готовит соответствующие образы Debian для Debian 8 (Jessie) и версий, предшествующих Debian 7 (Wheezy). Они специально разработаны для работы в Azure, и ими можно легко управлять с помощью этой платформы. Credativ также поддерживает долгосрочное обслуживание и обновление образов Debian для Azure с помощью своих центров поддержки открытого кода.
 
-### <a name="oracle"></a>Oracle
+### <a name="oracle"></a>Oracle;
 
 [https://www.oracle.com/technetwork/topics/cloud/faq-1963009.html](https://www.oracle.com/technetwork/topics/cloud/faq-1963009.html)
 

@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 07/09/2020
-ms.openlocfilehash: 0956a38349ef7bc7571dfac2f3722dd9fea425a3
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 97f9635cf6bba9ee276e6775c1718a5d83e9af3e
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86201647"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282132"
 ---
 # <a name="ssltls-connectivity-in-azure-database-for-mysql"></a>Подключение SSL/TLS в базе данных Azure для MySQL
 
@@ -28,9 +28,9 @@ ms.locfileid: "86201647"
 
 Строки подключения для различных языков программирования отображаются на портале Azure. Они включают необходимые параметры SSL для подключения к базе данных. На портале Azure выберите свой сервер. В разделе **Параметры** выберите **Строки подключения**. Значение параметра SSL зависит от соединителя. Например, может использоваться "ssl=true", "sslmode=require", "sslmode=required" или другой вариант.
 
-В некоторых случаях для безопасного подключения приложениям требуется локальный файл сертификата, созданный из файла сертификата доверенного центра сертификации (ЦС). Сертификат для подключения к серверу базы данных Azure для MySQL находится в папке https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem . 
+В некоторых случаях для безопасного подключения приложениям требуется локальный файл сертификата, созданный из файла сертификата доверенного центра сертификации (ЦС). Сейчас клиенты могут **использовать только** предопределенный сертификат для подключения к серверу базы данных Azure для MySQL, расположенному по адресу https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem . 
 
-См. следующие ссылки на сертификаты для серверов в облаках независимых: [Azure для государственных организаций](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem), [Azure для Китая](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem)и Azure для [Германии](https://www.d-trust.net/cgi-bin/D-TRUST_Root_Class_3_CA_2_2009.crt).
+Аналогично, следующие ссылки указывают на сертификаты для серверов в облаках независимых: [Azure для государственных организаций](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem), [Azure для Китая](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem)и [Azure для Германии](https://www.d-trust.net/cgi-bin/D-TRUST_Root_Class_3_CA_2_2009.crt).
 
 Чтобы узнать, как включить или отключить SSL-соединение при разработке приложения, ознакомьтесь со [статьей, посвященной настройке SSL](howto-configure-ssl.md).
 

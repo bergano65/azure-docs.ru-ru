@@ -1,6 +1,5 @@
 ---
-title: Создание конечных точек веб-службы
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): создание конечных точек веб-службы в Azure'
 description: Создайте конечные точки веб-службы в Машинное обучение Azure Studio (классическая модель). Каждая конечная точка в веб-службе адресуется, регулируется и управляется независимо.
 services: machine-learning
 ms.service: machine-learning
@@ -10,13 +9,17 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/15/2019
-ms.openlocfilehash: e465d739c485009f68d6d5c5ecbb0850d73a6e60
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ac5fa2a4eb534a4cc6e7bf9542bfb250f216401c
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84696428"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282506"
 ---
 # <a name="create-endpoints-for-deployed-azure-machine-learning-studio-classic-web-services"></a>Создание конечных точек для развернутых веб-служб Машинное обучение Azure Studio (классическая модель)
+
+**применимо к:** ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-azure-ml.md) ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) 
+
 
 > [!NOTE]
 > В этом разделе описываются методы, применимые к **классической** веб-службе машинное обучение.
@@ -33,7 +36,7 @@ ms.locfileid: "84696428"
 
 1. В Машинное обучение Studio (классическая модель) в колонке навигации слева щелкните веб-службы.
 2. В нижней части панели мониторинга веб-службы щелкните **Управление конечными точками**. Портал веб-служб Машинного обучения Azure откроется на странице конечных точек для веб-службы.
-3. Нажмите кнопку **New** (Создать).
+3. Нажмите кнопку **Создать**.
 4. Введите имя и описание новой конечной точки. Имена конечных точек должны и состоять из строчных букв или цифр и не могут содержать более 24 символов. Выберите уровень ведения журнала и укажите, включать ли образцы данных. Дополнительные сведения о ведении журнала см. в статье [Включение ведения журнала для веб-служб машинное обучение](web-services-logging.md).
 
 ## <a name="scale-a-web-service-by-adding-additional-endpoints"></a><a id="scaling"></a> Масштабирование веб-службы путем добавления дополнительных конечных точек

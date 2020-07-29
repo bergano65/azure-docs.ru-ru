@@ -1,6 +1,5 @@
 ---
-title: Создание рабочей области
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): создание рабочей области — Azure'
 description: Чтобы использовать Машинное обучение Azure Studio (классическая модель), необходимо иметь рабочую область Машинное обучение Studio (классическая). Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
 services: machine-learning
 ms.service: machine-learning
@@ -10,13 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 12/07/2017
-ms.openlocfilehash: ede84fefed7db9d2afcc0ad65833ab2c0fefbc03
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c30797ad757fa12c4dfdf4749536c1095259eb58
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84696530"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87283526"
 ---
-# <a name="create-and-share-an-azure-machine-learning-studio-classic-workspace"></a>Создание и совместное использование рабочей области Машинное обучение Azure Studio (классическая модель)
+# <a name="create-and-share-an-machine-learning-studio-classic-workspace"></a>Создание и совместное использование рабочей области Машинное обучение Studio (классическая модель)
+
+**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
 
 Чтобы использовать Машинное обучение Azure Studio (классическая модель), необходимо иметь рабочую область Машинное обучение Studio (классическая). Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
 
@@ -127,6 +129,6 @@ ms.locfileid: "84696530"
 После удаления файлов cookie перезапустите браузер и перейдите на страницу [студия машинного обучения Microsoft Azure (классическая модель)](https://studio.azureml.net) . Введите данные той же учетной записи Майкрософт, использованной для создания рабочей области.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об управлении рабочей областью см. в статье [Управление рабочей областью машинное обучение Azure Studio (классическая модель)](manage-workspace.md).

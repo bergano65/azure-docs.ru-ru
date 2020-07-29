@@ -11,14 +11,15 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/10/2020
+ms.date: 07/28/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 4ee6a3c09d24d6968227ef4215000888c5f4af05
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e27fe0589498de13f5eb6e17f8869bb9d7352a09
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84791016"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87372082"
 ---
 # <a name="list-azure-role-assignments-using-azure-powershell"></a>Вывод списка назначений ролей Azure с помощью Azure PowerShell
 
@@ -29,7 +30,7 @@ ms.locfileid: "84791016"
 > [!NOTE]
 > Если в вашей организации есть функции управления с использованием внешнего источника для поставщика услуг, использующего [Управление делегированными ресурсами Azure](../lighthouse/concepts/azure-delegated-resource-management.md), назначения ролей, предоставленные этим поставщиком услуг, не будут показаны здесь.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [PowerShell в Azure Cloud Shell](/azure/cloud-shell/overview) или [Azure PowerShell](/powershell/azure/install-az-ps)
 
@@ -139,6 +140,26 @@ Get-AzRoleAssignment -Scope /providers/Microsoft.Management/managementGroups/<gr
 
 ```Example
 PS C:\> Get-AzRoleAssignment -Scope /providers/Microsoft.Management/managementGroups/marketing-group
+```
+
+## <a name="list-role-assignments-for-a-resource"></a>Вывод списка назначений ролей для ресурса
+
+Чтобы вывести список назначений ролей для определенного ресурса, используйте командлет [Get-азролеассигнмент](/powershell/module/az.resources/get-azroleassignment) и `-Scope` параметр. Область будет отличаться в зависимости от ресурса. Чтобы получить область, можно запустить `Get-AzRoleAssignment` без параметров, чтобы вывести список всех назначений ролей, а затем найти область, которую нужно вывести в список.
+
+```azurepowershell
+Get-AzRoleAssignment -Scope "/subscriptions/<subscription_id>/resourcegroups/<resource_group_name>/providers/<provider_name>/<resource_type>/<resource>
+```
+
+В следующем примере показано, как получить список назначений ролей для учетной записи хранения. Обратите внимание, что эта команда также выводит список назначений ролей в более высоких областях, таких как группы ресурсов и подписки, которые применяются к этой учетной записи хранения.
+
+```Example
+PS C:\> Get-AzRoleAssignment -Scope "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/storage-test-rg/providers/Microsoft.Storage/storageAccounts/storagetest0122"
+```
+
+Если вы хотите просто перечислить назначения ролей, назначенные непосредственно в ресурсе, можно использовать команду [Where-Object](/powershell/module/microsoft.powershell.core/where-object) для фильтрации списка.
+
+```Example
+PS C:\> Get-AzRoleAssignment | Where-Object {$_.Scope -eq "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/storage-test-rg/providers/Microsoft.Storage/storageAccounts/storagetest0122"}
 ```
 
 ## <a name="list-role-assignments-for-classic-service-administrator-and-co-administrators"></a>Вывод списка назначений ролей классического администратора и соадминистраторов службы

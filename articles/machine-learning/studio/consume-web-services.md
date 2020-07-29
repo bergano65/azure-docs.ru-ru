@@ -1,6 +1,5 @@
 ---
-title: Использование веб-службы
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): использование веб-служб в Azure'
 description: После развертывания службы машинного обучения из Машинное обучение Azure Studio (классической) веб-службу RESTFUL можно использовать как службу запросов и ответов в режиме реального времени либо как службу пакетного выполнения.
 services: machine-learning
 ms.service: machine-learning
@@ -10,13 +9,17 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18, tracking-python
 ms.date: 05/29/2020
-ms.openlocfilehash: 8d78d26298790e033f006fd3f37567caf97f97ec
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ec88d501fbc262275484f3abaeb7326d963a16e5
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84696632"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282523"
 ---
-# <a name="how-to-consume-an-azure-machine-learning-studio-classic-web-service"></a>Как использовать веб-службу Машинное обучение Azure Studio (классическая модель)
+# <a name="how-to-consume-a-machine-learning-studio-classic-web-service"></a>Как использовать веб-службу Машинное обучение Studio (классическая модель)
+
+**применимо к:** ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-azure-ml.md) ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) 
+
 
 После развертывания прогнозной модели Машинное обучение Azure Studio (классической) в качестве веб-службы можно использовать REST API для отправки данных и получения прогнозов. Данные можно отправлять в режиме реального времени или пакетном режиме.
 

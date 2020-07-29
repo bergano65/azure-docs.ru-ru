@@ -11,12 +11,13 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/13/2020
 ms.author: iainfou
-ms.openlocfilehash: 7eaf8b6b5cddc8a01b59cda0cafc819e06a5ec7c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: fasttrack-edit
+ms.openlocfilehash: d01d961a5d5b86f74bb785c3fddfa09843aa060c
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87005010"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87283152"
 ---
 # <a name="join-an-ubuntu-linux-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Присоединение виртуальной машины Ubuntu Linux к управляемому домену доменных служб Azure Active Directory
 
@@ -138,7 +139,7 @@ sudo apt-get install krb5-user samba sssd sssd-tools libnss-sss libpam-sss ntp n
     Опять же, имя управляемого домена должно вводиться в верхнем регистре. В следующем примере `contosoadmin@aaddscontoso.com` для инициализации Kerberos используется учетная запись с именем. Введите собственную учетную запись пользователя, которая является частью управляемого домена:
 
     ```console
-    kinit contosoadmin@AADDSCONTOSO.COM
+    kinit -V contosoadmin@AADDSCONTOSO.COM
     ```
 
 1. Наконец, присоедините виртуальную машину к управляемому домену с помощью `realm join` команды. Используйте ту же учетную запись пользователя, которая входит в управляемый домен, указанный в предыдущей `kinit` команде, например `contosoadmin@AADDSCONTOSO.COM` :
@@ -182,7 +183,7 @@ rdns=false
 1. Чтобы применить изменение, перезапустите службу SSSD:
 
     ```console
-    sudo service sssd restart
+    sudo systemctl restart sssd
     ```
 
 ## <a name="configure-user-account-and-group-settings"></a>Настройка параметров учетной записи пользователя и группы

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 07/23/2020
 ms.author: sukishen
-ms.openlocfilehash: d9a8b44cc6e78eda4a3e0b18d59d2372e7129c05
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 69129ad0ecda6b5893a5f758b8cac9a30dd0b093
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87124189"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282115"
 ---
 # <a name="about-azure-networking-msp-partners"></a>Сведения о партнерах программы для поставщиков сетевых устройств и служб Azure (MSP)
 
@@ -40,6 +40,7 @@ ms.locfileid: "87124189"
 |[NTT Data](https://us.nttdata.com/en/digital/cloud-transformation)|[Управляемые службы: реализация (10 нед.)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/nttdata-2932930.managed_service)|||||
 |[Equinix](https://www.equinix.com/)|[Семинар по оптимизированной для облака глобальной сети](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/equinix.cloudoptimizedwan?tab=Overview)|[Семинар по стратегии подключения ExpressRoute](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/equinix.expressroutestrategy?tab=Overview)||||
 |[IIJ](https://www.iij.ad.jp/biz/cloudex/)|[Реализация ExpressRoute: брифинг (1 ч)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/internet_initiative_japan_inc.iij_cxm_consulting)|[ExpressRoute: реализация (2 нед.)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/internet_initiative_japan_inc.iij_cxmer_consulting)||||
+|[Федеративная беспроводная сеть](https://www.federatedwireless.com/caas/)||||[Федеративное беспроводное подключение как услуга](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/federatedwireless1580839623708.fw_caas?tab=Overview)|
 |[Infosys](https://www.infosys.com/services/microsoft-cloud-business/pages/index.aspx)|[Infosys Integrate+ для Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/infosysltd.infosys-integrate-for-azure?tab=Overview)|||||
 |[Interxion](https://www.interxion.com/products/interconnection/cloud-connect/support-your-cloud-strategy/)|[Сеть Azure: оценка (5 дн.)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/interxionhq.inxn_azure_networking_assessment)|||||
 |[Liquid Telecom](https://liquidcloud.africa/azure-networking)|[Готовность к облаку: оценка (2 ч)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/liquidtelecommunicationsoperationslimited.liquid_cloud_readiness_assessment)|||||
@@ -54,7 +55,7 @@ ms.locfileid: "87124189"
 |[Vigilant IT](https://vigilant.it/manage-cloud-service/)|[Проверка работоспособности Azure: оценка (5 дн.)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/vigilant-it.ahc01)|[ExpressRoute: реализация (5 дн.)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/vigilant-it.erd01)|||
 |[Vandis](https://www.vandis.com/microsoft-azure-practice/)||[Управляемая служба ExpressRoute от Vandis](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_expressroute?tab=Overview)|[Управляемая глобальная виртуальная сеть Vandis от Fortinet](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_vwan_powered_by_fortinet?tab=Overview); [Управляемая глобальная виртуальная сеть Vandis от Palo Alto Networks](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_vwan_powered_by_palo_alto_networks?tab=Overview)|
 
-Azure Marketplace предлагает управляемые службы ExpressRoute, виртуальные глобальные сети, службы безопасности и зоны частных пограничных услуг со следующих партнеров по сети Azure для сетей MSP: [Амдокс](https://www.amdocs.com/);  [Подразделение Telekom](https://www.telekom.com/en/media/media-information/archive/deutsche-telekom-offers-managed-network-services-for-microsoft-azure-598406);  [Доступ IX](https://www.ixreach.com/services/sdn-cloud-connect/);  В [облаке](https://intercloud.com/partners/microsoft-azure/);  [Кинкс](https://www.kinx.net/service/cloud/?lang=en); [Омниклаудс](https://omniclouds.com/);  [Сежонг телекоммуникации](https://www.sejongtelecom.net/en/pages/service/cloud_ms); [Федеративная беспроводная сеть](https://www.federatedwireless.com/caas/)
+Azure Marketplace предлагает управляемые службы ExpressRoute, виртуальные глобальные сети, службы безопасности и зоны частных пограничных услуг со следующих партнеров по сети Azure для сетей MSP: [Амдокс](https://www.amdocs.com/);  [Подразделение Telekom](https://www.telekom.com/en/media/media-information/archive/deutsche-telekom-offers-managed-network-services-for-microsoft-azure-598406);  [Доступ IX](https://www.ixreach.com/services/sdn-cloud-connect/);  В [облаке](https://intercloud.com/partners/microsoft-azure/);  [Кинкс](https://www.kinx.net/service/cloud/?lang=en); [Омниклаудс](https://omniclouds.com/);  [Сежонг телекоммуникации](https://www.sejongtelecom.net/en/pages/service/cloud_ms);
 
 ## <a name="expressroute-partners"></a><a name="expressroute"></a>Партнеры ExpressRoute
 

@@ -3,15 +3,15 @@ title: Создание и передача виртуального жестк�
 description: Узнайте, как создать и передать виртуальный жесткий диск (VHD-файл) Azure, содержащий операционную систему Ubuntu Linux.
 author: danielsollondon
 ms.service: virtual-machines-linux
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/06/2020
 ms.author: danis
-ms.openlocfilehash: 7a0d4d0a1c36f901ea38c5c73d3aa7a2cf49e02f
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 8b34e266214285f6483acca59050780810e62345
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86502696"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87373357"
 ---
 # <a name="prepare-an-ubuntu-virtual-machine-for-azure"></a>Подготовка виртуальной машины Ubuntu для Azure
 

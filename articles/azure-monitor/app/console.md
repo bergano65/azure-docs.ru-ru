@@ -4,25 +4,25 @@ description: Отслеживайте доступность, производи
 ms.topic: conceptual
 ms.date: 05/21/2020
 ms.reviewer: lmolkova
-ms.openlocfilehash: 955988cd16af5269c474061cf60fb18a040909e3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 28f86e32dd73e25079ca685538fd0cb6f351b2d9
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091238"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87310469"
 ---
 # <a name="application-insights-for-net-console-applications"></a>Application Insights для консольных приложений .NET
 
-[Application Insights](../../azure-monitor/app/app-insights-overview.md) позволяет отслеживать доступность, производительность и использование вашего веб-приложения.
+[Application Insights](./app-insights-overview.md) позволяет отслеживать доступность, производительность и использование вашего веб-приложения.
 
 Вам потребуется подписка [Microsoft Azure](https://azure.com). Войдите с помощью учетной записи Майкрософт, которую вы, возможно, уже используете для Windows, XBox Live или других облачных служб Майкрософт. Возможно, у вашей группы есть подписка организации Azure: попросите ее владельца добавить вас к ней с помощью вашей учетной записи Майкрософт.
 
 > [!NOTE]
-> Для любых консольных приложений *настоятельно рекомендуется* использовать пакет [Microsoft. ApplicationInsights. воркерсервице](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) и [связанные с ним](../../azure-monitor/app/worker-service.md) инструкции. Этот пакет предназначен [`NetStandard2.0`](/dotnet/standard/net-standard) для использования и поэтому может использоваться в .NET Core 2,1 или более поздней версии, а также .NET Framework 4.7.2 или более поздней версии.
+> Для любых консольных приложений *настоятельно рекомендуется* использовать пакет [Microsoft. ApplicationInsights. воркерсервице](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) и [связанные с ним](./worker-service.md) инструкции. Этот пакет предназначен [`NetStandard2.0`](/dotnet/standard/net-standard) для использования и поэтому может использоваться в .NET Core 2,1 или более поздней версии, а также .NET Framework 4.7.2 или более поздней версии.
 
 ## <a name="getting-started"></a>Начало работы
 
-* На [портале Azure](https://portal.azure.com)[создайте ресурс Application Insights](../../azure-monitor/app/create-new-resource.md). Для параметра типа приложения выберите приложение **Общий**.
+* На [портале Azure](https://portal.azure.com)[создайте ресурс Application Insights](./create-new-resource.md). Для параметра типа приложения выберите приложение **Общий**.
 * Сделайте копию ключа инструментирования. Найдите ключ в раскрывающемся списке **Основные компоненты** нового ресурса, который вы создали.
 * Установите последнюю версию пакета [Microsoft.ApplicationInsights](https://www.nuget.org/packages/Microsoft.ApplicationInsights).
 * Прежде чем отслеживать телеметрию, задайте ключ инструментирования в коде или переменную среды APPINSIGHTS_INSTRUMENTATIONKEY. После этого вы сможете отслеживать телеметрию вручную и просматривать данные телеметрии на портале Azure.
@@ -96,7 +96,7 @@ var telemetryClient = new TelemetryClient(configuration);
 
 ### <a name="configuring-telemetry-collection-from-code"></a>Настройка сбора данных телеметрии с помощью кода
 > [!NOTE]
-> Чтение файла конфигурации не поддерживается в .NET Core. Рассмотрите использование [пакета SDK Application Insights для ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
+> Чтение файла конфигурации не поддерживается в .NET Core. Рассмотрите использование [пакета SDK Application Insights для ASP.NET Core](./asp-net-core.md)
 
 * При запуске приложения создайте и настройте экземпляр `DependencyTrackingTelemetryModule`. Он должен быть одноэлементным и сохраняться в течение всего времени существования приложения.
 
@@ -207,5 +207,6 @@ namespace ConsoleApp
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Отслеживайте зависимости](../../azure-monitor/app/asp-net-dependencies.md), чтобы выяснить, что стало причиной медленной работы — REST, SQL или другие внешние ресурсы.
-* [Используйте API](../../azure-monitor/app/api-custom-events-metrics.md) для отправки собственных событий и метрик для более четкого представления о производительности и использовании приложения.
+* [Отслеживайте зависимости](./asp-net-dependencies.md), чтобы выяснить, что стало причиной медленной работы — REST, SQL или другие внешние ресурсы.
+* [Используйте API](./api-custom-events-metrics.md) для отправки собственных событий и метрик для более четкого представления о производительности и использовании приложения.
+

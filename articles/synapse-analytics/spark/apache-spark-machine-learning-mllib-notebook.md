@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.subservice: machine-learning
 ms.date: 04/15/2020
 ms.author: euang
-ms.openlocfilehash: 8cd189bf4037d42348d9a94c47cf0122e63af58f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b7ae2e3045b8f6e56b756ac1b2a4233ac8af9688
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089300"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87373459"
 ---
 # <a name="build-a-machine-learning-app-with-apache-spark-mllib-and-azure-synapse-analytics"></a>Создание приложения машинного обучения с помощью Apache Spark MLlib и Azure Synapse Analytics
 
@@ -225,7 +225,7 @@ train_data_df, test_data_df = encoded_final_df.randomSplit([trainingFraction, te
 Теперь, когда имеются два кадра данных, необходимо создать формулу модели и выполнить ее для обучающего кадра данных, а затем выполнить проверку по тестовому кадру данных. Следует поэкспериментировать с различными версиями формулы модели, чтобы просмотреть влияние различных сочетаний.
 
 > [!Note]
-> Чтобы сохранить модель, потребуется роль RBAC "Участник для данных BLOB-объектов хранилища". В своей учетной записи хранения перейдите к элементу "Управление доступом (IAM)" и выберите "Добавить назначение ролей". Назначьте роль RBAC "Участник для данных BLOB-объектов хранилища" серверу базы данных SQL. Этот шаг могут выполнять только участники с правами владельца. Сведения о различных встроенных ролях для ресурсов Azure см. в этом [руководстве](../../role-based-access-control/built-in-roles.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+> Чтобы сохранить модель, потребуется роль RBAC "Участник для данных BLOB-объектов хранилища". В своей учетной записи хранения перейдите к элементу "Управление доступом (IAM)" и выберите "Добавить назначение ролей". Назначьте роль RBAC "Участник для данных BLOB-объектов хранилища" серверу базы данных SQL. Этот шаг могут выполнять только участники с правами владельца. Сведения о различных встроенных ролях Azure см. в этом [руководстве](../../role-based-access-control/built-in-roles.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
 ```python
 ## Create a new LR object for the model

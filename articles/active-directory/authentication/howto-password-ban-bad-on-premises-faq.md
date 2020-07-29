@@ -11,11 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16537ba72eb9f11abd8de47256150818c121a140
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 24db7981557cf76f9108a1dca37ea4c4c9f51951
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80652639"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87283084"
 ---
 # <a name="azure-ad-password-protection-on-premises-frequently-asked-questions"></a>Часто задаваемые вопросы о защите паролей Azure AD
 
@@ -148,7 +149,7 @@ Active Directory поддерживает возможность проверк�
 
 [Служба защиты паролей Azure AD теперь общедоступна.](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-AD-Password-Protection-is-now-generally-available/ba-p/377487)
 
-[Руководство по защите от фишинга электронной почты. часть 15. Реализация службы защиты паролей Microsoft Azure AD (для локальной среды).](https://blogs.technet.microsoft.com/cloudready/2018/10/14/email-phishing-protection-guide-part-15-implement-the-microsoft-azure-ad-password-protection-service-for-on-premises-too/)
+[Руководство по защите от фишинга электронной почты. часть 15. Реализация службы защиты паролей Microsoft Azure AD (для локальной среды).](http://kmartins.com/2018/10/14/email-phishing-protection-guide-part-15-implement-the-microsoft-azure-ad-password-protection-service-for-on-premises-too/)
 
 [Azure AD Password Protection and Smart Lockout are now in Public Preview!](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-AD-Password-Protection-and-Smart-Lockout-are-now-in-Public/ba-p/245423#M529) (Компонент "Защита паролей Azure AD" и интеллектуальная блокировка теперь предоставляются в общедоступной версии)
 
@@ -156,7 +157,7 @@ Active Directory поддерживает возможность проверк�
 
 Если вы хотите узнать больше о Защите паролей Azure AD и развертывании этого компонента в своей среде, вы можете воспользоваться проактивной службой Майкрософт, доступной для тех клиентов, которые заключили контракт на поддержку Premier или Единую поддержку. Эта служба называется Azure Active Directory: Защита паролем. Свяжитесь со своим техническим менеджером по работе с клиентами, чтобы получить дополнительные сведения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас есть вопрос о локальной службе защиты паролей Azure AD, который не освещается в этой статье, ниже вы можете отправить нам отзыв. Спасибо!
 

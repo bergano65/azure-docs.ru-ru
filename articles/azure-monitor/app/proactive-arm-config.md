@@ -6,12 +6,12 @@ author: harelbr
 ms.author: harelbr
 ms.date: 06/26/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 5a4cb788a24252a2de7b9d669b166b25ed48be1c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: aa8529abf3d7eea7d413c59ce62c93c7eb6c76d1
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87081599"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87309347"
 ---
 # <a name="manage-application-insights-smart-detection-rules-using-azure-resource-manager-templates"></a>Управление правилами интеллектуального обнаружения Application Insights с помощью шаблонов Azure Resource Manager
 
@@ -192,6 +192,7 @@ ms.locfileid: "87081599"
 
 Дополнительные сведения об автоматическом обнаружении.
 
-- [Аномальные сбои](../../azure-monitor/app/proactive-failure-diagnostics.md)
-- [Утечки памяти](../../azure-monitor/app/proactive-potential-memory-leak.md)
-- [Аномалии производительности](../../azure-monitor/app/proactive-performance-diagnostics.md)
+- [Аномальные сбои](./proactive-failure-diagnostics.md)
+- [Утечки памяти](./proactive-potential-memory-leak.md)
+- [Аномалии производительности](./proactive-performance-diagnostics.md)
+

@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
-ms.openlocfilehash: a49e5fbe9eac689b630a0f3b443729faf29cdb0d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 492f44353a9a43279afa4869640193f1baddd41c
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84974523"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87372881"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Руководство по устранению неполадок в обозревателе хранилищ Azure
 
@@ -67,9 +67,9 @@ ms.locfileid: "84974523"
 
 Для других типов ресурсов в настоящее время нет решения, связанного с RBAC. В качестве обходного решения можно запросить URI SAS для [подключения к ресурсу](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=linux#use-a-shared-access-signature-uri).
 
-### <a name="recommended-built-in-rbac-roles"></a>Рекомендуемые встроенные роли RBAC
+### <a name="recommended-azure-built-in-roles"></a>Рекомендуемые встроенные роли Azure
 
-Существует несколько встроенных ролей RBAC, которые могут предоставить разрешения, необходимые для использования Обозреватель службы хранилища. Ниже приведены некоторые из этих ролей.
+Существует несколько встроенных ролей Azure, которые могут предоставить разрешения, необходимые для использования Обозреватель службы хранилища. Ниже приведены некоторые из этих ролей.
 - [Владелец](/azure/role-based-access-control/built-in-roles#owner): управление всеми ресурсами, включая доступ к ресурсам. **Примечание**. Эта роль предоставит вам доступ к ключам.
 - [Участник](/azure/role-based-access-control/built-in-roles#contributor): управление всеми ресурсами без доступа к ресурсам. **Примечание**. Эта роль предоставит вам доступ к ключам.
 - [Читатель](/azure/role-based-access-control/built-in-roles#reader): чтение и вывод списка ресурсов.
@@ -100,7 +100,7 @@ ms.locfileid: "84974523"
 2. Выполните команду OpenSSL.
     * Windows: Откройте каталог установки, выберите **/bin/**, а затем дважды щелкните **openssl.exe**.
     * Mac и Linux: запустите `openssl` из терминала.
-3. Выполните `s_client -showcerts -connect microsoft.com:443`.
+3. Выполните команду `s_client -showcerts -connect microsoft.com:443`.
 4. Найдите самозаверяющие сертификаты. Если вы не знаете, какие сертификаты являются самозаверяющими, обратите внимание, что в любом месте субъект `("s:")` и издатель совпадают `("i:")` .
 5. При обнаружении самозаверяющих сертификатов для каждого из них скопируйте и вставьте все из (и включая) `-----BEGIN CERTIFICATE-----` `-----END CERTIFICATE-----` в новый CER-файл.
 6. Откройте обозреватель службы хранилища и перейдите к разделу **изменение**  >  **SSL-сертификатов**  >  **Импорт сертификатов**. Затем с помощью средства выбора файлов найдите, выберите и откройте созданные CER файлы.
@@ -243,12 +243,12 @@ ms.locfileid: "84974523"
 3. В зависимости от типа подключения, с которым возникла неполадка, найдите его ключ и скопируйте его значение в текстовый редактор. Значение представляет собой массив имен пользовательских соединений, как в следующем примере:
     * Учетные записи хранения
         * `StorageExplorer_CustomConnections_Accounts_v1`
-    * Контейнеры больших двоичных объектов
+    * контейнеров BLOB-объектов;
         * `StorageExplorer_CustomConnections_Blobs_v1`
         * `StorageExplorer_CustomConnections_Blobs_v2`
-    * Общие папки
+    * общих папок;
         * `StorageExplorer_CustomConnections_Files_v1`
-    * Очереди
+    * очередей;
         * `StorageExplorer_CustomConnections_Queues_v1`
     * Таблицы
         * `StorageExplorer_CustomConnections_Tables_v1`
@@ -342,7 +342,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
      sudo apt-get install -y dotnet-runtime-2.1
    ```
 
-# <a name="ubuntu-1804"></a>[Ubuntu 18.04](#tab/1804)
+# <a name="ubuntu-1804"></a>[Ubuntu 18.04](#tab/1804)
 
 1. Скачайте файл Обозреватель службы хранилища. tar. gz.
 2. Установите [среду выполнения .NET Core](https://docs.microsoft.com/dotnet/core/install/linux):
@@ -400,12 +400,12 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 ## <a name="open-in-explorer-from-the-azure-portal-doesnt-work"></a>"Открыть в проводнике" из портал Azure не работает
 
 Если кнопка **Открыть в обозревателе** на портал Azure не работает, убедитесь, что вы используете совместимый браузер. Следующие браузеры прошли проверку на совместимость:
-* Microsoft Edge
-* Mozilla Firefox
-* Google Chrome
+* Microsoft Edge;
+* Mozilla Firefox;
+* Google Chrome;
 * Microsoft Internet Explorer
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если ни одно из этих решений не работает, [откройте вопрос в GitHub](https://github.com/Microsoft/AzureStorageExplorer/issues). Это можно также сделать, нажав кнопку **сообщить об ошибке в GitHub** в левом нижнем углу.
 

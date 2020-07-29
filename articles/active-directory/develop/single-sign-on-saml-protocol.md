@@ -4,22 +4,22 @@ titleSuffix: Microsoft identity platform
 description: В этой статье описывается протокол единого входа SAML в Azure Active Directory
 services: active-directory
 documentationcenter: .net
-author: rwike77
+author: kenwith
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/18/2020
-ms.author: ryanwi
+ms.author: kenwith
 ms.custom: aaddev
-ms.reviewer: hirsin
-ms.openlocfilehash: a68c0248ce364be486610c406388586b69cbb3f4
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.reviewer: paulgarn
+ms.openlocfilehash: f3896bf795e3b1ca258f65fa2c6f4974f2115014
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86076952"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282999"
 ---
 # <a name="single-sign-on-saml-protocol"></a>Протокол единого входа SAML
 
@@ -48,8 +48,8 @@ xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| ID | Обязательное значение | Azure AD использует этот атрибут для заполнения атрибута `InResponseTo` возвращенного ответа. Идентификатор не должен начинаться с цифры, поэтому общая стратегия предусматривает добавление такой строки, как id, в начало строкового представления GUID. Например, `id6c1c178c166d486687be4aaf5e482730` — допустимый идентификатор. |
-| Версия | Обязательное значение | Этот параметр должен иметь значение **2.0**. |
+| ID | Требуется | Azure AD использует этот атрибут для заполнения атрибута `InResponseTo` возвращенного ответа. Идентификатор не должен начинаться с цифры, поэтому общая стратегия предусматривает добавление такой строки, как id, в начало строкового представления GUID. Например, `id6c1c178c166d486687be4aaf5e482730` — допустимый идентификатор. |
+| Версия | Требуется | Этот параметр должен иметь значение **2.0**. |
 | IssueInstant | Обязательно | Это строка DateTime со значением в формате всемирного времени (UTC) и с [преобразованием без потери данных ("o")](https://msdn.microsoft.com/library/az4se3k1.aspx). Azure AD ожидает значение DateTime этого типа, но не оценивает и не использует его. |
 | AssertionConsumerServiceUrl | Необязательно | Если указан, то он должен соответствовать параметру `RedirectUri` облачной службы в Azure AD. |
 | ForceAuthn | Необязательно | Это логическое значение. Если задано значение true, то это означает, что пользователь должен будет повторно выполнить проверку подлинности, даже если время его сеанса в Azure AD еще не истекло. |

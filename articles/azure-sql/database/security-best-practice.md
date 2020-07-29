@@ -10,12 +10,12 @@ ms.author: vanto
 ms.topic: article
 ms.date: 02/20/2020
 ms.reviewer: ''
-ms.openlocfilehash: 00369ae45a13414ce46f324e37afe24be24a48e0
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 6a3a52c90187920be13628a6d2fa44159e1109d7
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87132948"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87371793"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Сборник тренировочных заданий для решения общих требований к безопасности базы данных SQL Azure и Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -62,7 +62,7 @@ ms.locfileid: "87132948"
 
 Мы планируем продолжить обновление рекомендаций и рекомендаций, перечисленных здесь. Укажите входные данные или любые исправления для этого документа, используя ссылку **отзыва** в нижней части этой статьи.
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Аутентификацией называют процесс подтверждения личности пользователя. База данных SQL Azure и SQL Управляемый экземпляр поддерживают два типа проверки подлинности:
 
@@ -112,7 +112,7 @@ ms.locfileid: "87132948"
 > - Маркер доступа Azure AD кэшируется на стороне клиента, и его время существования зависит от конфигурации токена. См. статью Настройка [времени жизни маркеров в Azure Active Directory](../../active-directory/develop/active-directory-configurable-token-lifetimes.md)
 > - Рекомендации по устранению неполадок аутентификация Azure AD см. в следующем блоге: [Устранение неполадок Azure AD](https://techcommunity.microsoft.com/t5/azure-sql-database/troubleshooting-problems-related-to-azure-ad-authentication-with/ba-p/1062991).
 
-### <a name="azure-multi-factor-authentication"></a>Многофакторная проверка подлинности Azure
+### <a name="azure-multi-factor-authentication"></a>Многофакторная идентификация Azure
 
 > Упоминалось в: упражнения #2, контроль доступа ISO (AC)
 
@@ -174,8 +174,8 @@ ms.locfileid: "87132948"
 **Рекомендации:**
 
 - Используйте [управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
-  - [Управляемое удостоверение, назначаемое системой](../../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-sql.md)
-  - [Управляемое удостоверение, назначаемое пользователем](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)
+  - [Управляемое удостоверение, назначенное системой](../../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-sql.md)
+  - [Управляемое удостоверение, назначенное пользователем](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)
   - [Использование базы данных SQL Azure из службы приложений Azure с управляемым удостоверением (без изменений кода)](https://github.com/Azure-Samples/app-service-msi-entityframework-dotnet)
 
 - Использование проверки подлинности на основе сертификатов для приложения.
@@ -266,7 +266,7 @@ ms.locfileid: "87132948"
 - Помните, что разрешения в ядре СУБД могут быть применены в следующих областях (чем меньше область, тем меньше воздействие предоставленных разрешений):
   - Сервер (специальные роли в базе данных master) в Azure
   - База данных
-  - схема
+  - Схема
     - Рекомендуется использовать схемы для предоставления разрешений внутри базы данных. (см. также раздел [Schema-Design: рекомендации по проектированию схем с учетом безопасности.](http://andreas-wolter.com/en/schema-design-for-sql-server-recommendations-for-schema-design-with-security-in-mind/))
   - Объект (таблица, представление, процедура и т. д.)
 
@@ -324,7 +324,7 @@ ms.locfileid: "87132948"
 
 - Всегда убедитесь, что у вас есть журнал аудита для действий, связанных с безопасностью.
 
-- Вы можете получить определение встроенных ролей RBAC, чтобы просмотреть используемые разрешения и создать настраиваемую роль на основе фрагментов и кумулатионс их с помощью PowerShell.
+- Вы можете получить определение встроенных ролей Azure, чтобы просмотреть используемые разрешения и создать настраиваемую роль на основе фрагментов и кумулатионс их с помощью PowerShell.
 
 - Поскольку любой член роли базы данных db_owner может изменить параметры безопасности, такие как прозрачное шифрование данных (TDE), или изменить цель уровня обслуживания, это членство следует предоставлять с осторожностью. Однако существует множество задач, требующих db_owner привилегий. Такие задачи, как изменение любого параметра базы данных, например изменение параметров БД. Аудит играет ключевую роль в любом решении.
 

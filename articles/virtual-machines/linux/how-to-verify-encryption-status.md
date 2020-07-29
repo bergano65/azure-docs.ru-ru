@@ -3,15 +3,16 @@ title: Проверка состояния шифрования для Linux �
 description: В этой статье приведены инструкции по проверке состояния шифрования на уровнях платформы и операционной системы.
 author: kailashmsft
 ms.service: security
-ms.topic: article
+ms.topic: how-to
 ms.author: kaib
 ms.date: 03/11/2020
 ms.custom: seodec18
-ms.openlocfilehash: e2916a71f167c415f6bf1dde8ff82a38b0e0557c
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 58bb3f38938414f25551d0df47a50b6a8f386acc
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873990"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87283339"
 ---
 # <a name="verify-encryption-status-for-linux"></a>Проверка состояния шифрования для Linux 
 
@@ -279,7 +280,7 @@ az storage account list --query [].[id] -o tsv
 ```
 Идентификаторы учетной записи хранения перечислены в следующем формате:
 
-/subscriptions/\<идентификатор подписки>/resourceGroups/\<имя группы ресурсов>/providers/Microsoft.Storage/storageAccounts/\<имя учетной записи хранения>
+/Subscriptions/ \<subscription id> /ResourceGroups/ \<resource group name> /провидерс/Микрософт.стораже/сторажеаккаунтс/\<storage account name>
 
 Выберите соответствующий идентификатор и сохраните его в переменной:
 ```bash

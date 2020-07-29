@@ -7,11 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 02/21/2020
 tags: connectors
-ms.openlocfilehash: eb943bfe36be10d1e95d569a5c1bf48563e909c1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 34608a085c0d60e0ce07e5d198622f80a43f8b38
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84711295"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284087"
 ---
 # <a name="create-and-manage-blobs-in-azure-blob-storage-by-using-azure-logic-apps"></a>Создание больших двоичных объектов и управление ими в хранилище BLOB-объектов Azure с помощью Azure Logic Apps
 
@@ -19,7 +20,7 @@ ms.locfileid: "84711295"
 
 Предположим, что у вас есть средство, которое обновляется на веб-сайте Azure. Оно используется как триггер для приложения логики. Когда это событие происходит, приложение логики может обновить некоторые файлы в контейнере хранилища BLOB-объектов, что является действием в приложении логики.
 
-Если вы не знакомы с приложениями логики, ознакомьтесь со статьями [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md). См. технические сведения о [соединителях хранилища BLOB-объектов Azure](https://docs.microsoft.com/connectors/azureblobconnector/).
+Если вы не знакомы с приложениями логики, ознакомьтесь со статьями [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md). См. технические сведения о [соединителях хранилища BLOB-объектов Azure](/connectors/azureblobconnector/).
 
 > [!IMPORTANT]
 > Приложения логики не могут напрямую обращаться к учетным записям хранения, которые находятся за брандмауэрами, если они находятся в одном регионе. В качестве обходного решения можно использовать приложения логики и учетную запись хранения в разных регионах. Дополнительные сведения о включении доступа из Azure Logic Apps к учетным записям хранения, защищенным брандмауэрами, см. в подразделе [доступ к учетным записям хранения, защищенным брандмауэрами](#storage-firewalls) далее в этом разделе.
@@ -126,7 +127,7 @@ ms.locfileid: "84711295"
    | **Учетная запись хранения** | Да | <*Учетная запись хранения*> | Выберите свою учетную запись хранения в списке. |
    ||||
 
-   Пример:
+   Например:
 
    ![Создание подключения к учетной записи хранилища BLOB-объектов Azure](./media/connectors-create-api-azureblobstorage/create-storage-account-connection.png) 
 
@@ -136,7 +137,7 @@ ms.locfileid: "84711295"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Дополнительные технические сведения об этом соединителе, такие как триггеры, действия и ограничения, описанные в файле Swagger соединителя, см. на [странице справочника по соединителю](https://docs.microsoft.com/connectors/azureblobconnector/).
+Дополнительные технические сведения об этом соединителе, такие как триггеры, действия и ограничения, описанные в файле Swagger соединителя, см. на [странице справочника по соединителю](/connectors/azureblobconnector/).
 
 > [!NOTE]
 > Для приложений логики в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)эта версия этого соединителя использует [ограничения сообщений интегрированной](../logic-apps/logic-apps-limits-and-config.md#message-size-limits) среды сценариев.
@@ -193,7 +194,7 @@ ms.locfileid: "84711295"
 1. В рабочем процессе приложения логики добавьте и настройте действие HTTP или триггер для доступа к учетной записи хранения или сущности.
 
    > [!IMPORTANT]
-   > Для исходящих вызовов HTTP-действий или триггеров в учетные записи хранения Azure убедитесь, что заголовок запроса содержит `x-ms-version` свойство и версию API для операции, которую требуется выполнить в учетной записи хранения. Дополнительные сведения см. в статье [Аутентификация доступа с помощью управляемого удостоверения](../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity) и [управления версиями для служб хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/versioning-for-the-azure-storage-services#specifying-service-versions-in-requests).
+   > Для исходящих вызовов HTTP-действий или триггеров в учетные записи хранения Azure убедитесь, что заголовок запроса содержит `x-ms-version` свойство и версию API для операции, которую требуется выполнить в учетной записи хранения. Дополнительные сведения см. в статье [Аутентификация доступа с помощью управляемого удостоверения](../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity) и [управления версиями для служб хранилища Azure](/rest/api/storageservices/versioning-for-the-azure-storage-services#specifying-service-versions-in-requests).
 
 1. В этом действии [выберите управляемое удостоверение](../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity) , которое будет использоваться для проверки подлинности.
 
@@ -206,3 +207,4 @@ ms.locfileid: "84711295"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).
+

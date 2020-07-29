@@ -4,11 +4,12 @@ description: Мониторинг проблем, таких как сбои п�
 ms.topic: conceptual
 ms.date: 06/07/2018
 ms.reviewer: harelbr
-ms.openlocfilehash: 997c5e063c4181a597520e60e2a7669401b9677d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1cdfc6dc3ac74997743512ee07f9293699e3ad10
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77669749"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87309296"
 ---
 # <a name="alert-on-issues-in-azure-cloud-services-using-the-azure-diagnostics-integration-with-azure-application-insights"></a>Оповещение о проблемах в облачных службах Azure с использованием интеграции системы диагностики Azure с помощью Azure Application Insights
 
@@ -106,11 +107,11 @@ EventLogs
 
 После определения группы действий подтвердите свои изменения и нажмите **Создать правило генерации оповещений**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об автоматическом обнаружении.
 
-[Аномалии сбоев](../../azure-monitor/app/proactive-failure-diagnostics.md) 
- [Утечки памяти](../../azure-monitor/app/proactive-potential-memory-leak.md) 
- [Аномалии производительности](../../azure-monitor/app/proactive-performance-diagnostics.md)
+[Аномалии сбоев](./proactive-failure-diagnostics.md) 
+ [Утечки памяти](./proactive-potential-memory-leak.md) 
+ [Аномалии производительности](./proactive-performance-diagnostics.md)
 
