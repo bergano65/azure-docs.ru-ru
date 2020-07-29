@@ -3,12 +3,12 @@ title: Azure Monitor Application Insights пакетов NuGet
 description: Azure Monitor Application Insights списки пакетов NuGet для ASP.NET, ASP.NET Core, Python
 ms.topic: reference
 ms.date: 10/16/2018
-ms.openlocfilehash: 91b48aee64a6b6942719f7f4abfb444b894c728e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 27a3d89b4a64de159535d346641c21616833e21b
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85807168"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87309959"
 ---
 # <a name="application-insights-nuget-packages"></a>Пакеты NuGet для Application Insights
 
@@ -16,7 +16,7 @@ ms.locfileid: "85807168"
 
 ## <a name="common-packages-for-aspnet"></a>Общие пакеты для ASP.NET
 
-| Имя пакета | Стабильная версия | Описание: | Скачать |
+| Имя пакета | Стабильная версия | Описание: | Скачивание |
 |-------------------------------|-----------------------|------------|----|
 | Microsoft.ApplicationInsights | 2.12.0 | Обеспечивает основные функции для передачи всех типов телеметрии Application Insights и является зависимым пакетом для остальных пакетов Application Insights | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights/) |
 |Microsoft.ApplicationInsights.Agent.Intercept | 2.4.0 | Обеспечивает перехват вызовов методов | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Agent.Intercept/) |
@@ -28,7 +28,7 @@ ms.locfileid: "85807168"
 
 ## <a name="common-packages-for-aspnet-core"></a>Общие пакеты для ASP.NET Core
 
-| Имя пакета | Стабильная версия | Описание: | Скачать |
+| Имя пакета | Стабильная версия | Описание: | Скачивание |
 |-------------------------------|-----------------------|------------|----|
 | Microsoft.ApplicationInsights.AspNetCore | 2.5.0 | Application Insights для веб-приложений ASP.NET Core. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/) |
 | Microsoft.ApplicationInsights | 2.12.0 | Этот пакет обеспечивает основные функции для передачи всех типов телеметрии Application Insights и является зависимым пакетом для остальных пакетов Application Insights | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights/) |
@@ -38,7 +38,7 @@ ms.locfileid: "85807168"
 | Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel | 2.12.0 | Предоставляет канал телеметрии для пакета SDK Application Insights для Windows Server, который сохранит телеметрию в автономных сценариях. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel/) |
 
 ## <a name="common-packages-for-python-using-opencensus"></a>Общие пакеты для Python с использованием Опенценсус
-| Имя пакета | Стабильная версия | Описание: | Скачать |
+| Имя пакета | Стабильная версия | Описание: | Скачивание |
 |-------------------------------|-----------------------|------------|----|
 | опенценсус-ext — Azure | 1.0.0 | Application Insights для приложений Python в разделе Azure Monitor через Опенценсус. | [Загрузить пакет](https://pypi.org/project/opencensus-ext-azure/) |
 | опенценсус-ext-Django | 0.7.2 | Этот пакет обеспечивает интеграцию с библиотекой [Django](https://pypi.org/project/django/) Python. | [Загрузить пакет](https://pypi.org/project/opencensus-ext-django/) |
@@ -55,7 +55,7 @@ ms.locfileid: "85807168"
 
 ## <a name="listenerscollectorsappenders"></a>Прослушиватели, сборщики, аппендеры
 
-| Имя пакета | Стабильная версия | Описание: | Скачать |
+| Имя пакета | Стабильная версия | Описание: | Скачивание |
 |-------------------------------|-----------------------|------------|----|
 | Microsoft.ApplicationInsights.DiagnosticSourceListener | 2.7.2 |  Позволяет пересылать события из DiagnosticSource в Application Insights. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DiagnosticSourceListener/) |
 | Microsoft.ApplicationInsights.EventSourceListener | 2.7.2 | Application Insights EventSourceListener допускает отправку данных из событий EventSource в Application Insights. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EventSourceListener/) |
@@ -67,29 +67,30 @@ ms.locfileid: "85807168"
 
 ## <a name="service-fabric"></a>Service Fabric
 
-| Имя пакета | Стабильная версия | Описание: | Скачать |
+| Имя пакета | Стабильная версия | Описание: | Скачивание |
 |-------------------------------|-----------------------|------------|----|
 | Microsoft.ApplicationInsights.ServiceFabric | 2.2.0 | Этот пакет предоставляет автоматическое оформление телеметрии с контекстом Service Fabric, в котором запущено приложение. Не используйте этот пакет NuGet для собственных приложений Service Fabric. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.ServiceFabric/) |
 | Microsoft.ApplicationInsights.ServiceFabric.Native | 2.2.0 | Модуль Application Insights для приложений Service Fabric. Используйте этот пакет NuGet только для собственных приложений Service Fabric. Для приложений, выполняющихся в контейнерах, используйте пакет Microsoft.ApplicationInsights.ServiceFabric. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.ServiceFabric.Native/) |  
 
 ## <a name="status-monitor"></a>Монитор состояния
 
-| Имя пакета | Стабильная версия | Описание: | Скачать |
+| Имя пакета | Стабильная версия | Описание: | Скачивание |
 |-------------------------------|-----------------------|------------|----|
 | Microsoft.ApplicationInsights.Agent_x64 | 2.2.1 |  Обеспечивает сбор данных среды выполнения для приложений x64. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Agent_x64/) |
 | Microsoft.ApplicationInsights.Agent_x86 | 2.2.1 |  Обеспечивает сбор данных среды выполнения для приложений x86. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Agent_x86/) |
 
-Эти пакеты являются частью основных функциональных возможностей мониторинга среды выполнения в [мониторе состояния](../../azure-monitor/app/monitor-performance-live-website-now.md). Вам не нужно загружать эти пакеты напрямую, просто используйте установщик монитора состояния. Если вы хотите больше узнать о том, как работают эти пакеты, ознакомьтесь с этой [записью блога](https://apmtips.com/posts/2016-11-18-how-application-insights-status-monitor-not-monitors-dependencies/) от одного из наших разработчиков.
+Эти пакеты являются частью основных функциональных возможностей мониторинга среды выполнения в [мониторе состояния](./monitor-performance-live-website-now.md). Вам не нужно загружать эти пакеты напрямую, просто используйте установщик монитора состояния. Если вы хотите больше узнать о том, как работают эти пакеты, ознакомьтесь с этой [записью блога](https://apmtips.com/posts/2016-11-18-how-application-insights-status-monitor-not-monitors-dependencies/) от одного из наших разработчиков.
 
 ## <a name="additional-packages"></a>Дополнительные пакеты
 
-| Имя пакета | Стабильная версия | Описание: | Скачать |
+| Имя пакета | Стабильная версия | Описание: | Скачивание |
 |-------------------------------|-----------------------|------------|----|
 | Microsoft.ApplicationInsights.AzureWebSites | 2.6.5 | Это расширение обеспечивает мониторинг Application Insights в службе приложений Azure. Пакет SDK версии 2.6.1. Указания: добавьте параметры приложения "APPINSIGHTS_INSTRUMENTATIONKEY" с ikey и перезапустите веб-приложение, чтобы изменения вступили в силу.| [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AzureWebSites/) |
 | Microsoft.ApplicationInsights.Injector | 2.6.7 | Этот пакет содержит файлы, необходимые для внедрения Application Insights без написания кода. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Injector/) |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Application Insights для ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
-- [Профилирование веб-приложений ASP.NET Core в Azure для Linux с помощью Application Insights Profiler](../../azure-monitor/app/profiler-aspnetcore-linux.md)
-- [Отладочные моментальные снимки для исключений в приложениях .NET](../../azure-monitor/app/snapshot-debugger.md).
+- [Application Insights для ASP.NET Core](./asp-net-core.md)
+- [Профилирование веб-приложений ASP.NET Core в Azure для Linux с помощью Application Insights Profiler](./profiler-aspnetcore-linux.md)
+- [Отладочные моментальные снимки для исключений в приложениях .NET](./snapshot-debugger.md).
+

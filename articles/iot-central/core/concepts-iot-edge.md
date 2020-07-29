@@ -7,13 +7,14 @@ ms.date: 12/12/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 89d068fbd835a5b4f8886a2ed77691f94a701bb0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f8660cb18f5e7ac5f3695eb15475570b107bf25c
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81759107"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87337081"
 ---
-# <a name="connect-azure-iot-edge-devices-to-an-azure-iot-central-application"></a>Подключение устройств Azure IoT Edge к приложению IoT Central Azure
+# <a name="connect-azure-iot-edge-devices-to-an-azure-iot-central-application"></a>Подключение устройств Azure IoT Edge к приложению Azure IoT Central
 
 *Эта статья предназначена для создателей решений и разработчиков устройств.*
 
@@ -57,7 +58,7 @@ IoT Edge состоит из трех компонентов:
 
 ![Блок-схема жизненного цикла манифеста развертывания](./media/concepts-iot-edge/dmflow.png)
 
-Plug and Play IoT (Предварительная версия) моделирует устройство IoT Edge следующим образом:
+IoT Central моделирует IoT Edge устройство следующим образом:
 
 * В каждом шаблоне устройства IoT Edge есть модель возможностей устройства.
 * Для каждого настраиваемого модуля, указанного в манифесте развертывания, создается модель возможностей модуля.
@@ -71,6 +72,6 @@ Plug and Play IoT (Предварительная версия) моделиру
 
 Если вы выбрали устройство IoT Edge в качестве устройства шлюза, можно добавить подчиненные связи к моделям возможностей устройств для устройств, которые необходимо подключить к устройству шлюза.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы являетесь разработчиком устройства, рекомендуем следующий шаг — узнать о [типах устройств шлюза в IOT Central](./tutorial-define-gateway-device-type.md).

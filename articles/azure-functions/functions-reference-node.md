@@ -4,12 +4,13 @@ description: Узнайте, как разрабатывать функции с
 ms.assetid: 45dedd78-3ff9-411f-bb4b-16d29a11384c
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: c0e5dd7e1869accd309656b69bd2a07d21b1a3ec
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 636df121ea5b09a421ae7bedaf9e30cbbd1966f5
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87082976"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87280874"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -346,7 +347,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 
 У объекта (запроса) `context.req` есть следующие свойства:
 
-| Свойство      | Описание                                                    |
+| Свойство      | Описание:                                                    |
 | ------------- | -------------------------------------------------------------- |
 | _body_        | Объект, содержащий текст запроса.               |
 | _Верхний_     | Объект, содержащий заголовок запроса.                   |
@@ -361,7 +362,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 
 У объекта (ответа) `context.res` есть следующие свойства:
 
-| Свойство  | Описание                                               |
+| Свойство  | Описание:                                               |
 | --------- | --------------------------------------------------------- |
 | _body_    | Объект, содержащий текст ответа.         |
 | _Верхний_ | Объект, содержащий заголовок ответа.             |

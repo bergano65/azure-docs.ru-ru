@@ -10,12 +10,12 @@ ms.author: asrastog
 ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
-ms.openlocfilehash: 34ffa7a9fe9bd129fa3fd572bc8ef4d80b43ab9b
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 4ff61687f2fa045b51dfcb69488d1fbd87b65f75
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322981"
+ms.locfileid: "87336503"
 ---
 # <a name="iot-hub-message-routing-query-syntax"></a>Синтаксис запросов маршрутизации сообщений центра Интернета вещей
 
@@ -59,9 +59,10 @@ ms.locfileid: "87322981"
 | contentEncoding | строка | Пользователь указывает тип кодирования сообщений. Допустимые значения: UTF-8, UTF-16, UTF-32, если contentType имеет значение application/JSON. |
 | iothub-connection-device-id | строка | Это значение задается Центром Интернета вещей и определяет идентификатор устройства. Чтобы запросить, используйте `$connectionDeviceId`. |
 | iothub-enqueuedtime | строка | Это значение задается центром Интернета вещей и представляет фактическое время постановки сообщения в очередь в формате UTC. Чтобы запросить, используйте `enqueuedTime`. |
-| iothub-interface-name | строка | Это значение задается пользователем и представляет имя интерфейса Digital двойника, который реализует сообщение телеметрии. Чтобы запросить, используйте `$interfaceName`. Эта функция доступна как часть [общедоступной предварительной версии IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md). |
+| DT — схема схемы | строка |  Это значение задается центром Интернета вещей в сообщениях, отправляемых с устройства в облако. Он содержит идентификатор модели устройства, заданный в подключении устройства. Эта функция доступна как часть [общедоступной предварительной версии IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md). Чтобы запросить, используйте `$dt-dataschema`. |
+| DT-subject | строка | Имя компонента, отправляющего сообщения, отправляемые с устройства в облако. Эта функция доступна как часть [общедоступной предварительной версии IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md). Чтобы запросить, используйте `$dt-subject`. |
 
-Как описано в разделе [Сообщения центра Интернета вещей](iot-hub-devguide-messages-construct.md), существуют дополнительные системные свойства в сообщении. Кроме **ContentType**, **contentEncoding**и **енкуеуедтиме**, можно также запрашивать **коннектиондевицеид** и **connectionModuleId** .
+Как описано в разделе [Сообщения центра Интернета вещей](iot-hub-devguide-messages-construct.md), существуют дополнительные системные свойства в сообщении. Помимо свойств, приведенных в предыдущей таблице, можно также запросить **коннектиондевицеид**, **connectionModuleId**.
 
 ### <a name="application-properties"></a>Свойства приложения
 

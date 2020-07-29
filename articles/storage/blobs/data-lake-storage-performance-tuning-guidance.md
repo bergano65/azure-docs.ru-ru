@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: bf22ce87ed3d535a7c1bd03a8d7f747bee3ab13a
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: f38dc72a45d84b549baa17c34f2c64ac35b83e3e
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86106396"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285396"
 ---
 # <a name="optimize-azure-data-lake-storage-gen2-for-performance"></a>Оптимизация Azure Data Lake Storage 2-го поколения для повышения производительности
 
@@ -43,11 +43,11 @@ Data Lake Storage 2-го поколения можно масштабирова�
 
 Решив проблему с узкими местами исходного оборудования и сетевого подключения, можно приступить к настройке средств приема. В следующей таблице перечислены ключевые параметры нескольких популярных средств приема и предоставлены подробные статьи по настройке производительности для них.  Дополнительные сведения о выборе подходящего средства для вашего сценария см. в [этой статье](data-lake-storage-data-scenarios.md).
 
-| Средство               | Параметры     | Дополнительные сведения                                                                 |
+| Средство               | "Настройки"     | Дополнительные сведения                                                                 |
 |--------------------|------------------------------------------------------|------------------------------|
 | DistCp            | -m (mapper)   | [Ссылка](data-lake-storage-use-distcp.md#performance-considerations-while-using-distcp)                             |
 | Фабрика данных Azure| parallelCopies    | [Ссылка](../../data-factory/copy-activity-performance.md)                          |
-| Sqoop           | fs.azure.block.size, -m (mapper)    |   [Ссылка](https://blogs.msdn.microsoft.com/bigdatasupport/2015/02/17/sqoop-job-performance-tuning-in-hdinsight-hadoop/)        |
+| Sqoop           | fs.azure.block.size, -m (mapper)    |   [Ссылка](https://docs.microsoft.com/archive/blogs/shanyu/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs)        |
 
 ## <a name="structure-your-data-set"></a>Структура набора данных
 
@@ -138,5 +138,5 @@ Data Lake Storage 2-го поколения можно масштабирова�
 | [MapReduce в HDInsight](data-lake-storage-performance-tuning-mapreduce.md) | <ul><li>Mapreduce.map.memory</li><li>Mapreduce.job.maps</li><li>Mapreduce.reduce.memory</li><li>Mapreduce.job.reduces</li></ul> |
 | [Storm в HDInsight](data-lake-storage-performance-tuning-storm.md)| <ul><li>Количество рабочих процессов</li><li>Количество экземпляров исполнителей воронки</li><li>Количество экземпляров исполнителей сита </li><li>Количество задач воронки</li><li>Количество задач сита</li></ul>|
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 * [Общие сведения об Azure Data Lake Storage 2-го поколения](data-lake-storage-introduction.md)

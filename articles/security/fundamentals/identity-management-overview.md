@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 09/19/2018
 ms.author: terrylan
 Customer intent: As an IT Pro or decision maker I am trying to learn about identity management capabilities in Azure
-ms.openlocfilehash: d1440bf2b8af85b81355dbc43b695a85994e4b8d
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: d6c82b1070f76cedcd84b8cd8a0a7bb6f683110d
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87124142"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285328"
 ---
 # <a name="azure-identity-management-security-overview"></a>Общие сведения о безопасности при управлении удостоверениями в Azure
 
@@ -91,10 +91,10 @@ Azure AD расширяет локальные среды Active Directory в о
 
 RBAC — это система авторизации на основе Azure Resource Manager, которая обеспечивает точное управление доступом к ресурсам в Azure. RBAC позволяет детально управлять уровнем доступа пользователей. Например, одному пользователю можно разрешить управлять только виртуальными сетями, а другому — управлять всеми ресурсами в группе ресурсов. В Azure есть несколько встроенных ролей. Ниже перечислены четыре основные встроенные роли. Первые три роли охватывают все типы ресурсов.
 
-- [Владелец](/azure/role-based-access-control/built-in-roles.md#owner) — имеет полный доступ ко всем ресурсам, включая право делегировать доступ другим пользователям. 
-- [Участник](/azure/role-based-access-control/built-in-roles.md#contributor) — может создавать все типы ресурсов Azure и управлять ими, но не может предоставлять доступ другим пользователям.
-- [Читатель](/azure/role-based-access-control/built-in-roles.md#reader) — может просматривать существующие ресурсы Azure.
-- [Администратор доступа пользователей](/azure/role-based-access-control/built-in-roles.md#administrator) — может управлять доступом пользователей к ресурсам Azure.
+- [Владелец](/azure/role-based-access-control/built-in-roles#owner) — имеет полный доступ ко всем ресурсам, включая право делегировать доступ другим пользователям. 
+- [Участник](/azure/role-based-access-control/built-in-roles#contributor) — может создавать все типы ресурсов Azure и управлять ими, но не может предоставлять доступ другим пользователям.
+- [Читатель](/azure/role-based-access-control/built-in-roles#reader) — может просматривать существующие ресурсы Azure.
+- [Администратор доступа пользователей](/azure/role-based-access-control/built-in-roles#user-access-administrator) — может управлять доступом пользователей к ресурсам Azure.
 
 Дополнительные сведения:
 

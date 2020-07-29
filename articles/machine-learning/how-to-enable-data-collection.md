@@ -5,18 +5,18 @@ description: Сведения о том, как выполнять получе�
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
 ms.reviewer: sgilley
 ms.author: copeters
 author: lostmygithubaccount
 ms.date: 07/14/2020
-ms.custom: seodec18
-ms.openlocfilehash: 9ae1ec7eb566871402d44a0f24878b4ea92197f6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.topic: conceptual
+ms.custom: how-to
+ms.openlocfilehash: 3ece750ab63c2c8e33fbfb46739eec55de4f5d07
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87090235"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87320193"
 ---
 # <a name="collect-data-from-models-in-production"></a>Получение данных из моделей в рабочей среде
 
@@ -175,7 +175,7 @@ ms.locfileid: "87090235"
 
     [![Power BI содержимое](./media/how-to-enable-data-collection/pbiContent.png)](././media/how-to-enable-data-collection/pbiContent.png#lightbox)
 
-1. Нажмите кнопку **ОК**. Предварительная загрузка данных.
+1. Щелкните **ОК**. Предварительная загрузка данных.
 
     [![Power BI объединение файлов](./media/how-to-enable-data-collection/pbiCombine.png)](././media/how-to-enable-data-collection/pbiCombine.png#lightbox)
 

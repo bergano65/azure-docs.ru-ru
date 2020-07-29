@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/12/2019
-ms.openlocfilehash: b1756bd72dc78bfafc8959c4ff1c8f95d255c931
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 049c30613c358bf22616eaa2042a7fd6e42b9f61
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87067564"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326041"
 ---
 # <a name="integrate-system-center-operations-manager-with-azure-monitor-for-vms-map-feature"></a>Интеграция System Center Operations Manager с функцией карт Azure Monitor для виртуальных машин
 
@@ -20,7 +20,7 @@ ms.locfileid: "87067564"
 >[!NOTE]
 >Если вы уже развернули Сопоставление служб, вы можете просматривать карты в Azure Monitor для виртуальных машин, включая дополнительные функции для мониторинга работоспособности и производительности виртуальных машин. Функция Map Azure Monitor для виртуальных машин предназначена для замены автономного Сопоставление службного решения. Дополнительные сведения см. в разделе [Общие сведения об Azure Monitor для виртуальных машин](vminsights-overview.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Группа управления System Center Operations Manager (2012 R2 или более поздней версии).
 * Log Analytics рабочей области, настроенной для поддержки Azure Monitor для виртуальных машин.
@@ -139,9 +139,10 @@ ms.locfileid: "87067564"
 Официальная документация Azure по созданию субъекта-службы представлена в следующих статьях:
 
 * [Использование Azure PowerShell для создания субъекта-службы и доступа к ресурсам](../../active-directory/develop/howto-authenticate-service-principal-powershell.md)
-* [Использование интерфейса командной строки Azure для создания субъекта-службы и доступа к ресурсам](/azure/azure-resource-manager/resource-group-authenticate-service-principal-cli)
+* [Использование интерфейса командной строки Azure для создания субъекта-службы и доступа к ресурсам](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)
 * [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md)
 
 ### <a name="suggestions"></a>Предложения
 
 У вас есть отзывы о интеграции с функцией Azure Monitor для виртуальных машин Map или этой документации? Посетите [страницу пользователя Voice](https://feedback.azure.com/forums/267889-log-analytics/category/184492-service-map), где можно предложить возможности или проголосовать за существующие предложения.
+

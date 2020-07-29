@@ -9,14 +9,15 @@ ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/05/2019
-ms.author: ryanwi
-ms.reviewer: hirsin
+ms.author: kenwith
+ms.reviewer: paulgarn
 ms.custom: aaddev
-ms.openlocfilehash: 1cd79b1f9e4cd3afadee250da0c184c0c5b8ac07
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2d745ddcf7b1d5bd7976a0ca8461c13d8ae3c849
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80886183"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282387"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-saml-bearer-assertion-flow"></a>Платформа удостоверений Майкрософт и поток утверждения носителя OAuth 2.0 SAML
 Поток утверждения носителя OAuth 2.0 SAML позволяет запросить маркер доступа OAuth с помощью утверждения SAML, когда клиенту необходимо использовать существующее отношение доверия. Подпись, применяемая к утверждению SAML, обеспечивает проверку подлинности авторизованного приложения. Утверждение SAML — это маркер безопасности XML, выданный поставщиком удостоверений и используемый поставщиком услуг. Поставщик услуг использует его содержимое для идентификации субъекта утверждения в целях безопасности.

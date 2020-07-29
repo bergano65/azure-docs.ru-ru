@@ -1,5 +1,5 @@
 ---
-title: Развертывание виртуальной машины Windows 7 пружина виртуальных рабочих столов Windows 2020 — Azure
+title: Развертывание виртуального рабочего стола Windows 7 виртуальная машина Windows в Azure
 description: Настройка и развертывание виртуальной машины Windows 7 в виртуальном рабочем столе Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -8,24 +8,21 @@ ms.topic: how-to
 ms.date: 07/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: b589890f7b65b41cf6b7ba4fdf53b71173ed6a38
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6cb4a31e3360f3f9f8c9ed4684c30295489d27d8
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87020446"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285160"
 ---
 # <a name="deploy-a-windows-7-virtual-machine-on-windows-virtual-desktop"></a>Развертывание виртуальной машины Windows 7 в службе "Виртуальный рабочий стол Windows"
 
 >[!IMPORTANT]
->Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/deploy-windows-7-virtual-machine.md).
->
-> Обновление Виртуального рабочего стола Windows за весну 2020 года пока предоставляется как общедоступная предварительная версия. без соглашений об уровне обслуживания. Мы не рекомендуем использовать ее для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+>Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/deploy-windows-7-virtual-machine.md).
 
 Процесс развертывания виртуальной машины Windows 7 на виртуальном рабочем столе Windows немного отличается от процесса для виртуальных машин под управлением более поздних версий Windows. В этом руководство вы узнаете, как развернуть Windows 7.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, следуйте инструкциям в статье [Создание пула узлов с помощью PowerShell](create-host-pools-powershell.md) для создания пула узлов. Если вы используете портал, следуйте инструкциям в шагах 1 – 9 из раздела [Создание пула узлов с помощью портал Azure](create-host-pools-azure-marketplace.md). После этого выберите **проверить и создать** , чтобы создать пустой пул узлов. 
 
@@ -62,7 +59,7 @@ ms.locfileid: "87020446"
 17. При необходимости можно заблокировать порт TCP/3389, чтобы удалить прямой протокол удаленного рабочего столаный доступ к виртуальной машине.
 18. При необходимости убедитесь, что платформа .NET Framework имеет версию не ниже 4.7.2. Обновление платформы особенно важно при создании пользовательского образа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь развертывание виртуальных рабочих столов Windows готово к использованию. [Скачайте последнюю версию клиента виртуальных рабочих столов Windows](https://aka.ms/wvd/clients/windows) , чтобы приступить к работе.
 

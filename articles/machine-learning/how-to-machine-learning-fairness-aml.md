@@ -5,18 +5,18 @@ description: Узнайте, как оценить равноправие мод
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
 ms.author: mesameki
 author: mesameki
 ms.reviewer: luquinta
 ms.date: 07/09/2020
-ms.custom: tracking-python
-ms.openlocfilehash: 4f791ef9e18032ce6773f4262586431e693b43b2
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.topic: conceptual
+ms.custom: how-to, tracking-python
+ms.openlocfilehash: 5e6f241fcf30d4090a1af9a26441a5a10b939972
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206741"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87307069"
 ---
 # <a name="use-azure-machine-learning-with-the-fairlearn-open-source-package-to-assess-the-fairness-of-ml-models-preview"></a>Использование Машинное обучение Azure с пакетом с открытым исходным кодом Фаирлеарн для оценки распределения моделей машинного обучения (Предварительная версия)
 
@@ -321,7 +321,7 @@ s # # отправка сведений об равноправии для не�
 [![Панель мониторинга Фаирлеарн для сравнения моделей](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png)](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png#lightbox)
     
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о равномерном использовании модели](concept-fairness-ml.md)
 

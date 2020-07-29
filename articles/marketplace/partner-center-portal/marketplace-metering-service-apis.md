@@ -5,12 +5,14 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 05/26/2020
-ms.openlocfilehash: 8a6636b0fc6c3e67ec171d738efb3fd8a93de30c
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+author: mingshen-ms
+ms.author: mingshen
+ms.openlocfilehash: ac48973653e89d43521979a5606a8a3a3c2e1346
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86120778"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87319989"
 ---
 # <a name="marketplace-metered-billing-apis"></a>API для выставления счетов с оплатой в Marketplace
 
@@ -269,7 +271,7 @@ API событий использования пакетной службы по
 
 Вы также можете использовать частный план для существующего предложения Live, чтобы ограничить доступ к этому плану во время тестирования до ограниченной аудитории.
 
-## <a name="get-support"></a>Техническая поддержка
+## <a name="get-support"></a>Получение поддержки
 
 Следуйте инструкциям в [технической поддержке программы коммерческого рынка в центре партнеров](./support.md) , чтобы узнать о вариантах поддержки издателя и отправить запрос в службу поддержки корпорации Майкрософт.
 

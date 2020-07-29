@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
-ms.date: 03/27/2020
-ms.openlocfilehash: d8da5bb32836ff50240bf6b781227fde8839be5c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 07/27/2020
+ms.openlocfilehash: 00efa3ea6fcd299dcdc51b3002d6b0459edf2ec4
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87088008"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87281163"
 ---
 # <a name="configure-and-manage-azure-ad-authentication-with-azure-sql"></a>Настройка аутентификации Azure AD и управление ею с помощью Azure SQL
 
@@ -75,7 +75,7 @@ ms.locfileid: "87088008"
 
 Управляемый экземпляр SQL требуются разрешения на чтение Azure AD для успешного выполнения таких задач, как проверка подлинности пользователей с помощью членства в группе безопасности или создание новых пользователей. Чтобы это работало, необходимо предоставить разрешение SQL Управляемый экземпляр на чтение Azure AD. Это можно сделать с помощью портал Azure или PowerShell.
 
-### <a name="azure-portal"></a>портал Azure;
+### <a name="azure-portal"></a>Портал Azure
 
 Чтобы предоставить разрешение на чтение SQL Управляемый экземпляр Azure AD с помощью портал Azure, войдите в Azure AD в качестве глобального администратора и выполните следующие действия:
 
@@ -188,7 +188,7 @@ else {
 
 Командлеты, используемые для подготовки администратора Azure AD к Управляемый экземпляр SQL и управления им, перечислены в следующей таблице:
 
-| Имя командлета | Описание |
+| Имя командлета | Описание: |
 | --- | --- |
 | [Set-Азсклинстанцеактиведиректорядминистратор](/powershell/module/az.sql/set-azsqlinstanceactivedirectoryadministrator) |Подготовка администратора Azure AD для Управляемый экземпляр SQL в текущей подписке. (Должно быть из текущей подписки)|
 | [Remove-Азсклинстанцеактиведиректорядминистратор](/powershell/module/az.sql/remove-azsqlinstanceactivedirectoryadministrator) |Удаляет администратора Azure AD для Управляемый экземпляр SQL в текущей подписке. |
@@ -234,11 +234,9 @@ Remove-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGro
 
 В следующих двух процедурах показано, как подготавливать администратора Azure Active Directory для сервера в портал Azure и с помощью PowerShell.
 
-### <a name="azure-portal"></a>портал Azure;
+### <a name="azure-portal"></a>Портал Azure
 
 1. В правом верхнем углу [портала Azure](https://portal.azure.com/) щелкните имя подключения, чтобы открыть список доступных каталогов Active Directory. Выберите нужный экземпляр Active Directory в качестве Azure AD по умолчанию. Этот шаг связывает связанную с подпиской Active Directory с сервером, убедившись, что одна и та же подписка используется как для Azure AD, так и для сервера.
-
-    ! [choose-AD] 8
 
 2. Найдите и выберите **SQL Server**.
 
@@ -279,7 +277,7 @@ Remove-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGro
 
 Командлеты, используемые для инициализации и управления администратором Azure AD для базы данных SQL и Azure синапсе:
 
-| Имя командлета | Описание |
+| Имя командлета | Описание: |
 | --- | --- |
 | [Set-Азсклсерверактиведиректорядминистратор](/powershell/module/az.sql/set-azsqlserveractivedirectoryadministrator) |Подготавливает администратора Azure Active Directory для сервера, на котором размещена база данных SQL или Azure синапсе. (Должно быть из текущей подписки) |
 | [Remove-Азсклсерверактиведиректорядминистратор](/powershell/module/az.sql/remove-azsqlserveractivedirectoryadministrator) |Удаляет Azure Active Directory администратора для сервера, на котором размещена база данных SQL или Azure синапсе.|
@@ -538,8 +536,11 @@ sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net -U bob@contoso.com -P MyA
 - Дополнительные сведения о субъектах базы данных см. в [этой статье](https://msdn.microsoft.com/library/ms181127.aspx).
 - Дополнительные сведения о ролях баз данных см. в статье [Роли уровня базы данных](https://msdn.microsoft.com/library/ms189121.aspx).
 - Дополнительные сведения о правилах брандмауэра см. в статье [Обзор правил брандмауэра базы данных SQL Azure](firewall-configure.md).
+- Сведения о том, как настроить гостевой пользователь Azure AD в качестве администратора Azure AD, см. в статье [Создание гостевых пользователей Azure AD и установка в качестве администратора Azure AD](authentication-aad-guest-users.md).
+- Сведения о том, как использовать субъекты-службы с Azure SQL, см. в статье [Создание пользователей Azure AD с помощью приложений Azure AD](authentication-aad-service-principal-tutorial.md) .
 
 <!--Image references-->
+
 [11]: ./media/authentication-aad-configure/active-directory-integrated.png
 [12]: ./media/authentication-aad-configure/12connect-using-pw-auth2.png
 [13]: ./media/authentication-aad-configure/13connect-to-db2.png

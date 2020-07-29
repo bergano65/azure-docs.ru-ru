@@ -10,12 +10,13 @@ ms.topic: conceptual
 author: oslake
 ms.author: moslake
 ms.reviewer: carlrab
-ms.date: 3/14/2019
-ms.openlocfilehash: 4cc5ad575b0fbe371d9432668e8ccf43b45ae717
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 7/28/2020
+ms.openlocfilehash: 8cd8dda807b27bc1a83176c6a46596eccfd19073
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84032075"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87372099"
 ---
 # <a name="scale-elastic-pool-resources-in-azure-sql-database"></a>Масштабирование ресурсов эластичного пула в Базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -55,7 +56,17 @@ ms.locfileid: "84032075"
 >
 > - В случае изменения уровня служб или масштабирования вычислений для эластичного пула необходимо использовать для вычисления оценки объем пространства, используемого во всех базах данных в пуле.
 > - В случае перемещения базы данных в эластичный пул или из него только пространство, используемое базой данных, влияет на задержку, а не на пространство, используемое пулом эластичных БД.
->
+> - Для пулов эластичных БД уровня "Стандартный" и общего назначения задержка перемещения базы данных в пул эластичных БД или между пулами эластичных пулов будет пропорционально размеру базы данных, если пул эластичных БД использует хранилище привилегированного файлового ресурса ([PFS](https://docs.microsoft.com/azure/storage/files/storage-files-introduction)). Чтобы определить, использует ли пул хранилище PFS, выполните следующий запрос в контексте любой базы данных в пуле. Если значение в столбце AccountType равно `PremiumFileStorage` , то пул использует хранилище PFS.
+
+```sql
+SELECT s.file_id,
+       s.type_desc,
+       s.name,
+       FILEPROPERTYEX(s.name, 'AccountType') AS AccountType
+FROM sys.database_files AS s
+WHERE s.type_desc IN ('ROWS', 'LOG');
+```
+
 > [!TIP]
 > Сведения о мониторинге выполняемых операций см. в статьях [Управление операциями с помощью REST API SQL](https://docs.microsoft.com/rest/api/sql/operations/list), [Управление операциями с помощью интерфейса командной строки](/cli/azure/sql/db/op), [мониторинг операций с помощью T-SQL](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) и следующие две команды PowerShell: [Get-азсклдатабасеактивити](/powershell/module/az.sql/get-azsqldatabaseactivity) и [останавливают-азсклдатабасеактивити](/powershell/module/az.sql/stop-azsqldatabaseactivity).
 
@@ -94,6 +105,6 @@ ms.locfileid: "84032075"
 > [!IMPORTANT]
 > Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. [в статье Управление дисковым пространством в базе данных SQL Azure](file-space-manage.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об общих ограничениях ресурсов см. в статьях [Ограничения ресурсов базы данных SQL в модели приобретения на основе виртуальных ядер — эластичные пулы](resource-limits-vcore-elastic-pools.md) и [Ограничения ресурсов базы данных SQL в модели приобретения на основе единиц DTU — эластичные пулы](resource-limits-dtu-elastic-pools.md).

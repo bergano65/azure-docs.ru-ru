@@ -5,16 +5,17 @@ description: Сведения о том, как применить Azure CLI д
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
 ms.author: larryfr
 author: Blackmist
 ms.date: 06/25/2020
-ms.openlocfilehash: 64963bfc28921d195d9ed0f96b2673a9c9e4aa2b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.topic: conceptual
+ms.custom: how-to
+ms.openlocfilehash: 1cc280dc12fcb462e11a568910eef053e4bdac50
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85392715"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87319700"
 ---
 # <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочей области для Машинного обучения Azure с помощью Azure CLI
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -59,7 +60,13 @@ az extension add -n azure-cli-ml
 Рабочая область Машинного обучения Azure использует следующие службы или сущности Azure:
 
 > [!IMPORTANT]
-> Если вы не укажете существующую службу Azure, она будет создана автоматически во время создания рабочей области. Обязательно укажите группу ресурсов. При присоединении собственной учетной записи хранения убедитесь, что в ней включены как BLOB-объекты Azure, так и возможности файлов Azure, и что это иерархическое пространство имен (ADLS Gen 2) отключено. Вы всегда можете присоединить свою учетную запись хранения позже, после создания рабочей области в качестве хранилища данных.
+> Если вы не укажете существующую службу Azure, она будет создана автоматически во время создания рабочей области. Обязательно укажите группу ресурсов. При присоединении собственной учетной записи хранения убедитесь, что она соответствует следующим критериям:
+>
+> * Учетная запись хранения _не_ является учетной записью premium (Premium_LRS и Premium_GRS)
+> * Включены как BLOB-объекты Azure, так и возможности файлов Azure.
+> * Иерархическое пространство имен (ADLS Gen 2) отключено
+>
+> Эти требования относятся только к учетной записи хранения _по умолчанию_ , используемой рабочей областью.
 
 | Служба | Параметр для указания существующего экземпляра |
 | ---- | ---- |
@@ -147,6 +154,9 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
     Ответ этой команды аналогичен следующему тексту и является идентификатором вашей учетной записи хранения:
 
     `"/subscriptions/<service-GUID>/resourceGroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/<storage-account-name>"`
+
+    > [!IMPORTANT]
+    > Если вы хотите использовать существующую учетную запись хранения Azure, она не может быть учетной записью Premium (Premium_LRS и Premium_GRS). Он также не может иметь иерархическое пространство имен (используется с Azure Data Lake Storage 2-го поколения). Ни хранилище класса Premium, ни иерархическое пространство имен не поддерживаются в учетной записи хранения _по умолчанию_ рабочей области. Вы можете использовать хранилище класса Premium или иерархическое пространство имен с учетными записями хранения, _отличными от стандартных_ .
 
 + **Azure Application Insights.**
 

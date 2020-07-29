@@ -1,6 +1,6 @@
 ---
 title: Развертывание средства управления с помощью шаблона Azure Resource Manager — Azure
-description: Установка средства пользовательского интерфейса с помощью шаблона Azure Resource Manager для управления ресурсами виртуальных рабочих столов Windows.
+description: Установка средства пользовательского интерфейса с помощью шаблона Azure Resource Manager для управления ресурсами Windows для виртуальных рабочих столов (классическая модель).
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,21 +8,21 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 3c3e93cf711d4dadfdc2354a297b0588fb637c80
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bf9fff614f638aec9519c11b2bb558cc77b94814
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85514240"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284954"
 ---
-# <a name="deploy-a-management-tool-with-an-azure-resource-manager-template"></a>Развертывание средства управления с помощью шаблона Azure Resource Manager
+# <a name="deploy-a-windows-virtual-desktop-classic-management-tool-with-an-azure-resource-manager-template"></a>Развертывание средства управления виртуальным рабочим столом Windows (классическая модель) с помощью шаблона Azure Resource Manager
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows.
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows.
 
 В этой статье содержатся инструкции, которые помогут развернуть пользовательский интерфейс с помощью шаблона Azure Resource Manager.
 
-## <a name="important-considerations"></a>Важные сведения
+## <a name="important-considerations"></a>Важные замечания
 
 Так как приложению требуется согласие на взаимодействие с Виртуальным рабочим столом Windows, это средство не поддерживает сценарии совместной работы (B2B). Для каждой подписки клиента Azure Active Directory потребуется отдельное развертывание средства управления.
 
@@ -108,10 +108,10 @@ ms.locfileid: "85514240"
   > [!NOTE]
   > Если у вас есть настраиваемая группа клиентов, введите имя вручную вместо выбора из раскрывающегося списка.
 
-## <a name="report-issues"></a>Сообщение о проблемах
+## <a name="report-issues"></a>Сообщить о проблеме
 
 Если у вас возникли проблемы со средством управления или другими средствами Виртуального рабочего стола Windows, следуйте указаниям в [шаблонах Azure Resource Manager для службы удаленных рабочих столов](https://github.com/Azure/RDS-Templates/blob/master/README.md), чтобы сообщить о них в GitHub.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы научились развертывать средство управления и подключаться к нему, ознакомьтесь со сведениями об использовании справки по службам Azure для мониторинга проблем служб и рекомендаций по работоспособности. Дополнительные сведения см. в руководстве [Настройка оповещений служб](set-up-service-alerts-2019.md).

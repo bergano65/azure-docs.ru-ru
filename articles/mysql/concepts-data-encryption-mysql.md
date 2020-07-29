@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: 90ca46ace5f774e288b40a969f8f7e9802e79857
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7399bc60ffa88112fee87b429571772f634c0754
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87080885"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285430"
 ---
 # <a name="azure-database-for-mysql-data-encryption-with-a-customer-managed-key"></a>Шифрование данных в Базе данных Azure для MySQL с помощью управляемого клиентом ключа
 
@@ -22,7 +22,7 @@ ms.locfileid: "87080885"
 Key Vault — это облачная внешняя система управления ключами. Она обладает высокой доступностью и является масштабируемым надежным хранилищем для криптографических ключей RSA, которое при необходимости поддерживается проверенными аппаратными модулями безопасности (HSM) FIPS 140-2 уровня 2. Эта система запрещает прямой доступ к хранимому ключу, но предоставляет авторизованным сущностям службы шифрования и расшифровки. Key Vault может создать ключ, импортировать его или [передать с локального устройства HSM](../key-vault/key-Vault-hsm-protected-keys.md).
 
 > [!NOTE]
-> Эта функция доступна во всех регионах Azure, где База данных Azure для MySQL поддерживает ценовые категории "Общего назначения" и "Оптимизировано для операций в памяти".
+> Эта функция доступна во всех регионах Azure, где База данных Azure для MySQL поддерживает ценовые категории "Общего назначения" и "Оптимизировано для операций в памяти". Другие ограничения см. в разделе об [ограничениях](concepts-data-encryption-mysql.md#limitations) .
 
 ## <a name="benefits"></a>Преимущества
 

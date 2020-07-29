@@ -8,14 +8,15 @@ ms.author: luquinta
 ms.reviewer: luquinta
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
+ms.topic: conceptual
+ms.custom: how-to
 ms.date: 07/09/2020
-ms.openlocfilehash: 2deb939745647636cc04ae124d1e843db0bef7f6
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 5ec6af894f434f8d1f7df34b2ed0c2514ab88cc4
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206501"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87306151"
 ---
 # <a name="manage-azure-machine-learning-resources-with-the-vs-code-extension-preview"></a>Управление ресурсами Машинное обучение Azure с помощью расширения VS Code (Предварительная версия)
 
@@ -346,7 +347,7 @@ ms.locfileid: "86206501"
 
 Расширение VS Code поддерживает следующие целевые объекты развертывания:
 
-- Экземпляры контейнеров Azure;
+- Экземпляры контейнеров Azure
 - Служба Azure Kubernetes
 
 Дополнительные сведения см. в разделе [конечные точки веб-служб](concept-azure-machine-learning-architecture.md#web-service-endpoint).
@@ -376,7 +377,7 @@ ms.locfileid: "86206501"
 1. Разверните узел подписки, содержащий рабочую область.
 1. Разверните узел **конечные точки** в рабочей области.
 1. Щелкните правой кнопкой мыши развертывание, которое необходимо удалить, и выберите пункт **удалить службу**.
-1. Появится запрос, подтверждающий, что вы хотите удалить службу. Щелкните **ОК**.
+1. Появится запрос, подтверждающий, что вы хотите удалить службу. Нажмите кнопку **ОК**.
 
 ### <a name="manage-deployments"></a>Управление развертываниями
 

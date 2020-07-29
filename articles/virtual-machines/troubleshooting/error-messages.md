@@ -12,11 +12,12 @@ ms.topic: troubleshooting
 ms.workload: infrastructure
 ms.date: 5/22/2017
 ms.author: xujing
-ms.openlocfilehash: f5639d1cf94c77d699dc6de9841698b045ac1f96
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4e35772e81329e112aac361b6a533c559154f03f
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76543024"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284699"
 ---
 # <a name="understand-common-error-messages-when-you-manage-virtual-machines-in-azure"></a>Сведения о сообщениях об ошибках, часто возникающих при управлении виртуальными машинами в Azure
 
@@ -175,7 +176,7 @@ ms.locfileid: "76543024"
 |  OSProvisioningClientError  |  Имя пользователя, указанное для виртуальной машины, недопустимо для этого дистрибутива Linux. Сведения об ошибке: {0}.  |
 |  OSProvisioningInternalError  |  Не удалось подготовить ОС для виртуальной машины "{0}" из-за внутренней ошибки.  |
 |  OSProvisioningTimedOut  |  Подготовка ОС для виртуальной машины "{0}" не завершена за отведенное время. Виртуальная машина по-прежнему может успешно завершить подготовку. Проверьте состояние подготовки позже.  |
-|  OSProvisioningTimedOut  |  Подготовка ОС для виртуальной машины "{0}" не завершена за отведенное время. Виртуальная машина по-прежнему может успешно завершить подготовку. Проверьте состояние подготовки позже. Также убедитесь, что образ был надлежаще подготовлен (обобщен).   <ul><li>Инструкции для Windows: https://azure.microsoft.com/documentation/articles/virtual-machines-windows-upload-image/. </li><li> Инструкции для Linux: https://azure.microsoft.com/documentation/articles/virtual-machines-linux-capture-image/.</li></ul>  |
+|  OSProvisioningTimedOut  |  Подготовка ОС для виртуальной машины "{0}" не завершена за отведенное время. Виртуальная машина по-прежнему может успешно завершить подготовку. Проверьте состояние подготовки позже. Также убедитесь, что образ был надлежаще подготовлен (обобщен).   <ul><li>Инструкции для [Windows]( ../windows/upload-image.md).</li><li> Инструкции для [Linux](../linux/capture-image.md)</li></ul>  |
 |  OSProvisioningTimedOut  |  Подготовка ОС для виртуальной машины "{0}" не завершена за отведенное время. Обнаружено, что гостевой агент виртуальной машины работает. Предположительно гостевая ОС не была правильно подготовлена к использованию в качестве образа виртуальной машины (параметр CreateOption=FromImage). Чтобы устранить эту проблему, используйте VHD "как есть", указав CreateOption=Attach, или выполните надлежащую его подготовку для использования в качестве образа:   <ul><li>Инструкции для Windows: https://azure.microsoft.com/documentation/articles/virtual-machines-windows-upload-image/. </li><li> Инструкции для Linux: https://azure.microsoft.com/documentation/articles/virtual-machines-linux-capture-image/.</li></ul>  |
 |  OverConstrainedAllocationRequest  |  Требуемый размер ВМ в выбранном расположении в настоящее время недоступен.  |
 |  ResourceUpdateBlockedOnPlatformUpdate  |  Невозможно обновить ресурс из-за обновления платформы. Повторите попытку позже.  |

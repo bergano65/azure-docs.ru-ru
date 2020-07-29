@@ -5,11 +5,12 @@ services: container-service
 ms.custom: fasttrack-edit, references_regions
 ms.topic: article
 ms.date: 02/27/2020
-ms.openlocfilehash: 06507c75d486717a77676154818f2032b7e8c807
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: feea8c3cba170244be2ca3ec7a11c36a3c39f700
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84195565"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87281231"
 ---
 # <a name="create-an-azure-kubernetes-service-aks-cluster-that-uses-availability-zones"></a>Создание кластера Службы Azure Kubernetes (AKS), который использует зоны доступности
 
@@ -98,7 +99,7 @@ az aks create \
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
-Затем используйте команду [kubectl describe][kubectl-describe], чтобы вывести список узлов в кластере. Выполните фильтрацию по значению *failure-domain.beta.kubernetes.io/zone*, как показано в следующем примере.
+Затем используйте команду [kubectl Опишите][kubectl-describe] , чтобы вывести список узлов в кластере и выполнить фильтрацию по значению *Failure-domain.Beta.kubernetes.IO/Zone* . Ниже приведен пример для оболочки bash.
 
 ```console
 kubectl describe nodes | grep -e "Name:" -e "failure-domain.beta.kubernetes.io/zone"
@@ -130,7 +131,7 @@ az aks scale \
     --node-count 5
 ```
 
-Когда операция масштабирования завершается через несколько минут, команда `kubectl describe nodes | grep -e "Name:" -e "failure-domain.beta.kubernetes.io/zone"` должна вывести результат, аналогичный приведенному в этом примере:
+Когда операция масштабирования завершается через несколько минут, команда `kubectl describe nodes | grep -e "Name:" -e "failure-domain.beta.kubernetes.io/zone"` в оболочке bash должна вывести результат, аналогичный приведенному в этом примере:
 
 ```console
 Name:       aks-nodepool1-28993262-vmss000000
@@ -151,7 +152,7 @@ Name:       aks-nodepool1-28993262-vmss000004
 kubectl run nginx --image=nginx --replicas=3
 ```
 
-При просмотре узлов, на которых выполняются модули pod, вы увидите модули pod на узлах, соответствующих трем различным зонам доступности. Например, с помощью команды `kubectl describe pod | grep -e "^Name:" -e "^Node:"` вы получите примерно такой результат:
+При просмотре узлов, на которых выполняются модули pod, вы увидите модули pod на узлах, соответствующих трем различным зонам доступности. Например, с помощью команды `kubectl describe pod | grep -e "^Name:" -e "^Node:"` в интерпретаторе bash вы получите примерно такой результат:
 
 ```console
 Name:         nginx-6db489d4b7-ktdwg

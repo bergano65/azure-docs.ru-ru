@@ -1,6 +1,6 @@
 ---
 title: Пример скрипта Azure CLI. Пиринг между двумя виртуальными сетями | Документация Майкрософт
-description: Пример скрипта Azure CLI. Пиринг между двумя виртуальными сетями
+description: Используйте пример скрипта Azure CLI, чтобы создать и подключить две виртуальные сети в одном регионе через сеть Azure.
 services: virtual-network
 documentationcenter: virtual-network
 author: KumudD
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 07/07/2017
 ms.author: kumud
-ms.openlocfilehash: c301c66c3b668ae48314c4d1eb06657d8573209c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a4c3c353e87ad88d7bae10ae011bdd59e7992309
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87030419"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282098"
 ---
 # <a name="use-an-azure-cli-sample-script-to-connect-two-virtual-networks"></a>Использование примера сценария Azure CLI для подключения двух виртуальных сетей
 

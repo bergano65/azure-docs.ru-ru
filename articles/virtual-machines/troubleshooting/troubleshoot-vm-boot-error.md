@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 08/28/2019
 ms.author: tiag
-ms.openlocfilehash: 7774ea5138e6d77547e386531e573457cd6d2862
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 5353bad3ff631fd7baa5d9892d38449ba622ea46
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86525948"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284682"
 ---
 # <a name="linux-vm-boots-to-grub-rescue"></a>Виртуальная машина Linux загружается в GRUB
 
@@ -35,7 +35,7 @@ ms.locfileid: "86525948"
 * Если вы получаете ошибку **неизвестная**файловая система, эта ошибка может возникать из-за повреждения файловой системы в загрузочном разделе или неверной конфигурации ядра.
 
    * При возникновении проблем с файловой системой выполните действия, описанные в статье [Восстановление Linux: не удается выполнить подключение SSH к виртуальной машине Linux из-за ошибок файловой системы (fsck, индексных дескрипторов)](/archive/blogs/linuxonazure/linux-recovery-cannot-ssh-to-linux-vm-due-to-file-system-errors-fsck-inodes).
-   * В случае проблем с ядром выполните действия, описанные в статье [Восстановление Linux: ручное устранение проблем, связанных со сбоями в работе ядра](/archive/blogs/linuxonazure/linux-recovery-manually-fixing-non-boot-issues-related-to-kernel-problems), или [Восстановление Linux. Устранение проблем, связанных с проблемами ядра, с помощью чрут](/archive/blogs/linuxonazure/linux-recovery-fixing-non-boot-issues-related-to-kernel-problems-using-chroot).
+   * В случае проблем с ядром выполните действия, описанные в статье [Восстановление Linux: ручное устранение проблем, связанных со сбоями в работе ядра](http://linuxonazure.azurewebsites.net/linux-recovery-fixing-non-boot-issues-related-to-kernel-problems-using-chroot/), или [Восстановление Linux. Устранение проблем, связанных с проблемами ядра, с помощью чрут](http://linuxonazure.azurewebsites.net/linux-recovery-fixing-non-boot-issues-related-to-kernel-problems-using-chroot/).
    
 ### <a name="error---file-not-found"></a>Ошибка-файл не найден
 

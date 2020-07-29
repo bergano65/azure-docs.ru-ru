@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 11/27/2018
-ms.openlocfilehash: 6ac610d7dcf9849b6b439741957684867b9d01aa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a9f268e5080a5c04c5cdb4767f2db5fd2d77cd3c
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77660756"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326160"
 ---
 # <a name="expressroute-monitor"></a>Мониторинг ExpressRoute
 
@@ -22,7 +23,7 @@ ms.locfileid: "77660756"
 
 ![Мониторинг ExpressRoute](media/network-performance-monitor-expressroute/expressroute-intro.png)
 
-## <a name="configuration"></a>Параметр Configuration 
+## <a name="configuration"></a>Конфигурация 
 Чтобы открыть конфигурацию для Монитор производительности сети, откройте [решение монитор производительности сети](network-performance-monitor.md) и выберите **Настройка**.
 
 ### <a name="configure-network-security-group-rules"></a>Настройка правил группы безопасности сети 
@@ -138,5 +139,6 @@ ms.locfileid: "77660756"
 
  
 
-## <a name="next-steps"></a>Дальнейшие шаги
-[Выполните поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.
+## <a name="next-steps"></a>Дальнейшие действия
+[Выполните поиск по журналам](../log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.
+

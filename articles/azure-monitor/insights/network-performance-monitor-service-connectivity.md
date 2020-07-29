@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 02/20/2018
-ms.openlocfilehash: 0ba93db3e692a34de42849b469978cea4459c6fc
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: dd8dcbe136558e997ca16a2d9754cbf1c4e7620b
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86498871"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326109"
 ---
 # <a name="service-connectivity-monitor"></a>Монитор подключений службы
 
@@ -29,7 +29,7 @@ ms.locfileid: "86498871"
 ![Монитор подключений службы](media/network-performance-monitor-service-endpoint/service-endpoint-intro.png)
 
 
-## <a name="configuration"></a>Параметр Configuration 
+## <a name="configuration"></a>Конфигурация 
 Чтобы открыть конфигурацию для Монитор производительности сети, откройте [решение монитор производительности сети](network-performance-monitor.md) и выберите **Настройка**.
 
 ![Настройка Монитора производительности сети](media/network-performance-monitor-service-endpoint/npm-configure-button.png)
@@ -133,4 +133,5 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 | MS Teams | gov.teams.microsoft.us | 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Выполните поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.
+[Выполните поиск по журналам](../log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.
+

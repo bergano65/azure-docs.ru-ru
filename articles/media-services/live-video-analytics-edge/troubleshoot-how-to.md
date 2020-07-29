@@ -5,12 +5,12 @@ author: IngridAtMicrosoft
 ms.topic: how-to
 ms.author: inhenkel
 ms.date: 05/24/2020
-ms.openlocfilehash: 62163217862f586be7ed5c0a6000693f8e7fcdd6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ca41a403f789fd529ac65c21799d3d3e7f3becf6
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87043187"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285464"
 ---
 # <a name="troubleshoot-live-video-analytics-on-iot-edge"></a>Устранение неполадок в Live Video Analytics на IoT Edge
 
@@ -136,7 +136,7 @@ ModuleNotFoundError: No module named 'azure.mgmt.iothub.iot_hub_client'
     ```
 1. Убедитесь, что установлены следующие расширения. Начиная с публикации этой статьи, расширения и их версии:
 
-    | Расширение | Version |
+    | Расширение | Версия |
     |---|---|
     |azure-cli   |      2.5.1|
     |Command-modules-нспкг         |   2.0.3|
@@ -190,7 +190,7 @@ Unhandled exception. Microsoft.Azure.Devices.Common.Exceptions.UnauthorizedExcep
     ![Снимок экрана ответа в Visual Studio Code.](./media/troubleshoot-how-to/visual-studio-code1.png)
 1. Если предыдущее решение завершается сбоем, попробуйте выполнить следующие действия.
 
-    А. Перейдите в командную строку на устройстве IoT Edge и выполните следующую команду:
+    a. Перейдите в командную строку на устройстве IoT Edge и выполните следующую команду:
     
       ```
       sudo systemctl restart iotedge
@@ -202,7 +202,7 @@ Unhandled exception. Microsoft.Azure.Devices.Common.Exceptions.UnauthorizedExcep
       sudo iotedge list
       ```
 
-    Б. Если предыдущий подход также завершится сбоем, попробуйте перезагрузить виртуальную машину или компьютер.
+    b. Если предыдущий подход также завершится сбоем, попробуйте перезагрузить виртуальную машину или компьютер.
 
     c. В случае сбоя всех подходов выполните следующую команду, чтобы получить сжатый ZIP-файл со всеми [соответствующими журналами](../../iot-edge/troubleshoot.md#gather-debug-information-with-support-bundle-command)и присоединить его к запросу в [службу поддержки](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
@@ -266,6 +266,9 @@ Unhandled exception. Microsoft.Azure.Devices.Common.Exceptions.UnauthorizedExcep
 
 Если шаги самостоятельного устранения неполадок не помогли устранить проблему, перейдите на портал Azure и [откройте запрос в службу поддержки](../../azure-portal/supportability/how-to-create-azure-support-request.md).
 
+> [!WARNING]
+> Журналы могут содержать личные сведения (PII), такие как IP-адрес. Все локальные копии журналов будут удалены сразу после завершения анализа и закрытия запроса в службу поддержки.  
+
 Чтобы собрать соответствующие журналы, которые необходимо добавить в билет, следуйте инструкциям в следующих разделах. Файлы журнала можно передать в области **сведений** запроса на поддержку.
 
 ### <a name="use-the-support-bundle-command"></a>Использование команды support-пучок
@@ -309,11 +312,11 @@ Unhandled exception. Microsoft.Azure.Devices.Common.Exceptions.UnauthorizedExcep
 
 1. Выберите **Обновить**.
 1. Выберите **Review + Create** (Просмотреть и создать). Сообщение об успешной проверке публикуется под зеленым баннером.
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 1. Обновите **двойника удостоверений модуля** , чтобы он указывал на параметр дебуглогсдиректори, указывающий на каталог, в котором собираются журналы.
 
-    А. В таблице **модули** выберите **лваедже**.  
-    Б. В верхней части панели выберите **модуль удостоверение двойника**. Откроется Редактируемая панель.  
+    a. В таблице **модули** выберите **лваедже**.  
+    b. В верхней части панели выберите **модуль удостоверение двойника**. Откроется Редактируемая панель.  
     c. В разделе **требуемый ключ**добавьте следующую пару "ключ-значение":  
     `"DebugLogsDirectory": "/var/lib/azuremediaservices/logs"`
 
@@ -330,14 +333,14 @@ Unhandled exception. Microsoft.Azure.Devices.Common.Exceptions.UnauthorizedExcep
    > [!NOTE]
    > Эти файлы журналов не предназначены для самостоятельной диагностики. Они предназначены для анализа ваших проблем командой инженеров Azure.
 
-   А. В следующей команде обязательно замените **$DEBUG _LOG_LOCATION_ON_EDGE_DEVICE** расположением журналов отладки на пограничном устройстве, которое вы настроили ранее.  
+   a. В следующей команде обязательно замените **$DEBUG _LOG_LOCATION_ON_EDGE_DEVICE** расположением журналов отладки на пограничном устройстве, которое вы настроили ранее.  
 
    ```
    sudo apt install zip unzip  
    zip -r debugLogs.zip $DEBUG_LOG_LOCATION_ON_EDGE_DEVICE 
    ```
 
-   Б. Прикрепите файл *debugLogs.zip* к запросу в службу поддержки.
+   b. Прикрепите файл *debugLogs.zip* к запросу в службу поддержки.
 
 1. Вы можете отключить сбор журналов, установив значение в поле **идентификатор модуля двойника** в значение *null*. Вернитесь на страницу **удостоверения модуля двойника** и измените следующий параметр на:
 

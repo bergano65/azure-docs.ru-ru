@@ -3,17 +3,17 @@ title: Создание и настройка хранилища ключей д
 description: В этой статье описано, как создать и настроить хранилище ключей для использования со службой "Шифрование дисков Azure".
 ms.service: virtual-machines
 ms.subservice: security
-ms.topic: article
+ms.topic: how-to
 author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: fa87fc874be5e60d018b5663b4655d069930ab88
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0779cad02f266d49be055ea485e87c9c8075b7b3
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87036154"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284529"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Создание и настройка хранилища ключей для службы "Шифрование дисков Azure"
 

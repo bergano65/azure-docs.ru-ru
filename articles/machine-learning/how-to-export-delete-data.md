@@ -5,18 +5,18 @@ description: Узнайте, как экспортировать или удал
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
 ms.reviewer: jmartens
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2020
-ms.custom: seodec18
-ms.openlocfilehash: 78e8d02ecaaf57c457a0eaeed86d392cd6372fa9
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.topic: conceptual
+ms.custom: how-to
+ms.openlocfilehash: 657f6dd32c18b5b0745883da02563e9f5257d92d
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85963705"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87307222"
 ---
 # <a name="export-or-delete-your-machine-learning-service-workspace-data"></a>Экспорт или удаление данных рабочей области Службы машинного обучения
 
@@ -246,7 +246,7 @@ ms.locfileid: "85963705"
 
 1. В списке выберите отдельный черновик конвейера для удаления.
 
-1. Выберите команду **Удалить**.
+1. Выберите **Удалить**.
 
 ### <a name="delete-datasets-in-the-designer"></a>Удаление наборов данных в конструкторе
 

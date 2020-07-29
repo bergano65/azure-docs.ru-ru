@@ -4,14 +4,15 @@ description: Как использовать Cloud-init для настройк�
 author: rickstercdn
 manager: gwallace
 ms.service: virtual-machines-linux
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: 1247652e536042ee249054d86aed3c3f8e7aa7bf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1f8746e67ba712ac4c2c3e832fcb5ffefb170d59
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78969202"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87371946"
 ---
 # <a name="use-cloud-init-to-configure-a-swap-partition-on-a-linux-vm"></a>Настройка раздела подкачки на виртуальной машине Linux с помощью Cloud-init
 В этой статье показано, как с помощью [Cloud-init](https://cloudinit.readthedocs.io) настроить раздел подкачки в различных дистрибутивах Linux. Раздел подкачки традиционно настроился агентом Linux (WALA) в зависимости от того, какие дистрибутивы необходимы.  В этом документе описывается процесс создания раздела подкачки по запросу во время подготовки с помощью Cloud-init.  Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).

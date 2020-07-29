@@ -5,16 +5,17 @@ description: Настройка VS Code удаленного для интера
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
+ms.topic: conceptual
+ms.custom: how-to
 ms.author: jmartens
 author: j-martens
 ms.date: 07/09/2020
-ms.openlocfilehash: 46aefa62ab00c0b3bc2b90467a9fafd61439a10e
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: dfb8dac1b9027acd01b3c13c919d9c3cd8368819
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86203457"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87320125"
 ---
 # <a name="debug-interactively-on-an-azure-machine-learning-compute-instance-with-vs-code-remote-preview"></a>Отладка в интерактивном режиме на Машинное обучение Azure вычислительного экземпляра с VS Code удаленно (Предварительная версия)
 
@@ -25,7 +26,7 @@ ms.locfileid: "86203457"
 
 + [Visual Studio Code удаленный](https://code.visualstudio.com/docs/remote/remote-overview) Разработка позволяет использовать контейнер, удаленный компьютер или подсистему Windows для Linux (WSL) в качестве полнофункциональной среды разработки. 
 
-## <a name="prerequisite"></a>Предварительное требование  
+## <a name="prerequisite"></a>Предварительные требования  
 
 На платформах Windows необходимо [установить клиент SSH, совместимый с OpenSSH](https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-client) , если он еще не существует. 
 
@@ -86,11 +87,11 @@ Host azmlci1
 
 Ниже приведены некоторые сведения о полях. 
 
-|Поле|Описание|
+|Поле|Описание:|
 |----|---------|
 |Узел|Использование любой краткой формы для вычислительного экземпляра |
 |HostName|Это IP-адрес вычислительного экземпляра |
-|Порт|Это порт, показанный в диалоговом окне SSH выше |
+|Port|Это порт, показанный в диалоговом окне SSH выше |
 |Пользователь|Это должно быть `azureuser` |
 |идентитифиле|Должен указывать на файл, в который был сохранен закрытый ключ |
 

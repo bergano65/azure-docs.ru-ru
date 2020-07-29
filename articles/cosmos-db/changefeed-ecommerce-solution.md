@@ -7,12 +7,13 @@ ms.devlang: java
 ms.topic: how-to
 ms.date: 05/28/2019
 ms.author: sngun
-ms.openlocfilehash: ade688c3fe339db864994923d0ff40dfe41b7cb7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-java
+ms.openlocfilehash: c9abc4dc89651eec7df635fb415314b2c12da3a6
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85263013"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87319768"
 ---
 # <a name="use-azure-cosmos-db-change-feed-to-visualize-real-time-data-analytics"></a>Использование канала изменений Azure Cosmos DB для визуализации аналитики данных в реальном времени
 
@@ -53,7 +54,7 @@ ms.locfileid: "85263013"
 
 7. **Power BI:** это решение используется для визуализации данных, отправленных Azure Stream Analytics. Вы можете создать панель мониторинга, чтобы увидеть, как метрики изменяются в реальном времени.  
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Microsoft .NET Framework 4.7.1 или более поздняя версия.
 
@@ -254,7 +255,7 @@ Power BI — набор средств бизнес-аналитики для а
 
 7. Теперь, если вы хотите визуализировать больше метрики, можете вернуться к **streamjob1** и создать еще три набора выходных данных со следующими полями.
 
-   а. **Выходной псевдоним** — incomingRevenueOutput, имя набора данных — incomingRevenue, имя таблицы — incomingRevenue.  
+   a. **Выходной псевдоним** — incomingRevenueOutput, имя набора данных — incomingRevenue, имя таблицы — incomingRevenue.  
    b. **Выходной псевдоним** — top5Output, имя набора данных — top5, имя таблицы — top5.  
    c. **Выходной псевдоним** — uniqueVisitorCountOutput, имя набора данных — uniqueVisitorCount, имя таблицы — uniqueVisitorCount.
 
@@ -392,6 +393,6 @@ Power BI — набор средств бизнес-аналитики для а
 
 Чтобы удалить ресурсы, созданные в ходе этой лабораторной работы, перейдите к группе ресурсов на [портал Azure](https://portal.azure.com/), а затем выберите **Удалить группу ресурсов** в меню в верхней части страницы и следуйте инструкциям.
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
   
 * Дополнительные сведения о канале изменений см. в статье [Работа с поддержкой веб-канала изменений в Azure Cosmos DB](change-feed.md). 

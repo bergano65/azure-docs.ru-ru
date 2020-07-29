@@ -1,6 +1,6 @@
 ---
-title: Публикация встроенных приложений в виртуальном рабочем столе Windows — 2019 — Azure
-description: Как опубликовать встроенные приложения в виртуальном рабочем столе Windows.
+title: Публикация встроенных приложений в виртуальном рабочем столе Windows (классическая модель) — Azure
+description: Как опубликовать встроенные приложения в виртуальном рабочем столе Windows (классическая модель).
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: e20d2ca8f2f0ef2b8c0290702a2b9e91cc22bb09
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5f204bc6d2595e7f18e59bae15ff35d49e1801e0
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87020379"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284937"
 ---
-# <a name="publish-built-in-apps-in-windows-virtual-desktop---fall-2019"></a>Публикация встроенных приложений в виртуальном рабочем столе Windows — выпадение 2019
+# <a name="publish-built-in-apps-in-windows-virtual-desktop-classic"></a>Публикация встроенных приложений в виртуальном рабочем столе Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../publish-apps.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../publish-apps.md).
 
 В этой статье рассказывается, как опубликовать приложения в среде виртуальных рабочих столов Windows.
 

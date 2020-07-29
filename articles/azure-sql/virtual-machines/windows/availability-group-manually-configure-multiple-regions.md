@@ -3,7 +3,7 @@ title: Настройка группы доступности Always On SQL Serv
 description: В этой статье объясняется, как настроить SQL Server Always On группы доступности на виртуальных машинах Azure с репликой в другом регионе.
 services: virtual-machines
 documentationCenter: na
-author: MikeRayMSFT
+author: MashaMSFT
 editor: monicar
 tags: azure-service-management
 ms.assetid: 388c464e-a16e-4c9d-a0d5-bb7cf5974689
@@ -12,13 +12,14 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/02/2017
-ms.author: mikeray
+ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 8ab62a93546719e172eec34168a0692daccf281a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e33a5e32848dfd0a6cf252d6876616fc89edd1d7
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84669313"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284274"
 ---
 # <a name="configure-a-sql-server-always-on-availability-group-across-different-azure-regions"></a>Настройка группы доступности Always On SQL Server в разных регионах Azure
 
@@ -196,7 +197,7 @@ ms.locfileid: "84669313"
 - [Выполнение запланированного перехода на другой ресурс вручную для группы доступности (SQL Server)](https://msdn.microsoft.com/library/hh231018.aspx)
 - [Выполнение принудительного перехода на другой ресурс вручную для группы доступности (SQL Server)](https://msdn.microsoft.com/library/ff877957.aspx)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Группы доступности AlwaysOn](https://msdn.microsoft.com/library/hh510230.aspx)
 * [Виртуальные машины Azure](https://docs.microsoft.com/azure/virtual-machines/windows/)
