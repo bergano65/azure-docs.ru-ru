@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/18/2020
-ms.openlocfilehash: cb9214dcd79e45b4c587c7ab47e425f2fdd8714c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d6fbfc7dced59580e91c3beceb6054f223a0a17d
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85564432"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87319054"
 ---
 # <a name="ai-enrichment-in-azure-cognitive-search"></a>Обогащение с помощью ИИ в службе "Когнитивный поиск Azure"
 
@@ -59,7 +59,7 @@ ms.locfileid: "85564432"
 
 Пользовательские навыки могут поддерживать более сложные сценарии, такие как распознавание форм или обнаружение настраиваемых сущностей с использованием модели, которую вы предоставляете и переносите в [веб-интерфейс пользовательских навыков](cognitive-search-custom-skill-interface.md). Несколько примеров пользовательских навыков включают в себя [Распознаватель документов](/azure/cognitive-services/form-recognizer/overview), интеграцию [API Поиска сущностей Bing](https://docs.microsoft.com/azure/search/cognitive-search-create-custom-skill-example) и [распознавание настраиваемых сущностей](https://github.com/Microsoft/SkillsExtractorCognitiveSearch).
 
-<a name="enrichment-steps">Действия # # в конвейере обогащения</a>
+## <a name="steps-in-an-enrichment-pipeline"></a>Шаги в конвейере обогащения<a name="enrichment-steps"></a>
 
 Конвейер обогащения основан на [*индексаторах*](search-indexer-overview.md). Индексаторы заполняют индекс на основе сопоставлений полей по полям между индексом и источником данных для взлома документов. Навыки, теперь присоединенные к индексаторам, перехватывать и расширять документы в соответствии с определяемыми навыками. После индексации созданное содержимое будет доступно через поисковые запросы [любых типов, поддерживаемых в службе "Когнитивный поиск Azure"](search-query-overview.md).  Если вы еще не знакомы с индексаторами, ознакомьтесь с простым примером, представленным в этом разделе.
 
@@ -115,7 +115,7 @@ ms.locfileid: "85564432"
 
 1. Выполните [сброс индексатора](search-howto-reindex.md), прежде чем перестроить конвейер.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 + [Ссылки на документацию по обогащению ИИ](cognitive-search-resources-documentation.md)
 + [Пример. Создание пользовательского навыка для обогащения искусственного интеллекта (C#)](cognitive-search-create-custom-skill-example.md)

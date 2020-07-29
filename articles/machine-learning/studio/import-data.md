@@ -1,6 +1,5 @@
 ---
-title: Импорт данных для обучения
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): импорт обучающих данных в Azure'
 description: Импорт данных в Машинное обучение Azure Studio (классическая модель) из различных источников данных. Узнайте, какие типы данных и форматы данных поддерживаются.
 services: machine-learning
 ms.service: machine-learning
@@ -10,14 +9,17 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 02/01/2019
-ms.openlocfilehash: fa031e6e23c218ff2ca8e2ef3e778768fabb1ebb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b04c9c1796491622a76e2c2a2fbfcdcc0c624dda
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85321481"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318544"
 ---
 # <a name="import-your-training-data-into-azure-machine-learning-studio-classic-from-various-data-sources"></a>Импорт обучающих данных в Машинное обучение Azure Studio (классическая модель) из различных источников данных
+
+**применимо к:** ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-azure-ml.md) ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) 
+
 
 Чтобы использовать собственные данные в Машинное обучение Studio (классическая модель) для разработки и обучения решения для прогнозной аналитики, можно использовать следующие данные: 
 

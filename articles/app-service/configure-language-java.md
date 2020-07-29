@@ -8,13 +8,13 @@ ms.topic: article
 ms.date: 04/12/2019
 ms.author: jafreebe
 ms.reviewer: cephalin
-ms.custom: seodec18
-ms.openlocfilehash: aa6e3edf2c02cad34cbe9b1f9ac82517823caa8e
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.custom: seodec18, devx-track-java
+ms.openlocfilehash: d0850b2192df1392a245f27588ffcb8ddb337347
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86130560"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87319343"
 ---
 # <a name="configure-a-windows-java-app-for-azure-app-service"></a>Настройка приложения Windows Java для службы приложений Azure
 
@@ -342,7 +342,7 @@ Tomcat 8,0 достигла [окончания срока жизни (конц�
 
 Разработчики могут [сообщить о проблеме](/azure/azure-portal/supportability/how-to-create-azure-support-request) с Azul Zulu JDK в службу поддержки Azure при наличии [соответствующего плана поддержки](https://azure.microsoft.com/support/plans/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом разделе содержится инструкция поддержки Java для службы приложений Azure в Windows.
 

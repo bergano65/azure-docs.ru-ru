@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/20/2020
-ms.openlocfilehash: 78cdf1798d9176c9d3c7b3705a11dccde5e47e67
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a14f7ca3e5a7b291e430db6ea536edc5396b5448
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077111"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318901"
 ---
 # <a name="customer-owned-storage-accounts-for-log-ingestion-in-azure-monitor"></a>Учетные записи хранения, принадлежащие клиенту, для приема данных журнала в Azure Monitor
 
@@ -54,7 +54,7 @@ Azure Monitor использует учетные записи хранения 
 ## <a name="command-line-and-rest-api"></a>Командная строка и REST API
 
 ### <a name="command-line"></a>Командная строка
-Чтобы создать связанные учетные записи хранения и управлять ими, используйте команду [AZ Monitor журнала-Analytics Workspace Link-Storage](https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/linked-storage). Эта команда может связывать учетные записи хранения и отменять связи между ними из рабочей области и перечислять связанные учетные записи хранения.
+Чтобы создать связанные учетные записи хранения и управлять ими, используйте команду [AZ Monitor журнала-Analytics Workspace Link-Storage](/cli/azure/monitor/log-analytics/workspace/linked-storage). Эта команда может связывать учетные записи хранения и отменять связи между ними из рабочей области и перечислять связанные учетные записи хранения.
 
 ### <a name="request-and-cli-values"></a>Значения запроса и CLI
 
@@ -236,3 +236,4 @@ DELETE https://management.azure.com/subscriptions/{subscriptionId}/resourceGroup
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о настройке частной ссылки см. в статье [Использование частной связи Azure для безопасного подключения сетей к Azure Monitor](private-link-security.md)
+

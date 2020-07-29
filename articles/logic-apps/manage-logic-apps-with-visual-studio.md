@@ -7,12 +7,12 @@ ms.reviewer: estfan, jonfan, logicappspm
 ms.topic: article
 ms.custom: mvc
 ms.date: 04/29/2020
-ms.openlocfilehash: 9cf964b8b5ebbfe5f790a1e325b48cd4179cf4ee
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: cde8db5310e3ede2721ba327b28c789ccd0b7dd0
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87127678"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87280772"
 ---
 # <a name="manage-logic-apps-with-visual-studio"></a>Управление приложениями логики в Visual Studio
 
@@ -25,7 +25,7 @@ ms.locfileid: "87127678"
 
 <a name="requirements"></a>
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -71,7 +71,7 @@ ms.locfileid: "87127678"
 
 1. Запустите Visual Studio. В меню **Представление** выберите **Cloud Explorer**.
 
-1. В Cloud Explorer выберите значок **Управление учетной записью** . Выберите подписку Azure, связанную с приложениями логики, и нажмите кнопку **Применить**. Например.
+1. В Cloud Explorer выберите значок **Управление учетной записью** . Выберите подписку Azure, связанную с приложениями логики, и нажмите кнопку **Применить**. Пример:
 
    ![Выберите "Управление учетными записями".](./media/manage-logic-apps-with-visual-studio/account-management-select-Azure-subscription.png)
 
@@ -100,7 +100,7 @@ ms.locfileid: "87127678"
 
 ## <a name="download-from-azure"></a>Скачивание из Azure
 
-Вы можете загрузить приложения логики с [портала Azure](https://portal.azure.com) и сохранить их в виде шаблонов [Azure Resource Manager](../azure-resource-manager/management/overview.md). Затем вы можете локально изменить шаблоны в Visual Studio и настроить приложения логики для разных сред развертывания.  При загрузке приложений логики автоматически *параметризуются* их определения внутри [шаблонов Resource Manager](../azure-resource-manager/templates/overview.md), которые также используют формат JSON.
+Вы можете [скачать](../azure-resource-manager/templates/export-template-portal.md#export-template-from-a-resource) приложения логики из [портал Azure](https://portal.azure.com) и сохранить их как шаблоны [Azure Resource Manager](../azure-resource-manager/management/overview.md) . Затем вы можете локально изменить шаблоны в Visual Studio и настроить приложения логики для разных сред развертывания.  При загрузке приложений логики автоматически *параметризуются* их определения внутри [шаблонов Resource Manager](../azure-resource-manager/templates/overview.md), которые также используют формат JSON.
 
 1. В Visual Studio с помощью Cloud Explorer [откройте приложение логики, которое необходимо скачать из Azure](#open-designer).
 
@@ -204,7 +204,7 @@ ms.locfileid: "87127678"
 
 * В Visual Studio на панели инструментов конструктора приложений логики выберите **Обновить**.
 
-  или
+  -или-
 
 * В Cloud Explorer Visual Studio откройте контекстное меню приложения логики и выберите **Обновить**.
 
@@ -230,7 +230,7 @@ ms.locfileid: "87127678"
 
    ![Открытие журнала выполнения для приложения логики](./media/manage-logic-apps-with-visual-studio/open-run-history-for-logic-app.png)
 
-1. Чтобы просмотреть сведения об определенном запуске, дважды щелкните его. Например.
+1. Чтобы просмотреть сведения об определенном запуске, дважды щелкните его. Пример:
 
    ![Просмотр сведений о конкретном запуске](./media/manage-logic-apps-with-visual-studio/view-run-history-details.png)
   
@@ -267,7 +267,7 @@ ms.locfileid: "87127678"
 > При удалении и повторном создании дочернего приложения логики необходимо повторно сохранить родительское приложение логики. Повторно созданное дочернее приложение будет иметь разные метаданные.
 > Если вы не пересохраняете родительское приложение логики после повторного создания своего дочернего приложения, вызов дочернего приложения логики завершится ошибкой "несанкционированный". Это поведение относится к приложениям логики родительского и дочернего приложения, например к тем, которые используют артефакты в учетных записях интеграции или вызывают функции Azure.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 При открытии проекта приложения логики в конструкторе Logic Apps может не отображаться параметр для выбора подписки Azure. Вместо этого приложение логики откроется не с той подпиской Azure, которую вы хотите использовать. Это происходит, потому что после открытия JSON-файла для приложения логики Visual Studio кэширует первую выбранную подписку для использования в будущем. Чтобы устранить эту проблему, попробуйте одно из этих действий:
 

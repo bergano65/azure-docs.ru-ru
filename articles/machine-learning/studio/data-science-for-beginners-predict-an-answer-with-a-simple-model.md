@@ -1,6 +1,5 @@
 ---
-title: Прогнозирования ответов с помощью моделей регрессии
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): прогнозирование ответов с моделями регрессии в Azure'
 description: Создание простой модели регрессии для прогнозирования цены в видео 4 из цикла "Обработка и анализ данных для начинающих". Содержит линейную регрессию с целевыми данными.
 services: machine-learning
 ms.service: machine-learning
@@ -10,13 +9,16 @@ author: sdgilley
 ms.author: sgilley
 ms.custom: seodec18
 ms.date: 03/22/2019
-ms.openlocfilehash: ac9f4262d614b1e413f4283d3c459e60fc6634e2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1cfe617ab424fbb29e2866cd98d4b8c390f306c9
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82930239"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318748"
 ---
 # <a name="predict-an-answer-with-a-simple-model"></a>Прогнозирование ответа с помощью простой модели
+
+
 ## <a name="video-4-data-science-for-beginners-series"></a>Видео 4. Обработка и анализ данных для начинающих
 Узнайте, как создать простую модель регрессии для прогнозирования стоимости бриллиантов. В этом вам поможет видео 4 из цикла "Обработка и анализ данных для начинающих". Мы создадим модель регрессии с целевыми данными.
 
@@ -125,6 +127,6 @@ ms.locfileid: "82930239"
 
 Обязательно ознакомьтесь с другими видеоматериалами, приведенными в подСтудия машинного обучения Microsoft Azure (классическая модель обработки данных для начинающих).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Попробуйте первый эксперимент по обработке и анализу данных с помощью Машинное обучение Studio (классическая модель)](create-experiment.md)
 * [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/overview-what-is-azure-ml)

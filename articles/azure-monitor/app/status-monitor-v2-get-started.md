@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 05527ff456c70290a925befc9d30fb1eaf177199
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 66b0ba083dc05c10dbf001eebcbbdfa269285c2e
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87008240"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318969"
 ---
 # <a name="get-started-with-azure-monitor-application-insights-agent-for-on-premises-servers"></a>Начало работы с агентом Azure Monitor Application Insights для локальных серверов
 
@@ -71,18 +71,19 @@ Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-xxxx-xxxx
 
  Просмотр телеметрии:
 
-- [Изучите метрики](../../azure-monitor/platform/metrics-charts.md) для мониторинга производительности и использования.
-- [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
+- [Изучите метрики](../platform/metrics-charts.md) для мониторинга производительности и использования.
+- [Поиск событий и журналов](./diagnostic-search.md) для диагностики проблем.
 - [Используйте аналитику](../log-query/log-query-overview.md) для более сложных запросов.
-- [Создание панелей мониторинга](../../azure-monitor/app/overview-dashboard.md).
+- [Создание панелей мониторинга](./overview-dashboard.md).
 
  Добавление данных телеметрии:
 
 - [Создайте веб-тесты](monitor-web-app-availability.md), чтобы убедиться, что ваш сайт продолжает работать.
-- [Добавьте данные телеметрии веб-клиента](../../azure-monitor/app/javascript.md) , чтобы просмотреть исключения из кода веб-страницы и включить вызовы трассировки.
-- [Добавьте в код пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md) , чтобы можно было вставить вызовы трассировки и журнала.
+- [Добавьте данные телеметрии веб-клиента](./javascript.md) , чтобы просмотреть исключения из кода веб-страницы и включить вызовы трассировки.
+- [Добавьте в код пакет SDK для Application Insights](./asp-net.md) , чтобы можно было вставить вызовы трассировки и журнала.
 
 Другие действия с агентом Application Insights:
 
 - Ознакомьтесь с [подробными инструкциями](status-monitor-v2-detailed-instructions.md) для объяснения команд, найденных здесь.
 - Используйте наше справочное по для [устранения неполадок](status-monitor-v2-troubleshoot.md) агента Application Insights.
+

@@ -3,15 +3,16 @@ title: Подключение к Office 365 Outlook
 description: Автоматизируйте задачи и рабочие процессы, управляющие электронной почтой, контактами и календарями в Office 365 Outlook с помощью Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-ms.reviewer: klam, logicappspm
+ms.reviewer: logicappspm
 ms.topic: article
-ms.date: 01/08/2020
+ms.date: 07/27/2020
 tags: connectors
-ms.openlocfilehash: b0f2b8b9c369fdb42c7e0e7f77fc090424ae3729
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: aa5be3d58ee1a0a40d0b817e1f5999ccd4bc423d
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75732725"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87319241"
 ---
 # <a name="manage-email-contacts-and-calendars-in-office-365-outlook-by-using-azure-logic-apps"></a>Управление сообщениями электронной почты, контактами и календарями в Office 365 Outlook с помощью Azure Logic Apps
 
@@ -26,11 +27,11 @@ ms.locfileid: "75732725"
 > [!NOTE]
 > Чтобы автоматизировать задачи для @outlook.com @hotmail.com учетной записи или, используйте [соединитель Outlook.com](../connectors/connectors-create-api-outlook.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
+
+* Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). 
 
 * [Учетная запись Office 365](https://www.office.com/)
-
-* Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
 * Приложение логики, в котором вы хотите получить доступ к учетной записи Office 365 Outlook. Чтобы запустить рабочий процесс с помощью триггера Outlook Office 365, необходимо иметь [пустое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). Чтобы добавить в рабочий процесс действие Office 365 Outlook, приложение логики должно уже иметь триггер.
 
@@ -45,6 +46,9 @@ ms.locfileid: "75732725"
    ![Выберите триггер, чтобы запустить приложение логики](./media/connectors-create-api-office365-outlook/office365-trigger.png)
 
 1. Если появится запрос на вход, укажите учетные данные Office 365, чтобы приложение логики могла подключиться к вашей учетной записи. В противном случае, если подключение уже существует, укажите сведения о свойствах триггера.
+
+   > [!NOTE]
+   > Срок действия подключения не истекает до отзыва, даже если вы измените учетные данные для входа. Дополнительные сведения см. в статье [Настройка времени жизни маркеров в Azure Active Directory](../active-directory/active-directory-configurable-token-lifetimes.md).
 
    В этом примере выбирается календарь, который проверяет триггер, например:
 
@@ -76,6 +80,9 @@ ms.locfileid: "75732725"
 
 1. Если появится запрос на вход, укажите учетные данные Office 365, чтобы приложение логики могла подключиться к вашей учетной записи. В противном случае, если подключение уже существует, укажите сведения о свойствах действия.
 
+   > [!NOTE]
+   > Срок действия подключения не истекает до отзыва, даже если вы измените учетные данные для входа. Дополнительные сведения см. в статье [Настройка времени жизни маркеров в Azure Active Directory](../active-directory/active-directory-configurable-token-lifetimes.md).
+
    В этом примере выбирается папка Contacts, в которой действие создает новый контакт, например:
 
    ![Настройка свойств действия](./media/connectors-create-api-office365-outlook/select-contacts-folder.png)
@@ -84,9 +91,9 @@ ms.locfileid: "75732725"
 
 1. На панели инструментов конструктора щелкните **Сохранить**.
 
-## <a name="connector-specific-details"></a>Сведения о соединителях
+## <a name="connector-reference"></a>Справочник по соединителям
 
-Технические сведения о триггерах, действиях и ограничениях, описанных в файле Swagger соединителя, см. на [странице справочника по соединителю](/connectors/office365connector/). 
+Технические сведения об этом соединителе, такие как триггеры, действия и ограничения, как описано в файле Swagger соединителя, см. на [странице справочника по соединителю](/connectors/office365/). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

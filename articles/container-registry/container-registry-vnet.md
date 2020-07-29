@@ -3,11 +3,12 @@ title: Ограничение доступа с помощью конечной 
 description: Ограничьте доступ к реестру контейнеров Azure, используя конечную точку службы в виртуальной сети Azure. Доступ к конечной точке службы является компонентом уровня служб Premium.
 ms.topic: article
 ms.date: 05/04/2020
-ms.openlocfilehash: 0f320bb86549c801711cafdbce4500ff7737cb89
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a6a0702019cd11f26ea9fcdba8a74bf3e71df94b
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84509293"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87371436"
 ---
 # <a name="restrict-access-to-a-container-registry-using-a-service-endpoint-in-an-azure-virtual-network"></a>Ограничение доступа к реестру контейнеров с использованием конечной точки службы в виртуальной сети Azure
 
@@ -26,6 +27,7 @@ ms.locfileid: "84509293"
 * Вы не сможете настроить конечные точки службы для реестра на портале Azure.
 * В качестве узла для доступа к реестру контейнеров через конечную точку службы можно использовать только кластер [Службы Azure Kubernetes](../aks/intro-kubernetes.md) или [виртуальную машину Azure](../virtual-machines/linux/overview.md). *Другие службы Azure, в том числе Экземпляры контейнеров Azure, не поддерживаются.*
 * Каждый реестр поддерживает не более 100 правил сетевого доступа.
+* Конечные точки службы для реестра контейнеров Azure не поддерживаются в облаке Azure для государственных организаций США или в облаке Azure для Китая.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

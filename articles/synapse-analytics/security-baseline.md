@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 34453dacd763b8b6a2bff3d977a7bc9b2ab78ca9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ef8c4754afc921eaeb68a84fbd8147f336a4940c
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089334"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87370280"
 ---
 # <a name="azure-security-baseline-for-synapse-analytics"></a>Базовые показатели безопасности Azure для синапсе Analytics
 
@@ -314,7 +314,7 @@ ms.locfileid: "87089334"
 
 При первом развертывании SQL Azure укажите имя входа администратора и соответствующий пароль для этого имени входа. Эта административная учетная запись называется администратором сервера. Учетные записи администратора для базы данных можно найти, открыв портал Azure и перейдя на вкладку Свойства сервера или управляемого экземпляра. Вы также можете настроить учетную запись администратора Azure AD с полными правами администратора, если вы хотите включить проверку подлинности Azure Active Directory.
 
-Для операций управления используйте встроенные роли управления доступом на основе ролей Azure (Azure RBAC), которые должны быть явно назначены. Используйте модуль Azure AD PowerShell для выполнения специальных запросов для обнаружения учетных записей, входящих в группы администраторов.
+Для операций управления используйте встроенные роли Azure, которые должны быть явно назначены. Используйте модуль Azure AD PowerShell для выполнения специальных запросов для обнаружения учетных записей, входящих в группы администраторов.
 
 * [Проверка подлинности для базы данных SQL](https://docs.microsoft.com/azure/azure-sql/database/security-overview#authentication)
 
@@ -328,7 +328,7 @@ ms.locfileid: "87089334"
 
 * [Управление существующими именами входа и учетными записями администратора в SQL Azure](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database)
 
-* [Встроенные роли Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles)
+* [Встроенные роли Azure](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1026,7 +1026,7 @@ ms.locfileid: "87089334"
 
 Если вы используете ключ, управляемый клиентом, для шифрования ключа шифрования базы данных, убедитесь, что выполняется резервное копирование ключа.
 
-* [Резервное копирование и восстановление в пуле SQL Azure синапсе](https://docs.microsoft.coms/azure/synapse-analytics/sql-data-warehouse/backup-and-restore)
+* [Резервное копирование и восстановление в пуле SQL Azure синапсе](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/backup-and-restore)
 
 * [Резервное копирование ключей Azure Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
 

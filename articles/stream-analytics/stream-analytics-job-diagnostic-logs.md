@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: troubleshooting
 ms.date: 06/18/2020
-ms.openlocfilehash: 2fb1f22fd555e8ddbdc04842906cddb990956fb5
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 6d0a778dee31d93244479c08c7bb7b6f37cf49cb
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86044521"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87319360"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-resource-logs"></a>Устранение неполадок в Azure Stream Analytics с помощью журналов ресурсов
 
@@ -59,7 +59,7 @@ Stream Analytics предоставляет журналы двух типов:
 
 Настоятельно рекомендуется включить журналы ресурсов и отправить их в журналы Azure Monitor. По умолчанию они **отключены** . Чтобы включить их, выполните следующие действия.
 
-1.  [Создайте рабочую область log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) , если она еще не создана. Рекомендуется, чтобы Рабочая область Log Analytics в том же регионе, что и задание Stream Analytics.
+1.  Создайте рабочую область Log Analytics, если она еще не создана. Рекомендуется, чтобы Рабочая область Log Analytics в том же регионе, что и задание Stream Analytics.
 
 2.  Войдите на портал Azure и перейдите к заданию Stream Analytics. В разделе **Мониторинг**выберите **Журналы диагностики**. Затем выберите **Turn on diagnostics** (Включить диагностику).
 
@@ -94,7 +94,7 @@ Azure Stream Analytics захватывает две категории журн
 
 Все журналы хранятся в формате JSON. Каждая запись содержит следующие общие строковые поля.
 
-name | Описание:
+Имя | Описание:
 ------- | -------
 time | Метка времени журнала (в формате UTC).
 resourceId | Идентификатор ресурса (прописными буквами), с которым была выполнена операция. Содержит идентификатор подписки, группу ресурсов и имя задания. Например, **/SUBSCRIPTIONS/6503D296-DAC1-4449-9B03-609A1F4A1C87/RESOURCEGROUPS/MY-RESOURCE-GROUP/PROVIDERS/MICROSOFT.STREAMANALYTICS/STREAMINGJOBS/MYSTREAMINGJOB**.
@@ -112,11 +112,11 @@ properties | Сведения о записи журнала, сериализо
 
 Любая ошибка, возникающая при обработке данных в задании, находится в этой категории журналов. Чаще всего эти журналы создаются во время операций чтения, сериализации и записи. Эти журналы не содержат ошибок подключения, которые обрабатываются как универсальные события. Вы можете узнать больше о причинах различных [ошибок ввода и вывода данных](https://docs.microsoft.com/azure/stream-analytics/data-errors).
 
-name | Описание
+Имя | Описание
 ------- | -------
 Источник | Имя входных или выходных данных задания, в которых произошла ошибка.
 Сообщение | Сообщение, связанное с ошибкой.
-Type | Тип ошибки. Например **DataConversionError**, **CsvParserError** или **ServiceBusPropertyColumnMissingError**.
+Тип | Тип ошибки. Например **DataConversionError**, **CsvParserError** или **ServiceBusPropertyColumnMissingError**.
 Данные | Содержит данные, полезные для точного поиска источника ошибки. Значение может быть усечено в зависимости от размера.
 
 В зависимости от значения **operationName** ошибки данных имеют следующую схему:
@@ -133,17 +133,14 @@ Type | Тип ошибки. Например **DataConversionError**, **CsvParse
 
 Остальные типы ошибок считаются универсальными событиями.
 
-name | Описание:
+Имя | Описание:
 -------- | --------
-Ошибка | (Необязательно.) Сведения об ошибке. Как правило, это сведения об исключении (если они доступны).
+Error | (Необязательно.) Сведения об ошибке. Как правило, это сведения об исключении (если они доступны).
 Сообщение| Сообщение журнала.
-Type | Тип сообщения. Сопоставляется с внутренней классификацией ошибок. Например **JobValidationError** или **BlobOutputAdapterInitializationFailure**.
-Идентификатор корреляции | Идентификатор [GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier), однозначно определяющий выполнение задания. Все записи журнала, зафиксированные с начала до завершения задания, имеют одинаковое значение **идентификатора корреляции**.
+Тип | Тип сообщения. Сопоставляется с внутренней классификацией ошибок. Например **JobValidationError** или **BlobOutputAdapterInitializationFailure**.
+Идентификатор корреляции | Идентификатор GUID, однозначно определяющий выполнение задания. Все записи журнала, зафиксированные с начала до завершения задания, имеют одинаковое значение **идентификатора корреляции**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Что такое Stream Analytics?](stream-analytics-introduction.md)
-* [Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени](stream-analytics-real-time-fraud-detection.md)
-* [Масштабирование заданий Azure Stream Analytics для повышения пропускной способности базы данных](stream-analytics-scale-jobs.md)
-* [Stream Analytics Query Language Reference](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Stream Analytics)
 * [Ошибки данных Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/data-errors)
+* [Stream Analytics Query Language Reference](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Stream Analytics)

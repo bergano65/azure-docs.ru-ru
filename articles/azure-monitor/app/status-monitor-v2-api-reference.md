@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 32fd0da0095c34c4ef199eb703881e048473f0a4
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 2f814c54aeca8a337f786beb8da1b98accbeef7e
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86499364"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87319003"
 ---
 # <a name="azure-monitor-application-insights-agent-api-reference"></a>Справочник по API агента Application Insights Azure Monitor
 
@@ -113,7 +113,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 > [!IMPORTANT]
 > Приложения будут соответствовать правилам в том порядке, в котором предоставляются правила. Поэтому необходимо сначала указать наиболее конкретные правила, а также наиболее общие правила.
 
-##### <a name="schema"></a>схема
+##### <a name="schema"></a>Схема
 `@(@{MachineFilter='.*';AppFilter='.*';InstrumentationSettings=@{InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'}})`
 
 - **Мачинефилтер** — это обязательное регулярное выражение C# для имени компьютера или виртуальной машины.
@@ -503,7 +503,7 @@ Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap `
 > [!IMPORTANT]
 > Приложения будут соответствовать правилам в том порядке, в котором предоставляются правила. Поэтому необходимо сначала указать наиболее конкретные правила, а также наиболее общие правила.
 
-##### <a name="schema"></a>схема
+##### <a name="schema"></a>Схема
 `@(@{MachineFilter='.*';AppFilter='.*';InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'})`
 
 - **Мачинефилтер** — это обязательное регулярное выражение C# для имени компьютера или виртуальной машины.
@@ -638,14 +638,15 @@ Timeout Reached. Stopping...
 
   Просмотр телеметрии:
  - [Изучите метрики](../platform/metrics-charts.md) для мониторинга производительности и использования.
-- [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
+- [Поиск событий и журналов](./diagnostic-search.md) для диагностики проблем.
 - Используйте [аналитику](../log-query/log-query-overview.md) для более сложных запросов.
-- [Создание панелей мониторинга](../../azure-monitor/app/overview-dashboard.md).
+- [Создание панелей мониторинга](./overview-dashboard.md).
  
  Добавление данных телеметрии:
  - [Создайте веб-тесты](monitor-web-app-availability.md), чтобы убедиться, что ваш сайт продолжает работать.
-- [Добавьте данные телеметрии веб-клиента](../../azure-monitor/app/javascript.md) , чтобы просмотреть исключения из кода веб-страницы и включить вызовы трассировки.
-- [Добавьте в код пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md) , чтобы можно было вставить вызовы трассировки и журнала.
+- [Добавьте данные телеметрии веб-клиента](./javascript.md) , чтобы просмотреть исключения из кода веб-страницы и включить вызовы трассировки.
+- [Добавьте в код пакет SDK для Application Insights](./asp-net.md) , чтобы можно было вставить вызовы трассировки и журнала.
  
  Другие действия с агентом Application Insights:
  - Используйте наше справочное по для [устранения неполадок](status-monitor-v2-troubleshoot.md) агента Application Insights.
+

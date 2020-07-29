@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 09/16/2019
-ms.openlocfilehash: 6a51da4f4685d7d7b1c597d8a9b9dd78270f29b1
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 0fa0b0d5e3620fc45a104ea31fd3bcbedd673da1
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86499279"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318952"
 ---
 # <a name="deploy-azure-monitor-application-insights-agent-for-on-premises-servers"></a>Развертывание агента Application Insights Azure Monitor для локальных серверов
 
@@ -31,7 +31,7 @@ Application Insights агент расположен здесь: https://www.pow
 ![Коллекция PowerShell](https://img.shields.io/powershellgallery/v/Az.ApplicationMonitor.svg?color=Blue&label=Current%20Version&logo=PowerShell&style=for-the-badge)
 
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Инструкции
 - Ознакомьтесь с [инструкциями по началу работы](status-monitor-v2-get-started.md) , чтобы получить краткие примеры кода.
 - [Подробные инструкции](status-monitor-v2-detailed-instructions.md) по началу работы см. здесь.
 
@@ -50,11 +50,11 @@ Application Insights агент расположен здесь: https://www.pow
 - [Известные проблемы](status-monitor-v2-troubleshoot.md#known-issues)
 
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 - Поддерживает ли агент Application Insights установку прокси-серверов?
 
-  *Да*. Существует несколько способов загрузки агента Application Insights. Если компьютер имеет доступ к Интернету, можно подключить коллекция PowerShell с помощью `-Proxy` параметров.
+  *Да.* Существует несколько способов загрузки агента Application Insights. Если компьютер имеет доступ к Интернету, можно подключить коллекция PowerShell с помощью `-Proxy` параметров.
 Можно также вручную скачать модуль и либо установить его на компьютер, либо использовать его напрямую.
 Каждый из этих вариантов описан в [подробных инструкциях](status-monitor-v2-detailed-instructions.md).
 
@@ -76,13 +76,14 @@ Application Insights агент расположен здесь: https://www.pow
 
 Просмотр телеметрии:
 
-* [Изучите метрики](../../azure-monitor/platform/metrics-charts.md) для мониторинга производительности и использования.
-* [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
+* [Изучите метрики](../platform/metrics-charts.md) для мониторинга производительности и использования.
+* [Поиск событий и журналов](./diagnostic-search.md) для диагностики проблем.
 * [Используйте аналитику](../log-query/log-query-overview.md) для более сложных запросов.
-* [Создание панелей мониторинга](../../azure-monitor/app/overview-dashboard.md).
+* [Создание панелей мониторинга](./overview-dashboard.md).
 
 Добавление данных телеметрии:
 
 * [Создайте веб-тесты](monitor-web-app-availability.md), чтобы убедиться, что ваш сайт продолжает работать.
-* [Добавьте данные телеметрии веб-клиента](../../azure-monitor/app/javascript.md) , чтобы просмотреть исключения из кода веб-страницы и включить вызовы трассировки.
-* [Добавьте в код пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md) , чтобы можно было вставить вызовы трассировки и журнала.
+* [Добавьте данные телеметрии веб-клиента](./javascript.md) , чтобы просмотреть исключения из кода веб-страницы и включить вызовы трассировки.
+* [Добавьте в код пакет SDK для Application Insights](./asp-net.md) , чтобы можно было вставить вызовы трассировки и журнала.
+

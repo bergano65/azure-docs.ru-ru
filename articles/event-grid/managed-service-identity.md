@@ -3,12 +3,12 @@ title: Доставка событий с использованием упра�
 description: В этой статье описывается, как включить управляемое удостоверение службы для раздела сетки событий Azure. Используйте его для переадресации событий в поддерживаемые назначения.
 ms.topic: how-to
 ms.date: 07/07/2020
-ms.openlocfilehash: 5138a89101a7e6c1770952028de9c3d478bc3852
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: c05eb2e78595e962494a60b1ffa8ead899aa0109
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119197"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87371266"
 ---
 # <a name="event-delivery-with-a-managed-identity"></a>Доставка событий с управляемым удостоверением
 В этой статье описывается, как включить [управляемое удостоверение службы](../active-directory/managed-identities-azure-resources/overview.md) для разделов и доменов сетки событий Azure. Используйте его для переадресации событий в поддерживаемые назначения, такие как очереди и разделы служебной шины, центры событий и учетные записи службы хранилища.
@@ -70,8 +70,8 @@ az eventgrid topic update -g $rg --name $topicname --identity systemassigned --s
 
 | Назначение | Роль RBAC | 
 | ----------- | --------- | 
-| Очереди и разделы служебной шины Azure | [Отправитель данных служебной шины Azure](../service-bus-messaging/authenticate-application.md#built-in-rbac-roles-for-azure-service-bus) |
-| Центры событий Azure | [Отправитель данных центров событий Azure](../event-hubs/authorize-access-azure-active-directory.md#built-in-rbac-roles-for-azure-event-hubs) | 
+| Очереди и разделы служебной шины Azure | [Отправитель данных служебной шины Azure](../service-bus-messaging/authenticate-application.md#azure-built-in-roles-for-azure-service-bus) |
+| Центры событий Azure | [Отправитель данных центров событий Azure](../event-hubs/authorize-access-azure-active-directory.md#azure-built-in-roles-for-azure-event-hubs) | 
 | Хранилище BLOB-объектов Azure | [участник данных BLOB-объектов хранилища](../storage/common/storage-auth-aad-rbac-portal.md#rbac-roles-for-blobs-and-queues); |
 | Хранилище очередей Azure |[Отправитель сообщений данных в очередь хранилища](../storage/common/storage-auth-aad-rbac-portal.md#rbac-roles-for-blobs-and-queues) | 
 

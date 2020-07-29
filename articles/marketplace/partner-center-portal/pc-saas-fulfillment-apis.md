@@ -5,12 +5,14 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 05/18/2020
-ms.openlocfilehash: 218a0624f7e4adc1aa188dbd62db217bf79202f8
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+author: mingshen-ms
+ms.author: mingshen
+ms.openlocfilehash: d9413deb99ce938429d05f7c6348c5914e7dd2b1
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86109303"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87304145"
 ---
 # <a name="saas-fulfillment-apis-in-microsoft-commercial-marketplace"></a>API-интерфейсы выполнения SaaS в коммерческом магазине Майкрософт
 
@@ -45,7 +47,7 @@ API-интерфейсы выполнения SaaS позволяют издат
 
 Для этого сценария издатель не обязан реализовывать потоки вызовов API по-разному.
 
-Дополнительные сведения о CSP см. в статье https://partner.microsoft.com/en-us/licensing .
+Дополнительные сведения о CSP см. в статье https://partner.microsoft.com/licensing .
 
 >[!Warning]
 >Текущей версией этого API является версия 2, которая должна использоваться для всех новых предложений SaaS. Версия 1 API устарела и поддерживается для поддержки существующих предложений.

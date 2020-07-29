@@ -1,6 +1,5 @@
 ---
-title: Развертывание веб-службы
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): развертывание веб-службы в Azure'
 description: Как преобразовать обучающий эксперимент в прогнозный, подготовить его к развертыванию, а затем развернуть как веб-службу Машинное обучение Azure Studio (классическая модель).
 services: machine-learning
 ms.service: machine-learning
@@ -10,13 +9,17 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 01/06/2017
-ms.openlocfilehash: 3fcf4e180233c6ceaa552b3505462639569ed974
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f85ef90520049aef2cb39da9c360013d6f11aca0
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84696394"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318714"
 ---
 # <a name="deploy-an-azure-machine-learning-studio-classic-web-service"></a>Развертывание веб-службы Машинное обучение Azure Studio (классическая модель)
+
+**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+
 
 Машинное обучение Azure Studio (классическая модель) позволяет создавать и тестировать решение прогнозной аналитики. Затем эти решение можно развернуть как веб-службу.
 
@@ -281,7 +284,7 @@ ms.locfileid: "84696394"
 
 Один из вариантов обновления веб-службы — переобучить модель программно. Дополнительные сведения см. в статье [программное переобучение моделей машинное обучение Studio (классическая модель)](/azure/machine-learning/studio/retrain-machine-learning-model).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные технические сведения о том, как работает развертывание, см. в статье [как машинное обучение Studio (классическая модель) подвигается от эксперимента к рабочей веб-службе](model-progression-experiment-to-web-service.md).
 
