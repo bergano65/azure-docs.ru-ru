@@ -7,6 +7,7 @@ description: Узнайте, как Visual Studio Code и Azure Dev Spaces по�
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры
 ms.openlocfilehash: 73a2ae1f603626acf7ec4d42838b301c88ee21da
 ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2020
 ms.locfileid: "84307356"

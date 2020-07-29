@@ -7,6 +7,7 @@ description: Узнайте, как использовать секреты Kube
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
 ms.openlocfilehash: d9dd0de348612bbb3baf5fb351c1c9af1c228c1f
 ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2020
 ms.locfileid: "75438465"
