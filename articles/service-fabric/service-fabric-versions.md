@@ -3,16 +3,18 @@ title: Поддерживаемые версии кластера в Azure Servi
 description: Узнайте о версиях кластера в Azure Service Fabric, включая ссылку на последние выпуски из блога группы Service Fabric.
 ms.topic: troubleshooting
 ms.date: 06/15/2020
-ms.openlocfilehash: 211197ced52ca094d375d3ae212957fa25a523fc
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d849b4471bf11183dc02735c7373f858f0c773be
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091646"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289321"
 ---
 # <a name="supported-service-fabric-versions"></a>Поддерживаемые версии Service Fabric
 
 Убедитесь, что кластер всегда работает под управлением поддерживаемой версии Service Fabric Azure. Не менее 60 дней после объявления выпуска новой версии Service Fabric, поддержка предыдущей версии завершается. Объявления о новых выпусках можно найти в [блоге Service Fabric Team](https://azure.microsoft.com/updates/?product=service-fabric).
+
+Для данной версии среды выполнения Service Fabric можно использовать указанные или более старые версии пакетов SDK или NuGet. Более новые версии пакетов не поддерживаются и могут иметь проблемы, направленные на более старые кластеры, так как они могут иметь изменения функций или протоколов, которые не поддерживаются этими средами.
 
 Сведения о том, как поддерживать работу кластера с поддерживаемой версией Service Fabric, см. в следующих документах:
 
@@ -56,7 +58,7 @@ ms.locfileid: "87091646"
 | Windows Server 1709 | 6.0 |
 | Windows Server 1803 | 6.4 |
 | Windows Server 1809 | 6.4.654.9590 |
-| Windows Server 2019 | 6.4.654.9590 |
+| Windows Server 2019 | 6.4.654.9590 |
 | Linux Ubuntu 16.04 | 6.0 |
 | Linux Ubuntu 18,04 | 7.1 |
 

@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 04/14/2020
 ms.custom: seodec18
-ms.openlocfilehash: aa3faad88fb5474b34ff6855690882141b2e4843
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1057bb908e973c74b6dfb70931469e27f77512de
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87046306"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87292663"
 ---
 # <a name="query-data-from-the-azure-time-series-insights-gen2-environment-using-c"></a>Запрос данных из среды Gen2 "аналитика временных рядов Azure" с помощью C #
 
@@ -39,9 +39,9 @@ ms.locfileid: "87046306"
     * [API запросов Gen2](https://docs.microsoft.com/rest/api/time-series-insights/preview#query-apis)
         * [API получения событий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents), [API получения последовательности](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getseries) и [API получения последовательности статических выражений](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#aggregateseries)
     * [API модели временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#aggregateseries)
-        * [API получения иерархий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeserieshierarchies/get) и [API пакета иерархий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeserieshierarchies/executebatch)
-        * [API получения типов](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/get) и [API пакета типов](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch)
-        * [API получения экземпляров](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/get) и [API пакета экземпляров](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/executebatch)
+        * [API получения иерархий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeserieshierarchies) и [API пакета иерархий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeserieshierarchies/executebatch)
+        * [API получения типов](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes) и [API пакета типов](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch)
+        * [API получения экземпляров](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances) и [API пакета экземпляров](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/executebatch)
 * Возможности расширенного [поиска](https://docs.microsoft.com/rest/api/time-series-insights/preview#search-features) и [TSX](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax).
 
 ## <a name="prerequisites-and-setup"></a>Предварительные требования и настройка

@@ -1,15 +1,15 @@
 ---
 title: Microsoft Kubernetes Service Fabric Consortium в службе Azure (AKS)
 description: Развертывание и настройка сети консорциума Kubernetes для структуры Microsoft Azure
-ms.date: 07/07/2020
+ms.date: 07/27/2020
 ms.topic: how-to
 ms.reviewer: ravastra
-ms.openlocfilehash: 1e90eeccb015b4d5ef78b79297565ddde9cfa305
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fe06af9364ceb1d97588cac88335cb39c45f0e0f
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87081289"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87286059"
 ---
 # <a name="hyperledger-fabric-consortium-on-azure-kubernetes-service-aks"></a>Microsoft Kubernetes Service Fabric Consortium в службе Azure (AKS)
 
@@ -28,13 +28,15 @@ ms.locfileid: "87081289"
 
 Параметр | Модель службы | Общий вариант использования
 -------|---------------|-----------------
-Шаблоны решений | IaaS | Шаблоны решений — это Azure Resource Manager шаблоны, которые можно использовать для предоставления полностью настроенной топологии сети блокчейн. Шаблоны развертывают и настраивают Microsoft Azure службы вычислений, сети и хранения для заданного типа сети блокчейн. Шаблоны решений предоставляются без соглашения об уровне обслуживания. Используйте [страницу Microsoft Q&A вопроса](/answers/topics/azure-blockchain-workbench.html) для поддержки.
-[Служба "Блокчейн Azure"](../service/overview.md) | PaaS | Предварительная версия Azure Блокчейн Service позволяет упростить образование, управление и руководство по сетям блокчейн в консорциуме W3C. Используйте службу Блокчейн Azure для решений, которым требуются сведения о PaaS, управлении консорциумом, а также о конфиденциальности контрактов и транзакций.
-[Azure Blockchain Workbench](../workbench/overview.md) | IaaS и PaaS | Azure Blockchain Workbench (предварительная версия) — это совокупность служб и возможностей Azure, которые позволяют создавать и развертывать приложения блокчейн для совместного использования бизнес-процессов и данных с другими организациями. Используйте Azure Блокчейн Workbench для создания прототипа решения блокчейн или подтверждения концепции приложения блокчейн. Azure Blockchain Workbench предоставляется без соглашения об уровне обслуживания. Используйте [страницу Microsoft Q&A вопроса](/answers/topics/azure-blockchain-workbench.html) для поддержки.
+Шаблоны решений | IaaS | Шаблоны решений — это Azure Resource Manager шаблоны, которые можно использовать для предоставления полностью настроенной топологии сети блокчейн. Шаблоны развертывают и настраивают Microsoft Azure службы вычислений, сети и хранения для заданного типа сети блокчейн. Шаблоны решений предоставляются без соглашения об уровне обслуживания. Поддержку можно найти на [странице вопросов и ответов Майкрософт](/answers/topics/azure-blockchain-workbench.html).
+[Служба Блокчейн Azure](../service/overview.md) | PaaS | Предварительная версия Azure Блокчейн Service позволяет упростить образование, управление и руководство по сетям блокчейн в консорциуме W3C. Используйте службу Блокчейн Azure для решений, которым требуются сведения о PaaS, управлении консорциумом, а также о конфиденциальности контрактов и транзакций.
+[Azure Blockchain Workbench](../workbench/overview.md) | IaaS и PaaS | Azure Blockchain Workbench (предварительная версия) — это совокупность служб и возможностей Azure, которые позволяют создавать и развертывать приложения блокчейн для совместного использования бизнес-процессов и данных с другими организациями. Используйте Azure Блокчейн Workbench для создания прототипа решения блокчейн или подтверждения концепции приложения блокчейн. Azure Blockchain Workbench предоставляется без соглашения об уровне обслуживания. Поддержку можно найти на [странице вопросов и ответов Майкрософт](/answers/topics/azure-blockchain-workbench.html).
 
 ## <a name="hyperledger-fabric-consortium-architecture"></a>Архитектура консорциума по этой структуре в книге
 
-Чтобы создать сеть структуры «Главная книга» в Azure, необходимо развернуть службу упорядочения и организацию с одноранговыми узлами. Ниже перечислены различные фундаментальные компоненты, создаваемые в рамках развертывания шаблона.
+Чтобы создать сеть структуры «Главная книга» в Azure, необходимо развернуть службу упорядочения и организацию с одноранговыми узлами. С помощью шаблона решения для службы Kubernetes в Azure можно создать узлы заказов или одноранговые узлы. Необходимо развернуть шаблон для каждого узла, который требуется создать.
+
+Ниже перечислены различные фундаментальные компоненты, создаваемые в рамках развертывания шаблона.
 
 - **Узлы заказов**. узел, отвечающий за упорядочение транзакций в главной книге. Вместе с другими узлами упорядоченные узлы формируют службу упорядочения в сети структуры «Главная книга».
 
@@ -58,22 +60,13 @@ ms.locfileid: "87081289"
 - **Управляемый диск Azure**: управляемый диск Azure предназначен для постоянного хранения для главной базы данных и однорангового узла.
 - **Общедоступный IP-адрес**: конечная точка общедоступного IP-адреса кластера AKS, развернутая для взаимодействия с кластером.
 
-## <a name="hyperledger-fabric-blockchain-network-setup"></a>Настройка сети в Блокчейн Fabric
+## <a name="deploy-the-ordererpeer-organization"></a>Развертывание заказа или одноранговой Организации
 
 Чтобы приступить к работе, вам понадобится подписка Azure, которая может поддерживать развертывание нескольких виртуальных машин и стандартные учетные записи хранения. Если у вас еще нет ее, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
-Настройте Блокчейн Network для фабрики, выполнив следующие действия.
+Чтобы начать работу с развертыванием сетевых компонентов ХЛФ, перейдите к [портал Azure](https://portal.azure.com).
 
-- [Развертывание заказа или одноранговой Организации](#deploy-the-ordererpeer-organization)
-- [Создание консорциума](#build-the-consortium)
-
-## <a name="deploy-the-ordererpeer-organization"></a>Развертывание заказа или одноранговой Организации
-
-Чтобы начать работу с развертыванием сетевых компонентов ХЛФ, перейдите к [портал Azure](https://portal.azure.com). Выберите **создать ресурс > блокчейн** > поиска **в службе Kubernetes Azure**.
-
-1. Выберите **создать** , чтобы начать развертывание шаблона. Откроется **служба создания фабрики Kubernetes в Azure** .
-
-    ![Шаблон "структура" в Azure Kubernetes Service](./media/hyperledger-fabric-consortium-azure-kubernetes-service/hyperledger-fabric-aks.png)
+1. Выберите **создать ресурс > блокчейн** > поиска **в службе Kubernetes Azure (Предварительная версия)**.
 
 2. Введите сведения о проекте на странице " **основные** ".
 
@@ -90,7 +83,7 @@ ms.locfileid: "87081289"
 
 5. Введите следующие сведения:
     - **Название организации**: имя организации структуры, которая необходима для различных операций с плоскостью данных. Имя Организации должно быть уникальным для каждого развертывания.
-    - **Компонент Fabric Network**: выберите либо службу упорядочения, либо одноранговые узлы, основанные на сетевом компоненте блокчейн, который вы хотите настроить.
+    - **Компонент сети структуры**: выберите либо службу упорядочения, либо одноранговые узлы на основе сетевого компонента блокчейн, который вы хотите настроить.
     - **Число узлов** . ниже приведены два типа узлов.
         - Служба упорядочения — выберите число узлов, для которых была предоставлена отказоустойчивость сети. Количество узлов заказа поддерживается только для трех, 5 и 7.
         - Одноранговые узлы. Вы можете выбрать 1-10 узлов в соответствии с вашими требованиями.
@@ -136,7 +129,7 @@ ms.locfileid: "87081289"
 > Скрипт Azure ХЛФ (азлф) предназначен для использования только в сценариях Demo и DevTest. Канал и консорциум, созданные этим сценарием, имеют базовые политики ХЛФ для упрощения сценария демонстрации и DevTest. Для настройки рабочей среды мы рекомендуем обновить политики Channel/Consortium ХЛФ в соответствии с потребностями Организации, используя собственные API ХЛФ.
 
 
-Все команды для выполнения скрипта Azure ХЛФ можно выполнить с помощью командной строки Azure bash. Интерфейс (CLI). Вы можете войти в веб-версию оболочки Azure с помощью  ![Шаблон "структура" в Azure Kubernetes Service](./media/hyperledger-fabric-consortium-azure-kubernetes-service/arrow.png) в правом верхнем углу портал Azure. В командной строке введите Bash и введите, чтобы переключиться на интерфейс командной строки bash.
+Все команды для выполнения скрипта Azure ХЛФ можно выполнить с помощью командной строки Azure bash. Интерфейс (CLI). Вы можете войти в веб-версию оболочки Azure с помощью   ![ команды "шаблон службы Kubernetes Service Fabric ](./media/hyperledger-fabric-consortium-azure-kubernetes-service/arrow.png) " в правом верхнем углу портал Azure. В командной строке введите Bash и введите, чтобы переключиться на интерфейс командной строки bash, или выберите *Bash* на панели инструментов оболочки.
 
 Дополнительные сведения см. в разделе [оболочка Azure](../../cloud-shell/overview.md) .
 
@@ -147,17 +140,17 @@ ms.locfileid: "87081289"
 
 ![Шаблон "структура" в Azure Kubernetes Service](./media/hyperledger-fabric-consortium-azure-kubernetes-service/process-to-build-consortium-flow-chart.png)
 
-Выполните следующие команды для начальной настройки клиентского приложения: 
+Выполните действия в разделах начальной настройки клиентского приложения: 
 
-1.  [Скачать файлы клиентских приложений](#download-client-application-files)
-2.  [Настройка переменных среды](#setup-environment-variables)
-3.  [Импорт профиля подключения Организации, пользователя с правами администратора и MSP](#import-organization-connection-profile-admin-user-identity-and-msp)
+1. Скачать файлы клиентских приложений
+1. Настройка переменных среды
+1. Импорт профиля подключения Организации, пользователя с правами администратора и MSP
 
-После завершения начальной настройки можно использовать клиентское приложение для выполнения следующих операций:  
+После завершения начальной настройки используйте клиентское приложение для выполнения следующих операций:  
 
-- [Команды управления каналами](#channel-management-commands)
-- [Команды управления консорциумом](#consortium-management-commands)
-- [Команды управления чаинкоде](#chaincode-management-commands)
+- Управление каналами
+- Управление консорциумом
+- Управление чаинкоде
 
 ### <a name="download-client-application-files"></a>Скачать файлы клиентских приложений
 
@@ -168,19 +161,16 @@ curl https://raw.githubusercontent.com/Azure/Hyperledger-Fabric-on-Azure-Kuberne
 cd azhlfTool
 npm install
 npm run setup
-
 ```
-Эти команды будут клонировать код клиентского приложения Azure ХЛФ из общедоступного репозитория GitHub с последующим загрузкой всех зависимых пакетов NPM. После успешного выполнения команды вы увидите папку node_modules в текущем каталоге. Все необходимые пакеты загружаются в папку node_modules.
 
+Эти команды будут клонировать код клиентского приложения Azure ХЛФ из общедоступного репозитория GitHub с последующим загрузкой всех зависимых пакетов NPM. После успешного выполнения команды вы увидите папку node_modules в текущем каталоге. Все необходимые пакеты загружаются в папку node_modules.
 
 ### <a name="setup-environment-variables"></a>Настройка переменных среды
 
 > [!NOTE]
 > Все переменные среды соответствуют соглашению об именовании ресурсов Azure.
 
-
-**Задать следующие переменные среды для клиента организации заказа**
-
+#### <a name="set-environment-variables-for-orderer-organization-client"></a>Задание переменных среды для клиента организации заказа
 
 ```bash
 ORDERER_ORG_SUBSCRIPTION=<ordererOrgSubscription>
@@ -189,7 +179,8 @@ ORDERER_ORG_NAME=<ordererOrgName>
 ORDERER_ADMIN_IDENTITY="admin.$ORDERER_ORG_NAME"
 CHANNEL_NAME=<channelName>
 ```
-**Задайте следующие переменные среды для клиента одноранговой Организации.**
+
+#### <a name="set-the-environment-variables-for-peer-organization-client"></a>Задание переменных среды для клиента одноранговой Организации
 
 ```bash
 PEER_ORG_SUBSCRIPTION=<peerOrgSubscritpion>
@@ -202,7 +193,7 @@ CHANNEL_NAME=<channelName>
 > [!NOTE]
 > В зависимости от числа одноранговых Организации в вашем консорциуме, возможно, потребуется повторить одноранговые команды и задать соответствующим образом переменную среды.
 
-**Задайте следующие переменные среды для настройки учетной записи хранения Azure.**
+#### <a name="set-the-environment-variables-for-setting-up-azure-storage-account"></a>Настройка переменных среды для настройки учетной записи хранения Azure
 
 ```bash
 STORAGE_SUBSCRIPTION=<subscriptionId>
@@ -212,7 +203,7 @@ STORAGE_LOCATION=<azureStorageAccountLocation>
 STORAGE_FILE_SHARE=<azureFileShareName>
 ```
 
-Выполните действия, описанные ниже, для создания учетной записи хранения Azure. Если учетная запись хранения Azure уже создана, пропустите эти действия.
+Выполните следующие действия для создания учетной записи хранения Azure. Если учетная запись хранения Azure уже создана, пропустите эти действия.
 
 ```bash
 az account set --subscription $STORAGE_SUBSCRIPTION
@@ -227,7 +218,7 @@ STORAGE_KEY=$(az storage account keys list --resource-group $STORAGE_RESOURCE_GR
 az storage share create  --account-name $STORAGE_ACCOUNT  --account-key $STORAGE_KEY  --name $STORAGE_FILE_SHARE
 ```
 
-Выполните действия ниже, чтобы создать строку подключения к общей папке Azure.
+Чтобы создать строку подключения к общей папке Azure, выполните следующие действия.
 
 ```bash
 STORAGE_KEY=$(az storage account keys list --resource-group $STORAGE_RESOURCE_GROUP  --account-name $STORAGE_ACCOUNT --query "[0].value" | tr -d '"')
@@ -256,39 +247,13 @@ AZURE_FILE_CONNECTION_STRING=https://$STORAGE_ACCOUNT.file.core.windows.net/$STO
 ./azhlf msp import fromAzure -g $PEER_ORG_RESOURCE_GROUP -s $PEER_ORG_SUBSCRIPTION -o $PEER_ORG_NAME
 ```
 
-### <a name="channel-management-commands"></a>Команды управления каналами
-
-> [!NOTE]
-> Прежде чем начать с любой операции с каналом, убедитесь, что начальная настройка клиентского приложения выполнена.  
-
-Ниже приведены две команды управления каналами.
-
-1. [Команда Create Channel](#create-channel-command)
-2. [Установка одноранговых узлов-команда](#setting-anchor-peers-command)
-
-
-#### <a name="create-channel-command"></a>Команда Create Channel
+### <a name="create-channel-command"></a>Команда Create Channel
 
 В клиенте организации заказа выполните команду, чтобы создать новый канал. Эта команда создает канал, в котором только в нем находится Организация заказа.  
 
 ```bash
 ./azhlf channel create -c $CHANNEL_NAME -u $ORDERER_ADMIN_IDENTITY -o $ORDERER_ORG_NAME
 ```
-
-#### <a name="setting-anchor-peers-command"></a>Установка одноранговых узлов-команда
-В клиенте одноранговой организации выдайте приведенную ниже команду, чтобы установить одноранговые узлы для одноранговой Организации в указанном канале.
-
->[!NOTE]
-> Перед выполнением этой команды убедитесь, что в канале добавлена одноранговая организация с помощью команд управления консорциумом.
-
-```bash
-./azhlf channel setAnchorPeers -c $CHANNEL_NAME -p <anchorPeersList> -o $PEER_ORG_NAME -u $PEER_ADMIN_IDENTITY
-```
-
-`<anchorPeersList>`Разделенный пробелом список одноранговых узлов, которые должны быть установлены в качестве однорангового узла. например следующие.
-
-  - Задайте `<anchorPeersList>` как "Peer1", если вы хотите задать только узел Peer1 в качестве закрепленного однорангового узла.
-  - Задайте `<anchorPeersList>` "Peer1" "peer3", если вы хотите задать узел Peer1 и peer3 в качестве закрепленного однорангового узла.
 
 ### <a name="consortium-management-commands"></a>Команды управления консорциумом
 
@@ -324,6 +289,21 @@ AZURE_FILE_CONNECTION_STRING=https://$STORAGE_ACCOUNT.file.core.windows.net/$STO
 
 Аналогичным образом, чтобы добавить другие одноранговые Организации в канал, обновите переменные одноранговой среды в соответствии с требуемой одноранговой Организацией и выполните шаги 1 – 4.
 
+### <a name="set-anchor-peers-command"></a>Команда "задать привязку"
+
+В клиенте одноранговой организации выполните команду, чтобы задать одноранговые узлы для одноранговой Организации в указанном канале.
+
+>[!NOTE]
+> Перед выполнением этой команды убедитесь, что в канале добавлена одноранговая организация с помощью команд управления консорциумом.
+
+```bash
+./azhlf channel setAnchorPeers -c $CHANNEL_NAME -p <anchorPeersList> -o $PEER_ORG_NAME -u $PEER_ADMIN_IDENTITY --ordererOrg $ORDERER_ORG_NAME
+```
+
+`<anchorPeersList>`Разделенный пробелом список одноранговых узлов, которые должны быть установлены в качестве однорангового узла. например следующие.
+
+  - Задайте `<anchorPeersList>` как "Peer1", если вы хотите задать только узел Peer1 в качестве закрепленного однорангового узла.
+  - Задайте `<anchorPeersList>` "Peer1" "peer3", если вы хотите задать узел Peer1 и peer3 в качестве закрепленного однорангового узла.
 
 ### <a name="chaincode-management-commands"></a>Команды управления чаинкоде
 
@@ -344,7 +324,7 @@ CC_VERSION=<chaincodeVersion>
 # Default value is 'golang'  
 CC_LANG=<chaincodeLanguage>  
 # CC_PATH contains the path where your chaincode is place.
-# If you are using chaincode_example02 to validate then CC_PATH=“/home/<username>/azhlfTool/chaincode/src/chaincode_example02/go”
+# If you are using chaincode_example02 to validate then CC_PATH=“/home/<username>/azhlfTool/samples/chaincode/src/chaincode_example02/go”
 CC_PATH=<chaincodePath>  
 # Channel on which chaincode is to be instantiated/invoked/queried  
 CHANNEL_NAME=<channelName>  
@@ -409,7 +389,7 @@ CHANNEL_NAME=<channelName>
 ```
 Передайте имя функции запроса и список аргументов, разделенных пробелами, в  `<queryFunction>`   и  `<queryFuncArgs>`   соответственно. Опять же, chaincode_example02. Go в качестве ссылки, чтобы запросить значение "a" в мировом состоянии со значением  `<queryFunction>`    `query` и  `<queryArgs>` в "a".  
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 **Проверка версии выполняющегося шаблона**
 

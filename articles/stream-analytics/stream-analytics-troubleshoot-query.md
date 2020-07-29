@@ -8,11 +8,12 @@ ms.service: stream-analytics
 ms.topic: troubleshooting
 ms.date: 03/31/2020
 ms.custom: seodec18
-ms.openlocfilehash: 7c83bc55a00774966681973b95d18cdc58dba19c
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: ead175cbcaa9467cb5263ad95100facdda096991
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86037211"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87337812"
 ---
 # <a name="troubleshoot-azure-stream-analytics-queries"></a>Устранение неполадок з запросами в службе Azure Stream Analytics
 
@@ -27,9 +28,9 @@ ms.locfileid: "86037211"
     - На портале Azure откройте вкладку **Запрос** и выберите **Тест**. Для [проверки запроса](stream-analytics-test-query.md) используйте загруженные демонстрационные данные. Проанализируйте все ошибки и попытайтесь исправить их.   
     - Кроме того, вы можете [проверить запрос локально](stream-analytics-live-data-local-testing.md) с помощью инструментов Stream Analytics для Visual Studio или [Visual Studio Code](visual-studio-code-local-run-live-input.md). 
 
-2.  Для отладки запросов можно применить [пошаговое выполнение с использованием схемы заданий](debug-locally-using-job-diagram.md) из набора инструментов Azure Stream Analytics для Visual Studio. На схеме заданий показано, как потоки данных из источников входных данных (концентратор событий, центр Интернета вещей и т. д.) проходят через несколько шагов запроса и попадают в приемники выходных данных. Каждый шаг запроса сопоставляется с временным результирующим набором, который определяется в скрипте с помощью инструкции WITH. Чтобы найти источник проблемы, вы можете просматривать данные и метрики по каждому из промежуточных результирующих наборов.
+2.  Пошаговая [Отладка запросов с помощью схемы заданий](debug-locally-using-job-diagram-vs-code.md) Azure Stream Analytics средств для Visual Studio Code. На схеме заданий показано, как потоки данных из источников входных данных (концентратор событий, центр Интернета вещей и т. д.) проходят через несколько шагов запроса и попадают в приемники выходных данных. Каждый шаг запроса сопоставляется с временным результирующим набором, который определяется в скрипте с помощью инструкции WITH. Чтобы найти источник проблемы, вы можете просматривать данные и метрики по каждому из промежуточных результирующих наборов.
 
-    ![Просмотр результатов в схеме заданий](./media/debug-locally-using-job-diagram/preview-result.png)
+    ![Просмотр результатов в схеме заданий](./media/debug-locally-using-job-diagram-vs-code/preview-result.png)
 
 3.  Если используются [**метки времени**](https://docs.microsoft.com/stream-analytics-query/timestamp-by-azure-stream-analytics), убедитесь, что они зарегистрированы для событий после [начала выполнения задания](stream-analytics-out-of-order-and-late-events.md).
 

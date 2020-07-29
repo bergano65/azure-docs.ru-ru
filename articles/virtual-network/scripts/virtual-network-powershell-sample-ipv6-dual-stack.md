@@ -1,7 +1,7 @@
 ---
 title: Azure PowerShell пример скрипта. Настройка конечных точек IPv6
 titlesuffix: Azure Virtual Network
-description: Включение конечных точек IPv6 с помощью PowerShell в виртуальной сети Azure
+description: Настройте конечные точки IPv6 в виртуальной сети с помощью скрипта Azure PowerShell и найдите ссылки на документацию по командам, чтобы получить справку по примерам PowerShell.
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -12,12 +12,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 07/15/2019
 ms.author: kumud
-ms.openlocfilehash: 667cf9d8a902a329b6b0cfc0d183e4f229e59372
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 83153023d7d58f215d5e62d8502baa01b99ed2e1
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87068658"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87291886"
 ---
 # <a name="configure-ipv6-endpoints-in-virtual-network-with-azure-powershell-script-sample-preview"></a>Настройка конечных точек IPv6 в виртуальной сети с помощью примера скрипта Azure PowerShell (Предварительная версия)
 
@@ -27,7 +27,7 @@ ms.locfileid: "87068658"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 Перед развертыванием приложения с двойным стеком в Azure необходимо настроить подписку только один раз для этой предварительной версии, используя следующие Azure PowerShell:
 
 Зарегистрируйтесь следующим образом:

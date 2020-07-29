@@ -3,12 +3,13 @@ title: Фильтрация и предварительная обработка
 description: Напишите обработчики телеметрии и инициализаторы телеметрии для пакета SDK, чтобы отфильтровать или добавить свойства в данные перед отправкой данных телеметрии на портал Application Insights.
 ms.topic: conceptual
 ms.date: 11/23/2016
-ms.openlocfilehash: a16dc7bc9f6f3c49640d320fbfbffaa7acbed6b9
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.custom: devx-track-javascript
+ms.openlocfilehash: eec3cf44eb516ce20db564e1bed32e5741bfd02a
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87323219"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87366761"
 ---
 # <a name="filter-and-preprocess-telemetry-in-the-application-insights-sdk"></a>Фильтрация и предварительная обработка телеметрии в пакете SDK для Application Insights
 

@@ -1,6 +1,6 @@
 ---
-title: Создание виртуального рабочего стола Windows — 2019 пул узлов PowerShell — Azure
-description: Сведения о том, как создать пул узлов в Виртуальном рабочем столе Windows с использованием командлетов PowerShell.
+title: Создание пула узлов Windows для виртуальных рабочих столов (классическая модель) в Azure
+description: Создание пула узлов в виртуальных рабочих столах Windows (классическая модель) с помощью командлетов PowerShell.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 552a3fdd20d67d81fe0c6a81a965fd3231da643d
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7bc1e229711ef24b07641c5767f5f60c17a3b97c
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86527648"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87291298"
 ---
-# <a name="create-a-host-pool-with-powershell"></a>Создание пула узлов с помощью PowerShell
+# <a name="create-a-host-pool-in-windows-virtual-desktop-classic-with-powershell"></a>Создание пула узлов в виртуальных рабочих столах Windows (классическая модель) с помощью PowerShell
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../create-host-pools-powershell.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../create-host-pools-powershell.md).
 
 Пулы узлов — это коллекция, состоящая из одной или нескольких идентичных виртуальных машин в средах клиента Виртуального рабочего стола Windows. Каждый пул узлов может содержать группы приложений, с которыми пользователи могут взаимодействовать, как с физическим рабочим столом.
 

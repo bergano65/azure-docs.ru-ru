@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: thfalgou
 ms.custom: fasttrack-edit
-ms.openlocfilehash: e4e2a1fc08851e4e625bfc59419fc274ebbce1c8
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 578560eccb13ff4b9169e11b0674859acc1fc901
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86251202"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285872"
 ---
 # <a name="best-practices-for-business-continuity-and-disaster-recovery-in-azure-kubernetes-service-aks"></a>Рекомендации по обеспечению непрерывности бизнес-процессов и аварийного восстановления в Службе Azure Kubernetes (AKS)
 
@@ -57,9 +57,9 @@ ms.locfileid: "86251202"
 
 Сведения о настройке конечных точек и маршрутизации см. в статье [Настройка метода географической маршрутизации трафика с помощью диспетчера трафика](../traffic-manager/traffic-manager-configure-geographic-routing-method.md).
 
-### <a name="layer-7-application-routing-with-azure-front-door-service"></a>Маршрутизация приложений уровня 7 с помощью службы "Передняя дверь" Azure
+### <a name="application-routing-with-azure-front-door-service"></a>Маршрутизация приложений с помощью службы "Передняя дверь" Azure
 
-Для формирования трафика диспетчер трафика использует DNS (уровень 3). [Служба "Передняя дверца Azure](../frontdoor/front-door-overview.md) " предоставляет параметр маршрутизации HTTP/HTTPS (уровень 7). Дополнительные возможности службы "Передняя дверца Azure" включают в себя завершение TLS, пользовательский домен, брандмауэр веб-приложения, переписывание URL-адресов и сходство сеансов. Оцените требования к трафику для приложения, чтобы выбрать оптимальное решение.
+Использование протокола разбиения на части по протоколу TCP, [Служба "Передняя дверь" Azure](../frontdoor/front-door-overview.md) обеспечивает непрерывное подключение конечных пользователей к ближайшему POP передней дверцы (точка присутствия). Дополнительные возможности службы "Передняя дверца Azure" включают в себя завершение TLS, пользовательский домен, брандмауэр веб-приложения, переписывание URL-адресов и сходство сеансов. Оцените требования к трафику для приложения, чтобы выбрать оптимальное решение.
 
 ### <a name="interconnect-regions-with-global-virtual-network-peering"></a>Области Interconnect с глобальным пирингом виртуальной сети
 

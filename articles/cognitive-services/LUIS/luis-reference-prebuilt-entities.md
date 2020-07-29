@@ -9,18 +9,26 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
-ms.date: 10/03/2019
+ms.date: 07/20/2020
 ms.author: diberry
-ms.openlocfilehash: 831e766fbb10d616b3fbaf8f878228a9a51ece37
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7ec9cd8aade1edb7d2df2bab5cec8de445af7e44
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87090949"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87337982"
 ---
 # <a name="entities-per-culture-in-your-luis-model"></a>Сущности для языков и региональных параметров в модели LUIS
 
-Служба "Распознавание речи" (LUIS) включает готовые сущности. При включении предварительно созданной сущности в приложение LUIS включает соответствующий прогноз сущности в ответ конечной точки. Все примеры фраз также помечаются с помощью сущности. Поведение предварительно созданных сущностей **нельзя** изменить. Если не указано иное, предварительно созданные сущности доступны во всех языковых стандартах (языках и региональных параметрах) приложений LUIS. В следующей таблице показаны предварительно созданные сущности, которые поддерживаются для каждого языка и региональных параметров.
+Служба "Распознавание речи" (LUIS) включает готовые сущности.
+
+## <a name="entity-resolution"></a>Разрешение сущностей
+Когда в приложение включается предварительно созданная сущность, LUIS включает соответствующее разрешение сущности в ответе на конечную точку. Все примеры фраз также помечаются с помощью сущности.
+
+Поведение предварительно созданных сущностей нельзя изменить, но можно улучшить разрешение, [добавив предварительно созданную сущность в качестве функции в сущность машинного обучения или подсущность](luis-concept-entity-types.md#effective-prebuilt-entities).
+
+## <a name="availability"></a>Доступность
+Если не указано иное, предварительно созданные сущности доступны во всех языковых стандартах (языках и региональных параметрах) приложений LUIS. В следующей таблице показаны предварительно созданные сущности, которые поддерживаются для каждого языка и региональных параметров.
 
 |Культура|Подкатегории языков и региональных параметров|Примечания|
 |--|--|--|
@@ -56,7 +64,7 @@ ms.locfileid: "87090949"
 [Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
 [Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
 [персоннаме](luis-reference-prebuilt-person.md)   |    V2, V3   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
@@ -78,7 +86,7 @@ ms.locfileid: "87090949"
 [Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
 [Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
@@ -100,7 +108,7 @@ ms.locfileid: "87090949"
 [Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
 [Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    V2, V3   |
-[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
 [персоннаме](luis-reference-prebuilt-person.md)   |    V2, V3   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
@@ -122,7 +130,7 @@ ms.locfileid: "87090949"
 [Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
 [Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
 [персоннаме](luis-reference-prebuilt-person.md)   |   -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
@@ -144,7 +152,7 @@ ms.locfileid: "87090949"
 [Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
 [Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
@@ -166,7 +174,7 @@ ms.locfileid: "87090949"
 [Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
 [Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
@@ -190,7 +198,7 @@ ms.locfileid: "87090949"
 [Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
 [Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
@@ -212,7 +220,7 @@ ms.locfileid: "87090949"
 [Число](luis-reference-prebuilt-number.md)   |    V2,-   |
 [Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2,-   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Процент](luis-reference-prebuilt-percentage.md)   |    V2,-   |
+[Percentage](luis-reference-prebuilt-percentage.md)   |    V2,-   |
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2,-   |
@@ -234,7 +242,7 @@ ms.locfileid: "87090949"
 [Число](luis-reference-prebuilt-number.md)   |    -   |
 [Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    -   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Процент](luis-reference-prebuilt-percentage.md)   |    -   |
+[Percentage](luis-reference-prebuilt-percentage.md)   |    -   |
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    -   |
@@ -256,7 +264,7 @@ ms.locfileid: "87090949"
 [Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
 [Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
@@ -278,7 +286,7 @@ ms.locfileid: "87090949"
 [Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
 [Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
@@ -300,7 +308,7 @@ ms.locfileid: "87090949"
 [Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
 [Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    -   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Процент](luis-reference-prebuilt-percentage.md)   |    -   |
+[Percentage](luis-reference-prebuilt-percentage.md)   |    -   |
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    -   |

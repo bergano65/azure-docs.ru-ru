@@ -5,14 +5,14 @@ services: azure-resource-manager
 author: mumian
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 07/16/2020
+ms.date: 07/24/2020
 ms.author: jgao
-ms.openlocfilehash: fcdcf563cd88cbf6604877636432a406c1960cff
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: 4094e610bb290fc11656dc192f3d0a495f679dc5
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87117040"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87291795"
 ---
 # <a name="use-deployment-scripts-in-templates-preview"></a>Использование сценариев развертывания в шаблонах (предварительная версия)
 
@@ -147,7 +147,7 @@ ms.locfileid: "87117040"
 
     Если аргументы содержат escape-символы, используйте [жсонескапер](https://www.jsonescaper.com/) для двойного экранирования символов. Вставьте исходную экранированную строку в средство, а затем выберите **escape**.  Средство выводит строку с двойным экранированием. Например, в предыдущем примере шаблона аргумент имеет **имя \\ «Джон дружащим \\ »**.  Экранированная строка имеет **имя \\ \\ \\ «Джон дружащим \\ \\ \\ »**.
 
-    Чтобы передать параметр шаблона ARM типа Object в качестве аргумента, преобразуйте объект в строку с помощью функции [String ()](./template-functions-string.md#string) , а затем используйте функцию ** \\ \\ \\ ** [Replace ()](./template-functions-string.md#replace) для замены любого из них. ** \\ ** Например.
+    Чтобы передать параметр шаблона ARM типа Object в качестве аргумента, преобразуйте объект в строку с помощью функции [String ()](./template-functions-string.md#string) , а затем используйте функцию ** \\ \\ \\ ** [Replace ()](./template-functions-string.md#replace) для замены любого из них. ** \\ ** Например:
 
     ```json
     replace(string(parameters('tables')), '\"', '\\\"')
@@ -335,7 +335,7 @@ reference('<ResourceName>').output.text
 
 В меню слева можно просмотреть содержимое скрипта развертывания, аргументы, передаваемые в скрипт, и выходные данные.  Также можно экспортировать шаблон для скрипта развертывания, включая скрипт развертывания.
 
-### <a name="use-powershell"></a>PowerShell
+### <a name="use-powershell"></a>Использование PowerShell
 
 С помощью Azure PowerShell можно управлять сценариями развертывания в области действия подписки или группы ресурсов:
 
@@ -556,48 +556,7 @@ armclient get /subscriptions/01234567-89AB-CDEF-0123-456789ABCDEF/resourcegroups
 
 ## <a name="configure-development-environment"></a>Настройка среды разработки
 
-Вы можете использовать предварительно настроенный образ контейнера Docker в качестве среды разработки сценариев развертывания. Сведения об установке DOCKER см. в статье [Получение DOCKER](https://docs.docker.com/get-docker/).
-Также необходимо настроить общий доступ к файлам, чтобы подключить каталог, содержащий скрипты развертывания, к контейнеру DOCKER.
-
-1. Извлеките образ контейнера сценария развертывания на локальный компьютер.
-
-    ```command
-    docker pull mcr.microsoft.com/azuredeploymentscripts-powershell:az2.7
-    ```
-
-    В примере используется версия PowerShell 2.7.0.
-
-    Чтобы извлечь образ CLI из Реестра контейнеров Майкрософт (MCR), сделайте следующее.
-
-    ```command
-    docker pull mcr.microsoft.com/azure-cli:2.0.80
-    ```
-
-    В этом примере используется версия CLI 2.0.80. Сценарий развертывания использует образы контейнеров CLI по умолчанию, доступные [здесь](https://hub.docker.com/_/microsoft-azure-cli).
-
-1. Запустите образ Docker в локальной среде.
-
-    ```command
-    docker run -v <host drive letter>:/<host directory name>:/data -it mcr.microsoft.com/azuredeploymentscripts-powershell:az2.7
-    ```
-
-    Замените **&lt;host driver letter>** и **&lt;host directory name>** , указав существующую папку на общем диске.  Она будет сопоставлена с папкой **/data** в контейнере. Например, вот как можно указать для сопоставления папку D:\docker.
-
-    ```command
-    docker run -v d:/docker:/data -it mcr.microsoft.com/azuredeploymentscripts-powershell:az2.7
-    ```
-
-    **-it** означает поддержание активности образа контейнера.
-
-    Пример для CLI.
-
-    ```command
-    docker run -v d:/docker:/data -it mcr.microsoft.com/azure-cli:2.0.80
-    ```
-
-1. На следующем снимке экрана показано, как запустить сценарий PowerShell, учитывая, что на общем диске имеется helloworld.ps1 файл.
-
-    ![Диск Docker сценария развертывания шаблона Resource Manager в командной строке](./media/deployment-script-template/resource-manager-deployment-script-docker-cmd.png)
+Вы можете использовать предварительно настроенный образ контейнера в качестве среды разработки скриптов развертывания. Дополнительные сведения см. [в статье Настройка среды разработки для скриптов развертывания в шаблонах](./deployment-script-template-configure-dev.md).
 
 После успешного тестирования скрипта его можно использовать в качестве скрипта развертывания в шаблонах.
 

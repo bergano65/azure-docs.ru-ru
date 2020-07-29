@@ -1,5 +1,5 @@
 ---
-title: Расположение данных для пружины 2020 виртуальных рабочих столов Windows — Azure
+title: Расположение данных для виртуальных рабочих столов Windows — Azure
 description: Краткое описание расположений, в которых хранятся данные и метаданные виртуального рабочего стола Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -8,20 +8,17 @@ ms.topic: conceptual
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 96072b8008f42f58ec6a3aff32728c087b8e3290
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b1a061b2dfcdd212178a3f534a1a951697940685
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87080579"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87292619"
 ---
 # <a name="data-and-metadata-locations-for-windows-virtual-desktop"></a>Расположение данных и метаданных для виртуальных рабочих столов Windows
 
 >[!IMPORTANT]
->Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/data-locations-2019.md).
->
-> Обновление Виртуального рабочего стола Windows за весну 2020 года пока предоставляется как общедоступная предварительная версия. без соглашений об уровне обслуживания. Мы не рекомендуем использовать ее для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+>Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/data-locations-2019.md).
 
 Виртуальный рабочий стол Windows в настоящее время доступен для всех географических расположений. Администраторы могут выбрать расположение для хранения пользовательских данных при создании виртуальных машин пула узлов и связанных служб, таких как файловые серверы. Дополнительные сведения о географических регионах Azure см. на [карте центров обработки данных Azure](https://azuredatacentermap.azurewebsites.net/).
 

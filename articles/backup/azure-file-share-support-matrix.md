@@ -4,12 +4,12 @@ description: В этой статье предлагается сводка па
 ms.topic: conceptual
 ms.date: 5/07/2020
 ms.custom: references_regions
-ms.openlocfilehash: d0172ecab682b69f255eedb9270a6208b52dac45
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7d01f0f64fd183204fb7617040325e7d1b6e553e
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86514563"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289513"
 ---
 # <a name="support-matrix-for-azure-file-share-backup"></a>Таблица поддержки резервного копирования общих папок в Azure
 
@@ -20,10 +20,6 @@ ms.locfileid: "86514563"
 ### <a name="ga-regions-for-azure-file-shares-backup"></a>Общедоступные регионы для резервного копирования файловых ресурсов Azure
 
 Резервное копирование файловых ресурсов Azure доступно во всех регионах, **Кроме** : Германия Central (независимых), Северо-Восточная Германия (независимых), Восточный Китай, Восточный Китай 2, Северный Китай, Северный Китай 2, US gov (Айова)
-
-### <a name="supported-regions-for-accidental-delete-protection"></a>Поддерживаемые регионы для защиты от случайного удаления
-
-Западная Центральная часть США, Юго-Восточная Австралия, Центральная Канада, Юго-Центральная часть США, Южная Индия, Северо-центральный регион США, Восточная Япония, Северная Австралия, Южная Бразилия, Юго-Центральный регион США, Восточная Австралия, восток США, Восточная часть США 2
 
 ## <a name="supported-storage-accounts"></a>Учетные записи хранилища BLOB-объектов
 

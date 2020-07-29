@@ -5,12 +5,12 @@ services: automation
 ms.date: 06/30/2020
 ms.topic: conceptual
 ms.service: automation
-ms.openlocfilehash: 74250a54d7b835ceb37614450de07e9e3baefd83
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 1ec2aed0a2cceebe4685cf75c7007d1ce0785615
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86183161"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87293099"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Устранение неполадок с Управлением обновлениями
 
@@ -51,7 +51,7 @@ Error details: Failed to enable the Update solution
 
 ## <a name="scenario-superseded-update-indicated-as-missing-in-update-management"></a>Сценарий: заменяемое обновление отображается как отсутствующее в Управлении обновлениями
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Старые обновления отображаются для учетной записи службы автоматизации как отсутствующие, даже если они были заменены. Заменяемое обновление не надо устанавливать, так как доступно более позднее обновление, устраняющее ту же уязвимость. Управление обновлениями игнорирует заменяемое обновление и делает его неприменимым. Вместо него используется заменяющее обновление. Сведения о связанных проблемах см. в разделе о [замененном обновлении](/windows/deployment/update/windows-update-troubleshooting#the-update-is-not-applicable-to-your-computer).
 
@@ -81,7 +81,7 @@ Error details: Failed to enable the Update solution
 
 ## <a name="scenario-machines-dont-show-up-in-the-portal-under-update-management"></a><a name="nologs"></a>Сценарий. Компьютеры не отображаются на портале в разделе Управления обновлениями
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 У ваших компьютеров возникли указанные ниже симптомы:
 
@@ -132,7 +132,7 @@ Error details: Failed to enable the Update solution
 
 ## <a name="scenario-unable-to-register-automation-resource-provider-for-subscriptions"></a><a name="rp-register"></a>Сценарий. Не удается оформить подписки для поставщика ресурсов службы автоматизации
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 При работе с развертываниями компонентов в учетной записи службы автоматизации возникает следующая ошибка:
 
@@ -160,7 +160,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 ## <a name="scenario-scheduled-update-with-a-dynamic-schedule-missed-some-machines"></a><a name="scheduled-update-missed-machines"></a>Сценарий. В запланированном обновлении с динамическим расписанием отсутствуют некоторые компьютеры
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Компьютеры, включенные в предварительный просмотр обновления, не отображаются в списке компьютеров, исправленных во время запланированного запуска.
 
@@ -275,7 +275,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 ## <a name="scenario-update-management-components-enabled-while-vm-continues-to-show-as-being-configured"></a><a name="components-enabled-not-working"></a>Сценарий. Компоненты Управления обновлениями включены, тогда как виртуальная машина продолжает отображаться во время настройки
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Приведенное ниже сообщение на виртуальной машине не исчезает в течение 15 минут после начала развертывания:
 
@@ -329,7 +329,7 @@ Update
 
 ## <a name="scenario-you-receive-a-linked-subscription-error-when-you-create-an-update-deployment-for-machines-in-another-azure-tenant"></a><a name="multi-tenant"></a>Сценарий. Вы получаете ошибку связанной подписки при создании развертывания обновлений для компьютеров в другом клиенте Azure
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Вы получаете следующую ошибку при попытке создания развертывания обновлений для компьютеров в другом клиенте Azure:
 
@@ -357,7 +357,7 @@ New-AzAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -AutomationA
 
 ## <a name="scenario-unexplained-reboots"></a><a name="node-reboots"></a>Сценарий. Необъяснимые перезагрузки
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Несмотря на то, что для параметра **управления перезагрузкой** установлено значение **Никогда не перезагружать**, компьютеры по-прежнему перезагружаются после установки обновлений.
 
@@ -371,7 +371,7 @@ New-AzAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -AutomationA
 
 ## <a name="scenario-machine-shows-failed-to-start-in-an-update-deployment"></a><a name="failed-to-start"></a>Сценарий. На компьютере отображается сообщение "Не удалось запустить" при развертывании обновлений
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 На компьютере отображается состояние `Failed to start`. При просмотре подробной информации о компьютере наблюдается следующая ошибка:
 
@@ -387,7 +387,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 * Компьютер отключен и недоступен.
 * У компьютера неполадки с сетевым подключением, поэтому гибридная рабочая роль на компьютере недоступна.
 * Произошло обновление MMA, которое изменило идентификатор исходного компьютера.
-* Выполнение обновления было отрегулировано, если достигнуто ограничение в 2000 параллельных заданий в учетной записи службы автоматизации. Каждое развертывание считается заданием, а каждый компьютер в развертывании обновлений учитывается как задание. Любое другое задание службы автоматизации или развертывание обновлений, выполняющееся в данный момент в вашей учетной записи службы автоматизации, учитывает ограничение на число параллельных заданий.
+* Выполнение обновления было отрегулировано, если достигнуто ограничение в 200 параллельных заданий в учетной записи службы автоматизации. Каждое развертывание считается заданием, а каждый компьютер в развертывании обновлений учитывается как задание. Любое другое задание службы автоматизации или развертывание обновлений, выполняющееся в данный момент в вашей учетной записи службы автоматизации, учитывает ограничение на число параллельных заданий.
 
 ### <a name="resolution"></a>Решение
 
@@ -425,7 +425,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 
 ## <a name="scenario-machine-is-already-registered-to-a-different-account"></a><a name="machine-already-registered"></a>Сценарий. Компьютер уже зарегистрирован в другой учетной записи
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Отображается следующее сообщение об ошибке:
 
@@ -444,7 +444,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ## <a name="scenario-machine-cant-communicate-with-the-service"></a><a name="machine-unable-to-communicate"></a>Сценарий. Компьютеру не удается связаться со службой
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Отображается одно из следующих сообщений об ошибке.
 
@@ -474,7 +474,7 @@ Access is denied. (Exception form HRESULT: 0x80070005(E_ACCESSDENIED))
 
 ## <a name="scenario-unable-to-create-self-signed-certificate"></a><a name="unable-to-create-selfsigned-cert"></a>Сценарий. Невозможно создать самозаверяющий сертификат
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Отображается одно из следующих сообщений об ошибке.
 
@@ -492,7 +492,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ## <a name="scenario-the-scheduled-update-failed-with-a-maintenancewindowexceeded-error"></a><a name="mw-exceeded"></a>Сценарий. Запланированное обновление завершилось с ошибкой MaintenanceWindowExceeded
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Период обслуживания по умолчанию для обновлений — 120 минут. Период обслуживания можно увеличить до 6 часов или 360 минут.
 
@@ -504,7 +504,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ## <a name="scenario-machine-shows-as-not-assessed-and-shows-an-hresult-exception"></a><a name="hresult"></a>Сценарий. Компьютер отображается как "Без оценки" и показывает исключение HRESULT
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 * У вас есть компьютеры, которые отображаются как `Not assessed` в разделе **Совместимость**, а ниже появляется сообщение об ошибке.
 * На портале отобразится код ошибки HRESULT.

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.assetid: 63be271e-7c44-4d19-9897-c2913ee9599d
 ms.topic: how-to
 ms.date: 06/30/2017
-ms.openlocfilehash: 80edafb9cffa43f7163c1b75c9faaaefbb97c616
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 1c22aa9fb91b0a86704b95586afc1779023e85b6
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87127423"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288946"
 ---
 # <a name="u-sql-programmability-guide"></a>Руководство по программированию U-SQL
 
@@ -125,7 +125,7 @@ REFERENCE ASSEMBLY MyDB.[MyAssembly];
 
 
 ### <a name="use-assembly-versioning"></a>Использование версий сборок
-В настоящее время в U-SQL используется платформа .NET Framework 4.5. Убедитесь, что ваши сборки совместимы с этой версией среды выполнения.
+В настоящее время U-SQL использует .NET Framework версии 4.7.2. Убедитесь, что ваши сборки совместимы с этой версией среды выполнения.
 
 Как упоминалось выше, U-SQL выполняет код в 64-разрядном формате (x64). Поэтому код нужно компилировать так, чтобы он выполнялся в среде x64. В противном случае вы получите ошибку неправильного формата, как показано выше.
 

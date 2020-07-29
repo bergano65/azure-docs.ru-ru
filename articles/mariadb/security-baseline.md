@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 09d2fb709e21b7c1251c2caf224f4d5c3ce6aea1
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: fd195fee513b2eed9049c7841f791d73a41b876b
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86026582"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87366839"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-mariadb"></a>Базовый план безопасности Azure для базы данных Azure для MariaDB
 
@@ -296,7 +296,7 @@ ms.locfileid: "86026582"
 
 Общие сведения об управлении доступом для MariaDB:https://docs.microsoft.com/azure/mariadb/concepts-security#access-management
 
-Общие сведения о встроенных ролях RBAC для подписок Azure:https://docs.microsoft.com/azure/role-based-access-control/built-in-roles
+Общие сведения о встроенных ролях Azure для подписок Azure.https://docs.microsoft.com/azure/role-based-access-control/built-in-roles
 
 
 **Мониторинг Центра безопасности Azure**: Да

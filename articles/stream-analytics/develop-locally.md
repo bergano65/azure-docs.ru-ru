@@ -6,11 +6,12 @@ author: mamccrea
 ms.topic: conceptual
 ms.date: 03/31/2020
 ms.service: stream-analytics
-ms.openlocfilehash: 736fce1d4b347e36ad5c10ca89ad0627104a0232
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 70097ad02c17f8c23bd9613487a905ccd562635e
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80879847"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87337557"
 ---
 # <a name="develop-and-debug-azure-stream-analytics-jobs-locally"></a>Разработка и отладка заданий Azure Stream Analytics локально
 
@@ -24,11 +25,11 @@ ms.locfileid: "80879847"
 
 |Среда                              |Описание    |
 |-----------------------------------------|------------|
-|[Visual Studio Code](visual-studio-code-explore-jobs.md)| [Расширение Azure Stream Analytics Tools](https://marketplace.visualstudio.com/items?itemName=ms-bigdatatools.vscode-asa) для Visual Studio Code позволяет создавать, администрировать и тестировать задание Stream Analytics как локально, так и в облаке с богатыми функциями IntelliSense и собственными средствами управления версиями. Поддерживает разработку в Linux, MacOS и Windows. Дополнительные сведения см. [в разделе Создание задания Azure Stream Analytics в Visual Studio Code](quick-create-vs-code.md).|
+|[Visual Studio Code](visual-studio-code-explore-jobs.md)| [Расширение Azure Stream Analytics Tools](https://marketplace.visualstudio.com/items?itemName=ms-bigdatatools.vscode-asa) для Visual Studio Code позволяет создавать, управлять и тестировать задания Stream Analytics как локально, так и в облаке с богатыми функциями IntelliSense и собственными средствами управления версиями. Поддерживает разработку в Linux, MacOS и Windows. Дополнительные сведения см. [в разделе Создание задания Azure Stream Analytics в Visual Studio Code](quick-create-vs-code.md). Расширение также поддерживает [Visual Studio кодеспацес](https://visualstudio.microsoft.com/services/visual-studio-codespaces/) , которая является средой разработки, размещенной в облаке.|
 |[Visual Studio 2019](stream-analytics-tools-for-visual-studio-install.md) |Средства Stream Analytics являются частью рабочих нагрузок разработки и хранения данных Azure в Visual Studio. Visual Studio можно использовать для написания пользовательских определяемых пользователем функций и десериализаторов C#. Дополнительные сведения см. в статье [создание Azure Stream Analytics задания с помощью Visual Studio](stream-analytics-quick-create-vs.md).|
 |[Командная строка или терминал](stream-analytics-tools-for-visual-studio-cicd.md)|Пакет NuGet Azure Stream Analytics CI/CD предоставляет средства для сборки проекта Visual Studio, локальное тестирование на произвольном компьютере. Пакет Azure Stream Analytics CI/CD NPM предоставляет средства для сборок проектов Visual Studio Code (которые формируют шаблон Azure Resource Manager) на произвольном компьютере.|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Локальное тестирование запросов Stream Analytics с использованием примера данных и Visual Studio Code](visual-studio-code-local-run.md)
 * [Тестирование Stream Analytics запросов локально для входа в динамический поток с помощью Visual Studio Code](visual-studio-code-local-run-live-input.md)
