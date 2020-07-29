@@ -1,118 +1,117 @@
 ---
-title: Перенос метрик службы хранилища Azure | Документация Майкрософт
-description: Узнайте, как переносить старые метрики в новые, которые управляются службой Azure Monitor.
+title: Переход от метрик Аналитика Службы хранилища к Azure Monitorным метрикам | Документация Майкрософт
+description: Узнайте, как переходить от метрик Аналитика Службы хранилища (классические метрики) к метрикам в Azure Monitor.
 author: normesta
 ms.service: storage
 ms.topic: conceptual
-ms.date: 03/30/2018
+ms.date: 07/28/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring
-ms.openlocfilehash: 10768ca4c6fbe4afc322fa9a7045c7cc4fe6f175
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 219d2b972089f9d3b7f84caa8b527474ac241c4f
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83681304"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87374173"
 ---
-# <a name="azure-storage-metrics-migration"></a>Перенос метрик службы хранилища Azure
+# <a name="transition-to-metrics-in-azure-monitor"></a>Переход к метрикам в Azure Monitor
 
-В соответствии со стратегией унификации мониторинга в Azure служба хранилища Azure интегрирует метрики на платформе Azure Monitor. В будущем поддержка метрик прежних версий будет прекращена с предварительным уведомлением на основе политики Azure. Если вы используете метрики прежних версий, службы хранилища, необходимо выполнить перенос до даты окончания действия службы, чтобы сохранить данные метрик.
+Служба хранилища Azure теперь интегрирует метрики в Azure Monitorную платформу. С **31 августа 2023** аналитика службы хранилища метрики, также называемые *классическими метриками* , будут прекращены. Если вы используете классические метрики, обязательно переходите к метрикам в Azure Monitor до этой даты. Эта статья поможет вам выполнить переход.
 
-В этой статье показано, как перейти от метрик прежних версий к новым.
+## <a name="steps-to-complete-the-transition"></a>Шаги для завершения перехода
 
-## <a name="understand-old-metrics-that-are-managed-by-azure-storage"></a>Основные сведения о метриках прежних версий, управляемых службой хранилища Azure
+Для перехода на метрики в Azure Monitor рекомендуется следующий подход.
 
-Служба хранилища Azure собирает метрики прежних версий, выполняет статистические вычисления и сохраняет их в таблицах $Metric в одной учетной записи хранения. Портал Azure можно использовать для настройки диаграммы мониторинга. Кроме того, можно использовать пакеты SDK службы хранилища Azure для чтения данных из таблиц $Metric, основанных на схеме. Дополнительные сведения см. в [этой статье](./storage-analytics.md).
+1. Узнайте о некоторых [основных различиях](#key-differences-between-classic-metrics-and-metrics-in-azure-monitor) между классическими метриками и метриками в Azure Monitor. 
 
-Метрики прежних версий предоставляют метрики производительности только для хранилища BLOB-объектов Azure. Метрики прежних версий предоставляют метрики транзакций для хранилища BLOB-объектов, хранилища таблиц, службы "Файлы Azure" и хранилища очередей.
+2. Скомпилируйте список используемых в настоящее время классических метрик.
 
-Метрики прежних версий разработаны на основе неструктурированной схемы. Поэтому при отсутствии шаблонов трафика для активации метрики ее данные отсутствовали. Например, **ServerTimeoutError** имеет значение 0 в таблицах $Metric даже в том случае, если вы не получаете какие-либо ошибки времени ожидания сервера из реального трафика для учетной записи хранения.
+3. Укажите, [какие метрики в Azure Monitor](#metrics-mapping-between-old-metrics-and-new-metrics) предоставляют те же данные, что и используемые в настоящее время метрики. 
+   
+4. Создайте [диаграммы](https://docs.microsoft.com/learn/modules/gather-metrics-blob-storage/2-viewing-blob-metrics-in-azure-portal) или [панели мониторинга](https://docs.microsoft.com/learn/modules/gather-metrics-blob-storage/4-using-dashboards-in-the-azure-portal) для просмотра данных метрик.
 
-## <a name="understand-new-metrics-managed-by-azure-monitor"></a>Основные сведения о новых метриках, управляемых Azure Monitor
+   > [!NOTE]
+   > Метрики в Azure Monitor включены по умолчанию, поэтому вам не нужно предпринимать никаких действий, чтобы начать сбор метрик. Однако для просмотра этих метрик необходимо создать диаграммы или панели мониторинга. 
+ 
+5. Если вы создали правила генерации оповещений, основанные на классических метриках хранилища, [Создайте правила генерации оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview) , основанные на метриках в Azure Monitor. 
 
-Данные новых метрик служба хранилища Azure передает в серверную часть Azure Monitor. Azure Monitor обеспечивает унифицированный мониторинг, включая данные с портала и прием данных. Дополнительные сведения можно найти в этой [статье](../../monitoring-and-diagnostics/monitoring-overview-metrics.md).
+6. После того как вы сможете увидеть все метрики в Azure Monitor, вы можете отключить классическое ведение журнала. 
 
-Новые метрики обеспечивают данные о емкости и транзакциях для больших двоичных объектов, таблиц, файлов, очередей и хранилища уровня "Премиум".
+<a id="key-differences-between-classic-metrics-and-metrics-in-azure-monitor"></a>
 
-Многомерность является одной из функций, предоставляемых Azure Monitor. Служба хранилища Azure учитывает это при определении новой схемы метрики. Дополнительные сведения о поддерживаемых измерениях метрик можно найти в статье о [метриках службы хранилища Azure в Azure Monitor](./storage-metrics-in-azure-monitor.md). Многомерность обеспечивает экономичность в использовании пропускной способности при приеме и емкости при хранении данных метрик. Следовательно, если трафик не активировал связанные метрики, то их данные не создаются. Например, если трафик не активировал какие-либо ошибки времени ожидания сервера, то Azure Monitor не возвращает никаких данных при запросе значения **Transactions** метрики с измерением **ResponseType**, равным **ServerTimeoutError**.
+## <a name="classic-metrics-vs-metrics-in-azure-monitor"></a>Классические метрики и метрики в Azure Monitor
 
-## <a name="metrics-mapping-between-old-metrics-and-new-metrics"></a>Сопоставление метрик прежних и новых версий
+В этом разделе описаны некоторые ключевые различия между этими двумя платформами метрик.
 
-При программном чтении данных метрик необходимо перейти на новую схему метрики в своих программах. Чтобы лучше понять изменения, можно ознакомиться с сопоставлением в следующей таблице:
+Основное различие заключается в том, как управляются метрики. Классические метрики управляются службой хранилища Azure, а метрики в Azure Monitor управляются Azure Monitor. С помощью классических метрик служба хранилища Azure собирает значения метрик, объединяет их, а затем сохраняет в таблицах, расположенных в учетной записи хранения. Используя метрики в Azure Monitor, служба хранилища Azure отправляет данные метрик в серверную части Azure Monitor. Azure Monitor предоставляет единый интерфейс мониторинга, который включает данные из портал Azure, а также данные, которые принимаются. 
+
+Как только метрики поддерживаются, классические метрики предоставляют метрики **емкости** только для хранилища BLOB-объектов Azure. Метрики в Azure Monitor предоставляют метрики емкости для больших двоичных объектов, таблиц, файлов, очередей и хранилища класса Premium. Классические метрики предоставляют метрики **транзакций** для хранилища BLOB-объектов, таблиц, файлов Azure и очередей. Метрики в Azure Monitor добавить хранилище класса Premium в этот список.
+
+Если действие в учетной записи не запускает метрику, для этой метрики в классической метрике будет отображаться нулевое значение (0). Метрики в Azure Monitor будут полностью опускать данные, что ведет к очистке отчетов. Например, при использовании классической метрики, если ошибки времени ожидания сервера не выводятся, `ServerTimeoutError` значение в таблице метрик задается равным 0. Azure Monitor не возвращает никаких данных при запросе значения метрики `Transactions` с измерением, `ResponseType` равным `ServerTimeoutError` . 
+
+Дополнительные сведения о метриках в Azure Monitor см. в разделе [метрики в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics).
+
+<a id="metrics-mapping-between-old-metrics-and-new-metrics"></a>
+
+## <a name="map-classic-metrics-to-metrics-in-azure-monitor"></a>Сопоставьте классические метрики с метриками в Azure Monitor
+
+ Используйте эти таблицы, чтобы указать, какие метрики в Azure Monitor предоставляют те же данные, что и используемые в настоящее время метрики. 
 
 **Метрики емкости**
 
-| Метрика прежних версий | Новая метрика |
+| Классическая метрика | Метрика в Azure Monitor |
 | ------------------- | ----------------- |
-| **Производительность**            | **BlobCapacity** с измерением **BlobType**, равным **BlockBlob** или **PageBlob**. |
-| **ObjectCount**        | **BlobCount** с измерением **BlobType**, равным **BlockBlob** или **PageBlob**. |
-| **ContainerCount**      | **ContainerCount** |
+| `Capacity`            | `BlobCapacity`с измерением, `BlobType` равным `BlockBlob` или`PageBlob` |
+| `ObjectCount`        | `BlobCount`с измерением, `BlobType` равным `BlockBlob` или`PageBlob` |
+| `ContainerCount`      | `ContainerCount` |
 
-Следующие метрики представляют собой новые предложения, не поддерживаемые метриками прежних версий.
-* **TableCapacity**
-* **TableCount**
-* **TableEntityCount**
-* **QueueCapacity**
-* **QueueCount**
-* **QueueMessageCount**
-* **FileCapacity**
-* **FileCount**
-* **FileShareCount**
-* **UsedCapacity**
+> [!NOTE]
+> Также есть несколько новых метрик емкости, которые не были доступны в качестве классических метрик. Полный список см. в разделе [метрики](../common/monitor-storage-reference.md#metrics).
 
 **Метрики транзакций**
 
-| Метрика прежних версий | Новая метрика |
+| Классическая метрика | Метрика в Azure Monitor |
 | ------------------- | ----------------- |
-| **AnonymousAuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**, и измерением **Authentication**, равным **Anonymous** |
-| **AnonymousClientOtherError** | Transactions с измерением **ResponseType**, равным **ClientOtherError**, и измерением **Authentication**, равным **Anonymous** |
-| **AnonymousClientTimeoutError** | Transactions с измерением **ResponseType**, равным **ClientTimeoutError**, и измерением **Authentication**, равным **Anonymous** |
-| **AnonymousNetworkError** | Transactions с измерением **ResponseType**, равным **NetworkError**, и измерением **Authentication**, равным **Anonymous** |
-| **AnonymousServerOtherError** | Transactions с измерением **ResponseType**, равным **ServerOtherError**, и измерением **Authentication**, равным **Anonymous** |
-| **AnonymousServerTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**, и измерением **Authentication**, равным **Anonymous** |
-| **AnonymousSuccess** | Transactions с измерением **ResponseType**, равным **Success**, и измерением **Authentication**, равным **Anonymous** |
-| **AnonymousThrottlingError** | Transactions с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**, и измерением **Authentication**, равным **Anonymous** |
-| **AuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**. |
-| **Доступность** | **Доступность** |
-| **AverageE2ELatency** | **SuccessE2ELatency** |
-| **AverageServerLatency** | **SuccessServerLatency** |
-| **ClientOtherError** | Transactions с измерением **ResponseType**, равным **ClientOtherError**. |
-| **ClientTimeoutError** | Transactions с измерением **ResponseType**, равным **ClientTimeoutError**. |
-| **NetworkError** | Transactions с измерением **ResponseType**, равным **NetworkError**. |
-| **PercentAuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**. |
-| **PercentClientOtherError** | Transactions с измерением **ResponseType**, равным **ClientOtherError**. |
-| **PercentNetworkError** | Transactions с измерением **ResponseType**, равным **NetworkError**. |
-| **PercentServerOtherError** | Transactions с измерением **ResponseType**, равным **ServerOtherError**. |
-| **PercentSuccess** | Transactions с измерением **ResponseType**, равным **Success**. |
-| **PercentThrottlingError** | Transactions с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**. |
-| **PercentTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**, или с измерением **ResponseType**, равным **ClientTimeoutError**. |
-| **SASAuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**, и измерением **Authentication**, равным **SAS** |
-| **SASClientOtherError** | Transactions с измерением **ResponseType**, равным **ClientOtherError**, и измерением **Authentication**, равным **SAS** |
-| **SASClientTimeoutError** | Transactions с измерением **ResponseType**, равным **ClientTimeoutError**, и измерением **Authentication**, равным **SAS** |
-| **SASNetworkError** | Transactions с измерением **ResponseType**, равным **NetworkError**, и измерением **Authentication**, равным **SAS** |
-| **SASServerOtherError** | Transactions с измерением **ResponseType**, равным **ServerOtherError**, и измерением **Authentication**, равным **SAS** |
-| **SASServerTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**, и измерением **Authentication**, равным **SAS** |
-| **SASSuccess** | Transactions с измерением **ResponseType**, равным **Success**, и измерением **Authentication**, равным **SAS** |
-| **SASThrottlingError** | Transactions с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**, и измерением **Authentication**, равным **SAS** |
-| **ServerOtherError** | Transactions с измерением **ResponseType**, равным **ServerOtherError**. |
-| **ServerTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**. |
-| **Успешно** | Transactions с измерением **ResponseType**, равным **Success**. |
-| **ThrottlingError** | **Transactions** с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**.|
-| **TotalBillableRequests** | **Транзакции** |
-| **TotalEgress** | **Исходящий трафик** |
-| **TotalIngress** | **Входящий трафик** |
-| **TotalRequests** | **Транзакции** |
-
-## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
-
-### <a name="how-should-i-migrate-existing-alert-rules"></a>Как перенести существующие правила генерации оповещений?
-
-Если вы создали классические правила генерации оповещений, основанные на метриках службы хранилища прежних версий, необходимо создать новые правила генерации оповещений, основанные на новой схеме метрики.
-
-### <a name="is-new-metric-data-stored-in-the-same-storage-account-by-default"></a>Будет ли данные новых метрик по умолчанию сохраняться в ту же учетную запись хранения?
-
-Нет. Чтобы заархивировать данные метрик в учетную запись хранения, используйте [API настройки диагностики Azure Monitor](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings/createorupdate).
+| `AnonymousAuthorizationError` | Транзакции с измерением, `ResponseType` равным `AuthorizationError` , и измерением, `Authentication` равным`Anonymous` |
+| `AnonymousClientOtherError` | Транзакции с измерением, `ResponseType` равным `ClientOtherError` , и измерением, `Authentication` равным`Anonymous` |
+| `AnonymousClientTimeoutError` | Транзакции с измерением, `ResponseType` равным `ClientTimeoutError` , и измерением, `Authentication` равным`Anonymous` |
+| `AnonymousNetworkError` | Транзакции с измерением, `ResponseType` равным `NetworkError` , и измерением, `Authentication` равным`Anonymous` |
+| `AnonymousServerOtherError` | Транзакции с измерением, `ResponseType` равным `ServerOtherError` , и измерением, `Authentication` равным`Anonymous` |
+| `AnonymousServerTimeoutError` | Транзакции с измерением, `ResponseType` равным `ServerTimeoutError` , и измерением, `Authentication` равным`Anonymous` |
+| `AnonymousSuccess` | Транзакции с измерением, `ResponseType` равным `Success` , и измерением, `Authentication` равным`Anonymous` |
+| `AnonymousThrottlingError` | Транзакции с измерением, `ResponseType` равным `ClientThrottlingError` или `ServerBusyError` , и измерением, `Authentication` равным`Anonymous` |
+| `AuthorizationError` | Транзакции с измерением, `ResponseType` равным`AuthorizationError` |
+| `Availability` | `Availability` |
+| `AverageE2ELatency` | `SuccessE2ELatency` |
+| `AverageServerLatency` | `SuccessServerLatency` |
+| `ClientOtherError` | Транзакции с измерением, `ResponseType` равным`ClientOtherError` |
+| `ClientTimeoutError` | Транзакции с измерением, `ResponseType` равным`ClientTimeoutError` |
+| `NetworkError` | Транзакции с измерением, `ResponseType` равным`NetworkError` |
+| `PercentAuthorizationError` | Транзакции с измерением, `ResponseType` равным`AuthorizationError` |
+| `PercentClientOtherError` | Транзакции с измерением, `ResponseType` равным`ClientOtherError` |
+| `PercentNetworkError` | Транзакции с измерением, `ResponseType` равным`NetworkError` |
+| `PercentServerOtherError` | Транзакции с измерением, `ResponseType` равным`ServerOtherError` |
+| `PercentSuccess` | Транзакции с измерением, `ResponseType` равным`Success` |
+| `PercentThrottlingError` | Транзакции с измерением, `ResponseType` равным `ClientThrottlingError` или`ServerBusyError` |
+| `PercentTimeoutError` | Транзакции с измерением, `ResponseType` равным `ServerTimeoutError` или `ResponseType` равным`ClientTimeoutError` |
+| `SASAuthorizationError` | Транзакции с измерением, `ResponseType` равным `AuthorizationError` , и измерением, `Authentication` равным`SAS` |
+| `SASClientOtherError` | Транзакции с измерением, `ResponseType` равным `ClientOtherError` , и измерением, `Authentication` равным`SAS` |
+| `SASClientTimeoutError` | Транзакции с измерением, `ResponseType` равным `ClientTimeoutError` , и измерением, `Authentication` равным`SAS` |
+| `SASNetworkError` | Транзакции с измерением, `ResponseType` равным `NetworkError` , и измерением, `Authentication` равным`SAS` |
+| `SASServerOtherError` | Транзакции с измерением, `ResponseType` равным `ServerOtherError` , и измерением, `Authentication` равным`SAS` |
+| `SASServerTimeoutError` | Транзакции с измерением, `ResponseType` равным `ServerTimeoutError` , и измерением, `Authentication` равным`SAS` |
+| `SASSuccess` | Транзакции с измерением, `ResponseType` равным `Success` , и измерением, `Authentication` равным`SAS` |
+| `SASThrottlingError` | Транзакции с измерением, `ResponseType` равным `ClientThrottlingError` или `ServerBusyError` , и измерением, `Authentication` равным`SAS` |
+| `ServerOtherError` | Транзакции с измерением, `ResponseType` равным`ServerOtherError` |
+| `ServerTimeoutError` | Транзакции с измерением, `ResponseType` равным`ServerTimeoutError` |
+| `Success` | Транзакции с измерением, `ResponseType` равным`Success` |
+| `ThrottlingError` | `Transactions`с измерением, `ResponseType` равным `ClientThrottlingError` или`ServerBusyError`|
+| `TotalBillableRequests` | `Transactions` |
+| `TotalEgress` | `Egress` |
+| `TotalIngress` | `Ingress` |
+| `TotalRequests` | `Transactions` |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

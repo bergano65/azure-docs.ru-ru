@@ -2,13 +2,13 @@
 title: Справочник разработчика C# по функциям Azure
 description: Узнайте, как разрабатывать Функции Azure с помощью C#.
 ms.topic: conceptual
-ms.date: 09/12/2018
-ms.openlocfilehash: 9ecc2dad8d1d520b44972022d47c312f495d5c38
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.date: 07/24/2020
+ms.openlocfilehash: 7c00dcd3648ef175d4e834fceef3444f7943e70b
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86506522"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288191"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "86506522"
 | ---- | ---- |
 | Функции 3. x | .NET Core 3.1 |
 | Функции 2.x | .NET Core 2.2 |
-| Функции 1.x | .NET Framework 4.6 |
+| Функции 1.x | .NET Framework 4.7 |
 
 Дополнительные сведения см. в статье [Обзор версий среды выполнения функций Azure](functions-versions.md) .
 
@@ -138,7 +138,7 @@ public static class BindingExpressionsExample
 
 Цель этого файла — предоставить сведения контроллеру масштабирования, который будет использоваться для [принятия решений о масштабировании в плане потребления](functions-scale.md#how-the-consumption-and-premium-plans-work). По этой причине файл содержит только сведения о триггерах, но не о входных или выходных привязках.
 
-Создаваемый файл *function.json* содержит свойство `configurationSource`, которое указывает среде выполнения использовать атрибуты .NET для привязок, вместо конфигурации *function.json*. Ниже приведен пример.
+Создаваемый файл *function.json* содержит свойство `configurationSource`, которое указывает среде выполнения использовать атрибуты .NET для привязок, вместо конфигурации *function.json*. Приведем пример:
 
 ```json
 {

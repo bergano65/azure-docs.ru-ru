@@ -10,12 +10,12 @@ ms.date: 07/16/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 4eb3173700a0907f8195466b9e0d7ab1903cf93e
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: b5e75819fd018cda60bca4c992bc4c141b14a379
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87124788"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87374190"
 ---
 # <a name="authorize-access-to-blobs-and-queues-using-azure-active-directory"></a>Авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory
 
@@ -43,15 +43,15 @@ ms.locfileid: "87124788"
 
 ## <a name="assign-rbac-roles-for-access-rights"></a>Назначение ролей RBAC для предоставления прав доступа
 
-Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md). Служба хранилища Azure определяет набор встроенных ролей RBAC, охватывающих общие наборы разрешений, используемых для доступа к данным BLOB-объектов и очередей. Можно также определить пользовательские роли для доступа к данным большого двоичного объекта и очереди.
+Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md). Служба хранилища Azure определяет набор встроенных ролей Azure, охватывающих общие наборы разрешений, используемых для доступа к данным BLOB-объектов и очередей. Можно также определить пользовательские роли для доступа к данным большого двоичного объекта и очереди.
 
 Если субъекту безопасности назначена роль RBAC, Azure предоставляет этому субъекту безопасности доступ к соответствующим ресурсам. Доступ может ограничиваться уровнем подписки, группой ресурсов, учетной записью хранения или отдельным контейнером или очередью. Субъект безопасности Azure AD может быть пользователем, группой, субъектом-службой приложения или [управляемым удостоверением для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
 
-### <a name="built-in-rbac-roles-for-blobs-and-queues"></a>Встроенные роли RBAC для больших двоичных объектов и очередей
+### <a name="azure-built-in-roles-for-blobs-and-queues"></a>Встроенные роли Azure для больших двоичных объектов и очередей
 
 [!INCLUDE [storage-auth-rbac-roles-include](../../../includes/storage-auth-rbac-roles-include.md)]
 
-Сведения о назначении встроенной роли RBAC субъекту безопасности см. в одной из следующих статей:
+Сведения о назначении встроенной роли Azure субъекту безопасности см. в одной из следующих статей:
 
 - [Предоставление доступа к BLOB-объектам Azure и создание очереди данных с использованием RBAC на портале Azure](storage-auth-aad-rbac-portal.md)
 - [Предоставление доступа к BLOB-объектам Azure и создание очереди данных с использованием RBAC с помощью Azure CLI](storage-auth-aad-rbac-cli.md)

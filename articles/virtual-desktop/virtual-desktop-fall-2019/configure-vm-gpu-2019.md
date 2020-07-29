@@ -1,23 +1,23 @@
 ---
-title: Настройка GPU для виртуальных рабочих столов Windows — 2019 — Azure
-description: Сведения о включении отрисовки и кодирования с поддержкой ускорения за счет GPU на Виртуальном рабочем столе Windows.
+title: Настройка GPU для виртуальных рабочих столов Windows (классическая модель) — Azure
+description: Как включить отрисовку и кодирование с помощью GPU с ускорением на виртуальных рабочих столах Windows (классическая модель).
 services: virtual-desktop
 author: gundarev
 ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: denisgun
-ms.openlocfilehash: bbb0985e309601562587f3f1b26427f46a4a8987
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e6c8fe95508937604c53d817d60dd637352fb6fa
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087175"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288695"
 ---
-# <a name="configure-graphics-processing-unit-gpu-acceleration-for-windows-virtual-desktop-fall-2019"></a>Настройка ускорения графического процессора для виртуальных рабочих столов Windows — 2019
+# <a name="configure-graphics-processing-unit-gpu-acceleration-for-windows-virtual-desktop-classic"></a>Настройка ускорения графического процессора для виртуальных рабочих столов Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../configure-vm-gpu.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../configure-vm-gpu.md).
 
 Виртуальный рабочий стол Windows поддерживает отрисовку и кодирование с поддержкой ускорения за счет GPU для повышения уровня производительности и масштабируемости. Ускорение GPU особенно важно для приложений с большим объемом графики.
 

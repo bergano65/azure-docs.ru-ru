@@ -3,16 +3,16 @@ title: Совместное размещение виртуальных маши
 description: Узнайте, как совместное размещение ресурсов виртуальных машин Azure может повысить задержку.
 author: cynthn
 ms.service: virtual-machines
-ms.topic: article
+ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 10/30/2019
 ms.author: zivr
-ms.openlocfilehash: 85832fe56b064916b50a63bf4b399f0a21afaaac
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b5a3c0a582b1e9dfbcf81968ebc9d0c7a0a4f75e
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87028163"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288312"
 ---
 # <a name="co-locate-resource-for-improved-latency"></a>Совместное размещение ресурса для повышения задержки
 
@@ -23,7 +23,7 @@ ms.locfileid: "87028163"
 
 [!INCLUDE [virtual-machines-common-ppg-overview](../../../includes/virtual-machines-common-ppg-overview.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Разверните виртуальную машину в [группе размещения](proximity-placement-groups.md) с помощью Azure PowerShell.
 

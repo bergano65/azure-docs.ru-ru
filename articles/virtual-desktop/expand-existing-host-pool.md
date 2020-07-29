@@ -1,5 +1,5 @@
 ---
-title: Развертывание существующего пула узлов с новым сеансом — пружинный 2020 — Azure
+title: Развертывание существующего пула узлов с новыми узлами сеансов — Azure
 description: Развертывание существующего пула узлов с новыми узлами сеансов в виртуальном рабочем столе Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -8,20 +8,17 @@ ms.topic: how-to
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: b23cee72af7f8262fdd552c2d4c26c608b68a1e4
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 69237c2e4404793ce239710407ed10f02bf07d50
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86527614"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288742"
 ---
 # <a name="expand-an-existing-host-pool-with-new-session-hosts"></a>Развертывание существующего пула узлов с новыми узлами сеансов
 
 >[!IMPORTANT]
->Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/expand-existing-host-pool-2019.md).
->
-> Обновление Виртуального рабочего стола Windows за весну 2020 года пока предоставляется как общедоступная предварительная версия. без соглашений об уровне обслуживания. Мы не рекомендуем использовать ее для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+>Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/expand-existing-host-pool-2019.md).
 
 По мере увеличения использования в пуле узлов может потребоваться расширить существующий пул узлов с новыми узлами сеансов, чтобы справиться с новой нагрузкой.
 

@@ -6,16 +6,16 @@ ms.suite: integration
 ms.reviewer: divswa, logicappspm
 ms.topic: conceptual
 ms.date: 06/05/2020
-ms.openlocfilehash: 384335898c7cd6b379c6107152b49e9931cf513a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b82b79d076871b961d5c496bc70beac1b5067b2d
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85194981"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288108"
 ---
 # <a name="data-security-and-privacy-policies-for-google-connectors-in-azure-logic-apps"></a>Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps
 
-Начиная с **1 мая 2020**г. изменения из-за [политик безопасности и конфиденциальности данных](https://www.blog.google/technology/safety-security/project-strobe/) Google могут повлиять на рабочие процессы приложения логики, использующие [соединитель Gmail](https://docs.microsoft.com/connectors/gmail/). Если приложения логики используют соединитель Gmail с учетной записью потребителя Gmail (адрес электронной почты, который заканчивается на @gmail.com или @googlemail.com ), приложения логики могут использовать только определенные [Google-утвержденные триггеры, действия и соединители](#approved-connectors).
+Начиная с **1 мая 2020**г. изменения из-за [политик безопасности и конфиденциальности данных](https://www.blog.google/technology/safety-security/project-strobe/) Google могут повлиять на рабочие процессы приложения логики, использующие [соединитель Gmail](/connectors/gmail/). Если приложения логики используют соединитель Gmail с учетной записью потребителя Gmail (адрес электронной почты, который заканчивается на @gmail.com или @googlemail.com ), приложения логики могут использовать только определенные [Google-утвержденные триггеры, действия и соединители](#approved-connectors).
 
 > [!NOTE]
 > Если приложения логики используют соединитель Gmail с бизнес-учетной записью G-Suite (адрес электронной почты с пользовательским доменом), то приложения логики не затрагиваются и не имеют ограничений на использование соединителя Gmail.
@@ -62,7 +62,7 @@ ms.locfileid: "85194981"
 
   ![Приложение логики, не соответствующее политике — пример 3](./media/connectors-google-data-security-privacy-policy/not-compliant-logic-app-3.png)
 
-Последние сведения см. в [техническом справочной документации по соединителю Gmail](https://docs.microsoft.com/connectors/gmail/).
+Последние сведения см. в [техническом справочной документации по соединителю Gmail](/connectors/gmail/).
 
 <a name="update-affected-workflows"></a>
 
@@ -74,11 +74,11 @@ ms.locfileid: "85194981"
 
 1. В соединителе Gmail используйте идентификатор клиента и секрет клиента из клиентского приложения Google.
 
-Дополнительные сведения см. в [техническом справочной документации по соединителю Gmail](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application).
+Дополнительные сведения см. в [техническом справочной документации по соединителю Gmail](/connectors/gmail/#authentication-and-bring-your-own-application).
 
 ### <a name="create-google-client-app"></a>Создание клиентского приложения Google
 
-Чтобы настроить проект для клиентского приложения, используйте [Мастер создания консоли Google API](https://console.developers.google.com/start/api?id=gmail&credential=client_key) и следуйте инструкциям. Чтобы получить подробные инструкции, ознакомьтесь с инструкциями в [техническом справочнике по соединителю Gmail](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application).
+Чтобы настроить проект для клиентского приложения, используйте [Мастер создания консоли Google API](https://console.developers.google.com/start/api?id=gmail&credential=client_key) и следуйте инструкциям. Чтобы получить подробные инструкции, ознакомьтесь с инструкциями в [техническом справочнике по соединителю Gmail](/connectors/gmail/#authentication-and-bring-your-own-application).
 
 Когда вы закончите, ваш экран будет выглядеть, как в этом примере, за исключением **идентификатора клиента** и значений **секрета клиента** , которые позже будут использоваться в приложении логики.
 
@@ -98,7 +98,7 @@ ms.locfileid: "85194981"
 
    ![Предоставление сведений о подключении](./media/connectors-google-data-security-privacy-policy/authentication-type-bring-your-own.png)
 
-   | Свойство. | Значение | Описание: |
+   | Свойство | Значение | Описание: |
    |----------|-------|-------------|
    | **Тип проверки подлинности** | **Перенесите свое приложение** | Указывает, что вы будете использовать собственное клиентское приложение для проверки подлинности. |
    | **Идентификатор клиента** | <*ИД клиента*> | Идентификатор клиента из клиентского приложения Google |
@@ -117,4 +117,5 @@ ms.locfileid: "85194981"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-Дополнительные сведения о [соединителе Gmail](https://docs.microsoft.com/connectors/gmail/)
+Дополнительные сведения о [соединителе Gmail](/connectors/gmail/)
+

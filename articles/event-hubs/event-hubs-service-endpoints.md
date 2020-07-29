@@ -3,12 +3,12 @@ title: Конечные точки служб для виртуальной се
 description: В этой статье содержатся сведения о том, как добавить конечную точку службы Microsoft. EventHub в виртуальную сеть.
 ms.topic: article
 ms.date: 07/16/2020
-ms.openlocfilehash: 134e310e0859bb6c0a50630f467513e07e6ff390
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5d1f6bb8e1160a328c30cfd6ef1726e3cf011aee
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87066706"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288013"
 ---
 # <a name="use-virtual-network-service-endpoints-with-azure-event-hubs"></a>Использование конечных точек служб для виртуальной сети с Центрами событий Azure
 
@@ -25,7 +25,6 @@ ms.locfileid: "87066706"
 >
 > Распространенные сценарии Azure, которые не работают с виртуальными сетями (обратите внимание, что список **НЕ** является исчерпывающим):
 > - Azure Stream Analytics
-> - Интеграция со службой "Сетка событий Azure".
 > - Маршруты Центра Интернета вещей Azure.
 > - Device Explorer Интернета вещей Azure.
 >
@@ -60,7 +59,7 @@ ms.locfileid: "87066706"
 2. В меню слева выберите **Сеть**. Если выбрать **Все сети**, центр событий будет принимать подключения с любого IP-адреса. Такое значение параметра равноценно правилу, которое принимает диапазон IP-адресов 0.0.0.0/0. 
 
     ![Брандмауэр — выбран вариант "Все сети"](./media/event-hubs-firewall/firewall-all-networks-selected.png)
-1. Чтобы рестркт доступ к конкретным сетям, выберите параметр **Выбранные сети** в верхней части страницы.
+1. Чтобы ограничить доступ к определенным сетям, выберите параметр **Выбранные сети** в верхней части страницы.
 2. В разделе **Виртуальная сеть** страницы выберите * * + Добавить существующую виртуальную сеть * * *. Выберите **+ создать новую виртуальную сеть** , если хотите создать новую сеть. 
 
     ![Добавить существующую виртуальную сеть](./media/event-hubs-tutorial-vnet-and-firewalls/add-vnet-menu.png)
@@ -85,9 +84,9 @@ ms.locfileid: "87066706"
 
 Параметры шаблона:
 
-* **namespaceName**. Пространство имен Центров событий.
-* **vnetRuleName**. Имя создаваемого правила виртуальной сети.
-* **virtualNetworkingSubnetId**: полный путь Resource Manager для подсети виртуальной сети, например `/subscriptions/{id}/resourceGroups/{rg}/providers/Microsoft.Network/virtualNetworks/{vnet}/subnets/default` для подсети виртуальной сети по умолчанию.
+* `namespaceName`: Пространство имен концентраторов событий.
+* `vnetRuleName`: Имя создаваемого правила виртуальной сети.
+* `virtualNetworkingSubnetId`— Полный путь диспетчер ресурсов для подсети виртуальной сети; Например, `/subscriptions/{id}/resourceGroups/{rg}/providers/Microsoft.Network/virtualNetworks/{vnet}/subnets/default` для подсети по умолчанию виртуальной сети.
 
 > [!NOTE]
 > Хотя запрещающие правила отсутствуют, в шаблоне Azure Resource Manager для действия по умолчанию установлено значение **Разрешить**, которое не ограничивает подключения.

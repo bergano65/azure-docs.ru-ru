@@ -7,12 +7,12 @@ ms.reviewers: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 05/29/2020
 tags: connectors
-ms.openlocfilehash: 25aafee59c7f5f7ae59aa2fd7871de8926907f68
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: ae34840c04c3a1d2fb3646046792c97ed6f521a0
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86261383"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289437"
 ---
 # <a name="receive-and-respond-to-inbound-https-requests-in-azure-logic-apps"></a>Получение входящих HTTP-запросов и ответ на них в Azure Logic Apps
 
@@ -24,9 +24,9 @@ ms.locfileid: "86261383"
 
 * получение вызова HTTPS из другого приложения логики и ответ на него.
 
-Триггер запроса поддерживает [открытую проверку подлинности Azure Active Directory](/azure/active-directory/develop/) (Azure AD OAuth) для авторизации входящих вызовов приложения логики. Дополнительные сведения о включении этой проверки подлинности см. в разделе [Включение Azure Active Directory OAuth](../logic-apps/logic-apps-securing-a-logic-app.md#enable-oauth) статьи "Безопасный доступ и данные в Azure Logic Apps".
+Триггер запроса поддерживает [открытую проверку подлинности Azure Active Directory](../active-directory/develop/index.yml) (Azure AD OAuth) для авторизации входящих вызовов приложения логики. Дополнительные сведения о включении этой проверки подлинности см. в разделе [Включение Azure Active Directory OAuth](../logic-apps/logic-apps-securing-a-logic-app.md#enable-oauth) статьи "Безопасный доступ и данные в Azure Logic Apps".
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -36,7 +36,7 @@ ms.locfileid: "86261383"
 
 ## <a name="transport-layer-security-tls"></a>Протокол TLS
 
-* Входящие вызовы поддерживают *только* протокол TLS 1,2. Если вы получаете ошибки подтверждения TLS, убедитесь в том, что используется протокол TLS 1.2. Дополнительные сведения см. в статье [Решение проблемы с TLS 1.0](https://docs.microsoft.com/security/solving-tls1-problem). Исходящие вызовы поддерживают TLS 1,0, 1,1 и 1,2 в зависимости от возможности целевой конечной точки.
+* Входящие вызовы поддерживают *только* протокол TLS 1,2. Если вы получаете ошибки подтверждения TLS, убедитесь в том, что используется протокол TLS 1.2. Дополнительные сведения см. в статье [Решение проблемы с TLS 1.0](/security/solving-tls1-problem). Исходящие вызовы поддерживают TLS 1,0, 1,1 и 1,2 в зависимости от возможности целевой конечной точки.
 
 * Входящие вызовы поддерживают следующие комплекты шифров:
 
@@ -72,7 +72,7 @@ ms.locfileid: "86261383"
 
    ![Триггер запросов](./media/connectors-native-reqres/request-trigger.png)
 
-   | Имя свойства | Имя свойства JSON | Обязательно | Описание |
+   | Имя свойства | Имя свойства JSON | Обязательно | Описание: |
    |---------------|--------------------|----------|-------------|
    | **URL-адрес HTTP POST** | {нет} | Да | URL-адрес конечной точки, создаваемый после сохранения приложения логики и используемый для его вызова |
    | **Схема JSON текста запроса** | `schema` | Нет | Схема JSON, описывающая свойства и значения в тексте входящего запроса |
@@ -287,3 +287,4 @@ ms.locfileid: "86261383"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Соединители для Logic Apps](../connectors/apis-list.md)
+

@@ -7,26 +7,26 @@ ms.reviewer: estfan, jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 06/06/2020
 tags: connectors
-ms.openlocfilehash: ba8a6e5b53634850670a7d6b2fb55ef0e7b18d09
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e500f678d2066d24de12a04f28ccbdb3f76eda3a
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85255511"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288182"
 ---
 # <a name="automate-workflows-for-a-sql-database-by-using-azure-logic-apps"></a>Автоматизация рабочих процессов для базы данных SQL с помощью Azure Logic Apps
 
-В этой статье описано, как получить доступ к данным в базе данных SQL из приложения логики с помощью соединителя SQL Server. Так вы можете автоматизировать задачи, процессы или рабочие процессы, которые управляют данными и ресурсами SQL, создав приложения логики. Соединитель SQL Server работает для [SQL Server](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation) , а также для [базы данных sql Azure](../azure-sql/database/sql-database-paas-overview.md) и [управляемый экземпляр Azure SQL](../azure-sql/managed-instance/sql-managed-instance-paas-overview.md).
+В этой статье описано, как получить доступ к данным в базе данных SQL из приложения логики с помощью соединителя SQL Server. Так вы можете автоматизировать задачи, процессы или рабочие процессы, которые управляют данными и ресурсами SQL, создав приложения логики. Соединитель SQL Server работает для [SQL Server](/sql/sql-server/sql-server-technical-documentation) , а также для [базы данных sql Azure](../azure-sql/database/sql-database-paas-overview.md) и [управляемый экземпляр Azure SQL](../azure-sql/managed-instance/sql-managed-instance-paas-overview.md).
 
 Вы можете создавать приложения логики, которые активируются событиями в базе данных SQL или в других системах, таких как Dynamics CRM Online. Приложения логики могут получать, вставлять или удалять данные, а также выполнять хранимые процедуры и SQL-запросы. Например, вы можете создать приложение логики, которое автоматически проверяет наличие новых записей в Dynamics CRM Online, добавляет элементы в Базу данных SQL для новых записей, а затем отправляет оповещения по электронной почте о добавленных элементах.
 
-Если вы не знакомы с приложениями логики, ознакомьтесь со статьями [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md). Технические сведения о соединителях, их ограничениях и известных проблемах доступны на странице [справочных материалов по соединителям SQL Server](https://docs.microsoft.com/connectors/sql/).
+Если вы не знакомы с приложениями логики, ознакомьтесь со статьями [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md). Технические сведения о соединителях, их ограничениях и известных проблемах доступны на странице [справочных материалов по соединителям SQL Server](/connectors/sql/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
-* [База данных SQL Server](https://docs.microsoft.com/sql/relational-databases/databases/create-a-database), [база данных SQL Azure](../azure-sql/database/single-database-create-quickstart.md)или [управляемый экземпляр SQL Azure](../azure-sql/managed-instance/instance-create-quickstart.md).
+* [База данных SQL Server](/sql/relational-databases/databases/create-a-database), [база данных SQL Azure](../azure-sql/database/single-database-create-quickstart.md)или [управляемый экземпляр SQL Azure](../azure-sql/managed-instance/instance-create-quickstart.md).
 
   Чтобы при вызове операций приложение логики могло вернуть результаты, таблицы должны содержать данные. При использовании базы данных SQL Azure можно использовать образцы баз данных, которые включены в.
 
@@ -74,7 +74,7 @@ ms.locfileid: "85255511"
    | Аутентификация | Описание: |
    |----------------|-------------|
    | [**Интегрированная служба Azure AD**](../azure-sql/database/authentication-aad-overview.md) | — Поддерживает как сторонние, так и ИНТЕГРИРОВАНные в среду SQL Server соединители. <p><p>— Требуется действительное удостоверение в Azure Active Directory (Azure AD), которое имеет доступ к базе данных. <p>Дополнительные сведения см. в следующих статьях: <p>- [Общие сведения о безопасности SQL Azure — проверка подлинности](../azure-sql/database/security-overview.md#authentication) <br>- [Авторизация доступа к базе данных в Azure SQL — проверка подлинности и авторизация](../azure-sql/database/logins-create-manage.md#authentication-and-authorization) <br>- [Azure SQL — встроенная проверка подлинности Azure AD](../azure-sql/database/authentication-aad-overview.md) |
-   | [**Проверка подлинности SQL Server**](https://docs.microsoft.com/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication) | — Поддерживает как сторонние, так и ИНТЕГРИРОВАНные в среду SQL Server соединители. <p><p>— Требуется допустимое имя пользователя и надежный пароль, которые создаются и хранятся в базе данных. <p>Дополнительные сведения см. в следующих статьях: <p>- [Общие сведения о безопасности SQL Azure — проверка подлинности](../azure-sql/database/security-overview.md#authentication) <br>- [Авторизация доступа к базе данных в Azure SQL — проверка подлинности и авторизация](../azure-sql/database/logins-create-manage.md#authentication-and-authorization) |
+   | [**Проверка подлинности SQL Server**](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication) | — Поддерживает как сторонние, так и ИНТЕГРИРОВАНные в среду SQL Server соединители. <p><p>— Требуется допустимое имя пользователя и надежный пароль, которые создаются и хранятся в базе данных. <p>Дополнительные сведения см. в следующих статьях: <p>- [Общие сведения о безопасности SQL Azure — проверка подлинности](../azure-sql/database/security-overview.md#authentication) <br>- [Авторизация доступа к базе данных в Azure SQL — проверка подлинности и авторизация](../azure-sql/database/logins-create-manage.md#authentication-and-authorization) |
    |||
 
    Этот пример продолжит работать с **интегрированной службой Azure AD**:
@@ -117,8 +117,8 @@ ms.locfileid: "85255511"
 
    | Аутентификация | Описание: |
    |----------------|-------------|
-   | [**Проверка подлинности Windows**](https://docs.microsoft.com/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-windows-authentication) | — Поддерживает только соединитель SQL Server, не связанный с ISE, для которого требуется ресурс шлюза данных, созданный ранее в Azure для вашего подключения, независимо от того, используете ли вы Azure или интегрированную среду сценариев (Multi-клиент). <p><p>— Требуется допустимое имя пользователя Windows и пароль для подтверждения личности с помощью учетной записи Windows. <p>Дополнительные сведения см. в статье [Проверка подлинности Windows](https://docs.microsoft.com/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-windows-authentication) . |
-   | [**Проверка подлинности SQL Server**](https://docs.microsoft.com/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication) | — Поддерживает как сторонние, так и ИНТЕГРИРОВАНные в среду SQL Server соединители. <p><p>— Требуется допустимое имя пользователя и надежный пароль, которые создаются и сохраняются в SQL Server. <p>Дополнительные сведения см. в разделе [SQL Serverная проверка подлинности](https://docs.microsoft.com/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication). |
+   | [**Проверка подлинности Windows**](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-windows-authentication) | — Поддерживает только соединитель SQL Server, не связанный с ISE, для которого требуется ресурс шлюза данных, созданный ранее в Azure для вашего подключения, независимо от того, используете ли вы Azure или интегрированную среду сценариев (Multi-клиент). <p><p>— Требуется допустимое имя пользователя Windows и пароль для подтверждения личности с помощью учетной записи Windows. <p>Дополнительные сведения см. в статье [Проверка подлинности Windows](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-windows-authentication) . |
+   | [**Проверка подлинности SQL Server**](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication) | — Поддерживает как сторонние, так и ИНТЕГРИРОВАНные в среду SQL Server соединители. <p><p>— Требуется допустимое имя пользователя и надежный пароль, которые создаются и сохраняются в SQL Server. <p>Дополнительные сведения см. в разделе [SQL Serverная проверка подлинности](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication). |
    |||
 
    Этот пример продолжит **проверку подлинности Windows**:
@@ -134,7 +134,7 @@ ms.locfileid: "85255511"
    | **Имя пользователя** | Да | Имя пользователя для SQL Server и базы данных |
    | **Пароль** | Да | Пароль для SQL Server и базы данных |
    | **Подписка** |  Да, для проверки подлинности Windows | Подписка Azure для ресурса шлюза данных, созданного ранее в Azure |
-   | **Шлюз подключения** | Да, для проверки подлинности Windows | Имя ресурса шлюза данных, созданного ранее в Azure <p><p>**Совет**. Если шлюз не отображается в списке, проверьте правильность [настройки шлюза](https://docs.microsoft.com/azure/logic-apps/logic-apps-gateway-connection). |
+   | **Шлюз подключения** | Да, для проверки подлинности Windows | Имя ресурса шлюза данных, созданного ранее в Azure <p><p>**Совет**. Если шлюз не отображается в списке, проверьте правильность [настройки шлюза](../logic-apps/logic-apps-gateway-connection.md). |
    |||
 
    > [!TIP]
@@ -171,7 +171,7 @@ ms.locfileid: "85255511"
 
    Этот триггер возвращает только одну строку из выбранной таблицы и ничего другого. Чтобы выполнить другие задачи, добавьте [действие соединителя SQL](#add-sql-action) или [другое действие](../connectors/apis-list.md) , которое будет выполнять следующую задачу в рабочем процессе приложения логики.
    
-   Например, чтобы просмотреть данные в этой строке, можно добавить другие действия, которые создают файл, содержащий поля из возвращенной строки, а затем отправляют оповещения по электронной почте. Дополнительные сведения о других доступных действиях для этого соединителя см. на странице [справочных материалов по соединителю](https://docs.microsoft.com/connectors/sql/).
+   Например, чтобы просмотреть данные в этой строке, можно добавить другие действия, которые создают файл, содержащий поля из возвращенной строки, а затем отправляют оповещения по электронной почте. Дополнительные сведения о других доступных действиях для этого соединителя см. на странице [справочных материалов по соединителю](/connectors/sql/).
 
 1. На панели инструментов конструктора щелкните **Сохранить**.
 
@@ -201,7 +201,7 @@ ms.locfileid: "85255511"
 
    ![Выберите имя таблицы и укажите идентификатор строки](./media/connectors-create-api-sqlazure/specify-table-row-id.png)
 
-   Это действие возвращает только одну строку из выбранной таблицы. Таким образом, для просмотра данных в этой строке можно добавить другие действия, которые создают файл, включающий поля из возвращенной строки, и сохраняют этот файл в облачной учетной записи хранения. Дополнительные сведения о других доступных действиях для этого соединителя см. на странице [справочных материалов по соединителю](https://docs.microsoft.com/connectors/sql/).
+   Это действие возвращает только одну строку из выбранной таблицы. Таким образом, для просмотра данных в этой строке можно добавить другие действия, которые создают файл, включающий поля из возвращенной строки, и сохраняют этот файл в облачной учетной записи хранения. Дополнительные сведения о других доступных действиях для этого соединителя см. на странице [справочных материалов по соединителю](/connectors/sql/).
 
 1. По завершении нажмите кнопку **Сохранить** на панели инструментов конструктора.
 
@@ -217,13 +217,13 @@ ms.locfileid: "85255511"
 
   При получении или вставке нескольких строк приложение логики может выполнять их итерацию с помощью [*цикла UNTIL*](../logic-apps/logic-apps-control-flow-loops.md#until-loop) с учетом этих [ограничений](../logic-apps/logic-apps-limits-and-config.md). Но иногда приложение логики должно работать с настолько большими наборами данных, например с тысячами или миллионами строк, что целесообразно сократить расходы на вызовы к базе данных.
 
-  Чтобы упорядочить результаты подходящим вам способом, можно создать [*хранимую процедуру*](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine), которая выполняется в экземпляре SQL и использует инструкцию **SELECT - ORDER BY**. Это решение позволяет управлять размером и структурой полученных результатов. Приложение логики вызывает хранимую процедуру с помощью действия **выполнения хранимой процедуры** соединителя SQL Server.
+  Чтобы упорядочить результаты подходящим вам способом, можно создать [*хранимую процедуру*](/sql/relational-databases/stored-procedures/stored-procedures-database-engine), которая выполняется в экземпляре SQL и использует инструкцию **SELECT - ORDER BY**. Это решение позволяет управлять размером и структурой полученных результатов. Приложение логики вызывает хранимую процедуру с помощью действия **выполнения хранимой процедуры** соединителя SQL Server.
 
   Дополнительные сведения о решении:
 
   * [Разбиение на страницы в SQL для массовой передачи данных с помощью Logic Apps](https://social.technet.microsoft.com/wiki/contents/articles/40060.sql-pagination-for-bulk-data-transfer-with-logic-apps.aspx)
 
-  * [Предложение SELECT - ORDER BY](https://docs.microsoft.com/sql/t-sql/queries/select-order-by-clause-transact-sql)
+  * [Предложение SELECT - ORDER BY](/sql/t-sql/queries/select-order-by-clause-transact-sql)
 
 ### <a name="handle-dynamic-bulk-data"></a>Обработка динамических больших данных
 
@@ -250,8 +250,9 @@ ms.locfileid: "85255511"
 
 ## <a name="connector-specific-details"></a>Сведения о соединителях
 
-Технические сведения о триггерах, действиях и ограничениях этого соединителя см. на [странице справочника по соединителю](https://docs.microsoft.com/connectors/sql/), которая создается из описания Swagger.
+Технические сведения о триггерах, действиях и ограничениях этого соединителя см. на [странице справочника по соединителю](/connectors/sql/), которая создается из описания Swagger.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о других [соединителях для Azure Logic Apps](../connectors/apis-list.md).
+

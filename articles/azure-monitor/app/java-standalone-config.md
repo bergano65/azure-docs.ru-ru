@@ -3,12 +3,13 @@ title: Мониторинг приложений Java в любом месте A
 description: Наблюдение за производительностью приложений Java, работающих в любой среде, без инструментирования приложения. Найдите основную причину проблем d с помощью распределенной трассировки и схемы приложения.
 ms.topic: conceptual
 ms.date: 04/16/2020
-ms.openlocfilehash: 3a01f2e9339f3ba4f8f50fc41617fabf9da9d8cd
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-java
+ms.openlocfilehash: ca3094197deb7c74ba9b51422a78ee0f5d3687d2
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87014207"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87374292"
 ---
 # <a name="configuration-options---java-standalone-agent-for-azure-monitor-application-insights"></a>Параметры конфигурации — автономный агент Java для Azure Monitor Application Insights
 
@@ -118,11 +119,11 @@ Application Insights Предварительная версия Java 3,0 авт
 | АВАРИЙ        | АВАРИЙ  | ошибка   | SEVERE  |
 | ОШИБКА/СЕРЬЕЗНАЯ | ошибка  | ошибка   | SEVERE  |
 | ПРЕДУПРЕЖДАТЬ/ПРЕДУПРЕЖДЕНИЕ | ДАТЬ   | ДАТЬ    | ПРЕДУПРЕЖДЕНИЕ |
-| ИНФОРМАЦИЯ         | ИНФОРМАЦИЯ   | ИНФОРМАЦИЯ    | ИНФОРМАЦИЯ    |
+| ИНФОРМАЦИЯ         | INFO   | INFO    | INFO    |
 | CONFIG       | DEBUG  | DEBUG   | CONFIG  |
 | ОТЛАДКА/ХОРОШЕЕ   | DEBUG  | DEBUG   | FINE    |
 | FINER        | DEBUG  | DEBUG   | FINER   |
-| ТРАССИРОВКА И FINEST | TRACE  | TRACE   | FINEST  |
+| ТРАССИРОВКА И FINEST | трассировка  | трассировка   | FINEST  |
 | ALL          | ALL    | ALL     | ALL     |
 
 ## <a name="jmx-metrics"></a>Метрики JMX

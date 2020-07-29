@@ -3,12 +3,13 @@ title: Изучение журналов трассировки Java в Azure Ap
 description: Поиск данных трассировки Log4J или Logback в Application Insights
 ms.topic: conceptual
 ms.date: 05/18/2019
-ms.openlocfilehash: 417462da431d8fe2ba878c93c6f4b467bdde2670
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.custom: devx-track-java
+ms.openlocfilehash: fca5c9b1bde8429d829ab6113804602c8baa2ebe
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324171"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87374275"
 ---
 # <a name="explore-java-trace-logs-in-application-insights"></a>Просмотр журналов трассировки Java в Application Insights
 Если вы используете Logback или Log4J (версия 1.2 или 2.0) для трассировки, можно настроить автоматическую пересылку журналов в Application Insights, где вы сможете их изучить.

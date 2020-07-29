@@ -4,16 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/27/2020
 ms.author: trbye
-ms.openlocfilehash: 64a6bf1fec61871d2787966a5b0af24d4f012032
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: d7d41a875d8e0c30085bafd346e316672359de26
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84637529"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87375533"
 ---
 :::row:::
     :::column span="3":::
-        Пакет SDK для Java для Android упакован как <a href="https://developer.android.com/studio/projects/android-library" target="_blank">AAR (библиотека Android) <span class="docon docon-navigate-external x-hidden-focus"></span> </a>, который включает необходимые библиотеки и необходимые разрешения Android. Она размещена в репозитории Maven в `https://csspeechstorage.blob.core.windows.net/maven/` в виде пакета `com.microsoft.cognitiveservices.speech:client-sdk:1.12.1`.
+        Пакет SDK для Java для Android упакован как <a href="https://developer.android.com/studio/projects/android-library" target="_blank">AAR (библиотека Android) <span class="docon docon-navigate-external x-hidden-focus"></span> </a>, который включает необходимые библиотеки и необходимые разрешения Android. Она размещена в репозитории Maven в `https://csspeechstorage.blob.core.windows.net/maven/` в виде пакета `com.microsoft.cognitiveservices.speech:client-sdk:1.13.0`.
     :::column-end:::
     :::column:::
         <br>
@@ -32,7 +32,7 @@ ms.locfileid: "84637529"
 
 2. В файле *Build. gradle* на уровне модуля добавьте в раздел следующую команду `dependencies` :
   ```gradle
-  implementation 'com.microsoft.cognitiveservices.speech:client-sdk:1.12.1'
+  implementation 'com.microsoft.cognitiveservices.speech:client-sdk:1.13.0'
   ```
 
 Пакет SDK для Java также входит в [пакет SDK для устройств распознавания речи](../speech-devices-sdk.md).

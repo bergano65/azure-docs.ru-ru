@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/28/2020
 ms.author: yelevin
-ms.openlocfilehash: 9f9a84726b54569d612a94f183531567b2242ff5
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 95a966799b4cb66b74d998df9c58958b9b89ecdb
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87127168"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87374224"
 ---
 # <a name="permissions-in-azure-sentinel"></a>Разрешения в Azure Sentinel
 
@@ -85,7 +85,7 @@ Azure Sentinel использует [Управление доступом на
 
 ## <a name="custom-roles-and-advanced-rbac"></a>Пользовательские роли и расширенный RBAC
 
-- В дополнение к или вместо, используя встроенные роли RBAC, вы можете создавать пользовательские роли Azure для Sentinel. Пользовательские роли Azure для маркеров Azure создаются так же, как и другие [пользовательские роли RBAC Azure](../role-based-access-control/custom-roles-rest.md#create-a-custom-role) , основанные на [конкретных разрешениях для Azure Sentinel](../role-based-access-control/resource-provider-operations.md#microsoftsecurityinsights) и [Azure log Analyticsных ресурсах](../role-based-access-control/resource-provider-operations.md#microsoftoperationalinsights).
+- В дополнение к или вместо использования встроенных ролей Azure можно создать пользовательские роли Azure для Azure Sentinel. Пользовательские роли Azure для маркеров Azure создаются так же, как и другие [пользовательские роли RBAC Azure](../role-based-access-control/custom-roles-rest.md#create-a-custom-role) , основанные на [конкретных разрешениях для Azure Sentinel](../role-based-access-control/resource-provider-operations.md#microsoftsecurityinsights) и [Azure log Analyticsных ресурсах](../role-based-access-control/resource-provider-operations.md#microsoftoperationalinsights).
 
 - Вы можете использовать Log Analytics расширенный контроль доступа на основе ролей для данных в рабочей области Sentinel Azure. Сюда входят и RBAC на основе типов данных, и RBAC, ориентированный на ресурсы. Дополнительные сведения о ролях Log Analytics см. [в статье Управление данными и рабочими областями в Azure Monitor](../azure-monitor/platform/manage-access.md#manage-access-using-workspace-permissions).
 

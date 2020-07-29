@@ -68,7 +68,7 @@ ms.locfileid: "86536558"
 
 4. На вкладке **Отзыв и создание** выберите **Создать**.   
     
-    :::image type="content" source="./media/quickstart-load-balancer-standard-public-portal/create-standard-load-balancer.png" alt-text="Создание подсистемы балансировки нагрузки уровня "Стандартный"" border="true":::
+    :::image type="content" source="./media/quickstart-load-balancer-standard-public-portal/create-standard-load-balancer.png" alt-text="Создание подсистемы балансировки нагрузки уровня Стандартный" border="true":::
  
 ## <a name="create-load-balancer-resources"></a>Создание ресурсов подсистемы балансировки нагрузки
 
@@ -270,7 +270,7 @@ ms.locfileid: "86536558"
 
 4. На вкладке **Отзыв и создание** выберите **Создать**.   
 
-    :::image type="content" source="./media/quickstart-load-balancer-standard-public-portal/create-basic-load-balancer.png" alt-text="Создание подсистемы балансировки нагрузки уровня "Базовый"" border="true":::
+    :::image type="content" source="./media/quickstart-load-balancer-standard-public-portal/create-basic-load-balancer.png" alt-text="Создание подсистемы балансировки нагрузки уровня Базовый" border="true":::
 
 ## <a name="create-load-balancer-resources"></a>Создание ресурсов подсистемы балансировки нагрузки
 

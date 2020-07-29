@@ -3,12 +3,12 @@ title: Правила брандмауэра Центров событий Azure
 description: Использование правил брандмауэра для разрешения подключений к Центрам событий Azure с определенных IP-адресов.
 ms.topic: article
 ms.date: 07/16/2020
-ms.openlocfilehash: 4c42f70a4f28c560c321f7c1e825b66514a8029e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2b886aaaf40e5c82d9c7ac3ce5abeda8f54cad3b
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87002426"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288049"
 ---
 # <a name="configure-ip-firewall-rules-for-an-azure-event-hubs-namespace"></a>Настройка правил брандмауэра для IP-адресов для пространства имен Центров событий Azure
 По умолчанию пространства имен Центров событий доступны из Интернета при условии, что запрос поступает с действительной аутентификацией и авторизацией. С помощью IP-брандмауэра такой доступ можно дополнительно ограничить набором или диапазоном IPv4-адресов, введя их в нотации [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).
@@ -22,7 +22,6 @@ ms.locfileid: "87002426"
 >
 > Распространенные сценарии Azure, которые не работают с виртуальными сетями (обратите внимание, что список **НЕ** является исчерпывающим):
 > - Azure Stream Analytics
-> - Интеграция со службой "Сетка событий Azure".
 > - Маршруты Центра Интернета вещей Azure.
 > - Device Explorer Интернета вещей Azure.
 >

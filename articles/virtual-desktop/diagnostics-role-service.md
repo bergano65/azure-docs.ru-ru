@@ -8,20 +8,17 @@ ms.topic: troubleshooting
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 4b9e63ca3c6822f4fd9ff215ccddaaf82ff55369
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6ff1e3d8eb9cb40d46ae0624be9d37fd199accd2
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87075659"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288765"
 ---
 # <a name="identify-and-diagnose-windows-virtual-desktop-issues"></a>Определение и диагностика проблем с виртуальными рабочими столами Windows
 
 >[!IMPORTANT]
->Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/diagnostics-role-service-2019.md).
->
-> Обновление Виртуального рабочего стола Windows за весну 2020 года пока предоставляется как общедоступная предварительная версия. без соглашений об уровне обслуживания. Мы не рекомендуем использовать ее для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+>Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/diagnostics-role-service-2019.md).
 
 Виртуальный рабочий стол Windows включает функцию диагностики, которая позволяет администратору выявлять разные проблемы через единый интерфейс. Дополнительные сведения о возможностях диагностики виртуальных рабочих столов Windows см. в разделе [использование log Analytics для компонента диагностики](diagnostics-log-analytics.md).
 

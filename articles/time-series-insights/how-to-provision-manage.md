@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 07/08/2020
 ms.custom: seodec18
-ms.openlocfilehash: d067d4a7fff385deea946ffa5475e1eb83548a50
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e71c426fee62187bb680c7b8bd1af92d87e85274
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87098760"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288801"
 ---
 # <a name="provision-and-manage-azure-time-series-insights-gen2"></a>Подготавливайте Gen2 службы "аналитика временных рядов Azure" и управляйте ими
 
@@ -93,7 +93,7 @@ ms.locfileid: "87098760"
 
 * Колонка **настройки** портал Azure удалена, так как единицы масштабирования не применяются к средам Gen2 временных рядов Azure. Однако можно использовать **конфигурацию хранилища** для настройки вновь появившегося горячего хранилища.
 
-* Колонка **ссылочных данных** портал Azure удаляется в службе "аналитика временных рядов Azure" в Gen2, поскольку концепция ссылочных данных заменена [моделью временных рядов (ТСМ)](./time-series-insights-update-how-to-tsm.md).
+* Колонка **ссылочных данных** портал Azure удаляется в службе "аналитика временных рядов Azure" в Gen2, поскольку концепция ссылочных данных заменена [моделью временных рядов (ТСМ)](/azure/time-series-insights/concepts-model-overview).
 
 [![Среда Gen2 "аналитика временных рядов Azure" в портал Azure](media/v2-update-manage/create-and-manage-overview-confirm.png)](media/v2-update-manage/create-and-manage-overview-confirm.png#lightbox)
 

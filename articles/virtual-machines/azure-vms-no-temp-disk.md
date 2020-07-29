@@ -3,16 +3,16 @@ title: Часто задаваемые вопросы об размерах ви
 description: В этой статье приведены ответы на часто задаваемые вопросы о Microsoft Azure размерах виртуальных машин без локального временного диска.
 author: brbell
 ms.service: virtual-machines
-ms.topic: article
+ms.topic: conceptual
 ms.author: brbell
 ms.reviewer: mimckitt
 ms.date: 06/15/2020
-ms.openlocfilehash: 502883a0c4eb36be9e89ba8693f4d32ba7f16ebd
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c36e37ba876b4b768d852d6ecedb8e3b4d8f09d0
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87088875"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288546"
 ---
 # <a name="azure-vm-sizes-with-no-local-temporary-disk"></a>Размеры виртуальных машин Azure без локального временного диска 
 В этой статье приведены ответы на часто задаваемые вопросы о размерах виртуальных машин Azure, у которых нет локального временного диска (т. е. локальный временный диск отсутствует). Дополнительные сведения об этих размерах виртуальных машин см. в статьях [спецификации для dv4 и Dsv4 (общего назначения рабочих нагрузок)](dv4-dsv4-series.md) или [спецификации для Ev4 и Esv4 (рабочих нагрузок, оптимизированных для памяти)](ev4-esv4-series.md).

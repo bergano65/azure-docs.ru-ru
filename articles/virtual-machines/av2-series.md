@@ -4,15 +4,15 @@ description: Спецификации виртуальных машин сери
 author: migerdes
 ms.service: virtual-machines
 ms.subservice: sizes
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 1b5b77bb9bdf679fe0fd8bf73966dd45acc80155
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: cdcc26a8a22e9a1dc7af75667cdb33bb044c7858
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87085781"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288589"
 ---
 # <a name="av2-series"></a>Серия Av2
 
@@ -28,7 +28,6 @@ ACU: 100
 
 Обновления с сохранением памяти: Поддерживается
 
-Расчет цен и сведения о доступности регионов: <a href="https://azure.microsoft.com/en-us/pricing/calculator/">Калькулятор цен</a>
 
 | Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальная пропускная способность хранилища: операций ввода-вывода/чтения Мбит/с | Максимальное число дисков данных/пропускная способность: операций ввода-вывода | Максимальное число сетевых адаптеров | Ожидаемая пропускная способность сети (Мбит/с)
 |---|---|---|---|---|---|---|---|
@@ -51,9 +50,9 @@ ACU: 100
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-Расчет цен и сведения о доступности регионов: <a href="https://azure.microsoft.com/en-us/pricing/calculator/">Калькулятор цен</a>
+Калькулятор цен: [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
 
-Дополнительные сведения о типах дисков: <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/disks-types#ultra-ssd-preview/">типы дисков</a>
+Дополнительные сведения о типах дисков: [типы дисков](https://docs.microsoft.com/azure/virtual-machines/linux/disks-types#ultra-ssd-preview/)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

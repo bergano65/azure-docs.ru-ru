@@ -5,12 +5,12 @@ description: Сведения о том, как динамически созд�
 services: container-service
 ms.topic: article
 ms.date: 07/01/2020
-ms.openlocfilehash: e6735bba4a84a694e4cf6a58f695f2d89afe8994
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5e9e686d8da420c650709d3bedc103d0043fa679
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87057272"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87287106"
 ---
 # <a name="dynamically-create-and-use-a-persistent-volume-with-azure-files-in-azure-kubernetes-service-aks"></a>Динамическое создание и использование постоянного тома с файлами Azure в службе Azure Kubernetes (AKS)
 
@@ -186,6 +186,8 @@ parameters:
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Соответствующие рекомендации см. в разделе [Рекомендации по хранению и резервному копированию в AKS][operator-best-practices-storage].
+
+Сведения о параметрах класса хранения см. в разделе [динамическая инициализация](https://github.com/kubernetes-sigs/azurefile-csi-driver/blob/master/docs/driver-parameters.md#dynamic-provision).
 
 Узнайте больше о постоянных томах Kubernetes, использующих службу файлов Azure.
 

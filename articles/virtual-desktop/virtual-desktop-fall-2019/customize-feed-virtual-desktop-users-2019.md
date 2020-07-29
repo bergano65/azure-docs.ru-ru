@@ -1,6 +1,6 @@
 ---
-title: Настройка веб-канала для виртуальных рабочих столов Windows — 2019 пользователей в Azure
-description: Настройка веб-канала для пользователей виртуальных рабочих столов Windows с помощью командлетов PowerShell.
+title: Настройка веб-канала для пользователей виртуальных рабочих столов Windows (классическая модель) в Azure
+description: Настройка веб-канала для пользователей виртуальных рабочих столов Windows (классические) с помощью командлетов PowerShell.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 9c573fc1aa220b9301e51ef0ccb1190d9243250e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ab1206a8963d9ba3b556a48b2e973eea663c9cb8
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87011232"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288657"
 ---
-# <a name="customize-feed-for-windows-virtual-desktop-users"></a>Настройка канала для пользователей Виртуального рабочего стола Windows
+# <a name="customize-feed-for-windows-virtual-desktop-classic-users"></a>Настройка веб-канала для пользователей виртуальных рабочих столов Windows (классические)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../customize-feed-for-virtual-desktop-users.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../customize-feed-for-virtual-desktop-users.md).
 
 Вы можете настроить веб-канал таким образом, чтобы ресурсы RemoteApp и удаленный рабочий стол отображались для пользователей с распознаваемым способом.
 

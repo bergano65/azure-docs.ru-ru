@@ -1,6 +1,6 @@
 ---
-title: Масштабирование узлов сеансов с помощью службы автоматизации Azure — Azure
-description: Автоматическое масштабирование узлов сеансов Виртуального рабочего стола Windows с помощью службы автоматизации Azure.
+title: В сеансе масштабирования размещена служба автоматизации Azure виртуальный рабочий стол Windows (классическая модель) — Azure
+description: Как автоматически масштабировать узлы сеансов виртуальных рабочих столов Windows (классические) с помощью службы автоматизации Azure.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 690f59c643f1fe8c8cfc74758a0f8f13b129f78a
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.openlocfilehash: 4c09ce867a7d4dbc11c42485c39c40bd427fa451
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87172069"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288646"
 ---
-# <a name="scale-session-hosts-using-azure-automation"></a>Масштабирование узлов сеансов с помощью службы автоматизации Azure
+# <a name="scale-windows-virtual-desktop-classic-session-hosts-using-azure-automation"></a>Масштабирование узлов виртуальных рабочих столов Windows (классические) с помощью службы автоматизации Azure
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows.
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows.
 
 Вы можете сократить общие затраты на развертывание Виртуального рабочего стола Windows путем масштабирования виртуальных машин. Это означает завершение работы и освобождение виртуальных машин узла сеансов в часы непиковой нагрузки и их включение и повторное выделение в часы пиковой нагрузки.
 
