@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive
 ms.date: 04/15/2020
-ms.openlocfilehash: c213b0089af0af295d44afd38bbc5c17b6db159d
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: a0f081e0f8df00bbc99d2163fb54a2f15d92a159
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81535236"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87006438"
 ---
 # <a name="tutorial-create-an-end-to-end-data-pipeline-to-derive-sales-insights-in-azure-hdinsight"></a>Руководство по созданию сквозного конвейера данных для получения аналитических сведений о продажах в Azure HDInsight
 
@@ -33,7 +33,7 @@ ms.locfileid: "81535236"
 
 * Член [встроенной роли Azure — владелец](../role-based-access-control/built-in-roles.md).
 
-* Если для активации конвейера Фабрики данных используется PowerShell, вам понадобится [модуль Az](https://docs.microsoft.com/powershell/azure/overview).
+* Если для активации конвейера Фабрики данных используется PowerShell, вам понадобится [модуль Az](https://docs.microsoft.com/powershell/azure/).
 
 * [Power BI Desktop](https://aka.ms/pbiSingleInstaller) для визуализации бизнес-аналитики в конце этого руководства.
 

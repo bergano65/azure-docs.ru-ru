@@ -3,12 +3,12 @@ title: Центры событий Azure. Обработка событий Apac
 description: Руководство по В этой статье показано, как обрабатывать события Kafka, которые принимаются через Центры событий, с помощью Azure Stream Analytics
 ms.topic: tutorial
 ms.date: 06/23/2020
-ms.openlocfilehash: 8fbc1ae326cc75603f5a86361e4bc79ecc461fd6
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: 6dfca5b476dff1ee3367b5365c15869c8cff819b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85313268"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074921"
 ---
 # <a name="tutorial-process-apache-kafka-for-event-hubs-events-using-stream-analytics"></a>Руководство по Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics 
 В этой статье показано, как выполняется потоковая передача данных в Центры событий и обработка этих данных с помощью Azure Stream Analytics. Здесь подробно описаны следующие действия: 
@@ -129,7 +129,7 @@ ms.locfileid: "85313268"
  
 
 ### <a name="define-a-query"></a>Определение запроса
-Настроив задание Stream Analytics для считывания входящего потока данных, необходимо создать преобразование, которое анализирует данные в реальном времени. Определите запрос преобразования с помощью [языка запросов Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference). В этом пошаговом руководстве необходимо определить запрос, который проходит через данные без выполнения какого-либо преобразования.
+Настроив задание Stream Analytics для считывания входящего потока данных, необходимо создать преобразование, которое анализирует данные в реальном времени. Определите запрос преобразования с помощью [языка запросов Stream Analytics](/stream-analytics-query/stream-analytics-query-language-reference). В этом пошаговом руководстве необходимо определить запрос, который проходит через данные без выполнения какого-либо преобразования.
 
 1. Выберите **Запрос**.
 2. В окне запроса замените `[YourOutputAlias]` псевдонимом выходных данных, созданным ранее.

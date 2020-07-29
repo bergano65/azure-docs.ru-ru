@@ -6,12 +6,12 @@ ms.topic: quickstart
 author: bwren
 ms.author: bwren
 ms.date: 12/15/2019
-ms.openlocfilehash: 597b12a584e7b4c17ec21635e18368f897ad168a
-ms.sourcegitcommit: 74ba70139781ed854d3ad898a9c65ef70c0ba99b
+ms.openlocfilehash: 0e29b25f5d846cae1563ea90271cf007d02e248c
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85443882"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324273"
 ---
 # <a name="quickstart-monitor-an-azure-resource-with-azure-monitor"></a>Краткое руководство. Мониторинг ресурса Azure с помощью Azure Monitor
 [Azure Monitor](../overview.md) начнет сбор данных из ресурсов Azure с момента их создания. В этом кратком руководстве приводится краткое пошаговое руководство с описанием данных, которые автоматически собираются для каждого ресурса, и процедуры просмотра данных для определенного ресурса на портале Azure. Вы можете позднее настроить сбор дополнительных данных и (или) через меню Azure Monitor применить те же средства для просмотра данных для всех ресурсов в подписке.
@@ -70,4 +70,5 @@ ms.locfileid: "85443882"
 В этом кратком руководстве вы просмотрели для ресурса Azure журнал действий и метрики, которые автоматически собираются службой Azure Monitor. Перейдите к следующему краткому руководству, в котором показано, как выполнять сбор журналов в рабочей области Log Analytics, где их можно проанализировать с помощью [запросов журнала](../log-query/log-query-overview.md).
 
 > [!div class="nextstepaction"]
-> [Отправка журнала действий Azure в рабочую область Log Analytics](quick-monitor-azure-resource.md)
+> [Отправка журнала действий Azure в рабочую область Log Analytics]()
+

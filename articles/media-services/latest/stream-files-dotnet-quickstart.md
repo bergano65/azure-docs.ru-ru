@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 08/19/2019
 ms.author: juliako
-ms.openlocfilehash: df4092ecc3f7d075f1a2821854cdb668ee2cebe5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 0ba272d76cade53529b198876f0ad06c4ae79649
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77191221"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074524"
 ---
 # <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---net"></a>Руководство по кодированию удаленного файла на основе URL-адреса и потоковой передачи видео с помощью .NET
 
@@ -34,8 +34,8 @@ ms.locfileid: "77191221"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Вы можете скачать [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) бесплатно, если у вас нет Visual Studio.
-- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).<br/>Запишите значения, которые вы использовали в качестве имени группы ресурсов и имени учетной записи Служб мультимедиа.
-- Выполните действия, описанные в статье [Доступ к API Служб мультимедиа Azure с помощью Azure CLI](access-api-cli-how-to.md), и сохраните учетные данные. Эти данные понадобятся для доступа к API.
+- [Создание учетной записи Служб мультимедиа](./create-account-howto.md).<br/>Запишите значения, которые вы использовали в качестве имени группы ресурсов и имени учетной записи Служб мультимедиа.
+- Выполните действия, описанные в статье [Доступ к API Служб мультимедиа Azure с помощью Azure CLI](./access-api-howto.md), и сохраните учетные данные. Эти данные понадобятся для доступа к API.
 
 ## <a name="download-and-configure-the-sample"></a>Скачивание и настройка примера
 
@@ -47,7 +47,7 @@ ms.locfileid: "77191221"
 
 Этот пример находится в папке [EncodeAndStreamFiles](https://github.com/Azure-Samples/media-services-v3-dotnet-quickstarts/tree/master/AMSV3Quickstarts/EncodeAndStreamFiles).
 
-Откройте файл [appsettings.json](https://github.com/Azure-Samples/media-services-v3-dotnet-quickstarts/blob/master/AMSV3Quickstarts/EncodeAndStreamFiles/appsettings.json) в скачанном проекте. Замените значения учетными данными, которые вы получили, выполнив действия из статьи [Доступ к API Служб мультимедиа Azure с помощью Azure CLI](access-api-cli-how-to.md).
+Откройте файл [appsettings.json](https://github.com/Azure-Samples/media-services-v3-dotnet-quickstarts/blob/master/AMSV3Quickstarts/EncodeAndStreamFiles/appsettings.json) в скачанном проекте. Замените значения учетными данными, которые вы получили, выполнив действия из статьи [Доступ к API Служб мультимедиа Azure с помощью Azure CLI](./access-api-howto.md).
 
 Этот пример выполняет следующие действия:
 
@@ -105,7 +105,7 @@ az group delete --name amsResourceGroup
 
 ### <a name="job-error-codes"></a>Коды ошибок задания
 
-См. статью о [кодах ошибок](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode).
+См. статью о [кодах ошибок](/rest/api/media/jobs/get#joberrorcode).
 
 ## <a name="multithreading"></a>Многопоточность
 

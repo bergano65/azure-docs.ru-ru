@@ -10,12 +10,12 @@ ms.workload: multiple
 ms.topic: sample
 ms.date: 03/19/2018
 ms.custom: sfrev
-ms.openlocfilehash: b3d922cb5a7cdf34e63731ab32f21c94d7b6bca0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5cc72423d7e901f82cdf7e40f5de72bd54e9cec1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76025018"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87076167"
 ---
 # <a name="update-the-rdp-port-range-values"></a>Обновление значений диапазона портов RDP
 
@@ -23,7 +23,7 @@ ms.locfileid: "76025018"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве по Azure PowerShell](/powershell/azure/overview).
+При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве по Azure PowerShell](/powershell/azure/).
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -40,6 +40,6 @@ ms.locfileid: "76025018"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
 
 Дополнительные примеры сценариев Azure PowerShell для Azure Service Fabric см. в разделе [Примеры сценариев Azure PowerShell](../service-fabric-powershell-samples.md).

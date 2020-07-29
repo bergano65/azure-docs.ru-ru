@@ -13,18 +13,18 @@ ms.topic: quickstart
 ms.date: 08/22/2019
 ms.author: bwren
 ms.custom: mvc, seo-javascript-october2019
-ms.openlocfilehash: d13a7cf87ba22dce96992c362f8b800ba79f6976
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 12d87d6d458d6cda21ca581337012e800a3d4bce
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86539641"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324324"
 ---
 # <a name="collect-data-from-a-windows-computer-in-a-hybrid-environment-with-azure-monitor"></a>Сбор данных с компьютера Windows в гибридной среде с помощью Azure Monitor
 
-[Azure Monitor](../overview.md) может собирать данные напрямую c физических компьютеров или виртуальных машин Windows в вашей среде в рабочую область Log Analytics для подробного анализа и корреляции. [Агент Log Analytics](../platform/log-analytics-agent.md) позволяет Azure Monitor собирать данные из центра обработки данных или другой облачной среды. В этом кратком руководстве показано, как настроить и собирать данные c компьютера Windows с помощью нескольких простых действий. Сведения о виртуальных машинах Windows в Azure см. в статье [Сбор данных о виртуальных машинах Azure](../../azure-monitor/learn/quick-collect-azurevm.md).  
+[Azure Monitor](../overview.md) может собирать данные напрямую c физических компьютеров или виртуальных машин Windows в вашей среде в рабочую область Log Analytics для подробного анализа и корреляции. [Агент Log Analytics](../platform/log-analytics-agent.md) позволяет Azure Monitor собирать данные из центра обработки данных или другой облачной среды. В этом кратком руководстве показано, как настроить и собирать данные c компьютера Windows с помощью нескольких простых действий. Сведения о виртуальных машинах Windows в Azure см. в статье [Сбор данных о виртуальных машинах Azure](./quick-collect-azurevm.md).  
 
-Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](../../azure-monitor/platform/log-analytics-agent.md#supported-windows-operating-systems) и [конфигурации сетевых брандмауэров](../../azure-monitor/platform/log-analytics-agent.md#network-requirements).
+Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](../platform/log-analytics-agent.md#supported-windows-operating-systems) и [конфигурации сетевых брандмауэров](../platform/log-analytics-agent.md#network-requirements).
  
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -166,3 +166,4 @@ Azure Monitor может собирать события указанного в
 
 > [!div class="nextstepaction"]
 > [Просмотр и анализ данных, собранных с помощью поиска по журналам Log Analytics](../log-query/get-started-portal.md)
+

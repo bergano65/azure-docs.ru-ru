@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.date: 11/01/2017
-ms.openlocfilehash: 9d8b05a2268a122289c529050c75fd27dd73245b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 15c388336efc92381ac5ebd84df9145c1890cfcc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75438964"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87007220"
 ---
 # <a name="tutorial-build-your-first-azure-data-factory-using-data-factory-rest-api"></a>Руководство. Создание первой фабрики данных Azure с помощью REST API фабрики данных
 > [!div class="op_single_selector"]
@@ -53,7 +53,7 @@ ms.locfileid: "75438964"
   2. Получите **идентификатор клиента** и **секретный ключ**.
   3. Получите значение для **tenant_id**.
   4. Назначьте приложение **ADFGetStartedApp** роли **участника фабрики данных**.
-* Установите [Azure PowerShell](/powershell/azure/overview).
+* Установите [Azure PowerShell](/powershell/azure/).
 * Откройте **PowerShell** и выполните приведенные ниже команды. Не закрывайте Azure PowerShell, пока выполняются описанные в учебнике инструкции. Если закрыть и снова открыть это окно, то придется вновь выполнять эти команды.
   1. Выполните командлет **Connect-AzAccount** и введите имя пользователя и пароль, которые используются для входа на портал Azure.
   2. Выполните командлет **Get-AzSubscription**, чтобы просмотреть все подписки для этой учетной записи.

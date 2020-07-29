@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 01/10/2020
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd9f85e3bfd11ee655ce581c60a5b65e13f4497b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7648f0c41731968c6cf8d2b2b2e55fffd9b5f53d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75971904"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87018780"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-key-vault"></a>Руководство по Использование назначенного системой управляемого удостоверения на виртуальной машине Windows для доступа к Azure Key Vault 
 
@@ -75,7 +75,7 @@ ms.locfileid: "75971904"
  
 ## <a name="access-data"></a>Доступ к данным  
 
-В этом разделе показано, как получить маркер доступа с помощью удостоверения виртуальной машины и использовать этот маркер для получения секрета из Key Vault. Если вы не установили версию PowerShell 4.3.1 или выше, [загрузите и установите последнюю версию](https://docs.microsoft.com/powershell/azure/overview).
+В этом разделе показано, как получить маркер доступа с помощью удостоверения виртуальной машины и использовать этот маркер для получения секрета из Key Vault. Если вы не установили версию PowerShell 4.3.1 или выше, [загрузите и установите последнюю версию](https://docs.microsoft.com/powershell/azure/).
 
 Сначала получим маркер доступа для аутентификации в Key Vault с помощью управляемого удостоверения виртуальной машины:
  

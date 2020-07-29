@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 11/20/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4431031e5e96c71c6488b57cc570271d763bb764
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: 6edd926c0a91519f4c75228d8230c71ff7b96442
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84693470"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87018831"
 ---
 # <a name="use-a-windows-vm-system-assigned-managed-identity-to-access-resource-manager"></a>Использование назначаемого системой управляемого удостоверения на виртуальной машине Windows для доступа к Resource Manager
 
@@ -51,7 +51,7 @@ ms.locfileid: "84693470"
 
 ## <a name="get-an-access-token-using-the-vms-system-assigned-managed-identity-and-use-it-to-call-azure-resource-manager"></a>Получение маркера доступа с использованием назначаемого системой управляемого удостоверения виртуальной машины и вызов Azure Resource Manager с помощью этого маркера 
 
-На этом этапе понадобится использовать **PowerShell**.  Если среда **PowerShell** не установлена, загрузите ее [отсюда](https://docs.microsoft.com/powershell/azure/overview). 
+На этом этапе понадобится использовать **PowerShell**.  Если среда **PowerShell** не установлена, загрузите ее [отсюда](https://docs.microsoft.com/powershell/azure/). 
 
 1.  На портале перейдите к разделу **Виртуальные машины**, выберите свою виртуальную машину Windows и в разделе **Обзор** щелкните **Подключить**. 
 2.  Введите **имя пользователя** и **пароль**, добавленные при создании виртуальной машины Windows. 

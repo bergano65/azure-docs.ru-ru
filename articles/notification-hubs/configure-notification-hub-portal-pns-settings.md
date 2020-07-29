@@ -11,18 +11,18 @@ ms.date: 06/22/2020
 ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 02/14/2019
-ms.openlocfilehash: af792ccfe8e00c26abc6aab2e4a96d7ef9ff5122
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: de135b57755919a1d312783409caf3e800e03fd5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85252055"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077998"
 ---
 # <a name="quickstart-set-up-push-notifications-in-a-notification-hub"></a>Краткое руководство. Настройка push-уведомлений в центре уведомлений
 
 Центры уведомлений Azure предоставляют удобный в использовании масштабируемый механизм отправки push-уведомлений. С помощью Центров уведомлений можно отправлять уведомления на любую платформу (iOS, Android, Windows, Baidu) и из любой серверной части (облачной или локальной). Дополнительные сведения см. в статье [Что такое Центры уведомлений Azure?](notification-hubs-push-notification-overview.md).
 
-В этом кратком руководстве вы используете параметры системы отправки уведомлений платформы (PNS) в Центрах уведомлений для настройки push-уведомлений для нескольких платформ. Здесь описаны действия, которые необходимо выполнить на портале Azure.  Раздел [Google Firebase Cloud Messaging](/azure/notification-hubs/configure-notification-hub-portal-pns-settings?tabs=azure-cli#google-firebase-cloud-messaging-fcm) содержит инструкции по использованию Azure CLI.
+В этом кратком руководстве вы используете параметры системы отправки уведомлений платформы (PNS) в Центрах уведомлений для настройки push-уведомлений для нескольких платформ. Здесь описаны действия, которые необходимо выполнить на портале Azure.  Раздел [Google Firebase Cloud Messaging](?tabs=azure-cli#google-firebase-cloud-messaging-fcm) содержит инструкции по использованию Azure CLI.
 
 Если вы еще не создали центр уведомлений, сделайте это сейчас. Дополнительные сведения см. в кратких руководствах по созданию центра уведомлений Azure с помощью [портала Azure](create-notification-hub-portal.md) и [Azure CLI](create-notification-hub-azure-cli.md).
 

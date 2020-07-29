@@ -2,18 +2,19 @@
 title: Коллективная разработка с помощью Java Core и Visual Studio Code
 services: azure-dev-spaces
 author: stepro
+ms.custom: devx-track-java
 ms.author: stephpr
 ms.date: 08/01/2018
 ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для командной разработки в приложении Java в службе Kubernetes Azure.
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
 manager: gwallace
-ms.openlocfilehash: 8bfcf16d3fcf685f946eb38b0b47fce4f2feba5b
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 80544b497caf39ee45acb82ff644a5c06ac3ff7e
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86220241"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87327197"
 ---
 # <a name="team-development-using-java-and-visual-studio-code-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces в Java и Visual Studio Code
 

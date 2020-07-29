@@ -4,12 +4,12 @@ description: 'Сравнение облачных служб Майкрософ�
 ms.topic: overview
 ms.date: 04/09/2018
 ms.custom: mvc
-ms.openlocfilehash: 9d7531fac9610b357adb37d28f5d5e90a7e4b108
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 1e6d1462a4f94db424081ea1567e5926806d3e81
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86169873"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083010"
 ---
 # <a name="choose-the-right-integration-and-automation-services-in-azure"></a>Выбор правильных служб интеграции и автоматизации в Azure
 
@@ -38,8 +38,8 @@ Power Automate и Logic Apps спроектированы в рамках под
 | --- | --- | --- |
 | **Пользователи** |Офисные сотрудники, бизнес-пользователи, администраторы SharePoint |Профессиональные интеграторы и разработчики, ИТ-специалисты |
 | **Сценарии** |Самообслуживание |Расширенные интеграции |
-| **Средство разработки** |В браузере и мобильном приложении, только пользовательский интерфейс |В браузере и [Visual Studio](../logic-apps/logic-apps-deploy-from-vs.md) доступно [представление кода](../logic-apps/logic-apps-author-definitions.md). |
-| **Управление жизненным циклом приложений (ALM)** |Разработка и тестирование в непроизводственных средах, распространение в рабочей среде по готовности |Azure DevOps: система управления версиями, тестирование, поддержка, автоматизация и управление в [Azure Resource Manager](../logic-apps/logic-apps-create-deploy-azure-resource-manager-templates.md) |
+| **Средство разработки** |В браузере и мобильном приложении, только пользовательский интерфейс |В браузере и [Visual Studio](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md) доступно [представление кода](../logic-apps/logic-apps-author-definitions.md). |
+| **Управление жизненным циклом приложений (ALM)** |Разработка и тестирование в непроизводственных средах, распространение в рабочей среде по готовности |Azure DevOps: система управления версиями, тестирование, поддержка, автоматизация и управление в [Azure Resource Manager](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md) |
 | **Возможности для администраторов** |Управление средами Power Automate и политиками защиты от потери данных, отслеживание лицензирования: [Центр администрирования](https://admin.flow.microsoft.com). |Управление группами ресурсов, подключениями, доступом и ведением журнала: [Портал Azure](https://portal.azure.com) |
 | **Безопасность** |Журналы аудита безопасности и соответствия требованиям Office 365, защита от потери данных, [шифрование неактивных](https://wikipedia.org/wiki/Data_at_rest#Encryption) конфиденциальных данных |Обеспечение безопасности Azure: [система безопасности Azure](https://www.microsoft.com/en-us/trustcenter/Security/AzureSecurity), [Центр безопасности Azure](https://azure.microsoft.com/services/security-center/), [журналы аудита](https://azure.microsoft.com/blog/azure-audit-logs-ux-refresh/) |
 
@@ -56,8 +56,8 @@ Power Automate и Logic Apps спроектированы в рамках под
 | **Разработка** | Code-first (императивный подход) | Designer-first (декларативный подход) |
 | **Соединение** | [Около десяти встроенных типов привязки](functions-triggers-bindings.md#supported-bindings); написание кода для пользовательских привязок | [Большая коллекция соединителей](../connectors/apis-list.md), [пакет интеграции Enterprise для сценариев B2B](../logic-apps/logic-apps-enterprise-integration-overview.md), [создание пользовательских соединителей](../logic-apps/custom-connector-overview.md) |
 | **Действия** | Каждое действие является функцией Azure; написание кода для функций действий |[Большая коллекция готовых действий](../logic-apps/logic-apps-workflow-actions-triggers.md)|
-| **Мониторинг** | [Azure Application Insights](../azure-monitor/app/app-insights-overview.md) | [Портал Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md), [журналы Azure Monitor](../logic-apps/logic-apps-monitor-your-logic-apps.md)|
-| **Управление** | [REST API](durable/durable-functions-http-api.md), [Visual Studio](https://docs.microsoft.com/azure/vs-azure-tools-resources-managing-with-cloud-explorer) | [Портал Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md), [REST API](https://docs.microsoft.com/rest/api/logic/), [PowerShell](https://docs.microsoft.com/powershell/module/az.logicapp), [Visual Studio](https://docs.microsoft.com/azure/logic-apps/manage-logic-apps-with-visual-studio) |
+| **Мониторинг** | [Azure Application Insights](../azure-monitor/app/app-insights-overview.md) | [Портал Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md), [журналы Azure Monitor](../logic-apps/monitor-logic-apps.md)|
+| **Управление** | [REST API](durable/durable-functions-http-api.md), [Visual Studio](/azure/vs-azure-tools-resources-managing-with-cloud-explorer) | [Портал Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md), [REST API](/rest/api/logic/), [PowerShell](/powershell/module/az.logicapp), [Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md) |
 | **Контекст выполнения** | Можно запускать [локально](functions-runtime-overview.md) или в облаке | Можно запускать только в облаке|
 
 <a name="function"></a>

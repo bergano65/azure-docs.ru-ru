@@ -4,12 +4,12 @@ description: Учебник по созданию блокчейн-прилож�
 ms.date: 10/14/2019
 ms.topic: tutorial
 ms.reviewer: brendal
-ms.openlocfilehash: 33a9e9c10c07d0808626353a7edfd505e0f60bc9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7be79757f506ea9fb854a248e77f0ff4f1b74f47
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74324804"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073118"
 ---
 # <a name="tutorial-create-a-blockchain-application-for-azure-blockchain-workbench"></a>Руководство по Создание блокчейн-приложения в Azure Blockchain Workbench
 
@@ -329,7 +329,7 @@ contract HelloBlockchain {
 Развертывание блокчейн-приложения займет несколько минут. После завершения развертывания новое приложение появится в области **приложений**. 
 
 > [!NOTE]
-> Вы также можете создать блокчейн-приложения с помощью [REST API Azure Blockchain Workbench](https://docs.microsoft.com/rest/api/azure-blockchain-workbench).
+> Вы также можете создать блокчейн-приложения с помощью [REST API Azure Blockchain Workbench](/rest/api/azure-blockchain-workbench).
 
 ## <a name="add-blockchain-application-members"></a>Добавление участников блокчейн-приложения
 

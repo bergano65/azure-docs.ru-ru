@@ -9,12 +9,12 @@ ms.subservice: availability
 ms.date: 04/05/2018
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 222b45e455f42264a5324f138c55b822d9d8e7a1
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 7c820f0cbf2e5d7b68451263315766895839716b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83698611"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87011198"
 ---
 # <a name="create-a-single-zone-virtual-machine-scale-set-with-powershell"></a>Создает однозонный масштабируемый набор виртуальных машин с помощью PowerShell
 Этот скрипт создает масштабируемый набор виртуальных машин под управлением Windows Server 2016 в одной зоне доступности. После выполнения сценария можно получить доступ к виртуальной машине по протоколу RDP.
@@ -47,5 +47,5 @@ Remove-AzResourceGroup -Name myResourceGroup
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов и все ресурсы, содержащиеся в ней. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
 
