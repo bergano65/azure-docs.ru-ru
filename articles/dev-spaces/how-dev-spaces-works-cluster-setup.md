@@ -7,6 +7,7 @@ description: Узнайте, как работает настройка клас
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры
 ms.openlocfilehash: 60f6c466e7c016ccd07e37b2f0d1ce9989fb8f9f
 ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2020
 ms.locfileid: "83995893"

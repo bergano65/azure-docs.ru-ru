@@ -7,6 +7,7 @@ description: Сведения о том, как включить Azure Dev Space
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 ms.openlocfilehash: b62c4a4861529c19363f159b8cc64a32a0ba11e8
 ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/27/2020
 ms.locfileid: "83996267"
