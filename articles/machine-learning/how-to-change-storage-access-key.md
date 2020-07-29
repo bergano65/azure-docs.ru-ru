@@ -5,17 +5,18 @@ description: Узнайте, как изменить ключи доступа �
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
+ms.topic: conceptual
+ms.custom: how-to
 ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 06/19/2020
-ms.openlocfilehash: 3a99bff20eb7135b384bfef5be4ece9c5fff0461
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1cb9600393fe50226da1efcef550cbb8b26f7f14
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85483318"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321604"
 ---
 # <a name="regenerate-storage-account-access-keys"></a>Повторное создание ключей доступа для учетной записи хранения
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -138,6 +139,6 @@ for name, ds in datastores.items():
         
             Если вы обновляете учетные данные для **хранилища данных по умолчанию**, выполните этот шаг и повторите шаг 2b для повторной синхронизации нового ключа с хранилищем данных по умолчанию рабочей области. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о регистрации хранилищ данных см [`Datastore`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py) . в справочнике по классам.

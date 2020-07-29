@@ -1,18 +1,18 @@
 ---
 title: Сведения о выплатах по региону для коммерческой платформы Microsoft
 description: Узнайте, как зависят от страны или региона и типа счета для выплат предполагаемое время перевода платежей и работа онлайн-магазинов Майкрософт, из которых можно получать платежи.
-author: mingshen
+author: mingshen-ms
 ms.author: mingshen
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/24/2020
-ms.openlocfilehash: 33c4286c5a3fa8be68c1e6ec3bd331aa1e804cb4
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 44246fa122b7c602e47c44e48c43c2a42d01de77
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83745015"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87327333"
 ---
 # <a name="payment-thresholds-methods-and-time-frames"></a>Пороги, методы и сроки оплаты
 
@@ -123,7 +123,7 @@ ms.locfileid: "83745015"
 | Лихтенштейн | Да | Да | Да | Да |
 | Литва | Да | Да | Да | Нет |
 | Люксембург | Да | Да | Да | Да |
-| Северная Македония | Нет | Да | Да | Нет |
+| Бывшая югославская Республика Македония | Нет | Да | Да | Нет |
 | Мадагаскар | Да | Да | Да | Нет |
 | Малави | Да | Да | Да | Да |
 | Малайзия | Да | Да | Да | Да |

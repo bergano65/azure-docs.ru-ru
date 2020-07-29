@@ -6,11 +6,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 07/17/2017
 ms.reviewer: mbullwin
-ms.openlocfilehash: 09c1899004bd93d0f2365c3bbc000c37459e8d89
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.openlocfilehash: a81c4f32385cf06238f36ca0162923f93d682807
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83797833"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323729"
 ---
 # <a name="discover-how-customers-are-using-your-application-with-application-insights-funnels"></a>Узнайте, как клиенты используют ваше приложение, с помощью воронок Application Insights.
 
@@ -36,7 +37,7 @@ ms.locfileid: "83797833"
 ### <a name="funnels-features"></a>Функции инструмента "Воронки"
 На предыдущем снимке экрана выделены пять областей. Это возможности инструмента "Воронки". В списке ниже приведены дополнительные сведения о каждой области на снимке экрана.
 1. Если в приложении включена выборка, вы увидите баннер выборки. При выборе баннера открывается контекстная область с инструкциями по отключению выборки. 
-2. Вы можете экспортировать воронку в [Power BI](../../azure-monitor/app/export-power-bi.md ).
+2. Вы можете экспортировать воронку в [Power BI](./export-power-bi.md).
 3. Выберите шаг для просмотра дополнительных сведений справа. 
 4. На графике истории преобразования показаны результаты преобразования за последние 90 дней. 
 5. Вы можете получить больше сведений о пользователях, перейдя в инструмент "Пользователи". На каждом шаге можно использовать фильтры. 
@@ -45,7 +46,7 @@ ms.locfileid: "83797833"
   * [Общие сведения об использовании](usage-overview.md)
   * [Анализ пользователей, сеансов и событий в Application Insights](usage-segmentation.md)
   * [Сохранение](usage-retention.md)
-  * [книги](../../azure-monitor/platform/workbooks-overview.md)
+  * [книги](../platform/workbooks-overview.md)
   * [Добавление контекста пользователей](usage-send-user-context.md)
-  * [Экспорт в Power BI](../../azure-monitor/app/export-power-bi.md )
+  * [Экспорт в Power BI](./export-power-bi.md)
 

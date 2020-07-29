@@ -6,27 +6,27 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/13/2019
-ms.openlocfilehash: 0b18c34f8c0378d22d138b865d72fa4f351d7b8f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 80e87d6fdab6ecf15c241581f8c19d36b30d7e30
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87073637"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87327112"
 ---
 # <a name="application-insights-connector-management-solution-deprecated"></a>Решение по управлению Соединителем Application Insights (устарело)
 
 ![Символ Application Insights](./media/app-insights-connector/app-insights-connector-symbol.png)
 
 >[!NOTE]
-> Благодаря поддержке [запросов между ресурсами](../../azure-monitor/log-query/cross-workspace-query.md) решение по управлению Соединителем Application Insights больше не требуется. Его было объявлено устаревшим и удалено из Azure Marketplace, а портал OMS официально объявлен устаревшим 15 января 2019 года для коммерческого облака Azure. Этот компонент будет выведен из эксплуатации 30 марта 2019 года для облака Azure для US Gov организаций.
+> Благодаря поддержке [запросов между ресурсами](../log-query/cross-workspace-query.md) решение по управлению Соединителем Application Insights больше не требуется. Его было объявлено устаревшим и удалено из Azure Marketplace, а портал OMS официально объявлен устаревшим 15 января 2019 года для коммерческого облака Azure. Этот компонент будет выведен из эксплуатации 30 марта 2019 года для облака Azure для US Gov организаций.
 >
 >Существующие соединения будут работать до 30 июня 2019 года.  В связи с устареванием портала OMS на нем невозможно настроить или удалить существующие подключения. Чтобы получить сведения о сценарии для удаления существующих соединителей с помощью PowerShell см. раздел [Удаление соединителя с помощью PowerShell](#removing-the-connector-with-powershell) указанный ниже.
 >
->Рекомендации по запросах журнала Application Insights для нескольких приложений см. в статье [Объединение нескольких ресурсов Azure Monitor Application Insights](../log-query/unify-app-resource-data.md). Дополнительные сведения об устаревании портала OMS см. в статье [Перемещение портала OMS в Azure](../../azure-monitor/platform/oms-portal-transition.md).
+>Рекомендации по запросах журнала Application Insights для нескольких приложений см. в статье [Объединение нескольких ресурсов Azure Monitor Application Insights](../log-query/unify-app-resource-data.md). Дополнительные сведения об устаревании портала OMS см. в статье [Перемещение портала OMS в Azure](./oms-portal-transition.md).
 >
 > 
 
-С помощью решения "Соединитель Application Insights" можно диагностировать проблемы с производительностью, а также узнать, какие действия пользователи выполняют в вашем приложении, которое отслеживается с помощью [Application Insights](../../azure-monitor/app/app-insights-overview.md). В Log Analytics доступны представления данных телеметрии приложения, которые отображаются для разработчиков в Application Insights. Тем не менее при интеграции приложений Application Insights с Log Analytics видимость приложений увеличивается, так как данные операций и приложений находятся в одном месте. Наличие тех же представлений, что и у разработчиков, поможет вам сотрудничать с ними. Благодаря общим представлениям вы сможете быстрее обнаруживать проблемы с платформой и приложением, а также решать их.
+С помощью решения "Соединитель Application Insights" можно диагностировать проблемы с производительностью, а также узнать, какие действия пользователи выполняют в вашем приложении, которое отслеживается с помощью [Application Insights](../app/app-insights-overview.md). В Log Analytics доступны представления данных телеметрии приложения, которые отображаются для разработчиков в Application Insights. Тем не менее при интеграции приложений Application Insights с Log Analytics видимость приложений увеличивается, так как данные операций и приложений находятся в одном месте. Наличие тех же представлений, что и у разработчиков, поможет вам сотрудничать с ними. Благодаря общим представлениям вы сможете быстрее обнаруживать проблемы с платформой и приложением, а также решать их.
 
 Используя решение, вы можете:
 
@@ -44,12 +44,12 @@ ms.locfileid: "87073637"
 
 | Подключенный источник | Поддерживается | Описание |
 | --- | --- | --- |
-| [Агенты Windows](../../azure-monitor/platform/agent-windows.md) | Нет | Решение не собирает сведения из агентов Windows. |
-| [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения из агентов Linux. |
-| [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Нет | Решение не собирает сведения из агентов в подключенной группе управления SCOM. |
+| [Агенты Windows](./agent-windows.md) | Нет | Решение не собирает сведения из агентов Windows. |
+| [Агенты Linux](../learn/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения из агентов Linux. |
+| [Группы управления SCOM](./om-agents.md) | Нет | Решение не собирает сведения из агентов в подключенной группе управления SCOM. |
 | [Учетная запись хранения Azure](./resource-logs.md#send-to-log-analytics-workspace) | Нет | Решение не собирает сведения из службы хранилища Azure. |
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Для доступа к сведениям о соединителе Application Insights необходима подписка Azure.
 - Необходимо иметь хотя бы один настроенный ресурс Application Insights.
@@ -57,10 +57,10 @@ ms.locfileid: "87073637"
 
 ## <a name="configuration"></a>Конфигурация
 
-1. Включите решение "Аналитика веб-приложений Azure" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AppInsights?tab=Overview) или выполните инструкции по [добавлению решений Log Analytics из коллекции решений](../../azure-monitor/insights/solutions.md).
+1. Включите решение "Аналитика веб-приложений Azure" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AppInsights?tab=Overview) или выполните инструкции по [добавлению решений Log Analytics из коллекции решений](../insights/solutions.md).
 2. Перейдите на [портал Azure](https://portal.azure.com). Выберите **Все службы**, чтобы открыть Application Insights. Затем выполните поиск по запросу "Application Insights". 
 3. В разделе **Подписки** выберите подписку с ресурсами Application Insights, а затем в разделе **Имя** выберите одно или несколько приложений.
-4. Нажмите кнопку **Сохранить**.
+4. Щелкните **Сохранить**.
 
 Приблизительно через 30 минут данные станут доступными, а на плитке Application Insights появятся данные, как показано на следующем изображении:
 
@@ -144,7 +144,7 @@ ms.locfileid: "87073637"
 
 ### <a name="sample-corrected-data"></a>Данные исправления выборки
 
-В Application Insights предоставлена функция *[исправления выборки](../../azure-monitor/app/sampling.md)*, с помощью которой можно уменьшить трафик данных телеметрии. При включении выборки в приложении Application Insights уменьшается количество записей, хранимых в Application Insights и в службе Log Analytics. В то время как на странице **соединителя Application Insights** и в перспективах данные остаются согласованными, для пользовательских запросов данные выборки необходимо исправлять вручную.
+В Application Insights предоставлена функция *[исправления выборки](../app/sampling.md)*, с помощью которой можно уменьшить трафик данных телеметрии. При включении выборки в приложении Application Insights уменьшается количество записей, хранимых в Application Insights и в службе Log Analytics. В то время как на странице **соединителя Application Insights** и в перспективах данные остаются согласованными, для пользовательских запросов данные выборки необходимо исправлять вручную.
 
 Ниже приведен пример исправления выборки в запросе поиска по журналам:
 
@@ -163,8 +163,8 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 - Доступность
 - Исключения
 - Requests
-- Просмотры страниц. Чтобы ваша рабочая область получала данные о просмотре страниц, в приложении необходимо настроить сбор этих сведений. Дополнительные сведения см. в разделе [Просмотры страниц](../../azure-monitor/app/api-custom-events-metrics.md#page-views).
-- Настраиваемые события. Чтобы ваша рабочая область получала данные о настраиваемых событиях, в приложении необходимо настроить сбор этих сведений. Дополнительные сведения см. в разделе [TrackEvent (Отслеживание событий)](../../azure-monitor/app/api-custom-events-metrics.md#trackevent).
+- Просмотры страниц. Чтобы ваша рабочая область получала данные о просмотре страниц, в приложении необходимо настроить сбор этих сведений. Дополнительные сведения см. в разделе [Просмотры страниц](../app/api-custom-events-metrics.md#page-views).
+- Настраиваемые события. Чтобы ваша рабочая область получала данные о настраиваемых событиях, в приложении необходимо настроить сбор этих сведений. Дополнительные сведения см. в разделе [TrackEvent (Отслеживание событий)](../app/api-custom-events-metrics.md#trackevent).
 
 Как только данные станут доступны, они поступят из Application Insights в Log Analytics.
 
@@ -176,7 +176,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 | Свойство | Описание |
 | --- | --- |
-| Type | ApplicationInsights |
+| Тип | ApplicationInsights |
 | ClientIP |   |
 | TimeGenerated | Время создания записи |
 | ApplicationId | Ключ инструментирования приложения Application Insights |
@@ -225,7 +225,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="exception-specific-fields"></a>Поля со сведениями об исключениях
 
-| Type | ApplicationInsights |
+| Тип | ApplicationInsights |
 | --- | --- |
 | TelemetryType | Исключение |
 | ExceptionType | Тип исключения |
@@ -244,7 +244,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 | Свойство | Описание |
 | --- | --- |
-| Type | ApplicationInsights |
+| Тип | ApplicationInsights |
 | TelemetryType | Запрос |
 | ResponseCode | HTTP-отклик, отправленный клиенту. |
 | RequestSuccess | Указывает успешное или неудачное выполнение. Значение true или false. |
@@ -318,4 +318,5 @@ ApplicationInsights | summarize by ApplicationName
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Используйте [поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просматривать подробные сведения о приложениях Application Insights.
+- Используйте [поиск по журналам](../log-query/log-query-overview.md), чтобы просматривать подробные сведения о приложениях Application Insights.
+

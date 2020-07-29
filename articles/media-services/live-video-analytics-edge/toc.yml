@@ -64,6 +64,8 @@
       href: manage-recording-policy-how-to.md
     - name: Анализ видеотрансляции с помощью предпочитаемого средства ИИ
       href: analyze-with-ai-your-choice-how-to.md
+    - name: Вызов прямых методов с помощью портала
+      href: use-azure-portal-to-invoke-direct-methods.md
     - name: Диагностика
       href: troubleshoot-how-to.md
 - name: Справочник

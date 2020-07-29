@@ -4,12 +4,12 @@ description: Автоматизация настраиваемых ежедне�
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.reviewer: sdash
-ms.openlocfilehash: 4eb580b90c0bf9acafc4e8f805c2eef7eaae06d3
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: abd87af1a9cf61aba21e9231350aabc661e5091b
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86540083"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87320414"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Автоматизация настраиваемых отчетов с использованием данных Azure Application Insights
 
@@ -150,7 +150,8 @@ availabilityResults
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте больше о создании [запросов Analytics](../../azure-monitor/log-query/get-started-queries.md).
+* Узнайте больше о создании [запросов Analytics](../log-query/get-started-queries.md).
 * Дополнительные сведения о [программных запросах к данным Application Insights](https://dev.applicationinsights.io/).
 * Дополнительные сведения о [Logic Apps](../../logic-apps/logic-apps-overview.md).
 * Дополнительные сведения о [Microsoft Flow](https://ms.flow.microsoft.com).
+

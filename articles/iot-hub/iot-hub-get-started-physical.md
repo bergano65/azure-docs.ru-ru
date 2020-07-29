@@ -9,18 +9,20 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: wesmc
-ms.openlocfilehash: e70ee8843e467af152eedefdf7e03a4ea869e4a6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom:
+- 'Role: Cloud Development'
+ms.openlocfilehash: 91ab74e7ba6cbeb7d7c4a652f9080192e6c417d6
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "69638235"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87327622"
 ---
 # <a name="azure-iot-hub-get-started-with-physical-devices-tutorials"></a>Руководства по началу работы с Центром Интернета вещей и физическими устройствами
 
 В этих руководствах представлены общие сведения о Центре Интернета вещей Azure и пакетах SDK для устройств. Также описаны распространенные сценарии с использованием Интернета вещей, в которых демонстрируются возможности Центра Интернета вещей. В руководствах также объясняется, как объединить Центр Интернета вещей с другими службами и средствами Azure для создания более мощных решений Интернета вещей. В руководствах, перечисленных в следующей таблице, показано как создавать физические устройства Интернета вещей.
 
-| Устройство IoT                       | Язык программирования |
+| Устройство Интернета вещей                       | Язык программирования |
 |---------------------------------|----------------------|
 | Raspberry Pi                    | [Node.js](iot-hub-raspberry-pi-kit-node-get-started.md), [C](iot-hub-raspberry-pi-kit-c-get-started.md)  |
 | IoT DevKit                      | [Arduino в VSCode](iot-hub-arduino-iot-devkit-az3166-get-started.md)     |

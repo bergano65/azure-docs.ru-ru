@@ -4,17 +4,17 @@ description: Узнайте, как установить и настроить P
 author: cynthn
 ms.service: virtual-machines-linux
 ms.subservice: workloads
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/01/2016
 ms.author: cynthn
-ms.openlocfilehash: 6efc8a7e6478ed874caf925e10ef43c04343d254
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 321f6bd6324613967001139e365d96521217d50b
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86133249"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87267257"
 ---
 # <a name="install-and-configure-postgresql-on-azure"></a>Установка и настройка PostgreSQL в Azure
 PostgreSQL — это расширенная открытая СУБД, аналогичная СУБД Oracle и DB2. Она предлагает возможности корпоративного уровня, обеспечивая полное соответствие принципам ACID, надежную обработку транзакций и управление параллелизмом в разных версиях. Она также поддерживает такие стандарты, как ANSI SQL и SQL/MED (включая оболочки для внешних данных Oracle, MySQL, MongoDB и др.). Высокая расширяемость обеспечивается поддержкой более 12 процедурных языков, индексов GIN и GIST, пространственных данных, различных функций NoSQL для JSON и приложений на основе пары "ключ — значение".
@@ -259,7 +259,7 @@ CREATE TABLE potluck (name VARCHAR(20),    food VARCHAR(30),    confirmed CHAR(1
 INSERT INTO potluck (name, food, confirmed, signup_date) VALUES('John', 'Casserole', 'Y', '2012-04-11');
 ```
 
-Вы должны увидеть такой результат:
+Вы должны увидеть следующий результат:
 
 ![Изображение](./media/postgresql-install/no6.png)
 
@@ -280,7 +280,7 @@ INSERT INTO potluck (name, food, confirmed, signup_date) VALUES('Tina', 'Salad',
 select * from potluck;
 ```
 
-Результат.
+Результат выглядит так:
 
 ![Изображение](./media/postgresql-install/no7.png)
 
@@ -291,7 +291,7 @@ select * from potluck;
 delete from potluck where name=’John’;
 ```
 
-Она удалит все данные в строке John. Результат.
+Она удалит все данные в строке John. Результат выглядит так:
 
 ![Изображение](./media/postgresql-install/no8.png)
 

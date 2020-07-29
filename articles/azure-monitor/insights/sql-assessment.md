@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/05/2020
-ms.openlocfilehash: b6b32f9eadc6677bad591f4040981c4c95bf1f76
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 98caca31e172f54c3e37f33c5a463790d9d27032
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82871245"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325990"
 ---
 # <a name="optimize-your-sql-environment-with-the-sql-server-health-check-solution-in-azure-monitor"></a>Оптимизируйте среду SQL с помощью решения SQL Server проверки работоспособности в Azure Monitor
 
@@ -30,7 +31,7 @@ ms.locfileid: "82871245"
 
 ![изображение панели мониторинга "Проверка работоспособности SQL"](./media/sql-assessment/sql-healthcheck-dashboard-01.png)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Для решения "Проверка работоспособности SQL" требуется поддерживаемая версия .NET Framework 4.6.2, установленная на каждом компьютере с установленным Microsoft Monitoring Agent (MMA).  Агент MMA используется решением System Center 2016 Operations Manager и Operations Manager 2012 R2, а также Azure Monitor.  
 * Решение поддерживает SQL Server версии 2012, 2014, 2016, 2017 и 2019.
@@ -43,9 +44,9 @@ ms.locfileid: "82871245"
 
 Чтобы выполнить проверку работоспособности на серверах SQL Server, им требуется агент и возможность подключения к Azure Monitor с помощью одного из следующих поддерживаемых методов:
 
-1. Установка [агента Microsoft Monitoring Agent (MMA)](../../azure-monitor/platform/agent-windows.md), если сервер уже не отслеживается с помощью решения System Center 2016 Operations Manager или Operations Manager 2012 R2.
+1. Установка [агента Microsoft Monitoring Agent (MMA)](../platform/agent-windows.md), если сервер уже не отслеживается с помощью решения System Center 2016 Operations Manager или Operations Manager 2012 R2.
 2. Если мониторинг осуществляется с помощью System Center 2016-Operations Manager или Operations Manager 2012 R2, а Группа управления не интегрирована с Azure Monitor, сервер может быть многосетевым с Log Analytics для получения данных и пересылки в службу и по-прежнему отслеживаться Operations Manager.  
-3. Если группа управления Operations Manager интегрирована со службой, после включения решения в рабочей области добавьте контроллеры домена для сбора данных службой. Для этого выполните инструкции по [добавлению компьютеров под управлением агентов](../../azure-monitor/platform/om-agents.md#connecting-operations-manager-to-azure-monitor).  
+3. Если группа управления Operations Manager интегрирована со службой, после включения решения в рабочей области добавьте контроллеры домена для сбора данных службой. Для этого выполните инструкции по [добавлению компьютеров под управлением агентов](../platform/om-agents.md#connecting-operations-manager-to-azure-monitor).  
 
 Агент на SQL Server, который отправляет отчеты в группу управления Operations Manager, собирает данные, перенаправляет их на назначенный сервер управления, а затем отправляется непосредственно с сервера управления в Azure Monitor.  Данные не записываются в базы данных Operations Manager.  
 
@@ -84,7 +85,7 @@ Log Analytics использует агент Operations Manager и группу
    > Тип учетной записи «Запуск от имени» должен быть указан как Windows. Учетная запись запуска от имени также должна входить в группу локальных администраторов на всех серверах Windows Server, на которых размещены экземпляры SQL Server.
    >
    >
-5. Нажмите кнопку **Сохранить**.
+5. Щелкните **Сохранить**.
 6. Измените, а затем выполните приведенный ниже пример T-SQL на каждом экземпляре SQL Server. Это позволит предоставить минимальные разрешения, необходимые учетной записи запуска от имени для проверки работоспособности SQL. Но это не требуется делать в том случае, если учетная запись запуска от имени уже является частью серверной роли sysadmin в экземплярах SQL Server.
 
 ```
@@ -257,3 +258,4 @@ SQLAssessmentRecommendation
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Заносить в журнал запросы](../log-query/log-query-overview.md) , чтобы узнать, как анализировать подробные данные и рекомендации по проверке работоспособности SQL.
+

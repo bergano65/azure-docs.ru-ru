@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
-ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017,seoapr2020
+ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017,seoapr2020,devx-track-java
 ms.date: 04/27/2020
-ms.openlocfilehash: 69342e59e99dd588b2c2cee9d02af5370ddb3af2
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: b928ea8b0d05b9e1eac3c9429ec4c0ce8f88bb22
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086948"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87322879"
 ---
 # <a name="create-an-apache-storm-topology-in-java"></a>Создание топологии Apache Storm на языке Java
 
@@ -24,7 +24,7 @@ ms.locfileid: "86086948"
 > [!NOTE]  
 > Завершенная версия примеров топологии, созданных в этом документе, доступна по адресу [https://github.com/Azure-Samples/hdinsight-java-storm-wordcount](https://github.com/Azure-Samples/hdinsight-java-storm-wordcount) .
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks)
 
@@ -826,7 +826,7 @@ mvn compile exec:java -Dstorm.topology=com.microsoft.example.WordCountTopology
 
 Дополнительные сведения о Trident см. в статье [Обзор API Trident](https://storm.apache.org/releases/current/Trident-API-Overview.html) (на английском языке).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Вы узнали, как создать топологию Apache Storm с помощью Java. Теперь ознакомьтесь со следующими статьями.
 

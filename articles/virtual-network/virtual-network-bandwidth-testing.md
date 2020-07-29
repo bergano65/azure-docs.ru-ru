@@ -1,7 +1,7 @@
 ---
 title: Тестирование пропускной способности сети для виртуальной машины Azure
 titlesuffix: Azure Virtual Network
-description: Узнайте, как проверить пропускную способность сети для виртуальной машины Azure.
+description: Используйте NTTTCP, чтобы нацелить сеть на тестирование и уменьшить использование других ресурсов, которые могут повлиять на производительность.
 services: virtual-network
 documentationcenter: na
 author: steveesp
@@ -12,11 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/21/2017
 ms.author: steveesp
-ms.openlocfilehash: 964b0bd543e887cce304d785d18a651f50bd4c45
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e5aa2c1c51fccddc3fb62d7ebdbadee19a2b093e
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708252"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87265183"
 ---
 # <a name="bandwidththroughput-testing-ntttcp"></a>Проверка пропускной способности (NTTTCP)
 
@@ -164,7 +165,7 @@ ntttcp -s -m <2 x nr cores>,*,<Linux  server IP> -ns -t 300
 </Endpoints> 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * В зависимости от полученных результатов в вашем сценарии вполне может быть возможность [оптимизировать пропускную способность сети виртуальных машин](virtual-network-optimize-network-bandwidth.md).
 * Узнайте, как [выделяется пропускная способность для виртуальных машин](virtual-machine-network-throughput.md)
 * Дополнительные сведения см. в статье [Виртуальная сеть Azure: часто задаваемые вопросы](virtual-networks-faq.md).

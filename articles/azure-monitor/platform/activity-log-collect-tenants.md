@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/06/2019
-ms.openlocfilehash: 07c38cbd2d77a3cca594acd974705af35d8189b9
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7718bd5cbc3c3fc3c9632818f769c05cd1617361
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86516351"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321876"
 ---
 # <a name="collect-azure-activity-logs-into-azure-monitor-across-azure-active-directory-tenants-legacy"></a>Получение журналов действий Azure в Azure Monitor между клиентами Azure Active Directory (устаревшие)
 
@@ -291,7 +291,7 @@ ms.locfileid: "86516351"
 
    ![Добавление действия отправки данных Log Analytics в приложениях логики](media/collect-activity-logs-subscriptions/logic-apps-send-data-to-log-analytics-connector.png)
 
-3. Введите имя подключения и вставьте **идентификатор рабочей области** и **ключ рабочей области** для рабочей области Log Analytics.  Нажмите кнопку **Создать**.
+3. Введите имя подключения и вставьте **идентификатор рабочей области** и **ключ рабочей области** для рабочей области Log Analytics.  Щелкните **Создать**.
 
    ![Добавление подключения Log Analytics в приложениях логики](media/collect-activity-logs-subscriptions/logic-apps-log-analytics-add-connection.png)
 
@@ -340,4 +340,5 @@ ms.locfileid: "86516351"
 В этой статье вы создали приложение логики для считывания журналов действий Azure из концентратора событий и отправки их в рабочую область Log Analytics для анализа. Дополнительные сведения о визуализации данных в рабочей области, включая создание панелей мониторинга, см. в руководстве по визуализации данных.
 
 > [!div class="nextstepaction"]
-> [Создание панелей мониторинга данных Log Analytics и предоставление общего доступа к ним](./../../azure-monitor/learn/tutorial-logs-dashboards.md)
+> [Создание панелей мониторинга данных Log Analytics и предоставление общего доступа к ним](../learn/tutorial-logs-dashboards.md)
+

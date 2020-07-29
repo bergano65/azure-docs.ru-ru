@@ -3,19 +3,19 @@ title: Ресурсы, роли и контроль доступа в Azure Appl
 description: Владельцы, участники и читатели Insights вашей организации.
 ms.topic: conceptual
 ms.date: 02/14/2019
-ms.openlocfilehash: 92f40961cd824925fe6ed1b67745667121a66d2f
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 38c7d7bcbcf193149fd8ab5e632674b6f8530a44
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86539981"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325701"
 ---
 # <a name="resources-roles-and-access-control-in-application-insights"></a>Ресурсы, роли и контроль доступа в Application Insights
 
 Вы можете управлять доступом на чтение и обновлять права доступа к данным в Azure [Application Insights][start], используя [Управление доступом на основе ролей в Microsoft Azure](../../role-based-access-control/role-assignments-portal.md).
 
 > [!IMPORTANT]
-> Вы также можете предоставлять доступ пользователям в **группе ресурсов или подписке** , к которым относится ресурс приложения, а не в самом ресурсе. Назначьте им роль **участника компонента Application Insights** . Это обеспечит универсальный контроль доступа к веб-тестам и оповещениям с помощью ресурса приложения. [Подробнее](#access).
+> Вы также можете предоставлять доступ пользователям в **группе ресурсов или подписке** , к которым относится ресурс приложения, а не в самом ресурсе. Назначьте им роль **участника компонента Application Insights** . Это обеспечит универсальный контроль доступа к веб-тестам и оповещениям с помощью ресурса приложения. [Подробнее.](#access)
 
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
@@ -134,4 +134,5 @@ $resourceGroup = "RGNAME"
 [account]: https://account.microsoft.com
 [group]: ../../azure-resource-manager/management/overview.md
 [portal]: https://portal.azure.com/
-[start]: ../../azure-monitor/app/app-insights-overview.md
+[start]: ./app-insights-overview.md
+

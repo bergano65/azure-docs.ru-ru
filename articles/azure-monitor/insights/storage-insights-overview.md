@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/11/2020
-ms.openlocfilehash: d71201da0c4af35720a309fe0dfa068cd2c69630
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7daba35b9247443c84cedad03f252ea6858da236
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87081616"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87327350"
 ---
 # <a name="monitoring-your-storage-service-with-azure-monitor-for-storage"></a>Мониторинг службы хранилища с помощью Azure Monitor для службы хранилища
 
@@ -242,7 +242,7 @@ Azure Monitor для хранилища обеспечивает комплек
 
 ### <a name="how-to-change-the-coloring-and-threshold-for-availability"></a>Как изменить цвет и пороговое значение для доступности?
 
-Подробные инструкции по изменению цвета и пороговых значений для доступности см. в [этом разделе](storage-insights-overview.md#modify-the-availability-threshold).
+Подробные инструкции по изменению цвета и пороговых значений для доступности см. в [этом разделе](#modify-the-availability-threshold).
 
 ### <a name="how-to-analyze-and-troubleshoot-the-data-shown-in-azure-monitor-for-storage"></a>Как анализировать данные и устранять связанные с ними проблемы в Azure Monitor для службы хранилища?
 
@@ -274,3 +274,4 @@ Azure Monitor для хранилища обеспечивает комплек
 * Узнайте, в каких ситуациях применяются книги, как создавать и настраивать отчеты и многое другое, изучив статью [Создание интерактивных отчетов с использованием книг Azure Monitor](../platform/workbooks-overview.md).
 
 * Дополнительные указания о функциях аналитики хранилища и других инструментах идентификации, диагностики и устранения неполадок, связанных со службой хранилища Azure, см. в статье [Мониторинг, диагностика и устранение неполадок службы хранилища Microsoft Azure](../../storage/common/storage-monitoring-diagnosing-troubleshooting.md).
+

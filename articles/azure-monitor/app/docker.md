@@ -3,12 +3,12 @@ title: Мониторинг приложений Docker в Azure Application Ins
 description: Счетчики производительности, события и исключения Docker могут отображаться в Application Insights вместе с данными телеметрии из контейнерных приложений.
 ms.topic: conceptual
 ms.date: 03/14/2019
-ms.openlocfilehash: 6af39db68c2020e578fe6fbd39870b2e00a16e07
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 1cbb2968fec68eb750ce3c9b6cac09f23a1d36c5
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86539930"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324426"
 ---
 # <a name="monitor-docker-applications-in-application-insights-deprecated"></a>Мониторинг приложений DOCKER в Application Insights (не рекомендуется)
 
@@ -23,15 +23,15 @@ ms.locfileid: "86539930"
 
 * Сведения о телеметрии жизненного цикла для всех контейнеров, запущенных на узле, — запуск, остановка и т. д.
 * Счетчики производительности для всех контейнеров. ЦП, память, использование сети и многое другое.
-* Если вы [установили пакет SDK для Application Insights для Java](../../azure-monitor/app/java-get-started.md) в приложениях, выполняющихся в контейнерах, у всех данных телеметрии этих приложений будут дополнительные свойства, идентифицирующие контейнер и хост-компьютер. Например, если имеются экземпляры приложения, запущенные на нескольких узлах, вы легко сможете отфильтровать данные телеметрии приложения по узлу.
+* Если вы [установили пакет SDK для Application Insights для Java](./java-get-started.md) в приложениях, выполняющихся в контейнерах, у всех данных телеметрии этих приложений будут дополнительные свойства, идентифицирующие контейнер и хост-компьютер. Например, если имеются экземпляры приложения, запущенные на нескольких узлах, вы легко сможете отфильтровать данные телеметрии приложения по узлу.
 
 ## <a name="set-up-your-application-insights-resource"></a>Настройка ресурса Application Insights
 
-1. Выполните вход на [портал Microsoft Azure](https://azure.com) и [создайте ресурс Application Insights](../../azure-monitor/app/create-new-resource.md ) для своего приложения или откройте имеющийся. 
+1. Выполните вход на [портал Microsoft Azure](https://azure.com) и [создайте ресурс Application Insights](./create-new-resource.md) для своего приложения или откройте имеющийся. 
    
-    *Какой ресурс использовать?* Если приложения, которые выполняются на узле, были созданы другим разработчиком, вам потребуется [создать новый ресурс Application Insights](../../azure-monitor/app/create-new-resource.md ). Там вы можете просматривать и анализировать данные телеметрии. (Выберите тип приложения "Общее".)
+    *Какой ресурс использовать?* Если приложения, которые выполняются на узле, были созданы другим разработчиком, вам потребуется [создать новый ресурс Application Insights](./create-new-resource.md). Там вы можете просматривать и анализировать данные телеметрии. (Выберите тип приложения "Общее".)
    
-    Но если разработчиком приложений являетесь вы, мы надеемся, что вы [добавили пакет SDK для Application Insights](../../azure-monitor/app/java-get-started.md) в каждое из них. Если все они действительно являются компонентами одного бизнес-приложения, вы можете настроить их на отправку данных телеметрии в один ресурс, а затем использовать этот ресурс для отображения данных о производительности и жизненном цикле Docker. 
+    Но если разработчиком приложений являетесь вы, мы надеемся, что вы [добавили пакет SDK для Application Insights](./java-get-started.md) в каждое из них. Если все они действительно являются компонентами одного бизнес-приложения, вы можете настроить их на отправку данных телеметрии в один ресурс, а затем использовать этот ресурс для отображения данных о производительности и жизненном цикле Docker. 
    
     Третий сценарий — вы разработали большинство приложений, но используете отдельные ресурсы для отображения их телеметрии. В этом случае, возможно, вам потребуется создать отдельный ресурс для данных Docker.
 
@@ -54,7 +54,7 @@ ms.locfileid: "86539930"
 Для каждого узла Docker требуется только один образ Application Insights. Если приложение развертывается на нескольких узлах Docker, выполните эту команду на каждом узле.
 
 ## <a name="update-your-app"></a>Обновление приложения
-Если приложение инструментируется с помощью [пакета SDK для Application Insights для Java](../../azure-monitor/app/java-get-started.md), добавьте следующую строку в файл ApplicationInsights.xml в проекте после элемента `<TelemetryInitializers>`:
+Если приложение инструментируется с помощью [пакета SDK для Application Insights для Java](./java-get-started.md), добавьте следующую строку в файл ApplicationInsights.xml в проекте после элемента `<TelemetryInitializers>`:
 
 ```xml
 
@@ -73,7 +73,7 @@ ms.locfileid: "86539930"
 ### <a name="docker-container-events"></a>События контейнера Docker
 ![пример](./media/docker/13.png)
 
-Для анализа отдельных событий щелкните [Поиск](../../azure-monitor/app/diagnostic-search.md). Найдите и отфильтруйте нужные вам события. Щелкните любое событие, чтобы просмотреть подробные данные.
+Для анализа отдельных событий щелкните [Поиск](./diagnostic-search.md). Найдите и отфильтруйте нужные вам события. Щелкните любое событие, чтобы просмотреть подробные данные.
 
 ### <a name="exceptions-by-container-name"></a>Исключения по имени контейнера
 ![пример](./media/docker/14.png)
@@ -90,7 +90,7 @@ ms.locfileid: "86539930"
 
 *Как получить данные телеметрии из самого приложения?*
 
-* Установите пакет SDK Application Insights в приложении. Узнайте, как это сделать в [веб-приложениях Java](../../azure-monitor/app/java-get-started.md) и [Windows](../../azure-monitor/app/asp-net.md).
+* Установите пакет SDK Application Insights в приложении. Узнайте, как это сделать в [веб-приложениях Java](./java-get-started.md) и [Windows](./asp-net.md).
 
 ## <a name="video"></a>Видеоролик
 
@@ -98,6 +98,7 @@ ms.locfileid: "86539930"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Application Insights для Java](../../azure-monitor/app/java-get-started.md)
-* [Использование Application Insights с Node.js](../../azure-monitor/app/nodejs.md)
-* [Application Insights для ASP.NET](../../azure-monitor/app/asp-net.md)
+* [Application Insights для Java](./java-get-started.md)
+* [Использование Application Insights с Node.js](./nodejs.md)
+* [Application Insights для ASP.NET](./asp-net.md)
+

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/26/2020
-ms.openlocfilehash: d7c3613a0ddce217e9d07c3fc2eba55b78c53a1b
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7421162ed68a879d9f935a3efd5c6267e159a648
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86516555"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324307"
 ---
 # <a name="create-a-log-analytics-workspace-with-azure-cli-20"></a>Создание рабочей области Log Analytics с помощью Azure CLI 2.0
 
@@ -24,8 +24,8 @@ Azure CLI 2.0 используется для создания ресурсов 
 
 Сведения о других источниках, таких как виртуальные машины Azure и виртуальные машины Windows или Linux в вашей среде, см. в статьях ниже.
 
-* [Сбор данных о виртуальных машинах Azure](../learn/quick-collect-azurevm.md)
-* [Настройка агента Log Analytics для компьютеров Linux в гибридной среде](../learn/quick-collect-linux-computer.md)
+* [Сбор данных о виртуальных машинах Azure](./quick-collect-azurevm.md)
+* [Настройка агента Log Analytics для компьютеров Linux в гибридной среде](./quick-collect-linux-computer.md)
 * [Настройка агента Log Analytics для компьютеров Windows в гибридной среде](quick-collect-windows-computer.md)
 
 Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
@@ -133,3 +133,4 @@ Azure CLI 2.0 используется для создания ресурсов 
 * Добавьте [System Center Operations Manager в качестве источника данных](../platform/om-agents.md), чтобы собирать данные с агентов, которые предоставляют отчеты группе управления Operations Manager, и хранить эти данные в рабочей области Log Analytics.  
 * Подключите [Configuration Manager](../platform/collect-sccm.md) для импорта данных с компьютеров, которые являются элементами коллекций в иерархии.  
 * Просмотрите список доступных [решений для мониторинга](../insights/solutions.md) и узнайте, как добавить решение в рабочую область или удалить его из нее.
+

@@ -3,16 +3,16 @@ title: Настройка Application Insights в Azure с помощью PowerS
 description: Автоматизируйте настройку система диагностики Azure для передачи данных по конвейеру в Application Insights.
 ms.topic: conceptual
 ms.date: 08/06/2019
-ms.openlocfilehash: 20f5a5c61c65b476a98c59b24283a2d15c39ddae
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 3d0b7d1e8d4a164d517834eae877844d85b9a256
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86111190"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87320363"
 ---
 # <a name="using-powershell-to-set-up-application-insights-for-azure-cloud-services"></a>Настройка Application Insights для облачных служб Azure с помощью PowerShell
 
-[Microsoft Azure](https://azure.com) можно [настроить для отправки данных системы диагностики Azure](../../azure-monitor/platform/diagnostics-extension-to-application-insights.md) в [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md). Данные диагностики связаны с облачными службами Azure и виртуальными машинами Azure. Они дополняют данные телеметрии, отправляемые из приложения с помощью пакета SDK Application Insights. В рамках автоматизации создания новых ресурсов в Azure вы можете настроить диагностику с помощью PowerShell.
+[Microsoft Azure](https://azure.com) можно [настроить для отправки данных системы диагностики Azure](../platform/diagnostics-extension-to-application-insights.md) в [Azure Application Insights](./app-insights-overview.md). Данные диагностики связаны с облачными службами Azure и виртуальными машинами Azure. Они дополняют данные телеметрии, отправляемые из приложения с помощью пакета SDK Application Insights. В рамках автоматизации создания новых ресурсов в Azure вы можете настроить диагностику с помощью PowerShell.
 
 ## <a name="azure-template"></a>Шаблон Azure
 Если веб-приложение работает в Azure и вы создаете ресурсы с помощью шаблона Azure Resource Manager, можно настроить Application Insights, добавив следующий код в узел ресурсов:
@@ -124,7 +124,7 @@ Remove-AzureServiceDiagnosticsExtension -ServiceName "MyService" -Role "WebRole"
 
 
 ## <a name="see-also"></a>См. также раздел
-* [Мониторинг приложений облачных служб Azure с помощью Application Insights](../../azure-monitor/app/cloudservices.md)
-* [Отправка данных системы диагностики Azure в Application Insights](../../azure-monitor/platform/diagnostics-extension-to-application-insights.md)
+* [Мониторинг приложений облачных служб Azure с помощью Application Insights](./cloudservices.md)
+* [Отправка данных системы диагностики Azure в Application Insights](../platform/diagnostics-extension-to-application-insights.md)
 * [Use PowerShell to set alerts in Application Insights](powershell-alerts.md)
 

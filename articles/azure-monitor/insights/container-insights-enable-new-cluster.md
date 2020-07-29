@@ -4,12 +4,12 @@ description: Узнайте, как включить мониторинг для
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 86ace49ea60bf1bd11633b5a883401f678ecaf8d
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7706df4f457167f5bb4d17f1d506594615364380
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86516640"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87320329"
 ---
 # <a name="enable-monitoring-of-a-new-azure-kubernetes-service-aks-cluster"></a>Включение мониторинга нового кластера Azure Kubernetes Service (AKS)
 
@@ -17,7 +17,7 @@ ms.locfileid: "86516640"
 
 Мониторинг кластера AKS можно включить с помощью одного из поддерживаемых методов:
 
-* Azure CLI
+* Azure CLI;
 * Terraform
 
 ## <a name="enable-using-azure-cli"></a>Включение мониторинга с помощью Azure CLI
@@ -29,7 +29,7 @@ ms.locfileid: "86516640"
 
 ## <a name="enable-using-terraform"></a>Включение с помощью Terraform
 
-Если вы [развертываете новый кластер AKS с помощью Terraform](../../terraform/terraform-create-k8s-cluster-with-tf-and-aks.md), нужно указать аргументы, необходимые в профиле [для создания рабочей области Log Analytics](https://www.terraform.io/docs/providers/azurerm/r/log_analytics_workspace.html), если вы не решили указать уже существующую. 
+Если вы [развертываете новый кластер AKS с помощью Terraform](/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks), нужно указать аргументы, необходимые в профиле [для создания рабочей области Log Analytics](https://www.terraform.io/docs/providers/azurerm/r/log_analytics_workspace.html), если вы не решили указать уже существующую. 
 
 >[!NOTE]
 >Если вы решили использовать Terraform, необходимо запустить Terraform Azure RM Provider версии 1.17.0 или выше.
@@ -118,3 +118,4 @@ az aks show -g <resourceGroupofAKSCluster> -n <nameofAksCluster>
 * Если при попытке подключить решение у вас возникли проблемы, ознакомьтесь с [руководством по устранению неполадок](container-insights-troubleshoot.md).
 
 * С включенным наблюдением для получения сведений о работоспособности и использовании ресурсов кластером AKS и рабочими нагрузками, которые выполняются на них, Узнайте, [как использовать](container-insights-analyze.md) Azure Monitor для контейнеров.
+

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/12/2020
-ms.openlocfilehash: 2da00b44be7018bef80e466231efb75a8eb99754
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a2ece33974e5bb4d8cb6257d3ca68a258f9b8c81
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87081548"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326007"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Решения мониторинга в Azure Monitor
 
@@ -125,7 +125,7 @@ az monitor log-analytics solution list --resource-group MyResourceGroup
 
 ### <a name="install-a-solution-with-the-azure-cli"></a>Установка решения с Azure CLI
 
-При установке решения необходимо выбрать [рабочую область Log Analytics](/azure/azure-monitor/platform/manage-access), в которой требуется установить решение, а также расположение для хранения его данных.  С Azure CLI Управление рабочими областями осуществляется с помощью команд ссылки на [рабочую область "az Monitor журнала-Analytics](/cli/azure/monitor/log-analytics/workspace) ".  Выполните действия, описанные в разделе [Рабочая область Log Analytics и учетная запись службы автоматизации](#log-analytics-workspace-and-automation-account), чтобы установить связь между рабочей областью и учетной записью.
+При установке решения необходимо выбрать [рабочую область Log Analytics](../platform/manage-access.md), в которой требуется установить решение, а также расположение для хранения его данных.  С Azure CLI Управление рабочими областями осуществляется с помощью команд ссылки на [рабочую область "az Monitor журнала-Analytics](/cli/azure/monitor/log-analytics/workspace) ".  Выполните действия, описанные в разделе [Рабочая область Log Analytics и учетная запись службы автоматизации](#log-analytics-workspace-and-automation-account), чтобы установить связь между рабочей областью и учетной записью.
 
 Используйте команду [AZ Monitor log-Analytics](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution) для установки решения для мониторинга.  Параметры в квадратных скобках являются необязательными.
 
@@ -192,6 +192,7 @@ az monitor log-analytics solution delete --name
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Получите список решений мониторинга от корпорации Майкрософт [здесь](solutions-inventory.md).
+* Получите список решений мониторинга от корпорации Майкрософт [здесь](/azure/azure-monitor/monitor-reference).
 * Узнайте из статьи [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md), как создавать запросы для анализа данных, собранных решением для мониторинга.
 * См. все [команды Azure CLI для Azure Monitor](/cli/azure/azure-cli-reference-for-monitor).
+

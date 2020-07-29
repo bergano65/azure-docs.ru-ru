@@ -7,11 +7,14 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 09/06/2018
 ms.author: robinsh
-ms.openlocfilehash: c43c142b22709d42416b2dd14dfc78812970916a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom:
+- 'Role: Cloud Development'
+ms.openlocfilehash: 8f7555129f5f514d1954ac56cf87872a85ca91d0
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708116"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326738"
 ---
 # <a name="create-an-iot-hub-using-the-azure-portal"></a>Создание Центра Интернета вещей с помощью портала Azure
 
@@ -117,7 +120,7 @@ ms.locfileid: "84708116"
 
 Чтобы удалить центр Интернета вещей, найдите его, а затем нажмите кнопку **Удалить** под именем центра Интернета вещей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 

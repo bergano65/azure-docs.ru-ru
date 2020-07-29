@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/04/2020
-ms.openlocfilehash: 9f8850b83b2af7f0d3007cd716f9e077361a02e2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 409a119804354b85e3af380d33a4801549ef8133
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091119"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325293"
 ---
 # <a name="log-analytics-agent-overview"></a>Общие сведения об агенте Log Analytics
 Агент Log Analytics разработан для комплексного управления на виртуальных машинах, размещенных на облаке, на локальных компьютерах, и других отслеживаемых с помощью [System Center Operations Manager](/system-center/scom/) компьютерах. Агенты Windows и Linux отправляют в рабочую область вашего Log Analytics в Azure Monitor собранные данные из разных источников, а также уникальные журналы и метрики, как задано в решении мониторинга. Агент Log Analytics также поддерживает аналитику и другие службы в Azure Monitor, такие как [Azure Monitor для виртуальных машин](../insights/vminsights-enable-overview.md), [Центр безопасности Azure](../../security-center/index.yml) и [Служба автоматизации Azure](../../automation/automation-intro.md).
@@ -72,15 +72,15 @@ ms.locfileid: "87091119"
 
 |Источник | Метод | Описание|
 |-------|-------------|-------------|
-|Azure| [Вручную с помощью портала Azure](../../azure-monitor/learn/quick-collect-azurevm.md?toc=/azure/azure-monitor/toc.json) | Укажите виртуальные машины для развертывания из рабочей области Log Analytics. |
+|Azure| [Вручную с помощью портала Azure](../learn/quick-collect-azurevm.md?toc=%2fazure%2fazure-monitor%2ftoc.json) | Укажите виртуальные машины для развертывания из рабочей области Log Analytics. |
 | | Расширение виртуальной машины Log Analytics для [Windows](../../virtual-machines/extensions/oms-windows.md) или [Linux](../../virtual-machines/extensions/oms-linux.md) с использованием Azure CLI или шаблона Azure Resource Manager | Это расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует элементы в существующей рабочей области Azure Monitor. |
 | | [Azure Monitor для виртуальных машин](../insights/vminsights-enable-overview.md) | При включении мониторинга с помощью Azure Monitor для виртуальных машин устанавливается расширение и агент Log Analytics. |
 | | [Автоматическая подготовка Центра безопасности Azure](../../security-center/security-center-enable-data-collection.md) | Центр безопасности Azure может подготовить к работе агента Log Analytics на всех поддерживаемых и на всех созданных виртуальных машинах Azure, если он активирован для отслеживания уязвимостей и угроз безопасности. Если эта функция активирована, любая новая виртуальная машина будет подготовлена к работе без установленного агента. |
 | Гибридные компьютеры Windows| [Установка вручную](agent-windows.md) | Установите агент Microsoft Monitoring из командной строки. |
 | | [DSC в службе автоматизации Azure](agent-windows.md#install-the-agent-using-dsc-in-azure-automation) | Автоматизируйте установку с помощью Azure Automation DSC. |
 | | [Шаблон Resource Manager с Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/MicrosoftMonitoringAgent-ext-win) | Используйте шаблон Azure Resource Manager, если в центре обработки данных развернут Microsoft Azure Stack.| 
-| Гибридные компьютеры Linux| [Установка вручную](../../azure-monitor/learn/quick-collect-linux-computer.md)|Установка агента для Linux путем вызова сценария-оболочки, размещенного в GitHub. | 
-| System Center Operations Manager|[Интеграция Operations Manager с Log Analytics](../../azure-monitor/platform/om-agents.md) | Вы можете настроить интеграцию между Operations Manager и журналами Azure Monitor для пересылки отчетов о собранных данных из компьютеров Windows в группу управления.|  
+| Гибридные компьютеры Linux| [Установка вручную](../learn/quick-collect-linux-computer.md)|Установка агента для Linux путем вызова сценария-оболочки, размещенного в GitHub. | 
+| System Center Operations Manager|[Интеграция Operations Manager с Log Analytics](./om-agents.md) | Вы можете настроить интеграцию между Operations Manager и журналами Azure Monitor для пересылки отчетов о собранных данных из компьютеров Windows в группу управления.|  
 
 
 ## <a name="supported-windows-operating-systems"></a>Поддерживаемые операционные системы Windows
@@ -229,3 +229,4 @@ alternatives --set python `which python2`
 * Дополнительные сведения об источниках данных, доступных для сбора данных из операционных систем Windows или Linux, см. в статье [Data sources in Log Analytics](agent-data-sources.md) (Источники данных в Log Analytics). 
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 
 * Узнайте больше о [решениях мониторинга](../insights/solutions.md), которые расширяют функции службы Azure Monitor и собирают данные в ее рабочей области.
+

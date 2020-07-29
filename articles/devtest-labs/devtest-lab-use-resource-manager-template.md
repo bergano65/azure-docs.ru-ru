@@ -3,12 +3,12 @@ title: Просмотр и использование шаблона Azure Resou
 description: Сведения об использовании шаблона Azure Resource Manager виртуальной машины для создания других виртуальных машин.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: a53a6ad44cac59bd925e6d200ca50074a2fcd963
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e58b54d61653f1edba3c3893edb902a94fbf9f2b
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85476620"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87272697"
 ---
 # <a name="create-virtual-machines-using-an-azure-resource-manager-template"></a>Создание виртуальных машин с использованием шаблона Azure Resource Manager 
 
@@ -35,7 +35,7 @@ ms.locfileid: "85476620"
 
 В оставшейся части статьи рассматриваются шаблоны Resource Manager, использующие Microsoft.DevTestLab/labs/virtualmachines. Они используются администраторами лаборатории для автоматизации создания виртуальной машины лаборатории (например, запрашиваемые виртуальные машины) или для создания образа золотого стандарта (например, фабрики образов).
 
-В статье [Рекомендации по созданию шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-template-best-practices) содержится множество рекомендаций и указаний, облегчающих создание надежных и простых в использовании шаблонов Azure Resource Manager.
+В статье [Рекомендации по созданию шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-best-practices.md) содержится множество рекомендаций и указаний, облегчающих создание надежных и простых в использовании шаблонов Azure Resource Manager.
 
 ## <a name="view-and-save-a-virtual-machines-resource-manager-template"></a>Просмотр и сохранение шаблона Azure Resource Manager виртуальной машины
 1. Выполните действия, описанные в статье [Создание первой виртуальной машины в лаборатории в Azure DevTest Labs](tutorial-create-custom-lab.md#add-a-vm-to-the-lab), чтобы начать создание виртуальной машины.
@@ -57,7 +57,7 @@ ms.locfileid: "85476620"
 
 
 
-### <a name="next-steps"></a>Дальнейшие шаги
+### <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения см. в статье [Создание сред со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Azure Resource Manager](devtest-lab-create-environment-from-arm.md).
 * [Развертывание шаблона Resource Manager для создания виртуальной машины](devtest-lab-create-environment-from-arm.md#automate-deployment-of-environments)
 * Ознакомьтесь с дополнительными руководствами диспетчер ресурсов шаблонов для автоматизации DevTest Labs из [общедоступного репозитория GitHub DevTest Labs](https://github.com/Azure/azure-quickstart-templates).

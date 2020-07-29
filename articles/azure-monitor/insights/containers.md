@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 07/06/2020
-ms.openlocfilehash: 14fa6859a16dc173e75091983abee717bf813220
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: b681e3fa4963a8fe899ccbad8dbf1bbdfbe452ce
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86499027"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326908"
 ---
 # <a name="container-monitoring-solution-in-azure-monitor"></a>Решение для мониторинга контейнеров в Azure Monitor
 
@@ -31,7 +31,7 @@ ms.locfileid: "86499027"
 
 Если вы развернули контейнеры в [Azure Service Fabric](../../service-fabric/service-fabric-overview.md), рекомендуется включить [решение Service Fabric](../../service-fabric/service-fabric-diagnostics-oms-setup.md) и это решение, включив мониторинг событий кластера. Перед включением решения Service Fabric ознакомьтесь [с разрешениями Service Fabric](../../service-fabric/service-fabric-diagnostics-event-analysis-oms.md) , чтобы понять, что оно предоставляет и как его использовать.
 
-Если вы заинтересованы в мониторинге производительности рабочих нагрузок, развернутых в средах Kubernetes, которые размещены в Службе Azure Kubernetes (AKS), см. статью [Обзор службы "Azure Monitor для контейнеров"](../../azure-monitor/insights/container-insights-overview.md). Решение для мониторинга контейнеров не поддерживает мониторинг этой платформы.  
+Если вы заинтересованы в мониторинге производительности рабочих нагрузок, развернутых в средах Kubernetes, которые размещены в Службе Azure Kubernetes (AKS), см. статью [Обзор службы "Azure Monitor для контейнеров"](./container-insights-overview.md). Решение для мониторинга контейнеров не поддерживает мониторинг этой платформы.  
 
 На следующей схеме показаны связи между различными узлами контейнеров и агентами с Azure Monitor.
 
@@ -92,11 +92,11 @@ ms.locfileid: "86499027"
 
 Для установки и настройки решений используйте указанные ниже данные.
 
-1. Добавьте решение для мониторинга контейнеров в рабочую область Log Analytics из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.ContainersOMS?tab=Overview) или с помощью процесса, описанного в разделе [Добавление решений мониторинга из коллекция решений](../../azure-monitor/insights/solutions.md).
+1. Добавьте решение для мониторинга контейнеров в рабочую область Log Analytics из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.ContainersOMS?tab=Overview) или с помощью процесса, описанного в разделе [Добавление решений мониторинга из коллекция решений](./solutions.md).
 
 2. Установите и используйте Docker с агентом Log Analytics. В зависимости от операционной системы и оркестратора Docker можно использовать следующие методы настройки агента.
    - Для автономных узлов:
-     - В поддерживаемых операционных системах Linux установите и запустите Docker, а затем установите и настройте [агент Log Analytics для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md).  
+     - В поддерживаемых операционных системах Linux установите и запустите Docker, а затем установите и настройте [агент Log Analytics для Linux](../learn/quick-collect-linux-computer.md).  
      - В CoreOS невозможно запустить агент Log Analytics для Linux. Вместо этого можно запустить контейнерную версию агента Log Analytics для Linux. Если вы работаете с контейнерами в облаке "Azure для государственных организаций", то см. раздел "Для всех узлов контейнера Linux, включая CoreOS" или "Для всех узлов контейнера Linux Azure для государственных организаций, включая CoreOS".
      - В Windows Server 2016 и Windows 10 Установите подсистему DOCKER и клиент, а затем подключите агент для сбора информации и отправки его в Azure Monitor. Если вы используете среду Windows, см. сведения в разделе [Установка и настройка узлов контейнера Windows](#install-and-configure-windows-container-hosts).
    - Для многоузловой оркестрации Docker:
@@ -112,7 +112,7 @@ ms.locfileid: "86499027"
 Дополнительные сведения о том, как установить и настроить модули Docker на компьютерах под управлением Windows, см. в [этой статье](/virtualization/windowscontainers/manage-docker/configure-docker-daemon).
 
 > [!IMPORTANT]
-> Docker необходимо запустить **перед** установкой [агента Log Analytics для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) на узлах контейнера. Если вы уже установили агент перед установкой Docker, то необходимо переустановить агент Log Analytics для Linux. Дополнительные сведения о Docker см. на [веб-сайте Docker](https://www.docker.com).
+> Docker необходимо запустить **перед** установкой [агента Log Analytics для Linux](../learn/quick-collect-linux-computer.md) на узлах контейнера. Если вы уже установили агент перед установкой Docker, то необходимо переустановить агент Log Analytics для Linux. Дополнительные сведения о Docker см. на [веб-сайте Docker](https://www.docker.com).
 
 ### <a name="install-and-configure-linux-container-hosts"></a>Установка и настройка узлов контейнера Linux
 
@@ -120,7 +120,7 @@ ms.locfileid: "86499027"
 
 **Для всех узлов контейнера Linux, за исключением CoreOS:**
 
-- См. дополнительные сведения об [установке агента Log Analytics для Linux](../../azure-monitor/platform/log-analytics-agent.md).
+- См. дополнительные сведения об [установке агента Log Analytics для Linux](../platform/log-analytics-agent.md).
 
 **Для всех узлов контейнера Linux, включая CoreOS:**
 
@@ -140,7 +140,7 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
 
 **Переход от использования установленного агента Linux к использованию агента в контейнере**
 
-Если ранее вы использовали установленный напрямую агент и теперь вместо него хотите использовать агент, работающий в контейнере, сначала необходимо удалить агент Log Analytics для Linux. Сведения об удалении агента Log Analytics для Linux см. в [этой статье](../../azure-monitor/learn/quick-collect-linux-computer.md).  
+Если ранее вы использовали установленный напрямую агент и теперь вместо него хотите использовать агент, работающий в контейнере, сначала необходимо удалить агент Log Analytics для Linux. Сведения об удалении агента Log Analytics для Linux см. в [этой статье](../learn/quick-collect-linux-computer.md).  
 
 #### <a name="configure-a-log-analytics-agent-for-docker-swarm"></a>Настройка агента Log Analytics для Docker Swarm
 
@@ -185,8 +185,8 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
 
 Существует три способа добавления агента Log Analytics в Red Hat OpenShift, чтобы начать сбор данных мониторинга контейнера:
 
-* [Установка агента log Analytics для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) непосредственно на каждом узле OpenShift  
-* [включить расширение виртуальной машины Log Analytics](../../azure-monitor/learn/quick-collect-azurevm.md) на каждом узле OpenShift, размещенном в Azure;  
+* [Установка агента log Analytics для Linux](../learn/quick-collect-linux-computer.md) непосредственно на каждом узле OpenShift  
+* [включить расширение виртуальной машины Log Analytics](../learn/quick-collect-azurevm.md) на каждом узле OpenShift, размещенном в Azure;  
 * Установка агента Log Analytics как набора управляющих программ OpenShift  
 
 В этом разделе описаны действия, которые необходимо выполнить для установки агента Log Analytics как набора daemon-set для OpenShift.  
@@ -509,9 +509,9 @@ Start-Service docker
 
 #### <a name="install-windows-agents"></a>Установка агентов Windows
 
-Чтобы включить мониторинг контейнеров Windows и Hyper-V, установите Microsoft Monitoring Agent (MMA) на компьютерах Windows, которые являются узлами контейнера. Для компьютеров под управлением Windows в локальной среде см. раздел [Подключение компьютеров Windows к Azure Monitor](../../azure-monitor/platform/agent-windows.md). Для виртуальных машин, работающих в Azure, подключите их к Azure Monitor с помощью [расширения виртуальной машины](../../azure-monitor/learn/quick-collect-azurevm.md).
+Чтобы включить мониторинг контейнеров Windows и Hyper-V, установите Microsoft Monitoring Agent (MMA) на компьютерах Windows, которые являются узлами контейнера. Для компьютеров под управлением Windows в локальной среде см. раздел [Подключение компьютеров Windows к Azure Monitor](../platform/agent-windows.md). Для виртуальных машин, работающих в Azure, подключите их к Azure Monitor с помощью [расширения виртуальной машины](../learn/quick-collect-azurevm.md).
 
-Вы можете отслеживать контейнеры Windows, запущенные в Service Fabric. Однако сейчас для Service Fabric поддерживаются только [виртуальные машины, работающие в Azure](../../azure-monitor/learn/quick-collect-azurevm.md), и [компьютеры под управлением Windows в локальной среде](../../azure-monitor/platform/agent-windows.md).
+Вы можете отслеживать контейнеры Windows, запущенные в Service Fabric. Однако сейчас для Service Fabric поддерживаются только [виртуальные машины, работающие в Azure](../learn/quick-collect-azurevm.md), и [компьютеры под управлением Windows в локальной среде](../platform/agent-windows.md).
 
 Убедитесь, что решение для мониторинга контейнеров правильно установлено в Windows. Чтобы проверить, был ли пакет управления скачан должным образом, найдите файл *ContainerManagement.xxx*. Файлы должны находиться в папке, расположенной по адресу C:\Program Files\Microsoft Monitoring Agent\Agent\Health Service State\Management Packs.
 
@@ -527,9 +527,9 @@ Start-Service docker
 
 Данные собираются каждые три минуты следующими типами агентов.
 
-- [Агент Log Analytics для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md)
-- [Агент Windows](../../azure-monitor/platform/agent-windows.md)
-- [Расширение виртуальной машины Log Analytics](../../azure-monitor/learn/quick-collect-azurevm.md)
+- [Агент Log Analytics для Linux](../learn/quick-collect-linux-computer.md)
+- [Агент Windows](../platform/agent-windows.md)
+- [Расширение виртуальной машины Log Analytics](../learn/quick-collect-azurevm.md)
 
 ### <a name="container-records"></a>Записи контейнеров
 
@@ -640,3 +640,4 @@ Log Analytics добавляет к контейнеру пометку **Сбо
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Журналы запросов](../log-query/log-query-overview.md) для просмотра подробных записей данных контейнера.
+

@@ -7,12 +7,12 @@ ms.author: lechen
 ms.date: 10/11/2019
 ms.reviewer: mbullwin
 ms.custom: tracking-python
-ms.openlocfilehash: 35d56c5318046a0f9ffc52f61fac886c473cf0bc
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: eec4a46596b9cd39a43b6bb1f8969d41e99916b6
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87024373"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87322556"
 ---
 # <a name="set-up-azure-monitor-for-your-python-application"></a>Настройка Azure Monitor для приложения Python
 
@@ -43,7 +43,7 @@ python -m pip install opencensus-ext-azure
 
 Ниже приведены программы экспорта, которые Опенценсус сопоставляются с типами телеметрии, отображаемыми в Azure Monitor.
 
-| Основы наблюдаемости | Тип телеметрии в Azure Monitor    | Пояснение                                         |
+| Основы наблюдаемости | Тип телеметрии в Azure Monitor    | Объяснение                                         |
 |-------------------------|------------------------------------|-----------------------------------------------------|
 | Журналы                    | Трассировки, исключения, customEvents   | Данные телеметрии журналов, телеметрии исключений, данные телеметрии событий |
 | Метрики                 | customMetrics, performanceCounters | Счетчики производительности пользовательских метрик                |
@@ -474,13 +474,14 @@ exporter = metrics_exporter.new_metrics_exporter(
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Отслеживание входящих запросов](./../../azure-monitor/app/opencensus-python-dependency.md)
-* [Отслеживание исходящих запросов](./../../azure-monitor/app/opencensus-python-request.md)
-* [Сопоставление приложений](./../../azure-monitor/app/app-map.md)
-* [Поиск и диагностика проблем производительности с помощью Azure Application Insights](./../../azure-monitor/learn/tutorial-performance.md)
+* [Отслеживание входящих запросов](./opencensus-python-dependency.md)
+* [Отслеживание исходящих запросов](./opencensus-python-request.md)
+* [Сопоставление приложений](./app-map.md)
+* [Поиск и диагностика проблем производительности с помощью Azure Application Insights](../learn/tutorial-performance.md)
 
 ### <a name="alerts"></a>видны узлы
 
-* [Тесты доступности](../../azure-monitor/app/monitor-web-app-availability.md). Создавайте тесты, позволяющие проверить, доступен ли ваш сайт в Интернете.
-* [Интеллектуальная диагностика](../../azure-monitor/app/proactive-diagnostics.md). Эти тесты выполняются автоматически, поэтому вам не нужно их настраивать. Благодаря ей вы узнаете о необычном количестве неудачных запросов.
-* [Оповещения о метриках](../../azure-monitor/platform/alerts-log.md). Настройте оповещения, чтобы получать уведомления в случае, если метрика превысила пороговое значение. Их можно настроить для пользовательских метрик, добавляемых в код приложения.
+* [Тесты доступности](./monitor-web-app-availability.md). Создавайте тесты, позволяющие проверить, доступен ли ваш сайт в Интернете.
+* [Интеллектуальная диагностика](./proactive-diagnostics.md). Эти тесты выполняются автоматически, поэтому вам не нужно их настраивать. Благодаря ей вы узнаете о необычном количестве неудачных запросов.
+* [Оповещения о метриках](../platform/alerts-log.md). Настройте оповещения, чтобы получать уведомления в случае, если метрика превысила пороговое значение. Их можно настроить для пользовательских метрик, добавляемых в код приложения.
+

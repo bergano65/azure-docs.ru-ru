@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в клиенте
 description: В этой статье объясняется, как развертывать ресурсы в клиенте в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 05/08/2020
-ms.openlocfilehash: 45541bcbea5a80e55dbc9f80e1eae8e17189bf6e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/27/2020
+ms.openlocfilehash: a6523ff70dc7307713bb6aecf90e2ea9f8e2bfdd
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84945449"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321757"
 ---
 # <a name="create-resources-at-the-tenant-level"></a>Создание ресурсов на уровне клиента
 
@@ -16,15 +16,32 @@ ms.locfileid: "84945449"
 
 ## <a name="supported-resources"></a>Поддерживаемые ресурсы
 
-На уровне клиента можно развернуть ресурсы следующих типов:
+Не все типы ресурсов можно развернуть на уровне клиента. В этом разделе перечислены поддерживаемые типы ресурсов.
 
-* [deployments](/azure/templates/microsoft.resources/deployments) — для вложенных шаблонов, которые развертываются в группах управления или подписках;
-* [managementGroups](/azure/templates/microsoft.management/managementgroups)
+Для политик Azure используйте:
+
 * [policyAssignments](/azure/templates/microsoft.authorization/policyassignments);
 * [policyDefinitions](/azure/templates/microsoft.authorization/policydefinitions);
 * [policySetDefinitions](/azure/templates/microsoft.authorization/policysetdefinitions);
+
+Для управления доступом на основе ролей используйте:
+
 * [roleAssignments](/azure/templates/microsoft.authorization/roleassignments);
 * [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions).
+
+Для вложенных шаблонов, которые развертываются в группах управления, подписках или группах ресурсов, используйте:
+
+* [размещения](/azure/templates/microsoft.resources/deployments)
+
+Для создания групп управления используйте:
+
+* [managementGroups](/azure/templates/microsoft.management/managementgroups)
+
+Для управления затратами используйте:
+
+* [биллингпрофилес](/azure/templates/microsoft.billing/billingaccounts/billingprofiles)
+* [водим](/azure/templates/microsoft.billing/billingaccounts/billingprofiles/instructions)
+* [инвоицесектионс](/azure/templates/microsoft.billing/billingaccounts/billingprofiles/invoicesections)
 
 ### <a name="schema"></a>схема
 
@@ -93,6 +110,56 @@ New-AzTenantDeployment `
 Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
 
 Для каждого имени развертывания расположение остается неизменным. Нельзя создать развертывание в одном расположении, если в другом уже есть развертывание с таким же именем. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
+
+## <a name="deployment-scopes"></a>Области развертывания
+
+При развертывании в клиенте можно ориентироваться на клиент или группы управления, подписки и группы ресурсов в клиенте. Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
+
+Ресурсы, определенные в разделе ресурсов шаблона, применяются к клиенту.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [
+        tenant-level-resources
+    ],
+    "outputs": {}
+}
+```
+
+Чтобы выбрать целевую группу управления в клиенте, добавьте вложенное развертывание и укажите `scope` свойство.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "mgName": {
+            "type": "string"
+        }
+    },
+    "variables": {
+        "mgId": "[concat('Microsoft.Management/managementGroups/', parameters('mgName'))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-06-01",
+            "name": "nestedMG",
+            "scope": "[variables('mgId')]",
+            "location": "eastus",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    nested-template
+                }
+            }
+        }
+    ],
+    "outputs": {}
+}
+```
 
 ## <a name="use-template-functions"></a>Использование функций шаблонов
 

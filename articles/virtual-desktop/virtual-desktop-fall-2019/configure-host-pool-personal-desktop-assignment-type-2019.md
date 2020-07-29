@@ -1,6 +1,6 @@
 ---
-title: Назначение персонального рабочего стола Windows Virtual Desktop (найдется 2019) — Azure
-description: Узнайте, как настроить тип назначения для виртуального рабочего стола Windows (находящиеся в выпуске 2019) для пула узлов личного рабочего стола.
+title: Тип назначения личного рабочего стола Windows Virtual Desktop (классическая модель) — Azure
+description: Настройка типа назначения для пула узлов личного рабочего стола Windows (классический).
 services: virtual-desktop
 author: HeidiLohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 05/22/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 036e144922fcb49c486813b8668d944dd771536e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 76b68ba0a51d250e4ce143314c9126597133e97f
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087192"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87271048"
 ---
-# <a name="configure-the-personal-desktop-host-pool-assignment-type-fall-2019-release"></a>Настройка типа назначения пула узлов личного рабочего стола (выпуск 2019)
+# <a name="configure-the-personal-desktop-host-pool-assignment-type-for-windows-virtual-desktop-classic"></a>Настройка типа назначения пула узлов личного рабочего стола для виртуальных рабочих столов Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../configure-host-pool-personal-desktop-assignment-type.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../configure-host-pool-personal-desktop-assignment-type.md).
 
 Можно настроить тип назначения пула узлов персонального рабочего стола так, чтобы корректировать среду виртуальных рабочих столов Windows в точном соответствии с вашими потребностями. В этом разделе мы покажем вам, как настроить автоматическое или прямое назначение для ваших пользователей.
 

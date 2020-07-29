@@ -5,18 +5,18 @@ description: Узнайте, как вызвать конечную точку �
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
 ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 06/17/2020
-ms.custom: seodec18, tracking-python
-ms.openlocfilehash: ced9453982615485e25b56be9b7a36dc8f6ce988
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.topic: conceptual
+ms.custom: how-to, tracking-python
+ms.openlocfilehash: 991ad3afc51cc2f6dc1853a6b26f53bcb2fd1503
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84974676"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326415"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Использование модели Машинного обучения Azure, развернутой в качестве веб-службы
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -527,6 +527,6 @@ Power BI поддерживает использование Машинное о
 
 После развертывания веб-службы ее можно использовать в Power BI потоках данных. [Узнайте, как использовать веб-службу машинное обучение Azure из Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-integration).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы просмотреть эталонную архитектуру для оценки моделей Python и глубокого обучения в реальном времени, перейдите в [центр архитектуры Azure](/azure/architecture/reference-architectures/ai/realtime-scoring-python).

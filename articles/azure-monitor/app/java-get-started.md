@@ -3,14 +3,15 @@ title: Краткое руководство. анализ веб-приложе
 description: 'Сведения о мониторинге производительности веб-приложений Java с помощью Application Insights. '
 ms.topic: conceptual
 author: lgayhardt
+ms.custom: devx-track-java
 ms.author: lagayhar
 ms.date: 05/24/2019
-ms.openlocfilehash: d3835f88eb581693d10f68a9a495329466a657a2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 464bf650cbcaa99e947a21f5a87a5872f7b11178
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87014496"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326925"
 ---
 # <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Краткое руководство. Начало работы с Application Insights в веб-проекте Java
 
@@ -131,7 +132,7 @@ Application Insights — это расширяемая служба аналит
 2. Переменная среды: APPINSIGHTS_INSTRUMENTATIONKEY
 3. Файл конфигурации: *ApplicationInsights.xml*
 
-Вы также можете [задать его в коде](../../azure-monitor/app/api-custom-events-metrics.md#ikey):
+Вы также можете [задать его в коде](./api-custom-events-metrics.md#ikey):
 
 ```java
     String instrumentationKey = "00000000-0000-0000-0000-000000000000";
@@ -307,16 +308,17 @@ Application Insights может тестировать ваш веб-сайт ч
 * [Отслеживайте вызовы зависимостей.](java-agent.md)
 * [Отслеживайте счетчики производительности Unix.](java-collectd.md)
 * Добавляйте [мониторинг на веб-страницы](javascript.md), чтобы отслеживать время загрузки страниц, вызовы AJAX и исключения браузера.
-* Пишите [пользовательскую телеметрию](../../azure-monitor/app/api-custom-events-metrics.md) для отслеживания использования в браузере или на сервере.
+* Пишите [пользовательскую телеметрию](./api-custom-events-metrics.md) для отслеживания использования в браузере или на сервере.
 * Использование [аналитики](../log-query/log-query-overview.md) для мощных запросов телеметрии из приложения
 * Дополнительные сведения см. в разделе [Azure for Java developers](/java/azure) (Azure для разработчиков Java).
 
 <!--Link references-->
 
-[api]: ../../azure-monitor/app/api-custom-events-metrics.md
-[apiexceptions]: ../../azure-monitor/app/api-custom-events-metrics.md#trackexception
-[availability]: ../../azure-monitor/app/monitor-web-app-availability.md
-[diagnostic]: ../../azure-monitor/app/diagnostic-search.md
+[api]: ./api-custom-events-metrics.md
+[apiexceptions]: ./api-custom-events-metrics.md#trackexception
+[availability]: ./monitor-web-app-availability.md
+[diagnostic]: ./diagnostic-search.md
 [javalogs]: java-trace-logs.md
-[metrics]: ../../azure-monitor/platform/metrics-charts.md
+[metrics]: ../platform/metrics-charts.md
 [usage]: javascript.md
+

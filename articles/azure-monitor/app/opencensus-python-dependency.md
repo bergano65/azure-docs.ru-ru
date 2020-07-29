@@ -6,18 +6,18 @@ author: lzchen
 ms.author: lechen
 ms.date: 10/15/2019
 ms.custom: tracking-python
-ms.openlocfilehash: e99ea1d5a90455a4c470346fbbe5d1095c426e81
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: c5f78535a3bd5ab93d3020d14a6242257c492297
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86499466"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321298"
 ---
 # <a name="track-dependencies-with-opencensus-python"></a>Мониторинг зависимостей с помощью Опенценсус Python
 
 Зависимость — это внешний компонент, вызываемый приложением. Данные зависимостей собираются с помощью Опенценсус Python и различных интеграций. Затем данные отправляются в Application Insights под Azure Monitor в качестве `dependencies` телеметрии.
 
-Сначала выполните инструментирование приложения Python с помощью последнего [пакета SDK для Опенценсус Python](../../azure-monitor/app/opencensus-python.md).
+Сначала выполните инструментирование приложения Python с помощью последнего [пакета SDK для Опенценсус Python](./opencensus-python.md).
 
 ## <a name="in-process-dependencies"></a>Обрабатываемые зависимости
 
@@ -170,8 +170,9 @@ config_integration.trace_integrations(['sqlalchemy'])
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Схема сопоставления приложений](../../azure-monitor/app/app-map.md)
-* [Доступность](../../azure-monitor/app/monitor-web-app-availability.md)
-* [Поиск](../../azure-monitor/app/diagnostic-search.md)
-* [Запрос к журналу (Analytics)](../../azure-monitor/log-query/log-query-overview.md)
-* [Диагностика транзакции](../../azure-monitor/app/transaction-diagnostics.md)
+* [Схема сопоставления приложений](./app-map.md)
+* [Доступность](./monitor-web-app-availability.md)
+* [Поиск](./diagnostic-search.md)
+* [Запрос к журналу (Analytics)](../log-query/log-query-overview.md)
+* [Диагностика транзакции](./transaction-diagnostics.md)
+

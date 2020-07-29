@@ -4,12 +4,14 @@ description: В этой статье показано, как создават�
 author: peterpogorski
 ms.topic: article
 ms.date: 06/29/2018
+ms.custom: devx-track-java
 ms.author: pepogors
-ms.openlocfilehash: 999dbb8c36c4e0413f287b2a73cf39ab4acd15f5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cc65deb924a9f3367c2ea1d7c71544743ccf2697
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75610052"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87327367"
 ---
 # <a name="develop-java-service-fabric-applications-with-visual-studio-code"></a>Разработка приложений Java Service Fabric с помощью Visual Studio Code
 
@@ -20,7 +22,7 @@ ms.locfileid: "75610052"
 > [!IMPORTANT]
 > Приложения Java Service Fabric могут разрабатываться на компьютерах Windows, но развернуть их можно только в кластерах Linux в Azure. Отладка приложений Java в ОС Windows не поддерживается.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что уже установлено VS Code, расширение Service Fabric Reliable Services для VS Code и все зависимости, необходимые для среды разработки. Дополнительные сведения см в разделе [Руководство](./service-fabric-get-started-vs-code.md#prerequisites).
 
@@ -39,7 +41,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 
 ![Приложение для голосования Java в рабочей области](./media/service-fabric-develop-java-applications-with-vs-code/java-voting-application.png)
 
-## <a name="build-the-application"></a>Построение приложения
+## <a name="build-the-application"></a>Сборка приложения
 
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть **палитру команд** в VS Code.
 2. Найдите и выберите команду **Service Fabric: Build Application (Создание приложения Service Fabric)**. Выходные данные сборки передаются во встроенный терминал.
@@ -119,6 +121,6 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
        
 5. Закончив отладку, вы можете использовать команду **Service Fabric: Remove Application** (​​Service Fabric: удалить приложение) для удаления приложения для голосования из локального кластера. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в разделе [Разработка и отладка приложений Service Fabric на C# с помощью VS Code](./service-fabric-develop-csharp-applications-with-vs-code.md).

@@ -4,15 +4,15 @@ description: Изучите шаги и рекомендации по созда
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
-author: qianw211
-ms.author: dsindona
+author: AarathiN
+ms.author: aarathin
 ms.date: 07/14/2020
-ms.openlocfilehash: 6789e32cbbb1257a668e7be87a8b73a0511b6fb0
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: f9d7e88e78800df07dfe82d7336324eef38b92d5
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87127440"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326684"
 ---
 # <a name="create-an-azure-application-offer"></a>Создание предложения приложения Azure
 
@@ -187,7 +187,7 @@ ms.locfileid: "87127440"
 4. Условия использования
 5. Адрес политики конфиденциальности (ссылка)
 6. Название предложения
-7. Сводка
+7. Итоги
 8. Описание
 9. Снимки экрана и видео
 

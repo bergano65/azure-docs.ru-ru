@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
-ms.openlocfilehash: b0ae621791fb989fbb1fdab6a045bc8e9707bc74
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.openlocfilehash: 989399bcc86547b914deb442fa9793f6d79d0606
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83846534"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325327"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -77,10 +78,10 @@ ms.locfileid: "83846534"
 
 Выберите продукт ITSM, к которому вы подключаетесь, чтобы выполнить соответствующие шаги:
 
-- [System Center Service Manager](../../azure-monitor/platform/itsmc-connections.md#connect-system-center-service-manager-to-it-service-management-connector-in-azure);
-- [ServiceNow](../../azure-monitor/platform/itsmc-connections.md#connect-servicenow-to-it-service-management-connector-in-azure)
-- [Provance](../../azure-monitor/platform/itsmc-connections.md#connect-provance-to-it-service-management-connector-in-azure);  
-- [Cherwell](../../azure-monitor/platform/itsmc-connections.md#connect-cherwell-to-it-service-management-connector-in-azure)
+- [System Center Service Manager](./itsmc-connections.md#connect-system-center-service-manager-to-it-service-management-connector-in-azure);
+- [ServiceNow](./itsmc-connections.md#connect-servicenow-to-it-service-management-connector-in-azure)
+- [Provance](./itsmc-connections.md#connect-provance-to-it-service-management-connector-in-azure);  
+- [Cherwell](./itsmc-connections.md#connect-cherwell-to-it-service-management-connector-in-azure)
 
 Подготовив инструмент ITSM, выполните приведенные ниже шаги, чтобы создать подключение.
 
@@ -93,7 +94,7 @@ ms.locfileid: "83846534"
 
    ![Добавление подключения ITSM](media/itsmc-overview/add-new-itsm-connection.png)
 
-4. Укажите параметры подключения, как описано в статье [Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-услугами (предварительная версия)](../../azure-monitor/platform/itsmc-connections.md).
+4. Укажите параметры подключения, как описано в статье [Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-услугами (предварительная версия)](./itsmc-connections.md).
 
    > [!NOTE]
    >
@@ -150,13 +151,13 @@ ms.locfileid: "83846534"
 
 Вы также можете визуализировать инциденты, синхронизированные с задействованными компьютерами, в рамках решения "Сопоставление служб".
 
-Служба схемы услуги автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. Это решение позволяет рассматривать серверы как взаимосвязанные системы, предоставляющие важные службы. Схема услуги отображает сведения о подключениях между серверами, процессами и портами в любой подключенной по протоколу TCP архитектуре без дополнительной настройки. Пользователям требуется только установить агент. [Подробнее](../../azure-monitor/insights/service-map.md).
+Служба схемы услуги автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. Это решение позволяет рассматривать серверы как взаимосвязанные системы, предоставляющие важные службы. Схема услуги отображает сведения о подключениях между серверами, процессами и портами в любой подключенной по протоколу TCP архитектуре без дополнительной настройки. Пользователям требуется только установить агент. [Подробнее](../insights/service-map.md).
 
 При использовании решения "Сопоставление служб" вы можете просматривать элементы службы поддержки, созданные в решениях ITSM, как показано ниже:
 
 ![Снимок экрана с Log Analytics](media/itsmc-overview/itsmc-overview-integrated-solutions.png)
 
-Дополнительные сведения: [Схема услуги](../../azure-monitor/insights/service-map.md)
+Дополнительные сведения: [Схема услуги](../insights/service-map.md)
 
 
 ## <a name="additional-information"></a>Дополнительные сведения
@@ -284,7 +285,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
    - проверьте правильность ввода ими пользователя и пароля, а также идентификатора и секрета клиента каждого подключения.  
    - Проверьте наличие необходимых прав в соответствующем продукте ITSM, чтобы установить подключение.  
    - При использовании Service Manager  
-   - убедитесь, что веб-приложение успешно развернуто и создано гибридное подключение. Чтобы проверить подключение к локальному компьютеру Service Manager, перейдите по URL-адресу веб-приложения, как описано в документации по установке [гибридного подключения](../../azure-monitor/platform/itsmc-connections.md#configure-the-hybrid-connection).  
+   - убедитесь, что веб-приложение успешно развернуто и создано гибридное подключение. Чтобы проверить подключение к локальному компьютеру Service Manager, перейдите по URL-адресу веб-приложения, как описано в документации по установке [гибридного подключения](./itsmc-connections.md#configure-the-hybrid-connection).  
 
 2. Если данные из ServiceNow не синхронизируются с Log Analytics, убедитесь, что экземпляр ServiceNow не находится в спящем режиме. Иногда экземпляры разработки ServiceNow переходят в спящий режим при длительном периоде простоя. В противном случае сообщите о проблеме.
 3. Если поступают оповещения Log Analytics, но рабочие элементы не создаются в продукте ITSM либо элементы конфигурации не создаются или не связываются с рабочими элементами или же вам нужны другие сведения общего характера, просмотрите следующие компоненты:
@@ -294,7 +295,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 ## <a name="troubleshoot-service-manager-web-app-deployment"></a>Устранение неполадок развертывания веб-приложения Service Manager
 1.  При наличии неполадок с развертыванием веб-приложения проверьте наличие всех необходимых разрешений в подписке, используемой для создания или развертывания ресурсов.
 2.  Если во время выполнения [сценария](itsmc-service-manager-script.md) отображается ошибка **Ссылка на объект не указывает на экземпляр объекта**, проверьте значения в разделе **Конфигурация пользователя**.
-3.  Если вам не удается создать пространство имен ретранслятора шины обслуживания, убедитесь, в подписке зарегистрирован требуемый поставщик ресурсов. Если он не зарегистрирован, создайте пространство имен ретранслятора служебной шины на портале Azure вручную. Его также можно создать на портале Azure во время создания [гибридного подключения](../../azure-monitor/platform/itsmc-connections.md#configure-the-hybrid-connection).
+3.  Если вам не удается создать пространство имен ретранслятора шины обслуживания, убедитесь, в подписке зарегистрирован требуемый поставщик ресурсов. Если он не зарегистрирован, создайте пространство имен ретранслятора служебной шины на портале Azure вручную. Его также можно создать на портале Azure во время создания [гибридного подключения](./itsmc-connections.md#configure-the-hybrid-connection).
 
 
 ## <a name="contact-us"></a>Свяжитесь с нами
@@ -302,4 +303,5 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 Свяжитесь с нами по адресу [omsitsmfeedback@microsoft.com](mailto:omsitsmfeedback@microsoft.com), чтобы оставить отзывы или запросы касательно соединителя управления ИТ-службами.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами (предварительная версия)](../../azure-monitor/platform/itsmc-connections.md)
+[Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами (предварительная версия)](./itsmc-connections.md)
+

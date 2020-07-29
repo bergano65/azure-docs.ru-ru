@@ -8,13 +8,13 @@ ms.topic: conceptual
 author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
-ms.date: 05/19/2020
-ms.openlocfilehash: 2e1f98cffd17d0a8823cc5849830667fcdad1212
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.date: 07/27/2020
+ms.openlocfilehash: 346a59f085e766fef09d73b9e7baa03dad510148
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86515229"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321723"
 ---
 # <a name="create-an-azure-stream-analytics-job-in-azure-sql-edge-preview"></a>Создание задания Azure Stream Analytics в Azure SQL (Предварительная версия) 
 
@@ -41,9 +41,8 @@ ms.locfileid: "86515229"
 
 | Тип источника данных | Входные данные | Выходные данные | Описание |
 |------------------|-------|--------|------------------|
-| Центр Azure IoT Edge | Y | Y | Источник данных для чтения и записи потоковых данных в центр Azure IoT Edge. Дополнительные сведения см. в разделе [центр IOT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-runtime#iot-edge-hub).|
-| База данных SQL | N | Д | Соединение с источником данных для записи потоковых данных в Базу данных SQL. База данных может быть локальной базой данных в Azure SQL или удаленной базой данных в SQL Server или базе данных SQL Azure.|
-| Хранилище BLOB-объектов Azure | N | Да | Источник данных для записи данных в большой двоичный объект в учетной записи хранения Azure. |
+| Центр Azure IoT Edge | Да | Да | Источник данных для чтения и записи потоковых данных в центр Azure IoT Edge. Дополнительные сведения см. в разделе [центр IOT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-runtime#iot-edge-hub).|
+| База данных SQL | N | Да | Соединение с источником данных для записи потоковых данных в Базу данных SQL. База данных может быть локальной базой данных в Azure SQL или удаленной базой данных в SQL Server или базе данных SQL Azure.|
 | Kafka | Да | N | Источник данных для чтения потоковых данных из раздела Kafka. Этот адаптер сейчас доступен только для версий Intel или AMD Azure SQL. Она недоступна для ARM64 версии Azure SQL.|
 
 ### <a name="example-create-an-external-stream-inputoutput-object-for-azure-iot-edge-hub"></a>Пример. Создание внешнего потока входного или выходного объекта для центра Azure IoT Edge
@@ -54,7 +53,8 @@ ms.locfileid: "86515229"
 
     ```sql
     Create External file format InputFileFormat
-    WITH (  
+    WITH 
+    (  
        format_type = JSON,
     )
     go
@@ -63,8 +63,10 @@ ms.locfileid: "86515229"
 2. Создайте внешний источник данных для центра Azure IoT Edge. Следующий скрипт T-SQL создает подключение к источнику данных к концентратору IoT Edge, который работает на том же узле DOCKER, что и Azure SQL.
 
     ```sql
-    CREATE EXTERNAL DATA SOURCE EdgeHubInput WITH (
-    LOCATION = 'edgehub://'
+    CREATE EXTERNAL DATA SOURCE EdgeHubInput 
+    WITH 
+    (
+        LOCATION = 'edgehub://'
     )
     go
     ```
@@ -72,13 +74,15 @@ ms.locfileid: "86515229"
 3. Создайте объект внешнего потока для концентратора Azure IoT Edge. Следующий скрипт T-SQL создает объект потока для концентратора IoT Edge. В случае с объектом потока концентратора IoT Edge параметр LOCATION — это имя раздела центра IoT Edge или канала, который считывается или записывается в.
 
     ```sql
-    CREATE EXTERNAL STREAM MyTempSensors WITH (
-    DATA_SOURCE = EdgeHubInput,
-    FILE_FORMAT = InputFileFormat,
-    LOCATION = N'TemperatureSensors',
-    INPUT_OPTIONS = N'',
-    OUTPUT_OPTIONS = N''
-    )
+    CREATE EXTERNAL STREAM MyTempSensors 
+    WITH 
+    (
+        DATA_SOURCE = EdgeHubInput,
+        FILE_FORMAT = InputFileFormat,
+        LOCATION = N'TemperatureSensors',
+        INPUT_OPTIONS = N'',
+        OUTPUT_OPTIONS = N''
+    );
     go
     ```
 
@@ -107,9 +111,11 @@ ms.locfileid: "86515229"
     * Использует учетные данные, созданные ранее.
 
     ```sql
-    CREATE EXTERNAL DATA SOURCE LocalSQLOutput WITH (
-    LOCATION = 'sqlserver://tcp:.,1433'
-    ,CREDENTIAL = SQLCredential
+    CREATE EXTERNAL DATA SOURCE LocalSQLOutput 
+    WITH 
+    (
+        LOCATION = 'sqlserver://tcp:.,1433',
+        CREDENTIAL = SQLCredential
     )
     go
     ```
@@ -117,12 +123,52 @@ ms.locfileid: "86515229"
 4. Создайте объект внешнего потока. В следующем примере создается объект внешнего потока, указывающий на таблицу *dbo. Температуремеасурементс*в *мисклдатабасе*базы данных.
 
     ```sql
-    CREATE EXTERNAL STREAM TemperatureMeasurements WITH (
-    DATA_SOURCE = LocalSQLOutput,
-    LOCATION = N'MySQLDatabase.dbo.TemperatureMeasurements',
-    INPUT_OPTIONS = N'',
-    OUTPUT_OPTIONS = N''
+    CREATE EXTERNAL STREAM TemperatureMeasurements 
+    WITH 
+    (
+        DATA_SOURCE = LocalSQLOutput,
+        LOCATION = N'MySQLDatabase.dbo.TemperatureMeasurements',
+        INPUT_OPTIONS = N'',
+        OUTPUT_OPTIONS = N''
+    );
+    ```
+
+### <a name="example-create-an-external-stream-object-for-kafka"></a>Пример. Создание объекта внешнего потока для Kafka
+
+В следующем примере создается объект внешнего потока для локальной базы данных в Azure SQL. В этом примере предполагается, что сервер Kafka настроен для анонимного доступа. 
+
+1. Создайте внешний источник данных с помощью инструкции CREATE EXTERNAL DATA SOURCE. Следующий пример:
+
+    ```sql
+    Create EXTERNAL DATA SOURCE [KafkaInput] 
+    With
+    (
+        LOCATION = N'kafka://<kafka_bootstrap_server_name_ip>:<port_number>'
     )
+    GO
+    ```
+2. Создайте формат внешнего файла для входных данных Kafka. В следующем примере создается формат JSON-файла с со сжатием Gzip сжатием. 
+
+   ```sql
+   CREATE EXTERNAL FILE FORMAT JsonGzipped  
+    WITH 
+    (  
+        FORMAT_TYPE = JSON , 
+        DATA_COMPRESSION = 'org.apache.hadoop.io.compress.GzipCodec' 
+    )
+   ```
+    
+3. Создайте объект внешнего потока. В следующем примере создается объект внешнего потока, указывающий на раздел Kafka `*TemperatureMeasurement*` .
+
+    ```sql
+    CREATE EXTERNAL STREAM TemperatureMeasurement 
+    WITH 
+    (  
+        DATA_SOURCE = KafkaInput, 
+        FILE_FORMAT = JsonGzipped,
+        LOCATION = 'TemperatureMeasurement',     
+        INPUT_OPTIONS = 'PARTITIONS: 10' 
+    ); 
     ```
 
 ## <a name="create-the-streaming-job-and-the-streaming-queries"></a>Создание задания потоковой передачи и потоковых запросов
@@ -205,7 +251,7 @@ exec sys.sp_get_streaming_job @name=N'StreamingJob1'
 | Обработка | Задание потоковой передачи выполняется, и входные данные обрабатываются. Это свидетельствует о работоспособности задания потоковой передачи. |
 | Деградация | Задание потоковой передачи выполняется, но при обработке входных данных возникли неустранимые ошибки. Входное задание продолжит выполняться, но входные данные, вызывающие ошибки, будут удаляться. |
 | Остановлена | Выполнение задания потоковой передачи остановлено. |
-| Failed | Сбой задания потоковой передачи. Обычно это указывает на неустранимую ошибку при обработке. |
+| Сбой | Сбой задания потоковой передачи. Обычно это указывает на неустранимую ошибку при обработке. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

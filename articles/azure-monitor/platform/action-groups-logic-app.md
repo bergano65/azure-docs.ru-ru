@@ -6,12 +6,12 @@ ms.author: dukek
 ms.topic: conceptual
 ms.date: 07/18/2018
 ms.subservice: alerts
-ms.openlocfilehash: f592c42bc06c6bcd33ce6e10c506f8af0d8e0cf2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f6d5cbfc8d781e96a4d348f31f4a5d175ebd5a3d
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87008393"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321893"
 ---
 # <a name="how-to-trigger-complex-actions-with-azure-monitor-alerts"></a>Как активировать сложные действия с помощью оповещений Azure Monitor
 
@@ -19,7 +19,7 @@ ms.locfileid: "87008393"
 
 ## <a name="overview"></a>Обзор
 
-Когда активируется оповещение Azure Monitor, оно вызывает [группу действий](../../azure-monitor/platform/action-groups.md). Группы действий позволяют активировать одно или несколько действий для уведомления других лиц об оповещении и устранения его причины.
+Когда активируется оповещение Azure Monitor, оно вызывает [группу действий](./action-groups.md). Группы действий позволяют активировать одно или несколько действий для уведомления других лиц об оповещении и устранения его причины.
 
 Общий процесс приведен ниже:
 
@@ -294,6 +294,7 @@ ms.locfileid: "87008393"
 Служба Logic Apps имеет ряд различных соединителей, которые позволяют активировать действия в самых разных приложениях и базах данных. К таким приложениям, например, относятся Slack, SQL Server, Oracle, Salesforce. Дополнительные сведения о соединителях Azure Logic Apps см. в [этой статье](../../connectors/apis-list.md).  
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Изучите [обзор оповещений журнала действий Azure](../../azure-monitor/platform/alerts-overview.md) и узнайте, как получать оповещения.  
+* Изучите [обзор оповещений журнала действий Azure](./alerts-overview.md) и узнайте, как получать оповещения.  
 * Узнайте, как [настроить оповещения при поступлении уведомлений о Работоспособности служб Azure](../../service-health/alerts-activity-log-service-notifications-portal.md).
-* Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md).
+* Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](./action-groups.md).
+

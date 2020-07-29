@@ -7,12 +7,16 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/24/2017
 ms.author: briz
-ms.openlocfilehash: bdc55af23568b5785a831e81f352400c728c902e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom:
+- 'Role: Cloud Development'
+- 'Role: IoT Device'
+- 'Role: System Architecture'
+ms.openlocfilehash: 63497553f7cec2edf3c77ba8690dda2b15d104be
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "60400988"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324732"
 ---
 # <a name="overview-of-device-management-with-iot-hub"></a>Общие сведения об управлении устройствами с помощью Центра Интернета вещей
 
@@ -115,7 +119,7 @@ ms.locfileid: "60400988"
   
     ![Рисунок шаблона отчетов о ходе выполнения и состоянии управления устройства](./media/iot-hub-device-management-overview/report-progress-pattern.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 С помощью возможностей, шаблонов и библиотек кода, которые предоставляет Центр Интернета вещей для управления устройствами, можно создавать приложения Интернета вещей, отвечающие требованиям корпоративного оператора устройств Интернета вещей на каждом этапе жизненного цикла устройства.
 

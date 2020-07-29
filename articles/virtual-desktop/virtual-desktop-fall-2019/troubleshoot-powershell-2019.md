@@ -1,6 +1,6 @@
 ---
-title: Виртуальные рабочие столы Windows PowerShell (попадают 2019) — Azure
-description: Устранение неполадок с PowerShell при настройке среды клиента Windows для виртуальных рабочих столов (выпуски 2019).
+title: Windows Virtual Desktop (классическая модель) PowerShell — Azure
+description: Устранение неполадок с PowerShell при настройке среды клиента Windows для виртуальных рабочих столов (классическая модель).
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,21 +8,21 @@ ms.topic: troubleshooting
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 3171cc54de57b70a18a3f1b9ee3317cf29f79d4b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 04ef12d6de8820740be687bd09ffaa5a8e69eb86
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87085815"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87269620"
 ---
-# <a name="windows-virtual-desktop-powershell-fall-2019-release"></a>Windows Virtual Desktop PowerShell (выпуски 2019)
+# <a name="windows-virtual-desktop-classic-powershell"></a>Оболочка виртуальных рабочих столов Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../troubleshoot-powershell.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../troubleshoot-powershell.md).
 
 Используйте эту статью для устранения ошибок и проблем при использовании PowerShell с виртуальным рабочим столом Windows. Дополнительные сведения о службы удаленных рабочих столов PowerShell см. в статье [Windows Virtual Desktop PowerShell](/powershell/module/windowsvirtualdesktop/).
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 

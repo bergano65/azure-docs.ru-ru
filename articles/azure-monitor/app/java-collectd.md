@@ -3,21 +3,22 @@ title: Мониторинг производительности веб-прил
 description: Расширенный мониторинг производительности приложений на веб-сайте Java с подключаемым модулем CollectD для Application Insights.
 ms.topic: conceptual
 ms.date: 03/14/2019
-ms.openlocfilehash: 62a723dad7e9f6c2bfdabde159968d507d2d5d41
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 648d0e5adc289dfeb83a54c3dcb9ab7d25fc1cc4
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81537531"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87322607"
 ---
 # <a name="collectd-linux-performance-metrics-in-application-insights"></a>collectd: метрики производительности Linux в Application Insights
 
 
-Для работы с метриками производительности Linux в [Application Insights](../../azure-monitor/app/app-insights-overview.md) установите инструмент [collectd](https://collectd.org/) вместе с его подключаемым модулем Application Insights. Это решение с открытым исходным кодом собирает разнообразные данные системной и сетевой статистики.
+Для работы с метриками производительности Linux в [Application Insights](./app-insights-overview.md) установите инструмент [collectd](https://collectd.org/) вместе с его подключаемым модулем Application Insights. Это решение с открытым исходным кодом собирает разнообразные данные системной и сетевой статистики.
 
 Обычно collectd используется, если вы уже [инструментировали веб-службу Java с помощью Application Insights][java]. Это средство предоставляет больше данных, помогая вам повысить производительность приложения или диагностировать неполадки. 
 
 ## <a name="get-your-instrumentation-key"></a>Получение ключа инструментирования
-На [портале Microsoft Azure](https://portal.azure.com) откройте ресурс [Application Insights](../../azure-monitor/app/app-insights-overview.md), в котором требуется отобразить данные. (Либо [создайте новый ресурс](../../azure-monitor/app/create-new-resource.md ).)
+На [портале Microsoft Azure](https://portal.azure.com) откройте ресурс [Application Insights](./app-insights-overview.md), в котором требуется отобразить данные. (Либо [создайте новый ресурс](./create-new-resource.md).)
 
 Скопируйте ключ инструментирования, идентифицирующий этот ресурс.
 
@@ -104,7 +105,7 @@ ms.locfileid: "81537531"
 *Данные не отображаются в портале*
 
 * Откройте [Поиск][diagnostic] и проверьте поступление необработанных событий. Иногда они появляются в обозревателе метрик не сразу.
-* Вам может понадобиться [указать исключения брандмауэра для исходящих данных](../../azure-monitor/app/ip-addresses.md)
+* Вам может понадобиться [указать исключения брандмауэра для исходящих данных](./ip-addresses.md)
 * Включите трассировку в подключаемом модуле Application Insights. Добавьте в `<Plugin ApplicationInsightsWriter>`следующую строку:
   * `SDKLogger true`
 * Откройте терминал и запустите collectd в режиме подробного протоколирования, чтобы проверить, не сообщает ли он о каких-либо неполадках:
@@ -120,13 +121,12 @@ ms.locfileid: "81537531"
 
 <!--Link references-->
 
-[api]: ../../azure-monitor/app/api-custom-events-metrics.md
-[apiexceptions]: ../../azure-monitor/app/api-custom-events-metrics.md#track-exception
-[availability]: ../../azure-monitor/app/monitor-web-app-availability.md
-[diagnostic]: ../../azure-monitor/app/diagnostic-search.md
+[api]: ./api-custom-events-metrics.md
+[apiexceptions]: ./api-custom-events-metrics.md#track-exception
+[availability]: ./monitor-web-app-availability.md
+[diagnostic]: ./diagnostic-search.md
 [eclipse]: app-insights-java-eclipse.md
 [java]: java-get-started.md
 [javalogs]: java-trace-logs.md
-[metrics]: ../../azure-monitor/platform/metrics-charts.md
-
+[metrics]: ../platform/metrics-charts.md
 

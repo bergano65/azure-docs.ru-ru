@@ -1,6 +1,5 @@
 ---
-title: Коды ошибок REST API
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): REST API коды ошибок — Azure'
 description: Эти коды ошибок могут быть возвращены операцией с веб-службой машинного обучения Azure.
 keywords: ''
 services: machine-learning
@@ -12,13 +11,17 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: reference
 ms.date: 11/16/2016
-ms.openlocfilehash: 8030e44e85958495714f441303461722b6b96bf4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6dd736428e6a3a24de382be34904d78af0168081
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84115439"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326279"
 ---
 # <a name="azure-machine-learning-studio-classic-rest-api-error-codes"></a>Коды ошибок Машинное обучение Azure Studio (классическая модель) REST API
+
+**применимо к:** ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-azure-ml.md) ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) 
+
 
 Следующие коды ошибок могут возвращаться операцией в веб-службе Машинное обучение Azure Studio (классической).
  
