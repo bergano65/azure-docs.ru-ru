@@ -1,7 +1,7 @@
 ---
 title: Azure CLI пример скрипта. Настройка внешнего интерфейса IPv6
 titlesuffix: Azure Virtual Network
-description: Включение конечных точек IPv6 с помощью Azure CLI в виртуальной сети Azure
+description: Используйте пример скрипта Azure CLI, чтобы настроить конечные точки IPv6 и развернуть приложение с двойным стеком (IPv4 + IPv6) в Azure.
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -12,12 +12,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 04/23/2019
 ms.author: kumud
-ms.openlocfilehash: 1ef8742bc4f8de2d08d9bb4fc98b3df6f9420737
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5f5e741e972015820af2e0e33372eb41c9e78210
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80235028"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87281605"
 ---
 # <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-preview"></a>Пример настройки конечных точек IPv6 в сценарии виртуальной сети (Предварительная версия)
 

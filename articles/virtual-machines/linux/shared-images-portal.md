@@ -5,17 +5,17 @@ author: cynthn
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
 ms.subservice: imaging
-ms.topic: article
+ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 28cdc96020d085c6f44c8b6818aa76dd7eb29891
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d49bbebe4d38783342170693bd06f0dfc645f34d
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82789009"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288408"
 ---
 # <a name="create-an-azure-shared-image-gallery-using-the-portal"></a>Создание коллекции общих образов Azure с помощью портала
 
@@ -36,7 +36,7 @@ ms.locfileid: "82789009"
 
 
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Для выполнения примера в этой статье необходимо иметь существующий управляемый образ универсальной виртуальной машины или моментальный снимок специализированной виртуальной машины. Вы можете следовать указаниям в [руководстве по созданию пользовательского образа виртуальной машины Azure с Azure PowerShell](tutorial-custom-images.md) для создания управляемого образа или [создания моментального снимка](../windows/snapshot-copy-managed-disk.md) для специализированной виртуальной машины. Для управляемых образов и моментальных снимков размер диска данных не может превышать 1 ТБ.
 
@@ -69,7 +69,7 @@ ms.locfileid: "82789009"
 
 Если вы хотите удалить отдельные ресурсы, их необходимо удалить в порядке их сортировки. Например, чтобы удалить определение образа, необходимо удалить все версии образа, созданные на основе этого образа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 

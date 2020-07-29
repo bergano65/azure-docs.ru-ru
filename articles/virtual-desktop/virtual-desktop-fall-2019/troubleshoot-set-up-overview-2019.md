@@ -1,6 +1,6 @@
 ---
-title: Обзор устранения неполадок в виртуальных рабочих столах Windows — 2019 — Azure
-description: Общие сведения об устранении неполадок при настройке среды клиента виртуальных рабочих столов Windows.
+title: Обзор устранения неполадок в виртуальных рабочих столах Windows (классическая модель) — Azure
+description: Обзор устранения неполадок при настройке среды клиента виртуальных рабочих столов Windows (классическая модель).
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,21 +8,21 @@ ms.topic: troubleshooting
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 82ac5a8178973396c4c1975cb1c84d23e61430f7
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: efcdc203884a5aaff3b02e730f1dddb7fff66e95
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87069935"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289831"
 ---
-# <a name="troubleshooting-overview-feedback-and-support"></a>Общие сведения об устранении неисправностей, отзывы и поддержка
+#  <a name="windows-virtual-desktop-classic-troubleshooting-overview-feedback-and-support"></a>Обзор и устранение неполадок виртуальных рабочих столов Windows (классическая модель), Отзывы и поддержка
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../troubleshoot-set-up-overview.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../troubleshoot-set-up-overview.md).
 
 В этой статье приводятся общие сведения о проблемах, которые могут возникнуть при настройке среды клиента виртуальных рабочих столов Windows, а также способы решения этих проблем.
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 

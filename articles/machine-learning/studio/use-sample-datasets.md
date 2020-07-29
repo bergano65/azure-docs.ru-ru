@@ -1,6 +1,5 @@
 ---
-title: Использование примеров наборов данных
-titleSuffix: ML Studio (classic) - Azure
+title: Студия машинного обучения (классическая) Использование примеров наборов данных в Azure
 description: Описания наборов данных, используемых в примерах моделей, которые входят в состав Студии машинного обучения (классической). Эти наборы данных можно использовать для собственных экспериментов.
 services: machine-learning
 ms.service: machine-learning
@@ -10,14 +9,17 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/19/2018
-ms.openlocfilehash: 3cd7d880efaa5c69301c25c69d55f4b21dd97242
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 43f26133cb7fe36a399e2d98ca3e2129b88f52e8
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85321844"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326313"
 ---
 # <a name="use-the-sample-datasets-in-azure-machine-learning-studio-classic"></a>Используйте примеры наборов данных в Студии машинного обучения Azure (классической)
+
+**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+
 
 [top]: #machine-learning-sample-datasets
 

@@ -4,16 +4,16 @@ description: Узнайте, как с помощью интерфейса ко�
 author: cynthn
 ms.service: virtual-machines
 ms.workload: infrastructure-services
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/26/2020
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: 653106c54644749174fd8530fccf30329c7751ff
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f8515668cc30f62edadc0975533fe3bb9646e5e5
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87028776"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288391"
 ---
 # <a name="deploy-spot-vms-using-the-azure-cli"></a>Развертывание плашечных виртуальных машин с помощью Azure CLI
 

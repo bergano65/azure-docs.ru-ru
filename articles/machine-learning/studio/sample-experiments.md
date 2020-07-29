@@ -1,6 +1,5 @@
 ---
-title: Создание экспериментов на основе примеров
-titleSuffix: ML Studio (classic) - Azure
+title: 'Студия машинного обучения (классическая): запуск экспериментов из примеров — Azure'
 description: Узнайте, как использовать примеры экспериментов машинного обучения для создания новых экспериментов с использованием Коллекции решений ИИ Azure и Студии машинного обучения Azure (классической).
 services: machine-learning
 ms.service: machine-learning
@@ -10,14 +9,17 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/05/2018
-ms.openlocfilehash: 79251257e38c9a9b59f759192d3d536185396291
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: 4b26864c5ad8280fe4857ccdb2ce6fbacf1ba47b
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84706024"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324936"
 ---
 # <a name="create-azure-machine-learning-studio-classic-experiments-from-working-examples-in-azure-ai-gallery"></a>Создание экспериментов Студии машинного обучения (классической) на основе рабочих примеров из Коллекции решений ИИ Azure
+
+**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+
 
 [!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 

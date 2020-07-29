@@ -3,15 +3,15 @@ title: Использование Docker Compose
 description: Установка и использование DOCKER и создание на виртуальных машинах Linux с помощью Azure CLI.
 author: cynthn
 ms.service: virtual-machines-linux
-ms.topic: article
+ms.topic: how-to
 ms.date: 02/14/2019
 ms.author: cynthn
-ms.openlocfilehash: a56ad3fd5999600dfc576f0a0e34ff7221267934
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 1e28ea47f0f99d3690fdfcf8b5d4370fcbb334e0
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86502458"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289819"
 ---
 # <a name="get-started-with-docker-and-compose-to-define-and-run-a-multi-container-application-in-azure"></a>Приступая к работе с Docker и Compose для определения и запуска многоконтейнерного приложения в Azure
 С помощью [создания](https://github.com/docker/compose)простого текстового файла можно определить приложение, состоящее из нескольких контейнеров DOCKER. После этого приложение будет развернуто с помощью одной команды, которая выполняет все действия, необходимые для развертывания определенной среды. В этой статье показано, как быстро настроить блог WordPress с серверной базой данных SQL MariaDB на виртуальной машине Ubuntu. Решение Compose можно использовать для настройки и более сложных приложений.

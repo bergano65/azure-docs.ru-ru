@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: 19b7962462e5cdb03bad0c6004b8c19f781ccc69
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 723b8cf7a71e5af672c8665040645d55645fe9f7
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87005282"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87281860"
 ---
 # <a name="create-a-group-managed-service-account-gmsa-in-azure-active-directory-domain-services"></a>Создание групповой управляемой учетной записи службы (gMSA) в доменных службах Azure Active Directory
 
@@ -76,7 +76,7 @@ New-ADOrganizationalUnit -Name "myNewOU" -Path "DC=aaddscontoso,DC=COM"
 * Параметр **-Name** имеет значение *вебфармсвк* .
 * Параметр **-path** задает настраиваемое подразделение для gMSA, созданного на предыдущем шаге.
 * Записи DNS и имена субъектов-служб заданы для *WebFarmSvc.aaddscontoso.com*
-* Участникам в *ааддсконтосо-Server $* разрешено получать пароль, используя удостоверение.
+* Участникам в *ааддсконтосо-Server $* разрешено получать пароль и использовать удостоверение.
 
 Укажите собственные имена и доменные имена.
 
@@ -95,7 +95,7 @@ New-ADServiceAccount -Name WebFarmSvc `
 
 Теперь приложения и службы можно настроить для использования gMSA по мере необходимости.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о Gmsa см. в статье [Приступая к работе с групповыми управляемыми учетными записями служб][gmsa-start].
 
