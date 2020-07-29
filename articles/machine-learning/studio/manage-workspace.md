@@ -1,6 +1,5 @@
 ---
-title: Управление рабочими областями
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): Управление рабочими областями — Azure'
 description: Управление доступом к рабочим областям Машинное обучение Azure Studio (классические), развертывание веб-служб API Машинное обучение и управление ими
 services: machine-learning
 ms.service: machine-learning
@@ -10,13 +9,17 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 02/27/2017
-ms.openlocfilehash: 4d12b5fbfb934106f7c18edb2996b51e8f6a57f6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c501d7d93973338273246d803df86e4d723ae542
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84705140"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318459"
 ---
 # <a name="manage-an-azure-machine-learning-studio-classic-workspace"></a>Управление рабочей областью Машинное обучение Azure Studio (классическая модель)
+
+**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+
 
 > [!NOTE]
 > Сведения об управлении веб-службами на портале веб-служб машинного обучения см. в разделе [Управление веб-службой с помощью портала веб-служб машинного обучения Azure](manage-new-webservice.md).
@@ -47,5 +50,5 @@ ms.locfileid: "84705140"
 > 
 >Дополнительные сведения о настройке разрешений на доступ см. в статье [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * См. дополнительные сведения о [развертывании машинного обучения с использованием шаблонов Azure Resource Manager](deploy-with-resource-manager-template.md). 

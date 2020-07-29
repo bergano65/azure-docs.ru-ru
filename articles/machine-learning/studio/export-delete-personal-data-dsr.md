@@ -1,6 +1,5 @@
 ---
-title: Экспорт и удаление данных
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): экспорт & удаление данных — Azure'
 description: Данные в продукте, хранящиеся в Машинное обучение Azure Studio (классическая модель), доступны для экспорта и удаления с помощью портал Azure, а также через API-интерфейсы RESTFUL, прошедшие проверку подлинности. Доступ к данным телеметрии может осуществляться через портал конфиденциальности Azure. Эта статья поможет вам сделать это.
 services: machine-learning
 ms.service: machine-learning
@@ -10,13 +9,17 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 05/25/2018
-ms.openlocfilehash: 9f623357dfbc8fab8a2967df65cc53abc4bc9d57
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4fd0fb62b2a94667620904a070e386256b8e321c
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84696139"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318578"
 ---
 # <a name="export-and-delete-in-product-user-data-from-azure-machine-learning-studio-classic"></a>Экспорт и удаление данных из пользовательского продукта из Машинное обучение Azure Studio (классическая модель)
+
+**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+
 
 [!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
@@ -73,6 +76,6 @@ ms.locfileid: "84696139"
 ## <a name="export-studio-classic-data-with-powershell"></a>Экспорт данных студии (классическая модель) с помощью PowerShell
 Используйте PowerShell, чтобы экспортировать всю информацию в переносимый формат из Машинное обучение Azure Studio (классической) с помощью команд. Дополнительные сведения см. в статье [модуль PowerShell для машинное обучение Azure Studio (классическая модель)](powershell-module.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Документацию, посвященную веб-службам и плану обязательств, см. в разделе [машинное обучение Azure Studio (классическая модель) REST API справочнике](https://docs.microsoft.com/rest/api/machinelearning/). 

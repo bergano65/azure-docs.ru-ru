@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/15/2020
-ms.openlocfilehash: 5366166a31ee45c74c34b8af0e01da251bd7f7f0
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ff7472b764b0e65d69d9b694603e145440e89c0d
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86499228"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318119"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor: вопросы и ответы
 
@@ -272,7 +272,7 @@ WireData
 
 Это классическое приложение, которое можно использовать на веб-сервере IIS для настройки Application Insights в веб-приложениях. Оно не собирает телеметрию: его можно остановить, когда вы не настраиваете приложение. 
 
-[Подробнее](app/monitor-performance-live-website-now.md#questions).
+[Подробнее.](app/monitor-performance-live-website-now.md#questions)
 
 ### <a name="what-telemetry-is-collected-by-application-insights"></a>Какую телеметрию собирает Application Insights?
 
@@ -655,7 +655,7 @@ LogEntry : ({"Hello": "This example has multiple lines:","Docker/Moby": "will no
 В этом списке вопросов и ответов от Майкрософт приведены часто задаваемые вопросы об Azure Monitor для виртуальных машин. Если у вас есть другие вопросы об этом решении, вы можете задать их на [форуме для обсуждений](https://feedback.azure.com/forums/34192--general-feedback). Если вопрос задается часто, мы добавим его в эту статью, чтобы его можно было найти быстро и легко.
 
 ### <a name="can-i-onboard-to-an-existing-workspace"></a>Можно ли подключиться к существующей рабочей области?
-Если ваши виртуальные машины уже подключены к рабочей области Log Analytics, вы можете продолжить использовать эту рабочую область при подключении к Azure Monitor для виртуальных машин при условии, что эта рабочая область находится в одном из перечисленных [здесь](insights/vminsights-enable-overview.md#prerequisites) поддерживаемых регионов.
+Если виртуальные машины уже подключены к рабочей области Log Analytics, вы можете продолжать использовать эту рабочую область при подключении к Azure Monitor для виртуальных машин, если она находится в одном из [поддерживаемых регионов](insights/vminsights-configure-workspace.md#supported-regions).
 
 
 ### <a name="can-i-onboard-to-a-new-workspace"></a>Можно ли подключиться к новой рабочей области? 

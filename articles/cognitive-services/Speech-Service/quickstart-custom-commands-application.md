@@ -10,26 +10,36 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: sausin
-ms.openlocfilehash: 2ea850acf0ef581ea66733b0293ba044c87bb3a0
-ms.sourcegitcommit: f98ab5af0fa17a9bba575286c588af36ff075615
+ms.openlocfilehash: 05b47a786fe845460177b66b5bd54cdb140c246e
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85362148"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289419"
 ---
 # <a name="create-a-voice-assistant-using-custom-commands"></a>Создание голосового помощника с помощью пользовательских команд
 
 В этом кратком руководстве вы создадите и протестируете базовое приложение пользовательских команд с помощью Speech Studio. Кроме того, вы сможете получить доступ к этому приложению из клиентского приложения Windows. **Пользовательские команды** упрощают создание приложений с богатыми голосовыми настройками, оптимизированных для взаимодействия с голосовым интерфейсом. Она предоставляет единый интерфейс разработки, модель автоматического размещения и относительно низкую сложность, помогая вам сосредоточиться на создании оптимального решения для сценариев речевых команд.
 
+## <a name="region-availability"></a>Доступность по регионам
+В настоящее время пользовательские команды поддерживают подписки на речь, созданные в следующих регионах:
+* западная часть США
+* Западная часть США 2
+* East US
+* восточная часть США 2
+* Северная Европа
+* Западная Европа
+* центрально-западная часть США
+* Центральная Индия
+* Восточная Азия
+* Юго-Восточная Азия
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 > [!div class="checklist"]
-> * <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">Создание ресурса речи Azure в регионе, поддерживающем пользовательские команды.<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+> * <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">Создание ресурса речи Azure в регионе, поддерживающем пользовательские команды.<span class="docon docon-navigate-external x-hidden-focus"></span></a> Список поддерживаемых регионов см. в разделе о **доступности регионов** выше.
 > * Скачайте пример файла JSON для [смарт-комнаты Lite](https://aka.ms/speech/cc-quickstart) .
 > * Скачайте последнюю версию [клиента помощника по Windows Voice](https://aka.ms/speech/va-samples-wvac).
-
-> [!NOTE]
-> В настоящее время пользовательские команды поддерживают только подписки на речь в регионах westus, westus2 и норсеуропе.
 
 ## <a name="go-to-the-speech-studio-for-custom-commands"></a>Переход в речевое меню для пользовательских команд
 
@@ -93,7 +103,7 @@ ms.locfileid: "85362148"
 
 1. На левой панели выберите **Параметры** и в средней области выберите **Luis Resources (ресурсы** ).
 1. Выберите прогнозируемый ресурс или создайте его, выбрав **создать новый ресурс**.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
     
     > [!div class="mx-imgBorder"]
     > ![Настройка ресурсов LUIS](media/custom-commands/set-luis-resources.png)

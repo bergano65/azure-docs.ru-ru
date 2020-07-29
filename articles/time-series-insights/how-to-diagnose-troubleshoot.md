@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: fcd73a5bb6de162fc258d93398b7d00044429588
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d9a4f7aa270aa4ed2b02e61da984e14379a241a9
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87100521"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289938"
 ---
 # <a name="diagnose-and-troubleshoot-an-azure-time-series-insights-gen2-environment"></a>Диагностика и устранение неполадок среды Gen2 "аналитика временных рядов Azure"
 
@@ -121,7 +121,7 @@ ms.locfileid: "87100521"
 
 ## <a name="problem-all-my-instances-in-the-gen2-explorer-lack-a-parent"></a>Проблема. у всех моих экземпляров в обозревателе Gen2 отсутствует родитель
 
-Эта проблема может возникать, если в вашей среде не определена иерархия модели временных рядов. Дополнительные сведения см. в статье о [работе с моделями временных рядов](./time-series-insights-update-how-to-tsm.md).
+Эта проблема может возникать, если в вашей среде не определена иерархия модели временных рядов. Дополнительные сведения см. в статье о [работе с моделями временных рядов](/azure/time-series-insights/time-series-insights-overview).
 
   [![Экземпляры, не являющиеся родительскими, будут отображать предупреждение.](media/preview-troubleshoot/unparented-instances.png)](media/preview-troubleshoot/unparented-instances.png#lightbox)
 
@@ -135,7 +135,7 @@ ms.locfileid: "87100521"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как [работать с моделями временных рядов](./time-series-insights-update-how-to-tsm.md).
+- Узнайте, как [работать с моделями временных рядов](/azure/time-series-insights/time-series-insights-overview).
 
 - Дополнительные сведения о [поддерживаемых фигурах JSON](./how-to-shape-query-json.md).
 

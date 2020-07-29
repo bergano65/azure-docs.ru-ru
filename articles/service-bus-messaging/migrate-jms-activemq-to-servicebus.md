@@ -13,12 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/07/2020
 ms.author: aschhab
-ms.openlocfilehash: 7926e3b8aedde63c3a1a5a57c42b3d4f29cb9797
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-java
+ms.openlocfilehash: 35e2e86f68e1f53febabc75fcc537dbdd4481882
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87076244"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87369039"
 ---
 # <a name="migrate-existing-java-message-service-jms-20-applications-from-apache-activemq-to-azure-service-bus"></a>Перенос существующих приложений службы сообщений Java (JMS) 2,0 из Apache Активемк в служебную шину Azure
 
@@ -26,7 +27,7 @@ ms.locfileid: "87076244"
 
 Служебная шина Azure поддерживает платформу Java 2, выпуск Enterprise Edition и пружинные рабочие нагрузки, использующие API JMS 2,0 через расширенный протокол очередей сообщений (AMQP).
 
-## <a name="before-you-start"></a>Прежде чем начать
+## <a name="before-you-start"></a>Перед началом работы
 
 ### <a name="differences-between-azure-service-bus-and-apache-activemq"></a>Различия между служебной шиной Azure и Apache Активемк
 
@@ -59,7 +60,7 @@ ms.locfileid: "87076244"
 
 В рамках миграции и изменения клиентских приложений для взаимодействия с служебной шиной Azure данные, хранящиеся в Активемк, не переносятся в служебную шину. Может потребоваться пользовательское приложение для очистки очередей, разделов и подписок Активемк, а также воспроизведения сообщений в очередях, разделах и подписках служебной шины.
 
-#### <a name="authentication-and-authorization"></a>Аутентификация и авторизация
+#### <a name="authentication-and-authorization"></a>Проверка подлинности и авторизация
 
 Контроль доступа на основе ролей (RBAC), поддерживаемый Azure Active Directory, является предпочтительным механизмом проверки подлинности для служебной шины. Поскольку RBAC и аутентификация на основе утверждений в настоящее время не поддерживаются Apache QPID JMS, для проверки подлинности следует использовать ключи SAS.
 
@@ -83,13 +84,13 @@ ms.locfileid: "87076244"
 
 ### <a name="set-up-enterprise-configurations"></a>Настройка корпоративных конфигураций
 
-Служебная шина обеспечивает различные возможности корпоративной безопасности и обеспечения высокого уровня доступности. Дополнительные сведения можно найти в разделе 
+Служебная шина обеспечивает различные возможности корпоративной безопасности и обеспечения высокого уровня доступности. Дополнительные сведения см. в разделе: 
 
   * [Конечные точки службы для виртуальной сети](service-bus-service-endpoints.md)
   * [Брандмауэр](service-bus-ip-filtering.md).
   * [Шифрование на стороне службы с помощью управляемого клиентом ключа (BYOK)](configure-customer-managed-key.md)
   * [Частные конечные точки](private-link-service.md)
-  * [Аутентификация и авторизация](service-bus-authentication-and-authorization.md)
+  * [Проверка подлинности и авторизация](service-bus-authentication-and-authorization.md)
 
 ### <a name="monitoring-alerts-and-tracing"></a>Мониторинг, оповещения и трассировка
 

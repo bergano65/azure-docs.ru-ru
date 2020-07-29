@@ -1,6 +1,6 @@
 ---
 title: Развертывание сетевого интерфейса контейнера в виртуальной сети Azure | Документы Майкрософт
-description: Узнайте, как развернуть подключаемый модуль сетевого интерфейса контейнера (CNI) виртуальной сети Azure для кластеров Kubernetes, развернутых самостоятельно, развернутых с помощью ACS-Engine, а также для контейнеров Docker.
+description: Узнайте, как развернуть подключаемый модуль сетевого интерфейса контейнера виртуальной сети Azure (CNI) для кластеров Kubernetes.
 services: virtual-network
 documentationcenter: na
 author: aanandr
@@ -16,11 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 9/18/2018
 ms.author: aanandr
 ms.custom: ''
-ms.openlocfilehash: 7cae4b579a933c03ec3a08a00ef032c57d15093f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 09a0574666441138c143932e843080e8745f1b40
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84710020"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289596"
 ---
 # <a name="deploy-the-azure-virtual-network-container-network-interface-plug-in"></a>Развертывание подключаемого модуля сетевого интерфейса контейнера виртуальной сети Azure
 

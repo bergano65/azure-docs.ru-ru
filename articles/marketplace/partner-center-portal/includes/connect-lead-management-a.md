@@ -7,12 +7,14 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: include
 ms.date: 06/01/2020
 ms.custom: include file
-ms.openlocfilehash: 38f97f8f3397eb1737c2414f5bbbccf99503711e
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+author: mingshen-ms
+ms.author: mingshen
+ms.openlocfilehash: f07be72c556640ae1e0de52e961eeedb790a734c
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86121896"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87317737"
 ---
 Напрямую Подключайтесь к клиентам, перечисляя свое предложение в Marketplace и применяя систему управления отношениями с клиентами (CRM), чтобы вы могли получить контактную информацию клиента сразу после того, как клиент выражает интерес или развертывает продукт.
 

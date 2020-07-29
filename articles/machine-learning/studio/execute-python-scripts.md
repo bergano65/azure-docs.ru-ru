@@ -1,6 +1,5 @@
 ---
-title: Выполнение скриптов Python
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): выполнение скриптов Python — Azure'
 description: Узнайте, как использовать модуль выполнение скрипта Python для использования кода Python в экспериментах и веб-службах Машинное обучение Studio (классическая модель).
 services: machine-learning
 ms.service: machine-learning
@@ -10,13 +9,17 @@ author: likebupt
 ms.author: keli19
 ms.custom: tracking-python, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/12/2019
-ms.openlocfilehash: 4afb6dca94642ab9b908a4f07ff5de56677626f2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2652e3b5be108985557427b99fa7841b88bf28ef
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84696309"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318612"
 ---
 # <a name="execute-python-machine-learning-scripts-in-azure-machine-learning-studio-classic"></a>Выполнение скриптов машинного обучения Python в Машинное обучение Azure Studio (классическая модель)
+
+**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+
 
 Python — это ценное средство в сундука многих специалистов по обработке и анализу данных. Он используется на каждом этапе стандартных рабочих процессов машинного обучения, включая исследование данных, извлечение компонентов, обучение и проверку модели, а также развертывание.
 

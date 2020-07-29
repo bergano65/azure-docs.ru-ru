@@ -4,15 +4,15 @@ description: API запуска инициирует динамический п
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
-author: dsindona
-ms.author: dsindona
+author: mingshen-ms
+ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: 5c5448a853447a0eacc8d974a5b00d5d1e8f4be2
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: d612b796f85c9eaab1600c55cde7e79acb49f352
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86535949"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87292932"
 ---
 # <a name="go-live"></a>Запуск
 
@@ -28,8 +28,8 @@ ms.locfileid: "86535949"
 
 |  **Имя**      |   **Описание**                                                           | **Data type** |
 |  --------      |   ---------------                                                           | ------------- |
-| publisherid    | Идентификатор издателя для извлечения предложения, например `contoso`.       |  Строка       |
-| offerId        | Идентификатор извлекаемой записи предложения.                                   |  Строка       |
+| publisherid    | Идентификатор издателя для извлечения предложения, например `contoso`.       |  Тип String       |
+| offerId        | Идентификатор извлекаемой записи предложения.                                   |  Тип String       |
 | api-version    | Последняя версия API                                                   |  Дата         |
 |  |  |  |
 

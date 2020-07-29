@@ -4,15 +4,15 @@ description: В этой статье описаны общие действия
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-author: anbene
-ms.author: mingshen
+author: navits09
+ms.author: navits
 ms.date: 04/02/2020
-ms.openlocfilehash: 9bf02fe6552b47070d4f79c4c497830ac2bfad84
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: f3699892471a1535cda5fc182a4c9121fd3c250c
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86121781"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87317609"
 ---
 # <a name="power-bi-app-creation-overview"></a>Общие сведения о создании приложения Power BI
 
@@ -76,6 +76,6 @@ ms.locfileid: "86121781"
 - Укажите содержимое, удовлетворяющее критериям предложения, которые будут перечислены в AppSource. Дополнительные сведения см [. в разделе приложение для перечисления в AppSource. Вот как это](https://appsource.microsoft.com/blogs/have-an-app-to-list-on-appsource-here-s-how)делать.
 - Примите условия и следуйте [заявлению о конфиденциальности Майкрософт](https://privacy.microsoft.com/privacystatement).
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Далее
 
 - [Создание предложения Power BI приложения в центре партнеров](create-power-bi-app-offer.md)

@@ -1,6 +1,5 @@
 ---
-title: Интерпретировать результаты модели
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): результаты интерпретации модели — Azure'
 description: Выбор оптимального набора параметров для использования алгоритмов и визуализации выходных данных модели оценки.
 services: machine-learning
 ms.service: machine-learning
@@ -9,13 +8,17 @@ ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.date: 11/29/2017
-ms.openlocfilehash: a99c1d71ed7e718d4d47ba55573a16466f62de5f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 77704750344df7ae24b7f81bde6088762a00c86d
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84687775"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318595"
 ---
 # <a name="interpret-model-results-in-azure-machine-learning-studio-classic"></a>Интерпретация результатов модели в Студии машинного обучения Azure (классическая версия)
+
+**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+
 
 В этом разделе объясняется, как визуализировать и интерпретировать результаты прогноза в Машинное обучение Azure Studio (классическая модель). Когда вы обучите модель и получите с ее помощью прогнозы (оценки модели), этот результат нужно интерпретировать.
 

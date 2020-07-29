@@ -8,11 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 05/11/2020
 ms.author: anfeldma
-ms.openlocfilehash: 878b2685eb46af567f4dc7f50f0d10ca244143d3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 760938b3b3abcd5f6909af3ee5ac5fda179470fa
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85392018"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289379"
 ---
 # <a name="azure-cosmos-db-net-sdk-v2-for-sql-api-download-and-release-notes"></a>Azure Cosmos DB пакета SDK .NET v2 для API SQL: Загрузка и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -43,14 +44,17 @@ ms.locfileid: "85392018"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 > [!NOTE]
-> Если вы используете .NET Framework, см. последнюю версию 3. x [пакета SDK для .NET](sql-api-sdk-dotnet-standard.md), которая предназначена для .NET Standard. 
+> Если вы используете .NET Framework, см. последнюю версию 3. x [пакета SDK для .NET](sql-api-sdk-dotnet-standard.md), которая предназначена для .NET Standard.
+
+Следующие подверсии пакетов SDK для .NET доступны в версии 2. x. x:
 
 [!INCLUDE[Release notes](~/samples-cosmosdb-dotnet-v2/changelog.md)]
 
-
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
+
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
 ## <a name="see-also"></a>См. также раздел
+
 Дополнительные сведения о Cosmos DB см. на странице службы [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/). 
 

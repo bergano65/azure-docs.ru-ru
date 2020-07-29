@@ -1,6 +1,5 @@
 ---
-title: Загрузка данных записных книжек (Предварительная версия)
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): Загрузка данных записных книжек (Предварительная версия) в Azure'
 description: Как скачать данные записных книжек (Предварительная версия) в студии машинного обучения (классическая модель).
 ms.service: machine-learning
 ms.subservice: studio
@@ -8,14 +7,16 @@ ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.date: 04/15/2020
-ms.openlocfilehash: 8a1de4ceb42ac86d8f945ec973eaa52d6ddec736
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cc12204c5eabf857fd1143e71df9b2b505d88a23
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82208471"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318663"
 ---
 # <a name="download-notebookspreview-data"></a>Скачивание данных записных книжек (Предварительная версия)
+
+**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
 
 Функция записных книжек (Предварительная версия) была удалена в *апреле 13 2020*. Удаление вкладок записных книжек (Предварительная версия) и файлов записных книжек пользователя в регионах Azure по всему миру.
 

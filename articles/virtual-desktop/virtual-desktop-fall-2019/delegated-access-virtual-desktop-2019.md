@@ -1,6 +1,6 @@
 ---
-title: Делегированный доступ в виртуальном рабочем столе Windows — 2019 — Azure
-description: Как делегировать административные возможности развертыванию виртуальных рабочих столов Windows, включая примеры.
+title: Делегированный доступ в виртуальных рабочих столах Windows (классическая модель) — Azure
+description: Как делегировать административные возможности в развертывании виртуальных рабочих столов Windows (классическая модель), включая примеры.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 91be20de49f549f3530e6c817906f1abf8f106b6
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: fbb8c6e100a9f72c20bcfaba7049b6724ee458b2
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86527563"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87292537"
 ---
-# <a name="delegated-access-in-windows-virtual-desktop-fall-2019"></a>Делегированный доступ в виртуальном рабочем столе Windows выпадает 2019
+# <a name="delegated-access-in-windows-virtual-desktop-classic"></a>Делегированный доступ в виртуальном рабочем столе Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../delegated-access-virtual-desktop.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../delegated-access-virtual-desktop.md).
 
 Виртуальный рабочий стол Windows имеет делегированную модель доступа, которая позволяет определить объем доступа, который может иметь конкретный пользователь, назначив ему роль. Назначение ролей включает три компонента: субъект безопасности, определение роли и область. Модель делегированного доступа виртуальных рабочих столов Windows основана на модели RBAC Azure. Дополнительные сведения о конкретных назначениях ролей и их компонентах см. [в статье Общие сведения об управлении доступом на основе ролей в Azure](../../role-based-access-control/built-in-roles.md).
 

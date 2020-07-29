@@ -1,6 +1,5 @@
 ---
-title: Оценка моделей & перекрестной проверки
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): Оценка моделей & перекрестной проверки в Azure'
 description: Сведения о метриках, которые можно использовать для мониторинга производительности модели в Машинное обучение Azure Studio (классическая модель).
 services: machine-learning
 ms.service: machine-learning
@@ -10,14 +9,17 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/20/2017
-ms.openlocfilehash: bd6c291cd703d56f86dc26c041eb39023bba0578
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d2308b57859a7f8eb0aa6519246fbb52ffdf9e81
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84945109"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318646"
 ---
 # <a name="evaluate-model-performance-in-azure-machine-learning-studio-classic"></a>Оценка производительности модели в Машинное обучение Azure Studio (классическая модель)
+
+**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+
 
 В этой статье можно узнать о метриках, которые можно использовать для мониторинга производительности модели в Машинное обучение Azure Studio (классическая модель).  Оценка эффективности модели является одним из основных этапов процесса обработки и анализа данных. Она показывает, насколько успешно обученная модель обрабатывает (прогнозирует) набор данных. Машинное обучение Azure Studio (классическая модель) поддерживает оценку модели с помощью двух основных модулей машинного обучения: 
 + [Анализ модели][evaluate-model] 

@@ -7,11 +7,12 @@ ms.author: daviste
 ms.date: 03/17/2017
 ms.reviewer: mbullwin
 ms.custom: vs-azure
-ms.openlocfilehash: 151248f7cd6fe763643da42fc8edbe7c01a69cc7
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 07848d0b1a2677595eba0da53402993103289d4f
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83744134"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318170"
 ---
 # <a name="analyzing-trends-in-visual-studio"></a>Анализ трендов в Visual Studio
 Средство "Тренды Application Insights" визуализирует изменение важных событий телеметрии приложения с течением времени, помогая быстро выявлять проблемы и аномалии. В этом средстве можно перейти к более подробным диагностическим сведениям, что позволяет повысить производительность приложения, а также отслеживать причины исключений и анализировать данные пользовательских событий.
@@ -20,7 +21,7 @@ ms.locfileid: "83744134"
 
 ## <a name="configure-your-web-app-for-application-insights"></a>Настройка веб-приложения для использования с Application Insights
 
-Если вы еще не сделали это, [настройте веб-приложение для использования с Application Insights](../../azure-monitor/app/app-insights-overview.md). Так вы настроите отправку данных телеметрии на портал Application Insights. Средство "Тренды Application Insights" будет считывать поступающие данные телеметрии.
+Если вы еще не сделали это, [настройте веб-приложение для использования с Application Insights](./app-insights-overview.md). Так вы настроите отправку данных телеметрии на портал Application Insights. Средство "Тренды Application Insights" будет считывать поступающие данные телеметрии.
 
 Средство "Тренды Application Insights" доступно в Visual Studio 2015 с обновлением 3 и выше.
 
@@ -97,7 +98,7 @@ ms.locfileid: "83744134"
 ## <a name="next-steps"></a><a name="next"></a>Следующие шаги
 |  |  |
 | --- | --- |
-| **[Работа с Application Insights в Visual Studio](../../azure-monitor/app/visual-studio.md)**<br/>Поиск телеметрии, просмотр данных в CodeLens и настройка Application Insights — все это в Visual Studio |![Щелкните проект правой кнопкой мыши и последовательно выберите пункты "Application Insights" и "Поиск".](./media/visual-studio-trends/34.png) |
-| **[Добавление данных](../../azure-monitor/app/asp-net-more.md)**<br/>Мониторинг использования, доступности, зависимостей и исключений. Интеграция трассировок из платформ ведения журналов. Написание пользовательской телеметрии. |![Visual studio](./media/visual-studio-trends/64.png) |
-| **[Работа с порталом Application Insights](../../azure-monitor/app/overview-dashboard.md)**<br/>Панели мониторинга, эффективные средства диагностики и анализа, оповещения, карта динамических зависимостей приложения, а также экспорт данных телеметрии. |![Visual studio](./media/visual-studio-trends/62.png) |
+| **[Работа с Application Insights в Visual Studio](./visual-studio.md)**<br/>Поиск телеметрии, просмотр данных в CodeLens и настройка Application Insights — все это в Visual Studio |![Щелкните проект правой кнопкой мыши и последовательно выберите пункты "Application Insights" и "Поиск".](./media/visual-studio-trends/34.png) |
+| **[Добавление данных](./asp-net-more.md)**<br/>Мониторинг использования, доступности, зависимостей и исключений. Интеграция трассировок из платформ ведения журналов. Написание пользовательской телеметрии. |![Visual studio](./media/visual-studio-trends/64.png) |
+| **[Работа с порталом Application Insights](./overview-dashboard.md)**<br/>Панели мониторинга, эффективные средства диагностики и анализа, оповещения, карта динамических зависимостей приложения, а также экспорт данных телеметрии. |![Visual studio](./media/visual-studio-trends/62.png) |
 

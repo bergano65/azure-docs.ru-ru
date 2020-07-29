@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8b94d195ea1f31d228505f01c2a77a299e63c0a
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 487177b4a114ba7537ac4f1aa74a4e2472455d4b
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86518102"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87369566"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -289,6 +289,12 @@ ms.locfileid: "86518102"
 
 Пользователи с этой ролью могут включать, настраивать и контролировать службы и параметры, связанные с использованием гибридных удостоверений в Azure AD. Эта роль позволяет настроить в Azure AD один из трех поддерживаемых методов проверки подлинности: синхронизацию хэша паролей (PHS), сквозную проверку подлинности (PTA) или федерацию (AD FS или сторонний поставщик федерации), а также развернуть необходимую локальную инфраструктуру. Локальная инфраструктура включает агенты для подготовки и PTA. Эта роль дает возможность использовать простой единый вход (S-SSO), обеспечивающий беспроблемную проверку подлинности на устройствах, работающих не под управлением Windows 10, или на компьютерах не с ОС Windows Server 2016. Кроме того, эта роль позволяет просматривать журналы входа в систему, сведения о работоспособности и аналитические данные для целей мониторинга и устранения неполадок. 
 
+### <a name="insights-administrator"></a>[Администратор Insights](#insights-administrator-permissions)
+Пользователи с этой ролью могут получить доступ к полному набору административных возможностей в [приложении M365 Insights](https://go.microsoft.com/fwlink/?linkid=2129521). Эта роль имеет возможность чтения данных каталога, мониторинга работоспособности служб, запросов поддержки файлов и доступа к параметрам администратора Insights.
+
+### <a name="insights-business-leader"></a>[Руководитель предприятия Insights](#insights-business-leader-permissions)
+Пользователи с этой ролью могут получать доступ к набору панелей мониторинга и аналитических данных с помощью [приложения M365 Insights](https://go.microsoft.com/fwlink/?linkid=2129521). Сюда входит полный доступ ко всем панелям мониторинга, а также предоставлены аналитические сведения и функции просмотра данных. Пользователи с этой ролью не имеют доступа к параметрам конфигурации продукта, которым отвечает роль администратора Insights.
+
 ### <a name="intune-administrator"></a>[Администратор Intune](#intune-service-administrator-permissions)
 
 пользователи с этой ролью имеют глобальные разрешения в Microsoft Intune Online (если служба используется). Кроме того, администраторы этой роли могут управлять пользователями и устройствами, чтобы связать политику, а также создавать группы и управлять ими. Дополнительные сведения см. в статье [Управление доступом на основе ролей (RBAC) с помощью Microsoft Intune](https://docs.microsoft.com/intune/role-based-access-control).
@@ -314,22 +320,22 @@ ms.locfileid: "86518102"
 
 пользователи с этой ролью могут отслеживать уведомления и рекомендации по обновлениям работоспособности в [центре сообщений Office 365](https://support.office.com/article/Message-center-in-Office-365-38FB3333-BFCC-4340-A37B-DEDA509C2093) для своей организации в настроенных службах, таких как Exchange, Intune и Microsoft Teams. Читатели Центра сообщений еженедельно получают по электронной почте хэш-коды публикаций, обновлений и могут размещать общедоступные публикации в центре сообщений в Office 365. В Azure AD у пользователей с этой ролью будет только доступ на чтение данных в службах Azure AD, например данных пользователей и групп. Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
 
-### <a name="modern-commerce-administrator"></a>[Администратор современной коммерческой платформы](#modern-commerce-administrator-permissions)
+### <a name="modern-commerce-user"></a>[Современный пользователь Commerce](#modern-commerce-user-permissions)
 
 Не используйте. Эта роль автоматически назначается коммерческой платформой и не предназначена для любого другого использования. Этот процесс описан ниже.
 
-Роль администратора современной коммерческой платформы предоставляет определенным пользователям разрешение на доступ к центру администрирования Microsoft 365, а также возможность видеть в левой области навигации элементы **Главная**, **Выставление счетов** и **Поддержка**. Содержимое, доступное в этих областях, контролируется [ролями коммерческой платформы](https://docs.microsoft.com/azure/cost-management-billing/manage/understand-mca-roles), назначенными пользователям для управления продуктами, которые они приобрели для себя или для организации. Это могут быть такие задачи, как оплата счетов или доступ к учетным записям и профилям выставления счетов. 
+Роль пользователя современного Commerce предоставляет определенным пользователям разрешение на доступ к Microsoft 365 центру администрирования, а также сведения о **домашних**, **выставлении счетов**и **поддержке**в левой области навигации. Содержимое, доступное в этих областях, контролируется [ролями коммерческой платформы](https://docs.microsoft.com/azure/cost-management-billing/manage/understand-mca-roles), назначенными пользователям для управления продуктами, которые они приобрели для себя или для организации. Это могут быть такие задачи, как оплата счетов или доступ к учетным записям и профилям выставления счетов. 
 
-Пользователи с ролью администратора современной коммерческой платформы обычно имеют административные разрешения в других коммерческих системах Майкрософт, но не имеют ролей глобального администратора или администратора выставления счетов, используемых для доступа к центру администрирования. 
+Пользователи с ролью современного пользователя Live Commerce обычно имеют административные разрешения в других системах покупки Майкрософт, но не имеют ролей глобального администратора или администратора выставления счетов, используемых для доступа к центру администрирования. 
 
-**Когда назначается роль администратора современной коммерческой платформы**
+**Когда назначена современная роль пользователя "коммерческий Commerce"?**
 
-* **Самостоятельная покупка в Центре администрирования Microsoft 365** — самостоятельная покупка дает пользователям возможность опробовать новые продукты, самостоятельно купив их или зарегистрировавшись в них. Управление этими продуктами осуществляется в центре администрирования. Пользователям, которые самостоятельно совершают покупку, назначается роль в коммерческой системе, а также роль администратора современной коммерческой платформы для управления покупками в центре администрирования. Администраторы могут блокировать самостоятельную покупку (для Power BI, Power Apps, Power Automate) с помощью [PowerShell](https://docs.microsoft.com/microsoft-365/commerce/subscriptions/allowselfservicepurchase-powershell?view=o365-worldwide). Дополнительные сведения см. на странице [Вопросы и ответы по самостоятельной покупке](https://docs.microsoft.com/microsoft-365/commerce/subscriptions/self-service-purchase-faq?view=o365-worldwide).  
-* **Покупки в коммерческом магазине Майкрософт** — аналогично самостоятельной покупке: когда пользователь покупает продукт или службу в Microsoft AppSource или Azure Marketplace, назначается роль администратора современной коммерческой платформы, если у него нет роли глобального администратора или администратора выставления счетов. В некоторых случаях пользователям может запрещаться совершать эти покупки. Дополнительные сведения см. в статье [Коммерческая платформа Майкрософт](https://docs.microsoft.com/azure/marketplace/marketplace-faq-publisher-guide#what-could-block-a-customer-from-completing-a-purchase).
-* **Предложения от Майкрософт** — официальное предложение от корпорации Майкрософт приобрести продукты и службы Майкрософт. Если у пользователя, принимающего предложение, нет роли глобального администратора или администратора выставления счетов в Azure AD, им назначается роль, необходимая для принятия предложения, и роль администратора современной коммерческой платформы для доступа к центру администрирования. При доступе к центру администрирования он может использовать только те функции, которые разрешены его коммерческой ролью.
-* **Коммерческие роли** — некоторым пользователям назначаются коммерческие роли. Если пользователь не является глобальным администратором или администратором выставления счетов, он получает роль администратора современной коммерческой платформы для доступа к центру администрирования.  
+* **Самостоятельная покупка в Центре администрирования Microsoft 365** — самостоятельная покупка дает пользователям возможность опробовать новые продукты, самостоятельно купив их или зарегистрировавшись в них. Управление этими продуктами осуществляется в центре администрирования. Пользователям, которые выполняют самостоятельную покупку, назначается роль в системе торговли, а также современная роль пользователя Commerce для управления покупками в центре администрирования. Администраторы могут блокировать самостоятельную покупку (для Power BI, Power Apps, Power Automate) с помощью [PowerShell](https://docs.microsoft.com/microsoft-365/commerce/subscriptions/allowselfservicepurchase-powershell?view=o365-worldwide). Дополнительные сведения см. на странице [Вопросы и ответы по самостоятельной покупке](https://docs.microsoft.com/microsoft-365/commerce/subscriptions/self-service-purchase-faq?view=o365-worldwide).  
+* **Покупки в коммерческом магазине Майкрософт** — как при самостоятельном приобретении, когда пользователь покупает продукт или услугу Microsoft AppSource или Azure Marketplace, роль пользователя современной Commerce назначается, если у них нет роли администратора глобального администратора или выставления счетов. В некоторых случаях пользователям может запрещаться совершать эти покупки. Дополнительные сведения см. в статье [Коммерческая платформа Майкрософт](https://docs.microsoft.com/azure/marketplace/marketplace-faq-publisher-guide#what-could-block-a-customer-from-completing-a-purchase).
+* **Предложения от Майкрософт** — официальное предложение от корпорации Майкрософт приобрести продукты и службы Майкрософт. Когда лицо, принимающее предложение, не имеет роли глобального администратора или администратора выставления счетов в Azure AD, им назначаются как роль для коммерческого выполнения предложения, так и роль пользователя современного Commerce для доступа к центру администрирования. При доступе к центру администрирования он может использовать только те функции, которые разрешены его коммерческой ролью.
+* **Коммерческие роли** — некоторым пользователям назначаются коммерческие роли. Если пользователь не является администратором глобальной группы или администратора выставления счетов, он получает роль пользователя современной коммерческой коммерции, чтобы они могли получить доступ к центру администрирования.  
 
-Когда назначение роли администратора современной коммерческой платформы пользователю отменяется, он утрачивает доступ к центру администрирования Microsoft 365. Если он управлял любыми продуктами для самостоятельного использования или для организации, то больше не сможет управлять ими. Это относится в том числе к назначению лицензий, изменению методов оплаты, оплате счетов и другим задачам управления подписками.
+Если роль пользователя современной коммерческой коммерции не назначена пользователю, она теряет доступ к Microsoft 365 центре администрирования. Если он управлял любыми продуктами для самостоятельного использования или для организации, то больше не сможет управлять ими. Это относится в том числе к назначению лицензий, изменению методов оплаты, оплате счетов и другим задачам управления подписками.
 
 ### <a name="network-administrator"></a>[Администратор сети](#network-administrator-permissions)
 
@@ -1224,6 +1230,27 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 
+### <a name="insights-administrator-permissions"></a>Разрешения администратора Insights
+
+Имеет доступ к сдминистративе в приложении M365 Insights. 
+
+| **Действия** | **Описание** |
+| --- | --- |
+| microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| Microsoft. Insights/Аллентитиес/Аллтаскс | Управление всеми аспектами аналитики. |
+| microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
+| microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
+| microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
+
+### <a name="insights-business-leader-permissions"></a>Разрешения для бизнес-лидера Insights
+
+Может просматривать панели мониторинга и аналитические сведения и предоставлять к ним доступ с помощью приложения M365 Insights.
+
+| **Действия** | **Описание** |
+| --- | --- |
+| Microsoft. Insights/отчеты/чтение | Просмотр отчетов и панели мониторинга в приложении Insights. |
+| Microsoft. Insights/Programs/Update | Развертывание программ и управление ими в приложении Insights. |
 
 ### <a name="intune-service-administrator-permissions"></a>Разрешения администратора службы Intune
 
@@ -1338,7 +1365,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.messageCenter/messages/read | Чтение сообщений в microsoft.office365.messageCenter. |
 
-### <a name="modern-commerce-administrator-permissions"></a>Разрешения администратора современной коммерческой платформы
+### <a name="modern-commerce-user-permissions"></a>Современные разрешения для пользователей Commerce
 Может управлять коммерческими покупками для компании, отдела или группы. 
 
 > [!NOTE]
@@ -1619,24 +1646,26 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
+| microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.directory/applications/policies/update | Изменение свойства applications.policies в Azure Active Directory. |
 | microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | microsoft.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
+| Microsoft. Directory/Идентитипротектион/Аллпропертиес/Read | Чтение всех ресурсов в microsoft.aad.identityProtection. |
+| Microsoft. Directory/Идентитипротектион/Аллпропертиес/Update | Обновление всех ресурсов в microsoft.aad.identityProtection. |
 | microsoft.directory/policies/basic/update | Обновление базовых свойств политик в Azure Active Directory. |
 | microsoft.directory/policies/create | Создание политик в Azure Active Directory. |
 | microsoft.directory/policies/delete | Удаление политик в Azure Active Directory. |
 | microsoft.directory/policies/owners/update | Изменение свойства policies.owners в Azure Active Directory. |
 | microsoft.directory/policies/tenantDefault/update | Обновление свойства policies.tenantDefault в Azure Active Directory. |
+| Microsoft. Directory/Привилежедидентитиманажемент/Аллпропертиес/Read | Чтение всех ресурсов в microsoft.aad.privilegedIdentityManagement. |
 | microsoft.directory/servicePrincipals/policies/update | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
 | microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
-| microsoft.aad.identityProtection/allEntities/read | Чтение всех ресурсов в microsoft.aad.identityProtection. |
-| microsoft.aad.identityProtection/allEntities/update | Обновление всех ресурсов в microsoft.aad.identityProtection. |
-| microsoft.aad.privilegedIdentityManagement/allEntities/read | Чтение всех ресурсов в microsoft.aad.privilegedIdentityManagement. |
-| microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.protectionCenter/allEntities/read | Чтение всех аспектов Центра защиты Office 365. |
 | microsoft.office365.protectionCenter/allEntities/update | Обновление всех ресурсов в microsoft.office365.protectionCenter. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
+| microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
+| microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 
 ### <a name="security-operator-permissions"></a>Разрешения оператора безопасности
 
@@ -1649,12 +1678,13 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.cloudAppSecurity/allEntities/allTasks | Чтение и настройка параметров Microsoft Cloud App Security. |
-| microsoft.aad.identityProtection/allEntities/read | Чтение всех ресурсов в microsoft.aad.identityProtection. |
-| microsoft.aad.privilegedIdentityManagement/allEntities/read | Чтение всех ресурсов в microsoft.aad.privilegedIdentityManagement. |
 | microsoft.azure.advancedThreatProtection/allEntities/read | Просмотр и настройка параметров Расширенной защиты от угроз Azure AD. |
+| Microsoft. Directory/Клаудаппсекурити/Аллпропертиес/Аллтаскс | Чтение и настройка параметров Microsoft Cloud App Security. |
+| Microsoft. Directory/Идентитипротектион/Аллпропертиес/Read | Чтение всех ресурсов в microsoft.aad.identityProtection. |
+| Microsoft. Directory/Привилежедидентитиманажемент/Аллпропертиес/Read | Чтение всех ресурсов в microsoft.aad.privilegedIdentityManagement. |
 | microsoft.intune/allEntities/allTasks | Управление всеми аспектами Intune. |
 | microsoft.office365.securityComplianceCenter/allEntities/allTasks | Просмотр и настройка параметров в Центре безопасности и соответствия требованиям. |
+| microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 | microsoft.windows.defenderAdvancedThreatProtection/allEntities/read | Просмотр и настройка параметров Advanced Threat Protection в Защитнике Windows. |
 
 ### <a name="security-reader-permissions"></a>Разрешения читателя сведений о безопасности
@@ -1872,13 +1902,15 @@ Device Users (Пользователи устройства) | Не рекоме
 Приглашающий гостей | Приглашающий гостей | 95e79109-95c0-4d8e-aee3-d01accf2d47b
 Администратор службы технической поддержки | администратор службы технической поддержки; | 729827e3-9c14-49f7-bb1b-9608f156bbb8
 Администратор гибридных удостоверений | Администратор гибридных удостоверений | 8ac3fc64-6eca-42ea-9e69-59f4c7b60eb2
+Администратор Insights | Администратор Insights | eb1f4a8d-243a-41f0-9fbd-c7cdf6c5ef7c
+Руководитель предприятия Insights | Руководитель предприятия Insights | 31e939ad-9672-4796-9c2e-873181342d2d
 Администратор службы Intune | Администратор Intune | 3a2c62db-5318-420d-8d74-23affee5d9d5
 Администратор Kaizala | Администратор Kaizala | 74ef975b-6605-40af-a5d2-b9539d836353
 Администратор лицензий | Администратор лицензий | 4d6ac14f-3453-41d0-bef9-a3e0c569773a
 Администратор службы Lync | администратор Skype для бизнеса; | 75941009-915a-4869-abe7-691bff18279e
 Читатель конфиденциальности данных Центра сообщений | Читатель конфиденциальности данных Центра сообщений | ac16e43d-7b2d-40e0-ac05-243ff356ab5b
 Читатель Центра сообщений | Читатель центра сообщений | 790c1fb9-7f7d-4f88-86a1-ef1f95c05c1b
-Администратор современной коммерческой платформы | Администратор современной коммерческой платформы | d24aef57-1500-4070-84db-2666f29cf966
+Современный пользователь Commerce | Современный пользователь Commerce | d24aef57-1500-4070-84db-2666f29cf966
 Администратор сети | Администратор сети | d37c8bed-0711-4417-ba38-b4abe66ce4c2
 Администратор приложений Office | Администратор приложений Office | 2b745bdf-0803-4d80-aa65-822c4493daac
 Служба поддержка партнеров уровня 1 | Не отображается, так как не должно использоваться. | 4ba39ca4-527c-499a-b93d-d9b492c50246

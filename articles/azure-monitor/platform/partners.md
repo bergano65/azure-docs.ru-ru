@@ -4,12 +4,12 @@ description: Узнайте о партнерах Azure Monitor и о том, к
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 05/29/2020
-ms.openlocfilehash: f40d38d182e1a8c233b15f711fd557a5d72e8f30
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 994dfe0d7e252fd2aea489c363e76f0956715048
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077320"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318340"
 ---
 # <a name="azure-monitor-partner-integrations"></a>Интеграция Azure Monitor с продуктами партнеров
 
@@ -268,7 +268,7 @@ Sumo Logic — это безопасное облачное решение сл�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Дополнительные сведения о Azure Monitor](../../azure-monitor/overview.md)
+- [Дополнительные сведения о Azure Monitor](../overview.md)
 - [Доступ к метрикам с помощью REST API](rest-api-walkthrough.md)
 - [Потоковая передача журнала действий Azure в концентраторы событий](./activity-log.md#legacy-collection-methods)
 - [Потоковая передача журналов ресурсов в службу сторонних разработчиков](./resource-logs.md#send-to-azure-event-hubs)
@@ -281,13 +281,13 @@ Sumo Logic — это безопасное облачное решение сл�
 [atlassian-doc]: https://azure.microsoft.com/blog/automated-notifications-from-azure-monitor-for-atlassian-jira/
 [botmetric-doc]: https://www.botmetric.com/blog/announcing-botmetric-cost-governance-beta-microsoft-azure/ "Общие сведения о Botmetric."
 [circonus-doc]: https://docs.circonus.com/circonus/agents/cloud-agent/azure/ 
-[cloudhealth-doc]: https://www.cloudhealthtech.com/azure
+[cloudhealth-doc]: https://www.cloudhealthtech.com/products/azure-management
 [cloudmonix-doc]: https://cloudmonix.com/features/azure-management/ "Общие сведения о CloudMonix."
 [datadog-doc]: https://docs.datadoghq.com/integrations/azure/ "Документация по DataDog."
 [dynatrace-doc]: https://help.dynatrace.com/infrastructure-monitoring/paas/how-do-i-monitor-microsoft-azure-web-apps/ "Документация по Dynatrace."
 [elastic-doc]: https://www.elastic.co/guide/en/logstash/master/azure-module.html "Документация по Elastic"
 [grafana-doc]: ./grafana-plugin.md "Интеграция Grafana Azure Monitor."
-[influxdata-doc]: ./../../azure-monitor/platform/collect-custom-metrics-linux-telegraf.md "Azure Monitor неравномерным поступлением Telegraf Data Integration."
+[influxdata-doc]: ./collect-custom-metrics-linux-telegraf.md "Azure Monitor неравномерным поступлением Telegraf Data Integration."
 [logicmonitor-doc]: https://www.logicmonitor.com/lp/azure-monitoring/ "Документация по Logic Monitor."
 [moogsoft-doc]: https://www.moogsoft.com/partners/microsoft-azure "Документация по Moogsoft."
 [newrelic-doc]: https://newrelic.com/azure "Документация по NewRelic."
@@ -302,3 +302,4 @@ Sumo Logic — это безопасное облачное решение сл�
 [splunk-doc]: https://github.com/Microsoft/AzureMonitorAddonForSplunk/wiki/Azure-Monitor-Addon-For-Splunk "Документация по Splunk."
 [sumologic-doc]: https://www.sumologic.com/azure "Документация по SumoLogic."
 [turbonomic-doc]: https://turbonomic.com/ "Общие сведения о Turbonomic."
+

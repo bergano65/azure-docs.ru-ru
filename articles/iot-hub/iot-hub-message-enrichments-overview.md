@@ -8,11 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: robinsh
-ms.openlocfilehash: c3dbd01faf61c164c88f09b0da03c07be4abd187
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 08eb5fd4d28421105988d64b99afb441a0b824f4
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75429124"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290305"
 ---
 # <a name="message-enrichments-for-device-to-cloud-iot-hub-messages"></a>Дополнения сообщений для сообщений центра Интернета вещей, отправляемых с устройства в облако
 
@@ -63,7 +64,7 @@ ms.locfileid: "75429124"
 | ----- | -----| 
 | Портал | [Портал Azure](https://portal.azure.com) | См. [руководство по обогащению сообщений](tutorial-message-enrichments.md) | 
 | Azure CLI   | [AZ IOT сообщение в центре Интернета вещей](https://docs.microsoft.com/cli/azure/iot/hub/message-enrichment?view=azure-cli-latest) |
-| Azure PowerShell | [Add-AzIotHubMessageEnrichment;](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubmessageenrichment?view=azps-2.8.0) |
+| Azure PowerShell | [Add-AzIotHubMessageEnrichment;](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubmessageenrichment) |
 
 Добавление дополнений сообщений не приводит к задержке маршрутизации сообщений.
 
@@ -91,7 +92,7 @@ ms.locfileid: "75429124"
 
 Дополнения сообщений доступны без дополнительной платы. В настоящее время при отправке сообщения в центр Интернета вещей выставляются счета. Вы платите только один раз для этого сообщения, даже если оно переходит на несколько конечных точек.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о маршрутизации сообщений в центр Интернета вещей см. в этих статьях:
 

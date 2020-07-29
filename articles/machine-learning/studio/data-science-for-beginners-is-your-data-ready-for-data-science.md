@@ -1,6 +1,5 @@
 ---
-title: Оценка данных
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): Оценка данных — Azure'
 description: Четыре критерия, которым должны соответствовать ваши данные, чтобы быть готовыми для обработки и анализа данных. Это видео содержит конкретные примеры общей оценки данных.
 services: machine-learning
 ms.service: machine-learning
@@ -10,11 +9,12 @@ author: sdgilley
 ms.author: sgilley
 ms.custom: seodec18
 ms.date: 03/22/2019
-ms.openlocfilehash: 8eb9c5a182c17815d4efcf171cc99b1e9f5bc89e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 12e939b8fb66b3cffbee49a4b3bedd74b71d7232
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82930171"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318765"
 ---
 # <a name="is-your-data-ready-for-data-science"></a>Готовы ли ваши данные к обработке и анализу?
 ## <a name="video-2-data-science-for-beginners-series"></a>Видео 2. Обработка и анализ данных для начинающих
@@ -101,6 +101,6 @@ ms.locfileid: "82930171"
 
 Обязательно ознакомьтесь с четырьмя видеороликами по обработке и анализу *данных для начинающих* пользователей из студия машинного обучения Microsoft Azure (классическая модель).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Попробуйте первый эксперимент по обработке и анализу данных с помощью Машинное обучение Studio (классическая модель)](create-experiment.md)
 * [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/overview-what-is-azure-ml)

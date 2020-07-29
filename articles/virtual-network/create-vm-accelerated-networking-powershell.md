@@ -1,6 +1,6 @@
 ---
 title: Создание виртуальной машины Windows с ускоренной сетью — Azure PowerShell
-description: Узнайте, как создать виртуальную машину Linux с ускоренной сетью.
+description: Создайте виртуальную машину Windows с ускоренной сетью, чтобы значительно повысить производительность сети.
 services: virtual-network
 documentationcenter: ''
 author: gsilva5
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 04/15/2020
 ms.author: gsilva
-ms.openlocfilehash: 582553675284e88e4707812b1f6b459a4e67f14a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fd50af98fe0d7f20273c45e2b86c18215a3626f0
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87088195"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289632"
 ---
 # <a name="create-a-windows-vm-with-accelerated-networking-using-azure-powershell"></a>Создание виртуальной машины Windows с ускоренной сетью с помощью Azure PowerShell
 
@@ -53,7 +53,7 @@ ms.locfileid: "87088195"
 
 Следующие дистрибутивы поддерживаются непосредственно из коллекции Azure:
 
-- **Windows Server 2019 Datacenter**
+- **Windows Server 2019 Datacenter**
 - **Windows Server 2016 Datacenter** 
 - **Windows Server 2012 R2 Datacenter**
 

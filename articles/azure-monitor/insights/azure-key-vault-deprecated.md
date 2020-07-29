@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/27/2019
-ms.openlocfilehash: 97e687acba0c94f72ca571c498fb54531118714b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 286d8d8c202a4fc59a18501eff16a569e2d09047
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87098242"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318051"
 ---
 # <a name="azure-key-vault-analytics-solution-in-azure-monitor"></a>Решение Azure Key Vault Analytics в Azure Monitor
 
@@ -34,7 +34,7 @@ ms.locfileid: "87098242"
 ## <a name="install-and-configure-the-solution"></a>Установка и настройка решения
 Установите и настройте решение хранилища ключей Azure, выполнив следующие указания:
 
-1. Используйте процесс, описанный в статье [добавление Azure Monitor решений из коллекция решений](../../azure-monitor/insights/solutions.md) , чтобы добавить Azure Key Vault решение в рабочую область log Analytics.
+1. Используйте процесс, описанный в статье [добавление Azure Monitor решений из коллекция решений](./solutions.md) , чтобы добавить Azure Key Vault решение в рабочую область log Analytics.
 2. Включение ведения журнала диагностики для отслеживания Key Vaultных ресурсов с помощью [портала](#enable-key-vault-diagnostics-in-the-portal) или [PowerShell](#enable-key-vault-diagnostics-using-powershell)
 
 ### <a name="enable-key-vault-diagnostics-in-the-portal"></a>Включение диагностики Key Vault на портале
@@ -99,7 +99,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 ## <a name="azure-monitor-log-records"></a>Записи журнала Azure Monitor
 Решение хранилища ключей Azure анализирует записи типа **KeyVaults**, полученные из [журналов AuditEvent](../../key-vault/general/logging.md) системы диагностики Azure.  Свойства этих записей приведены в таблице ниже.  
 
-| Свойство | Описание |
+| Свойство | Описание: |
 |:--- |:--- |
 | `Type` |*AzureDiagnostics* |
 | `SourceSystem` |*Azure* |
@@ -132,7 +132,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 Чтобы использовать обновленное решение, выполните следующие действия:
 
 1. [Настройка диагностики для отправки непосредственно в Log Analytics рабочую область из Key Vault](#enable-key-vault-diagnostics-in-the-portal)  
-2. Включите решение Azure Key Vault с помощью процесса, описанного в статье [добавление Azure Monitor решений из коллекция решений](../../azure-monitor/insights/solutions.md)
+2. Включите решение Azure Key Vault с помощью процесса, описанного в статье [добавление Azure Monitor решений из коллекция решений](./solutions.md)
 3. Обновите все сохраненные запросы, панели мониторинга и оповещения, чтобы использовать новый тип данных.
    + Тип меняется с KeyVaults на AzureDiagnostics. Параметр ResourceType можно использовать для фильтрации по журналам Key Vault.
    + Вместо `KeyVaults` используйте `AzureDiagnostics | where ResourceType'=="VAULTS"`.
@@ -149,4 +149,5 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 [!INCLUDE [log-analytics-troubleshoot-azure-diagnostics](../../../includes/log-analytics-troubleshoot-azure-diagnostics.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Используйте [запросы журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md) для просмотра подробных Azure Key Vault данных.
+* Используйте [запросы журналов в Azure Monitor](../log-query/log-query-overview.md) для просмотра подробных Azure Key Vault данных.
+

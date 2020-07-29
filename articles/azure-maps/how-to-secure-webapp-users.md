@@ -9,12 +9,13 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 8b21f487e2800a051b59bf94c038b3c1f40e658c
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.custom: devx-track-javascript
+ms.openlocfilehash: b86a8f726c039e3fa909cdc6f3f7b33b7c9c01ff
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87130823"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87279752"
 ---
 # <a name="secure-a-web-application-with-user-sign-in"></a>Защита веб-приложения с помощью входа пользователя
 
@@ -95,7 +96,7 @@ var map = new atlas.Map("map", {
 
 [!INCLUDE [grant role access to users](./includes/grant-rbac-users.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о сценарии веб-приложений:
 > [!div class="nextstepaction"]

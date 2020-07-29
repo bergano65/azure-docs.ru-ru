@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/10/2019
-ms.openlocfilehash: 06c8949be681d13b9dc7d5c433197dd9371aeef8
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 3c86b21c5e0533ab6a1a3c64dc601eb8bb573547
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83651857"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318102"
 ---
 # <a name="optimize-your-active-directory-environment-with-the-active-directory-health-check-solution-in-azure-monitor"></a>Оптимизация среды Active Directory с помощью решения проверки работоспособности Active Directory в Azure Monitor
 
@@ -45,9 +46,9 @@ ms.locfileid: "83651857"
 
 Чтобы проверить работоспособность контроллеров, которые являются компонентами оцениваемого домена, каждому контроллеру в этом домене требуется агент и подключение к Azure Monitor с помощью одного из следующих поддерживаемых методов.
 
-1. Установка [агента Log Analytics для Windows](../../azure-monitor/platform/agent-windows.md), если контроллер домена уже не отслеживается с помощью решения System Center 2016 Operations Manager или Operations Manager 2012 R2.
+1. Установка [агента Log Analytics для Windows](../platform/agent-windows.md), если контроллер домена уже не отслеживается с помощью решения System Center 2016 Operations Manager или Operations Manager 2012 R2.
 2. Если сервер отслеживается решением System Center 2016 Operations Manager или Operations Manager 2012 R2 и группа управления не интегрирована с Azure Monitor, контроллер домена может использоваться как многосетевой. С помощью Azure Monitor данные будут собираться и пересылаться в службу, а контроллер домена по-прежнему будет отслеживаться решением Operations Manager.  
-3. Если группа управления Operations Manager интегрирована со службой, после включения решения в рабочей области добавьте контроллеры домена для сбора данных службой. Для этого выполните инструкции по [добавлению компьютеров под управлением агентов](../../azure-monitor/platform/om-agents.md#connecting-operations-manager-to-azure-monitor).  
+3. Если группа управления Operations Manager интегрирована со службой, после включения решения в рабочей области добавьте контроллеры домена для сбора данных службой. Для этого выполните инструкции по [добавлению компьютеров под управлением агентов](../platform/om-agents.md#connecting-operations-manager-to-azure-monitor).  
 
 Агент в контроллере домена, который отправляет отчеты в группу управления Operations Manager, собирает данные, перенаправляет их на назначенный сервер управления, а затем отправляет их с сервера управления непосредственно в Azure Monitor.  Данные не записываются в базы данных Operations Manager.  
 
@@ -215,3 +216,4 @@ ADAssessmentRecommendation
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы научиться анализировать подробные данные и рекомендации для проверки работоспособности AD, см. статью [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md).
+

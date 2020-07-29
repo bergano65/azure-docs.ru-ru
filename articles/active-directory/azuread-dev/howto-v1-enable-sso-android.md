@@ -13,14 +13,14 @@ ms.topic: how-to
 ms.date: 09/24/2018
 ms.author: ryanwi
 ms.reviewer: brandwe, jmprieur
-ms.custom: aaddev
+ms.custom: aaddev, devx-track-java
 ROBOTS: NOINDEX
-ms.openlocfilehash: 67378cd363e22351198389f4480e3f6792e885bc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9d1faf7aed5cf4c4975925c7a56d169dc99a7bd5
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85383688"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87313597"
 ---
 # <a name="how-to-enable-cross-app-sso-on-android-using-adal"></a>Включение единого входа для нескольких приложений Android с помощью ADAL
 
@@ -32,7 +32,7 @@ ms.locfileid: "85383688"
 
 В этих инструкциях описывается, как в приложении настроить пакет SDK, чтобы ваши клиенты смогли воспользоваться функцией единого входа.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этих инструкциях предполагается, что вы знаете следующее.
 
@@ -142,6 +142,6 @@ MANAGE_ACCOUNTS
 
 Теперь пакет SDK для удостоверений будет автоматически предоставлять учетные данные в приложения и вызывать брокер, если он установлен на устройстве.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в статье [Протокол единого входа SAML](../develop/single-sign-on-saml-protocol.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json).
