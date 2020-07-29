@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: keferna
 ms.author: keferna
-ms.date: 04/15/2020
-ms.openlocfilehash: eab7b556dc45d03bf440a3bc63aa6bf2d799face
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.date: 07/24/2020
+ms.openlocfilehash: 4c700a61de80968b17585faf92e268fef8d86f0e
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86103629"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323270"
 ---
 # <a name="integrate-your-commercial-marketplace-listing-with-azure-active-directory"></a>Интеграция коммерческого профиля marketplace с Azure Active Directory
 
@@ -33,17 +33,18 @@ ms.locfileid: "86103629"
 
 | Тип предложения    | Для связи со мной требуется единый вход Azure AD?  | Требуется единый вход Azure AD для пробной версии? | Для тестового диска требуется единый вход Azure AD?  | Для Transact требуется единый вход Azure AD |
 | :------------------- | :-------------------|:-------------------|:-------------------|:-------------------|
-| Виртуальная машина | Недоступно | нет | Нет | Нет |
+| Виртуальная машина | Недоступно | Нет | Нет | Нет |
 | Приложения Azure (шаблон решения)  | Н/Д | Недоступно | Недоступно | Недоступно |
-| Управляемые приложения  | Н/Д | Недоступно | Недоступно | нет |
-| SaaS  | нет | Да | Да | Да |
-| Контейнеры  | Н/Д | Недоступно | Недоступно | нет |
+| Управляемые приложения  | Н/Д | Недоступно | Недоступно | Нет |
+| SaaS  | Нет | Да | Да | Да |
+| Контейнеры  | Н/Д | Недоступно | Недоступно | Нет |
 | Консультационные услуги  | Нет | Н/Д | Недоступно | Недоступно |
 
-Дополнительные сведения о технических требованиях к SaaS см. в статье [Руководство по публикации SaaS-приложений](marketplace-saas-applications-technical-publishing-guide.md).
+Дополнительные сведения о технических требованиях SaaS см. [в статье Azure AD и предложения SaaS, предоставляемые в коммерческом магазине](./azure-ad-saas.md).
 
 ## <a name="azure-ad-integration"></a>Интеграция с Azure AD
 
+- Дополнительные сведения о том, как интегрировать Azure AD с предложениями SaaS (программное обеспечение как услуга), см. [в статье Azure AD и предложения SaaS, предоставляемые в коммерческом магазине](./azure-ad-saas.md).
 - Дополнительны сведения о включении единого входа с помощью интеграции Azure AD со списком см. в статье [Платформа удостоверений Майкрософт (Azure Active Directory для разработчиков)](../active-directory/develop/index.yml).
 - Дополнительные сведения о едином входе в Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../active-directory/manage-apps/what-is-single-sign-on.md).
 

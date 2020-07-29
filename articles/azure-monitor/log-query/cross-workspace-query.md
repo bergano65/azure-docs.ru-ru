@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/01/2020
-ms.openlocfilehash: 5d16c62c14ff6f24e519173b979e11d21d997927
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7cfa3d5652e13ddc88db70674049069a5b391297
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86505794"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87322131"
 ---
 # <a name="perform-cross-resource-log-queries-in-azure-monitor"></a>Выполнение запросов журнала между ресурсами в Azure Monitor  
 
@@ -55,7 +55,7 @@ ms.locfileid: "86505794"
 
 * Идентификатор ресурса Azure — это уникальный идентификатор рабочей области в Azure. Он используется, если имя ресурса является неоднозначным.  Для рабочих областей используется следующий формат: */subscriptions/subscriptionId/resourcegroups/resourceGroup/providers/microsoft.OperationalInsights/workspaces/componentName*.  
 
-    Вот несколько примеров:
+    Пример:
     ``` 
     workspace("/subscriptions/e427519-5645-8x4e-1v67-3b84b59a1985/resourcegroups/ContosoAzureHQ/providers/Microsoft.OperationalInsights/workspaces/contosoretail-it").Update | count
     ```
@@ -86,7 +86,7 @@ ms.locfileid: "86505794"
 
 * Идентификатор ресурса Azure — это уникальный идентификатор приложения в Azure. Он используется, если имя ресурса является неоднозначным. Используется такой формат: */subscriptions/subscriptionId/resourcegroups/resourceGroup/providers/microsoft. Компоненты/OperationalInsights/componentName*.  
 
-    Вот несколько примеров:
+    Пример:
     ```
     app("/subscriptions/b459b4f6-912x-46d5-9cb1-b43069212ab4/resourcegroups/Fabrikam/providers/microsoft.insights/components/fabrikamapp").requests | count
     ```
@@ -120,7 +120,7 @@ app('Contoso-app5').requests
 
 
 
-Теперь вы можете [использовать эту функцию](../../azure-monitor/log-query/functions.md#use-a-function) в запросе между ресурсами, как показано ниже. Псевдоним функции _applicationsScoping_ возвращает объединение таблицы запросов из всех определенных приложений. После этого с помощью запроса фильтруются неудачные запросы и визуализируются тенденции по приложению. Оператор _parse_ в этом примере не является обязательным. Оператор позволяет извлечь имя приложения из свойства _SourceApp_.
+Теперь вы можете [использовать эту функцию](./functions.md#use-a-function) в запросе между ресурсами, как показано ниже. Псевдоним функции _applicationsScoping_ возвращает объединение таблицы запросов из всех определенных приложений. После этого с помощью запроса фильтруются неудачные запросы и визуализируются тенденции по приложению. Оператор _parse_ в этом примере не является обязательным. Оператор позволяет извлечь имя приложения из свойства _SourceApp_.
 
 ```Kusto
 applicationsScoping 
@@ -141,3 +141,4 @@ applicationsScoping
 
 - Просмотрите статью [Анализ данных журнала в Azure Monitor](log-query-overview.md), где описываются запросы журнала и структуры данных журнала Azure Monitor.
 - Сведения о всех ресурсах см. в статье [Azure Monitor log queries](query-language.md) (Запросы журнала Azure Monitor).
+

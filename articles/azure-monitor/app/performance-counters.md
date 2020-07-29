@@ -3,12 +3,12 @@ title: Счетчики производительности в Application Insi
 description: Мониторинг системных и пользовательских счетчиков производительности .NET в Application Insights.
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: e60663d9e767db020fc93eba1f4c1c6babb32294
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: eb5e20403cc826619eb1f67de2fc4179e17b5aa4
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87024424"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87322522"
 ---
 # <a name="system-performance-counters-in-application-insights"></a>Системные счетчики производительности в Application Insights
 
@@ -131,7 +131,7 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector;
 
 * *Частота исключений* — это системный счетчик производительности. Среда CLR подсчитывает все обработанные и необработанные исключения и делит их общее количество в интервале выборки на продолжительность интервала. Пакет SDK Application Insights получает этот результат и отправляет его на портал.
 
-* *Исключения* — это количество отчетов TrackException, полученных порталом в интервале выборки диаграммы. Включает только обработанные исключения, в коде которых прописаны вызовы TrackException, и не включает [необработанные исключения](../../azure-monitor/app/asp-net-exceptions.md). 
+* *Исключения* — это количество отчетов TrackException, полученных порталом в интервале выборки диаграммы. Включает только обработанные исключения, в коде которых прописаны вызовы TrackException, и не включает [необработанные исключения](./asp-net-exceptions.md). 
 
 ## <a name="performance-counters-for-applications-running-in-azure-web-apps"></a>Счетчики производительности для приложений, работающих в веб-приложениях Azure
 
@@ -147,9 +147,10 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector;
 * Пакеты SDK версии 2.8.0 и более поздних поддерживают счетчик ЦП/памяти в Linux. В Linux не поддерживаются никакие другие счетчики. Для получения системных счетчиков в Linux (и других средах, отличных от Windows) рекомендуется использовать [EventCounters](eventcounters.md).
 
 ## <a name="alerts"></a>видны узлы
-Как и для других метрик, вы можете [установить оповещение](../../azure-monitor/platform/alerts-log.md), которое предупредит о выходе показаний счетчика производительности за установленные пределы. Откройте колонку "Оповещения" и щелкните "Добавить оповещение".
+Как и для других метрик, вы можете [установить оповещение](../platform/alerts-log.md), которое предупредит о выходе показаний счетчика производительности за установленные пределы. Откройте колонку "Оповещения" и щелкните "Добавить оповещение".
 
 ## <a name="next-steps"></a><a name="next"></a>Следующие шаги
 
-* [Отслеживание зависимостей](../../azure-monitor/app/asp-net-dependencies.md)
-* [Отслеживание исключений](../../azure-monitor/app/asp-net-exceptions.md)
+* [Отслеживание зависимостей](./asp-net-dependencies.md)
+* [Отслеживание исключений](./asp-net-exceptions.md)
+

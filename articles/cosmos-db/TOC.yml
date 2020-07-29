@@ -574,6 +574,9 @@
           href: role-based-access-control.md
         - href: cosmos-db-advanced-threat-protection.md
           name: Дополнительная защита от угроз
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
         - name: Базовые средства безопасности
           href: security-baseline.md
     - name: Готовность к работе в масштабах предприятия
@@ -988,7 +991,7 @@
           href: how-to-manage-indexing-policy.md
         - name: Определение уникальных ключей
           href: how-to-define-unique-keys.md
-    - name: Повышение производительности и устранение неполадок
+    - name: Производительность
       items:
         - name: Запрос
           items:
@@ -996,28 +999,20 @@
               href: profile-sql-api-query.md
             - name: Настройка производительности запросов
               href: sql-api-query-metrics.md
-            - name: Решение проблем с производительностью запросов
-              href: troubleshoot-query-performance.md
         - name: .NET
           items:
             - name: "Советы по повышению производительности при использовании пакета SDK для .NET версии\_3"
               href: performance-tips-dotnet-sdk-v3-sql.md
             - name: "Советы по повышению производительности при использовании пакета SDK для .NET версии\_2"
               href: performance-tips.md
-            - name: Устранение неполадок с пакетом SDK для .NET
-              href: troubleshoot-dot-net-sdk.md
         - name: Java
           items:
             - name: "Советы по повышению производительности при использовании пакета SDK для Java версии\_4"
               href: performance-tips-java-sdk-v4-sql.md
-            - name: "Устранение неполадок с пакетом SDK для Java версии\_4"
-              href: troubleshoot-java-sdk-v4-sql.md
             - name: "Пакет SDK для Async Java версии\_2"
               href: performance-tips-async-java.md
             - name: "Пакет SDK для Sync Java версии\_2"
               href: performance-tips-java.md
-            - name: "Устранение неполадок\_— пакет SDK для Async Java версии\_2"
-              href: troubleshoot-java-async-sdk.md
         - name: "Тест производительности\_— пример приложения"
           href: performance-testing.md
         - name: Экономичные операции чтения и записи
@@ -1026,6 +1021,36 @@
       items:
         - name: "Переход на пакет SDK для Java версии\_4"
           href: migrate-java-v4-sdk.md
+    - name: Устранение неполадок
+      items:
+        - name: Распространенные ошибки
+          items:
+            - name: Решение проблем с производительностью запросов
+              href: troubleshoot-query-performance.md
+            - name: Устранение проблемы с истечением времени ожидания для запроса службы
+              href: troubleshoot-request-timeout.md
+            - name: Устранение проблемы со слишком высокой частотой запросов
+              href: troubleshoot-request-rate-too-large.md
+            - name: Устранение проблемы при невозможности найти объект
+              href: troubleshoot-not-found.md
+            - name: Устранение проблемы при несанкционированном доступе
+              href: troubleshoot-unauthorized.md
+        - name: .NET
+          items:
+            - name: Общие действия по устранению неполадок для пакета SDK .NET
+              href: troubleshoot-dot-net-sdk.md
+            - name: Устранение проблемы при слишком большом заголовке запроса
+              href: troubleshoot-dot-net-sdk-request-header-too-large.md
+            - name: Устранение проблемы с истечением времени ожидания для запроса
+              href: troubleshoot-dot-net-sdk-request-timeout.md
+            - name: Устранение проблемы при недоступности службы
+              href: troubleshoot-service-unavailable.md
+        - name: Java
+          items:
+            - name: "Устранение неполадок с пакетом SDK для Java версии\_4"
+              href: troubleshoot-java-sdk-v4-sql.md
+            - name: "Устранение неполадок\_— пакет SDK для Async Java версии\_2"
+              href: troubleshoot-java-async-sdk.md
     - name: Канал изменений
       items:
         - name: "Журналы триггеров Azure Cosmos\_DB"

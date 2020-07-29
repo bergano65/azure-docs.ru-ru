@@ -3,12 +3,12 @@ title: Экспорт из Azure Application Insights с помощью Stream A
 description: Stream Analytics может непрерывно преобразовывать, фильтровать и маршрутизировать данные, экспортируемые из Application Insights.
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: 70f952dcd6f8d942ac272afed58a7fe0f47d8a6e
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: d90b965ca65af0acf7032067c77591a2ac4d4b02
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86539964"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324358"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Обработка данных, экспортированных из Application Insights, при помощи Stream Analytics
 [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) — идеальное средство для обработки данных, [экспортированных из Application Insights](export-telemetry.md). Stream Analytics может извлекать данные из различных источников. Это средство может преобразовывать и фильтровать данные и затем отправлять их в различные приемники.
@@ -16,7 +16,7 @@ ms.locfileid: "86539964"
 В этом примере мы создадим адаптер, который принимает данные из Application Insights, переименовывает и обрабатывает некоторые поля, а затем передает данные в Power BI.
 
 > [!WARNING]
-> Мы рекомендуем использовать более простые и удобные [способы отображения данных Application Insights в Power BI](../../azure-monitor/app/export-power-bi.md ). Используемый в этой статье способ приведен только в качестве примера, чтобы показать, как можно обрабатывать экспортированные данные.
+> Мы рекомендуем использовать более простые и удобные [способы отображения данных Application Insights в Power BI](./export-power-bi.md). Используемый в этой статье способ приведен только в качестве примера, чтобы показать, как можно обрабатывать экспортированные данные.
 > 
 > 
 
@@ -55,7 +55,7 @@ ms.locfileid: "86539964"
 
     ![Выберите типы событий.](./media/export-stream-analytics/080.png)
 
-1. Пусть данные накопятся. Предоставьте пользователям возможность поработать с приложением на протяжении некоторого времени. После получения данных телеметрии в [обозревателе метрик](../../azure-monitor/platform/metrics-charts.md) отобразятся статистические диаграммы, а в разделе [поиска по журналу диагностики](../../azure-monitor/app/diagnostic-search.md) — отдельные события. 
+1. Пусть данные накопятся. Предоставьте пользователям возможность поработать с приложением на протяжении некоторого времени. После получения данных телеметрии в [обозревателе метрик](../platform/metrics-charts.md) отобразятся статистические диаграммы, а в разделе [поиска по журналу диагностики](./diagnostic-search.md) — отдельные события. 
    
     Данные также будут экспортированы в хранилище. 
 2. Проверьте экспортированные данные. В Visual Studio откройте меню **"Вид" или "Обозреватель облака"** и выберите элемент "Azure" или "Хранилище". Если эти пункты меню не отображаются, установите пакет SDK для Azure. Откройте диалоговое окно "Новый проект" и выберите Visual C# / Cloud / Get Microsoft Azure SDK for .NET. (Visual C# / Облако / Получить пакет Microsoft Azure SDK для .NET.)
@@ -186,7 +186,7 @@ FROM flat
 
 ## <a name="see-results-in-power-bi"></a>Просмотр результатов в Power BI
 > [!WARNING]
-> Мы рекомендуем использовать более простые и удобные [способы отображения данных Application Insights в Power BI](../../azure-monitor/app/export-power-bi.md ). Используемый в этой статье способ приведен только в качестве примера, чтобы показать, как можно обрабатывать экспортированные данные.
+> Мы рекомендуем использовать более простые и удобные [способы отображения данных Application Insights в Power BI](./export-power-bi.md). Используемый в этой статье способ приведен только в качестве примера, чтобы показать, как можно обрабатывать экспортированные данные.
 > 
 > 
 
@@ -211,4 +211,5 @@ FROM flat
 ## <a name="next-steps"></a>Дальнейшие действия
 * [непрерывный экспорт.](export-telemetry.md)
 * [Подробный справочник по модели данных типов и значений свойств.](export-data-model.md)
-* [Application Insights](../../azure-monitor/app/app-insights-overview.md)
+* [Application Insights](./app-insights-overview.md)
+

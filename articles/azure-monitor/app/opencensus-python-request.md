@@ -6,18 +6,18 @@ author: lzchen
 ms.author: lechen
 ms.date: 10/15/2019
 ms.custom: tracking-python
-ms.openlocfilehash: c9d69c0f39d9cad52dc86c3ab33d202c88131ab0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6eae11e2157904b47582f78a601c8d2900e61247
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84753212"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324596"
 ---
 # <a name="track-incoming-requests-with-opencensus-python"></a>Мониторинг входящих запросов с помощью Опенценсус Python
 
 Данные входящего запроса собираются с помощью Опенценсус Python и различных интеграций. Отследите данные входящего запроса, отправляемые в веб-приложения, созданные на основе популярных веб-платформ `django` , `flask` и `pyramid` . Затем данные отправляются в Application Insights под Azure Monitor в качестве `requests` телеметрии.
 
-Сначала выполните инструментирование приложения Python с помощью последнего [пакета SDK для Опенценсус Python](../../azure-monitor/app/opencensus-python.md).
+Сначала выполните инструментирование приложения Python с помощью последнего [пакета SDK для Опенценсус Python](./opencensus-python.md).
 
 ## <a name="tracking-django-applications"></a>Отслеживание Django приложений
 
@@ -117,10 +117,11 @@ ms.locfileid: "84753212"
     config = Configurator(settings=settings)
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Схема сопоставления приложений](../../azure-monitor/app/app-map.md)
-* [Доступность](../../azure-monitor/app/monitor-web-app-availability.md)
-* [Поиск](../../azure-monitor/app/diagnostic-search.md)
-* [Запрос к журналу (Analytics)](../../azure-monitor/log-query/log-query-overview.md)
-* [Диагностика транзакции](../../azure-monitor/app/transaction-diagnostics.md)
+* [Схема сопоставления приложений](./app-map.md)
+* [Доступность](./monitor-web-app-availability.md)
+* [Поиск](./diagnostic-search.md)
+* [Запрос к журналу (Analytics)](../log-query/log-query-overview.md)
+* [Диагностика транзакции](./transaction-diagnostics.md)
+

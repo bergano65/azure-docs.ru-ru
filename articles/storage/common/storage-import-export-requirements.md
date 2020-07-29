@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 877d1442c346b321562cb396a77224a6b40c7df2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7b7915e1b7779c4d0359b9ac190574c43a624cbe
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087243"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87276403"
 ---
 # <a name="azure-importexport-system-requirements"></a>Требования к системе для импорта и экспорта Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "87087243"
 
 ## <a name="other-required-software-for-windows-client"></a>Другое необходимое программное обеспечение для клиента Windows
 
-|Платформа |Version |
+|Платформа |Версия |
 |---------|---------|
 |.NET Framework    | 4.5.1       |
 | BitLocker        |  _          |
@@ -50,7 +50,7 @@ ms.locfileid: "87087243"
 Каждое задание может использоваться для обмена данными только с одной учетной записью хранения. Другими словами, отдельное задание импорта и экспорта не может распространяться на несколько учетных записей хранения. Сведения о создании учетной записи хранения см. в разделе [Создание учетной записи хранения](storage-account-create.md).
 
 > [!IMPORTANT]
-> Для учетных записей хранения, в которых включена функция [конечных точек службы виртуальной сети](../../virtual-network/virtual-network-service-endpoints-overview.md)   , используйте параметр **Разрешить доверенные службы Майкрософт...** [Включение службы импорта](/storage-network-security.md) и экспорта для выполнения импорта и экспорта данных в Azure и обратно.
+> Для учетных записей хранения, в которых включена функция [конечных точек службы виртуальной сети](../../virtual-network/virtual-network-service-endpoints-overview.md)   , используйте параметр **Разрешить доверенные службы Майкрософт...** [Включение службы импорта](/azure/storage/common/storage-network-security) и экспорта для выполнения импорта и экспорта данных в Azure и обратно.
 
 ## <a name="supported-storage-types"></a>Поддерживаемые типы хранилища
 
@@ -72,7 +72,7 @@ ms.locfileid: "87087243"
 Ниже представлен список поддерживаемых дисков для использования со службой импорта и экспорта Azure.
 
 
-|Тип диска  |Size  |Поддерживается |
+|Тип диска  |Размер  |Поддерживается |
 |---------|---------|---------|
 |SSD    |   2,5"      |SATA III          |
 |HDD     |  2,5"<br>3,5"       |SATA II, SATA III         |

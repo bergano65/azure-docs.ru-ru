@@ -416,6 +416,8 @@
                   href: how-to-custom-commands-add-interaction-rules.md
                 - name: Добавление шаблонов создания языков для речевых ответов
                   href: how-to-custom-commands-add-language-generation-templates.md
+                - name: Использование набора инструментов "Пользовательский голос"
+                  href: how-to-custom-commands-use-custom-voice.md
             - name: Интеграция
               items:
                 - name: Интеграция с клиентским приложением с использованием пакета SDK службы "Речь"
@@ -452,6 +454,8 @@
               href: faq-voice-assistants.md
             - name: Пакет SDK для службы "Речь"
               href: speech-sdk.md
+            - name: Пользовательские команды для шифрования неактивных данных
+              href: custom-commands-encryption-of-data-at-rest.md
     - name: Канал Direct Line Speech
       items:
         - name: Что такое Direct Line Speech?

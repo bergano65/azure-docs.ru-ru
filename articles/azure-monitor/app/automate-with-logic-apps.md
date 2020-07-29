@@ -3,12 +3,12 @@ title: Автоматизация процессов Application Insights Azure 
 description: Узнайте, как можно быстро автоматизировать повторяющиеся процессы, добавив соединитель Application Insights в приложение логики.
 ms.topic: conceptual
 ms.date: 03/11/2019
-ms.openlocfilehash: 76a199023ef37fbda27be59fdf70f6ca5d8481bc
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d023d774c130a9db513fbcf9452b05fa030a967a
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87079627"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323202"
 ---
 # <a name="automate-application-insights-processes-by-using-logic-apps"></a>Автоматизация процессов Application Insights с помощью Logic Apps
 
@@ -95,9 +95,9 @@ ms.locfileid: "87079627"
 
 1. В окне **Отправка сообщения электронной почты** выполните следующие действия:
 
-   А. Введите адрес электронной почты получателя.
+   а. Введите адрес электронной почты получателя.
 
-   Б. Введите тему сообщения.
+   b. Введите тему сообщения.
 
    c. Щелкните в любом месте в поле **Текст**, затем в открывшемся справа меню динамического содержимого выберите **Текст**.
     
@@ -109,9 +109,9 @@ ms.locfileid: "87079627"
 
 1. В меню динамического содержимого выполните следующее.
 
-    А. Выберите **Имя вложения**.
+    а. Выберите **Имя вложения**.
 
-    Б. Выберите **Содержимое вложения**.
+    b. Выберите **Содержимое вложения**.
     
     c. В поле **Является HTML** выберите значение **Да**.
 
@@ -130,9 +130,10 @@ ms.locfileid: "87079627"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте больше о создании [запросов Analytics](../../azure-monitor/log-query/get-started-queries.md).
+- Узнайте больше о создании [запросов Analytics](../log-query/get-started-queries.md).
 - Дополнительные сведения о [Logic Apps](../../logic-apps/logic-apps-overview.md).
 
 
 
 <!--Link references-->
+

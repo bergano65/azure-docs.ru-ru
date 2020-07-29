@@ -1,7 +1,7 @@
 ---
 title: Связывание общедоступного IP-адреса с виртуальной машиной
 titlesuffix: Azure Virtual Network
-description: Узнайте, как связать общедоступный IP-адрес с виртуальной машиной.
+description: Свяжите общедоступный IP-адрес с виртуальной машиной (ВМ) с помощью портал Azure или Azure CLI.
 services: virtual-network
 documentationcenter: ''
 author: asudbring
@@ -13,11 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2019
 ms.author: allensu
-ms.openlocfilehash: cc09cec1e6df9ec671fa98ae35562a639dce4cd8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d4ca5b067a1afe4225fe0e2e4c42c827e1eaedf6
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84707622"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87265234"
 ---
 # <a name="associate-a-public-ip-address-to-a-virtual-machine"></a>Связывание общедоступного IP-адреса с виртуальной машиной
 
@@ -211,6 +212,6 @@ ms.locfileid: "84707622"
 
 Прежде чем подключиться к общедоступному IP-адресу из Интернета, убедитесь, что в каждой группе безопасности сети, связанной с сетевым интерфейсом, открыты необходимые порты, подсеть, в которой находится сетевой интерфейс, или оба. Несмотря на то, что группы безопасности фильтруют трафик по частному IP-адресу сетевого интерфейса, после того, как входящий Интернет-трафик поступает по общедоступному, Azure преобразует общедоступный адрес в частный IP-адрес, поэтому если группа безопасности сети предотвращает поток трафика, связь с общедоступным IP-адресом завершается ошибкой. Действующие правила безопасности для сетевого интерфейса и его подсети можно просмотреть с помощью [портала](diagnose-network-traffic-filter-problem.md#diagnose-using-azure-portal), [CLI](diagnose-network-traffic-filter-problem.md#diagnose-using-azure-cli) или [PowerShell](diagnose-network-traffic-filter-problem.md#diagnose-using-powershell).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Разрешите входящий Интернет-трафик к виртуальной машине с помощью группы безопасности сети. Сведения о создании группы безопасности сети см. в статье [Работа с группами безопасности сети](manage-network-security-group.md#work-with-network-security-groups). Дополнительные сведения о группах безопасности сети см. в разделе [группы безопасности](security-overview.md).

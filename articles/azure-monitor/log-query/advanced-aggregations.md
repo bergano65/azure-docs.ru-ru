@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
-ms.openlocfilehash: e5dc290a40342e0797001dde6cab90e12dd5cf39
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dba058dce09e958a2ae769d927a5569fb3e42113
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77662184"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87324562"
 ---
 # <a name="advanced-aggregations-in-azure-monitor-log-queries"></a>Расширенное агрегирование в запросах журнала Azure Monitor
 
@@ -176,14 +177,15 @@ WindowsFirewall
 | where Computer in (ComputersNeedingUpdate)
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с другими статьями по использованию [языка запросов Kusto](/azure/kusto/query/) с данными журналов Azure Monitor.
 
 - [Работа со строками](string-operations.md)
 - [Работа со значениями даты и времени](datetime-operations.md)
 - [Статистические функции в запросах Log Analytics](aggregations.md)
-- [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
+- [Расширенные статистические функции в запросах Azure Log Analytics]()
 - [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
 - [Joins](joins.md)
 - [Создание графиков](charts.md)
+

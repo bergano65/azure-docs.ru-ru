@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/09/2020
-ms.openlocfilehash: 3175e43a841334719de80f44a226b1c7b87690d9
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 1d7275c928b4d25e200a3a8d3d690c7575c056e7
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86540117"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323185"
 ---
 # <a name="workspace-based-resource-changes-preview"></a>Изменения ресурсов на основе рабочей области (Предварительная версия)
 
@@ -165,7 +165,7 @@ ms.locfileid: "86540117"
 |sdkVersion|строка|SdkVersion|строка|
 |session_Id|строка|SessionId|строка|
 |Успешное завершение|строка|Успешно|Bool|
-|target|строка|целевого объекта|строка|
+|target|строка|Назначение|строка|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
 |type|строка|DependencyType|строка|
 |user_AccountId|строка|UserAccountId|строка|
@@ -243,7 +243,7 @@ ms.locfileid: "86540117"
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
-|value|real|удален||
+|Значение|real|удален||
 |валуекаунт|INT|валуекаунт|INT|
 |валуемакс|real|валуемакс|real|
 |валуемин|real|валуемин|real|
@@ -328,7 +328,7 @@ ms.locfileid: "86540117"
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
-|value|real|Значение|real|
+|Значение|real|Значение|real|
 
 ### <a name="apprequests"></a>аппрекуестс
 
@@ -352,24 +352,24 @@ ms.locfileid: "86540117"
 |customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
 |длительность|real|DurationMs|Real|
-|`id`|строка|`Id`|Строка|
+|`id`|строка|`Id`|Тип String|
 |iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
 |itemId|строка|\_ItemId|строка|
 |itemType|строка|Тип|Строка|
-|name|строка|Имя|Строка|
+|name|строка|Имя|Тип String|
 |operation_Id|строка|Операции|строка|
 |operation_Name|строка|OperationName|строка|
 |operation_ParentId|строка|оператионпарентид|строка|
 |operation_SyntheticSource|строка|оператионсинсетиксаурце|строка|
-|перформанцебуккет|строка|перформанцебуккет|Строка|
-|resultCode|строка|ResultCode|Строка|
+|перформанцебуккет|строка|перформанцебуккет|Тип String|
+|resultCode|строка|ResultCode|Тип String|
 |sdkVersion|строка|SdkVersion|строка|
 |session_Id|строка|SessionId|строка|
-|source|строка|Источник|Строка|
+|source|строка|Источник|Тип String|
 |Успешное завершение|строка|Успешно|Bool|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
-|url|строка|Url|Строка|
+|url|строка|Url|Тип String|
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
@@ -466,5 +466,6 @@ ms.locfileid: "86540117"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Изучение метрик](../../azure-monitor/platform/metrics-charts.md)
+* [Изучение метрик](../platform/metrics-charts.md)
 * [Написание запросов аналитики](../log-query/log-query-overview.md)
+

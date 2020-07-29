@@ -5,16 +5,18 @@ description: Узнайте, как настроить перекрестную 
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
+ms.topic: conceptual
+ms.custom: how-to
 ms.author: cesardl
 author: CESARDELATORRE
 ms.reviewer: nibaccam
 ms.date: 06/16/2020
-ms.openlocfilehash: 9f8c45b39c0a027735643464d8e936f3039bdeff
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 900d5cd435a913c0859c862d176fd30130e0a079
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85100831"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321502"
 ---
 # <a name="configure-data-splits-and-cross-validation-in-automated-machine-learning"></a>Настройка разбиения данных и перекрестной проверки в автоматизированном машинном обучении
 
@@ -29,7 +31,7 @@ ms.locfileid: "85100831"
 > [!NOTE]
 > В настоящее время Studio поддерживает разбиение данных для обучения и проверки, а также параметры перекрестной проверки, но не поддерживает указание отдельных файлов данных для набора проверки. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для этой статьи требуется:
 
@@ -154,7 +156,7 @@ automl_config = AutoMLConfig(compute_target = aml_remote_compute,
 > [!NOTE]
 > Чтобы использовать `cv_split_column_names` с `training_data` и `label_column_name` , обновите пакет SDK для машинное обучение Azure Python версии 1.6.0 или более поздней. Сведения о предыдущих версиях пакета SDK см. в разделе Использование `cv_splits_indices` , но обратите внимание, что он используется `X` только с `y` входными данными набора данных и. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Предотвращение несбалансированных данных и перегонка](concept-manage-ml-pitfalls.md).
 * [Руководство. Использование автоматизированного машинного обучения для прогнозирования годуного в такси фрагмента данных](tutorial-auto-train-models.md#split-the-data-into-train-and-test-sets).

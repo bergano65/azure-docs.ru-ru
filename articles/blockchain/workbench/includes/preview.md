@@ -4,15 +4,15 @@ ms.service: azure-blockchain
 ms.topic: include
 ms.date: 07/07/2020
 ms.author: patricka
-ms.openlocfilehash: 1ff45f9c1b64bc98d0e741b589fadb35c91ea432
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
-ms.translationtype: MT
+ms.openlocfilehash: fa5c611a05e8262ead9b08987fa103a3d96b7988
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86156565"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87003158"
 ---
 > [!IMPORTANT]
 > Azure Blockchain Workbench сейчас предоставляется в общедоступной предварительной версии.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 > Azure Blockchain Workbench предоставляется без соглашения об уровне обслуживания.
-> Используйте [страницу Microsoft Q&A вопроса](https://docs.microsoft.com/answers/topics/azure-blockchain-workbench.html) для поддержки. Поддержка инженеров в Azure Блокчейн Workbench ограничена проблемами развертывания.
+> Поддержку можно найти на [странице вопросов и ответов Майкрософт](/answers/topics/azure-blockchain-workbench.html). Инженерная поддержка по Azure Blockchain Workbench предоставляется только по вопросам развертывания.

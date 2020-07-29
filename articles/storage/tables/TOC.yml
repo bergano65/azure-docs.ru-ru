@@ -127,11 +127,11 @@
               href: ../common/storage-network-security.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
             - name: Требование безопасной передачи
               href: ../common/storage-require-secure-transfer.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
-            - name: Настройка TLS
+            - name: Управление TLS
               items:
-                - name: Настройка минимальной версии TLS для учетной записи хранения
+                - name: Принудительное использование минимальной версии TLS для входящих запросов
                   href: ../common/transport-layer-security-configure-minimum-version.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
-                - name: Настройка TLS для клиентского приложения
+                - name: Настройка версии TLS для клиентского приложения
                   href: ../common/transport-layer-security-configure-client-version.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
     - name: Управление избыточностью данных
       items:

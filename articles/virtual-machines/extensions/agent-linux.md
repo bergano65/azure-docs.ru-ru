@@ -1,26 +1,19 @@
 ---
 title: Обзор агента виртуальной машины Linux в Azure
 description: Узнайте, как установить и настроить агент Linux (waagent) для управления взаимодействием виртуальной машины с Azure Fabric Controller.
-services: virtual-machines-linux
-documentationcenter: ''
 author: axayjo
-manager: gwallace
-editor: ''
-tags: azure-service-management,azure-resource-manager
-ms.assetid: e41de979-6d56-40b0-8916-895bf215ded6
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 10/17/2016
 ms.author: akjosh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 560ae8d837cf57e471a9f39d5ccdcf152a156b1e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fda228f6a24e981bb848fbb106709aaa3d8e8613
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87029082"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87269127"
 ---
 # <a name="understanding-and-using-the-azure-linux-agent"></a>Что такое агент Linux для Azure и как его использовать
 
@@ -72,7 +65,7 @@ ms.locfileid: "87029082"
 Следующие системы протестированы и гарантированно поддерживают работу с агентом Linux для Azure:
 
 > [!NOTE]
-> Этот список может отличаться от официального списка поддерживаемых систем на Microsoft Azure платформе, как описано здесь:[https://support.microsoft.com/kb/2805216](https://support.microsoft.com/kb/2805216)
+> Этот список может отличаться от официального списка [поддерживаемых дистрибутивов](../linux/endorsed-distros.md).
 > 
 > 
 

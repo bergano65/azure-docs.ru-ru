@@ -11,12 +11,12 @@ manager: shwang
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 07/15/2020
-ms.openlocfilehash: d67a050ccd590e220c51e02b827013ace7707ee2
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ae0ab6c4279136c0a5ec86c1f8f52baa0fd69763
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86523253"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87171408"
 ---
 # <a name="copy-data-to-and-from-azure-sql-managed-instance-by-using-azure-data-factory"></a>Копирование данных в Azure SQL Управляемый экземпляр и обратно с помощью фабрики данных Azure
 
@@ -270,7 +270,7 @@ ms.locfileid: "86523253"
 | sqlReaderQuery |Это свойство применяет пользовательский SQL-запрос для чтения данных. Например, `select * from MyTable`. |Нет |
 | sqlReaderStoredProcedureName |Это свойство содержит имя хранимой процедуры, которая считывает данные из исходной таблицы. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. |Нет |
 | storedProcedureParameters |Это параметры для хранимой процедуры.<br/>Допустимые значения: пары имен или значений. Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. |Нет |
-| isolationLevel | Задает режим блокировки транзакций для источника данных SQL. Допустимые значения: **ReadCommitted** (по умолчанию), **ReadUncommitted**, **RepeatableRead**, **Serializable**, **Snapshot**. Дополнительные сведения см. в [этом документе](https://docs.microsoft.com/dotnet/api/system.data.isolationlevel). | Нет |
+| isolationLevel | Задает режим блокировки транзакций для источника данных SQL. Допустимые значения: **ReadCommitted**, **READUNCOMMITTED**, **RepeatableRead**, **Serializable**, **snapshot**. Если значение не указано, используется уровень изоляции базы данных по умолчанию. Дополнительные сведения см. в [этом документе](https://docs.microsoft.com/dotnet/api/system.data.isolationlevel). | Нет |
 
 **Обратите внимание на следующие моменты.**
 
@@ -591,7 +591,7 @@ END
 | smallint |Int16 |
 | smallmoney |Decimal |
 | sql_variant |Объект |
-| text |String, Char[] |
+| текст |String, Char[] |
 | time |TimeSpan |
 | TIMESTAMP |Byte[] |
 | tinyint |Int16 |

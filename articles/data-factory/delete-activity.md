@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.openlocfilehash: d90f38f83bd4d2d5311f277fcc928e442d7ea793
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4680d989cc1befe50955af408aec79a14031481e
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81416384"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321247"
 ---
 # <a name="delete-activity-in-azure-data-factory"></a>Действие Delete в Фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -46,9 +46,6 @@ ms.locfileid: "81416384"
 -   [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md)
 -   [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md)
 -   [Хранилище файлов Azure](connector-azure-file-storage.md)
-
-### <a name="file-system-data-stores"></a>Хранилища данных файловых систем
-
 -   [Файловая система](connector-file-system.md)
 -   [FTP](connector-ftp.md)
 -   [SFTP](connector-sftp.md)
@@ -82,7 +79,7 @@ ms.locfileid: "81416384"
 
 ## <a name="type-properties"></a>Свойства типа
 
-| Свойство | Описание | Обязательно |
+| Свойство | Описание | Обязательное значение |
 | --- | --- | --- |
 | набор данных | Предоставляет ссылку на набор данных, чтобы определить, какие файлы или папки должны быть удалены. | Да |
 | recursive | Указывает, откуда файлы удаляются рекурсивно: из вложенных папок или только из указанной папки.  | Нет. Значение по умолчанию — `false`. |
@@ -118,7 +115,7 @@ ms.locfileid: "81416384"
 
 ### <a name="sample-log-file-of-the-delete-activity"></a>Пример файла журнала действия Delete
 
-| Имя | Категория | Состояние | Ошибка |
+| Имя | Категория | Состояние | Error |
 |:--- |:--- |:--- |:--- |
 | test1/yyy.jsв | Файл | Deleted |  |
 | test2/hello789.txt | Файл | Deleted |  |

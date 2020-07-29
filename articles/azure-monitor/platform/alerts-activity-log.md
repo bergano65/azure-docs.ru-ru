@@ -4,12 +4,12 @@ description: Создавайте оповещения журнала дейст
 ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 06/25/2019
-ms.openlocfilehash: 5019c3111a6e04dd9b7ba6ecbb9f62c7969075ed
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: b202e3d47b98c5e395b3a8b525b9b8c0a04c0f76
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86516062"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87322420"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-by-using-azure-monitor"></a>Создание, просмотр оповещений журнала действий и управление ими с помощью Azure Monitor  
 
@@ -92,7 +92,7 @@ ms.locfileid: "86516062"
     - **Описание**: описание для нового правила генерации оповещений.
     - **Save alert to resource group** (Сохранить оповещение в группу ресурсов): выберите группу ресурсов, в которой вы хотите сохранить новое правило.
 
-5. В разделе **Группа действий** в раскрывающемся меню укажите группу действий, которую нужно назначить новому правилу генерации оповещений. Или [создайте группу действий](../../azure-monitor/platform/action-groups.md) и назначьте ее новому правилу. Чтобы создать группу, выберите **+ Создать группу**.
+5. В разделе **Группа действий** в раскрывающемся меню укажите группу действий, которую нужно назначить новому правилу генерации оповещений. Или [создайте группу действий](./action-groups.md) и назначьте ее новому правилу. Чтобы создать группу, выберите **+ Создать группу**.
 
 6. Чтобы включить правило после его создания, выберите **Да** для параметра **Включить правило при создании**.
 7. Выберите **Создать правило генерации оповещений**.
@@ -285,7 +285,8 @@ New-AzResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile sampleActi
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Изучите [схему веб-перехватчиков для журналов действий](../../azure-monitor/platform/activity-log-alerts-webhook.md).
-- Прочитайте [обзор журналов действий](../../azure-monitor/platform/activity-log-alerts.md).
-- Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md).  
+- Изучите [схему веб-перехватчиков для журналов действий](./activity-log-alerts-webhook.md).
+- Прочитайте [обзор журналов действий](./activity-log-alerts.md).
+- Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](./action-groups.md).  
 - Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../../service-health/service-notifications.md).
+

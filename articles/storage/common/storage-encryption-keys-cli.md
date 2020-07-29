@@ -10,12 +10,12 @@ ms.date: 07/13/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: d6fa4bbaf9b37c93ef4efbe405087c39395df63d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4d54a8bf9fb5a1f31a29e41ecea545b43dbe58cf
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87086019"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87276692"
 ---
 # <a name="configure-customer-managed-keys-with-azure-key-vault-by-using-azure-cli"></a>Настройка ключей, управляемых клиентом, с помощью Azure Key Vault Azure CLI
 
@@ -97,7 +97,7 @@ az keyvault key create \
 
 ### <a name="configure-encryption-for-automatic-rotation-of-customer-managed-keys"></a>Настройка шифрования для автоматического вращения ключей, управляемых клиентом
 
-Чтобы настроить шифрование для автоматического вращения ключей, управляемых клиентом, установите [Azure CLI версии 2.4.0](/cli/azure/release-notes-azure-cli#april-21-2020) или более поздней. Дополнительные сведения см. в статье [Установка Azure CLI](/azure/install-azure-cli).
+Чтобы настроить шифрование для автоматического вращения ключей, управляемых клиентом, установите [Azure CLI версии 2.4.0](/cli/azure/release-notes-azure-cli#april-21-2020) или более поздней. Дополнительные сведения см. в статье [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 Чтобы автоматически поворачивать ключи, управляемые клиентом, не указывайте версию ключа при настройке ключей, управляемых клиентом, для учетной записи хранения. Чтобы обновить параметры шифрования учетной записи хранения, вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update) , как показано в следующем примере. Включите `--encryption-key-source` параметр и установите его в значение, `Microsoft.Keyvault` чтобы включить управляемые клиентом ключи для учетной записи. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями.
 

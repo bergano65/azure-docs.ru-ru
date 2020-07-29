@@ -7,12 +7,15 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 06/29/2020
 ms.author: asrastog
-ms.openlocfilehash: ef622d950595752e616608ef56d8df66b8a9813f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom:
+- 'Role: Cloud Development'
+- 'Role: IoT Device'
+ms.openlocfilehash: 81c5d410599edcbbb4e216b630709541be02c9fb
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85610155"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323015"
 ---
 # <a name="understand-and-use-module-twins-in-iot-hub"></a>Общие сведения о двойниках модулей и их использование в Центре Интернета вещей
 
@@ -193,7 +196,7 @@ ms.locfileid: "85610155"
 
   - Текст
         
-    Этот раздел содержит все изменения двойника в формате JSON. Он использует тот же формат, что и исправление, с тем отличием, что он может содержать все разделы двойника (теги, properties.reported, properties.desired) и что он содержит элементы "$metadata". Например,
+    Этот раздел содержит все изменения двойника в формате JSON. Он использует тот же формат, что и исправление, с тем отличием, что он может содержать все разделы двойника (теги, properties.reported, properties.desired) и что он содержит элементы "$metadata". например следующие.
 
     ```json
     {
@@ -355,7 +358,7 @@ ms.locfileid: "85610155"
 
 Версии также полезны, если агент, выполняющий отслеживание (например, приложение модуля, отслеживающее требуемые свойства), должен устранить состояние гонки между результатом извлечения и отправкой уведомлений об обновлении. Дополнительные сведения см. в разделе [Процедура при повторном подключении устройства](iot-hub-devguide-device-twins.md#device-reconnection-flow). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы применить некоторые основные понятия, описанные в этой статье, просмотрите следующие руководства по Центру Интернета вещей:
 

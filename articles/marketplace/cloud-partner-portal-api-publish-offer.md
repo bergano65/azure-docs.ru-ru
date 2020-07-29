@@ -4,15 +4,15 @@ description: API для публикации указанного предлож
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
-author: dsindona
-ms.author: dsindona
+author: mingshen-ms
+ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: 1dede788242f858468c00e9f30f70ebdbe60cd1b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 60e75aff79913896bdf1dcdc8754b6ecf5620b06
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87086410"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87272051"
 ---
 # <a name="publish-an-offer"></a>Публикация предложения
 
@@ -28,8 +28,8 @@ ms.locfileid: "87086410"
 
 |  **Имя**      |    **Описание**                               |  **Data type** |
 |  ------------- |  ------------------------------------            |   -----------  |
-|  publisherid   | Идентификатор издателя, например `contoso`      |   Строка       |
-|  offerId       | Идентификатор предложения                                 |   Строка       |
+|  publisherid   | Идентификатор издателя, например `contoso`      |   Тип String       |
+|  offerId       | Идентификатор предложения                                 |   Тип String       |
 |  api-version   | Последняя версия API                        |   Дата         |
 |  |  |
 

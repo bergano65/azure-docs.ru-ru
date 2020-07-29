@@ -4,15 +4,15 @@ description: Ответы на часто задаваемые вопросы о
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
-author: anbene
+author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: eafa6c4911e934d391a380e5eb494ca8f7766959
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 59f66b88c998a78f5bd3ccf3757cb791aea2521b
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87012065"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87279310"
 ---
 # <a name="frequently-asked-questions-about-transitioning-from-the-cloud-partner-portal-to-partner-center"></a>Часто задаваемые вопросы о переходе от Портал Cloud Partner в центр партнеров
 
@@ -107,19 +107,19 @@ ms.locfileid: "87012065"
 
     Если вы не видите программу коммерческого рынка в области навигации слева, возможно, она находится в неправильной учетной записи. Чтобы получить доступ к правильной учетной записи, выполните действия, описанные в следующем разделе.
 
-    [![](media/cpp-pc-faq/overview-menu.png "Shows the Partner Center Overview menu")](media/cpp-pc-faq/overview-menu.png#lightbox)
+    [![Снимок экрана, показывающий меню обзора центра партнеров](media/cpp-pc-faq/overview-menu.png "Отображает меню обзора центра партнеров")](media/cpp-pc-faq/overview-menu.png#lightbox)
 
 ### <a name="access-the-right-account-in-partner-center"></a>Доступ к правильной учетной записи в центре партнеров
 
 Если вы являетесь частью нескольких учетных записей, в центре партнеров появится кнопка выбора учетной записи, отмеченная двумя стрелками в меню навигации слева. Нажмите кнопку выбора учетной записи, чтобы просмотреть список всех учетных записей, к которым вы принадлежите. Выберите любую учетную запись в списке, чтобы перейти к ней и просмотреть все программы и сведения, относящиеся к этой учетной записи. Если в меню навигации не отображается кнопка выбора учетной записи, то вы являетесь членом одной учетной записи.
 
-[![](media/cpp-pc-faq/picker-button.png "Shows the Partner Center account picker button")](media/cpp-pc-faq/picker-button.png#lightbox)
+[![На снимке экрана показана кнопка выбора учетной записи центра партнеров.](media/cpp-pc-faq/picker-button.png "Отображение кнопки выбора учетной записи центра партнеров")](media/cpp-pc-faq/picker-button.png#lightbox)
 
 ## <a name="how-do-i-create-new-offers"></a>Разделы справки создать новые предложения?
 
 Получите доступ к программе коммерческого рынка в [центре партнеров](https://partner.microsoft.com/dashboard/commercial-marketplace/overview) , чтобы создать новые предложения. На странице Обзор выберите **+ новое предложение**.
 
-[![](media/cpp-pc-faq/new-offer.png "Shows the Partner Center Overview menu")](media/cpp-pc-faq/new-offer.png#lightbox)
+[![На снимке экрана отображается меню обзора центра партнеров.](media/cpp-pc-faq/new-offer.png "Отображает меню обзора центра партнеров")](media/cpp-pc-faq/new-offer.png#lightbox)
 
 ## <a name="i-cant-sign-in-and-need-to-open-a-support-ticket"></a>Я не могу войти в службу поддержки, и вам нужно его отправить.
 
@@ -127,7 +127,7 @@ ms.locfileid: "87012065"
 
 ## <a name="where-are-instructions-for-using-partner-center"></a>Где приведены инструкции по использованию центра партнеров?
 
-Перейдите в [документацию по коммерческой](index.yml)площадке, а затем разверните **портал коммерческого рынка в центре партнеров**. Чтобы просмотреть справочные статьи по созданию предложений в центре партнеров, разверните узел **Создание нового предложения**.
+Перейдите в [документацию по коммерческой](index.yml)площадке. затем разверните **портал коммерческого рынка в центре партнеров**. Чтобы просмотреть справочные статьи по созданию предложений в центре партнеров, разверните узел **Создание нового предложения**.
 
 ## <a name="what-are-the-publishing-and-offer-management-differences"></a>Каковы отличия в управлении публикациями и предложениями?
 
@@ -137,7 +137,7 @@ ms.locfileid: "87012065"
 
 Центр партнеров предоставляет возможность модульной публикации, позволяющую выбрать изменения, которые необходимо опубликовать, а не публиковать все обновления одновременно. Например, на следующем экране показано, что единственными изменениями, выбранными для публикации, являются изменения **свойств** и **списка предложений**. Изменения, внесенные на странице предварительного просмотра, не публикуются.
 
-[![](media/cpp-pc-faq/review-page.png "Shows the Partner Center Review and publish page")](media/cpp-pc-faq/review-page.png#lightbox)
+[![На снимке экрана показана страница проверки и публикации центра партнеров.](media/cpp-pc-faq/review-page.png "Отображение страницы "Проверка и публикация" центра партнеров")](media/cpp-pc-faq/review-page.png#lightbox)
 
 Обновления, которые вы не публикуете, сохраняются в виде черновиков. Используйте возможности предварительного просмотра предложения, чтобы проверить предложение, прежде чем сделать его общедоступным.
 
@@ -145,24 +145,24 @@ ms.locfileid: "87012065"
 
 Центр партнеров включает [функцию сравнения](partner-center-portal/update-existing-offer.md#compare-changes-to-marketplace-offers) с усовершенствованными параметрами фильтрации. Это дает возможность сравнивать версию предложения на этапе предварительного просмотра с опубликованной версией.
 
-[![](media/cpp-pc-faq/compare.png "Shows the Partner Center compare feature")](media/cpp-pc-faq/compare.png#lightbox)
+[![На снимке экрана показана функция сравнения центра партнеров.](media/cpp-pc-faq/compare.png "Показывает функцию сравнения центра партнеров")](media/cpp-pc-faq/compare.png#lightbox)
 
 ### <a name="branding-and-navigation-changes"></a>Изменение наименований и навигации
 
 Вы заметите некоторые изменения наименований. Например, *номера SKU* являются *планами* в центре партнеров:
 
-[![](media/cpp-pc-faq/plans.png "Shows the Partner Center Plans page")](media/cpp-pc-faq/plans.png#lightbox)
+[![На снимке экрана показана страница планы центра партнеров.](media/cpp-pc-faq/plans.png "Отображение страницы планов центра партнеров")](media/cpp-pc-faq/plans.png#lightbox)
 
 Кроме того, сведения, которые вы ранее указали в **сведениях о** **Marketplace** или витрине (консультационная служба, Power BI приложение) в портал Cloud Partner, теперь собираются на странице **со списком предложений** в центре партнеров:
 
-[![](media/cpp-pc-faq/offer-listing.png "Shows the Partner Center Offer listing page")](media/cpp-pc-faq/offer-listing.png#lightbox)
+[![На снимке экрана показана страница со списком предложений центра партнеров.](media/cpp-pc-faq/offer-listing.png "Отображает страницу списка предложений для центра партнеров")](media/cpp-pc-faq/offer-listing.png#lightbox)
 
 Сведения, указанные ранее для номеров SKU на одной странице Портал Cloud Partner, теперь можно собирать на нескольких страницах в центре партнеров:
 
 - на странице настройки планов;
 - на странице списка планов;
 - на странице доступности планов;
-- Спланируйте страницу технической конфигурации, как показано ниже: ![ ! [] (Media/cpp-PC-FAQ/technical-configuration.png "отображается страница технической настройки центра партнеров")](media/cpp-pc-faq/technical-configuration.png#lightbox)
+- Спланируйте страницу технической конфигурации, как показано ниже: ![ ! [ На снимке экрана показана страница технической настройки центра партнеров.] (Media/cpp-PC-FAQ/technical-configuration.png "отображается страница технической настройки центра партнеров")](media/cpp-pc-faq/technical-configuration.png#lightbox)
 
 Ваш идентификатор предложения теперь отображается на левой навигационной панели предложения:
 
@@ -172,7 +172,7 @@ ms.locfileid: "87012065"
 
 Вы можете отправить запрос на [прекращение продажи предложения](partner-center-portal/update-existing-offer.md#stop-selling-an-offer-or-plan) в Marketplace непосредственно на портале Центра партнеров. Эта функция доступна на странице **Offer overview** (Обзор предложения).
 
-[![](media/cpp-pc-faq/stop-sell.png "Shows the Partner Center page to stop selling an offer")](media/cpp-pc-faq/stop-sell.png#lightbox)
+[![На снимке экрана отображается страница центра партнеров, на которой можно прерывать продажи предложения.](media/cpp-pc-faq/stop-sell.png "Отображение страницы центра партнеров для отмены продажи предложения")](media/cpp-pc-faq/stop-sell.png#lightbox)
 <br><br>
 
 ## <a name="are-the-cloud-partner-portal-rest-apis-still-supported"></a>Все еще поддерживаются интерфейсы API Портал Cloud Partner-интерфейсов RESTFUL?

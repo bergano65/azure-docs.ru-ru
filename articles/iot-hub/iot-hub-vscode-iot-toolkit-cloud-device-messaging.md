@@ -8,11 +8,14 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 01/18/2019
 ms.author: junhan
-ms.openlocfilehash: 31a5d55d1067b9dd946c1667118d0bde5ee3d59e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom:
+- 'Role: Cloud Development'
+ms.openlocfilehash: b9d8f0c2a573ba1749b414a389cd7181ddd5f95a
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81682496"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321689"
 ---
 # <a name="use-azure-iot-tools-for-visual-studio-code-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>Обмен сообщениями между устройством и Центром Интернета вещей с помощью расширения набора средств Центра Интернета вещей Azure для Visual Studio Code
 
@@ -32,7 +35,7 @@ ms.locfileid: "81682496"
 
 * Использование средств Интернета вещей Azure для Visual Studio Code для отправки сообщений из облака на устройство.
 
-## <a name="what-you-need"></a>Необходимые элементы
+## <a name="what-you-need"></a>Что нужно
 
 * Активная подписка Azure.
 
@@ -77,7 +80,7 @@ ms.locfileid: "81682496"
 
 3. Результаты будут показаны в **выводе**  >  представления**центра Интернета вещей Azure** .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как отслеживать сообщения, отправляемые из устройства Интернета вещей в облако Центра Интернета вещей, и отправлять сообщения из этого облака на устройство.
 

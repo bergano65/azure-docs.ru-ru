@@ -16,12 +16,13 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 3b2684122e7de97282b1054fa9ad0390469b0f0e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-java
+ms.openlocfilehash: 09553f587916e8204541b36f259a450d72c1b270
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87030272"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87322947"
 ---
 # <a name="how-to-use-notification-hubs-from-java"></a>Использование концентраторов уведомлений из Java
 
@@ -73,7 +74,7 @@ hub.setWindowsCredential(new WindowsCredential("sid","key"));
 hub = namespaceManager.createNotificationHub(hub);
 ```
 
- ИЛИ
+ OR
 
 ```java
 hub = new NotificationHub("connection string", "hubname");
@@ -376,7 +377,7 @@ hub.sendNotification(n);
 
 ## <a name="next-steps"></a><a name="next-steps"></a>Дальнейшие действия
 
-В этом разделе было показано, как создать простой клиент REST Java для службы "Центры уведомлений". Здесь можно выполнять следующие действия:
+В этом разделе было показано, как создать простой клиент REST Java для службы "Центры уведомлений". В этом разделе можно выполнить следующие действия:
 
 * Скачайте полный [пакет SDK для Java], содержащий весь код пакета SDK.
 * Попробуйте разные примеры:

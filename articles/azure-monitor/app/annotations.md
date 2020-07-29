@@ -3,12 +3,12 @@ title: Заметки о выпуске для Application Insights | Докум
 description: Добавление маркеров развертывания или сборки для диаграмм обозревателя метрик в Application Insights.
 ms.topic: conceptual
 ms.date: 07/01/2019
-ms.openlocfilehash: 8f6ffed8ae2039ec36ec8bd86518e6b359da65ec
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 8e9e0cb49343524e8a45831566cf802b1c8c5d9b
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87093040"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87320669"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Заметки к диаграммам метрик в Application Insights
 
@@ -34,7 +34,7 @@ ms.locfileid: "87093040"
 
 Создайте отдельный ключ API для каждого из шаблонов выпуска Azure Pipelines.
 
-1. Войдите в [портал Azure](https://portal.azure.com) и откройте ресурс Application Insights, который наблюдает за приложением. Если у вас ее нет, [Создайте новый ресурс Application Insights](../../azure-monitor/app/app-insights-overview.md).
+1. Войдите в [портал Azure](https://portal.azure.com) и откройте ресурс Application Insights, который наблюдает за приложением. Если у вас ее нет, [Создайте новый ресурс Application Insights](./app-insights-overview.md).
    
 1. Откройте вкладку **доступ к API** и скопируйте **идентификатор Application Insights**.
    
@@ -115,5 +115,6 @@ ms.locfileid: "87093040"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Создание рабочих элементов](../../azure-monitor/app/diagnostic-search.md#create-work-item)
-* [Автоматизация с помощью PowerShell](../../azure-monitor/app/powershell.md)
+* [Создание рабочих элементов](./diagnostic-search.md#create-work-item)
+* [Автоматизация с помощью PowerShell](./powershell.md)
+

@@ -3,20 +3,20 @@ title: Настройка оповещений в Application Insights с пом
 description: Автоматизация настройки Application Insights для получения сообщений электронной почты об изменениях метрик.
 ms.topic: conceptual
 ms.date: 07/23/2016
-ms.openlocfilehash: 00212aa8783a6bfc8e46d325a882781e33b7de51
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: 74d477b6660c0f7ec2ee32b34169bb85886936e5
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87117172"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87322471"
 ---
 # <a name="use-powershell-to-set-alerts-in-application-insights"></a>Настройка оповещений в Application Insights с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Вы можете автоматизировать настройку [оповещений](../../azure-monitor/platform/alerts-log.md) в [Application Insights](../../azure-monitor/app/app-insights-overview.md).
+Вы можете автоматизировать настройку [оповещений](../platform/alerts-log.md) в [Application Insights](./app-insights-overview.md).
 
-Кроме того, вы можете [установить объекты webhook, чтобы автоматизировать реагирование на оповещения](../../azure-monitor/platform/alerts-webhooks.md).
+Кроме того, вы можете [установить объекты webhook, чтобы автоматизировать реагирование на оповещения](../platform/alerts-webhooks.md).
 
 > [!NOTE]
 > Если вы хотите создать ресурсы и оповещения одновременно, рассмотрите возможность [использования шаблона Azure Resource Manager](powershell.md).
@@ -82,7 +82,7 @@ Add-AzMetricAlertRule -Name "slow responses" `
 ```
 
 ## <a name="example-2"></a>Пример 2
-У меня есть приложение, в котором используется [TrackMetric()](../../azure-monitor/app/api-custom-events-metrics.md#trackmetric) для предоставления метрики salesPerHour. Я хочу, чтобы моим коллегам отправлялось электронное сообщение, если в среднем за 24 часа salesPerHour станет меньше 100.
+У меня есть приложение, в котором используется [TrackMetric()](./api-custom-events-metrics.md#trackmetric) для предоставления метрики salesPerHour. Я хочу, чтобы моим коллегам отправлялось электронное сообщение, если в среднем за 24 часа salesPerHour станет меньше 100.
 
 ```azurepowershell
 Add-AzMetricAlertRule -Name "poor sales" `
@@ -98,7 +98,7 @@ Add-AzMetricAlertRule -Name "poor sales" `
   -RuleType Metric
 ```
 
-Это же правило можно использовать для метрики, передаваемой с помощью [параметра измерения](../../azure-monitor/app/api-custom-events-metrics.md#properties) другого вызова отслеживания, например TrackEvent или trackPageView.
+Это же правило можно использовать для метрики, передаваемой с помощью [параметра измерения](./api-custom-events-metrics.md#properties) другого вызова отслеживания, например TrackEvent или trackPageView.
 
 ## <a name="metric-names"></a>Имена метрик
 | Имя метрики | Имя экрана | Описание |
@@ -124,22 +124,23 @@ Add-AzMetricAlertRule -Name "poor sales" `
 | `request.rate` |Частота запросов |Частота всех запросов к приложению в секунду. |
 | `requestFailed.count` |Failed requests (Неудачные запросы) |Число HTTP-запросов, приведших к отображению кода ответа >= 400. |
 | `view.count` |Просмотры страниц |Количество клиентских запросов пользователя для веб-страницы. Искусственный трафик отфильтровывается. |
-| {имя пользовательской метрики} |{имя метрики} |Значение метрики, переданное [TrackMetric](../../azure-monitor/app/api-custom-events-metrics.md#trackmetric) или в [параметре измерения вызова отслеживания](../../azure-monitor/app/api-custom-events-metrics.md#properties). |
+| {имя пользовательской метрики} |{имя метрики} |Значение метрики, переданное [TrackMetric](./api-custom-events-metrics.md#trackmetric) или в [параметре измерения вызова отслеживания](./api-custom-events-metrics.md#properties). |
 
 Метрики отправляются различными модулями телеметрии:
 
 | Группа метрик | Модуль сборщика |
 | --- | --- |
-| basicExceptionBrowser,<br/>clientPerformance,<br/>представление |[Browser JavaScript](../../azure-monitor/app/javascript.md) |
-| performanceCounter |[Производительность](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
-| remoteDependencyFailed |[Зависимость](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
-| request,<br/>requestFailed |[Server request](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
+| basicExceptionBrowser,<br/>clientPerformance,<br/>представление |[Browser JavaScript](./javascript.md) |
+| performanceCounter |[Производительность](./configuration-with-applicationinsights-config.md) |
+| remoteDependencyFailed |[Зависимость](./configuration-with-applicationinsights-config.md) |
+| request,<br/>requestFailed |[Server request](./configuration-with-applicationinsights-config.md) |
 
 ## <a name="webhooks"></a>Веб-перехватчики
-Вы можете [автоматизировать реагирование на оповещения](../../azure-monitor/platform/alerts-webhooks.md). При возникновении оповещения Azure будет вызывать выбранный вами веб-адрес.
+Вы можете [автоматизировать реагирование на оповещения](../platform/alerts-webhooks.md). При возникновении оповещения Azure будет вызывать выбранный вами веб-адрес.
 
 ## <a name="see-also"></a>См. также раздел
 * [Сценарий настройки Application Insights](./create-new-resource.md#creating-a-resource-automatically)
 * [Создание ресурсов Application Insights и веб-тестов на основе шаблонов](powershell.md)
 * [Автоматизация связывания Диагностики Microsoft Azure с Application Insights](powershell-azure-diagnostics.md)
-* [Автоматизация реагирования на оповещения](../../azure-monitor/platform/alerts-webhooks.md)
+* [Автоматизация реагирования на предупреждения](../platform/alerts-webhooks.md)
+

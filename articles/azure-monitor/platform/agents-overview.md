@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/14/2020
-ms.openlocfilehash: 75394768cc41d3ca73398c2691b9ec0feb8c17f8
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: a9786c1f596a9f59e63886fa503bddac58ee7a8e
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86202568"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325344"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Общие сведения об агентах Azure Monitor
 
@@ -29,22 +29,22 @@ ms.locfileid: "86202568"
 
 ### <a name="windows-agents"></a>Агенты Windows
 
-| | Диагностика<br>расширение (WAD) | Log Analytics<br>агент | Зависимость<br>агент |
+| | Диагностика<br>расширение (WAD) | Log Analytics<br>агент | Зависимость<br>агент |
 |:---|:---|:---|:---|
 | **Поддерживаемые среды** | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>Локальная среда | 
 | **Требования к агентам**  | Отсутствуют | Отсутствуют | Требуется агент Log Analytics |
-| **Собираемые данные** | журналы событий;<br>ETW-события<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | журналы событий;<br>Производительность<IIS logs><br>Файловые журналы<br>Полезные сведения и решения<br>другие службы. | Сведения о процессе и зависимости<br>Метрики сетевого подключения |
-| **Отправленные данные** | Служба хранилища Azure<br>Метрики Azure Monitor<br>Концентратор событий | Журналы Azure Monitor | Журналы Azure Monitor |
+| **Собираемые данные** | журналы событий;<br>ETW-события<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | журналы событий;<br>Производительность<IIS logs><br>Файловые журналы<br>Полезные сведения и решения<br>Другие службы | Сведения о процессе и зависимости<br>Метрики сетевого подключения |
+| **Отправленные данные** | Хранилище Azure<br>Метрики Azure Monitor<br>Концентратор событий | Журналы Azure Monitor | Журналы Azure Monitor |
 
 
 ### <a name="linux-agents"></a>Агенты Linux
 
-| | Диагностика<br>расширение (LAD) | Telegraf<br>агент | Log Analytics<br>агент | Зависимость<br>агент |
+| | Диагностика<br>расширение (LAD) | Telegraf<br>агент | Log Analytics<br>агент | Зависимость<br>агент |
 |:---|:---|:---|:---|:---|
 | **Поддерживаемые среды** | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>Локальная среда |
 | **Требования к агентам**  | Отсутствуют | Отсутствуют | Отсутствуют | Требуется агент Log Analytics |
 | **Собираемые данные** | Системный журнал<br>Производительность | Производительность | Системный журнал<br>Производительность| Сведения о процессе и зависимости<br>Метрики сетевого подключения |
-| **Отправленные данные** | Служба хранилища Azure<br>Концентратор событий | Метрики Azure Monitor | Журналы Azure Monitor | Журналы Azure Monitor |
+| **Отправленные данные** | Хранилище Azure<br>Концентратор событий | Метрики Azure Monitor | Журналы Azure Monitor | Журналы Azure Monitor |
 
 ## <a name="log-analytics-agent"></a>Агент Log Analytics
 
@@ -76,7 +76,7 @@ ms.locfileid: "86202568"
 Используйте расширение диагностики Azure, если вам нужно:
 
 - Отправка данных в службу хранилища Azure для архивирования или анализа с помощью таких средств, как [Обозреватель службы хранилища Azure](../../vs-azure-tools-storage-manage-with-storage-explorer.md).
-- Отправляйте данные в [метрики Azure Monitor](data-platform-metrics.md) , чтобы проанализировать ее с помощью [обозревателя метрик](metrics-getting-started.md) и воспользоваться такими функциями, как оповещения на основе [метрик](../../azure-monitor/platform/alerts-metric-overview.md) практически в реальном времени и [Автомасштабирование](autoscale-overview.md) (только для Windows).
+- Отправляйте данные в [метрики Azure Monitor](data-platform-metrics.md) , чтобы проанализировать ее с помощью [обозревателя метрик](metrics-getting-started.md) и воспользоваться такими функциями, как оповещения на основе [метрик](./alerts-metric-overview.md) практически в реальном времени и [Автомасштабирование](autoscale-overview.md) (только для Windows).
 - Отправка данных сторонним средствам с помощью [концентраторов событий Azure](diagnostics-extension-stream-event-hubs.md).
 - Собирайте [диагностику загрузки](../../virtual-machines/troubleshooting/boot-diagnostics.md) для изучения проблем загрузки виртуальной машины.
 
@@ -91,7 +91,7 @@ ms.locfileid: "86202568"
 
 Используйте Telegraf Agent, если необходимо:
 
-* Отправляйте данные в [метрики Azure Monitor](data-platform-metrics.md) , чтобы проанализировать ее с помощью [обозревателя метрик](metrics-getting-started.md) и воспользоваться такими функциями, как оповещения на основе [метрик](../../azure-monitor/platform/alerts-metric-overview.md) практически в реальном времени и [Автомасштабирование](autoscale-overview.md) (только для Linux). 
+* Отправляйте данные в [метрики Azure Monitor](data-platform-metrics.md) , чтобы проанализировать ее с помощью [обозревателя метрик](metrics-getting-started.md) и воспользоваться такими функциями, как оповещения на основе [метрик](./alerts-metric-overview.md) практически в реальном времени и [Автомасштабирование](autoscale-overview.md) (только для Linux). 
 
 
 
@@ -120,3 +120,4 @@ ms.locfileid: "86202568"
 - [Общие сведения об агенте Log Analytics](log-analytics-agent.md)
 - [Обзор расширения "Диагностика Azure"](diagnostics-extension-overview.md)
 - [Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData](collect-custom-metrics-linux-telegraf.md)
+

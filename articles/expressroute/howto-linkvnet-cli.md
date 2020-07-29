@@ -5,13 +5,14 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 05/21/2019
+ms.date: 07/27/2020
 ms.author: cherylmc
-ms.openlocfilehash: 133a586612f8a5b864c84400ece63d9ba6ccb150
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3d51409baf9d5ca6ce90f1367ac128d7d47a9757
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84729248"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325259"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-cli"></a>Подключение виртуальной сети к каналу ExpressRoute с помощью CLI
 
@@ -152,7 +153,7 @@ az network vpn-connection update --name ERConnection --resource-group ExpressRou
 Диапазон значений *RoutingWeight*: 0 до 32 000. Значение по умолчанию — 0.
 
 ## <a name="configure-expressroute-fastpath"></a>Настройка Фастпас ExpressRoute 
-Вы можете включить [ExpressRoute фастпас](expressroute-about-virtual-network-gateways.md) , если канал expressroute включен в [expressroute Direct](expressroute-erdirect-about.md) , а виртуальный шлюз сеть — Ultra Performance или ErGw3AZ. Фастпас улучшает предсоответствие пути к данным, например количество пакетов в секунду и количество подключений в секунду между локальной сетью и виртуальной сетью. 
+Вы можете включить [ExpressRoute фастпас](expressroute-about-virtual-network-gateways.md) , если шлюз виртуальной сети имеет значение Ultra Performance или ErGw3AZ. Фастпас улучшает предсоответствие пути к данным, например количество пакетов в секунду и количество подключений в секунду между локальной сетью и виртуальной сетью. 
 
 **Настройка Фастпас для нового подключения**
 

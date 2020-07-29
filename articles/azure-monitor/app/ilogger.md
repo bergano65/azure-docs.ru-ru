@@ -4,12 +4,12 @@ description: Примеры использования поставщика Azur
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 419813eba371def9eeeb43e45b51b38d1f20c607
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 171aaeb624bfedb9aa7408a736c11faca316b392
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87014479"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87322641"
 ---
 # <a name="applicationinsightsloggerprovider-for-net-core-ilogger-logs"></a>Аппликатионинсигхтслогжерпровидер для журналов ILogger для .NET Core
 
@@ -218,7 +218,7 @@ public class Startup
 ## <a name="console-application"></a>Консольное приложение
 
 > [!NOTE]
-> Существует новый пакет SDK Application Insights с именем [Microsoft. ApplicationInsights. воркерсервице](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) , который можно использовать для включения Application Insights (ILogger и других данных телеметрии Application Insights) для любых консольных приложений. Рекомендуется использовать этот пакет и связанные инструкции [отсюда](../../azure-monitor/app/worker-service.md).
+> Существует новый пакет SDK Application Insights с именем [Microsoft. ApplicationInsights. воркерсервице](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) , который можно использовать для включения Application Insights (ILogger и других данных телеметрии Application Insights) для любых консольных приложений. Рекомендуется использовать этот пакет и связанные инструкции [отсюда](./worker-service.md).
 
 В следующем коде показан пример консольного приложения, которое настроено для отправки трассировок ILogger в Application Insights.
 
@@ -392,7 +392,7 @@ class Program
 
 ### <a name="i-updated-to-microsoftapplicationinsightsaspnet-sdk-version-271-and-logs-from-ilogger-are-captured-automatically-how-do-i-turn-off-this-feature-completely"></a>Я обновил [пакет SDK для Microsoft. ApplicationInsights. AspNet](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore) версии 2.7.1, а журналы из ILogger фиксируются автоматически. Разделы справки полностью отключить эту функцию?
 
-Сведения о том, как отфильтровать журналы в целом, см. в разделе [Управление уровнем ведения журнала](../../azure-monitor/app/ilogger.md#control-logging-level) . Чтобы отключить Аппликатионинсигхтслогжерпровидер, используйте `LogLevel.None` :
+Сведения о том, как отфильтровать журналы в целом, см. в разделе [Управление уровнем ведения журнала](#control-logging-level) . Чтобы отключить Аппликатионинсигхтслогжерпровидер, используйте `LogLevel.None` :
 
 **В коде:**
 
@@ -499,4 +499,5 @@ public class MyController : ApiController
 См. также:
 
 * [Ведение журналов в ASP.NET Core](/aspnet/core/fundamentals/logging)
-* [Журналы трассировки .NET в Application Insights](../../azure-monitor/app/asp-net-trace-logs.md)
+* [Журналы трассировки .NET в Application Insights](./asp-net-trace-logs.md)
+

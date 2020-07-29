@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 07/12/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d413b2babda4c73f9f29ce3750bf7d0461db43c1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e1575ee02a520fd39a1c659eadaeda5822207539
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87065104"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87171128"
 ---
 #  <a name="what-is-sap-hana-on-azure-large-instances"></a>Что такое SAP HANA в Azure (большие экземпляры)?
 
@@ -56,6 +56,7 @@ SAP HANA в Azure (крупные экземпляры) — это уникал�
 - [Устранение неполадок SAP HANA (крупные экземпляры) и мониторинг в Azure](troubleshooting-monitoring.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 - [Настройка высокого уровня доступности в SUSE с помощью STONITH](./ha-setup-with-stonith.md)
 - [Резервное копирование и восстановление ОС для номеров SKU типа II для версий 3](./os-backup-type-ii-skus.md)
+- [Сохранение на SAP HANA (крупные экземпляры) с резервированием Azure](../../../cost-management-billing/reservations/prepay-hana-large-instances-reserved-capacity.md)
 
 **Следующие шаги**
 - См. раздел [Know the terms](hana-know-terms.md) (Определение терминов)

@@ -6,16 +6,16 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 05/03/2017
 ms.reviewer: mbullwin
-ms.openlocfilehash: 25d1cccdbd56db397fc444d1488c773515ad6553
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: f7f6155d3230d234e1163ee12cd7685817331b93
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86499313"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323542"
 ---
 # <a name="user-retention-analysis-for-web-applications-with-application-insights"></a>Анализ удержания пользователей веб-приложений с помощью Application Insights
 
-Компонент "Удержание" в [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) помогает анализировать, сколько пользователей вернулось в ваше приложение и как часто они выполняют определенные задачи или достигают цели. Например, если вы разместили игровой сайт, то можете сравнить число пользователей, которые вернулись на сайт после проигрыша, и число пользователей, которые вернулись после победы в игре. Эти сведения помогут улучшить взаимодействие с пользователем и свою бизнес-стратегию.
+Компонент "Удержание" в [Azure Application Insights](./app-insights-overview.md) помогает анализировать, сколько пользователей вернулось в ваше приложение и как часто они выполняют определенные задачи или достигают цели. Например, если вы разместили игровой сайт, то можете сравнить число пользователей, которые вернулись на сайт после проигрыша, и число пользователей, которые вернулись после победы в игре. Эти сведения помогут улучшить взаимодействие с пользователем и свою бизнес-стратегию.
 
 ## <a name="get-started"></a>Начало работы
 
@@ -54,7 +54,7 @@ ms.locfileid: "86499313"
    telemetry.TrackEvent("won game");
 ```
 
-[Узнайте больше о создании пользовательских событий](../../azure-monitor/app/api-custom-events-metrics.md#trackevent).
+[Узнайте больше о создании пользовательских событий](./api-custom-events-metrics.md#trackevent).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -63,5 +63,6 @@ ms.locfileid: "86499313"
     - [Пользователи, сеансы, события](usage-segmentation.md)
     - [Воронки](usage-funnels.md)
     - [Средство "Маршруты пользователей"](usage-flows.md)
-    - [книги](../../azure-monitor/platform/workbooks-overview.md)
+    - [книги](../platform/workbooks-overview.md)
     - [Добавление контекста пользователей](usage-send-user-context.md)
+

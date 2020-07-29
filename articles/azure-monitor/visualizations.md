@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/17/2020
-ms.openlocfilehash: 4c5290d9f5ec47969ae43e5986d31484927a0ac5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 195e606a66b1b49821fc1b46381fdc551f142a6a
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87081361"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325531"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Визуализация данных из Azure Monitor
 В этой статье приводится обзор доступных методов для визуализации метрик и данных журналов, хранящихся в Azure Monitor.
@@ -19,7 +19,7 @@ ms.locfileid: "87081361"
 Визуализации, такие как диаграммы и графики, упрощают анализ отслеживаемых данных для детализации проблем и определения схем. В зависимости от используемого средства вы можете использовать визуализации совместно с пользователями в вашей организации и за ее пределами.
 
 ## <a name="workbooks"></a>Workbooks
-[Книги](../azure-monitor/platform/workbooks-overview.md) — это интерактивные документы, которые дают полное представление о данных и позволяют проводить анализ и выполнять совместную работу в группе. Конкретными примерами, в которых книги могут оказаться весьма полезными источниками данных, являются руководства по устранению неполадок и инцидентов.
+[Книги](./platform/workbooks-overview.md) — это интерактивные документы, которые дают полное представление о данных и позволяют проводить анализ и выполнять совместную работу в группе. Конкретными примерами, в которых книги могут оказаться весьма полезными источниками данных, являются руководства по устранению неполадок и инцидентов.
 
 ![Книга](media/visualizations/workbook.png)
 
@@ -141,7 +141,7 @@ ms.locfileid: "87081361"
 - Дополнительные сведения о [данных, собранных Azure Monitor](platform/data-platform.md).
 - Дополнительные сведения о [панелях мониторинга Azure](../azure-portal/azure-portal-dashboards.md).
 - Дополнительные сведения о [представлениях в Azure Monitor](platform/view-designer.md).
-- Дополнительные сведения о [Книгах](../azure-monitor/platform/workbooks-overview.md).
-- Дополнительные сведения об [импорте данных журналов в Power BI](../azure-monitor/platform/powerbi.md).
-- Дополнительные сведения о [подключаемом модуле источника данных Grafana для Azure Monitor](../azure-monitor/platform/grafana-plugin.md).
+- Дополнительные сведения о [Книгах](./platform/workbooks-overview.md).
+- Дополнительные сведения об [импорте данных журналов в Power BI](./platform/powerbi.md).
+- Дополнительные сведения о [подключаемом модуле источника данных Grafana для Azure Monitor](./platform/grafana-plugin.md).
 
