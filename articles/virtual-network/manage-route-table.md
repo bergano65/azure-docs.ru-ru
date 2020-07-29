@@ -1,7 +1,7 @@
 ---
 title: Создание, изменение или удаление таблицы маршрутов Azure
 titlesuffix: Azure Virtual Network
-description: Сведения о создании, изменении и удалении таблицы маршрутов.
+description: Узнайте, где найти сведения о маршрутизации трафика виртуальной сети, а также о создании, изменении и удалении таблицы маршрутов.
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -12,11 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/19/2020
 ms.author: kumud
-ms.openlocfilehash: e694f29bb6f8e7c78c36ad2b8ee90d507529444f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 664e3851370be812cd7a0e58cf9beb1fddb5d991
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708269"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87291009"
 ---
 # <a name="create-change-or-delete-a-route-table"></a>Создание, изменение и удаление таблицы маршрутов
 
@@ -51,14 +52,14 @@ Azure автоматически направляет трафик между п
     1. Введите **имя** таблицы маршрутов.
     1. Выберите свою **подписку**.
     1. Выберите существующую **группу ресурсов** или щелкните **создать** , чтобы создать новую группу ресурсов.
-    1. Выберите **Расположение**.
+    1. Выберите **расположение**.
     1. Если вы планируете связать таблицу маршрутов с подсетью в виртуальной сети, которая подключена к локальной сети через VPN-шлюз, и вы не хотите распространять Локальные маршруты к сетевым интерфейсам в подсети, установите для параметра **распространение маршрута шлюза виртуальной сети** значение **отключено**.
 
 1. Выберите **создать** , чтобы создать новую таблицу маршрутов.
 
 ### <a name="create-route-table---commands"></a>Создание таблицы маршрутов — команды
 
-| Средство | Get-Help |
+| Средство | Команда |
 | ---- | ------- |
 | Azure CLI | [az network route-table create](/cli/azure/network/route-table#az-network-route-table-create) |
 | PowerShell | [New-AzRouteTable](/powershell/module/az.network/new-azroutetable) |
@@ -69,7 +70,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="view-route-table---commands"></a>Просмотр таблицы маршрутов — команды
 
-| Средство | Get-Help |
+| Средство | Команда |
 | ---- | ------- |
 | Azure CLI | [AZ Network Route-список таблиц](/cli/azure/network/route-table#az-network-route-table-list) |
 | PowerShell | [Get-AzRouteTable](/powershell/module/az.network/get-azroutetable) |
@@ -87,12 +88,12 @@ Azure автоматически направляет трафик между п
 - [Журнал действий](../azure-monitor/platform/platform-logs-overview.md)
 - [Управление доступом (IAM)](../role-based-access-control/overview.md)
 - [Теги](../azure-resource-manager/management/tag-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [Намерен](../azure-resource-manager/management/lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
+- [Блокировки](../azure-resource-manager/management/lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Скрипт автоматизации](../azure-resource-manager/templates/export-template-portal.md)
 
 ### <a name="view-details-of-route-table---commands"></a>Просмотр сведений о командах таблицы маршрутов
 
-| Средство | Get-Help |
+| Средство | Команда |
 | ---- | ------- |
 | Azure CLI | [AZ Network Route — таблица-показывать](/cli/azure/network/route-table#az-network-route-table-show) |
 | PowerShell | [Get-AzRouteTable](/powershell/module/az.network/get-azroutetable) |
@@ -107,7 +108,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="change-a-route-table---commands"></a>Изменение команд таблицы маршрутов
 
-| Средство | Get-Help |
+| Средство | Команда |
 | ---- | ------- |
 | Azure CLI | [AZ Network Route-обновление таблицы](/cli/azure/network/route-table#az-network-route-table-update) |
 | PowerShell | [Set-AzRouteTable](/powershell/module/az.network/set-azroutetable) |
@@ -126,13 +127,13 @@ Azure автоматически направляет трафик между п
 
 1. В **таблице маршрутов**выберите таблицу маршрутов, которую необходимо связать с подсетью.
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 Если виртуальная сеть подключена к VPN-шлюзу Azure, не связывайте таблицу маршрутов с [подсетью шлюза](../vpn-gateway/vpn-gateway-about-vpn-gateway-settings.md?toc=%2fazure%2fvirtual-network%2ftoc.json#gwsub) , которая включает маршрут с назначением *0.0.0.0/0*. Это может привести к неправильной работе шлюза. Дополнительные сведения об использовании *0.0.0.0/0* в маршруте см. в разделе [Маршрутизация трафика виртуальной сети](virtual-networks-udr-overview.md#default-route).
 
 ### <a name="associate-a-route-table---commands"></a>Связывание команд таблицы маршрутов
 
-| Средство | Get-Help |
+| Средство | Команда |
 | ---- | ------- |
 | Azure CLI | [az network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update) |
 | PowerShell | [Set-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) |
@@ -151,11 +152,11 @@ Azure автоматически направляет трафик между п
 
 1. В **таблице Маршрут**выберите **нет**.
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ### <a name="dissociate-a-route-table---commands"></a>Отмена связи между командами таблицы маршрутов
 
-| Средство | Get-Help |
+| Средство | Команда |
 | ---- | ------- |
 | Azure CLI | [az network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update) |
 | PowerShell | [Set-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) |
@@ -172,7 +173,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="delete-a-route-table---commands"></a>Удаление таблицы маршрутов — команды
 
-| Средство | Get-Help |
+| Средство | Команда |
 | ---- | ------- |
 | Azure CLI | [AZ сетевая маршрутизация-таблица Delete](/cli/azure/network/route-table#az-network-route-table-delete) |
 | PowerShell | [Remove-Азраутетабле](/powershell/module/az.network/remove-azroutetable) |
@@ -195,11 +196,11 @@ Azure автоматически направляет трафик между п
 
 1. Если выбран тип **виртуального устройства** **следующего прыжка** , введите IP-адрес для **адреса следующего прыжка**.
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 ### <a name="create-a-route---commands"></a>Создание команд маршрута
 
-| Средство | Get-Help |
+| Средство | Команда |
 | ---- | ------- |
 | Azure CLI | [az network route-table route create](/cli/azure/network/route-table/route#az-network-route-table-route-create) |
 | PowerShell | [New-AzRouteConfig](/powershell/module/az.network/new-azrouteconfig) |
@@ -216,7 +217,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="view-routes---commands"></a>Просмотр маршрутов — команды
 
-| Средство | Get-Help |
+| Средство | Команда |
 | ---- | ------- |
 | Azure CLI | [AZ Network Route-таблица Route List](/cli/azure/network/route-table/route#az-network-route-table-route-list) |
 | PowerShell | [Get-Азраутеконфиг](/powershell/module/az.network/get-azrouteconfig) |
@@ -233,7 +234,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="view-details-of-a-route---commands"></a>Просмотр сведений о командах маршрута
 
-| Средство | Get-Help |
+| Средство | Команда |
 | ---- | ------- |
 | Azure CLI | [AZ сетевая маршрутизация-Таблица маршрута](/cli/azure/network/route-table/route#az-network-route-table-route-show) |
 | PowerShell | [Get-Азраутеконфиг](/powershell/module/az.network/get-azrouteconfig) |
@@ -252,7 +253,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="change-a-route---commands"></a>Изменение команд маршрута
 
-| Средство | Get-Help |
+| Средство | Команда |
 | ---- | ------- |
 | Azure CLI | [AZ Network Route — Таблица маршрута обновления](/cli/azure/network/route-table/route#az-network-route-table-route-update) |
 | PowerShell | [Set-Азраутеконфиг](/powershell/module/az.network/set-azrouteconfig) |
@@ -271,7 +272,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="delete-a-route---commands"></a>Удаление команд маршрута
 
-| Средство | Get-Help |
+| Средство | Команда |
 | ---- | ------- |
 | Azure CLI | [AZ сетевая маршрутизация — Таблица маршрута Delete](/cli/azure/network/route-table/route#az-network-route-table-route-delete) |
 | PowerShell | [Remove-Азраутеконфиг](/powershell/module/az.network/remove-azrouteconfig) |
@@ -294,7 +295,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="view-effective-routes---commands"></a>Просмотр эффективных маршрутов — команды
 
-| Средство | Get-Help |
+| Средство | Команда |
 | ---- | ------- |
 | Azure CLI | [AZ Network NIC демонстрация-эффективная-Route-Table](/cli/azure/network/nic#az-network-nic-show-effective-route-table) |
 | PowerShell | [Get-AzEffectiveRouteTable.](/powershell/module/az.network/get-azeffectiveroutetable) |
@@ -323,7 +324,7 @@ Azure автоматически направляет трафик между п
 
 ### <a name="validate-routing-between-two-endpoints---commands"></a>Проверка маршрутизации между двумя конечными точками — команды
 
-| Средство | Get-Help |
+| Средство | Команда |
 | ---- | ------- |
 | Azure CLI | [AZ Network наблюдатель "Показывать-следующий прыжок"](/cli/azure/network/watcher#az-network-watcher-show-next-hop) |
 | PowerShell | [Get-Азнетворкватчернекссоп](/powershell/module/az.network/get-aznetworkwatchernexthop) |
@@ -332,7 +333,7 @@ Azure автоматически направляет трафик между п
 
 Для работы с таблицами маршрутов и маршрутами учетной записи должна быть назначена [роль "участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) " или [пользовательская роль](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) , которой назначены соответствующие действия, перечисленные в следующей таблице.
 
-| Действие                                                          |   name                                                  |
+| Действие                                                          |   Имя                                                  |
 |--------------------------------------------------------------   |   -------------------------------------------           |
 | Microsoft.Network/routeTables/read                              |   Чтение таблицы маршрутов.                                    |
 | Microsoft.Network/routeTables/write                             |   Создание или обновление таблицы маршрутов.                        |
@@ -344,7 +345,7 @@ Azure автоматически направляет трафик между п
 | Microsoft.Network/networkInterfaces/effectiveRouteTable/action  |   Получение действующей таблицы маршрутов для сетевого интерфейса. |
 | Microsoft.Network/networkWatchers/nextHop/action                |   Получить следующий прыжок из виртуальной машины                           |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Создание таблицы маршрутов с помощью [PowerShell](powershell-samples.md) или [Azure CLI](cli-samples.md) примеров сценариев или шаблонов Azure [Диспетчер ресурсов](template-samples.md)
 - Создание и назначение [определений политик Azure](policy-samples.md) для виртуальных сетей

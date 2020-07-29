@@ -7,14 +7,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 10/04/2019
+ms.date: 07/27/2020
 ms.author: aahi
-ms.openlocfilehash: 72b00d78d19ed0e963b4dad01b82033c659e1efd
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: b77d69248059a494d823afcd149382dd52b0e49d
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84704715"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87317133"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Создание Cognitive Services ресурса с помощью интерфейс командной строки Azure (CLI)
 
@@ -84,7 +84,7 @@ az group create \
 > [!NOTE]
 > Многие из Cognitive Services ниже имеют бесплатный уровень, который можно использовать для пробного использования службы. Чтобы использовать уровень "бесплатный", используйте в `F0` качестве номера SKU для ресурса.
 
-### <a name="vision"></a>Зрение
+### <a name="vision"></a>Зрительное восприятие
 
 | Служба                    | Вид                      |
 |----------------------------|---------------------------|
@@ -120,7 +120,7 @@ az group create \
 | LUIS               | `LUIS`              |
 | QnA Maker          | `QnAMaker`          |
 | Анализ текста     | `TextAnalytics`     |
-| Перевод текста   | `TextTranslation`   |
+| Преобразование текста   | `TextTranslation`   |
 
 ### <a name="decision"></a>Решение
 
@@ -151,6 +151,8 @@ az cognitiveservices account create \
     --location westus2 \
     --yes
 ```
+
+[!INCLUDE [Register Azure resource for subscription](./includes/register-resource-subscription.md)]
 
 ## <a name="get-the-keys-for-your-resource"></a>Получение ключей для ресурса
 
@@ -198,7 +200,7 @@ az cognitiveservices account list-usage \
 az group delete --name cognitive-services-resource-group
 ```
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
 * [Проверка подлинности запросов к Azure Cognitive Services](authentication.md)
 * [Общие сведения об Azure Cognitive Services](Welcome.md)

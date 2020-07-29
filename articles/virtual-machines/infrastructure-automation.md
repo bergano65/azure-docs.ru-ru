@@ -3,16 +3,16 @@ title: Использование средств автоматизации ин
 description: Узнайте, как использовать средства автоматизации инфраструктуры, такие как Ansible, Chef, Puppet, terraform и Pack, для создания виртуальных машин в Azure и управления ими.
 author: cynthn
 ms.service: virtual-machines
-ms.topic: article
+ms.topic: conceptual
 ms.workload: infrastructure
 ms.date: 07/17/2020
 ms.author: cynthn
-ms.openlocfilehash: 31a0d9d4eac731836812c438a71541885863c8de
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5567274fd9ee2cfaf41f9ff4c6e71bb2faab7b1d
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87100322"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87292383"
 ---
 # <a name="use-infrastructure-automation-tools-with-virtual-machines-in-azure"></a>Использование средств автоматизации инфраструктуры на виртуальных машинах в Azure
 
@@ -124,7 +124,7 @@ ms.locfileid: "87100322"
 ## <a name="azure-devops-services"></a>Azure DevOps Services
 [Azure DevOps Services](https://www.visualstudio.com/team-services/) — это набор средств, позволяющих отслеживать код и предоставлять к нему общий доступ, использовать автоматизированные сборки и создавать конвейеры непрерывной интеграции и разработки (CI/CD). Azure DevOps Services интегрируется с Visual Studio и другими редакторами, что упрощает его использование. Кроме того, этот набор средств позволяет создавать и настраивать виртуальные машины Azure, а затем развертывать код на них.
 
-Дополнительные сведения
+См. также:
 
 - [Azure DevOps Services](https://docs.microsoft.com/azure/devops/user-guide/index?view=vsts).
 

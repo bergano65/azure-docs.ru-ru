@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: e8ab6e2e62bdcb08754d011a6b576cb615371a09
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 965118345a003aface0373bda7496243bcab8429
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87076455"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290174"
 ---
 # <a name="azure-database-for-postgresql-single-server-data-encryption-with-a-customer-managed-key"></a>Шифрование данных с помощью управляемых клиентом ключей для отдельного сервера базы данных Azure для PostgreSQL
 
@@ -22,7 +22,7 @@ ms.locfileid: "87076455"
 Key Vault — это облачная внешняя система управления ключами. Она обладает высокой доступностью и является масштабируемым надежным хранилищем для криптографических ключей RSA, которое при необходимости поддерживается проверенными аппаратными модулями безопасности (HSM) FIPS 140-2 уровня 2. Эта система запрещает прямой доступ к хранящемуся ключу, но предоставляет авторизованным сущностям службы шифрования и расшифровки. Key Vault может создать ключ, импортировать его или [передать с локального устройства HSM](../key-vault/key-Vault-hsm-protected-keys.md).
 
 > [!NOTE]
-> Эта функция доступна во всех регионах Azure, где отдельный сервер базы данных Azure для PostgreSQL поддерживает ценовые категории "Общего назначения" и "Оптимизировано для операций в памяти".
+> Эта функция доступна во всех регионах Azure, где отдельный сервер базы данных Azure для PostgreSQL поддерживает ценовые категории "Общего назначения" и "Оптимизировано для операций в памяти". Другие ограничения см. в разделе об [ограничениях](concepts-data-encryption-postgresql.md#limitations) .
 
 ## <a name="benefits"></a>Преимущества
 

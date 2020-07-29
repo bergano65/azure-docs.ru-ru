@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок подключения к службе виртуальная система Windows — 2019 — Azure
-description: Сведения об устранении проблем при настройке клиентских подключений в среде клиента Виртуального рабочего стола Windows.
+title: Устранение неполадок подключения службы Windows виртуальный рабочий стол (классическая модель) — Azure
+description: Устранение проблем при настройке клиентских подключений в среде клиента виртуальных рабочих столов Windows (классическая модель).
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: troubleshooting
 ms.date: 05/20/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ad5e740a2874d398f3947fe755024bedc897ec73
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 213f7843e4896f8c7c9234e2c94433afbed1d565
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87085798"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87292516"
 ---
-# <a name="troubleshoot-windows-virtual-desktop-service-connections"></a>Устранение неполадок подключения к службе виртуальных рабочих столов Windows
+# <a name="windows-virtual-desktop-classic-service-connections"></a>Подключения к службам виртуальных рабочих столов Windows (классические)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../troubleshoot-service-connection.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../troubleshoot-service-connection.md).
 
 Эта статья поможет вам в устранении проблем при настройке клиентских подключений к Виртуальному рабочему столу Windows.
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/13/2017
-ms.openlocfilehash: d52138f5b23a6a0ac8ff8c585e6aed0edd92eaf0
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ee5aec2e483f41c73d57fc1d91427e5657bda3e7
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86499551"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318000"
 ---
 # <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-deprecated"></a>Планирование емкости виртуальных машин Hyper-V с помощью решения Емкость и производительность (не рекомендуется)
 
@@ -39,11 +39,11 @@ ms.locfileid: "86499551"
 
 В следующей таблице описаны подключенные источники, которые поддерживаются этим решением.
 
-| Подключенный источник | Поддержка | Описание |
+| Подключенный источник | Поддержка | Описание: |
 |---|---|---|
-| [Агенты Windows](../../azure-monitor/platform/agent-windows.md) | Да | Решение собирает сведения о емкости и производительности из агентов Windows. |
-| [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет    | Решение не собирает сведения о емкости и производительности из прямых агентов Linux.|
-| [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Да |Решение собирает сведения о емкости и производительности из агентов в подключенной группе управления SCOM. Прямое подключение агента SCOM к Log Analytics не требуется.|
+| [Агенты Windows](../platform/agent-windows.md) | Да | Решение собирает сведения о емкости и производительности из агентов Windows. |
+| [Агенты Linux](../learn/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения о емкости и производительности из прямых агентов Linux.|
+| [Группы управления SCOM](../platform/om-agents.md) | Да |Решение собирает сведения о емкости и производительности из агентов в подключенной группе управления SCOM. Прямое подключение агента SCOM к Log Analytics не требуется.|
 | [Учетная запись хранения Azure](../platform/resource-logs.md#send-to-log-analytics-workspace) | Нет | Служба хранилища Azure не содержит сведения о емкости и производительности.|
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -51,11 +51,11 @@ ms.locfileid: "86499551"
 - Агенты Windows или Operations Manager должны быть установлены на узлах Hyper-V под управлением Windows Server 2012 (или более поздней версии), а не на виртуальных машинах.
 
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 Чтобы добавить решение "Емкость и производительность" в рабочую область, сделайте следующее:
 
-- Добавьте решение "Емкость и производительность" в рабочую область Log Analytics, используя указания в статье [Добавление решений для управления Azure Log Analytics в рабочую область](../../azure-monitor/insights/solutions.md).
+- Добавьте решение "Емкость и производительность" в рабочую область Log Analytics, используя указания в статье [Добавление решений для управления Azure Log Analytics в рабочую область](./solutions.md).
 
 ## <a name="management-packs"></a>Пакеты управления
 
@@ -72,7 +72,7 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 
 При обновлении решения "Емкость и производительность" номер версии изменится.
 
-Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../../azure-monitor/platform/om-agents.md).
+Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../platform/om-agents.md).
 
 ## <a name="using-the-solution"></a>Использование решения
 
@@ -129,4 +129,5 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Используйте [поиск по журналам в Log Analytics](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные сведения о емкости и производительности.
+* Используйте [поиск по журналам в Log Analytics](../log-query/log-query-overview.md), чтобы просмотреть подробные сведения о емкости и производительности.
+

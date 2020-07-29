@@ -8,14 +8,15 @@ ms.reviewer: sgilley
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
 ms.date: 03/30/2020
-ms.custom: seodec18, tracking-python
-ms.openlocfilehash: 93418369724286e8b8c967754b2fb37135094008
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.topic: conceptual
+ms.custom: how-to, tracking-python
+ms.openlocfilehash: a92aa304d605242063e0d0484317bc8c051959e5
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027596"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87317847"
 ---
 # <a name="tune-hyperparameters-for-your-model-with-azure-machine-learning"></a>Настройка параметров для модели с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -402,6 +403,6 @@ print('\n batch size:',parameter_values[7])
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Руководство по отслеживанию эксперимента](how-to-track-experiments.md)
 * [Развертывание обученной модели](how-to-deploy-and-where.md)

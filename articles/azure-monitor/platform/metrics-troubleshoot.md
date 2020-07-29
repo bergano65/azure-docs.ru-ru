@@ -7,11 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: e1ad4e53596b8228bdef5beb18aa250a9512c49f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b2f7e45c7f6092566314e6e4867bc0345683e4eb
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77659668"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318391"
 ---
 # <a name="troubleshooting-metrics-charts"></a>Устранение неполадок с диаграммами метрик
 
@@ -67,7 +68,7 @@ ms.locfileid: "77659668"
 
 Сбор метрик **гостевой ОС** требует настройки расширения "Диагностика Azure" или его включения с помощью панели **Параметры диагностики** для вашего ресурса.
 
-**Решение:** Если расширение система диагностики Azure включено, но метрики по-прежнему не отображаются, выполните действия, описанные в [руководстве по устранению неполадок расширений система диагностики Azure](diagnostics-extension-troubleshooting.md#metric-data-doesnt-appear-in-the-azure-portal). См. также шаги по устранению неполадок для [не удается выбрать пространство имен и метрики гостевой ОС](metrics-troubleshoot.md#cannot-pick-guest-os-namespace-and-metrics) .
+**Решение:** Если расширение система диагностики Azure включено, но метрики по-прежнему не отображаются, выполните действия, описанные в [руководстве по устранению неполадок расширений система диагностики Azure](diagnostics-extension-troubleshooting.md#metric-data-doesnt-appear-in-the-azure-portal). См. также шаги по устранению неполадок для [не удается выбрать пространство имен и метрики гостевой ОС](#cannot-pick-guest-os-namespace-and-metrics) .
 
 ## <a name="error-retrieving-data-message-on-dashboard"></a>Сообщение об ошибке при извлечении данных на панели мониторинга
 
@@ -105,7 +106,7 @@ ms.locfileid: "77659668"
     > [!WARNING]
     > Вы не можете использовать [агент Log Analytics](agents-overview.md#log-analytics-agent) (также называется Microsoft Monitoring Agent, или MMA) для отправки метрик **гостевой ОС** в учетную запись хранения.
 
-1. Убедитесь, что поставщик ресурсов **Microsoft. Insights** [зарегистрирован для вашей подписки](metrics-troubleshoot.md#microsoftinsights-resource-provider-isnt-registered-for-your-subscription).
+1. Убедитесь, что поставщик ресурсов **Microsoft. Insights** [зарегистрирован для вашей подписки](#microsoftinsights-resource-provider-isnt-registered-for-your-subscription).
 
 1. Убедитесь, что учетная запись хранения не защищена брандмауэром. Порталу Azure необходим доступ к учетной записи хранения для получения данных метрик и составления диаграмм.
 
@@ -117,3 +118,4 @@ ms.locfileid: "77659668"
 * [Дополнительные сведения о дополнительных возможностях обозревателя метрик](metrics-charts.md)
 * [Список доступных метрик для служб Azure](metrics-supported.md)
 * [Примеры настроенных диаграмм](metric-chart-samples.md)
+

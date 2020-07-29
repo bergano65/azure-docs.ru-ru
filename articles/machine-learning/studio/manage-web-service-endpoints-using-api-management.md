@@ -1,6 +1,5 @@
 ---
-title: Управление веб-службами с помощью Управления API
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): Управление веб-службами с помощью управления API — Azure'
 description: Руководство по управлению веб-службами AzureML с помощью управления API. Управление конечными точками REST API путем настройки доступа пользователей, регулирования использования и мониторинга панели мониторинга.
 services: machine-learning
 ms.service: machine-learning
@@ -10,14 +9,17 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 11/03/2017
-ms.openlocfilehash: c397c52b39cd8056122424a5bcf6736edcfdbaa5
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: dcbf9ba00592a9f4e25f9355549629f7eeb9b92a
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086829"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318493"
 ---
 # <a name="manage-azure-machine-learning-studio-classic-web-services-using-api-management"></a>Управление веб-службами Студии машинного обучения Azure (классическая) с помощью службы Управление API
+
+**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+
 
 ## <a name="overview"></a>Обзор
 Это руководство поможет быстро начать работу со службой управления API, чтобы управлять веб-службами Студии машинного обучения Azure (классическая).
@@ -67,7 +69,7 @@ ms.locfileid: "86086829"
 4. Введите значение для параметра \*\*"Суффикс URL-адреса веб-API". Это значение будет последней частью URL-адреса, по которому клиенты отправляют запросы к этому экземпляру службы (в нашем примере используется суффикс azureml-demo).
 5. В поле **Схема URL-адресов API** выберите значение **HTTPS**.
 6. В поле **Продукты** выберите значение **Starter** (Начальный комплект)
-7. Выберите команду **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 
 ## <a name="add-the-operations"></a>Добавление операций

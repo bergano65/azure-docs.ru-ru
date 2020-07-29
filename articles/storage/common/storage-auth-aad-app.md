@@ -10,11 +10,12 @@ ms.date: 06/22/2020
 ms.author: tamram
 ms.subservice: common
 ms.custom: has-adal-ref
-ms.openlocfilehash: ddb079051414168b125ce2e42e8badd55580f0c5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 949347d07fe120c6900f49499e78595b540718a7
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85212635"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87369005"
 ---
 # <a name="acquire-a-token-from-azure-ad-for-authorizing-requests-from-a-client-application"></a>Получение маркера из Azure AD для авторизации запросов из клиентского приложения
 
@@ -26,7 +27,7 @@ ms.locfileid: "85212635"
 
 ## <a name="assign-a-role-to-an-azure-ad-security-principal"></a>Назначение роли субъекту безопасности Azure AD
 
-Чтобы обеспечить проверку подлинности субъекта безопасности из приложения службы хранилища Azure, нужно сначала настроить параметры управления доступом на основе ролей (RBAC) для этого субъекта безопасности. Служба хранилища Azure определяет встроенные роли RBAC, охватывающие разрешения для контейнеров и очередей. При назначении роли RBAC субъекту безопасности ему предоставляется доступ к соответствующему ресурсу. Дополнительные сведения см. в статье [Управление правами доступа к данным большого двоичного объекта Azure и очереди с помощью RBAC](storage-auth-aad-rbac.md).
+Чтобы обеспечить проверку подлинности субъекта безопасности из приложения службы хранилища Azure, нужно сначала настроить параметры управления доступом на основе ролей (RBAC) для этого субъекта безопасности. Служба хранилища Azure определяет встроенные роли Azure, охватывающие разрешения для контейнеров и очередей. При назначении роли RBAC субъекту безопасности ему предоставляется доступ к соответствующему ресурсу. Дополнительные сведения см. в статье [Управление правами доступа к данным большого двоичного объекта Azure и очереди с помощью RBAC](storage-auth-aad-rbac.md).
 
 ## <a name="register-your-application-with-an-azure-ad-tenant"></a>Регистрация приложения в клиенте Azure AD
 
@@ -298,7 +299,7 @@ CloudBlockBlob blob = new CloudBlockBlob(
 
     ![Снимок экрана, показывающий URI перенаправления для регистрации приложения](media/storage-auth-aad-app/redirect-uri.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Платформа удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/)
 - [Управление правами доступа к данным хранилища с помощью RBAC](storage-auth-aad-rbac.md)

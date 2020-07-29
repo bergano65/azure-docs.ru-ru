@@ -2,16 +2,19 @@
 title: Заметки о выпуске Azure Application Insights | Документация Майкрософт
 description: Последние обновления для пактов SDK для Application Insights.
 ms.topic: conceptual
-ms.date: 05/17/2017
-ms.openlocfilehash: fcd20e1d14cebb9a5f5cc8ff2f7ae3f16fa594cb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/27/2020
+ms.openlocfilehash: 59e10bff6d0e2246b130f97ce9b21cd9685bde30
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77671517"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87315484"
 ---
-# <a name="sdk-release-notes---application-insights"></a>Заметки о выпуске пакета SDK для Application Insights
-Ниже приведены подробные заметки о выпуске и инструкции по обновлению для наших пакетов SDK.
+# <a name="release-notes---application-insights"></a>Заметки о выпуске — Application Insights
 
+На этой странице приведены подробные заметки о выпуске обновлений и исправления ошибок для каждого из Application Insights пакетов SDK.
+
+## <a name="sdk"></a>SDK 
 
 * Пакеты SDK для .NET
     - Для версии 2,12 и более поздних: [пакеты SDK для .NET (включая ASP.NET, ASP.NET Core и адаптеры ведения журнала)](https://github.com/Microsoft/ApplicationInsights-dotnet/releases) . 
@@ -20,9 +23,25 @@ ms.locfileid: "77671517"
       - [Пакет SDK для .NET](https://github.com/Microsoft/ApplicationInsights-dotnet/releases) 
       - [Адаптеры ведения журнала .NET](https://github.com/Microsoft/ApplicationInsights-dotnet-logging/releases)
       - [ASP.NET Core](https://github.com/Microsoft/ApplicationInsights-aspnet5/releases)
-* [Java](https://github.com/Microsoft/ApplicationInsights-Java)
-* [JavaScript](https://github.com/Microsoft/ApplicationInsights-JS/commits/master)
-* [другие платформы.](https://github.com/Microsoft/ApplicationInsights-Home)
+* [Java](https://github.com/Microsoft/ApplicationInsights-Java/releases)
+* [JavaScript](https://github.com/microsoft/ApplicationInsights-JS/releases)
+* [Средство экспорта Azure Monitor Python](https://github.com/census-instrumentation/opencensus-python/blob/master/contrib/opencensus-ext-azure/CHANGELOG.md)
 
 Ознакомьтесь также с нашими [блогами](https://azure.microsoft.com/blog/tag/application-insights/) и [обновлениями службы](https://azure.microsoft.com/updates/?service=application-insights), которые содержат сводку основных улучшений службы Application Insights в целом.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Приступая к работе с мониторингом без кода:
+
+* [Приложения, размещенные в IIS на виртуальной машине Azure или в масштабируемом наборе виртуальных машин Azure](./azure-vm-vmss-apps.md)
+* [сервера IIS;](./monitor-performance-live-website-now.md)
+* [Веб-приложения Azure](./azure-web-apps.md)
+
+Приступая к работе с мониторингом на основе кода:
+
+* [ASP.NET](./asp-net.md)
+* [ASP.NET Core](./asp-net-core.md)
+* [Java](./java-get-started.md)
+* [Node.js](./nodejs.md)
+* [Python](./opencensus-python.md)
 

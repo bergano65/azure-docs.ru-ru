@@ -5,14 +5,15 @@ services: virtual-machines
 ms.subservice: sizes
 author: ayshakeen
 ms.service: virtual-machines
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: ayshak
-ms.openlocfilehash: 6e7411f30ac0ef03ecd621f4cf6db5cd9350201b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e3a5d2228074ed358244b49bdf283c09f777ddee
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84678551"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87292070"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>Размеры виртуальных машин Azure серии B с накапливаемыми ресурсами
 
@@ -57,7 +58,7 @@ ms.locfileid: "84678551"
 
 ![Диаграмма данных о почасовом трафике](./media/b-series-burstable/office-workload.png)
 
-| Сценарий | Время | Загрузка ЦП (%) | Накоплено кредитов<sup>1</sup> | Доступные кредиты |
+| Сценарий | Time | Загрузка ЦП (%) | Накоплено кредитов<sup>1</sup> | Доступные кредиты |
 | --- | --- | --- | --- | --- |
 | Развертывание B16ms | Развертывание | Развертывание  | 480 (первоначальные кредиты) | 480 |
 | Нет трафика | 0:00 | 0 | 162 | 642 |
@@ -134,7 +135,7 @@ ms.locfileid: "84678551"
 
 Ответ. B1ls поддерживает только образы **Linux. при** развертывании любого другого образа ОС вы можете не получить лучшие возможности для клиентов.
 
-## <a name="other-sizes"></a>Остальные размеры
+## <a name="other-sizes-and-information"></a>Другие размеры и сведения
 
 - [Универсальные](sizes-general.md)
 - [Оптимизированные для вычислений](sizes-compute.md)
@@ -142,6 +143,10 @@ ms.locfileid: "84678551"
 - [Оптимизированные для хранилища](sizes-storage.md)
 - [Оптимизированные для GPU](sizes-gpu.md)
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
+
+Калькулятор цен: [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
+
+Дополнительные сведения о типах дисков: [типы дисков](https://docs.microsoft.com/azure/virtual-machines/linux/disks-types#ultra-ssd-preview/)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

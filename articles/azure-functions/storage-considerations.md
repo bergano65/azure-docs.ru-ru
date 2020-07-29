@@ -2,13 +2,13 @@
 title: Рекомендации по хранению для Функций Azure
 description: Узнайте о требованиях к хранению в Функциях Azure и о шифровании хранимых данных.
 ms.topic: conceptual
-ms.date: 01/21/2020
-ms.openlocfilehash: 2efd583b319e3f3b1fa3db307ea4a3cf53710165
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 07/27/2020
+ms.openlocfilehash: aefd9a35235a09d94973f383603349f6862bbdd9
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87079610"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318187"
 ---
 # <a name="storage-considerations-for-azure-functions"></a>Рекомендации по хранению для Функций Azure
 
@@ -18,12 +18,12 @@ ms.locfileid: "87079610"
 |Служба хранилища  | Назначение функций  |
 |---------|---------|
 | [Хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md)     | Поддерживает состояние привязок и функциональные ключи.  <br/>Также используется [центрами задач в Устойчивых функциях](durable/durable-functions-task-hubs.md). |
-| [Файлы Azure](../storage/files/storage-files-introduction.md)  | Общая папка, используемая для хранения и запуска кода приложения-функции в [плане потребления](functions-scale.md#consumption-plan). |
+| [Файлы Azure](../storage/files/storage-files-introduction.md)  | Общая папка, используемая для хранения и запуска кода приложения-функции в [плане потребления](functions-scale.md#consumption-plan) и [плане Premium](functions-scale.md#premium-plan). |
 | [хранилище очередей Azure](../storage/queues/storage-queues-introduction.md);     | Используется [центрами задач в Устойчивых функциях](durable/durable-functions-task-hubs.md).   |
 | [Хранилище таблиц Azure](../storage/tables/table-storage-overview.md)  |  Используется [центрами задач в Устойчивых функциях](durable/durable-functions-task-hubs.md).       |
 
 > [!IMPORTANT]
-> При использовании плана потребления файлы кода и конфигурации привязок приложения-функции хранятся в хранилище файлов Azure в основной учетной записи хранения. При удалении основной учетной записи хранения это содержимое удаляется без возможности восстановления.
+> При использовании плана размещения "потребление"/"Премиум" код функции и файлы конфигурации привязки хранятся в хранилище файлов Azure в основной учетной записи хранения. При удалении основной учетной записи хранения это содержимое удаляется без возможности восстановления.
 
 ## <a name="storage-account-requirements"></a>Требования к учетной записи хранения
 

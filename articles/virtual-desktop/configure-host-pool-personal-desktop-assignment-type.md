@@ -8,27 +8,24 @@ ms.topic: how-to
 ms.date: 07/09/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 8b000e9a83e6896266f0a6fc05195fc5599bc65f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 17df23a16bec91e5c333bc760143eac250b62699
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077628"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87292635"
 ---
 # <a name="configure-the-personal-desktop-host-pool-assignment-type"></a>Настройка типа назначения пула узлов персонального рабочего стола
 
 >[!IMPORTANT]
->Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/configure-host-pool-personal-desktop-assignment-type-2019.md).
->
-> Обновление Виртуального рабочего стола Windows за весну 2020 года пока предоставляется как общедоступная предварительная версия. без соглашений об уровне обслуживания. Мы не рекомендуем использовать ее для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+>Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/configure-host-pool-personal-desktop-assignment-type-2019.md).
 
 Можно настроить тип назначения пула узлов персонального рабочего стола так, чтобы корректировать среду виртуальных рабочих столов Windows в точном соответствии с вашими потребностями. В этом разделе мы покажем вам, как настроить автоматическое или прямое назначение для ваших пользователей.
 
 >[!NOTE]
 > Инструкции в этой статье применимы только к пулам узлов персональных рабочих столов, а не к общим пулам узлов, поскольку пользователи в общих пулах узлов не назначены никаким определенным узлам сеансов.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы уже скачали и установили модуль PowerShell для виртуальных рабочих столов Windows. Если вы этого не сделали, следуйте инструкциям в разделе [Настройка модуля PowerShell](powershell-module.md).
 

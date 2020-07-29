@@ -6,15 +6,15 @@ author: tanmaygore
 manager: vashan
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: dd32b2a59a05578c061c2e21704001558706aede
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 79e560f73b69047419626086af9c975c90870edc
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86510537"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87291115"
 ---
 # <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager-in-linux"></a>Планирование миграции ресурсов IaaS с классической модели на Azure Resource Manager в Linux
 
@@ -201,7 +201,7 @@ ms.locfileid: "86510537"
 Не забывайте об основной цели миграции из классической модели в модель Azure Resource Manager.  Каковы были первоначальные коммерческие соображения? Достигли ли вы этих целей?
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Обзор поддерживаемого платформой переноса ресурсов IaaS из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

@@ -3,12 +3,13 @@ title: Создание приложения Java с надежными субъ
 description: Узнайте как создавать приложение Java Reliable Actors Service Fabric в течении пяти минут.
 ms.topic: conceptual
 ms.date: 06/18/2018
-ms.openlocfilehash: 4d09666bad7b4e03b8598191d99a9db717c277d4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-java
+ms.openlocfilehash: 28ddc4f0e47d853df6b026cf2495d710bebfa980
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82193570"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87368937"
 ---
 # <a name="create-your-first-java-service-fabric-reliable-actors-application-on-linux"></a>Создание первого приложения Java Reliable Actors для Linux в Service Fabric
 > [!div class="op_single_selector"]
@@ -174,7 +175,7 @@ public static void main(String[] args) throws Exception {
 }
 ```
 
-## <a name="build-the-application"></a>Построение приложения
+## <a name="build-the-application"></a>Сборка приложения
 Шаблоны Service Fabric для Yeoman включают скрипт сборки для [Gradle](https://gradle.org/), который можно использовать для создания приложения из терминала.
 Зависимости Java в Service Fabric извлекаются из Maven. Чтобы создавать приложения Java в Service Fabric и работать с ними, сначала установите JDK и Gradle. Если эти компоненты не установлены, см. руководство по [началу работы с Service Fabric в Linux](service-fabric-get-started-linux.md#set-up-java-development).
 

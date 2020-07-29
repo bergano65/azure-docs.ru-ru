@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/21/2018
-ms.openlocfilehash: 96df96fd6145d1c6e58eb5dfc672ec324da75202
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ccdf5885dd1199ff8ed8000e5feaf80662aae42a
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87041614"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318068"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Решения для мониторинга сетей Azure в Azure Monitor
 
@@ -79,7 +79,7 @@ ms.locfileid: "87041614"
 ### <a name="install-and-configure-the-solution"></a>Установка и настройка решения
 Установите и настройте решение для анализа шлюзов приложений Azure, выполнив следующие указания:
 
-1. Включите решение для анализа Шлюза приложений Azure из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureAppGatewayAnalyticsOMS?tab=Overview) или выполните инструкции статьи [Добавление решений для мониторинга в Azure Monitor из Коллекции решений](../../azure-monitor/insights/solutions.md).
+1. Включите решение для анализа Шлюза приложений Azure из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureAppGatewayAnalyticsOMS?tab=Overview) или выполните инструкции статьи [Добавление решений для мониторинга в Azure Monitor из Коллекции решений](./solutions.md).
 2. Включите ведение журнала диагностики для [шлюзов приложений](../../application-gateway/application-gateway-diagnostics.md), для которых требуется выполнять мониторинг.
 
 #### <a name="enable-azure-application-gateway-diagnostics-in-the-portal"></a>Включение диагностики шлюза приложений Azure на портале
@@ -150,7 +150,7 @@ Set-AzDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $workspace
 ### <a name="install-and-configure-the-solution"></a>Установка и настройка решения
 Установите и настройте решение для анализа сетей Azure, выполнив следующие указания:
 
-1. Включите решение "Аналитика групп безопасности сетей Azure", как описано в статье [Добавление решений для мониторинга в Azure Monitor из Коллекции решений](../../azure-monitor/insights/solutions.md).
+1. Включите решение "Аналитика групп безопасности сетей Azure", как описано в статье [Добавление решений для мониторинга в Azure Monitor из Коллекции решений](./solutions.md).
 2. Включите ведение журнала диагностики для ресурсов [групп безопасности сети](../../virtual-network/virtual-network-nsg-manage-log.md), для которых требуется выполнять мониторинг.
 
 ### <a name="enable-azure-network-security-group-diagnostics-in-the-portal"></a>Включение диагностики групп безопасности сети Azure на портале
@@ -230,3 +230,4 @@ Set-AzDiagnosticSetting -ResourceId $nsg.ResourceId  -WorkspaceId $workspaceId -
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения об обновлении данных см. в статье [Общие сведения о запросах журналов в Azure Monitor](../log-query/log-query-overview.md).
+

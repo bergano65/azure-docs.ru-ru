@@ -4,19 +4,19 @@ description: Узнайте о поддерживаемых службах и с
 ms.subservice: logs
 ms.topic: reference
 ms.date: 06/15/2020
-ms.openlocfilehash: 7a97afa3f960393637b8af63c56fba419f853465
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a6504f28b891fb16bd588b899b7a0402b65b4e44
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077063"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318289"
 ---
 # <a name="common-and-service-specific-schema-for-azure-resource-logs"></a>Распространенная и зависящая от службы схема для журналов ресурсов Azure
 
 > [!NOTE]
 > Журналы ресурсов ранее назывались журналами диагностики. Имя было изменено в октябре 2019, так как типы журналов, собранные Azure Monitor перемещены, чтобы включать больше, чем просто ресурс Azure. Кроме того, список категорий журналов ресурсов, которые можно было бы использовать для перечисления в этой статье. Они были перемещены в [Категории журнала ресурсов](resource-logs-categories.md). 
 
-[Azure Monitor журналы ресурсов](../../azure-monitor/platform/platform-logs-overview.md) — это журналы, создаваемые службами Azure, которые описывают работу этих служб или ресурсов. Все журналы ресурсов, доступные через Azure Monitor, используют общую схему верхнего уровня, обеспечивая гибкость для каждой службы, чтобы создавать уникальные свойства для собственных событий.
+[Azure Monitor журналы ресурсов](./platform-logs-overview.md) — это журналы, создаваемые службами Azure, которые описывают работу этих служб или ресурсов. Все журналы ресурсов, доступные через Azure Monitor, используют общую схему верхнего уровня, обеспечивая гибкость для каждой службы, чтобы создавать уникальные свойства для собственных событий.
 
 Сочетание типа ресурса (доступного в свойстве `resourceId`) и свойства `category` является уникальным идентификатором схемы. В этой статье описывается схема верхнего уровня для журналов ресурсов и ссылки на Schemata для каждой службы.
 
@@ -25,12 +25,12 @@ ms.locfileid: "87077063"
 
 | Имя | Обязательный/необязательный | Описание |
 |---|---|---|
-| time | Обязательно | Метка времени события (UTC). |
-| resourceId | Обязательно | Идентификатор ресурса, создавшего событие. Для служб клиента он имеет формат "/tenants/ИД_клиента/providers/имя_поставщика". |
+| time | Требуется | Метка времени события (UTC). |
+| resourceId | Требуется | Идентификатор ресурса, создавшего событие. Для служб клиента он имеет формат "/tenants/ИД_клиента/providers/имя_поставщика". |
 | tenantId | Требуется для журналов клиента | Идентификатор клиента Active Directory клиента, к которому привязано это событие. Это свойство используется только для журналов уровня клиентов и не отображается в журналах уровня ресурсов. |
-| operationName | Обязательно | Имя операции, которую представляет это событие. Если событие представляет операцию RBAC, это имя операции RBAC (например, Microsoft. Storage/storageAccounts/Блобсервицес/blobs/Read). Обычно моделируются в виде операции Resource Manager, даже если они фактически не являются задокументированными операциями Resource Manager (`Microsoft.<providerName>/<resourceType>/<subtype>/<Write/Read/Delete/Action>`) |
+| operationName | Требуется | Имя операции, которую представляет это событие. Если событие представляет операцию RBAC, это имя операции RBAC (например, Microsoft. Storage/storageAccounts/Блобсервицес/blobs/Read). Обычно моделируются в виде операции Resource Manager, даже если они фактически не являются задокументированными операциями Resource Manager (`Microsoft.<providerName>/<resourceType>/<subtype>/<Write/Read/Delete/Action>`) |
 | operationVersion | Необязательно | Версия API, связанная с операцией, если Имя_операции была выполнена с помощью API (например, `http://myservice.windowsazure.net/object?api-version=2016-06-01` ). Если для этой операции не существует соответствующего API, то версия представляет версию этой операции, чтобы в дальнейшем изменить свойства, связанные с операцией. |
-| категория | Обязательно | Категория журнала для события. Категория — степень детализации, при которой можно включать или отключать журналы для определенного ресурса. Свойства, которые отображаются в свойствах BLOB-объекта события, одинаковы в пределах определенной категории журнала и типа ресурса. Типичными категориями журналов являются "Аудит", "выполнение" и "запрос". |
+| категория | Требуется | Категория журнала для события. Категория — степень детализации, при которой можно включать или отключать журналы для определенного ресурса. Свойства, которые отображаются в свойствах BLOB-объекта события, одинаковы в пределах определенной категории журнала и типа ресурса. Типичными категориями журналов являются "Аудит", "выполнение" и "запрос". |
 | resultType | Необязательно | Состояние события. Обычные значения: "Запущен", "Выполняется", "Успешно", "Сбой", "Активно", "Разрешено". |
 | resultSignature | Необязательно | Дополнительное состояние события. Если эта операция соответствует вызову REST API, это поле является кодом состояния HTTP соответствующего вызова RESTFUL. |
 | resultDescription | Необязательно | Статическое текстовое описание этой операции, например "получение файла хранилища". |
@@ -57,7 +57,7 @@ ms.locfileid: "87077063"
 | База данных Azure для MySQL | [Журналы сервера в базе данных Azure для MySQL](../../mysql/concepts-server-logs.md#diagnostic-logs) |
 | База данных Azure для PostgreSQL | [Журналы базы данных Azure для PostgreSQL](../../postgresql/concepts-server-logs.md#resource-logs) |
 | Azure Data Explorer | [Журналы обозреватель данных Azure](/azure/data-explorer/using-diagnostic-logs) |
-| Службы Cognitive Services | [Ведение журнала для Cognitive Services Azure](../../cognitive-services/diagnostic-logging.md) |
+| Cognitive Services | [Ведение журнала для Cognitive Services Azure](../../cognitive-services/diagnostic-logging.md) |
 | Реестр контейнеров | [Ведение журнала для реестра контейнеров Azure](../../container-registry/container-registry-diagnostics-audit-logs.md) |
 | Сеть доставки содержимого | [Журналы Azure для CDN](../../cdn/cdn-azure-diagnostic-logs.md) |
 | Cosmos DB | [Журнал ведения диагностики Azure Cosmos DB](../../cosmos-db/monitor-cosmos-db.md) |
@@ -77,7 +77,7 @@ ms.locfileid: "87077063"
 | Power BI (цен. категория "Выделенный") | [Ведение журнала для Power BI Embedded в Azure](/power-bi/developer/azure-pbie-diag-logs) |
 | Службы восстановления | [Модель данных для Azure Backup](../../backup/backup-azure-reports-data-model.md)|
 | Поиск |[Включение и использование аналитики поискового трафика](../../search/search-traffic-analytics.md) |
-| Cлужебная шина |[Журналы служебной шины Azure](../../service-bus-messaging/service-bus-diagnostic-logs.md) |
+| Служебная шина |[Журналы служебной шины Azure](../../service-bus-messaging/service-bus-diagnostic-logs.md) |
 | База данных SQL | [Ведение журнала базы данных SQL Azure](../../azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md) |
 | Stream Analytics |[Журналы заданий](../../stream-analytics/stream-analytics-job-diagnostic-logs.md) |
 | Диспетчер трафика | [Схема журнала диспетчера трафика](../../traffic-manager/traffic-manager-diagnostic-logs.md) |
@@ -88,7 +88,8 @@ ms.locfileid: "87077063"
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Просмотр категорий журналов ресурсов, которые можно собираются](resource-logs-categories.md)
-* [Дополнительные сведения о журналах ресурсов](../../azure-monitor/platform/platform-logs-overview.md)
+* [Дополнительные сведения о журналах ресурсов](./platform-logs-overview.md)
 * [Потоковая передача журналов ресурсов в **концентраторы событий**](./resource-logs.md#send-to-azure-event-hubs)
 * [Изменение параметров диагностики журнала ресурсов с помощью Azure Monitor REST API](/rest/api/monitor/diagnosticsettings)
 * [Сбор журналов и метрик для служб Azure для использования в Log Analytics](./resource-logs.md#send-to-log-analytics-workspace)
+

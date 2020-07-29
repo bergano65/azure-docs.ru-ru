@@ -3,15 +3,15 @@ title: Создание виртуальной машины с зоной на �
 description: Создание виртуальной машины Linux в зоне доступности с помощью Azure CLI
 author: cynthn
 ms.service: virtual-machines-linux
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/05/2018
 ms.author: cynthn
-ms.openlocfilehash: dd9403e16045b8aca3b746b7cc010c1227d67fe9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0e68dbbf86c5bda1758a6331f4c6fc0797df4557
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87069708"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87368359"
 ---
 # <a name="create-a-linux-virtual-machine-in-an-availability-zone-with-the-azure-cli"></a>Создание виртуальной машины Linux в зоне доступности с помощью Azure CLI
 

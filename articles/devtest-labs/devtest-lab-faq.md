@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы об Azure DevTest Labs | 
 description: В этой статье приведены ответы на некоторые из часто задаваемых вопросов об Azure DevTest Labs.
 ms.topic: article
 ms.date: 07/17/2020
-ms.openlocfilehash: 707b66fadab482a31ac02f10460d581997931a0b
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 3f36b8238ccb69b3b1f14166b522e47d5debe54e
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86537498"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289362"
 ---
 # <a name="azure-devtest-labs-faq"></a>Часто задаваемые вопросы об Azure DevTest Labs
 В этой статье содержатся ответы на некоторые самые распространенные вопросы об Azure DevTest Labs.
@@ -36,7 +36,7 @@ ms.locfileid: "86537498"
 Если вашего вопроса нет в списке, сообщите нам об этом, и мы поможем найти ответ.
 
 - Опубликуйте вопрос в конце этой статьи
-- Чтобы охватить большую аудиторию, опубликуйте вопрос на [странице вопросов и ответов по Azure DevTest Labs на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-devtestlabs.html). и обсудите его с командой разработчиков Azure DevTest Labs и другими участниками сообщества.
+- Чтобы охватить большую аудиторию, опубликуйте вопрос на [странице вопросов и ответов по Azure DevTest Labs на сайте Майкрософт](/answers/topics/azure-devtestlabs.html). и обсудите его с командой разработчиков Azure DevTest Labs и другими участниками сообщества.
 - Чтобы сделать запрос на функцию, разместите свои запросы и предложения на [форуме пользователей Azure DevTest Labs](https://feedback.azure.com/forums/320373-azure-devtest-labs).
 
 ### <a name="what-is-a-microsoft-account"></a>Что такое учетная запись Майкрософт?

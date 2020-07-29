@@ -4,15 +4,15 @@ description: Сведения о создании и публикации пре
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-author: mingshen
-ms.author: mingshen
+author: keferna
+ms.author: keferna
 ms.date: 06/17/2020
-ms.openlocfilehash: c659bbe3e5f5645bb42b3a9c94a5e5fb7ebe75f0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 103a5534c143e5edf87f70570eb941dfa72bd45b
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87086478"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87317830"
 ---
 # <a name="create-an-azure-container-offer-in-azure-marketplace"></a>Создание предложения контейнера Azure в Azure Marketplace
 
@@ -118,7 +118,7 @@ ms.locfileid: "87086478"
 > [!NOTE]
 > После публикации предложения с использованием Стандартного контракта для коммерческой платформы Майкрософт вы не сможете использовать собственные условия. Вы можете предложить свое решение либо в по Стандартному контракту, либо на собственных условиях.
 
-:::image type="content" source="media/azure-create-container-offer-images/azure-create-1-standard-contract.png" alt-text="Показано использование флажка Использовать Стандартный контракт для коммерческой платформы корпорации Майкрософт.":::
+:::image type="content" source="media/azure-create-container-offer-images/azure-create-1-standard-contract.png" alt-text="Показано использование флажка "Использовать Стандартный контракт для коммерческой платформы корпорации Майкрософт".":::
 
 ##### <a name="your-own-terms-and-conditions"></a>Собственные условия
 
@@ -218,7 +218,7 @@ ms.locfileid: "87086478"
 
 Здесь показана страница **Описание предложения** в Azure Marketplace.
 
-:::image type="content" source="media/azure-create-container-offer-images/azure-create-6-offer-listing-mkt-plc.png" alt-text="Показана страница Описание предложения в Azure Marketplace." :::
+:::image type="content" source="media/azure-create-container-offer-images/azure-create-6-offer-listing-mkt-plc.png" alt-text="Показана страница "Описание предложения" в Azure Marketplace." :::
 
 Здесь показаны результаты поиска в Azure Marketplace.
 
@@ -226,7 +226,7 @@ ms.locfileid: "87086478"
 
 Здесь показана страница **Описание предложения** на портале Azure.
 
-:::image type="content" source="media/azure-create-container-offer-images/azure-create-8-offer-listing-portal.png" alt-text="Показана страница Описание предложения на портале Azure.":::
+:::image type="content" source="media/azure-create-container-offer-images/azure-create-8-offer-listing-portal.png" alt-text="Показана страница "Описание предложения" на портале Azure.":::
 
 Здесь показаны результаты поиска на портале Azure.
 
@@ -358,7 +358,7 @@ ms.locfileid: "87086478"
 
 **Имя администратора для реестра контейнеров Azure** — укажите [имя администратора](../../container-registry/container-registry-authentication.md#admin-account), связанное с реестром контейнеров Azure, в котором находится образ контейнера. Имя пользователя и пароль необходимы, чтобы обеспечить компании доступ к реестру. Чтобы получить имя пользователя и пароль администратора, задайте для свойства **admin-enabled** значение **True** с помощью интерфейса командной строки Azure (Azure CLI). При необходимости можно на портале Azure выбрать для параметра **Пользователь-администратор** значение **Включить**.
 
- :::image type="content" source="media/azure-create-container-offer-images/azure-create-12-update-container-registry-edit.png" alt-text="Показано диалоговое окно Обновить реестр контейнеров.":::
+ :::image type="content" source="media/azure-create-container-offer-images/azure-create-12-update-container-registry-edit.png" alt-text="Показано диалоговое окно "Обновить реестр контейнеров".":::
 
 **Пароль для Реестра контейнеров Azure**. Укажите имя администратора, связанное с Реестром контейнеров Azure, в котором находится ваш образ контейнера. Имя пользователя и пароль необходимы, чтобы обеспечить компании доступ к реестру. Чтобы получить пароль на портале Azure, последовательно выберите **Реестр контейнеров** > **Ключи доступа** или воспользуйтесь в Azure CLI командой [show](https://docs.microsoft.com/cli/azure/acr/credential?view=azure-cli-latest#az-acr-credential-show).
 
