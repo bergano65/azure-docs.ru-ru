@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/04/2018
 ms.author: liydu
-ms.openlocfilehash: deb1ea8c7b41ad48bddebfbed1b15c667ee0071a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0d8e10a18436b0b52820dd0bf15ad0b2de969b79
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73483949"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87337948"
 ---
 # <a name="mxchip-iot-devkit"></a>MXChip IoT DevKit
 
@@ -26,7 +26,7 @@ ms.locfileid: "73483949"
 
 - Как управлять цветом светодиодного индикатора RGB DevKit.
 
-## <a name="what-you-need"></a>Необходимые элементы
+## <a name="what-you-need"></a>Что нужно
 
 - Настройте среду разработки согласно инструкциям в статье [Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure в облаке](https://docs.microsoft.com/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started).
 
@@ -114,7 +114,4 @@ ms.locfileid: "73483949"
 - Подключение устройства MXChip IoT DevKit к акселератору решения Azure IoT для удаленного мониторинга.
 - Определение состояния системы и управление цветом светодиодного индикатора RGB DevKit с помощью функции двойников устройств Интернета вещей Azure.
 
-Ниже приведены предлагаемые дальнейшие действия:
-
-* [Общие сведения об акселераторе решения Azure IoT для удаленного мониторинга](https://docs.microsoft.com/azure/iot-suite/)
-* [Connect an MXChip IoT DevKit device to your Azure IoT Central application](/azure/iot-central/core/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)
+Ниже приведен предлагаемый следующий шаг: [Обзор акселератора решений для удаленного мониторинга Интернета вещей Azure](https://docs.microsoft.com/azure/iot-suite/)

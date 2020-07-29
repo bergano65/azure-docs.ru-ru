@@ -3,12 +3,13 @@ title: API Application Insights для пользовательских собы
 description: Вставьте несколько строк кода в свое устройство или классическое приложение, на веб-страницу или в службу, чтобы отслеживать использование приложения и диагностировать неполадки.
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: d263c99af7793acbe1f939f64c5cc2dcadd3a054
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 430ec96006ed8f564ea5bbd0a28beca858ebe1ab
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87323236"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87366878"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -488,7 +489,7 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: Seve
 
 Зарегистрируйте событие диагностики, например вход в метод или выход из него.
 
- Параметр | Описание
+ Параметр | Описание:
 ---|---
 `message` | Диагностические данные Могут содержать не только имя.
 `properties` | Преобразование строки в строку: дополнительные данные, используемые для [фильтрации исключений](#properties) на портале. Значение по умолчанию: empty.

@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 04/27/2020
-ms.openlocfilehash: 3559ae5c246129aa369cb49e7749e499002f1dc6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 07/27/2020
+ms.openlocfilehash: 873f0d7d2aa4493e77a10f62b0646f4f8233f6b9
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87048182"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87337846"
 ---
 # <a name="execute-r-script-module"></a>Выполнить модуль R Script
 
@@ -119,6 +119,22 @@ azureml_main <- function(dataframe1, dataframe2){
 > [!div class="mx-imgBorder"]
 > ![Предварительный просмотр отправленного изображения](media/module/upload-image-in-r-script.png)
 
+## <a name="access-to-registered-dataset"></a>Доступ к зарегистрированному набору данных
+
+Чтобы [получить доступ к зарегистрированным наборам данных](https://docs.microsoft.com/azure/machine-learning/how-to-create-register-datasets#access-datasets-in-your-script) в рабочей области, можно обратиться к следующему примеру кода:
+
+```R
+        azureml_main <- function(dataframe1, dataframe2){
+  print("R script run.")
+  run = get_current_run()
+  ws = run$experiment$workspace
+  dataset = azureml$core$dataset$Dataset$get_by_name(ws, "YOUR DATASET NAME")
+  dataframe2 <- dataset$to_pandas_dataframe()
+  # Return datasets as a Named List
+  return(list(dataset1=dataframe1, dataset2=dataframe2))
+}
+```
+
 ## <a name="how-to-configure-execute-r-script"></a>Настройка выполнения сценария R
 
 Модуль выполнить сценарий R содержит образец кода, который можно использовать в качестве отправной точки. Чтобы настроить модуль выполнить сценарий R, укажите набор входных данных и код для запуска.
@@ -177,6 +193,25 @@ azureml_main <- function(dataframe1, dataframe2){
  
     > [!NOTE]
     > Существующий код R может потребовать незначительных изменений для выполнения в конвейере конструктора. Например, входные данные, которые вы предоставляете в формате CSV, должны быть явно преобразованы в набор данных, прежде чем их можно будет использовать в коде. Типы данных и столбцов, используемые в языке R, также отличаются некоторыми способами от типов данных и столбцов, используемых в конструкторе.
+
+    Если размер скрипта превышает 16 КБ, используйте порт **пакета сценариев** , чтобы избежать ошибок, таких как *Командная строка, превышает ограничение в 16597 символов*. 
+    
+    Упакуйте скрипт и другие настраиваемые ресурсы в ZIP-файл и отправьте ZIP-файл в качестве **файлового набора данных** в студию. Затем вы можете перетащить модуль набора данных из списка My DataSets ( *Мои DataSets* ) в области слева модуля на странице Создание конструктора. Подключите модуль набора данных к порту **пакета скрипта** модуля **выполнение скрипта R** .
+    
+    Ниже приведен пример кода для использования скрипта в пакете скрипта:
+
+    ```R
+    azureml_main <- function(dataframe1, dataframe2){
+    # Source the custom R script: my_script.R
+    source("./Script Bundle/my_script.R")
+
+    # Use the function that defined in my_script.R
+    dataframe1 <- my_func(dataframe1)
+
+    sample <- readLines("./Script Bundle/my_sample.txt")
+    return (list(dataset1=dataframe1, dataset2=data.frame("Sample"=sample)))
+    }
+    ```
 
 1.  Для параметра **случайное начальное**значение введите значение, которое будет использоваться в среде R в качестве значения случайного начального номера. Действие этого параметра эквивалентно вызову `set.seed(value)` в коде R.  
 

@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 02/22/2020
-ms.openlocfilehash: 279ba2ca5b82d7bad5b55736179f92a0146bdc84
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 07/28/2020
+ms.openlocfilehash: 904b3ce1c2d05d713ee1ae99662148217f2a358e
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87048150"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87337829"
 ---
 # <a name="export-data-module"></a>Экспорт модуля данных
 
@@ -41,6 +41,9 @@ ms.locfileid: "87048150"
 1. Выберите **Экспорт данных** , чтобы открыть панель **свойств** .
 
 1. В поле **хранилище данных**выберите существующее хранилище данных из раскрывающегося списка. Можно также создать новое хранилище данных. Узнайте, как [открыть доступ к данным в службах хранилища Azure](../how-to-access-data.md).
+
+    > [!NOTE]
+    > Экспорт данных определенного типа данных в столбец базы данных SQL, указанный в качестве другого типа данных, не поддерживается.
 
 1. Флажок **повторно создать выходные данные**определяет, следует ли выполнять модуль для повторного создания выходных данных во время выполнения. 
 

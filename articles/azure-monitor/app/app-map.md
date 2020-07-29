@@ -3,13 +3,14 @@ title: Схема сопоставления приложений в Azure Appli
 description: Мониторинг топологий сложных приложений с помощью схемы приложения
 ms.topic: conceptual
 ms.date: 03/15/2019
+ms.custom: devx-track-javascript
 ms.reviewer: sdash
-ms.openlocfilehash: 1f9f19ea9370b9da3e69d871e8b53ccf7f64a6a5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7e4035e382aaa3f8b5d2327054a50a5360c60bfa
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87008512"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87367016"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -39,7 +40,7 @@ ms.locfileid: "87008512"
 
 Щелкните любой компонент, чтобы просмотреть соответствующие данные аналитики и перейти к интерфейсу для рассмотрения производительности и сбоев этого компонента.
 
-![Всплывающий элемент](media/app-map/application-map-002.png)
+![Flyout](media/app-map/application-map-002.png)
 
 ### <a name="investigate-failures"></a>Анализ сбоев
 
@@ -73,7 +74,7 @@ ms.locfileid: "87008512"
 
 ![Снимок экрана с аналитическими возможностями. Линейный график, суммирующий среднюю продолжительность ответа запроса за последние 12 часов.](media/app-map/log-analytics.png)
 
-### <a name="alerts"></a>Оповещения
+### <a name="alerts"></a>видны узлы
 
 Чтобы просмотреть активные оповещения и основные правила, которые их активируют, щелкните **Оповещения**.
 
@@ -251,11 +252,11 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 Дополнительные сведения о том, как переопределить свойство имени облачной роли с помощью инициализаторов телеметрии, см. в разделе [Добавление свойств: ITelemetryInitializer](api-filtering-sampling.md#addmodify-properties-itelemetryinitializer).
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Если схема приложений не работает должным образом, попробуйте сделать следующее:
 
-### <a name="general"></a>Общие сведения
+### <a name="general"></a>Общие
 
 1. Убедитесь, что вы используете официально поддерживаемый пакет SDK. Неподдерживаемые пакеты SDK и пакеты SDK сообщества могут не поддерживать корреляцию.
 

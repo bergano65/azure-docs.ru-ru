@@ -8,11 +8,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 03/19/2018
 ms.author: liydu
-ms.openlocfilehash: 6bebe8ac6b9869466938600d6267fd0062c84477
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dae797e73d52391288a5e8b7cf4a5c6ab2a122fc
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75977300"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87337880"
 ---
 # <a name="door-monitor----using-azure-functions-and-sendgrid-send-email-when-a-door-is-opened"></a>Монитор двери — использование функций Azure и SendGrid, отправка электронной почты при открытии дверцы           
 
@@ -172,7 +173,7 @@ ms.locfileid: "75977300"
 
 ![device-upload](media/iot-hub-arduino-iot-devkit-az3166-door-monitor/device-upload.png)
 
-Плата DevKit перезагрузится и начнет выполнение кода.
+DevKit перезагрузится и начнет выполнение кода.
 
 > [!NOTE]
 > В некоторых случаях может появиться сообщение об ошибке "Error: AZ3166: Unknown package" (Ошибка AZ3166: неизвестный пакет). Такая ошибка возникает, если индекс пакета платы неправильно обновлен. Чтобы устранить эту ошибку, ознакомьтесь с [разделом по разработке](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/#development) в статье с часто задаваемыми вопросами об IoT DevKit.
@@ -196,7 +197,4 @@ ms.locfileid: "75977300"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы узнали, как подключить устройство DevKit к акселератору решения Azure IoT для удаленного мониторинга и как использовать службу SendGrid для отправки сообщений электронной почты. Ниже приведены предлагаемые дальнейшие действия:
-
-* [Общие сведения об акселераторе решения Azure IoT для удаленного мониторинга](https://docs.microsoft.com/azure/iot-suite/)
-* [Connect an MXChip IoT DevKit device to your Azure IoT Central application](/azure/iot-central/core/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)
+Вы узнали, как подключить устройство DevKit к акселератору решения Azure IoT для удаленного мониторинга и как использовать службу SendGrid для отправки сообщений электронной почты. Ниже приведен предлагаемый следующий шаг:[Обзор акселератора решений для удаленного мониторинга Интернета вещей Azure](https://docs.microsoft.com/azure/iot-suite/)

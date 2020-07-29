@@ -3,18 +3,18 @@ title: Интеграция Azure DevTest Labs в Azure Pipelines
 description: Сведения об интеграции Azure DevTest Labs с конвейером непрерывной интеграции и поставки Azure Pipelines.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 080577a74a1cb168453c6a027d77ae395072ccc1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 96f99d41d0a7ea07bf3854292f9c3bd6245414b3
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85480581"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87288931"
 ---
 # <a name="integrate-azure-devtest-labs-into-your-azure-pipelines-cicd-pipeline"></a>Интеграция Azure DevTest Labs в конвейер Azure Pipelines CI/CD
 
 Расширение " *задачи Azure DevTest Labs* " можно использовать для интеграции конвейеров сборки Azure pipelines непрерывной интеграции и непрерывной поставки (CI/CD) с Azure DevTest Labs. Расширение устанавливает несколько задач, включая: 
 
-- Создание виртуальной машины
+- Создание виртуальной машины.
 - Создание пользовательского образа из виртуальной машины
 - Удаление виртуальной машины 
 
@@ -215,8 +215,8 @@ ms.locfileid: "85480581"
 
 Вы можете использовать пользовательский образ для создания виртуальных машин всякий раз, когда они понадобятся.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения см. в статье [Создание сред со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Azure Resource Manager](devtest-lab-create-environment-from-arm.md).
 - Ознакомьтесь с дополнительными руководствами диспетчер ресурсов шаблонов для автоматизации DevTest Labs из [общедоступного репозитория GitHub DevTest Labs](https://github.com/Azure/azure-quickstart-templates).
-- При необходимости см. страницу [устранения неполадок DevOps в Azure](https://docs.microsoft.com/azure/devops/pipelines/troubleshooting) .
+- При необходимости см. страницу [устранения неполадок DevOps в Azure](/azure/devops/pipelines/troubleshooting) .
  

@@ -1,234 +1,423 @@
 ---
 title: Руководством для разработчиков. Предварительная версия IoT Plug and Play | Документация Майкрософт
-description: Описание моделирования устройств для разработчиков IoT Plug and Play
-author: dominicbetts
-ms.author: dobett
-ms.date: 12/26/2019
+description: Описание Plug and Play IoT для разработчиков
+author: rido-min
+ms.author: rmpablos
+ms.date: 07/16/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 5fda51e6d2f62b9cbef0fcac22d5bb2ea0df905b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ef221ea068f2786a4a84f20a29e80dd7176f06c6
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77605221"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87337421"
 ---
-# <a name="iot-plug-and-play-preview-modeling-developer-guide"></a>Руководством для разработчиков для предварительной версии Plug and Play IoT
+# <a name="iot-plug-and-play-preview-developer-guide"></a>Предварительная версия для разработчиков IoT Plug and Play
 
-Предварительная версия IoT Plug and Play позволяет создавать устройства, которые объявляют свои возможности для приложений Azure IoT. Устройства IoT Plug and Play не нуждаются в ручной настройке, когда клиент подключает их к приложениям с поддержкой Интернета вещей Plug and Play. IoT Central является примером приложения с поддержкой Plug and Play IoT.
+Предварительная версия IoT Plug and Play позволяет создавать интеллектуальные устройства, которые объявляют свои возможности для приложений Интернета вещей Azure. Устройства IoT Plug and Play не нуждаются в ручной настройке, когда клиент подключает их к приложениям с поддержкой Интернета вещей Plug and Play.
 
-Для создания устройства Plug and Play IoT необходимо создать описание устройства. Описание выполняется с помощью простого языка определения, именуемого Digital двойников Definition Language (ДТДЛ).
+В этом руководстве описываются основные шаги, необходимые для создания устройства, которое соответствует [соглашениям об Plug and Play IOT](concepts-convention.md), и доступных интерфейсов API, которые можно использовать для взаимодействия с устройством.
 
-## <a name="device-capability-model"></a>Модель возможностей устройства
+Чтобы создать устройство Plug and Play IoT, выполните следующие действия.
 
-С помощью ДТДЛ вы создадите _модель возможностей устройства_ для описания частей устройства. Типичное устройство Интернета вещей состоит из:
+1. Убедитесь, что устройство использует протокол MQTT или MQTT через WebSocket для подключения к центру Интернета вещей Azure.
+1. Создайте модель [дтдл (Digital двойников Definition Language)](https://github.com/Azure/opendigitaltwins-dtdl) для описания устройства. Дополнительные сведения см. в разделе [Знакомство с компонентами в Plug and Playных моделях Интернета вещей](concepts-components.md).
+1. Обновите устройство, чтобы объявить `model-id` об этом как часть подключения устройства.
+1. Реализация телеметрии, свойств и команд с помощью [соглашений Plug and Play IOT](concepts-convention.md)
 
-- Пользовательские части — это вещи, которые делают устройство уникальным.
-- Стандартные части — это вещи, общие для всех устройств.
+После того как ваша реализация устройства будет готова, используйте [Обозреватель Azure IOT](howto-use-iot-explorer.md) , чтобы проверить, что устройство соответствует соглашениям об Plug and Play IOT.
 
-Эти части называются _интерфейсами_ в модели возможностей устройства. Интерфейсы определяют сведения о каждой части, реализуемой устройством.
+> [!Tip]
+> Все фрагменты кода в этой статье используют C#, но эти понятия применимы к любому из доступных пакетов SDK для C, Python, Node и Java.
 
-В следующем примере показана модель возможностей устройства для устройства термостата:
+## <a name="model-id-announcement"></a>Объявление идентификатора модели
 
-```json
-{
-  "@id": "urn:example:Thermostat_T_1000:1",
-  "@type": "CapabilityModel",
-  "implements": [
-    {
-      "name": "thermostat",
-      "schema": "urn:example:Thermostat:1"
-    },
-    {
-      "name": "urn_azureiot_deviceManagement_DeviceInformation",
-      "schema": "urn:azureiot:deviceManagement:DeviceInformation:1"
-    }
-  ],
-  "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
-}
+Чтобы объявить идентификатор модели, устройство должно включить его в сведения о подключении:
+
+```csharp
+DeviceClient.CreateFromConnectionString(
+  connectionString,
+  TransportType.Mqtt,
+  new ClientOptions() { ModelId = modelId })
 ```
 
-Модель возможностей содержит некоторые обязательные поля:
+Новая `ClientOptions` перегрузка доступна во всех `DeviceClient` методах, используемых для инициализации соединения.
 
-- `@id`: уникальный идентификатор в виде простого универсального имени ресурса.
-- `@type`: объявляет, что этот объект является моделью возможностей.
-- `@context`: указывает версию ДТДЛ, используемую для модели возможностей.
-- `implements`: перечисляет интерфейсы, реализуемые устройством.
+Объявление идентификатора модели Добавлено в следующие версии пакетов SDK
 
-Каждая запись в списке интерфейсов в разделе Implements имеет:
+|SDK|Версия|
+|---|-------|
+|ПАКЕТ SDK ДЛЯ C|1.3.9|
+|.NET|1.27.0|
+|Java|1.14.0|
+|Узел|1.17.0|
+|Python|2.1.4|
 
-- `name`: Программное имя интерфейса.
-- `schema`: интерфейс, реализуемый моделью возможностей.
+## <a name="implement-telemetry-properties-and-commands"></a>Реализация телеметрии, свойств и команд
 
-Существуют дополнительные необязательные поля, которые можно использовать для добавления дополнительных сведений в модель возможностей, например отображаемое имя и описание. Интерфейсы, объявляемые в модели возможностей, можно рассматривать как компоненты устройства. В общедоступной предварительной версии список интерфейсов может иметь только одну запись на схему.
-
-## <a name="interface"></a>Интерфейс
-
-С ДТДЛ вы описываете возможности устройства с помощью интерфейсов. Интерфейсы описывают _Свойства_, _телеметрию_и _команды_ , которые компонент реализует:
-
-- `Properties`. Свойства — это поля данных, которые представляют состояние устройства. Используйте свойства, чтобы представить устойчивое состояние устройства, например состояние кулант насоса. Свойства могут также представлять базовые свойства устройства, такие как версия встроенного по устройства. Свойства можно объявлять как доступные только для чтения или доступные для записи.
-- `Telemetry`. Поля телеметрии представляют измерения датчиков. Когда устройство принимает измерения датчика, оно должно отправить событие телеметрии, содержащее данные датчика.
-- `Commands`. Команды представляют методы, которые пользователи устройства могут выполнять на устройстве. Например, команда reset или команда для переключения вентилятора.
-
-В следующем примере показан интерфейс для устройства термостата:
-
-```json
-{
-  "@id": "urn:example:Thermostat:1",
-  "@type": "Interface",
-  "contents": [
-    {
-      "@type": "Telemetry",
-      "name": "temperature",
-      "schema": "double"
-    }
-  ],
-  "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
-}
-```
-
-У интерфейса есть несколько обязательных полей:
-
-- `@id`: уникальный идентификатор в виде простого универсального имени ресурса.
-- `@type`: объявляет, что этот объект является интерфейсом.
-- `@context`: указывает версию ДТДЛ, используемую для интерфейса.
-- `contents`: перечисляет свойства, данные телеметрии и команды, составляющие устройство.
-
-В этом простом примере имеется только одно поле телеметрии. Минимальное описание поля имеет:
-
-- `@type`: указывает тип возможности: `Telemetry` , `Property` или `Command` .
-- `name`: предоставляет имя значения телеметрии.
-- `schema`: указывает тип данных для телеметрии. Это значение может быть примитивным типом, например Double, Integer, Boolean или String. Также поддерживаются сложные типы объектов, массивы и карты.
-
-Другие необязательные поля, такие как отображаемое имя и описание, позволяют добавлять дополнительные сведения в интерфейс и возможности.
-
-### <a name="properties"></a>Элемент Property
-
-По умолчанию свойства доступны только для чтения. Свойства только для чтения означают, что устройство сообщает значение свойства в центре Интернета вещей. Центр Интернета вещей не может установить значение свойства, доступного только для чтения.
-
-Можно также пометить свойство как записываемое в интерфейсе. Устройство может получить обновление для записываемого свойства из центра Интернета вещей, а также для отчетов об обновлениях значений свойств в центре.
-
-Устройства не обязательно должны быть подключены для задания значений свойств. Обновленные значения передаются при следующем подключении устройства к концентратору. Это поведение применимо как к свойствам только для чтения, так и к записываемым.
-
-Не используйте свойства для отправки данных телеметрии с устройства. Например, свойство ReadOnly, например, `temperatureSetting=80` должно означать, что для температуры устройства установлено значение 80, а устройство пытается получить или остаться в этой температуре.
-
-Для свойств, доступных для записи, приложение устройства возвращает код состояния требуемого состояния, версию и описание, чтобы указать, получил ли он значение свойства и применял его.
+Как описано в разделе [Общие сведения о компонентах Plug and Play моделей Интернета вещей](concepts-components.md), построители устройств должны решить, хотят ли они использовать компоненты для описания своих устройств. При использовании компонентов устройства должны соответствовать правилам, описанным в этом разделе.
 
 ### <a name="telemetry"></a>Телеметрия
 
-По умолчанию центр Интернета вещей направляет все сообщения телеметрии с устройств во [встроенную конечную точку службы (**сообщения или события**)](../iot-hub/iot-hub-devguide-messages-read-builtin.md) , совместимую с [концентраторами событий](https://azure.microsoft.com/documentation/services/event-hubs/).
+Модели без компонентов не нуждаются в специальных свойствах.
 
-Вы можете использовать [пользовательские конечные точки и правила маршрутизации центра Интернета вещей](../iot-hub/iot-hub-devguide-messages-d2c.md) для отправки данных телеметрии в другие назначения, такие как хранилище BLOB-объектов или другие концентраторы событий. Правила маршрутизации используют свойства сообщений для выбора сообщений.
+При использовании компонентов устройства должны задать свойство Message с именем компонента:
+
+```c#
+public async Task SendComponentTelemetryValueAsync(string componentName, string serializedTelemetry)
+{
+  var message = new Message(Encoding.UTF8.GetBytes(serializedTelemetry));
+  message.Properties.Add("$.sub", componentName);
+  message.ContentType = "application/json";
+  message.ContentEncoding = "utf-8";
+  await deviceClient.SendEventAsync(message);
+}
+```
+
+### <a name="read-only-properties"></a>Свойства только для чтения
+
+Модели без компонентов не нуждаются в специальной конструкции:
+
+```csharp
+TwinCollection reportedProperties = new TwinCollection();
+reportedProperties["maxTemperature"] = 38.7;
+await client.UpdateReportedPropertiesAsync(reportedProperties);
+```
+
+Двойника устройства обновляется со следующим сообщаемым свойством:
+
+```json
+{
+  "reported": {
+      "maxTemperature" : 38.7
+  }
+}
+```
+
+При использовании компонентов необходимо создать свойства в имени компонента:
+
+```csharp
+TwinCollection reportedProperties = new TwinCollection();
+TwinCollection component = new TwinCollection();
+component["maxTemperature"] = 38.7;
+component["__t"] = "c"; // marker to identify a component
+reportedProperties["thermostat1"] = component;
+await client.UpdateReportedPropertiesAsync(reportedProperties);
+```
+
+Двойника устройства обновляется со следующим сообщаемым свойством:
+
+```json
+{
+  "reported": {
+    "thermostat1" : {  
+      "__t" : "c",  
+      "maxTemperature" : 38.7
+     } 
+  }
+}
+```
+
+### <a name="writable-properties"></a>Доступные для записи свойства
+
+Эти свойства можно задать на устройстве или обновить с помощью решения. Если решение обновляет свойство, клиент получает уведомление в качестве обратного вызова в `DeviceClient` . Чтобы следовать правилам Plug and Play IoT, устройство должно информировать службу о том, что свойство было успешно получено.
+
+#### <a name="report-a-writable-property"></a>Сообщить о свойстве, доступном для записи
+
+Когда устройство сообщает о доступном для записи свойстве, оно должно включать `ack` значения, определенные в соглашениях.
+
+Чтобы сообщить о свойстве, доступном для записи, без компонентов:
+
+```csharp
+TwinCollection reportedProperties = new TwinCollection();
+TwinCollection ackProps = new TwinCollection();
+ackProps["value"] = 23.2;
+ackProps["ac"] = 200; // using HTTP status codes
+ackProps["av"] = 0; // not readed from a desired property
+ackProps["ad"] = "reported default value";
+reportedProperties["targetTemperature"] = ackProps;
+await client.UpdateReportedPropertiesAsync(reportedProperties);
+```
+
+Двойника устройства обновляется со следующим сообщаемым свойством:
+
+```json
+{
+  "reported": {
+      "targetTemperature": {
+          "value": 23.2,
+          "ac": 200,
+          "av": 3,
+          "ad": "complete"
+      }
+  }
+}
+```
+
+Чтобы сообщить доступное для записи свойство из компонента, двойника должен включать маркер:
+
+```csharp
+TwinCollection reportedProperties = new TwinCollection();
+TwinCollection component = new TwinCollection();
+TwinCollection ackProps = new TwinCollection();
+component["__t"] = "c"; // marker to identify a component
+ackProps["value"] = 23.2;
+ackProps["ac"] = 200; // using HTTP status codes
+ackProps["av"] = 0; // not read from a desired property
+ackProps["ad"] = "reported default value";
+component["targetTemperature"] = ackProps;
+reportedProperties["thermostat1"] = component;
+await client.UpdateReportedPropertiesAsync(reportedProperties);
+```
+
+Двойника устройства обновляется со следующим сообщаемым свойством:
+
+```json
+{
+  "reported": {
+    "thermostat1": {
+      "__t" : "c",
+      "targetTemperature": {
+          "value": 23.2,
+          "ac": 200,
+          "av": 3,
+          "ad": "complete"
+      }
+    }
+  }
+}
+```
+
+#### <a name="subscribe-to-desired-property-updates"></a>Подпишитесь на обновления требуемых свойств
+
+Службы могут обновлять требуемые свойства, которые инициируют уведомление на подключенных устройствах. Это уведомление содержит обновленные требуемые свойства, включая номер версии, определяющий обновление. Устройства должны отвечать с тем же `ack` сообщением, что и сообщаемые свойства.
+
+Модели без компонентов см. одно свойство и создайте отчет `ack` с полученной версией.
+
+```csharp
+await client.SetDesiredPropertyUpdateCallbackAsync(async (desired, ctx) => 
+{
+  JValue targetTempJson = desired["targetTemperature"];
+  double targetTemperature = targetTempJson.Value<double>();
+
+  TwinCollection reportedProperties = new TwinCollection();
+  TwinCollection ackProps = new TwinCollection();
+  ackProps["value"] = targetTemperature;
+  ackProps["ac"] = 200;
+  ackProps["av"] = desired.Version; 
+  ackProps["ad"] = "desired property received";
+  reportedProperties["targetTemperature"] = ackProps;
+
+  await client.UpdateReportedPropertiesAsync(reportedProperties);
+}, null);
+```
+
+Двойника устройства показывает свойство в нужных и сообщаемых разделах:
+
+```json
+{
+  "desired" : {
+    "targetTemperature": 23.2,
+    "$version" : 3
+  },
+  "reported": {
+      "targetTemperature": {
+          "value": 23.2,
+          "ac": 200,
+          "av": 3,
+          "ad": "complete"
+      }
+  }
+}
+```
+
+Модели с компонентами получают требуемые свойства, заключенные в оболочку с именем компонента, и должны сообщать о `ack` сообщаемом свойстве:
+
+```csharp
+await client.SetDesiredPropertyUpdateCallbackAsync(async (desired, ctx) =>
+{
+  JObject thermostatComponent = desired["thermostat1"];
+  JToken targetTempProp = thermostatComponent["targetTemperature"];
+  double targetTemperature = targetTempProp.Value<double>();
+
+  TwinCollection reportedProperties = new TwinCollection();
+  TwinCollection component = new TwinCollection();
+  TwinCollection ackProps = new TwinCollection();
+  component["__t"] = "c"; // marker to identify a component
+  ackProps["value"] = targetTemperature;
+  ackProps["ac"] = 200; // using HTTP status codes
+  ackProps["av"] = desired.Version; // not readed from a desired property
+  ackProps["ad"] = "desired property received";
+  component["targetTemperature"] = ackProps;
+  reportedProperties["thermostat1"] = component;
+
+  await client.UpdateReportedPropertiesAsync(reportedProperties);
+}, null);
+```
+
+В двойникае устройства для компонентов отображаются нужные и сообщаемые разделы следующим образом:
+
+```json
+{
+  "desired" : {
+    "thermostat1" : {
+        "__t" : "c",
+        "targetTemperature": 23.2,
+    }
+    "$version" : 3
+  },
+  "reported": {
+    "thermostat1" : {
+        "__t" : "c",
+      "targetTemperature": {
+          "value": 23.2,
+          "ac": 200,
+          "av": 3,
+          "ad": "complete"
+      }
+    }
+  }
+}
+```
 
 ### <a name="commands"></a>Команды
 
-Команды синхронные или асинхронные. По умолчанию Синхронная команда должна выполняться в течение 30 секунд, а при получении команды устройство должно быть подключено. Если устройство отвечает вовремя или устройство не подключено, команда завершается ошибкой.
+Модели без компонентов получают имя команды, как оно было вызвано службой.
 
-Используйте асинхронные команды для выполнения длительных операций. Устройство отправляет сведения о ходе выполнения с помощью сообщений телеметрии. Эти сообщения о ходе выполнения имеют следующие свойства заголовка:
+Модели с компонентами получат имя команды с префиксом, а также с помощью компонента и `*` разделителя.
 
-- `iothub-command-name`— имя команды, например `UpdateFirmware` .
-- `iothub-command-request-id`: идентификатор запроса, созданный на стороне сервера и отправленный на устройство при первом вызове.
-- `iothub-interface-id`— Идентификатор интерфейса, для которого определена эта команда, например `urn:example:AssetTracker:1` .
- `iothub-interface-name`— имя экземпляра этого интерфейса, например `myAssetTracker` .
-- `iothub-command-statuscode`— код состояния, возвращенный с устройства, например `202` .
-
-## <a name="register-a-device"></a>Регистрация устройства
-
-Plug and Play IoT упрощает объявление возможностей устройства. После подключения устройства к центру Интернета вещей с помощью Plug and Play IoT необходимо зарегистрировать модель возможностей устройства. Регистрация позволяет клиентам использовать возможности Plug and Play Интернета вещей на вашем устройстве.
-
-В этом руководство показано, как зарегистрировать устройство с помощью пакета SDK для устройств Azure IoT для C.
-
-Для каждого интерфейса, реализуемого устройством, необходимо создать интерфейс и подключить его к реализации.
-
-Для интерфейса термостата, показанного ранее, с помощью пакета SDK для C вы создадите интерфейс термостата и подключится к его реализации:
-
-```c
-DIGITALTWIN_INTERFACE_HANDLE thermostatInterfaceHandle;
-
-DIGITALTWIN_CLIENT_RESULT result = DigitalTwin_InterfaceClient_Create(
-    "thermostat",
-    "urn:example:Thermostat:1",
-    null, null,
-    &thermostatInterfaceHandle);
-
-result = DigitalTwin_Interface_SetCommandsCallbacks(
-    thermostatInterfaceHandle,
-    commandsCallbackTable);
-
-result = DigitalTwin_Interface_SetPropertiesUpdatedCallbacks(
-    thermostatInterfaceHandle,
-    propertiesCallbackTable);
-
+```csharp
+await client.SetMethodHandlerAsync("themostat*reboot", (MethodRequest req, object ctx) =>
+{
+  Console.WriteLine("REBOOT");
+  return Task.FromResult(new MethodResponse(200));
+},
+null);
 ```
 
-Повторите этот код для каждого интерфейса, реализуемого устройством.
+#### <a name="request-and-response-payloads"></a>Полезные данные запросов и ответов
 
-После создания интерфейса Зарегистрируйте модель возможностей устройства и интерфейсы с помощью центра Интернета вещей:
+Команды используют типы для определения полезных данных запроса и ответа. Устройство должно десериализовать входящий входной параметр и сериализовать ответ. В следующем примере показано, как реализовать команду со сложными типами, определенными в полезных данных:
 
-```c
-DIGITALTWIN_INTERFACE_CLIENT_HANDLE interfaces[2];
-interfaces[0] = thermostatInterfaceHandle;
-interfaces[1] = deviceInfoInterfaceHandle;
-
-result = DigitalTwin_DeviceClient_RegisterInterfacesAsync(
-    digitalTwinClientHandle, // The handle for the connection to Azure IoT
-    "urn:example:Thermostat_T_1000:1",
-    interfaces, 2,
-    null, null);
+```json
+{
+  "@type": "Command",
+  "name": "start",
+  "request": {
+    "name": "startRequest",
+    "schema": {
+      "@type": "Object",
+      "fields": [
+        {
+          "name": "startPriority",
+          "schema": "integer"
+        },
+        {
+          "name": "startMessage",
+          "schema" : "string"
+        }
+      ]
+    }
+  },
+  "response": {
+    "name": "startReponse",
+    "schema": {
+      "@type": "Object",
+      "fields": [
+        {
+            "name": "startupTime",
+            "schema": "integer" 
+        },
+        {
+          "name": "startupMessage",
+          "schema": "string"
+        }
+      ]
+    }
+  }
+}
 ```
 
-## <a name="use-a-device"></a>Использование устройства
+В следующих фрагментах кода показано, как устройство реализует это определение команды, включая типы, используемые для включения сериализации и десериализации:
 
-Plug and Play IoT позволяет использовать устройства, которые зарегистрировали свои возможности в центре Интернета вещей. Например, можно напрямую обращаться к свойствам и командам устройства.
+```csharp
+class startRequest
+{
+  public int startPriority { get; set; }
+  public string startMessage { get; set; }
+}
 
-Чтобы использовать устройство IoT Plug and Play, подключенное к центру Интернета вещей, используйте центр Интернета вещей REST API или один из пакетов SDK для языка Интернета вещей. В следующих примерах используется центр Интернета вещей REST API. Текущая версия API — `2019-07-01-preview` . Присоединитесь `?api-version=2019-07-01-preview` к вызовам остальных PI.
+class startResponse
+{
+  public int startupTime { get; set; }
+  public string startupMessage { get; set; }
+}
 
-Чтобы получить значение свойства устройства, например версия встроенного по ( `fwVersion` ) в `DeviceInformation` интерфейсе термостата, используется цифровая двойников REST API.
+// ... 
+
+await client.SetMethodHandlerAsync("start", (MethodRequest req, object ctx) =>
+{
+  var startRequest = JsonConvert.DeserializeObject<startRequest>(req.DataAsJson);
+  Console.WriteLine($"Received start command with priority ${startRequest.startPriority} and ${startRequest.startMessage}");
+
+  var startResponse = new startResponse
+  {
+    startupTime = 123,
+    startupMessage = "device started with message " + startRequest.startMessage
+  };
+
+  string responsePayload = JsonConvert.SerializeObject(startResponse);
+  MethodResponse response = new MethodResponse(Encoding.UTF8.GetBytes(responsePayload), 200);
+  return Task.FromResult(response);
+},null);
+```
+
+> [!Tip]
+> Имена запросов и ответов отсутствуют в сериализованных полезных данных, передаваемых по сети.
+
+## <a name="interact-with-the-device"></a>Взаимодействие с устройством 
+
+IoT Plug and Play позволяет использовать устройства, которые объявили идентификатор модели с помощью центра Интернета вещей. Например, можно напрямую обращаться к свойствам и командам устройства.
+
+Чтобы использовать устройство IoT Plug and Play, подключенное к центру Интернета вещей, используйте центр Интернета вещей REST API или один из пакетов SDK для языка Интернета вещей. В следующих примерах используется центр Интернета вещей REST API. Текущая версия API — `2020-05-31-preview` . Присоединитесь `?api-version=2020-05-31` к вызовам остальных PI.
 
 При вызове устройства термостата `t-123` вы получаете все свойства всех интерфейсов, реализованных устройством, с помощью вызова REST API Get:
 
 ```REST
-GET /digitalTwins/t-123/interfaces
+GET /digitalTwins/t-123
 ```
 
-Как правило, доступ ко всем свойствам всех интерфейсов осуществляется с помощью этого REST API шаблона, где `{device-id}` — это идентификатор устройства:
+Этот вызов будет включать свойство JSON `$metadata.$model` с идентификатором модели, объявленным устройством.
+
+Доступ ко всем свойствам всех интерфейсов осуществляется с помощью `GET /DigitalTwin/{device-id}` шаблона REST API, где `{device-id}` — это идентификатор устройства:
 
 ```REST
-GET /digitalTwins/{device-id}/interfaces
+GET /digitalTwins/{device-id}
 ```
 
-Если известно имя интерфейса, например `deviceInformation` , и требуется получить свойства для этого интерфейса, вызовите запрос к определенному интерфейсу по имени:
+Вы можете напрямую вызывать команды для устройств IoT Plug and Play. Если у `Thermostat` компонента на `t-123` устройстве есть `restart` команда, ее можно вызвать с помощью вызова REST API POST:
 
 ```REST
-GET /digitalTwins/t-123/interfaces/deviceInformation
-```
-
-Как правило, доступ к свойствам определенного интерфейса можно получить с помощью этого шаблона REST API, где `device-id` — это идентификатор устройства, а `{interface-name}` — имя интерфейса:
-
-```REST
-GET /digitalTwins/{device-id}/interfaces/{interface-name}
-```
-
-Вы можете напрямую вызывать команды для устройств IoT Plug and Play. Если в `Thermostat` интерфейсе `t-123` устройства имеется `restart` команда, ее можно вызвать с помощью вызова REST API POST:
-
-```REST
-POST /digitalTwins/t-123/interfaces/thermostat/commands/restart
+POST /digitalTwins/t-123/components/Thermostat/commands/restart
 ```
 
 В общем случае команды можно вызывать с помощью этого шаблона REST API:
 
 - `device-id`— идентификатор устройства.
-- `interface-name`: имя интерфейса из раздела Implements модели возможностей устройства.
+- `component-name`: имя интерфейса из раздела Implements модели возможностей устройства.
 - `command-name`: имя команды.
 
 ```REST
-/digitalTwins/{device-id}/interfaces/{interface-name}/commands/{command-name}
+/digitalTwins/{device-id}/components/{component-name}/commands/{command-name}
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали о моделировании устройств, ниже приведены некоторые дополнительные ресурсы.
 
-- [Язык определения цифровых двойника (ДТДЛ)](https://aka.ms/DTDL)
+- [Язык определения цифровых двойников (ДТДЛ)](https://github.com/Azure/opendigitaltwins-dtdl)
 - [Пакет SDK для устройств для C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
 - [REST API IoT](https://docs.microsoft.com/rest/api/iothub/device)
+- [Компоненты модели](./concepts-components.md)

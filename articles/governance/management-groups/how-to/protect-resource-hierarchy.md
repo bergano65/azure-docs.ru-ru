@@ -3,12 +3,12 @@ title: Как защитить иерархию ресурсов — систе
 description: Сведения о том, как защитить иерархию ресурсов с помощью параметров иерархии, в том числе с настройкой группы управления по умолчанию.
 ms.date: 05/21/2020
 ms.topic: conceptual
-ms.openlocfilehash: 50b5ba1bccf3d603b6d273892d0c903d433786f3
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 2f8d3d7ff85552fe18a49137450aefe91d0d02c9
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87128002"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87366778"
 ---
 # <a name="how-to-protect-your-resource-hierarchy"></a>Как защитить иерархию ресурсов
 
@@ -23,7 +23,7 @@ ms.locfileid: "87128002"
 - `Microsoft.Management/managementgroups/settings/write`
 - `Microsoft.Management/managementgroups/settings/read`
 
-Эти операции позволяют пользователю только считывать и обновлять параметры иерархии. Эти операции не предоставляют иного доступа к иерархии группы управления или к ресурсам в этой иерархии. Обе эти операции доступны во встроенной роли RBAC **Администратор параметров иерархии**.
+Эти операции позволяют пользователю только считывать и обновлять параметры иерархии. Эти операции не предоставляют иного доступа к иерархии группы управления или к ресурсам в этой иерархии. Обе эти операции доступны в встроенном **администраторе параметров иерархии**ролей Azure.
 
 ## <a name="setting---default-management-group"></a>Настройка — группа управления по умолчанию
 

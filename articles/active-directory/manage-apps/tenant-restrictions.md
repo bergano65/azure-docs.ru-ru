@@ -12,12 +12,12 @@ ms.date: 03/28/2019
 ms.author: kenwith
 ms.reviewer: hpsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae90a682ea2d1abb8159ec28ed02ed122494f512
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0f45cc2444a14fc138d201e3d7f81e687f53d3ac
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87019256"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285906"
 ---
 # <a name="use-tenant-restrictions-to-manage-access-to-saas-cloud-applications"></a>Использование ограничений клиентов для управления доступом к облачным приложениям SaaS
 
@@ -69,6 +69,11 @@ ms.locfileid: "87019256"
 
 Для каждого входящего запроса к login.microsoftonline.com login.microsoft.com и login.windows.net следует вставлять два заголовка HTTP: *Restrict-Access-To-Tenants* и *Restrict-Access-Context*.
 
+> [!NOTE]
+> При настройке перехвата SSL и внедрения заголовка убедитесь, что трафик, который следует https://device.login.microsoftonline.com исключить, исключен. Этот URL-адрес используется для проверки подлинности устройства и выполнения проверки подлинности TLS, что может вызвать проблемы с регистрацией устройств и условным доступом на основе устройств.
+
+
+
 Эти заголовки должен содержать следующие элементы.
 
 - Для *ограничения-доступа к клиентам*используйте значение \<permitted tenant list\> , которое представляет собой разделенный запятыми список клиентов, к которым требуется предоставить доступ пользователям. Для идентификации клиента в этом списке может использоваться любой домен, зарегистрированный в клиенте. Например, чтобы разрешить доступ к клиентам Contoso и Fabrikam, используются пары "имя-значение" следующего вида: `Restrict-Access-To-Tenants: contoso.onmicrosoft.com,fabrikam.onmicrosoft.com`
@@ -81,6 +86,9 @@ ms.locfileid: "87019256"
 Чтобы запретить пользователям вставлять собственный заголовок HTTP с помощью неутвержденных клиентов, прокси-сервер должен заменять заголовок *Restrict-Access-To-Tenants*, если он уже существует во входящем запросе.
 
 Клиенты должны принудительно использовать прокси-сервер для всех запросов к login.microsoftonline.com, login.microsoft.com и login.windows.net. Например, если для указания клиентам использовать прокси-сервер применяются PAC-файлы, то пользователи не должны иметь возможности изменить или отключить эти файлы.
+
+> [!NOTE]
+> Не включайте поддомены в папке *. login.microsoftonline.com в конфигурации прокси-сервера. Это приведет к включению device.login.microsoftonline.com и может помешать проверке подлинности на основе сертификата клиента, которая используется в регистрации устройств и сценариях условного доступа на базе устройств. Настройте прокси-сервер, чтобы исключить device.login.microsoftonline.com из TLS-проверки и внедрения заголовка.
 
 ## <a name="the-user-experience"></a>Взаимодействие с пользователями
 

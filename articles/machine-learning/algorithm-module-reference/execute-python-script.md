@@ -9,13 +9,13 @@ ms.topic: reference
 ms.custom: tracking-python
 author: likebupt
 ms.author: keli19
-ms.date: 06/16/2020
-ms.openlocfilehash: 2115a0bae8b26113fc10648db2584210809441de
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.date: 07/27/2020
+ms.openlocfilehash: d07681798cadf1d983942d681b910e26ea48d6d2
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86147251"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285940"
 ---
 # <a name="execute-python-script-module"></a>Выполнить модуль скрипта Python
 
@@ -30,124 +30,16 @@ ms.locfileid: "86147251"
 + Чтение, Загрузка и обработка данных из источников, которые не поддерживаются модулем [импорта данных](./import-data.md) .
 + Запустите собственный код глубокого обучения. 
 
+## <a name="supported-python-packages"></a>Поддерживаемые пакеты Python
 
 Машинное обучение Azure использует дистрибутив Python Anaconda, который включает множество стандартных служебных программ для обработки данных. Мы будем обновлять версию Anaconda автоматически. Текущая версия:
  -  Anaconda 4.5 + дистрибутив для Python 3,6 
 
-Предварительно установленные пакеты:
--    adal==1.2.2
--    applicationinsights==0.11.9
--    attr = = 19.3.0
--    Azure-Common = = 1.1.25
--    Azure-Core = = 1.3.0
--    azure-graphrbac==0.61.1
--    Azure-Identity = = 1.3.0
--    azure-mgmt-authorization==0.60.0
--    azure-mgmt-containerregistry==2.8.0
--    Azure-управление-keyvault = = 2.2.0
--    Azure-управление-ресурс = = 8.0.1
--    Azure-управление-хранилище = = 8.0.0
--    Azure-Storage-BLOB = = 1.5.0
--    Azure-Storage — Common = = 1.4.2
--    azureml-Core = = 1.1.5.5
--    azureml-onподготовительная — Native = = 14.1.0
--    azureml-"Подготовка к вы1.3.5У"
--    azureml — значения по умолчанию = = 1.1.5.1
--    azureml-Designer-Classic-modules = = 0.0.118
--    azureml-Designer-Core = = 0.0.31
--    azureml-Designer-Internal = = 0.0.18
--    azureml-Model-Management-SDK = = 1.0.1 B6. post1
--    azureml-конвейер-Core = = 1.1.5
--    azureml-телеметрии = = 1.1.5.3
--    backports.tempfile==1.0
--    backports.weakref==1.0.post1
--    boto3 = = 1.12.29
--    ботокоре = = 1.15.29
--    качетулс = = 4.0.0
--    Сертификация = = 2019.11.28
--    cffi==1.12.3
--    chardet==3.0.4
--    щелчок = = 7.1.1
--    клаудпиккле = = 1.3.0
--    конфигпарсер = = 3.7.4
--    contextlib2 = = 0.6.0. post1
--    Шифрование = = 2.8
--    cycler==0.10.0
--    dill==0.3.1.1
--    distro==1.4.0
--    DOCKER = = 4.2.0
--    docutils==0.15.2
--    dotnetcore2 = = 2.1.13
--    Flask = = 1.0.3
--    fusepy==3.0.1
--    gensim==3.8.1
--    Google-API-Core = = 1.16.0
--    Google-auth = = 1.12.0
--    Google-Cloud-Core = = 1.3.0
--    Google-Cloud-Storage = = 1.26.0
--    Google-reвозобновляет работу — носитель = = 0.5.0
--    гуглеапис-Common-идентификаторы = = 1.51.0
--    гуникорн = = 19.9.0
--    IDNA = = 2.9
--    дисбаланс — сведения = = 0.4.3
--    isodate==0.6.0
--    итсданжераус = = 1.1.0
--    жипнэй = = 0.4.3
--    Jinja2 = = 2.11.1
--    jmespath = = 0.9.5
--    жоблиб = = 0.14.0
--    JSON-Logging-корректировка = = 0,2
--    жсонпиккле = = 1.3
--    жсонсчема = = 3.0.1
--    kiwisolver==1.1.0
--    лиак-arff = = 2.4.0
--    lightgbm==2.2.3
--    маркупсафе = = 1.1.1
--    Matplotlib = = 3.1.3
--    more-итертулс = = 6.0.0
--    msal-Extensions = = 0.1.3
--    msal = = 1.1.0
--    мсрест = = 0.6.11
--    мсрестазуре = = 0.6.3
--    ndg-httpsclient==0.5.1
--    нимбусмл = = 1.6.1
--    NumPy = = 1.18.2
--    oauthlib==3.1.0
--    Pandas = = 0.25.3
--    пасспек = = 0.7.0
--    PIP = = 20.0.2
--    порталоккер = = 1.6.0
--    protobuf = = 3.11.3
--    pyarrow = = 0.16.0
--    pyasn1-modules = = 0.2.8
--    pyasn1 = = 0.4.8
--    пикпарсер = = 2,20
--    пикриптодомекс = = 3.7.3
--    пижвт = = 1.7.1
--    pyopenssl = = 19.1.0
--    пипарсинг = = 2.4.6
--    пирсистент = = 0.16.0
--    Python-датеутил = = 2.8.1
--    pytz==2019.3
--    запросы — оауслиб = = 1.3.0
--    запросы = = 2.23.0
--    RSA = = 4.0
--    ruamel.yaml==0.15.89
--    s3transfer = = 0.3.3
--    scikit — сведения = = 0.22.2
--    SciPy = = 1.4.1
--    секретстораже = = 3.1.2
--    setuptools = = 46.1.1. post20200323
--    шесть = = 1.14.0
--    Smart-Open = = 1.10.0
--    urllib3 = = 1.25.8
--    WebSocket-Client = = 0.57.0
--    веркзеуг = = 0.16.1
--    Wheel = = 0.34.2
+Полный список см. в разделе с [предварительно установленными пакетами Python](#preinstalled-python-packages).
 
- Чтобы установить пакеты, отсутствующие в предварительно установленном списке (например, *scikit-Разное*), добавьте в сценарий следующий код: 
+Чтобы установить пакеты, отсутствующие в предварительно установленном списке (например, *scikit-Разное*), добавьте в сценарий следующий код: 
 
- ```python
+```python
 import os
 os.system(f"pip install scikit-misc")
 ```
@@ -262,6 +154,117 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 + **Результирующий набор данных 2**, определяемый вторым возвращенным кадром данных Pandas в скрипте Python.
 
+## <a name="preinstalled-python-packages"></a>Предварительно установленные пакеты Python
+Предварительно установленные пакеты:
+-    adal==1.2.2
+-    applicationinsights==0.11.9
+-    attr = = 19.3.0
+-    Azure-Common = = 1.1.25
+-    Azure-Core = = 1.3.0
+-    azure-graphrbac==0.61.1
+-    Azure-Identity = = 1.3.0
+-    azure-mgmt-authorization==0.60.0
+-    azure-mgmt-containerregistry==2.8.0
+-    Azure-управление-keyvault = = 2.2.0
+-    Azure-управление-ресурс = = 8.0.1
+-    Azure-управление-хранилище = = 8.0.0
+-    Azure-Storage-BLOB = = 1.5.0
+-    Azure-Storage — Common = = 1.4.2
+-    azureml-Core = = 1.1.5.5
+-    azureml-onподготовительная — Native = = 14.1.0
+-    azureml-"Подготовка к вы1.3.5У"
+-    azureml — значения по умолчанию = = 1.1.5.1
+-    azureml-Designer-Classic-modules = = 0.0.118
+-    azureml-Designer-Core = = 0.0.31
+-    azureml-Designer-Internal = = 0.0.18
+-    azureml-Model-Management-SDK = = 1.0.1 B6. post1
+-    azureml-конвейер-Core = = 1.1.5
+-    azureml-телеметрии = = 1.1.5.3
+-    backports.tempfile==1.0
+-    backports.weakref==1.0.post1
+-    boto3 = = 1.12.29
+-    ботокоре = = 1.15.29
+-    качетулс = = 4.0.0
+-    Сертификация = = 2019.11.28
+-    cffi==1.12.3
+-    chardet==3.0.4
+-    щелчок = = 7.1.1
+-    клаудпиккле = = 1.3.0
+-    конфигпарсер = = 3.7.4
+-    contextlib2 = = 0.6.0. post1
+-    Шифрование = = 2.8
+-    cycler==0.10.0
+-    dill==0.3.1.1
+-    distro==1.4.0
+-    DOCKER = = 4.2.0
+-    docutils==0.15.2
+-    dotnetcore2 = = 2.1.13
+-    Flask = = 1.0.3
+-    fusepy==3.0.1
+-    gensim==3.8.1
+-    Google-API-Core = = 1.16.0
+-    Google-auth = = 1.12.0
+-    Google-Cloud-Core = = 1.3.0
+-    Google-Cloud-Storage = = 1.26.0
+-    Google-reвозобновляет работу — носитель = = 0.5.0
+-    гуглеапис-Common-идентификаторы = = 1.51.0
+-    гуникорн = = 19.9.0
+-    IDNA = = 2.9
+-    дисбаланс — сведения = = 0.4.3
+-    isodate==0.6.0
+-    итсданжераус = = 1.1.0
+-    жипнэй = = 0.4.3
+-    Jinja2 = = 2.11.1
+-    jmespath = = 0.9.5
+-    жоблиб = = 0.14.0
+-    JSON-Logging-корректировка = = 0,2
+-    жсонпиккле = = 1.3
+-    жсонсчема = = 3.0.1
+-    kiwisolver==1.1.0
+-    лиак-arff = = 2.4.0
+-    lightgbm==2.2.3
+-    маркупсафе = = 1.1.1
+-    Matplotlib = = 3.1.3
+-    more-итертулс = = 6.0.0
+-    msal-Extensions = = 0.1.3
+-    msal = = 1.1.0
+-    мсрест = = 0.6.11
+-    мсрестазуре = = 0.6.3
+-    ndg-httpsclient==0.5.1
+-    нимбусмл = = 1.6.1
+-    NumPy = = 1.18.2
+-    oauthlib==3.1.0
+-    Pandas = = 0.25.3
+-    пасспек = = 0.7.0
+-    PIP = = 20.0.2
+-    порталоккер = = 1.6.0
+-    protobuf = = 3.11.3
+-    pyarrow = = 0.16.0
+-    pyasn1-modules = = 0.2.8
+-    pyasn1 = = 0.4.8
+-    пикпарсер = = 2,20
+-    пикриптодомекс = = 3.7.3
+-    пижвт = = 1.7.1
+-    pyopenssl = = 19.1.0
+-    пипарсинг = = 2.4.6
+-    пирсистент = = 0.16.0
+-    Python-датеутил = = 2.8.1
+-    pytz==2019.3
+-    запросы — оауслиб = = 1.3.0
+-    запросы = = 2.23.0
+-    RSA = = 4.0
+-    ruamel.yaml==0.15.89
+-    s3transfer = = 0.3.3
+-    scikit — сведения = = 0.22.2
+-    SciPy = = 1.4.1
+-    секретстораже = = 3.1.2
+-    setuptools = = 46.1.1. post20200323
+-    шесть = = 1.14.0
+-    Smart-Open = = 1.10.0
+-    urllib3 = = 1.25.8
+-    WebSocket-Client = = 0.57.0
+-    веркзеуг = = 0.16.1
+-    Wheel = = 0.34.2
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

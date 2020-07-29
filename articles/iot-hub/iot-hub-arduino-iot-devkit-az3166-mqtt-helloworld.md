@@ -10,11 +10,12 @@ ms.tgt_pltfrm: arduino
 ms.date: 04/02/2018
 ms.author: liydu
 ms.custom: mqtt
-ms.openlocfilehash: 600e64ef5bc3329f0116359066bdcdaf42c13e2e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a3a8c065c226d1cc94d79b44d16f288fab205a56
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81733497"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87337863"
 ---
 # <a name="send-messages-to-an-mqtt-server"></a>Отправка сообщений на сервер MQTT
 
@@ -80,14 +81,11 @@ Serial Monitor отобразит все сообщения, отправлен�
 * [Gitter.im](https://gitter.im/Microsoft/azure-iot-developer-kit)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 * [Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure в облаке](iot-hub-arduino-iot-devkit-az3166-get-started.md)
 * [Shake, Shake: получение сообщений из Twitter](iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь вы знаете, как настроить MXChip Iot DevKit в качестве клиента MQTT и применить клиентскую библиотеку MQTT для отправки сообщений на брокер MQTT. Мы предлагаем вам продолжить обучение, изучив следующие статьи.
-
-* [Общие сведения об акселераторе решения Azure IoT для удаленного мониторинга](https://docs.microsoft.com/azure/iot-suite/)
-* [Connect an MXChip IoT DevKit device to your Azure IoT Central application](/azure/iot-central/core/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)
+Теперь, когда вы узнали, как настроить MXChip IOT DevKit в качестве клиента MQTT и использовать клиентскую библиотеку MQTT для отправки сообщений в MQTT Broker, Вот рекомендуемый следующий шаг: [Обзор ускорителя решений удаленного мониторинга Azure IOT](https://docs.microsoft.com/azure/iot-suite/)

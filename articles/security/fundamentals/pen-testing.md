@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/13/2018
 ms.author: terrylan
-ms.openlocfilehash: 413ec8b121838a4ffac4119421ec3266e141618b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: db6e25b6304ee9ac41ca95d5a3a6eac0e91eb41b
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80549249"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87287775"
 ---
 # <a name="penetration-testing"></a>Выполнение тестов на проникновение
 Одно из преимуществ использования Azure для развертывания и тестирования приложений — возможность быстро создавать среды. Вам не нужно беспокоиться о подаче заявок, приобретении и настройке собственного локального оборудования.
@@ -41,8 +41,6 @@ ms.locfileid: "80549249"
 * тестирование конечных точек для выявления [основных 10 уязвимостей в рамках проекта Open Web Application Security Project (открытый проект обеспечения безопасности веб-приложений, OWASP)](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)
 * [нечеткое тестирование](https://cloudblogs.microsoft.com/microsoftsecure/2007/09/20/fuzz-testing-at-microsoft-and-the-triage-process/) конечных точек;
 * [сканирования портов](https://en.wikipedia.org/wiki/Port_scanner) конечных точек;
-
-К тестам, которые запрещено выполнять, относятся атаки типа ["отказ в обслуживании" (DoS)](https://en.wikipedia.org/wiki/Denial-of-service_attack) . В эту категорию включены как запуск DoS-атаки, так и все сопутствующие тесты, которые могут определять, демонстрировать или имитировать DoS-атаку любого типа.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

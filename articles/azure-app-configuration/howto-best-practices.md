@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: df56f53b64a35737700529b80c004efeb31eaabc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4da024eb4eb3747b8e0d6b291ca5b00df12aaeab
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80348664"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87367526"
 ---
 # <a name="azure-app-configuration-best-practices"></a>Рекомендации по настройке приложений Azure
 
@@ -81,7 +81,7 @@ configBuilder.AddAzureAppConfiguration(options => {
 
 * Просмотрите один *ключ-метку*, а не Просмотр отдельных ключей. Обновлять всю конфигурацию только при изменении ключа Sentinel. Пример см. [в разделе Использование динамической конфигурации в ASP.NET Core приложении](enable-dynamic-configuration-aspnet-core.md) .
 
-* Служба "Сетка событий Azure" используется для получения уведомлений при изменении конфигурации, а не для постоянного опроса каких бы то ни было изменений. Дополнительные сведения см. в статье о [маршрутизации событий конфигурации приложений Azure в веб-конечную точку](./howto-app-configuration-event.md) .
+* Служба "Сетка событий Azure" используется для получения уведомлений при изменении конфигурации, а не для постоянного опроса каких бы то ни было изменений. Дополнительные сведения см. в статье [Маршрутизация событий конфигурации приложений Azure в веб-конечную точку](./howto-app-configuration-event.md) .
 
 ## <a name="importing-configuration-data-into-app-configuration"></a>Импорт данных конфигурации в конфигурацию приложения
 

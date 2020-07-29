@@ -3,12 +3,12 @@ title: Добавление тегов в лабораторию в Azure DevTes
 description: Узнайте, как добавить тег в лабораторию в Azure DevTest Labs
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: bf835cee705012fd175a3132edde1d241311c576
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 30f0f2ed4b8cc98985326db652371b8ceb16bfb4
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85483012"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87287586"
 ---
 # <a name="add-tags-to-a-lab-in-azure-devtest-labs"></a>Добавление тегов в лабораторию в Azure DevTest Labs
 
@@ -19,7 +19,7 @@ ms.locfileid: "85483012"
 * вычислительные виртуальные машины;
 * Сетевые карты
 * IP-адреса
-* Балансировщики нагрузки
+* Подсистемы балансировки нагрузки
 * Учетные записи хранения
 * Управляемые диски
 
@@ -52,10 +52,10 @@ ms.locfileid: "85483012"
 * Имя тега ограничено 512 символами, а значение тега — 256 символами. Для учетных записей хранения имя тега ограничено 128 символами, а значение тега — 256 символами.
 * Теги, примененные к группе ресурсов, не наследуются ресурсами в этой группе.
 
-В статье [Использование тегов для организации ресурсов в Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags) предоставлены подробные сведения об использовании тегов в Azure, в частности об управлении тегами с помощью PowerShell или Azure CLI.
+В статье [Использование тегов для организации ресурсов в Azure](../azure-resource-manager/management/tag-resources.md) предоставлены подробные сведения об использовании тегов в Azure, в частности об управлении тегами с помощью PowerShell или Azure CLI.
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 * В подписку можно добавить ограничения и соглашения, используя настраиваемые политики. Некоторые политики могут требовать, чтобы для всех ресурсов было задано значение определенного тега. Дополнительные сведения см. в статье [Управление всеми политиками лаборатории в Azure DevTest Labs](devtest-lab-set-lab-policy.md).
 * Изучите [коллекцию шаблонов быстрого запуска DevTest Labs Azure Resource Manager](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).
