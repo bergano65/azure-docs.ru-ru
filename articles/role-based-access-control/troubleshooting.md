@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 05/01/2020
+ms.date: 07/24/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: seohack1
-ms.openlocfilehash: 8d6c9ab2bacf94b3a27bfd1de0189d8b89b5efaf
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: bf8fa174611c7173c957ded49ff9135f90cebc08
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87129446"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87287216"
 ---
 # <a name="troubleshoot-azure-rbac"></a>Устранение неполадок в Azure RBAC
 
@@ -52,6 +52,22 @@ $ras.Count
 ## <a name="problems-with-azure-role-assignments"></a>Проблемы с назначениями ролей Azure
 
 - Если не удается добавить назначение роли в портал Azure **управления доступом (IAM)** , так как параметр **Добавить**  >  **назначение роли** отключен или получено сообщение об ошибке "клиент с идентификатором объекта не имеет разрешения на выполнение действия", убедитесь, что вы вошли в систему с помощью пользователя, которому назначена роль с `Microsoft.Authorization/roleAssignments/write` таким разрешением, как [владелец](built-in-roles.md#owner) или [администратор доступа пользователей](built-in-roles.md#user-access-administrator) в области, которой вы пытаетесь назначить роль.
+- Если для назначения ролей используется субъект-служба, может возникнуть ошибка "недостаточно прав для выполнения операции". Например, предположим, что у вас есть субъект-служба, которому назначена роль владельца, и вы пытаетесь создать следующее назначение роли в качестве субъекта-службы с помощью Azure CLI:
+
+    ```azurecli
+    az login --service-principal --username "SPNid" --password "password" --tenant "tenantid"
+    az role assignment create --assignee "userupn" --role "Contributor"  --scope "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}"
+    ```
+
+    Если появляется сообщение об ошибке "недостаточно прав для выполнения операции", вероятно, Azure CLI пытается найти удостоверение уполномоченного пользователя в Azure AD, а субъект-служба не может прочитать Azure AD по умолчанию.
+
+    Существует два способа устранения этой ошибки. Первый способ — назначить роль " [читатели каталога](../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers) " субъекту-службе, чтобы она могла считывать данные в каталоге. Можно также предоставить [разрешение Directory. Read. ALL](https://docs.microsoft.com/graph/permissions-reference) в Microsoft Graph.
+
+    Второй способ устранения этой ошибки — создание назначения роли с помощью `--assignee-object-id` параметра, а не `--assignee` . С помощью `--assignee-object-id` Azure CLI пропустит Поиск Azure AD. Необходимо получить идентификатор объекта пользователя, группы или приложения, которым требуется назначить роль. Дополнительные сведения см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure CLI](role-assignments-cli.md#new-service-principal).
+
+    ```azurecli
+    az role assignment create --assignee-object-id 11111111-1111-1111-1111-111111111111  --role "Contributor" --scope "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}"
+    ```
 
 ## <a name="problems-with-custom-roles"></a>Проблемы с пользовательскими ролями
 

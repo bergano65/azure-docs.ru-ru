@@ -9,12 +9,12 @@ ms.date: 07/21/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: 8f4ef046221ae50d2b05525d6cea2d268282551c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d3907967572b22e7a70316080b08a4368a9805ce
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87100556"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87372915"
 ---
 # <a name="mount-blob-storage-on-linux-using-the-network-file-system-nfs-30-protocol-preview"></a>Подключение хранилища BLOB-объектов в Linux с помощью протокола NFS 3,0 (Предварительная версия)
 
@@ -97,9 +97,9 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 |Тип учетной записи|блоккблобстораже|
 |Репликация|Локально избыточное хранилище (LRS)|
 |Метод подключения|Общедоступная конечная точка (выбранные сети) или частная конечная точка|
-|Требуется безопасная передача данных|Выключено|
-|Иерархическое пространство имен|Активировано|
-|NFS V3|Активировано|
+|Требуется безопасная передача данных|Отключен|
+|Иерархическое пространство имен|Включен|
+|NFS V3|Включен|
 
 Можно принять значения по умолчанию для всех остальных параметров. 
 
@@ -113,7 +113,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 |[AzCopy](../common/storage-use-azcopy-blobs.md#create-a-container)|[Java](data-lake-storage-directory-file-acl-java.md#create-a-container)|
 |[PowerShell](data-lake-storage-directory-file-acl-powershell.md#create-a-container)|[Python](data-lake-storage-directory-file-acl-python.md#create-a-container)|
 |[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container)|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
-||[REST](https://docs.microsoft.com/rest/api/storageservices/create-container)|
+|[Портал Azure](https://portal.azure.com)|[REST](https://docs.microsoft.com/rest/api/storageservices/create-container)|
 
 ## <a name="step-7-mount-the-container"></a>Шаг 7. Подключение контейнера
 
@@ -139,7 +139,6 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 |---|---|
 |`Access denied by server while mounting`|Убедитесь, что ваш клиент работает в поддерживаемой подсети. См. раздел [Поддерживаемые сетевые расположения](network-file-system-protocol-support.md#supported-network-connections).|
 |`No such file or directory`| Убедитесь, что подключенный контейнер был создан после проверки того, что компонент был зарегистрирован. См. [Шаг 2. Убедитесь, что компонент зарегистрирован](#step-2-verify-that-the-feature-is-registered). Кроме того, обязательно введите команду mount и ее параметры непосредственно в терминале. Если скопировать и вставить любую часть этой команды в терминал из другого приложения, то эта ошибка может быть вызвана скрытыми символами в вставленных данных.|
-|Файлы, которые были переданы с помощью средств, отличных от NFS 3,0, не отображаются в каталоге. | Отключите контейнер, а затем подключите контейнер еще раз. |
 
 ## <a name="see-also"></a>См. также статью
 

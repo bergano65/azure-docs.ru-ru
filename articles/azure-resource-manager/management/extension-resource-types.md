@@ -2,12 +2,13 @@
 title: Типы ресурсов расширения
 description: Список типов ресурсов Azure, используемых для расширения возможностей других типов ресурсов.
 ms.topic: conceptual
-ms.date: 04/06/2020
-ms.openlocfilehash: 3a3fbc531750bec4b16e38f1fe79f613c1b94f5e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/28/2020
+ms.openlocfilehash: 84de9b66f9001985b8c7b92882f03ff8c7cbf431
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80754871"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87374020"
 ---
 # <a name="resource-types-that-extend-capabilities-of-other-resources"></a>Типы ресурсов, расширяющие возможности других ресурсов
 
@@ -25,9 +26,11 @@ ms.locfileid: "80754871"
 - Microsoft. Authorization/Финдорфанролеассигнментс
 - Microsoft.Authorization/locks
 - Microsoft. Authorization/разрешения
-- Microsoft. Authorization/Полициассигнментс
+- Microsoft.Authorization/policyAssignments
 - Microsoft. Authorization/policyDefinitions
+- Microsoft. Authorization/Полициексемптионс
 - Microsoft. Authorization/Полицисетдефинитионс
+- Microsoft. Authorization/ПривателинкассоЦиатионс
 - Microsoft.Authorization/roleAssignments
 - Microsoft. Authorization/Ролеассигнментсусажеметрикс
 - Microsoft. Authorization/roleDefinitions
@@ -38,6 +41,7 @@ ms.locfileid: "80754871"
 - Microsoft. Billing/Креатебиллингролеассигнмент
 - Microsoft. чертеж/Блуепринтассигнментс
 - Microsoft. чертеж/чертежи
+- Microsoft. Чанжеаналисис/Ресаурцечанжес
 - Microsoft. потребление/Аггрегатедкост
 - Microsoft. потребление/балансы
 - Microsoft. потребление/бюджеты
@@ -49,6 +53,7 @@ ms.locfileid: "80754871"
 - Microsoft. потребление/значение operationstatus
 - Microsoft. потребление/Прицешитс
 - Microsoft. потребление/Ресерватиондетаилс
+- Microsoft. потребление/Ресерватионрекоммендатиондетаилс
 - Microsoft. потребление/Ресерватионрекоммендатионс
 - Microsoft. потребление/Ресерватионсуммариес
 - Microsoft. потребление/Ресерватионтрансактионс
@@ -63,6 +68,7 @@ ms.locfileid: "80754871"
 - Microsoft. Контаинеринстанце/СервицеассоЦиатионлинкс
 - Microsoft. Костманажемент/Alerts
 - Microsoft. Костманажемент/бюджеты
+- Microsoft. Костманажемент/Косталлокатионрулес
 - Microsoft. Костманажемент/измерения
 - Microsoft. Костманажемент/EXPORTS
 - Microsoft. Костманажемент/Екстерналсубскриптионс
@@ -70,8 +76,8 @@ ms.locfileid: "80754871"
 - Microsoft. Костманажемент/запрос
 - Microsoft. Костманажемент/Репортконфигс
 - Microsoft. Костманажемент/отчеты
-- Microsoft. Костманажемент/представления
 - Microsoft. Костманажемент/Шовбаккрулес
+- Microsoft. Костманажемент/представления
 - Microsoft.CustomProviders/associations
 - Microsoft.EventGrid/eventSubscriptions
 - Microsoft.EventGrid/extensionTopics
@@ -107,12 +113,13 @@ ms.locfileid: "80754871"
 - Microsoft. ManagedServices/Регистратиондефинитионс
 - Microsoft. OperationalInsights/Сторажеинсигхтконфигс
 - Microsoft. OperationsManagement/манажементассоЦиатионс
+- Microsoft. Полициинсигхтс/аттестации
 - Microsoft. Полициинсигхтс/Полициевентс
 - Microsoft. Полициинсигхтс/Полицистатес
 - Microsoft. Полициинсигхтс/Полицитраккедресаурцес
 - Microsoft.PolicyInsights/remediations
 - Microsoft. RecoveryServices/Баккуппротектедитемс
-- Microsoft. RecoveryServices/Репликатионелигибилитиресултс    
+- Microsoft. RecoveryServices/Репликатионелигибилитиресултс
 - Microsoft. Ресаурцехеалс/Аваилабилитистатусес
 - Microsoft. Ресаурцехеалс/Чилдаваилабилитистатусес
 - Microsoft. Ресаурцехеалс/Чилдресаурцес
@@ -130,11 +137,12 @@ ms.locfileid: "80754871"
 - Microsoft. Security/Комплианцересултс
 - Microsoft. Security/Датаколлектионажентс
 - Microsoft. Security/Девицесекуритиграупс
-- Microsoft. Security/networkData
+- Microsoft. Security/ЖитполиЦиес
 - Microsoft. Security/Сервервулнерабилитяссессментс
 - Microsoft. Секуритинсигхтс/агрегаты
 - Microsoft. Секуритинсигхтс/Алертрулетемплатес
 - Microsoft. Секуритинсигхтс/alertRules
+- Microsoft. Секуритинсигхтс/Аутоматионрулес
 - Microsoft. Секуритинсигхтс/закладки
 - Microsoft. Секуритинсигхтс/cases
 - Microsoft. Секуритинсигхтс/Connects
@@ -144,6 +152,7 @@ ms.locfileid: "80754871"
 - Microsoft. Секуритинсигхтс/инциденты
 - Microsoft. Секуритинсигхтс/Оффицеконсентс
 - Microsoft. Секуритинсигхтс/параметры
+- Microsoft. Секуритинсигхтс/Среатинтеллиженце
 - Microsoft. Софтвареплан/Хибридусебенефитс
 - Microsoft. Subscription/Креатесубскриптион
 - Microsoft. support/суппорттиккетс
@@ -152,7 +161,7 @@ ms.locfileid: "80754871"
 - Microsoft. WorkloadMonitor/monitors
 - Microsoft. WorkloadMonitor/Нотификатионсеттингс
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы получить идентификатор ресурса для расширения ресурса в шаблоне Azure Resource Manager, используйте [екстенсионресаурцеид](../templates/template-functions-resource.md#extensionresourceid).
 - Пример создания ресурса расширения в шаблоне см. в разделе подписки на [События сетки событий](/azure/templates/microsoft.eventgrid/2019-06-01/eventsubscriptions).

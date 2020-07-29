@@ -3,12 +3,12 @@ title: Масштабирование квот и ограничений в ла
 description: В этой статье описывается, как можно масштабировать лабораторию в Azure DevTest Labs. Просмотр квот и ограничений использования, а затем запрос на увеличение.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 9c999760a649d4df4b34221633491b8ece784f52
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dacc699a6f4e7663d0f314acfc2212bd69d46d18
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85477097"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87287311"
 ---
 # <a name="scale-quotas-and-limits-in-devtest-labs"></a>Масштабирование квот и ограничений в DevTest Labs
 При работе в DevTest Labs вы, вероятно, замечали, что для некоторых ресурсов Azure существуют определенные ограничения по умолчанию, которые могут влиять на работу службы DevTest Labs. Такие ограничения называют **квотами**.
@@ -20,7 +20,7 @@ ms.locfileid: "85477097"
 
 Например, что каждой подписки задана квота по умолчанию в 20 ядер. Таким образом, при создании в лаборатории виртуальных машин, каждая из которых имеет четыре ядра, можно создать только пять виртуальных машин.
 
-В статье [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits) перечислены некоторые наиболее распространенные квоты для ресурсов Azure. К ресурсам, которые чаще всего используются в лаборатории и для которых могут быть квоты, относятся ядра виртуальных машин, общедоступные IP-адреса, сетевой интерфейс, управляемые диски, назначение ролей RBAC и каналы ExpressRoute.
+В статье [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md) перечислены некоторые наиболее распространенные квоты для ресурсов Azure. К ресурсам, которые чаще всего используются в лаборатории и для которых могут быть квоты, относятся ядра виртуальных машин, общедоступные IP-адреса, сетевой интерфейс, управляемые диски, назначение ролей RBAC и каналы ExpressRoute.
 
 ## <a name="view-your-usage-and-quotas"></a>Просмотр сведений об использовании и квотах
 Следующие шаги показывают, как просмотреть сведения о текущих квотах в подписке на определенные ресурсы Azure, а также как узнать, какой процент каждой квоты уже использован.
@@ -37,7 +37,7 @@ ms.locfileid: "85477097"
    ![Квоты и использование](./media/devtest-lab-scale-lab/devtestlab-view-quotas-new.png)
 
 ## <a name="requesting-more-resources-in-your-subscription"></a>Запрос дополнительных ресурсов в подписке
-При достижении ограничения квоты ресурса предельное значение по умолчанию в подписке можно увеличить до максимального предела, как описано в статье [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits).
+При достижении ограничения квоты ресурса предельное значение по умолчанию в подписке можно увеличить до максимального предела, как описано в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md).
 
 Следующие действия помогут вам запросить увеличение квоты с помощью [портала Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
@@ -56,5 +56,5 @@ ms.locfileid: "85477097"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-### <a name="next-steps"></a>Следующие шаги
+### <a name="next-steps"></a>Дальнейшие действия
 * Изучите [коллекцию шаблонов быстрого запуска DevTest Labs Azure Resource Manager](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).

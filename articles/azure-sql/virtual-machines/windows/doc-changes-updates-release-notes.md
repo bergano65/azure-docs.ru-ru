@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/06/2020
-ms.openlocfilehash: 8474b49e3e6b12a613de19df055cbf6e43fb0aa2
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 5a09a30bafa5bc9ef052b14cad29e000bbd09a48
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86503799"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87287376"
 ---
 # <a name="documentation-changes-for-sql-server-on-azure-virtual-machines"></a>Изменения в документации по SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -37,7 +37,7 @@ Azure позволяет развертывать виртуальные маш�
 | Изменения | Сведения |
 | --- | --- |
 | **Имя распределенной сети (DNN)** | SQL Server 2019 в Windows Server 2016 + теперь является предварительным просмотром поддержки маршрутизации трафика к экземпляру отказоустойчивого кластера (FCI) с использованием [имени распределенной сети](hadr-distributed-network-name-dnn-configure.md) , а не с помощью Azure Load Balancer. Эта поддержка упрощает и ускоряет подключение к вашему решению высокого уровня доступности в Azure. | 
-| **FCI с общими дисками Azure** | Теперь можно развернуть [экземпляр отказоустойчивого кластера (FCI)](failover-cluster-instance-overview.md) с помощью [общих дисков Azure](failover-cluster-instance-azure-shared-disks-manually-configure.md) с SQL Server 2019 на виртуальной машине Windows Server 2016 +. |
+| **FCI с общими дисками Azure** | Теперь можно развернуть [экземпляр отказоустойчивого кластера (FCI)](failover-cluster-instance-overview.md) с помощью [общих дисков Azure](failover-cluster-instance-azure-shared-disks-manually-configure.md). |
 | **Реорганизация документов FCI** | Документация по [экземплярам отказоустойчивого кластера с SQL Server на виртуальных машинах Azure](failover-cluster-instance-overview.md) была переписана и реорганизована для ясности. Мы разделили некоторое содержимое конфигурации, например рекомендации по [конфигурации кластера](hadr-cluster-best-practices.md), как подготовить [виртуальную машину для SQL Server FCI](failover-cluster-instance-prepare-vm.md)и как настроить [Azure Load Balancer](hadr-vnn-azure-load-balancer-configure.md). | 
 | &nbsp; | &nbsp; |
 

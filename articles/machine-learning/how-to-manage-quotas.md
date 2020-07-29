@@ -5,18 +5,18 @@ description: Сведения о квотах на ресурсы для Маш�
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: troubleshooting
 ms.reviewer: jmartens
 author: nishankgu
 ms.author: nigup
 ms.date: 05/08/2020
-ms.custom: contperfq4
-ms.openlocfilehash: d8be4169a44b2ef57db8aa49b96f6c5fe85ded1c
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.topic: conceptual
+ms.custom: troubleshooting,contperfq4
+ms.openlocfilehash: a75a5942ad0aac39f2fe6afb9c62a254c4645d0a
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87125094"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87372949"
 ---
 # <a name="manage--increase-quotas-for-resources-with-azure-machine-learning"></a>Управление квотами на ресурсы для Машинного обучения Azure и их увеличение
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]

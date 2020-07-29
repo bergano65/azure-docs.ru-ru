@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: bc22cf5a21709ccacafe068a60541cc9990d1131
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 8c9fbf7bc45ed2070570faf0d1dfdb15b5fd98ee
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87132268"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87373272"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins"></a>Управление конечными точками и маршрутами в цифровом двойников Azure
 
@@ -147,11 +147,11 @@ catch (RequestFailedException e)
 
 Ниже приведены поддерживаемые фильтры маршрутов.
 
-| Имя фильтра | Описание | Схема фильтра | Поддерживаемые значения | 
+| Имя фильтра | Описание: | Схема фильтра | Поддерживаемые значения | 
 | --- | --- | --- | --- |
-| Type | [Тип события](./concepts-route-events.md#types-of-event-messages) , переданного через ваш экземпляр Digital двойника | `"filter" : "type = '<eventType>'"` | `Microsoft.DigitalTwins.Twin.Create` <br> `Microsoft.DigitalTwins.Twin.Delete` <br> `Microsoft.DigitalTwins.Twin.Update`<br>`Microsoft.DigitalTwins.Relationship.Create`<br>`Microsoft.DigitalTwins.Relationship.Update`<br> `Microsoft.DigitalTwins.Relationship.Delete` <br> `microsoft.iot.telemetry`  |
+| Тип | [Тип события](./concepts-route-events.md#types-of-event-messages) , переданного через ваш экземпляр Digital двойника | `"filter" : "type = '<eventType>'"` | `Microsoft.DigitalTwins.Twin.Create` <br> `Microsoft.DigitalTwins.Twin.Delete` <br> `Microsoft.DigitalTwins.Twin.Update`<br>`Microsoft.DigitalTwins.Relationship.Create`<br>`Microsoft.DigitalTwins.Relationship.Update`<br> `Microsoft.DigitalTwins.Relationship.Delete` <br> `microsoft.iot.telemetry`  |
 | Источник | Имя экземпляра Digital двойников для Azure | `"filter" : "source = '<hostname>'"`|  **Для уведомлений**:`<yourDigitalTwinInstance>.<yourRegion>.azuredigitaltwins.net` <br> **Для телеметрии**:`<yourDigitalTwinInstance>.<yourRegion>.azuredigitaltwins.net/digitaltwins/<twinId>`|
-| Тема | Описание события в контексте источника событий выше | `"filter": " subject = '<subject>'"` | **Для уведомлений**: Тема`<twinid>` <br> или формат URI для субъектов, которые уникально идентифицируются несколькими частями или идентификаторами:<br>`<twinid>/relationships/<relationshipid>`<br> **Для телеметрии**: субъект — это путь к компоненту (если данные телеметрии создаются из компонента двойника), например `comp1.comp2` . Если данные телеметрии не выдаются из компонента, то его поле subject будет пустым. |
+| Субъект | Описание события в контексте источника событий выше | `"filter": " subject = '<subject>'"` | **Для уведомлений**: Тема`<twinid>` <br> или формат URI для субъектов, которые уникально идентифицируются несколькими частями или идентификаторами:<br>`<twinid>/relationships/<relationshipid>`<br> **Для телеметрии**: субъект — это путь к компоненту (если данные телеметрии создаются из компонента двойника), например `comp1.comp2` . Если данные телеметрии не выдаются из компонента, то его поле subject будет пустым. |
 | Схема данных | Идентификатор модели ДТДЛ | `"filter": "dataschema = 'dtmi:example:com:floor4;2'"` | **Для телеметрии**: Схема данных — это идентификатор модели двойника или компонента, который создает данные телеметрии. <br>**Для уведомлений**: Схема данных не поддерживается|
 | Тип содержимого | Тип содержимого значения данных | `"filter": "datacontenttype = '<contentType>'"` | `application/json` |
 | Версия спецификации | Используемая версия схемы событий | `"filter": "specversion = '<version>'"` | Этот параметр должен содержать значение `1.0`. Это означает, что схема Клаудевентс версии 1,0 |
@@ -184,7 +184,7 @@ catch (RequestFailedException e)
 
 На домашней странице портала найдите свой экземпляр Azure Digital двойников, чтобы получить сведения о нем. Выберите параметр **метрики** в меню экземпляра Azure Digital двойников, чтобы открыть страницу *метрики* .
 
-:::image type="content" source="media/how-to-manage-routes/metrics.png" alt-text="Страница метрики для экземпляра цифрового двойников Azure в портал Azure":::
+:::image type="content" source="media/how-to-view-metrics/azure-digital-twins-metrics.png" alt-text="Снимок экрана со страницей "метрики" для Azure Digital двойников":::
 
 Здесь можно просмотреть метрики для своего экземпляра и создать пользовательские представления.
 

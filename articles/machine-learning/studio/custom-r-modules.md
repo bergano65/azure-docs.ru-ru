@@ -1,6 +1,5 @@
 ---
-title: Создание & развертывание пользовательских модулей R
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): создание & развертывание пользовательских модулей R в Azure'
 description: Узнайте, как создавать и развертывать пользовательские модули R в студии машинного обучения (классическая модель).
 services: machine-learning
 ms.service: machine-learning
@@ -10,13 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 11/29/2017
-ms.openlocfilehash: 389290b01848d598ada9ca49bee932a764854088
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 4b4251a426d33c0a3b8cc7584d2bf6375dcd0f79
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85957330"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87287243"
 ---
-# <a name="define-custom-r-modules-for-azure-machine-learning-studio-classic"></a>Определение пользовательских модулей R для Машинное обучение Azure Studio (классическая модель)
+# <a name="define-custom-r-modules-for-machine-learning-studio-classic"></a>Определение пользовательских модулей R для Машинное обучение Studio (классическая модель)
+
+**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
 
 В этом разделе описывается создание и развертывание пользовательского R Studio (классическая модель). Здесь поясняется, что такое пользовательский R-модуль, и какие файлы используются для его создания. В этом разделе также описан способ создания файлов, определяющих модуль, и регистрации модуля для его развертывания в рабочей области Машинного обучения. Затем более подробно описываются элементы и атрибуты, используемые в определении пользовательского модуля. Кроме этого, здесь рассматриваются способы использования дополнительных функций, файлов и нескольких наборов выходных данных. 
 
@@ -142,7 +144,7 @@ CustomAddRows <- function(dataset1, dataset2, swap=FALSE)
 
 * Максимальное число **портов входа и выхода** — по 8 для каждого.
 
-### <a name="input-elements"></a>Входные элементы
+### <a name="input-elements"></a>Элементы ввода
 Порты входа позволяют передавать данные в функцию R и в рабочую область. Ниже приведены **типы данных** , которые поддерживаются для портов входа. 
 
 **DataTable:** этот тип передается R-функции в формате data.frame. Фактически все типы (например, CSV-файлы или ARFF-файлы), которые поддерживаются машинным обучением и которые совместимы с **DataTable** , автоматически преобразуются в формат data.frame. 
@@ -303,14 +305,14 @@ CustomAddRows <- function(dataset1, dataset2, swap=FALSE) {
     * Числовой
     * Логический
     * категориальные;
-    * Строка
+    * Тип String
     * Метка
-    * Компонент
+    * Функция
     * Оценка
     * Все
   * **по умолчанию** — варианты выбора по умолчанию, допустимые для выбора столбца: 
     
-    * Отсутствуют
+    * Нет
     * NumericFeature
     * NumericLabel
     * NumericScore

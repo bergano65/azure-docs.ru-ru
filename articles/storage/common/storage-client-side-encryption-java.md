@@ -10,12 +10,13 @@ ms.date: 05/11/2017
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 188aa8c91ac54316dc1aff9f8add7f8559cae5b6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-java
+ms.openlocfilehash: 230fac982e19c1106aa5757c9bf1c32d192740d7
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84809279"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87314515"
 ---
 # <a name="client-side-encryption-and-azure-key-vault-with-java-for-microsoft-azure-storage"></a>Шифрование на стороне клиента с помощью Java для службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-client-side-encryption-include](../../../includes/storage-selector-client-side-encryption-include.md)]
@@ -102,7 +103,7 @@ ms.locfileid: "84809279"
 > 
 > Чтобы выполнять операции запроса, следует указать сопоставитель ключа, который способен распознавать все ключи в результирующем наборе. Если сущность в результате запроса не может быть разрешена для поставщика, клиентская библиотека выдаст ошибку. Для запроса, который обращается к серверу, клиентская библиотека добавляет по умолчанию специальные свойства метаданных шифрования (_ClientEncryptionMetadata1 и _ClientEncryptionMetadata2) к выбранным столбцам.
 
-## <a name="azure-key-vault"></a>Хранилище ключей Azure;
+## <a name="azure-key-vault"></a>Azure Key Vault
 Хранилище ключей Azure помогает защитить криптографические ключи и секреты, используемые облачными приложениями и службами. Хранилище ключей Azure позволяет шифровать ключи и секреты (например, ключи проверки подлинности, ключи учетных записей хранения, ключи шифрования данных, PFX-файлы и пароли), используя ключи, защищенные аппаратными модулями безопасности. Дополнительные сведения см. в статье [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md)
 
 Клиентская библиотека хранилища использует основную библиотеку хранилища ключей для обеспечения общей платформы для управления ключами в Azure. Пользователи также получают дополнительное преимущество от использования библиотеки хранилища ключей. Библиотека расширений предоставляет полезные функции для локальных и облачных поставщиков ключей с простым и симметричным алгоритмом (RSA), а также функции агрегирования и кэширования.

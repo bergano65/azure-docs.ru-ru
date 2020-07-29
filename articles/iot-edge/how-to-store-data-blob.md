@@ -8,12 +8,12 @@ ms.date: 12/13/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 0b647515e9bd802673114de82089ede5f52f9016
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 07da9316ea76e609948eed586f776be33c91b4bb
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85562709"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87287268"
 ---
 # <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge"></a>Хранение данных на пограничных устройствах с использованием хранилища BLOB-объектов Azure в IoT Edge
 
@@ -77,7 +77,7 @@ ms.locfileid: "85562709"
 
 Имя этого параметра — `deviceToCloudUploadProperties` . Если вы используете симулятор IoT Edge, присвойте значения соответствующим переменным среды для этих свойств, которые можно найти в разделе пояснения.
 
-| Свойство. | Возможные значения | Объяснение |
+| Свойство | Возможные значения | Объяснение |
 | ----- | ----- | ---- |
 | уплоадон | true, false | По умолчанию задано значение `false` . Если вы хотите включить эту функцию, присвойте этому полю значение `true` . <br><br> Переменная среды: `deviceToCloudUploadProperties__uploadOn={false,true}` |
 | уплоадордер | Невестфирст, OldestFirst | Позволяет выбрать порядок, в котором данные копируются в Azure. По умолчанию задано значение `OldestFirst` . Порядок определяется временем последнего изменения большого двоичного объекта. <br><br> Переменная среды: `deviceToCloudUploadProperties__uploadOrder={NewestFirst,OldestFirst}` |
@@ -89,7 +89,7 @@ ms.locfileid: "85562709"
 
 Имя этого параметра — `deviceAutoDeleteProperties` . Если вы используете симулятор IoT Edge, присвойте значения соответствующим переменным среды для этих свойств, которые можно найти в разделе пояснения.
 
-| Свойство. | Возможные значения | Объяснение |
+| Свойство | Возможные значения | Объяснение |
 | ----- | ----- | ---- |
 | делетеон | true, false | По умолчанию задано значение `false` . Если вы хотите включить эту функцию, присвойте этому полю значение `true` . <br><br> Переменная среды: `deviceAutoDeleteProperties__deleteOn={false,true}` |
 | делетеафтерминутес | `<minutes>` | Укажите время в минутах. Модуль автоматически удалит BLOB-объекты из локального хранилища, когда это значение истечет. <br><br> Переменная среды: `deviceAutoDeleteProperties__ deleteAfterMinutes=<minutes>` |
@@ -173,7 +173,10 @@ sudo chmod -R 700 <blob-dir>
   * `http://<device IP >:11002/<account name>`
   * `http://<IoT Edge device hostname>:11002/<account name>`
   * `http://<fully qualified domain name>:11002/<account name>`
-
+ 
+ > [!IMPORTANT]
+ > Azure IoT Edge учитывает регистр при вызове модулей, а пакет SDK хранилища также по умолчанию имеет нижний регистр. Хотя имя модуля в [Azure Marketplace](how-to-deploy-modules-portal.md#deploy-modules-from-azure-marketplace) — **азуреблобсторажеониотедже**, изменение имени на строчное помогает гарантировать, что подключения к хранилищу BLOB-объектов Azure в модуле IOT EDGE не прерываются.
+ 
 ## <a name="azure-blob-storage-quickstart-samples"></a>Примеры использования хранилища BLOB-объектов Azure
 
 Документация по хранилищу BLOB-объектов Azure содержит примеры кода на нескольких языках. Эти примеры можно выполнить для проверки хранилища BLOB-объектов Azure на IoT Edge, изменив конечную точку большого двоичного объекта, чтобы подключиться к локальному модулю хранилища BLOB-объектов.
@@ -194,7 +197,7 @@ sudo chmod -R 700 <blob-dir>
 
 Для подключения к локальной учетной записи хранения можно использовать [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) .
 
-1. Загрузка и установка обозревателя службы хранилища Azure
+1. Загрузка и установка Обозревателя службы хранилища Azure
 
 1. Подключение к службе хранилища Azure с помощью строки подключения
 
@@ -297,7 +300,7 @@ sudo chmod -R 700 <blob-dir>
 
 Вы можете связаться с нами по адресуabsiotfeedback@microsoft.com
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [развертывать хранилище BLOB-объектов Azure на IOT Edge](how-to-deploy-blob.md)
 

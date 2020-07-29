@@ -8,13 +8,13 @@ ms.topic: conceptual
 author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
-ms.date: 05/19/2020
-ms.openlocfilehash: 6d82446a915863e6aa95cc79a421f86b8c4dd3a2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/25/2020
+ms.openlocfilehash: bc7410325bbcf3086c4ac2054b7bc663629a29e5
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85252650"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87373119"
 ---
 # <a name="connect-and-query-azure-sql-edge-preview"></a>Подключение и отправка запроса к SQL Azure для пограничных вычислений (предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "85252650"
 
 Вы можете подключиться к экземпляру SQL Azure с помощью одного из следующих стандартных средств:
 
-* [sqlcmd](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-tools): клиентские средства SQLCMD уже включены в образ контейнера Azure SQL. Если подключиться к запущенному контейнеру с помощью интерактивной оболочки bash, можно запускать программы локально.
+* [sqlcmd](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-tools): клиентские средства SQLCMD уже включены в образ контейнера Azure SQL. Если подключиться к запущенному контейнеру с помощью интерактивной оболочки bash, можно запускать программы локально. Клиентские средства SQL недоступны на платформе ARM64, так как они не включены в ARM64 версию контейнеров SQL. 
 * [Среда SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms)
 * [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio)
 * [Visual Studio Code](https://docs.microsoft.com/sql/visual-studio-code/sql-server-develop-use-vscode)
@@ -55,7 +55,7 @@ ms.locfileid: "85252650"
 
 ## <a name="connect-to-the-database-engine-from-within-the-container"></a>Подключение к ядру СУБД из контейнера
 
-[Программы командной строки SQL Server](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-tools) включены в образ контейнера Azure SQL. Если вы подключаетесь к контейнеру с помощью интерактивной командной строки, вы можете запускать средства локально.
+[Программы командной строки SQL Server](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-tools) включены в образ контейнера Azure SQL. Если вы подключаетесь к контейнеру с помощью интерактивной командной строки, вы можете запускать средства локально. Клиентские средства SQL недоступны на платформе ARM64, так как они не включены в ARM64 версию контейнеров SQL. 
 
 1. Выполните команду `docker exec -it`, чтобы запустить интерактивную оболочку bash внутри запущенного контейнера. В следующем примере `e69e056c702d` — это идентификатор контейнера.
 
@@ -114,7 +114,7 @@ conn = pyodbc.connect(db_connection_string, autocommit=True)
 
 Чтобы подключиться к экземпляру Azure SQL с помощью Azure Data Studio на компьютере под управлением Windows, Mac или Linux, см. раздел [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/quickstart-sql-server).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Подключение и запрос](https://docs.microsoft.com/sql/linux/sql-server-linux-configure-docker#connect-and-query)
 

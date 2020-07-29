@@ -160,7 +160,7 @@ ms.locfileid: "85964538"
 
     `config.primaryKey = "PRIMARYKEY";`
 
-   :::image type="content" source="./media/create-graph-nodejs/keys.png" alt-text="Колонка "Ключи" на портале Azure":::
+   :::image type="content" source="./media/create-graph-nodejs/keys.png" alt-text="Колонка Ключи на портале Azure":::
 
 4. Введите имя базы данных и графа (контейнера) для значения config.database и config.collection. 
 

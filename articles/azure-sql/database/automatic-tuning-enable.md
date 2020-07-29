@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 12/03/2019
-ms.openlocfilehash: 6ffc81f7fc5cf36ff4e9bada8f72cfef013afcbc
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 94ffe2852380d238e9829a8ab0cc69ebe82b74fe
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85982803"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87373510"
 ---
 # <a name="enable-automatic-tuning-in-the-azure-portal-to-monitor-queries-and-improve-workload-performance"></a>Включение автоматической настройки в портал Azure для отслеживания запросов и повышения производительности рабочей нагрузки
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -117,7 +117,7 @@ ALTER DATABASE current SET AUTOMATIC_TUNING (FORCE_LAST_GOOD_PLAN = ON, CREATE_I
 
 ## <a name="permissions"></a>Разрешения
 
-Так как автоматическая настройка является компонентом Azure, для ее использования потребуется использовать встроенные роли RBAC Azure. Использование только проверки подлинности SQL не будет достаточным для использования функции из портал Azure.
+Так как автоматическая настройка является функцией Azure, для ее использования потребуется использовать встроенные роли Azure. Использование только проверки подлинности SQL не будет достаточным для использования функции из портал Azure.
 
 Чтобы использовать автоматическую настройку, минимально необходимым разрешением для предоставления пользователю является встроенная роль [участника базы данных SQL](../../role-based-access-control/built-in-roles.md#sql-db-contributor) Azure. Вы также можете использовать более высокие роли привилегий, такие как участник SQL Server, участник Управляемый экземпляр SQL, участник и владелец.
 
@@ -125,7 +125,7 @@ ALTER DATABASE current SET AUTOMATIC_TUNING (FORCE_LAST_GOOD_PLAN = ON, CREATE_I
 
 Ознакомьтесь с руководством по [автоматической настройке уведомлений по электронной почте](automatic-tuning-email-notifications-configure.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об автоматической настройке и о том, как она повышает производительность, см. в [этой статье](automatic-tuning-overview.md).
 - Общие сведения о рекомендациях по производительности базы данных SQL Azure см. в статье [Помощник по работе с базами данных SQL](database-advisor-implement-performance-recommendations.md).

@@ -11,14 +11,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 07/15/2020
+ms.date: 07/28/2020
 ms.author: apimpm
-ms.openlocfilehash: 7d479f18e8764a69cdc81f99d723534e4895b0e4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f5f4df58a4b147ccb73c7d69f5307a8328803442
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87025087"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87373153"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика в службе управления API Azure
 
@@ -105,7 +105,19 @@ ms.locfileid: "87025087"
 
 API описан в [разделе вики репозитория GitHub][2]. Его можно использовать для автоматизации миграции содержимого портала между средами, например из тестовой среды в рабочую среду. Дополнительные сведения об этом процессе см. [в этой статье документации](https://aka.ms/apimdocs/migrateportal) на сайте GitHub.
 
+### <a name="how-do-i-move-from-the-managed-to-the-self-hosted-version"></a>Разделы справки переходить с управляемой на локальную версию?
+
+См. подробную статью в [разделе вики репозитория портала разработчика на сайте GitHub][2].
+
+### <a name="can-i-have-multiple-developer-portals-in-one-api-management-service"></a>Можно ли использовать несколько порталов разработчиков в одной службе управления API?
+
+У вас может быть один управляемый портал и несколько самостоятельных порталов. Содержимое всех порталов хранится в одной службе управления API, поэтому они будут идентичны. Если вы хотите отличить внешний вид и функциональность порталов, вы можете самостоятельно размещать их с помощью собственных пользовательских мини-приложений, которые динамически настраивают страницы в среде выполнения, например на основе URL-адреса.
+
 ### <a name="does-the-portal-support-azure-resource-manager-templates-andor-is-it-compatible-with-api-management-devops-resource-kit"></a>Поддерживает ли портал Azure Resource Manager шаблоны и/или является ли он совместимым с набором средств API Management DevOps Resource Kit?
+
+Нет.
+
+### <a name="is-the-portals-content-saved-with-the-backuprestore-functionality-in-api-management"></a>Сохраняется ли содержимое портала с функцией резервного копирования и восстановления в службе управления API?
 
 Нет.
 

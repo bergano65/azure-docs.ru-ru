@@ -5,16 +5,17 @@ description: Отладка конвейеров Машинное обучени
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: troubleshooting
 author: likebupt
 ms.author: keli19
 ms.date: 03/18/2020
-ms.custom: tracking-python
-ms.openlocfilehash: 3eb0cf85dce02595f3679a96b497e286682840bc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.topic: conceptual
+ms.custom: troubleshooting, tracking-python
+ms.openlocfilehash: 6fa75c0c6ec6146ca59f6eaf4593b4912ae823c1
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84557439"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87372966"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Отладка и устранение неполадок в конвейерах машинного обучения
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -26,7 +27,7 @@ ms.locfileid: "84557439"
 * Отладка с использованием Application Insights
 * Отладка в интерактивном режиме с помощью Visual Studio Code (VS Code) и Инструменты Python для Visual Studio (PTVSD)
 
-## <a name="debug-and-troubleshoot-in-the-azure-machine-learning-sdk"></a>Отладка и устранение неполадок в пакете SDK для Машинное обучение Azure
+## <a name="azure-machine-learning-sdk"></a>пакет SDK для Машинного обучения Azure;
 В следующих разделах представлен обзор распространенных ловушек при построении конвейеров, а также различные стратегии отладки кода, выполняемого в конвейере. При возникновении проблем с получением ожидаемого запуска конвейера используйте следующие советы.
 
 ### <a name="testing-scripts-locally"></a>Локальное тестирование сценариев
@@ -88,7 +89,7 @@ ms.locfileid: "84557439"
 
 В таблице ниже приведены сведения о различных параметрах отладки для конвейеров. Он не является исчерпывающим списком, так как существуют другие варианты, кроме только Машинное обучение Azure, Python и Опенценсус, показанных здесь.
 
-| Библиотека                    | Type   | Пример                                                          | Destination                                  | Ресурсы                                                                                                                                                                                                                                                                                                                    |
+| Библиотека                    | Тип   | Пример                                                          | Назначение                                  | Ресурсы                                                                                                                                                                                                                                                                                                                    |
 |----------------------------|--------|------------------------------------------------------------------|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | пакет SDK для Машинного обучения Azure; | Метрика | `run.log(name, val)`                                             | Пользовательский интерфейс портала Машинное обучение Azure             | [Как отвести эксперименты](how-to-track-experiments.md#available-metrics-to-track)<br>[класс azureml. Core. Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=experimental)                                                                                                                                                 |
 | Печать и ведение журнала Python    | Журнал    | `print(val)`<br>`logging.info(message)`                          | Журналы драйверов, конструктор Машинное обучение Azure | [Как отвести эксперименты](how-to-track-experiments.md#available-metrics-to-track)<br><br>[Ведение журнала Python](https://docs.python.org/2/library/logging.html)                                                                                                                                                                       |
@@ -126,9 +127,13 @@ logger.warning("I am an OpenCensus warning statement, find me in Application Ins
 logger.error("I am an OpenCensus error statement with custom dimensions", {'step_id': run.id})
 ``` 
 
-## <a name="debug-and-troubleshoot-in-azure-machine-learning-designer-preview"></a>Отладка и устранение неполадок в конструкторе Машинное обучение Azure (Предварительная версия)
+## <a name="azure-machine-learning-designer-preview"></a>Конструктор Машинного обучения Azure (предварительная версия).
 
 В этом разделе приводятся общие сведения об устранении неполадок конвейеров в конструкторе. Для конвейеров, созданных в конструкторе, файл **70_driver_log** можно найти либо на странице Создание, либо на странице сведения о выполнении конвейера.
+
+### <a name="enable-logging-for-real-time-endpoints"></a>Включение ведения журнала для конечных точек в реальном времени
+
+Для устранения неполадок и отладки конечных точек в режиме реального времени в конструкторе необходимо включить ведение журнала Application Insights с помощью пакета SDK. Ведение журнала позволяет устранять неполадки и отлаживать проблемы развертывания и использования модели. Дополнительные сведения см. в разделе [ведение журнала для развернутых моделей](how-to-enable-logging.md#logging-for-deployed-models). 
 
 ### <a name="get-logs-from-the-authoring-page"></a>Получение журналов со страницы "Создание и Настройка"
 
@@ -155,14 +160,14 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 > [!IMPORTANT]
 > Чтобы обновить конвейер со страницы сведения о выполнении конвейера, необходимо **клонировать** выполнение конвейера в новый черновик конвейера. Запуск конвейера — это моментальный снимок конвейера. Он аналогичен файлу журнала и не может быть изменен. 
 
-## <a name="debug-and-troubleshoot-in-application-insights"></a>Отладка и устранение неполадок в Application Insights
+## <a name="application-insights"></a>Application Insights
 Дополнительные сведения об использовании библиотеки Опенценсус Python таким образом см. в разделе [Отладка и устранение неполадок конвейеров машинного обучения в Application Insights](how-to-debug-pipelines-application-insights.md)
 
-## <a name="debug-and-troubleshoot-in-visual-studio-code"></a>Отладка и устранение неполадок в Visual Studio Code
+## <a name="visual-studio-code"></a>Visual Studio Code
 
 В некоторых случаях может потребоваться интерактивно отлаживать код Python, используемый в конвейере машинного обучения. С помощью Visual Studio Code (VS Code) и Инструменты Python для Visual Studio (PTVSD) можно присоединяться к коду, как он выполняется в среде обучения.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 * __Рабочая область машинное обучение Azure__ , настроенная для использования __виртуальной сети Azure__.
 * __Конвейер машинное обучение Azure__ , использующий скрипты Python в рамках этапов конвейера. Например, Писонскриптстеп.
@@ -391,7 +396,7 @@ ip_address: 10.3.0.5
     > [!NOTE]
     > Если в журнале отображается запись, то `Debugger attached = False` время ожидания истекает, и скрипт продолжает работу без отладчика. Снова отправьте конвейер и Подключите отладчик после `Timeout for debug connection` сообщения и до истечения времени ожидания.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Обратитесь к Справочнику по пакету SDK, чтобы получить справку по пакету [azureml-конвейеры-Core](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py) и пакету [azureml-конвейеры-этапов](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py) .
 

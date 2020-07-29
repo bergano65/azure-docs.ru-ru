@@ -1,6 +1,6 @@
 ---
-title: Виртуальные машины Windows 7 Windows виртуальный рабочий стол — Azure
-description: Устранение проблем с виртуальными машинами Windows 7 в среде виртуальных рабочих столов Windows.
+title: Виртуальные машины Windows 7 Windows виртуальный рабочий стол (классическая модель) — Azure
+description: Устранение проблем с виртуальными машинами Windows 7 в среде виртуальных рабочих столов Windows (классическая модель).
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: troubleshooting
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 74f2e22bcc9d75070e4f7af304f92d9c5640ca7a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e7f433668c34fb5edc35889adcd604023202ada4
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82615283"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87286348"
 ---
-# <a name="troubleshoot-windows-7-virtual-machines-in-windows-virtual-desktop"></a>Устранение неполадок с виртуальной машиной Windows 7 в службе "Виртуальный рабочий стол Windows"
+# <a name="troubleshoot-windows-7-virtual-machines-in-windows-virtual-desktop-classic"></a>Устранение неполадок виртуальных машин Windows 7 в виртуальном рабочем столе Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows.
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows.
 
 Используйте эту статью для устранения неполадок, возникающих при настройке виртуальных машин узла сеансов виртуальных рабочих столов Windows.
 

@@ -8,11 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: philmea
-ms.openlocfilehash: 0e3d343c0a68dd527e4e8e8d23e5b3843a216a78
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c0a8680dc5c06bd1527b2cca732b58f484101a96
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84705378"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87286501"
 ---
 # <a name="symmetric-key-attestation"></a>Аттестация симметричных ключей
 
@@ -25,7 +26,7 @@ ms.locfileid: "84705378"
 
 ## <a name="symmetric-key-creation"></a>Создание симметричных ключей
 
-По умолчанию Служба подготовки устройств создает симметричные ключи длиной 32 байта после сохранения новых регистраций с использованием параметра **Автоматически создавать ключи**.
+По умолчанию служба подготовки устройств создает новые симметричные ключи с длиной по умолчанию 64 байт при сохранении новых регистраций с включенным параметром **Автоматическое создание ключей** .
 
 ![Автоматическое создание симметричных ключей](./media/concepts-symmetric-key-attestation/auto-generate-keys.png)
 

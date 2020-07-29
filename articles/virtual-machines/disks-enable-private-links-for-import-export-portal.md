@@ -61,7 +61,7 @@ ms.locfileid: "86535606"
 1. В ресурсе доступа к диску выберите **Подключения к частной конечной точке**.
 1. Щелкните **+ Добавить частную конечную точку**.
 
-    :::image type="content" source="media/disks-enable-private-links-for-import-export-portal/disk-access-main-private-blade.png" alt-text="Снимок экрана: колонка обзора для ресурса доступа к диску. Выделен пункт "Подключения к частным конечным точкам".":::
+    :::image type="content" source="media/disks-enable-private-links-for-import-export-portal/disk-access-main-private-blade.png" alt-text="Снимок экрана: колонка обзора для ресурса доступа к диску. Выделен пункт Подключения к частным конечным точкам.":::
 
 1. Выбор группы ресурсов
 1. Введите имя и выберите тот же регион, в котором был создан ресурс доступа к диску.
@@ -85,7 +85,7 @@ ms.locfileid: "86535606"
 1. Выбор нужной подсети
 1. Выберите **Review + create** (Просмотреть и создать).
 
-    :::image type="content" source="media/disks-enable-private-links-for-import-export-portal/disk-access-private-endpoint-third-blade.png" alt-text="Снимок экрана: рабочий процесс создания частной конечной точки, третья колонка. Выделены поля "Виртуальная сеть" и "Подсеть".":::
+    :::image type="content" source="media/disks-enable-private-links-for-import-export-portal/disk-access-private-endpoint-third-blade.png" alt-text="Снимок экрана: рабочий процесс создания частной конечной точки, третья колонка. Выделены поля Виртуальная сеть и Подсеть.":::
 
 ## <a name="enable-private-endpoint-on-your-disk"></a>Включение частной конечной точки для диска
 

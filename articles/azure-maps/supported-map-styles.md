@@ -1,29 +1,32 @@
 ---
-title: Поддерживаемые стили карт | Карты Microsoft Azure
-description: В этой статье вы узнаете о различных стилях рендеринга карт, поддерживаемых картами Microsoft Azure.
+title: Поддерживаемые встроенные стили карт Azure Maps
+description: В этой статье вы узнаете о различных встроенных стилях карты, поддерживаемых картами Microsoft Azure.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 05/06/2019
+ms.date: 07/24/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
-manager: timlt
-ms.openlocfilehash: c22363b3b1e0b8283de572ff578e6d78f0627486
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+manager: philmea
+ms.openlocfilehash: b9641fe647eebae020ee67ee19a9cc131a487a7c
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87128069"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87286882"
 ---
-# <a name="azure-maps-supported-map-styles"></a>Стили карт, поддерживаемые в службе Azure Maps
+# <a name="azure-maps-supported-built-in-map-styles"></a>Azure Maps поддерживаемые встроенные стили карт
+
 Служба Azure Maps поддерживает несколько различных встроенных стилей карт, как описано ниже.
 
 ## <a name="road"></a>road
-Карта **дороги** — это стандартная карта, которая отображает дороги, природные и искусственные объекты, а также ярлыки для этих объектов.
+
+**Дорожная** схема — это стандартная схема, которая отображает дороги. Он также отображает естественные и искусственные функции и метки для этих функций.
 
 ![стиль схемы дороги](./media/supported-map-styles/road.png)
 
 **Применимые API:**
+
 * [Изображение карты](https://docs.microsoft.com/rest/api/maps/render/getmapimage)
 * [Плитка карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
 * Элемент управления картой веб-пакета SDK
@@ -32,49 +35,56 @@ ms.locfileid: "87128069"
 
 ## <a name="blank-and-blank_accessible"></a>пусто и blank_accessible
 
-**Пустые** и **blank_accessible** стили карт предоставляют пустой холст для визуализации данных. Стиль **blank_accessible** будет по-прежнему предоставлять обновления средства чтения с экрана сведениями о расположении, даже если базовая схема не отображается.
+**Пустые** и **blank_accessible** стили карт предоставляют пустой холст для визуализации данных. Стиль **blank_accessible** продолжит предоставлять обновления средства чтения с экрана с подробными сведениями о расположении, даже если базовая схема не отображается.
 
 > [!Note]
 > В веб-пакете SDK можно изменить цвет фона на карте, установив `background-color` стиль CSS для элемента Map div.
 
 **Применимые API:**
+
 * Элемент управления картой веб-пакета SDK
 
-## <a name="satellite"></a>satellite 
+## <a name="satellite"></a>satellite
+
 Стиль **спутник** представляет собой комбинацию спутниковых и аэроснимков.
 
 ![стиль карты вспомогательных плиток](./media/supported-map-styles/satellite.png)
 
 **Применимые API:**
+
 * [Фрагмент спутниковой карты](https://docs.microsoft.com/rest/api/maps/render/getmapimagerytilepreview)
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
 * визуальный элемент Power BI;
 
 ## <a name="satellite_road_labels"></a>satellite_road_labels
+
 Этот стиль карты представляет собой гибрид дорог и ярлыков, наложенных поверх спутниковых и аэроснимков.
 
 ![satellite_road_labels стиль схемы](./media/supported-map-styles/satellite-road-labels.png)
 
 **Применимые API:**
+
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
 * визуальный элемент Power BI;
 
 ## <a name="grayscale_dark"></a>grayscale_dark
+
 **Темно-серый** — это темная версия стиля дорожной карты.
 
 ![gray_scale стиль схемы](./media/supported-map-styles/grayscale-dark.png)
 
 **Применимые API:**
+
 * [Изображение карты](https://docs.microsoft.com/rest/api/maps/render/getmapimage)
 * [Плитка карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
-* Элемент управления картой веб-пакета SDK 
+* Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
 * визуальный элемент Power BI;
 
-
 ## <a name="grayscale_light"></a>grayscale_light
+
 **источник оттенков серого** — это небольшая версия стиля схемы дороги.
 
 ![стиль схемы оттенков серого](./media/supported-map-styles/grayscale-light.png)
@@ -84,23 +94,26 @@ ms.locfileid: "87128069"
 * Элемент управления картой Android
 * визуальный элемент Power BI;
 
-
 ## <a name="night"></a>ночь
+
 **Ночь** — это темная версия стиля дорожной карты с цветными дорогами и символами.
 
 ![стиль карт ночью](./media/supported-map-styles/night.png)
 
 **Применимые API:**
+
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
 * визуальный элемент Power BI;
 
 ## <a name="road_shaded_relief"></a>road_shaded_relief
+
 **road shaded relief** — это основной стиль Azure Maps, дополненный рельефами Земли.
 
 ![Затененный стиль карт рельефов](./media/supported-map-styles/shaded-relief.png)
 
 **Применимые API:**
+
 * [Плитка карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
@@ -113,6 +126,7 @@ ms.locfileid: "87128069"
 ![Темный стиль карт с высокой контрастностью](./media/supported-map-styles/high-contrast-dark.png)
 
 **Применимые API:**
+
 * Элемент управления картой веб-пакета SDK
 * визуальный элемент Power BI;
 
