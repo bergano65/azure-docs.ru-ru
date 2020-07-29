@@ -3,16 +3,17 @@ title: Мониторинг служб Node.js с помощью Azure Applicati
 description: Используйте Application Insights для мониторинга производительности и диагностики проблем в службах Node.js.
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: 80b4c4336a3e253e38790520a7eb4458ca36ff30
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-javascript
+ms.openlocfilehash: c6a1a030829f128c4369e99efcd56a416390afc6
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87024390"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87371623"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Мониторинг служб и приложений Node.js с помощью Application Insights
 
-[Application Insights](../../azure-monitor/app/app-insights-overview.md) отслеживает серверные службы и компоненты после развертывания, помогая находить и быстро диагностировать производительность и другие проблемы. Вы можете использовать Application Insights для служб Node.js, размещенных в вашем центре обработки данных, виртуальных машинах Azure и веб-приложениях, а также в других общедоступных облаках.
+[Application Insights](./app-insights-overview.md) отслеживает серверные службы и компоненты после развертывания, помогая находить и быстро диагностировать производительность и другие проблемы. Вы можете использовать Application Insights для служб Node.js, размещенных в вашем центре обработки данных, виртуальных машинах Azure и веб-приложениях, а также в других общедоступных облаках.
 
 Для получения, хранения и анализа данных мониторинга включите пакет SDK в ваш код, а затем настройте соответствующий ресурс Application Insights в Azure. Пакет SDK отправляет данные в этот ресурс для дальнейшего анализа и исследования.
 
@@ -24,7 +25,7 @@ ms.locfileid: "87024390"
 
 Выполните указанные ниже задачи, чтобы настроить мониторинг для приложения или службы.
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Чтобы начать, у вас должна быть подписка Azure. Вы можете [создать ее бесплатно][azure-free-offer]. Если у вашей организации уже есть подписка Azure, администратору необходимо выполнить [эти инструкции][add-aad-user], чтобы добавить вас в эту подписку.
 
@@ -80,8 +81,8 @@ ms.locfileid: "87024390"
 
 * Продолжайте использовать приложение. Выполните дополнительные действия, чтобы создать больше данных телеметрии.
 * Нажмите кнопку **обновления** в представлении ресурса на портале. Диаграммы периодически обновляются, но если нажать эту кнопку, обновление будет выполнено сразу же.
-* [Необходимые порты для исходящего трафика](../../azure-monitor/app/ip-addresses.md) должны быть открыты.
-* Найти отдельные события можно с помощью функции [поиска](../../azure-monitor/app/diagnostic-search.md).
+* [Необходимые порты для исходящего трафика](./ip-addresses.md) должны быть открыты.
+* Найти отдельные события можно с помощью функции [поиска](./diagnostic-search.md).
 * Проверьте [вопросы и ответы][FAQ].
 
 ## <a name="basic-usage"></a>Основное использование
@@ -216,7 +217,7 @@ appInsights
 
 ## <a name="telemetryclient-api"></a>API TelemetryClient
 
-Полное описание API TelemetryClient см. в статье [API Application Insights для пользовательских событий и метрик](../../azure-monitor/app/api-custom-events-metrics.md).
+Полное описание API TelemetryClient см. в статье [API Application Insights для пользовательских событий и метрик](./api-custom-events-metrics.md).
 
 Вы можете отслеживать любой запрос, событие, метрику или исключение с помощью пакета SDK для Node.js для Application Insights. В примере кода ниже приведены некоторые API, которые можно использовать.
 
@@ -373,7 +374,7 @@ appInsights.defaultClient.addTelemetryProcessor(removeStackTraces);
 
 Можно создать несколько Application Insights ресурсов и отправить каждому из них разные данные, используя соответствующие ключи инструментирования ("iKey").
 
- Например.
+ Пример:
 
 ```javascript
 let appInsights = require("applicationinsights");
@@ -414,10 +415,11 @@ client.config.PROPERTYNAME = VALUE;
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Навигация и панели мониторинга на портале Application Insights](../../azure-monitor/app/overview-dashboard.md)
-* [Знакомство с аналитикой в Application Insights](../../azure-monitor/log-query/get-started-portal.md)
+* [Навигация и панели мониторинга на портале Application Insights](./overview-dashboard.md)
+* [Знакомство с аналитикой в Application Insights](../log-query/get-started-portal.md)
 
 <!--references-->
 
 [portal]: https://portal.azure.com/
 [FAQ]: ../faq.md
+

@@ -6,12 +6,12 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 05/08/2020
-ms.openlocfilehash: 757dd7280867e9b31fdc0750fc0848de8f266770
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: fff44617a5621d4edd84bee8f9b1e6b6e6924cd8
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045626"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87305930"
 ---
 # <a name="use-managed-identities-to-access-azure-sql-database-from-an-azure-stream-analytics-job-preview"></a>Использование управляемых удостоверений для доступа к Базе данных SQL Azure из задания Azure Stream Analytics (предварительная версия)
 
@@ -102,7 +102,7 @@ Azure Stream Analytics поддерживает [проверку подлинн
 
 ## <a name="grant-stream-analytics-job-permissions"></a>Предоставление разрешений заданию Stream Analytics
 
-После того как вы создали пользователя автономной базы данных и предоставили доступ к службам Azure на портале, как было описано в предыдущем разделе, задание Stream Analytics получит разрешение от управляемого удостоверения на **ПОДКЛЮЧЕНИЕ** к ресурсу базы данных SQL через управляемое удостоверение. Рекомендуется предоставить заданию Stream Analytics разрешения SELECT и INSERT, так как они понадобятся позже в рабочем процессе Stream Analytics. Разрешение **SELECT** позволяет заданию проверять подключение к таблице в базе данных SQL. Разрешение **INSERT** позволяет проверять сквозные запросы Stream Analytics, если вы настроили входные и выходные данные базы данных SQL. Эти разрешения можно предоставить заданию Stream Analytics с помощью SQL Server Management Studio. Дополнительные сведения см. в справочнике по работе с командой [GRANT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/grant-transact-sql?view=sql-server-ver15).
+После того как вы создали пользователя автономной базы данных и предоставили доступ к службам Azure на портале, как было описано в предыдущем разделе, задание Stream Analytics получит разрешение от управляемого удостоверения на **ПОДКЛЮЧЕНИЕ** к ресурсу базы данных SQL через управляемое удостоверение. Рекомендуется предоставить заданию Stream Analytics разрешения SELECT и INSERT, так как они понадобятся позже в рабочем процессе Stream Analytics. Разрешение **SELECT** позволяет заданию проверять подключение к таблице в базе данных SQL. Разрешение **INSERT** позволяет проверять сквозные запросы Stream Analytics, если вы настроили входные и выходные данные базы данных SQL. Эти разрешения можно предоставить заданию Stream Analytics с помощью SQL Server Management Studio. Дополнительные сведения см. в справочнике по ПРЕДОСТАВЛЕНию (Transact-SQL).
 
 Чтобы предоставить разрешение только для определенной таблицы или объекта в базе данных, используйте следующий синтаксис T-SQL и выполните запрос. 
 

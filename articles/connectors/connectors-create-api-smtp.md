@@ -7,11 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 08/25/2018
 tags: connectors
-ms.openlocfilehash: 1cfc53dcd730262101c0e879e0419ba3f2db4d38
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9989d0ebd95bfe5ee49be2ba76b73e07630b519a
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80657003"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87283951"
 ---
 # <a name="send-email-from-your-smtp-account-with-azure-logic-apps"></a>Отправка сообщений электронной почты из учетной записи SMTP с помощью Azure Logic Apps
 
@@ -64,7 +65,7 @@ ms.locfileid: "80657003"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Дополнительные технические сведения об этом соединителе, такие как триггеры, действия и ограничения, описанные в файле Swagger соединителя, см. на [странице справочника по соединителю](https://docs.microsoft.com/connectors/smtpconnector/).
+Дополнительные технические сведения об этом соединителе, такие как триггеры, действия и ограничения, описанные в файле Swagger соединителя, см. на [странице справочника по соединителю](/connectors/smtpconnector/).
 
 > [!NOTE]
 > Для приложений логики в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)эта версия этого соединителя использует [ограничения сообщений интегрированной](../logic-apps/logic-apps-limits-and-config.md#message-size-limits) среды сценариев.

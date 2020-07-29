@@ -5,12 +5,14 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
 ms.date: 06/10/2020
-ms.openlocfilehash: f501e84e988d340ba710e49d30caddbe56006c8a
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+author: mingshen-ms
+ms.author: mingshen
+ms.openlocfilehash: f40da30ff0d702078861367dea810cc8ca1ab91b
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86109422"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87305148"
 ---
 # <a name="saas-fulfillment-apis-version-2-in-microsoft-commercial-marketplace"></a>API-интерфейсы выполнения SaaS версии 2 в коммерческом магазине Майкрософт
 
@@ -952,7 +954,7 @@ Response body:
 } 
 ```
 
-## <a name="development-and-testing"></a>разработка и тестирование;
+## <a name="development-and-testing"></a>Разработка и тестирование
 
 Чтобы начать процесс разработки, рекомендуется создавать фиктивные Ответы API на стороне издателя.  Эти ответы могут быть основаны на примерах ответов, приведенных в этом документе.
 
@@ -967,7 +969,7 @@ Response body:
 
 Действия *плана изменения*, *изменения количества*и *отмены подписки* тестируются со стороны издателя.  С стороны Майкрософт, *Отмена подписки* может запускаться как в портал Azure, так и в центре администрирования (портале, где управляются покупки Microsoft AppSource).  *Изменение количества и плана* можно активировать только из центра администрирования.
 
-## <a name="get-support"></a>Техническая поддержка
+## <a name="get-support"></a>Получение поддержки
 
 Варианты поддержки издателя см. [в разделе Поддержка программы коммерческого рынка в центре партнеров](support.md) .
 

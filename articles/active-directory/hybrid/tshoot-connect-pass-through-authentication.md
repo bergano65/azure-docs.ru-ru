@@ -12,15 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 4/15/2019
+ms.date: 07/27/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36844c3c2fcfdbf016b3e2d148345e9ce31ea2b4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: baf3566e90802f73accdd27f1cd5435e4af7b9be
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85356157"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87281826"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Устранение неполадок в работе сквозной аутентификации Azure Active Directory
 
@@ -43,7 +44,7 @@ ms.locfileid: "85356157"
 
 Если пользователи не могут выполнить вход с использованием сквозной аутентификации, для них могут отображаться следующие ошибки на экране входа в Azure AD: 
 
-|Ошибка|Описание:|Решение
+|Error|Описание:|Решение
 | --- | --- | ---
 |AADSTS80001|Не удалось подключиться к Active Directory|Убедитесь, что серверы с агентами являются членами того же леса, что и пользователи, чьи пароли должны быть проверены, и могут подключиться к Active Directory.  
 |AADSTS8002|Истекло время ожидания подключения к Active Directory|Убедитесь, что служба Active Directory доступна и отвечает на запросы агентов.
@@ -62,7 +63,7 @@ ms.locfileid: "85356157"
 2. Импортируйте модуль PowerShell на компьютере агента:
  
  ```powershell
- Import-Module "C:\Program Files\Microsoft Azure AD Connect Authentication  Agent\Modules\PassthroughAuthPSModule\PassthroughAuthPSModule.psd1"
+ Import-Module "C:\Program Files\Microsoft Azure AD Connect Authentication Agent\Modules\PassthroughAuthPSModule\PassthroughAuthPSModule.psd1"
  ```
 3. Выполните команду Invoke PowerShell: 
 

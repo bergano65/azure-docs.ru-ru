@@ -3,15 +3,15 @@ title: Выполнение команд Azure CLI
 description: Основные команды Azure CLI для управления виртуальными машинами в режиме Azure Resource Manager
 author: RicksterCDN
 ms.service: virtual-machines-linux
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/12/2017
 ms.author: rclaus
-ms.openlocfilehash: 65c0838c06207435934e36d421b2cafc12ee39bf
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5a9dd8aaeed0642461e4244a72a3dab5c96a77b6
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87029031"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87372252"
 ---
 # <a name="common-azure-cli-commands-for-managing-azure-resources"></a>Основные команды Azure CLI для управления ресурсами Azure
 

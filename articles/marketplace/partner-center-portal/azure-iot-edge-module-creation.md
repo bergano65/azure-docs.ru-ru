@@ -4,15 +4,15 @@ description: Узнайте, как создать, настроить и опу
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
-author: anbene
-ms.author: mingshen
+author: keferna
+ms.author: keferna
 ms.date: 07/22/2020
-ms.openlocfilehash: b2a1e523e2af8c0be9c4211dfc8a0ffd2a889ca0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5ead227d886805c0ed48ebb52c4c0e30ef13b851
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053656"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87320040"
 ---
 # <a name="create-an-iot-edge-module-offer"></a>Создание предложения модуля IoT Edge
 
@@ -230,8 +230,8 @@ ms.locfileid: "87053656"
 4. Terms and conditions (Условия)
 5. Адрес политики конфиденциальности (ссылка)
 6. Имя
-7. Сводка
-8. Описание
+7. Итоги
+8. Описание:
 9. Полезные ссылки
 10. Снимки экрана и видео
 
@@ -252,7 +252,7 @@ ms.locfileid: "87053656"
 #### <a name="call-out-descriptions"></a>Описания вызова
 
 1. Имя
-2. Описание
+2. Описание:
 3. Полезные ссылки
 4. Снимки экрана
 
@@ -406,7 +406,7 @@ ms.locfileid: "87053656"
 
 **Имя администратора для реестра контейнеров Azure**: укажите [имя администратора](../../container-registry/container-registry-authentication.md#admin-account), связанное с реестром контейнеров Azure, в котором находится образ контейнера. Имя пользователя и пароль необходимы, чтобы обеспечить компании доступ к реестру. Чтобы получить имя пользователя и пароль администратора, задайте для свойства **admin-enabled** значение **True** с помощью интерфейса командной строки Azure (Azure CLI). При необходимости можно на портале Azure выбрать для параметра **Пользователь-администратор** значение **Включить**.
 
-:::image type="content" source="media/example-iot-update-container-registry.png" alt-text="Показано диалоговое окно Обновить реестр контейнеров.":::
+:::image type="content" source="media/example-iot-update-container-registry.png" alt-text="Показано диалоговое окно "Обновить реестр контейнеров".":::
 
 #### <a name="call-out-description"></a>Описание вызова
 

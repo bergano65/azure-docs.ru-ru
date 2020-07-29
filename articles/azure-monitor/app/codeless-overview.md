@@ -6,12 +6,12 @@ author: MS-jgol
 ms.author: jgol
 ms.date: 05/31/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: b9be0808d4edc9662c1d3a4144f3102242560564
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 234f772b4a77b780f0b0c1faf307c93847e5caf2
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87075361"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87310724"
 ---
 # <a name="what-is-auto-instrumentation-or-codeless-attach---azure-monitor-application-insights"></a>Что такое автоматическое инструментирование или Application Insights присоединения Azure Monitor?
 
@@ -65,8 +65,9 @@ Application Insights интегрированы с различными пост
 ## <a name="other-environments"></a>Другие среды
 Универсальный автономный агент Java работает в любой среде, нет необходимости выполнять инструментирование кода. [Следуйте указаниям по](./java-in-process-agent.md) включению Application Insights и прочитайте о невероятных возможностях агента Java. Агент находится в общедоступной предварительной версии и доступен во всех регионах. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Обзор Application Insights](./app-insights-overview.md)
-* [Сопоставление приложений](./../../azure-monitor/app/app-map.md)
-* [Поиск и диагностика проблем производительности с помощью Azure Application Insights](./../../azure-monitor/learn/tutorial-performance.md)
+* [Сопоставление приложений](./app-map.md)
+* [Поиск и диагностика проблем производительности с помощью Azure Application Insights](../learn/tutorial-performance.md)
+

@@ -4,14 +4,15 @@ description: Спецификации для виртуальных машин �
 author: vikancha-MSFT
 ms.service: virtual-machines
 ms.subservice: sizes
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: e7fdc232d698e3eb2038bb6ec7a4c47a9c49944a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6dd912313176eecce1973849875234149700c5e6
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84726605"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284784"
 ---
 # <a name="nv-series"></a>Серия NV
 

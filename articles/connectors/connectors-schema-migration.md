@@ -6,11 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 08/25/2018
-ms.openlocfilehash: cef0fcb990cd2c5c6583822d4dc4c6993c52eac2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 114b8b32d4abb1fd9b7e641625cd1b132470bafd
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75666794"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87281452"
 ---
 # <a name="migrate-logic-apps-to-latest-schema-version"></a>Перенос приложения логики в последнюю версию схемы
 
@@ -37,6 +38,7 @@ ms.locfileid: "75666794"
 
 * Завершив перенос, приступайте к обновлению приложений логики, чтобы использовать [управляемые интерфейсы API](../connectors/apis-list.md) там, где это возможно. Например, начните использовать Dropbox версии 2 везде, где использовали DropBox версии 1.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте, как [вручную перенести приложения логики](../logic-apps/logic-apps-schema-2015-08-01.md)
+* Узнайте, как [вручную перенести приложения логики](../logic-apps/logic-apps-schema-2016-04-01.md)
+

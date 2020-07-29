@@ -4,16 +4,16 @@ description: Узнайте, как создать шаблон для испо�
 author: danielsollondon
 ms.author: danis
 ms.date: 07/09/2020
-ms.topic: article
+ms.topic: conceptual
 ms.service: virtual-machines-linux
 ms.subservice: imaging
 ms.reviewer: cynthn
-ms.openlocfilehash: d48153fa747ed9757eb8467eaf1d7c17cde3630e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fe4ddeaadedc14e7e3d92a8b185920bf18bd142b
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87085594"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87283305"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительный просмотр: Создание шаблона Конструктора образов виртуальных машин Azure 
 

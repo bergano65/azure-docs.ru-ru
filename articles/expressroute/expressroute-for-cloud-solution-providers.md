@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/10/2016
 ms.author: ricarlse
 ms.custom: seodec18
-ms.openlocfilehash: a3bd48f32dfcee1a666ff842cfcab2384a5459ec
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5bf7a1e3cc2bfa8ccf42d05e199c58b8c9314fce
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "67849264"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87281707"
 ---
 # <a name="expressroute-for-cloud-solution-providers-csp"></a>ExpressRoute для поставщиков облачных решений (CSP)
 Корпорация Майкрософт предоставляет традиционным торговым посредникам и распространителям (CSP) гипермасштабируемые службы, с помощью которых вы сможете быстро подготавливать к работе новые службы и решения для своих клиентов, не вкладывая средства в их разработку. Чтобы разрешить CSP управлять новыми службами напрямую, корпорация Майкрософт предоставляет программы и API, позволяющие CSP управлять ресурсами Microsoft Azure от имени клиентов. Один из этих ресурсов — ExpressRoute. Благодаря ExpressRoute CSP может подключать существующие ресурсы клиента к службам Azure. ExpressRoute представляет собой высокоскоростной частный канал связи со службами в среде Azure. 
@@ -124,11 +124,11 @@ ExpressRoute подключается к сети Azure через шлюз ви
 
 ![замещающий текст](./media/expressroute-for-cloud-solution-providers/expressroute-security.png)  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Служба Cloud Solution Provider позволяет вам повысить эффективность взаимодействия с клиентом без необходимости приобретать дорогостоящие инфраструктуру и возможности. При этом вы продолжаете выполнять функции основного поставщика услуг аутсорсинга. API CSP обеспечивает простую интеграцию со средой Microsoft Azure, позволяя интегрировать управление Microsoft Azure в существующую платформу управления.  
 
 Дополнительные сведения см. по ссылкам ниже:
 
 [Azure в программе поставщиков облачных решений](https://docs.microsoft.com/azure/cloud-solution-provider)  
-[Готовность к модели Cloud Solution Provider](https://partner.microsoft.com/en-us/solutions/cloud-reseller-pre-launch)  
-[Ресурсы по программе Microsoft Cloud Solution Provider](https://partner.microsoft.com/en-us/solutions/cloud-reseller-resources)
+[Готовность к модели Cloud Solution Provider](https://partner.microsoft.com/solutions/cloud-reseller-pre-launch)  
+[Ресурсы по программе Microsoft Cloud Solution Provider](https://partner.microsoft.com/solutions/cloud-reseller-resources)

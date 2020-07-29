@@ -4,15 +4,16 @@ description: В этой статье содержатся справочные 
 author: normesta
 ms.service: storage
 ms.topic: reference
-ms.date: 10/16/2019
+ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 9f544e479dd21b4c1f7f2e289e91b506aab7eff2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b1f1b58e9cce061aaa313457ec43256a766e3a2e
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84220053"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87281979"
 ---
 # <a name="azcopy-jobs-remove"></a>azcopy jobs remove
 
@@ -27,9 +28,9 @@ azcopy jobs remove [jobID] [flags]
 
 ## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
 
-- [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
+- [Начало работы с AzCopy](storage-use-azcopy-v10.md)
 - [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](storage-use-azcopy-blobs.md)
-- [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
+- [Перенос данных с помощью AzCopy и хранилища файлов](storage-use-azcopy-files.md)
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
 
 ## <a name="examples"></a>Примеры
@@ -40,16 +41,16 @@ azcopy jobs remove [jobID] [flags]
 
 ## <a name="options"></a>Параметры
 
-**-h,--Справка**                Справка по удалению.
+**--Справка**                Справка по удалению.
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-**--Cap-Мбит/с UInt32**      Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.
+**--Cap-Мбит/с, с плавающей запятой**      Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.
 
-**--выходной** формат строки выходных данных команды. Среди вариантов: Text, JSON. Значение по умолчанию — Text. ("текст" по умолчанию)
+**--выходной** формат строки выходных данных команды. Среди вариантов: Text, JSON. Значение по умолчанию — `text`. (по умолчанию `text` )
 
 **--Trusted-Microsoft-суффиксы** указывает дополнительные суффиксы домена, в которых могут отправляться Azure Active Directory токены входа.  Значение по умолчанию — "*. Core.Windows.NET;*". core.chinacloudapi.cn; *. Core.cloudapi.de;*. core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 - [azcopy jobs](storage-ref-azcopy-jobs.md)

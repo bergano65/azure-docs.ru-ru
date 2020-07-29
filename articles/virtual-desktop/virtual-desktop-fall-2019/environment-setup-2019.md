@@ -1,6 +1,6 @@
 ---
-title: Среда виртуальных рабочих столов Windows (найдет 2019) — Azure
-description: Сведения об основных элементах среды виртуальных рабочих столов Windows (выпуски 2019), например клиентов и пулов узлов.
+title: Среда виртуальных рабочих столов Windows (классическая модель) — Azure
+description: Основные элементы среды виртуальных рабочих столов Windows (классическая модель).
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 8cb41b4f94b14a94c79b490e38889825fd9d8d1a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2c019dd187c0ccd7a63f71c0373a0388135afda9
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87082653"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285022"
 ---
-# <a name="windows-virtual-desktop-environment-fall-2019-release"></a>Среда виртуальных рабочих столов Windows (выпуск 2019)
+# <a name="windows-virtual-desktop-classic-environment"></a>Среда виртуальных рабочих столов Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../environment-setup.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../environment-setup.md).
 
 Виртуальный рабочий стол Windows — это служба, которая предоставляет пользователям простой и безопасный доступ к виртуализованным рабочим столам и приложениям RemoteApp. В этом разделе вы узнаете о общей структуре среды виртуальных рабочих столов Windows.
 

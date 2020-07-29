@@ -4,15 +4,15 @@ description: Вот как присоединиться к программе Bu
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
-author: qianw211
-ms.author: dsindona
+author: parthpandyaMSFT
+ms.author: parthp
 ms.date: 7/14/2020
-ms.openlocfilehash: 65d18bca4f8f7b5d655d91ece1c9d966311b701b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 8c8bcb6bde7ec7ec3e3f7f60213dbbc641cfa127
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092224"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87281673"
 ---
 # <a name="microsoft-business-applications-independent-software-vendor-isv-connect-program-onboarding-guide"></a>Руководство по адаптации независимого поставщика программного обеспечения (ISV) Microsoft Business Applications
 
@@ -72,7 +72,7 @@ ms.locfileid: "87092224"
 > [!IMPORTANT]
 > Необходимо повторно сертифицировать приложения каждые 6 месяцев, чтобы они оставались на AppSource. Дополнительные сведения см. в статье политика [сертификации коммерческого магазина](https://docs.microsoft.com/legal/marketplace/certification-policies)Marketplace. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Обратитесь к менеджеру по работе с партнерами или обратитесь в [службу поддержки партнеров Майкрософт](https://aka.ms/marketplacepublishersupport) за помощью к вашей учетной записи. Общие сведения о программе Business Applications ISV Connect см. в следующих статьях:
 

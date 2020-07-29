@@ -1,6 +1,6 @@
 ---
-title: Балансировка нагрузки пула узлов виртуальных рабочих столов Windows (попадают 2019) в Azure
-description: Сведения о методах балансировки нагрузки пула узлов для виртуальных рабочих столов Windows (выпуски 2019).
+title: Пул узлов виртуальных рабочих столов Windows (классическая модель) — Балансировка нагрузки — Azure
+description: Методы балансировки нагрузки пула узлов для среды виртуальных рабочих столов Windows.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 50819fc6b1e13aeb1c0eddf306ecdfbe8147a44f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3854471b2e74bd7c3315ae622a36588af0270d8c
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87046262"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285005"
 ---
-# <a name="host-pool-load-balancing-methods-fall-2019-release"></a>Методы балансировки нагрузки пула узлов (выпуски 2019 см.)
+# <a name="host-pool-load-balancing-methods-in-windows-virtual-desktop-classic"></a>Методы балансировки нагрузки пула узлов в виртуальном рабочем столе Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../host-pool-load-balancing.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../host-pool-load-balancing.md).
 
 Виртуальный рабочий стол Windows поддерживает два метода балансировки нагрузки. Каждый метод определяет, на каком узле сеансов будет размещаться сеанс пользователя при подключении к ресурсу в пуле узлов.
 

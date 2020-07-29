@@ -6,15 +6,15 @@ author: cynthn
 ms.service: virtual-machines-windows
 ms.subservice: disks
 ms.workload: infrastructure-services
-ms.topic: article
+ms.topic: how-to
 ms.date: 01/02/2018
 ms.author: cynthn
-ms.openlocfilehash: 511c3aa65bf0a10e42d7a54c98662cc388a5d711
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: cae29954211e62601debb35d76f938fb6a92779e
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87028230"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284614"
 ---
 # <a name="use-the-d-drive-as-a-data-drive-on-a-windows-vm"></a>Использование диска D в качестве диска данных на виртуальной машине Windows
 Если вашему приложению нужно использовать диск D для хранения данных, следуйте приведенным указаниям, чтобы использовать другой диск в качестве временного. Никогда не используйте временный диск для хранения данных, которые нужно сохранить.
@@ -57,5 +57,5 @@ ms.locfileid: "87028230"
 8. Нажмите кнопку **Применить**. Вы получите предупреждение о том, что для вступления изменений в силу необходимо перезагрузить компьютер.
 9. Перезапустите виртуальную машину.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Можно увеличить объем хранилища, доступного для виртуальной машины, [присоединив дополнительный диск данных](attach-managed-disk-portal.md).

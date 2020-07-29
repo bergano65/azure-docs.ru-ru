@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/15/2020
 ms.author: apimpm
-ms.openlocfilehash: 7ec89d985c025814d903ae9a16f9b0f5123b3571
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ef16339d9a584eb12c611a25d636a9287265953a
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87056425"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284342"
 ---
 # <a name="feature-based-comparison-of-the-azure-api-management-tiers"></a>Сравнение возможностей категорий управления API Azure
 
@@ -28,22 +28,22 @@ ms.locfileid: "87056425"
 
 | Функция                                                                                      | Потребление | Разработчик | Basic | Standard | Premium |
 | -------------------------------------------------------------------------------------------- | ----------- | --------- | ----- | -------- | ------- |
-| Интеграция Azure AD<sup>1</sup>                                                             | Нет          | Да       | Нет    | Да      | Да     |
+| Интеграция Azure AD<sup>1</sup>                                                             | Нет          | Да       | Нет    | Да      | да     |
 | Поддержка виртуальной сети                                                               | Нет          | Да       | Нет    | Нет       | Да     |
 | Развертывание в нескольких регионах                                                                      | Нет          | Нет        | Нет    | Нет       | Да     |
-| Несколько личных доменных имен                                                                 | Нет          | Нет        | Нет    | Нет       | Да     |
-| Портал разработчика<sup>2</sup>                                                                 | Нет          | Да       | Да   | Да      | Да     |
-| Встроенный кэш                                                                               | Нет          | Да       | Да   | Да      | Да     |
-| Встроенная аналитика                                                                           | Нет          | Да       | Да   | Да      | Да     |
+| Несколько личных доменных имен                                                                 | Нет          | Да        | Нет    | Нет       | Да     |
+| Портал разработчика<sup>2</sup>                                                                 | Нет          | Да       | да   | да      | да     |
+| Встроенный кэш                                                                               | Нет          | Да       | да   | да      | да     |
+| Встроенная аналитика                                                                           | Нет          | Да       | да   | да      | да     |
 | Локально [размещенный шлюз](self-hosted-gateway-overview.md)<sup>3</sup>                           | Нет          | Да       | Нет    | Нет       | Да     |
-| [Параметры протокола TLS](api-management-howto-manage-protocols-ciphers.md)                             | Да         | Да       | Да   | Да      | Да     |
-| [Внешний кэш](https://aka.ms/apimbyoc)                                                    | Да         | Да       | Да   | Да      | Да     |
-| [Аутентификация на основе сертификата клиента](api-management-howto-mutual-certificates-for-clients.md) | Да         | Да       | Да   | Да      | Да     |
-| [Архивация и восстановление](api-management-howto-disaster-recovery-backup-restore.md)               | Нет          | Да       | Да   | Да      | Да     |
-| [Управление через Git](api-management-configuration-repository-git.md)                        | Нет          | Да       | Да   | Да      | Да     |
-| API прямого управления                                                                        | Нет          | Да       | Да   | Да      | Да     |
-| Журналы и метрики Azure Monitor                                                               | Да         | Да       | Да   | Да      | Да     |
-| Статический IP-адрес                                                                                    | Нет          | Да       | Да   | Да      | Да     |
+| [Параметры протокола TLS](api-management-howto-manage-protocols-ciphers.md)                             | да         | да       | да   | да      | да     |
+| [Внешний кэш](https://aka.ms/apimbyoc)                                                    | да         | да       | да   | да      | да     |
+| [Аутентификация на основе сертификата клиента](api-management-howto-mutual-certificates-for-clients.md) | да         | да       | да   | да      | да     |
+| [Архивация и восстановление](api-management-howto-disaster-recovery-backup-restore.md)               | Нет          | Да       | да   | да      | да     |
+| [Управление через Git](api-management-configuration-repository-git.md)                        | Нет          | Да       | да   | да      | да     |
+| API прямого управления                                                                        | Нет          | Да       | да   | да      | да     |
+| Журналы и метрики Azure Monitor                                                               | Да         | да       | да   | да      | да     |
+| Статический IP-адрес                                                                                    | Нет          | Да       | да   | да      | да     |
 
 <sup>1</sup> позволяет использовать Azure AD (и Azure AD B2C) в качестве поставщика удостоверений для входа пользователей на портале разработчика.<br/>
 <sup>2</sup> Включая связанные функции, например пользователи, группы, проблемы, приложения и шаблоны сообщений электронной почты и уведомления.<br/>

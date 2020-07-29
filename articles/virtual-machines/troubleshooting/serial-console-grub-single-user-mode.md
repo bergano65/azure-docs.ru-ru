@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/06/2019
 ms.author: alsin
-ms.openlocfilehash: e31a10b1086679b7c2493f5a6d6b62f75e363dd4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3b074bb1d439a6d20ac476f4e10b6a26b7107be8
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87036477"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284716"
 ---
 # <a name="use-serial-console-to-access-grub-and-single-user-mode"></a>Использование последовательной консоли для доступа к GRUB и однопользовательским режимам
 Общий единый загрузчик (GRUB), скорее всего, является первым, что вы видите при загрузке виртуальной машины (ВМ). Так как она отображается до запуска операционной системы, GRUB недоступен через SSH. В GRUB можно изменить конфигурацию загрузки для загрузки в однопользовательский режим, помимо прочего.
@@ -91,8 +91,8 @@ GRUB_CMDLINE_LINUX="console=tty1 console=ttyS0,115200n8 earlyprintk=ttyS0,115200
 1. Включите пароль для привилегированного пользователя, выполнив следующие действия.
     * Запустите `passwd root` (Задайте надежный пароль root).
 1. Убедитесь, что корневой пользователь может войти только через ttyS0, выполнив следующие действия.  
-    А. Выполните команду `edit /etc/ssh/sshd_config` и убедитесь, что для пермитрутлогин задано значение `no` .  
-    Б. Выполните команду `edit /etc/securetty file` , чтобы разрешить вход только через ttyS0.
+    a. Выполните команду `edit /etc/ssh/sshd_config` и убедитесь, что для пермитрутлогин задано значение `no` .  
+    b. Выполните команду `edit /etc/securetty file` , чтобы разрешить вход только через ttyS0.
 
 Теперь, если система загружается в однопользовательский режим, вы можете войти с помощью пароля root.
 
@@ -164,7 +164,7 @@ GRUB_CMDLINE_LINUX="console=tty1 console=ttyS0,115200n8 earlyprintk=ttyS0,115200
 1. В текстовом редакторе откройте */etc/default/grub*.
 1. Закомментируйте `GRUB_HIDDEN_TIMEOUT=1` строку.
 1. Убедитесь, что есть `GRUB_TIMEOUT_STYLE=menu` строка.
-1. Запустите `sudo update-grub`.
+1. Выполните команду `sudo update-grub`.
 
 ### <a name="single-user-mode-in-ubuntu"></a>Однопользовательский режим в Ubuntu
 Если Ubuntu не может загрузиться в обычном режиме, она автоматически перейдет в однопользовательский режим. Чтобы войти в однопользовательский режим вручную, выполните следующие действия.
@@ -241,7 +241,7 @@ GRUB_CMDLINE_LINUX="console=tty1 console=ttyS0,115200n8 earlyprintk=ttyS0,115200
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о последовательной консоли см. в следующих статьях:
 * [Документация по последовательной консоли Linux](serial-console-linux.md)
-* [Использование последовательной консоли для включения GRUB в различных дистрибутивах](/archive/blogs/linuxonazure/why-proactively-ensuring-you-have-access-to-grub-and-sysrq-in-your-linux-vm-could-save-you-lots-of-down-time)
+* [Использование последовательной консоли для включения GRUB в различных дистрибутивах](http://linuxonazure.azurewebsites.net/why-proactively-ensuring-you-have-access-to-grub-and-sysrq-in-your-linux-vm-could-save-you-lots-of-down-time/)
 * [Использование последовательной консоли для вызовов NMI и Сисрк](serial-console-nmi-sysrq.md)
 * [Последовательная консоль для виртуальных машин Windows](serial-console-windows.md)
 * [Диагностика загрузки](boot-diagnostics.md)

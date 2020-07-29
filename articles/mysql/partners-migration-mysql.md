@@ -6,11 +6,12 @@ ms.author: jtoland
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 08/08/2018
-ms.openlocfilehash: 7f922275e5541baabc77a1efb19e48fa8be4c5ac
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f325280cb4b18def603410464a06fddaed09c78a
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76289430"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285413"
 ---
 # <a name="azure-database-for-mysql-migration-partners"></a>Партнеры по миграции для базы данных Azure для MySQL
 Чтобы существенно расширить поддержку вашего решения базы данных Azure для MySQL, вы можете выбрать инструменты и партнеров из обширного списка ведущих в отрасли партнеров. В данной статье рассматриваются партнеры корпорации Майкрософт, которые предлагают решения миграции, поддерживающие базу данных Azure для MySQL.
@@ -25,8 +26,8 @@ ms.locfileid: "76289430"
 | ![credativ][5] |**credativ**<br>credativ – независимая компания, оказывающая консалтинговые услуги и техническую поддержку. Она основана в 1999 году для предоставления комплексных консалтинговых услуг и технической поддержки по внедрению и использованию программного обеспечения с открытым исходным кодом в бизнес-приложениях. Ее широкий спектр услуг включает стратегический консалтинг, экспертные технические рекомендации, квалифицированное обучение и индивидуальную поддержку всех ИТ-нужд предприятия, в том числе круглосуточно.|[Marketplace][credativ_marketplace]<br>[Веб-сайт][credativ_website]<br>[Twitter][credative_twitter]<br>[YouTube][credativ_youtube]<br>[Contact][credativ_contact] | |
 | ![Pactera][6] |**Pactera**<br>Pactera — это глобальная компания, предлагающая консалтинговые, цифровые, технологические и эксплуатационные услуги ведущим мировым предприятиям. Начиная с первых разработок в инженерии и заканчивая новейшими цифровыми преобразованиями, она предоставляет клиентам конкурентное преимущество. Проверенные методы и инструменты обеспечивают защиту данных, их подлинность и точность.|[Веб-сайт][pactera_website]<br>[Twitter][pactera_twitter]<br>[Contact][pactera_contact] | |
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Дополнительные сведения о других партнерах Майкрософт можно получить [на сайте партнеров Майкрософт](https://partner.microsoft.com/en-US/).
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные сведения о других партнерах Майкрософт можно получить [на сайте партнеров Майкрософт](https://partner.microsoft.com/).
 
 <!--Image references-->
 [1]: ./media/partner-migration-mysql/SNP_Logo.png

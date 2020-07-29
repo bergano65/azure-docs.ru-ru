@@ -11,11 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b431cee3b8e5fc168dec2766442d6f6b9869d1e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 450f04c7de68bf6db282577fbc8e841f1f3c93fc
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74900375"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284410"
 ---
 # <a name="device-identity-and-desktop-virtualization"></a>Удостоверение устройств и виртуализация настольных систем
 
@@ -52,9 +53,9 @@ ms.locfileid: "74900375"
 |   |   |   | Не постоянный | Нет |
 |   | Управляемые | Текущие окна | Постоянный | Нет |
 |   |   |   | Не постоянный | Нет |
-| Зарегистрировано в Azure AD | Федеративные | Текущие окна | Постоянный | Нет |
+| Зарегистрировано в Azure AD | Федеративные | Текущие окна | Постоянный | Неприменимо |
 |   |   |   | Не постоянный | Нет |
-|   | Управляемые | Текущие окна | Постоянный | Нет |
+|   | Управляемые | Текущие окна | Постоянный | Неприменимо |
 |   |   |   | Не постоянный | Нет |
 
 \*Среда **Федеративной** инфраструктуры удостоверений представляет собой среду с поставщиком удостоверений, например AD FS или другие сторонние IDP.
@@ -84,6 +85,6 @@ ms.locfileid: "74900375"
 - Определите и реализуйте процесс [управления устаревшими устройствами](manage-stale-devices.md).
    - После того как вы получите стратегию для определения непостоянных гибридных устройств, присоединенных к Azure AD, вы сможете более интенсивно выполнять очистку этих устройств, чтобы ваш каталог не использовался с большим числом устаревших устройств.
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка гибридного Azure Active Directory Join для Федеративной среды](hybrid-azuread-join-federated-domains.md)

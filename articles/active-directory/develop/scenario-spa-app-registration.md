@@ -12,16 +12,18 @@ ms.workload: identity
 ms.date: 05/19/2020
 ms.author: hahamil
 ms.custom: aaddev
-ms.openlocfilehash: 238bcc6c706f2fab969c98b73ca879d064498693
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: efd51e90bb14f3d97b76eb6ac45b384192bb8da0
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87026515"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87311574"
 ---
 # <a name="single-page-application-app-registration"></a>Одностраничное приложение: Регистрация приложения
 
 Чтобы зарегистрировать одностраничное приложение (SPA) на платформе удостоверений Майкрософт, сделайте следующее. Процедура регистрации будет разной для MSAL.js 1.0 с поддержкой неявного потока предоставления разрешений и MSAL.js 2.0 с поддержкой потока кода авторизации с использованием PKCE.
+
+[!INCLUDE [MSAL.js 2.0 and Azure AD B2C temporary incompatibility notice](../../../includes/msal-b2c-cors-compatibility-notice.md)]
 
 ## <a name="create-the-app-registration"></a>Создание регистрации приложения
 
@@ -67,7 +69,7 @@ ms.locfileid: "87026515"
 
 Итак, вы завершили регистрацию одностраничного приложения (SPA) и настроили URI перенаправления, на который будут перенаправляться все клиенты и оправляться маркеры безопасности. Установив флажки **Маркеры идентификации** и **Маркеры доступа**, вы включили неявный поток предоставления разрешений.
 
-Следуйте указаниям в [руководстве](tutorial-v2-javascript-spa.md) . 
+Следуйте указаниям в [руководстве](tutorial-v2-javascript-spa.md) .
 
 ## <a name="note-about-authorization-flows"></a>Примечание о потоках авторизации
 

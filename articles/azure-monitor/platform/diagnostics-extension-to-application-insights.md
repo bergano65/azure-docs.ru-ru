@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/19/2016
-ms.openlocfilehash: 39f564bea8d300d2966afe27ff0239c527f038cf
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5af0eb20f9766369caa7351719b63b213c394e5d
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092819"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87305811"
 ---
 # <a name="send-cloud-service-virtual-machine-or-service-fabric-diagnostic-data-to-application-insights"></a>Отправка в Application Insights диагностических данных облачной службы, виртуальной машины или Service Fabric
 Облачные службы, виртуальные машины, масштабируемые наборы виртуальных машин и Service Fabric используют расширение системы диагностики Azure для сбора данных.  Система диагностики Azure отправляет данные в таблицы службы хранилища Azure.  Тем не менее эти данные можно также полностью или частично передавать в другие расположения, используя расширение системы диагностики Azure 1.5 или более поздней версии.
@@ -59,8 +59,8 @@ ms.locfileid: "87092819"
 - Атрибут **Sink** *name* — это строковое значение, однозначно определяющее приемник.
 
 - Элемент **ApplicationInsights** указывает ключ инструментирования ресурса Application Insights, в который отправляется Диагностика Azure.
-    - Если ресурс Application Insights еще не существует, см. статью [Создание нового ресурса Application Insights](../../azure-monitor/app/create-new-resource.md ), где содержатся дополнительные сведения о создании ресурса и получении ключа инструментирования.
-    - При разработке облачной службы с использованием пакета SDK для Azure 2.8 и более поздних версий этот ключ инструментирования заполняется автоматически. При упаковке проекта облачной службы это значение задается на основе параметра конфигурации службы **APPINSIGHTS_INSTRUMENTATIONKEY**. См. статью [Application Insights для облачных служб Azure](../../azure-monitor/app/cloudservices.md)
+    - Если ресурс Application Insights еще не существует, см. статью [Создание нового ресурса Application Insights](../app/create-new-resource.md), где содержатся дополнительные сведения о создании ресурса и получении ключа инструментирования.
+    - При разработке облачной службы с использованием пакета SDK для Azure 2.8 и более поздних версий этот ключ инструментирования заполняется автоматически. При упаковке проекта облачной службы это значение задается на основе параметра конфигурации службы **APPINSIGHTS_INSTRUMENTATIONKEY**. См. статью [Application Insights для облачных служб Azure](../app/cloudservices.md)
 
 - Элемент **Channels** содержит один или несколько элементов **Channel**.
     - Атрибут *name* однозначно ссылается на этот канал.
@@ -68,7 +68,7 @@ ms.locfileid: "87092819"
         - Подробный
         - Сведения
         - Предупреждение
-        - Ошибка
+        - Error
         - Критически важно
 
 Канал действует как фильтр и позволяет выбрать конкретные уровни ведения журнала для отправки в приемник. Например, можно собирать подробные журналы и отправлять их в хранилище, а в приемник отправлять только журнал ошибок.
@@ -216,3 +216,4 @@ ms.locfileid: "87092819"
 * Узнайте, как [просматривать данные диагностики Azure](../app/cloudservices.md) в Application Insights.
 * Используйте [PowerShell](../../cloud-services/cloud-services-diagnostics-powershell.md), чтобы включить расширение диагностики Azure для вашего приложения.
 * Используйте [Visual Studio](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines) , чтобы включить расширение диагностики Azure для вашего приложения.
+

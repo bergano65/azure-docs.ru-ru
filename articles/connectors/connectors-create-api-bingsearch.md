@@ -7,11 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 05/21/2018
 tags: connectors
-ms.openlocfilehash: e547ae59f7b3260f46756825bca2bef1c10bcc97
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 52bf42434640dc965999895549b4fa12a139dcce
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75665893"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284070"
 ---
 # <a name="find-results-in-bing-search-by-using-azure-logic-apps"></a>Поиск результатов в Поиск Bing с помощью Azure Logic Apps
 
@@ -20,9 +21,9 @@ ms.locfileid: "75665893"
 Например, на основании критерия поиска можно найти новостные статьи и разместить эти элементы в виде твитов в веб-канале Twitter.
 
 Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Если вы не знакомы с приложениями логики, ознакомьтесь со статьями [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md).
-См. технические сведения о [соединителях поиска Bing](https://docs.microsoft.com/connectors/bingsearch/).
+См. технические сведения о [соединителях поиска Bing](/connectors/bingsearch/).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Учетная запись Cognitive Services](../cognitive-services/cognitive-services-apis-create-account.md)
 
@@ -167,3 +168,4 @@ ms.locfileid: "75665893"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).
+

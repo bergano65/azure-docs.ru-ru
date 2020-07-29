@@ -1,6 +1,6 @@
 ---
-title: Проблемы диагностики виртуальных рабочих столов Windows — 2019 — Azure
-description: Узнайте, как использовать возможности диагностики в Виртуальном рабочем столе Windows для диагностики проблем.
+title: Проблемы диагностики виртуальных рабочих столов Windows (классическая модель) — Azure
+description: Использование функции диагностики виртуальных рабочих столов Windows (классическая модель) для диагностики проблем.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 05/13/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 0aad1c780c6695c771d3cfea04509acde65c051e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 257ad5aa11bfaece70f676b452119d7800e2d1e2
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87085866"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285056"
 ---
-# <a name="identify-and-diagnose-issues"></a>Выявление и диагностика неполадок
+# <a name="identify-and-diagnose-issues-in-windows-virtual-desktop-classic"></a>Определение и диагностика проблем в Windows Virtual Desktop (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../diagnostics-role-service.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../diagnostics-role-service.md).
 
 Виртуальный рабочий стол Windows включает функцию диагностики, которая позволяет администратору выявлять разные проблемы через единый интерфейс. Роли Виртуального рабочего стола Windows записывают диагностические действия в журнал при каждом взаимодействии пользователя с системой. Каждый журнал содержит важную информацию, например об участвующих в транзакции ролях Виртуального рабочего стола Windows, ошибках, арендаторе и пользователе. Диагностические действия создаются действиями пользователей и администраторов, и разбиваются на три основных группы:
 

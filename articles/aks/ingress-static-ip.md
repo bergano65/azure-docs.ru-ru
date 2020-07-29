@@ -5,12 +5,12 @@ description: Сведения об установке и настройке ко
 services: container-service
 ms.topic: article
 ms.date: 07/21/2020
-ms.openlocfilehash: 89068210e0a2656c0a0642417532b28d8f10d93a
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 38caddeece7b8e2a49d09e25a22e9996cf65d069
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87130857"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87335959"
 ---
 # <a name="create-an-ingress-controller-with-a-static-public-ip-address-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика со статическим общедоступным IP-адресом в Службе Azure Kubernetes (AKS)
 
@@ -67,7 +67,10 @@ az network public-ip create --resource-group MC_myResourceGroup_myAKSCluster_eas
 > [!TIP]
 > Если вы хотите включить [Сохранение IP-адреса источника клиента][client-source-ip] для запросов к контейнерам в кластере, добавьте `--set controller.service.externalTrafficPolicy=Local` команду Helm install. Исходный IP-адрес клиента хранится в заголовке запроса в разделе *X-forwardd-for*. При использовании контроллера входящего трафика с включенным сохранением IP-адресов источника клиента передача TLS не будет работать.
 
-Обновите следующий скрипт, указав **IP-адрес** контроллера входящего трафика, и **уникальное имя** , которое вы хотите использовать для префикса FQDN:
+Обновите следующий скрипт, указав **IP-адрес** контроллера входящего трафика, и **уникальное имя** , которое вы хотите использовать для префикса FQDN.
+
+> [!IMPORTANT]
+> При выполнении команды необходимо обновить заменяющие *STATIC_IP* и *DNS_LABEL* своими IP-адресами и уникальными именами.
 
 ```console
 # Create a namespace for your ingress resources
@@ -83,7 +86,7 @@ helm install nginx-ingress stable/nginx-ingress \
     --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux \
     --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux \
     --set controller.service.loadBalancerIP="STATIC_IP" \
-    --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-dns-label-name"="demo-aks-ingress"
+    --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-dns-label-name"="DNS_LABEL"
 ```
 
 При создании службы распределения нагрузки Kubernetes входящего контроллера NGINX назначается статический IP-адрес, как показано в следующем примере выходных данных.

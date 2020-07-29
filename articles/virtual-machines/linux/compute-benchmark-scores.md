@@ -2,15 +2,15 @@
 title: Вычисление показателей производительности для виртуальных машин Linux в Azure
 description: Сравнение результатов теста производительности CoreMark для виртуальных машин Azure под управлением Linux.
 ms.service: virtual-machines-linux
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/29/2020
 ms.reviewer: davberg
-ms.openlocfilehash: afe1bddd5822b506dcf2c177fc308b717ddc2129
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 61deac4c94902dc392a23f05674e2b1fb3f3cf87
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82580450"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87373425"
 ---
 # <a name="compute-benchmark-scores-for-linux-vms"></a>Вычисление результатов теста производительности для виртуальных машин Linux
 Ниже приведены результаты теста производительности CoreMark линейки высокопроизводительных виртуальных машин Azure под управлением Ubuntu. Вы можете также ознакомиться с результатами теста производительности для [виртуальных машин Windows](../windows/compute-benchmark-scores.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
@@ -156,7 +156,7 @@ ms.locfileid: "82580450"
 | Standard_D4_v3 | Intel(R) Xeon(R) E5-2673 вер. 4 с тактовой частотой 2,30 ГГц | 4 | 1 | 15.7 | 41 147 | 2 706 | 6,58% | 546 |
 | Standard_D8_v3 | Intel(R) Xeon(R) E5-2673 вер. 3 с тактовой частотой 2,40 ГГц | 8 | 1 | 31,4 | 80 383 | 1 486 | 1,85% | 133 |
 | Standard_D8_v3 | Intel(R) Xeon(R) E5-2673 вер. 4 с тактовой частотой 2,30 ГГц | 8 | 1 | 31,4 | 80 511 | 3 916 | 4,86% | 560 |
-| Standard_D16_v3 | Intel(R) Xeon(R) E5-2673 вер. 3 с тактовой частотой 2,40 ГГц | 16 | 1 | 62,9 | 160 932 | 2200 | 1,37 % | 140 |
+| Standard_D16_v3 | Intel(R) Xeon(R) E5-2673 вер. 3 с тактовой частотой 2,40 ГГц | 16 | 1 | 62,9 | 160 932 | 2 200 | 1,37 % | 140 |
 | Standard_D16_v3 | Intel(R) Xeon(R) E5-2673 вер. 4 с тактовой частотой 2,30 ГГц | 16 | 1 | 62,9 | 158 679 | 4 550 | 2,87 % | 560 |
 | Standard_D32_v3 | Intel(R) Xeon(R) E5-2673 вер. 3 с тактовой частотой 2,40 ГГц | 32 | 2 | 125,9 | 314 208 | 4 250 | 1,35 % | 189 |
 | Standard_D32_v3 | Intel(R) Xeon(R) E5-2673 вер. 4 с тактовой частотой 2,30 ГГц | 32 | 1 | 125,9 | 312 472 | 3 173 | 1,02% | 511 |

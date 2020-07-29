@@ -1,6 +1,6 @@
 ---
-title: Развертывание средства управления для виртуальных рабочих столов Windows с помощью субъекта-службы Azure
-description: Развертывание средства управления для виртуальных рабочих столов Windows с помощью PowerShell.
+title: Развертывание средства управления для виртуальных рабочих столов Windows (классическая модель) с помощью субъекта-службы Azure
+description: Развертывание средства управления для виртуальных рабочих столов Windows (классическая модель) с помощью PowerShell.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,20 +8,21 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 0ae3bb87bfee681aa518a4dfef064677ffa97119
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6947e5ebf91ee65145c7a5042fb1ee6968c19c9b
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85513401"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284971"
 ---
-# <a name="deploy-a-management-tool-with-powershell"></a>Развертывание средства управления с помощью PowerShell
+# <a name="deploy-a-windows-virtual-desktop-classic-management-tool-with-powershell"></a>Развертывание средства управления виртуальными рабочими столами Windows (классическая модель) с помощью PowerShell
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows.
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows.
 
 В этой статье показано, как развернуть средство управления с помощью PowerShell.
 
-## <a name="important-considerations"></a>Важные сведения
+## <a name="important-considerations"></a>Важные замечания
 
 Каждой подписке клиента Azure Active Directory (Azure AD) требуется отдельное развертывание средства управления. Это средство не поддерживает сценарии Azure AD "бизнес — бизнес" (B2B).
 
@@ -167,7 +168,7 @@ Get-AzureADApplication -All $true | where { $_.AppId -match $servicePrincipalCre
    > [!NOTE]
    > Если у вас есть настраиваемая группа клиентов, введите имя вручную вместо выбора из раскрывающегося списка.
 
-## <a name="report-issues"></a>Сообщение о проблемах
+## <a name="report-issues"></a>Сообщить о проблеме
 
 Если у вас возникли проблемы со средством управления или другими средствами Виртуального рабочего стола Windows, следуйте указаниям в [шаблонах Azure Resource Manager для службы удаленных рабочих столов](https://github.com/Azure/RDS-Templates/blob/master/README.md), чтобы сообщить о них в GitHub.
 

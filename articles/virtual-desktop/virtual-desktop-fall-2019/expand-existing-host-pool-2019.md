@@ -1,6 +1,6 @@
 ---
-title: Развертывание существующего пула узлов с новыми узлами сеансов попадают в 2019 — Azure
-description: Развертывание существующего пула узлов с новыми узлами сеансов в виртуальном рабочем столе Windows.
+title: Развернуть существующий пул узлов виртуальных рабочих столов Windows (классический) с новыми узлами сеансов — Azure
+description: Развертывание существующего пула узлов с новыми узлами сеансов в Windows Virtual Desktop (классическая модель).
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 291dc32453001dd1e188bacae8be372bb3645ece
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ecdd63b054fda7f973898b0b3a42a29fc94c03bb
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86527546"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285039"
 ---
-# <a name="expand-an-existing-host-pool-with-new-session-hosts-fall-2019"></a>Разверните существующий пул узлов с новыми узлами сеансов (выпадает 2019).
+# <a name="expand-an-existing-host-pool-with-new-session-hosts-in-windows-virtual-desktop-classic"></a>Развертывание существующего пула узлов с новыми узлами сеансов в виртуальном рабочем столе Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../expand-existing-host-pool.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../expand-existing-host-pool.md).
 
 По мере увеличения использования в пуле узлов может потребоваться расширить существующий пул узлов с новыми узлами сеансов, чтобы справиться с новой нагрузкой.
 
@@ -126,7 +126,7 @@ ms.locfileid: "86527546"
 
 Следуйте инструкциям в разделе [Запуск шаблона Azure Resource Manager для подготовки нового пула узлов](create-host-pools-arm-template.md#run-the-azure-resource-manager-template-for-provisioning-a-new-host-pool) и укажите все те же значения параметров, кроме *количества экземпляров узлов удаленных рабочих столов*. Введите число виртуальных машин узла сеансов, которые нужно разместить в пуле узлов после запуска шаблона. Например, если вы разрабатываете пул узлов с пяти узлов сеансов до восьми, введите **8**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы развернули существующий пул узлов, вы можете войти в клиент виртуальных рабочих столов Windows, чтобы протестировать их в рамках сеанса пользователя. Подключиться к сеансу можно с помощью любого из следующих клиентов:
 

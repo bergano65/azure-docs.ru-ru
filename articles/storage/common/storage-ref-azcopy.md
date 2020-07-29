@@ -4,15 +4,16 @@ description: В этой статье содержатся справочные 
 author: normesta
 ms.service: storage
 ms.topic: reference
-ms.date: 10/16/2019
+ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 5da3a2e5d003a191bff66af6599cae4d34ab60c6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 18972e991f08db7fa9548454a5c5cdc3ff0f552f
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74038089"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87285192"
 ---
 # <a name="azcopy"></a>azcopy
 
@@ -26,22 +27,24 @@ AzCopy — это программа командной строки, котор
 
 ## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
 
-- [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
+- [Начало работы с AzCopy](storage-use-azcopy-v10.md)
 - [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](storage-use-azcopy-blobs.md)
-- [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
+- [Перенос данных с помощью AzCopy и хранилища файлов](storage-use-azcopy-files.md)
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
 
 ## <a name="options"></a>Параметры
 
-**--Cap-Мбит/с UInt32**   Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.
+**--Cap-Мбит/** с (float) — скорость передачи, в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.
 
-**-h,--Справка** Справка по azcopy
+**--Справка** Справка по azcopy
       
-**--Output-Type**  Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — Text. ("текст" по умолчанию)
+**—** формат выходного типа (String) для выходных данных команды. Среди вариантов: Text, JSON. Значение по умолчанию — `text`. (по умолчанию `text` )
 
-## <a name="see-also"></a>См. также
+**--Trusted-Microsoft-суффиксы** (строка) задает дополнительные суффиксы домена, в которых могут отправляться Azure Active Directory токены входа.  Значение по умолчанию — "*. Core.Windows.NET;*". core.chinacloudapi.cn; *. Core.cloudapi.de;*. core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.
 
-- [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
+## <a name="see-also"></a>См. также статью
+
+- [Начало работы с AzCopy](storage-use-azcopy-v10.md)
 - [azcopy bench](storage-ref-azcopy-bench.md)
 - [azcopy copy](storage-ref-azcopy-copy.md)
 - [azcopy doc](storage-ref-azcopy-doc.md)
