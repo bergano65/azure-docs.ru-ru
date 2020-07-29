@@ -169,6 +169,14 @@
               href: ./partner-center-portal/offer-creation-checklist.md
             - name: Создание предложения SaaS
               href: ./partner-center-portal/create-new-saas-offer.md
+            - name: Проверка подлинности Azure AD для SaaS
+              items:
+                - name: "Обзор Azure\_AD и SaaS"
+                  href: ./azure-ad-saas.md
+                - name: Целевая страница для предложений с поддержкой транзакций
+                  href: ./azure-ad-transactable-saas-landing-page.md
+                - name: Целевая страница для предложений с бесплатной или пробной версией
+                  href: ./azure-ad-free-or-trial-landing-page.md
             - name: API исполнения SaaS
               href: ./partner-center-portal/pc-saas-fulfillment-apis.md
               items:

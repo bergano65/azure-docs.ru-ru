@@ -109,11 +109,9 @@
       href: concept-recognizing-text.md
     - name: Обнаружение содержимого для взрослых
       href: concept-detecting-adult-content.md
-- name: Практические руководства
+- name: Контейнеры
   items:
-    - name: Вызов API компьютерного зрения
-      href: Vision-API-How-to-Topics/HowToCallVisionAPI.md
-    - name: Использование контейнеров
+    - name: "Контейнер API\_чтения"
       items:
         - name: Установка и запуск контейнеров
           href: computer-vision-how-to-install-containers.md
@@ -127,6 +125,10 @@
         - name: Использование экземпляров контейнеров
           href: deploy-computer-vision-on-container-instances.md
           displayName: 'container instances, container, containers, images'
+- name: Практические руководства
+  items:
+    - name: Вызов API компьютерного зрения
+      href: Vision-API-How-to-Topics/HowToCallVisionAPI.md
     - name: Анализ видео в реальном времени
       href: Vision-API-How-to-Topics/HowtoAnalyzeVideo_Vision.md
 - name: Справочник
@@ -135,6 +137,8 @@
       href: 'https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list'
     - name: Azure PowerShell
       href: 'https://aka.ms/azure-powershell-cognitiveservices'
+    - name: "API \"Компьютерное зрение\" версии\_3.1 (предварительная версия\_1)"
+      href: 'https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-preview-1/operations/5d986960601faab4bf452005'
     - name: "API \"Компьютерное зрение\" версии\_3.0"
       href: 'https://aka.ms/computer-vision-v3-ref'
     - name: "API \"Компьютерное зрение\" версии\_2.1"

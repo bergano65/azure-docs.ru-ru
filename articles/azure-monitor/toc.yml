@@ -485,7 +485,7 @@
             - name: Просмотр уведомлений
               href: ../service-health/service-notifications.md
             - name: Настройка оповещений о событиях уведомлений
-              href: platform/alerts-activity-log-service-notifications.md
+              href: ../service-health/alerts-activity-log-service-notifications-portal.md
         - name: Уведомления и действия
           items:
             - name: Правила действий (предварительная версия)
@@ -905,18 +905,24 @@
           href: insights/vminsights-ga-release-faq.md
         - name: ВОПРОСЫ И ОТВЕТЫ
           href: faq.md#azure-monitor-for-vms
-        - name: Включение мониторинга
+        - name: Настройка рабочей области
+          href: insights/vminsights-configure-workspace.md
+        - name: Установка агентов
           items:
-            - name: Общие сведения о включении мониторинга
+            - name: Обзор
               href: insights/vminsights-enable-overview.md
-            - name: Включение для отдельной виртуальной машины Azure
-              href: insights/vminsights-enable-single-vm.md
-            - name: Включение при помощи Политики Azure
-              href: insights/vminsights-enable-at-scale-policy.md
-            - name: Включить при помощи Azure PowerShell
-              href: insights/vminsights-enable-at-scale-powershell.md
-            - name: Включение в гибридной среде
-              href: insights/vminsights-enable-hybrid-cloud.md
+            - name: Портал Azure
+              href: insights/vminsights-enable-portal.md
+            - name: Azure PowerShell
+              href: insights/vminsights-enable-powershell.md
+            - name: Шаблоны ARM
+              href: insights/vminsights-enable-resource-manager.md
+            - name: Политика Azure
+              href: insights/vminsights-enable-policy.md
+            - name: Гибридные виртуальные машины
+              href: insights/vminsights-enable-hybrid.md
+            - name: Обновление агента зависимостей
+              href: insights/vminsights-dependency-agent-maintenance.md
         - name: Сопоставление зависимостей
           href: insights/vminsights-maps.md
         - name: Мониторинг производительности
@@ -927,8 +933,6 @@
           href: insights/vminsights-workbooks.md
         - name: Создание правил генерации оповещений
           href: insights/vminsights-alerts.md
-        - name: Обновление агента зависимостей
-          href: insights/vminsights-dependency-agent-maintenance.md
         - name: Отключение мониторинга
           href: insights/vminsights-optout.md
     - name: Azure Monitor для контейнеров
