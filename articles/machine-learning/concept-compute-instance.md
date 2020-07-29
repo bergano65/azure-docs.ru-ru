@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
-ms.date: 06/22/2020
-ms.openlocfilehash: 3edb8da6d535ac7817c29db254aa84efd92321b6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 07/27/2020
+ms.openlocfilehash: 4ac95fa81fdbee237cacaa1541e333bb70c370fa
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87012983"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323304"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Сведения о вычислительном экземпляре Машинного обучения Azure
 
@@ -47,7 +47,7 @@ ms.locfileid: "87012983"
 
 В вычислительном экземпляре устанавливаются следующие средства и среды. 
 
-|Общие средства и среды|Подробности|
+|Общие средства и среды|Сведения|
 |----|:----:|
 |Драйверы|`CUDA`</br>`cuDNN`</br>`NVIDIA`</br>`Blob FUSE` |
 |Библиотека Intel MPI||
@@ -58,7 +58,7 @@ ms.locfileid: "87012983"
 |NCCL 2.0 ||
 |Protobuf|| 
 
-|Средства и среды **R**|Подробности|
+|Средства и среды **R**|Сведения|
 |----|:----:|
 |Выпуск RStudio Server с открытым исходным кодом (Предварительная версия)||
 |Ядро R||
@@ -149,12 +149,12 @@ ms.locfileid: "87012983"
 |Тип виртуальной машины |  Выберите ЦП или GPU. Этот тип нельзя изменить после создания     |
 |размер виртуальной машины;     |  Поддерживаемые размеры виртуальных машин могут быть ограничены в вашем регионе. Проверка [списка доступности](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines)     |
 |Включить или отключить доступ по протоколу SSH     |   По умолчанию доступ по протоколу SSH отключен.  Доступ по протоколу SSH не может быть. изменено после создания. Обязательно включите доступ, если планируется интерактивное Отладка с помощью [VS Code Remote](how-to-set-up-vs-code-remote.md)   |
-|Дополнительные параметры     |  Необязательный элемент. Настройте виртуальную сеть. Укажите **группу ресурсов**, **виртуальную сеть**и **подсеть** , чтобы создать вычислительный экземпляр в виртуальной сети Azure. Дополнительные сведения см. в описании этих [сетевых требований](how-to-enable-virtual-network.md#compute-instance) для виртуальной сети.        |
+|Дополнительные настройки     |  Необязательный элемент. Настройте виртуальную сеть. Укажите **группу ресурсов**, **виртуальную сеть**и **подсеть** , чтобы создать вычислительный экземпляр в виртуальной сети Azure. Дополнительные сведения см. в описании этих [сетевых требований](how-to-enable-virtual-network.md#compute-instance) для виртуальной сети.        |
 
 Экземпляр можно также создать одним из следующих способов:
 * Непосредственно из [интегрированных записных книжек](tutorial-1st-experiment-sdk-setup.md#azure)
 * На портале Azure
-* на основе шаблона Azure Resource Manager;
+* Из шаблона Azure Resource Manager. Пример шаблона см. в разделе [Создание шаблона вычислительной машинное обучение Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-compute-create-computeinstance).
 * С помощью [пакета SDK для машинное обучение Azure](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-on-computeinstance/train-on-computeinstance.ipynb)
 * Из [расширения CLI для машинное обучение Azure](reference-azure-machine-learning-cli.md#computeinstance)
 

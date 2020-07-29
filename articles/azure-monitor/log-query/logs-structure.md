@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/09/2020
-ms.openlocfilehash: b4882ec9eb8b81ae27a1e8eed2e5b4349fbeac3f
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 4e36a21e9dbab6f9bf814cdeb86f175ded38ea8e
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86516198"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87327299"
 ---
 # <a name="structure-of-azure-monitor-logs"></a>Структура журналов Azure Monitor
 Возможность быстрого получения ценных сведений о данных с помощью [запроса журнала](log-query-overview.md) — это мощная функция Azure Monitor. Для создания эффективных и полезных запросов следует понимать некоторые основные понятия, например, где находятся нужные данные и как они структурированы. В этой статье приводятся основные понятия, которые необходимо приступить к работе.
@@ -89,4 +89,5 @@ union withsource = table *
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Сведения об использовании [log Analytics для создания и изменения поисков по журналам](./log-query-overview.md).
-- Изучите [руководство по написанию запросов](../log-query/get-started-queries.md) на новом языке.
+- Изучите [руководство по написанию запросов](./get-started-queries.md) на новом языке.
+

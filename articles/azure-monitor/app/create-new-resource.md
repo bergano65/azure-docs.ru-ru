@@ -3,12 +3,12 @@ title: Создание ресурса Azure Application Insights | Докуме
 description: Вручную настройте мониторинг Application Insights для нового работающего приложения.
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: cb47453140c7659ca2f5e6da2e40d9d78405f8e7
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: d2e367e84aed7abac70d803f28d26070f7b0a85e
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86517099"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323134"
 ---
 # <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 
@@ -26,10 +26,10 @@ Azure Application Insights отображает данные о приложен
 
    | Настройки        |  Значение           | Описание  |
    | ------------- |:-------------|:-----|
-   | **имя**;      | `Unique value` | Имя, идентифицирующее отслеживаемое приложение. |
+   | **Имя**      | `Unique value` | Имя, идентифицирующее отслеживаемое приложение. |
    | **Группа ресурсов**     | `myResourceGroup`      | Имя новой или существующей группы ресурсов для размещения данных App Insights. |
    | **Регион** | `East US` | Выберите ближайшее к вам расположение или расположение рядом с местом размещения приложения. |
-   | **Режим ресурсов** | `Classic` либо `Workspace-based` | Ресурсы на основе рабочей области в настоящее время доступны в общедоступной предварительной версии и позволяют отправить данные телеметрии Application Insights в общую рабочую область Log Analytics. Дополнительные сведения см. в [статье о ресурсах на основе рабочей области](create-workspace-resource.md).
+   | **Режим ресурсов** | `Classic` или `Workspace-based` | Ресурсы на основе рабочей области в настоящее время доступны в общедоступной предварительной версии и позволяют отправить данные телеметрии Application Insights в общую рабочую область Log Analytics. Дополнительные сведения см. в [статье о ресурсах на основе рабочей области](create-workspace-resource.md).
 
 > [!NOTE]
 > Хотя одно и то же имя ресурса можно использовать в разных группах ресурсов, может быть полезно использовать глобально уникальное имя. Это может быть полезно, если планируется [выполнять запросы перекрестных запросов](../log-query/cross-workspace-query.md#identifying-an-application) , так как это упрощает необходимый синтаксис.
@@ -153,13 +153,14 @@ az monitor app-insights component create --app demoApp --location eastus --kind 
 Полный Azure CLI документации по этой команде и сведения о получении ключа инструментирования см. в [документации по Azure CLI](/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext-application-insights-az-monitor-app-insights-component-create).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Поиск по журналу диагностики](../../azure-monitor/app/diagnostic-search.md)
-* [Изучение метрик](../../azure-monitor/platform/metrics-charts.md)
+* [Поиск по журналу диагностики](./diagnostic-search.md)
+* [Изучение метрик](../platform/metrics-charts.md)
 * [Написание запросов аналитики](../log-query/log-query-overview.md)
 
 <!--Link references-->
 
-[api]: ../../azure-monitor/app/api-custom-events-metrics.md
-[diagnostic]: ../../azure-monitor/app/diagnostic-search.md
-[metrics]: ../../azure-monitor/platform/metrics-charts.md
-[start]: ../../azure-monitor/app/app-insights-overview.md
+[api]: ./api-custom-events-metrics.md
+[diagnostic]: ./diagnostic-search.md
+[metrics]: ../platform/metrics-charts.md
+[start]: ./app-insights-overview.md
+

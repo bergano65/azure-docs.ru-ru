@@ -5,15 +5,16 @@ author: normesta
 ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 07/23/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring
-ms.openlocfilehash: b1134f5538663f5b04e77270fee1a715b32a4f3e
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 061c7f6a45b8667b7fd03d62bee67c695bec5e68
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83675920"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87276794"
 ---
 # <a name="azure-storage-analytics-logging"></a>Ведение журнала Аналитики Службы хранилища Azure
 
@@ -63,7 +64,7 @@ ms.locfileid: "83675920"
 Большая часть средств обзора позволяет просматривать метаданные BLOB-объектов; кроме того, эти сведения также можно считывать с использованием PowerShell или программным способом. Следующий фрагмент команды PowerShell является примером фильтрации списка BLOB-объектов журнала по имени для указания времени, а также по метаданным с целью определения только тех журналов, которые содержат операции **записи**.  
 
  ```powershell
- Get-AzureStorageBlob -Container '$logs' |  
+ Get-AzStorageBlob -Container '$logs' |  
  Where-Object {  
      $_.Name -match 'table/2014/05/21/05' -and   
      $_.ICloudBlob.Metadata.LogType -match 'write'  
@@ -136,20 +137,20 @@ ms.locfileid: "83675920"
 
 ### <a name="enable-storage-logging-using-powershell"></a>Включение ведения журнала службы хранилища с помощью PowerShell  
 
- С помощью PowerShell на локальном компьютере можно настроить ведение журнала службы хранилища для учетной записи хранения. Для этого выполните командлет Azure PowerShell **Get-AzureStorageServiceLoggingProperty** для получения текущих настроек и командлет **Set-AzureStorageServiceLoggingProperty** для их изменения.  
+ PowerShell можно использовать на локальном компьютере для настройки ведения журнала хранилища в учетной записи хранения с помощью командлета Azure PowerShell **Get-азсторажесервицелоггингпроперти** для получения текущих параметров, а командлет **Set-азсторажесервицелоггингпроперти —** для изменения текущих параметров.  
 
  В командлетах, позволяющих управлять ведением журнала службы хранилища, используется параметр **LoggingOperations**, представляющий собой строку, содержащую разделенный запятыми список типов запросов, подлежащих занесению в журнал. Всего используются запросы трех типов — **чтение**, **запись** и **удаление**. Чтобы отключить ведение журнала, укажите для параметра **LoggingOperations** значение **none**.  
 
  Следующая команда включает занесение в журнал записей о запросах на чтение, запись и удаление службой очередей в учетной записи хранения по умолчанию, при этом устанавливается время хранения, равное пяти дням:  
 
 ```powershell
-Set-AzureStorageServiceLoggingProperty -ServiceType Queue -LoggingOperations read,write,delete -RetentionDays 5  
+Set-AzStorageServiceLoggingProperty -ServiceType Queue -LoggingOperations read,write,delete -RetentionDays 5  
 ```  
 
  Следующая команда отключает ведение журнала для службы таблиц в учетной записи по умолчанию:  
 
 ```powershell
-Set-AzureStorageServiceLoggingProperty -ServiceType Table -LoggingOperations none  
+Set-AzStorageServiceLoggingProperty -ServiceType Table -LoggingOperations none  
 ```  
 
  Дополнительные сведения о настройке командлетов Azure PowerShell для работы с подпиской Azure и о выборе учетной записи хранения по умолчанию см. в статье с [общими сведениями об Azure PowerShell](https://azure.microsoft.com/documentation/articles/install-configure-powershell/).  

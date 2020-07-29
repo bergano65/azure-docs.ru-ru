@@ -3,19 +3,19 @@ title: Мониторинг использования и производите
 description: Анализ использования и производительности классического приложения для Windows с помощью Application Insights.
 ms.topic: conceptual
 ms.date: 06/11/2020
-ms.openlocfilehash: ddb602536e1b8bbc987c4ba366e2007163c814ec
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 17613fc6cea24643c2b88182e7e56a1d216b2da8
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86499194"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323423"
 ---
 # <a name="monitoring-usage-and-performance-in-classic-windows-desktop-apps"></a>Мониторинг использования и производительности в классических приложениях для Windows
 
-Все приложения, размещенные на локальном компьютере, в Azure и в других облаках могут воспользоваться преимуществами Application Insights. Все, что нужно — это [разрешить обмен данными](../../azure-monitor/app/ip-addresses.md) со службой Application Insights. Для мониторинга приложений универсальной платформы Windows (UWP) мы рекомендуем использовать [Центр приложений Visual Studio](../../azure-monitor/learn/mobile-center-quickstart.md).
+Все приложения, размещенные на локальном компьютере, в Azure и в других облаках могут воспользоваться преимуществами Application Insights. Все, что нужно — это [разрешить обмен данными](./ip-addresses.md) со службой Application Insights. Для мониторинга приложений универсальной платформы Windows (UWP) мы рекомендуем использовать [Центр приложений Visual Studio](../learn/mobile-center-quickstart.md).
 
 ## <a name="to-send-telemetry-to-application-insights-from-a-classic-windows-application"></a>Отправка данных телеметрии в Application Insights из классического приложения для Windows
-1. На [портале Azure](https://portal.azure.com)[создайте ресурс Application Insights](../../azure-monitor/app/create-new-resource.md ). 
+1. На [портале Azure](https://portal.azure.com)[создайте ресурс Application Insights](./create-new-resource.md). 
 2. Сделайте копию ключа инструментирования.
 3. В Visual Studio измените пакеты NuGet вашего проекта приложения и добавьте Microsoft.ApplicationInsights.WindowsServer. (Или выберите Microsoft. ApplicationInsights, если нужен только базовый API, без стандартных модулей сбора данных телеметрии.)
 4. Задайте ключ инструментирования в коде.
@@ -27,7 +27,7 @@ ms.locfileid: "86499194"
     `<InstrumentationKey>`*Ваш ключ*`</InstrumentationKey>` 
    
     Если используется файл ApplicationInsights.config, убедитесь, что его свойства в обозревателе решений имеют следующие значения: **"Действие сборки = содержимое", "Копировать в выходной каталог = копировать"**.
-5. [Используйте API](../../azure-monitor/app/api-custom-events-metrics.md) для отправки данных телеметрии.
+5. [Используйте API](./api-custom-events-metrics.md) для отправки данных телеметрии.
 6. Запустите приложение и просмотрите данные телеметрии в ресурсе, созданном в портал Azure.
 
 ## <a name="example-code"></a><a name="telemetry"></a>Пример кода
@@ -175,7 +175,8 @@ namespace WindowsFormsApp2
 > Хотя вы можете использовать обработчик данных телеметрии, как описано выше, даже если вы используете [ценовую категорию устаревшего предприятия (на узел)](./pricing.md#legacy-enterprise-per-node-pricing-tier), это приведет к потенциальной оплате из-за невозможности правильного различения узлов для каждого узла.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Создание панели мониторинга](../../azure-monitor/app/overview-dashboard.md)
-* [Поиск по журналу диагностики](../../azure-monitor/app/diagnostic-search.md)
-* [Изучение метрик](../../azure-monitor/platform/metrics-charts.md)
+* [Создание панели мониторинга](./overview-dashboard.md)
+* [Поиск по журналу диагностики](./diagnostic-search.md)
+* [Изучение метрик](../platform/metrics-charts.md)
 * [Написание запросов аналитики](../log-query/log-query-overview.md)
+

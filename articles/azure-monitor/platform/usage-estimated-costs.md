@@ -8,19 +8,19 @@ ms.date: 10/28/2019
 ms.author: mbullwin
 ms.reviewer: Dale.Koetke
 ms.subservice: ''
-ms.openlocfilehash: 530ddf7af5b95cfec948270affbd13b6d61d08ff
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: eb96537f67c61fb31759da020068f784d0e89993
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87081446"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323406"
 ---
 # <a name="monitoring-usage-and-estimated-costs-in-azure-monitor"></a>Использование мониторинга и ожидаемые затраты в Azure Monitor
 
 > [!NOTE]
 > В этой статье описывается, как просматривать использование и оценивать затраты в нескольких функциях мониторинга Azure. Связанные статьи по конкретным компонентам Azure Monitor включают:
 > - [Управление использованием и затратами с помощью журналов Azure Monitor](manage-cost-storage.md) описывает управление затратами путем изменения срока хранения данных, а также анализ и оповещение об использовании данных.
-> - [Управление использованием и затратами Application Insights](../../azure-monitor/app/pricing.md) описывает анализ использования данных в Application Insights.
+> - [Управление использованием и затратами Application Insights](../app/pricing.md) описывает анализ использования данных в Application Insights.
 
 ## <a name="azure-monitor-pricing-model"></a>Модель ценообразования Azure Monitor
 
@@ -96,3 +96,4 @@ ms.locfileid: "87081446"
 > [!WARNING]
 > Если в вашей организации используется текущая Microsoft Operations Management Suite E1 и E2, лучше всего не допустить Log Analytics рабочих областей в ценовой категории "на узел (OMS)" и Application Insightsных ресурсах в ценовой категории "Корпоративный". 
 >
+

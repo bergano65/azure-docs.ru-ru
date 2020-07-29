@@ -2,15 +2,16 @@
 title: Публикация функции в Azure с помощью Java и Gradle
 description: Создание и публикация функции, активируемой по HTTP, в Azure с помощью Java и Gradle.
 author: KarlErickson
+ms.custom: devx-track-java
 ms.author: karler
 ms.topic: how-to
 ms.date: 04/08/2020
-ms.openlocfilehash: 906f3d45edef6180557c54f0ff29cd11a1c96fa3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ce2169838faaee8da459f80979fa31318e9d50c9
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87055659"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87322182"
 ---
 # <a name="use-java-and-gradle-to-create-and-publish-a-function-to-azure"></a>Использование Java и Gradle для создания и публикации функции в Azure
 
@@ -19,7 +20,7 @@ ms.locfileid: "87055659"
 > [!NOTE]
 > Если Gradle не является предпочтительным средством разработки, ознакомьтесь с аналогичными руководствами для разработчиков Java, используя [Maven](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-java), [IntelliJ идею](/azure/developer/java/toolkit-for-intellij/quickstart-functions) и [VS Code](./functions-create-first-function-vs-code.md?pivots=programming-language-java).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для разработки функций с помощью Java, должны быть установлены следующие компоненты:
 

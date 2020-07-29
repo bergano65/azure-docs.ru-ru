@@ -6,11 +6,12 @@ author: brahmnes
 ms.author: bfung
 ms.date: 03/07/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 194a2da23c8fb405c492df8f6ee173cc97fde4ec
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c1cc9893a309dcdf7ac575494d164052bb0c617c
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77671353"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325684"
 ---
 # <a name="enable-snapshot-debugger-for-net-apps-in-azure-service-fabric-cloud-service-and-virtual-machines"></a>Включение Snapshot Debugger для приложений .NET в Service Fabric, облачной службе и виртуальных машинах Azure
 
@@ -20,11 +21,11 @@ ms.locfileid: "77671353"
     
 ## <a name="configure-snapshot-collection-for-aspnet-applications"></a>Настройка сбора моментальных снимков для приложений
 
-1. [Включите Application Insights в веб-приложении](../../azure-monitor/app/asp-net.md), если вы еще не сделали это.
+1. [Включите Application Insights в веб-приложении](./asp-net.md), если вы еще не сделали это.
 
 2. Добавьте в приложение пакет NuGet [Microsoft.ApplicationInsights.SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector).
 
-3. При необходимости настроил конфигурацию Snapshot Debugger, добавленную в [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md). Конфигурация Snapshot Debugger по умолчанию в основном пуста, и все параметры являются необязательными. Ниже приведен пример, в котором показана конфигурация, эквивалентная конфигурации по умолчанию.
+3. При необходимости настроил конфигурацию Snapshot Debugger, добавленную в [ApplicationInsights.config](./configuration-with-applicationinsights-config.md). Конфигурация Snapshot Debugger по умолчанию в основном пуста, и все параметры являются необязательными. Ниже приведен пример, в котором показана конфигурация, эквивалентная конфигурации по умолчанию.
 
     ```xml
     <TelemetryProcessors>
@@ -58,12 +59,12 @@ ms.locfileid: "77671353"
     </TelemetryProcessors>
     ```
 
-4. Моментальные снимки собираются только для исключений, которые передаются в Application Insights. В некоторых случаях (например, в более старых версиях платформы .NET) может потребоваться [настроить сбор исключений](../../azure-monitor/app/asp-net-exceptions.md#exceptions), чтобы просматривать исключения с помощью моментальных снимков, которые отображаются на портале.
+4. Моментальные снимки собираются только для исключений, которые передаются в Application Insights. В некоторых случаях (например, в более старых версиях платформы .NET) может потребоваться [настроить сбор исключений](./asp-net-exceptions.md#exceptions), чтобы просматривать исключения с помощью моментальных снимков, которые отображаются на портале.
 
 
 ## <a name="configure-snapshot-collection-for-applications-using-aspnet-core-20-or-above"></a>Настройка сбора моментальных снимков для приложений, использующих ASP.NET Core 2,0 или более поздней версии
 
-1. [Включите Application Insights в веб-приложении ASP.NET Core](../../azure-monitor/app/asp-net-core.md), если вы еще не сделали это.
+1. [Включите Application Insights в веб-приложении ASP.NET Core](./asp-net-core.md), если вы еще не сделали это.
 
     > [!NOTE]
     > Убедитесь, что приложение ссылается на версию 2.1.1 или более позднюю версию пакета Microsoft.ApplicationInsights.AspNetCore.
@@ -150,7 +151,7 @@ ms.locfileid: "77671353"
 
 ## <a name="configure-snapshot-collection-for-other-net-applications"></a>Настройка сбора моментальных снимков для других приложений .NET
 
-1. Если приложение все еще не инструментировано с помощью Application Insights, начните с [включения Application Insights и установки ключа инструментирования](../../azure-monitor/app/windows-desktop.md).
+1. Если приложение все еще не инструментировано с помощью Application Insights, начните с [включения Application Insights и установки ключа инструментирования](./windows-desktop.md).
 
 2. Добавьте в приложение пакет NuGet [Microsoft.ApplicationInsights.SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector).
 
@@ -174,8 +175,9 @@ ms.locfileid: "77671353"
    }
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Создание трафика для приложения, которое может вызвать исключение. Затем подождите 10 – 15 минут, чтобы моментальные снимки отправлялись на экземпляр Application Insights.
 - См. раздел [моментальные снимки](snapshot-debugger.md?toc=/azure/azure-monitor/toc.json#view-snapshots-in-the-portal) в портал Azure.
 - Справку по устранению неполадок Snapshot Debugger см. в разделе [snapshot Debugger устранение неполадок](snapshot-debugger-troubleshoot.md?toc=/azure/azure-monitor/toc.json).
+

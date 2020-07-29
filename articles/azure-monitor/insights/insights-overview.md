@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/22/2019
-ms.openlocfilehash: ecd66500fdf968a773d3bc4f3d93363bfe86c763
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: e3eefb97c85b3865abbf116b9912dc45f6db8ce8
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836045"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326874"
 ---
 # <a name="overview-of-insights-in-azure-monitor"></a>Общие сведения об аналитике в Azure Monitor
 Службы аналитики предоставляют настраиваемый интерфейс для мониторинга конкретных приложений и служб. Средства аналитики сохраняют данные на [платформе данных Azure Monitor](../platform/data-platform.md) и используют другие функции Azure Monitor для анализа и оповещений, а также могут собирать дополнительные данные и создавать уникальный интерфейс взаимодействия на портале Azure. Эти средства доступны в разделе **Аналитика** в меню Azure Monitor на портале Azure.
@@ -28,14 +29,14 @@ Application Insights — это расширяемая служба управл
 ## <a name="azure-monitor-for-containers"></a>Azure Monitor для контейнеров
 Azure Monitor для контейнеров отслеживает производительность рабочих нагрузок контейнеров, развернутых в службе "Экземпляры контейнеров Azure" или на управляемых кластерах Kubernetes в Службе Azure Kubernetes (AKS). Мониторинг контейнеров крайне важен, особенно если вы управляете рабочим кластером в нужном масштабе с несколькими приложениями.
 
-См. статью [Обзор службы "Azure Monitor для контейнеров"](../insights/container-insights-overview.md).
+См. статью [Обзор службы "Azure Monitor для контейнеров"](./container-insights-overview.md).
 
 ![Azure Monitor для контейнеров](media/insights-overview/container-insights.png)
 
 ## <a name="azure-monitor-for-resource-groups-preview"></a>Azure Monitor для групп ресурсов (предварительная версия)
 Azure Monitor для групп ресурсов упрощает рассмотрение и диагностику любых проблем, с которыми сталкиваются отдельные ресурсы, а также предоставляется контекст относительно работоспособности и производительности группы ресурсов в целом.
 
-См. статью [Мониторинг групп ресурсов с помощью Azure Monitor (предварительная версия)](../insights/resource-group-insights.md).
+См. статью [Мониторинг групп ресурсов с помощью Azure Monitor (предварительная версия)](./resource-group-insights.md).
 
 ![Azure Monitor для групп ресурсов](media/insights-overview/resource-group-insights.png)
 
@@ -54,3 +55,4 @@ Azure Monitor для виртуальных машин отслеживает в
 ## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [платформе данных Azure Monitor](../platform/data-platform.md), используемой средствами аналитики.
 * Изучите сведения об [источниках данных, используемых Azure Monitor](../platform/data-sources.md) и узнайте, какие типы данных собираются каждым средством аналитики.
+

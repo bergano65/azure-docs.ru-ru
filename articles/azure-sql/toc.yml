@@ -78,6 +78,8 @@
                   href: database/authentication-mfa-ssms-configure.md
                 - name: Условный доступ
                   href: database/conditional-access-configure.md
+                - name: Субъекты-службы (приложения)
+                  href: database/authentication-aad-service-principal.md
             - name: Прозрачное шифрование данных (TDE)
               items:
                 - name: Обзор
@@ -141,6 +143,8 @@
               href: database/long-term-backup-retention-configure.md
         - name: Безопасность
           items:
+            - name: Создание гостевых пользователей Azure AD и предоставление им прав администратора Azure AD
+              href: database/authentication-aad-guest-users.md
             - name: Настройка BYOK для TDE
               href: database/transparent-data-encryption-byok-configure.md
             - name: Хранение результатов проверок уязвимостей в хранилище
@@ -277,6 +281,8 @@
               href: database/transparent-data-encryption-byok-key-rotation.md
             - name: Удаление предохранителя TDE
               href: database/transparent-data-encryption-byok-remove-tde-protector.md
+            - name: Создание пользователей с помощью субъектов-служб
+              href: database/authentication-aad-service-principal-tutorial.md
         - name: Перенос данных
           items:
             - name: Миграция с помощью DMS
@@ -849,7 +855,7 @@
           href: managed-instance/alerts-create.md
     - name: Примеры
       items:
-        - name: Azure CLI;
+        - name: Azure CLI
           href: database/az-cli-script-samples-content-guide.md?tabs=managed-instance
         - name: Azure PowerShell
           href: database/powershell-script-content-guide.md?tabs=managed-instance

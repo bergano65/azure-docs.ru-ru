@@ -8,13 +8,15 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 02/01/2020
-ms.custom: mqtt
-ms.openlocfilehash: 1f61748a0a0d3d999670b6129e0e58758715ba3b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom:
+- mqtt
+- 'Role: Cloud Development'
+ms.openlocfilehash: 4887315ddef3f15ee3f6ef5ad80cf8df8b1dcd34
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85601859"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87327775"
 ---
 # <a name="understand-and-use-device-twins-in-iot-hub"></a>Общие сведения о двойниках устройств и их использование в Центре Интернета вещей
 
@@ -199,7 +201,7 @@ ms.locfileid: "85601859"
 
   - Текст
         
-    Этот раздел содержит все изменения двойника в формате JSON. Он использует тот же формат, что и исправление. разница заключается в том, что он может содержать все разделы двойника: Теги, Properties. reсообщаемые, Properties. и что содержит элементы "$metadata". Например,
+    Этот раздел содержит все изменения двойника в формате JSON. Он использует тот же формат, что и исправление. разница заключается в том, что он может содержать все разделы двойника: Теги, Properties. reсообщаемые, Properties. и что содержит элементы "$metadata". например следующие.
 
     ```json
     {
@@ -394,7 +396,7 @@ ms.locfileid: "85601859"
 
 * В статье [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md) приведены дополнительные сведения о поддержке протокола MQTT в Центре Интернета вещей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали о двойниках устройств, вас могут заинтересовать следующие статьи руководства разработчика для Центра Интернета вещей:
 

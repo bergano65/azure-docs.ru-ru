@@ -5,17 +5,18 @@ description: Узнайте, как лучше использовать свои
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
 ms.author: sihhu
 author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 03/09/2020
-ms.custom: tracking-python
-ms.openlocfilehash: e0b2d7abb378a6717eb4444882ede54debdb5968
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.topic: conceptual
+ms.custom: how-to, tracking-python
+ms.openlocfilehash: 58458c4a4e5ff1317ef740208a7d7ff9f6fa925c
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84555629"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325752"
 ---
 # <a name="version-and-track-datasets-in-experiments"></a>Версии и отслеживание наборов данных в экспериментах
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -27,7 +28,7 @@ ms.locfileid: "84555629"
 * Когда новые данные доступны для повторного обучения
 * При применении различных подходов к подготовке данных или проектированию компонентов
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
@@ -188,7 +189,7 @@ model = run.register_model(model_name='keras-mlp-mnist',
 
 ![Модели входных наборов данных](./media/how-to-version-track-datasets/dataset-models.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обучение с наборами данных](how-to-train-with-datasets.md)
 * [Дополнительные образцы набора данных записные книжки](https://aka.ms/dataset-tutorial)

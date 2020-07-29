@@ -3,19 +3,19 @@ title: Просмотр журналов трассировки .NET в Applicat
 description: Поиск в журналах, созданных с помощью Trace, Log4Net или NLog.
 ms.topic: conceptual
 ms.date: 05/08/2019
-ms.openlocfilehash: aad81855b58ee96789d097fbfbd3e7f9b17f6900
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c192ae8fad6cf463af892018fcac385b3bdcd345
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87014581"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321332"
 ---
 # <a name="explore-netnet-core-and-python-trace-logs-in-application-insights"></a>Просмотр журналов трассировки Python, .NET или .NET Core в Application Insights
 
 Отправьте диагностические журналы трассировки для приложения ASP.NET или ASP.NET Core из ILogger, NLog, log4Net или System.Diagnostics.Trace в [Azure Application Insights][start]. Для приложений Python отправьте журналы трассировки диагностики с помощью AzureLogHandler в OpenCensus Python для Azure Monitor. После этого их можно просматривать и выполнять по ним поиск. Эти журналы объединяются с другими файлами журналов из вашего приложения, поэтому вы можете выявлять трассировки, связанные с каждым запросом пользователя, и сопоставлять их с другими событиями и отчетами об исключениях.
 
 > [!NOTE]
-> Требуется модуль записи журнала? Это полезный адаптер для средств ведения журнала сторонних поставщиков, но если вы еще не используете NLog, log4Net или System.Diagnostics.Trace, рассмотрите возможность вызова метода [**TrackTrace() компонента Application Insights**](../../azure-monitor/app/api-custom-events-metrics.md#tracktrace) напрямую.
+> Требуется модуль записи журнала? Это полезный адаптер для средств ведения журнала сторонних поставщиков, но если вы еще не используете NLog, log4Net или System.Diagnostics.Trace, рассмотрите возможность вызова метода [**TrackTrace() компонента Application Insights**](./api-custom-events-metrics.md#tracktrace) напрямую.
 >
 >
 ## <a name="install-logging-on-your-app"></a>Установка ведения журнала в приложении
@@ -34,7 +34,7 @@ ms.locfileid: "87014581"
 ```
 
 ## <a name="configure-application-insights-to-collect-logs"></a>Настройка Application Insights для сбора журналов
-[Добавьте Application Insights в свой проект](../../azure-monitor/app/asp-net.md), если вы еще этого не сделали. Вы увидите параметр для включения сборщика журналов.
+[Добавьте Application Insights в свой проект](./asp-net.md), если вы еще этого не сделали. Вы увидите параметр для включения сборщика журналов.
 
 Или в Обозревателе решений щелкните проект правой кнопкой мыши и выберите **Настроить Application Insights**. Выберите параметр **Настроить сбор трассировок**.
 
@@ -84,7 +84,7 @@ System.Diagnostics.Trace.TraceWarning("Slow response - database01");
 ```
 
 ## <a name="use-eventsource-events"></a>Использование событий EventSource
-Можно настроить отправку событий [System.Diagnostics.Tracing.EventSource](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1) в Application Insights в виде трассировок. Сначала установите пакет NuGet `Microsoft.ApplicationInsights.EventSourceListener`. Затем измените раздел `TelemetryModules` файла [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md).
+Можно настроить отправку событий [System.Diagnostics.Tracing.EventSource](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1) в Application Insights в виде трассировок. Сначала установите пакет NuGet `Microsoft.ApplicationInsights.EventSourceListener`. Затем измените раздел `TelemetryModules` файла [ApplicationInsights.config](./configuration-with-applicationinsights-config.md).
 
 ```xml
     <Add Type="Microsoft.ApplicationInsights.EventSourceListener.EventSourceTelemetryModule, Microsoft.ApplicationInsights.EventSourceListener">
@@ -100,7 +100,7 @@ System.Diagnostics.Trace.TraceWarning("Slow response - database01");
  * **Keywords** (необязательный параметр) задает целочисленное значение используемых комбинаций ключевых слов.
 
 ## <a name="use-diagnosticsource-events"></a>Использование событий DiagnosticSource
-Можно настроить отправку событий [System.Diagnostics.DiagnosticSource](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md) в Application Insights в виде трассировок. Сначала установите пакет NuGet [`Microsoft.ApplicationInsights.DiagnosticSourceListener`](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DiagnosticSourceListener). Затем измените раздел TelemetryModules файла [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md).
+Можно настроить отправку событий [System.Diagnostics.DiagnosticSource](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md) в Application Insights в виде трассировок. Сначала установите пакет NuGet [`Microsoft.ApplicationInsights.DiagnosticSourceListener`](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DiagnosticSourceListener). Затем измените раздел TelemetryModules файла [ApplicationInsights.config](./configuration-with-applicationinsights-config.md).
 
 ```xml
     <Add Type="Microsoft.ApplicationInsights.DiagnosticSourceListener.DiagnosticSourceTelemetryModule, Microsoft.ApplicationInsights.DiagnosticSourceListener">
@@ -113,7 +113,7 @@ System.Diagnostics.Trace.TraceWarning("Slow response - database01");
 Для каждого объекта DiagnosticSource, трассировку которого необходимо выполнять, добавьте запись с атрибутом **Name**, которому присвоено имя DiagnosticSource.
 
 ## <a name="use-etw-events"></a>Использование событий трассировки событий Windows
-Можно настроить отправку событий трассировки событий Windows (ETW) в Application Insights в качестве трассировок. Сначала установите пакет NuGet `Microsoft.ApplicationInsights.EtwCollector`. Затем измените раздел TelemetryModules файла [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md).
+Можно настроить отправку событий трассировки событий Windows (ETW) в Application Insights в качестве трассировок. Сначала установите пакет NuGet `Microsoft.ApplicationInsights.EtwCollector`. Затем измените раздел TelemetryModules файла [ApplicationInsights.config](./configuration-with-applicationinsights-config.md).
 
 > [!NOTE] 
 > События трассировки событий Windows можно собирать только в том случае, если процесс, в котором размещен пакет SDK, выполняется с удостоверением, которое является членом группы "Пользователи журналов производительности" или "Администраторы".
@@ -158,7 +158,7 @@ telemetry.TrackTrace("Slow response - database01");
 ## <a name="azureloghandler-for-opencensus-python"></a>AzureLogHandler для OpenCensus Python
 Azure Monitor Log Handler позволяет экспортировать журналы Python в Azure Monitor.
 
-Инструментируйте приложение с помощью [пакета SDK OpenCensus Python](../../azure-monitor/app/opencensus-python.md) для Azure Monitor.
+Инструментируйте приложение с помощью [пакета SDK OpenCensus Python](./opencensus-python.md) для Azure Monitor.
 
 В этом примере показано, как отправить журнал уровня предупреждений в Azure Monitor.
 
@@ -185,14 +185,14 @@ logger.warning('Hello, World!')
 * сохранять конфигурацию страницы в списке избранного.
 
 > [!NOTE]
->Если ваше приложение выполняет отправку больших объемов данных, а вы используете пакет SDK Application Insights для ASP.NET версии 2.0.0-beta3 или более поздней, может сработать функция *адаптивной выборки*, которая отправит только часть данных телеметрии. [Дополнительная информация о выборке.](../../azure-monitor/app/sampling.md)
+>Если ваше приложение выполняет отправку больших объемов данных, а вы используете пакет SDK Application Insights для ASP.NET версии 2.0.0-beta3 или более поздней, может сработать функция *адаптивной выборки*, которая отправит только часть данных телеметрии. [Дополнительная информация о выборке.](./sampling.md)
 >
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 ### <a name="how-do-i-do-this-for-java"></a>Как это сделать в Java?
 В инструментировании Java без программирования (рекомендуется) журналы собираются без каких-либо дополнительных настроек при использовании [агента Java 3.0](./java-in-process-agent.md).
 
-Если вы используете пакет SDK для Java, воспользуйтесь [адаптерами журналов Java](../../azure-monitor/app/java-trace-logs.md).
+Если вы используете пакет SDK для Java, воспользуйтесь [адаптерами журналов Java](./java-trace-logs.md).
 
 ### <a name="theres-no-application-insights-option-on-the-project-context-menu"></a>В контекстном меню проекта нет пункта для Application Insights
 * Убедитесь, что на компьютере, на котором ведется разработка, установлено расширение Developer Analytics Tools. В Visual Studio выберите **Сервис** > **Расширения и обновления** и найдите **Developer Analytics Tools**. Если этого расширения нет на вкладке **Установленные**, перейдите на вкладку **В сети** и установите их.
@@ -210,10 +210,10 @@ logger.warning('Hello, World!')
 Для получения всех событий и запросов через конвейер может потребоваться некоторое время.
 
 ### <a name="how-much-data-is-retained"></a><a name="limits"></a>Какой объем данных сохраняется?
-Объем хранящихся данных зависит от нескольких факторов. Дополнительные сведения см. на странице метрик событий клиента в разделе [ограничений](../../azure-monitor/app/api-custom-events-metrics.md#limits).
+Объем хранящихся данных зависит от нескольких факторов. Дополнительные сведения см. на странице метрик событий клиента в разделе [ограничений](./api-custom-events-metrics.md#limits).
 
 ### <a name="i-dont-see-some-log-entries-that-i-expected"></a>Некоторые ожидаемые записи журнала не отображаются
-Если ваше приложение выполняет отправку больших объемов данных, а вы используете пакет SDK Application Insights для ASP.NET версии 2.0.0-beta3 или более поздней, может сработать функция адаптивной выборки, которая отправит только часть данных телеметрии. [Дополнительная информация о выборке.](../../azure-monitor/app/sampling.md)
+Если ваше приложение выполняет отправку больших объемов данных, а вы используете пакет SDK Application Insights для ASP.NET версии 2.0.0-beta3 или более поздней, может сработать функция адаптивной выборки, которая отправит только часть данных телеметрии. [Дополнительная информация о выборке.](./sampling.md)
 
 ## <a name="next-steps"></a><a name="add"></a>Следующие шаги
 
@@ -224,9 +224,10 @@ logger.warning('Hello, World!')
 
 <!--Link references-->
 
-[availability]: ../../azure-monitor/app/monitor-web-app-availability.md
-[diagnostic]: ../../azure-monitor/app/diagnostic-search.md
+[availability]: ./monitor-web-app-availability.md
+[diagnostic]: ./diagnostic-search.md
 [exceptions]: asp-net-exceptions.md
 [portal]: https://portal.azure.com/
 [qna]: ../faq.md
-[start]: ../../azure-monitor/app/app-insights-overview.md
+[start]: ./app-insights-overview.md
+

@@ -1,6 +1,5 @@
 ---
-title: Включить ведение журнала веб-службы
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): Включение ведения журнала веб-службы в Azure'
 description: Узнайте, как включить ведение журнала для веб-служб Машинное обучение Studio (классическая модель). Функция ведения журналов предоставляет дополнительные сведения по устранению неполадок API-интерфейсов.
 services: machine-learning
 author: likebupt
@@ -11,13 +10,17 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: how-to
 ms.date: 06/15/2017
-ms.openlocfilehash: 71516641ab5110511d58f7e453759271aff9885a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: baaad137e4a5bc5268642addb5779961b7be3b04
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84705837"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326245"
 ---
 # <a name="enable-logging-for-azure-machine-learning-studio-classic-web-services"></a>Включение ведения журнала для веб-служб Машинное обучение Azure Studio (классическая модель)
+
+**применимо к:** ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-azure-ml.md) ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) 
+
 
 В этом документе содержатся сведения о возможности ведения журнала в веб-службах Машинное обучение Studio (классическая модель). Ведение журнала предоставляет дополнительные сведения, кроме номера ошибки и сообщения, которые могут помочь при устранении неполадок при вызове API-интерфейсов Машинное обучение Studio (классическая модель).  
 
@@ -41,7 +44,7 @@ ms.locfileid: "84705837"
 
    ![Выбор уровня ведения журнала](./media/web-services-logging/enable-logging.png)
 
-6. Нажмите кнопку **Сохранить**.
+6. Щелкните **Сохранить**.
 
 7. Для классических веб-служб создайте контейнер **ml-diagnostics**.
 
@@ -49,7 +52,7 @@ ms.locfileid: "84705837"
 
    1. На [портале Azure](https://portal.azure.com) перейдите в учетную запись хранения, связанную с веб-службой.
 
-   2. В колонке **Служба BLOB-объектов** щелкните **Контейнеры**.
+   2. В разделе **Служба BLOB-объектов**щелкните **контейнеры**.
 
    3. Если контейнер **ml-diagnostics** не существует, щелкните **+Контейнер**, присвойте контейнеру имя ml-diagnostics и выберите **Тип доступа** "BLOB-объект". Нажмите кнопку **ОК**.
 

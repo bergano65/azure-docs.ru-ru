@@ -3,12 +3,12 @@ title: Application Insights для приложений службы рабоч�
 description: Мониторинг приложений .NET Core/. NET Framework, отличных от HTTP, с Azure Monitor Application Insights.
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: 7ae146c6c010f067973c9fbae4c90bd1116d7c21
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: d429a1e0515d24d1c9953af7815dadf2488be302
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86499211"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325412"
 ---
 # <a name="application-insights-for-worker-service-applications-non-http-applications"></a>Application Insights для приложений службы рабочей роли (приложений, отличных от HTTP)
 
@@ -121,9 +121,9 @@ Application Insights выпускает новый пакет SDK с имене�
 ```
 
 Кроме того, можно указать ключ инструментирования в любой из следующих переменных среды.
-`APPINSIGHTS_INSTRUMENTATIONKEY` либо `ApplicationInsights:InstrumentationKey`
+`APPINSIGHTS_INSTRUMENTATIONKEY` или `ApplicationInsights:InstrumentationKey`
 
-Например: `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
+Пример: `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
 НИ`SET APPINSIGHTS_INSTRUMENTATIONKEY=putinstrumentationkeyhere`
 
 Как правило, `APPINSIGHTS_INSTRUMENTATIONKEY` указывает ключ инструментирования для приложений, развернутых в веб-приложениях в виде веб-заданий.
@@ -542,7 +542,8 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Используйте API](../../azure-monitor/app/api-custom-events-metrics.md) для отправки собственных событий и метрик для получения подробного представления о производительности и использовании приложения.
-* [Следите за автоматической](../../azure-monitor/app/auto-collect-dependencies.md)отслеживанием дополнительных зависимостей.
-* [Расширить или отфильтровать автоматические собираемые данные телеметрии](../../azure-monitor/app/api-filtering-sampling.md).
+* [Используйте API](./api-custom-events-metrics.md) для отправки собственных событий и метрик для получения подробного представления о производительности и использовании приложения.
+* [Следите за автоматической](./auto-collect-dependencies.md)отслеживанием дополнительных зависимостей.
+* [Расширить или отфильтровать автоматические собираемые данные телеметрии](./api-filtering-sampling.md).
 * [Внедрение зависимостей в ASP.NET Core](/aspnet/core/fundamentals/dependency-injection).
+

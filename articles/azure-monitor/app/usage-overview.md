@@ -3,24 +3,24 @@ title: Анализ использования с помощью Azure Applicati
 description: Получение сведений о пользователях и их действиях с веб-приложением.
 ms.topic: conceptual
 ms.date: 03/25/2019
-ms.openlocfilehash: 1acc803d66bef29a77266d4e38e1605ffd75f36f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: bd0b95fe92171d2c5a1515941dbf86a0e31e04be
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87014071"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323559"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Анализ использования с помощью Application Insights
 
-Какие функции веб-приложения или мобильного приложения наиболее популярны? Достигают ли пользователи своих целей с помощью вашего приложения? Уходят ли они в определенные моменты и возвращаются ли после этого?  [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) помогает получить важные сведения о том, как люди используют ваше приложение. Каждый раз, обновив приложение, можно оценить, насколько хорошо оно подходит пользователям. Обладая такими сведениями, можно принять решения на основе данных по дальнейшим циклам разработки.
+Какие функции веб-приложения или мобильного приложения наиболее популярны? Достигают ли пользователи своих целей с помощью вашего приложения? Уходят ли они в определенные моменты и возвращаются ли после этого?  [Azure Application Insights](./app-insights-overview.md) помогает получить важные сведения о том, как люди используют ваше приложение. Каждый раз, обновив приложение, можно оценить, насколько хорошо оно подходит пользователям. Обладая такими сведениями, можно принять решения на основе данных по дальнейшим циклам разработки.
 
 ## <a name="send-telemetry-from-your-app"></a>Отправка телеметрии из приложения
 
 Максимальное удобство работы достигается путем установки Application Insights как в серверном коде приложения, так и на веб-страницах. Клиентские и серверные компоненты приложения отправляют данные телеметрии на портал Azure для анализа.
 
-1. **Серверный код.** Установите соответствующий модуль для своего приложения [ASP.NET](../../azure-monitor/app/asp-net.md), [Azure](../../azure-monitor/app/app-insights-overview.md), [Java](../../azure-monitor/app/java-get-started.md), [Node.js](../../azure-monitor/app/nodejs.md) или приложения [иного типа](../../azure-monitor/app/platforms.md).
+1. **Серверный код.** Установите соответствующий модуль для своего приложения [ASP.NET](./asp-net.md), [Azure](./app-insights-overview.md), [Java](./java-get-started.md), [Node.js](./nodejs.md) или приложения [иного типа](./platforms.md).
 
-    * *Не хотите устанавливать серверный код? Просто [создайте ресурс Azure Application Insights](../../azure-monitor/app/create-new-resource.md ).*
+    * *Не хотите устанавливать серверный код? Просто [создайте ресурс Azure Application Insights](./create-new-resource.md).*
 
 2. **Код веб-страницы.** Добавьте следующий скрипт на веб-страницу перед закрывающим тегом ``</head>``. Замените ключ инструментирования на подходящее значение для ресурса Application Insights.
     
@@ -36,7 +36,7 @@ ms.locfileid: "87014071"
 
     Чтобы узнать о более сложных настройках для мониторинга веб-сайтов, ознакомьтесь со статьей [о работе с пакетом SDK для JavaScript](./javascript.md).
 
-3. **Код мобильного приложения.** Используйте пакет SDK для Центра приложений, чтобы собирать события из приложения, а затем отправлять копии этих событий в Application Insights для анализа, следуя инструкциям в [этом руководстве](../../azure-monitor/learn/mobile-center-quickstart.md).
+3. **Код мобильного приложения.** Используйте пакет SDK для Центра приложений, чтобы собирать события из приложения, а затем отправлять копии этих событий в Application Insights для анализа, следуя инструкциям в [этом руководстве](../learn/mobile-center-quickstart.md).
 
 4. **Получение данных телеметрии.** Запустите проект в режиме отладки на несколько минут, а затем просмотрите результаты в колонке "Обзор" в Application Insights.
 
@@ -103,7 +103,7 @@ ms.locfileid: "87014071"
 
 В эти события можно вложить значения свойств, чтобы события можно было фильтровать или разделять при изучении на портале. Кроме того, в каждое событие вкладывается стандартный набор свойств, например идентификатор анонимного пользователя, который позволяет выполнять трассировку последовательности действий отдельного пользователя.
 
-Узнайте больше о [пользовательских событиях](../../azure-monitor/app/api-custom-events-metrics.md#trackevent) и [свойствах](../../azure-monitor/app/api-custom-events-metrics.md#properties).
+Узнайте больше о [пользовательских событиях](./api-custom-events-metrics.md#trackevent) и [свойствах](./api-custom-events-metrics.md#properties).
 
 ### <a name="slice-and-dice-events"></a>Анализ событий
 
@@ -121,7 +121,7 @@ ms.locfileid: "87014071"
 
 Чтобы сравнить различные версии, на портале Application Insights можно отфильтровать и разделить данные по значениям свойств.
 
-Для этого следует [настроить инициализатор телеметрии](../../azure-monitor/app/api-filtering-sampling.md#addmodify-properties-itelemetryinitializer).
+Для этого следует [настроить инициализатор телеметрии](./api-filtering-sampling.md#addmodify-properties-itelemetryinitializer).
 
 **Приложения ASP.NET**
 
@@ -175,5 +175,6 @@ ms.locfileid: "87014071"
    - [Воронки](usage-funnels.md)
    - [Сохранение](usage-retention.md)
    - [Средство "Маршруты пользователей"](usage-flows.md)
-   - [книги](../../azure-monitor/platform/workbooks-overview.md)
+   - [книги](../platform/workbooks-overview.md)
    - [Добавление контекста пользователей](usage-send-user-context.md)
+

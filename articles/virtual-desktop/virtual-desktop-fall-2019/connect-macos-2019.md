@@ -1,6 +1,6 @@
 ---
-title: Подключение к виртуальному рабочему столу Windows — 2019 из macOS — Azure
-description: Как подключиться к виртуальному рабочему столу Windows с помощью клиента macOS.
+title: Подключение к виртуальному рабочему столу Windows (классическая модель) из macOS — Azure
+description: Как подключиться к виртуальному рабочему столу Windows (классическая модель) с помощью клиента macOS.
 services: virtual-desktop
 author: heidilohr
 ms.service: virtual-desktop
@@ -8,19 +8,19 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 1d8f9e3a5f4c529e3574be7dbeae8bd385f85367
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a4aac80f7e4ef93b6503398c225b2aeffe566dbe
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087113"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87270572"
 ---
-# <a name="connect-with-the-macos-client"></a>Подключение с помощью клиента macOS
+# <a name="connect-to-windows-virtual-desktop-classic-with-the-macos-client"></a>Подключение к виртуальному рабочему столу Windows (классическая модель) с помощью клиента macOS
 
 > Применимо к: macOS 10,12 или более поздней версии
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../connect-macos.md).
+>Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../connect-macos.md).
 
 Доступ к ресурсам виртуальных рабочих столов Windows с устройств macOS можно получить с помощью скачиваемого клиента. В этом руководство вы узнаете, как настроить клиент.
 

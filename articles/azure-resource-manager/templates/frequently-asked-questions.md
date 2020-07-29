@@ -2,15 +2,15 @@
 title: Часто задаваемые вопросы о шаблоне ARM
 description: Часто задаваемые вопросы о шаблонах Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 05/30/2020
+ms.date: 07/27/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: fb4bac00c4d971e7b056c18fe609d77b077dbcbb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e23334daf0f4f6d5a6917af49c786d47c4557375
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85296871"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87327265"
 ---
 # <a name="frequently-asked-questions-about-arm-templates"></a>Часто задаваемые вопросы о шаблонах ARM
 
@@ -48,7 +48,7 @@ ms.locfileid: "85296871"
 
   Чтобы узнать о новом языке шаблона, [Зарегистрируйтесь для получения уведомлений](https://aka.ms/armLangUpdates).
 
-  Для получения предварительной версии спецификации шаблона [присоединитесь к списку ожидания](https://aka.ms/templateSpecsWaitlist).
+  Дополнительные сведения о спецификациях шаблонов см. в разделе [спецификации шаблонов Azure Resource Manager (Предварительная версия)](template-specs.md).
 
 ## <a name="creating-and-testing-templates"></a>Создание и тестирование шаблонов
 
@@ -64,7 +64,7 @@ ms.locfileid: "85296871"
 
 * **Можно ли создать группу ресурсов в шаблоне ARM и развернуть в ней ресурсы?**
 
-  Да, вы можете создать группу ресурсов в шаблоне при развертывании шаблона на уровне подписки Azure. Пример создания группы ресурсов и развертывания ресурсов см. в разделе [Группа ресурсов и ресурсы](deploy-to-subscription.md#resource-group-and-resources).
+  Да, вы можете создать группу ресурсов в шаблоне при развертывании шаблона на уровне подписки Azure. Пример создания группы ресурсов и развертывания ресурсов см. в разделе [Группа ресурсов и ресурсы](deploy-to-subscription.md#resource-groups).
 
 * **Можно ли создать подписку в шаблоне ARM?**
 
@@ -188,6 +188,6 @@ ms.locfileid: "85296871"
 
   Да, см. статью [Развертывание шаблонов Azure Resource Manager с помощью действий GitHub](deploy-github-actions.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие сведения о шаблонах ARM см. в статье [что такое шаблоны ARM?](overview.md).

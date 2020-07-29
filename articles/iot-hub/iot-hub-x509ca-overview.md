@@ -8,11 +8,16 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 09/18/2017
 ms.author: eustacea
-ms.openlocfilehash: cce3a0e6993ea91236a3ce8c8b14eb6c66f72ad1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom:
+- 'Role: Cloud Development'
+- 'Role: IoT Device'
+- 'Role: System Architecture'
+ms.openlocfilehash: 33c878b2af64a72212a8aac060e9ccac83b79a53
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84717806"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326517"
 ---
 # <a name="device-authentication-using-x509-ca-certificates"></a>Проверка подлинности устройства с помощью сертификатов ЦС X.509
 
@@ -27,7 +32,7 @@ ms.locfileid: "84717806"
 
 Возможность использования ЦС X.509 позволяет выполнять проверку подлинности устройства в Центре Интернета вещей с помощью центра сертификации (ЦС). Это значительно упрощает процесс регистрации устройств и логистику цепочки поставок во время изготовления устройства. Дополнительные сведения об использовании сертификатов ЦС X.509 для проверки подлинности устройств см. в статье [Conceptual understanding of X.509 CA certificates in the IoT industry](iot-hub-x509ca-concept.md) (Общие сведения о сертификатах ЦС X.509 в Центре Интернета вещей).  Мы рекомендуем ознакомиться с этой статьей, прежде чем продолжить, так как в ней объясняется, почему существуют описанные ниже шаги.
 
-## <a name="prerequisite"></a>Предварительное требование
+## <a name="prerequisite"></a>Предварительные требования
 
 Чтобы использовать возможность ЦС X.509, требуется учетная запись Центра Интернета вещей.  [Узнайте, как создать экземпляр Центра Интернета вещей](quickstart-send-telemetry-dotnet.md), если он еще не создан.
 
@@ -79,7 +84,7 @@ ms.locfileid: "84717806"
 
 Дополнительные сведения о завершении подключения устройства см. в [этой статье](iot-hub-security-x509-get-started.md#authenticate-your-x509-device-with-the-x509-certificates).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Узнайте о [значении проверки подлинности на основе ЦС X.509 в Центре Интернета вещей](iot-hub-x509ca-concept.md).
 

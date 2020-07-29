@@ -12,12 +12,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: a7fab9515051180fdb1b894602478768a60177ef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fd0057c5f5e365d6c91ae221a7add813855bb1ec
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85362063"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323593"
 ---
 # <a name="onboarding-and-installing"></a>Подключение и установка
 
@@ -42,7 +42,7 @@ ms.locfileid: "85362063"
 
 Если у вас нет одного из упомянутых выше соглашений о поддержке, вы можете приобрести расширение у одного из наших партнеров.
 
-**Дальнейшие действия:**
+**Следующие шаги**.
 
 Если вы удовлетворены приведенными выше квалификациями, обратитесь к партнеру из списка ниже, чтобы приобрести расширение Microsoft Security Code Analysis. В противном случае обратитесь в [службу поддержки анализа кода безопасности Майкрософт](mailto:mscahelp@microsoft.com?Subject=Microsoft%20Security%20Code%20Analysis%20Support%20Request).
 
@@ -50,7 +50,7 @@ ms.locfileid: "85362063"
 
 - Зоны — контактные данные:cloudsupport@zones.com
 - Вортелл — контактные данные:info@wortell.nl
-- Логическое, контактные данные:Matthew.Curtis@us.logicalis.com 
+- Логическое, контактные данные:logicalisleads@us.logicalis.com
 
 ### <a name="become-a-partner"></a>Стать партнером
 
@@ -92,7 +92,7 @@ ms.locfileid: "85362063"
 > - Некоторые задачи сборки Azure DevOps не поддерживаются при выполнении через конвейер выпуска. В частности, Azure DevOps не поддерживает задачи, которые публикуют артефакты из конвейера выпуска.
 > - Список стандартных переменных в Azure DevOps Team Build, которые можно указать в качестве параметров, см. в статье [переменные сборки DevOps Azure](https://docs.microsoft.com/azure/devops/pipelines/build/variables?tabs=batch&view=vsts).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о настройке задач сборки см. в нашем [руководству по настройке](security-code-analysis-customize.md) или [YAML](yaml-configuration.md).
 

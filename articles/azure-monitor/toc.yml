@@ -1020,6 +1020,10 @@
           href: insights/resource-group-insights.md
         - name: Устранение неполадок при использовании аналитических сведений
           href: insights/troubleshoot-workbooks.md
+    - name: Анализ изменений
+      items:
+        - name: Анализ изменений
+          href: app/change-analysis.md
     - name: Решения
       items:
         - name: Обзор
@@ -1073,30 +1077,6 @@
               href: insights/vmware.md
             - name: Решение Wire Data
               href: insights/wire-data.md
-        - name: Представления
-          items:
-            - name: Преобразование представлений в книги
-              items:
-                - name: Общие сведения о преобразовании
-                  href: platform/view-designer-conversion-overview.md
-                - name: Параметры преобразования
-                  href: platform/view-designer-conversion-options.md
-                - name: Общие сведения и доступ
-                  href: platform/view-designer-conversion-access.md
-                - name: Стандартные задачи
-                  href: platform/view-designer-conversion-tasks.md
-                - name: Преобразование плиток
-                  href: platform/view-designer-conversion-tiles.md
-                - name: Примеры
-                  href: platform/view-designer-conversion-examples.md
-            - name: Конструктор представлений
-              href: platform/view-designer.md
-            - name: Справочник по плиткам
-              href: platform/view-designer-tiles.md
-            - name: Справочник по элементам визуализации
-              href: platform/view-designer-parts.md
-            - name: Фильтры
-              href: platform/view-designer-filters.md
     - name: Workbooks
       items:
         - name: Обзор
@@ -1124,6 +1104,20 @@
                   href: platform/workbooks-time.md
                 - name: Параметры текста
                   href: platform/workbooks-text.md
+        - name: Преобразование представлений в книги
+          items:
+            - name: Общие сведения о преобразовании
+              href: platform/view-designer-conversion-overview.md
+            - name: Параметры преобразования
+              href: platform/view-designer-conversion-options.md
+            - name: Общие сведения и доступ
+              href: platform/view-designer-conversion-access.md
+            - name: Стандартные задачи
+              href: platform/view-designer-conversion-tasks.md
+            - name: Преобразование плиток
+              href: platform/view-designer-conversion-tiles.md
+            - name: Примеры
+              href: platform/view-designer-conversion-examples.md
     - name: Другие визуализации
       items:
         - name: Power BI
@@ -1217,6 +1211,8 @@
           href: app/azure-functions-supported-features.md
         - name: Заметки о выпуске
           items:
+            - name: Пакеты SDK для мониторинга на основе кода
+              href: app/release-notes.md
             - name: Расширение веб-приложения
               href: app/web-app-extension-release-notes.md
         - name: Модель данных
@@ -1297,6 +1293,16 @@
           href: platform/resource-logs-blob-format.md
         - name: Аналитика Key Vault (нерекомендуемый компонент)
           href: insights/azure-key-vault-deprecated.md
+        - name: Представления
+          items:
+            - name: Конструктор представлений
+              href: platform/view-designer.md
+            - name: Справочник по плиткам
+              href: platform/view-designer-tiles.md
+            - name: Справочник по элементам визуализации
+              href: platform/view-designer-parts.md
+            - name: Фильтры
+              href: platform/view-designer-filters.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

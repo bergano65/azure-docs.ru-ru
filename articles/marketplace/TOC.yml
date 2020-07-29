@@ -121,7 +121,7 @@
                   href: ./partner-center-portal/create-azure-vm-technical-asset.md
                 - name: 'Технические ресурсы виртуальных машин Azure: вопросы и ответы'
                   href: ./partner-center-portal/common-issues-during-vhd-creation.md
-                - name: Сертификация образа виртуальной машины Azure
+                - name: 'Тестирование виртуальной машины, развернутой из VHD'
                   href: ./partner-center-portal/azure-vm-image-certification.md
                 - name: Универсальный код ресурса SAS
                   items:

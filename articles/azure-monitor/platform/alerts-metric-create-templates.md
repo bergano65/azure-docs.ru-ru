@@ -7,21 +7,21 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 7/9/2020
 ms.subservice: alerts
-ms.openlocfilehash: 043ecc07c521f9c1c79835bcd67ff1d81cacfa34
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 3b0215ea2f02441f93e6eb9b672744638ae93b11
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86539471"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87321145"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения метрики с помощью шаблона Resource Manager
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) для настройки [новых оповещений метрик](../../azure-monitor/platform/alerts-metric-near-real-time.md) в Azure Monitor. Шаблоны Resource Manager позволяют программно настроить оповещения согласованным и воспроизводимым образом в разных средах. Сейчас в [этом наборе типов ресурсов](../../azure-monitor/platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported) доступны новые оповещения метрик.
+В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) для настройки [новых оповещений метрик](./alerts-metric-near-real-time.md) в Azure Monitor. Шаблоны Resource Manager позволяют программно настроить оповещения согласованным и воспроизводимым образом в разных средах. Сейчас в [этом наборе типов ресурсов](./alerts-metric-near-real-time.md#metrics-and-dimensions-supported) доступны новые оповещения метрик.
 
 > [!IMPORTANT]
-> Шаблон ресурсов для создания оповещений метрик для типа ресурса: для рабочей области Azure Log Analytics (т. е. `Microsoft.OperationalInsights/workspaces`) требуется выполнить дополнительные шаги. См. дополнительные сведения о [шаблоне ресурсов для создания оповещения метрик для журналов](../../azure-monitor/platform/alerts-metric-logs.md#resource-template-for-metric-alerts-for-logs).
+> Шаблон ресурсов для создания оповещений метрик для типа ресурса: для рабочей области Azure Log Analytics (т. е. `Microsoft.OperationalInsights/workspaces`) требуется выполнить дополнительные шаги. См. дополнительные сведения о [шаблоне ресурсов для создания оповещения метрик для журналов](./alerts-metric-logs.md#resource-template-for-metric-alerts-for-logs).
 
 Основными шагами являются следующие:
 
@@ -3464,7 +3464,7 @@ az group deployment create \
 
 ## <a name="template-for-an-availability-test-along-with-a-metric-alert"></a>Шаблон для теста доступности вместе с оповещением метрики
 
-[Тесты доступности Application Insights](../../azure-monitor/app/monitor-web-app-availability.md) помогают отслеживать доступность веб-сайта или приложения из различных расположений по всему миру. Оповещения тестирования доступности уведомляют о том, что тесты доступности завершились ошибкой из определенного числа расположений.
+[Тесты доступности Application Insights](../app/monitor-web-app-availability.md) помогают отслеживать доступность веб-сайта или приложения из различных расположений по всему миру. Оповещения тестирования доступности уведомляют о том, что тесты доступности завершились ошибкой из определенного числа расположений.
 У оповещений тестирования доступности те же типы ресурсов, что и у оповещений метрик (Microsoft.Insights/metricAlerts). Следующий пример шаблона Azure Resource Manager можно использовать для настройки простого теста доступности и связанного оповещения.
 
 Сохраните приведенный ниже код JSON как availabilityalert.jsв для целей данного пошагового руководства.
@@ -3628,3 +3628,4 @@ az group deployment create \
 - Дополнительные сведения об [оповещениях в Azure](alerts-overview.md)
 - Сведения о [создании группы действий с помощью шаблона Resource Manager](action-groups-create-resource-manager-template.md)
 - Синтаксис и свойства JSON см. в справочнике по шаблонам [Microsoft.Insights/metricAlerts](/azure/templates/microsoft.insights/metricalerts).
+

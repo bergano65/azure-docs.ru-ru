@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 07/16/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 03d0367b3794069908b31ee7af1250fd70f1bdf7
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7319adfc88eedb007677a78693ab0b2e514e646f
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86525217"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87171658"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и выполнения сценариев рабочей нагрузки SAP
 
@@ -104,6 +104,7 @@ Azure для SAP HANA — это предложение, выделяющее A
 
 ## <a name="change-log"></a>Журнал изменений
 
+- 07/23/2020: добавлена статья " [Сохранение в SAP HANA (крупные экземпляры) с резервированием Azure](../../../cost-management-billing/reservations/prepay-hana-large-instances-reserved-capacity.md) ", объясняющая, что необходимо знать перед покупкой SAP HANA (крупные экземпляры) резервирования и о том, как выполнить покупку.
 - 07/16/2020: Описание использования Azure PowerShell для установки нового расширения виртуальной машины для SAP в руководство по [развертыванию](deployment-guide.md)
 - 7/04/2020: выпуск [Azure Monitor для решений SAP (Предварительная версия)](./azure-monitor-overview.md)
 - 07/01/2020: рекомендуется настроить менее дорогостоящую конфигурацию хранилища на основе функции ускорения хранилища Azure класса Premium в документе [SAP HANA конфигурациях хранилища виртуальных машин Azure](./hana-vm-operations-storage.md) . 
