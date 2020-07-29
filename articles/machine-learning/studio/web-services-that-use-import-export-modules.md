@@ -1,6 +1,5 @@
 ---
-title: Импорт и экспорт данных в веб-службах
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): импорт и экспорт данных в веб-службах Azure'
 description: Узнайте, как использовать модули импорта и экспорта данных для отправки и получения данных из веб-службы.
 services: machine-learning
 author: likebupt
@@ -11,14 +10,17 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: how-to
 ms.date: 03/28/2017
-ms.openlocfilehash: b844a18a5acbd7a631bfe3b650dfa155d0e064ba
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 2e1395e23ec8fa3bbd787b5b12a810f6e9720392
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86076663"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326228"
 ---
 # <a name="deploy-azure-machine-learning-studio-classic-web-services-that-use-data-import-and-data-export-modules"></a>Развертывание веб-служб Студии машинного обучения Azure (классическая), использующих модули импорта и экспорта данных
+
+**применимо к:** ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-azure-ml.md) ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) 
+
 
 При создании прогнозного эксперимента обычно добавляются вход и выход веб-службы. Если вы развернете эксперимент, то пользователи смогут отправлять и получать данные из веб-службы через входы и выходы. В некоторых приложениях данные пользователя могут быть доступны через веб-канал данных или уже находиться во внешнем источнике данных, таком как хранилище BLOB-объектов Azure. В этих случаях для чтения и записи данных им не требуются входы и выходы веб-службы. Вместо этого они могут использовать службу выполнения пакетов (BES) для чтения из источника данных с помощью модуля импорта данных, а записывать результаты оценки в другое расположение с помощью модуля экспорта данных.
 

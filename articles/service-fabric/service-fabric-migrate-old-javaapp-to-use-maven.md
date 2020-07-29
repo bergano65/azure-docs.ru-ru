@@ -4,13 +4,14 @@ description: Обновите старые приложения Java, котор
 author: rapatchi
 ms.topic: conceptual
 ms.date: 08/23/2017
+ms.custom: devx-track-java
 ms.author: rapatchi
-ms.openlocfilehash: 0e8154039dde3de571e7960b244ab1d43cc764c7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f65194cde25deac8c03d6ddc3a7c0b928aaca171
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82204293"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87327316"
 ---
 # <a name="update-your-previous-java-service-fabric-application-to-fetch-java-libraries-from-maven"></a>Обновление старого приложения Java в Service Fabric для получения библиотек Java из Maven
 Service Fabric двоичные файлы Java были перемещены из пакета SDK для Java Service Fabric в размещение Maven. **Mavencentral** можно использовать для получения последних зависимостей Java Service Fabric. Это средство поможет вам обновить существующие приложения Java, созданные для Service Fabric пакета SDK для Java, используя шаблон Yeoman или Eclipse, совместимый с сборкой на основе Maven.

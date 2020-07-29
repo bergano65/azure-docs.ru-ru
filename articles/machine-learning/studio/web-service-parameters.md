@@ -1,6 +1,5 @@
 ---
-title: Параметры веб-службы
-titleSuffix: ML Studio (classic) - Azure
+title: 'ML Studio (классическая модель): параметры веб-службы — Azure'
 description: Как использовать параметры веб-службы машинного обучения Azure для изменения поведения модели при доступе к веб-службе.
 services: machine-learning
 author: likebupt
@@ -12,13 +11,17 @@ ms.subservice: studio
 ms.workload: data-services
 ms.topic: how-to
 ms.date: 01/12/2017
-ms.openlocfilehash: c274579e756b3c22920023d68501981d5b4a8b01
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: de3fb4a0dab08a13327c910d1e09ecbf0afcec8c
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84705871"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326262"
 ---
 # <a name="use-azure-machine-learning-studio-classic-web-service-parameters"></a>Использование параметров веб-службы Машинное обучение Azure Studio (классическая модель)
+
+**применимо к:** ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-azure-ml.md) ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) 
+
 
 Веб-служба машинного обучения Azure создается при публикации эксперимента, содержащего модули с настраиваемыми параметрами. В некоторых случаях может потребоваться изменение поведения модуля, пока веб-служба выполняется. *Параметры веб-службы* позволяют это сделать. 
 
@@ -52,7 +55,7 @@ ms.locfileid: "84705871"
    * В разделе **Укажите тип проверки подлинности**выберите "Учетная запись".
    * Введите данные учетной записи для хранилища BLOB-объектов Azure. 
 
-3. Щелкните значок справа от элемента **Путь к BLOB-объекту, начиная с параметра контейнера**. Это выглядит следующим образом:
+3. Щелкните значок справа от элемента **Путь к BLOB-объекту, начиная с параметра контейнера**. Он выглядит следующим образом:
    
    ![Значок параметра веб-службы](./media/web-service-parameters/icon.png)
    

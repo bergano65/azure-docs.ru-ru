@@ -5,18 +5,19 @@ description: Узнайте, как создать конвейер приема
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
 ms.author: iefedore
 author: eedorenko
 manager: davete
 ms.reviewer: larryfr
 ms.date: 03/01/2020
-ms.custom: tracking-python
-ms.openlocfilehash: 3e8d93c1f04dda9afbcfa0cab4e8fc9036ae7580
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.topic: conceptual
+ms.custom: how-to, tracking-python
+ms.openlocfilehash: 80e912cb5d4cf428c406242b06c30ccf56ccd6ca
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84555663"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326330"
 ---
 # <a name="data-ingestion-with-azure-data-factory"></a>Прием данных с помощью Фабрики данных Azure
 
@@ -94,7 +95,7 @@ ms.locfileid: "84555663"
 
 Так как наборы данных поддерживают управление версиями, и каждый запуск из конвейера создает новую версию, легко понять, какая версия используется для обучения модели.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Запуск записной книжки кирпичей в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/transform-data-using-databricks-notebook)
 * [Доступ к данным в службах хранилища Azure](https://docs.microsoft.com/azure/machine-learning/how-to-access-data#create-and-register-datastores)

@@ -5,17 +5,17 @@ description: Сведения о том, как применить шаблон 
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: how-to
+ms.topic: conceptual
+ms.custom: how-to
 ms.author: larryfr
 author: Blackmist
-ms.date: 07/09/2020
-ms.custom: seoapril2019
-ms.openlocfilehash: 49a1b190ece4ae4e937757e88af325a29f4825c5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 07/27/2020
+ms.openlocfilehash: db0b87787e34796e9dd7c91d6e4b53738145a25a
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87031122"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326381"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Создание рабочей области для Машинного обучения Azure с помощью шаблона Azure Resource Manager
 
@@ -118,6 +118,9 @@ New-AzResourceGroupDeployment `
 ---
 
 По умолчанию все ресурсы, созданные как часть шаблона, являются новыми. Однако у вас также есть возможность использовать существующие ресурсы. Предоставляя дополнительные параметры для шаблона, можно использовать существующие ресурсы. Например, если вы хотите использовать существующую учетную запись хранения, задайте для параметра **сторажеаккаунтоптион** значение **existing** и укажите имя учетной записи хранения в параметре **storageAccountName** .
+
+> [!IMPORTANT]
+> Если вы хотите использовать существующую учетную запись хранения Azure, она не может быть учетной записью Premium (Premium_LRS и Premium_GRS). Он также не может иметь иерархическое пространство имен (используется с Azure Data Lake Storage 2-го поколения). Ни хранилище класса Premium, ни иерархическое пространство имен не поддерживаются в учетной записи хранения по умолчанию рабочей области.
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
@@ -374,7 +377,7 @@ New-AzResourceGroupDeployment `
 
 ### <a name="only-deploy-workspace-behind-private-endpoint"></a>Развертывать только рабочую область за частной конечной точкой
 
-Если связанные ресурсы не находятся за виртуальной сетью, можно задать для параметра **приватиндпоинттипе** значение `AutoAproval` или, `ManualApproval` чтобы развернуть рабочую область за частной конечной точкой.
+Если связанные ресурсы не находятся за виртуальной сетью, можно задать для параметра **приватиндпоинттипе** значение `AutoAproval` или, `ManualApproval` чтобы развернуть рабочую область за частной конечной точкой. Это можно сделать как для новых, так и для существующих рабочих областей. При обновлении существующей рабочей области заполните параметры шаблона данными из существующей рабочей области.
 
 > [!IMPORTANT]
 > Развертывание допустимо только в регионах, поддерживающих частные конечные точки.
@@ -645,7 +648,7 @@ New-AzResourceGroupDeployment `
    * Регион: Выберите регион Azure, в котором будут создаваться ресурсы.
    * Имя рабочей области: Это имя, которое будет присвоено созданному рабочему пространству Службы машинного обучения Azure. Для имени рабочего пространства допускается длина от 3 до 33 символов. Имя может содержать только буквы, цифры и дефис ("-").
    * Расположение. Выберите расположение, в котором будут созданы ресурсы.
-1. Выберите __Просмотр и создание__.
+1. Выберите __Review + create__ (Просмотреть и создать).
 1. На экране " __Проверка и создание__ " примите указанные выше условия и нажмите кнопку __создать__.
 
 Дополнительные сведения см. в разделе [Развертывание ресурсов с помощью настраиваемого шаблона](../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template).
@@ -753,3 +756,4 @@ New-AzResourceGroupDeployment `
 
 * [Развертывание ресурсов с использованием шаблонов и REST API Resource Manager](../azure-resource-manager/templates/deploy-rest.md).
 * [Создание и развертывание групп ресурсов Azure с помощью Visual Studio](../azure-resource-manager/templates/create-visual-studio-deployment-project.md).
+* [Другие шаблоны, связанные с Машинное обучение Azure, см. в репозитории шаблонов быстрого запуска Azure.](https://github.com/Azure/azure-quickstart-templates)

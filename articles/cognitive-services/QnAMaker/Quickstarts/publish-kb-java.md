@@ -3,14 +3,14 @@ title: Краткое руководство. Публикация базы зн
 description: В этом кратком руководстве по началу работы с Java и REST описывается, как опубликовать базу знаний и создать конечную точку, которую можно вызвать в приложении или чат-боте.
 ms.date: 02/08/2020
 ROBOTS: NOINDEX,NOFOLLOW
-ms.custom: RESTCURL2020FEB27
+ms.custom: RESTCURL2020FEB27, devx-track-java
 ms.topic: how-to
-ms.openlocfilehash: e8df1fcc61d6b838c08f8daca9298e73820590f5
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: a9eb97848e755c230c6ba8664cfaa51bfb4fb64c
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84342703"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325922"
 ---
 # <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-java"></a>Краткое руководство. Публикация базы знаний в QnA Maker с помощью Java
 

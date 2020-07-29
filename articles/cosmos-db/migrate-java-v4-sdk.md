@@ -2,17 +2,18 @@
 title: Перевод приложения на использование пакета средств разработки Java для Azure Cosmos DB версии 4 (com.azure.cosmos)
 description: Узнайте, как обновить существующее приложение Java, в котором используется старая версия пакета средств разработки Java для Azure Cosmos DB, до нового пакета средств разработки Java версии 4.0 (пакет com.azure.cosmos), работающего с API Core (SQL).
 author: anfeldma-ms
+ms.custom: devx-track-java
 ms.author: anfeldma
 ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 06/11/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 29b3ca267e22c8d1f349cb127efb7d2fd71e1477
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 24e9087a175385f8e5c347a1d2df3b2785868506
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85263506"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87327860"
 ---
 # <a name="migrate-your-application-to-use-the-azure-cosmos-db-java-sdk-v4"></a>Перевод приложения на использование пакета средств разработки Java для Azure Cosmos DB версии 4
 
@@ -35,7 +36,7 @@ ms.locfileid: "85263506"
 | Async 2.x.x  | Июнь 2018 г.    | Async(RxJava)  | `com.microsoft.azure::azure-cosmosdb` | `com.microsoft.azure.cosmosdb.rx` | [API](https://azure.github.io/azure-cosmosdb-java/2.0.0/) | [Заметки о выпуске](sql-api-sdk-async-java.md) |
 | Sync 2.x.x     | Сентябрь 2018 г.    | Sync   | `com.microsoft.azure::azure-documentdb` | `com.microsoft.azure.cosmosdb` | [API](https://azure.github.io/azure-cosmosdb-java/2.0.0/) | [Заметки о выпуске](sql-api-sdk-java.md)  |
 | 3.x.x    | Июль 2019 г.    | Async(Reactor)/Sync  | `com.microsoft.azure::azure-cosmos`  | `com.azure.data.cosmos` | [API](https://azure.github.io/azure-cosmosdb-java/3.0.0/) | - |
-| 4,0   | июнь 2020 г.   | Async(Reactor)/Sync  | `com.azure::azure-cosmos` | `com.azure.cosmos`   | -  | [API](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-cosmos/4.0.1/index.html)  |
+| 4,0   | Июнь 2020 г.   | Async(Reactor)/Sync  | `com.azure::azure-cosmos` | `com.azure.cosmos`   | -  | [API](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-cosmos/4.0.1/index.html)  |
 
 ## <a name="sdk-level-implementation-changes"></a>Изменения реализации на уровне пакета SDK
 

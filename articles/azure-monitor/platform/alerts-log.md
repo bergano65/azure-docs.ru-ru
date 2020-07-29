@@ -6,12 +6,12 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.subservice: alerts
-ms.openlocfilehash: 57cc3624a38fbec1e5bef7bb281363d34acef2b1
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 25604bde3afbbef0d541bc21996b59e98b3090f4
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86505607"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87327503"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor
 
@@ -77,8 +77,8 @@ ms.locfileid: "86505607"
 1. Выберите **частоту**запуска оповещений. 
 
     **Оповещения журналов** могут создаваться на основе таких данных.
-    - [Число записей](../../azure-monitor/platform/alerts-unified-log.md#number-of-results-alert-rules). Оповещение создается, если количество записей, возвращаемых запросом, больше или меньше указанного вами значения.
-    - [Измерение метрик](../../azure-monitor/platform/alerts-unified-log.md#metric-measurement-alert-rules). Оповещение создается, если каждое *статистическое значение* в результатах превышает указанное пороговое значение, которое *группируется* в соответствии с выбранным значением. Количество нарушений для оповещения — это количество превышений порогового значения в течение выбранного периода времени. Можно указать значение свойства Всего брешей, чтобы учитывать любое сочетание нарушений в наборе результатов, или значение свойства Последовательные бреши, чтобы учитывать только нарушения, следующие подряд.
+    - [Число записей](./alerts-unified-log.md#number-of-results-alert-rules). Оповещение создается, если количество записей, возвращаемых запросом, больше или меньше указанного вами значения.
+    - [Измерение метрик](./alerts-unified-log.md#metric-measurement-alert-rules). Оповещение создается, если каждое *статистическое значение* в результатах превышает указанное пороговое значение, которое *группируется* в соответствии с выбранным значением. Количество нарушений для оповещения — это количество превышений порогового значения в течение выбранного периода времени. Можно указать значение свойства Всего брешей, чтобы учитывать любое сочетание нарушений в наборе результатов, или значение свойства Последовательные бреши, чтобы учитывать только нарушения, следующие подряд.
 
 
 1. Нажмите кнопку **Done**(Готово). 
@@ -100,7 +100,7 @@ ms.locfileid: "86505607"
     Для переопределения действий по умолчанию доступны некоторые дополнительные функции:
 
     - **Уведомление по электронной почте**: переопределяет *тему сообщения электронной почты* в сообщении, отправленном через группу действий. Основной текст сообщения нельзя изменить, и в этом поле вы **не можете** указать адрес электронной почты.
-    - **Включить пользовательские полезные данные JSON**: переопределяет JSON веб-перехватчика, используемый группами действий, предполагая, что Группа действий содержит тип веб-перехватчика. Дополнительные сведения о форматах веб-перехватчика см. в разделе [действие веб-перехватчика для оповещений журнала](../../azure-monitor/platform/alerts-log-webhook.md). Параметр просмотр веб-перехватчика предоставляется для проверки формата с помощью примера данных JSON.
+    - **Включить пользовательские полезные данные JSON**: переопределяет JSON веб-перехватчика, используемый группами действий, предполагая, что Группа действий содержит тип веб-перехватчика. Дополнительные сведения о форматах веб-перехватчика см. в разделе [действие веб-перехватчика для оповещений журнала](./alerts-log-webhook.md). Параметр просмотр веб-перехватчика предоставляется для проверки формата с помощью примера данных JSON.
 
         ![Переопределение действий оповещений журналов](media/alerts-log/AlertsPreviewOverrideLog.png)
 
@@ -212,7 +212,7 @@ ms.locfileid: "86505607"
 
 ### <a name="log-alert-with-cross-resource-query-using-azure-resource-template"></a>Запись в журнал оповещений с запросом между ресурсами с помощью шаблона ресурсов Azure
 
-Ниже приведена структура шаблона ресурса для [создания правил запланированных запросов](/rest/api/monitor/scheduledqueryrules/createorupdate) с использованием [запроса поиска по журналам между ресурсами](../../azure-monitor/log-query/cross-workspace-query.md) из [оповещения журнала типа измерений метрик](../../azure-monitor/platform/alerts-unified-log.md#metric-measurement-alert-rules), в котором пример набора данных используется в качестве переменных.
+Ниже приведена структура шаблона ресурса для [создания правил запланированных запросов](/rest/api/monitor/scheduledqueryrules/createorupdate) с использованием [запроса поиска по журналам между ресурсами](../log-query/cross-workspace-query.md) из [оповещения журнала типа измерений метрик](./alerts-unified-log.md#metric-measurement-alert-rules), в котором пример набора данных используется в качестве переменных.
 
 ```json
 
@@ -319,7 +319,7 @@ Azure Monitor- [API правил запросов по расписанию](/re
 - [New-азсчедуледкуерирулеалертингактион](/powershell/module/az.monitor/new-azscheduledqueryrulealertingaction) : командлет PowerShell для создания или обновления объекта, указывающего параметры действия для оповещения журнала. Используется в качестве входных данных командлетами [New-азсчедуледкуерируле](/powershell/module/az.monitor/new-azscheduledqueryrule) и [Set-азсчедуледкуерируле](/powershell/module/az.monitor/set-azscheduledqueryrule) .
 - [New-азсчедуледкуерирулеазнсактионграуп](/powershell/module/az.monitor/new-azscheduledqueryruleaznsactiongroup) : командлет PowerShell для создания или обновления объекта, указывающего параметры групп действий для оповещения журнала. Используется в качестве входных данных командлетом [New-азсчедуледкуерирулеалертингактион](/powershell/module/az.monitor/new-azscheduledqueryrulealertingaction) .
 - [New-азсчедуледкуерирулетригжеркондитион](/powershell/module/az.monitor/new-azscheduledqueryruletriggercondition) : командлет PowerShell для создания или обновления объекта, указывающего параметры условия триггера для оповещения журнала. Используется в качестве входных данных командлетом [New-азсчедуледкуерирулеалертингактион](/powershell/module/az.monitor/new-azscheduledqueryrulealertingaction) .
-- [New-азсчедуледкуерирулелогметриктригжер](/powershell/module/az.monitor/new-azscheduledqueryrulelogmetrictrigger) : командлет PowerShell для создания или обновления объекта, указывающего параметры условия триггера метрик для [оповещения журнала типа измерения "измерение](../../azure-monitor/platform/alerts-unified-log.md#metric-measurement-alert-rules)". Используется в качестве входных данных командлетом [New-азсчедуледкуерирулетригжеркондитион](/powershell/module/az.monitor/new-azscheduledqueryruletriggercondition) .
+- [New-азсчедуледкуерирулелогметриктригжер](/powershell/module/az.monitor/new-azscheduledqueryrulelogmetrictrigger) : командлет PowerShell для создания или обновления объекта, указывающего параметры условия триггера метрик для [оповещения журнала типа измерения "измерение](./alerts-unified-log.md#metric-measurement-alert-rules)". Используется в качестве входных данных командлетом [New-азсчедуледкуерирулетригжеркондитион](/powershell/module/az.monitor/new-azscheduledqueryruletriggercondition) .
 - [Get-азсчедуледкуерируле](/powershell/module/az.monitor/get-azscheduledqueryrule) : командлет PowerShell для перечисления существующих правил генерации оповещений журнала или определенного правила оповещения журнала
 - [Update-азсчедуледкуерируле](/powershell/module/az.monitor/update-azscheduledqueryrule) : командлет PowerShell для включения или отключения правила генерации оповещений журнала
 - [Remove-азсчедуледкуерируле](/powershell/module/az.monitor/remove-azscheduledqueryrule): командлет PowerShell для удаления существующего правила оповещения журнала
@@ -363,7 +363,8 @@ az group deployment create --resource-group contosoRG --template-file sampleSche
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения об [оповещениях журнала в оповещениях Azure](../../azure-monitor/platform/alerts-unified-log.md)
-* Общие сведения о [действиях веб-перехватчиков для оповещений журнала](../../azure-monitor/platform/alerts-log-webhook.md)
+* Сведения об [оповещениях журнала в оповещениях Azure](./alerts-unified-log.md)
+* Общие сведения о [действиях веб-перехватчиков для оповещений журнала](./alerts-log-webhook.md)
 * Дополнительные сведения о [Application Insights](../log-query/log-query-overview.md)
 * Дополнительные сведения о [запросах журналов](../log-query/log-query-overview.md).
+

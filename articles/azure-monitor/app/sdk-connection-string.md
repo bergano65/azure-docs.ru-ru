@@ -6,12 +6,12 @@ author: timothymothra
 ms.author: tilee
 ms.date: 01/17/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: 81e27c0f62e921eb468c78521e426c8917da250a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 56438389ea8a371335facd3cfd0b2d4161b421c3
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87014144"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326568"
 ---
 # <a name="connection-strings"></a>Строки подключения
 
@@ -47,7 +47,7 @@ ms.locfileid: "87014144"
 
 ![Строка подключения в колонке "Обзор"](media/overview-dashboard/overview-connection-string.png)
 
-### <a name="schema"></a>схема
+### <a name="schema"></a>Схема
 
 #### <a name="max-length"></a>Максимальная длина
 
@@ -274,14 +274,15 @@ tracer = Tracer(exporter=AzureExporter(connection_string='InstrumentationKey=000
 
 Приступите к работе во время выполнения с помощью:
 
-* [Приложения, размещенные в IIS на виртуальной машине Azure или в масштабируемом наборе виртуальных машин Azure](../../azure-monitor/app/azure-vm-vmss-apps.md)
-* [сервера IIS;](../../azure-monitor/app/monitor-performance-live-website-now.md)
-* [Веб-приложения Azure](../../azure-monitor/app/azure-web-apps.md)
+* [Приложения, размещенные в IIS на виртуальной машине Azure или в масштабируемом наборе виртуальных машин Azure](./azure-vm-vmss-apps.md)
+* [сервера IIS;](./monitor-performance-live-website-now.md)
+* [Веб-приложения Azure](./azure-web-apps.md)
 
 Приступите к работе во время разработки с помощью:
 
-* [ASP.NET](../../azure-monitor/app/asp-net.md)
-* [ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
-* [Java](../../azure-monitor/app/java-get-started.md)
-* [Node.js](../../azure-monitor/app/nodejs.md)
-* [Python](../../azure-monitor/app/opencensus-python.md)
+* [ASP.NET](./asp-net.md)
+* [ASP.NET Core](./asp-net-core.md)
+* [Java](./java-get-started.md)
+* [Node.js](./nodejs.md)
+* [Python](./opencensus-python.md)
+

@@ -9,12 +9,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
-ms.openlocfilehash: 68e88ec90625f34e5bc8ae1b70c75e3cfe9a53ad
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: e87ddd243aa248b896a26e6389ac1a219579a06d
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86515535"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325582"
 ---
 # <a name="azure-monitor-data-platform"></a>Платформа данных Azure Monitor
 
@@ -36,7 +36,7 @@ ms.locfileid: "86515535"
 
 Метрики в Azure Monitor хранятся в базе данных временных рядов, которая оптимизирована для анализа данных с отметками времени. Благодаря этому метрики оптимально подходят для предупреждений и быстрого обнаружения проблем. С их помощью можно определить состояние работоспособности системы, однако обычно их необходимо рассматривать в контексте сведений из журналов, чтобы определить основную причину проблем.
 
-Метрики доступны для интерактивного анализа на портале Azure в [обозревателе метрик Azure](../platform/metrics-getting-started.md). Их можно добавить на [панель мониторинга Azure](../learn/tutorial-app-dashboards.md) для визуализации в сочетании с другими данными и использовать для [оповещения](alerts-metric.md) почти в реальном времени.
+Метрики доступны для интерактивного анализа на портале Azure в [обозревателе метрик Azure](./metrics-getting-started.md). Их можно добавить на [панель мониторинга Azure](../learn/tutorial-app-dashboards.md) для визуализации в сочетании с другими данными и использовать для [оповещения](alerts-metric.md) почти в реальном времени.
 
 Подробнее о метриках Azure Monitor, включая их источники данных, см. в статье [Метрики в Azure Monitor](data-platform-metrics.md).
 
@@ -90,3 +90,4 @@ ms.locfileid: "86515535"
 - Узнайте подробнее о [метриках в Azure Monitor](data-platform-metrics.md).
 - Узнайте подробнее о [журналах в Azure Monitor](data-platform-logs.md).
 - Узнайте о [доступных данных мониторинга](data-sources.md) для различных источников в Azure.
+

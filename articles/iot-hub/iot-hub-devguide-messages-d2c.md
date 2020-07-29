@@ -8,12 +8,14 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: asrastog
-ms.openlocfilehash: 18a37731171be5894a1481fb35569c9c7cf307f2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom:
+- 'Role: Cloud Development'
+ms.openlocfilehash: a8c53dd2755f239763ff572e34dbdf7f73caa8a4
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84790523"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87327724"
 ---
 # <a name="use-iot-hub-message-routing-to-send-device-to-cloud-messages-to-different-endpoints"></a>Использование маршрутизации сообщений центра Интернета вещей для отправки сообщений с устройства в облако в разные конечные точки
 
@@ -53,7 +55,7 @@ ms.locfileid: "84790523"
 
 Существует два центра Интернета вещей служб хранилища, которые могут маршрутизировать сообщения в [хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md) и учетные записи [Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md) (ADLS 2-го поколения). Учетные записи Azure Data Lake Storage являются иерархическими учетными записями хранения с поддержкой [пространств имен](../storage/blobs/data-lake-storage-namespace.md), созданными на основе хранилища BLOB-объектов. Оба они используют большие двоичные объекты для хранения.
 
-Центр Интернета вещей поддерживает запись данных в службу хранилища Azure в формате [Apache Avro](https://avro.apache.org/) , а также в формате JSON. По умолчанию используется AVRO. Формат кодирования можно задать только при настройке конечной точки хранилища BLOB-объектов. Формат не может быть изменен для существующей конечной точки. При использовании кодировки JSON необходимо задать для contentType значение **Application/JSON** , а ContentEncoding **— UTF-8** в [свойствах системы](iot-hub-devguide-routing-query-syntax.md#system-properties)сообщений. Оба этих значения не учитывают регистр. Если кодировка содержимого не задана, центр Интернета вещей будет записывать сообщения в формате Base 64. Формат кодирования можно выбрать с помощью REST API создания или обновления центра Интернета вещей, в частности [раутингсторажеконтаинерпропертиес](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate#routingstoragecontainerproperties), портал Azure, [Azure CLI](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest)или [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubroutingendpoint?view=azps-1.3.0). На следующей схеме показано, как выбрать формат кодировки в портал Azure.
+Центр Интернета вещей поддерживает запись данных в службу хранилища Azure в формате [Apache Avro](https://avro.apache.org/) , а также в формате JSON. По умолчанию используется AVRO. Формат кодирования можно задать только при настройке конечной точки хранилища BLOB-объектов. Формат не может быть изменен для существующей конечной точки. При использовании кодировки JSON необходимо задать для contentType значение **Application/JSON** , а ContentEncoding **— UTF-8** в [свойствах системы](iot-hub-devguide-routing-query-syntax.md#system-properties)сообщений. Оба этих значения не учитывают регистр. Если кодировка содержимого не задана, центр Интернета вещей будет записывать сообщения в формате Base 64. Формат кодирования можно выбрать с помощью REST API создания или обновления центра Интернета вещей, в частности [раутингсторажеконтаинерпропертиес](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate#routingstoragecontainerproperties), портал Azure, [Azure CLI](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest)или [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubroutingendpoint). На следующей схеме показано, как выбрать формат кодировки в портал Azure.
 
 ![Кодирование конечной точки хранилища BLOB-объектов](./media/iot-hub-devguide-messages-d2c/blobencoding.png)
 
@@ -147,7 +149,7 @@ public void ListBlobsInContainer(string containerName, string iothub)
 
 Используйте [руководство по устранению неполадок для маршрутизации](troubleshoot-message-routing.md) для получения дополнительных сведений и поддержки по устранению неполадок маршрутизации.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о создании маршрутов сообщений см. в статье [Руководство. Настройка маршрутизации сообщений с Центром Интернета вещей](tutorial-routing.md).
 

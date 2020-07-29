@@ -9,12 +9,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
-ms.openlocfilehash: 2f82d5d4dcb29504abbfa6881fa825b6d8efce0d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b05007e2ea7815afbba2a7a71368686cf7c049fb
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87049529"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87325616"
 ---
 # <a name="metrics-in-azure-monitor"></a>Метрики в Azure Monitor
 
@@ -32,7 +32,7 @@ ms.locfileid: "87049529"
 |  | Описание |
 |:---|:---|
 | **Анализ** | Используйте [обозреватель метрик](metrics-charts.md) для анализа собранных метрик на диаграмме и сравнения метрик из разных ресурсов. |
-| **Визуализация** | Закрепите диаграмму из обозревателя метрик на [панели мониторинга Azure](../learn/tutorial-app-dashboards.md).<br>Создайте [книгу](../platform/workbooks-overview.md), чтобы объединить с несколькими наборами данных в интерактивном отчете. Экспортируйте результаты запроса в решение [Grafana](grafana-plugin.md), чтобы использовать его панель мониторинга и объединить с другими источниками данных. |
+| **Визуализация** | Закрепите диаграмму из обозревателя метрик на [панели мониторинга Azure](../learn/tutorial-app-dashboards.md).<br>Создайте [книгу](./workbooks-overview.md), чтобы объединить с несколькими наборами данных в интерактивном отчете. Экспортируйте результаты запроса в решение [Grafana](grafana-plugin.md), чтобы использовать его панель мониторинга и объединить с другими источниками данных. |
 | **Оповещение** | Настройте [правило генерации оповещения по метрике](alerts-metric.md), которое отправляет уведомление или выполняет [автоматическое действие](action-groups.md), когда значение метрики переходит пороговое значение. |
 | **Автоматизация** |  С помощью [автомасштабирования](autoscale-overview.md) можно увеличивать или уменьшать ресурсы, когда метрика выходит за пороговое значение. |
 | **Экспорт** | [Перенаправляйте метрики в журналы](./resource-logs.md#send-to-azure-storage) для анализа данных в метриках Azure Monitor вместе с данными в журналах Azure Monitor и хранения значений метрик дольше 93 дней.<br>Организуйте потоковую передачу метрик в [концентратор событий](stream-monitoring-data-event-hubs.md) для их перенаправления во внешние системы. |
@@ -89,7 +89,7 @@ ms.locfileid: "87049529"
 
 **Метрики платформы** создаются ресурсами Azure и наглядно отображают работоспособность и производительность этих ресурсов. Каждый тип ресурсов создает [отдельный набор метрик](metrics-supported.md), который не нужно настраивать. Метрики платформы собираются из ресурсов Azure с частотой раз в минуту, если в определении метрики не указано иное. 
 
-**Метрики гостевой ОС** собираются из гостевой операционной системы на виртуальной машине. Включите метрики гостевой ОС для виртуальных машин Windows с помощью [Windows Diagnostic Extension (WAD)](../platform/diagnostics-extension-overview.md), а для виртуальных машин Linux — с помощью [агента InfluxData Telegraf ](https://www.influxdata.com/time-series-platform/telegraf/).
+**Метрики гостевой ОС** собираются из гостевой операционной системы на виртуальной машине. Включите метрики гостевой ОС для виртуальных машин Windows с помощью [Windows Diagnostic Extension (WAD)](./diagnostics-extension-overview.md), а для виртуальных машин Linux — с помощью [агента InfluxData Telegraf ](https://www.influxdata.com/time-series-platform/telegraf/).
 
 **Метрики приложений** создаются службой Application Insights для отслеживаемых приложений и помогают обнаруживать проблемы производительности и отслеживать тенденции использования приложений. Сюда входит ряд значений, в том числе значения _Время отклика сервера_ и _Исключения браузера_.
 
@@ -99,7 +99,7 @@ ms.locfileid: "87049529"
 Для большинства ресурсов в Azure метрики хранятся в течение 93 дней. Существуют некоторые исключения.
 
 **Метрики гостевой ОС**
--   **Классические метрики гостевой ОС.** Это счетчики производительности, которые собираются [Windows Diagnostic Extension (WAD)](../platform/diagnostics-extension-overview.md) или [Linux Diagnostic Extension (LAD)](../../virtual-machines/extensions/diagnostics-linux.md) и направляются в учетную запись хранения Azure. Период хранения этих метрик составляет 14 дней.
+-   **Классические метрики гостевой ОС.** Это счетчики производительности, которые собираются [Windows Diagnostic Extension (WAD)](./diagnostics-extension-overview.md) или [Linux Diagnostic Extension (LAD)](../../virtual-machines/extensions/diagnostics-linux.md) и направляются в учетную запись хранения Azure. Период хранения этих метрик составляет 14 дней.
 -   **Метрики гостевой ОС, отправляемые в метрики Azure Monitor.** Это счетчики производительности, которые собираются с помощью [Windows Diagnostic Extension (WAD)](diagnostics-extension-overview.md) и отправляются в [приемник данных Azure Monitor](diagnostics-extension-overview.md#data-destinations), или собираются с помощью [агента InfluxData Telegraf](https://www.influxdata.com/time-series-platform/telegraf/) на компьютерах Linux. Период хранения этих метрик составляет 93 дней.
 -   **Метрики гостевой ОС, собираемые агентом Log Analytics.** Это счетчики производительности, собираемые агентом Log Analytics и отправляемые в рабочую область Log Analytics. Период хранения этих метрик составляет 31 день, но его можно увеличить до 2 лет.
 
@@ -119,3 +119,4 @@ ms.locfileid: "87049529"
 - Дополнительные сведения о [платформе данных Azure Monitor](data-platform.md).
 - Дополнительные сведения о [данных журналов в Azure Monitor](data-platform-logs.md).
 - Узнайте о [доступных данных мониторинга](data-sources.md) для различных источников в Azure.
+
