@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 07/06/2020
 author: keferna
 ms.author: keferna
-ms.openlocfilehash: c305a2513a5ace241fe697766b851cd2851e8b78
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 029883ea1ac85bdd1ea256caaa711d6537c06a76
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86536084"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87287898"
 ---
 # <a name="your-commercial-marketplace-benefits"></a>Преимущества коммерческой платформы
 
@@ -41,7 +41,7 @@ ms.locfileid: "86536084"
 Приступая к работе — это просто:
 
 1. Опубликуйте предложение в Microsoft AppSource или Azure Marketplace.
-2. Перейдите к преимуществам [Marketplace](https://partner.microsoft.com/en-us/dashboard/mpn/program/commercialmarketplace) в центре партнеров и выберите пункт **Регистрация в программе "вознаграждения" Marketplace**.
+2. Перейдите к преимуществам [Marketplace](https://partner.microsoft.com/dashboard/mpn/program/commercialmarketplace) в центре партнеров и выберите пункт **Регистрация в программе "вознаграждения" Marketplace**.
 3. Чтобы активировать преимущества продаж и маркетинга, назначьте Контактное лицо по маркетингу компании. Это контактное лицо будет получать последующие сообщения о ваших вознаграждениях Marketplace Rewards.
 4. Чтобы добавить или обновить данные контактного лица по маркетингу, на странице Marketplace Rewards откройте вкладку преимуществ "Преимущества по маркетингу и сбыту" и выберите **Добавить, обновить или изменить**.  Затем выполните описанные ниже действия.
 

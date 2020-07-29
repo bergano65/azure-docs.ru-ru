@@ -4,15 +4,15 @@ description: API для отмены операции, выполняемой в
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
-author: emuench
+author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: 462ca525be9cf46c87acdf4025223a98afaf8e3b
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 095d9cf68374ee81cafdb6e7a32df29a57d122cb
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86520380"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87287927"
 ---
 # <a name="cancel-operation"></a>Отмена операции
 
@@ -29,8 +29,8 @@ ms.locfileid: "86520380"
 
 |  **Имя**    |      **Описание**                                  |    **Data type**  |
 | ------------ |     ----------------                                  |     -----------   |
-| publisherid  |  Идентификатор издателя, например `contoso`         |   Строка          |
-| offerId      |  Идентификатор предложения                                     |   Строка          |
+| publisherid  |  Идентификатор издателя, например `contoso`         |   Тип String          |
+| offerId      |  Идентификатор предложения                                     |   Тип String          |
 | api-version  |  Текущая версия клиента API                               |    Дата           |
 |  |  |  |
 

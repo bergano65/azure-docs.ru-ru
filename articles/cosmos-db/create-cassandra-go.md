@@ -227,7 +227,7 @@ func mapToUser(m map[string]interface{}) model.User {
 
 1. Выберите элемент **Строка подключения** в своей учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/). 
 
-    :::image type="content" source="./media/create-cassandra-go/copy-username-connection-string-azure-portal.png" alt-text="Просмотр и копирование сведений со страницы "Строка подключения" на портале Azure":::
+    :::image type="content" source="./media/create-cassandra-go/copy-username-connection-string-azure-portal.png" alt-text="Просмотр и копирование сведений со страницы Строка подключения на портале Azure":::
 
 Скопируйте значения следующих атрибутов (`CONTACT POINT`, `PORT`, `USERNAME` и `PRIMARY PASSWORD`) и сохраните их в соответствующие переменные среды.
 

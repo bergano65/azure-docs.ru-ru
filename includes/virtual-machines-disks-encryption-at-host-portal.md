@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/07/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: c5ea31217bd3088ec123281b36f8578b08ea25b2
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: f0a706cc51027bc503da9ee3bc637216e9e52853
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/24/2020
-ms.locfileid: "87136337"
+ms.locfileid: "87171355"
 ---
 ## <a name="restrictions"></a>Ограничения
 
@@ -27,7 +27,7 @@ ms.locfileid: "87136337"
 
 [!INCLUDE [virtual-machines-disks-encryption-at-host-suported-sizes](virtual-machines-disks-encryption-at-host-suported-sizes.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы иметь возможность использовать шифрование на узле для виртуальных машин или масштабируемых наборов виртуальных машин, необходимо включить эту функцию в подписке. Отправьте сообщение электронной почты по адресу encryptionAtHost@microsoft. com с идентификаторами подписки для получения функции, включенной для ваших подписок.
 
@@ -50,12 +50,12 @@ ms.locfileid: "87136337"
 1. Создайте новую виртуальную машину, выберите соответствующий регион и поддерживаемый размер виртуальной машины.
 1. Заполните остальные значения в колонке **Основная** , а затем перейдите к колонке **диски** .
 
-    :::image type="content" source="media/virtual-machines-disks-encryption-at-host-portal/disks-encryption-at-host-basic-blade.png" alt-text="Пример текста":::
+    :::image type="content" source="media/virtual-machines-disks-encryption-at-host-portal/disks-encryption-at-host-basic-blade.png" alt-text="Снимок экрана: колонка "основы создания виртуальной машины", "регион" и "размер V M" выделены.":::
 
 1. В колонке **диски** выберите **Да** для **шифрования на узле**.
 1. Сделайте оставшиеся варианты выбора нужным образом.
 
-    :::image type="content" source="media/virtual-machines-disks-encryption-at-host-portal/disks-encryption-at-host-disk-blade.png" alt-text="Пример текста":::
+    :::image type="content" source="media/virtual-machines-disks-encryption-at-host-portal/disks-encryption-at-host-disk-blade.png" alt-text="Снимок экрана: колонка "диски создания виртуальной машины", "шифрование на узле" выделена.":::
 
 1. Завершите процесс развертывания виртуальной машины, чтобы выбрать параметры, соответствующие вашей среде.
 
