@@ -7,12 +7,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 09/19/2017
 ms.custom: mvc
-ms.openlocfilehash: 317d5681ac3b09cb433cdc2bc3c83b6b1c8d37dc
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: b656774762f5930c5665166a701bda7333940307
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86516368"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87322437"
 ---
 # <a name="find-and-diagnose-run-time-exceptions-with-azure-application-insights"></a>Поиск и диагностика исключений во время выполнения с помощью Azure Application Insights
 
@@ -36,7 +36,7 @@ Azure Application Insights собирает данные телеметрии и
     - разработка Azure;
 - Загрузите и установите [отладчик моментальных снимков Visual Studio](https://aka.ms/snapshotdebugger).
 - Включите [отладчик моментальных снимков Visual Studio](../app/snapshot-debugger.md).
-- Разверните приложение .NET в Azure и [включите пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md). 
+- Разверните приложение .NET в Azure и [включите пакет SDK для Application Insights](../app/asp-net.md). 
 - Это руководство содержит сведения об отслеживании идентификатора исключения в вашем приложении, поэтому измените свой код в среде разработки или тестирования, чтобы создать исключение. 
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
@@ -63,7 +63,7 @@ Application Insights собирает сведения об ошибках в в
 
     ![Примеры неудачно завершенных запросов](media/tutorial-runtime-exceptions/failed-requests-search.png)
 
-6. Сведения о невыполненных запросах включают диаграмму Ганта. На ней видно две ошибки зависимостей в этой транзакции, что также добавило более 50 % от общей продолжительности транзакции. Этот интерфейс представляет все данные телеметрии от компонентов распределенного приложения, которые связаны с этим идентификатором операции. [См. дополнительные сведения о новом интерфейсе](../../azure-monitor/app/transaction-diagnostics.md). Щелкните любой элемент, чтобы просмотреть соответствующие сведения в области справа. 
+6. Сведения о невыполненных запросах включают диаграмму Ганта. На ней видно две ошибки зависимостей в этой транзакции, что также добавило более 50 % от общей продолжительности транзакции. Этот интерфейс представляет все данные телеметрии от компонентов распределенного приложения, которые связаны с этим идентификатором операции. [См. дополнительные сведения о новом интерфейсе](../app/transaction-diagnostics.md). Щелкните любой элемент, чтобы просмотреть соответствующие сведения в области справа. 
 
     ![Сведения о невыполненных запросах](media/tutorial-runtime-exceptions/failed-request-details.png)
 
@@ -112,4 +112,5 @@ Application Insights собирает сведения об ошибках в в
 Теперь, когда вы узнали, как определить исключения времени выполнения, перейдите к следующему руководству, чтобы научиться определять и диагностировать проблемы с производительностью.
 
 > [!div class="nextstepaction"]
-> [Поиск и диагностика проблем производительности с помощью Azure Application Insights](../../azure-monitor/learn/tutorial-performance.md)
+> [Поиск и диагностика проблем производительности с помощью Azure Application Insights](./tutorial-performance.md)
+

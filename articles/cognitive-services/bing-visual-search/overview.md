@@ -10,12 +10,12 @@ ms.subservice: bing-visual-search
 ms.topic: overview
 ms.date: 12/19/2019
 ms.author: scottwhi
-ms.openlocfilehash: 14acebb71538dddfd2421fbb27794f456b6c9c8f
-ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
+ms.openlocfilehash: 192517aa16e0fe56eb5b7dc8b852116af500b715
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85611515"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87023727"
 ---
 # <a name="what-is-the-bing-visual-search-api"></a>Знакомство с API Визуального поиска Bing
 
@@ -57,7 +57,15 @@ API визуального поиска Bing является веб-служб�
 Опробуйте для начала [интерактивную демоверсию](https://azure.microsoft.com/services/cognitive-services/bing-visual-search/) API Визуального поиска Bing.
 Вы узнаете, как можно быстро настроить поисковый запрос и найти соответствующие изображения в Интернете.
 
-Сведения о том, как быстро создать первый запрос, см. в кратких руководствах по [C#](quickstarts/csharp.md) | [Java](quickstarts/java.md) | [node.js](quickstarts/nodejs.md) | [Python](quickstarts/python.md).
+Сведения о том, как быстро создать первый запрос, см. в кратких руководствах по
+
+* [C#](quickstarts/csharp.md)
+
+* [Java](quickstarts/java.md)
+
+* [Node.js](quickstarts/nodejs.md)
+
+* [Python](quickstarts/python.md)
 
 ## <a name="see-also"></a>См. также раздел
 
