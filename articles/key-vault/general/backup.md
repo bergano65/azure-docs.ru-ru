@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: sudbalas
-ms.openlocfilehash: 76ceba11ffeb5569e250fab6bc47fe8faf019361
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 668154b5e54ed4d496d272e33e8fc7f378e75e8a
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86521111"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87386271"
 ---
 # <a name="azure-key-vault-backup"></a>Резервное копирование в Azure Key Vault
 
@@ -27,7 +27,7 @@ Azure Key Vault автоматически предоставляет неско
 
 Key Vault сохраняет доступность в аварийных сценариях и автоматически выполняет отработку отказа запросов в парный регион без вмешательства пользователя. Дополнительные сведения см. в статье [Доступность и избыточность хранилища ключей Azure](https://docs.microsoft.com/azure/key-vault/general/disaster-recovery-guidance).
 
-Если вам требуется защита от случайного или злонамеренного удаления секретов, настройте в хранилище ключей функции обратимого удаления и защиты от очистки. Дополнительные сведения см. в статье [Общие сведения об обратимом удалении в Azure Key Vault](https://docs.microsoft.com/azure/key-vault/general/overview-soft-delete).
+Если вам требуется защита от случайного или злонамеренного удаления секретов, настройте в хранилище ключей функции обратимого удаления и защиты от очистки. Дополнительные сведения см. в статье [Общие сведения об обратимом удалении в Azure Key Vault](https://docs.microsoft.com/azure/key-vault/general/soft-delete-overview).
 
 ## <a name="limitations"></a>Ограничения
 

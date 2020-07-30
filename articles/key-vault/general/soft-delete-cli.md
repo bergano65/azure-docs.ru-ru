@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: f98df33b3efc697e349ddeae31439dd2fb701d91
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 7023a2301b6b6137f7a0485523c68f21d72d67a9
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86202029"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87385744"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки
 
@@ -245,6 +245,6 @@ az keyvault update --name ContosoVault --resource-group ContosoRG --enable-purge
 
 ## <a name="other-resources"></a>Другие ресурсы
 
-- Обзор функции обратимого удаления Key Vault см. в статье [Общие сведения об обратимом удалении в Azure Key Vault](overview-soft-delete.md).
+- Обзор функции обратимого удаления Key Vault см. в статье [Общие сведения об обратимом удалении в Azure Key Vault](soft-delete-overview.md).
 - Общие сведения об использовании Azure Key Vault см. в [этой статье](overview.md).
 

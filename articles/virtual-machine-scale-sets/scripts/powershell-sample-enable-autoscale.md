@@ -8,12 +8,12 @@ ms.service: virtual-machine-scale-sets
 ms.subservice: autoscale
 ms.date: 06/25/2020
 ms.custom: avverma
-ms.openlocfilehash: 1db108adfe1a3af562a046160856a38daf990885
-ms.sourcegitcommit: dfa5f7f7d2881a37572160a70bac8ed1e03990ad
+ms.openlocfilehash: 9ee64f86cba7287af371f856c442d93e9a03d85b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85374905"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088915"
 ---
 # <a name="automatically-scale-a-virtual-machine-scale-set-with-powershell"></a>Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью PowerShell
 С помощью этого скрипта создается масштабируемый набор виртуальных машин под управлением Windows Server 2016. При этом используются метрики на основе узла для автоматического масштабирования в соответствии с изменением нагрузки на ЦП.
@@ -47,5 +47,5 @@ Remove-AzResourceGroup -Name myResourceGroup
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов и все ресурсы, содержащиеся в ней. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
 

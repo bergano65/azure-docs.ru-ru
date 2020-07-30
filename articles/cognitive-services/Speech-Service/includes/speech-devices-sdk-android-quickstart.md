@@ -5,12 +5,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 02/20/2020
 ms.author: trbye
-ms.openlocfilehash: 04c31a12348fe0059bcfd417682647676dbc8948
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: abc9a42c7ced6a71f93c00968eb825f28f720843
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84637622"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87375808"
 ---
 Из этого краткого руководства вы узнаете, как использовать пакет SDK для речевых устройств в Android для разработки продукта с поддержкой речевых функций или в качестве устройства [транскрибирования бесед](../conversation-transcription-service.md).
 
@@ -96,7 +96,7 @@ ms.locfileid: "84637622"
     Обновите **build.gradle(Module:app)** , добавив следующую строку в раздел зависимостей. 
     
     ```xml
-    implementation'com.microsoft.cognitiveservices.speech:client-sdk:1.12.1'
+    implementation'com.microsoft.cognitiveservices.speech:client-sdk:1.13.0'
     ```
     
 1. Добавьте свой ключ подписки на речевые службы в исходный код. Если вы хотите попробовать распознать намерения, также добавьте свой ключ подписки [службы "Распознавание речи"](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/) и идентификатор приложения.

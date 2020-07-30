@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 05/10/2017
 ms.author: ramankum
 ms.custom: mvc
-ms.openlocfilehash: 8001990d4ade9986bea81f63b60832ed69024265
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: cbd9440948a124a5557e47f258b95b098f04a4b5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86509569"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085237"
 ---
 # <a name="create-a-virtual-machine-using-an-existing-managed-os-disk-with-powershell-windows"></a>Создание виртуальной машины с помощью существующего управляемого диска ОС с использованием PowerShell (Windows)
 
@@ -67,6 +67,6 @@ Set-AzVMPlan -VM $VirtualMachine -Publisher $Publisher -Product $Product -Name $
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
 
 Дополнительные примеры сценариев PowerShell для виртуальных машин представлены в [документации по виртуальным машинам Azure под управлением Windows](../windows/powershell-samples.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

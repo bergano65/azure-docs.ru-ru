@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 07/16/2019
-ms.openlocfilehash: 42cc10398fce831b6343f69df03104d428700ac3
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 965e6fe3546630713f3fee2774c70aebd1ed2ae7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84022783"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086087"
 ---
 # <a name="use-cli-to-add-an-azure-sql-database-elastic-pool-to-a-failover-group"></a>Добавление эластичного пула в службе "База данных SQL Azure" в группу отработки отказа с помощью CLI
 
@@ -52,10 +52,10 @@ az group delete --name $resource
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| | |
+| Get-Help | Описание |
 |---|---|
 | [az sql elastic-pool](/cli/azure/sql/elastic-pool) | Команды эластичного пула. |
-| [az sql failover-group ](/cli/azure/sql/failover-group) | Команды группы отработки отказа |
+| [az sql failover-group ](/cli/azure/sql/failover-group) | Команды группы отработки отказа. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

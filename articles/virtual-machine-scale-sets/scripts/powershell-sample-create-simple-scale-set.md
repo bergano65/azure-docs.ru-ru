@@ -9,12 +9,12 @@ ms.subservice: powershell
 ms.date: 03/27/2018
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 3d49212e6d35e2a348a7e31ff7d2f0ad49eabfc2
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 1093d6df3bef052df2dbe6df04f52d6a119357db
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83699504"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087090"
 ---
 # <a name="create-a-basic-virtual-machine-scale-set-with-powershell"></a>Создание базового масштабируемого набора виртуальных машин с помощью PowerShell
 Этот скрипт позволяет создать масштабируемый набор виртуальных машин под управлением Windows Server 2016. После выполнения сценария можно получить доступ к экземплярам виртуальных машин по протоколу RDP.
@@ -44,4 +44,4 @@ Remove-AzResourceGroup -Name myResourceGroup
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов и все ресурсы, содержащиеся в ней. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).

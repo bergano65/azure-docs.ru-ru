@@ -9,12 +9,12 @@ ms.date: 05/01/2020
 ms.author: cynthn
 ms.custom: mvc
 ms.reviewer: akjosh
-ms.openlocfilehash: 22f3fd44fbeb3d951d4add7b90a0e9aebd863ebf
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: 159ded093f278672a8251263f7bab1050a945e11
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82792859"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085849"
 ---
 # <a name="tutorial-create-and-use-a-custom-image-for-virtual-machine-scale-sets-with-the-azure-cli"></a>Руководство по Создание и использование пользовательского образа для масштабируемых наборов виртуальных машин с помощью Azure CLI
 Создавая масштабируемый набор, вы указываете образ для использования при развертывании экземпляров виртуальных машин. Чтобы сократить количество задач после развертывания экземпляров виртуальных машин, можно использовать пользовательский образ виртуальной машины. Этот образ содержит все необходимые установки или конфигурации приложения. Все экземпляры виртуальных машин, созданные в масштабируемом наборе, используют пользовательский образ виртуальной машины и готовы обслуживать трафик приложения. Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -92,11 +92,11 @@ az sig create --resource-group myGalleryRG --gallery-name myGallery
 
 Убедитесь, что используется определение образа подходящего типа. Если вы сделали виртуальную машину универсальной (с помощью Sysprep для Windows или waagent -deprovision для Linux), создайте универсальное определение образа с помощью `--os-state generalized`. Если вы хотите использовать виртуальную машину без удаления существующих учетных записей пользователей, создайте специализированное определение образа с помощью `--os-state specialized`.
 
-Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](https://docs.microsoft.com/azure/virtual-machines/linux/shared-image-galleries#image-definitions).
+Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](../virtual-machines/linux/shared-image-galleries.md#image-definitions).
 
 Создайте в коллекции определение образа, используя команду [az sig image-definition create](/cli/azure/sig/image-definition#az-sig-image-definition-create).
 
-В этом примере определение образа имеет имя *myImageDefinition* и предназначено для [специализированного](https://docs.microsoft.com/azure/virtual-machines/linux/shared-image-galleries#generalized-and-specialized-images) образа ОС Linux. Чтобы создать определение для образов с помощью ОС Windows, используйте `--os-type Windows`. 
+В этом примере определение образа имеет имя *myImageDefinition* и предназначено для [специализированного](../virtual-machines/linux/shared-image-galleries.md#generalized-and-specialized-images) образа ОС Linux. Чтобы создать определение для образов с помощью ОС Windows, используйте `--os-type Windows`. 
 
 ```azurecli-interactive 
 az sig image-definition create \
@@ -137,7 +137,7 @@ az sig image-version create \
 > [!NOTE]
 > Прежде чем использовать тот же управляемый образ для создания другой версии образа, необходимо дождаться завершения сборки и репликации версии образа.
 >
-> Вы также можете сохранить образ в хранилище класса Премиум, добавив `--storage-account-type  premium_lrs`, или [хранилище, избыточное между зонами](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs), добавив `--storage-account-type  standard_zrs` при создании версии образа.
+> Вы также можете сохранить образ в хранилище класса Премиум, добавив `--storage-account-type  premium_lrs`, или [хранилище, избыточное между зонами](../storage/common/storage-redundancy.md), добавив `--storage-account-type  standard_zrs` при создании версии образа.
 >
 
 
@@ -217,7 +217,7 @@ az role assignment create \
    --scope <gallery ID>
 ```
 
-Дополнительные сведения о предоставлении общего доступа к ресурсам с помощью RBAC см. в статье [Управление доступом с помощью RBAC и Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli).
+Дополнительные сведения о предоставлении общего доступа к ресурсам с помощью RBAC см. в статье [Управление доступом с помощью RBAC и Azure CLI](../role-based-access-control/role-assignments-cli.md).
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

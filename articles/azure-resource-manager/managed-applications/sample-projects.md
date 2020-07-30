@@ -5,20 +5,19 @@ author: tfitzmac
 ms.topic: sample
 ms.date: 09/04/2019
 ms.author: tomfitz
-ms.openlocfilehash: 7c04f5d78f742eda70e71d9bee9ce4482c48f0f4
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 2ce9ac925cce96af8a0017a5e97b3f52dc8e5669
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75648771"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87040983"
 ---
 # <a name="sample-projects-for-azure-managed-applications"></a>Примеры проектов для управляемых приложений Azure
 
 В следующей таблице представлены ссылки на примеры управляемых приложений Azure в GitHub.
 
-|  |  |
+| Пример | Описание |
 | --- | --- |
-| **Примеры** | |
 | [Развертывание управляемого приложения (в пробной или рабочей версии) в новой или существующей виртуальной сети](https://github.com/Azure/azure-managedapp-samples/tree/master/Managed%20Application%20Sample%20Packages/201-managed-app-using-existing-vnet) | Демонстрирует, как создавать гибкие параметры развертывания для клиентов. Это управляемое приложение можно развернуть в новой или существующей виртуальной сети. Клиенты могут выбрать пробную или рабочую версию управляемого приложения. |
 | [Управляемая учетная запись хранения Azure](https://github.com/Azure/azure-managedapp-samples/tree/master/Managed%20Application%20Sample%20Packages/201-managed-storage-account) | Развертывание одной учетной записи хранения. Используйте этот пример проекта как отправную точку при создании управляемых приложений. |
 | [Управляемая платформа Service Fabric и службы управления Azure](https://github.com/Azure/azure-managedapp-samples/tree/master/Managed%20Application%20Sample%20Packages/201-managed-service-fabric) | Развертывание кластера Service Fabric и масштабируемых наборов виртуальных машин. Доступны учетные записи хранения для ведения журнала и диагностики. |

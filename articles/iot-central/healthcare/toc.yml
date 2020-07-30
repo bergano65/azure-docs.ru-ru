@@ -22,8 +22,6 @@
       href: howto-health-data-triage.md
     - name: Подключение устройств
       items:
-        - name: Подготовка и подключение MXChip IoT DevKit
-          href: ../core/howto-connect-devkit.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
         - name: Подготовка и подключение Rigado Cascade 500
           href: ../core/howto-connect-rigado-cascade-500.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
         - name: "Мониторинг подключения устройств с помощью Azure\_CLI"

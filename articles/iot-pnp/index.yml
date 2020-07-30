@@ -1,9 +1,9 @@
 ### YamlMime:Landing
-title: Документация по IoT Plug and Play (предварительная версия)
-summary: С помощью IoT Plug and Play (предварительная версия) можно определить модель устройства, что позволит облачным решениям автоматически идентифицировать ваше устройство и начать взаимодействовать с ним, — и все это без необходимости писать соответствующий код.
+title: Документация по обновлению предварительной версии IoT Plug and Play
+summary: С помощью IoT Plug and Play можно определять модель устройства, позволяя облачным решениям автоматически идентифицировать устройство и начать взаимодействовать с ним.
 metadata:
-  title: Документация по IoT Plug and Play (предварительная версия)
-  description: С помощью IoT Plug and Play (предварительная версия) можно определить модель устройства, что позволит облачным решениям автоматически идентифицировать ваше устройство и начать взаимодействовать с ним, — и все это без необходимости писать соответствующий код.
+  title: Архитектура IoT Plug and Play (предварительная версия)
+  description: IoT Plug and Play (предварительная версия) позволяет разработчикам решений интегрировать устройства в решения без необходимости выполнять настройку вручную. В этой статье показаны ключевые архитектурные элементы, которые делают это возможным.
   services: iot-pnp
   ms.service: iot-pnp
   ms.topic: landing-page
@@ -11,12 +11,12 @@ metadata:
   ms.author: dobett
   manager: philmea
   ms.date: 10/31/2019
-  ms.openlocfilehash: 9469adb901c2da5f814088aa8eb59121889a0b78
-  ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
+  ms.openlocfilehash: 6fe77d059974bcc37fb0b0bbc6a171d371a93478
+  ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "80998289"
+  ms.lasthandoff: 07/28/2020
+  ms.locfileid: "87337370"
 landingContent:
 - title: Сведения об IoT Plug and Play
   linkLists:
@@ -24,51 +24,41 @@ landingContent:
     links:
     - text: Общие сведения об IoT Plug and Play
       url: overview-iot-plug-and-play.md
-  - linkListType: video
-    links:
-    - text: Введение в IoT Plug and Play
-      url: https://channel9.msdn.com/Shows/Internet-of-Things-Show/Introduction-to-IoT-Plug-and-Play/player
-- title: Разработка устройств
+    - text: Обновление предварительной версии за 2020 г.
+      url: overview-iot-plug-and-play-preview-updates.md
+- title: Устройства сборки
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Подключение образца устройства к Центру Интернета вещей
-      url: quickstart-connect-pnp-device-c-windows.md
-    - text: Подключение образца устройства к IoT Central
-      url: ../iot-central/core/tutorial-connect-pnp-device.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
-    - text: Использование модели возможностей устройства для создания устройства
-      url: quickstart-create-pnp-device-windows.md
-  - linkListType: tutorial
-    links:
-    - text: созданию и тестированию модели возможностей устройства с помощью Visual Studio Code
-      url: tutorial-pnp-visual-studio-code.md
-    - text: Создание устройства, готового к сертификации
-      url: tutorial-build-device-certification.md
-    - text: Сертификация устройства
-      url: tutorial-certification-test.md
-  - linkListType: how-to-guide
-    links:
-    - text: Использование Azure IoT Tools для Visual Studio Code
-      url: howto-develop-with-vs-vscode.md
-    - text: Подключение к порталу Azure Certified for IoT
-      url: howto-onboard-portal.md
+    - text: Подключение примера устройства к Центру Интернета вещей (C)
+      url: quickstart-connect-device-c.md
+    - text: Подключение примера устройства к Центру Интернета вещей (C#)
+      url: quickstart-connect-device-csharp.md
+    - text: Подключение примера устройства к Центру Интернета вещей (Java)
+      url: quickstart-connect-device-java.md
+    - text: Подключение примера устройства к Центру Интернета вещей (Node.js)
+      url: quickstart-connect-device-node.md
+    - text: Подключение примера устройства к Центру Интернета вещей (Python)
+      url: quickstart-connect-device-python.md
   - linkListType: concept
     links:
-    - text: Распространенные интерфейсы
-      url: concepts-common-interfaces.md
+    - text: Руководство разработчика
+      url: concepts-developer-guide.md
+    - text: Соглашения IoT Plug and Play
+      url: concepts-convention.md
+    - text: Components
+      url: concepts-components.md
 - title: Создание решений
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Взаимодействие с устройством, подключенным к решению
-      url: quickstart-connect-pnp-device-solution-node.md
+    - text: Взаимодействие с устройством из вашего решения (Node.js)
+      url: quickstart-service-node.md
+    - text: Взаимодействие с устройством из вашего решения (Python)
+      url: quickstart-service-python.md
   - linkListType: concept
     links:
-    - text: Обнаружение модели
-      url: concepts-model-discovery.md
-    - text: Распространенные интерфейсы
-      url: concepts-common-interfaces.md
-  - linkListType: how-to-guide
-    links:
-    - text: Подключение к устройствам из решения
-      url: howto-develop-solution.md
+    - text: Architecture
+      url: concepts-architecture.md
+    - text: Digital Twins
+      url: concepts-digital-twin.md

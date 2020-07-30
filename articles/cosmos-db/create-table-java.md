@@ -8,13 +8,13 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 05/28/2020
 ms.author: sngun
-ms.custom: seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: a430af4bd0cb8ec0db468ed4bfe605ce1fd3b8c2
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.custom: seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: 88a98c05b09d8e76159199fd5035a15d62bc293b
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322794"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85115121"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-table-api-data"></a>Краткое руководство. Создание приложения Java для управления данными API таблиц Azure Cosmos DB
 
@@ -159,7 +159,7 @@ ms.locfileid: "87322794"
 
 1. Выберите элемент **Строка подключения** в своей учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/). 
 
-   :::image type="content" source="./media/create-table-java/cosmos-db-quickstart-connection-string.png" alt-text="Просмотр сведений о строке подключения на панели "Строка подключения"":::
+   :::image type="content" source="./media/create-table-java/cosmos-db-quickstart-connection-string.png" alt-text="Просмотр сведений о строке подключения на панели Строка подключения":::
 
 2. Скопируйте основную строку подключения с помощью кнопки копирования справа.
 

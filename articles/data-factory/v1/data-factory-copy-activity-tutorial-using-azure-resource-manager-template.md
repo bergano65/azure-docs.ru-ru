@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 549c85f92434504b931f0325959beb17ae92afba
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: 831da4153eebc798265493441ee72c041901904f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85254894"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87053894"
 ---
 # <a name="tutorial-use-azure-resource-manager-template-to-create-a-data-factory-pipeline-to-copy-data"></a>Руководство по Создание конвейера фабрики данных для копирования данных с использованием шаблона Azure Resource Manager 
 > [!div class="op_single_selector"]
@@ -48,7 +48,7 @@ ms.locfileid: "85254894"
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 * Прочтите [обзор руководства](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) и выполните **предварительные требования**.
-* Чтобы установить последнюю версию Azure PowerShell на локальном компьютере, следуйте инструкциям в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview) . В этом руководстве PowerShell используется для развертывания сущностей фабрики данных. 
+* Чтобы установить последнюю версию Azure PowerShell на локальном компьютере, следуйте инструкциям в статье [Установка и настройка Azure PowerShell](/powershell/azure/) . В этом руководстве PowerShell используется для развертывания сущностей фабрики данных. 
 * Сведения о шаблонах Azure Resource Manager см. в [этой статье](../../azure-resource-manager/templates/template-syntax.md) (необязательно).
 
 ## <a name="in-this-tutorial"></a>В этом учебнике рассматриваются следующие темы:
