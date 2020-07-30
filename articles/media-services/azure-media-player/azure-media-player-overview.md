@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: overview
 ms.date: 04/20/2020
-ms.openlocfilehash: b6d30aebd4de272ba98fce87f23701b129eacb02
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: 6f3c173c61e9f6d82a51fcaf7e11cda47eb47c1c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81727561"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87011718"
 ---
 # <a name="azure-media-player-overview"></a>Обзор Проигрывателя мультимедиа Azure #
 
@@ -28,7 +28,7 @@ ms.locfileid: "81727561"
 
 ## <a name="license"></a>Лицензия ##
 
-Проигрыватель мультимедиа Azure лицензируется и регулируется условиями, изложенными в условиях лицензионного соглашения на использование программного обеспечения корпорации Майкрософт для Проигрывателя мультимедиа Azure. Полный перечень условий см. в [файле лицензии](azure-media-player-license.md). Дополнительные сведения см. в [заявлении о конфиденциальности](https://www.microsoft.com/en-us/privacystatement/default.aspx).
+Проигрыватель мультимедиа Azure лицензируется и регулируется условиями, изложенными в условиях лицензионного соглашения на использование программного обеспечения корпорации Майкрософт для Проигрывателя мультимедиа Azure. Полный перечень условий см. в [файле лицензии](/legal/azure-media-player/azure-media-player-license). Дополнительные сведения см. в [заявлении о конфиденциальности](https://www.microsoft.com/en-us/privacystatement/default.aspx).
 
 © Корпорация Майкрософт (Microsoft Corporation), 2015.
 

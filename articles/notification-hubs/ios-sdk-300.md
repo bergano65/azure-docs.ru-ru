@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: notification-hubs
 ms.reviewer: thsomasu
 ms.lastreviewed: 06/01/2020
-ms.openlocfilehash: 4f34b3e7567a65dca45fd29b4e8aa9b78a6ced76
-ms.sourcegitcommit: 398fecceba133d90aa8f6f1f2af58899f613d1e3
+ms.openlocfilehash: f43db986f70e64e55225465223b7e324450541a8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2020
-ms.locfileid: "85127552"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084343"
 ---
 # <a name="tutorial-send-push-notifications-to-ios-apps-using-azure-notification-hubs-version-300-preview1"></a>Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure (версия 3.0.0, предварительная версия 1)
 
@@ -352,7 +352,7 @@ Push-уведомления обычно отправляются во внут�
 - [Управление регистрацией](notification-hubs-push-notification-registration-management.md)
 - [Работа с тегами](notification-hubs-tags-segment-push-message.md)
 - [Работа с пользовательскими шаблонами](notification-hubs-templates-cross-platform-push-messages.md)
-- [Управление доступом к служебной шине с помощью подписанных URL-адресов](/azure/service-bus-messaging/service-bus-sas)
+- [Управление доступом к служебной шине с помощью подписанных URL-адресов](../service-bus-messaging/service-bus-sas.md)
 - [Программное создание маркеров SAS](/rest/api/eventhub/generate-sas-token)
 - [Безопасность в Apple: Common Crypto](https://developer.apple.com/security/)
 - [Формат времени UNIX EPOCH](https://en.wikipedia.org/wiki/Unix_time)

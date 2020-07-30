@@ -2,13 +2,13 @@
 title: Развернуть экземпляр контейнера с поддержкой GPU
 description: Узнайте, как развертывать экземпляры контейнеров Azure для запуска приложений-контейнеров с ресурсоемкими вычислениями с помощью ресурсов GPU.
 ms.topic: article
-ms.date: 07/02/2020
-ms.openlocfilehash: 3ddeb7da2667b774724fe05227cefeec5227101a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 07/22/2020
+ms.openlocfilehash: 19240560baa0cebdb6777d7b63d8c91832b12e1a
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87076864"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87387101"
 ---
 # <a name="deploy-container-instances-that-use-gpu-resources"></a>Развертывание экземпляров контейнеров, использующих ресурсы GPU
 
@@ -33,9 +33,6 @@ ms.locfileid: "87076864"
 
 ## <a name="about-gpu-resources"></a>Сведения о ресурсах GPU
 
-> [!IMPORTANT]
-> Ресурсы GPU доступны только при запросе. Чтобы запросить доступ к ресурсам GPU, отправьте запрос в [службу поддержки Azure][azure-support].
-
 ### <a name="count-and-sku"></a>Количество и номер SKU
 
 Чтобы использовать GPU в экземпляре контейнера, укажите *ресурс GPU* со следующими сведениями:
@@ -43,7 +40,7 @@ ms.locfileid: "87076864"
 * **Count** — число GPU: **1**, **2**или **4**.
 * **SKU** — номер SKU GPU: **K80**, **P100**или **V100**. Каждый номер SKU сопоставляется с графическим процессором NVIDIA Tesla в одном из следующих семейств виртуальных машин с поддержкой GPU Azure:
 
-  | номер SKU | Семейство виртуальных машин |
+  | SKU | Семейство виртуальных машин |
   | --- | --- |
   | K80 | [NC](../virtual-machines/nc-series.md) |
   | P100 | [NCv2](../virtual-machines/ncv2-series.md) |
@@ -52,6 +49,9 @@ ms.locfileid: "87076864"
 [!INCLUDE [container-instances-gpu-limits](../../includes/container-instances-gpu-limits.md)]
 
 При развертывании ресурсов GPU задайте ресурсы ЦП и памяти, подходящие для рабочей нагрузки, до максимальных значений, приведенных в предыдущей таблице. В настоящее время эти значения больше ресурсов ЦП и памяти, доступных в группах контейнеров без ресурсов GPU.  
+
+> [!IMPORTANT]
+> [Лимиты подписки](container-instances-quotas.md) по умолчанию (квоты) для ресурсов GPU ОТЛИЧАЮТСЯ по номерам SKU. По умолчанию для номеров SKU P100 и V100 изначально задано значение 0. Чтобы запросить увеличение доступного региона, отправьте [запрос в службу поддержки Azure][azure-support].
 
 ### <a name="things-to-know"></a>Полезная информация
 
@@ -209,7 +209,7 @@ Adding run metadata for 999
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Так как использование ресурсов GPU может быть дорогостоящим, следите, чтобы ваши контейнеры не работали в течение длительного времени. Отслеживайте свои контейнеры на портале Azure или проверяйте состояние группы контейнеров с помощью команды [az container show][az-container-show]. Например.
+Так как использование ресурсов GPU может быть дорогостоящим, следите, чтобы ваши контейнеры не работали в течение длительного времени. Отслеживайте свои контейнеры на портале Azure или проверяйте состояние группы контейнеров с помощью команды [az container show][az-container-show]. Пример.
 
 ```azurecli
 az container show --resource-group myResourceGroup --name gpucontainergroup --output table

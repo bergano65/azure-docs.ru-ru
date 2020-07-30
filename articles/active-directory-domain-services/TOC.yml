@@ -49,6 +49,8 @@
       href: synchronization.md
     - name: Как работает синхронизация хэшированных паролей
       href: ../active-directory/hybrid/how-to-connect-password-hash-synchronization.md?context=/azure/active-directory-domain-services/context/azure-ad-ds-context
+    - name: Рекомендации по виртуальным сетям
+      href: network-considerations.md
     - name: Преимущества перехода с классической модели развертывания
       href: concepts-migration-benefits.md
     - name: Что такое Azure Active Directory
@@ -65,10 +67,6 @@
           href: create-ou.md
         - name: Создание групповой управляемой учетной записи службы
           href: create-gmsa.md
-    - name: "Подготовка к использованию Azure AD\_DS"
-      items:
-        - name: Рекомендации по виртуальным сетям
-          href: network-considerations.md
     - name: "Управление Azure AD\_DS"
       items:
         - name: Администрирование групповой политики
