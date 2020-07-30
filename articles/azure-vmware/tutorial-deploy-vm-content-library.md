@@ -2,13 +2,13 @@
 title: Руководство по созданию библиотеки содержимого для развертывания виртуальных машин в решении Azure VMware (AVS)
 description: В этом учебнике по решению Azure VMware (AVS) показано, как создать библиотеку содержимого для развертывания виртуальной машины в частном облаке AVS.
 ms.topic: tutorial
-ms.date: 07/10/2020
-ms.openlocfilehash: bdea4304baa92fadc4d6c3d0060f99cf37af5f77
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.date: 07/16/2020
+ms.openlocfilehash: d5f0f26293af9eb146cfb4b2f3adf47fe8cce94f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86259425"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079389"
 ---
 # <a name="tutorial-create-a-content-library-to-deploy-vms-in-azure-vmware-solution-avs"></a>Руководство по созданию библиотеки содержимого для развертывания виртуальных машин в решении Azure VMware (AVS)
 

@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 09/30/2019
 ms.author: tomfitz
 ms.custom: mvc
-ms.openlocfilehash: 883bc209c343784e07bb5e03dc9f721c19b2f635
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: b2e7153cfe9e355ae86beae66723ec0b44513001
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81460092"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87010620"
 ---
 # <a name="tutorial-learn-about-linux-virtual-machine-management-with-azure-cli"></a>Руководство по Управление виртуальными машинами Linux с помощью Azure CLI
 
@@ -25,7 +25,7 @@ ms.locfileid: "81460092"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать Azure CLI локально, для работы с этим руководством понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать Azure CLI локально, для работы с этим руководством понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="understand-scope"></a>Общие сведения об области
 
@@ -55,7 +55,7 @@ az group create --name myResourceGroup --location "East US"
 
 Чтобы не назначать роли для отдельных пользователей, зачастую бывает проще создать группу Azure Active Directory для пользователей, которым нужно выполнять подобные действия. А затем назначить этой группе соответствующую роль. В этой статье описано, как использовать существующую группу, чтобы управлять виртуальной машиной, или портал, чтобы [создать группу Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
-Создав новую группу или найдя существующую, воспользуйтесь командой [az role assignment create](https://docs.microsoft.com/cli/azure/policy/assignment?view=azure-cli-latest#az-policy-assignment-create), чтобы назначить группе Azure Active Directory роль участника виртуальных машин для группы ресурсов.
+Создав новую группу или найдя существующую, воспользуйтесь командой [az role assignment create](/cli/azure/policy/assignment?view=azure-cli-latest#az-policy-assignment-create), чтобы назначить группе Azure Active Directory роль участника виртуальных машин для группы ресурсов.
 
 ```azurecli-interactive
 adgroupId=$(az ad group show --group <your-group-name> --query objectId --output tsv)
@@ -63,13 +63,13 @@ adgroupId=$(az ad group show --group <your-group-name> --query objectId --output
 az role assignment create --assignee-object-id $adgroupId --role "Virtual Machine Contributor" --resource-group myResourceGroup
 ```
 
-Если возникнет ошибка с сообщением о том, что **Субъект \<guid> не существует в каталоге**, это значит, что новая группа еще не используется в Azure Active Directory. Попробуйте выполнить команду снова.
+Если возникнет ошибка с сообщением о том, что **участник \<guid> не существует в каталоге**, это значит, что новая группа еще не используется в Azure Active Directory. Попробуйте выполнить команду снова.
 
 Как правило, нужно повторить эту процедуру для *участника сети* и *участника учетной записи хранения*, чтобы назначить пользователей для управления развернутыми ресурсами. В текущей статье эти действия можно пропустить.
 
 ## <a name="azure-policy"></a>Политика Azure
 
-Служба [Политика Azure](../../governance/policy/overview.md) позволяет следить за тем, чтобы все ресурсы в подписке соответствовали корпоративным стандартам. Ваша подписка уже имеет несколько определений политики. Чтобы просмотреть доступные определения политик, воспользуйтесь командой [az policy definition list](https://docs.microsoft.com/cli/azure/policy/definition?view=azure-cli-latest#az-policy-definition-list):
+Служба [Политика Azure](../../governance/policy/overview.md) позволяет следить за тем, чтобы все ресурсы в подписке соответствовали корпоративным стандартам. Ваша подписка уже имеет несколько определений политики. Чтобы просмотреть доступные определения политик, воспользуйтесь командой [az policy definition list](/cli/azure/policy/definition?view=azure-cli-latest#az-policy-definition-list):
 
 ```azurecli-interactive
 az policy definition list --query "[].[displayName, policyType, name]" --output table
@@ -81,7 +81,7 @@ az policy definition list --query "[].[displayName, policyType, name]" --output 
 * ограничивают номера SKU для виртуальных машин;
 * выполняют аудит виртуальных машин, не использующих управляемые диски.
 
-В следующем примере вы получите три определения политик на основе отображаемого имени. Назначьте эти определения группе ресурсов с помощью команды [az policy assignment create](https://docs.microsoft.com/cli/azure/policy/assignment?view=azure-cli-latest#az-policy-assignment-create). Для некоторых политик нужно указать допустимые значения, задав значения параметров.
+В следующем примере вы получите три определения политик на основе отображаемого имени. Назначьте эти определения группе ресурсов с помощью команды [az policy assignment create](/cli/azure/policy/assignment?view=azure-cli-latest#az-policy-assignment-create). Для некоторых политик нужно указать допустимые значения, задав значения параметров.
 
 ```azurecli-interactive
 # Get policy definitions for allowed locations, allowed SKUs, and auditing VMs that don't use managed disks
@@ -143,7 +143,7 @@ az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --ge
 
 Для создания или удаления блокировок управления необходим доступ к действиям `Microsoft.Authorization/locks/*`. Из встроенных ролей эти действия предоставляются только **владельцу** и **администратору доступа пользователей**.
 
-Чтобы заблокировать виртуальную машину и группу безопасности сети, выполните команду [az lock create](https://docs.microsoft.com/cli/azure/resource/lock?view=azure-cli-latest#az-resource-lock-create).
+Чтобы заблокировать виртуальную машину и группу безопасности сети, выполните команду [az lock create](/cli/azure/resource/lock?view=azure-cli-latest#az-resource-lock-create).
 
 ```azurecli-interactive
 # Add CanNotDelete lock to the VM
@@ -175,7 +175,7 @@ az group delete --name myResourceGroup
 
 [!INCLUDE [Resource Manager governance tags CLI](../../../includes/resource-manager-governance-tags-cli.md)]
 
-Чтобы применить теги к виртуальной машине, выполните команду [az resource tag](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az-resource-list). Существующие теги для ресурса не сохраняются.
+Чтобы применить теги к виртуальной машине, выполните команду [az resource tag](/cli/azure/resource?view=azure-cli-latest#az-resource-list). Существующие теги для ресурса не сохраняются.
 
 ```azurecli-interactive
 az resource tag -n myVM \
@@ -186,7 +186,7 @@ az resource tag -n myVM \
 
 ### <a name="find-resources-by-tag"></a>Поиск ресурсов по тегу
 
-Чтобы найти ресурсы по имени и значению тега, выполните команду [az resource list](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az-resource-list):
+Чтобы найти ресурсы по имени и значению тега, выполните команду [az resource list](/cli/azure/resource?view=azure-cli-latest#az-resource-list):
 
 ```azurecli-interactive
 az resource list --tag Environment=Test --query [].name
@@ -204,7 +204,7 @@ az vm stop --ids $(az resource list --tag Environment=Test --query "[?type=='Mic
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Удалить заблокированные группы безопасности сети невозможно до тех пор, пока не будет снята блокировка. Чтобы снять блокировку, получите идентификаторы блокировок и укажите их при выполнении команды [az lock delete](https://docs.microsoft.com/cli/azure/resource/lock?view=azure-cli-latest#az-resource-lock-delete).
+Удалить заблокированные группы безопасности сети невозможно до тех пор, пока не будет снята блокировка. Чтобы снять блокировку, получите идентификаторы блокировок и укажите их при выполнении команды [az lock delete](/cli/azure/resource/lock?view=azure-cli-latest#az-resource-lock-delete).
 
 ```azurecli-interactive
 vmlock=$(az lock show --name LockVM \
@@ -218,7 +218,7 @@ nsglock=$(az lock show --name LockNSG \
 az lock delete --ids $vmlock $nsglock
 ```
 
-Вы можете удалить ставшие ненужными группу ресурсов, виртуальную машину и все связанные с ней ресурсы, выполнив команду [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete). Завершите сеанс SSH для виртуальной машины, а затем удалите ресурсы, как показано ниже:
+Вы можете удалить ставшие ненужными группу ресурсов, виртуальную машину и все связанные с ней ресурсы, выполнив команду [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete). Завершите сеанс SSH для виртуальной машины, а затем удалите ресурсы, как показано ниже:
 
 ```azurecli-interactive 
 az group delete --name myResourceGroup
@@ -239,4 +239,3 @@ az group delete --name myResourceGroup
 
 > [!div class="nextstepaction"]
 > [Управление виртуальными машинами](tutorial-config-management.md)
-

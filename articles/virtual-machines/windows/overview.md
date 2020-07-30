@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: bf1e3abc1d4fceaa6547f63346ecd64e1128eac2
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: 4868db7df6209c620c5ae1bd9b1207072214ad35
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84234967"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074212"
 ---
 # <a name="windows-virtual-machines-in-azure"></a>Виртуальные машины Windows в Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "84234967"
 Вы можете увеличить масштаб виртуальных машин, используемых приложением, а также развернуть дополнительные виртуальные машины в соответствии с требованиями.
 
 ## <a name="what-do-i-need-to-think-about-before-creating-a-vm"></a>О чем следует подумать перед созданием виртуальной машины?
-При создании инфраструктуры приложения в Azure всегда нужно учитывать множество [рекомендаций по проектированию](https://docs.microsoft.com/azure/architecture/reference-architectures/n-tier/windows-vm). Перед началом работы следует подумать о следующих аспектах для виртуальной машины:
+При создании инфраструктуры приложения в Azure всегда нужно учитывать множество [рекомендаций по проектированию](/azure/architecture/reference-architectures/n-tier/windows-vm). Перед началом работы следует подумать о следующих аспектах для виртуальной машины:
 
 * имена ресурсов приложения;
 * расположение, в котором хранятся ресурсы;
@@ -48,9 +48,9 @@ ms.locfileid: "84234967"
 | Метод | Описание |
 | --- | --- |
 | Портал Azure |Выберите расположение из списка при создании виртуальной машины. |
-| Azure PowerShell |Используйте команду [Get-AzLocation](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation). |
-| REST API |Используйте операцию [вывода списка расположений](https://docs.microsoft.com/rest/api/resources/subscriptions). |
-| Azure CLI |Используйте операцию [az account list-locations](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest). |
+| Azure PowerShell |Используйте команду [Get-AzLocation](/powershell/module/az.resources/get-azlocation). |
+| REST API |Используйте операцию [вывода списка расположений](/rest/api/resources/subscriptions). |
+| Azure CLI |Используйте операцию [az account list-locations](/cli/azure/account?view=azure-cli-latest). |
 
 ## <a name="availability"></a>Доступность
 В рамках отраслевого соглашения об уровне обслуживания Azure мы объявили о поддержке одного экземпляра виртуальной машины с гарантированной доступностью в течение 99,9 % времени при условии его развертывания с использованием хранилища класса Premium для всех дисков.  Чтобы обеспечить соответствие соглашению об уровне обслуживания с гарантированной доступностью виртуальных машин в течение 99,95 % времени, вам так или иначе нужно развернуть две или несколько виртуальных машин для выполнения рабочих нагрузок в рамках группы доступности. В группе доступности виртуальные машины распределяются по несколькими доменам сбоя в центрах обработки данных Azure, а также развертываются на узлах с разными периодами обслуживания. В полном [соглашении об уровне обслуживания Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/) поясняется гарантированная доступность Azure в целом.
@@ -74,20 +74,20 @@ Azure предоставляет множество [образов из Marketp
 | Метод | Описание |
 | --- | --- |
 | Портал Azure |При выборе используемого образа значения задаются автоматически. |
-| Azure PowerShell |[Get-AzVMImagePublisher](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagepublisher). Параметр *location* указывает расположение.<BR>[Get-AzVMImageOffer](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimageoffer). Параметр *location* указывает расположение, *publisherName* — имя издателя.<BR>[Get-AzVMImageSku](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagesku). Параметр *location* указывает расположение, *publisherName* — имя издателя, *offerName* — имя предложения. |
-| Интерфейсы REST API |[Получение списка издателей образов](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publishers)<BR>[Получение списка предложений для образа](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publisher-offers)<BR>[Получение списка SKU для образа](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publisher-offer-skus) |
-| Azure CLI |[az vm image list-publishers](https://docs.microsoft.com/cli/azure/vm/image?view=azure-cli-latest). Параметр *--location* указывает расположение.<BR>[az vm image list-offers](https://docs.microsoft.com/cli/azure/vm/image?view=azure-cli-latest). Параметр *--location* указывает расположение, *--publisher* — имя издателя.<BR>[az vm image list-skus](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest). Параметр *--location* указывает расположение, *--publisher* — имя издателя, а *--offer* — имя предложения.|
+| Azure PowerShell |[Get-AzVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher). Параметр *location* указывает расположение.<BR>[Get-AzVMImageOffer](/powershell/module/az.compute/get-azvmimageoffer). Параметр *location* указывает расположение, *publisherName* — имя издателя.<BR>[Get-AzVMImageSku](/powershell/module/az.compute/get-azvmimagesku). Параметр *location* указывает расположение, *publisherName* — имя издателя, *offerName* — имя предложения. |
+| Интерфейсы REST API |[Получение списка издателей образов](/rest/api/compute/platformimages/platformimages-list-publishers)<BR>[Получение списка предложений для образа](/rest/api/compute/platformimages/platformimages-list-publisher-offers)<BR>[Получение списка SKU для образа](/rest/api/compute/platformimages/platformimages-list-publisher-offer-skus) |
+| Azure CLI |[az vm image list-publishers](/cli/azure/vm/image?view=azure-cli-latest). Параметр *--location* указывает расположение.<BR>[az vm image list-offers](/cli/azure/vm/image?view=azure-cli-latest). Параметр *--location* указывает расположение, *--publisher* — имя издателя.<BR>[az vm image list-skus](/cli/azure/vm?view=azure-cli-latest). Параметр *--location* указывает расположение, *--publisher* — имя издателя, а *--offer* — имя предложения.|
 
 Вы можете [передать и использовать собственный образ](upload-generalized-managed.md). В этом случае имя издателя, предложение и SKU не используются.
 
 ### <a name="extensions"></a>Модули
-[Расширения](extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) виртуальных машин предоставляют дополнительные возможности за счет настройки после развертывания и автоматизированных задач.
+[Расширения](../extensions/features-windows.md?toc=/azure/virtual-machines/windows/toc.json) виртуальных машин предоставляют дополнительные возможности за счет настройки после развертывания и автоматизированных задач.
 
 С помощью расширений можно выполнить такие стандартные задачи:
 
-* **Выполнение пользовательских скриптов.** [Расширение пользовательских скриптов](extensions-customscript.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) помогает настроить рабочие нагрузки на виртуальной машине, выполняя скрипт при подготовке виртуальной машины.
-* **Развертывание конфигураций и управление ими.** [Расширение настройки требуемого состояния (DSC) PowerShell](extensions-dsc-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) позволяет настроить DSC на виртуальной машине для управления конфигурациями и средами.
-* **Сбор данных диагностики.** [Расширение системы диагностики Azure](extensions-diagnostics-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) позволяет настроить виртуальную машину для сбора данных диагностики, которые можно использовать для мониторинга состояния работоспособности приложения.
+* **Выполнение пользовательских скриптов.** [Расширение пользовательских скриптов](../extensions/custom-script-windows.md?toc=/azure/virtual-machines/windows/toc.json) помогает настроить рабочие нагрузки на виртуальной машине, выполняя скрипт при подготовке виртуальной машины.
+* **Развертывание конфигураций и управление ими.** [Расширение настройки требуемого состояния (DSC) PowerShell](../extensions/dsc-overview.md?toc=/azure/virtual-machines/windows/toc.json) позволяет настроить DSC на виртуальной машине для управления конфигурациями и средами.
+* **Сбор данных диагностики.** [Расширение системы диагностики Azure](../extensions/diagnostics-template.md?toc=/azure/virtual-machines/windows/toc.json) позволяет настроить виртуальную машину для сбора данных диагностики, которые можно использовать для мониторинга состояния работоспособности приложения.
 
 ### <a name="related-resources"></a>Связанные ресурсы
 Ресурсы в этой таблице используются в виртуальной машине. Они должны существовать или создаваться вместе с виртуальной машиной.
@@ -95,7 +95,7 @@ Azure предоставляет множество [образов из Marketp
 | Ресурс | Обязательно | Описание |
 | --- | --- | --- |
 | [Группа ресурсов](../../azure-resource-manager/management/overview.md) |Да |Виртуальная машина должна входить в группу ресурсов. |
-| [Учетная запись хранения](../../storage/common/storage-create-storage-account.md) |Да |Виртуальной машине требуется учетная запись хранения для хранения виртуальных жестких дисков. |
+| [Учетная запись хранения](../../storage/common/storage-account-create.md) |Да |Виртуальной машине требуется учетная запись хранения для хранения виртуальных жестких дисков. |
 | [Виртуальная сеть](../../virtual-network/virtual-networks-overview.md) |Да |Виртуальная машина должна быть подключена к виртуальной сети. |
 | [Общедоступный IP-адрес](../../virtual-network/public-ip-addresses.md) |Нет |Для удаленного доступа к виртуальной машине ей можно назначить общедоступный IP-адрес. |
 | [Сетевой интерфейс](../../virtual-network/virtual-network-network-interface.md) |Да |Для обмена данными в сети виртуальной машине нужен сетевой интерфейс. |
@@ -108,4 +108,3 @@ Azure предоставляет множество [образов из Marketp
 - [Портал](quick-create-portal.md)
 - [PowerShell](quick-create-powershell.md)
 - [Azure CLI](quick-create-cli.md)
-

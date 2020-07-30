@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 03/12/2019
-ms.openlocfilehash: f4c4c63e6461dd3aa3cabe86b871434814fb400e
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: 8ac742c42a32e8b864c4be71e786c292ceb1514d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84708542"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073376"
 ---
 # <a name="use-powershell-with-an-azure-resource-manager-template-to-create-a-managed-instance"></a>Создание управляемого экземпляра с помощью PowerShell с шаблоном Azure Resource Manager
 
@@ -138,6 +138,6 @@ New-AzResourceGroupDeployment  -Name MyDeployment -ResourceGroupName $resourceGr
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure PowerShell см. в [этой документации](/powershell/azure/overview).
+Дополнительные сведения об Azure PowerShell см. в [этой документации](/powershell/azure/).
 
 Дополнительные примеры скриптов PowerShell для Управляемого экземпляра SQL Azure можно найти [здесь](../../database/powershell-script-content-guide.md).

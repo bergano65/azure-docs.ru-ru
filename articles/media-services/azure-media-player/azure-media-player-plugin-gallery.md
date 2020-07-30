@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: overview
 ms.date: 04/20/2020
-ms.openlocfilehash: 4d3d522de84ebd019fd432f5c4e5d89ac5ef8bcf
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
+ms.openlocfilehash: 6d592064729bbdd64e485e0bd0373b2d471597e0
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84263743"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282489"
 ---
 # <a name="azure-media-player-plugin-gallery"></a>Коллекция подключаемых модулей Проигрывателя мультимедиа Azure #
 
@@ -20,7 +20,7 @@ ms.locfileid: "84263743"
 | Имя подключаемого модуля                         | URL-адрес ролика                    | Исходный код                | Описание    |
 |-------------------------------------|-----------------------------|----------------------------|----------------|
 | Дополнительные функции                 | | | |
-| **Новинка!** AMP360Video                | [Демонстрация](http://www.babylonjs.com/demos/amp360video/)                        | [GitHub](https://github.com/BabylonJS/Extensions/tree/master/Amp360Video)                     | Этот подключаемый модуль позволяет визуализировать панорамные видео в Проигрывателе мультимедиа Azure на компьютере или на устройствах с поддержкой виртуальной реальности. Полная документация доступна [здесь](https://doc\.babylonjs\.com/extensions/amp360video). |
+| **Новинка!** AMP360Video                | [Демонстрация](http://www.babylonjs.com/demos/amp360video/)                        | [GitHub](https://github.com/BabylonJS/Extensions/tree/master/Amp360Video)                     | Этот подключаемый модуль позволяет визуализировать панорамные видео в Проигрывателе мультимедиа Azure на компьютере или на устройствах с поддержкой виртуальной реальности. Полная документация доступна [здесь](https://doc.babylonjs.com/extensions/amp360video). |
 |  Всплывающее изображение спрайта                         | [Демонстрация](http://www.skymedia.tv/asset/sprite)                        | [GitHub](https://github.com/RickShahid/SpriteTip)                    | Подключаемый модуль Проигрывателя мультимедиа Azure (AMP) для отображения на временной шкале спрайтового изображения с эскизом видео, созданного с помощью Media Encoder Standard (MES) из пакета Служб мультимедиа Azure. |
 | Наложение диагностики                 | [Демонстрация](https://openidconnectweb.azurewebsites.net/Diagnoverlay.html)                        | [GitHub](https://github.com/willzhan/diagnoverlay)                     | Этот подключаемый модуль отображает следующее: все ключевые параметры, статистику по видео, все события жизненного цикла воспроизведения видео и сведения о защите DRM, например идентификатор ключа, URL-адреса для приобретения лицензий, сведения о наличии защиты.                                                                                                                                                                      |
 | Калькулятор частоты кадров и кода времени | Нет доступных демонстраций | [GitHub](https://github.com/mconverti/media-services-javascript-azure-media-player-framerate-timecode-calculator-plugin)                     | Этот подключаемый модуль вычисляет частоту кадров в видео на основе контейнеров MP4 `tfhd`/`trun` в первом фрагменте видео MPEG-DASH, анализирует значение шкалы времени из манифеста клиента MPEG-DASH, а также предоставляет возможность получить код времени для полученного от проигрывателя абсолютного значения времени (и наоборот). |

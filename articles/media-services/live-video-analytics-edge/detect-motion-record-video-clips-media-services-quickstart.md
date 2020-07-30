@@ -3,12 +3,12 @@ title: Запись видео в Службы мультимедиа Azure пр
 description: В этом кратком руководстве показано, как использовать Аналитику видеотрансляции в IoT Edge для обнаружения движения во время видеотрансляции и записи видеороликов в Службы мультимедиа Azure.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: 0a81bebe7333266e1b70f97f8c712fccf392a464
-ms.sourcegitcommit: 1383842d1ea4044e1e90bd3ca8a7dc9f1b439a54
+ms.openlocfilehash: 24bf958c7a6af25d64d8c2884b9fa259c67e39c3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84817321"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074400"
 ---
 # <a name="quickstart-detect-motion-record-video-to-media-services"></a>Краткое руководство. Запись видео в Cлужбы мультимедиа при обнаружении движения
 
@@ -655,7 +655,7 @@ ms.locfileid: "84817321"
 
 Обратите внимание на следующие свойства в приведенных выше сообщениях
 
-* Каждое сообщение содержит раздел текста body и раздел свойств приложения applicationProperties. Сведения о назначении этих разделов см. в статье [Создание и чтение сообщений Центра Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-construct).
+* Каждое сообщение содержит раздел текста body и раздел свойств приложения applicationProperties. Сведения о назначении этих разделов см. в статье [Создание и чтение сообщений Центра Интернета вещей](../../iot-hub/iot-hub-devguide-messages-construct.md).
 * Первое сообщение представляет собой диагностическое событие MediaSessionEstablished, в котором говорится, что узлу источника RTSP (параметру subject) удалось установить подключение к симулятору RTSP и начать прием потока данных (эмулируемого).
 * Параметр субъекта subject в разделе свойств приложения applicationProperties обозначает узел в топологии графа, сгенерировавший сообщение. В этом случае сообщение исходит от узла источника RTSP.
 * Параметр типа события eventType в разделе applicationProperties указывает, что событие является диагностическим.

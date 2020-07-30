@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 01/08/2020
 ms.author: allensu
 ms.custom: seodec18
-ms.openlocfilehash: b8fcef13fbe41ac26b2a31d6871896428649eaa1
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: f7f16093074b48610c1db8fec7f05ee01e7ab1ed
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85920857"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078772"
 ---
 # <a name="tutorial-balance-internal-traffic-load-with-a-standard-load-balancer-in-the-azure-portal"></a>Руководство. Балансировка нагрузки внутреннего трафика с помощью подсистемы балансировки нагрузки уровня "Стандартный" на портале Azure
 
@@ -32,25 +32,23 @@ ms.locfileid: "85920857"
 
 Чтобы выполнить действия с помощью этого руководства, войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
-## <a name="create-a-vnet-back-end-servers-and-a-test-vm"></a>Создание виртуальной сети, внутренних серверов и тестовой виртуальной машины
+## <a name="virtual-network-and-parameters"></a>Виртуальные сети и параметры
+В этом разделе необходимо заменить в выполняемых действиях указанные параметры приведенными ниже сведениями.
 
-Сначала создайте виртуальную сеть. В виртуальной сети создайте две виртуальные машины, которые будут использоваться для серверного пула вашей подсистемы балансировки нагрузки уровня "Стандартный", и третью виртуальную машину, которая будет использоваться для тестирования подсистемы балансировки нагрузки. 
+| Параметр                   | Значение                |
+|-----------------------------|----------------------|
+| **\<resource-group-name>**  | myResourceGroupSLB |
+| **\<virtual-network-name>** | myVNet          |
+| **\<region-name>**          | восточная часть США 2      |
+| **\<IPv4-address-space>**   | 10.3.0.0\16          |
+| **\<subnet-name>**          | myBackendSubnet        |
+| **\<subnet-address-range>** | 10.3.0.0\24          |
 
-### <a name="create-a-virtual-network"></a>Создание виртуальной сети
-
-1. Вверху с левой стороны портала выберите **Создать ресурс** > **Сети** > **Виртуальная сеть**.
+[!INCLUDE [virtual-networks-create-new](../../includes/virtual-networks-create-new.md)]
    
-1. На панели **Создание виртуальной сети** введите или выберите приведенные ниже значения.
-   
-   - **Имя**: введите **MyVNet**.
-   - **Группа ресурсов**: выберите **Создать новую**, а затем введите **MyResourceGroupLB** и нажмите кнопку **ОК**. 
-   - **Подсеть** > **Имя**. Введите **myBackendSubnet**.
-   
-1. Нажмите кнопку **Создать**.
 
-   ![Создание виртуальной сети](./media/tutorial-load-balancer-basic-internal-portal/2-load-balancer-virtual-network.png)
 
-### <a name="create-virtual-machines"></a>Создание виртуальных машин
+## <a name="create-virtual-machines"></a>Создание виртуальных машин
 
 1. В верхней левой части портала выберите **Создать ресурс** > **Вычисления** > **Windows Server 2016 Datacenter**. 
    

@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 07/06/2020
+ms.date: 07/20/2020
 ms.author: aahi
 ms.custom: tracking-python
-ms.openlocfilehash: feababd3d6f6845142a13ccb3b2b31b78315704b
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 99c22edac7acefe3ec34ff40e892a7071b932ada
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027935"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87013816"
 ---
 # <a name="quickstart-using-the-python-rest-api-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Вызов API "Анализ текста" в Cognitive Services с помощью REST API Python 
 <a name="HOLTop"></a>
@@ -298,7 +298,7 @@ pprint(key_phrases)
 Чтобы определить известные сущности (люди, места, предметы) в текстовых документах, добавьте объект `/text/analytics/v3.0/entities/recognition/general` к базовой конечной точке API "Анализ текста". Это позволит создать URL-адрес распознавания языка. Например: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/entities/recognition/general`
     
 ```python
-entities_url = endpoint + "/text/analytics/v3.0/entities/recognition/general/recognition/general"
+entities_url = endpoint + "/text/analytics/v3.0/entities/recognition/general"
 ```
 
 Создайте коллекцию документов, как и в предыдущих примерах. 

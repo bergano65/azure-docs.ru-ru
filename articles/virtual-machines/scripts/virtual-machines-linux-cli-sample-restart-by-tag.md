@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 03/01/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: cac918f369a10a8084cdc7d0c66d5c0c4c400cc2
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 1f098b866eee6fd8555cafcec0f64a0a5f261f9e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81458545"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079984"
 ---
 # <a name="restart-vms"></a>Перезапуск виртуальных машин
 
@@ -86,15 +86,15 @@ az group delete -n myResourceGroup --no-wait --yes
 
 | Get-Help | Примечания |
 |---|---|
-| [az group create](https://docs.microsoft.com/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az vm create](https://docs.microsoft.com/cli/azure/vm/availability-set) | Создает виртуальные машины.  |
-| [az vm list](https://docs.microsoft.com/cli/azure/vm) | Используется с `--query`, чтобы обеспечить подготовку виртуальных машин, прежде чем они будут перезапущены, а затем — чтобы получить идентификаторы виртуальных машин для их перезапуска. |
-| [az resource list](https://docs.microsoft.com/cli/azure/vm) | Используется с `--query` для получения идентификаторов виртуальных машин по тегу. |
-| [az vm restart](https://docs.microsoft.com/cli/azure/vm) | Перезагружает виртуальные машины. |
-| [az group delete](https://docs.microsoft.com/cli/azure/vm/extension) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
+| [az group create](/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az vm create](/cli/azure/vm/availability-set) | Создает виртуальные машины.  |
+| [az vm list](/cli/azure/vm) | Используется с `--query`, чтобы обеспечить подготовку виртуальных машин, прежде чем они будут перезапущены, а затем — чтобы получить идентификаторы виртуальных машин для их перезапуска. |
+| [az resource list](/cli/azure/vm) | Используется с `--query` для получения идентификаторов виртуальных машин по тегу. |
+| [az vm restart](/cli/azure/vm) | Перезагружает виртуальные машины. |
+| [az group delete](/cli/azure/vm/extension) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры скриптов интерфейса командной строки для виртуальных машин см. в [документации по виртуальным машинам Azure под управлением Linux](../linux/cli-samples.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).

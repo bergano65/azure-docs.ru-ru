@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7623373be1aded29cb022f1d5080ed94d96b719
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: c2957cf59a93837e4f84f64be054cdb9e6939da3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170094"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87016519"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-internet-access-administrator"></a>Руководство по Интеграция Azure Active Directory с Zscaler Internet Access Administrator
 
@@ -41,6 +41,9 @@ ms.locfileid: "86170094"
 
 * Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Zscaler Internet Access Administrator
+
+> [!NOTE]
+> Эту интеграцию также можно использовать в облачной среде Azure AD для государственных организаций США. Это приложение можно найти в коллекции облачных приложений с поддержкой Azure AD для государственных организаций США и настроить таким же образом, как и в общедоступном облаке.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -108,21 +111,25 @@ ms.locfileid: "86170094"
 
     а. В текстовом поле **Идентификатор** введите требуемый URL-адрес:
 
-    - `https://admin.zscaler.net`
-    - `https://admin.zscalerone.net`
-    - `https://admin.zscalertwo.net`
-    - `https://admin.zscalerthree.net`
-    - `https://admin.zscloud.net`
-    - `https://admin.zscalerbeta.net`
+    | Идентификатор |
+    |------------|
+    | `https://admin.zscaler.net` |
+    | `https://admin.zscalerone.net` |
+    | `https://admin.zscalertwo.net` |
+    | `https://admin.zscalerthree.net` |
+    | `https://admin.zscloud.net` |
+    | `https://admin.zscalerbeta.net` |
 
     b. В текстовом поле **URL-адрес ответа** введите требуемый URL-адрес:
 
-    - `https://admin.zscaler.net/adminsso.do`
-    - `https://admin.zscalerone.net/adminsso.do`
-    - `https://admin.zscalertwo.net/adminsso.do`
-    - `https://admin.zscalerthree.net/adminsso.do`
-    - `https://admin.zscloud.net/adminsso.do`
-    - `https://admin.zscalerbeta.net/adminsso.do`
+    | URL-адрес ответа |
+    |-----------|
+    | `https://admin.zscaler.net/adminsso.do` |
+    | `https://admin.zscalerone.net/adminsso.do` |
+    | `https://admin.zscalertwo.net/adminsso.do` |
+    | `https://admin.zscalerthree.net/adminsso.do` |
+    | `https://admin.zscloud.net/adminsso.do` |
+    | `https://admin.zscalerbeta.net/adminsso.do` |
 
 5. Приложение Zscaler Internet Access Administrator ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **User Attributes & Claims** (Атрибуты пользователя и утверждения) на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **User Attributes & Claims** (Атрибуты пользователя и утверждения).
 
