@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: sample
 ms.date: 06/12/2020
-ms.openlocfilehash: 5e4486bf91742bf815515cf3b349fc9191202edb
-ms.sourcegitcommit: 398fecceba133d90aa8f6f1f2af58899f613d1e3
+ms.openlocfilehash: 32b5a02064ec987250f640ab6ea63515bac8385f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2020
-ms.locfileid: "85127430"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87039941"
 ---
 # <a name="create-a-resource-lock-for-azure-cosmos-gremlin-api-database-and-graph-using-azure-powershell"></a>Создание блокировки ресурсов для базы данных и графа API Gremlin в Azure Cosmos с помощью Azure PowerShell
 
@@ -21,7 +21,7 @@ ms.locfileid: "85127430"
 [!INCLUDE [sample-powershell-install](../../../../../includes/sample-powershell-install-no-ssh.md)]
 
 > [!IMPORTANT]
-> Блокировки ресурсов не работают для изменений, внесенных пользователями, которые подключаются с помощью любого пакета SDK Gremlin или портала Azure, если только учетная запись Cosmos DB сначала не будет заблокирована с включенным свойством `disableKeyBasedMetadataWriteAccess`. Дополнительные сведения о том, как включить это свойство, см. в разделе [Предотвращение изменений в пакетах SDK](../../../role-based-access-control.md#preventing-changes-from-cosmos-sdk).
+> Блокировки ресурсов не работают для изменений, внесенных пользователями, которые подключаются с помощью любого пакета SDK Gremlin или портала Azure, если только учетная запись Cosmos DB сначала не будет заблокирована с включенным свойством `disableKeyBasedMetadataWriteAccess`. Дополнительные сведения о том, как включить это свойство, см. в разделе [Предотвращение изменений в пакетах SDK](../../../role-based-access-control.md#prevent-sdk-changes).
 
 ## <a name="sample-script"></a>Пример скрипта
 

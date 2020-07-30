@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46bb3517af31e328efae89afef8f3e83ccbc8bfa
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
+ms.openlocfilehash: c44d2d80e311fd42f0e2167cb0495a4070d0a313
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83778752"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87025869"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для федеративных доменов
 
@@ -196,7 +196,7 @@ ms.locfileid: "83778752"
 
 ### <a name="using-powershell"></a>Использование PowerShell
 
-Проверьте состояние регистрации устройства в клиенте Azure с помощью **[Get-MsolDevice](/powershell/msonline/v1/get-msoldevice)** . Этот командлет применяется в [модуле PowerShell для Azure Active Directory](/powershell/azure/install-msonlinev1?view=azureadps-2.0).
+Проверьте состояние регистрации устройства в клиенте Azure с помощью **[Get-MsolDevice](/powershell/module/msonline/get-msoldevice)** . Этот командлет применяется в [модуле PowerShell для Azure Active Directory](/powershell/azure/active-directory/install-msonlinev1?view=azureadps-2.0).
 
 Когда вы используете командлет **Get-MSolDevice**, чтобы получить сведения о службе:
 

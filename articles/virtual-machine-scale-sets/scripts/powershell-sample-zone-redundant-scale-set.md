@@ -9,12 +9,12 @@ ms.subservice: availability
 ms.date: 04/05/2018
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 0c97206d4e2f0c0484cfd89138dde7e2b0d0c625
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: a1e2f2f9d6f33a53c824377e1836db2c2da2355e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83698632"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082670"
 ---
 # <a name="create-a-zone-redundant-virtual-machine-scale-set-with-powershell"></a>Создание масштабируемого набора виртуальных машин, избыточного между зонами, с помощью PowerShell
 При помощи этого скрипта создается масштабируемый набор виртуальных машин под управлением Windows Server 2016 в нескольких зонах доступности. После выполнения сценария можно получить доступ к виртуальной машине по протоколу RDP.
@@ -48,4 +48,4 @@ Remove-AzResourceGroup -Name myResourceGroup
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 02/26/2020
+ms.date: 07/27/2020
 ms.author: aahi
-ms.openlocfilehash: 039a52c9ab0bfc460116e48086c854f4d7e8efb4
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.openlocfilehash: 8afceb19af0d177415d0b68b5d38f19d18835af5
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82996966"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87291759"
 ---
 # <a name="quickstart-use-the-text-analytics-client-library-for-ruby"></a>Краткое руководство. Использование клиентской библиотеки API "Анализ текста" для Ruby
 
@@ -37,7 +37,7 @@ ms.locfileid: "82996966"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 * Текущая версия [Ruby](https://www.ruby-lang.org/)
 * Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank">созданию ресурса Анализа текста<span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. 
     * Для подключения приложения к API Анализа текста потребуется ключ и конечная точка из созданного ресурса. Вы сделаете это позже в этом кратком руководстве.

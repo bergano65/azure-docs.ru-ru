@@ -11,12 +11,12 @@ author: mashamsft
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: d63e6a58caf218022e3ebf7423e2495e98d9485c
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
+ms.openlocfilehash: aa37e2d0c301022a018ae9cb4082dbbed650f921
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84196761"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084970"
 ---
 # <a name="use-powershell-to-configure-active-geo-replication-for-a-database-in-azure-sql-database"></a>Настройка активной георепликации базы данных в службе "База данных SQL Azure" с помощью PowerShell
 
@@ -63,6 +63,6 @@ Remove-AzResourceGroup -ResourceGroupName $secondaryresourcegroupname
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения об Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
 
 Дополнительные примеры скриптов PowerShell для базы данных SQL Azure можно найти [здесь](../powershell-script-content-guide.md).

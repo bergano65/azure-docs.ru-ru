@@ -10,12 +10,12 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 12/04/2019
 ms.author: tamram
-ms.openlocfilehash: de51ed7d91ba1102f5a9cd376ab95f49dd54d9f3
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: c95f66a492f1fdb6f3c0aef6390f0b925dcf6e53
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80067077"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87089382"
 ---
 # <a name="calculate-the-size-of-a-blob-container-with-powershell"></a>Вычисление размера контейнера больших двоичных объектов с помощью PowerShell
 
@@ -53,6 +53,6 @@ Remove-AzResourceGroup -Name bloblisttestrg
 
 Дополнительные сведения о скрипте, который позволяет вычислить размер контейнера для выставления счетов, см. в разделе [Вычисление общего указываемого в счете размера контейнера больших двоичных объектов](../scripts/storage-blobs-container-calculate-billing-size-powershell.md).
 
-Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
 
 Дополнительные примеры скриптов PowerShell хранилища см. в статье [Примеры скриптов Azure PowerShell для хранилища BLOB-объектов Azure](../blobs/storage-samples-blobs-powershell.md).

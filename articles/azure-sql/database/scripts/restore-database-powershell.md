@@ -11,12 +11,12 @@ author: mashamsft
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 03/27/2019
-ms.openlocfilehash: 321c0ee7448a977366ac727c9435a88685a6a5c7
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
+ms.openlocfilehash: ed66759ab2da28f004c704d4ea24ec4124355c98
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84196808"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084982"
 ---
 # <a name="use-powershell-to-restore-a-database-to-an-earlier-point-in-time"></a>Использование PowerShell для восстановления базы данных на более ранний момент времени
 
@@ -59,6 +59,6 @@ Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения об Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
 
 Дополнительные примеры сценариев PowerShell для базы данных SQL Azure можно найти [здесь](../powershell-script-content-guide.md).

@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 12/05/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 3e44236f74a5448c540c58ba730d65b412d48bd0
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 1c53194bd345c18ac582acd538f1e8f8e1e34d54
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82101711"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87027858"
 ---
 # <a name="tutorial-install-the-sql-iis-net-stack-in-a-windows-vm-with-azure-powershell"></a>Руководство по Установка стека SQL, IIS и .NET на виртуальной машине Windows с помощью Azure PowerShell
 
@@ -33,7 +33,7 @@ Azure Cloud Shell — это бесплатная интерактивная о�
 
 ## <a name="create-an-iis-vm"></a>Создание виртуальной машины с IIS 
 
-В этом примере мы воспользуемся командлетом [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) в Cloud Shell для PowerShell, чтобы быстро создать виртуальную машину под управлением Windows Server 2016, а затем установим IIS и .NET Framework. Виртуальные машины с IIS и SQL используют одну группу ресурсов и виртуальную сеть, поэтому мы создадим переменные для этих имен.
+В этом примере мы воспользуемся командлетом [New-AzVM](/powershell/module/az.compute/new-azvm) в Cloud Shell для PowerShell, чтобы быстро создать виртуальную машину под управлением Windows Server 2016, а затем установим IIS и .NET Framework. Виртуальные машины с IIS и SQL используют одну группу ресурсов и виртуальную сеть, поэтому мы создадим переменные для этих имен.
 
 
 ```azurepowershell-interactive
@@ -52,7 +52,7 @@ New-AzVm `
     -OpenPorts 80,3389 
 ```
 
-Установите IIS и .NET Framework, используя расширение пользовательского скрипта и командлет [Set-AzVMExtension](https://docs.microsoft.com/powershell/module/az.compute/set-azvmextension).
+Установите IIS и .NET Framework, используя расширение пользовательского скрипта и командлет [Set-AzVMExtension](/powershell/module/az.compute/set-azvmextension).
 
 ```azurepowershell-interactive
 Set-AzVMExtension `
@@ -76,7 +76,7 @@ $vNet = Get-AzVirtualNetwork `
    -ResourceGroupName $resourceGroup
 ```
 
-Создайте конфигурацию подсети с попощью командлета [Add-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/add-azvirtualnetworksubnetconfig).
+Создайте конфигурацию подсети с попощью командлета [Add-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig).
 
 
 ```azurepowershell-interactive
@@ -87,7 +87,7 @@ Add-AzVirtualNetworkSubnetConfig `
    -ServiceEndpoint Microsoft.Sql
 ```
 
-Укажите для виртуальной сети сведения о новой подсети, выполнив командлет [Set-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/set-azvirtualnetwork).
+Укажите для виртуальной сети сведения о новой подсети, выполнив командлет [Set-AzVirtualNetwork](/powershell/module/az.network/set-azvirtualnetwork).
    
 ```azurepowershell-interactive   
 $vNet | Set-AzVirtualNetwork
@@ -111,7 +111,7 @@ New-AzVm `
     -OpenPorts 3389,1401 
 ```
 
-Чтобы добавить [расширение SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension) на виртуальную машину SQL, используйте командлет [Set-AzVMSqlServerExtension](https://docs.microsoft.com/powershell/module/az.compute/set-azvmsqlserverextension).
+Чтобы добавить [расширение SQL Server](../../azure-sql/virtual-machines/windows/sql-server-iaas-agent-extension-automate-management.md) на виртуальную машину SQL, используйте командлет [Set-AzVMSqlServerExtension](/powershell/module/az.compute/set-azvmsqlserverextension).
 
 ```azurepowershell-interactive
 Set-AzVMSqlServerExtension `
@@ -135,4 +135,3 @@ Set-AzVMSqlServerExtension `
 
 > [!div class="nextstepaction"]
 > [Защита веб-сервера IIS с помощью TLS/SSL-сертификатов](tutorial-secure-web-server.md)
-

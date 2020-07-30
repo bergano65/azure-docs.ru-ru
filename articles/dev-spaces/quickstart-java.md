@@ -6,12 +6,13 @@ ms.topic: quickstart
 description: В этом кратком руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения Java в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Java, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: ac7a1b37b565f3589b7c049a3c1ed2a84972ded0
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-java
+ms.openlocfilehash: c0fd035a0341e5e92b2706d833b24d5e5b87e018
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80239735"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87371572"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-with-visual-studio-code-and-java---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio Code, Java и Azure Dev Spaces в Kubernetes
 

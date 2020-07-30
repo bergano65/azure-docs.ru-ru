@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 07/03/2019
-ms.openlocfilehash: 658bedad3b74bf30ba23562ebf025af4781f1034
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: 0c6ca03f535201059f107d6b53bc423b92d1c1c1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84687554"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87073364"
 ---
 # <a name="use-powershell-to-restore-an-azure-sql-managed-instance-database-to-another-geo-region"></a>Восстановление управляемого экземпляра Базы данных SQL Azure в другом географическом регионе с помощью PowerShell
 
@@ -82,6 +82,6 @@ Remove-AzResourceGroup -ResourceGroupName $TargetResourceGroupName
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения о PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
 
 Дополнительные примеры скриптов PowerShell для Базы данных SQL Azure можно найти [здесь](../../database/powershell-script-content-guide.md).

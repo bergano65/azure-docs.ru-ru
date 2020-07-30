@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 10/30/2017
 ms.author: msangapu
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 93b53bedef291b9aa740f5bbe9c492185f035f89
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: aa0274dcfeff9a36ab58c9f6e19631eb711742bd
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80044836"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086937"
 ---
 # <a name="delete-a-backup-for-a-web-using-azure-powershell"></a>Удаление резервной копии веб-приложения с помощью Azure PowerShell
 
@@ -46,6 +46,6 @@ Remove-AzResourceGroup -Name myResourceGroup -Force
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
 
 Дополнительные примеры сценариев Azure PowerShell для веб-приложений службы приложений Azure доступны [здесь](../samples-powershell.md).

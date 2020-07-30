@@ -10,12 +10,13 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: tagore
-ms.openlocfilehash: 493e577f3edbf15a563c255b65cbed4619a09857
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.custom: devx-track-javascript
+ms.openlocfilehash: d642119d2fe70236ec8cc4b85da07bc8a2dca0c3
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85920012"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87386509"
 ---
 # <a name="build-and-deploy-a-nodejs-web-application-using-express-on-an-azure-cloud-services"></a>Создание и развертывание веб-приложения Node.js с использованием модуля Express в облачных службах Azure
 
@@ -134,7 +135,7 @@ PS C:\node\expressapp\WebRole1> Publish-AzureServiceProject -ServiceName myexpre
 
 ![В веб-браузере отображается страница Express. URL-адрес указывает, что страница теперь размещается в Azure.](./media/cloud-services-nodejs-develop-deploy-express-app/node36.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительную информацию см. в [центре разработчиков Node.js](https://docs.microsoft.com/azure/developer/javascript/).
 
 [Node.js Web Application]: https://www.windowsazure.com/develop/nodejs/tutorials/getting-started/

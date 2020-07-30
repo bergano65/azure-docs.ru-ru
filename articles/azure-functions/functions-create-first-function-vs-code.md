@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 01/10/2020
 ms.custom: mvc, devcenter, seo, tracking-python
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 819fdec23d00929db34942434f66a6ffa5d4a1d8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4f13d3bbd3f5b9d8197c48822ea54f08d3d86bfc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833746"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87056100"
 ---
 # <a name="quickstart-create-a-function-in-azure-using-visual-studio-code"></a>Краткое руководство. Создание функции в Azure с помощью Visual Studio Code
 
@@ -40,7 +40,7 @@ ms.locfileid: "85833746"
 ::: zone-end
 ::: zone pivot="programming-language-java"  
 > [!NOTE]
-> Если вы не хотите использовать Visual Studio Code в качестве средства разработки, ознакомьтесь с аналогичными руководствами для разработчиков Java по использованию [Maven](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-java), [Gradle](/azure/azure-functions/functions-create-first-java-gradle) и [IntelliJ IDEA](/azure/developer/java/toolkit-for-intellij/quickstart-functions).
+> Если вы не хотите использовать Visual Studio Code в качестве средства разработки, ознакомьтесь с аналогичными руководствами для разработчиков Java по использованию [Maven](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-java), [Gradle](./functions-create-first-java-gradle.md) и [IntelliJ IDEA](/azure/developer/java/toolkit-for-intellij/quickstart-functions).
 ::: zone-end  
 
 ## <a name="configure-your-environment"></a>Настройка среды
