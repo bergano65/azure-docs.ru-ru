@@ -9,12 +9,12 @@ ms.subservice: powershell
 ms.date: 11/08/2018
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: 999a869ec30316a330413f309e1e7431d92fac9f
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: e783f7f0a9be413679e509e4d6124d50bb811821
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83195927"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87059281"
 ---
 # <a name="tutorial-install-applications-in-virtual-machine-scale-sets-with-azure-powershell"></a>Руководство. Установка приложений в масштабируемые наборы виртуальных машин с помощью Azure PowerShell
 
@@ -35,7 +35,7 @@ ms.locfileid: "83195927"
 ## <a name="what-is-the-azure-custom-script-extension"></a>Что такое расширение пользовательских скриптов Azure?
 Расширение настраиваемых сценариев скачивает и выполняет сценарии на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или GitHub или передать на портал Azure во время выполнения расширения.
 
-Расширение настраиваемых скриптов интегрируется с шаблонами Azure Resource Manager. Эту возможность можно реализовать с помощью Azure CLI, Azure PowerShell, портала Azure или REST API. Дополнительные сведения см. в статье [Расширение Custom Script в ОС Windows](../virtual-machines/windows/extensions-customscript.md).
+Расширение настраиваемых скриптов интегрируется с шаблонами Azure Resource Manager. Эту возможность можно реализовать с помощью Azure CLI, Azure PowerShell, портала Azure или REST API. Дополнительные сведения см. в статье [Расширение Custom Script в ОС Windows](../virtual-machines/extensions/custom-script-windows.md).
 
 Чтобы увидеть расширение пользовательских скриптов в действии, создайте масштабируемый набор, который устанавливает веб-сервер IIS и выводит имя узла экземпляра виртуальной машины масштабируемого набора. Определение расширения пользовательских скриптов скачивает пример скрипта из репозитория GitHub, устанавливает необходимые пакеты, а затем записывает имя узла экземпляра виртуальной машины на базовую HTML-страницу.
 

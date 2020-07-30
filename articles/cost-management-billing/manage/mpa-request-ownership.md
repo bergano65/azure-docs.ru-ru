@@ -4,15 +4,15 @@ description: Узнайте о запросе прав владения на в�
 author: amberbhargava
 tags: billing
 ms.service: cost-management-billing
-ms.topic: conceptual
-ms.date: 06/11/2020
+ms.topic: how-to
+ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: 28080517a33f1bbf9bee3436493f178b60c0d161
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: a0643b42a7d306a9e41a80cb8529926eff42c00a
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86523610"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289008"
 ---
 # <a name="get-billing-ownership-of-azure-subscriptions-to-your-mpa-account"></a>Получение права владения на выставление счетов в подписках Azure по учетной записи MPA
 

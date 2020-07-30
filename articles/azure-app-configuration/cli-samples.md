@@ -6,18 +6,18 @@ ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: sample
 ms.date: 02/19/2020
-ms.openlocfilehash: a255db3fbce2c111a0a629c01b86cc891d71e803
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c68dfdf5357d73cc3b01d19cad61525404ab955f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77523753"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87050156"
 ---
 # <a name="azure-cli-samples"></a>Примеры для Azure CLI
 
 В следующей таблице содержатся ссылки на скрипты Bash для Azure App Configuration, выполняемые с помощью Azure CLI.
 
-| | |
+| Скрипт | Описание |
 |-|-|
 |**Создание**||
 | [Создание хранилища Конфигурации приложений](./scripts/cli-create-service.md) | Создает группу ресурсов и экземпляр хранилища Конфигураций приложений.  |

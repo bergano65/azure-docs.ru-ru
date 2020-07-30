@@ -43,8 +43,6 @@
           href: tutorial-connect-device-nodejs.md
         - name: Подключение устройства (Python)
           href: tutorial-connect-device-python.md
-        - name: Подключение устройства Plug and Play (предварительная версия)
-          href: tutorial-connect-pnp-device.md
         - name: Создание шаблона для устройства шлюза
           href: tutorial-define-gateway-device-type.md
         - name: "Подключение устройства IoT\_Edge"
@@ -79,8 +77,6 @@
       items:
         - name: Настройка шаблона устройства
           href: howto-set-up-template.md
-        - name: Подготовка и подключение MXChip IoT DevKit
-          href: howto-connect-devkit.md
         - name: "Подготовка и подключение пакета средств разработки Azure\_Sphere"
           href: howto-connect-sphere.md
         - name: Подготовка и подключение устройства RuuviTag

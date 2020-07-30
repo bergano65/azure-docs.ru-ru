@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: notification-hubs
 ms.reviewer: thsomasu
 ms.lastreviewed: 06/01/2020
-ms.openlocfilehash: bf6477fed1840daa326f411862a7304018f39e3c
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: 94e930c996710c2b25d4114c7cfcb17129c5177d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85252208"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87022435"
 ---
 # <a name="tutorial-send-push-notifications-to-ios-apps-using-azure-notification-hubs"></a>Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure
 
@@ -185,7 +185,7 @@ ms.locfileid: "85252208"
 
    Это значение маркера, которое понадобится позже для настройки Центров уведомлений.
 
-По завершении этих шагов у вас должны быть следующие сведения, которые вы будете использовать для  [настройки центра уведомлений на основе сведений APNS](notification-hubs-ios-push-notifications-swift-apps-get-started.md#configure-your-notification-hub-with-apns-information):
+По завершении этих шагов у вас должны быть следующие сведения, которые вы будете использовать для  [настройки центра уведомлений на основе сведений APNS](#configure-the-notification-hub-with-apns-information):
 
 - **идентификатор команды**  (см. шаг 1);
 - **идентификатор пакета**  (см. шаг 1);
@@ -264,7 +264,7 @@ ms.locfileid: "85252208"
 
 ## <a name="configure-the-notification-hub-with-apns-information"></a>Добавление данных об APNS в центр уведомлений
 
-В разделе  **Notification Services** выберите  **Apple (APNS)** , а затем выполните действия в зависимости от способа, выбранного ранее на этапе  [создания сертификата для Центров уведомлений](notification-hubs-ios-push-notifications-swift-apps-get-started.md#creating-a-certificate-for-notification-hubs) .
+В разделе  **Notification Services** выберите  **Apple (APNS)** , а затем выполните действия в зависимости от способа, выбранного ранее на этапе  [создания сертификата для Центров уведомлений](#create-a-certificate-for-notification-hubs) .
 
 > [!NOTE]
 > Используйте режим **Рабочая среда** или **Режим приложения**, только если push-уведомления нужно отправлять пользователям, которые приобрели приложение в магазине.
@@ -306,4 +306,4 @@ ms.locfileid: "85252208"
 
 В рамках этого учебника вы создали и настроили центр уведомлений в Azure, а также настроили его для отправки уведомлений в приложение через Службу push-уведомлений Apple (APNS). Далее мы создадим пример приложения для iOS и интегрируем пакет средств разработки Центров уведомлений Azure, чтобы он мог получать push-уведомления, отправленные через портал Azure. Перейдите к следующему учебнику в зависимости от выбранного языка:
 
-- [Руководство. Отправка push-уведомлений в приложения Swift для iOS с помощью интерфейса REST центров уведомлений](notification-hubs-ios-push-notifications-swift-apps-get-started.md)
+- [Руководство. Отправка push-уведомлений в приложения Swift для iOS с помощью интерфейса REST центров уведомлений]()
