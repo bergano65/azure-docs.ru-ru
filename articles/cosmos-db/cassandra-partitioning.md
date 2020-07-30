@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 05/20/2020
-ms.openlocfilehash: 5f159ffcea0aa88f354ae503be96a5c571c10adb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 26df3c49e44dd79d87a1e0a982ceb8133f425447
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85806838"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423326"
 ---
 # <a name="partitioning-in-azure-cosmos-db-cassandra-api"></a>Секционирование в Azure Cosmos DB API Cassandra
 
@@ -31,7 +31,7 @@ Apache Cassandra рекомендует ограничение в 100 МБ на 
 
 В Azure Cosmos DB каждая физическая Секция состоит из набора реплик, также известных как наборы реплик, по крайней мере 4 реплики на секцию. Это отличается от Apache Cassandra, где возможна настройка коэффициента репликации, равная 1. Однако это приводит к низкому доступу, если единственный узел с данными выходит из строя. В API Cassandra всегда существует коэффициент репликации 4 (кворум из 3). Azure Cosmos DB автоматически управляет наборами реплик, хотя эти наборы необходимо поддерживать с помощью различных средств в Apache Cassandra. 
 
-Apache Cassandra имеет концепцию токенов, которые являются хэшированными ключами секций. Токены основываются на murmur3 байте 64 со значениями от-2 ^ 63 до-2 ^ 63-1. Этот диапазон обычно называется "Token Ring" в Apache Cassandra. Token Ring распространяется на диапазоны маркеров, и эти диапазоны делятся между узлами, присутствующими в собственном кластере Apache Cassandra. Секционирование для Azure Cosmos DB реализуется аналогичным образом, за исключением того, что использует другой хэш-алгоритм и имеет больший круг. 
+Apache Cassandra имеет концепцию токенов, которые являются хэшированными ключами секций. Токены основываются на murmur3 байте 64 со значениями от-2 ^ 63 до-2 ^ 63-1. Этот диапазон обычно называется "Token Ring" в Apache Cassandra. Token Ring распространяется на диапазоны маркеров, и эти диапазоны делятся между узлами, присутствующими в собственном кластере Apache Cassandra. Секционирование для Azure Cosmos DB реализуется аналогичным образом, за исключением того, что использует другой хэш-алгоритм и имеет более крупное внутреннее кольцо маркера. Однако внешне мы предоставляем тот же диапазон токенов, что и Apache Cassandra, т. е. от-2 ^ 63 до-2 ^ 63-1.
 
 
 ## <a name="primary-key"></a>Первичный ключ
@@ -110,7 +110,7 @@ CREATE TABLE uprofile.user (
    PRIMARY KEY ((firstname, lastname), id) );
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [секционировании и горизонтальном масштабировании в Azure Cosmos DB](partition-data.md).
 * Дополнительные сведения о [подготовленной пропускной способности в Azure Cosmos DB](request-units.md).

@@ -1,18 +1,18 @@
 ---
 title: Создание предложения виртуальной машины Azure в Azure Marketplace
-description: Узнайте, как создать предложение виртуальной машины в Azure Marketplace с требуемым планом.
+description: Узнайте, как опубликовать предложение виртуальной машины в Azure Marketplace.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
-author: iqshahmicrosoft
-ms.author: iqshah
-ms.date: 07/17/2020
-ms.openlocfilehash: 8da76650f9cc3da0ff8f79a9d3df7a00cdd01a24
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.topic: how-to
+author: emuench
+ms.author: mingshen
+ms.date: 07/28/2020
+ms.openlocfilehash: 9db6fbe002492c0db6e9e0e5e0a23ca1946759a5
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324698"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87386441"
 ---
 # <a name="create-an-azure-virtual-machine-offer-on-azure-marketplace"></a>Создание предложения виртуальной машины Azure в Azure Marketplace
 
@@ -180,7 +180,7 @@ ms.locfileid: "87324698"
 
 ### <a name="marketplace-details"></a>Данные для Marketplace
 
-#### <a name="name"></a>Имя
+#### <a name="name"></a>Название
 
 Указанное здесь имя будет показываться клиентам как заголовок листинга вашего предложения. В этом поле автоматически вставляется имя, указанное в поле **Псевдоним предложения** при создании предложения. Впоследствии его можно изменить. Имя
 
@@ -352,7 +352,7 @@ ms.locfileid: "87324698"
 
 #### <a name="plan-name"></a>Имя плана
 
-В этом поле автоматически проставляется имя, которое вы присвоили плану при его создании. Это имя отображается в Azure Marketplace как заголовок этого плана. Максимальная длина — 100 символов.
+Это поле автоматически заполняется именем, которое вы присвоили плану при его создании. Это имя отображается в Azure Marketplace как заголовок этого плана. Максимальная длина — 100 символов.
 
 #### <a name="plan-summary"></a>Сводка плана
 
@@ -368,7 +368,7 @@ ms.locfileid: "87324698"
 
 В этой области настраивается следующее.
 
-- Рынки, на которых будет доступен этот план.
+- Рынки, на которых будет доступен этот план. Каждый план должен быть доступен по крайней мере на одном [рынке](../marketplace-geo-availability-currencies.md).
 - Цена за час.
 - Должен ли план быть видимым для всех или только для определенных клиентов (частной аудитории).
 
@@ -565,7 +565,7 @@ ms.locfileid: "87324698"
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
-1. Имя
+1. Название
 2. Описание
 3. Полезные ссылки
 4. Снимки экрана и видео

@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 00dfac7c3036c4fd457c5d3a6bb4eb7bd4e56998
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cb119ef0ffd4da4dc524c9d3c0a88b94e2251142
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84731330"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423564"
 ---
 # <a name="download-a-list-of-users-in-azure-active-directory-portal"></a>Скачивание списка пользователей на портале Azure Active Directory
 
@@ -72,13 +72,13 @@ Azure Active Directory (Azure AD) поддерживает операции мн
 
 Состояние ожидающих выполнения незавершенных запросов можно просмотреть на странице **результатов групповой операции** .
 
-[![](media/users-bulk-download/bulk-center.png "Check status in the Bulk Operations Results page")](media/users-bulk-download/bulk-center.png#lightbox)
+[![Проверьте состояние на странице результатов с массовыми операциями.](media/users-bulk-download/bulk-center.png)](media/users-bulk-download/bulk-center.png#lightbox)
 
 ## <a name="bulk-download-service-limits"></a>Ограничения службы пакетного скачивания
 
 Каждое групповое действие по созданию списка пользователей может выполняться в течение одного часа. Это позволяет создавать и скачивать список по крайней мере 500 000 пользователей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Групповое добавление пользователей](users-bulk-add.md)
 - [Массовое удаление пользователей](users-bulk-delete.md)

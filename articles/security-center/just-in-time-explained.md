@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: 50398632f47d889ecb79b32faef94c9c5923789c
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: dfdb717a27af8dc7f3186ac7afdff4d1eb3d79f5
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86532508"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87420844"
 ---
 # <a name="understanding-just-in-time-jit-vm-access"></a>Основные сведения о JIT-доступе к виртуальной машине
 
@@ -67,13 +67,17 @@ ms.locfileid: "86532508"
 
 ### <a name="what-permissions-are-needed-to-configure-and-use-jit"></a>Какие разрешения необходимы для настройки и использования JIT?
 
-Если вы хотите создать пользовательские роли, которые могут работать с JIT-компилятором, вам понадобятся следующие сведения:
+Если вы хотите создать настраиваемые роли, которые могут работать с JIT, вам понадобятся сведения из следующей таблицы.
+
+> [!TIP]
+> Чтобы создать роль с минимальными привилегиями для пользователей, которым требуется запросить JIT-доступ к виртуальной машине, и не выполнять другие операции JIT, используйте [Скрипт Set-житлеастпривилежедроле](https://github.com/Azure/Azure-Security-Center/tree/master/Powershell%20scripts/JIT%20Custom%20Role) на страницах сообщества центра безопасности GitHub.
 
 | Чтобы предоставить пользователю следующие возможности: | Разрешения для установки|
 | --- | --- |
 | Настройка или изменение политики JIT для виртуальной машины | *Назначьте этой роли следующие действия.*  <ul><li>В области подписки или группы ресурсов, связанной с виртуальной машиной:<br/> `Microsoft.Security/locations/jitNetworkAccessPolicies/write` </li><li> В области подписки или группы ресурсов виртуальной машины: <br/>`Microsoft.Compute/virtualMachines/write`</li></ul> | 
 |Запрос JIT-доступа к виртуальной машине | *Назначьте пользователю следующие действия:*  <ul><li>В области подписки или группы ресурсов, связанной с виртуальной машиной:<br/>  `Microsoft.Security/locations/jitNetworkAccessPolicies/initiate/action` </li><li>В области подписки или группы ресурсов, связанной с виртуальной машиной:<br/>  `Microsoft.Security/locations/jitNetworkAccessPolicies/*/read` </li><li>  В области подписки, группы ресурсов или виртуальной машины:<br/> `Microsoft.Compute/virtualMachines/read` </li><li>  В области подписки, группы ресурсов или виртуальной машины:<br/> `Microsoft.Network/networkInterfaces/*/read` </li></ul>|
 |Чтение политик JIT| *Назначьте пользователю следующие действия:*  <ul><li>`Microsoft.Security/locations/jitNetworkAccessPolicies/read`</li><li>`Microsoft.Security/locations/jitNetworkAccessPolicies/initiate/action`</li><li>`Microsoft.Security/policies/read`</li><li>`Microsoft.Compute/virtualMachines/read`</li><li>`Microsoft.Network/*/read`</li>|
+|||
 
 
 

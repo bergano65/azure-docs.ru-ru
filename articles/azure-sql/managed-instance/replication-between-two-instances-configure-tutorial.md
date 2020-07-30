@@ -12,12 +12,12 @@ author: MashaMSFT
 ms.author: ferno
 ms.reviewer: mathoma
 ms.date: 04/28/2020
-ms.openlocfilehash: ac701b70a9db860e2f839ab30fb575133703c142
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cd476d3210263268627541eb40c50048f0eddd1b
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708483"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87422918"
 ---
 # <a name="tutorial-configure-replication-between-two-managed-instances"></a>Учебник. Настройка репликации между двумя управляемыми экземплярами
 
@@ -26,7 +26,7 @@ ms.locfileid: "84708483"
 Репликация транзакций позволяет реплицировать данные из одной базы данных в другую, размещенную либо в SQL Server, либо в [Azure SQL управляемый экземпляр](sql-managed-instance-paas-overview.md) (общедоступная Предварительная версия). SQL Управляемый экземпляр может быть издателем, распространителем или подписчиком в топологии репликации. Доступные конфигурации см. в разделе [конфигурации репликации транзакций](replication-transactional-overview.md#common-configurations) .
 
 > [!NOTE]
-> В этой статье описывается использование [репликации транзакций](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) в Azure SQL управляемый экземпляр. Он не связан с [группами отработки отказа](https://docs.microsoft.com/azure/sql-database/sql-database-auto-failover-group), компонентом управляемый экземпляр Azure SQL, позволяющим создавать полные доступные для чтения реплики отдельных экземпляров.
+> В этой статье описывается использование [репликации транзакций](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) в Azure SQL управляемый экземпляр. Он не связан с [группами отработки отказа](https://docs.microsoft.com/azure/sql-database/sql-database-auto-failover-group), компонентом управляемый экземпляр Azure SQL, позволяющим создавать полные доступные для чтения реплики отдельных экземпляров. При настройке [репликации транзакций с группами отработки отказа](replication-transactional-overview.md#with-failover-groups)необходимо учитывать дополнительные моменты.
 
 В этом учебнике описывается настройка одного управляемого экземпляра в качестве издателя и распространителя, а также второго управляемого экземпляра в качестве подписчика.  
 
@@ -36,7 +36,7 @@ ms.locfileid: "84708483"
   > - Эта статья предназначена для опытных пользователей в настройке репликации с применением SQL Управляемый экземпляр от End к концу, начиная с создания группы ресурсов. Если вы уже развернули управляемые экземпляры, перейдите к [шагу 4](#4---create-a-publisher-database) , чтобы создать базу данных издателя, или [Шаг 6](#6---configure-distribution) , если у вас уже есть база данных издателя и подписчика, и все готово для начала настройки репликации.  
   > - В этой статье описывается настройка издателя и распространителя в одном управляемом экземпляре. Сведения о размещении распространителя на отдельном управляемом экземпляре см. в руководстве по [настройке репликации транзакций в Azure SQL управляемый экземпляр и SQL Server](replication-two-instances-and-sql-server-configure-tutorial.md). 
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 Настройка Управляемый экземпляр SQL для работы в качестве издателя и (или) распространителя требует:
 
@@ -316,6 +316,6 @@ GO
 
 Вы можете очистить ресурсы Azure, [удалив ресурсы SQL управляемый экземпляр из группы ресурсов](../../azure-resource-manager/management/manage-resources-portal.md#delete-resources) , а затем удалив группу ресурсов `SQLMI-Repl` . 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Кроме того, вы можете получить дополнительные сведения о [репликации транзакций с помощью Azure sql управляемый экземпляр](replication-transactional-overview.md) или настроить репликацию между [издателем и распространителем SQL управляемый экземпляр и подписчиком SQL на виртуальной машине Azure](replication-two-instances-and-sql-server-configure-tutorial.md). 

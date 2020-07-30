@@ -6,12 +6,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 07/21/2020
 ms.topic: conceptual
-ms.openlocfilehash: a970122c5f034e6215d2e829657c9eec99f14371
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: c7051cca9029283b150eea0519aa7432d6a9c937
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87279888"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87420487"
 ---
 # <a name="manage-role-permissions-and-security"></a>Управление разрешениями ролей и безопасностью
 
@@ -338,7 +338,7 @@ NotActions       : {}
 AssignableScopes : {/}
 ```
 
-Командлет [Get-AzRoleAssignment](/powershell/module/az.resources/get-azroleassignment?view=azps-3.7.0) выводит список назначений ролей RBAC Azure AD в указанной области. Без параметров этот командлет возвращает все назначения ролей, выполненные в подписке. Указав параметр `ExpandPrincipalGroups`, вы получите список назначений доступа для указанного пользователя и всех групп, в состав которых он входит.
+[Get-азролеассигнмент](/powershell/module/az.resources/get-azroleassignment?view=azps-3.7.0) выводит список назначений ролей Azure в указанной области. Без параметров этот командлет возвращает все назначения ролей, выполненные в подписке. Указав параметр `ExpandPrincipalGroups`, вы получите список назначений доступа для указанного пользователя и всех групп, в состав которых он входит.
 
 **Пример**. Следующий командлет выводит список всех пользователей в учетной записи службы автоматизации с указанием их ролей.
 

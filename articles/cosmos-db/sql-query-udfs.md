@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: tisande
-ms.openlocfilehash: 455f44fb365152b75a3811563b646c6243f686db
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 9be2a6c4497806370c4c53cbd41d9f48779f8472
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81011129"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87419756"
 ---
 # <a name="user-defined-functions-udfs-in-azure-cosmos-db"></a>Определяемые пользователем функции (UDF) в Azure Cosmos DB
 
@@ -55,7 +56,7 @@ API расширяет синтаксис SQL для поддержки поль
     FROM Families
 ```
 
-Результаты:
+Вы получите такие результаты:
 
 ```json
     [
@@ -76,7 +77,7 @@ API расширяет синтаксис SQL для поддержки поль
     WHERE udf.REGEX_MATCH(Families.address.city, ".*eattle")
 ```
 
-Результаты:
+Вы получите такие результаты:
 
 ```json
     [{
@@ -118,7 +119,7 @@ API расширяет синтаксис SQL для поддержки поль
     FROM Families f
 ```
 
-Результаты:
+Вы получите такие результаты:
 
 ```json
      [
@@ -137,7 +138,7 @@ API расширяет синтаксис SQL для поддержки поль
 
 Как показано в предыдущих примерах, UDF интегрирует возможности языка JavaScript с API SQL. Определяемые пользователем функции предоставляют богатый программируемый интерфейс для выполнения сложной процедурной логики с помощью встроенных возможностей среды выполнения JavaScript. API SQL предоставляет аргументы для определяемых пользователем функций для каждого исходного элемента на этапе обработки текущего предложения WHERE или SELECT. Результат легко встроить в общий конвейер выполнения. В целом, UDF — это отличные средства для выполнения сложной бизнес-логики в рамках запросов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
 - [Системные функции](sql-query-system-functions.md)

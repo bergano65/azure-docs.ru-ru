@@ -3,12 +3,13 @@ title: Создание образа с помощью собственного 
 description: Используйте команду AZ Dockerfile Pack Build, чтобы создать образ контейнера из приложения и отправить его в реестр контейнеров Azure без использования.
 ms.topic: article
 ms.date: 10/24/2019
-ms.openlocfilehash: c42bde6bbab5973094302a2d41f004d7600bdf9e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 1892f4c20eb75e5e95140c829c49a708a81c2184
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79087085"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87408022"
 ---
 # <a name="build-and-push-an-image-from-an-app-using-a-cloud-native-buildpack"></a>Сборка и отправка образа из приложения с помощью собственного облачного Буилдпакк
 
@@ -93,7 +94,7 @@ docker run --rm -p 8080:8080 myregistry.azurecr.io/java-app:runid
 Перейдите в `localhost:8080` свой любимый браузер, чтобы просмотреть пример веб-приложения. Нажмите `[Ctrl]+[C]` , чтобы прерывать контейнер.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После сборки и отправки образа контейнера с помощью `az acr pack build` его можно развернуть как любой образ в выбранном целевом объекте. Варианты развертывания Azure включают в себя запуск в [службе приложений](../app-service/containers/tutorial-custom-docker-image.md) или [Azure Kubernetes Service](../aks/tutorial-kubernetes-deploy-cluster.md), а также другие.
 

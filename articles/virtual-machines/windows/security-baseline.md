@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: abdf84a4266b0bc57d74f2219fdaece8dd193086
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 10802cd141e0b10e30cb01d3d1dc385aedf7fc1e
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87133033"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87387019"
 ---
 # <a name="azure-security-baseline-for-windows-virtual-machines"></a>Базовый план безопасности Azure для Виртуальные машины Windows
 
@@ -1091,7 +1091,7 @@ ms.locfileid: "87133033"
 
 * [Обратимое удаление для виртуальных машин](../../backup/soft-delete-virtual-machines.md)
 
-* [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](../../key-vault/general/overview-soft-delete.md)
+* [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](../../key-vault/general/soft-delete-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 

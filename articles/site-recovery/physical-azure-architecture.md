@@ -3,12 +3,12 @@ title: Архитектура аварийного восстановления 
 description: В этой статье представлен обзор компонентов и архитектуры, используемых при аварийном восстановлении физических серверов из локальной среды в Azure с помощью службы Azure Site Recovery.
 ms.topic: conceptual
 ms.date: 02/11/2020
-ms.openlocfilehash: 089d981284986a2b6eb0ee7f1dbd401fc7ce4fcd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f2184654a8169cb353fb40fa76f0a7fe9b3df6f6
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77162843"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87422663"
 ---
 # <a name="physical-server-to-azure-disaster-recovery-architecture"></a>Архитектура для аварийного восстановления физических серверов в Azure
 
@@ -27,7 +27,26 @@ ms.locfileid: "77162843"
 
 **Архитектура: репликация физических компьютеров в Azure**
 
-![Компоненты](./media/physical-azure-architecture/arch-enhanced.png)
+![Components](./media/physical-azure-architecture/arch-enhanced.png)
+
+## <a name="set-up-outbound-network-connectivity"></a>Настройка исходящего сетевого подключения
+
+Чтобы Site Recovery правильно работать, необходимо изменить исходящее сетевое подключение, чтобы разрешить репликацию среды.
+
+> [!NOTE]
+> Site Recovery не поддерживает использование прокси-сервер проверки подлинности для управления сетевым подключением.
+
+### <a name="outbound-connectivity-for-urls"></a>Исходящие подключения для URL-адресов
+
+При использовании прокси-сервера или брандмауэра на основе URL-адресов для управления исходящими подключениями разрешите использование этих URL-адресов:
+
+| **Имя**                  | **Коммерческое**                               | **Государственные организации**                                 | **Описание** |
+| ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
+| Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`               | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
+| Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Обеспечивает авторизацию и проверку подлинности URL-адресов службы Site Recovery. |
+| Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Позволяет виртуальной машине взаимодействовать со службой Site Recovery. |
+| Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Позволяет виртуальной машине записывать данные мониторинга и диагностики службы Site Recovery. |
+
 
 ## <a name="replication-process"></a>Процесс репликации
 
@@ -73,6 +92,6 @@ ms.locfileid: "77162843"
 
 ![Восстановление размещения](./media/physical-azure-architecture/enhanced-failback.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Инструкции](physical-azure-disaster-recovery.md)по настройке аварийного восстановления для физических серверов в Azure см. в этом разделе.

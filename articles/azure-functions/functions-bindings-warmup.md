@@ -2,19 +2,19 @@
 title: Триггер прогрева функций Azure
 description: Узнайте, как использовать триггер прогрева в функциях Azure.
 documentationcenter: na
-author: alexkarcher-msft
+author: craigshoemaker
 manager: gwallace
 keywords: функции Azure, функции, обработка событий, прогрев, холодный запуск, Premium, динамические вычислительные ресурсы, бессерверная архитектура
 ms.service: azure-functions
 ms.topic: reference
 ms.date: 11/08/2019
-ms.author: alkarche
-ms.openlocfilehash: 013001eebeec232cc60e31f1a850aeab4fd6c905
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: cshoe
+ms.openlocfilehash: dade31fd9a5a75c875274ea45607fea81a2de027
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82982247"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87383721"
 ---
 # <a name="azure-functions-warm-up-trigger"></a>Триггер прогрева функций Azure
 
@@ -243,6 +243,6 @@ public void run( ExecutionContext context) {
 * Триггер прогрева нельзя вызывать после того, как уже запущен экземпляр.
 * В каждом приложении функции может быть только одна функция триггера прогрева.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

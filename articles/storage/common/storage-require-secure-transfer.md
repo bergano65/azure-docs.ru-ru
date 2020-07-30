@@ -10,12 +10,12 @@ ms.date: 04/21/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 125f4188ed3f12f366c619af9efe3aa203987c19
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 668b8d714c4d6c146d9b279d9e6a49599c04775c
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81870519"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423513"
 ---
 # <a name="require-secure-transfer-to-ensure-secure-connections"></a>Требовать безопасное перемещение для обеспечения безопасных соединений
 
@@ -51,7 +51,7 @@ ms.locfileid: "81870519"
 
 ## <a name="require-secure-transfer-from-code"></a>Требовать безопасной перенос из кода
 
-Чтобы настроить безопасную пересылку программно, установите свойство _supportsHttpsTrafficOnly_ в учетной записи хранения. Это свойство можно задать с помощью REST API поставщика ресурсов хранилища, клиентских библиотек или средств.
+Чтобы обеспечить безопасное перемещение программными средствами, установите для свойства _enablehttpstrafficonly._ в учетной записи хранения _значение true_ . Это свойство можно задать с помощью REST API поставщика ресурсов хранилища, клиентских библиотек или средств.
 
 * [REST API](/rest/api/storagerp/storageaccounts)
 * [PowerShell](/powershell/module/az.storage/set-azstorageaccount)
@@ -123,6 +123,6 @@ az storage account update -g {ResourceGroupName} -n {StorageAccountName} --https
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Рекомендации по обеспечению безопасности для хранилища BLOB-объектов](../blobs/security-recommendations.md)

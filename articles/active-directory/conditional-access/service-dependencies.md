@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 00b23a845002f5a92128917d81fdadf5a647d798
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 578f1e97c8a53604edca7b803933139362a763a7
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253194"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87419739"
 ---
 # <a name="what-are-service-dependencies-in-azure-active-directory-conditional-access"></a>Что такое зависимости служб в Azure Active Directory условном доступе? 
 
@@ -27,7 +27,7 @@ ms.locfileid: "85253194"
 > [!TIP]
 > Использование приложения [office 365 (Предварительная версия)](concept-conditional-access-cloud-apps.md#office-365-preview) предназначено для всех приложений Office во избежание проблем с зависимостями служб в стеке Office.
 
-## <a name="policy-enforcement"></a>Принудительное применение политик 
+## <a name="policy-enforcement"></a>Принудительное применение политики 
 
 При наличии настроенной зависимости службы политику можно применить с помощью принудительного применения ранней или поздней привязки. 
 
@@ -51,21 +51,22 @@ ms.locfileid: "85253194"
 |                     | SharePoint                                  | Раннее связывание |
 | Microsoft Teams     | Exchange                                    | Раннее связывание |
 |                     | Планировщик MS                                  | Позднее связывание  |
+|                     | Microsoft Stream;                            | Позднее связывание  |
 |                     | SharePoint                                  | Раннее связывание |
 |                     | Skype для бизнеса Online                   | Раннее связывание |
 | Портал Office       | Exchange                                    | Позднее связывание  |
 |                     | SharePoint                                  | Позднее связывание  |
 | Группы Outlook      | Exchange                                    | Раннее связывание |
 |                     | SharePoint                                  | Раннее связывание |
-| PowerApps.           | Управление Microsoft Azure (портал и API) | Раннее связывание |
+| PowerApps           | Управление Microsoft Azure (портал и API) | Раннее связывание |
 |                     | Microsoft Azure Active Directory              | Раннее связывание |
-| Project             | Dynamics CRM                                | Раннее связывание |
+| Проект             | Dynamics CRM                                | Раннее связывание |
 | Skype для бизнеса  | Exchange                                    | Раннее связывание |
 | Visual Studio       | Управление Microsoft Azure (портал и API) | Раннее связывание |
 | Microsoft Forms     | Exchange                                    | Раннее связывание |
 |                     | SharePoint                                  | Раннее связывание |
 | Microsoft To-Do     | Exchange                                    | Раннее связывание |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о реализации условного доступа в среде см. в статье [Планирование развертывания условного доступа в Azure Active Directory](plan-conditional-access.md).

@@ -16,12 +16,12 @@ ms.date: 08/06/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ffe72a4d45dbe40b1d75194f42cc26b2821b202d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 64a8cab82511a495ed2eef444b05dc534c0f1891
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84743105"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87422051"
 ---
 # <a name="configure-azure-ad-custom-roles-in-privileged-identity-management"></a>Настройка настраиваемой роли AAD через Privileged Identity Management
 
@@ -30,7 +30,7 @@ ms.locfileid: "84743105"
 > [!NOTE]
 > Настраиваемые роли AAD в период предварительной версии не интегрируются со встроенными ролями каталога. Как только эта возможность станет общедоступной, управление всеми ролями будет выполняться в интерфейсе для встроенных ролей. Если вы видите следующий баннер, эти роли должны управляться [во встроенной функции ролей](pim-how-to-activate-role.md) , и эта статья не применяется.
 >
-> [![](media/pim-how-to-add-role-to-user/pim-new-version.png "Select Azure AD > Privileged Identity Management")](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
+> [![Выберите Azure AD > управление привилегированными пользователями](media/pim-how-to-add-role-to-user/pim-new-version.png)](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
 
 ## <a name="open-role-settings"></a>Открытие параметров роли
 
@@ -98,7 +98,7 @@ ms.locfileid: "84743105"
 1. Выберите по крайней мере одного участника или группу и нажмите кнопку **Выбрать**. Нужно выбрать по меньшей мере одно утверждающее лицо. Утверждающих по умолчанию нет. Выбранные вами элементы отобразятся в списке выбранных утверждающих лиц.
 1. После указания всех параметров роли щелкните **Обновить**, чтобы сохранить изменения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Активация настраиваемой роли Azure AD](azure-ad-custom-roles-activate.md)
 - [Назначение настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)

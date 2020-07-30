@@ -6,18 +6,18 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: 7a6105e8742a4cb3d2f113c6ef723f6171baf4d9
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: ccf4ad960abfd737a9a05d8fdc77a8bb1ea92d2d
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87328444"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87417120"
 ---
 # <a name="enable-azure-monitor-for-vms-for-a-hybrid-virtual-machine"></a>Включение Azure Monitor для виртуальных машин для гибридной виртуальной машины
 В этой статье описывается, как включить Azure Monitor для виртуальных машин для виртуальной машины за пределами Azure, включая локальные и другие облачные среды.
 
 > [!IMPORTANT]
-> Рекомендуемый способ включения гибридных виртуальных машин — сначала включить [дугу Azure для серверов](/azure-arc/servers/overview.md) , чтобы виртуальные машины можно было включить для Azure Monitor для виртуальных машин с помощью процессов, аналогичных виртуальным машинам Azure. В этой статье описывается, как подключить гибридные виртуальные машины, если вы решили не использовать Azure ARC.
+> Рекомендуемый способ включения гибридных виртуальных машин — сначала включить [дугу Azure для серверов](../../azure-arc/servers/overview.md) , чтобы виртуальные машины можно было включить для Azure Monitor для виртуальных машин с помощью процессов, аналогичных виртуальным машинам Azure. В этой статье описывается, как подключить гибридные виртуальные машины, если вы решили не использовать Azure ARC.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -31,7 +31,7 @@ ms.locfileid: "87328444"
 Дополнительные сведения о развертывании агента Log Analytics см. в статье [Подключение компьютеров Windows к Azure Monitor](../platform/agent-windows.md) или [Подключение компьютеров Linux к Azure Monitor](../platform/agent-linux.md) . Сведения об агенте зависимостей приведены в этой статье. 
 
 ## <a name="firewall-requirements"></a>Требования к брандмауэру
-Требования к брандмауэру для агента Log Analytics приведены в [обзоре log Analytics Agent](..//platform/log-analytics-agent.md#network-requirements). Dependency Agent в Azure Monitor для виртуальных машин не передает данные и не требует изменений в настройках брандмауэра или портов. Данные карт всегда передаются агентом Log Analytics в службу Azure Monitor, либо напрямую, либо через [шлюз Operations Management Suite](../../azure-monitor/platform/gateway.md) , если политики безопасности ИТ не разрешают компьютерам сети подключаться к Интернету.
+Требования к брандмауэру для агента Log Analytics приведены в [обзоре log Analytics Agent](../platform/log-analytics-agent.md#network-requirements). Dependency Agent в Azure Monitor для виртуальных машин не передает данные и не требует изменений в настройках брандмауэра или портов. Данные карт всегда передаются агентом Log Analytics в службу Azure Monitor, либо напрямую, либо через [шлюз Operations Management Suite](../../azure-monitor/platform/gateway.md) , если политики безопасности ИТ не разрешают компьютерам сети подключаться к Интернету.
 
 
 ## <a name="dependency-agent"></a>Агент зависимостей

@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9861e8e8be39781ad1b256b9939df3ab03e74be6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 49c389170e9d586a2001009226c6542d4d152f7f
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87027535"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87418225"
 ---
 # <a name="manage-user-settings-for-azure-multi-factor-authentication"></a>Управление параметрами пользователей для многофакторной идентификации Azure
 
@@ -47,7 +47,7 @@ ms.locfileid: "87027535"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. На левой стороне выберите **Azure Active Directory**  >  **Пользователи**  >  **все пользователи**.
-1. Выберите **Многофакторная идентификация**. Возможно, чтобы увидеть этот пункт меню, вам понадобится прокрутить экран вправо. Выберите приведенный ниже снимок экрана, чтобы просмотреть окно портала Azure целиком и расположение меню: [![](media/howto-mfa-userstates/selectmfa-cropped.png "Выбор Многофакторной идентификации в окне "Пользователи" в Azure AD")](media/howto-mfa-userstates/selectmfa.png#lightbox)
+1. Выберите **Многофакторная идентификация**. Возможно, чтобы увидеть этот пункт меню, вам понадобится прокрутить экран вправо. Щелкните приведенный ниже снимок экрана, чтобы просмотреть полный портал Azure окно и расположение меню: [ ![ выберите многофакторная идентификация в окне "Пользователи" в Azure AD.](media/howto-mfa-userstates/selectmfa-cropped.png)](media/howto-mfa-userstates/selectmfa.png#lightbox)
 1. Установите флажок рядом с именем пользователя или пользователей, которыми требуется управлять. Список параметров быстрого шага отображается справа.
 1. Выберите **Управление параметрами пользователя**, а затем установите флажок **удалить все существующие пароли приложений, созданные выбранными пользователями**, как показано в следующем примере: ![ Удаление всех существующих паролей приложений](./media/howto-mfa-userdevicesettings/deleteapppasswords.png)
 1. Выберите **сохранить**, а затем **Закрыть**.

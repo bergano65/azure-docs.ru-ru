@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 04/06/2020
-ms.openlocfilehash: 71176c87ee805eb4a634dd6c2f344922fc13c4f3
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 8396ffa958e41e12e9258766483310baef0cabbe
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86132711"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421439"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-network-connectivity-issues"></a>Устранение неполадок с сетевым подключением Azure к виртуальной машине Azure
 
@@ -18,18 +18,18 @@ ms.locfileid: "86132711"
 
 Чтобы реплика Site Recovery заработала, от виртуальной машины требуется исходящее подключение для конкретного URL-адреса или IP-диапазонов. Если виртуальная машина находится за брандмауэром или использует правила группы безопасности сети (NSG) для управления исходящими подключениями, могут возникнуть следующие проблемы.
 
-| URL-адрес | Сведения |
-|---|---|
-| `*.blob.core.windows.net` | Это необходимо, чтобы данные можно было записать в учетную запись хранения кэша в исходном регионе из виртуальной машины. Если вы знакомы со всеми учетными записями хранения кэша для виртуальных машин, вы можете использовать список разрешений для конкретных URL-адресов учетных записей хранения. Например, `cache1.blob.core.windows.net` и `cache2.blob.core.windows.net` вместо `*.blob.core.windows.net` . |
-| `login.microsoftonline.com` | Требуется для авторизации и проверки подлинности URL-адресов службы Site Recovery. |
-| `*.hypervrecoverymanager.windowsazure.com` | Требуется для обмена данными между службой Site Recovery и виртуальной машиной. Можно использовать соответствующий _IP-адрес Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
-| `*.servicebus.windows.net` | Необходимые для записи данные наблюдения и диагностики Site Recovery из виртуальной машины. Можно использовать соответствующий _IP-адрес мониторинга Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
+| **Имя**                  | **Коммерческое**                               | **Государственные организации**                                 | **Описание** |
+| ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
+| Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Это необходимо, чтобы данные можно было записать в учетную запись хранения кэша в исходном регионе из виртуальной машины. Если вы знакомы со всеми учетными записями хранения кэша для виртуальных машин, вы можете использовать список разрешений для конкретных URL-адресов учетных записей хранения. Например, `cache1.blob.core.windows.net` и `cache2.blob.core.windows.net` вместо `*.blob.core.windows.net` . |
+| Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Требуется для авторизации и проверки подлинности URL-адресов службы Site Recovery. |
+| Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Требуется для обмена данными между службой Site Recovery и виртуальной машиной. Можно использовать соответствующий _IP-адрес Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
+| Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Необходимые для записи данные наблюдения и диагностики Site Recovery из виртуальной машины. Можно использовать соответствующий _IP-адрес мониторинга Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
 
 ## <a name="outbound-connectivity-for-site-recovery-urls-or-ip-ranges-error-code-151037-or-151072"></a>Исходящие подключения для URL-адресов Site Recovery или IP-диапазонов (код ошибки 151037 или 151072)
 
 ### <a name="issue-1-failed-to-register-azure-virtual-machine-with-site-recovery-151195"></a>Проблема 1. Не удалось зарегистрировать виртуальную машину Azure в Site Recovery (151195)
 
-#### <a name="possible-cause"></a>Возможная причина
+#### <a name="possible-cause"></a>Возможные причины
 
 Невозможно установить подключение к Site Recovery конечным точкам из-за сбоя разрешения системы доменных имен (DNS). Эта проблема наиболее распространена при повторном включении защиты виртуальной машины, но DNS-сервер недоступен из региона аварийного восстановления (DR).
 
@@ -53,7 +53,7 @@ ms.locfileid: "86132711"
 > [!NOTE]
 > Если виртуальные машины находятся за **стандартным** внутренним подсистемой балансировки нагрузки, по умолчанию он не будет иметь доступ к IP-адресам Office 365, таким как `login.microsoftonline.com` . Либо измените его на **базовый** тип внутренней подсистемы балансировки нагрузки, либо создайте исходящий доступ, как упоминалось в статье [Настройка балансировки нагрузки и правил исходящего трафика в Load Balancer (цен. категория "Стандартный") с помощью Azure CLI](../load-balancer/configure-load-balancer-outbound-cli.md).
 
-#### <a name="possible-cause"></a>Возможная причина
+#### <a name="possible-cause"></a>Возможные причины
 
 Не удается установить подключение к конечным точкам проверки подлинности и IP4-удостоверений Office 365.
 
@@ -108,7 +108,7 @@ ms.locfileid: "86132711"
 
 ### <a name="issue-3-site-recovery-configuration-failed-151197"></a>Проблема 3. Сбой при выполнении настройки Site Recovery (151197)
 
-#### <a name="possible-cause"></a>Возможная причина
+#### <a name="possible-cause"></a>Возможные причины
 
 Не удается установить подключение для Azure Site Recovery конечных точек службы.
 
@@ -118,7 +118,7 @@ ms.locfileid: "86132711"
 
 ### <a name="issue-4-azure-to-azure-replication-failed-when-the-network-traffic-goes-through-on-premises-proxy-server-151072"></a>Причина 4. сбой репликации из Azure в Azure, если сетевой трафик проходит через локальный прокси-сервер (151072)
 
-#### <a name="possible-cause"></a>Возможная причина
+#### <a name="possible-cause"></a>Возможные причины
 
 Недопустимые параметры настраиваемого прокси-сервера, так как агент службы Azure Site Recovery Mobility Service не обнаружил параметры прокси-сервера в Internet Explorer (IE).
 

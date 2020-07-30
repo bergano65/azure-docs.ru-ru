@@ -9,12 +9,12 @@ ms.subservice: monitoring
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: a4dc2604dbd62da1baa4278ff3463f41337886bf
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b5ad9e6a448747ac8f33829b1137b1af434e7a9c
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87052513"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87385591"
 ---
 # <a name="use-synapse-studio-preview-to-monitor-your-apache-spark-applications"></a>Использование синапсе Studio (Предварительная версия) для мониторинга приложений Apache Spark
 
@@ -22,7 +22,7 @@ ms.locfileid: "87052513"
 
 В этой статье объясняется, как отслеживать Apache Spark приложения, позволяя следить за последним состоянием, проблемами и ходом выполнения.
 
-## <a name="accessing-the-list-of-apache-spark-applications"></a>Доступ к списку приложений Apache Spark
+## <a name="access-apache-spark-applications-list"></a>Доступ к списку приложений Apache Spark
 
 Чтобы просмотреть список Apache Spark приложений в рабочей области, сначала [откройте синапсе Studio](https://web.azuresynapse.net/) и выберите рабочую область.
 
@@ -36,7 +36,7 @@ ms.locfileid: "87052513"
 
  ![Выбор приложений Spark](./media/how-to-monitor-spark-applications/monitor-hub-nav-sparkapplications.png)
 
-## <a name="filtering-your-apache-spark-applications"></a>Фильтрация приложений Apache Spark
+## <a name="filter-your-apache-spark-applications"></a>Фильтрация приложений Apache Spark
 
 Вы можете отфильтровать список Apache Spark приложений в тех, которые вас интересуют. Фильтры в верхней части экрана позволяют указать поле, по которому вы хотите выполнить фильтрацию.
 
@@ -46,7 +46,7 @@ ms.locfileid: "87052513"
 
 ![Образец фильтра](./media/how-to-monitor-spark-applications/filter-example.png)
 
-## <a name="viewing-details-about-a-specific-apache-spark-application"></a>Просмотр сведений о конкретном приложении Apache Spark
+## <a name="view-details-about-a-specific-apache-spark-application"></a>Просмотр сведений о конкретном приложении Apache Spark
 
 Чтобы просмотреть сведения об одном из Apache Spark приложений, выберите Apache Spark приложение и просмотрите сведения. Если приложение Apache Spark все еще выполняется, можно отслеживать ход выполнения. [Дополнительные сведения](apache-spark-applications.md).
 

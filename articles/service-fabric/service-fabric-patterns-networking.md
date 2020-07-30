@@ -3,12 +3,12 @@ title: Шаблоны сетей для Azure Service Fabric
 description: Описываются распространенные схемы сетевых подключений для Service Fabric, а также создание кластера с использованием сетевых компонентов Azure.
 ms.topic: conceptual
 ms.date: 01/19/2018
-ms.openlocfilehash: 0c3664d1890fd318aa1bff508a51cb227bdcc01d
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 20bd5e931307725016c3e2ad69dae91214b2caab
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86258536"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421473"
 ---
 # <a name="service-fabric-networking-patterns"></a>Схемы сетевых подключений Service Fabric
 Кластер Azure Service Fabric можно интегрировать с другими сетевыми компонентами Azure. В этой статье показано, как создавать кластеры, использующие следующие компоненты:
@@ -99,6 +99,8 @@ DnsSettings              : {
                 "defaultValue": "10.0.0.0/24"
             },*/
     ```
+
+   Вы также можете закомментировать параметр с именем «virtualNetworkName», чтобы он не предложит ввести имя виртуальной сети дважды в колонке развертывание кластера в портал Azure.
 
 2. Закомментируйте атрибут `nicPrefixOverride` в `Microsoft.Compute/virtualMachineScaleSets`, так как вы используете существующую подсеть и отключили эту переменную на шаге 1.
 

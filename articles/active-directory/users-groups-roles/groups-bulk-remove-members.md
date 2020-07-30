@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9084b486681ded0c194c93f07a404f5f5e88fa6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: acf3cba5046a20b99212e89b378327765d22fa23
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84728475"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421643"
 ---
 # <a name="bulk-remove-group-members-in-azure-active-directory"></a>Массовое удаление участников группы в Azure Active Directory
 
@@ -68,7 +68,7 @@ ms.locfileid: "84728475"
 
 Состояние всех ожидающих выполнения массовых запросов можно просмотреть на странице **Результаты массовой операции**.
 
-[![](media/groups-bulk-remove-members/bulk-center.png "Check status in the Bulk Operations Results page")](media/groups-bulk-remove-members/bulk-center.png#lightbox)
+[![Проверка состояния на странице результатов массовой операции](media/groups-bulk-remove-members/bulk-center.png)](media/groups-bulk-remove-members/bulk-center.png#lightbox)
 
 Чтобы получить подробные сведения о каждом элементе групповой операции, выберите значения в столбцах **# Success** (Количество успешных), **# Failure** (Количество неудачных) или **Всего запросов**. При возникновении сбоя здесь будут указаны его причины.
 

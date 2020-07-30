@@ -8,12 +8,13 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 11/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: eb3d5fea68b5b1b6e648943cb3dbaab5857e9e07
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 412254f47a2700f77003f7db661f0ade214a1e23
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "68608008"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423207"
 ---
 # <a name="customize-the-remote-monitoring-solution-accelerator"></a>Настройка акселератора решения для удаленного мониторинга
 
@@ -283,7 +284,7 @@ ms.locfileid: "68608008"
 
 Вы заменили исходную панель **оповещения** копией **CustAlerts**. Эта копия идентична оригиналу. Теперь можно изменить копию. Например, чтобы изменить порядок столбцов в панели **оповещений**, сделайте следующее:
 
-1. Откройте файл `src/components/pages/dashboard/panels/cust_alerts/alertsPanel.js` .
+1. Откройте файл `src/components/pages/dashboard/panels/cust_alerts/alertsPanel.js`.
 
 1. Измените определения столбцов, как показано в следующем фрагменте кода:
 
@@ -337,7 +338,7 @@ ms.locfileid: "68608008"
 
 Страница **Панель мониторинга** отображает ключевые показатели эффективности на панели **аналитики**. Эти показатели вычисляются в файле `src/components/pages/dashboard/dashboard.js`. Они преобразовываются для просмотра с помощью файла `src/components/pages/dashboard/panels/analytics/analyticsPanel.js`. Ниже показано, как рассчитать и преобразовать для просмотра новое значение ключевого показателя эффективности на странице **Панель мониторинга**. Ниже приведен пример того, как добавить новое процентное изменение в ключевом показателе эффективности предупреждающего оповещения.
 
-1. Откройте файл `src/components/pages/dashboard/dashboard.js` . Измените объект **initialState**, чтобы он включал свойство **warningAlertsChange**, как показано ниже.
+1. Откройте файл `src/components/pages/dashboard/dashboard.js`. Измените объект **initialState**, чтобы он включал свойство **warningAlertsChange**, как показано ниже.
 
     ```javascript
     const initialState = {

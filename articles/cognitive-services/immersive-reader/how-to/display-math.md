@@ -9,12 +9,13 @@ ms.subservice: immersive-reader
 ms.topic: conceptual
 ms.date: 01/14/2020
 ms.author: pasta
-ms.openlocfilehash: e01cc9e8cedb6c38da0b56e04419c706d5d0566e
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 6bde75fe0fb856633d7849173faf21db76edc950
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75946125"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87406917"
 ---
 # <a name="how-to-display-math-in-the-immersive-reader"></a>Отображение математических функций в иммерсивное средство чтения
 
@@ -22,7 +23,7 @@ ms.locfileid: "75946125"
 Тип MIME можно задать с помощью иммерсивного [блока](../reference.md#chunk)чтения. Дополнительные сведения см. в разделе [Поддерживаемые типы MIME](../reference.md#supported-mime-types) .
 
 ## <a name="send-math-to-the-immersive-reader"></a>Отправка математических вычислений в иммерсивное средство чтения
-Чтобы отправить математические данные в иммерсивное средство чтения, укажите блок, содержащий Масмл, и задайте для ```application/mathml+xml```типа MIME значение;
+Чтобы отправить математические данные в иммерсивное средство чтения, укажите блок, содержащий Масмл, и задайте для типа MIME значение ```application/mathml+xml``` ;
 
 Например, если содержимое было следующим:
 
@@ -71,6 +72,6 @@ ImmersiveReader.launchAsync(YOUR_TOKEN, YOUR_SUBDOMAIN, data, YOUR_OPTIONS);
 
 ![Математические вычисления в иммерсивное средство чтения](../media/how-tos/1-math.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [справочнике по этому пакету](../reference.md).

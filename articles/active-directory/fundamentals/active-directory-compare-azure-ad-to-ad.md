@@ -11,12 +11,12 @@ ms.workload: identity
 ms.subservice: fundamentals
 ms.date: 02/26/2020
 ms.author: martinco
-ms.openlocfilehash: 5075ae57df6a7306f0c860690931c846e52c2a89
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 31fde1b80a1646a92688a0fcc1fa221cf01ba0a9
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78926898"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87418871"
 ---
 # <a name="compare-active-directory-to-azure-active-directory"></a>Сравнить Active Directory с Azure Active Directory
 
@@ -41,14 +41,14 @@ Azure AD применяет этот подход к следующему уро
 | Бизнес-приложения с современной проверкой подлинности|Организации могут использовать AD FS с Active Directory для поддержки бизнес-приложений, для которых требуется современная проверка подлинности.| БИЗНЕС-приложения, для которых требуется современная проверка подлинности, можно настроить для использования Azure AD для проверки подлинности. |
 | Службы среднего уровня и управляющей программы|Службы, работающие в локальных средах, обычно используют учетные записи службы AD или групповые управляемые учетные записи служб (gMSA) для запуска. Затем эти приложения будут наследовать разрешения учетной записи службы.| Azure AD предоставляет [управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/index) для выполнения других рабочих нагрузок в облаке. Жизненный цикл этих удостоверений управляется Azure AD и привязан к поставщику ресурсов и не может использоваться в других целях для получения доступа к программы трояны.|
 | **Устройства**|||
-| Мобильные службы|Active Directory изначально не поддерживает мобильные устройства без решений сторонних производителей.| Решение для управления мобильными устройствами Майкрософт, Microsoft Intune, интегрировано с Azure AD. Microsoft Intune предоставляет системе удостоверений сведения о состоянии устройства, которые необходимо оценить во время проверки подлинности. |
-| Настольные системы Windows|Active Directory предоставляет возможность присоединять к домену устройства Windows для управления ими с помощью групповая политика, System Center Configuration Manager или других сторонних решений.|Устройства Windows можно [присоединить к Azure AD](https://docs.microsoft.com/azure/active-directory/devices/). Условный доступ может проверять, присоединен ли устройство к Azure AD в рамках процесса проверки подлинности. Устройствам Windows также можно управлять с помощью [Microsoft Intune](https://docs.microsoft.com/intune/what-is-intune). В этом случае условный доступ будет расдумать, является ли устройство жалобой (например, последние исправления безопасности и сигнатуры вирусов) перед предоставлением доступа к приложениям.|
+| Мобильные приложения|Active Directory изначально не поддерживает мобильные устройства без решений сторонних производителей.| Решение для управления мобильными устройствами Майкрософт, Microsoft Intune, интегрировано с Azure AD. Microsoft Intune предоставляет системе удостоверений сведения о состоянии устройства, которые необходимо оценить во время проверки подлинности. |
+| Настольные системы Windows|Active Directory предоставляет возможность присоединять к домену устройства Windows для управления ими с помощью групповая политика, System Center Configuration Manager или других сторонних решений.|Устройства Windows можно [присоединить к Azure AD](https://docs.microsoft.com/azure/active-directory/devices/). Условный доступ может проверять, присоединен ли устройство к Azure AD в рамках процесса проверки подлинности. Устройствам Windows также можно управлять с помощью [Microsoft Intune](https://docs.microsoft.com/intune/what-is-intune). В этом случае условный доступ будет расдумать, соответствует ли устройство (например, последние исправления безопасности и сигнатуры вирусов) перед предоставлением доступа к приложениям.|
 | Серверы Windows| Active Directory предоставляет надежные возможности управления для локальных серверов Windows с помощью групповая политика или других решений по управлению.| Виртуальным машинам Windows Server в Azure можно управлять с помощью [доменных служб Azure AD](https://docs.microsoft.com/azure/active-directory-domain-services/). [Управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/index) могут использоваться, когда виртуальным машинам требуется доступ к системному каталогу удостоверений или ресурсам.|
 | Рабочие нагрузки Linux и UNIX|Active Directory не поддерживает встроенные решения сторонних разработчиков, хотя компьютеры Linux можно настроить для проверки подлинности с помощью Active Directory в качестве области Kerberos.|Виртуальные машины Linux и UNIX могут использовать [управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/index) для доступа к системе удостоверений или ресурсам. В некоторых организациях эти рабочие нагрузки переносятся в облачные контейнерные технологии, которые также могут использовать управляемые удостоверения.|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Что такое Microsoft Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis)
+- [Что такое Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis)
 - [Сравнение самостоятельно управляемых доменных служб Active Directory, Azure Active Directory и управляемых доменных служб Azure Active Directory.](https://docs.microsoft.com/azure/active-directory-domain-services/compare-identity-solutions)
 - [Часто задаваемые вопросы об Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-faq)
 - [Новые возможности Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/whats-new)

@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 07/17/2020
 ms.custom: how-to, tracking-python
-ms.openlocfilehash: 75e2ffcad4caeb6500f05ce3801797084c18a043
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 63e2ba93ecdc1131be6bd291fe436b42a2a2d19c
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321655"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87407036"
 ---
 # <a name="use-workspace-behind-azure-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром Azure для Машинное обучение Azure
 
@@ -60,9 +60,9 @@ ms.locfileid: "87321655"
 
 | **Имя узла** | **Назначение** |
 | ---- | ---- |
-| **anaconda.com** | Используется при установке пакетов conda |
-| **pypi.org** | Используется при установке пакетов PIP |
-
+| **anaconda.com** | Используется для установки пакетов по умолчанию. |
+| **\*. anaconda.org** | Используется для получения данных репозитория. |
+| **pypi.org** | Используется для перечисления зависимостей из индекса по умолчанию, если таковые имеются, а индекс не перезаписывается параметрами пользователя. Если индекс перезаписывается, необходимо также разрешить ** \* . pythonhosted.org**. |
 
 ## <a name="r-hosts"></a>Узлы R
 

@@ -11,16 +11,16 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ee0f3d89d48b23db48e3bf4b78203b09fbcbdbd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4e4797c3e089e0ae9d15cc604e9f93605978b36c
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80652637"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87419773"
 ---
 # <a name="enable-on-premises-azure-active-directory-password-protection"></a>Включить локальную Azure Active Directory защиту паролем
 
-Пользователи часто создают пароли, использующие обычные местные слова, такие как учебные, спортивные команды или знаменитые лица. Эти пароли легко угадать, и они ненадежны для атак на основе словарей. Чтобы применить надежные пароли в Организации, Azure Active Directory (Azure AD) Защита паролем предоставляет глобальный и настраиваемый список запрещенных паролей. Запрос на изменение пароля завершается ошибкой, если в списке запрещенных паролей есть совпадение.
+Многие пользователи создают пароли с характерными распространенными словами, например названием школы, спортивной команды или именем известного человека. Такие пароли легко угадать и они плохо защищены от атак на основе словарей. Чтобы применить надежные пароли в Организации, Azure Active Directory (Azure AD) Защита паролем предоставляет глобальный и настраиваемый список запрещенных паролей. Запрос на изменение пароля завершается ошибкой, если в списке запрещенных паролей есть совпадение.
 
 Чтобы защитить локальную среду домен Active Directory служб (AD DS), можно установить и настроить защиту паролей Azure AD для работы с локальным контроллером домена. В этой статье показано, как включить защиту паролей Azure AD для локальной среды.
 
@@ -40,7 +40,7 @@ ms.locfileid: "80652637"
 1. Рекомендуется изначально установить **режим** *аудита*. После того, как вы знакомы с этой функцией и влиянием на пользователей в Организации, можно переключить **режим** на *принудительное*. Дополнительные сведения см. в следующем разделе о [режимах работы](#modes-of-operation).
 1. Когда все будет готово, щелкните **Сохранить**.
 
-    [![](media/howto-password-ban-bad-on-premises-operations/enable-configure-custom-banned-passwords-cropped.png "Enable on-premises password protection under Authentication Methods in the Azure portal")](media/howto-password-ban-bad-on-premises-operations/enable-configure-custom-banned-passwords.png#lightbox)
+    [![Включите локальную защиту паролей в разделе методы проверки подлинности в портал Azure](media/howto-password-ban-bad-on-premises-operations/enable-configure-custom-banned-passwords-cropped.png)](media/howto-password-ban-bad-on-premises-operations/enable-configure-custom-banned-passwords.png#lightbox)
 
 ## <a name="modes-of-operation"></a>Режимы работы
 
@@ -67,7 +67,7 @@ ms.locfileid: "80652637"
 > [!NOTE]
 > Защита паролем Azure AD не контролирует конкретное сообщение об ошибке, отображаемое клиентским компьютером при отклонении ненадежного пароля.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о настройке списка запрещенных паролей для организации см. в разделе [Настройка списка запрещенных паролей для защиты паролем Azure AD](tutorial-configure-custom-password-protection.md).
 

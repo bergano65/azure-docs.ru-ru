@@ -9,16 +9,16 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring
-ms.openlocfilehash: 219d2b972089f9d3b7f84caa8b527474ac241c4f
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: a1f977cef614a52853407c0d0665399f1a249c53
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/29/2020
-ms.locfileid: "87374173"
+ms.locfileid: "87422068"
 ---
 # <a name="transition-to-metrics-in-azure-monitor"></a>Переход к метрикам в Azure Monitor
 
-Служба хранилища Azure теперь интегрирует метрики в Azure Monitorную платформу. С **31 августа 2023** аналитика службы хранилища метрики, также называемые *классическими метриками* , будут прекращены. Если вы используете классические метрики, обязательно переходите к метрикам в Azure Monitor до этой даты. Эта статья поможет вам выполнить переход.
+Служба хранилища Azure теперь интегрирует метрики в Azure Monitorную платформу. Эта статья поможет вам выполнить переход.
 
 ## <a name="steps-to-complete-the-transition"></a>Шаги для завершения перехода
 

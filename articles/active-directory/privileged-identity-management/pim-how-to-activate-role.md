@@ -14,12 +14,12 @@ ms.date: 07/06/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 433ccecdc5eee5314114d020571761ee82afd6b9
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: cb1041cb5fc4aa7503f5ae9de6ffc74ba72052b8
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86024113"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421405"
 ---
 # <a name="activate-my-azure-ad-roles-in-pim"></a>Активация ролей Azure AD в PIM
 
@@ -36,7 +36,7 @@ ms.locfileid: "86024113"
 1. Войдите в [портал Azure](https://portal.azure.com/) с ролью [администратора привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) .
 1. Откройте **Azure AD privileged Identity Management**. Если у вас есть баннер в верхней части страницы обзора, следуйте инструкциям на вкладке **Новая версия** этой статьи. В противном случае следуйте инструкциям на вкладке **Предыдущая версия** .
 
-    [![](media/pim-how-to-add-role-to-user/pim-new-version.png "Select Azure AD > Privileged Identity Management")](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
+    [![Выберите управление привилегированными пользователями Azure AD >.](media/pim-how-to-add-role-to-user/pim-new-version.png)](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
 
 # <a name="new-version"></a>[Новая версия](#tab/new)
 
@@ -106,7 +106,7 @@ ms.locfileid: "86024113"
 
    ![Мой список запросов с выделенным действием отмены](./media/pim-resource-roles-activate-your-roles/resources-my-requests-cancel.png)
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 ### <a name="permissions-are-not-granted-after-activating-a-role"></a>Разрешения не предоставляются после активации роли
 
@@ -158,7 +158,7 @@ ms.locfileid: "86024113"
 
     ![Готовая область активации с настраиваемым временем начала, длительностью, билетом и причиной](./media/pim-how-to-activate-role/directory-roles-activation-pane.png)
 
-1. Щелкните **Активировать**.
+1. Нажмите кнопку **Активировать**.
 
     Если роль не требует утверждения, отображается область **состояния активации** , на которой отображается состояние активации.
 
@@ -212,7 +212,7 @@ ms.locfileid: "86024113"
 
    ![Список "Мои запросы" с выделенной кнопкой "Отмена"](./media/pim-how-to-activate-role/directory-role-cancel.png)
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 ### <a name="permissions-are-not-granted-after-activating-a-role"></a>Разрешения не предоставляются после активации роли
 
@@ -226,6 +226,6 @@ ms.locfileid: "86024113"
 
  ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Активировать роли Azure AD в управление привилегированными пользователями](pim-how-to-activate-role.md)

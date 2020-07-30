@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: chlandsi
-ms.openlocfilehash: 9891cdb59c757035afd17339b052d5587ac99b0c
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 80671a40b5933a89962fa07b267d7e99e475657f
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74109973"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87406696"
 ---
 # <a name="how-to-select-an-audio-input-device-with-the-speech-sdk"></a>Как выбрать устройство ввода звука с помощью пакета SDK для распознавания речи
 
@@ -380,7 +381,7 @@ CFArrayRef CreateInputDeviceArray()
 
 В JavaScript метод [MediaDevices.enumerateDevices()](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/enumerateDevices) можно использовать для перечисления устройств мультимедиа и поиска идентификаторов устройств для их передачи `fromMicrophone(...)`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Примеры на сайте GitHub](https://aka.ms/csspeech/samples)
