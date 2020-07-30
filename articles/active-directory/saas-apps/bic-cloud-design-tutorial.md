@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/07/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de3ebba84a56a0dd997a2d0309bbc203cd606fa1
-ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
+ms.openlocfilehash: 2d1c02f1382305f48f0857e80193a201726df4f8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85607962"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87018389"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-bic-cloud-design"></a>Руководство по Интеграция единого входа Azure Active Directory с BIC Cloud Design
 
@@ -38,6 +38,9 @@ ms.locfileid: "85607962"
 
 * Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка BIC Cloud Design с поддержкой единого входа.
+
+> [!NOTE]
+> Эту интеграцию также можно использовать в облачной среде Azure AD для государственных организаций США. Это приложение можно найти в коллекции облачных приложений с поддержкой Azure AD для государственных организаций США и настроить таким же образом, как и в общедоступном облаке.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -155,7 +158,7 @@ ms.locfileid: "85607962"
 
 ## <a name="configure-bic-cloud-design-sso"></a>Настройка единого входа в BIC Cloud Design
 
-Чтобы настроить единый вход на стороне **BIC Cloud Design**, отправьте **URL-адрес метаданных федерации приложений** [службе поддержки BIC Cloud Design](mailto:bicsupport@gbtec.de). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **BIC Cloud Design**, отправьте **URL-адрес метаданных федерации приложений**[службе поддержки BIC Cloud Design](mailto:bicsupport@gbtec.de). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-bic-cloud-design-test-user"></a>Создание тестового пользователя BIC Cloud Design
 

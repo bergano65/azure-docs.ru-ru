@@ -9,12 +9,12 @@ ms.subservice: monitoring
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: 385b06dd7756c3bebf6557f9ea0b518473a37d49
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7676f4aeeb9485ce5e3a702027884bc54d79a863
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87075901"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87387325"
 ---
 # <a name="use-synapse-studio-to-monitor-your-workspace-pipeline-runs"></a>Использование синапсе Studio для мониторинга выполнения конвейера рабочей области
 
@@ -22,7 +22,7 @@ ms.locfileid: "87075901"
 
 В этой статье объясняется, как отслеживать запуски конвейеров, что позволяет следить за последним состоянием, проблемами и ходом выполнения конвейеров.
 
-## <a name="access-the-list-of-pipeline-runs"></a>Доступ к списку запусков конвейеров
+## <a name="access-pipeline-runs-list"></a>Список запусков конвейера доступа
 
 Чтобы просмотреть список запусков конвейеров в рабочей области, сначала [откройте синапсе Studio](https://web.azuresynapse.net/) и выберите рабочую область.
 
@@ -36,7 +36,7 @@ ms.locfileid: "87075901"
 
 ![Выбор запусков конвейера](./media/how-to-monitor-pipeline-runs/monitor-hub-nav-pipelineruns.png)
 
-## <a name="filtering-your-pipeline-runs"></a>Фильтрация выполнения конвейера
+## <a name="filter-your-pipeline-runs"></a>Фильтрация выполнения конвейера
 
 Вы можете отфильтровать список выполнений конвейера до тех, которые вас интересуют. Фильтры в верхней части экрана позволяют указать поле, по которому вы хотите выполнить фильтрацию.
 
@@ -46,7 +46,7 @@ ms.locfileid: "87075901"
 
 ![Образец фильтра](./media/how-to-monitor-pipeline-runs/filter-example.png)
 
-## <a name="viewing-details-about-a-specific-pipeline-run"></a>Просмотр сведений об определенном выполнении конвейера
+## <a name="view-details-about-a-specific-pipeline-run"></a>Просмотр сведений об определенном выполнении конвейера
 
 Чтобы просмотреть сведения о выполнении конвейера, выберите Запуск конвейера. Затем просмотрите запуски действий, связанные с выполнением конвейера. Если конвейер все еще выполняется, можно отслеживать ход выполнения. 
   

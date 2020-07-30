@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: d8cc407e09702472978e645650ebe8df0963ff7b
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
+ms.openlocfilehash: 3666c1c2c6721d803266395f6b9875a6797a92f3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84196914"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87040483"
 ---
 # <a name="use-powershell-to-create-a-single-database-and-configure-a-server-level-firewall-rule"></a>Использование PowerShell для создания отдельной базы данных и настройки правила брандмауэра на уровне сервера
 
@@ -57,6 +57,6 @@ Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure PowerShell см. в [этой документации](/powershell/azure/overview).
+Дополнительные сведения об Azure PowerShell см. в [этой документации](/powershell/azure/).
 
 Дополнительные примеры сценариев PowerShell для базы данных SQL Azure можно найти [здесь](../powershell-script-content-guide.md).

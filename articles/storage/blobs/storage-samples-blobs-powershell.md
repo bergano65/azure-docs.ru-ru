@@ -7,18 +7,18 @@ ms.date: 11/07/2017
 ms.service: storage
 ms.subservice: blobs
 ms.topic: sample
-ms.openlocfilehash: c4e8608c0d5c8dc79fa299d5d814f33cd6c8da2d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f66c188186c81e5a4d15c417a31ab096ba7ef598
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68726321"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87020905"
 ---
 # <a name="azure-powershell-samples-for-azure-blob-storage"></a>Примеры Azure PowerShell для хранилища BLOB-объектов Azure
 
 Ниже приведена таблица с ссылками на примеры скриптов PowerShell, которые позволяют создавать хранилище Azure и управлять им.
 
-| | |
+| Скрипт | Описание |
 |---|---|
 |**Учетные записи хранения**||
 | [Create a storage account and rotate its account access keys](../scripts/storage-common-rotate-account-keys-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) (Создание учетной записи хранения и получение или смена ее ключей доступа)| Создает учетную запись хранения Azure и получает и меняет один из ее ключей доступа. |
