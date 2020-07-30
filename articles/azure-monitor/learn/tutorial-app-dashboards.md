@@ -7,12 +7,12 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 07/3/2019
 ms.custom: mvc
-ms.openlocfilehash: caf8b1899cad95ade6297e78e8f2cf35939ef189
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a08e00b2debce970bdbd385b785806c8636e5946
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77661640"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87318425"
 ---
 # <a name="create-custom-kpi-dashboards-using-azure-application-insights"></a>Создание настраиваемых панелей мониторинга ключевых показателей эффективности с помощью Azure Application Insights
 
@@ -31,7 +31,7 @@ ms.locfileid: "77661640"
 
 Для работы с этим руководством:
 
-- Разверните приложение .NET в Azure и [включите пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md).
+- Разверните приложение .NET в Azure и [включите пакет SDK для Application Insights](../app/asp-net.md).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
@@ -127,4 +127,5 @@ ms.locfileid: "77661640"
 Теперь, когда вы узнали, как создавать настраиваемые панели мониторинга, ознакомьтесь с остальной документацией по Application Insights, включая пример внедрения.
 
 > [!div class="nextstepaction"]
-> [Углубленная диагностика для веб-приложений и служб с помощью Application Insights](../../azure-monitor/app/devops.md)
+> [Углубленная диагностика для веб-приложений и служб с помощью Application Insights](../app/devops.md)
+

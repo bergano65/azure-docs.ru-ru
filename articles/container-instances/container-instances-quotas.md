@@ -2,13 +2,13 @@
 title: Квоты службы и доступность по регионам
 description: Квоты, ограничения и доступность по регионам службы "Экземпляры контейнеров Azure".
 ms.topic: article
-ms.date: 03/01/2019
-ms.openlocfilehash: b3e7f2f67d806bd2fca74f58d446b0de9a4b8f44
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/22/2020
+ms.openlocfilehash: eaaa8e0b2d72aaea546a1bc351da40932c1deb14
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77117901"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87384840"
 ---
 # <a name="quotas-and-limits-for-azure-container-instances"></a>Квоты и ограничения службы "Экземпляры контейнеров Azure"
 
@@ -16,11 +16,13 @@ ms.locfileid: "77117901"
 
 Доступность ресурсов вычислений, памяти и хранилища для экземпляров контейнеров Azure зависит от региона и операционной системы. Дополнительные сведения см. в статье [доступность ресурсов для службы "экземпляры контейнеров Azure](container-instances-region-availability.md)".
 
+Используйте API [List Usage](/rest/api/container-instances/location/listusage) для просмотра текущего использования квоты в регионе для подписки.
+
 ## <a name="service-quotas-and-limits"></a>Квоты и ограничения службы
 
 [!INCLUDE [container-instances-limits](../../includes/container-instances-limits.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете повысить лимит нескольких ограничений и квот. Чтобы запросить увеличение квоты на один или несколько ресурсов, которые поддерживают такую возможность, отправьте [запрос в службу поддержки Azure][azure-support] (указав "Квота" в качестве **типа проблемы**).
 

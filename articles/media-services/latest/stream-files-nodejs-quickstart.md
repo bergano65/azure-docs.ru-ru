@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 08/19/2019
 ms.author: juliako
-ms.openlocfilehash: fa9fbf3bac55ca0b26c3644b7f6818fa96088612
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5e4c50b4b66d164ba2e89cfc537d9dd8593c4f57
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "69639392"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092037"
 ---
 # <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---nodejs"></a>Руководство по кодированию удаленного файла на основе URL-адреса и потоковой передачи видео с помощью Node.js
 
@@ -35,8 +35,8 @@ ms.locfileid: "69639392"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Установите [Node.js](https://nodejs.org/en/download/)
-- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).<br/>Запишите значения, которые вы использовали в качестве имени группы ресурсов и имени учетной записи Служб мультимедиа.
-- Выполните действия, описанные в статье [Доступ к API Служб мультимедиа Azure с помощью Azure CLI](access-api-cli-how-to.md), и сохраните учетные данные. Эти данные понадобятся для доступа к API.
+- [Создание учетной записи Служб мультимедиа](./create-account-howto.md).<br/>Запишите значения, которые вы использовали в качестве имени группы ресурсов и имени учетной записи Служб мультимедиа.
+- Выполните действия, описанные в статье [Доступ к API Служб мультимедиа Azure с помощью Azure CLI](./access-api-howto.md), и сохраните учетные данные. Эти данные понадобятся для доступа к API.
 
 ## <a name="download-and-configure-the-sample"></a>Скачивание и настройка примера
 
@@ -48,7 +48,7 @@ ms.locfileid: "69639392"
 
 Этот пример находится в папке [StreamFilesSample](https://github.com/Azure-Samples/media-services-v3-node-tutorials/tree/master/AMSv3Samples/StreamFilesSample).
 
-Откройте файл [index.js](https://github.com/Azure-Samples/media-services-v3-node-tutorials/blob/master/AMSv3Samples/StreamFilesSample/index.js#L25) в скачанном проекте. Замените значения `endpoint config` учетными данными, которые вы получили, выполнив действия из руководства по [получению доступа к API](access-api-cli-how-to.md).
+Откройте файл [index.js](https://github.com/Azure-Samples/media-services-v3-node-tutorials/blob/master/AMSv3Samples/StreamFilesSample/index.js#L25) в скачанном проекте. Замените значения `endpoint config` учетными данными, которые вы получили, выполнив действия из руководства по [получению доступа к API](./access-api-howto.md).
 
 Этот пример выполняет следующие действия:
 
@@ -101,7 +101,7 @@ az group delete --name amsResourceGroup
 
 ## <a name="see-also"></a>См. также раздел
 
-[Коды ошибок задания](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode).
+[Коды ошибок задания](/rest/api/media/jobs/get#joberrorcode).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

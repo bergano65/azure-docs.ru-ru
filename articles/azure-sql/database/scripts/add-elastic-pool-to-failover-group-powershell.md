@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 07/16/2019
-ms.openlocfilehash: d9c387a095f81978bc57f6ce6365596cafffc39c
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
+ms.openlocfilehash: e509fc0f93c60d271409b5453aecdf793cd22ecb
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84196999"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87040599"
 ---
 # <a name="use-powershell-to-add-an-elastic-pool-to-a-failover-group"></a>Добавление эластичного пула в группу отработки отказа с помощью PowerShell
 [!INCLUDE[appliesto-sqldb](../../includes/appliesto-sqldb.md)]
@@ -62,6 +62,6 @@ Remove-AzResourceGroup -ResourceGroupName $resourceGroupName
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
 
 Дополнительные примеры сценариев PowerShell для базы данных SQL Azure можно найти [здесь](../powershell-script-content-guide.md).

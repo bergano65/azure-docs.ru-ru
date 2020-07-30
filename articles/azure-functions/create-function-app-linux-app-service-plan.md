@@ -44,7 +44,7 @@ ms.locfileid: "83116207"
     |**Версия**| номер версии; | Выберите версию установленной среды выполнения.  |
     |**Регион**| Предпочтительный регион | Выберите ближайший [регион](https://azure.microsoft.com/regions/) или регион рядом с другими службами, к которому получают доступ ваши функции. |
 
-    :::image type="content" source="./media/create-function-app-linux-app-service-plan/function-app-create-basics-linux.png" alt-text="Страница "Основные"":::
+    :::image type="content" source="./media/create-function-app-linux-app-service-plan/function-app-create-basics-linux.png" alt-text="Страница Основные":::
 
 1. Выберите **Далее: Размещение**. Введите следующие параметры на странице **Размещение**.
 
@@ -62,7 +62,7 @@ ms.locfileid: "83116207"
     | ------------ | ---------------- | ----------- |
     | **[Application Insights](../azure-functions/functions-monitoring.md)** | **Да** (по умолчанию) | Создает ресурс Application Insights с таким же *именем приложения* в ближайшем поддерживаемом регионе. Развернув этот параметр или выбрав **Создать новый**, можно изменить имя Application Insights или выбрать другое расположение в [географическом регионе Azure](https://azure.microsoft.com/global-infrastructure/geographies/), где будут хранится данные. |
 
-   :::image type="content" source="./media/create-function-app-linux-app-service-plan/function-app-create-monitoring-linux.png" alt-text="Страница "Мониторинг"":::
+   :::image type="content" source="./media/create-function-app-linux-app-service-plan/function-app-create-monitoring-linux.png" alt-text="Страница Мониторинг":::
 
 1. Выберите **Просмотр и создание** , чтобы просмотреть выбранные параметры конфигурации приложения.
 
