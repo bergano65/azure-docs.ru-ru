@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: overview
 ms.custom: hdinsightactive,hdiseo17may2017,mvc,seodec18
 ms.date: 02/27/2020
-ms.openlocfilehash: 2dc9d5d154c8128e0744e8dd9f08dec6e52381a4
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 5e5f02b1684e56496778ab677aa9dc46e7dcd9aa
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86205308"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086529"
 ---
 # <a name="what-is-apache-hadoop-in-azure-hdinsight"></a>Что такое Apache Hadoop в Azure HDInsight?
 
@@ -48,7 +48,7 @@ Apache Hadoop MapReduce — это программная платформа д�
 
 Потоковая передача Hadoop взаимодействует с модулями сопоставления и редукции через потоки STDIN и STDOUT. Модули сопоставления и редукции построчно считывают данные из потока STDIN и записывают выходные данные в поток STDOUT. Каждая строка, которая читается или генерируется модулем сопоставления или редукции, должна быть в формате пар "ключ-значение", разделенных знаком табуляции.
 
-`[key]/t[value]`
+`[key]\t[value]`
 
 Дополнительные сведения см. в документации по [потоковой передаче Hadoop](https://hadoop.apache.org/docs/current/hadoop-streaming/HadoopStreaming.html).
 

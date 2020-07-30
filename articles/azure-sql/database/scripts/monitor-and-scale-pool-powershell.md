@@ -11,12 +11,12 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: c0ce0a1019554592f769d88f4168da7dc6188586
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
+ms.openlocfilehash: 14c6193b4a4373d754e3e90d573eccd2735de56c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84196838"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085036"
 ---
 # <a name="use-powershell-to-monitor-and-scale-an-elastic-pool-in-azure-sql-database"></a>Отслеживание и масштабирование эластичного пула в Базе данных SQL Azure с помощью PowerShell
 [!INCLUDE[appliesto-sqldb](../../includes/appliesto-sqldb.md)]
@@ -60,6 +60,6 @@ Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения об Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
 
 Дополнительные примеры скриптов PowerShell можно найти [здесь](../powershell-script-content-guide.md).

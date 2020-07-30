@@ -9,12 +9,12 @@ ms.subservice: imaging
 ms.date: 03/27/2018
 ms.reviewer: cynthn
 ms.custom: akjosh
-ms.openlocfilehash: bdd36a2c58bddce5bea0ba43e5d21da9ef89a14d
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 10f0cb1f6f3b5ee25538a588fadda75a2aeb6079
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83699469"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088926"
 ---
 # <a name="create-a-virtual-machine-scale-set-from-a-custom-vm-image-with-powershell"></a>Создание масштабируемого набора виртуальных машин на основе пользовательского образа виртуальной машины с помощью PowerShell
 С помощью этого скрипта создается масштабируемый набор виртуальных машин. При этом в качестве источника для экземпляров виртуальных машин используется пользовательский образ виртуальной машины.
@@ -43,4 +43,4 @@ Remove-AzResourceGroup -Name myResourceGroup
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов и все ресурсы, содержащиеся в ней. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).

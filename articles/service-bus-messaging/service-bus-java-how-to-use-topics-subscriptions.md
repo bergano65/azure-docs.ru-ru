@@ -4,13 +4,13 @@ description: В этом кратком руководстве описано, �
 ms.devlang: Java
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: fb8e5196077e60c20d9354459cafe85302ad0e45
-ms.sourcegitcommit: 61d92af1d24510c0cc80afb1aebdc46180997c69
+ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
+ms.openlocfilehash: 7b26a15ba729d262bf7eae298bc1810fed595474
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85341419"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87314668"
 ---
 # <a name="quickstart-use-service-bus-topics-and-subscriptions-with-java"></a>Краткое руководство. Использование разделов и подписок Служебной шины с Java
 

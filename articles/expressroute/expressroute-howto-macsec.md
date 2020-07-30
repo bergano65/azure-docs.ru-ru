@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 10/22/2019
 ms.author: cherylmc
-ms.openlocfilehash: a73a99d1e6200faf9feb227f562f5b77b0461f1e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ce2e4ca2cad0fc080d6a750b3f1682210a5b9b20
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84737059"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87387665"
 ---
 # <a name="configure-macsec-on-expressroute-direct-ports"></a>Настройка Максек для прямого порта ExpressRoute
 
@@ -47,7 +47,7 @@ ms.locfileid: "84737059"
     $keyVault = New-AzKeyVault -Name "your_key_vault_name" -ResourceGroupName "your_resource_group" -Location "resource_location" -EnableSoftDelete 
     ```
 
-    Если у вас уже есть хранилище ключей или группа ресурсов, их можно использовать повторно. Однако очень важно включить [функцию **обратимого удаления** ](../key-vault/general/overview-soft-delete.md) в существующем хранилище ключей. Если обратимое удаление не включено, для его включения можно использовать следующие команды:
+    Если у вас уже есть хранилище ключей или группа ресурсов, их можно использовать повторно. Однако очень важно включить [функцию **обратимого удаления** ](../key-vault/general/soft-delete-overview.md) в существующем хранилище ключей. Если обратимое удаление не включено, для его включения можно использовать следующие команды:
 
     ```azurepowershell-interactive
     ($resource = Get-AzResource -ResourceId (Get-AzKeyVault -VaultName "your_existing_keyvault").ResourceId).Properties | Add-Member -MemberType "NoteProperty" -Name "enableSoftDelete" -Value "true"
@@ -134,7 +134,7 @@ Set-AzExpressRoutePort -ExpressRoutePort $erDirect
 ### <a name="test-connectivity"></a>Проверка подключения
 После настройки Максек (включая обновление ключа Максек) на портах с прямым подключением ExpressRoute [Проверьте](expressroute-troubleshooting-expressroute-overview.md) , работают ли сеансы BGP для каналов. Если у вас еще нет канала, создайте его сначала и настройте частный пиринг Azure или пиринг Майкрософт. Если Максек настроен неправильно, в том числе несовпадение ключей Максек, между сетевыми устройствами и сетевыми устройствами Майкрософт, разрешение ARP не будет отображаться на уровне 2 и на компьютере с установленным BGP на уровне 3. Если все настроено правильно, вы должны увидеть маршруты BGP, объявляемые правильно в обоих направлениях, и поток данных приложения в соответствии с ExpressRoute.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 1. [Создание канала ExpressRoute в ExpressRoute Direct](expressroute-howto-erdirect.md)
 2. [Подключение виртуальной сети к каналу ExpressRoute](expressroute-howto-linkvnet-arm.md).
 3. [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)

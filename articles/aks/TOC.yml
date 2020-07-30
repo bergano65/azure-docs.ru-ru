@@ -42,7 +42,7 @@
       href: tutorial-kubernetes-upgrade-cluster.md
 - name: Примеры
   items:
-    - name: Встроенные политики службы "Политика Azure"
+    - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-samples.md
 - name: Основные понятия
@@ -52,11 +52,15 @@
     - name: Параметры доступа и идентификации
       href: concepts-identity.md
     - name: Безопасность
-      href: concepts-security.md
-      items: null
+      items:
+        - name: Защита приложений и кластеров
+          href: concepts-security.md
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
     - name: Сеть
       href: concepts-network.md
-    - name: Память
+    - name: Хранилище
       href: concepts-storage.md
     - name: Масштабирование
       href: concepts-scale.md

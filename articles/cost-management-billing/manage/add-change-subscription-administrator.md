@@ -8,12 +8,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: 309016821eb13ef6332ba248a11593fec8da9f75
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
+ms.openlocfilehash: 6d16e663626a1b19271b7d37b39202a0a9b605b9
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84267568"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87126131"
 ---
 # <a name="add-or-change-azure-subscription-administrators"></a>Добавление или изменение администраторов подписки Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "84267568"
 
 В этой статье описано, как добавлять или изменять роли администратора для пользователя с помощью RBAC в области подписки.
 
-Корпорация Майкрософт рекомендует применять RBAC для управления доступом к ресурсам. Если вы по-прежнему используете классическую модель развертывания и управляете классически ресурсами с помощью [модуля PowerShell для управления службами Azure](https://docs.microsoft.com/powershell/module/servicemanagement/azure), вам потребуется роль классического администратора.
+Корпорация Майкрософт рекомендует применять RBAC для управления доступом к ресурсам. Если вы по-прежнему используете классическую модель развертывания и управляете классически ресурсами с помощью [модуля PowerShell для управления службами Azure](/powershell/module/servicemanagement/azure.service), вам потребуется роль классического администратора.
 
 > [!TIP]
 > Если же вы управляете классическими ресурсами только с помощью портала Azure, вам не потребуется использовать роль классического администратора.
@@ -69,7 +69,7 @@ ms.locfileid: "84267568"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Что такое управление доступом на основе ролей (RBAC)?](../../role-based-access-control/overview.md)
+* [Что такое управление доступом на основе ролей в Azure (RBAC)?](../../role-based-access-control/overview.md)
 * [Сведения о различных ролях в Azure](../../role-based-access-control/rbac-and-directory-admin-roles.md)
 * [Associate or add an Azure subscription to your Azure Active Directory tenant](../../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md) (Связывание или добавление подписки Azure в клиент Azure Active Directory)
 * [Разрешения роли администратора в Azure Active Directory](../../active-directory/users-groups-roles/directory-assign-admin-roles.md)

@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 3007aa1fab8797d77e1edde83f22e359196641cc
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: 91a92f9dd0eaf55b8ba35f38102ee30b8cda4bfa
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85248587"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87053817"
 ---
 # <a name="tutorial-use-rest-api-to-create-an-azure-data-factory-pipeline-to-copy-data"></a>Руководство по Создание конвейера Фабрики данных Azure для копирования данных с помощью REST API 
 > [!div class="op_single_selector"]
@@ -57,7 +57,7 @@ ms.locfileid: "85248587"
   2. Получите **идентификатор клиента** и **секретный ключ**. 
   3. Получите значение для **tenant_id**. 
   4. Назначьте приложение **ADFCopyTutorialApp** роли **участника фабрики данных**.  
-* Установите [Azure PowerShell](/powershell/azure/overview).  
+* Установите [Azure PowerShell](/powershell/azure/).  
 * Откройте **PowerShell** и выполните описанные ниже действия. Не закрывайте Azure PowerShell, пока выполняются описанные в учебнике инструкции. Если закрыть и снова открыть это окно, то придется вновь выполнять эти команды.
   
   1. Выполните следующую команду и введите имя пользователя и пароль, которые используются для входа на портал Azure.

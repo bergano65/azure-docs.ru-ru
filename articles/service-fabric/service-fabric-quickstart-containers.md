@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 07/10/2019
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: da50fb9f331e91089bb6bf0fb373cab8045639f0
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 934b679813323fe144f935811eb613ab68b561db
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86260505"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87089623"
 ---
 # <a name="quickstart-deploy-windows-containers-to-service-fabric"></a>Краткое руководство. Развертывание контейнеров Windows в Service Fabric
 
@@ -86,7 +86,7 @@ Azure Service Fabric — это платформа распределенных 
 
 В следующем примере сценария создается кластер Service Fabric из пяти узлов, защищенный с помощью сертификата X.509. Команда создает самозаверяющий сертификат и отправляет его в новое хранилище ключей. Сертификат также копируется в локальный каталог. Дополнительные сведения о создании кластера с помощью этого сценария см. в статье [Создание кластера Service Fabric](scripts/service-fabric-powershell-create-secure-cluster-cert.md).
 
-При необходимости установите Azure PowerShell с помощью инструкций, приведенных в [руководстве по Azure PowerShell](/powershell/azure/overview).
+При необходимости установите Azure PowerShell с помощью инструкций, приведенных в [руководстве по Azure PowerShell](/powershell/azure/).
 
 Прежде чем запустить следующий сценарий, в PowerShell выполните командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 

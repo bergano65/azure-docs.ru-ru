@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 09/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c020bb70dc26945b013321b2d75cc2e231c39a4
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.openlocfilehash: 7460a3c4a942194a66e585fed2b65be77b46b33e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83772936"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87034170"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-confluence-saml-sso-by-microsoft"></a>Руководство по Интеграции единого входа Azure Active Directory с Confluence SAML SSO by Microsoft
 
@@ -52,6 +52,9 @@ ms.locfileid: "83772936"
 
 > [!NOTE]
 > Мы не рекомендуем использовать рабочую среду Confluence для проверки действий в этом учебнике. Сначала протестируйте интеграцию в среде разработки или промежуточной среде приложения, а затем используйте ее в рабочей среде.
+
+> [!NOTE]
+> Эту интеграцию также можно использовать в облачной среде Azure AD для государственных организаций США. Это приложение можно найти в коллекции облачных приложений с поддержкой Azure AD для государственных организаций США и настроить таким же образом, как и в общедоступном облаке.
 
 Чтобы приступить к работе, потребуется следующее.
 

@@ -7,12 +7,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 04/27/2020
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 46c27f18f8f16f783248790f03364654d0b3c2fe
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: a594a754f33ae60d151215deb5a5ed57f87126c3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85986836"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87050658"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Руководство по Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure
 
@@ -329,7 +329,7 @@ ms.locfileid: "85986836"
 
 ## <a name="automate-with-scripts"></a>Автоматизация с помощью сценариев
 
-Управление личными доменами можно автоматизировать с помощью сценариев, воспользовавшись [Azure CLI](/cli/azure/install-azure-cli) или [Azure PowerShell](/powershell/azure/overview). 
+Управление личными доменами можно автоматизировать с помощью сценариев, воспользовавшись [Azure CLI](/cli/azure/install-azure-cli) или [Azure PowerShell](/powershell/azure/). 
 
 ### <a name="azure-cli"></a>Azure CLI 
 

@@ -5,16 +5,16 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 05/14/2019
 ms.custom: mvc,subject-armqs
-ms.openlocfilehash: 4e54ca6452a219dedca56885bda28ed43991ad37
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 7aef0e7e48bfd3f56bd1c3718b1a547bea66cbe8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86248940"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87054474"
 ---
 # <a name="quickstart-back-up-a-virtual-machine-in-azure-with-an-arm-template"></a>Краткое руководство. Резервное копирование виртуальной машины в Azure с помощью шаблона ARM
 
-[Azure Backup](backup-overview.md) создает резервные копии локальных компьютеров, приложений и виртуальных машин Azure. В этой статье описывается резервное копирование виртуальной машины Azure с помощью шаблона Azure Resource Manager (ARM) и Azure PowerShell. В данном кратком руководстве рассматривается преимущественно процесс развертывания шаблона ARM для создания хранилища Служб восстановления. Дополнительные сведения о разработке шаблонов ARM см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.recoveryservices/allversions).
+[Azure Backup](backup-overview.md) создает резервные копии локальных компьютеров, приложений и виртуальных машин Azure. В этой статье описывается резервное копирование виртуальной машины Azure с помощью шаблона Azure Resource Manager (ARM) и Azure PowerShell. В данном кратком руководстве рассматривается преимущественно процесс развертывания шаблона ARM для создания хранилища Служб восстановления. Дополнительные сведения о разработке шаблонов ARM см. в разделе [Документация по Azure Resource Manager](../azure-resource-manager/index.yml) и в [справочнике по шаблонам](/azure/templates/microsoft.recoveryservices/allversions).
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
