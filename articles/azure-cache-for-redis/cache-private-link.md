@@ -6,25 +6,28 @@ ms.author: cauribeg
 ms.service: cache
 ms.topic: conceptual
 ms.date: 07/21/2020
-ms.openlocfilehash: d85fe36bb948ae9a0c81fa25f87450c7f5fe93b7
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 5db756b60330cdac4e43e13bfe29d9397f87af50
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87337268"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421660"
 ---
 # <a name="azure-cache-for-redis-with-azure-private-link-preview"></a>Кэш Azure для Redis с помощью частной связи Azure (Предварительная версия)
 Частная конечная точка Azure — это сетевой интерфейс, который обеспечивает безопасное подключение к кэшу Azure для Redis с помощью частной ссылки Azure. 
 
 В этой статье вы узнаете, как создать кэш Azure, виртуальную сеть Azure и закрытую конечную точку с помощью портал Azure.  
 
+> [!IMPORTANT]
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок в рабочей среде. Дополнительные сведения см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure.](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) 
+> 
+
 ## <a name="prerequisites"></a>Предварительные требования
 * Подписка Azure. [создайте ее бесплатно](https://azure.microsoft.com/free/)
 
 > [!NOTE]
-  > Сейчас эта функция доступна в предварительной версии. [свяжитесь с нами](mailto:azurecache@microsoft.com) , если вас интересует.
-  >
-
+> Сейчас эта функция доступна в предварительной версии. [свяжитесь с нами](mailto:azurecache@microsoft.com) , если вас интересует.
+>
 
 ## <a name="create-a-cache"></a>Создание кэша
 1. Чтобы создать кэш, войдите на [портал Azure](https://portal.azure.com) и выберите **Создать ресурс**. 
@@ -124,7 +127,7 @@ ms.locfileid: "87337268"
     | Подписка | Раскройте список и выберите нужную подписку. |
     | Группа ресурсов | Раскрывающийся список и выберите группу ресурсов. |
     | **Подробности об экземпляре** |  |
-    | Имя |Введите имя частной конечной точки.  |
+    | Название |Введите имя частной конечной точки.  |
     | Регион |Откройте список и выберите расположение. |
     |||
 

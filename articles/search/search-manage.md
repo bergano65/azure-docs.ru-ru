@@ -9,12 +9,12 @@ tags: azure-portal
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/24/2020
-ms.openlocfilehash: 76eee4b0b029714a75b57e5d44e097a36de3181f
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 721848b996bc4887370b77404e3d571975815624
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/29/2020
-ms.locfileid: "87371419"
+ms.locfileid: "87421898"
 ---
 # <a name="service-administration-for-azure-cognitive-search-in-the-azure-portal"></a>Администрирование служб для Azure Когнитивный поиск в портал Azure
 
@@ -58,7 +58,7 @@ Azure Когнитивный поиск использует другие слу
 
 Права на представление подготовки службы предоставляются с помощью назначений ролей. [Доступ на основе ролей (RBAC)](../role-based-access-control/overview.md) — это система авторизации, основанная на [Azure Resource Manager](../azure-resource-manager/management/overview.md) для подготовки ресурсов Azure. 
 
-В контексте Когнитивный поиск Azure [назначения ролей RBAC](search-security-rbac.md) определяют, кто может выполнять задачи, независимо от того, используете ли они [портал](search-manage.md), [PowerShell](search-manage-powershell.md)или [интерфейсы API для управления](https://docs.microsoft.com/rest/api/searchmanagement/search-howto-management-rest-api).
+В контексте Когнитивный поиск Azure [назначения ролей Azure](search-security-rbac.md) определяют, кто может выполнять задачи, независимо от того, используете ли они [портал](search-manage.md), [PowerShell](search-manage-powershell.md)или [интерфейсы API для управления](https://docs.microsoft.com/rest/api/searchmanagement/search-howto-management-rest-api).
 
 * Создание или удаление службы
 * Масштабирование службы

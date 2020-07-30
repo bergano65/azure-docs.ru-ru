@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0339d9d47752c194eeda96cd2df4859d6b97518b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e9d4f293f3835e26def97aa2f52dd0c42d9137c7
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85338287"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421728"
 ---
 # <a name="manage-emergency-access-accounts-in-azure-ad"></a>Управление учетными записями для аварийного доступа в Azure AD
 
@@ -56,7 +56,7 @@ ms.locfileid: "85338287"
 
 ### <a name="exclude-at-least-one-account-from-conditional-access-policies"></a>Исключение по меньшей мере одной учетной записи из политик условного доступа
 
-Вы не хотите, чтобы во время аварийной ситуации политика могла заблокировать ваш доступ для устранения проблем. Как минимум одну учетную запись для аварийного доступа необходимо исключить из всех политик условного доступа. Если вы включили [базовую политику](../conditional-access/baseline-protection.md), следует исключить учетные записи для аварийного доступа.
+Вы не хотите, чтобы во время аварийной ситуации политика могла заблокировать ваш доступ для устранения проблем. Как минимум одну учетную запись для аварийного доступа необходимо исключить из всех политик условного доступа.
 
 ## <a name="federation-guidance"></a>Руководство по объединению в федерацию
 

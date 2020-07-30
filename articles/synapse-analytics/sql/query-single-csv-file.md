@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 628631fb7fddbc07dcb865e3d3badbfb608ad097
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1d033a904087bf8ff32721372209820a64090502
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85214457"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87383891"
 ---
 # <a name="query-csv-files"></a>Запрос CSV-файлов
 
@@ -26,6 +26,72 @@ ms.locfileid: "85214457"
 - Значения, не заключенные в кавычки и заключенные в кавычки, и символы экранирования
 
 Все приведенные выше варианты будут рассмотрены ниже.
+
+## <a name="quickstart-example"></a>Пример краткого руководства
+
+`OPENROWSET`функция позволяет читать содержимое CSV-файла, предоставляя URL для файла.
+
+### <a name="reading-csv-file"></a>Чтение CSV-файла
+
+Самый простой способ увидеть содержимое `CSV` файла — предоставить URL-адрес файла для `OPENROWSET` работы, указать csv `FORMAT` и 2,0 `PARSER_VERSION` . Если файл является общедоступным или удостоверение Azure AD имеет доступ к этому файлу, вы увидите содержимое файла с помощью запроса, как показано в следующем примере:
+
+```sql
+select top 10 *
+from openrowset(
+    bulk 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/ecdc_cases/latest/ecdc_cases.csv',
+    format = 'csv',
+    parser_version = '2.0',
+    firstrow = 2 ) as rows
+```
+
+Параметр `firstrow` используется для пропуска первой строки в CSV-файле, представляющей заголовок в этом случае. Убедитесь, что у вас есть доступ к этому файлу. Если файл защищен с помощью ключа SAS или пользовательского удостоверения, необходимо настроить [учетные данные на уровне сервера для входа SQL](develop-storage-files-storage-access-control.md?tabs=shared-access-signature#server-scoped-credential).
+
+### <a name="using-data-source"></a>Использование источника данных
+
+В предыдущем примере используется полный путь к файлу. В качестве альтернативы можно создать внешний источник данных с расположением, которое указывает на корневую папку хранилища:
+
+```sql
+create external data source covid
+with ( location = 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/ecdc_cases' );
+```
+
+После создания источника данных можно использовать этот источник данных и относительный путь к файлу в `OPENROWSET` функции:
+
+```sql
+select top 10 *
+from openrowset(
+        bulk 'latest/ecdc_cases.csv',
+        data_source = 'covid',
+        format = 'csv',
+        parser_version ='2.0',
+        firstrow = 2
+    ) as rows
+```
+
+Если источник данных защищен с помощью ключа SAS или пользовательского удостоверения, можно настроить [источник данных с учетными данными для базы данных](develop-storage-files-storage-access-control.md?tabs=shared-access-signature#database-scoped-credential).
+
+### <a name="explicitly-specify-schema"></a>Явное указание схемы
+
+`OPENROWSET`позволяет явно указать столбцы, которые необходимо считать из файла с помощью `WITH` предложения:
+
+```sql
+select top 10 *
+from openrowset(
+        bulk 'latest/ecdc_cases.csv',
+        data_source = 'covid',
+        format = 'csv',
+        parser_version ='2.0',
+        firstrow = 2
+    ) with (
+        date_rep date 1,
+        cases int 5,
+        geo_id varchar(6) 8
+    ) as rows
+```
+
+Числа после типа данных в `WITH` предложении представляют индекс столбца в CSV-файле.
+
+В следующих разделах показано, как выполнять запросы к различным типам CSV-файлов.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

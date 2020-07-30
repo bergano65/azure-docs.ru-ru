@@ -12,12 +12,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/12/2019
-ms.openlocfilehash: ac72e3e232ec17c4c4d810f6d2c7fed6fa84fd02
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 84166e5523cdbdb9ccebf9a0cbfc5e4dee0eb9e8
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85981334"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87387138"
 ---
 # <a name="powershell-and-the-azure-cli-enable-transparent-data-encryption-with-customer-managed-key-from-azure-key-vault"></a>PowerShell и Azure CLI: включение прозрачное шифрование данных с управляемым клиентом ключом из Azure Key Vault
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "85981334"
 - Создайте Azure Key Vault и ключи для TDE.
   - [Инструкции по использованию аппаратного модуля безопасности (HSM) и Key Vault](../../key-vault/keys/hsm-protected-keys.md)
     - Чтобы использовать хранилище ключей для TDE, обязательно настройте для него следующее свойство:
-  - [обратимое удаление](../../key-vault/general/overview-soft-delete.md) и очистка защиты
+  - [обратимое удаление](../../key-vault/general/soft-delete-overview.md) и очистка защиты
 - Чтобы использовать ключ для TDE, обязательно настройте для него следующие атрибуты:
   - без даты окончания срока действия;
   - не отключено;
@@ -241,7 +241,7 @@ az sql db tde show --database <dbname> --server <servername> --resource-group <r
    - ключ не должен иметь дату окончания срока действия;
    - для ключа должны быть включены операции *получения*, *упаковки ключа* и *распаковки ключа*.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как сменить средство защиты TDE сервера в соответствии с требованиями безопасности: [поворачивайте средство защиты прозрачное шифрование данных с помощью PowerShell](transparent-data-encryption-byok-key-rotation.md).
 - Сведения о том, как удалить потенциально скомпрометированный предохранитель TDE в случае угрозы безопасности, вы найдете в [этой статье](transparent-data-encryption-byok-remove-tde-protector.md).

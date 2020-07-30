@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/05/2020
 ms.author: allensu
-ms.openlocfilehash: 1c8acd2d8055359288608f7bd2e5f54f8c4f6cc3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 351307132e231f1fc6639333e6839848ac933337
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84809187"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87420912"
 ---
 # <a name="azure-monitor-logs-for-public-basic-load-balancer"></a>Журналы Azure Monitor для общедоступной службы Load Balancer (цен. категория "Базовый")
 
@@ -40,7 +40,7 @@ ms.locfileid: "84809187"
 1. На портале щелкните **группы ресурсов**.
 2. Выберите **\<resource-group-name>** , где находится балансировщик нагрузки.
 3. Выберите подсистему балансировки нагрузки.
-4. Выберите **мониторинг**  >  **параметры диагностики**.
+4. Выберите **Activity log**  >  **параметры диагностики**журнала действий.
 5. В области **параметры диагностики** в разделе **параметры диагностики**выберите **+ Добавить параметр диагностики**.
 6. В области создание **параметров диагностики** введите **Милбдиагностикс** в поле **имя** .
 7. У вас есть три варианта **параметров диагностики**.  Вы можете выбрать один, два или все три и настроить каждый из них в соответствие с вашими требованиями:
@@ -173,6 +173,6 @@ ms.locfileid: "84809187"
 ## <a name="send-to-log-analytics"></a>Отправка в Log Analytics
 Ресурсы в Azure могут отправлять диагностические сведения непосредственно в Log Analytics рабочую область, где можно выполнять сложные запросы к информации для устранения неполадок и анализа.  Дополнительные сведения см. в статье [Получение журналов ресурсов Azure в log Analytics рабочей области в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-collect-workspace)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Основные сведения о пробах подсистемы балансировки нагрузки](load-balancer-custom-probe-overview.md)

@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 09/19/2018
 ms.author: terrylan
 Customer intent: As an IT Pro or decision maker I am trying to learn about identity management capabilities in Azure
-ms.openlocfilehash: d6c82b1070f76cedcd84b8cd8a0a7bb6f683110d
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 6abfcaac06dd82be79c9136718878f801ca241cc
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285328"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87384537"
 ---
 # <a name="azure-identity-management-security-overview"></a>Общие сведения о безопасности при управлении удостоверениями в Azure
 
@@ -64,7 +64,7 @@ Azure AD расширяет локальные среды Active Directory в о
 
 * [Обзор единого входа](https://azure.microsoft.com/documentation/videos/overview-of-single-sign-on/)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../../active-directory/manage-apps/what-is-single-sign-on.md)
-* [Интеграция единого входа Azure Active Directory с приложениями SaaS](../../active-directory/manage-apps/configure-single-sign-on-non-gallery-applications.md)
+* [Циклическое руководство по управлению приложениями](../../active-directory/manage-apps/view-applications-portal.md)
 
 ## <a name="reverse-proxy"></a>Обратный прокси-сервер.
 

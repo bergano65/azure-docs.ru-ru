@@ -1,5 +1,5 @@
 ---
-title: Запись кода проверки подлинности приложения
+title: Написание кода проверки подлинности приложения
 titleSuffix: Azure Digital Twins
 description: См. статью как написать код проверки подлинности в клиентском приложении.
 author: baanders
@@ -7,12 +7,13 @@ ms.author: baanders
 ms.date: 4/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 4d235280ae4a600994eb93ec08c7a13630f9682f
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 1eebacefa2e91970263c301de4ff160ea7c9f2eb
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87131588"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87420351"
 ---
 # <a name="write-client-app-authentication-code"></a>Запись кода проверки подлинности клиентского приложения
 
@@ -24,7 +25,7 @@ ms.locfileid: "87131588"
 
 Дополнительные сведения об API и пакетах SDK для Azure Digital двойников см. в статье [*Использование интерфейсов API и пакетов SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Сначала выполните действия по настройке, описанные в разделе [*инструкции. Настройка экземпляра и аутентификации*](how-to-set-up-instance-scripted.md). Это обеспечит наличие экземпляра Azure Digital двойников, у пользователя есть разрешения на доступ, и вы настроили разрешения для клиентских приложений. После выполнения всех этих настроек вы сможете писать код клиентского приложения.
 
@@ -100,7 +101,7 @@ client = new DigitalTwinsClient(new Uri(adtInstanceUrl), cred, opts);
 
 В этом разделе объясняется, как выполнить проверку подлинности в этом случае.
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Во-первых, необходимо выполнить действия по созданию настраиваемого пакета SDK с помощью функции автозаполнения, выполнив действия, описанные в разделе [*инструкции. Создание настраиваемых пакетов SDK для Azure Digital двойников с*](how-to-create-custom-sdks.md)назначением.
 
@@ -199,4 +200,4 @@ MSAL обладает многими дополнительными возмож
 * [*Основные понятия: безопасность решений для цифровых двойников Azure*](concepts-security.md)
 
 Кроме того, теперь, когда проверка подлинности настроена, переходите к созданию моделей в экземпляре:
-* [*Практическое руководство. Управление настраиваемыми моделями*](how-to-manage-model.md)
+* [*Практическое руководство. Управление настраиваемыми моделями*](how-to-manage-model.md).

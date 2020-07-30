@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 588e63e630caa4746b493d4530e301f72e5ccb5f
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: b3dcb3a74e9341981af7e6eddb4be7454aaf429b
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282948"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87419790"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -69,7 +69,7 @@ ms.locfileid: "87282948"
 
 ## <a name="enabling-azure-ad-login-in-for-windows-vm-in-azure"></a>Включение входа Azure AD в для виртуальной машины Windows в Azure
 
-Чтобы использовать вход Azure AD в для виртуальной машины Windows в Azure, необходимо сначала включить параметр входа в Azure AD для виртуальной машины Windows, а затем настроить назначения ролей RBAC для пользователей, которым разрешено выполнять вход на виртуальную машину.
+Чтобы использовать вход Azure AD в для виртуальной машины Windows в Azure, необходимо сначала включить параметр входа в Azure AD для виртуальной машины Windows, а затем настроить назначения ролей Azure для пользователей, которым разрешено выполнять вход на виртуальную машину.
 Существует несколько способов включения имени входа Azure AD для виртуальной машины Windows.
 
 - Использование портал Azure при создании виртуальной машины Windows
@@ -365,6 +365,6 @@ az role assignment create \
 
 Поделитесь своими отзывами об этой предварительной версии функции или сообщите о проблемах с ее помощью на [форуме обратной связи Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis).

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 7/14/2020
 ms.author: raynew
-ms.openlocfilehash: 268d8f3b43809e02476757cfe36b1ee52d4eaef1
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 53967ab0bec9488691ff60cdabb8fedbb6b9730e
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87317490"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87386713"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Таблица поддержки аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -32,8 +32,8 @@ Hyper-V без Virtual Machine Manager | Вы можете выполнять а
 
 **Server** | **Требования** | **Сведения**
 --- | --- | ---
-Hyper-V (без Virtual Machine Manager) |  Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 с последними обновлениями (включая установку основных серверных компонентов для этих операционных систем) | Если вы уже настроили Windows Server 2012 R2 или SCVMM 2012 R2 с помощью Azure Site Recovery и планируете обновить операционную систему, следуйте указаниям в [документации.](upgrade-2012R2-to-2016.md)
-Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2019, Virtual Machine Manager 2016, Virtual Machine Manager 2012 R2 (включая установку основных серверных компонентов для этих операционных систем, за исключением Virtual Machine Manager 2019) | Если используется Virtual Machine Manager, узлы Windows Server 2019 должны управляться в Virtual Machine Manager 2019. Аналогичным образом узлы Windows Server 2016 должны управляться в Virtual Machine Manager 2016.
+Hyper-V (без Virtual Machine Manager) |  Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 с последними обновлениями <br/><br/> **Примечание.** Также поддерживаются установки основных серверных компонентов этих операционных систем. | Если вы уже настроили Windows Server 2012 R2 или SCVMM 2012 R2 с помощью Azure Site Recovery и планируете обновить операционную систему, следуйте указаниям в [документации.](upgrade-2012R2-to-2016.md)
+Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2019, Virtual Machine Manager 2016, Virtual Machine Manager 2012 R2 <br/><br/> **Примечание.** Также поддерживаются установки основных серверных компонентов этих операционных систем.  | Если используется Virtual Machine Manager, узлы Windows Server 2019 должны управляться в Virtual Machine Manager 2019. Аналогичным образом узлы Windows Server 2016 должны управляться в Virtual Machine Manager 2016.
 
 > [!NOTE]
 > Убедитесь, что на локальном сервере имеется .NET Framework 4.6.2 или более поздней версии.

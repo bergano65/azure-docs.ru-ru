@@ -1,17 +1,15 @@
 ---
 title: Часто задаваемые вопросы о сети в службе "функции Azure"
 description: Ответы на некоторые наиболее распространенные вопросы и сценарии для работы в сети с помощью функций Azure.
-author: alexkarcher-msft
 ms.topic: troubleshooting
 ms.date: 4/11/2019
-ms.author: alkarche
 ms.reviewer: glenga
-ms.openlocfilehash: 7d3493cc76dfb05cca3c89114b279b99ab49bac2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 52e0a6f9261d89ecd7c660be118162a898988526
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87081650"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87385914"
 ---
 # <a name="frequently-asked-questions-about-networking-in-azure-functions"></a>Часто задаваемые вопросы о сети в службе "функции Azure"
 

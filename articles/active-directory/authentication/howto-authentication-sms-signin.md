@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rateller
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55e64fad910aba25354d8d7829fc1189b744ca16
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8360eae71ddd41d3105dbd037f273139262727ad
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85550486"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87419569"
 ---
 # <a name="configure-and-enable-users-for-sms-based-authentication-using-azure-active-directory-preview"></a>Настройка и подключение пользователей для аутентификации на основе SMS с помощью Azure Active Directory (предварительная версия)
 
@@ -65,7 +65,7 @@ ms.locfileid: "85550486"
 1. Найдите и выберите **Azure Active Directory**.
 1. В меню навигации в левой части окна Azure Active Directory выберите **Безопасность > Методы аутентификации > Политика метода аутентификации (предварительная версия)** .
 
-    [![](media/howto-authentication-sms-signin/authentication-method-policy-cropped.png "Browse to and select the Authentication method policy (preview) window in the Azure portal")](media/howto-authentication-sms-signin/authentication-method-policy.png#lightbox)
+    [![Перейдите к и выберите окно Политика метода проверки подлинности (Предварительная версия) в портал Azure.](media/howto-authentication-sms-signin/authentication-method-policy-cropped.png)](media/howto-authentication-sms-signin/authentication-method-policy.png#lightbox)
 
 1. Из списка имеющихся методов аутентификации выберите **Текстовое сообщение**.
 1. Установите для параметра **Включено** значение *Да*.
@@ -81,7 +81,7 @@ ms.locfileid: "85550486"
 1. В окне политики аутентификации через текстовые сообщения задайте для параметра **Целевой объект** значение *Избранные пользователи*.
 1. Выберите **Добавить пользователей или группы**, затем выберите тестового пользователя или группу, например *пользователь Contoso* или *пользователи Contoso SMS*.
 
-    [![](media/howto-authentication-sms-signin/add-users-or-groups-cropped.png "Choose users or groups to enable for SMS-based authentication in the Azure portal")](media/howto-authentication-sms-signin/add-users-or-groups.png#lightbox)
+    [![Выберите пользователей или группы, которые нужно включить для проверки подлинности на основе SMS, в портал Azure.](media/howto-authentication-sms-signin/add-users-or-groups-cropped.png)](media/howto-authentication-sms-signin/add-users-or-groups.png#lightbox)
 
 1. Выбрав пользователей или группы, щелкните **Выбрать**, а затем — **Сохранить**, чтобы сохранить обновленную политику метода аутентификации.
 

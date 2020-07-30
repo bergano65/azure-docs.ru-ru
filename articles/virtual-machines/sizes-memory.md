@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: mimckitt
-ms.openlocfilehash: ed49f5299129d16ecdd31f537064e67a4e8965a4
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 688508df8b13e00b21da78c1274400ea4b18484a
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87289722"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421337"
 ---
 # <a name="memory-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для операций в памяти
 
@@ -56,3 +56,5 @@ ms.locfileid: "87289722"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
+
+Дополнительные сведения об именах виртуальных машин Azure см. в статье [соглашения об именовании размеров виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/vm-naming-conventions).

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/14/2019
 ms.author: raynew
-ms.openlocfilehash: e0fd3a6bc62feeb3728fa88b4aad56c8713bce11
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 6dfa162de02174ac4a1a8251457249bd5ea4d766
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134925"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87416338"
 ---
 # <a name="hyper-v-to-azure-disaster-recovery-architecture"></a>Архитектура аварийного восстановления из Hyper-V в Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "86134925"
 
 **Архитектура: из Hyper-V в Azure (без VMM)**
 
-![Архитектура](./media/hyper-v-azure-architecture/arch-onprem-azure-hypervsite.png)
+![Architecture](./media/hyper-v-azure-architecture/arch-onprem-azure-hypervsite.png)
 
 
 ## <a name="architectural-components---hyper-v-with-vmm"></a>Компоненты архитектуры — Hyper-V с VMM
@@ -53,8 +53,25 @@ ms.locfileid: "86134925"
 
 **Архитектура: из Hyper-V в Azure (с VMM)**
 
-![Компоненты](./media/hyper-v-azure-architecture/arch-onprem-onprem-azure-vmm.png)
+![Components](./media/hyper-v-azure-architecture/arch-onprem-onprem-azure-vmm.png)
 
+## <a name="set-up-outbound-network-connectivity"></a>Настройка исходящего сетевого подключения
+
+Чтобы Site Recovery правильно работать, необходимо изменить исходящее сетевое подключение, чтобы разрешить репликацию среды.
+
+> [!NOTE]
+> Site Recovery не поддерживает использование прокси-сервер проверки подлинности для управления сетевым подключением.
+
+### <a name="outbound-connectivity-for-urls"></a>Исходящие подключения для URL-адресов
+
+При использовании прокси-сервера или брандмауэра на основе URL-адресов для управления исходящими подключениями разрешите использование этих URL-адресов:
+
+| **Имя**                  | **Коммерческое**                               | **Государственные организации**                                 | **Описание** |
+| ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
+| Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
+| Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Обеспечивает авторизацию и проверку подлинности URL-адресов службы Site Recovery. |
+| Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Позволяет виртуальной машине взаимодействовать со службой Site Recovery. |
+| Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Позволяет виртуальной машине записывать данные мониторинга и диагностики службы Site Recovery. |
 
 
 ## <a name="replication-process"></a>Процесс репликации

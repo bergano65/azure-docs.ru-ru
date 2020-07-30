@@ -6,12 +6,13 @@ ms.suite: integration
 ms.reviewer: deli, logicappspm
 ms.topic: article
 ms.date: 05/14/2019
-ms.openlocfilehash: f7a134fd026b42d1666b8310b3fb0c10642c7bb0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-javascript
+ms.openlocfilehash: a1c3828a4b1899ff4b22c0a9520f676add21fe02
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75453498"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87420130"
 ---
 # <a name="add-and-run-code-snippets-by-using-inline-code-in-azure-logic-apps"></a>Добавление и выполнение фрагментов кода с помощью встроенного кода в Azure Logic Apps
 
@@ -128,7 +129,7 @@ ms.locfileid: "75453498"
 
 Эта таблица содержит дополнительные сведения об этих вложенных свойствах.
 
-| Свойство. | Type | Описание: |
+| Свойство | Тип | Описание |
 |----------|------|-------|
 | `actions` | Коллекция объектов | Результирующие объекты из действий, выполняемых перед выполнением фрагмента кода. Каждый объект имеет пару " *ключ-значение* ", где ключ — это имя действия, а значение эквивалентно вызову [функции Actions ()](../logic-apps/workflow-definition-language-functions-reference.md#actions) с параметром `@actions('<action-name>')` . Имя действия использует то же имя действия, которое используется в базовом определении рабочего процесса, которое заменяет пробелы ("") в имени действия символом подчеркивания (_). Этот объект предоставляет доступ к значениям свойств действия из текущего запуска экземпляра рабочего процесса. |
 | `trigger` | Объект | Результирующий объект из триггера и эквивалент для вызова [функции Trigger ()](../logic-apps/workflow-definition-language-functions-reference.md#trigger). Этот объект предоставляет доступ к значениям свойств триггера из текущего запуска экземпляра рабочего процесса. |
@@ -260,10 +261,10 @@ ms.locfileid: "75453498"
 
 1. Чтобы добавить другое действие, выберите **Добавить новый элемент**.
 
-## <a name="reference"></a>Справка
+## <a name="reference"></a>Справочник
 
 Дополнительные сведения о структуре и синтаксисе действия **выполнить код JavaScript** в базовом определении рабочего процесса приложения логики с помощью языка определения рабочего процесса см. в [разделе справки](../logic-apps/logic-apps-workflow-actions-triggers.md#run-javascript-code)этого действия.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [соединителях для Azure Logic Apps](../connectors/apis-list.md)

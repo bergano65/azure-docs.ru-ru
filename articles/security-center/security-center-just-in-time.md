@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: 78f5a34b64736808ac03771dcd8b5380482ab341
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a077e1dfd166051ad1cf16e42d11e8eeb61d2c91
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089790"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87419858"
 ---
 # <a name="secure-your-management-ports-with-just-in-time-access"></a>Защита портов управления с помощью JIT-доступа
 
@@ -35,7 +35,8 @@ ms.locfileid: "87089790"
 - Цены: **уровень "Стандартный**". Дополнительные [сведения о ценах](/azure/security-center/security-center-pricing).
 - Необходимые роли и разрешения:
     - Роли **Reader** и **секуритиреадер** могут просматривать состояние JIT и параметры.
-    - Сведения о создании настраиваемых ролей, которые могут работать с JIT-компилятором, см. в разделе [какие разрешения необходимы для настройки и использования JIT?](just-in-time-explained.md#what-permissions-are-needed-to-configure-and-use-jit).
+    - Сведения о создании настраиваемых ролей, которые могут работать с JIT-компилятором, см. в разделе [какие разрешения необходимы для настройки и использования JIT?](just-in-time-explained.md#what-permissions-are-needed-to-configure-and-use-jit)
+    - Чтобы создать роль с минимальными привилегиями для пользователей, которым требуется запросить JIT-доступ к виртуальной машине, и не выполнять другие операции JIT, используйте [Скрипт Set-житлеастпривилежедроле](https://github.com/Azure/Azure-Security-Center/tree/master/Powershell%20scripts/JIT%20Custom%20Role) на страницах сообщества центра безопасности GitHub.
 - Поддерживаемые виртуальные машины: 
     - ✔ Виртуальные машины, развернутые с помощью Azure Resource Manager.
     - ✘ Виртуальные машины, развернутые с помощью классических моделей развертывания. Дополнительные [сведения об этих моделях развертывания](../azure-resource-manager/management/deployment-models.md).
@@ -101,7 +102,7 @@ ms.locfileid: "87089790"
 
      1. Настройте Безопасность порта в отношении ваших потребностей.
 
-     1. Нажмите кнопку **ОК**.
+     1. Щелкните **ОК**.
 
 1. Щелкните **Сохранить**.
 

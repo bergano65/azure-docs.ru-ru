@@ -1,20 +1,20 @@
 ---
-title: Azure CLI примеры кэша Azure для Redis
-description: 'Примеры Azure CLI для кэша Azure для Redis: создание кэша, удаление кэша, получение сведений о кэше, имя узла, порты и ключи, подключение веб-приложения.'
+title: Управление кэшем Azure для Redis с помощью Azure CLI
+description: 'Azure CLI примеры управления кэшем Azure для Redis: создание кэша, удаление кэша, получение сведений о кэше, имя узла, порты и ключи, подключение веб-приложения.'
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
 ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 04/14/2017
-ms.openlocfilehash: 43a986f884d621f257de2e9c305a0bcc59092d3d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 345fd0272e0cfe9b4d7329f004e628ea7820c2d9
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87033671"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421246"
 ---
-# <a name="azure-cli-samples-for-azure-cache-for-redis"></a>Примеры Azure CLI для кэша Azure для Redis
+# <a name="manage-azure-cache-for-redis-with-azure-cli"></a>Управление кэшем Azure для Redis с помощью Azure CLI
 
 В следующей таблице содержатся ссылки на скрипты Bash, созданные с помощью Azure CLI.
 

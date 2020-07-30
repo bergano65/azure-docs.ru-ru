@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b510326b6683ae48b6521483118367f36e0dc58
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 159a14b30113a251c6ac61c4c04a2a3c4d69d3e5
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85387020"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87385217"
 ---
 # <a name="grant-b2b-users-in-azure-ad-access-to-your-on-premises-applications"></a>Предоставление пользователям B2B в Azure AD доступа к локальным приложениям
 
@@ -28,7 +28,7 @@ ms.locfileid: "85387020"
 
 Выполните два следующих действия.
 
-- Интегрируйте приложение SAML с помощью шаблона приложения, не включенного в коллекцию, как описано в статье [Настройка единого входа для приложений, которых нет в коллекции приложений Azure Active Directory](../manage-apps/configure-single-sign-on-non-gallery-applications.md). Обязательно запишите значение, которое вы используете для параметра **URL-адрес входа**.
+- Интегрируйте приложение с помощью SAML, как описано в разделе [Настройка единого входа на основе SAML](../manage-apps/configure-saml-single-sign-on.md). Обязательно запишите значение, которое вы используете для параметра **URL-адрес входа**.
 -  С помощью AD Application Proxy опубликуйте локальное приложение и укажите для него источник аутентификации **Azure Active Directory**. Этот процесс описан в статье [Публикация приложений с помощью Azure Active Directory Application Proxy](../manage-apps/application-proxy-publish-azure-portal.md). 
 
    При настройке **внутреннего URL-адреса** введите URL-адрес входа, указанный ранее в шаблоне приложения, не включенного в коллекцию. Это позволит сторонним пользователям обращаться к этому приложению. Прокси приложения реализует функции единого входа SAML для локального приложения.
@@ -82,7 +82,7 @@ ms.locfileid: "85387020"
 
 Убедитесь, что вы правильно настроили клиентские лицензии (CAL) для внешних гостевых пользователей, которые обращаются к локальным приложениям. Дополнительные сведения см. в разделе "Лицензии External Connector" статьи [Клиентские лицензии и лицензии на управление](https://www.microsoft.com/licensing/product-licensing/client-access-license.aspx). Конкретные требования к лицензированию вы можете обсудить с представителем Microsoft или локальным торговым посредником.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Служба совместной работы Azure Active Directory B2B для гибридных организаций](hybrid-organizations.md)
 

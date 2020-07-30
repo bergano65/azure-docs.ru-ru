@@ -5,12 +5,13 @@ ms.topic: conceptual
 author: markwolff
 ms.author: marwolff
 ms.date: 06/23/2020
-ms.openlocfilehash: 60653a43046276592878b3af91242e7e1b4ecd71
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.custom: devx-track-javascript
+ms.openlocfilehash: de475cbd7cbb0d8dbcda026109b0387da14bedff
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86516708"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87386798"
 ---
 # <a name="source-map-support-for-javascript-applications"></a>Поддержка карт исходного кода для приложений JavaScript
 
@@ -80,7 +81,7 @@ Application Insights поддерживает отправку карт исхо
     - Например, `/static/js/main.4e2ca5fa.chunk.js` будет искать большой двоичный объект с именем`main.4e2ca5fa.chunk.js.map`
 3. Проверьте наличие ошибок в консоли браузера. Включите это в любой запрос в службу поддержки.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Задача копирования файлов Azure](/azure/devops/pipelines/tasks/deploy/azure-file-copy?view=azure-devops)
 

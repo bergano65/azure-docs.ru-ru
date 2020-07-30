@@ -11,12 +11,12 @@ ms.date: 06/11/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7992563bdfb318867e963ed4f371998bafbbbcdb
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 8c8fb54261f51d74f02b7b79c27f7a2043426686
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87019919"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87385149"
 ---
 # <a name="azure-ad-connect-group-writeback"></a>Обратная запись группы Azure AD Connect
 
@@ -40,7 +40,7 @@ ms.locfileid: "87019919"
 6. На **странице Обратная запись**выберите Active Directory подразделения (OU) для хранения объектов, которые синхронизированы из Office 365 в локальную организацию, а затем нажмите кнопку **Далее**.
 7. На странице **все готово** для настройки нажмите кнопку **настроить**.
 8. После завершения работы мастера нажмите кнопку **выход** на странице Настройка завершена.
-9. Откройте Windows PowerShell на Azure Active Directory Connect сервере и выполните следующие команды.
+9. Откройте Windows PowerShell от имени администратора на Azure Active Directory Connect сервере и выполните следующие команды.
 
 ```Powershell
 $AzureADConnectSWritebackAccountDN =  <MSOL_ account DN>

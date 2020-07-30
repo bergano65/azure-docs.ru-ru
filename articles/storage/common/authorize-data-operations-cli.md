@@ -10,12 +10,12 @@ ms.date: 02/26/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: b4af9c23e2599ad666908763720a5f01303b8d50
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1e0b3890c50a476e4c3b3247db435c6032bf9bbc
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84805477"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87417307"
 ---
 # <a name="authorize-access-to-blob-or-queue-data-with-azure-cli"></a>Авторизация доступа к данным BLOB-объектов или очередей с помощью Azure CLI
 
@@ -57,7 +57,7 @@ Azure CLI команды для чтения и записи данных бол
 1. Прежде чем создавать контейнер, назначьте себе роль [Участник данных в хранилище BLOB-объектов](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor). Несмотря на то, что вы являетесь владельцем учетной записи, вам нужны явные разрешения на выполнение операций с данными с учетной записью хранения. Дополнительные сведения о назначении ролей RBAC см. [в разделе Предоставление доступа к данным BLOB-объектов и очередей Azure с помощью RBAC в портал Azure](storage-auth-aad-rbac.md).
 
     > [!IMPORTANT]
-    > Назначений ролей RBAC может потребоваться несколько минут для распространения.
+    > Распространение назначений ролей Azure может занять несколько минут.
 
 1. Вызовите команду [AZ Storage Container Create](/cli/azure/storage/container#az-storage-container-create) , указав `--auth-mode` для параметра значение, чтобы `login` создать контейнер с использованием учетных данных Azure AD. Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
@@ -105,7 +105,7 @@ az storage container create \
 |    AZURE_STORAGE_SAS_TOKEN            |    Токен подписанного URL-доступа (SAS). Эта переменная должна использоваться в сочетании с именем учетной записи хранения.                                                                                                                                                                                                                                                            |
 |    AZURE_STORAGE_AUTH_MODE            |    Режим авторизации, с помощью которого выполняется команда. Допустимые значения: `login` (рекомендуется) или `key` . Если указать `login` , Azure CLI использует учетные данные Azure AD для авторизации операции с данными. При указании устаревшего `key` режима Azure CLI пытается запросить ключ доступа к учетной записи и авторизовать команду с помощью ключа.    |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Использование Azure CLI для назначения роли RBAC доступа к данным BLOB-объектов и очередей](storage-auth-aad-rbac-cli.md)
 - [Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure](storage-auth-aad-msi.md)

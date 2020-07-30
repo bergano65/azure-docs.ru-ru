@@ -2,18 +2,18 @@
 title: Восстановить после сбоя виртуальные машины Hyper-V из Azure с помощью Azure Site Recovery
 description: Как восстановить порезервное копирование виртуальных машин Hyper-V на локальный сайт из Azure с помощью Azure Site Recovery.
 services: site-recovery
-author: rajani-janaki-ram
-manager: gauravd
+author: Rajeswari-Mamilla
+manager: gaggupta
 ms.service: site-recovery
 ms.topic: article
 ms.date: 09/12/2019
-ms.author: rajanaki
-ms.openlocfilehash: 4b005ae308576db6fd26fcf079161430b266ec3f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: ramamill
+ms.openlocfilehash: a31a28728dd0521262bd0518cc49a385f4314302
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84710258"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87416236"
 ---
 # <a name="run-a-failback-for-hyper-v-vms"></a>Восстановление размещения для виртуальных машин Hyper-V
 
@@ -81,5 +81,5 @@ ms.locfileid: "84710258"
     > Если отменить задание восстановления размещения во время синхронизации данных, локальная виртуальная машина будет находиться в поврежденном состоянии. Это связано с тем, что при синхронизации данных копируются последние данные с дисков виртуальных машин Azure на локальные диски данных, а пока синхронизация не завершится, данные на диске могут быть не в стабильном состоянии. Если локальная виртуальная машина запускается после отмены синхронизации данных, она может не загружаться. В этом случае повторно запустите отработку отказа, чтобы завершить синхронизацию данных.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После репликации локальной виртуальной машины в Azure можно при необходимости [выполнить другую отработку отказа](site-recovery-failover.md) в Azure.

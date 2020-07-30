@@ -6,12 +6,13 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: antchu
-ms.openlocfilehash: dbacb6a5bbdead52750935c476f453423647fc0f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-javascript
+ms.openlocfilehash: e25a874af66b73f5f75a07a5df65c155a16c9f01
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84457139"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87387155"
 ---
 # <a name="azure-functions-development-and-configuration-with-azure-signalr-service"></a>Azure Functions development and configuration with Azure SignalR Service (Разработка и настройка функций Azure с помощью Службы Azure SignalR)
 
@@ -220,7 +221,7 @@ const connection = new signalR.HubConnectionBuilder()
 * `CORS`— Введите базовый URL-адрес, который является источником клиентского приложения.
 * `CORSCredentials`-Задайте значение `true` , чтобы разрешить запросы "вискредентиалс"
 
-Пример.
+Пример:
 
 ```json
 {
@@ -318,6 +319,6 @@ public static Task SendMessage(
 
 Сведения о других языках см. в справочнике по [привязкам службы Azure SignalR](../azure-functions/functions-bindings-signalr-service.md) для функций Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как разрабатывать и настраивать приложения службы SignalR для бессерверных приложений с помощью функций Azure. Попробуйте создать приложение самостоятельно с помощью одного из быстрых запусков или руководств на [странице обзора службы SignalR](index.yml).

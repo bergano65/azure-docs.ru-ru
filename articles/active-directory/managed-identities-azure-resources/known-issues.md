@@ -17,12 +17,12 @@ ms.date: 12/12/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: d8aa6cc7894b13789fe196e32c401128572346bf
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 9b97edeb34e5d245d3bcf9018399f18b096b56f4
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87019069"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87420504"
 ---
 # <a name="faqs-and-known-issues-with-managed-identities-for-azure-resources"></a>Часто задаваемые вопросы об управляемых удостоверениях для ресурсов Azure, а также известные проблемы в их работе
 
@@ -76,7 +76,7 @@ ms.locfileid: "87019069"
 
 ### <a name="will-managed-identities-be-recreated-automatically-if-i-move-a-subscription-to-another-directory"></a>Воссоздаются ли управляемые удостоверения автоматически, если подписка перемещена в другой каталог?
 
-Нет. Если вы переместили подписку в другой каталог, нужно вручную воссоздать эти удостоверения и снова назначить роли Azure RBAC.
+Нет. Если вы перемещаете подписку в другой каталог, потребуется вручную повторно создать ее и снова предоставить назначения ролей Azure.
 - Управляемые удостоверения, назначаемые системой, нужно отключить и снова включить. 
 - Управляемые удостоверения, назначаемые пользователем, нужно удалить, повторно создать и присоединить к необходимым ресурсам (например, виртуальным машинам).
 

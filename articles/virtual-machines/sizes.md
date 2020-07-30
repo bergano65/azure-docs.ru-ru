@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 07/21/2020
 ms.author: jushiman
-ms.openlocfilehash: f6ed5fee8e6d4f1f0575df733b8b95d1d6990513
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 99419a73386f39492d78ee93aeb61f432ac9c690
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87289693"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421065"
 ---
 # <a name="sizes-for-virtual-machines-in-azure"></a>Размеры виртуальных машин в Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "87289693"
 | Тип | Размеры | Описание |
 |------|-------|-------------|
 | [Универсальные](sizes-general.md)   | B, Dsv3, Dv3, Dasv4, Dav4, DSv2, Dv2, Av2, DC, DCv2, dv4, Dsv4, Ddv4, Ddsv4  | Сбалансированное соотношение ресурсов ЦП и памяти. Идеальное решение для тестирования и разработки, небольших и средних баз данных, а также веб-серверов с небольшим или средним объемом трафика. |
-| [Оптимизированные для вычислений](sizes-compute.md) | Fsv2 | Высокое соотношение ресурсов ЦП и памяти. Подходят для веб-серверов со средним объемом трафика, сетевых устройств, пакетных процессов и серверов приложений. |
+| [Оптимизированные для вычислений](sizes-compute.md) | F, FS, серия fsv2 | Высокое соотношение ресурсов ЦП и памяти. Подходят для веб-серверов со средним объемом трафика, сетевых устройств, пакетных процессов и серверов приложений. |
 | [Оптимизированные для памяти](sizes-memory.md) | Esv3, Ev3, Easv4, Eav4, Ev4, Esv4, Edv4, Edsv4, Mv2, M, DSv2, Dv2 | Высокое соотношение ресурсов памяти и ядра. Отлично подходят для серверов реляционной базы данных, кэша среднего и большого объема, а также выполняющейся в памяти аналитики.                 |
 | [Оптимизированные для хранилища](sizes-storage.md) | Lsv2 | Высокая пропускная способность и количество операций ввода-вывода. Идеальный вариант для работы с большими данными, с базами данных SQL и NoSQL, системами хранения данных и большими транзакционными базами данных.  |
 | [GPU](sizes-gpu.md) | NC, NCv2, NCv3, ND, NDv2 (предварительная версия), NV, NVv3, NVv4 | Специализированные виртуальные машины, предназначенные для ресурсоемкой отрисовки изображений и редактирования видео, а также для обучения моделей и формирования выводов с помощью глубокого обучения. Доступны виртуальные машины одним или несколькими GPU. |
@@ -31,9 +31,7 @@ ms.locfileid: "87289693"
 - Сведения о ценах на различные размеры см. на страницах с ценами на [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/#Linux) или [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/#Windows).
 - Доступность размеров виртуальных машин см. в статье [Доступность продуктов по регионам](https://azure.microsoft.com/regions/services/).
 - Сведения об общих ограничениях виртуальных машин Azure см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md).
-
-> [!NOTE]
-  > Дополнительные сведения об именах виртуальных машин в Azure см. в статье [соглашения об именовании размеров виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/vm-naming-conventions).
+- Дополнительные сведения об именах виртуальных машин Azure см. в статье [соглашения об именовании размеров виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/vm-naming-conventions).
 
 ## <a name="rest-api"></a>REST API
 

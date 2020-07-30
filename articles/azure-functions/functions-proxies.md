@@ -1,16 +1,14 @@
 ---
 title: Работа с учетными записями-посредниками в функциях Azure
 description: Общие сведения об использовании прокси Функций Azure
-author: alexkarcher-msft
 ms.topic: conceptual
 ms.date: 01/22/2018
-ms.author: alkarche
-ms.openlocfilehash: d66c690c3a0ba638a92150c9aa1dbb0dc2a41268
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 3e08b9cf633162cc7015f47774b043cf58c115a0
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86506168"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87385880"
 ---
 # <a name="work-with-azure-functions-proxies"></a>Работа с функцией "Прокси-серверы Функций Azure"
 

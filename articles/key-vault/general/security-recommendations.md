@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 09/30/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
-ms.openlocfilehash: 28b768e421ac72be363ab187312e52ba15d34970
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 0c541c848290988bb1f358f045abb2d0cd221de7
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83872995"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87386764"
 ---
 # <a name="security-recommendations-for-azure-key-vault"></a>Рекомендации по защите Azure Key Vault
 
@@ -30,7 +30,7 @@ ms.locfileid: "83872995"
 
 | Рекомендация | Комментарии | Центр безопасности |
 |-|----|--|
-|Включение обратимого удаления | [Обратимое удаление](overview-soft-delete.md) позволяет восстанавливать удаленные хранилища и объекты хранилищ. |  - |
+|Включение обратимого удаления | [Обратимое удаление](soft-delete-overview.md) позволяет восстанавливать удаленные хранилища и объекты хранилищ. |  - |
 | Ограничение доступа к данным в хранилище  | Соблюдайте принцип минимальных привилегий и ограничьте круг лиц в вашей организации, имеющих доступ к данным в хранилище. |  - |
 
 ## <a name="identity-and-access-management"></a>Управление удостоверениями и доступом

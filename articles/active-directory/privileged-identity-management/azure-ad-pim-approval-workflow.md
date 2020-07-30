@@ -16,12 +16,12 @@ ms.date: 02/07/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 848723f256327190aefd3c4921784240c6c4d46a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 24471ff5a085be905f9316f1af3c95c3a7912bf1
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84743190"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421541"
 ---
 # <a name="approve-or-deny-requests-for-azure-ad-roles-in-privileged-identity-management"></a>Утверждение или отклонение запросов ролей Azure AD в управление привилегированными пользователями
 
@@ -34,7 +34,7 @@ ms.locfileid: "84743190"
 1. Войдите в [портал Azure](https://portal.azure.com/) с помощью пользователя, который имеет роль [администратора привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) .
 1. Откройте **Azure AD privileged Identity Management**. Если у вас есть баннер в верхней части страницы обзора, следуйте инструкциям на вкладке **Новая версия** этой статьи. В противном случае следуйте инструкциям на вкладке **Предыдущая версия** .
 
-    [![](media/pim-how-to-add-role-to-user/pim-new-version.png "Select Azure AD > Privileged Identity Management")](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
+    [![Выберите управление привилегированными пользователями Azure AD >.](media/pim-how-to-add-role-to-user/pim-new-version.png)](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
 
 Выполните действия, описанные в этой статье, чтобы утвердить или отклонить запросы для ролей Azure AD.
 
@@ -138,7 +138,7 @@ ms.locfileid: "84743190"
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Уведомления по электронной почте в управление привилегированными пользователями](pim-email-notifications.md)
 - [Утверждение или отклонение запросов ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-approval-workflow.md)

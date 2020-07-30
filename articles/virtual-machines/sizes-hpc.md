@@ -9,12 +9,12 @@ ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: amverma
 ms.reviewer: jushiman
-ms.openlocfilehash: c347f637083d8dfdf39cbd032df97bc52973465f
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: c02b0d63db3a761f52c9ea15e6fc6ba3356cd4be
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372575"
+ms.locfileid: "87421371"
 ---
 # <a name="high-performance-computing-vm-sizes"></a>Размеры виртуальных машин с высокой производительностью
 
@@ -46,9 +46,9 @@ ms.locfileid: "87372575"
 
 - **Драйверы InfiniBand и RDMA** . на виртуальных машинах с поддержкой InfiniBand для включения RDMA требуются соответствующие драйверы. В Linux образы виртуальных машин CentOS-HPC в Marketplace предварительно настроены с соответствующими драйверами. Образы виртуальных машин Ubuntu можно настроить с помощью правильных драйверов, выполнив приведенные [здесь инструкции](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351). На виртуальных машинах серии H и N с поддержкой SR-IOV можно использовать [расширение виртуальной машины инфинибанддриверлинукс](./extensions/hpc-compute-infiniband-linux.md) для установки драйверов Mellanox офед и включения InfiniBand. Дополнительные сведения о включении InfiniBand на виртуальных машинах, поддерживающих RDMA, — это [рабочие нагрузки HPC](./workloads/hpc/overview.md).
 
-В Windows [расширение виртуальной машины инфинибанддривервиндовс](./extensions/hpc-compute-infiniband-windows.md) устанавливает драйверы Windows Network Direct (на виртуальных машинах без SR-IOV) или драйверы Mellanox офед (на виртуальных машинах SR-IOV) для подключения RDMA. В некоторых развертываниях экземпляров A8 и A9 расширение HpcVmDrivers добавляется автоматически. Обратите внимание, что расширение виртуальной машины HpcVmDrivers является устаревшим. Он не будет обновлен.
+   В Windows [расширение виртуальной машины инфинибанддривервиндовс](./extensions/hpc-compute-infiniband-windows.md) устанавливает драйверы Windows Network Direct (на виртуальных машинах без SR-IOV) или драйверы Mellanox офед (на виртуальных машинах SR-IOV) для подключения RDMA. В некоторых развертываниях экземпляров A8 и A9 расширение HpcVmDrivers добавляется автоматически. Обратите внимание, что расширение виртуальной машины HpcVmDrivers является устаревшим. Он не будет обновлен.
 
-Чтобы добавить в виртуальную машину расширение виртуальной машины, можно использовать командлеты [Azure PowerShell](/powershell/azure/). Дополнительные сведения см. в статье [Обзор расширений и компонентов виртуальной машины под управлением Windows](./extensions/overview.md). Вы также можете работать с расширениями для виртуальных машин, развернутых в рамках [классической модели развертывания](/previous-versions/azure/virtual-machines/windows/classic/agents-and-extensions-classic).
+   Чтобы добавить в виртуальную машину расширение виртуальной машины, можно использовать командлеты [Azure PowerShell](/powershell/azure/). Дополнительные сведения см. в статье [Обзор расширений и компонентов виртуальной машины под управлением Windows](./extensions/overview.md). Вы также можете работать с расширениями для виртуальных машин, развернутых в рамках [классической модели развертывания](/previous-versions/azure/virtual-machines/windows/classic/agents-and-extensions-classic).
 
 - **MPI** . размеры виртуальных машин с поддержкой SR-IOV в Azure (HBV2, хб, HC, NCv3, NDv2) позволяют использовать почти любую разновидность MPI с Mellanox офед.
 На виртуальных машинах, не использующих SR-IOV, поддерживаемые реализации MPI используют интерфейс Microsoft Network Direct (ND) для обмена данными между виртуальными машинами. Таким образом, поддерживаются только версии Microsoft MPI (MS-MPI) 2012 R2 и более поздних версий и Intel MPI 5. x. Более поздние версии (2017, 2018) библиотеки Intel MPI Runtime могут быть несовместимыми с драйверами Azure RDMA.
@@ -98,6 +98,6 @@ Azure предоставляет несколько вариантов для с
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о оптимизации приложения HPC для Azure и некоторые примеры на [рабочих нагрузках HPC](./workloads/hpc/overview.md) 
+- Узнайте больше об оптимизации приложений HPC для Azure и некоторых примерах на [рабочих нагрузках HPC](./workloads/hpc/overview.md).
 
-- Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
+- Ознакомьтесь с последними объявлениями и некоторыми примерами HPC и результатами в [блогах сообщества разработчиков Azure](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).

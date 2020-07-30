@@ -3,12 +3,12 @@ title: Поддержка оценки VMware в службе "Миграция 
 description: Узнайте о поддержке оценки виртуальных машин VMware с помощью средства оценки сервера службы "Миграция Azure".
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 9c981306b7e026dcc811618302ecbd3e80b6486d
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 9c9b1f7687d1ab1af36ac603501ecbaa7affd9b6
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321434"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87387036"
 ---
 # <a name="support-matrix-for-vmware-assessment"></a>Таблица поддержки для оценки виртуальных машин VMware 
 
@@ -82,7 +82,7 @@ ms.locfileid: "87321434"
 
 **Требование** | **Сведения**
 --- | --- 
-**Перед развертыванием** | У вас должен быть проект "Миграция Azure" со средством оценки сервера.<br/><br/>  Визуализация зависимостей развертывается после настройки устройства Миграции Azure для обнаружения локальных компьютеров VMWare.<br/><br/> [Узнайте](create-manage-projects.md), как создать проект в первый раз.<br/> [Узнайте](how-to-assess.md), как добавить средство оценки в существующий проект.<br/> [Узнайте](how-to-set-up-appliance-vmware.md), как настроить устройство Миграции Azure для оценки виртуальных машин VMware.
+**Перед развертыванием** | У вас должен быть проект "Миграция Azure" со средством оценки сервера.<br/><br/>  Визуализация зависимостей развертывается после настройки устройства миграции Azure для обнаружения локальных компьютеров VMware.<br/><br/> [Узнайте](create-manage-projects.md), как создать проект в первый раз.<br/> [Узнайте](how-to-assess.md), как добавить средство оценки в существующий проект.<br/> [Узнайте](how-to-set-up-appliance-vmware.md), как настроить устройство Миграции Azure для оценки виртуальных машин VMware.
 **Поддерживаемые компьютеры** | В настоящее время поддерживается только для виртуальных машин VMware.
 **Виртуальные машины Windows** | Windows Server 2016<br/> Windows Server 2012 R2<br/> Windows Server 2012<br/> Windows Server 2008 R2 (64-разрядная версия).
 **Учетные данные vCenter Server** | Для визуализации зависимостей требуется учетная запись vCenter Server с доступом только для чтения и разрешения для гостевых операций на виртуальных машинах.

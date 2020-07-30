@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/09/2020
 ms.author: iainfou
-ms.openlocfilehash: 879138d882913b8ab43c5689ff72a40e6987c104
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 7d1cd032f6042f57a096c5c8e7624f66a4b01355
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86223046"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87419603"
 ---
 # <a name="review-security-audit-events-in-azure-active-directory-domain-services-using-azure-monitor-workbooks"></a>Проверка событий аудита безопасности в Azure Active Directory доменных служб с помощью Azure Monitor книг
 
@@ -75,7 +75,7 @@ AD DS Azure содержит два следующих шаблона книги
 
 1. В нижней части отчета "Обзор безопасности" под диаграммой разбивается на выбранный тип действия. Можно выполнять фильтрацию по именам пользователей, участвующим в правой части, как показано в следующем примере отчета:
 
-    [![](./media/use-azure-monitor-workbooks/account-lockout-details-cropped.png "Details of account lockouts in Azure Monitor Workbooks")](./media/use-azure-monitor-workbooks/account-lockout-details.png#lightbox)
+    [![Сведения о блокировках учетных записей в Azure Monitor книгах.](./media/use-azure-monitor-workbooks/account-lockout-details-cropped.png)](./media/use-azure-monitor-workbooks/account-lockout-details.png#lightbox)
 
 ## <a name="use-the-account-activity-report-workbook"></a>Использование книги отчета "активность учетных записей"
 
@@ -93,7 +93,7 @@ AD DS Azure содержит два следующих шаблона книги
 
     Можно выполнить фильтрацию по **имени пользователя учетной записи**, например *Феликс*, как показано в следующем примере отчета:
 
-    [![](./media/use-azure-monitor-workbooks/account-activity-report-cropped.png "Account activity report in Azure Monitor Workbooks")](./media/use-azure-monitor-workbooks/account-activity-report.png#lightbox)
+    [![Отчет о действиях с учетной записью в Azure Monitor книгах.](./media/use-azure-monitor-workbooks/account-activity-report-cropped.png)](./media/use-azure-monitor-workbooks/account-activity-report.png#lightbox)
 
     В области под диаграммой отображаются отдельные события входа, а также такие сведения, как результат действия и Рабочая станция исходного кода. Эти сведения помогут определить повторяющиеся источники событий входа, которые могут вызвать блокировки учетных записей или указать потенциальную атаку.
 

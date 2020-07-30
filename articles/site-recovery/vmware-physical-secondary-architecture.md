@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: b0a46dcf8fe298494a53713f122b1bda8ce07e5e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9b16a0edc1549a1b4d8ef5ba53d8b795f6d74e07
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73954574"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87418327"
 ---
 # <a name="architecture-for-vmwarephysical-server-replication-to-a-secondary-on-premises-site"></a>Архитектура для репликации виртуальных машин VMware или физических серверов в дополнительном локальном расположении
 
@@ -31,6 +31,24 @@ ms.locfileid: "73954574"
 **VMware ESX/ESXi и сервер vCenter** |  Виртуальные машины размещаются на узлах ESX/ESXi. Управление узлами осуществляется с помощью сервера vCenter | Для репликации виртуальных машин VMware требуется инфраструктура VMware.
 **Виртуальные машины или физические серверы** |  Единый агент устанавливается на виртуальных машинах VMware и физических серверах, репликацию которых необходимо выполнить. | Агент обеспечивает обмен данными между всеми компонентами.
 
+## <a name="set-up-outbound-network-connectivity"></a>Настройка исходящего сетевого подключения
+
+Чтобы Site Recovery правильно работать, необходимо изменить исходящее сетевое подключение, чтобы разрешить репликацию среды.
+
+> [!NOTE]
+> Site Recovery не поддерживает использование прокси-сервер проверки подлинности для управления сетевым подключением.
+
+### <a name="outbound-connectivity-for-urls"></a>Исходящие подключения для URL-адресов
+
+При использовании прокси-сервера или брандмауэра на основе URL-адресов для управления исходящими подключениями разрешите использование этих URL-адресов:
+
+| **Имя**                  | **Коммерческое**                               | **Государственные организации**                                 | **Описание** |
+| ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
+| Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
+| Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Обеспечивает авторизацию и проверку подлинности URL-адресов службы Site Recovery. |
+| Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Позволяет виртуальной машине взаимодействовать со службой Site Recovery. |
+| Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Позволяет виртуальной машине записывать данные мониторинга и диагностики службы Site Recovery. |
+
 ## <a name="replication-process"></a>Процесс репликации
 
 1. Настройте серверы компонентов для каждого сайта (сервер конфигурации, сервер обработки, главный целевой сервер) и установите унифицированный агент на компьютеры, которые требуется реплицировать.
@@ -43,6 +61,6 @@ ms.locfileid: "73954574"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройте](vmware-physical-secondary-disaster-recovery.md) аварийное восстановление виртуальных машин VMware и физических серверов на дополнительный сайт.

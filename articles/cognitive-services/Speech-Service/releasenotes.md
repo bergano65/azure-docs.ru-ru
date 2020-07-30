@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: 152907908f12a41679b3161e0c4b39348926399e
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: f2aebee24c4de8a1bd92ad3db8e5d110184cbaee
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/29/2020
-ms.locfileid: "87373799"
+ms.locfileid: "87415029"
 ---
 # <a name="speech-service-release-notes"></a>Заметки о выпуске
 
@@ -28,20 +28,20 @@ ms.locfileid: "87373799"
 - **C#**: добавлена поддержка асинхронной записи диалога. См. документацию [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-async-conversation-transcription).  
 - **JavaScript**: добавлена поддержка распознавание говорящего как для [браузера](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/browser/speaker-recognition) , так и для [node.js](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/node/speaker-recognition).
 - **JavaScript**: добавлена поддержка автоматического определения языка и идентификатора языка. См. документацию [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-automatic-language-detection?pivots=programming-language-javascript).
-- **Цель-C**: добавлена поддержка обмена беседами и разговора для нескольких устройств. 
+- **Цель-C**: добавлена поддержка обмена [беседами](https://docs.microsoft.com/azure/cognitive-services/speech-service/multi-device-conversation) [и разговора](https://docs.microsoft.com/azure/cognitive-services/speech-service/conversation-transcription)для нескольких устройств. 
 - **Python**: добавлена поддержка сжатого звука для Python в Windows и Linux. См. документацию [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-use-codec-compressed-audio-input-streams). 
 
 **Исправления ошибок**
 - **Все**: Исправлена проблема, из-за которой кэйвордрекогнизер не переместит потоки после распознавания.
 - **Все**: Исправлена проблема, из-за которой поток, полученный из кэйвордрекогнитионресулт, не содержал ключевое слово.
 - **Все**: Исправлена проблема, при которой сендмессажеасинк не отправляет сообщение по сети, после того как пользователи завершат его ожидание.
-- **Все**: устранение сбоя в распознавание говорящего API, когда пользователи запускают несколько воицепрофилеклиент:: спеакерреценроллпрофилеасинк и не ожидают их завершения.
+- **Все**: устранение сбоя в распознавание говорящего API, когда пользователи вызывают метод воицепрофилеклиент:: спеакерреценроллпрофилеасинк несколько раз и не ожидают завершения вызовов.
 - **Все**: исправлено включение ведения журнала файлов в классах Воицепрофилеклиент и спеакеррекогнизер.
 - **JavaScript**: Исправлена [проблема](https://github.com/microsoft/cognitive-services-speech-sdk-js/issues/74) с регулированием при сворачивании браузера.
 - **JavaScript**: Исправлена [проблема](https://github.com/microsoft/cognitive-services-speech-sdk-js/issues/78) с утечкой памяти в потоках.
 - **JavaScript**: Добавлено кэширование для ответов OCSP из NodeJS.
 - **Java**: Исправлена проблема, которая привела к тому, что BigInteger поля всегда возвращали 0.
-- **iOS**: исправлена и [проблема](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/702) с публикацией приложений на основе речевого пакета SDK в магазине приложений iOS.
+- **iOS**: Исправлена [проблема](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/702) с публикацией приложений на основе речевого пакета SDK в магазине приложений iOS.
 
 **Примеры**
 - **C++**: Добавлен пример кода для распознавание говорящего [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/cpp/windows/console/samples/speaker_recognition_samples.cpp).

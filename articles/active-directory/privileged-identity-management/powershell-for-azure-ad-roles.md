@@ -16,12 +16,12 @@ ms.date: 05/11/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e3791da8f8a990f62de0052e1662fd6037e936b
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 6792fdc405d539a662c8dc20c04b2891fd036704
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85849283"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421915"
 ---
 # <a name="powershell-for-azure-ad-roles-in-privileged-identity-management"></a>PowerShell для ролей Azure AD в управление привилегированными пользователями
 
@@ -66,7 +66,7 @@ RoleDefinitionId зависит от вашей организации Azure AD 
 Get-AzureADMSPrivilegedRoleDefinition -ProviderId aadRoles -ResourceId 926d99e7-117c-4a6a-8031-0cc481e9da26
 ```
 
-Результат:
+Результат: ;
 
 ![Получение всех ролей для Организации Azure AD](./media/powershell-for-azure-ad-roles/get-all-roles-result.png)
 
@@ -92,7 +92,7 @@ Get-AzureADMSPrivilegedRoleAssignment -ProviderId "aadRoles" -ResourceId "926d99
 
 Командлеты приводят к отображению списка объектов назначения ролей, показанных ниже. ИДЕНТИФИКАТОР субъекта — это идентификатор пользователя, которому назначена роль. Состояние назначения может быть либо активным, либо допустимым. Если пользователь активен и в поле Линкеделигиблеролеассигнментид есть идентификатор, это означает, что роль в данный момент активирована.
 
-Результат:
+Результат: ;
 
 ![Получение всех назначений ролей для Организации Azure AD](./media/powershell-for-azure-ad-roles/get-all-role-assignments-result.png)
 
@@ -140,7 +140,7 @@ Get-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Filter "ResourceId eq
 
 В параметре имеется четыре основных объекта. В настоящее время PIM использует только три из этих объектов. Усермемберсеттингс — это параметры активации, Админелигиблесеттингс — параметры назначения для соответствующих назначений, а Админмемберсеттингс — параметры назначения для активных назначений.
 
-[![](media/powershell-for-azure-ad-roles/get-update-role-settings-result.png "Get and update role settings")](media/powershell-for-azure-ad-roles/get-update-role-settings-result.png#lightbox)
+[![Получение и обновление параметров роли.](media/powershell-for-azure-ad-roles/get-update-role-settings-result.png)](media/powershell-for-azure-ad-roles/get-update-role-settings-result.png#lightbox)
 
 Чтобы обновить параметр роли, необходимо получить существующий объект параметров для конкретной роли и внести в него изменения:
 
@@ -155,7 +155,7 @@ $setting.UserMemberSetting.justificationRule = '{"required":false}'
 Set-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Id 'ff518d09-47f5-45a9-bb32-71916d9aeadf' -ResourceId '3f5887ed-dd6e-4821-8bde-c813ec508cf9' -RoleDefinitionId '2387ced3-4e95-4c36-a915-73d803f93702' -UserMemberSettings $setting 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Назначение настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
 - [Update or remove an assigned Azure AD custom role in Privileged Identity Management](azure-ad-custom-roles-update-remove.md) (Обновление или удаление назначенной настраиваемой роли AAD в Privileged Identity Management)

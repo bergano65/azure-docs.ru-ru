@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/07/2020
 ms.author: allensu
-ms.openlocfilehash: e6f788689b4e817aae6dc84f66703f4f88b8d44a
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 55a86eeee4f819955e3f8adfcc0f55f24d58bed0
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027568"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87420317"
 ---
 # <a name="standard-load-balancer-and-availability-zones"></a>Azure Load Balancer ценовой категории "Стандартный" и зоны доступности
 
@@ -51,7 +51,7 @@ Azure Load Balancer (цен. категория "Стандартный") под
 IP-адрес внешнего интерфейса обрабатывается одновременно несколькими независимыми развертываниями инфраструктуры в нескольких зонах доступности. Любые повторные попытки или повторное выполнение будут успешно выполнены в других зонах, не затронутых сбоем зоны. 
 
 <p align="center">
-  <img src="./media/az-zonal/zone-redundant-lb-1.svg" width="512" title="NAT виртуальной сети">
+  <img src="./media/az-zonal/zone-redundant-lb-1.svg" alt="Figure depicts a zone-redundant standard load balancer directing traffic in three different zones to three different subnets in a zone redundant configuration." width="512" title="NAT виртуальной сети">
 </p>
 
 *Рисунок. Подсистема балансировки нагрузки с избыточностью зоны*
@@ -64,7 +64,7 @@ IP-адрес внешнего интерфейса обрабатывается
 
 
 <p align="center">
-  <img src="./media/az-zonal/zonal-lb-1.svg" width="512" title="NAT виртуальной сети">
+  <img src="./media/az-zonal/zonal-lb-1.svg" alt="Figure depicts three zonal standard load balancers each directing traffic in a zone to three different subnets in a zonal configuration." width="512" title="NAT виртуальной сети">
 </p>
 
 *Рисунок. зональные избыточная подсистема балансировки нагрузки*
@@ -153,7 +153,7 @@ Azure Load Balancer работает с экземплярами виртуал�
 
 Ознакомьтесь с [шаблонами разработки облачных служб Azure](https://docs.microsoft.com/azure/architecture/patterns/) , чтобы повысить устойчивость приложения к сценариям сбоя.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [зоны доступности](../availability-zones/az-overview.md)
 - Дополнительные сведения о [Load Balancer (цен. Категория "Стандартный")](load-balancer-standard-overview.md)
 - Узнайте, как [распределять нагрузку виртуальных машин в рамках зоны с помощью Load Balancer уровня "Стандартный" с зональным внешним интерфейсом](load-balancer-standard-public-zonal-cli.md).

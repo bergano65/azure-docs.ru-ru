@@ -9,12 +9,12 @@ ms.subservice: monitoring
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: ecc34b84e5be2d0470cc5a58a71a70e9ffcab1b6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4d6c50436ddf68e2610aeb10ddfaaab0a5d060f3
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87052560"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87387359"
 ---
 # <a name="use-synapse-studio-to-monitor-your-apache-spark-applications"></a>Использование синапсе Studio для мониторинга приложений Apache Spark
 
@@ -39,7 +39,7 @@ ms.locfileid: "87052560"
 
 ## <a name="monitor-running-apache-spark-application"></a>Мониторинг работающего приложения Apache Spark
 
-Откройте **монитор**, а затем выберите **Apache Spark приложения**. Чтобы просмотреть сведения о выполняющихся Apache Spark приложениях, выберите отправку Apache Spark приложение и просмотрите сведения. Если приложение Apache Spark все еще выполняется, можно отслеживать ход выполнения.
+Откройте **монитор**, а затем выберите **Apache Spark приложения**. Чтобы просмотреть сведения о Apache Spark приложениях, которые выполняются, выберите приложение отправки Apache Spark и просмотрите сведения. Если приложение Apache Spark все еще выполняется, можно отслеживать ход выполнения.
 
   ![Выбор выполняющегося задания](./media/how-to-monitor-spark-applications/select-running-job.png)
 

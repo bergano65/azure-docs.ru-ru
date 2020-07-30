@@ -3,12 +3,12 @@ title: Поддержка оценки Hyper-V в службе "миграция
 description: Дополнительные сведения о поддержке оценки Hyper-V с помощью Azure Migrate Server
 ms.topic: conceptual
 ms.date: 06/14/2020
-ms.openlocfilehash: 2cf13904a3642b8b91d61c84bb1c51cbb97f0846
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 563a98162a2453ac1c96baf9f04500ee880e0ce5
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324817"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87420963"
 ---
 # <a name="support-matrix-for-hyper-v-assessment"></a>Матрица поддержки для оценки Hyper-V
 
@@ -34,7 +34,7 @@ ms.locfileid: "87324817"
 
 | **Поддержка**                | **Сведения**               
 | :-------------------       | :------------------- |
-| **Узел Hyper-V**       | Узел Hyper-V может быть автономным или развернутым в кластере.<br/><br/> Узел Hyper-V может работать под управлением Windows Server 2019, Windows Server 2016 или Windows Server 2012 R2.<br/> Вы не можете оценивать виртуальные машины, расположенные на узлах Hyper-V, запущенных на Windows Server 2012.
+| **Узел Hyper-V**       | Узел Hyper-V может быть автономным или развернутым в кластере.<br/><br/> Узел Hyper-V может работать под управлением Windows Server 2019, Windows Server 2016 или Windows Server 2012 R2. Также поддерживаются установка основных серверных компонентов Windows Server 2016 и Windows Server 2012 R2. <br/>Вы не можете оценивать виртуальные машины, расположенные на узлах Hyper-V, запущенных на Windows Server 2012.
 | **Разрешения**           | Вам потребуются права администратора на узле Hyper-V. <br/> Если вы не хотите назначать разрешения администратора, создайте локальную или доменную учетную запись пользователя и добавьте учетную запись пользователя в эти группы — Пользователи удаленного управления, администраторы Hyper-V и пользователи системного монитора. |
 | **Удаленное взаимодействие PowerShell**   | [Удаленное взаимодействие PowerShell](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7) должно быть включено на каждом узле Hyper-V. |
 | **Реплика Hyper-V**       | Если вы используете реплику Hyper-V (или несколько виртуальных машин с одинаковыми идентификаторами виртуальных машин) и обнаружите как исходные, так и реплицированные виртуальные машины с помощью службы "миграция Azure", оценка, созданная функцией "миграция Azure", может быть неточной. |

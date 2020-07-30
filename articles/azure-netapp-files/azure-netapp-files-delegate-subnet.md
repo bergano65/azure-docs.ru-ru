@@ -12,21 +12,21 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 05/04/2020
+ms.date: 07/28/2020
 ms.author: b-juche
-ms.openlocfilehash: 713a72b0a406d2038d56dc6fcc41e169d02c54eb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 14c97fdea57fa50faf8b73275ec406ea36fbf552
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85483624"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87420402"
 ---
 # <a name="delegate-a-subnet-to-azure-netapp-files"></a>Делегирование подсети в Azure NetApp Files 
 
 Вам следует делегировать подсеть в Azure NetApp Files.   При создании тома необходимо указать делегированную подсеть.
 
-## <a name="considerations"></a>Особенности
-* Мастер создания новой подсети по умолчанию настраивает маску сети /24, обеспечивающую 251 доступный IP-адрес. Использование этой маски подсети, которая предоставляет 16 пригодных IP-адресов, достаточно для службы.
+## <a name="considerations"></a>Рекомендации
+* Мастер создания новой подсети по умолчанию настраивает маску сети /24, обеспечивающую 251 доступный IP-адрес. Для службы достаточно использовать маску сети/28, которая предоставляет 11 пригодных для использования IP-адресов.
 * В каждой виртуальной сети Azure можно делегировать только одну подсеть для Azure NetApp Files.   
    Azure позволяет создавать несколько делегированных подсетей в виртуальной сети.  Однако при использовании нескольких делегированных подсетей попытки создания нового тома завершатся ошибкой.  
    В виртуальной сети может быть только одна Делегированная подсеть. Учетная запись NetApp может развертывать тома в нескольких виртуальных сетей, каждый из которых имеет собственную делегированную подсеть.  
@@ -48,7 +48,7 @@ ms.locfileid: "85483624"
     
 Можно также создать и делегировать подсеть при [создании тома для Azure NetApp Files](azure-netapp-files-create-volumes.md). 
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 * [Создание тома для Azure NetApp Files](azure-netapp-files-create-volumes.md)
 * [Узнайте об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)
 

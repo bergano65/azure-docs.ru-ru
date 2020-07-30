@@ -4,12 +4,12 @@ description: Узнайте, как быстро создать кластер K
 services: container-service
 ms.topic: article
 ms.date: 07/16/2020
-ms.openlocfilehash: 5baa4f807002cc39428eb46e5a86cf59bd022cb2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ff7fc00c8de5b4d577770c140d356d7f9da1b7e7
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87015635"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421252"
 ---
 # <a name="create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Создание контейнера Windows Server в кластере Службы Azure Kubernetes (AKS) с помощью Azure CLI
 
@@ -94,8 +94,7 @@ az aks create \
 ```
 
 > [!NOTE]
-> Если вы получаете сообщение об ошибке проверки пароля, попробуйте создать группу ресурсов в другом регионе.
-> Затем попытайтесь создать кластер с новой группой ресурсов.
+> При возникновении ошибки проверки пароля убедитесь, что параметр *Windows-Admin-Password* соответствует [требованиям к паролю Windows Server][windows-server-password]. Если ваш пароль соответствует требованиям, попробуйте создать группу ресурсов в другом регионе. Затем попытайтесь создать кластер с новой группой ресурсов.
 
 Через несколько минут выполнение команды завершается и отображаются сведения о кластере в формате JSON. Инициализация кластера иногда может выполняться не сразу же. В таком случае подождите примерно 10 минут.
 

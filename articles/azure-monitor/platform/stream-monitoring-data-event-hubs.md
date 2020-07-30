@@ -48,7 +48,7 @@ Azure Monitor предоставляет полное решение для мо
 
 Маршрутизация данных мониторинга в концентратор событий с помощью Azure Monitor позволяет легко интегрироваться с внешними средствами SIEM и мониторинга. Примерами средств интеграции Azure Monitor являются следующие:
 
-| Средство | Размещено в Azure | Описание: |
+| Инструмент | Размещено в Azure | Описание |
 |:---|:---| :---|
 |  IBM QRadar | Нет | Модуль устройства (DSM) Microsoft Azure и протокол концентратора событий Microsoft Azure доступны для загрузки на [веб-сайте поддержки IBM](https://www.ibm.com/support). Дополнительные сведения об интеграции с Azure можно узнать в [конфигурации DSM QRadar](https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0). |
 | Splunk | Нет | [Azure Monitor надстройка для Splunk](https://splunkbase.splunk.com/app/3534/) — это проект с открытым исходным кодом, доступный в Splunkbase. Документация доступна по адресу [Azure Monitor надстройки для Splunk](https://github.com/Microsoft/AzureMonitorAddonForSplunk/wiki/Azure-Monitor-Addon-For-Splunk).<br><br> Если вы не можете установить надстройку в экземпляре Splunk, например, вы используете прокси-сервер или работаете в облаке Splunk, вы можете перенаправить эти события в сборщик событий Splunk HTTP с помощью [функции Azure для Splunk](https://github.com/Microsoft/AzureFunctionforSplunkVS), которая активируется новыми сообщениями в концентраторе событий. |

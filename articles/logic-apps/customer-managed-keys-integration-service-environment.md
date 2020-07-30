@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, rarayudu, logicappspm
 ms.topic: conceptual
 ms.date: 03/11/2020
-ms.openlocfilehash: 7e1432cf74dc741a6e2f5d561e9dc203df95007c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a7cc135555db2673225d857bf6a21e57de3e3f6b
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87072686"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87386169"
 ---
 # <a name="set-up-customer-managed-keys-to-encrypt-data-at-rest-for-integration-service-environments-ises-in-azure-logic-apps"></a>Настройка ключей, управляемых клиентом, для шифрования неактивных данных в средах службы интеграции (Исес) в Azure Logic Apps
 
@@ -33,13 +33,13 @@ Azure Logic Apps использует хранилище Azure для хране
 
 * В течение *30 минут* после отправки запроса HTTPS-размещения, который создает интегрированную среду сценариев, необходимо [предоставить Key Vault доступ к удостоверению, назначенному системой ISE](#identity-access-to-key-vault). В противном случае создание интегрированной среды сценариев завершается сбоем и вызывает ошибку разрешений.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Те же [условия](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#prerequisites) и [требования, необходимые для обеспечения доступа к интегрированной среде сценариев](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access) , как при создании интегрированной среды сценариев в портал Azure
 
 * Хранилище ключей Azure, в котором включены **обратимое удаление** и **не** удаляются свойства.
 
-  Дополнительные сведения о включении этих свойств см. в разделах [обзор Azure Key Vault обратимого удаления](../key-vault/general/overview-soft-delete.md) и [Настройка ключей, управляемых клиентом, с помощью Azure Key Vault](../storage/common/storage-encryption-keys-portal.md). Если вы не знакомы с Azure Key Vault, Узнайте, [как создать хранилище ключей](../key-vault/secrets/quick-create-portal.md#create-a-vault) с помощью портал Azure или с помощью команды Azure PowerShell [New-азкэйваулт](/powershell/module/az.keyvault/new-azkeyvault).
+  Дополнительные сведения о включении этих свойств см. в разделах [обзор Azure Key Vault обратимого удаления](../key-vault/general/soft-delete-overview.md) и [Настройка ключей, управляемых клиентом, с помощью Azure Key Vault](../storage/common/storage-encryption-keys-portal.md). Если вы не знакомы с Azure Key Vault, Узнайте, [как создать хранилище ключей](../key-vault/secrets/quick-create-portal.md#create-a-vault) с помощью портал Azure или с помощью команды Azure PowerShell [New-азкэйваулт](/powershell/module/az.keyvault/new-azkeyvault).
 
 * В хранилище ключей — ключ, который создается со следующими значениями свойств:
 
@@ -47,7 +47,7 @@ Azure Logic Apps использует хранилище Azure для хране
   |----------|-------|
   | **Тип ключа** | RSA |
   | **Размер ключа RSA** | 2048 |
-  | **Enabled** | Да |
+  | **Включен** | Да |
   |||
 
   ![Создание ключа шифрования, управляемого клиентом](./media/customer-managed-keys-integration-service-environment/create-customer-managed-key-for-encryption.png)
@@ -84,7 +84,7 @@ Azure Logic Apps использует хранилище Azure для хране
 
 * `Authorization`: Задайте для этого свойства токен носителя для клиента, который имеет доступ к подписке Azure или группе ресурсов, которые вы хотите использовать.
 
-### <a name="request-body"></a>Текст запроса
+### <a name="request-body"></a>Тело запроса
 
 В тексте запроса включите поддержку этих дополнительных элементов, предоставив сведения в определении интегрированной среды сценариев:
 

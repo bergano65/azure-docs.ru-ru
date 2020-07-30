@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 06/27/2020
-ms.openlocfilehash: c794b87a88cec20b75923e1f251c1e309a43ef1c
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 861fcabbfca07cb342fda42ea2425fa290a1598e
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319598"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87386458"
 ---
 # <a name="how-to-run-jupyter-notebooks-in-your-workspace"></a>Выполнение веб-приложений Jupyter Notebook в рабочей области
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -185,11 +185,20 @@ ms.locfileid: "87319598"
 Записная книжка автоматически находит все ядра Jupyter, установленные на подключенной вычислительной операции.  Чтобы добавить ядро к вычислительной операции:
 
 1. На панели инструментов записной книжки выберите [**Open terminal**](#terminal) (Открыть терминал).
-1. Создайте новую среду с помощью терминала.
+1. Создайте новую среду с помощью терминала.  Например, приведенный ниже код создает `newenv` :
+    ```shell
+    conda create --name newenv
+    ```
 1. Активируйте среду.  Например, после создания среды `newenv`:
 
     ```shell
-    source activate newenv
+    conda activate newenv
+    ```
+1. Установите PIP и пакет ипикернел в новой среде и создайте ядро для этого conda env.
+
+    ```shell
+    conda install pip
+    conda install ipykernel
     python -m ipykernel install --user --name newenv --display-name "Python (newenv)"
     ```
 
