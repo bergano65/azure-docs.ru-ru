@@ -67,7 +67,9 @@
     - name: Обратимое удаление
       items:
         - name: Обратимое удаление в Azure Key Vault
-          href: overview-soft-delete.md
+          href: soft-delete-overview.md
+        - name: Обратимое удаление включено по умолчанию
+          href: soft-delete-change.md
     - name: 'Аутентификация, запросы и ответы'
       href: authentication-requests-and-responses.md
     - name: Руководство по регулированию хранилища ключей Azure

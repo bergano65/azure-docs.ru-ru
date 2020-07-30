@@ -6,13 +6,13 @@ ms.topic: quickstart
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 07/12/2019
-ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 2e50daf3d94d30e4799bf7a645f46bb70fd6750c
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
+ms.openlocfilehash: af75afb2840d2bc14e1fa46310f76f662efa2a54
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86516504"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87384792"
 ---
 # <a name="quickstart-start-monitoring-your-nodejs-web-application-with-azure-application-insights"></a>Краткое руководство. Начало мониторинга веб-приложения Node.js с помощью Application Insights в Azure
 
@@ -112,11 +112,11 @@ ms.locfileid: "86516504"
    </script>
    ```
 
-5. В области слева выберите **Метрики**. Используйте обозреватель метрик для анализа работоспособности и использования ресурса. Щелкните **Добавить новую диаграмму**, чтобы создать дополнительные пользовательские представления, или **Изменение**, чтобы изменить имеющиеся типы диаграмм, высоту, цветовую палитру, группирования и метрики. Например, можно сделать диаграмму, на которой будет показано среднее время загрузки страницы браузера. Для этого в раскрывающемся списке метрик выберите "Время загрузки страницы браузера" и "Среднее" в столбце агрегирования. Дополнительные сведения об обозревателе метрик Azure см. в статье [Getting started with Azure Metrics Explorer](../../azure-monitor/platform/metrics-getting-started.md) (Начало работы с обозревателем метрик Azure).
+5. В области слева выберите **Метрики**. Используйте обозреватель метрик для анализа работоспособности и использования ресурса. Щелкните **Добавить новую диаграмму**, чтобы создать дополнительные пользовательские представления, или **Изменение**, чтобы изменить имеющиеся типы диаграмм, высоту, цветовую палитру, группирования и метрики. Например, можно сделать диаграмму, на которой будет показано среднее время загрузки страницы браузера. Для этого в раскрывающемся списке метрик выберите "Время загрузки страницы браузера" и "Среднее" в столбце агрегирования. Дополнительные сведения об обозревателе метрик Azure см. в статье [Getting started with Azure Metrics Explorer](../platform/metrics-getting-started.md) (Начало работы с обозревателем метрик Azure).
 
    ![График метрик Application Insights Server](./media/nodejs-quick-start/azure-app-insights-server-metrics.png)
 
-Дополнительные сведения о мониторинге Node.js см. в статье [Monitor your Node.js services and apps with Application Insights](../../azure-monitor/app/nodejs.md) (Мониторинг служб и приложений Node.js с помощью AppInsights).
+Дополнительные сведения о мониторинге Node.js см. в статье [Monitor your Node.js services and apps with Application Insights](../app/nodejs.md) (Мониторинг служб и приложений Node.js с помощью AppInsights).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -132,3 +132,4 @@ ms.locfileid: "86516504"
 
 > [!div class="nextstepaction"]
 > [Аналитика в Application Insights](../log-query/log-query-overview.md)
+

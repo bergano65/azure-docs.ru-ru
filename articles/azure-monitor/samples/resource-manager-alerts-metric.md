@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: sample
 ms.date: 05/18/2020
 ms.subservice: alerts
-ms.openlocfilehash: 793a4b3e8ea0dde2e4ad755cbff5a07a36c44cb9
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: dad4262520da1ec88c634c98aa2af2bf66bab936
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86515382"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87322301"
 ---
 # <a name="resource-manager-template-samples-for-metric-alert-rules-in-azure-monitor"></a>Примеры шаблонов Resource Manager для правил генерации оповещений метрик в Azure Monitor
 
@@ -23,7 +23,7 @@ ms.locfileid: "86515382"
 Список ресурсов, которые можно использовать с правилами генерации оповещений метрик, см. в разделе [Поддерживаемые ресурсы для оповещений метрик в Azure Monitor](../platform/alerts-metric-near-real-time.md). Описание схемы и свойств правила генерации оповещений см. в статье [Оповещения метрик: создание или обновление](/rest/api/monitor/metricalerts/createorupdate).
 
 > [!NOTE]
-> Шаблон ресурсов для создания оповещений метрик для типа ресурса: для рабочей области Azure Log Analytics (т. е. `Microsoft.OperationalInsights/workspaces`) требуется выполнить дополнительные шаги. Дополнительные сведения см. в статье: [Оповещения метрик для журналов: шаблон ресурса](../../azure-monitor/platform/alerts-metric-logs.md#resource-template-for-metric-alerts-for-logs).
+> Шаблон ресурсов для создания оповещений метрик для типа ресурса: для рабочей области Azure Log Analytics (т. е. `Microsoft.OperationalInsights/workspaces`) требуется выполнить дополнительные шаги. Дополнительные сведения см. в статье: [Оповещения метрик для журналов: шаблон ресурса](../platform/alerts-metric-logs.md#resource-template-for-metric-alerts-for-logs).
 
 
 
@@ -3127,7 +3127,7 @@ Azure Monitor поддерживает мониторинг нескольких
 
 
 ## <a name="availability-test-with-metric-alert"></a>Тест доступности с помощью оповещения метрики
-[Тесты доступности Application Insights](../../azure-monitor/app/monitor-web-app-availability.md) помогают отслеживать доступность веб-сайта или приложения из различных расположений по всему миру. Оповещения тестирования доступности уведомляют о том, что тесты доступности завершились ошибкой из определенного числа расположений. У оповещений тестирования доступности те же типы ресурсов, что и у оповещений метрик (Microsoft.Insights/metricAlerts). В следующем примере создается простой тест доступности и соответствующее оповещение.
+[Тесты доступности Application Insights](../app/monitor-web-app-availability.md) помогают отслеживать доступность веб-сайта или приложения из различных расположений по всему миру. Оповещения тестирования доступности уведомляют о том, что тесты доступности завершились ошибкой из определенного числа расположений. У оповещений тестирования доступности те же типы ресурсов, что и у оповещений метрик (Microsoft.Insights/metricAlerts). В следующем примере создается простой тест доступности и соответствующее оповещение.
 
 > [!NOTE]
 > `&amp`; — это обозначение сущности HTML для &. Параметры URL-адреса все еще разделяются одним символом &, но если вы упомянули URL-адрес в формате HTML, его необходимо закодировать. Таким образом, если в значении параметра pingURL имеется символ "&", необходимо заменить его с помощью "`&amp`;".
@@ -3266,3 +3266,4 @@ Azure Monitor поддерживает мониторинг нескольких
 - [Другие примеры шаблонов для Azure Monitor](resource-manager-samples.md).
 - [Дополнительные сведения об оповещениях](../platform/alerts-overview.md).
 - [Пример создания группы действий с помощью шаблона Resource Manager](resource-manager-action-groups.md).
+

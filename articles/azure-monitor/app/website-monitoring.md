@@ -4,12 +4,12 @@ description: В этом кратком руководстве показано,
 ms.topic: quickstart
 ms.date: 07/15/2019
 ms.custom: mvc
-ms.openlocfilehash: b47f3ce1ebed12d14dffd68e87dd013bb86218ea
-ms.sourcegitcommit: c8a0fbfa74ef7d1fd4d5b2f88521c5b619eb25f8
+ms.openlocfilehash: eb6c0a8319257949cee8f35be6cdfac22f1fe5d4
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82801643"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323440"
 ---
 # <a name="quickstart-start-monitoring-your-website-with-azure-monitor-application-insights"></a>Краткое руководство. Запуск мониторинга веб-сайта с помощью Application Insights в Azure Monitor
 
@@ -30,7 +30,7 @@ Application Insights может собирать данные телеметри
 1. Выберите **Создать ресурс** > **Средства управления** > **Application Insights**.
 
    > [!NOTE]
-   >См. сведения о [создании ресурса Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource).
+   >См. сведения о [создании ресурса Application Insights](./create-new-resource.md).
 1. Когда откроется окно конфигурации, заполните поля, как показано в таблице ниже.
 
     | Настройки        | Значение           | Описание  |
@@ -105,15 +105,15 @@ Application Insights может собирать данные телеметри
 
    ![Граф аналитики запросов пользователей за период времени](./media/website-monitoring/analytics-query.png)
 
-1. Вернитесь на страницу **Обзор**. Под заголовком **Изучение** щелкните **Браузер** и **Производительность**.  Отобразятся метрики, отображающие сведения о производительности вашего веб-сайта. Доступно соответствующее представление для анализа сбоев и исключений на веб-сайте. Щелкните **Примеры**, чтобы получить доступ к [полным сведениям о транзакциях](../../azure-monitor/app/transaction-diagnostics.md).
+1. Вернитесь на страницу **Обзор**. Под заголовком **Изучение** щелкните **Браузер** и **Производительность**.  Отобразятся метрики, отображающие сведения о производительности вашего веб-сайта. Доступно соответствующее представление для анализа сбоев и исключений на веб-сайте. Щелкните **Примеры**, чтобы получить доступ к [полным сведениям о транзакциях](./transaction-diagnostics.md).
 
    ![Граф метрик сервера](./media/website-monitoring/browser-performance.png)
 
-1. Чтобы изучить возможности [средств аналитики поведения пользователей](../../azure-monitor/app/usage-overview.md), в главном меню Application Insights под заголовком **Использование** щелкните [**Пользователи**](../../azure-monitor/app/usage-segmentation.md). Так как мы выполняем тестирование на одном компьютере, мы увидим данные только для одного пользователя. Для фактического веб-сайта распределение пользователей может выглядеть следующим образом.
+1. Чтобы изучить возможности [средств аналитики поведения пользователей](./usage-overview.md), в главном меню Application Insights под заголовком **Использование** щелкните [**Пользователи**](./usage-segmentation.md). Так как мы выполняем тестирование на одном компьютере, мы увидим данные только для одного пользователя. Для фактического веб-сайта распределение пользователей может выглядеть следующим образом.
 
      ![График входа пользователей](./media/website-monitoring/usage-users.png)
 
-1. Для более сложного веб-сайта с несколькими страницами можно использовать средство [**Маршруты пользователей**](../../azure-monitor/app/usage-flows.md) для визуализации перемещения посетителей по веб-сайту.
+1. Для более сложного веб-сайта с несколькими страницами можно использовать средство [**Маршруты пользователей**](./usage-flows.md) для визуализации перемещения посетителей по веб-сайту.
 
    ![Визуализация маршрутов пользователей](./media/website-monitoring/user-flows.png)
 
@@ -132,4 +132,5 @@ Application Insights может собирать данные телеметри
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Аналитика в Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-analytics)
+> [Аналитика в Application Insights](../log-query/log-query-overview.md)
+

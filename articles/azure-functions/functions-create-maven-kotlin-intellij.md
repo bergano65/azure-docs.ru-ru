@@ -6,12 +6,12 @@ ms.service: azure-functions
 ms.topic: quickstart
 ms.date: 03/25/2020
 ms.author: dglover
-ms.openlocfilehash: 2eb1a016e04a4150a76112c68683926810f5c66d
-ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
+ms.openlocfilehash: fa834e3ac4946c4f617e857342f850445eebfd30
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80674555"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87055449"
 ---
 # <a name="quickstart-create-your-first-http-triggered-function-with-kotlin-and-intellij"></a>Краткое руководство. Создание первой функции, активируемой HTTP-запросом, с помощью Kotlin и IntelliJ
 
@@ -26,7 +26,7 @@ ms.locfileid: "80674555"
 - [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks)
 - [Apache Maven 3.0](https://maven.apache.org) или более поздней версии
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/download), версия Community или Ultimate с Maven
-- [Azure CLI](https://docs.microsoft.com/cli/azure)
+- [Azure CLI](/cli/azure)
 - [Azure Functions Core Tools](functions-run-local.md#v2) версии 2.x. Они предоставляют локальной среде разработки возможность записи, выполнения и отладки Функций Azure.
 
 > [!IMPORTANT]
@@ -45,7 +45,7 @@ ms.locfileid: "80674555"
 1. Нажмите кнопку **ОК**, а затем кнопку **Далее**.
 1. Введите подробные сведения и выберите **Готово**.
 
-Maven создает файлы проекта в новой папке с именем, которое соответствует значению _ArtifactId_. Созданный код проекта представляет собой простую функцию[активации HTTP](/azure/azure-functions/functions-bindings-http-webhook), которая возвращает текст HTTP-запроса.
+Maven создает файлы проекта в новой папке с именем, которое соответствует значению _ArtifactId_. Созданный код проекта представляет собой простую функцию[активации HTTP](./functions-bindings-http-webhook.md), которая возвращает текст HTTP-запроса.
 
 ## <a name="run-functions-locally-in-the-ide"></a>Запуск функций в локальной среде IDE
 

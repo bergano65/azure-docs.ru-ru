@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 07/02/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: c6f1663924f338b6b17c760afe64527f563f5bc2
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 178c4b92722453cd1c97471e725cb0fc68abb6fa
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82098022"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87020327"
 ---
 # <a name="quickstart-create-a-windows-virtual-machine-with-the-azure-cli"></a>Краткое руководство. Создание виртуальной машины Windows с помощью Azure CLI
 
@@ -39,7 +39,7 @@ az group create --name myResourceGroup --location eastus
 
 Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm). В следующем примере создается виртуальная машина с именем *myVM*. В этом примере используется *azureuser* для имени пользователя с правами администратора. 
 
-Потребуется указать пароль, отвечающий [требованиям к паролям для виртуальных машин Azure](/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm
+Потребуется указать пароль, отвечающий [требованиям к паролям для виртуальных машин Azure](./faq.md#what-are-the-password-requirements-when-creating-a-vm
 ). Когда вы примените приведенный ниже пример, появится запрос на ввод пароля в командной строке. Можете также добавить параметр `--admin-password` со значением пароля. Имя пользователя и пароль будут использоваться позже при подключении к виртуальной машине.
 
 ```azurecli-interactive

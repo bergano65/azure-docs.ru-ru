@@ -11,17 +11,17 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-android
 ms.devlang: java
 ms.topic: tutorial
-ms.custom: mvc
+ms.custom: mvc, devx-track-java
 ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 3f2ad007ff0e1012f957c718d125b2e5b2e40964
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: 8bbdf984311883006fcd6af16f42d7f7972cc169
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85249247"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323321"
 ---
 # <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-cloud-messaging-deprecated"></a>Руководство по отправке push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging (не рекомендуется к использованию)
 
@@ -485,7 +485,7 @@ ms.locfileid: "85249247"
 
 ## <a name="optional-send-push-notifications-directly-from-the-app"></a>Отправка push-уведомлений непосредственно из приложения (необязательное действие)
 
-Обычно уведомления отправляются с сервера базы данных. Но в некоторых случаях бывает удобно отправлять push-уведомления непосредственно из клиентского приложения. В этом разделе показано, как отправлять уведомления из клиента с помощью интерфейса [REST API центра уведомлений Azure](https://msdn.microsoft.com/library/azure/dn223264.aspx).
+Обычно уведомления отправляются с сервера базы данных. Но в некоторых случаях бывает удобно отправлять push-уведомления непосредственно из клиентского приложения. В этом разделе показано, как отправлять уведомления из клиента с помощью интерфейса [REST API центра уведомлений Azure](/previous-versions/azure/reference/dn223264(v=azure.100)).
 
 1. В представлении проекта Android Studio разверните узел **App** > **src** > **main** > **res** > **layout**. Откройте файл макета `activity_main.xml` и щелкните вкладку **Text** (Текст), чтобы обновить текстовое содержимое файла. Поместите в него приведенный ниже код, который добавляет новые элементы управления `Button` и `EditText` для отправки push-уведомлений в центр уведомлений. Добавьте этот код в конец, непосредственно перед `</RelativeLayout>`.
 
@@ -544,7 +544,7 @@ ms.locfileid: "85249247"
     private String HubSasKeyName = null;
     private String HubSasKeyValue = null;
     ```
-6. Создайте токен подписи программного доступа (SAS) для аутентификации запроса POST для отправки сообщений в центр уведомлений. Проанализируйте данные ключа из строки подключения и создайте токен SAS, как упоминалось в справочнике по [основным понятиям](https://msdn.microsoft.com/library/azure/dn495627.aspx) REST API. Ниже приведен пример реализации.
+6. Создайте токен подписи программного доступа (SAS) для аутентификации запроса POST для отправки сообщений в центр уведомлений. Проанализируйте данные ключа из строки подключения и создайте токен SAS, как упоминалось в справочнике по [основным понятиям](/previous-versions/azure/reference/dn495627(v=azure.100)) REST API. Ниже приведен пример реализации.
 
     В файле `MainActivity.java` добавьте в класс `MainActivity` следующий метод, который анализирует строку подключения:
 
@@ -741,7 +741,7 @@ ms.locfileid: "85249247"
 [Get started with push notifications in Mobile Services]: ../mobile-services-javascript-backend-android-get-started-push.md 
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
 [Referencing a library project]: https://go.microsoft.com/fwlink/?LinkId=389800
-[Notification Hubs Guidance]: https://msdn.microsoft.com/library/jj927170.aspx
+[Notification Hubs Guidance]: /previous-versions/azure/azure-services/jj927170(v=azure.100)
 [Use Notification Hubs to push notifications to users]: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
 [Use Notification Hubs to send breaking news]: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md
 [Портал Azure]: https://portal.azure.com
