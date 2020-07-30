@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 06/11/2020
 ms.author: juliako
-ms.openlocfilehash: 20389c8298f4e970c4b3ba93d96f811fdc905003
-ms.sourcegitcommit: 6571e34e609785e82751f0b34f6237686470c1f3
+ms.openlocfilehash: f019ebd59b2d0b9d6bae8a5dc4904f1bcae0e6c1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84791611"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090116"
 ---
 # <a name="dynamic-packaging-in-media-services-v3"></a>Динамическая упаковка в Службах мультимедиа версии 3
 
@@ -28,7 +28,7 @@ ms.locfileid: "84791611"
 В Службах мультимедиа [конечная точка потоковой передачи](streaming-endpoint-concept.md) (источник) — это служба динамической (JIT) упаковки и служба источника, которая может в реальном времени и по запросу доставлять содержимое непосредственно в клиентское приложение проигрывателя. Она использует один из распространенных протоколов потоковой передачи мультимедиа, упомянутых в следующем разделе. Функция *Динамическая упаковка* по умолчанию предоставляется для конечных точек потоковой передачи любой ценовой категории ("Стандартный" или "Премиум").
 
 > [!NOTE]
-> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [трансляциями](live-events-outputs-concept.md) в версии 3, просмотра [ресурсов](assets-concept.md) в версии 3, а также получения сведений о доступе к интерфейсам API. Для всех других задач управления (например, преобразований и заданий) следует использовать [REST API](https://docs.microsoft.com/rest/api/media/), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [трансляциями](live-events-outputs-concept.md) в версии 3, просмотра [ресурсов](assets-concept.md) в версии 3, а также получения сведений о доступе к интерфейсам API. Для всех других задач управления (например, преобразований и заданий) следует использовать [REST API](/rest/api/media/), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 ## <a name="to-prepare-your-source-files-for-delivery"></a>Подготовка исходных файлов к доставке
 
@@ -126,7 +126,7 @@ ms.locfileid: "84791611"
 Динамическая упаковка поддерживает MP4-файлы, которые содержат видео, закодированное с помощью [H.264](https://en.m.wikipedia.org/wiki/H.264/MPEG-4_AVC) (MPEG-4 AVC или AVC1) либо [H.265](https://en.m.wikipedia.org/wiki/High_Efficiency_Video_Coding) (HEVC, hev1 или hvc1).
 
 > [!NOTE]
-> С *динамической упаковкой* успешно протестирована трансляция видео с разрешением до 4K и частотой до 60 кадров в секунду. [Кодировщик ценовой категории "Премиум"](https://docs.microsoft.com/azure/media-services/previous/media-services-encode-asset#media-encoder-premium-workflow) поддерживает кодирование в формат H.265 с помощью устаревших API версии 2.
+> С *динамической упаковкой* успешно протестирована трансляция видео с разрешением до 4K и частотой до 60 кадров в секунду. [Кодировщик ценовой категории "Премиум"](../previous/media-services-encode-asset.md#media-encoder-premium-workflow) поддерживает кодирование в формат H.265 с помощью устаревших API версии 2.
 
 ## <a name="audio-codecs-supported-by-dynamic-packaging"></a>Аудиокодеки, поддерживаемые для динамической упаковки
 

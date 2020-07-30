@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/22/2018
-ms.openlocfilehash: 1857d3ee8b607d91b6fdd13b4499518d06fb9913
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 6263e18ae541dd60dcd3455a00cdf58e371485f0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83834549"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87023557"
 ---
 # <a name="tutorial-build-your-first-azure-data-factory-using-azure-powershell"></a>Руководство по Создание первой фабрики данных Azure с помощью Azure PowerShell
 > [!div class="op_single_selector"]
@@ -44,7 +44,7 @@ ms.locfileid: "83834549"
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 * Прочтите [обзорную статью](data-factory-build-your-first-pipeline.md) и выполните **предварительные требования** .
-* Чтобы установить последнюю версию Azure PowerShell на локальном компьютере, следуйте инструкциям в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview) .
+* Чтобы установить последнюю версию Azure PowerShell на локальном компьютере, следуйте инструкциям в статье [Установка и настройка Azure PowerShell](/powershell/azure/) .
 * В этой статье рассматриваются не все командлеты фабрики данных (необязательный раздел). Полную документацию по командлетам фабрики данных см. в [этом справочнике](/powershell/module/az.datafactory).
 
 ## <a name="create-data-factory"></a>Создание фабрики данных

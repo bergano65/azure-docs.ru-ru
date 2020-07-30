@@ -10,11 +10,11 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: d6c30205aecaa87fffbd9b1b947d90fafe6ff678
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: bf796fc7a3d5477fd7228a02ac4bb9c78c041cfd
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75467056"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87102978"
 ---
-Если вы предпочитаете сразу перейти к работе, просмотрите или скачайте все <a href="https://aka.ms/speech/github-python">образцы для пакета SDK службы "Речь" для Python</a> на сайте GitHub. В противном случае ознакомьтесь с инструкциями.
+Вы можете просмотреть или скачать <a href="https://aka.ms/speech/github-python">все примеры для пакета SDK службы "Речь" для Python</a> на сайте GitHub. 
