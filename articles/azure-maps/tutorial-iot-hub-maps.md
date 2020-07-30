@@ -1,20 +1,20 @@
 ---
 title: Руководство по Реализация пространственной аналитики Интернета вещей | Microsoft Azure Maps
 description: Интеграция Центра Интернета вещей с API-интерфейсами службы Azure Maps.
-author: philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 11/12/2019
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: cf1d732391f86bec9c0ec2de1e6bace2e808bb19
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: 2bb5876424730e55d15cc52aeb98aa04af040821
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85318932"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87133407"
 ---
 # <a name="tutorial-implement-iot-spatial-analytics-using-azure-maps"></a>Руководство по Реализация пространственной аналитики Интернета вещей с помощью Azure Maps
 
@@ -110,7 +110,7 @@ ms.locfileid: "85318932"
 
 ### <a name="create-an-azure-maps-account"></a>создание учетной записи службы Azure Maps 
 
-Чтобы реализовать бизнес-логику на основе пространственной аналитики Azure Maps, нам потребуется учетная запись Azure Maps в созданной ранее группе ресурсов. Создайте подписку Azure Maps с ценовой категорией S1 по [этим инструкциям](quick-demo-map-app.md#create-an-account-with-azure-maps). Выполните действия, описанные в разделе [Получение первичного ключа для учетной записи](quick-demo-map-app.md#get-the-primary-key-for-your-account), чтобы получить первичный ключ для вашей учетной записи. Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
+Чтобы реализовать бизнес-логику на основе пространственной аналитики Azure Maps, нам потребуется учетная запись Azure Maps в созданной ранее группе ресурсов. Создайте подписку Azure Maps с ценовой категорией S1 по [этим инструкциям](quick-demo-map-app.md#create-an-azure-maps-account). Выполните действия, описанные в разделе [Получение первичного ключа для учетной записи](quick-demo-map-app.md#get-the-primary-key-for-your-account), чтобы получить первичный ключ для вашей учетной записи. Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
 
 
 

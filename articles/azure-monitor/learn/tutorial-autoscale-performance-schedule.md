@@ -8,12 +8,12 @@ ms.date: 12/11/2017
 ms.author: ancav
 ms.custom: mvc
 ms.subservice: autoscale
-ms.openlocfilehash: 9a069c4e63abd5307c123799d92e656294045a65
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 8a55ab9b6b87a379fbdebcead4467ec47507d67a
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86505862"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87327520"
 ---
 # <a name="create-an-autoscale-setting-for--azure-resources-based-on-performance-data-or-a-schedule"></a>Создание параметра автомасштабирования для ресурсов Azure на основе данных о производительности или расписания
 
@@ -180,7 +180,8 @@ ms.locfileid: "86505862"
 > * удалять ресурсы.
 
 
-Для получения дополнительных сведений о параметрах автомасштабирования перейдите к [Обзору автомасштабирования](../../azure-monitor/platform/autoscale-overview.md).
+Для получения дополнительных сведений о параметрах автомасштабирования перейдите к [Обзору автомасштабирования](../platform/autoscale-overview.md).
 
 > [!div class="nextstepaction"]
 > [Архивирование данных мониторинга](../platform/platform-logs-overview.md)
+

@@ -4,16 +4,16 @@ description: Руководство по В этом руководстве по
 services: event-hubs
 ms.date: 06/23/2020
 ms.topic: tutorial
-ms.openlocfilehash: b5f38c1a5b60dc8c8f0d9e8710c5dbc95434fe78
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: 8d45681b53aa2dd8df8c2288fecdde1b45fb7bd4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85322492"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87039503"
 ---
 # <a name="tutorial-migrate-captured-event-hubs-data-to-a-sql-data-warehouse-using-event-grid-and-azure-functions"></a>Руководство по Перенос собранных данных из Центров событий Azure в Хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"
 
-Функция [Сбор](https://docs.microsoft.com/azure/event-hubs/event-hubs-capture-overview) в концентраторах событий Azure — это самый простой способ автоматически доставить данные потоковой передачи из концентраторов событий в хранилище BLOB-объектов Azure или Azure Data Lake Store. Вы можете последовательно обрабатывать и доставлять данные в любые другие назначения хранения по своему усмотрению, например в хранилище данных SQL или Cosmos DB. В этом руководстве показано, как записать данные из концентратора событий в хранилище данных SQL с помощью функции Azure, активируемой службой [Сетка событий](https://docs.microsoft.com/azure/event-grid/overview).
+Функция [Сбор](./event-hubs-capture-overview.md) в концентраторах событий Azure — это самый простой способ автоматически доставить данные потоковой передачи из концентраторов событий в хранилище BLOB-объектов Azure или Azure Data Lake Store. Вы можете последовательно обрабатывать и доставлять данные в любые другие назначения хранения по своему усмотрению, например в хранилище данных SQL или Cosmos DB. В этом руководстве показано, как записать данные из концентратора событий в хранилище данных SQL с помощью функции Azure, активируемой службой [Сетка событий](../event-grid/overview.md).
 
 ![Visual Studio](./media/store-captured-data-data-warehouse/EventGridIntegrationOverview.PNG)
 
@@ -178,7 +178,4 @@ WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
 ## <a name="next-steps"></a>Дальнейшие действия 
 Вы можете использовать мощные инструменты визуализации данных в хранилище данных, чтобы получить аналитические сведения.
 
-В этой статье описано, как использовать [Power BI с хранилищем данных SQL](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-integrate-power-bi).
-
-
-
+В этой статье описано, как использовать [Power BI с хранилищем данных SQL](/azure/sql-data-warehouse/sql-data-warehouse-integrate-power-bi).

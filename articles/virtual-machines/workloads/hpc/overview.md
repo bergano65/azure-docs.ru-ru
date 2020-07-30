@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: overview
 ms.date: 07/02/2019
-ms.openlocfilehash: b3d5d003db89a11a013c3236a3afbe03ffe68557
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 1f88496a6c474194089f20e128b2b92ec61e8559
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76271019"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083435"
 ---
 # <a name="high-performance-computing-on-h-series-vms"></a>Высокопроизводительные вычисления на виртуальных машинах серии H
 
@@ -39,7 +39,7 @@ ms.locfileid: "76271019"
 
 ## <a name="get-started"></a>Начало работы
 
-Во-первых решите, какие виртуальные машины серии H вы собираетесь использовать. Сведения о виртуальных машинах, оптимизированных с помощью HPC, см. в разделе [Обзор серии HB](hb-series-overview.md) и [Обзор серии HC](hc-series-overview.md). Спецификации см. в разделе [Размеры виртуальных машин, оптимизированных для высокопроизводительных вычислений](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-hpc).
+Во-первых решите, какие виртуальные машины серии H вы собираетесь использовать. Сведения о виртуальных машинах, оптимизированных с помощью HPC, см. в разделе [Обзор серии HB](hb-series-overview.md) и [Обзор серии HC](hc-series-overview.md). Спецификации см. в разделе [Размеры виртуальных машин, оптимизированных для высокопроизводительных вычислений](../../sizes-hpc.md).
 
 После выбора и создания виртуальной машины для приложения, необходимо настроить ее, включив InfiniBand. Сведения о включении InfiniBand на виртуальных машинах Linux и Windows, см. в разделе [Включение InfiniBand](enable-infiniband.md).
 
@@ -51,4 +51,4 @@ MPI является важной составляющей рабочих наг
 
 - Дополнительные сведения об основных спецификациях и различиях см. [Обзор серии HB](hb-series-overview.md) и [Обзор серии HC](hc-series-overview.md).
 
-- Сведения о более высоком уровне архитектурного представления выполнения рабочих нагрузок HPC, см. в разделе [Высокопроизводительные вычисления (HPC) в Azure](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/).
+- Сведения о более высоком уровне архитектурного представления выполнения рабочих нагрузок HPC, см. в разделе [Высокопроизводительные вычисления (HPC) в Azure](/azure/architecture/topics/high-performance-computing/).

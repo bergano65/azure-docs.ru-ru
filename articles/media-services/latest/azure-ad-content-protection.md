@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 07/1/2020
 ms.author: inhenkel
-ms.openlocfilehash: 2dbd75748d30a67c22ac729a8a2130a2d43aef9b
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 81c83cd8dcea5f8746b67a7bd52ea52a09c8a711
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86205211"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001406"
 ---
 # <a name="tutorial-end-to-end-content-protection-using-azure-ad"></a>Руководство по комплексной защите содержимого с помощью Azure AD
 
@@ -48,13 +48,13 @@ ms.locfileid: "86205211"
 Это необязательно, но рекомендуется, чтобы вы были знакомы со следующими концепциями, прежде чем начинать работу с этим руководством:
 
 * Управление цифровыми правами (DRM).
-* [Службы мультимедиа Azure (AMS) версии 3.](https://docs.microsoft.com/azure/media-services/latest/media-services-overview)
+* [Службы мультимедиа Azure (AMS) версии 3.](./media-services-overview.md)
 * [Политики ключей содержимого](content-key-policy-concept.md) AMS с использованием API AMS версии 3, портала Azure или [инструмента "Обозреватель Служб мультимедиа Azure" (AMSE)](https://github.com/Azure/Azure-Media-Services-Explorer).
-* Конечные точки Azure AD версии 2 на [платформе удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/).
-* Современные решения аутентификации в облаке, например [OAuth 2.0 и OpenID Connect](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols).
-  * [Поток кода авторизации в OAuth 2.0](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-auth-code-flow) и причины использования PKCE.
-  * [Делегированные разрешения и разрешения приложений.](https://docs.microsoft.com/azure/active-directory/develop/developer-glossary#permissions)
-* [Маркер JWT](https://docs.microsoft.com/azure/active-directory/develop/access-tokens), его утверждения и смена ключей подписывания (включен в пример).
+* Конечные точки Azure AD версии 2 на [платформе удостоверений Майкрософт](../../active-directory/develop/index.yml).
+* Современные решения аутентификации в облаке, например [OAuth 2.0 и OpenID Connect](../../active-directory/develop/active-directory-v2-protocols.md).
+  * [Поток кода авторизации в OAuth 2.0](../../active-directory/develop/v2-oauth2-auth-code-flow.md) и причины использования PKCE.
+  * [Делегированные разрешения и разрешения приложений.](../../active-directory/develop/developer-glossary.md#permissions)
+* [Маркер JWT](../../active-directory/develop/access-tokens.md), его утверждения и смена ключей подписывания (включен в пример).
 
 ### <a name="prerequisite-code-and-installations"></a>Необходимый код и установленные решения
 
@@ -63,7 +63,7 @@ ms.locfileid: "86205211"
 * Установленная платформа Node.js (скачайте Node.js здесь: [https://nodejs.org](https://nodejs.org)). В установку также включен инструмент NPM.
 * [Подписка Azure](https://azure.microsoft.com/free/).
 * Учетная запись Служб мультимедиа Azure.
-* @azure/msal-browser версии 2.0, один из членов семейства пакетов SDK [библиотеки аутентификации Майкрософт (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview) для различных платформ клиентов.
+* @azure/msal-browser версии 2.0, один из членов семейства пакетов SDK [библиотеки аутентификации Майкрософт (MSAL)](../../active-directory/develop/msal-overview.md) для различных платформ клиентов.
 * Последняя версия [Проигрывателя мультимедиа Azure](https://github.com/Azure-Samples/azure-media-player-samples) (включена в пример).
 * Учетные данные FPS от Apple, если вы хотите включить FairPlay DRM, и сертификат приложения, размещенный с помощью CORS, доступ к которому можно получить через код JavaScript на стороне клиента.
 
@@ -98,7 +98,7 @@ ms.locfileid: "86205211"
 
 ![Экран для анализа маркеров JWT](media/aad-ams-content-protection/subsystem.svg)
 
-Подробные сведения о подсистеме см. в статье [Проектирование системы защиты содержимого с несколькими подсистемами DRM и управлением доступом](https://docs.microsoft.com/azure/media-services/latest/design-multi-drm-system-with-access-control).
+Подробные сведения о подсистеме см. в статье [Проектирование системы защиты содержимого с несколькими подсистемами DRM и управлением доступом](./design-multi-drm-system-with-access-control.md).
 
 ## <a name="understand-the-single-page-app"></a>Общие сведения об одностраничных приложениях
 
@@ -339,7 +339,7 @@ if (tokenClaims != null && tokenClaims.Length > 0)
 }
 ```
 
-Утверждение *groups* является членом [набора ограниченных утверждений](https://docs.microsoft.com/azure/active-directory/develop/active-directory-claims-mapping#claim-sets) в Azure AD.
+Утверждение *groups* является членом [набора ограниченных утверждений](../../active-directory/develop/active-directory-claims-mapping.md#claim-sets) в Azure AD.
 
 #### <a name="test"></a>Тест
 

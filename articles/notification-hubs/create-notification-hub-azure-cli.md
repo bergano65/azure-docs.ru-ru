@@ -13,12 +13,12 @@ ms.date: 05/27/2020
 ms.author: dbradish
 ms.reviewer: sethm
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: 3014a66c633a4293de8cd6eb325e962366c103b9
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: d32bae48348e482e0e175760a416097ffbc17a1c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85208269"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87080953"
 ---
 # <a name="quickstart-create-an-azure-notification-hub-using-the-azure-cli"></a>Краткое руководство. Создание концентратора уведомлений Azure с помощью Azure CLI
 
@@ -95,7 +95,7 @@ ms.locfileid: "85208269"
    az notification-hub namespace create --resource-group spnhubrg --name spnhubns  --location eastus --sku Free
    ```
 
-   Если элемент `--name`, предоставленный для команды `az notification-hub namespace create`, недоступен или не соответствует [правилам именования и ограничениям для ресурсов Azure](/azure/azure-resource-manager/management/resource-name-rules), Azure CLI отобразит следующие выходные данные консоли:
+   Если элемент `--name`, предоставленный для команды `az notification-hub namespace create`, недоступен или не соответствует [правилам именования и ограничениям для ресурсов Azure](../azure-resource-manager/management/resource-name-rules.md), Azure CLI отобразит следующие выходные данные консоли:
 
    ```output
    #the name is not available
@@ -148,7 +148,7 @@ ms.locfileid: "85208269"
 
 1. Получите список политик доступа для концентратора уведомлений.
 
-   Центры уведомлений Azure используют [безопасность на базе подписанного URL-адреса (SAS)](/azure/notification-hubs/notification-hubs-push-notification-security) с помощью политик доступа.  При создании концентратора уведомлений автоматически создаются две политики.  Строки подключения из этих политик необходимы для настройки push-уведомлений.  Команда [az  notification-hub authorization-rule list](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list) предоставляет список имен политик и их соответствующих групп ресурсов.
+   Центры уведомлений Azure используют [безопасность на базе подписанного URL-адреса (SAS)](./notification-hubs-push-notification-security.md) с помощью политик доступа.  При создании концентратора уведомлений автоматически создаются две политики.  Строки подключения из этих политик необходимы для настройки push-уведомлений.  Команда [az  notification-hub authorization-rule list](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list) предоставляет список имен политик и их соответствующих групп ресурсов.
 
    ```azurecli
    az notification-hub authorization-rule list --resource-group spnhubrg --namespace-name spnhubns --notification-hub-name spfcmtutorial1nhub --output table
@@ -167,7 +167,7 @@ ms.locfileid: "85208269"
 
 3. Получение списка ключей и строк подключения для политик доступа концентратора уведомлений.
 
-   Для каждой политики доступа определены два набора ключей и строк подключения.  Они потребуются позже, чтобы [настроить концентратор уведомлений](/azure/notification-hubs/configure-notification-hub-portal-pns-settings).  Чтобы получить список ключей и строк подключения для политики доступа концентратора уведомлений, выполните команду [az notification-hub authorization-rule list-keys](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list-keys).
+   Для каждой политики доступа определены два набора ключей и строк подключения.  Они потребуются позже, чтобы [настроить концентратор уведомлений](./configure-notification-hub-portal-pns-settings.md).  Чтобы получить список ключей и строк подключения для политики доступа концентратора уведомлений, выполните команду [az notification-hub authorization-rule list-keys](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list-keys).
 
    ```azurecli
    #query the keys and connection strings for DefaultListenSharedAccessSignature

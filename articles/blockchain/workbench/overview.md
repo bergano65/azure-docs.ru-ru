@@ -4,12 +4,12 @@ description: Общие сведения о предварительной ве�
 ms.date: 05/22/2020
 ms.topic: overview
 ms.reviewer: brendal
-ms.openlocfilehash: 384fa553204a5a86ad479f2cc623ebb70a9a6f5f
-ms.sourcegitcommit: b55d1d1e336c1bcd1c1a71695b2fd0ca62f9d625
+ms.openlocfilehash: fbd6be3907dbd10b003d065dfb14031a0e378478
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84434138"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87003159"
 ---
 # <a name="what-is-azure-blockchain-workbench"></a>Что такое Azure Blockchain Workbench?
 
@@ -55,7 +55,7 @@ Azure Blockchain Workbench упрощает анализ событий и да�
 
 Получите возможность проконсультироваться с инженерами Майкрософт и специалистами из сообщества Блокчейна Azure.
 
-* [Страница с вопросами об Azure Blockchain Workbench (раздел вопросов и ответов на сайте Майкрософт)](https://docs.microsoft.com/answers/topics/azure-blockchain-workbench.html)
+* [Страница с вопросами об Azure Blockchain Workbench (раздел вопросов и ответов на сайте Майкрософт)](/answers/topics/azure-blockchain-workbench.html)
 * [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-blockchain-workbench)
 
