@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 09/27/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 28765d3a4a0812f6f3631427432105fdc4650808
-ms.sourcegitcommit: 398fecceba133d90aa8f6f1f2af58899f613d1e3
+ms.openlocfilehash: 21cb7133bad27013895a5e717cb7729b71795ce9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2020
-ms.locfileid: "85126235"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078966"
 ---
 # <a name="provide-key-vault-authentication-with-an-access-control-policy"></a>Обеспечение проверки подлинности Azure Key Vault с помощью политики управления доступом
 
@@ -39,7 +39,7 @@ ms.locfileid: "85126235"
    - [Создание хранилища ключей с помощью интерфейса командной строки Azure](../secrets/quick-create-cli.md)
    - [Создание хранилища ключей с помощью Azure PowerShell](../secrets/quick-create-powershell.md)
    - [Создание хранилища ключей с помощью портала Azure](../secrets/quick-create-portal.md)
-- [Интерфейс командной строки Azure](/cli/azure/install-azure-cli?view=azure-cli-latest) или [Azure PowerShell](/powershell/azure/overview). Кроме того, можно использовать [портал Azure](https://portal.azure.com).
+- [Интерфейс командной строки Azure](/cli/azure/install-azure-cli?view=azure-cli-latest) или [Azure PowerShell](/powershell/azure/). Кроме того, можно использовать [портал Azure](https://portal.azure.com).
 
 ## <a name="grant-access-to-your-key-vault"></a>Предоставление доступа к хранилищу ключей
 

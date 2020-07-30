@@ -1,5 +1,5 @@
 ---
-title: SSMS. Подключение и отправка запроса к Synapse SQL
+title: Подключение к Synapse SQL с помощью SQL Server Management Studio (SSMS).
 description: Подключение к Synapse SQL в Azure Synapse Analytics и создание к нему запросов с помощью SQL Server Management Studio (SSMS).
 services: synapse-analytics
 author: azaricstefan
@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 72006879c7181a8cefe56248215099eeb784d816
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: dc467eebbd7346777765af7143d13c76627ab648
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83658253"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077720"
 ---
 # <a name="connect-to-synapse-sql-with-sql-server-management-studio-ssms"></a>Подключение к Synapse SQL с помощью SQL Server Management Studio (SSMS).
 > [!div class="op_single_selector"]

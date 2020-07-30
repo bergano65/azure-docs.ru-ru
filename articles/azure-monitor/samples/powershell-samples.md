@@ -6,12 +6,12 @@ ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 2/14/2018
-ms.openlocfilehash: 4313d9fec9e858a5d30cfea2bbe7372e6a96169c
-ms.sourcegitcommit: fdaad48994bdb9e35cdd445c31b4bac0dd006294
+ms.openlocfilehash: 520022be8ee2054d6c0c89ee3f027de9094ae1af
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85413898"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87055260"
 ---
 # <a name="azure-monitor-powershell-samples"></a>Примеры для Azure Monitor PowerShell
 В этой статье показаны примеры команд PowerShell, с помощью которых можно быстро получить доступ к функциям Azure Monitor.
@@ -22,10 +22,10 @@ ms.locfileid: "85413898"
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="set-up-powershell"></a>Настройка PowerShell
-Если вы этого еще не сделали, настройте PowerShell для выполнения на своем компьютере. Дополнительные сведения см. в разделе [Общие сведения об Azure PowerShell](/powershell/azure/overview).
+Если вы этого еще не сделали, настройте PowerShell для выполнения на своем компьютере. Дополнительные сведения см. в разделе [Общие сведения об Azure PowerShell](/powershell/azure/).
 
 ## <a name="examples-in-this-article"></a>Примеры в этой статье
-Примеры в статье демонстрируют, как можно использовать командлеты Azure Monitor. Можно также просмотреть полный список командлетов PowerShell (для мониторинга) в документации [Azure Monitor Cmdlets](https://docs.microsoft.com/powershell/module/az.applicationinsights).
+Примеры в статье демонстрируют, как можно использовать командлеты Azure Monitor. Можно также просмотреть полный список командлетов PowerShell (для мониторинга) в документации [Azure Monitor Cmdlets](/powershell/module/az.applicationinsights).
 
 ## <a name="sign-in-and-use-subscriptions"></a>Вход в систему и использование подписок
 Сначала войдите в свою подписку Azure.
@@ -53,7 +53,7 @@ Set-AzContext -SubscriptionId <subscriptionid>
 
 
 ## <a name="retrieve-activity-log"></a>Получение журнала действий
-Используйте командлет [Get-AzLog](https://docs.microsoft.com/powershell/module/az.monitor/get-azlog).  Ниже приведено несколько типичных примеров. Журнал действий содержит операций за последние 90 дней. Использование дат до этого времени приведет к возникновению сообщения об ошибке.  
+Используйте командлет [Get-AzLog](/powershell/module/az.monitor/get-azlog).  Ниже приведено несколько типичных примеров. Журнал действий содержит операций за последние 90 дней. Использование дат до этого времени приведет к возникновению сообщения об ошибке.  
 
 Ознакомьтесь с текущими значениями даты и времени, чтобы проверить, какое время следует использовать в командах ниже.
 ```powershell
@@ -116,7 +116,7 @@ Get-AzLog -Caller "Microsoft.Insights/alertRules" -DetailedOutput -StartTime 201
 Get-AzAlertHistory -ResourceId /subscriptions/s1/resourceGroups/rg1/providers/microsoft.insights/alertrules/myalert -StartTime 2016-03-1 -Status Activated
 ```
 
-Командлет `Get-AzAlertHistory` поддерживает различные параметры. Дополнительные сведения см. в документации командлета [Get-AlertHistory](https://msdn.microsoft.com/library/mt282453.aspx).
+Командлет `Get-AzAlertHistory` поддерживает различные параметры. Дополнительные сведения см. в документации командлета [Get-AlertHistory](/previous-versions/azure/mt282453(v=azure.100)).
 
 ## <a name="retrieve-information-on-alert-rules"></a>Извлечение информации о правилах генерации оповещений
 Все следующие команды оперируют с группой ресурсов montest.
@@ -139,7 +139,7 @@ Get-AzAlertRule -ResourceGroup montest
 Get-AzAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/resourceGroups/montest/providers/Microsoft.Compute/virtualMachines/testconfig
 ```
 
-`Get-AzAlertRule` поддерживает и другие параметры. Дополнительную информацию см. в документации [Get-AlertRule](https://msdn.microsoft.com/library/mt282459.aspx).
+`Get-AzAlertRule` поддерживает и другие параметры. Дополнительную информацию см. в документации [Get-AlertRule](/previous-versions/azure/mt282459(v=azure.100)).
 
 ## <a name="create-metric-alerts"></a>Создание оповещений о метриках
 С помощью командлета `Add-AlertRule` можно создать, обновить или отключить правило генерации оповещений.
@@ -201,7 +201,7 @@ Get-AzMetricDefinition -ResourceId <resource_id>
 Get-AzMetricDefinition -ResourceId <resource_id> | Format-Table -Property Name,Unit
 ```
 
-Полный список доступных параметров для `Get-AzMetricDefinition` представлен в разделе [Get-MetricDefinitions](https://msdn.microsoft.com/library/mt282458.aspx).
+Полный список доступных параметров для `Get-AzMetricDefinition` представлен в разделе [Get-MetricDefinitions](/previous-versions/azure/mt282458(v=azure.100)).
 
 ## <a name="create-and-manage-activity-log-alerts"></a>Создание и администрирование оповещений журнала действий
 Чтобы настроить оповещение журнала действий, используйте командлет `Set-AzActivityLogAlert`. Сначала нужно определить условия как словарь условий, а затем создать оповещения, для которого используются эти условия.
@@ -272,7 +272,7 @@ $notification1= New-AzAutoscaleNotification -CustomEmails ashwink@microsoft.com 
 Add-AzAutoscaleSetting -Location "East US" -Name "MyScaleVMSSSetting" -ResourceGroup big2 -TargetResourceId /subscriptions/s1/resourceGroups/big2/providers/Microsoft.Compute/virtualMachineScaleSets/big2 -AutoscaleProfiles $profile1 -Notifications $notification1
 ```
 
-Дополнительные сведения об управлении параметрами автомасштабирования см. в документации [Get-AutoscaleSetting](https://msdn.microsoft.com/library/mt282461.aspx).
+Дополнительные сведения об управлении параметрами автомасштабирования см. в документации [Get-AutoscaleSetting](/previous-versions/azure/mt282461(v=azure.100)).
 
 ## <a name="autoscale-history"></a>Журнал автомасштабирования
 В следующем примере показано, как можно просмотреть последние события автомасштабирования и оповещения. Используйте поиск по журналу событий, чтобы просматривать историю автомасштабирования.
@@ -287,7 +287,7 @@ Get-AzLog -Caller "Microsoft.Insights/autoscaleSettings" -DetailedOutput -StartT
 Get-AzAutoScaleHistory -ResourceId /subscriptions/s1/resourceGroups/myrg1/providers/microsoft.insights/autoscalesettings/myScaleSetting -StartTime 2016-03-15 -DetailedOutput
 ```
 
-Дополнительные сведения см. в документации [Get-AutoscaleHistory](https://msdn.microsoft.com/library/mt282464.aspx).
+Дополнительные сведения см. в документации [Get-AutoscaleHistory](/previous-versions/azure/mt282464(v=azure.100)).
 
 ### <a name="view-details-for-an-autoscale-setting"></a>Просмотр сведений о параметре автомасштабирования
 Чтобы получить дополнительные сведения о параметре автомасштабирования, можно использовать командлет `Get-Autoscalesetting` .
@@ -399,4 +399,3 @@ Set-AzDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/insights-in
 ```
 
 Эти команды можно объединить для отправки данных в несколько назначений.
-

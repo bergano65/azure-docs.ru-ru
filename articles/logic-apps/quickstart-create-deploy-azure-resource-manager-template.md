@@ -7,16 +7,16 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: quickstart
 ms.custom: mvc, subject-armqs
 ms.date: 06/30/2020
-ms.openlocfilehash: 466b9258962c27457962ce51b72d2aeb2c029cc2
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 10cc89d1a0cc975df4384e551dddde32be0a4a72
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85569509"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078119"
 ---
 # <a name="quickstart-create-and-deploy-a-logic-app-workflow-by-using-an-arm-template"></a>Краткое руководство. Создание и развертывание рабочего процесса приложения логики с помощью шаблона ARM
 
-[Azure Logic Apps](../logic-apps/logic-apps-overview.md) — это облачная служба, которая помогает создавать и запускать автоматизированные рабочие процессы для интеграции данных, приложений, облачных служб и локальных систем путем выбора из [сотен соединителей](https://docs.microsoft.com/connectors/connector-reference/connector-reference-logicapps-connectors). В этом кратком руководстве показано, как развернуть шаблон Azure Resource Manager (шаблон ARM), чтобы создать базовое приложение логики, которое ежечасно проверяет состояние для Azure. 
+[Azure Logic Apps](../logic-apps/logic-apps-overview.md) — это облачная служба, которая помогает создавать и запускать автоматизированные рабочие процессы для интеграции данных, приложений, облачных служб и локальных систем путем выбора из [сотен соединителей](/connectors/connector-reference/connector-reference-logicapps-connectors). В этом кратком руководстве показано, как развернуть шаблон Azure Resource Manager (шаблон ARM), чтобы создать базовое приложение логики, которое ежечасно проверяет состояние для Azure. 
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -32,11 +32,11 @@ ms.locfileid: "85569509"
 
 В этом кратком руководстве используется шаблон [**Создание приложения логики**](https://azure.microsoft.com/resources/templates/101-logic-app-create/), который можно найти в [коллекции шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates). Здесь он не приводится, так как он слишком длинный. Но вы можете просмотреть файл [azuredeploy.json](https://github.com/Azure/azure-quickstart-templates/blob/master/101-logic-app-create/azuredeploy.json) в коллекции шаблонов.
 
-Шаблон быстрого запуска создает рабочий процесс приложения логики, который использует триггер повторения, настроенный на запуск каждый час, а также [*встроенное* действие](https://docs.microsoft.com/azure/connectors/apis-list#connector-types) HTTP, которое вызывает URL-адрес для получения состояния для Azure. Встроенное действие является нативным для платформы Azure Logic Apps.
+Шаблон быстрого запуска создает рабочий процесс приложения логики, который использует триггер повторения, настроенный на запуск каждый час, а также [*встроенное* действие](../connectors/apis-list.md#connector-types) HTTP, которое вызывает URL-адрес для получения состояния для Azure. Встроенное действие является нативным для платформы Azure Logic Apps.
 
 Этот шаблон создает следующий ресурс Azure:
 
-* [**Microsoft.Logic/workflows**](https://docs.microsoft.com/azure/templates/microsoft.logic/workflows), который создает рабочий процесс для приложения логики.
+* [**Microsoft.Logic/workflows**](/azure/templates/microsoft.logic/workflows), который создает рабочий процесс для приложения логики.
 
 Чтобы найти дополнительные шаблоны быстрого запуска для Azure Logic Apps, изучите шаблоны [Microsoft.Logic](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Logic) в коллекции.
 
@@ -49,9 +49,9 @@ ms.locfileid: "85569509"
 | Параметр | Описание |
 |--------|-------------|
 | [Портал Azure](../logic-apps/quickstart-create-deploy-azure-resource-manager-template.md?tabs=azure-portal#deploy-template) | Если среда Azure соответствует предварительным требованиям и вы раньше использовали шаблоны ARM, эти действия помогут вам войти в Azure и открыть шаблон быстрого запуска на портале Azure. Дополнительные сведения см. в статье [Развертывание ресурсов с помощью шаблонов ARM на портале Azure](../azure-resource-manager/templates/deploy-portal.md). |
-| [Azure CLI](../logic-apps/quickstart-create-deploy-azure-resource-manager-template.md?tabs=azure-cli#deploy-template) | Интерфейс командной строки (Azure CLI) — это набор команд для создания ресурсов Azure и управления ими. Для выполнения этих команд вам понадобится Azure CLI 2.6 или более поздней версии. Чтобы проверить используемую версию CLI, выполните `az --version`. Дополнительные сведения см. в следующих статьях: <p><p>- [Что такое Azure CLI](https://docs.microsoft.com/cli/azure/what-is-azure-cli?view=azure-cli-latest) <br>- [Начало работы с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) |
-| [Azure PowerShell](../logic-apps/quickstart-create-deploy-azure-resource-manager-template.md?tabs=azure-powershell#deploy-template) | В Azure PowerShell доступен набор командлетов, которые используют модель Azure Resource Manager для управления ресурсами Azure. Дополнительные сведения см. в следующих статьях: <p><p>- [Обзор Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/overview) <br>- [Знакомство с модулем Az для Azure PowerShell](https://docs.microsoft.com/powershell/azure/new-azureps-module-az) <br>- [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps) |
-| [REST API управления ресурсами Azure](../logic-apps/quickstart-create-deploy-azure-resource-manager-template.md?tabs=rest-api#deploy-template) | В Azure доступны REST API (API передачи репрезентативного состояния). Это конечные точки службы, которые поддерживают набор операций HTTP (методов) и предоставляют доступ на создание, получение, обновление или удаление ресурсов сервера. Подробные сведения см. в статье [Справочник по REST API Azure](https://docs.microsoft.com/rest/api/azure/). |
+| [Azure CLI](../logic-apps/quickstart-create-deploy-azure-resource-manager-template.md?tabs=azure-cli#deploy-template) | Интерфейс командной строки (Azure CLI) — это набор команд для создания ресурсов Azure и управления ими. Для выполнения этих команд вам понадобится Azure CLI 2.6 или более поздней версии. Чтобы проверить используемую версию CLI, выполните `az --version`. Дополнительные сведения см. в следующих статьях: <p><p>- [Что такое Azure CLI](/cli/azure/what-is-azure-cli?view=azure-cli-latest) <br>- [Начало работы с Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) |
+| [Azure PowerShell](../logic-apps/quickstart-create-deploy-azure-resource-manager-template.md?tabs=azure-powershell#deploy-template) | В Azure PowerShell доступен набор командлетов, которые используют модель Azure Resource Manager для управления ресурсами Azure. Дополнительные сведения см. в следующих статьях: <p><p>- [Обзор Azure PowerShell](/powershell/azure/azurerm/overview) <br>- [Знакомство с модулем Az для Azure PowerShell](/powershell/azure/new-azureps-module-az) <br>- [Начало работы с Azure PowerShell](/powershell/azure/get-started-azureps) |
+| [REST API управления ресурсами Azure](../logic-apps/quickstart-create-deploy-azure-resource-manager-template.md?tabs=rest-api#deploy-template) | В Azure доступны REST API (API передачи репрезентативного состояния). Это конечные точки службы, которые поддерживают набор операций HTTP (методов) и предоставляют доступ на создание, получение, обновление или удаление ресурсов сервера. Подробные сведения см. в статье [Справочник по REST API Azure](/rest/api/azure/). |
 |||
 
 <a name="deploy-azure-portal"></a>
@@ -97,7 +97,7 @@ read
 
 Дополнительные сведения см. в следующих статьях:
 
-* [Azure CLI: az deployment group](https://docs.microsoft.com/cli/azure/deployment/group)
+* [Azure CLI: az deployment group](/cli/azure/deployment/group)
 * [Развертывание ресурсов с помощью шаблонов ARM и Azure CLI](../azure-resource-manager/templates/deploy-cli.md)
 
 #### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
@@ -117,8 +117,8 @@ Read-Host -Prompt "Press [ENTER] to continue ..."
 
 Дополнительные сведения см. в следующих статьях:
 
-* [Azure PowerShell: New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup)
-* [Azure PowerShell: New-AzResourceGroupDeployment](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment)
+* [Azure PowerShell: New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup)
+* [Azure PowerShell: New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment)
 * [Развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md)
 
 #### <a name="rest-api"></a>[REST API](#tab/rest-api)
@@ -143,8 +143,8 @@ Read-Host -Prompt "Press [ENTER] to continue ..."
 
    Дополнительные сведения см. в следующих статьях:
 
-   * [Справочник по REST API Azure. Вызов REST API Azure](https://docs.microsoft.com/rest/api/azure/)
-   * [REST API управления ресурсами. Группы ресурсов — создание или обновление](https://docs.microsoft.com/rest/api/resources/resourcegroups/createorupdate)
+   * [Справочник по REST API Azure. Вызов REST API Azure](/rest/api/azure/)
+   * [REST API управления ресурсами. Группы ресурсов — создание или обновление](/rest/api/resources/resourcegroups/createorupdate)
 
 1. Чтобы развернуть шаблон быстрого запуска в группе ресурсов, выполните следующий синтаксис для запроса, отправляемого в REST API управления ресурсами:
 
@@ -165,7 +165,7 @@ Read-Host -Prompt "Press [ENTER] to continue ..."
    PUT https://management.azure.com/subscriptions/xxxxXXXXxxxxXXXXX/resourcegroups/Check-Azure-Status-RG/providers/Microsoft.Resources/deployments/Check-Azure-Status-LA?api-version=2019-10-01
    ```
 
-   Подробные сведения см. в статье [REST API управления ресурсами. Развертывания — создание или обновление](https://docs.microsoft.com/rest/api/resources/deployments/createorupdate).
+   Подробные сведения см. в статье [REST API управления ресурсами. Развертывания — создание или обновление](/rest/api/resources/deployments/createorupdate).
 
 1. Вы можете предоставить значения, которые будут использоваться для развертывания, такие как регион Azure, а также ссылки на шаблон быстрого запуска и [файл параметров](../azure-resource-manager/templates/template-parameters.md), который содержит значения для шаблона быстрого запуска, используемого при развертывании. Для этого используйте следующий синтаксис для текста запроса, отправляемого в REST API управления ресурсами:
 
@@ -191,7 +191,7 @@ Read-Host -Prompt "Press [ENTER] to continue ..."
    | `location`| <*Azure-region*> | Регион Azure, который будет использоваться для развертывания. В этом примере используется `West US`. |
    | `templateLink` : `uri` | <*quickstart-template-URL*> | URL-адрес шаблона быстрого запуска, используемого для развертывания: <p><p>`https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-logic-app-create/azuredeploy.json`. |
    | `parametersLink` : `uri` | <*quickstart-template-parameter-file-URL*> | URL-адрес для файла параметров шаблона быстрого запуска, используемого для развертывания: <p><p>`https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-logic-app-create/azuredeploy.parameters.json` <p><p>Дополнительные сведения о файле параметров Resource Manager см. в следующих статьях: <p><p>- [Создание файла параметров Resource Manager](../azure-resource-manager/templates/parameter-files.md) <br>- [Руководство. Использование файлов параметров для развертывания шаблона ARM](../azure-resource-manager/templates/template-tutorial-use-parameter-file.md) |
-   | `mode` | <*deployment-mode*> | Выполните добавочное обновление или полное обновление. В этом примере используется `Incremental` (значение по умолчанию). Подробные сведения см. в статье [Режимы развертывания Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/templates/deployment-modes). |
+   | `mode` | <*deployment-mode*> | Выполните добавочное обновление или полное обновление. В этом примере используется `Incremental` (значение по умолчанию). Подробные сведения см. в статье [Режимы развертывания Azure Resource Manager](../azure-resource-manager/templates/deployment-modes.md). |
    |||
 
    Пример:
@@ -215,7 +215,7 @@ Read-Host -Prompt "Press [ENTER] to continue ..."
 
 Дополнительные сведения см. в следующих статьях:
 
-* [REST API управления ресурсами](https://docs.microsoft.com/rest/api/resources/)
+* [REST API управления ресурсами](/rest/api/resources/)
 * [Развертывание ресурсов с помощью шаблонов ARM и REST API Resource Manager](../azure-resource-manager/templates/deploy-rest.md)
 
 ---
@@ -245,7 +245,7 @@ az logic workflow show --name $logicAppName &&
 echo "Press [ENTER] to continue ..."
 ```
 
-Подробные сведения см. в разделе [Azure CLI: az logic workflow show](https://docs.microsoft.com/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-show).
+Подробные сведения см. в разделе [Azure CLI: az logic workflow show](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-show).
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -255,7 +255,7 @@ Get-AzLogicApp -Name $logicAppName
 Write-Host "Press [ENTER] to continue..."
 ```
 
-Подробные сведения см. в статье [Azure PowerShell: Get-AzLogicApp](https://docs.microsoft.com/powershell/module/az.logicapp/get-azlogicapp).
+Подробные сведения см. в статье [Azure PowerShell: Get-AzLogicApp](/powershell/module/az.logicapp/get-azlogicapp).
 
 ### <a name="rest-api"></a>[REST API](#tab/rest-api)
 
@@ -276,7 +276,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 GET https://management.azure.com/subscriptions/xxxxXXXXxxxxXXXXX/resourceGroups/Check-Azure-Status-RG/providers/Microsoft.Logic/workflows/Check-Azure-Status-LA?api-version=2016-06-01
 ```
 
-Подробные сведения см. в статье [REST API приложений логики. Рабочие процессы — Get](https://docs.microsoft.com/rest/api/logic/workflows/get).
+Подробные сведения см. в статье [REST API приложений логики. Рабочие процессы — Get](/rest/api/logic/workflows/get).
 
 ---
 
@@ -303,7 +303,7 @@ az group delete --name $resourceGroupName &&
 echo "Press [ENTER] to continue ..."
 ```
 
-Подробные сведения см. в разделе [Azure CLI: az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete).
+Подробные сведения см. в разделе [Azure CLI: az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete).
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -313,7 +313,7 @@ Remove-AzResourceGroup -Name $resourceGroupName
 Write-Host "Press [ENTER] to continue..."
 ```
 
-Подробные сведения см. в статье [Azure PowerShell: Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/azurerm.resources/remove-azurermresourcegroup).
+Подробные сведения см. в статье [Azure PowerShell: Remove-AzResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup).
 
 ### <a name="rest-api"></a>[REST API](#tab/rest-api)
 
@@ -333,7 +333,7 @@ DELETE https://management.azure.com/subscriptions/{subscriptionId}/resourcegroup
 GET https://management.azure.com/subscriptions/xxxxXXXXxxxxXXXXX/resourceGroups/Check-Azure-Status-RG?api-version=2019-10-01
 ```
 
-Подробные сведения см. в статье [REST API управления ресурсами. Группы ресурсов — удаление](https://docs.microsoft.com/rest/api/resources/resourcegroups/delete).
+Подробные сведения см. в статье [REST API управления ресурсами. Группы ресурсов — удаление](/rest/api/resources/resourcegroups/delete).
 
 ---
 

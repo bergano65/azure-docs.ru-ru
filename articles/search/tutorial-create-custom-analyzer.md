@@ -8,12 +8,12 @@ ms.author: delegenz
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/22/2020
-ms.openlocfilehash: 8d04099f2835102b8fdf63b26bd19b43b206cf6a
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: a9c2a5beae8a9206554dd6c432c1d8442b652696
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86172378"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87021891"
 ---
 # <a name="tutorial-create-a-custom-analyzer-for-phone-numbers"></a>Руководство по Создание пользовательского анализатора телефонных номеров
 
@@ -38,7 +38,7 @@ ms.locfileid: "86172378"
 
 ## <a name="download-files"></a>Загрузка файлов
 
-Исходный код примера для этого руководства расположен в папке [custom-analyzers](https://github.com/Azure-Samples/azure-search-postman-samples/custom-analyzers) репозитория [Azure-Samples/azure-search-postman-samples](https://github.com/Azure-Samples/azure-search-postman-samples) на сайте GitHub.
+Исходный код примера для этого руководства расположен в папке [custom-analyzers](https://github.com/Azure-Samples/azure-search-postman-samples/tree/master/custom-analyzers) репозитория [Azure-Samples/azure-search-postman-samples](https://github.com/Azure-Samples/azure-search-postman-samples) на сайте GitHub.
 
 ## <a name="1---create-azure-cognitive-search-service"></a>1\. Создание экземпляра службы "Когнитивный поиск Azure"
 

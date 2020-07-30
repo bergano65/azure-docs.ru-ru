@@ -9,23 +9,24 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: fada393dcab61cf00a0a3befcf4af3660bf625dc
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 36bebe829ccf81ef5b1832b90b2f73d15d5499af
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86536527"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87384809"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-linux-device"></a>Краткое руководство. Развертывание модуля IoT Edge на виртуальном устройстве Linux
 
 Проверьте работу Azure IoT Edge, как описано в этом кратком руководстве, развернув контейнерный код на виртуальном устройстве IoT Edge (Linux). IoT Edge позволяет удаленно управлять кодом на устройствах, чтобы вы могли передавать больше рабочих нагрузок на пограничные устройства. Для работы с этим кратким руководством мы рекомендуем использовать виртуальную машину Azure для устройства IoT Edge. Так вы сможете быстро создать виртуальную машину для тестирования с установленной службой IoT Edge, а затем удалить ее по завершении работы.
 
 Из этого краткого руководства вы узнаете, как выполнять следующие задачи:
-
-1. Создайте Центр Интернета вещей.
-2. Регистрация устройства IoT Edge в Центре Интернета вещей.
-3. Установка и запуск среды выполнения IoT Edge на виртуальном устройстве.
-4. Удаленное развертывание модуля на устройстве IoT Edge.
+> [!div class="checklist"]
+>
+> * Создайте Центр Интернета вещей.
+> * Регистрация устройства IoT Edge в Центре Интернета вещей.
+> * Установка и запуск среды выполнения IoT Edge на виртуальном устройстве.
+> * Удаленное развертывание модуля на устройстве IoT Edge.
 
 ![Схема рассматриваемой в этом кратком руководстве архитектуры для устройства и облака](./media/quickstart-linux/install-edge-full.png)
 
@@ -116,14 +117,7 @@ ms.locfileid: "86536527"
 * Пользователям Bash и Cloud Shell нужно скопировать следующую команду в текстовый редактор, а затем заменить текст заполнителя своими данными и скопировать его в окно Bash или Cloud Shell:
 
    ```azurecli-interactive
-   az deployment group create \
-   --resource-group IoTEdgeResources \
-   --template-uri "https://aka.ms/iotedge-vm-deploy" \
-   --parameters dnsLabelPrefix='my-edge-vm' \
-   --parameters adminUsername='azureUser' \
-   --parameters deviceConnectionString=$(az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name <REPLACE_WITH_HUB_NAME> -o tsv) \
-   --parameters authenticationType='password' \
-   --parameters adminPasswordOrKey="<REPLACE_WITH_PASSWORD>"
+   az deployment group create --resource-group IoTEdgeResources --template-uri "https://aka.ms/iotedge-vm-deploy" --parameters dnsLabelPrefix='my-edge-vm' --parameters adminUsername='azureUser' --parameters deviceConnectionString=$(az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name <REPLACE_WITH_HUB_NAME> -o tsv) --parameters authenticationType='password' --parameters adminPasswordOrKey="<REPLACE_WITH_PASSWORD>"
    ```
 
 * Пользователям PowerShell нужно скопировать следующую команду в окно PowerShell, а затем заменить текст заполнителя своими данными:
