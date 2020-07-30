@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 73d7c129a63e4d63ad5cc05d8dac47720c7955e4
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 748e31499a4aa8f1ddd2cea4e918b688426338fa
+ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86511926"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87117255"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-windows-device"></a>Краткое руководство. Развертывание модуля IoT Edge на виртуальном устройстве с Windows
 
@@ -22,10 +22,12 @@ ms.locfileid: "86511926"
 
 Из этого краткого руководства вы узнаете, как выполнять следующие задачи:
 
-1. Создайте Центр Интернета вещей.
-2. Регистрация устройства IoT Edge в Центре Интернета вещей.
-3. Установка и запуск среды выполнения IoT Edge на виртуальном устройстве.
-4. Удаленное развертывание модуля на устройстве IoT Edge и отправка телеметрии в Центр Интернета вещей.
+> [!div class="checklist"]
+>
+> * Создайте Центр Интернета вещей.
+> * Регистрация устройства IoT Edge в Центре Интернета вещей.
+> * Установка и запуск среды выполнения IoT Edge на виртуальном устройстве.
+> * Удаленное развертывание модуля на устройстве IoT Edge и отправка телеметрии в Центр Интернета вещей.
 
 ![Схема рассматриваемой в этом кратком руководстве архитектуры для устройства и облака](./media/quickstart/install-edge-full.png)
 

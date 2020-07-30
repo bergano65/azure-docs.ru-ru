@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 04/27/2020
 ms.author: cshoe
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: aa4087f3eafcd217eedc707697d093155b13b9e6
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: a7cdeb7bfde7396026b782382b34228c309b37d7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83116451"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088151"
 ---
 # <a name="create-a-function-that-integrates-with-azure-logic-apps"></a>Создание функции, интегрируемой с Azure Logic Apps
 
@@ -38,7 +38,7 @@ ms.locfileid: "83116451"
 + Учетная запись [Outlook.com](https://outlook.com/) (для отправки уведомлений).
 
 > [!NOTE]
-> Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать соединитель Gmail только с определенными утвержденными Google приложениями и службами. Вы также можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
+> Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать соединитель Gmail только с определенными утвержденными Google приложениями и службами. Вы также можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
 
 + В этой статье в качестве отправной точки используются ресурсы, созданные при работе со статьей [Создание первой функции на портале Azure](functions-create-first-azure-function.md).
 Выполните шаги в этой статье для создания приложения-функции, если вы еще не сделали этого.
@@ -304,4 +304,3 @@ API-интерфейсы Cognitive Services доступны как отдель
 > [Создание бессерверного API с помощью Функций Azure](functions-create-serverless-api.md)
 
 Дополнительные сведения об Azure Logic Apps см. в [этой статье](../logic-apps/logic-apps-overview.md).
-

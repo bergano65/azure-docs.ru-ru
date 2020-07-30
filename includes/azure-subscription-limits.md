@@ -1,11 +1,23 @@
 ---
- Title: включение описания файла: включить автора файла: росжа MS. Service: Azure-Resource-Manager MS. раздел: включить MS. Date: 05/18/2018 МС. Автор: жрос MS. Custom: включаемый файл
+title: Включить имя файла
+description: включить файл
+author: rothja
+ms.service: azure-resource-manager
+ms.topic: include
+ms.date: 05/18/2018
+ms.author: jroth
+ms.custom: include file
+ms.openlocfilehash: db822722b12921ab98b3e5cae67e28f4ca7ede04
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87298753"
 ---
-
 | Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
 | Число виртуальных ЦП на [подписку](../articles/billing-buy-sign-up-azure-subscription.md)<sup>1</sup> |20 |10 000 |
-| [Соадминистраторов](../articles/cost-management-billing/manage/add-change-subscription-administrator.md) на подписку |200 |200 |
+| [Соадминистраторы](../articles/cost-management-billing/manage/add-change-subscription-administrator.md) на подписку |200 |200 |
 | [Учетных записей хранения](../articles/storage/common/storage-create-storage-account.md) на подписку<sup>2</sup> |100 |100 |
 | [Облачные службы](../articles/cloud-services/cloud-services-choose-me.md) на подписку |20 |200 |
 | [Локальные сети](/previous-versions/azure/reference/jj157100(v=azure.100)) на подписку |10 |500 |
@@ -14,7 +26,7 @@
 | [Территориальные группы](../articles/virtual-network/virtual-networks-migrate-to-regional-vnet.md) на подписку |256 |256 |
 | Длина имени подписки (в символах) | 64 | 64 |
 
-<sup>1</sup> Очень мелкие экземпляры считаются одним виртуальных ЦП в сторону ограничения виртуальных ЦП, несмотря на использование частичного ядра ЦП.
+<sup>1</sup> Сверхмалые экземпляры считаются как один виртуальный ЦП в контексте ограничения числа виртуальных ЦП, даже если ядро ЦП загружено не полностью.
 
 <sup>2</sup>Ограничение учетной записи хранения распространяются на учетные записи хранения класса "Стандартный" и "Премиум". 
 

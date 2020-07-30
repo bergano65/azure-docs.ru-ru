@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 01/25/2019
 ms.author: juliako
-ms.openlocfilehash: 44cf234fd8419164f7dd7f8320952a5c6c0842e0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ccc981af63391527473452e2f53e7abd108fb739
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74896121"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092156"
 ---
 # <a name="cli-example-publish-an-asset"></a>Пример CLI. Публикация ресурса
 
@@ -27,7 +27,7 @@ ms.locfileid: "74896121"
 
 ## <a name="prerequisites"></a>предварительные требования 
 
-[Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
+[Создание учетной записи Служб мультимедиа](./create-account-howto.md).
 
 [!INCLUDE [media-services-cli-instructions.md](../../../includes/media-services-cli-instructions.md)]
 

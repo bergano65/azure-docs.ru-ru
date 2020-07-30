@@ -11,12 +11,12 @@ author: ronitr
 ms.author: ronitr
 ms.reviewer: carlrab, vanto
 ms.date: 08/05/2019
-ms.openlocfilehash: 34cbba15f5798286be63171da0173f6214fe7822
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: ac945b14091ae01cfad66c3776c84406583e491f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84022732"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87037123"
 ---
 # <a name="use-cli-to-configure-sql-database-auditing-and-advanced-threat-protection"></a>Настройка аудита и Расширенной защиты от угроз для Базы данных SQL с помощью CLI
 
@@ -52,7 +52,7 @@ az group delete --name $resource
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| | |
+| Get-Help | Описание |
 |---|---|
 | [az sql db audit-policy](/cli/azure/sql/db/audit-policy) | Задает политику аудита для базы данных. |
 | [az sql db threat-policy](/cli/azure/sql/db/threat-policy) | Задает политику Расширенной защиты от угроз для базы данных. |
