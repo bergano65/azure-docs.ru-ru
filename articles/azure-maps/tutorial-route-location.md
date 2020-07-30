@@ -1,20 +1,20 @@
 ---
 title: Руководство по Поиск маршрута к местоположению | Microsoft Azure Maps
 description: В этом руководстве показано, как отобразить маршрут к местоположению (точку интереса) на карте с помощью службы построения маршрутов в Microsoft Azure Maps.
-author: philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 01/14/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.custom: mvc
-ms.openlocfilehash: 98c36176ecd2996e5f735c52017162a076ef4bde
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: mvc, devx-track-javascript
+ms.openlocfilehash: d6a526e23be47c9e05de0c9064bdb4095a49d132
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80333764"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87287411"
 ---
 # <a name="tutorial-route-to-a-point-of-interest-using-azure-maps"></a>Руководство по Поиск маршрута к точке интереса с помощью службы "Карты Azure"
 
@@ -27,7 +27,7 @@ ms.locfileid: "80333764"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед тем, как продолжить работу, выполните шаги в разделе [Создание учетной записи службы "Карты Azure"](quick-demo-map-app.md#create-an-account-with-azure-maps). Для этого вам понадобится подписка с ценовой категорией S1. Выполните действия, описанные в разделе [Получение первичного ключа для учетной записи](quick-demo-map-app.md#get-the-primary-key-for-your-account), чтобы получить первичный ключ для вашей учетной записи. Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
+Перед тем, как продолжить работу, выполните шаги в разделе [Создание учетной записи службы "Карты Azure"](quick-demo-map-app.md#create-an-azure-maps-account). Для этого вам понадобится подписка с ценовой категорией S1. Выполните действия, описанные в разделе [Получение первичного ключа для учетной записи](quick-demo-map-app.md#get-the-primary-key-for-your-account), чтобы получить первичный ключ для вашей учетной записи. Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
 
 <a id="getcoordinates"></a>
 

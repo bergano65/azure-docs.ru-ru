@@ -4,15 +4,15 @@ description: Узнайте, как сэкономить расходы на г�
 author: yashesvi
 ms.reviewer: yashar
 ms.service: cost-management-billing
-ms.topic: conceptual
-ms.date: 04/30/2020
+ms.topic: how-to
+ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: d6d91b455501e2deec4f5ea36e48fafd17144b2c
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.openlocfilehash: c90824ed0119378c2939c4b5edf9dd5b8c31b8c0
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82628152"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87287615"
 ---
 # <a name="save-costs-for-azure-app-service-isolated-stamp-fee-with-reserved-capacity"></a>Экономия расходов на гербовый сбор Службы приложений Azure (цен. категория "Изолированный") с резервной мощностью
 
