@@ -4,14 +4,14 @@ description: Управляйте учетной записью, базой да
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 06/03/2020
+ms.date: 07/29/2020
 ms.author: mjbrown
-ms.openlocfilehash: 97b5118f74cbd098beea804c312ed08f1a152873
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0ae29039702a6f73a33f73afc366532077aa4b71
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87067172"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87432839"
 ---
 # <a name="manage-azure-cosmos-resources-using-azure-cli"></a>Управление ресурсами Azure Cosmos с помощью Azure CLI
 
@@ -19,7 +19,7 @@ ms.locfileid: "87067172"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+Если вы решили установить и использовать CLI локально, для работы с этим разделом требуется Azure CLI версии 2.9.1 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="azure-cosmos-accounts"></a>Учетные записи Azure Cosmos
 
@@ -308,6 +308,7 @@ az lock delete --ids $lockid
 В следующих разделах описаны процедуры управления контейнером Azure Cosmos DB, включая:
 
 * [Создание контейнера](#create-a-container)
+* [Создание контейнера с автомасштабированием](#create-a-container-with-autoscale)
 * [Создание контейнера с включенным TTL](#create-a-container-with-ttl)
 * [Создание контейнера с настраиваемой политикой индексирования](#create-a-container-with-a-custom-index-policy)
 * [Изменение пропускной способности контейнера](#change-container-throughput)
@@ -330,6 +331,25 @@ az cosmosdb sql container create \
     -a $accountName -g $resourceGroupName \
     -d $databaseName -n $containerName \
     -p $partitionKey --throughput $throughput
+```
+
+### <a name="create-a-container-with-autoscale"></a>Создание контейнера с автомасштабированием
+
+Создайте контейнер Cosmos с политикой индексов по умолчанию, ключом секции и автомасштабированием единиц запросов в секунду для 4000.
+
+```azurecli-interactive
+# Create a SQL API container
+resourceGroupName='MyResourceGroup'
+accountName='mycosmosaccount'
+databaseName='database1'
+containerName='container1'
+partitionKey='/myPartitionKey'
+maxThroughput=4000
+
+az cosmosdb sql container create \
+    -a $accountName -g $resourceGroupName \
+    -d $databaseName -n $containerName \
+    -p $partitionKey --max-throughput $maxThroughput
 ```
 
 ### <a name="create-a-container-with-ttl"></a>Создание контейнера с TTL

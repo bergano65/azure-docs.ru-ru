@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/05/2018
-ms.openlocfilehash: fe117dfcb474b2797e026d6fadc3cdec144d34c3
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: d3ea40d092feb9d1ae6eb3c06aab765f109b088f
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318680"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87432761"
 ---
 # <a name="deploy-azure-machine-learning-studio-classic-workspace-using-azure-resource-manager"></a>Развертывание рабочей области Машинное обучение Azure Studio (классическая модель) с помощью Azure Resource Manager
 
-**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+**применимо к:** ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 Шаблон развертывания Azure Resource Manager позволяет сэкономить время, предоставляя масштабируемый способ развертывания взаимосвязанных компонентов с возможностью проверки и механизмом повтора. Например, чтобы настроить рабочие области Машинное обучение Azure Studio (классические), необходимо сначала настроить учетную запись хранения Azure, а затем развернуть рабочую область. Представьте себе выполнение этого задания вручную для сотен рабочих областей. Более простой альтернативой является использование шаблона Azure Resource Manager для развертывания рабочей области Studio (классической) и всех ее зависимостей. В этой статье представлено пошаговое выполнение этого процесса. Подробный обзор Azure Resource Manager см. в статье [Общие сведения об Azure Resource Manager](../../azure-resource-manager/management/overview.md).
 

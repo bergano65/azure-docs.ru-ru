@@ -4,14 +4,14 @@ description: Используйте Helm с AKS и реестром контей
 services: container-service
 author: zr-msft
 ms.topic: article
-ms.date: 04/20/2020
+ms.date: 07/28/2020
 ms.author: zarhoads
-ms.openlocfilehash: 1f67605918e093e9ab28aa88be777d27acd831ef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0ca2d7ccc863e2208db1212ef3d3f10fa709d069
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82169574"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87407121"
 ---
 # <a name="quickstart-develop-on-azure-kubernetes-service-aks-with-helm"></a>Краткое руководство. Разработка в службе Azure Kubernetes Service (AKS) с помощью Helm
 
@@ -23,11 +23,10 @@ ms.locfileid: "82169574"
 
 * Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 * [Установленный Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
-* DOCKER установлен и настроен. Docker предоставляет пакеты, которые позволяют настроить Docker в системе [Mac][docker-for-mac], [Windows][docker-for-windows] или [Linux][docker-for-linux].
 * [Установлен Helm v3][helm-install].
 
 ## <a name="create-an-azure-container-registry"></a>Создание реестра контейнеров Azure
-Чтобы использовать Helm для запуска приложения в кластере AKS, вам понадобится реестр контейнеров Azure для хранения образов контейнеров. В приведенном ниже примере с помощью команды [AZ запись контроля][az-acr-create] доступа создается для создания записи контроля доступа с именем *михелмакр* в группе ресурсов *MyResourceGroup* с номером SKU *Basic* . Необходимо указать собственное уникальное имя реестра. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. SKU *Базовый* — это оптимизированная по стоимости точка входа для целей разработки, обеспечивающая баланс ресурсов хранения и пропускной способности.
+Чтобы использовать Helm для запуска приложения в кластере AKS, вам понадобится реестр контейнеров Azure для хранения образов контейнеров. В приведенном ниже примере с помощью команды [AZ запись контроля][az-acr-create] доступа создается для создания записи контроля доступа с именем *михелмакр* в группе ресурсов *MyResourceGroup* с номером SKU *Basic* . Необходимо указать собственное уникальное имя реестра. Имя реестра должно быть уникальным в рамках Azure и содержать от 5 до 50 буквенно-цифровых символов. SKU *Базовый* — это оптимизированная по стоимости точка входа для целей разработки, обеспечивающая баланс ресурсов хранения и пропускной способности.
 
 ```azurecli
 az group create --name MyResourceGroup --location eastus
@@ -57,14 +56,6 @@ az acr create --resource-group MyResourceGroup --name MyHelmACR --sku Basic
   "type": "Microsoft.ContainerRegistry/registries"
 }
 ```
-
-Чтобы использовать экземпляр записи контроля доступа, необходимо сначала войти в систему. Для входа используйте команду [AZ запись контроля][az-acr-login] доступа. В приведенном ниже примере выполняется вход в запись контроля доступа с именем *михелмакр*.
-
-```azurecli
-az acr login --name MyHelmACR
-```
-
-Команда возвращает сообщение *Login "успешно выполнено* " после завершения.
 
 ## <a name="create-an-azure-kubernetes-service-cluster"></a>Создание кластера Службы Azure Kubernetes
 
@@ -101,7 +92,7 @@ git clone https://github.com/Azure/dev-spaces
 cd dev-spaces/samples/nodejs/getting-started/webfrontend
 ```
 
-## <a name="create-a-dockerfile"></a>Создание Dockerfile
+## <a name="create-a-dockerfile"></a>Создание файла Dockerfile
 
 Создайте новый файл *Dockerfile* , используя следующую команду:
 
@@ -122,18 +113,12 @@ CMD ["node","server.js"]
 
 ## <a name="build-and-push-the-sample-application-to-the-acr"></a>Создание и отправка примера приложения в запись контроля доступа
 
-Получите адрес сервера входа с помощью команды [AZ login List][az-acr-list] и запросите *loginServer*:
+Используйте команду [AZ запись контроля][az-acr-build] доступа для сборки и отправки образа в реестр с помощью предыдущего Dockerfile. Символ `.` в конце команды задает расположение Dockerfile, в данном случае это текущий каталог.
 
 ```azurecli
-az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
-```
-
-Используйте DOCKER для создания, пометки и отправки примера контейнера приложения в запись контроля доступа:
-
-```console
-docker build -t webfrontend:latest .
-docker tag webfrontend <acrLoginServer>/webfrontend:v1
-docker push <acrLoginServer>/webfrontend:v1
+az acr build --image webfrontend:v1 \
+  --registry MyHelmACR \
+  --file Dockerfile .
 ```
 
 ## <a name="create-your-helm-chart"></a>Создание диаграммы Helm
@@ -144,9 +129,9 @@ docker push <acrLoginServer>/webfrontend:v1
 helm create webfrontend
 ```
 
-Выполните следующие обновления для *интерфейсов YAML*:
+Выполните следующие обновления для *интерфейсов YAML*. Замените loginServer реестра, записанный на предыдущем шаге, например *myhelmacr.azurecr.IO*:
 
-* Измените `image.repository` на `<acrLoginServer>/webfrontend`.
+* Измените `image.repository` на `<loginServer>/webfrontend`.
 * Измените `service.type` на `LoadBalancer`.
 
 Пример:
@@ -159,7 +144,7 @@ helm create webfrontend
 replicaCount: 1
 
 image:
-  repository: <acrLoginServer>/webfrontend
+  repository: *myhelmacr.azurecr.io*/webfrontend
   pullPolicy: IfNotPresent
 ...
 service:
@@ -168,7 +153,7 @@ service:
 ...
 ```
 
-Обновите `appVersion` `v1` в в *интерфейсе YAML*. Например:
+Обновите `appVersion` `v1` в в *интерфейсе YAML*. Например.
 
 ```yml
 apiVersion: v2
@@ -218,16 +203,11 @@ az group delete --name MyResourceGroup --yes --no-wait
 > [!div class="nextstepaction"]
 > [Документация по Helm][helm-documentation]
 
-[az-acr-login]: /cli/azure/acr#az-acr-login
 [az-acr-create]: /cli/azure/acr#az-acr-create
-[az-acr-list]: /cli/azure/acr#az-acr-list
+[az-acr-build]: /cli/azure/acr#az-acr-build
 [az-group-delete]: /cli/azure/group#az-group-delete
 [az aks get-credentials]: /cli/azure/aks#az-aks-get-credentials
 [az aks install-cli]: /cli/azure/aks#az-aks-install-cli
-
-[docker-for-linux]: https://docs.docker.com/engine/installation/#supported-platforms
-[docker-for-mac]: https://docs.docker.com/docker-for-mac/
-[docker-for-windows]: https://docs.docker.com/docker-for-windows/
 [example-nodejs]: https://github.com/Azure/dev-spaces/tree/master/samples/nodejs/getting-started/webfrontend
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/
 [helm]: https://helm.sh/

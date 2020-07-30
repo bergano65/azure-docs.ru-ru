@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 03/13/2017
-ms.openlocfilehash: e654950360b7891e59f4f273efb7139a5223854a
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 133de2c6b4fd4f970595a0e46c24167ab10c0aea
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324851"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87432115"
 ---
 # <a name="perform-analytics-with-azure-machine-learning-studio-classic-using-a-sql-server-database"></a>Выполнение анализа с помощью Машинное обучение Azure Studio (классическая модель) с использованием базы данных SQL Server
 
-**применимо к:** ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-azure-ml.md) ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) 
+**применимо к:** ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 
 Зачастую на предприятиях, работающих с локальными данными, используются преимущества масштабируемости и гибкости облака для рабочих нагрузок машинного обучения. Но при этом на предприятиях не хотят нарушать свои текущие бизнес-процессы и рабочие процессы, перемещая их локальные данные в облако. Машинное обучение Azure Studio (классическая модель) теперь поддерживает чтение данных из базы данных SQL Server, а затем обучение и вычисление модели с этими данными. Больше не требуется вручную копировать и синхронизировать данные между облаком и локальным сервером. Вместо этого модуль **Импорт данных** в машинное обучение Azure Studio (классическая модель) теперь может считываться непосредственно из базы данных SQL Server для заданий обучения и оценки.

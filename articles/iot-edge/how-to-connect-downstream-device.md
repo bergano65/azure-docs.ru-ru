@@ -11,12 +11,13 @@ services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: c7de0fdf6a22b1414be297b6958841ba5c251c4b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+- devx-track-javascript
+ms.openlocfilehash: b6d2f502eb6bb6bd70e6d76ec88aa332c9ecdc77
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84309226"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87419875"
 ---
 # <a name="connect-a-downstream-device-to-an-azure-iot-edge-gateway"></a>Подключение подчиненного устройства к шлюзу Azure IoT Edge
 
@@ -36,7 +37,7 @@ ms.locfileid: "84309226"
 
 В этой статье под терминами *шлюз* и *шлюз IoT Edge* подразумевается устройство IoT Edge, которое настроенное в качестве прозрачного шлюза.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Наличие файла сертификата корневого ЦС, который использовался для создания сертификата ЦС устройства, в [настройке устройства IOT EDGE в качестве прозрачного шлюза](how-to-create-transparent-gateway.md) , доступного на подчиненном устройстве. Подчиненное устройство использует этот сертификат для проверки подлинности устройства шлюза. Если вы использовали демонстрационные сертификаты, сертификат корневого ЦС называется **Азуре-ИОТ-тест-Онли. root. ca. CERT. pem**.
 * Измените строку подключения, указывающую на устройство шлюза, как описано в разделах [Проверка подлинности подчиненного устройства в центре Интернета вещей Azure](how-to-authenticate-downstream-device.md).
@@ -211,6 +212,6 @@ openssl s_client -connect mygateway.contoso.com:8883 -CAfile <CERTDIR>/certs/azu
 2. Разрешается ли имя узла шлюза в IP-адрес? Вы можете разрешить периодические подключения с помощью DNS или путем добавления записи файла узла на конечном устройстве.
 3. Открыты ли порты связи в брандмауэре? Связь, основанная на используемом протоколе (МКТТС: 8883/AMQPS: 5671/HTTPS: 433), должна быть возможна между подчиненным устройством и прозрачным IoT Edge.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как IoT Edge расширяет [возможности автономной работы](offline-capabilities.md) для подчиненных устройств.

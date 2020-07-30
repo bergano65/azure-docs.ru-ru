@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 03/20/2017
-ms.openlocfilehash: cc7858010ea43f676a43f8bf16e228c8248805bf
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: c8935be1261b693cfb4033a9d16c868e11b1fa68
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318527"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87432386"
 ---
 # <a name="manage-experiment-runs-in-azure-machine-learning-studio-classic"></a>Управление запусками экспериментов в Машинное обучение Azure Studio (классическая модель)
 
-**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+**применимо к:** ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 
 Разработка модели прогнозной аналитики идет по итерациям — по мере изменения разных функций и параметров экспериментов выполняется сведение результатов, пока не будет получена обученная эффективная модель. Ключ к этому процессу — отслеживание различных итераций параметров и конфигураций эксперимента.

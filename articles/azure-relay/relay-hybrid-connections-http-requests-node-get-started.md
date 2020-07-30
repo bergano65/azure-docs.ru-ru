@@ -3,12 +3,13 @@ title: Azure Relay гибридные подключения-запросов HT
 description: Создание консольного приложения Node.js для HTTP-запросов гибридных подключений Azure Relay в Node.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 4e40b16d71e8d651e687fa8dea93efeab7064ca9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-javascript
+ms.openlocfilehash: ff6b4e6b99299091910df537bf90984f493405e3
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85316917"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382871"
 ---
 # <a name="get-started-with-relay-hybrid-connections-http-requests-in-node"></a>Начало работы с HTTP-запросами гибридных подключений Azure Relay в Node
 
@@ -53,7 +54,7 @@ ms.locfileid: "85316917"
 
 Поздравляем, вы создали приложение для гибридных подключений с помощью Node.js!
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом кратком руководстве описано, как создать клиентские и серверные приложения Node.js, которые отправляют и получают сообщения по протоколу HTTP. Функция гибридных подключений службы Azure Relay также поддерживает использование протокола WebSocket для отправки и получения сообщений. См. дополнительные сведения об [использовании протокола WebSocket с гибридными подключениями Azure Relay](relay-hybrid-connections-node-get-started.md).
 
 В этом кратком руководстве описано, как использовать Node.js для создания клиентских и серверных приложений. Сведения о том, как создавать клиентские и серверные приложения с помощью .NET Framework, см. в руководствах по использованию [.NET и WebSocket](relay-hybrid-connections-dotnet-get-started.md) или [.NET и HTTP](relay-hybrid-connections-http-requests-dotnet-get-started.md).

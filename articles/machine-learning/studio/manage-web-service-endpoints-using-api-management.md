@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 11/03/2017
-ms.openlocfilehash: dcbf9ba00592a9f4e25f9355549629f7eeb9b92a
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 08fcf3540b2f8677f3fbfff49f21f99062d0ca40
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318493"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87433264"
 ---
 # <a name="manage-azure-machine-learning-studio-classic-web-services-using-api-management"></a>Управление веб-службами Студии машинного обучения Azure (классическая) с помощью службы Управление API
 
-**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+**применимо к:** ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 
 ## <a name="overview"></a>Обзор
@@ -69,7 +69,7 @@ ms.locfileid: "87318493"
 4. Введите значение для параметра \*\*"Суффикс URL-адреса веб-API". Это значение будет последней частью URL-адреса, по которому клиенты отправляют запросы к этому экземпляру службы (в нашем примере используется суффикс azureml-demo).
 5. В поле **Схема URL-адресов API** выберите значение **HTTPS**.
 6. В поле **Продукты** выберите значение **Starter** (Начальный комплект)
-7. Нажмите кнопку **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 
 ## <a name="add-the-operations"></a>Добавление операций

@@ -3,12 +3,13 @@ title: Ресурсы для разработчиков — Language Understandi
 description: Пакеты SDK, API-интерфейсы RESTFUL, CLI, помогают разрабатывать приложения Language Understanding (LUIS) на языке программирования. Управляйте ресурсами Azure и прогнозами LUIS.
 ms.topic: reference
 ms.date: 05/19/2020
-ms.openlocfilehash: d8465108935a2d760afaacf6e17f98475529fbe2
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 7a7769d04d3cf41cee9f28b49d38e80deeaddcf9
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87337251"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87404996"
 ---
 # <a name="sdk-rest-and-cli-developer-resources-for-language-understanding-luis"></a>Ресурсы для разработчиков SDK, RESTFUL и CLI для Language Understanding (LUIS)
 
@@ -66,7 +67,7 @@ ms.locfileid: "87337251"
 
 В следующей таблице описаны параметры, обозначенные фигурными скобками `{}` в предыдущей таблице.
 
-|Параметр|Назначение|
+|Параметр|Цель|
 |--|--|
 |`your-resource-name`|Имя ресурса Azure|
 |`q` или `query`|Текст фразы, отправляемый из клиентского приложения, такого как чат-бот|

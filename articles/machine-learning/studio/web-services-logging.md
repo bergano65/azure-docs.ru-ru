@@ -10,16 +10,16 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: how-to
 ms.date: 06/15/2017
-ms.openlocfilehash: baaad137e4a5bc5268642addb5779961b7be3b04
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: b879fac7482b000e1b92f2fcc3f7586ae7dae321
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326245"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87430207"
 ---
 # <a name="enable-logging-for-azure-machine-learning-studio-classic-web-services"></a>Включение ведения журнала для веб-служб Машинное обучение Azure Studio (классическая модель)
 
-**применимо к:** ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-azure-ml.md) ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) 
+**применимо к:** ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 
 В этом документе содержатся сведения о возможности ведения журнала в веб-службах Машинное обучение Studio (классическая модель). Ведение журнала предоставляет дополнительные сведения, кроме номера ошибки и сообщения, которые могут помочь при устранении неполадок при вызове API-интерфейсов Машинное обучение Studio (классическая модель).  
@@ -44,7 +44,7 @@ ms.locfileid: "87326245"
 
    ![Выбор уровня ведения журнала](./media/web-services-logging/enable-logging.png)
 
-6. Щелкните **Сохранить**.
+6. Выберите команду **Сохранить**.
 
 7. Для классических веб-служб создайте контейнер **ml-diagnostics**.
 

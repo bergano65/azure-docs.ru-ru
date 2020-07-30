@@ -4,18 +4,18 @@ description: Узнайте, как создать контейнер в Azure C
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 04/24/2020
+ms.date: 07/29/2020
 ms.author: mjbrown
-ms.openlocfilehash: 22c51497a9c9a331f1337134fbaf7c781b9c8ba7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 761789b36e85b16f0b4482cef12645e673c73be7
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85390896"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87429698"
 ---
 # <a name="create-an-azure-cosmos-container"></a>Создание контейнера Azure Cosmos
 
-Узнайте, как создавать контейнеры Azure Cosmos (коллекции, таблицы или графы). Для этого можно использовать портал Azure, Azure CLI или поддерживаемые пакеты SDK. В этой статье показано, как создать контейнер, указать ключ секции и подготовить пропускную способность.
+В этой статье описываются различные способы создания контейнера Azure Cosmos (коллекции, таблицы или графа) с помощью портал Azure, Azure CLI, PowerShell или поддерживаемых пакетов SDK. В этой статье показано, как создать контейнер, указать ключ секции и подготовить пропускную способность.
 
 > [!NOTE]
 > При создании контейнеров следите за тем, чтобы не создать два контейнера с одинаковыми именами, но в разных регистрах. Причина в том, что некоторые компоненты платформы Azure не учитывают регистр. Это может привести к путанице или конфликтам в данных телеметрии и действиях с контейнерами с такими именами.
@@ -34,7 +34,7 @@ ms.locfileid: "85390896"
    * Введите идентификатор контейнера.
    * Введите ключ секции.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Нажмите кнопку **ОК**.
+   * Щелкните **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-sql.png" alt-text="Снимок экрана панели обозреватель данных с выделенным новым контейнером":::
 
@@ -50,7 +50,7 @@ ms.locfileid: "85390896"
    * Введите идентификатор контейнера.
    * Введите ключ сегмента.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Нажмите кнопку **ОК**.
+   * Щелкните **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-mongodb.png" alt-text="Снимок экрана: Azure Cosmos DB API для MongoDB, диалоговое окно "Добавление контейнера"":::
 
@@ -66,7 +66,7 @@ ms.locfileid: "85390896"
    * Введите имя таблицы.
    * Укажите свойства и первичный ключ.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Нажмите кнопку **ОК**.
+   * Щелкните **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-cassandra.png" alt-text="Снимок экрана API Cassandra, диалоговое окно добавления таблицы":::
 
@@ -86,7 +86,7 @@ ms.locfileid: "85390896"
    * Выберите емкость **Без ограничений**.
    * Введите ключ секции для вершин.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Нажмите кнопку **ОК**.
+   * Щелкните **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-gremlin.png" alt-text="Снимок экрана API Gremlin, диалоговое окно добавления графа":::
 
@@ -100,7 +100,7 @@ ms.locfileid: "85390896"
 
    * Укажите идентификатор таблицы.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Нажмите кнопку **ОК**.
+   * Щелкните **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-table.png" alt-text="Снимок экрана API таблиц, диалоговое окно добавления таблицы":::
 
@@ -111,7 +111,7 @@ ms.locfileid: "85390896"
 
 В приведенных ниже ссылках показано, как создать ресурсы контейнера для Azure Cosmos DB с помощью Azure CLI.
 
-Список всех Azure CLI примеров для всех Azure Cosmos DB API см. в разделе [API SQL](cli-samples.md), [API Cassandra](cli-samples-cassandra.md), [API MongoDB](cli-samples-mongodb.md), [Gremlin API](cli-samples-gremlin.md)и [API таблиц](cli-samples-table.md)
+Список всех Azure CLI примеров для всех Azure Cosmos DB API см. в [Azure CLI примерах для Azure Cosmos DB](cli-samples.md).
 
 * [Создание контейнера с Azure CLI](manage-with-cli.md#create-a-container)
 * [Создание коллекции для Azure Cosmos DB для API-интерфейса MongoDB с Azure CLI](./scripts/cli/mongodb/create.md)
@@ -123,7 +123,7 @@ ms.locfileid: "85390896"
 
 В приведенных ниже ссылках показано, как создать ресурсы контейнера для Azure Cosmos DB с помощью PowerShell.
 
-Список всех Azure CLI примеров для всех Azure Cosmos DB API см. в разделе [API SQL](powershell-samples-sql.md), [API Cassandra](powershell-samples-cassandra.md), [API MongoDB](powershell-samples-mongodb.md), [Gremlin API](powershell-samples-gremlin.md)и [API таблиц](powershell-samples-table.md)
+Список всех примеров PowerShell для всех Azure Cosmos DB API см. в статье API [SQL](powershell-samples-sql.md), [API Cassandra](powershell-samples-cassandra.md), API [MongoDB](powershell-samples-mongodb.md), [API Gremlin](powershell-samples-gremlin.md)и [API таблиц](powershell-samples-table.md)
 
 * [Создание контейнера с помощью PowerShell](manage-with-powershell.md#create-container)
 * [Создание коллекции для Azure Cosmos DB API MongoDB с помощью PowerShell](./scripts/powershell/mongodb/ps-mongodb-create.md)
@@ -169,7 +169,7 @@ session.Execute(CREATE TABLE myKeySpace.myTable(
     lastName text) WITH cosmosdb_provisioned_throughput=1000);
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Partitioning in Azure Cosmos DB](partitioning-overview.md) (Секционирование в Azure Cosmos DB)
 * [Единицы запросов в Azure Cosmos DB](request-units.md)

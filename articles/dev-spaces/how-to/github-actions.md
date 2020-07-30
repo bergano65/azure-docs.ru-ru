@@ -6,12 +6,13 @@ ms.topic: conceptual
 description: Проверка и проверка изменений в запросе на вытягивание непосредственно в службе Kubernetes Azure с помощью действий GitHub и Azure Dev Spaces
 keywords: DOCKER, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, действия GitHub, Helm, сеть службы, маршрутизация в сети службы, kubectl, K8S
 manager: gwallace
-ms.openlocfilehash: a83da0ef3958748831eb0eeda1aa5e91efa7ef2e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 9cb240add87a14b0d474cec17684ef65a22cc07a
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80637944"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421031"
 ---
 # <a name="github-actions--azure-kubernetes-service-preview"></a>Действия GitHub & службы Azure Kubernetes (Предварительная версия)
 
@@ -157,7 +158,7 @@ git push origin bike-images
 > [!div class="mx-imgBorder"]
 > ![URL-адрес действия GitHub](../media/github-actions/github-action-url.png)
 
-Перейдите к службе *бикешарингвеб* , открыв URL-адрес из комментария. В качестве пользователя выберите *Аурелиа Бриггс (клиент)* , а затем выберите велосипед для аренды. Убедитесь, что вы больше не видите изображение заполнителя для велосипеда.
+Перейдите к службе *бикешарингвеб* , открыв URL-адрес из комментария. Выберите пользователя *Aurelia Briggs (customer)* , а затем выберите велосипед, который нужно сдать в прокат. Убедитесь, что вы больше не видите изображение заполнителя для велосипеда.
 
 При объединении изменений в *главную* ветвь в вилке выполняется другое действие для перестроения и запуска всего приложения в родительском пространстве разработки. В этом примере родительское пространство — *dev*. Это действие настраивается в [. GitHub/Workflows/bikesharing. yml][github-action-bikesharing-yaml].
 

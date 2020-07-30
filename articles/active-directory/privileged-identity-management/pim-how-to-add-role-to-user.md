@@ -13,12 +13,12 @@ ms.subservice: pim
 ms.date: 07/01/2020
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cdea30e7b630b2fa62b004f98cb67fd1994f915
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: a3370ea52c5bd189f929c0f81a0aa9b59cc77b97
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86024197"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421388"
 ---
 # <a name="assign-azure-ad-roles-in-privileged-identity-management"></a>Назначение ролей Azure AD в управление привилегированными пользователями
 
@@ -33,7 +33,7 @@ ms.locfileid: "86024197"
 1. Войдите в [портал Azure](https://portal.azure.com/) с помощью пользователя, который имеет роль [администратора привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) .
 1. Откройте **Azure AD privileged Identity Management**. Если у вас есть баннер в верхней части страницы обзора, следуйте инструкциям на вкладке **Новая версия** этой статьи. В противном случае следуйте инструкциям на вкладке **Предыдущая версия** .
 
-  [![](media/pim-how-to-add-role-to-user/pim-new-version.png "Select Azure AD > Privileged Identity Management")](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
+  [![Выберите управление привилегированными пользователями Azure AD >.](media/pim-how-to-add-role-to-user/pim-new-version.png)](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
 
 # <a name="new-version"></a>[Новая версия](#tab/new)
 
@@ -209,7 +209,7 @@ ms.locfileid: "86024197"
 
  ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка параметров роли администратора Azure AD в управление привилегированными пользователями](pim-how-to-change-default-settings.md)
 - [Назначение ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-assign-roles.md)

@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 12/07/2017
-ms.openlocfilehash: c30797ad757fa12c4dfdf4749536c1095259eb58
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 89c79f668da3ff924dbb7f27574260118003655f
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87283526"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87433235"
 ---
 # <a name="create-and-share-an-machine-learning-studio-classic-workspace"></a>Создание и совместное использование рабочей области Машинное обучение Studio (классическая модель)
 
-**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+**применимо к:** ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 Чтобы использовать Машинное обучение Azure Studio (классическая модель), необходимо иметь рабочую область Машинное обучение Studio (классическая). Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
 

@@ -5,21 +5,22 @@ author: deborahc
 ms.author: dech
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 05/10/2020
-ms.openlocfilehash: 59feabce099087edb011df471561229bfa88a289
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/29/2020
+ms.openlocfilehash: e8dadbad309a146500db342f55bee9339fde6172
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85118735"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87430989"
 ---
 # <a name="provision-autoscale-throughput-on-database-or-container-in-azure-cosmos-db"></a>Узнайте, как подготовить автомасштабируемую пропускную способность для базы данных или контейнера в Azure Cosmos DB
 
-Узнайте, как подготовить автомасштабируемую пропускную способность для контейнера (коллекции, графа или таблицы) в Azure Cosmos DB. Вы можете включить подготовку пропускной способности для одного контейнера или подготовку автомасштабируемой пропускной способности для целой базы данных, распределив ее между контейнерами в этой базе данных. 
+Узнайте, как подготовить автомасштабируемую пропускную способность для контейнера (коллекции, графа или таблицы) в Azure Cosmos DB. Вы можете включить подготовку пропускной способности для одного контейнера или подготовку автомасштабируемой пропускной способности для целой базы данных, распределив ее между контейнерами в этой базе данных.
 
 ## <a name="azure-portal"></a>Портал Azure
 
 ### <a name="create-new-database-or-container-with-autoscale"></a>Создание новой базы данных или контейнера с автомасштабированием
+
 1. Войдите на [портал Azure](https://portal.azure.com) или в [обозреватель Azure Cosmos DB](https://cosmos.azure.com/).
 
 1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer**.
@@ -51,12 +52,14 @@ ms.locfileid: "85118735"
 > При включении автомасштабирования для существующей базы данных или контейнера начальное значение максимального числа единиц запросов в секунду определяется системой с учетом текущих параметров пропускной способности и хранилища, подготовленных вручную. По завершении операции при необходимости можно изменить значение максимального числа единиц запросов в секунду. [Подробнее.](autoscale-faq.md#how-does-the-migration-between-autoscale-and-standard-manual-provisioned-throughput-work) 
 
 ## <a name="azure-cosmos-db-net-v3-sdk-for-sql-api"></a>Пакет SDK .NET Azure Cosmos DB для API SQL версии 3
+
 Для управления ресурсами автомасштабирования используется пакет SDK .NET Azure Cosmos DB для API SQL [версии 3.9 или более поздней](https://www.nuget.org/packages/Microsoft.Azure.Cosmos). 
 
 > [!IMPORTANT]
 > Пакет SDK .NET можно использовать для создания новых ресурсов автомасштабирования. Пакет SDK не поддерживает миграцию между автомасштабируемой и стандартной (вручную) пропускной способностью. Сейчас этот сценарий миграции поддерживается только на портале Azure. 
 
 ### <a name="create-database-with-shared-throughput"></a>Создание базы данных с совместно используемой пропускной способностью
+
 ```csharp
 // Create instance of CosmosClient
 CosmosClient cosmosClient = new CosmosClient(Endpoint, PrimaryKey);
@@ -69,6 +72,7 @@ database = await cosmosClient.CreateDatabaseAsync(DatabaseName, throughputProper
 ```
 
 ### <a name="create-container-with-dedicated-throughput"></a>Создание контейнеров с выделенной пропускной способностью
+
 ```csharp
 // Get reference to database that container will be created in
 Database database = await cosmosClient.GetDatabase("DatabaseName");
@@ -82,6 +86,7 @@ container = await database.CreateContainerAsync(autoscaleContainerProperties, au
 ```
 
 ### <a name="read-the-current-throughput-rus"></a>Чтение текущей пропускной способности (единиц запросов в секунду)
+
 ```csharp
 // Get a reference to the resource
 Container container = cosmosClient.GetDatabase("DatabaseName").GetContainer("ContainerName");
@@ -97,16 +102,18 @@ int? currentThroughput = autoscaleContainerThroughput.Throughput;
 ```
 
 ### <a name="change-the-autoscale-max-throughput-rus"></a>Изменение максимальной автомасштабируемой пропускной способности (единиц запросов в секунду)
+
 ```csharp
 // Change the autoscale max throughput (RU/s)
 await container.ReplaceThroughputAsync(ThroughputProperties.CreateAutoscaleThroughput(newAutoscaleMaxThroughput));
 ```
 
 ## <a name="azure-cosmos-db-java-v4-sdk-for-sql-api"></a>Пакет SDK Azure Cosmos DB Java версии 4 для API SQL
-Для управления ресурсами автомасштабирования используется пакет SDK Java Azure Cosmos DB для API SQL [версии 4.0 или более поздней](https://mvnrepository.com/artifact/com.azure/azure-cosmos). 
+
+Для управления ресурсами автомасштабирования используется пакет SDK Java Azure Cosmos DB для API SQL [версии 4.0 или более поздней](https://mvnrepository.com/artifact/com.azure/azure-cosmos).
 
 > [!IMPORTANT]
-> Пакет SDK Java можно использовать для создания новых ресурсов автомасштабирования. Пакет SDK не поддерживает миграцию между автомасштабируемой и стандартной (вручную) пропускной способностью. Сейчас этот сценарий миграции поддерживается только на портале Azure. 
+> Пакет SDK Java можно использовать для создания новых ресурсов автомасштабирования. Пакет SDK не поддерживает миграцию между автомасштабируемой и стандартной (вручную) пропускной способностью. Сейчас этот сценарий миграции поддерживается только на портале Azure.
 
 ### <a name="create-database-with-shared-throughput"></a>Создание базы данных с совместно используемой пропускной способностью
 
@@ -233,18 +240,26 @@ container.replaceThroughput(ThroughputProperties.createAutoscaledThroughput(newA
 container.replaceThroughput(ThroughputProperties.createAutoscaledThroughput(newAutoscaleMaxThroughput));
 ```
 
---- 
+---
 
-## <a name="cassandra-api"></a>API Cassandra 
-Инструкции по [использованию команд CQL](manage-scale-cassandra.md#use-autoscale) для включения автомасштабирования см. в этой статье.
+## <a name="cassandra-api"></a>API Cassandra
 
-## <a name="azure-cosmos-db-api-for-mongodb"></a>API Azure Cosmos DB для MongoDB 
-Сведения об [использовании команд расширения MongoDB](mongodb-custom-commands.md) для включения автомасштабирования см. в этой статье.
+Учетные записи Azure Cosmos DB для API Cassandra можно подготовить для автомасштабирования с помощью [команд CQL](manage-scale-cassandra.md#use-autoscale), [Azure CLI](cli-samples.md)или [шаблонов Azure Resource Manager](resource-manager-samples.md).
+
+## <a name="azure-cosmos-db-api-for-mongodb"></a>API Azure Cosmos DB для MongoDB
+
+Учетные записи Azure Cosmos DB для API MongoDB можно подготовить для автомасштабирования с помощью [команд расширения MongoDB](mongodb-custom-commands.md), [Azure CLI](cli-samples.md)или [шаблонов Azure Resource Manager](resource-manager-samples.md).
 
 ## <a name="azure-resource-manager"></a>Azure Resource Manager
-С помощью шаблона диспетчера ресурсов можно подготовить автомасштабируемую пропускную способность для базы данных или контейнера для любого API. Пример см. в [этой статье](manage-sql-with-resource-manager.md#azure-cosmos-account-with-autoscale-throughput).
+
+Azure Resource Manager шаблоны можно использовать для инициализации пропускной способности автомасштабирования для ресурсов базы данных или уровня контейнера для всех API-интерфейсов Azure Cosmos DB. Примеры см. [в разделе Azure Resource Manager Templates for Azure Cosmos DB](resource-manager-samples.md) .
+
+## <a name="azure-cli"></a>Azure CLI
+
+Azure CLI можно использовать для инициализации пропускной способности автомасштабирования в базе данных или ресурсах уровня контейнера для всех API-интерфейсов Azure Cosmos DB. Примеры см. в разделе [Azure CLI Samples for Azure Cosmos DB](cli-samples.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * Подробнее о [преимуществах подготовленной пропускной способности с поддержкой автомасштабирования](provision-throughput-autoscale.md#benefits-of-autoscale).
 * Узнайте, как [выбрать автомасштабируемую или масштабируемую вручную пропускную способность](how-to-choose-offer.md).
 * Изучите[часто задаваемые вопросы об автомасштабировании](autoscale-faq.md).

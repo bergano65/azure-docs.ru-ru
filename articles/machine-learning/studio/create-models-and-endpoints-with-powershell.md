@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 04/04/2017
-ms.openlocfilehash: 9cb5b0b87b1d6adb8e0e5cda06049cfddba3d950
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 744b8e3ecf067e6f5986dde4fbf8abbe3a4c6224
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87283543"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87431981"
 ---
 # <a name="create-multiple-web-service-endpoints-from-one-experiment-with-ml-studio-classic-and-powershell"></a>Создание нескольких конечных точек веб-службы из одного эксперимента с помощью студии машинного обучения (классическая модель) и PowerShell
 
-**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+**применимо к:** ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 При машинном обучении часто возникает следующая задача: требуется создать множество моделей с одинаковым рабочим процессом обучения и одинаковым алгоритмом. Но для их обучения нужно использовать разные входные наборы данных. В этой статье показано, как сделать это в масштабе в Машинное обучение Azure Studio (классическая модель), используя только один эксперимент.
 

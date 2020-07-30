@@ -7,18 +7,18 @@ ms.subservice: studio
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
-ms.custom: seodec18, tracking-python
+ms.custom: seodec18, tracking-python, devx-track-javascript
 ms.date: 05/29/2020
-ms.openlocfilehash: ec88d501fbc262275484f3abaeb7326d963a16e5
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 4d72a811f018bb17a6a7bb7c129d52e6232f7caa
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282523"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87432898"
 ---
 # <a name="how-to-consume-a-machine-learning-studio-classic-web-service"></a>Как использовать веб-службу Машинное обучение Studio (классическая модель)
 
-**применимо к:** ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-azure-ml.md) ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) 
+**применимо к:** ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 
 После развертывания прогнозной модели Машинное обучение Azure Studio (классической) в качестве веб-службы можно использовать REST API для отправки данных и получения прогнозов. Данные можно отправлять в режиме реального времени или пакетном режиме.

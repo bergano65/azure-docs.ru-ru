@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: amishu
-ms.openlocfilehash: 707a0f801a739a7a91cee19635e609305cd8f021
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 21f4494bedd824cef373a391c5635e35ec2600d0
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74805796"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87406883"
 ---
 # <a name="enable-logging-in-the-speech-sdk"></a>Включение ведения журнала в пакете SDK для распознавания речи
 
@@ -26,7 +27,7 @@ ms.locfileid: "74805796"
 
 ## <a name="sample"></a>Пример
 
-Имя файла журнала указано в объекте конфигурации. Используя в `SpeechConfig` качестве примера, предположим, что вы создали экземпляр с именем `config`:
+Имя файла журнала указано в объекте конфигурации. Используя в `SpeechConfig` качестве примера, предположим, что вы создали экземпляр с именем `config` :
 
 ```csharp
 config.SetProperty(PropertyId.Speech_LogFilename, "LogfilePathAndName");
@@ -51,7 +52,7 @@ config.set_property(speechsdk.PropertyId.Speech_LogFilename, "LogfilePathAndName
 Вы можете создать распознаватель из объекта config. Это позволит включить ведение журнала для всех распознавателей.
 
 > [!NOTE]
-> Если создать объект `SpeechSynthesizer` из объекта конфигурации, ведение журнала не будет включено. Если ведение журнала включено, то будут также получены диагностические сообщения из `SpeechSynthesizer`.
+> Если создать объект `SpeechSynthesizer` из объекта конфигурации, ведение журнала не будет включено. Если ведение журнала включено, то будут также получены диагностические сообщения из `SpeechSynthesizer` .
 
 ## <a name="create-a-log-file-on-different-platforms"></a>Создание файла журнала на разных платформах
 
@@ -79,7 +80,7 @@ File logFile = new File(dir, "logfile.txt");
 config.setProperty(PropertyId.Speech_LogFilename, logFile.getAbsolutePath());
 ```
 
-Приведенный выше код сохранит файл журнала во внешнем хранилище в корне каталога конкретного приложения. Пользователь может получить доступ к файлу с помощью диспетчера файлов (обычно в `Android/data/ApplicationName/logfile.txt`). Файл будет удален при удалении приложения.
+Приведенный выше код сохранит файл журнала во внешнем хранилище в корне каталога конкретного приложения. Пользователь может получить доступ к файлу с помощью диспетчера файлов (обычно в `Android/data/ApplicationName/logfile.txt` ). Файл будет удален при удалении приложения.
 
 Кроме того, необходимо запросить `WRITE_EXTERNAL_STORAGE` разрешение в файле манифеста:
 
@@ -104,7 +105,7 @@ NSString *filePath = [
 [speechConfig setPropertyTo:filePath byId:SPXSpeechLogFilename];
 ```
 
-Чтобы получить доступ к созданному файлу, добавьте приведенные ниже `Info.plist` свойства в список свойств приложения.
+Чтобы получить доступ к созданному файлу, добавьте приведенные ниже свойства в `Info.plist` список свойств приложения.
 
 ```xml
 <key>UIFileSharingEnabled</key>
@@ -115,7 +116,7 @@ NSString *filePath = [
 
 Дополнительные сведения о файловой системе iOS можно найти [здесь](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Примеры на сайте GitHub](https://aka.ms/csspeech/samples)

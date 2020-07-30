@@ -8,20 +8,20 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 4b8f15831c02a74bbba85ca4327369af6a4dbb2a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: seo-javascript-september2019, devx-track-javascript
+ms.openlocfilehash: 950d85f391504095ceaaa10996145ca832b6db19
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84808793"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87432731"
 ---
 # <a name="use-azure-queue-service-to-create-and-delete-queues-from-nodejs"></a>Использование службы очередей Azure для создания и удаления очередей из Node.js
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
 [!INCLUDE [storage-check-out-samples-all](../../../includes/storage-check-out-samples-all.md)]
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 В этом руководстве показано, как реализовать типичные сценарии с использованием службы очередей Microsoft Azure. Примеры написаны с использованием интерфейса API Node.js. Здесь описаны такие сценарии, как **вставка**, **просмотр**, **получение** и **удаление** сообщений очереди, а также **создание и удаление очередей**.
 
 > [!IMPORTANT]
@@ -327,7 +327,7 @@ queueSvc.getQueueAcl('myqueue', function(error, result, response) {
 queueSAS = queueSvc.generateSharedAccessSignature('myqueue', { Id: 'user2' });
 ```
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
 * Посетите [блог команды разработчиков службы хранилища Azure][Azure Storage Team Blog].
