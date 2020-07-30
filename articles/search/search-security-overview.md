@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/03/2020
-ms.openlocfilehash: cc02890cb5293e48a8065b63f4f9c799c5dda7f7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 55ee6e99cdf6d77ea1e78799e016d4c276e85fcd
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85081040"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423870"
 ---
 # <a name="security-in-azure-cognitive-search---overview"></a>Безопасность в Azure Когнитивный поиск — обзор
 
@@ -107,14 +107,14 @@ ms.locfileid: "85081040"
 
 Если требуется детальный контроль над результатами поиска, можно создать фильтры безопасности для запросов, возвращая документы, связанные с данным удостоверением безопасности. Вместо предопределенных ролей и назначений ролей управление доступом на основе удостоверений реализуется как *фильтр*, обрезающий результаты поиска документов и содержимого на основе удостоверений. В следующей таблице описаны два подхода к обрезке результатов поиска несанкционированного содержимого.
 
-| Подход | Описание: |
+| Подход | Описание |
 |----------|-------------|
 |[Security filters for trimming results in Azure Search](search-security-trimming-for-azure-search.md) (Фильтры безопасности для обрезки результатов Поиска Azure)  | Документирует базовый рабочий процесс для реализации управления доступом на основе удостоверений пользователей. Описывает добавление удостоверений безопасности в индекс, а также объясняет фильтрацию этого поля для усечения результатов запрещенного содержимого. |
 |[Security filters for trimming Azure Search results using Active Directory identities](search-security-trimming-for-azure-search-with-aad.md) (Фильтры безопасности для обрезки результатов Поиска Azure с использованием удостоверений Active Directory)  | Эта статья дополняет предыдущую статью, в ней приведены действия для получения удостоверений из Azure Active Directory (AAD), одной из [бесплатных служб](https://azure.microsoft.com/free/) на облачной платформе Azure. |
 
 ## <a name="administrative-rights"></a>Права администратора
 
-[Доступ на основе ролей (RBAC)](../role-based-access-control/overview.md) — это система авторизации, основанная на [Azure Resource Manager](../azure-resource-manager/management/overview.md) для подготовки ресурсов Azure. В Когнитивный поиск Azure диспетчер ресурсов используется для создания или удаления службы, управления ключами API и масштабирования службы. Таким образом, назначения ролей RBAC определяют, кто может выполнять эти задачи, независимо от того, используете ли они [портал](search-manage.md), [PowerShell](search-manage-powershell.md)или [API-интерфейсы других функций управления](https://docs.microsoft.com/rest/api/searchmanagement/search-howto-management-rest-api).
+[Доступ на основе ролей (RBAC)](../role-based-access-control/overview.md) — это система авторизации, основанная на [Azure Resource Manager](../azure-resource-manager/management/overview.md) для подготовки ресурсов Azure. В Когнитивный поиск Azure диспетчер ресурсов используется для создания или удаления службы, управления ключами API и масштабирования службы. Таким образом, назначения ролей Azure определяют, кто может выполнять эти задачи, независимо от того, используете ли они [портал](search-manage.md), [PowerShell](search-manage-powershell.md)или [API-интерфейсы других функций управления](https://docs.microsoft.com/rest/api/searchmanagement/search-howto-management-rest-api).
 
 Напротив, права администратора для содержимого, размещенного в службе, например возможность создания или удаления индекса, выводятся через ключи API, как описано в [предыдущем разделе](#index-access).
 

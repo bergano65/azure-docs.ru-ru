@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 53f644203b494e5baf087241e2a4fe669b7db07b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 512aed93906968b14f7c6a13e08f74bbeb2f5f31
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85077901"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87431091"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Аутентификация на основе заголовка для единого входа с использованием прокси приложения и PingAccess
 
@@ -105,7 +105,7 @@ Azure Active Directory прокси приложения (Azure AD) взаимо
    ![Отображение списка пользователей и групп](./media/application-proxy-configure-single-sign-on-with-ping-access/users-and-groups.png)
 
 1. Выберите пользователя для тестирования приложений и нажмите **кнопку Выбрать**. Убедитесь, что у тестовой учетной записи есть доступ к локальному приложению.
-1. Выберите **назначить**.
+1. Выберите **Назначить**.
 1. На боковой панели приложения выберите **заголовок единый вход**  >  **Header-based**.
 
    > [!TIP]
@@ -113,7 +113,7 @@ Azure Active Directory прокси приложения (Azure AD) взаимо
 
    ![Отображает экран входа на основе заголовка и PingAccess](./media/application-proxy-configure-single-sign-on-with-ping-access/sso-header.png)
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 Затем убедитесь, что для URL-адреса перенаправления задан внешний URL-адрес:
 
@@ -121,6 +121,11 @@ Azure Active Directory прокси приложения (Azure AD) взаимо
 1. Выберите приложение.
 1. Щелкните ссылку рядом с **URI перенаправления**, в которых отображается количество URI перенаправления, настроенных для веб-клиентов и общедоступных. Откроется страница ** \<application name> -Проверка подлинности** .
 1. Убедитесь, что внешний URL-адрес, назначенный приложению ранее, находится в списке **URI перенаправления** . Если это не так, добавьте внешний URL-адрес, используя тип URI перенаправления в **Интернете**, и нажмите кнопку **сохранить**.
+
+В дополнение к внешнему URL-адресу в список URI перенаправления должна быть добавлена конечная точка авторизации Azure Active Directory во внешнем URL-адресе.
+
+`https://*.msappproxy.net/pa/oidc/cb`
+`https://*.msappproxy.net/`
 
 Наконец, настройте локальное приложение, чтобы пользователи имели доступ на чтение и другие приложения имели доступ на чтение и запись:
 
@@ -139,8 +144,8 @@ Azure Active Directory прокси приложения (Azure AD) взаимо
 
 | Имя поля Azure AD | Имя поля PingAccess | Формат данных |
 | --- | --- | --- |
-| **Application (client) ID** (Идентификатор приложения (клиент)) | **Идентификатор клиента** | Идентификатор GUID |
-| **Идентификатор каталога (клиент)** | **Издатель** | Идентификатор GUID |
+| **Идентификатор приложения (клиента)** | **Идентификатор клиента** | GUID |
+| **Идентификатор каталога (клиента)** | **Издатель** | GUID |
 | `PingAccess key` | **Секрет клиента** | Произвольная строка |
 
 Чтобы получить эти сведения, сделайте следующее:
@@ -168,7 +173,7 @@ Azure Active Directory прокси приложения (Azure AD) взаимо
 1. Выберите приложение.
 1. На боковой панели страницы **Регистрация приложений** приложения выберите **Манифест**. Появится код JSON манифеста для регистрации приложения.
 1. Найдите `acceptMappedClaims` поле и измените его значение на `True` .
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ### <a name="use-of-optional-claims-optional"></a>Использование необязательных утверждений (необязательно)
 
@@ -201,7 +206,7 @@ Azure Active Directory прокси приложения (Azure AD) взаимо
 >
 > Определение политики и назначение можно выполнять с помощью PowerShell или Microsoft Graph. Если вы делаете это в PowerShell, то, возможно, потребуется сначала использовать `New-AzureADPolicy` и назначить его приложению с помощью `Add-AzureADServicePrincipalPolicy` . Дополнительные сведения см. в разделе [Назначение политики сопоставления утверждений](../develop/active-directory-claims-mapping.md#claims-mapping-policy-assignment).
 
-Пример.
+Пример:
 ```powershell
 $pol = New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema": [{"Source":"user","ID":"employeeid","JwtClaimType":"employeeid"}]}}') -DisplayName "AdditionalClaims" -Type "ClaimsMappingPolicy"
 
@@ -226,7 +231,7 @@ Add-AzureADServicePrincipalPolicy -Id "<<The object Id of the Enterprise Applica
 
 После выполнения всех этих действий приложение должно быть работает. Чтобы протестировать его, откройте браузер и перейдите по внешнему URL-адресу, созданному при публикации приложения в Azure. Войдите с помощью тестовой учетной записи, назначенной приложению.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка PingAccess для Azure AD для защиты приложений, опубликованных с помощью Microsoft Azure AD прокси приложения](https://support.pingidentity.com/s/document-item?bundleId=pingaccess-52&topicId=agents/azure/pa_c_PAAzureSolutionOverview.html)
 - [Единый вход в приложениях в Azure Active Directory](what-is-single-sign-on.md)

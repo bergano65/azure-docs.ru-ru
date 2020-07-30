@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/01/2020
 ms.author: memildin
-ms.openlocfilehash: 66c8db580d0da29aa0be1193bf41b491f388e55a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 17b54eb747e3ddd3b381659031171bc795b61f54
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87083979"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87430473"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -32,9 +32,27 @@ ms.locfileid: "87083979"
 ## <a name="july-2020"></a>Июль 2020 г.
 
 Обновления в июле включают:
+- [Оценка уязвимостей для виртуальных машин теперь доступна для образов, не относящихся к Marketplace](#vulnerability-assessment-for-virtual-machines-is-now-available-for-non-marketplace-images)        
 - [Расширение защиты от угроз для службы хранилища Azure для включения файлов и Azure Data Lake Storage 2-го поколения Azure (Предварительная версия)](#threat-protection-for-azure-storage-expanded-to-include-azure-files-and-azure-data-lake-storage-gen2-preview)
+- [Восемь новых рекомендаций по включению функций защиты от угроз](#eight-new-recommendations-to-enable-threat-protection-features)
 - [Улучшения безопасности контейнеров — более быстрое сканирование реестра и обновленная документация](#container-security-improvements---faster-registry-scanning-and-refreshed-documentation)
+- [Новая рекомендация для обновления правил адаптивного управления приложениями](#new-recommendation-to-update-your-adaptive-application-controls-rules)
 - [Шесть политик для расширенной безопасности данных SQL устарели](#six-policies-for-sql-advanced-data-security-deprecated)
+
+
+
+
+### <a name="vulnerability-assessment-for-virtual-machines-is-now-available-for-non-marketplace-images"></a>Оценка уязвимостей для виртуальных машин теперь доступна для образов, не относящихся к Marketplace
+
+При развертывании решения для оценки уязвимости центр безопасности ранее выполнил проверку перед развертыванием. Проверка была подтверждена номером SKU Marketplace целевой виртуальной машины. 
+
+В этом обновлении проверка была удалена, и теперь можно развернуть средства оценки уязвимостей на пользовательских компьютерах с Windows и Linux. Пользовательские образы — это изменения, внесенные в параметры по умолчанию для Marketplace.
+
+Несмотря на то, что теперь можно развернуть встроенное расширение оценки уязвимостей (на платформе Qualys) на многих других компьютерах, поддержка доступна только в том случае, если вы используете операционную систему, указанную в подсистеме [развертывания встроенного средства проверки уязвимостей Qualys](built-in-vulnerability-assessment.md#deploying-the-qualys-built-in-vulnerability-scanner).
+
+Дополнительные сведения об [интегрированном сканере уязвимостей для виртуальных машин (только для уровня "Стандартный")](built-in-vulnerability-assessment.md).
+
+Узнайте больше о том, как использовать собственное решение для оценки уязвимостей от Qualys или Rapid7 при [развертывании решения для поиска уязвимостей партнеров](partner-vulnerability-assessment.md).
 
 
 ### <a name="threat-protection-for-azure-storage-expanded-to-include-azure-files-and-azure-data-lake-storage-gen2-preview"></a>Расширение защиты от угроз для службы хранилища Azure для включения файлов и Azure Data Lake Storage 2-го поколения Azure (Предварительная версия)
@@ -44,6 +62,39 @@ ms.locfileid: "87083979"
 Данные могут быть защищены независимо от того, хранятся ли они в виде контейнеров больших двоичных объектов, файловых ресурсов или озера данных. 
 
 Дополнительные сведения о [защите от угроз для службы хранилища Azure](threat-protection.md#threat-protection-for-azure-storage-).
+
+
+
+
+### <a name="eight-new-recommendations-to-enable-threat-protection-features"></a>Восемь новых рекомендаций по включению функций защиты от угроз
+
+Были добавлены восемь новых рекомендаций, чтобы обеспечить простой способ включения функций защиты от угроз центра безопасности Azure для следующих типов ресурсов: виртуальные машины, планы службы приложений, серверы баз данных SQL Azure, серверы SQL Server на компьютерах, учетные записи хранения Azure, кластеры службы Azure Kubernetes, реестры реестра контейнеров Azure и хранилища Azure Key Vault.
+
+Новые рекомендации:
+
+- **На серверах Базы данных SQL Azure должна быть включена Расширенная защита данных**
+- **Для серверов SQL на компьютерах должна быть включена Расширенная защита данных**
+- **Для планов Службы приложений Azure должна быть включена Расширенная защита от угроз**
+- **Для реестров в службе "Реестр контейнеров Azure" должна быть включена Расширенная защита от угроз**
+- **Для хранилищ в службе Azure Key Vault должна быть включена Расширенная защита от угроз**
+- **Для кластеров в Службе Azure Kubernetes должна быть включена Расширенная защита от угроз**
+- **Для учетных записей службы хранилища Azure должна быть включена Расширенная защита от угроз**
+- **На виртуальных машинах должна быть включена расширенная защита от угроз**
+
+Эти новые рекомендации относятся к элементу включить управление безопасностью **Advanced Threat protection** .
+
+В рекомендации также входит функция быстрого исправления. 
+
+> [!IMPORTANT]
+> Устранения любой из этих рекомендаций приведет к оплате за защиту соответствующих ресурсов. Эти платежи начинают немедленно, если в текущей подписке есть связанные ресурсы. Или в будущем, если вы добавите их позже.
+> 
+> Например, если у вас нет кластеров службы Kubernetes Azure в вашей подписке и вы включили защиту от угроз, плата не будет взиматься. Если в будущем вы добавите кластер в ту же подписку, он будет автоматически защищен, а плата начнется в это время.
+
+Дополнительные сведения о каждом из них см. на [странице справки по рекомендациям по безопасности](recommendations-reference.md).
+
+Узнайте больше о [защите от угроз в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/threat-protection).
+
+
 
 
 ### <a name="container-security-improvements---faster-registry-scanning-and-refreshed-documentation"></a>Улучшения безопасности контейнеров — более быстрое сканирование реестра и обновленная документация
@@ -62,6 +113,15 @@ ms.locfileid: "87083979"
 - [Оповещения системы безопасности от функций защиты от угроз для узлов службы Kubernetes Azure](https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-containerhost)
 - [Рекомендации по безопасности для контейнеров](https://docs.microsoft.com/azure/security-center/recommendations-reference#recs-containers)
 
+
+
+### <a name="new-recommendation-to-update-your-adaptive-application-controls-rules"></a>Новая рекомендация для обновления правил адаптивного управления приложениями
+
+Функция адаптивного управления приложениями постоянно отслеживает активность компьютеров в настроенных группах. Из этого обновления вы получите уведомление о потенциально допустимом поведении, которое ранее не было разрешено, и что может вызвать ложные положительные оповещения.
+
+Новая рекомендация, **разрешенных правила в политике адаптивного управления приложениями, должна быть обновлена**, предложит добавить новые правила к существующей политике, чтобы уменьшить число ложных срабатываний в предупреждениях о нарушении параметров адаптивного управления приложениями.
+
+[Дополнительные сведения об адаптивных элементах управления приложениями](security-center-adaptive-application.md).
 
 
 
@@ -185,9 +245,9 @@ ms.locfileid: "87083979"
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
 | [На серверах Базы данных SQL Azure должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f7fe3b40f-802b-4cdd-8bd4-fd799c948cc2)     | 7fe3b40f-802b-4cdd-8bd4-fd799c948cc2 |
 | [Для серверов SQL на компьютерах должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f6581d072-105e-4418-827f-bd446d56421b) | 6581d072-105e-4418-827f-bd446d56421b |
-| [Для учетных записей хранения должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f308fbb08-4ab8-4e67-9b29-592e93fb94fa)           | 308fbb08-4ab8-4e67-9b29-592e93fb94fa |
+| [Для учетных записей службы хранилища Azure должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f308fbb08-4ab8-4e67-9b29-592e93fb94fa)           | 308fbb08-4ab8-4e67-9b29-592e93fb94fa |
 | [Для хранилищ в службе Azure Key Vault должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f0e6763cc-5078-4e64-889d-ff4d9a839047)           | 0e6763cc-5078-4e64-889d-ff4d9a839047 |
-| [В планах службы приложений должна быть включена расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f2913021d-f2fd-4f3d-b958-22354e2bdbcb)                | 2913021d-f2fd-4f3d-b958-22354e2bdbcb |
+| [Для планов Службы приложений Azure должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f2913021d-f2fd-4f3d-b958-22354e2bdbcb)                | 2913021d-f2fd-4f3d-b958-22354e2bdbcb |
 | [Для реестров в службе "Реестр контейнеров Azure" должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fc25d9a16-bc35-4e15-a7e5-9db606bf9ed4)   | c25d9a16-bc35-4e15-a7e5-9db606bf9ed4 |
 | [Для кластеров в Службе Azure Kubernetes должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f523b5cd1-3e23-492f-a539-13118b6d1e3a)   | 523b5cd1-3e23-492f-a539-13118b6d1e3a |
 | [На виртуальных машинах должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f4da35fc9-c9e7-4960-aec9-797fe7d9051d)           | 4da35fc9-c9e7-4960-aec9-797fe7d9051d |
@@ -275,7 +335,7 @@ ms.locfileid: "87083979"
 
 Дополнительные сведения об элементах управления безопасностью см. в статье [Улучшенная оценка безопасности (предварительная версия) в Центре безопасности Azure](secure-score-security-controls.md).
 
-![Переключатель "Группировать по элементам управления" для рекомендаций](\media\secure-score-security-controls\recommendations-group-by-toggle.gif)
+![Переключатель "Группировать по элементам управления" для рекомендаций](./media/secure-score-security-controls/recommendations-group-by-toggle.gif)
 
 ### <a name="expanded-security-control-implement-security-best-practices"></a>Расширенный элемент управления безопасностью "Внедрение рекомендаций по обеспечению безопасности" 
 

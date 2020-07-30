@@ -5,15 +5,15 @@ description: Узнайте, как импортировать файл зоны
 services: dns
 author: rohinkoul
 ms.service: dns
-ms.date: 4/3/2019
+ms.date: 7/30/2020
 ms.author: rohink
 ms.topic: how-to
-ms.openlocfilehash: bd40b3400b2a1c09be8fabd1201bedc7043bf19b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8f17d7f32d774cac283ec335c372e8f68d50931f
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84709102"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87424228"
 ---
 # <a name="import-and-export-a-dns-zone-file-using-the-azure-cli"></a>Импорт и экспорт файла зоны DNS с помощью Azure CLI
 
@@ -82,7 +82,7 @@ az network dns zone import -g <resource group> -n <zone name> -f <zone file name
 1. Если у вас еще нет группы ресурсов Resource Manager, создайте ее.
 
     ```azurecli
-    az group create --group myresourcegroup -l westeurope
+    az group create --resource-group myresourcegroup -l westeurope
     ```
 
 2. Чтобы импортировать зону **contoso.com** из файла **contoso.com.txt** в зону DNS в группе ресурсов **myresourcegroup**, выполните команду `az network dns zone import`.<BR>Эта команда загружает файл зоны и анализирует его. Затем она инициирует выполнение ряда команд в службе Azure DNS, чтобы создать зону и все наборы записей в ней. В окне консоли виден ход выполнения команды, а также все ошибки и предупреждения. Так как наборы записей создаются в серии, при импорте большого файла зоны этот процесс может занять несколько минут.
@@ -177,7 +177,7 @@ az network dns zone export -g <resource group> -n <zone name> -f <zone file name
 az network dns zone export -g myresourcegroup -n contoso.com -f contoso.com.txt
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [управлять наборами записей и записями](dns-getstarted-create-recordset-cli.md) в зоне DNS.
 

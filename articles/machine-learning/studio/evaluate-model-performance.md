@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/20/2017
-ms.openlocfilehash: d2308b57859a7f8eb0aa6519246fbb52ffdf9e81
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: e811d921d28ce33d7dbc9f2bb7996557838178ad
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318646"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87429859"
 ---
 # <a name="evaluate-model-performance-in-azure-machine-learning-studio-classic"></a>Оценка производительности модели в Машинное обучение Azure Studio (классическая модель)
 
-**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+**применимо к:** ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 
 В этой статье можно узнать о метриках, которые можно использовать для мониторинга производительности модели в Машинное обучение Azure Studio (классическая модель).  Оценка эффективности модели является одним из основных этапов процесса обработки и анализа данных. Она показывает, насколько успешно обученная модель обрабатывает (прогнозирует) набор данных. Машинное обучение Azure Studio (классическая модель) поддерживает оценку модели с помощью двух основных модулей машинного обучения: 

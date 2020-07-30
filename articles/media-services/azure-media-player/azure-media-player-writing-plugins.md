@@ -6,18 +6,19 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: how-to
 ms.date: 04/20/2020
-ms.openlocfilehash: 7902dfdf81d8e44921a5218d56effc90f433f02d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-javascript
+ms.openlocfilehash: da827b994685e95baf28e3ad34072642c24fa510
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82857409"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87422612"
 ---
 # <a name="writing-plugins-for-azure-media-player"></a>Создание подключаемых модулей для Проигрыватель мультимедиа Azure #
 
 Подключаемый модуль — это JavaScript, предназначенный для расширения или улучшения проигрывателя. Вы можете написать подключаемые модули, которые изменяют внешний вид Проигрыватель мультимедиа Azure, его функциональность или даже могут взаимодействовать с другими службами. Это можно сделать двумя простыми шагами:
 
-## <a name="step-1"></a>Шаг 1 ##
+## <a name="step-1"></a>Step 1 ##
 
 Напишите JavaScript в функцию следующим образом:
 
@@ -35,7 +36,7 @@ ms.locfileid: "82857409"
 
 Код можно писать непосредственно на HTML-странице внутри `<script>` тегов или во внешнем файле JavaScript. Если вы выполняете Последнее действие, не забудьте включить файл JavaScript в `<head>` страницу HTML *после* скрипта amp.
 
-Пример.
+Пример:
 
 ```javascript
     <!--*****START OF Azure Media Player Scripts*****-->

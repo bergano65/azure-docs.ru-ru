@@ -7,12 +7,12 @@ services: site-recovery
 ms.topic: conceptual
 ms.date: 11/06/2019
 ms.author: raynew
-ms.openlocfilehash: 77b4dd4c0efbe6d03e64865f18c2c87614aaecb5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 65778d0a6ba3bd5cdc719609ae4c2d18bf05aab9
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80632523"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87424415"
 ---
 # <a name="vmware-to-azure-disaster-recovery-architecture"></a>Архитектура аварийного восстановления из VMware в Azure
 
@@ -32,8 +32,25 @@ ms.locfileid: "80632523"
 
 **Архитектура "VMware — Azure"**
 
-![Компоненты](./media/vmware-azure-architecture/arch-enhanced.png)
+![Components](./media/vmware-azure-architecture/arch-enhanced.png)
 
+## <a name="set-up-outbound-network-connectivity"></a>Настройка исходящего сетевого подключения
+
+Чтобы Site Recovery правильно работать, необходимо изменить исходящее сетевое подключение, чтобы разрешить репликацию среды.
+
+> [!NOTE]
+> Site Recovery не поддерживает использование прокси-сервер проверки подлинности для управления сетевым подключением.
+
+### <a name="outbound-connectivity-for-urls"></a>Исходящие подключения для URL-адресов
+
+При использовании прокси-сервера или брандмауэра на основе URL-адресов для управления исходящими подключениями разрешите использование этих URL-адресов:
+
+| **Имя**                  | **Коммерческое**                               | **Государственные организации**                                 | **Описание** |
+| ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
+| Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
+| Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Обеспечивает авторизацию и проверку подлинности URL-адресов службы Site Recovery. |
+| Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Позволяет виртуальной машине взаимодействовать со службой Site Recovery. |
+| Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Позволяет виртуальной машине записывать данные мониторинга и диагностики службы Site Recovery. |
 
 ## <a name="replication-process"></a>Процесс репликации
 
@@ -96,6 +113,6 @@ ms.locfileid: "80632523"
 ![Восстановление размещения](./media/vmware-azure-architecture/enhanced-failback.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с [этим учебником](vmware-azure-tutorial.md), чтобы включить репликацию из VMware в Azure.

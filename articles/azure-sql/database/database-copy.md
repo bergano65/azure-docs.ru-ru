@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sashan
 ms.reviewer: carlrab
-ms.date: 07/27/2020
-ms.openlocfilehash: 4dd27a5d3bca5ca1c0395feb049d5a814211c539
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.date: 07/29/2020
+ms.openlocfilehash: 968fe5a0f4999c25486189384186c23d1fcd5509
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87309279"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87430245"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-a-database-in-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных в базе данных SQL Azure
 
@@ -117,6 +117,9 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 > [!NOTE]
 > [Портал Azure](https://portal.azure.com), PowerShell и Azure CLI не поддерживают копирование базы данных в другую подписку.
 
+> [!TIP]
+> Копирование базы данных с помощью T-SQL поддерживает копирование базы данных из подписки в другом клиенте Azure.
+
 ## <a name="monitor-the-progress-of-the-copying-operation"></a>Отслеживание хода операции копирования
 
 Отслеживайте процесс копирования, запрашивая представления [sys. databases](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-databases-transact-sql), [sys. dm_database_copies](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-copies-azure-sql-database)и [sys. dm_operation_status](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) . Во время копирования в столбце **state_desc** представления sys. databases для новой базы данных задается значение **копирование**.
@@ -168,7 +171,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
 При копировании базы данных в базе данных SQL Azure могут возникнуть следующие ошибки. Дополнительные сведения см. в статье [Копирование базы данных SQL Azure](database-copy.md).
 
-| Код ошибки | Статус | Описание: |
+| Код ошибки | Статус | Описание |
 | ---:| ---:|:--- |
 | 40635 |16 |Клиент с IP-адресом %.&#x2a;ls временно отключен. |
 | 40637 |16 |Возможность создания копии базы данных в настоящее время отключена. |

@@ -6,12 +6,12 @@ author: baanders
 ms.author: baanders
 ms.topic: troubleshooting
 ms.date: 7/20/2020
-ms.openlocfilehash: 95372d69f58249afc946f12ec74696507429e5c6
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: a971291dd423894e4d04158abe873a7222f9802c
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87125309"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87405617"
 ---
 # <a name="service-request-failed-status-403-forbidden"></a>Сбой запроса на обслуживание. Состояние: 403 (запрещено)
 
@@ -57,7 +57,7 @@ ms.locfileid: "87125309"
 az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<your-Azure-AD-email>" --role "Azure Digital Twins Owner (Preview)"
 ```
 
-Дополнительные сведения об этом требовании роли и процессе назначения см. в разделе [ *Настройка разрешений доступа пользователя* статьи](how-to-set-up-instance-manual.md#set-up-your-users-access-permissions) *инструкции. Настройка экземпляра и проверки подлинности (вручную)*.
+Дополнительные сведения об этом требовании роли и процессе назначения см. в разделе [ *Настройка разрешений доступа пользователя* статьи](how-to-set-up-instance-CLI.md#set-up-user-access-permissions) *инструкции. Настройка экземпляра и проверки подлинности (CLI или портал)*.
 
 Если у вас уже есть такое назначение роли и по-прежнему возникает проблема 403, перейдите к следующему решению.
 
@@ -75,12 +75,12 @@ az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --ass
 
 #### <a name="fix-issues"></a>Устранение проблем
 
-Если какой-либо из них отличается от описанного выше, следуйте инструкциям в разделе Настройка регистрации приложения [статьи *Настройка разрешений доступа для клиентских приложений* раздела](how-to-set-up-instance-manual.md#set-up-access-permissions-for-client-applications) *инструкции. Настройка экземпляра и проверки подлинности (вручную)*.
+Если какой-либо из них отличается от описанного выше, следуйте инструкциям в разделе Настройка регистрации приложения [статьи *Настройка разрешений доступа для клиентских приложений* раздела](how-to-set-up-instance-cli.md#set-up-access-permissions-for-client-applications) *инструкции. Настройка экземпляра и проверки подлинности (CLI или портал)*.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с шагами по настройке создания и аутентификации нового экземпляра Digital двойников в Azure.
-* [*Пошаговое руководство. Настройка экземпляра и проверки подлинности (вручную)*](how-to-set-up-instance-manual.md)
+* [*Пошаговое руководство. Настройка экземпляра и проверки подлинности (CLI)*](how-to-set-up-instance-cli.md)
 
 Дополнительные сведения о безопасности и разрешениях для Azure Digital двойников:
 * [*Основные понятия: безопасность решений для цифровых двойников Azure*](concepts-security.md)

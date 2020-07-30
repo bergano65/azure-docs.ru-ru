@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/08/2019
 ms.author: robinsh
-ms.openlocfilehash: 496b890cc49b6b6b9f15213a48472447f801b1c9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: aef468d919e6f09722045f98c68383785d10b137
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76045117"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423088"
 ---
 # <a name="azure-iot-device-sdks-platform-support"></a>Поддержка платформ SDK для устройств Azure IoT
 
@@ -69,7 +69,7 @@ ms.locfileid: "76045117"
 
 [Пакет SDK для устройств .NET для центра Интернета вещей (C#)](https://github.com/Azure/azure-iot-sdk-csharp) проверяется с поддержкой следующих конфигураций.
 
-| Операционная система                                   | Стандартный                                                   |
+| Операционная система                                   | Standard                                                   |
 |--------------------------------------|------------------------------------------------------------|
 | Linux                                | .NET Core 2.1                                              |
 | SKU для настольных компьютеров и серверов Windows 10   | .NET Core 2,1, .NET Framework 4.5.1 или .NET Framework 4,7 |
@@ -124,7 +124,7 @@ ms.locfileid: "76045117"
 
 ## <a name="support-and-other-resources"></a>Поддержка и другие ресурсы
 
-При возникновении проблем при использовании пакетов SDK для устройств Azure IoT существует несколько способов поиска поддержки. Вы можете попробовать один из следующих каналов:
+При возникновении проблем при использовании пакетов SDK для устройств Azure IoT существует несколько способов поиска и поддержки, приведенных ниже. Дополнительные сведения обо всех вариантах поддержки см. в статье [Поддержка Azure IOT и параметры справки](https://aka.ms/iothelp). 
 
 **Сообщения об ошибках** . ошибки в пакетах SDK для устройств можно сообщить на странице проблем в соответствующем проекте GitHub. Внесенные исправления очень быстро попадают из проекта в обновление продукта.
 
@@ -138,11 +138,13 @@ ms.locfileid: "76045117"
 
 * [Проблемы с пакетом SDK для Python центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-python/issues)
 
+**Технические вопросы** : вы можете задавать технические вопросы как в [Microsoft Q&A](https://docs.microsoft.com/answers/topics/azure-iot-sdk.html) , так [Stack overflow](https://stackoverflow.com/questions/tagged/azure-iot-sdk) с помощью тега *Azure-IOT-SDK*.
+
 **Группа поддержки пользователей Майкрософт** — пользователи, у которых есть [план поддержки](https://azure.microsoft.com/support/plans/) , могут обратиться в службу поддержки пользователей Майкрософт, создав новый запрос в службу поддержки непосредственно из [портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview).
 
 **Запросы функций** . запросы к функциям Интернета вещей Azure отправляются с помощью [веб-страницы пользователя](https://feedback.azure.com/forums/321918-azure-iot)продукта.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Пакеты SDK для устройств и служб](iot-hub-devguide-sdks.md)
 * [Руководство по переносу](https://github.com/Azure/azure-c-shared-utility/blob/master/devdoc/porting_guide.md)

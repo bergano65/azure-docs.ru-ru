@@ -10,15 +10,15 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.workload: identity
 ms.topic: how-to
-ms.date: 10/22/2019
+ms.date: 07/29/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
-ms.openlocfilehash: 00f9e4c1ebd162883f62280e753b6e0c4c13a21d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 29dc03d663d590c13a1948411ed597388750c1d7
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87027178"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87428002"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Руководство. Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)
 
@@ -436,6 +436,9 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 
 В Azure AD существует множество сценариев, когда можно настроить утверждения, добавляемые в токены для определенных субъектов-служб. В этом разделе рассматриваются наиболее распространенные сценарии, которые помогут вам понять, как использовать политики сопоставления утверждений.
 
+> [!NOTE]
+> При создании политики сопоставления утверждений можно также выдать утверждение из атрибута расширения схемы каталога в токенах. Используйте *ExtensionID* для атрибута расширения вместо *ID* в `ClaimsSchema` элементе.  Дополнительные сведения об атрибутах расширения см. в разделе [Использование атрибутов расширения схемы каталога](active-directory-schema-extensions.md).
+
 #### <a name="prerequisites"></a>Предварительные требования
 
 В следующих примерах мы будем создавать, обновлять, связывать и удалять политики для субъектов-служб. Если вы еще не работали с Azure AD, прежде чем продолжить работу с этими примерами, советуем ознакомиться со статьей [Краткое руководство: настройка среды разработки](quickstart-create-new-tenant.md).
@@ -527,4 +530,5 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 
 ## <a name="see-also"></a>См. также раздел
 
-Чтобы узнать, как настроить утверждения, выданные в токене SAML с помощью портала Azure, см. статью [Инструкции. Настройка утверждений, выпущенных в токене SAML для корпоративных приложений.](active-directory-saml-claims-customization.md)
+- Чтобы узнать, как настроить утверждения, выданные в токене SAML с помощью портала Azure, см. статью [Инструкции. Настройка утверждений, выпущенных в токене SAML для корпоративных приложений.](active-directory-saml-claims-customization.md)
+- Дополнительные сведения об атрибутах расширения см. [в разделе Использование атрибутов расширения схемы каталогов в заявках](active-directory-schema-extensions.md).

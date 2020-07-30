@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: tisande
-ms.openlocfilehash: 70eb81b6d13c57a7ebc131244c7aa318cb2b2fd4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-javascript
+ms.openlocfilehash: a542740fcc855ba7945ddf0df48eec366ac98d94
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74871267"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87413142"
 ---
 # <a name="azure-cosmos-db-sql-query-execution"></a>Azure Cosmos DB выполнения запросов SQL
 
@@ -41,7 +42,7 @@ Cosmos DB предлагает простую и открытую модель �
     }
 ```
 
-Результаты:
+Вы получите такие результаты:
 
 ```json
     HTTP/1.1 200 Ok
@@ -112,7 +113,7 @@ Cosmos DB предлагает простую и открытую модель �
     }
 ```
 
-Результаты: 
+Вы получите такие результаты: 
 
 ```json
     HTTP/1.1 200 Ok
@@ -285,7 +286,7 @@ Azure Cosmos DB предоставляет модель программиров
     }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)

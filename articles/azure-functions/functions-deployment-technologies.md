@@ -1,17 +1,15 @@
 ---
 title: Технологии развертывания в функциях Azure
 description: Узнайте о различных способах развертывания кода в функциях Azure.
-author: ggailey777
 ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 04/25/2019
-ms.author: glenga
-ms.openlocfilehash: 63c52b8b1ee9b9448a1ba6f78873ae6a036e3563
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 1554469c59eb9931b6d8552f537328e440ec6aeb
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86540219"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87388022"
 ---
 # <a name="deployment-technologies-in-azure-functions"></a>Технологии развертывания в функциях Azure
 

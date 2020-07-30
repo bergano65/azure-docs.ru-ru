@@ -4,12 +4,13 @@ description: Узнайте, как развернуть группу конте
 ms.topic: article
 ms.date: 07/02/2020
 ms.author: danlep
-ms.openlocfilehash: c5a0e15b2e65be45e7f77e401b912ef7b784519b
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: f1678dee9c43d2ce9652018f0d09fe1738659f54
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86169601"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87407155"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Развертывание экземпляров контейнеров в виртуальной сети Azure
 
@@ -133,7 +134,7 @@ az network profile list --resource-group myResourceGroup \
   --query [0].id --output tsv
 ```
 
-Пример результатов выполнения:
+Образец вывода:
 
 ```console
 /subscriptions/<Subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkProfiles/aci-network-profile-aci-vnet-aci-subnet
@@ -177,7 +178,7 @@ az container create --resource-group myResourceGroup \
   --file vnet-deploy-aci.yaml
 ```
 
-После завершения развертывания выполните команду [AZ Container Показать][az-container-show] , чтобы отобразить ее состояние. Пример результатов выполнения:
+После завершения развертывания выполните команду [AZ Container Показать][az-container-show] , чтобы отобразить ее состояние. Образец вывода:
 
 ```console
 Name              ResourceGroup    Status    Image                                       IP:ports     Network    CPU/Memory       OsType    Location
@@ -222,7 +223,7 @@ az network profile delete --id $NETWORK_PROFILE_ID -y
 az network vnet delete --resource-group $RES_GROUP --name aci-vnet
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы развернуть новую виртуальную сеть, подсеть, сетевой профиль и группу контейнеров с помощью шаблона Resource Manager, см. страницу [создания группы контейнеров Azure с виртуальной сетью](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet
 ).

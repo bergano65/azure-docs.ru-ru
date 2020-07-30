@@ -1,14 +1,14 @@
 ---
 title: Рекомендации по программе для поставщиков облачных решений
 description: Для партнеров CSP делегированное управление ресурсами Azure помогает улучшить безопасность и контроль за счет предоставления детализированных разрешений.
-ms.date: 07/06/2020
+ms.date: 07/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8dd40c5c4f7131554dcc3249777de9f0d92c35bb
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 0ae7ef0b78f2f37708c6b442a9591fcbcce25646
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86131513"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87429443"
 ---
 # <a name="azure-lighthouse-and-the-cloud-solution-provider-program"></a>Azure Lighthouse и программа поставщиков облачных решений
 
@@ -32,6 +32,9 @@ ms.locfileid: "86131513"
 При адаптации подписки, созданной с помощью программы CSP, следует выполнить действия, описанные в статье подключение [подписки к Azure лигхсаусе](../how-to/onboard-customer.md). Любой пользователь, имеющий роль агента администратора в своем арендаторе, может выполнить это подключение.
 
 ![Управление арендаторами с помощью делегированного управления ресурсами AOBO и Azure](../media/csp-2.jpg)
+
+> [!TIP]
+> [Предложения управляемых служб](managed-services-offers.md) с частными планами не поддерживаются с подписками, установленными через торгового посредника программы поставщика облачных решений (CSP). Вы можете подключить эти подписки к Azure Лигхсаусе с [помощью шаблонов Azure Resource Manager](../how-to/onboard-customer.md).
 
 > [!NOTE]
 > Страница [ **Мои клиенты** в портал Azure](../how-to/view-manage-customers.md) теперь содержит раздел **поставщик облачных решений (Предварительная версия)** , который отображает сведения о выставлении счетов и ресурсы для клиентов CSP, которые [подписали клиентское соглашение Майкрософт (MCA)](/partner-center/confirm-customer-agreement) и находятся [в плане Azure](/partner-center/azure-plan-get-started). Чтобы узнать больше, ознакомьтесь с разделом [Начало работы с учетной записью выставления счетов Соглашения с партнером Майкрософт](../../cost-management-billing/understand/mpa-overview.md).

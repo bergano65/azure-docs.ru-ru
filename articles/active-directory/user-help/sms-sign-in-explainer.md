@@ -12,12 +12,12 @@ ms.date: 04/14/2020
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: 361e8c63dc036443e527d1027fe3fd0cca784d9a
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 864225238c10ab2fda96e95448790201cc8a16ae
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83747212"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423003"
 ---
 # <a name="use-your-phone-number-as-a-user-name-preview"></a>Использование номера телефона в качестве имени пользователя (предварительная версия)
 
@@ -52,11 +52,11 @@ ms.locfileid: "83747212"
 
 1. Если вход с помощью SMS доступен, отображается баннер с вопросом о том, хотите ли вы включить номер телефона для входа с помощью SMS:
 
-    [![](media/sms-sign-in-explainer/sms-sign-in-banner.png "Banner to enable SMS sign-in for a phone number")](media/sms-sign-in-explainer/sms-sign-in-banner.png#lightbox)
+    [![Баннер, чтобы включить вход в SMS для номера телефона.](media/sms-sign-in-explainer/sms-sign-in-banner.png)](media/sms-sign-in-explainer/sms-sign-in-banner.png#lightbox)
 
 1. Кроме того, кнопка **Включить** появляется, если вы выбираете знак вставки на плитке метода телефона:
 
-    [![](media/sms-sign-in-explainer/sms-sign-in-phone-method.png "Banner to enable SMS sign-in for a phone number")](media/sms-sign-in-explainer/sms-sign-in-phone-method.png#lightbox)
+    [![Баннер, чтобы включить вход в SMS для номера телефона.](media/sms-sign-in-explainer/sms-sign-in-phone-method.png)](media/sms-sign-in-explainer/sms-sign-in-phone-method.png#lightbox)
 
 1. Чтобы включить метод, щелкните **Включить**. Отобразится запрос на подтверждение действия.
 
@@ -68,7 +68,7 @@ ms.locfileid: "83747212"
 
 1. Чтобы удалить номер телефона, нажмите кнопку "Удалить" на плитке метода входа с помощью SMS.
 
-    [![](media/sms-sign-in-explainer/sms-sign-in-delete-method.png "Banner to delete SMS sign-in for a phone number")](media/sms-sign-in-explainer/sms-sign-in-delete-method.png#lightbox)
+    [![Баннер для удаления входа в SMS для номера телефона.](media/sms-sign-in-explainer/sms-sign-in-delete-method.png)](media/sms-sign-in-explainer/sms-sign-in-delete-method.png#lightbox)
 
 2. Когда появится запрос на подтверждение действия, выберите **ОК**.
 

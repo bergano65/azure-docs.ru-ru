@@ -3,12 +3,12 @@ title: Базовый план безопасности Azure для Azure DevTe
 description: Базовый план безопасности Azure для Azure DevTest Labs
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: 47adca5867fef1d41ccfec2455acc6932269842d
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 7f0dc1fb18740e2b0611b5954821a5ceda2d2657
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282285"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87387835"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Базовый план безопасности Azure для Azure DevTest Labs
 
@@ -547,7 +547,7 @@ DevTest Labs не имеет концепции паролей по умолча
 **Руководство.** При резервном копировании управляемых дисков с Azure Backup виртуальные машины шифруются при хранении Шифрование службы хранилища (SSE). Azure Backup также могут выполнять резервное копирование виртуальных машин Azure, зашифрованных с помощью шифрования дисков Azure. Шифрование дисков Azure интегрируется с ключами шифрования BitLocker (Бекс), которые защищается в хранилище ключей как секреты. Шифрование дисков Azure также интегрируется с ключами шифрования Azure Key Vault ключей (ключи обмена ключами). Включите обратимое удаление в Key Vault для защиты ключей от случайного или злонамеренного удаления.
 
 - [Обратимое удаление для виртуальных машин](../backup/soft-delete-virtual-machines.md)
-- [Обзор Azure Key Vault обратимого удаления](../key-vault/general/overview-soft-delete.md)
+- [Обзор Azure Key Vault обратимого удаления](../key-vault/general/soft-delete-overview.md)
 
 **Мониторинг центра безопасности Azure:** Да
 
@@ -631,7 +631,7 @@ DevTest Labs не имеет концепции паролей по умолча
 
 **Ответственность:** Используемый
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующую статью:
 
 - [Оповещения системы безопасности для сред в Azure DevTest Labs](environment-security-alerts.md)

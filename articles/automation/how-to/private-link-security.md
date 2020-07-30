@@ -6,12 +6,12 @@ ms.author: magoedte
 ms.topic: conceptual
 ms.date: 07/09/2020
 ms.subservice: ''
-ms.openlocfilehash: a7ff659eb6fc204208c84146a2fc33c8278f7154
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: c81d9774dccf8c02d2eab7b1ebbb69e6671869e8
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86207283"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423802"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-automation-preview"></a>Использование частной ссылки Azure для безопасного подключения сетей к службе автоматизации Azure (Предварительная версия)
 
@@ -132,15 +132,15 @@ URL-адрес общедоступной конечной точки откры
 
 ## <a name="set-public-network-access-flags"></a>Установка флагов доступа к общедоступной сети
 
-Можно настроить учетную запись службы автоматизации для запрета всех общедоступных конфигураций и разрешить подключения только через частные конечные точки для дальнейшего повышения безопасности сети. Если вы хотите ограничить доступ к учетной записи службы автоматизации только в пределах виртуальной сети и запретить доступ из Интернета, можно задать `publicNetworkAccess` для свойства значение `$true` .
+Можно настроить учетную запись службы автоматизации для запрета всех общедоступных конфигураций и разрешить подключения только через частные конечные точки для дальнейшего повышения безопасности сети. Если вы хотите ограничить доступ к учетной записи службы автоматизации только в пределах виртуальной сети и запретить доступ из Интернета, можно задать `publicNetworkAccess` для свойства значение `$false` .
 
-Если параметр **запрета доступа к общедоступной сети** имеет значение `true` , то разрешены только соединения через частные конечные точки, а все подключения через общедоступные конечные точки отклоняются с сообщением об ошибке.
+Если параметр **доступа к общедоступной сети** имеет значение `$false` , разрешены только соединения через частные конечные точки, а все подключения через общедоступные конечные точки отклоняются с сообщением об ошибке унасоризед и состоянием HTTP 401. 
 
 В следующем сценарии PowerShell показано, как `Get` и `Set` свойство **доступа к общедоступной сети** на уровне учетной записи службы автоматизации.
 
 ```powershell
 $account = Get-AzResource -ResourceType Microsoft.Automation/automationAccounts -ResourceGroupName "<resourceGroupName>" -Name "<automationAccountName>" -ApiVersion "2020-01-13-preview"
-$account.Properties | Add-Member -Name 'publicNetworkAccess' -Type NoteProperty -Value $true
+$account.Properties | Add-Member -Name 'publicNetworkAccess' -Type NoteProperty -Value $false
 $account | Set-AzResource -Force -ApiVersion "2020-01-13-preview"
 ```
 

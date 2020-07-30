@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/15/2019
-ms.openlocfilehash: ac5fa2a4eb534a4cc6e7bf9542bfb250f216401c
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 31c426ffa85d4eb78a8420d56cce93132b4b7539
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282506"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87432856"
 ---
 # <a name="create-endpoints-for-deployed-azure-machine-learning-studio-classic-web-services"></a>Создание конечных точек для развернутых веб-служб Машинное обучение Azure Studio (классическая модель)
 
-**применимо к:** ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-azure-ml.md) ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) 
+**применимо к:** ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 
 > [!NOTE]
@@ -51,6 +51,6 @@ ms.locfileid: "87282506"
 
 Синхронные API обычно используются в ситуациях, когда требуется низкий уровень задержки. Под задержкой здесь подразумевается время, необходимое для того, чтобы API завершил один запрос, и в ней не учитывается время сетевой задержки. Предположим, что имеется API с задержкой в 50 мс. Чтобы полностью задействовать доступный объем с использованием высокого уровня ускорения и максимальным количеством одновременных вызовов = 20, необходимо вызывать этот API 20 * 1000 / 50 = 400 раз в секунду. Аналогично, при максимальном количестве одновременных вызовов в 200 и задержке в 50 мс этот API можно вызывать 4000 раз в секунду.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Как использовать веб-службу машинное обучение Azure](consume-web-services.md).

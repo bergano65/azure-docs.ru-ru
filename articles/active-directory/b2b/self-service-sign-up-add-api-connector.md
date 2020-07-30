@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e6238e89b3941668f831f3128bb0e723a4097e48
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 88270d51bf50b2b175d9d8761685a8a2a8ae19b1
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87027518"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87428256"
 ---
 # <a name="add-an-api-connector-to-a-user-flow"></a>Добавление соединителя API в поток пользователя
 
@@ -42,9 +42,16 @@ ms.locfileid: "87027518"
 8. Выберите утверждения, которые необходимо отправить в API.
 9. Выберите любые утверждения, которые вы планируете получить обратно из API.
 
-   ![Задание утверждений соединителя API](./media/self-service-sign-up-add-api-connector/api-connector-claims.png)
+   <!-- ![Set API connector claims](./media/self-service-sign-up-add-api-connector/api-connector-claims.png) -->
 
 10. Щелкните **Сохранить**.
+
+### <a name="selection-of-claims-to-send-and-claims-to-receive"></a>Выбор "утверждений для отправки" и "утверждений для получения"
+> [!IMPORTANT]
+> Вы можете увидеть все утверждения, выбранные по умолчанию, как показано ниже. Все соединители API будут обновлены таким образом. Ваш API получит все доступные утверждения и сможет отправить обратно любое поддерживаемое утверждение, не настроив их в определении соединителя API. 
+
+![Задание утверждений соединителя API](./media/self-service-sign-up-add-api-connector/api-connector-claims-new.png)
+
 
 ## <a name="enable-the-api-connector-in-a-user-flow"></a>Включение соединителя API в потоке пользователя
 
@@ -164,7 +171,7 @@ Content-type: application/json
 | version     | Строка | Да      | Версия API.                                                    |
 | action      | Строка | Да      | Значение должно быть`ShowBlockPage`                                              |
 | userMessage | Строка | Да      | Сообщение, отображаемое для пользователя.                                            |
-| код        | Строка | Нет       | Код ошибки. Может использоваться в целях отладки. Не отображается для пользователя. |
+| код        | Тип String | Нет       | Код ошибки. Может использоваться в целях отладки. Не отображается для пользователя. |
 
 #### <a name="end-user-experience-with-a-blocking-response"></a>Взаимодействие с конечным пользователем с блокирующим ответом
 
@@ -193,9 +200,9 @@ Content-type: application/json
 | ----------- | ------- | -------- | -------------------------------------------------------------------------- |
 | version     | Строка  | Да      | Версия API.                                                    |
 | action      | Строка  | Да      | Необходимое значение: `ValidationError`.                                           |
-| status      | Тип Integer | Да      | `400`Для ответа ValidationError должно быть значение.                        |
+| status      | Целое число | Да      | `400`Для ответа ValidationError должно быть значение.                        |
 | userMessage | Строка  | Да      | Сообщение, отображаемое для пользователя.                                            |
-| код        | Строка  | Нет       | Код ошибки. Может использоваться в целях отладки. Не отображается для пользователя. |
+| код        | Тип String  | Нет       | Код ошибки. Может использоваться в целях отладки. Не отображается для пользователя. |
 
 #### <a name="end-user-experience-with-a-validation-error-response"></a>Взаимодействие с пользователем при проверке — ошибка проверки
 

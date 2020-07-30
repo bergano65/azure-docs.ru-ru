@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 06/30/2020
 ms.author: cherylmc
-ms.openlocfilehash: 72408b4f17aa5e8601095b27478806883739a7a8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0aac3d7a4bc2eb8bb83405155b345360f5d2c699
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87031632"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87407359"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению ExpressRoute и расположения пиринга
 
@@ -82,7 +82,7 @@ ms.locfileid: "87031632"
 | **[Aryaka Networks](https://www.aryaka.com/)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Даллас, Гонконг (САР), Сан-Паулу, Сиэтл, Кремниевая долина, Сингапур, Токио, Вашингтон (округ Колумбия) |
 | **[Ascenty Data Centers](https://www.ascenty.com/en/cloud/microsoft-express-route)** |Поддерживается |Поддерживается |Сан-Паулу |
 | **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Даллас, Франкфурт, Лондон, Кремниевая долина, Сингапур, Сидней, Токио, Торонто, Вашингтон (округ Колумбия) |
-| **[AT TOKYO](https://www.attokyo.com/service/cloudsconnection/forazure.html)** | Поддерживается | Поддерживается | Токио 2 |
+| **[AT TOKYO](https://www.attokyo.com/connectivity/azure.html)** | Поддерживается | Поддерживается | Осака, Tokyo2 |
 | **[BBIX](https://www.bbix.net/en/service/ix/)** | Поддерживается | Поддерживается | Токио |
 | **[BCX](https://www.bcx.co.za/solutions/connectivity/data-networks)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург|
 | **[Bell Canada](https://business.bell.ca/shop/enterprise/cloud-connect-access-to-cloud-partner-services)** |Поддерживается |Поддерживается |Квебек, Монреаль, Торонто |
@@ -109,7 +109,7 @@ ms.locfileid: "87031632"
 | **Etisalat UAE** |Поддерживается |Поддерживается |Дубаи|
 | **[euNetworks](https://eunetworks.com/services/solutions/cloud-connect/microsoft-azure-expressroute/)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Дублин, Франкфурт, Лондон |
 | **FarEasTone** |Поддерживается |Поддерживается |Тайбэй|
-| **GÉANT** |Поддерживается |Поддерживается |Амстердам, Дублин, Франкфурт, Марселе |
+| **GÉANT** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Дублин, Франкфурт, Марселе |
 | **гтт** |Поддерживается |Поддерживается |Лондон 2 |
 | **[Global Cloud Xchange (GCX)](https://globalcloudxchange.com/cloud-platform/cloud-x-fusion/)** | Поддерживается| Поддерживается | Ченнаи, Мумбаи |
 | **Intelsat** | Поддерживается | Поддерживается | Вашингтон (округ Колумбия) 2 |

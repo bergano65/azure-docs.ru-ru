@@ -5,12 +5,13 @@ author: peterpogorski
 ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
-ms.openlocfilehash: b34893b64ac3533406f33c45583a911b70ae42af
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 1480b5e1ddab86761adb1c7caef808de89a3d947
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86247444"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87428997"
 ---
 # <a name="service-fabric-for-visual-studio-code"></a>Service Fabric для Visual Studio Code
 
@@ -21,13 +22,13 @@ ms.locfileid: "86247444"
 > [!IMPORTANT]
 > Приложения Java Service Fabric могут разрабатываться на компьютерах Windows, но развернуть их можно только в кластерах Linux в Azure. Отладка приложений Java в ОС Windows не поддерживается.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимо обязательно установить следующие компоненты во всех средах:
 
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Node.js](https://nodejs.org/)
-* [GIT](https://git-scm.com/)
+* [Git](https://git-scm.com/);
 * [Пакет SDK для Service Fabric](./service-fabric-get-started.md)
 * Генераторы Yeoman (установите соответствующие генераторы для своего приложения)
 

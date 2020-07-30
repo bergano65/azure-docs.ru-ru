@@ -3,16 +3,16 @@ title: Поддержка географической доступности и
 description: Поддержка географической доступности и валюты для транзакций на коммерческой платформе
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: conceptual
+ms.topic: reference
 author: keferna
 ms.author: keferna
 ms.date: 01/29/2020
-ms.openlocfilehash: 57d1564c155a553571499a47a5c1d83c80c074b3
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 7041221b015465e9db2d67d8dd7760d644c34f0c
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86120013"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87387444"
 ---
 # <a name="geographic-availability-and-currency-support-for-commercial-marketplace"></a>Поддержка географической доступности и валюты для коммерческой платформы
 
@@ -43,9 +43,9 @@ ms.locfileid: "86120013"
 | Бразилия                              | BR        | BRL\*        |
 | Бруней-Даруссалам                              | BN        | USD          |
 | Болгария                            | BG        | EUR          |
+| Кабо-Верде                          | CV        | USD          |
 | Камерун                            | CM        | USD          |
 | Canada                              | CA        | CAD          |
-| Кабо-Верде                          | CV        | USD          |
 | Каймановы о-ва                      | KY        | USD          |
 | Чили                               | CL        | USD          |
 | Китай\**                            | CN        | Недоступно          |
@@ -110,8 +110,8 @@ ms.locfileid: "86120013"
 | Намибия                             | Н/Д        | USD          |
 | Непал                               | NP        | USD          |
 | Нидерланды                         | NL        | EUR          |
-| Никарагуа                           | NI        | USD          |
 | Новая Зеландия                         | NZ        | NZD          |
+| Никарагуа                           | NI        | USD          |
 | Нигерия                             | NG        | USD          |
 | Норвегия                              | NO        | NOK          |
 | Оман                                | OM        | USD          |
@@ -148,15 +148,15 @@ ms.locfileid: "86120013"
 | Тунис                             | TN        | USD          |
 | Турция                              | TR        | USD          |
 | Туркменистан                        | TM        | USD          |
-| Ватикан             | VA        | EUR          |
-| Виргинские острова Соединенных Штатов | VI        | USD          |
 | Уганда                              | UG        | USD          |
 | Украина                             | UA        | USD          |
 | ОАЭ                | AE        | USD          |
 | United Kingdom                      | ГБ        | GBP          |
 | США                       | США        | USD          |
+| США (США)                 | VI        | USD          |
 | Уругвай                             | UY        | USD          |
 | Узбекистан                          | UZ        | USD          |
+| Ватикан             | VA        | EUR          |
 | Венесуэла                           | VE        | USD          |
 | Вьетнам                             | VN        | USD          |
 | Йемен                               | YE        | USD          |

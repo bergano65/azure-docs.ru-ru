@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 11/29/2017
-ms.openlocfilehash: 4b4251a426d33c0a3b8cc7584d2bf6375dcd0f79
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 2b050e8c70de4edc39c8ddad71d2169d5308607b
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87287243"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87429384"
 ---
 # <a name="define-custom-r-modules-for-machine-learning-studio-classic"></a>Определение пользовательских модулей R для Машинное обучение Studio (классическая модель)
 
-**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+**применимо к:** ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 В этом разделе описывается создание и развертывание пользовательского R Studio (классическая модель). Здесь поясняется, что такое пользовательский R-модуль, и какие файлы используются для его создания. В этом разделе также описан способ создания файлов, определяющих модуль, и регистрации модуля для его развертывания в рабочей области Машинного обучения. Затем более подробно описываются элементы и атрибуты, используемые в определении пользовательского модуля. Кроме этого, здесь рассматриваются способы использования дополнительных функций, файлов и нескольких наборов выходных данных. 
 
@@ -307,7 +307,7 @@ CustomAddRows <- function(dataset1, dataset2, swap=FALSE) {
     * категориальные;
     * Тип String
     * Метка
-    * Функция
+    * Компонент
     * Оценка
     * Все
   * **по умолчанию** — варианты выбора по умолчанию, допустимые для выбора столбца: 

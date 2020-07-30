@@ -1,18 +1,18 @@
 ---
 title: Настройка экземпляра и проверки подлинности (с использованием скрипта)
 titleSuffix: Azure Digital Twins
-description: См. статью как настроить экземпляр службы Digital двойников для Azure, включая правильную проверку подлинности. Версия в скрипте.
+description: Сведения о настройке экземпляра службы Digital двойников см. в разделе Создание сценария автоматического развертывания.
 author: baanders
 ms.author: baanders
-ms.date: 7/22/2020
+ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 522096b921faf34130f0c37f727d89c7bf95c530
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 076bde9e2760a862822d80d63197e2c15a678d35
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87337914"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87407493"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-scripted"></a>Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)
 
@@ -20,9 +20,12 @@ ms.locfileid: "87337914"
 
 В этой статье описаны действия по **настройке нового экземпляра Azure Digital двойников**, включая создание экземпляра и настройку проверки подлинности. По завершении работы с этой статьей у вас будет готовый экземпляр Azure Digital двойников для начала программирования.
 
-Эта версия этой статьи завершает эти действия, запуская [пример **скрипта автоматического развертывания** ](https://docs.microsoft.com/samples/azure-samples/digital-twins-samples/digital-twins-samples/) , который упрощает процесс. Чтобы просмотреть действия, выполняемые сценарием в фоновом режиме, см. статью [*как настроить экземпляр и проверку подлинности*](how-to-set-up-instance-manual.md)вручную.
+Эта версия этой статьи завершает эти действия, запуская [пример **скрипта автоматического развертывания** ](https://docs.microsoft.com/samples/azure-samples/digital-twins-samples/digital-twins-samples/) , который упрощает процесс. 
+* Для просмотра действий CLI вручную, выполняемых сценарием в фоновом режиме, см. версию CLI этой статьи: [*инструкции по настройке экземпляра и проверки подлинности (CLI)*](how-to-set-up-instance-cli.md).
+* Чтобы просмотреть действия вручную в соответствии с портал Azure, см. версию портала этой статьи: инструкции по [*настройке экземпляра и проверки подлинности (портал)*](how-to-set-up-instance-portal.md).
 
-[!INCLUDE [digital-twins-setup-starter.md](../../includes/digital-twins-setup-starter.md)]
+[!INCLUDE [digital-twins-setup-steps.md](../../includes/digital-twins-setup-steps.md)]
+[!INCLUDE [digital-twins-setup-role-cli.md](../../includes/digital-twins-setup-role-cli.md)]
 
 ## <a name="run-the-deployment-script"></a>Выполнение скрипта развертывания
 
@@ -41,7 +44,7 @@ ms.locfileid: "87337914"
  
 2. После входа Найдите панель значков окна Cloud Shell. Выберите значок "Отправить/скачать файлы" и нажмите кнопку "Отправить".
 
-    :::image type="content" source="media/how-to-set-up-instance/cloud-shell-upload.png" alt-text="Окно Cloud Shell, в котором отображается выбор параметра отправки":::
+    :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-upload.png" alt-text="Окно Cloud Shell, в котором отображается выбор параметра отправки":::
 
     Перейдите к файлу _**deploy.ps1**_ на компьютере и нажмите кнопку "Открыть". Файл будет отправлен в Cloud Shell, чтобы его можно было запустить в окне Cloud Shell.
 
@@ -57,21 +60,38 @@ ms.locfileid: "87337914"
 
 Ниже приведен фрагмент журнала вывода из скрипта:
 
-:::image type="content" source="media/how-to-set-up-instance/deployment-script-output.png" alt-text="Cloud Shell окно, показывающее журнал входных и выходных данных при выполнении скрипта развертывания" lightbox="media/how-to-set-up-instance/deployment-script-output.png":::
+:::image type="content" source="media/how-to-set-up-instance/cloud-shell/deployment-script-output.png" alt-text="Cloud Shell окно, показывающее журнал входных и выходных данных при выполнении скрипта развертывания" lightbox="media/how-to-set-up-instance/cloud-shell/deployment-script-output.png":::
 
 Если сценарий завершается успешно, окончательная печать будет говорить `Deployment completed successfully` . В противном случае выполняйте сообщение об ошибке и повторно запустите скрипт. Он обходит уже выполненные действия и снова запросит входные данные в том месте, где вы остановились.
 
-После завершения скрипта теперь у вас есть готовый к работе экземпляр Azure Digital двойников и разрешения, настроенные для управления им.
+После завершения скрипта теперь у вас есть экземпляр Azure Digital двойников, готовый к управлению с разрешениями на управление и устанавливающие разрешения на доступ к нему для клиентского приложения.
+
+> [!NOTE]
+> В настоящее время сценарий назначает требуемую роль управления в Azure Digital двойников (*Azure Digital двойников Owner (Предварительная версия)*) тому же пользователю, который запускает скрипт из Cloud Shell. Если вам нужно назначить эту роль другому пользователю, который будет управлять экземпляром, это можно сделать сейчас с помощью портал Azure ([инструкции](how-to-set-up-instance-portal.md#set-up-user-access-permissions)) или CLI ([инструкции](how-to-set-up-instance-cli.md#set-up-user-access-permissions)).
 
 ## <a name="collect-important-values"></a>Получение важных значений
 
-Регистрация приложения состоит из двух важных значений, которые потребуются позже для [проверки подлинности клиентского приложения с помощью API цифровых двойников Azure](how-to-authenticate-client.md). 
+Существует несколько важных значений ресурсов, настроенных сценарием, которые могут потребоваться при продолжении работы с экземпляром Digital двойников для Azure. В этом разделе для получения этих значений будет использоваться [портал Azure](https://portal.azure.com) . Их следует сохранить в надежном месте или вернуться к этому разделу, чтобы найти их позже по мере необходимости.
+
+Если другие пользователи будут программироваться на экземпляре, эти значения также следует использовать вместе с ними.
+
+### <a name="collect-instance-values"></a>Получение значений экземпляров
+
+В [портал Azure](https://portal.azure.com)найдите экземпляр Azure Digital двойников, выполнив поиск по имени своего экземпляра на панели поиска портала.
+
+При выборе откроется страница *обзора* экземпляра. Запомните его *имя*, *группу ресурсов*и *имя узла*. Эти данные могут потребоваться позже для обнаружения экземпляра и подключения к нему.
+
+:::image type="content" source="media/how-to-set-up-instance/portal/instance-important-values.png" alt-text="Выделение важных значений на странице обзора экземпляра":::
+
+### <a name="collect-app-registration-values"></a>Получение значений регистрации приложения 
+
+Регистрация приложения состоит из двух важных значений, которые потребуются позже для [написания кода проверки подлинности клиентского приложения для API-интерфейсов Azure Digital двойников](how-to-authenticate-client.md). 
 
 Чтобы найти их, перейдите по [этой ссылке](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) , чтобы перейти на страницу обзора регистрации приложений Azure AD в портал Azure. На этой странице отображаются все регистрации приложений, созданные в вашей подписке.
 
 Вы должны увидеть только что созданную регистрацию приложения в этом списке. Выберите его, чтобы открыть подробные сведения:
 
-:::image type="content" source="media/how-to-set-up-instance/app-important-values.png" alt-text="Представление портала с важными значениями для регистрации приложения":::
+:::image type="content" source="media/how-to-set-up-instance/portal/app-important-values.png" alt-text="Представление портала с важными значениями для регистрации приложения":::
 
 Запишите *идентификатор приложения (клиента)* и *идентификатор каталога (клиента)* , показанные на **странице.** Если вы не являетесь пользователем, который будет писать код для клиентских приложений, вам потребуется поделиться этими значениями с пользователем, который будет иметь значение.
 
@@ -86,6 +106,9 @@ ms.locfileid: "87337914"
 ### <a name="verify-user-role-assignment"></a>Проверка назначения роли пользователя
 
 [!INCLUDE [digital-twins-setup-verify-role-assignment.md](../../includes/digital-twins-setup-verify-role-assignment.md)]
+
+> [!NOTE]
+> Помните, что сценарий в настоящее время назначает эту требуемую роль тому же пользователю, который запускает скрипт из Cloud Shell. Если вам нужно назначить эту роль другому пользователю, который будет управлять экземпляром, это можно сделать сейчас с помощью портал Azure ([инструкции](how-to-set-up-instance-portal.md#set-up-user-access-permissions)) или CLI ([инструкции](how-to-set-up-instance-cli.md#set-up-user-access-permissions)).
 
 ### <a name="verify-app-registration"></a>Проверка регистрации приложения
 

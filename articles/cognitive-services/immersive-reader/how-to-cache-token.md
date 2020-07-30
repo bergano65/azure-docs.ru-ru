@@ -9,12 +9,13 @@ ms.subservice: immersive-reader
 ms.topic: conceptual
 ms.date: 01/14/2020
 ms.author: metan
-ms.openlocfilehash: e652aa29b1c1935fcc4887dbe13ef9b683a8bd05
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 70173e1904ce9d7a159532c8962932765060e4d9
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75946169"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87406951"
 ---
 # <a name="how-to-cache-the-authentication-token"></a>Кэширование маркера проверки подлинности
 
@@ -22,7 +23,7 @@ ms.locfileid: "75946169"
 
 ## <a name="using-aspnet"></a>Использование ASP.NET
 
-Импортируйте пакет NuGet **Microsoft. IdentityModel. Clients. ActiveDirectory** , который используется для получения маркера. Затем используйте следующий код `AuthenticationResult`, чтобы получить, используя значения проверки подлинности, которые были получены при [создании иммерсивного ресурса чтения](./how-to-create-immersive-reader.md).
+Импортируйте пакет NuGet **Microsoft. IdentityModel. Clients. ActiveDirectory** , который используется для получения маркера. Затем используйте следующий код, чтобы получить `AuthenticationResult` , используя значения проверки подлинности, которые были получены при [создании иммерсивного ресурса чтения](./how-to-create-immersive-reader.md).
 
 ```csharp
 private async Task<AuthenticationResult> GetTokenAsync()
@@ -34,9 +35,9 @@ private async Task<AuthenticationResult> GetTokenAsync()
 }
 ```
 
-`AuthenticationResult` Объект имеет `AccessToken` свойство, которое является фактическим маркером, который будет использоваться при запуске иммерсивное средство чтения с помощью пакета SDK. Он также имеет `ExpiresOn` свойство, которое обозначает, когда истечет срок действия маркера. Перед запуском иммерсивное средство чтения можно проверить, истек ли срок действия маркера, и получить новый токен, только если срок его действия истек.
+`AuthenticationResult`Объект имеет свойство, `AccessToken` которое является фактическим маркером, который будет использоваться при запуске иммерсивное средство чтения с помощью пакета SDK. Он также имеет `ExpiresOn` свойство, которое обозначает, когда истечет срок действия маркера. Перед запуском иммерсивное средство чтения можно проверить, истек ли срок действия маркера, и получить новый токен, только если срок его действия истек.
 
-## <a name="using-nodejs"></a>Использование Node. JS
+## <a name="using-nodejs"></a>Использование Node.JS
 
 Добавьте пакет [**request**](https://www.npmjs.com/package/request) NPM в проект. Используйте следующий код, чтобы получить маркер, используя значения проверки подлинности, полученные при [создании иммерсивного ресурса чтения](./how-to-create-immersive-reader.md).
 
@@ -64,7 +65,7 @@ router.get('/token', function(req, res) {
 });
 ```
 
-`expires_on` Свойство — это дата и время истечения срока действия маркера, выраженное в виде числа секунд, прошедших с 1 января 1970. в формате UTC. Используйте это значение, чтобы определить, истек ли срок действия токена, прежде чем пытаться получить новый.
+`expires_on`Свойство — это дата и время истечения срока действия маркера, выраженное в виде числа секунд, прошедших с 1 января 1970. в формате UTC. Используйте это значение, чтобы определить, истек ли срок действия токена, прежде чем пытаться получить новый.
 
 ```javascript
 async function getToken() {
@@ -75,6 +76,6 @@ async function getToken() {
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со справочной документацией по [пакету SDK для иммерсивного средства чтения](./reference.md).

@@ -3,12 +3,12 @@ title: Функции Azure Blueprints
 description: Описание функций, доступных для использования с артефактами схемы в определениях и назначениях Azure Blueprints.
 ms.date: 05/22/2020
 ms.topic: reference
-ms.openlocfilehash: c402075aa9f6beb52e72454179c2e96d148c271f
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: 7a52901060466692e7094cf74fa5acfcded5f1da
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85970881"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87422850"
 ---
 # <a name="functions-for-use-with-azure-blueprints"></a>Функции, доступные для использования с Azure Blueprints
 
@@ -174,7 +174,7 @@ Azure Blueprints предоставляют функции, которые де�
                 "type": "array",
                 "metadata": {
                     "displayName": "Principal IDs",
-                    "description": "This is a blueprint parameter that any artifact can reference. We'll display these descriptions for you in the info bubble. Supply principal IDs for the users,groups, or service principals for the RBAC assignment.",
+                    "description": "This is a blueprint parameter that any artifact can reference. We'll display these descriptions for you in the info bubble. Supply principal IDs for the users,groups, or service principals for the Azure role assignment.",
                     "strongType": "PrincipalId"
                 }
             }

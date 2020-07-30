@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 07/23/2020
 ms.custom: shresha
-ms.openlocfilehash: a5721748f023ea5f098b71d8d43dbda53721c54d
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.openlocfilehash: a74a5e2b8e80121324dc8b880d90f493d5b2ddfd
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87171719"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423955"
 ---
 # <a name="migrating-to-new-azure-time-series-insights-gen2-api-versions"></a>Переход на новые версии API службы "аналитика временных рядов Azure Gen2"
 
@@ -82,7 +82,7 @@ ms.locfileid: "87171719"
 - API модели временных рядов
   - API параметров модели
     - [Получить](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/modelsettings/get)
-    - [Update](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/modelsettings/update)
+    - [Обновление](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/modelsettings/update)
   - API экземпляра
     - [Все операции пакетной обработки](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/executebatch)
     - [Список](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/list)
@@ -286,7 +286,7 @@ ms.locfileid: "87171719"
 
 Кроме того, `value` может иметь значение `$event['Bar-Pressure-Offset'].Double` . Если тип данных не указан, всегда предполагается, что тип данных равен Double. Нотация в квадратных скобках должна использоваться для экранирования специального символа ( `-` ).
 
-#### <a name="getaggregateseries"></a>жетаггрегатесериес
+#### <a name="aggregateseries"></a>аггрегатесериес
 
 Старый текст запроса (используется `2018-11-01-preview` ):
 
@@ -382,6 +382,6 @@ ms.locfileid: "87171719"
 }
 ```
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Протестируйте свою среду с помощью обозревателя службы " [аналитика временных рядов Azure](./concepts-ux-panels.md) " или пользовательского приложения.

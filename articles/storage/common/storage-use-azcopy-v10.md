@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 08e70265399a67ee58ad66e06adffbfd30b20e10
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: b43b20023aa0d96dcaa3ce79b626d61ec6f6752d
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87289228"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423837"
 ---
 # <a name="get-started-with-azcopy"></a>Начало работы с AzCopy
 
@@ -97,7 +97,7 @@ AzCopy — это служебная программа командной ст
 Сведения о проверке и назначении ролей см. [в разделе Предоставление доступа к данным BLOB-объектов и очередей Azure с помощью RBAC в портал Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 > [!NOTE]
-> Помните, что для распространения назначения ролей RBAC может потребоваться до пяти минут.
+> Помните, что для распространения назначений ролей Azure может потребоваться до пяти минут.
 
 Если субъект безопасности добавлен в список управления доступом (ACL) целевого контейнера или каталога, вам не нужно назначать одну из этих ролей субъекту безопасности. В списке управления доступом субъекту безопасности необходимо разрешение на запись в целевой каталог и разрешение EXECUTE для контейнера и каждого родительского каталога.
 
