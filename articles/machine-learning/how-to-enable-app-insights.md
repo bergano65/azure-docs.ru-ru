@@ -11,12 +11,12 @@ author: blackmist
 ms.date: 07/23/2020
 ms.topic: conceptual
 ms.custom: how-to, tracking-python
-ms.openlocfilehash: 2bc3eb72ff0c5d29fd72de848abf87dfe84e2a01
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 88a122a9af4a5edac45a3189df5ffb78fb2ce271
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320227"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423819"
 ---
 # <a name="monitor-and-collect-data-from-ml-web-service-endpoints"></a>Мониторинг и сбор данных из конечных точек веб-службы Машинного обучения
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -128,6 +128,8 @@ ms.locfileid: "87320227"
 
 3. Создайте образ и разверните его в [AKS или ACI](how-to-deploy-and-where.md).
 
+Дополнительные сведения о ведении журналов и сборе данных см. [в разделе Включение ведения журнала в машинное обучение Azure](how-to-enable-logging.md) и [сбор данных из моделей в рабочей среде](how-to-enable-data-collection.md).
+
 ### <a name="disable-tracking-in-python"></a>Отключение наблюдения в Python
 
 Чтобы отключить Application Insights Azure, используйте следующий код:
@@ -166,7 +168,7 @@ ms.locfileid: "87320227"
 
     [![Указать URL-адрес Application Insights](./media/how-to-enable-app-insights/appinsightsloc.png)](././media/how-to-enable-app-insights/appinsightsloc.png#lightbox)
 
-1. В Исигхтс приложений на вкладке **Обзор** или в разделе __мониторинг__ в списке слева выберите __журналы__.
+1. В Application Insights на вкладке **Обзор** или в разделе __мониторинг__ в списке слева выберите __журналы__.
 
     [![Вкладка "Обзор" в разделе "Мониторинг"](./media/how-to-enable-app-insights/overview.png)](./media/how-to-enable-app-insights/overview.png#lightbox)
 

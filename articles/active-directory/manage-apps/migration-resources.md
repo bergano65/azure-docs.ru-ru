@@ -11,17 +11,16 @@ ms.workload: identity
 ms.date: 02/29/2020
 ms.author: kenwith
 ms.reviewer: baselden
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3fe21b6509080e88c63d9c02c8116f3882fb64dd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 327e59d3fee6f23d2635b846e9fb5ab422e0139e
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84763114"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87429025"
 ---
 # <a name="resources-for-migrating-applications-to-azure-active-directory"></a>Ресурсы для переноса приложений в Azure Active Directory
 
-Ресурсы, помогающие перенести процессы, связанные с доступом к приложениям и проверкой подлинности, в Azure Active Directory (Azure AD). Пройдите этот короткий опрос (https://aka.ms/AppsMigrationFeedback), чтобы предоставить отзыв об использовании средств переноса приложений в Azure AD (включая препятствия для переноса, необходимые инструменты или руководства, а также причины сохранения локального поставщика удостоверений). 
+Ресурсы, помогающие перенести процессы, связанные с доступом к приложениям и проверкой подлинности, в Azure Active Directory (Azure AD).
 
 | Ресурс  | Описание  |
 |:-----------|:-------------|

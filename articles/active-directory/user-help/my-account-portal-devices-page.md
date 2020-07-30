@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 10/28/2019
+ms.date: 07/29/2020
 ms.author: curtand
-ms.openlocfilehash: 9badda1663947587b078c6bb808f4efdf2e10579
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: e150143e726c75d96372b11fb3d451f0dc9956bc
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83735962"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87422490"
 ---
 # <a name="manage-your-connected-devices-from-the-devices-page"></a>Управление подключенными устройствами на странице "Устройства"
 
@@ -75,6 +75,8 @@ ms.locfileid: "83735962"
 - просматривать сведения о [действиях входа](my-account-portal-sign-ins-page.md);
 
 - ознакомиться с тем, как ваша организация [использует ваши данные, связанные с конфиденциальностью](my-account-portal-privacy-page.md).
+
+- Изменение [параметров портала моей учетной записи](my-account-portal-settings.md)
 
 ## <a name="related-office-content"></a>Связанное содержимое Office
 

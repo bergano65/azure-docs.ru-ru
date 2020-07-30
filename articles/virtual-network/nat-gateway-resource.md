@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/27/2020
 ms.author: allensu
-ms.openlocfilehash: 0b025b3e017c8a7702b411e9d91cbdf22f915aba
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 983a3e04921bb3d8e804430948013a1b51802727
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85549630"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87424074"
 ---
 # <a name="designing-virtual-networks-with-nat-gateway-resources"></a>Проектирование виртуальных сетей с использованием ресурсов шлюза преобразования сетевых адресов (NAT)
 
@@ -28,7 +28,7 @@ ms.locfileid: "85549630"
 
 
 <p align="center">
-  <img src="media/nat-overview/flow-direction1.svg" width="256" title="NAT виртуальной сети для исходящего интернет-трафика">
+  <img src="media/nat-overview/flow-direction1.svg" alt="Figure depicts a NAT gateway resource that consumes all IP addresses for a public IP prefix and directs that traffic to and from two subnets of virtual machines and a virtual machine scale set." width="256" title="NAT виртуальной сети для исходящего интернет-трафика">
 </p>
 
 *Рисунок. NAT виртуальной сети для исходящего интернет-трафика*
@@ -54,7 +54,7 @@ ms.locfileid: "85549630"
 На следующей схеме показаны доступные для записи ссылки между различными ресурсами Azure Resource Manager.  Стрелка указывает направление ссылки, откуда ее можно записать. Просмотр 
 
 <p align="center">
-  <img src="media/nat-overview/flow-map.svg" width="256" title="Объектная модель NAT виртуальной сети">
+  <img src="media/nat-overview/flow-map.svg" alt="Figure depicts a NAT receiving traffic from internal subnets and directing it to a public IP and an IP prefix." width="256" title="Объектная модель NAT виртуальной сети">
 </p>
 
 *Рисунок. Объектная модель NAT виртуальной сети*
@@ -119,7 +119,7 @@ ms.locfileid: "85549630"
 При разработке нового развертывания начните с планирования номеров SKU (цен. категории "Стандартный").
 
 <p align="center">
-  <img src="media/nat-overview/flow-direction1.svg" width="256" title="NAT виртуальной сети для исходящего интернет-трафика">
+  <img src="media/nat-overview/flow-direction1.svg" alt="Figure depicts a NAT gateway that supports outbound traffic to the internet from a virtual network." width="256" title="NAT виртуальной сети для исходящего интернет-трафика">
 </p>
 
 *Рисунок. NAT виртуальной сети для исходящего интернет-трафика*
@@ -129,7 +129,7 @@ ms.locfileid: "85549630"
 #### <a name="nat-and-vm-with-instance-level-public-ip"></a>NAT и виртуальная машина с общедоступным IP-адресом уровня экземпляра
 
 <p align="center">
-  <img src="media/nat-overview/flow-direction2.svg" width="300" title="NAT виртуальной сети и виртуальная машина с общедоступным IP-адресом уровня экземпляра">
+  <img src="media/nat-overview/flow-direction2.svg" alt="Figure depicts a NAT gateway that supports outbound traffic to the internet from a virtual network and inbound traffic with an instance-level public IP." width="300" title="NAT виртуальной сети и виртуальная машина с общедоступным IP-адресом уровня экземпляра">
 </p>
 
 *Рисунок. NAT виртуальной сети и виртуальная машина с общедоступным IP-адресом уровня экземпляра*
@@ -144,7 +144,7 @@ ms.locfileid: "85549630"
 #### <a name="nat-and-vm-with-public-load-balancer"></a>NAT и виртуальная машина с общедоступной подсистемой балансировки нагрузки
 
 <p align="center">
-  <img src="media/nat-overview/flow-direction3.svg" width="350" title="NAT виртуальной сети и виртуальная машина с общедоступной подсистемой балансировки нагрузки">
+  <img src="media/nat-overview/flow-direction3.svg" alt="Figure depicts a NAT gateway that supports outbound traffic to the internet from a virtual network and inbound traffic with a public load balancer." width="350" title="NAT виртуальной сети и виртуальная машина с общедоступной подсистемой балансировки нагрузки">
 </p>
 
 *Рисунок. NAT виртуальной сети и виртуальная машина с общедоступной подсистемой балансировки нагрузки*
@@ -159,7 +159,7 @@ ms.locfileid: "85549630"
 #### <a name="nat-and-vm-with-instance-level-public-ip-and-public-load-balancer"></a>NAT и виртуальная машина с общедоступным IP-адресом уровня экземпляра и общедоступной подсистемой балансировки нагрузки
 
 <p align="center">
-  <img src="media/nat-overview/flow-direction4.svg" width="425" title="NAT виртуальной сети и виртуальная машина с общедоступным IP-адресом уровня экземпляра и общедоступной подсистемой балансировки нагрузки">
+  <img src="media/nat-overview/flow-direction4.svg" alt="Figure depicts a NAT gateway that supports outbound traffic to the internet from a virtual network and inbound traffic with an instance-level public IP and a public load balancer." width="425" title="NAT виртуальной сети и виртуальная машина с общедоступным IP-адресом уровня экземпляра и общедоступной подсистемой балансировки нагрузки">
 </p>
 
 *Рисунок. NAT виртуальной сети и виртуальная машина с общедоступным IP-адресом уровня экземпляра и общедоступной подсистемой балансировки нагрузки*
@@ -182,7 +182,7 @@ Load Balancer (цен. категории "Стандартный"), общед�
 #### <a name="zone-isolation-with-zonal-stacks"></a>Изоляция зоны с зональные стеками
 
 <p align="center">
-  <img src="media/nat-overview/az-directions.svg" width="425" title="NAT виртуальных сетей с изоляцией зоны, создание нескольких зональных стеков "zonal stacks"">
+  <img src="media/nat-overview/az-directions.svg" alt="Figure depicts three zonal stacks, each of which contains a NAT gateway and a subnet." width="425" title="NAT виртуальных сетей с изоляцией зоны, создание нескольких зональных стеков "zonal stacks"">
 </p>
 
 *Рисунок. NAT виртуальных сетей с изоляцией зоны, создание нескольких зональных стеков*
@@ -210,7 +210,7 @@ Load Balancer (цен. категории "Стандартный"), общед�
 #### <a name="cross-zone-outbound-scenarios-not-supported"></a>Сценарии межзонального исходящего трафика не поддерживаются
 
 <p align="center">
-  <img src="media/nat-overview/az-directions2.svg" width="425" title="Служба NAT виртуальных сетей не совместима с подсетью, охватывающей зоны">
+  <img src="media/nat-overview/az-directions2.svg" alt="Figure depicts three zonal stacks, each of which contains a NAT gateway and a subnet, with the connections between to of the gateways and their subnets broken." width="425" title="Служба NAT виртуальных сетей не совместима с подсетью, охватывающей зоны">
 </p>
 
 *Рисунок. Служба NAT виртуальных сетей не совместима с подсетью, охватывающей зоны*
@@ -268,7 +268,7 @@ SNAT, которое обеспечивается NAT, отличается от
 NAT предоставляет порты SNAT по запросу для новых исходящих потоков трафика. Все доступные порты SNAT в инвентаризационных данных используют все виртуальные машины в подсетях, в которых настроено NAT. 
 
 <p align="center">
-  <img src="media/nat-overview/lb-vnnat-chart.svg" width="550" title="Исходящие SNAT-подключения по требованию для виртуальной сети NAT">
+  <img src="media/nat-overview/lb-vnnat-chart.svg" alt="Figure depicts inventory of all available SNAT ports used by any virtual machine on subnets configured with N A T." width="550" title="Исходящие SNAT-подключения по требованию для виртуальной сети NAT">
 </p>
 
 *Рисунок. Исходящие SNAT-подключения по требованию для виртуальной сети NAT*
@@ -276,7 +276,7 @@ NAT предоставляет порты SNAT по запросу для нов
 При любой конфигурации IP-адресов виртуальной машины можно создавать исходящие потоки по требованию.  Не требуется предварительное выделение, а также поэкземплярное планирование, в том числе худшего сценария избыточной подготовки для каждого экземпляра.  
 
 <p align="center">
-  <img src="media/nat-overview/exhaustion-threshold.svg" width="550" title="Различия в сценариях исчерпания">
+  <img src="media/nat-overview/exhaustion-threshold.svg" alt="Figure depicts inventory of all available SNAT ports used by any virtual machine on subnets configured with N A T with exhaustion threshold." width="550" title="Различия в сценариях исчерпания">
 </p>
 
 *Рисунок. Различия в сценариях исчерпания*

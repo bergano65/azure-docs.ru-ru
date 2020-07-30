@@ -2,13 +2,13 @@
 title: Экспорт шаблона в портал Azure
 description: Используйте портал Azure, чтобы экспортировать шаблон Azure Resource Manager из ресурсов в подписке.
 ms.topic: conceptual
-ms.date: 12/12/2019
-ms.openlocfilehash: dbdcaa6e6db4a7a4a958f1be2e9977a14e092663
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.date: 07/29/2020
+ms.openlocfilehash: 0262517df11f0d91920fd7e44f96ff532ffbe63f
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057710"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423241"
 ---
 # <a name="single-and-multi-resource-export-to-a-template-in-azure-portal"></a>Экспорт одного и нескольких ресурсов в шаблон в портал Azure
 
@@ -52,6 +52,8 @@ ms.locfileid: "86057710"
 Функция экспорта шаблона не поддерживает экспорт ресурсов фабрики данных Azure. Дополнительные сведения о том, как можно экспортировать ресурсы фабрики данных, см. в статье [копирование или клонирование фабрики данных в фабрике данных Azure](https://aka.ms/exportTemplateViaAdf).
 
 Чтобы экспортировать ресурсы, созданные с помощью классической модели развертывания, необходимо [перенести их в модель развертывания Диспетчер ресурсов](https://aka.ms/migrateclassicresourcetoarm).
+
+При получении предупреждения при экспорте шаблона, указывающего на то, что тип ресурса не был экспортирован, можно по-прежнему обнаружить свойства этого ресурса. Дополнительные сведения о различных параметрах просмотра свойств ресурсов см. в разделе [Обнаружение свойств ресурсов](view-resources.md). Вы также можете просмотреть [REST API Azure](/rest/api/azure/) для типа ресурса.
 
 ## <a name="export-template-from-a-resource-group"></a>Экспорт шаблона из группы ресурсов
 
@@ -117,7 +119,7 @@ ms.locfileid: "86057710"
 
    ![Выбор шаблона](./media/export-template-portal/show-template-from-history.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как экспортировать шаблоны с помощью [Azure CLI](../management/manage-resource-groups-cli.md#export-resource-groups-to-templates), [Azure PowerShell](../management/manage-resource-groups-powershell.md#export-resource-groups-to-templates)или [REST API](/rest/api/resources/resourcegroups/exporttemplate).
 - Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](template-syntax.md).

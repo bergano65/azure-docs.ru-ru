@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 10/28/2019
+ms.date: 07/29/2020
 ms.author: curtand
-ms.openlocfilehash: a93ee781648440a6e656ff8fd948b2eb9e96bd43
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: d1191fdd757b4614eca543660eccddea5c20d033
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83735945"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87422523"
 ---
 # <a name="change-your-work-or-school-account-password-from-the-change-password-page"></a>Изменение пароля рабочей или учебной учетной записи на странице смены пароля
 
@@ -54,3 +54,5 @@ ms.locfileid: "83735945"
 - просматривать сведения о [действиях входа](my-account-portal-sign-ins-page.md);
 
 - ознакомиться с тем, как ваша организация [использует ваши данные, связанные с конфиденциальностью](my-account-portal-privacy-page.md).
+
+- Изменение [параметров портала моей учетной записи](my-account-portal-settings.md)

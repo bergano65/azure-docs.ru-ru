@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 06/26/2020
 ms.reviewer: jushiman
 ms.custom: avverma
-ms.openlocfilehash: 558dd152aa1c6638155ad4215dc16f08d33d2e2f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f6de05e0ad5e4294b801a8b349663d92db448de6
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87080545"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87424296"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Автоматические обновления образа ОС масштабируемого набора виртуальных машин Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "87080545"
 
 В настоящее время поддерживаются следующие SKU платформы (и периодически добавляются дополнительные):
 
-| Publisher               | Предложение ОС      |  Sku               |
+| Издатель               | Предложение ОС      |  Sku               |
 |-------------------------|---------------|--------------------|
 | Canonical               | UbuntuServer  | 16.04-LTS          |
 | Canonical               | UbuntuServer  | 18.04-LTS          |
@@ -293,7 +293,7 @@ az vmss rolling-upgrade start --resource-group "myResourceGroup" --name "myScale
 
 Вы можете использовать шаблоны для развертывания масштабируемого набора с автоматическими обновлениями ОС для поддерживаемых образов, таких как [Ubuntu 16.04-LTS](https://github.com/Azure/vm-scale-sets/blob/master/preview/upgrade/autoupdate.json).
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fvm-scale-sets%2Fmaster%2Fpreview%2Fupgrade%2Fautoupdate.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"/></a>
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fvm-scale-sets%2Fmaster%2Fpreview%2Fupgrade%2Fautoupdate.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png" alt="Button to Deploy to Azure." /></a>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные примеры использования автоматических обновлений ОС с масштабируемыми наборами см. в [репозитории GitHub](https://github.com/Azure/vm-scale-sets/tree/master/preview/upgrade).

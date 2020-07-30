@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 07/08/2020
 ms.topic: conceptual
 ms.custom: how-to, tracking-python
-ms.openlocfilehash: f592e265cafc3e56dc0616e6eeb748c851084c32
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: fb23893f176a2b51e5917ea5bbcb0e52faa64bf3
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87317881"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423445"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -218,6 +218,8 @@ myenv = Environment.from_conda_specification(name = 'myenv',
                                              file_path = 'path-to-conda-specification-file'
 myenv.register(workspace=ws)
 ```
+
+Подробное описание использования и настройки сред Python с помощью Машинное обучение Azure см. [в разделе создание & использование программных сред в машинное обучение Azure](how-to-use-environments.md)
 
 ### <a name="2-define-scoring-code"></a><a id="script"></a>2. Определение кода оценки
 
@@ -564,9 +566,9 @@ az ml model profile -g <resource-group-name> -w <workspace-name> --inference-con
 
 | Целевой объект вычисления | Пример конфигурации развертывания |
 | ----- | ----- |
-| Локальные | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
+| Локальная | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
 | Экземпляры контейнеров Azure | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
-| Служба Azure Kubernetes | `deployment_config = AksWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
+| Служба контейнеров Azure | `deployment_config = AksWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 
 Классы для локальных объектов, экземпляров контейнеров Azure и веб-служб AKS можно импортировать из `azureml.core.webservice` :
 
@@ -613,7 +615,7 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 
 В следующей таблице описаны различные состояния службы.
 
-| Состояние WebService | Описание: | Конечное состояние?
+| Состояние WebService | Описание | Конечное состояние?
 | ----- | ----- | ----- |
 | Переход | Служба находится в процессе развертывания. | Нет |
 | Unhealthy | Служба была развернута, но сейчас недоступна.  | Нет |
@@ -636,7 +638,7 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 ### <a name="ab-testing-controlled-rollout"></a>A/B — тестирование (управляемое развертывание)
 Дополнительные сведения см. в разделе [контролируемый выпуск моделей ML](how-to-deploy-azure-kubernetes-service.md#deploy-models-to-aks-using-controlled-rollout-preview) .
 
-## <a name="consume-web-services"></a>Использование веб-служб
+## <a name="inference-using-web-services"></a>Вывод с помощью веб-служб
 
 Каждая развернутая веб-служба предоставляет конечную точку RESTFUL, что позволяет создавать клиентские приложения на любом языке программирования.
 Если вы включили проверку подлинности на основе ключей для службы, необходимо предоставить ключ службы в качестве маркера в заголовке запроса.
@@ -1009,7 +1011,7 @@ package = Model.package(ws, [model], inference_config)
 package.wait_for_creation(show_output=True)
 ```
 
-После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Например: 
+После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Пример: 
 
 `Status: Downloaded newer image for myworkspacef78fd10.azurecr.io/package:20190822181338`. 
 
@@ -1233,7 +1235,7 @@ def run(request):
 > Машинное обучение Azure будет маршрутизировать только запросы POST и GET к контейнерам, запускающим службу оценки. Это может вызвать ошибки из-за браузеров, использующих запросы параметров для предварительного рейса запросов CORS.
 > 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)

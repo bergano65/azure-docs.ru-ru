@@ -5,18 +5,18 @@ description: Сведения о создании приложения LUIS пр
 services: cognitive-services
 author: diberry
 manager: nitinme
-ms.custom: seodec18
+ms.custom: seodec18, devx-track-javascript
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 09/05/2019
 ms.author: diberry
-ms.openlocfilehash: 69eb6c5e5d0139049e252b0a22fefad747429068
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 669c5f1ae6b667073e885a0077e9f3130ba3c4f0
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057744"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87405982"
 ---
 # <a name="build-a-luis-app-programmatically-using-nodejs"></a>Создание приложения LUIS программным способом с помощью Node.js
 
@@ -24,7 +24,7 @@ ms.locfileid: "86057744"
 
 [!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Войдите на веб-сайт [LUIS](luis-reference-regions.md) и в параметрах учетной записи найдите [ключ разработки](luis-how-to-azure-subscription.md#authoring-key). Этот ключ используется для вызова API разработки.
 * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
@@ -146,7 +146,7 @@ const LUIS_versionId = "0.1";
 > node index.js
 ```
 
-или
+или диспетчер конфигурации служб
 
 ```console
 > npm start
@@ -186,7 +186,7 @@ upload done
 ![Намерение TurnOn](./media/luis-tutorial-node-import-utterances-csv/imported-utterances-661.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Проверьте и обучите свое приложение на веб-сайте LUIS](luis-interactive-test.md)

@@ -1,5 +1,5 @@
 ---
-title: Операции для поставщиков ресурсов Azure
+title: Операции с поставщиками ресурсов Azure
 description: Список операций для поставщиков ресурсов Azure.
 services: active-directory
 ms.service: role-based-access-control
@@ -8,14 +8,14 @@ ms.workload: identity
 author: rolyon
 ms.author: rolyon
 ms.date: 07/16/2020
-ms.openlocfilehash: 0fc2039805b155535eeac1d653fc9ecb9e576d5d
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: d28f852ad4159472b7fcb3289a322db54be8af1e
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86496950"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87387393"
 ---
-# <a name="azure-resource-providers-operations"></a>Операции для поставщиков ресурсов Azure
+# <a name="azure-resource-provider-operations"></a>Операции с поставщиками ресурсов Azure
 
 В этом разделе перечислены операции для поставщиков ресурсов Azure, которые используются во встроенных ролях. Эти операции можно использовать в собственных [пользовательских ролях Azure](custom-roles.md) , чтобы обеспечить детализированный контроль доступа к ресурсам в Azure. Операции в поставщиках ресурсов всегда развиваются. Чтобы получить список последних операций, используйте команду [Get-AzProviderOperation](/powershell/module/az.resources/get-azprovideroperation) или [az provider operation list](/cli/azure/provider/operation#az-provider-operation-list).
 
@@ -268,7 +268,7 @@ ms.locfileid: "86496950"
 > | Microsoft. support/Суппорттиккетс/связь/чтение | Перечисление одного или всех сообщений в службу поддержки |
 > | Microsoft. support/Суппорттиккетс/связь/запись | Добавляет новый обмен информацией в службу поддержки |
 
-## <a name="compute"></a>Службы вычислений
+## <a name="compute"></a>Вычисления
 
 ### <a name="microsoftclassiccompute"></a>Microsoft.ClassicCompute
 
@@ -1290,7 +1290,7 @@ ms.locfileid: "86496950"
 > | Microsoft.Network/vpnsites/delete | Удаление ресурса сети VPN. |
 > | Microsoft. Network/Впнситес/Впнсителинкс/чтение | Возвращает ссылку на VPN-сайт |
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Память
 
 ### <a name="microsoftclassicstorage"></a>Microsoft.ClassicStorage
 
@@ -1804,7 +1804,7 @@ ms.locfileid: "86496950"
 > | Microsoft.StorSimple/managers/storageDomains/operationResults/read | Выводит или возвращает результаты операции. |
 > | Microsoft.StorSimple/operations/read | Выводит или возвращает операции. |
 
-## <a name="web"></a>Интернет
+## <a name="web"></a>Веб-службы
 
 ### <a name="microsoftcertificateregistration"></a>Microsoft.CertificateRegistration
 
@@ -4139,7 +4139,7 @@ ms.locfileid: "86496950"
 > | Microsoft. Склвиртуалмачине/Склвиртуалмачинес/запись | Создание нового или изменение свойств существующей виртуальной машины SQL |
 > | Microsoft. Склвиртуалмачине/Склвиртуалмачинес/Delete | Удалить существующую виртуальную машину SQL |
 
-## <a name="analytics"></a>Аналитика
+## <a name="analytics"></a>Analytics
 
 ### <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
 

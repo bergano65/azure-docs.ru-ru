@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall
 services: firewall
 ms.topic: how-to
-ms.date: 07/02/2020
+ms.date: 07/29/2020
 ms.author: victorh
-ms.openlocfilehash: 81d65954197c0ebe0de77dc2fea63239d4c3f17b
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 602671f1052de2d9446f32946271cea2f9995044
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86056673"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87412955"
 ---
 # <a name="use-azure-firewall-to-protect-azure-kubernetes-service-aks-deployments"></a>Защита развертываний службы Azure Kubernetes Service (AKS) с помощью брандмауэра Azure
 
@@ -24,7 +24,7 @@ Kubernetes управляет кластерами виртуальных маш
 
 Следуйте указаниям в этой статье, чтобы обеспечить дополнительную защиту кластера Azure Kubernetes с помощью брандмауэра Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Развернутый кластер Azure Kubernetes с выполняющимся приложением.
 
@@ -50,7 +50,9 @@ Kubernetes управляет кластерами виртуальных маш
       Дополнительные сведения см. в разделе **. HCP. <location> . azmk8s.io* и адреса в следующей таблице.
    - UDP-порт 123 для синхронизации времени по протоколу NTP (узлы Linux).
    - UDP-порт 53 для DNS также является обязательным, если ваши pod напрямую обращаются к серверу API.
-- Настройка тегов Азуремонитор и службы хранилища. Azure Monitor получает данные log Analytics. 
+
+   Дополнительные сведения см. в статье управление исходящим [трафиком для узлов кластера в службе Kubernetes Azure (AKS)](../aks/limit-egress-traffic.md).
+- Настройка тегов Азуремонитор и службы хранилища. Azure Monitor получает данные log Analytics.
 
    Вы также можете разрешить URL-адрес рабочей области по отдельности: `<worksapceguid>.ods.opinsights.azure.com` и `<worksapceguid>.oms.opinsights.azure.com` . Это можно решить одним из следующих способов.
 
@@ -66,6 +68,6 @@ Kubernetes управляет кластерами виртуальных маш
    ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о службе Azure Kubernetes см. в разделе [Основные понятия Kubernetes Core для службы Kubernetes Azure (AKS)](../aks/concepts-clusters-workloads.md).

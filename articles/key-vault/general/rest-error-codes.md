@@ -10,12 +10,12 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: reference
 ms.date: 12/16/2019
-ms.openlocfilehash: bbb30c0ad41babca4158391c9e4e5c5d4d25cbf9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f0673732bd657b237ed0f4b4db276b8bf9a3a2b5
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81432064"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87424381"
 ---
 # <a name="azure-key-vault-rest-api-error-codes"></a>Коды ошибок Azure Key Vault REST API
  
@@ -134,7 +134,7 @@ HTTP 403 часто возникает, когда клиентское прил
 
 ### <a name="troubleshooting-403"></a>Устранение неполадок 403
 
-Сначала включите ведение журнала. Инструкции о том, как это сделать, см. в разделе [ведение журнала Azure Key Vault](logging.md)).
+Сначала включите ведение журнала. Инструкции о том, как это сделать, см. в разделе [ведение журнала Azure Key Vault](logging.md).
 
 После включения ведения журнала можно определить, вызвана ли 403 политиками доступа или брандмауэра.
 

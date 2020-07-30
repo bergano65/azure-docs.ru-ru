@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/01/2019
 ms.author: thweiss
-ms.openlocfilehash: bf109d3f15c9865a8e9ad1d27a1e8d320d172761
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-javascript
+ms.openlocfilehash: d692a884688d81fdf16261edff816fa8f0215877
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85261840"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87422323"
 ---
 # <a name="find-the-request-unit-charge-in-azure-cosmos-db"></a>Определение расходов в единицах запроса в Azure Cosmos DB
 
@@ -304,7 +305,7 @@ if (tableResult.RequestCharge.HasValue) // would be false when using Azure Stora
 
 Дополнительные сведения см. [в разделе Краткое руководство. создание API таблиц приложения с помощью пакета SDK для .NET и Azure Cosmos DB](create-table-dotnet.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об оптимизации потребления ЕЗ см. в следующих статьях:
 

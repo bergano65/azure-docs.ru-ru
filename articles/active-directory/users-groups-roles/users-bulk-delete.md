@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3fc393279aaa6b293c2eb29099be45385ad08d9a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 82304052d6ed0c0169c24c19c58d53548b4479cc
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84731510"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423598"
 ---
 # <a name="bulk-delete-users-in-azure-active-directory"></a>Групповое удаление пользователей в Azure Active Directory
 
@@ -68,7 +68,7 @@ ms.locfileid: "84731510"
 
 Состояние всех ожидающих выполнения массовых запросов можно просмотреть на странице **Результаты массовой операции**.
 
-   [![](media/users-bulk-delete/bulk-center.png "Check delete status in the Bulk Operations Results page")](media/users-bulk-delete/bulk-center.png#lightbox)
+   [![Проверьте состояние удаления на странице результатов с массовыми операциями.](media/users-bulk-delete/bulk-center.png)](media/users-bulk-delete/bulk-center.png#lightbox)
 
 Теперь можно проверить, существуют ли удаленные пользователи в Организации Azure AD либо в портал Azure, либо с помощью PowerShell.
 
@@ -89,7 +89,7 @@ Get-AzureADUser -Filter "UserType eq 'Member'"
 
 Убедитесь, что удаленные пользователи больше не указаны.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Групповое добавление пользователей](users-bulk-add.md)
 - [Загрузка списка пользователей](users-bulk-download.md)

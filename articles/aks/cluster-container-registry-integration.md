@@ -5,12 +5,12 @@ services: container-service
 manager: gwallace
 ms.topic: article
 ms.date: 02/25/2020
-ms.openlocfilehash: e1ddff9a416b55c22fcd2bfaedff32666414e4bf
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4338f4ce1fe60a3a9002be93feab134dd2601720
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87057253"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87406509"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes
 
@@ -60,7 +60,7 @@ az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-ac
 Интегрируйте существующую запись контроля доступа с существующими кластерами AKS, указав допустимые значения для записей **контроля учетных** записей с именем или записи **контроля доступа (ИД ресурса** ), как показано ниже.
 
 ```azurecli
-az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acrName>
+az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-name>
 ```
 
 или
@@ -72,7 +72,7 @@ az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-resource-id>
 Вы также можете удалить интеграцию между записью контроля доступа и кластером AKS, выполнив следующие
 
 ```azurecli
-az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acrName>
+az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-name>
 ```
 
 or
@@ -89,7 +89,7 @@ az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-resource-id>
 
 
 ```azurecli
-az acr import  -n <myContainerRegistry> --source docker.io/library/nginx:latest --image nginx:v1
+az acr import  -n <acr-name> --source docker.io/library/nginx:latest --image nginx:v1
 ```
 
 ### <a name="deploy-the-sample-image-from-acr-to-aks"></a>Развертывание примера образа из записи контроля доступа в AKS
@@ -100,7 +100,7 @@ az acr import  -n <myContainerRegistry> --source docker.io/library/nginx:latest 
 az aks get-credentials -g myResourceGroup -n myAKSCluster
 ```
 
-Создайте файл с именем записи **контроля доступа nginx. YAML** , который содержит следующее:
+Создайте файл с именем запись **контроля доступа nginx. YAML** , содержащий следующее. Замените имя ресурса реестра на **имя записи контроля доступа**. Пример: *миконтаинеррегистри*.
 
 ```yaml
 apiVersion: apps/v1
@@ -121,7 +121,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: <replace this image property with you acr login server, image and tag>
+        image: <acr-name>.azurecr.io/nginx:v1
         ports:
         - containerPort: 80
 ```
@@ -146,7 +146,7 @@ nginx0-deployment-669dfc4d4b-x74kr   1/1     Running   0          20s
 nginx0-deployment-669dfc4d4b-xdpd6   1/1     Running   0          20s
 ```
 
-### <a name="troubleshooting"></a>Диагностика
+### <a name="troubleshooting"></a>Устранение неполадок
 * Дополнительные сведения о [диагностике записей контроля](../container-registry/container-registry-diagnostics-audit-logs.md) доступа
 * Дополнительные сведения о [работоспособности записей контроля](../container-registry/container-registry-check-health.md) доступа
 

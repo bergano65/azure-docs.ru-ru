@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 06/10/2020
 ms.author: anfeldma
-ms.openlocfilehash: e6f63807eeea32a7cce7e028dab5e16114bf9643
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 48f728e697e3ca92eee0469c8368e966479fe7fb
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85261568"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87422238"
 ---
 # <a name="manage-consistency-levels-in-azure-cosmos-db"></a>Управление уровнями согласованности в Azure Cosmos DB
 
@@ -282,7 +283,7 @@ item = client.ReadItem(doc_link, options)
 
 :::image type="content" source="./media/how-to-manage-consistency/pbs-metric.png" alt-text="График PBS на портале Azure":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о том, как управлять конфликтами данных, или перейдите к следующей ключевой концепции в Azure Cosmos DB. См. следующие статьи:
 

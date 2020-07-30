@@ -10,12 +10,12 @@ ms.date: 12/18/2019
 ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: d6fdf25087ec376ec1bc9173aae16f357795372e
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: edfdbef2dd0cbfe264ae6a52741413ca28d70864
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87130925"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87424466"
 ---
 # <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-the-azure-cli"></a>Создание SAS делегирования пользователя для контейнера или большого двоичного объекта с помощью Azure CLI
 
@@ -129,7 +129,7 @@ az storage account revoke-delegation-keys \
 ```
 
 > [!IMPORTANT]
-> Как ключ делегирования пользователя, так и назначение ролей RBAC кэшируются службой хранилища Azure, поэтому при инициации процесса отзыва может возникнуть задержка, и если существующее сопоставление безопасности делегирования пользователя станет недействительным.
+> Как ключ делегирования пользователя, так и назначение ролей Azure кэшируются службой хранилища Azure, поэтому при инициации процесса отзыва может возникнуть задержка, и если существующее сопоставление безопасности делегирования пользователя станет недействительным.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
