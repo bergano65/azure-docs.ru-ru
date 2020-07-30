@@ -3,12 +3,13 @@ title: Отправка и получение событий через Цент
 description: В статье описано, как создать приложение Java, которое отправляет события или получает из службы "Центры событий Azure" с помощью пакета azure-eventhubs старой версии.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: 8c44cfa2a3130e714ac95989248aee634996df2a
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.custom: devx-track-java
+ms.openlocfilehash: 6efa21f4869dddef9d54001a8669b4b039240910
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85320323"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87371980"
 ---
 # <a name="use-java-to-send-events-to-or-receive-events-from-azure-event-hubs-azure-eventhubs"></a>Использование Java для отправки и получения событий в Центрах событий Azure (azure-eventhubs)
 

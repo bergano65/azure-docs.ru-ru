@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: overview
 ms.date: 04/17/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 627dfee81cb10e4e442b3cefb10d786d87d5c81d
-ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
+ms.openlocfilehash: cb8a29c5d2eff46eecb2cf977bfb492f28731e68
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2020
-ms.locfileid: "83005879"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87043624"
 ---
 # <a name="about-keys-secrets-and-certificates"></a>Сведения о ключах, секретах и сертификатах
 
@@ -58,7 +58,7 @@ Azure Key Vault позволяет пользователям и приложе�
 
 Где:  
 
-|||  
+| Элемент | Описание |  
 |-|-|  
 |`keyvault-name`|Имя хранилища ключей в службе Microsoft Azure Key Vault.<br /><br /> Имена хранилищ ключей выбираются пользователем и являются глобально уникальными.<br /><br /> Имя Key Vault должно быть строкой длиной от 3 до 24 знаков, содержащей только цифры (0–9), буквы (a–z, A–Z) и знак "-".|  
 |`object-type`|Тип объекта: keys, secrets или certificates.|  

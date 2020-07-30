@@ -3,18 +3,18 @@ title: Пример скрипта Azure PowerShell. Настройка подк
 description: Настройка подключения VPN типа "точка — сеть" с помощью проверки имени пользователя или пароля RADIUS. В этой статье используется PowerShell.
 services: vpn-gateway
 documentationcenter: vpn-gateway
-author: anzaman
+author: kumudD
 ms.service: vpn-gateway
 ms.devlang: powershell
 ms.topic: sample
 ms.date: 05/30/2018
 ms.author: alzam
-ms.openlocfilehash: 703ffac5775c979199afdd44afe0941b1416369b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d546fe2568c0c061c9a08e7fa4a98aa8c5e55c55
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "66113681"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87068559"
 ---
 # <a name="create-a-vpn-gateway-and-add-point-to-site-configuration-using-powershell"></a>Создание VPN-шлюза и добавление конфигурации "точка — сеть" с использованием PowerShell
 
@@ -109,4 +109,4 @@ Remove-AzResourceGroup -Name TestRG1
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).

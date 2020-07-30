@@ -9,12 +9,12 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 11/07/2017
 ms.author: fryu
-ms.openlocfilehash: 12b32256c91dfcf93ca55eeb348cc78613ba860e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f8bd47a8fde700382f9789ab1c77ff35e9b1f4f5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80067107"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86999536"
 ---
 # <a name="calculate-the-total-billing-size-of-a-blob-container"></a>Вычисление общего указываемого в счете размера контейнера больших двоичных объектов
 
@@ -120,6 +120,6 @@ For-Each Signed Identifier[512 bytes]
 
 - Дополнительные сведения о выставлении счетов в службе хранилища Azure см. в статье [Understanding Windows Azure Storage Billing – Bandwidth, Transactions, and Capacity](https://blogs.msdn.microsoft.com/windowsazurestorage/2010/07/08/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity/) (Общие сведения о выставлении счетов в службе хранилища Azure. Пропускная способность, транзакции и емкость).
 
-- Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
+- Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/).
 
 - Дополнительные примеры сценариев PowerShell хранилища см. в статье [Примеры Azure PowerShell для хранилища BLOB-объектов Azure](../blobs/storage-samples-blobs-powershell.md).

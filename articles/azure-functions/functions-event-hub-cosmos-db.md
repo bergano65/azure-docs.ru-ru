@@ -5,12 +5,13 @@ author: KarlErickson
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: karler
-ms.openlocfilehash: b6d7b2c60e777266b1cab578b8970c1fa1c6bc50
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.custom: devx-track-java
+ms.openlocfilehash: ef2b774195f522be3520850d2e6e7193e70dd4fb
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77425329"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87372456"
 ---
 # <a name="tutorial-create-a-function-in-java-with-an-event-hub-trigger-and-an-azure-cosmos-db-output-binding"></a>Руководство по созданию функции на языке Java с триггером Центра событий и выходной привязкой Azure Cosmos DB
 
@@ -445,9 +446,9 @@ az group delete --name $RESOURCE_GROUP
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как создать функцию Azure, которая обрабатывает события Центра событий и обновляет Cosmos DB. Подробные сведения см. в [руководстве разработчика Java по Функциям Azure](/azure/azure-functions/functions-reference-java). Сведения об используемых аннотациях см. в справочнике по [com.microsoft.azure.functions.annotation](/java/api/com.microsoft.azure.functions.annotation).
+Из этого руководства вы узнали, как создать функцию Azure, которая обрабатывает события Центра событий и обновляет Cosmos DB. Подробные сведения см. в [руководстве разработчика Java по Функциям Azure](./functions-reference-java.md). Сведения об используемых аннотациях см. в справочнике по [com.microsoft.azure.functions.annotation](/java/api/com.microsoft.azure.functions.annotation).
 
-В этом руководстве переменные среды и параметры приложения используются для хранения секретов, таких как строки подключения. Сведения о хранении этих секретов в Azure Key Vault см. в статье об [использовании ссылок на Key Vault для Службы приложений и Функций Azure](/azure/app-service/app-service-key-vault-references).
+В этом руководстве переменные среды и параметры приложения используются для хранения секретов, таких как строки подключения. Сведения о хранении этих секретов в Azure Key Vault см. в статье об [использовании ссылок на Key Vault для Службы приложений и Функций Azure](../app-service/app-service-key-vault-references.md).
 
 Далее вы узнаете, как использовать конвейеры CI/CD в Azure Pipelines для автоматического развертывания:
 

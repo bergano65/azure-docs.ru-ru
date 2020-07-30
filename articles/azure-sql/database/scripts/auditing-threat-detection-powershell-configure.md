@@ -11,12 +11,12 @@ author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: carlrab, vanto
 ms.date: 04/28/2020
-ms.openlocfilehash: 1b709d1968a066ab5e4da4fef1659150d645ac26
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
+ms.openlocfilehash: d44370e17b0d38f1d19849e97b2a7f41b50a4119
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84196928"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87040567"
 ---
 # <a name="use-powershell-to-configure-sql-database-auditing-and-advanced-threat-protection"></a>Узнайте, как настроить аудит и Расширенную защита от угроз для Базы данных SQL с помощью PowerShell.
 [!INCLUDE[appliesto-sqldb](../../includes/appliesto-sqldb.md)]
@@ -58,6 +58,6 @@ Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure PowerShell см. в [этой документации](/powershell/azure/overview).
+Дополнительные сведения об Azure PowerShell см. в [этой документации](/powershell/azure/).
 
 Дополнительные примеры сценариев PowerShell для базы данных SQL Azure можно найти [здесь](../powershell-script-content-guide.md).

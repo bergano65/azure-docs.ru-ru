@@ -3,12 +3,12 @@ title: Руководство по записи видео в облако на 
 description: Из этого руководства можно узнать, как с помощью службы Аналитики видеотрансляций на платформе Azure IoT Edge записывать видео в облако на основе событий и воспроизводить его.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: 938bae28b1a523e23ea9f8f1ba79bbe6c487d5db
-ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
+ms.openlocfilehash: cbd00bf5737e9833a860e154c629bb344416b6ca
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2020
-ms.locfileid: "84765205"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87011793"
 ---
 # <a name="tutorial-event-based-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Руководство. Запись видео в облако на основе событий и его воспроизведение
 
@@ -32,9 +32,9 @@ ms.locfileid: "84765205"
 * [Аналитика видеотрансляции в IoT Edge: терминология](terminology.md)
 * [Граф мультимедиа: основные понятия](media-graph-concept.md) 
 * [Запись видео на основе событий](event-based-video-recording-concept.md)
-* [Руководство. Разработка модуля IoT Edge](https://docs.microsoft.com/azure/iot-edge/tutorial-develop-for-linux)
+* [Руководство. Разработка модуля IoT Edge](../../iot-edge/tutorial-develop-for-linux.md)
 * [Редактирование файла deployment.*.template.json](https://github.com/microsoft/vscode-azure-iot-edge/wiki/How-to-edit-deployment.*.template.json)
-* Раздел, посвященный [объявлению маршрутов в манифесте развертывания IoT Edge](https://docs.microsoft.com/azure/iot-edge/module-composition#declare-routes)
+* Раздел, посвященный [объявлению маршрутов в манифесте развертывания IoT Edge](../../iot-edge/module-composition.md#declare-routes)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -52,7 +52,7 @@ ms.locfileid: "84765205"
 * Центр Интернета вещей Azure
 * Учетная запись хранения Azure
 * Учетная запись Служб мультимедиа Azure
-* Виртуальная машина Linux в Azure с установленной [средой выполнения IoT Edge](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-linux)
+* Виртуальная машина Linux в Azure с установленной [средой выполнения IoT Edge](../../iot-edge/how-to-install-iot-edge-linux.md)
 
 ## <a name="concepts"></a>Основные понятия
 
@@ -135,9 +135,9 @@ ms.locfileid: "84765205"
 * **rtspsim**: Это симулятор RTSP.
 * **objectCounter**: Это модуль, который ищет определенные объекты в результатах, полученных от модуля yolov3.
 
-Сведения о модуле objectCounter см. в строке (${MODULES.objectCounter}), используемой для значения "изображение". Это основано на [руководстве](https://docs.microsoft.com/azure/iot-edge/tutorial-develop-for-linux) о разработке модуля IoT Edge. Visual Studio Code автоматически находит код модуля objectCounter в разделе src/edge/modules/objectCounter. 
+Сведения о модуле objectCounter см. в строке (${MODULES.objectCounter}), используемой для значения "изображение". Это основано на [руководстве](../../iot-edge/tutorial-develop-for-linux.md) о разработке модуля IoT Edge. Visual Studio Code автоматически находит код модуля objectCounter в разделе src/edge/modules/objectCounter. 
 
-Прочитайте [этот раздел](https://docs.microsoft.com/azure/iot-edge/module-composition#declare-routes) посвященный объявлению маршрутов в манифесте развертывания IoT Edge. Затем проверьте маршруты в файле JSON шаблона. Обратите внимание на следующие моменты:
+Прочитайте [этот раздел](../../iot-edge/module-composition.md#declare-routes) посвященный объявлению маршрутов в манифесте развертывания IoT Edge. Затем проверьте маршруты в файле JSON шаблона. Обратите внимание на следующие моменты:
 
 * LVAToObjectCounter используется для отправки определенных событий на определенную конечную точку в модуле objectCounter.
 * ObjectCounterToLVA используется для отправки события-триггера на определенную конечную точку (которая должна быть узлом источника Центра Интернета вещей) в модуле lvaEdge.
@@ -150,7 +150,7 @@ ms.locfileid: "84765205"
 
 Манифест развертывания определяет, какие именно модули развертываются на пограничном устройстве, а также содержит параметры конфигурации для этих модулей. Выполните перечисленные ниже действия, чтобы создать манифест на базе файла шаблона, а затем развернуть его на пограничном устройстве.
 
-С помощью Visual Studio Code выполните [эти инструкции](https://docs.microsoft.com/azure/iot-edge/tutorial-develop-for-linux#build-and-push-your-solution), чтобы войти в Docker. Потом выберите **Создание и отправка решения IoT Edge**. Используйте файл src/edge/deployment.objectCounter.template.json для этого шага.
+С помощью Visual Studio Code выполните [эти инструкции](../../iot-edge/tutorial-develop-for-linux.md#build-and-push-your-solution), чтобы войти в Docker. Потом выберите **Создание и отправка решения IoT Edge**. Используйте файл src/edge/deployment.objectCounter.template.json для этого шага.
 
 ![Создание и отправка решения IoT Edge](./media/event-based-video-recording-tutorial/build-push.png)
 
@@ -259,7 +259,7 @@ ms.locfileid: "84765205"
 
 ## <a name="interpret-the-results"></a>Интерпретация результатов 
 
-После запуска графа мультимедиа модуль аналитики видеотрансляции в IoT Edge отправляет в концентратор IoT Edge определенные диагностические и операционные события. Эти события являются сообщениями, отображаемыми в окне **ВЫХОДНЫЕ ДАННЫЕ** Visual Studio Code. Они содержат разделы body и applicationProperties. Сведения о назначении этих разделов см. в статье [Создание и чтение сообщений Центра Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-construct).
+После запуска графа мультимедиа модуль аналитики видеотрансляции в IoT Edge отправляет в концентратор IoT Edge определенные диагностические и операционные события. Эти события являются сообщениями, отображаемыми в окне **ВЫХОДНЫЕ ДАННЫЕ** Visual Studio Code. Они содержат разделы body и applicationProperties. Сведения о назначении этих разделов см. в статье [Создание и чтение сообщений Центра Интернета вещей](../../iot-hub/iot-hub-devguide-messages-construct.md).
 
 В приведенных сообщениях свойства приложений и содержимое раздела body определяются модулем Аналитики видеотрансляции.
 
@@ -413,4 +413,4 @@ ms.locfileid: "84765205"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Вместо симулятора RTSP используйте [IP-камеру](https://en.wikipedia.org/wiki/IP_camera) с поддержкой RTSP. Подобрать RTSP-совместимую IP-камеру можно на странице [продуктов, соответствующих спецификации ONVIF](https://www.onvif.org/conformant-products/): ищите устройства, совместимые с профилем G, S или T.
-* Используйте устройство AMD64 или X64 на базе Linux (вместо виртуальной машины Linux в Azure). Устройство должно находиться в той же сети, что и IP-камера. Выполните инструкции из статьи [Install Azure IoT Edge runtime on Linux](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-linux) (Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian). Потом следуйте инструкциям из краткого руководства [Развертывание первого модуля IoT Edge на виртуальном устройстве Linux](https://docs.microsoft.com/azure/iot-edge/quickstart-linux), чтобы зарегистрировать устройство в Центре Интернета вещей Azure.
+* Используйте устройство AMD64 или X64 на базе Linux (вместо виртуальной машины Linux в Azure). Устройство должно находиться в той же сети, что и IP-камера. Выполните инструкции из статьи [Install Azure IoT Edge runtime on Linux](../../iot-edge/how-to-install-iot-edge-linux.md) (Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian). Потом следуйте инструкциям из краткого руководства [Развертывание первого модуля IoT Edge на виртуальном устройстве Linux](../../iot-edge/quickstart-linux.md), чтобы зарегистрировать устройство в Центре Интернета вещей Azure.
