@@ -21,8 +21,6 @@
       href: delete-application-portal.md
 - name: Учебники
   items:
-    - name: 'Добавление приложения, не указанного в коллекции'
-      href: add-non-gallery-app.md
     - name: 'Интегрированные приложения из коллекции (например, ServiceNow, Salesforce, Dropbox)'
       href: /azure/active-directory/saas-apps/
     - name: Добавление локального приложения с помощью прокси приложения
@@ -42,6 +40,8 @@
       items:
         - name: Начало работы с интеграцией приложений
           href: plan-an-application-integration.md
+        - name: 'Планирование использования приложений, не указанных в коллекции'
+          href: non-gallery-apps.md
         - name: Планирование развертывания панели доступа
           href: access-panel-deployment-plan.md
         - name: Рекомендации для разработчиков
@@ -106,7 +106,7 @@
             - name: Настройка единого входа на основе SAML
               items:
                 - name: Настройка единого входа на основе SAML
-                  href: configure-single-sign-on-non-gallery-applications.md
+                  href: configure-saml-single-sign-on.md
                 - name: Настройка пользовательских атрибутов и утверждений
                   items:
                     - name: Настройка утверждений групп

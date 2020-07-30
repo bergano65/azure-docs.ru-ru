@@ -24,6 +24,8 @@
           href: get-started-pipelines.md
         - name: 7. Визуализация с помощью Power BI
           href: get-started-visualize-power-bi.md
+        - name: 8. Мониторинг
+          href: get-started-monitor.md
     - name: Краткий справочник
       href: overview-cheat-sheet.md
     - name: ВОПРОСЫ И ОТВЕТЫ
@@ -847,6 +849,10 @@
               href: ../data-factory/data-factory-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Устранение неполадок соединителя
               href: ../data-factory/connector-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Устранение неполадок со средством Копирования данных
+              href: ../data-factory/copy-data-tool-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Устранение неполадок с локальными средами выполнения интеграции
+              href: ../data-factory/self-hosted-integration-runtime-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
     - name: Подключение средств к Synapse Analytics
       items:
         - name: Synapse SQL

@@ -66,6 +66,8 @@
           href: how-to-create-azure-function.md
         - name: Запрос данных о графе двойника
           href: how-to-query-graph.md
+        - name: Просмотр метрик в Azure Monitor
+          href: how-to-view-metrics.md
     - name: Входные данные подключения
       items:
         - name: Прием данных телеметрии из Центра Интернета вещей
@@ -80,6 +82,8 @@
           href: how-to-integrate-time-series-insights.md
     - name: Диагностика
       items:
+        - name: Включение журналов диагностики
+          href: troubleshoot-diagnostics.md
         - name: Известные проблемы
           href: troubleshoot-known-issues.md
         - name: Решение проблем

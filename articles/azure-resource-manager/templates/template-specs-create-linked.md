@@ -3,12 +3,12 @@ title: Создание спецификации шаблона со связа�
 description: Узнайте, как создать спецификацию шаблона со связанными шаблонами.
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: c2648cb8a71be709406f314d02a226ed097be6f0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b952baa465092fef19ad2feb11a43328a6177d1c
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87097733"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87387869"
 ---
 # <a name="tutorial-create-a-template-spec-with-linked-templates-preview"></a>Учебник. Создание спецификации шаблона со связанными шаблонами (Предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "87097733"
 - `/artifacts/linkedTemplate.json`
 - `artifacts/linkedTemplate.json`
 
-Если имеется другой linkedTemplate2.js, вызванный из linkedTemplate.jsв и linkedTemplate2.jsв, хранится в той же вложенной папке артефактов, relativePath, заданный в linkedTemplate.json, **linkedTemplate2.json**.
+`relativePath`Свойство всегда имеет относительный путь к файлу шаблона `relativePath` , где объявлено, поэтому если имеется другой linkedTemplate2.js, вызванный из linkedTemplate.jsв и linkedTemplate2.jsв, хранится в той же вложенной папке артефактов, relativePath, указанный в linkedTemplate.js, — это просто `linkedTemplate2.json` .
 
 1. Создайте основной шаблон со следующим JSON. Сохраните основной шаблон как **azuredeploy.jsна** локальном компьютере. В этом учебнике предполагается, что вы сохранили путь в **c:\Templates\linkedTS\azuredeploy.js** , но можете использовать любой путь.
 
