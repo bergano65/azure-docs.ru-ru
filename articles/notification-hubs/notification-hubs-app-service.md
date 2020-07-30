@@ -17,16 +17,16 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: e6c4fb767e6237f390cdb467b35c323f637bebf2
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 647c5f40c7b02b8d9b488ce0812f27c0c0dde1a7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76264158"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87022146"
 ---
 # <a name="integration-with-app-service-mobile-apps"></a>Интеграция с мобильными приложениями службы приложений
 
-Для упрощения и унификации взаимодействия между службами Azure [мобильные приложения службы приложений](../app-service-mobile/app-service-mobile-value-prop.md) располагают встроенной поддержкой push-уведомлений с помощью центров уведомлений. [мобильные приложения службы приложений](../app-service-mobile/app-service-mobile-value-prop.md) — это доступная по всему миру высокомасштабируемая платформа разработки мобильных приложений, предназначенная для корпоративных разработчиков и системных интеграторов и расширяющая возможности разработки мобильных приложений.
+Для упрощения и унификации взаимодействия между службами Azure [мобильные приложения службы приложений](/previous-versions/azure/app-service-mobile/app-service-mobile-value-prop) располагают встроенной поддержкой push-уведомлений с помощью центров уведомлений. [мобильные приложения службы приложений](/previous-versions/azure/app-service-mobile/app-service-mobile-value-prop) — это доступная по всему миру высокомасштабируемая платформа разработки мобильных приложений, предназначенная для корпоративных разработчиков и системных интеграторов и расширяющая возможности разработки мобильных приложений.
 
 Разработчики мобильных приложений могут использовать концентраторы уведомлений в следующем рабочем процессе.
 
