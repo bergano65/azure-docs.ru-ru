@@ -12,9 +12,13 @@
   items:
     - name: Создание виртуальной машины на портале
       href: ../virtual-machines/windows/quick-create-portal.md?toc=/azure/azure-portal/toc.json&bc=/azure/azure-portal/breadcrumb/toc.json
-    - name: Создание панели мониторинга (шаблон ARM)
-      displayName: Resource Manager
-      href: quick-create-template.md
+    - name: Создание панели мониторинга
+      items:
+        - name: Azure PowerShell
+          href: quickstart-portal-dashboard-powershell.md
+        - name: Шаблон ARM
+          displayName: Resource Manager
+          href: quick-create-template.md
 - name: Основные понятия
   items:
     - name: Предоставление общего доступа с управлением доступом на основе ролей

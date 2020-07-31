@@ -16,6 +16,7 @@
   expanded: true
   items:
     - name: Студия
+      expanded: true
       items:
         - name: Конструктор (перетаскивание)
           items:
@@ -37,6 +38,7 @@
           displayName: 'tag, tagging, images'
           href: tutorial-labeling.md
     - name: Пакет SDK для Python
+      expanded: true
       items:
         - name: Создание первого эксперимента машинного обучения
           items:

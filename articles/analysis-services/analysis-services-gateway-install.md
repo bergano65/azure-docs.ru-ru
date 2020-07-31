@@ -4,15 +4,15 @@ description: Узнайте, как установить и настроить �
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 01/17/2020
+ms.date: 07/29/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: f6218b32fb9574adf62384d2a6ee5a62f3788de8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1d090070dd7b2afe5ea1ece9b5da8b8b5b7b0780
+ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77062155"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438965"
 ---
 # <a name="install-and-configure-an-on-premises-data-gateway"></a>Установка и настройка локального шлюза данных
 
@@ -20,7 +20,7 @@ ms.locfileid: "77062155"
 
 Дополнительные сведения о том, как Azure Analysis Services работает с шлюзом, см. в разделе [Подключение к локальным источникам данных](analysis-services-gateway.md). Дополнительные сведения о расширенных сценариях установки и шлюзе см. в [документации по локальным шлюзам данных](/data-integration/gateway/service-gateway-onprem).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 **Минимальные требования:**
 
@@ -44,11 +44,11 @@ ms.locfileid: "77062155"
 * Войдите в Azure с помощью учетной записи в Azure AD для того же [клиента](/previous-versions/azure/azure-services/jj573650(v=azure.100)#what-is-an-azure-ad-tenant), что и подписка, в которой вы регистрируете шлюз. Учетные записи Azure B2B (гостевые) не поддерживаются при установке и регистрации шлюза.
 * Если источники данных находятся в виртуальной сети Azure, необходимо настроить свойство сервера [AlwaysUseGateway](analysis-services-vnet-gateway.md).
 
-## <a name="download"></a><a name="download"></a>Скачать
+## <a name="download"></a>Скачивание
 
  [Скачайте шлюз](https://go.microsoft.com/fwlink/?LinkId=820925&clcid=0x409).
 
-## <a name="install"></a><a name="install"></a>Установка
+## <a name="install"></a>Установка
 
 1. Запустите программу установки.
 
@@ -67,7 +67,7 @@ ms.locfileid: "77062155"
    > [!NOTE]
    > При входе с использованием учетной записи домена она сопоставляется с учетной записью организации в Azure AD. Учетная запись вашей организации используется как администратор шлюза.
 
-## <a name="register"></a><a name="register"></a>Регистрация
+## <a name="register"></a>Регистрация
 
 Чтобы создать ресурс шлюза в Azure, необходимо зарегистрировать локальный экземпляр, установленный с помощью облачной службы шлюза. 
 
@@ -83,7 +83,7 @@ ms.locfileid: "77062155"
    ![Регистрация](media/analysis-services-gateway-install/aas-gateway-register-name.png)
 
 
-## <a name="create-an-azure-gateway-resource"></a><a name="create-resource"></a>Создание ресурса шлюза Azure
+## <a name="create-an-azure-gateway-resource"></a>Создание ресурса шлюза Azure
 
 После установки и регистрации шлюза необходимо создать ресурс шлюза в Azure. Войдите в Azure с помощью учетной записи, использованной при регистрации шлюза.
 
@@ -107,7 +107,12 @@ ms.locfileid: "77062155"
 
      Когда все будет готово, нажмите **Создать**.
 
-## <a name="connect-servers-to-the-gateway-resource"></a><a name="connect-servers"></a>Подключение серверов к ресурсу шлюза
+## <a name="connect-gateway-resource-to-server"></a>Подключение ресурса шлюза к серверу
+
+> [!NOTE]
+> Подключение к ресурсу шлюза в другой подписке с сервера не поддерживается на портале, но поддерживается с помощью PowerShell.
+
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. В обзоре сервера Azure Analysis Services щелкните **Локальный шлюз данных**.
 
@@ -125,10 +130,31 @@ ms.locfileid: "77062155"
 
     ![Подключение сервера к ресурсу шлюза успешно выполнено](media/analysis-services-gateway-install/aas-gateway-connect-success.png)
 
-Готово! Если необходимо открывать порты или устранять неполадки, требуется извлечь [локальный шлюз данных](analysis-services-gateway.md).
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+Чтобы получить ResourceID шлюза, используйте [Get-азресаурце](https://docs.microsoft.com/powershell/module/az.resources/get-azresource) . Затем подключите ресурс шлюза к существующему или новому серверу, указав параметр **-гатевайресаурцеид** в [Set-азаналисиссервицессервер](https://docs.microsoft.com/powershell/module/az.analysisservices/set-azanalysisservicesserver) или [New-азаналисиссервицессервер](https://docs.microsoft.com/powershell/module/az.analysisservices/new-azanalysisservicesserver).
+
+Чтобы получить идентификатор ресурса шлюза, выполните следующие действия.
+
+```azurepowershell-interactive
+Connect-AzAccount -Tenant $TenantId -Subscription $subscriptionIdforGateway -Environment "AzureCloud"
+$GatewayResourceId = $(Get-AzResource -ResourceType "Microsoft.Web/connectionGateways" -Name $gatewayName).ResourceId  
+
+```
+
+Чтобы настроить существующий сервер, выполните следующие действия.
+
+```azurepowershell-interactive
+Connect-AzAccount -Tenant $TenantId -Subscription $subscriptionIdforAzureAS -Environment "AzureCloud"
+Set-AzAnalysisServicesServer -ResourceGroupName $RGName -Name $servername -GatewayResourceId $GatewayResourceId
+
+```
+---
+
+Вот и все. Если необходимо открывать порты или устранять неполадки, требуется извлечь [локальный шлюз данных](analysis-services-gateway.md).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление службами Analysis Services](analysis-services-manage.md)   
-* [Получение данных из служб Azure Analysis Services](analysis-services-connect.md)   
+* [получать данные из Azure Analysis Services;](analysis-services-connect.md)   
 * [Использование шлюза для источников данных в виртуальной сети Azure](analysis-services-vnet-gateway.md)

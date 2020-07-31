@@ -458,12 +458,15 @@
         - name: Параметризованный запрос
           displayName: 'parameterized query, parameterized, parameter, parameters'
           href: sql-query-parameterized-queries.md
-        - name: LINQ to SQL
-          displayName: 'linq, .NET'
-          href: sql-query-linq-to-sql.md
         - name: Выполнение SQL-запросов
           displayName: 'query performance, query execution'
           href: sql-query-execution.md
+        - name: Разбиение на страницы
+          displayName: 'page, paging, continuation, token, pagination'
+          href: sql-query-pagination.md
+        - name: LINQ to SQL
+          displayName: 'linq, .NET'
+          href: sql-query-linq-to-sql.md
     - name: Работа с учетной записью Azure Cosmos
       href: account-overview.md
     - name: Контейнеры и элементы
@@ -671,7 +674,7 @@
             - name: Управление с помощью PowerShell
               href: powershell-samples-cassandra.md
             - name: Управление с помощью Azure CLI
-              href: cli-samples-cassandra.md
+              href: cli-samples.md
     - name: API MongoDB
       items:
         - name: Обзор
@@ -765,7 +768,7 @@
             - name: Управление с помощью PowerShell
               href: powershell-samples-mongodb.md
             - name: Управление с помощью Azure CLI
-              href: cli-samples-mongodb.md
+              href: cli-samples.md
             - name: Устранение распространенных неполадок
               href: mongodb-troubleshoot.md
     - name: API Gremlin
@@ -825,7 +828,7 @@
             - name: Управление с помощью PowerShell
               href: powershell-samples-gremlin.md
             - name: Управление с помощью Azure CLI
-              href: cli-samples-gremlin.md
+              href: cli-samples.md
         - name: Справочник
           items:
             - name: Заголовки откликов
@@ -896,7 +899,7 @@
             - name: Управление с помощью PowerShell
               href: powershell-samples-table.md
             - name: Управление с помощью Azure CLI
-              href: cli-samples-table.md
+              href: cli-samples.md
         - name: Справочник
           items:
             - name: .NET

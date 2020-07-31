@@ -4,7 +4,7 @@
   items:
     - name: Машинное обучение
       tocHref: /azure/storage/
-      topicHref: /azure/machine-learning/index
+      topicHref: /azure/index
       items:
         - name: Командный процесс обработки и анализа данных
           tocHref: /azure/storage/
@@ -30,7 +30,7 @@
   items:
     - name: Машинное обучение
       tocHref: /azure/machine-learning/
-      topicHref: /azure/machine-learning/index
+      topicHref: /azure/index
       items:
         - name: Командный процесс обработки и анализа данных
           tocHref: /azure/machine-learning/
@@ -45,7 +45,7 @@
   items:
     - name: Машинное обучение
       tocHref: /azure/hdinsight/
-      topicHref: /azure/machine-learning/index
+      topicHref: /azure/index
       items:
         - name: Командный процесс обработки и анализа данных
           tocHref: /azure/hdinsight/spark/
@@ -64,7 +64,7 @@
   items:
     - name: Машинное обучение
       tocHref: /azure/hdinsight/
-      topicHref: /azure/machine-learning/index
+      topicHref: /azure/index
       items:
         - name: Командный процесс обработки и анализа данных
           tocHref: /azure/hdinsight/spark/

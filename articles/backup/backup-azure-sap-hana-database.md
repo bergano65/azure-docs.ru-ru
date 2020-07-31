@@ -3,12 +3,12 @@ title: Резервное копирование базы данных SAP HANA 
 description: Из этой статьи вы узнаете, как создать резервную копию базы данных SAP HANA на виртуальных машинах Azure с помощью службы Azure Backup.
 ms.topic: conceptual
 ms.date: 11/12/2019
-ms.openlocfilehash: 273ba40feee01c2dd2bfe68d1660a5c94f254062
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 2f42b119c361eaddcb84dda738b50c8accc84f9c
+ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86513882"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87439752"
 ---
 # <a name="back-up-sap-hana-databases-in-azure-vms"></a>Резервное копирование баз данных SAP HANA на виртуальных машинах Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "86513882"
 > * Выполнение задания резервного копирования по запросу
 
 >[!NOTE]
->[Попробуйте](./tutorial-backup-sap-hana-db.md) предварительную версию Azure Backup для SAP HANA в RHEL (7.4, 7.6, 7.7 и 8.1). С вопросами пишите на адрес [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com).
+>По состоянию на 1 августа 2020 SAP HANA резервное копирование для RHEL (7,4, 7,6, 7,7 & 8,1) общедоступно.
 
 >[!NOTE]
 >**Обратимое удаление для SQL Server на виртуальной машине Azure и обратимое удаление для SAP HANA в рабочих нагрузках виртуальных машин Azure** теперь доступно в предварительной версии.<br>
@@ -67,7 +67,7 @@ ms.locfileid: "86513882"
 
 1. Щелкните **Добавить**, чтобы сохранить только что созданное исходящее правило безопасности.
 
-Аналогичным образом можно создавать правила безопасности для исходящего трафика NSG для службы хранилища Azure и Azure AD.
+Аналогичным образом можно создавать правила безопасности для исходящего трафика NSG для службы хранилища Azure и Azure AD. Дополнительные сведения о тегах служб см. в [этой статье](https://docs.microsoft.com/azure/virtual-network/service-tags-overview).
 
 #### <a name="azure-firewall-tags"></a>Теги Брандмауэра Azure
 
@@ -214,4 +214,4 @@ ms.locfileid: "86513882"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [восстановить базы данных SAP HANA, запущенные на виртуальных машинах Azure](./sap-hana-db-restore.md).
-* Узнайте, как [управлять базами данных SAP HANA, резервное копирование которых выполняется с помощью Azure Backup](./sap-hana-db-manage.md).
+* Узнайте, как [управлять базами данных SAP HANA, резервное копирование которых выполняется с помощью Azure Backup](./sap-hana-db-manage.md).

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: 075837d0c382f5bc6f436a63dfe227c17f0a57a3
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: f3eacbe6f93388756ce26324babeb2ca38bd09a5
+ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87128664"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438891"
 ---
 # <a name="access-and-identity-options-for-azure-kubernetes-service-aks"></a>Возможности контроля доступа и идентификации в Службе Azure Kubernetes (AKS)
 
@@ -74,8 +74,6 @@ ms.locfileid: "87128664"
 При использовании кластеров Azure AKS, интегрированных с Azure AD, можно предоставить пользователям или группам доступ к ресурсам Kubernetes, размещенным в определенном пространстве имен или кластере. Для получения контекста конфигурации `kubectl` пользователь может выполнить команду [az aks get-credentials][az-aks-get-credentials]. Когда пользователь взаимодействует с кластером AKS с `kubectl` , ему предлагается выполнить вход с использованием учетных данных Azure AD. Такой подход обеспечивает единый источник для управления учетными записями пользователя и хранения паролей. Пользователь имеет доступ только к ресурсам, определенным администратором кластера.
 
 Кластеры AKS проходят аутентификацию Azure AD с помощью OpenID Connect. OpenID Connect представляет собой уровень идентификации на основе протокола OAuth 2.0. Дополнительные сведения о OpenID Connect Connect см. в [документации по Open ID Connect][openid-connect]. В кластере Kubernetes [Проверка подлинности маркеров веб-перехватчика][webhook-token-docs] используется для проверки маркеров проверки подлинности. Настройка такой проверка подлинности и ее управление являются частью кластера AKS.
-
-Внутри кластера Kubernetes проверка подлинности на основе маркера веб-перехватчика используется для проверки маркеров проверки подлинности. Настройка такой проверка подлинности и ее управление являются частью кластера AKS.
 
 ### <a name="webhook-and-api-server"></a>Веб-перехватчик и сервер API
 

@@ -153,7 +153,7 @@
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=data-factory'
-    - name: Azure PowerShell
+    - name: Azure PowerShell;
       href: samples-powershell.md
 - name: Основные понятия
   items:
@@ -167,8 +167,6 @@
       href: concepts-pipeline-execution-triggers.md
     - name: Среда выполнения интеграции
       href: concepts-integration-runtime.md
-    - name: Управляемая виртуальная сеть
-      href: managed-virtual-network-private-endpoint.md
     - name: Безопасность
       items:
         - name: Базовые средства безопасности
@@ -588,6 +586,8 @@
           href: data-factory-service-identity.md
         - name: Шифрование на базе управляемых клиентом ключей
           href: enable-customer-managed-key.md
+        - name: Управляемая виртуальная сеть
+          href: managed-virtual-network-private-endpoint.md
     - name: Отслеживание и управление
       items:
         - name: Визуальный мониторинг
@@ -732,6 +732,8 @@
           href: connector-troubleshoot-guide.md
         - name: Потоки данных
           href: data-flow-troubleshoot-guide.md
+        - name: Средство копирования данных
+          href: copy-data-tool-troubleshoot-guide.md
         - name: Локальные среды выполнения интеграции
           href: self-hosted-integration-runtime-troubleshoot-guide.md
         - name: Среда выполнения интеграции Azure SSIS

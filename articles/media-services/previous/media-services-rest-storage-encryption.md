@@ -14,20 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 0e477b95f43c091bf17ec54d2fef9f971d5f6986
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 761a508543af79f3a242bfa2133e22a00b0ca689
+ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87000166"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87439602"
 ---
 # <a name="encrypting-your-content-with-storage-encryption"></a>Шифрование содержимого с помощью шифрования хранилища 
 
 > [!NOTE]
 > Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
->   
-
-Мы настоятельно рекомендуем шифровать содержимое локально, используя 256-битное шифрование AES, а затем передавать его в службу хранилища Azure, где оно будет храниться в зашифрованном виде.
+>
 
 В этой статье приводятся общие сведения о шифровании хранилища AMS и показывается, как передавать зашифрованное содержимое хранилища.
 
