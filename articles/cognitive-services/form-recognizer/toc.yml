@@ -42,6 +42,8 @@
   items:
     - name: Использование Распознавателя документов со службой "Когнитивный поиск"
       href: 'https://docs.microsoft.com/azure/search/cognitive-search-custom-skill-form'
+    - name: "Использование Распознавателя документов с AI\_Builder"
+      href: tutorial-ai-builder.md
 - name: Практические руководства
   items:
     - name: Создание набора данных для обучения

@@ -7,12 +7,13 @@ ms.service: cosmos-db
 ms.devlang: javascript
 ms.topic: how-to
 ms.date: 12/26/2018
-ms.openlocfilehash: 74c140f2fa08fb49235c0503ea5812e047185f8b
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 1fe5d2839650cef2d965d613d2b87459c770618c
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86023505"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421966"
 ---
 # <a name="expire-data-with-azure-cosmos-dbs-api-for-mongodb"></a>Завершение срока действия данных с помощью API Azure Cosmos DB для MongoDB
 
@@ -74,7 +75,7 @@ globaldb:PRIMARY> db.coll.insert({id:1, location: "Paris", ttl: NumberLong(21474
 
 Функция срока жизни для каждого документа может быть активирована с помощью API Azure Cosmos DB для MongoDB.
 
-:::image type="content" source="./media/mongodb-ttl/mongodb_portal_ttl.png" alt-text="Снимок экрана, демонстрирующий активацию функции срока жизни для документа на портале":::
+:::image type="content" source="./media/mongodb-ttl/mongodb_portal_ttl.png" alt-text="Снимок экрана: активация функции срока жизни для документа на портале":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Срок жизни для данных Azure Cosmos DB](../cosmos-db/time-to-live.md)

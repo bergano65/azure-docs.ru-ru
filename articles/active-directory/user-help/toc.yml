@@ -68,7 +68,9 @@
       href: my-account-portal-privacy-page.md
     - name: Просмотр недавних действий входа в систему
       href: my-account-portal-sign-ins-page.md
-- name: Справка по сведениям для защиты (предварительная версия)
+    - name: Изменение параметров портала
+      href: my-account-portal-settings.md
+- name: Справка по сведениям для защиты
   items:
     - name: Добавление сведений для защиты при входе в систему
       href: security-info-setup-signin.md

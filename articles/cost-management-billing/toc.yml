@@ -304,6 +304,8 @@
               items:
                 - name: Просмотр резервирований и показателей использования
                   href: reservations/view-reservations.md?toc=/azure/cost-management-billing/toc.json
+                - name: Просмотр резервирований в качестве поставщика облачных решений
+                  href: reservations/how-to-view-csp-reservations.md?toc=/azure/cost-management-billing/toc.json
                 - name: Управление резервированиями
                   href: reservations/manage-reserved-vm-instance.md?toc=/azure/cost-management-billing/toc.json
                 - name: Обмена и возврат резервирований

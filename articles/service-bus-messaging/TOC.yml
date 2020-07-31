@@ -220,11 +220,11 @@
               href: service-bus-resource-manager-namespace-topic-with-rule.md
     - name: Безопасность
       items:
-        - name: Настройка брандмауэров
+        - name: Разрешение доступа с определенных IP-адресов
           href: service-bus-ip-filtering.md
-        - name: Настройка конечных точек служб для виртуальной сети
+        - name: Разрешение доступа с определенных виртуальных сетей
           href: service-bus-service-endpoints.md
-        - name: Настройка частных конечных точек
+        - name: Разрешение доступа через частные конечные точки
           href: private-link-service.md
         - name: 'Настройка ключей, управляемых клиентом'
           href: configure-customer-managed-key.md

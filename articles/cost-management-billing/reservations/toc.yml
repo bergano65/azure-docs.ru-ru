@@ -51,6 +51,8 @@
       items:
         - name: Просмотр резервирований и показателей использования
           href: view-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Просмотр резервирований в качестве поставщика облачных решений
+          href: how-to-view-csp-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Управление резервированиями
           href: manage-reserved-vm-instance.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Изменение параметра оптимизации

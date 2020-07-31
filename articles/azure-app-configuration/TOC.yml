@@ -4,6 +4,8 @@
   items:
     - name: Сведения о службе "Конфигурация приложений Azure"
       href: overview.md
+    - name: Рекомендации
+      href: howto-best-practices.md
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: faq.md
 - name: Краткие руководства
@@ -34,26 +36,32 @@
           href: quickstart-feature-flag-spring-boot.md
 - name: Учебники
   items:
-    - name: Включение динамической конфигурации в ASP.NET Core
-      href: enable-dynamic-configuration-aspnet-core.md
-    - name: Включение динамической конфигурации в приложении .NET Core
-      href: enable-dynamic-configuration-dotnet-core.md
-    - name: Включение динамической конфигурации в .NET Framework
-      href: enable-dynamic-configuration-dotnet.md
-    - name: Включение динамической конфигурации в Функциях Azure
-      href: enable-dynamic-configuration-azure-functions-csharp.md
-    - name: Включение динамической конфигурации в Spring Boot
-      href: enable-dynamic-configuration-java-spring-app.md
-    - name: Использование флагов компонентов в приложении .NET Core
-      href: use-feature-flags-dotnet-core.md
-    - name: Использование флагов компонентов в приложении Spring Boot
-      href: use-feature-flags-spring-boot.md
+    - name: Включение динамической конфигурации
+      items:
+        - name: ASP.NET Core
+          href: enable-dynamic-configuration-aspnet-core.md
+        - name: .NET Core
+          href: enable-dynamic-configuration-dotnet-core.md
+        - name: .NET Framework
+          href: enable-dynamic-configuration-dotnet.md
+        - name: Функции Azure
+          href: enable-dynamic-configuration-azure-functions-csharp.md
+        - name: Spring Boot
+          href: enable-dynamic-configuration-java-spring-app.md
+    - name: Использование флагов компонентов
+      items:
+        - name: .NET Core
+          href: use-feature-flags-dotnet-core.md
+        - name: Spring Boot
+          href: use-feature-flags-spring-boot.md
     - name: Управление флагами компонентов
       href: manage-feature-flags.md
-    - name: Использование ссылок на Key Vault в ASP.NET Core
-      href: use-key-vault-references-dotnet-core.md
-    - name: Использование ссылок Key Vault в Spring Boot
-      href: use-key-vault-references-spring-boot.md
+    - name: Использование возможностей Key Vault
+      items:
+        - name: ASP.NET Core
+          href: use-key-vault-references-dotnet-core.md
+        - name: Spring Boot
+          href: use-key-vault-references-spring-boot.md
     - name: Интеграция с конвейером CI/CD
       href: integrate-ci-cd-pipeline.md
     - name: Интеграция с развертыванием Kubernetes с помощью Helm
@@ -105,8 +113,6 @@
       href: howto-app-configuration-event.md
     - name: Автоматическое резервное копирование хранилища конфигурации
       href: howto-backup-config-store.md
-    - name: Рекомендации
-      href: howto-best-practices.md
 - name: Справочник
   items:
     - name: Конфигурация

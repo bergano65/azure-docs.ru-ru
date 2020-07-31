@@ -512,6 +512,8 @@
           href: active-directory-claims-mapping.md
         - name: Настройка необязательных утверждений
           href: active-directory-optional-claims.md
+        - name: Использование атрибутов расширения схемы каталога в утверждениях
+          href: active-directory-schema-extensions.md
         - name: Настройка времени существования маркеров
           href: active-directory-configurable-token-lifetimes.md
         - name: Обработка изменений свойства SameSite в файлах cookie в браузере Chrome
