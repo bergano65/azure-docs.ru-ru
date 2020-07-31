@@ -42,8 +42,10 @@
           href: how-to-use-cli.md
         - name: Настройка экземпляра и проверки подлинности (с использованием скрипта)
           href: how-to-set-up-instance-scripted.md
-        - name: Настройка экземпляра и проверки подлинности (вручную)
-          href: how-to-set-up-instance-manual.md
+        - name: Настройка экземпляра и проверки подлинности (CLI)
+          href: how-to-set-up-instance-cli.md
+        - name: Настройка экземпляра и проверки подлинности (портал)
+          href: how-to-set-up-instance-portal.md
         - name: Написание кода проверки подлинности приложения
           href: how-to-authenticate-client.md
     - name: Проектирование моделей

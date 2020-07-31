@@ -8,6 +8,7 @@
     - name: Что собой представляет единый вход?
       href: what-is-single-sign-on.md
 - name: Краткие руководства
+  expanded: true
   items:
     - name: Просмотр приложений
       href: view-applications-portal.md
@@ -30,7 +31,7 @@
     - name: Примеры Azure PowerShell для прокси приложения
       href: application-proxy-powershell-samples.md
 - name: Основные понятия
-  expanded: true
+  expanded: false
   items:
     - name: Рекомендации по управлению приложениями
       href: application-management-fundamentals.md
@@ -97,195 +98,177 @@
         - name: Сравнение решений для удаленного доступа
           href: application-proxy-migration.md
 - name: Практические руководства
-  expanded: true
+  expanded: false
   items:
-    - name: Облачные приложения и единый вход
+    - name: Настройка единого входа
       items:
-        - name: Настройка единого входа
-          items:
-            - name: Настройка единого входа на основе SAML
-              items:
-                - name: Настройка единого входа на основе SAML
-                  href: configure-saml-single-sign-on.md
-                - name: Настройка пользовательских атрибутов и утверждений
-                  items:
-                    - name: Настройка утверждений групп
-                      href: /azure/active-directory/hybrid/how-to-connect-fed-group-claims?context=azure/active-directory/manage-apps/context/manage-apps-context
-                    - name: Настройка утверждений ролей
-                      href: /azure/active-directory/develop/active-directory-enterprise-app-role-management?context=azure/active-directory/manage-apps/context/manage-apps-context
-                    - name: Настройка утверждений на портале
-                      href: /azure/active-directory/develop/active-directory-saml-claims-customization?context=azure/active-directory/manage-apps/context/manage-apps-context
-                    - name: Настройка утверждений с помощью PowerShell
-                      href: /azure/active-directory/develop/active-directory-claims-mapping?context=azure/active-directory/manage-apps/context/manage-apps-context
-                    - name: Настройка необязательных утверждений
-                      href: /azure/active-directory/develop/active-directory-optional-claims?context=azure/active-directory/manage-apps/context/manage-apps-context
-                    - name: Настройка времени существования маркеров
-                      href: /azure/active-directory/develop/active-directory-configurable-token-lifetimes?context=azure/active-directory/manage-apps/context/manage-apps-context
-            - name: Настройка входа на основе пароля
-              href: configure-password-single-sign-on-non-gallery-applications.md
-            - name: Настройка связанного единого входа
-              href: configure-linked-sign-on.md
-        - name: Назначение пользователей и управление доступом к приложениям
-          items:
-            - name: Настройка согласия пользователя
-              href: configure-user-consent.md
-            - name: Администрирование и оценка запросов на предоставление согласия
-              href: manage-consent-requests.md
-            - name: Предоставление согласия администратора на уровне клиента
-              href: grant-admin-consent.md
-            - name: Настройка рабочего процесса согласия администратора (предварительная версия)
-              href: configure-admin-consent-workflow.md
-            - name: Назначение приложению пользователя или группы
-              href: assign-user-or-group-access-portal.md
-            - name: 'Проверка разрешений, предоставляемых приложениям'
-              href: manage-application-permissions.md
-            - name: Создание коллекций в разделе "Мои приложения"
-              href: access-panel-collections.md
-            - name: Использование самостоятельного доступа к приложениям
-              href: access-panel-manage-self-service-access.md
-            - name: Способы удаления доступа пользователя к приложению
-              href: methods-for-removing-user-access.md
-            - name: Отмена доступа для пользователя или группы
-              href: remove-user-or-group-access-portal.md
-            - name: Скрытие приложения от пользователя
-              href: hide-application-from-user-portal.md
-            - name: Отключение входа для пользователя
-              href: disable-user-sign-in-portal.md
-            - name: Настройка самостоятельного назначения приложения
-              href: manage-self-service-access.md
-            - name: Обнаружение домашней области
-              href: configure-authentication-for-federated-users-portal.md
+        - name: Настройка единого входа на основе SAML
+          href: configure-saml-single-sign-on.md
+        - name: Настройка входа на основе пароля
+          href: configure-password-single-sign-on-non-gallery-applications.md
+        - name: Настройка связанного единого входа
+          href: configure-linked-sign-on.md
         - name: Автоматизация единого входа на основе SAML с помощью API MS Graph
           href: application-saml-sso-configure-api.md
-        - name: "Перенос приложений в Azure\_AD"
-          items:
-            - name: Ресурсы по миграции
-              href: migration-resources.md
-            - name: Миграция приложения ADFS в Azure
-              href: migrate-adfs-apps-to-azure.md
-            - name: "Использование отчета о действиях приложения AD\_FS (предварительная версия)"
-              href: migrate-adfs-application-activity.md
-        - name: Диагностика
-          items:
-            - name: Устранение неполадок при добавлении приложений
-              items:
-                - name: "Распространенные проблемы\_— приложения из коллекции"
-                  href: adding-gallery-app-common-problems.md
-                - name: "Распространенные проблемы\_— приложения не из коллекции"
-                  href: adding-non-gallery-app-common-problems.md
-            - name: Устранение неполадок со входом пользователей
-              items:
-                - name: Непредусмотренный запрос на продолжение
-                  href: application-sign-in-unexpected-user-consent-prompt.md
-                - name: Ошибка при предоставлении согласия пользователем
-                  href: application-sign-in-unexpected-user-consent-error.md
-                - name: Проблемы при входе с пользовательского портала
-                  href: application-sign-in-other-problem-deeplink.md
-                - name: Проблемы при входе с панели доступа
-                  href: application-sign-in-other-problem-access-panel.md
-                - name: Ошибка на странице входа в приложение
-                  href: application-sign-in-problem-application-error.md
-                - name: "Проблема при едином входе с помощью пароля\_— приложение не из коллекции"
-                  href: application-sign-in-problem-password-sso-non-gallery.md
-                - name: "Проблема при едином входе с помощью пароля\_— приложение из коллекции"
-                  href: application-sign-in-problem-password-sso-gallery.md
-                - name: Проблема при входе в приложение Майкрософт
-                  href: application-sign-in-problem-first-party-microsoft.md
-                - name: Проблема при федеративном едином входе в приложение не из коллекции
-                  href: application-sign-in-problem-federated-sso-non-gallery.md
-                - name: Проблема при федеративном едином входе в приложение из коллекции
-                  href: application-sign-in-problem-federated-sso-gallery.md
-                - name: Проблемы со специально разработанным приложением
-                  href: application-sign-in-problem-custom-dev.md
-            - name: Устранение неполадок при выполнении единого входа
-              items:
-                - name: 'Настройка федеративного единого входа в приложения из коллекции: распространенные проблемы'
-                  href: configure-federated-single-sign-on-gallery-applications-problems.md
-                - name: 'Настройка федеративного единого входа в приложения не из коллекции: распространенные проблемы'
-                  href: configure-federated-single-sign-on-non-gallery-applications-problems.md
-                - name: 'Настройка входа по паролю для приложений из коллекции: распространенные проблемы'
-                  href: configure-password-single-sign-on-gallery-applications-problems.md
-                - name: 'Настройка входа по паролю для приложений не из коллекции: распространенные проблемы'
-                  href: configure-password-single-sign-on-non-gallery-applications-problems.md
-            - name: Устранение неполадок в списке приложений и назначениях
-              items:
-                - name: Управление списком приложений для вашего клиента
-                  href: application-types.md
-                - name: Непредусмотренное назначение пользователю
-                  href: ways-users-get-assigned-to-applications.md
-            - name: Устранение неполадок панели доступа
-              items:
-                - name: Управление расширением браузера
-                  href: manage-access-panel-browser-extension.md
-                - name: Приложение не отображается
-                  href: access-panel-troubleshoot-application-not-appearing.md
-                - name: Непредусмотренное отображение приложения
-                  href: access-panel-troubleshoot-unexpected-application.md
-                - name: Не удается войти
-                  href: access-panel-troubleshoot-web-sign-in-problem.md
-                - name: Ошибка при установке расширения браузера
-                  href: access-panel-extension-problem-installing.md
-                - name: Ошибка при использовании самостоятельного доступа к приложению
-                  href: access-panel-troubleshoot-self-service-access.md
-    - name: Прокси приложения для локальных приложений
+    - name: Назначение пользователей и управление доступом к приложениям
       items:
-        - name: Настройка соединителей
+        - name: Настройка согласия пользователя
+          href: configure-user-consent.md
+        - name: Администрирование и оценка запросов на предоставление согласия
+          href: manage-consent-requests.md
+        - name: Предоставление согласия администратора на уровне клиента
+          href: grant-admin-consent.md
+        - name: Настройка рабочего процесса согласия администратора (предварительная версия)
+          href: configure-admin-consent-workflow.md
+        - name: Назначение приложению пользователя или группы
+          href: assign-user-or-group-access-portal.md
+        - name: 'Проверка разрешений, предоставляемых приложениям'
+          href: manage-application-permissions.md
+        - name: Создание коллекций в разделе "Мои приложения"
+          href: access-panel-collections.md
+        - name: Использование самостоятельного доступа к приложениям
+          href: access-panel-manage-self-service-access.md
+        - name: Способы удаления доступа пользователя к приложению
+          href: methods-for-removing-user-access.md
+        - name: Отмена доступа для пользователя или группы
+          href: remove-user-or-group-access-portal.md
+        - name: Скрытие приложения от пользователя
+          href: hide-application-from-user-portal.md
+        - name: Отключение входа для пользователя
+          href: disable-user-sign-in-portal.md
+        - name: Настройка самостоятельного назначения приложения
+          href: manage-self-service-access.md
+        - name: Обнаружение домашней области
+          href: configure-authentication-for-federated-users-portal.md
+    - name: "Переход на управление удостоверениями в Azure\_AD"
+      items:
+        - name: Ресурсы по миграции
+          href: migration-resources.md
+        - name: Миграция приложения ADFS в Azure
+          href: migrate-adfs-apps-to-azure.md
+        - name: "Использование отчета о действиях приложения AD\_FS (предварительная версия)"
+          href: migrate-adfs-application-activity.md
+    - name: Настройка локальных соединителей
+      items:
+        - name: Настройка с помощью прокси-серверов
+          href: application-proxy-configure-connectors-with-proxy-servers.md
+        - name: Регистрация соединителя (автоматическая установка)
+          href: application-proxy-register-connector-powershell.md
+    - name: Настройка доступа к локальным приложениям
+      items:
+        - name: Настройка приложений с поддержкой утверждений
+          href: application-proxy-configure-for-claims-aware-applications.md
+        - name: Предоставление мобильным и классическим приложениям доступа к локальным API-интерфейсам
+          href: application-proxy-secure-api-access.md
+        - name: Настройка клиентских мобильных и классических приложений
+          href: application-proxy-configure-native-client-application.md
+        - name: Настройка пользовательской домашней страницы
+          href: application-proxy-configure-custom-home-page.md
+        - name: Преобразование встроенных ссылок
+          href: application-proxy-configure-hard-coded-link-translation.md
+        - name: Настройка параметров для файлов cookie
+          href: application-proxy-configure-cookie-settings.md
+        - name: Публикация с использованием подстановочных знаков
+          href: application-proxy-wildcard.md
+        - name: Удаление персональных данных
+          href: application-proxy-remove-personal-data.md
+        - name: Настройка личного домена
+          href: application-proxy-configure-custom-domain.md
+        - name: Единый вход с помощью прокси приложения
           items:
-            - name: Настройка с помощью прокси-серверов
-              href: application-proxy-configure-connectors-with-proxy-servers.md
-            - name: Регистрация соединителя (автоматическая установка)
-              href: application-proxy-register-connector-powershell.md
-        - name: Настройка доступа к приложению
+            - name: Ограниченное делегирование Kerberos
+              href: application-proxy-configure-single-sign-on-with-kcd.md
+            - name: Хранение паролей
+              href: application-proxy-configure-single-sign-on-password-vaulting.md
+            - name: Заголовки
+              href: application-proxy-configure-single-sign-on-with-ping-access.md
+            - name: Единый вход SAML
+              href: application-proxy-configure-single-sign-on-on-premises-apps.md
+        - name: Защита устаревших приложений с помощью контроллеров или сетей доставки приложений
+          href: secure-hybrid-access.md
+        - name: Пошаговые руководства по публикации
           items:
-            - name: Настройка приложений с поддержкой утверждений
-              href: application-proxy-configure-for-claims-aware-applications.md
-            - name: Предоставление мобильным и классическим приложениям доступа к локальным API-интерфейсам
-              href: application-proxy-secure-api-access.md
-            - name: Настройка клиентских мобильных и классических приложений
-              href: application-proxy-configure-native-client-application.md
-            - name: Настройка пользовательской домашней страницы
-              href: application-proxy-configure-custom-home-page.md
-            - name: Преобразование встроенных ссылок
-              href: application-proxy-configure-hard-coded-link-translation.md
-            - name: Настройка параметров для файлов cookie
-              href: application-proxy-configure-cookie-settings.md
-            - name: Публикация с использованием подстановочных знаков
-              href: application-proxy-wildcard.md
-            - name: Удаление персональных данных
-              href: application-proxy-remove-personal-data.md
-            - name: Настройка личного домена
-              href: application-proxy-configure-custom-domain.md
-            - name: Единый вход с помощью прокси приложения
-              items:
-                - name: Ограниченное делегирование Kerberos
-                  href: application-proxy-configure-single-sign-on-with-kcd.md
-                - name: Хранение паролей
-                  href: application-proxy-configure-single-sign-on-password-vaulting.md
-                - name: Заголовки
-                  href: application-proxy-configure-single-sign-on-with-ping-access.md
-                - name: Единый вход SAML
-                  href: application-proxy-configure-single-sign-on-on-premises-apps.md
-            - name: Пошаговые руководства по публикации
-              items:
-                - name: Интеграция с прокси приложения на сервере NDES
-                  href: active-directory-app-proxy-protect-ndes.md
-                - name: Интеграция с доменными службами Azure AD
-                  href: /azure/active-directory-domain-services/deploy-azure-app-proxy?context=azure/active-directory/manage-apps/context/manage-apps-context
-                - name: Интеграция с Power BI
-                  href: application-proxy-integrate-with-power-bi.md
-                - name: Интеграция с Cloud App Security
-                  href: application-proxy-integrate-with-microsoft-cloud-application-security.md
-                - name: Интеграция с удаленным рабочим столом
-                  href: application-proxy-integrate-with-remote-desktop-services.md
-                - name: Интеграция с SharePoint
-                  href: application-proxy-integrate-with-sharepoint-server.md
-                - name: Интеграция с Teams
-                  href: application-proxy-integrate-with-teams.md
-                - name: Интеграция с Tableau
-                  href: application-proxy-integrate-with-tableau.md
-                - name: Интеграция с Qlik
-                  href: application-proxy-qlik.md
-        - name: Устранение неполадок прокси-сервера приложений
+            - name: Интеграция с прокси приложения на сервере NDES
+              href: active-directory-app-proxy-protect-ndes.md
+            - name: Интеграция с доменными службами Azure AD
+              href: /azure/active-directory-domain-services/deploy-azure-app-proxy?context=azure/active-directory/manage-apps/context/manage-apps-context
+            - name: Интеграция с Power BI
+              href: application-proxy-integrate-with-power-bi.md
+            - name: Интеграция с Cloud App Security
+              href: application-proxy-integrate-with-microsoft-cloud-application-security.md
+            - name: Интеграция с удаленным рабочим столом
+              href: application-proxy-integrate-with-remote-desktop-services.md
+            - name: Интеграция с SharePoint
+              href: application-proxy-integrate-with-sharepoint-server.md
+            - name: Интеграция с Teams
+              href: application-proxy-integrate-with-teams.md
+            - name: Интеграция с Tableau
+              href: application-proxy-integrate-with-tableau.md
+            - name: Интеграция с Qlik
+              href: application-proxy-qlik.md
+    - name: Диагностика
+      items:
+        - name: Устранение неполадок при добавлении приложений
+          items:
+            - name: "Распространенные проблемы\_— приложения из коллекции"
+              href: adding-gallery-app-common-problems.md
+            - name: "Распространенные проблемы\_— приложения не из коллекции"
+              href: adding-non-gallery-app-common-problems.md
+        - name: Устранение неполадок со входом пользователей
+          items:
+            - name: Непредусмотренный запрос на продолжение
+              href: application-sign-in-unexpected-user-consent-prompt.md
+            - name: Ошибка при предоставлении согласия пользователем
+              href: application-sign-in-unexpected-user-consent-error.md
+            - name: Проблемы при входе с пользовательского портала
+              href: application-sign-in-other-problem-deeplink.md
+            - name: Проблемы при входе с панели доступа
+              href: application-sign-in-other-problem-access-panel.md
+            - name: Ошибка на странице входа в приложение
+              href: application-sign-in-problem-application-error.md
+            - name: "Проблема при едином входе с помощью пароля\_— приложение не из коллекции"
+              href: application-sign-in-problem-password-sso-non-gallery.md
+            - name: "Проблема при едином входе с помощью пароля\_— приложение из коллекции"
+              href: application-sign-in-problem-password-sso-gallery.md
+            - name: Проблема при входе в приложение Майкрософт
+              href: application-sign-in-problem-first-party-microsoft.md
+            - name: Проблема при федеративном едином входе в приложение не из коллекции
+              href: application-sign-in-problem-federated-sso-non-gallery.md
+            - name: Проблема при федеративном едином входе в приложение из коллекции
+              href: application-sign-in-problem-federated-sso-gallery.md
+            - name: Проблемы со специально разработанным приложением
+              href: application-sign-in-problem-custom-dev.md
+        - name: Устранение неполадок при выполнении единого входа
+          items:
+            - name: 'Настройка федеративного единого входа в приложения из коллекции: распространенные проблемы'
+              href: configure-federated-single-sign-on-gallery-applications-problems.md
+            - name: 'Настройка федеративного единого входа в приложения не из коллекции: распространенные проблемы'
+              href: configure-federated-single-sign-on-non-gallery-applications-problems.md
+            - name: 'Настройка входа по паролю для приложений из коллекции: распространенные проблемы'
+              href: configure-password-single-sign-on-gallery-applications-problems.md
+            - name: 'Настройка входа по паролю для приложений не из коллекции: распространенные проблемы'
+              href: configure-password-single-sign-on-non-gallery-applications-problems.md
+        - name: Устранение неполадок в списке приложений и назначениях
+          items:
+            - name: Управление списком приложений для вашего клиента
+              href: application-types.md
+            - name: Непредусмотренное назначение пользователю
+              href: ways-users-get-assigned-to-applications.md
+        - name: Устранение неполадок панели доступа
+          items:
+            - name: Управление расширением браузера
+              href: manage-access-panel-browser-extension.md
+            - name: Приложение не отображается
+              href: access-panel-troubleshoot-application-not-appearing.md
+            - name: Непредусмотренное отображение приложения
+              href: access-panel-troubleshoot-unexpected-application.md
+            - name: Не удается войти
+              href: access-panel-troubleshoot-web-sign-in-problem.md
+            - name: Ошибка при установке расширения браузера
+              href: access-panel-extension-problem-installing.md
+            - name: Ошибка при использовании самостоятельного доступа к приложению
+              href: access-panel-troubleshoot-self-service-access.md
+        - name: Устранение неполадок с локальными приложениями
           items:
             - name: Устранение неполадок с прокси приложения
               href: application-proxy-troubleshoot.md
@@ -319,10 +302,6 @@
               href: application-sign-in-problem-on-premises-application-proxy.md
             - name: Проблемы с CORS в прокси приложения
               href: application-proxy-understand-cors-issues.md
-    - name: Безопасный гибридный доступ (для облачных и локальных приложений)
-      items:
-        - name: Защита устаревших приложений с помощью контроллеров или сетей доставки приложений
-          href: secure-hybrid-access.md
 - name: Справочник
   items:
     - name: 'Прокси приложения: вопросы и ответы'

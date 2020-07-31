@@ -1,6 +1,6 @@
 ---
-title: Пул узлов Виртуального рабочего стола Windows в Azure Marketplace — Azure
-description: Сведения о том, как создать пул узлов Виртуального рабочего стола Windows с помощью Azure Marketplace.
+title: Пул узлов Виртуального рабочего стола Windows (классическая версия) в Azure Marketplace — Azure
+description: Сведения о том, как создать пул узлов Виртуального рабочего стола Windows (классическая версия) с помощью Azure Marketplace.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: b4472baa51bb0b8806c7ad617c0fc1001c800ff0
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 3f0db05459b8e81764915c5dffb373e7f19edbc4
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86256855"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87291314"
 ---
-# <a name="tutorial-create-a-host-pool-by-using-the-azure-marketplace"></a>Руководство по Создание пула узлов с использованием Azure Marketplace
+# <a name="tutorial-create-a-host-pool-in-windows-virtual-desktop-classic"></a>Руководство по созданию пула узлов на Виртуальном рабочем столе Windows (классическая версия)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../create-host-pools-azure-marketplace.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows (классическая версия), который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Сведения об обеспечении управления объектами Azure Resource Manager для Виртуального рабочего стола Windows см. в [этой статье](../create-host-pools-azure-marketplace.md).
 
 В этом учебнике вы узнаете, как создать пул узлов в клиенте Виртуального рабочего стола Windows, используя предложение Microsoft Azure Marketplace.
 
