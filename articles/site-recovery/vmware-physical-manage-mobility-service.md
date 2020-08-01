@@ -7,17 +7,19 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
-ms.openlocfilehash: 9be758c286e072b0fbefc5f8b20b7accc4e6741b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ff77d6cad60b459b1fe6a4f83641c7aebe204dfa
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79256969"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460105"
 ---
 # <a name="manage-the-mobility-agent"></a>Управление агентом службы "Мобильность" 
 
 Агент мобильности настраивается на сервере при использовании Azure Site Recovery для аварийного восстановления виртуальных машин VMware и физических серверов в Azure. Агент мобильности координирует обмен данными между защищенным компьютером, сервером конфигурации и сервером обработки масштабирования и управляет репликацией данных. В этой статье перечислены распространенные задачи по управлению агентом мобильности после его развертывания.
 
+>[!TIP]
+>Чтобы скачать установщик для определенной ОС или дистрибутив Linux, см. Руководство [здесь](vmware-physical-mobility-service-overview.md#locate-installer-files). Для автоматического обновления с портала не требуется загружать установщик. [ASR автоматически извлекает установщик с сервера конфигурации и обновляет агент](#update-mobility-service-from-azure-portal).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -29,11 +31,11 @@ ms.locfileid: "79256969"
 
      ![Окно "Реплицированные элементы"](./media/vmware-azure-install-mobility-service/replicated-item-notif.png)
 
-4. Щелкните уведомление и в разделе **Обновление агента** выберите компьютеры, на которых нужно обновить службу Mobility Service. Нажмите кнопку **ОК**.
+4. Щелкните уведомление и в разделе **Обновление агента** выберите компьютеры, на которых нужно обновить службу Mobility Service. Затем нажмите кнопку **ОК**.
 
      ![Список виртуальных машин "Реплицированные элементы"](./media/vmware-azure-install-mobility-service/update-okpng.png)
 
-5. Для каждого выбранного компьютера будет запущено задание обновления службы Mobility Service.
+5. Для каждого выбранного компьютера будет запущено задание обновления службы Mobility Service. Агент мобильности обновлен до версии сервера конфигурации. Например, если сервер конфигурации работает в версии 9,33, агент мобильности на защищенной виртуальной машине также обновляется до версии 9,33.
 
 ## <a name="update-mobility-service-through-powershell-script-on-windows-server"></a>Обновление службы Mobility Service с помощью сценария PowerShell в Windows Server
 
@@ -89,7 +91,7 @@ Update-AzRecoveryServicesAsrMobilityService -ReplicationProtectedItem $rpi -Acco
 3. Запустите скрипт InMageVSSProvider_Uninstall. cmd. Служба будет удалена, если она уже существует.
 4. Выполните скрипт InMageVSSProvider_Install. cmd, чтобы установить поставщик VSS вручную.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка аварийного восстановления для виртуальных машин VMware](vmware-azure-tutorial.md)
 - [Настройка аварийного восстановления в Azure для локальных физических серверов](physical-azure-disaster-recovery.md)

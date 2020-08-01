@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 97285ae9eadee3717f0b1a1510627392250424b7
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 108882fd9e585fadc98436c3404bd8945e80080f
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87037871"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460683"
 ---
 # <a name="azure-security-baseline-for-service-fabric"></a>Базовый план безопасности Azure для Service Fabric
 
@@ -626,7 +626,7 @@ ms.locfileid: "87037871"
 
 * [Как обновить виртуальные машины в соответствии с последней моделью масштабируемого набора](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-scale-set#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model)
 
-* [Обзор функции "Управление обновлениями" в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-update-management)
+* [Обзор функции "Управление обновлениями" в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/update-management/update-mgmt-overview)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 

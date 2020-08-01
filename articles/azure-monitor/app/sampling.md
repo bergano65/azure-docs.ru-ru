@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 4e2557b114b5eb90b03e59dc64cbd6e69c7dd9a4
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 4a618b00b211ce65b170379cc14d6b83a1183d28
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326585"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460362"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -33,8 +33,8 @@ ms.locfileid: "87326585"
 | Пакет SDK для Application Insights | Поддерживается Адаптивная выборка | Поддерживается выборка с фиксированной частотой | Поддерживается выборка приема |
 |-|-|-|-|
 | ASP.NET | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-applications) | Только если не действует ни одна другая выборка |
-| ASP.NET Core | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-core-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-core-applications) | Только если не действует ни одна другая выборка |
-| Функции Azure | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-azure-functions) | Нет | Только если не действует ни одна другая выборка |
+| ASP.NET Core | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-core-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-core-applications) | Только если не действует ни одна другая выборка |
+| Проверка | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-azure-functions) | Нет | Только если не действует ни одна другая выборка |
 | Java | Нет | [Да](#configuring-fixed-rate-sampling-for-java-applications) | Только если не действует ни одна другая выборка |
 | Node.JS | Нет | [Да](./nodejs.md#sampling) | Только если не действует ни одна другая выборка
 | Python | Нет | [Да](#configuring-fixed-rate-sampling-for-opencensus-python-applications) | Только если не действует ни одна другая выборка |
@@ -78,7 +78,7 @@ ms.locfileid: "87326585"
 
 * `<MaxTelemetryItemsPerSecond>5</MaxTelemetryItemsPerSecond>`
   
-    Целевая частота, к которой стремится адаптивный алгоритм **на каждом узле сервера**. Если веб-приложение выполняется на множестве узлов, нужно уменьшить это значение, чтобы не превышать целевую скорость трафика на портале Application Insights.
+    Целевая скорость [логических операций](./correlation.md#data-model-for-telemetry-correlation) , которую должен собираются адаптивный алгоритм для накопления **на каждом узле сервера**. Если веб-приложение выполняется на множестве узлов, нужно уменьшить это значение, чтобы не превышать целевую скорость трафика на портале Application Insights.
 
 * `<EvaluationInterval>00:00:15</EvaluationInterval>` 
   
@@ -505,7 +505,7 @@ union requests,dependencies,pageViews,browserTimings,exceptions,traces
 
 Точность приблизительного значения в значительной степени зависит от заданного процента выборки. Кроме того, точность возрастает для приложений, обрабатывающих большой объем сходных запросов от большого количества пользователей. С другой стороны, для приложений, которые не работают с существенной нагрузкой, выборка не требуется, так как такие приложения обычно могут отправлять все данные телеметрии, не выходя за пределы квоты и не вызывая потерю данных в результате регулирования. 
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 *Что такое поведение выборки по умолчанию в пакетах SDK для ASP.NET и ASP.NET Core?*
 

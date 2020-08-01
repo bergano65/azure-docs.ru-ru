@@ -3,12 +3,12 @@ title: Настройка аналитики веб-приложения для 
 description: Настройка средств аналитики производительности, доступности и поведения пользователей для веб-сайта ASP.NET, размещенного локально или в Azure.
 ms.topic: conceptual
 ms.date: 05/08/2019
-ms.openlocfilehash: 4e51fb43a9e088c991af2132b6a5d2257da8d78a
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: acfba63cba520631831888a1480929be3b1897f0
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324222"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87475538"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -112,7 +112,10 @@ ms.locfileid: "87324222"
 
 
 ## <a name="upgrade-to-future-sdk-versions"></a>Обновление до будущих версий пакета SDK
-Чтобы установить [новый выпуск пакета SDK](https://github.com/Microsoft/ApplicationInsights-dotnet-server/releases), откройте **диспетчер пакетов NuGet** и выполните фильтрацию по установленным пакетам. Выберите элемент **Microsoft.ApplicationInsights.Web**, а затем — элемент **Обновить**.
+
+* [Заметки о выпуске](./release-notes.md)
+
+Чтобы выполнить обновление до нового выпуска пакета SDK, откройте **Диспетчер пакетов NuGet**и выполните фильтрацию по установленным пакетам. Выберите элемент **Microsoft.ApplicationInsights.Web**, а затем — элемент **Обновить**.
 
 Если были выполнены какие-либо настройки файла ApplicationInsights.config, то прежде чем выполнять обновление, сохраните его копию. Затем объедините изменения в новой версии.
 

@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 05/11/2020
 ms.author: anfeldma
-ms.openlocfilehash: 679f3113cddbfe13370483f2678154f4dd1f8ab2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b2c846298fecdc771dd5d9831a558b99c74b2737
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85392069"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87461074"
 ---
 # <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>Пакет SDK обработчика канала изменений: заметки о скачивании и выпуске
 
@@ -48,7 +48,11 @@ ms.locfileid: "85392069"
 
 ### <a name="v2-builds"></a>Сборки версии 2
 
-### <a name="230"></a><a name="2.3.0"></a>2.3.0
+### <a name="231"></a><a name="2.3.1"/>2.3.1
+* Исправлен случай, когда `FeedProcessing.ChangeFeedObserverCloseReason.Unknown` была отправлена Причина закрытия, `FeedProcessing.IChangeFeedObserver.CloseAsync` если не удается найти секцию или если Целевая реплика не устарела в сеансе чтения. В этих случаях и в этом случае `FeedProcessing.ChangeFeedObserverCloseReason.ResourceGone` `FeedProcessing.ChangeFeedObserverCloseReason.ReadSessionNotAvailable` используются закрытые причины.
+* Добавлена новая Причина закрытия `FeedProcessing.ChangeFeedObserverCloseReason.ReadSessionNotAvailable` , отправленная для закрытия наблюдателя веб-канала изменений, если Целевая реплика не устарела в сеансе чтения.
+
+### <a name="230"></a><a name="2.3.0"/>2.3.0
 * Добавлен новый метод `ChangeFeedProcessorBuilder.WithCheckpointPartitionProcessorFactory` и соответствующий открытый интерфейс `ICheckpointPartitionProcessorFactory`. Это позволяет в реализации интерфейса `IPartitionProcessor` использовать встроенный механизм создания контрольных точек. Новая фабрика аналогична существующей `IPartitionProcessorFactory`, за исключением того, что метод `Create` в ней принимает дополнительный параметр `ILeaseCheckpointer`.
 * Для одного экземпляра `ChangeFeedProcessorBuilder` можно использовать только один из двух методов: `ChangeFeedProcessorBuilder.WithPartitionProcessorFactory` или `ChangeFeedProcessorBuilder.WithCheckpointPartitionProcessorFactory`.
 
@@ -178,16 +182,16 @@ ms.locfileid: "85392069"
 
 ## <a name="release--retirement-dates"></a>Даты выпуска и выбытия
 
-Корпорация Майкрософт отправит уведомление минимум за **12 месяцев** до вывода пакета SDK из эксплуатации, чтобы обеспечить более плавный переход на новую или поддерживаемую версию.
+Корпорация Майкрософт отправит уведомление минимум за **12 месяцев** до вывода пакета SDK из эксплуатации, чтобы обеспечить более плавный переход на новую или поддерживаемую версию. Новые функции, возможности и оптимизации добавляются только в текущую версию пакета SDK, поэтому рекомендуется как можно раньше обновлять пакет SDK до последней версии.
 
-Новые функции, возможности и оптимизации добавляются только в текущую версию пакета SDK, поэтому рекомендуется как можно раньше обновлять пакет SDK до последней версии. 
-
-Любые запросы к Cosmos DB с помощью выведенного из эксплуатации пакета SDK будут отклонены службой.
+> [!WARNING]
+> После 31 августа 2022 Azure Cosmos DB больше не будет выполнять исправления ошибок, добавить новые функции и предоставить поддержку версий 1. x Azure Cosmos DB .NET или пакет SDK для .NET Core для API SQL. Если вы предпочитаете не выполнять обновление, запросы, отправленные с версии 1. x пакета SDK, будут по прежнему обслуживаться службой Azure Cosmos DB.
 
 <br/>
 
 | Версия | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.3.1](#2.3.1) |30 июля 2020 г. |--- |
 | [2.3.0](#2.3.0) |2 апреля 2020 г. |--- |
 | [2.2.8](#2.2.8) |28 октября 2019 г. |--- |
 | [2.2.7](#2.2.7) |14 мая 2019 г. |--- |

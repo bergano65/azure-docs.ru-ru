@@ -7,14 +7,14 @@ ms.date: 07/10/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: b06edb83e85ef6d56cf8bf8f91551fe99535eba1
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 126673391b49f884a51521d462060c425a314667
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87352421"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87475674"
 ---
-# <a name="iot-plug-and-play-conventions"></a>Соглашения Plug and Play IoT
+# <a name="iot-plug-and-play-conventions"></a>Соглашения IoT Plug and Play
 
 При обмене сообщениями с центром Интернета вещей на устройствах предварительной версии IoT Plug and Play должны следовать набору соглашений. Устройства с предварительной версией IoT Plug and Play используют протокол MQTT для обмена данными с центром Интернета вещей.
 
@@ -25,11 +25,11 @@ ms.locfileid: "87352421"
 
 Дополнительные сведения см. [в разделе IoT Plug and Play Components in Models](concepts-components.md).
 
-## <a name="model-discovery"></a>Обнаружение модели
+## <a name="identify-the-model"></a>Указание модели
 
 Чтобы объявить реализуемую модель, устройство IoT Plug and Play включает идентификатор модели в пакет подключения MQTT, добавляя `model-id` к `USERNAME` полю.
 
-Для обнаружения модели, реализуемой устройством, служба может получить идентификатор модели из:
+Для идентификации модели, реализованной устройством, служба может получить идентификатор модели из:
 
 - Поле двойникаа устройства `modelId` .
 - Поле Digital двойника `$metadata.$model` .

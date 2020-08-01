@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 08/17/2018
-ms.openlocfilehash: 419c3f21c8606bb16112fd18cfe141655fd7b868
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f735668e1519a6a12082537dabfe17be3e96ffdd
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84168154"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460017"
 ---
 # <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>API таблицы .NET для базы данных Azure Cosmos DB. Скачивание и заметки о выпуске
 
@@ -41,11 +41,11 @@ ms.locfileid: "84168154"
 
 ### <a name="212"></a><a name="2.1.2"></a>2.1.2
 
-* Исправленные ошибки
+* Исправления ошибок
 
 ### <a name="210"></a><a name="2.1.0"></a>2.1.0
 
-* Исправленные ошибки
+* Исправления ошибок
 
 ### <a name="200"></a><a name="2.0.0"></a>2.0.0
 
@@ -66,7 +66,7 @@ ms.locfileid: "84168154"
 ### <a name="110"></a><a name="1.1.0"></a>1.1.0
 
 * Добавлены TableRequestOptions TableQueryMaxItemCount, TableQueryEnableScan, TableQueryMaxDegreeOfParallelism и TableQueryContinuationTokenLimitInKb
-* Исправления ошибок
+* Исправленные ошибки
 
 ### <a name="100"></a><a name="1.0.0"></a>1.0.0
 
@@ -82,10 +82,7 @@ ms.locfileid: "84168154"
 
 `Microsoft.Azure.CosmosDB.Table`Библиотека в настоящее время доступна только для .NET Framework и находится в режиме обслуживания и скоро будет считаться устаревшей. Новые функции и возможности и оптимизации добавляются только в библиотеку .NET Standard [Microsoft. Azure. Cosmos. Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table), поэтому рекомендуется выполнить обновление до [Microsoft. Azure. Cosmos. Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table).
 
-Пакет предварительной версии [WindowsAzure. Storage-PremiumTable](https://www.nuget.org/packages/WindowsAzure.Storage-PremiumTable/0.1.0-preview) является устаревшим. Поддержка пакета SDK WindowsAzure.Storage PremiumTable будет прекращена 15 ноября 2018 г. С этого времени запросы к устаревшему пакету SDK будут запрещены. 
-
-Любые запросы к базе данных Azure Cosmos DB с помощью выведенного из эксплуатации пакета SDK отклоняются службой.
-<br/>
+Пакет предварительной версии [WindowsAzure. Storage-PremiumTable](https://www.nuget.org/packages/WindowsAzure.Storage-PremiumTable/0.1.0-preview) является устаревшим. Поддержка пакета SDK WindowsAzure.Storage PremiumTable будет прекращена 15 ноября 2018 г. С этого времени запросы к устаревшему пакету SDK будут запрещены.
 
 | Версия | Дата выпуска | Дата вывода |
 | --- | --- | --- |

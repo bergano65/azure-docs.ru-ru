@@ -3,12 +3,12 @@ title: Установка Hybrid Cloud Extension (HCX)
 description: Установите решение VMware Hybrid Cloud Extension (HCX) для своего частного облака, использующего решение Azure VMware (AVS)
 ms.topic: how-to
 ms.date: 07/15/2020
-ms.openlocfilehash: b897a44fb6811c4e3564c59a8ab2c064506f0a4f
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ea968cb21812f7273af342763d307c2faba1eea6
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86539165"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87475453"
 ---
 # <a name="install-hcx-for-azure-vmware-solution"></a>Установка HCX для решения Azure VMware
 
@@ -19,7 +19,7 @@ ms.locfileid: "86539165"
 
 Сначала внимательно изучите разделы [Перед началом работы](#before-you-begin), [Требования к версиям программного обеспечения](#software-version-requirements) и [Предварительные требования](#prerequisites). 
 
-Затем мы последовательно разберем все необходимые процедуры для выполнения следующих действий:
+Затем мы рассмотрим все необходимые процедуры для:
 
 > [!div class="checklist"]
 > * развертывания локального OVA-файла HCX;
@@ -31,10 +31,10 @@ ms.locfileid: "86539165"
 
 ## <a name="before-you-begin"></a>Перед началом
     
-* Ознакомьтесь с [рядом базовых руководств](tutorial-network-checklist.md) по программно определяемому центру обработки данных (SDDC) AVC
-* Просмотрите [документацию по VMware HCX](https://docs.vmware.com/en/VMware-HCX/index.html), включая руководство пользователя HCX, и используйте ее для справки
-* Ознакомьтесь с документацией VMware [Миграция виртуальных машин с помощью VMware HCX](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-D0CD0CC6-3802-42C9-9718-6DA5FEC246C6.html?hWord=N4IghgNiBcIBIGEAaACAtgSwOYCcwBcMB7AOxAF8g)
-* При желании просмотрите [рекомендации по развертыванию VMware HCX](https://docs.vmware.com/en/VMware-HCX/services/install-checklist/GUID-C0A0E820-D5D0-4A3D-AD8E-EEAA3229F325.html)
+* Ознакомьтесь с основными [сериями руководств](tutorial-network-checklist.md)по определению программного обеспечения AVS для центра обработки данных (SDDC).
+* Ознакомьтесь со справочной [документацией по VMware хккс](https://docs.vmware.com/en/VMware-HCX/index.html) , включая руководство пользователя хккс.
+* Ознакомьтесь с документами VMware [Миграция виртуальных машин с помощью VMware хккс](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-D0CD0CC6-3802-42C9-9718-6DA5FEC246C6.html?hWord=N4IghgNiBcIBIGEAaACAtgSwOYCcwBcMB7AOxAF8g).
+* При необходимости ознакомьтесь с [замечаниями по развертыванию VMware хккс](https://docs.vmware.com/en/VMware-HCX/services/install-checklist/GUID-C0A0E820-D5D0-4A3D-AD8E-EEAA3229F325.html).
 * При желании просмотрите связанные материалы VMware по HCX, такие как [ряд блогов](https://blogs.vmware.com/vsphere/2019/10/cloud-migration-series-part-2.html) VMware vSphere по HCX. 
 * Закажите активацию AVS HCX Enterprise через каналы поддержки AVS.
 
@@ -45,14 +45,14 @@ ms.locfileid: "86539165"
                                                          
 | Тип компонента    | Требования к исходной среде    | Требования к целевой среде   |
 | --- | --- | --- |
-| с сервером vCenter   | 5.1<br/><br/>Если используется версия 5.5 U1 или более ранняя версия, используйте автономный пользовательский интерфейс HCX для операций HCX.  | 6.0 U2 и более поздних версий   |
+| с сервером vCenter   | 5.1<br/><br/>При использовании 5,5 U1 или более ранней версии используйте автономный пользовательский интерфейс ХККС для операций ХККС.  | 6.0 U2 и более поздних версий   |
 | ESXi   | 5.0    | ESXi 6.0 и более поздних версий   |
-| NSX    | Для сетевого расширения HCX логических коммутаторов в источнике: NSXv 6.2+ или NSX-T 2.4+   | NSXv 6.2+ или NSX-T 2.4+<br/><br/>Для маршрутизации с близостью к ХККС: Нсксв 6.4 + (маршрутизация близости не поддерживается с НСКС-T) |
+| NSX    | Для сетевого расширения ХККС логических коммутаторов в источнике: Нсксв 6.2 + или НСКС-T 2.4 +   | NSXv 6.2+ или NSX-T 2.4+<br/><br/>Для маршрутизации с близостью ХККС: Нсксв 6.4 + (маршрутизация с Близкостью не поддерживается с НСКС-T) |
 | vCloud Director   | Не требуется — на исходном сайте отсутствует взаимодействие с vCloud Director | При интеграции целевой среды с vCloud Director минимальное значение — 9.1.0.2.  |
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Глобальный доступ должен быть настроен между локальными каналами и каналами AVS SDDC.
+* Global Reach ExpressRoute следует настроить между локальной средой и каналами ExpressRoute AVS SDDC.
 
 * Между локальной средой и SDDC AVS должны быть открыты все необходимые порты (см. [документацию VMware HCX](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-E456F078-22BE-494B-8E4B-076EF33A9CF4.html)).
 
@@ -190,7 +190,7 @@ ms.locfileid: "86539165"
     
    ![Выбор сетевого профиля репликации vSphere](./media/hybrid-cloud-extension-installation/vsphere-replication-network-profile.png)
 
-1. В окне **Выбор распределенных коммутаторов для сетевых расширений**выберите Программа DVS, в которой находятся сети, на которых будут интегрированы и подключены виртуальные машины.  Выберите **Continue** (Продолжить).  
+1. В окне **Выбор распределенных коммутаторов для сетевых расширений**выберите Программа DVS, в которой находятся сети, на которых будут интегрированы и подключены виртуальные машины.  Выберите пункт **Продолжить**.  
       
     ![Выбор распределенных виртуальных коммутаторов](./media/hybrid-cloud-extension-installation/distributed-switches.png)
 

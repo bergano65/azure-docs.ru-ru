@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16203ab972f6117cec41e43ee5dd89cda7e95ede
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4c4b9ae0ed682d6b34099c8eff941f1d0b6cabad
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87025705"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87461771"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Руководство. Планирование реализации гибридного присоединения к Azure Active Directory.
 
@@ -30,7 +30,7 @@ ms.locfileid: "87025705"
 
 Если у вас есть локальная среда Active Directory (AD) и вы хотите присоединить к Azure AD компьютеры, присоединенные к домену AD, это можно сделать, выполнив гибридное присоединение к Azure AD. В этой статье приведены соответствующие шаги для реализации гибридного присоединения устройств к Azure AD в вашей среде. 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы знакомы с [введением в Управление удостоверениями устройств в Azure Active Directory](../device-management-introduction.md).
 
@@ -57,7 +57,7 @@ ms.locfileid: "87025705"
 - Windows 10
 - Windows Server 2016
   - **Примечание**. клиентам национального облака Azure требуется версия 1809
-- Windows Server 2019
+- Windows Server 2019
 
 Для устройств под управлением операционной системы Windows, поддерживаемая версия, указана в этой статье [сведения о выпуске Windows 10](/windows/release-information/). Рекомендуется выполнить обновление до последней версии Windows 10.
 
@@ -66,7 +66,7 @@ ms.locfileid: "87025705"
 - Windows 8.1
 - Поддержка Windows 7 закончилась 14 января 2020 г. Дополнительные сведения см. в разделе [Поддержка Windows 7 завершена](https://support.microsoft.com/en-us/help/4057281/windows-7-support-ended-on-january-14-2020).
 - Windows Server 2012 R2
-- Windows Server 2012
+- Windows Server 2012
 - Windows Server 2008 R2. Сведения о поддержке в Windows Server 2008 и 2008 R2 см. в разделе [Подготовка к завершению поддержки Windows server 2008](https://www.microsoft.com/cloud-platform/windows-server-2008).
 
 В качестве первого шага планирования вам следует просмотреть свою среду и определить, нужно ли вам поддерживать устройства Windows нижнего уровня.
@@ -121,6 +121,9 @@ ms.locfileid: "87025705"
 Управляемую среду можно развернуть при помощи [синхронизации хэша паролей](/azure/active-directory/hybrid/whatis-phs) или [сквозной аутентификации](/azure/active-directory/hybrid/how-to-connect-pta) с [единым входом](/azure/active-directory/hybrid/how-to-connect-sso).
 
 В этих сценариях не требуется настраивать сервер федерации для проверки подлинности.
+
+> [!NOTE]
+> [Облачная аутентификация с использованием промежуточного развертывания](/hybrid/how-to-connect-staged-rollout) поддерживается только при запуске обновления Windows 10 1903.
 
 ### <a name="federated-environment"></a>Федеративная среда
 

@@ -6,14 +6,14 @@ ms.service: azure-arc
 ms.subservice: azure-arc-servers
 author: mgoedtel
 ms.author: magoedte
-ms.date: 07/14/2020
+ms.date: 07/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: 122f88e8bf14d3e3b082930716cffc3621afd336
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 80c133eceb6af419d0eb5aa35ff784a0f9321d37
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87067698"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87474960"
 ---
 # <a name="managing-and-maintaining-the-connected-machine-agent"></a>Обслуживание агента Connected Machine и управление им
 
@@ -181,6 +181,9 @@ ms.locfileid: "87067698"
 `azcmagent disconnect --tenant-id <tenantID>`
 
 ### <a name="reconnect"></a>Повтор соединения
+
+> [!WARNING]
+> `reconnect`Команда является устаревшей и не должна использоваться. Команда будет удалена в будущих выпусках агента, и существующие агенты не смогут выполнить запрос на повторное подключение. [Отключите](#disconnect) компьютер, а затем снова [Подключите](#connect) его.
 
 Этот параметр повторно подключает уже зарегистрированный или подключенный компьютер с помощью Azure Arc для серверов (предварительная версия). Это может потребоваться, если компьютер был отключен не менее 45 дней и срок действия его сертификата истек. Для получения новых учетных данных этот параметр использует варианты проверки подлинности, соответствующие ресурсу Azure Resource Manager, представляющему этот компьютер.
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/26/2020
-ms.openlocfilehash: e6ecd40d34233ba6f0b886f4b55aedf4339bf6de
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ba079e76ea806bb12bff16eb636d0fa21b0e152b
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86505199"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87461737"
 ---
 # <a name="delete-and-recover-azure-log-analytics-workspace"></a>Удаление и восстановление рабочей области Azure Log Analytics
 
@@ -64,7 +64,7 @@ PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-
 > [!IMPORTANT]
 > Используйте постоянную операцию удаления рабочей области с осторожностью, так как она необратима и вы не сможете восстановить рабочую область и ее данные.
 
-Добавьте тег "-Форцеделете", чтобы окончательно удалить рабочую область:
+Добавьте тег "-Форцеделете", чтобы удалить рабочую область без возможности восстановления. Параметр "-Форцеделете" в настоящее время доступен с помощью AZ. OperationalInsights 2.3.0 или более поздней версии. 
 
 ```powershell
 PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-name" -Name "workspace-name" -ForceDelete

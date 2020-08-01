@@ -93,7 +93,7 @@
     - name: Шаблоны Resource Manager
       href: template-samples.md
     - name: Примеры кода
-      href: 'https://docs.microsoft.com/samples/browse/?term=Event%20Grid'
+      href: /samples/browse/?term=Event+Grid
     - name: Встроенные компоненты Политики Azure
       href: ./policy-samples.md
 - name: Основные понятия

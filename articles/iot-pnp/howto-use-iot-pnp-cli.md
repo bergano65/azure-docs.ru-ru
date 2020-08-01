@@ -7,16 +7,16 @@ ms.date: 07/20/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 3699213fe61c64d7677ba026a8df54ccbbfe4b33
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: dadb1f044547acd6e5f0d274143123e89d7dae46
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87352361"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87475487"
 ---
 # <a name="install-and-use-the-azure-iot-extension-for-the-azure-cli"></a>Установка и использование расширения Интернета вещей Azure для Azure CLI
 
-[Azure CLI](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) — это кроссплатформенная программа командной строки с открытым кодом для управления ресурсами Azure (например, центр Интернета вещей). Интерфейс Azure CLI доступен для операционных систем Windows, Linux и MacOS. Azure CLI также предварительно установлен в [Azure Cloud Shell](https://shell.azure.com). Azure CLI позволяет управлять ресурсами центра Интернета вещей Azure, экземплярами службы подготовки устройств и связанными центрами без установки каких-либо расширений.
+[Azure CLI](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) — это кроссплатформенная программа командной строки с открытым кодом для управления ресурсами Azure (например, центр Интернета вещей). Эта Azure CLI доступна в Windows, Linux и macOS. Azure CLI позволяет управлять ресурсами центра Интернета вещей Azure, экземплярами службы подготовки устройств и связанными центрами без установки каких-либо расширений.
 
 Расширение Интернета вещей Azure для Azure CLI — это программа командной строки для взаимодействия с устройствами IoT Plug and Play (предварительная версия) и их тестирования. Расширение можно использовать для выполнения следующих задач:
 
@@ -51,9 +51,6 @@ ms.locfileid: "87352361"
 ```azurecli
 az login
 ```
-
-> [!NOTE]
-> Если вы используете Azure Cloud Shell, вход выполняется автоматически и вам не нужно выполнять предыдущую команду.
 
 Чтобы использовать расширение Интернета вещей Azure для Azure CLI, вам потребуется следующее:
 
@@ -109,6 +106,65 @@ az iot pnp twin invoke-command --cn getMaxMinReport -n {iothub_name} -d {device_
 az iot hub monitor-events -n {iothub_name} -d {device_id} -i {interface_id}
 ```
 
+### <a name="manage-models-in-the-model-repository"></a>Управление моделями в репозитории модели
+
+Для управления моделями в репозитории можно использовать команды репозитория модели Azure CLI.
+
+#### <a name="create-model-repository"></a>Создать репозиторий модели
+
+Создайте новый репозиторий компании IoT Plug and Play для вашего клиента, если вы являетесь первым пользователем в клиенте:
+
+```azurecli
+az iot pnp repo create
+```
+
+#### <a name="manage-model-repository-tenant-roles"></a>Управление ролями клиента репозитория модели
+
+Создание назначения роли для пользователя или субъекта-службы для определенного ресурса.
+
+Например, предоставьте user@consoso.com роль **моделскреатор** для клиента:
+
+```azurecli
+az iot pnp role-assignment create --resource-id {tenant_id} --resource-type Tenant --subject-id {user@contoso.com} --subject-type User --role ModelsCreator
+```
+
+Или предоставьте user@consoso.com роль **моделадминистратор** для конкретной модели:
+
+```azurecli
+az iot pnp role-assignment create --resource-id {model_id} --resource-type Model --subject-id {user@contoso.com} --subject-type User --role ModelAdministrator
+```
+
+#### <a name="create-a-model"></a>Создание модели
+
+Создайте новую модель в репозитории компании:
+
+```azurecli
+az iot pnp model create --model {model_json or path_to_file}
+```
+
+#### <a name="search-a-model"></a>Поиск в модели
+
+Перечисление моделей, соответствующих заданному ключевому слову:
+
+```azurecli
+az iot pnp model list -q {search_keyword}
+```
+
+#### <a name="publish-a-model"></a>Публикация модели
+
+Опубликуйте модель устройства, расположенную в репозитории компании, в общедоступном репозитории.
+
+Например, сделайте общедоступной модель с ИДЕНТИФИКАТОРом `dtmi:com:example:ClimateSensor;1` :
+
+```azurecli
+az iot pnp model publish --dtmi "dtmi:com:example:ClimateSensor;1"
+```
+
+Для публикации модели необходимо соблюдение следующих требований.
+
+- Клиент компании или организации должен быть партнером корпорации Майкрософт. 
+- Пользователь или субъект-служба должен быть членом роли **издателя** клиента репозитория.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом пошаговом руководстве вы узнали, как установить и использовать расширение Интернета вещей Azure для Azure CLI взаимодействия с устройствами Plug and Play. Предлагаемый следующий шаг — Узнайте, как использовать [Azure IOT Explorer с вашими устройствами](./howto-use-iot-explorer.md).
+В этой статье вы узнали, как установить и использовать расширение Интернета вещей Azure для Azure CLI взаимодействия с устройствами IoT Plug and Play. Предлагаемый следующий шаг — Узнайте, как использовать [Azure IOT Explorer с вашими устройствами](./howto-use-iot-explorer.md).

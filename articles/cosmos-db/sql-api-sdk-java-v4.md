@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 05/20/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 6cd4d64361e1975a6752ff3a15600923ce3fdf98
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 45da3ec95167cbb4fa087435e0e88f85c0eb6463
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322896"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87461057"
 ---
 # <a name="azure-cosmos-db-java-sdk-v4-for-core-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Java версии 4 для API-интерфейса Core (SQL)
 > [!div class="op_single_selector"]
@@ -138,6 +138,7 @@ ms.locfileid: "87322896"
 * Оптимизации запросов путем удаления двойной сериализации и десериализации. 
 * Оптимизации заголовков ответов путем удаления ненужных копий. 
 * Оптимизированная `ByteBuffer` сериализация и десериализация путем удаления промежуточных экземпляров строк.
+
 #### <a name="key-bug-fixes"></a>Исправления основных ошибок
 * Исправлено `toString()` исключение пустого указателя ConnectionPolicy.
 * Исправлена проблема с анализом результатов запроса в случае упорядочения значений по запросам. 

@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: tagore
-ms.openlocfilehash: 6ddc9299f72e8a0b25e8b1f85968933bd6868af8
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: d86805975b082136879c0a98ce2817f4f491a9a0
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288536"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87461210"
 ---
 # <a name="migrate-your-iaas-resources-to-azure-resource-manager-by-march-1-2023"></a>Перенос ресурсов IaaS в Azure Resource Manager с 1 марта 2023 г. 
 
@@ -43,6 +43,8 @@ ms.locfileid: "87288536"
 
 - Дополнительные сведения см. в разделе [часто задаваемые вопросы о классической модели для Azure Resource Manager миграции](./windows/migration-classic-resource-manager-faq.md) .
 
-- Для получения технических вопросов, проблем и добавления подписок в список разрешений [обратитесь в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+- Для получения технических вопросов, проблем и добавления подписок в список разрешений [обратитесь в службу поддержки](https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/{"pesId":"6f16735c-b0ae-b275-ad3a-03479cfa1396","supportTopicId":"8a82f77d-c3ab-7b08-d915-776b4ff64ff4"}).
+
+- За помощью в процессе миграции [обратитесь в службу поддержки миграции](https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/{"pesId":"6f16735c-b0ae-b275-ad3a-03479cfa1396","supportTopicId":"1135e3d0-20e2-aec5-4ef0-55fd3dae2d58"}) .
 
 - Другие вопросы не входят в часто задаваемые вопросы и комментарии, приведенные ниже.

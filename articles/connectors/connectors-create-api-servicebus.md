@@ -3,16 +3,16 @@ title: Обмен сообщениями с помощью служебной ш
 description: Создание автоматизированных задач и рабочих процессов, отправляющих и получающих сообщения с помощью служебной шины Azure в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-ms.reviewer: klam, logicappspm
+ms.reviewer: logicappspm
 ms.topic: conceptual
-ms.date: 09/19/2019
+ms.date: 07/31/2020
 tags: connectors
-ms.openlocfilehash: 870ec6997b0abf5afc1c1bfa788bbca18c08ead7
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 768186d4b1cf9ac62d4ffdb0af8fdb3df04e9b19
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87284002"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87461640"
 ---
 # <a name="exchange-messages-in-the-cloud-by-using-azure-logic-apps-and-azure-service-bus"></a>Обмен сообщениями в облаке с помощью Azure Logic Apps и служебной шины Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "87284002"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
+* Учетная запись и подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
 * Пространство имен служебной шины и сущность обмена сообщениями, например очередь. Эти элементы и приложение логики должны использовать одну и ту же подписку Azure. Если у вас нет этих элементов, узнайте, как [создавать пространство имен служебной шины и очередь](../service-bus-messaging/service-bus-create-namespace-portal.md).
 
@@ -45,7 +45,7 @@ ms.locfileid: "87284002"
 
 Убедитесь, что у приложения логики есть разрешения для доступа к пространству имен служебной шины.
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. В [портал Azure](https://portal.azure.com)Войдите с помощью учетной записи Azure.
 
 1. Перейдите к *пространству имен* служебной шины. На странице пространства имен в разделе **Параметры** выберите **Политики общего доступа**. В разделе **Утверждения** убедитесь, что у вас есть разрешения на **управление** для этого пространства имен.
 
@@ -54,7 +54,7 @@ ms.locfileid: "87284002"
 1. Получите строку подключения для пространства имен служебной шины. Эта строка необходима при предоставлении сведений о подключении в приложении логики.
 
    1. На панели **политики общего доступа** выберите **RootManageSharedAccessKey**.
-   
+
    1. Нажмите кнопку Копировать рядом с основной строкой подключения. Сохраните строку подключения для дальнейшего использования.
 
       ![Копирование строки подключения к пространству имен служебной шины](./media/connectors-create-api-azure-service-bus/find-service-bus-connection-string.png)
@@ -171,4 +171,3 @@ ms.locfileid: "87284002"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).
-

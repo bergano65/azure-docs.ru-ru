@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/06/2020
+ms.date: 07/30/2020
 ms.author: b-juche
-ms.openlocfilehash: 23ec482de740cc1ac8800a5de1c0e3be1f055df7
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 6437e25a2d6afc547b03f2b2144df63728116ef4
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045490"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460241"
 ---
 # <a name="solution-architectures-using-azure-netapp-files"></a>Архитектура решений, использующих Azure NetApp Files
 В этой статье содержатся ссылки на рекомендации, которые помогут вам понять архитектуру решения для использования Azure NetApp Files.  
@@ -45,6 +45,7 @@ ms.locfileid: "86045490"
 ### <a name="file-sharing-and-global-file-caching"></a>Общий доступ к файлам и глобальное кэширование файлов
 
 * [Развертывание Talon/Azure NetApp Files](https://youtu.be/91LKb1qsLIM)
+* [Создаете собственную службу Azure NFS? Решение файловые ресурсы Linux в облако](https://cloud.netapp.com/blog/ma-anf-blg-build-your-own-linux-nfs-file-shares)
 
 ### <a name="sql-server"></a>SQL Server
 
@@ -107,7 +108,7 @@ ms.locfileid: "86045490"
 * [Преимущества использования Azure NetApp Files для автоматизации работы с электронными макетами](solutions-benefits-azure-netapp-files-electronic-design-automation.md)
 * [Azure Циклеклауд: EDA HPC Lab с Azure NetApp Files](https://github.com/Azure/cyclecloud-hands-on-labs/blob/master/EDA/README.md)
 
-### <a name="analytics"></a>Аналитика
+### <a name="analytics"></a>Analytics
 
 * [Azure NetApp Files: Новая Общая файловая система, используемая в сетке SAS на Microsoft Azure](https://communities.sas.com/t5/Architecture/Azure-NetApp-Files-A-new-shared-file-system-to-use-with-SAS-Grid/m-p/606978)
 

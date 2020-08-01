@@ -1,18 +1,18 @@
 ---
 title: Основные сведения о репозитории моделей Интернета вещей Azure | Документация Майкрософт
 description: Как разработчику решения или ИТ-специалисту вы узнаете об основных понятиях репозитория модели Интернета вещей Azure.
-author: JimacoMS3
-ms.author: v-jambra
+author: prashmo
+ms.author: prashmo
 ms.date: 07/24/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 53ae5bf15c303f26d48550734f46e69ef1fcdd75
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 7d736721e2676a42da90aead3144f8016329f730
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87352486"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87475504"
 ---
 # <a name="azure-iot-model-repository"></a>Репозиторий моделей Интернета вещей Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "87352486"
 
 ```csharp
 var httpClient = new HttpClient();
-httpClient.BaseAddress = new Uri("<url>");
+httpClient.BaseAddress = new Uri("https://repo.azureiotrepository.com");
 
 var modelId = "dtmi:com:mxchip:model;1";
 var response = await httpClient.GetAsync($"/models/{modelId}?api-version=2020-05-01-preview").ConfigureAwait(false);
@@ -68,7 +68,7 @@ var response = await httpClient.GetAsync($"/models/{modelId}?api-version=2020-05
 
 В следующей таблице перечислены поддерживаемые возможности репозитория модели компании и связанные с ними разрешения.
 
-| Функция  | Разрешение| Описание:|
+| Функция  | Разрешение| Описание|
 |-------------|-----------|------------|
 |Чтение моделей|Чтение моделей|По умолчанию все пользователи в клиенте компании могут просматривать свои корпоративные модели. Кроме того, пользователь также может просматривать закрытые модели, совместно используемые другими компаниями.|
 |Управление доступом|Управление доступом|Управление назначением ролей пользователей (Добавление или удаление) для других пользователей в Организации.|

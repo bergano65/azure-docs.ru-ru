@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 07/14/2020
 ms.author: tomfitz
-ms.openlocfilehash: f5eac1d331bd439ad4066d1dea1b9aa950fcce60
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: cc50e49d4bc59235a147d114d86ecdff95dca797
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87004499"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87474348"
 ---
 # <a name="microsoftcommondropdown-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.DropDown
 
@@ -40,13 +40,14 @@ ms.locfileid: "87004499"
 
 :::image type="content" source="./media/managed-application-elements/microsoft-common-dropdown-5.png" alt-text="Множественный выбор с описанием Microsoft. Common. DropDown":::
 
-## <a name="schema"></a>схема
+## <a name="schema"></a>Схема
 
 ```json
 {
     "name": "element1",
     "type": "Microsoft.Common.DropDown",
     "label": "Example drop down",
+    "placeholder": "",
     "defaultValue": "Value two",
     "toolTip": "",
     "multiselect": true,  
@@ -90,6 +91,7 @@ ms.locfileid: "87004499"
 - В `constraints.allowedValues` должен содержаться по крайней мере один элемент.
 - Чтобы эмулировать значение, которое не требуется, добавьте элемент с меткой и значением `""` (пустая строка) в `constraints.allowedValues`.
 - `defaultDescription`Свойство используется для элементов, у которых нет описания.
+- `placeholder`Свойство — это текст справки, который исчезает, когда пользователь начинает редактирование. Если `placeholder` определены и `defaultValue` , то `defaultValue` имеет приоритет и отображается.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

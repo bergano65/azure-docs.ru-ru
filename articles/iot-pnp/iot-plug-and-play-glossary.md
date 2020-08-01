@@ -7,12 +7,12 @@ ms.date: 07/22/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 7d88ac62d9117df9d24c6d865e684a0972c87dae
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: d8efec0517cd0b4bdcba643a0936b474593d58c4
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87337319"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87475470"
 ---
 # <a name="glossary-of-terms-for-iot-plug-and-play-preview"></a>Глоссарий терминов, связанных с предварительной версией IoT Plug and Play
 
@@ -95,13 +95,9 @@ ms.locfileid: "87337319"
 
 Устройство IoT Plug and Play обычно является небольшим, автономным вычислительным устройством, собирающим данные или элементами управления для других устройств, которое запускает программное обеспечение или встроенное по, которое реализует [модель устройства](#device-model).  Например, устройством IoT Plug and Play может быть устройство мониторинга среды или контроллер интеллектуальной системы орошения. Вы можете написать облачное решение Интернета вещей для управления устройствами IoT Plug and Play и получения данных от них.
 
-## <a name="iot-plug-and-play-conventions"></a>Соглашения Plug and Play IoT
+## <a name="iot-plug-and-play-conventions"></a>Соглашения IoT Plug and Play
 
 [Устройства](#iot-plug-and-play-device) IOT Plug and Play должны следовать набору [соглашений](concepts-convention.md) при обмене данными с решением.
-
-## <a name="model-discovery"></a>Обнаружение модели
-
-Когда [устройство iot Plug and Play](#iot-plug-and-play-device) подключается к решению IOT, решение может узнать о возможностях устройства, находя [модель устройства](#device-model). Решение может найти модель устройства в [репозитории модели](#model-repository) или в другом расположении.
 
 ## <a name="model-id"></a>Идентификатор модели
 

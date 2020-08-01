@@ -3,12 +3,12 @@ title: Публикация событий с помощью доменов со
 description: Сведения об управлении большими наборами разделов в Сетке событий Azure и публикация событий в этих разделах с помощью доменов событий.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: eae467c1c4cc1257e7a5205dd5efda40490f7908
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: ce1cc9c2b09dd6b0c9508ad6b0597428bd355d4b
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423649"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460564"
 ---
 # <a name="manage-topics-and-publish-events-using-event-domains"></a>Управление разделами и публикация событий с помощью доменов событий
 
@@ -78,7 +78,7 @@ New-AzureRmEventGridDomain `
 
 ## <a name="manage-access-to-topics"></a>Управление доступом к разделам
 
-Управление доступом к разделам выполняется через [назначение ролей](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli). Назначение ролей использует управление доступом на основе ролей, чтобы ограничить операции с ресурсами Azure для авторизованных пользователей в определенной области.
+Управление доступом к разделам выполняется через [назначение ролей](../role-based-access-control/role-assignments-cli.md). Назначение ролей использует управление доступом на основе ролей, чтобы ограничить операции с ресурсами Azure для авторизованных пользователей в определенной области.
 
 Сетка событий имеет две встроенные роли, которые можно использовать для назначения определенным пользователям доступа к различным разделам в пределах домена. Это роль `EventGrid EventSubscription Contributor (Preview)`, которая позволяет создавать и удалять подписки, и роль `EventGrid EventSubscription Reader (Preview)`, которая позволяет только перечислять подписки на события.
 

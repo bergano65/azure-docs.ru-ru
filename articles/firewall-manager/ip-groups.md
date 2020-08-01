@@ -5,14 +5,14 @@ services: firewall-manager
 author: vhorne
 ms.service: firewall-manager
 ms.topic: conceptual
-ms.date: 06/30/2020
+ms.date: 07/30/2020
 ms.author: victorh
-ms.openlocfilehash: 20372d9584becf18c65e13c81b99403ce88d27e4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5192ecb31c71364bdf1301b13da0b0742625d44f
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85568116"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460139"
 ---
 # <a name="ip-groups-in-azure-firewall-policy"></a>IP-группы в политике брандмауэра Azure
 
@@ -66,43 +66,7 @@ IP-группы можно повторно использовать в прав
 
 ## <a name="ip-address-limits"></a>Ограничения IP-адресов
 
-Для IP-групп 50 или менее можно использовать не более 5000 отдельных IP-адресов для каждого экземпляра брандмауэра. Для IP-групп с 51 по 100 можно 500 использовать по одному IP-адресу, каждый для каждого экземпляра брандмауэра.
-
-### <a name="examples"></a>Примеры
-
-#### <a name="example-1-supported"></a>Пример 1. поддерживается
-
-|Группы IP-адресов  |Число IP-адресов  |Notation  |Правило  |
-|---------|---------|---------|---------|
-|IPGroup1 |4096     |10.0.0.0/20  |Rule1|
-|IPGroup2     |3|196.0.0.0 — 196.0.0.2|Rule1|
-|IPGroup3     |1|1.2.3.4|Rule1|
-|     |**Всего 4100**|         |         |
-|     |         |         |         |
-
-#### <a name="example-2-supported"></a>Пример 2. поддерживается
-
-|Группы IP-адресов  |Число IP-адресов  |Notation  |Правило  |
-|---------|---------|---------|---------|
-|IPGroup1 |4096     |10.0.0.0/20  |Rule1|
-|IPGroup2     |4096|11.0.0.0/20|Rule1|
-|     |**Всего 8192**|         |         |
-
-#### <a name="example-3-not-supported"></a>Пример 3. не поддерживается
-
-|Группы IP-адресов  |Число IP-адресов  |Notation  |Правило  |
-|---------|---------|---------|---------|
-|IPGroup1 |8192     |10.0.0.0/20, 11.0.0.0/20  |Rule1|
-|     |**Всего 8192**|||
-
-#### <a name="example-4-supported"></a>Пример 4. поддерживается
-
-|Группы IP-адресов  |Число IP-адресов  |Notation  |Правило  |
-|---------|---------|---------|---------|
-|IPGroup1 |4096     |10.0.0.0/20  |Rule1|
-|IPGroup2     |4096|11.0.0.0/20|Rule2|
-|     |**Всего 8192**|         |         |
-
+Можно использовать не более 100 групп IP на брандмауэр с 5000 максимальным числом IP-адресов или префиксами IP для каждой группы IP.
 
 ## <a name="related-azure-powershell-cmdlets"></a>Связанные командлеты Azure PowerShell
 
@@ -116,6 +80,6 @@ IP-группы можно повторно использовать в прав
 - [New-Азфиреваллполициаппликатионруле](https://docs.microsoft.com/powershell/module/az.network/new-azfirewallpolicyapplicationrule?view=azps-3.4.0)
 - [New-Азфиреваллполицинатруле](https://docs.microsoft.com/powershell/module/az.network/new-azfirewallpolicynatrule?view=azps-3.4.0)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство. Защита виртуальной глобальной сети с помощью диспетчера брандмауэра Azure](secure-cloud-network.md)
+- [Руководство. Защита виртуальной глобальной сети с помощью Диспетчера брандмауэра Azure](secure-cloud-network.md)

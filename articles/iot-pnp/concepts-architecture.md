@@ -9,14 +9,14 @@ ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: f2d9407d9c7172839027e2650486695244f67889
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: f656de0bb2e5244e137ae21a6d7af88f3430b12c
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87352346"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87475691"
 ---
-# <a name="iot-plug-and-play-preview-architecture"></a>Архитектура предварительной версии Plug and Play IoT
+# <a name="iot-plug-and-play-preview-architecture"></a>Архитектура IoT Plug and Play (предварительная версия)
 
 Предварительная версия IoT Plug and Play позволяет сборщикам решений интегрировать интеллектуальные устройства с их решениями без ручной настройки. В основе центра Интернета вещей Plug and Play — это _модель_ устройства, которая описывает возможности устройства для приложения, поддерживающего Plug and Play IOT. Эта модель структурирована как набор интерфейсов, определяющих:
 
@@ -79,5 +79,5 @@ ms.locfileid: "87352346"
 Теперь, когда у вас есть общие сведения об архитектуре решения Plug and Play IoT, дальнейшие действия помогут получить дополнительные сведения:
 
 - [Репозиторий модели](./concepts-model-repository.md)
-- [Процесс обнаружения модели](./concepts-model-discovery.md)
+- [Интеграция модели Digital двойника](./concepts-model-discovery.md)
 - [Разработка для Plug and Play IoT](./concepts-developer-guide.md)

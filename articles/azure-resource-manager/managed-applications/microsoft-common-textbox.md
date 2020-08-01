@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: tomfitz
-ms.openlocfilehash: 547b3ed84c8e4406b65ee8cf51c0db10b6878793
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c89bc434d9d67144a95b5c2f23e7664078fe7825
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87063827"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87474314"
 ---
 # <a name="microsoftcommontextbox-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.TextBox
 
@@ -20,7 +20,7 @@ ms.locfileid: "87063827"
 
 ![Элемент пользовательского интерфейса Microsoft.Common.TextBox](./media/managed-application-elements/microsoft-common-textbox.png)
 
-## <a name="schema"></a>схема
+## <a name="schema"></a>Схема
 
 ```json
 {
@@ -29,6 +29,7 @@ ms.locfileid: "87063827"
     "label": "Name",
     "defaultValue": "contoso123",
     "toolTip": "Use only allowed characters",
+    "placeholder": "",
     "constraints": {
         "required": true,
         "validations": [
@@ -60,6 +61,7 @@ ms.locfileid: "87063827"
 - `isValid`Свойство содержит выражение, результатом которого является значение true или false. В рамках выражения определяется условие, определяющее, является ли текстовое поле допустимым.
 - `message`Свойство является строкой, отображаемой, когда значение текстового поля не проходит проверку.
 - Можно указать значение для `regex`, если для параметра `required` задано значение **false**. В этом случае, чтобы пройти проверку, значение для текстового поля не требуется. Если указано, оно должно соответствовать шаблону регулярного выражения.
+- `placeholder`Свойство — это текст справки, который исчезает, когда пользователь начинает редактирование. Если `placeholder` определены и `defaultValue` , то `defaultValue` имеет приоритет и отображается.
 
 ## <a name="example"></a>Пример
 

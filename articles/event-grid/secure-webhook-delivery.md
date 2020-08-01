@@ -3,16 +3,16 @@ title: Безопасная доставка веб-перехватчика с 
 description: Описание доставки событий в конечные точки HTTPS, защищенные Azure Active Directory с помощью службы "Сетка событий Azure"
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: b0503d7da9e191e9d6764076392ead8faa5109a1
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 90d06f203bc93177101a87a7a774d816b11b16f6
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119129"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460717"
 ---
-# <a name="publish-events-to-azure-active-directory-protected-endpoints"></a>Публикация событий в защищенных конечных точках Azure Active Directory
+# <a name="publish-events-to-azure-active-directory-protected-endpoints"></a>Публикация событий в конечных точках, защищенных Azure Active Directory
 
-В этой статье описывается, как использовать преимущества Azure Active Directory для защиты подключения между подпиской на события и конечной точкой веб-перехватчика. Общие сведения о приложениях и субъектах-службах Azure AD см. в статье [Общие сведения о платформе удостоверений Майкрософт версии 2.0](https://docs.microsoft.com/azure/active-directory/develop/v2-overview).
+В этой статье описывается, как использовать преимущества Azure Active Directory для защиты подключения между подпиской на события и конечной точкой веб-перехватчика. Общие сведения о приложениях и субъектах-службах Azure AD см. в статье [Общие сведения о платформе удостоверений Майкрософт версии 2.0](../active-directory/develop/v2-overview.md).
 
 В этой статье используется портал Azure для демонстрации, однако эту функцию можно также включить с помощью интерфейса командной строки, PowerShell или пакетов SDK.
 
@@ -28,7 +28,7 @@ ms.locfileid: "86119129"
 Используйте приведенный ниже сценарий PowerShell, чтобы создать роль и субъект-службу в приложении Azure AD. Вам потребуется идентификатор клиента и идентификатор объекта из приложения Azure AD:
 
    > [!NOTE]
-   > Для выполнения этого сценария необходимо быть членом [роли администратора приложения Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#available-roles).
+   > Для выполнения этого сценария необходимо быть членом [роли администратора приложения Azure AD](../active-directory/users-groups-roles/directory-assign-admin-roles.md#available-roles).
     
 1. Измените $myTenantId сценария PowerShell, чтобы использовать идентификатор клиента Azure AD.
 1. Измените $myAzureADApplicationObjectId сценария PowerShell, чтобы использовать идентификатор объекта приложения Azure AD.

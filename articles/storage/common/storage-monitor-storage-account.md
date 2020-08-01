@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring
-ms.openlocfilehash: 6f53d5ec2d73c9edbb7e24c24107b2a6d6deb167
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 46ff6fb26cf568474b24d941e4a174b425bf5207
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684672"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87474365"
 ---
 # <a name="monitor-a-storage-account-in-the-azure-portal"></a>Мониторинг учетной записи хранения на портале Azure
 
@@ -141,7 +141,7 @@ ms.locfileid: "83684672"
     ![Настройка ведения журнала на портале Azure](./media/storage-monitor-storage-account/enable-diagnostics.png)
 1. Выберите команду **Сохранить**.
 
-Журналы диагностики сохраняются в контейнере BLOB-объектов с именем *$logs* в вашей учетной записи хранения. Можно просмотреть данные журнала с помощью обозревателя хранилищ, например [Microsoft Storage Explorer](https://storageexplorer.com), или программно, с помощью клиентской библиотеки службы хранилища или PowerShell.
+Журналы диагностики сохраняются в контейнере BLOB-объектов с именем *$logs* в вашей учетной записи хранения. Данные журнала можно просмотреть с помощью обозревателя хранилищ, например [Обозреватель службы хранилища Microsoft Azure](https://storageexplorer.com), или программно с помощью клиентской библиотеки хранилища или PowerShell.
 
 Дополнительные сведения о доступе к контейнеру $logs см. в статье [Ведение журнала аналитики службы хранилища Azure](storage-analytics-logging.md).
 

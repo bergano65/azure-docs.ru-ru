@@ -7,12 +7,12 @@ ms.topic: article
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: 0f19d63bd5f22dc7bc60ceb76ef5bdbeff717dbb
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 4ee970f7e4a1228d40a284372300ed9e95c00b7e
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87325735"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460394"
 ---
 # <a name="payout-summary-overview"></a>Общие сведения о сводках по выплатам
 
@@ -23,7 +23,7 @@ ms.locfileid: "87325735"
 > [!NOTE]
 > Чтобы получить выплату, необходимо достигнуть [порогового значения](./payment-thresholds-methods-timeframes.md) в 50 долларов США. Дополнительные сведения о пороговом значении платежа см. в [соглашении с издателем Microsoft Azure Marketplace](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt).
 
-Все отчеты и данные аналитики при публикации транзакций доступны в разделе "Аналитика" в Центре партнеров, доступ к которому можно получить с помощью следующего значка в правом верхнем углу портала:
+Чтобы просмотреть сведения о выплатах, войдите в [Центр партнеров](https://partner.microsoft.com/dashboard/home) и выберите значок выплата в правом верхнем углу экрана:
 
 ![Значок "Выплата" в правом верхнем углу портала Центра партнеров.](./media/payout-overview.png)
 

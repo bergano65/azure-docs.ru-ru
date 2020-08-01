@@ -7,15 +7,15 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/13/2020
-ms.openlocfilehash: 6048b5f0a3702e95cef9175933041fe36f2f07bb
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2ef7095d186902425adb5065c470325be1283023
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87081565"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87475742"
 ---
-# <a name="azure-monitor-logs-connector-for-logic-apps-and-flow"></a>Соединитель журналов Azure Monitor для Logic Apps и потоков
-[Azure Logic Apps](../../logic-apps/index.yml) и [Power автоматизировать](https://ms.flow.microsoft.com) позволяют создавать автоматизированные рабочие процессы с помощью сотен действий для различных служб. Соединитель Azure Monitor Logs позволяет создавать рабочие процессы, которые извлекают данные из Log Analytics рабочей области или приложения Application Insights в Azure Monitor. В этой статье описываются действия, входящие в соединитель, и приводится пошаговое руководство по созданию рабочего процесса с использованием этих данных.
+# <a name="azure-monitor-logs-connector-for-logic-apps-and-power-automate"></a>Соединитель Azure Monitor журналов для Logic Apps и автоматизации энергосбережения
+[Azure Logic Apps](../../logic-apps/index.yml) и [Power автоматизировать](https://flow.microsoft.com) позволяют создавать автоматизированные рабочие процессы с помощью сотен действий для различных служб. Соединитель Azure Monitor Logs позволяет создавать рабочие процессы, которые извлекают данные из Log Analytics рабочей области или приложения Application Insights в Azure Monitor. В этой статье описываются действия, входящие в соединитель, и приводится пошаговое руководство по созданию рабочего процесса с использованием этих данных.
 
 Например, можно создать приложение логики, которое будет использовать Azure Monitor данные журнала в уведомлении по электронной почте от Office 365, создать ошибку в Azure DevOps или опубликовать сообщение о резерве.  Вы можете запускать рабочие процессы с помощью простого расписания или какого-либо действия в подключенной службе, например при получении почты или твита. 
 
@@ -126,4 +126,4 @@ Event
 
 - Дополнительные сведения о запросах журнала в Azure Monitor см. в [этой статье](../log-query/log-query-overview.md).
 - Дополнительные сведения о [Logic Apps](../../logic-apps/index.yml)
-- Дополнительные сведения о [Microsoft Flow](https://ms.flow.microsoft.com).
+- Дополнительные сведения о [Power автоматизируются](https://flow.microsoft.com).

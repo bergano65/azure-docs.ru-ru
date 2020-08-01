@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 07/19/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: c3933e9165160c16a9e533bf8bf95f1533dff1cc
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 006825b5040db482262f79497b9fd810ed3b790c
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386696"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460632"
 ---
 # <a name="deploy-azure-file-sync"></a>Развертывание Синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -20,11 +20,22 @@ ms.locfileid: "87386696"
 Перед выполнением шагов, описанных в этом руководстве, настоятельно рекомендуем ознакомиться со статьями [Планирование развертывания службы файлов Azure](storage-files-planning.md) и [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
-* Файловый ресурс Azure в том же регионе, который требуется развернуть Синхронизация файлов Azure. Дополнительные сведения см. в следующих статьях:
+
+# <a name="portal"></a>[Портал](#tab/azure-portal)
+
+1. Файловый ресурс Azure в том же регионе, который требуется развернуть Синхронизация файлов Azure. Дополнительные сведения см. в следующих статьях:
     - [Доступность по регионам](storage-sync-files-planning.md#azure-file-sync-region-availability). Здесь представлены сведения о регионах службы синхронизации файлов Azure.
     - [Создание общей папки в хранилище файлов Azure](storage-how-to-create-file-share.md). Здесь содержатся пошаговые инструкции по созданию общего файлового ресурса.
-* По крайней мере один поддерживаемый экземпляр Windows Server или кластера Windows Server для синхронизации с Синхронизация файлов Azure. Дополнительные сведения о поддерживаемых версиях Windows Server и рекомендуемых системных ресурсах см. в статье [рекомендации по файловым серверам Windows](storage-sync-files-planning.md#windows-file-server-considerations).
-* Модуль AZ PowerShell можно использовать с PowerShell 5,1 или PowerShell 6 +. Модуль AZ PowerShell можно использовать для Синхронизация файлов Azure в любой поддерживаемой системе, в том числе в системах, отличных от Windows, однако командлет регистрации сервера всегда должен выполняться в регистрируемом экземпляре Windows Server (это можно сделать напрямую или с помощью удаленного взаимодействия PowerShell). В Windows Server 2012 R2 можно проверить, что вы используете по крайней мере PowerShell 5,1. \* Просмотрев значение свойства **PSVersion** объекта **$PSVersionTable** :
+1. По крайней мере один поддерживаемый экземпляр Windows Server или кластера Windows Server для синхронизации с Синхронизация файлов Azure. Дополнительные сведения о поддерживаемых версиях Windows Server и рекомендуемых системных ресурсах см. в статье [рекомендации по файловым серверам Windows](storage-sync-files-planning.md#windows-file-server-considerations).
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+1. Файловый ресурс Azure в том же регионе, который требуется развернуть Синхронизация файлов Azure. Дополнительные сведения см. в следующих статьях:
+    - [Доступность по регионам](storage-sync-files-planning.md#azure-file-sync-region-availability). Здесь представлены сведения о регионах службы синхронизации файлов Azure.
+    - [Создание общей папки в хранилище файлов Azure](storage-how-to-create-file-share.md). Здесь содержатся пошаговые инструкции по созданию общего файлового ресурса.
+1. По крайней мере один поддерживаемый экземпляр Windows Server или кластера Windows Server для синхронизации с Синхронизация файлов Azure. Дополнительные сведения о поддерживаемых версиях Windows Server и рекомендуемых системных ресурсах см. в статье [рекомендации по файловым серверам Windows](storage-sync-files-planning.md#windows-file-server-considerations).
+
+1. Модуль AZ PowerShell можно использовать с PowerShell 5,1 или PowerShell 6 +. Модуль AZ PowerShell можно использовать для Синхронизация файлов Azure в любой поддерживаемой системе, в том числе в системах, отличных от Windows, однако командлет регистрации сервера всегда должен выполняться в регистрируемом экземпляре Windows Server (это можно сделать напрямую или с помощью удаленного взаимодействия PowerShell). В Windows Server 2012 R2 можно проверить, что вы используете по крайней мере PowerShell 5,1. \* Просмотрев значение свойства **PSVersion** объекта **$PSVersionTable** :
 
     ```powershell
     $PSVersionTable.PSVersion
@@ -37,7 +48,7 @@ ms.locfileid: "87386696"
     > [!Important]  
     > Если вы планируете использовать пользовательский интерфейс регистрации сервера вместо регистрации непосредственно из PowerShell, необходимо использовать PowerShell 5,1.
 
-* Если вы выбрали использование PowerShell 5,1, убедитесь, что установлена хотя бы платформа .NET 4.7.2. Дополнительные сведения о [.NET Framework версиях и зависимостях](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies) в системе.
+1. Если вы выбрали использование PowerShell 5,1, убедитесь, что установлена хотя бы платформа .NET 4.7.2. Дополнительные сведения о [.NET Framework версиях и зависимостях](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies) в системе.
 
     > [!Important]  
     > При установке .NET 4.7.2 + в Windows Server Core необходимо установить с `quiet` `norestart` флагами и, иначе установка завершится ошибкой. Например, при установке .NET 4,8 команда будет выглядеть следующим образом:
@@ -45,10 +56,51 @@ ms.locfileid: "87386696"
     > Start-Process -FilePath "ndp48-x86-x64-allos-enu.exe" -ArgumentList "/q /norestart" -Wait
     > ```
 
-* Модуль AZ PowerShell, который можно установить, следуя приведенным ниже инструкциям: [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps).
+1. Модуль AZ PowerShell, который можно установить, следуя приведенным ниже инструкциям: [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps).
      
     > [!Note]  
     > Теперь модуль AZ. StorageSync устанавливается автоматически при установке модуля AZ PowerShell.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+1. Файловый ресурс Azure в том же регионе, который требуется развернуть Синхронизация файлов Azure. Дополнительные сведения см. в следующих статьях:
+    - [Доступность по регионам](storage-sync-files-planning.md#azure-file-sync-region-availability). Здесь представлены сведения о регионах службы синхронизации файлов Azure.
+    - [Создание общей папки в хранилище файлов Azure](storage-how-to-create-file-share.md). Здесь содержатся пошаговые инструкции по созданию общего файлового ресурса.
+1. По крайней мере один поддерживаемый экземпляр Windows Server или кластера Windows Server для синхронизации с Синхронизация файлов Azure. Дополнительные сведения о поддерживаемых версиях Windows Server и рекомендуемых системных ресурсах см. в статье [рекомендации по файловым серверам Windows](storage-sync-files-planning.md#windows-file-server-considerations).
+
+1. [Установка Azure CLI](/cli/azure/install-azure-cli)
+
+   При желании можно также использовать Azure Cloud Shell для выполнения действий, описанных в этом руководстве.  Azure Cloud Shell — это среда интерактивной оболочки, которая используется в браузере.  Начните Cloud Shell с помощью одного из следующих методов:
+
+   - Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. **Попробуйте** открыть Azure Cloud Shell, но автоматически не скопирует код в Cloud Shell.
+
+   - Откройте Cloud Shell, перейдя по[https://shell.azure.com](https://shell.azure.com)
+
+   - Нажмите кнопку **Cloud Shell** в строке меню в верхнем правом углу [портал Azure](https://portal.azure.com)
+
+1. Войдите.
+
+   Выполните вход с помощью команды [az login](/cli/azure/reference-index#az-login), если вы используете локальную установку CLI.
+
+   ```azurecli
+   az login
+   ```
+
+    Выполните аутентификацию, следуя инструкциям в окне терминала.
+
+1. Установите расширение [AZ филесинк](/cli/azure/ext/storagesync/storagesync) Azure CLI.
+
+   ```azurecli
+   az extension add --name storagesync
+   ```
+
+   После установки ссылки на расширение **storagesync** вы получите следующее предупреждение.
+
+   ```output
+   The installed extension 'storagesync' is experimental and not covered by customer support. Please use with discretion.
+   ```
+
+---
 
 ## <a name="prepare-windows-server-to-use-with-azure-file-sync"></a>Подготовка сервера Windows к работе со службой синхронизации файлов Azure
 Для каждого сервера, который вы собираетесь использовать с функцией "Синхронизация файлов Azure", включая каждый узел сервера в отказоустойчивом кластере, отключите **конфигурацию усиленной безопасности Internet Explorer**. Это необходимо только при начальной регистрации на сервере. Конфигурацию можно включить повторно после регистрации сервера.
@@ -87,6 +139,10 @@ if ($installType -ne "Server Core") {
     Stop-Process -Name iexplore -ErrorAction SilentlyContinue
 }
 ``` 
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Следуйте инструкциям по портал Azure или PowerShell.
 
 ---
 
@@ -155,6 +211,10 @@ $storageSyncName = "<my_storage_sync_service>"
 $storageSync = New-AzStorageSyncService -ResourceGroupName $resourceGroup -Name $storageSyncName -Location $region
 ```
 
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Следуйте инструкциям по портал Azure или PowerShell.
+
 ---
 
 ## <a name="install-the-azure-file-sync-agent"></a>Установка агента службы синхронизации файлов Azure
@@ -207,6 +267,9 @@ Start-Process -FilePath "StorageSyncAgent.msi" -ArgumentList "/quiet" -Wait
 # You may remove the temp folder containing the MSI and the EXE installer
 Remove-Item -Path ".\StorageSyncAgent.msi" -Recurse -Force
 ```
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Следуйте инструкциям по портал Azure или PowerShell.
 
 ---
 
@@ -242,6 +305,9 @@ Remove-Item -Path ".\StorageSyncAgent.msi" -Recurse -Force
 ```powershell
 $registeredServer = Register-AzStorageSyncServer -ParentObject $storageSync
 ```
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Следуйте инструкциям по портал Azure или PowerShell.
 
 ---
 
@@ -312,6 +378,27 @@ New-AzStorageSyncCloudEndpoint `
     -AzureFileShareName $fileShare.Name
 ```
 
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Используйте команду [AZ storagesync Sync-Group](/cli/azure/ext/storagesync/storagesync/sync-group#ext-storagesync-az-storagesync-sync-group-create) , чтобы создать новую группу синхронизации.  Чтобы настроить группу ресурсов по умолчанию для всех команд интерфейса командной строки, используйте команду [AZ configure](/cli/azure/reference-index#az-configure).
+
+```azurecli
+az storagesync sync-group create --resource-group myResourceGroupName \
+                                 --name myNewSyncGroupName \
+                                 --storage-sync-service myStorageSyncServiceName \
+```
+
+Чтобы создать облачную конечную точку, используйте команду [AZ storagesync Sync-Group облака-Endpoint](/cli/azure/ext/storagesync/storagesync/sync-group/cloud-endpoint#ext-storagesync-az-storagesync-sync-group-cloud-endpoint-create) .
+
+```azurecli
+az storagesync sync-group cloud-endpoint create --resource-group myResourceGroup \
+                                                --storage-sync-service myStorageSyncServiceName \
+                                                --sync-group-name mySyncGroupName \
+                                                --name myNewCloudEndpointName \
+                                                --storage-account mystorageaccountname \
+                                                --azure-file-share-name azure-file-share-name
+```
+
 ---
 
 ## <a name="create-a-server-endpoint"></a>Создание конечной точки сервера
@@ -363,6 +450,34 @@ if ($cloudTieringDesired) {
         -ServerResourceId $registeredServer.ResourceId `
         -ServerLocalPath $serverEndpointPath 
 }
+```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы создать новую конечную точку сервера, используйте команду [AZ storagesync Sync-Group Server-Endpoint](/cli/azure/ext/storagesync/storagesync/sync-group/server-endpoint#ext-storagesync-az-storagesync-sync-group-server-endpoint-create) .
+
+```azurecli
+# Create a new sync group server endpoint 
+az storagesync sync-group server-endpoint create --resource-group myResourceGroupName \
+                                                 --name myNewServerEndpointName
+                                                 --registered-server-id 91beed22-7e9e-4bda-9313-fec96cf286e0
+                                                 --server-local-path d:\myPath
+                                                 --storage-sync-service myStorageSyncServiceNAme
+                                                 --sync-group-name mySyncGroupName
+
+# Create a new sync group server endpoint with additional optional parameters
+az storagesync sync-group server-endpoint create --resource-group myResourceGroupName \
+                                                 --name myNewServerEndpointName \
+                                                 --registered-server-id 91beed22-7e9e-4bda-9313-fec96cf286e0 \
+                                                 --server-local-path d:\myPath \
+                                                 --storage-sync-service myStorageSyncServiceName \
+                                                 --sync-group-name mySyncGroupName \
+                                                 --cloud-tiering on \
+                                                 --offline-data-transfer on \
+                                                 --offline-data-transfer-share-name myfilesharename \
+                                                 --tier-files-older-than-days 15 \
+                                                 --volume-free-space-percent 85 \
+
 ```
 
 ---

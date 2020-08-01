@@ -1,14 +1,14 @@
 ---
 title: Рекомендации
 description: Ознакомьтесь с рекомендациями и полезными советами по разработке решения пакетной службы Azure.
-ms.date: 07/14/2020
+ms.date: 07/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: 32610f54cc41bd5d7feb965b9a82903acc23c33c
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 535deebd0ba683d9387408ad081d165a504c91d1
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86497783"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87474909"
 ---
 # <a name="azure-batch-best-practices"></a>Рекомендации для пакетной службы Azure
 
@@ -56,6 +56,10 @@ ms.locfileid: "86497783"
 Пулы пакетной службы могут сталкиваться с событиями простоя в Azure. Помните об этом при планировании и разработке сценария или рабочего процесса для пакетной службы.
 
 В случае сбоя узла пакетная службы автоматически пытается восстановить эти вычислительные узлы от вашего имени. Это может вызвать перепланирование любой выполняемой задачи на восстанавливаемом узле. Дополнительные сведения о прерванных задачах см. в разделе [Проектирование для повторных попыток](#design-for-retries-and-re-execution).
+
+### <a name="third-party-images"></a>Сторонние образы
+
+Пулы можно создавать с помощью сторонних образов, опубликованных в Azure Marketplace. При использовании учетных записей пакетной службы в режиме пользовательской подписки может появиться сообщение об ошибке "сбой выделения из-за проверки допустимости покупки Marketplace" при создании пула с определенными сторонними образами. Чтобы устранить эту ошибку, примите условия, заданные издателем образа. Это можно сделать с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.marketplaceordering/set-azurermmarketplaceterms?view=azurermps-6.13.0) или [Azure CLI](https://docs.microsoft.com/cli/azure/vm/image/terms?view=azure-cli-latest).
 
 ### <a name="azure-region-dependency"></a>Зависимость от региона Azure
 

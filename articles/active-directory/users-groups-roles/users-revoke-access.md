@@ -1,5 +1,5 @@
 ---
-title: Отозвать пользовательский доступ для экстренных Azure Active Directory | Документация Майкрософт
+title: Отзыв доступа пользователей в экстренной ситуации Azure Active Directory | Документация Майкрософт
 description: Массовое добавление пользователей в центре администрирования Azure AD в Azure Active Directory
 services: active-directory
 ms.service: active-directory
@@ -10,15 +10,15 @@ author: curtand
 ms.author: curtand
 manager: daveba
 ms.reviewer: krbain
-ms.date: 06/26/2020
+ms.date: 07/15/2020
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5ca5f7c6032a69286da72d8ef3640f64038eb3a
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: fbb2ad8e6d37190d0473f3f9f4af7738edd3b27f
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027194"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87475215"
 ---
 # <a name="revoke-user-access-in-azure-active-directory"></a>Отозвать доступ пользователей в Azure Active Directory
 
@@ -117,7 +117,7 @@ ms.locfileid: "86027194"
 
 - Для **приложений, использующих маркеры сеанса**, существующие сеансы завершаются после истечения срока действия маркера. Если отключенное состояние пользователя синхронизировано с приложением, приложение может автоматически отозвать существующие сеансы пользователя, если оно настроено для этого.  Время, необходимое для работы, зависит от частоты синхронизации между приложением и Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Рекомендации по обеспечению безопасного доступа для администраторов Azure AD](directory-admin-roles-secure.md)
 - [Добавление или обновление сведений о профиле пользователя](../fundamentals/active-directory-users-profile-azure-portal.md)

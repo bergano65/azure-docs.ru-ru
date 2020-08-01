@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 07/08/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: fc50934b4c301b4eea509ecc22e00c62ca091d75
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 273c41a523de8b2776982e5229c5a8b618b82c19
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87056552"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87475198"
 ---
 # <a name="supported-kubernetes-versions-in-azure-kubernetes-service-aks"></a>Поддерживаемые версии Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -91,6 +91,14 @@ New Supported Version List
 1.17.*9*, 1.17.*8*, 1.16.*11*, 1.16.*10*
 ```
 
+### <a name="supported-kubectl-versions"></a>Поддерживаемые `kubectl` версии
+
+Можно использовать одну младшую версию более старой или более поздней `kubectl` относительно версии *KUBE-аписервер* , которая соответствует [политике поддержки Kubernetes для kubectl](https://kubernetes.io/docs/setup/release/version-skew-policy/#kubectl).
+
+Например, если *KUBE-аписервер* находится в *1,17*, то можно использовать версии *1,16* — *1,18* `kubectl` с таким *KUBE-аписервер*.
+
+Чтобы установить или обновить версию `kubectl` , запустите `az aks install-cli` .
+
 ## <a name="release-and-deprecation-process"></a>Процесс выпуска и устаревания
 
 Вы можете ссылаться на будущие выпуски версий и устаревшие версии в [календаре выпуска AKS Kubernetes](#aks-kubernetes-release-calendar).
@@ -121,7 +129,6 @@ AKS оставляет за собой право добавлять или уд
 az aks get-versions --location eastus --output table
 ```
 
-
 ## <a name="aks-kubernetes-release-calendar"></a>Календарь выпуска AKS Kubernetes
 
 Журнал предыдущих выпусков см. [здесь](https://en.wikipedia.org/wiki/Kubernetes#History).
@@ -139,7 +146,7 @@ az aks get-versions --location eastus --output table
 
 **Что происходит, когда пользователь обновляет кластер Kubernetes с неподдерживаемой дополнительной версией?**
 
-Если вы используете версию *n-3* или более раннюю, это означает, что вы находитесь за пределами службы поддержки и вам будет предложено выполнить обновление. Если обновление с версии n-3 до n-2 прошло успешную работу, вы вернетесь в наши политики поддержки. Например.
+Если вы используете версию *n-3* или более раннюю, это означает, что вы находитесь за пределами службы поддержки и вам будет предложено выполнить обновление. Если обновление с версии n-3 до n-2 прошло успешную работу, вы вернетесь в наши политики поддержки. Пример:
 
 - Если самая старая поддерживаемая версия AKS — *1,15 доллара. a* , а вы находитесь в *1.14. b* или более ранней версии, вы находитесь за пределами службы поддержки.
 - При обновлении с *1.14. b* до *1,15 доллара. a* или более поздней версии вы вернетесь в наши политики поддержки.
