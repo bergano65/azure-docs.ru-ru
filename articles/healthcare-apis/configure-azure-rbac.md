@@ -1,5 +1,5 @@
 ---
-title: Настройка управления доступом на основе ролей Azure (RBAC) для Azure API для FHIR
+title: Настройка управления доступом на основе ролей Azure (Azure RBAC) для Azure API для FHIR
 description: В этой статье описывается, как настроить Azure RBAC для плоскости данных Azure API for FHIR.
 author: hansenms
 ms.service: healthcare-apis
@@ -7,16 +7,16 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 03/15/2020
 ms.author: mihansen
-ms.openlocfilehash: 3fbbfd931efb0e570bc96639bc6b7943fddc0237
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: a3cdb5a640e09c0095db79f5e3a43b455a1a5705
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87417681"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87447168"
 ---
 # <a name="configure-azure-rbac-for-fhir"></a>Настройка Azure RBAC для FHIR 
 
-В этой статье вы узнаете, как использовать [Управление доступом на основе ролей (RBAC) Azure](https://docs.microsoft.com/azure/role-based-access-control/) для назначения доступа к плоскости данных Azure API for FHIR. Azure RBAC — это предпочтительные методы назначения доступа к плоскости данных при управлении пользователями плоскости данных в Azure Active Directoryном клиенте, связанном с подпиской Azure. Если вы используете внешний клиент Azure Active Directory, см. [ссылку на локальное назначение RBAC](configure-local-rbac.md).
+В этой статье вы узнаете, как использовать [Управление доступом на основе ролей Azure (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/) для назначения доступа к плоскости данных Azure API for FHIR. Azure RBAC — это предпочтительные методы назначения доступа к плоскости данных при управлении пользователями плоскости данных в Azure Active Directoryном клиенте, связанном с подпиской Azure. Если вы используете внешний клиент Azure Active Directory, см. [ссылку на локальное назначение RBAC](configure-local-rbac.md).
 
 ## <a name="confirm-azure-rbac-mode"></a>Подтверждение режима RBAC в Azure
 

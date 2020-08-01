@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/17/2019
 ms.author: kenwith
 ms.reviewer: arvindha, celested
-ms.openlocfilehash: dd5248996661be6d4ace81afd7ab942ab70eb4ff
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cecea24fe002ee64d54052635a6d7dec982aeee2
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84781639"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87445648"
 ---
 # <a name="plan-an-automatic-user-provisioning-deployment"></a>Планирование развертывания автоматической подготовки пользователей
 
@@ -256,7 +256,7 @@ Azure AD поддерживает прямое сопоставление атр
 
 Когда служба подготовки Azure AD запускается впервые, начальный цикл работы с исходной системой и целевыми системами создает моментальный снимок всех пользовательских объектов для каждой целевой системы.
 
-При включении автоматической подготовки для приложения начальный цикл может занять от 20 минут до нескольких часов. Продолжительность зависит от размера каталога Azure AD и числа пользователей в области для подготовки. Узнайте [, как повысить производительность подготовки](../app-provisioning/application-provisioning-when-will-provisioning-finish.md).
+При включении автоматической подготовки для приложения начальный цикл может занять от 20 минут до нескольких часов. Продолжительность зависит от размера каталога Azure AD и числа пользователей в области для подготовки.
 
 Служба подготовки сохраняет состояние обеих систем после начального цикла, повышая производительность последующих добавочных циклов.
 
@@ -292,15 +292,13 @@ Azure AD может предоставить [Дополнительные](../a
 
 Рекомендуется принять и использовать эти отчеты на ритмичность, соответствующую требованиям вашей организации. Azure AD оставляет большую часть данных аудита в течение 30 дней.
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
 Сведения об устранении неполадок, которые могут возникать во время подготовки, см. по следующим ссылкам:
 
 * [Проблема при настройке подготовки пользователей для приложения из коллекции Azure AD](../app-provisioning/application-provisioning-config-problem.md)
 
 * [Синхронизация атрибута из локального Active Directory с Azure AD для подготовки приложения](../app-provisioning/user-provisioning-sync-attributes-for-mapping.md)
-
-* [Подготовка пользователей для приложения в коллекции Azure AD выполняется час и более](../app-provisioning/application-provisioning-when-will-provisioning-finish.md)
 
 * [Проблема сохранения учетных данных администратора при настройке подготовки пользователей для приложения из коллекции Azure Active Directory](../app-provisioning/application-provisioning-config-problem-storage-limit.md)
 
@@ -326,7 +324,7 @@ Azure AD может предоставить [Дополнительные](../a
 
 * [Форум по переполнению стека Azure AD](https://stackoverflow.com/questions/tagged/azure-active-directory)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Настройка автоматической подготовки пользователей](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 
 * [Экспорт или импорт конфигурации подготовки с помощью Microsoft Graph API](../app-provisioning/export-import-provisioning-configuration.md)

@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: conceptual
 ms.date: 05/29/2020
 ms.author: rogarana
-ms.openlocfilehash: 48441a48fe6f72e88e080967451d9904c3e586b2
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 65d7845763b60a66f396d9081f3c9c6e1d04c1bc
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372333"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87447252"
 ---
 # <a name="overview-of-azure-files-identity-based-authentication-options-for-smb-access"></a>Обзор параметров проверки подлинности на основе удостоверений службы файлов Azure для доступа к SMB
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "87372333"
 
     Интеграция локальных домен Active Directory служб (AD DS) с файлами Azure предоставляет методы для хранения данных каталога, делая их доступными для пользователей и администраторов сети. Безопасность интегрирована с AD DS путем проверки подлинности входа и управления доступом к объектам в каталоге. С одним сетевым входом администраторы могут управлять данными каталога и Организацией по всей сети, а полномочные пользователи сети могут получать доступ к ресурсам в любой точке сети. AD DS обычно применяются предприятиями в локальных средах, а AD DS учетные данные используются в качестве удостоверения для контроля доступа. Дополнительные сведения см. в разделе [Обзор служб домен Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview).
 
--   **Управление доступом на основе ролей (RBAC) в Azure**
+-   **Управление доступом на основе ролей в Azure (Azure RBAC)**
 
     Управление доступом на основе ролей в Azure (Azure RBAC) обеспечивает детальное управление доступом для Azure. С помощью RBAC можно управлять доступом к ресурсам, предоставляя пользователям минимальные разрешения, необходимые для выполнения поставленных задач. Дополнительные сведения о RBAC см. [в статье что такое управление доступом на основе ролей Azure (Azure RBAC) в Azure?](../../role-based-access-control/overview.md).
 

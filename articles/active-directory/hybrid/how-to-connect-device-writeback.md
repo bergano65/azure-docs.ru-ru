@@ -16,12 +16,12 @@ ms.date: 05/08/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 043c30af6d28e61a532c8030dabdc17b73303e7a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3b139441adb02f5fb33ae8c4a70aaa9b423f0d0e
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85360135"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87447097"
 ---
 # <a name="azure-ad-connect-enabling-device-writeback"></a>Azure AD Connect: включение обратной записи устройств
 > [!NOTE]
@@ -59,9 +59,9 @@ ms.locfileid: "85360135"
 
 4. Страница **Контейнер устройств** содержит параметр подготовки Active Directory с использованием одного из двух вариантов:
 
-    а. **Предоставление учетных данных администратора предприятия**. Если учетные данные администратора предприятия предоставлены для леса, в который необходимо выполнить обратную запись устройств, Azure AD Connect автоматически подготовит лес во время настройки обратной записи устройства.
+    a. **Предоставление учетных данных администратора предприятия**. Если учетные данные администратора предприятия предоставлены для леса, в который необходимо выполнить обратную запись устройств, Azure AD Connect автоматически подготовит лес во время настройки обратной записи устройства.
 
-    b. **Загрузка сценария PowerShell **. Azure AD Connect автоматически создает сценарий PowerShell, который может подготовить Active Directory для обратной записи устройства. Если учетные данные администратора предприятия не могут быть предоставлены в Azure AD Connect, предлагаем загрузить сценарий PowerShell. Предоставьте загруженный сценарий PowerShell **CreateDeviceContainer.psq** администратору предприятия леса, в который будет выполнена обратная запись устройств.
+    b. **Загрузка сценария PowerShell **. Azure AD Connect автоматически создает сценарий PowerShell, который может подготовить Active Directory для обратной записи устройства. Если учетные данные администратора предприятия не могут быть предоставлены в Azure AD Connect, предлагаем загрузить сценарий PowerShell. Укажите скачанный скрипт PowerShell **CreateDeviceContainer.ps1** администратору предприятия леса, в который будут записаны устройства.
     ![Подготовка леса Active Directory](./media/how-to-connect-device-writeback/devicecontainercreds.png)
     
     Для подготовки леса Active Directory выполняются следующие операции:

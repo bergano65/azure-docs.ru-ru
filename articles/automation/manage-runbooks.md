@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/10/2020
 ms.topic: conceptual
-ms.openlocfilehash: eb5eb18351f6411a8049e962deed35e5d8f181d9
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 62b60afb7dc4adb70a0963984ee7848ab056e823
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86185251"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87447831"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Управление модулями runbook в службе автоматизации Azure
 
@@ -226,7 +226,7 @@ Start-AzAutomationRunbook `
 
 1. Создайте учетную запись службы автоматизации и получите [роль участника](automation-role-based-access-control.md).
 2. [Свяжите учетную запись с рабочей областью Azure](../security-center/security-center-enable-data-collection.md).
-3. Включите функцию [Гибридная рабочая роль Runbook](automation-hybrid-runbook-worker.md), [Управление обновлениями](automation-update-management.md) или другую функцию службы автоматизации. 
+3. Включите функцию [Гибридная рабочая роль Runbook](automation-hybrid-runbook-worker.md), [Управление обновлениями](update-management/update-mgmt-overview.md) или другую функцию службы автоматизации. 
 4. На компьютере с Linux требуется высокий уровень разрешений. Войдите, чтобы [отключить проверку подписи](automation-linux-hrw-install.md#turn-off-signature-validation).
 
 ## <a name="test-a-runbook"></a>Тестирование runbook

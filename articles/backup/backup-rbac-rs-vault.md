@@ -4,12 +4,12 @@ description: Использование управления доступом н
 ms.reviewer: utraghuv
 ms.topic: conceptual
 ms.date: 06/24/2019
-ms.openlocfilehash: 89e5cf7c6b46d63b10bd358fc078f8f87db689c8
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 4c5a0a43efe7bda5fdc4b60d13b97f61565809bd
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87371708"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87445306"
 ---
 # <a name="use-role-based-access-control-to-manage-azure-backup-recovery-points"></a>Использование управления доступом на основе ролей для управления точками восстановления службы архивации Azure
 
@@ -77,7 +77,7 @@ Azure Backup предоставляет три встроенных роли д�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Управление доступом на основе ролей.](../role-based-access-control/role-assignments-portal.md) Начало работы с RBAC на портале Azure.
+* [Управление доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/role-assignments-portal.md): Начало работы с RBAC в портал Azure.
 * Сведения об управлении доступом с помощью следующих средств:
   * [PowerShell](../role-based-access-control/role-assignments-powershell.md)
   * [Azure CLI](../role-based-access-control/role-assignments-cli.md)

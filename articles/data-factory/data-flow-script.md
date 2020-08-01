@@ -6,13 +6,13 @@ ms.author: nimoolen
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 06/02/2020
-ms.openlocfilehash: 27de2d3926a1f03cbd9169216e8f68c8ca81f2a5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/29/2020
+ms.openlocfilehash: d28cd7a7edd5d6405761bf21ee87ec39dc9ec9cb
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84298607"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87448538"
 ---
 # <a name="data-flow-script-dfs"></a>Сценарий потока данных (DFS)
 
@@ -195,7 +195,7 @@ Aggregate1 derive(string_agg = toString(string_agg)) ~> DerivedColumn2
 ```
 
 ### <a name="count-number-of-updates-upserts-inserts-deletes"></a>Число обновлений, операции Upsert, вставок, удалений
-При использовании преобразования ALTER Row может потребоваться подсчитать количество операций Updates, операции Upsert, Inserts, которые являются результатом политик изменения строк. Добавьте преобразование «Статистическая обработка» после изменения строки и вставьте этот скрипт потока данных в определение агрегата для этих счетчиков:
+При использовании преобразования ALTER Row может потребоваться подсчитать количество операций Updates, операции Upsert, Inserts, которые являются результатом политик изменения строк. Добавьте преобразование «Статистическая обработка» после изменения строки и вставьте этот скрипт потока данных в определение агрегата для этих счетчиков.
 
 ```
 aggregate(updates = countIf(isUpdate(), 1),
@@ -204,6 +204,14 @@ aggregate(updates = countIf(isUpdate(), 1),
         deletes = countIf(isDelete(),1)) ~> RowCount
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+### <a name="distinct-row-using-all-columns"></a>Уникальная строка с использованием всех столбцов
+Этот фрагмент кода добавит в поток данных новое преобразование «Статистическая обработка», которое будет принимать все входящие столбцы, формировать хэш, используемый для группирования, чтобы исключить дубликаты, а затем предоставить первое вхождение каждого дубликата в качестве выходных данных. Явное имя столбцов не требуется, они будут автоматически создаваться из входящего потока данных.
+
+```
+aggregate(groupBy(mycols = sha2(256,columns())),
+    each(match(true()), $$ = first($$))) ~> DistinctRows
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Проанализируйте потоки данных, начав с помощью [статьи общие сведения о потоках данных](concepts-data-flow-overview.md)

@@ -58,8 +58,6 @@
               href: scenario-route-through-nva.md
             - name: Пользовательская маршрутизация через NVA (предварительная версия)
               href: scenario-route-through-nvas-custom.md
-            - name: "Брандмауэр Azure\_— внутренний концентратор (предварительная версия)"
-              href: scenario-route-between-hubs-firewall.md
             - name: "Брандмауэр Azure\_— пользовательская конфигурация"
               href: scenario-route-between-vnets-firewall.md
     - name: Наблюдение

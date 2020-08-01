@@ -69,8 +69,6 @@
           href: application-provisioning-config-problem-wrong-users-provisioned.md
         - name: Отсутствует исходный атрибут
           href: user-provisioning-sync-attributes-for-mapping.md
-        - name: Задание подготовки выполняется медленно
-          href: application-provisioning-when-will-provisioning-finish.md
         - name: Подготовка журналов
           href: /azure/active-directory/reports-monitoring/concept-provisioning-logs?context=azure/active-directory/app-provisioning/context/app-provisioning-context
     - name: Создание конечной точки SCIM и настройка подготовки

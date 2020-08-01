@@ -3,12 +3,12 @@ title: Базовый план безопасности Azure для Azure DevTe
 description: Базовый план безопасности Azure для Azure DevTest Labs
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: 7f0dc1fb18740e2b0611b5954821a5ceda2d2657
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: b392af17a24b0a5aabdd245af236caa743762244
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87387835"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87448971"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Базовый план безопасности Azure для Azure DevTest Labs
 
@@ -275,7 +275,7 @@ DevTest Labs не имеет концепции паролей по умолча
 ### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5.2. Развертывание автоматизированного решения для управления исправлениями операционной системы
 **Руководство.** Используйте Управление обновлениями Azure, чтобы убедиться, что последние обновления безопасности установлены на виртуальных машинах Windows и Linux, размещенных в DevTest Labs. Для виртуальных машин Windows убедитесь, что Центр обновления Windows включен и настроен на автоматическое обновление. Этот параметр сейчас недоступен для настройки через DevTest Labs, однако администратор лаборатории или администратор подписки может настроить этот параметр на базовых виртуальных машинах, используемых в подписке. 
 
-- [Настройка Управление обновлениями для виртуальных машин в Azure](../automation/automation-update-management.md)
+- [Настройка Управление обновлениями для виртуальных машин в Azure](../automation/update-management/update-mgmt-overview.md)
 - [Общие сведения о политиках безопасности Azure, отслеживаемых центром безопасности](../security-center/security-center-policy-definitions.md)
 
 **Мониторинг центра безопасности Azure:** Неприменимо
@@ -289,8 +289,8 @@ DevTest Labs не имеет концепции паролей по умолча
 
 Администратор подписки также может использовать решение Azure Управление обновлениями для управления обновлениями и исправлениями для виртуальных машин DevTest Labs. Управление обновлениями использует локально настроенный репозиторий обновлений для обновления поддерживаемых систем Windows. Такие средства, как System Center Updates Publisher (Updates Publisher), позволяют публиковать пользовательские обновления в Windows Server Update Services (WSUS). Этот сценарий позволяет Управление обновлениями исправлять компьютеры, использующие Configuration Manager в качестве репозитория обновлений программного обеспечения стороннего производителя.
 
-- [Решение для управления обновлениями в Azure](../automation/automation-update-management.md)
-- [Управление обновлениями и исправлениями для виртуальных машин Azure](../automation/automation-tutorial-update-management.md)
+- [Решение для управления обновлениями в Azure](../automation/update-management/update-mgmt-overview.md)
+- [Управление обновлениями и исправлениями для виртуальных машин](../automation/update-management/update-mgmt-overview.md)
 
 **Мониторинг центра безопасности Azure:** Неприменимо
 

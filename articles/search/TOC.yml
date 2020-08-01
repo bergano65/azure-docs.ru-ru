@@ -110,6 +110,11 @@
           href: knowledge-store-projection-overview.md
         - name: Добавочное обогащение данных
           href: cognitive-search-incremental-indexing-conceptual.md
+    - name: Безопасность
+      items:
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
 - name: Практические руководства
   items:
     - name: Создание индексов и конструкций
@@ -176,7 +181,7 @@
                   href: search-howto-index-json-blobs.md
             - name: Таблицы Azure
               href: search-howto-indexing-azure-tables.md
-            - name: Azure Cosmos DB
+            - name: "Azure\_Cosmos\_DB"
               href: search-howto-index-cosmosdb.md
             - name: Azure Data Lake Storage 2-го поколения
               href: search-howto-index-azure-data-lake-storage.md
@@ -513,5 +518,5 @@
       href: search-faq-frequently-asked-questions.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/search/'
-    - name: Видео
+    - name: Видеоролики
       href: 'https://azure.microsoft.com/resources/videos/index/?services=search'

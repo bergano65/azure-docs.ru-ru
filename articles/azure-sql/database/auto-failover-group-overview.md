@@ -12,12 +12,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 07/09/2020
-ms.openlocfilehash: ecc2925b52679c5807c9fa79a67d7b45411df526
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e6c83c37e5b24df28f3cbb4509f0f72e2fde278e
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87014037"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87448657"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -398,7 +398,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 ## <a name="programmatically-managing-failover-groups"></a>Программное управление группами отработки отказа
 
-Как уже говорилось ранее, группами автоматической отработки отказа и активной георепликацией можно также управлять программно с помощью Azure PowerShell и REST API. В приведенных ниже таблицах описан доступный для этого набор команд. Активная георепликация включает в себя набор API-интерфейсов Azure Resource Manager для управления, в том числе [REST API Базы данных SQL Azure](https://docs.microsoft.com/rest/api/sql/) и [командлеты Azure PowerShell](https://docs.microsoft.com/powershell/azure/). Эти интерфейсы API требуют использования групп ресурсов и поддерживают безопасность на основе ролей (RBAC). Дополнительные сведения о реализации ролей доступа см. в статье [Управление доступом на основе ролей в Azure](../../role-based-access-control/overview.md).
+Как уже говорилось ранее, группами автоматической отработки отказа и активной георепликацией можно также управлять программно с помощью Azure PowerShell и REST API. В приведенных ниже таблицах описан доступный для этого набор команд. Активная георепликация включает в себя набор API-интерфейсов Azure Resource Manager для управления, в том числе [REST API Базы данных SQL Azure](https://docs.microsoft.com/rest/api/sql/) и [командлеты Azure PowerShell](https://docs.microsoft.com/powershell/azure/). Эти интерфейсы API требуют использования групп ресурсов и поддерживают безопасность на основе ролей (RBAC). Дополнительные сведения о реализации ролей доступа см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md).
 
 ### <a name="manage-sql-database-failover"></a>Управление отработкой отказа базы данных SQL
 

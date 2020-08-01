@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 0231070e73c5b38562e8d110d80a2fba3c28724d
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: b0e8de797d66b875b65c1b6b593852707c587e6e
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87385489"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87446550"
 ---
 # <a name="azure-security-baseline-for-linux-virtual-machines"></a>Базовый план безопасности Azure для Виртуальные машины Linux
 
@@ -628,9 +628,9 @@ ms.locfileid: "87385489"
 
 **Руководство**. Использование решения Azure Управление обновлениями для управления обновлениями и исправлениями для виртуальных машин. Управление обновлениями полагается на локально настроенный репозиторий обновлений для обновления поддерживаемых систем.
 
-* [Решение для управления обновлениями в Azure](../../automation/automation-update-management.md)
+* [Решение для управления обновлениями в Azure](../../automation/update-management/update-mgmt-overview.md)
 
-* [Управление обновлениями и исправлениями для виртуальных машин Azure](../../automation/automation-tutorial-update-management.md)
+* [Управление обновлениями и исправлениями для виртуальных машин](../../automation/update-management/update-mgmt-manage-updates-for-vm.md)
 
 **Мониторинг Центра безопасности Azure**. Да
 
@@ -640,9 +640,9 @@ ms.locfileid: "87385489"
 
 **Руководство**. Вы можете использовать стороннее решение для управления исправлениями. Решение Azure Управление обновлениями можно использовать для управления обновлениями и исправлениями для виртуальных машин. Управление обновлениями полагается на локально настроенный репозиторий обновлений для обновления поддерживаемых систем.
 
-* [Решение для управления обновлениями в Azure](../../automation/automation-update-management.md)
+* [Решение для управления обновлениями в Azure](../../automation/update-management/update-mgmt-overview.md)
 
-* [Управление обновлениями и исправлениями для виртуальных машин Azure](../../automation/automation-tutorial-update-management.md)
+* [Управление обновлениями и исправлениями для виртуальных машин](../../automation/update-management/update-mgmt-manage-updates-for-vm.md)
 
 **Мониторинг центра безопасности Azure**: недоступен
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/15/2020
-ms.openlocfilehash: 1f76966b0ed82ae3d4b32e54627a28e99b0dba2f
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: c59e8c9e4c756a44d7507fca328aa691ecb184da
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86505726"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87447310"
 ---
 # <a name="what-is-monitored-by-azure-monitor"></a>Что отслеживает Azure Monitor?
 В этой статье описаны различные приложения и службы, которые отслеживаются с помощью Azure Monitor. 
@@ -141,27 +141,27 @@ ms.locfileid: "86505726"
 |Приватный канал | нет | нет | нет |  |
 |Project Spool Communication Platform | нет | нет | нет |  |
 |Red Hat OpenShift. | нет | нет | нет |  |
-|кэш Redis; | Да | Да | [Да](insights/redis-cache-insights-overview.md) | |
+|кэш Redis; | да | Да | [Да](insights/redis-cache-insights-overview.md) | |
 |Resource Graph | Нет | Нет | Нет |  |
 |Resource Manager | нет | нет | нет |  |
 |Microsoft Bing для электронной коммерции | нет | нет | нет |  |
-|Поиск | Да | Да | нет |  |
+|Поиск | да | да | нет |  |
 |Служебная шина | Да | Да | нет |  |
 |Service Fabric | Нет | Да | нет | Агент, необходимый для наблюдения за операционной системой на виртуальной машине и рабочими процессами.  |
 |Портал регистрации | Нет | нет | Нет |  |
 |Site Recovery | нет | Да | нет |  |
 |Служба Spring Cloud | нет | Нет | нет |  |
-|Хранилище данных SQL | Да | Да | нет |  |
+|Хранилище данных SQL | да | да | нет |  |
 |База данных SQL | Да | Да | нет |  |
 |SQL Server Stretch Database | Да | Да | нет |  |
 |Стек | Нет | Нет | нет |  |
 |Память | Да | нет | [Да](insights/storage-insights-overview.md) |  |
 |Кэш хранилища | Нет | нет | Нет |  |
 |Службы синхронизации хранилища | нет | нет | нет |  |
-|Stream Analytics | Да | Да | нет |  |
+|Stream Analytics | да | да | нет |  |
 |Аналитика временных рядов | Да | Да | нет |  |
 |TINA | Нет | Нет | нет |  |
-|Диспетчер трафика | Да | Да | нет |  |
+|Диспетчер трафика | да | да | нет |  |
 |Универсальная печать | Нет | Нет | нет |  |
 |Масштабируемые наборы виртуальных машин Microsoft Azure | нет | Да | [Да](insights/vminsights-overview.md) | Агент, необходимый для наблюдения за операционной системой на виртуальной машине и рабочими процессами. |
 |Виртуальные машины | Да | Да | [Да](insights/vminsights-overview.md) | Агент, необходимый для наблюдения за операционной системой на виртуальной машине и рабочими процессами. |
@@ -176,7 +176,7 @@ ms.locfileid: "86505726"
 
 | Продукт или служба | Описание |
 |:---|:---|
-| [Служба автоматизации Azure](../automation/index.yml) | Управление обновлениями операционной системы и отслеживание изменений на компьютерах Windows и Linux. См. статьи [Отслеживание изменений](../automation/change-tracking.md) и [Управление обновлениями](../automation/automation-update-management.md). |
+| [Служба автоматизации Azure](../automation/index.yml) | Управление обновлениями операционной системы и отслеживание изменений на компьютерах Windows и Linux. См. статьи [Отслеживание изменений](../automation/change-tracking.md) и [Управление обновлениями](../automation/update-management/update-mgmt-overview.md). |
 | [Azure Information Protection](/azure/information-protection/) | Классификация и дополнительная защита документов и сообщений электронной почты. См. [Центр отчетов для Azure Information Protection](/azure/information-protection/reports-aip#configure-a-log-analytics-workspace-for-the-reports). |
 | [Центр безопасности Azure](../security-center/index.yml) | Сбор и анализ событий безопасности и анализ угроз. См. [Сбор данных в Центре безопасности Azure](../security-center/security-center-enable-data-collection.md). |
 | [Azure Sentinel](../sentinel/index.yml) | Подключается к различным источникам, включая Office 365 и Amazon Web Services CloudTrail. См. статью [Подключение источников данных](../sentinel/connect-data-sources.md). |

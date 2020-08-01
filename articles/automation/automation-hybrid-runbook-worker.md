@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 07/16/2020
 ms.topic: conceptual
-ms.openlocfilehash: 69680fbb442b4e636b72f480ed21f36924362a13
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4d29979e28140b728478d405db934cb41783f4b0
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87024832"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87448077"
 ---
 # <a name="hybrid-runbook-worker-overview"></a>Обзор гибридной рабочей роли Runbook
 
@@ -90,13 +90,13 @@ ms.locfileid: "87024832"
 
 ## <a name="update-management-on-hybrid-runbook-worker"></a>Управление обновлениями в гибридной рабочей роли Runbook
 
-Если включена служба автоматизации Azure [Управление обновлениями](automation-update-management.md) , любой компьютер, подключенный к рабочей области log Analytics, автоматически настраивается в качестве гибридного рабочего процесса Runbook. Каждая рабочая роль может поддерживать модули runbook, связанные с управлением обновлениями.
+Если включена служба автоматизации Azure [Управление обновлениями](update-management/update-mgmt-overview.md) , любой компьютер, подключенный к рабочей области log Analytics, автоматически настраивается в качестве гибридного рабочего процесса Runbook. Каждая рабочая роль может поддерживать модули runbook, связанные с управлением обновлениями.
 
 Настроенный таким образом компьютер не зарегистрирован ни в одной группе гибридных рабочих ролей Runbook, которая уже определена в вашей учетной записи службы автоматизации. Вы можете добавить компьютер в группу гибридных рабочих ролей Runbook, но необходимо использовать одну и ту же учетную запись как для Управление обновлениями, так и для членства в группе гибридной рабочей роли Runbook. Эта функция была добавлена в версии 7.2.12024.0 гибридной рабочей роли Runbook.
 
 ### <a name="update-management-addresses-for-hybrid-runbook-worker"></a>Адреса для решения по управлению обновлениями в гибридной рабочей роли Runbook
 
-Поверх стандартных адресов и портов, необходимых для гибридной рабочей роли Runbook, Управление обновлениями предъявляют дополнительные требования к конфигурации сети, описанные в разделе « [планирование сети](automation-update-management.md#ports) ».
+Поверх стандартных адресов и портов, необходимых для гибридной рабочей роли Runbook, Управление обновлениями предъявляют дополнительные требования к конфигурации сети, описанные в разделе « [планирование сети](update-management/update-mgmt-overview.md#ports) ».
 
 ## <a name="azure-automation-state-configuration-on-a-hybrid-runbook-worker"></a>Использование State Configuration службы автоматизации Azure в гибридной рабочей роли Runbook
 

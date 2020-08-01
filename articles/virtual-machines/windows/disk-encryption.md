@@ -8,12 +8,12 @@ ms.author: rogarana
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: e609e755f02d4321664804bfbb90f979c1c06ead
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 413ca677bc778069b92def043bf35ab7bb87b038
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87133067"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87448924"
 ---
 # <a name="server-side-encryption-of-azure-disk-storage"></a>Шифрование Хранилище дисков Azure на стороне сервера
 
@@ -34,7 +34,7 @@ ms.locfileid: "87133067"
 
 ### <a name="platform-managed-keys"></a>Ключи, управляемые платформой
 
-По умолчанию управляемые диски используют управляемые платформой ключи шифрования. На 10 июня 2017 года все новые управляемые диски, снимки, образы и новые данные, записанные на существующие управляемые диски, автоматически зашифровываются как неактивные данные с помощью ключей, управляемых платформой.
+По умолчанию управляемые диски используют управляемые платформой ключи шифрования. Все управляемые диски, моментальные снимки, изображения и данные, записанные на существующие управляемые диски, автоматически шифруются с помощью ключей, управляемых платформой.
 
 ### <a name="customer-managed-keys"></a>Ключи, управляемые клиентом
 

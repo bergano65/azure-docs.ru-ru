@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 07/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9bd6a7ff943b5f3750ce8aaeada32010b88272c2
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 9c8238e6e0b52a625c76f79fa0dd5a91dd640fb8
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83745630"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87447843"
 ---
 # <a name="migrate-azure-monitor-logs-update-deployments-to-azure-portal"></a>Перенос развертываний обновлений журналов Azure Monitor на портал Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "83745630"
 ## <a name="key-information"></a>Основные сведения
 
 * Это не повлияет на работоспособность имеющихся развертываний. После воссоздания развертывания в Azure старое развертывание можно удалить.
-* Все возможности, которые существовали в OMS, доступны и в Azure. Дополнительные сведения об управлении обновлениями см. в статье [Управление обновлениями в службе автоматизации Azure](automation-update-management.md).
+* Все возможности, которые существовали в OMS, доступны и в Azure. Дополнительные сведения об управлении обновлениями см. в статье [Управление обновлениями в службе автоматизации Azure](update-management/update-mgmt-overview.md).
 
 ## <a name="access-the-azure-portal"></a>Доступ к порталу Azure
 
@@ -74,4 +74,4 @@ ms.locfileid: "83745630"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения об Управлении обновлениями в службе автоматизации Azure см. в статье [Управление обновлениями](automation-update-management.md).
+Сведения об Управлении обновлениями в службе автоматизации Azure см. в статье [Управление обновлениями](update-management/update-mgmt-overview.md).

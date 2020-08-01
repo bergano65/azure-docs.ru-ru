@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 04/28/2020
-ms.openlocfilehash: bdf5d006cf47f4552684aac8af4a759ed1761c93
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 10c0d3d5f043d31454810b55e808cd6df01467a4
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087974"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87448736"
 ---
 # <a name="creating-and-using-active-geo-replication---azure-sql-database"></a>Создание и использование активной георепликации в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -238,7 +238,7 @@ ms.locfileid: "87087974"
 
 ## <a name="programmatically-managing-active-geo-replication"></a>Программное управление активной георепликацией
 
-Как уже говорилось ранее, активной георепликацией можно также управлять программно с помощью Azure PowerShell и REST API. В приведенных ниже таблицах описан доступный для этого набор команд. Активная георепликация включает в себя набор API-интерфейсов Azure Resource Manager для управления, в том числе [REST API Базы данных SQL Azure](https://docs.microsoft.com/rest/api/sql/) и [командлеты Azure PowerShell](https://docs.microsoft.com/powershell/azure/). Эти интерфейсы API требуют использования групп ресурсов и поддерживают безопасность на основе ролей (RBAC). Дополнительные сведения о реализации ролей доступа см. в статье [Управление доступом на основе ролей в Azure](../../role-based-access-control/overview.md).
+Как уже говорилось ранее, активной георепликацией можно также управлять программно с помощью Azure PowerShell и REST API. В приведенных ниже таблицах описан доступный для этого набор команд. Активная георепликация включает в себя набор API-интерфейсов Azure Resource Manager для управления, в том числе [REST API Базы данных SQL Azure](https://docs.microsoft.com/rest/api/sql/) и [командлеты Azure PowerShell](https://docs.microsoft.com/powershell/azure/). Эти интерфейсы API требуют использования групп ресурсов и поддерживают безопасность на основе ролей (RBAC). Дополнительные сведения о реализации ролей доступа см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md).
 
 ### <a name="t-sql-manage-failover-of-single-and-pooled-databases"></a>T-SQL: Управление отработкой отказа для баз данных в одной и в составе пула
 

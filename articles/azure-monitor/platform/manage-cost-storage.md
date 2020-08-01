@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 07/20/2020
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: bba634fa20c3bab6e3763f6cedcbeb77f4546098
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: bbc6b4c1317ac31d6262892ac32e2d45cf4863db
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327877"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87449092"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Управление использованием и затратами с помощью журналов Azure Monitor    
 
@@ -579,7 +579,7 @@ union *
 - Для параметра **Определение условия оповещения** укажите вашу рабочую область Log Analytics в качестве целевого ресурса.
 - Для **критериев оповещения** укажите следующее:
    - для **названия сигнала** выберите значение **Пользовательский поиск по журналам**;
-   - **Поисковый запрос** к `Usage | where IsBillable | summarize DataGB = sum(Quantity / 1000.) | where DataGB > 50` . Если требуется различных 
+   - **Поисковый запрос** к `Usage | where IsBillable | summarize DataGB = sum(Quantity / 1000.) | where DataGB > 50` . 
    - **логика оповещений** должна быть **основана на** *числе результатов*, а значение **условия** должно быть *больше* **порогового значения** *0*;
    - **Период времени** *1440* минут и **частота оповещений** для каждых *1440* минутесто, выполняемых один раз в день.
 - В разделе **Определение сведений об оповещении** задайте такие значения:

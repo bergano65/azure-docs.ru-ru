@@ -11,12 +11,12 @@ ms.author: nigup
 author: nishankgu
 ms.date: 07/24/2020
 ms.custom: how-to, seodec18
-ms.openlocfilehash: 2e787bb494c1e919a235b762b4d8c5250c8cda61
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 6a49497cbe71dddb8ab6e76be9b3679dd62b0cee
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321621"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87449026"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинное обучение Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -122,7 +122,7 @@ az ml workspace share -w my_workspace -g my_resource_group --role "Data Scientis
 
 Дополнительные сведения о пользовательских ролях см. в статье [пользовательские роли Azure](/azure/role-based-access-control/custom-roles). Дополнительные сведения об операциях (действиях и не действиях), которые можно использовать с пользовательскими ролями, см. в разделе [операции с поставщиками ресурсов](/azure/role-based-access-control/resource-provider-operations#microsoftmachinelearningservices).
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 
 ### <a name="q-what-are-the-permissions-needed-to-perform-some-common-scenarios-in-the-azure-machine-learning-service"></a>У. Каковы разрешения, необходимые для выполнения некоторых распространенных сценариев в службе Машинное обучение Azure?
@@ -369,7 +369,7 @@ az provider operation show –n Microsoft.MachineLearningServices
 
 ### <a name="q-what-are-some-common-gotchas-when-using-azure-rbac"></a>У. Каковы некоторые распространенные проблемы при использовании Azure RBAC?
 
-Ниже приведены некоторые моменты, которые следует учитывать при использовании элементов управления доступом на основе ролей Azure.
+Ниже приведены некоторые моменты, которые следует учитывать при использовании управления доступом на основе ролей Azure (Azure RBAC).
 
 - При создании ресурса в Azure, скажем, рабочей области, вы не являетесь владельцем рабочей области напрямую. Роль наследуется от самой высокой роли области, которой вы имеете право в этой подписке. Например, если вы являетесь администратором сети и обладаете разрешениями на создание Машинное обучение рабочей области, вам будет назначена роль администратора сети для этой рабочей области, а не роль владельца.
 - При наличии двух назначений ролей для одного и того же пользователя AAD с конфликтующими разделами действий и отсутствия операции, перечисленные в неизменности одной роли, могут не действовать, если они также перечислены как действия в другой роли. Дополнительные сведения о том, как Azure анализирует назначения ролей, см. в статье [Определение того, как Azure RBAC определяет, имеет ли пользователь доступ к ресурсу](/azure/role-based-access-control/overview#how-azure-rbac-determines-if-a-user-has-access-to-a-resource) .

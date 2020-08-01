@@ -5,12 +5,12 @@ ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: 611cb5b94ee2ad458fa00a61af673696d7e7a212
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ae83d8f68b78a3b13f9ebafe3c7cedd18a29de53
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87085152"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87449143"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -33,18 +33,19 @@ ms.locfileid: "87085152"
 
 Существует три версии Azure Functions Core Tools. Используемая версия зависит от вашей локальной среды разработки, [выбора языка](supported-languages.md)и требуемого уровня поддержки:
 
-+ **Версия 1. x**: поддерживает версию 1. x среды выполнения функций Azure. Эта версия поддерживается только на компьютерах с ОС Windows и устанавливается из [пакета npm](https://www.npmjs.com/package/azure-functions-core-tools).
-
 + [**Версия 3. x/2. x**](#v2): поддерживает [версию 3. x или 2. x среды выполнения функций Azure](functions-versions.md). Эти версии поддерживают [Windows](?tabs=windows#v2), [macOS](?tabs=macos#v2)и [Linux](?tabs=linux#v2) и используют диспетчеры пакетов для конкретных платформ или NPM для установки.
 
++ **Версия 1. x**: поддерживает версию 1. x среды выполнения функций Azure. Эта версия поддерживается только на компьютерах с ОС Windows и устанавливается из [пакета npm](https://www.npmjs.com/package/azure-functions-core-tools).
+
 Если не указано иное, примеры в этой статье относятся к версии 3. x.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Azure Functions Core Tools в настоящее время зависит от Azure CLI для проверки подлинности в учетной записи Azure. Это означает, что необходимо [установить Azure CLI локально](/cli/azure/install-azure-cli) , чтобы иметь возможность [публиковать в Azure](#publish) из Azure functions Core Tools. 
 
 ## <a name="install-the-azure-functions-core-tools"></a>Установка основных инструментов Функций Azure
 
 [Основные инструменты службы "Функции Azure"] являются локальной версией среды выполнения "Функции Azure", которую можно запускать на локальном компьютере для разработки. Она также предоставляет команды для создания функций, подключения к Azure и развертывания проектов функций.
-
->[!IMPORTANT]
->Чтобы иметь возможность публиковать в Azure из Azure Functions Core Tools, необходимо локально установить [Azure CLI](/cli/azure/install-azure-cli) .  
 
 ### <a name="version-3x-and-2x"></a><a name="v2"></a>Версии 3. x и 2. x
 
@@ -55,27 +56,12 @@ ms.locfileid: "87085152"
 
 # <a name="windows"></a>[Windows](#tab/windows)
 
-На следующих шагах пакет npm используется для установки основных инструментов на компьютерах с Windows. Кроме того, можно использовать [Chocolatey](https://chocolatey.org/). Дополнительные сведения см. в [файле сведений об основных инструментах](https://github.com/Azure/azure-functions-core-tools/blob/master/README.md#windows).
+Следующие действия используют установщик Windows (MSI) для установки основных средств v3. x. Дополнительные сведения о других установщиках на основе пакетов, необходимых для установки основных средств версии 2. x, см. в [файле readme по основным инструментам](https://github.com/Azure/azure-functions-core-tools/blob/master/README.md#windows).
 
-1. Установите [Node.js], который содержит пакет npm.
-    - Для версии 3. x средств поддерживаются только Node.js 10 и более поздних версий.
-    - Для версии 2.x этих инструментов поддерживается только версия Node.js 8.5 и более поздние.
+1. Скачайте и запустите установщик основных средств на основе вашей версии Windows:
 
-1. Установите пакет основных инструментов:
-
-    ##### <a name="v3x-recommended"></a>v3. x (рекомендуется)
-
-    ```cmd
-    npm install -g azure-functions-core-tools@3
-    ```
-
-    ##### <a name="v2x"></a>Версия 2.x
-
-    ```cmd
-    npm install -g azure-functions-core-tools@2
-    ```
-
-   Загрузка и установка пакета основных средств может занять несколько минут.
+    - [v3. x — Windows 64-bit](https://go.microsoft.com/fwlink/?linkid=2135274) (рекомендуется. Для [отладки Visual Studio Code](functions-develop-vs-code.md#debugging-functions-locally) требуется 64-разр.)
+    - [v3. x — Windows 32-bit](https://go.microsoft.com/fwlink/?linkid=2135275)
 
 1. Если вы не планируете использовать [пакеты расширений](functions-bindings-register.md#extension-bundles), установите [пакет SDK для .NET Core 3. x для Windows](https://dotnet.microsoft.com/download).
 
@@ -132,7 +118,7 @@ ms.locfileid: "87085152"
 
 1. Проверьте `/etc/apt/sources.list.d/dotnetdev.list` файл на наличие одной из следующих строк версии Linux:
 
-    | Дистрибутив Linux | Version |
+    | Дистрибутив Linux | Версия |
     | --------------- | ----------- |
     | Debian 10 | `buster`  |
     | Debian 9  | `stretch` |
@@ -526,7 +512,7 @@ func azure functionapp publish <FunctionAppName>
 | **`--nozip`** | Выключает режим по умолчанию `Run-From-Package`. |
 | **`--build-native-deps`** | Пропускает создание папки. Wheels при публикации приложений функции Python. |
 | **`--build`**, **`-b`** | Выполняет действие сборки при развертывании в приложении-функции Linux. Принимает: `remote` и `local` . |
-| **`--additional-packages`** | Создает список пакетов установки при создании собственных зависимостей. Например, так: `python3-dev libevent-dev`. |
+| **`--additional-packages`** | Создает список пакетов установки при создании собственных зависимостей. Например: `python3-dev libevent-dev`. |
 | **`--force`** | Пропускает проверку, выполняемую до публикации, в определенных сценариях. |
 | **`--csx`** | Публикует проект скрипта C# (CSX). |
 | **`--no-build`** | Проект не создан во время публикации. Для Python `pip install` не выполняется. |

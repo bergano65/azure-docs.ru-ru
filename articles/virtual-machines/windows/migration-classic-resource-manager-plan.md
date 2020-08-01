@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: b1e550fde0d43b4d2c7bd1a64856edeac607cab3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 14beaf4fc0f207abe652a9ed62c974f7ab4b8e79
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86999094"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87449103"
 ---
 # <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager-in-windows"></a>Планирование миграции ресурсов IaaS с классической модели на Azure Resource Manager в Windows
 
@@ -197,7 +197,7 @@ ms.locfileid: "86999094"
 
 Включайте только необходимые службы в Azure Resource Manager.  Ниже приведены службы, которыми ограничивается большинство клиентов, использующих среды Azure.
 
-- [Управление доступом на основе ролей](../../role-based-access-control/overview.md).
+- [Управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md).
 - [Шаблоны Azure Resource Manager для быстрого и контролируемого развертывания](../../azure-resource-manager/templates/overview.md).
 - [Теги](../../azure-resource-manager/management/tag-resources.md).
 - [Управление действиями](../../azure-resource-manager/management/view-activity-logs.md).

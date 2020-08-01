@@ -16,12 +16,12 @@ ms.topic: reference
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0c6484f46731e0ff2d16d00cb0038202511d193
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 427a09f3855d44af0206ebf1fd6183099da75f19
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80331074"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87446969"
 ---
 # <a name="azure-ad-connect-health-frequently-asked-questions"></a>Часто задаваемые вопросы об Azure AD Connect Health
 Эта статья содержит ответы на часто задаваемые вопросы о расширении Azure Active Directory (Azure AD) Connect Health. Здесь представлены сведения об использовании службы, в частности о модели выставления счетов, возможностях, ограничениях и поддержке.
@@ -37,9 +37,9 @@ ms.locfileid: "80331074"
 
 |Роль| Версия операционной системы|
 |--|--|
-|Службы федерации Active Directory (AD FS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
-|Azure AD Connect. | Версия 1.0.9125 или более поздняя|
-|Доменные службы Active Directory (AD DS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
+|Службы федерации Active Directory (AD FS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
+|Azure AD Connect | Версия 1.0.9125 или более поздняя|
+|Доменные службы Active Directory (AD DS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
 
 Обратите внимание, что функции, предоставляемые службой, могут отличаться в зависимости от роли и операционной системы. Другими словами, не для всех версий операционной системы могут быть доступны все возможности. Ознакомьтесь с описанием функций, чтобы получить дополнительные сведения.
 
@@ -52,7 +52,7 @@ ms.locfileid: "80331074"
 
 Сведения о лицензировании также приведены на [странице Azure AD](https://aka.ms/aadpricing).
 
-Пример.
+Пример
 
 | Зарегистрированные агенты | Необходимые лицензии | Пример конфигурации мониторинга |
 | ------ | --------------- | --- |
@@ -135,7 +135,7 @@ Azure AD Connect Health не поддерживается в облаке для
 
 * Агент не может подключиться к необходимым конечным точкам, так как трафик блокируется брандмауэром. Это особенно часто происходит на прокси-серверах веб-приложений. Убедитесь, что исходящие подключения к необходимым конечным точкам и портам разрешены. Дополнительные сведения см. в [разделе требования](how-to-connect-health-agent-install.md#requirements) .
 * Исходящая связь проходит проверку TLS на уровне сети. В результате сертификат, используемый агентом, заменяется проверяющим сервером или сущностью, что приводит к ошибке регистрации агента.
-* Пользователь не имеет доступа для регистрации агента. По умолчанию доступ имеют глобальные администраторы. Можно использовать [управление доступом на основе ролей](how-to-connect-health-operations.md#manage-access-with-role-based-access-control) и делегировать доступ другим пользователям.
+* Пользователь не имеет доступа для регистрации агента. По умолчанию доступ имеют глобальные администраторы. Вы можете использовать [Управление доступом на основе ролей Azure (Azure RBAC)](how-to-connect-health-operations.md#manage-access-with-role-based-access-control) для делегирования доступа другим пользователям.
 
 **Вопрос. я получаю предупреждение о том, что служба работоспособности данные устарели. Разделы справки устранить проблему?**
 

@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c35204e37e3aae930577697779b8f945c4fbfbcb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 01ec7f8210df9e41b2620e639eddbc98d4bcb73d
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84727217"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87448684"
 ---
 # <a name="linkedin-account-connections-data-sharing-and-consent"></a>Подключение учетной записи LinkedIn общий доступ к данным и согласие
 
@@ -39,7 +39,9 @@ ms.locfileid: "84727217"
 Для управления этим параметром вашей организации необходимо быть администратором Azure Active Directory. Вы можете включить его для всех пользователей или для определенного набора пользователей.
 
 1. Чтобы включить или отключить интеграцию, выполните действия, описанные в статье [согласие на интеграцию с LinkedIn для вашей организации Azure AD](linkedin-integration.md).
-2. При объявлении об интеграции с LinkedIn в вашей организации ознакомьте пользователей со сборником часто задаваемых вопросов о [сведениях LinkedIn в приложениях и службах Майкрософт](https://support.office.com/article/about-linkedin-information-and-features-in-microsoft-apps-and-services-dc81cc70-4d64-4755-9f1c-b9536e34d381). В этой статье содержатся сведения о том, где отображается информация из LinkedIn, как подключить учетные записи и многое другое.
+2. При объявлении об интеграции с LinkedIn в вашей организации ознакомьте пользователей со сборником часто задаваемых вопросов о [сведениях LinkedIn в приложениях и службах Майкрософт](https://support.office.com/article/about-linkedin-information-and-features-in-microsoft-apps-and-services-dc81cc70-4d64-4755-9f1c-b9536e34d381). В этой статье содержатся сведения о том, где отображаются сведения о LinkedIn, [общий доступ к данным и конфиденциальность](https://support.microsoft.com/office/your-data-ae9c08a7-4d06-45b5-a065-320a97bc1400), [как подключить учетные записи](https://support.microsoft.com/office/connect-your-linkedin-and-work-or-school-accounts-c7c245f2-fa56-4c9b-ba20-3fceb23c5772) и многое другое.
+
+Необходимо объявить интеграцию LinkedIn с пользователями, предоставив им всю информацию, относящуюся к совместному использованию данных и конфиденциальности, связанную с интеграцией LinkedIn. Чтобы пользователи, использующие лицензии, могли подключаться к учетным записям в 
 
 ## <a name="user-consent-for-data-access-in-microsoft-and-linkedin"></a>Согласие пользователя для доступа к данным в Майкрософт и LinkedIn
 
@@ -78,6 +80,6 @@ ms.locfileid: "84727217"
 
 Дополнительные сведения об использовании в LinkedIn персональных данных см. в [политике конфиденциальности LinkedIn](https://www.linkedin.com/legal/privacy-policy). Для служб LinkedIn, передачи данных и хранения данных данные могут передаваться из Европейского союза в США и обратно, а конфиденциальность защищена, как описано в статье [Передача данных Европейского союза](https://www.linkedin.com/help/linkedin/answer/62533).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [LinkedIn in Microsoft Applications with Your Work or School Account](https://www.linkedin.com/help/linkedin/answer/84077) (LinkedIn в приложениях Майкрософт с вашей рабочей или учебной учетной записью)

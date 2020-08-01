@@ -16,12 +16,12 @@ ms.date: 07/27/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: baf3566e90802f73accdd27f1cd5435e4af7b9be
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: f480118aaabf24bd7c5ca472bf04b12ee1405010
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281826"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87447001"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Устранение неполадок в работе сквозной аутентификации Azure Active Directory
 
@@ -44,7 +44,7 @@ ms.locfileid: "87281826"
 
 Если пользователи не могут выполнить вход с использованием сквозной аутентификации, для них могут отображаться следующие ошибки на экране входа в Azure AD: 
 
-|Error|Описание:|Решение
+|Ошибка|Описание:|Решение
 | --- | --- | ---
 |AADSTS80001|Не удалось подключиться к Active Directory|Убедитесь, что серверы с агентами являются членами того же леса, что и пользователи, чьи пароли должны быть проверены, и могут подключиться к Active Directory.  
 |AADSTS8002|Истекло время ожидания подключения к Active Directory|Убедитесь, что служба Active Directory доступна и отвечает на запросы агентов.
@@ -74,10 +74,8 @@ ms.locfileid: "87281826"
 
 Если вы получаете одно и то же сообщение об ошибке имени пользователя и пароля, это означает, что агент сквозной проверки подлинности работает правильно, и проблема может быть в том, что локальный UPN не поддерживает маршрутизацию. Дополнительные сведения см. в разделе [Настройка альтернативного имени пользователя]( https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configuring-alternate-login-id#:~:text=%20Configuring%20Alternate%20Login%20ID,See%20Also.%20%20More).
 
-
-
-
-
+> [!IMPORTANT]
+> Если Azure AD Connect сервер не присоединен к домену, то необходимо выполнить требования, указанные в [Azure AD Connect: предварительные требования](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-prerequisites#installation-prerequisites), при возникновении неправильной проблемы с именем пользователя или паролем.
 
 ### <a name="sign-in-failure-reasons-on-the-azure-active-directory-admin-center-needs-premium-license"></a>Причины сбоя единого входа в центре администрирования Azure Active Directory (требуется лицензия Premium)
 

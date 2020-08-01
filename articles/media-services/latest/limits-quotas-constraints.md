@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 04/01/2020
 ms.author: juliako
-ms.openlocfilehash: e358742635d9ed939bbc62bb0d54e8169382e7de
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c2845cd0fad8375db67d1aa86333f144222dc0aa
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87043491"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87446322"
 ---
 <!-- If you update limits in this topic, make sure to also update https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#media-services-limits -->
 # <a name="azure-media-services-quotas-and-limits"></a>Квоты и ограничения служб мультимедиа Azure
@@ -28,14 +28,14 @@ ms.locfileid: "87043491"
 
 ## <a name="account-limits"></a>Ограничения учетной записи
 
-| Ресурс | Ограничение по умолчанию | 
-| --- | --- | 
+| Ресурс | Ограничение по умолчанию |
+| --- | --- |
 | [Учетные записи служб мультимедиа](media-services-account-concept.md) в одной подписке | 25 (фиксированное значение) |
 
 ## <a name="asset-limits"></a>Ограничения ресурсов
 
-| Ресурс | Ограничение по умолчанию | 
-| --- | --- | 
+| Ресурс | Ограничение по умолчанию |
+| --- | --- |
 | [Assets](assets-concept.md) Учетная запись служб мультимедиа | 1 000 000|
 
 ## <a name="storage-limits"></a>Ограничения хранилища
@@ -86,9 +86,10 @@ ms.locfileid: "87043491"
 
 ## <a name="packaging--delivery-limits"></a>Пределы доставки & упаковки
 
-| Ресурс | Ограничение по умолчанию | 
-| --- | --- | 
+| Ресурс | Ограничение по умолчанию |
+| --- | --- |
 | [Конечные точки потоковой передачи](streaming-endpoint-concept.md) (остановлены или выполняются) на учетную запись служб мультимедиа|2 |
+| Единицы потоковой передачи Premium | 10 |
 | [Фильтры динамических манифестов](filters-dynamic-manifest-overview.md)|100|
 | [Политики потоковой передачи](streaming-policy-concept.md) | 100 <sup>(6)</sup> |
 | Уникальные [указатели потоковой передачи](streaming-locators-concept.md) , связанные с активом за один раз | 100<sup>(7)</sup> (исправлено) |

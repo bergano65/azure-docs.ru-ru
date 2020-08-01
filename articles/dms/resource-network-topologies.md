@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/08/2020
-ms.openlocfilehash: 31dfae60b1967e221e294195f66bb7fe59a15e64
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 69926671730e41845cd28df3108ec86b24a57075
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84187521"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87448515"
 ---
 # <a name="network-topologies-for-azure-sql-managed-instance-migrations-using-azure-database-migration-service"></a>Сетевые топологии для миграции Управляемый экземпляр Azure SQL с помощью Azure Database Migration Service
 
@@ -39,7 +39,7 @@ ms.locfileid: "84187521"
 Используйте эту сетевую топологию, если в вашей среде нужно применить один или несколько из следующих сценариев:
 
 - Управляемый экземпляр SQL изолированы от локальных подключений, но ваш экземпляр Azure Database Migration Service подключен к локальной сети.
-- Если применяются политики управления доступом на основе ролей (RBAC) и необходимо ограничить доступ пользователей к той же подписке, где размещается Управляемый экземпляр SQL.
+- Если применяются политики управления доступом на основе ролей Azure (Azure RBAC) и необходимо ограничить доступ пользователей к той же подписке, где размещается Управляемый экземпляр SQL.
 - Виртуальные сети, используемые для Управляемый экземпляр SQL и Azure Database Migration Service, находятся в разных подписках.
 
 ![Сетевая топология для Управляемого экземпляра Базы данных SQL Azure, изолированного от локальной сети](media/resource-network-topologies/mi-isolated-workload.png)
@@ -64,7 +64,7 @@ ms.locfileid: "84187521"
 Используйте эту сетевую топологию, если в вашей среде нужно применить один или несколько из следующих сценариев:
 
 - Управляемый экземпляр SQL подготавливается в изолированной виртуальной сети.
-- Если применяются политики управления доступом на основе ролей (RBAC) и необходимо ограничить доступ пользователей к той же подписке, где размещается Управляемый экземпляр SQL.
+- Если применяются политики управления доступом на основе ролей Azure (Azure RBAC) и необходимо ограничить доступ пользователей к той же подписке, где размещается Управляемый экземпляр SQL.
 - Виртуальные сети, используемые для SQL Управляемый экземпляр и Azure Database Migration Service, находятся в разных подписках.
 
 ![Топология сети для миграции из облака в облако с помощью изолированной виртуальной сети](media/resource-network-topologies/cloud-to-cloud-isolated.png)
@@ -90,13 +90,13 @@ ms.locfileid: "84187521"
 | Общий доступ по SMB                 | 445                                                   | TCP          | Любой        | локальное адресное пространство; | Allow      | Общий сетевой доступ по SMB в DMS для хранения файлов резервных копий базы данных с целью переноса в управляемый экземпляр Базы данных SQL Azure и SQL Server на виртуальной машине Azure. <br/>(Если есть подключение типа "сайт-сайт", это правило может не понадобиться.) |
 | DMS_subnet                | Любой                                                   | Любой          | Любой        | DMS_subnet                | Allow      |                                                                                                                                                                                                  |
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 - [Миграция SQL Server в SQL Управляемый экземпляр](https://docs.microsoft.com/azure/dms/tutorial-sql-server-to-managed-instance)
 - [Общие сведения о предварительных требованиях для использования Azure Database Migration Service](https://docs.microsoft.com/azure/dms/pre-reqs)
 - [Создание виртуальной сети с помощью портала Azure](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения о Azure Database Migration Service см. в статье [что такое Azure Database Migration Service?](dms-overview.md).
 - Текущие сведения о региональных доступности Azure Database Migration Service см. на странице доступность [продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=database-migration) .

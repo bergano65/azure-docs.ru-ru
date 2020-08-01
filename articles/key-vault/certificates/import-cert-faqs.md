@@ -10,16 +10,16 @@ ms.subservice: certificates
 ms.topic: conceptual
 ms.date: 07/20/2020
 ms.author: sebansal
-ms.openlocfilehash: 1063f7189de4bdf1aaca4a6d72c979476433c32f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 493c77a8f875018627bfe3167e66addeaf65d089
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87098272"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87445793"
 ---
 # <a name="frequently-asked-questions---azure-key-vault-certificate-import"></a>Часто задаваемые вопросы о Azure Key Vault импорте сертификатов
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 ### <a name="how-can-i-import-a-certificate-in-azure-key-vault"></a>Как импортировать сертификат в Azure Key Vault?
 
@@ -64,6 +64,9 @@ ms.locfileid: "87098272"
 
 ### <a name="if-i-import-a-certificate-from-a-partner-ca-will-the-auto-renew-feature-still-work"></a>Если импортировать сертификат из ЦС партнеров, функция автоматического продления по-прежнему будет работать?
 Да, необходимо убедиться, что после отправки вы указали Автоповорот в политике выдачи сертификата. Кроме того, изменения будут отражены до следующего цикла или версии сертификата.
+
+### <a name="unable-to-see-the-app-service-certificate-imported-to-key-vault"></a>Не удается просмотреть Сертификаты службы приложений, импортированные в Key Vault? 
+Если сертификат был успешно импортирован, проверьте в разделе секреты колонка.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

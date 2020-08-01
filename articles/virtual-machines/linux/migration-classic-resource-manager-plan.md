@@ -9,12 +9,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: 79e560f73b69047419626086af9c975c90870edc
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: db665fd952ccadd676056ad2d006e2b1bcbadf9c
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87291115"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87448906"
 ---
 # <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager-in-linux"></a>Планирование миграции ресурсов IaaS с классической модели на Azure Resource Manager в Linux
 
@@ -190,7 +190,7 @@ ms.locfileid: "87291115"
 
 Включайте только необходимые службы в Azure Resource Manager.  Ниже приведены службы, которыми ограничивается большинство клиентов, использующих среды Azure.
 
-- [Управление доступом на основе ролей](../../role-based-access-control/overview.md).
+- [Управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md).
 - [Шаблоны Azure Resource Manager для быстрого и контролируемого развертывания](../../azure-resource-manager/templates/overview.md).
 - [Теги](../../azure-resource-manager/management/tag-resources.md).
 - [Управление действиями](../../azure-resource-manager/management/view-activity-logs.md).
@@ -201,7 +201,7 @@ ms.locfileid: "87291115"
 Не забывайте об основной цели миграции из классической модели в модель Azure Resource Manager.  Каковы были первоначальные коммерческие соображения? Достигли ли вы этих целей?
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор поддерживаемого платформой переноса ресурсов IaaS из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

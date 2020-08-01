@@ -6,12 +6,12 @@ manager: gwallace
 ms.topic: article
 ms.date: 07/20/2020
 ms.author: thomasge
-ms.openlocfilehash: 06a97126df449b77bf3fcc48bd23231512c9dff2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 896986775f0132ef08b17bdfefc00e5e06cf3d9f
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87056658"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87448133"
 ---
 # <a name="aks-managed-azure-active-directory-integration"></a>Интеграция Azure Active Directory с управляемым AKS
 
@@ -75,7 +75,7 @@ az provider register --namespace Microsoft.ContainerService
 ``` 
 
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для кластера требуется группа Azure AD. Эта группа необходима в качестве группы администраторов кластера для предоставления разрешений администратора кластера. Вы можете использовать существующую группу Azure AD или создать новую. Запишите идентификатор объекта вашей группы Azure AD.
 
@@ -146,7 +146,7 @@ aks-nodepool1-15306047-0   Ready    agent   102m   v1.15.10
 aks-nodepool1-15306047-1   Ready    agent   102m   v1.15.10
 aks-nodepool1-15306047-2   Ready    agent   102m   v1.15.10
 ```
-Настройте [Управление доступом на основе ролей (RBAC)](./azure-ad-rbac.md) , чтобы настроить дополнительные группы безопасности для кластеров.
+Настройте [Управление доступом на основе ролей Azure (Azure RBAC)](./azure-ad-rbac.md) , чтобы настроить дополнительные группы безопасности для кластеров.
 
 ## <a name="troubleshooting-access-issues-with-azure-ad"></a>Устранение проблем с доступом к Azure AD
 

@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 12/06/2019
 ms.author: cynthn
-ms.openlocfilehash: d956ce273a7ea630bfdcf900fbbba5e8be30b254
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 940a24aedb8592d0e809bc79dc1c8977bc3abd38
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288449"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87448990"
 ---
 # <a name="quick-steps-create-and-use-an-ssh-public-private-key-pair-for-linux-vms-in-azure"></a>Краткая инструкция. Создание и использование пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure
 
@@ -37,10 +37,10 @@ ms.locfileid: "87288449"
 ssh-keygen -m PEM -t rsa -b 4096
 ```
 
-При использовании [Azure CLI 2.0](/cli/azure) для создания виртуальной машины можно дополнительно создать файлы открытого и закрытого ключей SSH, выполнив команду [az vm create](/cli/azure/vm#az-vm-create) с параметром `--generate-ssh-keys`. Файлы ключей хранятся в каталоге ~/.ssh, если не указано иное с помощью параметра `--ssh-dest-key-path`. Параметр `--generate-ssh-keys` не перезаписывает существующие файлы ключей, вместо этого возвращается ошибка. В следующей команде замените *VMname* и *RGname* собственными значениями.
+При использовании [Azure CLI 2.0](/cli/azure) для создания виртуальной машины можно дополнительно создать файлы открытого и закрытого ключей SSH, выполнив команду [az vm create](/cli/azure/vm#az-vm-create) с параметром `--generate-ssh-keys`. Файлы ключей хранятся в каталоге ~/.ssh, если не указано иное с помощью параметра `--ssh-dest-key-path`. Если пара ключей SSH уже существует и `--generate-ssh-keys` используется параметр, новая пара ключей не будет создана, а вместо нее будет использоваться существующая пара ключей. В следующей команде замените *VMname* и *RGname* собственными значениями.
 
 ```azurecli
-az vm create --name VMname --resource-group RGname --generate-ssh-keys 
+az vm create --name VMname --resource-group RGname --image UbuntuLTS --generate-ssh-keys 
 ```
 
 ## <a name="provide-an-ssh-public-key-when-deploying-a-vm"></a>Предоставление открытого ключа SSH при развертывании виртуальной машины

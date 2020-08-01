@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e067e8d56f8a928f952648fc76cd5d6b7a1afe7
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: fea05ada52ba4281acb3451769446d7f0bad790d
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86221288"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87448720"
 ---
 # <a name="view-and-assign-administrator-roles-in-azure-active-directory"></a>Просмотр и назначение ролей администратора в Azure Active Directory
 
@@ -56,6 +56,12 @@ ms.locfileid: "86221288"
 При просмотре членов роли нажмите **Описание**, чтобы просмотреть полный список разрешений для этой роли. Страница содержит ссылки на соответствующую документацию со сведениями об управлении ролями в каталоге.
 
 ![список разрешений для роли администратора](./media/directory-manage-roles-portal/role-description.png)
+
+## <a name="download-role-assignments"></a>Скачать назначения ролей
+
+Чтобы скачать все назначения для определенной роли, на странице **роли и администраторы** выберите роль, а затем щелкните **загрузить назначения ролей**. CSV-файл, в котором перечисляются назначения для всех областей этой роли.
+
+![скачивание всех назначений для роли](./media/directory-manage-roles-portal/download-role-assignments.png)
 
 ## <a name="assign-a-role"></a>Назначение роли
 

@@ -16,12 +16,12 @@ ms.topic: reference
 ms.date: 03/20/2019
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ace8d170a5ba48c00775c3b376df8bb70a337d5d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 31388f27eddcef2c75d4ad4d2030655b35f6aa1c
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76897040"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87446962"
 ---
 # <a name="azure-ad-connect-health-version-release-history"></a>Azure AD Connect Health: история выпусков версий
 Команда Azure Active Directory регулярно добавляет в Azure AD Connect Health новые функции и возможности. В этой статье перечислены выпущенные версии и компоненты.  
@@ -42,11 +42,11 @@ ms.locfileid: "76897040"
    1. Добавление проверок Тествиндовстранспорт Test и удаление конечных точек WsTrust в тесте CheckOffice365Endpoints
    2. Журнал ОС и сведения о .NET
    3. Увеличьте размер отправляемых сообщений конфигурации RP до 1 МБ.
-   4. Исправленные ошибки
+   4. Исправления ошибок
    
 * Агент Azure AD Connect Health для AD DS (версия 3.1.56.0) 
    1. Журнал ОС и сведения о .NET 
-   2. Исправленные ошибки
+   2. Исправления ошибок
 
 ## <a name="may-2019"></a>Май 2019 г.
 **Обновление агента:** 
@@ -141,7 +141,7 @@ ms.locfileid: "76897040"
   1. Повышение доступности агента. 
   2. Исправления ошибок и общие улучшения.
 
-## <a name="december-2017"></a>Декабрь 2017 г.
+## <a name="december-2017"></a>Декабрь 2017 г.
 **Обновление агента:**
 
 * Агент Azure AD Connect Health для AD DS (версия 3.0.145.0).
@@ -159,7 +159,7 @@ ms.locfileid: "76897040"
  * Агент Azure AD Connect Health для синхронизации (версия 3.0.129.0) выпущен вместе с Azure AD Connect версии 1.1.649.0.
 <br></br> Исправлена проблема совместимости версий между Azure AD Connect и агентом Azure AD Connect Health для синхронизации. Эта проблема влияет на клиентов, выполняющих Azure AD Connect обновление на месте до версии 1.1.647.0, но в настоящее время имеет версию агента работоспособности 3.0.127.0. После обновления агент Azure AD Connect Health больше не может отправлять данные о службе синхронизации Azure AD Connect в службу Azure AD Health. Благодаря этому исправлению агент Azure AD Connect Health версии 3.0.129.0 устанавливается во время обновления на месте Azure AD Connect. В Azure AD Connect Health версии 3.0.129.0 нет проблемы совместимости с Azure AD Connect версии 1.1.649.0.
 
-## <a name="july-2017"></a>Июль 2017 г.
+## <a name="july-2017"></a>Июль 2017 г.
 **Обновление агента:**
 
 * Агент Azure AD Connect Health для AD DS (версия 3.0.68.0).
@@ -171,7 +171,7 @@ ms.locfileid: "76897040"
 * Агент Azure AD Connect Health для синхронизации (версия 3.0.68.0) выпущен вместе с Azure AD Connect версии 1.1.614.0.
   1. Поддержка облака Microsoft Azure для государственных организаций и Microsoft Cloud для Германии.
 
-## <a name="april-2017"></a>Апрель 2017 г.      
+## <a name="april-2017"></a>Апрель 2017 г.      
 **Обновление агента:**
 
 * Агент Azure AD Connect Health для AD FS (версия 3.0.12.0).
@@ -200,7 +200,7 @@ ms.locfileid: "76897040"
 
 * Azure AD Connect Health для AD FS — поле IP-адреса доступно в отчете о первых 50 пользователях с неверным именем пользователя и/или паролем.
 
-## <a name="july-2016"></a>Июль 2016 г.
+## <a name="july-2016"></a>Июль 2016 г.
 **Новые функции предварительной версии:**
 
 * [Azure AD Connect Health для AD DS](how-to-connect-health-adds.md).
@@ -217,7 +217,7 @@ ms.locfileid: "76897040"
 ## <a name="november-2015"></a>Ноябрь 2015 г.
 **Новые функции:**
 
-* Поддержка [управления доступом на основе ролей](how-to-connect-health-operations.md#manage-access-with-role-based-access-control)
+* Поддержка [управления доступом на основе ролей в Azure (Azure RBAC)](how-to-connect-health-operations.md#manage-access-with-role-based-access-control)
 
 **Новые функции предварительной версии:**
 
@@ -251,6 +251,5 @@ ms.locfileid: "76897040"
 * Тенденции неудачных запросов на серверах AD FS, сгруппированные по приложениям, типам ошибок и т. д.
 * Упрощенное развертывание агентов с помощью учетных данных глобального администратора Azure AD.  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о [мониторинге локальной инфраструктуры идентификации и служб синхронизации в облаке](whatis-hybrid-identity-health.md).
-

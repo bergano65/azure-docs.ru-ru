@@ -16,25 +16,25 @@ ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86e7f1fc18738eef39f8ec29da8763b862cdcc2b
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 7267da7db91e153190e98b09e9a3c505837bd042
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85849959"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87446309"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Установка агента Azure AD Connect Health
 
 В этом документе описываются этапы установки и настройки агентов Azure AD Connect Health. Загрузить агенты можно [отсюда](how-to-connect-install-roadmap.md#download-and-install-azure-ad-connect-health-agent):
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 В таблице ниже приведен список предварительных требований для использования Azure AD Connect Health.
 
 | Требование | Описание |
 | --- | --- |
 | Azure AD Premium |Служба Azure AD Connect Health относится к Azure AD Premium и требует наличия выпуска Azure AD Premium. <br /><br />Дополнительные сведения см. в статье [Приступая к работе с Azure AD Premium](../fundamentals/active-directory-get-started-premium.md) <br />Чтобы получить бесплатную 30-дневную пробную версию, перейдите [по этой ссылке](https://azure.microsoft.com/trial/get-started-active-directory/). |
-| Для начала работы с Azure AD Connect Health требуются права глобального администратора Azure AD  |По умолчанию только глобальный администратор может установить и настроить агенты работоспособности, чтобы приступить к работе, получить доступ к порталу и начать выполнять любые операции в Azure AD Connect Health. Дополнительные сведения см. в статье [Администрирование каталога Azure AD](../fundamentals/active-directory-administer.md). <br /><br /> С помощью управления доступом на основе ролей можно разрешить доступ к Azure AD Connect Health другим пользователям в организации. Дополнительные сведения см. в разделе [Управление доступом с помощью контроля доступа на основе ролей](how-to-connect-health-operations.md#manage-access-with-role-based-access-control). <br /><br />**Важно!** Учетная запись, которая используется во время установки агентов, должна быть рабочей или учебной. Учетную запись Майкрософт для этого использовать нельзя. Дополнительные сведения см. в статье [Подпишитесь на Azure как организация](../fundamentals/sign-up-organization.md). |
+| Для начала работы с Azure AD Connect Health требуются права глобального администратора Azure AD  |По умолчанию только глобальный администратор может установить и настроить агенты работоспособности, чтобы приступить к работе, получить доступ к порталу и начать выполнять любые операции в Azure AD Connect Health. Дополнительные сведения см. в статье [Администрирование каталога Azure AD](../fundamentals/active-directory-administer.md). <br /><br /> С помощью управления доступом на основе ролей Azure (Azure RBAC) можно разрешить доступ к Azure AD Connect Health другим пользователям в Организации. Дополнительные сведения см. в статье [Управление доступом на основе ролей Azure (Azure RBAC) для Azure AD Connect Health.](how-to-connect-health-operations.md#manage-access-with-role-based-access-control) <br /><br />**Важно!** Учетная запись, которая используется во время установки агентов, должна быть рабочей или учебной. Учетную запись Майкрософт для этого использовать нельзя. Дополнительные сведения см. в статье [Подпишитесь на Azure как организация](../fundamentals/sign-up-organization.md). |
 | Агент Azure AD Connect Health следует установить на всех целевых серверах | Для использования Azure AD Connect Health на целевых серверах необходимо установить и настроить агенты работоспособности, чтобы получать данные и предоставлять возможности мониторинга и аналитики. <br /><br />Например, для получения данных об инфраструктуре AD FS необходимо установить агент на серверы AD FS и прокси-серверы веб-приложений. Аналогично, для получения данных о локальной инфраструктуре AD DS агент необходимо установить на контроллеры домена. <br /><br /> |
 | Исходящие подключения к конечным точкам службы Azure | Во время установки и выполнения агенту требуется подключение к конечным точкам службы Azure AD Connect Health. При блокировке исходящего подключения с помощью брандмауэров убедитесь, что в список разрешенных добавлены указанные ниже конечные точки. См. [здесь](how-to-connect-health-agent-install.md#outbound-connectivity-to-the-azure-service-endpoints). |
 |Исходящие подключения на основе IP-адресов | Дополнительные сведения о фильтрации на основе IP-адресов в брандмауэрах см. в статье о [диапазонах IP-адресов Azure](https://www.microsoft.com/download/details.aspx?id=41653).|
@@ -294,7 +294,7 @@ Register-AzureADConnectHealthADDSAgent -Credential $myCreds
 Эти команды принимают учетные данные в качестве параметра, чтобы завершить регистрацию в неинтерактивном режиме или на основном серверном компьютере.
 * Учетные данные можно указать в переменной PowerShell, которая передается в качестве параметра.
 * Можно указать любое удостоверение Azure AD, которое имеет доступ на регистрацию агентов и в котором отключена Многофакторная идентификация.
-* По умолчанию глобальные администраторы имеют доступ на выполнение регистрации агента. Можно также разрешить выполнять этот шаг другим, менее привилегированным пользователям. Дополнительные сведения см. в статье [Контроль доступа на основе ролей в Azure](how-to-connect-health-operations.md#manage-access-with-role-based-access-control).
+* По умолчанию глобальные администраторы имеют доступ на выполнение регистрации агента. Можно также разрешить выполнять этот шаг другим, менее привилегированным пользователям. Узнайте больше об [управлении доступом на основе ролей в Azure (Azure RBAC)](how-to-connect-health-operations.md#manage-access-with-role-based-access-control).
 
 ```powershell
     $cred = Get-Credential
@@ -383,7 +383,7 @@ Test-AzureADConnectHealthConnectivity -Role ADFS
 Параметр role в настоящее время принимает следующие значения:
 
 * ADFS
-* Sync
+* Синхронизация
 * ADDS
 
 > [!NOTE]

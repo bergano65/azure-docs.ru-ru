@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 03/09/2020
 ms.author: juliako
-ms.openlocfilehash: 091a5d33e49e2abe811bf3cc250d04d69506165d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: dfbe1e7fdfca6f9959218f47d903301cb4b6d899
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87011640"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87448398"
 ---
 # <a name="media-services-v2-vs-v3"></a>Службы мультимедиа версии 2 и v3
 
@@ -83,7 +83,8 @@ API версии 3 содержит следующие недочеты функ
     * Вставка автоматической звуковой дорожки, если входные данные не имеют звука
     * Вставка видеодорожки, если у ввода нет видео
 * Сейчас события потоковой трансляции с перекодированием не поддерживают вставку баннера в поток и вставку рекламного маркера через вызов API. 
- 
+* Рекомендации `https://github.com/Azure-Samples/media-services-v2-dotnet-core-restsharp-sample.git` и шаблоны, касающиеся использования версии 2 REST API on, см. в разделе пример кода. Пакет SDK для NETCore.
+
 ## <a name="asset-specific-changes"></a>Изменения, относящиеся к ресурсу
 
 ### <a name="map-v3-asset-properties-to-v2"></a>Свойства ресурса V3 на карте версии 2

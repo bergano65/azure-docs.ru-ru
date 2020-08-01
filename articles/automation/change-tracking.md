@@ -5,12 +5,12 @@ services: automation
 ms.subservice: change-inventory-management
 ms.date: 06/08/2020
 ms.topic: conceptual
-ms.openlocfilehash: 192fd0fe73a34ca4d6ffc49badeac7ca8a080793
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: ca96f817407aaef808fa10fbedec7af7b5912dc8
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86185591"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87447930"
 ---
 # <a name="change-tracking-and-inventory-overview"></a>Общие сведения об отслеживании изменений и инвентаризации
 
@@ -203,7 +203,7 @@ ms.locfileid: "86185591"
 
 - Инструкции по включению этой функции из учетной записи службы автоматизации см. в статье [Включение отслеживания изменений и инвентаризации в учетной записи службы автоматизации](automation-enable-changes-from-auto-acct.md).
 
-- Сведения о включении этой функции путем просмотра портал Azure см. в разделе [включение отслеживание изменений и инвентаризации из портал Azure](automation-onboard-solutions-from-browse.md).
+- Сведения о включении этой функции путем просмотра портал Azure см. в разделе [включение отслеживание изменений и инвентаризации из портал Azure](automation-enable-changes-from-browse.md).
 
 - Инструкции по включению этой функции из модуля runbook см. в статье [Включение отслеживания изменений и инвентаризации в последовательности runbook](automation-enable-changes-from-runbook.md).
 

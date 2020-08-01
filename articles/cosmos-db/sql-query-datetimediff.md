@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/09/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: db037668cec736bc3060b1cd3bb9651ee860a39b
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: b90b45072128252e8abc22d3422c84c813808119
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86262249"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87446375"
 ---
 # <a name="datetimediff-azure-cosmos-db"></a>Датетимедифф (Azure Cosmos DB)
 
@@ -21,7 +21,7 @@ ms.locfileid: "86262249"
 ## <a name="syntax"></a>Синтаксис
   
 ```sql
-DateTimeAdd (<DateTimePart> , <StartDate> , <EndDate>)
+DateTimeDiff (<DateTimePart> , <StartDate> , <EndDate>)
 ```
 
 ## <a name="arguments"></a>Аргументы
@@ -31,12 +31,12 @@ DateTimeAdd (<DateTimePart> , <StartDate> , <EndDate>)
 
 | датетимепарт | сокращения;        |
 | ------------ | -------------------- |
-| Year         | "Year", "гггг", "гг" |
-| Month        | "month", "mm", "m"   |
+| Год         | "Year", "гггг", "гг" |
+| Месяц        | "month", "mm", "m"   |
 | День          | "Day", "DD", "d"     |
 | Час         | "Hour", "HH"         |
 | Минута       | "Minute", "MI", "n"  |
-| Второе       | "Second", "SS", "s"  |
+| Секунда       | "Second", "SS", "s"  |
 | Миллисекунда  | "миллисекунда", "MS"  |
 | Микросекунды  | "микросекунда", "MCS" |
 | Потребовавшееся   | "наносекундных", "NS"   |
@@ -65,7 +65,7 @@ DateTimeAdd (<DateTimePart> , <StartDate> , <EndDate>)
 
 Возвращает целочисленное значение со знаком.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 Датетимедифф будет возвращать `undefined` по следующим причинам:
 

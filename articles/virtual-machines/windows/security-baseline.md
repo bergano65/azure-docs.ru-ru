@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 10802cd141e0b10e30cb01d3d1dc385aedf7fc1e
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 11b532b5ece10c8a9ac6dad61e4ca64a9f19f901
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87387019"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87445208"
 ---
 # <a name="azure-security-baseline-for-windows-virtual-machines"></a>Базовый план безопасности Azure для Виртуальные машины Windows
 
@@ -620,9 +620,9 @@ ms.locfileid: "87387019"
 
 **Руководство**. Использование решения Azure Управление обновлениями для управления обновлениями и исправлениями для виртуальных машин. Управление обновлениями использует локально настроенный репозиторий обновлений для обновления поддерживаемых систем Windows. Такие средства, как System Center Updates Publisher (Updates Publisher), позволяют публиковать пользовательские обновления в Windows Server Update Services (WSUS). Этот сценарий позволяет Управление обновлениями исправлять компьютеры, использующие Configuration Manager в качестве репозитория обновлений программного обеспечения стороннего производителя.
 
-* [Решение для управления обновлениями в Azure](../../automation/automation-update-management.md)
+* [Решение для управления обновлениями в Azure](../../automation/update-management/update-mgmt-overview.md)
 
-* [Управление обновлениями и исправлениями для виртуальных машин Azure](../../automation/automation-tutorial-update-management.md)
+* [Управление обновлениями и исправлениями для виртуальных машин](../../automation/update-management/update-mgmt-manage-updates-for-vm.md)
 
 **Мониторинг Центра безопасности Azure**. Да
 
@@ -632,9 +632,9 @@ ms.locfileid: "87387019"
 
 **Руководство**. Вы можете использовать стороннее решение для управления исправлениями. Решение Azure Управление обновлениями можно использовать для управления обновлениями и исправлениями для виртуальных машин. Управление обновлениями использует локально настроенный репозиторий обновлений для обновления поддерживаемых систем Windows. Такие средства, как System Center Updates Publisher (Updates Publisher), позволяют публиковать пользовательские обновления в Windows Server Update Services (WSUS). Этот сценарий позволяет Управление обновлениями исправлять компьютеры, использующие Configuration Manager в качестве репозитория обновлений программного обеспечения стороннего производителя.
 
-* [Решение для управления обновлениями в Azure](../../automation/automation-update-management.md)
+* [Решение для управления обновлениями в Azure](../../automation/update-management/update-mgmt-overview.md)
 
-* [Управление обновлениями и исправлениями для виртуальных машин Azure](../../automation/automation-tutorial-update-management.md)
+* [Управление обновлениями и исправлениями для виртуальных машин](../../automation/update-management/update-mgmt-manage-updates-for-vm.md)
 
 **Мониторинг центра безопасности Azure**: недоступен
 

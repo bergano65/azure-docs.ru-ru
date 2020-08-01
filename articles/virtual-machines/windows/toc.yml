@@ -848,7 +848,7 @@
         - name: "Отправка VHD на диск\_— PowerShell"
           href: disks-upload-vhd-to-managed-disk-powershell.md
         - name: 'Безопасный импорт и экспорт диска: портал'
-          href: ../disks-enable-private-links-for-import-export-portal.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+          href: ../disks-enable-private-links-for-import-export-portal.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Изменение размера диска
           href: expand-os-disk.md
         - name: Использование Обозревателя службы хранилища для управления дисками

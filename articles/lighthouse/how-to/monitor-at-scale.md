@@ -3,12 +3,12 @@ title: Мониторинг делегированных ресурсов в м�
 description: Узнайте, как эффективно использовать журналы Azure Monitor в масштабируемом способе между клиентами клиентов, которыми вы управляете.
 ms.date: 07/15/2020
 ms.topic: how-to
-ms.openlocfilehash: 758437fdc7a32fd5937434ce10f16a8c792423d3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5cace0396c5a1f430ce10ba29ee051b5e432c125
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87072721"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87448949"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Мониторинг делегированных ресурсов в масштабе
 
@@ -38,7 +38,7 @@ ms.locfileid: "87072721"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Изучите [образец книги, созданной](https://github.com/scautomation/Azure-Automation-Update-Management-Workbooks)с помощью MVP, которая отслеживает отчеты о соответствии требованиям, [запросив журналы Управление обновлениями](../../automation/automation-update-management-query-logs.md) в нескольких log Analytics рабочих областях. 
+- Изучите [образец книги, созданной](https://github.com/scautomation/Azure-Automation-Update-Management-Workbooks)с помощью MVP, которая отслеживает отчеты о соответствии требованиям, [запросив журналы Управление обновлениями](../../automation/update-management/update-mgmt-query-logs.md) в нескольких log Analytics рабочих областях. 
 - Дополнительные сведения об [Azure Monitor](../../azure-monitor/index.yml).
 - Сведения о [журналах Azure Monitor](../../azure-monitor/platform/data-platform-logs.md).
 - Узнайте больше об [интерфейсах управления для различных клиентов](../concepts/cross-tenant-management-experience.md).

@@ -1,21 +1,21 @@
 ---
-title: Преобразование данных
+title: Преобразование данных в конструкторе (Предварительная версия)
 titleSuffix: Azure Machine Learning
-description: Сведения о преобразовании данных в конструкторе Машинного обучения Azure для создания собственных наборов данных.
+description: Узнайте, как преобразовать данные в конструктор Машинное обучение Azure (Предварительная версия), чтобы создать собственные наборы данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
 author: peterclu
 ms.author: peterlu
-ms.date: 05/04/2020
-ms.custom: designer
-ms.openlocfilehash: 718023424834ffca7a026dc5b3d35b8fb11fe633
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.date: 06/28/2020
+ms.topic: conceptual
+ms.custom: how-to, designer
+ms.openlocfilehash: 05a21ce10db2822c963f1b375842e9a7233e0816
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83644303"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87457827"
 ---
 # <a name="transform-data-in-azure-machine-learning-designer-preview"></a>Преобразование данных в конструкторе Машинного обучения Azure (предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -31,6 +31,8 @@ ms.locfileid: "83644303"
 1. Просмотр результатов.
 
 Ознакомление с этим руководством обязательно для изучения статьи [Переобучение моделей конструктора](how-to-retrain-designer.md). В этой статье вы узнаете, как использовать преобразованные наборы данных для обучения нескольких моделей с параметрами конвейера.
+
+[!INCLUDE [machine-learning-missing-ui](../../includes/machine-learning-missing-ui.md)]
 
 ## <a name="transform-a-dataset"></a>Преобразование набора данных
 
@@ -78,7 +80,7 @@ ms.locfileid: "83644303"
 
 Теперь конвейер будет выглядеть следующим образом:
 
-![Снимок экрана, демонстрирующий настройку конвейера и модуля Разделение данных](media/how-to-designer-transform-data/split-data.png).
+:::image type="content" source="./media/how-to-designer-transform-data/split-data.png"alt-text="Снимок экрана, демонстрирующий настройку конвейера и модуля Разделение данных":::
 
 
 ## <a name="save-the-datasets"></a>Сохранение наборов данных
@@ -110,7 +112,7 @@ ms.locfileid: "83644303"
     **Формат файла**: CSV.
 
     > [!NOTE]
-    > В этой статье предполагается, что у вас есть доступ к хранилищу данных, зарегистрированному в текущей рабочей области Машинного обучения Azure. Инструкции по настройке хранилища данных см. в статье [Подключение к службам хранилища Azure](how-to-access-data.md#azure-machine-learning-studio).
+    > В этой статье предполагается, что у вас есть доступ к хранилищу данных, зарегистрированному в текущей рабочей области Машинного обучения Azure. Инструкции по настройке хранилища данных см. в статье [Подключение к службам хранилища Azure](how-to-access-data.md#studio).
 
     Если у вас нет хранилища данных, его можно создать. Например, в этой статье наборы данных сохраняются в учетной записи хранения BLOB-объектов по умолчанию, связанной с рабочей областью. Наборы данных будут сохранены в контейнер `azureml` в новой папке с именем `data`.
 

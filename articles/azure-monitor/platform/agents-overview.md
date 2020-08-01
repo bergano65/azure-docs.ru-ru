@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/14/2020
-ms.openlocfilehash: a9786c1f596a9f59e63886fa503bddac58ee7a8e
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: c6aea3be5782c967c5816a1e40dc5443306671b3
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87325344"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87445291"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Общие сведения об агентах Azure Monitor
 
@@ -32,7 +32,7 @@ ms.locfileid: "87325344"
 | | Диагностика<br>расширение (WAD) | Log Analytics<br>агент | Зависимость<br>агент |
 |:---|:---|:---|:---|
 | **Поддерживаемые среды** | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>Локальная среда | 
-| **Требования к агентам**  | Отсутствуют | Отсутствуют | Требуется агент Log Analytics |
+| **Требования к агентам**  | None | None | Требуется агент Log Analytics |
 | **Собираемые данные** | журналы событий;<br>ETW-события<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | журналы событий;<br>Производительность<IIS logs><br>Файловые журналы<br>Полезные сведения и решения<br>Другие службы | Сведения о процессе и зависимости<br>Метрики сетевого подключения |
 | **Отправленные данные** | Хранилище Azure<br>Метрики Azure Monitor<br>Концентратор событий | Журналы Azure Monitor | Журналы Azure Monitor |
 
@@ -42,7 +42,7 @@ ms.locfileid: "87325344"
 | | Диагностика<br>расширение (LAD) | Telegraf<br>агент | Log Analytics<br>агент | Зависимость<br>агент |
 |:---|:---|:---|:---|:---|
 | **Поддерживаемые среды** | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>Локальная среда |
-| **Требования к агентам**  | Отсутствуют | Отсутствуют | Отсутствуют | Требуется агент Log Analytics |
+| **Требования к агентам**  | None | None | None | Требуется агент Log Analytics |
 | **Собираемые данные** | Системный журнал<br>Производительность | Производительность | Системный журнал<br>Производительность| Сведения о процессе и зависимости<br>Метрики сетевого подключения |
 | **Отправленные данные** | Хранилище Azure<br>Концентратор событий | Метрики Azure Monitor | Журналы Azure Monitor | Журналы Azure Monitor |
 
@@ -62,7 +62,7 @@ ms.locfileid: "87325344"
 * Отправляйте данные в рабочую область Log Analytics, чтобы воспользоваться преимуществами функций, поддерживаемых [Azure Monitor журналами](data-platform-logs.md#what-can-you-do-with-azure-monitor-logs) , такими как [запросы журналов](../log-query/log-query-overview.md).
 * Используйте [Azure Monitor для виртуальных машин](../insights/vminsights-overview.md) , которая позволяет отслеживать масштаб виртуальных машин и отслеживает их процессы и зависимости от других ресурсов и внешних процессов.  
 * Управляйте безопасностью виртуальных машин с помощью [центра безопасности Azure](../../security-center/security-center-intro.md) или [Sentinel Azure](../../sentinel/overview.md).
-* Использование [управления обновлениями службы автоматизации](../../automation/automation-update-management.md)Azure, [настройки состояния службы автоматизации](../../automation/automation-dsc-overview.md)Azure или [Отслеживание изменений и инвентаризации Azure Automation](../../automation/change-tracking.md) для предоставления комплексного управления виртуальными машинами Azure
+* Использование [управления обновлениями службы автоматизации](../../automation/update-management/update-mgmt-overview.md)Azure, [настройки состояния службы автоматизации](../../automation/automation-dsc-overview.md)Azure или [Отслеживание изменений и инвентаризации Azure Automation](../../automation/change-tracking.md) для предоставления комплексного управления виртуальными машинами Azure
 * Используйте различные [решения](../monitor-reference.md#insights-and-core-solutions) для мониторинга определенной службы или приложения.
 
 К ограничениям агента Log Analytics относятся:
@@ -118,6 +118,6 @@ ms.locfileid: "87325344"
 Дополнительные сведения о каждом из агентов см. в следующих статьях:
 
 - [Общие сведения об агенте Log Analytics](log-analytics-agent.md)
-- [Обзор расширения "Диагностика Azure"](diagnostics-extension-overview.md)
+- [Общие сведения о расширении "Диагностика Azure"](diagnostics-extension-overview.md)
 - [Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData](collect-custom-metrics-linux-telegraf.md)
 
