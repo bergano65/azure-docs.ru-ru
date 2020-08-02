@@ -3,13 +3,13 @@ title: Удаление группы ресурсов и ресурсов
 description: Описание удаления групп ресурсов и ресурсов. В нем описано, как Azure Resource Manager упорядочивает удаление ресурсов при удалении группы ресурсов. В этой статье описываются коды отклика и объясняется, как Resource Manager обрабатывает их для определения, успешно ли выполнено удаление.
 ms.topic: conceptual
 ms.date: 09/03/2019
-ms.custom: seodec18
-ms.openlocfilehash: 7c03296f8bec24da1fc85bae14e91ca742054d02
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: seodec18, devx-track-azurecli
+ms.openlocfilehash: 2720a9ae8c0a67d8e6f9c1105b33c0a3c343cf47
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82136487"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87498503"
 ---
 # <a name="azure-resource-manager-resource-group-and-resource-deletion"></a>Azure Resource Manager удаления группы ресурсов и ресурса
 
@@ -77,7 +77,7 @@ az group delete --name ExampleResourceGroup
 
 1. На [портале](https://portal.azure.com)выберите группу ресурсов, которую нужно удалить.
 
-1. Выберите **Удалить группу ресурсов**.
+1. Выберите команду **Удалить группу ресурсов**.
 
    ![Удалить группу ресурсов](./media/delete-resource-group/delete-group.png)
 
@@ -111,7 +111,7 @@ az resource delete \
 
 1. На [портале](https://portal.azure.com)выберите ресурс, который необходимо удалить.
 
-1. Выберите команду **Удалить**. На следующем снимке экрана показаны параметры управления для виртуальной машины.
+1. Выберите **Удалить**. На следующем снимке экрана показаны параметры управления для виртуальной машины.
 
    ![Удалить ресурс](./media/delete-resource-group/delete-resource.png)
 

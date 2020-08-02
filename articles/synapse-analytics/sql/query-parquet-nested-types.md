@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 60f2a1992750950b50995fcf36513e44e377004d
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: fb56c4da77ddeb87ebc3724a3b138994e4da98e7
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386611"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87489696"
 ---
 # <a name="query-nested-types-in-parquet-and-json-files-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Запрос вложенных типов в файлах Parquet и JSON с помощью SQL по запросу (Предварительная версия) в Azure синапсе Analytics
 
@@ -203,7 +203,7 @@ FROM
 
 Структура `MapOfPersons` возвращается в виде `VARCHAR` столбца и отформатирована как строка JSON.
 
-## <a name="projecting-values-from-repeated-columns"></a>Проецирование значений из повторяющихся столбцов
+## <a name="project-values-from-repeated-columns"></a>Значения проекта из повторяющихся столбцов
 
 Если имеется массив скалярных значений (например `[1,2,3]` ,) в некоторых столбцах, их можно легко развернуть и соединить с главной строкой, используя следующий скрипт:
 

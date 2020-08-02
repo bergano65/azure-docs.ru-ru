@@ -12,12 +12,13 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 07/15/2019
 ms.author: kumud
-ms.openlocfilehash: 2509034abb37c7dc90b65569d14f228eadb746c8
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 12233fd44a74d127e9b7de71971b9831cf80f7b4
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281622"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87492944"
 ---
 # <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-using-standard-load-balancerpreview"></a>Настройка конечных точек IPv6 в примере сценария виртуальной сети с помощью Load Balancer (цен. категория "Стандартный") (Предварительная версия)
 

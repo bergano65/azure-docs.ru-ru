@@ -3,12 +3,13 @@ title: Поставщики ресурсов и типы ресурсов
 description: Описывает поставщиков ресурсов, которые поддерживают диспетчер ресурсов, их схемы и доступные версии API, а также регионы, допускающие размещение ресурсов.
 ms.topic: conceptual
 ms.date: 08/29/2019
-ms.openlocfilehash: 82b8251006a1a2d4edd198eca843489d3720f8d6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 581b653c6d4769f7777b0ca56f136d25443c1ae4
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84702777"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87500016"
 ---
 # <a name="azure-resource-providers-and-types"></a>Поставщики и типы ресурсов Azure
 
@@ -285,7 +286,7 @@ West US
 ...
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о создании шаблонов диспетчер ресурсов см. в разделе [Создание шаблонов Azure Resource Manager](../templates/template-syntax.md). 
 * Схемы шаблонов поставщиков ресурсов см. в статье [Define resources in Azure Resource Manager templates](/azure/templates/) (Определение ресурсов в шаблонах Azure Resource Manager).

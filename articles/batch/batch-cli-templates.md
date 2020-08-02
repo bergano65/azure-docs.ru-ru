@@ -3,13 +3,13 @@ title: Комплексное выполнение заданий с помощ�
 description: Используя только команды CLI, можно создать пул, отправить входные данные, создать задания и связанные задачи и загрузить результаты выходных данных.
 ms.topic: how-to
 ms.date: 12/07/2018
-ms.custom: seodec18
-ms.openlocfilehash: 1029d2e156d219c88100a035f2ed4a51afa6ba36
-ms.sourcegitcommit: fc0431755effdc4da9a716f908298e34530b1238
+ms.custom: seodec18, devx-track-azurecli
+ms.openlocfilehash: e9b4930dee1b28bb4ec71690cbfcef88e0365b9e
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83816001"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87494933"
 ---
 # <a name="use-azure-batch-cli-templates-and-file-transfer"></a>Использование шаблонов интерфейса командной строки для пакетной службы Azure и передачи файлов
 

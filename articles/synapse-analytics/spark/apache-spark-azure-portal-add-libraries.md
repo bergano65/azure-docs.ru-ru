@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: euang
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: b0231b28894ea7233e5f6e588300f03cb8784e5b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c0d34d80df77b5c6fcdefc39b3bc3b1619a93705
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87036460"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496259"
 ---
 # <a name="add-and-manage-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Добавление и управление библиотеками для Apache Spark в Azure синапсе Analytics
 
@@ -21,7 +21,7 @@ Apache Spark зависит от многих библиотек, предост
 
 Пакеты Python можно добавить на уровне пула Spark (Предварительная версия), а пакеты на основе JAR-файлов можно добавить на уровне определения задания Spark.
 
-## <a name="adding-or-updating-python-libraries"></a>Добавление или обновление библиотек Python
+## <a name="add-or-update-python-libraries"></a>Добавление или обновление библиотек Python
 
 Apache Spark в Azure синапсе Analytics содержит полную установку Анакондас, а также дополнительные библиотеки. Список полных библиотек можно найти по адресу [Apache Spark поддержки версий](apache-spark-version-support.md).
 
@@ -51,7 +51,7 @@ alabaster==0.7.10
 
 ![Добавление библиотек Python](./media/apache-spark-azure-portal-add-libraries/add-python-libraries.png "Добавление библиотек Python")
 
-### <a name="verifying-installed-libraries"></a>Проверка установленных библиотек
+### <a name="verify-installed-libraries"></a>Проверка установленных библиотек
 
 Чтобы проверить, установлены ли правильные версии правильных библиотек, выполните приведенный ниже код.
 

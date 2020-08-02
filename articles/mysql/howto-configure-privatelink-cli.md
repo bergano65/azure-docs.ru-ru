@@ -6,12 +6,13 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: how-to
 ms.date: 01/09/2020
-ms.openlocfilehash: 78634ee7236c8bc0d256bac7eea521e699c0c39d
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 105cb38ccb65c96e2a1177e09839fc9d295c2b80
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86113298"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87489951"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mysql-using-cli"></a>Создание и управление частной связью для базы данных Azure для MySQL с помощью интерфейса командной строки
 
@@ -176,7 +177,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
     | Пароль | Введите пароль, предоставленный при создании сервера MySQL. |
     ||
 
-5. Выберите Подключиться.
+5. Нажмите кнопку "Подключиться".
 
 6. Просмотр баз данных из левого меню.
 

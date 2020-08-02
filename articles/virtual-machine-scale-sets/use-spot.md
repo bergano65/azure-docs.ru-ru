@@ -8,13 +8,13 @@ ms.service: virtual-machine-scale-sets
 ms.subservice: spot
 ms.date: 03/25/2020
 ms.reviewer: jagaveer
-ms.custom: jagaveer
-ms.openlocfilehash: 70d7eb000ed2d50bc22bb005621ee7515e5a2a61
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.custom: jagaveer, devx-track-azurecli
+ms.openlocfilehash: 2898364811616c16a0c33ea26dcaacace9c2c4ed
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86527461"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87491805"
 ---
 # <a name="azure-spot-vms-for-virtual-machine-scale-sets"></a>Виртуальные машины с Точкию Azure для масштабируемых наборов виртуальных машин 
 
@@ -101,7 +101,7 @@ $vmssConfig = New-AzVmssConfig `
 
 Чтобы удалить экземпляр после его исключения, измените значение `evictionPolicy` параметра на `Delete` .
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 **Вопрос.** После создания экземпляр будет таким же, как и стандартный экземпляр?
 

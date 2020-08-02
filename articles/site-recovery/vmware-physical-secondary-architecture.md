@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: 9b16a0edc1549a1b4d8ef5ba53d8b795f6d74e07
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 7c884ce839523706e67e4278f43e237e1a2b0580
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87418327"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496973"
 ---
 # <a name="architecture-for-vmwarephysical-server-replication-to-a-secondary-on-premises-site"></a>Архитектура для репликации виртуальных машин VMware или физических серверов в дополнительном локальном расположении
 
@@ -42,7 +42,7 @@ ms.locfileid: "87418327"
 
 При использовании прокси-сервера или брандмауэра на основе URL-адресов для управления исходящими подключениями разрешите использование этих URL-адресов:
 
-| **Имя**                  | **Коммерческое**                               | **Государственные организации**                                 | **Описание** |
+| **Имя**                  | **Коммерческое**                               | **Государственный сектор**                                 | **Описание** |
 | ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
 | Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
 | Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Обеспечивает авторизацию и проверку подлинности URL-адресов службы Site Recovery. |
@@ -55,9 +55,7 @@ ms.locfileid: "87418327"
 2. После начальной репликации агент на каждом компьютере отправляет сведения об изменениях дельта-репликации на сервер обработки.
 3. Сервер обработки оптимизирует эти данные и передает их на главный целевой сервер на дополнительном сайте. Сервер конфигурации управляет процессом репликации.
 
-**Рис. 6. Репликация VMware в VMware**
-
-![VMware в VMware](./media/site-recovery-components/vmware-to-vmware.png)
+![Схема, показывающая репликацию виртуальных машин VMware и физических серверов в дополнительный центр обработки данных](./media/site-recovery-components/vmware-to-vmware.png)
 
 
 

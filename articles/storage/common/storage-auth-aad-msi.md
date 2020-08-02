@@ -10,12 +10,12 @@ ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 6571f4351fb3410d1c10079a41b7041eb85ee5e3
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 28563dc1e8acf4e521d75a7f4f8986d92d2a8348
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423768"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87497942"
 ---
 # <a name="authorize-access-to-blob-and-queue-data-with-managed-identities-for-azure-resources"></a>Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "87423768"
 
 Дополнительные сведения о клиентской библиотеке удостоверений Azure для .NET см. в статье [Клиентская библиотека удостоверений Azure для .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/identity/Azure.Identity). Справочную документацию по клиентской библиотеке удостоверений Azure см. в статье [пространство имен Azure. Identity](/dotnet/api/azure.identity).
 
-### <a name="assign-role-based-access-control-rbac-roles-for-access-to-data"></a>Назначение ролей управления доступом на основе ролей (RBAC) для доступа к данным
+### <a name="assign-azure-roles-for-access-to-data"></a>Назначение ролей Azure для доступа к данным
 
 Когда субъект безопасности Azure AD пытается получить доступ к данным большого двоичного объекта или очереди, этот субъект безопасности должен иметь разрешения для ресурса. Независимо от того, является ли участник безопасности управляемым удостоверением в Azure или учетной записью пользователя Azure AD, выполняющего код в среде разработки, участнику безопасности должна быть назначена роль RBAC, которая предоставляет доступ к данным большого двоичного объекта или очереди в службе хранилища Azure. Сведения о назначении разрешений через RBAC см. в разделе **назначение РОЛЕЙ RBAC для прав доступа** в статье [авторизация доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](../common/storage-auth-aad.md#assign-rbac-roles-for-access-rights).
 

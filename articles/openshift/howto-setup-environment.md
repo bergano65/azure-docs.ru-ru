@@ -7,12 +7,13 @@ ms.author: jzim
 ms.date: 11/04/2019
 ms.topic: conceptual
 ms.service: container-service
-ms.openlocfilehash: e7396ce9fbed46688d59b582f246e5454d063fb3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 64b71c135126ebb540d5ccf72f829f83c74ed0b3
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79477040"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495324"
 ---
 # <a name="set-up-your-azure-red-hat-openshift-dev-environment"></a>Настройка среды разработки Azure Red Hat OpenShift
 
@@ -106,7 +107,7 @@ Azure Red Hat OpenShift требуются разрешения для выпо�
 
 Следуйте инструкциям в разделе [Создание объекта приложения Azure AD и пользователя](howto-aad-app-configuration.md) для создания субъекта-службы, создание секрета клиента и URL обратного вызова проверки подлинности для вашего приложения, а также создание новой группы безопасности Azure AD и пользователя для доступа к кластеру.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы готовы использовать Azure Red Hat OpenShift!
 

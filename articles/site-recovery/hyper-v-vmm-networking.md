@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: c0426872c29fa126514f22a5f4fb57f19903c967
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 43942c20a353ff69383f3e721679e4c95ab9d230
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87021670"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495949"
 ---
 # <a name="set-up-ip-addressing-to-connect-to-a-secondary-on-premises-site-after-failover"></a>Настройка назначения IP-адресов для подключения к локальному веб-сайту после отработки отказа
 
@@ -63,11 +63,11 @@ ms.locfileid: "87021670"
 
 **До отработки отказа**
 
-![До отработки отказа](./media/hyper-v-vmm-networking/network-design2.png)
+![Схема, показывающая подсети перед отработкой отказа.](./media/hyper-v-vmm-networking/network-design2.png)
 
 **После отработки отказа**
 
-![После отработки отказа](./media/hyper-v-vmm-networking/network-design3.png)
+![Схема, показывающая подсети после отработки отказа.](./media/hyper-v-vmm-networking/network-design3.png)
 
 После отработки отказа Site Recovery выделяет IP-адреса для каждого сетевого интерфейса виртуальной машины. Адрес назначается из пула статических IP-адресов в соответствующей сети для каждого экземпляра виртуальной машины.
 
@@ -118,11 +118,11 @@ $ip.address
 
 **До отработки отказа**
 
-![Другой IP-адрес — до отработки отказа](./media/hyper-v-vmm-networking/network-design10.png)
+![Схема, показывающая различные IP-адреса перед отработкой отказа.](./media/hyper-v-vmm-networking/network-design10.png)
 
 **После отработки отказа**
 
-![Другой IP-адрес — после отработки отказа](./media/hyper-v-vmm-networking/network-design11.png)
+![Диаграмма, показывающая различные IP-адреса после отработки отказа.](./media/hyper-v-vmm-networking/network-design11.png)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

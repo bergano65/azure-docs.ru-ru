@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 05/19/2020
 ms.author: kenwith
 ms.reviewer: luleon
-ms.openlocfilehash: 5b5de26afceb1127b42c937f1cb1005a660881d4
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 4dd6a40ed0fe0c4ec168300b3688fc3ba5cacbb9
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87273428"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87499149"
 ---
 # <a name="automate-saml-based-sso-app-configuration-with-microsoft-graph-api"></a>Автоматизация настройки единого входа на основе SAML для приложений с помощью API Microsoft Graph
 
@@ -194,6 +194,8 @@ Content-type: application/json
 
 В этом примере вы настроите режим единого входа `saml` для [типа ресурса servicePrincipal](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0). Также вы можете настроить другие свойства единого входа SAML: `notificationEmailAddresses`, `loginUrl` и `samlSingleSignOnSettings.relayState`.
 
+Прежде чем этот запрос будет работать, необходимо предоставить согласие на вкладке **изменение разрешений** в обозревателе Graph. Кроме того, убедитесь, что вы используете идентификатор **servicePrincipal** , полученный ранее.
+
 #### <a name="request"></a>Запрос
 
 <!-- {
@@ -224,6 +226,8 @@ HTTP/1.1 204
 ### <a name="set-basic-saml-urls-such-as-identifier-reply-url-sign-on-url"></a>Настройка основных URL-адресов SAML, таких как идентификатор, URL-адрес ответа и URL-адрес входа
 
 Задайте идентификатор и URL-адреса ответа для AWS в объекте приложения.
+
+Убедитесь, что вы используете идентификатор **приложения** , полученный ранее.
 
 #### <a name="request"></a>Запрос
 

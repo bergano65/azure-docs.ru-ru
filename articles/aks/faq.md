@@ -2,13 +2,13 @@
 title: Вопросы и ответы о Службе Azure Kubernetes (AKS)
 description: найдите ответы на некоторые распространенные вопросы о Службе Azure Kubernetes (AKS).
 ms.topic: conceptual
-ms.date: 07/21/2020
-ms.openlocfilehash: 4d93a4f3b58fc38710184f345fd467b2beb32b1a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 07/31/2020
+ms.openlocfilehash: 6d30bc1faa6a896233d09f9247fe8c56f82371fa
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87057199"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87485632"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
 
@@ -190,6 +190,10 @@ AKS предоставляет гарантии в рамках соглашен
 ## <a name="can-i-use-custom-vm-extensions"></a>Можно ли использовать пользовательские расширения виртуальных машин?
 
 Нет, AKS является управляемой службой, и управление ресурсами IaaS не поддерживается. Для установки пользовательских и тому подобных компонентов используйте интерфейсы API и механизмы Kubernetes. Например, используйте контроллеры DaemonSet для установки необходимых компонентов.
+
+## <a name="does-aks-store-any-customer-data-outside-of-the-clusters-region"></a>Сохраняет ли AKS данные клиентов за пределами региона кластера?
+
+Нет. Все данные, созданные в кластере AKS, сохраняются в регионе кластера.
 
 <!-- LINKS - internal -->
 

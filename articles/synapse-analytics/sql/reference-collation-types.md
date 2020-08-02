@@ -8,12 +8,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: c36df4745e276471e35addf4774470dbaaa9e150
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1099c4e4dd69a8dc8caee96ec5dda633ce8b9d12
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87080715"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496208"
 ---
 # <a name="database-collation-support-for-synapse-sql"></a>Поддержка параметров сортировки базы данных для синапсе SQL
 
@@ -23,7 +23,7 @@ ms.locfileid: "87080715"
 
 Можно указать параметры сортировки базы данных SQL по запросу по умолчанию синапсе во время создания с помощью инструкции CREATE DATABASE.
 
-## <a name="changing-collation"></a>Изменение параметров сортировки
+## <a name="change-collation"></a>Изменить параметры сортировки
 Чтобы изменить параметры сортировки по умолчанию для базы данных пула SQL, вы просто обновляете поле Параметры сортировки в процессе подготовки. Например, если вы хотите изменить параметры сортировки по умолчанию на с учетом регистра, просто переименуйте параметры сортировки с SQL_Latin1_General_CP1_CI_AS на SQL_Latin1_General_CP1_CS_AS. 
 
 Чтобы изменить параметры сортировки по умолчанию для базы данных SQL по запросу, можно использовать инструкцию ALTER DATABASE.
@@ -104,7 +104,7 @@ ms.locfileid: "87080715"
 *    SQL_EBCDIC277_2_CP1_CS_AS
 *    UTF-8
 
-## <a name="checking-the-current-collation"></a>Проверка текущих параметров сортировки
+## <a name="check-the-current-collation"></a>Проверить текущие параметры сортировки
 Чтобы проверить текущие параметры сортировки для базы данных, можно выполнить следующий фрагмент кода T-SQL:
 ```sql
 SELECT DATABASEPROPERTYEX(DB_NAME(), 'Collation') AS Collation;

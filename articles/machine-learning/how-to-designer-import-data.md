@@ -10,12 +10,12 @@ ms.author: peterlu
 ms.date: 01/16/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: 92568ceb9c7f0a428189647f259a3f84278eb612
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: d977c8e13ce75eb276c8fdb11e9dd40e40a923ad
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327010"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495377"
 ---
 # <a name="import-data-into-azure-machine-learning-designer-preview"></a>Импорт данных в конструктор Машинное обучение Azure (Предварительная версия)
 
@@ -32,7 +32,7 @@ ms.locfileid: "87327010"
 
 ### <a name="register-a-dataset"></a>Регистрация набора данных
 
-Имеющиеся наборы данных можно зарегистрировать [программно с помощью пакета SDK](how-to-create-register-datasets.md#use-the-sdk) или [вручную в Студии машинного обучения Azure](how-to-create-register-datasets.md#use-the-ui).
+Имеющиеся наборы данных можно зарегистрировать [программно с помощью пакета SDK](how-to-create-register-datasets.md#datasets-sdk) или [вручную в Студии машинного обучения Azure](how-to-create-register-datasets.md#datasets-ui).
 
 Можно также зарегистрировать в качестве набора данных выходные данные любого модуля конструктора.
 
@@ -59,7 +59,7 @@ ms.locfileid: "87327010"
 Подробные сведения об использовании модуля импорта данных см. на странице [справочных материалов по импорту данных](algorithm-module-reference/import-data.md).
 
 > [!NOTE]
-> Если набор данных содержит слишком много столбцов, может возникнуть следующая ошибка: "Сбой проверки из-за ограничения размера". Чтобы избежать этой ошибки, [зарегистрируйте набор данных в интерфейсе наборов данных](how-to-create-register-datasets.md#use-the-ui).
+> Если набор данных содержит слишком много столбцов, может возникнуть следующая ошибка: "Сбой проверки из-за ограничения размера". Чтобы избежать этой ошибки, [зарегистрируйте набор данных в интерфейсе наборов данных](how-to-create-register-datasets.md#datasets-ui).
 
 ## <a name="supported-sources"></a>Поддерживаемые источники
 

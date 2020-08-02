@@ -10,14 +10,14 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: d87da234e675059ba2c170f4322d0ba53965dc89
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c5d23770aab0bde745152d918adfe83209819899
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87075692"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87500765"
 ---
-# <a name="using-transactions-in-sql-pool"></a>Использование транзакций в пуле SQL
+# <a name="use-transactions-in-sql-pool"></a>Использование транзакций в пуле SQL
 
 Советы по реализации транзакций в пуле SQL (хранилище данных) для разработки решений.
 
@@ -183,7 +183,7 @@ SELECT @xact_state AS TransactionState;
 
 Также следует отметить, что пул SQL не реализует и не поддерживает функцию ERROR_LINE(). Если она используется в коде, ее необходимо удалить, чтобы обеспечить совместимость с пулом SQL. Вместо этого используйте в коде метки запросов, чтобы реализовать эквивалентную функциональность. Дополнительные сведения см. в статье [Использование меток для инструментирования запросов в хранилище данных SQL](develop-label.md).
 
-## <a name="using-throw-and-raiserror"></a>Использование THROW и RAISERROR
+## <a name="use-of-throw-and-raiserror"></a>Использование инструкции THROW и RAISERROR
 
 THROW — это более современная реализация вызова исключений в пуле SQL, но поддерживается и RAISERROR. Тем не менее, существует ряд различий, которые заслуживают внимания.
 

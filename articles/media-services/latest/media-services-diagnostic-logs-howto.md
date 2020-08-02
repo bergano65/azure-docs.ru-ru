@@ -13,12 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/08/2019
 ms.author: juliako
-ms.openlocfilehash: 19acd39be11a33424008662eb27cd68ec0005f77
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 15c8cd3eff7b0eb64e1a512282de129f606a33ce
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87038959"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87501241"
 ---
 # <a name="monitor-media-services-diagnostic-logs"></a>Мониторинг журналов диагностики служб мультимедиа
 
@@ -49,7 +50,7 @@ ms.locfileid: "87038959"
 
    ![Раздел параметров диагностики](media/media-services-diagnostic-logs/logs02.png)
 1. Задайте для ползунка **Хранение (в днях)** значение 30. Этот ползунок задает количество дней хранения данных мониторинга в учетной записи хранения. Azure Monitor автоматически удаляет данные, которые хранятся дольше заданного количества дней. Нулевое значение для периода хранения означает, что данные будут храниться неограниченно долго.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 Данные мониторинга из ресурса теперь поступают в учетную запись хранения.
 
@@ -73,7 +74,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
     }]'
 ```
 
-Например.
+Пример:
 
 ```azurecli-interactive
 az monitor diagnostic-settings create --name amsv3diagnostic \

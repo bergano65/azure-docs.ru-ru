@@ -6,12 +6,13 @@ ms.author: ambhatna
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 39b07e313213be2645d211f292d49d9fa1a8d6bc
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 2f4ebe13560da58685ac352a102042b9312d4efd
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86120166"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87497143"
 ---
 # <a name="auto-grow-azure-database-for-mariadb-storage-using-the-azure-cli"></a>Автоматическое увеличение хранилища базы данных Azure для MariaDB с помощью Azure CLI
 В этой статье описывается, как можно настроить расширение хранилища базы данных Azure для MariaDB, не влияя на рабочую нагрузку.

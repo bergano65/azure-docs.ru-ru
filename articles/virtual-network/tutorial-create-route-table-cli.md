@@ -16,13 +16,13 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 03/13/2018
 ms.author: kumud
-ms.custom: ''
-ms.openlocfilehash: 70f7bd4443602f6f18be54c5bc4ff038e868e58e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 027165f797977311fd77f3cd3e626b126c26e47b
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84703355"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87494678"
 ---
 # <a name="route-network-traffic-with-a-route-table-using-the-azure-cli"></a>Маршрутизация сетевого трафика с помощью таблицы маршрутов и Azure CLI
 
@@ -277,7 +277,7 @@ traceroute to myVmPrivate (10.0.1.4), 30 hops max, 60 byte packets
 az group delete --name myResourceGroup --yes
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 При работе с этой статьей вы создали таблицу маршрутов и связали ее с подсетью. Вы также создали простой виртуальный сетевой модуль, который направляет трафик из общедоступной подсети в частную подсеть. [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/networking) предоставляет широкий выбор предварительно настроенных виртуальных сетевых модулей для разных сетевых функций, например модули брандмауэра и оптимизация доступа к глобальной сети. См. дополнительные сведения о [маршрутизации](virtual-networks-udr-overview.md) и [управлении таблицей маршрутов](manage-route-table.md).
 

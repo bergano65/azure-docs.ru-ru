@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 06/04/2020
 ms.author: mjbrown
-ms.openlocfilehash: a061676714c35b4e8868ce3df9c71be05297ba99
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 995e5a1a87ee332c48641f42c4134e3e58f11cfa
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85261670"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495426"
 ---
 # <a name="configure-access-from-virtual-networks-vnet"></a>Настройка доступа из виртуальных сетей (VNet)
 
@@ -82,7 +83,7 @@ ms.locfileid: "85261670"
 
    :::image type="content" source="./media/how-to-configure-vnet-service-endpoint/remove-a-vnet.png" alt-text="Удаление виртуальной сети":::
 
-1. Щелкните **Сохранить**, чтобы применить изменения.
+1. Выберите **Сохранить**, чтобы применить изменения.
 
 ## <a name="configure-a-service-endpoint-by-using-azure-powershell"></a><a id="configure-using-powershell"></a>Настройка конечной точки службы с помощью Azure PowerShell
 
@@ -306,6 +307,6 @@ az network vnet subnet update \
 
 1. Удалите правило брандмауэра IP для подсети из правил брандмауэра учетной записи Azure Cosmos DB.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о настройке брандмауэра для Azure Cosmos DB см. в статье [Поддержка брандмауэра](firewall-support.md) для Azure Cosmos DB.

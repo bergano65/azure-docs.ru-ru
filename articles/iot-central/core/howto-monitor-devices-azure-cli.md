@@ -6,14 +6,15 @@ ms.author: viviali
 ms.date: 03/27/2020
 ms.topic: how-to
 ms.service: iot-central
+ms.custom: devx-track-azurecli
 services: iot-central
 manager: corywink
-ms.openlocfilehash: 1a6106a45f5062850ceb12205528a05ed1d494be
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b9cf8b862f77af833016d6aabb0ccae7bea8e24a
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81756665"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87497432"
 ---
 # <a name="monitor-device-connectivity-using-azure-cli"></a>Мониторинг подключения устройств с помощью Azure CLI
 
@@ -23,7 +24,7 @@ ms.locfileid: "81756665"
 
 [Дополнительные сведения см. в справочнике по расширениям Azure CLI.](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/central?view=azure-cli-latest)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 + Azure CLI установлен и имеет версию 2.0.7 или более позднюю. Проверьте версию Azure CLI, выполнив `az --version` . Узнайте, как устанавливать и обновлять [документы Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
 + Рабочая или учебная учетная запись в Azure, добавленная в качестве пользователя в IoT Centralое приложение.
@@ -77,6 +78,6 @@ az iot central app monitor-events --app-id <app-id> --properties all
 az iot central device-twin show --app-id <app-id> --device-id <device-id>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы являетесь разработчиком устройства, рекомендуем следующий шаг — прочитать сведения о [подключении устройства в Azure IOT Central](./concepts-get-connected.md).

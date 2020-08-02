@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 8b95f6b6eca0f1464a7d09d2810aa66836d76f8f
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 04b2d7842222426010b76a1a7ed4c72ee74e3d87
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386645"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87489730"
 ---
 # <a name="query-json-files-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Запрос вложенных типов Parquet с помощью SQL по запросу (предварительная версия) в Azure Synapse Analytics
 
@@ -22,7 +22,7 @@ ms.locfileid: "87386645"
 - Стандартные JSON-файлы, в которых хранятся несколько документов JSON в виде массива JSON.
 - Разделенные строками JSON-файлы, в которых документы JSON разделяются символом новой строки. К общим расширениям для этих типов файлов относятся `jsonl` , `ldjson` и `ndjson` .
 
-## <a name="reading-json-documents"></a>Чтение документов JSON
+## <a name="read-json-documents"></a>Чтение документов JSON
 
 Самый простой способ увидеть содержимое файла JSON — предоставить URL-адрес файла для `OPENROWSET` работы, указать CSV `FORMAT` и задать значения `0x0b` для параметров `fieldterminator` и `fieldquote` . Если необходимо считать файлы JSON, разделенные строками, это достаточно. Если у вас есть классический файл JSON, необходимо задать значения `0x0b` для параметра `rowterminator` . `OPENROWSET`функция будет анализировать JSON и возвращать каждый документ в следующем формате:
 
@@ -60,7 +60,7 @@ from openrowset(
 
 Этот запрос возвратит каждый документ JSON в виде отдельной строки результирующего набора. Убедитесь, что у вас есть доступ к этому файлу. Если файл защищен с помощью ключа SAS или пользовательского удостоверения, необходимо настроить [учетные данные на уровне сервера для входа SQL](develop-storage-files-storage-access-control.md?tabs=shared-access-signature#server-scoped-credential). 
 
-### <a name="using-data-source"></a>Использование источника данных
+### <a name="data-source-usage"></a>Использование источника данных
 
 В предыдущем примере используется полный путь к файлу. В качестве альтернативы можно создать внешний источник данных с расположением, которое указывает на корневую папку хранилища, и использовать этот источник данных и относительный путь к файлу в `OPENROWSET` функции:
 

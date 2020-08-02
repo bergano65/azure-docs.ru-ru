@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18, contperfq4
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 347232d452b5d309da7cdb7c8fe34f0e41abde00
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 86223c35118c9c54be49fa830a264a0059ef3937
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87025344"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87494440"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
 
@@ -38,7 +38,7 @@ ms.locfileid: "87025344"
 > Перемещение кластера Azure Kubernetes Service (AKS) в другую подписку или перемещение владения кластером в новый клиент приводит к потере функциональности кластера из-за потери назначений ролей и прав субъекта-службы. Дополнительные сведения о AKS см. в статье [Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/).
 
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Прежде чем можно будет связать или добавить подписку, выполните следующие действия.
 
@@ -95,6 +95,6 @@ ms.locfileid: "87025344"
 
 - Сведения о создании нового клиента Azure AD см. [в разделе Краткое руководство. Создание нового клиента в Azure Active Directory](active-directory-access-create-new-tenant.md).
 
-- Дополнительные сведения о том, как Microsoft Azure контролирует доступ к ресурсам, см. в разделе [роли администратора классической подписки, роли RBAC Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md).
+- Дополнительные сведения о том, как Microsoft Azure контролирует доступ к ресурсам, см. в разделе [роли администратора классической подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md).
 
 - Дополнительные сведения о назначении ролей в Azure AD см. в статье [назначение ролей администратора и пользователей, не являющихся администраторами, с помощью Azure Active Directory](active-directory-users-assign-role-azure-portal.md).

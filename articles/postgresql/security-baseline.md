@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 89d760e28025f64b8cd8940fc08f06d23c969e12
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 475933bcc9219808087671d49778cc3696d8c815
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83655753"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87500799"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql-single-server"></a>Базовая конфигурация безопасности для базы данных Azure для PostgreSQL (отдельный сервер)
 
 Базовая конфигурация безопасности для базы данных Azure для PostgreSQL (отдельный сервер) содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовая конфигурация безопасности для этой службы взята из [Эталона безопасности Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
 Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
 
@@ -26,7 +26,7 @@ ms.locfileid: "83655753"
 
 *Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](https://docs.microsoft.com/azure/security/benchmarks/security-control-network-security).*
 
-### <a name="11-protect-resources-using-network-security-groups-or-azure-firewall-on-your-virtual-network"></a>1.1: Защита ресурсов в виртуальной сети с помощью групп безопасности сети или Брандмауэра Azure
+### <a name="11-protect-resources-using-network-security-groups-or-azure-firewall-on-your-virtual-network"></a>1.1. Защита ресурсов в виртуальной сети с помощью групп безопасности сети или Брандмауэра Azure
 
 **Руководство**: Настройте приватный канал для базы данных Azure для PostgreSQL с частными конечными точками. Приватный канал позволяет подключаться к различным службам PaaS в Azure через частную конечную точку. Приватный канал Azure, по сути, предоставляет службы Azure в частной виртуальной сети (VNet). Трафик между виртуальной сетью и экземпляром PostgreSQL проходит через магистральную сеть Майкрософт.
 
@@ -40,29 +40,29 @@ ms.locfileid: "83655753"
 
 Настройка правил брандмауэра сервера базы данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/howto-manage-firewall-using-portal
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
 ### <a name="12-monitor-and-log-the-configuration-and-traffic-of-vnets-subnets-and-nics"></a>1.2: Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых карт
 
-**Руководство**: Если база данных Azure для экземпляра PostgreSQL защищена частной конечной точкой, вы можете развернуть виртуальные машины в той же виртуальной сети. Чтобы снизить риск утечки данных, можно использовать группу безопасности сети (NSG). Включите журналы потоков NSG и отправьте журналы в учетную запись хранения для аудита трафика. Вы также можете отправить журналы потоков NSG в рабочую область Log Analytics и использовать аналитику трафика для получения ценных сведений о потоке трафика в облаке Azure. Некоторые преимущества Аналитики трафика — это возможность визуализировать сетевые активности и определять горячие участки, выявлять угрозы безопасности, анализировать шаблоны потоков трафика и выявлять некорректные сетевые настройки.
+**Руководство**: Если база данных Azure для экземпляра PostgreSQL защищена частной конечной точкой, вы можете развернуть виртуальные машины в той же виртуальной сети. Чтобы снизить риск утечки данных, можно использовать группу безопасности сети (NSG). Включите журналы потоков NSG и отправьте журналы в учетную запись хранения для аудита трафика. Вы также можете отправить журналы потоков NSG в рабочую область Log Analytics и использовать аналитику трафика для получения ценных сведений о потоке трафика в облаке Azure. Некоторые преимущества Аналитики трафика — это возможность визуализировать сетевые активности и определять горячие участки, выявлять угрозы безопасности, анализировать шаблоны потоков трафика и выявлять некорректные сетевые настройки.
 
 Настройте приватный канал для базы данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/howto-configure-privatelink-portal
 
-Как включить журналы потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
+Включение журналов потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
 
-Как включать и использовать Аналитику трафика: https://docs.microsoft.com/azure/network-watcher/traffic-analytics
+Включение и использование Аналитики трафика: https://docs.microsoft.com/azure/network-watcher/traffic-analytics
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
-### <a name="13-protect-critical-web-applications"></a>1.3: Защита критических веб-приложений
+### <a name="13-protect-critical-web-applications"></a>1.3. Защита критических веб-приложений
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
+**Руководство**. Неприменимо; эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -76,19 +76,19 @@ ms.locfileid: "83655753"
 
 Настройка защиты от атак DDoS: https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
 ### <a name="15-record-network-packets-and-flow-logs"></a>1.5: Запись сетевых пакетов и журналов потоков
 
-**Руководство**: Если база данных Azure для экземпляра PostgreSQL защищена частной конечной точкой, вы можете развернуть виртуальные машины в той же виртуальной сети. Чтобы снизить риск утечки данных, можно настроить группу безопасности сети (NSG). Включите журналы потоков NSG и отправьте журналы в учетную запись хранения для аудита трафика. Вы также можете отправить журналы потоков NSG в рабочую область Log Analytics и использовать аналитику трафика для получения ценных сведений о потоке трафика в облаке Azure. Некоторые преимущества Аналитики трафика — это возможность визуализировать сетевые активности и определять горячие участки, выявлять угрозы безопасности, анализировать шаблоны потоков трафика и выявлять некорректные сетевые настройки.
+**Руководство**: Если база данных Azure для экземпляра PostgreSQL защищена частной конечной точкой, вы можете развернуть виртуальные машины в той же виртуальной сети. Чтобы снизить риск утечки данных, можно настроить группу безопасности сети (NSG). Включите журналы потоков NSG и отправьте журналы в учетную запись хранения для аудита трафика. Вы также можете отправить журналы потоков NSG в рабочую область Log Analytics и использовать аналитику трафика для получения ценных сведений о потоке трафика в облаке Azure. Некоторые преимущества Аналитики трафика — это возможность визуализировать сетевые активности и определять горячие участки, выявлять угрозы безопасности, анализировать шаблоны потоков трафика и выявлять некорректные сетевые настройки.
 
-Как включить журналы потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
+Включение журналов потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
 
-Как включать и использовать Аналитику трафика: https://docs.microsoft.com/azure/network-watcher/traffic-analytics
+Включение и использование Аналитики трафика: https://docs.microsoft.com/azure/network-watcher/traffic-analytics
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -102,11 +102,11 @@ ms.locfileid: "83655753"
 
 **Ответственность**: Customer
 
-### <a name="17-manage-traffic-to-web-applications"></a>1.7: Управление трафиком к веб-приложениям
+### <a name="17-manage-traffic-to-web-applications"></a>1.7. Управление трафиком к веб-приложениям
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -120,7 +120,7 @@ ms.locfileid: "83655753"
 
 Общие сведения об использовании тегов службы для базы данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/concepts-data-access-and-security-vnet#terminology-and-description
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
@@ -134,13 +134,13 @@ ms.locfileid: "83655753"
 
 Как настроить политику SQL Azure и управлять ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Примеры политики Azure для работы с сетью: https://docs.microsoft.com/azure/governance/policy/samples/
+Примеры Политики Azure для работы с сетью: https://docs.microsoft.com/azure/governance/policy/samples/
 
-Как создать схему Azure: https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal
+Создание схемы Azure: https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
 ### <a name="110-document-traffic-configuration-rules"></a>1.10: Документация по правилам конфигурации трафика
 
@@ -150,9 +150,9 @@ ms.locfileid: "83655753"
 
 Вы можете использовать Azure PowerShell или Azure CLI для поиска или выполнения действий с ресурсами на основе их тегов.
 
-Как создавать и использовать теги: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -162,7 +162,7 @@ ms.locfileid: "83655753"
 
 Просмотр и извлечение событий журнала действий Azure: https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view
 
-Создание оповещений в службе Azure Monitor https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
+Создание оповещений в службе Azure Monitor: https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
 **Мониторинг центра безопасности Azure**: Неприменимо
 
@@ -177,7 +177,7 @@ ms.locfileid: "83655753"
 **Руководство**: Корпорация Майкрософт поддерживает источники времени для ресурсов Azure, например базу данных Azure для PostgreSQL для меток времени в журналах.
 
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -189,9 +189,9 @@ ms.locfileid: "83655753"
 
 Настройка и предоставление доступа к Журналам аудита для базы данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/concepts-audit
 
-Подключение к Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
-**Мониторинг центра безопасности Azure**: Сейчас это недоступно
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
 **Ответственность**: Customer
 
@@ -209,12 +209,12 @@ ms.locfileid: "83655753"
 
 **Ответственность**: Customer
 
-### <a name="24-collect-security-logs-from-operating-systems"></a>2.4: Сбор журналов безопасности из операционных систем
+### <a name="24-collect-security-logs-from-operating-systems"></a>2.4. Сбор журналов безопасности из операционных систем
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -222,27 +222,27 @@ ms.locfileid: "83655753"
 
 **Руководство**: В Azure Monitor для рабочей области Log Analytics, используемой для хранения журналов базы данных Azure для PostgreSQL, задайте срок хранения согласно нормативным требованиям вашей организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-Как задать параметры хранения журнала для рабочих областей Log Analytics: https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
+Задание параметров хранения журнала для рабочих областей Log Analytics: https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
 
 Хранение журналов ресурсов в учетной записи хранения Azure: https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-collect-storage
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
 ### <a name="26-monitor-and-review-logs"></a>2.6: Мониторинг и просмотр журналов
 
 **Руководство**: Анализируйте и отслеживайте журналы экземпляров базы данных Azure для PostgreSQL на предмет аномального поведения. Используйте аналитику журналов Azure Monitor для просмотра журналов и выполнения запросов к данным журнала. Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
 
-Подключение к Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
 Дополнительные сведения об аналитике журналов: https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal
 
-Как выполнять пользовательские запросы в Azure Monitor: https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries
+Выполнение пользовательских запросов в Azure Monitor: https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
 ### <a name="27-enable-alerts-for-anomalous-activity"></a>2.7: Включение оповещений об аномальных действиях
 
@@ -258,9 +258,9 @@ ms.locfileid: "83655753"
 
 Как настроить параметры диагностики для журнала действий Azure: https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
 
-Подключение к Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -268,7 +268,7 @@ ms.locfileid: "83655753"
 
 **Руководство**: Неприменимо; база данных Azure для PostgreSQL не обрабатывает и не создает журналы, связанные с защитой от вредоносных программ.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -276,15 +276,15 @@ ms.locfileid: "83655753"
 
 **Руководство**: Неприменимо; база данных Azure для PostgreSQL не обрабатывает и не создает журналы, связанные с DNS.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: Неприменимо
+**Ответственность**. Неприменимо
 
-### <a name="210-enable-command-line-audit-logging"></a>2.10: Включить ведение журнала аудита для командной строки
+### <a name="210-enable-command-line-audit-logging"></a>2.10. Включение ведения журнала аудита для командной строки
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -318,9 +318,9 @@ ms.locfileid: "83655753"
 
 Как обновить пароль администратора: https://docs.microsoft.com/azure/postgresql/howto-create-manage-server-portal#update-admin-password
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3.3: Применение выделенных административных учетных записей
 
@@ -333,7 +333,7 @@ ms.locfileid: "83655753"
 
 **Мониторинг центра безопасности Azure**: Неприменимо
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
 ### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4: Использование единого входа с Azure Active Directory
 
@@ -347,21 +347,21 @@ ms.locfileid: "83655753"
 
 Сведения о едином входе в Azure AD: https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
-### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3.5: Использование многофакторной проверки подлинности для любого доступа на основе Azure Active Directory
+### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3.5. Использование многофакторной проверки подлинности для любого доступа на основе Azure Active Directory
 
-**Руководство**: Включите многофакторную идентификацию (MFA) в Azure Active Directory и следуйте рекомендациям по управлению идентификацией и доступом в центре безопасности Azure. При использовании маркеров Azure AD для входа в базу данных возможна многофакторная проверка подлинности для входа в базу данных.
+**Рекомендации**. Включите многофакторную идентификацию (MFA) в Azure Active Directory и следуйте рекомендациям по управлению идентификацией и доступом в Центре безопасности Azure. При использовании маркеров Azure AD для входа в базу данных возможна многофакторная проверка подлинности для входа в базу данных.
 
-Как включить MFA в Azure: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
+Включение MFA в Azure: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
 
 Используйте Azure Active Directory для проверки подлинности в базе данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/howto-configure-sign-in-aad-authentication
 
 Мониторинг идентификации и доступа в центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -371,11 +371,11 @@ ms.locfileid: "83655753"
 
 Использование рабочих станций с привилегированным доступом: https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations
 
-Как включить MFA в Azure: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
+Включение MFA в Azure: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
 ### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3.7: Ведение журнала и создание оповещений по подозрительным действиям учетных записей администраторов
 
@@ -389,25 +389,25 @@ ms.locfileid: "83655753"
 
 Развертывание Azure AD Privileged Identity Management (PIM): https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan
 
-Об обнаружении рисков Azure AD: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events
+Общие сведения об обнаружении рисков Azure AD: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events
 
-**Мониторинг центра безопасности Azure**: Да
-
-**Ответственность**: Customer
-
-### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3.8: Управление ресурсами Azure только из утвержденных расположений
-
-**Руководство**: Используйте именованные расположения с условным доступом, чтобы разрешить порталу и Azure Resource Manager доступ только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
-
-Как настроить именованные расположения: https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations
-
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
-### <a name="39-use-azure-active-directory"></a>3.9: Использование Azure Active Directory
+### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3.8. Управление ресурсами Azure только из утвержденных расположений
 
-**Руководство**: Используйте Azure Active Directory как центральную систему проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
+**Рекомендации**. Используйте именованные расположения с условным доступом, чтобы разрешить порталу и Azure Resource Manager доступ только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
+
+Настройка именованных расположений в Azure: https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
+
+**Рекомендации**. Используйте Azure Active Directory как центральную систему проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
 
 Для входа в базу данных Azure для PostgreSQL рекомендуется использовать Azure AD и маркер Azure AD для подключения. При использовании токена Azure AD поддерживаются различные методы, например пользователь Azure AD, Группа Azure AD или приложение Azure AD, подключающееся к базе данных.
 
@@ -417,7 +417,7 @@ ms.locfileid: "83655753"
 
 **Мониторинг центра безопасности Azure**: Неприменимо
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
 ### <a name="310-regularly-review-and-reconcile-user-access"></a>3.10: Регулярная проверка и согласование доступа пользователей
 
@@ -443,7 +443,7 @@ ms.locfileid: "83655753"
 
 Как интегрировать журналы действий Azure в Azure Monitor: https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
 
-**Мониторинг центра безопасности Azure**: Сейчас это недоступно
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
 **Ответственность**: Customer
 
@@ -459,11 +459,11 @@ ms.locfileid: "83655753"
 
 Подключение защиты идентификации Azure AD: https://docs.microsoft.com/azure/active-directory/identity-protection/overview-identity-protection
 
-Как просматривать рискованные входы в Azure AD: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events
+Просмотр рискованных входов в Azure AD: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events
 
-Подключение к Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -487,11 +487,11 @@ ms.locfileid: "83655753"
 
 Как создавать и использовать теги: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
-### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2: Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
+### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
 **Руководство**: Реализуйте отдельные подписки и группы управления для разработки, тестирования и производства. Используйте сочетание приватного канала, конечных точек службы и (или) правил брандмауэра, чтобы изолировать и ограничить сетевой доступ к экземплярам базы данных Azure для PostgreSQL.
 
@@ -519,7 +519,7 @@ ms.locfileid: "83655753"
 
 Общие сведения о защите данных клиентов в Azure: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Совмещаемая блокировка
 
@@ -547,27 +547,27 @@ ms.locfileid: "83655753"
 
 **Ответственность**: Совмещаемая блокировка
 
-### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Контроль доступа к ресурсам с помощью RBAC
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**: Используйте управление доступом на основе ролей Azure (RBAC) для управления доступом к панели управления базы данных Azure для PostgreSQL (например, порталу Azure). Для доступа к уровню данных (в самой базе данных) используйте SQL-запросы для создания пользователей и настройки разрешений пользователей. RBAC не влияет на разрешения пользователей в базе данных.
+**Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к базе данных Azure для управления PostgreSQL (например, портал Azure). Для доступа к уровню данных (в самой базе данных) используйте SQL-запросы для создания пользователей и настройки разрешений пользователей. RBAC не влияет на разрешения пользователей в базе данных.
 
 Как настроить RBAC в Azure: https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
 
 Настройка и предоставление прав пользователей с помощью SQL для базы данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/howto-create-users
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7: Использование защиты от потери данных на основе узла для обеспечения контроля доступа
+### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7. Использование защиты от потери данных на основе узла для обеспечения контроля доступа
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислительных ресурсов.
 
 Корпорация Майкрософт управляет базовой инфраструктурой базы данных Azure для PostgreSQL и реализовала надежные элементы управления для предотвращения потери или раскрытия данных клиента.
 
 Общие сведения о защите данных клиентов в Azure: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -584,7 +584,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 Общие сведения о шифровании хранимых данных для базы данных Azure для PostgreSQL с помощью управляемых клиентом ключей: https://docs.microsoft.com/azure/postgresql/concepts-data-encryption-postgresql
 
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -594,7 +594,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Создание оповещений для событий журнала действий Azure: https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -608,31 +608,31 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Покрытие компонентов для служб Azure PaaS в центре безопасности Azure: https://docs.microsoft.com/azure/security-center/features-paas
 
-**Мониторинг центра безопасности Azure**: Сейчас это недоступно
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
 **Ответственность**: Customer
 
-### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5.2: Развертывание автоматизированного решения для управления исправлениями операционной системы
+### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5.2. Развертывание автоматизированного решения для управления исправлениями операционной системы
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
 ### <a name="53-deploy-automated-third-party-software-patch-management-solution"></a>5.3: Развертывание автоматизированного решения для управления исправлениями ПО сторонних производителей
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
 ### <a name="54-compare-back-to-back-vulnerability-scans"></a>5.4: Сравнение проверок смежных уязвимостей
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -640,25 +640,25 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Руководство**: Корпорация Майкрософт управляет уязвимостью в базовых системах, поддерживающих базу данных Azure для PostgreSQL.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Microsoft
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
-*Дополнительные сведения см. в статье [Управление безопасностью: Инвентаризация и управление ресурсами](https://docs.microsoft.com/azure/security/benchmarks/security-control-inventory-asset-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](https://docs.microsoft.com/azure/security/benchmarks/security-control-inventory-asset-management).*
 
 ### <a name="61-use-azure-asset-discovery"></a>6.1: Использование обнаружения ресурсов Azure
 
 **Руководство**: Используйте граф ресурсов Azure для запроса и обнаружения всех ресурсов (включая базу данных Azure для PostgreSQL) в ваших подписках. Убедитесь, что у вас есть соответствующие разрешения (на чтение) в клиенте и вы можете перечислить все подписки Azure, а также ресурсы в ваших подписках.
 
-Как создавать запросы с помощью графа ресурсов Azure: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+Создание запросов с помощью Azure Resource Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
-Как просматривать подписки Azure: https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
+Просмотр подписок Azure: https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
 
 Общие сведения об Azure RBAC: https://docs.microsoft.com/azure/role-based-access-control/overview
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -666,9 +666,9 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Руководство**: Примените теги к базе данных Azure для экземпляров PostgreSQL и другим связанным ресурсам, предоставив метаданные для логической организации их в таксономию.
 
-Как создавать и использовать теги: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -680,83 +680,83 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Создание групп управления: https://docs.microsoft.com/azure/governance/management-groups/create
 
-Как создавать и использовать теги: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-**Мониторинг центра безопасности Azure**: Неприменимо
-
-**Ответственность**: Customer
-
-### <a name="64-maintain-an-inventory-of-approved-azure-resources-and-software-titles"></a>6.4: Ведение каталога утвержденных ресурсов Azure и наименований программного обеспечения
-
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислений с ресурсами, а также для Azure в целом.
-
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5: Отслеживание неутвержденных ресурсов Azure
+### <a name="64-maintain-an-inventory-of-approved-azure-resources-and-software-titles"></a>6.4. Ведение каталога утвержденных ресурсов Azure и наименований программного обеспечения
 
-**Руководство**: Используйте политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в подписках клиентов, используя следующие встроенные определения политик:
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислений с ресурсами, а также для Azure в целом.
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
+
+**Рекомендации**. Используйте политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в подписках клиентов, используя следующие встроенные определения политик:
 
 - Недопустимые типы ресурсов
 
 - Допустимые типы ресурсов
 
-Кроме того, используйте граф ресурсов Azure для запроса или обнаружения ресурсов в подписках.
+Кроме того, используйте Azure Resource Graph для запроса или обнаружения ресурсов в подписках.
 
-Как настроить политику SQL Azure и управлять ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Как создавать запросы с помощью графа Azure: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+Создание запросов с помощью Azure Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6.6: Отслеживание неутвержденных программных приложений в рамках ресурсов вычислений
+### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6.6. Отслеживание неутвержденных программных приложений в рамках ресурсов вычислений
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
 ### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6.7: Удаление неутвержденных ресурсов Azure и программных приложений
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислений с ресурсами, а также для Azure в целом.
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислений с ресурсами, а также для Azure в целом.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
 ### <a name="68-use-only-approved-applications"></a>6.8: Использование только утвержденных приложений
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
 ### <a name="69-use-only-approved-azure-services"></a>6.9: Использование только утвержденных служб Azure
 
-**Руководство**: Используйте политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в подписках клиентов, используя следующие встроенные определения политик:
+**Руководство**. Используйте Политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в подписках клиентов, используя следующие встроенные определения политик.
 
 - Недопустимые типы ресурсов
 
 - Допустимые типы ресурсов
 
-Как настроить политику SQL Azure и управлять ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Как отказаться от определенного типа ресурса с помощью политики Azure: https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
+Отказ от определенного типа ресурса с помощью Политики Azure: https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="610-implement-approved-application-list"></a>6.10: Реализация списка утвержденных приложений
+### <a name="610-implement-approved-application-list"></a>6.10. Реализация списка утвержденных приложений
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -766,23 +766,23 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Как настроить условный доступ для блокировки доступа к Azure Resource Manager: https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6.12: Ограничьте возможность пользователей выполнять сценарии в ресурсах вычислений
+### <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6.12. Ограничение возможности пользователей выполнять сценарии в ресурсах вычислений
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: Неприменимо
+**Ответственность**. Неприменимо
 
-### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13: Физическое или логическое разделение приложений с высоким риском
+### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13. Физическое или логическое разделение приложений с высоким риском
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
+**Руководство**. Неприменимо; эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -800,37 +800,37 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Просмотр доступных псевдонимов политик Azure: https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
-Как настроить политику SQL Azure и управлять ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="72-establish-secure-operating-system-configurations"></a>7.2: Сохранение безопасных конфигураций для операционных систем
+### <a name="72-establish-secure-operating-system-configurations"></a>7.2. Сохранение безопасных конфигураций для операционных систем
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
 ### <a name="73-maintain-secure-azure-resource-configurations"></a>7.3: Сохранение безопасных конфигураций для ресурсов Azure
 
-**Руководство**: Используйте политику Azure [отказывать] и [развернуть, если не существует], чтобы обеспечить безопасность параметров в ресурсах Azure.
+**Рекомендации**. Используйте Политику Azure [отказывать] и [развернуть, если не существует], чтобы обеспечить безопасность параметров в ресурсах Azure.
 
-Как настроить политику SQL Azure и управлять ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Сведения о действии политик Azure https://docs.microsoft.com/azure/governance/policy/concepts/effects
+Сведения о действии Политики Azure: https://docs.microsoft.com/azure/governance/policy/concepts/effects
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="74-maintain-secure-operating-system-configurations"></a>7.4: Сохранение безопасных конфигураций для операционных систем
+### <a name="74-maintain-secure-operating-system-configurations"></a>7.4. Сохранение безопасных конфигураций для операционных систем
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -846,11 +846,11 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Ответственность**: Customer
 
-### <a name="76-securely-store-custom-operating-system-images"></a>7.6: Безопасное хранение пользовательских образов операционной системы
+### <a name="76-securely-store-custom-operating-system-images"></a>7.6. Безопасное хранение пользовательских образов операционной системы
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -858,17 +858,17 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Руководство**: Используйте псевдонимы политик Azure в пространстве имен "Microsoft.DBforPostgreSQL" для создания настраиваемых политик для оповещения, аудита и принудительного применения конфигураций системы. Кроме того, разрабатывайте процесс и конвейер для управления исключениями политик.
 
-Как настроить политику SQL Azure и управлять ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="78-deploy-system-configuration-management-tools-for-operating-systems"></a>7.8: Развертывание средств управления конфигурацией системы для операционных систем
+### <a name="78-deploy-system-configuration-management-tools-for-operating-systems"></a>7.8. Развертывание средств управления конфигурацией системы для операционных систем
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -878,15 +878,15 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Как настроить политику SQL Azure и управлять ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7.10: Реализация автоматизированного мониторинга конфигурации для операционных систем
+### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7.10. Реализация автоматизированного мониторинга конфигурации для операционных систем
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -896,11 +896,11 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Интеграция с управляемыми удостоверениями Azure: https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
 
-Чтобы создать хранилище ключей, сделайте следующее: https://docs.microsoft.com/azure/key-vault/quick-create-portal
+Создание Key Vault: https://docs.microsoft.com/azure/key-vault/quick-create-portal
 
 Проверка подлинности в Key Vault с помощью управляемого удостоверения: https://docs.microsoft.com/azure/key-vault/managed-identity
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -916,32 +916,32 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Интеграция с управляемыми удостоверениями Azure: https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
-### <a name="713-eliminate-unintended-credential-exposure"></a>7.13: Устранение непреднамеренного раскрытия учетных данных
+### <a name="713-eliminate-unintended-credential-exposure"></a>7.13. Устранение непреднамеренного раскрытия учетных данных
 
-**Руководство**: Реализуйте сканер учетных данных для обнаружения учетных данных в коде. Сканер учетных данных также рекомендует перемещать обнаруженные учетные данные в более безопасные расположения, такие как Azure Key Vault.
+**Руководство**. Реализуйте сканер учетных данных для обнаружения учетных данных в коде. Сканер учетных данных также рекомендует перемещать обнаруженные учетные данные в более безопасные расположения, такие как Azure Key Vault.
 
 Настройка сканера учетных данных: https://secdevtools.azurewebsites.net/helpcredscan.html
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
-*Дополнительные сведения см. в статье [Управление безопасностью: Защита от вредоносных программ](https://docs.microsoft.com/azure/security/benchmarks/security-control-malware-defense).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](https://docs.microsoft.com/azure/security/benchmarks/security-control-malware-defense).*
 
-### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1: Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
+### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 Защита от вредоносных программ Майкрософт включена на базовом узле, поддерживающем службы Azure (например, служба приложений Azure), но не выполняется в содержимом клиента.
 
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -951,7 +951,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Предварительно сканируйте любое содержимое, отправляемое в невычислительные ресурсы Azure, например служба приложений, хранилище Data Lake, хранилище BLOB-объектов, база данных Azure для PostgreSQL и т. д. Корпорация Майкрософт не может получить доступ к данным в этих экземплярах.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Совмещаемая блокировка
 
@@ -961,13 +961,13 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Защита от вредоносных программ Майкрософт включена на базовом узле, поддерживающем службы Azure (например, база данных Azure для PostgreSQL), но не выполняется в содержимом клиента.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
 ## <a name="data-recovery"></a>Восстановление данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: Восстановление данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-recovery).*
+*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-recovery).*
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9.1: Обеспечение регулярного автоматического резервного копирования
 
@@ -977,7 +977,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Сведения о начальной конфигурации базы данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/tutorial-design-database-using-azure-portal
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Совмещаемая блокировка
 
@@ -1005,7 +1005,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Как создать резервную копию сервера в базе данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/howto-restore-server-portal
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -1023,11 +1023,11 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 *Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](https://docs.microsoft.com/azure/security/benchmarks/security-control-incident-response).*
 
-### <a name="101-create-an-incident-response-guide"></a>10.1: Создание руководства по реагированию на инциденты
+### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
 
-**Руководство**: Создание руководства по реагированию на инциденты для вашей организации. Убедитесь, что имеются письменные планы реагирования на инциденты, которые определяют все действия персонала, а также этапы обработки инцидентов и управления ими для проверки после инцидента.
+**Руководство**. Создайте руководство по реагированию на инциденты для вашей организации. Убедитесь, что имеются письменные планы реагирования на инциденты, которые определяют все действия персонала, а также этапы обработки инцидентов и управления ими для проверки после инцидента.
 
-Как настроить автоматизацию рабочих процессов в центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide
+Настройка автоматизации рабочих процессов в Центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide
 
 Руководство по созданию собственного процесса реагирования на инциденты безопасности: https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/
 
@@ -1035,59 +1035,59 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Клиент может также использовать руководство по обработке инцидентов безопасности компьютера от NIST, чтобы разработать собственный план реагирования на инциденты: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2: Создание процедуры оценки инцидента и определения приоритетов
+### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2. Создание процедуры оценки инцидента и определения приоритетов
 
-**Руководство**: Центр безопасности назначает каждому оповещению серьезность, которая поможет определить, какие предупреждения следует расследовать первыми. Серьезность основывается на том, насколько уверен центр безопасности в исследовании или аналитике, используемой для оповещения, а также на уровне достоверности злонамеренности события, приведшего к оповещению.
+**Руководство**. Центр безопасности назначает каждому оповещению серьезность, которая поможет определить, какие предупреждения следует расследовать первыми. Серьезность основывается на том, насколько уверен Центр безопасности в исследовании или аналитике, используемой для оповещения, а также на уровне достоверности злонамеренности события, приведшего к оповещению.
 
-Кроме того, четко помечайте подписки (для устар. производственной, непроизводственная) и создайте систему именования, чтобы четко определить и классифицировать ресурсы Azure.
+Кроме того, четко помечайте подписки (для устар. производственной, непроизводственной) и создайте систему именования, чтобы четко определить и классифицировать ресурсы Azure.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="103-test-security-response-procedures"></a>10.3: Проверка процедур реагирования на угрозы
+### <a name="103-test-security-response-procedures"></a>10.3. Проверка процедур реагирования на угрозы
 
-**Руководство**: Выполните упражнения, чтобы периодически протестировать возможности ваших систем реагировать на угрозы. Выявите слабые точки и пробелов и пересмотрите план по мере необходимости.
+**Рекомендации**. Выполните упражнения, чтобы периодически протестировать возможности ваших систем реагировать на угрозы. Выявите слабые точки и пробелов и пересмотрите план по мере необходимости.
 
 См. публикацию NIST: Руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4: Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
+### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4. Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
 
-**Руководство**: Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим пользовательским данным был получен незаконный или несанкционированный доступ.  Проверьте инциденты после факта обращения, чтобы убедиться, что проблемы устранены.
+**Рекомендации**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим пользовательским данным был получен незаконный или несанкционированный доступ.  Проверьте инциденты после факта обращения, чтобы убедиться, что проблемы устранены.
 
-Как задать контакт безопасности Центра безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details
+Задание контакта безопасности Центра безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
-### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5: Включение оповещений системы безопасности в систему реагирования на инциденты
+### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5. Включение оповещений системы безопасности в систему реагирования на инциденты
 
-**Руководство**: Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных центра безопасности Azure для потоковой передачи метки предупреждений.
+**Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных центра безопасности Azure для потоковой передачи метки предупреждений.
 
 Настройка непрерывного экспорта данных: https://docs.microsoft.com/azure/security-center/continuous-export
 
-Как выполнить потоковую передачу предупреждений в Azure Sentinel: https://docs.microsoft.com/azure/sentinel/connect-azure-security-center
+Выполнение потоковой передачи предупреждений в Azure Sentinel: https://docs.microsoft.com/azure/sentinel/connect-azure-security-center
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="106-automate-the-response-to-security-alerts"></a>10.6: Автоматизация реагирования на оповещения системы безопасности
+### <a name="106-automate-the-response-to-security-alerts"></a>10.6. Автоматизация реагирования на оповещения системы безопасности
 
-**Руководство**: Используйте функцию автоматизации рабочих процессов в центре безопасности Azure для автоматического запуска ответов с помощью "Logic Apps" в оповещениях и рекомендациях системы безопасности.
+**Рекомендации**. Используйте функцию автоматизации рабочих процессов в центре безопасности Azure для автоматического запуска ответов с помощью "Logic Apps" в оповещениях и рекомендациях системы безопасности.
 
-Как настроить автоматизацию рабочего процесса и Logic Apps: https://docs.microsoft.com/azure/security-center/workflow-automation
+Настройка автоматизации рабочего процесса и Logic Apps: https://docs.microsoft.com/azure/security-center/workflow-automation
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -1095,7 +1095,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 *Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](https://docs.microsoft.com/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
 
-### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings-within-60-days"></a>11.1: Регулярно проводите тестирование на проникновение ресурсов Azure и следите за исправлением всех критических точек безопасности в течение 60 дней
+### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings-within-60-days"></a>11.1. Регулярное тестирование на проникновение ресурсов Azure и отслеживание исправлений всех критических точек безопасности в течение 60 дней
 
 **Руководство**: Следуйте правилам взаимодействия Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт: https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1
 
@@ -1107,5 +1107,5 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. [Производительность системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
-- Дополнительные сведения о [Базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)
+- См. [Тесты производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview).
+- Узнайте больше о [Базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).

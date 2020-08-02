@@ -4,18 +4,18 @@ description: Узнайте о поддерживаемых операторах
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 12/02/2019
+ms.date: 7/29/2020
 ms.author: tisande
-ms.openlocfilehash: 3f8753518e1d54ddba4fc15a5a030308d0c112a1
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: f2a7570b7ebed26a06e1bd075c2904bc29061c21
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86042498"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87498860"
 ---
 # <a name="linq-to-sql-translation"></a>Трансляция из LINQ в SQL
 
-Поставщик запросов Azure Cosmos DB выполняет наилучшее сопоставление запроса LINQ с запросом на Cosmos DB SQL. Если требуется получить SQL-запрос, преобразованный в LINQ, используйте `ToString()` метод для созданного `IQueryable` объекта. Следующее описание предполагает базовое знание LINQ.
+Поставщик запросов Azure Cosmos DB выполняет наилучшее сопоставление запроса LINQ с запросом на Cosmos DB SQL. Если требуется получить SQL-запрос, преобразованный из LINQ, используйте `ToString()` метод для созданного `IQueryable` объекта. Следующее описание предполагает базовое знание [LINQ](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries).
 
 Система типов поставщиков запросов поддерживает только типы-примитивы JSON: numeric, Boolean, String и NULL.
 
@@ -32,7 +32,7 @@ ms.locfileid: "86042498"
     family.children[n].grade; //n is an int variable
   ```
   
-- Арифметические выражения, включая общие арифметические выражения для числовых и логических значений. Полный список см. в [спецификации Azure Cosmos DB SQL](https://go.microsoft.com/fwlink/p/?LinkID=510612).
+- Арифметические выражения, включая общие арифметические выражения для числовых и логических значений. Полный список см. в [спецификации Azure Cosmos DB SQL](sql-query-system-functions.md).
   
   ```
     2 * family.children[0].grade;
@@ -54,31 +54,52 @@ ms.locfileid: "86042498"
     new int[] { 3, child.grade, 5 };
   ```
 
+## <a name="using-linq"></a>Использование языка LINQ
+
+Можно создать запрос LINQ с помощью `GetItemLinqQueryable` . В этом примере показано создание запроса LINQ и асинхронное выполнение с помощью `FeedIterator` :
+
+```csharp
+using (FeedIterator<Book> setIterator = container.GetItemLinqQueryable<Book>()
+                      .Where(b => b.Title == "War and Peace")
+                      .ToFeedIterator<Book>())
+ {
+     //Asynchronous query execution
+     while (setIterator.HasMoreResults)
+     {
+         foreach(var item in await setIterator.ReadNextAsync()){
+         {
+             Console.WriteLine(item.cost);
+         }
+       }
+     }
+ }
+```
+
 ## <a name="supported-linq-operators"></a><a id="SupportedLinqOperators"></a>Поддерживаемые операторы LINQ
 
 Поставщик LINQ, входящий в состав пакета SDK для SQL .NET, поддерживает следующие операторы:
 
-- **SELECT**: проекции, переводимые в SQL SELECT, включая создание объектов.
-- **Где**: ФИЛЬТРУЕТ в SQL WHERE и поддерживает преобразование между, и `&&` `||` `!` в операторы SQL
-- **SelectMany**: позволяет выполнять очистку массивов в предложение SQL JOIN. Используйте, чтобы связать или вложить выражения для фильтрации элементов массива.
-- **OrderBy** и **OrderByDescending**: преобразование для упорядочивания с ASC или DESC.
-- Операторы для агрегирования **Count**, **Sum**, **Min**, **Max**, **Average** и их асинхронные эквиваленты **CountAsync**, **SumAsync**, **MinAsync**, **MaxAsync** и **AverageAsync**.
+- **SELECT**: проекции, переводимые в [SELECT](sql-query-select.md), включая создание объектов.
+- **Где**: [фильтрует и поддерживает](sql-query-where.md)преобразование между `&&` , и `||` `!` в операторы SQL
+- **SelectMany**: позволяет очищать массивы в предложении [Join](sql-query-join.md) . Используйте, чтобы связать или вложить выражения для фильтрации элементов массива.
+- **OrderBy** и **OrderByDescending**: преобразование для [упорядочивания](sql-query-order-by.md) с ASC или DESC.
+- Операторы **Count**, **Sum**, **min**, **Max**и **Average** для [агрегирования](sql-query-aggregates.md)и их асинхронные эквиваленты **каунтасинк**, **сумасинк**, **минасинк**, **максасинк**и **аверажеасинк**.
 - **CompareTo**: выполняет преобразование в сравнение диапазонов. Обычно используется для строк, так как они не сравнимы в .NET.
-- **Пропустить** и **выполнить**: преобразуется в смещение SQL и ограничивает ограничение результатов запроса и выполнение разбиения на страницы.
-- **Математические функции**: поддерживают преобразование из .NET,,,,,,,,,,,,,, и `Abs` `Acos` `Asin` `Atan` `Ceiling` `Cos` `Exp` `Floor` `Log` `Log10` `Pow` `Round` `Sign` `Sin` `Sqrt` `Tan` `Truncate` в эквивалентные встроенные функции SQL.
-- **Строковые функции**: поддерживает преобразование из .NET,,,,,,,,,,, `Concat` `Contains` `Count` `EndsWith` `IndexOf` `Replace` `Reverse` `StartsWith` `SubString` `ToLower` `ToUpper` `TrimEnd` и `TrimStart` в эквивалентные встроенные функции SQL.
-- **Функции массивов**: поддерживает преобразование из .NET `Concat` , `Contains` и `Count` в эквивалентные встроенные функции SQL.
-- **Функции геопространственных расширений**: поддерживает преобразование из методов-заглушек `Distance` ,, `IsValid` `IsValidDetailed` и `Within` в эквивалентные встроенные функции SQL.
-- **Определяемая пользователем функция расширения функции**: поддерживает преобразование из метода-заглушки `UserDefinedFunctionProvider.Invoke` в соответствующую определяемую пользователем функцию.
-- **Разное**: поддерживает преобразование `Coalesce` и условные операторы. Может преобразовать `Contains` в строку Contains, ARRAY_CONTAINS или SQL в, в зависимости от контекста.
+- **Пропустить** и **выполнить**: преобразуется в [смещение и ограничивает](sql-query-offset-limit.md) ограничение результатов запроса и выполнение разбиения на страницы.
+- **Математические функции**: поддерживают преобразование из .NET,,,,,,,,,,,,,,, `Abs` `Acos` `Asin` `Atan` `Ceiling` `Cos` `Exp` `Floor` `Log` `Log10` `Pow` `Round` `Sign` `Sin` `Sqrt` `Tan` и `Truncate` в эквивалентные [встроенные математические функции](sql-query-mathematical-functions.md).
+- **Строковые функции**: поддерживает преобразование из .NET,,,,,,,,,,, `Concat` `Contains` `Count` `EndsWith` `IndexOf` `Replace` `Reverse` `StartsWith` `SubString` `ToLower` `ToUpper` `TrimEnd` и `TrimStart` в эквивалентные [встроенные строковые функции](sql-query-string-functions.md).
+- **Функции массивов**: поддерживает преобразование из .NET `Concat` , `Contains` и `Count` в эквивалентные [встроенные функции массивов](sql-query-array-functions.md).
+- **Функции геопространственных расширений**: поддерживает преобразование из методов-заглушек `Distance` ,, `IsValid` `IsValidDetailed` и `Within` в эквивалентные [встроенные геопространственные функции](sql-query-geospatial-query.md).
+- **Определяемая пользователем функция расширения функции**: поддерживает преобразование из метода-заглушки `UserDefinedFunctionProvider.Invoke` в соответствующую [определяемую пользователем функцию](sql-query-udfs.md).
+- **Разное**: поддерживает преобразование `Coalesce` и условные [Операторы](sql-query-operators.md). Может преобразовывать `Contains` в строку Contains, ARRAY_CONTAINS или IN в зависимости от контекста.
 
 ## <a name="examples"></a>Примеры
 
-В следующих примерах показано, как некоторые стандартные операторы запросов LINQ преобразуются в Cosmos DB запросы.
+В следующих примерах показано, как некоторые из стандартных операторов запросов LINQ преобразуются в запросы в Azure Cosmos DB.
 
 ### <a name="select-operator"></a>Оператор SELECT
 
-Синтаксис: `input.Select(x => f(x))`, где `f` — скалярное выражение.
+Синтаксис: `input.Select(x => f(x))`, где `f` — скалярное выражение. `input`В данном случае — это `IQueryable` объект.
 
 **Оператор SELECT, пример 1:**
 
@@ -95,7 +116,7 @@ ms.locfileid: "86042498"
       FROM Families f
     ```
   
-**Оператор SELECT, пример 2:** 
+**Оператор SELECT, пример 2:**
 
 - **Лямбда-выражение LINQ**
   
@@ -122,7 +143,7 @@ ms.locfileid: "86042498"
     });
   ```
   
-- **SQL** 
+- **SQL**
   
   ```sql
       SELECT VALUE {"name":f.children[0].familyName,
@@ -321,8 +342,7 @@ ms.locfileid: "86042498"
       WHERE c.familyName = f.parents[0].familyName
   ```
 
-
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Данные документов модели](modeling-data.md)

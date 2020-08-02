@@ -5,13 +5,13 @@ author: deborahc
 ms.author: dech
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 07/29/2020
-ms.openlocfilehash: e8dadbad309a146500db342f55bee9339fde6172
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.date: 07/30/2020
+ms.openlocfilehash: dba0fccaa3eb79ad297ce80462efea5b69a4a009
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87430989"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87497058"
 ---
 # <a name="provision-autoscale-throughput-on-database-or-container-in-azure-cosmos-db"></a>Узнайте, как подготовить автомасштабируемую пропускную способность для базы данных или контейнера в Azure Cosmos DB
 
@@ -244,11 +244,11 @@ container.replaceThroughput(ThroughputProperties.createAutoscaledThroughput(newA
 
 ## <a name="cassandra-api"></a>API Cassandra
 
-Учетные записи Azure Cosmos DB для API Cassandra можно подготовить для автомасштабирования с помощью [команд CQL](manage-scale-cassandra.md#use-autoscale), [Azure CLI](cli-samples.md)или [шаблонов Azure Resource Manager](resource-manager-samples.md).
+Учетные записи Azure Cosmos DB для API Cassandra можно подготовить для автомасштабирования с помощью [команд CQL](manage-scale-cassandra.md#use-autoscale), [Azure CLI](cli-samples.md), [Azure PowerShell](powershell-samples.md) или [Azure Resource Manager шаблонов](resource-manager-samples.md).
 
 ## <a name="azure-cosmos-db-api-for-mongodb"></a>API Azure Cosmos DB для MongoDB
 
-Учетные записи Azure Cosmos DB для API MongoDB можно подготовить для автомасштабирования с помощью [команд расширения MongoDB](mongodb-custom-commands.md), [Azure CLI](cli-samples.md)или [шаблонов Azure Resource Manager](resource-manager-samples.md).
+Учетные записи Azure Cosmos DB для API MongoDB можно подготовить для автомасштабирования с помощью [команд расширения MongoDB](mongodb-custom-commands.md), [Azure CLI](cli-samples.md), [Azure PowerShell](powershell-samples.md) или [шаблонов Azure Resource Manager](resource-manager-samples.md).
 
 ## <a name="azure-resource-manager"></a>Azure Resource Manager
 
@@ -257,6 +257,10 @@ Azure Resource Manager шаблоны можно использовать для
 ## <a name="azure-cli"></a>Azure CLI
 
 Azure CLI можно использовать для инициализации пропускной способности автомасштабирования в базе данных или ресурсах уровня контейнера для всех API-интерфейсов Azure Cosmos DB. Примеры см. в разделе [Azure CLI Samples for Azure Cosmos DB](cli-samples.md).
+
+## <a name="azure-powershell"></a>Azure PowerShell
+
+Azure PowerShell можно использовать для инициализации пропускной способности автомасштабирования в базе данных или ресурсах уровня контейнера для всех API-интерфейсов Azure Cosmos DB. Примеры см. в разделе [Azure PowerShell Samples for Azure Cosmos DB](powershell-samples.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: dd1e387727b0a80781b1103ddfb40afcbce8fce8
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 8083edaf647f52a07d55dddf21fe5751340783be
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386628"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496242"
 ---
 # <a name="query-parquet-files-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Запрос файлов Parquet с помощью SQL по запросу (предварительная версия) в Azure Synapse Analytics
 
@@ -24,7 +24,7 @@ ms.locfileid: "87386628"
 
 `OPENROWSET`функция позволяет читать содержимое файла Parquet, предоставляя URL-адрес файла.
 
-### <a name="reading-parquet-file"></a>Чтение файла Parquet
+### <a name="read-parquet-file"></a>Чтение файла Parquet
 
 Самый простой способ увидеть содержимое `PARQUET` файла — предоставить URL-адрес файла для `OPENROWSET` работы и указать Parquet `FORMAT` . Если файл является общедоступным или удостоверение Azure AD имеет доступ к этому файлу, вы увидите содержимое файла с помощью запроса, как показано в следующем примере:
 
@@ -37,7 +37,7 @@ from openrowset(
 
 Убедитесь, что у вас есть доступ к этому файлу. Если файл защищен с помощью ключа SAS или настраиваемого удостоверения Azure, необходимо настроить [учетные данные на уровне сервера для входа SQL](develop-storage-files-storage-access-control.md?tabs=shared-access-signature#server-scoped-credential).
 
-### <a name="using-data-source"></a>Использование источника данных
+### <a name="data-source-usage"></a>Использование источника данных
 
 В предыдущем примере используется полный путь к файлу. В качестве альтернативы можно создать внешний источник данных с расположением, которое указывает на корневую папку хранилища, и использовать этот источник данных и относительный путь к файлу в `OPENROWSET` функции:
 
