@@ -11,14 +11,14 @@ ms.date: 04/15/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: c885bce5ca17d5919ec134d179f6009e91a969cc
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 4496b74f162bfaeda7205963cbbe7e355db841f5
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86495488"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87503911"
 ---
-# <a name="maximizing-rowgroup-quality-for-columnstore-index-performance"></a>Максимизация качества группы строк для производительности индекса columnstore
+# <a name="maximize-rowgroup-quality-for-columnstore-index-performance"></a>Максимальное качество группы строк для производительности индекса columnstore
 
 Качество группы строк определяется количеством строк в группе строк. Увеличение объема доступной памяти может максимально увеличить число строк, сжатых индексом columnstore, в каждый группы строк.  Эти способы можно использовать, чтобы оптимизировать степень сжатия и производительность запросов для индексов columnstore.
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: ef8c4754afc921eaeb68a84fbd8147f336a4940c
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 2cd42d8d4ba1ecabc1b87942536e2ef9a9017b22
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87370280"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87501956"
 ---
 # <a name="azure-security-baseline-for-synapse-analytics"></a>Базовые показатели безопасности Azure для синапсе Analytics
 
@@ -584,7 +584,7 @@ ms.locfileid: "87370280"
 
 ### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
 
-**Руководство**. Использование управления доступом на основе РОЛЕЙ (RBAC) Azure для управления доступом к базам данных SQL Azure в пуле синапсе SQL.
+**Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к базам данных SQL Azure в пуле синапсе SQL.
 
 Авторизация контролируется членством в роли базы данных пользователя и разрешениями уровня объектов. Обычно пользователям рекомендуется предоставлять наименьшие необходимые привилегии.
 
@@ -1014,7 +1014,7 @@ ms.locfileid: "87370280"
 
 **Руководство**. моментальные снимки пула SQL синапсе автоматически берутся в течение дня, создавая точки восстановления, доступные в течение семи дней. Этот срок нельзя изменить. Пул SQL поддерживает целевую точку восстановления в 8 часов (RPO). Вы можете восстановить хранилище данных в основном регионе до любого из моментальных снимков, доступных за последние семь дней. Обратите внимание, что при необходимости можно также активировать моментальные снимки вручную.
 
-* [Резервное копирование и восстановление в пуле SQL Azure синапсе](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/backup-and-restore)
+* [Резервное копирование и восстановление в пуле SQL Azure синапсе](/azure/synapse-analytics/sql-data-warehouse/backup-and-restore)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

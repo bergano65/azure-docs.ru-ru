@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.author: sudbalas
-ms.openlocfilehash: 463ebf429889968474af5630eb99c41a06916d01
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 17482a5924d0bc8be531fe48aa34a2d32acff3e5
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448616"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87503112"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Безопасный доступ к хранилищу ключей
 
@@ -59,7 +59,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 ## <a name="management-plane-and-rbac"></a>Плоскость управления и RBAC
 
-В плоскости управления для авторизации операций, которые может выполнять вызывающий объект, используется RBAC (Управление доступом на основе ролей Azure (Azure RBAC)). В модели RBAC каждая подписка Azure содержит экземпляр Azure AD. Вы можете предоставить доступ пользователям, группам и приложениям из этого каталога. Доступ предоставляется для управления ресурсами в подписке Azure, использующими модель развертывания Azure Resource Manager. Чтобы предоставить доступ, можно использовать [портал Azure](https://portal.azure.com/), [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), [Azure PowerShell](/powershell/azure/) или [REST API Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn906885.aspx).
+В плоскости управления вы используете управление доступом на основе ролей Azure (Azure RBAC) для авторизации операций, которые может выполнять вызывающий объект. В модели RBAC каждая подписка Azure содержит экземпляр Azure AD. Вы можете предоставить доступ пользователям, группам и приложениям из этого каталога. Доступ предоставляется для управления ресурсами в подписке Azure, использующими модель развертывания Azure Resource Manager. Чтобы предоставить доступ, можно использовать [портал Azure](https://portal.azure.com/), [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), [Azure PowerShell](/powershell/azure/) или [REST API Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn906885.aspx).
 
 Вы можете создать хранилище ключей в группе ресурсов и управлять доступом с помощью Azure AD. Можно предоставить пользователям или группе возможность управлять хранилищами ключей в группе ресурсов. Вы можете предоставить доступ в определенной области путем назначения соответствующей роли RBAC. Чтобы предоставить пользователю доступ к управлению хранилищами ключей, ему необходимо назначить предопределенную роль `key vault Contributor` в определенной области. Роли RBAC можно назначить следующие области:
 

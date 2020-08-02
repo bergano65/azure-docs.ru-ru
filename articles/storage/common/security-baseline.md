@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 4e10843eab8ac2ccbda3d6876f51c88a598d7139
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 36f3c4192f43e323df2aaf9397364dfd1b4da731
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87371691"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87501378"
 ---
 # <a name="azure-security-baseline-for-azure-storage"></a>Базовые показатели безопасности Azure для службы хранилища Azure
 
@@ -292,7 +292,7 @@ ms.locfileid: "87371691"
 
 ### <a name="32-change-default-passwords-where-applicable"></a>3,2: Измените пароли по умолчанию, если это применимо
 
-**Руководство**. учетные записи хранения Azure и Azure Active Directory имеют концепцию по умолчанию или пустым паролям. Служба хранилища Azure реализует модель управления доступом, поддерживающую управление доступом на основе ролей (RBAC) Azure, а также общий ключ и подписанный URL-адрес (SAS). Характеристикой общего ключа и проверки подлинности SAS является отсутствие связи с вызывающим объектом, поэтому не удается выполнить авторизацию на основе разрешений субъекта безопасности. 
+**Руководство**. учетные записи хранения Azure и Azure Active Directory имеют концепцию по умолчанию или пустым паролям. Служба хранилища Azure реализует модель управления доступом, поддерживающую управление доступом на основе ролей Azure (Azure RBAC), а также общий ключ и подписанный URL-адрес (SAS). Характеристикой общего ключа и проверки подлинности SAS является отсутствие связи с вызывающим объектом, поэтому не удается выполнить авторизацию на основе разрешений субъекта безопасности. 
 
 - [Авторизация доступа к данным в службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-auth)
 

@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f87f732fbfff23e71096a89a7c04c65d1bd7959
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: a88e30e85402f60489839b0a34b5a793fd7192df
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87432338"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87502483"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -392,7 +392,7 @@ ms.locfileid: "87432338"
 
 ### <a name="privileged-role-administrator"></a>[Администратор привилегированных ролей](#privileged-role-administrator-permissions)
 
-пользователи с этой ролью могут управлять назначениями ролей в Azure Active Directory и Azure AD Privileged Identity Management. Кроме того, эта роль позволяет управлять всеми аспектами управления привилегированными удостоверениями и административными единицами.
+пользователи с этой ролью могут управлять назначениями ролей в Azure Active Directory и Azure AD Privileged Identity Management. Они могут создавать группы, которые можно назначать ролям Azure AD, и управлять ими. Кроме того, эта роль позволяет управлять всеми аспектами управления привилегированными удостоверениями и административными единицами.
 
 > [!IMPORTANT]
 > Эта роль предоставляет возможность управлять членством во всех ролях Azure AD, включая роль глобального администратора. Эта роль не включает в себя какие-либо другие привилегированные возможности Azure AD, например создание или обновление пользователей. Тем не менее пользователи, которым назначена эта роль, могут предоставить себе или другим пользователям дополнительные привилегии, назначив дополнительные роли.
@@ -748,6 +748,9 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/directoryRoleTemplates/allProperties/allTasks | Создание и удаление объектов directoryRoleTemplate, а также чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.directory/domains/allProperties/allTasks | Создание и удаление доменов, а также чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.directory/groups/allProperties/allTasks | Создание и удаление групп, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Граупсассигнаблеторолес/Аллпропертиес/Update | Обновите группы со свойством Исассигнаблетороле, имеющим значение true в Azure Active Directory. |
+| Microsoft. Directory/Граупсассигнаблеторолес/создать | Создайте группы со свойством Исассигнаблетороле, для которых задано значение true в Azure Active Directory. |
+| Microsoft. Directory/Граупсассигнаблеторолес/удаление | Удалите группы со свойством Исассигнаблетороле, для которых задано значение true в Azure Active Directory. |
 | microsoft.directory/groupSettings/allProperties/allTasks | Создание и удаление объектов groupSetting, а также чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.directory/groupSettingTemplates/allProperties/allTasks | Создание и удаление объектов groupSettingTemplate, а также чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.directory/loginTenantBranding/allProperties/allTasks | Создание и удаление объектов loginTenantBranding, а также чтение и изменение всех свойств в Azure Active Directory. |
@@ -1582,7 +1585,10 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.privilegedIdentityManagement/allEntities/allTasks | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в microsoft.aad.privilegedIdentityManagement. |
+| Microsoft. Directory/Граупсассигнаблеторолес/Аллпропертиес/Update | Обновите группы со свойством Исассигнаблетороле, имеющим значение true в Azure Active Directory. |
+| Microsoft. Directory/Граупсассигнаблеторолес/создать | Создайте группы со свойством Исассигнаблетороле, для которых задано значение true в Azure Active Directory. |
+| Microsoft. Directory/Граупсассигнаблеторолес/удаление | Удалите группы со свойством Исассигнаблетороле, для которых задано значение true в Azure Active Directory. |
+| Microsoft. Directory/Привилежедидентитиманажемент/Аллентитиес/Аллтаскс | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в microsoft.aad.privilegedIdentityManagement. |
 | microsoft.directory/servicePrincipals/appRoleAssignedTo/allTasks | Чтение и настройка свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
 | microsoft.directory/servicePrincipals/oAuth2PermissionGrants/allTasks | Чтение и настройка свойства servicePrincipals.oAuth2PermissionGrants в Azure Active Directory. |
 | microsoft.directory/administrativeUnits/allProperties/allTasks | Создание административных единиц и управление ими (включая члены) |

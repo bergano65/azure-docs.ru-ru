@@ -4,19 +4,19 @@ description: Сведения о создании и настройке упра
 services: sql-database
 ms.service: sql-managed-instance
 ms.subservice: operations
-ms.custom: ''
+ms.custom: devx-track-azurecli
 ms.devlang: ''
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: 3f0eb2c1ecb26475b25cd5ca41c9c61d5e2b47a3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8cc2930422bf644f217737d0f0ba585c243575ee
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84695612"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87503010"
 ---
 # <a name="managed-api-reference-for-azure-sql-managed-instance"></a>Справочник по управляемому API для Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -78,16 +78,16 @@ ms.locfileid: "84695612"
 > [!IMPORTANT]
 > Нельзя создать или удалить управляемый экземпляр с помощью Transact-SQL.
 
-| Get-Help | Описание |
+| Команда | Описание |
 | --- | --- |
 |[CREATE DATABASE](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-mi-current)|Создает новую базу данных экземпляра в SQL Управляемый экземпляр. Для создания новой базы данных необходимо подключение к базе данных master.|
-| [ИЗМЕНЕНИЕ БАЗЫ ДАННЫХ](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-mi-current) |Изменяет экземпляр базы данных в Управляемый экземпляр SQL.|
+| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-mi-current) |Изменяет экземпляр базы данных в Управляемый экземпляр SQL.|
 
 ## <a name="rest-api-create-and-configure-managed-instances"></a>REST API: создание и Настройка управляемых экземпляров
 
 Чтобы создать и настроить управляемые экземпляры, используйте следующие запросы REST API.
 
-| Get-Help | Описание |
+| Команда | Описание |
 | --- | --- |
 |[Управляемые экземпляры. Создание или обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/createorupdate)|Создает или обновляет управляемый экземпляр.|
 |[Управляемые экземпляры. Удаление](https://docs.microsoft.com/rest/api/sql/managedinstances/delete)|Удаляет управляемый экземпляр.|
@@ -96,7 +96,7 @@ ms.locfileid: "84695612"
 |[Управляемые экземпляры. Перечисление по группе ресурсов](https://docs.microsoft.com/rest/api/sql/managedinstances/listbyresourcegroup)|Возвращает список управляемых экземпляров в группе ресурсов.|
 |[Управляемые экземпляры. Обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/update)|Обновляет управляемый экземпляр.|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы узнать о переносе базы данных SQL Server в Azure, ознакомьтесь с разделом [Миграция базы данных SQL Server в базу данных SQL в облаке](../database/migrate-to-database-from-sql-server.md).
 - Дополнительные сведения о поддерживаемых функциях см. [здесь](../database/features-comparison.md).

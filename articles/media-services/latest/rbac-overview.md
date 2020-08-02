@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 05/23/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 1872d0dd56a0459988e65852340c36493ee53f9f
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: c75b6e67932cfd26a3374eab3f3efa34ceade577
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87132251"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87504489"
 ---
 # <a name="role-based-access-control-rbac-for-media-services-accounts"></a>Управление доступом на основе ролей (RBAC) для учетных записей служб мультимедиа
 
@@ -40,7 +40,7 @@ foreach (Microsoft.Azure.Management.Media.Models.Operation a in client.Operation
 
 Дополнительные сведения см. в этих статьях:
 
-- [Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md)
+- [Роли администратора классической подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md)
 - [Что такое управление доступом на основе ролей в Azure (RBAC)?](../../role-based-access-control/overview.md)
 - [Использование RBAC для управления доступом](../../role-based-access-control/role-assignments-rest.md)
 - [Операции поставщика ресурсов служб мультимедиа](../../role-based-access-control/resource-provider-operations.md#microsoftmedia)

@@ -10,12 +10,12 @@ ms.date: 05/01/2020
 ms.author: ruxu
 ms.reviewer: ''
 ms.custom: tracking-python
-ms.openlocfilehash: e0b0525035732a54965f7c391ac6041b114d7304
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: a7dc0fcae9a6fea789d30bac10511007454ecc5f
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045694"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87504017"
 ---
 # <a name="create-develop-and-maintain-synapse-studio-preview-notebooks-in-azure-synapse-analytics"></a>Создание, разработка и обслуживание записных книжек синапсе Studio (Предварительная версия) в Azure синапсе Analytics
 
@@ -191,6 +191,10 @@ ms.locfileid: "86045694"
    ![run-cells-above-or-below](./media/apache-spark-development-using-notebooks/synapse-run-cells-above-or-below.png)
 
 
+### <a name="cancel-all-running-cells"></a>Отменить все работающие ячейки
+Нажмите кнопку **Отмена всех** , чтобы отменить выполнение ячеек или ячеек, ожидающих в очереди. 
+   ![Отмена-все ячейки](./media/apache-spark-development-using-notebooks/synapse-cancel-all.png) 
+
 ### <a name="cell-status-indicator"></a>Индикатор состояния ячейки
 
 Пошаговое состояние выполнения ячейки отображается под ячейкой, чтобы можно было просматривать ее текущий ход выполнения. После завершения выполнения ячейки отображается сводная информация об итогах выполнения с общей длительностью и временем окончания и сохраняется там для дальнейшего использования.
@@ -200,6 +204,7 @@ ms.locfileid: "86045694"
 ### <a name="spark-progress-indicator"></a>Индикатор хода выполнения Spark
 
 Записная книжка Azure Synapse Studio основана исключительно на Spark. Ячейки кода выполняются в пуле Spark удаленно. Индикатор хода выполнения задания Spark снабжен индикатором хода выполнения в реальном времени, который поможет вам понять состояние хода выполнения задания.
+Количество задач для каждого задания или этапа помогает определить параллельный уровень задания Spark. Вы также можете глубже перейти к пользовательскому интерфейсу Spark определенного задания (или этапа), щелкнув ссылку на имя задания (или этапа).
 
 
 ![spark-progress-indicator](./media/apache-spark-development-using-notebooks/synapse-spark-progress-indicator.png)
@@ -208,7 +213,11 @@ ms.locfileid: "86045694"
 
 Вы можете указать время ожидания, число и размер исполнителей, которые будут переданы текущему сеансу Spark в области **Настройка сеанса**. Перезапустите сеанс Spark, чтобы изменения конфигурации вступили в силу. Все кэшированные переменные записной книжки очищаются.
 
-![session-mgmt](./media/apache-spark-development-using-notebooks/synapse-spark-session-mgmt.png)
+[![Управление сеансами](./media/apache-spark-development-using-notebooks/synapse-spark-session-management.png)](./media/apache-spark-development-using-notebooks/synapse-spark-session-management.png#lightbox)
+
+Теперь на панели конфигурации сеанса Spark доступен рекомендуемый сеанс Spark. Вы можете выбрать пул Spark непосредственно на панели конфигурации сеанса и узнать, сколько узлов используется и сколько осталось доступных исполнителей. Эти сведения помогут вам задать размер сеанса соответствующим образом, а не изменять его обратно.
+
+![сеанс — рекомендуется](./media/apache-spark-development-using-notebooks/synapse-spark-session-recommender.png)
 
 
 ## <a name="bring-data-to-a-notebook"></a>Перенесение данных в записную книжку
@@ -264,15 +273,25 @@ df = spark.read.option("header", "true") \
 
 ## <a name="visualize-data-in-a-notebook"></a>Визуализация данных в записной книжке
 
-### <a name="display"></a>Display()
+### <a name="produce-rendered-table-view"></a>Создать представление таблицы, подготовленной к просмотру
 
 Представление табличных результатов предоставляется с возможностью создания линейчатой диаграммы, графика, круговой диаграммы, точечной диаграммы и диаграммы с областями. Визуализировать данные можно без написания кода. Диаграммы можно настроить в области **Параметры диаграммы**. 
 
-Выходные данные магических команд **%%sql** отображаются в представлении отображаемой таблицы по умолчанию. Вы можете вызвать **display(`<DataFrame name>`)** для Spark DataFrames или функцию устойчивых распределенных наборов данных (RDD), чтобы создать представление отображаемой таблицы.
+Выходные данные магических команд **%%sql** отображаются в представлении отображаемой таблицы по умолчанию. Можно вызвать <code>display(df)</code> функцию для таблиц данных Spark или отказоустойчивого распределенного набора данных (RDD), чтобы создать представление таблицы, подготовленное к просмотру.
 
-   ![builtin-charts](./media/apache-spark-development-using-notebooks/synapse-builtin-charts.png)
+   [![builtin-charts](./media/apache-spark-development-using-notebooks/synapse-builtin-charts.png)](./media/apache-spark-development-using-notebooks/synapse-builtin-charts.png#lightbox)
 
-### <a name="displayhtml"></a>DisplayHTML()
+### <a name="visualize-built-in-charts-from-large-scale-dataset"></a>Визуализация встроенных диаграмм из большого набора данных 
+
+По умолчанию <code>display(df)</code> функция принимает только первые 1000 строк данных для отрисовки диаграмм. Проверьте **агрегирование всех результатов** и нажмите кнопку **Применить** . вы примените создание диаграммы из всего набора данных. Задание Spark будет активировано при изменении параметра диаграммы, выполнение вычисления и отрисовка диаграммы займет некоторое время. 
+    [![Встроенные диаграммы — агрегирование-все](./media/apache-spark-development-using-notebooks/synapse-builtin-charts-aggregation-all.png)](./media/apache-spark-development-using-notebooks/synapse-builtin-charts-aggregation-all.png#lightbox)
+
+
+### <a name="visualize-data-statistic-information"></a>Визуализация статистических данных
+Можно использовать <code>display(df, summary = true)</code> для проверки сводки статистики по заданному кадру данных Spark, включающего в себя имя столбца, тип столбца, уникальные значения и отсутствующие значения для каждого столбца. Можно также выбрать конкретный столбец, чтобы увидеть его минимальное значение, максимальное значение, среднее значение и стандартное отклонение.
+    [![встроенные диаграммы — сводка ](./media/apache-spark-development-using-notebooks/synapse-builtin-charts-summary.png)](./media/apache-spark-development-using-notebooks/synapse-builtin-charts-summary.png#lightbox)
+
+### <a name="render-html-or-interactive-libraries"></a>Прорисовка библиотек HTML или интерактивной библиотеки
 
 Вы можете отображать HTML или интерактивные библиотеки, такие как **bokeh**, используя **displayHTML()** .
 
@@ -332,9 +351,36 @@ displayHTML(html)
 ## <a name="magic-commands"></a>Магические команды
 В записных книжках Azure Synapse Studio можно использовать привычные магические команды Jupyter. Текущие доступные магические команды указаны в приведенном ниже списке. Поделитесь с нами своими вариантами использования на GitHub, чтобы мы могли продолжать создавать еще больше магических команд с учетом ваших потребностей.
 
-Доступные магические команды строки: [%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit).
+Доступные магическые строки: [% лсмагик](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [% времени](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [% времени](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit)
 
 Доступные магические команды ячейки: [%%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%%capture](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-capture), [%%writefile](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-writefile), [%%sql](#use-multiple-languages), [%%pyspark](#use-multiple-languages), [%%spark](#use-multiple-languages), [%%csharp](#use-multiple-languages).
+
+
+## <a name="orchestrate-notebook"></a>Управление записной книжкой
+
+### <a name="add-a-notebook-to-a-pipeline"></a>Добавление записной книжки в конвейер
+
+Нажмите кнопку **Добавить в конвейер** в правом верхнем углу, чтобы добавить записную книжку в существующий конвейер или создать новый конвейер.
+
+![Добавление в конвейер](./media/apache-spark-development-using-notebooks/add-to-pipeline.png)
+
+### <a name="designate-a-parameters-cell"></a>Назначение ячейки параметров
+
+Чтобы параметризовать записную книжку, щелкните многоточие (...), чтобы открыть меню "действия" в правом углу. Затем выберите **параметр переключить ячейку параметра** , чтобы назначить ячейку в качестве ячейки параметров.
+
+![Toggle-параметр](./media/apache-spark-development-using-notebooks/toggle-parameter-cell.png)
+
+Фабрика данных Azure ищет ячейку Parameters и обрабатывает ее как значения по умолчанию для параметров, передаваемых во время выполнения. Подсистема выполнения добавит новую ячейку под ячейкой параметров с входными параметрами, чтобы перезаписать значения по умолчанию. Если ячейка параметров не указана, вставляемая ячейка будет вставлена в верхнюю часть записной книжки.
+
+### <a name="assign-parameters-values-from-a-pipeline"></a>Назначение значений параметров из конвейера
+
+Создав записную книжку с параметрами, вы можете выполнить ее из конвейера с помощью действия записной книжки Azure синапсе. После добавления действия на холст конвейера можно будет задать значения параметров в разделе **базовые параметры** на вкладке **Параметры** . 
+
+![Assign-параметр](./media/apache-spark-development-using-notebooks/assign-parameter.png)
+
+При назначении значений параметров можно использовать [язык выражений конвейера](../../data-factory/control-flow-expression-language-functions.md) или [системные переменные](../../data-factory/control-flow-system-variables.md).
+
+
 
 ## <a name="shortcut-keys"></a>Сочетания клавиш
 
@@ -356,8 +402,8 @@ displayHTML(html)
 |--|--|
 |Запуск текущей ячейки и выбор ниже | SHIFT+ВВОД |
 |Запуск текущей ячейки и вставка ниже | ALT+ВВОД |
-|Выбор ячейки выше| Вверх |
-|Выбор ячейки ниже| Вниз |
+|Выбор ячейки выше| Up |
+|Выбор ячейки ниже| Down |
 |Вставка ячейки выше| Объект |
 |Вставка ячейки ниже| B |
 |Расширение выбранных ячеек выше| Shift+Up |
@@ -390,7 +436,7 @@ displayHTML(html)
 |Переключение в режим команд| ESC |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-
+- [Ознакомьтесь с примерами записных книжек синапсе](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks)
 - [Краткое руководство. Создание пула Apache Spark (предварительная версия) в Azure Synapse Analytics с помощью веб-инструментов](../quickstart-apache-spark-notebook.md)
 - [Что такое Apache Spark в Azure Synapse Analytics](apache-spark-overview.md)
 - [Использование .NET для Apache Spark с помощью Azure Synapse Analytics](spark-dotnet.md)
