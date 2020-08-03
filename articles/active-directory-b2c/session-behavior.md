@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 05/07/2020
+ms.date: 07/30/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: ed10a9258590f8f9037a574bd0322a82dd309a5b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c47b0249824a3683b8f24cc01cc5eea5ccf32585
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85385252"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87482674"
 ---
 # <a name="configure-session-behavior-in-azure-active-directory-b2c"></a>Настройка поведения сеанса в Azure Active Directory B2C
 
@@ -30,15 +30,15 @@ ms.locfileid: "85385252"
     - Минимум (включительно) — 15 минут.
     - Максимум (включительно) — 1440 минут.
 - **Время ожидания сеанса веб-приложения** — [тип срока действия сеанса](session-overview.md#session-expiry-type), *пошаговый*или *абсолютный*. 
-- **Конфигурация единого входа** . [область сеанса](session-overview.md#session-scope) поведения единого входа (SSO) для нескольких приложений и пользовательских потоков в клиенте Azure AD B2C. 
+- **Конфигурация единого входа** . [область сеанса](session-overview.md#session-scope) поведения единого входа (SSO) для нескольких приложений и пользовательских потоков в клиенте Azure AD B2C.
 
 
 ## <a name="configure-the-properties"></a>Настройка свойств
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портал Microsoft Azure](https://portal.azure.com).
 2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент Azure AD B2C.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
-4. Выберите **Потоки пользователей (политики)** .
+4. Выберите **Потоки пользователей**.
 5. Откройте созданный ранее пользовательский поток.
 6. Выберите **Свойства**.
 7. Настройте **время существования сеанса веб-приложения (в минутах)**, **время ожидания сеанса веб-приложения**, **конфигурацию единого входа**и **требование маркера идентификатора при необходимости в запросах на выход** .

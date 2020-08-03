@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/26/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: f7e9a76309b4d9dcd010b85d1b55f340374be5c4
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 960fff073353375cd50b31bc7284134ca733f142
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87337931"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87488029"
 ---
 # <a name="about-the-query-language-for-azure-digital-twins"></a>О языке запросов для Azure Digital двойников
 
@@ -20,23 +20,7 @@ ms.locfileid: "87337931"
 
 Чтобы отправить запрос в службу из клиентского приложения, вы будете использовать [**API запросов**](https://docs.microsoft.com/dotnet/api/azure.digitaltwins.core.digitaltwinsclient.query?view=azure-dotnet-preview)цифровых двойников Azure. Это позволяет разработчикам создавать запросы и применять фильтры для поиска наборов цифровых двойников в графе двойника, а также другую информацию о сценарии цифрового двойников Azure.
 
-## <a name="query-language-features"></a>Возможности языка запросов
-
-Azure Digital двойников предоставляет широкие возможности запросов к графу двойника. Запросы описываются с помощью синтаксиса, аналогичного SQL, в языке запросов, аналогичном [языку запросов центра Интернета вещей](../iot-hub/iot-hub-devguide-query-language.md) , с множеством сравниваемых функций.
-
-> [!NOTE]
-> Все операции с запросами цифровых двойников Azure учитывают регистр.
-
-Ниже приведены операции, доступные на языке хранилища запросов Azure Digital двойников.
-* Получение свойств двойников by Digital двойников (включая [теги](how-to-use-tags.md)).
-* Получение интерфейсов двойников by Digital двойников ".
-* Возвращает двойников по свойствам связи.
-* Получение двойников по нескольким типам отношений ( `JOIN` запросы). Существует ограничение на количество `JOIN` разрешенных (один уровень для общедоступной предварительной версии).
-* Используйте пользовательскую функцию `IS_OF_MODEL(twinCollection, twinTypeName)` , которая обеспечивает фильтрацию на основе [модели](concepts-models.md)двойника. Он поддерживает наследование.
-* Используйте скалярные функции: `IS_BOOL` , `IS_DEFINED` , `IS_NULL` , `IS_NUMBER` , `IS_OBJECT` , `IS_PRIMITIVE` , `IS_STRING` , `STARTS_WITH` , `ENDS_WITH` .
-* Использовать операторы сравнения запросов: `IN` / `NIN` , `=` , `!=` , `<` , `>` , `<=` , `>=` .
-* Используйте любое сочетание ( `AND` , `OR` , `NOT` оператор) приведенного выше.
-* Использовать продолжение: экземпляр объекта запроса создается с размером страницы (до 100). Вы можете получить цифровое двойников по одной странице за раз, предоставив маркер продолжения в последующих вызовах API.
+[!INCLUDE [digital-twins-query-operations.md](../../includes/digital-twins-query-operations.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

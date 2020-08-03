@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/29/2020
 ms.author: thvankra
-ms.openlocfilehash: 447744f0436cb29e849a52694a02600183fd357a
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 26f635525afea289e2e791b802478040a7851eee
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87432812"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87486516"
 ---
 # <a name="elastically-scale-an-azure-cosmos-db-cassandra-api-account"></a>Эластичное масштабирование учетной записи API Cassandra в Azure Cosmos DB
 
@@ -46,7 +46,7 @@ Azure Cosmos DB возвращает ограниченные по частот�
 
 ## <a name="use-the-control-plane"></a><a id="use-control-plane"></a>Использование уровня управления
 
-API Azure Cosmos DB для Cassandra обеспечивает возможность программной настройки пропускной способности с помощью различных функций уровня управления. Инструкции и примеры см. в статьях об [Azure Resource Manager](manage-cassandra-with-resource-manager.md), [PowerShell](powershell-samples-cassandra.md) и [Azure CLI](cli-samples.md).
+API Azure Cosmos DB для Cassandra обеспечивает возможность программной настройки пропускной способности с помощью различных функций уровня управления. Инструкции и примеры см. в статьях об [Azure Resource Manager](manage-cassandra-with-resource-manager.md), [PowerShell](powershell-samples.md) и [Azure CLI](cli-samples.md).
 
 Преимущество этого метода заключается в том, что вы можете автоматизировать масштабирование ресурсов на основе таймера, чтобы учитывать пиковую активность или периоды низкой активности. Рассмотрим наш пример [здесь](https://github.com/Azure-Samples/azure-cosmos-throughput-scheduler), чтобы узнать, как это сделать с помощью Функций Azure и PowerShell.
 

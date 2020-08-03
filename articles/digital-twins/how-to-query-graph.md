@@ -7,20 +7,24 @@ ms.author: baanders
 ms.date: 3/26/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 05bcbf8df695ba308a6eaff5e7401f0a6d638747
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 3e7ee90d75a2ff2b3552992c19f11cc86b6109ca
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87337608"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87486666"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Запрос к графу Azure Digital двойников двойника
 
 В этой статье приведены примеры и дополнительные сведения об использовании [языка хранилища запросов Azure Digital двойников](concepts-query-language.md) для запроса информации о [двойника графе](concepts-twins-graph.md) . Запросы выполняются на графе с помощью [**API-интерфейсов запросов**](how-to-use-apis-sdks.md)двойников Azure Digital.
 
+[!INCLUDE [digital-twins-query-operations.md](../../includes/digital-twins-query-operations.md)]
+
+В оставшейся части этой статьи приведены примеры использования этих операций.
+
 ## <a name="query-syntax"></a>Синтаксис запросов
 
-Ниже приведено несколько примеров запросов, иллюстрирующих структуру языка запросов и выполняющих возможные операции с запросами.
+В этом разделе содержатся образцы запросов, иллюстрирующие структуру языка запросов и выполняющие возможные операции с запросами.
 
 Получение [цифровых двойников](concepts-twins-graph.md) по свойствам (включая идентификатор и метаданные):
 ```sql
@@ -31,16 +35,55 @@ AND T.$dtId in ['123', '456']
 AND T.Temperature = 70
 ```
 
-Получение цифровых двойников по [модели](concepts-models.md)
-```sql
-SELECT  * 
-FROM DigitalTwins T  
-WHERE IS_OF_MODEL(T , 'dtmi:com:contoso:Space;3')
-AND T.roomSize > 50
-```
-
 > [!TIP]
 > Идентификатор цифрового двойника запрашивается с помощью поля метаданных `$dtId` .
+
+Можно также получить двойников по их свойствам *тегов* , как описано в разделе [Добавление тегов в цифровые двойников](how-to-use-tags.md):
+```sql
+select * from digitaltwins where is_defined(tags.red) 
+```
+
+### <a name="select-top-items"></a>Выбрать верхние элементы
+
+С помощью предложения можно выбрать несколько "верхних" элементов в запросе `Select TOP` .
+
+```sql
+SELECT TOP (5)
+FROM DIGITALTWINS
+WHERE property = 42
+```
+
+### <a name="query-by-model"></a>Запрос по модели
+
+`IS_OF_MODEL`Оператор можно использовать для фильтрации на основе [модели](concepts-models.md)двойника. Он поддерживает наследование и имеет несколько параметров перегрузки.
+
+Простейший способ использования `IS_OF_MODEL` принимает только `twinTypeName` параметр: `IS_OF_MODEL(twinTypeName)` .
+Ниже приведен пример запроса, который передает значение в этом параметре:
+
+```sql
+SELECT * FROM DIGITALTWINS WHERE IS_OF_MODEL('dtmi:sample:thing;1')
+```
+
+Чтобы указать коллекцию двойника для поиска при наличии нескольких элементов (например, если `JOIN` используется), добавьте `twinCollection` параметр: `IS_OF_MODEL(twinCollection, twinTypeName)` .
+Ниже приведен пример запроса, который добавляет значение для этого параметра:
+
+```sql
+SELECT * FROM DIGITALTWINS DT WHERE IS_OF_MODEL(DT, 'dtmi:sample:thing;1')
+```
+
+Чтобы выполнить точное соответствие, добавьте `exact` параметр: `IS_OF_MODEL(twinTypeName, exact)` .
+Ниже приведен пример запроса, который добавляет значение для этого параметра:
+
+```sql
+SELECT * FROM DIGITALTWINS WHERE IS_OF_MODEL('dtmi:sample:thing;1', exact)
+```
+
+Можно также передать все три аргумента вместе: `IS_OF_MODEL(twinCollection, twinTypeName, exact)` .
+Ниже приведен пример запроса, в котором указывается значение для всех трех параметров:
+
+```sql
+SELECT ROOM FROM DIGITALTWINS DT WHERE IS_OF_MODEL(DT, 'dtmi:sample:thing;1', exact)
+```
 
 ### <a name="query-based-on-relationships"></a>Запрос на основе связей
 

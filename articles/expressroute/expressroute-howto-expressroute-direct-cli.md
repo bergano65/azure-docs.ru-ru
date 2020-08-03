@@ -7,12 +7,13 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 05/20/2019
 ms.author: cherylmc
-ms.openlocfilehash: 343b63f960ccc458b1b1603f924b890366982477
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 4cbacf997413c4eba1e8a142925cc6cde58fb0ec
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84736277"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87488012"
 ---
 # <a name="configure-expressroute-direct-by-using-the-azure-cli"></a>Настройка ExpressRoute Direct с помощью Azure CLI
 
@@ -278,7 +279,7 @@ ms.locfileid: "84736277"
 
    Чтобы выключить порты, используйте эту же процедуру с параметром `AdminState = "Disabled"`.
 
-## <a name="create-a-circuit"></a><a name="circuit"></a>Создание канала
+## <a name="create-a-circuit"></a><a name="circuit"></a>Создание цепи
 
 По умолчанию в подписке, в которой есть ресурс ExpressRoute Direct, можно создать до 10 каналов. Это ограничение можно увеличить через службу поддержки Майкрософт. Отслеживание подготовленной и используемой пропускной способности вам нужно выполнять самостоятельно. Подготовленная пропускная способность вычисляется как сумма пропускной способности всех каналов в ресурсе ExpressRoute Direct. Используемая пропускная способность описывает фактическое потребление базовых физических интерфейсов.
 
@@ -331,6 +332,6 @@ ms.locfileid: "84736277"
   }  
   ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [сведений о подключении ExpressRoute Direct](expressroute-erdirect-about.md).

@@ -7,21 +7,21 @@ ms.topic: article
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: 4ee970f7e4a1228d40a284372300ed9e95c00b7e
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 2e7658e965931dd78a6db0e2c9fee36edffff98b
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/31/2020
-ms.locfileid: "87460394"
+ms.locfileid: "87479818"
 ---
 # <a name="payout-summary-overview"></a>Общие сведения о сводках по выплатам
 
 В [сводке по выплатам](./payout-summary.md) отображаются сведения о денежных средствах, полученных вами с помощью корпорации Майкрософт. Кроме того, с ее помощью можно узнать, когда вы будете получать платежи и сколько вы получите.
 
-Если вы продаете свои продукты через Azure Marketplace, также отобразятся сведения об успешных выплатах в сводке. Дополнительные сведения о платежах Azure Marketplace см. в статьях [Политики участия в Azure Marketplace](https://docs.microsoft.com/legal/marketplace/participation-policy) и [Соглашение с издателем Microsoft Azure Marketplace](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt).
+Если вы продаете свои продукты через Azure Marketplace, также отобразятся сведения об успешных выплатах в сводке. Дополнительные сведения о платежах Azure Marketplace см. в статьях [Политики участия в Azure Marketplace](https://docs.microsoft.com/legal/marketplace/participation-policy) и [Соглашение с издателем Microsoft Azure Marketplace](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xqkx).
 
 > [!NOTE]
-> Чтобы получить выплату, необходимо достигнуть [порогового значения](./payment-thresholds-methods-timeframes.md) в 50 долларов США. Дополнительные сведения о пороговом значении платежа см. в [соглашении с издателем Microsoft Azure Marketplace](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt).
+> Чтобы получить выплату, необходимо достигнуть [порогового значения](./payment-thresholds-methods-timeframes.md) в 50 долларов США. Дополнительные сведения о пороговом значении платежа см. в [соглашении с издателем Microsoft Azure Marketplace](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xqkx).
 
 Чтобы просмотреть сведения о выплатах, войдите в [Центр партнеров](https://partner.microsoft.com/dashboard/home) и выберите значок выплата в правом верхнем углу экрана:
 

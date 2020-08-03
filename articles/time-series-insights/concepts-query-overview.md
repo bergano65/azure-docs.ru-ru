@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.custom: seodec18
-ms.openlocfilehash: a4b969ecbc92df45021b4a9ec711960171d77d4e
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: abc1f1de45fe846f9f50a6a7aa3dae2ed837b52b
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86495301"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87486800"
 ---
 # <a name="querying-data-from-azure-time-series-insights-gen2"></a>Запрос данных из Gen2 службы "аналитика временных рядов Azure"
 
@@ -37,7 +37,7 @@ Gen2 "аналитика временных рядов Azure" используе
 
 ## <a name="environment-apis"></a>Программные интерфейсы среды
 
-* [Получить API окружений](https://docs.microsoft.com/rest/api/time-series-insights/management/environments/get): Возвращает список сред, к которым вызывающему объекту разрешен доступ.
+* [Получить API окружений](/rest/api/time-series-insights/management(gen1/gen2)/accesspolicies/listbyenvironment): Возвращает список сред, к которым вызывающему объекту разрешен доступ.
 * [Получение API доступности сред](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/getavailability): Возвращает распределение количества событий по метке времени события `$ts` . Этот API помогает определить, есть ли в среде какие-либо события, возвращая количество событий, разбитых на интервалы времени, если таковые существуют.
 * [Получение API схемы событий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/geteventschema): Возвращает метаданные схемы событий для заданного диапазона поиска. Этот API позволяет получить все метаданные и свойства, доступные в схеме для заданной области поиска.
 

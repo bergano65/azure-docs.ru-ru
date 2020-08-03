@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: f4bfffe54fb87953ae737ecf83ea898cfe78743c
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 424a05d6a096538aa296bb11863702b816410fb9
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86040339"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87480651"
 ---
 # <a name="how-trust-relationships-work-for-resource-forests-in-azure-active-directory-domain-services"></a>Как работают отношения доверия для лесов ресурсов в доменных службах Azure Active Directory
 
@@ -276,11 +276,11 @@ ms.locfileid: "86040339"
 * *Active Directory домены и отношения доверия* — это консоль управления (MMC), которая используется для управления доверительными отношениями домена, функциональными уровнями домена и леса и суффиксами имени участника-пользователя.
 * Программы командной строки *netdom* и *nltest* можно использовать для поиска, просмотра, создания и управления отношениями доверия. Эти средства напрямую взаимодействуют с полномочиями LSA на контроллере домена.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о лесах ресурсов см [. в статье как работают отношения доверия лесов в Azure AD DS?][concepts-trust]
 
-Чтобы приступить к созданию управляемого домена с лесом ресурсов, см. статью [Создание и Настройка управляемого домена AD DS Azure][tutorial-create-advanced]. Затем можно [Создать исходящее отношение доверия между лесами для локального домена (предварительная версия)][create-forest-trust].
+Чтобы приступить к созданию управляемого домена с лесом ресурсов, см. статью [Создание и Настройка управляемого домена AD DS Azure][tutorial-create-advanced]. Затем можно [создать исходящее доверие лесов для локального домена][create-forest-trust].
 
 <!-- LINKS - INTERNAL -->
 [concepts-trust]: concepts-forest-trust.md

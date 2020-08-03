@@ -5,12 +5,12 @@ author: IngridAtMicrosoft
 ms.topic: how-to
 ms.author: inhenkel
 ms.date: 05/24/2020
-ms.openlocfilehash: ca41a403f789fd529ac65c21799d3d3e7f3becf6
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: bbd3cb88b017209adff58a646e274caf31ab425f
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285464"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87486448"
 ---
 # <a name="troubleshoot-live-video-analytics-on-iot-edge"></a>Устранение неполадок в Live Video Analytics на IoT Edge
 
@@ -129,14 +129,14 @@ ModuleNotFoundError: No module named 'azure.mgmt.iothub.iot_hub_client'
     
 Чтобы устранить эту проблему:
 
-1. Выполните следующую команду:
+1. Выполните следующую команду.
 
     ```
     az --version
     ```
 1. Убедитесь, что установлены следующие расширения. Начиная с публикации этой статьи, расширения и их версии:
 
-    | Расширение | Версия |
+    | Расширение | Version |
     |---|---|
     |azure-cli   |      2.5.1|
     |Command-modules-нспкг         |   2.0.3|
@@ -234,7 +234,7 @@ Unhandled exception. Microsoft.Azure.Devices.Common.Exceptions.UnauthorizedExcep
 
     ![Снимок экрана, на котором отображается состояние выполнения модулей в центре Интернета вещей Azure.](./media/troubleshoot-how-to/iot-hub.png)
 
-* Проверьте, отправляются ли события в правильную конечную точку URL-адреса. Внешний контейнер AI предоставляет URL-адрес и порт, через который он получает и возвращает данные из запросов POST. Этот URL-адрес указан как `endpoint: url` свойство для обработчика РАСШИРЕНИЙ HTTP. Как видно в [URL-адресе топологии](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/httpExtension/topology.json), конечной точке присваивается параметр URL-адреса. Убедитесь, что значение по умолчанию для [параметра](http://yolov3/score) или переданное значение является точным. Можно проверить, работает ли он с помощью URL-адреса клиента (в виде фигур).  
+* Проверьте, отправляются ли события в правильную конечную точку URL-адреса. Внешний контейнер AI предоставляет URL-адрес и порт, через который он получает и возвращает данные из запросов POST. Этот URL-адрес указан как `endpoint: url` свойство для обработчика РАСШИРЕНИЙ HTTP. Как видно в [URL-адресе топологии](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/httpExtension/topology.json), конечной точке присваивается параметр URL-адреса. Убедитесь, что значение по умолчанию для параметра или переданное значение является точным. Можно проверить, работает ли он с помощью URL-адреса клиента (в виде фигур).  
 
     Например, ниже приведен контейнер Йоло v3, который работает на локальном компьютере с IP-адресом 172.17.0.3. Для поиска IP-адреса используйте проверку DOCKER.
 
@@ -312,7 +312,7 @@ Unhandled exception. Microsoft.Azure.Devices.Common.Exceptions.UnauthorizedExcep
 
 1. Выберите **Обновить**.
 1. Выберите **Review + Create** (Просмотреть и создать). Сообщение об успешной проверке публикуется под зеленым баннером.
-1. Нажмите кнопку **создания**.
+1. Щелкните **Создать**.
 1. Обновите **двойника удостоверений модуля** , чтобы он указывал на параметр дебуглогсдиректори, указывающий на каталог, в котором собираются журналы.
 
     a. В таблице **модули** выберите **лваедже**.  

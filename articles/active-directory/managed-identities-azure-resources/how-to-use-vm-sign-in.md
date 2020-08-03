@@ -15,12 +15,13 @@ ms.workload: identity
 ms.date: 12/01/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1380562cfc073d906ea4cfc0d6d849e9ca2a70d3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 058058b975116fabcbc242f46afb09dff8df08b6
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608421"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87480447"
 ---
 # <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-for-sign-in"></a>Использование управляемых удостоверений для ресурсов Azure на виртуальной машине Azure для входа 
 
@@ -29,7 +30,7 @@ ms.locfileid: "85608421"
 
 [!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -96,7 +97,7 @@ ms.locfileid: "85608421"
 
 Если какое-либо из условий не выполнено, может потребоваться повторно развернуть управляемые удостоверения для ресурсов Azure для ресурса или устранить неполадки развертывания. Дополнительные сведения о настройке виртуальных машин см. [в статье Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портал Azure](qs-configure-portal-windows-vm.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы включить управляемые удостоверения для ресурсов Azure на виртуальной машине Azure, обратитесь к статье [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью PowerShell](qs-configure-powershell-windows-vm.md) или [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLI](qs-configure-cli-windows-vm.md).
 
