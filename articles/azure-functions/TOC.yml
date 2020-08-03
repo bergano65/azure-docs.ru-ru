@@ -16,7 +16,7 @@
     - name: Создание функции
       expanded: true
       items:
-        - name: Visual Studio Code
+        - name: "Visual Studio\_Code"
           href: ./functions-create-first-function-vs-code.md
         - name: Visual Studio
           href: functions-create-your-first-function-visual-studio.md
@@ -27,7 +27,7 @@
           href: functions-create-first-function-resource-manager.md
     - name: Подключение к хранилищу
       items:
-        - name: Visual Studio Code
+        - name: "Visual Studio\_Code"
           href: functions-add-output-binding-storage-queue-vs-code.md
         - name: Visual Studio
           href: functions-add-output-binding-storage-queue-vs.md
@@ -129,6 +129,10 @@
           href: functions-reference-python.md
         - name: TypeScript
           href: functions-reference-node.md#typescript
+    - name: Платформы
+      items:
+        - name: Express.js
+          href: shift-expressjs.md
     - name: Безопасность
       items:
         - name: Общие сведения о безопасности
@@ -372,7 +376,7 @@
             - name: Входные данные
               displayName: Blob storage
               href: functions-bindings-storage-blob-input.md
-            - name: Выходные данные
+            - name: Вывод
               displayName: Blob storage
               href: functions-bindings-storage-blob-output.md
         - name: Azure Cosmos DB
@@ -392,7 +396,7 @@
                 - name: Входные данные
                   href: functions-bindings-cosmosdb-v2-input.md
                   displayName: Azure Cosmos DB
-                - name: Выходные данные
+                - name: Вывод
                   href: functions-bindings-cosmosdb-v2-output.md
                   displayName: Azure Cosmos DB
         - name: Сетка событий Azure

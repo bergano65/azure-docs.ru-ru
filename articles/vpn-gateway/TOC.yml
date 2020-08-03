@@ -12,7 +12,7 @@
       href: vpn-gateway-tutorial-vpnconnection-powershell.md
 - name: Примеры
   items:
-    - name: Azure PowerShell
+    - name: Azure PowerShell;
       href: powershell-samples.md
 - name: Основные понятия
   items:
@@ -42,6 +42,8 @@
       href: vpn-gateway-about-point-to-site-routing.md
     - name: Сведения об избыточных между зонами шлюзах для Зон доступности
       href: about-zone-redundant-vnet-gateways.md
+    - name: Встроенные средства управления безопасностью
+      href: vpn-gateway-security-controls.md
     - name: Взаимодействие компонентов при подключении к серверной части
       items:
         - name: Вводная часть и сведения о настройке теста
@@ -52,17 +54,15 @@
           href: ../networking/connectivty-interoperability-control-plane.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
         - name: Анализ на уровне данных
           href: ../networking/connectivty-interoperability-data-plane.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
-    - name: Встроенные средства управления безопасностью
-      href: vpn-gateway-security-controls.md
 - name: Практические руководства
   items:
     - name: Создание и администрирование VPN-шлюза
       items:
         - name: Создание VPN-шлюза на основе маршрутов
           items:
-            - name: портал Azure;
+            - name: Портал Azure
               href: create-routebased-vpn-gateway-portal.md
-            - name: Azure PowerShell;
+            - name: Azure PowerShell
               href: create-routebased-vpn-gateway-powershell.md
             - name: Azure CLI
               href: create-routebased-vpn-gateway-cli.md
@@ -72,9 +72,9 @@
           href: vpn-gateway-resetgw-classic.md
         - name: Удаление VPN-шлюза
           items:
-            - name: портал Azure;
+            - name: Портал Azure
               href: vpn-gateway-delete-vnet-gateway-portal.md
-            - name: Azure PowerShell;
+            - name: Azure PowerShell
               href: vpn-gateway-delete-vnet-gateway-powershell.md
         - name: Управление устаревшими номерами SKU шлюза
           href: vpn-gateway-about-skus-legacy.md
@@ -82,9 +82,9 @@
       items:
         - name: "Настройка подключений \"сеть\_— сеть\""
           items:
-            - name: портал Azure;
+            - name: Портал Azure
               href: vpn-gateway-howto-site-to-site-resource-manager-portal.md
-            - name: Azure PowerShell;
+            - name: Azure PowerShell
               href: vpn-gateway-create-site-to-site-rm-powershell.md
             - name: Azure CLI
               href: vpn-gateway-howto-site-to-site-resource-manager-cli.md
@@ -98,17 +98,17 @@
       items:
         - name: Настройка подключений между виртуальными сетями
           items:
-            - name: портал Azure;
+            - name: Портал Azure
               href: vpn-gateway-howto-vnet-vnet-resource-manager-portal.md
-            - name: Azure PowerShell;
+            - name: Azure PowerShell
               href: vpn-gateway-vnet-vnet-rm-ps.md
             - name: Azure CLI
               href: vpn-gateway-howto-vnet-vnet-cli.md
         - name: Настройка подключения между виртуальными сетями для разных моделей развертывания
           items:
-            - name: портал Azure;
+            - name: Портал Azure
               href: vpn-gateway-connect-different-deployment-models-portal.md
-            - name: Azure PowerShell;
+            - name: Azure PowerShell
               href: vpn-gateway-connect-different-deployment-models-powershell.md
     - name: "Подключения \"точка\_— сеть\""
       items:
@@ -118,7 +118,7 @@
               items:
                 - name: портал Azure;
                   href: vpn-gateway-howto-point-to-site-resource-manager-portal.md
-                - name: Azure PowerShell;
+                - name: Azure PowerShell
                   href: vpn-gateway-howto-point-to-site-rm-ps.md
             - name: Настройка сертификатов и клиентов P2S
               items:
@@ -160,8 +160,8 @@
               href: vpn-gateway-howto-openvpn.md
             - name: Настройка клиентов OpenVPN
               href: vpn-gateway-howto-openvpn-clients.md
-        - name: Переход с протокола SSTP на OpenVPN или IKEv2
-          href: ikev2-openvpn-from-sstp.md
+            - name: Переход с протокола SSTP на OpenVPN или IKEv2
+              href: ikev2-openvpn-from-sstp.md
         - name: Переход на общедоступный сертификат шлюза от ЦС для P2S
           href: vpn-gateway-point-to-site-gateway-public-ca.md
         - name: Настройка туннеля Always On VPN для устройства
@@ -170,17 +170,11 @@
           href: vpn-gateway-howto-always-on-user-tunnel.md
         - name: Объявление пользовательских маршрутов для P2S-клиентов
           href: vpn-gateway-p2s-advertise-custom-routes.md
-    - name: Создание избыточного между зонами шлюза
-      href: create-zone-redundant-vnet-gateway.md
-    - name: Настройка политик IPsec/IKE для подключений
-      href: vpn-gateway-ipsecikepolicy-rm-powershell.md
-    - name: "Настройка подключений в режиме \"активный\_— активный\""
-      href: vpn-gateway-activeactive-rm-powershell.md
     - name: 'Маршрутизация, BGP и пиринг виртуальных сетей'
       items:
         - name: Настройка BGP для VPN-шлюза
           items:
-            - name: Azure PowerShell;
+            - name: Azure PowerShell
               href: vpn-gateway-bgp-resource-manager-ps.md
             - name: Azure CLI
               href: bgp-how-to-cli.md
@@ -196,7 +190,7 @@
       items:
         - name: Портал Azure
           href: vpn-gateway-modify-local-network-gateway-portal.md
-        - name: Azure PowerShell;
+        - name: Azure PowerShell
           href: vpn-gateway-modify-local-network-gateway.md
         - name: Azure CLI
           href: vpn-gateway-modify-local-network-gateway-cli.md
@@ -218,6 +212,18 @@
           href: vpn-gateway-howto-setup-alerts-virtual-network-gateway-log.md
     - name: Настройка захвата пакетов
       href: packet-capture.md
+    - name: 'Шлюзы, избыточные в пределах зоны'
+      items:
+        - name: Создание избыточного между зонами шлюза
+          href: create-zone-redundant-vnet-gateway.md
+    - name: Настройка политик IPsec/IKE для подключений
+      items:
+        - name: PowerShell
+          href: vpn-gateway-ipsecikepolicy-rm-powershell.md
+    - name: "Настройка подключений в режиме \"активный\_— активный\""
+      items:
+        - name: PowerShell
+          href: vpn-gateway-activeactive-rm-powershell.md
     - name: Диагностика
       href: vpn-gateway-troubleshoot.md
       items:

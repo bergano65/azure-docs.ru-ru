@@ -210,8 +210,10 @@
     - name: Спецификации шаблонов
       items:
         - name: Создание решений с использованием связанных шаблонов
+          displayName: template specs
           href: template-specs-create-linked.md
         - name: Развертывание в качестве связанного шаблона
+          displayName: template specs
           href: template-specs-deploy-linked-template.md
     - name: Дополнительные шаблоны
       items:
@@ -366,8 +368,8 @@
           href: deploy-to-management-group.md
         - name: Клиент
           href: deploy-to-tenant.md
-        - name: Несколько групп ресурсов
-          href: cross-resource-group-deployment.md
+        - name: Развертывания в разных областях
+          href: cross-scope-deployment.md
     - name: Предоставление параметров
       items:
         - name: Создание файла параметров

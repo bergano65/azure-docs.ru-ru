@@ -452,6 +452,8 @@
       displayName: security
     - name: Версии потоков на уровне пользователя
       href: user-flow-versions.md
+    - name: Прежние версии потока на уровне пользователя
+      href: user-flow-versions-legacy.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

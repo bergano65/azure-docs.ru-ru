@@ -175,6 +175,22 @@
               href: roles-custom-available-permissions.md
             - name: Делегирование разрешений администратора приложений
               href: roles-delegate-app-roles.md
+        - name: Использование групп для управления назначениями ролей
+          items:
+            - name: Назначение ролей на основе групп (предварительная версия)
+              href: roles-groups-concept.md
+            - name: Создание группы с назначением роли
+              href: roles-groups-create-eligible.md
+            - name: Назначение ролей группе
+              href: roles-groups-assign-role.md
+            - name: Удаление назначений ролей из группы
+              href: roles-groups-remove-assignment.md
+            - name: Просмотр назначений ролей в группе
+              href: roles-groups-view-assignments.md
+            - name: Назначение группы как соответствующей для роли в PIM
+              href: roles-groups-pim-eligible.md
+            - name: Часто задаваемые вопросы и устранение неполадок
+              href: roles-groups-faq-troubleshooting.md
         - name: Минимальные привилегии ролей для выполнения заданий
           href: roles-delegate-by-task.md
         - name: "Роли Microsoft\_365"

@@ -10,14 +10,16 @@
       href: load-balancer-faqs.md
 - name: Краткое руководство
   items:
-    - name: "Создание подсистемы балансировки нагрузки\_— портал"
+    - name: "Создание общедоступной подсистемы балансировки нагрузки\_— портал"
       href: quickstart-load-balancer-standard-public-portal.md
-    - name: "Создание подсистемы балансировки нагрузки\_— Azure\_CLI"
+    - name: "Создание общедоступной подсистемы балансировки нагрузки\_— Azure\_СLI"
       href: quickstart-load-balancer-standard-public-cli.md
-    - name: "Создание подсистемы балансировки нагрузки\_— Azure PowerShell"
+    - name: "Создание общедоступной подсистемы балансировки нагрузки\_— Azure PowerShell"
       href: quickstart-create-standard-load-balancer-powershell.md
-    - name: Создание подсистемы балансировки нагрузки (шаблон ARM)
+    - name: "Создание общедоступной подсистемы балансировки нагрузки\_— шаблон ARM"
       href: quickstart-load-balancer-standard-public-template.md
+    - name: "Создание внутренней подсистемы балансировки нагрузки\_— портал"
+      href: quickstart-load-balancer-standard-internal-portal.md
   expanded: true
 - name: Учебники
   items:
@@ -41,7 +43,7 @@
   items:
     - name: Azure CLI
       href: cli-samples.md
-    - name: Azure PowerShell;
+    - name: Azure PowerShell
       href: powershell-samples.md
 - name: Основные понятия
   items:

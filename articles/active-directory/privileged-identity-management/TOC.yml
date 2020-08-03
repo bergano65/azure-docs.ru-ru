@@ -45,7 +45,7 @@
           href: pim-resource-roles-activate-your-roles.md
     - name: "Управление ролями Azure\_AD"
       items:
-        - name: Обновление компонента
+        - name: Обзор возможностей
           href: azure-ad-roles-features.md
         - name: "Использование PowerShell с ролями Azure\_AD"
           href: powershell-for-azure-ad-roles.md
@@ -87,6 +87,22 @@
           href: azure-pim-resource-rbac.md
         - name: Применение пользовательских ролей
           href: pim-resource-roles-custom-role-policy.md
+    - name: Управление привилегированными группами доступа (предварительная версия)
+      items:
+        - name: Общие сведения о привилегированном доступе
+          href: groups-features.md
+        - name: Обнаружение групп
+          href: groups-discover-groups.md
+        - name: Назначение участника или владельца
+          href: groups-assign-member-owner.md
+        - name: Утверждение запросов
+          href: groups-approval-workflow.md
+        - name: Продление срока действия или возобновление назначений
+          href: groups-renew-extend.md
+        - name: Изменение параметров роли
+          href: groups-role-settings.md
+        - name: Просмотр журнала аудита
+          href: groups-audit.md
     - name: Устранение неполадок с PIM
       href: pim-troubleshoot.md
     - name: Проверки доступа

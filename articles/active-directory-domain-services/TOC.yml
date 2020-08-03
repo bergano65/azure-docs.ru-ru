@@ -9,7 +9,7 @@
 - name: Учебники
   expanded: true
   items:
-    - name: Создание простого управляемого домена
+    - name: Создание управляемого домена
       href: tutorial-create-instance.md
     - name: Настройка виртуальной сети для приложений
       href: tutorial-configure-networking.md
@@ -21,9 +21,11 @@
       href: tutorial-configure-ldaps.md
     - name: Настройка синхронизации хэша паролей
       href: tutorial-configure-password-hash-sync.md
-    - name: Создание управляемого домена с расширенными возможностями
+    - name: Создание набора реплик (предварительная версия)
+      href: tutorial-create-replica-set.md
+    - name: Создание настроенного управляемого домена
       href: tutorial-create-instance-advanced.md
-    - name: Создание доверия леса (предварительная версия)
+    - name: Создание доверия леса
       href: tutorial-create-forest-trust.md
 - name: Примеры
   items:
@@ -33,12 +35,16 @@
       href: template-create-instance.md
     - name: Настройка синхронизации определенных учетных записей с помощью Azure AD PowerShell
       href: powershell-scoped-synchronization.md
+    - name: Создание леса ресурсов и доверия с помощью Azure PowerShell
+      href: create-resource-forest-powershell.md
 - name: Основные понятия
   items:
     - name: Основы администрирования
       href: administration-concepts.md
     - name: Распространенные сценарии развертывания
       href: scenarios.md
+    - name: Наборы реплик (предварительная версия)
+      href: concepts-replica-sets.md
     - name: Леса и отношения доверия
       items:
         - name: Леса ресурсов

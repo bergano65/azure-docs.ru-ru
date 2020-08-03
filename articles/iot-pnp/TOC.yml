@@ -4,87 +4,75 @@
   items:
     - name: Общие сведения об IoT Plug and Play
       href: overview-iot-plug-and-play.md
+    - name: Обновление предварительной версии
+      href: overview-iot-plug-and-play-preview-updates.md
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Создание устройства
-      items:
-        - name: C в Linux
-          href: quickstart-create-pnp-device-linux.md
-        - name: C в Windows
-          href: quickstart-create-pnp-device-windows.md
     - name: Подключение устройства к Центру Интернета вещей
       items:
-        - name: C в Linux
-          href: quickstart-connect-pnp-device-c-linux.md
-        - name: C в Windows
-          href: quickstart-connect-pnp-device-c-windows.md
-        - name: C#
-          href: quickstart-connect-pnp-device-csharp.md
-        - name: Java
-          href: quickstart-connect-pnp-device-java.md
+        - name: C
+          href: quickstart-connect-device-c.md
         - name: Node.js
-          href: quickstart-connect-pnp-device-node.md
-    - name: Подключение устройства к IoT Central
-      href: ../iot-central/core/tutorial-connect-pnp-device.md
-    - name: Подключение к устройству в решении
+          href: quickstart-connect-device-node.md
+        - name: Python
+          href: quickstart-connect-device-python.md
+        - name: C#
+          href: quickstart-connect-device-csharp.md
+        - name: Java
+          href: quickstart-connect-device-java.md
+    - name: Взаимодействие с устройством из вашего решения
       items:
-        - name: C#
-          href: quickstart-connect-pnp-device-solution-csharp.md
-        - name: Java
-          href: quickstart-connect-pnp-device-solution-java.md
         - name: Node.js
-          href: quickstart-connect-pnp-device-solution-node.md
+          href: quickstart-service-node.md
+        - name: Python
+          href: quickstart-service-python.md
 - name: Учебники
   items:
-    - name: Создание устройства с помощью VS Code
-      href: tutorial-pnp-visual-studio-code.md
-    - name: 'Создание устройства, готового к сертификации'
-      href: tutorial-build-device-certification.md
-    - name: Сертификация устройства
-      href: tutorial-certification-test.md
+    - name: Подключение многокомпонентного устройства (C#)
+      href: tutorial-multiple-components-csharp.md
+    - name: Подключение многокомпонентного устройства (Java)
+      href: tutorial-multiple-components-java.md
+    - name: Подключение многокомпонентного устройства (Node.js)
+      href: tutorial-multiple-components-node.md
+    - name: Подключение многокомпонентного устройства (Python)
+      href: tutorial-multiple-components-python.md
 - name: Основные понятия
   items:
-    - name: Глоссарий
-      href: iot-plug-and-play-glossary.md
+    - name: Architecture
+      href: concepts-architecture.md
     - name: Руководство разработчика
       href: concepts-developer-guide.md
-    - name: Распространенные интерфейсы
-      href: concepts-common-interfaces.md
-    - name: Обнаружение модели
+    - name: Components
+      href: concepts-components.md
+    - name: Соглашения IoT Plug and Play
+      href: concepts-convention.md
+    - name: Digital Twins
+      href: concepts-digital-twin.md
+    - name: Репозиторий моделей
+      href: concepts-model-repository.md
+    - name: Использование моделей в решении
       href: concepts-model-discovery.md
+    - name: Средство синтаксического анализа моделей
+      href: concepts-model-parser.md
     - name: Ограничения и квоты
       href: concepts-limits-quotas.md
+    - name: Глоссарий
+      href: iot-plug-and-play-glossary.md
 - name: Практические руководства
   items:
-    - name: Разработка с использованием Visual Studio и Visual Studio Code
-      href: howto-develop-with-vs-vscode.md
-    - name: Установка обозревателя IoT
-      href: howto-install-iot-explorer.md
-    - name: "Установка расширения Azure\_CLI"
-      href: howto-install-pnp-cli.md
-    - name: Подключение к порталу IoT
-      href: howto-onboard-portal.md
-    - name: Модели (управление)
-      href: howto-manage-models.md
-    - name: Подключение к устройству и взаимодействие с ним
-      href: howto-develop-solution.md
+    - name: Установка и использование обозревателя Интернета вещей
+      href: howto-use-iot-explorer.md
+    - name: "Установка и использование расширения Azure\_CLI для Интернета вещей"
+      href: howto-use-iot-pnp-cli.md
+    - name: Управление цифровыми двойниками
+      href: howto-manage-digital-twin.md
 - name: Справочник
   items:
     - name: Библиотеки и пакеты SDK
       href: libraries-sdks.md
-    - name: REST API
-      items:
-        - name: Digital Twins
-          href: 'https://docs.microsoft.com/rest/api/iothub/digitaltwinmodel/digitaltwin'
-        - name: Служба Digital Twins
-          href: 'https://docs.microsoft.com/rest/api/iothub/digitaltwinmodel/service'
-        - name: Репозиторий моделей Digital Twins
-          href: 'https://docs.microsoft.com/rest/api/iothub/digitaltwinmodelrepositoryservice/createorupdatemodel'
-        - name: Создание маркера безопасности REST
-          href: howto-generate-sas-token.md
-- name: Справочник
-  items:
+    - name: REST API для Digital Twins
+      href: 'https://aka.ms/iot-pnp-preview-rest'
     - name: Azure CLI
       href: /cli/azure/azure-cli-reference-for-IoT
 - name: Ресурсы

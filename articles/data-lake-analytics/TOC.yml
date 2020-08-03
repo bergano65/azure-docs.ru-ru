@@ -4,6 +4,8 @@
   items:
     - name: Что такое Data Lake Analytics?
       href: data-lake-analytics-overview.md
+    - name: Новые возможности Data Lake Analytics
+      href: data-lake-analytics-whats-new.md
 - name: Начало работы
   items:
     - name: Портал Azure
@@ -18,13 +20,16 @@
       href: data-lake-analytics-get-started-cli.md
 - name: Примеры
   items:
-    - name: Встроенные политики службы "Политика Azure"
+    - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Безопасность
       items:
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
         - name: 'Базовые показатели безопасности, учитываемые решением для оценки безопасности Azure'
           href: security-baseline.md
 - name: Практическое руководство
