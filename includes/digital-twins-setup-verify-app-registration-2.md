@@ -5,15 +5,15 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 7/22/2020
 ms.author: baanders
-ms.openlocfilehash: 8d2522482526bf713975a072cb50a4770c6ba799
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: ec12fe513f385412338658419f67e0bd80eae89b
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87125307"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87405608"
 ---
-:::image type="content" source="../articles/digital-twins/media/how-to-set-up-instance/verify-manifest.png" alt-text="Представление портала манифеста для регистрации приложения Azure AD":::
+:::image type="content" source="../articles/digital-twins/media/how-to-set-up-instance/portal/verify-manifest.png" alt-text="Представление портала манифеста для регистрации приложения Azure AD":::
 
 Затем в строке меню выберите *разрешения API* , чтобы убедиться, что регистрация приложения содержит разрешения на чтение и запись для Azure Digital двойников. Вы должны увидеть запись следующего вида:
 
-:::image type="content" source="../articles/digital-twins/media/how-to-set-up-instance/verify-api-permissions.png" alt-text="Представление портала с разрешениями API для регистрации приложения Azure AD с доступом чтение и запись для Azure Digital двойников":::
+:::image type="content" source="../articles/digital-twins/media/how-to-set-up-instance/portal/verify-api-permissions.png" alt-text="Представление портала с разрешениями API для регистрации приложения Azure AD с доступом "чтение и запись" для Azure Digital двойников":::

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/14/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: d2cf7dbcd97c8f740447607eaf443bc3ea4a6733
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: f6175a797b14077cafacaca1f2fd48f36e945d9e
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86500614"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87425164"
 ---
 Включение общих дисков доступно только для подмножества типов дисков. В настоящее время общие диски разрешены только для Ultra дисков и твердотельных накопителей уровня "Премиум". Для каждого управляемого диска с включенными общими дисками действуют следующие ограничения, упорядоченные по типу диска:
 
@@ -25,6 +25,8 @@ ms.locfileid: "86500614"
 
 - В настоящее время поддерживается только Azure Resource Manager или поддержка пакета SDK. 
 - В некоторых версиях отказоустойчивого кластера Windows Server можно использовать только базовые диски. Дополнительные сведения см. в разделе [требования к оборудованию отказоустойчивой кластеризации и параметры хранения](https://docs.microsoft.com/windows-server/failover-clustering/clustering-requirements).
+
+Общие высокодоступные диски доступны во всех регионах, которые поддерживают Ultra Disks по умолчанию, и не обязательно регистрироваться на доступ для их использования.
 
 ### <a name="premium-ssds"></a>диски SSD ценовой категории "Премиум";
 
@@ -38,4 +40,4 @@ ms.locfileid: "86500614"
 - В некоторых версиях отказоустойчивого кластера Windows Server можно использовать только базовые диски. Дополнительные сведения см. в разделе [требования к оборудованию отказоустойчивой кластеризации и параметры хранения](https://docs.microsoft.com/windows-server/failover-clustering/clustering-requirements).
 - Поддержка Azure Backup и Azure Site Recovery пока недоступна.
 
-Если вы заинтересованы в попытке использовать общие диски, [Зарегистрируйтесь для получения доступа](https://aka.ms/AzureSharedDiskGASignUp).
+Если вы заинтересованы в попытке использовать общие твердотельные накопители уровня "Премиум", [Зарегистрируйтесь для доступа](https://aka.ms/AzureSharedDiskGASignUp).

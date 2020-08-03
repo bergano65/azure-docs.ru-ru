@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 2/20/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: e0d963d6491574bf630061749ba4d3538549fa34
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 16b9342f0374377349f338db7ce5c8389c77ea18
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85570216"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87425106"
 ---
 На этом шаге вы оцениваете количество необходимых файловых ресурсов Azure. Один экземпляр Windows Server (или кластер) может синхронизировать до 30 файловых ресурсов Azure.
 
@@ -68,7 +68,7 @@ ms.locfileid: "85570216"
 
 :::row:::
     :::column:::
-        [![](media/storage-files-migration-namespace-mapping/namespace-mapping.png "An example of a mapping table. Download the file below to experience and use the content of this image.")](media/storage-files-migration-namespace-mapping/namespace-mapping-expanded.png#lightbox)
+        [![Пример таблицы сопоставления. Скачайте файл ниже, чтобы получить и использовать содержимое этого образа.](media/storage-files-migration-namespace-mapping/namespace-mapping.png)](media/storage-files-migration-namespace-mapping/namespace-mapping-expanded.png#lightbox)
     :::column-end:::
     :::column:::
         Используйте сочетание предыдущих концепций, чтобы определить, сколько файловых ресурсов Azure требуется, и какие части существующих данных будут находиться в общей папке Azure.
