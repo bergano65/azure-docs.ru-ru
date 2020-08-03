@@ -1,6 +1,6 @@
 ---
 title: Управление томами с помощью Azure NetApp Files | Документация Майкрософт
-description: Здесь объясняется, как настроить и администрировать тома, а также получить к ним доступ с помощью службы Azure NetApp Files.
+description: Узнайте, как просматривать, обновлять или удалять том в Azure NetApp Files. Чтобы удалить том, сначала удалите все подобъекты тома.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 03/28/2018
 ms.author: b-juche
-ms.openlocfilehash: 64d83cc88f66eefad8980bead7fe37ad1782873f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a50de55846ba22a0be1bb2e9fa5a9224abe87a49
+ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85483556"
+ms.lasthandoff: 08/02/2020
+ms.locfileid: "87513831"
 ---
 # <a name="manage-volumes-by-using-azure-netapp-files"></a>Управление томами с помощью Azure NetApp Files
 Вы можете управлять томом, выполняя для него операции просмотра, обновления или удаления. 
@@ -31,7 +31,7 @@ ms.locfileid: "85483556"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 * [Подключение и отключение тома для виртуальных машин](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 * [Управление моментальными снимками](azure-netapp-files-manage-snapshots.md)

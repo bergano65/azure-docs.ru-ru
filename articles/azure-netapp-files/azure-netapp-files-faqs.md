@@ -1,6 +1,6 @@
 ---
 title: Часто задаваемые вопросы о Azure NetApp Files | Документация Майкрософт
-description: Ответы на часто задаваемые вопросы о Azure NetApp Files.
+description: Ознакомьтесь с часто задаваемыми вопросами о Azure NetApp Files, например о сети, безопасности, производительности, управлении емкостью и переносе и защите данных.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/08/2020
 ms.author: b-juche
-ms.openlocfilehash: be18a9d54049562eebc27720988b085c3e14f2da
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: f9552b82dc79e1edafb13fead5a07df3ecf1be3b
+ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85956515"
+ms.lasthandoff: 08/02/2020
+ms.locfileid: "87512964"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -236,7 +236,7 @@ NetApp предлагает решение на основе SaaS, [NetApp об�
 
 Нет. Служба импорта и экспорта Azure не поддерживает Azure NetApp Files в настоящее время.
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Microsoft Azure ExpressRoute часто задаваемые вопросы](https://docs.microsoft.com/azure/expressroute/expressroute-faqs)
 - [Вопросы и ответы по виртуальная сеть Microsoft Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq)

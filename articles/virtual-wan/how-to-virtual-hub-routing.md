@@ -8,12 +8,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 07/07/2020
 ms.author: cherylmc
-ms.openlocfilehash: 6d14094edc7ae21ca0d56b544fb9c2b19f1f0582
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: 634967fbe50c74770bdc3b526d68896728e4ee07
+ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86145000"
+ms.lasthandoff: 08/02/2020
+ms.locfileid: "87513066"
 ---
 # <a name="how-to-configure-virtual-hub-routing"></a>Настройка маршрутизации для виртуального концентратора
 
@@ -22,7 +22,7 @@ ms.locfileid: "86145000"
 Дополнительные сведения см. в статье [о маршрутизации виртуальных концентраторов](about-virtual-hub-routing.md).
 
 > [!NOTE]
-> Некоторые из этих возможностей по-прежнему можно развернуть. Это должно быть завершено 3 августа.
+> Некоторые из этих возможностей по-прежнему можно развернуть. Это должно быть завершено с августа 17.
 >
 
 ## <a name="create-a-route-table"></a><a name="create-table"></a>Создание таблицы маршрутов
@@ -88,7 +88,7 @@ ms.locfileid: "86145000"
 
 :::image type="content" source="./media/how-to-virtual-hub-routing/routing-configuration.png" alt-text="Настройка конфигурации маршрутизации" lightbox="./media/how-to-virtual-hub-routing/routing-configuration-expand.png":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о маршрутизации виртуальных концентраторов см. в статье [о маршрутизации виртуальных концентраторов](about-virtual-hub-routing.md).
 Дополнительные сведения о виртуальной глобальной сети см. в статье, содержащей [Часто задаваемые вопросы](virtual-wan-faq.md) о ней.

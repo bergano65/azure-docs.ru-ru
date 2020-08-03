@@ -1,6 +1,6 @@
 ---
 title: Делегирование подсети в Azure NetApp Files | Документация Майкрософт
-description: Сведения о том, как делегировать подсеть в Azure NetApp Files.
+description: Сведения о делегировании подсети Azure NetApp Files. Укажите делегированную подсеть при создании тома.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 07/28/2020
 ms.author: b-juche
-ms.openlocfilehash: 14c97fdea57fa50faf8b73275ec406ea36fbf552
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 9bb3e93b99ce8d5a61501d417a71e5e38753f5ff
+ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420402"
+ms.lasthandoff: 08/02/2020
+ms.locfileid: "87513032"
 ---
 # <a name="delegate-a-subnet-to-azure-netapp-files"></a>Делегирование подсети в Azure NetApp Files 
 
@@ -34,7 +34,7 @@ ms.locfileid: "87420402"
 * Доступ к тому из глобальной одноранговой виртуальной сети в настоящее время не поддерживается.
 * Создание [определяемых пользователем пользовательских маршрутов](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#custom-routes) в ПОДСЕТЯХ виртуальных машин с префиксом адреса (назначением) к подсети, делегированной в Azure NetApp Files, не поддерживается. Это повлияет на подключение к виртуальной машине.
 
-## <a name="steps"></a>Шаги 
+## <a name="steps"></a>Этапы 
 1.  Перейдите к колонке **Виртуальные сети** на портале Azure и выберите виртуальную сеть, которую нужно использовать для Azure NetApp Files.    
 
 1. Выберите **Подсети** из колонки виртуальной сети и нажмите кнопку **+Подсеть**. 

@@ -1,6 +1,6 @@
 ---
 title: Метрики для службы Azure NetApp Files | Документация Майкрософт
-description: В этой статье описываются метрики для Azure NetApp Files.
+description: Azure NetApp Files предоставляет метрики для выделенного хранилища, фактического использования хранилища, операций ввода-вывода томов и задержки. Используйте эти метрики для анализа использования и производительности.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/17/2020
 ms.author: b-juche
-ms.openlocfilehash: c8e3b616dee1ab4e6bb6e77c6a8bab5661d4e20b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7e6ab90010d4379c1640f73a8deeba874e601daf
+ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79460438"
+ms.lasthandoff: 08/02/2020
+ms.locfileid: "87513814"
 ---
 # <a name="metrics-for-azure-netapp-files"></a>Метрики для Azure NetApp Files
 
@@ -66,7 +66,7 @@ Azure NetApp Files предоставляет метрики для выделе
 - *вритеиопс*   
     Число операций записи в том в секунду.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Общие сведения об иерархии хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md)
 * [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)

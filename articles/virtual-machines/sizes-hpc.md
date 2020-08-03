@@ -6,15 +6,15 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 02/03/2020
+ms.date: 08/01/2020
 ms.author: amverma
 ms.reviewer: jushiman
-ms.openlocfilehash: c02b0d63db3a761f52c9ea15e6fc6ba3356cd4be
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 122a3e243f314395ea7b1d32b88a5e20b0965eef
+ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421371"
+ms.lasthandoff: 08/02/2020
+ms.locfileid: "87512012"
 ---
 # <a name="high-performance-computing-vm-sizes"></a>Размеры виртуальных машин с высокой производительностью
 
@@ -42,9 +42,11 @@ ms.locfileid: "87421371"
 > Для всех виртуальных машин с поддержкой RDMA поддерживается RDMA.
 > Переработка IP-адресов поддерживается только на виртуальных машинах с поддержкой SR-IOV.
 
-- **Операционная система** — Linux очень хорошо поддерживается для ВИРТУАЛЬНЫХ машин HPC; обычно используются дистрибутивов, такие как CentOS, RHEL, Ubuntu и SUSE. В отношении поддержки Windows Windows Server 2016 и более поздние версии поддерживаются на всех виртуальных машинах серии HPC. Windows Server 2012 R2, Windows Server 2012 также поддерживаются на виртуальных машинах, не использующих SR-IOV (H16r, H16mr, A8 и A9). Обратите внимание, что [Windows Server 2012 R2 не поддерживается на HBv2 и других виртуальных машинах с более чем 64 (виртуальными или физическими) ядрами](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
+- **Операционная система** — Linux очень хорошо поддерживается для ВИРТУАЛЬНЫХ машин HPC; обычно используются дистрибутивов, такие как CentOS, RHEL, Ubuntu и SUSE. В отношении поддержки Windows Windows Server 2016 и более поздние версии поддерживаются на всех виртуальных машинах серии HPC. Windows Server 2012 R2, Windows Server 2012 также поддерживаются на виртуальных машинах, не использующих SR-IOV (H16r, H16mr, A8 и A9). Обратите внимание, что [Windows Server 2012 R2 не поддерживается на HBv2 и других виртуальных машинах с более чем 64 (виртуальными или физическими) ядрами](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows). Список поддерживаемых образов виртуальных машин в Marketplace и способ их настройки можно найти в разделе [образы виртуальных](./workloads/hpc/configure.md) машин.
 
-- **Драйверы InfiniBand и RDMA** . на виртуальных машинах с поддержкой InfiniBand для включения RDMA требуются соответствующие драйверы. В Linux образы виртуальных машин CentOS-HPC в Marketplace предварительно настроены с соответствующими драйверами. Образы виртуальных машин Ubuntu можно настроить с помощью правильных драйверов, выполнив приведенные [здесь инструкции](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351). На виртуальных машинах серии H и N с поддержкой SR-IOV можно использовать [расширение виртуальной машины инфинибанддриверлинукс](./extensions/hpc-compute-infiniband-linux.md) для установки драйверов Mellanox офед и включения InfiniBand. Дополнительные сведения о включении InfiniBand на виртуальных машинах, поддерживающих RDMA, — это [рабочие нагрузки HPC](./workloads/hpc/overview.md).
+- **Драйверы InfiniBand и RDMA** . на виртуальных машинах с поддержкой InfiniBand для включения RDMA требуются соответствующие драйверы. В Linux для виртуальных машин с поддержкой SR-IOV и без SR-IOV образы виртуальных машин CentOS-HPC в Marketplace предварительно настроены с соответствующими драйверами. Образы виртуальных машин Ubuntu можно настроить с помощью правильных драйверов, выполнив приведенные [здесь инструкции](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351). Дополнительные сведения о готовых к использованию образах ОС Linux см. в статье [Настройка и оптимизация виртуальных машин для ОС Linux](./workloads/hpc/configure.md) .
+
+   В Linux [расширение виртуальной машины инфинибанддриверлинукс](./extensions/hpc-compute-infiniband-linux.md) можно использовать для установки драйверов Mellanox офед и включения InfiniBand на виртуальных машинах серии H и N с поддержкой SR-IOV. Узнайте больше о включении InfiniBand на виртуальных машинах с поддержкой RDMA на [рабочих нагрузках HPC](./workloads/hpc/enable-infiniband.md).
 
    В Windows [расширение виртуальной машины инфинибанддривервиндовс](./extensions/hpc-compute-infiniband-windows.md) устанавливает драйверы Windows Network Direct (на виртуальных машинах без SR-IOV) или драйверы Mellanox офед (на виртуальных машинах SR-IOV) для подключения RDMA. В некоторых развертываниях экземпляров A8 и A9 расширение HpcVmDrivers добавляется автоматически. Обратите внимание, что расширение виртуальной машины HpcVmDrivers является устаревшим. Он не будет обновлен.
 
@@ -99,5 +101,5 @@ Azure предоставляет несколько вариантов для с
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше об оптимизации приложений HPC для Azure и некоторых примерах на [рабочих нагрузках HPC](./workloads/hpc/overview.md).
-
 - Ознакомьтесь с последними объявлениями и некоторыми примерами HPC и результатами в [блогах сообщества разработчиков Azure](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+- Для более высокого уровня архитектуры выполнения рабочих нагрузок HPC см. статью [высокопроизводительные вычисления (HPC) в Azure](/azure/architecture/topics/high-performance-computing/).

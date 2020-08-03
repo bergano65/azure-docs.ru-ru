@@ -1,6 +1,6 @@
 ---
 title: Создание тома SMB для Azure NetApp Files | Документация Майкрософт
-description: Описание процесса создания тома SMB для Azure NetApp Files.
+description: В этой статье показано, как создать том SMBv3 в Azure NetApp Files. Узнайте о требованиях к Active Directoryным подключениям и доменным службам.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: b-juche
-ms.openlocfilehash: 8764e85d957688375b27957cee9ac3b4bdf526bc
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 24a5e342c66d8154f4635acc957084d243fbd75e
+ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87499948"
+ms.lasthandoff: 08/02/2020
+ms.locfileid: "87513083"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Создание тома SMB для Azure NetApp Files
 

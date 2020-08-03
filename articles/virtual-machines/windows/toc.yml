@@ -403,6 +403,13 @@
           href: ps-template.md
         - name: Подключение к виртуальной машине
           href: connect-logon.md
+        - name: Подключение к виртуальным машинам Linux
+          displayName: ssh keygen ssk-key putty
+          items:
+            - name: Просмотр на портале
+              href: ../ssh-keys-portal.md
+            - name: В Windows
+              href: ../linux/ssh-from-windows.md
         - name: Использование лицензии с Преимуществом гибридного использования Azure
           href: hybrid-use-benefit-licensing.md
         - name: "Использование прав на мультитенантное размещение для Windows\_10"
