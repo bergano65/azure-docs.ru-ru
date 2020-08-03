@@ -6,12 +6,13 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 6/24/2020
-ms.openlocfilehash: d0f5f71ed636cc67e742198436b48a09d291e798
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 0aba88c10304cf7d87277ad851ae38eae8eb5bf3
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86120064"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87497126"
 ---
 # <a name="configure-and-access-azure-database-for-maria-db-audit-logs-in-the-azure-cli"></a>Настройка и доступ к журналам аудита базы данных Azure для Марии в Azure CLI
 
@@ -21,7 +22,7 @@ ms.locfileid: "86120064"
 
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 
-- [База данных Azure для сервера MariaDB](quickstart-create-mariadb-server-database-using-azure-portal.md)
+- [Сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-portal.md)
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 

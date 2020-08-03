@@ -8,12 +8,12 @@ ms.date: 03/11/2020
 ms.service: storage
 ms.reviewer: rukmani-msft
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 6c50ceae36c784b8b869977f14351ab5858fc7c0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2cfe5f763b3dedd68c5180f5a0a3c7a3f4ea3e93
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84466023"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496429"
 ---
 # <a name="migrate-azure-data-lake-storage-from-gen1-to-gen2"></a>Перенос Azure Data Lake Storage из Gen1 в Gen2
 
@@ -81,7 +81,7 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
    
 6. Поиск ссылок URI, содержащих строку `adl://` в файлах кода или в записных книжках, Apache Hive файлы HQL или любой другой файл, используемый в составе рабочих нагрузок. Замените эти ссылки на [универсальный код ресурса (URI) Gen2, отформатированный](data-lake-storage-introduction-abfs-uri.md) для новой учетной записи хранения. Например: URI Gen1: `adl://mydatalakestore.azuredatalakestore.net/mydirectory/myfile` может стать `abfss://myfilesystem@mydatalakestore.dfs.core.windows.net/mydirectory/myfile` . 
 
-7. Настройте безопасность учетной записи, чтобы включить [роли управления доступом на основе ролей (RBAC)](../common/storage-auth-aad-rbac-portal.md), [безопасность на уровне файлов и папок](data-lake-storage-access-control.md), а также [брандмауэры службы хранилища Azure и виртуальные сети](../common/storage-network-security.md).
+7. Настройте безопасность учетной записи, чтобы включить [роли Azure](../common/storage-auth-aad-rbac-portal.md), [безопасность на уровне файлов и папок](data-lake-storage-access-control.md), а также [брандмауэры службы хранилища Azure и виртуальные сети](../common/storage-network-security.md).
 
 ### <a name="step-4-cutover-from-gen1-to-gen2"></a>Шаг 4. прямую миграцию из Gen1 в Gen2
 
@@ -97,7 +97,7 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
 |---|---|---|
 |Упорядочение данных|[Иерархическое пространство имен](data-lake-storage-namespace.md)<br>Поддержка файлов и папок|[Иерархическое пространство имен](data-lake-storage-namespace.md)<br>Поддержка контейнеров, файлов и папок |
 |Геоизбыточность| [LRS](../common/storage-redundancy.md#locally-redundant-storage)| [LRS](../common/storage-redundancy.md#locally-redundant-storage), [ZRS](../common/storage-redundancy.md#zone-redundant-storage), [GRS](../common/storage-redundancy.md#geo-redundant-storage), [RA-GRS](../common/storage-redundancy.md#read-access-to-data-in-the-secondary-region) |
-|Аутентификация|[Удостоверение, управляемое AAD](../../active-directory/managed-identities-azure-resources/overview.md)<br>[Субъекты-службы](../../active-directory/develop/app-objects-and-service-principals.md)|[Удостоверение, управляемое AAD](../../active-directory/managed-identities-azure-resources/overview.md)<br>[Субъекты-службы](../../active-directory/develop/app-objects-and-service-principals.md)<br>[Ключ общего доступа](https://docs.microsoft.com/rest/api/storageservices/authorize-with-shared-key)|
+|Authentication|[Удостоверение, управляемое AAD](../../active-directory/managed-identities-azure-resources/overview.md)<br>[Субъекты-службы](../../active-directory/develop/app-objects-and-service-principals.md)|[Удостоверение, управляемое AAD](../../active-directory/managed-identities-azure-resources/overview.md)<br>[Субъекты-службы](../../active-directory/develop/app-objects-and-service-principals.md)<br>[Ключ общего доступа](https://docs.microsoft.com/rest/api/storageservices/authorize-with-shared-key)|
 |Авторизация|Управление — [RBAC](../../role-based-access-control/overview.md)<br>Данные — [списки ACL](data-lake-storage-access-control.md)|Управление — [RBAC](../../role-based-access-control/overview.md)<br>Данные — [списки управления доступом](data-lake-storage-access-control.md), [RBAC](../../role-based-access-control/overview.md) |
 |Шифрование — неактивных данных|Серверная часть — ключи, управляемые [корпорацией Майкрософт](../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) или [управляемые клиентом](../common/encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|Серверная часть — ключи, управляемые [корпорацией Майкрософт](../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) или [управляемые клиентом](../common/encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Поддержка виртуальной сети|[интеграция с виртуальной сетью](../../data-lake-store/data-lake-store-network-security.md)|[Конечные точки службы](../common/storage-network-security.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json), [частные конечные точки](../common/storage-private-endpoints.md)|
@@ -202,9 +202,8 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
 
 : heavy_check_mark: высокая интенсивность миграции, но она обеспечивает параллельную поддержку Gen1 и Gen2.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте о различных частях настройки безопасности для учетной записи хранения. Ознакомьтесь с [руководством по безопасности службы хранилища Azure](../common/storage-security-guide.md).
 - Оптимизируйте производительность Data Lake Store. См. раздел [оптимизация Azure Data Lake Storage 2-го поколения для повышения производительности](data-lake-storage-performance-tuning-guidance.md) .
 - Ознакомьтесь с рекомендациями по управлению Data Lake Store. См. рекомендации [по использованию Azure Data Lake Storage 2-го поколения](data-lake-storage-best-practices.md)
-

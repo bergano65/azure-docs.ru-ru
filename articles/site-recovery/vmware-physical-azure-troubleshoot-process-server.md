@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: troubleshooting
 ms.date: 09/09/2019
 ms.author: raynew
-ms.openlocfilehash: 7679148e195bd67ab5da58636552a684c25c31b0
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 4816b597d66aea3bbe7f834004f924b5108de939
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86131984"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87499761"
 ---
 # <a name="troubleshoot-the-process-server"></a>Устранение неполадок с сервером обработки
 
@@ -91,7 +91,7 @@ ms.locfileid: "86131984"
 
  Ошибки начальной и последующей репликации часто вызваны проблемами с подключением между исходным компьютером и сервером обработки или между сервером обработки и Azure. Эти действия собраны на следующем рисунке, под которым вы найдете процедуры, помогающие выполнить эти шаги.
 
-![Устранение неполадок с подключением и репликацией](./media/vmware-physical-azure-troubleshoot-process-server/troubleshoot-connectivity-replication.png)
+![Блок-схема, демонстрирующая шаги для устранения неполадок подключения и репликации.](./media/vmware-physical-azure-troubleshoot-process-server/troubleshoot-connectivity-replication.png)
 
 
 ## <a name="step-4-verify-time-sync-on-source-machine"></a>Шаг 4. Проверка синхронизации времени на исходном компьютере
@@ -170,7 +170,7 @@ ms.locfileid: "86131984"
   2. На вкладке **Производительность** щелкните **Открыть монитор ресурсов**.
   3. На странице **Монитор ресурсов** выберите вкладку **Сеть**. На вкладке **Процессы с сетевой активностью** проверьте, передает ли cbengine.exe большие объемы данных.
 
-       ![Объемы данных для процессов с сетевой активностью](./media/vmware-physical-azure-troubleshoot-process-server/cbengine.png)
+       ![Снимок экрана, показывающий большое число томов в процессах с сетевой активностью.](./media/vmware-physical-azure-troubleshoot-process-server/cbengine.png)
 
   Если файл cbengine.exe не отправляет большие объемы данных, выполните действия, указанные в следующих разделах.
 
@@ -179,7 +179,7 @@ ms.locfileid: "86131984"
 1. В мониторе ресурсов выберите **cbengine.exe**.
 2. В разделе **TCP-подключения** проверьте, подключен ли сервер обработки к хранилищу Azure.
 
-  ![Подключение между cbengine.exe и URL-адресом хранилища BLOB-объектов Azure](./media/vmware-physical-azure-troubleshoot-process-server/rmonitor.png)
+  ![Снимок экрана, показывающий подключение между cbengine.exe и URL-адресом хранилища больших двоичных объектов Azure.](./media/vmware-physical-azure-troubleshoot-process-server/rmonitor.png)
 
 ### <a name="check-services"></a>Проверка служб
 

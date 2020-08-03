@@ -7,17 +7,17 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: fbd11c279708cd828693baab3f9f6df91515bc48
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 703a6afdc12c8a9863ff0f480ec7a577ec31ef77
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86133906"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496004"
 ---
 # <a name="architecture---hyper-v-replication-to-a-secondary-site"></a>Архитектура: репликация Hyper-V на дополнительный сайт
 
 В этой статье описываются компоненты и процессы, задействованные при репликации локальных виртуальных машин Hyper-V в облаках System Center Virtual Machine Manager (VMM) на дополнительный сайт VMM с помощью службы [Azure Site Recovery](site-recovery-overview.md) на портале Azure.
-а
+a
 
 ## <a name="architectural-components"></a>Компоненты архитектуры
 
@@ -25,14 +25,14 @@ ms.locfileid: "86133906"
 
 **Компонент** | **Требование** | **Сведения**
 --- | --- | ---
-**Azure** | Подписка Azure. | Создайте хранилище служб восстановления в подписке Azure для координации процесса репликации между расположениями VMM и управления им.
+**Azure** | Подписка Azure | Создайте хранилище служб восстановления в подписке Azure для координации процесса репликации между расположениями VMM и управления им.
 **Сервер VMM** | Необходимо иметь основное и дополнительное расположение VMM. | Мы рекомендуем сервер VMM на основном и дополнительном сайтах.
 **Сервер Hyper-V** |  Понадобится один или несколько серверов узлов Hyper-V в основном и дополнительном облаках VMM. | Данные реплицируются между основным и дополнительным серверами узлов Hyper-V через локальную сеть или VPN-подключение с использованием проверки подлинности Kerberos или на основе сертификатов.  
 **Виртуальные машины Hyper-V** | Расположены на сервере узла Hyper-V. | На исходном сервере узла должна быть установлена как минимум одна виртуальная машина, которую необходимо реплицировать.
 
 **Архитектура: репликация между локальными средами**
 
-![Из локальной среды в локальную среду](./media/hyper-v-vmm-architecture/arch-onprem-onprem.png)
+![Схема, показывающая локальную защиту в локальной среде.](./media/hyper-v-vmm-architecture/arch-onprem-onprem.png)
 
 ## <a name="replication-process"></a>Процесс репликации
 

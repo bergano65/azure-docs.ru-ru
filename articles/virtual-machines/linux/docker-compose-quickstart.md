@@ -6,12 +6,13 @@ ms.service: virtual-machines-linux
 ms.topic: how-to
 ms.date: 02/14/2019
 ms.author: cynthn
-ms.openlocfilehash: 1e28ea47f0f99d3690fdfcf8b5d4370fcbb334e0
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: e9f824a3b7e1e5e482bbc04c448ca4930bf88678
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87289819"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87500952"
 ---
 # <a name="get-started-with-docker-and-compose-to-define-and-run-a-multi-container-application-in-azure"></a>Приступая к работе с Docker и Compose для определения и запуска многоконтейнерного приложения в Azure
 С помощью [создания](https://github.com/docker/compose)простого текстового файла можно определить приложение, состоящее из нескольких контейнеров DOCKER. После этого приложение будет развернуто с помощью одной команды, которая выполняет все действия, необходимые для развертывания определенной среды. В этой статье показано, как быстро настроить блог WordPress с серверной базой данных SQL MariaDB на виртуальной машине Ubuntu. Решение Compose можно использовать для настройки и более сложных приложений.

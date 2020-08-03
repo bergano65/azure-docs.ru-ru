@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 07/10/2020
 ms.author: alkohli
-ms.openlocfilehash: b65d9579686cdf53f1cac35ba47bc5850b45c8e2
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 50dbbe3a6a1af1e73cdf1ee7f5bd3a63cf2f6a50
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86204297"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87498809"
 ---
 # <a name="tracking-and-event-logging-for-your-azure-data-box-and-azure-data-box-heavy-import-order"></a>Отслеживание и регистрация событий для Azure Data Box и Azure Data Box Heavy порядок импорта
 
@@ -35,7 +35,7 @@ ms.locfileid: "86204297"
 
 ## <a name="set-up-access-control-on-the-order"></a>Настройка контроля доступа в заказе
 
-Вы можете контролировать, кто имеет доступ к вашему заказу при первом создании заказа. Настройте роли управления доступом на основе ролей (RBAC) в различных областях для управления доступом к Data Boxму заказу. Роль RBAC определяет тип доступа: доступ для чтения и записи, доступный только для чтения и чтение и запись в подмножестве операций.
+Вы можете контролировать, кто имеет доступ к вашему заказу при первом создании заказа. Настройте роли Azure в различных областях для управления доступом к Data Boxму заказу. Роль Azure определяет тип доступа — доступ для чтения и записи, доступный только для чтения и для чтения и записи в подмножестве операций.
 
 Для службы Azure Data Box можно определить две роли:
 

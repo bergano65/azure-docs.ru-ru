@@ -11,12 +11,12 @@ author: dimitri-furman
 ms.author: dfurman
 ms.reviewer: ''
 ms.date: 03/03/2020
-ms.openlocfilehash: 983bf848b3be2501b70ba1c0396207e514b7b8d6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 359de25d2bdb57ad5c6386586f987942acc120ef
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87024033"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87500152"
 ---
 # <a name="azure-sql-database-hyperscale-faq"></a>Вопросы и ответы по масштабированию базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -331,7 +331,7 @@ SQL Server 2005. Дополнительные сведения см. в разд
 
 ### <a name="how-long-would-it-take-to-scale-up-and-down-a-compute-replica"></a>Сколько времени потребуется для увеличения и уменьшения масштаба вычислений в реплике
 
-Увеличение или уменьшение масштаба вычислений занимает 5-10 минут независимо от размера данных.
+Увеличение или уменьшение масштаба вычислений обычно занимает до 2 минут независимо от размера данных.
 
 ### <a name="is-my-database-offline-while-the-scaling-updown-operation-is-in-progress"></a>Переходит ли база данных в автономный режим при увеличении и уменьшении масштаба
 

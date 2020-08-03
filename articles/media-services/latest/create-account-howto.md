@@ -13,12 +13,13 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 03/15/2020
 ms.author: juliako
-ms.openlocfilehash: e32a9053e4ab7cc3618f7b50b7291a660a14e1b1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: b48aa215b621ab617ef3ff99ce66d972059a4ffc
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053485"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87498762"
 ---
 # <a name="create-a-media-services-account"></a>Создание учетной записи служб мультимедиа
 
@@ -51,7 +52,7 @@ ms.locfileid: "87053485"
 1. Щелкните **+ создать ресурс**  >  **Media**  >  **службы**мультимедиа мультимедиа.
 1. В разделе **Создание учетной записи служб мультимедиа** введите необходимые значения.
     
-    | Имя | Описание |
+    | name | Описание |
     | ---|---|
     |**Имя учетной записи**|Введите имя новой учетной записи служб мультимедиа. Имя учетной записи служб мультимедиа может состоять из цифр или букв в нижнем регистре без пробелов и должно иметь длину от 3 до 24 символов.|
     |**Подписка**|Если у вас есть несколько подписок, выберите одну из них в списке подписок Azure, к которым у вас есть доступ.|
@@ -114,7 +115,7 @@ az ams account create --name amsaccount \
    -l westus2 
 ```
 
-### <a name="see-also"></a>См. также статью
+### <a name="see-also"></a>См. также
 
 * [Azure CLI](/cli/azure/ams?view=azure-cli-latest)
 * [Подключение дополнительного хранилища к учетной записи служб мультимедиа](/cli/azure/ams/account/storage?view=azure-cli-latest#az-ams-account-storage-add)

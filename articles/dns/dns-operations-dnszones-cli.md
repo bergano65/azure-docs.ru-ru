@@ -11,12 +11,13 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/27/2017
 ms.author: rohink
-ms.openlocfilehash: 30b0d6ab3ff9fa96e33154907e329c28b7ae7e63
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: ff1abd48282a4ec9278d7182fea286178b5bd3ca
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84709085"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495919"
 ---
 # <a name="how-to-manage-dns-zones-in-azure-dns-using-the-azure-cli"></a>Как управлять зонами DNS в службе DNS Azure с помощью интерфейса командной строки Azure
 
@@ -30,7 +31,7 @@ ms.locfileid: "84709085"
 
 В этом руководстве рассматриваются именно общедоступные зоны DNS. Сведения об использовании Azure PowerShell для управления частным зонами в Azure DNS см. в статье о [начале работы с Частными зонами Azure DNS с помощью Azure CLI](private-dns-getstarted-cli.md).
 
-## <a name="introduction"></a>Вступление
+## <a name="introduction"></a>Введение
 
 [!INCLUDE [dns-create-zone-about](../../includes/dns-create-zone-about-include.md)]
 
@@ -190,7 +191,7 @@ az network dns zone update --resource-group myresourcegroup --name contoso.com -
 az network dns zone delete --resource-group myresourcegroup --name contoso.com
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [управлять наборами записей и записями](dns-getstarted-create-recordset-cli.md) в зоне DNS.
 

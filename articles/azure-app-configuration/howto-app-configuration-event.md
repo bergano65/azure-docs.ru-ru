@@ -9,12 +9,13 @@ ms.devlang: csharp
 ms.topic: how-to
 ms.date: 02/25/2020
 ms.author: lcozzens
-ms.openlocfilehash: da64f22981cc33772783093cfe75daa3eac5cef1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: dc816f54a690a4c72c44d70ecbf2cc0156ac84ed
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78672155"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87498316"
 ---
 # <a name="route-azure-app-configuration-events-to-a-web-endpoint-with-azure-cli"></a>Направляйте события Конфигурации приложений Azure в конечную веб-точку с помощью Azure CLI
 
@@ -22,7 +23,7 @@ ms.locfileid: "78672155"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure — [создайте ее бесплатно](https://azure.microsoft.com/free/). При желании вы также можете использовать Azure Cloud Shell.
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/). При желании вы также можете использовать Azure Cloud Shell.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -130,7 +131,7 @@ az appconfig kv set --name <appconfig_name> --key Foo --value Bar --yes
 az group delete --name <resource_group_name>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы знаете, как создавать разделы и подписки на события, ознакомьтесь с дополнительными сведениями о событиях "ключ — значение" и возможностях службы "Сетка событий".
 

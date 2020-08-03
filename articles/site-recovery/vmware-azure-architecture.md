@@ -7,12 +7,12 @@ services: site-recovery
 ms.topic: conceptual
 ms.date: 11/06/2019
 ms.author: raynew
-ms.openlocfilehash: 65778d0a6ba3bd5cdc719609ae4c2d18bf05aab9
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 4b1b8a0cfa98d48d7cb92474c1572f17c79ffd0d
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424415"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87498958"
 ---
 # <a name="vmware-to-azure-disaster-recovery-architecture"></a>Архитектура аварийного восстановления из VMware в Azure
 
@@ -30,9 +30,7 @@ ms.locfileid: "87424415"
 **Серверы VMware** | Виртуальные машины VMware размещаются на локальных серверах vSphere ESXi. Мы рекомендуем управлять узлами с помощью сервера vCenter. | При развертывании Site Recovery добавьте серверы VMware в хранилище служб восстановления.
 **Реплицируемые компьютеры** | Служба Mobility Service устанавливается на каждой реплицируемой виртуальной машине VMware. | Рекомендуем разрешить автоматическую установку с сервера обработки. Кроме того, службу можно установить вручную или воспользоваться методом автоматического развертывания, например Configuration Manager.
 
-**Архитектура "VMware — Azure"**
-
-![Components](./media/vmware-azure-architecture/arch-enhanced.png)
+![Схема, демонстрирующая связи между VMware и архитектурой репликации Azure.](./media/vmware-azure-architecture/arch-enhanced.png)
 
 ## <a name="set-up-outbound-network-connectivity"></a>Настройка исходящего сетевого подключения
 
@@ -45,9 +43,9 @@ ms.locfileid: "87424415"
 
 При использовании прокси-сервера или брандмауэра на основе URL-адресов для управления исходящими подключениями разрешите использование этих URL-адресов:
 
-| **Имя**                  | **Коммерческое**                               | **Государственные организации**                                 | **Описание** |
+| **Name**                  | **Коммерческое**                               | **Государственный сектор**                                 | **Описание** |
 | ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
-| Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
+| Хранилище                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
 | Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Обеспечивает авторизацию и проверку подлинности URL-адресов службы Site Recovery. |
 | Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Позволяет виртуальной машине взаимодействовать со службой Site Recovery. |
 | Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Позволяет виртуальной машине записывать данные мониторинга и диагностики службы Site Recovery. |
@@ -71,9 +69,7 @@ ms.locfileid: "87424415"
     - Сервер обработки получает данные репликации, оптимизирует и шифрует их и отправляет в службу хранилища Azure по исходящему порту 443.
 5. Сначала журналы данных репликации помещаются в учетную запись хранения кэша в Azure. Эти журналы обрабатываются, и данные хранятся на управляемом диске Azure (называемом начальным диском ASR). На этом диске создаются точки восстановления.
 
-**Процедура репликации VMware в Azure**
-
-![Процесс репликации](./media/vmware-azure-architecture/v2a-architecture-henry.png)
+![Схема, демонстрирующая процесс репликации из VMware в Azure.](./media/vmware-azure-architecture/v2a-architecture-henry.png)
 
 ## <a name="resynchronization-process"></a>Процедура повторной синхронизации
 
@@ -108,9 +104,8 @@ ms.locfileid: "87424415"
     - Этап 3. После восстановления размещения рабочих нагрузок повторно включите репликацию для локальных виртуальных машин.
     
  
-**Восстановление размещения VMware с переносом из Azure**
 
-![Восстановление размещения](./media/vmware-azure-architecture/enhanced-failback.png)
+![Схема, демонстрирующая восстановление размещения VMware из Azure.](./media/vmware-azure-architecture/enhanced-failback.png)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

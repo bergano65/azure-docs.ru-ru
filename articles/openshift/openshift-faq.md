@@ -5,13 +5,13 @@ author: jimzim
 ms.author: jzim
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 05/29/2020
-ms.openlocfilehash: 0c4c5ddfebe9e2b5b37a2c28ec4941f6c38668f1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/31/2020
+ms.openlocfilehash: 93507bae3f817f92cfa427ceca10f651352a46bc
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84219222"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87497585"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Вопросы и ответы об Azure Red Hat OpenShift
 
@@ -143,7 +143,7 @@ Prometheus предварительно установлен и настроен
 
 Для кластеров 3,11 доступен реестр образов DOCKER. Реестр DOCKER доступен в `https://docker-registry.apps.<clustername>.<region>.azmosa.io/` . Вы также можете использовать реестр контейнеров Azure.
 
-## <a name="networking"></a>Сети
+## <a name="networking"></a>Сеть
 
 ### <a name="can-i-deploy-a-cluster-into-an-existing-virtual-network"></a>Можно ли развернуть кластер в существующей виртуальной сети?
 
@@ -218,7 +218,7 @@ oc adm policy \
 
 Для кластеров 3,11 можно использовать интеграцию Azure AD. 
 
-## <a name="storage"></a>Память
+## <a name="storage"></a>Хранилище
 
 ### <a name="is-data-on-my-cluster-encrypted"></a>Зашифрованы ли данные в кластере?
 
@@ -235,3 +235,7 @@ oc adm policy \
 Для кластеров 4. x диск Azure (Premium_LRS) настраивается как класс хранения по умолчанию. Дополнительные поставщики хранилища и сведения о конфигурации (включая файл Azure) см. в документации по Red Hat в [постоянном хранилище](https://docs.openshift.com/aro/4/storage/understanding-persistent-storage.html).
 
 Для кластеров 3,11 по умолчанию предоставляются два класса хранения: один для диска Azure (Premium_LRS) и один для файла Azure.
+
+## <a name="does-aro-store-any-customer-data-outside-of-the-clusters-region"></a>Сохраняет ли АТО данные клиентов за пределами региона кластера?
+
+Нет. Все данные, созданные в кластере АТО, сохраняются в регионе кластера.

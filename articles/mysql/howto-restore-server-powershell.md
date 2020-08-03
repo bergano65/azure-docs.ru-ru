@@ -7,12 +7,13 @@ ms.service: mysql
 ms.devlang: azurepowershel
 ms.topic: how-to
 ms.date: 4/28/2020
-ms.openlocfilehash: 85c04c875e543a5c41e9ad5e736a7de77ac1dad0
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 0f85283ad90f219dfbf404c437a843e1191b19fa
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119877"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87498741"
 ---
 # <a name="how-to-back-up-and-restore-an-azure-database-for-mysql-server-using-powershell"></a>Как создать резервную копию сервера Базы данных Azure для MySQL и восстановить сервер с помощью PowerShell
 
@@ -77,7 +78,7 @@ Get-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 | Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 | ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
-| Имя | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
+| name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
 | ресторепоинтинтиме | 2020-03-13T13:59:00Z | Выберите точку во времени для восстановления. Значения даты и времени должны находиться в пределах срока хранения резервной копии исходного сервера. Используйте формат даты и времени ISO8601. Например, можно использовать собственный местный часовой пояс, например **2020-03-13T05:59:00-08:00**. Можно также использовать формат UTC Zulu, например **2018-03-13T13:59:00Z**. |
 | усепоинтинтимересторе | `<SwitchParameter>` | Используйте режим "на момент времени" для восстановления. |
 
@@ -119,7 +120,7 @@ Get-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 | Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 |ResourceGroupName | myresourcegroup | Имя группы ресурсов, к которой принадлежит новый сервер.|
-|Имя | mydemoserver-georestored | Имя нового сервера. |
+|name | mydemoserver-georestored | Имя нового сервера. |
 |Расположение | eastus | Расположение нового сервера. |
 |усежеоресторе | `<SwitchParameter>` | Используйте географический режим для восстановления. |
 

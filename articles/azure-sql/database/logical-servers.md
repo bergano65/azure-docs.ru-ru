@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: b45714489f13d33d90b5694f458e6339e33595f3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dbcc82d3ec4b50cf51210f8a4319bbf374185a88
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85367583"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87498095"
 ---
 # <a name="what-is-a-logical-sql-server-in-azure-sql-database-and-azure-synapse"></a>Что такое логический сервер SQL Server в базе данных SQL Azure и Azure синапсе?
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "85367583"
 - Выступает в качестве родительского ресурса для баз данных, эластичных пулов и хранилищ данных.
 - Предоставляет пространство имен для баз данных, эластичных пулов и базы данных хранилища данных
 - Является логическим контейнером со строгой семантикой времени существования — удаление сервера и удаление его баз данных, эластичных пулов и пулов СКК
-- Участвует в [управлении доступом на основе ролей (RBAC) в Azure](/azure/role-based-access-control/overview) . базы данных, эластичные пулы и база данных хранилища данных на сервере наследуют права доступа с сервера.
+- Участвует в [управлении доступом на основе ролей Azure (Azure RBAC)](/azure/role-based-access-control/overview) . базы данных, эластичные пулы и база данных хранилища данных на сервере наследуют права доступа с сервера.
 - — Это элемент с высоким порядком идентификации баз данных, эластичных пулов и базы данных хранилища данных для целей управления ресурсами Azure (см. схему URL-адресов для баз данных и пулов).
 - Выравнивает ресурсы в регионе.
 - Предоставляет конечную точку подключения к базе данных (`<serverName>`.database.windows.net).
@@ -190,7 +190,7 @@ ms.locfileid: "85367583"
 |[Правила брандмауэра — получение](https://docs.microsoft.com/rest/api/sql/firewallrules/get)|Получает правило брандмауэра.|
 |[Правила брандмауэра — список по серверам](https://docs.microsoft.com/rest/api/sql/firewallrules/listbyserver)|Возвращает список правил брандмауэра.|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о переносе базы данных SQL Server в базу данных SQL Azure см. в статье [Миграция в базу данных SQL](migrate-to-database-from-sql-server.md)Azure.
 - Дополнительные сведения о поддерживаемых функциях см. [здесь](features-comparison.md).

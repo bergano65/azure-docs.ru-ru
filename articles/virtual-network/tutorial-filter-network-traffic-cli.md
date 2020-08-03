@@ -16,13 +16,13 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 03/30/2018
 ms.author: kumud
-ms.custom: ''
-ms.openlocfilehash: b593630d6702f66b1b877c15688b9aea0e227fca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 9af6311165f50023cfca8f9253f77b4c84c25dd5
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84688305"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87500935"
 ---
 # <a name="filter-network-traffic-with-a-network-security-group-using-the-azure-cli"></a>Фильтрация сетевого трафика с помощью групп безопасности сети, используя Azure CLI
 
@@ -240,7 +240,7 @@ curl myVmWeb
 az group delete --name myResourceGroup --yes
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы создали группу безопасности сети и связали ее с подсетью виртуальной сети. Дополнительные сведения о группах безопасности сети см. в статьях [Безопасность сети](security-overview.md) и [Create, change, or delete a network security group](manage-network-security-group.md) (Создание, изменение или удаление группы безопасности сети).
 

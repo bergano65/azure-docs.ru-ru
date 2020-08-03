@@ -10,12 +10,12 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.workload: big-data
 ms.date: 09/14/2018
-ms.openlocfilehash: 09b4f36a5c97b6bcc0a8d11d2fb1ee0893fae80a
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 3517938ae0e08af62a6fcf0d3d0a43a5eaee48dd
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87130143"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496123"
 ---
 # <a name="how-to-set-up-a-cicd-pipeline-for-azure-data-lake-analytics"></a>Настройка конвейера CI/CD для Azure Data Lake Analytics  
 
@@ -35,7 +35,7 @@ ms.locfileid: "87130143"
 
 Прежде чем настраивать задачу сборки для проекта U-SQL, убедитесь, что вы используете последнюю версию проекта U-SQL. Откройте файл проекта U-SQL в редакторе и убедитесь, что у вас есть следующие элементы импорта:
 
-```   
+```xml
 <!-- check for SDK Build target in current path then in USQLSDKPath-->
 <Import Project="UsqlSDKBuild.targets" Condition="Exists('UsqlSDKBuild.targets')" />
 <Import Project="$(USQLSDKPath)\UsqlSDKBuild.targets" Condition="!Exists('UsqlSDKBuild.targets') And '$(USQLSDKPath)' != '' And Exists('$(USQLSDKPath)\UsqlSDKBuild.targets')" />
@@ -66,14 +66,14 @@ MSBuild не предоставляет встроенной поддержки 
 См. дополнительные сведения о [проектах базы данных U-SQL](data-lake-analytics-data-lake-tools-develop-usql-database.md).
 
 >[!NOTE]
->Инструкция DROP может вызвать ошибку случайного удаления. Чтобы включить инструкцию DROP, необходимо явно указать аргументы MSBuild. **Алловдропстатемент** ВКЛЮЧИТ операцию Drop, не связанную с данными, например DROP ASSEMBLY и функцию Drop с табличным значением. **Алловдатадропстатемент** ВКЛЮЧИТ операцию Drop, связанную с данными, например Drop Table и Drop Schema. Необходимо включить Алловдропстатемент перед использованием Алловдатадропстатемент.
+> Инструкция DROP может вызвать случайное удаление. Чтобы включить инструкцию DROP, необходимо явно указать аргументы MSBuild. **Алловдропстатемент** ВКЛЮЧИТ операцию Drop, не связанную с данными, например DROP ASSEMBLY и функцию Drop с табличным значением. **Алловдатадропстатемент** ВКЛЮЧИТ операцию Drop, связанную с данными, например Drop Table и Drop Schema. Необходимо включить Алловдропстатемент перед использованием Алловдатадропстатемент.
 >
 
 ### <a name="build-a-u-sql-project-with-the-msbuild-command-line"></a>Создание проекта U-SQL из командной строки MSBuild
 
 Прежде всего выполните миграцию проекта и получите пакет NuGet. Затем вызовите стандартную командную строку MSBuild, указав следующие дополнительные аргументы для сборки проекта U-SQL: 
 
-``` 
+```console
 msbuild USQLBuild.usqlproj /p:USQLSDKPath=packages\Microsoft.Azure.DataLake.USQL.SDK.1.3.180615\build\runtime;USQLTargetType=SyntaxCheck;DataRoot=datarootfolder;/p:EnableDeployment=true
 ``` 
 
@@ -100,7 +100,7 @@ msbuild USQLBuild.usqlproj /p:USQLSDKPath=packages\Microsoft.Azure.DataLake.USQL
 
     ![Определение переменных MSBuild CI/CD для проекта U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-msbuild-variables.png) 
 
-    ```
+    ```console
     /p:USQLSDKPath=$(Build.SourcesDirectory)/packages/Microsoft.Azure.DataLake.USQL.SDK.1.3.180615/build/runtime /p:USQLTargetType=SyntaxCheck /p:DataRoot=$(Build.SourcesDirectory) /p:EnableDeployment=true
     ```
 
@@ -109,9 +109,7 @@ msbuild USQLBuild.usqlproj /p:USQLSDKPath=packages\Microsoft.Azure.DataLake.USQL
 После запуска сборки все скрипты проекта U-SQL компилируются и сохраняются в ZIP-файл с именем `USQLProjectName.usqlpack`. Структура папок в проекте хранится в выходных данных сборки в формате ZIP.
 
 > [!NOTE]
->
-> Файлы с выделенным кодом для каждого скрипта U-SQL будут объединены как встроенный оператор с выходными данными скрипта сборки.
->
+> Файлы кода программной части для каждого скрипта U-SQL будут объединены как встроенный оператор в выходные данные построения скрипта.
 
 ## <a name="test-u-sql-scripts"></a>Тестирование скриптов U-SQL
 
@@ -229,6 +227,10 @@ Function Main()
 
 Main
 ```
+
+>[!NOTE]
+> Команды: `Submit-AzDataLakeAnalyticsJob` и `Wait-AzDataLakeAnalyticsJob` являются Azure PowerShell командлетами для Azure Data Lake Analytics в Azure Resource Manager Framework. Вы нужны рабочую станцию с установленными Azure PowerShell. Для получения дополнительных команд и примеров можно обратиться к [списку команд](https://docs.microsoft.com/powershell/module/Az.DataLakeAnalytics/?view=azps-4.3.0) .
+>
 
 ### <a name="deploy-u-sql-jobs-through-azure-data-factory"></a>Планирование заданий U-SQL в Фабрике данных Azure
 

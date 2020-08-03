@@ -9,12 +9,12 @@ ms.date: 12/12/2019
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: d2e84cf06019c592a726564768f9b332ab5ed610
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 5b171c5ff5bc848a0005fad5a2e0b6c0ca548724
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372303"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496079"
 ---
 # <a name="use-the-azure-storage-resource-provider-to-access-management-resources"></a>Использование поставщика ресурсов службы хранилища Azure для доступа к ресурсам управления
 
@@ -36,7 +36,7 @@ Azure Resource Manager — это служба развертывания и у
 
 При назначении роли RBAC субъекту безопасности также указывается область, в которой действуют разрешения, предоставленные этой ролью. Для операций управления можно назначить роль на уровне подписки, группы ресурсов или учетной записи хранения. Роль RBAC можно назначить субъекту безопасности с помощью [портал Azure](https://portal.azure.com/), [средств Azure CLI](../../cli-install-nodejs.md), [PowerShell](/powershell/azure/)или [поставщика ресурсов хранилища Azure REST API](/rest/api/storagerp).
 
-Дополнительные сведения см. в статье [что такое управление доступом на основе ролей Azure (Azure RBAC)?](../../role-based-access-control/overview.md) и роли [администратора классической подписки, роли RBAC Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md).
+Дополнительные сведения см. в статье [что такое управление доступом на основе ролей Azure (Azure RBAC)?](../../role-based-access-control/overview.md) и роли [администратора классической подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md).
 
 ### <a name="built-in-roles-for-management-operations"></a>Встроенные роли для операций управления
 

@@ -6,12 +6,13 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 12/11/2019
 ms.author: zhshang
-ms.openlocfilehash: c8d74342e624b837c7ee803a2bcdcc12a3fb814b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: bd112526c7b36d5636d5d85c66b25b6310d35d1e
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75659293"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87500493"
 ---
 # <a name="how-to-scale-an-azure-signalr-service-instance"></a>Как масштабировать экземпляр службы Azure SignalR?
 В этой статье показано, как масштабировать экземпляр службы Azure SignalR. Существует два сценария масштабирования, увеличения и уменьшения масштаба.
@@ -37,7 +38,7 @@ ms.locfileid: "75659293"
    
     ![Масштабирование на портале](./media/signalr-howto-scale/signalr-howto-scale.png)
 
-4. Нажмите кнопку **Сохранить**.
+4. Щелкните **Сохранить**.
 
 ## <a name="scale-using-azure-cli"></a>Масштабирование с помощью интерфейса командной строки Azure
 
@@ -83,7 +84,7 @@ az signalr update \
 
 Таблица ограничений, квот и ограничений службы на каждом уровне см. в разделе [ограничения службы SignalR](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-signalr-service-limits).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководство вы узнали, как масштабировать один экземпляр службы SignalR.
 

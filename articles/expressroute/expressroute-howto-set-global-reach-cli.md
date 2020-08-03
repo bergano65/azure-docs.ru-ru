@@ -7,12 +7,13 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 12/12/2018
 ms.author: jaredro
-ms.openlocfilehash: df02213f1cba7c25cc77c06f1addcc04a2a4d27a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 2e4f7b53ffd3642869e6246e546e3feeda3cf529
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738402"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495902"
 ---
 # <a name="configure-expressroute-global-reach-by-using-the-azure-cli"></a>Настройка Global Reach ExpressRoute с помощью Azure CLI
 
@@ -148,7 +149,7 @@ az network express-route peering connection delete -g <ResourceGroupName> --circ
 
 После завершения этой операции вы потеряете подключение к локальным сетям через каналы ExpressRoute.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение дополнительных сведений об ExpressRoute Global Reach](expressroute-global-reach.md).
 * [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)

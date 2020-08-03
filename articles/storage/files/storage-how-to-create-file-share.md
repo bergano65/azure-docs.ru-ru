@@ -1,5 +1,5 @@
 ---
-title: создать файловый ресурс Azure;
+title: Создание файлового ресурса Azure
 titleSuffix: Azure Files
 description: Как создать файловый ресурс Azure с помощью портал Azure, PowerShell или Azure CLI.
 author: roygara
@@ -8,14 +8,15 @@ ms.topic: how-to
 ms.date: 2/22/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: ba6f4bcaffbf9fa11c949853362485d524bec23a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: a642aa9735c4360c11d50cf475e5de63259c55df
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85510022"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495715"
 ---
-# <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
+# <a name="create-an-azure-file-share"></a>Создание файлового ресурса Azure
 Чтобы создать файловый ресурс Azure, необходимо ответить на три вопроса о том, как она будет использоваться:
 
 - **Каковы требования к производительности для файлового ресурса Azure?**  
@@ -80,7 +81,7 @@ Azure поддерживает несколько типов учетных за
 
 Другие параметры, доступные на вкладке Дополнительно (обратимое удаление BLOB-объектов, иерархическое пространство имен для Azure Data Lake хранилища Gen 2 и NFSv3 для хранилища BLOB-объектов), не применяются к службе файлов Azure.
 
-#### <a name="tags"></a>Tags
+#### <a name="tags"></a>Теги
 Теги — это пары имя — значение, которые можно назначать различным ресурсам и группам ресурсов для их категоризации и консолидированного отображения счетов. Они необязательны и могут быть применены после создания учетной записи хранения.
 
 #### <a name="review--create"></a>Отзыв и создание
@@ -229,7 +230,7 @@ az storage share create \
 > [!Note]  
 > Имя общей папки должно состоять из символов в нижнем регистре. Полные сведения об именовании файловых ресурсов и файлов см. в разделе [именование и ссылки на общие папки, каталоги, файлы и метаданные](https://msdn.microsoft.com/library/azure/dn167011.aspx).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Спланируйте развертывание файлов Azure](storage-files-planning.md) или [запланируйте развертывание синхронизация файлов Azure](storage-sync-files-planning.md). 
 - [Обзор сетевых](storage-files-networking-overview.md)возможностей.
 - Подключите и подключите общую папку в [Windows](storage-how-to-use-files-windows.md), [macOS](storage-how-to-use-files-mac.md)и [Linux](storage-how-to-use-files-linux.md).

@@ -3,12 +3,13 @@ title: Настройка частных конечных точек для ра
 description: В этой статье описывается, как настроить частные конечные точки для разделов или доменов службы "Сетка событий Azure".
 ms.topic: how-to
 ms.date: 07/07/2020
-ms.openlocfilehash: ace3f7f59e4f26388652d7bda1a5ee28800a414b
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 7796c4160cbf40a241db901e31cc91edc361b00d
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86115341"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495290"
 ---
 # <a name="configure-private-endpoints-for-azure-event-grid-topics-or-domains"></a>Настройка частных конечных точек для разделов и доменов службы "Сетка событий Azure"
 [Частные конечные точки](../private-link/private-endpoint-overview.md) можно использовать, чтобы разрешить прием событий непосредственно из виртуальной сети в разделы и домены, защищенные по [частной ссылке](../private-link/private-link-overview.md) , без использования общедоступного Интернета. Частная конечная точка использует IP-адрес из адресного пространства виртуальной сети для вашего раздела или домена. Дополнительные сведения см. в разделе [Сетевая безопасность](network-security.md).
@@ -43,7 +44,7 @@ ms.locfileid: "86115341"
 
             ![Частная конечная точка — страница ресурсов](./media/configure-private-endpoints/resource-page.png)
     2. При выборе **подключения к ресурсу с помощью идентификатора ресурса или псевдонима**выполните следующие действия.
-        1. Введите идентификатор ресурса. Например: `/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventGrid/topics/<EVENT GRID TOPIC NAME>`.  
+        1. Введите идентификатор ресурса. Например, `/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventGrid/topics/<EVENT GRID TOPIC NAME>`.  
         2. Для **ресурса**введите **раздел** или **домен**. 
         3. используемых Добавление сообщения запроса. 
         4. По завершении выберите **Next: Конфигурация >**  в нижней части страницы. 
@@ -77,7 +78,7 @@ ms.locfileid: "86115341"
 ###  <a name="how-to-manage-a-private-endpoint-connection"></a>Управление подключением к частной конечной точке
 В следующих разделах показано, как утвердить или отклонить подключение частной конечной точки. 
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портал Microsoft Azure](https://portal.azure.com).
 1. В строке поиска введите **разделы сетки событий** или **домены сетки событий**.
 1. Выберите **раздел** или **домен** , которым требуется управлять.
 1. Перейдите на вкладку **Сеть**.

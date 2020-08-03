@@ -8,12 +8,13 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 02/14/2018
 ms.author: cherylmc
-ms.openlocfilehash: e93bae91827b2807ef577d7659924a5d37454fa4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 6cb1c8ad41ccd5f16c4a68b0b8ef4ace768bde8b
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84987125"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495647"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-azure-cli"></a>Настройка подключения VPN-шлюза между виртуальными сетями с помощью Azure CLI
 
@@ -375,7 +376,7 @@ ms.locfileid: "84987125"
 ## <a name="vnet-to-vnet-faq"></a><a name="faq"></a>Часто задаваемые вопросы о подключениях типа "виртуальная сеть — виртуальная сеть"
 [!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения см. в [документации по виртуальным машинам](https://docs.microsoft.com/azure/).
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).

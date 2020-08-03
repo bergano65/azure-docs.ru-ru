@@ -8,12 +8,13 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 04/06/2018
 ms.author: johnkem
-ms.openlocfilehash: 3fe4a70d2cf59f003c785740b55634d44863dc9c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: b657231cb6b896479766654e5bd989468d9b73e7
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87009532"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87501156"
 ---
 # <a name="azure-diagnostics-extension-for-windows-vms"></a>Расширение системы диагностики Azure для виртуальных машин Windows
 
@@ -86,6 +87,6 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 * [Дополнительные сведения о расширении системы диагностики Azure](../../azure-monitor/platform/diagnostics-extension-overview.md)
 * [Журнал и версии схемы конфигурации расширения системы диагностики Azure](../../azure-monitor/platform/diagnostics-extension-schema-windows.md)

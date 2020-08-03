@@ -9,15 +9,15 @@ manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
-ms.custom: seo-lt-2019
+ms.custom: seo-lt-2019, devx-track-azurecli
 ms.topic: article
 ms.date: 04/11/2020
-ms.openlocfilehash: e6a39a7967c061a90e75d717402cf63da15b06b3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 438595096e808646da990e1871cab07d1a795372
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087634"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87499081"
 ---
 # <a name="tutorial-migrate-postgresql-to-azure-db-for-postgresql-online-using-dms-via-the-azure-cli"></a>Руководство. Миграция PostgreSQL в базу данных Azure для PostgreSQL Online с помощью DMS через Azure CLI
 
@@ -108,7 +108,7 @@ Azure Database Migration Service можно использовать для пе
     psql -h hostname -U db_username -d db_name < your_schema.sql 
     ```
 
-    Например.
+    Пример:
 
     ```
     psql -h mypgserver-20170401.postgres.database.azure.com  -U postgres -d dvdrental < dvdrentalSchema.sql
@@ -182,7 +182,7 @@ Azure Database Migration Service можно использовать для пе
        ```azurecli
        az extension list -otable
        ```
-       Должен появиться следующий результат:
+       Вы должны увидеть следующий результат:
 
        ```output
        ExtensionType    Name
@@ -230,7 +230,7 @@ Azure Database Migration Service можно использовать для пе
     az network nic list -g <ResourceGroupName>--query '[].ipConfigurations | [].privateIpAddress'
     ```
 
-    Например.
+    Пример:
 
     ```azurecli
     az network nic list -g PostgresDemo --query '[].ipConfigurations | [].privateIpAddress'
@@ -476,7 +476,7 @@ Azure Database Migration Service можно использовать для пе
     az dms project task cutover -h
     ```
 
-    Например.
+    Пример:
 
     ```azurecli
     az dms project task cutover --service-name PostgresCLI --project-name PGMigration --resource-group PostgresDemo --name Runnowtask  --object-name Inventory
