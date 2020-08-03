@@ -8,12 +8,13 @@ ms.date: 03/05/2020
 ms.topic: how-to
 ms.service: storage
 ms.subservice: blobs
-ms.openlocfilehash: f6cf929af951a6bbd498d13cd514b8cae8e353f6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: c670c011f911e9b27f1280800508124d32e696cb
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84809141"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87489849"
 ---
 # <a name="quickstart-route-storage-events-to-web-endpoint-with-azure-cli"></a>Краткое руководство. Маршрутизация событий хранилища в конечную точку веб-узла с Azure CLI
 
@@ -155,7 +156,7 @@ az storage blob upload --file testfile.txt --container-name testcontainer --name
 az group delete --name <resource_group_name>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы знаете, как создавать разделы и подписки на события, ознакомьтесь с дополнительными сведениями о событиях хранилища BLOB-объектов и возможностях службы "Сетка событий":
 

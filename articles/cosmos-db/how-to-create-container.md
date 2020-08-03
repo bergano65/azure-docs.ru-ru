@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 07/29/2020
 ms.author: mjbrown
-ms.openlocfilehash: 761789b36e85b16f0b4482cef12645e673c73be7
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 6e62e307b6c5f5de939505eae8850f0117782a69
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87429698"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87498367"
 ---
 # <a name="create-an-azure-cosmos-container"></a>Создание контейнера Azure Cosmos
 
@@ -24,7 +25,7 @@ ms.locfileid: "87429698"
 
 ### <a name="sql-api"></a><a id="portal-sql"></a>API SQL
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
 
 1. [Создайте новую учетную запись Azure Cosmos](create-sql-api-dotnet.md#create-account) или выберите существующую.
 
@@ -34,13 +35,13 @@ ms.locfileid: "87429698"
    * Введите идентификатор контейнера.
    * Введите ключ секции.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Щелкните **ОК**.
+   * Выберите **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-sql.png" alt-text="Снимок экрана панели обозреватель данных с выделенным новым контейнером":::
 
 ### <a name="azure-cosmos-db-api-for-mongodb"></a><a id="portal-mongodb"></a>API Azure Cosmos DB для MongoDB
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
 
 1. [Создайте новую учетную запись Azure Cosmos](create-mongodb-dotnet.md#create-a-database-account)или выберите существующую.
 
@@ -50,13 +51,13 @@ ms.locfileid: "87429698"
    * Введите идентификатор контейнера.
    * Введите ключ сегмента.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Щелкните **ОК**.
+   * Выберите **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-mongodb.png" alt-text="Снимок экрана: Azure Cosmos DB API для MongoDB, диалоговое окно "Добавление контейнера"":::
 
 ### <a name="cassandra-api"></a><a id="portal-cassandra"></a>API Cassandra
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
 
 1. [Создайте новую учетную запись Azure Cosmos](create-cassandra-dotnet.md#create-a-database-account)или выберите существующую.
 
@@ -66,7 +67,7 @@ ms.locfileid: "87429698"
    * Введите имя таблицы.
    * Укажите свойства и первичный ключ.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Щелкните **ОК**.
+   * Выберите **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-cassandra.png" alt-text="Снимок экрана API Cassandra, диалоговое окно добавления таблицы":::
 
@@ -75,7 +76,7 @@ ms.locfileid: "87429698"
 
 ### <a name="gremlin-api"></a><a id="portal-gremlin"></a>API Gremlin
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
 
 1. [Создайте новую учетную запись Azure Cosmos](create-graph-dotnet.md#create-a-database-account)или выберите существующую.
 
@@ -86,13 +87,13 @@ ms.locfileid: "87429698"
    * Выберите емкость **Без ограничений**.
    * Введите ключ секции для вершин.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Щелкните **ОК**.
+   * Выберите **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-gremlin.png" alt-text="Снимок экрана API Gremlin, диалоговое окно добавления графа":::
 
 ### <a name="table-api"></a><a id="portal-table"></a>API таблиц
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
 
 1. [Создайте новую учетную запись Azure Cosmos](create-table-dotnet.md#create-a-database-account)или выберите существующую.
 
@@ -100,7 +101,7 @@ ms.locfileid: "87429698"
 
    * Укажите идентификатор таблицы.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Щелкните **ОК**.
+   * Выберите **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-table.png" alt-text="Снимок экрана API таблиц, диалоговое окно добавления таблицы":::
 
@@ -119,17 +120,17 @@ ms.locfileid: "87429698"
 * [Создание графа Gremlin с Azure CLI](./scripts/cli/gremlin/create.md)
 * [Создание API таблиц таблицы с Azure CLI](./scripts/cli/table/create.md)
 
-## <a name="create-a-container-using-powershella-idps-mongodba-idps-gremlin"></a>Создание контейнера с помощью PowerShell<a id="ps-sql"></a><a id="ps-mongodb"><a id="ps-cassandra"></a><a id="ps-gremlin"><a id="ps-table"></a>
+## <a name="create-a-container-using-powershell"></a>Создание контейнера с помощью PowerShell
 
 В приведенных ниже ссылках показано, как создать ресурсы контейнера для Azure Cosmos DB с помощью PowerShell.
 
-Список всех примеров PowerShell для всех Azure Cosmos DB API см. в статье API [SQL](powershell-samples-sql.md), [API Cassandra](powershell-samples-cassandra.md), API [MongoDB](powershell-samples-mongodb.md), [API Gremlin](powershell-samples-gremlin.md)и [API таблиц](powershell-samples-table.md)
+Список всех примеров PowerShell для всех Azure Cosmos DB API см. в статье [примеры PowerShell](powershell-samples.md) .
 
 * [Создание контейнера с помощью PowerShell](manage-with-powershell.md#create-container)
-* [Создание коллекции для Azure Cosmos DB API MongoDB с помощью PowerShell](./scripts/powershell/mongodb/ps-mongodb-create.md)
-* [Создание таблицы Cassandra с помощью PowerShell](./scripts/powershell/cassandra/ps-cassandra-create.md)
-* [Создание графа Gremlin с помощью PowerShell](./scripts/powershell/gremlin/ps-gremlin-create.md)
-* [Создание API таблиц таблицы с помощью PowerShell](./scripts/powershell/table/ps-table-create.md)
+* [Создание коллекции для Azure Cosmos DB API MongoDB с помощью PowerShell](./scripts/powershell/mongodb/create.md)
+* [Создание таблицы Cassandra с помощью PowerShell](./scripts/powershell/cassandra/create.md)
+* [Создание графа Gremlin с помощью PowerShell](./scripts/powershell/gremlin/create.md)
+* [Создание API таблиц таблицы с помощью PowerShell](./scripts/powershell/table/create.md)
 
 ## <a name="create-a-container-using-net-sdk"></a>Создайте контейнер с помощью .NET SDK
 

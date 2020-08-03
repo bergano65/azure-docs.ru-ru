@@ -10,12 +10,12 @@ ms.subservice: core
 ms.reviewer: nibaccam
 ms.topic: conceptual
 ms.date: 06/26/2020
-ms.openlocfilehash: f95c4256f4a0a3fdf410efecf9c22d578d1963a2
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 6bb85ada5ab1cd443d47ed85024b45d98354e97f
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/31/2020
-ms.locfileid: "87461805"
+ms.locfileid: "87500969"
 ---
 # <a name="optimize-data-processing-with-azure-machine-learning"></a>Оптимизация обработки данных с помощью Машинное обучение Azure
 
@@ -64,7 +64,6 @@ CSV-файлы обычно используются для импорта и э
 * Используйте платформу, например `Spark` или, `Dask` для обработки данных "недостаточно памяти". В этом случае кадр данных загружается в раздел ОЗУ по секциям и обрабатывается с окончательным результатом сбора в конце.  
 
 * Развертывание в кластере с помощью распределенной платформы. В этом случае нагрузка обработки данных разделяется и обрабатывается на нескольких процессорах, работающих параллельно, с окончательным результатом, собранными в конце.
-
 
 ### <a name="recommended-distributed-frameworks"></a>Рекомендуемые распределенные платформы
 

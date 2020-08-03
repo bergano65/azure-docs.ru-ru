@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 05/25/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 5272babf794529e5e9bd87a3c4a96e6df5758fb8
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7f13dc3e86b21a3f4113a7a7c6f477f239315a27
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86537468"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87499098"
 ---
 # <a name="use-the-azure-digital-twins-cli"></a>Использование CLI для Azure Digital Twins
 
@@ -25,13 +25,19 @@ ms.locfileid: "86537468"
 * Управление [маршрутами](concepts-route-events.md)
 * Настройка [безопасности](concepts-security.md) с помощью управления доступом на основе РОЛЕЙ (RBAC)
 
-Команды Azure Digital двойников входят в [расширение Azure IOT для Azure CLI](https://github.com/Azure/azure-iot-cli-extension). Справочную документацию по этим командам можно просмотреть как часть `az iot` набора команд: [AZ DT](https://docs.microsoft.com/cli/azure/ext/azure-iot/dt?view=azure-cli-latest).
-
-## <a name="deploy-and-validate"></a>Развертывание и проверка
+## <a name="uses-deploy-and-validate"></a>Использование (развертывание и проверка)
 
 В дополнение к обычному управлению экземпляром, интерфейс командной строки также является полезным инструментом для развертывания и проверки.
 * Команды плоскости управления можно использовать, чтобы сделать развертывание нового экземпляра повторяющимся или автоматическим.
 * Команды плоскости данных можно использовать для быстрой проверки значений в экземпляре и проверки того, что операции выполнены должным образом.
+
+## <a name="get-the-extension"></a>Получение расширения
+
+Команды Azure Digital двойников входят в [расширение Azure IOT для Azure CLI](https://github.com/Azure/azure-iot-cli-extension). Справочную документацию по этим командам можно просмотреть как часть `az iot` набора команд: [AZ DT](https://docs.microsoft.com/cli/azure/ext/azure-iot/dt?view=azure-cli-latest).
+
+Вы можете убедиться, что у вас установлена последняя версия расширения, выполнив следующие действия. Эти команды можно выполнить в [Azure Cloud Shell](../cloud-shell/overview.md) или [локальном Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+
+[!INCLUDE [digital-twins-cloud-shell-extensions.md](../../includes/digital-twins-cloud-shell-extensions.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

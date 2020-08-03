@@ -12,12 +12,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
 ms.date: 07/27/2020
-ms.openlocfilehash: 00efa3ea6fcd299dcdc51b3002d6b0459edf2ec4
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: f98e540a6764869f1d37edfbb0f00bf8d1cc2198
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281163"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87499183"
 ---
 # <a name="configure-and-manage-azure-ad-authentication-with-azure-sql"></a>Настройка аутентификации Azure AD и управление ею с помощью Azure SQL
 
@@ -188,7 +188,7 @@ else {
 
 Командлеты, используемые для подготовки администратора Azure AD к Управляемый экземпляр SQL и управления им, перечислены в следующей таблице:
 
-| Имя командлета | Описание: |
+| Имя командлета | Описание |
 | --- | --- |
 | [Set-Азсклинстанцеактиведиректорядминистратор](/powershell/module/az.sql/set-azsqlinstanceactivedirectoryadministrator) |Подготовка администратора Azure AD для Управляемый экземпляр SQL в текущей подписке. (Должно быть из текущей подписки)|
 | [Remove-Азсклинстанцеактиведиректорядминистратор](/powershell/module/az.sql/remove-azsqlinstanceactivedirectoryadministrator) |Удаляет администратора Azure AD для Управляемый экземпляр SQL в текущей подписке. |
@@ -216,7 +216,7 @@ Remove-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGro
 
 Вы также можете подготавливать администратора Azure AD для Управляемый экземпляр SQL, вызвав следующие команды интерфейса командной строки:
 
-| Команда | Описание |
+| Get-Help | Описание |
 | --- | --- |
 |[AZ SQL MI AD — создание администратора](/cli/azure/sql/mi/ad-admin#az-sql-mi-ad-admin-create) | Подготавливает администратора Azure Active Directory для Управляемый экземпляр SQL (должен быть из текущей подписки). |
 |[AZ SQL MI AD — администратор удаление](/cli/azure/sql/mi/ad-admin#az-sql-mi-ad-admin-delete) | Удаляет Azure Active Directory администратора для Управляемый экземпляр SQL. |
@@ -277,7 +277,7 @@ Remove-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGro
 
 Командлеты, используемые для инициализации и управления администратором Azure AD для базы данных SQL и Azure синапсе:
 
-| Имя командлета | Описание: |
+| Имя командлета | Описание |
 | --- | --- |
 | [Set-Азсклсерверактиведиректорядминистратор](/powershell/module/az.sql/set-azsqlserveractivedirectoryadministrator) |Подготавливает администратора Azure Active Directory для сервера, на котором размещена база данных SQL или Azure синапсе. (Должно быть из текущей подписки) |
 | [Remove-Азсклсерверактиведиректорядминистратор](/powershell/module/az.sql/remove-azsqlserveractivedirectoryadministrator) |Удаляет Azure Active Directory администратора для сервера, на котором размещена база данных SQL или Azure синапсе.|
@@ -322,7 +322,7 @@ Remove-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -Se
 
 Вы можете подготавливать администратора Azure AD, вызвав следующие команды интерфейса командной строки:
 
-| Команда | Описание |
+| Get-Help | Описание |
 | --- | --- |
 |[az sql server ad-admin create](/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-create) | Подготавливает администратора Azure Active Directory для сервера, на котором размещена база данных SQL или Azure синапсе. (Должно быть из текущей подписки) |
 |[az sql server ad-admin delete](/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-delete) | Удаляет Azure Active Directory администратора для сервера, на котором размещена база данных SQL или Azure синапсе. |
@@ -360,7 +360,7 @@ Remove-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -Se
 Однако использование Azure Active Directory проверки подлинности с базой данных SQL и Azure синапсе требует использования пользователей автономной базы данных на основе удостоверения Azure AD. Пользователь автономной базы данных не имеет имени входа в базе данных master и сопоставляется с удостоверением в Azure AD, связанным с базой данных. Удостоверение Azure AD может быть учетной записью отдельного пользователя или группы. Дополнительные сведения о пользователях автономной базы данных см. в статье [Пользователи автономной базы данных — создание переносимой базы данных](https://msdn.microsoft.com/library/ff929188.aspx).
 
 > [!NOTE]
-> Пользователей баз данных (за исключением администраторов) невозможно создавать с помощью портала Azure. Роли RBAC не распространяются в базу данных SQL, Управляемый экземпляр SQL или Azure синапсе. Роли Azure RBAC используются для управления ресурсами Azure и не относятся к разрешениям базы данных. Например, роль **участника SQL Server** не предоставляет доступ для подключения к базе данных в базе данных sql, управляемый экземпляр SQL или Azure синапсе. Разрешение доступа должно быть предоставлено непосредственно в базе данных с помощью инструкций Transact-SQL.
+> Пользователей баз данных (за исключением администраторов) невозможно создавать с помощью портала Azure. Роли Azure не распространяются в базу данных в базе данных SQL, Управляемый экземпляр SQL или Azure синапсе. Роли Azure используются для управления ресурсами Azure и не применяются к разрешениям базы данных. Например, роль **участника SQL Server** не предоставляет доступ для подключения к базе данных в базе данных sql, управляемый экземпляр SQL или Azure синапсе. Разрешение доступа должно быть предоставлено непосредственно в базе данных с помощью инструкций Transact-SQL.
 
 > [!WARNING]
 > Специальные символы, такие как двоеточие `:` или амперсанд, `&` если они включены в качестве имен пользователей в T-SQL `CREATE LOGIN` , а `CREATE USER` инструкции не поддерживаются.
@@ -544,4 +544,3 @@ sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net -U bob@contoso.com -P MyA
 [11]: ./media/authentication-aad-configure/active-directory-integrated.png
 [12]: ./media/authentication-aad-configure/12connect-using-pw-auth2.png
 [13]: ./media/authentication-aad-configure/13connect-to-db2.png
-

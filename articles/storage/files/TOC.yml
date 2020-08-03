@@ -246,7 +246,7 @@
                 - name: Azure CLI
                   href: ../common/storage-encryption-keys-cli.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: Включение шифрования инфраструктуры для учетной записи хранения
-          href: ../common/infrastructure-encryption-enable.md?toc=%2fazure%2fstorage%2ffiless%2ftoc.json
+          href: ../common/infrastructure-encryption-enable.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: Дополнительная защита от угроз
           href: ../common/storage-advanced-threat-protection.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: Настройка брандмауэров и виртуальных сетей

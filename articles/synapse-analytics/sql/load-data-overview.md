@@ -10,14 +10,14 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: ca1f535c7f2d949e1f71a06ba9efab2818ee0201
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 31e1eb952bb37f5864e296811ba6e61bb0e58320
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87046777"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87490291"
 ---
-# <a name="designing-a-polybase-data-loading-strategy-for-azure-synapse-sql-pool"></a>Проектирование стратегии загрузки данных Polybase для пула SQL Azure синапсе
+# <a name="design-a-polybase-data-loading-strategy-for-azure-synapse-sql-pool"></a>Проектирование стратегии загрузки данных Polybase для пула SQL Azure синапсе
 
 Традиционные хранилища данных SMP используют процесс извлечения, преобразования и загрузки (ETL) для загрузки данных. Пул SQL Azure — это архитектура с массовой параллельной обработкой (MPP), которая использует преимущества масштабируемости и гибкости ресурсов вычислений и хранилища. С помощью процесса извлечения, загрузки и преобразования (ELT) можно воспользоваться преимуществами MPP и устранить ресурсы, необходимые для преобразования данных перед их загрузкой.
 
@@ -25,7 +25,7 @@ ms.locfileid: "87046777"
 
 > [!VIDEO https://www.youtube.com/embed/l9-wP7OdhDk]
 
-## <a name="what-is-elt"></a>Что такое ELT?
+## <a name="extract-load-and-transform-elt"></a>Извлечение, Загрузка и преобразование (ELT)
 
 Извлечение, Загрузка и преобразование (ELT) — это процесс, с помощью которого данные извлекаются из исходной системы, загружаются в хранилище данных, а затем преобразуются.
 
@@ -63,10 +63,10 @@ PolyBase загружает данные из текстовых файлов с
 |         FLOAT         |                             real                             |
 |        double         |                            money                             |
 |        double         |                          smallmoney                          |
-|        строка         |                            nchar                             |
-|        строка         |                           nvarchar                           |
-|        строка         |                             char                             |
-|        строка         |                           varchar                            |
+|        string         |                            nchar                             |
+|        string         |                           nvarchar                           |
+|        string         |                             char                             |
+|        string         |                           varchar                            |
 |        binary         |                            binary                            |
 |        binary         |                          varbinary                           |
 |       TIMESTAMP       |                             Дата                             |

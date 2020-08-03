@@ -6,13 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 03/27/2020
 ms.author: anfeldma
-ms.custom: devx-track-javascript
-ms.openlocfilehash: e4ab560366a2d00773f9b186663831321b18566f
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-javascript, devx-track-azurecli
+ms.openlocfilehash: 029c2ffa548c8c99030f630a90eb07ac8ba063a0
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87416525"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87497007"
 ---
 # <a name="configure-time-to-live-in-azure-cosmos-db"></a>Настройка срока жизни в Azure Cosmos DB
 
@@ -22,7 +22,7 @@ ms.locfileid: "87416525"
 
 Следуйте инструкциям ниже, чтобы включить в контейнере неограниченный срок жизни. Включите этот параметр, чтобы срок жизни можно было переопределить на уровне элемента. Вы также можете задать значение срока жизни, введя ненулевое значение, обозначающее период в секундах.
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
 
 2. Создайте новую учетную запись Azure Cosmos или выберите имеющуюся.
 
@@ -206,7 +206,7 @@ async function createcontainerWithTTL(db: Database, containerDefinition: Contain
 
 Следуйте инструкциям ниже, чтобы включить в элементе срок жизни.
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
 
 2. Создайте новую учетную запись Azure Cosmos или выберите имеющуюся.
 

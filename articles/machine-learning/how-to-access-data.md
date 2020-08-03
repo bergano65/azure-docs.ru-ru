@@ -11,12 +11,12 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 07/22/2020
 ms.custom: how-to, seodec18, tracking-python
-ms.openlocfilehash: ca7feacf5d631b4e85a0b3f4e7a039bbb79abe45
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: f30f2b45944281ed74da2026eb14e8938260b259
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/31/2020
-ms.locfileid: "87460207"
+ms.locfileid: "87496106"
 ---
 # <a name="connect-to-azure-storage-services"></a>Подключение к службам хранилища Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -96,7 +96,7 @@ ms.locfileid: "87460207"
 
 **После создания хранилища данных**эта проверка выполняется только для методов, которым требуется доступ к базовому контейнеру хранилища, а **не** при извлечении объектов хранилища данных. Например, проверка выполняется, если требуется скачать файлы из хранилища данных. Но если вы просто хотите изменить хранилище данных по умолчанию, проверки не будет.
 
-Чтобы проверить подлинность доступа к базовой службе хранилища, можно указать ключ учетной записи, маркеры общего доступа (SAS) или субъект-службу в соответствующем `register_azure_*()` методе типа хранилища данных, который требуется создать. В [матрице типа хранилища](#matrix) перечислены поддерживаемые типы проверки подлинности, соответствующие каждому типу хранилища данных.
+Для проверки подлинности доступа к базовой службе хранилища можно указать ключ учетной записи, маркеры общего доступа (SAS) или субъект-службу в соответствующем `register_azure_*()` методе создаваемого типа хранилища данных. В [матрице типа хранилища](#matrix) перечислены поддерживаемые типы проверки подлинности, соответствующие каждому типу хранилища данных.
 
 Сведения о ключе учетной записи, маркере SAS и субъекте-службе можно найти на [портал Azure](https://portal.azure.com).
 
@@ -113,7 +113,7 @@ ms.locfileid: "87460207"
 
 ### <a name="permissions"></a>Разрешения
 
-Для контейнера больших двоичных объектов Azure и Azure Data Lake хранилища Gen 2 Убедитесь, что учетные данные для проверки подлинности имеют доступ для **чтения BLOB-объектов хранилища** . См. Дополнительные сведения о [модуле чтения BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader). 
+Для контейнера больших двоичных объектов Azure и Azure Data Lake хранилища Gen 2 Убедитесь, что учетные данные для проверки подлинности имеют доступ на **Чтение данных BLOB-объекта хранилища** . См. Дополнительные сведения о [модуле чтения BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader). 
 
 <a name="python"></a>
 
@@ -176,7 +176,7 @@ file_datastore = Datastore.register_azure_file_share(workspace=ws,
 
 Для хранилища данных Azure Data Lake Storage 2-го поколения (ADLS 2-го поколения) используйте [register_azure_data_lake_gen2()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore.datastore?view=azure-ml-py#register-azure-data-lake-gen2-workspace--datastore-name--filesystem--account-name--tenant-id--client-id--client-secret--resource-url-none--authority-url-none--protocol-none--endpoint-none--overwrite-false-) для регистрации базы данных учетных данных, подключенной к хранилищу Azure DataLake 2-го поколения, с [разрешениями субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal). 
 
-Чтобы использовать субъект-службу, необходимо [зарегистрировать приложение](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals) и предоставить субъекту-службе доступ с правами на **чтение данных BLOB-объектов хранилища**. Узнайте больше о [контроле доступа в ADLS 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
+Чтобы использовать субъект-службу, необходимо [зарегистрировать приложение](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals) и предоставить субъекту-службе доступ к **модулю чтения данных BLOB-объекта хранилища** . Узнайте больше о [контроле доступа в ADLS 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
 
 Следующий код создает и регистрирует хранилище данных `adlsgen2_datastore_name` в рабочей области `ws`. Это хранилище данных обращается к файловой системе `test` в учетной записи хранения `account_name` с помощью предоставленных учетных данных субъекта-службы.
 
@@ -202,7 +202,9 @@ adlsgen2_datastore = Datastore.register_azure_data_lake_gen2(workspace=ws,
 
 <a name="studio"></a>
 
+
 ## <a name="create-datastores-in-the-studio"></a>Создание хранилищ данных в студии 
+
 
 Создайте хранилище данных, выполнив несколько шагов с помощью Машинное обучение Azure Studio.
 
@@ -219,7 +221,6 @@ adlsgen2_datastore = Datastore.register_azure_data_lake_gen2(workspace=ws,
 ![Форма для нового хранилища данных.](media/how-to-access-data/new-datastore-form.png)
 
 <a name="train"></a>
-
 ## <a name="use-data-in-your-datastores"></a>Используйте данные в хранилищах данных
 
 После создания хранилища данных [создайте машинное обучение Azure набор данных](how-to-create-register-datasets.md) для взаимодействия с данными. Наборы данных упаковывают ваши данные в отложенно вычисляемый объект для задач машинного обучения, например для обучения. Они также предоставляют возможность [скачивания или подключения](how-to-train-with-datasets.md#mount-vs-download) файлов любого формата из служб хранилища Azure, таких как, хранилище BLOB-объектов Azure и ADLS Gen 2. Их также можно использовать для загрузки табличных данных в таблицу данных Pandas или Spark.

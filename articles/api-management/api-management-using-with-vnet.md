@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 07/22/2020
 ms.author: apimpm
 ms.custom: references_regions
-ms.openlocfilehash: e3acfb9552db9fa972b0a407e52cece014b45389
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ee23b2bc58f8c1f15a7e51b05dee954c1e584293
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87025019"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87489628"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -118,7 +118,7 @@ ms.locfileid: "87025019"
 | * / 1433                     | Исходящие           | TCP                | VIRTUAL_NETWORK / SQL                 | **Доступ к конечным точкам службы SQL Azure**                           | Внешний и внутренний  |
 | * / 5671, 5672, 443          | Исходящие           | TCP                | VIRTUAL_NETWORK / EventHub            | Зависимость для [политики ведения журнала Центра событий](api-management-howto-log-event-hubs.md) и агента мониторинга | Внешний и внутренний  |
 | * / 445                      | Исходящие           | TCP                | VIRTUAL_NETWORK / Storage             | Зависимость от общей папки Azure для [GIT](api-management-configuration-repository-git.md)                      | Внешний и внутренний  |
-| * / 443                     | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureCloud            | Расширение работоспособности и мониторинга         | Внешний и внутренний  |
+| */443, 12000                     | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureCloud            | Расширение работоспособности и мониторинга         | Внешний и внутренний  |
 | */1886, 443                     | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureMonitor         | Публикация [журналов диагностики и метрик](api-management-howto-use-azure-monitor.md), [работоспособность ресурсов](../service-health/resource-health-overview.md) и [Application Insights](api-management-howto-app-insights.md)                   | Внешний и внутренний  |
 | */25, 587, 25028                       | Исходящие           | TCP                | VIRTUAL_NETWORK — INTERNET            | Подключение к SMTP-ретранслятору для отправки сообщений электронной почты                    | Внешний и внутренний  |
 | * / 6381 - 6383              | Входящий и исходящий | TCP                | VIRTUAL_NETWORK — VIRTUAL_NETWORK     | Доступ к службе Redis для политик [кэша](api-management-caching-policies.md) между компьютерами         | Внешний и внутренний  |

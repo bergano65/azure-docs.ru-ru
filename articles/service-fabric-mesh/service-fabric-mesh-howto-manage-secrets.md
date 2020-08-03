@@ -3,12 +3,13 @@ title: Управление секретами приложения сети Ser
 description: Управляйте секретами приложений, чтобы безопасно создать и развернуть приложение "Сетка Service Fabric".
 ms.date: 4/2/2019
 ms.topic: conceptual
-ms.openlocfilehash: d7946092a0bebe374404870fcd711ad33cc98b11
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 379560b73c38558fe0b712ed5e036c7a3736b600
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75461917"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87500714"
 ---
 # <a name="manage-service-fabric-mesh-application-secrets"></a>Управление секретами приложения "Сетка Service Fabric"
 Служба "Сетка Service Fabric" поддерживает секреты в качестве ресурсов Azure. Секретом в службе "Сетка Service Fabric" может быть любая конфиденциальная текстовая информация, например строки подключения к хранилищу, пароли или другие значения, которые должны хранится и передаваться защищенными. В этой статье показано, как использовать службу Secure Store Service Fabric для развертывания и поддержки секретов.
@@ -241,6 +242,6 @@ az mesh secretvalue show --Resource-group <myResourceGroup> --secret-name <mySec
 az mesh secretvalue delete --Resource-group <myResourceGroup> --secret-name <mySecret> --version <N>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 Чтобы узнать больше о службе "Сетка Service Fabric", прочитайте этот обзор:
 - [Обзор службы "Сетка Service Fabric"](service-fabric-mesh-overview.md)

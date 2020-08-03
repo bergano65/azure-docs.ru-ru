@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: a622179d1e83b41e906a9d276377f5c9474264b9
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: a5764e44db31755110ac99a3e8e8e0984cdf9604
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86129967"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87490580"
 ---
 # <a name="plan-capacity-for-hyper-v-vm-disaster-recovery"></a>Планирование ресурсов для аварийного восстановления виртуальной машины Hyper-V 
 
@@ -47,11 +47,11 @@ ms.locfileid: "86129967"
 
 2. В списке **Select a planner type** (Выбрать тип планировщика) выберите **Quick Planner** (Средство быстрого планирования).
 
-   ![Начало работы](./media/site-recovery-capacity-planner/getting-started.png)
+   ![Снимок экрана с параметром "Выбор типа планировщика" с выбранным быстрым планировщиком.](./media/site-recovery-capacity-planner/getting-started.png)
 
 3. На листе **Планировщик ресурсов** введите необходимую информацию. Заполните все поля, помеченные красными кружками на снимке экрана ниже.
 
-   а. В списке **Select your scenario** (Выберите сценарий) выберите пункт **Из Hyper-V в Azure** или **Из VMware или физического сервера в Azure**.
+   a. В списке **Select your scenario** (Выберите сценарий) выберите пункт **Из Hyper-V в Azure** или **Из VMware или физического сервера в Azure**.
 
    b. В поле **Average daily data change rate (%)** (Средняя частота ежедневного изменения данных (%)) введите данные, полученные с помощью [инструмента планирования ресурсов Hyper-V](./hyper-v-deployment-planner-overview.md) или [планировщика ресурсов Site Recovery](./site-recovery-deployment-planner.md).
 
@@ -59,9 +59,9 @@ ms.locfileid: "86129967"
 
    d. В **Retention in days** (Период хранения в днях) укажите, как долго следует хранить реплики (в днях).
 
-   д) В полях **Number of hours in which initial replication for the batch of virtual machines should complete** (Период (в часах), в течение которого должна быть выполнена начальная репликация для пакета виртуальных машин) и **Number of virtual machines per initial replication batch** (Число виртуальных машин на пакет начальной репликации) указываются параметры, используемые для вычисления требований к начальной репликации. При развертывании службы Site Recovery выполняется отправка всего начального набора данных.
+   д. В полях **Number of hours in which initial replication for the batch of virtual machines should complete** (Период (в часах), в течение которого должна быть выполнена начальная репликация для пакета виртуальных машин) и **Number of virtual machines per initial replication batch** (Число виртуальных машин на пакет начальной репликации) указываются параметры, используемые для вычисления требований к начальной репликации. При развертывании службы Site Recovery выполняется отправка всего начального набора данных.
 
-   ![Входные данные](./media/site-recovery-capacity-planner/inputs.png)
+   ![Снимок экрана листа планировщик ресурсов, в котором отображаются необходимые входные данные.](./media/site-recovery-capacity-planner/inputs.png)
 
 4. Указав значения для исходной среды, вы увидите следующие выходные данные.
 
@@ -77,7 +77,7 @@ ms.locfileid: "86129967"
    * **Number of additional process servers required** (Требуемое число дополнительных серверов обработки). Показывает, необходимы ли дополнительные серверы обработки кроме сервера, запущенного на сервере конфигурации по умолчанию.
    * **100% дополнительного хранилища в источнике**: показывает, требуется ли дополнительное хранилище в исходном расположении.
 
-      ![Выходные данные](./media/site-recovery-capacity-planner/output.png)
+      ![Снимок экрана отображаемого результата на основе предоставленных входных данных.](./media/site-recovery-capacity-planner/output.png)
 
 ## <a name="run-the-detailed-planner"></a>Запуск средства детального планирования
 
@@ -85,11 +85,11 @@ ms.locfileid: "86129967"
 
 2. В списке **Select a planner type** (Выбрать тип планировщика) выберите пункт **Detailed Planner** (Средство детального планирования).
 
-   ![Руководство по началу работы](./media/site-recovery-capacity-planner/getting-started-2.png)
+   ![Снимок экрана: параметр "Выбор типа планировщика" с выбранным подробным планировщиком.](./media/site-recovery-capacity-planner/getting-started-2.png)
 
 3. На листе **Workload Qualification** (Оценка рабочей нагрузки) введите необходимую информацию. Необходимо заполнить все помеченные поля.
 
-   а. В поле **ядра процессора**укажите общее количество ядер на исходном сервере.
+   a. В поле **ядра процессора**укажите общее количество ядер на исходном сервере.
 
    b. В поле **Memory allocation (in MBs)** (Выделение памяти (в МБ)) укажите объем ОЗУ исходного сервера.
 
@@ -97,7 +97,7 @@ ms.locfileid: "86129967"
 
    d. В поле **Общий объем хранилища (в ГБ)** укажите общий размер хранилища виртуальной машины. Например, если на исходном сервере есть три диска, каждый по 500 ГБ, общий размер хранилища составляет 1500 ГБ.
 
-   д) В поле **Number of disks attached** (Число подключенных дисков) укажите общее число дисков исходного сервера.
+   д. В поле **Number of disks attached** (Число подключенных дисков) укажите общее число дисков исходного сервера.
 
    е) В поле **Disk capacity utilization (%)** (Уровень использования емкости диска (в %)) укажите среднее значение использования.
 
@@ -105,7 +105,7 @@ ms.locfileid: "86129967"
 
    h. В поле **Mapping Azure VM size** (Сопоставление размера виртуальной машины Azure) введите размер виртуальной машины Azure, которую необходимо сопоставить. Если вы не хотите делать это вручную, щелкните**Compute IaaS VMs** (Вычислить виртуальные машины IaaS). Если вы ввели параметры вручную и выбрали **Compute IaaS VMs** (Вычислить виртуальные машины IaaS), этот параметр можно перезаписать вручную. Процесс вычисления автоматически определяет наилучшее соответствие размера виртуальной машины Azure.
 
-   ![Лист Workload Qualification (Оценка рабочей нагрузки)](./media/site-recovery-capacity-planner/workload-qualification.png)
+   ![Снимок экрана листа квалификации рабочей нагрузки, в котором отображаются необходимые входные данные.](./media/site-recovery-capacity-planner/workload-qualification.png)
 
 4. При выборе **Compute IaaS VMs** (Вычислить виртуальные машины IaaS) выполняются следующие операции.
 
@@ -117,12 +117,12 @@ ms.locfileid: "86129967"
 
 Столбцы AA—AE представляют собой выходные данные и содержат сведения о каждой виртуальной машине.
 
-![Выходные данные столбцов AA–AE](./media/site-recovery-capacity-planner/workload-qualification-2.png)
+![Снимок экрана, показывающий выходные столбцы AA и AE.](./media/site-recovery-capacity-planner/workload-qualification-2.png)
 
 ### <a name="example"></a>Пример
 Например, для шести виртуальных машин, значения которых приведены в таблице, средство вычисляет и назначает самую подходящую виртуальную машину Azure и определяет самые оптимальные требования к службе хранилища Azure.
 
-![Задания оценки рабочей нагрузки](./media/site-recovery-capacity-planner/workload-qualification-3.png)
+![Снимок экрана, на котором показаны квалификационные назначения рабочей нагрузки.](./media/site-recovery-capacity-planner/workload-qualification-3.png)
 
 * В выходных данных к этому примеру обратите внимание на следующее:
 
@@ -144,7 +144,7 @@ ms.locfileid: "86129967"
 
 2. Чтобы внести изменения, измените данные на листе **Workload Qualification** (Оценка рабочей нагрузки). Затем выберите **Submit data to the planner tool** (Отправить данные в средство "Планировщик") еще раз.
 
-   ![Планировщик ресурсов](./media/site-recovery-capacity-planner/capacity-planner.png)
+   ![Снимок экрана, показывающий измененные входные данные и результирующие выходные данные на листе планировщик ресурсов.](./media/site-recovery-capacity-planner/capacity-planner.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [Узнайте, как запустить](./hyper-v-deployment-planner-overview.md) инструмент планирования ресурсов.

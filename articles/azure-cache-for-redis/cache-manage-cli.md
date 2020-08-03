@@ -6,12 +6,13 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 01/23/2017
 ms.author: yegu
-ms.openlocfilehash: c0e94c0bef5087665ca8746a65ccd34a0f61deef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: db55ac4ce868f2e6ce2afbfbf014aac67653ce4a
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85829743"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87500510"
 ---
 # <a name="how-to-create-and-manage-azure-cache-for-redis-using-the-azure-classic-cli"></a>Создание кэша Azure для Redis и управление им с помощью классического Azure CLI
 > [!div class="op_single_selector"]
@@ -25,7 +26,7 @@ ms.locfileid: "85829743"
 > [!NOTE]
 > Последние примеры сценариев Azure CLI для кэша Azure для Redis см. в [этой статье](cli-samples.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Для создания экземпляров кэша Azure для Redis и управления ими с помощью классического Azure CLI необходимо выполнить следующие действия.
 
 * Необходимо иметь учетную запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за пару минут.
@@ -36,7 +37,7 @@ ms.locfileid: "85829743"
 ## <a name="azure-cache-for-redis-properties"></a>Свойства кэша Azure для Redis
 При создании и обновлении экземпляров кэша Azure для Redis используются следующие свойства.
 
-| Свойство. | Параметр | Описание |
+| Свойство | Параметр | Описание |
 | --- | --- | --- |
 | name |-n, --name |Имя кэша Azure для Redis. |
 | resource group |-g, --resource-group |Имя группы ресурсов. |

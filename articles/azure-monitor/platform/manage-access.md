@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 04/10/2019
-ms.openlocfilehash: b9ca2dc9d907e65b2679c08d8d2b6482f02ba53d
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 630364a95c4ee427b71aa5e8b763b4447a41c962
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327894"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87489458"
 ---
 # <a name="manage-access-to-log-data-and-workspaces-in-azure-monitor"></a>Управление доступом к данным журнала и рабочим областям в Azure Monitor
 
@@ -20,7 +20,7 @@ Azure Monitor хранят данные [журнала](data-platform-logs.md) 
 В этой статье объясняется, как управлять доступом к журналам и администрировать рабочие области, содержащие их, включая предоставление доступа к: 
 
 * Рабочая область, использующая разрешения рабочей области.
-* Пользователи, которым необходим доступ к данным журнала из конкретных ресурсов с помощью управления доступом на основе ролей (RBAC) Azure (также называемого [контекстом ресурса](design-logs-deployment.md#access-mode) )
+* Пользователи, которым необходим доступ к данным журнала из конкретных ресурсов с помощью управления доступом на основе ролей Azure (Azure RBAC), также называются [контекстом ресурса](design-logs-deployment.md#access-mode) .
 * Пользователи, которым необходим доступ к данным журнала в определенной таблице в рабочей области с помощью Azure RBAC.
 
 Сведения об основных понятиях журналов, связанных с RBAC и стратегиями доступа, см. в статье [проектирование развертывания Azure Monitor журналов](design-logs-deployment.md) .
@@ -313,4 +313,3 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 * Сведения о сборе данных с компьютеров в центре обработки данных или в другой облачной среде см в статье об [агенте Log Analytics](./log-analytics-agent.md).
 
 * Сведения о настройке сбора данных из виртуальных машин Azure см. в статье [сбор данных о виртуальных машинах Azure](../learn/quick-collect-azurevm.md) .
-

@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
-ms.openlocfilehash: 880238558c03cca6a582960eef4e647c0e6875e8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fe05a474f4f6ee70c07e0e19621487d51d92966d
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084115"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87490632"
 ---
 # <a name="indexing-documents-in-azure-data-lake-storage-gen2"></a>Индексирование документов в Azure Data Lake Storage 2-го поколения
 
@@ -44,7 +44,7 @@ ms.locfileid: "87084115"
 
 ## <a name="access-control"></a>Управление доступом
 
-Azure Data Lake Storage 2-го поколения реализует [модель управления доступом](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control) , которая поддерживает как управление доступом на основе РОЛЕЙ (RBAC), так и POSIX-подобные списки управления доступом (ACL). При индексировании содержимого из Data Lake Storage 2-го поколения Azure Когнитивный поиск не извлечет сведения о RBAC и ACL из содержимого. В результате эта информация не будет включаться в индекс Azure Когнитивный поиск.
+Azure Data Lake Storage 2-го поколения реализует [модель управления доступом](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control) , поддерживающую управление доступом на основе ролей Azure (Azure RBAC) и списки управления доступом (ACL), аналогичные стандарту POSIX. При индексировании содержимого из Data Lake Storage 2-го поколения Azure Когнитивный поиск не извлечет сведения о RBAC и ACL из содержимого. В результате эта информация не будет включаться в индекс Azure Когнитивный поиск.
 
 Если важна поддержка контроля доступа для каждого документа в индексе, разработчик приложения должен реализовать [фильтрацию безопасности](https://docs.microsoft.com/azure/search/search-security-trimming-for-azure-search).
 

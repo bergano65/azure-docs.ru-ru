@@ -9,12 +9,13 @@ ms.topic: how-to
 ms.date: 02/07/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 219638f70797fc5ea413e4db72e528262df2fa87
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 636efe27ec82fa870267d2cf69d5cdf990fd509a
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87037066"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87501361"
 ---
 # <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
@@ -30,7 +31,7 @@ ms.locfileid: "87037066"
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-Нет.
+Отсутствует.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -67,7 +68,7 @@ Azure CLI также можно установить и применять ло�
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-Нет.
+Отсутствует.
 
 ---
 
@@ -148,7 +149,7 @@ New-AzStorageAccount -ResourceGroupName $resourceGroup `
 
 |Параметр репликации  |Параметр SkuName  |
 |---------|---------|
-|локально избыточное хранилище (LRS);     |Standard_LRS         |
+|Локально избыточное хранилище (LRS)     |Standard_LRS         |
 |хранилище, избыточное между зонами (ZRS);     |Standard_ZRS         |
 |Геоизбыточное хранилище (GRS)     |Standard_GRS         |
 |Геоизбыточное хранилище с доступом для чтения (RA-GRS)     |Standard_RAGRS         |
@@ -191,7 +192,7 @@ az storage account create \
 
 |Параметр репликации  |параметр sku  |
 |---------|---------|
-|локально избыточное хранилище (LRS);     |Standard_LRS         |
+|Локально избыточное хранилище (LRS)     |Standard_LRS         |
 |хранилище, избыточное между зонами (ZRS);     |Standard_ZRS         |
 |Геоизбыточное хранилище (GRS)     |Standard_GRS         |
 |Геоизбыточное хранилище с доступом для чтения (RA-GRS)     |Standard_RAGRS         |

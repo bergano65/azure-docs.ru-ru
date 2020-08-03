@@ -16,12 +16,12 @@ ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2a7709cf0522727257025b2dddc495b20fe8448
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0be99a673fe3d062e114f375891f3c821c118d76
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84763760"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87499506"
 ---
 # <a name="unexpected-error-when-performing-consent-to-an-application"></a>Непредвиденная ошибка при предоставлении согласия для приложения
 
@@ -38,6 +38,8 @@ ms.locfileid: "84763760"
 Эта ошибка возникает, когда пользователь, не являющийся администратором организации, пытается использовать приложение, которому нужны разрешения, предоставляемые лишь администратором. Администратор может устранить эту ошибку, предоставив доступ к приложению от имени своей организации.
 
 Эта ошибка также может возникать, когда пользователю запрещено отсылать приложения из-за того, что корпорация Майкрософт обнаруживает, что запрос разрешений является рискованным. В этом случае событие аудита также будет регистрироваться с категорией "Аппликатионманажемент", типом действия "согласие на приложение" и состоянием "обнаружено рискованное приложение".
+
+Другой сценарий, в котором может возникнуть Эта ошибка, заключается в том, что для приложения требуется назначение пользователя, но не предоставлено согласие администратора. В этом случае администратор должен сначала предоставить согласие администратора.   
 
 ## <a name="policy-prevents-granting-permissions-error"></a>Ошибка при блокировке назначения разрешений политикой
 * **AADSTS90093:** An administrator of &lt;tenantDisplayName&gt; has set a policy that prevents you from granting &lt;name of app&gt; the permissions it is requesting. Contact an administrator of &lt;tenantDisplayName&gt;, who can grant permissions to this app on your behalf. (Администратор "tenantDisplayName" задал политику, которая запрещает предоставление разрешений, запрошенных "имя приложения". Обратитесь к администратору "tenantDisplayName", который может предоставить разрешения для этого приложения от вашего имени.)
@@ -76,7 +78,7 @@ ms.locfileid: "84763760"
 
     -   Добавление приложения из коллекции приложений Azure AD
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 [Приложения, разрешения и согласие в Azure Active Directory (конечная точка версии 1)](https://docs.microsoft.com/azure/active-directory/active-directory-apps-permissions-consent)<br>
 

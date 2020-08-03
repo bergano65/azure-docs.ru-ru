@@ -10,12 +10,12 @@ ms.date: 04/14/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: db65ba904cdce7bec83b851c6b50316c89fcedfd
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 9d4097e847417f56c9881a3e18237e97dfee465e
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87128732"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87501412"
 ---
 # <a name="use-the-azure-portal-to-access-blob-or-queue-data"></a>Использование портал Azure для доступа к данным BLOB-объектов или очередей
 
@@ -38,7 +38,7 @@ ms.locfileid: "87128732"
 При попытке доступа к данным большого двоичного объекта или очереди в портал Azure на портале сначала проверяется, была ли назначена роль с помощью **Microsoft. Storage/storageAccounts/listkeys/Action**. Если вы назначили роль с этим действием, портал использует ключ учетной записи для доступа к данным большого двоичного объекта и очереди. Если вы не назначили роль с этим действием, портал пытается получить доступ к данным с помощью учетной записи Azure AD.
 
 > [!NOTE]
-> Администратор службы ролей администратора и соадминистраторов классической подписки включает в себя эквивалент роли [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager. Роль **владелец** включает все действия, включая **Microsoft. Storage/storageAccounts/listkeys/Action**, поэтому пользователь с одной из этих административных ролей также может обращаться к данным большого двоичного объекта и очереди с помощью ключа учетной записи. Дополнительные сведения см. в статье [Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles).
+> Администратор службы ролей администратора и соадминистраторов классической подписки включает в себя эквивалент роли [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager. Роль **владелец** включает все действия, включая **Microsoft. Storage/storageAccounts/listkeys/Action**, поэтому пользователь с одной из этих административных ролей также может обращаться к данным большого двоичного объекта и очереди с помощью ключа учетной записи. Дополнительные сведения см. в статьях [роли администратора классической подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles).
 
 ### <a name="use-your-azure-ad-account"></a>Использование учетной записи Azure AD
 

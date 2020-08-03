@@ -8,12 +8,13 @@ ms.topic: how-to
 ms.date: 05/10/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 31a7048c263d7231fe827ad5a1c927c5cb3e2f6d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 6c23c034af40d7db2379f9d02357131a00482bd2
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84463575"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495749"
 ---
 # <a name="create-a-blockblobstorage-account"></a>Создание учетной записи Блоккблобстораже
 
@@ -40,12 +41,12 @@ ms.locfileid: "84463575"
 
 Вы можете войти в Azure и выполнить команды Azure CLI одним из двух способов:
 
-- Команды интерфейса командной строки можно выполнять в портал Azure в Azure Cloud Shell.
-- Вы можете установить интерфейс командной строки и выполнить команды CLI локально.
+- Выполнить команды CLI на портале Azure в Azure Cloud Shell.
+- Установить CLI и выполнить команды CLI локально.
 
 ### <a name="use-azure-cloud-shell"></a>Использование Azure Cloud Shell
 
-Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Azure CLI предварительно установлен и настроен для использования с вашей учетной записью. Нажмите кнопку **Cloud Shell** в меню в правой верхней части портал Azure:
+Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Предварительно установленный интерфейс Azure CLI настроен для использования с вашей учетной записью. Нажмите кнопку **Cloud Shell** в меню в правой верхней части портал Azure:
 
 [![Cloud Shell](../common/media/storage-quickstart-create-account/cloud-shell-menu.png)](https://portal.azure.com)
 
@@ -127,7 +128,7 @@ az login
 
 8. Выберите **проверить и создать** , чтобы проверить параметры учетной записи хранения.
 
-9. Выберите **Создать**.
+9. Щелкните **Создать**.
 
 ## <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
@@ -205,8 +206,8 @@ az login
    
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об учетных записях хранения см. в статье [Общие сведения об учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-overview).
 
-- Дополнительные сведения о группах ресурсов см. в разделе [Общие сведения о Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).
+- Дополнительные сведения о группах ресурсов см. в статье [Общие сведения об Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).

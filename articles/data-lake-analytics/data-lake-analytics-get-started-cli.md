@@ -5,12 +5,13 @@ ms.service: data-lake-analytics
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 06/18/2017
-ms.openlocfilehash: 44648f1c01aed221e90029eb64d48576b899b1c4
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: be7f9d66a10f3f0f4a1ae0f9e28e226f268a7f7c
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87132591"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87497449"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-azure-cli"></a>Начало работы с Azure Data Lake Analytics с помощью интерфейса командной строки Azure
 
@@ -18,7 +19,7 @@ ms.locfileid: "87132591"
 
 В этой статье описано, как использовать Azure CLI для создания учетной записи Data Lake Analytics, а также отправки заданий и каталогов U-SQL. Задание, которое считывает файл с разделителями-табуляциями (TSV) и преобразует его в файл с разделителями-запятыми (CSV).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы вам понадобится следующее:
 
@@ -62,7 +63,7 @@ az group create --name "<Resource Group Name>" --location "<Azure Location>"
 ```
 
 * **Имя учетной записи Data Lake Analytics**. Каждой учетной записи Data Lake Analytics присвоено имя.
-* **Расположение**. Используйте один из центров обработки данных Azure, который поддерживает Data Lake Analytics.
+* **Расположение.** Используйте один из центров обработки данных Azure, который поддерживает Data Lake Analytics.
 * **Учетная запись Data Lake Store по умолчанию** — каждая учетная запись Data Lake Analytics содержит учетную запись Data Lake Store по умолчанию.
 
 Чтобы получить список существующих учетных записей Data Lake Store, выполните эту команду:
@@ -130,7 +131,7 @@ OUTPUT @a
 
 Не меняйте эти два пути, если только исходный файл не был скопирован в другое место.  Data Lake Analytics создаст выходную папку, если ее не существует.
 
-Проще использовать относительные пути для файлов, которые хранятся в учетных записях Data Lake Store по умолчанию. Также можно использовать абсолютные пути.  Например.
+Проще использовать относительные пути для файлов, которые хранятся в учетных записях Data Lake Store по умолчанию. Также можно использовать абсолютные пути.  Пример:
 
 ```usql
 adl://<Data LakeStorageAccountName>.azuredatalakestore.net:443/Samples/Data/SearchLog.tsv
@@ -155,7 +156,7 @@ wasb://<BlobContainerName>@<StorageAccountName>.blob.core.windows.net/Samples/Da
 az dla job submit --account "<Data Lake Analytics Account Name>" --job-name "<Job Name>" --script "<Script Path and Name>"
 ```
 
-Например.
+Пример:
 
 ```azurecli
 az dla job submit --account "myadlaaccount" --job-name "myadlajob" --script @"C:\DLA\myscript.txt"

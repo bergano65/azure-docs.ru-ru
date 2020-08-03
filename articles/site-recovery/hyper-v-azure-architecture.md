@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/14/2019
 ms.author: raynew
-ms.openlocfilehash: 6dfa162de02174ac4a1a8251457249bd5ea4d766
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: af387b063a3c07d8b6b6c544814565e2a5ebdd46
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87416338"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495732"
 ---
 # <a name="hyper-v-to-azure-disaster-recovery-architecture"></a>Архитектура аварийного восстановления из Hyper-V в Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "87416338"
 
 **Архитектура: из Hyper-V в Azure (без VMM)**
 
-![Architecture](./media/hyper-v-azure-architecture/arch-onprem-azure-hypervsite.png)
+![Схема, показывающая локальный сайт Hyper-V в архитектуре Azure без VMM.](./media/hyper-v-azure-architecture/arch-onprem-azure-hypervsite.png)
 
 
 ## <a name="architectural-components---hyper-v-with-vmm"></a>Компоненты архитектуры — Hyper-V с VMM
@@ -53,7 +53,7 @@ ms.locfileid: "87416338"
 
 **Архитектура: из Hyper-V в Azure (с VMM)**
 
-![Components](./media/hyper-v-azure-architecture/arch-onprem-onprem-azure-vmm.png)
+![Схема, в которой показано локальное развертывание сайта Hyper-V в архитектуре Azure с помощью VMM.](./media/hyper-v-azure-architecture/arch-onprem-onprem-azure-vmm.png)
 
 ## <a name="set-up-outbound-network-connectivity"></a>Настройка исходящего сетевого подключения
 
@@ -66,9 +66,9 @@ ms.locfileid: "87416338"
 
 При использовании прокси-сервера или брандмауэра на основе URL-адресов для управления исходящими подключениями разрешите использование этих URL-адресов:
 
-| **Имя**                  | **Коммерческое**                               | **Государственные организации**                                 | **Описание** |
+| **Name**                  | **Коммерческое**                               | **Государственный сектор**                                 | **Описание** |
 | ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
-| Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
+| Хранилище                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
 | Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Обеспечивает авторизацию и проверку подлинности URL-адресов службы Site Recovery. |
 | Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Позволяет виртуальной машине взаимодействовать со службой Site Recovery. |
 | Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Позволяет виртуальной машине записывать данные мониторинга и диагностики службы Site Recovery. |
@@ -76,7 +76,7 @@ ms.locfileid: "87416338"
 
 ## <a name="replication-process"></a>Процесс репликации
 
-![Репликация из Hyper-V в Azure](./media/hyper-v-azure-architecture/arch-hyperv-azure-workflow.png)
+![Схема процесса репликации из Hyper-V в Azure](./media/hyper-v-azure-architecture/arch-hyperv-azure-workflow.png)
 
 **Процедура репликации и восстановления**
 
@@ -86,7 +86,7 @@ ms.locfileid: "87416338"
 1. После включения защиты для виртуальных машин Hyper-V на портале Azure или локально запустится рабочий процесс **Включение защиты**.
 2. Это задание проверяет, соответствует ли компьютер необходимым требованиям перед вызовом метода [CreateReplicationRelationship](/windows/win32/hyperv_v2/createreplicationrelationship-msvm-replicationservice), который настраивает репликацию, используя определенные вами параметры.
 3. Задание запускает начальную репликацию, вызывая метод [StartReplication](/windows/win32/hyperv_v2/startreplication-msvm-replicationservice), чтобы инициализировать полную репликацию виртуальной машины и отправить ее виртуальные диски в Azure.
-4. Вы можете отслеживать задание на вкладке **задания** .      ![ ](media/hyper-v-azure-architecture/image1.png) Список ![ заданий Включить детализацию защиты](media/hyper-v-azure-architecture/image2.png)
+4. Вы можете отслеживать задание на вкладке **задания** .      ![Снимок экрана со списком заданий на вкладке "задания". ](media/hyper-v-azure-architecture/image1.png) ![Снимок экрана: экран включения защиты с дополнительными сведениями.](media/hyper-v-azure-architecture/image2.png)
 
 
 ### <a name="initial-data-replication"></a>Начальная репликация данных
@@ -123,7 +123,7 @@ ms.locfileid: "87416338"
 2. После завершения повторной синхронизации возобновляется обычная разностная репликация данных.
 3. Если вы не хотите ждать времени повторной синхронизации по умолчанию, то можете повторно синхронизировать виртуальную машину вручную. Например, такая потребность может возникнуть в случае сбоя. Для этого на портале Azure выберите виртуальную машину и щелкните **Повторно синхронизир.**
 
-    ![Повторная синхронизация вручную](./media/hyper-v-azure-architecture/image4-site.png)
+    ![Снимок экрана с параметром "повторная синхронизация".](./media/hyper-v-azure-architecture/image4-site.png)
 
 
 ### <a name="retry-process"></a>Процедура повторных попыток

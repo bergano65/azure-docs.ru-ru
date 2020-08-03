@@ -112,6 +112,8 @@
           href: cognitive-search-incremental-indexing-conceptual.md
     - name: Безопасность
       items:
+        - name: Общие сведения о безопасности
+          href: search-security-overview.md
         - name: Элементы управления безопасностью службы "Политика Azure"
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md
@@ -329,8 +331,6 @@
           href: search-api-migration.md
     - name: Безопасность
       items:
-        - name: Обзор
-          href: search-security-overview.md
         - name: Шифрование данных
           items:
             - name: 'Ключи, управляемые клиентом'
@@ -518,5 +518,5 @@
       href: search-faq-frequently-asked-questions.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/search/'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=search'

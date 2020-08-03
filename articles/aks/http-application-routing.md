@@ -6,12 +6,12 @@ author: lachie83
 ms.topic: article
 ms.date: 07/20/2020
 ms.author: laevenso
-ms.openlocfilehash: 7349504b5a1ed5a67f3b34be2c4ff5dda29afbf3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 08835bda959fb4fe261e86e4d519ab85bd2a4625
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87025308"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495154"
 ---
 # <a name="http-application-routing"></a>Маршрутизация приложений HTTP
 
@@ -20,7 +20,7 @@ ms.locfileid: "87025308"
 При включении этой надстройки в подписке создается зона DNS. Дополнительные сведения о стоимости DNS см. [на этой странице][dns-pricing].
 
 > [!CAUTION]
-> Надстройка маршрутизации приложения HTTP предназначена для быстрого создания входного контроллера и доступа к вашим приложениям. Мы не рекомендуем ее использовать для работы. Дополнительные сведения о готовых к развертыванию приложений, включающих несколько реплик и поддержку TLS, см. раздел [Создание входного контроллера HTTPS](./ingress-tls.md).
+> Надстройка маршрутизации приложения HTTP предназначена для быстрого создания входного контроллера и доступа к вашим приложениям. Эта надстройка в настоящее время не предназначена для использования в рабочей среде и не рекомендуется для использования в рабочем окружении. Дополнительные сведения о готовых к развертыванию приложений, включающих несколько реплик и поддержку TLS, см. раздел [Создание входного контроллера HTTPS](./ingress-tls.md).
 
 ## <a name="http-routing-solution-overview"></a>Обзор решения маршрутизации HTTP-трафика
 
@@ -203,7 +203,7 @@ kubectl delete configmaps addon-http-application-routing-nginx-configuration --n
 
 Повторите предыдущий шаг `kubectl delete` для всех ресурсов *addon-http-application-routing*, которые остаются в кластере.
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 Выполните команду [kubectl logs][kubectl-logs], чтобы просмотреть журналы приложений для внешнего приложения DNS. В журналах должно быть указано, что записи A и TXT DNS успешно созданы.
 

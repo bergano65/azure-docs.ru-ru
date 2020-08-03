@@ -4,12 +4,12 @@ description: Применяйте собственные ключи (BYOK), чт
 services: container-service
 ms.topic: article
 ms.date: 07/17/2020
-ms.openlocfilehash: d8443c9c7a0af7bfb7f146904c913663d82786b8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f0b96b3f78adf4a7efb1d43626a5aaf82a5b5d43
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87057307"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87499625"
 ---
 # <a name="bring-your-own-keys-byok-with-azure-disks-in-azure-kubernetes-service-aks"></a>Перенесите собственные ключи (BYOK) с помощью дисков Azure в службе Kubernetes Azure (AKS)
 
@@ -161,8 +161,7 @@ kubectl apply -f byok-azure-disk.yaml
 
 ## <a name="limitations"></a>Ограничения
 
-* Шифрование дисков данных, поддерживаемое с Kubernetes версии 1,17 и выше   
-* Доступно только в регионах, где поддерживается BYOK
+* Шифрование дисков данных, поддерживаемое с Kubernetes версии 1,17 и выше
 * Шифрование с помощью управляемых клиентом ключей в настоящее время предназначено только для новых кластеров AKS, обновление существующих кластеров невозможно
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: cshoe
 ms.reviewer: jehollan
-ms.openlocfilehash: 02cb862c5ec6f75d546aabcd6e8ac97a4de961a4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 05b845f3284ea95dd2be595c4d59767e45149306
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87082959"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87500470"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в Функциях Azure .NET
 
@@ -121,7 +121,7 @@ namespace MyNamespace
 - **С заданной областью**: время существования службы с заданной областью соответствует времени выполнения функции. Службы с заданной областью создаются один раз для каждого выполнения. Последующие запросы к этой службе во время выполнения повторно используют существующий экземпляр службы.
 - **Отдельная**: время существования отдельной службы соответствует времени существования узла. Она повторно используется при повторном выполнении функций на этом экземпляре. Для подключений и клиентов рекомендуется использовать службы со временем жизни «отдельная», например экземпляры `DocumentClient` или `HttpClient`.
 
-Просмотрите или скачайте [образцы служб с различными временами существования](https://aka.ms/functions/di-sample) на GitHub.
+Просмотрите или скачайте [образцы служб с различными временами существования](https://github.com/Azure/azure-functions-dotnet-extensions/tree/main/src/samples/DependencyInjection/Scopes) на GitHub.
 
 ## <a name="logging-services"></a>Службы ведения журналов
 

@@ -4,14 +4,14 @@ description: Сведения о ключевых словах SQL для Azure 
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 04/10/2020
+ms.date: 07/29/2020
 ms.author: tisande
-ms.openlocfilehash: 069548b9b69ef6f7f6bde85ede830d97f3d312db
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f00e757f9b51da850c49924f6ae49bf00c9c53d1
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81261573"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496687"
 ---
 # <a name="keywords-in-azure-cosmos-db"></a>Ключевые слова в Azure Cosmos DB
 
@@ -36,9 +36,6 @@ ms.locfileid: "81261573"
 
 В отличие от ANSI SQL, в API SQL можно выразить диапазон запросов к свойствам смешанных типов. Например, `grade` может быть числом, похожим `5` на некоторые элементы, и строкой, как `grade4` в других. В таких случаях, как в JavaScript, сравнение двух разных типов приводит к результату `Undefined` , поэтому элемент пропускается.
 
-> [!TIP]
-> Чтобы ускорить выполнение запросов, создайте политику индексации, использующую тип индекса диапазона для любых числовых свойств или путей, которые `BETWEEN` фильтрует предложение.
-
 ## <a name="distinct"></a>DISTINCT
 
 `DISTINCT`Ключевое слово удаляет дубликаты в проекции запроса.
@@ -50,7 +47,7 @@ SELECT DISTINCT VALUE f.lastName
 FROM Families f
 ```
 
-Результаты:
+Вы получите такие результаты:
 
 ```json
 [
@@ -65,7 +62,7 @@ SELECT DISTINCT f.lastName
 FROM Families f
 ```
 
-Результаты:
+Вы получите такие результаты:
 
 ```json
 [
@@ -76,7 +73,7 @@ FROM Families f
 ]
 ```
 
-DISTINCT также можно использовать в проекции вложенного запроса:
+`DISTINCT`также может использоваться в проекции вложенного запроса:
 
 ```sql
 SELECT f.id, ARRAY(SELECT DISTINCT VALUE c.givenName FROM c IN f.children) as ChildNames
@@ -85,7 +82,7 @@ FROM f
 
 Этот запрос проецирует массив, который содержит все givenName потомков с удаленными дубликатами. Этот массив имеет псевдоним в виде Чилднамес и проецируется во внешнем запросе.
 
-Результаты:
+Вы получите такие результаты:
 
 ```json
 [
