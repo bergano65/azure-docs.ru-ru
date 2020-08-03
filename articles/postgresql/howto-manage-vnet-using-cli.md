@@ -7,12 +7,13 @@ ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 5/6/2019
-ms.openlocfilehash: 3fd055b3696d9f91291ae254acadf27ad154e003
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 5afdcec289efb9032d5a4ff5084443c30b52dd46
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86112601"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87493080"
 ---
 # <a name="create-and-manage-vnet-service-endpoints-for-azure-database-for-postgresql---single-server-using-azure-cli"></a>Создание конечных точек службы виртуальной сети базы данных Azure для PostgreSQL (отдельный сервер) и управление ими с помощью Azure CLI
 Правила и конечные точки служб виртуальной сети расширяют частное адресное пространство виртуальной сети на сервер базы данных Azure для PostgreSQL. С помощью удобных команд интерфейса командной строки Azure (CLI) можно создавать, обновлять, удалять, выводить списки и просматривать правила и конечные точки службы виртуальной сети для управления сервером. Общие сведения о конечных точках службы виртуальной сети базы данных Azure для PostgreSQL, включая ограничения, см. в [этой статье](concepts-data-access-and-security-vnet.md). Конечные точки службы виртуальной сети доступны во всех поддерживаемых регионах базы данных Azure для PostgreSQL.

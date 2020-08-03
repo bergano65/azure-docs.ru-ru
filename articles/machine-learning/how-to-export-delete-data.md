@@ -11,18 +11,18 @@ ms.author: laobri
 ms.date: 04/24/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 657f6dd32c18b5b0745883da02563e9f5257d92d
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: fd3abdfd9b0bc0e658caa1cc5ab5c5a7edfda453
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87307222"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87494037"
 ---
 # <a name="export-or-delete-your-machine-learning-service-workspace-data"></a>Экспорт или удаление данных рабочей области Службы машинного обучения
 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Используя Машинное обучение Azure, вы можете экспортировать или удалять данные рабочей области с помощью аутентифицированных REST API. В этой статье описано, каким образом это можно сделать.
+В Машинное обучение Azure можно экспортировать или удалить данные рабочей области с помощью графического интерфейса портала или пакета SDK для Python. В этой статье описываются оба варианта.
 
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-dsr-and-stp-note.md)]
 
@@ -30,225 +30,62 @@ ms.locfileid: "87307222"
 
 ## <a name="control-your-workspace-data"></a>Управление данными рабочей области
 
-Данные в продукте, хранящиеся в Машинное обучение Azure, доступны для экспорта и удаления с помощью Машинное обучение Azure Studio, CLI, пакета SDK и API-интерфейсов RESTFUL, прошедших проверку подлинности. Доступ к данным телеметрии может осуществляться через портал конфиденциальности Azure. 
+Данные в продукте, хранящиеся Машинное обучение Azure, доступны для экспорта и удаления. Экспортировать и удалить можно с помощью Машинное обучение Azure Studio, CLI и пакета SDK. Доступ к данным телеметрии может осуществляться через портал конфиденциальности Azure. 
 
-В машинном обучении Azure персональные данные состоят из информации пользователя, которая находится в документах журнала выполнения, и записей телеметрии о взаимодействии некоторых пользователей со службой.
+В Машинное обучение Azure личные данные состоят из сведений о пользователе в документах журнала выполнения. 
 
-## <a name="delete-workspace-data-with-the-rest-api"></a>Удаление данных рабочей области с помощью REST API
+## <a name="delete-high-level-resources-using-the-portal"></a>Удаление высокоуровневого ресурса с помощью портала
 
-Чтобы удалить данные, необходимо выполнить следующие вызовы API с помощью команды HTTP DELETE. Они авторизованы, так как у них в запросе присутствует заголовок `Authorization: Bearer <arm-token>`, где `<arm-token>` является маркером доступа AAD для конечной точки `https://management.core.windows.net/`.  
+При создании рабочей области Azure создает ряд ресурсов в группе ресурсов:
 
-Сведения о том, как получить этот маркер и вызвать конечные точки Azure, см. в статье [Использование функции RESTful для управления ресурсами машинного обучения](how-to-manage-rest.md) и [документацией по Azure REST API](https://docs.microsoft.com/rest/api/azure/).  
+- Сама Рабочая область
+- Учетная запись хранения.
+- Реестр контейнеров
+- Экземпляр Application Insights
+- Хранилище ключей
 
-В приведенных ниже примерах замените текст в {} именами экземпляров, которые определяют сопоставленный ресурс.
+Эти ресурсы можно удалить, выбрав их в списке и выбрав **Удалить** . 
 
-### <a name="delete-an-entire-workspace"></a>Удаление всей рабочей области
+:::image type="content" source="media/how-to-export-delete-data/delete-resource-group-resources.png" alt-text="Снимок экрана портала с выделенным значком удаления":::
 
-Используйте следующий вызов, чтобы удалить всю рабочую область.  
-> [!WARNING]
-> Все данные будут удалены, и рабочую область больше нельзя будет использовать.
+Документы журнала выполнения, которые могут содержать личные сведения о пользователе, хранятся в учетной записи хранения в хранилище BLOB-объектов во вложенных папках `/azureml` . Вы можете скачать и удалить данные с портала.
 
-`https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}?api-version=2019-11-01`
+:::image type="content" source="media/how-to-export-delete-data/storage-account-folders.png" alt-text="Снимок экрана: Каталог azureml в учетной записи хранения на портале":::
 
-### <a name="delete-models"></a>Удаление моделей
+## <a name="export-and-delete-machine-learning-resources-using-azure-machine-learning-studio"></a>Экспорт и удаление ресурсов машинного обучения с помощью Машинное обучение Azure Studio
 
-Используйте этот вызов для получения списка моделей и их идентификаторов.
+Машинное обучение Azure Studio предоставляет единое представление ресурсов машинного обучения, таких как записные книжки, наборы данных, модели и эксперименты. Машинное обучение Azure Studio подчеркивает сохранение данных и экспериментов. Вычислительные ресурсы, такие как конвейеры и вычислительные ресурсы, можно удалить с помощью браузера. Для этих ресурсов перейдите к интересующему ресурсу и нажмите кнопку **Удалить**. 
 
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/models?api-version=2019-11-01`
+Для наборов данных можно выполнить отмену регистрации, а эксперименты можно заархивировать, но эти операции не удаляют данные. Чтобы полностью удалить данные, необходимо удалить наборы данных и данные запуска на уровне хранилища. Удаление на уровне хранилища выполняется с помощью портала, как описано выше.
 
-Отдельные модели могут быть удалены с помощью:
+Вы можете скачать обучающие артефакты из экспериментальных запусков с помощью студии. Выберите **эксперимент** и **запустите** его. Выберите **выходные данные + журналы** и перейдите к конкретным артефактам, которые вы хотите скачать. Выберите **...** и **Скачайте**.
 
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/models/{id}?api-version=2019-11-01`
+Чтобы скачать зарегистрированную модель, перейдите к нужной **модели** и выберите **загрузить**. 
 
-### <a name="delete-assets"></a>Удаление ресурсов
+:::image type="contents" source="media/how-to-export-delete-data/model-download.png" alt-text="Снимок экрана: страница модели Studio с выделенным параметром загрузки":::
 
-Используйте этот вызов для получения списка ресурсов и их идентификаторов.
+## <a name="export-and-delete-resources-using-the-python-sdk"></a>Экспорт и удаление ресурсов с помощью пакета SDK для Python
 
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/assets?api-version=2019-11-01`
+Вы можете скачать выходные данные определенного запуска, используя: 
 
-Отдельные ресурсы могут быть удалены с помощью:
+```python
+# Retrieved from Azure Machine Learning web UI
+run_id = 'aaaaaaaa-bbbb-cccc-dddd-0123456789AB'
+experiment = ws.experiments['my-experiment']
+run = next(run for run in ex.get_runs() if run.id == run_id)
+metrics_output_port = run.get_pipeline_output('metrics_output')
+model_output_port = run.get_pipeline_output('model_output')
 
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/assets/{id}?api-version=2019-11-01`
+metrics_output_port.download('.', show_progress=True)
+model_output_port.download('.', show_progress=True)
+```
 
-### <a name="delete-images"></a>Удаление изображений
+С помощью пакета SDK для Python можно удалить следующие ресурсы машинного обучения: 
 
-Используйте этот вызов для получения списка изображений и их идентификаторов.
-
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/images?api-version=2019-11-01`
-
-Отдельные изображения могут быть удалены с помощью:
-
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/images/{id}?api-version=2019-11-01`
-
-### <a name="delete-services"></a>Удаление служб
-
-Используйте этот вызов для получения списка служб и их идентификаторов.
-
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/services?api-version=2019-11-01`
-
-Отдельные службы могут быть удалены с помощью:
-
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/services/{id}?api-version=2019-11-01`
-
-## <a name="export-service-data-with-the-rest-api"></a>Экспорт данных службы с помощью REST API
-
-Чтобы экспортировать данные, необходимо выполнить следующие вызовы API с помощью команды HTTP GET. Они авторизованы, так как у них в запросе присутствует заголовок `Authorization: Bearer <arm-token>`, где `<arm-token>` является маркером доступа AAD для конечной точки `https://management.core.windows.net/`.  
-
-Сведения о том, как получить этот маркер и вызвать конечные точки Azure, см. в статье [Использование функции RESTful для управления ресурсами машинного обучения](how-to-manage-rest.md) и [документацией по Azure REST API](https://docs.microsoft.com/rest/api/azure/).   
-
-В приведенных ниже примерах замените текст в {} именами экземпляров, которые определяют сопоставленный ресурс.
-
-### <a name="export-workspace-information"></a>Экспорт сведений о рабочей области
-
-Используйте этот вызов для получения списка всех рабочих областей.
-
-`https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces?api-version=2019-11-01`
-
-Сведения об отдельной рабочей области можно получить с помощью вызова:
-
-`https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}?api-version=2019-11-01`
-
-### <a name="export-compute-information"></a>Экспорт сведений о целевых объектах вычислений
-
-Все целевые объекты вычислений, присоединенные к рабочей области, можно получить с помощью вызова:
-
-`https://management.azure.com/subscriptions/{subscriptionId}/resourceGroup/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/computes?api-version=2019-11-01`
-
-Сведения об отдельном целевом объекте вычислений можно получить с помощью вызова:
-
-`https://management.azure.com/subscriptions/{subscriptionId}/resourceGroup/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/computes/{computeName}?api-version=2019-11-01`
-
-### <a name="export-run-history-data"></a>Экспортер данных журнала выполнения
-
-Используйте этот вызов для получения списка всех экспериментов и соответствующих сведений.
-
-`https://{location}.experiments.azureml.net/history/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/experiments`
-
-Сведения обо всех запусках определенного эксперимента можно получить с помощью вызова:
-
-`https://{location}.experiments.azureml.net/history/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/experiments/{experimentName}/runs`
-
-Элементы журнала выполнения можно получить, задав:
-
-`https://{location}.experiments.azureml.net/history/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/experiments/{experimentName}/runs/{runId}`
-
-Все выполнения метрик для эксперимента можно получить с помощью вызова:
-
-`https://{location}.experiments.azureml.net/history/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/experiments/{experimentName}/metrics`
-
-Отдельное выполнение метрики можно получить с помощью вызова:
-
-`https://{location}.experiments.azureml.net/history/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/experiments/{experimentName}/metrics/{metricId}`
-
-### <a name="export-artifacts"></a>Экспорт артефактов
-
-Используйте этот вызов для получения списка артефактов и их местоположения.
-
-`https://{location}.experiments.azureml.net/artifact/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/artifacts/origins/ExperimentRun/containers/{runId}`
-
-### <a name="export-notifications"></a>Уведомление об экспорте
-
-Используйте этот вызов для получения списка сохраненных задач.
-
-`https://{location}.experiments.azureml.net/notification/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/tasks`
-
-Уведомления для одной задачи можно получить с помощью вызова:
-
-`https://{location}.experiments.azureml.net/notification/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}tasks/{taskId}`
-
-### <a name="export-data-stores"></a>Экспорт хранилищ данных
-
-Используйте этот вызов для получения списка хранилищ данных.
-
-`https://{location}.experiments.azureml.net/datastore/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/datastores`
-
-Определенные хранилища данных можно получить с помощью вызова:
-
-`https://{location}.experiments.azureml.net/datastore/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/datastores/{name}`
-
-### <a name="export-models"></a>Экспорт моделей
-
-Используйте этот вызов для получения списка моделей и их идентификаторов.
-
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/models?api-version=2019-11-01`
-
-Определенные модели можно получить, задав:
-
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/models/{id}?api-version=2019-11-01`
-
-### <a name="export-assets"></a>Экспорт ресурсов
-
-Используйте этот вызов для получения списка ресурсов и их идентификаторов.
-
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/assets?api-version=2019-11-01`
-
-Определенные ресурсы можно получить с помощью вызова:
-
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/assets/{id}?api-version=2019-11-01`
-
-### <a name="export-images"></a>Экспорт изображений
-
-Используйте этот вызов для получения списка изображений и их идентификаторов.
-
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/images?api-version=2019-11-01`
-
-Определенные изображения можно получить с помощью вызова:
-
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/images/{id}?api-version=2019-11-01`
-
-### <a name="export-services"></a>Экспорт служб
-
-Используйте этот вызов для получения списка служб и их идентификаторов.
-
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/services?api-version=2019-11-01`
-
-Определенные службы можно получить, задав:
-
-`https://{location}.modelmanagement.azureml.net/api/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspace}/services/{id}?api-version=2019-11-01`
-
-### <a name="export-pipeline-experiments"></a>Экспорт экспериментов конвейера
-
-Определенные эксперименты можно получить с помощью вызова:
-
-`https://{location}.aether.ms/api/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/Experiments/{experimentId}`
-
-### <a name="export-pipeline-graphs"></a>Экспорт диаграмм конвейера
-
-Определенные диаграммы можно получить с помощью вызова:
-
-`https://{location}.aether.ms/api/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/Graphs/{graphId}`
-
-### <a name="export-pipeline-modules"></a>Экспорт модулей конвейера
-
-Модули можно получить с помощью вызова:
-
-`https://{location}.aether.ms/api/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/Modules/{id}`
-
-### <a name="export-pipeline-templates"></a>Экспорт шаблонов конвейера
-
-Шаблоны можно получить с помощью вызова:
-
-`https://{location}.aether.ms/api/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/Templates/{templateId}`
-
-### <a name="export-pipeline-data-sources"></a>Экспорт источников данных конвейера
-
-Источники данных можно получить с помощью вызова:
-
-`https://{location}.aether.ms/api/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/DataSources/{id}`
-
-## <a name="delete-assets-in-the-designer"></a>Удаление ресурсов в конструкторе
-
-В конструкторе, где вы создали свой эксперимент, удалите отдельные ресурсы:
-
-1. Переход к конструктору
-
-    ![Удаление ресурсов](./media/how-to-export-delete-data/delete-experiment.png)
-
-1. В списке выберите отдельный черновик конвейера для удаления.
-
-1. Выберите **Удалить**.
-
-### <a name="delete-datasets-in-the-designer"></a>Удаление наборов данных в конструкторе
-
-Чтобы удалить наборы данных в конструкторе, используйте портал Azure или Обозреватель службы хранилища для перехода к подключенным учетным записям хранения и удаления наборов данных там. При отмене регистрации наборов данных в конструкторе удаляется только точка ссылки в хранилище.
+| Тип | Вызов функции | Примечания | 
+| --- | --- | --- |
+| `Workspace` | [`delete`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#delete-delete-dependent-resources-false--no-wait-false-) | Используйте `delete-dependent-resources` для каскадного удаления |
+| `Model` | [`delete`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model(class)?view=azure-ml-py#delete--) | | 
+| `ComputeTarget` | [`delete`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.computetarget?view=azure-ml-py#delete--) | |
+| `WebService` | [`delete`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py) | | 
 

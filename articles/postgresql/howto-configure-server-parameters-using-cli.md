@@ -7,12 +7,13 @@ ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 06/19/2019
-ms.openlocfilehash: e95987621a7f821e8e63b36dbb719baaed7823c0
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: e0d19720df6f3bea8d65c24076709e84c585c638
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86117973"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87493505"
 ---
 # <a name="customize-server-configuration-parameters-for-azure-database-for-postgresql---single-server-using-azure-cli"></a>Настройка параметров конфигурации сервера для базы данных Azure для PostgreSQL — один сервер с помощью Azure CLI
 С помощью интерфейса командной строки (Azure CLI) можно вывести список параметров конфигурации для сервера Azure PostgreSQL, а также отобразить и обновить их. Только подмножество конфигураций ядра предоставляется на уровне сервера и может быть изменено. 
