@@ -9,16 +9,17 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 06/29/2020
 ms.author: pdecarlo
-ms.openlocfilehash: 050631731a04e4c2ea89d8c7792ec093d6ab316e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: e70b22b3edaae96e00306d5d0a93d229e11aac41
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85800568"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87494083"
 ---
 # <a name="run-azure-iot-edge-on-ubuntu-virtual-machines"></a>Запуск Azure IoT Edge на виртуальных машинах Ubuntu
 
-Среда выполнения Azure IoT Edge превращает устройство в устройство IoT Edge. Среду выполнения можно развернуть на всех устройствах — от небольшого Raspberry Pi до технического сервера. Как только на устройстве будет настроена среда выполнения IoT Edge, вы можете начать развертывать в нее бизнес-логику из облака.
+Среда выполнения Azure IoT Edge превращает устройство в устройство IoT Edge. Среду выполнения можно развернуть на всех устройствах — от небольшого Raspberry Pi до технического сервера. После настройки устройства с помощью среды выполнения IoT Edge можно приступить к развертыванию в ней бизнес-логики из облака.
 
 Дополнительные сведения о работе среды выполнения IoT Edge и ее компонентах см. в статье [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md).
 
@@ -32,14 +33,14 @@ ms.locfileid: "85800568"
 [Кнопка развертывание в Azure](../azure-resource-manager/templates/deploy-to-azure-button.md) позволяет упростить развертывание [шаблонов Azure Resource Manager](../azure-resource-manager/templates/overview.md) , поддерживаемых на GitHub.  В этом разделе будет показано использование кнопки развернуть в Azure в репозитории проектов [iotedge-VM-Deploy](https://github.com/Azure/iotedge-vm-deploy) .  
 
 
-1. Вы развернете виртуальную машину Linux с поддержкой Azure IoT Edge с помощью шаблона Azure Resource Manager iotedge-VM-Deploy.  Для начала нажмите кнопку ниже:
+1. Вы развернете виртуальную машину Linux с поддержкой Azure IoT Edge с помощью шаблона Azure Resource Manager iotedge-VM-Deploy.  Чтобы приступить, нажмите кнопку ниже.
 
     [![Кнопка "Развернуть в Azure" для iotedge-vm-deploy](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2Fiotedge-vm-deploy%2Fmaster%2FedgeDeploy.json)
 
 1. В вновь запущенном окне заполните доступные поля формы:
 
     > [!div class="mx-imgBorder"]
-    > [![Снимок экрана, показывающий шаблон iotedge-VM-Deploy](./media/how-to-install-iot-edge-ubuntuvm/iotedge-vm-deploy.png)](./media/how-to-install-iot-edge-ubuntuvm/iotedge-vm-deploy.png)
+    > [![Снимок экрана с шаблоном iotedge-vm-deploy](./media/how-to-install-iot-edge-ubuntuvm/iotedge-vm-deploy.png)](./media/how-to-install-iot-edge-ubuntuvm/iotedge-vm-deploy.png)
 
     **Подписка**: активная подписка Azure для развертывания виртуальной машины.
 
@@ -63,9 +64,9 @@ ms.locfileid: "85800568"
 
     Когда все поля заполнены, установите флажок в нижней части страницы, чтобы принять условия, и выберите **купить** , чтобы начать развертывание.
 
-1. Убедитесь, что развертывание успешно завершено.  Ресурс виртуальной машины должен быть развернут в выбранной группе ресурсов.  Запишите имя компьютера, оно должно быть в формате `vm-0000000000000` . Кроме того, обратите внимание на соответствующее **DNS-имя**, которое должно быть в `<dnsLabelPrefix>` формате `<location>` . cloudapp.azure.com.
+1. Убедитесь, что развертывание выполнено успешно.  Ресурс виртуальной машины должен быть развернут в выбранной группе ресурсов.  Запишите имя компьютера, оно должно быть в формате `vm-0000000000000` . Кроме того, запишите связанное **DNS-имя**, которое должно быть в формате `<dnsLabelPrefix>`.`<location>`.cloudapp.azure.com.
 
-    **DNS-имя** можно получить из раздела **Обзор** только что развернутой виртуальной машины в портал Azure.
+    **DNS-имя** указано в разделе **Обзор** развернутой виртуальной машины на портале Azure.
 
     > [!div class="mx-imgBorder"]
     > [![Снимок экрана, показывающий DNS-имя виртуальной машины iotedge](./media/how-to-install-iot-edge-ubuntuvm/iotedge-vm-dns-name.png)](./media/how-to-install-iot-edge-ubuntuvm/iotedge-vm-dns-name.png)
@@ -138,7 +139,7 @@ ms.locfileid: "85800568"
     --parameters adminPasswordOrKey="$(< ~/.ssh/iotedge-vm-key.pub)"
     ```
 
-1. Убедитесь, что развертывание успешно завершено.  Ресурс виртуальной машины должен быть развернут в выбранной группе ресурсов.  Запишите имя компьютера, оно должно быть в формате `vm-0000000000000` . Кроме того, обратите внимание на соответствующее **DNS-имя**, которое должно быть в `<dnsLabelPrefix>` формате `<location>` . cloudapp.azure.com.
+1. Убедитесь, что развертывание выполнено успешно.  Ресурс виртуальной машины должен быть развернут в выбранной группе ресурсов.  Запишите имя компьютера, оно должно быть в формате `vm-0000000000000` . Кроме того, запишите связанное **DNS-имя**, которое должно быть в формате `<dnsLabelPrefix>`.`<location>`.cloudapp.azure.com.
 
     **DNS-имя** можно получить из выходных данных в формате JSON предыдущего шага в разделе **Outputs (выходные** данные) как часть **общедоступной записи SSH** .  Значение этой записи можно использовать для подключения к только что развернутой машине по протоколу SSH.
 
@@ -158,7 +159,7 @@ ms.locfileid: "85800568"
 
 1. Если вы хотите установить подключение по протоколу SSH к этой виртуальной машине после установки, используйте соответствующее **DNS-имя** с помощью команды:`ssh <adminUsername>@<DNS_Name>`
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 

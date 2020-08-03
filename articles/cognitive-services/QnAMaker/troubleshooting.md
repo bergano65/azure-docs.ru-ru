@@ -3,12 +3,12 @@ title: Устранение неполадок — QnA Maker
 description: Проверенный список наиболее часто задаваемых вопросов о службе QnA Maker поможет вам быстрее приработать службу и с лучшими результатами.
 ms.topic: troubleshooting
 ms.date: 03/25/2020
-ms.openlocfilehash: ec994677b17ee21dbf4ee6091be3bdf943572b2e
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 50823e29eb5c276c00a1c8f0e3227ec67999a703
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87131996"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87502585"
 ---
 # <a name="troubleshooting-for-qna-maker"></a>Устранение неполадок для QnA Maker
 
@@ -87,7 +87,7 @@ ms.locfileid: "87131996"
 <details>
 <summary><b>Можно ли предоставить базу знаний для редактирования участнику, который находится в другом клиенте AAD?</b></summary>
 
-**Ответ**. Общий доступ основан на управлении доступом на основе ролей Azure (RBAC). Если вы можете предоставить общий доступ к _любому_ ресурсу в Azure другому пользователю, вы можете сделать то же самое с QnA Maker.
+**Ответ**. Общий доступ основан на управлении доступом на основе ролей в Azure (Azure RBAC). Если вы можете предоставить общий доступ к _любому_ ресурсу в Azure другому пользователю, вы можете сделать то же самое с QnA Maker.
 
 </details>
 

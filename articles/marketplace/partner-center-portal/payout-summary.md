@@ -7,18 +7,18 @@ ms.topic: conceptual
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 04/24/2020
-ms.openlocfilehash: dc690e29129f5be68456e6a9dc075ba72f11b121
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: a013dd875fc5a97e5e2e619553cdeb8c6d729298
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318238"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87502636"
 ---
 # <a name="payout-summaries"></a>Сводки по выплатам
 
 В сводке по выплатам отображаются сведения о денежных средствах, полученных вами с помощью корпорации Майкрософт. Кроме того, с ее помощью можно узнать, когда вы будете получать платежи и сколько вы получите.
 
-Если вы продаете свои продукты через Azure Marketplace, также отобразятся сведения об успешных выплатах в сводке. Подробные сведения см. в [политиках участия в Microsoft Azure Marketplace](https://docs.microsoft.com/legal/marketplace/participation-policy) и [Соглашении с издателем Microsoft Azure Marketplace](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt).
+Если вы продаете свои продукты через Azure Marketplace, также отобразятся сведения об успешных выплатах в сводке. Подробные сведения см. в [политиках участия в Microsoft Azure Marketplace](https://docs.microsoft.com/legal/marketplace/participation-policy) и [Соглашении с издателем Microsoft Azure Marketplace](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xqkx).
 
 > [!NOTE]
 > Чтобы получить выплату, необходимо достигнуть [порогового значения](payment-thresholds-methods-timeframes.md) в 50 долларов США. Подробные сведения о пороговом значении платежа см. на этой странице и в соглашении с разработчиком приложений.

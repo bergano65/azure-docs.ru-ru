@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/14/2019
 ms.author: raynew
-ms.openlocfilehash: 26c734b7a2e9f5592ee6d51dfee4650a3998ab1a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4233df62de48dd7a7253c488b0cd69c38cd8d445
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84699062"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87503503"
 ---
 # <a name="run-a-test-failover-disaster-recovery-drill-to-azure"></a>Запуск тестовой отработки отказа (детализация аварийного восстановления) в Azure 
 
@@ -25,7 +25,7 @@ ms.locfileid: "84699062"
 ## <a name="run-a-test-failover"></a>Запуск тестовой отработки отказа
 В этой процедуре описывается, как запустить тестовую отработку отказа для плана восстановления. Если нужно выполнить тестовую отработку отказа для отдельной виртуальной машины, выполните шаги, описанные [здесь](tutorial-dr-drill-azure.md#run-a-test-failover-for-a-single-vm).
 
-![Тестирование отработки отказа](./media/site-recovery-test-failover-to-azure/TestFailover.png)
+![Снимок экрана со страницей тестовой отработки отказа в портал Azure.](./media/site-recovery-test-failover-to-azure/TestFailover.png)
 
 
 1. В Site Recovery в портал Azure щелкните **планы восстановления**  >  *recoveryplan_name*  >  **Тестовая отработка отказа**.
@@ -48,7 +48,7 @@ ms.locfileid: "84699062"
 8. В разделе **Примечания** можно записать и сохранить любые замечания, связанные с тестовой отработкой отказа.
 
 
-![Тестирование отработки отказа](./media/site-recovery-test-failover-to-azure/TestFailoverJob.png)
+![Снимок экрана вкладки заданий тестовой отработки отказа.](./media/site-recovery-test-failover-to-azure/TestFailoverJob.png)
 
 При запуске тестовой отработки отказа происходит следующее:
 
@@ -112,5 +112,5 @@ ms.locfileid: "84699062"
 
 Для устранения проблем с подключением после отработки отказа выполните шаги, описанные [здесь](site-recovery-failover-to-azure-troubleshoot.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После завершения руководства по аварийному восстановлению ознакомьтесь с другими типами [отработки отказа](site-recovery-failover.md).

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: raynew
-ms.openlocfilehash: 047b689b10d03cf92e5cc744aa707b3f70fe77bd
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 766d0a763f7d69ec58851116e18510235f39b364
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86529036"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495069"
 ---
 # <a name="monitor-site-recovery-with-azure-monitor-logs"></a>Мониторинг Site Recovery с помощью журналов Azure Monitor
 
@@ -36,7 +36,7 @@ ms.locfileid: "86529036"
 
 - По крайней мере один компьютер, защищенный в хранилище служб восстановления.
 - Рабочая область Log Analytics для хранения журналов Site Recovery. [Сведения о](../azure-monitor/learn/quick-create-workspace.md) настройке рабочей области.
-- Основные сведения о том, как писать, выполнять и анализировать запросы журналов в Log Analytics. [Подробнее](../azure-monitor/log-query/get-started-portal.md).
+- Основные сведения о том, как писать, выполнять и анализировать запросы журналов в Log Analytics. [Подробнее.](../azure-monitor/log-query/get-started-portal.md)
 
 Перед началом работы рекомендуется ознакомиться с [общими вопросами мониторинга](monitoring-common-questions.md) .
 
@@ -44,14 +44,14 @@ ms.locfileid: "86529036"
 
 1. В хранилище щелкните **параметры диагностики**  >  **Добавить параметр диагностики**.
 
-    ![Выбор журнала ресурсов](./media/monitoring-log-analytics/add-diagnostic.png)
+    ![Снимок экрана, показывающий параметр "добавить параметр диагностики".](./media/monitoring-log-analytics/add-diagnostic.png)
 
 2. В окне **параметры диагностики**укажите имя и установите флажок **отправить на log Analytics**.
 3. Выберите подписку на Azure Monitor журналы и рабочую область Log Analytics.
 4. Выберите **система диагностики Azure** в переключателе.
 5. В списке Журнал выберите все журналы с префиксом **азуреситерековери**. Затем нажмите кнопку **ОК**.
 
-    ![Выбор рабочей области](./media/monitoring-log-analytics/select-workspace.png)
+    ![Снимок экрана с экраном параметров диагностики.](./media/monitoring-log-analytics/select-workspace.png)
 
 Журналы Site Recovery начинается с перевода в таблицу (**AzureDiagnostics**) в выбранной рабочей области.
 
@@ -125,7 +125,7 @@ rpoInSeconds_d <= 1800, "15-30Min", ">30Min") 
 | render barchart 
 ```
 
-![ЦЕЛЕВая точка запроса](./media/monitoring-log-analytics/example1.png)
+![Снимок экрана, показывающий линейчатую диаграмму виртуальных машин Azure, реплицированную с помощью Site Recovery.](./media/monitoring-log-analytics/example1.png)
 
 ### <a name="query-site-recovery-jobs"></a>Запрос Site Recovery заданий
 
@@ -190,7 +190,7 @@ AzureDiagnostics  
 | project TimeGenerated, name_s , RPO_in_seconds = rpoInSeconds_d   
 | render timechart 
 ```
-![Запросить ЦЕЛЕВое значение Machine](./media/monitoring-log-analytics/example2.png)
+![Снимок экрана с диаграммой тренда, отслеживающей целевую точку восстановления для определенной виртуальной машины Azure.](./media/monitoring-log-analytics/example2.png)
 
 ### <a name="query-data-change-rate-churn-and-upload-rate-for-an-azure-vm"></a>Скорость изменения данных запроса (обновление) и скорость передачи для виртуальной машины Azure
 
@@ -207,7 +207,7 @@ Category contains "Upload", "UploadRate", "none") 
 | project TimeGenerated , InstanceWithType , Churn_MBps = todouble(Value_s)/1048576   
 | render timechart  
 ```
-![Изменение данных запроса](./media/monitoring-log-analytics/example3.png)
+![снимок экрана с диаграммой тенденций для определенной виртуальной машины Azure.](./media/monitoring-log-analytics/example3.png)
 
 ### <a name="query-data-change-rate-churn-and-upload-rate-for-a-vmware-or-physical-machine"></a>Скорость изменения данных запросов (обновление) и скорость передачи для VMware или физического компьютера
 

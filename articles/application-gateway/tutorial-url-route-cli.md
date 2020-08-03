@@ -7,13 +7,13 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.author: victorh
-ms.custom: mvc
-ms.openlocfilehash: fc32dd5c477a76a20bc3a641ec8761e95c129554
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 34553c1b211b9e2c4b13a083f5c3a6732fb65472
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84805891"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87502704"
 ---
 # <a name="route-web-traffic-based-on-the-url-using-the-azure-cli"></a>Маршрутизация веб-трафика на основе URL-адресов с помощью Azure CLI
 
@@ -98,7 +98,7 @@ az network application-gateway create \
  Создание шлюза приложений может занять несколько минут. Когда шлюз приложений будет создан, вы увидите такие новые функции:
 
 
-|Компонент  |Описание  |
+|Функция  |Описание  |
 |---------|---------|
 |appGatewayBackendPool     |Для шлюза приложений необходимо наличие по крайней мере одного внутреннего пула адресов.|
 |appGatewayBackendHttpSettings     |Указывает, что для обмена данными используются порт 80 и протокол HTTP.|
@@ -264,6 +264,6 @@ az network public-ip show \
 az group delete --name myResourceGroupAG
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание шлюза приложений с перенаправлением на основе URL-пути](./tutorial-url-redirect-cli.md)

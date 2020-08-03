@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 0f88b994104ed8a2d80fb3b16f125f8a087cbe3c
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 2b106a28514179d9be43b3c56ea8030eaf7ba13f
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85958384"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495001"
 ---
 # <a name="use-stored-procedures-in-sql-pool"></a>Использование хранимых процедур в пуле SQL
 
@@ -27,7 +27,7 @@ ms.locfileid: "85958384"
 
 Однако, чтобы поддерживать масштабирование и производительность пула SQL, существуют некоторые функции и функции с различиями в поведении и другими, которые не поддерживаются.
 
-## <a name="introducing-stored-procedures"></a>Введение в хранимые процедуры
+## <a name="stored-procedures-in-sql-pool"></a>Хранимые процедуры в пуле SQL
 
 Хранимые процедуры — это отличный метод инкапсуляции кода SQL, при котором он хранится близко к данным в хранилище данных. Инкапсуляция кода в хранимые процедуры управляемых элементов помогает разработчикам добиться модульности своих решений и упрощает многократное использование кода. Каждая хранимая процедура может также принимать параметры, что делает их еще более гибкими.
 

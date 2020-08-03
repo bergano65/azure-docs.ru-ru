@@ -6,12 +6,13 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 6/24/2020
-ms.openlocfilehash: 1a26f3c1b57fd750cbb59f32ddc8bd0ea85293ca
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 568f49565c6e6d8062f8869566cf3879b7c97eaa
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86112771"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87503333"
 ---
 # <a name="configure-and-access-audit-logs-in-the-azure-cli"></a>Настройка и доступ к журналам аудита в Azure CLI
 
@@ -21,7 +22,7 @@ ms.locfileid: "86112771"
 
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 
-- [Сервер Базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md)
+- [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md)
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 

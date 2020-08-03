@@ -10,12 +10,12 @@ ms.date: 07/17/2020
 ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: common
-ms.openlocfilehash: 108dd37370290a68d620a61f84b4553ed59792ab
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 185992284e353c3e58104bc46296c1741fbca7d9
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077879"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87502177"
 ---
 # <a name="grant-limited-access-to-azure-storage-resources-using-shared-access-signatures-sas"></a>Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)
 
@@ -58,7 +58,7 @@ ms.locfileid: "87077879"
 
 - С помощью *ключа делегирования пользователя* , созданного с использованием учетных данных Azure Active Directory (Azure AD). Подписанный URL-адрес делегирования пользователя подписывается с помощью ключа делегирования пользователя.
 
-    Чтобы получить ключ делегирования пользователя и создать SAS, участнику безопасности Azure AD должна быть назначена роль управления доступом на основе ролей (RBAC), которая включает действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** . Подробные сведения о ролях RBAC с разрешениями на получение ключа делегирования пользователя см. в разделе [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas).
+    Чтобы получить ключ делегирования пользователя и создать SAS, участнику безопасности Azure AD должна быть назначена роль Azure, которая включает действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** . Подробные сведения о ролях Azure с разрешениями на получение ключа делегирования пользователя см. в разделе [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas).
 
 - С ключом учетной записи хранения. Как SAS службы, так и SAS учетной записи подписываются с помощью ключа учетной записи хранения. Чтобы создать SAS, подписанный с помощью ключа учетной записи, приложение должно иметь доступ к ключу учетной записи.
 

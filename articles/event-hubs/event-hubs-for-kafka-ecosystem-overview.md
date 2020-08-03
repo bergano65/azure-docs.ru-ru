@@ -3,12 +3,12 @@ title: Использование концентратора событий из
 description: В этой статье содержатся сведения о поддержке Apache Kafka в службе "Центры событий Azure".
 ms.topic: article
 ms.date: 07/20/2020
-ms.openlocfilehash: 6dad797f6769e9804cce7d47ed74794fdddcfb0b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 94e0993c192cb735d6a4f0f3f7ec484c830902e9
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87002484"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87501599"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Использование Центров событий Azure из приложений Apache Kafka
 Центры событий предоставляют конечную точку Kafka, которую существующие приложения на основе Kafka могут использовать в качестве альтернативы запуска собственного кластера Kafka. Центры событий поддерживают [Apache Kafka 1.0](https://kafka.apache.org/documentation/) и более новые версии протокола и работают с имеющимися приложениями Kafka, в том числе с MirrorMaker.  
@@ -66,7 +66,10 @@ sasl.mechanism=PLAIN
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.EVENTHUBS.CONNECTION.STRING}";
 ```
 
-#### <a name="samples"></a>Примеры 
+> [!NOTE]
+> При использовании проверки подлинности SAS с клиентами Kafka установленные подключения не отключаются при повторном формировании ключа SAS. 
+
+#### <a name="samples"></a>примеры 
 Пошаговые инструкции по созданию концентратора событий и доступу к нему с помощью SAS или OAuth см **. в статье** [Краткое руководство. потоковая передача данных с концентраторами событий с помощью протокола Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md).
 
 Дополнительные **примеры** , демонстрирующие использование OAuth с концентраторами событий для Kafka, см. [в статье примеры на сайте GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth).

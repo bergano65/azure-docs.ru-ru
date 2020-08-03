@@ -6,12 +6,13 @@ author: spelluru
 ms.topic: conceptual
 ms.date: 06/23/2020
 ms.author: spelluru
-ms.openlocfilehash: 009e6a1b98e72d9618dc8ed3437d7ea90ab4afac
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 0d9c9c061e31ac4d3eba8d31352253bb25b62a9b
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85340584"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87503299"
 ---
 # <a name="azure-service-bus-to-event-grid-integration-overview"></a>Общие сведения об интеграции служебной шины Azure со службой "Сетка событий"
 
@@ -167,11 +168,11 @@ New-AzEVentGridSubscription -EventSubscriptionName "<YOUR EVENT GRID SUBSCRIPTIO
 
 Здесь вы можете просмотреть остальные параметры установки или выполнить тестирование поступления событий.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Примеры](service-bus-to-event-grid-integration-example.md) использования служебной шины со службой "Сетка событий".
 * Дополнительные сведения о [службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/).
-* Дополнительные сведения о решении "Функции Azure" см. [здесь](https://docs.microsoft.com/azure/azure-functions/).
+* Дополнительные сведения о [функциях Azure](https://docs.microsoft.com/azure/azure-functions/).
 * Дополнительные сведения о [Logic Apps](https://docs.microsoft.com/azure/logic-apps/).
 * Дополнительные сведения о [служебной шине](https://docs.microsoft.com/azure/service-bus/).
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/15/2020
 ms.author: akjosh; cynthn
 ms.custom: include file
-ms.openlocfilehash: 7aad1eb10018445150fb5cf3ac01b97480da674b
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: c043cfb6cf437ab55cc4a48ced716798738adbef
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226399"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87507460"
 ---
 Если возникнут проблемы при выполнении операций с коллекциями общих образов, определениями и версиями образов, выполните команду, которая дала сбой, в режиме отладки. Режим отладки активируется путем передачи `--debug` коммутатора с помощью интерфейса командной строки и `-Debug` коммутатора с помощью PowerShell. Обнаружив ошибку, следуйте инструкциям в этом документе для ее устранения.
 
@@ -76,7 +76,7 @@ ms.locfileid: "86226399"
 
 *У пользователя, пытающегося создать виртуальную машину или масштабируемый набор виртуальных машин, нет доступа на чтение к версии образа.*
 
-Обратитесь к владельцу подписки и попросите его предоставить доступ на чтение к версии образа или родительским ресурсам (например, коллекции общих образов или определению образа) через компонент [управления доступом на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles) (RBAC). 
+Обратитесь к владельцу подписки и попросите предоставить ему доступ на чтение к версии образа или к родительским ресурсам (например, к коллекции общих образов или определению образа) через [Управление доступом на основе ролей Azure (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles). 
 
 *Версия образа не найдена.*
 
@@ -97,6 +97,3 @@ ms.locfileid: "86226399"
 ## <a name="azure-limits-and-quotas"></a>Ограничения и квоты Azure 
 
 [Ограничения и квоты Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits) применяются ко всем ресурсам коллекции общих образов, определения и версии образа. Убедитесь, что вы не превысили пределы для своей подписки. 
-
-
-

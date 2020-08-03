@@ -6,16 +6,16 @@ ms.date: 04/08/2019
 author: mayurigupta13
 ms.topic: conceptual
 ms.author: mayg
-ms.openlocfilehash: 877545eb22331e724520102814ec8a00b2c205e5
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: a11cd001e33e52f9138d9b302c39e04ee3d984a5
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87370824"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87503537"
 ---
 # <a name="manage-site-recovery-access-with-role-based-access-control-rbac"></a>Управление доступом к Site Recovery с помощью управления доступом на основе ролей (RBAC)
 
-Управление доступом на основе ролей (RBAC) в Azure обеспечивает точное управление доступом для Azure. Используя RBAC, можно разделить обязанности в команде и предоставлять пользователям только разрешения для выполнения определенных заданий.
+Управление доступом на основе ролей в Azure (Azure RBAC) обеспечивает детальное управление доступом для Azure. Используя RBAC, можно разделить обязанности в команде и предоставлять пользователям только разрешения для выполнения определенных заданий.
 
 Azure Site Recovery предоставляет 3 встроенные роли для контроля операций управления Site Recovery. Дополнительные сведения о [встроенных ролях Azure](../role-based-access-control/built-in-roles.md)
 
@@ -62,7 +62,7 @@ Azure Site Recovery предоставляет 3 встроенные роли �
 |  |  | Microsoft.Network/virtualNetworks/subnets/join/action |
 |  | Классическая | Microsoft.ClassicNetwork/virtualNetworks/read |
 |  |  | Microsoft.ClassicNetwork/virtualNetworks/join/action |
-| Память | Resource Manager | Microsoft.Storage/storageAccounts/read |
+| Хранилище | Resource Manager | Microsoft.Storage/storageAccounts/read |
 |  |  | Microsoft.Storage/storageAccounts/listkeys/action |
 |  | Классическая | Microsoft.ClassicStorage/storageAccounts/read |
 |  |  | Microsoft.ClassicStorage/storageAccounts/listKeys/action |

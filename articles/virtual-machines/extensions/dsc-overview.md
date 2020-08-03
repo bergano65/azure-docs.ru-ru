@@ -15,12 +15,13 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 07/13/2020
 ms.author: magoedte
-ms.openlocfilehash: edf1fce488bf3bb8aa107a295cf3488243775192
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 9b609fd81c9f1013d2308dccd8ed22fb82aac149
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87010926"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87503350"
 ---
 # <a name="introduction-to-the-azure-desired-state-configuration-extension-handler"></a>Общие сведения об обработчике расширения Desired State Configuration в Azure
 
@@ -36,7 +37,7 @@ ms.locfileid: "87010926"
 
 В этой статье предоставлены сведения для двух сценариев — расширения DSC для подключения службы автоматизации и использования расширения DSC как инструмента для назначения конфигураций виртуальным машинам с помощью пакета SDK Azure.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Локальный компьютер.** Для взаимодействия с расширением виртуальной машины Azure нужно использовать портал Azure или пакет SDK для Azure PowerShell.
 - **Гостевой агент.** Виртуальная машина Azure, настроенная с помощью конфигурации DSC, должна работать под управлением ОС, которая поддерживает Windows Management Framework (WMF) версии 4.0 или более поздней. Полный список поддерживаемых версий ОС см. в [журнале версий расширения DSC](../../automation/automation-dsc-extension-history.md).

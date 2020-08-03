@@ -1,25 +1,32 @@
 ---
-title: Преобразование данных JSON с помощью преобразований жидкостей
-description: Создание преобразований или сопоставлений для сложных преобразований JSON с помощью Logic Apps и шаблона Liquid
+title: Преобразование JSON и XML с шаблонами жидкостей
+description: Преобразование JSON и XML с помощью шаблонов жидкостей в виде карт в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 author: divyaswarnkar
 ms.author: divswa
-ms.reviewer: estfan, logicappspm
+ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
-ms.date: 04/01/2020
-ms.openlocfilehash: d2598dfe9d7972dcb764abf4a1239613a1e8417a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/31/2020
+ms.openlocfilehash: 5aa6b3717925146607f3785ad5ea5fb940e8c236
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80879179"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87503411"
 ---
-# <a name="perform-advanced-json-transformations-with-liquid-templates-in-azure-logic-apps"></a>Выполнение сложных преобразований JSON с помощью шаблонов Liquid в Azure Logic Apps
+# <a name="transform-json-and-xml-using-liquid-templates-as-maps-in-azure-logic-apps"></a>Преобразование JSON и XML с помощью шаблонов жидкостей в виде карт в Azure Logic Apps
 
-С помощью встроенных действий обработки данных, таких как **Создание** или **Синтаксический анализ JSON**, в приложениях логики можно выполнять основные преобразования JSON. С помощью [Liquid](https://shopify.github.io/liquid/), который является языком шаблонов с открытым исходным кодом, позволяющим создавать гибкие веб-приложения, можно создавать шаблоны или преобразования для выполнения расширенных преобразований JSON. С помощью шаблонов Liquid можно определить, как преобразовать выходные данные JSON. Кроме того, они поддерживают сложные преобразования JSON с применением итерации, потоков управления, переменных и т. д.
+Если вы хотите выполнять базовые преобразования JSON в приложениях логики, можно использовать собственные [операции с данными](../logic-apps/logic-apps-perform-data-operations.md) , такие как **Создание** или **анализ JSON**. Для расширенных и сложных преобразований JSON в JSON, имеющих такие элементы, как итерации, потоки управления и переменные, создание и использование шаблонов, описывающих эти преобразования, с использованием языка шаблона с открытым исходным кодом [жидкости](https://shopify.github.io/liquid/) . Можно также [выполнить другие преобразования](#other-transformations), например JSON в текст, XML в JSON и XML, в текст.
 
-Прежде чем можно будет выполнить преобразование «ликвидность» в приложении логики, сначала необходимо определить сопоставление JSON с шаблоном жидкости и сохранить его в учетной записи интеграции. Из этой статьи можно узнать, как создать и использовать шаблон или сопоставление Liquid.
+Прежде чем можно будет выполнить преобразование «ликвидность» в приложении логики, необходимо сначала создать шаблон жидкости, определяющий нужное сопоставление. Затем вы [отправляете шаблон как карту](../logic-apps/logic-apps-enterprise-integration-maps.md) в [учетную запись интеграции](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md). При добавлении в приложение логики действия **преобразование JSON в формат JSON-жидкость** можно выбрать шаблон ликвидности в качестве схемы для использования действия.
+
+В этой статье показано, как выполнить следующие задачи:
+
+* Создайте шаблон ликвидности.
+* Добавьте шаблон в учетную запись интеграции.
+* Добавьте действие преобразование ликвидности в приложение логики.
+* Выберите шаблон в качестве схемы, которую вы хотите использовать.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -27,20 +34,22 @@ ms.locfileid: "80879179"
 
 * Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-* Простая [учетная запись интеграции](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md)
+* [Учетная запись интеграции](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md)
 
 * Основные сведения о [языке шаблона жидкости](https://shopify.github.io/liquid/)
 
-## <a name="create-liquid-template-or-map-for-your-integration-account"></a>Создание шаблона или сопоставления Liquid в учетной записи интеграции
+  > [!NOTE]
+  > Действие **преобразование JSON в JSON-жидкость** следует за [реализацией DotLiquid для жидкостьа](https://github.com/dotliquid/dotliquid), которая отличается в конкретных случаях от [реализации Shopify для жидкостей](https://shopify.github.io/liquid). Дополнительные сведения см. в разделе [рекомендации по шаблонам жидкости](#template-considerations).
 
-1. Для данного примера создайте образец шаблона Liquid, описанный на этом шаге. В шаблоне ликвидности можно использовать [фильтры жидкостей](https://shopify.github.io/liquid/basics/introduction/#filters), которые используют соглашения об именовании [DotLiquid](https://github.com/dotliquid/dotliquid) и C#.
+## <a name="create-the-template"></a>Создание шаблона
 
-   > [!NOTE]
-   > Убедитесь, что имена фильтров используют *регистр предложений* в шаблоне. В противном случае фильтры не будут работать. Кроме того, карты имеют [ограничения на размер файлов](../logic-apps/logic-apps-limits-and-config.md#artifact-capacity-limits).
+1. Создайте шаблон жидкости, который будет использоваться в качестве Map для преобразования JSON. Вы можете использовать любое нужное средство редактирования.
+
+   В этом примере создайте шаблон ликвидности, как описано в этом разделе:
 
    ```json
    {%- assign deviceList = content.devices | Split: ', ' -%}
-   
+
    {
       "fullName": "{{content.firstName | Append: ' ' | Append: content.lastName}}",
       "firstNameUpperCase": "{{content.firstName | Upcase}}",
@@ -52,12 +61,18 @@ ms.locfileid: "80879179"
             {%- else -%}
             "{{device}}",
             {%- endif -%}
-        {%- endfor -%}
-        ]
+         {%- endfor -%}
+      ]
    }
    ```
 
-1. В [портал Azure](https://portal.azure.com)в поле поиска Azure введите `integration accounts` и выберите **учетные записи интеграции**.
+1. Сохраните шаблон с помощью `.liquid` расширения. В этом примере используется `SimpleJsonToJsonTemplate.liquid`.
+
+## <a name="upload-the-template"></a>Отправка шаблона
+
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетных данных учетной записи Azure.
+
+1. В поле поиска портал Azure введите `integration accounts` и выберите **учетные записи интеграции**.
 
    ![Найти "учетные записи интеграции"](./media/logic-apps-enterprise-integration-liquid-transform/find-integration-accounts.png)
 
@@ -71,16 +86,16 @@ ms.locfileid: "80879179"
 
 1. На панели " **карты** " выберите **Добавить** и укажите следующие сведения для карты:
 
-   | Свойство. | Значение | Описание | 
+   | Свойство | Значение | Описание |
    |----------|-------|-------------|
-   | **Name** | `JsonToJsonTemplate` | Это имя сопоставления, в нашем примере это "JsontoJsonTemplate" | 
-   | **Тип сопоставления** | **liquid** | Обозначает тип сопоставления. Для преобразования JSON в JSON следует выбрать **Liquid**. | 
+   | **Name** | `JsonToJsonTemplate` | Это имя сопоставления, в нашем примере это "JsontoJsonTemplate" |
+   | **Тип сопоставления** | **liquid** | Обозначает тип сопоставления. Для преобразования JSON в JSON следует выбрать **Liquid**. |
    | **Схема** | `SimpleJsonToJsonTemplate.liquid` | Это существующий файл шаблона или сопоставления Liquid, который будет использован для преобразования. В нашем примере это SimpleJsonToJsonTemplate.liquid. Чтобы найти этот файл, используйте средство выбора файлов. Ограничения размера карт см. в разделе [ограничения и конфигурация](../logic-apps/logic-apps-limits-and-config.md#artifact-capacity-limits). |
-   ||| 
+   |||
 
    ![Добавить шаблон ликвидности](./media/logic-apps-enterprise-integration-liquid-transform/add-liquid-template.png)
-    
-## <a name="add-the-liquid-action-for-json-transformation"></a>Добавление действия Liquid для преобразования JSON
+
+## <a name="add-the-liquid-transformation-action"></a>Добавление действия преобразования «ликвидность»
 
 1. Чтобы [создать пустое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) на портале Azure, сделайте следующее:
 
@@ -94,7 +109,7 @@ ms.locfileid: "80879179"
 
    ![Выбор сопоставления](./media/logic-apps-enterprise-integration-liquid-transform/select-map.png)
 
-   Если список сопоставлений пуст, скорее всего, приложение логики не связано с учетной записью интеграции. 
+   Если список Maps пуст, скорее всего, приложение логики не связано с учетной записью интеграции. 
    Чтобы настроить связь с учетной записью интеграции, в которой хранится шаблон или сопоставление Liquid, выполните следующие действия.
 
    1. В меню приложения логики выберите **Параметры рабочего процесса**.
@@ -117,51 +132,119 @@ ms.locfileid: "80879179"
 
 ## <a name="test-your-logic-app"></a>Тестирование приложения логики
 
-Передайте в приложение логики входные данные JSON через [Postman](https://www.getpostman.com/postman) или аналогичное средство. Из приложения логики вы получите преобразованные выходные данные JSON примерно такого вида:
-  
+Используя [POST](https://www.getpostman.com/postman) или аналогичное средство, опубликуйте входные данные JSON в приложении логики. Из приложения логики вы получите преобразованные выходные данные JSON примерно такого вида:
+
 ![Пример выходных данных](./media/logic-apps-enterprise-integration-liquid-transform/example-output-jsontojson.png)
 
-## <a name="more-liquid-action-examples"></a>Дополнительные примеры действия Liquid
-Liquid не ограничивается преобразованием формата JSON. Ниже указаны другие действия преобразования, для которых используется Liquid:
+<a name="template-considerations"></a>
 
-* Преобразование JSON в текст.
-  
-  Шаблон Liquid, используемый в этом примере:
-   
-   ``` json
-   {{content.firstName | Append: ' ' | Append: content.lastName}}
-   ```
-   Вот пример входных и выходных данных.
-  
-   ![Пример выходных данных преобразования JSON в текст](./media/logic-apps-enterprise-integration-liquid-transform/example-output-jsontotext.png)
+## <a name="liquid-template-considerations"></a>Рекомендации по шаблонам ликвидности
 
-* Преобразование XML в JSON.
-  
-  Шаблон Liquid, используемый в этом примере:
-   
-   ``` json
-   [{% JSONArrayFor item in content -%}
-        {{item}}
-    {% endJSONArrayFor -%}]
-   ```
-   Вот пример входных и выходных данных.
+* Шаблоны ликвидности соответствуют [предельным размерам файлов для карт](../logic-apps/logic-apps-limits-and-config.md#artifact-capacity-limits) в Azure Logic Apps.
 
-   ![Пример выходных данных преобразования XML в JSON](./media/logic-apps-enterprise-integration-liquid-transform/example-output-xmltojson.png)
+* Действие **преобразование JSON в JSON-жидкость** следует за [реализацией DotLiquid для жидкости](https://github.com/dotliquid/dotliquid). Эта реализация является портом .NET Framework из [реализации Shopify для жидкостей](https://shopify.github.io/liquid/) и отличается в [конкретных случаях](https://github.com/dotliquid/dotliquid/issues).
 
-* Преобразование XML в текст.
-  
-  Шаблон Liquid, используемый в этом примере:
+  Ниже приведены известные отличия.
 
-   ``` json
-   {{content.firstName | Append: ' ' | Append: content.lastName}}
-   ```
+  * Действие **преобразование JSON в JSON-жидкость** в собственном коде выводит строку, которая может включать в себя JSON, XML, HTML и т. д. Действие жидкость указывает, что ожидаемый текстовый вывод из шаблона ликвидности — это строка JSON. Это действие указывает приложению логики выполнить синтаксический анализ входных данных в виде объекта JSON и применяет оболочку, чтобы жидкость могла интерпретировать структуру JSON. После преобразования действие указывает приложению логики выполнить синтаксический анализ текстового вывода из жидкости обратно в JSON.
 
-   Вот пример входных и выходных данных.
+    DotLiquid не имеет встроенного понимания JSON, поэтому убедитесь, что обратная косая черта ( `\` ) и все другие зарезервированные символы JSON являются escape-символом.
 
-   ![Пример выходных данных преобразования XML в текст](./media/logic-apps-enterprise-integration-liquid-transform/example-output-xmltotext.png)
+  * Если шаблон использует [фильтры жидкостей](https://shopify.github.io/liquid/basics/introduction/#filters), убедитесь, что соблюдены [соглашения об именовании DotLiquid и C#](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers#filter-and-output-casing), в которых используется *регистр предложений*. Для всех преобразований жидкость убедитесь, что имена фильтров в шаблоне также используют регистр предложений. В противном случае фильтры не будут работать.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+    Например, при использовании `replace` фильтра используйте `Replace` , а не `replace` . То же правило применяется при попытке испытать примеры в [DotLiquid Online](http://dotliquidmarkup.org/try-online). Дополнительные сведения см. в разделе [Shopify жидкость Filters](https://shopify.dev/docs/themes/liquid/reference/filters) and [DotLiquid жидкость Filters](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Developers#create-your-own-filters). Спецификация Shopify включает примеры для каждого фильтра, поэтому для сравнения можно попробовать эти примеры в [DotLiquid-Try в Интернете](https://dotliquidmarkup.org/try-online).
 
-* [Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise")  
-* [Дополнительные сведения о сопоставлениях](../logic-apps/logic-apps-enterprise-integration-maps.md "Сведения о картах интеграции Enterprise")  
+  * `json`Фильтр из фильтров расширений Shopify в настоящее время [не реализован в DotLiquid](https://github.com/dotliquid/dotliquid/issues/384). Как правило, этот фильтр можно использовать для подготовки текстового вывода для синтаксического анализа строк JSON, но вместо этого необходимо использовать `Replace` фильтр.
 
+  * Стандартный `Replace` фильтр в [реализации DotLiquid](https://github.com/dotliquid/dotliquid/blob/b6a7d992bf47e7d7dcec36fb402f2e0d70819388/src/DotLiquid/StandardFilters.cs#L425) использует [сопоставление регулярных выражений (Regex)](/dotnet/standard/base-types/regular-expression-language-quick-reference), а [Реализация Shopify](https://shopify.github.io/liquid/filters/replace/) использует [простое сопоставление строк](https://github.com/Shopify/liquid/issues/202). Обе реализации работают одинаково, пока не будет использоваться зарезервированный символ регулярного выражения или escape-символ в параметре Match.
+
+    Например, чтобы экранировать escape-символ обратной косой черты ( `\` ), используйте `| Replace: '\\', '\\'` , а не `| Replace: '\', '\\'` . В этих примерах показано, как `Replace` фильтр ведет себя по-разному при попытке экранирования символа обратной косой черты. Хотя эта версия успешно работает:
+
+    `{ "SampleText": "{{ 'The quick brown fox "jumped" over the sleeping dog\\' | Replace: '\\', '\\' | Replace: '"', '\"'}}"}`
+
+    С этим результатом:
+
+    `{ "SampleText": "The quick brown fox \"jumped\" over the sleeping dog\\\\"}`
+
+    Эта версия завершается ошибкой:
+
+    `{ "SampleText": "{{ 'The quick brown fox "jumped" over the sleeping dog\\' | Replace: '\', '\\' | Replace: '"', '\"'}}"}`
+
+    С этой ошибкой:
+
+    `{ "SampleText": "Liquid error: parsing "\" - Illegal \ at end of pattern."}`
+
+    Дополнительные сведения см. в разделе [Замена стандартного фильтра с использованием сопоставления шаблона регулярного выражения...](https://github.com/dotliquid/dotliquid/issues/385).
+
+  * `Sort`Фильтр в [реализации DotLiquid](https://github.com/dotliquid/dotliquid/blob/b6a7d992bf47e7d7dcec36fb402f2e0d70819388/src/DotLiquid/StandardFilters.cs#L326) сортирует элементы в массиве или коллекции по свойству, но с этими отличиями:<p>
+
+    * Соответствует поведению [Sort_natural Shopify](https://shopify.github.io/liquid/filters/sort_natural/), а не правилам [сортировки Shopify](https://shopify.github.io/liquid/filters/sort/).
+
+    * Выполняет сортировку только в порядке строкового алфавитно-цифрового порядка. Дополнительные сведения см. в разделе [числовая сортировка](https://github.com/Shopify/liquid/issues/980).
+
+    * Использует порядок без *учета регистра* , а не порядок учета регистра. Дополнительные сведения см. [в разделе Фильтр сортировки не соответствует поведению регистра в спецификации Shopify]( https://github.com/dotliquid/dotliquid/issues/393).
+
+<a name="other-transformations"></a>
+
+## <a name="other-transformations-using-liquid"></a>Другие преобразования с использованием жидкостей
+
+Жидкость не ограничена только преобразованиями JSON. Кроме того, жидкость можно использовать для выполнения других преобразований, например:
+
+* [JSON в текст](#json-text)
+* [XML в JSON](#xml-json)
+* [XML в текст](#xml-text)
+
+<a name="json-text"></a>
+
+### <a name="transform-json-to-text"></a>Преобразование JSON в текст.
+
+Вот шаблон ликвидности, который используется в этом примере:
+
+```json
+{{content.firstName | Append: ' ' | Append: content.lastName}}
+```
+
+Ниже приведены примеры входных и выходных данных.
+
+![Пример выходных данных преобразования JSON в текст](./media/logic-apps-enterprise-integration-liquid-transform/example-output-jsontotext.png)
+
+<a name="xml-json"></a>
+
+### <a name="transform-xml-to-json"></a>Преобразование XML в JSON.
+
+Вот шаблон ликвидности, который используется в этом примере:
+
+``` json
+[{% JSONArrayFor item in content -%}
+      {{item}}
+  {% endJSONArrayFor -%}]
+```
+
+`JSONArrayFor`Цикл является настраиваемым механизмом циклов для входных данных XML, что позволяет создавать полезные данные JSON, что позволяет избежать завершающей запятой. Кроме того, `where` условие для этого настраиваемого механизма циклического цикла использует имя XML-элемента для сравнения, а не значение элемента, как другие фильтры жидкости. Дополнительные сведения см. [в разделе детальный обзор политики Set-Body. коллекции объектов](https://azure.microsoft.com/blog/deep-dive-on-set-body-policy).
+
+Ниже приведены примеры входных и выходных данных.
+
+![Пример выходных данных преобразования XML в JSON](./media/logic-apps-enterprise-integration-liquid-transform/example-output-xmltojson.png)
+
+<a name="xml-text"></a>
+
+### <a name="transform-xml-to-text"></a>Преобразование XML в текст.
+
+Вот шаблон ликвидности, который используется в этом примере:
+
+``` json
+{{content.firstName | Append: ' ' | Append: content.lastName}}
+```
+
+Ниже приведены примеры входных и выходных данных.
+
+![Пример выходных данных преобразования XML в текст](./media/logic-apps-enterprise-integration-liquid-transform/example-output-xmltotext.png)
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* [Язык и примеры Shopify жидкости](https://shopify.github.io/liquid/basics/introduction/)
+* [DotLiquid](http://dotliquidmarkup.org/)
+* [DotLiquid — попробуйте в Интернете](https://dotliquidmarkup.org/try-online)
+* [DotLiquid GitHub](https://github.com/dotliquid/dotliquid)
+* [Проблемы GitHub DotLiquid](https://github.com/dotliquid/dotliquid/issues/)
+* Дополнительные сведения о [картах](../logic-apps/logic-apps-enterprise-integration-maps.md)

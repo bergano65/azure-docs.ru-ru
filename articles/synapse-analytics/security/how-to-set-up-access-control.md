@@ -9,12 +9,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: jrasnick
-ms.openlocfilehash: e66af8e55f7b60347d9577c64b7183c6ef8b44f4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6b1fe78ac00b57d7627a64970e84ae8b717ae5c3
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089317"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87501922"
 ---
 # <a name="secure-your-synapse-workspace-preview"></a>Защита рабочей области Synapse (предварительная версия)
 
@@ -82,7 +82,7 @@ ms.locfileid: "87089317"
   - назначьте **WS1\_SparkAdmins** администраторам Synapse Spark;
   - назначьте **WS1\_SQLAdmins** администраторам Synapse SQL.
 
-## <a name="step-4-configuring-data-lake-storage-gen2-for-use-by-synapse-workspace"></a>Шаг 4. Настройка Data Lake Storage 2-го поколения для использования рабочей областью Synapse
+## <a name="step-4-configure-data-lake-storage-gen2-for-use-by-synapse-workspace"></a>Шаг 4. Настройка Data Lake Storage 2-го поколения для использования рабочей областью синапсе
 
 Для рабочей области Synapse требуется доступ к STG1 и CNT1, чтобы она могла запускать конвейеры и выполнять системные задачи.
 
@@ -100,7 +100,7 @@ ms.locfileid: "87089317"
 - В разделе **Параметры** выберите **Администратор Active Directory для SQL**.
 - Щелкните **Задать администратора** и выберите WS1\_SQLAdmins.
 
-## <a name="step-6-maintaining-access-control"></a>Шаг 6. Обеспечение управления доступом
+## <a name="step-6-maintain-access-control"></a>Шаг 6. поддержание контроля доступа
 
 Настройка завершена.
 

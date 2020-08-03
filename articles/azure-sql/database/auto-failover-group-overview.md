@@ -5,19 +5,19 @@ description: Группы автоматической отработки отк
 services: sql-database
 ms.service: sql-db-mi
 ms.subservice: high-availability
-ms.custom: sqldbrb=2
+ms.custom: sqldbrb=2, devx-track-azurecli
 ms.devlang: ''
 ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 07/09/2020
-ms.openlocfilehash: e6c83c37e5b24df28f3cbb4509f0f72e2fde278e
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 00b7f675e7dd8fb347399ee7740318e129f12746
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448657"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87504183"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -415,7 +415,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-| Команда | Описание |
+| Get-Help | Описание |
 | --- | --- |
 | [az sql failover-group create](/cli/azure/sql/failover-group#az-sql-failover-group-create) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
 | [AZ SQL Failover — групповое удаление](/cli/azure/sql/failover-group#az-sql-failover-group-delete) | Удаляет группу отработки отказа с сервера |
@@ -453,7 +453,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-| Команда | Описание |
+| Get-Help | Описание |
 | --- | --- |
 | [az sql failover-group create](/cli/azure/sql/failover-group#az-sql-failover-group-create) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
 | [AZ SQL Failover — групповое удаление](/cli/azure/sql/failover-group#az-sql-failover-group-delete) | Удаляет группу отработки отказа с сервера |

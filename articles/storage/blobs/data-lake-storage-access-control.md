@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 4b52fe22e455f5b0ebce6960b40bcc80c46079c3
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: eab2beecc4153bdb2b74ca81bb43f86e2e29a778
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421354"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87504149"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen2"></a>Управление доступом в Azure Data Lake Storage 2-го поколения
 
-Azure Data Lake Storage 2-го поколения реализует модель управления доступом, которая поддерживает как управление доступом на основе ролей (RBAC), так и POSIX-подобные списки управления доступом (ACL). В этой статье приведены общие сведения о модели управления доступом в Data Lake Storage 2-го поколения.
+Azure Data Lake Storage 2-го поколения реализует модель управления доступом, поддерживающую управление доступом на основе ролей Azure (Azure RBAC) и списки управления доступом (ACL), аналогичные стандарту POSIX. В этой статье приведены общие сведения о модели управления доступом в Data Lake Storage 2-го поколения.
 
 <a id="azure-role-based-access-control-rbac"></a>
 

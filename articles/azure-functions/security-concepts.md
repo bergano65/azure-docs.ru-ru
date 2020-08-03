@@ -3,12 +3,12 @@ title: Защита Функций Azure
 description: Узнайте, как улучшить защиту кода функций, выполняемых в Azure, от распространенных атак.
 ms.date: 4/13/2020
 ms.topic: conceptual
-ms.openlocfilehash: bdb012c3f379b1e0314364f79ccc4aa49eba4bd3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e0c5036681aace103ea69d1e9cc73e96dc30821f
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87079695"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87502687"
 ---
 # <a name="securing-azure-functions"></a>Защита Функций Azure
 
@@ -83,7 +83,7 @@ ms.locfileid: "87079695"
 
 #### <a name="user-management-permissions"></a>Разрешения на управление пользователями
 
-Функции поддерживают встроенную функцию [управления доступом на основе ролей (RBAC) Azure](../role-based-access-control/overview.md). К поддерживаемым Функциями ролям RBAC относятся [участник](../role-based-access-control/built-in-roles.md#contributor), [владелец](../role-based-access-control/built-in-roles.md#owner) и [читатель](../role-based-access-control/built-in-roles.md#owner). 
+Функции поддерживают встроенные возможности [управления доступом на основе ролей в Azure (Azure RBAC)](../role-based-access-control/overview.md). Роли Azure, поддерживаемые функциями, — это [участник](../role-based-access-control/built-in-roles.md#contributor), [владелец](../role-based-access-control/built-in-roles.md#owner)и [читатель](../role-based-access-control/built-in-roles.md#owner). 
 
 Разрешения действуют на уровне приложения-функции. Для выполнения большинства задач на уровне приложения необходима роль участника. Удалить приложение-функцию можно только с ролью владельца. 
 
@@ -207,4 +207,3 @@ ms.locfileid: "87079695"
 
 + [Реализация базового плана безопасности Azure для Функций Azure](security-baseline.md)
 + [Диагностика Функций Azure](functions-diagnostics.md)
-        

@@ -3,12 +3,13 @@ title: Расположение ресурса шаблона
 description: Описывает, как задать расположение ресурса в шаблоне Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: e0bf0ac79c7e304a61561808dc2290ceb4a379e6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: e60fa9727ef899c3192c751614736cd1dda5b382
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84672686"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87504200"
 ---
 # <a name="set-resource-location-in-arm-template"></a>Задание расположения ресурса в шаблоне ARM
 
@@ -93,7 +94,7 @@ az provider show \
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Полный список функций шаблонов см. в статье [Функции шаблонов диспетчера ресурсов Azure](template-functions.md).
 * Дополнительные сведения о файлах шаблонов см. [в разделе сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).

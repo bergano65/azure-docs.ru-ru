@@ -7,17 +7,16 @@ ms.prod: kinect-dk
 ms.date: 06/26/2019
 ms.topic: reference
 keywords: Kinect, Azure, датчик, пакет SDK, глубина, RGB, запись, воспроизведение, матроска, MKV
-ms.openlocfilehash: d0f7653afe3cc92e059b2615ebef18312faa716b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3a78ed158c78df1c9a6eadcc0bfb2e40b22750bd
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85276953"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87501786"
 ---
 # <a name="use-azure-kinect-sensor-sdk-to-record-file-format"></a>Использование пакета SDK для датчика Kinect Azure для записи формата файла
 
-Для записи данных датчика используется формат контейнера матроска (. MKV), который позволяет хранить несколько дорожек.
-использование широкого спектра кодеков. Файл записи содержит записи для хранения цветов, глубины, IR-изображений и иму.
+Для записи данных датчика используется формат контейнера матроска (. MKV), который позволяет хранить несколько дорожек с помощью широкого спектра кодеков. Файл записи содержит записи для хранения цветов, глубины, IR-изображений и иму.
 
 Низкоуровневые сведения о формате контейнера MKV можно найти на [веб-сайте матроска](https://www.matroska.org/index.html).
 
@@ -72,6 +71,6 @@ ffmpeg -i output.mkv -map 0:1 -vsync 0 depth%04d.png
 | K4A_IMU_TRACK        | ИМУ              | UID матроска Track    |
 | K4A_CALIBRATION_FILE | Прикрепление к калибровке | Имя файла вложения   |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Запись и воспроизведение](record-playback-api.md)

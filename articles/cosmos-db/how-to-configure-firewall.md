@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 10/31/2019
 ms.author: mjbrown
-ms.openlocfilehash: b1f1ac9e7c5d44fd5cf6e7d692a71f5cf34b48df
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 36afc42844203436313f2a5b15975746f2acd349
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85261687"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87494361"
 ---
 # <a name="configure-ip-firewall-in-azure-cosmos-db"></a>Настройка брандмауэра IP-адресов в Azure Cosmos DB
 
@@ -64,7 +65,7 @@ ms.locfileid: "85261687"
 
 Портал автоматически определяет IP-адрес клиента. Это может быть IP-адрес клиента вашего компьютера или сетевого шлюза. Удалите этот IP-адрес, прежде чем переносить рабочие нагрузки в рабочую среду.
 
-Чтобы добавить текущий IP-адрес в список IP-адресов, выберите **Добавить мой текущий IP-адрес**. Затем нажмите кнопку **Save** (Сохранить).
+Чтобы добавить текущий IP-адрес в список IP-адресов, выберите **Добавить мой текущий IP-адрес**. Нажмите кнопку **Сохранить**.
 
 :::image type="content" source="./media/how-to-configure-firewall/enable-current-ip.png" alt-text="Снимок экрана, показывающий, как настроить параметры брандмауэра текущего IP-адреса":::
 
@@ -179,7 +180,7 @@ New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 
 Запросы из подсети виртуальной сети, в которой включена конечная точка службы для Azure Cosmos DB, передают в учетную запись Azure Cosmos DB идентификаторы виртуальной сети и подсети. Такие запросы не имеют общедоступного IP-адреса источника, поэтому они отклоняются фильтрами IP-адресов. Чтобы разрешить доступ из определенных подсетей в виртуальных сетях, добавьте список управления доступом, как описано в руководстве по [настройке доступа на основе подсети и виртуальной сети для учетной записи Azure Cosmos DB](how-to-configure-vnet-service-endpoint.md). Применение правил брандмауэра может занять до 15 минут после изменения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о том, как настроить конечную точку службы для виртуальной сети для учетной записи Azure Cosmos DB, см. в следующих статьях:
 

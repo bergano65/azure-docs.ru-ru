@@ -8,13 +8,13 @@ ms.service: virtual-machine-scale-sets
 ms.subservice: management
 ms.date: 05/29/2018
 ms.reviewer: mimckitt
-ms.custom: mimckitt
-ms.openlocfilehash: 2742b0b73d4143159fd1ed1338988b01a2171041
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.custom: mimckitt, devx-track-azurecli
+ms.openlocfilehash: 02f868417ef9feea1771174e62152708c1257425
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83124335"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87502908"
 ---
 # <a name="manage-a-virtual-machine-scale-set-with-the-azure-cli"></a>Управление масштабируемым набором виртуальных машин с помощью Azure CLI
 На протяжении жизненного цикла масштабируемого набора виртуальных машин может возникнуть необходимость выполнить одну или несколько задач управления. Кроме того, можно создавать сценарии для автоматизации различных задач жизненного цикла. В этой статье подробно рассматриваются некоторые стандартные команды Azure CLI, которые позволяют выполнять эти задачи.

@@ -10,12 +10,13 @@ ms.date: 03/13/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 7f16902a779fdb7c86fb7506711d2bce77ca9d05
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 5e3dba072179b57576b387bdabd624372988e975
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84809219"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87495035"
 ---
 # <a name="determine-which-azure-storage-encryption-key-model-is-in-use-for-the-storage-account"></a>Определение модели ключа шифрования службы хранилища Azure, используемой для учетной записи хранения
 
@@ -75,7 +76,7 @@ key_source=$(az storage account show \
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Шифрование службы хранилища Azure для неактивных данных](storage-service-encryption.md)
 - [Использование управляемых клиентом ключей с Azure Key Vault для управления шифрованием службы хранилища Azure](encryption-customer-managed-keys.md)

@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 07/31/2020
 ms.author: cshoe
-ms.openlocfilehash: d035ef4bc90410cbf0899c038047dd5e6a001f10
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 3e38fae84f63f4867befbc3695242dc62dc8dbe8
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/31/2020
-ms.locfileid: "87462364"
+ms.locfileid: "87502653"
 ---
 # <a name="shifting-from-expressjs-to-azure-functions"></a>Сдвиг от Express.js к функциям Azure
 
@@ -24,7 +24,7 @@ Express.js является одной из самых популярных Node
 
 - **Маршрут по умолчанию**: по умолчанию конечные точки функций Azure предоставляются по `api` маршруту. Правила маршрутизации можно настроить с помощью [ `routePrefix` в _host.js_ файле](./functions-bindings-http-webhook-output.md#hostjson-settings).
 
-- **Конфигурация и соглашения**. приложение-функция использует _function.jsв_ файле для определения глаголов HTTP, определения политик безопасности и настройки [входных и выходных данных](./functions-triggers-bindings.md)функции. По умолчанию имя папки, которая содержит файлы функции, определяет имя конечной точки, но имя можно изменить с помощью свойства Route в [function.js](./functions-bindings-http-webhook-trigger.md#customize-the-http-endpoint) в файле.
+- **Конфигурация и соглашения**. приложение-функция использует _function.jsв_ файле для определения глаголов HTTP, определения политик безопасности и настройки [входных и выходных данных](./functions-triggers-bindings.md)функции. По умолчанию имя папки, которая содержит файлы функции, определяет имя конечной точки, но имя можно изменить с помощью `route` свойства в [function.js](./functions-bindings-http-webhook-trigger.md#customize-the-http-endpoint) в файле.
 
 > [!TIP]
 > Дополнительные сведения см. в интерактивном учебнике [рефакторинг Node.js и Express API для бессерверных интерфейсов API с помощью функций Azure](https://docs.microsoft.com/learn/modules/shift-nodejs-express-apis-serverless/).
@@ -49,7 +49,7 @@ app.get('/hello', (req, res) => {
 
 При `GET` отправке запроса в `/hello` `HTTP 200` возвращается ответ, содержащий `Success` . Если в конечной точке возникает ошибка, то ответ содержит `HTTP 500` сведения об ошибке.
 
-### <a name="azure-functions"></a>Проверка
+### <a name="azure-functions"></a>Функции Azure
 
 Функции Azure упорядочивают файлы конфигурации и кода в одну папку для каждой функции. По умолчанию имя папки определяется именем функции.
 

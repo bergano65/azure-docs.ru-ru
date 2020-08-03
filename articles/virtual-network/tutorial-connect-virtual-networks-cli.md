@@ -14,13 +14,13 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 03/13/2018
 ms.author: kumud
-ms.custom: ''
-ms.openlocfilehash: b8c226d083c75d50639e7036de938626ca81a5ee
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 855ea936ff91d4c22b0670cd989f91c692c567c8
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84703474"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87502602"
 ---
 # <a name="connect-virtual-networks-with-virtual-network-peering-using-the-azure-cli"></a>Подключение виртуальных сетей с помощью пиринговой связи с использованием Azure CLI
 
@@ -196,7 +196,7 @@ ping 10.0.0.4 -c 4
 az group delete --name myResourceGroup --yes
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как с помощью пиринга соединить две виртуальные сети в одном регионе Azure. Пиринг можно использовать и для подключения виртуальных сетей из разных [поддерживаемых регионов](virtual-network-manage-peering.md#cross-region) или [разных подписок Azure](create-peering-different-subscriptions.md#cli), а также для создания [звездообразной топологии сети](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke#virtual-network-peering). Чтобы узнать больше о пиринге виртуальных сетей, ознакомьтесь с разделами [Пиринг между виртуальными сетями](virtual-network-peering-overview.md) и [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md).
 

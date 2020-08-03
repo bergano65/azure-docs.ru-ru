@@ -7,12 +7,13 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: cherylmc
-ms.openlocfilehash: 56af984ef83d2e237f0aa05af5cfef4dd6205256
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 2d8ad6b90f533161835ab12a43865b177c24c14e
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738334"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87503588"
 ---
 # <a name="create-and-modify-an-expressroute-circuit-using-cli"></a>Создание и изменение канала ExpressRoute с помощью CLI
 
@@ -359,7 +360,7 @@ az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-
 az network express-route delete  -n MyCircuit -g ExpressRouteResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания канала обязательно выполните задачи, описанные в следующих статьях:
 

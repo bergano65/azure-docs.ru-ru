@@ -7,13 +7,13 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/14/2019
 ms.author: victorh
-ms.custom: mvc
-ms.openlocfilehash: 16ad8d7fd0f46381f2e2e7076015af65bd4bddcd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: cf6cfdc00d38b72f292f2b3ed41a633fb9cf989d
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84806144"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87502738"
 ---
 # <a name="create-an-application-gateway-with-tls-termination-using-the-azure-cli"></a>Создание шлюза приложений с завершением TLS с помощью Azure CLI
 
@@ -22,7 +22,7 @@ ms.locfileid: "84806144"
 Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создание самозаверяющего сертификата
+> * Создание самозаверяющего сертификата.
 > * настройка сети;
 > * создание шлюза приложений с сертификатом;
 > * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
@@ -35,7 +35,7 @@ ms.locfileid: "84806144"
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
+## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата.
 
 Для использования в рабочей среде следует импортировать действительный сертификат, подписанный доверенным поставщиком. В этой статье для создания самозаверяющего сертификата и PFX-файла используется команда openssl.
 

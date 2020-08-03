@@ -10,12 +10,13 @@ ms.date: 06/11/2020
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: cbdeb1c55af157a0bf5160d2420974fd014ea3b3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 01718b4f3d539f77f4496a7914b027335cc45618
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84807595"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87503282"
 ---
 # <a name="initiate-a-storage-account-failover"></a>Запуск отработки отказа учетной записи хранения
 
@@ -28,7 +29,7 @@ ms.locfileid: "84807595"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем можно будет выполнить отработку отказа учетной записи хранения, убедитесь, что ваша учетная запись хранения настроена для георепликации. Ваша учетная запись хранения может использовать любой из следующих вариантов избыточности:
 
@@ -111,7 +112,7 @@ az storage account failover \ --name accountName
 
 После повторного включения GRS для учетной записи хранения Microsoft начинает репликацию данных в вашей учетной записи в новый вторичный регион. Время репликации зависит от объема реплицируемых данных.  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Аварийное восстановление и отработка отказа учетной записи хранения](storage-disaster-recovery-guidance.md)
 - [Проверка свойства "Время последней синхронизации" для учетной записи хранения](last-sync-time-get.md)

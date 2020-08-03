@@ -9,16 +9,17 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.author: philmea
-ms.openlocfilehash: 380e354beb2f58b958e3c88d9f93ad0bda655971
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 0d8344f5f6b4ccc9f58cc1809f5d625e7e4adf68
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84266480"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87494066"
 ---
 # <a name="run-azure-iot-edge-on-windows-server-virtual-machines"></a>Запуск Azure IoT Edge на виртуальных машинах Windows Server
 
-Среда выполнения Azure IoT Edge превращает устройство в устройство IoT Edge. Среду выполнения можно развернуть на всех устройствах — от небольшого Raspberry Pi до технического сервера. Как только на устройстве будет настроена среда выполнения IoT Edge, вы можете начать развертывать в нее бизнес-логику из облака.
+Среда выполнения Azure IoT Edge превращает устройство в устройство IoT Edge. Среду выполнения можно развернуть на всех устройствах — от небольшого Raspberry Pi до технического сервера. После настройки устройства с помощью среды выполнения IoT Edge можно приступить к развертыванию в ней бизнес-логики из облака.
 
 Дополнительные сведения о работе среды выполнения IoT Edge и ее компонентах см. в статье [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md).
 
@@ -96,7 +97,7 @@ ms.locfileid: "84266480"
    az vm run-command invoke -g IoTEdgeResources -n EdgeVM --command-id RunPowerShellScript --script ". {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `Install-IoTEdge -Manual -DeviceConnectionString '<connection-string>'"
    ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 

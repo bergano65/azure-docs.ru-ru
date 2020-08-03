@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9cb1ddceff30b247caf3ecd9ee3bc21d5addb519
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2b11f11ac8a0d4f3a0623c2903dfc9355e875d14
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089453"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87501939"
 ---
 # <a name="grant-permissions-to-workspace-managed-identity-preview"></a>Предоставление разрешений управляемому удостоверению рабочей области (Предварительная версия)
 
@@ -22,7 +22,7 @@ ms.locfileid: "87089453"
 >[!NOTE]
 >Это управляемое удостоверение рабочей области будет называться управляемым удостоверением далее в этом документе.
 
-## <a name="grant-the-managed-identity--permissions-to-the-sql-pool"></a>Предоставление управляемому удостоверению разрешений для пула SQL
+## <a name="grant-managed-identity-permissions-to-the-sql-pool"></a>Предоставление управляемому удостоверению разрешений для пула SQL
 
 Управляемое удостоверение предоставляет разрешения для пулов SQL в рабочей области. С предоставленными разрешениями можно управлять конвейерами, выполняющими действия, связанные с пулом SQL. При создании рабочей области синапсе для Azure с помощью портал Azure можно предоставить управляемые разрешения для управления удостоверениями в пулах SQL.
 

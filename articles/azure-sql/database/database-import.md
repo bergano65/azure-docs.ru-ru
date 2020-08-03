@@ -4,19 +4,19 @@ description: Создание новой базы данных в базе да�
 services: sql-database
 ms.service: sql-db-mi
 ms.subservice: migrate
-ms.custom: sqldbrb=1
+ms.custom: sqldbrb=1, devx-track-azurecli
 ms.devlang: ''
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 06/20/2019
-ms.openlocfilehash: 7bca179f3140a64923af71199fe4a1db48d2065c
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: a1e349d284d8f2c0c9c5194ac9f52534cd1ab973
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85982348"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87503248"
 ---
 # <a name="quickstart-import-a-bacpac-file-to-a-database-in-azure-sql-database-or-azure-sql-managed-instance"></a>Краткое руководство. импорт BACPAC-файла в базу данных в базе данных SQL Azure или Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -155,7 +155,7 @@ az sql db import --resource-group "<resourceGroup>" --server "<server>" --name "
 - [мастер импорта приложения уровня данных в SQL Server Management Studio](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database#using-the-import-data-tier-application-wizard);
 - [Мастер импорта и экспорта SQL Server](https://docs.microsoft.com/sql/integration-services/import-export-data/start-the-sql-server-import-and-export-wizard).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о подключении к базе данных в базе данных SQL Azure и выполнении запросов к ней см. в разделе [Краткое руководство по базе данных SQL Azure: использование SQL Server Management Studio для подключения и запроса данных](connect-query-ssms.md).
 - Сведения о миграции из SQL Server в Базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://techcommunity.microsoft.com/t5/DataCAT/Migrating-from-SQL-Server-to-Azure-SQL-Database-using-Bacpac/ba-p/305407).

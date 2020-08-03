@@ -8,13 +8,21 @@ ms.topic: include
 ms.date: 02/06/2020
 ms.author: tagore
 ms.custom: include file
-ms.openlocfilehash: d05386f1dfbab28d5fe42d02b8e9be0f257afafd
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 014d1ea4575b17b1d4017c9519bee6c5ea66ceb5
+ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86527220"
+ms.lasthandoff: 08/02/2020
+ms.locfileid: "87515357"
 ---
+## <a name="what-is-azure-service-manager-and-what-does-it-mean-by-classic"></a>Что такое Service Manager Azure и что это значит на классической модели?
+
+Слово "Классическая" в виртуальной машине IaaS (классическая модель) относится к виртуальным машинам, управляемым Azure Service Manager (ASM). Azure Service Manager (ASM) — это старая плоскость управления Azure, отвечающая за создание, управление и удаление виртуальных машин, а также выполнение других операций плоскости управления. 
+
+## <a name="what-is-azure-resource-manager"></a>Azure Resource Manager
+
+[Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/overview) — это последняя плоскость управления Azure, отвечающая за создание, управление и удаление виртуальных машин, а также выполнение других операций плоскости управления. 
+
 ## <a name="what-is-the-time-required-for-migration"></a>Сколько времени потребуется для миграции?
 
 Планирование и выполнение миграции сильно зависит от сложности архитектуры и может занять несколько месяцев.  

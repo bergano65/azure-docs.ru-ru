@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 980cbe17e982edb3aa72c3b58908f13a3d63a639
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 88f275016bad72122ebd195449b9af88086bdc7b
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76021182"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87507240"
 ---
 #### <a name="to-create-a-new-service"></a>Создание новой службы
 
@@ -29,7 +29,7 @@ ms.locfileid: "76021182"
 
    2. Выберите **Подписка** в раскрывающемся списке. Подписка привязана к учетной записи для выставления счетов. Это поле отсутствует, если у вас имеется только одна подписка.
 
-   3. **Группа ресурсов** — **создайте** группу ресурсов или выберите **имеющуюся**. Дополнительные сведения см. в статье [Рекомендации по группам ресурсов Azure](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-infrastructure-resource-groups-guidelines/).
+   3. **Группа ресурсов** — **создайте** группу ресурсов или выберите **имеющуюся**. Дополнительные сведения см. в статье [Рекомендации по группам ресурсов Azure](/azure/azure-resource-manager/management/manage-resource-groups-portal).
 
    4. Введите **Местоположение** для службы. В общем, выберите расположение, ближайшее к географическому региону, в котором вы хотите развернуть устройство. Кроме того, необходимо учитывать следующее:
 
