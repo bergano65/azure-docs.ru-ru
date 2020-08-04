@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 06/17/2020
 ms.topic: conceptual
 ms.custom: how-to, tracking-python
-ms.openlocfilehash: 991ad3afc51cc2f6dc1853a6b26f53bcb2fd1503
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 7aa17a7a96bffd0cd6f68f6187038aabd72b8cbd
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326415"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87542167"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Использование модели Машинного обучения Azure, развернутой в качестве веб-службы
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -92,6 +92,9 @@ ms.locfileid: "87326415"
 |Токен| Недоступно| Отключено по умолчанию |
 
 При отправке запроса к службе, защищенной с помощью ключа или токена, используйте заголовок __authorization__ для передачи ключа или маркера. Ключ или токен должен иметь формат `Bearer <key-or-token>` , где `<key-or-token>` — это значение ключа или токена.
+
+Основное различие между ключами и маркерами состоит в том, что **ключи являются статическими и могут быть повторно созданы вручную**, а **маркеры должны обновляться после истечения срока действия**. Проверка подлинности на основе ключей поддерживается для экземпляров контейнеров Azure и служб Azure Kubernetes, развернутых веб-служб, а проверка подлинности на основе токенов доступна **только** для развертываний службы Kubernetes Azure. Дополнительные сведения и конкретные примеры кода см. в разделе " [инструкции](how-to-setup-authentication.md#web-service-authentication) по проверке подлинности".
+
 
 #### <a name="authentication-with-keys"></a>Проверка подлинности с помощью ключей
 
@@ -181,7 +184,7 @@ REST API ожидает, что текст запроса содержит до�
 
 ### <a name="binary-data"></a>Двоичные данные
 
-Сведения о включении поддержки двоичных данных в службе см. в разделе [двоичные данные](how-to-deploy-and-where.md#binary).
+Сведения о включении поддержки двоичных данных в службе см. в разделе [двоичные данные](how-to-deploy-advanced-entry-script.md#binary-data).
 
 > [!TIP]
 > Включение поддержки двоичных данных происходит в файле score.py, который используется развернутой моделью. На клиенте используйте функции HTTP языка программирования. Например, следующий фрагмент кода отправляет содержимое файла JPG в веб-службу:
@@ -196,7 +199,7 @@ REST API ожидает, что текст запроса содержит до�
 
 ### <a name="cross-origin-resource-sharing-cors"></a>Общий доступ к ресурсам независимо от источника (CORS)
 
-Сведения о включении поддержки CORS в службе см. в разделе [совместное использование ресурсов в разных источниках](how-to-deploy-and-where.md#cors).
+Сведения о включении поддержки CORS в службе см. в разделе [совместное использование ресурсов в разных источниках](how-to-deploy-advanced-entry-script.md#cors).
 
 ## <a name="call-the-service-c"></a>Вызов службы с помощью C#
 
@@ -519,6 +522,153 @@ print(resp.text)
 [217.67978776218715, 224.78937091757172]
 ```
 
+
+## <a name="web-service-schema-openapi-specification"></a>Схема веб-службы (спецификация OpenAPI)
+
+Если вы использовали автоматическое создание схем в развертывании, можно получить адрес спецификации OpenAPI для службы с помощью [свойства swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#swagger-uri). (Например, `print(service.swagger_uri)` .) Используйте запрос GET или откройте универсальный код ресурса (URI) в браузере, чтобы получить спецификацию.
+
+Следующий документ JSON является примером схемы (спецификации OpenAPI), созданной для развертывания:
+
+```json
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "myservice",
+        "description": "API specification for Azure Machine Learning myservice",
+        "version": "1.0"
+    },
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+            "description": "For example: Bearer abc123"
+        }
+    },
+    "paths": {
+        "/": {
+            "get": {
+                "operationId": "ServiceHealthCheck",
+                "description": "Simple health check endpoint to ensure the service is up at any given point.",
+                "responses": {
+                    "200": {
+                        "description": "If service is up and running, this response will be returned with the content 'Healthy'",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "application/json": "Healthy"
+                        }
+                    },
+                    "default": {
+                        "description": "The service failed to execute due to an error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/score": {
+            "post": {
+                "operationId": "RunMLService",
+                "description": "Run web service's model and get the prediction output",
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "serviceInputPayload",
+                        "in": "body",
+                        "description": "The input payload for executing the real-time machine learning service.",
+                        "schema": {
+                            "$ref": "#/definitions/ServiceInput"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The service processed the input correctly and provided a result prediction, if applicable.",
+                        "schema": {
+                            "$ref": "#/definitions/ServiceOutput"
+                        }
+                    },
+                    "default": {
+                        "description": "The service failed to execute due to an error.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ServiceInput": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                }
+            },
+            "example": {
+                "data": [
+                    [ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
+                ]
+            }
+        },
+        "ServiceOutput": {
+            "type": "array",
+            "items": {
+                "type": "number",
+                "format": "double"
+            },
+            "example": [
+                3726.995
+            ]
+        },
+        "ErrorResponse": {
+            "type": "object",
+            "properties": {
+                "status_code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
+```
+
+Дополнительные сведения см. в статье [Спецификация OpenAPI](https://swagger.io/specification/).
+
+Сведения о программе, которая может создавать клиентские библиотеки из спецификации, см. в разделе [Swagger-CodeGen](https://github.com/swagger-api/swagger-codegen).
+
+
+> [!TIP]
+> После развертывания службы можно получить документ JSON схемы. Используйте [свойство swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#swagger-uri) из развернутой веб-службы (например, `service.swagger_uri` ), чтобы получить универсальный код ресурса (URI) для файла Swagger локальной веб-службы.
+
 ## <a name="consume-the-service-from-power-bi"></a>Consume the service from Power BI (Использование службы из Power BI)
 
 Power BI поддерживает использование Машинное обучение Azure веб-служб, чтобы расширить данные в Power BI с помощью прогнозов. 
@@ -527,6 +677,6 @@ Power BI поддерживает использование Машинное о
 
 После развертывания веб-службы ее можно использовать в Power BI потоках данных. [Узнайте, как использовать веб-службу машинное обучение Azure из Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-integration).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы просмотреть эталонную архитектуру для оценки моделей Python и глубокого обучения в реальном времени, перейдите в [центр архитектуры Azure](/azure/architecture/reference-architectures/ai/realtime-scoring-python).

@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 05/20/2020
 ms.author: anfeldma
 ms.custom: tracking-python
-ms.openlocfilehash: 6bd880806a4b067139c1f22a0e4d4e6df5c88451
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: d68fc7b01e6204cb9ad00ea60e413c73856d758e
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86247070"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87542452"
 ---
 # <a name="azure-cosmos-db-python-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK для Azure Cosmos DB на Python для API SQL. Заметки о выпуске и материалы
 
@@ -301,10 +301,8 @@ ms.locfileid: "86247070"
 
 Корпорация Майкрософт отправляет уведомление минимум за **12 месяцев** до вывода пакета SDK из эксплуатации, чтобы обеспечить более плавный переход на новую или поддерживаемую версию. Новые функции, возможности и оптимизации добавляются только в текущую версию пакета SDK, поэтому рекомендуется как можно раньше обновлять пакет SDK до последней версии.
 
-Любые запросы к базе данных Azure Cosmos DB с помощью выведенного из эксплуатации пакета SDK отклоняются службой.
-
 > [!WARNING]
-> Поддержка всех версий пакета SDK Python для API SQL версии ниже **1.0.0** была прекращена **29 февраля 2016 года**. Поддержка всех версий 1.x и 2.x пакета SDK Python для API SQL будет прекращена **30 августа 2020 года**.
+> После 31 августа 2022 Azure Cosmos DB больше не будет устранять ошибки, добавить новые функции и предоставить поддержку версий 1. x или 2. x пакета SDK для Python Azure Cosmos DB для SQL API. Если вы предпочитаете не выполнять обновление, запросы, отправленные с версии 1. x и 2. x пакета SDK, продолжат обслуживаться службой Azure Cosmos DB.
 
 | Версия | Дата выпуска | Дата вывода |
 | --- | --- | --- |

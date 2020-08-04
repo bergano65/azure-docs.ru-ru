@@ -16,12 +16,12 @@ ms.date: 04/15/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab51030ad39e1360cabc7d63390af7c1654d2891
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d1754456873e464e4bd624f47c5ea98e4fb88827
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82082124"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87542235"
 ---
 # <a name="azure-ad-connect-sync-attributes-synchronized-to-azure-active-directory"></a>Службы синхронизации Azure AD Connect: атрибуты, синхронизируемые с Azure Active Directory
 В этой статье перечислены атрибуты, которые синхронизируются при помощи служб синхронизации Azure AD Connect.  
@@ -165,8 +165,8 @@ ms.locfileid: "82082124"
 | targetAddress |X |X | | |
 | telephoneAssistant |X |X | | |
 | TelephoneNumber |X |X | | |
-| thumbnailphoto |X |X | | |
-| title |X |X | | |
+| thumbnailphoto |X |X | |синхронизируется только один раз из Azure AD в Exchange Online, после чего Exchange Online получает источник полномочий для этого атрибута, и все последующие изменения не могут быть синхронизированы из локальной системы. Дополнительные сведения см. в разделе ([КБ](https://support.microsoft.com/help/3062745/user-photos-aren-t-synced-from-the-on-premises-environment-to-exchange)).|
+| заголовок |X |X | | |
 | unauthOrig |X |X |X | |
 | usageLocation |X | | |Механическое свойство. Страна или регион пользователя. Используется для назначения лицензии. |
 | userCertificate |X |X | | |
@@ -247,8 +247,8 @@ ms.locfileid: "82082124"
 | targetAddress |X |X | | |
 | telephoneAssistant |X |X | | |
 | TelephoneNumber |X |X | | |
-| thumbnailphoto |X |X | | |
-| title |X |X | | |
+| thumbnailphoto |X |X | |синхронизируется только один раз из Azure AD в Exchange Online, после чего Exchange Online получает источник полномочий для этого атрибута, и все последующие изменения не могут быть синхронизированы из локальной системы. Дополнительные сведения см. в разделе ([КБ](https://support.microsoft.com/help/3062745/user-photos-aren-t-synced-from-the-on-premises-environment-to-exchange)).|
+| заголовок |X |X | | |
 | unauthOrig |X |X |X | |
 | url |X |X | | |
 | usageLocation |X | | |Механическое свойство. Страна или регион пользователя
@@ -298,8 +298,8 @@ ms.locfileid: "82082124"
 | st |X |X | | |
 | streetAddress |X |X | | |
 | TelephoneNumber |X |X | | |
-| thumbnailphoto |X |X | | |
-| title |X |X | | |
+| thumbnailphoto |X |X | |синхронизируется только один раз из Azure AD в Exchange Online, после чего Exchange Online получает источник полномочий для этого атрибута, и все последующие изменения не могут быть синхронизированы из локальной системы. Дополнительные сведения см. в разделе ([КБ](https://support.microsoft.com/help/3062745/user-photos-aren-t-synced-from-the-on-premises-environment-to-exchange)).|
+| заголовок |X |X | | |
 | usageLocation |X | | |Механическое свойство. Страна или регион пользователя. Используется для назначения лицензии. |
 | userPrincipalName |X | | |Имя участника-пользователя является именем для входа. Чаще всего соответствует значению [mail]. |
 | wWWHomePage |X |X | | |
@@ -365,7 +365,7 @@ ms.locfileid: "82082124"
 | st |X |X | | |
 | streetAddress |X |X | | |
 | TelephoneNumber |X |X | | |
-| title |X |X | | |
+| заголовок |X |X | | |
 | usageLocation |X | | |Механическое свойство. Страна или регион пользователя. Используется для назначения лицензии. |
 | userPrincipalName |X | | |Имя участника-пользователя является именем для входа. Чаще всего соответствует значению [mail]. |
 
@@ -396,7 +396,7 @@ ms.locfileid: "82082124"
 | usageLocation |X | | |Механическое свойство. Страна или регион пользователя. Используется для назначения лицензии. |
 | userPrincipalName |X | | |Имя участника-пользователя является именем для входа. Чаще всего соответствует значению [mail]. |
 
-## <a name="windows-10"></a>быть под управлением ОС Windows 10;
+## <a name="windows-10"></a>Windows 10
 Компьютер (устройство), присоединенное к домену Windows 10, синхронизирует некоторые атрибуты с Azure AD. Дополнительные сведения о сценариях см. в статье [Подключение присоединенных к домену устройств к Azure AD для работы в Windows 10](../active-directory-azureadjoin-devices-group-policy.md). Эти атрибуты всегда синхронизируются, и Windows 10 отображается как приложение, выбор которого нельзя отменить. Компьютер, присоединенный к домену Windows 10, определяется заполненным атрибутом userCertificate.
 
 | Имя атрибута | Устройство | Комментировать |
@@ -470,7 +470,7 @@ ms.locfileid: "82082124"
 * Если используется альтернативный идентификатор, то локальный атрибут userPrincipalName синхронизируется с атрибутом Azure AD onPremisesUserPrincipalName. Атрибут "Альтернативный идентификатор", например почта, синхронизируется с атрибутом Azure AD userPrincipalName.
 * В списках выше тип объекта **User** также относится к типу объекта **iNetOrgPerson**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

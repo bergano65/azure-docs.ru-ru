@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: a329ec32e241d88a56fc7031904777888ac194ae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7bc39e409d0ac10e41fae58c5e5216f386427e30
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85356412"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87541742"
 ---
 # <a name="troubleshoot-azure-ad-connectivity"></a>Устранение неполадок с подключением к Azure AD
 В этой статье рассказывается, как работает подключение между Azure AD Connect и Azure AD и как устранять неполадки подключения. Как правило, проблемы возникают в среде с прокси-сервером.
@@ -32,7 +32,7 @@ Azure AD Connect использует для аутентификации сов
 
 В этой статье показано, как Fabrikam подключается к Azure AD через прокси-сервер. Прокси-сервер имеет имя fabrikamproxy и использует порт 8080.
 
-Во-первых, проверим правильность настройки файла [**machine.config**](how-to-connect-install-prerequisites.md#connectivity) .
+Сначала необходимо убедиться, что [**machine.config**](how-to-connect-install-prerequisites.md#connectivity) настроен правильно и после обновления файла machine.config **Microsoft Azure AD служба синхронизации** была перезапущена.
 ![machineconfig](./media/tshoot-connect-connectivity/machineconfig.png)
 
 > [!NOTE]
@@ -122,7 +122,7 @@ Azure AD Connect использует для аутентификации сов
 | 1/11/2016 8:33 |connect://provisioningapi.microsoftonline.com:443 |
 | 1/11/2016 8:33 |connect://*bwsc02-relay*.microsoftonline.com:443 |
 
-**Настройка**
+**Настройте**
 
 | Time | URL-адрес |
 | --- | --- |

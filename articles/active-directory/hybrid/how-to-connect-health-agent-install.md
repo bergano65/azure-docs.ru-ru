@@ -16,12 +16,12 @@ ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7267da7db91e153190e98b09e9a3c505837bd042
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: c709fca3fbddb6fc16699052c5f01d1255c79dd8
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87446309"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87542099"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Установка агента Azure AD Connect Health
 
@@ -154,6 +154,7 @@ ms.locfileid: "87446309"
 7. В области **Действия** щелкните ссылку **Изменить свойства службы федерации**.
 8. В диалоговом окне **Свойства службы федерации** перейдите на вкладку **События**.
 9. Установите флажки для **успешных и неудачных событий аудита** и нажмите кнопку **ОК**.
+10. Подробное ведение журнала можно включить с помощью PowerShell, выполнив команду: ```Set-AdfsProperties -LOGLevel Verbose``` .
 
 #### <a name="to-enable-auditing-for-ad-fs-on-windows-server-2016"></a>Включение аудита для AD FS на Windows Server 2016
 
@@ -318,7 +319,7 @@ Register-AzureADConnectHealthADDSAgent -Credential $myCreds
 Доступны следующие варианты настройки агента Azure AD Connect Health для использования HTTP-прокси.
 
 > [!NOTE]
-> Необходимо перезапустить все службы агента Azure AD Connect Health, чтобы обновить параметры прокси-сервера. Выполните следующую команду:<br />
+> Необходимо перезапустить все службы агента Azure AD Connect Health, чтобы обновить параметры прокси-сервера. Выполните следующую команду.<br />
 > Restart-Service Азуреадконнексеалс *
 >
 >
@@ -383,7 +384,7 @@ Test-AzureADConnectHealthConnectivity -Role ADFS
 Параметр role в настоящее время принимает следующие значения:
 
 * ADFS
-* Синхронизация
+* Sync
 * ADDS
 
 > [!NOTE]

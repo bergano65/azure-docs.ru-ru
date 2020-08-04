@@ -1,6 +1,6 @@
 ---
-title: Включение Инифинбанд с помощью виртуальных машин Azure SR-IOV | Документация Майкрософт
-description: Узнайте, как включить InfiniBand с помощью SR-IOV.
+title: Включение Инифинбанд на виртуальных машинах HPC с помощью виртуальных машин Azure | Документация Майкрософт
+description: Узнайте, как включить InfiniBand на виртуальных машинах Azure HPC.
 services: virtual-machines
 documentationcenter: ''
 author: vermagit
@@ -10,60 +10,68 @@ tags: azure-resource-manager
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
-ms.date: 10/17/2019
+ms.date: 08/01/2020
 ms.author: amverma
-ms.openlocfilehash: de61403b62f80bea7872d5ab3561567ae2109590
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.reviewer: cynthn
+ms.openlocfilehash: 88f1c120ac4578e077e1c51f59bcaf53b1de2083
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86500074"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87538903"
 ---
-# <a name="enable-infiniband-with-sr-iov"></a>Включение InfiniBand с помощью SR-IOV
+# <a name="enable-infiniband"></a>Включение InfiniBand
 
-Виртуальные машины Azure NC, ND и H поддерживаются в выделенной сети InfiniBand. Все размеры с поддержкой RDMA могут использовать эту сеть с помощью Intel MPI. В некоторых рядах виртуальных машин расширена поддержка всех реализаций MPI и команд RDMA через SR-IOV. Виртуальные машины с поддержкой RDMA включают в себя [оптимизированные GPU](../../sizes-gpu.md) и [высокопроизводительные вычислительные системы (HPC)](../../sizes-hpc.md) .
+Виртуальные машины [серии H](../../sizes-hpc.md) и серии [N](../../sizes-gpu.md) , [поддерживающие RDMA](../../sizes-hpc.md#rdma-capable-instances) , обмениваются данными по низкой задержке и сети InfiniBand с высокой пропускной способностью. Возможность RDMA в таком межкомпонентном взаимочастоте очень важна для повышения масштабируемости и производительности рабочих нагрузок распределенного узла HPC и AI. Виртуальные машины серии H и серии N с поддержкой InfiniBand подключены к неблокирующему дереву FAT с низким диаметром для оптимизированной и постоянной производительности RDMA.
 
-## <a name="choose-your-installation-path"></a>Выбор пути установки
+Существует несколько способов включения InfiniBand на совместимых размерах виртуальных машин.
 
-Чтобы приступить к работе, самый простой вариант — использовать образ платформы, предварительно настроенный для InfiniBand, если он доступен:
+## <a name="vm-images-with-infiniband-drivers"></a>Образы виртуальных машин с драйверами InfiniBand
+В разделе [образы виртуальных](configure.md#vm-images) машин приведен список поддерживаемых образов виртуальных машин в Marketplace, которые предварительно загружены с помощью драйверов InfiniBand (для ВИРТУАЛЬНЫХ машин SR-IOV или без SR-IOV) или могут быть настроены с помощью соответствующих драйверов.
+Чтобы приступить к работе с [виртуальными машинами с поддержкой RDMA](../../sizes-hpc.md#rdma-capable-instances)на основе SR-IOV, [CentOS-HPC версии 7,6 или более поздней](https://techcommunity.microsoft.com/t5/Azure-Compute/CentOS-HPC-VM-Image-for-SR-IOV-enabled-Azure-HPC-VMs/ba-p/665557) версии в Marketplace — это самый простой способ начать работу.
+Образы виртуальных машин Ubuntu можно настроить с помощью правильных драйверов для виртуальных машин с поддержкой SR-IOV и без SR-IOV, используя приведенные [здесь инструкции](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351).
 
-- **Виртуальные машины IaaS для HPC** . чтобы приступить к работе с виртуальными машинами IaaS для HPC, простейшим решением будет использование [образа ОС виртуальной машины CentOS-HPC 7,6](https://techcommunity.microsoft.com/t5/Azure-Compute/CentOS-HPC-VM-Image-for-SR-IOV-enabled-Azure-HPC-VMs/ba-p/665557), который уже настроен с помощью InfiniBand. Так как этот образ уже настроен с помощью InfiniBand, настраивать его вручную не нужно. Сведения о совместимых версиях Windows см. в разделе [экземпляры, поддерживающие Windows RDMA](../../sizes-hpc.md#rdma-capable-instances).
+## <a name="infiniband-driver-vm-extensions"></a>Расширения виртуальных машин драйвера InfiniBand
+В Linux [расширение виртуальной машины инфинибанддриверлинукс](../../extensions/hpc-compute-infiniband-linux.md) можно использовать для установки драйверов Mellanox офед и включения InfiniBand на виртуальных машинах серии H и N с поддержкой SR-IOV.
 
-- **Виртуальные машины IaaS GPU** — образы платформы в настоящее время не предварительно настроены для виртуальных машин, оптимизированных для GPU, за исключением [образа ОС CentOS-HPC 7,6](https://techcommunity.microsoft.com/t5/Azure-Compute/CentOS-HPC-VM-Image-for-SR-IOV-enabled-Azure-HPC-VMs/ba-p/665557). Сведения о настройке пользовательского образа с помощью InfiniBand см. в [статье Установка MELLANOX Офед вручную](#manually-install-mellanox-ofed).
+В Windows [расширение виртуальной машины инфинибанддривервиндовс](../../extensions/hpc-compute-infiniband-windows.md) устанавливает драйверы Windows Network Direct (на виртуальных машинах без SR-IOV) или драйверы Mellanox офед (на виртуальных машинах SR-IOV) для подключения RDMA. В некоторых развертываниях экземпляров A8 и A9 расширение HpcVmDrivers добавляется автоматически. Обратите внимание, что расширение виртуальной машины HpcVmDrivers является устаревшим. Он не будет обновлен.
 
-Если вы используете пользовательский образ виртуальной машины или виртуальную машину, [оптимизированную для GPU](../../sizes-gpu.md) , необходимо настроить ее с помощью модуля InfiniBand, добавив расширение виртуальной машины Инфинибанддриверлинукс или инфинибанддривервиндовс в развертывание. Узнайте, как использовать эти расширения виртуальных машин с [Linux](../../sizes-hpc.md#rdma-capable-instances) и [Windows](../../sizes-hpc.md#rdma-capable-instances).
+Чтобы добавить в виртуальную машину расширение виртуальной машины, можно использовать командлеты [Azure PowerShell](/powershell/azure/). Дополнительные сведения см. в статье [Обзор расширений и компонентов виртуальной машины под управлением Windows](../../extensions/overview.md). Вы также можете работать с расширениями для виртуальных машин, развернутых в рамках [классической модели развертывания](/previous-versions/azure/virtual-machines/windows/classic/agents-and-extensions-classic).
 
-## <a name="manually-install-mellanox-ofed"></a>Установка Mellanox ОФЕД вручную
+## <a name="manual-installation"></a>Установка вручную
+[Драйверы Mellanox опенфабрикс (офед)](https://www.mellanox.com/products/InfiniBand-VPI-Software) можно установить вручную на виртуальных машинах серии [H](../../sizes-hpc.md) и [N](../../sizes-gpu.md) , [поддерживающих SR-IOV](../../sizes-hpc.md#rdma-capable-instances) .
 
-Чтобы вручную настроить InfiniBand с помощью SR-IOV, выполните следующие действия. В примере на этих шагах показан синтаксис для RHEL/CentOS, но эти действия являются общими и могут использоваться для любой совместимой операционной системы, такой как Ubuntu (16,04, 18,04 19,04) и SLES (12 SP4 и 15). Драйверы для папки "Входящие" также работают, но драйверы Mellanox Опенфабрикс предоставляют больше возможностей.
-
-Дополнительные сведения о поддерживаемых дистрибутивах для драйвера Mellanox см. в последних [драйверах Mellanox опенфабрикс](https://www.mellanox.com/page/products_dyn?product_family=26). Дополнительные сведения о драйвере Mellanox Опенфабрикс см. в разделе с [руководством пользователя Mellanox](https://docs.mellanox.com/category/mlnxofedib).
-
-Сведения о настройке InfiniBand в Linux см. в следующем примере:
+### <a name="linux"></a>Linux
+[Драйверы офед для Linux](https://www.mellanox.com/products/infiniband-drivers/linux/mlnx_ofed) можно установить с помощью приведенного ниже примера. Хотя здесь приведен пример для RHEL/CentOS, но эти действия являются общими и могут использоваться для любой совместимой операционной системы Linux, такой как Ubuntu (16,04, 18,04 19,04, 20,04) и SLES (12 SP4 и 15). Драйверы для папки "Входящие" также работают, но драйверы Mellanox ОФЕД предоставляют больше возможностей.
 
 ```bash
-# Modify the variable to desired Mellanox OFED version
-MOFED_VERSION=#4.7-1.0.0.1
-# Modify the variable to desired OS
-MOFED_OS=#rhel7.6
-pushd /tmp
-curl -fSsL https://www.mellanox.com/downloads/ofed/MLNX_OFED-${MOFED_VERSION}/MLNX_OFED_LINUX-${MOFED_VERSION}-${MOFED_OS}-x86_64.tgz | tar -zxpf -
-cd MLNX_OFED_LINUX-*
-sudo ./mlnxofedinstall
-popd
+MLNX_OFED_DOWNLOAD_URL=http://content.mellanox.com/ofed/MLNX_OFED-5.0-2.1.8.0/MLNX_OFED_LINUX-5.0-2.1.8.0-rhel7.7-x86_64.tgz
+# Optinally verify checksum
+tar zxvf MLNX_OFED_LINUX-5.0-2.1.8.0-rhel7.7-x86_64.tgz
+
+KERNEL=( $(rpm -q kernel | sed 's/kernel\-//g') )
+KERNEL=${KERNEL[-1]}
+# Uncomment the lines below if you are running this on a VM
+#RELEASE=( $(cat /etc/centos-release | awk '{print $4}') )
+#yum -y install http://olcentgbl.trafficmanager.net/centos/${RELEASE}/updates/x86_64/kernel-devel-${KERNEL}.rpm
+yum install -y kernel-devel-${KERNEL}
+./MLNX_OFED_LINUX-5.0-2.1.8.0-rhel7.7-x86_64/mlnxofedinstall --kernel $KERNEL --kernel-sources /usr/src/kernels/${KERNEL} --add-kernel-support --skip-repo
 ```
 
-Для Windows Скачайте и установите [драйверы MELLANOX офед для Windows](https://www.mellanox.com/page/products_dyn?product_family=32&menu_section=34).
+### <a name="windows"></a>Windows
+Для Windows Скачайте и установите [драйверы MELLANOX офед для Windows](https://www.mellanox.com/products/adapter-software/ethernet/windows/winof-2).
 
-## <a name="enable-ip-over-infiniband"></a>Включить IP-адрес через InfiniBand
-
-Используйте следующие команды, чтобы включить IP-адрес через InfiniBand.
+## <a name="enable-ip-over-infiniband-ib"></a>Включить использование IP-адресов через InfiniBand (превышено)
+Если вы планируете выполнять задания MPI, обычно не требуется использование IPoIB. Библиотека MPI будет использовать интерфейс команд для обмена данными (если только вы явно не используете канал TCP/IP в библиотеке MPI). Но если у вас есть приложение, использующее протокол TCP/IP для обмена данными, и вы хотите выполнить переработку, можно использовать для этого интерфейс в качестве средства. Используйте следующие команды (для RHEL/CentOS), чтобы включить IP-адрес через InfiniBand.
 
 ```bash
 sudo sed -i -e 's/# OS.EnableRDMA=y/OS.EnableRDMA=y/g' /etc/waagent.conf
 sudo systemctl restart waagent
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [HPC](/azure/architecture/topics/high-performance-computing/) в Azure.
+- Узнайте больше об установке различных [поддерживаемых библиотек MPI](setup-mpi.md) и их оптимальной конфигурации на виртуальных машинах.
+- Ознакомьтесь с обзором [ХБ](hb-series-overview.md) и [описанием серии HC](hc-series-overview.md) , чтобы узнать о оптимальной настройке рабочих нагрузок для повышения производительности и масштабируемости.
+- Ознакомьтесь с последними объявлениями и некоторыми примерами HPC и результатами в [блогах сообщества разработчиков Azure](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+- Для более высокого уровня архитектуры выполнения рабочих нагрузок HPC см. статью [высокопроизводительные вычисления (HPC) в Azure](/azure/architecture/topics/high-performance-computing/).

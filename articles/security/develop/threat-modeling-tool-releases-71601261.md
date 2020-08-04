@@ -1,19 +1,19 @@
 ---
 title: Microsoft Threat Modeling Tool выпуск 1/29/2019
 titleSuffix: Azure
-description: Документирование заметок о выпуске средства моделирования угроз
+description: Ознакомьтесь с заметками о выпуске Microsoft Threat Modeling Tool, выпущенной на 1/29/2019. Примечания включают изменения функций и известные проблемы.
 author: jegeib
 ms.author: jegeib
 ms.service: security
 ms.subservice: security-develop
 ms.topic: article
 ms.date: 01/25/2019
-ms.openlocfilehash: 7d0be8d7243331264c10a407e3d78370ea798928
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 17147d412bd888cdd3cd270829ad6d6103867b34
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78269778"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87539056"
 ---
 # <a name="threat-modeling-tool-update-release-71601261---1292019"></a>Threat Modeling Tool, выпуск обновления 7.1.60126.1 от 29.01.2019
 
@@ -49,7 +49,7 @@ ms.locfileid: "78269778"
 
 ### <a name="unsupported-systems"></a>Неподдерживаемые системы
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Пользователи систем Windows 10, которые не могут установить .NET 4.7.1 или более поздней версии, например Windows 10 Enterprise LTSB (версии 1507), не смогут открыть средство после обновления. Эти старые версии Windows больше не поддерживаются платформами для Threat Modeling Tool и не должны устанавливать последнее обновление.
 
@@ -61,6 +61,6 @@ ms.locfileid: "78269778"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](threat-modeling-tool.md) и содержит информацию [об использовании средства](threat-modeling-tool-getting-started.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

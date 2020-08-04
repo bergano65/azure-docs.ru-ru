@@ -1,6 +1,6 @@
 ---
 title: Расширенное обнаружение угроз Azure | Документы Майкрософт
-description: Дополнительные сведения о защите идентификации Azure AD и ее возможностях.
+description: Узнайте о встроенных функциях расширенного обнаружения угроз для Azure, таких как служба защита идентификации Azure AD.
 services: security
 documentationcenter: na
 author: UnifyCloud
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 93b63450d65f55e96897f91a5c0c9fae1b0b47f8
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 1522d143f2837a57481a4d678911e7a3c44d084d
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86503291"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87541028"
 ---
 # <a name="azure-advanced-threat-detection"></a>Расширенное обнаружение угроз Azure
 

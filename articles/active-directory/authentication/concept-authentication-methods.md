@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 4c224f40996625ead4592a3bf50e02f0877c76db
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 05283c02c2e5f95e22beb6fbeaad7a99e42ee6aa
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87051312"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87540841"
 ---
 # <a name="what-authentication-and-verification-methods-are-available-in-azure-active-directory"></a>Какие методы проверки подлинности и подтверждения доступны в Azure Active Directory?
 
@@ -74,7 +74,7 @@ ms.locfileid: "87051312"
 ![Снимок с примером запроса веб-браузера о завершении процесса входа и уведомлением приложения Authenticator](media/tutorial-enable-azure-mfa/azure-multi-factor-authentication-browser-prompt.png)
 
 > [!NOTE]
-> Если в вашей организации есть сотрудники, которые находятся в Китае, метод *Уведомления через мобильное приложение* на устройствах Android не работает при выборе этой страны или региона. Этим пользователям необходимо предоставить альтернативные методы проверки подлинности.
+> Если в вашей организации сотрудники работают в Китае или перемещаются в Китая, *уведомление через метод мобильного приложения* на устройствах Android не работает в этой стране или регионе, так как службы Google Play (включая push-уведомления) заблокированы в регионе. Однако уведомление iOS работает. Для устройств Android можно сделать дополнительные методы проверки подлинности доступными для этих пользователей.
 
 ### <a name="verification-code-from-mobile-app"></a>Код проверки от мобильного приложения
 

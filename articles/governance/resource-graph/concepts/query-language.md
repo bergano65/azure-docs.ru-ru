@@ -1,14 +1,14 @@
 ---
 title: Основные сведения о языке запросов
 description: Описание таблиц Resource Graph и доступных типов данных, операторов и функций Kusto, которые можно использовать с Azure Resource Graph.
-ms.date: 06/29/2020
+ms.date: 08/03/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4c545a8a5113f800545660a3ea812b61711630c2
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: b59811ecd877b9b2e22a43c00329ed7d02dfb97d
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85970456"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87541827"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -19,6 +19,7 @@ ms.locfileid: "85970456"
 - [таблицы Resource Graph;](#resource-graph-tables)
 - [Пользовательские элементы языка графа ресурсов](#resource-graph-custom-language-elements)
 - [поддерживаемые элементы языка KQL;](#supported-kql-language-elements)
+- [Область запроса](#query-scope)
 - [escape-символы.](#escape-characters)
 
 ## <a name="resource-graph-tables"></a>Таблицы Resource Graph
@@ -116,6 +117,31 @@ Resource Graph поддерживает все [типы данных](/azure/ku
 |[В начало](/azure/kusto/query/topoperator) |[Отображение первых пяти виртуальных машин по имени и типу ОС](../samples/starter.md#show-sorted) | |
 |[union](/azure/kusto/query/unionoperator) |[Объединение результатов из двух запросов в один результат](../samples/advanced.md#unionresults) |Допускается одна таблица: _T_ `| union` \[`kind=` `inner`\|`outer`\] \[`withsource=`_ColumnName_\] _Table_. Не более 3 разветвлений `union` в одном запросе. Нечеткое разрешение таблиц разветвлений `union` не допускается. Может использоваться в одной таблице или между таблицами _Resources_ и _ResourceContainers_. |
 |[where](/azure/kusto/query/whereoperator) |[Отображение ресурсов, которые содержат хранилище](../samples/starter.md#show-storage) | |
+
+## <a name="query-scope"></a>Область запроса
+
+Область подписок, из которой ресурсы возвращаются запросом, зависит от метода доступа к графу ресурсов. Azure CLI и Azure PowerShell заполнить список подписок, включаемых в запрос, в зависимости от контекста полномочного пользователя. Список подписок можно задать вручную для каждой **подписки** и параметров **подписки** соответственно.
+В REST API и всех других пакетах SDK список подписок, которые должны включать ресурсы из, должен быть явно определен как часть запроса.
+
+В качестве **предварительной**версии REST API версия `2020-04-01-preview` добавляет свойство в область запроса в [группу управления](../../management-groups/overview.md). Этот API предварительной версии также делает свойство подписки необязательным. Если ни Группа управления, ни список подписок не определены, областью запроса будут все ресурсы, доступ к которым может получить пользователь, прошедший проверку подлинности. Новое `managementGroupId` свойство принимает идентификатор группы управления, который отличается от имени группы управления.
+Если `managementGroupId` указан параметр, включаются ресурсы из первой 5000 подписки в или в указанной иерархии группы управления. `managementGroupId`нельзя использовать в то же время, что и `subscriptions` .
+
+Пример. запрос всех ресурсов в иерархии группы управления с именем "Моя группа управления" с ИДЕНТИФИКАТОРом "Мимг".
+
+- Универсальный код ресурса (URI) REST API
+
+  ```http
+  POST https://management.azure.com/providers/Microsoft.ResourceGraph/resources?api-version=2020-04-01-preview
+  ```
+
+- Текст запроса
+
+  ```json
+  {
+      "query": "Resources | summarize count()",
+      "managementGroupId": "myMG"
+  }
+  ```
 
 ## <a name="escape-characters"></a>Escape-символы
 

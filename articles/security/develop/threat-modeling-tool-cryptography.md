@@ -1,6 +1,6 @@
 ---
 title: Шифрование. Средство моделирования угроз Microsoft Azure | Документация Майкрософт
-description: Устранение угроз, обнаруженных с помощью средства моделирования угроз
+description: Узнайте о предотвращении криптографии для угроз, предоставляемых в Threat Modeling Tool. См. сведения об устранении рисков и просмотр примеров кода.
 services: security
 documentationcenter: na
 author: jegeib
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: c9116472af5b400ded0fea24f98b07bad9d9039b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7de0cad91e01187a1ed84257c9e3a7cd8106951a
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "68728186"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87539957"
 ---
 # <a name="security-frame-cryptography--mitigations"></a>Механизм безопасности. Шифрование | Устранение угроз 
 

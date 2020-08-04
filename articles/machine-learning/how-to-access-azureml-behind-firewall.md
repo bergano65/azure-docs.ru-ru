@@ -11,16 +11,19 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 07/17/2020
 ms.custom: how-to, tracking-python
-ms.openlocfilehash: 63e2ba93ecdc1131be6bd291fe436b42a2a2d19c
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 27b625dfa31b366d95922e1dd0bad7fda6e86ed4
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87407036"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87540076"
 ---
-# <a name="use-workspace-behind-azure-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром Azure для Машинное обучение Azure
+# <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром для Машинное обучение Azure
 
 Из этой статьи вы узнаете, как настроить брандмауэр Azure для использования с рабочей областью Машинное обучение Azure.
+
+> [!IMPORTANT]
+> Хотя сведения в этом документе основаны на использовании брандмауэра Azure, вы можете использовать его с другими продуктами брандмауэра. Если у вас есть вопросы о том, как разрешить обмен данными через брандмауэр, обратитесь к документации по используемому брандмауэру.
 
 Брандмауэр Azure можно использовать для управления доступом к рабочей области Машинное обучение Azure и к общедоступному Интернету. Если настройка не настроена должным образом, брандмауэр может вызвать проблемы с использованием рабочей области. Существует множество имен узлов, которые используются в рабочей области Машинное обучение Azure, которая описана в этой статье.
 
@@ -53,6 +56,7 @@ ms.locfileid: "87407036"
 | **vault.azure.net** | Azure Key Vault |
 | **azurecr.io** | Реестр контейнеров Azure |
 | **mcr.microsoft.com** | Реестр контейнеров Microsoft для базовых образов DOCKER |
+| **your-acr-server-name.azurecr.io** | Требуется только в том случае, если реестр контейнеров Azure находится за виртуальной сетью. В этой конфигурации частная ссылка создается из среды Майкрософт в экземпляр записи контроля доступа в подписке. Используйте имя сервера записи контроля доступа для рабочей области Машинное обучение Azure. |
 
 ## <a name="python-hosts"></a>Узлы Python
 
@@ -75,7 +79,7 @@ ms.locfileid: "87407036"
 | ---- | ---- |
 | **cloud.r-project.org** | Используется при установке пакетов CRAN. |
 
-Дальнейшие действия
+Следующие шаги
 
 * [[Развертывание и настройка брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md)]
 * [Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure](how-to-enable-virtual-network.md)

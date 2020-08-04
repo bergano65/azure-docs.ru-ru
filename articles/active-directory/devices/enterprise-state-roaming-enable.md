@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: na
 ms.custom: references_regions
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47a2f8b69c8ef75be4f9190933969ed20404b5da
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f5f6e44aa89c1e2815d70bb4ba2ae5f5680252ac
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253007"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87541895"
 ---
 # <a name="enable-enterprise-state-roaming-in-azure-active-directory"></a>Включение службы Enterprise State Roaming в Azure Active Directory
 
@@ -31,7 +31,7 @@ Enterprise State Roaming доступна для любой организаци
 ## <a name="to-enable-enterprise-state-roaming"></a>Включение Enterprise State Roaming
 
 1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com/)
-1. Последовательно выберите **Azure Active Directory** &gt; **Устройства** &gt; **Enterprise State Roaming**.
+1. Выберите **Azure Active Directory**  >  **устройства**  >  **Enterprise State Roaming**.
 1. Включите параметр **Пользователи могут выполнять синхронизацию параметров и данных разных устройств**. Дополнительные сведения см. в статье [о настройке параметров устройств](/azure/active-directory/device-management-azure-portal).
   
    ![Изображение с настройкой параметра "Пользователи могут выполнять синхронизацию параметров и данных разных устройств"](./media/enterprise-state-roaming-enable/device-settings.png)
@@ -56,7 +56,7 @@ Enterprise State Roaming доступна для любой организаци
 Выполните следующие действия, чтобы просмотреть отчет о состоянии синхронизации устройств по пользователям.
 
 1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com/)
-1. Выберите **Azure Active Directory** &gt; **Пользователи** &gt; **Все пользователи**.
+1. Выберите **Azure Active Directory**  >  **Пользователи**  >  **все пользователи**.
 1. Выберите пользователя, а затем элемент **Устройства**.
 1. Чтобы увидеть состояние синхронизации, в пункте **Показать** выберите вариант **Devices syncing settings and app data** (Параметры синхронизации устройств и данные приложений).
   
@@ -90,7 +90,7 @@ Enterprise State Roaming доступна для любой организаци
 
 Политика хранения удаленных данных не настраивается. После окончательного удаления данных восстановить их невозможно. Но данные о параметрах удаляются только из Microsoft Cloud, а не с устройства пользователя. Если это устройство повторно подключится к службе Enterprise State Roaming, все параметры снова будут синхронизированы и сохранены в Microsoft Cloud.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обзор службы Enterprise State Roaming](enterprise-state-roaming-overview.md)
 * [Часто задаваемые вопросы о перемещении параметров и данных](enterprise-state-roaming-faqs.md)

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 06/01/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 3a5e2c368fd956abb98b2b4c9ccd1060677f3e06
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6632d65fa07788e35b24c2f957e713f824f6b091
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87085764"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87542744"
 ---
 # <a name="find-and-delete-unattached-azure-managed-and-unmanaged-disks---azure-portal"></a>Поиск и удаление отключенных управляемых и неуправляемых дисков Azure — портал Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "87085764"
 
     В области **Диски** отображается список всех дисков. Все диски с пометкой **-** в столбце **Владелец** являются отключенными.
 
-    [![](media/disks-find-unattached-portal/managed-disk-unattached-owner.png "Screenshot of the managed disks blade, if a disk has - in the Owner column, it is an unattached disk")](media/disks-find-unattached-portal/managed-disk-owner-unattached.png#lightbox)
+    [![Снимок экрана: колонка "управляемые диски", если диск содержит столбец "владелец", это неприсоединенный диск.](media/disks-find-unattached-portal/managed-disk-unattached-owner.png)](media/disks-find-unattached-portal/managed-disk-owner-unattached.png#lightbox)
 
 1. Выберите отключенный диск, который нужно удалить. Откроется область этого диска.
 1. В области диска можно еще раз проверить его состояние (отключен), а затем нажать **Удалить**.

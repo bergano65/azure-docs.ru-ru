@@ -1,6 +1,6 @@
 ---
 title: Начало работы. Средство моделирования угроз Microsoft Azure | Документация Майкрософт
-description: Это более подробный обзор средства моделирования угроз в действии.
+description: Узнайте, как приступить к работе с Threat Modeling Tool. Создание схемы, выявление угроз, снижение угроз и проверка каждого риска.
 services: security
 documentationcenter: na
 author: jegeib
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: jegeib
-ms.openlocfilehash: 1454826095bcced9b20935405c0befd5a1ed1ddd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3b8467a5983ae9d8928d14987bcee9d2aef094aa
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "68728329"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87539906"
 ---
 # <a name="getting-started-with-the-threat-modeling-tool"></a>Начало работы со средством моделирования угроз
 
@@ -142,6 +142,6 @@ ms.locfileid: "68728329"
 
 Продемонстрированный в этой статье подход к моделированию угроз существенно проще, чем подход, который корпорация Майкрософт использовала в прошлом. Мы обнаружили, что подход к разработке программного обеспечения хорошо подходит для многих команд разработчиков. Мы надеемся, что это относится и к вам.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Отправляйте свои вопросы, комментарии и проблемы по адресу tmtextsupport@microsoft.com. **[Скачайте](https://aka.ms/threatmodelingtool)** средство моделирования угроз, чтобы начать работу.

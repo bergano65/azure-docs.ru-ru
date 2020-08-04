@@ -4,19 +4,19 @@ description: На этой странице описаны некоторые р
 services: sql-database
 ms.service: sql-database
 ms.subservice: single-database
-ms.custom: references_regions
+ms.custom: references_regions, seo-lt-2019, sqldbrb=1
 ms.devlang: ''
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/20/2019
-ms.openlocfilehash: fa8901f2a219b0693cee17bc4d0ab78da615c415
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: fa15a5f95c2163309ecfd9cc0130d1860eb3b634
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87325106"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87542693"
 ---
 # <a name="resource-limits-for-single-databases-using-the-dtu-purchasing-model---azure-sql-database"></a>Ограничения ресурсов для отдельных баз данных с использованием модели приобретения DTU — база данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -101,11 +101,11 @@ ms.locfileid: "87325106"
 <sup>2</sup> с 1024 гб до 4096 ГБ с шагом в 256 ГБ.
 
 > [!IMPORTANT]
-> В настоящее время на уровне "Премиум" доступно более 1 ТБ хранилища, за исключением: Восточный Китай, Северный Китай, центрального Германии, северо-восток, Западная Центральная часть США, US DoD регионов и центра правительства США. В этих регионах максимальный объем хранилища категории "Премиум" ограничен 1 ТБ.  Дополнительные сведения см. в разделе [о действующих ограничениях для P11-P15](single-database-scale.md#p11-and-p15-constraints-when-max-size-greater-than-1-tb).
+> Более 1 ТБ хранилища на уровне "Премиум" в настоящее время доступны во всех регионах, кроме: Восточный Китай, Северный Китай, Центрально-Центральный регион и Северо-Восточная Германия. В этих регионах максимальный объем хранилища категории "Премиум" ограничен 1 ТБ.  Дополнительные сведения см. в разделе [о действующих ограничениях для P11-P15](single-database-scale.md#p11-and-p15-constraints-when-max-size-greater-than-1-tb).
 > [!NOTE]
 > `tempdb`Ограничения см. в разделе [ограничения tempdb](https://docs.microsoft.com/sql/relational-databases/databases/tempdb-database?view=sql-server-2017#tempdb-database-in-sql-database).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ограничения ресурсов Виртуальное ядро для отдельной базы данных см. [в разделе ограничения ресурсов для отдельных баз данных с использованием модели приобретения Виртуальное ядро](resource-limits-vcore-single-databases.md) .
 - Сведения об ограничениях ресурсов Виртуальное ядро для эластичных пулов см. [в статье ограничения ресурсов для эластичных пулов с использованием модели приобретения Виртуальное ядро](resource-limits-vcore-elastic-pools.md) .

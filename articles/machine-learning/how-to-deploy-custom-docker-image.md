@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 06/17/2020
 ms.topic: conceptual
 ms.custom: how-to, tracking-python
-ms.openlocfilehash: 47bf14a8da8357e0114ef3c5d6cf96185306dd16
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 3ffc3883fb4a0d0b725239711bc0163f50998713
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87325871"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87541056"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-base-image"></a>Развертывание модели с помощью пользовательского базового образа DOCKER
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -42,14 +42,14 @@ ms.locfileid: "87325871"
 * Создание пользовательского базового образа. предоставляет сведения для администраторов и DevOps о создании пользовательского образа и настройке проверки подлинности в реестре контейнеров Azure с помощью Azure CLI и Машинное обучение CLI.
 * Развертывание модели с помощью пользовательского базового образа. предоставляет сведения для специалистов по обработке и анализу данных, а также инженеров DevOps/ML по использованию пользовательских образов при развертывании обученной модели из пакета SDK Python или интерфейса командной строки ML.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Рабочая группа Машинное обучение Azure. Дополнительные сведения см. в статье [Создание рабочей области](how-to-manage-workspace.md) .
 * [Пакет SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py). 
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 * [Расширение CLI для Машинного обучения Azure](reference-azure-machine-learning-cli.md).
 * [Реестр контейнеров Azure](/azure/container-registry) или другой реестр DOCKER, доступный в Интернете.
-* В действиях, описанных в этом документе, предполагается, что вы знакомы с созданием и использованием объекта __конфигурации вывода__ в рамках развертывания модели. Дополнительные сведения см. в подразделе «Подготовка к развертыванию» раздела о том, [где нужно развернуть и как](how-to-deploy-and-where.md#prepare-to-deploy).
+* В действиях, описанных в этом документе, предполагается, что вы знакомы с созданием и использованием объекта __конфигурации вывода__ в рамках развертывания модели. Дополнительные сведения см. [в разделе где развертывается и как](how-to-deploy-and-where.md).
 
 ## <a name="create-a-custom-base-image"></a>Создание пользовательского базового образа
 
@@ -326,7 +326,7 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json --dc depl
 
 Дополнительные сведения о развертывании модели с помощью интерфейса командной строки ML см. в разделе "Регистрация модели, профилирование и развертывание" статьи [расширение CLI для машинное обучение Azure](reference-azure-machine-learning-cli.md#model-registration-profiling-deployment) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте больше о том, [где развертывать и как](how-to-deploy-and-where.md).
 * Узнайте, как [обучать и развертывать модели машинного обучения с помощью Azure pipelines](/azure/devops/pipelines/targets/azure-machine-learning?view=azure-devops).

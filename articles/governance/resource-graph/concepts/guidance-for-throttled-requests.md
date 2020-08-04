@@ -1,14 +1,14 @@
 ---
 title: Руководство по регулируемым запросам
 description: Сведения о группировании, поочередной отправке, разбиении на страницы и распараллеливании запросов, чтобы избежать регулирования в Azure Resource Graph.
-ms.date: 05/20/2020
+ms.date: 08/03/2020
 ms.topic: conceptual
-ms.openlocfilehash: dbcd438f1eda4edd30deef41542beeae6d746dc2
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 343d0c02e300431b63b908199931c20a50b85dd2
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83682059"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87541844"
 ---
 # <a name="guidance-for-throttled-requests-in-azure-resource-graph"></a>Рекомендации по работе с регулируемыми запросами в Azure Resource Graph
 
@@ -29,6 +29,8 @@ Azure Resource Graph выделяет определенную квоту для
 
 - `x-ms-user-quota-remaining` (целое число): оставшаяся квота ресурсов для пользователя. Это значение соответствует количеству запросов.
 - `x-ms-user-quota-resets-after` (чч:мм:сс): время, оставшееся до сброса квоты потребления этого пользователя.
+
+Если субъект безопасности имеет доступ к более чем 5000 подпискам в [области запросов](./query-language.md#query-scope)клиента или группы управления, ответ ограничен первыми 5000 подписками, а `x-ms-tenant-subscription-limit-hit` заголовок возвращается как `true` .
 
 Чтобы продемонстрировать работу этих заголовков, давайте рассмотрим ответ на запрос со следующими значениями заголовков: `x-ms-user-quota-remaining: 10` и `x-ms-user-quota-resets-after: 00:00:03`.
 
@@ -239,6 +241,6 @@ async Task ExecuteQueries(IEnumerable<string> queries)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. описание используемого языка в статье [Запросы для начинающих](../samples/starter.md).
-- См. описание расширенных вариантов использования в статье [Расширенные запросы](../samples/advanced.md).
+- См. описание используемого языка в разделе [Запросы для начинающих](../samples/starter.md).
+- См. описание расширенных вариантов использования в разделе [Расширенные запросы](../samples/advanced.md).
 - Узнайте больше о том, как [изучать ресурсы](explore-resources.md).

@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 07/14/2020
-ms.openlocfilehash: b7a05f33c199ab46508fa2b9bc0ef576f888ef27
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: e7c0a4cd6e44994c4b002fcc2e5fde441cf22283
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86537720"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87541657"
 ---
 # <a name="azure-data-factory-unpivot-transformation"></a>Преобразование отмены свертывания в фабрике данных Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "86537720"
 
 Например, при сведении "Продажи" по "Региону" просто выдаст вам новые значения столбцов из каждого значения продаж. Например: "25", "50", "1000",... Однако если задать значение префикса «Sales», то «Sales» будет предваряться значениями.
 
-<img src="media/data-flow/unpivot3.png" width="400">
+![Изображение, показывающее столбцы PO, Vendor и фруктов до и после преобразования «унипивот» с использованием столбца «фруктов» в качестве ключа унипивот.](media/data-flow/unpivot3.png)
 
 Если для параметра Column Arrangement (Расположение столбцов) выбрано значение Normal (Обычное), все столбцы при сведении сгруппируются вместе с их агрегированными значениями. Вариант Lateral (Боковое) для расположения столбцов создает чередование столбцов и значений.
 
@@ -54,6 +54,6 @@ ms.locfileid: "86537720"
 
 В окончательном наборе результатов для несвернутых данных отображаются итоговые значения столбца, которые теперь не объединены в значения отдельных строк.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Используйте [Преобразование «Сведение](data-flow-pivot.md) » для сведения строк в столбцы.

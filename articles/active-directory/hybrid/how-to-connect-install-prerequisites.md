@@ -16,12 +16,12 @@ ms.date: 06/25/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b33b3e406e21f5bc2a4128fdd7dc9930fa3e0c32
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 83a05636f8e673e08bfd390aa10069da0abd561d
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87447010"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87542065"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure Active Directory (Azure AD) Connect.
@@ -125,6 +125,7 @@ Azure AD Connect сервер должен рассматриваться как
         </system.net>
     ```
 
+* Если конфигурация прокси-сервера выполняется в существующей программе установки, то для того, чтобы Azure AD Connect прочитать конфигурацию прокси-сервера и обновить бехвиаур, необходимо повторно запустить **службу синхронизации Microsoft Azure AD** . 
 * Когда в процессе синхронизации каталогов Azure AD Connect отправляет веб-запрос в Azure AD, то для ответа Azure AD может потребоваться до 5 минут. Для прокси-серверов обычно используется конфигурация времени ожидания простоя подключения. Убедитесь, что для конфигурации задано не менее 6 минут.
 
 Дополнительные сведения см. в разделе MSDN об [элементе прокси по умолчанию](https://msdn.microsoft.com/library/kd3cf2ex.aspx).
