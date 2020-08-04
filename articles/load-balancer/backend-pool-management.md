@@ -8,12 +8,12 @@ ms.service: load-balancer
 ms.topic: overview
 ms.date: 07/07/2020
 ms.author: allensu
-ms.openlocfilehash: f1718de6bc9a86f85cadf4531386e663d5a420d3
-ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
+ms.openlocfilehash: 7fe7c1473579c62b110548a2c5e98f9bdfaf6bf9
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86273767"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87131469"
 ---
 # <a name="backend-pool-management"></a>Управление внутренним пулом
 Внутренний пул является важнейшим компонентом подсистемы балансировки нагрузки. Внутренний пул определяет группу ресурсов, которая будет обрабатывать трафик по определенному правилу балансировки нагрузки.
@@ -255,10 +255,12 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
   >[!IMPORTANT] 
   >Сейчас эта функция доступна в предварительной версии со следующими ограничениями:
-  >* не более 100 добавляемых IP-адресов;
+  >* только подсистемы балансировки нагрузки цен. категории "Стандартный".
+  >* внутренний пул поддерживает до 100 IP-адресов;
   >* ресурсы внутреннего пула должны находиться в той же виртуальной сети, что и подсистема балансировки нагрузки;
   >* пока эта возможность не поддерживается на портале Azure;
-  >* только подсистемы балансировки нагрузки цен. категории "Стандартный".
+  >* контейнеры ACI в настоящее время этой функцией не поддерживаются;
+  >* подсистемы балансировки нагрузки или службы, обслуживаемые ими, не могут быть помещены в внутренний пул подсистемы балансировки нагрузки.
   
 ### <a name="powershell"></a>PowerShell
 Создайте внутренний пул:
@@ -271,8 +273,7 @@ $vnetName = "myVnet"
 $location = "eastus"
 $nicName = "myNic"
 
-$backendPool = 
-New-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup -LoadBalancerName $loadBalancerName -BackendAddressPoolName $backendPoolName  
+$backendPool = New-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup -LoadBalancerName $loadBalancerName -Name $backendPoolName  
 ```
 
 Присвойте внутреннему пулу новый IP-адрес из существующей виртуальной сети:
@@ -281,18 +282,17 @@ New-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup -LoadBa
 $virtualNetwork = 
 Get-AzVirtualNetwork -Name $vnetName -ResourceGroupName $resourceGroup 
  
-$ip1 = 
-New-AzLoadBalancerBackendAddressConfig -IpAddress "10.0.0.5" -Name "TestVNetRef" -VirtualNetwork $virtualNetwork  
+$ip1 = New-AzLoadBalancerBackendAddressConfig -IpAddress "10.0.0.5" -Name "TestVNetRef" -VirtualNetwork $virtualNetwork  
  
 $backendPool.LoadBalancerBackendAddresses.Add($ip1) 
 
-Set-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup  -LoadBalancerName $loadBalancerName -BackendAddressPoolName $backendPoolName -BackendAddressPool $backendPool  
+Set-AzLoadBalancerBackendAddressPool -InputObject $backendPool
 ```
 
 Получите сведения о внутреннем пуле для подсистемы балансировки нагрузки и убедитесь, что внутренние адреса добавлены во внутренний пул:
 
 ```azurepowershell-interactive
-Get-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup -LoadBalancerName $loadBalancerName -BackendAddressPoolName $backendPoolName -BackendAddressPool $backendPool  
+Get-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup -LoadBalancerName $loadBalancerName -Name $backendPoolName 
 ```
 Создайте сетевой интерфейс и добавьте его во внутренний пул. Присвойте IP-адрес одному из внутренних адресов:
 

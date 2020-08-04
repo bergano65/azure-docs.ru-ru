@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.subservice: ''
 ms.date: 04/15/2020
-ms.openlocfilehash: 3311a9a92cc5e63a6fa20e4dd0d2af00fdacc95c
-ms.sourcegitcommit: 3988965cc52a30fc5fed0794a89db15212ab23d7
+ms.openlocfilehash: ac3e163ffefcb7b164860b0c4fa42edc866227e3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85194490"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87065626"
 ---
 # <a name="tutorial-create-apache-spark-job-definition-in-synapse-studio"></a>Руководство по Создание определения задания Apache Spark в Synapse Studio
 
@@ -24,7 +24,7 @@ ms.locfileid: "85194490"
 
 * Создание определения задания Apache Spark для PySpark (Python)
 * Создание определения задания Apache Spark для Spark (Scala)
-* Создание определения задания Apache Spark для .NET Spark (C#)
+* Создание определения задания Apache Spark для .NET Spark (C# или F#)
 * Отправка определения задания Apache Spark в виде пакетного задания
 * Добавление определения задания Apache Spark в конвейер
 
@@ -42,7 +42,7 @@ ms.locfileid: "85194490"
 
 1. Откройте [Azure Synapse Studio](https://web.azuresynapse.net/).
 
-2. Вы можете перейти на страницу [примеров файлов для создания определений заданий Apache Spark](https://github.com/Azure-Samples/Synapse/tree/master/Spark/Python) и скачать **wordcount.jar** и **shakespear.txt**, а затем отправить эти файлы в службу хранилища Azure. Щелкните вкладку **Данные**, выберите **Учетные записи хранения** и отправьте соответствующие файлы в файловую систему ADLS 2-го поколения. Пропустите этот шаг, если файлы уже находятся в службе хранилища Azure. 
+2. Вы можете перейти на страницу [примеров файлов для создания определений заданий Apache Spark](https://github.com/Azure-Samples/Synapse/tree/master/Spark/Python) и скачать **wordcount.py** и **shakespear.txt**, а затем отправить эти файлы в службу хранилища Azure. Щелкните вкладку **Данные**, выберите **Учетные записи хранения** и отправьте соответствующие файлы в файловую систему ADLS 2-го поколения. Пропустите этот шаг, если файлы уже находятся в службе хранилища Azure. 
 
      ![Отправка файла Python](./media/apache-spark-job-definitions/upload-python-file.png)
 
@@ -57,9 +57,9 @@ ms.locfileid: "85194490"
      |  Свойство   | Описание   |  
      | ----- | ----- |  
      |Имя определения задания| Введите имя определения задания Apache Spark. Это имя можно изменить в любое время до публикации. Образец. `job definition sample`|
-     |Основной файл определения| Основной файл, используемый для задания. Выберите PY-файл в хранилище. Для отправки файла в учетную запись хранения можно выбрать **Отправить файл**. Образец. `abfss://azureportaldeploy@storageaccountname.dfs.core.windows.net/synapse/workspaces/workspace name/batchjobs/python/fileexists.py`|
-     |Аргументы командной строки| Дополнительные аргументы для задания. Образец. `shakespeare.txt`|
-     |Файлы ссылок| Дополнительные файлы, используемые для ссылки в основном файле определения. Для отправки файла в учетную запись хранения можно выбрать **Отправить файл**. Образец. `abfss://azureportaldeploy@storageaccountname.dfs.core.windows.net/synapse/workspaces/workspace name/batchjobs/python/shakespeare.txt`|
+     |Основной файл определения| Основной файл, используемый для задания. Выберите PY-файл в хранилище. Для отправки файла в учетную запись хранения можно выбрать **Отправить файл**. Образец. `abfss://…/path/to/wordcount.py`|
+     |Аргументы командной строки| Дополнительные аргументы для задания. Образец. `abfss://…/path/to/shakespeare.txt abfss://…/path/to/result`|
+     |Файлы ссылок| Дополнительные файлы, используемые для ссылки в основном файле определения. Для отправки файла в учетную запись хранения можно выбрать **Отправить файл**. |
      |Пул Spark| Задание будет отправлено в выбранный пул Apache Spark.|
      |Версия Spark| Версия Apache Spark, которая используется в пуле Apache Spark.|
      |Исполнители| Количество исполнителей, которые будут предоставлены для задания в определенном пуле Apache Spark.|
@@ -92,9 +92,9 @@ ms.locfileid: "85194490"
      |  Свойство   | Описание   |  
      | ----- | ----- |  
      |Имя определения задания| Введите имя определения задания Apache Spark. Это имя можно изменить в любое время до публикации. Образец. `job definition sample`|
-     |Основной файл определения| Основной файл, используемый для задания. Выберите JAR-файл в хранилище. Для отправки файла в учетную запись хранения можно выбрать **Отправить файл**. Образец. `abfss://sparkjob@storageaccountname.dfs.core.windows.net/scala/wordcount/wordcount.jar`|
+     |Основной файл определения| Основной файл, используемый для задания. Выберите JAR-файл в хранилище. Для отправки файла в учетную запись хранения можно выбрать **Отправить файл**. Образец. `abfss://…/path/to/wordcount.jar`|
      |Имя главного класса| Полный идентификатор или основной класс, который находится в основном файле определения. Образец. `WordCount`|
-     |Аргументы командной строки| Дополнительные аргументы для задания. Образец. `abfss://sparkjob@storageaccountname.dfs.core.windows.net/scala/wordcount/shakespeare.txt abfss://sparkjob@storageaccountname.dfs.core.windows.net/scala/wordcount/result`|
+     |Аргументы командной строки| Дополнительные аргументы для задания. Образец. `abfss://…/path/to/shakespeare.txt abfss://…/path/to/result`|
      |Файлы ссылок| Дополнительные файлы, используемые для ссылки в основном файле определения. Для отправки файла в учетную запись хранения можно выбрать **Отправить файл**.|
      |Пул Spark| Задание будет отправлено в выбранный пул Apache Spark.|
      |Версия Spark| Версия Apache Spark, которая используется в пуле Apache Spark.|
@@ -109,9 +109,9 @@ ms.locfileid: "85194490"
      ![Публикация определения Scala](./media/apache-spark-job-definitions/publish-scala-definition.png)
 
 
-## <a name="create-an-apache-spark-job-definition-for-net-sparkc"></a>Создание определения задания Apache Spark для .NET Spark (C#)
+## <a name="create-an-apache-spark-job-definition-for-net-sparkcf"></a>Создание определения задания Apache Spark для .NET Spark (C# или F#)
 
-В этом разделе рассказывается о том, как создать определение задания Apache Spark для .NET Spark (C#).
+В этом разделе рассказывается о том, как создать определение задания Apache Spark для .NET Spark (C# или F#).
  1. Откройте [Azure Synapse Studio](https://web.azuresynapse.net/).
 
  2. Вы можете перейти на страницу [примеров файлов для создания определений заданий Apache Spark](https://github.com/Azure-Samples/Synapse/tree/master/Spark/DotNET) и скачать **wordcount.zip** и **shakespear.txt**, а затем отправить эти файлы в службу хранилища Azure. Щелкните вкладку **Данные**, выберите **Учетные записи хранения** и отправьте соответствующие файлы в файловую систему ADLS 2-го поколения. Пропустите этот шаг, если файлы уже находятся в службе хранилища Azure. 
@@ -125,12 +125,13 @@ ms.locfileid: "85194490"
  4. В главном окне определения задания Apache Spark из раскрывающегося списка языков выберите **.NET Spark (C#/F#)** .
 
  5. Введите сведения об определении задания Apache Spark. Пример сведений можно скопировать.
+    
      |  Свойство   | Описание   |  
      | ----- | ----- |  
      |Имя определения задания| Введите имя определения задания Apache Spark. Это имя можно изменить в любое время до публикации. Образец. `job definition sample`|
-     |Основной файл определения| Основной файл, используемый для задания. Выберите из хранилища ZIP-файл, содержащий приложение .NET для Apache Spark (то есть основной исполняемый файл, библиотеки DLL с пользовательскими функциями и другие необходимые файлы). Для отправки файла в учетную запись хранения можно выбрать **Отправить файл**. Образец. `abfss://sparkjob@storageaccountname.dfs.core.windows.net/dotnet/wordcount/wordcount.zip`|
+     |Основной файл определения| Основной файл, используемый для задания. Выберите из хранилища ZIP-файл, содержащий приложение .NET для Apache Spark (то есть основной исполняемый файл, библиотеки DLL с пользовательскими функциями и другие необходимые файлы). Для отправки файла в учетную запись хранения можно выбрать **Отправить файл**. Образец. `abfss://…/path/to/wordcount.zip`|
      |Основной исполняемый файл| Основной исполняемый файл — это основной ZIP-файл определения. Образец. `WordCount`|
-     |Аргументы командной строки| Дополнительные аргументы для задания. Образец. `abfss://sparkjob@storageaccountname.dfs.core.windows.net/dotnet/wordcount/shakespeare.txt abfss://sparkjob@storageaccountname.dfs.core.windows.net/dotnet/wordcount/result`|
+     |Аргументы командной строки| Дополнительные аргументы для задания. Образец. `abfss://…/path/to/shakespeare.txt abfss://…/path/to/result`|
      |Файлы ссылок| Дополнительные файлы, необходимые рабочим узлам для запуска приложения .NET для Apache Spark, не включенные в основной ZIP-файл определения (то есть зависимые JAR-файлы, дополнительные библиотеки DLL с пользовательскими функциями и другие файлы конфигурации). Для отправки файла в учетную запись хранения можно выбрать **Отправить файл**.|
      |Пул Spark| Задание будет отправлено в выбранный пул Apache Spark.|
      |Версия Spark| Версия Apache Spark, которая используется в пуле Apache Spark.|

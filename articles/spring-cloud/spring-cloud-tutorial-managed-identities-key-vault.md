@@ -6,12 +6,13 @@ ms.author: brendm
 ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/08/2020
-ms.openlocfilehash: b9300845f6bc62d8ed90c2dc87efb626efae05bb
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.custom: devx-track-java
+ms.openlocfilehash: 2b68c4857d3d688c42779be9b5f5fa6e43e0403e
+ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86224919"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87116891"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-spring-cloud-app"></a>Руководство по использованию управляемого удостоверения для подключения Key Vault к приложению Azure Spring Cloud
 
@@ -97,7 +98,7 @@ az keyvault set-policy --name "<your-keyvault-name>" --object-id ${SERVICE_IDENT
     azure.keyvault.uri=https://<your-keyvault-name>.vault.azure.net
     ```
     > [!Note] 
-    > Вам нужно добавить ключ URL-адреса хранилища в `application.properties`, как показано выше. В противном случае URL-адрес хранилища ключей не будет использоваться во время выполнения.
+    > Вам нужно добавить URL-адрес хранилища ключей в `application.properties`, как показано выше. В противном случае URL-адрес хранилища ключей не будет использоваться во время выполнения.
 
 3. Добавьте пример кода в src/main/java/com/example/demo/DemoApplication.java. Он получает строку подключения из Key Vault. 
 

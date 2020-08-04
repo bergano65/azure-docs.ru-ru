@@ -6,12 +6,12 @@ ms.date: 04/04/2020
 ms.topic: include
 ms.author: trbye
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: d819eaa5c90e304a642efd3a6f2458cab4eefe7f
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 7572e5c5621b514c375e44ca44ddfc4102f5d714
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81422002"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87298840"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -68,6 +68,8 @@ ms.locfileid: "81422002"
 > Если вам нужна помощь с поиском этих значений, перейдите к разделу [Создание приложения LUIS для распознавания намерений](#create-a-luis-app-for-intent-recognition).
 
 [!code-python[](~/samples-cognitive-services-speech-sdk/quickstart/python/intent-recognition/quickstart.py?range=19-27)]
+
+В этом примере функция `add_intents()` используется для добавления списка явно определенных намерений. Если требуется добавить все намерения из модели, используйте `add_all_intents(model)` и передайте модель.
 
 ## <a name="recognize-an-intent"></a>Распознавание намерения
 

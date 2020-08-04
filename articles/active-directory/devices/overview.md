@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: overview
-ms.date: 03/26/2020
+ms.date: 07/20/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c25d5ee7ed730747317ea52286174968eb0e2fd
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 8399f7101697af429b8c073c101dbfea203e98ea
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86103710"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87025597"
 ---
 # <a name="what-is-a-device-identity"></a>Что такое удостоверение устройства?
 
@@ -45,9 +45,9 @@ ms.locfileid: "86103710"
 - **Присоединение к Azure AD**
    - Устройства, которые присоединены к Azure AD, принадлежат организации и входят в систему с учетной записью Azure AD, принадлежащей той же организации. Они существуют только в облаке.
       - Windows 10 
-      - [Виртуальные машины Windows Server 2019, работающие в Azure] (./howto-vm-sign-in-azure-ad-windows.md) (Server Core не поддерживается)
+      - [Виртуальные машины Windows Server 2019, работающие в Azure](howto-vm-sign-in-azure-ad-windows.md) (Server Core не поддерживается)
 - **присоединен к гибридному Azure AD**.
-   - Устройства, которые присоединены к Azure AD с помощью гибридного присоединения, принадлежат организации и входят в систему с учетной записью Azure AD, принадлежащей той же организации. Они существуют в облаке и в локальной среде.
+   - Устройства с гибридным присоединением к Azure AD принадлежат организации и входят в систему с учетной записью доменных служб Active Directory, принадлежащей данной организации. Они существуют в облаке и в локальной среде.
       - Windows 7, 8.1 или 10
       - Windows Server 2008 или более поздней версии
 

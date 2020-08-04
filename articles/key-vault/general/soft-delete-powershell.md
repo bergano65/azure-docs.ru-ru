@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 022e6eb517987207755d31fdb1820e35197d8dc6
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 9b9a7a5b3d92833a0f24f6bc646b19110dcfd66a
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86202124"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87386084"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-powershell"></a>Как использовать обратимое удаление в Key Vault с помощью PowerShell
 
@@ -27,7 +27,7 @@ ms.locfileid: "86202124"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-- Azure PowerShell 1.0.0 или более поздней версии. Если этот инструмент у вас не установлен, чтобы установить его и связать с подпиской Azure, прочитайте [общие сведения об Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview). 
+- Azure PowerShell 1.0.0 или более поздней версии. Если этот инструмент у вас не установлен, чтобы установить его и связать с подпиской Azure, прочитайте [общие сведения об Azure PowerShell](https://docs.microsoft.com/powershell/azure/). 
 
 >[!NOTE]
 > В вашу среду вместо правильной версии **может** загрузиться устаревшая версия хранилища ключей выходных данных файла форматирования PowerShell. Мы планируем обновить версию PowerShell і добавить в нее нужные исправления выходных данных файла форматирования. После этого мы обновим эту статью. Чтобы устранить эту проблему сейчас, сделайте следующее:
@@ -206,7 +206,7 @@ Set-AzKeyVaultAccessPolicy -VaultName ContosoVault -UserPrincipalName user@conto
 
 Управлять сертификатами можно с помощью приведенных ниже команд.
 
-- Удаление сертификата с именем SQLPassword: 
+- Удаление сертификата: 
   ```powershell
   Remove-AzKeyVaultCertificate -VaultName ContosoVault -Name 'MyCert'
   ```
@@ -285,5 +285,5 @@ Set-AzResource -resourceid $resource.ResourceId -Properties $resource.Properties
 
 ## <a name="other-resources"></a>Другие ресурсы
 
-- Обзор функции обратимого удаления Key Vault см. в статье [Общие сведения об обратимом удалении в Azure Key Vault](overview-soft-delete.md).
+- Обзор функции обратимого удаления Key Vault см. в статье [Общие сведения об обратимом удалении в Azure Key Vault](soft-delete-overview.md).
 - Общие сведения об использовании Azure Key Vault см. в [этой статье](overview.md).

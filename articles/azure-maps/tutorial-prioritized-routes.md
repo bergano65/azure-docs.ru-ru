@@ -1,20 +1,20 @@
 ---
 title: Руководство по Поиск нескольких маршрутов по видам транспорта | Microsoft Azure Maps
 description: Из этого руководства вы узнаете, как найти маршруты для различных видов транспорта с помощью службы Microsoft Azure Maps.
-author: philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 01/14/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.custom: mvc
-ms.openlocfilehash: c7ed2421f468dfbb64c635683a7909b517105bc7
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: mvc, devx-track-javascript
+ms.openlocfilehash: 0cb3c1eadae426cef59b7aad8821343c23e76d79
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80333792"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87289542"
 ---
 # <a name="tutorial-find-routes-for-different-modes-of-travel-using-azure-maps"></a>Руководство по Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
 
@@ -27,7 +27,7 @@ ms.locfileid: "80333792"
 > * Отображение нескольких маршрутов на карте.
 
 ## <a name="prerequisites"></a>Предварительные требования
-Перед тем, как продолжить работу, выполните шаги в разделе [Создание учетной записи службы "Карты Azure"](quick-demo-map-app.md#create-an-account-with-azure-maps) и выберите подписку с ценовой категорией S1. Выполните действия, описанные в разделе [Получение первичного ключа для учетной записи](quick-demo-map-app.md#get-the-primary-key-for-your-account), чтобы получить первичный ключ для вашей учетной записи. Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
+Перед тем, как продолжить работу, выполните шаги в разделе [Создание учетной записи службы "Карты Azure"](quick-demo-map-app.md#create-an-azure-maps-account) и выберите подписку с ценовой категорией S1. Выполните действия, описанные в разделе [Получение первичного ключа для учетной записи](quick-demo-map-app.md#get-the-primary-key-for-your-account), чтобы получить первичный ключ для вашей учетной записи. Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
 
 ## <a name="create-a-new-map"></a>Создание карты
 
@@ -206,7 +206,7 @@ ms.locfileid: "80333792"
 
 Все приведенные ниже блоки кода необходимо добавить в **блок загрузки карты eventListener**. Это позволит гарантировать их загрузку после полной загрузки карты.
 
-1. В функцию GetMap в коде Javascript добавьте следующее.
+1. В код JavaScript функции GetMap добавьте следующее.
 
     ```JavaScript
     // Use SubscriptionKeyCredential with a subscription key

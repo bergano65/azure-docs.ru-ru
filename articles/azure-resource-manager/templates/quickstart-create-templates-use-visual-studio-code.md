@@ -5,12 +5,12 @@ author: neilpeterson
 ms.date: 04/17/2020
 ms.topic: quickstart
 ms.author: nepeters
-ms.openlocfilehash: d36f8a9a8650b504da206e884d9be8e43e1becdb
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 06e7d3f291d32cecdcbf4d1f22ff9976d8970109
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86058152"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87040520"
 ---
 # <a name="quickstart-create-azure-resource-manager-templates-with-visual-studio-code"></a>Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code
 
@@ -102,7 +102,7 @@ ms.locfileid: "86058152"
 
 В результате этого действия будет создан файл параметров, который затем сопоставляется с шаблоном, на основе которого он был создан. Вы можете выбрать параметр, чтобы просмотреть и изменить текущий шаблон и сопоставление файла параметров в строке состояния Visual Studio Code.
 
-![](./media/quickstart-create-templates-use-visual-studio-code/16.png)
+![Изображение, показывающее сопоставление шаблона или файла параметров в строке состояния Visual Studio Code.](./media/quickstart-create-templates-use-visual-studio-code/16.png)
 
 Теперь, когда файл параметров сопоставлен с шаблоном, расширение проверит шаблон и файл параметров вместе. Чтобы увидеть эту проверку на практике, добавьте двухсимвольное значение в параметр `storageAccountName` в файле параметров и сохраните файл.
 

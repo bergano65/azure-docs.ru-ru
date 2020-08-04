@@ -4,12 +4,12 @@ description: Узнайте, как выполнить миграцию вирт
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: MVC
-ms.openlocfilehash: ca06dc9d5de9853915e2aaa0d86c1a444dab415a
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 707a74d0e993625d32c60f7120bf69055dc9e885
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119265"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290194"
 ---
 # <a name="migrate-vmware-vms-to-azure-agent-based"></a>Миграция виртуальных машин VMware в Azure (на основе агента)
 
@@ -195,7 +195,7 @@ ms.locfileid: "86119265"
 
 После скачивания шаблона OVF импортируйте его в VMware, чтобы создать приложение репликации на виртуальной машине VMware под управлением Windows Server 2016.
 
-1. Войдите на сервер VMware vCenter или узел vSphere ESXi с помощью клиента VMWare vSphere.
+1. Войдите на сервер VMware vCenter или узел vSphere ESXi с помощью клиента VMware vSphere.
 2. В меню **File** (Файл) выберите **Deploy OVF Template** (Развернуть шаблон OVF), чтобы запустить **мастер развертывания шаблона OVF**. 
 3. Укажите расположение скачанного шаблона OVF в разделе **Select source** (Выбор источника).
 4. В разделе **Review details** (Просмотр сведений) выберите **Next** (Далее).
@@ -209,7 +209,7 @@ ms.locfileid: "86119265"
 
 ### <a name="start-appliance-setup"></a>Запуск установки устройства
 
-1. В консоли клиента VMWare vSphere включите виртуальную машину. Виртуальная машина загружается в среду установки Windows Server 2016.
+1. В консоли клиента VMware vSphere включите виртуальную машину. Виртуальная машина загружается в среду установки Windows Server 2016.
 2. Примите лицензионное соглашение и введите пароль администратора.
 3. После установки войдите в виртуальную машину от имени администратора с помощью пароля. При первом входе в систему через несколько секунд будет запущено средство настройки устройства репликации (средство конфигурации Azure Site Recovery).
 5. Введите имя, которое будет использоваться для регистрации устройства в средстве "Миграция сервера". Затем нажмите кнопку **Далее**.

@@ -11,12 +11,12 @@ ms.author: anumamah
 ms.reviewer: nibaccam
 ms.date: 02/10/2020
 ms.custom: tracking-python
-ms.openlocfilehash: 595440dc727f3faf1fa475266825a671f00d9153
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: 2e22ac4601384508869ff43d473dd191f405cd43
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86143617"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092302"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-predict-taxi-fares"></a>Руководство по Использованию автоматического машинного обучения для прогнозирования тарифов на такси
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -863,12 +863,12 @@ x_train, x_test = train_test_split(final_df, test_size=0.2, random_state=223)
 
 ### <a name="define-training-settings"></a>Определение параметров обучения
 
-Определите параметры эксперимента и модели для обучения. Просмотрите полный список параметров [здесь](how-to-configure-auto-train.md). Отправка эксперимента с этими параметрами по умолчанию занимает примерно 5–20 минут, но если вы хотите снизить время выполнения, уменьшите значение параметра `experiment_timeout_minutes`.
+Определите параметры эксперимента и модели для обучения. Просмотрите полный список параметров [здесь](how-to-configure-auto-train.md). Отправка эксперимента с этими параметрами по умолчанию занимает примерно 5–20 минут, но если вы хотите снизить время выполнения, уменьшите значение параметра `experiment_timeout_hours`.
 
 |Свойство| Значение в этом руководстве |Описание|
 |----|----|---|
 |**iteration_timeout_minutes**|2|Максимальная длительность каждой итерации в минутах. Уменьшите это значение, чтобы уменьшить общее время выполнения.|
-|**experiment_timeout_minutes**|20|Максимальное количество времени в минутах, в течение которого могут быть пройдены все итерации до завершения эксперимента.|
+|**experiment_timeout_hours**|0,3|Максимальное количество времени в часах, в течение которого могут быть пройдены все итерации до завершения эксперимента.|
 |**enable_early_stopping**|True|Флаг для включения преждевременного завершения, если оценка не улучшается за короткое время.|
 |**primary_metric**| spearman_correlation; | Метрика, который вы хотите оптимизировать. Наиболее подходящая модель будет выбрана на основе этой метрики.|
 |**featurization**| авто | Используя значение **auto**, эксперимент может предварительно обработать входные данные (обработка отсутствующих данных, преобразование текста в числовой тип и т. д.).|
@@ -880,7 +880,7 @@ import logging
 
 automl_settings = {
     "iteration_timeout_minutes": 2,
-    "experiment_timeout_minutes": 20,
+    "experiment_timeout_hours": 0.3,
     "enable_early_stopping": True,
     "primary_metric": 'spearman_correlation',
     "featurization": 'auto',
@@ -984,7 +984,9 @@ print(fitted_model)
 Используйте лучшую модель для выполнения прогнозирования в тестовом наборе данных, чтобы прогнозировать тарифы на такси. Функция `predict` использует лучшую модель и прогнозирует значения Y **стоимость поездки** из набора данных `x_test`. Распечатайте первые 10 прогнозируемых значений стоимости из `y_predict`.
 
 ```python
-y_predict = fitted_model.predict(x_test.values)
+y_test = x_test.pop("totalAmount")
+
+y_predict = fitted_model.predict(x_test)
 print(y_predict[:10])
 ```
 

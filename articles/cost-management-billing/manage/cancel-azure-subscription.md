@@ -8,12 +8,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: banders
-ms.openlocfilehash: 2d8b529683f4d07bc47010711d65ca40536823fb
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.openlocfilehash: 8b0ba7b597921d82883f2c7ba505ebb10eee1876
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82996561"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87039755"
 ---
 # <a name="cancel-your-azure-subscription"></a>Отмена подписки Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "82996561"
 * Завершите работу служб. Перейдите на [страницу ресурсов на портале управления](https://ms.portal.azure.com/?flight=1#blade/HubsExtension/Resources/resourceType/Microsoft.Resources%2Fresources) и выберите команду **Остановить**, чтобы остановить работу всех запущенных виртуальных машин, приложений или других служб.
 * Перенесите данные. Ознакомьтесь со статьей [Перемещение ресурсов в новую группу ресурсов или подписку](../../azure-resource-manager/management/move-resource-group-and-subscription.md).
 * Удалите все ресурсы и все группы ресурсов.
-* Если у вас есть пользовательские роли, которые ссылаются на эту подписку в `AssignableScopes`, необходимо обновить эти пользовательские роли, чтобы удалить подписку. При попытке обновить пользовательскую роль после отмены подписки может возникнуть ошибка. Дополнительные сведения см. в статье [Устранение проблем с пользовательскими ролями](../../role-based-access-control/troubleshooting.md#problems-with-custom-roles) и [Пользовательские роли для ресурсов Azure](../../role-based-access-control/custom-roles.md).
+* Если у вас есть пользовательские роли, которые ссылаются на эту подписку в `AssignableScopes`, необходимо обновить эти пользовательские роли, чтобы удалить подписку. При попытке обновить пользовательскую роль после отмены подписки может возникнуть ошибка. Дополнительные сведения см. в разделах [Проблемы с пользовательскими ролями](../../role-based-access-control/troubleshooting.md#problems-with-custom-roles) и [Настраиваемые роли Azure](../../role-based-access-control/custom-roles.md).
 
 Если вы отмените подписку на платный план поддержки Azure, вам по-прежнему будут выставляться счета за оставшуюся часть срока действия подписки. Дополнительные сведения см. на странице [Планы поддержки Azure](https://azure.microsoft.com/support/plans/).
 

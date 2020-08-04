@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание пула Apache Spark (предварительная версия) с помощью портала Azure
+title: Краткое руководство. Создание пула Apache Spark с помощью портала Azure
 description: Действия, описанные в этом учебнике, позволяют создать пул Apache Spark с помощью портала Azure.
 services: synapse-analytics
 author: julieMSFT
@@ -9,14 +9,14 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 959ad0413c83389aef6a7607c1239043e242b75b
-ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
+ms.openlocfilehash: 0930b7cb7b98874e20f070763a7ec50a6b4f3ef0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86274362"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87006081"
 ---
-# <a name="quickstart-create-a-new-apache-spark-pool-preview-using-the-azure-portal"></a>Краткое руководство. Создание пула Apache Spark (предварительная версия) с помощью портала Azure
+# <a name="quickstart-create-a-new-apache-spark-pool-using-the-azure-portal"></a>Краткое руководство. Создание пула Apache Spark с помощью портала Azure
 
 Azure Synapse Analytics предлагает различные механизмы аналитики, упрощающие прием, преобразование, моделирование, анализ и распространение данных. Пул Apache Spark предлагает возможности для вычислений больших данных с открытым кодом. После создания пула Apache Spark в рабочей области Synapse вы сможете загружать, моделировать, обрабатывать и распространять данные для быстрого получения аналитических сведений.
 

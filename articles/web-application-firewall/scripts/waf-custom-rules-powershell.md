@@ -1,5 +1,5 @@
 ---
-title: Пример скрипта Azure PowerShell. Создание настраиваемых правил WAF
+title: Пример сценария Azure PowerShell, использующего настраиваемые правила WAF
 description: Пример скрипта Azure PowerShell. Создание настраиваемых правил для брандмауэра веб-приложения в Шлюзе приложений
 author: vhorne
 ms.service: web-application-firewall
@@ -7,12 +7,12 @@ services: web-application-firewall
 ms.topic: sample
 ms.date: 09/30/2019
 ms.author: victorh
-ms.openlocfilehash: 950f71c284268a9aa2773eb57213e266622d85bd
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: b73b15e7f174868fa4c0a9518725a4585cf3dffe
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73509558"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87035593"
 ---
 # <a name="create-waf-custom-rules-with-azure-powershell"></a>Создание настраиваемых правил WAF с помощью Azure PowerShell
 
@@ -71,4 +71,4 @@ Remove-AzResourceGroup -Name CustomRulesTest
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о настраиваемых правил WAF см. в статье о [настраиваемых правилах для брандмауэра веб-приложения](../ag/custom-waf-rules-overview.md).
-- Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+- Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).

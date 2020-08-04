@@ -1,6 +1,6 @@
 ---
-title: Создание клиента в Виртуальном рабочем столе Windows в Azure
-description: В этой статье объясняется, как настраивать клиенты Виртуального рабочего стола в Azure Active Directory.
+title: Создание арендатора в Виртуальном рабочем столе Windows (классическом) в Azure
+description: В этой статье объясняется, как настроить арендаторы Виртуального рабочего стола (классического) в Azure Active Directory.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: tutorial
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 6a1e301b63eee348f59a1b9570c2c3ffcd78ecef
-ms.sourcegitcommit: f98ab5af0fa17a9bba575286c588af36ff075615
+ms.openlocfilehash: a1f2dbf1f7cfc8fbb6a29129c7e445ffef87b070
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85362396"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87286365"
 ---
-# <a name="tutorial-create-a-tenant-in-windows-virtual-desktop"></a>Руководство по Создание клиента в Виртуальном рабочем столе Windows
+# <a name="tutorial-create-a-tenant-in-windows-virtual-desktop-classic"></a>Руководство по созданию арендатора в Виртуальном рабочем столе Windows (классическом)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows.
+>Это содержимое применимо к Виртуальному рабочему столу Windows (классическому), который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows.
 
 Создание клиента в Виртуальном рабочем столе — это первый шаг к созданию собственного решения для виртуализации рабочих столов. Арендатор — это группа, состоящая из одного или нескольких пулов узлов. Каждый пул узлов состоит из нескольких узлов сеансов, запущенных как виртуальные машины в Azure и зарегистрированных в службе "Виртуальный рабочий стол Windows". Каждый пул узлов также состоит из одной или нескольких групп приложений, которые используются для публикации ресурсов удаленного рабочего стола и удаленных приложений для пользователей. В арендаторе можно создавать пулы узлов и группы приложений, назначать пользователей и устанавливать подключения в службе.
 

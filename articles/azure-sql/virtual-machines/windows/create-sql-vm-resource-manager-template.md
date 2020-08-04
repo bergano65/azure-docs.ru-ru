@@ -1,30 +1,34 @@
 ---
-title: Создание виртуальной машины SQL Server (с помощью шаблона Azure Resource Manager)
-description: Сведения о том, как создать SQL Server на виртуальной машине Azure с помощью шаблона Azure Resource Manager.
+title: Создание виртуальной машины SQL Server с помощью шаблона ARM
+description: Узнайте, как создать сервер SQL Server на виртуальной машине Azure с помощью шаблона Azure Resource Manager (шаблона ARM).
 author: MashaMSFT
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mathoma
 ms.date: 06/29/2020
 ms.service: virtual-machines-sql
-ms.openlocfilehash: 8b165f640548f28e5d94e5a791c0fe8545df4d78
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 1b6f54c823f59bb654ac86f041eefe80af3eb5ea
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85852504"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87003871"
 ---
-# <a name="create-sql-server-vm-azure-resource-manager-template"></a>Создание виртуальной машины SQL Server (с помощью шаблона Azure Resource Manager)
+# <a name="quickstart-create-sql-server-vm-using-an-arm-template"></a>Краткое руководство. Создание виртуальной машины SQL Server с помощью шаблона ARM
 
-Используйте этот шаблон Azure Resource Manager для развертывания SQL Server на виртуальной машине Azure. 
+Используйте этот шаблон Azure Resource Manager (шаблон ARM) для развертывания сервера SQL Server на виртуальной машине Azure. 
 
 [!INCLUDE [About Azure Resource Manager](../../../../includes/resource-manager-quickstart-introduction.md)]
+
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-sql-vm-new-storage%2fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать шаблон ARM для развертывания виртуальной машины SQL Server, требуется следующее:
 
-- Последняя версия [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) и (или) [PowerShell](/powershell/scripting/install/installing-powershell?view=powershell-7). 
+- Последняя версия [Azure CLI](/cli/azure/install-azure-cli) и (или) [PowerShell](/powershell/scripting/install/installing-powershell). 
 - Предварительно настроенная [группа ресурсов](../../../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups) с подготовленной [виртуальной сетью](../../../virtual-network/quick-create-portal.md) и [подсетью](../../../virtual-network/virtual-network-manage-subnet.md#add-a-subnet).
 - Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начать работу.
 
@@ -43,7 +47,7 @@ ms.locfileid: "85852504"
 - [Microsoft.Compute/virtualMachines](/azure/templates/microsoft.compute/virtualmachines): создает виртуальную машину в Azure. 
 - [Microsoft.SqlVirtualMachine/SqlVirtualMachines](/azure/templates/microsoft.sqlvirtualmachine/sqlvirtualmachines): регистрирует виртуальную машину в поставщике ресурсов виртуальной машины SQL. 
 
-Другие шаблоны для SQL Server на виртуальных машинах Azure можно найти в [коллекции шаблонов быстрого запуска](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Sqlvirtualmachine).
+Другие шаблоны для SQL Server на виртуальных машинах Azure можно найти в [коллекции шаблонов быстрого запуска](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Sqlvirtualmachine&pageNumber=1&sort=Popular).
 
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
@@ -116,7 +120,7 @@ Write-Host "Press [ENTER] to continue..."
 Пошаговые инструкции по созданию шаблона см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание и развертывание первого шаблона Azure Resource Manager](/azure/azure-resource-manager/templates/template-tutorial-create-first-template)
+> [Руководство. Создание и развертывание первого шаблона ARM](/azure/azure-resource-manager/templates/template-tutorial-create-first-template)
 
 Другие способы развертывания виртуальной машины SQL Server см. в следующих статьях: 
 - [Портал Azure](create-sql-vm-portal.md)

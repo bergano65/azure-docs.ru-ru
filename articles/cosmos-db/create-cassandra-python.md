@@ -9,12 +9,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 05/18/2020
 ms.custom: tracking-python
-ms.openlocfilehash: dee07db85d8886ab44be096e405143ea0d881ba2
-ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
+ms.openlocfilehash: a388cde60e0d19aed1af9620f82b7baa6d5b08fc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2020
-ms.locfileid: "85118279"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87067318"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-python-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для Python и Azure Cosmos DB
 
@@ -137,9 +137,9 @@ ms.locfileid: "85118279"
 
 1. Выберите элемент **Строка подключения** в своей учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/). 
 
-1. Вы можете использовать кнопку ![Кнопка "Копировать"](./media/create-cassandra-python/copy.png) в правой части экрана, чтобы скопировать значение параметра Contact point (Контакт).
+1. Нажмите кнопку :::image type="icon" source="./media/create-cassandra-python/copy.png"::: в правой части экрана, чтобы скопировать верхнее значение "Contact point" (Контакт). 
 
-    :::image type="content" source="./media/create-cassandra-python/keys.png" alt-text="Просмотр и копирование имени пользователя, пароля и контакта в колонке строки подключения на портале Azure":::
+   :::image type="content" source="./media/create-cassandra-python/keys.png" alt-text="Просмотр и копирование имени пользователя, пароля и контакта в колонке строки подключения на портале Azure":::
 
 1. Откройте файл *config.py*. 
 

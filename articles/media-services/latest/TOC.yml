@@ -171,10 +171,10 @@
           href: media-services-metrics-diagnostic-logs.md
         - name: Схемы для журналов диагностики
           href: media-services-diagnostic-logs-schema.md
-    - name: Клиенты в Проигрывателе
+    - name: Проигрыватель мультимедиа Azure
       items:
-        - name: Проигрыватель мультимедиа Azure
-          href: use-azure-media-player.md
+        - name: Обзор Проигрывателя мультимедиа Azure
+          href: 'https://docs.microsoft.com/en-us/azure/media-services/azure-media-player/azure-media-player-overview'
     - name: "Разработка с использованием API-интерфейсов версии\_3"
       items:
         - name: Обзор
@@ -285,7 +285,11 @@
           items:
             - name: С помощью .NET
               displayName: 'encode, encoding, custom, transform'
-              href: customize-encoder-presets-how-to.md
+              items:
+                - name: Настройка предустановок кодировщика
+                  href: customize-encoder-presets-how-to.md
+                - name: Создание преобразования наложения
+                  href: how-to-create-overlay.md
             - name: С помощью CLI
               displayName: 'encode, encoding, custom, transform'
               href: custom-preset-cli-howto.md
@@ -355,6 +359,14 @@
           href: download-results-howto.md
         - name: Описательный звуковой сигнал
           href: signal-descriptive-audio-howto.md
+    - name: Использование проигрывателей мультимедиа
+      items:
+        - name: Полная настройка Проигрывателя мультимедиа Azure
+          href: 'https://docs.microsoft.com/azure/media-services/azure-media-player/azure-media-player-full-setup'
+        - name: Использование проигрывателя Video.js
+          href: how-to-video-js-player.md
+        - name: Использование видеопроигрывателя Shaka
+          href: how-to-shaka-player.md
 - name: Справочник
   items:
     - name: Спецификация OpenAPI (Swagger)

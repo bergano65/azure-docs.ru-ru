@@ -6,15 +6,15 @@ ms.service: logic-apps
 ms.suite: integration
 author: ecfan
 ms.author: estfan
-ms.reviewer: klam, LADocs
+ms.reviewer: estfan, LADocs
 ms.topic: tutorial
-ms.date: 07/07/2020
-ms.openlocfilehash: 4edac3237f2eefaa98a6463bb0e720c0d884f0ca
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.date: 07/20/2020
+ms.openlocfilehash: 91ff67f886dbf54b93e9b91822b5f8535ea77e06
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119418"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079200"
 ---
 # <a name="tutorial-monitor-virtual-machine-changes-by-using-azure-event-grid-and-logic-apps"></a>Руководство по отслеживанию изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure"
 
@@ -32,7 +32,7 @@ ms.locfileid: "86119418"
 
 В этом руководстве описывается создание приложения логики, которое отслеживает изменения в виртуальной машине и отправляет сообщения электронной почты об этих изменениях. При создании приложения логики с подпиской на события ресурса Azure события передаются из этого ресурса в приложение логики с помощью службы "Сетка событий". В этом руководстве описывается создание приложения логики:
 
-![Обзор: отслеживание виртуальной машины с помощью службы "Сетка событий" и приложения логики](./media/monitor-virtual-machine-changes-event-grid-logic-app/monitor-virtual-machine-event-grid-logic-app-overview.png)
+![Снимок экрана конструктора Logic Apps, в котором показан рабочий процесс для мониторинга виртуальной машины с помощью Сетки событий.](./media/monitor-virtual-machine-changes-event-grid-logic-app/monitor-virtual-machine-event-grid-logic-app-overview.png)
 
 В этом руководстве описано следующее:
 
@@ -60,11 +60,11 @@ ms.locfileid: "86119418"
 
 1. В главном меню на портале Azure последовательно выберите **Создать ресурс** > **Интеграция** > **Приложение логики**.
 
-   ![Создание приложения логики](./media/monitor-virtual-machine-changes-event-grid-logic-app/azure-portal-create-logic-app.png)
+   ![Снимок экрана портала Azure, отображающий кнопку для создания ресурса приложения логики.](./media/monitor-virtual-machine-changes-event-grid-logic-app/azure-portal-create-logic-app.png)
 
 1. В разделе **Приложение логики** укажите сведения о своем ресурсе приложения логики. Когда все будет готово, выберите **Создать**.
 
-   ![Ввод данных приложения логики](./media/monitor-virtual-machine-changes-event-grid-logic-app/create-logic-app-for-event-grid.png)
+   ![Снимок экрана меню создания приложений логики, в котором отображаются такие сведения, как имя, подписка, группа ресурсов и расположение.](./media/monitor-virtual-machine-changes-event-grid-logic-app/create-logic-app-for-event-grid.png)
 
    | Свойство | Обязательно | Значение | Описание |
    |----------|----------|-------|-------------|
@@ -78,7 +78,7 @@ ms.locfileid: "86119418"
 
 1. В разделе **Шаблоны** выберите **Пустое приложение логики**.
 
-   ![Выбор шаблона приложения логики](./media/monitor-virtual-machine-changes-event-grid-logic-app/choose-logic-app-template.png)
+   ![Снимок экрана шаблонов Logic Apps, демонстрирующий выбор создания пустого приложения логики.](./media/monitor-virtual-machine-changes-event-grid-logic-app/choose-logic-app-template.png)
 
    Теперь в конструкторе Logic Apps отображаются [*триггеры*](../logic-apps/logic-apps-overview.md#logic-app-concepts), которые можно использовать для запуска приложения логики. Каждое приложение логики должно запускаться по триггеру, который активируется, когда происходит определенное событие или если выполняются заданные условия. При каждой активации триггера Azure Logic Apps создает экземпляр рабочего процесса для выполнения приложения логики.
 
@@ -88,18 +88,18 @@ ms.locfileid: "86119418"
 
 1. В конструкторе в поле поиска введите `event grid` в качестве фильтра. В списке триггеров выберите **При возникновении события ресурса**.
 
-   ![Выберите триггер При возникновении события ресурса](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-event-grid-trigger.png)
+   ![Снимок экрана конструктора Logic Apps, отображающий выбор триггера Сетки событий для события ресурса](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-event-grid-trigger.png)
 
 1. При появлении запроса войдите в Сетку событий Azure, используя учетные данные учетной записи Azure. Убедитесь, что в списке **клиентов** с клиентом Azure Active Directory, связанным с вашей подпиской Azure, отображается правильный клиент, например:
 
-   ![Вход с помощью учетных данных Azure](./media/monitor-virtual-machine-changes-event-grid-logic-app/sign-in-event-grid.png)
+   ![Снимок экрана конструктора Logic Apps, в котором отображается запрос на вход для подключения к Сетке событий.](./media/monitor-virtual-machine-changes-event-grid-logic-app/sign-in-event-grid.png)
 
    > [!NOTE]
    > Если вы вошли с помощью личной учетной записи Майкрософт, например @outlook.com или @hotmail.com, триггер службы "Сетка событий" может отображаться неправильно. Чтобы избежать этого, выберите [Подключиться к субъекту-службе](../active-directory/develop/howto-create-service-principal-portal.md) или выполните проверку подлинности в качестве участника Azure Active Directory, связанного с подпиской Azure, например *имя_пользователя*@emailoutlook.onmicrosoft.com.
 
 1. Теперь подпишите приложение логики на события издателя. Укажите сведения о подписке на события, как указано в следующей таблице, например:
 
-   ![Ввод сведений подписки на события](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-event-grid-trigger-details.png)
+   ![Снимок экрана конструктора Logic Apps, отображающий редактор сведений для триггера при возникновении события ресурса](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-event-grid-trigger-details.png)
 
    | Свойство | Обязательно | Значение | Описание |
    | -------- | -------- | ----- | ----------- |
@@ -112,7 +112,7 @@ ms.locfileid: "86119418"
 
 1. Сохраните приложение логики. На панели инструментов конструктора щелкните **Сохранить**. Чтобы свернуть и скрыть сведения о действии в приложении логики, выберите заголовок окна действия.
 
-   ![Сохранение приложения логики](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-event-grid-save.png)
+   ![Снимок экрана конструктора Logic Apps, отображающий кнопку "Сохранить" для сохранения изменений рабочего процесса.](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-event-grid-save.png)
 
    При сохранении приложения логики с триггером службы "Сетка событий" Azure автоматически создает подписку на события для приложения логики выбранного ресурса. Таким образом, когда ресурс публикует событие в службе "Сетка событий", она автоматически отправляет это событие в приложение логики. Это событие активирует приложение логики, а затем создает и запускает экземпляр рабочего процесса, который определяется на следующих шагах.
 
@@ -124,25 +124,25 @@ ms.locfileid: "86119418"
 
 1. В конструкторе Logic Apps для триггера Сетки событий выберите **Новый шаг**.
 
-   ![Выбор параметра "Новый шаг"](./media/monitor-virtual-machine-changes-event-grid-logic-app/choose-new-step-condition.png)
+   ![Снимок экрана конструктора Logic Apps, отображающий кнопку для добавления нового шага в рабочий процесс.](./media/monitor-virtual-machine-changes-event-grid-logic-app/choose-new-step-condition.png)
 
 1. В разделе **Выберите действие** введите фильтр `condition` в поле поиска. В списке действий выберите действие **Условие**.
 
-   ![Добавить условие](./media/monitor-virtual-machine-changes-event-grid-logic-app/select-condition.png)
+   ![Снимок экрана конструктора Logic Apps, отображающий кнопку для добавления действия условия](./media/monitor-virtual-machine-changes-event-grid-logic-app/select-condition.png)
 
    Конструктор Logic Apps добавляет пустое условие в рабочий процесс, включая пути действий для выполнения согласно значениям условия True и False.
 
-   ![Отображается пустое условие](./media/monitor-virtual-machine-changes-event-grid-logic-app/empty-condition.png)
+   ![Снимок экрана конструктора Logic Apps, отображающий пустое условие, добавленное в рабочий процесс.](./media/monitor-virtual-machine-changes-event-grid-logic-app/empty-condition.png)
 
 1. Измените заголовок условия на `If a virtual machine in your resource group has changed`. В строке заголовка условия нажмите кнопку многоточия ( **…** ) и выберите **Переименовать**.
 
-   ![Изменение условия](./media/monitor-virtual-machine-changes-event-grid-logic-app/rename-condition.png)
+   ![Снимок экрана конструктора Logic Apps, показывающий контекстное меню редактора условий с выбранным параметром "Переименовать".](./media/monitor-virtual-machine-changes-event-grid-logic-app/rename-condition.png)
 
 1. Создайте условие, которое проверяет событие `body` на наличие объекта `data`, у которого свойство `operationName` соответствует операции `Microsoft.Compute/virtualMachines/write`. Узнайте больше о [схеме событий службы "Сетка событий"](../event-grid/event-schema.md).
 
    1. В первой строке в разделе **И** щелкните поле слева. Когда отобразится список динамического содержимого, выберите **Выражение**.
 
-      ![Выбор параметра "Выражение" для открытия редактора выражений](./media/monitor-virtual-machine-changes-event-grid-logic-app/condition-choose-expression.png)
+      ![Снимок экрана конструктора Logic Apps, в котором отображается условие с выбранным редактором выражений.](./media/monitor-virtual-machine-changes-event-grid-logic-app/condition-choose-expression.png)
 
    1. В редакторе выражений введите это выражение, которое возвращает имя операции из триггера, а затем нажмите кнопку **ОК**:
 
@@ -150,7 +150,7 @@ ms.locfileid: "86119418"
 
       Пример:
 
-      ![Ввод выражения для извлечения имени операции](./media/monitor-virtual-machine-changes-event-grid-logic-app/condition-add-data-operation-name.png)
+      ![Снимок экрана конструктора Logic Apps, отображающий редактор условий с выражением для извлечения имени операции.](./media/monitor-virtual-machine-changes-event-grid-logic-app/condition-add-data-operation-name.png)
 
    1. В среднем поле укажите для оператора значение **равно**.
 
@@ -160,11 +160,11 @@ ms.locfileid: "86119418"
 
    По завершении условие будет выглядеть следующим образом:
 
-   ![Завершенное условие, которое сравнивает операцию](./media/monitor-virtual-machine-changes-event-grid-logic-app/complete-condition.png)
+   ![Снимок экрана конструктора Logic Apps, отображающий условие, которое сравнивает операцию.](./media/monitor-virtual-machine-changes-event-grid-logic-app/complete-condition.png)
 
    При переключении из представления конструктора в представление кода и обратно выражение, указанное в условии, преобразуется в токен **data.operationName**:
 
-   ![Разрешенные токены в условии](./media/monitor-virtual-machine-changes-event-grid-logic-app/resolved-condition.png)
+   ![Снимок экрана конструктора Logic Apps, отображающий условие с разрешенными токенами.](./media/monitor-virtual-machine-changes-event-grid-logic-app/resolved-condition.png)
 
 1. Сохраните приложение логики.
 
@@ -174,7 +174,7 @@ ms.locfileid: "86119418"
 
 1. В поле условия **Если истинно** выберите **Добавить действие**.
 
-   ![Добавление действия для условия со значением true](./media/monitor-virtual-machine-changes-event-grid-logic-app/condition-true-add-action.png)
+   ![Снимок экрана редактора условий конструктора Logic Apps, отображающий кнопку для добавления действия, когда условие имеет значение true.](./media/monitor-virtual-machine-changes-event-grid-logic-app/condition-true-add-action.png)
 
 1. В разделе **Выберите действие** введите фильтр `send an email` в поле поиска. Найдите и выберите соединитель, соответствующий поставщику услуг электронной почты. Затем выберите действие "отправить сообщение" для соединителя. Пример:
 
@@ -186,7 +186,7 @@ ms.locfileid: "86119418"
 
    В рамках этого руководства используется соединитель Office 365 Outlook. Если вы используете другой поставщик, то действия будут аналогичными, но пользовательский интерфейс может немного отличаться.
 
-   ![Выбор действия "отправить сообщение"](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-send-email.png)
+   ![Снимок экрана конструктора Logic Apps, отображающий поиск действия "Отправить сообщение электронной почты" в соединителе Office 365 Outlook.](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-send-email.png)
 
 1. Если подключение к вашему поставщику услуг электронной почты не установлено, войдите в учетную запись электронной почты в ответ на запрос аутентификации.
 
@@ -194,7 +194,7 @@ ms.locfileid: "86119418"
 
 1. Введите данные электронной почты, как показано в указанной ниже таблице:
 
-   ![Предоставление сведений о действии электронной почты](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-empty-email-action.png)
+   ![Снимок экрана конструктора Logic Apps, в котором отображается динамическое содержимое, добавляемое в строку темы письма для истинного условия.](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-empty-email-action.png)
 
    > [!TIP]
    > Чтобы выбрать выходные данные предыдущих шагов в рабочем процессе, щелкните в поле ввода, чтобы открыть список динамического содержимого, или выберите **Добавить динамическое содержимое**. Выберите **Дополнительно** для каждого раздела в списке, чтобы отобразить дополнительные результаты. Чтобы закрыть список динамического содержимого, снова выберите **Добавить динамическое содержимое**.
@@ -211,11 +211,11 @@ ms.locfileid: "86119418"
 
    Теперь действие отправки электронного сообщения может выглядеть следующим образом.
 
-   ![Выбор выходных данных для включения в электронное сообщение](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-send-email-details.png)
+   ![Снимок экрана конструктора Logic Apps, в котором отображаются выбранные выходные данные для отправки по электронной почте при обновлении виртуальной машины.](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-send-email-details.png)
 
    Готовое приложение логики может выглядеть следующим образом:
 
-   ![Готовое приложение логики](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-completed.png)
+   ![Снимок экрана конструктора Logic Apps, отображающий созданное приложение логики со сведениями о триггере и действиях.](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-completed.png)
 
 1. Сохраните приложение логики. Чтобы свернуть и скрыть сведения о каждом действии в приложении логики, выберите заголовок окна действия.
 
@@ -229,15 +229,15 @@ ms.locfileid: "86119418"
 
    Через несколько секунд вы должны получить электронное сообщение. Пример:
 
-   ![Электронное сообщение об обновлении виртуальной машины](./media/monitor-virtual-machine-changes-event-grid-logic-app/email.png)
+   ![Снимок экрана с примером письма Outlook, в котором отображаются сведения об обновлении виртуальной машины.](./media/monitor-virtual-machine-changes-event-grid-logic-app/email.png)
 
 1. Чтобы просмотреть журнал триггера и выполнения приложения логики, в меню приложения выберите **Обзор**. Чтобы просмотреть дополнительные сведения о выполнении, выберите строку для этого выполнения.
 
-   ![Журнал выполнения приложения логики](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-run-history.png)
+   ![Снимок экрана со страницей обзора приложения логики, показывающий выбор состояния успешного выполнения.](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-run-history.png)
 
 1. Чтобы просмотреть входные и выходные данные каждого действия, разверните действие, которое необходимо просмотреть. Эти сведения помогут вам диагностировать и устранить проблемы в приложении логики.
 
-   ![Информация журнала выполнения приложения логики](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-run-history-details.png)
+   ![Снимок экрана журнала выполнения приложения логики, в котором отображаются сведения о каждом выполнении.](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-run-history-details.png)
 
 Поздравляем! Вы создали и запустили приложение логики, которое отслеживает события ресурса с помощью службы "Сетка событий" и отправляет вам электронные сообщения при возникновении этих событий. Вы также узнали, как можно легко создать рабочие процессы, позволяющие автоматизировать и интегрировать системы и облачные службы.
 
@@ -254,7 +254,7 @@ ms.locfileid: "86119418"
 
 * Чтобы остановить работу приложения логики, не удаляя данные, отключите приложение. В меню приложения логики выберите **Обзор**. На панели инструментов нажмите кнопку **Отключить**.
 
-  ![Отключение приложения логики.](./media/monitor-virtual-machine-changes-event-grid-logic-app/turn-off-disable-logic-app.png)
+  ![Снимок экрана обзора приложения логики, показывающий выбор кнопки "Отключить" для отключения приложения логики.](./media/monitor-virtual-machine-changes-event-grid-logic-app/turn-off-disable-logic-app.png)
 
   > [!TIP]
   > Если меню приложения логики не отображается, попробуйте вернуться к панели мониторинга Azure и повторно откройте приложение логики.

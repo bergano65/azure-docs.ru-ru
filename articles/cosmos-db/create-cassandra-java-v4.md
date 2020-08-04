@@ -1,5 +1,5 @@
 ---
-title: Создание приложения Java с помощью API Cassandra для Azure Cosmos DB
+title: Создание приложения с помощью API Cassandra для Azure Cosmos DB и пакета SDK Java версии 4.0
 description: В этом руководстве показано, как использовать API Cassandra Azure Cosmos DB для создания приложения профиля с помощью портала Azure и Java.
 ms.service: cosmos-db
 author: TheovanKraay
@@ -8,13 +8,13 @@ ms.subservice: cosmosdb-cassandra
 ms.devlang: java
 ms.topic: quickstart
 ms.date: 05/18/2020
-ms.custom: seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 59ea78fed27b41199699d5413f605288bbf1a608
-ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
+ms.custom: seo-java-august2019, seo-java-september2019, devx-track-java
+ms.openlocfilehash: 4411c2d3b540423c1086fe8b45bd343870a72f5b
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2020
-ms.locfileid: "85118395"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87319207"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-cassandra-api-data-v4-driver"></a>Краткое руководство. Создание приложения Java для управления данными API Cassandra в Azure Cosmos DB (драйвер версии 4)
 
@@ -155,7 +155,7 @@ ms.locfileid: "85118395"
 
     :::image type="content" source="./media/create-cassandra-java/copy-username-connection-string-azure-portal.png" alt-text="Просмотр и копирование имени пользователя на странице "Строка подключения" на портале Azure":::
 
-2. Вы можете использовать кнопку ![Кнопка "Копировать"](./media/create-cassandra-java/copy-button-azure-portal.png) в правой части экрана, чтобы скопировать значение параметра CONTACT POINT.
+2. Используйте кнопку :::image type="icon" source="./media/create-cassandra-java/copy-button-azure-portal.png"::: в правой части экрана, чтобы скопировать значение параметра CONTACT POINT.
 
 3. Откройте файл *config.properties* из папки *C:\git-samples\azure-cosmosdb-cassandra-java-getting-started\java-examples\src\main\resources*. 
 

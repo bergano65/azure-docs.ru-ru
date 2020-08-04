@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/05/2019
 ms.reviewer: sngun
 ms.custom: tracking-python
-ms.openlocfilehash: 15f5ac1da6d24feceed3a9106b990ae31e3571e3
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 8d33756e1c28247c48d0b4c0a734e604c4e9eab0
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85851613"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87280823"
 ---
 # <a name="tutorial-set-up-azure-cosmos-db-global-distribution-using-the-sql-api"></a>Руководство по Настройка глобального распределения Azure Cosmos DB с помощью API SQL
 
@@ -28,24 +28,22 @@ ms.locfileid: "85851613"
 <a id="portal"></a>
 [!INCLUDE [cosmos-db-tutorial-global-distribution-portal](../../includes/cosmos-db-tutorial-global-distribution-portal.md)]
 
-
 ## <a name="connecting-to-a-preferred-region-using-the-sql-api"></a><a id="preferred-locations"></a> Подключение к предпочтительному региону с помощью API SQL
 
-Чтобы воспользоваться преимуществами [глобального распределения](distribute-data-globally.md), клиентские приложения могут указать упорядоченный список предпочитаемых регионов, который будет использоваться для операций с документами. Это можно сделать, настроив политику подключения. Для операций записи и чтения с помощью пакета SDK для SQL выбирается наиболее оптимальная конечная точка на основании текущих данных о региональной доступности и списка предпочтений, указанного в конфигурации учетной записи Azure Cosmos DB.
+Чтобы воспользоваться преимуществами [глобального распределения](distribute-data-globally.md), клиентские приложения могут указать упорядоченный список предпочитаемых регионов, который будет использоваться для операций с документами. Для операций записи и чтения с помощью пакета SDK для SQL выбирается наиболее оптимальная конечная точка на основании текущих данных о региональной доступности и списка предпочтений, указанного в конфигурации учетной записи Azure Cosmos DB.
 
-Этот список предпочтений указывается при инициализации подключения с помощью пакетов SDK для SQL. Пакеты SDK принимают необязательный параметр PreferredLocations, представляющий собой упорядоченный список регионов Azure.
+Этот список предпочтений указывается при инициализации подключения с помощью пакетов SDK для SQL. Пакеты SDK принимают необязательный параметр `PreferredLocations`, представляющий собой упорядоченный список регионов Azure.
 
-Пакет SDK будет автоматически отправлять все операции записи в текущий регион записи.
+Пакет SDK будет автоматически отправлять все операции записи в текущий регион записи. Все операции чтения будут отправляться в первый доступный регион из списка предпочтительных расположений. Если запрос завершится неудачей, клиент перейдет к следующему региону дальше по списку.
 
-Все операции чтения будут отправляться в первой доступный регион из списка PreferredLocations. Если запрос завершится неудачей, клиент перейдет к следующему региону дальше по списку и так далее.
+Пакеты SDK будут пытаться выполнять чтение данных из регионов, указанных в списке предпочтительных расположений. Например, если учетная запись Azure Cosmos доступна в четырех регионах, но клиент указывает в `PreferredLocations` только два региона для чтения (не для записи), то операции чтения не будут обслуживаться для региона, который не указан в `PreferredLocations`. Если указанные в `PreferredLocations` регионы не доступны, операции чтения обслуживаются в регионе записи.
 
-Пакеты SDK будут пытаться выполнять чтение данных из регионов, указанных в PreferredLocations. Например, если учетная запись базы данных доступна в четырех регионах, но клиент указывает в PreferredLocations только два региона для чтения (не для записи), то операции чтения не будут обслуживаться для региона, который не указан в PreferredLocations. Если указанные в PreferredLocations регионы не доступны, операции чтения обслуживаются в регионе записи.
+Приложение может проверить текущие конечную точку записи и конечную точку чтения, выбранные пакетом SDK, просмотрев два свойства, `WriteEndpoint` и `ReadEndpoint`, доступные в SDK 1.8 и более поздней версии. Если свойство `PreferredLocations` не задано, будут обслуживаться все запросы из текущего региона записи.
 
-Приложение может проверить текущие конечную точку записи и конечную точку чтения, выбранные пакетом SDK, просмотрев два свойства, WriteEndpoint и ReadEndpoint, доступные в SDK 1.8 и более поздней версии.
-
-Если свойство PreferredLocations не задано, будут обслуживаться все запросы из текущего региона записи.
+Если не указать предпочтительные расположения, используя метод `setCurrentLocation`, пакет SDK автоматически заполняет предпочтительные расположения в зависимости от текущего региона, в котором работает клиент. Пакет SDK упорядочивает регионы на основе близости региона к текущему региону.
 
 ## <a name="net-sdk"></a>Пакет SDK для .NET
+
 Пакет SDK можно использовать без изменения кода. В этом случае пакет SDK автоматически направляет операции чтения и записи в текущий регион записи.
 
 В пакете SDK для .NET 1.8 и более поздней версии параметр ConnectionPolicy конструктора DocumentClient имеет свойство Microsoft.Azure.Documents.ConnectionPolicy.PreferredLocations. Это свойство имеет тип коллекции `<string>` и должно содержать список имен регионов. Строковые значения форматируются по столбцу "Имя региона" на странице [Регионы Azure][regions] без пробелов до или после первого и последнего знака соответственно.
@@ -55,7 +53,10 @@ ms.locfileid: "85851613"
 > [!NOTE]
 > Не следует считать URL-адреса конечных точек долговременными константами. Служба может обновить их в любой момент. Пакет SDK обрабатывает это изменение автоматически.
 >
->
+
+# <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
+
+Если вы используете пакет SDK для .NET версии 2, примените свойство `PreferredLocations`, чтобы задать предпочтительный регион.
 
 ```csharp
 // Getting endpoints from application settings or other configuration location
@@ -78,6 +79,54 @@ DocumentClient docClient = new DocumentClient(
 // connect to DocDB
 await docClient.OpenAsync().ConfigureAwait(false);
 ```
+
+Кроме того, можно использовать свойство `SetCurrentLocation` и позволить пакету SDK выбрать предпочтительное расположение на основе сходства.
+
+```csharp
+// Getting endpoints from application settings or other configuration location
+Uri accountEndPoint = new Uri(Properties.Settings.Default.GlobalDatabaseUri);
+string accountKey = Properties.Settings.Default.GlobalDatabaseKey;
+  
+ConnectionPolicy connectionPolicy = new ConnectionPolicy();
+
+connectionPolicy.SetCurrentLocation("West US 2"); /
+
+// initialize connection
+DocumentClient docClient = new DocumentClient(
+    accountEndPoint,
+    accountKey,
+    connectionPolicy);
+
+// connect to DocDB
+await docClient.OpenAsync().ConfigureAwait(false);
+```
+
+# <a name="net-sdk-v3"></a>[Пакет SDK для .NET версии 3](#tab/dotnetv3)
+
+Если вы используете пакет SDK для .NET версии 3, примените свойство `ApplicationPreferredRegions`, чтобы задать предпочтительный регион.
+
+```csharp
+
+CosmosClientOptions options = new CosmosClientOptions();
+options.ApplicationName = "MyApp";
+options.ApplicationPreferredRegions = new List<string> {Regions.WestUS, Regions.WestUS2};
+
+CosmosClient client = new CosmosClient(connectionString, options);
+
+```
+
+Кроме того, можно использовать свойство `ApplicationRegion` и позволить пакету SDK выбрать предпочтительное расположение на основе сходства.
+
+```csharp
+CosmosClientOptions options = new CosmosClientOptions();
+options.ApplicationName = "MyApp";
+// If the application is running in West US
+options.ApplicationRegion = Regions.WestUS;
+
+CosmosClient client = new CosmosClient(connectionString, options);
+```
+
+---
 
 ## <a name="nodejsjavascript"></a>Node. js и JavaScript
 

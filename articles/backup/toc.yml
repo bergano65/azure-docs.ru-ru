@@ -46,7 +46,7 @@
           href: tutorial-sap-hana-manage-cli.md
 - name: Примеры
   items:
-    - name: Встроенные политики службы "Политика Azure"
+    - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-samples.md
 - name: Основные понятия
@@ -123,6 +123,8 @@
               href: backup-azure-vms-encryption.md
             - name: 'Настройка резервных копий виртуальных машин Azure под управлением Linux, согласованных на уровне приложений'
               href: backup-azure-linux-app-consistent.md
+            - name: Выборочное резервное копирование диска
+              href: selective-disk-backup-restore.md
         - name: Восстановить
           items:
             - name: Сведения о восстановлении виртуальных машин Azure

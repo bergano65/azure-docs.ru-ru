@@ -5,12 +5,12 @@ ms.date: 03/30/2020
 ms.topic: quickstart
 ms.custom: tracking-python
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 86be7ec73d8e19597062f3fa3777f3aa422082c3
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: acfe4695b94fe9337296d70ef4a2864794730ec4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86506355"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081735"
 ---
 # <a name="quickstart-create-a-function-in-azure-that-responds-to-http-requests"></a>Краткое руководство. Создание функции в Azure, которая отвечает на HTTP-запросы
 
@@ -111,6 +111,9 @@ Maven запрашивает значения, которые позволят �
 Введите `Y` или нажмите клавишу ВВОД для подтверждения.
 
 Maven создаст файлы проекта в новой папке с именем _artifactId_, то есть `fabrikam-functions` в нашем примере. 
+
+Для запуска на Java 11 в Azure необходимо изменить значения в файле pom.xml. Дополнительные сведения см. в разделе [Версии Java](functions-reference-java.md#java-versions). 
+
 ::: zone-end  
 Перейдите в папку проекта:
 
@@ -157,6 +160,8 @@ cd fabrikam-functions
 :::code language="java" source="~/azure-functions-samples-java/pom.xml" range="62-102":::
 
 Вы можете изменить эти параметры, чтобы управлять созданием ресурсов в Azure, например, изменив `runtime.os` с `windows` на `linux` перед первоначальным развертыванием. Полный список параметров, поддерживаемых подключаемым модулем Maven, см. в [сведениях о конфигурации](https://github.com/microsoft/azure-maven-plugins/wiki/Azure-Functions:-Configuration-Details).
+
+Если вы хотите запустить приложение-функцию в среде Java 11, а не Java 8, необходимо вручную изменить файл pom.xml, указав в нем значения Java 11. Дополнительные сведения см. в разделе [Версии Java](functions-reference-java.md#java-versions). При работе в Java 11 убедитесь в следующем.  
 
 #### <a name="functiontestjava"></a>FunctionTest.java
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: 41482af619ad94ee059fc11a74581fa30c2e7011
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 7353366af14ca785c5635e1bde8101c1d71cd47f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82190237"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079111"
 ---
 # <a name="tutorial-create-on-demand-apache-hadoop-clusters-in-hdinsight-using-azure-data-factory"></a>Руководство по Создание кластеров Apache Hadoop в HDInsight по запросу с помощью Фабрики данных Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "82190237"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Установите [модуль Az](https://docs.microsoft.com/powershell/azure/overview) для PowerShell.
+* Установите [модуль Az](https://docs.microsoft.com/powershell/azure/) для PowerShell.
 
 * Субъект-служба Azure Active Directory. После создания субъект-службы, обязательно получите **идентификатор приложения** и **ключ проверки подлинности** с помощью инструкций в соответствующей статье. Эти значения вам понадобятся позже (в рамках этого руководства). Кроме того, убедитесь, что субъект-службе должна быть назначена роль *участника* подписки или группы ресурсов, в которой создается кластер. Инструкции по получению требуемых значений и назначению правильных ролей см. в разделе [Создание субъект-службы Azure Active Directory ](../active-directory/develop/howto-create-service-principal-portal.md).
 
@@ -339,7 +339,7 @@ Write-host "`nScript completed" -ForegroundColor Green
 
     * **adfgerstarted/outputfolder**, содержащий выходные данные сценария Hive, который был запущен в рамках конвейера.
 
-    * Контейнер **adfhdidatafactory-\<linked-service-name>-\<timestamp>** . Этот контейнер по умолчанию является местом хранения кластера HDInsight, который был создан в рамках выполнения конвейера.
+    * Вы увидите контейнер **adfhdidatafactory-\<linked-service-name>-\<timestamp>** . Этот контейнер по умолчанию является местом хранения кластера HDInsight, который был создан в рамках выполнения конвейера.
 
     * Контейнер **adfjobs**, содержащий журналы заданий фабрики данных Azure.  
 

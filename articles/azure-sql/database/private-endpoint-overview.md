@@ -9,12 +9,12 @@ ms.topic: overview
 ms.custom: sqldbrb=1
 ms.reviewer: vanto
 ms.date: 03/09/2020
-ms.openlocfilehash: cd2f88d78a967b46c1983e7eb96328c14d90a81a
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: 730109a096b352b6d179693293128b465e0be83f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84344005"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87063260"
 ---
 # <a name="azure-private-link-for-azure-sql-database-and-azure-synapse-analytics"></a>Приватный канал Azure для базы данных SQL Azure и Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -146,7 +146,7 @@ Nmap done: 256 IP addresses (1 host up) scanned in 207.00 seconds
 
 ### <a name="check-connectivity-using-sql-server-management-studio-ssms"></a>Проверка подключения с помощью SQL Server Management Studio (SSMS)
 > [!NOTE]
-> Используйте **полное доменное имя (FQDN)** сервера в строках подключения для клиентов. Любые попытки входа, выполненные непосредственно на IP-адресе, будут завершаться ошибкой. Такое поведение предусмотрено, так как частная конечная точка направляет трафик в шлюз SQL в регионе. При этом для успешного входа нужно указать FQDN.
+> Используйте **полное доменное имя (FQDN)** сервера в строках подключения для клиентов (`<server>.database.windows.net`). Любые попытки входа, выполненные непосредственно по IP-адресу или с помощью полного доменного имени частного канала (`<server>.privatelink.database.windows.net`), будут завершаться ошибкой. Такое поведение предусмотрено, так как частная конечная точка направляет трафик в шлюз SQL в регионе. При этом для успешного входа нужно указать правильное значение FQDN.
 
 Выполните следующие действия, чтобы использовать [SSMS для подключения к базе данных SQL](connect-query-ssms.md). После подключения к Базе данных SQL с помощью SSMS убедитесь, что вы подключаетесь с частного IP-адреса виртуальной машины Azure, выполнив следующий запрос:
 

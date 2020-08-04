@@ -1,6 +1,6 @@
 ---
-title: Создание и настройка хранилища ключей для шифрования дисков Azure
-description: В этой статье описано, как создать и настроить хранилище ключей для использования с шифрованием дисков Azure.
+title: Создание и настройка хранилища ключей для службы "Шифрование дисков Azure"
+description: В этой статье описано, как создать и настроить хранилище ключей для использования со службой "Шифрование дисков Azure".
 author: ju-shim
 ms.author: jushiman
 ms.topic: tutorial
@@ -9,16 +9,16 @@ ms.subservice: disks
 ms.date: 10/10/2019
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: 6350e85552a6c92592dbe2b1a9cf48a35f86a7be
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: acd2ae54d81fb508d5f8c02262cf8c2f0f071fb5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83198448"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87080613"
 ---
-# <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Создание и настройка хранилища ключей для шифрования дисков Azure
+# <a name="create-and-configure-a-key-vault-for-azure-disk-encryption"></a>Создание и настройка хранилища ключей для шифрования дисков Azure
 
-Служба шифрования дисков Azure использует Azure Key Vault, чтобы управлять секретами и ключами шифрования дисков и контролировать их.  Дополнительные сведения о хранилищах ключей см. в статье [Приступая к работе с Azure Key Vault](../key-vault/key-vault-get-started.md) и [Защита хранилища ключей](../key-vault/general/secure-your-key-vault.md).
+Служба "Шифрование дисков Azure" использует Azure Key Vault, чтобы управлять секретами и ключами шифрования дисков и контролировать их использование.  Дополнительные сведения о хранилищах ключей см. в статье [Приступая к работе с Azure Key Vault](../key-vault/general/overview.md) и [Защита хранилища ключей](../key-vault/general/secure-your-key-vault.md).
 
 Создание и настройка хранилища ключей для использования со службой шифрования дисков Azure состоит из трех этапов.
 
@@ -32,7 +32,7 @@ ms.locfileid: "83198448"
 
 ## <a name="install-tools-and-connect-to-azure"></a>Установка средств и подключение к Azure
 
-Действия, описанные в этой статье, можно выполнить с помощью [Azure CLI](/cli/azure/), [модуль Azure PowerShell Az](/powershell/azure/overview) или [портала Azure](https://portal.azure.com).
+Действия, описанные в этой статье, можно выполнить с помощью [Azure CLI](/cli/azure/), [модуль Azure PowerShell Az](/powershell/azure/) или [портала Azure](https://portal.azure.com).
 
 ### <a name="connect-to-your-azure-account"></a>Подключение к учетной записи Azure
 

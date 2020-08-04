@@ -6,23 +6,23 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.date: 05/28/2020
+ms.date: 07/28/2020
 ms.topic: include
 ms.custom: include file
 ms.author: diberry
-ms.openlocfilehash: 8aeb6b964ab38a68a6d8681a4e5c93e1650c6a69
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: db866da43310f5407ce4daae1cade2c7512b91ea
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84171293"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87369287"
 ---
 С помощью клиентской библиотеки прогнозирования для Python в службе "Распознавание речи" (LUIS) можно выполнить следующие задачи.
 
 * Получение прогноза по слоту
 * Получение прогноза по версии
 
-[Справочная документация](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/index?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-language-luis/azure/cognitiveservices/language/luis) | [Пакет для прогнозирования (PyPi)](https://pypi.org/project/azure-cognitiveservices-language-luis/) | [Образцы кода (C#)](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/python/LUIS)
+[Справочная документация](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/index?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-language-luis/azure/cognitiveservices/language/luis) | [Пакет для прогнозирования (PyPi)](https://pypi.org/project/azure-cognitiveservices-language-luis/) | [Образцы кода (C#)](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/python/LUIS/python-sdk-authoring-prediction/prediction_quickstart.py)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -35,8 +35,6 @@ ms.locfileid: "84171293"
 ### <a name="get-your-language-understanding-luis-runtime-key"></a>Получение ключа среды выполнения LUIS
 
 [Ключ среды выполнения](../luis-how-to-azure-subscription.md) можно получить, создав ресурс среды выполнения LUIS. Сохраните ключ и конечную точку ключа для следующего шага.
-
-[!INCLUDE [Set up environment variables for prediction quickstart](sdk-prediction-environment-variables.md)]
 
 ### <a name="create-a-new-python-file"></a>Создание файла Python
 
@@ -73,20 +71,16 @@ python -m pip install azure-cognitiveservices-language-luis
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-1. Создайте переменные для собственных обязательных сведений LUIS:
-
-    Добавьте переменные для управления вашим ключом прогнозирования, извлеченным из переменной среды с именем `LUIS_RUNTIME_KEY`. Если вы создали переменную среды после запуска приложения, то для доступа к переменной следует закрыть и перезагрузить редактор, интегрированную среду разработки или оболочку, где эта переменная была запущена. Метод будет создано позже.
-
-    Создайте переменную для хранения имени ресурса `LUIS_RUNTIME_ENDPOINT`.
+1. Создайте переменные для собственных обязательных сведений LUIS: ключа прогнозирования и конечной точки.
 
     [!code-python[Dependency statements](~/cognitive-services-quickstart-code/python/LUIS/python-sdk-authoring-prediction/prediction_quickstart.py?name=AuthorizationVariables)]
 
-1. Создайте переменную среды с именем `LUIS_APP_ID` для идентификатора приложения. Задайте для переменной среды значение публичного приложения Интернета вещей, **`df67dcdb-c37d-46af-88e1-8b97951ca1c2`** . Создайте переменную, чтобы задать опубликованный слот `production`.
+1. Создайте переменную для идентификатора приложения (общедоступное приложение Интернета вещей), **`df67dcdb-c37d-46af-88e1-8b97951ca1c2`** . Создайте переменную, чтобы задать опубликованный слот `production`.
 
     [!code-python[Dependency statements](~/cognitive-services-quickstart-code/python/LUIS/python-sdk-authoring-prediction/prediction_quickstart.py?name=OtherVariables)]
 
 
-1. Создайте объект с помощью ключа и используйте его со своей конечной точкой, чтобы создать объект [LUISRuntimeClientConfiguration]https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.runtime.luisruntimeclientconfiguration?view=azure-python().
+1. Создайте объект с помощью ключа и используйте его со своей конечной точкой, чтобы создать объект [LUISRuntimeClientConfiguration](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.runtime.luisruntimeclientconfiguration?view=azure-python).
 
     [!code-python[Dependency statements](~/cognitive-services-quickstart-code/python/LUIS/python-sdk-authoring-prediction/prediction_quickstart.py?name=Client)]
 

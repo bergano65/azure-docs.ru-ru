@@ -4,15 +4,15 @@ description: Узнайте о поддержке возможностей и с
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: overview
-ms.date: 01/15/2020
+ms.date: 07/15/2020
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 92c94b08602fb32ccebf6115306a5000665affe2
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: bd59b27b5af92d7aa90851c592ba4de495e41283
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84171707"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87076826"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-36-version-supported-features-and-syntax"></a>API Azure Cosmos DB для MongoDB (версии 3.6) — поддержка возможностей и синтаксиса
 
@@ -542,7 +542,32 @@ $polygon |  Да |
 
 ## <a name="unique-indexes"></a>Уникальные индексы
 
-Уникальные индексы гарантируют, что среди всех документов в коллекции не будет повторяющихся значений определенного поля, то есть для него сохраняется уникальность, как для ключа по умолчанию _id. Вы можете создать в Cosmos DB пользовательские индексы, используя команду createIndex, которая поддерживает ограничение уникальности (unique).
+[Уникальные индексы](mongodb-indexing.md#unique-indexes) гарантируют, что среди всех документов в коллекции не будет повторяющихся значений определенного поля, то есть для него сохраняется уникальность, как для ключа по умолчанию _id. Можно создать уникальные индексы в Cosmos DB, выполнив команду `createIndex` с параметром ограничения `unique`.
+
+```javascript
+globaldb:PRIMARY> db.coll.createIndex( { "amount" : 1 }, {unique:true} )
+{
+        "_t" : "CreateIndexesResponse",
+        "ok" : 1,
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 4
+}
+```
+
+## <a name="compound-indexes"></a>Составные индексы
+
+[Составные индексы](mongodb-indexing.md#compound-indexes-mongodb-server-version-36) дают возможность создать индекс для групп, содержащих до 8 полей. Этот тип индекса отличается от собственных составных индексов MongoDB. В Azure Cosmos DB составные индексы используются для операций сортировки, применяемых к нескольким полям. Чтобы создать составной индекс, необходимо указать в качестве параметра более одного свойства.
+
+```javascript
+globaldb:PRIMARY> db.coll.createIndex({"amount": 1, "other":1})
+{
+        "createdCollectionAutomatically" : false, 
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "ok" : 1
+}
+```
 
 ## <a name="time-to-live-ttl"></a>Срок жизни (TTL)
 

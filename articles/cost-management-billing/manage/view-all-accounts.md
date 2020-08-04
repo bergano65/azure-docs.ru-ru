@@ -7,12 +7,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: banders
-ms.openlocfilehash: 75529d03435e92dfff26dac81f4f7e59585b6fe9
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: 8afa0b1b068aa03bb1add7f029c731b4fc9a4724
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85255251"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87039680"
 ---
 # <a name="billing-accounts-and-scopes-in-the-azure-portal"></a>Учетные записи и области выставления счетов на портале Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "85255251"
 
 |Область  |Определение  |
 |---------|---------|
-|учетная запись выставления счетов;     | Представляет собой соглашение, которое клиент должен принять для использования Azure. В нее входят одна или несколько подписок.  |
+|учетная запись выставления счетов;     | Представляет собой соглашение, которое клиент должен принять для использования Azure. В нее входит одна или несколько подписок.  |
 |Подписка     |  Представляет группирование ресурсов Azure. В этой области создается счет. С этой областью связаны другие сведения о выставлении счетов, такие как способы оплаты и адрес использования.|
 
 ### <a name="enterprise-agreement"></a>Соглашение Enterprise

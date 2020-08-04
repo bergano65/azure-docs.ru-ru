@@ -10,12 +10,12 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: ranku
 ms.date: 04/09/2020
-ms.openlocfilehash: 1665bc42578c189ed27208eb31cc4bdb2e27bbb9
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 60dd9631df0b997ce39134002bdb6ed9f69336ed
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86536170"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87319275"
 ---
 # <a name="tutorial-create-a-labeling-project-for-multi-class-image-classification"></a>Руководство по Создание проекта маркировки для многоклассовой классификации изображений 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -146,9 +146,7 @@ ms.locfileid: "86536170"
 
 1. В [Студии машинного обучения](https://ml.azure.com) выберите слева **Маркировка данных**, чтобы найти нужный проект.  
 
-1. Выберите название проекта в списке.
-
-1. Под именем проекта выберите **Пометить данные**.
+1. Выберите **ссылку для маркировки** для проекта.
 
 1. Ознакомьтесь с инструкциями, а затем щелкните **Задачи**.
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 9c07db575827254de833fc0b2390be823ebc4e57
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: aae1797f7f1a252a4f094ee9f1b079fb60ba72f3
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206554"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87131758"
 ---
 # <a name="build-out-an-end-to-end-solution"></a>Создание комплексного решения
 
@@ -26,6 +26,9 @@ ms.locfileid: "86206554"
 
 [!INCLUDE [Azure Digital Twins tutorial: sample prerequisites](../../includes/digital-twins-tutorial-sample-prereqs.md)]
 
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+
+### <a name="set-up-cloud-shell-session"></a>Создание сеанса Cloud Shell
 [!INCLUDE [Cloud Shell for Azure Digital Twins](../../includes/digital-twins-cloud-shell.md)]
 
 [!INCLUDE [Azure Digital Twins tutorial: configure the sample project](../../includes/digital-twins-tutorial-sample-configure.md)]
@@ -90,7 +93,7 @@ Query
 * *ProcessHubToDTEvents*, которая обрабатывает поступающие данные Центра Интернета вещей и соответствующим образом обновляет Azure Digital Twins;
 * *ProcessDTRoutedData*, которая обрабатывает данные из цифровых двойников и соответствующим образом обновляет родительские двойники в Azure Digital Twins.
 
-В этом разделе вы опубликуете предварительно созданное приложение-функцию и назначите ему удостоверение Azure Active Directory (AAD), чтобы оно могло получить доступ к Azure Digital Twins. После выполнения этих действий вы сможете использовать функции, которые содержатся в данном приложении-функции, при изучении остальных разделов этого учебника. 
+В этом разделе вы опубликуете предварительно созданное приложение-функцию и назначите ему удостоверение Azure Active Directory (Azure AD), чтобы оно могло получить доступ к Azure Digital Twins. После выполнения этих действий вы сможете использовать функции, которые содержатся в данном приложении-функции, при изучении остальных разделов этого учебника. 
 
 ### <a name="publish-the-app"></a>Публикация приложения
 
@@ -138,7 +141,7 @@ Query
 
 ### <a name="assign-permissions-to-the-function-app"></a>Назначение разрешений для приложения-функции
 
-Чтобы разрешить приложению-функции доступ к Azure Digital Twins, необходимо настроить параметр приложения, назначить приложению управляемое системой удостоверение AAD и предоставить этому удостоверению права доступа *владельца* в экземпляре Azure Digital Twins.
+Чтобы разрешить приложению-функции доступ к Azure Digital Twins, необходимо настроить параметр приложения, назначить приложению управляемое системой удостоверение Azure AD и предоставить этому удостоверению права доступа *владельца* в экземпляре Azure Digital Twins.
 
 В Azure Cloud Shell установите параметр приложения, который будет использоваться вашим приложением-функцией для обращения к экземпляру цифровых двойников, с помощью следующей команды.
 
@@ -420,7 +423,7 @@ ObserveProperties thermostat67 Temperature room21 Temperature
 az group delete --name <your-resource-group>
 ```
 
-Затем удалите регистрацию приложения AAD, которую вы создали для своего клиентского приложения, с помощью следующей команды:
+Затем удалите регистрацию приложения Azure AD, которую вы создали для своего клиентского приложения, с помощью следующей команды.
 
 ```azurecli
 az ad app delete --id <your-application-ID>
@@ -433,7 +436,7 @@ az ad app delete --id <your-application-ID>
 В этом учебнике вы создали готовый сценарий, который показывает, как можно управлять данными устройства Azure Digital Twins в реальном времени.
 
 Далее ознакомьтесь со следующей документацией по основным понятиям, чтобы больше узнать об элементах, с которыми вы работали в этом учебнике.
-* [Основные понятия. Настраиваемые модели](concepts-models.md)
+* [*Основные понятия. Настраиваемые модели*](concepts-models.md).
 
 Кроме того, дополнительные сведения о процессах, описанных в этом руководстве, можно найти в статьях с инструкциями.
-* [Практическое руководство. Использование CLI для Azure Digital Twins](how-to-use-cli.md)
+* [*Практическое руководство. Использование CLI для Azure Digital Twins*](how-to-use-cli.md)

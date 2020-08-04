@@ -4,14 +4,15 @@ description: Сведения об Azure HPC Cache, решения для быс
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: overview
-ms.date: 05/29/2020
+ms.date: 07/16/2020
 ms.author: v-erkel
-ms.openlocfilehash: c0d32beeedba61bc2ecdc444685f7e81073459be
-ms.sourcegitcommit: b55d1d1e336c1bcd1c1a71695b2fd0ca62f9d625
+ms.custom: references_regions
+ms.openlocfilehash: 8c8223872ec3ef1d875e10ead8f327db01a924c4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84433698"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87053685"
 ---
 # <a name="what-is-azure-hpc-cache"></a>Что такое Azure HPC Cache?
 
@@ -53,22 +54,16 @@ Azure HPC Cache также можно использовать для повыш
 
 ## <a name="region-availability"></a>Доступность по регионам
 
-Azure HPC Cache доступен в следующих регионах Azure:
+Посетите страницу [доступности продуктов глобальной инфраструктуры Azure по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=hpc-cache), чтобы узнать, где доступна служба Azure HPC Cache.
 
-| Северная Америка      | Европа         | Азия            | Австралия      |
-|--------------------|----------------|-----------------|----------------|
-| Восточная часть США            | Северная Европа   | Республика Корея, центральный регион   | Восточная Австралия |
-| восточная часть США 2          | Западная Европа    | Юго-Восточная Азия  |               |
-| Центрально-южная часть США | | | |
-| западная часть США 2        | | | |
-
-Функция [Управляемые клиентом ключи](customer-keys.md) поддерживается только в следующих регионах:
+Функция [Управляемые клиентом ключи](customer-keys.md) поддерживается только в следующих регионах Azure:
 
 * Восточная часть США
 * Центрально-южная часть США
-* западная часть США 2
-
-Последние сведения о доступности см. на [странице продукта "Azure HPC Cache "](https://azure.microsoft.com/services/hpc-cache).
+* Западная часть США 2
+* Западная Европа
+* US Gov (Аризона)
+* US Gov (Вирджиния)
 
 ## <a name="service-availability"></a>Доступность службы
 
@@ -79,5 +74,5 @@ Azure HPC Cache доступен в следующих регионах Azure:
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о его возможностях см. на [странице продукта "Azure HPC Cache"](https://azure.microsoft.com/services/hpc-cache)
-* Сведения о [предварительных требованиях](hpc-cache-prereqs.md) к продукту
+* Сведения о [предварительных требованиях](hpc-cache-prerequisites.md) к продукту
 * [Создание Azure HPC Cache](hpc-cache-create.md) из портала Azure

@@ -7,31 +7,30 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.devlang: php
 ms.topic: sample
-ms.date: 04/05/2018
-ms.openlocfilehash: dcea83b9452b33baef8d563c7776aa9bd258a5f4
-ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
+ms.date: 07/23/2020
+ms.openlocfilehash: f0a5c3df2359add9f896e05af6c8c77d9e006a2a
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85389689"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87171975"
 ---
 # <a name="how-to-use-azure-storage-table-service-or-the-azure-cosmos-db-table-api-from-php"></a>Использование Хранилища таблиц службы хранилища Azure или API таблиц Azure Cosmos DB в PHP
+
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
 [!INCLUDE [storage-table-applies-to-storagetable-and-cosmos](../../includes/storage-table-applies-to-storagetable-and-cosmos.md)]
 
-## <a name="overview"></a>Обзор
-Из этого руководства вы узнаете, как реализовать стандартные сценарии с использованием Хранилища таблиц службы хранилища Azure и API таблиц Azure Cosmos DB. В приведенных здесь примерах, написанных на PHP, используется [клиентская библиотека PHP таблиц службы хранилища Azure][download]. Здесь рассматриваются такие сценарии, как **создание и удаление таблицы**, а также **вставка, удаление и запрашивание сущностей в таблице**. Дополнительные сведения о службе таблиц Azure см. в разделе [Дальнейшие действия](#next-steps).
-
+В этой статье показано, как создавать таблицы, сохранять данные и выполнять операции CRUD с данными. Вы можете использовать либо службу таблиц Azure, либо API таблиц Azure Cosmos DB. В приведенных здесь примерах, написанных на PHP, используется [клиентская библиотека PHP таблиц службы хранилища Azure][download]. Здесь рассматриваются такие сценарии, как **создание и удаление таблицы**, а также **вставка, удаление и запрашивание сущностей в таблице**. Дополнительные сведения о службе таблиц Azure см. в разделе [Дальнейшие действия](#next-steps).
 
 ## <a name="create-an-azure-service-account"></a>Создание учетной записи службы Azure
 
 [!INCLUDE [cosmos-db-create-azure-service-account](../../includes/cosmos-db-create-azure-service-account.md)]
 
-### <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
+**Create an Azure Storage account** (Создание учетной записи хранения Azure)
 
 [!INCLUDE [cosmos-db-create-storage-account](../../includes/cosmos-db-create-storage-account.md)]
 
-### <a name="create-an-azure-cosmos-db-table-api-account"></a>Создание учетной записи API таблиц Azure Cosmos DB
+**Создание учетной записи API таблиц Azure Cosmos DB**
 
 [!INCLUDE [cosmos-db-create-tableapi-account](../../includes/cosmos-db-create-tableapi-account.md)]
 
@@ -58,8 +57,8 @@ ms.locfileid: "85389689"
    ```
    Также можно перейти в [клиентскую библиотеку таблиц службы хранилища Azure для PHP](https://github.com/Azure/azure-storage-php/tree/master/azure-storage-table) на GitHub, чтобы клонировать исходный код.
 
-
 ## <a name="add-required-references"></a>Добавление обязательных ссылок
+
 Чтобы использовать хранилище таблиц службы хранилища Azure или API-интерфейсы Azure Cosmos DB, необходимо указать следующее:
 
 * Ссылка на файл автозагрузчика с использованием инструкции [require_once][require_once] и
@@ -74,25 +73,32 @@ use MicrosoftAzure\Storage\Table\TableRestProxy;
 
 В приведенных ниже примерах всегда отображается оператор `require_once` , однако ссылки приводятся только на классы, которые необходимы для выполнения этого примера.
 
-## <a name="add-a-storage-table-service-connection"></a>Добавление подключения к хранилищу таблиц службы хранилища Azure
+## <a name="add-your-connection-string"></a>Добавление строки подключения
+
+Вы можете подключиться к учетной записи хранения Azure или учетной записи API таблиц Azure Cosmos DB. Получите строку подключения на основе типа используемой учетной записи.
+
+### <a name="add-a-storage-table-service-connection"></a>Добавление подключения к хранилищу таблиц службы хранилища Azure
+
 Для создания экземпляра клиента хранилища таблиц необходимо сначала сформировать правильную строку подключения. Для строки подключения к хранилищу таблиц используется следующий формат:
 
 ```php
 $connectionString = "DefaultEndpointsProtocol=[http|https];AccountName=[yourAccount];AccountKey=[yourKey]"
 ```
 
-## <a name="add-an-azure-cosmos-db-connection"></a>Добавление подключения к Azure Cosmos DB
-Для создания экземпляра клиента таблиц Azure Cosmos DB необходимо сначала сформировать правильную строку подключения. Для строки подключения Azure Cosmos DB используется следующий формат:
+### <a name="add-a-storage-emulator-connection"></a>Добавление подключения к эмулятору хранения
 
-```php
-$connectionString = "DefaultEndpointsProtocol=[https];AccountName=[myaccount];AccountKey=[myaccountkey];TableEndpoint=[https://myendpoint/]";
-```
-
-## <a name="add-a-storage-emulator-connection"></a>Добавление подключения к эмулятору хранения
 Для доступа к эмулятору хранения используйте следующий код:
 
 ```php
 UseDevelopmentStorage = true
+```
+
+### <a name="add-an-azure-cosmos-db-connection"></a>Добавление подключения к Azure Cosmos DB
+
+Для создания экземпляра клиента таблиц Azure Cosmos DB необходимо сначала сформировать правильную строку подключения. Для строки подключения Azure Cosmos DB используется следующий формат:
+
+```php
+$connectionString = "DefaultEndpointsProtocol=[https];AccountName=[myaccount];AccountKey=[myaccountkey];TableEndpoint=[https://myendpoint/]";
 ```
 
 Для создания клиента хранилища таблиц Azure или клиента Azure Cosmos DB необходимо использовать класс **TableRestProxy**. Вы можете:
@@ -113,6 +119,7 @@ $tableClient = TableRestProxy::createTableService($connectionString);
 ```
 
 ## <a name="create-a-table"></a>Создание таблицы
+
 Объект **TableRestProxy** позволяет создать таблицу с помощью метода **createTable**. При создании таблицы можно задать время ожидания службы таблиц. (Дополнительные сведения о времени ожидания службы таблиц см. в статье [Setting Timeouts for Table Service Operations][table-service-timeouts] (Настройка времени ожидания для операций службы таблиц).)
 
 ```php
@@ -140,6 +147,7 @@ catch(ServiceException $e){
 Дополнительные сведения об ограничениях имен таблиц см. в статье [Understanding the Table Service Data Model][table-data-model] (Основные сведения о модели данных службы таблиц).
 
 ## <a name="add-an-entity-to-a-table"></a>Добавление сущности в таблицу
+
 Чтобы добавить сущность в таблицу, создайте новый объект **Entity** и передайте его в **TableRestProxy->insertEntity**. Обратите внимание, что при создании сущности необходимо задать свойства `PartitionKey` и `RowKey`. Это уникальные идентификаторы сущности и значения, которые можно запросить гораздо быстрее, чем другие свойства сущности. Система использует `PartitionKey`, чтобы автоматически распределять сущности таблицы на несколько узлов хранилища. Сущности с одинаковым значением `PartitionKey` хранятся на одном узле. (Операции с несколькими сущностями, хранящимися на одном узле, выполняются эффективнее, чем с сущностями с разных узлов). `RowKey` — это уникальный идентификатор сущности в разделе.
 
 ```php
@@ -219,6 +227,7 @@ catch(ServiceException $e){
 ```
 
 ## <a name="retrieve-a-single-entity"></a>Извлечение одной сущности
+
 Метод **TableRestProxy->getEntity** позволяет получить одну сущность, запрашивая ее значения `PartitionKey` и `RowKey`. В приведенном ниже примере ключ раздела `tasksSeattle` и ключ строки `1` передаются в метод **getEntity**.
 
 ```php
@@ -248,6 +257,7 @@ echo $entity->getPartitionKey().":".$entity->getRowKey();
 ```
 
 ## <a name="retrieve-all-entities-in-a-partition"></a>Получение всех сущностей в разделе
+
 Запросы сущностей создаются с помощью фильтров (дополнительные сведения см. в статье [Querying Tables and Entities][filters] (Запросы к таблицам и сущностям)). Для получения всех сущностей в разделе используйте фильтр "PartitionKey eq *имя_раздела*". В следующем примере показано, как получить все сущности в разделе `tasksSeattle`, передав фильтр в метод **queryEntities**.
 
 ```php
@@ -281,6 +291,7 @@ foreach($entities as $entity){
 ```
 
 ## <a name="retrieve-a-subset-of-entities-in-a-partition"></a>Получение диапазона сущностей в разделе
+
 Процедуру, аналогичную приведенной в предыдущем примере, можно использовать для получения любого подмножества сущностей в разделе. Получаемое подмножество сущностей определяется используемым фильтром (дополнительные сведения см. в статье [Querying Tables and Entities][filters] (Запросы к таблицам и сущностям)). В следующем примере показано, как использовать фильтр для получения всех сущностей с определенным значением `Location` и значением `DueDate`, которое меньше указанной даты.
 
 ```php
@@ -314,6 +325,7 @@ foreach($entities as $entity){
 ```
 
 ## <a name="retrieve-a-subset-of-entity-properties"></a>Запрос подмножества свойств сущности
+
 Запрос позволяет получить подмножество свойств сущности. Этот метод, который называется *проекцией*, снижает потребление полосы пропускания и может повысить производительность запросов, особенно для крупных сущностей. Чтобы задать свойство для извлечения, передайте имя этого свойства в метод **Query->addSelectField**. Этот метод можно вызывать несколько раз для добавления дополнительных свойств. После выполнения **TableRestProxy->queryEntities** возвращаемые сущности будут иметь только выбранные свойства. (Если вы хотите вернуть подмножество сущностей таблицы, используйте фильтр из приведенных выше запросов.)
 
 ```php
@@ -353,6 +365,7 @@ foreach($entities as $entity){
 ```
 
 ## <a name="update-an-entity"></a>Обновление сущности
+
 Имеющуюся сущность можно обновить, воспользовавшись методами **Entity->setProperty** и **Entity->addProperty** для сущности, а затем вызвав **TableRestProxy->updateEntity**. Следующий пример извлекает сущность, изменяет одно свойство, удаляет другое свойство и добавляет новое свойство. Обратите внимание, что свойство можно удалить, установив для него значение **null**.
 
 ```php
@@ -387,6 +400,7 @@ catch(ServiceException $e){
 ```
 
 ## <a name="delete-an-entity"></a>Удаление сущности
+
 Чтобы удалить сущность, передайте имя таблицы и значения `PartitionKey` и `RowKey` сущности в метод **TableRestProxy->deleteEntity**.
 
 ```php
@@ -415,6 +429,7 @@ catch(ServiceException $e){
 Для проверки на параллелизм можно задать Etag для удаляемой сущности, воспользовавшись методом **DeleteEntityOptions->setEtag** и передав объект **DeleteEntityOptions** в **deleteEntity** в качестве четвертого параметра.
 
 ## <a name="batch-table-operations"></a>Пакетные операции с таблицами
+
 Метод **TableRestProxy->batch** позволяет выполнять несколько операций в одном запросе. Здесь шаблон включает в себя добавление операций в объект **BatchRequest** и последующую передачу объекта **BatchRequest** в метод **TableRestProxy->batch**. Чтобы добавить операцию в объект **BatchRequest** , можно вызвать любой из следующих методов несколько раз:
 
 * **addInsertEntity** (добавляет операцию insertEntity)
@@ -475,6 +490,7 @@ catch(ServiceException $e){
 Дополнительные сведения о пакетной обработке операций с таблицами см. в статье [Performing Entity Group Transactions][entity-group-transactions] (Выполнение транзакций для группы сущностей).
 
 ## <a name="delete-a-table"></a>Удаление таблицы
+
 Наконец, чтобы удалить таблицу, следует передать имя таблицы в метод **TableRestProxy->deleteTable**.
 
 ```php
@@ -501,6 +517,7 @@ catch(ServiceException $e){
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 Вы изучили основные сведения о хранилище таблиц Azure и Azure Cosmos DB. Дополнительные сведения можно найти по приведенным ниже ссылкам.
 
 * [Обозреватель хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.

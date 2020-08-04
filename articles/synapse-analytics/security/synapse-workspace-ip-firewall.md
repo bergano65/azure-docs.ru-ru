@@ -1,5 +1,5 @@
 ---
-title: Настройка правил брандмауэра для IP-адресов в Azure Synapse Analytics
+title: Настройка правил брандмауэра для IP-адресов
 description: В статье описывается настройка правил брандмауэра IP-адресов в Azure Synapse Analytics
 author: RonyMSFT
 ms.service: synapse-analytics
@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 255714fcf69a8ed72cf1f306e5aafabd49a199ca
-ms.sourcegitcommit: 3988965cc52a30fc5fed0794a89db15212ab23d7
+ms.openlocfilehash: a06b4e6ced437cc83fadfad000fa682264264874
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85194405"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87052419"
 ---
 # <a name="azure-synapse-analytics-ip-firewall-rules-preview"></a>Правила брандмауэра для IP-адресов Azure Synapse Analytics (предварительная версия)
 
@@ -47,6 +47,6 @@ ms.locfileid: "85194405"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Создание [рабочей области Azure Synapse](../quickstart-create-workspace.md)
+Создание [рабочей области Azure Synapse](../quickstart-create-workspace.md).
 
-Создание рабочей области Azure Synapse с [управляемой виртуальной сетью](./synapse-workspace-managed-vnet.md)
+Создание управляемой рабочей области Azure Synapse с [виртуальной сетью](./synapse-workspace-managed-vnet.md).

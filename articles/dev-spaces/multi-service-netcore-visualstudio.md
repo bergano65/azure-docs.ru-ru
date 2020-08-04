@@ -7,12 +7,12 @@ ms.date: 07/09/2018
 ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio для отладки приложения .NET Core с несколькими службами в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 7f95c21c2cf5b7adcdb34d7bbe2b1f8314c20333
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 073019a75f78263e9d300a82469b36268d032679
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75438402"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87072942"
 ---
 # <a name="running-multiple-dependent-services-net-core-and-visual-studio-with-azure-dev-spaces"></a>Выполнение нескольких зависимых служб с использованием .NET Core и Visual Studio с Azure Dev Spaces
 
@@ -21,7 +21,7 @@ ms.locfileid: "75438402"
 ## <a name="call-another-container"></a>Вызов другого контейнера
 В этом разделе вы создадите вторую службу, `mywebapi`, к которой будет обращаться `webfrontend`. Каждая служба будет выполняться в отдельных контейнерах. Затем вы выполните отладку в обоих контейнерах.
 
-![](media/common/multi-container.png)
+![На схеме показан вызов службы mywebapi службой webfrontend (указана стрелкой).](media/common/multi-container.png)
 
 ### <a name="download-sample-code-for-mywebapi"></a>Скачайте пример кода для *mywebapi*.
 Ради экономии времени давайте загрузим образец кода из репозитория GitHub. Перейдите к https://github.com/Azure/dev-spaces и выберите **Clone or download** (Клонировать или скачать), чтобы скачать репозиторий GitHub. Код для этого раздела находится в папке `samples/dotnetcore/getting-started/mywebapi`.
@@ -34,7 +34,7 @@ ms.locfileid: "75438402"
 2. Когда контейнер `mywebapi` готов, откройте в браузере адрес localhost и добавьте `/api/values` к URL-адресу, чтобы вызвать API GET по умолчанию для `ValuesController`. 
 3. Если все шаги были успешными, вы должны увидеть ответ от службы `mywebapi`, который выглядит так:
 
-    ![](media/get-started-netcore-visualstudio/WebAPIResponse.png)
+    ![На веб-странице показан массив JSON из двух строк: "value1" и "value2".](media/get-started-netcore-visualstudio/WebAPIResponse.png)
 
 ### <a name="make-a-request-from-webfrontend-to-mywebapi"></a>Запрос из *webfrontend* к *mywebapi*
 Давайте теперь напишем код в `webfrontend`, который отправляет запрос к `mywebapi`. Переключитесь в окно Visual Studio, в котором есть проект `webfrontend`. В файле `HomeController.cs`*замените* код метода About следующим кодом:

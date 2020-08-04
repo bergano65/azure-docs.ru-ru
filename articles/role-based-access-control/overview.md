@@ -11,21 +11,25 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/17/2020
+ms.date: 07/23/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 3846a4669cc2a77862e73dbb8e7743b19740e8a4
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.openlocfilehash: 45601e820bc03b263fbf664a43ce34266dc4a488
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82996493"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87171579"
 ---
 # <a name="what-is-azure-role-based-access-control-azure-rbac"></a>Что такое управление доступом на основе ролей в Azure (RBAC)?
 
 Управление доступом к облачным ресурсам является критически важной функцией в любой организации, использующей облако. Управление доступом на основе ролей Azure (RBAC Azure) позволяет управлять доступом пользователей к ресурсам Azure, включая настройку разрешений на выполнение операций с этими ресурсами и определение областей доступа.
 
 RBAC Azure — это система авторизации на основе [Azure Resource Manager](../azure-resource-manager/management/overview.md), которая обеспечивает широкие возможности управления доступом к ресурсам Azure.
+
+В этом видео представлен краткий обзор Azure RBAC.
+
+>[!VIDEO https://www.youtube.com/embed/Dzhm-garKBM]
 
 ## <a name="what-can-i-do-with-azure-rbac"></a>Какие возможности обеспечивает RBAC Azure?
 
@@ -65,6 +69,10 @@ RBAC Azure — это система авторизации на основе [
 - [Администратор доступа пользователей](built-in-roles.md#user-access-administrator) — может управлять доступом пользователей к ресурсам Azure.
 
 Остальные встроенные роли разрешают управление определенными ресурсами Azure. Например, роль [Участник виртуальных машин](built-in-roles.md#virtual-machine-contributor) позволяет пользователю создавать виртуальные машины и управлять ими. Если встроенные роли не соответствуют потребностям вашей организации, вы можете создать собственные [настраиваемые роли Azure](custom-roles.md).
+
+В этом видео представлен краткий обзор встроенных и настраиваемых ролей.
+
+>[!VIDEO https://www.youtube.com/embed/I1mefHptRgo]
 
 Azure предоставляет операции с данными, которые позволяют предоставлять доступ к данным в объекте. Например, если у пользователя есть доступ на чтение данных в учетной записи хранения, это позволяет ему считывать большие двоичные объекты или сообщения в этой учетной записи. Дополнительные сведения о ролях Azure см. в [этой статье](role-definitions.md).
 

@@ -9,12 +9,12 @@ ms.subservice: metadata
 ms.date: 05/01/2020
 ms.author: mrys
 ms.reviewer: jrasnick
-ms.openlocfilehash: d9efafdbc3545bebb3b90b3f64c14f45d8be82e6
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 28f666fe295b2b49fb6795306e9fad489c867517
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86496032"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87387223"
 ---
 # <a name="azure-synapse-analytics-shared-metadata-tables"></a>Таблицы общих метаданных Azure Synapse Analytics
 
@@ -24,7 +24,7 @@ Azure Synapse Analytics позволяет разным вычислительн
 
 После того как задание Spark создаст базу данных, в ней можно с помощью Spark создать таблицы с форматом хранения Parquet. Эти таблицы немедленно становятся доступными для выполнения запросов через любой пул Spark в рабочей области Azure Synapse. Их также можно использовать из любого задания Spark при наличии соответствующих разрешений.
 
-Таблицы, создаваемые и управляемые в Spark, а также внешние таблицы Spark доступны как внешние таблицы с тем же именем в соответствующей синхронизированной базе данных в SQL по запросу. Дополнительные сведения можно найти в разделе [Exposing a Spark table in SQL](#exposing-a-spark-table-in-sql) (Предоставление таблицы Spark в SQL).
+Таблицы, создаваемые и управляемые в Spark, а также внешние таблицы Spark доступны как внешние таблицы с тем же именем в соответствующей синхронизированной базе данных в SQL по запросу. Дополнительные сведения можно найти в разделе [Exposing a Spark table in SQL](#expose-a-spark-table-in-sql) (Предоставление таблицы Spark в SQL).
 
 Так как таблицы синхронизируются с SQL по запросу асинхронно, они появляются с некоторой задержкой.
 
@@ -34,9 +34,9 @@ Azure Synapse Analytics позволяет разным вычислительн
 
 Если вы создадите в такой базе данных объекты, используя SQL по запросу, или попытаетесь удалить эту базу данных, операция будет выполнена успешно, но это никак не отразится на исходной базе данных Spark.
 
-## <a name="exposing-a-spark-table-in-sql"></a>Предоставление таблицы Spark в SQL
+## <a name="expose-a-spark-table-in-sql"></a>Предоставление таблицы Spark в SQL
 
-### <a name="which-spark-tables-are-shared"></a>Таблицы Spark для совместного использования
+### <a name="shared-spark-tables"></a>Общие таблицы Spark
 
 Spark предоставляет два типа таблиц, которые Azure Synapse автоматически делает доступными в SQL.
 
@@ -50,7 +50,7 @@ Spark предоставляет два типа таблиц, которые Az
 
 В настоящее время Azure Synapse предоставляет в совместное использование для подсистем SQL только те управляемые и внешние таблицы Spark, данные в которых хранятся в формате Parquet. Таблицы на основе других форматов не синхронизируются автоматически. Но вы можете явным образом включить для базы данных SQL синхронизацию таких таблиц во внешнюю таблицу, если подсистема SQL поддерживает базовый формат таблицы.
 
-### <a name="how-are-spark-tables-shared"></a>Механизмы совместного использования таблиц Spark
+### <a name="share-spark-tables"></a>Совместное использование таблиц Spark
 
 Управляемые и внешние таблицы Spark предоставляются в ядре SQL для совместного использования как внешние таблицы со следующими свойствами:
 
@@ -96,7 +96,7 @@ Spark предоставляет два типа таблиц, которые Az
 
 ### <a name="create-a-managed-table-backed-by-parquet-in-spark-and-query-from-sql-on-demand"></a>Создание управляемой таблицы на основе Parquet в Spark и обращение к ней из SQL по запросу
 
-В этом сценарии существует база данных Spark с именем `mytestdb`. Подробные сведения см. в разделе [Создание базы данных Spark и подключение к ней для SQL по запросу](database.md#create--connect-to-spark-database---sql-on-demand).
+В этом сценарии существует база данных Spark с именем `mytestdb`. См. раздел [Создание базы данных Spark и подключение к ней для SQL по запросу](database.md#create-and-connect-to-spark-database-with-sql-on-demand).
 
 Создайте управляемую таблицу Spark с помощью SparkSQL, выполнив следующую команду:
 
@@ -153,7 +153,7 @@ id | name | birthdate
 1 | Alice | 2010-01-01
 ```
 
-### <a name="creating-an-external-table-backed-by-parquet-in-spark-and-querying-it-from-sql-on-demand"></a>Создание внешней таблицы на основе Parquet в Spark и обращение к ней из SQL по запросу
+### <a name="create-an-external-table-backed-by-parquet-in-spark-and-query-from-sql-on-demand"></a>Создание внешней таблицы на основе Parquet в Spark и обращение к ней из SQL по запросу
 
 В этом примере вы создаете внешнюю таблицу Spark на основе файлов данных Parquet, которые мы получили в предыдущем примере для управляемой таблицы.
 

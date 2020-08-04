@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: tutorial
 ms.date: 06/17/2020
 ms.author: sebansal
-ms.openlocfilehash: ae2d6259bac6a2034edc98de9b0405f32f17fbc3
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 225fb1099c1a095a4ec5bced4acc010d7cec6835
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85849498"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87043894"
 ---
 # <a name="creating-and-merging-csr-in-key-vault"></a>Создание и слияние CSR в Key Vault
 
@@ -80,6 +80,23 @@ Azure Key Vault поддерживает хранение в хранилище 
 9.  После того как запрос будет подписан ЦС, вернитесь к файлу сертификата, чтобы **выполнить слияние для подписанного запроса** на том же экране "Операция с сертификатом".
 
 Теперь для запроса на сертификат успешно выполнено слияние.
+
+## <a name="adding-more-information-to-csr"></a>Добавление дополнительных сведений в CSR-файл
+
+Возможно, требуется добавить дополнительные сведения при создании CSR-файла, например следующие: 
+    - страна;
+    - город или местоположение;
+    - область, республика, край, округ;
+    - организация;
+    - подразделение организации. Вы можете добавить все эти сведения при создании CSR-файла, определив их в subjectName.
+
+Пример
+    ```SubjectName="CN = docs.microsoft.com, OU = Microsoft Corporation, O = Microsoft Corporation, L = Redmond, S = WA, C = US"
+    ```
+
+>[!Note]
+>Если вы запрашиваете сертификат проверки домена (DV-сертификат) со всеми этими сведениями в CSR-файле, то центр сертификации может отклонить запрос, так как не сможет проверить всю информацию в запросе. Если вы запрашиваете OV-сертификат, то добавление всех этих сведений в CSR-файл будет более уместным.
+
 
 ## <a name="troubleshoot"></a>Диагностика
 

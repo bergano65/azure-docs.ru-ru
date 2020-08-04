@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/02/2019
 ms.author: memildin
-ms.openlocfilehash: 1f0a11616fe996f02d6464d23724156906176041
-ms.sourcegitcommit: 99d016949595c818fdee920754618d22ffa1cd49
+ms.openlocfilehash: 67017bdc98b997c728c4d5dcfab92e0804498060
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84771161"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084013"
 ---
 # <a name="quickstart-onboard-your-azure-stack-virtual-machines-to-security-center"></a>Краткое руководство. Подключение виртуальных машин Azure Stack к Центру безопасности
 После подключения подписки Azure можете включить Центр безопасности, чтобы защитить виртуальные машины, работающие в Azure Stack, добавив расширение виртуальной машины **Azure Monitor, Update and Configuration Management** из Azure Stack Marketplace.
@@ -29,7 +29,7 @@ ms.locfileid: "84771161"
 ## <a name="prerequisites"></a>Предварительные требования
 Для начала работы с Центром безопасности необходима подписка Microsoft Azure. Если у вас нет подписки, вы можете зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
 
-Для работы с этим руководством требуется подписка Azure и Центр безопасности с ценовой категорией "Стандартный". См. руководство по [подключению подписки Azure к центру безопасности с ценовой категорией "Стандартный"](security-center-get-started.md). Вы можете использовать Центр безопасности ценовой категории "Стандартный" бесплатно в течение 30 дней. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/security-center/).
+Для работы с этим учебником требуется подписка Azure и Центр безопасности с ценовой категорией "Стандартный". См. руководство по [подключению подписки Azure к центру безопасности с ценовой категорией "Стандартный"](security-center-get-started.md). Вы можете использовать Центр безопасности ценовой категории "Стандартный" бесплатно в течение 30 дней. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/security-center/).
 
 ## <a name="select-your-workspace-in-azure-security-center"></a>Выберите рабочую область в Центре безопасности Azure.
 

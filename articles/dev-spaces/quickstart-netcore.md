@@ -6,12 +6,12 @@ ms.topic: quickstart
 description: В этом кратком руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения .NET Core в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: b8ddf2e484b3d1525825f8df3b738091564b0a78
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 104e812cc9e792ce71f263085ba1a3474cc2226b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86512458"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87002783"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-visual-studio-code-and-net-core---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация в Kubernetes: Использование Visual Studio Code и .NET Core в Azure Dev Spaces
 
@@ -155,7 +155,7 @@ ViewData["Message"] = "Your application description page in Azure while debuggin
 
 Сохраните файл. Выберите *Отладка*, а затем — *Restart Debugging* (Перезапустить отладку) или на *панели инструментов отладки* нажмите кнопку *Restart Debugging* (Перезапустить отладку).
 
-![Панель инструментов "Отладка"представляет собой небольшую панель, которая отображается по центру вверху страницы (сразу под заголовком страницы). Кнопка "Перезапуск" выделена и представляет собой круглую стрелку. При наведении указателя на кнопку отображается надпись "Перезапустить (CTRL+SHIFT+F5)".](media/common/debug-action-refresh.png)
+![Панель инструментов "Отладка"представляет собой небольшую панель, которая отображается по центру вверху страницы (сразу под заголовком страницы). Кнопка "Перезапуск" выделена и представляет собой круглую стрелку. При наведении указателя на кнопку отображается надпись "Restart (Control + Shift + F5)" (Перезапустить (CTRL+SHIFT+F5)).](media/common/debug-action-refresh.png)
 
 Откройте службу в браузере и обратите внимание, что отображается обновленное сообщение.
 

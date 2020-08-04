@@ -1,18 +1,18 @@
 ---
-title: Автоматизация задач с помощью Visual Studio Code
-description: Создание или редактирование приложения логики, лежащего в основе определений JSON, с помощью Visual Studio Code (VS Code)
+title: Автоматизация задач и рабочих процессов с помощью Visual Studio Code
+description: Создание или изменение определений рабочих процессов приложения логики с помощью Visual Studio Code (VS Code)
 services: logic-apps
 ms.suite: integration
-ms.reviewer: klam, deli, logicappspm
+ms.reviewer: jonfan, deli, logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/25/2019
-ms.openlocfilehash: 3dccb596be2d97dd0f38d680537913a76ce09e93
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: a2239d5ee70e90b9ee7c07b4dca78a45d2ce7ef9
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82147063"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87131486"
 ---
 # <a name="quickstart-create-and-manage-logic-app-workflow-definitions-by-using-visual-studio-code"></a>Краткое руководство. Создание определений рабочих процессов приложения логики и управление ими с помощью Visual Studio Code
 
@@ -50,9 +50,9 @@ ms.locfileid: "82147063"
 
     Дополнительные сведения см. на странице [Extension Marketplace](https://code.visualstudio.com/docs/editor/extension-gallery) (Расширения в Marketplace). Чтобы внести изменения в эту версию расширения с открытым кодом, посетите веб-страницу [расширения Azure Logic Apps для Visual Studio Code на веб-сайте GitHub](https://github.com/Microsoft/vscode-azurelogicapps).
 
-<a name="sign-in-azure"></a>
+<a name="access-azure"></a>
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+## <a name="access-azure-from-visual-studio"></a>Доступ к Azure из Visual Studio
 
 1. Откройте Visual Studio Code. На панели инструментов Visual Studio Code щелкните значок Azure.
 
@@ -99,7 +99,7 @@ ms.locfileid: "82147063"
 
 ## <a name="create-new-logic-app"></a>Создание приложения логики
 
-1. Если вы еще не вошли в учетную запись Azure и подписку из Visual Studio Code, выполните [предыдущие действия, чтобы войти](#sign-in-azure).
+1. Если вы еще не вошли в учетную запись Azure и подписку из Visual Studio Code, выполните [предыдущие действия, чтобы войти](#access-azure).
 
 1. В Visual Studio Code в разделе **Logic Apps** откройте контекстное меню своей подписки и выберите параметр **Создание приложения логики**.
 
@@ -133,7 +133,7 @@ ms.locfileid: "82147063"
    > Если вы хотите повторно использовать этот пример определения приложения логики, вам потребуется учетная запись организации Office 365, например @fabrikam.com. Обязательно замените вымышленный адрес электронной почты своим. Чтобы использовать другой соединитель электронной почты, например Outlook.com или Gmail, замените действие `Send_an_email_action` аналогичным действием, доступным в [соединителе электронной почты, поддерживаемом Azure Logic Apps](../connectors/apis-list.md).
    >
    > Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. 
-   > Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с определенными утвержденными Google службами. Кроме того, вы можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application). 
+   > Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с определенными утвержденными Google службами. Кроме того, вы можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](/connectors/gmail/#authentication-and-bring-your-own-application). 
    > Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
 
    ```json
@@ -226,7 +226,7 @@ ms.locfileid: "82147063"
 
 Если вы изменяете опубликованное приложение логики и сохраняете изменения в Visual Studio Code, уже развернутое приложение *перезаписывается*. Чтобы не нарушать работу приложения логики в рабочей среде и сократить период такого нарушения, сначала отключите приложение логики. Убедившись, что приложение логики работает нормально, вы можете повторно активировать его.
 
-1. Если вы еще не вошли в учетную запись Azure и подписку из Visual Studio Code, выполните [предыдущие действия, чтобы войти](#sign-in-azure).
+1. Если вы еще не вошли в учетную запись Azure и подписку из Visual Studio Code, выполните [предыдущие действия, чтобы войти](#access-azure).
 
 1. В окне Azure в разделе **Logic Apps** разверните подписку Azure, чтобы можно было просмотреть все приложения логики в этой подписке.
 
@@ -247,7 +247,7 @@ ms.locfileid: "82147063"
 > [!IMPORTANT] 
 > Прежде чем изменять работающее приложение логики в рабочей среде, устраните риск нарушения работы этого приложения логики и сократите период такого нарушения, [отключив его](#disable-enable-logic-app).
 
-1. Если вы еще не вошли в учетную запись Azure и подписку из Visual Studio Code, выполните [предыдущие действия, чтобы войти](#sign-in-azure).
+1. Если вы еще не вошли в учетную запись Azure и подписку из Visual Studio Code, выполните [предыдущие действия, чтобы войти](#access-azure).
 
 1. В окне Azure в разделе **Logic Apps** разверните подписку Azure и выберите нужное приложение логики.
 

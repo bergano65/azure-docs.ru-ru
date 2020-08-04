@@ -1,6 +1,5 @@
 ---
-title: Основные сведения о Студии машинного обучения (классическая)
-titleSuffix: Azure
+title: Основные сведения о Студии машинного обучения (классической) в Azure
 description: Студия машинного обучения Azure (классическая) — это инструмент с поддержкой функции перетаскивания объектов, предназначенный для быстрого создания моделей на основе библиотеки готовых алгоритмов и модулей.
 services: machine-learning
 author: likebupt
@@ -11,14 +10,16 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: overview
 ms.date: 03/24/2020
-ms.openlocfilehash: c1772ceb514e46542129759711f2d45db39abf82
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0b0e09cfe855e017c297cbad1667eef81726d3da
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80371972"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87326211"
 ---
 # <a name="what-is-machine-learning-studio-classic"></a>Что такое Студия машинного обучения (классическая)?
+
+**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
 
 [!INCLUDE [Designer notice](../../../includes/designer-notice.md)]
 

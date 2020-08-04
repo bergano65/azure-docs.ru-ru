@@ -1,6 +1,6 @@
 ---
 title: Создание Центра уведомлений Azure с помощью шаблона Azure Resource Manager
-description: Узнайте, как создать Центр уведомлений Azure с помощью шаблона Azure Resource Manager.
+description: Узнайте, как создать концентратор уведомлений Azure с помощью шаблона Azure Resource Manager (шаблона ARM).
 services: notification-hubs
 author: sethmanheim
 ms.service: notification-hubs
@@ -10,37 +10,37 @@ ms.author: sethm
 ms.date: 05/15/2020
 ms.reviewer: thsomasu
 ms.lastreviewed: 05/15/2020
-ms.openlocfilehash: ede6b8ae22fb51a9586c6c4465d2cf9ac79f88df
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: a1e947c80ae48ae507d0712e62084538165918be
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83996675"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87022452"
 ---
-# <a name="quickstart-create-a-notification-hub-using-an-azure-resource-manager-template"></a>Краткое руководство по созданию Центра уведомлений с помощью шаблона Azure Resource Manager
+# <a name="quickstart-create-a-notification-hub-using-an-arm-template"></a>Краткое руководство по созданию концентратора уведомлений с помощью шаблона ARM
 
 Центры уведомлений Azure обеспечивают простой в использовании и масштабируемый механизм отправки push-уведомлений, который позволяет отправлять уведомления на любую платформу (iOS, Android, Windows, Kindle и т. д.) c любой серверной части (облачной или локальной). Дополнительные сведения о службе см. в статье [Что такое Центры уведомлений Azure?](notification-hubs-push-notification-overview.md).
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-В этом кратком руководстве используется шаблон Azure Resource Manager для создания пространства имен Центров уведомлений Azure и центра уведомлений **MyHub** в этом пространстве имен.
+В этом кратком руководстве используется шаблон Azure Resource Manager (шаблон ARM) для создания пространства имен Центров уведомлений Azure и концентратора уведомлений **MyHub** в этом пространстве имен.
 
-Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-notification-hub%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Нет.
+Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="create-a-notification-hubs-namespace-and-hub"></a>Создание пространства имен Центров уведомлений и концентраторов
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-notification-hub/).
 
 :::code language="json" source="~/quickstart-templates/101-notification-hub/azuredeploy.json" range="1-45" highlight="22-40":::
 
-* [Справочник по шаблонам пространства имен Microsoft.NotificationHubs](/azure/templates/microsoft.notificationhubs/2017-04-01/namespaces).
-* [Справочник по шаблонам Microsoft.NotificationHubs namespaces/notificationHubs](/azure/templates/microsoft.notificationhubs/2017-04-01/namespaces/notificationhubs).
+* [Справочник по шаблонам пространства имен Microsoft.NotificationHubs](/azure/templates/microsoft.notificationhubs/namespaces).
+* [Справочник по шаблонам Microsoft.NotificationHubs namespaces/notificationHubs](/azure/templates/microsoft.notificationhubs/namespaces/notificationhubs).
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
@@ -86,4 +86,4 @@ Write-Host "Press [ENTER] to continue..."
 Пошаговые инструкции по созданию шаблона см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание и развертывание первого шаблона Azure Resource Manager](/azure/azure-resource-manager/templates/template-tutorial-create-first-template)
+> [Руководство. Создание и развертывание первого шаблона ARM](../azure-resource-manager/templates/template-tutorial-create-first-template.md)

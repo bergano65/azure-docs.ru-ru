@@ -5,39 +5,41 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.devlang: nodejs
 ms.topic: sample
-ms.date: 04/05/2018
+ms.date: 07/23/2020
 author: sakash279
 ms.author: akshanka
-ms.openlocfilehash: 1f0541cd3ae7cf2c78d3cd2bf6844fed930e7968
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2abe23de5fbd2feada6ac8ff0a827b8575bcb28b
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833153"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87172002"
 ---
 # <a name="how-to-use-azure-table-storage-or-the-azure-cosmos-db-table-api-from-nodejs"></a>Как использовать в Node.js Хранилище таблиц Azure и API таблиц Azure Cosmos DB
+
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
 [!INCLUDE [storage-table-applies-to-storagetable-and-cosmos](../../includes/storage-table-applies-to-storagetable-and-cosmos.md)]
 
-## <a name="overview"></a>Обзор
-В этой статье рассматривается реализация типичных сценариев с использованием службы таблиц в службе хранилища Azure или Azure Cosmos DB в приложении Node.js.
+В этой статье показано, как создавать таблицы, сохранять данные и выполнять операции CRUD с данными. Вы можете использовать службу таблиц Azure или API таблиц Azure Cosmos DB. Примеры кода написаны на языке Node.js.
 
 ## <a name="create-an-azure-service-account"></a>Создание учетной записи службы Azure
 
 [!INCLUDE [cosmos-db-create-azure-service-account](../../includes/cosmos-db-create-azure-service-account.md)]
 
-### <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
+**Create an Azure Storage account** (Создание учетной записи хранения Azure)
 
 [!INCLUDE [cosmos-db-create-storage-account](../../includes/cosmos-db-create-storage-account.md)]
 
-### <a name="create-an-azure-cosmos-db-table-api-account"></a>Создание учетной записи API таблиц Azure Cosmos DB
+**Создание учетной записи API таблиц Azure Cosmos DB**
 
 [!INCLUDE [cosmos-db-create-tableapi-account](../../includes/cosmos-db-create-tableapi-account.md)]
 
 ## <a name="configure-your-application-to-access-azure-storage-or-the-azure-cosmos-db-table-api"></a>Настройка приложения для доступа к службе хранилища Azure или API таблиц Azure Cosmos DB
+
 Чтобы использовать службу хранилища Azure или Azure Cosmos DB, вам понадобится пакет SDK службы хранилища Azure для Node.js, который содержит набор вспомогательных библиотек, взаимодействующих со службами REST хранилища.
 
 ### <a name="use-node-package-manager-npm-to-install-the-package"></a>Использование диспетчера пакета Node (NPM) для установки пакета
+
 1. Используя интерфейс командной строки, например **PowerShell** (Windows), **Terminal** (Mac) или **Bash** (Unix), перейдите в папку, в которой вы создали приложение.
 2. Введите в командной строке **npm install azure-storage** . Результат выполнения этой команды будет аналогичен следующему примеру:
 
@@ -57,34 +59,42 @@ ms.locfileid: "85833153"
 3. Выполнив команду **ls** вручную, можно убедиться, что папка **node_modules** создана. В этой папке находится пакет **azure-storage** , содержащий библиотеки, необходимые для доступа к хранилищу.
 
 ### <a name="import-the-package"></a>Импорт пакета
+
 Добавьте следующий код в начало файла **server.js** в приложении:
 
 ```javascript
 var azure = require('azure-storage');
 ```
 
-## <a name="add-an-azure-storage-connection"></a>Добавление подключения к службе хранилища Azure
-Модуль Azure считывает переменные среды AZURE_STORAGE_ACCOUNT и AZURE_STORAGE_ACCESS_KEY или AZURE_STORAGE_CONNECTION_STRING, чтобы получить информацию, необходимую для подключения к учетной записи хранения Azure. Если эти переменные среды не заданы, при вызове **TableService**необходимо указать сведения об учетной записи. Например, следующий код создает объект **TableService**.
+## <a name="add-your-connection-string"></a>Добавление строки подключения
+
+Вы можете подключиться к учетной записи хранения Azure или учетной записи API таблиц Azure Cosmos DB. Получите строку подключения на основе типа используемой учетной записи.
+
+### <a name="add-an-azure-storage-connection"></a>Добавление подключения к службе хранилища Azure
+
+Модуль Azure считывает переменные среды AZURE_STORAGE_ACCOUNT и AZURE_STORAGE_ACCESS_KEY или AZURE_STORAGE_CONNECTION_STRING, чтобы получить информацию, необходимую для подключения к учетной записи хранения Azure. Если эти переменные среды не заданы, при вызове `TableService` необходимо указать сведения об учетной записи. Например, следующий код создает объект `TableService`.
 
 ```javascript
 var tableSvc = azure.createTableService('myaccount', 'myaccesskey');
 ```
 
-## <a name="add-an-azure-cosmos-db-connection"></a>Добавление подключения к Azure Cosmos DB
-Чтобы добавить подключение к Azure Cosmos DB, создайте объект **TableService** и укажите имя учетной записи, первичный ключ и конечную точку. Эти значения можно скопировать из раздела **Параметры** > **Строка подключения** на портале Azure для вашей учетной записи Cosmos DB. Пример:
+### <a name="add-an-azure-cosmos-db-connection"></a>Добавление подключения к Azure Cosmos DB
+
+Чтобы добавить подключение к Azure Cosmos DB, создайте объект `TableService` и укажите имя учетной записи, первичный ключ и конечную точку. Эти значения можно скопировать из раздела **Параметры** > **Строка подключения** на портале Azure для вашей учетной записи Cosmos DB. Пример:
 
 ```javascript
 var tableSvc = azure.createTableService('myaccount', 'myprimarykey', 'myendpoint');
 ```
 
 ## <a name="create-a-table"></a>Создание таблицы
-Следующий код создает объект **TableService** и использует его для создания новой таблицы.
+
+Следующий код создает объект `TableService` и использует его для создания таблицы.
 
 ```javascript
 var tableSvc = azure.createTableService();
 ```
 
-Вызов **createTableIfNotExists** создает новую таблицу с определенным именем, если она еще не существует. В следующем примере создается новая таблица с именем "mytable", если она еще не создана:
+Вызов `createTableIfNotExists` создает таблицу с определенным именем, если она еще не существует. В следующем примере создается новая таблица с именем "mytable", если она еще не создана:
 
 ```javascript
 tableSvc.createTableIfNotExists('mytable', function(error, result, response){
@@ -96,8 +106,9 @@ tableSvc.createTableIfNotExists('mytable', function(error, result, response){
 
 `result.created` имеет значение `true`, если создана новая таблица, и `false`, если таблица уже существует. `response` содержит информацию о запросе.
 
-### <a name="filters"></a>Фильтры
-К операциям, выполняемым с помощью **TableService**, можно применить дополнительную фильтрацию. Фильтровать можно операции ведения журнала, автоматические повторы и т. д. Фильтры являются объектами, реализующими метод со следующей сигнатурой:
+### <a name="apply-filters"></a>Применение фильтров
+
+К операциям, выполняемым с помощью `TableService`, можно применить дополнительную фильтрацию. Фильтровать можно операции ведения журнала, автоматические повторы и т. д. Фильтры являются объектами, реализующими метод со следующей сигнатурой:
 
 ```javascript
 function handle (requestOptions, next)
@@ -109,9 +120,9 @@ function handle (requestOptions, next)
 function (returnObject, finalCallback, next)
 ```
 
-В этом примере, а также после обработки **returnObject** (ответа на запрос к серверу) функция обратного вызова должна вызвать функцию **next** (если она существует), чтобы продолжить обработку других фильтров. В противном случае она просто вызывает **finalCallback**, чтобы завершить вызов службы.
+В этой функции обратного вызова и после обработки `returnObject` (ответ на запрос к серверу) функция обратного вызова должна либо вызвать `next` (при наличии), чтобы продолжить обработку других фильтров, либо в противном случае просто вызвать `finalCallback` для завершения обращения к службе.
 
-В пакет SDK Azure для Node.js включены два фильтра, реализующие логику повторных попыток: **ExponentialRetryPolicyFilter** и **LinearRetryPolicyFilter**. Следующий код создает объект **TableService**, использующий фильтр **ExponentialRetryPolicyFilter**:
+В пакет SDK Azure для Node.js включены два фильтра, реализующие логику повторных попыток: `ExponentialRetryPolicyFilter** and `LinearRetryPolicyFilter`. The following creates a `TableService` object that uses the `ExponentialRetryPolicyFilter.
 
 ```javascript
 var retryOperations = new azure.ExponentialRetryPolicyFilter();
@@ -119,6 +130,7 @@ var tableSvc = azure.createTableService().withFilter(retryOperations);
 ```
 
 ## <a name="add-an-entity-to-a-table"></a>Добавление сущности в таблицу
+
 Чтобы добавить сущность, сначала создайте объект, который определяет свойства сущности. Все сущности должны содержать ключи **PartitionKey** и **RowKey**, которые выступают ее уникальными идентификаторами.
 
 * **PartitionKey** — определяет секцию, в которой хранится сущность.
@@ -126,7 +138,7 @@ var tableSvc = azure.createTableService().withFilter(retryOperations);
 
 **PartitionKey** и **RowKey** должны быть строковыми значениями. Дополнительные сведения см. в статье [Understanding the Table Service Data Model](https://msdn.microsoft.com/library/azure/dd179338.aspx) (Общие сведения о модели данных службы таблиц).
 
-Ниже приводится пример задания сущности. Обратите внимание, что **dueDate** определяется как тип **Edm.DateTime**. Задание типа необязательно, типы будут выведены, если они не заданы.
+Ниже приводится пример задания сущности. Параметр **dueDate** определяется как тип `Edm.DateTime`. Задание типа необязательно, типы будут выведены, если они не заданы.
 
 ```javascript
 var task = {
@@ -138,9 +150,9 @@ var task = {
 ```
 
 > [!NOTE]
-> Для каждой записи есть поле **Timestamp** , значение которого задается Azure при вставке или обновлении сущности.
+> Для каждой записи есть поле `Timestamp`, значение которого задается Azure при вставке или обновлении сущности.
 
-Чтобы создать сущность, можно также использовать **entityGenerator** . В следующем примере код создает сущность для той же задачи с использованием **entityGenerator**.
+Чтобы создать сущность, можно также использовать `entityGenerator`. В следующем примере код создает сущность для той же задачи с использованием `entityGenerator`.
 
 ```javascript
 var entGen = azure.TableUtilities.entityGenerator;
@@ -152,7 +164,7 @@ var task = {
 };
 ```
 
-Чтобы добавить сущность в таблицу, передайте объект сущности в метод **insertEntity** .
+Чтобы добавить сущность в таблицу, передайте объект сущности в метод `insertEntity`.
 
 ```javascript
 tableSvc.insertEntity('mytable',task, function (error, result, response) {
@@ -171,19 +183,20 @@ tableSvc.insertEntity('mytable',task, function (error, result, response) {
 ```
 
 > [!NOTE]
-> По умолчанию метод **insertEntity** не возвращает вставленную сущность как часть информации, содержащейся в `response`. Если вы хотите выполнить другие операции с этой сущностью или кэшировать информацию, необходимо, чтобы она была возвращена как часть `result`. Это можно сделать следующим образом, включив **echoContent** :
+> По умолчанию метод `insertEntity` не возвращает вставленную сущность как часть информации, содержащейся в `response`. Если вы хотите выполнить другие операции с этой сущностью или кэшировать информацию, необходимо, чтобы она была возвращена как часть `result`. Это можно сделать следующим образом, включив `echoContent`:
 >
 > `tableSvc.insertEntity('mytable', task, {echoContent: true}, function (error, result, response) {...}`
 
 ## <a name="update-an-entity"></a>Обновление сущности
+
 Для обновления имеющейся сущности доступно несколько методов:
 
-* **replaceEntity** — обновляет имеющуюся сущность с ее заменой.
-* **mergeEntity** — обновляет сущность посредством объединения новых значений свойств с имеющейся сущностью.
-* **insertOrReplaceEntity** — обновляет имеющуюся сущность с ее заменой. Если сущность не существует, будет вставлена новая сущность.
-* **insertOrMergeEntity** — обновляет сущность посредством объединения новых значений свойств с имеющейся сущностью. Если сущность не существует, будет вставлена новая сущность.
+* `replaceEntity` — обновляет имеющуюся сущность путем ее замены.
+* `mergeEntity` — обновляет сущность посредством объединения новых значений свойств с имеющейся сущностью.
+* `insertOrReplaceEntity` — обновляет имеющуюся сущность путем ее замены. Если сущность не существует, будет вставлена новая сущность.
+* `insertOrMergeEntity` — обновляет сущность посредством объединения новых значений свойств с имеющейся сущностью. Если сущность не существует, будет вставлена новая сущность.
 
-В следующем примере показано обновление сущности с помощью **replaceEntity**.
+В следующем примере показано обновление сущности с помощью метода `replaceEntity`.
 
 ```javascript
 tableSvc.replaceEntity('mytable', updatedTask, function(error, result, response){
@@ -204,12 +217,13 @@ tableSvc.replaceEntity('mytable', updatedTask, function(error, result, response)
 >
 >
 
-Если при использовании **replaceEntity** и **mergeEntity** сущность, которая обновляется, не существует, то произойдет сбой операции обновления. Таким образом, если вы хотите сохранить сущность независимо от того, существует она уже или нет, используйте **insertOrReplaceEntity** или **insertOrMergeEntity**.
+Если при использовании `replaceEntity` и `mergeEntity` сущность, которая обновляется, не существует, то произойдет сбой операции обновления. Таким образом, если вы хотите сохранить сущность независимо от того, существует она уже или нет, используйте `insertOrReplaceEntity` или `insertOrMergeEntity`.
 
 `result` содержит значение **Etag** обновленной сущности в случае успешного выполнения операций.
 
 ## <a name="work-with-groups-of-entities"></a>Работа с группами сущностей
-Иногда имеет смысл отправлять совместно несколько операций в пакете для атомарной обработки сервером. Чтобы сделать это, используйте класс **TableBatch** для создания пакета, а затем метод **executeBatch** из **TableService** для выполнения пакетных операций.
+
+Иногда имеет смысл отправлять совместно несколько операций в пакете для атомарной обработки сервером. Чтобы сделать это, используйте класс `TableBatch` для создания пакета, а затем метод `executeBatch` из `TableService` для выполнения пакетных операций.
 
  В следующем примере показана отправка двух сущностей в пакете:
 
@@ -242,6 +256,7 @@ tableSvc.executeBatch('mytable', batch, function (error, result, response) {
 В успешных пакетных операциях `result` содержит информацию о всех операциях в пакете.
 
 ### <a name="work-with-batched-operations"></a>Работа с пакетными операциями
+
 Операции, добавленные в пакет, можно проверить, просмотрев свойство `operations`. Для работы с операциями можно также использовать следующие методы:
 
 * **clear** — удаляет все операции из пакета.
@@ -251,6 +266,7 @@ tableSvc.executeBatch('mytable', batch, function (error, result, response) {
 * **size** — возвращает количество операций в пакете.
 
 ## <a name="retrieve-an-entity-by-key"></a>Получение сущности по ключу
+
 Чтобы возвратить определенную сущность на основе значений ключей **PartitionKey** и **RowKey**, используйте метод **retrieveEntity**.
 
 ```javascript
@@ -264,6 +280,7 @@ tableSvc.retrieveEntity('mytable', 'hometasks', '1', function(error, result, res
 После завершения этой операции `result` будет содержать сущность.
 
 ## <a name="query-a-set-of-entities"></a>Запрос набора сущностей
+
 Чтобы запросить таблицу, используйте объект **TableQuery** для создания выражения запроса с помощью следующих предложений:
 
 * **select** — поля, возвращаемые из запроса.
@@ -294,6 +311,7 @@ tableSvc.queryEntities('mytable',query, null, function(error, result, response) 
 В случае успешного выполнения `result.entries` будет содержать массив сущностей, соответствующих запросу. Если запросу не удалось вернуть все сущности, `result.continuationToken` не будет иметь значение *NULL* и его можно будет использовать в качестве третьего параметра **queryEntities** для получения других результатов. В начальном запросе третий параметр должен иметь значение *null* .
 
 ### <a name="query-a-subset-of-entity-properties"></a>Запрос подмножества свойств сущности
+
 Запрос к таблице может получить лишь несколько полей сущности.
 Этот позволяет снизить потребление пропускной способности и может повысить производительность запросов, особенно для крупных сущностей. С помощью предложения **select** передайте имена возвращаемых полей. Например, следующий запрос возвратит только поля **description** и **dueDate**.
 
@@ -305,6 +323,7 @@ var query = new azure.TableQuery()
 ```
 
 ## <a name="delete-an-entity"></a>Удаление сущности
+
 Сущность можно удалить с помощью ее ключей раздела и строки. В этом примере объект **task1** содержит значения ключей **RowKey** и **PartitionKey** удаляемой сущности. Затем этот объект передается в метод **deleteEntity** .
 
 ```javascript
@@ -326,6 +345,7 @@ tableSvc.deleteEntity('mytable', task, function(error, response){
 >
 
 ## <a name="delete-a-table"></a>Удаление таблицы
+
 Следующий код удаляет таблицу из учетной записи хранения.
 
 ```javascript
@@ -339,6 +359,7 @@ tableSvc.deleteTable('mytable', function(error, response){
 Если неизвестно, существует ли таблица, используйте **deleteTableIfExists**.
 
 ## <a name="use-continuation-tokens"></a>Использование маркеров продолжения
+
 При выполнении запросов к таблицам для получения больших объемов результатов следует искать маркеры продолжения. По вашему запросу может быть найден большой объем данных, который, возможно, не удастся реализовать, если не создать метод определения наличия маркера продолжения.
 
 При наличии такого маркера объект **results**, возвращаемый при запросе сущностей, задает свойство `continuationToken`. В последствии его можно использовать при выполнении запроса для продолжения и перемещения между разделами и сущностями таблицы.
@@ -367,6 +388,7 @@ dc.table.queryEntities(tableName,
 Можно также использовать `top` вместе с `continuationToken`, чтобы задать размер страницы.
 
 ## <a name="work-with-shared-access-signatures"></a>Работа с подписями общего доступа
+
 Подписанные URL-адреса (SAS) — безопасный способ предоставить детализированный доступ к таблицам без указания имени или ключей своей учетной записи хранения. SAS часто используется для предоставления ограниченного доступа к данным, например, позволяет мобильному приложению запрашивать записи.
 
 Надежное приложение, например облачная служба, создает подписанный URL-адрес с помощью метода **generateSharedAccessSignature** из **TableService** и передает этот адрес ненадежному или частично надежному приложению, например мобильному приложению. Подпись SAS создается с использованием политики, которая описывает даты начала и окончания срока действия SAS, а также уровень доступа, который предоставляется держателю подписи SAS.
@@ -412,6 +434,7 @@ sharedTableService.queryEntities(query, null, function(error, result, response) 
 Так как подписанный URL-адрес был создан только для выполнения запросов, при попытке вставки, обновления или удаления сущностей будет возвращена ошибка.
 
 ### <a name="access-control-lists"></a>Списки управления доступом
+
 Можно также использовать список управления доступом (ACL) для задания политики доступа подписи SAS. Это может оказаться удобным, когда необходимо предоставить доступ к таблице нескольким клиентам, но с различной политикой доступа для каждого из них.
 
 ACL реализуется с помощью массива политик доступа, каждая из которых связана со своим идентификатором. В следующем примере определяются две политики, по одной для пользователей user1 и user2:
@@ -454,6 +477,7 @@ tableSAS = tableSvc.generateSharedAccessSignature('hometasks', { Id: 'user2' });
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 Для получения дополнительных сведений см. следующие ресурсы.
 
 * [Обозреватель хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.

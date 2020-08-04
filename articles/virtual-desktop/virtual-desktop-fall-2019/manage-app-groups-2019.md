@@ -1,6 +1,6 @@
 ---
-title: Управление группами приложений для Виртуального рабочего стола Windows в Azure
-description: В этой статье объясняется, как настраивать клиенты Виртуального рабочего стола в Azure Active Directory.
+title: Управление группами приложений для Виртуального рабочего стола Windows (классического) в Azure
+description: В этой статье объясняется, как настроить арендаторы Виртуального рабочего стола (классического) в Azure Active Directory.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: tutorial
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 55c2ed5f9066d85643588f77806bbd41e92dd16b
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: fcf946c4bde89f3c14e78744305bc274ea67962f
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82613950"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87284988"
 ---
-# <a name="tutorial-manage-app-groups-for-windows-virtual-desktop"></a>Руководство по Управление группами приложений для Виртуального рабочего стола Windows
+# <a name="tutorial-manage-app-groups-for-windows-virtual-desktop-classic"></a>Руководство по Управление группами приложений для Виртуального рабочего стола Windows (классического)
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../manage-app-groups.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows (классическому), который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Сведения об обеспечении управления объектами Azure Resource Manager для Виртуального рабочего стола Windows см. в [этой статье](../manage-app-groups.md).
 
 Группа приложений по умолчанию, созданная для нового пула узлов Виртуального рабочего стола Windows, также позволяет опубликовать полные классические приложения. Кроме того, вы можете создать одну или несколько групп приложений RemoteApp для пула узлов. Выполните инструкции, приведенные в этом учебнике, чтобы создать группу приложений RemoteApp и опубликовать отдельные приложения в меню **Пуск**.
 

@@ -1,24 +1,28 @@
 ---
 title: Создание первой функции с помощью шаблонов Azure Resource Manager
-description: Сведения о создании и развертывании в Azure простой бессерверной функции, активируемой по HTTP, с помощью шаблона Azure Resource Manager.
+description: Узнайте, как создать и развернуть в Azure простую бессерверную функцию, активируемую по HTTP, с помощью шаблона Azure Resource Manager (шаблона ARM).
 ms.date: 3/5/2020
 ms.topic: quickstart
 ms.service: azure-functions
 ms.custom: subject-armqs
-ms.openlocfilehash: 403ff6407105574c78b8e600c37efbe61d2f8b79
-ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
+ms.openlocfilehash: e409b3b64ac6bc39ba4cb58397506723a67a0de2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84740202"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081718"
 ---
-# <a name="quickstart-create-and-deploy-azure-functions-resources-from-a-resource-manager-template"></a>Краткое руководство. Создание и развертывание ресурсов службы "Функции Azure" с помощью шаблона Resource Manager
+# <a name="quickstart-create-and-deploy-azure-functions-resources-from-an-arm-template"></a>Краткое руководство. Создание и развертывание ресурсов Функций Azure с помощью шаблона ARM
 
-В этой статье вы примените шаблон Azure Resource Manager для создания функции, которая отвечает на HTTP-запросы. 
+В этой статье вы примените шаблон Azure Resource Manager (шаблон ARM) для создания функции, которая отвечает на HTTP-запросы. 
 
 Выполнение этого краткого руководства предполагает небольшую дополнительную плату в несколько центов США в учетной записи Azure. 
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
+
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-function-app-create-dynamic%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -48,13 +52,11 @@ ms.locfileid: "84740202"
 
 Завершив создание проекта в локальной среде, создайте в Azure необходимые ресурсы для выполнения этой функции. 
 
-## <a name="create-a-serverless-function-app-in-azure"></a>Создание бессерверного приложения-функции в Azure
+## <a name="review-the-template"></a>Изучение шаблона
 
-### <a name="review-the-template"></a>Изучение шаблона
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-function-app-create-dynamic/).
 
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dynamic).
-
-:::code language="json" source="~/quickstart-templates/101-function-app-create-dynamic/azuredeploy.json" :::
+:::code language="json" source="~/quickstart-templates/101-function-app-create-dynamic/azuredeploy.json" range="1-140" highlight="55-136":::
 
 Этот шаблон создает следующие четыре ресурса Azure:
 
@@ -63,7 +65,7 @@ ms.locfileid: "84740202"
 + [**Microsoft.Web/sites**](/azure/templates/microsoft.web/sites) — собственно приложение-функция.
 + [**microsoft.insights/components**](/azure/templates/microsoft.insights/components) — экземпляр Application Insights для мониторинга.
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 ```azurecli-interactive

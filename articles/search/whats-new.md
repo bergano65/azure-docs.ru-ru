@@ -7,12 +7,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
 ms.date: 07/15/2020
-ms.openlocfilehash: 238ede3e79b7d7c5a22d24dfc52530fe391b600b
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 8c6486a3a64dcbe3dd37770844296da73724f3a3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86519632"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87076349"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Новые возможности в Когнитивном поиске Azure
 
@@ -24,9 +24,9 @@ ms.locfileid: "86519632"
 
 |Функция&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Категория | Описание | Доступность  |
 |---------|------------------|-------------|---------------|
-| [**Клиентская библиотека .NET**](https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet) | Пакет SDK Azure | Новая клиентская библиотека, выпущенная командой Azure SDK, предназначенная для обеспечения согласованности с другими клиентскими библиотеками .NET. Версия 11 | Общедоступная версия. </br> Установите [пакет Azure.Search.Documents](https://www.nuget.org/packages/Azure.Search.Documents/) из NuGet. |
-| [**Клиентская библиотека Python**](https://docs.microsoft.com/python/api/overview/azure/search-documents-readme?view=azure-python)  | Пакет SDK Azure | Новая клиентская библиотека, выпущенная командой разработчиков пакетов Azure SDK и предназначенная для обеспечения согласованности с другими клиентскими библиотеками Python. Версия 11 | Общедоступная версия. </br> Установите [пакет azure-search-documents](https://pypi.org/project/azure-search-documents/) из PyPI. |
-| [**Клиентская библиотека JavaScript**](https://azuresdkdocs.blob.core.windows.net/$web/javascript/azure-search-documents/11.0.0/index.html)  | Пакет SDK Azure | Новая клиентская библиотека, выпущенная командой разработчиков пакетов Azure SDK и предназначенная для обеспечения согласованности с другими клиентскими библиотеками JavaScript. Версия 11 | Общедоступная версия. </br> Установите [пакет @azure/search-documents](https://www.npmjs.com/package/@azure/search-documents) из npm. |
+| [Клиентская библиотека Azure.Search.Documents](https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet) | Azure SDK для .NET | Клиентская библиотека .NET, выпущенная командой разработчиков пакетов SDK для Azure, которая предназначена для обеспечения согласованности с другими клиентскими библиотеками .NET. <br/><br/>Версия 11 нацелена на REST API версии 2020-06-30, но еще не поддерживает хранилище знаний, географическую фильтрацию или [FieldBuilder](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.fieldbuilder?view=azure-dotnet). | Общедоступная версия. </br> Установите [пакет Azure.Search.Documents](https://www.nuget.org/packages/Azure.Search.Documents/) из NuGet. |
+| [Клиентская библиотека Azure.Search.Documents](https://docs.microsoft.com/python/api/overview/azure/search-documents-readme?view=azure-python)  | SDK Azure для Python| Клиентская библиотека Python, выпущенная командой разработчиков пакетов Azure SDK и предназначенная для обеспечения согласованности с другими клиентскими библиотеками Python. <br/><br/>Версия 11 нацелена на REST API поиска версии 2020-06-30. | Общедоступная версия. </br> Установите [пакет azure-search-documents](https://pypi.org/project/azure-search-documents/) из PyPI. |
+| [Клиентская библиотека @azure/search-documents](https://docs.microsoft.com/javascript/api/overview/azure/search-documents-readme?view=azure-node-latest)  | Пакет Azure SDK для JavaScript | Клиентская библиотека JavaScript, выпущенная командой разработчиков пакетов Azure SDK и предназначенная для обеспечения согласованности с другими клиентскими библиотеками JavaScript. <br/><br/>Версия 11 нацелена на REST API поиска версии 2020-06-30. | Общедоступная версия. </br> Установите [пакет @azure/search-documents](https://www.npmjs.com/package/@azure/search-documents) из npm. |
 
 ### <a name="june-2020"></a>Июнь 2020 г.
 

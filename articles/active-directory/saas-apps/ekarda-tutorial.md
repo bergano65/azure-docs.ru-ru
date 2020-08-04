@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 06/15/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3790da8674732c50d55a85c84367f0d2fe3e08f5
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: aacaec5ff632385a1f1686610370bb92eb63c349
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85255691"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87017557"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-ekarda"></a>Руководство по интеграции единого входа Azure Active Directory с Ekarda
 
@@ -151,12 +151,12 @@ ms.locfileid: "85255691"
 
 1. Щелкните **Admin** -> **My Account** (Администратор -> Моя учетная запись).
 
-    ![Конфигурация Ekarda](./media/ekarda-tutorial/ekarda.PNG)    
+    ![Конфигурация Ekarda](./media/ekarda-tutorial/ekarda.png)    
 
 1. В нижней части страницы найдите раздел **SAML SETTINGS** (Параметры SAML), где вы будете настраивать интеграцию с SAML.
 1. На следующей странице выполните приведенные ниже действия.
 
-    ![Конфигурация Ekarda](./media/ekarda-tutorial/ekarda1.PNG)
+    ![Конфигурация Ekarda](./media/ekarda-tutorial/ekarda1.png)
 
     а. Щелкните ссылку **Service Provider metadata** (Метаданные поставщика служб) и сохраните метаданные в виде файла на локальном компьютере.
 
@@ -194,7 +194,8 @@ ms.locfileid: "85255691"
 
 - [Пробное использование Ekarda с Azure AD](https://aad.portal.azure.com/)
 
+- Используйте [корпоративное решение для карточек eCard от Ekarda](https://ekarda.com/ecards-ecards-with-logo-for-business-corporate-enterprise), чтобы подготовить любое количество сотрудников для отправки карточек eCard, которые снабжены логотипом вашей компании, клиентам и коллегам. Узнайте больше о подготовке [решения Ekarda для применения единого входа](https://support.ekarda.com/#SSO-Implementation).
+
 - [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 
 - [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-

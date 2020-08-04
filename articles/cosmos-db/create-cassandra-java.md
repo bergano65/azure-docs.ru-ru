@@ -8,13 +8,13 @@ ms.subservice: cosmosdb-cassandra
 ms.devlang: java
 ms.topic: quickstart
 ms.date: 05/18/2020
-ms.custom: seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 78a8e6cd777c239841f6d26e06a9fc348a221286
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.custom: seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: 2522d1def3407d9e2bd49363c3da8e462231c70c
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87323151"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86523865"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-cassandra-api-data-v3-driver"></a>Краткое руководство. Создание приложения Java для управления данными API Cassandra в Azure Cosmos DB (драйвер версии 3)
 
@@ -146,7 +146,7 @@ ms.locfileid: "87323151"
 
 1. Выберите элемент **Строка подключения** в своей учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/). 
 
-    :::image type="content" source="./media/create-cassandra-java/copy-username-connection-string-azure-portal.png" alt-text="Просмотр и копирование имени пользователя на странице "Строка подключения" на портале Azure":::
+    :::image type="content" source="./media/create-cassandra-java/copy-username-connection-string-azure-portal.png" alt-text="Просмотр и копирование имени пользователя на странице Строка подключения на портале Azure":::
 
 2. Используйте кнопку :::image type="icon" source="./media/create-cassandra-java/copy-button-azure-portal.png"::: в правой части экрана, чтобы скопировать значение параметра CONTACT POINT. 
 

@@ -12,17 +12,17 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-android
 ms.devlang: java
 ms.topic: tutorial
-ms.custom: mvc
+ms.custom: mvc, devx-track-java
 ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 709926671e1ad4d8beefaf0f1cff4c56b1948ca3
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 27a56a45845c1515b500a71528d3449b63c3f869
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80127365"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323967"
 ---
 # <a name="tutorial-send-push-notification-to-specific-android-users-using-azure-notification-hubs-and-google-cloud-messaging-deprecated"></a>Руководство по отправке push-уведомлений конкретным пользователям Android с помощью Центров уведомлений Azure и Google Cloud Messaging (не рекомендуется к использованию)
 
@@ -154,7 +154,7 @@ ms.locfileid: "80127365"
 
     Графическая структура файла `main_activity.xml` должна выглядеть следующим образом:
 
-    ![][A1]
+    ![Снимок экрана приложения с полями для ввода имени пользователя, пароля, получателя и сообщения, а также с кнопками для входа и отправки уведомлений.][A1]
 3. Создайте класс `RegisterClient` в том же пакете, в котором создан класс `MainActivity`. Используйте приведенный ниже код для файла нового класса.
 
     ```java
@@ -474,7 +474,7 @@ ms.locfileid: "80127365"
 2. В приложении Android введите имя пользователя и пароль. Они должны быть одинаковыми строковыми значениями без пробелов или специальных знаков.
 3. В приложении Android нажмите кнопку **входа**. Дождитесь появления всплывающего уведомления **Logged in and registered**(Вход и регистрация выполнены). Это активирует кнопку **Отправить уведомление**.
 
-    ![][A2]
+    ![Снимок экрана приложения. Отображается всплывающее сообщение, подтверждающее, что пользователь вошел в систему и зарегистрирован, а кнопка "Отправить уведомление" включена.][A2]
 4. С помощью переключателей включите все платформы, на которых вы запускали приложение и регистрировали пользователя.
 5. Введите имя пользователя, который получит уведомление. Он должен быть зарегистрирован для получения уведомлений на целевых устройствах.
 6. Введите сообщение для пользователя, получающего push-уведомление.

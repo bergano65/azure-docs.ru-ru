@@ -5,14 +5,14 @@ author: bandersmsft
 ms.reviewer: adwise
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 07/06/2020
+ms.date: 07/13/2020
 ms.author: banders
-ms.openlocfilehash: b8693ea09ccbb6f0a3f8dfe0846a9b1b256872b6
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 2cd786304180369fee39c7b362f27a44728f3ad8
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045150"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87124346"
 ---
 # <a name="managing-azure-enterprise-roles"></a>Управление ролями в Azure Enterprise
 
@@ -32,7 +32,7 @@ ms.locfileid: "86045150"
 
 Например, если для типа первоначальной аутентификации задано значение "Смешанная", соглашение Enterprise будет добавлено в качестве учетной записи Майкрософт, а контакт, которому будет выставлен счет, получит права администратора по соглашению Enterprise только для чтения. Если администратор по соглашению Enterprise не утвердит авторизацию учетной записи Майкрософт для существующего контакта, которому будет выставлен счет, такой администратор может удалить соответствующего пользователя и попросить клиента снова добавить пользователя в качестве администратора с правами только для чтения с рабочей или учебной учетной записью, заданной только на уровне регистрации на EA Portal.
 
-Эти роли относятся именно к управлению соглашениями Azure Enterprise и являются дополнением к встроенным ролям Azure, которые используются для управления доступом к ресурсам. Дополнительные сведения см. в статье [Встроенные роли для ресурсов Azure](../../role-based-access-control/built-in-roles.md).
+Эти роли относятся именно к управлению соглашениями Azure Enterprise и являются дополнением к встроенным ролям Azure, которые используются для управления доступом к ресурсам. Дополнительные сведения см. в статье [Встроенные роли Azure](../../role-based-access-control/built-in-roles.md).
 
 В следующих разделах описаны ограничениях и возможностях каждой роли.
 
@@ -121,4 +121,4 @@ ms.locfileid: "86045150"
 
 - [Управление доступом к сведениям о счетах Azure с помощью управления доступом на основе ролей](manage-billing-access.md)
 - [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md)
-- [Встроенные роли управления доступом на основе ролей в Azure](../../role-based-access-control/built-in-roles.md)
+- [Встроенные роли Azure](../../role-based-access-control/built-in-roles.md)

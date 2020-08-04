@@ -5,13 +5,13 @@ author: suhuruli
 ms.topic: tutorial
 ms.date: 08/27/2018
 ms.author: suhuruli
-ms.custom: mvc
-ms.openlocfilehash: 74c412ad4c62a5821890aa5602b521f3f63da925
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.custom: mvc, devx-track-java
+ms.openlocfilehash: 42efc13d37ccfdaf60896f338b1a38384ef06568
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82594769"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87320720"
 ---
 # <a name="tutorial-configure-a-jenkins-environment-to-enable-cicd-for-a-java-application-on-service-fabric"></a>Руководство по Настройка среды Jenkins для включения непрерывной интеграции и непрерывного развертывания для приложения Java в Service Fabric
 
@@ -178,7 +178,7 @@ Jenkins можно настроить внутри или за пределам�
 
     ![Выполняемые обновления](./media/service-fabric-tutorial-create-java-app/upgradejava.png)
 
-1. Теперь при доступе к **http://\<IP-адрес узла>:8080** приложение Voting со всеми функциями настроено и работает.
+1. Теперь при доступе к **http://\<Host-IP>:8080** приложение Voting со всеми функциями запущено и работает.
 
     ![Локальное приложение для голосования](./media/service-fabric-tutorial-java-jenkins/votingv2.png)
 

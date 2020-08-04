@@ -8,12 +8,12 @@ manager: nitinme
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 05/19/2020
-ms.openlocfilehash: 35590fd8aefb8b6a90adeef52fabe773663403c2
-ms.sourcegitcommit: 374e47efb65f0ae510ad6c24a82e8abb5b57029e
+ms.openlocfilehash: 2f25cab211d24facea7863c15b6d7671a9657ae9
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2020
-ms.locfileid: "85510991"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290678"
 ---
 # <a name="tutorial-diagnose-repair-and-commit-changes-to-your-skillset"></a>Руководство по диагностике, исправлению ошибок и фиксации изменений в наборе навыков
 
@@ -73,7 +73,7 @@ ms.locfileid: "85510991"
 1. Последовательно выберите **Files** > **New** (Файлы > Создать) и выберите коллекцию для импорта.
 1. После импорта коллекции разверните список действий (...).
 1. Нажмите кнопку **Изменить**.
-1. Введите имя службы поиска searchService (например, если конечная точка — https://mydemo.search.windows.net, именем службы будет mydemo).
+1. Введите имя службы поиска searchService (например, если конечная точка — `https://mydemo.search.windows.net`, то именем службы будет `mydemo`).
 1. В качестве apiKey укажите первичный или вторичный ключ службы "Поиск".
 1. Введите строку подключения к хранилищу storageConnectionString со страницы ключа учетной записи хранения Azure.
 1. Введите имя containerName для контейнера, созданного в учетной записи хранения.

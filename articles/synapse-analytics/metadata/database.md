@@ -9,12 +9,12 @@ ms.subservice: metadata
 ms.date: 05/01/2020
 ms.author: mrys
 ms.reviewer: jrasnick
-ms.openlocfilehash: 42c6ad7f77d1b42c02f57f161874eadb75387dc2
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 196577741ae1560232f8ae193aacd51a446431c8
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86496015"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87385540"
 ---
 # <a name="azure-synapse-analytics-shared-database"></a>Общая база данных Azure Synapse Analytics
 
@@ -34,7 +34,7 @@ Azure Synapse Analytics позволяет различным вычислите
 
 Если вы создадите объекты в созданной в Spark базе данных, используя SQL по требованию, или попытаетесь удалить базу данных, операция будет выполнена. Но исходная база данных Spark не изменится.
 
-## <a name="handling-of-name-conflicts"></a>Обработка конфликтов имен
+## <a name="how-name-conflicts-are-handled"></a>Как обрабатываются конфликты имен
 
 Если имя базы данных Spark конфликтует с именем существующей базы данных SQL по запросу, к имени базы данных Spark в SQL по требованию будет добавлен суффикс. Суффикс в SQL по запросу — `_<workspace name>-ondemand-DefaultSparkConnector`.
 
@@ -57,9 +57,9 @@ Azure Synapse Analytics позволяет различным вычислите
 
 ## <a name="examples"></a>Примеры
 
-### <a name="create--connect-to-spark-database---sql-on-demand"></a>Создание базы данных Spark и подключение к ней для SQL по запросу
+### <a name="create-and-connect-to-spark-database-with-sql-on-demand"></a>Создание базы данных Spark и подключение к ней с использованием SQL по запросу
 
-Сначала создайте базу данных Spark с именем `mytestdb`, используя кластер Spark, который уже создан в рабочей области. Это можно сделать, например, с помощью записной книжки Spark C# со следующей инструкцией .NET для Spark:
+Сначала создайте базу данных Spark с именем `mytestdb`, используя кластер Spark, который уже создан в рабочей области. Это можно сделать, например, с помощью записной книжки Spark C# со следующей инструкцией .NET для Spark.
 
 ```csharp
 spark.Sql("CREATE DATABASE mytestdb")

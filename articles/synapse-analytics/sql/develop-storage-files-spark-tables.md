@@ -1,5 +1,5 @@
 ---
-title: Синхронизация Apache Spark для определений внешних таблиц Azure Synapse в SQL по запросу (предварительная версия)
+title: Синхронизация Apache Spark для определений внешних таблиц в SQL по запросу (предварительная версия)
 description: Общие сведения о запросе таблиц Spark с помощью SQL по запросу (предварительная версия)
 services: synapse-analytics
 author: julieMSFT
@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: db6b2d95bf8f38495296885d14260b9900af1d51
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 3e9f688a31d2847505e974ab6a1557aa6a7b2047
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86247053"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87046836"
 ---
 # <a name="synchronize-apache-spark-for-azure-synapse-external-table-definitions-in-sql-on-demand-preview"></a>Синхронизация Apache Spark для определений внешних таблиц Azure Synapse в SQL по запросу (предварительная версия)
 
@@ -22,7 +22,7 @@ SQL по запросу (предварительная версия) может
 
 Для каждой внешней таблицы Spark, основанной на Parquet и размещенной в службе хранилища Azure, внешняя таблица создается в базе данных SQL по запросу. Таким образом, вы можете завершить работу пулов Spark и по-прежнему запрашивать внешние таблицы Spark из SQL по запросу.
 
-Если таблица секционирована в Spark, файлы в хранилище упорядочиваются по папкам. SQL по запросу будет использовать для запроса метаданные секции и только соответствующие папки и файлы.
+Если таблица секционирована в Spark, файлы в хранилище упорядочиваются по папкам. SQL по запросу будет использовать для запроса метаданные секции и только целевые папки и файлы.
 
 Синхронизация метаданных автоматически настраивается для каждого пула Spark, подготовленного в рабочей области Azure Synapse. Вы можете сразу же начать выполнение запросов ко внешним таблицам Spark.
 
@@ -35,7 +35,7 @@ SELECT * FROM [db].dbo.[spark_table]
 ```
 
 > [!NOTE]
-> Добавление, удаление или изменение столбца внешней таблицы Spark не будет отражено во внешней таблице SQL по запросу.
+> Команды добавления, удаления или изменения столбца внешней таблицы Spark не повлияют на внешнюю таблицу SQL по запросу.
 
 ## <a name="apache-spark-data-types-to-sql-data-types-mapping"></a>Сопоставление типов данных Apache Spark с типами данных SQL
 

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 06/12/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b5a52d0a54a9671052b9b7d46810cc65c22951f
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: 35bd80c2501f9e4c24093f861479f993d85d9c02
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85799906"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87034185"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-hub-planner"></a>Руководство по интеграции единого входа Azure Active Directory с Hub Planner
 
@@ -90,7 +90,7 @@ ms.locfileid: "85799906"
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://app.hubplanner.com/sso/callback`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Hub Planner](mailto:hello@hubplanner.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения будут использоваться в дальнейшем. Единственное изменение, которое необходимо сделать, — заменить \<SUBDOMAIN\> в **URL-адресе входа** поддоменом, полученным при регистрации в Hub Planner. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
@@ -99,6 +99,7 @@ ms.locfileid: "85799906"
 1. Требуемые URL-адреса вы можете скопировать в разделе **Настройка Hub Planner**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
 В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
@@ -131,7 +132,7 @@ ms.locfileid: "85799906"
 
 ## <a name="configure-hub-planner-sso"></a>Настройка единого входа в Hub Planner
 
-Чтобы настроить единый вход на стороне **Hub Planner**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки Hub Planner](mailto:hello@hubplanner.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Hub Planner**, необходимо войти в учетную запись Hub Planner и выполнить приведенные ниже действия. 
 
 ### <a name="install-the-extension-in-hub-planner"></a>Установка расширения в Hub Planner
 

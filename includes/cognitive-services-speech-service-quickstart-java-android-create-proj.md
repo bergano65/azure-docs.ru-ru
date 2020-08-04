@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 02/10/2020
 ms.author: travisw
-ms.openlocfilehash: d59381c220d7118724db7685740af76ba3776034
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: 84c9f61783d2fea425b83c214deede295c4ed581
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84609327"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87374687"
 ---
 1. Запустите Android Studio и в окне **приветствия** выберите **Start a new Android Studio project** (Создать проект Android Studio).
 
@@ -27,7 +27,7 @@ Android Studio требуется несколько минут, чтобы по
 
 [!INCLUDE [License notice](cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для службы "Речь" в составе Cognitive Services — 1.12.1.
+Текущая версия пакета SDK для службы "Речь" в составе Cognitive Services — 1.13.0.
 
 Пакет SDK службы "Речь" для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит необходимые библиотеки и требуемые разрешения Android.
 Он доступен в репозитории Maven по адресу https:\//csspeechstorage.blob.core.windows.net/maven/.
@@ -42,7 +42,7 @@ Android Studio требуется несколько минут, чтобы по
 
    ![Снимок экрана зависимости библиотек](../articles/cognitive-services/Speech-Service/media/sdk/qs-java-android-07-add-module-dependency.png)
 
-1. В появившемся окне введите имя и версию пакета SDK службы "Речь" для Android: *com.microsoft.cognitiveservices.speech:client-sdk:1.12.1*. Нажмите кнопку **ОК**.
+1. В появившемся окне введите имя и версию пакета SDK службы "Речь" для Android: *com.microsoft.cognitiveservices.speech:client-sdk:1.13.0*. Нажмите кнопку **ОК**.
    Пакет SDK службы "Речь" должен быть добавлен в список зависимостей, как показано ниже:
 
    ![Снимок экрана пакета SDK службы "Речь" в списке зависимостей](../articles/cognitive-services/Speech-Service/media/sdk/qs-java-android-08-dependency-added-1.0.0.png)

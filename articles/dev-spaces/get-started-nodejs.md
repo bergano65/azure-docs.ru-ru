@@ -5,12 +5,12 @@ ms.date: 09/26/2018
 ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения Node.js в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 3ee8ec8eb78ccb8a7405fd00654ee00ebba8b7c1
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: 286f4f37b0f34614b560c9a1758c18f5f7c586bc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85854979"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87044323"
 ---
 # <a name="create-a-kubernetes-dev-space-visual-studio-code-and-nodejs-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Visual Studio Code и Node.js в Azure Dev Spaces
 
@@ -20,7 +20,7 @@ ms.locfileid: "85854979"
 - итеративная разработка кода в контейнерах с помощью VS Code и командной строки;
 - эффективная разработка и тестирование кода в среде командной работы.
 
-> [!Note]
+> [!NOTE]
 > **Если на каком-то этапе у вас возникли трудности**, см. раздел об [устранении неполадок](troubleshooting.md).
 
 ## <a name="install-the-azure-cli"></a>Установка Azure CLI
@@ -33,7 +33,7 @@ ms.locfileid: "85854979"
 az login
 ```
 
-> [!Note]
+> [!NOTE]
 > Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 
 #### <a name="if-you-have-multiple-azure-subscriptions"></a>Если у вас несколько подписок Azure...
@@ -126,7 +126,7 @@ azds up
 - Отображаются сведения о конечной точке контейнера. В нашем случае нам необходим общедоступный URL-адрес HTTP.
 - Если приведенные выше этапы выполнены успешно, после запуска контейнера должны отобразиться выходные данные `stdout` (и `stderr`).
 
-> [!Note]
+> [!NOTE]
 > При первом запуске команды `up` на выполнение этих шагов потребуется больше времени, но последующие запуски должны выполняться быстрее.
 
 ### <a name="test-the-web-app"></a>Тестирование веб-приложения
@@ -142,7 +142,7 @@ Service 'webfrontend' port 80 (TCP) is available at 'http://localhost:<port>'
 
 Чтобы просмотреть веб-приложение, откройте общедоступный URL-адрес в браузере. Кроме того, обратите внимание, что выходные данные `stdout` и `stderr` передаются потоком в окно терминала *azds trace* при взаимодействии с веб-приложением. Вы также увидите сведения об отслеживании HTTP-запросов при их прохождении в системе. Это упрощает отслеживание сложных вызовов к нескольким службам во время разработки. Инструментарий, добавленный в Dev Spaces, предоставляет эту возможность отслеживания запросов.
 
-> [!Note]
+> [!NOTE]
 > Кроме общедоступного URL-адреса можно использовать альтернативный URL-адрес `http://localhost:<portnumber>`, который отображается в выходных данных консоли. Если вы используете URL-адрес localhost, может показаться, что контейнер выполняется локально, но фактически он выполняется в Azure. В Azure Dev Spaces используется *перенаправление портов* Kubernetes для сопоставления порта localhost с контейнером, запущенным в AKS. Это облегчает работу со службой на локальном компьютере.
 
 ### <a name="update-a-content-file"></a>Обновление файла содержимого
@@ -199,9 +199,9 @@ Azure Dev Spaces — это не просто среда выполнения к
 
 В этом разделе используется VS Code для прямой отладки контейнера, работающего в Azure. Также вы узнаете, как быстрее вносить изменения, выполнять тестирование и запуск.
 
-![](media/common/edit-refresh-see.png)
+![На схеме показан цикл разработки из трех этапов: правка кода, обновление контейнера и просмотр изменений.](media/common/edit-refresh-see.png)
 
-> [!Note]
+> [!NOTE]
 > **Если на каком-то этапе у вас возникли трудности**, см. статью [Устранение неполадок](troubleshooting.md) или оставьте комментарий на этой странице.
 
 ### <a name="initialize-debug-assets-with-the-vs-code-extension"></a>Инициализация ресурсов отладки с помощью расширения VS Code
@@ -211,15 +211,15 @@ Azure Dev Spaces — это не просто среда выполнения к
 
 В папку `.vscode` будет добавлена конфигурация отладки для Azure Dev Spaces. Не следует путать эту команду с командой `azds prep`, которая позволяет настроить проект для развертывания.
 
-![](media/common/command-palette.png)
+![На снимке экрана показан выбор команды "Azure Dev Spaces: Prepare configuration files for Azure Dev Spaces" (Azure Dev Spaces: подготовка файлов конфигурации для Azure Dev Spaces) в окне палитры команд.](media/common/command-palette.png)
 
 ### <a name="select-the-azds-debug-configuration"></a>Выбор конфигурации отладки AZDS
 1. Чтобы открыть представление отладки, щелкните значок "Отладка" на **панели действия** сбоку VS Code.
 1. Выберите **Launch Program (AZDS)** (Запустить программу (AZDS)) как активную конфигурацию отладки.
 
-![](media/get-started-node/debug-configuration-nodejs2.png)
+![Снимок экрана: левый верхний угол окна Visual Studio Code Выделен значок отладки, заголовок области слева — "DEBUG" (Отладка), а в раскрывающемся списке справа от заголовка отображается пункт "Launch Program (AZDS)" (Запуск программы (AZDS)).](media/get-started-node/debug-configuration-nodejs2.png)
 
-> [!Note]
+> [!NOTE]
 > Если вы не видите никаких команд Azure Dev Spaces на палитре команд, убедитесь, что вы [установили расширение VS Code для Azure Dev Spaces](get-started-nodejs.md#get-kubernetes-debugging-for-vs-code).
 
 ### <a name="debug-the-container-in-kubernetes"></a>Отладка контейнера в Kubernetes
@@ -227,10 +227,10 @@ Azure Dev Spaces — это не просто среда выполнения к
 
 Подобно команде `up`, код синхронизируется со средой разработки при запуске отладки, и выполняется сборка и развертывание контейнера в Kubernetes. На этот раз отладчик подключен к удаленному контейнеру.
 
-> [!Tip]
+> [!TIP]
 > Строка состояния VS Code станет оранжевой. Это указывает на то, что отладчик подключен. Кроме того, появится интерактивный URL-адрес, который можно использовать для быстрого открытия сайта.
 
-![](media/common/vscode-status-bar-url.png)
+![На снимке экрана показана нижняя часть окна Visual Studio Code. Оранжевая строка состояния является последней. Он содержит URL-адрес для перехода на веб-сайт.](media/common/vscode-status-bar-url.png)
 
 Установите точку останова в файле кода на стороне сервера, например в `app.get('/api'...` в [строке 13`server.js`](https://github.com/Azure/dev-spaces/blob/master/samples/nodejs/getting-started/webfrontend/server.js#L13). 
 
@@ -255,7 +255,7 @@ app.get('/api', function (req, res) {
 
 Сохраните файл и в области **действий отладки** нажмите кнопку **Restart** (Обновить). 
 
-![](media/common/debug-action-refresh.png)
+![Панель действий "Debug" (Отладка) представляет собой небольшую область, которая отображается по центру вверху страницы (сразу под заголовком страницы). Кнопка "Перезапуск" выделена и представляет собой круглую стрелку. При наведении указателя на кнопку отображается надпись "Restart (Control + Shift + F5)" (Перезапустить (CTRL+SHIFT+F5)).](media/common/debug-action-refresh.png)
 
 Вместо повторной сборки и развертывания нового образа контейнера при каждой правке кода, что часто занимает немало времени, Azure Dev Spaces перезапустит процесс Node.js между сеансами отладки, чтобы ускорить цикл правки и отладки.
 

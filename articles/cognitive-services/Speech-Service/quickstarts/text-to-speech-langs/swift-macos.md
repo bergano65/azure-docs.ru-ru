@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Синтез речи с помощью Swift в службе "Речь"
+title: Краткое руководство. Синтез речи в Swift в macOS с помощью службы "Речь"
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как синтезировать речь в Swift, используя macOS и пакет SDK службы "Речь"
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 06/25/2020
 ms.author: yulili
-ms.openlocfilehash: 1ed68b2ba00a89ff7b20b8ed61457dfb268917e4
-ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
+ms.openlocfilehash: 6dae832b0777ca2caf993e126ddfea074919a0dc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85391270"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084795"
 ---
 # <a name="quickstart-synthesize-speech-in-swift-on-macos-using-the-speech-sdk"></a>Краткое руководство. Синтез речи в Swift с использованием macOS и пакета SDK службы "Речь"
 

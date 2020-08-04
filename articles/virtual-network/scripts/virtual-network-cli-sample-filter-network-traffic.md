@@ -1,6 +1,6 @@
 ---
 title: Фильтрация сетевого трафика виртуальной машины — пример скрипта Azure CLI
-description: Пример скрипта Azure CLI. Фильтрация входящего и исходящего сетевого трафика виртуальной машины.
+description: Можно применить фильтрацию входящего и исходящего сетевого трафика виртуальных машин с помощью примера сценария Azure CLI.
 services: virtual-network
 documentationcenter: virtual-network
 author: KumudD
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 03/20/2018
 ms.author: kumud
-ms.openlocfilehash: 71de6c9c3f742e006762fb8778948cff2e5d96af
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6832cf08abd179b6108f971227b5c054c5617337
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74084044"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87281639"
 ---
-# <a name="filter-inbound-and-outbound-vm-network-traffic-script-sample"></a>Пример скрипта для фильтрации входящего и исходящего сетевого трафика виртуальной машины
+# <a name="filter-inbound-and-outbound-vm-network-traffic-using-an-azure-cli-script-sample"></a>Пример сценария Azure CLI для фильтрации входящего и исходящего сетевого трафика виртуальной машины
 
 В этом примере скрипта создается виртуальная сеть с интерфейсной и внутренней подсетями. Входящий сетевой трафик в интерфейсной подсети принимается по портам HTTP, HTTPS и SSH, тогда как исходящий трафик в Интернет из внутренней подсети не разрешен. После выполнения скрипта у вас будет одна виртуальная машина с двумя сетевыми адаптерами. Каждый сетевой адаптер подключен к другой подсети.
 

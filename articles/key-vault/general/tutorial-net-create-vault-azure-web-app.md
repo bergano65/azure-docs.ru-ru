@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 05/06/2020
 ms.author: mbaldwin
-ms.openlocfilehash: f6e70caaedf906142b19ba45f0eb4d818e2955e7
-ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
+ms.openlocfilehash: 4e236be298f92506e40a7f5197b2abeb065e7eed
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85051905"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87013272"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-web-app-with-net"></a>Руководство по использованию управляемого удостоверения для подключения Key Vault к веб-приложению в .NET
 
@@ -28,7 +28,7 @@ Azure Key Vault позволяет безопасно хранить учетн�
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Пакет SDK для .NET Core 3.1 или более поздней версии](https://dotnet.microsoft.com/download/dotnet-core/3.1).
-* [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) или [Azure PowerShell](/powershell/azure/overview).
+* [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) или [Azure PowerShell](/powershell/azure/).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -51,7 +51,7 @@ az group create --name "myResourceGroup" -l "EastUS"
 az keyvault create --name "<your-keyvault-name>" -g "myResourceGroup"
 ```
 
-Запишите полученное значение `vaultUri` в формате https://<your-keyvault-name>.vault.azure.net/. Оно вам пригодится на шаге [Обновление кода](#update-the-code).
+Запишите полученное значение `vaultUri` в формате "https://&lt;your-keyvault-name&gt;.vault.azure.net". Оно вам пригодится на шаге [Обновление кода](#update-the-code).
 
 Теперь поместите секрет в хранилище ключей с помощью команды [az keyvault secret set](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-set) Задайте для секрета имя MySecret и значение "Success!".
 

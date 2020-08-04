@@ -6,21 +6,24 @@ author: mhopkins-msft
 ms.custom: mvc
 ms.service: storage
 ms.author: mhopkins
-ms.date: 01/24/2020
+ms.date: 07/24/2020
 ms.topic: quickstart
 ms.subservice: blobs
-ms.openlocfilehash: 920d3d6c1cfc928efa5daa2d6c0aa3a6b4e81375
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 0db110d02211323f64e7ffe795f72e3a5003ec91
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82161131"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282047"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
 # <a name="quickstart-manage-blobs-with-javascript-v10-sdk-in-browser"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 10 в браузере
 
 Из этого краткого руководства вы узнаете, как управлять большими двоичными объектами с помощью кода JavaScript, который полностью выполняется в браузере. Большие двоичные объекты — это объекты, которые могут содержать большие объемы текстовых или двоичных данных, включая изображения, документы, потоковое мультимедиа и архивные данные. Вы узнаете, как использовать требуемые меры безопасности, чтобы обеспечить защищенный доступ к вашей учетной записи хранилища больших двоичных объектов.
+
+> [!NOTE]
+> В этом кратком руководстве используется устаревшая версия клиентской библиотеки Хранилища BLOB-объектов Azure. Сведения о том, как начать работу с последней версией, см. в статье [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в браузере](quickstart-blobs-javascript-browser.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,7 +43,7 @@ ms.locfileid: "82161131"
 
 В следующей таблице описывается каждый параметр CORS и объясняются значения, используемые для определения правила.
 
-|Параметр  |Значение  | Описание |
+|Параметр  |Значение  | Описание: |
 |---------|---------|---------|
 | Разрешенные источники | * | Принимает список доменов, разделенных запятыми, как допустимые источники. При установке значения `*` разрешает всем доменам получать доступ к учетной записи хранения. |
 | Допустимые методы     | DELETE, GET, HEAD, MERGE, POST, OPTIONS и PUT | Список HTTP-команд, которые можно выполнять в учетной записи хранения. В этом руководстве установите все доступные параметры. |

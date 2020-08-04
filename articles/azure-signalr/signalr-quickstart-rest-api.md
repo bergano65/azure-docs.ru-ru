@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: quickstart
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 70053fbc47a5ba85e7bb18ab762868973d014beb
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: 707547cb39487111e2e9353de7e82c2409638324
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80548125"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87045010"
 ---
 # <a name="quickstart-broadcast-real-time-messages-from-console-app"></a>Краткое руководство. Широковещательные сообщения в режиме реального времени из консольного приложения
 
@@ -126,7 +126,7 @@ broadcast
 
 В следующе таблице показан список доступных API для каждой версии.
 
-API | `1.0-preview` | `1.0`
+API | 1.0-preview | 1.0
 --- | --- | ---
 [Отправка всем](#broadcast) | **&#x2713;** | **&#x2713;**
 [Отправка группе](#broadcast-group) | **&#x2713;** | **&#x2713;**
@@ -242,7 +242,7 @@ API | `1.0-preview` | `1.0`
 Код состояния отклика | Описание
 ---|---
 `200` | Служба работает
-`503` | Служба недоступна
+`5xx` | Ошибка службы
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 

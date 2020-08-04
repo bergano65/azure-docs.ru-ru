@@ -11,17 +11,16 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 10/21/2019
+ms.date: 07/14/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25dd638c15fecbef787e4ceabea9ae7cb4359582
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5d78cbb9f8ea56df6952022f5388d66a9163f714
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76120372"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87018531"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-adobe-creative-cloud"></a>Руководство по интеграции единого входа Azure Active Directory с Adobe Creative Cloud
 
@@ -34,7 +33,7 @@ ms.locfileid: "76120372"
 * Вы можете включить автоматический вход пользователей в Adobe Creative Cloud с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -48,10 +47,7 @@ ms.locfileid: "76120372"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Adobe Creative Cloud поддерживает единый вход, инициированный **поставщиком услуг**.
-
-
-
-
+* После настройки Adobe Creative Cloud можно применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="adding-adobe-creative-cloud-from-the-gallery"></a>Добавление Adobe Creative Cloud из коллекции
 
@@ -65,7 +61,7 @@ ms.locfileid: "76120372"
 1. Выберите **Adobe Creative Cloud** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-adobe-creative-cloud"></a>Настройка и проверка единого входа Azure AD для Adobe Creative Cloud
+## <a name="configure-and-test-azure-ad-sso-for-adobe-creative-cloud"></a>Настройка и проверка единого входа Azure AD для Adobe Creative Cloud
 
 Настройте и проверьте единый вход Azure AD в Adobe Creative Cloud с помощью тестового пользователя **B.Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Adobe Creative Cloud.
 
@@ -95,7 +91,7 @@ ms.locfileid: "76120372"
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://www.okta.com/saml2/service-provider/<token>`.
 
     > [!NOTE]
-    > Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Adobe Creative Cloud](https://www.adobe.com/au/creativecloud/business/teams/plans.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Значение идентификатора приведено для примера и не является реальным. Следуйте указаниям шага 4 из раздела **Настройка единого входа в Adobe Creative Cloud**. Можно открыть **XML-файл метаданных федерации** и получить из него значение идентификатора сущности, после чего задать его в качестве значения идентификатора в конфигурации Azure AD. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. Приложение Adobe Creative Cloud ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
@@ -198,7 +194,7 @@ ms.locfileid: "76120372"
 
 - [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
@@ -207,4 +203,3 @@ ms.locfileid: "76120372"
 - [Set up an identity (adobe.com)](https://helpx.adobe.com/enterprise/using/set-up-identity.html) (Настройка удостоверения (adobe.com))
   
 - [Настройка Azure для использования с единым входом Adobe (adobe.com)](https://helpx.adobe.com/enterprise/kb/configure-microsoft-azure-with-adobe-sso.html)
-

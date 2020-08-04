@@ -7,12 +7,12 @@ ms.date: 07/09/2018
 ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio для отладки и быстрого выполнения итерации приложения .NET Core в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: ba90cbc8bc0267f1fba8c9495886bdc8ce2ac5e3
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: 722f2f5b86bd67df7c7250cdbfc44ebcc048c773
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83995910"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090796"
 ---
 # <a name="create-a-kubernetes-dev-space-visual-studio-and-net-core-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Visual Studio и .NET Core в Azure Dev Spaces
 
@@ -23,7 +23,7 @@ ms.locfileid: "83995910"
 - независимая разработка двух отдельных служб и вызов другой службы с помощью обнаружения службы DNS Kubernetes;
 - эффективная разработка и тестирование кода в среде командной работы.
 
-> [!Note]
+> [!NOTE]
 > **Если на каком-то этапе у вас возникли трудности**, см. раздел об [устранении неполадок](troubleshooting.md).
 
 ## <a name="install-the-azure-cli"></a>Установка Azure CLI
@@ -36,7 +36,7 @@ ms.locfileid: "83995910"
 az login
 ```
 
-> [!Note]
+> [!NOTE]
 > Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 
 #### <a name="if-you-have-multiple-azure-subscriptions"></a>Если у вас несколько подписок Azure...
@@ -91,31 +91,31 @@ az aks create -g MyResourceGroup -n MyAKS --location <region> --generate-ssh-key
 
 Создайте новый проект в Visual Studio. В настоящее время проект должен быть **веб-приложением ASP.NET Core**. Присвойте проекту имя **webfrontend**.
 
-![](media/get-started-netcore-visualstudio/NewProjectDialog1.png)
+![Диалоговое окно создания проекта: создание веб-приложения на языке C с именем webfrontend в расположении C:\Source\Repos. Раскрывающейся список "Решение": значение "Создать новое решение" и установлен флажок "Создать каталог для решения".](media/get-started-netcore-visualstudio/NewProjectDialog1.png)
 
 Выберите шаблон **Веб-приложение (модель-представление-контроллер)** и выберите **.NET Core** и **ASP.NET Core 2.0** в двух раскрывающихся списках в верхней части диалогового окна. Чтобы создать проект, нажмите кнопку **ОК** .
 
-![](media/get-started-netcore-visualstudio/NewProjectDialog2.png)
+![Диалоговое окно "Создать веб-приложение ASP.NET Core": .NET Core и ASP .NET Core 2.0 в двух раскрывающихся списках. Массив кнопок шаблона проекта, расположенных под списками, и выбранный шаблон "Веб-приложение (модель — представление — контроллер)". Флажок "Включить поддержку Docker" не установлен.](media/get-started-netcore-visualstudio/NewProjectDialog2.png)
 
 ### <a name="enable-dev-spaces-for-an-aks-cluster"></a>Включение Dev Spaces для кластера AKS
 
 В только что созданном проекте в раскрывающемся списке параметров запуска выберите **Azure Dev Spaces**, как показано ниже.
 
-![](media/get-started-netcore-visualstudio/LaunchSettings.png)
+![Раскрывающийся список в верхней части окна с надписью Microsoft Visual Studio Int Preview (Предварительная версия Microsoft Visual Studio Int). Выбрано значение Azure Dev Spaces.](media/get-started-netcore-visualstudio/LaunchSettings.png)
 
 В появившемся диалоговом окне убедитесь, что вы вошли в систему с соответствующей учетной записью, а затем выберите существующий кластер Kubernetes.
 
-![](media/get-started-netcore-visualstudio/Azure-Dev-Spaces-Dialog.PNG)
+![Диалоговое окно Azure Dev Spaces со следующими полями: "Подписка", "Кластер Службы Kubernetes Azure" и "Пространство".](media/get-started-netcore-visualstudio/Azure-Dev-Spaces-Dialog.PNG)
 
 В раскрывающемся списке **Пространство** оставьте пока значение по умолчанию (`default`). Позже вы узнаете больше об этом параметре. Установите флажок **Publicly Accessible** (Общедоступное), чтобы веб-приложение было доступно через общедоступную конечную точку. Этот параметр не является обязательным, но он будет полезен для демонстрации некоторых концепций далее в этом пошаговом руководстве. Но не волнуйтесь, вы в любом случае сможете выполнить отладку веб-сайта с помощью Visual Studio.
 
-![](media/get-started-netcore-visualstudio/Azure-Dev-Spaces-Dialog2.png)
+![Установлен флажок "Общедоступное".](media/get-started-netcore-visualstudio/Azure-Dev-Spaces-Dialog2.png)
 
 Нажмите кнопку **ОК**, чтобы выбрать или создать кластер.
 
 Если выбран кластер, который еще не был настроен для работы с Azure Dev Spaces, вы увидите сообщение с вопросом, хотите ли вы настроить его.
 
-![](media/get-started-netcore-visualstudio/Add-Azure-Dev-Spaces-Resource.png)
+![Появится сообщение: Add Azure Dev Spaces Resource? (Добавить ресурс Azure Dev Spaces?) Перед использованием выбранного кластера AKS нужно настроить в нем использование Azure Dev Spaces. Сделать это? Доступны кнопки OK и "Отмена".](media/get-started-netcore-visualstudio/Add-Azure-Dev-Spaces-Resource.png)
 
 Нажмите кнопку **ОК**.
 
@@ -124,9 +124,9 @@ az aks create -g MyResourceGroup -n MyAKS --location <region> --generate-ssh-key
 
  Эта задача запустится в фоновом режиме. Выполнение может занять несколько минут. Чтобы увидеть, находится ли кластер в процессе создания, наведите указатель мыши на значок **фоновые задачи** в левом нижнем углу строки состояния, как показано на следующем изображении.
 
-![](media/get-started-netcore-visualstudio/BackgroundTasks.PNG)
+![Сплывающее окно, которое отображается при наведении указателя, с сообщением Creating 'My AKS' in resource group (Создание "Мой AKS" в группе ресурсов).](media/get-started-netcore-visualstudio/BackgroundTasks.PNG)
 
-> [!Note]
+> [!NOTE]
 > Пока не будет создано пространство разработки, выполнить отладку приложения нельзя.
 
 ### <a name="look-at-the-files-added-to-project"></a>Просмотр файлов, добавленных в проект
@@ -138,7 +138,7 @@ az aks create -g MyResourceGroup -n MyAKS --location <region> --generate-ssh-key
 
 Наконец вы увидите файл с именем `azds.yaml`, содержащий конфигурацию, которая использовалась при разработке и требуется для пространства разработки.
 
-![](media/get-started-netcore-visualstudio/ProjectFiles.png)
+![Файл azds.yaml в решении webfrontend в окне обозревателя решений.](media/get-started-netcore-visualstudio/ProjectFiles.png)
 
 ## <a name="debug-a-container-in-kubernetes"></a>Отладка контейнера в Kubernetes
 После успешного создания пространства разработки вы можете приступить к отладке приложения. Установите точку останова в коде, например, в строке 20 в файле `HomeController.cs`, где установлена ​​переменная `Message`. Нажмите клавишу **F5**, чтобы запустить отладку. 

@@ -6,14 +6,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 07/26/2019
+ms.date: 07/20/2020
 ms.author: victorh
-ms.openlocfilehash: ca6be666a9b77532b4f1c61f6e3391c239e82c91
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 0c5302f35665b034bffa343ee90fd4fd609f56e5
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74075152"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290154"
 ---
 # <a name="tutorial-create-and-configure-an-application-gateway-to-host-multiple-web-sites-using-the-azure-portal"></a>Руководство по Создание и настройка шлюза приложения для размещения нескольких веб-сайтов с помощью портала Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "74075152"
 > * Создание правил маршрутизации
 > * создание записи CNAME в домене.
 
-![Пример маршрутизации нескольких сайтов](./media/create-multiple-sites-portal/scenario.png)
+:::image type="content" source="./media/create-multiple-sites-portal/scenario.png" alt-text="Многосайтовый шлюз приложений":::
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -50,7 +50,7 @@ ms.locfileid: "74075152"
    - **Группа ресурсов.** Выберите **myResourceGroupAG** для группы ресурсов. Выберите **Создать** для создания группы ресурсов, если она еще не существует.
    - **Имя шлюза приложений**. Введите *myAppGateway* для имени шлюза приложений.
 
-     ![Создание шлюза приложений: Основы](./media/application-gateway-create-gateway-portal/application-gateway-create-basics.png)
+     :::image type="content" source="./media/application-gateway-create-gateway-portal/application-gateway-create-basics.png" alt-text="Создание шлюза приложений":::
 
 2.  В Azure для обмена между создаваемыми ресурсами необходима виртуальная сеть. Вы можете создать новую виртуальную сеть или использовать существующую. В этом примере вы можете создать виртуальную сеть одновременно со шлюзом приложений. Экземпляры Шлюза приложений создаются в отдельных подсетях. В этом примере создаются две подсети: одна — для шлюза приложений, а вторая — для внутренних серверов.
 
@@ -66,7 +66,7 @@ ms.locfileid: "74075152"
 
     Выберите **ОК**, чтобы закрыть окно **Создание виртуальной сети** и сохранить настройки виртуальной сети.
 
-     ![Создание шлюза приложений: виртуальная сеть](./media/application-gateway-create-gateway-portal/application-gateway-create-vnet.png)
+     :::image type="content" source="./media/application-gateway-create-gateway-portal/application-gateway-create-vnet.png" alt-text="Создание виртуальной сети":::
     
 3. На вкладке **Основные сведения** примите значения по умолчанию для других параметров и выберите **Далее: интерфейсные серверы**.
 
@@ -78,7 +78,7 @@ ms.locfileid: "74075152"
 
 2. Выберите команду **Создать** для **Общедоступного IP-адреса** и введите *myAGPublicIPAddress* в качестве имени общедоступного IP-адреса, а затем щелкните **ОК**. 
 
-     ![Создание шлюза приложений: интерфейсные серверы](./media/application-gateway-create-gateway-portal/application-gateway-create-frontends.png)
+     :::image type="content" source="./media/application-gateway-create-gateway-portal/application-gateway-create-frontends.png" alt-text="Создание виртуальной сети":::
 
 3. По завершении выберите **Next: серверные компоненты**.
 
@@ -96,7 +96,7 @@ ms.locfileid: "74075152"
 3. В окне **Добавление внутреннего пула** выберите **Добавить**, чтобы сохранить конфигурацию внутреннего пула и вернуться на вкладку **Серверные компоненты**.
 4. Теперь добавьте еще один внутренний пул с именем *fabrikamPool*.
 
-     ![Создание шлюза приложений: серверные компоненты](./media/create-multiple-sites-portal/backend-pools.png)
+    :::image type="content" source="./media/create-multiple-sites-portal/backend-pools.png" alt-text="Создание серверных компонентов":::
 
 4. На вкладке **Серверные компоненты** выберите **Далее: конфигурация**.
 
@@ -119,7 +119,7 @@ ms.locfileid: "74075152"
 
    Примите значения по умолчанию для других параметров на вкладке **Прослушиватель**, а затем выберите вкладку **Серверные целевые объекты**, чтобы настроить остальную часть правила маршрутизации.
 
-   ![Создание шлюза приложений: прослушиватель](./media/create-multiple-sites-portal/routing-rule.png)
+   :::image type="content" source="./media/create-multiple-sites-portal/routing-rule.png" alt-text="Создание правила маршрутизации":::
 
 4. На вкладке **Серверные целевые объекты** выберите значение **contosoPool** для параметра **Серверный целевой объект**.
 
@@ -128,7 +128,7 @@ ms.locfileid: "74075152"
 6. В окне **Добавление правила маршрутизации** выберите **Добавить**, чтобы сохранить правило маршрутизации и вернуться на вкладку **Конфигурация**.
 7. Выберите **Добавить правило** и добавьте аналогичное правило, прослушиватель, целевой объект внутреннего сервера и параметр HTTP для Fabrikam.
 
-     ![Создание шлюза приложений: правило маршрутизации](./media/create-multiple-sites-portal/fabrikamRule.png)
+     :::image type="content" source="./media/create-multiple-sites-portal/fabrikam-rule.png" alt-text="Правило Fabrikam":::
 
 7. По завершении выберите **Next: Теги** , а затем **Далее: Отзыв и создание**.
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59f83c7896ca371809d9103489b140ae73d5a42d
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 80873b2e2655e7cedbafb526d0fe757eaa282312
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86256665"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87019617"
 ---
 # <a name="what-is-azure-active-directory-identity-protection"></a>Что такое защита идентификации Azure Active Directory?
 
@@ -71,7 +71,7 @@ ms.locfileid: "86256665"
 
 ## <a name="exporting-risk-data"></a>Экспорт данных о рисках
 
-Данные из защиты идентификации можно экспортировать в другие средства для архивации, дальнейшего исследования и сопоставления. Интерфейсы API на основе Microsoft Graph позволяют организациям сохранять эти данные для дальнейшей обработки в таких средствах, как SIEM. Сведения о том, как получить доступ к API защиты идентификации, можно найти в статье [Get started with Azure Active Directory Identity Protection and Microsoft Graph](howto-identity-protection-graph-api.md) (Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph)
+Данные из службы защиты идентификации можно экспортировать в другие средства для архивации, дальнейшего исследования и сопоставления. Интерфейсы API на основе Microsoft Graph позволяют организациям сохранять эти данные для дальнейшей обработки в таких средствах, как SIEM. Сведения о том, как получить доступ к API защиты идентификации, можно найти в статье [Get started with Azure Active Directory Identity Protection and Microsoft Graph](howto-identity-protection-graph-api.md) (Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph)
 
 Сведения об интеграции сведений защиты идентификации с помощью Azure Sentinel можно найти в статье [Connect data from Azure AD Identity Protection](../../sentinel/connect-azure-ad-identity-protection.md) (Подключение данных из Защиты идентификации Azure Active Directory).
 

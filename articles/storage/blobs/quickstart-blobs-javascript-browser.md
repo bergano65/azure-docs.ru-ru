@@ -3,16 +3,16 @@ title: Краткое руководство. Использование биб�
 description: Из этого краткого руководства вы узнаете, как использовать клиентскую библиотеку службы хранилища BLOB-объектов Azure версии 12 для JavaScript в браузере. Вы создадите контейнер и объект в хранилище BLOB-объектов. Затем вы узнаете, как получить список всех больших двоичных объектов в контейнере. Наконец, вы научитесь удалять большие двоичные объекты и контейнеры.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 04/18/2020
+ms.date: 07/24/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: af76025317436f7046b857731e4c8af9b504201f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 039aea76e5e59d43078c2fa884e192922ec50035
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833423"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87276998"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -20,10 +20,12 @@ ms.locfileid: "85833423"
 
 Хранилище BLOB-объектов Azure оптимизировано для хранения больших объемов неструктурированных данных. Большие двоичные объекты могут содержать текстовые или двоичные данные, включая изображения, документы, потоковое мультимедиа и архивные данные. Из этого краткого руководства вы узнаете, как управлять большими двоичными объектами с использованием JavaScript в браузере. Вы научитесь отправлять большие двоичные объекты, получать список таких объектов, а также создавать и удалять контейнеры.
 
-[Справочная документация по API](/javascript/api/@azure/storage-blob) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob) | [Пакет (npm)](https://www.npmjs.com/package/@azure/storage-blob) | [Примеры](https://docs.microsoft.com/azure/storage/common/storage-samples-javascript?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#blob-samples)
+Дополнительные ресурсы:
 
-> [!NOTE]
-> Чтобы приступить к работе с предыдущей версией пакета SDK, обратитесь к разделу [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 10 в Node.js](storage-quickstart-blobs-nodejs-legacy.md).
+* [Справочная документация по API](/javascript/api/@azure/storage-blob)
+* [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob)
+* [Пакет (npm)](https://www.npmjs.com/package/@azure/storage-blob)
+* [Примеры](https://docs.microsoft.com/azure/storage/common/storage-samples-javascript?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#blob-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 

@@ -5,15 +5,15 @@ services: iot-central
 author: dominicbetts
 ms.service: iot-central
 ms.topic: include
-ms.date: 03/12/2020
+ms.date: 07/07/2020
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 0381418f20e126f94060b9f495fe1fe8b54e713b
-ms.sourcegitcommit: bf8c447dada2b4c8af017ba7ca8bfd80f943d508
+ms.openlocfilehash: b32465091f82fec0aeae288ee9bfd5540bfe8b9d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85378514"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87002052"
 ---
 ## <a name="create-a-device-template"></a>Создание шаблона устройства
 
@@ -79,12 +79,11 @@ ms.locfileid: "85378514"
 
 1. На странице **Devices** (Устройства) выберите шаблон устройства **Environmental sensor** (Датчик окружающей среды).
 
-    > [!TIP]
-    > Обязательно выберите шаблон для использования, прежде чем нажать кнопку **+ Создать**. В противном случае вы создадите несвязанное устройство.
-
 1. Выберите **+ Создать**.
 
-1. Убедитесь, что для параметра **Simulated** (Имитация) установлено значение **Off** (Отключено). Щелкните **Создать**.
+1. В диалоговом окне **Create a new device** (Создание устройства) убедитесь, что выбран тип **Environmental Sensor** (Датчик среды), а для параметра **Simulate this device?** (Имитировать это устройство?) задано значение **No** (Нет).
+
+1. Щелкните **Создать**.
 
 Щелкните имя устройства, а затем выберите **Connect** (Подключить). Запишите значения параметров на странице **Device Connection** (Устройство —подключение): **ID scope** (Область идентификатора), **Device ID** (Идентификатор устройства) и **Primary key** (Первичный ключ). Эти значения понадобятся при создании кода устройства.
 

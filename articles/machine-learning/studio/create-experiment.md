@@ -1,6 +1,5 @@
 ---
-title: Краткое руководство. Создание эксперимента по обработке и анализу данных
-titleSuffix: ML Studio (classic) - Azure
+title: Студия машинного обучения (классическая) Краткое руководство. Создание эксперимента по обработке и анализу данных в Azure
 description: В этом кратком руководстве по машинному обучению описано, как создать простой эксперимент по обработке и анализу данных. Мы предскажем цену автомобиля, используя алгоритм регрессии.
 services: machine-learning
 ms.service: machine-learning
@@ -10,14 +9,17 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/06/2019
-ms.openlocfilehash: f8984b3b712d591b64c383dabb723ba5afc61efc
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 99332a8716ae137b8ea5fe69a53c7f8e4c46f095
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85965150"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87282557"
 ---
-# <a name="quickstart-create-your-first-data-science-experiment-in-azure-machine-learning-studio-classic"></a>Краткое руководство. Создание первого эксперимента по обработке и анализу данных в Студии машинного обучения Azure (классической)
+# <a name="quickstart-create-your-first-data-science-experiment-in-machine-learning-studio-classic"></a>Краткое руководство. Создание первого эксперимента по обработке и анализу данных в Студии машинного обучения (классической)
+
+**ПРИМЕНИМО К:** ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-azure-ml.md) ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) 
+
 
 [!INCLUDE [Designer notice](../../../includes/designer-notice.md)]
 

@@ -4,12 +4,12 @@ description: Узнайте о том, как вызывать бизнес-пр
 ms.topic: tutorial
 ms.date: 04/08/2020
 ms.custom: mvc
-ms.openlocfilehash: a8b94d626916b00d75eea3fea0567fa33df3382c
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.openlocfilehash: 2b478ae75c8be978ea93a493b65dafdc7756c4b6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82562310"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083248"
 ---
 # <a name="tutorial-send-email-and-invoke-other-business-processes-from-app-service"></a>Руководство по Отправка сообщений электронной почты и вызов других бизнес-процессов из Службы приложений
 
@@ -57,10 +57,10 @@ ms.locfileid: "82562310"
 1. На [портале Azure](https://portal.azure.com) [создайте пустое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md#create-your-logic-app). Когда откроется **конструктор Logic Apps**, вернитесь к этому руководству.
 1. На странице заставки конструктора Logic Apps выберите вариант **При получении HTTP-запроса** в разделе **Начать с общего триггера**.
 
-    ![](./media/tutorial-send-email/receive-http-request.png)
+    ![Снимок экрана: страница заставки для конструктора Logic Apps с выделенным вариантом When an HTTP request is received (При получении HTTP-запроса).](./media/tutorial-send-email/receive-http-request.png)
 1. В диалоговом окне **При получении HTTP-запроса** выберите **Использовать пример полезной нагрузки, чтобы создать схему**.
 
-    ![](./media/tutorial-send-email/generate-schema-with-payload.png)
+    ![Снимок экрана: диалоговое окно When an HTTP request is received (При получении HTTP-запроса) и выбор параметра "Использовать пример полезной нагрузки, чтобы создать схему". ](./media/tutorial-send-email/generate-schema-with-payload.png)
 
 1. Скопируйте следующий пример кода JSON в текстовое поле и щелкните **Готово**.
 
@@ -77,7 +77,7 @@ ms.locfileid: "82562310"
 
     Теперь вы увидите URL-адрес триггера HTTP-запроса. Щелкните значок копирования, чтобы сохранить его для последующего использования.
 
-    ![](./media/tutorial-send-email/http-request-url.png)
+    ![Снимок экрана: выделенный значок для копирования URL-адреса триггера HTTP-запроса.](./media/tutorial-send-email/http-request-url.png)
 
     Это определение HTTP-запроса является триггером для любого нужного действия в приложении логики, например для обращения к Gmail. Позже вы будете вызывать этот URL-адрес из приложения Службы приложений. См. сведения о триггере запроса в [справочнике по HTTP-запросам и ответам](../connectors/connectors-native-reqres.md).
 
@@ -87,18 +87,18 @@ ms.locfileid: "82562310"
     > Вы можете найти другие типы интеграции, например SendGrid, MailChimp, Office 365 и SalesForce. См. сведения в документации по [Logic Apps](https://docs.microsoft.com/azure/logic-apps/).
 1. В диалоговом окне **Gmail** щелкните **Вход** и войдите в учетную запись Gmail, из которой нужно отправить электронное письмо.
 
-    ![](./media/tutorial-send-email/gmail-sign-in.png)
+    ![Снимок экрана: диалоговое окно Gmail, используемое для входа в учетную запись Gmail, из которой необходимо отправить электронное письмо.](./media/tutorial-send-email/gmail-sign-in.png)
 
 1. Войдя, щелкните текстовое поле **Кому**, чтобы открыть диалоговое окно динамического содержимого.
 
 1. Рядом с действием **При получении HTTP-запроса** щелкните **Показать больше**.
 
-    ![](./media/tutorial-send-email/expand-dynamic-content.png)
+    ![Снимок экрана: кнопка "Подробнее" рядом с действием When an HTTP request is received (При получении HTTP-запроса).](./media/tutorial-send-email/expand-dynamic-content.png)
 
     Здесь вы увидите три свойства из примера данных JSON, которые использовались ранее. На этом шаге вы создадите сообщение электронной почты на основе этих свойств HTTP-запроса.
 1. Для поля **Кому** выберите вариант **email**. При желании диалоговое окно динамического содержимого можно убрать, щелкнув действие **Добавить динамическое содержимое**.
 
-    ![](./media/tutorial-send-email/hide-dynamic-content.png)
+    ![Снимок экрана: параметр для выбора электронной почты и выделенный пункт "Добавить динамическое содержимое".](./media/tutorial-send-email/hide-dynamic-content.png)
 
 1. В раскрывающемся списке **Добавить новый параметр** выберите **Тема** и **Текст**.
 
@@ -109,15 +109,15 @@ ms.locfileid: "82562310"
     > [!TIP]
     > Если вы хотите изменить содержимое HTML прямо в тексте сообщения электронной почты, выберите **Представление кода** в верхней части окна конструктора Logic Apps. Соблюдайте осторожность, чтобы сохранить код динамического содержимого (например, `@{triggerBody()?['due']}`).
     >
-    > ![](./media/tutorial-send-email/edit-rich-html-email.png) 
+    > ![Снимок экрана: представление кода для просмотра содержимого HTML прямо в тексте сообщения электронной почты.](./media/tutorial-send-email/edit-rich-html-email.png) 
 
 1. Затем добавьте асинхронный ответ HTTP в триггер HTTP. Щелкните значок **+** между триггером HTTP и действием Gmail и выберите **Добавить параллельную ветвь**.
 
-    ![](./media/tutorial-send-email/add-http-response.png)
+    ![Снимок экрана: значок "+" и выделенный параметр "Добавить параллельную ветвь".](./media/tutorial-send-email/add-http-response.png)
 
 1. В поле поиска действий введите **ответ** и добавьте действие **Ответ**.
 
-    ![](./media/tutorial-send-email/choose-response-action.png)
+    ![Снимок экрана: панель поиска и выделенное действие "Ответ".](./media/tutorial-send-email/choose-response-action.png)
 
     По умолчанию действие ответа отправляет код HTTP 200. Этого нам достаточно для работы с этим руководством. См. сведения в справочнике по [HTTP-запросам и ответам](../connectors/connectors-native-reqres.md).
 
@@ -127,7 +127,7 @@ ms.locfileid: "82562310"
 
 Убедитесь, что вы скопировали URL-адрес настроенного ранее триггера HTTP-запроса. Так как он содержит конфиденциальную информацию, мы не рекомендуем размещать его непосредственно в коде. В Службе приложений можно указать ссылку на него через переменную среды, используя параметры приложения. 
 
-В [Cloud Shell](https://shell.azure.com) создайте параметр приложения с помощью следующей команды (замените реальными значениями заполнители *\<app-name>* , *\<resource-group-name>* и *\<logic-app-url>* ):
+В [Cloud Shell](https://shell.azure.com) создайте параметр приложения с помощью следующей команды (замените *\<app-name>* , *\<resource-group-name>* и *\<logic-app-url>* ):
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings LOGIC_APP_URL="<your-logic-app-url>"

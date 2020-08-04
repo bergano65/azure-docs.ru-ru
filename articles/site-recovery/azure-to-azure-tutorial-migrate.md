@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/28/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: 198e07b80788629030b621dd3c5e235a91baaba3
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 3cbf3eda97bd1ba6b71c4bc7910e942e39224e30
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86518917"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87076105"
 ---
 # <a name="move-azure-vms-to-another-region"></a>Перенос виртуальных машин Azure в другой регион
 
@@ -82,8 +82,9 @@ ms.locfileid: "86518917"
 
 ### <a name="create-the-vault-in-any-region-except-the-source-region"></a>Создайте хранилище в любом регионе, за исключением исходного.
 
-1. Войдите на [портал Azure](https://portal.azure.com) > **Службы восстановления**.
-1. Выберите **Создать ресурс** > **Средства управления** > **Backup and Site Recovery**.
+1. Войдите на [портал Azure](https://portal.azure.com)
+1. В поле поиска введите "Службы восстановления" и щелкните "Хранилища Служб восстановления".
+1. В меню "Хранилища Служб восстановления" щелкните "+Добавить".
 1. В поле **Имя** укажите понятное имя **ContosoVMVault**. Если у вас есть несколько подписок, выберите нужную.
 1. Создайте группу ресурсов **ContosoRG**.
 1. Укажите регион Azure. Сведения о поддерживаемых регионах см. в разделе "Географическая доступность" на странице [цен на службу Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).

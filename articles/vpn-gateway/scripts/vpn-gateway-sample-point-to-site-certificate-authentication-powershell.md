@@ -3,20 +3,20 @@ title: Пример скрипта Azure PowerShell. Настройка подк
 description: Настройка подключения VPN типа "точка — сеть" с помощью собственной проверки подлинности Azure на основе сертификата с использованием самозаверяющих сертификатов. В этой статье используется PowerShell.
 services: vpn-gateway
 documentationcenter: vpn-gateway
-author: anzaman
+author: kumudD
 ms.service: vpn-gateway
 ms.devlang: powershell
 ms.topic: sample
 ms.date: 01/10/2020
 ms.author: alzam
-ms.openlocfilehash: 6a82aedb20adb404cad6a51644b13a59be85ac2e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a76cad8cb89e016d231566089ce30a337ea91d8f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75867207"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87086971"
 ---
-# <a name="create-a-vpn-gateway-and-add-point-to-site-configuration-using-powershell"></a>Создание VPN-шлюза и добавление конфигурации "точка — сеть" с использованием PowerShell
+# <a name="configure-a-point-to-site-vpn-using-native-azure-certificate-authentication"></a>Настройка VPN "точка — сеть" с помощью собственной аутентификации Azure на основе сертификата
 
 С помощью этого скрипта создается VPN-шлюз на основе маршрутов и добавляется конфигурация "точка — сеть" с использованием собственной проверки подлинности Azure на основе сертификата
 
@@ -121,4 +121,4 @@ Remove-AzResourceGroup -Name TestRG1
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).

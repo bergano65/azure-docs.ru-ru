@@ -1,6 +1,6 @@
 ---
-title: Назначение роли субъекту-службе Виртуального рабочего стола Windows (Azure)
-description: Из этой статьи вы узнаете, как создать субъекты-службы и назначить роли с помощью PowerShell в Виртуальном рабочем столе Windows.
+title: Назначение роли субъекту-службе Виртуального рабочего стола Windows (классического) в Azure
+description: Узнайте, как создать субъекты-службы и назначить роли с помощью PowerShell в Виртуальном рабочем столе Windows (классическом).
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,17 +8,17 @@ ms.topic: tutorial
 ms.date: 05/27/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ad78fe2ce66511cb75e23a28a30c44b173da9020
-ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
+ms.openlocfilehash: 015d0e0208b83cff3db3995383ce93ed6362ee49
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84117727"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87270096"
 ---
-# <a name="tutorial-create-service-principals-and-role-assignments-by-using-powershell"></a>Руководство по Создание субъектов-служб и назначений ролей с использованием PowerShell
+# <a name="tutorial-create-service-principals-and-role-assignments-with-powershell-in-windows-virtual-desktop-classic"></a>Руководство по Создание субъектов-служб и назначений ролей в Виртуальном рабочем столе Windows (классическом) с помощью PowerShell
 
 >[!IMPORTANT]
->Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows.
+>Это содержимое применимо к Виртуальному рабочему столу Windows (классическому), который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows.
 
 Субъекты-службы — это удостоверения, которые вы можете создать в Azure Active Directory для назначения ролей и разрешений с определенной целью. В Виртуальном рабочем столе Windows вы можете создать субъект-службу для решения следующих задач:
 

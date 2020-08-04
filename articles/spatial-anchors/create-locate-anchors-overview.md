@@ -8,16 +8,16 @@ ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: overview
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: f406edb42204e7ffc94bcbfa1e22b269aea67b32
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 000fb50c002353982d128d6715ae5d8006d35177
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74270456"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87037820"
 ---
 # <a name="how-to-create-and-locate-anchors-using-azure-spatial-anchors"></a>Создание и поиск привязок с помощью Пространственных привязок Azure
 
-Пространственные привязки Azure позволяют вам совместно использовать привязки на различных устройствах.
+Пространственные привязки Azure позволяют совместно использовать привязки на различных устройствах.
 
 Служба поддерживает несколько сред разработки.
 

@@ -6,14 +6,14 @@ ms.service: application-gateway
 ms.topic: sample
 ms.date: 6/7/2019
 ms.author: victorh
-ms.openlocfilehash: ffdde80598322222e2a8f000eee8be269becdd11
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4ffbab992732c39054818b9b4f21871687b05dcb
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "66743331"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083146"
 ---
-# <a name="create-waf-custom-rules-with-azure-powershell"></a>Создание настраиваемых правил WAF с помощью Azure PowerShell
+# <a name="create-web-application-firewall-waf-custom-rules-with-azure-powershell"></a>Создание настраиваемых правил брандмауэра веб-приложения с помощью Azure PowerShell
 
 Этот скрипт создает брандмауэр веб-приложения Шлюза приложений с настраиваемыми правилами. Настраиваемое правило блокирует трафик, если заголовок запроса содержит User-Agent *evilbot*.
 
@@ -70,5 +70,5 @@ Remove-AzResourceGroup -Name CustomRulesTest
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о настраиваемых правил WAF см. в статье о [настраиваемых правилах для брандмауэра веб-приложения](../custom-waf-rules-overview.md).
-- Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
+- Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
 - Другие примеры скриптов PowerShell можно найти в [документации по шлюзу приложений Azure](../powershell-samples.md).

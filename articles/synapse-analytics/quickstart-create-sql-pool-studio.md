@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание пула SQL Synapse (предварительная версия) с помощью Synapse Studio
+title: Краткое руководство. Создание пула Synapse SQL с помощью Synapse Studio
 description: Создайте новый пул SQL Synapse с помощью Synapse Studio, выполнив инструкции из этого руководства.
 services: synapse-analytics
 author: julieMSFT
@@ -9,14 +9,14 @@ ms.subservice: sql
 ms.date: 3/19/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: 4aac32ec69a4572a0988a22f1bc3b7bdf3f947d7
-ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
+ms.openlocfilehash: f85731a7f3ffef0adf35812ee8da4e0bbd89124f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86274277"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87036579"
 ---
-# <a name="quickstart-create-a-synapse-sql-pool-preview-using-synapse-studio"></a>Краткое руководство. Создание пула SQL Synapse (предварительная версия) с помощью Synapse Studio
+# <a name="quickstart-create-a-synapse-sql-pool-using-synapse-studio"></a>Краткое руководство. Создание пула Synapse SQL с помощью Synapse Studio
 
 Azure Synapse Analytics предлагает различные механизмы аналитики, упрощающие прием, преобразование, моделирование и анализ данных. Пул SQL предусматривает возможности вычисления и хранения на основе T-SQL. После создания пула SQL в рабочей области Synapse данные можно загружать, моделировать, обрабатывать и доставлять для быстрого получения аналитических сведений.
 

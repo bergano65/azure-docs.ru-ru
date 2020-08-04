@@ -10,12 +10,12 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
-ms.openlocfilehash: de9e7fd605a1d53d1078523c77cd33065c03ca85
-ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
+ms.openlocfilehash: c4d44b1bf645132f5c2d6e863dbe0c93f024c7ea
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2020
-ms.locfileid: "85118973"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87066938"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---add-crud-functions-to-the-app"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Добавление функций CRUD в приложение
 
@@ -36,7 +36,7 @@ ms.locfileid: "85118973"
 
 ## <a name="add-a-post-function-to-the-hero-service"></a>Добавление функции Post в службу hero
 
-1. Откройте в Visual Studio Code файлы **routes.js** и **hero.service.js** параллельно. Для этого нажмите кнопку **Разделить редактор**![Кнопка "Разделить редактор" в Visual Studio](./media/tutorial-develop-mongodb-nodejs-part6/split-editor-button.png).
+1. Откройте в Visual Studio Code файлы **routes.js** и **hero.service.js** параллельно. Для этого нажмите кнопку **Разделить редактор** (:::image type="icon" source="./media/tutorial-develop-mongodb-nodejs-part6/split-editor-button.png":::).
 
     Вы увидите, что строка 7 файла routes.js вызывает функцию `getHeroes` в строке 5 файла **hero.service.js**.  Необходимо создать такие же пары для функций Post, Put и Delete. 
 
@@ -84,7 +84,7 @@ ms.locfileid: "85118973"
     });
     ```
 
-5. Запустите приложение, чтобы убедиться в его работоспособности. В Visual Studio Code сохраните все изменения, нажмите кнопку **Отладка** слева ![Значок "Отладка" в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part6/debug-button.png) и нажмите кнопку **Начать отладку**![Значок "Начать отладку" в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part6/start-debugging-button.png).
+5. Запустите приложение, чтобы убедиться в его работоспособности. В Visual Studio Code сохраните все изменения, нажмите кнопку **Отладка** (:::image type="icon" source="./media/tutorial-develop-mongodb-nodejs-part6/debug-button.png":::) слева, а затем нажмите кнопку **Начать отладку** (:::image type="icon" source="./media/tutorial-develop-mongodb-nodejs-part6/start-debugging-button.png":::).
 
 6. Теперь вернитесь в браузер и откройте вкладку с параметрами сети в инструментах разработчика. На большинстве компьютеров эта вкладка открывается нажатием клавиши F12. Перейдите по адресу `http://localhost:3000` для просмотра вызовов по сети.
 
@@ -169,7 +169,7 @@ ms.locfileid: "85118973"
     };
     ```
 
-4. Обновив код, нажмите кнопку **Перезапустить** в Visual Studio Code ![Кнопка "Перезапустить" в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part6/restart-debugger-button.png).
+4. Обновив код, нажмите кнопку **Перезапустить** (:::image type="icon" source="./media/tutorial-develop-mongodb-nodejs-part6/restart-debugger-button.png":::) в Visual Studio Code.
 
 5. Обновите страницу в браузере и нажмите кнопку **Add New Hero** (Добавить героя). Добавьте новый элемент hero с идентификатором 9, именем Starlord и фразой "Hi". Нажмите кнопку **Save** (Сохранить), чтобы сохранить элемент hero.
 

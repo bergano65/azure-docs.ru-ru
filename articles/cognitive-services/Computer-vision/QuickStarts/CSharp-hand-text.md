@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 05/22/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: b47d579a8b086f86194d7129f5289f9c5c839c85
-ms.sourcegitcommit: 55b2bbbd47809b98c50709256885998af8b7d0c5
+ms.openlocfilehash: 70244f6709e35271f63834fd818ea7c72e52a419
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84987531"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87032074"
 ---
 # <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-30-rest-api-and-c"></a>Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API 3.0 Компьютерного зрения и C#
 
@@ -44,6 +44,7 @@ ms.locfileid: "84987531"
     2. Перейдите на вкладку **Обзор** и в поле **Поиск** введите Newtonsoft.Json.
     3. Выберите **Newtonsoft.Json**, затем установите флажок рядом с именем проекта и щелкните **Установить**.
 3. Скопируйте код ниже и вставьте его в файл Program.cs в вашем решении.
+1. Задайте в `imageFilePath` путь к собственному образу. Вы можете скачать [пример образа](https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/master/articles/cognitive-services/Computer-vision/Images/readsample.jpg) для использования.
 4. Запустите программу.
 
 ```csharp

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/12/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 878c3aa766559e455ee4456d84b86dc486e43fa5
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: 317cc5222b3444ae2ed242df694d317503c72a87
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82610689"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290663"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-on-premises-vmware-vms"></a>Настройка аварийного восстановления в Azure для локальных виртуальных машин VMware
 
@@ -84,7 +84,7 @@ ms.locfileid: "82610689"
 ## <a name="import-the-template-in-vmware"></a>Импорт шаблона в VMware
 
 
-1. Войдите на сервер VMware vCenter или узел vSphere ESXi с помощью клиента VMWare vSphere.
+1. Войдите на сервер VMware vCenter или узел vSphere ESXi с помощью клиента VMware vSphere.
 2. В меню **File** (Файл) выберите **Deploy OVF Template** (Развернуть шаблон OVF), чтобы запустить **мастер развертывания шаблона OVF**.
 
      ![Шаблон OVF](./media/vmware-azure-tutorial/vcenter-wizard.png)
@@ -113,7 +113,7 @@ ms.locfileid: "82610689"
 
 После настройки сервера конфигурации зарегистрируйте его в хранилище.
 
-1. Из консоли клиента VMWare vSphere включите виртуальную машину.
+1. Из консоли клиента VMware vSphere включите виртуальную машину.
 2. Виртуальная машина загружается в среду установки Windows Server 2016. Примите лицензионное соглашение и введите пароль администратора.
 3. После установки войдите в виртуальную машину от имени администратора.
 4. При первом входе в систему через несколько секунд будет запущено средство конфигурации Azure Site Recovery.
@@ -169,6 +169,8 @@ ms.locfileid: "82610689"
 
 - Политика автоматически сопоставляется с сервером конфигурации.
 - Для восстановления размещения по умолчанию автоматически создается соответствующая политика. Например, если политика репликации называется **rep-policy**, то политика восстановления размещения будет называться **rep-policy-failback**. Эта политика не используется, пока не будет запущено восстановление размещения из Azure.
+
+Примечание. В сценарии переноса из VMware в Azure отказоустойчивый моментальный снимок создается каждые 5 минут.
 
 ## <a name="enable-replication"></a>Включение репликации
 

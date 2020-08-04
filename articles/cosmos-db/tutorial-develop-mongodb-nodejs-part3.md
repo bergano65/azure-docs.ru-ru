@@ -10,12 +10,12 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
-ms.openlocfilehash: 64085c55376ec85e20244abb452c2e365aa0aeec
-ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
+ms.openlocfilehash: ed552bfb37f01200a4dba38ea733a1189768d56a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2020
-ms.locfileid: "85114390"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87067158"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---build-the-ui-with-angular"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание пользовательского интерфейса с помощью Angular
 
@@ -41,7 +41,7 @@ ms.locfileid: "85114390"
 
 ## <a name="build-the-ui"></a>Создание пользовательского интерфейса
 
-1. В Visual Studio Code нажмите кнопку "Остановить", ![Кнопка "Остановить" в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part3/stop-button.png) чтобы остановить выполнение приложения Node.
+1. В Visual Studio Code нажмите кнопку "Остановить" (:::image type="icon" source="./media/tutorial-develop-mongodb-nodejs-part3/stop-button.png":::), чтобы остановить приложение Node. 
 
 2. В командной строке Windows или окне терминала Mac введите приведенную ниже команду, чтобы создать компонент Heroes. В этом коде g = создать, c = компонент, heroes = имя компонента. Используется организация неструктурированного файла (--flat), чтобы для него не создавалась вложенная папка.
 
@@ -486,7 +486,7 @@ ms.locfileid: "85114390"
 
     Теперь давайте запустим приложение.
 
-2. В Visual Studio Code нажмите кнопку **Отладка** слева ![значок отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part2/debug-button.png), а затем — кнопку **Начать отладку**![значок начала отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part3/start-debugging-button.png).
+2. В Visual Studio Code нажмите кнопку **Отладка** (:::image type="icon" source="./media/tutorial-develop-mongodb-nodejs-part2/debug-button.png":::) слева, а затем нажмите кнопку **Начать отладку** (:::image type="icon" source="./media/tutorial-develop-mongodb-nodejs-part3/start-debugging-button.png":::).
 
 3. Теперь откройте браузер и перейдите по адресу **localhost:3000**. Как видите, приложение выполняется локально.
 

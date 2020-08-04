@@ -5,29 +5,31 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.devlang: python
 ms.topic: sample
-ms.date: 04/05/2018
+ms.date: 07/23/2020
 author: sakash279
 ms.author: akshanka
 ms.reviewer: sngun
 ms.custom: tracking-python
-ms.openlocfilehash: 0d24f5621786ce292d98ae1fc6dd8fafc5b69c55
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: 3e21cc7a66f09b5e759b3d3a53ab95dd9710900d
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84556228"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87171963"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-python"></a>Начало работы с хранилищем таблиц Azure и API таблиц Azure Cosmos DB с помощью Python
 
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
 [!INCLUDE [storage-table-applies-to-storagetable-and-cosmos](../../includes/storage-table-applies-to-storagetable-and-cosmos.md)]
 
-Хранилище таблиц Azure и Azure Cosmos DB — это службы, которые хранят структурированные NoSQL-данные в облаке, предоставляя хранилище для ключей и атрибутов с бессхемной структурой. Поскольку хранилище таблиц и Azure Cosmos DB являются бессхемными, это позволяет легко адаптировать данные по мере расширения приложения. Разным типам приложений может быть предоставлен быстрый и экономный доступ к хранилищу таблиц и API таблиц. Такое хранилище обычно дешевле, чем традиционные хранилища SQL для сравнимых объемов данных.
+Хранилище таблиц Azure и Azure Cosmos DB — это службы, которые хранят структурированные данные NoSQL в облаке, предоставляя хранилище для ключей и атрибутов с бессхемной структурой. Поскольку хранилище таблиц и Azure Cosmos DB являются бессхемными, это позволяет легко адаптировать данные по мере расширения приложения. Разным типам приложений может быть предоставлен быстрый и экономичный доступ к хранилищу таблиц и API таблиц. Такое хранилище обычно дешевле, чем традиционные хранилища SQL для сравнимых объемов данных.
 
-Хранилище таблиц или Azure Cosmos DB можно использовать для хранения гибких наборов данных, например пользовательских данных для веб-приложений, адресных книг, сведений об устройстве или метаданных любого другого типа, которые требуются вашей службе. В таблице можно хранить любое количество сущностей, а учетная запись хранения может содержать любое количество таблиц в пределах емкости учетной записи.
+Хранилище таблиц или Azure Cosmos DB можно использовать для хранения гибких наборов данных, например пользовательских данных для веб-приложений, адресных книг, сведений об устройствах или метаданных любого другого типа, которые требуются вашей службе. В таблице можно хранить любое количество сущностей, а учетная запись хранения может содержать любое количество таблиц в пределах емкости учетной записи.
 
 ### <a name="about-this-sample"></a>Об этом примере
+
 Здесь вы узнаете, как использовать [пакет SDK для таблиц Azure Cosmos DB для Python](https://pypi.python.org/pypi/azure-cosmosdb-table/) в распространенных сценариях для хранилища таблиц Azure. Имя пакета SDK указывает на то, что он предназначен для использования с Azure Cosmos DB. Но его можно использовать и с Azure Cosmos DB, и с Хранилищем таблиц Azure, просто для каждой службы предусмотрена уникальная конечная точка. Эти сценарии рассматриваются с использованием примеров Python, которые демонстрируют выполнение следующих задач:
+
 * создание и удаление таблиц;
 * вставка и запрос сущностей;
 * изменение сущностей.
@@ -38,17 +40,20 @@ ms.locfileid: "84556228"
 
 Для работы с этим примером требуются следующие компоненты:
 
-- [Python](https://www.python.org/downloads/) 2.7, 3.3, 3.4, 3.5 или 3.6.
-- [Пакет SDK таблиц Azure Cosmos DB для Python](https://pypi.python.org/pypi/azure-cosmosdb-table/). Этот пакет SDK подключается к Хранилищу таблиц Azure и API таблиц Azure Cosmos DB.
-- [Учетная запись хранения Azure](../storage/common/storage-account-create.md) или [учетная запись Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/).
+* [Python](https://www.python.org/downloads/) 2.7, 3.3, 3.4, 3.5 или 3.6.
+* [Пакет SDK таблиц Azure Cosmos DB для Python](https://pypi.python.org/pypi/azure-cosmosdb-table/). Этот пакет SDK подключается к Хранилищу таблиц Azure и API таблиц Azure Cosmos DB.
+* [Учетная запись хранения Azure](../storage/common/storage-account-create.md) или [учетная запись Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/).
 
 ## <a name="create-an-azure-service-account"></a>Создание учетной записи службы Azure
+
 [!INCLUDE [cosmos-db-create-azure-service-account](../../includes/cosmos-db-create-azure-service-account.md)]
 
-### <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
+**Create an Azure Storage account** (Создание учетной записи хранения Azure)
+
 [!INCLUDE [cosmos-db-create-storage-account](../../includes/cosmos-db-create-storage-account.md)]
 
-### <a name="create-an-azure-cosmos-db-table-api-account"></a>Создание учетной записи API таблиц Azure Cosmos DB
+**Создание учетной записи API таблиц Azure Cosmos DB**
+
 [!INCLUDE [cosmos-db-create-tableapi-account](../../includes/cosmos-db-create-tableapi-account.md)]
 
 ## <a name="install-the-azure-cosmos-db-table-sdk-for-python"></a>Установка пакета SDK таблиц Azure Cosmos DB для Python.

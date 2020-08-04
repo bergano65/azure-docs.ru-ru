@@ -2,17 +2,17 @@
 title: включить файл
 description: включить файл
 services: cosmos-db
-author: MarkMcGeeAtAquent
+author: SnehaGunda
 ms.service: cosmos-db
 ms.topic: include
-ms.date: 10/07/2019
-ms.author: mimig
+ms.date: 07/23/2020
+ms.author: sngun
 ms.custom: include file
-ms.openlocfilehash: be3637870edc4900059f02392536194a910e9e41
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 014d53b3f8ef8f5009ee5de03b8697a07e1317fd
+ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72818608"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87171936"
 ---
-Вы можете работать с таблицами, используя хранилище таблиц Azure или Azure Cosmos DB. См. сведения о различиях между службами в описании [предложений для работы с таблицами](../articles/cosmos-db/table-introduction.md#table-offerings). Для службы, которую вы планируете использовать, потребуется создать учетную запись.
+Вы можете работать с таблицами, используя хранилище таблиц Azure или Azure Cosmos DB. Чтобы узнать больше о различиях между возможностями работы с таблицами в этих двух службах, ознакомьтесь с разделом [Сравнение возможностей хранилища таблиц и API таблицы](../articles/cosmos-db/table-introduction.md#table-offerings). Для службы, которую вы планируете использовать, потребуется создать учетную запись. В следующих разделах показано, как создать и хранилище таблиц Azure, и учетную запись Azure Cosmos DB, однако можно использовать что-то одно. 

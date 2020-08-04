@@ -55,22 +55,30 @@
       href: azure-netapp-files-set-up-capacity-pool.md
     - name: Делегирование подсети в Azure NetApp Files
       href: azure-netapp-files-delegate-subnet.md
-    - name: Создание тома SMB для Azure NetApp Files
+    - name: Создание тома NFS и управление им
+      items:
+        - name: Создание тома NFS
+          href: azure-netapp-files-create-volumes.md
+        - name: Настройка домена по умолчанию NFSv4.1
+          href: azure-netapp-files-configure-nfsv41-domain.md
+        - name: Настройка шифрования Kerberos для NFSv4.1
+          href: configure-kerberos-encryption.md
+        - name: Настройка клиента NFS для Azure NetApp Files
+          href: configure-nfs-clients.md
+        - name: Настройка политики экспорта для тома NFS
+          href: azure-netapp-files-configure-export-policy.md
+    - name: Создание тома SMB
       href: azure-netapp-files-create-volumes-smb.md
-    - name: Создание тома NFS для Azure NetApp Files
-      href: azure-netapp-files-create-volumes.md
-    - name: Настройка домена по умолчанию NFSv4.1 для Azure NetApp Files
-      href: azure-netapp-files-configure-nfsv41-domain.md
-    - name: Настройка политики экспорта для тома NFS
-      href: azure-netapp-files-configure-export-policy.md
-    - name: Управление томами
-      href: azure-netapp-files-manage-volumes.md
+    - name: Создание тома с двумя протоколами
+      href: create-volumes-dual-protocol.md
     - name: Подключение или отключение тома для виртуальных машин Windows или Linux
       href: azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md
     - name: Управление моментальными снимками
       href: azure-netapp-files-manage-snapshots.md
     - name: Изменение размера пула емкости или тома
       href: azure-netapp-files-resize-capacity-pools-or-volumes.md
+    - name: Динамическое изменение уровня обслуживания тома
+      href: dynamic-change-volume-service-level.md
     - name: Разработка
       items:
         - name: REST API

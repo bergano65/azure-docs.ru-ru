@@ -10,12 +10,12 @@ ms.workload: infrastructure
 ms.date: 09/27/2018
 ms.author: magoedte
 ms.custom: mvc
-ms.openlocfilehash: c60d27cb75526d801880658846a6b61760f4bf7e
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 154e4c9421d1c0a54b3d9b5f53424e7640fe62d8
+ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86508089"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87323576"
 ---
 # <a name="tutorial-monitor-a-windows-virtual-machine-in-azure"></a>Руководство по Мониторинг виртуальной машины Windows в Azure
 
@@ -93,7 +93,7 @@ Get-AzVMBootDiagnosticsData -ResourceGroupName "myResourceGroupMonitor" -Name "m
     В списке предварительно выбрана рабочая область по умолчанию и место развертывания виртуальной машины в подписке. 
 
     >[!NOTE]
-    >Чтобы создать новую рабочую область Log Analytics для хранения данных мониторинга с виртуальной машины, см. руководство по [созданию рабочей области Log Analytics](../../azure-monitor/learn/quick-create-workspace.md). Ваша рабочая область Log Analytics должна находиться в одном из [поддерживаемых регионов](../../azure-monitor/insights/vminsights-enable-overview.md#log-analytics).
+    >Чтобы создать новую рабочую область Log Analytics для хранения данных мониторинга с виртуальной машины, см. руководство по [созданию рабочей области Log Analytics](../../azure-monitor/learn/quick-create-workspace.md). Эта рабочая область должна размещаться в одном из [поддерживаемых регионов](../../azure-monitor/insights/vminsights-configure-workspace.md#supported-regions).
 
 После включения мониторинга может потребоваться подождать несколько минут, прежде чем можно будет просмотреть метрики производительности виртуальной машины.
 

@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: b3f337798525860748cf7b535c2bce478dad8e27
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 9c5b07d402219907337a590e1131691fb1e24cc2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86043008"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090592"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала Azure Key Vault
 
@@ -43,7 +43,7 @@ ms.locfileid: "86043008"
 Для работы с этим учебником необходимо наличие следующих компонентов.
 
 * Существующее хранилище ключей, которое вы используете.  
-* Azure PowerShell, начиная с версии 1.0.0. Чтобы установить решение Azure PowerShell и связать его с подпиской Azure, см. статью [Установка и настройка Azure PowerShell](/powershell/azure/overview). Если средство Azure PowerShell у вас установлено, но вы не знаете его версию, введите `$PSVersionTable.PSVersion` в консоли Azure PowerShell.  
+* Azure PowerShell, начиная с версии 1.0.0. Чтобы установить решение Azure PowerShell и связать его с подпиской Azure, см. статью [Установка и настройка Azure PowerShell](/powershell/azure/). Если средство Azure PowerShell у вас установлено, но вы не знаете его версию, введите `$PSVersionTable.PSVersion` в консоли Azure PowerShell.  
 * Достаточный объем хранилища в Azure для журналов хранилищ ключей.
 
 ## <a name="connect-to-your-key-vault-subscription"></a><a id="connect"></a>Подключение к подписке хранилища ключей
@@ -70,7 +70,7 @@ Get-AzSubscription
 Set-AzContext -SubscriptionId <subscription ID>
 ```
 
-Подключение PowerShell к правильной подписке очень важно, особенно если с учетной записью связано несколько подписок. Дополнительные сведения о настройке Azure PowerShell см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).
+Подключение PowerShell к правильной подписке очень важно, особенно если с учетной записью связано несколько подписок. Дополнительные сведения о настройке Azure PowerShell см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/).
 
 ## <a name="create-a-storage-account-for-your-logs"></a><a id="storage"></a>Создание учетной записи хранения для журналов
 
@@ -97,7 +97,7 @@ $kv = Get-AzKeyVault -VaultName 'ContosoKeyVault'
 
 ## <a name="enable-logging-using-azure-powershell"></a><a id="enable"></a>Включение ведения журнала с помощью Azure PowerShell
 
-Мы включим ведение журналов хранилища ключей с помощью командлета **Set-AzDiagnosticSetting** и переменных, которые мы создали для новой учетной записи хранения и хранилища ключей. Мы также установим для флага **-Enabled** значение **$true** и зададим категорию **AuditEvent** (единственная категория для ведения журнала Key Vault).
+Мы включим ведение журналов хранилища ключей с помощью командлета **Set-AzDiagnosticSetting** и переменных, которые мы создали для новой учетной записи хранения и хранилища ключей. Мы также установим для флага **-Enabled** значение **$true** и зададим категорию `AuditEvent` (единственная категория для ведения журнала Key Vault).
 
 ```powershell
 Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Enabled $true -Category AuditEvent
@@ -271,7 +271,7 @@ $blobs | Get-AzStorageBlobContent -Destination C:\Users\username\ContosoKeyVault
 | **resourceId** |Идентификатор ресурса Azure Resource Manager. Для журналов хранилища ключей это всегда идентификатор ресурса хранилища ключей. |
 | **operationName** |Имя операции, как описано в следующей таблице. |
 | **operationVersion** |Запрошенная клиентом версия REST API. |
-| **category** |Тип результата. Для журналов Key Vault единственным доступным значением является **AuditEvent**. |
+| **category** |Тип результата. Для журналов Key Vault единственным доступным значением является `AuditEvent`. |
 | **resultType** |Результат запроса к REST API. |
 | **resultSignature** |Состояние HTTP. |
 | **resultDescription** |Дополнительное описание результата, если доступно. |
@@ -279,7 +279,7 @@ $blobs | Get-AzStorageBlobContent -Destination C:\Users\username\ContosoKeyVault
 | **callerIpAddress** |IP-адрес клиента, выполнившего запрос. |
 | **correlationId** |Необязательный GUID, который клиент может передавать для сопоставления журналов на стороне клиента с журналами на стороне службы (хранилища ключей). |
 | **identity** |Удостоверение из маркера, предоставляемое в запросе к REST API. Обычно это "пользователь", "субъект-служба" или комбинация "пользователь + идентификатор приложения", как например при запросе из командлета Azure PowerShell. |
-| **properties** |Эта информация зависит от типа операции (**operationName**). В большинстве случаев это поле содержит сведения о клиенте (передаваемая клиентом строка useragent), точный URI запроса REST API и код состояния HTTP. Кроме того, когда результат запроса содержит объект (например, **KeyCreate** или **VaultGet**), это поле содержит еще и URI ключа (в параметре id), URI хранилища или URI секрета. |
+| **properties** |Эта информация зависит от типа операции (**operationName**). В большинстве случаев это поле содержит сведения о клиенте (передаваемая клиентом строка useragent), точный URI запроса REST API и код состояния HTTP. Кроме того, когда результат запроса содержит объект (например, **KeyCreate** или **VaultGet**), это поле содержит еще и URI ключа (в значении `id`), URI хранилища или URI секрета. |
 
 Значения поля **operationName** отображаются в формате *ObjectVerb*. Пример:
 
@@ -321,9 +321,9 @@ $blobs | Get-AzStorageBlobContent -Destination C:\Users\username\ContosoKeyVault
 
 ## <a name="use-azure-monitor-logs"></a><a id="loganalytics"></a>Использование журналов Azure Monitor
 
-Решение Key Vault в журналах Azure Monitor позволяет просматривать журналы **AuditEvent** для Key Vault. В журналах Azure Monitor запросы по журналам используются для анализа данных и получения необходимых сведений. 
+Решение Key Vault в журналах Azure Monitor позволяет просматривать журналы `AuditEvent` для Key Vault. В журналах Azure Monitor запросы по журналам используются для анализа данных и получения необходимых сведений. 
 
-Дополнительные сведения, включая инструкции по настройке, см. в статье [Решение Azure Key Vault в журналах Azure Monitor](../../azure-monitor/insights/azure-key-vault.md). В этой статье также содержатся инструкции на случай переноса из старого решения Key Vault, которое предлагалось в предварительной версии журналов Azure Monitor, где сначала требовалось направить журналы в учетную запись хранения Azure и настроить чтение из этой учетной записи в журналах Azure Monitor.
+Дополнительные сведения, включая инструкции по настройке, см. в разделе [Мониторинг службы Key Vault с помощью Azure Monitor для Key Vault (предварительная версия)](../../azure-monitor/insights/key-vault-insights-overview.md).
 
 ## <a name="next-steps"></a><a id="next"></a>Следующие шаги
 

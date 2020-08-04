@@ -6,16 +6,16 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.date: 02/14/2020
+ms.date: 07/28/2020
 ms.topic: include
 ms.custom: include file
 ms.author: diberry
-ms.openlocfilehash: 2ba136cd479da0cd394b5e5afe6ebe7c22b539d5
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.openlocfilehash: 4bf86c616420bb049e1d7a82ad0e942e6eb7b36f
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81732103"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87369292"
 ---
 С помощью клиентской библиотеки прогнозирования для .NET в службе "Распознавание речи" (LUIS) можно выполнить следующие задачи.
 
@@ -31,46 +31,6 @@ ms.locfileid: "81732103"
 * Идентификатор приложения LUIS. Используйте общедоступный идентификатор приложения для Интернета вещей `df67dcdb-c37d-46af-88e1-8b97951ca1c2`. Пользовательский запрос, используемый в коде из этого краткого руководства, относится только к этому приложению.
 
 ## <a name="setting-up"></a>Настройка
-
-### <a name="create-an-environment-variable"></a>Создание переменной среды
-
-Используя ключ и имя ресурса, создайте две переменные среды для проверки подлинности:
-
-* `LUIS_PREDICTION_KEY` — ключ ресурса для проверки подлинности запросов.
-* `LUIS_ENDPOINT_NAME` — имя ресурса, связанного с этим ключом.
-
-Используйте инструкции для своей операционной системы.
-
-#### <a name="windows"></a>[Windows](#tab/windows)
-
-```console
-setx LUIS_PREDICTION_KEY <replace-with-your-resource-key>
-setx LUIS_ENDPOINT_NAME <replace-with-your-resource-name>
-```
-
-Добавив переменную среды, перезапустите окно консоли.
-
-#### <a name="linux"></a>[Linux](#tab/linux)
-
-```bash
-export LUIS_PREDICTION_KEY=<replace-with-your-resource-key>
-export LUIS_ENDPOINT_NAME=<replace-with-your-resource-name>
-```
-
-После добавления переменной среды запустите `source ~/.bashrc` из окна консоли, чтобы применить изменения.
-
-#### <a name="macos"></a>[macOS](#tab/unix)
-
-Измените `.bash_profile` и добавьте переменную среды:
-
-```bash
-export LUIS_PREDICTION_KEY=<replace-with-your-resource-key>
-export LUIS_ENDPOINT_NAME=<replace-with-your-resource-name>
-```
-
-После добавления переменной среды запустите `source .bash_profile` из окна консоли, чтобы применить изменения.
-
----
 
 ### <a name="create-a-new-c-application"></a>Создание нового приложения C#
 
@@ -134,13 +94,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime --ver
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-1. Создайте переменные для имени ключа, имени и идентификатора приложения.
-
-    Переменные для управления вашим ключом прогнозирования, извлеченным из переменной среды с именем `LUIS_PREDICTION_KEY`. Если вы создали переменную среды после запуска приложения, то для доступа к переменной следует закрыть и перезагрузить редактор, интегрированную среду разработки или оболочку, где эта переменная была запущена. Метод будет создано позже.
-
-    Создайте переменную для хранения имени ресурса `LUIS_ENDPOINT_NAME`.
-
-    Создайте переменную среды с именем `LUIS_APP_ID` для идентификатора приложения. Задайте для переменной среды значение публичного приложения Интернета вещей.
+1. Создайте переменные для ключа, имени ресурса, идентификатора приложения и слота публикации. Укажите для идентификатора приложения общедоступное приложение Интернета вещей.
 
     **`df67dcdb-c37d-46af-88e1-8b97951ca1c2`**
 

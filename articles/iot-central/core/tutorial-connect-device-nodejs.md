@@ -3,17 +3,17 @@ title: Руководство. Подключение универсальног
 description: Из этого руководства вы узнаете, как разработчик устройства может подключить устройство, на котором выполняется клиентское приложение Node.js, к приложению Microsoft Azure IoT Central. Чтобы создать шаблон устройства, вам нужно импортировать модель его возможностей и добавить к ней представления для взаимодействия с устройством.
 author: dominicbetts
 ms.author: dobett
-ms.date: 03/24/2020
+ms.date: 07/07/2020
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 ms.custom: mqtt
-ms.openlocfilehash: 65f441425113d89010cc2d282758c5a042be9300
-ms.sourcegitcommit: 8e5b4e2207daee21a60e6581528401a96bfd3184
+ms.openlocfilehash: e20ab44f309fd9ff7f2d6d9b1ad2a4ca0bfa3223
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84417911"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87336100"
 ---
 # <a name="tutorial-create-and-connect-a-client-application-to-your-azure-iot-central-application-nodejs"></a>Руководство по Создание клиентского приложения и его подключение к приложению Azure IoT Central (Node.js)
 
@@ -38,7 +38,7 @@ ms.locfileid: "84417911"
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-* Приложение Azure IoT Central, созданное на основе шаблона **Пользовательское приложение**. Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
+* Приложение Azure IoT Central, созданное на основе шаблона **Пользовательское приложение**. Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md). Приложение должно быть создано не раньше 14.07.2020.
 * Компьютер для разработки с установленным [Node.js](https://nodejs.org/) 10.0.0 или более поздней версии. Вы можете запустить `node --version` в командной строке, чтобы проверить версию. В инструкциях этого руководства предполагается, что вы выполняете команду **node** в командной строке Windows. Но вы можете использовать Node.js во множестве других операционных системах.
 
 [!INCLUDE [iot-central-add-environmental-sensor](../../../includes/iot-central-add-environmental-sensor.md)]
@@ -121,7 +121,7 @@ ms.locfileid: "84417911"
 
     IoT Central использует двойники устройств для синхронизации значений свойств между устройством и приложением IoT Central. Для значений свойств устройства используются передаваемые свойства двойника устройства. Доступные для записи свойства используют как передаваемые, так и требуемые свойства двойника устройства.
 
-1. Чтобы определить и использовать доступные для записи параметры, на которые реагирует устройство, добавьте следующий фрагмент кода:
+1. Чтобы определить и использовать доступные для записи параметры, на которые реагирует устройство, добавьте следующий фрагмент кода. Сообщение, которое устройство отправляет в ответ на [изменение записываемого свойства](concepts-telemetry-properties-commands.md#writeable-property-types), должно содержать поля `av` и `ac`. Поле `ad` является необязательным.
 
     ```javascript
     // Add any writeable properties your device supports,
@@ -130,12 +130,12 @@ ms.locfileid: "84417911"
     var writeableProperties = {
       'name': (newValue, callback) => {
           setTimeout(() => {
-            callback(newValue, 'completed');
+            callback(newValue, 'completed', 200);
           }, 1000);
       },
       'brightness': (newValue, callback) => {
         setTimeout(() => {
-            callback(newValue, 'completed');
+            callback(newValue, 'completed', 200);
         }, 5000);
       }
     };
@@ -145,13 +145,14 @@ ms.locfileid: "84417911"
       twin.on('properties.desired', function (desiredChange) {
         for (let setting in desiredChange) {
           if (writeableProperties[setting]) {
-            console.log(`Received setting: ${setting}: ${desiredChange[setting].value}`);
-            writeableProperties[setting](desiredChange[setting].value, (newValue, status) => {
+            console.log(`Received setting: ${setting}: ${desiredChange[setting]}`);
+            writeableProperties[setting](desiredChange[setting], (newValue, status, code) => {
               var patch = {
                 [setting]: {
                   value: newValue,
-                  status: status,
-                  desiredVersion: desiredChange.$version
+                  ad: status,
+                  ac: code,
+                  av: desiredChange.$version
                 }
               }
               sendDeviceProperties(twin, patch);
@@ -280,7 +281,9 @@ ms.locfileid: "84417911"
           } else {
             // Send device properties once on device start up.
             var properties = {
-              state: 'true'
+              state: 'true',
+              processorArchitecture: 'ARM',
+              swVersion: '1.0.0'
             };
             sendDeviceProperties(twin, properties);
 
@@ -326,11 +329,14 @@ node environmentalSensor.js
 
 ![Действия клиентского приложения](media/tutorial-connect-device-nodejs/run-application-2.png)
 
+## <a name="view-raw-data"></a>Просмотр необработанных данных
+
+[!INCLUDE [iot-central-monitor-environmental-sensor-raw-data](../../../includes/iot-central-monitor-environmental-sensor-raw-data.md)]
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы как разработчик устройства узнали о принципах создания устройств с помощью Node.js, ознакомьтесь со следующими руководствами:
 
-* Узнайте, как [подключить реальное устройство MXChip IoT DevKit к приложению Azure IoT Central](./howto-connect-devkit.md).
 * Прочитайте статью [Что такое шаблоны устройств?](./concepts-device-templates.md), чтобы узнать больше о роли шаблонов устройств при реализации кода устройства.
 * Узнайте о [регистрации устройств с помощью IoT Central и безопасном подключении устройств к Azure IoT Central](./concepts-get-connected.md).
 

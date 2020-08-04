@@ -3,17 +3,17 @@ title: Руководство. Подключение универсальног
 description: Из этого руководства вы узнаете, как разработчик устройства может подключить устройство, на котором выполняется клиентское приложение Python, к приложению Azure IoT Central. Чтобы создать шаблон устройства, вам нужно импортировать модель его возможностей и добавить к ней представления для взаимодействия с устройством.
 author: dominicbetts
 ms.author: dobett
-ms.date: 03/24/2020
+ms.date: 07/07/2020
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 ms.custom: tracking-python
-ms.openlocfilehash: 98aa452e8b0b5cf04edd319298c2b35e6097148e
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: d7093895392cb26e25e8054f0cdcb6870ce9e18a
+ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85971068"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87336113"
 ---
 # <a name="tutorial-create-and-connect-a-client-application-to-your-azure-iot-central-application-python"></a>Руководство по Создание клиентского приложения и его подключение к приложению Azure IoT Central (Python)
 
@@ -38,7 +38,7 @@ ms.locfileid: "85971068"
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-* Приложение Azure IoT Central, созданное на основе шаблона **Пользовательское приложение**. Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
+* Приложение Azure IoT Central, созданное на основе шаблона **Пользовательское приложение**. Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md). Приложение должно быть создано не раньше 14.07.2020.
 * Компьютер для разработки с установленным [Python](https://www.python.org/) 3.7 или более поздней версии. Вы можете запустить `python3 --version` в командной строке, чтобы проверить версию. Python доступен для разных операционных систем. В инструкциях в этом руководстве предполагается, что вы выполняете команду **python3** в командной строке Windows.
 
 [!INCLUDE [iot-central-add-environmental-sensor](../../../includes/iot-central-add-environmental-sensor.md)]
@@ -214,18 +214,18 @@ ms.locfileid: "85971068"
 
     Оператор может просмотреть полезные данные ответа в журнале команд.
 
-1. Добавьте следующие функции в функцию `main` для обработки обновлений свойств, отправляемых из приложения IoT Central:
+1. Добавьте приведенные ниже функции в функцию `main` для обработки обновлений свойств, отправляемых из приложения IoT Central. Сообщение, которое устройство отправляет в ответ на [изменение записываемого свойства](concepts-telemetry-properties-commands.md#writeable-property-types), должно содержать поля `av` и `ac`. Поле `ad` является необязательным.
 
     ```python
       async def name_setting(value, version):
         await asyncio.sleep(1)
         print(f'Setting name value {value} - {version}')
-        await device_client.patch_twin_reported_properties({'name' : {'value': value['value'], 'status': 'completed', 'desiredVersion': version}})
+        await device_client.patch_twin_reported_properties({'name' : {'value': value, 'ad': 'completed', 'ac': 200, 'av': version}})
 
       async def brightness_setting(value, version):
         await asyncio.sleep(5)
         print(f'Setting brightness value {value} - {version}')
-        await device_client.patch_twin_reported_properties({'brightness' : {'value': value['value'], 'status': 'completed', 'desiredVersion': version}})
+        await device_client.patch_twin_reported_properties({'brightness' : {'value': value, 'ad': 'completed', 'ac': 200, 'av': version}})
 
       settings = {
         'name': name_setting,
@@ -261,7 +261,7 @@ ms.locfileid: "85971068"
 
       if device_client is not None and device_client.connected:
         print('Send reported properties on startup')
-        await device_client.patch_twin_reported_properties({'state': 'true'})
+        await device_client.patch_twin_reported_properties({'state': 'true', 'processorArchitecture': 'ARM', 'swVersion': '1.0.0'})
         tasks = asyncio.gather(
           send_telemetry(),
           command_listener(),
@@ -304,11 +304,14 @@ python3 environmental_sensor.py
 
 ![Действия клиентского приложения](media/tutorial-connect-device-python/run-application-2.png)
 
+## <a name="view-raw-data"></a>Просмотр необработанных данных
+
+[!INCLUDE [iot-central-monitor-environmental-sensor-raw-data](../../../includes/iot-central-monitor-environmental-sensor-raw-data.md)]
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы как разработчик устройства узнали о принципах создания устройств с помощью Python, ознакомьтесь со следующими руководствами:
 
-* Узнайте, как [подключить реальное устройство MXChip IoT DevKit к приложению Azure IoT Central](./howto-connect-devkit.md).
 * Прочитайте статью [Что такое шаблоны устройств?](./concepts-device-templates.md), чтобы узнать больше о роли шаблонов устройств при реализации кода устройства.
 * Узнайте о [регистрации устройств с помощью IoT Central и безопасном подключении устройств к Azure IoT Central](./concepts-get-connected.md).
 

@@ -2,21 +2,24 @@
 author: dlepow
 ms.service: container-instances
 ms.topic: include
-ms.date: 02/13/2019
+ms.date: 07/22/2020
 ms.author: danlep
-ms.openlocfilehash: 33a82a55b03cde79d2d80826041ee6d43565476a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: 6878180ffedfaa53f25d2bdc6db72dcd7dd8b38b
+ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80334815"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87384839"
 ---
 | Ресурс | Ограничение |
 | --- | :--- |
-| Группы контейнеров уровня "Стандартный" для каждого региона на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) | 100<sup>1</sup> |
-| Выделенные группы контейнеров SKU для каждого региона на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) | 0<sup>1</sup> |
+| Группы контейнеров SKU "Стандартный" для каждого региона на подписку | 100<sup>1</sup> |
+| Группы контейнеров SKU "Выделенный" для каждого региона на подписку | 0<sup>1</sup> |
 | Число контейнеров в группе контейнеров | 60 |
 | Число томов в группе контейнеров | 20 |
+| Ядра (ЦП) SKU "Стандартный" для каждого региона на подписку | 10<sup>1, 2</sup> | 
+| Ядра (ЦП) SKU "Стандартный" для GPU K80 для каждого региона на подписку | 18<sup>1, 2</sup> |
+| Ядра (ЦП) SKU "Стандартный" для GPU P100 или V100 для каждого региона на подписку | 0<sup>1, 2</sup> |
 | Портов на каждый IP-адрес | 5 |
 | Размер журнала экземпляра контейнера запущенный экземпляр | 4 МБ |
 | Размер журнала экземпляра контейнера остановленный экземпляр | 16 КБ или 1000 строк |
@@ -26,7 +29,8 @@ ms.locfileid: "80334815"
 | Удаленных контейнеров в 5 мин | 100<sup>1</sup> |
 
 
-<sup>1</sup>Чтобы увеличить лимит, отправьте [запрос в службу поддержки Azure][azure-support].<br />
+<sup>1</sup> Чтобы увеличить лимит, отправьте [запрос в Службу поддержки Azure][azure-support]. Для бесплатных подписок, в том числе для [бесплатной учетной записи Azure](https://azure.microsoft.com/offers/ms-azr-0044p/) и [Azure для учащихся](https://azure.microsoft.com/offers/ms-azr-0170p/), нельзя увеличить лимит или квоту. Если у вас бесплатная подписка, ее можно [обновить](../articles/cost-management-billing/manage/upgrade-azure-subscription.md) до подписки с оплатой по мере использования.<br />
+<sup>2</sup> Лимит по умолчанию для подписки [с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/). Лимит зависит от типа категории.<br/>
 
 <!-- LINKS - External -->
 [azure-support]: https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest

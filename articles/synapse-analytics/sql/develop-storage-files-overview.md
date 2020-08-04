@@ -1,5 +1,5 @@
 ---
-title: Получение доступа к файлам в хранилище с помощью SQL по запросу (предварительная версия) в Synapse SQL
+title: Доступ к файлам в хранилище в SQL по запросу (предварительная версия)
 description: Узнайте, как запрашивать файлы хранилища с помощью ресурсов SQL по запросу (предварительная версия) в Synapse SQL
 services: synapse-analytics
 author: azaricstefan
@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/19/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: f786e92ca99c4c1700d00adf396ba1127b66ea7c
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: d7f990b059346c4c782ca923e663997317c4df16
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86247104"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87046876"
 ---
 # <a name="accessing-external-storage-in-synapse-sql-on-demand"></a>Получение доступа к внешнему хранилищу в Synapse SQL (по запросу)
 
@@ -43,7 +43,7 @@ SELECT * FROM
 - Пользователь Azure AD — OPENROWSET будет использовать удостоверение Azure AD вызывающей стороны для обращения к службе хранилища Azure или хранилищу с анонимным доступом.
 - Пользователь SQL — OPENROWSET будет обращаться к хранилищу с анонимным доступом.
 
-Субъекты SQL также могут использовать OPENROWSET для непосредственного запрашивания файлов, защищенных маркерами SAS или управляемым удостоверением рабочей области. Если пользователь SQL выполняет эту функцию, опытный пользователь с разрешением ALTER ANY CREDENTIAL должен создать учетные данные уровня сервера, соответствующие URL-адресу в функции (с использованием имени хранилища и контейнера) и предоставить разрешения REFERENCES для этих учетных данных вызывающему объекту функции OPENROWSET:
+Субъекты SQL также могут использовать OPENROWSET для непосредственного запрашивания файлов, защищенных маркерами SAS или управляемым удостоверением рабочей области. Если пользователь SQL выполняет эту функцию, опытный пользователь с разрешением `ALTER ANY CREDENTIAL` должен создать учетные данные уровня сервера, соответствующие URL-адресу в функции (с использованием имени хранилища и контейнера) и предоставить разрешения REFERENCES для этих учетных данных вызывающему объекту функции OPENROWSET.
 
 ```sql
 EXECUTE AS somepoweruser
@@ -87,8 +87,8 @@ CREATE EXTERNAL DATA SOURCE MyAzureInvoices
 Вызывающий объект должен иметь одно из следующих разрешений для выполнения функции OPENROWSET:
 
 - Одно из разрешений на выполнение функции OPENROWSET:
-  - ADMINISTER BULK OPERATION позволяет выполнить вход для выполнения функции OPENROWSET.
-  - ADMINISTER DATABASE BULK OPERATION позволяет пользователю базы данных выполнить функцию OPENROWSET.
+  - `ADMINISTER BULK OPERATIONS` позволяет выполнить вход для выполнения функции OPENROWSET.
+  - `ADMINISTER DATABASE BULK OPERATIONS` позволяет пользователю базы данных выполнить функцию OPENROWSET.
 - REFERENCES DATABASE SCOPED CREDENTIAL для учетных данных, указанных в EXTERNAL DATA SOURCE.
 
 #### <a name="accessing-anonymous-data-sources"></a>Получение доступа к анонимным источникам данных
@@ -151,13 +151,13 @@ FROM dbo.DimProductsExternal
 
 | Запрос | Необходимые разрешения|
 | --- | --- |
-| OPENROWSET(BULK) без источника данных | `ADMINISTER BULK ADMIN`, `ADMINISTER DATABASE BULK ADMIN` или имя для входа SQL должны содержать REFERENCES CREDENTIAL::\<URL> для хранилища, защищенного с помощью SAS |
-| OPENROWSET(BULK) с источником данных без учетных данных | `ADMINISTER BULK ADMIN` или `ADMINISTER DATABASE BULK ADMIN` |
-| OPENROWSET(BULK) с источником данных с учетными данными | `ADMINISTER BULK ADMIN`, `ADMINISTER DATABASE BULK ADMIN` или `REFERENCES DATABASE SCOPED CREDENTIAL` |
+| OPENROWSET(BULK) без источника данных | `ADMINISTER BULK OPERATIONS`, `ADMINISTER DATABASE BULK OPERATIONS` или имя для входа SQL должны содержать REFERENCES CREDENTIAL::\<URL> для хранилища, защищенного с помощью SAS |
+| OPENROWSET(BULK) с источником данных без учетных данных | `ADMINISTER BULK OPERATIONS` или `ADMINISTER DATABASE BULK OPERATIONS` |
+| OPENROWSET(BULK) с источником данных с учетными данными | `REFERENCES DATABASE SCOPED CREDENTIAL` и либо `ADMINISTER BULK OPERATIONS`, либо `ADMINISTER DATABASE BULK OPERATIONS` |
 | CREATE EXTERNAL DATA SOURCE | `ALTER ANY EXTERNAL DATA SOURCE` и `REFERENCES DATABASE SCOPED CREDENTIAL` |
 | CREATE EXTERNAL TABLE | `CREATE TABLE`, `ALTER ANY SCHEMA`, `ALTER ANY EXTERNAL FILE FORMAT` и `ALTER ANY EXTERNAL DATA SOURCE` |
 | SELECT FROM EXTERNAL TABLE | `SELECT TABLE` и `REFERENCES DATABASE SCOPED CREDENTIAL` |
-| CETAS | Для создания таблиц: `CREATE TABLE`, `ALTER ANY SCHEMA`, `ALTER ANY DATA SOURCE` и `ALTER ANY EXTERNAL FILE FORMAT`; для чтения данных: `ADMIN BULK OPERATIONS`, `REFERENCES CREDENTIAL` или `SELECT TABLE` для каждых таблицы, представления или функции в запросе, а также разрешение на чтение и запись в хранилище. |
+| CETAS | Для создания таблиц: `CREATE TABLE`, `ALTER ANY SCHEMA`, `ALTER ANY DATA SOURCE` и `ALTER ANY EXTERNAL FILE FORMAT`; для чтения данных: `ADMINISTER BULK OPERATIONS`, `REFERENCES CREDENTIAL` или `SELECT TABLE` для каждых таблицы, представления или функции в запросе, а также разрешение на чтение и запись в хранилище. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

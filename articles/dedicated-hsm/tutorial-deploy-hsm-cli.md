@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/11/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 76b7a97a5be5e7952b0ac11d93bd68656ff8f1ec
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6c5484c421807f5657fe5fc460342d39d442bcda
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79454318"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87048583"
 ---
 # <a name="tutorial-deploying-hsms-into-an-existing-virtual-network-using-cli"></a>Руководство по Развертывание устройств HSM в существующей виртуальной сети с помощью CLI
 
@@ -63,15 +63,7 @@ az feature show \
    --name AzureDedicatedHSM
 ```
 
-Следующая команда позволяет проверить сетевые возможности, необходимые для службы выделенных устройств HSM.
-
-```azurecli
-az feature show \
-   --namespace Microsoft.Network \
-   --name AllowBaremetalServers
-```
-
-Обе команды должны вернуть состояние Registered (как показано ниже). Если команды не возвращают состояние Registered, вам нужно зарегистрировать службу. Для этого свяжитесь со своим менеджером Майкрософт по работе с клиентами.
+Эти команды должны вернуть состояние Registered (как показано ниже). Если они не возвращают состояние Registered, вам нужно зарегистрировать службу. Для этого свяжитесь со своим менеджером Майкрософт по работе с клиентами.
 
 ![Состояние подписки](media/tutorial-deploy-hsm-cli/subscription-status.png)
 

@@ -8,12 +8,12 @@ keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, 
 manager: gwallace
 ms.custom: vs-azure
 ms.workload: azure-vs
-ms.openlocfilehash: 909e4638b3b0919919320a09cbfa0e8d9ac92f2e
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: 8279a32ece16209c1dd5bca13d08e22b283677ee
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83995944"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87007010"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-visual-studio--net-core---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация в Kubernetes: Использование Visual Studio и .NET Core в Azure Dev Spaces
 
@@ -84,15 +84,15 @@ Managed Kubernetes cluster 'MyAKS' in resource group 'MyResourceGroup' is ready 
 
 В проекте в раскрывающемся списке параметров запуска выберите **Azure Dev Spaces**, как показано ниже.
 
-![](media/get-started-netcore-visualstudio/LaunchSettings.png)
+![Снимок экрана пользовательского интерфейса Visual Studio с выделенным и выбранным параметром "IIS Express" и выделенным параметром "Azure Dev Spaces".](media/get-started-netcore-visualstudio/LaunchSettings.png)
 
 В диалоговом окне Azure Dev Spaces выберите соответствующие значения в полях *Подписка* и *Кластер AKS*. Параметр *Space* (Пространство) оставьте значение *по умолчанию* и установите флажок *Общедоступные*. Нажмите кнопку *ОК*.
 
-![](media/get-started-netcore-visualstudio/Azure-Dev-Spaces-Dialog.png)
+![Снимок экрана диалогового окна "Azure Dev Spaces".](media/get-started-netcore-visualstudio/Azure-Dev-Spaces-Dialog.png)
 
 При этом ваша служба будет развернута в пространстве разработки *по умолчанию* с общедоступным URL-адресом. Если выбран кластер, который еще не был настроен для работы с Azure Dev Spaces, вы увидите сообщение с вопросом, хотите ли вы настроить его. Нажмите кнопку *ОК*.
 
-![](media/get-started-netcore-visualstudio/Add-Azure-Dev-Spaces-Resource.png)
+![Снимок экрана диалогового окна "Add Azure Spaces Resource" (Добавление ресурса пространств Azure).](media/get-started-netcore-visualstudio/Add-Azure-Dev-Spaces-Resource.png)
 
 Общедоступный URL-адрес для службы, запущенной в пространстве разработки *по умолчанию*, отображается в окне *Вывод*.
 

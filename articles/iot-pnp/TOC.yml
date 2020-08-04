@@ -37,6 +37,8 @@
       href: tutorial-multiple-components-node.md
     - name: Подключение многокомпонентного устройства (Python)
       href: tutorial-multiple-components-python.md
+    - name: Подключение устройства с использованием MQTT
+      href: tutorial-use-mqtt.md
 - name: Основные понятия
   items:
     - name: Architecture

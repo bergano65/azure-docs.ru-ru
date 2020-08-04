@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 04/22/2019
+ms.date: 07/24/2020
 ms.author: victorh
-ms.openlocfilehash: 62f5375a0d468f5b137c4628c89c802d83dee102
-ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
+ms.openlocfilehash: baadd52a931a28e1502fe0da2286d541db9face4
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82024499"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290117"
 ---
 # <a name="tutorial-configure-an-application-gateway-with-tls-termination-using-the-azure-portal"></a>Руководство по Настройка шлюза приложений с завершением TSL-запросов с помощью портала Azure
 
@@ -158,7 +158,7 @@ Export-PfxCertificate `
 
 5. Для **Параметр HTTP** выберите **Создать**, чтобы создать новый параметр HTTP. Параметр HTTP будет определять поведение правила маршрутизации. В открывшемся окне **Добавление параметра HTTP** введите *myHTTPSetting* в поле **Имя параметра HTTP**. Примите значения по умолчанию для других параметров в окне **Добавление параметра HTTP**, затем выберите **Добавить**, чтобы вернуться к окну **Добавление правила маршрутизации**. 
 
-   ![Создание шлюза приложений: параметр HTTP](./media/create-ssl-portal/application-gateway-create-httpsetting.png)
+   :::image type="content" source="./media/create-ssl-portal/application-gateway-create-httpsetting.png" alt-text="Создание шлюза приложений: параметр HTTP":::
 
 6. В окне **Добавление правила маршрутизации** выберите **Добавить**, чтобы сохранить правило маршрутизации и вернуться на вкладку **Конфигурация**.
 
@@ -250,7 +250,7 @@ Export-PfxCertificate `
 
     ![Запись общедоступного IP-адреса шлюза приложений](./media/create-ssl-portal/application-gateway-ag-address.png)
 
-2. В адресной строке браузера введите *https://\<IP-адрес шлюза приложений\>* .
+2. В адресной строке браузера введите *https://\<your application gateway ip address\>* .
 
    Чтобы принять предупреждение системы безопасности, если используется самозаверяющий сертификат безопасности, выберите **Сведения** (или **Advanced** (Дополнительно) в Chrome), а затем перейдите на веб-страницу.
 

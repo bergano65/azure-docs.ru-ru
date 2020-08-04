@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 72a76fb513dc6eb008fcf1d1e19ffc33e713cfdc
-ms.sourcegitcommit: 223cea58a527270fe60f5e2235f4146aea27af32
+ms.openlocfilehash: 6738f598275e91ce8a811c3ef6bcc6d5dc84e0bd
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84259258"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87089504"
 ---
 # <a name="quickstart-building-your-first-static-web-app"></a>Краткое руководство. Создание первого статического веб-приложения
 
@@ -68,8 +68,8 @@ ms.locfileid: "84259258"
 
 - Перейдите на [портал Azure](https://portal.azure.com).
 - Щелкните **Создать ресурс**.
-- Выполните поиск по запросу **Статические веб-приложения**.
-- Выберите **Статические веб-приложения (предварительная версия)** .
+- Найдите **Статические веб-приложения**.
+- Щелкните **Статические веб-приложения (предварительная версия)** .
 - Нажмите кнопку **Создать**.
 
 ### <a name="basics"></a>Основы
@@ -96,6 +96,9 @@ ms.locfileid: "84259258"
 - Нажмите кнопку **Next: Build >** (Далее: сборка >) для изменения конфигурации сборки.
 
 :::image type="content" source="media/getting-started/next-build-button.png" alt-text="Кнопка следующей сборки":::
+
+> [!NOTE]
+>  Если вы не видите какие-либо репозитории, вам может потребоваться авторизовать Статические веб-приложения Azure на сайте GitHub. Перейдите к своему репозиторию GitHub и выберите **Параметры > Приложения > Авторизованные приложения OAuth**. Выберите **Azure Static Web Apps** (Статические веб-приложения Azure), а затем — **Предоставление права**. Чтобы предоставить разрешения для репозиториев организации, необходимо быть владельцем организации.
 
 ### <a name="build"></a>Сборка
 

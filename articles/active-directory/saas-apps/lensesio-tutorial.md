@@ -15,19 +15,19 @@ ms.topic: tutorial
 ms.date: 07/02/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8fa73253c49f49647d3415340b2601f1395f912c
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: c2b630111261be8e3615ab45e95633040e799551
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86172386"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87050989"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-lensesio"></a>Руководство по Интеграция единого входа Azure Active Directory с Lenses.io
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-the-lensesio-dataops-portal"></a>Руководство по интеграции единого входа Azure Active Directory с порталом Lenses.io DataOps
 
-В этом руководстве описано, как интегрировать Lenses.io с Azure Active Directory (Azure AD). Интеграция Lenses.io с Azure AD обеспечивает следующие возможности:
+В этом руководстве описано, как интегрировать портал [Lenses.io](https://lenses.io/) DataOps с Azure Active Directory (Azure AD). Интеграция Lenses.io с Azure AD обеспечивает следующие возможности:
 
-* Контроль доступа к Lenses.io с помощью Azure AD.
-* Автоматический вход пользователей в Lenses.io с помощью учетных записей Azure AD.
+* Контроль доступа к порталу Lenses.io с помощью Azure AD.
+* Включение автоматического входа пользователей в Lenses с учетными записями Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
@@ -37,7 +37,8 @@ ms.locfileid: "86172386"
 Чтобы приступить к работе, потребуется следующее.
 
 * Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Подписка Lenses.io с поддержкой единого входа.
+* Экземпляр портала Lenses. Портал Lenses можно развернуть [несколькими способами](https://lenses.io/product/deployment/).
+* [Лицензия](https://lenses.io/product/pricing/) Lenses.io с поддержкой единого входа (SSO).
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -61,15 +62,15 @@ ms.locfileid: "86172386"
 
 ## <a name="configure-and-test-azure-ad-sso-for-lensesio"></a>Настройка и проверка единого входа Azure AD для Lenses.io
 
-Настройте и проверьте единый вход Azure AD в Lenses.io SSO с использованием данных тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Lenses.io.
+Настройте и проверьте единый вход Azure AD на портал Lenses.io с помощью тестового пользователя **B. Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Lenses.io.
 
 Чтобы настроить и проверить единый вход Azure AD в Lenses.io, выполните действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
-    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user-and-group)** позволяет проверить работу единого входа Azure AD от имени пользователя B. Simon.
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Lenses.io](#configure-lensesio-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-    1. **[Создание тестового пользователя приложения Lenses.io](#create-lensesio-test-user)** требуется для того, чтобы в Lenses.io существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
+    1. **[Создание разрешений для тестовой группы Lenses.io](#create-lensesio-test-group-permissions)** требуется, чтобы указать ресурсы, доступные пользователю B. Simon в Lenses.io (авторизация).
 1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
@@ -84,26 +85,26 @@ ms.locfileid: "86172386"
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<CUSTOMER_LENSES_BASE_URL>`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в формате `https://<CUSTOMER_LENSES_BASE_URL>`, например так: `https://lenses.my.company.com`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<CUSTOMER_LENSES_BASE_URL>`.
+    b. В текстовое поле **Идентификатор (сущности)** введите URL-адрес в формате `https://<CUSTOMER_LENSES_BASE_URL>`, например так: `https://lenses.my.company.com`.
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<CUSTOMER_LENSES_BASE_URL>/api/v2/auth/saml/callback?client_name=SAML2Client`.
+    Например, `https://lenses.my.company.com/api/v2/auth/saml/callback?client_name=SAML2Client`
 
     > [!NOTE]
-    > Эти значения приведены для примера. Вместо них необходимо указать фактические значения URL-адреса входа, URL-адреса ответа и идентификатора. Чтобы получить эти значения, обратитесь в [службу поддержки Lenses.io](mailto:support@lenses.io). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса для входа, URL-адреса ответа и идентификатора, которые создаются на основе базового URL-адреса вашего экземпляра портала Lenses. Дополнительные сведения можно найти в [документации по работе единого входа в Lenses.io](https://docs.lenses.io/install_setup/configuration/security.html#single-sign-on-sso-saml-2-0).
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-1. Скопируйте требуемые URL-адреса из раздела **Настройка Lenses.io**.
+1. В разделе **Настройка Lenses.io** примените приведенный выше XML-файл, чтобы настроить в Lenses единый вход через Azure.
 
-    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+### <a name="create-an-azure-ad-test-user-and-group"></a>Создание тестового пользователя и группы Azure AD
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-
-В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
+В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon. Также будет создана тестовая группа для пользователя B. Simon, которая нужна для управления правами пользователя B. Simon на платформе Lenses.
+Сведения о том, как Lenses использует сопоставление членства в группах для авторизации, вы можете найти в [документации по работе единого входа в Lenses](https://docs.lenses.io/install_setup/configuration/security.html#id3).
 
 1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 1. В верхней части экрана выберите **Новый пользователь**.
@@ -112,6 +113,23 @@ ms.locfileid: "86172386"
    1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
    1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
    1. Нажмите кнопку **Создать**.
+
+Чтобы создать группу, сделайте следующее.
+1. Вернитесь к **Azure Active Directory** и выберите **Группы**.
+1. В верхней части экрана щелкните **Новый пользователь**.
+1. В разделе **Свойства группы** сделайте следующее.
+   1. В поле **Тип группы** выберите `Security`.
+   1. В поле **Имя группы** введите `LensesUsers`.
+   1. Нажмите кнопку **Создать**.
+1. Выберите группу `LensesUsers` и запишите ее **идентификатор объекта** (например, `f8b5c1ec-45de-4abd-af5c-e874091fb5f7`). Этот идентификатор будет использоваться в Lenses для сопоставления пользователей этой группы с [нужными разрешениями](https://docs.lenses.io/install_setup/configuration/security.html#id3).  
+   
+Чтобы включить тестового пользователя в группу, сделайте следующее. 
+1. Вернитесь к **Azure Active Directory** и выберите **Пользователи**.
+1. Выберите тестового пользователя `B.Simon`.
+1. Выберите **Группы**.
+1. Выберите **Добавить членство** в верхней части экрана.
+1. Найдите и выберите `LensesUsers`.
+1. Нажмите кнопку **Выбрать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -133,19 +151,23 @@ ms.locfileid: "86172386"
 
 ## <a name="configure-lensesio-sso"></a>Настройка единого входа в приложении Lenses.io
 
-Чтобы настроить единый вход на стороне **Lenses.io**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [ службу поддержки Lenses.io](mailto:support@lenses.io). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на портале **Lenses.io**, установите скачанный **метаданных федерации XML** в экземпляр Lenses и [настройте единый вход в Lenses](https://docs.lenses.io/install_setup/configuration/security.html#configure-lenses). 
 
-### <a name="create-lensesio-test-user"></a>Создание тестового пользователя Lenses.io
+### <a name="create-lensesio-test-group-permissions"></a>Создание разрешений для тестовой группы Lenses.io
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Lenses.io. Обратитесь в  [службу поддержки Lenses.io](mailto:support@lenses.io), чтобы добавить пользователей на платформу Lenses.io. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать в Lenses группу, используя **идентификатор объекта** группы `LensesUsers`, который вы записали при [создании пользователя](#create-an-azure-ad-test-user-and-group).
+Ей вы назначите разрешения, которые пользователь `B.Simon` должен иметь на платформе Lenses.
+Дополнительные сведения см. в документации по [сопоставлению групп между Azure и Lenses](https://docs.lenses.io/install_setup/configuration/security.html#azure-groups).
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Lenses.io на панели доступа, вы автоматически войдете в приложение Lenses.io, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Lenses.io на панели доступа, вы автоматически войдете на портал Lenses.io, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
+
+- [Настройка единого входа в экземпляре Lenses.io](https://docs.lenses.io/install_setup/configuration/security.html#single-sign-on-sso-saml-2-0)
 
 - [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 

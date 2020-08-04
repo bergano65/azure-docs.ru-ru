@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 08/19/2019
 ms.custom: mvc, sec-javascript-october2019
-ms.openlocfilehash: 2e63b2ca0ee7246009068e6a2875795a14aeddb3
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: 91a4e2f6a770282e9d031c31fdf1af15f0cd00bf
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84695374"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87067553"
 ---
 # <a name="collect-data-from-an-azure-virtual-machine-with-azure-monitor"></a>Сбор данных из виртуальной машины Azure с помощью Azure Monitor
 
@@ -141,4 +141,4 @@ Azure Monitor может собирать события из журналов �
 Чтобы узнать, как просматривать и анализировать данные, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Просмотр и анализ данных, собранных с помощью поиска по журналам Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md)
+> [Просмотр и анализ данных, собранных с помощью поиска по журналам Log Analytics](../log-query/get-started-portal.md)

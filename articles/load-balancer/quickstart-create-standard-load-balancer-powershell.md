@@ -1,274 +1,1296 @@
 ---
-title: Краткое руководство. Создание Load Balancer с помощью Azure PowerShell
+title: Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки — Azure PowerShell
 titleSuffix: Azure Load Balancer
-description: Из этого краткого руководства вы узнаете, как создать Load Balancer с помощью Azure PowerShell
+description: Из этого краткого руководства вы узнаете, как создать подсистему балансировки нагрузки с помощью Azure PowerShell
 services: load-balancer
 documentationcenter: na
 author: asudbring
-manager: twooley
-Customer intent: I want to create a Load balancer so that I can load balance internet traffic to VMs.
+manager: KumudD
+Customer intent: I want to create a load balancer so that I can load balance internet traffic to VMs.
 ms.assetid: ''
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/27/2020
+ms.date: 07/23/2020
 ms.author: allensu
 ms:custom: seodec18
-ms.openlocfilehash: f169d7694199e496e472a6c32312cf6782270378
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: b8a95687b1567eb6e063ccc871a4a130c5f2db69
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80247220"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87290360"
 ---
-# <a name="quickstart-create-a-load-balancer-using-azure-powershell"></a>Краткое руководство. Создание Load Balancer с помощью Azure PowerShell
+# <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-using-azure-powershell"></a>Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure PowerShell для распределения нагрузки между виртуальными машинами
 
-Из этого краткого руководства вы узнаете, как с помощью Azure PowerShell создать Load Balancer уровня "Стандартный" Чтобы проверить работу подсистемы балансировки нагрузки, вы развернете три виртуальные машины Windows Server и распределите между ними нагрузку веб-приложения. См. дополнительные сведения о [Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md).
+Начните работу с Azure Load Balancer, создав с помощью Azure PowerShell общедоступную подсистему балансировки нагрузки и три виртуальные машины.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
+- Локальная установка Azure PowerShell или Azure Cloud Shell
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Чтобы установить и использовать PowerShell локально, для работы с этой статьей вам понадобится модуль Azure PowerShell 5.4.1 или более поздней версии. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+Чтобы установить и использовать PowerShell локально, для работы с этой статьей вам понадобится модуль Azure PowerShell 5.4.1 или более поздней версии. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Прежде чем создавать подсистему балансировки нагрузки, создайте группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *myResourceGroupSLB* в расположении *EastUS*.
+Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
-```azurepowershell
-$rgName='MyResourceGroupSLB'
-$location='eastus'
-New-AzResourceGroup -Name $rgName -Location $location
+Создайте группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup):
+
+* с именем **myResourceGroupLB**;
+* в расположении **eastus**.
+
+```azurepowershell-interactive
+## Variables for the command ##
+$rg = 'MyResourceGroupLB'
+$loc = 'eastus'
+
+New-AzResourceGroup -Name $rg -Location $loc
 ```
+---
+
+# <a name="option-1-default-create-a-load-balancer-standard-sku"></a>[Вариант 1 (по умолчанию). Создание подсистемы балансировки нагрузки (ценовая категория "Стандартный")](#tab/option-1-create-load-balancer-standard)
+
+>[!NOTE]
+>Для производственных рабочих нагрузок рекомендуется использовать подсистему балансировки нагрузки ценовой категории "Стандартный". Дополнительные сведения о доступных ценовых категориях см. в статье **[Номера SKU для Azure Load Balancer](skus.md)** .
 
 ## <a name="create-a-public-ip-address"></a>Создание общедоступного IP-адреса
 
-Для доступа к приложению через Интернет требуется общедоступный IP-адрес для балансировщика нагрузки. Создайте общедоступный IP-адрес с помощью командлета [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). В следующем примере создается избыточный в пределах зоны общедоступный IP-адрес *myPublicIP* в группе ресурсов *myResourceGroupSLB*.
+Для доступа к веб-приложению через Интернет подсистеме балансировки нагрузки требуется общедоступный IP-адрес. 
 
-```azurepowershell
-$publicIp = New-AzPublicIpAddress `
- -ResourceGroupName $rgName `
- -Name 'myPublicIP' `
- -Location $location `
- -AllocationMethod static `
- -SKU Standard
+Используйте [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress):
+
+* чтобы создать стандартный избыточный между зонами общедоступный IP-адрес с именем **myPublicIP**;
+* в **myResourceGroupLB**.
+
+```azurepowershell-interactive
+## Variables for the command ##
+$rg = 'MyResourceGroupLB'
+$loc = 'eastus'
+$pubIP = 'myPublicIP'
+$sku = 'Standard'
+$all = 'static'
+
+$publicIp = 
+New-AzPublicIpAddress -ResourceGroupName $rg -Name $pubIP -Location $loc -AllocationMethod $all -SKU $sku
 ```
 
-Создайте зональный общедоступный IP-адрес в зоне доступности 1, используя приведенные ниже сведения.
+Чтобы создать зональный общедоступный IP-адрес в зоне доступности 1, используйте следующую команду:
 
-```azurepowershell
-$publicIp = New-AzPublicIpAddress `
- -ResourceGroupName $rgName `
- -Name 'myPublicIP' `
- -Location $location `
- -AllocationMethod static `
- -SKU Standard `
- -zone 1
+```azurepowershell-interactive
+## Variables for the command ##
+$rg = 'MyResourceGroupLB'
+$loc = 'eastus'
+$pubIP = 'myPublicIP'
+$sku = 'Standard'
+$all = 'static'
+
+$publicIp = 
+New-AzPublicIpAddress -ResourceGroupName $rg -Name $pubIP -Location $loc -AllocationMethod $all -SKU $sku -zone 1
 ```
 
-Для создания базового общедоступного IP-адреса используйте ```-SKU Basic```. Общедоступные IP-адреса ценовой категории "Базовый" несовместимы с подсистемой балансировки нагрузки ценовой категории **Стандартный**. Для производственных рабочих нагрузок компания Майкрософт рекомендует использовать ценовую категорию **Стандартный**.
+## <a name="create-standard-load-balancer"></a>Создание подсистемы балансировки нагрузки (цен. категория "Стандартный")
 
-> [!IMPORTANT]
-> Далее в этом кратком руководстве предполагается, что вы выбрали SKU ценовой категории **Стандартный**, как описано выше.
+В этом разделе описано, как создать и настроить следующие компоненты подсистемы балансировки нагрузки:
 
-## <a name="create-load-balancer"></a>Создание балансировщика нагрузки
-
-В рамках этого раздела вы настроите интерфейсный IP-адрес и серверный пул IP-адресов подсистемы балансировки нагрузки, а затем создадите Load Balancer (цен. категория "Стандартный").
+  * интерфейсный пул IP-адресов, который получает входящий трафик в подсистеме балансировки нагрузки;
+  * внутренний пул IP-адресов, на который интерфейсный пул отправляет трафик с балансировкой нагрузки;
+  * проверка работоспособности, определяющая работоспособность внутренних экземпляров виртуальной машины;
+  * правило подсистемы балансировки нагрузки, определяющее порядок распределения трафика между виртуальными машинами.
 
 ### <a name="create-frontend-ip"></a>Создание интерфейсного IP-адреса
 
-Создайте интерфейсный IP-адрес с помощью командлета [New-AzLoadBalancerFrontendIpConfig](/powershell/module/az.network/new-azloadbalancerfrontendipconfig). В следующем примере создается конфигурация с именем *myFrontEnd* для интерфейсного IP-адреса и к ней подключается адрес *myPublicIP*:
+Создайте интерфейсный IP-адрес с помощью командлета [New-AzLoadBalancerFrontendIpConfig](/powershell/module/az.network/new-azloadbalancerfrontendipconfig):
 
-```azurepowershell
-$feip = New-AzLoadBalancerFrontendIpConfig -Name 'myFrontEndPool' -PublicIpAddress $publicIp
+* с именем **myFrontEnd**;
+* подключенный к общедоступному IP-адресу **myPublicIP**.
+
+```azurepowershell-interactive
+## Variables for the commands ##
+$fe = 'myFrontEnd'
+$rg = 'MyResourceGroupLB'
+$loc = 'eastus'
+$pubIP = 'myPublicIP'
+
+$publicIp = 
+Get-AzPublicIpAddress -Name $pubIP -ResourceGroupName $rg
+
+$feip = 
+New-AzLoadBalancerFrontendIpConfig -Name $fe -PublicIpAddress $publicIp
 ```
 
 ### <a name="configure-back-end-address-pool"></a>Настройка серверного пула адресов
 
-Создайте серверный пул адресов с помощью командлета [New-AzLoadBalancerBackendAddressPoolConfig](/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig). Виртуальные машины присоединяются в этот серверный пул на следующих этапах. В следующем примере создается серверный пул адресов *myBackEndPool*.
+Создайте серверный пул адресов с помощью командлета [New-AzLoadBalancerBackendAddressPoolConfig](/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig): 
+
+* с именем **myBackEndPool**;
+* Виртуальные машины присоединяются в этот серверный пул на следующих этапах.
 
 ```azurepowershell-interactive
-$bepool = New-AzLoadBalancerBackendAddressPoolConfig -Name 'myBackEndPool'
+## Variable for the command ##
+$be = 'myBackEndPool'
+
+$bepool = 
+New-AzLoadBalancerBackendAddressPoolConfig -Name $be
 ```
 
-### <a name="create-a-health-probe"></a>Создание пробы работоспособности
-Чтобы балансировщик нагрузки мог следить за состоянием приложения, необходимо настроить пробу работоспособности. Проба работоспособности динамически добавляет или удаляет виртуальные машины из балансировщика нагрузки на основе их ответа на проверки работоспособности. По умолчанию виртуальная машина удаляется из числа машин, на которые балансировщик распределяет нагрузку, после двух последовательных сбоев с интервалом в 15 секунд. Пробу работоспособности можно создать на основе протокола или конкретной страницы проверки работоспособности приложения.
+### <a name="create-the-health-probe"></a>Создание зонда работоспособности
 
-В следующем примере создается проба TCP. Вы также можете создать настраиваемую пробу HTTP для более детальных проверок. При использовании настраиваемой пробы HTTP нужно создать страницу проверки работоспособности, например *healthcheck.aspx*. Чтобы обеспечить работоспособность узла, проба должна возвращать ответ **HTTP 200 OK** для балансировщика нагрузки.
+При пробе работоспособности выполняется проверка всех экземпляров виртуальной машины, чтобы убедиться, что они могут отправлять сетевой трафик. 
 
-Чтобы создать пробу работоспособности TCP, выполните командлет [Add-AzLoadBalancerProbeConfig](/powershell/module/az.network/add-azloadbalancerprobeconfig). В следующем примере создается проба работоспособности *myHealthProbe*, которая отслеживает каждую виртуальную машину через *HTTP*-порт *80*:
+Виртуальная машина с неудачной пробой удаляется из подсистемы балансировки нагрузки и снова добавляется в нее после устранения сбоя.
 
-```azurepowershell
-$probe = New-AzLoadBalancerProbeConfig `
- -Name 'myHealthProbe' `
- -Protocol Http -Port 80 `
- -RequestPath / -IntervalInSeconds 360 -ProbeCount 5
+Создайте пробу работоспособности с помощью командлета [Add-AzLoadBalancerProbeConfig](/powershell/module/az.network/add-azloadbalancerprobeconfig), которая:
+
+* отслеживает работоспособность виртуальных машин;
+* имеет имя **myHealthProbe**;
+* использует протокол **TCP**;
+* отслеживает **порт 80**.
+
+```azurepowershell-interactive
+## Variables for the command ##
+$hp = 'myHealthProbe'
+$pro = 'http'
+$port = '80'
+$int = '360'
+$cnt = '5'
+
+$probe = 
+New-AzLoadBalancerProbeConfig -Name $hp -Protocol $pro -Port $port -RequestPath / -IntervalInSeconds $int -ProbeCount $cnt
 ```
 
-### <a name="create-a-load-balancer-rule"></a>Создание правила балансировщика нагрузки
-Правило балансировщика нагрузки позволяет определить распределение трафика между виртуальными машинами. Вы определяете интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул IP-адресов для приема трафика, а также требуемый порт источника и назначения. Чтобы обеспечить получение трафика только работоспособными виртуальными машинами, можно также определить используемую пробу работоспособности.
+### <a name="create-the-load-balancer-rule"></a>Создание правила подсистемы балансировки нагрузки
 
-Создайте правило подсистемы балансировки нагрузки с помощью командлета [Add-AzLoadBalancerRuleConfig](/powershell/module/az.network/add-azloadbalancerruleconfig). В следующем примере создается правило подсистемы балансировки нагрузки *myLoadBalancerRule* для балансировки трафика через *TCP*-порт *80*:
+Правило подсистемы балансировки нагрузки определяет:
 
-```azurepowershell
-$rule = New-AzLoadBalancerRuleConfig `
-  -Name 'myLoadBalancerRuleWeb' -Protocol Tcp `
-  -Probe $probe -FrontendPort 80 -BackendPort 80 `
-  -FrontendIpConfiguration $feip `
-  -BackendAddressPool $bePool
+* конфигурацию интерфейсных IP-адресов для входящего трафика;
+* серверный пул IP-адресов для приема трафика;
+* требуемые порты источника и назначения. 
+
+Создайте правило подсистемы балансировки нагрузки с помощью командлета [Add-AzLoadBalancerRuleConfig](/powershell/module/az.network/add-azloadbalancerruleconfig), которое: 
+
+* имеет имя **myHTTPRule**;
+* ожидает передачи данных от **порта 80**, используемого интерфейсным пулом **myFrontEnd**;
+* перенаправляет трафик, для которого настроена балансировка нагрузки, ко внутреннему пулу адресов **myBackEndPool**, который использует **порт 80**; 
+* использует пробу работоспособности **MyHealthProbe**;
+* использует протокол **TCP**.
+
+```azurepowershell-interactive
+## Variables for the command ##
+$lbr = 'myHTTPRule'
+$pro = 'tcp'
+$port = '80'
+
+## $feip and $bePool are the variables from previous steps. ##
+
+$rule = 
+New-AzLoadBalancerRuleConfig -Name $lbr -Protocol $pro -Probe $probe -FrontendPort $port -BackendPort $port -FrontendIpConfiguration $feip -BackendAddressPool $bePool -DisableOutboundSNAT
 ```
 
-### <a name="create-the-nat-rules"></a>Создание правил NAT
+### <a name="create-load-balancer-resource"></a>Создание ресурса подсистемы балансировки нагрузки
 
-Создайте правила преобразования сетевых адресов (NAT) с помощью [New-AzLoadBalancerInboundNatRuleConfig](/powershell/module/az.network/new-azloadbalancerinboundnatruleconfig). В следующем примере создаются правила NAT с именами *myLoadBalancerRDP1* и *myLoadBalancerRDP2*, разрешающие RDP-подключения к внутренним серверам по портам 4221 и 4222:
+Теперь создайте общедоступную подсистему балансировки нагрузки с помощью командлета [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer):
 
-```azurepowershell
-$natrule1 = New-AzLoadBalancerInboundNatRuleConfig `
-  -Name 'myLoadBalancerRDP1' `
-  -FrontendIpConfiguration $feip `
-  -Protocol tcp -FrontendPort 4221 `
-  -BackendPort 3389
+* с именем **myLoadBalancer**;
+* в **eastus**;
+* в группе ресурсов **myResourceGroupLB**.
 
-$natrule2 = New-AzLoadBalancerInboundNatRuleConfig `
-  -Name 'myLoadBalancerRDP2' `
-  -FrontendIpConfiguration $feip `
-  -Protocol tcp `
-  -FrontendPort 4222 `
-  -BackendPort 3389
+```azurepowershell-interactive
+## Variables for the command ##
+$lbn = 'myLoadBalancer'
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$sku = 'Standard'
 
-$natrule3 = New-AzLoadBalancerInboundNatRuleConfig `
-  -Name 'myLoadBalancerRDP3' `
-  -FrontendIpConfiguration $feip `
-  -Protocol tcp `
-  -FrontendPort 4223 `
-  -BackendPort 3389
+## $feip, $bepool, $probe, $rule are variables with configuration information from previous steps. ##
+
+$lb = 
+New-AzLoadBalancer -ResourceGroupName $rg -Name $lbn -SKU $sku -Location $loc -FrontendIpConfiguration $feip -BackendAddressPool $bepool -Probe $probe -LoadBalancingRule $rule
 ```
 
-### <a name="create-load-balancer"></a>Создание подсистемы балансировки нагрузки
+## <a name="configure-virtual-network"></a>Настройка виртуальной сети
 
-Создайте Load Balancer (цен. категория "Стандартный") с помощью командлета [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer). В приведенном ниже примере создается общедоступный экземпляр службы Load Balancer (цен. категория "Стандартный") с именем myLoadBalancer. Для него применяется конфигурация интерфейсных IP-адресов, серверный пул, проба работоспособности, правило балансировки нагрузки и правила NAT, созданные на предыдущих этапах.
-
-```azurepowershell
-$lb = New-AzLoadBalancer `
-  -ResourceGroupName $rgName `
-  -Name 'MyLoadBalancer' `
-  -SKU Standard `
-  -Location $location `
-  -FrontendIpConfiguration $feip `
-  -BackendAddressPool $bepool `
-  -Probe $probe `
-  -LoadBalancingRule $rule `
-  -InboundNatRule $natrule1,$natrule2,$natrule3
-```
-
-Для создания Load Balancer уровня "Базовый" используйте ```-SKU Basic```. Для производственных рабочих нагрузок компания Майкрософт рекомендует использовать цен. категорию "Стандартный".
-
-> [!IMPORTANT]
-> Далее в этом кратком руководстве предполагается, что вы выбрали SKU ценовой категории **Стандартный**, как описано выше.
-
-## <a name="create-network-resources"></a>Создание сетевых ресурсов
-Прежде чем развертывать виртуальные машины и тестировать подсистему балансировки нагрузки, создайте вспомогательные ресурсы, то есть виртуальную сеть и виртуальные сетевые адаптеры. 
+Прежде чем развертывать виртуальные машины и тестировать подсистему балансировки нагрузки, создайте вспомогательные ресурсы виртуальной сети.
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
-Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создаются виртуальная сеть *myVnet* и подсеть *mySubnet*.
 
-```azurepowershell
-# Create subnet config
-$subnetConfig = New-AzVirtualNetworkSubnetConfig `
-  -Name "mySubnet" `
-  -AddressPrefix 10.0.2.0/24
+Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork):
 
-# Create the virtual network
-$vnet = New-AzVirtualNetwork `
-  -ResourceGroupName "myResourceGroupSLB" `
-  -Location $location `
-  -Name "myVnet" `
-  -AddressPrefix 10.0.0.0/16 `
-  -Subnet $subnetConfig
+* с именем **myVNet**;
+* в группе ресурсов **myResourceGroupLB**;
+* с именем подсети **myBackendSubnet**;
+* в виртуальной сети **10.0.0.0/16**;
+* в подсети **10.0.0.0/24**.
+
+```azurepowershell-interactive
+## Variables for the command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$sub = 'myBackendSubnet'
+$spfx = '10.0.0.0/24'
+$vnm = 'myVNet'
+$vpfx = '10.0.0.0/16'
+
+## Create subnet config ##
+$subnetConfig = 
+New-AzVirtualNetworkSubnetConfig -Name $sub -AddressPrefix $spfx
+
+## Create the virtual network ##
+$vnet = 
+New-AzVirtualNetwork -ResourceGroupName $rg -Location $loc -Name $vnm -AddressPrefix $vpfx -Subnet $subnetConfig
 ```
 ### <a name="create-public-ip-addresses-for-the-vms"></a>Создание общедоступных IP-адресов для виртуальных машин
 
-Для доступа к виртуальным машинам с помощью подключения к удаленному рабочему столу требуется, чтобы у каждой из них был общедоступный IP-адрес. Так как в этом сценарии используется Load Balancer (цен. категория "Стандартный"), необходимо создать общедоступные IP-адреса (цен. категория "Стандартный") для виртуальных машин, выполнив командлет [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress).
+Для доступа к виртуальным машинам с помощью подключения к удаленному рабочему столу требуется, чтобы у каждой из них был общедоступный IP-адрес. 
 
-```azurepowershell
-$RdpPublicIP_1 = New-AzPublicIpAddress `
-  -Name "RdpPublicIP_1" `
-  -ResourceGroupName $RgName `
-  -Location $location  `
-  -SKU Standard `
-  -AllocationMethod static
- 
+С помощью командлета [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress) создайте стандартные общедоступные IP-адреса для:
 
-$RdpPublicIP_2 = New-AzPublicIpAddress `
-  -Name "RdpPublicIP_2" `
-  -ResourceGroupName $RgName `
-  -Location $location  `
-  -SKU Standard `
-  -AllocationMethod static
+#### <a name="vm1"></a>VM1
 
+* с именем **myVMPubIP1**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**;
+* с номером SKU **Стандартный**;
+* со **статическим** выделением IP-адреса.
 
-$RdpPublicIP_3 = New-AzPublicIpAddress `
-  -Name "RdpPublicIP_3" `
-  -ResourceGroupName $RgName `
-  -Location $location  `
-  -SKU Standard `
-  -AllocationMethod static
+```azurepowershell-interactive
+## Variables for the command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$ip1 = 'myVMPubIP1'
+$sku = 'Standard'
+$all = 'static'
 
+$RdpPubIP1 = 
+New-AzPublicIpAddress -Name $ip1 -ResourceGroupName $rg -Location $loc -SKU $sku -AllocationMethod $all
 ```
 
-Для создания базовых общедоступных IP-адресов используйте ```-SKU Basic```. Для производственных рабочих нагрузок компания Майкрософт рекомендует использовать цен. категорию "Стандартный".
+#### <a name="vm2"></a>VM2
+
+* с именем **myVMPubIP2**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**;
+* с номером SKU **Стандартный**;
+* со **статическим** выделением IP-адреса. 
+
+```azurepowershell-interactive
+## Variables for the command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$ip2 = 'myVMPubIP2'
+$sku = 'Standard'
+$all = 'static'
+
+$RdpPubIP2 = 
+New-AzPublicIpAddress -Name $ip2 -ResourceGroupName $rg -Location $loc -SKU $sku -AllocationMethod $all
+```
+
+#### <a name="vm3"></a>VM3
+
+* с именем **myVMPubIP3**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**;
+* с номером SKU **Стандартный**;
+* со **статическим** выделением IP-адреса. 
+
+```azurepowershell-interactive
+## Variables for the command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$ip3 = 'myVMPubIP3'
+$sku = 'Standard'
+$all = 'static'
+
+$RdpPubIP3 = 
+New-AzPublicIpAddress -Name $ip3 -ResourceGroupName $rg -Location $loc -SKU $sku -AllocationMethod $all
+```
 
 ### <a name="create-network-security-group"></a>Создание группы безопасности сети
 Создайте группу безопасности сети для определения входящих подключений к виртуальной сети.
 
 #### <a name="create-a-network-security-group-rule-for-port-3389"></a>Создание правила группы безопасности сети для порта 3389
-Создайте правило для группы безопасности сети, разрешающее RDP-подключения через порт 3389, с помощью командлета [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig).
 
-```azurepowershell
+Создайте группу безопасности сети с помощью командлета [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig):
 
-$rule1 = New-AzNetworkSecurityRuleConfig -Name 'myNetworkSecurityGroupRuleRDP' -Description 'Allow RDP' `
-  -Access Allow -Protocol Tcp -Direction Inbound -Priority 1000 `
-  -SourceAddressPrefix Internet -SourcePortRange * `
-  -DestinationAddressPrefix * -DestinationPortRange 3389
+* с именем **myNSGRuleRDP**;
+* с описанием **Allow RDP**;
+* с доступом **Allow**;
+* с протоколом **TCP**;
+* с направлением **Inbound**;
+* с приоритетом **1000**;
+* с источником **Internet**;
+* с диапазоном исходных портов **(*)** ;
+* с префиксом адреса назначения **(*)** ;
+* с портом назначения **3389**.
+
+```azurepowershell-interactive
+## Variables for command ##
+$rnm = 'myNSGRuleRDP'
+$des = 'Allow RDP'
+$acc = 'Allow'
+$pro = 'Tcp'
+$dir = 'Inbound'
+$pri = '1000'
+$spfx = 'Internet'
+$spr = '*'
+$dpfx = '*'
+$dpr = '3389'
+
+$rule1 = 
+New-AzNetworkSecurityRuleConfig -Name $rnm -Description $des -Access $acc -Protocol $pro -Direction $dir -Priority $pri -SourceAddressPrefix $spfx -SourcePortRange $spr -DestinationAddressPrefix $dpfx -DestinationPortRange $dpr
 ```
 
 #### <a name="create-a-network-security-group-rule-for-port-80"></a>Создание правила группы безопасности сети для порта 80
-Создайте правило для группы безопасности сети, разрешающее входящие подключения через порт 80, с помощью командлета [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig).
+Создайте правило группы безопасности сети с помощью командлета [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig):
 
-```azurepowershell
-$rule2 = New-AzNetworkSecurityRuleConfig -Name 'myNetworkSecurityGroupRuleHTTP' -Description 'Allow HTTP' `
-  -Access Allow -Protocol Tcp -Direction Inbound -Priority 2000 `
-  -SourceAddressPrefix Internet -SourcePortRange * `
-  -DestinationAddressPrefix * -DestinationPortRange 80
+* с именем **myNSGRuleHTTP**;
+* с описанием **Allow HTTP**;
+* с доступом **Allow**;
+* с протоколом **TCP**;
+* с направлением **Inbound**;
+* с приоритетом **2000**;
+* с источником **Internet**;
+* с диапазоном исходных портов **(*)** ;
+* с префиксом адреса назначения **(*)** ;
+* с конечным портом **80**.
+
+```azurepowershell-interactive
+## Variables for command ##
+$rnm = 'myNSGRuleHTTP'
+$des = 'Allow HTTP'
+$acc = 'Allow'
+$pro = 'Tcp'
+$dir = 'Inbound'
+$pri = '2000'
+$spfx = 'Internet'
+$spr = '*'
+$dpfx = '*'
+$dpr = '80'
+
+$rule2 = 
+New-AzNetworkSecurityRuleConfig -Name $rnm -Description $des -Access $acc -Protocol $pro -Direction $dir -Priority $pri -SourceAddressPrefix $spfx -SourcePortRange $spr -DestinationAddressPrefix $dpfx -DestinationPortRange $dpr
 ```
 
 #### <a name="create-a-network-security-group"></a>Создание группы безопасности сети
 
-Создайте группу безопасности сети с помощью командлета [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup).
+Создайте группу безопасности сети с помощью командлета [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup):
+
+* с именем **myNSG**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**;
+* с созданными на предыдущих шагах правилами безопасности, сохраненными в переменной.
 
 ```azurepowershell
-$nsg = New-AzNetworkSecurityGroup -ResourceGroupName $RgName -Location $location `
--Name 'myNetworkSecurityGroup' -SecurityRules $rule1,$rule2
+## Variables for command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$nmn = 'myNSG'
+
+## $rule1 and $rule2 are variables with configuration information from the previous steps. ##
+$nsg = 
+New-AzNetworkSecurityGroup -ResourceGroupName $rg -Location $loc -Name $nmn -SecurityRules $rule1,$rule2
 ```
 
-### <a name="create-nics"></a>Создание сетевых адаптеров
-Создайте виртуальные сетевые адаптеры и свяжите их с общедоступным IP-адресом и группами безопасности сети, созданными на предыдущих шагах, с помощью командлета [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface). В следующем примере создаются три виртуальных сетевых адаптера (по одной виртуальной сетевой карте для каждой виртуальной машины, используемой приложением). Вы можете в любое время создать дополнительные виртуальные сетевые карты и виртуальные машины и добавить их в балансировщик нагрузки:
+### <a name="create-network-interfaces"></a>Создание сетевых интерфейсов
+
+Создайте три сетевых интерфейса с помощью командлета [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface):
+
+#### <a name="vm-1"></a>Виртуальная машина 1
+
+* с именем **myNicVM1**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**;
+* в виртуальной сети **myVNet**;
+* в подсети **myBackendSubnet**;
+* в группе безопасности сети **myNSG**;
+* с подключением к подсистеме балансировки нагрузки **myLoadBalancer** в **myBackEndPool**.
+
+```azurepowershell-interactive
+## Variables for command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$nic1 = 'myNicVM1'
+$vnt = 'myVNet'
+$ip1 = 'myVMPubIP1'
+$lb = 'myLoadBalancer'
+$ngn = 'myNSG'
+
+## Command to get virtual network configuration. ##
+$vnet = 
+Get-AzVirtualNetwork -Name $vnt -ResourceGroupName $rg
+
+## Command to get public ip address for VM1 ##
+$pub1 = 
+Get-AzPublicIPAddress -Name $ip1 -ResourceGroupName $rg
+
+## Command to get load balancer configuration
+$bepool = 
+Get-AzLoadBalancer -Name $lb -ResourceGroupName $rg | Get-AzLoadBalancerBackendAddressPoolConfig
+
+## Command to get network security group configuration ##
+$nsg = 
+Get-AzNetworkSecurityGroup -Name $ngn -ResourceGroupName $rg
+
+## Command to create network interface for VM1 ##
+$nicVM1 = 
+New-AzNetworkInterface -ResourceGroupName $rg -Location $loc -Name $nic1 -PublicIpAddress $pub1 -LoadBalancerBackendAddressPool $bepool -NetworkSecurityGroup $nsg -Subnet $vnet.Subnets[0]
+```
+
+#### <a name="vm-2"></a>Виртуальная машина 2
+
+* с именем **myNicVM2**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**;
+* в виртуальной сети **myVNet**;
+* в подсети **myBackendSubnet**;
+* в группе безопасности сети **myNSG**;
+* с подключением к подсистеме балансировки нагрузки **myLoadBalancer** в **myBackEndPool**.
+
+```azurepowershell-interactive
+## Variables for command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$nic2 = 'myNicVM2'
+$vnt = 'myVNet'
+$ip2 = 'myVMPubIP2'
+$lb = 'myLoadBalancer'
+$ngn = 'myNSG'
+
+## Command to get virtual network configuration. ##
+$vnet = 
+Get-AzVirtualNetwork -Name $vnt -ResourceGroupName $rg
+
+## Command to get public ip address for VM2 ##
+$pub2 = 
+Get-AzPublicIPAddress -Name $ip2 -ResourceGroupName $rg
+
+## Command to get load balancer configuration
+$bepool = 
+Get-AzLoadBalancer -Name $lb -ResourceGroupName $rg | Get-AzLoadBalancerBackendAddressPoolConfig
+
+## Command to get network security group configuration ##
+$nsg = 
+Get-AzNetworkSecurityGroup -Name $ngn -ResourceGroupName $rg
+
+## Command to create network interface for VM2 ##
+$nicVM2 = 
+New-AzNetworkInterface -ResourceGroupName $rg -Location $loc -Name $nic2 -PublicIpAddress $pub2 -LoadBalancerBackendAddressPool $bepool -NetworkSecurityGroup $nsg -Subnet $vnet.Subnets[0]
+```
+
+#### <a name="vm-3"></a>Виртуальная машина 3
+
+* с именем **myNicVM3**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**;
+* в виртуальной сети **myVNet**;
+* в подсети **myBackendSubnet**;
+* в группе безопасности сети **myNSG**;
+* с подключением к подсистеме балансировки нагрузки **myLoadBalancer** в **myBackEndPool**.
+
+```azurepowershell-interactive
+## Variables for command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$nic3 = 'myNicVM3'
+$vnt = 'myVNet'
+$ip3 = 'myVMPubIP3'
+$lb = 'myLoadBalancer'
+$ngn = 'myNSG'
+
+## Command to get virtual network configuration. ##
+$vnet = 
+Get-AzVirtualNetwork -Name $vnt -ResourceGroupName $rg
+
+## Command to get public ip address for VM3 ##
+$pub3 = 
+Get-AzPublicIPAddress -Name $ip3 -ResourceGroupName $rg
+
+## Command to get load balancer configuration
+$bepool = 
+Get-AzLoadBalancer -Name $lb -ResourceGroupName $rg | Get-AzLoadBalancerBackendAddressPoolConfig
+
+## Command to get network security group configuration ##
+$nsg = 
+Get-AzNetworkSecurityGroup -Name $ngn -ResourceGroupName $rg
+
+## Command to create network interface for VM3 ##
+$nicVM3 = 
+New-AzNetworkInterface -ResourceGroupName $rg -Location $loc -Name $nic3 -PublicIpAddress $pub3 -LoadBalancerBackendAddressPool $bepool -NetworkSecurityGroup $nsg -Subnet $vnet.Subnets[0]
+```
+### <a name="create-virtual-machines"></a>Создание виртуальных машин
+
+Укажите имя и пароль администратора для виртуальной машины с помощью командлета [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential):
 
 ```azurepowershell
-# Create NIC for VM1
-$nicVM1 = New-AzNetworkInterface -ResourceGroupName $rgName -Location $location `
-  -Name 'MyNic1' -PublicIpAddress $RdpPublicIP_1 -LoadBalancerBackendAddressPool $bepool -NetworkSecurityGroup $nsg `
-  -LoadBalancerInboundNatRule $natrule1 -Subnet $vnet.Subnets[0]
+$cred = Get-Credential
+```
 
-$nicVM2 = New-AzNetworkInterface -ResourceGroupName $rgName -Location $location `
-  -Name 'MyNic2' -PublicIpAddress $RdpPublicIP_2 -LoadBalancerBackendAddressPool $bepool -NetworkSecurityGroup $nsg `
-  -LoadBalancerInboundNatRule $natrule2 -Subnet $vnet.Subnets[0]
+Создайте виртуальные машины с помощью следующих командлетов:
 
-$nicVM3 = New-AzNetworkInterface -ResourceGroupName $rgName -Location $location `
-  -Name 'MyNic3' -PublicIpAddress $RdpPublicIP_3 -LoadBalancerBackendAddressPool $bepool -NetworkSecurityGroup $nsg `
-  -LoadBalancerInboundNatRule $natrule3 -Subnet $vnet.Subnets[0]
+* [New-AzVM](/powershell/module/az.compute/new-azvm)
+* [New-AzVMConfig](/powershell/module/az.compute/new-azvmconfig)
+* [Set-AzVMOperatingSystem](/powershell/module/az.compute/set-azvmoperatingsystem)
+* [Set-AzVMSourceImage](/powershell/module/az.compute/set-azvmsourceimage)
+* [Add-AzVMNetworkInterface](/powershell/module/az.compute/add-azvmnetworkinterface)
+
+
+#### <a name="vm1"></a>VM1
+
+* с именем **myVM1**;
+* в группе ресурсов **myResourceGroupLB**;
+* с подключением к сетевому интерфейсу **myNicVM1**;
+* с подключением к подсистеме балансировки нагрузки **myLoadBalancer**;
+* в **зоне 1**;
+* в расположении **eastus**.
+
+```azurepowershell-interactive
+## Variables used for command. ##
+$rg = 'myResourceGroupLB'
+$vm = 'myVM1'
+$siz = 'Standard_DS1_v2'
+$pub = 'MicrosoftWindowsServer'
+$off = 'WindowsServer'
+$sku = '2019-Datacenter'
+$ver = 'latest'
+$zn = '1'
+$loc = 'eastus'
+
+## Create a virtual machine configuration. $cred and $nicVM1 are variables with configuration from the previous steps. ##
+
+$vmConfig = 
+New-AzVMConfig -VMName $vm -VMSize $siz | Set-AzVMOperatingSystem -Windows -ComputerName $vm -Credential $cred | Set-AzVMSourceImage -PublisherName $pub -Offer WindowsServer -Skus $sku -Version $ver | Add-AzVMNetworkInterface -Id $nicVM1.Id
+
+## Create the virtual machine ##
+New-AzVM -ResourceGroupName $rg -Zone $zn -Location $loc -VM $vmConfig
+```
+
+
+#### <a name="vm2"></a>VM2
+
+* с именем **myVM2**;
+* в группе ресурсов **myResourceGroupLB**;
+* с подключением к сетевому интерфейсу **myNicVM2**;
+* с подключением к подсистеме балансировки нагрузки **myLoadBalancer**;
+* в **зоне 2**;
+* в расположении **eastus**.
+
+```azurepowershell-interactive
+## Variables used for command. ##
+$rg = 'myResourceGroupLB'
+$vm = 'myVM2'
+$siz = 'Standard_DS1_v2'
+$pub = 'MicrosoftWindowsServer'
+$off = 'WindowsServer'
+$sku = '2019-Datacenter'
+$ver = 'latest'
+$zn = '2'
+$loc = 'eastus'
+
+## Create a virtual machine configuration. $cred and $nicVM2 are variables with configuration from the previous steps. ##
+
+$vmConfig = 
+New-AzVMConfig -VMName $vm -VMSize $siz | Set-AzVMOperatingSystem -Windows -ComputerName $vm -Credential $cred | Set-AzVMSourceImage -PublisherName $pub -Offer WindowsServer -Skus $sku -Version $ver | Add-AzVMNetworkInterface -Id $nicVM2.Id
+
+## Create the virtual machine ##
+New-AzVM -ResourceGroupName $rg -Zone $zn -Location $loc -VM $vmConfig
+```
+
+#### <a name="vm3"></a>VM3
+
+* с именем **myVM3**;
+* в группе ресурсов **myResourceGroupLB**;
+* с подключением к сетевому интерфейсу **myNicVM3**;
+* с подключением к подсистеме балансировки нагрузки **myLoadBalancer**;
+* в **зоне 3**;
+* в расположении **eastus**.
+
+```azurepowershell-interactive
+## Variables used for command. ##
+$rg = 'myResourceGroupLB'
+$vm = 'myVM3'
+$siz = 'Standard_DS1_v2'
+$pub = 'MicrosoftWindowsServer'
+$off = 'WindowsServer'
+$sku = '2019-Datacenter'
+$ver = 'latest'
+$zn = '3'
+$loc = 'eastus'
+
+## Create a virtual machine configuration. $cred and $nicVM3 are variables with configuration from the previous steps. ##
+
+$vmConfig = 
+New-AzVMConfig -VMName $vm -VMSize $siz | Set-AzVMOperatingSystem -Windows -ComputerName $vm -Credential $cred | Set-AzVMSourceImage -PublisherName $pub -Offer WindowsServer -Skus $sku -Version $ver | Add-AzVMNetworkInterface -Id $nicVM3.Id
+
+## Create the virtual machine ##
+New-AzVM -ResourceGroupName $rg -Zone $zn -Location $loc -VM $vmConfig
+```
+
+Создание и настройка трех виртуальных машин занимает несколько минут.
+
+## <a name="create-outbound-rule-configuration"></a>Создание конфигурации правила для исходящего трафика
+Правила для исходящего трафика подсистемы балансировки нагрузки настраивают исходящее преобразование исходных сетевых адресов (SNAT) для виртуальных машин во внутреннем пуле. 
+
+Дополнительные сведения об исходящих подключениях см. в статье [Исходящие подключения в Azure](load-balancer-outbound-connections.md).
+
+### <a name="create-outbound-public-ip-address"></a>Создание исходящего общедоступного IP-адреса
+
+Используйте [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress):
+
+* чтобы создать стандартный избыточный между зонами общедоступный IP-адрес с именем **myPublicIPOutbound**;
+* в **myResourceGroupLB**.
+
+```azurepowershell-interactive
+## Variables for the command ##
+$rg = 'MyResourceGroupLB'
+$loc = 'eastus'
+$pubIP = 'myPublicIPOutbound'
+$sku = 'Standard'
+$all = 'static'
+
+$publicIp = 
+New-AzPublicIpAddress -ResourceGroupName $rg -Name $pubIP -Location $loc -AllocationMethod $all -SKU $sku
+```
+
+Чтобы создать зональный общедоступный IP-адрес в зоне доступности 1, используйте следующую команду:
+
+```azurepowershell-interactive
+## Variables for the command ##
+$rg = 'MyResourceGroupLB'
+$loc = 'eastus'
+$pubIP = 'myPublicIPOutbound'
+$sku = 'Standard'
+$all = 'static'
+
+$publicIp = 
+New-AzPublicIpAddress -ResourceGroupName $rg -Name $pubIP -Location $loc -AllocationMethod $all -SKU $sku -zone 1
+```
+### <a name="create-outbound-frontend-ip-configuration"></a>Создание интерфейсной IP-конфигурации для исходящего трафика
+
+Создайте новую интерфейсную IP-конфигурацию с помощью командлета [Add-AzLoadBalancerFrontendIpConfig](/powershell/module/az.network/add-azloadbalancerfrontendipconfig):
+
+* с именем **myFrontEndOutbound**;
+* связанную с общедоступным IP-адресом **myPublicIPOutbound**.
+
+```azurepowershell-interactive
+## Variables for the command ##
+$fen = 'myFrontEndOutbound'
+
+## Get the load balancer configuration  and apply the frontend config##
+Get-AzLoadBalancer -Name $lbn -ResourceGroupName $rg | Add-AzLoadBalancerFrontendIPConfig -Name $fen -PublicIpAddress $publicIP | Set-AzLoadBalancer
+```
+
+### <a name="create-outbound-pool"></a>Создание исходящего пула
+
+Создайте новый исходящий пул с помощью командлета [Add-AzLoadBalancerBackendAddressPoolConfig](/powershell/module/az.network/add-azloadbalancerbackendaddresspoolconfig). 
+
+Примените пул и внешний IP-адрес к подсистеме балансировки нагрузки с помощью командлета [Set-AzLoadBalancer](/powershell/module/az.network/set-azloadbalancer):
+
+* с именем **myBackEndPoolOutbound**.
+
+```azurepowershell-interactive
+## Variables for the command ##
+$ben = 'myBackEndPoolOutbound'
+$lbn = 'myLoadBalancer'
+$rg = 'myResourceGroupLB'
+
+## Get the load balancer configuration and create the outbound backend address pool##
+Get-AzLoadBalancer -Name $lbn -ResourceGroupName $rg | Add-AzLoadBalancerBackendAddressPoolConfig -Name $ben | Set-AzLoadBalancer
+```
+### <a name="create-outbound-rule-and-apply-to-load-balancer"></a>Создание правила для исходящего трафика и применение его к подсистеме балансировки нагрузки
+
+Создайте правило для исходящего трафика для исходящего внутреннего пула с помощью командлета [Add-AzLoadBalancerOutboundRuleConfig](/powershell/module/az.network/new-azloadbalanceroutboundruleconfig). 
+
+Примените правило к подсистеме балансировки нагрузки с помощью командлета [Set-AzLoadBalancer](/powershell/module/az.network/set-azloadbalancer):
+
+* с именем **myOutboundRule**;
+* со связью с подсистемой балансировки нагрузки **myLoadBalancer**;
+* со связью с внешним интерфейсом **myFrontEndOutbound**;
+* с протоколом **All**;
+* с временем ожидания перед переходом в режим простоя **15**;
+* с исходящими портами **10000**;
+* со связью с серверным пулом **myBackEndPoolOutbound**;
+* в группе ресурсов **myResourceGroupLB**.
+
+```azurepowershell-interactive
+## Variables for the commands ##
+$rg = 'myResourceGroupLB'
+$lbn = 'myLoadBalancer'
+$brn = 'myOutboundRule'
+$pro = 'All'
+$idl = '15'
+$por = '10000'
+
+## Get the load balancer configuration ##
+$lb = 
+Get-AzLoadBalancer -Name $lbn -ResourceGroupName $rg 
+
+## Apply the outbound rule configuration to the load balancer. ##
+$lb | Add-AzLoadBalancerOutBoundRuleConfig -Name $brn -FrontendIPConfiguration $lb.FrontendIpConfigurations[1] -BackendAddressPool $lb.BackendAddressPools[1] -Protocol $pro -IdleTimeoutInMinutes $idl -AllocatedOutboundPort $por | Set-AzLoadBalancer
+```
+
+### <a name="add-virtual-machines-to-outbound-pool"></a>Добавление виртуальных машин в исходящий пул
+
+Добавьте сетевые интерфейсы виртуальных машин в исходящий пул подсистемы балансировки нагрузки с помощью командлета [Add-AzNetworkInterfaceIpConfig](/powershell/module/az.network/add-aznetworkinterfaceipconfig):
+
+
+#### <a name="vm1"></a>VM1
+* в серверном пуле адресов **myBackEndPoolOutbound**;
+* в группе ресурсов **myResourceGroupLB**;
+* со связью с сетевым интерфейсом **myNicVM1** и **ipconfig1**;
+* со связью с подсистемой балансировки нагрузки **myLoadBalancer**.
+
+```azurepowershell-interactive
+## Variables for the commands ##
+$rg = 'myResourceGroupLB'
+$lbn = 'myLoadBalancer'
+$bep = 'myBackEndPoolOutbound'
+$nic1 = 'myNicVM1'
+$ipc = 'ipconfig1'
+
+## Get the load balancer configuration ##
+$lb = 
+Get-AzLoadBalancer -Name $lbn -ResourceGroupName $rg
+
+## Get the network interface configuration ##
+$nic = 
+Get-AzNetworkInterface -Name $nic1 -ResourceGroupName $rg
+
+## Apply the backend to the network interface ##
+$nic | Set-AzNetworkInterfaceIpConfig -Name $ipc -LoadBalancerBackendAddressPoolId $lb.BackendAddressPools[1].id | Set-AzNetworkInterface
+```
+
+#### <a name="vm2"></a>VM2
+* в серверном пуле адресов **myBackEndPoolOutbound**;
+* в группе ресурсов **myResourceGroupLB**;
+* со связью с сетевым интерфейсом **myNicVM2** и **ipconfig1**;
+* со связью с подсистемой балансировки нагрузки **myLoadBalancer**.
+
+```azurepowershell-interactive
+## Variables for the commands ##
+$rg = 'myResourceGroupLB'
+$lbn = 'myLoadBalancer'
+$bep = 'myBackEndPoolOutbound'
+$nic2 = 'myNicVM2'
+$ipc = 'ipconfig1'
+
+## Get the load balancer configuration ##
+$lb = 
+Get-AzLoadBalancer -Name $lbn -ResourceGroupName $rg
+
+## Get the network interface configuration ##
+$nic = 
+Get-AzNetworkInterface -Name $nic2 -ResourceGroupName $rg
+
+## Apply the backend to the network interface ##
+$nic | Set-AzNetworkInterfaceIpConfig -Name $ipc -LoadBalancerBackendAddressPoolId $lb.BackendAddressPools[1].id | Set-AzNetworkInterface
+```
+
+#### <a name="vm3"></a>VM3
+* в серверном пуле адресов **myBackEndPoolOutbound**;
+* в группе ресурсов **myResourceGroupLB**;
+* со связью с сетевым интерфейсом **myNicVM3** и **ipconfig1**;
+* со связью с подсистемой балансировки нагрузки **myLoadBalancer**.
+
+```azurepowershell-interactive
+## Variables for the commands ##
+$rg = 'myResourceGroupLB'
+$lbn = 'myLoadBalancer'
+$bep = 'myBackEndPoolOutbound'
+$nic3 = 'myNicVM3'
+$ipc = 'ipconfig1'
+
+## Get the load balancer configuration ##
+$lb = 
+Get-AzLoadBalancer -Name $lbn -ResourceGroupName $rg
+
+## Get the network interface configuration ##
+$nic = 
+Get-AzNetworkInterface -Name $nic3 -ResourceGroupName $rg
+
+## Apply the backend to the network interface ##
+$nic | Set-AzNetworkInterfaceIpConfig -Name $ipc -LoadBalancerBackendAddressPoolId $lb.BackendAddressPools[1].id | Set-AzNetworkInterface
+
+```
+
+# <a name="option-2-create-a-load-balancer-basic-sku"></a>[Вариант 2. Создание подсистемы балансировки нагрузки ценовой категории "Базовый"](#tab/option-1-create-load-balancer-basic)
+
+>[!NOTE]
+>Для производственных рабочих нагрузок рекомендуется использовать подсистему балансировки нагрузки ценовой категории "Стандартный". Дополнительные сведения о доступных ценовых категориях см. в статье **[Номера SKU для Azure Load Balancer](skus.md)** .
+
+## <a name="create-a-public-ip-address"></a>Создание общедоступного IP-адреса
+
+Для доступа к веб-приложению через Интернет подсистеме балансировки нагрузки требуется общедоступный IP-адрес. 
+
+Используйте [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress):
+
+* чтобы создать стандартный избыточный между зонами общедоступный IP-адрес с именем **myPublicIP**;
+* в **myResourceGroupLB**.
+
+```azurepowershell-interactive
+## Variables for the command ##
+$rg = 'MyResourceGroupLB'
+$loc = 'eastus'
+$pubIP = 'myPublicIP'
+$sku = 'Basic'
+$all = 'static'
+
+$publicIp = 
+New-AzPublicIpAddress -ResourceGroupName $rg -Name $pubIP -Location $loc -AllocationMethod $all -SKU $sku
+```
+
+## <a name="create-basic-load-balancer"></a>Создание подсистемы балансировки нагрузки уровня "Базовый"
+
+В этом разделе описано, как создать и настроить следующие компоненты подсистемы балансировки нагрузки:
+
+  * интерфейсный пул IP-адресов, который получает входящий трафик в подсистеме балансировки нагрузки;
+  * внутренний пул IP-адресов, на который интерфейсный пул отправляет трафик с балансировкой нагрузки;
+  * проверка работоспособности, определяющая работоспособность внутренних экземпляров виртуальной машины;
+  * правило подсистемы балансировки нагрузки, определяющее порядок распределения трафика между виртуальными машинами.
+
+### <a name="create-frontend-ip"></a>Создание интерфейсного IP-адреса
+
+Создайте интерфейсный IP-адрес с помощью командлета [New-AzLoadBalancerFrontendIpConfig](/powershell/module/az.network/new-azloadbalancerfrontendipconfig):
+
+* с именем **myFrontEnd**;
+* подключенный к общедоступному IP-адресу **myPublicIP**.
+
+```azurepowershell-interactive
+## Variables for the commands ##
+$fe = 'myFrontEnd'
+$rg = 'MyResourceGroupLB'
+$loc = 'eastus'
+$pubIP = 'myPublicIP'
+
+$publicIp = 
+Get-AzPublicIpAddress -Name $pubIP -ResourceGroupName $rg
+
+$feip = 
+New-AzLoadBalancerFrontendIpConfig -Name $fe -PublicIpAddress $publicIp
+```
+
+### <a name="configure-back-end-address-pool"></a>Настройка серверного пула адресов
+
+Создайте серверный пул адресов с помощью командлета [New-AzLoadBalancerBackendAddressPoolConfig](/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig): 
+
+* с именем **myBackEndPool**.
+* Виртуальные машины присоединяются в этот серверный пул на следующих этапах.
+
+```azurepowershell-interactive
+## Variable for the command ##
+$be = 'myBackEndPool'
+
+$bepool = 
+New-AzLoadBalancerBackendAddressPoolConfig -Name $be
+```
+
+### <a name="create-the-health-probe"></a>Создание зонда работоспособности
+
+При пробе работоспособности выполняется проверка всех экземпляров виртуальной машины, чтобы убедиться, что они могут отправлять сетевой трафик. 
+
+Виртуальная машина с неудачной пробой удаляется из подсистемы балансировки нагрузки и снова добавляется в нее после устранения сбоя.
+
+Создайте пробу работоспособности с помощью командлета [Add-AzLoadBalancerProbeConfig](/powershell/module/az.network/add-azloadbalancerprobeconfig), которая:
+
+* отслеживает работоспособность виртуальных машин;
+* имеет имя **myHealthProbe**;
+* использует протокол **TCP**;
+* отслеживает **порт 80**.
+
+```azurepowershell-interactive
+## Variables for the command ##
+$hp = 'myHealthProbe'
+$pro = 'http'
+$port = '80'
+$int = '360'
+$cnt = '5'
+
+$probe = 
+New-AzLoadBalancerProbeConfig -Name $hp -Protocol $pro -Port $port -RequestPath / -IntervalInSeconds $int -ProbeCount $cnt
+```
+
+### <a name="create-the-load-balancer-rule"></a>Создание правила подсистемы балансировки нагрузки
+
+Правило подсистемы балансировки нагрузки определяет:
+
+* конфигурацию интерфейсных IP-адресов для входящего трафика;
+* серверный пул IP-адресов для приема трафика;
+* требуемые порты источника и назначения. 
+
+Создайте правило подсистемы балансировки нагрузки с помощью командлета [Add-AzLoadBalancerRuleConfig](/powershell/module/az.network/add-azloadbalancerruleconfig), которое: 
+
+* имеет имя **myHTTPRule**;
+* ожидает передачи данных от **порта 80**, используемого интерфейсным пулом **myFrontEnd**;
+* перенаправляет трафик, для которого настроена балансировка нагрузки, ко внутреннему пулу адресов **myBackEndPool**, который использует **порт 80**; 
+* использует пробу работоспособности **MyHealthProbe**;
+* использует протокол **TCP**;
+* Вы можете включить преобразование сетевого адреса (SNAT) источника исходящего трафика с помощью внешнего IP-адреса.
+
+
+```azurepowershell-interactive
+## Variables for the command ##
+$lbr = 'myHTTPRule'
+$pro = 'tcp'
+$port = '80'
+
+## $feip and $bePool are the variables from previous steps. ##
+
+$rule = 
+New-AzLoadBalancerRuleConfig -Name $lbr -Protocol $pro -Probe $probe -FrontendPort $port -BackendPort $port -FrontendIpConfiguration $feip -BackendAddressPool $bePool
+```
+
+### <a name="create-load-balancer-resource"></a>Создание ресурса подсистемы балансировки нагрузки
+
+Теперь создайте общедоступную подсистему балансировки нагрузки с помощью командлета [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer):
+
+* с именем **myLoadBalancer**;
+* в **eastus**;
+* в группе ресурсов **myResourceGroupLB**.
+
+```azurepowershell-interactive
+## Variables for the command ##
+$lbn = 'myLoadBalancer'
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$sku = 'Basic'
+
+## $feip, $bepool, $probe, $rule are variables with configuration information from previous steps. ##
+
+$lb = 
+New-AzLoadBalancer -ResourceGroupName $rg -Name $lbn -SKU $sku -Location $loc -FrontendIpConfiguration $feip -BackendAddressPool $bepool -Probe $probe -LoadBalancingRule $rule
+```
+
+## <a name="configure-virtual-network"></a>Настройка виртуальной сети
+
+Прежде чем развертывать виртуальные машины и тестировать подсистему балансировки нагрузки, создайте вспомогательные ресурсы виртуальной сети.
+
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
+
+Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork):
+
+* с именем **myVNet**;
+* в группе ресурсов **myResourceGroupLB**;
+* с именем подсети **myBackendSubnet**;
+* в виртуальной сети **10.0.0.0/16**;
+* в подсети **10.0.0.0/24**.
+
+```azurepowershell-interactive
+## Variables for the command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$sub = 'myBackendSubnet'
+$spfx = '10.0.0.0/24'
+$vnm = 'myVNet'
+$vpfx = '10.0.0.0/16'
+
+## Create subnet config ##
+$subnetConfig = 
+New-AzVirtualNetworkSubnetConfig -Name $sub -AddressPrefix $spfx
+
+## Create the virtual network ##
+$vnet = 
+New-AzVirtualNetwork -ResourceGroupName $rg -Location $loc -Name $vnm -AddressPrefix $vpfx -Subnet $subnetConfig
+```
+### <a name="create-public-ip-addresses-for-the-vms"></a>Создание общедоступных IP-адресов для виртуальных машин
+
+Для доступа к виртуальным машинам с помощью подключения к удаленному рабочему столу требуется, чтобы у каждой из них был общедоступный IP-адрес. 
+
+С помощью командлета [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress) создайте стандартные общедоступные IP-адреса для:
+
+#### <a name="vm1"></a>VM1
+
+* с именем **myVMPubIP1**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**;
+* с номером SKU **Стандартный**;
+* со **статическим** выделением IP-адреса.
+
+```azurepowershell-interactive
+## Variables for the command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$ip1 = 'myVMPubIP1'
+$sku = 'Basic'
+$all = 'static'
+
+$RdpPubIP1 = 
+New-AzPublicIpAddress -Name $ip1 -ResourceGroupName $rg -Location $loc -SKU $sku -AllocationMethod $all
+```
+
+#### <a name="vm2"></a>VM2
+
+* с именем **myVMPubIP2**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**;
+* с номером SKU **Стандартный**;
+* со **статическим** выделением IP-адреса. 
+
+```azurepowershell-interactive
+## Variables for the command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$ip2 = 'myVMPubIP2'
+$sku = 'Basic'
+$all = 'static'
+
+$RdpPubIP2 = 
+New-AzPublicIpAddress -Name $ip2 -ResourceGroupName $rg -Location $loc -SKU $sku -AllocationMethod $all
+```
+
+#### <a name="vm3"></a>VM3
+
+* с именем **myVMPubIP3**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**;
+* с номером SKU **Стандартный**;
+* со **статическим** выделением IP-адреса. 
+
+```azurepowershell-interactive
+## Variables for the command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$ip3 = 'myVMPubIP3'
+$sku = 'Basic'
+$all = 'static'
+
+$RdpPubIP2 = 
+New-AzPublicIpAddress -Name $ip3 -ResourceGroupName $rg -Location $loc -SKU $sku -AllocationMethod $all
+```
+
+### <a name="create-network-security-group"></a>Создание группы безопасности сети
+Создайте группу безопасности сети для определения входящих подключений к виртуальной сети.
+
+#### <a name="create-a-network-security-group-rule-for-port-3389"></a>Создание правила группы безопасности сети для порта 3389
+
+Создайте группу безопасности сети с помощью командлета [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig):
+
+* с именем **myNSGRuleRDP**;
+* с описанием **Allow RDP**;
+* с доступом **Allow**;
+* использует протокол **TCP**;
+* с направлением **Inbound**;
+* с приоритетом **1000**;
+* с источником **Internet**;
+* с диапазоном исходных портов **(*)** ;
+* с префиксом адреса назначения **(*)** ;
+* с портом назначения **3389**.
+
+```azurepowershell-interactive
+## Variables for command ##
+$rnm = 'myNSGRuleRDP'
+$des = 'Allow RDP'
+$acc = 'Allow'
+$pro = 'Tcp'
+$dir = 'Inbound'
+$pri = '1000'
+$spfx = 'Internet'
+$spr = '*'
+$dpfx = '*'
+$dpr = '3389'
+
+$rule1 = 
+New-AzNetworkSecurityRuleConfig -Name $rnm -Description $des -Access $acc -Protocol $pro -Direction $dir -Priority $pri -SourceAddressPrefix $spfx -SourcePortRange $spr -DestinationAddressPrefix $dpfx -DestinationPortRange $dpr
+```
+
+#### <a name="create-a-network-security-group-rule-for-port-80"></a>Создание правила группы безопасности сети для порта 80
+Создайте правило группы безопасности сети с помощью командлета [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig):
+
+* с именем **myNSGRuleHTTP**;
+* с описанием **Allow HTTP**;
+* с доступом **Allow**;
+* использует протокол **TCP**;
+* с направлением **Inbound**;
+* с приоритетом **2000**;
+* с источником **Internet**;
+* с диапазоном исходных портов **(*)** ;
+* с префиксом адреса назначения **(*)** ;
+* с конечным портом **80**.
+
+```azurepowershell-interactive
+## Variables for command ##
+$rnm = 'myNSGRuleHTTP'
+$des = 'Allow HTTP'
+$acc = 'Allow'
+$pro = 'Tcp'
+$dir = 'Inbound'
+$pri = '2000'
+$spfx = 'Internet'
+$spr = '*'
+$dpfx = '*'
+$dpr = '80'
+
+$rule2 = 
+New-AzNetworkSecurityRuleConfig -Name $rnm -Description $des -Access $acc -Protocol $pro -Direction $dir -Priority $pri -SourceAddressPrefix $spfx -SourcePortRange $spr -DestinationAddressPrefix $dpfx -DestinationPortRange $dpr
+```
+
+#### <a name="create-a-network-security-group"></a>Создание группы безопасности сети
+
+Создайте группу безопасности сети с помощью командлета [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup):
+
+* с именем **myNSG**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**;
+* с созданными на предыдущих шагах правилами безопасности, сохраненными в переменной.
+
+```azurepowershell
+## Variables for command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$nmn = 'myNSG'
+
+## $rule1 and $rule2 are variables with configuration information from the previous steps. ##
+$nsg = 
+New-AzNetworkSecurityGroup -ResourceGroupName $rg -Location $loc -Name $nmn -SecurityRules $rule1,$rule2
+```
+
+### <a name="create-network-interfaces"></a>Создание сетевых интерфейсов
+
+Создайте три сетевых интерфейса с помощью командлета [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface):
+
+#### <a name="vm-1"></a>Виртуальная машина 1
+
+* с именем **myNicVM1**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**;
+* в виртуальной сети **myVNet**;
+* в подсети **myBackendSubnet**;
+* в группе безопасности сети **myNSG**;
+* с подключением к подсистеме балансировки нагрузки **myLoadBalancer** в **myBackEndPool**.
+
+```azurepowershell-interactive
+## Variables for command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$nic1 = 'myNicVM1'
+$vnt = 'myVNet'
+$ip1 = 'myVMPubIP1'
+$lb = 'myLoadBalancer'
+$ngn = 'myNSG'
+
+## Command to get virtual network configuration. ##
+$vnet = 
+Get-AzVirtualNetwork -Name $vnt -ResourceGroupName $rg
+
+## Command to get public ip address for VM1 ##
+$pub1 = 
+Get-AzPublicIPAddress -Name $ip1 -ResourceGroupName $rg
+
+## Command to get load balancer configuration
+$bepool = 
+Get-AzLoadBalancer -Name $lb -ResourceGroupName $rg | Get-AzLoadBalancerBackendAddressPoolConfig
+
+## Command to get network security group configuration ##
+$nsg = 
+Get-AzNetworkSecurityGroup -Name $ngn -ResourceGroupName $rg
+
+## Command to create network interface for VM1 ##
+$nicVM1 = 
+New-AzNetworkInterface -ResourceGroupName $rg -Location $loc -Name $nic1 -PublicIpAddress $pub1 -LoadBalancerBackendAddressPool $bepool -NetworkSecurityGroup $nsg -Subnet $vnet.Subnets[0]
+```
+
+#### <a name="vm-2"></a>Виртуальная машина 2
+
+* с именем **myNicVM2**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**;
+* в виртуальной сети **myVNet**;
+* в подсети **myBackendSubnet**;
+* в группе безопасности сети **myNSG**;
+* с подключением к подсистеме балансировки нагрузки **myLoadBalancer** в **myBackEndPool**.
+
+```azurepowershell-interactive
+## Variables for command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$nic2 = 'myNicVM2'
+$vnt = 'myVNet'
+$ip2 = 'myVMPubIP2'
+$lb = 'myLoadBalancer'
+$ngn = 'myNSG'
+
+## Command to get virtual network configuration. ##
+$vnet = 
+Get-AzVirtualNetwork -Name $vnt -ResourceGroupName $rg
+
+## Command to get public ip address for VM2 ##
+$pub2 = 
+Get-AzPublicIPAddress -Name $ip2 -ResourceGroupName $rg
+
+## Command to get load balancer configuration
+$bepool = 
+Get-AzLoadBalancer -Name $lb -ResourceGroupName $rg | Get-AzLoadBalancerBackendAddressPoolConfig
+
+## Command to get network security group configuration ##
+$nsg = 
+Get-AzNetworkSecurityGroup -Name $ngn -ResourceGroupName $rg
+
+## Command to create network interface for VM2 ##
+$nicVM2 = 
+New-AzNetworkInterface -ResourceGroupName $rg -Location $loc -Name $nic2 -PublicIpAddress $pub2 -LoadBalancerBackendAddressPool $bepool -NetworkSecurityGroup $nsg -Subnet $vnet.Subnets[0]
+```
+
+#### <a name="vm-3"></a>Виртуальная машина 3
+
+* с именем **myNicVM3**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**;
+* в виртуальной сети **myVNet**;
+* в подсети **myBackendSubnet**;
+* в группе безопасности сети **myNSG**;
+* с подключением к подсистеме балансировки нагрузки **myLoadBalancer** в **myBackEndPool**.
+
+```azurepowershell-interactive
+## Variables for command ##
+$rg = 'myResourceGroupLB'
+$loc = 'eastus'
+$nic3 = 'myNicVM3'
+$vnt = 'myVNet'
+$ip3 = 'myVMPubIP3'
+$lb = 'myLoadBalancer'
+$ngn = 'myNSG'
+
+## Command to get virtual network configuration. ##
+$vnet = 
+Get-AzVirtualNetwork -Name $vnt -ResourceGroupName $rg
+
+## Command to get public ip address for VM3 ##
+$pub3 = 
+Get-AzPublicIPAddress -Name $ip3 -ResourceGroupName $rg
+
+## Command to get load balancer configuration
+$bepool = 
+Get-AzLoadBalancer -Name $lb -ResourceGroupName $rg | Get-AzLoadBalancerBackendAddressPoolConfig
+
+## Command to get network security group configuration ##
+$nsg = 
+Get-AzNetworkSecurityGroup -Name $ngn -ResourceGroupName $rg
+
+## Command to create network interface for VM3 ##
+$nicVM3 = 
+New-AzNetworkInterface -ResourceGroupName $rg -Location $loc -Name $nic3 -PublicIpAddress $pub3 -LoadBalancerBackendAddressPool $bepool -NetworkSecurityGroup $nsg -Subnet $vnet.Subnets[0]
+```
+
+### <a name="create-availability-set-for-virtual-machines"></a>Создание группы доступности для виртуальных машин
+
+Создайте группу доступности для виртуальных машин с помощью командлета [New-AzAvailabilitySet](/powershell/module/az.compute/new-azvm):
+
+* с именем **myAvSet**;
+* в группе ресурсов **myResourceGroupLB**;
+* в расположении **eastus**.
+
+```azurepowershell-interactive
+## Variables used for the command. ##
+$rg = 'myResourceGroupLB'
+$avs = 'myAvSet'
+$loc = 'eastus'
+
+New-AzAvailabilitySet -ResourceGroupName $rg -Name $avs -Location $loc
 ```
 
 ### <a name="create-virtual-machines"></a>Создание виртуальных машин
@@ -279,108 +1301,191 @@ $nicVM3 = New-AzNetworkInterface -ResourceGroupName $rgName -Location $location 
 $cred = Get-Credential
 ```
 
-Теперь вы можете создать виртуальные машины с помощью командлета [New-AzVM](/powershell/module/az.compute/new-azvm). В приведенном ниже примере создаются две виртуальные машины и обязательные компоненты виртуальной сети, если их еще нет: В этом примере сетевые адаптеры (*MyNic1*, *MyNic2* и *MyNic3*), созданные на предыдущем шаге, назначаются виртуальным машинам *myVM1*, *myVM2* и *VM3*. Кроме того, так как сетевые адаптеры связаны с внутренним пулом подсистемы балансировки нагрузки, виртуальные машины автоматически добавляются во внутренний пул.
+Создайте виртуальные машины с помощью следующих командлетов:
 
-```azurepowershell
+* [New-AzVM](/powershell/module/az.compute/new-azvm)
+* [New-AzVMConfig](/powershell/module/az.compute/new-azvmconfig)
+* [Set-AzVMOperatingSystem](/powershell/module/az.compute/set-azvmoperatingsystem)
+* [Set-AzVMSourceImage](/powershell/module/az.compute/set-azvmsourceimage)
+* [Add-AzVMNetworkInterface](/powershell/module/az.compute/add-azvmnetworkinterface)
 
-# ############## VM1 ###############
 
-# Create a virtual machine configuration
-$vmConfig = New-AzVMConfig -VMName 'myVM1' -VMSize Standard_DS1_v2 `
- | Set-AzVMOperatingSystem -Windows -ComputerName 'myVM1' -Credential $cred `
- | Set-AzVMSourceImage -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2019-Datacenter -Version latest `
- | Add-AzVMNetworkInterface -Id $nicVM1.Id
+#### <a name="vm1"></a>VM1
 
-# Create a virtual machine
-$vm1 = New-AzVM -ResourceGroupName $rgName -Zone 1 -Location $location -VM $vmConfig
+* с именем **myVM1**;
+* в группе ресурсов **myResourceGroupLB**;
+* с подключением к сетевому интерфейсу **myNicVM1**;
+* с подключением к подсистеме балансировки нагрузки **myLoadBalancer**;
+* в расположении **eastus**;
+* в группе доступности **myAvSet**.
 
-# ############## VM2 ###############
+```azurepowershell-interactive
+## Variables used for command. ##
+$rg = 'myResourceGroupLB'
+$vm = 'myVM1'
+$siz = 'Standard_DS1_v2'
+$pub = 'MicrosoftWindowsServer'
+$off = 'WindowsServer'
+$sku = '2019-Datacenter'
+$ver = 'latest'
+$loc = 'eastus'
+$avs = 'myAvSet'
 
-# Create a virtual machine configuration
-$vmConfig = New-AzVMConfig -VMName 'myVM2' -VMSize Standard_DS1_v2 `
- | Set-AzVMOperatingSystem -Windows -ComputerName 'myVM2' -Credential $cred `
- | Set-AzVMSourceImage -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2019-Datacenter -Version latest `
- | Add-AzVMNetworkInterface -Id $nicVM2.Id
+## Create a virtual machine configuration. $cred and $nicVM1 are variables with configuration from the previous steps. ##
 
-# Create a virtual machine
-$vm2 = New-AzVM -ResourceGroupName $rgName -Zone 2 -Location $location -VM $vmConfig
+$vmConfig = 
+New-AzVMConfig -VMName $vm -VMSize $siz | Set-AzVMOperatingSystem -Windows -ComputerName $vm -Credential $cred | Set-AzVMSourceImage -PublisherName $pub -Offer WindowsServer -Skus $sku -Version $ver | Add-AzVMNetworkInterface -Id $nicVM1.Id
 
-# ############## VM3 ###############
+## Create the virtual machine ##
+New-AzVM -ResourceGroupName $rg -Location $loc -VM $vmConfig -AvailabilitySetName $avs
+```
 
-# Create a virtual machine configuration
-$vmConfig = New-AzVMConfig -VMName 'myVM3' -VMSize Standard_DS1_v2 `
- | Set-AzVMOperatingSystem -Windows -ComputerName 'myVM3' -Credential $cred `
- | Set-AzVMSourceImage -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2019-Datacenter -Version latest `
-| Add-AzVMNetworkInterface -Id $nicVM3.Id
 
-# Create a virtual machine
-$vm3 = New-AzVM -ResourceGroupName $rgName -Zone 3 -Location $location -VM $vmConfig
+#### <a name="vm2"></a>VM2
+
+* с именем **myVM2**;
+* в группе ресурсов **myResourceGroupLB**;
+* с подключением к сетевому интерфейсу **myNicVM2**;
+* с подключением к подсистеме балансировки нагрузки **myLoadBalancer**;
+* в расположении **eastus**;
+* в группе доступности **myAvSet**.
+
+```azurepowershell-interactive
+## Variables used for command. ##
+$rg = 'myResourceGroupLB'
+$vm = 'myVM2'
+$siz = 'Standard_DS1_v2'
+$pub = 'MicrosoftWindowsServer'
+$off = 'WindowsServer'
+$sku = '2019-Datacenter'
+$ver = 'latest'
+$loc = 'eastus'
+$avs = 'myAvSet'
+
+## Create a virtual machine configuration. $cred and $nicVM2 are variables with configuration from the previous steps. ##
+
+$vmConfig = 
+New-AzVMConfig -VMName $vm -VMSize $siz | Set-AzVMOperatingSystem -Windows -ComputerName $vm -Credential $cred | Set-AzVMSourceImage -PublisherName $pub -Offer WindowsServer -Skus $sku -Version $ver | Add-AzVMNetworkInterface -Id $nicVM2.Id
+
+## Create the virtual machine ##
+New-AzVM -ResourceGroupName $rg -Location $loc -VM $vmConfig -AvailabilitySetName $avs
+```
+
+#### <a name="vm3"></a>VM3
+
+* с именем **myVM3**;
+* в группе ресурсов **myResourceGroupLB**;
+* с подключением к сетевому интерфейсу **myNicVM3**;
+* с подключением к подсистеме балансировки нагрузки **myLoadBalancer**;
+* в расположении **eastus**;
+* в группе доступности **myAvSet**.
+
+```azurepowershell-interactive
+## Variables used for command. ##
+$rg = 'myResourceGroupLB'
+$vm = 'myVM3'
+$siz = 'Standard_DS1_v2'
+$pub = 'MicrosoftWindowsServer'
+$off = 'WindowsServer'
+$sku = '2019-Datacenter'
+$ver = 'latest'
+$loc = 'eastus'
+$avs = 'myAvSet'
+
+## Create a virtual machine configuration. $cred and $nicVM3 are variables with configuration from the previous steps. ##
+
+$vmConfig = 
+New-AzVMConfig -VMName $vm -VMSize $siz | Set-AzVMOperatingSystem -Windows -ComputerName $vm -Credential $cred | Set-AzVMSourceImage -PublisherName $pub -Offer WindowsServer -Skus $sku -Version $ver | Add-AzVMNetworkInterface -Id $nicVM3.Id
+
+## Create the virtual machine ##
+New-AzVM -ResourceGroupName $rg -Location $loc -VM $vmConfig -AvailabilitySetName $avs
 ```
 
 Создание и настройка трех виртуальных машин занимает несколько минут.
+
+---
 
 ### <a name="install-iis-with-a-custom-web-page"></a>Установка IIS с пользовательской веб-страницей
 
 Установите IIS с пользовательской веб-страницей на обеих виртуальных машинах серверной части. Для этого сделайте следующее:
 
-1. Получите общедоступные IP-адреса трех виртуальных машин с помощью `Get-AzPublicIPAddress`.
+1. Получите общедоступные IP-адреса трех виртуальных машин с помощью командлета [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress).
 
-   ```azurepowershell
-     $vm1_rdp_ip = (Get-AzPublicIPAddress -ResourceGroupName $rgName -Name "RdpPublicIP_1").IpAddress
-     $vm2_rdp_ip = (Get-AzPublicIPAddress -ResourceGroupName $rgName -Name "RdpPublicIP_2").IpAddress
-     $vm3_rdp_ip = (Get-AzPublicIPAddress -ResourceGroupName $rgName -Name "RdpPublicIP_3").IpAddress
-    ```
-2. Создайте подключения к удаленному рабочему столу *myVM1*, *myVM2* и *myVM3* с помощью общедоступных IP-адресов этих виртуальных машин следующим образом. 
+   ```azurepowershell-interactive
+   ## Variables for commands. ##
+   $rg = 'myResourceGroupLB'
+   $ip1 = 'myVMPubIP1'
+   $ip2 = 'myVMPubIP2'
+   $ip3 = 'myVMPubIP3'
 
-   ```azurepowershell    
-     mstsc /v:$vm1_rdp_ip
-     mstsc /v:$vm2_rdp_ip
-     mstsc /v:$vm3_rdp_ip
+   ## VM1 ##
+   (Get-AzPublicIPAddress -ResourceGroupName $rg -Name $ip1).IpAddress
+
+   ## VM2 ##
+   (Get-AzPublicIPAddress -ResourceGroupName $rg -Name $ip2).IpAddress
+
+   ## VM3 ##
+   (Get-AzPublicIPAddress -ResourceGroupName $rg -Name $ip3).IpAddress
+   ```
    
-    ```
+2. Создайте подключения к удаленному рабочему столу **myVM1**, **myVM2** и **myVM3**, используя общедоступные IP-адреса этих виртуальных машин.
 
 3. Введите учетные данные для каждой виртуальной машины, чтобы начать сеанс RDP.
-4. На каждой виртуальной машине запустите Windows PowerShell и выполните в нем приведенные ниже команды, чтобы установить сервер IIS и изменить стандартный HTM-файл.
 
-    ```azurepowershell
-    # Install IIS
-     Install-WindowsFeature -name Web-Server -IncludeManagementTools
+4. На каждой виртуальной машине запустите оболочку Windows PowerShell и выполните в ней приведенные ниже команды, чтобы установить сервер IIS и изменить стандартный HTM-файл.
+
+   ```powershell
+   # Install IIS
+   Install-WindowsFeature -name Web-Server -IncludeManagementTools
+
+   # Remove default htm file
+   remove-item  C:\inetpub\wwwroot\iisstart.htm
     
-    # Remove default htm file
-     remove-item  C:\inetpub\wwwroot\iisstart.htm
-    
-    #Add custom htm file
-     Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from host " + $env:computername)
-    ```
+   #Add custom htm file
+   Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from host " + $env:computername)
+   ```
 
-5. Закройте подключения RDP к *myVM1*, *myVM2* и *myVM3*.
+5. Закройте подключения RDP к **myVM1**, **myVM2** и **myVM3**.
 
 
-## <a name="test-load-balancer"></a>Проверка балансировщика нагрузки
-Получите общедоступный IP-адрес подсистемы балансировки нагрузки с помощью командлета [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress). Следующий пример позволяет получить IP-адрес для созданного ранее *myPublicIP*.
+## <a name="test-the-load-balancer"></a>Тестирование подсистемы балансировки нагрузки
+Чтобы получить сведения об общедоступном IP-адресе подсистемы балансировки нагрузки, используйте командлет [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress):
 
-```azurepowershell
-Get-AzPublicIPAddress `
-  -ResourceGroupName "myResourceGroupSLB" `
-  -Name "myPublicIP" | select IpAddress
+* с именем **myPublicIP**;
+* в группе ресурсов **myResourceGroupLB**.
+
+```azurepowershell-interactive
+## Variables for command. ##
+$rg = 'myResourceGroupLB'
+$ipn = 'myPublicIP'
+
+Get-AzPublicIPAddress -ResourceGroupName $rg -Name $ipn | select IpAddress
 ```
 
-После этого можно ввести общедоступный IP-адрес в веб-браузер. Отображается веб-сайт, а также имя узла виртуальной машины, на которую балансировщик нагрузки направил трафик, как показано в следующем примере:
+Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера.
 
 ![Проверка балансировщика нагрузки](media/quickstart-create-basic-load-balancer-powershell/load-balancer-test.png)
 
-Чтобы увидеть, как балансировщик нагрузки распределяет трафик между тремя виртуальными машинами, на которых выполняется приложение, принудительно обновите веб-браузер. 
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить ставшие ненужными группу ресурсов, виртуальную машину и все связанные с ней ресурсы, выполнив команду [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
+Чтобы удалить группу ресурсов, подсистему балансировки нагрузки и все остальные компоненты, можно воспользоваться командлетом [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup). 
 
-```azurepowershell
-Remove-AzResourceGroup -Name myResourceGroupSLB
+```azurepowershell-interactive
+## Variable for command. ##
+$rg = 'myResourceGroupLB'
+
+Remove-AzResourceGroup -Name $rg
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнали, как создать Load Balancer (цен. категория "Стандартный"), подключить к ней виртуальные машины, настроить правило трафика Load Balancer, пробу работоспособности, а также протестировать Load Balancer. Дополнительные сведения о Azure Load Balancer см. в руководстве [Распределение нагрузки виртуальных машин в пределах зон доступности с помощью Load Balancer уровня "Стандартный" и портала Azure](tutorial-load-balancer-standard-public-zone-redundant-portal.md).
+Из этого краткого руководства вы узнали, как:
+
+* создать стандартную или общедоступную подсистему балансировки нагрузки уровня "Базовый";
+* подключить к ней виртуальные машины; 
+* настроить правило трафика подсистемы балансировки нагрузки и пробу работоспособности;
+* протестировать подсистему балансировки нагрузки.
+
+Дополнительные сведения об Azure Load Balancer см. в статье [Что такое Azure Load Balancer?](load-balancer-overview.md) и на странице [часто задаваемых вопросов о Load Balancer](load-balancer-faqs.md).
 
 Дополнительные сведения см. в статье [Standard Load Balancer and Availability Zones](load-balancer-standard-availability-zones.md) (Azure Load Balancer ценовой категории "Стандартный" и зоны доступности).

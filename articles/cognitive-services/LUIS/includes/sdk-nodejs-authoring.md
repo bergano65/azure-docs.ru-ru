@@ -6,16 +6,16 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.date: 05/28/2020
+ms.date: 07/28/2020
 ms.topic: include
 ms.custom: include file
 ms.author: diberry
-ms.openlocfilehash: 6e240a0c5d5d77489c92862238c2e5041bdeabe3
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: 6d805dfc15264a34abe1f177f688dae96d4a49f7
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84171360"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87369465"
 ---
 С помощью клиентской библиотеки для разработки Распознавания речи (LUIS) для Node.js можно выполнить приведенные ниже задачи.
 
@@ -25,7 +25,7 @@ ms.locfileid: "84171360"
 * Обучать и публиковать приложения.
 * Удаление приложения
 
-[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-authoring/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-luis-authoring) | [Пакет для разработки (NPM)](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring), [Пакет среды выполнения (NPM)](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime) | [Примеры](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/LUIS/luis_authoring_quickstart.js)
+[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-authoring/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-luis-authoring) | [Пакет для разработки (NPM)](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring), [Пакет среды выполнения (NPM)](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime) | [Примеры](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/LUIS/node-sdk-authoring-prediction/luis_authoring_quickstart.js)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -36,46 +36,7 @@ ms.locfileid: "84171360"
 
 ### <a name="get-your-language-understanding-luis-starter-key"></a>Получение начального ключа LUIS
 
-Получите [ключ для начала работы](../luis-how-to-azure-subscription.md#starter-key), создав ресурс разработки LUIS. Сохраните ключ и конечную точку ключа для следующего шага.
-
-### <a name="create-an-environment-variable"></a>Создание переменной среды
-
-Используя ключ и регион для ключа, создайте две переменные среды для проверки подлинности:
-
-* `LUIS_AUTHORING_KEY` — ключ ресурса для проверки подлинности запросов.
-* `LUIS_AUTHORING_ENDPOINT` — конечная точка, связанная с ключом.
-
-Используйте инструкции для своей операционной системы.
-
-#### <a name="windows"></a>[Windows](#tab/windows)
-
-```console
-setx LUIS_AUTHORING_KEY <replace-with-your-luis-authoring-key
-setx LUIS_AUTHORING_ENDPOINT <replace-with-your-luis-authoring-endpoint>
-```
-
-Добавив переменную среды, перезапустите окно консоли.
-
-#### <a name="linux"></a>[Linux](#tab/linux)
-
-```bash
-export LUIS_AUTHORING_KEY=<replace-with-your-luis-authoring-key>
-export LUIS_AUTHORING_ENDPOINT=<replace-with-your-luis-authoring-endpoint>
-```
-
-После добавления переменной среды запустите `source ~/.bashrc` из окна консоли, чтобы применить изменения.
-
-#### <a name="macos"></a>[macOS](#tab/unix)
-
-Измените `.bash_profile` и добавьте переменную среды:
-
-```bash
-export LUIS_AUTHORING_KEY=<replace-with-your-luis-authoring-key>
-export LUIS_AUTHORING_ENDPOINT=<replace-with-your-luis-authoring-endpoint>
-```
-
-После добавления переменной среды запустите `source .bash_profile` из окна консоли, чтобы применить изменения.
-***
+Получите [ключ разработки](../luis-how-to-azure-subscription.md), создав ресурс разработки LUIS. Сохраните ключ и конечную точку ключа. Эти строки нужно добавить в начало файла кода.
 
 ### <a name="install-the-npm-library-for-luis-authoring"></a>Установка библиотеки NPM для создания LUIS
 
@@ -118,8 +79,6 @@ npm install @azure/cognitiveservices-luis-authoring @azure/ms-rest-js
 Создайте текстовый файл в предпочитаемой интегрированной среде разработки или редакторе, с именем `luis_authoring_quickstart.js`. Затем добавьте следующие зависимости.
 
 [!code-javascript[Create a new application in your preferred editor or IDE.](~/cognitive-services-quickstart-code/javascript/LUIS/node-sdk-authoring-prediction/luis_authoring_quickstart.js?name=Dependencies)]
-
-Создайте переменные для конечной точки Azure и ключа ресурса. Если вы создали переменную среды после запуска приложения, для доступа к переменной следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, где эта переменная была запущена.
 
 [!code-javascript[Create variables for your resource's Azure endpoint and key.](~/cognitive-services-quickstart-code/javascript/LUIS/node-sdk-authoring-prediction/luis_authoring_quickstart.js?name=Variables)]
 

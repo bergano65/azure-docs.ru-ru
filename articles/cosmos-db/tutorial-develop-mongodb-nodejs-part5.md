@@ -10,12 +10,12 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
-ms.openlocfilehash: 1bed17084af39fa75fe01d68fbdd33c586d48e67
-ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
+ms.openlocfilehash: f77c20faa87adf28a2dda43412a59867309c7cf8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2020
-ms.locfileid: "85114288"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87066922"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---use-mongoose-to-connect-to-cosmos-db"></a>Создание приложения Angular с использованием API Azure Cosmos DB для MongoDB. Подключение к Cosmos DB с помощью Mongoose
 
@@ -230,7 +230,7 @@ Mongoose является библиотекой моделирования да
 
 Затем выполните приложение, следуя приведенным ниже шагам:
 
-1. Сохраните все изменения в Visual Studio Code. Нажмите кнопку **Отладка** слева, ![значок отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part5/debug-button.png), а затем — кнопку **Начать отладку**![значок начала отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part5/start-debugging-button.png).
+1. Сохраните все изменения в Visual Studio Code. В левой части экрана нажмите кнопку **Отладка** (:::image type="icon" source="./media/tutorial-develop-mongodb-nodejs-part5/debug-button.png":::), а затем нажмите кнопку **Начать отладку** (:::image type="icon" source="./media/tutorial-develop-mongodb-nodejs-part5/start-debugging-button.png":::).
 
 1. Теперь переключитесь на браузер. Откройте **средства разработчика** и перейдите на **вкладку "Сеть"** . Перейдите по адресу `http://localhost:3000`, где расположено ваше приложение.
 

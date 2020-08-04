@@ -1,6 +1,6 @@
 ---
 title: Создание частной конечной точки в Приватном канале Azure
-description: В рамках этого краткого руководства для создания частной конечной точки используется шаблон Azure Resource Manager.
+description: В этом кратком руководстве показано, как создать частную конечную точку с помощью шаблона Azure Resource Manager (шаблона ARM).
 services: private-link
 author: mblanco77
 ms.service: private-link
@@ -8,32 +8,34 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 05/26/2020
 ms.author: allensu
-ms.openlocfilehash: a60edde222a6200a0378cd8c9c4f4774da9c2e50
-ms.sourcegitcommit: 1383842d1ea4044e1e90bd3ca8a7dc9f1b439a54
+ms.openlocfilehash: 9fde76b86b290e1271f408cb7810e549dd9502a8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84817969"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87071492"
 ---
-# <a name="quickstart-create-a-private-endpoint-by-using-an-azure-resource-manager-template"></a>Краткое руководство. Создание частной конечной точки с помощью шаблона Azure Resource Manager
+# <a name="quickstart-create-a-private-endpoint-by-using-an-arm-template"></a>Краткое руководство. Создание частной конечной точки с помощью шаблона ARM
 
-В рамках этого краткого руководства для создания частной конечной точки используется шаблон Azure Resource Manager.
+В этом кратком руководстве показано, как создать частную конечную точку с помощью шаблона Azure Resource Manager (шаблона ARM).
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
 Инструкции в этом кратком руководстве можно также выполнить с помощью [портала Azure](create-private-endpoint-portal.md), [Azure PowerShell](create-private-endpoint-powershell.md) или [Azure CLI](create-private-endpoint-cli.md).
 
-## <a name="prerequisite"></a>Предварительные требования
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-private-endpoint-sql%2Fazuredeploy.json)
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Вам потребуется учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 
-## <a name="create-a-private-endpoint"></a>Создание частной конечной точки
+## <a name="review-the-template"></a>Изучение шаблона
 
 Этот шаблон позволяет создать частную конечную точку для экземпляра базы данных SQL Azure.
 
-### <a name="review-the-template"></a>Изучение шаблона
-
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/).
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-private-endpoint-sql/).
 
 :::code language="json" source="~/quickstart-templates/101-private-endpoint-sql/azuredeploy.json" range="001-295" highlight="131-156":::
 
@@ -50,9 +52,9 @@ ms.locfileid: "84817969"
 - [**Microsoft.Network/networkInterfaces**](/azure/templates/microsoft.network/networkinterfaces). Сетевой интерфейс для виртуальной машины.
 - [**Microsoft.Compute/virtualMachines**](/azure/templates/microsoft.compute/virtualmachines): Виртуальная машина, используемая для проверки частного подключения к экземпляру Базы данных SQL через частную конечную точку.
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Ниже показано, как развернуть шаблон Azure Resource Manager в Azure.
+Чтобы развернуть шаблон ARM в Azure, сделайте следующее:
 
 1. Выберите элемент **Развертывание в Azure**, чтобы войти в Azure и открыть шаблон. Этот шаблон позволяет создать частную конечную точку, экземпляр Базы данных SQL, сетевую инфраструктуру и виртуальную машину для проверки.
 
@@ -66,7 +68,7 @@ ms.locfileid: "84817969"
 ## <a name="validate-the-deployment"></a>Проверка развертывания
 
 > [!NOTE]
-> Шаблон Azure Resource Manager позволяет создать уникальное имя для ресурса виртуальной машины myVm<b>{uniqueid}</b> и для ресурса Базы данных SQL sqlserver<b>{uniqueid}</b>. Подставьте созданное значение вместо **{uniqueid}** .
+> Шаблон ARM позволяет создать уникальное имя для ресурса виртуальной машины myVm<b>{uniqueid}</b> и для ресурса Базы данных SQL sqlserver<b>{uniqueid}</b>. Подставьте созданное значение вместо **{uniqueid}** .
 
 ### <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
 

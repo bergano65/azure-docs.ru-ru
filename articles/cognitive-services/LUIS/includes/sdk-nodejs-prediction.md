@@ -6,23 +6,23 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.date: 05/28/2020
+ms.date: 07/28/2020
 ms.topic: include
 ms.custom: include file
 ms.author: diberry
-ms.openlocfilehash: 504ba9106cc9d617858e8fad7ea421c8707707b3
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: 19da911cbc662f47e7bbd16aaddf8803d4109d6a
+ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84171292"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87369295"
 ---
 С помощью клиентской библиотеки LUIS для Node.js можно выполнить приведенные ниже задачи.
 
 * Прогнозирование по слоту
 * Прогнозирование по версии
 
-[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-runtime/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-luis-runtime) | [Пакет среды выполнения (NPM)](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime) | [Образцы кода](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/LUIS/luis_prediction.js)
+[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-runtime/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-luis-runtime) | [Пакет среды выполнения (NPM)](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime) | [Образцы кода](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/LUIS/node-sdk-authoring-prediction/luis_prediction.js)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -35,8 +35,6 @@ ms.locfileid: "84171292"
 ### <a name="get-your-language-understanding-luis-runtime-key"></a>Получение ключа среды выполнения LUIS
 
 [Ключ среды выполнения](../luis-how-to-azure-subscription.md) можно получить, создав ресурс среды выполнения LUIS. Сохраните ключ и конечную точку ключа для следующего шага.
-
-[!INCLUDE [Set up environment variables for prediction quickstart](sdk-prediction-environment-variables.md)]
 
 ### <a name="create-a-new-javascript-nodejs-file"></a>Создание файла JavaScript (Node.js)
 
@@ -75,13 +73,11 @@ npm install @azure/cognitiveservices-luis-runtime @azure/ms-rest-js
 
 1. Создайте переменные для собственных обязательных сведений LUIS:
 
-    Добавьте переменные для управления вашим ключом прогнозирования, извлеченным из переменной среды с именем `LUIS_RUNTIME_KEY`. Если вы создали переменную среды после запуска приложения, то для доступа к переменной следует закрыть и перезагрузить редактор, интегрированную среду разработки или оболочку, где эта переменная была запущена. Метод будет создано позже.
-
-    Создайте переменную для хранения имени ресурса `LUIS_RUNTIME_ENDPOINT`.
-
+    Добавьте переменные для управления ключом прогнозирования и ключом конечной точки. 
+    
     [!code-javascript [Azure resource variables](~/cognitive-services-quickstart-code/javascript/LUIS/node-sdk-authoring-prediction/luis_prediction.js?name=Variables)]
 
-1. Создайте переменную среды с именем `LUIS_APP_ID` для идентификатора приложения. Задайте для переменной среды значение публичного приложения Интернета вещей, **`df67dcdb-c37d-46af-88e1-8b97951ca1c2`** . Создайте переменную, чтобы задать опубликованный слот `production`.
+1. Создайте переменную `LUIS_APP_ID` для идентификатора приложения. Задайте для нее общедоступное приложение Интернета вещей, **`df67dcdb-c37d-46af-88e1-8b97951ca1c2`** . Создайте переменную, чтобы задать опубликованный слот `production`.
 
     [!code-javascript [LUIS app variables](~/cognitive-services-quickstart-code/javascript/LUIS/node-sdk-authoring-prediction/luis_prediction.js?name=OtherVariables)]
 

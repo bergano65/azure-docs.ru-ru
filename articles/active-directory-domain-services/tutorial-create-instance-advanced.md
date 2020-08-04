@@ -1,6 +1,6 @@
 ---
-title: Руководство. Создание управляемого домена Azure AD DS с расширенной конфигурацией
-description: В этом учебнике описано, как создать и настроить управляемый домен доменных служб Azure Active Directory, а также как указать расширенные параметры конфигурации с помощью портала Azure.
+title: Учебник. Создание настраиваемого управляемого домена доменных служб Azure Active Directory | Документация Майкрософт
+description: В этом учебнике описано, как создать и настроить настраиваемый управляемый домен доменных служб Azure Active Directory, а также как указать расширенные параметры конфигурации с помощью портала Azure.
 author: iainfoulds
 manager: daveba
 ms.service: active-directory
@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: b8eece33e13fca9fdef6b860513368f6c47a4628
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ead20713752b4eb28700541b4314241d86b6cc27
+ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86518527"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87278559"
 ---
 # <a name="tutorial-create-and-configure-an-azure-active-directory-domain-services-managed-domain-with-advanced-configuration-options"></a>Руководство по Создание и настройка управляемого домена доменных служб Azure Active Directory с помощью расширенных параметров конфигурации
 
@@ -131,7 +131,7 @@ ms.locfileid: "86518527"
     1. При создании виртуальной сети введите ее имя, например *myVnet*, и укажите диапазон адресов, например *10.0.1.0/24*.
     1. Создайте выделенную подсеть с понятным именем, например *DomainServices*. Укажите диапазон адресов, например *10.0.1.0/24*.
 
-    [![](./media/tutorial-create-instance-advanced/create-vnet.png "Create a virtual network and subnet for use with Azure AD Domain Services")](./media/tutorial-create-instance-advanced/create-vnet-expanded.png#lightbox)
+    [ ![Создание виртуальной сети и подсети для доменных служб Azure AD](./media/tutorial-create-instance-advanced/create-vnet.png)](./media/tutorial-create-instance-advanced/create-vnet-expanded.png#lightbox)
 
     Выбранное адресное пространство должно входить в пространство частных IP-адресов. Использование не принадлежащих вам IP-адресов из пространства общедоступных адресов приведет к сбоям в работе доменных служб Azure AD.
 
@@ -159,7 +159,7 @@ ms.locfileid: "86518527"
 
 ## <a name="configure-synchronization"></a>Настройка синхронизации
 
-Службы Azure AD DS позволяют синхронизировать *всех пользователей и все группы*, которые доступны в Azure AD, или только *определенные группы*. Если вы решите синхронизировать *всех пользователей и все группы*, вы не сможете позже перейти на ограниченную синхронизацию. См. сведения об [ограниченной синхронизации в области в доменных службах Azure AD][scoped-sync].
+Службы Azure AD DS позволяют синхронизировать *всех пользователей и все группы*, которые доступны в Azure AD, или только *определенные группы*. Вы можете изменить область синхронизации сейчас или после развертывания управляемого домена. Дополнительные сведения см. в разделе [Настройка синхронизации с заданной областью из Azure AD в Azure Active Directory доменных служб с помощью портал Azure][scoped-sync].
 
 1. Для нашего примера выберите синхронизацию **всех пользователей и групп**. Этот вариант синхронизации используется по умолчанию.
 
