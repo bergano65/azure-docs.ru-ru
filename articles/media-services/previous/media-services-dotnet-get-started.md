@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 19b8e91ce85bb80f78ec75ab14332464d6331904
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 2c79566f51647492118f307e1c9737b98b1be484
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86078150"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543594"
 ---
 # <a name="get-started-with-delivering-content-on-demand-using-net-sdk"></a>Приступая к работе с доставкой содержимого по запросу с помощью пакета SDK для .NET  
 
@@ -27,14 +27,14 @@ ms.locfileid: "86078150"
 
 В этом руководстве описано, как реализовать простую службу доставки видео по запросу (VOD) с помощью приложения служб мультимедиа Azure (AMS) и пакета .NET SDK для служб мультимедиа Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
 * Учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
 * Учетная запись служб мультимедиа. Инструкции по созданию учетной записи служб мультимедиа см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
 * .NET Framework 4.0 или более поздней версии.
-* приведенному.
+* Visual Studio.
 
 Учебник включает в себя следующие разделы:
 
@@ -57,7 +57,7 @@ ms.locfileid: "86078150"
 
 Щелкните изображение, чтобы просмотреть его полноразмерную версию.  
 
-<a href="./media/media-services-dotnet-get-started/media-services-overview-object-model.png" target="_blank"><img src="./media/media-services-dotnet-get-started/media-services-overview-object-model-small.png"></a> 
+[![Схема, на которой показаны некоторые наиболее часто используемые объекты в модели данных объектов служб мультимедиа Azure для разработки приложений видео по запросу.](./media/media-services-dotnet-get-started/media-services-overview-object-model-small.png)](./media/media-services-dotnet-get-started/media-services-overview-object-model.png#lightbox)
 
 Всю модель можно просмотреть [здесь](https://media.windows.net/API/$metadata?api-version=2.15).  
 
@@ -383,7 +383,7 @@ URL-адреса поэтапного скачивания (аудио и вид
 ## <a name="download-sample"></a>Скачивание образца
 Следующий пример содержит код, созданный в ходе работы с этим руководством: [образец](https://azure.microsoft.com/documentation/samples/media-services-dotnet-on-demand-encoding-with-media-encoder-standard/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 

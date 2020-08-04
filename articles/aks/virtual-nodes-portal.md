@@ -5,12 +5,12 @@ services: container-service
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.custom: references_regions
-ms.openlocfilehash: 277bdc19635231628cea8c308b30c57b129dc364
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 8748e4f78582ab133d7e527daba1c126dcb7e7e2
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86250708"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543713"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-in-the-azure-portal"></a>Создание и настройка кластера Службы Azure Kubernetes (AKS) для использования виртуальных узлов на портале Azure
 
@@ -68,6 +68,7 @@ az provider register --namespace Microsoft.ContainerInstance
 * [Аргументы](../container-instances/container-instances-exec.md#restrictions) для exec в ACI.
 * [DaemonSet](concepts-clusters-workloads.md#statefulsets-and-daemonsets) не будет выполнять развертывание контейнеров pod на виртуальном узле.
 * Виртуальные узлы поддерживают планирование контейнеров pod для Linux. Чтобы запланировать контейнеры Windows Server в ACI, можно вручную установить поставщик [Virtual Kubelet ACI](https://github.com/virtual-kubelet/azure-aci) с открытым кодом.
+* Для виртуальных узлов требуются кластеры AKS с Azure CNI Networking
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 

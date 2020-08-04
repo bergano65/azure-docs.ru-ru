@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/24/2018
 ms.author: damaerte
-ms.openlocfilehash: 0e538299dfc9c9406b519d888d1a92c5c643bb03
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: eea64520dd5440467c911b6de42d8c8c31fc1bde
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421745"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543458"
 ---
 # <a name="troubleshooting--limitations-of-azure-cloud-shell"></a>Устранение неполадок и ограничения в Azure Cloud Shell
 
@@ -151,7 +151,8 @@ Azure Cloud Shell серьезно относится к личным данны
 ### <a name="export"></a>Экспорт
 Чтобы **экспортировать** пользовательские настройки, сохраненные Cloud Shell, такие как предпочитаемая оболочка, размер и тип шрифта, выполните следующие команды.
 
-1. [![](https://shell.azure.com/images/launchcloudshell.png "Launch Azure Cloud Shell")](https://shell.azure.com)
+1. [![Изображение, показывающее кнопку запуска Azure Cloud Shell.](https://shell.azure.com/images/launchcloudshell.png)](https://shell.azure.com)
+
 2. В Bash или PowerShell выполните следующие команды.
 
 Bash:
@@ -174,7 +175,8 @@ PowerShell.
 >[!Note]
 > При удалении параметров пользователя сам общий ресурс службы файлов Azure не будет удален. Перейдите к службе файлов Azure для выполнения этого действия.
 
-1. [![](https://shell.azure.com/images/launchcloudshell.png "Launch Azure Cloud Shell")](https://shell.azure.com)
+1. [![Изображение, показывающее кнопку запуска Azure Cloud Shell.](https://shell.azure.com/images/launchcloudshell.png)](https://shell.azure.com)
+
 2. В Bash или PowerShell выполните следующие команды.
 
 Bash:

@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 11/07/2018
-ms.openlocfilehash: fd4b94f6a99241ffddd7ae359059c3a4a918934a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 52dfc285deaa84792e37d0f012abd7702d856113
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84026945"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87544087"
 ---
 # <a name="deploy-and-explore-a-standalone-single-tenant-application-that-uses-azure-sql-database"></a>Развертывание и изучение отдельного однотенантного приложения, в котором используется база данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -43,13 +43,17 @@ ms.locfileid: "84026945"
 
 Разверните приложение для трех указанных клиентов, выполнив следующие действия:
 
-1. Щелкните любую из синих кнопок **Deploy to Azure** (Развернуть в Azure), чтобы открыть шаблон развертывания [на портале Azure](https://portal.azure.com). Для каждого шаблона нужно предоставить значения двух параметров: имя новой группы ресурсов и имя пользователя, которые позволят отличать это развертывания от других развертываний того же приложения. На следующем шаге содержатся сведения о настройке этих значений.<br><br>
-    <a href="https://aka.ms/deploywingtipsa-contoso" target="_blank"><img style="vertical-align:middle" src="media/saas-standaloneapp-get-started-deploy/deploy.png"/></a> &nbsp; **Contoso Concert Hall**
-<br><br>
-    <a href="https://aka.ms/deploywingtipsa-dogwood" target="_blank"><img style="vertical-align:middle" src="media/saas-standaloneapp-get-started-deploy/deploy.png"/></a> &nbsp; **Dogwood Dojo**
-<br><br>
-    <a href="https://aka.ms/deploywingtipsa-fabrikam" target="_blank"><img style="vertical-align:middle" src="media/saas-standaloneapp-get-started-deploy/deploy.png"/></a> &nbsp; **Fabrikam Jazz Club**
+1. Щелкните любую из синих кнопок **Deploy to Azure** (Развернуть в Azure), чтобы открыть шаблон развертывания [на портале Azure](https://portal.azure.com). Для каждого шаблона нужно предоставить значения двух параметров: имя новой группы ресурсов и имя пользователя, которые позволят отличать это развертывания от других развертываний того же приложения. На следующем шаге содержатся сведения о настройке этих значений.
 
+   **Contoso Concert Hall**   
+   [![Изображение, показывающее кнопку "развернуть в Azure".](media/saas-standaloneapp-get-started-deploy/deploy.png)](https://aka.ms/deploywingtipsa-contoso)
+
+   **Dogwood Dojo**   
+   [![Изображение, показывающее кнопку "развернуть в Azure".](media/saas-standaloneapp-get-started-deploy/deploy.png)](https://aka.ms/deploywingtipsa-dogwood)
+
+   **Клуб компании Fabrikam джаз**   
+   [![Изображение, показывающее кнопку "развернуть в Azure".](media/saas-standaloneapp-get-started-deploy/deploy.png)](https://aka.ms/deploywingtipsa-fabrikam)
+ 
 2. Введите необходимые значения параметров для каждого развертывания.
 
     > [!IMPORTANT]
@@ -117,7 +121,7 @@ ms.locfileid: "84026945"
 
 После использования примера удалите все созданные группы ресурсов, чтобы остановить соответствующее выставление счетов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Из этого руководства вы узнали следующее:
 

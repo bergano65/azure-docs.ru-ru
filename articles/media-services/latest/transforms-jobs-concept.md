@@ -12,12 +12,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 08/19/2019
 ms.author: juliako
-ms.openlocfilehash: 3e01d5c8d57752c11b2890c1d109b58a223d260f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d45d802456345eab857f571d2d52793c8be691eb
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091935"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543067"
 ---
 # <a name="transforms-and-jobs-in-media-services"></a>Преобразования и задания в службах мультимедиа
 
@@ -52,7 +52,7 @@ ms.locfileid: "87091935"
 > [!NOTE]
 > Свойства **преобразования** и **задания** типа DateTime всегда имеют формат UTC.
 
-## <a name="transforms"></a>Преобразования
+## <a name="transforms"></a>Transform
 
 **Преобразования** можно использовать для настройки общих задач кодирования или анализа видеоматериалов. Каждое **Преобразование** описывает рецепт или рабочий процесс выполнения задач по обработке видео-или звуковых файлов. Одно преобразование может применять несколько правил. Например, преобразование может указать, что каждое видео кодируется в MP4-файл с заданной скоростью и что эскиз будет создан из первого кадра видео. Необходимо добавить одну запись TransformOutput для каждого правила, которое требуется включить в преобразование. Используйте предустановки, чтобы сообщить преобразованию, каким образом должны обрабатываться входные файлы мультимедиа.
 
@@ -74,7 +74,7 @@ ms.locfileid: "87091935"
 
 Выберите изображение, чтобы просмотреть его полный размер.  
 
-<a href="./media/api-diagrams/transform-large.png" target="_blank"><img src="./media/api-diagrams/transform-small.png"></a>
+[![Схема, показывающая объект Transform и объекты, на которые он ссылается, включая отношения наследования класса между объектами.](./media/api-diagrams/transform-small.png)](./media/api-diagrams/transform-large.png#lightbox)
 
 ## <a name="jobs"></a>Задания
 
@@ -102,7 +102,7 @@ ms.locfileid: "87091935"
 
 Щелкните изображение, чтобы просмотреть его полноразмерную версию.  
 
-<a href="./media/api-diagrams/job-large.png" target="_blank"><img src="./media/api-diagrams/job-small.png"></a>
+[![Схема, показывающая объект задания и объекты, на которые они ссылаются, включая отношения наследования класса между объектами.](./media/api-diagrams/job-small.png)](./media/api-diagrams/job-large.png#lightbox)
 
 ## <a name="configure-media-reserved-units"></a>Настройка зарезервированных единиц мультимедиа
 
@@ -119,7 +119,7 @@ ms.locfileid: "87091935"
 * [Коды ошибок](/rest/api/media/jobs/get#joberrorcode)
 * [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Перед началом разработки ознакомьтесь [с разработкой с помощью API-интерфейсов служб мультимедиа v3](media-services-apis-overview.md) (содержит сведения о доступе к API, соглашения об именовании и т. д.).
 - Ознакомьтесь с этими учебниками:

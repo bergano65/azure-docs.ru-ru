@@ -1,6 +1,6 @@
 ---
 title: Мониторинг инфраструктуры Azure
-description: В этой статье описано, как выполнять мониторинг рабочей сети Azure.
+description: Узнайте о аспектах мониторинга инфраструктуры рабочей сети Azure, таких как сканирование уязвимостей.
 services: security
 documentationcenter: na
 author: TerryLanfear
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
-ms.openlocfilehash: af9c157b4644156edc6dcdb1b53c141263576500
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7b75c9dc874a41d4221c55a8b00dd12d943e80fc
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "68727156"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87542948"
 ---
 # <a name="azure-infrastructure-monitoring"></a>Мониторинг инфраструктуры Azure   
 
@@ -49,7 +49,7 @@ Azure ежегодно проверяет и обновляет параметр
 
 Была создана платформа управления инцидентами, определяющая роли и распределяющая обязанности. Команда управления инцидентами безопасности Azure отвечает за управление инцидентами безопасности, включая эскалацию и обеспечение участия групп специалистов, когда это необходимо. Менеджеры по операциям Azure отвечают за контроль расследования и разрешения инцидентов безопасности и конфиденциальности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о действиях корпорации Майкрософт в сфере защиты инфраструктуры Azure приведены в следующих статьях:
 
 - [Объекты, локальная среда и физическая безопасность в Azure](physical-security.md)

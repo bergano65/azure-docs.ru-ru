@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 06/02/2020
 ms.reviewer: nieberts, jomore
-ms.openlocfilehash: c5369d63c0937605cc288e3a90466e723e69d163
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 037e07a1d8a6a3b4016d00f1b5a68bffc9caf335
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86255444"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543373"
 ---
 # <a name="use-kubenet-networking-with-your-own-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Использование сети kubenet с пользовательскими диапазонами IP-адресов в Службе Azure Kubernetes (AKS)
 
@@ -47,6 +47,17 @@ ms.locfileid: "86255444"
 Azure поддерживает не более 400 маршрутов в UDR, поэтому в кластере AKS не может быть больше 400 узлов. AKS [виртуальные узлы][virtual-nodes] и политики сети Azure не поддерживаются в *кубенет*.  Вы можете использовать [политики сети Калико][calico-network-policies], так как они поддерживаются в кубенет.
 
 Благодаря *Azure CNI* каждый объект pod получает IP-адрес в IP-подсети и может напрямую взаимодействовать с другими объектами pod и службами. Размер кластеров может соответствовать размеру указанного диапазона IP-адресов. Тем не менее диапазон IP-адресов следует планировать заранее. Все эти IP-адреса используются узлами AKS в зависимости от максимального числа поддерживаемых объектов pod. В *Azure CNI*поддерживаются дополнительные сетевые функции и сценарии, такие как [виртуальные узлы][virtual-nodes] или политики сети (Azure или Калико).
+
+### <a name="limitations--considerations-for-kubenet"></a>Ограничения & рекомендации для кубенет
+
+* В проектировании кубенет требуется дополнительный прыжок, что значительно увеличивает задержку связи с Pod.
+* Таблицы маршрутов и определяемые пользователем маршруты необходимы для использования кубенет, что повышает сложность операций.
+* Прямая адресация Pod не поддерживается для кубенет из-за кубенет проектирования.
+* В отличие от кластеров Azure CNI, несколько кластеров кубенет не могут совместно использовать подсеть.
+* Функции, **не поддерживаемые в кубенет** , включают:
+   * [Политики сети Azure](use-network-policies.md#create-an-aks-cluster-and-enable-network-policy), но Калико сетевые политики поддерживаются в кубенет
+   * [Пулы узлов Windows](windows-node-limitations.md)
+   * [Надстройка виртуальных узлов](virtual-nodes-portal.md#known-limitations)
 
 ### <a name="ip-address-availability-and-exhaustion"></a>Доступность и исчерпание IP-адресов
 
@@ -233,7 +244,7 @@ az network vnet subnet list --resource-group
 az aks create -g MyResourceGroup -n MyManagedCluster --vnet-subnet-id MySubnetID
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 При развертывании кластера AKS в подсети существующей виртуальной сети его можно использовать в обычном режиме. Приступите к [созданию приложений с помощью Azure dev Spaces][dev-spaces], [развертыванию существующих приложений с помощью Helm][use-helm]или [созданию новых приложений с помощью Helm][develop-helm].
 

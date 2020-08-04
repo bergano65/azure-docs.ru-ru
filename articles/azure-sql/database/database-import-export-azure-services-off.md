@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/08/2020
-ms.openlocfilehash: ea6aec9ffcaf01c0db5b297d40783ce4690a8f0a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ea5f2d5838c926fa8ee7b92278b0854264346a7b
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84031485"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543764"
 ---
 # <a name="import-or-export-an-azure-sql-database-without-allowing-azure-services-to-access-the-server"></a>Импорт или экспорт базы данных SQL Azure без предоставления службам Azure доступа к серверу
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -34,9 +34,7 @@ ms.locfileid: "84031485"
 Этот шаблон позволяет развернуть простую виртуальную машину Windows, используя несколько различных параметров для версии Windows, используя последнюю исправленную версию. Это позволит развернуть виртуальную машину размера a2 в расположении группы ресурсов и вернуть полное доменное имя виртуальной машины.
 <br><br>
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vm-simple-windows%2Fazuredeploy.json" target="_blank">
-    <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png"/>
-</a>
+[![Изображение, показывающее кнопку "развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vm-simple-windows%2Fazuredeploy.json)
 
 Дополнительные сведения см. в статье [очень простое развертывание виртуальной машины Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-windows).
 
@@ -48,7 +46,7 @@ ms.locfileid: "84031485"
 
    ![ВМ](./media/database-import-export-azure-services-off/vm.png)  
 
-2. Выберите **Подключиться**.
+2. Нажмите кнопку **Подключиться**.
 
    Для виртуальной машины отобразится форма файла протокола удаленного рабочего стола (RDP-файл), а также общедоступный IP-адрес и номер порта.
 
@@ -91,7 +89,7 @@ ms.locfileid: "84031485"
 
 4. Чтобы добавить общедоступный IP-адрес виртуальной машины в новое правило брандмауэра IP-адреса на уровне сервера, на панели инструментов выберите **Добавить IP-клиент** . С использованием правила брандмауэра для IP-адресов на уровне сервера вы можете открыть порт 1433 для одного IP-адреса или диапазона IP-адресов.
 
-5. Нажмите кнопку **Сохранить**. Правило брандмауэра IP на уровне сервера создается для общедоступного IP-адреса виртуальной машины, открывающего порт 1433 на сервере.
+5. Щелкните **Сохранить**. Правило брандмауэра IP на уровне сервера создается для общедоступного IP-адреса виртуальной машины, открывающего порт 1433 на сервере.
 
 6. Закройте страницу **Параметры брандмауэра**.
 
@@ -128,7 +126,7 @@ sqlpackage.exe /a:import /tcs:"Data Source=<serverName>.database.windows.net;Ini
 sqlpackage.exe /a:Import /sf:testExport.bacpac /tdn:NewDacFX /tsn:apptestserver.database.windows.net /ua:True /tid:"apptest.onmicrosoft.com"
 ```
 
-## <a name="performance-considerations"></a>Особенности производительности
+## <a name="performance-considerations"></a>Вопросы производительности
 
 Скорость экспорта зависит от многих факторов (например, формы данных), поэтому невозможно предсказать, какая скорость должна быть ожидаемой. SqlPackage может занять значительное время, особенно для больших баз данных.
 
@@ -153,7 +151,7 @@ sqlpackage.exe /a:Import /sf:testExport.bacpac /tdn:NewDacFX /tsn:apptestserver.
 
 В зависимости от среды может потребоваться [настроить брандмауэры службы хранилища Azure и виртуальные сети](../../storage/common/storage-network-security.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о подключении к импортированной базе данных SQL и выполнении запросов к ней см. в разделе [Краткое руководство по базе данных SQL Azure: использование SQL Server Management Studio для подключения и запроса данных](connect-query-ssms.md).
 - Сведения о миграции из SQL Server в Базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://techcommunity.microsoft.com/t5/DataCAT/Migrating-from-SQL-Server-to-Azure-SQL-Database-using-Bacpac/ba-p/305407).

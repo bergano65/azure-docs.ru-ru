@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/19/2020
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 30e70e56eb54815c26521829e4baf82dce574e43
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: e2277e2088a8cb386d6f19799b235d96e08959b0
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87432604"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543441"
 ---
 # <a name="integrate-azure-stream-analytics-with-azure-machine-learning-preview"></a>Интеграция Azure Stream Analytics со службой "Машинное обучение Azure" (предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "87432604"
 
 1. [Разверните модель как веб-службу](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-and-where) с помощью Машинного обучения Azure.
 
-2. В сценарии оценки должен содержаться [образец входных и выходных данных](../machine-learning/how-to-deploy-and-where.md#example-entry-script), который используется Машинным обучением Azure для создания спецификации схемы. Stream Analytics использует эту схему для понимания сигнатуры функции веб-службы. Вы можете использовать этот [Пример определения Swagger](https://github.com/Azure/azure-stream-analytics/blob/master/Samples/AzureML/swagger-example.json) в качестве ссылки, чтобы убедиться, что она правильно настроена.
+2. В сценарии оценки должен содержаться [образец входных и выходных данных](../machine-learning/how-to-deploy-and-where.md), который используется Машинным обучением Azure для создания спецификации схемы. Stream Analytics использует эту схему для понимания сигнатуры функции веб-службы. Вы можете использовать этот [Пример определения Swagger](https://github.com/Azure/azure-stream-analytics/blob/master/Samples/AzureML/swagger-example.json) в качестве ссылки, чтобы убедиться, что она правильно настроена.
 
 3. Убедитесь, что веб-служба принимает и возвращает сериализованные данные JSON.
 
@@ -147,7 +147,7 @@ FROM input
 
 ## <a name="optimize-the-performance-for-azure-machine-learning-udfs"></a>Оптимизация производительности для определяемой пользователем функции Машинного обучения Azure
 
-При развертывании модели в службе Kubernetes Azure можно [профилировать модель, чтобы определить использование ресурсов](../machine-learning/how-to-deploy-and-where.md#profilemodel). Кроме того, вы можете [включить Application Insights для развертываний](../machine-learning/how-to-enable-app-insights.md), чтобы узнать их частоту запросов, время отклика и частоту сбоев.
+При развертывании модели в службе Kubernetes Azure можно [профилировать модель, чтобы определить использование ресурсов](../machine-learning/how-to-deploy-profile-model.md). Кроме того, вы можете [включить Application Insights для развертываний](../machine-learning/how-to-enable-app-insights.md), чтобы узнать их частоту запросов, время отклика и частоту сбоев.
 
 При наличии сценария с высокой пропускной способностью событий для достижения оптимальной производительности с низкой задержкой может быть необходимо изменить следующие параметры в Stream Analytics.
 

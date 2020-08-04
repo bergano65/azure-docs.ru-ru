@@ -1,18 +1,18 @@
 ---
 title: Шифрование дисков Azure для виртуальных машин и масштабируемых наборов виртуальных машин
-description: В этой статье приводятся общие сведения о шифровании дисков Azure.
+description: Сведения о шифровании дисков Azure для виртуальных машин и масштабируемых наборов ВМ. Шифрование дисков Azure работает и для виртуальных машин Linux, и для Windows.
 author: msmbaldwin
 ms.service: security
 ms.topic: article
 ms.author: mbaldwin
 ms.date: 10/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: c881b2b9743766e4d35e6cb05f6f3469803850bc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 21194bf2fe76a7eb0ee034d4a502c20ee3032dd9
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80062126"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543679"
 ---
 # <a name="azure-disk-encryption-for-virtual-machines-and-virtual-machine-scale-sets"></a>Шифрование дисков Azure для виртуальных машин и масштабируемых наборов виртуальных машин
 
@@ -25,7 +25,7 @@ ms.locfileid: "80062126"
 ### <a name="current-version-of-azure-disk-encryption"></a>Текущая версия шифрования дисков Azure
 
 - [Общие сведения о шифровании дисков Azure для виртуальных машин Linux](../../virtual-machines/linux/disk-encryption-overview.md)
-- [Azure Disk Encryption scenarios on Linux VMs](../../virtual-machines/linux/disk-encryption-linux.md) (Сценарии шифрования дисков Azure для виртуальных машин Linux)
+- [Сценарии шифрования дисков Azure на виртуальных машинах Linux](../../virtual-machines/linux/disk-encryption-linux.md)
 - [Создание и шифрование виртуальной машины Linux с помощью Azure CLI](../../virtual-machines/linux/disk-encryption-cli-quickstart.md)
 - [Создание и шифрование виртуальной машины Linux с помощью Azure PowerShell](../../virtual-machines/linux/disk-encryption-powershell-quickstart.md)
 - [Создание и шифрование виртуальной машины Linux на портале Azure](../../virtual-machines/linux/disk-encryption-portal-quickstart.md)
@@ -75,7 +75,7 @@ ms.locfileid: "80062126"
 - [Creating and configuring a key vault for Azure Disk Encryption](../../virtual-machine-scale-sets/disk-encryption-key-vault.md) (Создание и настройка хранилища ключей для шифрования дисков Azure)
 - [Use Azure Disk Encryption with virtual machine scale set extension sequencing](../../virtual-machine-scale-sets/disk-encryption-extension-sequencing.md) (Использование шифрования дисков Azure с помощью виртуализации расширения масштабируемого набора виртуальных машин)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Общие сведения о шифровании в Azure](encryption-overview.md)
 - [Шифрование неактивных данных](encryption-atrest.md)

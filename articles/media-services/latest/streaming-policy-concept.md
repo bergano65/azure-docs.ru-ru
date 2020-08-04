@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 05/28/2019
 ms.author: juliako
-ms.openlocfilehash: 01972ab02aa901af6144c02171efd36314e2f514
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 30164e1af1948f86c68e102f4d348674ea931e7b
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091952"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87544019"
 ---
 # <a name="streaming-policies"></a>Политики потоковой передачи
 
@@ -40,7 +40,7 @@ ms.locfileid: "87091952"
 
 Щелкните изображение, чтобы просмотреть его полноразмерную версию.  
 
-<a href="./media/streaming-policy/large.png" target="_blank"><img src="./media/streaming-policy/large.png"></a> 
+[![Схема, на которой показано дерево принятия решений, помогающее выбрать предопределенную политику потоковой передачи для вашего сценария.](./media/streaming-policy/large.png)](./media/streaming-policy/large.png#lightbox)
 
 При шифровании содержимого необходимо создать [политику ключа содержимого](content-key-policy-concept.md). **Политика ключа содержимого** не требуется для очистки потоковой передачи или загрузки. 
 
@@ -48,7 +48,7 @@ ms.locfileid: "87091952"
 
 ## <a name="get-a-streaming-policy-definition"></a>Получение определения политики потоковой передачи  
 
-Если вы хотите просмотреть определение политики потоковой передачи, используйте [Get](/rest/api/media/streamingpolicies/get) и укажите имя политики. Например.
+Если вы хотите просмотреть определение политики потоковой передачи, используйте [Get](/rest/api/media/streamingpolicies/get) и укажите имя политики. Пример:
 
 ### <a name="rest"></a>REST
 
@@ -83,7 +83,7 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
 
 Ознакомьтесь с разделом [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
 * [Использование динамического шифрования AES-128 и службы доставки ключей](protect-with-aes128.md)

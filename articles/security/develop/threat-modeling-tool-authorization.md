@@ -1,6 +1,6 @@
 ---
 title: Авторизация. Средство моделирования угроз Microsoft Azure | Документация Майкрософт
-description: Устранение угроз, обнаруженных с помощью средства моделирования угроз
+description: Сведения об устранении авторизации в Threat Modeling Tool. Ознакомьтесь со списком потенциальных угроз и инструкций по устранению рисков.
 services: security
 documentationcenter: na
 author: jegeib
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: 809e9fa5143ede65f5bc6bf8d81020d508272fd8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 07e33279452b8296688c358c9ffdab1bfb2e1321
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87021840"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543968"
 ---
 # <a name="security-frame-authorization--mitigations"></a>Механизм безопасности. Авторизация | Устранение рисков 
 | Продукт или служба | Статья |
@@ -35,7 +35,7 @@ ms.locfileid: "87021840"
 | **Граница доверия Service Fabric** | <ul><li>[Ограничение доступа клиента к операциям кластера с помощью RBAC](#cluster-rbac)</li></ul> |
 | **Dynamics CRM** | <ul><li>[Выполните моделирование безопасности и используйте безопасность на уровне полей, если это необходимо](#modeling-field)</li></ul> |
 | **Портал Dynamics CRM** | <ul><li>[Выполняйте моделирование безопасности учетных записей на портале с учетом отличия модели безопасности для портала от модели безопасности для CRM](#portal-security)</li></ul> |
-| **Служба хранилища Azure** | <ul><li>[Предоставьте детальное разрешение диапазону сущностей в хранилище таблиц Azure](#permission-entities)</li><li>[С помощью Azure Resource Manager включите для учетной записи хранения Azure управление доступом на основе ролей (RBAC)](#rbac-azure-manager)</li></ul> |
+| **Хранилище Azure** | <ul><li>[Предоставьте детальное разрешение диапазону сущностей в хранилище таблиц Azure](#permission-entities)</li><li>[С помощью Azure Resource Manager включите для учетной записи хранения Azure управление доступом на основе ролей (RBAC)](#rbac-azure-manager)</li></ul> |
 | **Мобильный клиент** | <ul><li>[Реализуйте неявное обнаружение снятия защиты или получение административного доступа](#rooting-detection)</li></ul> |
 | **WCF** | <ul><li>[Слабая ссылка на класс в WCF](#weak-class-wcf)</li><li>[Реализация управления авторизацией в WCF](#wcf-authz)</li></ul> |
 | **Веб-интерфейс API** | <ul><li>[Реализуйте надлежащий механизм авторизации в веб-API ASP.NET](#authz-aspnet)</li></ul> |

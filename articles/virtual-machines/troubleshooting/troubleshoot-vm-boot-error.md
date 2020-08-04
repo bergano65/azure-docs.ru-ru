@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 08/28/2019
 ms.author: tiag
-ms.openlocfilehash: 5353bad3ff631fd7baa5d9892d38449ba622ea46
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 5a2fd7fcfdae8559bfb39bffff7c73c7082a86aa
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87284682"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543288"
 ---
 # <a name="linux-vm-boots-to-grub-rescue"></a>Виртуальная машина Linux загружается в GRUB
 
@@ -35,7 +35,7 @@ ms.locfileid: "87284682"
 * Если вы получаете ошибку **неизвестная**файловая система, эта ошибка может возникать из-за повреждения файловой системы в загрузочном разделе или неверной конфигурации ядра.
 
    * При возникновении проблем с файловой системой выполните действия, описанные в статье [Восстановление Linux: не удается выполнить подключение SSH к виртуальной машине Linux из-за ошибок файловой системы (fsck, индексных дескрипторов)](/archive/blogs/linuxonazure/linux-recovery-cannot-ssh-to-linux-vm-due-to-file-system-errors-fsck-inodes).
-   * В случае проблем с ядром выполните действия, описанные в статье [Восстановление Linux: ручное устранение проблем, связанных со сбоями в работе ядра](http://linuxonazure.azurewebsites.net/linux-recovery-fixing-non-boot-issues-related-to-kernel-problems-using-chroot/), или [Восстановление Linux. Устранение проблем, связанных с проблемами ядра, с помощью чрут](http://linuxonazure.azurewebsites.net/linux-recovery-fixing-non-boot-issues-related-to-kernel-problems-using-chroot/).
+   * При возникновении проблем с ядром выполните действия, описанные в статье [Восстановление виртуальной машины Linux в Azure из-за проблем загрузки, связанных с ядром](https://support.microsoft.com/help/4091524/how-recover-azure-linux-vm-from-kernel-related-boot-related-issues), или [Восстановление Linux: устранение проблем, связанных с неначальной загрузкой, которые связаны с проблемами ядра с помощью чрут](http://linuxonazure.azurewebsites.net/linux-recovery-fixing-non-boot-issues-related-to-kernel-problems-using-chroot/).
    
 ### <a name="error---file-not-found"></a>Ошибка-файл не найден
 
@@ -65,7 +65,7 @@ ms.locfileid: "87284682"
 
    * Если отсутствующий файл имеет значение `/boot/grub/menu.lst` , эта ошибка относится к более старым версиям ОС (**RHEL 6. x**, **CentOS 6. x** и **Ubuntu 14,04**), поэтому команды могут быть отложены. Запустите старый сервер и проверьте его, чтобы убедиться, что указаны правильные команды.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обзор агента виртуальной машины Azure](../extensions/agent-windows.md)
 * [Обзор расширений и компонентов виртуальной машины под управлением Windows](../extensions/features-windows.md)

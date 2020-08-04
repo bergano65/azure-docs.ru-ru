@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: allensu
-ms.openlocfilehash: d61527a7a57c82c0e1485ef249306618def9a57c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1566de36d6176568b148fde965bb7d3051e6b500
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077935"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543475"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
@@ -66,7 +66,7 @@ ms.locfileid: "87077935"
 |**База данных Azure для MariaDB** | Microsoft.DBforMariaDB/servers    | mariadbServer |
 |**Центр Интернета вещей Azure** | Microsoft.Devices/IotHubs    | Центр Интернета вещей |
 |**Хранилище ключей Azure** | Microsoft.KeyVault/vaults    | Хранилище |
-|**Служба Azure Kubernetes — API Kubernetes** | Microsoft.ContainerService/managedClusters    | managedCluster |
+|**Служба Azure Kubernetes — API Kubernetes** | Microsoft.ContainerService/managedClusters    | управление |
 |**Поиск Azure;** | Microsoft.Search/searchService| searchService|  
 |**Реестр контейнеров Azure** | Microsoft.ContainerRegistry/registries    | реестр |
 |**Конфигурация приложений Azure** | Microsoft.Appconfiguration/configurationStores    | configurationStores |

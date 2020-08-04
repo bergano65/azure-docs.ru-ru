@@ -1,6 +1,6 @@
 ---
 title: Аудит и ведение журналов. Средство моделирования угроз Microsoft Azure | Документация Майкрософт
-description: Устранение угроз, обнаруженных с помощью средства моделирования угроз
+description: Сведения об аудите и ведении журнала в Threat Modeling Tool. См. сведения об устранении рисков и просмотр примеров кода.
 services: security
 documentationcenter: na
 author: jegeib
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: c9d20b3259cf4ea7af263d5e31145ad372db0c77
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bac17073650736df9ec48e951290852e082e9417
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "68728412"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87542999"
 ---
 # <a name="security-frame-auditing-and-logging--mitigations"></a>Механизм безопасности. Аудит и ведение журналов | Устранение проблем 
 

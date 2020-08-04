@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 06/23/2020
-ms.openlocfilehash: 58a8bd6b8e5594f36bf27a3ad76bee137fdd1160
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: bc53a243a58522a76be63536aa721f269ed4759a
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87433217"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87544053"
 ---
 # <a name="deploy-a-model-to-an-azure-kubernetes-service-cluster"></a>Развертывание модели в кластере службы Azure Kubernetes
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -65,7 +65,7 @@ ms.locfileid: "87433217"
 
 - Если вам требуется Load Balancer (цен. категория "Стандартный") (SLB), развернутый в кластере вместо базового Load Balancer (БЛБ), создайте кластер на портале AKS, CLI или SDK, а затем подключите его к рабочей области AML.
 
-- Если вы подключаете кластер AKS с [разрешенным диапазоном IP-адресов для доступа к серверу API](https://docs.microsoft.com/azure/aks/api-server-authorized-ip-ranges), включите диапазоны IP-адресов плоскости AML управления для кластера AKS. Плоскость управления AML развертывается в парных регионах и развертывает в кластере AKS. Без доступа к серверу API не удается развернуть модули. Используйте [диапазоны IP-адресов](https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519) для [парных регионов]( https://docs.microsoft.com/azure/best-practices-availability-paired-regions) при включении диапазонов IP-адресов в кластере AKS.
+- Если вы подключаете кластер AKS с [разрешенным диапазоном IP-адресов для доступа к серверу API](https://docs.microsoft.com/azure/aks/api-server-authorized-ip-ranges), включите диапазоны IP-адресов плоскости управления AML для кластера AKS. Плоскость управления AML развертывается в парных регионах и развертывает в кластере AKS. Без доступа к серверу API не удается развернуть модули. Используйте [диапазоны IP-адресов](https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519) для [парных регионов]( https://docs.microsoft.com/azure/best-practices-availability-paired-regions) при включении диапазонов IP-адресов в кластере AKS.
 
 __Диапазоны IP-адресов аусроизед работают только с Load Balancer (цен. категория "Стандартный").__
  
@@ -423,15 +423,12 @@ print(token)
 >
 > Чтобы получить маркер, необходимо использовать пакет SDK для Машинное обучение Azure или команду [AZ ML Service Get-Access-Token](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest#ext-azure-cli-ml-az-ml-service-get-access-token) .
 
-## <a name="update-the-web-service"></a>Обновление веб-службы
-
-[!INCLUDE [aml-update-web-service](../../includes/machine-learning-update-web-service.md)]
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Безопасное экспериментирование и вывод в виртуальной сети](how-to-enable-virtual-network.md)
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
+* [Обновить веб-службу](how-to-deploy-update-web-service.md)
 * [Использование TLS для защиты веб-службы с помощью Машинного обучения Azure](how-to-secure-web-service.md).
 * [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)
 * [Мониторинг моделей Машинное обучение Azure с помощью Application Insights](how-to-enable-app-insights.md)

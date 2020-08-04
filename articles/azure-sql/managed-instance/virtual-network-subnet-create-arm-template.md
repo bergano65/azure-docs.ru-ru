@@ -12,12 +12,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
 ms.date: 09/12/2019
-ms.openlocfilehash: d6458794b8d3c5ba68109dbc90a075d6a2a577b9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9ec6b7747ad22df96fd8ab5f9b5b5bc1e27b0993
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84711329"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543747"
 ---
 # <a name="create-a-virtual-network-for-azure-sql-managed-instance"></a>Создание виртуальной сети для Управляемого экземпляра SQL Azure
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -47,7 +47,7 @@ ms.locfileid: "84711329"
 
 2. Выберите **Развертывание в Azure**:
 
-   <a target="_blank" href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-sql-managed-instance-azure-environment%2Fazuredeploy.json" rel="noopener" data-linktype="external"> <img src="https://azuredeploy.net/deploybutton.png" data-linktype="external"> </a>
+   [![Изображение, показывающее кнопку "развернуть в Azure".](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-sql-managed-instance-azure-environment%2Fazuredeploy.json)
 
    Эта кнопка открывает форму, которую можно использовать для настройки сетевой среды, в которой можно развернуть Управляемый экземпляр SQL.
 
@@ -60,7 +60,7 @@ ms.locfileid: "84711329"
 
    Вы можете изменить имена виртуальной сети и подсетей и настроить диапазоны IP-адресов, связанные с сетевыми ресурсами. После нажатия кнопки **Купить** эта форма создаст и настроит вашу среду. Если вам не нужны две подсети, можно удалить подсеть, заданную по умолчанию.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Общие сведения см. в разделе [что такое SQL управляемый экземпляр?](sql-managed-instance-paas-overview.md).
 - Узнайте о [архитектуре подключения в управляемый экземпляр SQL](connectivity-architecture-overview.md).

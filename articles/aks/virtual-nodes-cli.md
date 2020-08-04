@@ -6,12 +6,12 @@ services: container-service
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.custom: references_regions
-ms.openlocfilehash: d1cfbe1db33661dd712dfbc53670fb8f0525a481
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 1e62af4f2ab8233125777bf6edf713758e4f2ec7
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86507035"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543084"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-using-the-azure-cli"></a>Создание и настройка кластера Службы Azure Kubernetes (AKS) для использования виртуальных узлов с помощью Azure CLI
 
@@ -69,6 +69,7 @@ az provider register --namespace Microsoft.ContainerInstance
 * [Аргументы](../container-instances/container-instances-exec.md#restrictions) для exec в ACI.
 * [DaemonSet](concepts-clusters-workloads.md#statefulsets-and-daemonsets) не будет выполнять развертывание контейнеров pod на виртуальном узле.
 * Виртуальные узлы поддерживают планирование контейнеров pod для Linux. Чтобы запланировать контейнеры Windows Server в ACI, можно вручную установить поставщик [Virtual Kubelet ACI](https://github.com/virtual-kubelet/azure-aci) с открытым кодом.
+* Для виртуальных узлов требуются кластеры AKS с Azure CNI Networking
 
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 

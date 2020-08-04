@@ -1,6 +1,6 @@
 ---
 title: 'Документация по анализу кода безопасности Майкрософт: вопросы и ответы'
-description: Эта статья содержит ответы на часто задаваемые вопросы о расширении анализа кода безопасности Microsoft
+description: Узнайте о расширении анализа кода безопасности Майкрософт, просмотрев часто задаваемые вопросы.
 author: sukhans
 manager: sukhans
 ms.author: terrylan
@@ -12,12 +12,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: df995f60867cb2062330e19a2ccfb8c29f173653
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f872159e538dc85121a7a6d4d6503fd18a263628
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87071438"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543050"
 ---
 # <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 Есть вопросы? Дополнительные сведения см. в следующих часто задаваемых вопросах.
@@ -158,7 +158,7 @@ ms.locfileid: "87071438"
 
 Следующие ресурсы помогут безопасно управлять секретами и получать доступ к конфиденциальным сведениям из приложений.
 
- - [Azure Key Vault](../../key-vault/index.yml)
+ - [Azure Key Vault](../../key-vault/index.yml);
  - [Azure Active Directory (Azure AD)](../../azure-sql/database/authentication-aad-overview.md)
  - [Управляемое удостоверение службы Azure AD (MSI)](https://azure.microsoft.com/blog/keep-credentials-out-of-code-introducing-azure-ad-managed-service-identity/)
  - [Управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md)
@@ -222,7 +222,7 @@ ms.locfileid: "87071438"
 
 Задаче сборки Roslyn Analyzers необходимо запросить Azure DevOps для журнала MSBuild из задачи сборки MSBuild. Если задача анализатора запускается сразу после задачи MSBuild, журнал еще не будет доступен. Поместите другие задачи между задачей MSBuild и задачей Roslyn Analyzers. К примерам других задач относятся Бинским и сканер защиты от вредоносных программ.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вам нужна дополнительная помощь, поддержка анализа кода безопасности Майкрософт доступна с понедельника по пятницу с 9:00 до 5:00 по тихоокеанскому времени.
 

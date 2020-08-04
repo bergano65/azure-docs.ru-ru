@@ -1,6 +1,6 @@
 ---
 title: Безопасность инфраструктуры Azure | Документы Майкрософт
-description: В этой статье описывается, как корпорация Майкрософт обеспечивает безопасность центров обработки данных Azure.
+description: Узнайте, как корпорация Майкрософт работает над обеспечением безопасности центров обработки данных Azure. Контроль, управление и администрирование центров обработки данных осуществляется операционным персоналом Майкрософт.
 services: security
 documentationcenter: na
 author: TerryLanfear
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/18/2019
 ms.author: terrylan
-ms.openlocfilehash: 10aecff797effb5abebea16a18dd4e02f40de326
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2a9e61ec850d20ab9b630036cd265fbb7f3801ae
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72595407"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543934"
 ---
 # <a name="azure-infrastructure-security"></a>Безопасность инфраструктуры Azure
 Microsoft Azure работает в центрах обработки данных, управляемых и обслуживаемых корпорацией Майкрософт. Эти географически распределенные центры обработки данных соответствуют основным отраслевым стандартам обеспечения безопасности и надежности, например ISO/IEC 27001:2013 и NIST SP 800-53. Контроль, управление и администрирование центров обработки данных осуществляется операционным персоналом Майкрософт. Наши специалисты имеют многолетний опыт обслуживания крупнейшей в мире сети веб-служб с круглосуточным доступом.
@@ -36,10 +36,10 @@ Microsoft Azure работает в центрах обработки данны
 - [База данных SQL](infrastructure-sql.md)
 - [Операции](infrastructure-operations.md)
 - [Мониторинг](infrastructure-monitoring.md)
-- [Контроля](infrastructure-integrity.md)
+- [Целостность](infrastructure-integrity.md)
 - [Защита данных](protection-customer-data.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Общие сведения об [общей ответственности в облаке](shared-responsibility.md).
 
