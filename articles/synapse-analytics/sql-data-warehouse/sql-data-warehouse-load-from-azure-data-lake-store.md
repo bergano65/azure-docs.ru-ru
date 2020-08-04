@@ -11,12 +11,12 @@ ms.date: 06/07/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: fcebf66dba2fc13457ca359b81565fc5870032c9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c634b4f7ac3aa1fe83e6ab3f863e998b8d25232c
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85213301"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87533943"
 ---
 # <a name="load-data-from-azure-data-lake-storage-for-synapse-sql"></a>Загрузка данных из Azure Data Lake Storage для Synapse SQL
 
@@ -39,7 +39,7 @@ ms.locfileid: "85213301"
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
 * Пул SQL. Узнайте, как [создать пул SQL и запросить данные](create-data-warehouse-portal.md).
-* Учетная запись Data Lake Storage. Узнайте, как [приступить к работе с Azure Data Lake Storage](../../data-lake-store/data-lake-store-get-started-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Для этой учетной записи хранения необходимо настроить или указать один из следующих учетных данных для загрузки: ключ учетной записи хранения, ключ подписанного URL-адрес (SAS), пользователь приложения Azure Directory или пользователь AAD с соответствующей ролью RBAC для учетной записи хранения.
+* Учетная запись Data Lake Storage. Узнайте, как [приступить к работе с Azure Data Lake Storage](../../data-lake-store/data-lake-store-get-started-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Для этой учетной записи хранения необходимо настроить или указать один из следующих учетных данных для загрузки: ключ учетной записи хранения, ключ подписанного URL-адрес (SAS), пользователь приложения Azure Directory или пользователь AAD с соответствующей ролью Azure для учетной записи хранения.
 
 ## <a name="create-the-target-table"></a>Создание целевой таблицы
 

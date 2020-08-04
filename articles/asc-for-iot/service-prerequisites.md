@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 09/25/2019
 ms.author: mlottner
 ms.custom: references_regions
-ms.openlocfilehash: 19e4ea37aa10c90d15a2b7dcdf962c131c8e473d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9ce903271accd3f63df7634dc5045932655ac2a7
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84193210"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87531155"
 ---
 # <a name="azure-security-center-for-iot-prerequisites"></a>Предварительные требования для центра безопасности Azure для IoT
 
@@ -30,7 +30,7 @@ ms.locfileid: "84193210"
 ## <a name="minimum-requirements"></a>Минимальные требования
 
 - Уровень "Стандартный" центра Интернета вещей
-  - Привилегии уровня **владельца** роли RBAC
+  - Привилегии уровня **владельца** роли Azure
 - [Рабочая область Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace)
 - Центр безопасности Azure (рекомендуется)
   - Использование центра безопасности Azure является рекомендацией, а не требованием. Без центра безопасности Azure вы не сможете просматривать другие ресурсы Azure в центре Интернета вещей.
@@ -61,8 +61,8 @@ ms.locfileid: "84193210"
 - Западная Европа
 - Северная Европа
 - Западная Япония
-- Восточная Япония
-- Юго-Восточная часть Австралии
+- Japan East
+- Australia Southeast
 - Восточная Австралия
 - Восточная Азия
 - Юго-Восточная Азия
@@ -85,7 +85,7 @@ ms.locfileid: "84193210"
 
 Центр безопасности Azure для агентов IoT поддерживает растущей список устройств и платформ. Просмотрите [список поддерживаемых платформ](how-to-deploy-agent.md) , чтобы проверить существующую или запланированную библиотеку устройств.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [обзором](overview.md) безопасности Azure IOT
 - Сведения о [включении службы](quickstart-onboard-iot-hub.md)

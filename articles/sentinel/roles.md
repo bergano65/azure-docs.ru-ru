@@ -15,18 +15,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/28/2020
 ms.author: yelevin
-ms.openlocfilehash: 95a966799b4cb66b74d998df9c58958b9b89ecdb
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: b907fead145847d54b8b1de196586b65101b22ed
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87374224"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87534011"
 ---
 # <a name="permissions-in-azure-sentinel"></a>Разрешения в Azure Sentinel
 
 Azure Sentinel использует [Управление доступом на основе ролей (RBAC)](../role-based-access-control/role-assignments-portal.md) для предоставления [встроенных ролей](../role-based-access-control/built-in-roles.md)   , которые могут быть назначены пользователям, группам и службам в Azure.
 
-Используйте RBAC для создания и назначения ролей в группе операций безопасности, чтобы предоставить соответствующий доступ к Azure Sentinel. Различные роли обеспечивают точный контроль над тем, что могут видеть пользователи Sentinel. Роли RBAC можно назначать в рабочей области Azure Sentinel напрямую (см. Примечание ниже) или в подписке или группе ресурсов, к которой принадлежит Рабочая область, которая будет наследоваться в Azure.
+Используйте RBAC для создания и назначения ролей в группе операций безопасности, чтобы предоставить соответствующий доступ к Azure Sentinel. Различные роли обеспечивают точный контроль над тем, что могут видеть пользователи Sentinel. Роли Azure можно назначать в рабочей области Azure Sentinel напрямую (см. Примечание ниже) или в подписке или группе ресурсов, к которой принадлежит Рабочая область, который будет наследоваться в Azure.
 
 ## <a name="roles-for-working-in-azure-sentinel"></a>Роли для работы в Azure Sentinel
 
@@ -64,7 +64,7 @@ Azure Sentinel использует [Управление доступом на
 
 ### <a name="other-roles-you-might-see-assigned"></a>Другие роли, которые могут быть назначены
 
-При назначении ролей RBAC, относящихся к конкретным Sentinel Azure, вы можете использовать другие роли и Log Analytics RBAC, которые могли быть назначены пользователям в других целях. Следует иметь в виду, что эти роли предоставляют более широкий набор разрешений, включая доступ к рабочей области Azure Sentinel и другим ресурсам:
+При назначении ролей Azure, зависящих от Sentinel, вы можете использовать другие роли Azure и Log Analytics Azure, которые могли быть назначены пользователям в других целях. Следует иметь в виду, что эти роли предоставляют более широкий набор разрешений, включая доступ к рабочей области Azure Sentinel и другим ресурсам:
 
 - **Роли Azure:** [владелец](../role-based-access-control/built-in-roles.md#owner), [участник](../role-based-access-control/built-in-roles.md#contributor)и [читатель](../role-based-access-control/built-in-roles.md#reader). Роли Azure предоставляют доступ ко всем ресурсам Azure, включая рабочие области Log Analytics и Azure Sentinel Resources.
 

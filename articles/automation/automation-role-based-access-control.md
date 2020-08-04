@@ -6,12 +6,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 07/21/2020
 ms.topic: conceptual
-ms.openlocfilehash: c7051cca9029283b150eea0519aa7432d6a9c937
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 21742d2db6a7fde69568e5fd1e5eda98542faa47
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420487"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87528674"
 ---
 # <a name="manage-role-permissions-and-security"></a>Управление разрешениями ролей и безопасностью
 
@@ -19,7 +19,7 @@ ms.locfileid: "87420487"
 
 ## <a name="roles-in-automation-accounts"></a>Роли в учетных записях службы автоматизации
 
-В службе автоматизации Azure доступ предоставляется путем назначения соответствующей роли RBAC пользователям, группам и приложениям в области учетной записи автоматизации. Ниже перечислены встроенные роли, поддерживаемые учетной записью автоматизации.
+В службе автоматизации Azure доступ предоставляется путем назначения соответствующей роли Azure пользователям, группам и приложениям в области учетной записи службы автоматизации. Ниже перечислены встроенные роли, поддерживаемые учетной записью автоматизации.
 
 | **Роль** | **Описание** |
 |:--- |:--- |
@@ -319,7 +319,7 @@ ms.locfileid: "87420487"
 
 Доступ к учетной записи службы автоматизации на основе ролей можно также настроить с помощью указанных ниже [командлетов Azure PowerShell](../role-based-access-control/role-assignments-powershell.md).
 
-Командлет [Get-AzRoleDefinition](/powershell/module/Az.Resources/Get-AzRoleDefinition?view=azps-3.7.0) выводит список всех ролей RBAC, доступных в Azure Active Directory. При использовании с параметром `Name` этот командлет возвращает список всех действий, которые может выполнить определенная роль.
+[Get-азроледефинитион](/powershell/module/Az.Resources/Get-AzRoleDefinition?view=azps-3.7.0) перечисляет все роли Azure, доступные в Azure Active Directory. При использовании с параметром `Name` этот командлет возвращает список всех действий, которые может выполнить определенная роль.
 
 ```azurepowershell-interactive
 Get-AzRoleDefinition -Name 'Automation Operator'

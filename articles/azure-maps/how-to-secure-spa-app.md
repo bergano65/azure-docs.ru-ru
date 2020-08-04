@@ -10,12 +10,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 5b7f26a03c117620be7c16abaf689763e370e5ba
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 0aa688d6e56629ca376844ce2d0669197b1bb2b7
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285702"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87531351"
 ---
 # <a name="how-to-secure-a-single-page-application-with-non-interactive-sign-in"></a>Как защитить одностраничное приложение с помощью неинтерактивного входа
 
@@ -102,7 +102,7 @@ ms.locfileid: "87285702"
 
 ## <a name="grant-role-based-access"></a>Предоставление доступа на основе ролей
 
-Вы предоставляете *Управление доступом на основе ролей* (RBAC), назначив назначенное системой удостоверение одному или нескольким определениям ролей Azure. Чтобы просмотреть определения ролей RBAC, доступные для Azure Maps, перейдите в раздел **Управление доступом (IAM)**. Выберите **роли**, а затем найдите роли, которые начинаются с *Azure Maps*.
+Вы предоставляете *Управление доступом на основе ролей* (RBAC), назначив назначенное системой удостоверение одному или нескольким определениям ролей Azure. Чтобы просмотреть определения ролей Azure, доступные для Azure Maps, перейдите в раздел **Управление доступом (IAM)**. Выберите **роли**, а затем найдите роли, которые начинаются с *Azure Maps*.
 
 1. Перейдите к **учетной записи Azure Maps**. Выберите назначение ролей **управления доступом (IAM)**  >  **Role assignment**.
 

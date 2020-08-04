@@ -10,12 +10,12 @@ ms.date: 05/01/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0a1083c1889fbd83a1b8bd119a71013b738d7f74
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: fa4a649115f8e89c27f435888b682b7de36e9894
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87499540"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87533926"
 ---
 # <a name="create-an-image-version-from-a-vm-in-azure-using-the-azure-cli"></a>Создание версии образа из виртуальной машины в Azure с помощью Azure CLI
 
@@ -100,7 +100,7 @@ az sig image-version create \
 > [!NOTE]
 > Прежде чем использовать тот же управляемый образ для создания другой версии образа, необходимо дождаться завершения сборки и репликации версии образа.
 >
-> Вы также можете сохранить образ в хранилище класса Premium, добавив `--storage-account-type  premium_lrs`, или [хранилище, избыточное между зонами](../storage/common/storage-redundancy.md), добавив `--storage-account-type  standard_zrs` при создании версии образа.
+> Вы также можете сохранить образ в хранилище класса Premium, добавив `--storage-account-type  premium_lrs` [хранилище или избыточное в зону](../storage/common/storage-redundancy.md) , добавив `--storage-account-type  standard_zrs` его при создании версии образа.
 >
 
 ## <a name="next-steps"></a>Дальнейшие действия

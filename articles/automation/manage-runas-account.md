@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 06/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: a3f48c9f15d12fbfc41ac8baf589f8579f259377
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: c2d6e026f87211260a2cf45c0623806cc024b44e
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421490"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87530672"
 ---
 # <a name="manage-an-azure-automation-run-as-account"></a>Управление учетной записью запуска от имени службы автоматизации Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "87421490"
 |Создание приложения Azure AD|[New-AzADApplication](/powershell/module/az.resources/new-azadapplication)     | Роль разработчика приложения<sup>1</sup>        |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app)</br>"Главная" > "Azure AD" > "Регистрация приложений" |
 |Добавление учетных данных приложения|[New-AzADAppCredential](/powershell/module/az.resources/new-azadappcredential)     | Администратор приложений или глобальный администратор<sup>1</sup>         |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app)</br>"Главная" > "Azure AD" > "Регистрация приложений"|
 |Создание или получение субъекта-службы Azure AD|[New-AzADServicePrincipal](/powershell/module/az.resources/new-azadserviceprincipal)</br>[Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal)     | Администратор приложений или глобальный администратор<sup>1</sup>        |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app)</br>"Главная" > "Azure AD" > "Регистрация приложений"|
-|Назначение или получение роли RBAC для указанного субъекта|[New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment)</br>[Get-AzRoleAssignment](/powershell/module/Az.Resources/Get-AzRoleAssignment)      | Администратор доступа пользователей, владелец или пользователь со следующими разрешениями:</br></br><code>Microsoft.Authorization/Operations/read</br>Microsoft.Authorization/permissions/read</br>Microsoft.Authorization/roleDefinitions/read</br>Microsoft.Authorization/roleAssignments/write</br>Microsoft.Authorization/roleAssignments/read</br>Microsoft.Authorization/roleAssignments/delete</code></br></br> | [Подписка](../role-based-access-control/role-assignments-portal.md)</br>Подписки главной > > \<subscription name\> — Управление доступом (IAM)|
+|Назначение или получение роли Azure для указанного субъекта|[New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment)</br>[Get-AzRoleAssignment](/powershell/module/Az.Resources/Get-AzRoleAssignment)      | Администратор доступа пользователей, владелец или пользователь со следующими разрешениями:</br></br><code>Microsoft.Authorization/Operations/read</br>Microsoft.Authorization/permissions/read</br>Microsoft.Authorization/roleDefinitions/read</br>Microsoft.Authorization/roleAssignments/write</br>Microsoft.Authorization/roleAssignments/read</br>Microsoft.Authorization/roleAssignments/delete</code></br></br> | [Подписка](../role-based-access-control/role-assignments-portal.md)</br>Подписки главной > > \<subscription name\> — Управление доступом (IAM)|
 |Создание или удаление сертификата службы автоматизации|[New-AzAutomationCertificate](/powershell/module/Az.Automation/New-AzAutomationCertificate)</br>[Remove-AzAutomationCertificate](/powershell/module/az.automation/remove-azautomationcertificate)     | Участник группы ресурсов         |Группа ресурсов учетной записи службы автоматизации|
 |Создание или удаление подключения службы автоматизации|[New-AzAutomationConnection](/powershell/module/az.automation/new-azautomationconnection)</br>[Remove-AzAutomationConnection](/powershell/module/az.automation/remove-azautomationconnection)|Участник группы ресурсов |Группа ресурсов учетной записи службы автоматизации|
 

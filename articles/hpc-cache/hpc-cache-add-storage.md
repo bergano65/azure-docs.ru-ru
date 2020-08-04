@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 07/08/2020
 ms.author: v-erkel
-ms.openlocfilehash: 6923bb31e53493dd01f41cb0b0449f2093bc7e91
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7ad910823c4dd2430aeae085dd8e510fcd42c80f
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092479"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87532600"
 ---
 # <a name="add-storage-targets"></a>Добавление целевых объектов хранилища
 
@@ -47,7 +47,7 @@ az hpc-cache storage-target list --resource-group "scgroup" --cache-name "sc1"
 
 Чтобы просмотреть сведения о конкретном целевом объекте хранилища, используйте команду [AZ HPC — хранилище кэша — целевое отображение](/cli/azure/ext/hpc-cache/hpc-cache/storage-target#ext-hpc-cache-az-hpc-cache-storage-target-list) . (Укажите целевой объект хранилища по имени.)
 
-Пример.
+Пример
 
 ```azurecli
 $ az hpc-cache storage-target show --cache-name doc-cache0629 --name nfsd1
@@ -118,7 +118,7 @@ $
 
 Это можно сделать заранее или щелкнув ссылку на странице, где вы добавите целевой объект хранилища BLOB-объектов. Помните, что для распространения параметров роли в среде Azure может потребоваться до пяти минут, поэтому необходимо подождать несколько минут после добавления ролей перед созданием целевого объекта хранилища.
 
-Шаги для добавления ролей RBAC:
+Шаги для добавления ролей Azure:
 
 1. Откройте страницу **управления доступом (IAM)** для учетной записи хранения. (Ссылка на странице **Добавление целевого объекта хранилища** автоматически открывает эту страницу для выбранной учетной записи.)
 
@@ -220,9 +220,9 @@ az hpc-cache blob-storage-target add --resource-group "hpc-cache-group" \
 
 | Модель использования                   | Режим кэширования | Проверка серверной части | Максимальная задержка записи на сервер |
 |-------------------------------|--------------|-----------------------|--------------------------|
-| Частое чтение, редкие операции записи | Чтение         | Никогда                 | Отсутствуют                     |
+| Частое чтение, редкие операции записи | Чтение         | Никогда                 | None                     |
 | Более 15% операций записи       | Чтение/запись   | Никогда                 | 1 час                   |
-| Клиенты обходят кэш      | Чтение         | 30 секунд            | Отсутствуют                     |
+| Клиенты обходят кэш      | Чтение         | 30 секунд            | None                     |
 
 ### <a name="create-an-nfs-storage-target"></a>Создание целевого объекта хранилища NFS
 
@@ -282,7 +282,7 @@ az hpc-cache blob-storage-target add --resource-group "hpc-cache-group" \
   * ``nfs-export``— Экспорт системы хранения, связываемый с путем, ориентированным на клиента
   * ``target-path``(необязательно) — подкаталог экспорта (при необходимости).
 
-  Пример: ``--junction namespace-path="/nas-1" nfs-export="/datadisk1" target-path="/test"``
+  Например, ``--junction namespace-path="/nas-1" nfs-export="/datadisk1" target-path="/test"``.
 
   Дополнительные сведения о функции виртуального пространства имен см. в статье [Настройка агрегированного пространства имен](hpc-cache-namespace.md) .
 

@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 08/01/2019
+ms.date: 08/03/2020
 ms.author: jingwang
-ms.openlocfilehash: 50d893ef42c7b870d5fbf2be1feed798d46c86a7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 78e7fc6b2a4c9804fbba60aa9946cc612b494461
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81409971"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87531291"
 ---
 # <a name="copy-data-from-zoho-using-azure-data-factory-preview"></a>Копирование данных из Zoho с помощью фабрики данных Azure (предварительная версия)
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -36,6 +36,8 @@ ms.locfileid: "81409971"
 
 Данные из Zoho можно скопировать в любое поддерживаемое хранилище данных, используемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
+Этот соединитель поддерживает аутентификацию Xero доступа по маркеру и OAuth 2,0.
+
 Фабрика данных Azure имеет встроенный драйвер для настройки подключения. Поэтому с использованием этого соединителя вам не нужно устанавливать драйверы вручную.
 
 ## <a name="getting-started"></a>Начало работы
@@ -50,14 +52,20 @@ ms.locfileid: "81409971"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **Zoho** | Да |
+| type | Для свойства type необходимо задать значение **Zoho** | да |
+| connectionProperties | Группа свойств, определяющих способ подключения к Zoho. | да |
+| ***В разделе `connectionProperties` :*** | | |
 | endpoint | Конечная точка сервера Zoho (`crm.zoho.com/crm/private`). | Да |
+| authenticationType | Допустимые значения: `OAuth_2.0` и `Access Token` . | да |
+| clientid | Идентификатор клиента, связанный с приложением Zoho. | Да для проверки подлинности OAuth 2,0 | 
+| клиентсекрект | Clientsecret, связанный с приложением Zoho. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да для проверки подлинности OAuth 2,0 | 
+| refreshtoken | Маркер обновления OAuth 2,0, связанный с приложением Zoho, который используется для обновления маркера доступа по истечении срока его действия. Срок действия маркера обновления никогда не истечет. Чтобы получить маркер обновления, необходимо запросить `offline` access_type. Дополнительные сведения см. в [этой статье](https://www.zoho.com/crm/developer/docs/api/auth-request.html). <br>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md).| Да для проверки подлинности OAuth 2,0 |
 | accessToken | Маркер доступа для аутентификации Zoho. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | Нет |
 | useHostVerification | Указывает, должно ли имя узла в сертификате сервера совпадать с именем узла сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
 | usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
 
-**Пример.**
+**Пример: проверка подлинности OAuth 2,0**
 
 ```json
 {
@@ -65,11 +73,50 @@ ms.locfileid: "81409971"
     "properties": {
         "type": "Zoho",
         "typeProperties": {
-            "endpoint" : "crm.zoho.com/crm/private",
-            "accessToken": {
-                 "type": "SecureString",
-                 "value": "<accessToken>"
-            }
+            "connectionProperties": { 
+                "authenticationType":"OAuth_2.0", 
+                "endpoint": "crm.zoho.com/crm/private", 
+                "clientId": "<client ID>", 
+                "clientSecrect": {
+                    "type": "SecureString",
+                    "value": "<client secret>"
+                },
+                "accessToken": {
+                    "type": "SecureString",
+                    "value": "<access token>"
+                }, 
+                "refreshToken": {
+                    "type": "SecureString",
+                    "value": "<refresh token>"
+                }, 
+                "useEncryptedEndpoints": true,
+                "useHostVerification": true, 
+                "usePeerVerification": true
+            }
+        }
+    }
+}
+```
+
+**Пример: проверка подлинности маркера доступа**
+
+```json
+{
+    "name": "ZohoLinkedService",
+    "properties": {
+        "type": "Zoho",
+        "typeProperties": {
+            "connectionProperties": { 
+                "authenticationType":"Access Token", 
+                "endpoint": "crm.zoho.com/crm/private", 
+                "accessToken": {
+                    "type": "SecureString",
+                    "value": "<access token>"
+                }, 
+                "useEncryptedEndpoints": true, 
+                "useHostVerification": true, 
+                "usePeerVerification": true
+            }
         }
     }
 }
@@ -83,7 +130,7 @@ ms.locfileid: "81409971"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **зохубжект** . | Да |
+| type | Свойство Type набора данных должно иметь значение **зохубжект** . | да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -113,7 +160,7 @@ ms.locfileid: "81409971"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство type источника действия копирования должно иметь значение **ZohoSource**. | Да |
+| type | Свойство type источника действия копирования должно иметь значение **ZohoSource**. | да |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"SELECT * FROM Accounts"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример**.

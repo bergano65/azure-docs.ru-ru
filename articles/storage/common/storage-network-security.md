@@ -9,12 +9,12 @@ ms.date: 07/16/2020
 ms.author: tamram
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: d45b792c655820b771ba956721e9169750c39fbd
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: a6f59fff351ecdae82ef7175d54e3b2ab1b7d30b
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475419"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87534113"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -365,7 +365,7 @@ ms.locfileid: "87475419"
 Некоторые службы Майкрософт работают с сетями, которые нельзя включить в сетевые правила. Вы можете предоставить подмножеству таких доверенных служб Майкрософт доступ к учетной записи хранения, поддерживая сетевые правила для других приложений. Эти доверенные службы будут затем использовать строгую проверку подлинности для безопасного подключения к вашей учетной записи хранения. Мы включили два режима доверенного доступа для служб Майкрософт.
 
 - Ресурсы некоторых служб **при регистрации в вашей подписке** могут получить доступ к вашей учетной записи хранения **в той же подписке** для выполнения некоторых операций, например для записи в журналы или резервного копирования.
-- Ресурсам некоторых служб может быть предоставлен явный доступ к вашей учетной записи хранения путем **назначения роли RBAC** их управляемому удостоверению, назначенному системой.
+- Ресурсам некоторых служб можно предоставить явный доступ к учетной записи хранения, **назначив роли Azure** управляемому удостоверению, назначенному системой.
 
 
 При включении параметра **Разрешить доверенные службы Майкрософт...** ресурсам следующих служб, зарегистрированным в той же подписке, что и ваша учетная запись хранения, предоставляется доступ для выполнения ограниченного набора операций, как описано ниже.
@@ -384,11 +384,11 @@ ms.locfileid: "87475419"
 | Сеть Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика, в том числе с помощью наблюдателя за сетями и служб Аналитика трафика. [Подробнее](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview). |
 | Azure Site Recovery      | Microsoft.SiteRecovery     | Включение репликации для аварийного восстановления виртуальных машин IaaS Azure при использовании кэша, источника или целевых учетных записей хранения с поддержкой брандмауэра.  [Подробнее](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication). |
 
-Параметр **Разрешить доверенные службы Майкрософт...** также позволяет определенному экземпляру следующих служб получать доступ к учетной записи хранения, если вы явно [назначите роль RBAC](storage-auth-aad.md#assign-rbac-roles-for-access-rights) [управляемому удостоверению, назначаемому системой](../../active-directory/managed-identities-azure-resources/overview.md), для этого экземпляра ресурса. В таком случае область доступа для этого экземпляра соответствует роли RBAC, назначенной управляемому удостоверению.
+Параметр **Разрешить доверенные службы Майкрософт...** также позволяет определенному экземпляру следующих служб получить доступ к учетной записи хранения, если [роль Azure](storage-auth-aad.md#assign-azure-roles-for-access-rights) явно назначена [управляемому удостоверению, назначенному системой](../../active-directory/managed-identities-azure-resources/overview.md) для этого экземпляра ресурса. В этом случае область доступа для экземпляра соответствует роли Azure, назначенной управляемому удостоверению.
 
 | Служба                        | Имя поставщика ресурсов                 | Назначение            |
 | :----------------------------- | :------------------------------------- | :----------------- |
-| Служба управления Azure API           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее](/azure/api-management/api-management-authentication-policies#use-managed-identity-in-send-request-policy). |
+| Служба управления Azure API           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее.](/azure/api-management/api-management-authentication-policies#use-managed-identity-in-send-request-policy) |
 | Когнитивный поиск Azure         | Microsoft.Search/searchServices        | Разрешает службам Когнитивного поиска доступ к учетным записям хранения для индексирования, обработки и выполнения запросов. |
 | Задачи Реестра контейнеров Azure | Microsoft.ContainerRegistry/registries | Задачи Реестра контейнеров Azure могут получать доступ к учетным записям хранения при создании образов контейнеров. |
 | Фабрика данных Azure             | Microsoft.DataFactory/factories;        | Разрешает доступ к учетным записям хранения через среду ADF. |
@@ -396,8 +396,8 @@ ms.locfileid: "87475419"
 | Центр Интернета вещей Azure                  | Microsoft.Devices/IotHubs              | Позволяет записывать данные из центра Интернета вещей в хранилище BLOB-объектов. [Дополнительные сведения](../../iot-hub/virtual-network-support.md#egress-connectivity-to-storage-account-endpoints-for-routing) |
 | Azure Logic Apps               | Microsoft.Logic/workflows              | Позволяет приложениям логики получать доступ к учетным записям хранения. [Подробнее](/azure/logic-apps/create-managed-service-identity#authenticate-access-with-managed-identity). |
 | Служба "Машинное обучение Azure" | Microsoft.MachineLearningServices      | Авторизованные рабочие области Машинного обучения Azure записывают выходные данные эксперимента, модели и журналы в хранилище BLOB-объектов и читают данные. [Подробнее](/azure/machine-learning/how-to-enable-virtual-network#use-a-storage-account-for-your-workspace). | 
-| Хранилище данных SQL Azure       | Microsoft.Sql                          | Позволяет выполнять импорт и экспорт данных в конкретных экземплярах базы данных SQL с помощью PolyBase. [Подробнее](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview). |
-| База данных SQL Azure       | Microsoft.Sql                          | Позволяет [импортировать](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver15#f-importing-data-from-a-file-in-azure-blob-storage) данные из учетных записей хранения и [записывать](https://docs.microsoft.com/azure/azure-sql/database/audit-write-storage-account-behind-vnet-firewall) данные аудита в учетные записи хранения, защищенные брандмауэром. |
+| Хранилище данных SQL Azure       | Microsoft.Sql                          | Позволяет выполнять импорт и экспорт данных в конкретных экземплярах базы данных SQL с помощью PolyBase. [Подробнее.](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview) |
+| База данных SQL Azure       | Microsoft.Sql                          | Позволяет [импортировать](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver15#f-importing-data-from-a-file-in-azure-blob-storage) данные из учетных записей хранения и [записывать](https://docs.microsoft.com/azure/azure-sql/database/audit-write-storage-account-behind-vnet-firewall) данные аудита в учетные записи хранения, защищенные брандмауэром. |
 | Azure Stream Analytics         | Microsoft.StreamAnalytics             | Позволяет записывать данные из задания потоковой передачи в хранилище BLOB-объектов. Эта функция в настоящее время находится на стадии предварительной версии. [Подробнее](/azure/stream-analytics/blob-output-managed-identity). |
 | Azure Synapse Analytics        | Microsoft.Synapse/workspaces          | Обеспечивает доступ к данным в службе хранилища Azure из Synapse Analytics. |
 

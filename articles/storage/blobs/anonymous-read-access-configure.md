@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 07/23/2020
+ms.date: 08/02/2020
 ms.author: tamram
 ms.reviewer: fryu
-ms.openlocfilehash: daf4eb4492f723b049dc62a16351e04ffc252337
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 3a45f185a20345dac00bd459789afc9d53bd48f7
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87289247"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87534317"
 ---
 # <a name="configure-anonymous-public-read-access-for-containers-and-blobs"></a>Настройка анонимного общего доступа на чтение для контейнеров и больших двоичных объектов
 
@@ -50,7 +50,9 @@ ms.locfileid: "87289247"
 > [!IMPORTANT]
 > Запрет общего доступа для учетной записи хранения переопределяет параметры общего доступа для всех контейнеров в этой учетной записи хранения. Если общий доступ запрещен для учетной записи хранения, все будущие анонимные запросы к этой учетной записи завершатся ошибкой. Перед изменением этого параметра необходимо понимать влияние на клиентские приложения, которые могут обращаться к данным в учетной записи хранения анонимно. Дополнительные сведения см. [в разделе Предотвращение анонимного общего доступа на чтение к контейнерам и BLOB-объектам](anonymous-read-access-prevent.md).
 
-Чтобы разрешить или запретить общий доступ для учетной записи хранения, используйте портал Azure или Azure CLI, чтобы настроить свойство **блобпубликакцесс** учетной записи. Это свойство доступно для всех учетных записей хранения, созданных с помощью модели развертывания Azure Resource Manager. Дополнительные сведения см. в разделе [Общие сведения об учетной записи хранения](../common/storage-account-overview.md).
+Чтобы разрешить или запретить общий доступ для учетной записи хранения, настройте свойство **алловблобпубликакцесс** учетной записи. Это свойство доступно для всех учетных записей хранения, созданных с помощью модели развертывания Azure Resource Manager. Дополнительные сведения см. в разделе [Общие сведения об учетной записи хранения](../common/storage-account-overview.md).
+
+Свойство **алловблобпубликакцесс** не задано по умолчанию и не возвращает значение, пока оно не будет явно задано. Учетная запись хранения обеспечивает открытый доступ, если значение свойства равно **null** или если оно имеет значение **true**.
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
@@ -62,64 +64,118 @@ ms.locfileid: "87289247"
 
     :::image type="content" source="media/anonymous-read-access-configure/blob-public-access-portal.png" alt-text="Снимок экрана, показывающий, как разрешить или запретить общий доступ к BLOB-объектам для учетной записи":::
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Чтобы разрешить или запретить общий доступ к учетной записи хранения с помощью PowerShell, установите [Azure PowerShell версии 4.4.0](https://www.powershellgallery.com/packages/Az/4.4.0) или более поздней. Затем настройте свойство **алловблобпубликакцесс** для новой или существующей учетной записи хранения.
+
+В следующем примере создается учетная запись хранения, и свойству **алловблобпубликакцесс** явно присваивается **значение true**. Затем она обновляет учетную запись хранения, чтобы присвоить свойству **алловблобпубликакцесс** **значение false**. В этом примере также извлекается значение свойства в каждом случае. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
+
+```powershell
+$rgName = "<resource-group>"
+$accountName = "<storage-account>"
+$location = "<location>"
+
+# Create a storage account with AllowBlobPublicAccess set to true (or null).
+New-AzStorageAccount -ResourceGroupName $rgName `
+    -AccountName $accountName `
+    -Location $location `
+    -SkuName Standard_GRS
+    -AllowBlobPublicAccess $false
+
+# Read the AllowBlobPublicAccess property for the newly created storage account.
+(Get-AzStorageAccount -ResourceGroupName $rgName -Name $accountName).AllowBlobPublicAccess
+
+# Set AllowBlobPublicAccess set to false
+Set-AzStorageAccount -ResourceGroupName $rgName `
+    -AccountName $accountName `
+    -AllowBlobPublicAccess $false
+
+# Read the AllowBlobPublicAccess property.
+(Get-AzStorageAccount -ResourceGroupName $rgName -Name $accountName).AllowBlobPublicAccess
+```
+
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Чтобы разрешить или запретить общий доступ для учетной записи хранения с Azure CLI, сначала получите идентификатор ресурса для своей учетной записи хранения, вызвав команду [AZ Resource-шоу](/cli/azure/resource#az-resource-show) . Затем вызовите команду [AZ Resource Update](/cli/azure/resource#az-resource-update) , чтобы задать свойство **алловблобпубликакцесс** для учетной записи хранения. Чтобы предоставить общий доступ, задайте для свойства **алловблобпубликакцесс** значение true. чтобы запретить, присвойте ему значение **false**.
+Чтобы разрешить или запретить общий доступ для учетной записи хранения с Azure CLI, установите Azure CLI версии 2.9.0 или более поздней. Дополнительные сведения см. в статье [Установка Azure CLI](/cli/azure/install-azure-cli). Затем настройте свойство **алловблобпубликакцесс** для новой или существующей учетной записи хранения.
 
-В следующем примере запрещается доступ к общедоступному большому двоичному объекту для учетной записи хранения. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
+В следующем примере создается учетная запись хранения, и свойству **алловблобпубликакцесс** явно присваивается **значение true**. Затем она обновляет учетную запись хранения, чтобы присвоить свойству **алловблобпубликакцесс** **значение false**. В этом примере также извлекается значение свойства в каждом случае. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
 
 ```azurecli-interactive
-storage_account_id=$(az resource show \
-    --name anonpublicaccess \
-    --resource-group storagesamples-rg \
-    --resource-type Microsoft.Storage/storageAccounts \
-    --query id \
-    --output tsv)
+az storage account create \
+    --name <storage-account> \
+    --resource-group <resource-group> \
+    --kind StorageV2 \
+    --location <location> \
+    --allow-blob-public-access true
 
-az resource update \
-    --ids $storage_account_id \
-    --set properties.allowBlobPublicAccess=false
-    ```
+az storage account show \
+    --name <storage-account> \
+    --resource-group <resource-group> \
+    --query allowBlobPublicAccess \
+    --output tsv
+
+az storage account update \
+    --name <storage-account> \
+    --resource-group <resource-group> \
+    --allow-blob-public-access false
+
+az storage account show \
+    --name <storage-account> \
+    --resource-group <resource-group> \
+    --query allowBlobPublicAccess \
+    --output tsv
 ```
+
+# <a name="template"></a>[Шаблон](#tab/template)
+
+Чтобы разрешить или запретить общий доступ к учетной записи хранения с помощью шаблона, создайте шаблон со свойством **алловблобпубликакцесс** , для которого задано значение **true** или **false**. Следующие шаги описывают создание шаблона в портал Azure.
+
+1. В портал Azure выберите **создать ресурс**.
+1. В **поле Поиск в Marketplace**введите **шаблон развертывание**и нажмите клавишу **Ввод**.
+1. Выберите **шаблоны развертывания (развернуть с помощью пользовательских шаблонов) (Предварительная версия)**, нажмите кнопку **создать**, а затем выберите **построить собственный шаблон в редакторе**.
+1. В редакторе шаблонов вставьте следующий код JSON, чтобы создать новую учетную запись, и задайте для свойства **алловблобпубликакцесс** **значение true** или **false**. Не забудьте заменить заполнители в угловых скобках собственными значениями.
+
+    ```json
+    {
+        "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {},
+        "variables": {
+            "storageAccountName": "[concat(uniqueString(subscription().subscriptionId), 'template')]"
+        },
+        "resources": [
+            {
+            "name": "[variables('storageAccountName')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-06-01",
+            "location": "<location>",
+            "properties": {
+                "allowBlobPublicAccess": false
+            },
+            "dependsOn": [],
+            "sku": {
+              "name": "Standard_GRS"
+            },
+            "kind": "StorageV2",
+            "tags": {}
+            }
+        ]
+    }
+    ```
+
+1. при сохранении шаблона;
+1. Укажите параметр группы ресурсов, а затем нажмите кнопку " **Проверка и создание** ", чтобы развернуть шаблон и создать учетную запись хранения с настроенным свойством **алловблобпубликакцесс** .
 
 ---
 
 > [!NOTE]
 > Запрет общего доступа для учетной записи хранения не влияет на статические веб-сайты, размещенные в этой учетной записи хранения. Контейнер **$Web** всегда является общедоступным.
+>
+> После обновления параметра общего доступа для учетной записи хранения может потребоваться до 30 секунд, прежде чем изменение будет полностью распространено.
 
-## <a name="check-whether-public-access-is-allowed-for-a-storage-account"></a>Проверьте, разрешен ли общий доступ к учетной записи хранения.
+Чтобы разрешить или запретить общий доступ к BLOB-объекту, требуется поставщик ресурсов службы хранилища Azure версии 2019-04-01 или более поздней. Дополнительные сведения см. в статье [REST API поставщика ресурсов службы хранилища Azure](/rest/api/storagerp/).
 
-Чтобы проверить, разрешен ли общий доступ к учетной записи хранения, получите значение свойства **алловблобпубликакцесс** . Чтобы проверить это свойство для большого числа учетных записей хранения одновременно, используйте обозреватель графов ресурсов Azure.
-
-> [!IMPORTANT]
-> Свойство **алловблобпубликакцесс** не задано по умолчанию и не возвращает значение, пока оно не будет явно задано. Учетная запись хранения обеспечивает общий доступ, если значение свойства равно **null** или если оно имеет значение **true**.
-
-### <a name="check-whether-public-access-is-allowed-for-a-single-storage-account"></a>Проверьте, разрешен ли общий доступ для одной учетной записи хранения.
-
-Чтобы проверить, разрешен ли общий доступ для одной учетной записи хранения с помощью Azure CLI, вызовите команду [AZ Resource-шоу](/cli/azure/resource#az-resource-show) и выполните запрос для свойства **алловблобпубликакцесс** :
-
-```azurecli-interactive
-az resource show \
-    --name <storage-account> \
-    --resource-group <resource-group> \
-    --resource-type Microsoft.Storage/storageAccounts \
-    --query properties.allowBlobPublicAccess \
-    --output tsv
-```
-
-### <a name="check-whether-public-access-is-allowed-for-a-set-of-storage-accounts"></a>Проверьте, разрешен ли общий доступ для набора учетных записей хранения.
-
-Чтобы проверить, разрешен ли общий доступ для набора учетных записей хранения с оптимальной производительностью, можно использовать обозреватель графа ресурсов Azure в портал Azure. Дополнительные сведения об использовании обозревателя графа ресурсов см. в статье [Краткое руководство. выполнение первого запроса Graph в Azure с помощью обозревателя Graph](/azure/governance/resource-graph/first-query-portal).
-
-При выполнении следующего запроса в обозревателе графа ресурсов возвращается список учетных записей хранения и отображается значение свойства **алловблобпубликакцесс** для каждой учетной записи.
-
-```kusto
-resources
-| where type =~ 'Microsoft.Storage/storageAccounts'
-| extend allowBlobPublicAccess = parse_json(properties).allowBlobPublicAccess
-| project subscriptionId, resourceGroup, name, allowBlobPublicAccess
-| order by subscriptionId, resourceGroup, name asc
-```
+В примерах в этом разделе показано, как прочитать свойство **алловблобпубликакцесс** учетной записи хранения, чтобы определить, разрешен или запрещен общий доступ. Дополнительные сведения о том, как проверить, настроен ли параметр общего доступа учетной записи для предотвращения анонимного доступа, см. в разделе [исправление анонимного общего доступа](anonymous-read-access-prevent.md#remediate-anonymous-public-access).
 
 ## <a name="set-the-public-access-level-for-a-container"></a>Установка общего уровня доступа для контейнера
 
@@ -131,9 +187,7 @@ resources
 - **Общий доступ на чтение только для больших двоичных объектов:** Большие двоичные объекты в контейнере могут считываться анонимным запросом, но данные контейнера недоступны анонимно. Анонимные клиенты не могут перечислять большие двоичные объекты внутри контейнера.
 - **Общий доступ на чтение для контейнера и его больших двоичных объектов:** Данные контейнера и BLOB-объекта могут считываться анонимным запросом, за исключением параметров разрешений контейнера и метаданных контейнера. Клиенты могут перечислять большие двоичные объекты внутри контейнера с помощью анонимного запроса, но не могут перечислять контейнеры в учетной записи хранения.
 
-Нельзя изменить общий уровень доступа для отдельного большого двоичного объекта. Уровень общего доступа задается только на уровне контейнера.
-
-Чтобы задать общий уровень доступа контейнера, используйте портал Azure или Azure CLI. Можно задать общий уровень доступа контейнера при создании контейнера или обновить этот параметр в существующем контейнере.
+Нельзя изменить общий уровень доступа для отдельного большого двоичного объекта. Уровень общего доступа задается только на уровне контейнера. Вы можете задать общий уровень доступа контейнера при создании контейнера или изменить параметр в существующем контейнере.
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
@@ -151,44 +205,81 @@ resources
 
 :::image type="content" source="media/anonymous-read-access-configure/container-public-access-blocked.png" alt-text="Снимок экрана, показывающий, что этот параметр имеет общий уровень доступа, заблокирован, если доступ запрещен":::
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Чтобы обновить общий уровень доступа для одного или нескольких контейнеров с помощью PowerShell, вызовите команду [Set-азсторажеконтаинеракл](/powershell/module/az.storage/set-azstoragecontaineracl) . Авторизовать эту операцию, передав ключ учетной записи, строку подключения или подписанный URL-адрес (SAS). Операция [Set Container ACL](/rest/api/storageservices/set-container-acl) , которая задает общий уровень доступа контейнера, не поддерживает авторизацию в Azure AD. Дополнительные сведения см. в разделе [разрешения на вызов операций с данными большого двоичного объекта и очереди](/rest/api/storageservices/authorize-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations).
+
+В следующем примере создается контейнер с отключенным общим доступом, а затем обновляется параметр общего доступа контейнера, чтобы предоставить анонимный доступ к контейнеру и его BLOB-объектам. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
+
+```powershell
+# Set variables.
+$rgName = "<resource-group>"
+$accountName = "<storage-account>"
+
+# Get context object.
+$storageAccount = Get-AzStorageAccount -ResourceGroupName $rgName -Name $accountName
+$ctx = $storageAccount.Context
+
+# Create a new container with public access setting set to Off.
+$containerName = "<container>"
+New-AzStorageContainer -Name $containerName -Permission Off -Context $ctx
+
+# Read the container's public access setting.
+Get-AzStorageContainerAcl -Container $containerName -Context $ctx
+
+# Update the container's public access setting to Container.
+Set-AzStorageContainerAcl -Container $containerName -Permission Container -Context $ctx
+
+# Read the container's public access setting.
+Get-AzStorageContainerAcl -Container $containerName -Context $ctx
+```
+
+Если общий доступ запрещен для учетной записи хранения, невозможно установить общий уровень доступа контейнера. При попытке задать общий уровень доступа контейнера служба хранилища Azure возвращает ошибку, указывающую, что общий доступ не разрешен в учетной записи хранения.
+
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы обновить общий уровень доступа для одного или нескольких контейнеров с Azure CLI, вызовите команду [AZ Storage Container Set Permission](/cli/azure/storage/container#az-storage-container-set-permission) . Авторизовать эту операцию, передав ключ учетной записи, строку подключения или подписанный URL-адрес (SAS). Операция [Set Container ACL](/rest/api/storageservices/set-container-acl) , которая задает общий уровень доступа контейнера, не поддерживает авторизацию в Azure AD. Дополнительные сведения см. в разделе [разрешения на вызов операций с данными большого двоичного объекта и очереди](/rest/api/storageservices/authorize-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations).
 
-В следующем примере задается параметр общего доступа для контейнера, чтобы разрешить анонимный доступ к контейнеру и его BLOB-объектам. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
+В следующем примере создается контейнер с отключенным общим доступом, а затем обновляется параметр общего доступа контейнера, чтобы предоставить анонимный доступ к контейнеру и его BLOB-объектам. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
 
 ```azurecli-interactive
+az storage container create \
+    --name <container-name> \
+    --account-name <account-name> \
+    --resource-group <resource-group>
+    --public-access off \
+    --account-key <account-key> \
+    --auth-mode key
+
+az storage container show-permission \
+    --name <container-name> \
+    --account-name <account-name> \
+    --account-key <account-key> \
+    --auth-mode key
+
 az storage container set-permission \
     --name <container-name> \
     --account-name <account-name> \
     --public-access container \
     --account-key <account-key> \
     --auth-mode key
-```
 
-Если общий доступ запрещен для учетной записи хранения, невозможно установить общий уровень доступа контейнера. При попытке задать общий уровень доступа контейнера возникает ошибка, указывающая, что общий доступ не разрешен для учетной записи хранения.
-
----
-
-## <a name="check-the-container-public-access-setting"></a>Проверка параметра общего доступа к контейнеру
-
-Чтобы проверить параметр общего доступа для одного или нескольких контейнеров, можно использовать портал Azure, PowerShell, Azure CLI, одну из клиентских библиотек службы хранилища Azure или поставщик ресурсов хранилища Azure. В следующих разделах приведено несколько примеров.  
-
-### <a name="check-the-public-access-setting-for-a-single-container"></a>Проверка параметра общего доступа для одного контейнера
-
-Чтобы получить общий уровень доступа для одного или нескольких контейнеров с Azure CLI, вызовите команду [AZ Storage Container показывать разрешение](/cli/azure/storage/container#az-storage-container-show-permission) . Авторизовать эту операцию, передав ключ учетной записи, строку подключения или подписанный URL-адрес (SAS). Операция [получения списка ACL контейнера](/rest/api/storageservices/get-container-acl) , возвращающая общий уровень доступа контейнера, не поддерживает авторизацию в Azure AD. Дополнительные сведения см. в разделе [разрешения на вызов операций с данными большого двоичного объекта и очереди](/rest/api/storageservices/authorize-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations).
-
-В следующем примере считывается параметр общего доступа для контейнера. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
-
-```azurecli-interactive
 az storage container show-permission \
     --name <container-name> \
     --account-name <account-name> \
-    --account-key <account-key>
+    --account-key <account-key> \
     --auth-mode key
 ```
 
-### <a name="check-the-public-access-setting-for-a-set-of-containers"></a>Проверьте параметр общего доступа для набора контейнеров.
+Если общий доступ запрещен для учетной записи хранения, невозможно установить общий уровень доступа контейнера. При попытке задать общий уровень доступа контейнера служба хранилища Azure возвращает ошибку, указывающую, что общий доступ не разрешен в учетной записи хранения.
+
+# <a name="template"></a>[Шаблон](#tab/template)
+
+Недоступно
+
+---
+
+## <a name="check-the-public-access-setting-for-a-set-of-containers"></a>Проверьте параметр общего доступа для набора контейнеров.
 
 Можно проверить, какие контейнеры в одной или нескольких учетных записях хранения настроены для общего доступа, выполнив список контейнеров и проверив параметры общего доступа. Этот подход является практичным вариантом, если учетная запись хранения не содержит большое количество контейнеров или при проверке параметра по небольшому числу учетных записей хранения. Однако производительность может снизиться при попытке перечисления большого количества контейнеров.
 
@@ -204,7 +295,7 @@ $ctx = $storageAccount.Context
 Get-AzStorageContainer -Context $ctx | Select Name, PublicAccess
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Запретить анонимный общий доступ на чтение к контейнерам и BLOB-объектам](anonymous-read-access-prevent.md)
 - [Анонимный доступ к открытым контейнерам и BLOB-объектам с помощью .NET](anonymous-read-access-client.md)

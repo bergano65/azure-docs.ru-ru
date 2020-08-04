@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 10/25/2019
+ms.date: 08/03/2020
 ms.author: jingwang
-ms.openlocfilehash: ba5105c6183c88ca7e5641cdacaa5d80ea529bc6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 14b3857211eca39ebe09a3a0752ca1d8eee17bc0
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84263896"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87529999"
 ---
 # <a name="copy-data-from-xero-using-azure-data-factory"></a>Копирование данных из Xero с помощью Фабрики данных Azure
 
@@ -36,7 +36,8 @@ ms.locfileid: "84263896"
 В частности, этот соединитель Xero поддерживает:
 
 - [частное приложение](https://developer.xero.com/documentation/getting-started/getting-started-guide) Xero (не общедоступное);
-- все таблицы Xero (конечные точки API), кроме таблицы "Отчеты". 
+- все таблицы Xero (конечные точки API), кроме таблицы "Отчеты".
+- Проверка подлинности OAuth 1,0 и OAuth 2,0.
 
 Фабрика данных Azure имеет встроенный драйвер для настройки подключения. Поэтому с использованием этого соединителя вам не нужно устанавливать драйверы вручную.
 
@@ -50,17 +51,22 @@ ms.locfileid: "84263896"
 
 Для связанной службы Xero поддерживаются следующие свойства:
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **Xero**. | Да |
-| host | Конечная точка сервера Xero (`api.xero.com`).  | Да |
+| type | Для свойства type необходимо задать значение **Xero**. | да |
+| connectionProperties | Группа свойств, определяющих способ подключения к Xero. | да |
+| ***В разделе `connectionProperties` :*** | | |
+| узел | Конечная точка сервера Xero (`api.xero.com`).  | да |
+| authenticationType | Допустимые значения: `OAuth_2.0` и `OAuth_1.0` . | да |
 | consumerKey | Ключ пользователя, связанный с приложением Xero. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
-| privateKey | Закрытый ключ из PEM-файла, созданный для частного приложения Xero. Дополнительные сведения см. в статье [Create a public/private key pair](https://developer.xero.com/documentation/auth-and-limits/create-publicprivate-key) (Создание открытого и закрытого ключей). Примечание для **создания privatekey.pem с numbits 512** с использованием `openssl genrsa -out privatekey.pem 512`; 1024 не поддерживается. Включает весь текст из PEM-файла, в том числе окончания строк Unix (\n). Пример см. ниже.<br/><br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| privateKey | Закрытый ключ из PEM-файла, созданный для частного приложения Xero. Дополнительные сведения см. в статье [Create a public/private key pair](https://developer.xero.com/documentation/auth-and-limits/create-publicprivate-key) (Создание открытого и закрытого ключей). Примечание для **создания privateKey. PEM с нумбитс 512** с помощью `openssl genrsa -out privatekey.pem 512` , 1024 не поддерживается. Включает весь текст из PEM-файла, в том числе окончания строк Unix (\n). Пример см. ниже.<br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| tenantId | Идентификатор клиента, связанный с приложением Xero. Применимо к проверке подлинности OAuth 2,0.<br>Сведения о том, как получить идентификатор клиента, см. в [разделе Проверка клиентов, которым вы имеете право доступа](https://developer.xero.com/documentation/oauth2/auth-flow). | Да для проверки подлинности OAuth 2,0 |
+| refreshtoken | Маркер обновления OAuth 2,0, связанный с приложением Xero, который используется для обновления маркера доступа после истечения срока действия маркера доступа. Применимо к проверке подлинности OAuth 2,0. Узнайте, как получить маркер обновления из [этой статьи](https://developer.xero.com/documentation/oauth2/auth-flow).<br>Срок действия маркера обновления никогда не истечет. Чтобы получить маркер обновления, необходимо запросить [область offline_access](https://developer.xero.com/documentation/oauth2/scopes).<br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да для проверки подлинности OAuth 2,0 |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | Нет |
 | useHostVerification | Указывает, требуется ли имя узла в сертификате сервера для соответствия имени узла сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
 | usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
 
-**Пример.**
+**Пример: проверка подлинности OAuth 2,0**
 
 ```json
 {
@@ -68,15 +74,54 @@ ms.locfileid: "84263896"
     "properties": {
         "type": "Xero",
         "typeProperties": {
-            "host" : "api.xero.com",
-            "consumerKey": {
-                 "type": "SecureString",
-                 "value": "<consumerKey>"
-            },
-            "privateKey": {
-                 "type": "SecureString",
-                 "value": "<privateKey>"
-            }
+            "connectionProperties": { 
+                "host": "api.xero.com",
+                "authenticationType":"OAuth_2.0", 
+                "consumerKey": {
+                    "type": "SecureString",
+                    "value": "<consumer key>"
+                },
+                "privateKey": {
+                    "type": "SecureString",
+                    "value": "<private key>"
+                },
+                "tenantId": "<tenant ID>", 
+                "refreshToken": {
+                    "type": "SecureString",
+                    "value": "<refresh token>"
+                }, 
+                "useEncryptedEndpoints": true, 
+                "useHostVerification": true, 
+                "usePeerVerification": true
+            }            
+        }
+    }
+}
+```
+
+**Пример: проверка подлинности OAuth 1,0**
+
+```json
+{
+    "name": "XeroLinkedService",
+    "properties": {
+        "type": "Xero",
+        "typeProperties": {
+            "connectionProperties": {
+                "host": "api.xero.com", 
+                "authenticationType":"OAuth_1.0", 
+                "consumerKey": {
+                    "type": "SecureString",
+                    "value": "<consumer key>"
+                },
+                "privateKey": {
+                    "type": "SecureString",
+                    "value": "<private key>"
+                }, 
+                "useEncryptedEndpoints": true,
+                "useHostVerification": true,
+                "usePeerVerification": true
+            }
         }
     }
 }
@@ -96,9 +141,9 @@ ms.locfileid: "84263896"
 
 Чтобы копировать данные из Xero, установите свойство type набора данных **XeroObject**. Поддерживаются следующие свойства:
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **ксерубжект** . | Да |
+| type | Свойство Type набора данных должно иметь значение **ксерубжект** . | да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -173,7 +218,7 @@ ms.locfileid: "84263896"
 
 - Bank_Transactions
 - Contact_Groups 
-- Контакты 
+- "Контакты" 
 - Contacts_Sales_Tracking_Categories 
 - Contacts_Phones 
 - Contacts_Addresses 

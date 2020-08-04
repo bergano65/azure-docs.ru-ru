@@ -3,12 +3,12 @@ title: Общие сведения об архитектуре
 description: Обзор архитектуры, компонентов и процессов, используемых службой Azure Backup.
 ms.topic: conceptual
 ms.date: 02/19/2019
-ms.openlocfilehash: eab820c2a045c8602bfdbf77b5e2dba4cb2318af
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 45e5634188b675198e0fc4c07a8a43964217f91a
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86514311"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87532498"
 ---
 # <a name="azure-backup-architecture-and-components"></a>Архитектура и компоненты Azure Backup
 
@@ -44,8 +44,8 @@ Azure Backup сохраняет резервные копии данных в х
 - Вы можете отслеживать резервные копии элементов в хранилище, включая виртуальные машины Azure и локальные компьютеры.
 - Можно управлять доступом к хранилищу с помощью [управления доступом на основе ролей Azure (RBAC)](../role-based-access-control/role-assignments-portal.md).
 - Нужно указать способ репликации данных в хранилище для обеспечения избыточности:
-  - **Локально избыточное хранилище (LRS)**. для защиты от сбоев в центре обработки данных можно использовать LRS. LRS реплицирует данные в единицу масштабирования хранилища. [Подробнее](../storage/common/storage-redundancy.md).
-  - **Геоизбыточное хранилище (GRS)**. для защиты от простоев в пределах региона можно использовать GRS. GRS реплицирует данные в дополнительный регион. [Подробнее](../storage/common/storage-redundancy.md).
+  - **Локально избыточное хранилище (LRS)**. для защиты от сбоев в центре обработки данных можно использовать LRS. LRS реплицирует данные в единицу масштабирования хранилища. [Подробнее.](../storage/common/storage-redundancy.md)
+  - **Геоизбыточное хранилище (GRS)**. для защиты от простоев в пределах региона можно использовать GRS. GRS реплицирует данные в дополнительный регион. [Подробнее.](../storage/common/storage-redundancy.md)
   - По умолчанию в хранилищах служб восстановления используется GRS.
 
 ## <a name="backup-agents"></a>Агенты резервного копирования
@@ -94,10 +94,10 @@ Azure Backup предоставляет разные агенты резервн
 
 **Компонент** | **Непосредственная Архивация файлов и папок (с помощью агента MARS)** | **Резервное копирование виртуальных машин Azure** | **Компьютеры или приложения с DPM/MABS**
 --- | --- | --- | ---
-Резервное копирование в хранилище | ![Да][green] | ![Да][green] | ![Да][green]
-Резервное копирование на диск DPM/MABS, затем в Azure | | | ![Да][green]
-Сжатие данных, отправляемых для резервного копирования | ![Да][green] | При передаче данных сжатие не происходит. Хранилище немного увеличивается, но восстановление выполняется быстрее.  | ![Да][green]
-Добавочное резервное копирование |![Да][green] |![Да][green] |![Да][green]
+Резервное копирование в хранилище | ![да][green] | ![да][green] | ![да][green]
+Резервное копирование на диск DPM/MABS, затем в Azure | | | ![да][green]
+Сжатие данных, отправляемых для резервного копирования | ![да][green] | При передаче данных сжатие не происходит. Хранилище немного увеличивается, но восстановление выполняется быстрее.  | ![да][green]
+Добавочное резервное копирование |![да][green] |![да][green] |![да][green]
 Резервное копирование дедуплицированных дисков | | | ![Частично][yellow]<br/><br/> Только для серверов DPM или MABS, развернутых локально.
 
 ![Ключ таблицы](./media/backup-architecture/table-key.png)
@@ -120,16 +120,15 @@ Azure Backup предоставляет разные агенты резервн
 - При создании хранилища также создается "DefaultPolicy", которое можно использовать для резервного копирования ресурсов.
 - Любые изменения, внесенные в срок хранения политики резервного копирования, будут применены задним числом ко всем старым точкам восстановления, помимо новых.
 
-### <a name="additional-reference"></a>Дополнительные ссылки 
+### <a name="additional-reference"></a>Дополнительные ссылки
 
--   Компьютер виртуальной машины Azure: как [создать](./backup-azure-vms-first-look-arm.md#back-up-from-azure-vm-settings) и [изменить](./backup-azure-manage-vms.md#manage-backup-policy-for-a-vm) политику? 
--   SQL Server базу данных на компьютере виртуальной машины Azure: как [создать](./backup-sql-server-database-azure-vms.md#create-a-backup-policy) и [изменить](./manage-monitor-sql-database-backup.md#modify-policy) политику? 
--   Общая папка Azure: как [создать](./backup-afs.md#discover-file-shares-and-configure-backup) и [изменить](./manage-afs-backup.md#modify-policy) политику? 
--   SAP HANA: как [создать](./backup-azure-sap-hana-database.md#create-a-backup-policy) и [изменить](./sap-hana-db-manage.md#change-policy) политику? 
--   Режим MARS: как [создать](./backup-windows-with-mars-agent.md#create-a-backup-policy) и [изменить](./backup-azure-manage-mars.md#modify-a-backup-policy) политику? 
--   [Существуют ли ограничения на архивацию в соответствии с типом рабочей нагрузки?](./backup-azure-backup-faq.md#are-there-limits-on-backup-scheduling)
+- Компьютер виртуальной машины Azure: [Создание](./backup-azure-vms-first-look-arm.md#back-up-from-azure-vm-settings) и [изменение](./backup-azure-manage-vms.md#manage-backup-policy-for-a-vm) политики.
+- SQL Server базу данных на компьютере виртуальной машины Azure: [Создание](./backup-sql-server-database-azure-vms.md#create-a-backup-policy) и [изменение](./manage-monitor-sql-database-backup.md#modify-policy) политики.
+- Файловый ресурс Azure: [Создание](./backup-afs.md) и [изменение](./manage-afs-backup.md#modify-policy) политики.
+- SAP HANA: [Создание](./backup-azure-sap-hana-database.md#create-a-backup-policy) и [изменение](./sap-hana-db-manage.md#change-policy) политики.
+- Режим MARS: [Создание](./backup-windows-with-mars-agent.md#create-a-backup-policy) и [изменение](./backup-azure-manage-mars.md#modify-a-backup-policy) политики.
+- [Существуют ли ограничения на архивацию в соответствии с типом рабочей нагрузки?](./backup-azure-backup-faq.md#are-there-limits-on-backup-scheduling)
 - [Что произойдет с существующими точками восстановления при изменении политики хранения?](./backup-azure-backup-faq.md#what-happens-when-i-change-my-backup-policy)
-
 
 ## <a name="architecture-built-in-azure-vm-backup"></a>Архитектура: Встроенная резервная копия виртуальных машин Azure
 

@@ -11,13 +11,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 08/01/2019
-ms.openlocfilehash: ac968271685c66c8fab8d7723d994a446f49e85f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/03/2020
+ms.openlocfilehash: 2bfe9115f38c79618924379837dda8014ee31ed5
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81410312"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87529370"
 ---
 # <a name="copy-data-from-square-using-azure-data-factory-preview"></a>Копирование данных из Square с помощью фабрики данных Azure (предварительная версия)
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -33,7 +33,6 @@ ms.locfileid: "81410312"
 
 - [Действие копирования](copy-activity-overview.md) с использованием [матрицы поддерживаемых источников и приемников](copy-activity-overview.md)
 - [Действие поиска](control-flow-lookup-activity.md)
-
 
 Данные из Square можно скопировать в любое поддерживаемое хранилище данных, используемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
@@ -51,16 +50,26 @@ ms.locfileid: "81410312"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **Square** | Да |
-| host | URL-адрес экземпляра Square. (т. е. mystore.mysquare.com)  | Да |
-| clientid | Идентификатор клиента, связанный с приложением Square.  | Да |
+| type | Для свойства type необходимо задать значение **Square** | да |
+| connectionProperties | Группа свойств, определяющих способ подключения к квадрату. | да |
+| ***В разделе `connectionProperties` :*** | | |
+| узел | URL-адрес экземпляра Square. (т. е. mystore.mysquare.com)  | да |
+| clientid | Идентификатор клиента, связанный с приложением Square.  | да |
 | clientSecret | Секрет клиента, связанный с приложением Square. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
-| redirectUri | URL-адрес перенаправления, назначенный на панели мониторинга приложения Square. (т. е. http: \/ /ЛОКАЛХОСТ: 2500)  | Да |
+| accessToken | Маркер доступа, полученный из квадрата. Предоставляет ограниченный доступ к квадратной учетной записи, запрашивая у пользователя, прошедшего проверку подлинности, явные разрешения. Срок действия маркеров доступа OAuth истекает через 30 дней после выдачи, но срок действия маркеров обновления не истекает. Маркеры доступа могут обновляться маркером обновления.<br>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md).  | Да |
+| refreshtoken | Маркер обновления, полученный из квадрата. Используется для получения новых маркеров доступа при истечении срока действия текущего.<br>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | нет |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | Нет |
 | useHostVerification | Указывает, должно ли имя узла в сертификате сервера совпадать с именем узла сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
 | usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
 
-**Пример.**
+Square поддерживает два типа маркера доступа: **личное** и **OAuth**.
+
+- Личные маркеры доступа используются для получения неограниченного доступа через API подключения к ресурсам в своей учетной записи.
+- Маркеры доступа OAuth используются для получения доступа к любой квадратной учетной записи через API с проверкой подлинности и с заданной областью. Используйте их, когда приложение обращается к ресурсам в других квадратных учетных записях от имени владельцев учетных записей. Маркеры доступа OAuth также можно использовать для доступа к ресурсам в своей учетной записи.
+
+В фабрике данных проверка подлинности с помощью личного маркера доступа необходима только для проверки `accessToken` подлинности с помощью OAuth `accessToken` `refreshToken` . Узнайте, как получить маркер доступа [отсюда](https://developer.squareup.com/docs/build-basics/access-tokens).
+
+**Пример**.
 
 ```json
 {
@@ -68,13 +77,25 @@ ms.locfileid: "81410312"
     "properties": {
         "type": "Square",
         "typeProperties": {
-            "host" : "mystore.mysquare.com",
-            "clientId" : "<clientId>",
-            "clientSecret": {
-                 "type": "SecureString",
-                 "value": "<clientSecret>"
-            },
-            "redirectUri" : "http://localhost:2500"
+            "connectionProperties": {
+                "host": "<e.g. mystore.mysquare.com>", 
+                "clientId": "<client ID>", 
+                "clientSecrect": {
+                    "type": "SecureString",
+                    "value": "<clientSecret>"
+                }, 
+                "accessToken": {
+                    "type": "SecureString",
+                    "value": "<access token>"
+                }, 
+                "refreshToken": {
+                    "type": "SecureString",
+                    "value": "<refresh token>"
+                }, 
+                "useEncryptedEndpoints": true, 
+                "useHostVerification": true, 
+                "usePeerVerification": true 
+            }
         }
     }
 }
@@ -88,7 +109,7 @@ ms.locfileid: "81410312"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **скуареобжект** . | Да |
+| type | Свойство Type набора данных должно иметь значение **скуареобжект** . | да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -118,7 +139,7 @@ ms.locfileid: "81410312"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство type источника действия копирования должно иметь значение **SquareSource** | Да |
+| type | Свойство type источника действия копирования должно иметь значение **SquareSource** | да |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"SELECT * FROM Business"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример**.

@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.date: 04/29/2019
 ms.topic: conceptual
-ms.openlocfilehash: 52c7a4bfeddf808e5a714c7ad4ab164d65868940
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 7bc8427a51a9931ca82155232569767f12a8e266
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86201204"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87534028"
 ---
 # <a name="common-questions-azure-to-azure-disaster-recovery"></a>Часто задаваемые вопросы: Аварийное восстановление из Azure в Azure
 
@@ -70,6 +70,10 @@ ms.locfileid: "86201204"
 ### <a name="can-i-replicate-zone-pinned-azure-vms-to-another-region"></a>Можно ли реплицировать виртуальные машины Azure, прикрепленные к зонам, в другой регион?
 
 Да, вы можете [реплицировать виртуальные машины, прикрепленные к зонам](https://azure.microsoft.com/blog/disaster-recovery-of-zone-pinned-azure-virtual-machines-to-another-region), в другой регион.
+
+### <a name="can-i-replicate-vms-in-a-region-that-has-zones-from-non-zone-to-zonal-configuration"></a>Можно ли реплицировать виртуальные машины в регионе, в котором зоны из зоны, не являющейся зоной, в конфигурацию зональные?
+
+Нет, сейчас это не поддерживается. В качестве обходного решения можно реплицировать виртуальную машину с помощью ASR в конфигурацию зональные в другом регионе, а затем отключить репликацию. Затем снова включите репликацию из этого региона в исходный регион и выберите конфигурацию зональные для отработки отказа.
 
 ### <a name="can-i-exclude-disks"></a>Можно ли исключать диски?
 

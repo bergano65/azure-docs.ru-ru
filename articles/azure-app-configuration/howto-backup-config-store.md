@@ -9,12 +9,12 @@ ms.devlang: csharp
 ms.topic: how-to
 ms.date: 04/27/2020
 ms.author: avgupta
-ms.openlocfilehash: 0b057172c822f893e602d60f77a285f0867cf368
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: ef777f235c85c423ea126fb7249f8e6a11492d3a
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87367781"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87528554"
 ---
 # <a name="backup-app-configuration-stores-automatically"></a>Автоматическое резервное копирование конфигураций приложений
 
@@ -191,7 +191,7 @@ az role assignment create \
     --scope $secondaryAppConfigId
 ```
 
-Используйте следующую команду или [портал Azure](/azure/storage/common/storage-auth-aad-rbac-portal#assign-rbac-roles-using-the-azure-portal) , чтобы предоставить управляемому удостоверению Azure приложение-функция доступ к вашей очереди хранилища. 
+Используйте следующую команду или [портал Azure](/azure/storage/common/storage-auth-aad-rbac-portal#assign-azure-roles-using-the-azure-portal) , чтобы предоставить управляемому удостоверению Azure приложение-функция доступ к вашей очереди хранилища. 
 - Назначение `Storage Queue Data Contributor` роли в очереди хранилища.
 
 ```azurecli-interactive

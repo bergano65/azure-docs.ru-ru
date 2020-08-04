@@ -3,12 +3,12 @@ title: Ответы на часто задаваемые вопросы
 description: 'Ответы на часто задаваемые вопросы о возможностях службы Azure Backup, в частности о хранилищах служб восстановления, объектах, для которых можно создавать резервные копии, принципе работы, шифровании и ограничениях. '
 ms.topic: conceptual
 ms.date: 07/07/2019
-ms.openlocfilehash: 6d05c06b1d27cd9d1bc396bddad49fcc89ba3ec3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4273d93e36dd8d956246811dd3f1d71d96ddcb68
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091085"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87532464"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Часто задаваемые вопросы по Azure Backup
 
@@ -214,7 +214,7 @@ Exchange |Сумма размеров всех баз данных Exchange на
 
 ### <a name="what-is-the-minimum-length-of-the-encryption-key-used-to-encrypt-backup-data"></a>Какова минимальная длина ключа шифрования, используемого для шифрования данных резервного копирования?
 
-Если используется агент резервного копирования, ключ шифрования должен содержать минимум 16 символов. Для виртуальных машин Azure нет ограничений длины ключей, используемых в Azure Key Vault.
+Ключ шифрования, используемый агентом Службы восстановления Microsoft Azure (MARS), является производным от парольной фразы длиной не менее 16 символов. Для виртуальных машин Azure ограничение длины ключей, используемых Azure KeyVault, не ограничено.
 
 ### <a name="what-happens-if-i-misplace-the-encryption-key-can-i-recover-the-data-can-microsoft-recover-the-data"></a>Что будет в случае потери ключа шифрования? Смогу ли я восстановить данные? Может ли корпорация Майкрософт восстановить мои данные?
 

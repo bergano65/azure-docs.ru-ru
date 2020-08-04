@@ -10,12 +10,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 06/17/2020
 ms.custom: azure-synapse
-ms.openlocfilehash: 4f6a64cf30ecc684e05675d366ff5c9fc6642126
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 6ba0a599bcb0b058ce4902882df9459b177fb6b5
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372167"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87530419"
 ---
 # <a name="write-audit-to-a-storage-account-behind-vnet-and-firewall"></a>Запись аудита в учетную запись хранения за пределами виртуальной сети и брандмауэра
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "87372167"
 > * Учетная запись хранения общего назначения версии 2. При наличии учетной записи общего назначения версии v1 или хранилища BLOB-объектов [Обновите учетную запись хранения общего назначения v2](../../storage/common/storage-account-upgrade.md). Дополнительные сведения см. в разделе [Типы учетных записей хранения](../../storage/common/storage-account-overview.md#types-of-storage-accounts).
 > * Учетная запись хранения должна находиться в той же подписке и в том же расположении, что и [логический сервер SQL](logical-servers.md)Server.
 > * Требуется учетная запись хранения Azure `Allow trusted Microsoft services to access this storage account` . Задайте это значение для брандмауэров учетной записи хранения **и виртуальных сетей**.
-> * Необходимо иметь `Microsoft.Authorization/roleAssignments/write` разрешение на выбранную учетную запись хранения. Дополнительные сведения см. [в статье встроенные роли Azure](../../role-based-access-control/built-in-roles.md).
+> * Необходимо иметь `Microsoft.Authorization/roleAssignments/write` разрешение на выбранную учетную запись хранения. Дополнительные сведения см. в статье [Встроенные роли Azure](../../role-based-access-control/built-in-roles.md).
 
 ## <a name="configure-in-azure-portal"></a>Настройка на портале Azure
 
@@ -117,7 +117,7 @@ ms.locfileid: "87372167"
    }
    ```
 
-2. Откройте [портал Azure](https://portal.azure.com). Войдите в свою учетную запись хранения. Выберите **Управление доступом (IAM)** и щелкните **добавить назначение ролей**. Назначьте роли RBAC **участника данных BLOB-объекта хранилища** серверу, на котором размещена база данных, зарегистрированная в Azure Active Directory (Azure AD), как на предыдущем шаге.
+2. Откройте [портал Azure](https://portal.azure.com). Войдите в свою учетную запись хранения. Выберите **Управление доступом (IAM)** и щелкните **добавить назначение ролей**. Назначьте роль Azure " **участник данных BLOB-объекта хранилища** " серверу, на котором размещена база данных, зарегистрированная в Azure Active Directory (Azure AD), как на предыдущем шаге.
 
    > [!NOTE]
    > Этот шаг могут выполнять только участники с правами владельца. Сведения о различных встроенных ролях Azure см. в статье [встроенные роли Azure](../../role-based-access-control/built-in-roles.md).

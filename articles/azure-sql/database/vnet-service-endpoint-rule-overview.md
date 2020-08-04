@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 11/14/2019
-ms.openlocfilehash: c1ac3c1e312704f8a0afa751d0efc6d0cef897f9
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 65ec92aeca44a514467a642de1dab06f06c220e9
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87371776"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87533858"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Использование конечных точек службы и правил виртуальной сети для серверов в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -104,7 +104,7 @@ When searching for blogs about ASM, you probably need to use this old and now-fo
 
 ## <a name="impact-of-using-vnet-service-endpoints-with-azure-storage"></a>Влияние использования конечных точек службы виртуальной сети со службой хранилища Azure
 
-Служба хранилища Azure реализовала ту же функцию, которая позволяет ограничить возможность подключения к учетной записи службы хранилища Azure. Если вы решили использовать эту функцию с учетной записью хранения Azure, которая используется базой данных SQL Azure, можно столкнуться с проблемами. Ниже приведен список и описание функций Базы данных SQL Azure и Хранилища данных SQL Azure, на которых это отразится.
+Служба хранилища Azure реализовала ту же функцию, которая позволяет ограничить возможность подключения к учетной записи службы хранилища Azure. Если вы решили применить эту функцию к учетной записи службы хранилища Azure, используемой Базой данных Azure SQL, могут возникнуть проблемы. Ниже приведен список и описание функций Базы данных SQL Azure и Хранилища данных SQL Azure, на которых это отразится.
 
 ### <a name="azure-synapse-polybase"></a>Azure синапсе Polybase
 
@@ -136,7 +136,7 @@ PolyBase часто используют для загрузки данных в
    > - При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо **сначала выполнить обновление до учетной записи хранения версии 2**, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
    > - Сведения об известных проблемах с Azure Data Lake Storage 2-го поколения см. в этом [руководстве](https://docs.microsoft.com/azure/storage/data-lake-storage/known-issues).
 
-1. В своей учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и выберите **Добавить назначение ролей**. Назначьте роль RBAC **участника данных BLOB-объекта хранилища** серверу, на котором размещена аналитика Azure синапсе Analytics, зарегистрированная в Azure Active Directory (AAD), как в шаге #1.
+1. В своей учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и выберите **Добавить назначение ролей**. Назначьте роль Azure " **участник данных BLOB-объекта хранилища** " серверу, на котором размещена аналитика Azure синапсе Analytics, зарегистрированная в Azure Active Directory (AAD), как на шаге #1.
 
    > [!NOTE]
    > Этот шаг могут выполнять только члены с правами владельца в учетной записи хранения. Сведения о различных встроенных ролях Azure см. в этом [руководстве](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles).
@@ -238,7 +238,7 @@ PolyBase часто используют для загрузки данных в
 
 ## <a name="azure-portal-steps"></a>Инструкции для портала Azure
 
-1. Войдите на [портал Azure][http-azure-portal-link-ref-477t].
+1. Войдите на [портал Microsoft Azure][http-azure-portal-link-ref-477t].
 
 2. Найдите и выберите **серверы SQL Server**, а затем выберите свой сервер. В разделе **Безопасность**выберите **брандмауэры и виртуальные сети**.
 

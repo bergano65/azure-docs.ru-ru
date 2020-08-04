@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 066118622f19d7efac71ddd66ac1abe058008b55
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: cc39f8250ddc1b2fb1baaf073969f6aab5b1372c
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87126777"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87531377"
 ---
 # <a name="secure-a-daemon-application"></a>Защита управляющего приложения
 
@@ -109,7 +109,7 @@ ms.locfileid: "87126777"
 
 ### <a name="grant-role-based-access-for-the-daemon-application-to-azure-maps"></a>Предоставление управляющей программы доступа на основе ролей для Azure Maps
 
-Вы предоставляете *Управление доступом на основе ролей* (RBAC), назначив созданное управляемое удостоверение или субъект-службу одному или нескольким определениям ролей управления доступом Azure Maps. Чтобы просмотреть определения ролей RBAC, доступные для Azure Maps, перейдите в раздел **Управление доступом (IAM)**. Выберите **роли**, а затем найдите роли, которые начинаются с *Azure Maps*. Эти Azure Maps роли являются ролями, к которым можно предоставить доступ.
+Вы предоставляете *Управление доступом на основе ролей* (RBAC), назначив созданное управляемое удостоверение или субъект-службу одному или нескольким определениям ролей управления доступом Azure Maps. Чтобы просмотреть определения ролей Azure, доступные для Azure Maps, перейдите в раздел **Управление доступом (IAM)**. Выберите **роли**, а затем найдите роли, которые начинаются с *Azure Maps*. Эти Azure Maps роли являются ролями, к которым можно предоставить доступ.
 
 > [!div class="mx-imgBorder"]
 > ![Просмотр доступных ролей](./media/how-to-manage-authentication/how-to-view-avail-roles.png)
@@ -124,7 +124,7 @@ ms.locfileid: "87126777"
     > [!div class="mx-imgBorder"]
     > ![Добавление назначения роли](./media/how-to-manage-authentication/add-role-assignment.png)
 
-3. Выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В разделе **назначить доступ к**выберите **пользователь Azure AD, группа или субъект-служба** или управляемое удостоверение с назначенным пользователем управляемым удостоверением назначенная система **управляемого удостоверения**  /  **System assigned Managed identity**. Выберите участника. Затем нажмите кнопку **Сохранить**.
+3. Выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В разделе **назначить доступ к**выберите **пользователь Azure AD, группа или субъект-служба** или управляемое удостоверение с назначенным пользователем управляемым удостоверением назначенная система **управляемого удостоверения**  /  **System assigned Managed identity**. Выберите участника. Нажмите кнопку **Сохранить**.
 
     > [!div class="mx-imgBorder"]
     > ![Добавление назначения роли](./media/how-to-manage-authentication/how-to-add-role-assignment.png)

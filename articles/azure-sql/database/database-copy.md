@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sashan
 ms.reviewer: carlrab
 ms.date: 07/29/2020
-ms.openlocfilehash: 968fe5a0f4999c25486189384186c23d1fcd5509
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 4189ea5fd0b2b52b5bf1e0614e4b43b9411df31d
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87430245"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87530386"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-a-database-in-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных в базе данных SQL Azure
 
@@ -133,7 +133,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 > [!IMPORTANT]
 > Если необходимо создать копию с целью существенно меньшей цели обслуживания, чем у источника, то Целевая база данных может не иметь достаточных ресурсов для завершения процесса заполнения, и это может привести к сбою в области Opera. В этом сценарии для создания копии на другом сервере и (или) другом регионе используется запрос географического восстановления. Дополнительные сведения см. в статье [Восстановление базы данных SQL Azure с помощью резервных копий](recovery-using-backups.md#geo-restore) .
 
-## <a name="rbac-roles-to-manage-database-copy"></a>Роли RBAC для управления копированием базы данных
+## <a name="azure-roles-to-manage-database-copy"></a>Роли Azure для управления копированием базы данных
 
 Чтобы создать копию базы данных, необходимо быть в следующих ролях:
 
@@ -155,7 +155,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
    Microsoft. Resources/Subscriptions/Resources/Read Microsoft. Resources/Subscriptions/Resources/Write Microsoft. Resources/deployments/Read Microsoft. Resources/deployments/Write Microsoft. Resources/deployments
 
-Если вы хотите просмотреть операции в развертываниях в группе ресурсов на портале, операции с несколькими поставщиками ресурсов, включая операции SQL, понадобятся вам следующие дополнительные роли RBAC:
+Если вы хотите просмотреть операции в развертываниях в группе ресурсов на портале, операции в нескольких поставщиках ресурсов, включая операции SQL, понадобятся вам следующие дополнительные роли Azure:
 
    Microsoft. Resources/Subscriptions/resourcegroups/deployments/Operations/Read Microsoft. Resources/Subscriptions/resourcegroups/deployments/оператионстатусес/Read
 

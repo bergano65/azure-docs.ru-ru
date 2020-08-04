@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 06/12/2020
-ms.openlocfilehash: 4bdcb2b4008f54ff0d84594e6f3b5a7b76944e65
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/03/2020
+ms.openlocfilehash: 9088b36acead9f47e94949ee102d66a8aff2d226
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84987009"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87529608"
 ---
 # <a name="copy-data-from-sap-ecc-by-using-azure-data-factory"></a>Копирование данных из SAP ECC с помощью Фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "84987009"
 В этой статье описывается, как с помощью действия копирования в Фабрике данных Azure копировать данные из SAP Enterprise Central Component (SAP ECC). Дополнительные сведения см. в статье [Общие сведения о действии копирования](copy-activity-overview.md).
 
 >[!TIP]
->Сведения об общей поддержке ADF в сценарии интеграции данных SAP см. в [технической документации по интеграции данных SAP с помощью Фабрики данных Azure](https://github.com/Azure/Azure-DataFactory/blob/master/whitepaper/SAP%20Data%20Integration%20using%20Azure%20Data%20Factory.pdf), где приводится подробная информация, сравнение и рекомендации.
+>Сведения о общей поддержке ADF в сценарии интеграции данных SAP см. в статье [Интеграция данных SAP с помощью фабрики данных Azure](https://github.com/Azure/Azure-DataFactory/blob/master/whitepaper/SAP%20Data%20Integration%20using%20Azure%20Data%20Factory.pdf) с подробным введением в каждый соединитель SAP, компарсион и рекомендации.
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
@@ -52,13 +52,11 @@ ms.locfileid: "84987009"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Как правило, SAP ECC предоставляет сущности через службы OData посредством шлюза SAP. Чтобы использовать этот соединитель SAP ECC, сделайте следующее:
+Чтобы использовать этот соединитель SAP ECC, необходимо предоставить сущности SAP ECC через службы OData через шлюз SAP. В частности:
 
 - **Настройте шлюз SAP**. Для серверов с SAP NetWeaver версии выше 7.4 шлюз SAP уже установлен. Для более ранних версий необходимо установить встроенный шлюз SAP или систему концентратора шлюза SAP, прежде чем предоставлять данные SAP ECC через службы OData. Сведения о том, как настроить шлюз SAP, см. в [руководстве по установке](https://help.sap.com/saphelp_gateway20sp12/helpdata/en/c3/424a2657aa4cf58df949578a56ba80/frameset.htm).
 
 - **Активируйте и настройте службу SAP OData**. Активировать службы OData можно через TCODE SICF за считаные секунды. Также можно указать, какие объекты требуется предоставлять. Дополнительные сведения см. в [пошаговом руководстве](https://blogs.sap.com/2012/10/26/step-by-step-guide-to-build-an-odata-service-based-on-rfcs-part-1/).
-
-## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
@@ -74,8 +72,8 @@ ms.locfileid: "84987009"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| `type` | Для свойства `type` должно быть установлено значение `SapEcc`. | Да |
-| `url` | URL-адрес службы SAP ECC OData. | Да |
+| `type` | Для свойства `type` должно быть установлено значение `SapEcc`. | да |
+| `url` | URL-адрес службы SAP ECC OData. | да |
 | `username` | Имя пользователя, применяемое для подключения к SAP ECC. | Нет |
 | `password` | Пароль (открытым текстом), применяемый для подключения к SAP ECC. | Нет |
 | `connectVia` | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе [Предварительные требования](#prerequisites). Если не указать среду выполнения, используется среда выполнения интеграции Azure по умолчанию. | Нет |
@@ -113,7 +111,7 @@ ms.locfileid: "84987009"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| `path` | Путь к сущности SAP ECC OData. | Да |
+| `path` | Путь к сущности SAP ECC OData. | да |
 
 ### <a name="example"></a>Пример
 
@@ -148,7 +146,8 @@ ms.locfileid: "84987009"
 |:--- |:--- |:--- |
 | `type` | Свойство `type` в разделе `source` действия копирования должно иметь значение `SapEccSource`. | Да |
 | `query` | Параметры запроса OData для фильтрации данных. Пример:<br/><br/>`"$select=Name,Description&$top=10"`<br/><br/>Соединитель SAP ECC копирует данные из объединенного URL-адреса:<br/><br/>`<URL specified in the linked service>/<path specified in the dataset>?<query specified in the copy activity's source section>`<br/><br/>Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
-| `httpRequestTimeout` | Время ожидания (значение **Временной диапазон**) ответа для HTTP-запроса. Это значение является интервалом времени для получения ответа, а не считывания данных ответа. Если не указано, значение по умолчанию — **00:30:00** (30 минут). | Нет |
+| `sapDataColumnDelimiter` | Единственный символ, используемый в качестве разделителя, передаваемый в SAP RFC для разделения выходных данных. | Нет |
+| `httpRequestTimeout` | Время ожидания (значение **Временной диапазон**) ответа для HTTP-запроса. Это значение является интервалом времени для получения ответа, а не считывания данных ответа. Если не указано, значение по умолчанию — **00:30:00** (30 минут). | нет |
 
 ### <a name="example"></a>Пример
 

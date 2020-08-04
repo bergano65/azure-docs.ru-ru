@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/13/2020
-ms.openlocfilehash: 142fdf27fde100385140baacdeba9249b2e7989b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8d97886232eecc369746e33df484cbfb9d40da72
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84887893"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87530271"
 ---
 # <a name="enterprise-security-general-information-and-guidelines-in-azure-hdinsight"></a>Общие сведения и рекомендации по корпоративной безопасности в Azure HDInsight
 
@@ -20,7 +20,7 @@ ms.locfileid: "84887893"
 
 ## <a name="use-of-secure-cluster"></a>Использование безопасного кластера
 
-### <a name="recommended"></a>Рекомендуется
+### <a name="recommended"></a>Рекомендуемая
 
 * Кластер будет использоваться несколькими пользователями одновременно.
 * Пользователи имеют разные уровни доступа к одним и тем же данным.
@@ -62,7 +62,7 @@ ms.locfileid: "84887893"
 Если иерархическая область имен не включена:
 
 * Унаследованные разрешения отсутствуют.
-* Только разрешение файловой системы, которое работает, — это роль RBAC **хранилища данных XXXX** , назначаемая пользователю непосредственно в портал Azure.
+* Только разрешение файловой системы, которое работает с ролью Azure **data xxxx** , назначается пользователю непосредственно в портал Azure.
 
 ### <a name="default-hdfs-permissions"></a>Разрешения HDFS по умолчанию
 
@@ -171,7 +171,7 @@ Azure AD DS периодически синхронизирует объекты
 
 Полный список свойств Ambari, влияющих на конфигурацию кластера HDInsight, см. в статье [Настройка проверки подлинности AMBARI LDAP](https://ambari.apache.org/1.2.1/installing-hadoop-using-ambari/content/ambari-chap2-4.html).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Корпоративный пакет безопасности конфигураций с помощью доменных служб Azure Active Directory в HDInsight](./apache-domain-joined-configure-using-azure-adds.md)
 

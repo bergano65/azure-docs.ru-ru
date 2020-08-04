@@ -92,7 +92,7 @@
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: relay-faq.md
     - name: Блог
-      href: 'https://blogs.msdn.microsoft.com/servicebus/'
+      href: /archive/blogs/servicebus/
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/service-bus/'
     - name: Калькулятор цен

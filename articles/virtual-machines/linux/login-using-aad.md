@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 08/29/2019
 ms.author: sandeo
-ms.openlocfilehash: fe9d4e5a981f9d626bb6086659593e1c3ce06469
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 96fb914b5dafe5eb818f2b491bbe2d856763bd02
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87291134"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87534742"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр. Войдите на виртуальную машину Linux в Azure, используя проверку подлинности Azure Active Directory
 
@@ -113,7 +113,7 @@ az vm extension set \
 
 ## <a name="configure-role-assignments-for-the-vm"></a>Настройка назначений ролей для виртуальной машины
 
-Политика управления доступом на основе ролей Azure (Azure RBAC) определяет, кто может входить в виртуальную машину. Для авторизации входа на виртуальную машину используются две роли RBAC:
+Политика управления доступом на основе ролей Azure (Azure RBAC) определяет, кто может входить в виртуальную машину. Для авторизации имени входа виртуальной машины используются две роли Azure:
 
 - **Имя для входа администратора виртуальной машины.** Пользователи с этой ролью могут входить на виртуальную машину Azure с правами администратора Windows или привилегированного пользователя Linux.
 - **Имя для входа пользователя виртуальной машины.** Пользователи с этой ролью могут входить на виртуальную машину Azure с правами обычного пользователя.
@@ -181,9 +181,9 @@ ssh -l azureuser@contoso.onmicrosoft.com 10.11.123.456
 
 ## <a name="troubleshoot-sign-in-issues"></a>Устранение неполадок при входе
 
-Распространенные ошибки при попытке входа через SSH с учетными данными Azure AD — отсутствие назначенных ролей RBAC и повторяющиеся запросы на вход. Используйте следующие разделы для устранения этих проблем.
+В некоторых распространенных ошибках при попытке SSH с учетными данными Azure AD не назначены роли Azure, а также повторяются запросы на вход. Используйте следующие разделы для устранения этих проблем.
 
-### <a name="access-denied-rbac-role-not-assigned"></a>Доступ запрещен: не назначена роль RBAC
+### <a name="access-denied-azure-role-not-assigned"></a>Отказано в доступе: роль Azure не назначена
 
 Если в запросе SSH отображается приведенное ниже сообщение об ошибке, проверьте наличие настроенных политик RBAC для виртуальной машины, которая предоставляет пользователю роль *Имя для входа администратора виртуальной машины* или *Имя для входа пользователя виртуальной машины*:
 
@@ -212,6 +212,6 @@ Access denied
 
 Поделиться своими отзывами об этой предварительной версии функции или сообщите о проблемах на [форуме отзывов и предложений по Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md).

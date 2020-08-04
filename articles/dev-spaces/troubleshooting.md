@@ -5,12 +5,12 @@ ms.date: 09/25/2019
 ms.topic: troubleshooting
 description: Узнайте, как устранять распространенные неполадки при включении и использовании Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 7b97bab7182e382801a57bcf7dd6f325e665438b
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: cd242dc56e4a3215954fbe6703f47e29bd417ea8
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86232497"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87534402"
 ---
 # <a name="azure-dev-spaces-troubleshooting"></a>Устранение неполадок с Azure Dev Spaces
 
@@ -60,7 +60,7 @@ az aks use-dev-spaces -g <resource group name> -n <cluster name>
 
 ### <a name="controller-create-failing-because-of-controller-name-length"></a>Ошибка создания контроллера из-за длины имени контроллера
 
-Длина имени контроллера в Azure Dev Spaces не может превышать 31 символ. Если имя контроллера превышает 31 символ, при включении Dev Spaces в кластере AKS или при создании контроллера появится сообщение об ошибке. Вот несколько примеров:
+Длина имени контроллера в Azure Dev Spaces не может превышать 31 символ. Если имя контроллера превышает 31 символ, при включении Dev Spaces в кластере AKS или при создании контроллера появится сообщение об ошибке. Пример:
 
 ```console
 Failed to create a Dev Spaces controller for cluster 'a-controller-name-that-is-way-too-long-aks-east-us': Azure Dev Spaces Controller name 'a-controller-name-that-is-way-too-long-aks-east-us' is invalid. Constraint(s) violated: Azure Dev Spaces Controller names can only be at most 31 characters long*
@@ -170,7 +170,7 @@ Container image build failed
 
 Настройте службу Azure Dev Spaces так, чтобы она указывала на конкретный файл _Dockerfile_ в вашем проекте. Если Azure Dev Spaces не использует файл _Dockerfile_, который вы хотели использовать для сборки своих контейнеров, то можно явно указать Azure Dev Spaces, какой файл Dockerfile нужно использовать. 
 
-Чтобы исправить эту проблему, откройте файл _azds.yaml_, который служба Azure Dev Spaces создала в проекте. Обновите строку *configurations: develop: build: dockerfile*, чтобы она указывала на нужный файл Dockerfile. Вот несколько примеров:
+Чтобы исправить эту проблему, откройте файл _azds.yaml_, который служба Azure Dev Spaces создала в проекте. Обновите строку *configurations: develop: build: dockerfile*, чтобы она указывала на нужный файл Dockerfile. Пример:
 
 ```yaml
 ...
@@ -217,7 +217,7 @@ install:
 
 Эта ошибка может возникать, когда не удается запустить код службы. Чаще всего причина в пользовательском коде. Чтобы получить дополнительные диагностические сведения, включите более подробное ведение журнала при запуске службы.
 
-Для этого в командной строке выполните `--verbose`. Можно также указать формат вывода с помощью `--output`. Вот несколько примеров:
+Для этого в командной строке выполните `--verbose`. Можно также указать формат вывода с помощью `--output`. Пример:
 
 ```cmd
 azds up --verbose --output json
@@ -328,7 +328,7 @@ spec:
 az aks show -g <resourcegroup> -n <cluster> -o json --query "{clientId: identityProfile.kubeletidentity.clientId, resourceId: identityProfile.kubeletidentity.resourceId}"
 ```
 
-Приведенная выше команда выводит значения *clientId* и *resourceId* для управляемого удостоверения. Вот несколько примеров:
+Приведенная выше команда выводит значения *clientId* и *resourceId* для управляемого удостоверения. Пример:
 
 ```json
 {
@@ -498,9 +498,9 @@ azds controller create --name <cluster name> -g <resource group name> -tn <clust
 
 ### <a name="incorrect-rbac-permissions-for-calling-dev-spaces-controller-and-apis"></a>Неправильные разрешения RBAC для вызова контроллера и API Dev Spaces
 
-Пользователь, который обращается к контроллеру Azure Dev Spaces, должен иметь доступ на чтение *kubeconfig* для администратора в кластере AKS. Например, такое разрешение предоставляется для [встроенной роли администратора кластера Службы Azure Kubernetes](../aks/control-kubeconfig-access.md#available-cluster-roles-permissions). Пользователь, который обращается к контроллеру Azure Dev Spaces, должен также иметь роль RBAC *участника* или *владельца* для этого контроллера. Дополнительные сведения об изменении разрешений для пользователя в кластере AKS см. [здесь](../aks/control-kubeconfig-access.md#assign-role-permissions-to-a-user-or-group).
+Пользователь, который обращается к контроллеру Azure Dev Spaces, должен иметь доступ на чтение *kubeconfig* для администратора в кластере AKS. Например, такое разрешение предоставляется для [встроенной роли администратора кластера Службы Azure Kubernetes](../aks/control-kubeconfig-access.md#available-cluster-roles-permissions). Пользователь, обращающийся к контроллеру Azure Dev Spaces, должен также иметь роль *участника* или *владельца* Azure для контроллера. Дополнительные сведения об изменении разрешений для пользователя в кластере AKS см. [здесь](../aks/control-kubeconfig-access.md#assign-role-permissions-to-a-user-or-group).
 
-Чтобы изменить пользовательскую роль RBAC для контроллера, сделайте следующее:
+Чтобы обновить роль пользователя Azure для контроллера, выполните следующие действия.
 
 1. Войдите на портал Azure по адресу https://portal.azure.com.
 1. Перейдите к группе ресурсов, которая содержит нужный контроллер. Обычно это та же группа ресурсов, в которой находится кластер AKS.

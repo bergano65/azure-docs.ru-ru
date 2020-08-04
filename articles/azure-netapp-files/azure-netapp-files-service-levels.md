@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: b-juche
-ms.openlocfilehash: 0398cc6a5336141f51dde26ed7cf4cce8c2c0bb4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 639f1e09fdb5603965209e5b5ee6c224ad238b76
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75832585"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87533127"
 ---
 # <a name="service-levels-for-azure-netapp-files"></a>Уровни обслуживания для Azure NetApp Files
 Уровни обслуживания являются атрибутами пула ресурсов. Уровни обслуживания определяются и отличаются максимально допустимой пропускной способностью для тома в пуле ресурсов на основе квоты, назначенной тому.
@@ -54,9 +54,10 @@ Azure NetApp Files поддерживает три уровня обслужив
 
 В примере 2 для тома из пула емкости с уровнем хранилища Premium, которому назначено 100 гиб квоты, будет назначено ограничение пропускной способности 6,25 MiB/s (0,09765625 Тиб * 64 MiB/s). Этот сценарий применим независимо от размера пула емкости или фактического потребления объема данных.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения о ценах на разные уровни обслуживания см. на странице [Цены на службу Azure NetApp Files](https://azure.microsoft.com/pricing/details/storage/netapp/)
-- Расчет потребления емкости в пуле мощностей см. в статье [модель стоимости для Azure NetApp Files](azure-netapp-files-cost-model.md) . 
+- [Страница цен Azure NetApp Files](https://azure.microsoft.com/pricing/details/storage/netapp/)
+- [Модель затрат для Azure NetApp Files](azure-netapp-files-cost-model.md) 
 - [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)
-- См. [соглашение об уровне обслуживания (SLA) для Azure NetApp Files](https://azure.microsoft.com/support/legal/sla/netapp/)
+- [Соглашение об уровне обслуживания (SLA) для Azure NetApp Files](https://azure.microsoft.com/support/legal/sla/netapp/)
+- [Динамическое изменение уровня обслуживания тома](dynamic-change-volume-service-level.md) 

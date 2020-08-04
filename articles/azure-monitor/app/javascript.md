@@ -4,12 +4,12 @@ description: Получение количества просмотров стр
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 063d648c68431dd84fd1aeb88b85bc68f2acbe62
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: e0545660cbca68d41bc24b7266496b7912d408bc
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475759"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87531325"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -39,7 +39,8 @@ Application Insights можно использовать с любыми веб-
 npm i --save @microsoft/applicationinsights-web
 ```
 
-> *Примечание.* **вводы в этот пакет включены**, поэтому **не** нужно устанавливать отдельный пакет типов.
+> [!Note]
+> **В этот пакет включены такие вводы**, поэтому **не** нужно устанавливать отдельный пакет типов.
     
 ```js
 import { ApplicationInsights } from '@microsoft/applicationinsights-web'

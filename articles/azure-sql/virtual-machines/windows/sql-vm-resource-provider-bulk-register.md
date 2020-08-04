@@ -13,12 +13,12 @@ ms.workload: iaas-sql-server
 ms.date: 10/21/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 74757b2f5e272c7e7dbc0dc7f033c7899be1414b
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 5d1d74f1240f919bb20d8893755a86abc19fa828
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86184337"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87533807"
 ---
 # <a name="register-multiple-sql-virtual-machines-in-azure-with-the-sql-vm-resource-provider"></a>Регистрация нескольких виртуальных машин SQL в Azure с помощью поставщика ресурсов виртуальных машин SQL
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "86184337"
 Для регистрации виртуальной машины SQL Server с помощью поставщика ресурсов понадобится: 
 
 - [Подписка Azure](https://azure.microsoft.com/free/), которая [зарегистрирована с помощью поставщика ресурсов](sql-vm-resource-provider-register.md#register-subscription-with-rp) и содержит незарегистрированные виртуальные машины SQL Server. 
-- Учетные данные клиента, используемые для регистрации виртуальных машин, есть в любой из следующих ролей RBAC: **Участник виртуальных машин**, **Участник** или **Владелец**. 
+- Учетные данные клиента, используемые для регистрации виртуальных машин, существуют в любой из следующих ролей Azure: **участник виртуальной машины**, **участник**или **владелец**. 
 - Последняя версия [Az PowerShell](/powershell/azure/new-azureps-module-az). 
 - Последняя версия [Az.SqlVirtualMachine](https://www.powershellgallery.com/packages/Az.SqlVirtualMachine/0.1.0).
 

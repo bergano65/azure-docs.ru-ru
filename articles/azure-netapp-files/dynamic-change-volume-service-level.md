@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: b-juche
-ms.openlocfilehash: 5097a5dfa6dd9b8fd46e4bcbcee72319af51f86f
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: e19db61efbf93e3191d5780d07952f3d195c7a59
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87499370"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87533071"
 ---
 # <a name="dynamically-change-the-service-level-of-a-volume"></a>Динамическое изменение уровня обслуживания тома
 
@@ -38,7 +38,9 @@ ms.locfileid: "87499370"
 
 ## <a name="register-the-feature"></a>регистрация компонента
 
-1. Функция перемещения тома в другой пул емкости сейчас доступна в предварительной версии. Если вы впервые используете эту функцию, зарегистрируйте эту функцию, прежде чем использовать ее: 
+Функция перемещения тома в другой пул емкости сейчас доступна в предварительной версии. Если эта функция используется впервые, необходимо сначала зарегистрировать эту функцию.
+
+1. Зарегистрируйте функцию: 
 
     ```azurepowershell-interactive
     Register-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFTierChange

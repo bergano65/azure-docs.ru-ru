@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 36f3c4192f43e323df2aaf9397364dfd1b4da731
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: a9c3264a9a9d6ae27eee6da4338fa6fd401da461
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87501378"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87534062"
 ---
 # <a name="azure-security-baseline-for-azure-storage"></a>Базовые показатели безопасности Azure для службы хранилища Azure
 
@@ -536,7 +536,7 @@ ms.locfileid: "87501378"
 
 **Руководство**. Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью управления доступом на основе РОЛЕЙ (RBAC). Служба хранилища Azure определяет набор встроенных ролей Azure, охватывающих общие наборы разрешений, используемых для доступа к данным BLOB-объектов или очередей. 
 
-- [Назначение ролей RBAC для учетной записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal#assign-rbac-roles-using-the-azure-portal)
+- [Как назначить роли Azure для учетной записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal#assign-azure-roles-using-the-azure-portal)
 
 - [Использование поставщика ресурсов службы хранилища Azure для доступа к ресурсам управления](https://docs.microsoft.com/azure/storage/common/authorization-resource-provider)
 

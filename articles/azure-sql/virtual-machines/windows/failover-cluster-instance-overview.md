@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 00c9482eab74003f6a667d52440d4cb6dd21fcfc
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 8a5374bf15798fd7e53f0d93e69f2f40a2d57b94
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87287370"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87533824"
 ---
 # <a name="failover-cluster-instances-with-sql-server-on-azure-virtual-machines"></a>Экземпляры отказоустойчивого кластера с SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -40,7 +40,7 @@ SQL Server на виртуальных машинах Azure использует
 Дополнительные сведения см. в статье рекомендации [по кворуму с помощью SQL Server виртуальных машин в Azure](hadr-cluster-best-practices.md#quorum). 
 
 
-## <a name="storage"></a>Память
+## <a name="storage"></a>Хранение
 
 В традиционных локальных кластеризованных средах отказоустойчивый кластер Windows использует сеть хранения данных (SAN), доступную для обоих узлов в качестве общего хранилища. SQL Server файлы размещаются в общем хранилище, и только активный узел может одновременно получить доступ к файлам. 
 
@@ -51,8 +51,8 @@ SQL Server на виртуальных машинах Azure предлагает
 |**Минимальная версия ОС**| Все |Windows Server 2012|Windows Server 2016|
 |**Минимальная версия SQL Server**|Все|SQL Server 2012|SQL Server 2016|
 |**Поддерживаемая доступность виртуальной машины** |Группы доступности с группами размещения с учетом расположения |Группы доступности и зоны доступности|Группы доступности |
-|**Поддержка FileStream**|Да|Нет|Да |
-|**Кэш больших двоичных объектов Azure**|Нет|Нет|Да|
+|**Поддержка FileStream**|да|Нет|да |
+|**Кэш больших двоичных объектов Azure**|Нет|Нет|да|
 
 В оставшейся части этого раздела перечислены преимущества и ограничения для каждого из вариантов хранения, доступных для SQL Server на виртуальных машинах Azure. 
 
@@ -98,7 +98,7 @@ SQL Server на виртуальных машинах Azure предлагает
 - Высокая пропускная способность сети необходима для достижения высокой производительности из-за текущей репликации диска. 
 - Требуется больший размер виртуальной машины и удвоенная плата за хранилище, так как хранилище подключено к каждой виртуальной машине. 
 
-Чтобы приступить к работе, см. раздел [SQL Server экземпляр отказоустойчивого кластера с Локальные дисковые пространства](failover-cluster-instance-azure-shared-disks-manually-configure.md). 
+Чтобы приступить к работе, см. раздел [SQL Server экземпляр отказоустойчивого кластера с Локальные дисковые пространства](failover-cluster-instance-storage-spaces-direct-manually-configure.md). 
 
 ### <a name="premium-file-share"></a>Общая папка Premium
 
@@ -162,11 +162,11 @@ SQL Server на виртуальных машинах Azure предлагает
 - Load Balancer ценовой категории "Стандартный" не обрабатывает порты RPC.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с рекомендациями по [конфигурации кластера](hadr-cluster-best-practices.md)и [Подготовьте виртуальную машину SQL Server для FCI](failover-cluster-instance-prepare-vm.md). 
 
-Дополнительные сведения см. в разделе: 
+Дополнительные сведения можно найти в разделе 
 
 - [технологии кластера под управлением Windows](/windows-server/failover-clustering/failover-clustering-overview);   
 - [Экземпляры отказоустойчивого кластера SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)

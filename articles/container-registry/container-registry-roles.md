@@ -1,14 +1,14 @@
 ---
-title: Роли и разрешения RBAC
+title: Роли и разрешения Azure
 description: Используйте управление доступом на основе ролей Azure (Azure RBAC) и управление удостоверениями и доступом (IAM), чтобы обеспечить детальные разрешения для ресурсов в реестре контейнеров Azure.
 ms.topic: article
 ms.date: 12/02/2019
-ms.openlocfilehash: 0bf6059698191c975b212bee7f45d21977478b49
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 90546b96f081893d312e66aae04e2125c1c210e5
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497755"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87533314"
 ---
 # <a name="azure-container-registry-roles-and-permissions"></a>Роли и разрешения реестра контейнеров Azure
 
@@ -85,7 +85,7 @@ az provider operation show --namespace Microsoft.ContainerRegistry
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Ознакомьтесь с дополнительными сведениями о назначении ролей RBAC для удостоверений Azure с помощью [портала Azure](../role-based-access-control/role-assignments-portal.md), [Azure CLI](../role-based-access-control/role-assignments-cli.md) или других средств Azure.
+* Узнайте больше о назначении ролей Azure удостоверению Azure с помощью [портал Azure](../role-based-access-control/role-assignments-portal.md), [Azure CLI](../role-based-access-control/role-assignments-cli.md)или других средств Azure.
 
 * Ознакомьтесь с дополнительными сведениями о [вариантах проверки подлинности](container-registry-authentication.md) для Реестра контейнеров Azure.
 

@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/08/2020
+ms.date: 07/27/2020
 ms.author: b-juche
-ms.openlocfilehash: f9552b82dc79e1edafb13fead5a07df3ecf1be3b
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: 7c792ee9c56a044942bb2249a57f2615c72badee
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87512964"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87533144"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -97,11 +97,15 @@ ms.locfileid: "87512964"
 
 ### <a name="how-do-i-change-the-service-level-of-a-volume"></a>Разделы справки изменить уровень обслуживания тома?
 
-Изменение уровня обслуживания тома в настоящее время не поддерживается.
+Уровень обслуживания существующего тома можно изменить, переместив том в другой пул мощностей, который использует требуемый [уровень обслуживания](azure-netapp-files-service-levels.md) для тома. См. раздел [Динамическое изменение уровня обслуживания тома](dynamic-change-volume-service-level.md). 
 
 ### <a name="how-do-i-monitor-azure-netapp-files-performance"></a>Разделы справки монитор Azure NetApp Files производительность?
 
 Azure NetApp Files предоставляет метрики производительности тома. Можно также использовать Azure Monitor для мониторинга метрик использования для Azure NetApp Files.  Список метрик производительности для Azure NetApp Files см. в разделе [метрики для Azure NetApp Files](azure-netapp-files-metrics.md) .
+
+### <a name="whats-the-performance-impact-of-kerberos-on-nfsv41"></a>Каковы последствия производительности Kerberos на Нфсв 4.1?
+
+Сведения о параметрах безопасности для Нфсв 4.1, тестировании векторов производительности и ожидаемом влиянии на производительность см. в статье [влияние Kerberos на нфсв 4.1](configure-kerberos-encryption.md#kerberos_performance) . 
 
 ## <a name="nfs-faqs"></a>Вопросы и ответы по NFS
 
@@ -164,6 +168,15 @@ Yes, by default, Azure NetApp Files supports both AES-128 and AES-256 encryption
 
 Yes, Azure NetApp Files supports LDAP signing by default. This functionality enables secure LDAP lookups between the Azure NetApp Files service and the user-specified [Active Directory Domain Services domain controllers](https://docs.microsoft.com/windows/win32/ad/active-directory-domain-services). For more information, see [ADV190023 | Microsoft Guidance for Enabling LDAP Channel Binding and LDAP Signing](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023).
 --> 
+
+## <a name="dual-protocol-faqs"></a>Вопросы и ответы по двойным протоколам
+
+### <a name="i-tried-to-use-the-root-and-local-users-to-access-a-dual-protocol-volume-with-the-ntfs-security-style-on-a-unix-system-why-did-i-encounter-a-permission-denied-error"></a>Я пытался использовать "root" и локальные пользователи для доступа к тому с двумя протоколами и стилем безопасности NTFS в системе UNIX. Почему возникла ошибка "отказано в разрешении"?   
+
+На томе с двумя протоколами поддерживаются протоколы NFS и SMB.  При попытке доступа к подключенному тому в системе UNIX система пытается сопоставлять пользователя UNIX, который используется с пользователем Windows. Если сопоставление не найдено, возникает ошибка "отказано в разрешении".  Эта ситуация также возникает при использовании привилегированного пользователя для доступа.    
+
+Чтобы избежать проблемы с запретом разрешений, убедитесь, что Active Directory Windows включается `pcuser` перед доступом к точке подключения. При добавлении `pcuser` после возникновения проблемы "отказано в разрешении" Подождите 24 часа, чтобы запись кэша была очищена, прежде чем повторить попытку доступа.
+
 
 ## <a name="capacity-management-faqs"></a>Вопросы и ответы по управлению емкостью
 
