@@ -1,7 +1,7 @@
 ---
 title: Выполнение команд PowerShell с учетными данными Azure AD для доступа к данным BLOB-объектов или очередей
 titleSuffix: Azure Storage
-description: PowerShell поддерживает вход с использованием учетных данных Azure AD для выполнения команд в хранилище BLOB-объектов Azure и очередей данных. Маркер доступа предоставляется для сеанса и позволяет авторизовать вызов операций. Разрешения зависят от роли RBAC, назначенной субъекту безопасности Azure AD.
+description: PowerShell поддерживает вход с использованием учетных данных Azure AD для выполнения команд в хранилище BLOB-объектов Azure и очередей данных. Маркер доступа предоставляется для сеанса и позволяет авторизовать вызов операций. Разрешения зависят от роли Azure, назначенной субъекту безопасности Azure AD.
 services: storage
 author: tamram
 ms.service: storage
@@ -10,18 +10,18 @@ ms.date: 12/30/2019
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: b7e93f54c1aa0eaa5edf3b3fcbfbf8bd9a6442d7
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: a99b2841441e43ac02688494b1324fa5d630dcd5
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87417545"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87534929"
 ---
 # <a name="run-powershell-commands-with-azure-ad-credentials-to-access-blob-or-queue-data"></a>Выполнение команд PowerShell с учетными данными Azure AD для доступа к данным BLOB-объектов или очередей
 
 Служба хранилища Azure предоставляет расширения для PowerShell, которые позволяют входить в систему и выполнять команды сценариев с учетными данными Azure Active Directory (Azure AD). При входе в PowerShell с учетными данными Azure AD возвращается маркер доступа OAuth 2,0. Этот маркер автоматически используется PowerShell для авторизации последующих операций с данными в хранилище BLOB-объектов или очередей. Для поддерживаемых операций больше не требуется передавать ключ учетной записи или маркер SAS с помощью команды.
 
-Вы можете назначать разрешения для данных BLOB-объектов и очередей субъекту безопасности Azure AD через Управление доступом на основе ролей (RBAC). Дополнительные сведения о ролях RBAC в службе хранилища Azure см. в статье [Управление правами доступа к данным службы хранилища Azure с помощью RBAC](storage-auth-aad-rbac.md).
+Вы можете назначать разрешения для данных BLOB-объектов и очередей субъекту безопасности Azure AD через Управление доступом на основе ролей (RBAC). Дополнительные сведения о ролях Azure в службе хранилища Azure см. в статье [Управление правами доступа к данным службы хранилища Azure с помощью RBAC](storage-auth-aad-rbac.md).
 
 ## <a name="supported-operations"></a>Поддерживаемые операции
 
@@ -68,7 +68,7 @@ ms.locfileid: "87417545"
     $ctx = New-AzStorageContext -StorageAccountName "<storage-account>" -UseConnectedAccount
     ```
 
-1. Прежде чем создавать контейнер, назначьте себе роль [Участник данных в хранилище BLOB-объектов](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor). Несмотря на то, что вы являетесь владельцем учетной записи, вам нужны явные разрешения на выполнение операций с данными с учетной записью хранения. Дополнительные сведения о назначении ролей RBAC см. [в разделе Предоставление доступа к данным BLOB-объектов и очередей Azure с помощью RBAC в портал Azure](storage-auth-aad-rbac.md).
+1. Прежде чем создавать контейнер, назначьте себе роль [Участник данных в хранилище BLOB-объектов](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor). Несмотря на то, что вы являетесь владельцем учетной записи, вам нужны явные разрешения на выполнение операций с данными с учетной записью хранения. Дополнительные сведения о назначении ролей Azure см. [в разделе Предоставление доступа к данным BLOB-объектов и очередей Azure с помощью RBAC в портал Azure](storage-auth-aad-rbac.md).
 
     > [!IMPORTANT]
     > Распространение назначений ролей Azure может занять несколько минут.
@@ -82,5 +82,5 @@ ms.locfileid: "87417545"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Назначение роли RBAC доступа к данным большого двоичного объекта и очереди с помощью PowerShell](storage-auth-aad-rbac-powershell.md)
+- [Назначение роли Azure для доступа к данным BLOB-объектов и очередей с помощью PowerShell](storage-auth-aad-rbac-powershell.md)
 - [Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure](storage-auth-aad-msi.md)

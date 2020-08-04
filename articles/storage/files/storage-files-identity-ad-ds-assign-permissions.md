@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 06/22/2020
 ms.author: rogarana
-ms.openlocfilehash: 3335bfbed592c9e13d5be437e8013a89ae86e970
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 16c8058da30821a53a20cf3ea6afdb0e4dbfcb77
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85510636"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87535099"
 ---
 # <a name="part-two-assign-share-level-permissions-to-an-identity"></a>Часть 2. Назначение удостоверениям разрешений на уровне общего ресурса
 
@@ -38,11 +38,11 @@ ms.locfileid: "85510636"
 
 Вы можете использовать портал Azure, Azure PowerShell или Azure CLI, чтобы назначить встроенные роли удостоверению пользователя Azure AD для предоставления разрешений на уровне общего доступа.
 
-## <a name="assign-an-rbac-role"></a>Назначение роли RBAC
+## <a name="assign-an-azure-role"></a>Назначение роли Azure
 
 ### <a name="azure-portal"></a>Портал Azure
 
-Чтобы назначить роль RBAC удостоверению Azure AD, используйте [портал Azure](https://portal.azure.com)выполните следующие действия.
+Чтобы назначить роль Azure удостоверению Azure AD, используйте [портал Azure](https://portal.azure.com)выполните следующие действия.
 
 1. В портал Azure перейдите к общей папке или [Создайте общую папку](storage-how-to-create-file-share.md).
 1. Выберите **Управление доступом (IAM)** .
@@ -52,7 +52,7 @@ ms.locfileid: "85510636"
 
 ### <a name="powershell"></a>PowerShell
 
-В следующем примере PowerShell показано, как назначить роль RBAC удостоверению Azure AD на основе имени для входа. Дополнительные сведения о назначении ролей RBAC с помощью PowerShell см. в статье [Управление доступом с помощью RBAC и Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
+В следующем примере PowerShell показано, как назначить роль Azure удостоверению Azure AD на основе имени для входа. Дополнительные сведения о назначении ролей Azure с помощью PowerShell см. в статье [Управление доступом с использованием RBAC и Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
 
 Перед запуском следующего примера скрипта замените значения заполнителей, включая квадратные скобки, значениями.
 
@@ -67,7 +67,7 @@ New-AzRoleAssignment -SignInName <user-principal-name> -RoleDefinitionName $File
 
 ### <a name="cli"></a>CLI
   
-Следующая команда CLI 2,0 назначает роль RBAC удостоверению Azure AD на основе имени для входа. Дополнительные сведения о назначении ролей RBAC с Azure CLI см. в разделе [Управление доступом с помощью RBAC и Azure CLI](../../role-based-access-control/role-assignments-cli.md). 
+Следующая команда CLI 2,0 назначает роль Azure удостоверению Azure AD на основе имени для входа. Дополнительные сведения о назначении ролей Azure с Azure CLI см. в разделе [Управление доступом с помощью RBAC и Azure CLI](../../role-based-access-control/role-assignments-cli.md). 
 
 Перед запуском следующего примера сценария не забудьте заменить значения заполнителей, включая квадратные скобки, собственными значениями.
 
@@ -76,7 +76,7 @@ New-AzRoleAssignment -SignInName <user-principal-name> -RoleDefinitionName $File
 az role assignment create --role "<role-name>" --assignee <user-principal-name> --scope "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/fileServices/default/fileshares/<share-name>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы назначили разрешения уровня общего доступа, необходимо настроить разрешения на уровне каталога и файла. Перейдите к следующей статье.
 

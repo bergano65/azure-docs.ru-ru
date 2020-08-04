@@ -10,12 +10,12 @@ ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/18/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7819b62fb92945a409cab0dff926e281620dd80c
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 727a5052b0531cc0a37cc631e11bc498498be5b3
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87496650"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87534980"
 ---
 # <a name="manage-storage-account-keys-with-key-vault-and-the-azure-cli"></a>Управление ключами учетной записи хранения с помощью Key Vault и Azure CLI
 
@@ -71,7 +71,7 @@ az login
 
 Воспользуйтесь командой Azure CLI [AZ Role назначение Create](/cli/azure/role/assignment?view=azure-cli-latest) , чтобы предоставить Key Vault доступ к вашей учетной записи хранения. Укажите следующие значения параметров для команды:
 
-- `--role`: Передайте роль службы оператора "оператор ключа" для учетной записи хранения. Эта роль ограничивает область доступа учетной записью хранения. Для классической учетной записи хранения передайте "роль службы оператора ключа классической учетной записи хранения".
+- `--role`: Передайте роль службы оператора ключа учетной записи хранения Azure. Эта роль ограничивает область доступа учетной записью хранения. Для классической учетной записи хранения передайте "роль службы оператора ключа классической учетной записи хранения".
 - `--assignee`: Передайте значение " https://vault.azure.net ", которое является URL-адресом для Key Vault в общедоступном облаке Azure. (Для использования Azure Говермент Cloud используйте "--асинжее-Object-ID". см. раздел [Service PRINCIPAL ID приложения](#service-principal-application-id).)
 - `--scope`: Передайте идентификатор ресурса учетной записи хранения, который находится в форме `/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>` . Чтобы найти идентификатор подписки, воспользуйтесь командой Azure CLI [AZ Account List](/cli/azure/account?view=azure-cli-latest#az-account-list) . чтобы найти имя учетной записи хранения и группу ресурсов учетной записи хранения, воспользуйтесь командой Azure CLI [AZ Storage Account List](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-list) .
 

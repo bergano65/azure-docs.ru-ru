@@ -3,12 +3,12 @@ title: Использование концентратора событий из
 description: В этой статье содержатся сведения о поддержке Apache Kafka в службе "Центры событий Azure".
 ms.topic: article
 ms.date: 07/20/2020
-ms.openlocfilehash: 94e0993c192cb735d6a4f0f3f7ec484c830902e9
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: ab29c9c4270514e95752ab2bbd085ffe1b0a2fb0
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87501599"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87534878"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Использование Центров событий Azure из приложений Apache Kafka
 Центры событий предоставляют конечную точку Kafka, которую существующие приложения на основе Kafka могут использовать в качестве альтернативы запуска собственного кластера Kafka. Центры событий поддерживают [Apache Kafka 1.0](https://kafka.apache.org/documentation/) и более новые версии протокола и работают с имеющимися приложениями Kafka, в том числе с MirrorMaker.  
@@ -46,7 +46,7 @@ ms.locfileid: "87501599"
 - Подписанный URL-адрес (SAS)
 
 #### <a name="oauth"></a>OAuth
-Концентраторы событий интегрируются с Azure Active Directory (Azure AD), который предоставляет сервер централизованной авторизации, совместимый с **OAuth** 2,0. С помощью Azure AD можно использовать управление доступом на основе ролей (RBAC), чтобы предоставить точные разрешения для удостоверений клиентов. Эту функцию можно использовать с клиентами Kafka, указав **SASL_SSL** для протокола и **оаусбеарер** для механизма. Дополнительные сведения о ролях и уровнях RBAC для доступа к области см. [в статье авторизация доступа с помощью Azure AD](authorize-access-azure-active-directory.md).
+Концентраторы событий интегрируются с Azure Active Directory (Azure AD), который предоставляет сервер централизованной авторизации, совместимый с **OAuth** 2,0. С помощью Azure AD можно использовать управление доступом на основе ролей (RBAC), чтобы предоставить точные разрешения для удостоверений клиентов. Эту функцию можно использовать с клиентами Kafka, указав **SASL_SSL** для протокола и **оаусбеарер** для механизма. Дополнительные сведения о ролях и уровнях Azure для доступа к области см. [в статье авторизация доступа с помощью Azure AD](authorize-access-azure-active-directory.md).
 
 ```xml
 bootstrap.servers=NAMESPACENAME.servicebus.windows.net:9093
@@ -69,7 +69,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 > [!NOTE]
 > При использовании проверки подлинности SAS с клиентами Kafka установленные подключения не отключаются при повторном формировании ключа SAS. 
 
-#### <a name="samples"></a>примеры 
+#### <a name="samples"></a>Примеры 
 Пошаговые инструкции по созданию концентратора событий и доступу к нему с помощью SAS или OAuth см **. в статье** [Краткое руководство. потоковая передача данных с концентраторами событий с помощью протокола Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md).
 
 Дополнительные **примеры** , демонстрирующие использование OAuth с концентраторами событий для Kafka, см. [в статье примеры на сайте GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth).

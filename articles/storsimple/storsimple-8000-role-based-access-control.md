@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/11/2017
 ms.author: alkohli
-ms.openlocfilehash: 58332be22600620e7a3ff1f455f96fe0d786d846
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 04993d36689c917db05a1b5f2132b107c7c9b412
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500050"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87535116"
 ---
 # <a name="role-based-access-control-for-storsimple"></a>Управление доступом на основе ролей для StorSimple
 
@@ -29,7 +29,7 @@ ms.locfileid: "87500050"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="rbac-roles-for-storsimple"></a>Роли RBAC для StorSimple
+## <a name="azure-roles-for-storsimple"></a>Роли Azure для StorSimple
 
 RBAC можно назначить на основе ролей. Роли предоставляют определенные уровни разрешений, исходя из доступных ресурсов в среде. Существует два типа ролей, которые пользователи StorSimple могут выбрать: встроенная и пользовательская.
 
@@ -58,7 +58,7 @@ RBAC можно назначить на основе ролей. Роли пре
     Get-AzRoleDefinition -Name "Reader" | ConvertTo-Json | Out-File C:\ssrbaccustom.json
     ```
 
-4. Откройте JSON-файл в Visual Studio. Обратите внимание, что типичная роль RBAC состоит из трех основных разделов: **Actions**, **NotActions** и **AssignableScopes**.
+4. Откройте JSON-файл в Visual Studio. Вы видите, что типичная роль Azure состоит из трех основных разделов: **Actions** **, No и** **AssignableScopes**.
 
     В разделе **Actions** перечислены все разрешенные операции этой роли. Каждое действие назначено из поставщика ресурсов. Для администратора инфраструктуры StorSimple используйте поставщик ресурсов `Microsoft.StorSimple`.
 
@@ -68,9 +68,9 @@ RBAC можно назначить на основе ролей. Роли пре
 
     Вы также можете проверить все доступные командлеты PowerShell для управления поставщиками ресурсов.
 
-    В разделе **NotActions** перечислены все запрещенные действия для определенной роли RBAC. В этом примере нет запрещенных действий.
+    В разделе **"** незащищенные" перечислены все действия, ограниченные для конкретной роли Azure. В этом примере нет запрещенных действий.
     
-    В разделе **AssignableScopes** указаны идентификаторы подписок. Убедитесь, что роль RBAC содержит явные идентификаторы подписок, в которых она используется. Если указан неправильный идентификатор подписки, вы не сможете импортировать роль в подписке.
+    В разделе **AssignableScopes** указаны идентификаторы подписок. Убедитесь, что роль Azure содержит явный идентификатор подписки, где она используется. Если указан неправильный идентификатор подписки, вы не сможете импортировать роль в подписке.
 
     Измените файл, учитывая предыдущие рекомендации.
 
@@ -109,7 +109,7 @@ RBAC можно назначить на основе ролей. Роли пре
 
 Эта роль должна отобразиться в списке ролей в колонке **Управление доступом**.
 
-![Просмотр ролей RBAC](./media/storsimple-8000-role-based-access-control/rbac-role-types.png)
+![Просмотр ролей Azure](./media/storsimple-8000-role-based-access-control/rbac-role-types.png)
 
 Дополнительную информацию см. в разделе [Пользовательские роли](../role-based-access-control/custom-roles.md).
 
@@ -167,7 +167,7 @@ AssignableScopes : {/subscriptions/<subscription_ID>/}
 
 1. Перейдите в раздел **Управление доступом (IAM)**. В колонке "Управление доступом" щелкните **+ Добавить**.
 
-    ![Добавление прав доступа к роли RBAC](./media/storsimple-8000-role-based-access-control/rbac-add-role.png)
+    ![Добавление доступа к роли Azure](./media/storsimple-8000-role-based-access-control/rbac-add-role.png)
 
 2. Выберите роль, которую необходимо назначить. В данном случае это роль **администратора инфраструктуры StorSimple**.
 
@@ -175,7 +175,7 @@ AssignableScopes : {/subscriptions/<subscription_ID>/}
 
 4. Нажмите кнопку **Сохранить**, чтобы создать назначение.
 
-    ![Добавление разрешений в роль RBAC](./media/storsimple-8000-role-based-access-control/rbac-create-role-infra-admin.png)
+    ![Добавление разрешений в роль Azure](./media/storsimple-8000-role-based-access-control/rbac-create-role-infra-admin.png)
 
 Уведомление **Добавление пользователя** показывает ход выполнения. После успешного добавления пользователя список пользователей в колонке управления доступом обновляется.
 

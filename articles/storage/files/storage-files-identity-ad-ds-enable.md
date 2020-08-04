@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 06/22/2020
 ms.author: rogarana
-ms.openlocfilehash: e2f38daea40f89e73422ca8115f2425758be81a4
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 612584a71aa6be54d726ccdd74d9368ba9cddbc9
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87413108"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87535082"
 ---
 # <a name="part-one-enable-ad-ds-authentication-for-your-azure-file-shares"></a>Часть 1. Включение проверки подлинности AD DS для файловых ресурсов Azure 
 
@@ -30,7 +30,7 @@ ms.locfileid: "87413108"
 
 - [Скачайте и Распакуйте модуль азфилешибрид](https://github.com/Azure-Samples/azure-files-samples/releases) (общедоступный модуль: v 0.2.0 +).
 - Установите и выполните модуль на устройстве, присоединенном к локальному AD DS с учетными данными AD DS, имеющими разрешения на создание учетной записи входа в службу или учетной записи компьютера в целевом AD.
--  Запустите скрипт, используя локальные учетные данные AD DS, которые синхронизируются с Azure AD. Локальные учетные данные AD DS должны иметь разрешения владельца учетной записи хранения или роли RBAC участника.
+-  Запустите скрипт, используя локальные учетные данные AD DS, которые синхронизируются с Azure AD. Локальные учетные данные AD DS должны иметь разрешения владельца учетной записи хранения или роли участника Azure.
 
 ### <a name="run-join-azstorageaccountforauth"></a>Выполните команду JOIN-Азсторажеаккаунтфораус
 
