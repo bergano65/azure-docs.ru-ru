@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/04/2020
 ms.author: allensu
-ms.openlocfilehash: 7aa0889ab95cdac37f9fe0735c7ad58569621059
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: bf9e403fb8691f378558ef5f0403d132214ed187
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86205410"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421779"
 ---
 # <a name="azure-load-balancer-components"></a>Компоненты Azure Load Balancer
 
@@ -75,7 +75,7 @@ Load Balancer ценовой категории "Базовый" не подде
 Например, используйте правило балансировки нагрузки для порта 80, чтобы направить трафик с интерфейсного IP-адреса на порт 80 внутренних экземпляров.
 
 <p align="center">
-  <img src="./media/load-balancer-components/lbrules.svg" width="512" title="Правила балансировки нагрузки">
+  <img src="./media/load-balancer-components/lbrules.svg" alt= "Figure depicts how Azure Load Balancer directs frontend port 80 to three instances of backend port 80." width="512" title="Правила балансировки нагрузки">
 </p>
 
 *Рисунок. Правила балансировки нагрузки*
@@ -97,7 +97,7 @@ Load Balancer ценовой категории "Базовый" не подде
 Правила балансировки нагрузки портов с высоким уровнем доступности помогают в критически важных сценариях. Например, они обеспечивают высокий уровень доступности и масштабирование для виртуальных сетевых модулей в виртуальных сетях. Они позволяют распределять нагрузку между большим количеством портов.
 
 <p align="center">
-  <img src="./media/load-balancer-components/harules.svg" width="512" title="Правила для портов с высоким уровнем доступности">
+  <img src="./media/load-balancer-components/harules.svg" alt="Figure depicts how Azure Load Balancer directs all frontend ports to three instances of all backend ports" width="512" title="Правила для портов с высоким уровнем доступности">
 </p>
 
 *Рисунок. Правила для портов с высоким уровнем доступности*
@@ -111,7 +111,7 @@ Load Balancer ценовой категории "Базовый" не подде
 Например, сеансы протокола удаленного рабочего стола (RDP) или Secure Shell (SSH) можно направлять на разные экземпляры виртуальных машин во внутреннем пуле. Несколько внутренних конечных точек можно сопоставить с разными портами на одном интерфейсном IP-адресе. Интерфейсные IP-адреса можно использовать для удаленного администрирования виртуальных машин без дополнительного коммутатора.
 
 <p align="center">
-  <img src="./media/load-balancer-components/inboundnatrules.svg" width="512" title="Правила преобразования сетевых адресов для входящих подключений">
+  <img src="./media/load-balancer-components/inboundnatrules.svg" alt="Figure depicts how Azure Load Balancer directs frontend ports 3389, 443, and 80 to backend ports with the same values on separate servers." width="512" title="Правила преобразования сетевых адресов для входящих подключений">
 </p>
 
 *Рисунок. Правила NAT для входящего трафика*

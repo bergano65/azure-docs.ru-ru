@@ -3,12 +3,12 @@ title: Краткое руководство. Отправка событий х
 description: Краткое руководство. Использование службы "Сетка событий Azure" и портала Azure для создания учетной записи хранилища BLOB-объектов и подписки на связанные события. Отправка событий в веб-перехватчик.
 ms.date: 07/07/2020
 ms.topic: quickstart
-ms.openlocfilehash: fe942a4daa877088bd354352aa994e4e283f9be5
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 46cd88558334239a1a9971c63b8b2608def3c4d3
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86103642"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87421609"
 ---
 # <a name="quickstart-route-blob-storage-events-to-web-endpoint-with-the-azure-portal"></a>Краткое руководство. Отправка событий хранилища BLOB-объектов в конечную веб-точку с помощью портала Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "86103642"
 
 1. Выберите **Развернуть в Azure**, чтобы развернуть решение в своей подписке. 
 
-   <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fazure-event-grid-viewer%2Fmaster%2Fazuredeploy.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"/></a>
+   <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fazure-event-grid-viewer%2Fmaster%2Fazuredeploy.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png" alt="Button to Deploy to Aquent." /></a>
 2. На странице **Настраиваемое развертывание** выполните следующие действия: 
     1. В качестве **группы ресурсов** выберите ту же группу ресурсов, которую вы использовали при создании учетной записи хранения. После завершения работы с руководством вам будет проще выполнить очистку, удалив группу ресурсов.  
     2. В поле **Имя сайта** введите имя веб-приложения.

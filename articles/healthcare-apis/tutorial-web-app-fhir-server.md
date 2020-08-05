@@ -9,12 +9,13 @@ ms.reviewer: mihansen
 ms.author: cavoeg
 author: caitlinv39
 ms.date: 01/03/2020
-ms.openlocfilehash: fcad9356f87e76b14e0ef636389c11fd4290e12a
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.custom: devx-track-javascript
+ms.openlocfilehash: bf47ec0ca88d409c91b8acad25506c1cc8958e86
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "84870501"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87422799"
 ---
 # <a name="deploy-javascript-app-to-read-data-from-fhir-service"></a>Развертывание приложения JavaScript для чтения данных из службы FHIR
 В этом руководстве показано, как развернуть небольшое приложение JavaScript, которое считывает данные из службы FHIR. Последовательность действий будет следующей:
