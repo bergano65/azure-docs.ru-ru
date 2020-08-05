@@ -6,18 +6,18 @@ author: msjasteppe
 ms.service: healthcare-apis
 ms.subservice: iomt
 ms.topic: conceptual
-ms.date: 07/30/2020
+ms.date: 08/03/2020
 ms.author: jasteppe
-ms.openlocfilehash: 8c372a865e34b2cbd1b5b3e6d8619c3ef0f438e0
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: b404fa5322d3afa8cbf71741382d44dd0433d49c
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87460428"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87553688"
 ---
 # <a name="azure-iot-connector-for-fhir-preview-troubleshooting-guide"></a>Руководство по устранению неполадок в соединителе Azure IoT для FHIR (Предварительная версия)
 
-В этой статье приводятся действия по устранению распространенных ошибок в соединителе Azure IoT для FHIR сообщений об ошибках и условиях.  
+В этой статье приводятся действия по устранению неполадок в сообщениях об ошибках и условиях FHIR * в соединителе Azure IoT.  
 
 Вы также узнаете, как создавать копии соединителя Azure IoT для файлов сопоставления FHIR JSON для редактирования и архивации за пределами портал Azure или для предоставления технической поддержки Azure при открытии запроса в службу поддержки. 
 
@@ -72,7 +72,7 @@ ms.locfileid: "87460428"
 Ознакомьтесь с часто задаваемыми вопросами о соединителе Azure IoT для FHIR.
 
 >[!div class="nextstepaction"]
->[Часто задаваемые вопросы о соединителе Azure IoT для FHIR (Предварительная версия)](fhir-faq.md#iot-connector-preview)
+>[Вопросы и ответы о соединителе Azure IoT для FHIR](fhir-faq.md#azure-iot-connector-for-fhir-preview)
 
 * В портал Azure соединитель Azure IoT для FHIR называется соединителем IoT (Предварительная версия).
 

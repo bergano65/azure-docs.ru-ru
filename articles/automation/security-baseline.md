@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 948ada46085d83c8cf453cdde23cb407ea2dd2d8
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: e78f4133e7f722870f6c84de2ab7e784cd151d79
+ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87447706"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87562690"
 ---
 # <a name="azure-security-baseline-for-automation"></a>Базовый уровень безопасности Azure для автоматизации
 
@@ -34,7 +34,7 @@ ms.locfileid: "87447706"
 
 Кроме того, при наличии определенного требования можно использовать брандмауэр Azure для его удовлетворения.
 
-* [Виртуальные сети и виртуальные машины в Azure](../virtual-machines/windows/network-overview.md)
+* [Виртуальные сети и виртуальные машины в Azure](../virtual-machines/network-overview.md)
 
 * [Создание виртуальной сети](../virtual-network/quick-create-portal.md)
 
@@ -848,7 +848,7 @@ ms.locfileid: "87447706"
 
 **Руководство**. приложения с высоким риском, развернутые в среде Azure, могут быть изолированы с помощью отдельных сетевых контейнеров и контейнеров ресурсов с помощью таких конструкций, как виртуальные сети, подсеть, подписки, группы управления, они могут быть достаточно защищены с помощью брандмауэра Azure, брандмауэра веб-приложения (WAF) или группы безопасности сети (NSG).
 
-* [Виртуальные сети и виртуальные машины в Azure](../virtual-machines/windows/network-overview.md)
+* [Виртуальные сети и виртуальные машины в Azure](../virtual-machines/network-overview.md)
 
 * [Общие сведения о брандмауэре Azure](../firewall/overview.md)
 

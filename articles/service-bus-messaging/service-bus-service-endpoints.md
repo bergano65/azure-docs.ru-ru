@@ -4,12 +4,12 @@ description: В этой статье содержатся сведения о �
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 4518f7faedb44631c76c6d8b42ff9cca0dc3e08c
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: f902c77c3c7e614247abd4f8af50b8ed37b7e574
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87422952"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87552991"
 ---
 # <a name="allow-access-to-azure-service-bus-namespace-from-specific-virtual-networks"></a>Разрешение доступа к пространству имен служебной шины Azure из конкретных виртуальных сетей
 
@@ -32,6 +32,7 @@ ms.locfileid: "87422952"
 > В виртуальной сети должны присутствовать следующие службы Майкрософт:
 > - Служба приложений Azure
 > - Функции Azure
+> - Azure Monitor (параметр диагностики)
 
 > [!IMPORTANT]
 > Виртуальные сети поддерживаются только в пространствах имен службы "Служебная шина" [ценовой категории "Премиум"](service-bus-premium-messaging.md).

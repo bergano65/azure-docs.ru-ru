@@ -3,12 +3,12 @@ title: Использование PowerShell для архивации Windows S
 description: Из этой статьи вы узнаете, как использовать PowerShell для настройки Azure Backup в Windows Server или на клиенте Windows, а также управлять резервным копированием и восстановлением.
 ms.topic: conceptual
 ms.date: 12/2/2019
-ms.openlocfilehash: 116bdd6b5f48a9d5abc0f9f0d9ce61f857196fd2
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 0deccc49b82d4a8b81889c35174c3efa81b6d74d
+ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86513733"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87564033"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell
 
@@ -148,7 +148,7 @@ $CredsFilename = Get-AzRecoveryServicesVaultSettingsFile -Backup -Vault $Vault -
 ```
 
 На сервере Windows Server или DPM запустите командлет [Start-OBRegistration](/powershell/module/msonlinebackup/start-obregistration) , чтобы зарегистрировать компьютер в хранилище.
-Этот и другие командлеты, используемые для резервного копирования, входят в модуль MSONLINE, который установщик агента Mars добавляет в процессе установки.
+Это и другие командлеты, используемые для резервного копирования, из модуля MSONLINE, который К установщика агента MARS добавил как часть процесса установки.
 
 Установщик агента не обновляет $Env:P переменную Смодулепас. Это означает, что автоматическая загрузка модуля завершается ошибкой. Чтобы устранить эту проблему, выполните следующие действия.
 

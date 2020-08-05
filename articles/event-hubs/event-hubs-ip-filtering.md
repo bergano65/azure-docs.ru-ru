@@ -3,12 +3,12 @@ title: Правила брандмауэра Центров событий Azure
 description: Использование правил брандмауэра для разрешения подключений к Центрам событий Azure с определенных IP-адресов.
 ms.topic: article
 ms.date: 07/16/2020
-ms.openlocfilehash: a27c5981bb14c2ff98dfcb74692cf9db19a55137
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 8ba327c78888d9e5f38693ae08a2022b2d1543a4
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421507"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87553127"
 ---
 # <a name="allow-access-to-azure-event-hubs-namespaces-from-specific-ip-addresses-or-ranges"></a>Разрешить доступ к пространствам имен концентраторов событий Azure с конкретных IP-адресов или диапазонов
 По умолчанию пространства имен Центров событий доступны из Интернета при условии, что запрос поступает с действительной аутентификацией и авторизацией. С помощью IP-брандмауэра такой доступ можно дополнительно ограничить набором или диапазоном IPv4-адресов, введя их в нотации [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).
@@ -28,6 +28,7 @@ ms.locfileid: "87421507"
 > В виртуальной сети должны присутствовать следующие службы Майкрософт:
 > - Веб-приложения Azure
 > - Функции Azure
+> - Azure Monitor (параметр диагностики)
 
 
 ## <a name="ip-firewall-rules"></a>Правила брандмауэра для IP-адресов

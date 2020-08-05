@@ -6,6 +6,8 @@
       href: overview.md
     - name: 'Сведения о ключах, секретах и сертификатах'
       href: about-keys-secrets-certificates.md
+    - name: Новые возможности
+      href: whats-new.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -142,7 +144,7 @@
       href: versions.md
     - name: Azure PowerShell
       href: /powershell/module/az.keyvault/?view=azps-1.2.0#key_vault
-    - name: Azure CLI
+    - name: Azure CLI;
       href: /cli/azure/keyvault
     - name: .NET
       href: /dotnet/api/overview/azure/keyvault/management?view=azure-dotnet

@@ -372,7 +372,7 @@
     - name: Наблюдение
       href: ../../azure-monitor/insights/monitor-vm-azure.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Резервное копирование и восстановление
-      href: backup-recovery.md
+      href: ../backup-recovery.md
     - name: Cloud Adoption Framework
       href: /azure/cloud-adoption-framework/get-started/
     - name: Центр архитектуры

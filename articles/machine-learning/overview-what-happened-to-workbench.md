@@ -11,12 +11,12 @@ ms.reviewer: jmartens
 author: j-martens
 ms.author: jmartens
 ms.date: 03/05/2020
-ms.openlocfilehash: fa9b99f1ad2a81e7edac4574324d9f883effe19c
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 6be41ab4b172a6d111d9ff648cfd85a2ab026b9a
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318816"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87553671"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>Что случилось с Azure Machine Learning Workbench?
 
@@ -42,7 +42,7 @@ ms.locfileid: "87318816"
 
 Переработанная [архитектура](concept-azure-machine-learning-architecture.md) для упрощения использования. Вместо нескольких ресурсов Azure и учетных записей требуется только [рабочая область машинного обучения Azure](concept-workspace.md). Новые рабочие области можно быстро создать на [портале Azure](how-to-manage-workspace.md). Рабочая область позволяет нескольким пользователя хранить целевые объекты вычислений для обучения и развертывания, экспериментов с моделями, образов Docker, развернутых моделей и т. д.
 
-Текущий выпуск предоставляет обновленные и улучшенные клиенты для работы с интерфейсом командной строки и пакетом SDK, но само классическое приложение Workbench является устаревшим. На панели мониторинга рабочей области [студии машинного обучения Azure](how-to-track-experiments.md#view-the-experiment-in-the-web-portal) можно управлять экспериментами. Используйте панель мониторинга, чтобы просматривать историю эксперимента, управлять целевыми объектами вычислений, подключенными к рабочей области, управлять моделями и образами Docker и даже развертывать веб-службы.
+Текущий выпуск предоставляет обновленные и улучшенные клиенты для работы с интерфейсом командной строки и пакетом SDK, но само классическое приложение Workbench является устаревшим. На панели мониторинга рабочей области [студии машинного обучения Azure](how-to-monitor-view-training-logs.md#view-the-experiment-in-the-web-portal) можно управлять экспериментами. Используйте панель мониторинга, чтобы просматривать историю эксперимента, управлять целевыми объектами вычислений, подключенными к рабочей области, управлять моделями и образами Docker и даже развертывать веб-службы.
 
 <a name="timeline"></a>
 

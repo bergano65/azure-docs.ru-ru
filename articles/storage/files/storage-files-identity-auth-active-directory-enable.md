@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 07/12/2020
 ms.author: rogarana
-ms.openlocfilehash: 1ea1bfdf2c3b2dcfd49f87a5a75597a464b07913
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d7aab7f5db6256d2f2525ff4a58c10ff5aa517f7
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86999587"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87553178"
 ---
 # <a name="overview---on-premises-active-directory-domain-services-authentication-over-smb-for-azure-file-shares"></a>Обзор: локальная проверка подлинности домен Active Directory служб по протоколу SMB для файловых ресурсов Azure
 
@@ -46,6 +46,8 @@ ms.locfileid: "86999587"
     Эту функцию можно включить в новой или существующей локальной среде AD DS. Удостоверения, используемые для доступа, должны быть синхронизированы с Azure AD. Клиент Azure AD и общая папка, к которым вы обращаетесь, должны быть связаны с одной и той же подпиской.
 
 - Домен — присоединение локального компьютера или виртуальной машины Azure к локальной AD DS. Сведения о том, как присоединиться к домену, см. в разделе [Присоединение компьютера к домену](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/join-a-computer-to-a-domain).
+
+    Если компьютер не присоединен к домену AD DS, вы по-прежнему можете использовать учетные данные AD для проверки подлинности, если компьютер имеет линейное представление об этом контроллере домена Active Directory.
 
 - Выберите или создайте учетную запись хранения Azure.  Для оптимальной производительности рекомендуется развернуть учетную запись хранения в том же регионе, что и клиент, с которого вы планируете получить доступ к общей папке. Затем [Подключите файловый ресурс Azure](storage-how-to-use-files-windows.md) к ключу учетной записи хранения. При подключении с помощью ключа учетной записи хранения проверяется подключение.
 

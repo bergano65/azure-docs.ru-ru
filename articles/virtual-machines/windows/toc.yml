@@ -356,7 +356,7 @@
     - name: Наблюдение
       href: ../../azure-monitor/insights/monitor-vm-azure.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Резервное копирование и восстановление
-      href: backup-recovery.md
+      href: ../backup-recovery.md
     - name: Cloud Adoption Framework
       href: /azure/cloud-adoption-framework/get-started/?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Центр архитектуры
@@ -1022,7 +1022,7 @@
   href: ../troubleshooting/index.yml
 - name: Справочник
   items:
-    - name: Azure CLI
+    - name: Azure CLI;
       href: /cli/azure/vm
     - name: Azure PowerShell
       href: /powershell/azure/

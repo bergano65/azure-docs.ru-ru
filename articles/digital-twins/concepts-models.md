@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 56ebb32e2d1c2a9bab9592da63e1ada7130bb7ff
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 2d062ea4f38742129d44be0e2b7ff51fe3ad8dd1
+ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87131639"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87562435"
 ---
 # <a name="understand-twin-models-in-azure-digital-twins"></a>Общие сведения о моделях двойника в Azure Digital двойников
 
@@ -26,7 +26,7 @@ ms.locfileid: "87131639"
 
 Модели для Azure Digital двойников определяются с помощью языка определения цифровых двойников (ДТДЛ). ДТДЛ основан на JSON-LD и не зависит от языка программирования. ДТДЛ не является эксклюзивным для Azure Digital двойников, но также используется для представления данных устройства в других службах IoT, таких как [iot Plug and Play](../iot-pnp/overview-iot-plug-and-play.md). 
 
-В Azure Digital двойников используется ДТДЛ *версии 2*. Дополнительные сведения об этой версии ДТДЛ см. в документации по спецификациям на сайте GitHub: [*Digital двойников Definition Language (дтдл) — версия 2*](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md).
+В Azure Digital двойников используется **дтдл _версии 2_**. Дополнительные сведения об этой версии ДТДЛ см. в документации по спецификациям на сайте GitHub: [*Digital двойников Definition Language (дтдл) — версия 2*](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md). Использование ДТДЛ _версии 1_ с Azure Digital двойников теперь устарело.
 
 > [!TIP] 
 > Не все службы, использующие ДТДЛ, реализуют одни и те же функции ДТДЛ. Например, IoT Plug and Play не использует функции ДТДЛ, предназначенные для графов, в то время как Azure Digital двойников в настоящее время не реализует команды ДТДЛ. Дополнительные сведения о функциях ДТДЛ, относящихся к Azure Digital двойников, см. в подразделе далее в этой статье, посвященной [особенностям реализации Azure Digital ДВОЙНИКОВ дтдл](#azure-digital-twins-dtdl-implementation-specifics).
@@ -216,7 +216,7 @@ ms.locfileid: "87131639"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 См. раздел Управление моделями с помощью API-интерфейсов Дигиталтвинсмоделс:
-* [*Практическое руководство. Управление настраиваемыми моделями*](how-to-manage-model.md)
+* [*Практическое руководство. Управление настраиваемыми моделями*](how-to-manage-model.md).
 
 Или Узнайте, как создаются цифровые двойников на основе моделей:
 * [*Основные понятия: Цифровые двойников и двойника Graph*](concepts-twins-graph.md)

@@ -1,7 +1,7 @@
 ---
 title: Предоставление дополнительных утверждений для приложений Azure AD
 titleSuffix: Microsoft identity platform
-description: Сведения о добавлении пользовательских или дополнительных утверждений в токены SAML 2.0 и JSON Web Token (JWT), выдаваемых службой Azure Active Directory.
+description: Добавление настраиваемых или дополнительных утверждений в токены SAML 2,0 и JSON Web tokens (JWT), выданные платформой Microsoft Identity.
 author: rwike77
 manager: CelesteDG
 ms.service: active-directory
@@ -12,21 +12,21 @@ ms.date: 07/30/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, keyam
 ms.custom: aaddev
-ms.openlocfilehash: dd181e87305f3d32fb301c8b563b7330e09b43d6
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: f93e2b34c64ce4bd8cec7182c3e990f0e675dc11
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87445577"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87552872"
 ---
-# <a name="how-to-provide-optional-claims-to-your-azure-ad-app"></a>Руководство. Предоставление дополнительных утверждений для приложения Azure AD
+# <a name="how-to-provide-optional-claims-to-your-app"></a>Как предоставить приложению необязательные утверждения
 
 Разработчики приложений могут использовать дополнительные утверждения в своих приложениях Azure AD, чтобы указать утверждения, которые нужно поместить в токены, отправляемые в приложение.
 
 Необязательные утверждения можно использовать, чтобы:
 
 - выбрать дополнительные утверждения для включения в токены для приложения;
-- изменить поведение определенных утверждений в токенах, возвращаемых Azure AD;
+- Изменение поведения определенных утверждений, которые платформа Microsoft Identity возвращает в токенах.
 - добавлять пользовательские утверждения для приложения и обращаться к ним.
 
 Список стандартных утверждений см. в документации по утверждениям [маркера доступа](access-tokens.md) и [id_token](id-tokens.md).

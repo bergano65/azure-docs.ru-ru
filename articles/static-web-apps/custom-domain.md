@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: buhollan
-ms.openlocfilehash: 8e832f57053cb950f705875f2895a9197cc7c83e
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 61ec96a35fac6a033fe6c8b65cff156ba63e5e58
+ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85960305"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87563353"
 ---
 # <a name="setup-a-custom-domain-in-azure-static-web-apps-preview"></a>Настройка личного домена в предварительной версии Статических веб-приложений Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "85960305"
 
 ## <a name="map-a-cname-record"></a>Сопоставление записи CNAME
 
-Запись CNAME сопоставляет один домен с другим. Запись CNAME можно использовать для сопоставления `www.example.com` с автоматически созданным доменом, предоставляемым Статическими веб-приложениями Azure.
+Запись CNAME сопоставляет один домен с другим. Запись CNAME можно использовать для сопоставления `www.example.com` , `blog.example.com` или любого другого поддомена с автоматически создаваемым доменом, предоставляемым статическими веб-приложениями Azure.
 
 1. Откройте [портал Azure](https://portal.azure.com) и войдите в систему, используя свою учетную запись Azure.
 

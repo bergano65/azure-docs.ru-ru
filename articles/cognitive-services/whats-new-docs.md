@@ -1,116 +1,67 @@
 ---
-title: 'Cognitive Services: новые возможности в документах для 1 июня 2020-30 июня 2020'
-description: Новые возможности в документации по Cognitive Services 1 июня 2020-30 июня 2020.
+title: 'Cognitive Services документы: новые возможности для 1 июля 2020 — 31 июля 2020 г.'
+description: Новые возможности в документации по Cognitive Services 1 июля 2020 — 31 июля 2020 г.
 author: erhopf
 manager: nitinme
 ms.topic: conceptual
 ms.author: erhopf
 ms.service: cognitive-services
-ms.date: 07/09/2020
-ms.openlocfilehash: 59d19bd2a1dca2a3bc3c6ec3aee9e63b8f12b5d3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/03/2020
+ms.openlocfilehash: eda90a430d96d43d052a603f82832aef6c0facdb
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87075186"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87553365"
 ---
-# <a name="cognitive-services-docs-whats-new-for-june-1-2020---june-30-2020"></a>Cognitive Services документы: новые возможности для 1 июня 2020-30 июня 2020
+# <a name="cognitive-services-docs-whats-new-for-july-1-2020---july-31-2020"></a>Cognitive Services документы: новые возможности для 1 июля 2020 — 31 июля 2020 г.
 
-Добро пожаловать в Cognitive Services документы с 1 июня 2020 до 30 июня 2020. В этой статье перечислены некоторые основные изменения, внесенные в документы в течение этого периода.
+Добро пожаловать в Cognitive Services документы с 1 июля 2020 до 31 июля 2020. В этой статье перечислены некоторые основные изменения, внесенные в документы в течение этого периода.
 
-## <a name="computer-vision"></a>Компьютерное зрение
-
-### <a name="updated-articles"></a>Обновленные статьи
-
-- [Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API "Компьютерное зрение" и Java](/azure/cognitive-services/computer-vision/quickstarts/java-hand-text)
-- [Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API Компьютерного зрения и Python](/azure/cognitive-services/computer-vision/quickstarts/python-hand-text)
-
-## <a name="face"></a>Распознавание лиц
-
-### <a name="updated-articles"></a>Обновленные статьи
-
-- [Пример Анализ видео в реальном времени](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face)
-
-## <a name="immersive-reader"></a>Иммерсивное средство чтения
+## <a name="form-recognizer"></a>Распознаватель документов
 
 ### <a name="new-articles"></a>Новые статьи
 
-- [Краткое руководство. Использование клиентской библиотеки иммерсивного средства чтения](/azure/cognitive-services/immersive-reader/quickstarts/client-libraries)
-
-## <a name="luis"></a>LUIS
-
-### <a name="new-articles"></a>Новые статьи
-
-- [Искусственный интеллект в Language Understanding (LUIS)](/azure/cognitive-services/luis/artificial-intelligence)
-- [Рабочие процессы непрерывной интеграции и непрерывной поставки для LUIS DevOps](/azure/cognitive-services/luis/luis-concept-devops-automation)
-- [Рекомендации по DevOps для LUIS](/azure/cognitive-services/luis/luis-concept-devops-sourcecontrol)
-- [Тестирование для LUIS DevOps](/azure/cognitive-services/luis/luis-concept-devops-testing)
-- [Краткое руководство. Получение намерения с помощью cURL и REST](/azure/cognitive-services/luis/luis-get-started-rest-get-intent)
-- [Краткое руководство. Изменение модели с помощью cURL и REST](/azure/cognitive-services/luis/luis-get-started-rest-get-model)
-- [Применение DevOps к разработке приложений LUIS с помощью действий GitHub](/azure/cognitive-services/luis/luis-how-to-devops-with-github)
-
-### <a name="updated-articles"></a>Обновленные статьи
-
-- [Функции машинного обучения](/azure/cognitive-services/luis/luis-concept-feature)
-- [Создание ресурсов LUIS](/azure/cognitive-services/luis/luis-how-to-azure-subscription)
-- [Миграция в ключ создания ресурсов Azure](/azure/cognitive-services/luis/luis-migration-authoring)
-
-
-- [Руководство по совместному использованию бота веб-приложения и службы "Распознавание речи" в Node.js](/azure/cognitive-services/luis/luis-nodejs-tutorial-bf-v4)
+- [Учебник. Создание приложения для обработки форм с помощью построителя искусственного интеллекта](/azure/cognitive-services/form-recognizer/tutorial-ai-builder)
 
 ## <a name="personalizer"></a>Персонализатор
 
 ### <a name="new-articles"></a>Новые статьи
 
-- [Добавление персонализации в веб-приложение .NET](/azure/cognitive-services/personalizer/tutorial-use-personalizer-web-app)
+- [Руководство по использованию Персонализатора в чат-боте .NET](/azure/cognitive-services/personalizer/tutorial-use-personalizer-chat-bot)
+
+## <a name="qna-maker"></a>QnA Maker
+
+### <a name="new-articles"></a>Новые статьи
+
+- [Планирование приложения QnA Maker](/azure/cognitive-services/qnamaker/concepts/plan)
 
 ## <a name="speech-service"></a>Служба "Речь"
 
 ### <a name="new-articles"></a>Новые статьи
 
-- [Основные понятия пользовательских команд](/azure/cognitive-services/speech-service/custom-commands-references)
-- [Добавление подтверждений для команды](/azure/cognitive-services/speech-service/how-to-custom-commands-add-interaction-rules#add-confirmations-to-a-command)
-- [Настройка параметра как сущности внешнего каталога](/azure/cognitive-services/speech-service/how-to-custom-commands-add-parameter-configuration#configure-parameter-as-external-catalog-entity)
-- [Использование шаблонов создания языков для речевых ответов](/azure/cognitive-services/speech-service/how-to-custom-commands-add-language-generation-templates)
-- [Реализация исправлений в команде](/azure/cognitive-services/speech-service/how-to-custom-commands-add-parameter-configuration)
-- [Добавление параметров в команды](/azure/cognitive-services/speech-service/how-to-custom-commands-add-parameters-to-commands)
-- [Добавление простых команд](/azure/cognitive-services/speech-service/how-to-custom-commands-create-application-with-simple-commands)
-- [Добавление проверок к пользовательским параметрам команды](/azure/cognitive-services/speech-service/how-to-custom-commands-add-parameter-configuration#add-validation-to-parameters)
-- [Создание приложения с пользовательскими командами](/azure/cognitive-services/speech-service/how-to-custom-commands-create-application-with-simple-commands#create-empty-application)
-- [CI/CD для набора средств "Пользовательское распознавание речи"](/azure/cognitive-services/speech-service/how-to-custom-speech-continuous-integration-continuous-deployment)
-- [Создание сквозного речевого помощника с помощью пользовательских команд](/azure/cognitive-services/speech-service/quickstart-custom-commands-application)
-- [Краткое руководство. Тестирование модели с использованием звукового файла в Speech Studio](/azure/cognitive-services/speech-service/quickstarts/speech-studio-test-model)
-- [Основные сведения о распознавании говорящего](/azure/cognitive-services/speech-service/speaker-recognition-basics)
-- [Что такое служба Распознавание говорящего Azure?](/azure/cognitive-services/speech-service/speaker-recognition-overview)
-- [Служба речи: новые возможности в документах](/azure/cognitive-services/speech-service/whats-new)
-
-### <a name="updated-articles"></a>Обновленные статьи
-
-- [Что такое Пакетная транскрипция?](/azure/cognitive-services/speech-service/batch-transcription)
-- [Поддержка языков и голосов в службе "Речь"](/azure/cognitive-services/speech-service/language-support)
+- [Пользовательские команды для шифрования неактивных данных](/azure/cognitive-services/speech-service/custom-commands-encryption-of-data-at-rest)
+- [Основы пользовательских ключевых слов](/azure/cognitive-services/speech-service/custom-keyword-basics)
+- [Использование пользовательских команд с Пользовательским голосом](/azure/cognitive-services/speech-service/how-to-custom-commands-use-custom-voice)
+- [Набор пакетной обработки для речевых контейнеров](/azure/cognitive-services/speech-service/speech-container-batch-processing)
 
 ## <a name="text-analytics"></a>Анализ текста
 
-### <a name="updated-articles"></a>Обновленные статьи
+### <a name="new-articles"></a>Новые статьи
 
-- [Краткое руководство. Использование Go для вызова API анализа текста Cognitive Services](/azure/cognitive-services/text-analytics/quickstarts/go)
-- [Краткое руководство. Использование Java для вызова API "Анализ текста" Cognitive Services в Azure](/azure/cognitive-services/text-analytics/quickstarts/java)
-- [Краткое руководство. Использование Node.js для вызова службы "Анализ текста" в Cognitive Services](/azure/cognitive-services/text-analytics/quickstarts/nodejs)
-- [Краткое руководство. Использование PHP для вызова API анализа текста Cognitive Services](/azure/cognitive-services/text-analytics/quickstarts/php)
-- [Краткое руководство. Вызов API "Анализ текста" в Cognitive Services с помощью REST API Python](/azure/cognitive-services/text-analytics/quickstarts/python)
-- [Краткое руководство. Использование Ruby для вызова API анализа текста Cognitive Services](/azure/cognitive-services/text-analytics/quickstarts/ruby)
-
-## <a name="translator"></a>Переводчик
-
-### <a name="updated-articles"></a>Обновленные статьи
-
-- [Поддержка языков и регионов для перевода текста и речи](/azure/cognitive-services/translator/language-support)
+- [Как использовать Анализ текста для работоспособности (Предварительная версия)](/azure/cognitive-services/text-analytics/how-tos/text-analytics-for-health)
 
 ## <a name="community-contributors"></a>Участники сообщества
 
-Следующие пользователи участвовали в Cognitive Services документы в течение этого периода. Спасибо! 
+Следующие пользователи участвовали в Cognitive Services документы в течение этого периода. Спасибо! Сведения о том, как внести участие, см. по ссылкам в разделе "приступить к работе" на [целевой странице](index.yml)"новые возможности".
 
-- [чанжеворлд](https://github.com/changeworld) -Такаши такебайаши (1)
-- [хуаигулин](https://github.com/huaigulin) -хуаигу ссыл (1)
+- [милестонедев](https://github.com/milestonedev) -Джастин миль (2)
+- [феликсванлиувен](https://github.com/felixvanleeuwen) (1)
+- [Лоикб](https://github.com/LoicB) -Лоик бэйлот (1)
+- [нкгами](https://github.com/nkgami) -Хироки Накагами (1)
+- [Русселлжка](https://github.com/RussellJQA) -Рассел Джонсон (1)
+- [рйотокуро](https://github.com/ryotokuro) -таийуе Tan (1)
+- [сморкуенд](https://github.com/smorcuend) -Сергио моркуенде (1)
+- [свилдерманн](https://github.com/swildermann) -Свен вилдерманн (1)
 
 [!INCLUDE [Service specific updates](./includes/service-specific-updates.md)]

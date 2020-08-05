@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/26/2020
+ms.date: 08/03/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a2830db6132e665d3f876a535fb645e936971b2
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: cc38e576f53c3623bacc374a00adcb4cced01517
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87283067"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87552889"
 ---
 # <a name="conditional-access-require-mfa-for-administrators"></a>Условный доступ: требовать MFA для администраторов
 
@@ -27,7 +27,7 @@ ms.locfileid: "87283067"
 * Администратор выставления счетов
 * Администратор условного доступа
 * администратор Exchange;
-* Глобальный администратор
+* Глобальный администратор.
 * Администратор службы технической поддержки (пароль)
 * Администратор паролей
 * администратор безопасности;
@@ -59,12 +59,16 @@ ms.locfileid: "87283067"
       * Администратор выставления счетов
       * Администратор условного доступа
       * администратор Exchange;
-      * Глобальный администратор
+      * Глобальный администратор.
       * администратор службы технической поддержки;
       * Администратор паролей
       * администратор безопасности;
       * администратор SharePoint;
       * Администратор пользователей
+   
+      > [!WARNING]
+      > Политики условного доступа не поддерживают пользователей, которым назначена роль каталога, [ограниченная административной единицей](../users-groups-roles/roles-admin-units-assign-roles.md) или ролью каталога, непосредственно в объект, например с помощью [пользовательских ролей](../users-groups-roles/roles-create-custom.md).
+
    1. В разделе **Исключить** выберите **Пользователи и группы**, а затем выберите учетные записи для аварийного доступа или для обхода стандартной системы контроля доступа в вашей организации. 
    1. Нажмите кнопку **Готово**.
 1. В разделе **Облачные приложения или действия** > **Включить** выберите **Все облачные приложения** и нажмите кнопку **Готово**.

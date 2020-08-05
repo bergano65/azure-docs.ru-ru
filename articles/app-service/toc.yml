@@ -57,7 +57,7 @@
       href: tutorial-send-email.md
 - name: Примеры
   items:
-    - name: Azure CLI
+    - name: Azure CLI;
       href: samples-cli.md
     - name: Azure PowerShell
       href: samples-powershell.md
@@ -84,6 +84,9 @@
           href: overview-patch-os-runtime.md
         - name: Встроенные средства управления безопасностью
           href: app-service-security-controls.md
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
         - name: Общие сведения о безопасности
           href: overview-security.md
     - name: Функции сетей
@@ -244,7 +247,7 @@
           href: webjobs-sdk-how-to.md
 - name: Справочник
   items:
-    - name: Azure CLI
+    - name: Azure CLI;
       href: /cli/azure/appservice
     - name: Azure PowerShell
       href: /powershell/module/az.websites/#app_service

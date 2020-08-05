@@ -3,12 +3,12 @@ title: Агент Службы восстановления Microsoft Azure (MAR
 description: Здесь рассматриваются распространенные вопросы о резервном копировании файлов и папок с помощью Azure Backup.
 ms.topic: conceptual
 ms.date: 07/29/2019
-ms.openlocfilehash: 5a4560499c56e4dcdf41c2e5c7920b415ceab6c5
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: c4494b09a5cf838aae3dde01c1268042929ef213
+ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87533586"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87563111"
 ---
 # <a name="frequently-asked-questions---microsoft-azure-recovery-services-mars-agent"></a>Часто задаваемые вопросы — агент Службы восстановления Microsoft Azure (MARS)
 
@@ -19,6 +19,12 @@ ms.locfileid: "87533586"
 ### <a name="where-can-i-download-the-latest-version-of-the-mars-agent"></a>Где можно загрузить последнюю версию агента MARS?
 
 Последний агент MARS, используемый при резервном копировании компьютеров Windows Server, System Center DPM и Microsoft Azure Backup Server, доступен для [загрузки](https://aka.ms/azurebackup_agent).
+
+### <a name="where-can-i-download-the-vault-credentials-file"></a>Где можно скачать файл учетных данных хранилища?
+
+В портал Azure перейдите к **свойствам** хранилища. В разделе **учетные данные архивации**установите флажок, чтобы **уже использовать последний агент служб восстановления**. Выберите **Загрузить**.
+
+![Загрузка учетных данных](./media/backup-azure-file-folder-backup-faq/download-credentials.png)
 
 ### <a name="how-long-are-vault-credentials-valid"></a>Как долго учетные данные хранилища действительны?
 
@@ -74,7 +80,7 @@ ms.locfileid: "87533586"
 
 * Необходимо зарегистрировать новое имя компьютера в хранилище службы архивации.
 * При регистрации нового имени в хранилище первая операция является *полной* резервной копией.
-* Если необходимо восстановить данные из резервной копии в хранилище с прежним именем сервера, используйте параметр для восстановления в альтернативное расположение в мастере восстановления данных. [Подробнее.](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine)
+* Если необходимо восстановить данные из резервной копии в хранилище с прежним именем сервера, используйте параметр для восстановления в альтернативное расположение в мастере восстановления данных. [Подробнее](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine).
 
 ### <a name="what-is-the-maximum-file-path-length-for-backup"></a>Какова максимальная длина пути к файлу для резервного копирования?
 
@@ -157,7 +163,7 @@ ms.locfileid: "87533586"
 
 ### <a name="is-there-a-way-to-adjust-the-amount-of-bandwidth-used-for-backup"></a>Существует ли способ настройки объема пропускной способности, используемой для резервного копирования?
 
-Да, можно использовать параметр **изменить свойства** в АГЕНТе Mars, чтобы настроить пропускную способность и время. [Подробнее.](backup-windows-with-mars-agent.md#enable-network-throttling)
+Да, можно использовать параметр **изменить свойства** в АГЕНТе Mars, чтобы настроить пропускную способность и время. [Подробнее](backup-windows-with-mars-agent.md#enable-network-throttling).
 
 ## <a name="restore"></a>Восстановить
 
@@ -174,7 +180,7 @@ ms.locfileid: "87533586"
 
 Проверьте следующее:
 
-* При удалении и повторной регистрации агента на том же исходном компьютере с три
+* При удалении и повторной регистрации агента на том же исходном компьютере с
   * *Той же парольной фразы*, вы можете восстановить резервные копии данных.
   * *Другая парольная фраза*, вы не сможете восстановить резервные копии данных.
 * Если агент устанавливается на *другом компьютере* с

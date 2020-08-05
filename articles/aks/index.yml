@@ -9,12 +9,12 @@ metadata:
   author: laurenhughes
   ms.author: lahugh
   ms.date: 07/21/2020
-  ms.openlocfilehash: 0a1efee059f0606248c5514dd37d1568e73897f6
-  ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+  ms.openlocfilehash: 35138e4e5569ddfa46cb60c742e7ae0b3868c8cd
+  ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 07/23/2020
-  ms.locfileid: "87025206"
+  ms.lasthandoff: 08/04/2020
+  ms.locfileid: "87563336"
 landingContent:
 - title: Сведения о Службе Azure Kubernetes (AKS)
   linkLists:
@@ -36,7 +36,7 @@ landingContent:
       url: concepts-security.md
     - text: Сеть
       url: concepts-network.md
-    - text: Память
+    - text: Хранилище
       url: concepts-storage.md
     - text: Масштабирование
       url: concepts-scale.md
@@ -55,7 +55,7 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: Использование Локального процесса с Kubernetes в Visual Studio Code (предварительная версия)
-      url: ../dev-spaces/how-to/local-process-kubernetes-vs-code.md
+      url: https://code.visualstudio.com/docs/containers/local-process-kubernetes
     - text: Использование Локального процесса с Kubernetes в Visual Studio (предварительная версия)
       url: /visualstudio/containers/local-process-kubernetes
 - title: Развертывание и обновление приложений, а также управление ими

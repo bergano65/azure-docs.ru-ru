@@ -2,16 +2,16 @@
 title: Обновление моделей Azure Analysis Services с помощью службы автоматизации Azure | Документация Майкрософт
 description: В этой статье описывается, как обновить модель кода для Azure Analysis Services с помощью службы автоматизации Azure.
 author: chrislound
-ms.service: analysis-services
+ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: chlound
-ms.openlocfilehash: 5314c933b01a1fb9c4ea9902a6fbb698c104d195
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 31dc1973af42a1785a2a65cb1887f479e44af162
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87025410"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87553909"
 ---
 # <a name="refresh-with-azure-automation"></a>Обновление с помощью службы автоматизации Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "87025410"
 
 В примере в этой статье используется [модуль SQLServer PowerShell](https://docs.microsoft.com/powershell/module/sqlserver/?view=sqlserver-ps). Пример модуля Runbook PowerShell, демонстрирующий обновление модели, приведен далее в этой статье.  
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Все вызовы должны пройти проверку подлинности с помощью допустимого маркера Azure Active Directory (OAuth 2).  В примере, приведенном в этой статье, для проверки подлинности в Azure Analysis Services используется субъект-служба (SPN). Дополнительные сведения см. в статье [Создание субъекта-службы с помощью портал Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 
@@ -40,7 +40,7 @@ ms.locfileid: "87025410"
  
     ![Импорт модуля](./media/analysis-services-refresh-azure-automation/2.png)
 
-4. Нажмите кнопку **ОК**.
+4. Нажмите кнопку **OK**.
  
 ### <a name="create-a-service-principal-spn"></a>Создание субъекта-службы (SPN)
 
@@ -110,7 +110,7 @@ ms.locfileid: "87025410"
 
     ![Настройка параметров](./media/analysis-services-refresh-azure-automation/16.png)
 
-5. Нажмите кнопку **ОК**.
+5. Нажмите кнопку **OK**.
 
 ## <a name="consume-with-data-factory"></a>Использование с фабрикой данных
 

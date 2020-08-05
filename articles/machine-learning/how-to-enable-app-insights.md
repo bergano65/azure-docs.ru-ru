@@ -11,17 +11,17 @@ author: blackmist
 ms.date: 07/23/2020
 ms.topic: conceptual
 ms.custom: how-to, tracking-python
-ms.openlocfilehash: 88a122a9af4a5edac45a3189df5ffb78fb2ce271
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: e12c22d56399ce1690bee678623c58288cf0163b
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423819"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87552209"
 ---
 # <a name="monitor-and-collect-data-from-ml-web-service-endpoints"></a>Мониторинг и сбор данных из конечных точек веб-службы Машинного обучения
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как получать данные из и отслеживать модели, развернутые в конечных точках веб-службы в службе Azure Kubernetes Service (AKS), или службу "экземпляры контейнеров Azure" (ACI), включив Application Insights Azure через 
+Из этой статьи вы узнаете, как получать данные из и отслеживать модели, развернутые в конечных точках веб-службы в службе Azure Kubernetes Service (AKS), или службу "экземпляры контейнеров Azure" (ACI), запрашивая журналы и обеспечивая возможность Application Insights Azure с помощью 
 * [Пакет SDK Python для Машинного обучения Azure](#python)
 * [Машинное обучение Azure Studio](#studio) вhttps://ml.azure.com
 
@@ -42,6 +42,18 @@ ms.locfileid: "87423819"
 
 * Обученная модель машинного обучения для развертывания в службе Azure Kubernetes (AKS) или в экземпляре контейнера Azure (ACI). Если у вас ее нет, см. Руководство [обучение модели классификации изображений](tutorial-train-models-with-aml.md)
 
+## <a name="query-logs-for-deployed-models"></a>Журналы запросов для развернутых моделей
+
+Чтобы получить журналы из ранее развернутой веб-службы, загрузите службу и вызовите функцию `get_logs()`. Эти журналы могут содержать подробные сведения об ошибках, возникающих во время развертывания.
+
+```python
+from azureml.core.webservice import Webservice
+
+# load existing web service
+service = Webservice(name="service-name", workspace=ws)
+logs = service.get_logs()
+```
+
 ## <a name="web-service-metadata-and-response-data"></a>Метаданные веб-службы и данные ответа
 
 > [!IMPORTANT]
@@ -50,6 +62,7 @@ ms.locfileid: "87423819"
 Чтобы заносить в журнал сведения о запросе к веб-службе, добавьте `print` инструкции в файл Score.py. Каждая `print` инструкция приводит к одной записи в таблице трассировки в Application Insights, под сообщением `STDOUT` . Содержимое `print` инструкции будет находиться в разделе `customDimensions` , а затем `Contents` в таблице трассировки. При печати строки JSON она создает иерархическую структуру данных в выходных данных трассировки в разделе `Contents` .
 
 Вы можете запросить Azure Application Insights напрямую для доступа к этим данным или настроить [непрерывный экспорт](https://docs.microsoft.com/azure/azure-monitor/app/export-telemetry) в учетную запись хранения для более длительного хранения или дальнейшей обработки. Данные модели можно использовать в Машинное обучение Azure для настройки меток, переобучения, пояснения, анализа данных или других способов использования. 
+
 
 <a name="python"></a>
 
@@ -164,7 +177,7 @@ ms.locfileid: "87423819"
 1. Перейдите в рабочую область Машинное обучение Azure в [студии](https://ml.azure.com/).
 1. Выберите **Конечные точки**.
 1. Выберите развернутую службу.
-1. Прокрутите вниз, чтобы найти **URL-адрес Application Insights** , и щелкните ссылку.
+1. Прокрутите вниз, чтобы найти **URL-адрес Application Insights** , и выберите ссылку.
 
     [![Указать URL-адрес Application Insights](./media/how-to-enable-app-insights/appinsightsloc.png)](././media/how-to-enable-app-insights/appinsightsloc.png#lightbox)
 

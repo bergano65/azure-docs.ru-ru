@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab, danil
-ms.date: 07/20/2020
-ms.openlocfilehash: ed3f23b13920a9c3220a030059fdc8471f350d28
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.date: 08/04/2020
+ms.openlocfilehash: c24a78413b09de04a10266f883e11617bb7a2f27
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87428234"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87554045"
 ---
 # <a name="automated-backups---azure-sql-database--sql-managed-instance"></a>Автоматическое резервное копирование базы данных SQL Azure & SQL Управляемый экземпляр
 
@@ -50,7 +50,7 @@ ms.locfileid: "87428234"
 
 Вы можете выполнить операции резервного копирования и восстановления, используя следующие примеры:
 
-| | Портал Azure | Azure PowerShell |
+| | портал Azure; | Azure PowerShell |
 |---|---|---|
 | **Изменение срока хранения резервной копии** | [Отдельная база данных](automated-backups-overview.md?tabs=managed-instance#change-the-pitr-backup-retention-period-by-using-the-azure-portal) <br/> [Управляемый экземпляр](automated-backups-overview.md?tabs=managed-instance#change-the-pitr-backup-retention-period-by-using-the-azure-portal) | [Отдельная база данных](automated-backups-overview.md#change-the-pitr-backup-retention-period-by-using-powershell) <br/>[Управляемый экземпляр](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlinstancedatabasebackupshorttermretentionpolicy) |
 | **Изменение долгосрочного хранения резервных копий** | [Отдельная база данных](long-term-backup-retention-configure.md#configure-long-term-retention-policies)<br/>Управляемый экземпляр — н/д  | [Отдельная база данных](long-term-backup-retention-configure.md)<br/>Управляемый экземпляр — н/д  |
@@ -120,7 +120,7 @@ ms.locfileid: "87428234"
 
 ## <a name="storage-costs"></a>Затраты на хранение
 
-Цена за хранилище зависит от того, используете ли вы модель DTU или модель Виртуальное ядро.
+Цена для хранилища службы архивации зависит от того, используете ли вы модель DTU или модель Виртуальное ядро, а также в вашем регионе. Плата за хранилище резервных копий насчитывается за ГБ/мес. для получения цен см. страницу [цен на базу данных SQL Azure](https://azure.microsoft.com/pricing/details/sql-database/single/) и страницу [цен на управляемый экземпляр Azure SQL](https://azure.microsoft.com/pricing/details/azure-sql/sql-managed-instance/single/) .
 
 ### <a name="dtu-model"></a>Модель с DTU
 

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 03/30/2020
 ms.topic: conceptual
 ms.custom: how-to, tracking-python
-ms.openlocfilehash: a92aa304d605242063e0d0484317bc8c051959e5
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: a41fe159f3ac7ef91ba943534aaa6baeeab83001
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87317847"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87552413"
 ---
 # <a name="tune-hyperparameters-for-your-model-with-azure-machine-learning"></a>Настройка параметров для модели с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -379,7 +379,7 @@ RunDetails(hyperdrive_run).show()
 
 [![параллельные координаты для настройки гиперпараметров](./media/how-to-tune-hyperparameters/HyperparameterTuningParallelCoordinates.png)](media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates-expanded.png)
 
-Вы также можете визуализировать все запуски для настройки гиперпараметров на веб-портале Azure. Дополнительную информацию о просмотре сведений об эксперименте на веб-портале см. в [этой статье](how-to-track-experiments.md#view-the-experiment-in-the-web-portal).
+Вы также можете визуализировать все запуски для настройки гиперпараметров на веб-портале Azure. Дополнительную информацию о просмотре сведений об эксперименте на веб-портале см. в [этой статье](how-to-monitor-view-training-logs.md#view-the-experiment-in-the-web-portal).
 
 ## <a name="find-the-best-model"></a>Поиск наиболее эффективной модели
 

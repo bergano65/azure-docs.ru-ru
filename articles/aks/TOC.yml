@@ -301,7 +301,7 @@
     - name: Разработка и запуск приложений
       items:
         - name: Использование Локального процесса с Kubernetes в Visual Studio Code (предварительная версия)
-          href: ../dev-spaces/how-to/local-process-kubernetes-vs-code.md
+          href: 'https://code.visualstudio.com/docs/containers/local-process-kubernetes'
         - name: Установка существующих приложений с помощью Helm
           href: kubernetes-helm.md
         - name: С помощью OpenFaaS

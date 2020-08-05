@@ -3,12 +3,12 @@ title: Конечные точки служб для виртуальной се
 description: В этой статье содержатся сведения о том, как добавить конечную точку службы Microsoft. EventHub в виртуальную сеть.
 ms.topic: article
 ms.date: 07/29/2020
-ms.openlocfilehash: 15778c85f28300df3d5af34e2940b3854d814c66
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 8c798efc21f5b846965f2247d7e76249177ef946
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420466"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87554079"
 ---
 # <a name="allow-access-to-azure-event-hubs-namespaces-from-specific-virtual-networks"></a>Разрешить доступ к пространствам имен концентраторов событий Azure из конкретных виртуальных сетей 
 
@@ -31,6 +31,7 @@ ms.locfileid: "87420466"
 > В виртуальной сети должны присутствовать следующие службы Майкрософт:
 > - Веб-приложения Azure
 > - Функции Azure
+> - Azure Monitor (параметр диагностики)
 
 
 > [!IMPORTANT]

@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a88e30e85402f60489839b0a34b5a793fd7192df
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 0ae598fb9e4018369230de5fadcf173a3df9fb4c
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87502483"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87551699"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -195,8 +195,7 @@ ms.locfileid: "87502483"
 Не используйте. Эта роль автоматически назначается службе Azure AD Connect, она не предназначена для любого другого использования.
 
 ### <a name="directory-writers"></a>[Создатели каталогов](#directory-writers-permissions)
-
-это устаревшая роль, которая будет назначаться приложениям, не поддерживающим [платформу предоставления разрешений](../develop/quickstart-register-app.md). Ее не следует назначать пользователям.
+Пользователи с этой ролью могут читать и обновлять основные сведения о пользователях, группах и субъектах-службах. Назначить эту роль только для приложений, которые не поддерживают [инфраструктуру согласия](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app). Ее не следует назначать пользователям.
 
 ### <a name="dynamics-365-administrator--crm-administrator"></a>[Администратор Dynamics 365 или администратор CRM](#crm-service-administrator-permissions)
 
@@ -1001,22 +1000,36 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.directory/groups/create | Создание групп в Azure Active Directory. |
-| microsoft.directory/groups/createAsOwner | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
 | microsoft.directory/groups/appRoleAssignments/update | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
-| microsoft.directory/groups/basic/update | Обновление базовых свойств в группах в Azure Active Directory. |
+| Microsoft. Directory/Groups/Ассигнлиценсе | Управление лицензиями для групп в Azure Active Directory. |
+| microsoft.directory/groups/basic/update | Обновление базовых свойств в группах в Azure Active Directory.  |
+| Microsoft. Directory, группы, классификация или обновление | Обновите свойство классификации группы в Azure Active Directory. |
+| microsoft.directory/groups/create | Создание групп в Azure Active Directory. |
+| Microsoft. Directory/Groups/groupType/обновление | Обновите свойство groupType группы в Azure Active Directory. |
 | microsoft.directory/groups/members/update | Изменение свойства groups.members в Azure Active Directory. |
 | microsoft.directory/groups/owners/update | Изменение свойства groups.owners в Azure Active Directory. |
+| Microsoft. Directory/Groups/Репроцесслиценсеассигнмент | Повторно обработайте назначения лицензий для группы в Azure Active Directory. |
+| Microsoft. Directory/Groups/securityEnabled/обновление | Обновите свойство Секутиренаблед группы в Azure Active Directory. |
 | microsoft.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
+| Microsoft. Directory, группы, видимость и обновление | Обновление свойства видимости группы |
 | microsoft.directory/groupSettings/basic/update | Обновление базовых свойств для объектов groupSettings в Azure Active Directory. |
-| microsoft.directory/groupSettings/create | Создание свойства groupSettings в Azure Active Directory. |
+| microsoft.directory/groupSettings/create | Создание Граупсеттингс в Azure Active Directory.. |
 | microsoft.directory/groupSettings/delete | Удаление объектов groupSetting в Azure Active Directory. |
+| Microsoft. Directory/oAuth2PermissionGrants/Basic/Update | Обновите основные свойства oAuth2PermissionGrants в Azure Active Directory. |
+| Microsoft. Directory/oAuth2PermissionGrants/создать | Создание объектов oAuth2PermissionGrants в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/synchronizationCredentials/manage | Управление секретами и учетными данными подготовки приложений. |
+| microsoft.directory/servicePrincipals/synchronizationJobs/manage | Запуск, перезапуск и приостановка заданий синхронизации подготовки приложений. |
+| microsoft.directory/servicePrincipals/synchronizationSchema/manage | Создание заданий и схемы метка подготовки приложений и управление ими. |
 | microsoft.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
 | microsoft.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
 | microsoft.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
-| microsoft.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
+| Microsoft. Directory/пользователи/отключить | Отключите учетную запись пользователя в Azure Active Directory. |
+| Microsoft. Directory/пользователи/включить | Включение учетной записи пользователя в Azure Active Directory |
+| microsoft.directory/users/invalidateAllRefreshTokens | Делает недействительными все маркеры обновления пользователя в Azure Active Directory, что требует повторной проверки подлинности пользователей при следующем входе |
 | microsoft.directory/users/manager/update | Изменение свойства users.manager в Azure Active Directory. |
-| microsoft.directory/users/userPrincipalName/update | Изменение свойства users.userPrincipalName в Azure Active Directory. |
+| Microsoft. Directory/Users/Репроцесслиценсеассигнмент | Повторно обработайте назначения лицензий для пользователя в Azure Active Directory. |
+| Microsoft. Directory/Users/userPrincipalName/Update | Обновите свойство Users. userPrincipalName в Azure Active Directory. |
+
 
 ### <a name="exchange-service-administrator-permissions"></a>Разрешения администратора службы Exchange
 
@@ -1899,7 +1912,7 @@ Device Join (Присоединение устройства) | Не реком�
 Device Users (Пользователи устройства) | Не рекомендуется | d405c6df-0af8-4e3b-95e4-4d06e542189e
 Читатели каталогов | Читатели каталога | 88d8e3e3-8f55-4a1e-953a-9b9898b8876b
 Учетные записи синхронизации службы каталогов | Не отображается, так как не должно использоваться. | d29b2b05-8046-44ba-8758-1e26182fcf32
-Создатели каталогов | Не отображается, так как не должно использоваться. | 9360feb5-f418-4baa-8175-e2a00bac4301
+Создатели каталогов | Создатели каталогов | 9360feb5-f418-4baa-8175-e2a00bac4301
 Администратор службы Exchange | администратор Exchange; | 29232cdf-9323-42fd-ade2-1d097af3e4de
 Администратор потоков пользователей с внешним идентификатором | Администратор потоков пользователей с внешним идентификатором | 6e591065-9bad-43ed-90f3-e9424366d2f0
 Администратор атрибутов потоков пользователей с внешним идентификатором | Администратор атрибутов потоков пользователей с внешним идентификатором | 0f971eea-41eb-4569-a71e-57bb8a3eff1e

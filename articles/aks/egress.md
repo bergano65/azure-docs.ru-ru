@@ -5,12 +5,12 @@ description: Узнайте, как создать и использовать �
 services: container-service
 ms.topic: article
 ms.date: 03/04/2019
-ms.openlocfilehash: f7ea25c3348b96ec6d8818e8e1db4660b308dabc
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 81b99478358ec3d670e8d783fba27603483614ea
+ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86517779"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87563251"
 ---
 # <a name="use-a-static-public-ip-address-for-egress-traffic-with-a-basic-sku-load-balancer-in-azure-kubernetes-service-aks"></a>Использовать статический общедоступный IP-адрес для исходящего трафика с *базовой* подсистемой балансировки нагрузки в службе Kubernetes Azure (AKS)
 
@@ -20,7 +20,7 @@ ms.locfileid: "86517779"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-В этой статье предполагается, что вы используете базовый Load Balancer Azure.  Мы рекомендуем использовать [Load Balancer (цен. Категория "Стандартный") Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview), а также более широкие возможности для [управления трафиком исходящего трафика AKS](https://docs.microsoft.com/azure/aks/limit-egress-traffic).
+В этой статье предполагается, что вы используете базовый Load Balancer Azure.  Мы рекомендуем использовать [Load Balancer (цен. Категория "Стандартный") Azure](../load-balancer/load-balancer-overview.md), а также более широкие возможности для [управления трафиком исходящего трафика AKS](./limit-egress-traffic.md).
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 

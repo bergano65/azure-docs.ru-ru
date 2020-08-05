@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/14/2020
-ms.openlocfilehash: 00080322b4fa474e5095d40afb041134e1a85fe7
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 93fb65fc7c7551635c49e33d0f626d72c2755a11
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86519740"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87553977"
 ---
 # <a name="choose-a-pricing-tier-for-azure-cognitive-search"></a>Выберите ценовую категорию для Azure Когнитивный поиск
 
@@ -61,9 +61,18 @@ ms.locfileid: "86519740"
 Решение, созданное на Когнитивный поиск Azure, может повлечь за собой следующие виды затрат:
 
 + Стоимость самой службы, выполнение круглосуточная с минимальной конфигурацией (один раздел и реплика)
+
 + Добавление емкости (реплик или секций)
-+ Плата за пропускную способность (передача исходящих данных) 
-+ Дополнительные службы, такие как дополнение искусственного интеллекта (подключение Cognitive Services в навыков, определяющее обработку AI или использование хранилища Azure для хранилища знаний) или развертывание службы поиска в частной виртуальной сети.
+
++ Плата за пропускную способность (передача исходящих данных)
+
++ Дополнительные службы, необходимые для конкретных возможностей или функций:
+
+  + Обогащение искусственного интеллекта (требуется [Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/))
+  + хранилище знаний (требуется [хранилище Azure](https://azure.microsoft.com/pricing/details/storage/))
+  + Добавочное дополнение (требуется [хранилище Azure](https://azure.microsoft.com/pricing/details/storage/), применяется к расширению искусственного интеллекта)
+  + управляемые клиентом ключи и двойное шифрование (требуется [Azure Key Vault](https://azure.microsoft.com/pricing/details/key-vault/))
+  + частные конечные точки для модели доступа без Интернета (требуется [Частная ссылка Azure](https://azure.microsoft.com/pricing/details/private-link/))
 
 ### <a name="service-costs"></a>Стоимость служб
 

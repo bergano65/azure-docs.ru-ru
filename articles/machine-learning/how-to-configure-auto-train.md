@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 05/20/2020
 ms.topic: conceptual
 ms.custom: how-to, tracking-python
-ms.openlocfilehash: 2d2eb9d95192e73d0a9bc4e7afbb993fccb17b94
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: ec5776791f55a406b8015868dce83243b3f8efbd
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321519"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87552396"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка экспериментов автоматизированного машинного обучения на Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -342,7 +342,7 @@ run = experiment.submit(automl_config, show_output=True)
 
 ### <a name="explore-model-metrics"></a>Изучение метрик модели
 
-Просмотреть результаты обучения можно в мини-приложении или во встроенном окне при работе с записной книжкой. Ознакомьтесь с разделом [Просмотр сведений о выполнении](how-to-track-experiments.md#view-run-details), чтобы получить дополнительные сведения.
+Просмотреть результаты обучения можно в мини-приложении или во встроенном окне при работе с записной книжкой. Ознакомьтесь с разделом [Просмотр сведений о выполнении](how-to-monitor-view-training-logs.md#monitor-automated-machine-learning-runs), чтобы получить дополнительные сведения.
 
 Дополнительные сведения о загрузке или регистрации модели для развертывания в веб-службе см. в статье [как и где развертывать модель](how-to-deploy-and-where.md).
 

@@ -5,12 +5,12 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 7/28/2020
 ms.author: baanders
-ms.openlocfilehash: 70ff1847548c1328a709cf17c02bba3dd25ba213
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 82639a19ef728c22a74381d24754992e0f647976
+ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87486665"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87562482"
 ---
 ## <a name="query-language-features"></a>Возможности языка запросов
 
@@ -19,7 +19,7 @@ Azure Digital двойников предоставляет широкие во�
 > [!NOTE]
 > Все операции с запросами цифровых двойников Azure учитывают регистр.
 
-Ниже приведены операции, доступные в языке хранилища запросов Azure Digital двойников.
+Ниже приведены операции, доступные на языке запросов Azure Digital двойников.
 
 Получите цифровое двойников по их...
 * Model ( `IS_OF_MODEL` оператор using)

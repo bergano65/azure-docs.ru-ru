@@ -11,13 +11,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 01/10/2020
-ms.openlocfilehash: 4bd6c3dc1f3cd1ef553efc6ac3cd3c4e558afc97
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/04/2020
+ms.openlocfilehash: 5bd78f2db8ea1f2a26d26269822ec78978a3cfde
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087668"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87553314"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-managed-instance-online-using-dms"></a>Руководство. Миграция SQL Server в Azure SQL Управляемый экземпляр Online с помощью DMS
 
@@ -25,7 +25,7 @@ Azure Database Migration Service можно использовать для пе
 
 В этом руководстве вы переносите базу данных **Adventureworks2012** из локального экземпляра SQL Server в управляемый экземпляр SQL с минимальным временем простоя с помощью Azure Database Migration Service.
 
-В этом руководстве вы узнаете, как:
+В этом руководстве описано следующее:
 > [!div class="checklist"]
 >
 > * Создайте экземпляр Azure Database Migration Service.
@@ -262,6 +262,9 @@ Azure Database Migration Service можно использовать для пе
 4. Щелкните **Подтвердить**, а затем — **Apply** (Применить).
 
     ![Подготовка к выполнению прямой миграции](media/tutorial-sql-server-to-managed-instance-online/dms-complete-cutover.png)
+
+    > [!IMPORTANT]
+    > После прямую миграцию доступность SQL Управляемый экземпляр с уровнем служб критически важный для бизнеса может занять значительно больше времени, чем общего назначения так как три вторичных реплики должны быть заполнены для группы высокой доступности AlwaysOn. Эта длительность операции зависит от размера данных. Дополнительные сведения см. в разделе [длительность операций управления](../azure-sql/managed-instance/management-operations-overview.md#management-operations-duration).
 
 5. Когда состояние переноса базы данных изменится на **завершено**, Подключите свои приложения к новому целевому экземпляру SQL управляемый экземпляр.
 
