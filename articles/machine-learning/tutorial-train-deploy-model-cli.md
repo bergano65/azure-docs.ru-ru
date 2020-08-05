@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 03/26/2020
-ms.openlocfilehash: f3603bf8afdcd990144897113f4e8506629f60a3
-ms.sourcegitcommit: b55d1d1e336c1bcd1c1a71695b2fd0ca62f9d625
+ms.openlocfilehash: b4167f8958f7a1613c4d48625f7a79a02c7588d0
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84429756"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87543407"
 ---
 # <a name="tutorial-train-and-deploy-a-model-from-the-cli"></a>Руководство по Обучение и развертывание моделей из интерфейса командной строки
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -383,7 +383,7 @@ az ml model deploy -n myservice -m "mymodel:1" --ic inferenceConfig.json --dc ac
 
 Файл `inferenceConfig.yml` содержит сведения об использовании модели для вывода. Например, он ссылается на начальный сценарий (`score.py`) и зависимости программного обеспечения.
 
-Дополнительные сведения о структуре этого файла см. в статье [Схема конфигурации вывода](reference-azure-machine-learning-cli.md#inference-configuration-schema). Сведения о начальных сценариях см. в статье [Развертывание моделей в Машинном обучении Azure](how-to-deploy-and-where.md#prepare-to-deploy).
+Дополнительные сведения о структуре этого файла см. в статье [Схема конфигурации вывода](reference-azure-machine-learning-cli.md#inference-configuration-schema). Дополнительные сведения о начальных сценариях см. в статье [Развертывание моделей в Машинном обучении Azure](how-to-deploy-and-where.md).
 
 `aciDeploymentConfig.yml` описывает среду развертывания, используемую для размещения службы. Конфигурация развертывания зависит от типа вычислений, используемого для развертывания. В этом случае используется экземпляр контейнера Azure. Дополнительные сведения см. разделе [Схема конфигурации развертывания](reference-azure-machine-learning-cli.md#deployment-configuration-schema).
 
