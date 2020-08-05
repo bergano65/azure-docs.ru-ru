@@ -726,6 +726,8 @@
           href: pricing-concepts.md
     - name: Руководства по устранению неполадок
       items:
+        - name: Пользовательский интерфейс Фабрики данных
+          href: data-factory-ux-troubleshoot-guide.md
         - name: Действия
           href: data-factory-troubleshoot-guide.md
         - name: Соединители

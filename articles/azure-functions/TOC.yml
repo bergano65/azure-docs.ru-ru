@@ -345,8 +345,8 @@
       items:
         - name: Устранение неполадок с хранилищем
           href: functions-recover-storage-account.md
-        - name: Устранение неполадок с зависимостями Python
-          href: recover-module-not-found.md
+        - name: Устранение неполадок с функциями Python
+          href: recover-python-functions.md
 - name: Справочник
   items:
     - name: Справочники по API

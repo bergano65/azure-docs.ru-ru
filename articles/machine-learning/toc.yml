@@ -15,28 +15,6 @@
 - name: Учебники
   expanded: true
   items:
-    - name: Студия
-      expanded: true
-      items:
-        - name: Конструктор (перетаскивание)
-          items:
-            - name: 1. Обучение регрессионной модели
-              displayName: studio
-              href: tutorial-designer-automobile-price-train-score.md
-            - name: 2. Развертывание этой модели
-              displayName: studio
-              href: tutorial-designer-automobile-price-deploy.md
-        - name: Автоматизированное машинное обучение (пользовательский интерфейс)
-          items:
-            - name: Создание эксперимента автоматического машинного обучения
-              displayName: 'automl, automated, auto ml, portal, ui'
-              href: tutorial-first-experiment-automated-ml.md
-            - name: Прогнозирование спроса (данные о прокате велосипедов)
-              displayName: 'automl, automated, auto ml, portal, ui'
-              href: tutorial-automated-ml-forecast.md
-        - name: Маркировка данных изображения
-          displayName: 'tag, tagging, images'
-          href: tutorial-labeling.md
     - name: Пакет SDK для Python
       expanded: true
       items:
@@ -64,11 +42,33 @@
         - name: Подготовка кода для рабочей среды
           displayName: 'mlops, mlopspython, production'
           href: tutorial-convert-ml-experiment-to-production.md
+    - name: Студия
+      expanded: true
+      items:
+        - name: Автоматизированное машинное обучение (пользовательский интерфейс)
+          items:
+            - name: Создание эксперимента автоматического машинного обучения
+              displayName: 'automl, automated, auto ml, portal, ui'
+              href: tutorial-first-experiment-automated-ml.md
+            - name: Прогнозирование спроса (данные о прокате велосипедов)
+              displayName: 'automl, automated, auto ml, portal, ui'
+              href: tutorial-automated-ml-forecast.md
+        - name: Конструктор (перетаскивание)
+          items:
+            - name: 1. Обучение регрессионной модели
+              displayName: studio
+              href: tutorial-designer-automobile-price-train-score.md
+            - name: 2. Развертывание этой модели
+              displayName: studio
+              href: tutorial-designer-automobile-price-deploy.md
+        - name: Маркировка данных изображения
+          displayName: 'tag, tagging, images'
+          href: tutorial-labeling.md
     - name: Пакет SDK для R
       items:
         - name: Создание первого эксперимента ML (R)
           href: tutorial-1st-r-experiment.md
-    - name: Интерфейс командной строки для Машинного обучения
+    - name: CLI
       items:
         - name: Обучение и развертывание с помощью CLI
           href: tutorial-train-deploy-model-cli.md
@@ -226,9 +226,6 @@
         - name: Использование частных пакетов Python
           displayName: 'pip, Conda, anaconda'
           href: how-to-use-private-python-packages.md
-        - name: Включение ведения журналов
-          displayName: 'troubleshoot, log, files, tracing'
-          href: how-to-enable-logging.md
         - name: Настройка каталогов входных и выходных данных
           displayName: 'large data, write, experiment files, size limit'
           href: how-to-save-write-experiment-files.md
@@ -309,8 +306,12 @@
             - name: 'Запуск, мониторинг и отмена выполнения'
               displayName: 'cancel, fail, status, child run'
               href: how-to-manage-runs.md
-            - name: Запись метрик для учебных запусков
+            - name: Включение журналов
+              displayName: 'troubleshoot, log, files, tracing'
               href: how-to-track-experiments.md
+            - name: Просмотр журналов
+              displayName: 'troubleshoot, log, files, tracing'
+              href: how-to-monitor-view-training-logs.md
             - name: Отслеживание экспериментов с помощью потока ML
               displayName: 'log, monitor, metrics, Databricks'
               href: how-to-use-mlflow.md
@@ -363,7 +364,7 @@
         - name: Где и как развернуть
           displayName: 'publish, web, service, operationalize, aks, kubernetes, aci, container, cli, consume, docker'
           href: how-to-deploy-and-where.md
-        - name: Сценарии развертывания
+        - name: Цели развертывания
           items:
             - name: Использование существующих моделей
               displayName: publish existing model
@@ -394,19 +395,37 @@
               href: how-to-deploy-fpga-web-service.md
         - name: Устранение неполадок и отладка
           href: how-to-troubleshoot-deployment.md
-        - name: Создание клиентов
+        - name: Использование веб-службы
           displayName: create client consume request response synchronous
           href: how-to-consume-web-service.md
-        - name: Мониторинг моделей
+        - name: Обновление веб-службы
+          displayName: update hot reload model mounting
+          href: how-to-deploy-update-web-service.md
+        - name: Разработка расширенных сценариев ввода
+          displayName: swagger inference schema binary cors
+          href: how-to-deploy-advanced-entry-script.md
+        - name: Мониторинг веб-служб
           items:
             - name: Сбор и оценка данных модели
               displayName: track production
               href: how-to-enable-data-collection.md
             - name: Мониторинг с помощью Application Insights
               href: how-to-enable-app-insights.md
+        - name: Непрерывное развертывание моделей
+          displayName: ci cd azure devops models
+          href: how-to-deploy-continuously-deploy.md
         - name: Развертывание зашифрованной службы для операций вывода
           displayName: 'homomorhic,encryption,deployment'
           href: how-to-homomorphic-encryption-seal.md
+        - name: Профилирование моделей
+          displayName: profile resource requirement
+          href: how-to-deploy-profile-model.md
+        - name: (Предварительная версия) Без развертывания кода
+          displayName: no code
+          href: how-to-deploy-no-code-deployment.md
+        - name: Упаковка моделей
+          displayName: docker file download
+          href: how-to-deploy-package-models.md
     - name: Создание и использование конвейеров ML
       displayName: pipelines
       items:
@@ -423,6 +442,9 @@
           href: how-to-debug-pipelines.md
         - name: Отладка конвейеров в Application Insights
           href: how-to-debug-pipelines-application-insights.md
+        - name: Метрики журнала конструктора
+          displayName: 'designer, logging'
+          href: how-to-track-designer-experiments.md
         - name: Данные преобразования конструктора
           displayName: pipeline
           href: how-to-designer-transform-data.md

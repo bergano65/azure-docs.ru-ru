@@ -335,6 +335,8 @@
           items:
             - name: 'Ключи, управляемые клиентом'
               href: search-security-manage-encryption-keys.md
+            - name: Получение сведений о ключе
+              href: search-security-get-encryption-keys.md
         - name: Безопасность для входящего трафика
           items:
             - name: Ключи доступа к API
@@ -379,7 +381,7 @@
           href: cognitive-search-common-errors-warnings.md
 - name: Справочник
   items:
-    - name: Azure CLI
+    - name: Azure CLI;
       href: /cli/azure/search?view=azure-cli-latest
     - name: Azure PowerShell
       href: /powershell/module/az.search

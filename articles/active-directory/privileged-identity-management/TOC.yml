@@ -91,7 +91,7 @@
       items:
         - name: Общие сведения о привилегированном доступе
           href: groups-features.md
-        - name: Обнаружение групп
+        - name: Включение групп в область управления
           href: groups-discover-groups.md
         - name: Назначение участника или владельца
           href: groups-assign-member-owner.md

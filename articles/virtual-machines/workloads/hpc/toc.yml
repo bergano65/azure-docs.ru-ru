@@ -2,16 +2,16 @@
   items:
     - name: Обзор
       items:
-        - name: "HPC для виртуальных машин серии\_H"
+        - name: "HPC для виртуальных машин серий\_H и\_N"
           href: overview.md
     - name: Конфигурация
       items:
-        - name: Оптимизация Linux
+        - name: Настройка и оптимизация виртуальных машин
           href: configure.md
         - name: Включение InfiniBand
           href: enable-infiniband.md
-    - name: Настройка MPI
-      href: setup-mpi.md
+        - name: Настройка MPI
+          href: setup-mpi.md
     - name: Масштабирование приложений
       href: compiling-scaling-applications.md
     - name: Виртуальные машины
@@ -28,5 +28,5 @@
               href: hc-series-overview.md
             - name: Производительность
               href: hc-series-performance.md
-        - name: Известные проблемы с виртуальными машинами серий HB и HC
+        - name: Известные проблемы с виртуальными машинами серий H и N
           href: hb-hc-known-issues.md

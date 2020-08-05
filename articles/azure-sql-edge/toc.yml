@@ -8,6 +8,8 @@
       href: features.md
     - name: Заметки о выпуске
       href: release-notes.md
+    - name: Сбор данных об использовании и диагностике
+      href: usage-and-diagnostics-data-configuration.md
 - name: Краткие руководства
   expanded: true
   items:

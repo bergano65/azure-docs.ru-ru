@@ -51,6 +51,12 @@
   items:
     - name: Настройка Наблюдателя за сетями
       href: network-watcher-create.md
+    - name: Создание Монитора подключений (предварительная версия)
+      items:
+        - name: Использование портала Azure
+          href: connection-monitor-preview-create-using-portal.md
+        - name: Использование ARMClient
+          href: connection-monitor-preview-create-using-arm-client.md
     - name: Диагностика проблем с сетью виртуальных машин
       items:
         - name: Установка расширения виртуальной машины
