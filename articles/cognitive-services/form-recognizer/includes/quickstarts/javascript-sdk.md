@@ -9,12 +9,13 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 05/08/2020
 ms.author: pafarley
-ms.openlocfilehash: 2d8cdda28cc7176496457399fd1356634ddafddf
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.custom: devx-track-javascript
+ms.openlocfilehash: a8b49beb463b4e9e19ee98baaef911e6dff15631
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86277704"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87405469"
 ---
 [Справочная документация](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/formrecognizer/ai-form-recognizer/) | [Пакет (npm)](https://www.npmjs.com/package/@azure/ai-form-recognizer) | [Примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples)
 

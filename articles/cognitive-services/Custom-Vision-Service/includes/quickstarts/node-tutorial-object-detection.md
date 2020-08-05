@@ -3,12 +3,13 @@ author: areddish
 ms.author: areddish
 ms.service: cognitive-services
 ms.date: 04/14/2020
-ms.openlocfilehash: cc4cd4b099a37ef103e2da79b8c15269008e7423
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 0cb31f5470519e33b76c6cad83d7b47972f21381
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83837861"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87407321"
 ---
 В этой статье показано, как с помощью пакета SDK Пользовательского визуального распознавания для Node.js создать модель обнаружения объекта. Создав проект, вы можете добавить регионы с тегами, загрузить изображения, обучить проект, получить URL-адрес опубликованной конечной точки прогнозирования и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Node.js.
 

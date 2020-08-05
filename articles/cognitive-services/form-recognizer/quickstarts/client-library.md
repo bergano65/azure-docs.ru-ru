@@ -9,13 +9,14 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 04/28/2020
 ms.author: pafarley
+ms.custom: devx-track-javascript
 zone_pivot_groups: programming-languages-set-ten
-ms.openlocfilehash: c00a30dd10abd58e488a11b2ff79161695789e33
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: ee798ba765346d701851d6873f75c0e572ba7d04
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83997535"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87405468"
 ---
 # <a name="quickstart-use-the-form-recognizer-client-library"></a>Краткое руководство. Использование клиентской библиотеки Распознавателя документов
 
@@ -24,8 +25,8 @@ ms.locfileid: "83997535"
 Используйте клиентскую библиотеку Распознавателя документов для следующих целей:
 
 * [распознавание содержимого формы;](#recognize-form-content)
-* [распознавание получений;](#recognize-receipts)
-* [обучение пользовательской модели;](#train-a-custom-model)
+* [распознавание квитанций](#recognize-receipts);
+* [обучение пользовательской модели](#train-a-custom-model);
 * [анализ документов с помощью пользовательской модели](#analyze-forms-with-a-custom-model);
 * [управление пользовательскими моделями.](#manage-your-custom-models)
 

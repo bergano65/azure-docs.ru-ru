@@ -4,12 +4,12 @@ ms.service: iot-edge
 ms.topic: include
 ms.date: 12/30/2019
 ms.author: kgremban
-ms.openlocfilehash: f8cb734e8a57e3b0ee114ae20f454d0034e9cdc9
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 0c43c6dcced94225e9ab9ae903535ce74286ad9a
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/29/2020
-ms.locfileid: "87387627"
+ms.locfileid: "87406726"
 ---
 ## <a name="create-a-container-registry"></a>Создание реестра контейнеров
 
@@ -33,7 +33,7 @@ ms.locfileid: "87387627"
 
 3. Нажмите кнопку **создания**.
 
-4. После создания реестра контейнеров перейдите к нему и в левой области выберите **Ключи доступа** из меню, расположенного в разделе **Параметры**.
+4. После создания реестра контейнеров перейдите к нему и в левой области выберите **Ключи доступа** из меню, расположенного в разделе **Параметры**. 
 
 5. Щелкните, чтобы позволить пользователю с правами администратора просматривать **имя пользователя** и **пароль** для реестра контейнеров.
 
