@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 07/31/2020
 ms.author: cshoe
-ms.openlocfilehash: 3e38fae84f63f4867befbc3695242dc62dc8dbe8
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 266df5371ff5f47526fa9d6567c62e31d51ebb05
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87502653"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810230"
 ---
 # <a name="shifting-from-expressjs-to-azure-functions"></a>Сдвиг от Express.js к функциям Azure
 
@@ -27,7 +27,7 @@ Express.js является одной из самых популярных Node
 - **Конфигурация и соглашения**. приложение-функция использует _function.jsв_ файле для определения глаголов HTTP, определения политик безопасности и настройки [входных и выходных данных](./functions-triggers-bindings.md)функции. По умолчанию имя папки, которая содержит файлы функции, определяет имя конечной точки, но имя можно изменить с помощью `route` свойства в [function.js](./functions-bindings-http-webhook-trigger.md#customize-the-http-endpoint) в файле.
 
 > [!TIP]
-> Дополнительные сведения см. в интерактивном учебнике [рефакторинг Node.js и Express API для бессерверных интерфейсов API с помощью функций Azure](https://docs.microsoft.com/learn/modules/shift-nodejs-express-apis-serverless/).
+> Дополнительные сведения см. в интерактивном учебнике [рефакторинг Node.js и Express API для бессерверных интерфейсов API с помощью функций Azure](/learn/modules/shift-nodejs-express-apis-serverless/).
 
 ## <a name="example"></a>Пример
 
@@ -138,4 +138,4 @@ export default httpTrigger;
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения см. в интерактивном учебнике [рефакторинг Node.js и Express API для бессерверных интерфейсов API с помощью функций Azure](https://docs.microsoft.com/learn/modules/shift-nodejs-express-apis-serverless/) .
+- Дополнительные сведения см. в интерактивном учебнике [рефакторинг Node.js и Express API для бессерверных интерфейсов API с помощью функций Azure](/learn/modules/shift-nodejs-express-apis-serverless/) .

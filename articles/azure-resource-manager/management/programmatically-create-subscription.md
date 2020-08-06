@@ -7,12 +7,12 @@ ms.date: 07/09/2020
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 3097dcb0444bc8b73d89b42d73ad1f5b9306ab09
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 1b4c16dd276f9f564963fdefe8d16dbc92c1303d
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87502823"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810451"
 ---
 # <a name="programmatically-create-azure-subscriptions-preview"></a>Создание подписок Azure программными средствами (Предварительная версия)
 
@@ -27,7 +27,7 @@ ms.locfileid: "87502823"
 
 Используйте сведения в следующих разделах для создания подписок EA.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 Для создания подписки необходимо иметь роль владельца для учетной записи регистрации. Существует два способа получить эту роль:
 
@@ -95,7 +95,7 @@ ObjectId                               | PrincipalName
 ```
 Используйте свойство `principalName`, чтобы указать учетную запись для оплаты подписок. Скопируйте эту `ObjectId` учетную запись. Например, если вы хотите создать подписки в SignUpEngineering@contoso.com учетной записи регистрации, скопируйте ```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx``` . Вставьте этот идентификатор объекта где-то, чтобы его можно было использовать на следующем шаге в качестве `enrollmentAccountObjectId` .
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Используйте [команду Get-EnrollmentAccount](https://aka.ms/EASubCreationPublicPreviewCLI), чтобы вывести список всех учетных записей регистрации, к которым у вас есть доступ.
 
@@ -151,13 +151,13 @@ POST https://management.azure.com/providers/Microsoft.Billing/enrollmentAccounts
 }
 ```
 
-| Имя элемента  | Обязательно | Тип   | Описание                                                                                               |
+| Имя элемента  | Обязательно | Тип   | Описание:                                                                                               |
 |---------------|----------|--------|-----------------------------------------------------------------------------------------------------------|
 | `displayName` | нет      | Строка | Отображаемое имя подписки. Если нет — ему присваивается имя предложения, например "Microsoft Azure Enterprise".                                 |
 | `offerType`   | Да      | Строка | Предложение подписки. Доступны два варианта предложения EA: [MS-AZR-0017P](https://azure.microsoft.com/pricing/enterprise-agreement/) (для использования в рабочей среде) и [MS-AZR-0148P](https://azure.microsoft.com/offers/ms-azr-0148p/) (для разработки и тестирования, должен быть [включен с помощью портала EA](https://ea.azure.com/helpdocs/DevOrTestOffer)).                |
 | `owners`      | нет       | Строка | Идентификатор объекта любого пользователя, которого вы хотите добавить в качестве владельца RBAC для подписки при ее создании.  |
 
-В ответе, как часть заголовка `Location` , вы получаете URL-адрес, по которому можно запросить состояние операции создания подписки. По завершении создания подписки `Location` URL-адрес Get On возвратит `subscriptionLink` объект с идентификатором подписки. Дополнительные сведения см. в [документации по API подписки](https://docs.microsoft.com/rest/api/subscription/) .
+В ответе, как часть заголовка `Location` , вы получаете URL-адрес, по которому можно запросить состояние операции создания подписки. По завершении создания подписки `Location` URL-адрес Get On возвратит `subscriptionLink` объект с идентификатором подписки. Дополнительные сведения см. в [документации по API подписки](/rest/api/subscription/) .
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -169,7 +169,7 @@ POST https://management.azure.com/providers/Microsoft.Billing/enrollmentAccounts
 New-AzSubscription -OfferType MS-AZR-0017P -Name "Dev Team Subscription" -EnrollmentAccountObjectId <enrollmentAccountObjectId> -OwnerObjectId <userObjectId1>,<servicePrincipalObjectId>
 ```
 
-| Имя элемента  | Обязательно | Тип   | Описание                                                                                               |
+| Имя элемента  | Обязательно | Тип   | Описание:                                                                                               |
 |---------------|----------|--------|-----------------------------------------------------------------------------------------------------------|
 | `Name` | нет      | Строка | Отображаемое имя подписки. Если нет — ему присваивается имя предложения, например "Microsoft Azure Enterprise".                                 |
 | `OfferType`   | Да      | Строка | Предложение подписки. Доступны два варианта предложения EA: [MS-AZR-0017P](https://azure.microsoft.com/pricing/enterprise-agreement/) (для использования в рабочей среде) и [MS-AZR-0148P](https://azure.microsoft.com/offers/ms-azr-0148p/) (для разработки и тестирования, должен быть [включен с помощью портала EA](https://ea.azure.com/helpdocs/DevOrTestOffer)).                |
@@ -181,7 +181,7 @@ New-AzSubscription -OfferType MS-AZR-0017P -Name "Dev Team Subscription" -Enroll
 Полный список параметров приведен в разделе о [New-AzSubscription](/powershell/module/az.subscription/New-AzSubscription).
 
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Сначала установите это расширение для предварительного просмотра, выполнив `az extension add --name subscription` .
 
@@ -191,7 +191,7 @@ New-AzSubscription -OfferType MS-AZR-0017P -Name "Dev Team Subscription" -Enroll
 az account create --offer-type "MS-AZR-0017P" --display-name "Dev Team Subscription" --enrollment-account-object-id "<enrollmentAccountObjectId>" --owner-object-id "<userObjectId>","<servicePrincipalObjectId>"
 ```
 
-| Имя элемента  | Обязательно | Тип   | Описание                                                                                               |
+| Имя элемента  | Обязательно | Тип   | Описание:                                                                                               |
 |---------------|----------|--------|-----------------------------------------------------------------------------------------------------------|
 | `display-name` | нет      | Строка | Отображаемое имя подписки. Если нет — ему присваивается имя предложения, например "Microsoft Azure Enterprise".                                 |
 | `offer-type`   | Да      | Строка | Предложение подписки. Доступны два варианта предложения EA: [MS-AZR-0017P](https://azure.microsoft.com/pricing/enterprise-agreement/) (для использования в рабочей среде) и [MS-AZR-0148P](https://azure.microsoft.com/offers/ms-azr-0148p/) (для разработки и тестирования, должен быть [включен с помощью портала EA](https://ea.azure.com/helpdocs/DevOrTestOffer)).                |
@@ -214,7 +214,7 @@ az account create --offer-type "MS-AZR-0017P" --display-name "Dev Team Subscript
 
 ## <a name="create-subscriptions-for-an-mca-account"></a>Создание подписок для учетной записи MCA
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 Для создания подписок необходимо иметь роль "владелец", "участник" или "создатель подписки Azure" в разделе "счет" или "роль владельца" или "участник" в профиле выставления счетов или счет выставления счетов. Дополнительные сведения см. в статье [Роли и задачи выставления счетов в подписке](../../cost-management-billing/manage/understand-mca-roles.md#subscription-billing-roles-and-tasks).
 
@@ -355,7 +355,7 @@ POST https://management.azure.com<invoiceSectionId>/providers/Microsoft.Subscrip
 
 ## <a name="create-subscriptions-for-an-mpa-billing-account"></a>Создание подписок для учетной записи для выставления счетов активации
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 Для создания подписки на счет для выставления счетов необходимо иметь роль глобального администратора или агента администратора в учетной записи поставщика облачных решений вашей организации. Дополнительные сведения см. в разделе [Центр партнеров — назначение ролей и разрешений пользователей](/partner-center/permissions-overview).
 
@@ -515,7 +515,7 @@ POST https://management.azure.com<customerId>/providers/Microsoft.Subscription/c
 
 В ответе возвращается объект `subscriptionCreationResult` для отслеживания. После завершения создания подписки объект `subscriptionCreationResult` вернет объект `subscriptionLink` с идентификатором подписки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Пример создания подписки на Соглашение Enterprise (EA) с помощью .NET см. в разделе [пример кода на сайте GitHub](https://github.com/Azure-Samples/create-azure-subscription-dotnet-core).
 * После создания подписки можно предоставить эту возможность для других пользователей и субъектов-служб. Дополнительные сведения см. статье [Предоставление доступа к созданию подписок Azure Enterprise (предварительная версия)](grant-access-to-create-subscription.md).

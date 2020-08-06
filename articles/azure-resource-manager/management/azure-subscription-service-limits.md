@@ -4,12 +4,12 @@ description: В этой статье приводится перечень на
 ms.topic: conceptual
 author: davidsmatlak
 ms.date: 06/04/2020
-ms.openlocfilehash: ffe0703fbbea75b221dfc6fd16f334dcf58e8ab3
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 79aaa594a708fe775a2cdcc6e15b7c7f880f9f50
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86515895"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810485"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 
@@ -142,7 +142,7 @@ ms.locfileid: "86515895"
 
 ## <a name="azure-monitor-limits"></a>Ограничения Azure Monitor
 
-### <a name="alerts"></a>видны узлы
+### <a name="alerts"></a>Предупреждения
 
 [!INCLUDE [monitoring-limits](../../../includes/azure-monitor-limits-alerts.md)]
 
@@ -375,11 +375,11 @@ ms.locfileid: "86515895"
 
 [!INCLUDE [azure-storage-limits-vm-disks](../../../includes/azure-storage-limits-vm-disks.md)]
 
-Дополнительные сведения см. в статье [размеры виртуальных машин](../../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Дополнительные сведения см. в статье [размеры виртуальных машин](../../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 #### <a name="disk-encryption-sets"></a>Наборы шифрования дисков
 
-Существует ограничение в 50 наборов шифрования дисков на регион для каждой подписки. Дополнительные сведения см. в документации по шифрованию виртуальных машин [Linux](/azure/virtual-machines/linux/disk-encryption#restrictions) или [Windows](/azure/virtual-machines/windows/disk-encryption#restrictions) . Если вам нужно увеличить квоту, обратитесь в службу поддержки Azure.
+Существует ограничение в 50 наборов шифрования дисков на регион для каждой подписки. Дополнительные сведения см. в документации по шифрованию виртуальных машин [Linux](../../virtual-machines/linux/disk-encryption.md#restrictions) или [Windows](../../virtual-machines/windows/disk-encryption.md#restrictions) . Если вам нужно увеличить квоту, обратитесь в службу поддержки Azure.
 
 ### <a name="managed-virtual-machine-disks"></a>Управляемые диски виртуальной машины
 
@@ -423,9 +423,9 @@ ms.locfileid: "86515895"
 
 [!INCLUDE [virtual-machine-scale-sets-limits](../../../includes/azure-virtual-machine-scale-sets-limits.md)]
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Общие сведения об ограничениях и росте Azure](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
-* [Размеры виртуальных машин и облачных служб для Azure](../../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Размеры виртуальных машин и облачных служб для Azure](../../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Размеры для облачных служб Azure](../../cloud-services/cloud-services-sizes-specs.md)
 * [Правила и ограничения именования для ресурсов Azure](resource-name-rules.md)

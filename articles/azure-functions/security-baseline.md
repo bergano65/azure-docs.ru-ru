@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: b8e6797d1dbbe4260f7a5b701ada887f68a88a7c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 32905383b046148893492640fe42fc721d1944dd
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87079678"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810247"
 ---
 # <a name="azure-security-baseline-for-azure-functions"></a>Базовый план безопасности Azure для функций Azure
 
@@ -170,7 +170,7 @@ ms.locfileid: "87079678"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1.9. Поддержание стандартных конфигураций безопасности для сетевых устройств
 
@@ -187,7 +187,7 @@ ms.locfileid: "87079678"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="110-document-traffic-configuration-rules"></a>1.10. Документация по правилам конфигурации трафика
 
@@ -201,7 +201,7 @@ ms.locfileid: "87079678"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11. Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
 
@@ -223,7 +223,7 @@ ms.locfileid: "87079678"
 
 **Руководство**. Корпорация Майкрософт поддерживает источник времени, используемый для ресурсов Azure, таких как функции Azure для меток времени в журналах.
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -279,7 +279,7 @@ ms.locfileid: "87079678"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="26-monitor-and-review-logs"></a>2.6. Мониторинг и просмотр журналов
 
@@ -299,9 +299,9 @@ ms.locfileid: "87079678"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="27-enable-alerts-for-anomalous-activity"></a>2.7. Включение оповещений об аномальных действиях
 
@@ -321,9 +321,9 @@ ms.locfileid: "87079678"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="28-centralize-anti-malware-logging"></a>2.8. Централизованное ведение журнала защиты от вредоносных программ
 
@@ -379,7 +379,7 @@ ms.locfileid: "87079678"
 
 - [Технологии развертывания в функциях Azure](./functions-deployment-technologies.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -405,7 +405,7 @@ ms.locfileid: "87079678"
 
 - [Общие сведения об использовании единого входа в Azure AD](../active-directory/manage-apps/what-is-single-sign-on.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -417,7 +417,7 @@ ms.locfileid: "87079678"
 
 - [Мониторинг идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -429,7 +429,7 @@ ms.locfileid: "87079678"
 
 - [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -453,7 +453,7 @@ ms.locfileid: "87079678"
 
 - [Настройка именованных расположений в Azure](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -495,7 +495,7 @@ ms.locfileid: "87079678"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -509,7 +509,7 @@ ms.locfileid: "87079678"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -535,7 +535,7 @@ ms.locfileid: "87079678"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
@@ -559,7 +559,7 @@ ms.locfileid: "87079678"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4.3. Мониторинг и блокирование несанкционированной передачи конфиденциальной информации
 
@@ -601,7 +601,7 @@ ms.locfileid: "87079678"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7. Использование защиты от потери данных на основе узла для обеспечения контроля доступа
 
@@ -623,7 +623,7 @@ ms.locfileid: "87079678"
 
 - [Общие сведения о шифровании службы хранилища Azure для неактивных данных](../storage/common/storage-service-encryption.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**. Совмещаемая блокировка
 
@@ -635,7 +635,7 @@ ms.locfileid: "87079678"
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ## <a name="vulnerability-management"></a>управление уязвимостями;
 
@@ -705,7 +705,7 @@ ms.locfileid: "87079678"
 
 - [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -715,7 +715,7 @@ ms.locfileid: "87079678"
 
 - [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -731,7 +731,7 @@ ms.locfileid: "87079678"
 
 - [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -753,7 +753,7 @@ ms.locfileid: "87079678"
 
 - [Как создавать запросы с помощью Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -787,9 +787,9 @@ ms.locfileid: "87079678"
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -858,7 +858,7 @@ ms.locfileid: "87079678"
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -998,7 +998,7 @@ ms.locfileid: "87079678"
 
 Защита от вредоносных программ Майкрософт включена на базовом узле, который поддерживает службы Azure (например, функции Azure), но не выполняется в содержимом клиента.
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -1073,7 +1073,7 @@ ms.locfileid: "87079678"
 
 - [Как восстановить резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
@@ -1127,7 +1127,7 @@ ms.locfileid: "87079678"
 
 - [См. публикацию NIST: руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
@@ -1137,7 +1137,7 @@ ms.locfileid: "87079678"
 
 - [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
