@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 07/17/2020
 ms.custom: how-to, tracking-python
-ms.openlocfilehash: 27b625dfa31b366d95922e1dd0bad7fda6e86ed4
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 23ec12daa2e5c236da482615228b7c44037282fb
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87540076"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87808122"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром для Машинное обучение Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "87540076"
 > [!TIP]
 > При добавлении правила сети задайте для __протокола__ значение Any, а для портов — `*` .
 >
-> Дополнительные сведения о настройке брандмауэра Azure см. в статье [развертывание и настройка брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md#configure-a-network-rule).
+> Дополнительные сведения о настройке брандмауэра Azure см. в статье [развертывание и настройка брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md#configure-an-application-rule).
 
 ## <a name="microsoft-hosts"></a>Узлы Майкрософт
 
@@ -57,7 +57,7 @@ ms.locfileid: "87540076"
 | **azurecr.io** | Реестр контейнеров Azure |
 | **mcr.microsoft.com** | Реестр контейнеров Microsoft для базовых образов DOCKER |
 | **your-acr-server-name.azurecr.io** | Требуется только в том случае, если реестр контейнеров Azure находится за виртуальной сетью. В этой конфигурации частная ссылка создается из среды Майкрософт в экземпляр записи контроля доступа в подписке. Используйте имя сервера записи контроля доступа для рабочей области Машинное обучение Azure. |
-
+| **\*. notebooks.azure.net** | Требуется для записных книжек в Машинное обучение Azure Studio. |
 ## <a name="python-hosts"></a>Узлы Python
 
 Узлы в этом разделе используются для установки пакетов Python. Они необходимы во время разработки, обучения и развертывания. 
@@ -79,7 +79,7 @@ ms.locfileid: "87540076"
 | ---- | ---- |
 | **cloud.r-project.org** | Используется при установке пакетов CRAN. |
 
-Следующие шаги
+Дальнейшие действия
 
 * [[Развертывание и настройка брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md)]
 * [Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure](how-to-enable-virtual-network.md)

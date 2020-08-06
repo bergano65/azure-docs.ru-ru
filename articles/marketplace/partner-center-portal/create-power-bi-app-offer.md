@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: 1687224e796043af1f7c3d1ee6f0417465fb4959
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: c464e26419648d396b39718f357bcef7e4fa5552
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87317693"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87800304"
 ---
 # <a name="create-a-power-bi-app-offer"></a>Создание предложения для Power BI приложения
 
@@ -142,8 +142,8 @@ ms.locfileid: "87317693"
 6. Условия использования
 7. Политика конфиденциальности
 8. Название предложения
-9. Итоги
-10. Описание:
+9. Сводка
+10. Описание
 11. Снимки экрана и видео
 
 ### <a name="name"></a>Имя
@@ -207,11 +207,14 @@ ms.locfileid: "87317693"
 
 #### <a name="store-logos"></a>Логотипы магазина
 
-Предоставьте PNG-файлы эмблемы вашего предложения в двух размерах в пикселях:
-- **малый** (48 x 48);
-- **крупный** (216 x 216).
+Укажите PNG-файл для логотипа **крупного** размера (от 216 x 216 до 350 x 350 пикселей). Центр партнеров будет использовать его для создания **маленького** логотипа размера (48 x 48 пикселей). При необходимости можно заменить его другим изображением.
 
-Оба логотипа являются обязательными и используются в разных местах описания на Marketplace.
+Оба размера логотипа необходимы для использования в разных местах в списке:
+
+- **малый** (48 x 48);
+- **Крупный** (от 216 x 216 до 350 x 350)
+
+[!INCLUDE [Logo suggestions](./includes/graphics-suggestions.md)]
 
 #### <a name="screenshots"></a>Снимки экрана
 

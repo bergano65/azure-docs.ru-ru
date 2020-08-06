@@ -2,7 +2,7 @@
 title: Архив сведений о новых возможностях в Azure Active Directory | Документы Майкрософт
 description: Заметки о выпуске "Новые возможности" в разделе "Обзор" для конкретного набора содержимого отображаются на протяжении шести месяцев. Через шесть месяцев элементы удаляются из основной статьи и помещаются в статью архива.
 services: active-directory
-author: msaburnley
+author: ajburnle
 manager: daveba
 ms.service: active-directory
 ms.subservice: fundamentals
@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d981bad30bf57fde64d1f6e903039dda5007e526
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: e8b09293f80b5aee2dd76abba3f165a50a5eeee5
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87483915"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87799146"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Архив сведений о новых возможностях в Azure Active Directory
 
@@ -2848,7 +2848,7 @@ Azure AD отправляет уведомление о сертификатах
 
 Некоторые пользователи не получают уведомления о корпоративных приложениях, для которых настроен единый вход для на основе SAML. Эта проблема была устранена. Azure AD отправляет уведомление для сертификатов, срок действия которых истекает через 7, 30 и 60 дней. Это событие отображается в журналах аудита.
 
-Дополнительные сведения см. на странице
+Дополнительные сведения см. в разделе:
 
 - [Управление сертификатами для федеративного единого входа в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-sso-certs)
 - [Отчеты о действиях аудита на портале Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-activity-audit-logs)

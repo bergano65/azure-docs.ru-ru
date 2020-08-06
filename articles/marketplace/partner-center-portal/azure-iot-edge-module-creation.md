@@ -7,12 +7,12 @@ ms.topic: article
 author: keferna
 ms.author: keferna
 ms.date: 07/22/2020
-ms.openlocfilehash: 5ead227d886805c0ed48ebb52c4c0e30ef13b851
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 779fc1cfc617e18eee4d84dcfd007f10ddb31f96
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320040"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87808717"
 ---
 # <a name="create-an-iot-edge-module-offer"></a>Создание предложения модуля IoT Edge
 
@@ -50,10 +50,10 @@ ms.locfileid: "87320040"
 
 На этой странице содержатся ссылки для выполнения операций с этим предложением, которые подбираются на основе сделанного выбора. Пример:
 
-- Если предложение является черновой версией предложения черновика- [Delete](update-existing-offer.md#delete-a-draft-offer))
-- Если предложение действует в режиме реального времени, не [выдаем предложение](update-existing-offer.md#stop-selling-an-offer-or-plan).
-- Если предложение находится в режиме предварительной версии — [Go-Live](publishing-status.md#publisher-approval))
-- Если вы еще не завершили выход из Publisher, [Отмените публикацию.](update-existing-offer.md#cancel-publishing))
+- Если предложение является черновиком — [Удалить черновик предложения](update-existing-offer.md#delete-a-draft-offer).
+- Если это действующее предложение — [Остановить продажу предложения](update-existing-offer.md#stop-selling-an-offer-or-plan).
+- Если пока доступна только предварительная версия предложения — [Запустить](publishing-status.md#publisher-approval).
+- Если вы еще не завершили оформление в качестве издателя — [Отменить публикацию](update-existing-offer.md#cancel-publishing).
 
 ## <a name="offer-setup"></a>Настройка предложения
 
@@ -199,14 +199,15 @@ ms.locfileid: "87320040"
 
 #### <a name="store-logos"></a>Логотипы магазина
 
-Предоставьте PNG-файлы логотипа вашего предложения следующих четырех размеров:
+Укажите PNG-файл для логотипа **крупного** размера (от 216 x 216 до 350 x 350 пикселей). Центр партнеров будет использовать его для создания **мелких** (48 x 48 пикселей) и логотипа **среднего** размера (90 x 90 пикселей). При необходимости можно заменить их разными изображениями.
 
-- **малый (48 x 48)** ;
-- **средний (90 x 90)** ;
-- **крупный (216 x 216)** ;
-- **широкий (255 x 115)** .
+Все три размера логотипа необходимы для использования в разных местах в списке:
 
-Все четыре логотипа являются обязательными и используются в разных местах описания на Marketplace.
+- **Малый** (48 x 48)
+- **Средний** (90 x 90)
+- **Крупный** (от 216 x 216 до 350 x 350)
+
+[!INCLUDE [Logo suggestions](./includes/graphics-suggestions.md)]
 
 #### <a name="screenshots-optional"></a>Снимки экрана (необязательно)
 
@@ -230,8 +231,8 @@ ms.locfileid: "87320040"
 4. Terms and conditions (Условия)
 5. Адрес политики конфиденциальности (ссылка)
 6. Имя
-7. Итоги
-8. Описание:
+7. Сводка
+8. Описание
 9. Полезные ссылки
 10. Снимки экрана и видео
 
@@ -252,7 +253,7 @@ ms.locfileid: "87320040"
 #### <a name="call-out-descriptions"></a>Описания вызова
 
 1. Имя
-2. Описание:
+2. Описание
 3. Полезные ссылки
 4. Снимки экрана
 

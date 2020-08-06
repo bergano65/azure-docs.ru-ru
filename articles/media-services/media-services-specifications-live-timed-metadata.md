@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/22/2019
 ms.author: johndeu
-ms.openlocfilehash: 37b3e5eff0baee736fc05760e19c31fdc513e23d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 665bb89d929433db5868eff1c2a5d182d7a94d54
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87060373"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87800285"
 ---
 # <a name="signaling-timed-metadata-in-live-streaming"></a>Сигнализация метаданных времени в потоковой трансляции 
 
@@ -208,7 +208,7 @@ ms.locfileid: "87060373"
 ```
 
 ### <a name="built-in-supported-scheme-id-uris"></a>Встроенные поддерживаемые URI ИДЕНТИФИКАТОРов схем
-| URI идентификатора схемы                 | Описание                                                                                                                                                                                                                                          |
+| URI идентификатора схемы                 | Description                                                                                                                                                                                                                                          |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | HTTPS: \/ /aomedia.org/EMSG/ID3 | Описывает, как можно переносить метаданные [ID3v2] в качестве метаданных времени в КМАФ-совместимом [МПЕГКМАФ] фрагментированном формате MP4. Дополнительные сведения см. в разделе [метаданные времени в стандартном формате приложения мультимедиа (кмаф)](https://github.com/AOMediaCodec/id3-emsg) . |
 
@@ -220,7 +220,7 @@ ms.locfileid: "87060373"
 - (б) передать его через для доставки в КМАФ фрагментах через HLS или ТИРЕ или 
 - (c) преобразуйте его в сигнал разреженной передачи для доставки с помощью Smooth Streaming [MS-SSTR].
 
-В дополнение к стандартному формату "EMSG" КМАФ или протоколам TS для HLS, манифесты для ТИРЕ (MPD) и Smooth Streaming будут содержать ссылку на потоки событий с внутренним каналом (также известный как разреженный потоковый мониторинг в Smooth Streaming). 
+В дополнение к стандартному формату "EMSG" КМАФ или протоколам TS для HLS, манифесты для ТИРЕ (MPD) и Smooth Streaming будут содержать ссылку на потоки событий с внутренним каналом (также известный как разреженный потоковый мониторинг в Smooth Streaming).
 
 Отдельные события или их полезные данные не выводятся непосредственно в манифесте HLS, ТИРЕ или Smooth. 
 
@@ -239,11 +239,11 @@ ms.locfileid: "87060373"
 
 | Имя поля | Тип поля | Необходим? | Описания                                                                                                                                                                                                                                                                        |
 | ---------- | ---------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| тип       | Строка     | Обязательно  | Сообщение о событии.  Должно иметь значение SpliceOut, чтобы иметь возможность назначить соединение в простом режиме.                                                                                                                                                                                                         |
+| type       | Строка     | Обязательно  | Сообщение о событии.  Должно иметь значение SpliceOut, чтобы иметь возможность назначить соединение в простом режиме.                                                                                                                                                                                                         |
 | идентификатор         | Строка     | Обязательно  | Уникальный идентификатор, описывающий соединение или сегмент. Определяет экземпляр сообщения.                                                                                                                                                                                       |
-| длительность   | Number     | Обязательно  | Длительность соединения. Единицы измерения — доли секунды.                                                                                                                                                                                                                           |
-| elapsed    | Number     | Необязательно  | Если сигнал повторяется для поддержки настройки, это поле должно отображать количество времени презентации, которое прошло с момента начала соединения. Единицы измерения — доли секунды. В простом режиме это значение не должно превышать первоначальную длительность соединения. |
-| time       | Number     | Обязательно  | Должно соответствовать времени соединения в рамках времени презентации. Единицы измерения — доли секунды.                                                                                                                                                                                                |
+| длительность   | Число     | Обязательно  | Длительность соединения. Единицы измерения — доли секунды.                                                                                                                                                                                                                           |
+| elapsed    | Число     | Необязательно  | Если сигнал повторяется для поддержки настройки, это поле должно отображать количество времени презентации, которое прошло с момента начала соединения. Единицы измерения — доли секунды. В простом режиме это значение не должно превышать первоначальную длительность соединения. |
+| time       | Число     | Обязательно  | Должно соответствовать времени соединения в рамках времени презентации. Единицы измерения — доли секунды.                                                                                                                                                                                                |
 
 ---
  
@@ -255,7 +255,7 @@ ms.locfileid: "87060373"
 
 #### <a name="example-hls-manifest-output-when-using-adobe-rtmp-simple-mode"></a>Пример выходных данных манифеста HLS при использовании простого режима Adobe RTMP
 
-См. пример [манифеста 3.2.2 HLS с помощью Adobe Simple Mode и ТЕГА ext-X-Cue](#322-apple-hls-with-adobe-primetime-ext-x-cue-legacy) .
+См. пример [манифеста 3.2.2 HLS с помощью Adobe Simple Mode и ТЕГА ext-X-Cue](#322-apple-hls-with-adobe-primetime-ext-x-cue) .
 
 ## <a name="214-rtmp-ad-cue-signaling-with-onadcue---scte-35-mode"></a>сигнал 2.1.4 RTMP AD Cue с режимом "onAdCue" — SCTE-35
 
@@ -268,19 +268,23 @@ ms.locfileid: "87060373"
 | Имя поля | Тип поля | Необходим? | Описания                                                                                                                                                                                                                                                                                                                                                                                                        |
 | ---------- | ---------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | cue        | Строка     | Обязательно  | Сообщение о событии.  Для сообщений [SCTE-35] это должен быть двоичный splice_info_section [RFC4648] в кодировке Base64, чтобы сообщения отправлялись клиентам HLS, Smooth и тире.                                                                                                                                                                                                                               |
-| тип       | Строка     | Обязательно  | URN или URL-адрес, определяющий схему сообщения. Для сообщений [SCTE-35] это **должно** быть **"scte35"** , чтобы сообщения отправлялись клиентам HLS, Smooth и тире в соответствии с [Adobe-Primetime]. Кроме того, URN-имя URN: SCTE: scte35:2013: bin может также использоваться для сигнализации сообщения [SCTE – 35].                                                                                                        |
+| type       | Строка     | Обязательно  | URN или URL-адрес, определяющий схему сообщения. Для сообщений [SCTE-35] это **должно** быть **"scte35"** , чтобы сообщения отправлялись клиентам HLS, Smooth и тире в соответствии с [Adobe-Primetime]. Кроме того, URN-имя URN: SCTE: scte35:2013: bin может также использоваться для сигнализации сообщения [SCTE – 35].                                                                                                        |
 | идентификатор         | Строка     | Обязательно  | Уникальный идентификатор, описывающий соединение или сегмент. Определяет экземпляр сообщения.  Сообщения с одинаковой семантикой должны иметь одно и то же значение.                                                                                                                                                                                                                                                       |
-| длительность   | Number     | Обязательно  | Длительность события или сегмента добавления рекламы (если она известна). Если значение неизвестно, **должно** быть равно 0.                                                                                                                                                                                                                                                                                                                    |
-| elapsed    | Number     | Необязательно  | Если сигнал рекламы [SCTE-35] повторяется для настройки, это поле должно отображать количество времени презентации, которое прошло с момента начала соединения. Единицы измерения — доли секунды. В режиме [SCTE-35] это значение может превышать исходную указанную длительность соединения или сегмента.                                                                                                                   |
-| time       | Number     | Обязательно  | Время презентации события или вставки рекламы.  Время и длительность презентации **должны** быть согласованы с точками доступа к потоку (SAP) типа 1 или 2, как определено в приложении [ISO-14496-12] I. Для исходящего исходящего трафика HLS время и длительность **должны** соответствовать границам сегмента. Время презентации и длительность различных сообщений о событии в одном потоке событий НЕ ДОЛЖНЫ перекрываться. Единицы измерения — доли секунды. |
+| длительность   | Число     | Обязательно  | Длительность события или сегмента добавления рекламы (если она известна). Если значение неизвестно, **должно** быть равно 0.                                                                                                                                                                                                                                                                                                                    |
+| elapsed    | Число     | Необязательно  | Если сигнал рекламы [SCTE-35] повторяется для настройки, это поле должно отображать количество времени презентации, которое прошло с момента начала соединения. Единицы измерения — доли секунды. В режиме [SCTE-35] это значение может превышать исходную указанную длительность соединения или сегмента.                                                                                                                   |
+| time       | Число     | Обязательно  | Время презентации события или вставки рекламы.  Время и длительность презентации **должны** быть согласованы с точками доступа к потоку (SAP) типа 1 или 2, как определено в приложении [ISO-14496-12] I. Для исходящего исходящего трафика HLS время и длительность **должны** соответствовать границам сегмента. Время презентации и длительность различных сообщений о событии в одном потоке событий НЕ ДОЛЖНЫ перекрываться. Единицы измерения — доли секунды. |
 
 ---
 
-#### <a name="example-mpeg-dash-mpd-manifest-with-scte-35-mode"></a>Пример манифеста MPEG ТИРЕ. mpd с режимом SCTE-35
-См. [раздел 3.3.3.2 Пример тире manifest с SCTE-35](#3332-example-mpeg-dash-manifest-mpd-with-multi-period-eventstream-using-adobe-scte35-mode-signaling)
+<!---
+#### Example MPEG DASH .mpd manifest with SCTE-35 mode
+See [Section 3.3.3.2 example DASH manifest with SCTE-35](#3332-example-mpeg-dash-manifest-mpd-with-multi-period-eventstream-using-adobe-scte35-mode-signaling)
+--->
 
 #### <a name="example-hls-manifest-m3u8-with-scte-35-mode-signal"></a>Пример HLS. m3u8 с сигналом режима SCTE-35
-См. [раздел 3.2.1.1 пример манифеста HLS с SCTE-35](#3211-example-hls-manifest-m3u8-showing-ext-x-daterange-signaling-of-scte-35)
+См. [раздел 3.2.1.1 пример манифеста HLS с SCTE-35](#3211-example-hls-manifest-m3u8-showing-ext-x-cue-signaling-of-scte-35)
+
+
 
 ## <a name="215-rtmp-ad-signaling-with-oncuepoint-for-elemental-live"></a>2.1.5 RTMP AD с "Онкуепоинт" для интерактивного динамического
 
@@ -293,7 +297,7 @@ ms.locfileid: "87060373"
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | name       | Имя должно быть "**scte35**" с помощью элемента Live.                                                                                                                                                                              |
 | time       | Время в секундах, в течение которого была обнаружена контрольная точка в видеофайле во время временной шкалы                                                                                                                                           |
-| тип       | Для типа контрольной точки должно быть задано значение "**event**".                                                                                                                                                                             |
+| type       | Для типа контрольной точки должно быть задано значение "**event**".                                                                                                                                                                             |
 | параметры | Ассоциативный массив строк пар "имя-значение", содержащий сведения из сообщения SCTE-35, включая идентификатор и длительность. Эти значения анализируются службами мультимедиа Azure и включаются в тег декорирования манифеста. |
 
 
@@ -355,6 +359,7 @@ ms.locfileid: "87060373"
 </MPD>
 ~~~
 
+
 #### <a name="example-hls-playlist-adobe-simple-mode-signals-using-ext-x-cue-tag-truncated--for-brevity"></a>Пример списка воспроизведения HLS, сигнала в простом режиме Adobe с помощью EXT-X-CUE Tag (усечено "...") для краткости)
 
 В следующем примере показаны выходные данные динамического упаковщика служб мультимедиа для принимающего потока RTMP с помощью сигналов режима Adobe "Simple" и устаревшего тега [Adobe-Primetime] EXT-X-CUE.  
@@ -409,7 +414,8 @@ Fragments(video=1583488022000000,format=m3u8-aapl-v8)
 
 Каждый разреженный фрагмент состоит из поля фрагмента роликов (' moof ') и носителя Data Box (' mdat '), где поле ' mdat ' является двоичным сообщением.
 
-Чтобы обеспечить точную вставку рекламных объявлений, кодировщик должен разбить фрагмент на время презентации, где требуется вставить подсказку.  НЕОБХОДИМО создать новый фрагмент, который начинается с вновь созданного кадра IDR или точек доступа к потоку (SAP) типа 1 или 2, как определено в приложении [ISO-14496-12] I. Это позволяет упаковщику мультимедиа Azure правильно создать манифест HLS и многофакторный манифест многопериодического ТИРЕ, в котором новый период начинается с подсчета времени представления с точностью в зависимости от кадра.
+Чтобы обеспечить точную вставку рекламных объявлений, кодировщик должен разбить фрагмент на время презентации, где требуется вставить подсказку.  НЕОБХОДИМО создать новый фрагмент, который начинается с вновь созданного кадра IDR или точек доступа к потоку (SAP) типа 1 или 2, как определено в приложении [ISO-14496-12] I.
+<!--- This allows the Azure Media Packager to properly generate an HLS manifest and a DASH multi-period manifest where the new Period begins at the frame-accurate splice conditioned presentation time. --->
 
 ### <a name="221-live-server-manifest-box"></a>2.2.1. Поле манифеста сервера прямой передачи
 
@@ -417,13 +423,13 @@ Fragments(video=1583488022000000,format=m3u8-aapl-v8)
 
 | **Имя атрибута** | **Тип поля** | **Обязательный?** | **Описание**                                                                                                                                                                                                              |
 | ------------------ | -------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| systemBitrate      | Number         | Обязательно      | Значение **должно** быть равно "0", что указывает на запись с неизвестным переменным скоростью.                                                                                                                                                          |
+| systemBitrate      | Число         | Обязательно      | Значение **должно** быть равно "0", что указывает на запись с неизвестным переменным скоростью.                                                                                                                                                          |
 | parentTrackName    | Строка         | Обязательно      | **Должно** быть именем родительской записи, для которой коды времени разреженной записи имеют значение по шкале времени. Родительская дорожка не может быть разреженной.                                                                             |
-| manifestOutput     | Логический        | Обязательно      | **Должен** иметь значение "true", чтобы указать, что разреженная запись будет внедрена в манифест Smooth Client.                                                                                                                        |
+| manifestOutput     | Логическое        | Обязательно      | **Должен** иметь значение "true", чтобы указать, что разреженная запись будет внедрена в манифест Smooth Client.                                                                                                                        |
 | Subtype            | Строка         | Обязательно      | Это **должен** быть 4 код СИМВОЛА "Data".                                                                                                                                                                                  |
 | Схема             | Строка         | Обязательно      | Это **должен** быть URN или URL-адрес, идентифицирующий схему сообщения. Для сообщений [SCTE-35] это **должно** быть "urn: SCTE: scte35:2013: bin", чтобы сообщения отправлялись клиентам HLS, Smooth и тире в соответствии с [SCTE-35]. |
 | trackName          | Строка         | Обязательно      | **Должно** быть именем разреженной записи. TrackName можно использовать для различения нескольких потоков событий с одной схемой. Каждый уникальный поток событий **должен** иметь уникальное имя записи.                                |
-| timescale          | Number         | Необязательно      | **Должна** быть шкала времени родительской записи.                                                                                                                                                                               |
+| timescale          | Число         | Необязательно      | **Должна** быть шкала времени родительской записи.                                                                                                                                                                               |
 
 ---
 
@@ -542,21 +548,182 @@ Fragments(video=1583488022000000,format=m3u8-aapl-v8)
 
 Службы мультимедиа Azure поддерживают следующие теги манифеста HLS для сигнализации сведений о рекламном проходе в реальном времени или в рамках события по требованию. 
 
-- EXT-X-DATERANGE, как определено в Apple HLS [RFC8216]
-- EXT-X-CUE, как определено в [Adobe-Primetime]. Этот режим считается устаревшим. По возможности клиенты должны принять тег EXT-X-DATERANGE.
+<!--- EXT-X-DATERANGE as defined in Apple HLS [RFC8216] --->
+- EXT-X-CUE, как определено в [Adobe-Primetime]
+<!--- this mode is considered "legacy".  Customers should adopt the EXT-X-DATERANGE tag when possible. --->
 
 Выходные данные каждого тега будут зависеть от используемого режима приема сигнала. Например, RTMP, принимающий простой режим Adobe, не содержит полные полезные данные SCTE-35 в кодировке Base64.
 
-## <a name="321-apple-hls-with-ext-x-daterange-recommended"></a>3.2.1 Apple HLS с EXT-X-DATERANGE (рекомендуется)
+<!---
+## 3.2.1 Apple HLS with EXT-X-DATERANGE (recommended)
 
-Спецификация Apple HTTP Live Streaming [RFC8216] позволяет оповещать сообщения [SCTE-35]. Сообщения вставляются в список воспроизведения сегментов в разделе EXT-X-DATERANGE Tag for [RFC8216], озаглавленном "сопоставление SCTE-35 в EXT-X-DATERANGE".  Уровень клиентского приложения может анализировать список воспроизведения M3U и обрабатывать теги M3U, а также принимать события с помощью платформы Apple Player.  
+The Apple HTTP Live Streaming [RFC8216] specification allows for signaling of [SCTE-35] messages. The messages are inserted into the segment playlist in an EXT-X-DATERANGE tag per [RFC8216] section titled "Mapping SCTE-35 into EXT-X-DATERANGE".  The client application layer can parse the M3U playlist and process M3U tags, or receive the events through the Apple player framework.  
 
-**Рекомендуемый** подход в службах мультимедиа Azure (API версии 3) состоит в подсистеме [RFC8216] и использовании тега EXT-X_DATERANGE для [SCTE35] декорирования AD в манифесте.
+The **RECOMMENDED** approach in Azure Media Services (version 3 API) is to follow [RFC8216] and use the EXT-X_DATERANGE tag for [SCTE35] ad avail decoration in the manifest.
+--->
 
-## <a name="3211-example-hls-manifest-m3u8-showing-ext-x-daterange-signaling-of-scte-35"></a>3.2.1.1 Пример HLS manifest. m3u8, показывающий EXT-X-DATERANGE Signal SCTE-35
 
-В следующем примере выходных данных манифеста из динамического упаковщика служб мультимедиа показано использование тега EXT-X-DATERANGE из [RFC8216], который сообщает о событиях SCTE-35 в потоке. Кроме того, этот поток содержит "Legacy" тег "EXT-X-CUE" для [Adobe-Primetime].
+## <a name="3211-example-hls-manifest-m3u8-showing-ext-x-cue-signaling-of-scte-35"></a>3.2.1.1 Пример HLS manifest. m3u8, показывающий EXT-X-CUE Signal SCTE-35
 
+В следующем примере выходные данные манифеста, HLS в динамическом упаковщике служб мультимедиа, показывают тег EXT-X-CUE для [Adobe-Primetime] в режиме SCTE35. 
+
+~~~
+#EXTM3U
+#EXT-X-VERSION:8
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-TARGETDURATION:2
+#EXT-X-INDEPENDENT-SEGMENTS
+#EXT-X-PROGRAM-DATE-TIME:2020-01-07T19:40:50Z
+#EXTINF:1.501500,no-desc
+Fragments(video=22567545,format=m3u8-aapl-v8)
+#EXTINF:1.501500,no-desc
+Fragments(video=22702680,format=m3u8-aapl-v8)
+#EXTINF:1.501500,no-desc
+Fragments(video=22837815,format=m3u8-aapl-v8)
+#EXTINF:1.501500,no-desc
+Fragments(video=22972950,format=m3u8-aapl-v8)
+#EXTINF:1.501500,no-desc
+Fragments(video=23108085,format=m3u8-aapl-v8)
+#EXTINF:1.234567,no-desc
+Fragments(video=23243220,format=m3u8-aapl-v8)
+#EXTINF:0.016689,no-desc
+Fragments(video=23354331,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=0.000022
+#EXTINF:0.250244,no-desc
+Fragments(video=23355833,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=0.250267
+#EXTINF:0.850856,no-desc
+Fragments(video=23378355,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=1.101122
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=0.000000,TIME=260.610344,CUE="/DAgAAAAAAXdAP/wDwUAAAPqf0/+AWXk0wABAQEAAGB86Fo="
+#EXTINF:0.650644,no-desc
+Fragments(video=23454932,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=1.751767
+#EXTINF:0.050044,no-desc
+Fragments(video=23513490,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=1.801811
+#EXTINF:1.451456,no-desc
+Fragments(video=23517994,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=3.253267
+#EXTINF:1.501500,no-desc
+Fragments(video=23648625,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=4.754767
+#EXTINF:1.501500,no-desc
+Fragments(video=23783760,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=6.256267
+#EXTINF:1.501500,no-desc
+Fragments(video=23918895,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=7.757767
+#EXTINF:1.501500,no-desc
+Fragments(video=24054030,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=9.259267
+#EXTINF:1.501500,no-desc
+Fragments(video=24189165,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=10.760767
+#EXTINF:1.501500,no-desc
+Fragments(video=24324300,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=12.262267
+#EXTINF:1.501500,no-desc
+Fragments(video=24459435,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=13.763767
+#EXTINF:1.501500,no-desc
+Fragments(video=24594570,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=15.265267
+#EXTINF:1.501500,no-desc
+Fragments(video=24729705,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=16.766767
+#EXTINF:1.501500,no-desc
+Fragments(video=24864840,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=18.268267
+#EXTINF:1.501500,no-desc
+Fragments(video=24999975,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=19.769767
+#EXTINF:1.501500,no-desc
+Fragments(video=25135110,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=21.271267
+#EXTINF:1.501500,no-desc
+Fragments(video=25270245,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=22.772767
+#EXTINF:1.501500,no-desc
+Fragments(video=25405380,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=24.274267
+#EXTINF:1.501500,no-desc
+Fragments(video=25540515,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=25.775767
+#EXTINF:1.501500,no-desc
+Fragments(video=25675650,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=27.277267
+#EXTINF:1.501500,no-desc
+Fragments(video=25810785,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=28.778767
+#EXTINF:1.501500,no-desc
+Fragments(video=25945920,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=30.280267
+#EXTINF:1.501500,no-desc
+Fragments(video=26081055,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=31.781767
+#EXTINF:1.501500,no-desc
+Fragments(video=26216190,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=33.283267
+#EXTINF:1.501500,no-desc
+Fragments(video=26351325,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=34.784767
+#EXTINF:1.501500,no-desc
+Fragments(video=26486460,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=36.286267
+#EXTINF:1.501500,no-desc
+Fragments(video=26621595,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=37.787767
+#EXTINF:1.501500,no-desc
+Fragments(video=26756730,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=39.289267
+#EXTINF:1.501500,no-desc
+Fragments(video=26891865,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=40.790767
+#EXTINF:1.501500,no-desc
+Fragments(video=27027000,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=42.292267
+#EXTINF:1.501500,no-desc
+Fragments(video=27162135,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=43.793767
+#EXTINF:1.501500,no-desc
+Fragments(video=27297270,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=45.295267
+#EXTINF:1.501500,no-desc
+Fragments(video=27432405,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=46.796767
+#EXTINF:1.501500,no-desc
+Fragments(video=27567540,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=48.298267
+#EXTINF:1.501500,no-desc
+Fragments(video=27702675,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=49.799767
+#EXTINF:1.501500,no-desc
+Fragments(video=27837810,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=51.301267
+#EXTINF:1.501500,no-desc
+Fragments(video=27972945,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=52.802767
+#EXTINF:1.501500,no-desc
+Fragments(video=28108080,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=54.304267
+#EXTINF:1.501500,no-desc
+Fragments(video=28243215,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=55.805767
+#EXTINF:1.501500,no-desc
+Fragments(video=28378350,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=57.307267
+#EXTINF:1.501500,no-desc
+Fragments(video=28513485,format=m3u8-aapl-v8)
+#EXT-X-CUE:ID="1002",TYPE="scte35",DURATION=59.993278,TIME=259.509244,CUE="/DAlAAAAAAXdAP/wFAUAAAPqf+/+AWRhuP4AUmNjAAEBAQAA8g1eNw==",ELAPSED=58.808767
+#EXTINF:1.501500,no-desc
+Fragments(video=28648620,format=m3u8-aapl-v8)
+
+~~~
+
+
+<!---
+THIS VERSION HAS THE HLSv8 DATERANGE Tags in it
 ~~~
 #EXTM3U
 #EXT-X-VERSION:8
@@ -755,10 +922,11 @@ Fragments(video=28648620,format=m3u8-aapl-v8)
 
 ~~~
 
+--->
 
-## <a name="322-apple-hls-with-adobe-primetime-ext-x-cue-legacy"></a>3.2.2 Apple HLS with Adobe Primetime EXT-X-CUE (устаревшая)
+## <a name="322-apple-hls-with-adobe-primetime-ext-x-cue"></a>3.2.2 Apple HLS with Adobe Primetime EXT-X-CUE
 
-Кроме того, в службах мультимедиа Azure (версии 2 и 3 API) существует реализация "Legacy", которая использует тег EXT-X-CUE, как определено в [Adobe-Primetime] "SCTE-35 Mode". В этом режиме службы мультимедиа Azure будут внедрять кодировку Base64 [SCTE-35] splice_info_section () в теге EXT-X-CUE.  
+Службы мультимедиа (версии 2 и 3 API) поддерживают выходные данные тега EXT-X-CUE, как определено в [Adobe-Primetime] "SCTE-35 Mode". В этом режиме службы мультимедиа Azure будут внедрять кодировку Base64 [SCTE-35] splice_info_section () в теге EXT-X-CUE.  
 
 Тег "Legacy" EXT-X-CUE определяется как приведенный ниже, а также может быть указан в спецификации [Adobe-Primetime]. Этот параметр следует использовать только для устаревшей сигнализации SCTE35, если это необходимо, в противном случае рекомендуемый тег определяется в [RFC8216] как EXT-X-DATERANGE. 
 
@@ -771,12 +939,15 @@ Fragments(video=28648620,format=m3u8-aapl-v8)
 | ELAPSED            | десятичное число с плавающей запятой | Необязательно, но требуется для скользящего окна | Когда сигнал повторяется для поддержки скользящего окна презентации, это поле **должно** быть объемом времени презентации, истекшего с момента начала события. Единицы измерения — доли секунды. Это значение может превышать исходную указанную длительность соединения или сегмента. |
 | TIME               | десятичное число с плавающей запятой | Обязательно                                  | Время презентации события. Единицы измерения — доли секунды.                                                                                                                                                                                                                        |
 
-
 Прикладной уровень проигрывателя HLS будет использовать ТИП для определения формата сообщения, декодирования сообщения, применения необходимых преобразований времени и обработки события.  События синхронизируются по времени в списке воспроизведений сегмента родительской дорожки в соответствии с меткой времени события.  Они вставляются перед ближайшим сегментом (тег #EXTINF).
 
-### <a name="323-hls-m3u8-manifest-example-using-legacy-adobe-primetime-ext-x-cue"></a>пример манифеста 3.2.3 HLS. m3u8 с использованием "Legacy" Adobe Primetime EXT-X-CUE
 
-В следующем примере показано декорирование манифеста HLS с помощью тега Adobe Primetime EXT-X-CUE.  Параметр "CUE" содержит только свойства "тип" и "Длительность", что означает, что это был источник RTMP с помощью сигнализации режима Adobe "Simple".  Если это сигнал режима SCTE-35, тег включал в себя полезные данные двоичного файла SCTE-35 в кодировке Base64, как показано в [примере 3.2.1.1](#3211-example-hls-manifest-m3u8-showing-ext-x-daterange-signaling-of-scte-35).
+### <a name="323-hls-m3u8-manifest-example-using-adobe-primetime-ext-x-cue"></a>пример манифеста 3.2.3 HLS. m3u8 с использованием Adobe Primetime EXT-X-CUE
+
+В следующем примере показано декорирование манифеста HLS с помощью тега Adobe Primetime EXT-X-CUE.  Параметр "CUE" содержит только свойства "тип" и "Длительность", что означает, что это был источник RTMP с помощью сигнализации режима Adobe "Simple".  
+<!---If this was a SCTE-35 mode signal, the tag would include the base64 encoded binary SCTE-35 payload as seen in the [3.2.1.1 example](#3211-example-hls-manifest-m3u8-showing-ext-x-daterange-signaling-of-scte-35).
+--->
+
 
 ~~~
 #EXTM3U
@@ -839,7 +1010,7 @@ Fragments(video=4011702982,format=m3u8-aapl)
 
 ~~~
 
-### <a name="324-hls-message-handling-for-legacy-adobe-primetime-ext-x-cue"></a>3.2.4 HLS обработка сообщений для "Legacy" Adobe Primetime EXT-X-CUE
+### <a name="324-hls-message-handling-for-adobe-primetime-ext-x-cue"></a>Обработка сообщений 3.2.4 HLS для Adobe Primetime EXT-X-CUE
 
 В списке воспроизведения сегментов каждого видео и звуковой дорожки сообщается о событиях. Расположение тега EXT-X-CUE всегда **должно** быть непосредственно перед первым сегментом HLS (для объединения или начала сегмента) или непосредственно после последнего сегмента HLS (для объединения в сегмент или в конце сегмента), к которому относятся атрибуты времени и длительности, согласно требованиям [Adobe-Primetime].
 
@@ -855,7 +1026,7 @@ Fragments(video=4011702982,format=m3u8-aapl)
 2.  События, сигнальные по каналу с помощью окна сообщения о событии ("EMSG")
 3.  Путем сочетания 1 и 2 способов.
 
-События, сигнальные в EventStream MPD, полезны для потоковой передачи VOD, так как клиенты имеют доступ ко всем событиям сразу после загрузки MPD. Он также полезен для ССАИ сигнала, когда нижестоящий поставщик ССАИ должен проанализировать сигналы из манифеста MPD с несколькими периодами и вставить содержимое Active Directory динамически.  Встроенное решение ("EMSG") полезно для динамической потоковой передачи, где клиентам не требуется загружать MPD повторно, или между клиентом и источником не происходит никаких манипуляций с манифестом ССАИ. 
+События, сигнальные в EventStream MPD, полезны для потоковой передачи VOD, так как клиенты имеют доступ ко всем событиям сразу после загрузки MPD. Он также полезен для ССАИ сигнала, когда нижестоящий поставщик ССАИ должен проанализировать сигналы из манифеста MPD и динамически вставить содержимое Active Directory.  Встроенное решение ("EMSG") полезно для динамической потоковой передачи, где клиентам не требуется загружать MPD повторно, или между клиентом и источником не происходит никаких манипуляций с манифестом ССАИ. 
 
 Поведение по умолчанию служб мультимедиа Azure для ТИРЕ — сообщить как в EventStream MPD, так и в аппаратном канале, используя окно сообщения о событии ("EMSG").
 
@@ -871,11 +1042,13 @@ Fragments(video=4011702982,format=m3u8-aapl)
 
 В MPD с помощью элемента EventStream, который отображается в элементе Period, будет отображаться сообщение о событии MANIFEST (MPD). Используется Счемеид "urn: SCTE: scte35:2014: XML + bin".
 
+
 > [!NOTE]
 > В целях краткости [SCTE-35] позволяет использовать раздел в кодировке Base64 в элементе SignalR. binary (а не элемент Signal. Сплицеинфосектион) в качестве альтернативы символу символа подсказок полностью проанализированных сообщений Cue.
 > Службы мультимедиа Azure используют этот подход "XML + bin" для сигнализации в манифесте MPD.
 > Это также рекомендуемый метод, используемый в [ТИРЕ-IF-источнике]. см. раздел ["потоки событий вставки AD" для тире, если правило источнике](https://dashif-documents.azurewebsites.net/DASH-IF-IOP/master/DASH-IF-IOP.html#ads-insertion-event-streams)
 > 
+
 
 Элемент EventStream имеет следующие атрибуты:
 
@@ -909,12 +1082,14 @@ Fragments(video=4011702982,format=m3u8-aapl)
     </EventStream>
 ~~~
 
+
 #### <a name="3322-example-mpeg-dash-mpd-manifest-signaling-of-an-rtmp-stream-using-adobe-scte-35-mode"></a>Пример 3.3.2.2. Использование манифеста MPEG-ТИРЕ. mpd для потока RTMP в режиме Adobe SCTE — 35
 
 В следующем примере показан фрагмент EventStream из динамического упаковщика служб мультимедиа для потока RTMP с сигналами в режиме Adobe SCTE-35.
 
+Пример элемента EventStream с использованием формата XML + табличный сигнал на [SCTE-214-1]
+
 ~~~ xml
-<!-- Example EventStream element using xml+bin style signaling per [SCTE-214-1] -->
 
       <EventStream schemeIdUri="urn:scte:scte35:2014:xml+bin" value="scte35" timescale="10000000">
         <Event presentationTime="2595092444" duration="11011000" id="1002">
@@ -930,11 +1105,14 @@ Fragments(video=4011702982,format=m3u8-aapl)
       </EventStream>
 ~~~
 
+
+
 > [!IMPORTANT]
 > Обратите внимание, что Пресентатионтиме — время презентации события [SCTE-35], которое преобразуется относительно времени начала периода, а не времени прибытия сообщения.
 > [МПЕГДАШ] определяет Event@presentationTime время показа события относительно начала периода.
 > Значение времени презентации в секундах является делением значения этого атрибута и значения EventStream@timescale атрибута.
 > Если он отсутствует, значение времени презентации равно 0.
+
 
 #### <a name="3331-example-mpeg-dash-manifest-mpd-with-single-period-eventstream-using-adobe-simple-mode-signals"></a>3.3.3.1 пример манифеста MPEG (MPD) с одиночной точкой, EventStream, использование сигналов простого режима Adobe
 
@@ -992,10 +1170,11 @@ Fragments(video=4011702982,format=m3u8-aapl)
 
 ~~~
 
-#### <a name="3332-example-mpeg-dash-manifest-mpd-with-multi-period-eventstream-using-adobe-scte35-mode-signaling"></a>3.3.3.2 пример манифеста MPEG (MPD) с несколькими периодами, EventStream с использованием сигнализации режима Adobe SCTE35
+<!---
+#### 3.3.3.2 Example MPEG DASH manifest (MPD) with multi-period, EventStream, using Adobe SCTE35 mode signaling
 
-В следующем примере показаны выходные данные динамического упаковщика служб мультимедиа для исходного RTMP-потока с помощью сигнализации режима Adobe SCTE35.
-В этом случае выходной манифест является многопериодным ТИРЕ. mpd с элементом EventStream и @schemeIdUri свойством, для которого задано значение urn: SCTE: scte35:2014: XML + bin, а @value свойству задано значение scte35. Каждый элемент события в EventStream содержит полный двоичный сигнал SCTE35 в кодировке Base64 
+The following example shows the output from the Media Services dynamic packager for a source RTMP stream using the Adobe SCTE35 mode signaling.
+In this case, the output manifest is a multi-period DASH .mpd with an EventStream element, and @schemeIdUri property set to "urn:scte:scte35:2014:xml+bin" and a @value property set to "scte35". Each Event element in the EventStream contains the full base64 encoded binary SCTE35 signal 
 
 ~~~ xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -1028,9 +1207,6 @@ Fragments(video=4011702982,format=m3u8-aapl)
                 <SegmentTimeline>
                     <S t="7417856" d="133120"/>
                     <S d="132096" r="1"/>
-                    
-                    <!--> ... aduio segments truncated for sample brevity </-->
-
                 </SegmentTimeline>
             </SegmentTemplate>
             <ProducerReferenceTime id="7417856" type="0" wallClockTime="2020-01-07T19:40:50.037Z" presentationTime="7417856"/>
@@ -1122,6 +1298,9 @@ Fragments(video=4011702982,format=m3u8-aapl)
 </MPD>
 
 ~~~
+
+--->
+
 ### <a name="334-mpeg-dash-in-band-event-message-box-signaling"></a>Сигнал в окне сообщения о событии 3.3.4 MPEG ТИРЕ
 
 Для потока событий по общему каналу необходимо, чтобы MPD имел элемент InbandEventStream на уровне набора адаптации.  Этот элемент имеет обязательный атрибут Счемеидури и необязательный атрибут временной шкалы, который также отображается в окне сообщения о событии (' EMSG ').  Окна сообщений о событиях с идентификаторами схем, не определенными в MPD, не **должны** присутствовать.
@@ -1164,6 +1343,7 @@ Smooth Streaming прием [MS-SSTR-прием] требует, чтобы Data
 
 Для приема RTMP атрибут подсказки сообщения AMF устанавливается в кодировку Base64 **splice_info_section ()** , определенную в [SCTE-35].  
 
+
 Если сообщения имеют описанный выше формат, они отправляются клиентам HLS, Smooth и ТИРЕ, как определено выше.  
 
 При тестировании реализации с помощью платформы служб мультимедиа Azure сначала запустите тестирование с "сквозным" Лививент, прежде чем переходить к тестированию на Лививент кодирования.
@@ -1174,9 +1354,10 @@ Smooth Streaming прием [MS-SSTR-прием] требует, чтобы Data
 
 | Дата     | Изменения                                                                                                             |
 | -------- | ------------------------------------------------------------------------------------------------------------------- |
-| 07/2/19  | Пересмотренный RTMP, принимаемый для поддержки SCTE35, добавил RTMP "Онкуепоинт" для интерактивного элемента                                  |
+| 07/2/19  | Пересмотрена поддержка приема RTMP, добавлен RTMP "Онкуепоинт" для интерактивного элемента                                            |
 | 08/22/19 | Добавлена Онусердатаевент в RTMP для пользовательских метаданных.                                                          |
 | 1/08/20  | Исправлена ошибка в режиме простого и RTMP SCTE35 в RTMP. Изменено с "Онкуепоинт" на "onAdCue". Обновлена таблица простого режима. |
+| 08/4/20  | Удалена поддержка тега DATERANGE для соответствия реализации в рабочей службе.    |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.

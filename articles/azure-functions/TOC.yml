@@ -16,7 +16,7 @@
     - name: Создание функции
       expanded: true
       items:
-        - name: "Visual Studio\_Code"
+        - name: Visual Studio Code
           href: ./functions-create-first-function-vs-code.md
         - name: Visual Studio
           href: functions-create-your-first-function-visual-studio.md
@@ -27,7 +27,7 @@
           href: functions-create-first-function-resource-manager.md
     - name: Подключение к хранилищу
       items:
-        - name: "Visual Studio\_Code"
+        - name: Visual Studio Code
           href: functions-add-output-binding-storage-queue-vs-code.md
         - name: Visual Studio
           href: functions-add-output-binding-storage-queue-vs.md
@@ -263,7 +263,7 @@
         - name: Функции в локальной среде
           href: functions-runtime-install.md
         - name: Развертывание с помощью подключаемого модуля Jenkins
-          href: /azure/jenkins/jenkins-azure-functions-deploy
+          href: /azure/developer/jenkins/deploy-to-azure-functions
           maintainContext: true
     - name: Configure
       items:
@@ -376,7 +376,7 @@
             - name: Входные данные
               displayName: Blob storage
               href: functions-bindings-storage-blob-input.md
-            - name: Вывод
+            - name: Выходные данные
               displayName: Blob storage
               href: functions-bindings-storage-blob-output.md
         - name: Azure Cosmos DB
@@ -396,7 +396,7 @@
                 - name: Входные данные
                   href: functions-bindings-cosmosdb-v2-input.md
                   displayName: Azure Cosmos DB
-                - name: Вывод
+                - name: Выходные данные
                   href: functions-bindings-cosmosdb-v2-output.md
                   displayName: Azure Cosmos DB
         - name: Сетка событий Azure

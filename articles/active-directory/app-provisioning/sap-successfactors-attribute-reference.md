@@ -2,36 +2,37 @@
 title: Справочник по атрибутам SAP SuccessFactors
 description: Сведения о том, какие атрибуты SuccessFactors поддерживаются при подготовке c помощью решения по управлению персоналом SuccessFactors.
 services: active-directory
-author: kenwith
+author: cmmdesai
 manager: celestedg
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.workload: identity
-ms.date: 12/06/2019
-ms.author: kenwith
+ms.date: 08/05/2020
+ms.author: chmutali
 ms.reviewer: celested
-ms.openlocfilehash: 25541b76dda55db1ec26f4d8e3ec63573a47e7b1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ef2da377c7720cfb7b431d1ce0fed56656a2b8c7
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84781554"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87808513"
 ---
 # <a name="sap-successfactors-attribute-reference"></a>Справочник по атрибутам SAP SuccessFactors
 
 В этой статье вы найдете сведения о:
 
-- [Поддерживаемые сущности и атрибуты SuccessFactors](#supported-successfactors-entities-and-attributes)
+- [Сущности и атрибуты SuccessFactors](#supported-successfactors-entities-and-attributes)
 - [Сопоставление атрибутов по умолчанию](#default-attribute-mapping)
 
 ## <a name="supported-successfactors-entities-and-attributes"></a>Поддерживаемые сущности и атрибуты SuccessFactors
 
-В следующей таблице записан список атрибутов SuccessFactors, поддерживаемых следующими двумя приложениями подготовки:
+В следующей таблице приведен список атрибутов SuccessFactors, включаемых по умолчанию в следующие два приложения подготовки:
 
 - [SuccessFactors Active Directory подготовки пользователей](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
 - [SuccessFactors для подготовки пользователей Azure AD](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
 
+Сведения о расширении схемы для дополнительных атрибутов см. в [справочнике по интеграции SAP SuccessFactors](./sap-successfactors-integration-reference.md#retrieving-additional-attributes) . 
 
 | \# | Сущность SuccessFactors                  | Атрибут SuccessFactors     | Тип операции |
 |----|----------------------------------------|------------------------------|----------------|

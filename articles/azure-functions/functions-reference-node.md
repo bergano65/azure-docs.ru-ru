@@ -5,12 +5,12 @@ ms.assetid: 45dedd78-3ff9-411f-bb4b-16d29a11384c
 ms.topic: conceptual
 ms.date: 07/17/2020
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 636df121ea5b09a421ae7bedaf9e30cbbd1966f5
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: ff3e5431481cba0d2d806d60ba5d7a291d1b2b69
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87280874"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810122"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "87280874"
 
 | Начало работы | Основные понятия| Направляемое обучение |
 | -- | -- | -- | 
-| <ul><li>[ФункцияNode.js с использованием Visual Studio Code](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-javascript)</li><li>[Node.js функции с помощью терминала/командной строки](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-javascript)</li></ul> | <ul><li>[Руководство для разработчиков](functions-reference.md)</li><li>[Сравнение вариантов размещения](functions-scale.md)</li><li>[Функции TypeScript](#typescript)</li><li>[&nbsp;Вопросы производительности](functions-best-practices.md)</li></ul> | <ul><li>[Создание бессерверных приложений.](/learn/paths/create-serverless-applications/)</li><li>[Рефакторинг интерфейсов API Node.js и Express для бессерверных интерфейсов API](/learn/modules/shift-nodejs-express-apis-serverless/)</li></ul> |
+| <ul><li>[ФункцияNode.js с использованием Visual Studio Code](./functions-create-first-function-vs-code.md?pivots=programming-language-javascript)</li><li>[Node.js функции с помощью терминала/командной строки](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-javascript)</li></ul> | <ul><li>[Руководство для разработчиков](functions-reference.md)</li><li>[Сравнение вариантов размещения](functions-scale.md)</li><li>[Функции TypeScript](#typescript)</li><li>[&nbsp;Вопросы производительности](functions-best-practices.md)</li></ul> | <ul><li>[Создание бессерверных приложений.](/learn/paths/create-serverless-applications/)</li><li>[Рефакторинг интерфейсов API Node.js и Express для бессерверных интерфейсов API](/learn/modules/shift-nodejs-express-apis-serverless/)</li></ul> |
 
 ## <a name="javascript-function-basics"></a>Основы функций JavaScript
 
@@ -347,7 +347,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 
 У объекта (запроса) `context.req` есть следующие свойства:
 
-| Свойство      | Описание:                                                    |
+| Свойство      | Описание                                                    |
 | ------------- | -------------------------------------------------------------- |
 | _body_        | Объект, содержащий текст запроса.               |
 | _Верхний_     | Объект, содержащий заголовок запроса.                   |
@@ -362,7 +362,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 
 У объекта (ответа) `context.res` есть следующие свойства:
 
-| Свойство  | Описание:                                               |
+| Свойство  | Описание                                               |
 | --------- | --------------------------------------------------------- |
 | _body_    | Объект, содержащий текст ответа.         |
 | _Верхний_ | Объект, содержащий заголовок ответа.             |

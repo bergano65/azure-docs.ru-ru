@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
-ms.openlocfilehash: bb1de5d51afd01cf0aa519f12aa3665bee804efd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a1060cbf1b2204c3feba413b8c8ce0cba58941c6
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79471682"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87799129"
 ---
 # <a name="protocol-support-for-http-headers-in-azure-front-door"></a>Поддержка протокола для заголовков HTTP в передней дверце Azure
 В этой статье описывается протокол, который поддерживает передняя дверь с частями пути вызова (см. изображение). В следующих разделах содержатся дополнительные сведения о заголовках HTTP, поддерживаемых передней дверцей.
@@ -44,6 +44,7 @@ ms.locfileid: "79471682"
 | X-Forwarded-Host | X-Forwarded — узел: contoso.azurefd.net </br> Поле заголовка HTTP X-Forwardd-Host НТТР является общим методом, используемым для обнаружения исходного узла, запрошенного клиентом в заголовке HTTP-запроса узла. Это связано с тем, что имя узла из передней дверцы может отличаться для внутреннего сервера, обрабатывающего запрос. |
 | X-Forwarded-Proto | X-Forwarded-определяемое: http </br> Поле заголовка HTTP X-Forwarded-обозначать, как правило, используется для обнаружения исходного протокола HTTP-запроса, так как передняя дверца на основе конфигурации может взаимодействовать с серверной частью по протоколу HTTPS. Это справедливо, даже если запрос к обратным прокси-серверу имеет значение HTTP. |
 | X-демон-HealthProbe | Поле заголовка HTTP X-демо-HealthProbe используется для определения пробы работоспособности из передней дверцы. Если для этого заголовка задано значение 1, то запрос является зондом работоспособности. Вы можете использовать, если вы хотите ограничивать доступ из определенной передней дверцы с помощью поля заголовка X-Forwardd-Host. |
+|X-Azure-ФДИД | Заголовок X-Azure-ФДИД: 437c82cd-360A-4a54-94c3-5ff707647783 </br> Это поле содержит Фронтдурид, которые можно использовать для указания, из какой передней дверцы получен входящий запрос. Это поле заполняется службой "Передняя дверь". | 
 
 ## <a name="front-door-to-client"></a>Front Door — клиент
 
@@ -53,7 +54,7 @@ ms.locfileid: "79471682"
 | ------------- | ------------- |
 | X — Azure-ref |  *X-Azure-ref: 0zxV + XAAAAABKMMOjBv2NT4TY6SQVjC0zV1NURURHRTA2MTkANDM3YzgyY2QtMzYwYS00YTU0LTk0YzMtNWZmNzA3NjQ3Nzgz* </br> Это уникальная эталонная строка, которая идентифицирует запрос, обслуженный Front Door. Это важно для устранения неполадок, так как оно используется для поиска в журналах доступа.|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание профиля Front Door](quickstart-create-front-door.md)
 - [Принцип работы передней дверцы](front-door-routing-architecture.md)

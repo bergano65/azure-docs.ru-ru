@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/16/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 9c7c1000ed5229886d4a964161042eca6517c230
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: d0bca2ad14216873836c751dc002ea915baa3a66
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87367442"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87800489"
 ---
 # <a name="integrate-azure-digital-twins-with-other-services"></a>Интеграция Azure Digital двойников с другими службами
 
@@ -33,7 +33,7 @@ Azure Digital двойников может передавать данные в
 * [Сетка событий](../event-grid/overview.md)
 * [Служебная шина](../service-bus-messaging/service-bus-messaging-overview.md)
 
-Конечные точки подключены к цифровым двойников Azure с помощью API-интерфейсов управления или портал Azure. Дополнительные сведения о подключении конечной точки к цифровым двойников Azure см. в статье [*Управление конечными точками и маршрутами*](how-to-manage-routes.md).
+Конечные точки подключены к цифровым двойников Azure с помощью API-интерфейсов управления или портал Azure. Дополнительные сведения о подключении конечной точки к цифровым двойников Azure см. в статье [*Управление конечными точками и маршрутами*](how-to-manage-routes-apis-cli.md).
 
 Существует множество других служб, которые могут захотеть направлять ваши данные, такие как [хранилище Azure](../storage/common/storage-introduction.md) или [аналитика временных рядов](../time-series-insights/time-series-insights-update-overview.md). Чтобы отправить данные в подобные службы, присоедините целевую службу к конечной точке.
 

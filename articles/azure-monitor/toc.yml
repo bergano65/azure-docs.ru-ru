@@ -171,10 +171,14 @@
         - name: Мониторинг виртуальных машин Azure
           href: insights/monitor-vm-azure.md
           displayname: VM
+    - name: Развертывание
+      items:
+        - name: Развертывание Azure Monitor
+          href: deploy.md
+        - name: Развертывание в масштабе
+          href: deploy-scale.md
     - name: Администрирование и настройка
       items:
-        - name: Развертывание в масштабе
-          href: platform/deploy-scale.md
         - name: 'Роли, разрешения и безопасность'
           href: platform/roles-permissions-security.md
         - name: IP-адреса

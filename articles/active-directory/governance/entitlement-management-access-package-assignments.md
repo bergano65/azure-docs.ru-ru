@@ -3,7 +3,7 @@ title: Просмотр, Добавление и удаление назначе
 description: Сведения о просмотре, добавлении и удалении назначений для пакета Access в Azure Active Directory управлении обслуживанием.
 services: active-directory
 documentationCenter: ''
-author: msaburnley
+author: ajburnle
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -16,18 +16,18 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55f17703060d19baebe55ef648cb182cb2c6d00a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 78bed4f5c600bfa0218f924dc4444119e9729e28
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85078825"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87798755"
 ---
 # <a name="view-add-and-remove-assignments-for-an-access-package-in-azure-ad-entitlement-management"></a>Просмотр, Добавление и удаление назначений для пакета Access в управлении назначением Azure AD
 
 В разделе Управление назначением Azure AD можно увидеть, кто назначен для пакетов доступа, их политику и состояние. Если у пакета доступа есть соответствующая политика, можно также напрямую назначить пользователя пакету доступа. В этой статье описывается просмотр, Добавление и удаление назначений для пакетов доступа.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать управление назначением Azure AD и назначить пользователям доступ к пакетам, необходимо иметь одну из следующих лицензий:
 
@@ -110,7 +110,7 @@ ms.locfileid: "85078825"
 
     Появится уведомление о том, что назначение удалено. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Запрос на изменение и параметры для пакета Access](entitlement-management-access-package-request-policy.md)
 - [Просмотр отчетов и журналов](entitlement-management-reports.md)

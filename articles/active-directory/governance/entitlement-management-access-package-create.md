@@ -3,7 +3,7 @@ title: Создание нового пакета Access в управлении
 description: Узнайте, как создать новый пакет доступа к ресурсам, который вы хотите использовать в Azure Active Directory управлении назначением.
 services: active-directory
 documentationCenter: ''
-author: msaburnley
+author: ajburnle
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d54c4e5980383c721629143910eafbd5ae6a527
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 64f5c88de72bcd241f0cd42d338acbe707de6f34
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85078951"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87798789"
 ---
 # <a name="create-a-new-access-package-in-azure-ad-entitlement-management"></a>Создание нового пакета Access в управлении назначением Azure AD
 
@@ -67,7 +67,7 @@ ms.locfileid: "85078951"
    
     ![Управление правами на портале Azure](./media/entitlement-management-shared/access-packages-list.png)
 
-## <a name="basics"></a>Основы
+## <a name="basics"></a>Основные сведения
 
 На вкладке " **основы** " Присвойте пакету доступа имя и укажите каталог для создания пакета доступа в.
 
@@ -119,7 +119,7 @@ ms.locfileid: "85078951"
 
 [!INCLUDE [Entitlement management lifecycle policy](../../../includes/active-directory-entitlement-management-lifecycle-policy.md)]
 
-## <a name="review--create"></a>Отзыв и создание
+## <a name="review--create"></a>Просмотр и создание
 
 На вкладке " **Проверка и создание** " можно просмотреть параметры и проверить наличие ошибок проверки.
 
@@ -141,7 +141,7 @@ ms.locfileid: "85078951"
 1. [Создайте акцесспаккажеассигнментполици](https://docs.microsoft.com/graph/api/accesspackageassignmentpolicy-post?view=graph-rest-beta).
 1. [Создайте акцесспаккажересаурцеролескопе](https://docs.microsoft.com/graph/api/accesspackage-post-accesspackageresourcerolescopes?view=graph-rest-beta) для каждой роли ресурса, необходимой для пакета доступа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ссылка на общий доступ для запроса пакета Access](entitlement-management-access-package-settings.md)
 - [Изменение ролей ресурсов для пакета Access](entitlement-management-access-package-resources.md)

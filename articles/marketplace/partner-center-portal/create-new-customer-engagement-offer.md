@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: navits09
 ms.author: navits
 ms.date: 06/17/2020
-ms.openlocfilehash: e90e45a0c96d8bbd2806a0ab6df70ef83e0cc9f6
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 650210ab965936de6e48b2ace3f2042857760053
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86121934"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87800013"
 ---
 # <a name="create-a-dynamics-365-for-customer-engagement--powerapps-offer"></a>Создание предложения Dynamics 365 for Customer Engagement & PowerApps
 
@@ -195,10 +195,14 @@ ms.locfileid: "86121934"
 
 #### <a name="store-logos"></a>Логотипы магазина
 
-Укажите логотип вашего предложения в трех размерах:
-- **Малый** (обязательно; 48 x 48)
-- **Крупный** (обязательно; 216 x 216)
-- **Широкий** (необязательно; 255 x 115)
+Укажите PNG-файл для логотипа **крупного** размера (от 216 x 216 до 350 x 350 пикселей). Центр партнеров будет использовать его для создания **маленького** логотипа размера (48 x 48 пикселей). При необходимости можно заменить его другим изображением.
+
+Оба размера логотипа необходимы для использования в разных местах в списке:
+
+- **малый** (48 x 48);
+- **Крупный** (от 216 x 216 до 350 x 350)
+
+[!INCLUDE [Logo suggestions](./includes/graphics-suggestions.md)]
 
 #### <a name="screenshots"></a>Снимки экрана
 

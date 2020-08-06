@@ -4,14 +4,21 @@ description: Как использовать службу сообщений Jav
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 95558f973041a086dc66d2bebb1ce54ee58c952a
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 935579bdcb142969d9baf7ca24cf03268620bf46
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320788"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87799690"
 ---
 # <a name="use-the-java-message-service-jms-with-azure-service-bus-and-amqp-10"></a>Использование службы сообщений Java (JMS) с служебной шиной Azure и AMQP 1,0
+
+> [!WARNING]
+> Приведенное ниже краткое справочное по предназначено для **ограниченной поддержки** API 1,1 службы сообщений Java (JMS) и существует только для уровня "Стандартный" служебной шины Azure.
+>
+> Полная поддержка API 2,0 службы сообщений Java (JMS) доступна только на уровне Premium для служебной [шины Azure в предварительной версии](how-to-use-java-message-service-20.md), что настоятельно рекомендуется.
+>
+
 В этой статье объясняется, как использовать функции обмена сообщениями служебной шины Azure (очереди и разделы публикации и подписки) из приложений Java с помощью популярного стандарта API службы сообщений Java (JMS). Есть [сопутствующая статья](service-bus-amqp-dotnet.md) , в которой объясняется, как сделать то же самое с помощью API .NET служебной шины Azure. Эти два руководства можно использовать совместно для изучения обмена сообщениями между различными платформами с помощью AMQP 1.0.
 
 AMQP 1.0 — это эффективный и надежный протокол обмена сообщениями на уровне соединения, который можно использовать для создания надежных кроссплатформенных приложений для обмена сообщениями.
@@ -29,7 +36,7 @@ AMQP 1.0 — это эффективный и надежный протокол 
 ## <a name="downloading-the-amqp-10-jms-client-library"></a>Загрузка клиентской библиотеки AMQP 1.0 JMS
 Сведения о том, где загрузить последнюю версию клиентской библиотеки Apache Qpid JMS AMQP 1,0, см. по адресу [https://qpid.apache.org/download.html](https://qpid.apache.org/download.html) .
 
-При построении и запуске приложений JMS с использованием служебной шины необходимо добавить следующие 4 JAR-файла из архива распространения Apache Qpid JMS AMQP 1.0 в Java CLASSPATH:
+При создании и запуске приложений JMS с помощью служебной шины необходимо добавить следующие JAR-файлы из архивного архива Apache Qpid JMS AMQP 1,0 в ПОДКАТАЛОГ классов Java.
 
 * geronimo-jms\_1.1\_spec-1.0.jar
 * qpid-jms-client-[version].jar
@@ -287,7 +294,7 @@ public class JmsQueueQuickstart {
 }
 ```
 
-### <a name="run-the-application"></a>Выполнение приложения
+### <a name="run-the-application"></a>Запуск приложения
 Передайте **Строку подключения** из политики совместного доступа для запуска приложения.
 Ниже приведены следующие данные запуска приложения.
 
@@ -366,7 +373,7 @@ MODIFIED_FAILED_UNDELIVERABLE = 5; -> Defer()
 | createTemporaryQueue        | создать очередь с помощью API управления или инструментов,или портала с * AutoDeleteOnIdle *, установленным на срок действия |
 | рецеивеноваит               | Используйте метод Receive (), предоставленный пакетом SDK служебной шины, и укажите очень низкое или нулевое время ожидания. |
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 В этом практическом руководстве показано использование функций обмена сообщениями, выполняемых посредством служебной шины (очередей и разделов публикации/подписки), из Java с использованием популярного JMS API и протокола AMQP 1.0.
 
 Протокол AMQP 1.0 Service Bus можно также использовать из других языков, в числе которых .NET, C, Python и PHP. Компоненты, созданные с помощью этих языков, могут надежно и точно обмениваться сообщениями, используя AMQP 1.0 в Service Bus.
@@ -377,4 +384,3 @@ MODIFIED_FAILED_UNDELIVERABLE = 5; -> Defer()
 * [Инструкции для разработчиков служебной шины AMQP 1,0](service-bus-amqp-dotnet.md)
 * [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)
 * [Центр разработчиков Java](https://azure.microsoft.com/develop/java/)
-

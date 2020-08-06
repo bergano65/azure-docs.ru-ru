@@ -5,14 +5,14 @@ services: data-factory
 author: nabhishek
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 07/19/2020
+ms.date: 08/05/2020
 ms.author: abnarain
-ms.openlocfilehash: 521756081db938e749849e6f3630dbd60700d24f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 49d173e0d0f2b96c385b4325335483d25e9a7c2d
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87023892"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87800719"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Устранение неполадок с локальной средой выполнения интеграции
 
@@ -20,7 +20,7 @@ ms.locfileid: "87023892"
 
 В этой статье рассматриваются стандартные методы устранения неполадок с локальной средой выполнения интеграции в Фабрике данных Azure.
 
-## <a name="gather-self-hosted-integration-runtime-logs-from-azure-data-factory"></a>Сбор собственных журналов среды выполнения интеграции из фабрики данных Azure
+## <a name="gather-self-hosted-ir-logs-from-azure-data-factory"></a>Сбор собственных IR-журналов из фабрики данных Azure
 
 Для неудачных действий, выполняемых на автономных и общих IR-серверах, фабрика данных Azure поддерживает просмотр и отправку журналов ошибок. Чтобы получить идентификатор отчета об ошибке, выполните следующие действия, а затем введите идентификатор отчета, чтобы найти связанные известные проблемы.
 
@@ -46,11 +46,369 @@ ms.locfileid: "87023892"
 > Просмотр журнала и отправка запросов будут выполняться во всех подключенных к сети экземплярах для самостоятельного размещения. Убедитесь, что все автономные экземпляры IR в сети в случае отсутствия журналов. 
 
 
-## <a name="common-errors-and-resolutions"></a>Распространенные ошибки и способы их устранения
+## <a name="self-hosted-ir-general-failure-or-error"></a>Общая неисправность или ошибка в локальной среде IR
 
-### <a name="error-message"></a>Сообщение об ошибке: 
+### <a name="tlsssl-certificate-issue"></a>Проблемы с сертификатом TLS/SSL
 
-`Self-hosted integration runtime can't connect to cloud service`
+#### <a name="symptoms"></a>Симптомы
+
+При попытке включить сертификат TLS/SSL (дополнительно) из локальной сети **IR Configuration Manager**  ->  **Удаленный доступ из интрасети**после выбора сертификата TLS/SSL появляется следующее сообщение об ошибке:
+
+`Remote access settings are invalid. Identity check failed for outgoing message. The expected DNS identity of the remote endpoint was ‘abc.microsoft.com’ but the remote endpoint provided DNS claim ‘microsoft.com’. If this is a legitimate remote endpoint, you can fix the problem by explicitly specifying DNS identity ‘microsoft.com’ as the Identity property of EndpointAddress when creating channel proxy.`
+
+В приведенном выше случае пользователь использует сертификат с "microsoft.com" в качестве последнего элемента.
+
+#### <a name="cause"></a>Причина
+
+Это известная проблема в WCF: Проверка WCF TLS/SSL проверяет только последний DNSName в сети SAN. 
+
+#### <a name="resolution"></a>Решение
+
+Сертификат с подстановочными знаками поддерживается в локальной среде фабрики данных Azure версии 2. Как правило, эта проблема возникает из-за неверного сертификата SSL. Последний DNSName в сети SAN должен быть допустимым. Выполните следующие действия, чтобы проверить его. 
+1.  Откройте консоль управления, дважды проверьте как *Тема* , так и *альтернативное имя субъекта* в сведениях о сертификате. В приведенном выше случае, например, последний элемент в *альтернативном имени субъекта*("DNS-имя = Microsoft.com.com") является недопустимым.
+2.  Чтобы удалить неправильное DNS-имя, обратитесь в компанию по выдаче сертификата.
+
+### <a name="concurrent-jobs-limit-issue"></a>Проблемы с ограничением параллельных заданий
+
+#### <a name="symptoms"></a>Симптомы
+
+При попытке увеличить ограничение на количество параллельных заданий в пользовательском интерфейсе фабрики данных Azure он зависает при неограниченном *обновлении* .
+Максимальное значение одновременных заданий было равно 24, и вы хотите увеличить число, чтобы задания могли выполняться быстрее. Минимальное значение, которое можно ввести, равно 3, а максимальное значение — 32. Вы увеличили значение с 24 до 32 и нажимаю кнопку *Update (обновить* ) в пользовательском интерфейсе, который был задержан при *обновлении* , как показано ниже. После обновления клиент по-прежнему видел значение 24 и никогда не обновлялся до 32.
+
+![Обновление состояния](media/self-hosted-integration-runtime-troubleshoot-guide/updating-status.png)
+
+#### <a name="cause"></a>Причина
+
+Существует ограничение для параметра, которое зависит от Логиккоре компьютера и памяти. можно просто изменить его на меньшее значение, например 24, и увидеть результат.
+
+> [!TIP] 
+> - Дополнительные сведения о том, что такое число ядер, и о том, как найти количество ядер на компьютере, см. в [этой статье](https://www.top-password.com/blog/find-number-of-cores-in-your-cpu-on-windows-10/).
+> - Дополнительные сведения о вычислении Math. log см. в [этой статье](https://www.rapidtables.com/calc/math/Log_Calculator.html).
+
+
+### <a name="self-hosted-ir-ha-ssl-certificate-issue"></a>Несамостоятельная Ошибка SSL-сертификата с высоким уровнем доступности
+
+#### <a name="symptoms"></a>Симптомы
+
+Автономный узел ИК-работ сообщил об ошибке ниже:
+
+`Failed to pull shared states from primary node net.tcp://abc.cloud.corp.Microsoft.com:8060/ExternalService.svc/. Activity ID: XXXXX The X.509 certificate CN=abc.cloud.corp.Microsoft.com, OU=test, O=Microsoft chain building failed. The certificate that was used has a trust chain that cannot be verified. Replace the certificate or change the certificateValidationMode. The revocation function was unable to check revocation because the revocation server was offline.`
+
+#### <a name="cause"></a>Причина
+
+При обработке обращений, связанных с подтверждением SSL/TLS, могут возникать некоторые проблемы, связанные с проверкой цепочки сертификатов. 
+
+#### <a name="resolution"></a>Решение
+
+- Ниже приведен краткий и понятный способ устранения неполадок при сборке цепочки сертификатов X. 509.
+ 
+    1. Экспортируйте сертификат, который необходимо проверить. Перейдите к разделу Управление сертификатом компьютера и найдите сертификат, который требуется проверить, и щелкните правой кнопкой мыши **все задачи**  ->  **Экспорт**.
+    
+        ![Экспорт задач](media/self-hosted-integration-runtime-troubleshoot-guide/export-tasks.png)
+
+    2. Скопируйте экспортированный сертификат на клиентский компьютер. 
+    3. На стороне клиента выполните приведенную ниже команду в CMD. Убедитесь, что вы заменили ниже *\<certificate path>* и *\<output txt file path>* заполнители с соответствующими путями.
+    
+        ```
+        Certutil -verify -urlfetch    <certificate path>   >     <output txt file path> 
+        ```
+
+        Пример:
+
+        ```
+        Certutil -verify -urlfetch c:\users\test\desktop\servercert02.cer > c:\users\test\desktop\Certinfo.txt
+        ```
+    4. Проверьте, нет ли ошибок в выходном TXT-файле. Сводку ошибок можно найти в конце файла txt.
+
+        Пример: 
+
+        ![Сводка ошибок](media/self-hosted-integration-runtime-troubleshoot-guide/error-summary.png)
+
+        Если в конце файла журнала нет ошибок, как показано ниже, можно считать, что цепочка сертификатов успешно создана на клиентском компьютере.
+        
+        ![Нет ошибок в файле журнала](media/self-hosted-integration-runtime-troubleshoot-guide/log-file.png)      
+
+- Если в файле сертификата настроены AIA, CDP и OCSP. Мы можем проверить его более интуитивно понятным образом.
+ 
+    1. Эти сведения можно получить, проверив сведения о сертификате.
+    
+        ![Сведения о сертификате](media/self-hosted-integration-runtime-troubleshoot-guide/certificate-detail.png)
+    1. Выполните команду ниже. Убедитесь, что заменили *\<certificate path>* заполнитель связанным путем к сертификату.
+    
+        ```
+          Certutil   -URL    <certificate path> 
+        ```
+    1. Затем откроется **средство извлечения URL-адресов** . Чтобы проверить сертификаты из AIA, CDP и OCSP, нажмите кнопку **получить** .
+
+        ![Кнопка извлечения](media/self-hosted-integration-runtime-troubleshoot-guide/retrieval-button.png)
+ 
+        Цепочка сертификатов может быть создана успешно, если сертификат из AIA имеет значение "Проверено", а сертификат из CDP или OCSP — "Проверено".
+
+        Если вы видите ошибку при получении AIA, CDP, обратитесь к группе Network, чтобы подготовить клиентский компьютер к подключению к целевому URL-адресу. Он будет достаточно, если можно проверить путь HTTP или путь LDAP.
+
+### <a name="self-hosted-ir-could-not-load-file-or-assembly"></a>Локальной IR-среде не удалось загрузить файл или сборку
+
+#### <a name="symptoms"></a>Симптомы
+
+`Could not load file or assembly 'XXXXXXXXXXXXXXXX, Version=4.0.2.0, Culture=neutral, PublicKeyToken=XXXXXXXXX' or one of its dependencies. The system cannot find the file specified. Activity ID: 92693b45-b4bf-4fc8-89da-2d3dc56f27c3`
+ 
+Пример: 
+
+`Could not load file or assembly 'System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=XXXXXXXXX' or one of its dependencies. The system cannot find the file specified. Activity ID: 92693b45-b4bf-4fc8-89da-2d3dc56f27c3`
+
+#### <a name="cause"></a>Причина
+
+При работе с монитором обработки можно увидеть следующий результат:
+
+[![Монитор процессов](media/self-hosted-integration-runtime-troubleshoot-guide/process-monitor.png)](media/self-hosted-integration-runtime-troubleshoot-guide/process-monitor.png#lightbox)
+
+> [!TIP] 
+> Вы можете задать фильтр, как показано на снимке экрана ниже.
+> Он сообщает нам, что библиотека DLL **System. ValueTuple** не находится в папке, связанной с глобальным каталогом, или в папке *C:\Program Files\Microsoft Integration Runtime\4.0\Gateway*или в каталоге *c:\Program Files\Microsoft Integration Runtime\4.0\Shared* .
+> По сути, она сначала загрузит библиотеку DLL из папки *GAC* , а затем из папки *шлюза* — из *общего доступа* и из нее. Таким образом, можно разместить библиотеку DLL по любому пути, который может быть полезен.
+
+![Настройка фильтров](media/self-hosted-integration-runtime-troubleshoot-guide/set-filters.png)
+
+#### <a name="resolution"></a>Решение
+
+Можно найти, что **System.ValueTuple.dll** находится в папке *C:\Program Files\Microsoft Integration Runtime\4.0\Gateway\DataScan* . Скопируйте **System.ValueTuple.dll** в папку *C:\Program Files\Microsoft Integration Runtime\4.0\Gateway* , чтобы устранить проблему.
+
+Один и тот же метод можно использовать для устранения проблем с отсутствующими файлами или сборками.
+
+#### <a name="more-information"></a>Дополнительные сведения
+
+Причина, по которой вы видите System.ValueTuple.dll в разделе *%WINDIR%\Microsoft.NET\assembly* и *%виндир%\ассембли* , заключается в том, что это поведение .NET. 
+
+В приведенной ниже ошибке можно ясно увидеть, что сборка *System. ValueTuple* отсутствует. Поэтому такая ситуация возникает, когда приложение пытается проверить сборку *System.ValueTuple.dll*.
+ 
+`<LogProperties><ErrorInfo>[{"Code":0,"Message":"The type initializer for 'Npgsql.PoolManager' threw an exception.","EventType":0,"Category":5,"Data":{},"MsgId":null,"ExceptionType":"System.TypeInitializationException","Source":"Npgsql","StackTrace":"","InnerEventInfos":[{"Code":0,"Message":"Could not load file or assembly 'System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=XXXXXXXXX' or one of its dependencies. The system cannot find the file specified.","EventType":0,"Category":5,"Data":{},"MsgId":null,"ExceptionType":"System.IO.FileNotFoundException","Source":"Npgsql","StackTrace":"","InnerEventInfos":[]}]}]</ErrorInfo></LogProperties>`
+ 
+Дополнительные сведения о глобальном кэше сборок см. в [этой статье](https://docs.microsoft.com/dotnet/framework/app-domains/gac).
+
+
+### <a name="how-to-audit-self-hosted-ir-key-missing"></a>Аудит отсутствия самостоятельно размещенного IR-ключа
+
+#### <a name="symptoms"></a>Симптомы
+
+Локальная среда выполнения интеграции внезапно переходит в автономный режим без ключа, в журнале событий отображается следующее сообщение об ошибке:`Authentication Key is not assigned yet`
+
+![Отсутствует ключ проверки подлинности](media/self-hosted-integration-runtime-troubleshoot-guide/key-missing.png)
+
+#### <a name="cause"></a>Причина
+
+- Локально размещенный IR-узел или логический саморазмещаемый IR на портале удаляется.
+- Очистка выполняется.
+
+#### <a name="resolution"></a>Решение
+
+Если ни одна из описанных выше причин не будет применена, перейдите в папку с именем *%Програмдата%\микрософт\дата трансфер\датаманажементгатевай*и проверьте, не удален ли файл **конфигурации** . Если она удалена, [следуйте указаниям по](https://www.netwrix.com/how_to_detect_who_deleted_file.html) аудиту удаления файла.
+
+![Проверить файл конфигураций](media/self-hosted-integration-runtime-troubleshoot-guide/configurations-file.png)
+
+
+### <a name="cannot-use-self-hosted-ir-to-bridge-two-on-premises-data-stores"></a>Невозможно использовать локально размещенное IR для моста двух локальных хранилищ данных
+
+#### <a name="symptoms"></a>Симптомы
+
+После создания самостоятельно размещенной IRs для исходных и целевых хранилищ данных необходимо подключить эти две учетные данные IRs для завершения копирования. Если хранилища данных настроены в разных виртуальных сетей или не могут понять механизм шлюза, будут обнаружены такие ошибки, как: *не удается найти драйвер источника на целевом IR*. *источник не может быть доступен для целевого IR*.
+ 
+#### <a name="cause"></a>Причина
+
+Локальная среда IR разработана как центральный узел действия копирования, а не агент клиента, который необходимо установить для каждого хранилища данных.
+ 
+В приведенном выше случае связанная служба для каждого хранилища данных должна быть создана с одним и тем же IR, а IR должна иметь возможность доступа к обоим хранилищам данных через сеть. Независимо от того, установлен ли IR с исходным хранилищем данных, конечным хранилищем данных или третьим компьютером, если две связанные службы создаются с разными IRs, но используются в одном и том же действии копирования, будет использоваться целевой IR, а драйверы для обоих хранилищ данных должны быть установлены на компьютере назначения.
+
+#### <a name="resolution"></a>Решение
+
+Установите драйверы для источника и назначения на компьютере назначения IR и убедитесь, что он имеет доступ к исходному хранилищу данных.
+ 
+Если трафик не может пройти через сеть между двумя хранилищами данных (например, они настроены в двух виртуальных сетейах), вы не сможете завершить копирование в одно действие даже при установленном IR. В этом случае вы можете создать два действия копирования с двумя IRs, каждое в вентиляционном канале: 1 IR для копирования из хранилища данных 1 в хранилище BLOB-объектов Azure, а другое — для копирования из хранилища BLOB-объектов Azure в хранилище данных 2. Это может имитировать требование использования IR для создания моста, соединяющего два хранилища данных, которые отключены.
+
+
+### <a name="credential-sync-issue-causes-credential-lost-from-ha"></a>Ошибка синхронизации учетных данных приводит к потере высокой доступности учетных данных.
+
+#### <a name="symptoms"></a>Симптомы
+
+Учетные данные источника данных "КСКСКСКСКСКСКСКСКСКС" удаляются из текущего Integration Runtime узла с полезной нагрузкой "при удалении службы Link на портал Azure или если задача содержит неправильные полезные данные, создайте новую службу связи с вашими учетными данными".
+
+#### <a name="cause"></a>Причина
+
+Локальная среда IR встроена в режим высокой доступности с двумя узлами, но не находится в состоянии синхронизации учетных данных. Это означает, что учетные данные, хранящиеся в узле Dispatcher, не синхронизируются с другими рабочими узлами. Если отработка отказа происходит от узла Dispatcher к рабочему узлу, но учетные данные существовали только в предыдущем узле Dispatcher, то при попытке доступа к учетным данным задача завершится ошибкой, и вы увидите сообщение об ошибке выше.
+
+#### <a name="resolution"></a>Решение
+
+Единственный способ избежать этой проблемы — убедиться, что два узла находятся в состоянии синхронизации учетных данных. В противном случае необходимо переввести учетные данные для нового Dispatcher.
+
+
+### <a name="cannot-choose-the-certificate-due-to-private-key-missing"></a>Не удается выбрать сертификат из-за отсутствия закрытого ключа
+
+#### <a name="symptoms"></a>Симптомы
+
+1.  Импортируйте PFX-файл в хранилище сертификатов.
+2.  При выборе сертификата с помощью интерфейса Configuration Manager IR вы сталкиваетесь с указанным ниже сообщением об ошибке:
+
+    ![Отсутствует закрытый ключ](media/self-hosted-integration-runtime-troubleshoot-guide/private-key-missing.png)
+
+#### <a name="cause"></a>Причина
+
+- Учетная запись пользователя имеет низкую привилегию и не может получить доступ к закрытому ключу.
+- Сертификат был создан как подпись, но не является обменом ключами.
+
+#### <a name="resolution"></a>Решение
+
+1.  Используйте привилегированную учетную запись, которая может получить доступ к закрытому ключу для работы с пользовательским интерфейсом.
+2.  Выполните следующую команду, чтобы импортировать сертификат:
+    
+    ```
+    certutil -importpfx FILENAME.pfx AT_KEYEXCHANGE
+    ```
+
+
+## <a name="self-hosted-ir-setup"></a>Настройка самостоятельно размещенного IR
+
+### <a name="the-integration-runtime-registration-error"></a>Ошибка регистрации Integration Runtime 
+
+#### <a name="symptoms"></a>Симптомы
+
+Иногда нам нужно выполнить локально размещенное IR-соединение в другой учетной записи по следующим причинам:
+- Политика компании запрещает учетную запись службы.
+- Требуется проверка подлинности.
+
+После изменения учетной записи службы на панели службы может оказаться, что Integration Runtime перестанет работать.
+
+![Ошибка регистрации IR](media/self-hosted-integration-runtime-troubleshoot-guide/ir-registration-error.png)
+
+#### <a name="cause"></a>Причина
+
+Существует множество ресурсов, которые предоставляются только учетной записи службы. При изменении учетной записи службы на другую учетную запись разрешения всех зависимых ресурсов остаются неизменными.
+
+#### <a name="resolution"></a>Решение
+
+Перейдите в журнал событий Integration Runtime, чтобы проверить ошибку.
+
+![Журнал событий IR](media/self-hosted-integration-runtime-troubleshoot-guide/ir-event-log.png)
+
+Если эта ошибка отображается как выше *UnauthorizedAccessException*, следуйте приведенным ниже инструкциям.
+
+
+1. Проверьте учетную запись службы входа *DIAHostService* на панели служб Windows.
+
+    ![Учетная запись службы входа](media/self-hosted-integration-runtime-troubleshoot-guide/logon-service-account.png)
+
+2. Проверьте, имеет ли учетная запись службы входа разрешение на чтение для папки: *%програмдата%\микрософт\дататрансфер\датаманажементгатевай*.
+
+    - По умолчанию, если учетная запись входа в службу не была изменена, она должна иметь разрешение на доступ к R/W.
+
+        ![Разрешение службы](media/self-hosted-integration-runtime-troubleshoot-guide/service-permission.png)
+
+    - Если вы изменили учетную запись входа в службу, выполните следующие действия, чтобы устранить эту ошибку.
+        1. Очистить Удаление текущего саморазмещенного IR.
+        1. Установите собственные IR-биты.
+        1. Чтобы изменить учетную запись службы, следуйте приведенным ниже инструкциям. 
+            1. Перейдите в папку установки селфхостед IR, перейдите в папку: *Microsoft Integration Runtime\4.0\Shared*.
+            1. Запустите командную строку с повышенными привилегиями. Замените *\<user>* и *\<password>* собственным именем пользователя и паролем, а затем выполните следующую команду:
+                       
+                ```
+                dmgcmd.exe -SwitchServiceAccount "<user>" "<password>"
+                ```
+            1. Если вы хотите перейти на учетную запись LocalSystem, убедитесь, что для этой учетной записи используется правильный формат. Ниже приведен пример правильного формата.
+
+                ```
+                dmgcmd.exe -SwitchServiceAccount "NT Authority\System" ""
+                ```         
+                **Не** используйте формат, как показано ниже.
+
+                ```
+                dmgcmd.exe -SwitchServiceAccount "LocalSystem" ""
+                ```              
+            1. В качестве альтернативы, поскольку у локальной системы есть более высокий уровень привилегий, чем у администратора, вы можете напрямую изменить ее в службах.
+            1. Для учетной записи входа в службу IR можно использовать локальную систему или пользователя домена.            
+        1. Зарегистрируйте Integration Runtime.
+
+Если ошибка отображается так: *не удалось запустить службу "Integration Runtime Service" (DIAHostService). Убедитесь, что у вас есть необходимые привилегии для запуска системных служб*, следуя приведенным ниже инструкциям.
+
+1. Проверьте учетную запись службы входа *DIAHostService* на панели служб Windows.
+   
+    ![Учетная запись службы входа](media/self-hosted-integration-runtime-troubleshoot-guide/logon-service-account.png)
+
+2. Проверьте, имеет ли учетная запись службы входа разрешение **Вход в качестве службы** для запуска службы Windows:
+
+    ![Вход в качестве службы](media/self-hosted-integration-runtime-troubleshoot-guide/logon-as-service.png)
+
+#### <a name="more-information"></a>Дополнительные сведения
+
+Если в вашем случае не применяется ни один из двух шаблонов, приведенных выше, попробуйте получить следующие журналы событий Windows: 
+- Журналы приложений и служб — > Integration Runtime
+- Журналы Windows — приложение >
+
+### <a name="cannot-find-register-button-to-register-a-self-hosted-ir"></a>Не удается найти кнопку "зарегистрировать", чтобы зарегистрировать локальное IR-соединение    
+
+#### <a name="symptoms"></a>Симптомы
+
+Не удалось найти кнопку **регистрации** в пользовательском интерфейсе Configuration Manager при регистрации локальной среды IR.
+
+![Кнопка "нет регистрации"](media/self-hosted-integration-runtime-troubleshoot-guide/no-register-button.png)
+
+#### <a name="cause"></a>Причина
+
+С момента выпуска *Integration Runtime 3,0*кнопка **регистрация** на существующем Integration Runtime узле была удалена, чтобы обеспечить более надежную и безопасную среду. Если узел был зарегистрирован в некоторых Integration Runtime (в сети или нет), для повторной регистрации его в другой Integration Runtime необходимо удалить предыдущий узел, а затем установить и зарегистрировать узел.
+
+#### <a name="resolution"></a>Решение
+
+1. Перейдите на панель управления, чтобы удалить существующие Integration Runtime.
+
+    > [!IMPORTANT] 
+    > В приведенном ниже процессе выберите Да. Не оставляйте данные во время процесса удаления.
+
+    ![Удаление данных](media/self-hosted-integration-runtime-troubleshoot-guide/delete-data.png)
+
+1. Если у вас нет MSI для установщика среды выполнения интеграции, перейдите в [Центр загрузки](https://www.microsoft.com/en-sg/download/details.aspx?id=39717) , чтобы скачать последнюю Integration Runtime.
+1. Установите MSI и зарегистрируйте Integration Runtime.
+
+
+### <a name="unable-to-register-the-self-hosted-ir-due-to-localhost"></a>Не удалось зарегистрировать локальную IR в связи с localhost    
+
+#### <a name="symptoms"></a>Симптомы
+
+Не удается зарегистрировать локальную IR на новом компьютере при get_LoopbackIpOrName.
+
+**Отладка:** Произошла ошибка времени выполнения.
+Инициализатор типа для "Microsoft. Диаженсост. Датасаурцекаче" вызвал исключение.
+Во время поиска базы данных произошла неустранимая ошибка.
+ 
+**Сведения об исключении:** System. TypeInitializationException: инициализатор типа для "Microsoft. передает. Диаженсост. Датасаурцекаче" вызвал исключение. ---> System .NET. Sockets. SocketException: Неустранимая ошибка произошла во время поиска в базе данных в System .NET. DNS. функцию getaddrinfo (строковое имя).
+
+#### <a name="cause"></a>Причина
+
+Эта ошибка обычно возникает при разрешении localhost.
+
+#### <a name="resolution"></a>Решение
+
+Используйте localhost 127.0.0.1 для размещения файла и устраните подобную проблему.
+
+
+### <a name="self-hosted-setup-failed"></a>Сбой установки в автономном размещении    
+
+#### <a name="symptoms"></a>Симптомы
+
+Невозможно удалить существующий IR-объект или установить новый IR или обновить существующий IR на новый IR.
+
+#### <a name="cause"></a>Причина
+
+Установка зависит от службы установщик Windows. Возможны некоторые причины, которые могут вызвать проблемы при установке:
+- Недостаточно места на диске
+- Нехватка разрешений
+- По какой-либо причине служба NT заблокирована
+- Загрузка ЦП слишком высока
+- Файл MSI размещается в сетевом расположении с задержкой
+- Некоторые системные файлы или реестры были непреднамеренно затронуты
+
+
+## <a name="self-hosted-ir-connectivity-issues"></a>Проблемы с подключением к локальной среде IR
+
+### <a name="self-hosted-integration-runtime-cant-connect-to-cloud-service"></a>Локальной среде выполнения интеграции не удается подключиться к облачной службе
+
+#### <a name="symptoms"></a>Симптомы
 
 ![Проблема с подключением локальной среды выполнения интеграции](media/self-hosted-integration-runtime-troubleshoot-guide/unable-to-connect-to-cloud-service.png)
 
@@ -114,8 +472,7 @@ ms.locfileid: "87023892"
 > *    Убедитесь, что сертификат TLS/SSL с именем wu2.frontend.clouddatahub.net/ является доверенным на прокси-сервере.
 > *    Если вы используете в прокси-сервере проверку подлинности Active Directory, укажите в поле "Служба среды выполнения интеграции" вместо учетной записи службы учетную запись пользователя с доступом к прокси-серверу.
 
-### <a name="error-message"></a>Сообщение об ошибке: 
-`Self-hosted integration runtime node/ logical SHIR is in Inactive/ "Running (Limited)" state`
+### <a name="error-message-self-hosted-integration-runtime-node-logical-shir-is-in-inactive-running-limited-state"></a>Сообщение об ошибке: Self-hosted integration runtime node/ logical SHIR is in Inactive/ "Running (Limited)" state (Узел локальной среды выполнения интеграции или логическая локальная среда выполнения интеграции находится в неактивном или ограниченном состоянии)
 
 #### <a name="cause"></a>Причина 
 
@@ -160,12 +517,11 @@ ms.locfileid: "87023892"
     - Разместите все узлы в одном домене.
     - Добавьте сопоставление IP и узлов во все файлы узлов размещенной виртуальной машины.
 
-
-## <a name="troubleshoot-connectivity-issue"></a>Устранение проблем с подключением
-
-### <a name="troubleshoot-connectivity-issue-between-self-hosted-ir-and-data-factory-or-self-hosted-ir-and-data-sourcesink"></a>Устранение проблем с подключением между локальными IR-и фабрикой данных или локально размещенным IR-кодом и приемником данных
+### <a name="connectivity-issue-between-self-hosted-ir-and-data-factory-or-self-hosted-ir-and-data-sourcesink"></a>Проблемы с подключением между локальным IR и фабрикой данных или автономным IR-кодом и приемником данных
 
 Чтобы устранить неполадки с сетевым подключением, необходимо знать, как [получить трассировку сети](#how-to-collect-netmon-trace), понять, как ее использовать, и [проанализировать трассировку Netmon](#how-to-analyze-netmon-trace) перед применением средств NetMon в реальных случаях из автономной среды IR.
+
+#### <a name="symptoms"></a>Симптомы
 
 Иногда при устранении проблем с подключением, как показано ниже, между локальной сетью IR и фабрикой данных. 
 
@@ -173,13 +529,13 @@ ms.locfileid: "87023892"
 
 Или между самостоятельно размещенным IR и источником данных или приемником, мы будем столкнуться со следующими ошибками:
 
-**Сообщение об ошибке:**
 `Copy failed with error:Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,Message=Cannot connect to SQL Server: ‘IP address’`
 
-**Сообщение об ошибке:**
 `One or more errors occurred. An error occurred while sending the request. The underlying connection was closed: An unexpected error occurred on a receive. Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host. An existing connection was forcibly closed by the remote host Activity ID.`
 
-**Решение:** При возникновении описанных выше проблем ознакомьтесь со следующими инструкциями, чтобы устранить неполадки.
+#### <a name="resolution"></a>Решение.
+
+При возникновении описанных выше проблем ознакомьтесь со следующими инструкциями, чтобы устранить неполадки.
 
 Возьмите трассировку Netmon и проанализируйте ее.
 - В первую очередь можно настроить фильтр для просмотра сброса с сервера на стороне клиента. В приведенном ниже примере можно увидеть, что серверная часть — это сервер фабрики данных.
@@ -299,6 +655,19 @@ ms.locfileid: "87023892"
     ![Подтверждение TCP 4](media/self-hosted-integration-runtime-troubleshoot-guide/tcp-4-handshake.png)
 
     ![Рабочий процесс подтверждения TCP 4](media/self-hosted-integration-runtime-troubleshoot-guide/tcp-4-handshake-workflow.png) 
+
+
+## <a name="self-hosted-ir-sharing"></a>Предоставление общего доступа к локальной среде IR
+
+### <a name="share-self-hosted-ir-from-a-different-tenant-is-not-supported"></a>Совместное использование автономных IR-файлов из другого клиента не поддерживается 
+
+#### <a name="symptoms"></a>Симптомы
+
+Вы можете заметить другие фабрики данных (в разных клиентах) при попытке совместного использования локальной среды IR из пользовательского интерфейса фабрики данных Azure, но не может совместно использовать локальную IR в фабриках данных, находящиеся в разных клиентах.
+
+#### <a name="cause"></a>Причина
+
+Локальная среда IR не может быть общей для перекрестных клиентов.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

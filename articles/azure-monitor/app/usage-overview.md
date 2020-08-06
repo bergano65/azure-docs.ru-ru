@@ -3,16 +3,18 @@ title: Анализ использования с помощью Azure Applicati
 description: Получение сведений о пользователях и их действиях с веб-приложением.
 ms.topic: conceptual
 ms.date: 03/25/2019
-ms.openlocfilehash: bd0b95fe92171d2c5a1515941dbf86a0e31e04be
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 4ace90b0893eed24227cadcb9a5b9fae7d502ff8
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87323559"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87800217"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Анализ использования с помощью Application Insights
 
 Какие функции веб-приложения или мобильного приложения наиболее популярны? Достигают ли пользователи своих целей с помощью вашего приложения? Уходят ли они в определенные моменты и возвращаются ли после этого?  [Azure Application Insights](./app-insights-overview.md) помогает получить важные сведения о том, как люди используют ваше приложение. Каждый раз, обновив приложение, можно оценить, насколько хорошо оно подходит пользователям. Обладая такими сведениями, можно принять решения на основе данных по дальнейшим циклам разработки.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4Cijb]
 
 ## <a name="send-telemetry-from-your-app"></a>Отправка телеметрии из приложения
 

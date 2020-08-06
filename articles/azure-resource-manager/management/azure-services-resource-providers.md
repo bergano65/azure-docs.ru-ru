@@ -3,12 +3,12 @@ title: Поставщики ресурсов по службам Azure
 description: Выводит список всех пространств имен поставщиков ресурсов для Azure Resource Manager и отображает службу Azure для этого пространства имен.
 ms.topic: conceptual
 ms.date: 06/05/2020
-ms.openlocfilehash: 1f57f5cd5822e9acf59462c9ecd6d0fda359b5a0
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 6c57f3523ca8f3f4ad1565d18791d24c0e698ad6
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86054378"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87808343"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "86054378"
 | Microsoft. Адхибридхеалссервице<sup>1</sup> | [Azure Active Directory](../../active-directory/index.yml) |
 | Microsoft.Advisor | [Помощник по Azure](../../advisor/index.yml) |
 | Microsoft.AlertsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
-| Microsoft.AnalysisServices | [Службы Azure Analysis Services](../../analysis-services/index.yml) |
+| Microsoft.AnalysisServices | [Azure Analysis Services](../../analysis-services/index.yml) |
 | Microsoft.ApiManagement | [Управление API](../../api-management/index.yml) |
 | Microsoft.AppConfiguration | [Конфигурация приложений Azure](../../azure-app-configuration/index.yml) |
 | Microsoft.AppPlatform | [Azure Spring Cloud](../../spring-cloud/spring-cloud-overview.md) |
@@ -92,12 +92,12 @@ ms.locfileid: "86054378"
 | Microsoft. Features<sup>1</sup> | [Azure Resource Manager](../index.yml) |
 | Microsoft.GuestConfiguration | [Политика Azure](../../governance/policy/index.yml) |
 | Microsoft.HanaOnAzure | [SAP HANA на крупных экземплярах Azure](../../virtual-machines/workloads/sap/hana-overview-architecture.md) |
-| Microsoft.HardwareSecurityModules | [Выделенное устройство HSM Azure](../../dedicated-hsm/index.yml) |
+| Microsoft.HardwareSecurityModules | [Выделенный модуль HSM Azure](../../dedicated-hsm/index.yml) |
 | Microsoft.HDInsight | [HDInsight](../../hdinsight/index.yml) |
 | Microsoft.HealthcareApis | [Azure API для FHIR](../../healthcare-apis/index.yml) |
 | Microsoft.HybridCompute | [Azure Arc](../../azure-arc/index.yml) |
 | Microsoft.HybridData | [StorSimple](../../storsimple/index.yml) |
-| Microsoft.ImportExport | [Служба импорта и экспорта Azure](../../storage/common/storage-import-export-service.md) |
+| Microsoft.ImportExport | [Импорт и экспорт Microsoft Azure](../../storage/common/storage-import-export-service.md) |
 | microsoft.insights | [Azure Monitor](../../azure-monitor/index.yml) |
 | Microsoft.IoTCentral | [Azure IoT Central](../../iot-central/index.yml) |
 | Microsoft.IoTSpaces | [Azure Digital Twins](../../digital-twins/index.yml) |
@@ -138,8 +138,8 @@ ms.locfileid: "86054378"
 | Microsoft.RedHatOpenShift | [Azure Red Hat OpenShift](../../virtual-machines/linux/openshift-get-started.md) |
 | Microsoft.Relay | [Azure Relay](../../azure-relay/relay-what-is-it.md) |
 | Microsoft. Ресаурцеграф<sup>1</sup> | [Azure Resource Graph](../../governance/resource-graph/index.yml) |
-| Microsoft.ResourceHealth | [Служба "Работоспособность служб Azure"](../../service-health/index.yml) |
-| Microsoft. Resources<sup>1</sup> | [Azure Resource Manager](../index.yml) |
+| Microsoft.ResourceHealth | [Работоспособность служб Azure](../../service-health/index.yml) |
+| Microsoft. Resources<sup>1</sup> | [Azure Resource Manager](../index.yml) |
 | Microsoft.SaaS | core |
 | Microsoft.Scheduler | [Планировщик](../../scheduler/index.yml) |
 | Microsoft.Search | [Когнитивный поиск Azure](../../search/index.yml) |
@@ -150,7 +150,7 @@ ms.locfileid: "86054378"
 | Microsoft.ServiceFabric | [Service Fabric](../../service-fabric/index.yml) |
 | Microsoft.ServiceFabricMesh | [Служба Microsoft Azure Service Fabric](../../service-fabric-mesh/index.yml) |
 | Microsoft.Services | core |
-| Microsoft.SignalRService | [Служба SignalR Azure](../../azure-signalr/index.yml) |
+| Microsoft.SignalRService | [Служба Azure SignalR](../../azure-signalr/index.yml) |
 | Microsoft.SoftwarePlan | Лицензия |
 | Microsoft.Solutions | [Управляемые приложения Azure](../managed-applications/index.yml) |
 | Microsoft.Sql | [База данных SQL Azure](../../azure-sql/database/index.yml)<br /> [Управляемый экземпляр SQL Azure](../../azure-sql/managed-instance/index.yml) <br />[Azure Synapse Analytics](/azure/sql-data-warehouse/) |
@@ -167,7 +167,7 @@ ms.locfileid: "86054378"
 | Microsoft.VirtualMachineImages | [Средство создания образов Azure](../../virtual-machines/linux/image-builder-overview.md) |
 | microsoft.visualstudio | [Azure DevOps](/azure/devops/?view=azure-devops) |
 | Microsoft.VMware | [Решение Azure VMware](../../azure-vmware/index.yml) |
-| Microsoft.VMwareCloudSimple | [Решение VMware в Azure от CloudSimple](/azure/vmware-cloudsimple/) |
+| Microsoft.VMwareCloudSimple | [Решение VMware в Azure от CloudSimple](../../vmware-cloudsimple/index.md) |
 | Microsoft.VSOnline | [Azure DevOps](/azure/devops/?view=azure-devops) |
 | Microsoft.Web | [Служба приложений](../../app-service/index.yml)<br />[Функции Azure](../../azure-functions/index.yml) |
 | Microsoft.WindowsESU | Расширенные обновления для системы безопасности |

@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/06/2019
+ms.date: 08/05/2020
 ms.author: chmutali
-ms.openlocfilehash: 09501a80d6ddcbbc9fa6cc08e36f47beb13d1663
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 97bda09870949846e333cc2845286512fd5d6386
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77063228"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87809907"
 ---
-# <a name="tutorial-configure-sap-successfactors-to-azure-ad-user-provisioning-preview"></a>Руководство по настройке SAP SuccessFactors для подготовки пользователей в Azure AD (Предварительная версия)
-Цель этого учебника — продемонстрировать шаги, которые необходимо выполнить, чтобы подготовить рабочие данные от SuccessFactors сотрудника к Azure Active Directory с дополнительным адресом электронной почты, перезаписываемым в SuccessFactors. Эта интеграция доступна в общедоступной предварительной версии и поддерживает получение более [70 атрибутов пользователей](../app-provisioning/sap-successfactors-attribute-reference.md) из SuccessFactors Employee Central. 
+# <a name="tutorial-configure-sap-successfactors-to-azure-ad-user-provisioning"></a>Учебник. Настройка SAP SuccessFactors для подготовки пользователей в Azure AD
+Цель этого учебника — продемонстрировать шаги, которые необходимо выполнить, чтобы подготовить рабочие данные от SuccessFactors сотрудника к Azure Active Directory с дополнительным адресом электронной почты, перезаписываемым в SuccessFactors. 
 
 >[!NOTE]
 >Используйте этот учебник, если пользователи, которые вы хотите подготавливать из SuccessFactors, являются только облачными пользователями, которым не требуется локальная учетная запись AD. Если пользователям требуется только локальная учетная запись AD или учетная запись AD и Azure AD, обратитесь к руководству по [настройке SAP SuccessFactors для Active Directory](sap-successfactors-inbound-provisioning-tutorial.md#overview) подготовки пользователей. 
@@ -79,7 +79,7 @@ SuccessFactors решение Azure Active Directory для подготовки
 * Преобразование атрибута 
 * Фильтры области
 
-Подробные рекомендации по этим темам см. в [плане развертывания Cloud HR](../app-provisioning/plan-cloud-hr-provision.md) . 
+Подробные рекомендации по этим темам см. в [плане развертывания Cloud HR](../app-provisioning/plan-cloud-hr-provision.md) . Сведения о поддерживаемых сущностях, сведения об обработке и настройке интеграции для различных сценариев HR см. в [справочнике по интеграции SAP SuccessFactors](../app-provisioning/sap-successfactors-integration-reference.md) . 
 
 ## <a name="configuring-successfactors-for-the-integration"></a>Настройка SuccessFactors для интеграции
 
@@ -175,7 +175,7 @@ SuccessFactors решение Azure Active Directory для подготовки
 
    * **URL-адрес клиента —** Введите имя конечной точки служб API OData SuccessFactors. Введите только имя узла сервера без HTTP или HTTPS. Это значение должно выглядеть следующим образом: **API-Server-Name.successfactors.com**.
 
-   * **Уведомление по электронной почте —** Введите свой адрес электронной почты и установите флажок "отправлять сообщение, если происходит сбой".
+   * **Адрес электронной почты для уведомлений —** введите адрес электронной почты и установите флажок "send email if failure occurs" (Отправлять по электронной почте в случае сбоя).
     > [!NOTE]
     > Служба подготовки Azure AD отправляет уведомление по электронной почте, если задание подготовки переходит в состояние [Карантин](/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
 
@@ -272,7 +272,7 @@ SuccessFactors решение Azure Active Directory для подготовки
    > [!div class="mx-imgBorder"]
    > ![Индикатор выполнения подготовки](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о поддерживаемых атрибутах SuccessFactors для входящей подготовки](../app-provisioning/sap-successfactors-attribute-reference.md)
 * [Узнайте, как настроить обратную запись электронной почты в SuccessFactors](sap-successfactors-writeback-tutorial.md)

@@ -2,7 +2,7 @@
 title: Добавление или удаление владельцев группы в Azure Active Directory | Документация Майкрософт
 description: Инструкции по добавлению и удалению владельцев группы в Azure Active Directory.
 services: active-directory
-author: msaburnley
+author: ajburnle
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 09/11/2018
 ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd5fc389ccb52c4a5eeec0e0f544a17b011333a3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e696ff576ffa8e788312344c4ebd103184173fa4
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85604528"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87799588"
 ---
 # <a name="add-or-remove-group-owners-in-azure-active-directory"></a>Добавление или удаление владельцев группы в Azure Active Directory
 Группы Azure Active Directory (Azure AD) управляются владельцами группы. Владельцы групп могут быть пользователями или субъектами-службами и могут управлять группой, включая членство. Назначать владельцев групп могут только существующие владельцы групп или администраторы групп. Владельцы группы не должны быть участниками группы.
@@ -60,7 +60,7 @@ ms.locfileid: "85604528"
 
     После удаления владельца вернитесь на страницу **Владельцы** — имя будет удалено из списка владельцев.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Управление доступом к ресурсам с помощью групп Azure Active Directory](active-directory-manage-groups.md)
 
 - [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-cmdlets.md)

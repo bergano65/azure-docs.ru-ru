@@ -3,7 +3,7 @@ title: Самостоятельный обзор пакета Access в упра
 description: Узнайте, как просматривать доступ пользователей к пакетам управления права доступа в Azure Active Directory проверках доступа (Предварительная версия).
 services: active-directory
 documentationCenter: ''
-author: msaburnley
+author: ajburnle
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f8037ef1324cb10777511c4c363a62a2edab438
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 31c44f2423cdc5c43638fe2515757bcb11a9814c
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85078424"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87798449"
 ---
 # <a name="self-review-of-an-access-package-in-azure-ad-entitlement-management"></a>Самостоятельный обзор пакета Access в управлении назначениями Azure AD
 
@@ -60,6 +60,6 @@ ms.locfileid: "85078424"
 
 Вы можете вернуться к проверке, если вы передумали, и решили изменить свой ответ перед окончанием проверки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Проверка доступа к пакетам доступа](entitlement-management-access-reviews-review-access.md) 

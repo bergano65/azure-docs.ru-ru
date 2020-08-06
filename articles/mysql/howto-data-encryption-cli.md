@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 03/30/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e4f6b3ad791624dde2aefa3edac3102df2c15717
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: eb83cd4fe7e98b1cde6dcee5d3f25fa5e35f1d2c
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87495052"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87799825"
 ---
 # <a name="data-encryption-for-azure-database-for-mysql-by-using-the-azure-cli"></a>Шифрование данных для базы данных Azure для MySQL с помощью Azure CLI
 
@@ -94,6 +94,25 @@ ms.locfileid: "87495052"
 * [Создание сервера реплики для чтения](howto-read-replicas-cli.md) 
 
 ### <a name="once-the-server-is-restored-revalidate-data-encryption-the-restored-server"></a>После восстановления сервера повторно проверьте шифрование данных на восстановленном сервере.
+
+*   Назначение удостоверения для сервера реплики
+```azurecli-interactive
+az mysql server update --name  <server name>  -g <resoure_group> --assign-identity
+```
+
+*   Получение существующего ключа, который должен использоваться для восстановленного или сервера-реплики
+
+```azurecli-interactive
+az mysql server key list --name  '<server_name>'  -g '<resource_group_name>'
+```
+
+*   Задать политику для нового удостоверения для восстановленного или сервера-реплики
+  
+```azurecli-interactive
+az keyvault set-policy --name <keyvault> -g <resoure_group> --key-permissions get unwrapKey wrapKey --object-id <principl id of the server returned by the step 1>
+```
+
+* Повторная проверка восстановленного или сервера-реплики с помощью ключа шифрования
 
 ```azurecli-interactive
 az mysql server key create –name  <server name> -g <resource_group> --kid <key url>

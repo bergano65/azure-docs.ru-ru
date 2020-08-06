@@ -9,12 +9,12 @@ ms.workload: infrastructure-services
 ms.date: 08/01/2020
 ms.author: amverma
 ms.reviewer: jushiman
-ms.openlocfilehash: 122a3e243f314395ea7b1d32b88a5e20b0965eef
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: d0344247ba4dfffee275782bc2db83142d34cff3
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87512012"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87800251"
 ---
 # <a name="high-performance-computing-vm-sizes"></a>Размеры виртуальных машин с высокой производительностью
 
@@ -52,8 +52,7 @@ ms.locfileid: "87512012"
 
    Чтобы добавить в виртуальную машину расширение виртуальной машины, можно использовать командлеты [Azure PowerShell](/powershell/azure/). Дополнительные сведения см. в статье [Обзор расширений и компонентов виртуальной машины под управлением Windows](./extensions/overview.md). Вы также можете работать с расширениями для виртуальных машин, развернутых в рамках [классической модели развертывания](/previous-versions/azure/virtual-machines/windows/classic/agents-and-extensions-classic).
 
-- **MPI** . размеры виртуальных машин с поддержкой SR-IOV в Azure (HBV2, хб, HC, NCv3, NDv2) позволяют использовать почти любую разновидность MPI с Mellanox офед.
-На виртуальных машинах, не использующих SR-IOV, поддерживаемые реализации MPI используют интерфейс Microsoft Network Direct (ND) для обмена данными между виртуальными машинами. Таким образом, поддерживаются только версии Microsoft MPI (MS-MPI) 2012 R2 и более поздних версий и Intel MPI 5. x. Более поздние версии (2017, 2018) библиотеки Intel MPI Runtime могут быть несовместимыми с драйверами Azure RDMA.
+- **MPI** . размеры виртуальных машин с поддержкой SR-IOV в Azure (HBV2, хб, HC, NCv3, NDv2) позволяют использовать почти любую разновидность MPI с Mellanox офед. На виртуальных машинах, не использующих SR-IOV, поддерживаемые реализации MPI используют интерфейс Microsoft Network Direct (ND) для обмена данными между виртуальными машинами. Таким образом, поддерживаются только версии Microsoft MPI (MS-MPI) 2012 R2 и более поздних версий и Intel MPI 5. x. Более поздние версии (2017, 2018) библиотеки Intel MPI Runtime могут быть несовместимыми с драйверами Azure RDMA. Дополнительные сведения о настройке MPI на виртуальных машинах HPC в Azure см. в статье [Настройка MPI для HPC](./workloads/hpc/setup-mpi.md) .
 
 - **Адресное пространство сети RDMA.** Сеть RDMA в Azure резервирует адресное пространство 172.16.0.0/16. Чтобы выполнять приложения MPI в экземплярах, развернутых в виртуальной сети Azure, убедитесь, что адресное пространство виртуальной сети не пересекается с сетью RDMA.
 

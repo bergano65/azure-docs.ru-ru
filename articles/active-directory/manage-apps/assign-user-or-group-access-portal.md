@@ -12,12 +12,12 @@ ms.date: 02/21/2020
 ms.author: kenwith
 ms.reviewer: luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2eeab9cbb68567b6af3b1381b8ec5e67e82461ec
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 04b0b0120a514591fb4fa23656906203acf443b4
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84763743"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87799508"
 ---
 # <a name="assign-a-user-or-group-to-an-enterprise-app-in-azure-active-directory"></a>Назначение пользователя или группы корпоративному приложению в Azure Active Directory
 
@@ -26,6 +26,9 @@ ms.locfileid: "84763743"
 Для более полного контроля можно настроить определенные типы корпоративных приложений так, чтобы они [требовали назначения пользователей](#configure-an-application-to-require-user-assignment). 
 
 Чтобы [назначить пользователя или группу корпоративному приложению](#assign-users-or-groups-to-an-app-via-the-azure-portal), необходимо войти в систему как глобальный администратор, администратор приложения, администратор облачных приложений или назначенный владелец корпоративного приложения.
+
+> [!IMPORTANT]
+> При назначении группы для приложения доступ будут иметь только пользователи из этой группы. Присваивание не является каскадным для вложенных групп.
 
 > [!NOTE]
 > Для назначения ролей на основе групп необходимо установить Azure Active Directory Premium P1 или P2. Назначение на основе группы поддерживается только для групп безопасности. Членство во вложенных группах и группы Office 365 в настоящее время не поддерживаются. Требования к лицензированию компонентов, рассматриваемых в этой статье, см. на странице [Цены на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory). 

@@ -108,8 +108,6 @@
           href: configure-password-single-sign-on-non-gallery-applications.md
         - name: Настройка связанного единого входа
           href: configure-linked-sign-on.md
-        - name: Автоматизация единого входа на основе SAML с помощью API MS Graph
-          href: application-saml-sso-configure-api.md
     - name: Назначение пользователей и управление доступом к приложениям
       items:
         - name: Настройка согласия пользователя

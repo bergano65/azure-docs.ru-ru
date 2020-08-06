@@ -3,7 +3,7 @@ title: Изменение ролей ресурсов для пакета Access
 description: Узнайте, как изменить роли ресурсов для существующего пакета Access в Azure Active Directory управлении обслуживанием.
 services: active-directory
 documentationCenter: ''
-author: msaburnley
+author: ajburnle
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 800c3dbeb96dfb87c7b495909e21eca929bec726
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 006a79c91cd9bfb4c3bbf4a7e0ffb58314af49cc
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85550318"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87798651"
 ---
 # <a name="change-resource-roles-for-an-access-package-in-azure-ad-entitlement-management"></a>Изменение ролей ресурсов для пакета Access в управлении назначениями Azure AD
 
@@ -90,7 +90,7 @@ ms.locfileid: "85550318"
 
     После выбора группы или группы в столбце **подтипа** будет отображаться один из следующих подтипов:
 
-    | Подтип | Описание: |
+    | Подтип | Описание |
     | --- | --- |
     | Безопасность | Используется для предоставления доступа к ресурсам. |
     | Распределение | Используется для отправки уведомлений группе людей. |
@@ -180,7 +180,7 @@ Azure AD может автоматически назначать пользов
 
 Если удалить члена из команды, он также будет удален из группы Office 365. С удалением из чата команды может возникнуть задержка. Дополнительные сведения см. в разделе [членство в группе](https://docs.microsoft.com/microsoftteams/office-365-groups#group-membership).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание простой группы и добавление в нее участников с помощью Azure Active Directory](../fundamentals/active-directory-groups-create-azure-portal.md)
 - [Узнайте как настроить утверждения роли, выдаваемые в токене SAML для корпоративных приложений](../develop/active-directory-enterprise-app-role-management.md)

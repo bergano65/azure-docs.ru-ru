@@ -3,23 +3,23 @@ title: Шаблоны развертывания что если (Предвар
 description: Прежде чем развертывать шаблон Azure Resource Manager, определите, какие изменения будут выполнены для ресурсов.
 author: tfitzmac
 ms.topic: conceptual
-ms.date: 06/16/2020
+ms.date: 08/05/2020
 ms.author: tomfitz
-ms.openlocfilehash: 1e2c83167e7ccc1e3e98b23711fba567ef11ac23
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 27efe1e03b8a0d373d566106a53a41007731973e
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84888749"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810077"
 ---
 # <a name="arm-template-deployment-what-if-operation-preview"></a>Операция "что-если" развертывания шаблона ARM (Предварительная версия)
 
-Перед развертыванием шаблона Azure Resource Manager (ARM) можно просмотреть изменения, которые будут выполняться. Azure Resource Manager предоставляет операцию "что если", которая позволяет увидеть, как ресурсы изменятся при развертывании шаблона. Операция "что если" не вносит изменения в существующие ресурсы. Вместо этого он прогнозирует изменения, если заданный шаблон развернут.
+Перед развертыванием шаблона Azure Resource Manager (шаблон ARM) можно просмотреть изменения, которые будут выполняться. Azure Resource Manager предоставляет операцию "что если", которая позволяет увидеть, как ресурсы изменятся при развертывании шаблона. Операция "что если" не вносит изменения в существующие ресурсы. Вместо этого он прогнозирует изменения, если заданный шаблон развернут.
 
 > [!NOTE]
 > Операция "что если" сейчас находится в предварительной версии. В качестве предварительной версии результаты могут показывать, что ресурс изменится, когда фактическое изменение не произойдет. Мы работаем над сокращением этих проблем, но нам нужна ваша помощь. Сообщите об этих проблемах по адресу [https://aka.ms/whatifissues](https://aka.ms/whatifissues) .
 
-Операцию "что если" можно использовать с операциями Azure PowerShell, Azure CLI или REST API. Что если поддерживается для развертываний группы ресурсов и уровня подписки.
+Операцию "что если" можно использовать с операциями Azure PowerShell, Azure CLI или REST API. Что если поддерживается для групп ресурсов, подписок, групп управления и развертывания на уровне клиента.
 
 ## <a name="install-azure-powershell-module"></a>Установите модуль Azure PowerShell.
 
@@ -125,20 +125,23 @@ Resource changes: 1 to modify.
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Чтобы предварительно просмотреть изменения перед развертыванием шаблона, используйте команду [AZ Deployment Group что-If](/cli/azure/deployment/group#az-deployment-group-what-if) или [AZ Deployment Deploy-if](/cli/azure/deployment/sub#az-deployment-sub-what-if).
+Чтобы просмотреть изменения перед развертыванием шаблона, используйте:
 
-* `az deployment group what-if`для развертываний группы ресурсов
-* `az deployment sub what-if`для развертываний на уровне подписки
+* [AZ Deployment Group, что если](/cli/azure/deployment/group#az-deployment-group-what-if) для развертываний группы ресурсов
+* [AZ Deployment подсистема "что если](/cli/azure/deployment/sub#az-deployment-sub-what-if) " для развертываний на уровне подписки
+* [AZ Deployment mg что если](/cli/azure/deployment/mg?view=azure-cli-latest#az-deployment-mg-what-if) для развертываний группы управления
+* [AZ развертывание клиент что если](/cli/azure/deployment/tenant?view=azure-cli-latest#az-deployment-tenant-what-if) для развертываний клиентов
 
-Можно использовать `--confirm-with-what-if` параметр (или его краткую форму `-c` ) для предварительного просмотра изменений и получить запрос на продолжение развертывания. Добавьте этот параметр в [AZ Deployment Group Create](/cli/azure/deployment/group#az-deployment-group-create) или [AZ Deployment подсоздание](/cli/azure/deployment/sub#az-deployment-sub-create).
+Можно использовать `--confirm-with-what-if` параметр (или его краткую форму `-c` ) для предварительного просмотра изменений и получить запрос на продолжение развертывания. Добавьте этот переключатель в:
 
-* `az deployment group create --confirm-with-what-if`или `-c` для развертываний группы ресурсов
-* `az deployment sub create --confirm-with-what-if`или `-c` для развертываний на уровне подписки
+* [AZ развертывание группы развертывания](/cli/azure/deployment/group#az-deployment-group-create)
+* [AZ Deployment подсоздание](/cli/azure/deployment/sub#az-deployment-sub-create).
+* [AZ Deployment mg CREATE](/cli/azure/deployment/mg#az-deployment-mg-create)
+* [AZ развертывание создание клиента](/cli/azure/deployment/tenant#az-deployment-tenant-create)
 
-Приведенные выше команды возвращают текстовую сводку, которую можно проверить вручную. Чтобы получить объект JSON, который можно программно проверить на наличие изменений, используйте:
+Например, используйте `az deployment group create --confirm-with-what-if` или `-c` для развертываний группы ресурсов.
 
-* `az deployment group what-if --no-pretty-print`для развертываний группы ресурсов
-* `az deployment sub what-if --no-pretty-print`для развертываний на уровне подписки
+Приведенные выше команды возвращают текстовую сводку, которую можно проверить вручную. Чтобы получить объект JSON, который можно программно проверить на наличие изменений, используйте `--no-pretty-print` параметр. Например, используйте `az deployment group what-if --no-pretty-print` для развертывания группы ресурсов.
 
 Если вы хотите вернуть результаты без цветов, откройте файл [конфигурации Azure CLI](/cli/azure/azure-cli-configuration) . Задайте для параметра **no_color** значение **Да**.
 
@@ -147,7 +150,9 @@ Resource changes: 1 to modify.
 Для REST API используйте:
 
 * [Развертывания — What If](/rest/api/resources/deployments/whatif) развертываний группы ресурсов
-* [Развертывания — What If в области подписки](/rest/api/resources/deployments/whatifatsubscriptionscope) для развертываний на уровне подписки
+* [Развертывания — What If в области подписки](/rest/api/resources/deployments/whatifatsubscriptionscope) для развертываний подписки
+* [Развертывания — What If в области группы управления](/rest/api/resources/deployments/whatifatmanagementgroupscope) для развертываний группы управления
+* [Развертывания — What If в области клиента](/rest/api/resources/deployments/whatifattenantscope) для развертываний клиента.
 
 ## <a name="change-types"></a>Изменение типов
 
@@ -312,7 +317,7 @@ Resource changes: 1 to modify.
 
 Обратите внимание, что в верхней части выходных данных определены цвета, указывающие тип изменений.
 
-В нижней части выходных данных показано, что владелец тега был удален. Префикс адреса изменился с 10.0.0.0/16 на 10.0.0.0/15. Подсеть с именем subnet001 удалена. Помните, что эти изменения не были развернуты на самом деле. Вы увидите предварительный просмотр изменений, которые будут происходить при развертывании шаблона.
+В нижней части выходных данных показано, что владелец тега был удален. Префикс адреса изменился с 10.0.0.0/16 на 10.0.0.0/15. Подсеть с именем subnet001 удалена. Помните, что эти изменения не были развернуты. Вы увидите предварительный просмотр изменений, которые будут происходить при развертывании шаблона.
 
 Некоторые свойства, перечисленные как удаленные, фактически не меняются. Свойства могут быть ошибочно зарегистрированы как удаленные, если они не находятся в шаблоне, но автоматически устанавливаются во время развертывания в качестве значений по умолчанию. Этот результат считается "пропускаемым" в ответе "что если". Окончательный развернутый ресурс будет иметь значения, заданные для свойств. Как только операция "что если" завершилась, эти свойства будут отфильтрованы из результата.
 
@@ -337,7 +342,7 @@ foreach ($change in $results.Changes)
 }
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 ```azurecli
 results=$(az deployment group what-if --resource-group ExampleGroup --template-uri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/what-if/what-if-after.json" --no-pretty-print)

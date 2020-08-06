@@ -4,15 +4,15 @@ titleSuffix: Azure Kubernetes Service
 description: Узнайте, как использовать Azure RBAC для авторизации Kubernetes в службе Kubernetes Azure (AKS).
 services: container-service
 ms.topic: article
-ms.date: 07/07/2020
+ms.date: 07/20/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 8b28507c072f338342dc1a936cb1ab5f3910eea1
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 824146e7e0b1130b8e5f6c087dbf5ccbac2c8224
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87498112"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87799367"
 ---
 # <a name="use-azure-rbac-for-kubernetes-authorization-preview"></a>Использование Azure RBAC для авторизации Kubernetes (предварительная версия)
 
@@ -33,29 +33,25 @@ ms.locfileid: "87498112"
 
 ### <a name="prerequisites"></a>Предварительные требования 
 - Зарегистрируйтесь для просмотра <https://aka.ms/aad-rbac-sign-up-form> .
+- Убедитесь, что у вас Azure CLI версии 2.9.0 или более поздней.
 - Убедитесь, что `EnableAzureRBACPreview` включен флаг компонента.
-- Убедитесь, что `AAD-V2` включен флаг компонента.
 - Убедитесь, что установлено `aks-preview` [расширение CLI][az-extension-add] v 0.4.55 или более поздней версии.
 - Убедитесь, что установлен [kubectl v 1.18.3 +][az-aks-install-cli].
 
-#### <a name="register-enableazurerbacpreview-and-aad-v2-preview-features"></a>`EnableAzureRBACPreview`Функции регистрации и `AAD-V2` предварительной версии
+#### <a name="register-enableazurerbacpreview-preview-feature"></a>`EnableAzureRBACPreview`Функция регистрации предварительной версии
 
-Чтобы создать кластер AKS, использующий Azure RBAC для авторизации Kubernetes, необходимо включить `EnableAzureRBACPreview` `AAD-V2` Флаги компонентов и в подписке.
+Чтобы создать кластер AKS, использующий Azure RBAC для авторизации Kubernetes, необходимо включить `EnableAzureRBACPreview` флаг компонента в подписке.
 
-Зарегистрируйте `EnableAzureRBACPreview` `AAD-V2` флаги и, используя команду [AZ Feature Register][az-feature-register] , как показано в следующем примере:
+Зарегистрируйте `EnableAzureRBACPreview` флаг функции с помощью команды [AZ Feature Register][az-feature-register] , как показано в следующем примере:
 
 ```azurecli-interactive
 az feature register --namespace "Microsoft.ContainerService" --name "EnableAzureRBACPreview"
-
-az feature register --namespace "Microsoft.ContainerService"  --name "AAD-V2"
 ```
 
 Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Состояние регистрации можно проверить с помощью команды [az feature list][az-feature-list].
 
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableAzureRBACPreview')].{Name:name,State:properties.state}"
-
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AAD-V2')].{Name:name,State:properties.state}"
 ```
 
 Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft. ContainerService* с помощью команды [AZ Provider Register] [AZ-регистратор-Register]:

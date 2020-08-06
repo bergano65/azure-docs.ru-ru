@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 06/17/2020
-ms.openlocfilehash: 8148163dc969920b473f12a7162c6f317d85b3c8
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: ff2745a636d25c429a1a40644757c00b28e2668c
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87503231"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87799180"
 ---
 # <a name="create-an-azure-container-offer-in-azure-marketplace"></a>Создание предложения контейнера Azure в Azure Marketplace
 
@@ -195,14 +195,15 @@ ms.locfileid: "87503231"
 
 #### <a name="store-logos"></a>Логотипы магазина
 
- Предоставьте PNG-файлы логотипа вашего предложения следующих четырех размеров:
+Укажите PNG-файл для логотипа **крупного** размера (от 216 x 216 до 350 x 350 пикселей). Центр партнеров будет использовать его для создания **мелких** (48 x 48 пикселей) и логотипа **среднего** размера (90 x 90 пикселей). При необходимости можно заменить их разными изображениями.
 
-- **малый** (48 x 48);
-- **средний** (90 x 90);
-- **крупный** (216 x 216);
-- **широкий** (255 x 115).
+Все три размера логотипа необходимы для использования в разных местах в списке:
 
-Все четыре логотипа являются обязательными и используются в разных местах описания на Marketplace.
+- **Малый** (48 x 48)
+- **Средний** (90 x 90)
+- **Крупный** (от 216 x 216 до 350 x 350)
+
+[!INCLUDE [Logo suggestions](./includes/graphics-suggestions.md)]
 
 #### <a name="screenshots-optional"></a>Снимки экрана (необязательно)
 

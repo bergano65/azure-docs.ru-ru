@@ -3,12 +3,12 @@ title: Рекомендации по работе с шаблонами
 description: Описание рекомендуемых подходов для разработки шаблонов Azure Resource Manager. Содержит рекомендации, как избежать распространенных проблем при использовании шаблонов.
 ms.topic: conceptual
 ms.date: 07/10/2020
-ms.openlocfilehash: 272c7e7f824eb193ed48d79c5256167f1dbbbce5
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 1121c66e0bcd7de39afd5bea85866fd9ad007ce4
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86248923"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87809261"
 ---
 # <a name="arm-template-best-practices"></a>Рекомендации по использованию шаблона ARM
 
@@ -226,7 +226,7 @@ ms.locfileid: "86248923"
    
      Дополнительные сведения о подключении к виртуальным машинам можно получить в приведенных ниже статьях.
    
-   * [Run Windows VMs for an N-tier application](../../guidance/guidance-compute-n-tier-vm.md) (Запуск виртуальных машин Windows в n-уровневом приложении)
+   * [Run Windows VMs for an N-tier application](/azure/architecture/reference-architectures/n-tier/n-tier-sql-server) (Запуск виртуальных машин Windows в n-уровневом приложении)
    * [Настройка доступа WinRM для виртуальных машин в Azure Resource Manager](../../virtual-machines/windows/winrm.md)
    * [Открытие портов для виртуальной машины в Azure с помощью портала Azure](../../virtual-machines/windows/nsg-quickstart-portal.md)
    * [Открытие портов и конечных точек для виртуальной машины в Azure с помощью PowerShell](../../virtual-machines/windows/nsg-quickstart-powershell.md)

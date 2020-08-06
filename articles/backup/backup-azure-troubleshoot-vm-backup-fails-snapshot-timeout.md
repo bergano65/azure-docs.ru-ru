@@ -4,12 +4,12 @@ description: Симптомы, причины и способы устранен
 ms.topic: troubleshooting
 ms.date: 07/05/2019
 ms.service: backup
-ms.openlocfilehash: 5bf52606e6fa5de6a122a65432da87de1491e17f
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 188eef5471e93661041dadfc93f561d2173ba7f2
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324749"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87809771"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -23,7 +23,7 @@ ms.locfileid: "87324749"
 
 ### <a name="step-1-check-azure-vm-health"></a>Шаг 1. Проверка работоспособности виртуальной машины Azure
 
-- **Убедитесь, что состояние подготовки виртуальной машины Azure — "работает"**: Если [состояние подготовки виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/windows/states-lifecycle#provisioning-states) находится в состоянии " **остановлено/освобождено/Обновлено** ", это помешает операции резервного копирования. Откройте *портал Azure > виртуальная машина > обзор >* и проверьте состояние виртуальной машины, чтобы убедиться, что она **запущена** , и повторите операцию резервного копирования.
+- **Убедитесь, что состояние подготовки виртуальной машины Azure — "работает"**: Если [состояние подготовки виртуальной машины](../virtual-machines/windows/states-lifecycle.md#provisioning-states) находится в состоянии " **остановлено/освобождено/Обновлено** ", это помешает операции резервного копирования. Откройте *портал Azure > виртуальная машина > обзор >* и проверьте состояние виртуальной машины, чтобы убедиться, что она **запущена** , и повторите операцию резервного копирования.
 - **Проверьте отложенные обновления ОС или перезагрузки**: Убедитесь, что на виртуальной машине нет ожидающих обновлений ОС или ожидающих перезагрузок.
 
 ### <a name="step-2-check-azure-vm-guest-agent-service-health"></a>Шаг 2. Проверка работоспособности службы гостевого агента виртуальной машины Azure
@@ -31,18 +31,18 @@ ms.locfileid: "87324749"
 - **Убедитесь, что служба гостевого агента виртуальной машины Azure запущена и обновлена**:
   - На виртуальной машине Windows:
     - Перейдите в раздел **Services. msc** и убедитесь, что **Служба гостевого агента виртуальной машины Windows Azure** запущена. Кроме того, убедитесь, что установлена [Последняя версия](https://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409) . Дополнительные сведения см. в статье [проблемы гостевого агента виртуальной машины Windows](backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms).
-    - Агент виртуальной машины Azure устанавливается по умолчанию на любой виртуальной машине Windows, развернутой из образа Azure Marketplace, с портала, PowerShell, интерфейса командной строки или шаблона Azure Resource Manager. [Установка агента вручную](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows#manual-installation) может потребоваться при создании пользовательского образа виртуальной машины, развернутого в Azure.
+    - Агент виртуальной машины Azure устанавливается по умолчанию на любой виртуальной машине Windows, развернутой из образа Azure Marketplace, с портала, PowerShell, интерфейса командной строки или шаблона Azure Resource Manager. [Установка агента вручную](../virtual-machines/extensions/agent-windows.md#manual-installation) может потребоваться при создании пользовательского образа виртуальной машины, развернутого в Azure.
     - Просмотрите матрицу поддержки, чтобы проверить, работает ли виртуальная машина в [поддерживаемой операционной системе Windows](backup-support-matrix-iaas.md#operating-system-support-windows).
   - На виртуальной машине Linux
-    - Убедитесь, что служба гостевого агента виртуальной машины Azure запущена, выполнив команду `ps-e` . Кроме того, убедитесь, что установлена [Последняя версия](https://docs.microsoft.com/azure/virtual-machines/extensions/update-linux-agent) . Дополнительные сведения см. в статье [проблемы гостевого агента виртуальной машины Linux](backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms).
-    - Убедитесь, что [зависимости агента виртуальной машины Linux на системных пакетах](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux#requirements) имеют поддерживаемую конфигурацию. Например: поддерживаемая версия Python — 2,6 и более поздние версии.
+    - Убедитесь, что служба гостевого агента виртуальной машины Azure запущена, выполнив команду `ps-e` . Кроме того, убедитесь, что установлена [Последняя версия](../virtual-machines/extensions/update-linux-agent.md) . Дополнительные сведения см. в статье [проблемы гостевого агента виртуальной машины Linux](backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms).
+    - Убедитесь, что [зависимости агента виртуальной машины Linux на системных пакетах](../virtual-machines/extensions/agent-linux.md#requirements) имеют поддерживаемую конфигурацию. Например: поддерживаемая версия Python — 2,6 и более поздние версии.
     - Просмотрите матрицу поддержки, чтобы проверить, работает ли виртуальная машина в [поддерживаемой операционной системе Linux.](backup-support-matrix-iaas.md#operating-system-support-linux)
 
 ### <a name="step-3-check-azure-vm-extension-health"></a>Шаг 3. Проверка работоспособности расширения виртуальной машины Azure
 
 - **Убедитесь, что все расширения виртуальной машины Azure находятся в состоянии "выполнена подготовка"**. Если какое-либо расширение находится в состоянии сбоя, оно может помешать резервному копированию.
 - *Откройте портал Azure > VM > Settings > extensions > Extensions Status* и убедитесь, что все расширения находятся в состоянии **успешной подготовки** .
-- Убедитесь, что все [проблемы с расширением](https://docs.microsoft.com/azure/virtual-machines/extensions/overview#troubleshoot-extensions) разрешены, и повторите операцию резервного копирования.
+- Убедитесь, что все [проблемы с расширением](../virtual-machines/extensions/overview.md#troubleshoot-extensions) разрешены, и повторите операцию резервного копирования.
 - **Убедитесь, что системное приложение COM+** работает. Кроме того, **служба Координатор распределенных транзакций** должна работать как **учетная запись сетевой службы**. Выполните действия, описанные в этой статье, чтобы устранить неполадки [com+ и MSDTC](backup-azure-vms-troubleshoot.md#extensionsnapshotfailedcom--extensioninstallationfailedcom--extensioninstallationfailedmdtc---extension-installationoperation-failed-due-to-a-com-error).
 
 ### <a name="step-4-check-azure-backup-vm-extension-health"></a>Шаг 4. Проверка работоспособности Azure Backup расширения виртуальной машины
@@ -57,9 +57,9 @@ Azure Backup использует расширение моментальных 
   - `C:\Packages\Plugins\Microsoft.Azure.RecoveryServices.VMSnapshot`
   - `C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.RecoveryServices.VMSnapshot`
 
-- **Проверьте, требуется ли доступ к сети**: пакеты расширений загружаются из репозитория расширений службы хранилища Azure, а передачи состояния расширения публикуются в службе хранилища Azure. [Подробнее.](https://docs.microsoft.com/azure/virtual-machines/extensions/features-windows#network-access)
+- **Проверьте, требуется ли доступ к сети**: пакеты расширений загружаются из репозитория расширений службы хранилища Azure, а передачи состояния расширения публикуются в службе хранилища Azure. [Подробнее](../virtual-machines/extensions/features-windows.md#network-access).
   - Если вы используете неподдерживаемую версию агента, необходимо разрешить исходящий доступ от виртуальной машины к службе хранилище Azure в том же регионе.
-  - Если вы заблокировали доступ к `168.63.129.16` с помощью гостевого брандмауэра или прокси-сервера, расширения будут завершаться сбоем независимо от указанного выше. Требуются порты 80, 443 и 32526, [Дополнительные сведения](https://docs.microsoft.com/azure/virtual-machines/extensions/features-windows#network-access).
+  - Если вы заблокировали доступ к `168.63.129.16` с помощью гостевого брандмауэра или прокси-сервера, расширения будут завершаться сбоем независимо от указанного выше. Требуются порты 80, 443 и 32526, [Дополнительные сведения](../virtual-machines/extensions/features-windows.md#network-access).
 
 - **Убедитесь, что на гостевой виртуальной машине включен DHCP**. это необходимо для получения адреса узла или структуры из DHCP, чтобы резервная копия виртуальных машин IaaS работала. Если вам нужен статический частный IP-адрес, следует настроить его с помощью портал Azure или PowerShell и убедиться, что параметр DHCP в виртуальной машине включен, дополнительные [сведения](backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken).
 

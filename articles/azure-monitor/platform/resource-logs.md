@@ -7,17 +7,17 @@ ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: 6a7b24de860b543778d7e6ceabc95d10bf7c44c2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ccf470abadb28919e4fca3c4862b71946a5bb204
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077097"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87800506"
 ---
 # <a name="azure-resource-logs"></a>журналов ресурсов Azure.
 Журналы ресурсов Azure — это [журналы платформ](platform-logs-overview.md) , которые позволяют получить представление об операциях, выполненных в рамках ресурса Azure. Содержимое журналов ресурсов зависит от службы и типа ресурса Azure. Журналы ресурсов по умолчанию не собираются. Необходимо создать параметр диагностики для каждого ресурса Azure, чтобы отправлять журналы ресурсов в Log Analytics рабочую область для использования с [журналами Azure Monitor](data-platform-logs.md), концентраторов событий Azure для пересылки за пределы Azure или в службу хранилища Azure для архивации.
 
-Дополнительные сведения о создании параметров диагностики и [развертывании Azure Monitor в масштабе с помощью политики](deploy-scale.md) Azure см. в статье [Создание параметров диагностики для отправки журналов и метрик платформы в разные места назначения](diagnostic-settings.md) для получения дополнительных сведений об использовании политики Azure для автоматического создания параметров диагностики для каждого создаваемого ресурса Azure.
+Дополнительные сведения о создании параметров диагностики и [развертывании Azure Monitor в масштабе с помощью политики](../deploy-scale.md) Azure см. в статье [Создание параметров диагностики для отправки журналов и метрик платформы в разные места назначения](diagnostic-settings.md) для получения дополнительных сведений об использовании политики Azure для автоматического создания параметров диагностики для каждого создаваемого ресурса Azure.
 
 ## <a name="send-to-log-analytics-workspace"></a>Отправка в рабочую область Log Analytics
  Отправляйте журналы ресурсов в рабочую область Log Analytics, чтобы включить функции [журналов Azure Monitor](data-platform-logs.md) , которые включают в себя следующее:
@@ -43,7 +43,7 @@ ms.locfileid: "87077097"
 
 Таблица AzureDiagnostics будет выглядеть следующим образом:  
 
-| ResourceProvider    | Категория     | Объект  | B  | C  | D  | E  | F  | G  | H  | I  |
+| ResourceProvider    | Категория     | Объект  | B  | C  | D  | E  | C  | G  | H  | I  |
 | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
 | Microsoft. Service1 | AuditLogs    | x1 | Y1 | Z1 |    |    |    |    |    |    |
 | Microsoft. Service1 | ErrorLogs    |    |    |    | q1 | W1 | e1 |    |    |    |
@@ -68,7 +68,7 @@ ms.locfileid: "87077097"
 
 - Таблица *Service1ErrorLogs* выглядит следующим образом:  
 
-    | Поставщик ресурсов | Категория | D | E | F |
+    | Поставщик ресурсов | Категория | D | E | C |
     | -- | -- | -- | -- | -- | 
     | Service1 | ErrorLogs |  q1 | W1 | e1 |
     | Service1 | ErrorLogs |  q2 | W2 | e2 |
