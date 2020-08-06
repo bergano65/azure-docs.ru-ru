@@ -3,12 +3,12 @@ title: Обзор Azure Blueprints
 description: Описание службы Azure Blueprints, с помощью которой можно создавать, определять и развертывать артефакты в среде Azure.
 ms.date: 05/06/2020
 ms.topic: overview
-ms.openlocfilehash: 3a7cece81027bd8ac79250f2f2cd08da637b5f0b
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: a8cec34bb5bdd52b22063a4109153c7f455aaa65
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85970932"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87530409"
 ---
 # <a name="what-is-azure-blueprints"></a>Что такое Azure Blueprint?
 
@@ -103,7 +103,7 @@ ms.locfileid: "85970932"
 
 Доступны следующие встроенные роли:
 
-|Роль RBAC | Описание |
+|Роль Azure | Описание |
 |-|-|
 |[Владелец](../../role-based-access-control/built-in-roles.md#owner) | Наряду с другими разрешениями включает все разрешения, связанные с Azure Blueprint. |
 |[Участник](../../role-based-access-control/built-in-roles.md#contributor) | Наряду с другими разрешениями позволяет создавать и удалять определения схем, но не назначать схемы. |

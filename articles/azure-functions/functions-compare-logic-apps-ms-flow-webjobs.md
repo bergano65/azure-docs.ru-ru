@@ -4,12 +4,12 @@ description: 'Сравнение облачных служб Майкрософ�
 ms.topic: overview
 ms.date: 04/09/2018
 ms.custom: mvc
-ms.openlocfilehash: 1e6d1462a4f94db424081ea1567e5926806d3e81
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2e0d8f356ec8da900b4a38399ba94434c3b1b93d
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87083010"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87809975"
 ---
 # <a name="choose-the-right-integration-and-automation-services-in-azure"></a>Выбор правильных служб интеграции и автоматизации в Azure
 
@@ -57,7 +57,7 @@ Power Automate и Logic Apps спроектированы в рамках под
 | **Соединение** | [Около десяти встроенных типов привязки](functions-triggers-bindings.md#supported-bindings); написание кода для пользовательских привязок | [Большая коллекция соединителей](../connectors/apis-list.md), [пакет интеграции Enterprise для сценариев B2B](../logic-apps/logic-apps-enterprise-integration-overview.md), [создание пользовательских соединителей](../logic-apps/custom-connector-overview.md) |
 | **Действия** | Каждое действие является функцией Azure; написание кода для функций действий |[Большая коллекция готовых действий](../logic-apps/logic-apps-workflow-actions-triggers.md)|
 | **Мониторинг** | [Azure Application Insights](../azure-monitor/app/app-insights-overview.md) | [Портал Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md), [журналы Azure Monitor](../logic-apps/monitor-logic-apps.md)|
-| **Управление** | [REST API](durable/durable-functions-http-api.md), [Visual Studio](/azure/vs-azure-tools-resources-managing-with-cloud-explorer) | [Портал Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md), [REST API](/rest/api/logic/), [PowerShell](/powershell/module/az.logicapp), [Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md) |
+| **Управление** | [REST API](durable/durable-functions-http-api.md), [Visual Studio](/visualstudio/azure/vs-azure-tools-resources-managing-with-cloud-explorer?view=vs-2019) | [Портал Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md), [REST API](/rest/api/logic/), [PowerShell](/powershell/module/az.logicapp), [Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md) |
 | **Контекст выполнения** | Можно запускать [локально](functions-runtime-overview.md) или в облаке | Можно запускать только в облаке|
 
 <a name="function"></a>
