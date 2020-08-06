@@ -1,6 +1,6 @@
 ---
-title: Отправка событий хранилища BLOB-объектов Azure в конечную веб-точку — Powershell | Документация Майкрософт
-description: Используйте службу "Сетка событий Azure" для подписки на события хранилища BLOB-объектов.
+title: Отправка событий хранилища больших двоичных объектов Azure в веб-конечную точку (PowerShell) | Документация Майкрософт
+description: Используйте службу "Сетка событий Azure", чтобы подписываться на события хранилища BLOB-объектов, запускать события и просматривать результаты. Используйте Azure PowerShell для маршрутизации событий хранилища в веб-конечную точку.
 author: normesta
 ms.author: normesta
 ms.reviewer: dastanfo
@@ -8,12 +8,12 @@ ms.date: 08/23/2018
 ms.topic: article
 ms.service: storage
 ms.subservice: blobs
-ms.openlocfilehash: f0dae5ae79234ea29e6b17627fc07abcb3b5dfcb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 809ab593d4d3f58fa3c91b896e5df3a0db7865f9
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "68847153"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87824517"
 ---
 # <a name="quickstart-route-storage-events-to-web-endpoint-with-powershell"></a>Краткое руководство. Маршрутизация событий хранилища в конечную точку веб-сайта с помощью PowerShell
 
@@ -25,7 +25,7 @@ ms.locfileid: "68847153"
 
 ![Просмотр результатов](./media/storage-blob-event-quickstart-powershell/view-results.png)
 
-## <a name="setup"></a>Установка
+## <a name="setup"></a>Настройка
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -168,7 +168,7 @@ Set-AzStorageBlobContent -File gridTestFile.txt -Container $containerName -Conte
 Remove-AzResourceGroup -Name $resourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы знаете, как создавать разделы и подписки на события, ознакомьтесь с дополнительными сведениями о событиях хранилища BLOB-объектов и возможностях службы "Сетка событий":
 

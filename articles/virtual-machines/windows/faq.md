@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: cynthn
-ms.openlocfilehash: a21fbcd04c5916e686f13e375bc1854935d1c4fe
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: d5dda567d0cfa89863731a3e8e651aede4ab5957
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86500350"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87825197"
 ---
 # <a name="frequently-asked-question-about-windows-virtual-machines"></a>Часто задаваемые вопросы по виртуальным машинам Windows
 В этой статье содержатся ответы на некоторые распространенные вопросы о виртуальных машинах Windows, созданных в Azure с помощью модели развертывания Resource Manager. Версию этого раздела для Linux см. в разделе [часто задаваемые вопросы о виртуальные машины Linux](../linux/faq.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
@@ -23,7 +23,7 @@ ms.locfileid: "86500350"
 Подписчикам MSDN Azure, а также подписчикам MSDN для разработки и тестирования с оплатой по мере использования доступны определенные версии Windows 7, Windows 8.1 и Windows 10, которые можно использовать для разработки или тестирования. Дополнительные сведения, включая указания и ограничения, см. в статье [Образы клиента Windows для подписчиков MSDN](https://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/). 
 
 ## <a name="how-much-storage-can-i-use-with-a-virtual-machine"></a>Какой объем памяти можно использовать с виртуальной машиной?
-Каждый диск данных может иметь до 32 767 гиб. Количество дисков данных, которое можно использовать, зависит от размера виртуальной машины. Дополнительные сведения см. в статье [размеры виртуальных машин](sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Каждый диск данных может иметь до 32 767 гиб. Количество дисков данных, которое можно использовать, зависит от размера виртуальной машины. Дополнительные сведения см. в статье [размеры виртуальных машин](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 Управляемые диски Azure — это рекомендуемые предложения хранилища дисков, используемые с виртуальными машинами Azure и предназначенные для постоянного хранения данных. Можно использовать несколько управляемых дисков для каждой виртуальной машины. Есть два класса управляемых дисков с разными возможностями хранения: управляемые диски "Премиум" и "Стандартный". Сведения о ценах см. на [странице с расценками на управляемые диски](https://azure.microsoft.com/pricing/details/managed-disks).
 

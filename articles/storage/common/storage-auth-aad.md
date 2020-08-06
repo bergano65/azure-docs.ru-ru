@@ -10,12 +10,12 @@ ms.date: 07/16/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 76b9b965ab7fb5ffda66bd77dba6d9ab5381e6fd
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 3b29c5b4b1bf682e0f43a0bf9b0c8fcb40d70433
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534368"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87827883"
 ---
 # <a name="authorize-access-to-blobs-and-queues-using-azure-active-directory"></a>Авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory
 
@@ -43,7 +43,7 @@ ms.locfileid: "87534368"
 
 ## <a name="assign-azure-roles-for-access-rights"></a>Назначение ролей Azure для прав доступа
 
-Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md). Служба хранилища Azure определяет набор встроенных ролей Azure, охватывающих общие наборы разрешений, используемых для доступа к данным BLOB-объектов и очередей. Можно также определить пользовательские роли для доступа к данным большого двоичного объекта и очереди.
+Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам через [Управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md). Служба хранилища Azure определяет набор встроенных ролей Azure, охватывающих общие наборы разрешений, используемых для доступа к данным BLOB-объектов и очередей. Можно также определить пользовательские роли для доступа к данным большого двоичного объекта и очереди.
 
 Когда роль Azure назначается субъекту безопасности Azure AD, Azure предоставляет доступ к этим ресурсам для этого субъекта безопасности. Доступ может ограничиваться уровнем подписки, группой ресурсов, учетной записью хранения или отдельным контейнером или очередью. Субъект безопасности Azure AD может быть пользователем, группой, субъектом-службой приложения или [управляемым удостоверением для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
 

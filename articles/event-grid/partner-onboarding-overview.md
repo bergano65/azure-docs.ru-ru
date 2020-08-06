@@ -3,12 +3,12 @@ title: Подключение в качестве партнера Сетки с
 description: Подключитесь как тип раздела партнера по службе "Сетка событий Azure". Сведения о модели ресурсов и публикации последовательности для партнеров.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: bf4534849ae29d89524a877ca410d25c74637c94
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 36f2178b7c21af016f9074d6f973a01cedb873d7
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87461261"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87826795"
 ---
 # <a name="onboard-as-an-azure-event-grid-partner"></a>Подключение в качестве партнера Сетки событий Azure
 
@@ -91,7 +91,7 @@ ms.locfileid: "87461261"
 ### <a name="partner-topic-types"></a>Типы тематических разделов
 * Ресурс: `partnerTopicTypes`.
 * Кем используется. Клиенты
-* Описание. типы тематических разделов — это тенантвиде типы ресурсов, позволяющие клиентам обнаруживать список утвержденных типов разделов партнеров. URL-адрес выглядит следующим образом:https://management.azure.com/providers/Microsoft.EventGrid/partnerTopicTypes)
+* Описание. типы тематических разделов — это типы ресурсов на уровне клиента, позволяющие клиентам обнаруживать список утвержденных типов разделов партнеров. URL-адрес выглядит следующим образом:https://management.azure.com/providers/Microsoft.EventGrid/partnerTopicTypes)
 * Область. Global
 
 ## <a name="publish-events-to-event-grid"></a>Опубликовать события в сетке событий
@@ -153,7 +153,7 @@ ms.locfileid: "87461261"
 ## <a name="references"></a>Ссылки
 
   * [Swagger](https://github.com/ahamad-MS/azure-rest-api-specs/blob/master/specification/eventgrid/resource-manager/Microsoft.EventGrid/preview/2020-04-01-preview/EventGrid.json)
-  * [Шаблон ARM](https://docs.microsoft.com/azure/templates/microsoft.eventgrid/allversions)
+  * [Шаблон ARM](/azure/templates/microsoft.eventgrid/allversions)
   * [Схема шаблона ARM](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2020-04-01-preview/Microsoft.EventGrid.json)
   * [REST API](/rest/api/eventgrid/version2020-04-01-preview/partnernamespaces);
   * [Расширение CLI](/cli/azure/ext/eventgrid/?view=azure-cli-latest)

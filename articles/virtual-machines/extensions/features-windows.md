@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: akjosh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c28fe96fe88a3b0744aaad72d49e8e2f52912fb6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 611edb06762b96ded7671b70ec0f5d4f07f51848
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87082636"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87829090"
 ---
 # <a name="virtual-machine-extensions-and-features-for-windows"></a>Обзор расширений и компонентов виртуальной машины под управлением Windows
 
@@ -36,13 +36,13 @@ ms.locfileid: "87082636"
 
 - Применение к виртуальной машине конфигураций требуемого состояния PowerShell с помощью расширения DSC для Windows. Подробнее см. [Общие сведения об обработчике расширения Desired State Configuration в Azure](dsc-overview.md);
 - Настройте мониторинг виртуальной машины с помощью расширения виртуальной машины агента Log Analytics. Дополнительные сведения см. [в статье подключение виртуальных машин Azure к Azure Monitor журналах](../../azure-monitor/learn/quick-collect-azurevm.md).
-- Настройка виртуальной машины Azure с помощью Chef. Дополнительные сведения см. в статье [Автоматизация развертывания виртуальной машины Azure с помощью Chef](../../chef/chef-automation.md).
+- Настройка виртуальной машины Azure с помощью Chef. Дополнительные сведения см. в статье [Автоматизация развертывания виртуальной машины Azure с помощью Chef](/azure/developer/chef/windows-vm-configure).
 - настройка мониторинга инфраструктуры Azure с помощью расширения Datadog. Дополнительную информацию см. в [блоге Datadog](https://www.datadoghq.com/blog/introducing-azure-monitoring-with-one-click-datadog-deployment/);
 
 
 Помимо расширений, созданных для конкретных процессов, существует расширение пользовательских сценариев для виртуальных машин под управлением Windows и Linux. Расширение пользовательских скриптов для Windows позволяет запустить на виртуальной машине любой скрипт PowerShell. Пользовательские сценарии могут пригодиться при проектировании развертывания Azure, для которого требуется дополнительная настройка, ее невозможно выполнить собственными средствами Azure. Подробнее см. [Использование расширений пользовательских сценариев для виртуальной машины Windows с шаблонами Azure Resource Manager](custom-script-windows.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы расширения работали на виртуальной машине, необходимо установить агент Windows для Azure. Некоторые расширения имеют дополнительные требования, например доступ к определенным ресурсам или зависимости.
 
@@ -140,7 +140,7 @@ Set-AzVMAccessExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Nam
 С помощью команды `Set-AzVMExtension` можно запустить любое расширение виртуальной машины. Дополнительные сведения см. в разделе справки [о командлете Set-AzVMExtension](/powershell/module/az.compute/set-azvmextension).
 
 
-### <a name="azure-portal"></a>портал Azure;
+### <a name="azure-portal"></a>Портал Azure
 
 Расширения виртуальных машин можно устанавливать на имеющиеся виртуальные машины через портал Azure. Выберите на портале нужную виртуальную машину, затем щелкните **Расширения** и **Добавить**. Выберите нужное расширение из списка доступных расширений и следуйте инструкциям мастера.
 

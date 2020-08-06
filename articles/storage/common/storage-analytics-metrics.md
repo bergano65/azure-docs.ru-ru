@@ -1,6 +1,6 @@
 ---
 title: Метрики Аналитики Службы хранилища Azure (классические)
-description: Узнайте, как использовать метрики Аналитики Службы хранилища в службе хранилища Azure.
+description: Узнайте, как использовать метрики Аналитики Службы хранилища в службе хранилища Azure. Сведения о метриках транзакций и емкости, способах хранения метрик, включении метрик и многом другим.
 author: normesta
 ms.service: storage
 ms.topic: conceptual
@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring
-ms.openlocfilehash: b4bb17fce7be7aeff2a6978177106201e4c80aee
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7d7db5a756e5d75cb4f9719f54d95f9cee1e8d2f
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087277"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87828053"
 ---
 # <a name="azure-storage-analytics-metrics-classic"></a>Метрики Аналитики Службы хранилища Azure (классические)
 
@@ -154,7 +154,7 @@ queueClient.SetServiceProperties(serviceProperties);
 
 Подробные сведения о схемах для этих таблиц см. в разделе [Схема таблицы метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema). В примере строк ниже показана только часть доступных столбцов, однако они иллюстрируют некоторые важные возможности сохранения метрик с помощью метрик хранилища.  
 
-|PartitionKey|RowKey|Timestamp|TotalRequests|TotalBillableRequests|TotalIngress|TotalEgress|Доступность|AverageE2ELatency|AverageServerLatency|PercentSuccess| 
+|PartitionKey|RowKey|Отметка времени|TotalRequests|TotalBillableRequests|TotalIngress|TotalEgress|Доступность|AverageE2ELatency|AverageServerLatency|PercentSuccess| 
 |-|-|-|-|-|-|-|-|-|-|-|  
 |20140522T1100|user;All|2014-05-22T11:01:16.7650250Z|7|7|4003|46801|100|104.4286|6.857143|100|  
 |20140522T1100|user;QueryEntities|2014-05-22T11:01:16.7640250Z|5|5|2694|45951|100|143.8|7.8|100|  

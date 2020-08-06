@@ -7,19 +7,19 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 01/09/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 105cb38ccb65c96e2a1177e09839fc9d295c2b80
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 8948ed51a9cda3d308046f3b85b6ce338462e82c
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87489951"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87826200"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mysql-using-cli"></a>Создание и управление частной связью для базы данных Azure для MySQL с помощью интерфейса командной строки
 
 Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. В этой статье вы узнаете, как использовать Azure CLI для создания виртуальной машины в виртуальной сети Azure и сервера базы данных Azure для MySQL с помощью частной конечной точки Azure.
 
 > [!NOTE]
-> Эта функция доступна во всех регионах Azure, где база данных Azure для MySQL поддерживает общего назначения и оптимизированные для памяти ценовые категории.
+> Функция закрытых ссылок доступна только для серверов базы данных Azure для MySQL в общего назначения или в ценовой категории, оптимизированные для памяти. Убедитесь, что сервер базы данных находится в одной из этих ценовых категорий.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: 7f71e52fd1fd40015ff93e189495daef0e2c333e
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: a2cdcab08bba76cb385666956b7663324f32c669
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87328362"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87824585"
 ---
 # <a name="enable-azure-monitor-for-vms-using-powershell"></a>Включение Azure Monitor для виртуальных машин с помощью PowerShell
 В этой статье описывается, как включить Azure Monitor для виртуальных машин на виртуальных машинах Azure с помощью PowerShell. Эту процедуру можно использовать для следующих действий:
@@ -19,7 +19,7 @@ ms.locfileid: "87328362"
 - Виртуальная машина Azure
 - Масштабируемый набор виртуальных машин Azure
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - [Создание и Настройка рабочей области log Analytics](vminsights-configure-workspace.md).
 - Ознакомьтесь с [поддерживаемыми операционными системами](vminsights-enable-overview.md#supported-operating-systems) , чтобы убедиться, что операционная система, которую вы включаете, поддерживается. 
@@ -35,7 +35,7 @@ ms.locfileid: "87328362"
 
 Для каждой виртуальной машины или масштабируемого набора виртуальных машин скрипт проверяет, установлены ли уже расширения виртуальной машины для агента Log Analytics и агента зависимостей. Если установлены оба расширения, сценарий пытается переустановить его. Если оба расширения не установлены, сценарий установит их.
 
-Убедитесь, что используется модуль Azure PowerShell AZ Version 1.0.0 или более поздней версии с `Enable-AzureRM` включенными псевдонимами совместимости. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzAccount`, чтобы создать подключение к Azure.
+Убедитесь, что используется модуль Azure PowerShell AZ Version 1.0.0 или более поздней версии с `Enable-AzureRM` включенными псевдонимами совместимости. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 Чтобы получить список сведений об аргументах сценария и пример использования, выполните команду `Get-Help`.
 
@@ -188,7 +188,7 @@ Not running - start VM to configure: (0)
 Failed: (0)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. статью [использование Azure Monitor для виртуальных машин Map](vminsights-maps.md) для просмотра зависимостей обнаруженных приложений. 
 * См. статью [Просмотр производительности виртуальной машины Azure](vminsights-performance.md) для выявления узких мест, общего использования и производительности виртуальной машины.

@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: logicappspm
 ms.topic: conceptual
 ms.date: 04/06/2020
-ms.openlocfilehash: 1e844934852f3eb45f665a67bbdb7087a8ba0202
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: aca2c51ff14b99ba41b159cf32e59dc861de7a53
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87039165"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87826217"
 ---
 # <a name="move-logic-app-resources-to-other-azure-resource-groups-regions-or-subscriptions"></a>Перемещение ресурсов приложения логики в другие группы ресурсов, регионы или подписки Azure
 
@@ -27,11 +27,11 @@ ms.locfileid: "87039165"
 
 * [Среду службы интеграции (ISE)](connect-virtual-network-vnet-isolated-environment-overview.md) можно переместить только в другую группу ресурсов, которая существует в том же регионе Azure или в подписке Azure. Невозможно переместить интегрированную среду сценариев в группу ресурсов, которая существует в другом регионе Azure или в подписке Azure. Кроме того, после такого перемещения необходимо обновить все ссылки на интегрированную среду сценариев в рабочих процессах приложения логики, учетных записях интеграции, подключениях и т. д.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Та же подписка Azure, которая использовалась для создания приложения логики или учетной записи интеграции, которую вы хотите переместить.
 
-* Права владельца ресурса для перемещения и настройки нужных ресурсов. Дополнительные сведения об [управлении доступом на основе ролей (RBAC)](../role-based-access-control/built-in-roles.md#owner).
+* Права владельца ресурса для перемещения и настройки нужных ресурсов. Дополнительные сведения об [управлении доступом на основе ролей в Azure (Azure RBAC)](../role-based-access-control/built-in-roles.md#owner).
 
 <a name="move-subscription"></a>
 

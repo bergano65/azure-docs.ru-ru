@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/12/2020
-ms.openlocfilehash: a2ece33974e5bb4d8cb6257d3ca68a258f9b8c81
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 406991de2441836565c911ef8a8e1402f6398eb0
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326007"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87824789"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Решения мониторинга в Azure Monitor
 
@@ -46,7 +46,7 @@ ms.locfileid: "87326007"
 
 ![Свойства решения](media/solutions/solution-properties.png)
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Чтобы получить список решений для мониторинга, установленных в вашей подписке, используйте команду [AZ Monitor log-Analytics Solution List](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution#ext-log-analytics-solution-az-monitor-log-analytics-solution-list) .   Перед выполнением `list` команды следуйте предварительным требованиям, приведенным в [статье Установка решения для мониторинга](#install-a-monitoring-solution).
 
@@ -177,7 +177,7 @@ az monitor log-analytics solution create --resource-group MyResourceGroup \
 
 Чтобы удалить установленное решение с помощью портала, выберите его в [списке установленных решений](#list-installed-monitoring-solutions). Щелкните имя решения, чтобы открыть страницу сводки, и выберите **Удалить**.
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Чтобы удалить установленное решение с помощью Azure CLI, используйте команду [AZ Monitor log-Analytics решение Delete](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution#ext-log-analytics-solution-az-monitor-log-analytics-solution-delete) .
 
@@ -192,7 +192,6 @@ az monitor log-analytics solution delete --name
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Получите список решений мониторинга от корпорации Майкрософт [здесь](/azure/azure-monitor/monitor-reference).
+* Получите список решений мониторинга от корпорации Майкрософт [здесь](../monitor-reference.md).
 * Узнайте из статьи [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md), как создавать запросы для анализа данных, собранных решением для мониторинга.
 * См. все [команды Azure CLI для Azure Monitor](/cli/azure/azure-cli-reference-for-monitor).
-

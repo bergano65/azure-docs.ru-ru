@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 11/24/2019
 ms.author: vilibert
-ms.openlocfilehash: c0041a835c02263f23c5cdc6f839756edfb070c1
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 03e6f51d2ab7138675f7d79c04faa2e4dffec60c
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86526883"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87825690"
 ---
 # <a name="troubleshooting-a-linux-vm-when-there-is-no-access-to-the-azure-serial-console-and-the-disk-layout-is-using-lvm-logical-volume-manager"></a>Устранение неполадок в виртуальной машине Linux при отсутствии доступа к последовательной консоли Azure и разметке диска с использованием LVM (Диспетчер логических томов)
 
@@ -272,6 +272,6 @@ umount /rescue
 ## <a name="next-steps"></a>Дальнейшие действия
 Кроме того, вы можете узнать больше о:
 
- [Серийная консоль Azure]( https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-linux)
+ [Серийная консоль Azure]( ./serial-console-linux.md)
 
 [Однопользовательский режим](./serial-console-grub-single-user-mode.md)

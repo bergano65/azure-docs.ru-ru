@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/15/2020
-ms.openlocfilehash: 211b7aedc901031e366c60a6c7a2cee396bbe124
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: bd575eb5f646b749b431516670c64c764f4d4c9c
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87563846"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87828512"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor: вопросы и ответы
 
@@ -670,7 +670,7 @@ LogEntry : ({"Hello": "This example has multiple lines:","Docker/Moby": "will no
 ### <a name="can-i-onboard-to-a-new-workspace"></a>Можно ли подключиться к новой рабочей области? 
 Если на данный момент ваши виртуальные машины не подключены к существующей рабочей области Log Analytics, вам потребуется создать рабочую область для хранения ваших данных. Если вы настроите одну виртуальную машину Azure для Azure Monitor для виртуальных машин на портале Azure, будет автоматически создана рабочая область, используемая по умолчанию.
 
-Если вы решили использовать метод на основе скриптов, необходимые шаги описаны в статье [Включение Azure Monitor для виртуальных машин с помощью Azure PowerShell или шаблона Resource Manager](insights/vminsights-enable-at-scale-powershell.md). 
+Если вы решили использовать метод на основе скриптов, необходимые шаги описаны в статье [Включение Azure Monitor для виртуальных машин с помощью Azure PowerShell или шаблона Resource Manager](./insights/vminsights-enable-powershell.md). 
 
 ### <a name="what-do-i-do-if-my-vm-is-already-reporting-to-an-existing-workspace"></a>Что делать, если виртуальная машина уже отправляет отчеты в существующую рабочую область?
 Если вы уже собираете данные со своих виртуальных машин, возможно, вы уже настроили их для передачи отчетных данных в существующую рабочую область Log Analytics.  Пока эта рабочая область находится в одном из поддерживаемых регионов, вы можете включить Azure Monitor для виртуальных машин для этой существующей рабочей области.  Если рабочая область, которую вы уже используете, не находится в одном из поддерживаемых нами регионов, то на данный момент вам не удастся подключиться к Azure Monitor для виртуальных машин.  Мы активно работаем над поддержкой дополнительных регионов.
@@ -691,7 +691,7 @@ LogEntry : ({"Hello": "This example has multiple lines:","Docker/Moby": "will no
 ### <a name="i-dont-see-some-or-any-data-in-the-performance-charts-for-my-vm"></a>На диаграммах производительности не отображаются некоторые или все данные для моей виртуальной машины
 Наши диаграммы производительности были обновлены и теперь используют данные из таблицы *InsightsMetrics*.  Чтобы просмотреть данные на этих диаграммах, необходимо обновить систему для использования нового решения аналитики виртуальных машин.  Дополнительные сведения см. в статье [Часто задаваемые вопросы об Azure Monitor для виртуальных машин общедоступной версии](insights/vminsights-ga-release-faq.md).
 
-Если данные о производительности не отображаются в таблице дисков или некоторых диаграммах производительности, возможно, в рабочей области не настроены счетчики производительности. Чтобы решить эту проблему, выполните указанный ниже [скрипт PowerShell](insights/vminsights-enable-at-scale-powershell.md#enable-with-powershell).
+Если данные о производительности не отображаются в таблице дисков или некоторых диаграммах производительности, возможно, в рабочей области не настроены счетчики производительности. Чтобы решить эту проблему, выполните указанный ниже [скрипт PowerShell](./insights/vminsights-enable-powershell.md).
 
 
 ### <a name="how-is-azure-monitor-for-vms-map-feature-different-from-service-map"></a>Чем функция "Схема" в Azure Monitor для виртуальных машин отличается от решения "Сопоставление служб"?

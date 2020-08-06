@@ -13,19 +13,19 @@ ms.topic: article
 ms.date: 08/01/2020
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: c49286f370691c39c3d14d589f2657d6e0bb3c04
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: dfa1c790dc0f2e229b3bfa19616e5760c3d3d02e
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542337"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87825146"
 ---
 # <a name="configure-and-optimize-vms"></a>Настройка и оптимизация виртуальных машин
 
 В этой статье приведены известные методы настройки и оптимизации виртуальных машин серии [H](../../sizes-hpc.md) и [N](../../sizes-gpu.md) с поддержкой InfiniBand для HPC.
 
 ## <a name="vm-images"></a>Образы виртуальных машин
-На виртуальных машинах с поддержкой InfiniBand для включения RDMA требуются соответствующие драйверы. В Linux образы виртуальных машин CentOS-HPC в Marketplace предварительно настроены с соответствующими драйверами. Образы виртуальных машин Ubuntu можно настроить с помощью правильных драйверов, выполнив приведенные [здесь инструкции](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351). Также рекомендуется создавать [пользовательские образы виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-custom-images) с соответствующими драйверами и конфигурацией и повторно использовать их.
+На виртуальных машинах с поддержкой InfiniBand для включения RDMA требуются соответствующие драйверы. В Linux образы виртуальных машин CentOS-HPC в Marketplace предварительно настроены с соответствующими драйверами. Образы виртуальных машин Ubuntu можно настроить с помощью правильных драйверов, выполнив приведенные [здесь инструкции](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351). Также рекомендуется создавать [пользовательские образы виртуальных машин](../../linux/tutorial-custom-images.md) с соответствующими драйверами и конфигурацией и повторно использовать их.
 
 ### <a name="centos-hpc-vm-images"></a>CentOS — образы виртуальных машин HPC
 Для [виртуальных машин с поддержкой RDMA](../../sizes-hpc.md#rdma-capable-instances), не поддерживающих SR-IOV, CENTOS-HPC версии 6,5 или более поздней версии, подходит до 7,5 в Marketplace. Например, для [виртуальных машин серии H16](../../h-series.md)рекомендуется использовать версии 7,1 и 7,5. Эти образы виртуальных машин предварительно загружаются с драйверами сети Direct для RDMA и Intel MPI версии 5,1.
@@ -53,7 +53,7 @@ SLES 12 SP3 для HPC, SLES 12 SP3 для HPC (Premium), SLES 12 SP1 для HPC
 
 ### <a name="update-lis"></a>Обновить LIS
 
-Если это необходимо для функциональности или производительности, [драйверы Linux Integration Services (LIS)](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros) могут быть установлены или обновлены на поддерживаемых ОС дистрибутивов, особенно при развертывании с помощью пользовательского образа или более старой версии ОС, например CENTOS/RHEL 6. x или более ранней версии 7. x.
+Если это необходимо для функциональности или производительности, [драйверы Linux Integration Services (LIS)](../../linux/endorsed-distros.md) могут быть установлены или обновлены на поддерживаемых ОС дистрибутивов, особенно при развертывании с помощью пользовательского образа или более старой версии ОС, например CENTOS/RHEL 6. x или более ранней версии 7. x.
 
 ```bash
 wget https://aka.ms/lis
@@ -105,7 +105,7 @@ sed -i -e 's/# OS.EnableRDMA=y/OS.EnableRDMA=y/g' /etc/waagent.conf
 При необходимости WALinuxAgent может быть отключен как шаг перед заданием и включен назад после задания для максимальной доступности ресурсов виртуальной машины для рабочей нагрузки HPC.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [включении InfiniBand](enable-infiniband.md) на виртуальных машинах серии [H](../../sizes-hpc.md) и [N](../../sizes-gpu.md) с поддержкой InfiniBand.
 - Узнайте больше об установке различных [поддерживаемых библиотек MPI](setup-mpi.md) и их оптимальной конфигурации на виртуальных машинах.

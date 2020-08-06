@@ -12,18 +12,18 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/20/2020
 ms.author: amverma
-ms.openlocfilehash: 9085549486333968b98b4d34679c8616282d960f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: eb06f98d1a6e9b76c321e3d202043d656a2d94eb
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87100400"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87829056"
 ---
 # <a name="infiniband-driver-extension-for-linux"></a>Расширение драйвера InfiniBand для Linux
 
 Это расширение устанавливает драйверы InfiniBand ОФЕД на виртуальных машинах серии [H](../sizes-hpc.md) и [серии N](../sizes-gpu.md) с поддержкой INFINIBAND и SR-IOV (размер r), работающих под управлением Linux. В зависимости от семейства виртуальных машин расширение устанавливает соответствующие драйверы для сетевого адаптера Connect-X.
 
-Инструкции по установке драйверов ОФЕД вручную доступны [здесь](https://docs.microsoft.com/azure/virtual-machines/workloads/hpc/enable-infiniband#manually-install-mellanox-ofed).
+Инструкции по установке драйверов ОФЕД вручную доступны [здесь](../workloads/hpc/enable-infiniband.md#manual-installation).
 
 Расширение также доступно для установки драйверов InfiniBand для [виртуальных машин Windows](hpc-compute-infiniband-windows.md).
 
@@ -74,7 +74,7 @@ ms.locfileid: "87100400"
 | версия_API | 2015-06-15 | Дата |
 | publisher | Microsoft.HpcCompute | строка |
 | type | инфинибанддриверлинукс | строка |
-| typeHandlerVersion | 1.1 | INT |
+| typeHandlerVersion | 1.1 | int |
 
 
 

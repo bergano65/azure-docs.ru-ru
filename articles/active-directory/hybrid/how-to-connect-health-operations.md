@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5cc7c256ca6866e5b981f8740c9953534d830316
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9e72e3cb3ccc6273a9b698475c5e5aa0bb87b8b7
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85359166"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87828801"
 ---
 # <a name="azure-active-directory-connect-health-operations"></a>Операции Azure Active Directory Connect Health
 В этой статье описаны различные операции, которые можно выполнить с помощью Azure Active Directory (Azure AD) Connect Health.
@@ -74,7 +74,7 @@ Azure AD Connect Health для службы федерации Active Directory 
 2. В колонке **Сервер** на панели действий нажмите кнопку **Удалить**.
 ![Снимок экрана удаления сервера Azure AD Connect Health](./media/how-to-connect-health-operations/DeleteServer2.png)
 3. Подтвердите удаление. Для этого введите имя сервера в поле подтверждения.
-4. Щелкните **Delete** (Удалить).
+4. Щелкните **Удалить**.
 
 Azure AD Connect Health для доменных служб Azure Active Directory:
 
@@ -82,7 +82,7 @@ Azure AD Connect Health для доменных служб Azure Active Director
 2. Выберите контроллер домена, который нужно удалить.
 3. На панели действий нажмите кнопку **Удалить выбранные**.
 4. Подтвердите операцию удаления сервера.
-5. Щелкните **Delete** (Удалить).
+5. Щелкните **Удалить**.
 
 ### <a name="delete-a-service-instance-from-azure-ad-connect-health-service"></a>Удаление экземпляра службы из службы Azure AD Connect Health
 В некоторых случаях может потребоваться удалить экземпляр службы. Здесь приведены сведения по удалению экземпляра службы из службы Azure AD Connect Health.
@@ -99,12 +99,12 @@ Azure AD Connect Health для доменных служб Azure Active Director
 2. В колонке **Служба** на панели действий нажмите кнопку **Удалить**. 
 ![Снимок экрана удаления службы Azure AD Connect Health](./media/how-to-connect-health-operations/DeleteServer.png)
 3. Подтвердите удаление. Для этого введите имя сервера в поле подтверждения (например, sts.contoso.com).
-4. Щелкните **Delete** (Удалить).
+4. Щелкните **Удалить**.
    <br><br>
 
 [//]: # (Начало раздела RBAC)
 ## <a name="manage-access-with-role-based-access-control"></a>Использование управления доступом на основе ролей
-[Управление доступом на основе ролей (RBAC)](../../role-based-access-control/role-assignments-portal.md) для Azure AD Connect Health предоставляет доступ к пользователям и группам (не глобальным администраторам) за счет назначения им соответствующих ролей. Такой подход предоставляет механизм ограничения числа глобальных администраторов в каталоге.
+[Управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md) для Azure AD Connect Health предоставляет доступ пользователям и группам, отличным от глобальных администраторов. за счет назначения им соответствующих ролей. Такой подход предоставляет механизм ограничения числа глобальных администраторов в каталоге.
 
 ### <a name="roles"></a>Роли
 Azure AD Connect Health поддерживает следующие встроенные роли:
@@ -133,12 +133,12 @@ Azure AD Connect Health поддерживает управление досту
 #### <a name="step-2-add-users-and-groups-and-assign-roles"></a>Шаг 2. Добавление пользователей и групп, а также назначение ролей
 1. В разделе **Настройка** щелкните **Пользователи**.<br>
    ![Снимок экрана боковой панели ресурсов Azure AD Connect Health](./media/how-to-connect-health-operations/startRBAC.png)
-2. Выберите **Добавить**.
+2. Щелкните **Добавить**.
 3. В области **Выбор роли** выберите роль (например, **Владелец**).<br>
    ![Снимок экрана окна "Пользователи" компонента управления доступом на основе ролей в Azure AD Connect Health](./media/how-to-connect-health-operations/RBAC_add.png)
 4. Введите имя или идентификатор целевого пользователя или целевой группы. Одновременно можно выбрать сразу несколько пользователей или групп. Нажмите кнопку **Выбрать**.
    ![Снимок экрана окна "Пользователи" компонента управления доступом на основе ролей в Azure AD Connect Health](./media/how-to-connect-health-operations/RBAC_select_users.png)
-5. Нажмите кнопку **ОК**.<br>
+5. Щелкните **ОК**.<br>
 6. После назначения ролей пользователи и группы отобразятся в списке.<br>
    ![Снимок экрана окна "Пользователи" компонента управления доступом на основе ролей в Azure AD Connect Health с выделенными новыми пользователями](./media/how-to-connect-health-operations/RBAC_user_list.png)
 
@@ -166,7 +166,7 @@ Azure AD Connect Health поддерживает управление досту
 
 [//]: # (Конец раздела RBAC)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Azure AD Connect Health](whatis-hybrid-identity-health.md)
 * [Установка агента Azure AD Connect Health](how-to-connect-health-agent-install.md)
 * [Использование Azure AD Connect Health с AD FS](how-to-connect-health-adfs.md)

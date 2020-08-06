@@ -12,12 +12,12 @@ ms.date: 06/26/2020
 ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: aaddev, seoapril2019, identityplatformtop40
-ms.openlocfilehash: 479222cc9b67775d359182740dc78865da8cee38
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: 06e1abc4f863674cc67c1a78a9f2f626565d296f
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87115933"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87828937"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Практическое руководство. Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала
 
@@ -159,7 +159,7 @@ $cert=New-SelfSignedCertificate -Subject "CN=DaemonConsoleCert" -CertStoreLocati
 
     ![Выберите отправить сертификат и выберите тот, который вы хотите добавить.](./media/howto-create-service-principal-portal/upload-cert.png)
 
-1. Выберите **Добавить**.
+1. Щелкните **Добавить**.
 
 После регистрации сертификата в приложении на портале регистрации приложений необходимо включить код клиентского приложения для использования сертификата.
 
@@ -187,5 +187,5 @@ $cert=New-SelfSignedCertificate -Subject "CN=DaemonConsoleCert" -CertStoreLocati
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [использовать Azure PowerShell для создания субъекта-службы](howto-authenticate-service-principal-powershell.md).
-* Дополнительные сведения о настройке политик безопасности см. в статье о [контроле доступа на основе ролей Azure](../../role-based-access-control/role-assignments-portal.md).  
+* Дополнительные сведения об указании политик безопасности см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md).  
 * Список доступных действий, которые можно разрешить или запретить пользователям, см. в разделе [Операции поставщиков ресурсов Azure Resource Manager](../../role-based-access-control/resource-provider-operations.md).

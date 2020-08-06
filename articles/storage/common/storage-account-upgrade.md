@@ -1,7 +1,7 @@
 ---
 title: Обновление до учетной записи хранения общего назначения версии 2
 titleSuffix: Azure Storage
-description: Сведения об обновлении до учетной записи хранения общего назначения версии 2.
+description: Обновите учетные записи хранения общего назначения версии 2 с помощью портал Azure, PowerShell или Azure CLI. Укажите уровень доступа для данных большого двоичного объекта.
 services: storage
 author: tamram
 ms.service: storage
@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 02/25/2019
 ms.author: tamram
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 8ba2478bbfb2a26951d682ab12cb5b98df73be97
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 029753ecb0afd0cdd02a2f4594a0708cbda06efc
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497976"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87828223"
 ---
 # <a name="upgrade-to-a-general-purpose-v2-storage-account"></a>Обновление до учетной записи хранения общего назначения версии 2
 
@@ -47,7 +47,7 @@ ms.locfileid: "87497976"
 ```powershell
 Set-AzStorageAccount -ResourceGroupName <resource-group> -AccountName <storage-account> -UpgradeToStorageV2 -AccessTier <Hot/Cool>
 ```
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Чтобы обновить учетную запись общего назначения версии 1 до версии 2 с помощью Azure CLI, сначала установите последнюю версию Azure CLI. Сведения об установке Azure CLI см. [здесь](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 

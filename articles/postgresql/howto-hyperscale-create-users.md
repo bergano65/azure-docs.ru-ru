@@ -7,17 +7,17 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 1/8/2019
-ms.openlocfilehash: 85366b8b3e3ba7d612373e6b754aa9805d00f8f5
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 8a1b38b9f673669adb0b5fcf67d9d560c24d5c2a
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86116970"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87825962"
 ---
 # <a name="create-users-in-azure-database-for-postgresql---hyperscale-citus"></a>Создание пользователей в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 
 > [!NOTE]
-> Термин "Пользователи" относится к пользователям в группе серверов с горизонтальным масштабированием (Цитус). Чтобы узнать больше о пользователях подписки Azure и их привилегиях, ознакомьтесь со [статьей управление доступом на основе ролей (RBAC) в Azure](../role-based-access-control/built-in-roles.md) или Узнайте, [как настроить роли](../role-based-access-control/custom-roles.md).
+> Термин "Пользователи" относится к пользователям в группе серверов с горизонтальным масштабированием (Цитус). Дополнительные сведения о пользователях подписки Azure и их привилегиях см. в [статье Управление доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/built-in-roles.md) или изучение [настройки ролей](../role-based-access-control/custom-roles.md).
 
 ## <a name="the-server-admin-account"></a>Учетная запись администратора сервера
 
@@ -50,7 +50,7 @@ ms.locfileid: "86116970"
 
    ![Страница «роли»](media/howto-hyperscale-create-users/1-role-page.png)
 
-2. Введите имя и пароль роли. Нажмите кнопку **Сохранить**.
+2. Введите имя и пароль роли. Щелкните **Сохранить**.
 
    ![Добавление роли](media/howto-hyperscale-create-users/2-add-user-fields.png)
 
@@ -88,5 +88,5 @@ GRANT SELECT ON ALL TABLES IN SCHEMA public TO db_user;
 Дополнительные сведения об управлении учетными записями пользователей баз данных см. в разделе Документация по продукту PostgreSQL:
 
 * [Роли и привилегии базы данных](https://www.postgresql.org/docs/current/static/user-manag.html)
-* [Синтаксис предоставления](https://www.postgresql.org/docs/current/static/sql-grant.html)
+* [Синтаксис GRANT](https://www.postgresql.org/docs/current/static/sql-grant.html)
 * [Права](https://www.postgresql.org/docs/current/static/ddl-priv.html)

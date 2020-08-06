@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.date: 07/09/2020
 ms.topic: how-to
 ms.author: cynthn
-ms.openlocfilehash: dcb5277773be1fc45a3d2b0901cf9fda177b7054
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: 7e99c9191e93562211f6294cf671f431a5db455d
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87512658"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87825571"
 ---
 # <a name="how-to-use-ssh-keys-with-windows-on-azure"></a>Как использовать ключи SSH с Windows в Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "87512658"
 
 Можно также использовать Bash в [Azure Cloud Shell](../../cloud-shell/overview.md) для подключения к виртуальной машине. Cloud Shell можно использовать в [веб-браузере](https://shell.azure.com/bash), [портал Azure](https://portal.azure.com)или в качестве терминала в Visual Studio Code с помощью [расширения учетной записи Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
 
-Вы также можете установить [подсистему Windows для Linux](https://docs.microsoft.com/windows/wsl/about) , чтобы подключиться к виртуальной машине по протоколу SSH и использовать другие собственные средства Linux в оболочке bash.
+Вы также можете установить [подсистему Windows для Linux](/windows/wsl/about) , чтобы подключиться к виртуальной машине по протоколу SSH и использовать другие собственные средства Linux в оболочке bash.
 
 ## <a name="create-an-ssh-key-pair"></a>Создание пары ключей SSH
 

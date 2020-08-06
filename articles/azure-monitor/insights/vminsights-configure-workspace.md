@@ -7,12 +7,12 @@ ms.custom: references_regions
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: 10c4f0ba4bfc88017304c228ca1afce4ba863118
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 40ff7bfe713f401a23dea0b3660be1b7728a1380
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87328456"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87828563"
 ---
 # <a name="configure-log-analytics-workspace-for-azure-monitor-for-vms"></a>Настройка рабочей области Log Analytics для Azure Monitor для виртуальных машин
 Azure Monitor для виртуальных машин собирает данные из одной или нескольких Log Analytics рабочих областей в Azure Monitor. Перед подключением агентов необходимо создать и настроить рабочую область. В этой статье описываются требования к рабочей области и ее настройка для Azure Monitor для виртуальных машин.
@@ -40,7 +40,7 @@ Azure Monitor для виртуальных машин собирает данн
 
 * [Портал Azure](../../azure-monitor/learn/quick-create-workspace.md)
 * [Azure CLI](../../azure-monitor/learn/quick-create-workspace-cli.md)
-* [PowerShell](../../azure-monitor/learn/quick-create-workspace-posh.md)
+* [PowerShell](../platform/powershell-workspace-configuration.md)
 * [Azure Resource Manager](../../azure-monitor/platform/template-workspace-configuration.md)
 
 ## <a name="supported-regions"></a>Поддерживаемые регионы
@@ -51,7 +51,7 @@ Azure Monitor для виртуальных машин поддерживает 
 - западная часть США
 - западная часть США 2
 - Центрально-южная часть США
-- East US
+- Восточная часть США
 - восточная часть США 2
 - Центральная часть США
 - Центрально-северная часть США

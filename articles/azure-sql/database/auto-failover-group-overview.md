@@ -12,12 +12,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 07/09/2020
-ms.openlocfilehash: 00b7f675e7dd8fb347399ee7740318e129f12746
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: d4398b2bf37ad5dcf60a931f5d4991a3ad00845a
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87504183"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87826540"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -135,7 +135,7 @@ ms.locfileid: "87504183"
   
 ## <a name="permissions"></a>Разрешения
 
-Управление разрешениями для группы отработки отказа осуществляется [с помощью управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md). Роль [участника SQL Server](../../role-based-access-control/built-in-roles.md#sql-server-contributor) имеет все необходимые разрешения для управления группами отработки отказа.
+Управление разрешениями для группы отработки отказа осуществляется [с помощью управления доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md). Роль [участника SQL Server](../../role-based-access-control/built-in-roles.md#sql-server-contributor) имеет все необходимые разрешения для управления группами отработки отказа.
 
 ### <a name="create-failover-group"></a>Создание группы отработки отказа
 
@@ -413,7 +413,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 | [Switch-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup) | Активирует отработку отказа группы отработки отказа на сервер-получатель |
 | [Add-AzSqlDatabaseToFailoverGroup](/powershell/module/az.sql/add-azsqldatabasetofailovergroup)|Добавляет одну или несколько баз данных в группу отработки отказа|
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 | Get-Help | Описание |
 | --- | --- |
@@ -451,7 +451,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 | [Remove-Азсклдатабасеинстанцефаиловерграуп](/powershell/module/az.sql/remove-azsqldatabaseinstancefailovergroup) | Удаляет группу отработки отказа.|
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 | Get-Help | Описание |
 | --- | --- |

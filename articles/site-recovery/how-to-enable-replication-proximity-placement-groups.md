@@ -5,12 +5,12 @@ author: Sharmistha-Rai
 manager: gaggupta
 ms.topic: how-to
 ms.date: 05/25/2020
-ms.openlocfilehash: bd7619f000d16a55e1cfb31cc3b9cfb3b6d33502
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 7f9c5afbeed0c772f76e013a37dd870ed2185be7
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87432608"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87827679"
 ---
 # <a name="replicate-azure-virtual-machines-running-in-proximity-placement-groups-to-another-region"></a>Репликация виртуальных машин Azure, выполняемых в группах размещения близкого взаимодействия, в другой регион
 
@@ -42,7 +42,7 @@ ms.locfileid: "87432608"
 ## <a name="set-up-site-recovery-for-virtual-machines-in-proximity-placement-group"></a>Настройка Site Recovery для виртуальных машин в группе размещения близкого взаимодействия
 
 > [!NOTE]
-> Убедитесь, что у вас есть уникальный идентификатор целевой группы размещения с учетом расположения. Если вы создаете новую группу размещения с учетом расположения, проверьте команду [здесь](https://docs.microsoft.com/azure/virtual-machines/windows/proximity-placement-groups#create-a-proximity-placement-group) и, если вы используете существующую группу размещения с учетом расположения, выполните команду [здесь](https://docs.microsoft.com/azure/virtual-machines/windows/proximity-placement-groups#list-proximity-placement-groups).
+> Убедитесь, что у вас есть уникальный идентификатор целевой группы размещения с учетом расположения. Если вы создаете новую группу размещения с учетом расположения, проверьте команду [здесь](../virtual-machines/windows/proximity-placement-groups.md#create-a-proximity-placement-group) и, если вы используете существующую группу размещения с учетом расположения, выполните команду [здесь](../virtual-machines/windows/proximity-placement-groups.md#list-proximity-placement-groups).
 
 ### <a name="azure-to-azure"></a>Из Azure в Azure
 
