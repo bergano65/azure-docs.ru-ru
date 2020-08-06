@@ -8,13 +8,13 @@ ms.service: virtual-machine-scale-sets
 ms.subservice: cli
 ms.date: 03/27/2018
 ms.reviewer: mimckitt
-ms.custom: mimckitt
-ms.openlocfilehash: 416b5c03686f1b008473dd843c71bbe1139c444c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: mimckitt, devx-track-azurecli
+ms.openlocfilehash: 0dc98ba242d3eb5fba79605dae9f8eadc56affd7
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87083588"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87504438"
 ---
 # <a name="quickstart-create-a-virtual-machine-scale-set-with-the-azure-cli"></a>Краткое руководство. Создание масштабируемого набора виртуальных машин с помощью Azure CLI
 Масштабируемый набор виртуальных машин позволяет развернуть набор виртуальных машин с поддержкой автомасштабирования и управлять этим набором. Вы можете вручную изменить число виртуальных машин в масштабируемом наборе или определить правила для автоматического масштабирования в зависимости от использования ЦП, объема памяти или сетевого трафика. После этого Azure Load Balancer будет распределять трафик между экземплярами виртуальных машин в масштабируемом наборе. При работе с этим кратким руководством вы создадите масштабируемый набор виртуальных машин и развернете пример приложения с помощью шаблона Azure CLI.
