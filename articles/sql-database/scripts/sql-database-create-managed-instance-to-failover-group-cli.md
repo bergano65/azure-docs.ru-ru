@@ -4,19 +4,19 @@ description: Пример скрипта Azure CLI для создания Уп�
 services: sql-database
 ms.service: sql-database
 ms.subservice: high-availability
-ms.custom: ''
+ms.custom: devx-track-azurecli
 ms.devlang: azurecli
 ms.topic: sample
 author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 07/16/2019
-ms.openlocfilehash: bf4e2b04c540ee5672bea6e097496ced5a0d622a
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: b29fcd33c8181ba61f57d7105d08e7e4956d80bc
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86528882"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87497262"
 ---
 # <a name="use-cli-to-create-an-azure-sql-managed-instance-to-a-failover-group"></a>Создание Управляемого экземпляра SQL Azure в группе отработки отказа с помощью CLI
 

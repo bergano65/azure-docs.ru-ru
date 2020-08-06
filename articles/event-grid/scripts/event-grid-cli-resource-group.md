@@ -4,12 +4,13 @@ description: В этой статье приведен пример сценар
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 07/08/2020
-ms.openlocfilehash: 33f377fc4101aaba34629d94b7bcb2bc9a53f0c3
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: f655ed3f2b6a3cef89c493137bd34732a60e414a
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86171284"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87494100"
 ---
 # <a name="subscribe-to-events-for-a-resource-group-with-azure-cli"></a>Создание подписки на события, связанные с группой ресурсов, с использованием Azure CLI
 
@@ -35,10 +36,10 @@ ms.locfileid: "86171284"
 
 | Get-Help | Примечания |
 |---|---|
-| [az eventgrid event-subscription create](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription#az-eventgrid-event-subscription-create) | создание подписки в службе "Сетка событий"; |
+| [az eventgrid event-subscription create](/cli/azure/eventgrid/event-subscription#az-eventgrid-event-subscription-create) | создание подписки в службе "Сетка событий"; |
 | [az eventgrid event-subscription create](/cli/azure/ext/eventgrid/eventgrid/event-subscription#ext-eventgrid-az-eventgrid-event-subscription-create) — версия расширения | создание подписки в службе "Сетка событий"; |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в разделе [Запрос к подпискам службы "Сетка событий Azure"](../query-event-subscriptions.md).
-* Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+* Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).

@@ -3,12 +3,13 @@ title: Пример скрипта Azure CLI для создания пула Li
 description: В этом скрипте показаны некоторые из доступных команд Azure CLI для создания пулов вычислительных узлов Linux в пакетной службе Azure и управления ими.
 ms.topic: sample
 ms.date: 01/29/2018
-ms.openlocfilehash: 21236ef2f314cb1306adc7346e620b80db540034
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 7aba6e64fdf39a069eb010ef032fcc5391fd47ee
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964067"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87494395"
 ---
 # <a name="cli-example-create-and-manage-a-linux-pool-in-azure-batch"></a>Пример использования CLI: создание пула Linux и управление им в пакетной службе Azure
 

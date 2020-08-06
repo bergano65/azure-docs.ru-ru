@@ -6,14 +6,14 @@ ms.author: raagyema
 ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: sample
-ms.custom: mvc
+ms.custom: mvc, devx-track-azurecli
 ms.date: 02/28/2018
-ms.openlocfilehash: d2b54d1173b9591de2482f4b3368d3dde8b8c766
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 097b7692c5088a0860b8778fe8f315a84cf6b147
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "71947798"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496565"
 ---
 # <a name="list-and-update-configurations-of-an-azure-database-for-postgresql-server-using-azure-cli"></a>Вывод и обновление конфигураций сервера базы данных Azure для PostgreSQL с помощью Azure CLI
 В этом примере сценария интерфейса командной строки выводятся все доступные параметры конфигурации и их допустимые значения для сервера базы данных Azure для PostgreSQL. Кроме того, он задает значение *log_retention_days*, отличное от значения по умолчанию.
@@ -44,5 +44,5 @@ ms.locfileid: "71947798"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
-- Попробуйте использовать другие скрипты на основе [примеров Azure CLI для базы данных Azure для PostgreSQL](../sample-scripts-azure-cli.md).
+- Дополнительные скрипты — [Примеры Azure CLI для базы данных Azure для PostgreSQL](../sample-scripts-azure-cli.md)
 - Дополнительные сведения о параметрах сервера см. в статье [Настройка параметров конфигурации сервера с помощью Azure CLI](../howto-configure-server-parameters-using-portal.md).

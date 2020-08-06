@@ -7,13 +7,13 @@ ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 3/18/2020
-ms.custom: mvc
-ms.openlocfilehash: 455d7a0c1b3826060ade1083ec6eea99e397574b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: f08f9065b2a7361294a2f6257c85be772d0f7119
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79534853"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496089"
 ---
 # <a name="tutorial-design-an-azure-database-for-mariadb-using-azure-cli"></a>Руководство по Проектирование Базы данных Azure для MariaDB с помощью Azure CLI
 

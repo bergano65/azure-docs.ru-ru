@@ -7,13 +7,13 @@ ms.date: 11/08/2019
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
-ms.custom: mvc
-ms.openlocfilehash: ea1cae1f5a30d4cd76df39fec43f3818178fc213
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 313dfe930dec5233f96b89fdebf978a41fdcdf80
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77484202"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87497670"
 ---
 # <a name="quickstart-set-up-the-iot-hub-device-provisioning-service-with-azure-cli"></a>Краткое руководство. Настройка службы подготовки устройств к добавлению в Центр Интернета вещей с помощью Azure CLI
 

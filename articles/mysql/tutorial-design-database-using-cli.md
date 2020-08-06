@@ -7,13 +7,13 @@ ms.service: mysql
 ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 12/02/2019
-ms.custom: mvc
-ms.openlocfilehash: 080e4b119048f2c204e6617405c7c053c7f24cea
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 6f79460f00ce52fd54d0cda34467d3df35185ba0
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80382840"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496803"
 ---
 # <a name="tutorial-design-an-azure-database-for-mysql-using-azure-cli"></a>Руководство по Разработка базы данных Azure для MySQL с помощью Azure CLI
 

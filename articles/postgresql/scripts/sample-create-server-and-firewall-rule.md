@@ -4,16 +4,16 @@ description: Здесь приведен пример скрипта Azure CLI, 
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
-ms.custom: mvc
+ms.custom: mvc, devx-track-azurecli
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 02/28/2018
-ms.openlocfilehash: 14bb46d8917aedb3ea5a625db2489c97a4fd0ba3
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 80d5135f036f7498223cf2bd7bf1e720eb71f89d
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "66122069"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496531"
 ---
 # <a name="create-an-azure-database-for-postgresql-server-and-configure-a-firewall-rule-using-the-azure-cli"></a>Создание сервера базы данных Azure для PostgreSQL и настройка правила брандмауэра с помощью Azure CLI
 Этот пример скрипта CLI создает сервер базы данных Azure для PostgreSQL и настраивает правило брандмауэра на уровне сервера. После успешного выполнения скрипта доступ к серверу PostgreSQL можно получить из всех служб Azure, а также по настроенному IP-адресу.
@@ -42,4 +42,4 @@ ms.locfileid: "66122069"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
-- Попробуйте использовать другие скрипты на основе [примеров Azure CLI для базы данных Azure для PostgreSQL](../sample-scripts-azure-cli.md).
+- Дополнительные скрипты — [Примеры Azure CLI для базы данных Azure для PostgreSQL](../sample-scripts-azure-cli.md)

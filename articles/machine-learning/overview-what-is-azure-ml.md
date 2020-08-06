@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
 ms.custom: tracking-python
-ms.openlocfilehash: c4969628bb80d63cafc9537ec511ac218ff87ca7
-ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
+ms.openlocfilehash: ceaca3b7d91bf27262f1326000796cd605b0c3c4
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84738300"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87494593"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -110,7 +110,7 @@ ms.locfileid: "84738300"
 + Целевые объекты вычислений, такие как __Служба Azure Kubernetes__, __Экземпляры контейнеров Azure__, __Azure Databricks__, __Azure Data Lake Analytics__ и __Azure HDInsight__. Дополнительные сведения о целевых объектах вычислений см. в [этой статье](concept-compute-target.md).
 + __Сетка событий Azure__. Дополнительную информацию см. в статье [Consume Azure Machine Learning events (Preview)](concept-event-grid-integration.md) (Использование событий Машинного обучения Azure (предварительная версия)).
 + __Azure Monitor__. Дополнительную информацию см. в статье [Monitoring Azure Machine Learning](monitor-azure-machine-learning.md) (Мониторинг Машинного обучения Azure).
-+ Хранилища данных, такие как __учетные записи хранения Azure__, __Azure Data Lake Storage__, __База данных SQL Azure__, __База данных Azure для PostgreSQL__, а также __Открытые наборы данных Azure__. Дополнительные сведения см. в статье [Access data in Azure storage services](how-to-access-data.md) (Доступ к данным в службах хранилища Azure) и разделе [Create datasets with Azure Open Datasets](how-to-create-register-datasets.md#create-datasets-with-azure-open-datasets) (Создание наборов данных с помощью Открытых наборов данных Azure).
++ Хранилища данных, такие как __учетные записи хранения Azure__, __Azure Data Lake Storage__, __База данных SQL Azure__, __База данных Azure для PostgreSQL__, а также __Открытые наборы данных Azure__. Дополнительные сведения см. в статье [Access data in Azure storage services](how-to-access-data.md) (Доступ к данным в службах хранилища Azure) и разделе [Create datasets with Azure Open Datasets](how-to-create-register-datasets.md) (Создание наборов данных с помощью Открытых наборов данных Azure).
 + __Виртуальные сети Azure__ Дополнительные сведения см. в статье [Secure Azure ML experimentation and inference jobs within an Azure Virtual Network](how-to-enable-virtual-network.md) (Защита заданий экспериментирования и вывода Машинного обучения Azure в виртуальной сети Azure).
 + __Azure Pipelines__. Дополнительные сведения см. в статье [Train and deploy machine learning models](/azure/devops/pipelines/targets/azure-machine-learning) (Обучение и развертывание моделей машинного обучения).
 + __Журналы репозитория Git__. Дополнительные сведения см. в статье [Git integration for Azure Machine Learning](concept-train-model-git-integration.md) (Интеграция с Git для Машинного обучения Azure).

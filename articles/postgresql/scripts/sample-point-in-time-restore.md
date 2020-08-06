@@ -6,14 +6,14 @@ ms.author: raagyema
 ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: sample
-ms.custom: mvc
+ms.custom: mvc, devx-track-azurecli
 ms.date: 02/28/2018
-ms.openlocfilehash: 1f772f710f0146048fcde04d884fbe3458722743
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 7b02b81e650eabea6f3f5f09347dc4aa2382671a
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "66154545"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496514"
 ---
 # <a name="restore-an-azure-database-for-postgresql-server-using-azure-cli"></a>Восстановление сервера базы данных Azure для PostgreSQL с помощью Azure CLI
 Этот пример сценария интерфейса командной строки позволяет восстановить отдельный сервер базы данных Azure для PostgreSQL до предыдущей точки во времени.
@@ -42,5 +42,5 @@ ms.locfileid: "66154545"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
-- Попробуйте использовать другие скрипты на основе [примеров Azure CLI для базы данных Azure для PostgreSQL](../sample-scripts-azure-cli.md).
+- Дополнительные скрипты — [Примеры Azure CLI для базы данных Azure для PostgreSQL](../sample-scripts-azure-cli.md)
 - [Как заархивировать и восстановить сервер в базе данных Azure для PostgreSQL с помощью портала Azure](../howto-restore-server-portal.md)

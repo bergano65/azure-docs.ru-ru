@@ -3,14 +3,14 @@ title: Создание функции в Azure, которая отвечает
 description: Узнайте, как создать функцию в командной строке, а затем опубликовать локальный проект в бессерверном размещении в Функциях Azure.
 ms.date: 03/30/2020
 ms.topic: quickstart
-ms.custom: tracking-python
+ms.custom: tracking-python, devx-track-azurecli
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: acfe4695b94fe9337296d70ef4a2864794730ec4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4aa1a20109bb086229fae96015c5f29c72df6f22
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87081735"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87497194"
 ---
 # <a name="quickstart-create-a-function-in-azure-that-responds-to-http-requests"></a>Краткое руководство. Создание функции в Azure, которая отвечает на HTTP-запросы
 

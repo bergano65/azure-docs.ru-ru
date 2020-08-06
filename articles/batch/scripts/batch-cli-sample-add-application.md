@@ -3,12 +3,13 @@ title: Пример скрипта Azure CLI для добавления при�
 description: В этом примере скрипта показано, как добавить приложение для использования в пуле или задаче пакетной службы Azure.
 ms.topic: sample
 ms.date: 01/29/2018
-ms.openlocfilehash: 305b6473b4fa149c378e01229b4ad3eea2dbaef4
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: fa4f273949e59c66292f5742501be9c2ad6a9fa4
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964096"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87494457"
 ---
 # <a name="cli-example-add-an-application-to-an-azure-batch-account"></a>Пример использования CLI: добавление приложения в учетную запись пакетной службы Azure
 

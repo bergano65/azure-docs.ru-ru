@@ -3,12 +3,13 @@ title: Краткое руководство. Отправка пользова�
 description: Краткое руководство по использованию Сетки событий Azure и Azure CLI для публикации пользовательских разделов и подписывания на события, связанные с этими разделами. События обрабатываются в веб-приложении.
 ms.date: 07/07/2020
 ms.topic: quickstart
-ms.openlocfilehash: ecf7e753df4f6fb3de6095ba295a07fd57b458cf
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 46341a9cd4f7880333cb2653691328f4969f1fb4
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86101738"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87497381"
 ---
 # <a name="quickstart-route-custom-events-to-web-endpoint-with-azure-cli-and-event-grid"></a>Краткое руководство. Перенаправление пользовательских событий в конечную веб-точку с помощью Azure CLI и службы "Сетка событий"
 

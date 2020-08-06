@@ -3,13 +3,13 @@ title: Создание приложения-функции, использую�
 description: Пример скрипта Azure CLI для создания функции Azure, которая подключается к Azure Cosmos DB.
 ms.topic: sample
 ms.date: 07/03/2018
-ms.custom: mvc
-ms.openlocfilehash: 5ee80283ed39789eabb702a48aa97f678a6409f9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 440767159ec1321d9b157f53408dbff8f9706eec
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75922711"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87498571"
 ---
 # <a name="create-an-azure-function-that-connects-to-an-azure-cosmos-db"></a>Создание функции Azure, которая подключается к Azure Cosmos DB
 

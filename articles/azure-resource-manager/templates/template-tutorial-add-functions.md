@@ -5,12 +5,13 @@ author: mumian
 ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: e4984b286bf031b66272919a487d09a90f972ce0
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: fe6185f0e7d6ee570c1491f3b21b6aebe4f090ae
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80410976"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87497568"
 ---
 # <a name="tutorial-add-template-functions-to-your-arm-template"></a>Руководство по добавлению функций шаблона в шаблон ARM
 

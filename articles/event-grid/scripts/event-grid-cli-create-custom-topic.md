@@ -4,12 +4,13 @@ description: В этой статье приведен пример скрипт
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 07/08/2020
-ms.openlocfilehash: 951008a2bf3919f69429ca15382334a9618b912f
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: d61dac0e76fc7b7006fa36f1cb96965ccee3d863
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86171318"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87494134"
 ---
 # <a name="create-event-grid-custom-topic-with-azure-cli"></a>Создание пользовательского раздела службы "Сетка событий" с помощью Azure CLI
 
@@ -29,10 +30,10 @@ ms.locfileid: "86171318"
 
 | Get-Help | Примечания |
 |---|---|
-| [az eventgrid topic create](https://docs.microsoft.com/cli/azure/eventgrid/topic#az-eventgrid-topic-create) | Создание пользовательского раздела службы "Сетка событий". |
+| [az eventgrid topic create](/cli/azure/eventgrid/topic#az-eventgrid-topic-create) | Создание пользовательского раздела службы "Сетка событий". |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в разделе [Запрос к подпискам службы "Сетка событий Azure"](../query-event-subscriptions.md).
-* Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+* Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).

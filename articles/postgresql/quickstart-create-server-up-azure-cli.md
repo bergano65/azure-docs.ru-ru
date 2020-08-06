@@ -7,12 +7,13 @@ ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 05/06/2019
-ms.openlocfilehash: 1dd20d94737df3e799876323d2aeb555dcb9a381
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 1a2b7ceea74091931c92d28f8fa47b9046b545fc
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82146806"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496582"
 ---
 # <a name="quickstart-use-an-azure-cli-command-az-postgres-up-preview-to-create-an-azure-database-for-postgresql---single-server"></a>Краткое руководство. Создание базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью команды Azure CLI az postgres up (предварительная версия)
 
