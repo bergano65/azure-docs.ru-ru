@@ -13,28 +13,28 @@ ms.topic: how-to
 ms.custom: ''
 ms.date: 07/24/2020
 ms.author: inhenkel
-ms.openlocfilehash: 763dd82c8263a5e180468f9fbd7f86526295a80d
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
-ms.translationtype: HT
+ms.openlocfilehash: 9d784e1697dfbcbfec509c1a51c9b832b533c97b
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87279293"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87830756"
 ---
 # <a name="how-to-use-azure-portal-to-invoke-direct-methods"></a>Как использовать портал Azure для вызова прямых методов
 
-Центр Интернета вещей позволяет вам вызывать [прямые методы](/azure/iot-hub/iot-hub-devguide-direct-methods#method-invocation-for-iot-edge-modules) на пограничных устройствах из облака. Модуль "Аналитика видеотрансляций в IoT Edge" (LVA) предоставляет несколько [прямых методов](/azure/media-services/live-video-analytics-edge/direct-methods), которые можно использовать для определения, развертывания и создания различных рабочих процессов для анализа видеотрансляций.
+Центр Интернета вещей позволяет вам вызывать [прямые методы](../../iot-hub/iot-hub-devguide-direct-methods.md#method-invocation-for-iot-edge-modules) на пограничных устройствах из облака. Модуль "Аналитика видеотрансляций в IoT Edge" (LVA) предоставляет несколько [прямых методов](./direct-methods.md), которые можно использовать для определения, развертывания и создания различных рабочих процессов для анализа видеотрансляций.
 
 Из этой статьи вы узнаете, как вызывать прямые методы в модуле "Аналитика видеотрансляций для IoT Edge" через портал Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* На пограничном устройстве выполняется модуль "Аналитика видеотрансляций в IoT Edge", запущенный с помощью одного из методов из статьи [Краткое руководство. Аналитика видеотрансляций в IoT Edge](/azure/media-services/live-video-analytics-edge/get-started-detect-motion-emit-events-quickstart) или через [портал](/azure/media-services/live-video-analytics-edge/deploy-iot-edge-device).
+* На пограничном устройстве выполняется модуль "Аналитика видеотрансляций в IoT Edge", запущенный с помощью одного из методов из статьи [Краткое руководство. Аналитика видеотрансляций в IoT Edge](./get-started-detect-motion-emit-events-quickstart.md) или через [портал](./deploy-iot-edge-device.md).
 
-* Вы изучили принципы работы с [Аналитикой видеотрансляций](/azure/media-services/live-video-analytics-edge/overview) и [концепцию графов мультимедиа](/azure/media-services/live-video-analytics-edge/media-graph-concept).
+* Вы изучили принципы работы с [Аналитикой видеотрансляций](./overview.md) и [концепцию графов мультимедиа](./media-graph-concept.md).
 
 ## <a name="invoking-direct-methods-via-azure-portal"></a>Вызов прямых методов через портал Azure
 
-Все [прямые методы](/azure/media-services/live-video-analytics-edge/direct-methods), предоставляемые модулем LVA, можно вызвать через портал Azure. Ниже приведены шаги для одного прямого метода. Другие методы можно вызвать, используя аналогичные шаги. Но помните, что для каждого прямого метода требуется текст в формате JSON.
+Все [прямые методы](./direct-methods.md), предоставляемые модулем LVA, можно вызвать через портал Azure. Ниже приведены шаги для одного прямого метода. Другие методы можно вызвать, используя аналогичные шаги. Но помните, что для каждого прямого метода требуется текст в формате JSON.
 
 Используйте вызов метода `GraphTopologyList` для получения списка всех топологий графов, которые в настоящее время развернуты в модуле "Аналитика видеотрансляций в IoT Edge". Вызовите этот прямой метод с помощью следующих шагов:
 
@@ -72,9 +72,9 @@ ms.locfileid: "87279293"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные прямые методы можно найти на странице [Прямые методы](/azure/media-services/live-video-analytics-edge/direct-methods).
+Дополнительные прямые методы можно найти на странице [прямые методы](./direct-methods.md) .
 
 > [!NOTE]
 > Экземпляр графа создает определенную топологию, поэтому перед созданием экземпляра графа убедитесь, что ваша топология правильна.
 
-[Краткое руководство. Обнаружение движения и события порождения](/azure/media-services/live-video-analytics-edge/get-started-detect-motion-emit-events-quickstart) содержит сведения о точной последовательности вызова прямых методов.
+[Краткое руководство. Обнаружение движения и события порождения](./get-started-detect-motion-emit-events-quickstart.md) содержит сведения о точной последовательности вызова прямых методов.

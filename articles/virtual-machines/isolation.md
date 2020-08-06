@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/18/2019
 ms.author: ayshak
-ms.openlocfilehash: 7732f83dfd44cbf686e2d076c665c980962b19d5
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 58b3f9c3655a2e15842f7fa28ad3e6921395beba
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87292354"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87831453"
 ---
 # <a name="virtual-machine-isolation-in-azure"></a>Изоляция виртуальных машин в Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "87292354"
 Ответ **. Мы**будем предоставлять напоминания за 12 месяцев до официального использования изолированного размера.
 
 ### <a name="q-im-an-azure-service-fabric-customer-relying-on-the-silver-or-gold-durability-tiers-does-this-change-impact-me"></a>Вопрос. я использую Azure Service Fabric, который полагается на уровни устойчивости "серебро" или "Gold". Влияет ли это изменение на меня?
-Ответ **. нет**. Гарантии, предоставляемые [уровнями устойчивости](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-durability-characteristics-of-the-cluster) Service Fabric, продолжат функционировать даже после этого изменения. Если требуется физическая изоляция оборудования по другим причинам, может потребоваться выполнить одно из описанных выше действий. 
+Ответ **. нет**. Гарантии, предоставляемые [уровнями устойчивости](../service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster) Service Fabric, продолжат функционировать даже после этого изменения. Если требуется физическая изоляция оборудования по другим причинам, может потребоваться выполнить одно из описанных выше действий. 
  
 ### <a name="q-what-are-the-milestones-for-d15_v2-or-ds15_v2-isolation-retirement"></a>Вопрос. Каковы вехи для D15_v2 или DS15_v2 выбытие изоляции? 
 **A**: 
@@ -72,6 +72,6 @@ ms.locfileid: "87292354"
 | 15 мая 2021 г. | Снятие DS15_v2 с учета D/DS15i_v2 (все клиенты, кроме тех, которые приобрели 3-летний набор прав () до 18 ноября 2019 г.)| 
 | 17 ноября 2022 г. | Снятие с учета D/DS15i_v2 при выполнении 3-летний RIs (для клиентов, которые приобрели 3-летний набор данных (DS15_v2) до 18 ноября 2019) |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Клиенты также могут разделить ресурсы этих изолированных виртуальных машин благодаря [поддержке вложенных виртуальных машин в Azure](https://azure.microsoft.com/blog/nested-virtualization-in-azure/).

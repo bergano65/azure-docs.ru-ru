@@ -9,12 +9,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 07/17/2017
 ms.author: cynthn
-ms.openlocfilehash: 054838d9e2c6dcc0bb021fdbf818db95922697f0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: cc98a0703cf408194c4c3740938399b57a36d468
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87100503"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87835618"
 ---
 # <a name="virtual-networks-and-virtual-machines-in-azure"></a>Виртуальные сети и виртуальные машины в Azure 
 
@@ -118,7 +118,7 @@ ms.locfileid: "87100503"
 
 ## <a name="load-balancers"></a>Балансировщики нагрузки
 
-[Azure Load Balancer](../load-balancer/load-balancer-overview.md) обеспечивает высокую доступность и производительность сети для приложений. Балансировщик нагрузки можно настроить для [балансировки входящего интернет-трафика](../load-balancer/load-balancer-internet-overview.md) виртуальных машин или для [балансировки трафика между виртуальными машинами в виртуальной сети](../load-balancer/load-balancer-internal-overview.md). Кроме того, балансировщик нагрузки может выполнять балансировку трафика между локальными компьютерами и виртуальными машинами в распределенных сетях или перенаправлять внешний трафик на определенную виртуальную машину.
+[Azure Load Balancer](../load-balancer/load-balancer-overview.md) обеспечивает высокую доступность и производительность сети для приложений. Балансировщик нагрузки можно настроить для [балансировки входящего интернет-трафика](../load-balancer/components.md#frontend-ip-configurations) виртуальных машин или для [балансировки трафика между виртуальными машинами в виртуальной сети](../load-balancer/components.md#frontend-ip-configurations). Кроме того, балансировщик нагрузки может выполнять балансировку трафика между локальными компьютерами и виртуальными машинами в распределенных сетях или перенаправлять внешний трафик на определенную виртуальную машину.
 
 Балансировщик нагрузки сопоставляет входящий и исходящий трафик между общедоступным IP-адресом и портом в балансировщике нагрузки и частным IP-адресом и портом виртуальной машины.
 
@@ -129,15 +129,15 @@ ms.locfileid: "87100503"
 - **[Перенаправление портов.](../load-balancer/tutorial-load-balancer-port-forwarding-portal.md)** Эти правила определяют, как входящий трафик проходит через внешний IP-адрес и передается внутреннему IP-адресу с использованием правил NAT для входящего трафика.
 - **Правила балансировщика нагрузки.** Сопоставляют указанное сочетание внешнего IP-адреса и порта с набором внутренних IP-адресов и портов. Отдельный балансировщик нагрузки может применять несколько правил балансировки нагрузки. Каждое правило представляет собой сочетание интерфейсных IP-адреса и порта и внутренних IP-адреса и порта, связанных с виртуальными машинами.
 - **[Пробы.](../load-balancer/load-balancer-custom-probe-overview.md)** Пробы позволяют отслеживать работоспособность виртуальных машин. Если проба не отвечает, балансировщик нагрузки прекращает отправлять новые подключения неработоспособным виртуальным машинам. Это не влияет на имеющиеся подключения, а новые подключения отправляются на работоспособные виртуальные машины.
-- **[Правило для исходящего трафика.](../load-balancer/load-balancer-outbound-rules-overview.md)** Позволяет настроить NAT для отображения в интерфейсе всех виртуальных машин или экземпляров, которые входят в серверный пул Load Balancer (цен. категория "Стандартный").
+- **[Правило для исходящего трафика.](../load-balancer/load-balancer-outbound-connections.md#outboundrules)** Позволяет настроить NAT для отображения в интерфейсе всех виртуальных машин или экземпляров, которые входят в серверный пул Load Balancer (цен. категория "Стандартный").
 
 В таблице ниже перечислены методы создания балансировщика нагрузки с выходом в Интернет.
 
 | Метод | Описание |
 | ------ | ----------- |
 | Портал Azure |  Вы можете [настроить балансировку интернет-трафика на виртуальных машинах с помощью портала Azure](../load-balancer/tutorial-load-balancer-standard-manage-portal.md). |
-| [Azure PowerShell](/azure/load-balancer/load-balancer-get-started-ilb-arm-ps) | Используйте командлет [New-AzLoadBalancerFrontendIpConfig](/powershell/module/az.network/new-azloadbalancerfrontendipconfig) с параметром **-PublicIpAddress**, чтобы указать идентификатор созданного ранее общедоступного IP-адреса. Используйте командлет [New-AzLoadBalancerBackendAddressPoolConfig](/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig), чтобы создать конфигурацию пула внутренних адресов. Используйте командлет [New-AzLoadBalancerInboundNatRuleConfig](/powershell/module/az.network/new-azloadbalancerinboundnatruleconfig), чтобы создать правила преобразования сетевых адресов для входящих подключений, связанные с созданной конфигурацией внешних IP-адресов. Используйте командлет [New-AzLoadBalancerProbeConfig](/powershell/module/az.network/new-azloadbalancerprobeconfig), чтобы создать необходимые пробы. Используйте командлет [New-AzLoadBalancerRuleConfig](/powershell/module/az.network/new-azloadbalancerruleconfig), чтобы создать конфигурацию балансировщика нагрузки. Используйте командлет [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer), чтобы создать балансировщик нагрузки.|
-| [Azure CLI](../load-balancer/load-balancer-get-started-internet-arm-cli.md) | Используйте команду [az network lb create](/cli/azure/network/lb), чтобы создать начальную конфигурацию балансировщика нагрузки. Команда [az network lb frontend-ip create](/cli/azure/network/lb/frontend-ip) позволяет добавить созданный ранее общедоступный IP-адрес, Команда [az network lb address-pool create](/cli/azure/network/lb/address-pool) позволяет добавить конфигурацию пула внутренних адресов, команда [az network lb inbound-nat-rule create](/cli/azure/network/lb/inbound-nat-rule) — правила преобразования сетевых адресов, команда [az network lb rule create](/cli/azure/network/lb/rule) — правила балансировщика нагрузки, а команда [az network lb probe create](/cli/azure/network/lb/probe) — пробы. |
+| [Azure PowerShell](../load-balancer/load-balancer-get-started-ilb-arm-ps.md) | Используйте командлет [New-AzLoadBalancerFrontendIpConfig](/powershell/module/az.network/new-azloadbalancerfrontendipconfig) с параметром **-PublicIpAddress**, чтобы указать идентификатор созданного ранее общедоступного IP-адреса. Используйте командлет [New-AzLoadBalancerBackendAddressPoolConfig](/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig), чтобы создать конфигурацию пула внутренних адресов. Используйте командлет [New-AzLoadBalancerInboundNatRuleConfig](/powershell/module/az.network/new-azloadbalancerinboundnatruleconfig), чтобы создать правила преобразования сетевых адресов для входящих подключений, связанные с созданной конфигурацией внешних IP-адресов. Используйте командлет [New-AzLoadBalancerProbeConfig](/powershell/module/az.network/new-azloadbalancerprobeconfig), чтобы создать необходимые пробы. Используйте командлет [New-AzLoadBalancerRuleConfig](/powershell/module/az.network/new-azloadbalancerruleconfig), чтобы создать конфигурацию балансировщика нагрузки. Используйте командлет [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer), чтобы создать балансировщик нагрузки.|
+| [Azure CLI](../load-balancer/quickstart-load-balancer-standard-public-cli.md) | Используйте команду [az network lb create](/cli/azure/network/lb), чтобы создать начальную конфигурацию балансировщика нагрузки. Команда [az network lb frontend-ip create](/cli/azure/network/lb/frontend-ip) позволяет добавить созданный ранее общедоступный IP-адрес, Команда [az network lb address-pool create](/cli/azure/network/lb/address-pool) позволяет добавить конфигурацию пула внутренних адресов, команда [az network lb inbound-nat-rule create](/cli/azure/network/lb/inbound-nat-rule) — правила преобразования сетевых адресов, команда [az network lb rule create](/cli/azure/network/lb/rule) — правила балансировщика нагрузки, а команда [az network lb probe create](/cli/azure/network/lb/probe) — пробы. |
 | [Шаблон](../load-balancer/quickstart-load-balancer-standard-public-template.md) | Используйте шаблон [2 VMs in a Load Balancer and configure NAT rules on the LB](https://github.com/Azure/azure-quickstart-templates/tree/master/101-load-balancer-standard-create) (2 виртуальные машины в балансировщике нагрузки и настройка правил преобразования сетевых адресов для балансировки нагрузки) в качестве руководства по развертыванию балансировщика нагрузки с помощью шаблона. |
     
 В таблице ниже перечислены методы создания внутреннего балансировщика нагрузки.
@@ -151,7 +151,7 @@ ms.locfileid: "87100503"
 
 ### <a name="virtual-machine-scale-sets"></a>Масштабируемые наборы виртуальных машин
 
-Дополнительные сведения о подсистеме балансировки нагрузки и масштабируемых наборах виртуальных машин см. в статье [Сеть для масштабируемых наборов виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-networking).
+Дополнительные сведения о подсистеме балансировки нагрузки и масштабируемых наборах виртуальных машин см. в статье [Сеть для масштабируемых наборов виртуальных машин Azure](../virtual-machine-scale-sets/virtual-machine-scale-sets-networking.md).
 
 ## <a name="vms"></a>Виртуальные машины
 
@@ -179,4 +179,3 @@ ms.locfileid: "87100503"
 - Дополнительные сведения о [настройке подключения между виртуальными сетями](../vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md).
 - Дополнительные сведения об [устранении проблем с маршрутами](../virtual-network/diagnose-network-routing-problem.md).
 - Дополнительные сведения о [пропускной способности сетевых ресурсов виртуальной машины](../virtual-network/virtual-machine-network-throughput.md).
-

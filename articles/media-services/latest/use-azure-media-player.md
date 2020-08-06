@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 07/17/2019
 ms.author: juliako
-ms.openlocfilehash: bfc22862bc40679644d7dc9eddedf45fbacccab1
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: ca2da842d9a2d529cf5ea01211efaff2047a9e9a
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87292894"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836026"
 ---
 # <a name="playback-with-azure-media-player"></a>Воспроизведение с помощью Проигрыватель мультимедиа Azure
 
@@ -47,7 +47,7 @@ ms.locfileid: "87292894"
 
 ## <a name="set-up-azure-media-player-in-your-html"></a>Настройка Проигрывателя мультимедиа Azure в HTML
 
-Проигрыватель мультимедиа Azure можно легко настроить. Для базового воспроизведения мультимедийного содержимого из учетной записи Служб мультимедиа потребуется всего несколько минут. Дополнительные сведения о настройке Проигрывателя мультимедиа Azure см. в [документации по Проигрывателю мультимедиа Azure](https://docs.microsoft.com/azure/media-services/azure-media-player/azure-media-player-overview).
+Проигрыватель мультимедиа Azure можно легко настроить. Для базового воспроизведения мультимедийного содержимого из учетной записи Служб мультимедиа потребуется всего несколько минут. Дополнительные сведения о настройке Проигрывателя мультимедиа Azure см. в [документации по Проигрывателю мультимедиа Azure](../azure-media-player/azure-media-player-overview.md).
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 
@@ -55,5 +55,5 @@ ms.locfileid: "87292894"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Документация по Проигрыватель мультимедиа Azure](https://docs.microsoft.com/azure/media-services/azure-media-player/azure-media-player-overview)
+* [Документация по Проигрыватель мультимедиа Azure](../azure-media-player/azure-media-player-overview.md)
 * [Примеры Проигрыватель мультимедиа Azure](https://github.com/Azure-Samples/azure-media-player-samples)

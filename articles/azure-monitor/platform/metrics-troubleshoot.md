@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: b2f7e45c7f6092566314e6e4867bc0345683e4eb
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 4800234b55507b7c8d8a16d16ce4d2fef3365baa
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318391"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87829600"
 ---
 # <a name="troubleshooting-metrics-charts"></a>Устранение неполадок с диаграммами метрик
 
@@ -42,7 +42,7 @@ ms.locfileid: "87318391"
 
 ### <a name="you-dont-have-sufficient-access-rights-to-your-resource"></a>У вас недостаточно прав для доступа к ресурсу
 
-В Azure для доступа к метрикам используется [управление доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md). Вы должны иметь роль [читателя данных мониторинга](../../role-based-access-control/built-in-roles.md#monitoring-reader), [участника мониторинга](../../role-based-access-control/built-in-roles.md#monitoring-contributor) или [участника](../../role-based-access-control/built-in-roles.md#contributor) для просмотра метрик по любому ресурсу.
+В Azure доступ к метрикам контролируется с помощью [управления доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md). Вы должны иметь роль [читателя данных мониторинга](../../role-based-access-control/built-in-roles.md#monitoring-reader), [участника мониторинга](../../role-based-access-control/built-in-roles.md#monitoring-contributor) или [участника](../../role-based-access-control/built-in-roles.md#contributor) для просмотра метрик по любому ресурсу.
 
 **Решение:** Убедитесь, что у вас есть необходимые разрешения для ресурса, с которого вы изучаете метрики.
 
@@ -112,10 +112,9 @@ ms.locfileid: "87318391"
 
 1. С помощью [обозревателя службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) убедитесь, что метрики передаются в учетную запись хранения. Если метрики не собираются, выполните инструкции из [руководства по устранению неполадок для расширения диагностики Azure](diagnostics-extension-troubleshooting.md#metric-data-doesnt-appear-in-the-azure-portal).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о начале работы с обозревателем метрик](metrics-getting-started.md)
 * [Дополнительные сведения о дополнительных возможностях обозревателя метрик](metrics-charts.md)
 * [Список доступных метрик для служб Azure](metrics-supported.md)
 * [Примеры настроенных диаграмм](metric-chart-samples.md)
-

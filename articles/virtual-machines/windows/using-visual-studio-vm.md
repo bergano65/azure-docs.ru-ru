@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: cathys
 keywords: visualstudio
-ms.openlocfilehash: f1da7dabfb562ea32697745460d92ed27089878c
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 5ec8e0f6448e725998628e41b917942966d3ef2a
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86525540"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836162"
 ---
 # <a name="visual-studio-images-on-azure"></a>Образы Visual Studio в Azure
 Запуск Visual Studio на предварительно настроенной виртуальной машине Azure — простой и быстрый способ получить "с нуля" готовую к работе среду разработки. Образы системы с различными конфигурациями Visual Studio доступны в [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/compute?filters=virtual-machine-images%3Bmicrosoft%3Bwindows&page=1&subcategories=application-infrastructure).
@@ -77,7 +77,7 @@ Azure предлагает широкий диапазон размеров ви
    * Standard_D2S_v2
    * Standard_D3_v2
     
-Дополнительные сведения о последних размерах виртуальных машин см. в статье [Размеры виртуальных машин Windows в Azure](./sizes.md).
+Дополнительные сведения о последних размерах виртуальных машин см. в статье [Размеры виртуальных машин Windows в Azure](../sizes.md).
 
 Благодаря Azure первый выбранный вариант всегда можно заново сбалансировать, изменив размер виртуальной машины. Можно подготовить новую виртуальную машину, размер которой лучше подходит для ваших задач, или изменить размер существующей виртуальной машины, выбрав другое базовое оборудование. Дополнительные сведения см. в статье [Изменение размера виртуальной машины Windows](./resize-vm.md).
 

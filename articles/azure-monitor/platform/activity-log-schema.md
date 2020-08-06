@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 06/09/2020
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: e50d6b6fe88cbad42d238ee2779abfe10e752f0e
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 656161849ce8d48fb15cfac4024ec5b77adb5fee
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327282"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87829515"
 ---
 # <a name="azure-activity-log-event-schema"></a>Схема событий журнала действий Azure
 [Журнал действий Azure](platform-logs-overview.md) позволяет получить представление о любых событиях уровня подписки, произошедших в Azure. В этой статье описываются категории журналов действий и схема для каждой из них. 
@@ -796,7 +796,7 @@ ms.locfileid: "87327282"
 При потоковой передаче журнала действий Azure в учетную запись хранения или концентратор событий данные следуют за [схемой журнала ресурсов](./resource-logs-schema.md). В таблице ниже приведено сопоставление свойств из указанных выше схем с схемой журналов ресурсов.
 
 > [!IMPORTANT]
-> Формат данных журнала действий, записываемых в учетную запись хранения, изменился на строки JSON в 2018 ноября. 1. Дополнительные сведения об этом изменении формата см. в разделе [Подготовка к изменению формата для Azure Monitor журналов ресурсов, архивных в учетной записи хранения](/azure/azure-monitor/platform/resource-logs-blob-format) .
+> Формат данных журнала действий, записываемых в учетную запись хранения, изменился на строки JSON в 2018 ноября. 1. Дополнительные сведения об этом изменении формата см. в разделе [Подготовка к изменению формата для Azure Monitor журналов ресурсов, архивных в учетной записи хранения](./resource-logs-blob-format.md) .
 
 
 | Свойство схемы журналов ресурсов | Свойство схемы журнала действий REST API | Примечания |
@@ -812,7 +812,7 @@ ms.locfileid: "87327282"
 | callerIpAddress | httpRequest.clientIpAddress |  |
 | correlationId | correlationId |  |
 | удостоверение | свойства удостоверений и авторизации |  |
-| Уровень | Уровень |  |
+| Level | Level |  |
 | location | Н/Д | Расположение, где было обработано событие. *Это не расположение ресурса, а, если событие было обработано. Это свойство будет удалено в будущем обновлении.* |
 | Свойства | properties.eventProperties |  |
 | properties.eventCategory | категория | Если свойство properties.eventCategory не задано, параметр category равен "Административная" |
@@ -885,4 +885,3 @@ ms.locfileid: "87327282"
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Дополнительные сведения о журнале действий](platform-logs-overview.md)
 * [Создание параметра диагностики для отправки журнала действий в Log Analytics рабочую область, службу хранилища Azure или концентраторы событий](diagnostic-settings.md)
-

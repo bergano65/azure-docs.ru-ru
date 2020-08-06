@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 07/08/2016
-ms.openlocfilehash: 38861ed941d49317e69bfab9afd17638a790bf7b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: da583a1c884ddcae0815849c43dc0eb335005e53
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87072426"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87832745"
 ---
 # <a name="create-maps-that-transform-xml-between-formats-in-azure-logic-apps-with-enterprise-integration-pack"></a>Создание преобразований или сопоставлений, которые изменяют форматы данных XML в Azure Logic Apps с Пакетом интеграции Enterprise
 
@@ -30,13 +30,13 @@ ms.locfileid: "87072426"
 
 **Ниже приведены указания по использованию преобразования**.
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные условия
 
 * Создание учетной записи интеграции и добавление карты в нее  
 
 Теперь, когда предварительные требования выполнены, пора создать приложение логики.  
 
-1. Создайте приложение логики и [свяжите его с учетной записью интеграции](../logic-apps/logic-apps-enterprise-integration-accounts.md "Сведения о связывании учетной записи интеграции с приложением логики") , содержащей карту.
+1. Создайте приложение логики и [свяжите его с учетной записью интеграции](./logic-apps-enterprise-integration-create-integration-account.md "Сведения о связывании учетной записи интеграции с приложением логики") , содержащей карту.
 2. Добавление триггера **запроса** в приложение логики  
    ![Снимок экрана: раскрывающийся список "отображать управляемые API Майкрософт" с выбранным триггером запроса. Раскрывающийся список находится в приложении логики, созданном с помощью пакета SDK для интеграции Visual Studio Enterprise.](./media/logic-apps-enterprise-integration-transforms/transform-1.png)    
 3. Добавьте действие **Преобразовать XML**, щелкнув **Добавить действие** .  
@@ -136,4 +136,3 @@ ms.locfileid: "87072426"
 ## <a name="learn-more"></a>Дополнительные сведения
 * [Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise")  
 * [Дополнительные сведения о сопоставлениях](../logic-apps/logic-apps-enterprise-integration-maps.md "Сведения о картах интеграции Enterprise")  
-

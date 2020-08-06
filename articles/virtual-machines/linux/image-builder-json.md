@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: virtual-machines-linux
 ms.subservice: imaging
 ms.reviewer: cynthn
-ms.openlocfilehash: 132e547fe2512676e4d8082744489f4719dcc0bf
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 2f1db4e6c45602fb7fde84079e8ef78179a4ec6b
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543611"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87830348"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительный просмотр: Создание шаблона Конструктора образов виртуальных машин Azure 
 
@@ -116,7 +116,7 @@ ms.locfileid: "87543611"
     "dependsOn": [],
 ```
 
-Дополнительные сведения см. в разделе [Определение зависимостей ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-define-dependencies#dependson).
+Дополнительные сведения см. в разделе [Определение зависимостей ресурсов](../../azure-resource-manager/templates/define-resource-dependency.md#dependson).
 
 ## <a name="identity"></a>Идентификация
 
@@ -137,8 +137,8 @@ ms.locfileid: "87543611"
 * Поддерживает только одно удостоверение
 * Не поддерживает пользовательские доменные имена
 
-Дополнительные сведения см. в разделе [Что такое управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
-Дополнительные сведения о развертывании этого компонента см. в разделе [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLI](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm#user-assigned-managed-identity).
+Дополнительные сведения см. в разделе [Что такое управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
+Дополнительные сведения о развертывании этого компонента см. в разделе [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLI](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#user-assigned-managed-identity).
 
 ## <a name="properties-source"></a>Свойства: source
 
@@ -151,10 +151,10 @@ ms.locfileid: "87543611"
 
 
 > [!NOTE]
-> При использовании существующих пользовательских образов Windows можно выполнить команду Sysprep до 8 раз в одном образе Windows. Дополнительные сведения см. в документации по [Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation#limits-on-how-many-times-you-can-run-sysprep) .
+> При использовании существующих пользовательских образов Windows можно выполнить команду Sysprep до 8 раз в одном образе Windows. Дополнительные сведения см. в документации по [Sysprep](/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation#limits-on-how-many-times-you-can-run-sysprep) .
 
 ### <a name="platformimage-source"></a>Источник PlatformImage 
-Конструктор образов Azure поддерживает образы Windows Server, клиента Windows и Linux Azure Marketplace. Полный список см. [здесь](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-overview#os-support). 
+Конструктор образов Azure поддерживает образы Windows Server, клиента Windows и Linux Azure Marketplace. Полный список см. [здесь](../windows/image-builder-overview.md#os-support). 
 
 ```json
         "source": {
@@ -373,7 +373,7 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
 - **validExitCodes** — необязательные допустимые коды, которые можно возвращать из скрипта или встроенной команды. Это позволит избежать возврата ошибки скриптом или встроенной командой.
 - **runElevated** — необязательное логическое значение для поддержки выполнения команд и скриптов с повышенными привилегиями.
 - **sha256Checksum** — значение контрольной суммы sha256 файла; вы формируете ее локально, а Конструктор образов затем проверяет ее.
-    * Для формирования sha256Checksum используйте командлет PowerShell в Windows [Get-Hash](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6)
+    * Для формирования sha256Checksum используйте командлет PowerShell в Windows [Get-Hash](/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6)
 
 
 ### <a name="file-customizer"></a>Настройщик File
@@ -567,7 +567,7 @@ az resource show \
 - Определения образов — концептуальное группирование образов. 
 - Версии образов — это тип образа, используемый для развертывания виртуальной машины или масштабируемого набора. Версии образов можно реплицировать в другие регионы, где требуется развернуть виртуальные машины.
  
-Прежде чем можно будет распространять коллекцию образов, необходимо создать коллекцию и определения образов (см. раздел [общие образы](shared-images.md)). 
+Прежде чем можно будет распространять коллекцию образов, необходимо создать коллекцию и определения образов (см. раздел [общие образы](../shared-images-cli.md)). 
 
 ```json
 {

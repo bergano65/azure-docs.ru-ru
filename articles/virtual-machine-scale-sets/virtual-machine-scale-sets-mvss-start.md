@@ -9,12 +9,12 @@ ms.subservice: template
 ms.date: 04/26/2019
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 6f47e07dcffd977121b4142924a77bdb93de3fc3
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 55c826b4baf38732684aaa0465aeaab6a45564db
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86503053"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87831504"
 ---
 # <a name="learn-about-virtual-machine-scale-set-templates"></a>Подробнее о шаблонах масштабируемых наборов виртуальных машин
 [Шаблоны Azure Resource Manager](../azure-resource-manager/templates/overview.md#template-deployment-process) прекрасно подходят для развертывания группы связанных ресурсов. В этой серии руководств показано, как создать шаблон базового масштабируемого набора и как изменить этот шаблон в соответствии с различными сценариями. Все примеры взяты из этого [репозитория GitHub](https://github.com/gatneil/mvss).
@@ -115,7 +115,7 @@ ms.locfileid: "86503053"
 ## <a name="specify-scale-set-properties"></a>Определение свойств масштабируемого набора
 Масштабируемый набор имеет множество свойств, позволяющих настроить входящие в этот набор виртуальные машины. Полный список этих свойств см. в [справочнике по шаблонам](/azure/templates/microsoft.compute/virtualmachinescalesets). Лишь несколько наиболее распространенных свойств определены в этом руководстве.
 ### <a name="supply-vm-size-and-capacity"></a>Определение размера и емкости виртуальных машин
-Для масштабируемого набора следует указать размер виртуальной машины, которую следует создать (имя SKU), и число создаваемых виртуальных машин (емкость SKU). Сведения о доступных размерах (именах SKU) для виртуальных машин см. в [документации по размерам виртуальных машин](../virtual-machines/windows/sizes.md).
+Для масштабируемого набора следует указать размер виртуальной машины, которую следует создать (имя SKU), и число создаваемых виртуальных машин (емкость SKU). Сведения о доступных размерах (именах SKU) для виртуальных машин см. в [документации по размерам виртуальных машин](../virtual-machines/sizes.md).
 
 ```json
        "sku": {

@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 04/06/2020
-ms.openlocfilehash: 8396ffa958e41e12e9258766483310baef0cabbe
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 9600f1cae61b59af5d026eb74f504658395a11ae
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421439"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87835890"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-network-connectivity-issues"></a>Устранение неполадок с сетевым подключением Azure к виртуальной машине Azure
 
@@ -18,12 +18,12 @@ ms.locfileid: "87421439"
 
 Чтобы реплика Site Recovery заработала, от виртуальной машины требуется исходящее подключение для конкретного URL-адреса или IP-диапазонов. Если виртуальная машина находится за брандмауэром или использует правила группы безопасности сети (NSG) для управления исходящими подключениями, могут возникнуть следующие проблемы.
 
-| **Имя**                  | **Коммерческое**                               | **Государственные организации**                                 | **Описание** |
+| **Имя**                  | **Коммерческое**                               | **Государственный сектор**                                 | **Описание** |
 | ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
 | Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Это необходимо, чтобы данные можно было записать в учетную запись хранения кэша в исходном регионе из виртуальной машины. Если вы знакомы со всеми учетными записями хранения кэша для виртуальных машин, вы можете использовать список разрешений для конкретных URL-адресов учетных записей хранения. Например, `cache1.blob.core.windows.net` и `cache2.blob.core.windows.net` вместо `*.blob.core.windows.net` . |
 | Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Требуется для авторизации и проверки подлинности URL-адресов службы Site Recovery. |
 | Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Требуется для обмена данными между службой Site Recovery и виртуальной машиной. Можно использовать соответствующий _IP-адрес Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
-| Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Необходимые для записи данные наблюдения и диагностики Site Recovery из виртуальной машины. Можно использовать соответствующий _IP-адрес мониторинга Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
+| Служебная шина Azure               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Необходимые для записи данные наблюдения и диагностики Site Recovery из виртуальной машины. Можно использовать соответствующий _IP-адрес мониторинга Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
 
 ## <a name="outbound-connectivity-for-site-recovery-urls-or-ip-ranges-error-code-151037-or-151072"></a>Исходящие подключения для URL-адресов Site Recovery или IP-диапазонов (код ошибки 151037 или 151072)
 
@@ -51,7 +51,7 @@ ms.locfileid: "87421439"
 ### <a name="issue-2-site-recovery-configuration-failed-151196"></a>Проблема 2. Сбой при выполнении настройки Site Recovery (151196)
 
 > [!NOTE]
-> Если виртуальные машины находятся за **стандартным** внутренним подсистемой балансировки нагрузки, по умолчанию он не будет иметь доступ к IP-адресам Office 365, таким как `login.microsoftonline.com` . Либо измените его на **базовый** тип внутренней подсистемы балансировки нагрузки, либо создайте исходящий доступ, как упоминалось в статье [Настройка балансировки нагрузки и правил исходящего трафика в Load Balancer (цен. категория "Стандартный") с помощью Azure CLI](../load-balancer/configure-load-balancer-outbound-cli.md).
+> Если виртуальные машины находятся за **стандартным** внутренним подсистемой балансировки нагрузки, по умолчанию он не будет иметь доступ к IP-адресам Office 365, таким как `login.microsoftonline.com` . Либо измените его на **базовый** тип внутренней подсистемы балансировки нагрузки, либо создайте исходящий доступ, как упоминалось в статье [Настройка балансировки нагрузки и правил исходящего трафика в Load Balancer (цен. категория "Стандартный") с помощью Azure CLI](../load-balancer/quickstart-load-balancer-standard-public-cli.md?tabs=option-1-create-load-balancer-standard#create-outbound-rule-configuration).
 
 #### <a name="possible-cause"></a>Возможные причины
 

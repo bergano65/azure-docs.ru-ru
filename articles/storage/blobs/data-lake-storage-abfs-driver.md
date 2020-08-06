@@ -1,6 +1,6 @@
 ---
 title: Драйвер файловой системы больших двоичных объектов Azure для хранилища Azure Data Lake Storage 2-го поколения
-description: Драйвер файловой системы Hadoop ABFS
+description: Узнайте о драйвере файловой системы BLOB-объектов Azure (АБФС), выделенном драйвере службы хранилища Azure для Hadoop. Доступ к данным в Azure Data Lake Storage 2-го поколения с помощью этого драйвера.
 author: normesta
 ms.topic: conceptual
 ms.author: normesta
@@ -8,12 +8,12 @@ ms.reviewer: jamesbak
 ms.date: 12/06/2018
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 3db039d39ef532ea51143dc9cbdb6bd5f29d6225
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e9c56f59d6dd64002632a5f74e9f39c51293caab
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75970275"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836366"
 ---
 # <a name="the-azure-blob-filesystem-driver-abfs-a-dedicated-azure-storage-driver-for-hadoop"></a>Драйвер файловой системы больших двоичных объектов Azure (ABFS): выделенный драйвер хранилища Azure для Hadoop
 
@@ -42,7 +42,7 @@ hdfs dfs -put flight_delays.csv abfs://fileanalysis@myanalytics.dfs.core.windows
 
 На внутреннем уровне драйвер ABFS преобразует ресурсы, указанные в URI, в файлы и каталоги и вызывает REST API хранилища Azure Data Lake Storage с использованием этих ссылок.
 
-### <a name="authentication"></a>Аутентификация
+### <a name="authentication"></a>Проверка подлинности
 
 Драйвер ABFS поддерживает две формы проверки подлинности, поэтому приложение Hadoop может безопасно обращаться к ресурсам, содержащимся в учетной записи, совместимой с Data Lake Storage 2-го поколения. Дополнительные сведения о схемах проверки подлинности приведены в [Руководстве по безопасности службы хранилища Azure](security-recommendations.md). К ним относятся:
 
@@ -53,7 +53,7 @@ hdfs dfs -put flight_delays.csv abfs://fileanalysis@myanalytics.dfs.core.windows
    > [!NOTE]
    > Azure Data Lake Storage 2-го поколения поддерживает только конечные точки Azure AD версии 1.0.
 
-### <a name="configuration"></a>Параметр Configuration
+### <a name="configuration"></a>Конфигурация
 
 Все настройки драйвера ABFS хранятся в файле конфигурации <code>core-site.xml</code>. В дистрибутивах Hadoop с [Ambarі](https://ambari.apache.org/) конфигурацией также можно управлять с помощью веб-портала или REST API Ambari.
 
@@ -63,7 +63,7 @@ hdfs dfs -put flight_delays.csv abfs://fileanalysis@myanalytics.dfs.core.windows
 
 Все сведения о драйвере ABFS см. в [официальной документации по Hadoop](https://hadoop.apache.org/docs/stable/hadoop-azure/abfs.html).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание кластера Azure Databricks](./data-lake-storage-quickstart-create-databricks-account.md)
 - [Использование URI в Azure Data Lake Storage Gen2](./data-lake-storage-introduction-abfs-uri.md)

@@ -5,12 +5,12 @@ author: sajayantony
 ms.topic: article
 ms.date: 03/18/2020
 ms.author: sajaya
-ms.openlocfilehash: 5ee58f6a2058158308cab8ec49b1d79587998d39
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 1c2330f1ba71e2a72a1a44df7af6444181f5f9ea
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86247036"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836400"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о Реестре контейнеров Azure
 
@@ -254,7 +254,9 @@ ACR поддерживает [пользовательские роли](contain
 
 ### <a name="how-do-i-enable-anonymous-pull-access"></a>Как включить анонимный доступ для извлечения?
 
-Настройка анонимного (общего) доступа для извлечения для реестра контейнеров Azure в настоящее время является функцией предварительной версии. Чтобы включить общий доступ, отправьте запрос в службу поддержки по адресу https://aka.ms/acr/support/create-ticket. Подробные сведения см. на [форуме отзывов и предложений по Azure](https://feedback.azure.com/forums/903958-azure-container-registry/suggestions/32517127-enable-anonymous-access-to-registries).
+Настройка анонимного (общего) доступа для извлечения для реестра контейнеров Azure в настоящее время является функцией предварительной версии. Если в реестре есть [ресурсы для сопоставления области (пользователя) или маркера](https://aka.ms/acr/repo-permissions) , удалите их перед вызовом запроса в службу поддержки (сопоставление области системы можно игнорировать). Чтобы включить общий доступ, отправьте запрос в службу поддержки по адресу https://aka.ms/acr/support/create-ticket. Подробные сведения см. на [форуме отзывов и предложений по Azure](https://feedback.azure.com/forums/903958-azure-container-registry/suggestions/32517127-enable-anonymous-access-to-registries).
+
+
 
 
 ## <a name="diagnostics-and-health-checks"></a>Диагностика и проверки работоспособности

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: willzhan
 ms.reviewer: juliako
-ms.openlocfilehash: ad4c60d6a3facd49f08749b2b3f4b01242d3844c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ce2fbe8c706870250973974c7a73a3964dedd04a
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091799"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87831895"
 ---
 # <a name="hybrid-design-of-drm-subsystems"></a>Гибридный дизайн подсистем DRM 
 
@@ -103,7 +103,7 @@ ms.locfileid: "87091799"
 |AMS|Сторонний производитель|Внешняя|Нет|Нет|Пример 4|
 |Сторонний производитель|Сторонний производитель|AMS|Да|Нет|    
 
-В примерах защита PlayReady работает как для DASH, так и для Smooth Streaming. Ниже приведены URL-адреса видео, которые являются URL-адресами Smooth Streaming. Чтобы получить соответствующие URL-адреса DASH, просто добавьте "(format=mpd-time-csf)". Для проверки в браузере можно использовать [проигрыватель для тестирования мультимедиа Azure](https://aka.ms/amtest). Он позволяет настроить протокол потоковой передачи для использования с каждой технологией. Internet Explorer 11 и Microsoft Edge в Windows 10 поддерживают PlayReady через EME. Дополнительные сведения см. в записи блога [Azure Media Test Tool](/azure/media-services/previous/offline-playready-streaming-windows-10) (Средство для тестирования мультимедиа Azure).
+В примерах защита PlayReady работает как для DASH, так и для Smooth Streaming. Ниже приведены URL-адреса видео, которые являются URL-адресами Smooth Streaming. Чтобы получить соответствующие URL-адреса DASH, просто добавьте "(format=mpd-time-csf)". Для проверки в браузере можно использовать [проигрыватель для тестирования мультимедиа Azure](https://aka.ms/amtest). Он позволяет настроить протокол потоковой передачи для использования с каждой технологией. Internet Explorer 11 и Microsoft Edge в Windows 10 поддерживают PlayReady через EME. Дополнительные сведения см. в записи блога [Azure Media Test Tool](./offline-playready-streaming-windows-10.md) (Средство для тестирования мультимедиа Azure).
 
 ### <a name="sample-1"></a>Пример 1
 

@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 90e0f74f3a17a2c98abfcd886d59344b18619f8c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 773815cd64af2a398001bac91e14cca0b204ca8e
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84509003"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87832078"
 ---
 # <a name="private-link-for-azure-database-for-postgresql-single-server"></a>Частная ссылка для базы данных Azure для PostgreSQL — один сервер
 
@@ -20,7 +20,7 @@ ms.locfileid: "84509003"
 Чтобы получить список служб PaaS, поддерживающих функции закрытых ссылок, ознакомьтесь с [документацией по](https://docs.microsoft.com/azure/private-link/index)частному каналу. Частная конечная точка — это частный IP-адрес в определенной [виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) и подсети.
 
 > [!NOTE]
-> Эта функция доступна во всех регионах Azure, где база данных Azure для PostgreSQL поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
+> Функция "Частная связь" доступна только для серверов базы данных Azure для PostgreSQL в общего назначения или ценовых категориях, оптимизированных для памяти. Убедитесь, что сервер базы данных находится в одной из этих ценовых категорий.
 
 ## <a name="data-exfiltration-prevention"></a>Предотвращение кражи данных
 
@@ -124,7 +124,7 @@ Data ex-фильтрация в базе данных Azure для PostgreSQL Si
 
 Чтобы узнать, как настроить доступ к общедоступной **сети** для сервера базы данных Azure для PostgreSQL от портал Azure, см. [инструкции по настройке запрета доступа к общедоступной сети](howto-deny-public-network-access.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о функциях безопасности для одного сервера базы данных Azure для PostgreSQL см. в следующих статьях:
 

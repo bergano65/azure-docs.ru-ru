@@ -12,12 +12,12 @@ ms.date: 11/13/2018
 ms.author: baselden
 ms.reviewer: plenzke
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ad84b8910e8d4f8af9845c33c22d128e317dedc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 870027637d9c45d0d5150db12046e454146ff169
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74232111"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87829638"
 ---
 # <a name="plan-an-azure-active-directory-reporting-and-monitoring-deployment"></a>Планирование развертывания Azure Active Directory отчетов и мониторинга
 
@@ -99,7 +99,7 @@ ms.locfileid: "74232111"
 * Приятно, чтобы удовлетворить потребности бизнеса
 * Неприменимо
 
-|Область |Описание: |
+|Область |Описание |
 |-|-|
 |Сохранение| **Срок хранения журнала более 30 дней**. Из-за юридических или бизнес-требований необходимо хранить журналы аудита и журналы входа Azure AD дольше 30 дней. |
 |Аналитика| **Журналы должны иметь возможность поиска**. Сохраненные журналы должны поддерживать поиск с помощью аналитических средств. |
@@ -189,10 +189,8 @@ ms.locfileid: "74232111"
 
  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Попробуйте реализовать [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) 
 
-Рассмотрите возможность реализации [управления доступом на основе ролей (RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview) .
-
- 
+Рассмотрите возможность реализации [управления доступом на основе ролей Azure (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview)

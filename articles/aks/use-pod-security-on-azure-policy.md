@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 07/06/2020
 author: jluk
-ms.openlocfilehash: 8be0b05c260037bbe8afc92726d81668e1391d4a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5677cb3d240381e06c76ed73354981f782bdb0dd
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87050471"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87830229"
 ---
 # <a name="secure-pods-with-azure-policy-preview"></a>Защита модулей Pod с помощью политики Azure (Предварительная версия)
 
@@ -47,7 +47,7 @@ ms.locfileid: "87050471"
 
 В кластере AKS контроллер допуска используется для перехвата запросов к серверу API при создании и обновлении ресурса. Контроллер допуска может *проверить* запрос ресурса на соответствие набору правил, следует ли создавать его.
 
-Ранее [Политика безопасности Pod Feature (Предварительная версия)](use-pod-security-policies.md) была включена в проекте Kubernetes, чтобы ограничить возможности развертывания модулей. Эта функция больше не находится в активной разработке из проекта Kubernetes.
+Ранее [Политика безопасности Pod Feature (Предварительная версия)](use-pod-security-policies.md) была включена в проекте Kubernetes, чтобы ограничить возможности развертывания модулей.
 
 С помощью надстройки "политика Azure" кластер AKS может использовать встроенные политики Azure, которые защищают модули Pod и другие ресурсы Kubernetes, аналогичные политикам безопасности модулей. Надстройка политики Azure для AKS устанавливает управляемый экземпляр [привратника](https://github.com/open-policy-agent/gatekeeper), контроллер допуска проверки. Политика Azure для Kubernetes основана на агенте открытой политики с открытым исходным кодом, который основывается на [языке политики Рего](../governance/policy/concepts/policy-for-kubernetes.md#policy-language).
 
@@ -294,7 +294,7 @@ az aks disable-addons --addons azure-policy --name MyAKSCluster --resource-group
 | [Политика безопасности Pod "Стандартный" — "базовый"/"по умолчанию"](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline-default) | Пользователь устанавливает базовый ресурс политики безопасности Pod. | Политика Azure предоставляет [встроенную базовую инициативу](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicySetDefinitions%2Fa8640138-9b0a-4a28-b8cb-1666c838647d) , которая сопоставляется с базовой политикой безопасности Pod.
 | [Политика безопасности Pod — ограничена по стандарту](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted) | Пользователь устанавливает ресурс с ограничением политики безопасности Pod. | Политика Azure предоставляет [встроенную ограниченную инициативу](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicySetDefinitions%2F42b8ef37-b724-4e24-bbc8-7a7708edfe00) , которая сопоставляется с ограниченной политикой безопасности Pod.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье показано, как применить политику Azure, которая запрещает развертывание привилегированных модулей Pod, чтобы предотвратить использование привилегированного доступа. Существует множество политик, которые можно применять, например, для ограничения использования томов. Дополнительные сведения о доступных параметрах см. в [справочнике по политикам Azure для Kubernetes][kubernetes-policy-reference].
 

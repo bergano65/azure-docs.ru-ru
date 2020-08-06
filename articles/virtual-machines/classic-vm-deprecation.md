@@ -8,16 +8,16 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: tagore
-ms.openlocfilehash: d86805975b082136879c0a98ce2817f4f491a9a0
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 16ca4ad1204301542ffaa0177d88b2c2800f13b4
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87461210"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836281"
 ---
 # <a name="migrate-your-iaas-resources-to-azure-resource-manager-by-march-1-2023"></a>Перенос ресурсов IaaS в Azure Resource Manager с 1 марта 2023 г. 
 
-В 2014 мы запустили IaaS на Azure Resource Manager и были усовершенствованы возможности. Поскольку [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/) теперь обладает полными возможностями IaaS и другими улучшениями, мы не рекомендуем управлять виртуальными машинами IaaS с помощью Azure Service Manager 28 февраля 2020, и эта функция будет полностью прекращена с 1 марта 2023. 
+В 2014 мы запустили IaaS на Azure Resource Manager и были усовершенствованы возможности. Поскольку [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/) теперь обладает полными возможностями IaaS и другими улучшениями, мы не рекомендуем управлять виртуальными машинами IaaS с помощью [Azure Service Manager](https://docs.microsoft.com/azure/virtual-machines/windows/migration-classic-resource-manager-faq#what-is-azure-service-manager-and-what-does-it-mean-by-classic) 28 февраля 2020, и эта функция будет полностью прекращена с 1 марта 2023. 
 
 Сегодня около 90% виртуальных машин IaaS используют Azure Resource Manager. Если вы используете ресурсы IaaS с помощью Azure Service Manager (ASM), начните планировать миграцию сейчас и завершите ее 1 марта 2023, чтобы воспользоваться преимуществами [Azure Resource Manager](../azure-resource-manager/management/index.yml).
 
@@ -25,9 +25,9 @@ ms.locfileid: "87461210"
 
 ## <a name="how-does-this-affect-me"></a>Как это повлияет на работу? 
 
-1) Начиная с 28 февраля 2020, клиенты, которые не использовали виртуальные машины IaaS в Azure Service Manager (ASM) в течение февраля 2020, больше не смогут создавать классические виртуальные машины. 
-2) С 1 марта 2023 г. клиенты больше не смогут запускать виртуальные машины IaaS с помощью Azure Service Manager. все, что еще выполняется или выделено, будут остановлены и освобождены. 
-2) В 1 марта 2023 подписки, которые не были перенесены в Azure Resource Manager, будут уведомлены о временных шкалах для удаления оставшихся классических виртуальных машин.  
+- Начиная с 28 февраля 2020, клиенты, которые не использовали виртуальные машины IaaS в Azure Service Manager (ASM) в течение февраля 2020, больше не смогут создавать классические виртуальные машины. 
+- С 1 марта 2023 г. клиенты больше не смогут запускать виртуальные машины IaaS с помощью Azure Service Manager. все, что еще выполняется или выделено, будут остановлены и освобождены. 
+- В 1 марта 2023 подписки, которые не перенесены в Azure Resource Manager, будут уведомлены о временных шкалах для удаления оставшихся классических виртуальных машин.  
 
 Следующие службы и функции Azure **не** будут затронуты этим прекращением работы: 
 - Облачные службы 
@@ -45,6 +45,17 @@ ms.locfileid: "87461210"
 
 - Для получения технических вопросов, проблем и добавления подписок в список разрешений [обратитесь в службу поддержки](https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/{"pesId":"6f16735c-b0ae-b275-ad3a-03479cfa1396","supportTopicId":"8a82f77d-c3ab-7b08-d915-776b4ff64ff4"}).
 
-- За помощью в процессе миграции [обратитесь в службу поддержки миграции](https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/{"pesId":"6f16735c-b0ae-b275-ad3a-03479cfa1396","supportTopicId":"1135e3d0-20e2-aec5-4ef0-55fd3dae2d58"}) .
-
 - Другие вопросы не входят в часто задаваемые вопросы и комментарии, приведенные ниже.
+
+- Выполните миграцию как можно скорее, чтобы предотвратить влияние на бизнес и повысить производительность, безопасность & новых функций, предоставляемых Azure Resource Manager. 
+
+## <a name="what-resources-are-provided-to-me-for-this-migration"></a>Какие ресурсы предоставляются мне для этой миграции?
+
+- [Microsoft Q&A](https://docs.microsoft.com/answers/topics/azure-virtual-machines-migration.html): Поддержка миграции в сообщество Microsoft &
+
+- [Поддержка миграции Azure](https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/{"pesId":"6f16735c-b0ae-b275-ad3a-03479cfa1396","supportTopicId":"1135e3d0-20e2-aec5-4ef0-55fd3dae2d58"}): Специальная группа поддержки для технической помощи во время миграции
+
+- [Microsoft Fast Track](https://www.microsoft.com/fasttrack): группа Microsoft Fast Track может предоставить техническую поддержку во время миграции на соответствующих клиентах. 
+
+- Если ваша компания или организация взаимодействуют с представителем корпорации Майкрософт и (или) с такими представителями Майкрософт, как (архитектор облачных решений (CSA), диспетчеры технических учетных записей (ТАМС)), обратитесь к ним за дополнительными ресурсами для миграции. 
+

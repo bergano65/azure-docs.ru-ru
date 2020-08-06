@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.workload: infrastructure
 ms.date: 07/17/2020
 ms.author: cynthn
-ms.openlocfilehash: 5567274fd9ee2cfaf41f9ff4c6e71bb2faab7b1d
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 36ac0058f8f2cf3ca106b30c86207e46d0712193
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87292383"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87830552"
 ---
 # <a name="use-infrastructure-automation-tools-with-virtual-machines-in-azure"></a>Использование средств автоматизации инфраструктуры на виртуальных машинах в Azure
 
@@ -34,9 +34,9 @@ ms.locfileid: "87292383"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Установка и настройка Ansible для управления виртуальными машинами в Azure](../ansible/ansible-install-configure.md)
-- [Создайте виртуальную машину Linux](../ansible/ansible-create-vm.md).
-- [Управление виртуальной машиной Linux](../ansible/ansible-manage-linux-vm.md)
+- [Установка и настройка Ansible для управления виртуальными машинами в Azure](/azure/developer/ansible/install-on-linux-vm)
+- [Создайте виртуальную машину Linux](/azure/developer/ansible/vm-configure).
+- [Управление виртуальной машиной Linux](/azure/developer/ansible/vm-manage)
 
 
 ## <a name="chef"></a>Chef
@@ -45,7 +45,7 @@ ms.locfileid: "87292383"
 Вы узнаете, как выполнять следующие задачи:
 
 - [Build, deploy, and manage with Chef Automate, the Continuous Automation Platform](https://azuremarketplace.microsoft.com/marketplace/apps/chef-software.chef-automate?tab=Overview) (Создание, развертывание и управление с помощью платформы непрерывной автоматизации Chef Automate)
-- [Автоматизация развертывания виртуальной машины Azure с помощью Chef](../chef/chef-automation.md)
+- [Автоматизация развертывания виртуальной машины Azure с помощью Chef](/azure/developer/chef/windows-vm-configure)
 
 
 ## <a name="puppet"></a>Puppet
@@ -81,7 +81,7 @@ ms.locfileid: "87292383"
 
 
 ## <a name="azure-custom-script-extension"></a>Расширение пользовательских скриптов Azure
-Расширение пользовательских скриптов Azure для [Linux](./linux/extensions-customscript.md) или [Windows](./windows/extensions-customscript.md) скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать при создании виртуальной машины или с любой другой целью после ее создания.
+Расширение пользовательских скриптов Azure для [Linux](./extensions/custom-script-linux.md) или [Windows](./extensions/custom-script-windows.md) скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать при создании виртуальной машины или с любой другой целью после ее создания.
 
 Скрипты можно скачать из хранилища Azure или любого общедоступного расположения, например репозитория GitHub. Расширение пользовательских скриптов позволяет создавать скрипты на любом языке, выполняющемся на исходной виртуальной машине. С помощью этих скриптов вы можете устанавливать приложения или нужным образом настраивать виртуальную машину. Чтобы защитить учетные данные, конфиденциальные сведения, например пароли, можно хранить в защищенной конфигурации. Эти учетные данные расшифровываются только на виртуальной машине.
 
@@ -116,7 +116,7 @@ ms.locfileid: "87292383"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Создайте Runbook PowerShell](../automation/automation-first-runbook-textual-powershell.md).
+- [Создайте Runbook PowerShell](../automation/learn/automation-tutorial-runbook-textual-powershell.md).
 - [Использование гибридной рабочей роли Runbook для управления локальными ресурсами](../automation/automation-hybrid-runbook-worker.md).
 - [Приступая к работе с DSC службы автоматизации Azure](../automation/automation-dsc-getting-started.md)
 
@@ -126,7 +126,7 @@ ms.locfileid: "87292383"
 
 См. также:
 
-- [Azure DevOps Services](https://docs.microsoft.com/azure/devops/user-guide/index?view=vsts).
+- [Azure DevOps Services](/azure/devops/user-guide/index?view=vsts).
 
 
 ## <a name="jenkins"></a>Jenkins
@@ -134,7 +134,7 @@ ms.locfileid: "87292383"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Как создать инфраструктуру непрерывной интеграции и непрерывного развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker](../jenkins/tutorial-jenkins-github-docker-cicd.md)
+- [Как создать инфраструктуру непрерывной интеграции и непрерывного развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker](/azure/developer/jenkins/pipeline-with-github-and-docker)
 
 
 ## <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
@@ -149,4 +149,3 @@ ms.locfileid: "87292383"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Средства автоматизации инфраструктуры в Azure позволяют выполнять разные задачи. Вы можете использовать решения, которые максимально отвечают вашим потребностям и требованиям среды. Чтобы приступить к работе и оценить несколько стандартных средств Azure, ознакомьтесь с руководством по автоматизации настройки виртуальной машины [Linux](./linux/tutorial-automate-vm-deployment.md) или [Windows](./windows/tutorial-automate-vm-deployment.md).
-

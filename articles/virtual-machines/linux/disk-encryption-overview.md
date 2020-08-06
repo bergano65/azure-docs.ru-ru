@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1551bd3a6caedb61750b28120c222a57b491640e
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 405ebbbfa4a662dd9ee3c8d10dde8f28e5ce9c66
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372626"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87830450"
 ---
 # <a name="azure-disk-encryption-for-linux-vms"></a>Шифрование дисков Azure для виртуальных машин под управлением Linux 
 
@@ -34,7 +34,7 @@ ms.locfileid: "87372626"
 
 ### <a name="supported-vms"></a>Поддерживаемые виртуальные машины
 
-Виртуальные машины под управлением Linux имеют определенный [диапазон размеров](sizes.md). Шифрование дисков Azure недоступно на виртуальных машинах [серии А уровня "Базовый"](https://azure.microsoft.com/pricing/details/virtual-machines/series/) и на виртуальных машинах, которые не соответствуют следующим минимальным требованиям к памяти:
+Виртуальные машины под управлением Linux имеют определенный [диапазон размеров](../sizes.md). Шифрование дисков Azure недоступно на виртуальных машинах [серии А уровня "Базовый"](https://azure.microsoft.com/pricing/details/virtual-machines/series/) и на виртуальных машинах, которые не соответствуют следующим минимальным требованиям к памяти:
 
 | Виртуальная машина | Минимальные требования к памяти |
 |--|--|

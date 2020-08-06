@@ -1,18 +1,18 @@
 ---
 title: Использование файлов Azure в Linux | Документы Майкрософт
-description: Узнайте, как подключить файловый ресурс Azure через протокол SMB в Linux.
+description: Узнайте, как подключить файловый ресурс Azure через протокол SMB в Linux. См. список предварительных требований. Ознакомьтесь с вопросами безопасности SMB на клиентах Linux.
 author: roygara
 ms.service: storage
 ms.topic: how-to
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 0270cebec21ca10327a86ea5efebef9a52455930
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: bc0390ba9bf8d0f80d1533fe6e40b42df0cb5359
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089351"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87835720"
 ---
 # <a name="use-azure-files-with-linux"></a>Использование Файлов Azure в Linux
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от Майкрософт. Файловые ресурсы Azure можно подключить в дистрибутивах Linux с помощью [SMB-клиента в ядре](https://wiki.samba.org/index.php/LinuxCIFS). В этой статье описаны два способа подключения файлового ресурса Azure: по запросу с помощью команды `mount` и при загрузке путем создания записи в `/etc/fstab`.
@@ -34,7 +34,7 @@ ms.locfileid: "87089351"
 uname -r
 ```
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 <a id="smb-client-reqs"></a>
 
 * <a id="install-cifs-utils"></a>**Убедитесь, что пакет CIFS-utils установлен.**  
@@ -246,7 +246,7 @@ uname -r
 
 Начиная с Linux ядра 4,18, модуль ядра SMB, вызываемый `cifs` по старым причинам, предоставляет новый параметр модуля (часто называемый *ParM* различными внешними документами) `disable_legacy_dialects` . Несмотря на то, что впервые появились в ядре Linux 4,18, некоторые поставщики отменяли это изменение на более старые ядра, которые они поддерживают. Для удобства в следующей таблице подробно описывается доступность этого параметра модуля в распространенных дистрибутивах Linux.
 
-| Дистрибутив | Можно отключить SMB 1 |
+| Распределение | Можно отключить SMB 1 |
 |--------------|-------------------|
 | Ubuntu 14.04 — 16.04 | Нет |
 | Ubuntu 18.04 | Да |

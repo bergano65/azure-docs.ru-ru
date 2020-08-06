@@ -9,12 +9,12 @@ ms.subservice: spot
 ms.date: 03/25/2020
 ms.reviewer: jagaveer
 ms.custom: jagaveer, devx-track-azurecli
-ms.openlocfilehash: 2898364811616c16a0c33ea26dcaacace9c2c4ed
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: de8cfa66d6d52fe16cc40c5df0f41a39fff134fd
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87491805"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87832643"
 ---
 # <a name="azure-spot-vms-for-virtual-machine-scale-sets"></a>Виртуальные машины с Точкию Azure для масштабируемых наборов виртуальных машин 
 
@@ -40,6 +40,11 @@ ms.locfileid: "87491805"
 
 Пользователи могут настроить получение уведомлений в виртуальной машине через механизм [Запланированных событий Azure](../virtual-machines/linux/scheduled-events.md). Вы получите информацию о предстоящем вытеснении виртуальных машин, и у вас будет 30 секунд до вытеснения для завершения всех заданий и корректной остановки работы. 
 
+## <a name="placement-groups"></a>Группы размещения
+Группа размещения — это конструкция, аналогичная группе доступности Azure с собственными доменами сбоя и доменами обновления. По умолчанию масштабируемый набор содержит одну группу размещения максимум со 100 виртуальными машинами. Если свойство масштабируемого набора `singlePlacementGroup` имеет значение *false*, масштабируемый набор может состоять из нескольких групп размещения и иметь диапазон от 0 до 1000 виртуальных машин. 
+
+> [!IMPORTANT]
+> Если вы не используете InfiniBand с HPC, настоятельно рекомендуется установить свойство масштабируемого набора `singlePlacementGroup` в *значение false* , чтобы включить несколько групп размещения для более эффективного масштабирования по регионам или зонам. 
 
 ## <a name="deploying-spot-vms-in-scale-sets"></a>Развертывание точечных виртуальных машин в масштабируемых наборах
 
@@ -64,6 +69,7 @@ az vmss create \
     --name myScaleSet \
     --image UbuntuLTS \
     --upgrade-policy-mode automatic \
+    --single-placement-group false \
     --admin-username azureuser \
     --generate-ssh-keys \
     --priority Spot \
@@ -89,14 +95,26 @@ $vmssConfig = New-AzVmssConfig `
 
 Процесс создания масштабируемого набора, использующего плашечные виртуальные машины, аналогичен описанному в статье Приступая к работе для [Linux](quick-create-template-linux.md) или [Windows](quick-create-template-windows.md). 
 
-Для развертываний в плашечных шаблонах используйте `"apiVersion": "2019-03-01"` или более поздней версии. Добавьте `priority` `evictionPolicy` `billingProfile` Свойства и в `"virtualMachineProfile":` раздел в шаблоне: 
+Для развертываний в плашечных шаблонах используйте `"apiVersion": "2019-03-01"` или более поздней версии. 
+
+Добавьте `priority` `evictionPolicy` `billingProfile` Свойства и в `"virtualMachineProfile":` раздел и `"singlePlacementGroup": false,` свойство в `"Microsoft.Compute/virtualMachineScaleSets"` раздел шаблона.
 
 ```json
-                "priority": "Spot",
+
+{
+  "type": "Microsoft.Compute/virtualMachineScaleSets",
+  },
+  "properties": {
+    "singlePlacementGroup": false,
+    }
+
+        "virtualMachineProfile": {
+              "priority": "Spot",
                 "evictionPolicy": "Deallocate",
                 "billingProfile": {
                     "maxPrice": -1
                 }
+            },
 ```
 
 Чтобы удалить экземпляр после его исключения, измените значение `evictionPolicy` параметра на `Delete` .
@@ -168,6 +186,6 @@ $vmssConfig = New-AzVmssConfig `
 
 **Ответ.** Разместите вопрос с тегом `azure-spot` в разделе [вопросов и ответов](/answers/topics/azure-spot.html). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь со сведениями о ценах на [странице для определения тарифа масштабируемых наборов виртуальных машин](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/).

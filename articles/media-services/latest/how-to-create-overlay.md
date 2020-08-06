@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: how-to
 ms.date: 07/27/2020
-ms.openlocfilehash: 0d1a6d5626e081ff50f65b3a4396e223b33f920d
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 85b1b6c56221deaa03057a7ccb658b4bf67124eb
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87433637"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87830586"
 ---
 # <a name="how-to-create-an-overlay-with-media-encoder-standard"></a>Создание наложения с помощью Media Encoder Standard
 
@@ -19,7 +19,7 @@ ms.locfileid: "87433637"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Собирайте сведения об учетной записи, необходимые для настройки *appsettings.jsдля* файла в примере. Если вы не знаете, как это сделать, см. раздел [Краткое руководство по регистрации приложения на платформе Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app). В *appsettings.jsдля* файла ожидались следующие значения.
+* Собирайте сведения об учетной записи, необходимые для настройки *appsettings.jsдля* файла в примере. Если вы не знаете, как это сделать, см. раздел [Краткое руководство по регистрации приложения на платформе Microsoft Identity](../../active-directory/develop/quickstart-register-app.md). В *appsettings.jsдля* файла ожидались следующие значения.
 
     ```json
     {
@@ -40,7 +40,7 @@ ms.locfileid: "87433637"
 
 * Чтение [кодирования видео и аудио с помощью служб мультимедиа](encoding-concept.md)
 * Узнайте, [как кодировать с помощью пользовательского преобразования — .NET](customize-encoder-presets-how-to.md). Выполните действия, описанные в этой статье, чтобы настроить .NET для работы с преобразованиями, а затем вернитесь сюда, чтобы испытать пример предустановки наложения.
-* См. [справочный документ преобразования](https://docs.microsoft.com/rest/api/media/transforms).
+* См. [справочный документ преобразования](/rest/api/media/transforms).
 
 Когда вы знакомы с преобразованиями, Скачайте пример наложения.
 

@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: article
 ms.date: 07/27/2020
 tags: connectors
-ms.openlocfilehash: aa5be3d58ee1a0a40d0b817e1f5999ccd4bc423d
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: e0e152b3c0e10c34bc6213ddf867b79c58d1d767
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319241"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87832983"
 ---
 # <a name="manage-email-contacts-and-calendars-in-office-365-outlook-by-using-azure-logic-apps"></a>Управление сообщениями электронной почты, контактами и календарями в Office 365 Outlook с помощью Azure Logic Apps
 
@@ -48,7 +48,7 @@ ms.locfileid: "87319241"
 1. Если появится запрос на вход, укажите учетные данные Office 365, чтобы приложение логики могла подключиться к вашей учетной записи. В противном случае, если подключение уже существует, укажите сведения о свойствах триггера.
 
    > [!NOTE]
-   > Срок действия подключения не истекает до отзыва, даже если вы измените учетные данные для входа. Дополнительные сведения см. в статье [Настройка времени жизни маркеров в Azure Active Directory](../active-directory/active-directory-configurable-token-lifetimes.md).
+   > Срок действия подключения не истекает до отзыва, даже если вы измените учетные данные для входа. Дополнительные сведения см. в статье [Настройка времени жизни маркеров в Azure Active Directory](../active-directory/develop/active-directory-configurable-token-lifetimes.md).
 
    В этом примере выбирается календарь, который проверяет триггер, например:
 
@@ -81,7 +81,7 @@ ms.locfileid: "87319241"
 1. Если появится запрос на вход, укажите учетные данные Office 365, чтобы приложение логики могла подключиться к вашей учетной записи. В противном случае, если подключение уже существует, укажите сведения о свойствах действия.
 
    > [!NOTE]
-   > Срок действия подключения не истекает до отзыва, даже если вы измените учетные данные для входа. Дополнительные сведения см. в статье [Настройка времени жизни маркеров в Azure Active Directory](../active-directory/active-directory-configurable-token-lifetimes.md).
+   > Срок действия подключения не истекает до отзыва, даже если вы измените учетные данные для входа. Дополнительные сведения см. в статье [Настройка времени жизни маркеров в Azure Active Directory](../active-directory/develop/active-directory-configurable-token-lifetimes.md).
 
    В этом примере выбирается папка Contacts, в которой действие создает новый контакт, например:
 

@@ -5,12 +5,12 @@ ms.date: 09/25/2019
 ms.topic: troubleshooting
 description: Узнайте, как устранять распространенные неполадки при включении и использовании Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: cd242dc56e4a3215954fbe6703f47e29bd417ea8
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 1efaa178c2abda316cfad3e375dfdd38b41d75e0
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534402"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87835703"
 ---
 # <a name="azure-dev-spaces-troubleshooting"></a>Устранение неполадок с Azure Dev Spaces
 
@@ -267,7 +267,7 @@ Service cannot be started.
 
 ### <a name="network-traffic-is-not-forwarded-to-your-aks-cluster-when-connecting-your-development-machine"></a>Сетевой трафик не перенаправляется в кластер AKS при подключении компьютера разработки
 
-При использовании [Azure Dev Spaces для подключения кластера AKS к компьютеру разработки](how-to/local-process-kubernetes-vs-code.md) может возникнуть ситуация, когда сетевой трафик не пересылается между компьютером разработки и кластером AKS.
+При использовании [Azure Dev Spaces для подключения кластера AKS к компьютеру разработки](https://code.visualstudio.com/docs/containers/local-process-kubernetes) может возникнуть ситуация, когда сетевой трафик не пересылается между компьютером разработки и кластером AKS.
 
 При подключении кластера AKS к компьютеру разработки Azure Dev Spaces перенаправляет сетевой трафик между кластером AKS и компьютером разработки, изменяя файл `hosts` на компьютере разработки. Azure Dev Spaces создает в `hosts` запись с адресом заменяемой службы Kubernetes в качестве имени узла. Эта запись используется для перенаправления портов, чтобы перенаправлять сетевой трафик между компьютером разработки и кластером AKS. Если служба на компьютере разработки конфликтует с портом службы Kubernetes, которую вы заменяете, Azure Dev Spaces не сможет перенаправить сетевой трафик для службы Kubernetes. Например, служба *Windows BranchCache* обычно привязана к адресу *0.0.0.0:80*, что приводит к конфликту порта 80 на всех локальных IP-адресах.
 

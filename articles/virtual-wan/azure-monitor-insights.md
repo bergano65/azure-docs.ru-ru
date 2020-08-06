@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: 8553a809173d955a21e6730de35c70de5b69e81b
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: e3316b4a2255652972a0b9deef813f894f993589
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87136350"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836077"
 ---
 # <a name="azure-monitor-insights-for-virtual-wan-preview"></a>Azure Monitor аналитических сведений для виртуальной глобальной сети (Предварительная версия)
 
@@ -21,7 +21,7 @@ ms.locfileid: "87136350"
 Метрики уровня ресурсов виртуальной глобальной сети собираются и представляются с помощью предварительно упакованной книги метрик виртуальной сети, которая показывает метрики на уровне виртуальной глобальной сети, концентратора, шлюза и подключения. В этой статье описано, как с помощью Azure Monitor Insights для виртуальной глобальной сети просматривать топологию виртуальной глобальной сети и метрики в одном месте.
 
 > [!NOTE]
-> Меню Insights находится в процессе развертывания для этой предварительной версии.
+> Пункт меню Insights на портале виртуальной глобальной сети находится в процессе развертывания. Во время развертывания меню Insights для виртуальной глобальной сети можно получить доступ к книге топология виртуальной глобальной сети и метрики с помощью Azure для сетей. Дополнительные сведения см. в разделе [Azure Monitor Insights](../azure-monitor/insights/network-insights-overview.md) . 
 >
 
 ## <a name="before-you-begin"></a>Перед началом

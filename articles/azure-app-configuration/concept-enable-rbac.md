@@ -6,12 +6,12 @@ ms.author: lcozzens
 ms.date: 02/13/2020
 ms.topic: conceptual
 ms.service: azure-app-configuration
-ms.openlocfilehash: d399a9f51eca6298cc829001a2da3b85ba001f27
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 8889e7270127aa3991adb3c0575a4bce96090db2
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87528992"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87830077"
 ---
 # <a name="authorize-access-to-azure-app-configuration-using-azure-active-directory"></a>Авторизация доступа к Конфигурации приложений Azure с помощью Azure Active Directory
 Кроме использования код проверки подлинности сообщения на основе хэша (HMAC), конфигурация приложений Azure поддерживает использование Azure Active Directory (Azure AD) для авторизации запросов к экземплярам конфигурации приложения.  Azure AD поддерживает управление доступом на основе ролей (RBAC), чтобы предоставлять разрешения субъектам безопасности.  Субъект безопасности может быть пользователем, [управляемым удостоверением](../active-directory/managed-identities-azure-resources/overview.md) или [субъектом-службой приложения](../active-directory/develop/app-objects-and-service-principals.md).  См. сведения в статье [Дополнительные сведения о ролях](../role-based-access-control/overview.md).
@@ -26,7 +26,7 @@ ms.locfileid: "87528992"
 Для шага авторизации требуется, чтобы одна или несколько ролей Azure были назначены субъекту безопасности. В конфигурации приложений Azure предоставляются роли Azure, охватывающие наборы разрешений для ресурсов конфигурации приложений. Назначенные субъекту безопасности роли определяют разрешения, предоставляемые этому субъекту. Дополнительные сведения о ролях Azure см. [в статье встроенные роли Azure для конфигурации приложений Azure](#azure-built-in-roles-for-azure-app-configuration). 
 
 ## <a name="assign-azure-roles-for-access-rights"></a>Назначение ролей Azure для прав доступа
-Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью [управления доступом на основе ролей (RBAC)](../role-based-access-control/overview.md).
+Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам через [Управление доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/overview.md).
 
 Когда роль Azure назначается субъекту безопасности Azure AD, Azure предоставляет доступ к этим ресурсам для этого субъекта безопасности. Доступ ограничивается ресурсом Конфигурации приложений. Субъектом безопасности в Azure AD может быть пользователь, субъект-служба приложения или [управляемое удостоверение службы для ресурсов Azure.](../active-directory/managed-identities-azure-resources/overview.md)
 

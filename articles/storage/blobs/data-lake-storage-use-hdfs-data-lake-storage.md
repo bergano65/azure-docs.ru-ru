@@ -1,6 +1,6 @@
 ---
 title: Использование HDFS CLI в хранилище Azure Data Lake Storage 2-го поколения
-description: Общие сведения о HDFS CLI в хранилище Data Lake Storage 2-го поколения
+description: Используйте интерфейс командной строки Hadoop распределенная файловая система (HDFS) для Azure Data Lake Storage 2-го поколения. Создайте контейнер, получите список файлов или каталогов и многое другое.
 services: storage
 author: normesta
 ms.service: storage
@@ -9,12 +9,12 @@ ms.date: 12/06/2018
 ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: artek
-ms.openlocfilehash: 36e6b39aaf481abaabe4fb5a4a71a527d1e74749
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 1d720aed44358dd314bc4226adb9ad517139cd18
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86109456"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836315"
 ---
 # <a name="using-the-hdfs-cli-with-data-lake-storage-gen2"></a>Использование HDFS CLI в Data Lake Storage Gen2
 
@@ -58,7 +58,7 @@ hdfs dfs -mkdir /samplefolder
 
 Замените `<path>` заполнитель URI контейнера или папки контейнера.
 
-Например: `hdfs dfs -ls abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name`
+Пример: `hdfs dfs -ls abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name`
 
 ## <a name="create-a-directory"></a>Создание каталога
 
@@ -66,7 +66,7 @@ hdfs dfs -mkdir /samplefolder
 
 Замените `<path>` заполнитель именем корневого контейнера или папкой в контейнере.
 
-Например: `hdfs dfs -mkdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/`
+Пример: `hdfs dfs -mkdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/`
 
 ## <a name="delete-a-file-or-directory"></a>Удаление файла или каталога
 
@@ -74,7 +74,7 @@ hdfs dfs -mkdir /samplefolder
 
 Замените заполнитель `<path>` на URI файла или папки, которые нужно удалить.
 
-Например: `hdfs dfs -rmdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name/my-file-name`
+Пример: `hdfs dfs -rmdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name/my-file-name`
 
 ## <a name="display-the-access-control-lists-acls-of-files-and-directories"></a>Отображение списков управления доступом (ACL) файлов и каталогов
 
