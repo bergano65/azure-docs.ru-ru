@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 05/19/2020
 ms.author: dech
-ms.openlocfilehash: c35c34d5ffe3f3349430f17e71ad8192f4d8256e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f4236b099915e737f9d489d89e5bf18b84736d75
+ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85263370"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87761201"
 ---
 # <a name="use-built-in-notebook-commands-and-features-in-azure-cosmos-db-python-notebooks-preview"></a>Использование встроенных команд и функций записных книжек Python в Azure Cosmos DB (предварительная версия)
 
@@ -51,7 +51,7 @@ SELECT c.Action, c.Price as ItemRevenue, c.Country, c.Item FROM c
 
 ## <a name="run-a-sql-query-and-output-to-a-pandas-dataframe"></a>Выполнение SQL-запроса и вывод данных в кадр данных Pandas
 
-Результаты запроса ``%%sql`` можно вывести в [кадр данных Pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe). Используйте следующий синтаксис: 
+Результаты запроса ``%%sql`` можно вывести в [кадр данных Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame). Используйте следующий синтаксис: 
 
 ```python
 %%sql --database {database_id} --container {container_id} --output {outputDataFrameVar}

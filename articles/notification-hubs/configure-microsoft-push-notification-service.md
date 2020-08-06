@@ -4,34 +4,34 @@ description: Узнайте, как настроить параметры слу
 services: notification-hubs
 author: sethmanheim
 manager: femila
-editor: jwargo
 ms.service: notification-hubs
 ms.workload: mobile
 ms.topic: article
-ms.date: 03/25/2019
+ms.date: 08/04/2020
 ms.author: sethm
-ms.reviewer: jowargo
+ms.reviewer: thsomasu
 ms.lastreviewed: 03/25/2019
-ms.openlocfilehash: 99f29e7910fe6070c6202f6a936173455f979732
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6784331dccd779390ace7dc632d54fe54aedc458
+ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80127326"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87760997"
 ---
 # <a name="configure-microsoft-push-notification-service-mpns-settings-in-the-azure-portal"></a>Настройка параметров службы push-уведомлений Майкрософт (MPNS) в портал Azure
 
-В этой статье показано, как настроить параметры службы push-уведомлений Майкрософт (MPNS) для центра уведомлений Azure с помощью портал Azure. 
+В этой статье показано, как настроить параметры службы push-уведомлений Майкрософт (MPNS) для центра уведомлений Azure с помощью портал Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
-Если вы еще не создали центр уведомлений, сделайте это сейчас. Дополнительные сведения см. в статье [Создание центра уведомлений Azure с помощью портала Azure](create-notification-hub-portal.md). 
+
+Если вы еще не создали центр уведомлений, сделайте это сейчас. Дополнительные сведения см. в статье [Создание центра уведомлений Azure с помощью портала Azure](create-notification-hub-portal.md).
 
 ## <a name="configure-microsoft-push-notification-service-mpns"></a>Настройка службы push-уведомлений Майкрософт (MPNS)
 
-Следующая процедура позволяет настроить параметры службы push-уведомлений Майкрософт (MPNS) для центра уведомлений. 
+В следующей процедуре описывается настройка параметров службы push-уведомлений Майкрософт (MPNS) для центра уведомлений.
 
 1. В портал Azure на странице **Центр уведомлений** выберите **Windows Phone (MPNS)** в меню слева.
-1. Включите push-уведомления с проверкой подлинности или без нее:
+2. Включите push-уведомления с проверкой подлинности или без нее:
 
    а. Чтобы включить push-уведомления без проверки подлинности, выберите **Включить push-уведомления без проверки подлинности** > **Сохранить**.
 
@@ -45,5 +45,5 @@ ms.locfileid: "80127326"
       * На странице **Windows Phone(MPNS)** выберите **Сохранить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Пошаговые инструкции по отправке уведомлений на Windows Phone устройства с помощью центров уведомлений Azure и службы push-уведомлений Майкрософт (MPNS) см. в статье Push- [уведомления для Windows Phone приложений с помощью концентраторов уведомлений](notification-hubs-windows-mobile-push-notifications-mpns.md).
 
+Пошаговые инструкции по отправке уведомлений на Windows Phone устройства с помощью центров уведомлений Azure и службы push-уведомлений Майкрософт (MPNS) см. в разделе [Отправка push-уведомлений для Windows Phone приложений с помощью концентраторов уведомлений](notification-hubs-windows-mobile-push-notifications-mpns.md).

@@ -494,10 +494,8 @@
       items:
         - name: Общие сведения о настраиваемых ключевых словах
           href: custom-keyword-overview.md
-        - name: Рекомендации по именованию настраиваемых ключевых слов
-          href: speech-devices-sdk-kws-guidelines.md
-        - name: Настройка распознавания ключевых слов
-          href: speech-devices-sdk-create-kws.md
+        - name: Общие сведения об использовании настраиваемых ключевых слов
+          href: custom-keyword-basics.md
 - name: API Распознавания говорящего
   items:
     - name: Обзор

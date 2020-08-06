@@ -5,14 +5,14 @@ services: vpn-gateway
 author: kumudD
 ms.service: virtual-wan
 ms.topic: how-to
-ms.date: 06/26/2020
+ms.date: 08/04/2020
 ms.author: alzam
-ms.openlocfilehash: cf978f9551e5b2db885ca28d14f66586c029d913
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 97620192fb645dd453d1479d1e755e87cf9afd5c
+ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87082228"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87761184"
 ---
 # <a name="configure-a-vpn-client-for-p2s-openvpn-protocol-connections-azure-ad-authentication"></a>Настройка VPN-клиента для подключений "точка — сеть" по протоколу OpenVPN. Аутентификация Azure AD
 
@@ -88,11 +88,11 @@ ms.locfileid: "87082228"
 
 1. Щелкните многоточие рядом с удаляемым клиентским профилем. Затем щелкните **Remove** (Удалить).
 
-    ![delete](./media/openvpn-azure-ad-client/delete/delete1.jpg)
+    ![удалить](./media/openvpn-azure-ad-client/delete/delete1.jpg)
 
 2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    ![delete](./media/openvpn-azure-ad-client/delete/delete2.jpg)
+    ![удалить](./media/openvpn-azure-ad-client/delete/delete2.jpg)
 
 ## <a name="create-a-connection"></a><a name="connection"></a>Создание подключения
 
@@ -154,7 +154,7 @@ ms.locfileid: "87082228"
 
     ![diagnose](./media/openvpn-azure-ad-client/diagnose/diagnose4.jpg)
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 ### <a name="how-do-i-add-dns-suffixes-to-the-vpn-client"></a>Разделы справки добавить DNS-суффиксы к VPN-клиенту?
 
@@ -250,6 +250,15 @@ ms.locfileid: "87082228"
 </clientconfig>
 </azvpnprofile>
 ```
+### <a name="can-i-import-the-profile-from-a-command-line-prompt"></a>Можно ли импортировать профиль из командной строки?
+
+Вы можете импортировать профиль из командной строки, поместив скачанный файл **azurevpnconfig.xml** в папку **%усерпрофиле%\аппдата\локал\паккажес\микрософт. AzureVpn_8wekyb3d8bbwe \локалстате** и выполнив следующую команду:
+
+```
+azurevpn -i azurevpnconfig.xml 
+```
+чтобы принудительно выполнить импорт, используйте параметр **-f** .
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
