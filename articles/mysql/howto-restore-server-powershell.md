@@ -8,12 +8,12 @@ ms.devlang: azurepowershel
 ms.topic: how-to
 ms.date: 4/28/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 0f85283ad90f219dfbf404c437a843e1191b19fa
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 5571d5a937fc48030c38ebe78c86ef27d6727a67
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87498741"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837301"
 ---
 # <a name="how-to-back-up-and-restore-an-azure-database-for-mysql-server-using-powershell"></a>Как создать резервную копию сервера Базы данных Azure для MySQL и восстановить сервер с помощью PowerShell
 
@@ -78,7 +78,7 @@ Get-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 | Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 | ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
-| name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
+| Имя | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
 | ресторепоинтинтиме | 2020-03-13T13:59:00Z | Выберите точку во времени для восстановления. Значения даты и времени должны находиться в пределах срока хранения резервной копии исходного сервера. Используйте формат даты и времени ISO8601. Например, можно использовать собственный местный часовой пояс, например **2020-03-13T05:59:00-08:00**. Можно также использовать формат UTC Zulu, например **2018-03-13T13:59:00Z**. |
 | усепоинтинтимересторе | `<SwitchParameter>` | Используйте режим "на момент времени" для восстановления. |
 
@@ -120,7 +120,7 @@ Get-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 | Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 |ResourceGroupName | myresourcegroup | Имя группы ресурсов, к которой принадлежит новый сервер.|
-|name | mydemoserver-georestored | Имя нового сервера. |
+|Имя | mydemoserver-georestored | Имя нового сервера. |
 |Расположение | eastus | Расположение нового сервера. |
 |усежеоресторе | `<SwitchParameter>` | Используйте географический режим для восстановления. |
 
@@ -133,4 +133,4 @@ Get-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Настройка параметров сервера базы данных Azure для MySQL с помощью PowerShell](howto-configure-server-parameters-using-powershell.md)
+> [Создание строки подключения базы данных Azure для MySQL с помощью PowerShell](howto-connection-string-powershell.md)

@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: lahugh
-ms.openlocfilehash: 334c8128ab7869d38700668b6f46a6b2a6f96d28
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 86de6f94dc5bf44836fad37680a439d26d66ce6d
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87269365"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837080"
 ---
 # <a name="ev3-and-esv3-series"></a>Серии Ev3 и Esv3
 
@@ -97,7 +97,7 @@ ACU: 160–190
 
 Калькулятор цен: [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
 
-Дополнительные сведения о типах дисков: [типы дисков](https://docs.microsoft.com/azure/virtual-machines/linux/disks-types#ultra-ssd-preview/)
+Дополнительные сведения о типах дисков: [типы дисков](./linux/disks-types.md#ultra-disk)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 6/11/2020
-ms.openlocfilehash: ce8a651fcdda657a1fffa523837181031e0bbc75
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: f592d6fb8fed3f15bd11d5e6ebe6ee358953748c
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119809"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837234"
 ---
 # <a name="configure-server-parameters-in-azure-database-for-mysql-using-the-azure-portal"></a>Настройка параметров сервера в базе данных Azure для MySQL с помощью портал Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "86119809"
 
 Если параметр сервера, который требуется обновить, не указан в портал Azure, можно при необходимости задать параметр на уровне соединения с помощью `init_connect` . Это задает параметры сервера для каждого клиента, подключающегося к серверу. 
 
-1. В разделе **Параметры** щелкните **Параметры сервера**, чтобы открыть страницу параметров сервера для сервера базы данных Azure для MariaDB.
+1. В разделе **Параметры** щелкните **Параметры сервера**, чтобы открыть страницу параметров сервера для сервера Базы данных Azure для MySQL.
 2. Поиск`init_connect`
 3. Добавьте параметры сервера в формате. `SET parameter_name=YOUR_DESIRED_VALUE` значение в столбце значение.
 

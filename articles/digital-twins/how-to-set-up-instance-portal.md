@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 73b7171b89b26926992e95f77e376e7bb7731eff
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: c7027f474c9ff5cbd90ed1800d74e3b4ebd60b3e
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408411"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836944"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (портал)
 
@@ -62,7 +62,7 @@ ms.locfileid: "87408411"
 
 По завершении выберите _проверить и создать_. Откроется страница сводки, на которой можно проверить введенные сведения об экземпляре и нажать кнопку _создать_. 
 
-### <a name="verify-success"></a>Проверка успешного выполнения
+### <a name="verify-success-and-collect-important-values"></a>Проверка успешности и получение важных значений
 
 После *создания*вы можете просмотреть состояние развертывания экземпляра в уведомлениях Azure на панели значков портала. Уведомление сообщит о том, что развертывание прошло успешно, и вы сможете нажать кнопку _Перейти к ресурсу_ , чтобы просмотреть созданный экземпляр.
 

@@ -3,12 +3,12 @@ title: Дополнительные сведения об Azure Service Fabric
 description: Основные понятия и аспекты Azure Service Fabric. Эта статья предоставляет расширенные сведения о Service Fabric и создании микрослужб.
 ms.topic: conceptual
 ms.date: 12/08/2017
-ms.openlocfilehash: 8d578d6b3e0232d0733097d68bac22af566b2083
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: d09d774ed32c98222b71423ca733f1b4294957ef
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86246266"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836706"
 ---
 # <a name="so-you-want-to-learn-about-service-fabric"></a>Что бы вы хотели узнать о Service Fabric?
 Azure Service Fabric — это платформа распределенных систем, которая дает возможность не только легко упаковывать и развертывать масштабируемые и надежные микрослужбы, но и управлять ими.  Service Fabric имеет большую контактную зону и вы можете многому научиться.  Здесь представлен краткий обзор Service Fabric и описаны основные понятия, модели программирования, жизненный цикл приложения, тестирование, кластеры и мониторинг работоспособности. Обзор и сведения о том, как создавать микрослужбы с помощью Service Fabric, см. в статьях [Общие сведения о Service Fabric](service-fabric-overview.md) и [Разработка приложений с использованием микрослужб](service-fabric-overview-microservices.md). Эта статья не содержит полный список связанной документации, но предоставляет ссылки на руководства по началу работы для каждой области Service Fabric. 
@@ -87,7 +87,7 @@ Service Fabric интегрируется с [ASP.NET Core](service-fabric-relia
 ## <a name="application-lifecycle"></a>Жизненный цикл приложения
 Как и в случае с другими платформами, приложение в Service Fabric обычно проходит следующие фазы: проектирование, разработка, тестирование, развертывание, обновление, техническое обслуживание и удаление. Service Fabric предоставляет первоклассную поддержку полного жизненного цикла приложений в облаке: от разработки, развертывания, ежедневного управления и технического обслуживания до вывода приложения из эксплуатации. Модель службы использует несколько различных ролей для независимого участия в жизненном цикле приложения. [Жизненный цикл приложения в Service Fabric](service-fabric-application-lifecycle.md) представляет обзор интерфейсов API, а также их использование различными ролями на протяжении всех фаз жизненного цикла приложения в Service Fabric. 
 
-Всем жизненным циклом приложения можно управлять с помощью [командлетов PowerShell](/powershell/module/ServiceFabric/), [команд CLI](service-fabric-sfctl.md), [C# APIs](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient), [API Java](/java/api/overview/azure/servicefabric) и [REST API](/rest/api/servicefabric/). Вы также можете настроить конвейеры непрерывной интеграции и разработки с помощью средств [Azure Pipelines](./service-fabric-tutorial-deploy-app-with-cicd-vsts.md) или [Jenkins](service-fabric-cicd-your-linux-applications-with-jenkins.md).
+Всем жизненным циклом приложения можно управлять с помощью [командлетов PowerShell](/powershell/module/ServiceFabric/), [команд CLI](service-fabric-sfctl.md), [C# APIs](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient), [API Java](/java/api/overview/azure/servicefabric) и [REST API](/rest/api/servicefabric/). Вы также можете настроить конвейеры непрерывной интеграции и разработки с помощью средств [Azure Pipelines](./service-fabric-tutorial-deploy-app-with-cicd-vsts.md) или [Jenkins](/azure/developer/jenkins/deploy-to-service-fabric-cluster).
 
 ## <a name="test-applications-and-services"></a>Тестирование приложений и служб
 Чтобы создать службы именно в масштабах облака, очень важно, чтобы приложения и службы были устойчивы к реальным сбоям. Служба анализа сбоев предназначена для проверки служб, созданных на платформе Service Fabric. С помощью [службы анализа сбоев](service-fabric-testability-overview.md)можно вызвать осмысленные ошибки и выполнить сценарии тестирования для приложений. Вызываемые ошибки и сценарии позволяют воспроизвести и проверить в контролируемых, безопасных и согласованных условиях разные состояния и переходы, происходящие со службой в течение ее жизненного цикла.
@@ -110,7 +110,7 @@ Service Fabric интегрируется с [ASP.NET Core](service-fabric-relia
 Кластеры Service Fabric можно создать на виртуальных или физических компьютерах под управлением Windows Server или Linux. Вы можете развертывать и запускать приложения Service Fabric в любой среде с набором подключенных друг к другу компьютеров под управлением Windows Server или Linux как локально, так и в облаке Microsoft Azure или другого поставщика облачных служб.
 
 ### <a name="clusters-on-azure"></a>Кластеры в Azure
-Выполнение кластеров Service Fabric в Azure обеспечивает интеграцию с другими функциями и службами Azure, благодаря чему эксплуатировать кластер и управлять им проще и надежнее. Так как кластер является ресурсом Azure Resource Manager, вы можете моделировать его, как и любой другой ресурс в Azure. Resource Manager также предоставляет простое управление всеми ресурсами, которые кластер использует как единое целое. Кластеры в Azure интегрированы с системой диагностики Azure и Azure Monitor журналами. Типы узлов кластера являются [масштабируемыми наборами виртуальных машин](/azure/virtual-machine-scale-sets/index), поэтому функция автомасштабирования является встроенной.
+Выполнение кластеров Service Fabric в Azure обеспечивает интеграцию с другими функциями и службами Azure, благодаря чему эксплуатировать кластер и управлять им проще и надежнее. Так как кластер является ресурсом Azure Resource Manager, вы можете моделировать его, как и любой другой ресурс в Azure. Resource Manager также предоставляет простое управление всеми ресурсами, которые кластер использует как единое целое. Кластеры в Azure интегрированы с системой диагностики Azure и Azure Monitor журналами. Типы узлов кластера являются [масштабируемыми наборами виртуальных машин](../virtual-machine-scale-sets/index.yml), поэтому функция автомасштабирования является встроенной.
 
 Вы можете создать кластер в Azure на [портале Azure](service-fabric-cluster-creation-via-portal.md) с помощью [шаблона](service-fabric-cluster-creation-via-arm.md) или [Visual Studio](./service-fabric-cluster-creation-via-arm.md).
 

@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/20/2020
 ms.author: jushiman
-ms.openlocfilehash: c5074a81625f38cf94d5acd9751414bad4a9c3e8
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: a88804d85bde13a1e8b333e96053f7d85c4bd2d5
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87292471"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837131"
 ---
 # <a name="dcsv2-series"></a>Серия DCsv2
 
@@ -58,7 +58,7 @@ ms.locfileid: "87292471"
 
 Калькулятор цен: [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
 
-Дополнительные сведения о типах дисков: [типы дисков](https://docs.microsoft.com/azure/virtual-machines/linux/disks-types#ultra-ssd-preview/)
+Дополнительные сведения о типах дисков: [типы дисков](./linux/disks-types.md#ultra-disk)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

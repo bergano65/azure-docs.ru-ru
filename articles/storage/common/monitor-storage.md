@@ -1,6 +1,6 @@
 ---
 title: Мониторинг службы хранилища Azure | Документация Майкрософт
-description: Сведения об отслеживании производительности и доступности службы хранилища Azure.
+description: Сведения об отслеживании производительности и доступности службы хранилища Azure. Мониторинг данных службы хранилища Azure, изучение конфигурации и анализ данных метрик и журналов.
 author: normesta
 services: storage
 ms.service: storage
@@ -9,12 +9,12 @@ ms.date: 05/19/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring
-ms.openlocfilehash: 2f6320bf4606dc9357ac676b3bc5d7421b24a36c
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: e1be9a7e543f8513f3b30182dfbc421dc38bdbce
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86182718"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836672"
 ---
 # <a name="monitor-azure-storage"></a>Мониторинг службы хранилища Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "86182718"
 
  Регистрируются запросы, прошедшие аутентификацию, следующих типов:
 
-- Успешные запросы
+- Успешные запросы.
 - Неудачные запросы, в том числе из-за ошибок, связанных с временем ожидания, регулированием, сетью, авторизацией и др.
 - Запросы, в которых используется подписанный URL-адрес (SAS) или OAuth, в том числе неудачные и успешные запросы.
 - Запросы к данным аналитики (классические данные журнала в контейнере **$logs** и данные метрик класса в таблицах **$metric**).
@@ -86,9 +86,9 @@ ms.locfileid: "86182718"
 
 | Категория | Описание |
 |:---|:---|
-| StorageRead | Операции чтения для больших двоичных объектов. |
-| StorageWrite | Операции записи для больших двоичных объектов. |
-| StorageDelete | Операции удаления для больших двоичных объектов. |
+| StorageRead | Операции чтения с объектами. |
+| StorageWrite | Операции записи в объекты. |
+| StorageDelete | Удаление операций с объектами. |
 
 ## <a name="analyze-metric-data"></a>Анализ данных метрик
 

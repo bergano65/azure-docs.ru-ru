@@ -1,6 +1,6 @@
 ---
 title: Выбор решения Azure для передачи данных | Документация Майкрософт
-description: Сведения о том, как выбрать решение Azure для передачи данных, исходя из объема данных и доступной пропускной способности сети в вашей среде
+description: Узнайте, как выбрать решение Azure для передачи данных на основе размеров данных и доступной пропускной способности сети в вашей среде.
 services: storage
 author: alkohli
 ms.service: storage
@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 7094fffa1ea8ca2c2557e75fcb31b700abc43da5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 123fa86714ae3cefe7de5bebda9e0fccd385ecb4
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85514443"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836604"
 ---
 # <a name="choose-an-azure-solution-for-data-transfer"></a>Выбор решения Azure для передачи данных
 
@@ -68,13 +68,13 @@ ms.locfileid: "85514443"
 
 Вы также можете открыть учетную запись хранения Azure в портал Azure и выбрать функцию **пересылки данных** . Укажите пропускную способность сети в вашей среде, размер данных, которые требуется передавать, и частоту передачи данных. Вы увидите оптимальные решения для обмена данными, соответствующие предоставленным данным. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Introduction to Microsoft Azure Storage Explorer](https://azure.microsoft.com/resources/videos/introduction-to-microsoft-azure-storage-explorer/) (Общие сведения об Обозревателе службы хранилища Azure).
 - [Общие сведения об AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10).
 - [Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью PowerShell](../blobs/storage-quickstart-blobs-powershell.md)
 - [Краткое руководство. Создание, скачивание и составление списка больших двоичных объектов с помощью Azure CLI](../blobs/storage-quickstart-blobs-cli.md)
-- Кроме того, вы узнаете о таких возможностях, как:
+- Вам необходимы дополнительные сведения о следующих аспектах:
 
     - [Azure Data Box, Диск Azure Data Box и Azure Data Box Heavy для передачи данных вне сети](https://docs.microsoft.com/azure/databox/);
     - [Шлюз Azure Data Box и Azure Stack границы для передачи в сети](https://docs.microsoft.com/azure/databox-online/).

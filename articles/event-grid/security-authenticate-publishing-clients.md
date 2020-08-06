@@ -3,12 +3,12 @@ title: Проверка подлинности клиентов Публикац
 description: В этой статье описываются различные способы проверки подлинности клиентов при публикации событий в пользовательских разделах сетки событий.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 1e147830a4b37a8603df8e4ce29953acab2345bd
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 8b08c46fdeadccfad0471ddfa4f9ba2762a951a0
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86115882"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837403"
 ---
 # <a name="authenticate-publishing-clients-azure-event-grid"></a>Проверка подлинности клиентов публикации (сетка событий Azure)
 Эта статья содержит сведения о проверке подлинности клиентов, публикующих события в разделах или доменах службы "Сетка событий Azure" с помощью **ключа доступа** или токена **подписанного URL-адрес (SAS)** . Рекомендуется использовать маркер SAS, но ключ проверки подлинности обеспечивает простое программирование и совместим с множеством существующих издателей веб-перехватчиков.  
@@ -27,7 +27,7 @@ aeg-sas-key: XXXXXXXXXXXXXXXXXX0GXXX/nDT4hgdEj9DpBeRr38arnnm5OFg==
 Можно также указать `aeg-sas-key` в качестве параметра запроса. 
 
 ```
-https://<yourtopic>.<region>.eventgrid.azure.net/eventGrid/api/events?api-version=2019-06-01&&aeg-sas-key=XXXXXXXX53249XX8XXXXX0GXXX/nDT4hgdEj9DpBeRr38arnnm5OFg==
+https://<yourtopic>.<region>.eventgrid.azure.net/api/events?aeg-sas-key=XXXXXXXX53249XX8XXXXX0GXXX/nDT4hgdEj9DpBeRr38arnnm5OFg==
 ```
 
 Инструкции по получению ключей доступа для раздела или домена см. в разделе [получение ключей доступа](get-access-keys.md).
@@ -35,7 +35,7 @@ https://<yourtopic>.<region>.eventgrid.azure.net/eventGrid/api/events?api-versio
 ## <a name="authenticate-using-a-sas-token"></a>Проверка подлинности с помощью маркера SAS
 Маркеры SAS для ресурса сетки событий включают ресурс, время окончания срока действия и подпись. Маркер SAS имеет следующий формат: `r={resource}&e={expiration}&s={signature}`.
 
-Ресурс — это путь для раздела сетки событий, в который вы отправляете события. Вот пример допустимого пути к ресурсу: `https://<yourtopic>.<region>.eventgrid.azure.net/eventGrid/api/events?api-version=2019-06-01`. Сведения о поддерживаемых версиях API см. в статье [Типы ресурсов Microsoft.EventGrid](https://docs.microsoft.com/azure/templates/microsoft.eventgrid/allversions). 
+Ресурс — это путь для раздела сетки событий, в который вы отправляете события. Вот пример допустимого пути к ресурсу: `https://<yourtopic>.<region>.eventgrid.azure.net/api/events`. Сведения о поддерживаемых версиях API см. в статье [Типы ресурсов Microsoft.EventGrid](/azure/templates/microsoft.eventgrid/allversions). 
 
 Сначала программно создайте маркер SAS, а затем используйте `aeg-sas-token` заголовок или `Authorization SharedAccessSignature` заголовок для проверки подлинности с помощью сетки событий. 
 
@@ -69,14 +69,14 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
 Ниже приведен пример передачи маркера SAS в качестве значения `aeg-sas-toke` заголовка. 
 
 ```http
-aeg-sas-token: r=https%3a%2f%2fmytopic.eventgrid.azure.net%2feventGrid%2fapi%2fevent&e=6%2f15%2f2017+6%3a20%3a15+PM&s=XXXXXXXXXXXXX%2fBPjdDLOrc6THPy3tDcGHw1zP4OajQ%3d
+aeg-sas-token: r=https%3a%2f%2fmytopic.eventgrid.azure.net%2fapi%2fevent&e=6%2f15%2f2017+6%3a20%3a15+PM&s=XXXXXXXXXXXXX%2fBPjdDLOrc6THPy3tDcGHw1zP4OajQ%3d
 ```
 
 ### <a name="using-authorization-header"></a>Использование заголовка авторизации
 Ниже приведен пример передачи маркера SAS в качестве значения `Authorization` заголовка. 
 
 ```http
-Authorization: SharedAccessSignature r=https%3a%2f%2fmytopic.eventgrid.azure.net%2feventGrid%2fapi%2fevent&e=6%2f15%2f2017+6%3a20%3a15+PM&s=XXXXXXXXXXXXX%2fBPjdDLOrc6THPy3tDcGHw1zP4OajQ%3d
+Authorization: SharedAccessSignature r=https%3a%2f%2fmytopic.eventgrid.azure.net%2fapi%2fevent&e=6%2f15%2f2017+6%3a20%3a15+PM&s=XXXXXXXXXXXXX%2fBPjdDLOrc6THPy3tDcGHw1zP4OajQ%3d
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

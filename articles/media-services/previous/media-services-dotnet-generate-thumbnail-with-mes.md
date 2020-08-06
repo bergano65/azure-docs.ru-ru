@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: d9b4766b42704da8c81704822f263a6ddf46ce5a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2f7ba4c1e4fdfad33a74fcb159fbb9efca3b5271
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87052840"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836451"
 ---
 # <a name="how-to-generate-thumbnails-using-media-encoder-standard-with-net"></a>Создание эскизов с помощью Media Encoder Standard c использованием .NET 
 
@@ -282,7 +282,7 @@ Media Encoder Standard можно использовать для создани
 Во всех примерах выше рассматривались способы отправки задачи кодирования для создания изображений. Но также можно объединить кодирование видео и аудио с созданием эскизов. Предустановки JSON и XML ниже указывают **стандартному кодировщику служб мультимедиа** создавать эскиз во время кодирования.
 
 ### <a name="json-preset"></a><a id="json"></a>Предустановка JSON
-Сведения о схеме см. [здесь](/azure/media-services/previous/media-services-mes-schema).
+Сведения о схеме см. [здесь](./media-services-mes-schema.md).
 
 ```json
     {
@@ -347,7 +347,7 @@ Media Encoder Standard можно использовать для создани
 ```
 
 ### <a name="xml-preset"></a><a id="xml"></a>Предустановка XML
-Сведения о схеме см. [здесь](/azure/media-services/previous/media-services-mes-schema).
+Сведения о схеме см. [здесь](./media-services-mes-schema.md).
 
 ```csharp
     <?xml version="1.0" encoding="utf-16"?>
@@ -574,5 +574,5 @@ namespace EncodeAndGenerateThumbnails
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 [Обзор кодирования с помощью служб мультимедиа](media-services-encode-asset.md)

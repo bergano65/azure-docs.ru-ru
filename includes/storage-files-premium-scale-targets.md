@@ -4,16 +4,16 @@ ms.service: storage
 ms.topic: include
 ms.date: 06/07/2019
 ms.author: rogarana
-ms.openlocfilehash: b28427b3ede0cfaeb9e08d3c73b15ea7f2961f1b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c2bd10ab4c98fe2e77332c3cc2566ab2f0c7ad42
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "71180070"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87842036"
 ---
 #### <a name="additional-premium-file-share-level-limits"></a>Дополнительные ограничения на уровень общего файлового ресурса Premium
 
-|Область  |целевого объекта  |
+|Область  |Назначение  |
 |---------|---------|
 |Минимальный размер: увеличение/уменьшение    |1 гиб      |
 |Базовые показатели операций ввода-вывода в секунду    |1 операций ввода-вывода в секунду на гиб, до 100 000|
@@ -25,7 +25,7 @@ ms.locfileid: "71180070"
 
 |Область  |Файл Premium  |Стандартный файл |
 |---------|---------|---------|
-|Размер                  |1 ТиБ         |1 ТиБ|
+|Размер                  |4 ТиБ         |1 ТиБ|
 |Максимальное число операций ввода-вывода на файл     |5 000         |1000|
 |Параллельные дескрипторы    |2 000         |2 000|
 |Исходящие  |300 MiB/с|      См. стандартные значения пропускной способности файлов|

@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 08/20/2019
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: db6a8965b6a0d03c3de95644d3d455ce3c950960
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5521e49c767a2510bf7c8c53cf6ac5e86b73b466
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87080443"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837182"
 ---
 # <a name="planned-maintenance-notifications-for-virtual-machine-scale-sets"></a>Уведомления о плановом обслуживании для масштабируемых наборов виртуальных машин
 
@@ -171,7 +171,7 @@ az vmss list-instances -g rgName -n vmssName --expand instanceView
 az vmss perform-maintenance -g rgName -n vmssName --instance-ids id
 ```
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 **Вопрос. Зачем вам нужно перезагружать мою виртуальную машину?**
 
@@ -181,7 +181,7 @@ az vmss perform-maintenance -g rgName -n vmssName --instance-ids id
 
 **Ответ.** Для виртуальных машин, развернутых в группе доступности или в масштабируемом наборе виртуальных машин, применяется концепция доменов обновления. Во время обслуживания Azure учитывает ограничения доменов обновления и не выполняет перезагрузку виртуальных машин из разных доменов обновления, входящих в одну группу доступности. Также Azure ожидает не менее 30 минут, прежде чем переходить к обновлению следующей группы виртуальных машин. 
 
-Дополнительные сведения о высоком уровне доступности есть в статье о [регионах и доступности виртуальных машин в Azure](../virtual-machines/windows/availability.md).
+Дополнительные сведения о высоком уровне доступности есть в статье о [регионах и доступности виртуальных машин в Azure](../virtual-machines/availability.md).
 
 **Вопрос. Как я получу информацию о плановом обслуживании?**
 

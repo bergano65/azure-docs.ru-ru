@@ -11,12 +11,12 @@ ms.workload: infrastructure-services
 ms.date: 04/29/2020
 ms.author: sukumari
 ms.reviewer: azmetadatadev
-ms.openlocfilehash: 0d31d982e7788970cbf7aad7dd64db9e6d4b9b10
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 4f0e9d057c92f1907bb77ee0767c7bb07f0f4c62
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86502203"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836995"
 ---
 # <a name="azure-instance-metadata-service-imds"></a>Служба метаданных экземпляров Azure (IMDS)
 
@@ -261,7 +261,7 @@ tagsList | Теги форматируются в виде массива JSON �
 version | Версия образа виртуальной машины | 2017-04-02
 vmId | [Уникальный идентификатор](https://azure.microsoft.com/blog/accessing-and-using-azure-vm-unique-id/) для виртуальной машины | 2017-04-02
 vmScaleSetName | [Имя масштабируемого набора виртуальных машин](../../virtual-machine-scale-sets/overview.md) для масштабируемого набора виртуальных машин | 2017-12-01
-vmSize | [Размер виртуальной машины](sizes.md) | 2017-04-02
+vmSize | [Размер виртуальной машины](../sizes.md) | 2017-04-02
 зона | [Зона доступности](../../availability-zones/az-overview.md) виртуальной машины | 2017-12-01
 
 ### <a name="sample-1-tracking-vm-running-on-azure"></a>Пример 1 Отслеживание виртуальной машины в Azure

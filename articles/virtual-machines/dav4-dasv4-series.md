@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: ef6751d3e7745b47b3a801cefb0bcd2db4f64ffa
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 570e2798cf2ae5a20d55973622cca9344ea4a4a3
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87553637"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837148"
 ---
 # <a name="dav4-and-dasv4-series"></a>Серии Dav4 и Dasv4
 
@@ -81,7 +81,7 @@ ACU: 230-260
 
 Калькулятор цен: [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
 
-Дополнительные сведения о типах дисков: [типы дисков](https://docs.microsoft.com/azure/virtual-machines/linux/disks-types#ultra-ssd-preview/)
+Дополнительные сведения о типах дисков: [типы дисков](./linux/disks-types.md#ultra-disk)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

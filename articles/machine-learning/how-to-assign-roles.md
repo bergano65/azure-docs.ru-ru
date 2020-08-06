@@ -11,17 +11,17 @@ ms.author: nigup
 author: nishankgu
 ms.date: 07/24/2020
 ms.custom: how-to, seodec18
-ms.openlocfilehash: 6a49497cbe71dddb8ab6e76be9b3679dd62b0cee
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 8cff5ec6886c0aceff5270418f9feeb145f6fd17
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87449026"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836553"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинное обучение Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как управлять доступом к рабочей области Машинное обучение Azure. [Управление доступом на основе ролей (RBAC)](/azure/role-based-access-control/overview) используется для управления доступом к ресурсам Azure. Пользователям в Azure Active Directory назначаются определенные роли, которые предоставляют доступ к ресурсам. Azure предоставляет встроенные роли и возможность создания пользовательских ролей.
+Из этой статьи вы узнаете, как управлять доступом к рабочей области Машинное обучение Azure. Управление [доступом на основе ролей Azure (Azure RBAC)](/azure/role-based-access-control/overview) используется для управления доступом к ресурсам Azure. Пользователям в Azure Active Directory назначаются определенные роли, которые предоставляют доступ к ресурсам. Azure предоставляет встроенные роли и возможность создания пользовательских ролей.
 
 ## <a name="default-roles"></a>Роли по умолчанию
 
@@ -122,7 +122,7 @@ az ml workspace share -w my_workspace -g my_resource_group --role "Data Scientis
 
 Дополнительные сведения о пользовательских ролях см. в статье [пользовательские роли Azure](/azure/role-based-access-control/custom-roles). Дополнительные сведения об операциях (действиях и не действиях), которые можно использовать с пользовательскими ролями, см. в разделе [операции с поставщиками ресурсов](/azure/role-based-access-control/resource-provider-operations#microsoftmachinelearningservices).
 
-## <a name="frequently-asked-questions"></a>Вопросы и ответы
+## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
 
 ### <a name="q-what-are-the-permissions-needed-to-perform-some-common-scenarios-in-the-azure-machine-learning-service"></a>У. Каковы разрешения, необходимые для выполнения некоторых распространенных сценариев в службе Машинное обучение Azure?
