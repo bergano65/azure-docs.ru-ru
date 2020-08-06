@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 7ef7a771442dba5c7f82196a13b77cb28b0d1ed8
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 93e6b373aa125facb3a3eddecc926438c919b335
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386662"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87489747"
 ---
 # <a name="query-storage-files-using-sql-on-demand-preview-resources-within-synapse-sql"></a>Запрашивание файлов хранилища с помощью ресурсов SQL по запросу (предварительная версия) в Synapse SQL
 
@@ -90,7 +90,7 @@ WITH (
 ```
 
 Для каждого столбца необходимо указать его имя и тип в предложении `WITH`.
-См. примеры в разделе [Возвращение подмножества столбцов](query-single-csv-file.md#returning-subset-of-columns).
+См. примеры в разделе [Возвращение подмножества столбцов](query-single-csv-file.md#return-a-subset-of-columns).
 
 ## <a name="schema-inference"></a>Вывод схемы
 
