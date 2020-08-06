@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 01/24/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c5b105bf6fea8b78a11f77d73918376670be9ac5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: bf483d5a9b6a75ccad48908701d89d1c40206208
+ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87052572"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87759875"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure
 
@@ -1449,7 +1449,7 @@ SIOS DataKeeper Cluster Edition нужно установить на обоих 
 
 Чтобы изменить профиль SAP экземпляра ASCS/SCS, сделайте следующее:
 
-1. Добавьте этот параметр профиля в профиль экземпляра SAP ASCS/SCS:
+1. Добавьте этот параметр профиля в профиль экземпляра SAP ASCS/SCS, если используется ENSA1:
 
    ```
    enque/encni/set_so_keepalive = true
@@ -1461,6 +1461,8 @@ SIOS DataKeeper Cluster Edition нужно установить на обоих 
    Например, ниже приведен профиль экземпляра SAP SCS и соответствующий путь.
 
    `<ShareDisk>:\usr\sap\PR1\SYS\profile\PR1_SCS01_pr1-ascs-sap`
+
+   Для ENSA1 и ENSA2 убедитесь, что `keepalive` Параметры ОС заданы, как описано в примечании к SAP [1410736](https://launchpad.support.sap.com/#/notes/1410736).  
 
 2. Чтобы применить изменения, перезапустите экземпляр SAP ASCS /SCS.
 

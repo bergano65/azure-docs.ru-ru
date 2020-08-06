@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/13/2020
 ms.author: sohamnc
-ms.openlocfilehash: a0946da7ff516aa241a0c6d845723c43618ce70e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e1b8c432673712b637d51a64ce87b4eb2131be7d
+ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84809482"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87760419"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door"></a>Часто задаваемые вопросы о передней дверце Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "84809482"
 
 ### <a name="what-is-azure-front-door"></a>Что такое Azure Front Door?
 
-Передняя дверца Azure — это сеть доставки приложений (ADN) как услуга, предлагающая различные возможности балансировки нагрузки уровня 7 для ваших приложений. Он обеспечивает динамическое ускорение сайтов (DSA) и глобальную балансировку нагрузки с отработкой отказа почти в реальном времени. Это высокодоступная и масштабируемая служба, полностью управляемая Azure.
+Передняя дверца Azure — это сеть доставки приложений (ADN) как услуга, предлагающая различные возможности балансировки нагрузки уровня 7 для ваших приложений. Она обеспечивает динамическое ускорение сайтов (DSA) и глобальную балансировку нагрузки с отработкой отказа почти в режиме реального времени. Это высокодоступная масштабируемая служба, которая полностью управляется Azure.
 
 ### <a name="what-features-does-azure-front-door-support"></a>Какие функции поддерживает Передняя дверца Azure?
 
@@ -123,7 +123,7 @@ IP-адрес недоступности переднего плана для п
 Любые обновления маршрутов или серверных пулов и т. д. будут беспрепятственно работать, что приведет к нулевому простою (если новая конфигурация верна). Обновления сертификата также являются атомарными и не будут приводить к сбою, если не переключаться с "АФД Managed" на "использовать собственный сертификат" или наоборот.
 
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 ### <a name="can-azure-front-door-load-balance-or-route-traffic-within-a-virtual-network"></a>Может ли балансировка нагрузки для передней дверцы Azure или маршрутизация трафика в виртуальной сети?
 
@@ -159,9 +159,12 @@ IP-адрес недоступности переднего плана для п
 
 ### <a name="what-are-the-current-cipher-suites-supported-by-azure-front-door"></a>Каковы текущие комплекты шифров, поддерживаемые внешней дверцей Azure?
 
-Для TLS 1.2 поддерживаются следующие наборы шифров
+Для TLS 1.2 поддерживаются следующие комплекты шифров: 
 
-TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 TLS_DHE_RSA_WITH_AES_256_GCM_SHA384 TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
+- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+- TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+- TLS_DHE_RSA_WITH_AES_256_GCM_SHA384
+- TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
 
 При использовании пользовательских доменов с включенным протоколом TLS 1.0/1.1 поддерживаются следующие комплекты шифров:
 

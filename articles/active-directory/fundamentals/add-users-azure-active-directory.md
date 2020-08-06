@@ -2,7 +2,7 @@
 title: Добавление или удаление пользователей в Azure Active Directory | Документация Майкрософт
 description: Инструкции по добавлению новых или удалению существующих пользователей с помощью Azure Active Directory.
 services: active-directory
-author: msaburnley
+author: ajburnle
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c30730f685945d129ababb27040f34bf8ab2f790
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b6d8e6ed412a0e71e8c85827cfc8fc05cd744e3d
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85603865"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87797106"
 ---
 # <a name="add-or-delete-users-using-azure-active-directory"></a>Добавление или удаление пользователей с помощью Azure Active Directory
 
@@ -54,7 +54,7 @@ ms.locfileid: "85603865"
 
 1. Скопируйте автоматически сформированный пароль, указанный в поле **пароль** . Для первого входа вам потребуется предоставить этот пароль пользователю.
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 Пользователь будет создан и добавлен в вашу организацию Azure AD.
 
@@ -93,7 +93,7 @@ ms.locfileid: "85603865"
 >[!Note]
 >Чтобы обновить удостоверение, контактные данные или сведения о задании для пользователей, источником которых является Windows Server Active Directory, необходимо использовать Windows Server Active Directory. После завершения обновления изменения будут отображаться после следующего цикла синхронизации.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После добавления пользователей можно выполнять следующие основные процессы.
 

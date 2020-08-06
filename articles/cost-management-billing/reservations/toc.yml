@@ -71,7 +71,7 @@
           href: reservation-renew.md?toc=/azure/cost-management-billing/reservations/toc.json
 - name: Основные понятия
   items:
-    - name: Создание рекомендаций по резервированию
+    - name: Рекомендации по резервированию
       href: reserved-instance-purchase-recommendations.md?toc=/azure/cost-management-billing/reservations/toc.json
     - name: Способ применения скидки
       items:
@@ -120,9 +120,9 @@
     - name: "Резервирования\_— REST API"
       href: reservation-apis.md?toc=/azure/cost-management-billing/reservations/toc.json
     - name: "Резервирования\_— Azure PowerShell"
-      href: /powershell/module/azurerm.reservations
+      href: /powershell/module/az.reservations
     - name: "Резервирования\_— CLI"
-      href: /cli/azure/reservations/reservation
+      href: /cli/azure/reservations
     - name: "Управление затратами\_— REST API сведений о потреблении"
       href: /rest/api/consumption/usagedetails
     - name: "Управление затратами\_— REST API сведений о резервировании"

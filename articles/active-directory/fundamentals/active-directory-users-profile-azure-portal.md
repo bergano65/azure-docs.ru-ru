@@ -2,7 +2,7 @@
 title: Добавление или обновление сведений о профиле пользователя в Azure AD
 description: Инструкции по добавлению данных в профиль пользователя в Azure Active Directory, включая изображение и сведения о должности.
 services: active-directory
-author: msaburnley
+author: ajburnle
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 04/11/2019
 ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 277f4c7016849fbdbac4b5070c2a4db681cc66a9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 63b716aa22954af51a9eb53a0d04a8299d348c71
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85604018"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87797243"
 ---
 # <a name="add-or-update-a-users-profile-information-using-azure-active-directory"></a>Добавление или изменение данных профиля пользователя с помощью Azure Active Directory
 Добавьте данные в профиль пользователя, в том числе изображение профиля, сведения о работе и некоторые параметры, с помощью Azure Active Directory (Azure AD). Дополнительные сведения о добавлении новых пользователей см. в статье [Добавление или удаление пользователей в Azure Active Directory](add-users-azure-active-directory.md).
@@ -50,14 +50,14 @@ ms.locfileid: "85604018"
 
     - **Контактная информация для проверки подлинности.** Проверьте актуальность номера телефона и адреса электронной почты пользователя. Azure Active Directory использует эти сведения для установления подлинности личности пользователя во время входа. Контактную информацию для проверки подлинности может изменять только глобальный администратор.
 
-4. Нажмите кнопку **Сохранить**.
+4. Щелкните **Сохранить**.
 
     Все изменения для пользователя сохранятся.
 
     >[!Note]
     >Используйте Windows Server Active Directory для обновления удостоверения, контактных данных или сведений о должности для пользователей, чьим главным источником является Windows Server Active Directory. После завершения обновления изменения будут отображаться после следующего цикла синхронизации.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После изменения профилей пользователей можно выполнить следующие базовые операции:
 
 - [Добавление или удаление пользователей](add-users-azure-active-directory.md)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: navits09
 ms.author: navits
 ms.date: 06/17/2020
-ms.openlocfilehash: 2c6c6b3fb4f863840b39de6f56fe473be693fe87
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 657c41fbcda30ffb5af4c5a27d58ef17c02a46bc
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87001440"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87798262"
 ---
 # <a name="create-a-dynamics-365-for-operations-offer"></a>Создание предложения Dynamics 365 for Operations
 
@@ -134,7 +134,7 @@ ms.locfileid: "87001440"
 7. Политика конфиденциальности
 8. Название предложения
 9. Снимки экрана и видео
-10. Описание:
+10. Описание
 
 ### <a name="name"></a>Имя
 
@@ -191,11 +191,14 @@ ms.locfileid: "87001440"
 
 #### <a name="store-logos"></a>Логотипы магазина
 
-Укажите логотип вашего предложения в двух размерах:
+Укажите PNG-файл для логотипа **крупного** размера (от 216 x 216 до 350 x 350 пикселей). Центр партнеров будет использовать его для создания **маленького** логотипа размера (48 x 48 пикселей). При необходимости можно заменить его другим изображением.
 
-- **Малый** (48 x 48)
-- **крупный** (216 x 216).
+Оба размера логотипа необходимы для использования в разных местах в списке:
 
+- **малый** (48 x 48);
+- **Крупный** (от 216 x 216 до 350 x 350)
+
+[!INCLUDE [Logo suggestions](./includes/graphics-suggestions.md)]
 
 #### <a name="screenshots"></a>Снимки экрана
 

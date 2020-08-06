@@ -2,7 +2,7 @@
 title: Добавление личного домена в Azure Active Directory | Документация Майкрософт
 description: Инструкции по добавлению личного домена с помощью Azure Active Directory.
 services: active-directory
-author: msaburnley
+author: ajburnle
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: elkuzmen
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1cfa00cceac6c30219d4577cc4ba29c84cb1a75a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c8035744cd7ff7bb3d8347a7d26796531a666bbd
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85603967"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87796817"
 ---
 # <a name="add-your-custom-domain-name-using-the-azure-active-directory-portal"></a>Добавление имени личного домена с помощью портала Azure Active Directory
 
@@ -54,7 +54,7 @@ ms.locfileid: "85603967"
 
     ![Страница "пользовательские доменные имена" с отображаемым именем "добавить личный домен"](media/add-custom-domain/add-custom-domain.png)
 
-1. В качестве **имени личного домена**введите новое имя Организации, в этом примере — *contoso.com*. Выберите **Add domain** (Добавить предметную область).
+1. В качестве **имени личного домена**введите новое имя Организации, в этом примере — *contoso.com*. Щелкните **Добавить домен**.
 
     ![Страница "пользовательские доменные имена" с страницей добавления пользовательского домена](media/add-custom-domain/add-custom-domain-blade.png)
 
@@ -65,7 +65,7 @@ ms.locfileid: "85603967"
 
     ![Страница Contoso со сведениями о записях DNS](media/add-custom-domain/contoso-blade-with-dns-info.png)
 
-## <a name="add-your-dns-information-to-the-domain-registrar"></a>Настройка сведений о DNS в системе регистратора доменных имен
+## <a name="add-your-dns-information-to-the-domain-registrar"></a>Добавление сведений DNS в регистратор домена
 
 После добавления имени личного домена в Azure AD вам следует вернуться на сайт регистратора домена и настроить сведения о DNS, которые вы скопировали из AAD в TXT-файл. При создании этой записи типа TXT для домена проверяется принадлежность имени домена.
 
@@ -108,7 +108,7 @@ ms.locfileid: "85603967"
 
 - **Убедитесь, что у вас нет неуправляемых клиентов Power BI.** Если пользователи активировали Power BI через функцию самостоятельной регистрации и создали неуправляемый клиент для организации, необходимо взять на себя управление в качестве внутреннего или внешнего администратора с помощью PowerShell. Дополнительные сведения см. в [Смена неуправляемого каталога от имени администратора в Azure Active Directory](../users-groups-roles/domains-admin-takeover.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Добавьте в каталог еще одного глобального администратора. Дополнительные сведения см. в статье [Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory](active-directory-users-assign-role-azure-portal.md).
 

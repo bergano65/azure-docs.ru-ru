@@ -1,24 +1,24 @@
 ---
-title: Подключение хранилища BLOB-объектов Azure в Linux с помощью протокола NFS 3,0 (Предварительная версия) | Документация Майкрософт
-description: Узнайте, как подключить контейнер в хранилище BLOB-объектов из виртуальной машины Azure под управлением Linux или системы Linux, работающей локально, с помощью протокола NFS 3,0.
+title: Подключение хранилища BLOB-объектов Azure с помощью протокола NFS 3,0 (Предварительная версия) | Документация Майкрософт
+description: Узнайте, как подключить контейнер в хранилище BLOB-объектов из виртуальной машины Azure или клиента, работающего локально, с помощью протокола NFS 3,0.
 author: normesta
 ms.subservice: blobs
 ms.service: storage
 ms.topic: conceptual
-ms.date: 07/21/2020
+ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: d3907967572b22e7a70316080b08a4368a9805ce
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 2517a0ac8edf30ac041708a57b166af6eb36440a
+ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372915"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87760806"
 ---
-# <a name="mount-blob-storage-on-linux-using-the-network-file-system-nfs-30-protocol-preview"></a>Подключение хранилища BLOB-объектов в Linux с помощью протокола NFS 3,0 (Предварительная версия)
+# <a name="mount-blob-storage-by-using-the-network-file-system-nfs-30-protocol-preview"></a>Подключение хранилища BLOB-объектов с помощью протокола NFS 3,0 (Предварительная версия)
 
-Вы можете подключить контейнер в хранилище BLOB-объектов из виртуальной машины Azure под управлением Linux или системы Linux, которая выполняется локально с помощью протокола NFS 3,0. В этой статье приводятся пошаговые инструкции. Дополнительные сведения о поддержке протокола NFS 3,0 в хранилище больших двоичных объектов см. в статье [Поддержка протоколов nfs 3,0 в хранилище BLOB-объектов Azure (Предварительная версия)](network-file-system-protocol-support.md).
+Контейнер в хранилище BLOB-объектов можно подключить из виртуальной машины Azure под управлением Windows или Linux или системы Windows или Linux, которая выполняется локально с помощью протокола NFS 3,0. В этой статье приводятся пошаговые инструкции. Дополнительные сведения о поддержке протокола NFS 3,0 в хранилище больших двоичных объектов см. в статье [Поддержка протоколов nfs 3,0 в хранилище BLOB-объектов Azure (Предварительная версия)](network-file-system-protocol-support.md).
 
 > [!NOTE]
 > Поддержка протокола NFS 3,0 в хранилище BLOB-объектов Azure доступна в общедоступной предварительной версии и доступна в следующих регионах: Восточная часть США, Центральная часть США и Центральная Канада.
@@ -97,9 +97,9 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 |Тип учетной записи|блоккблобстораже|
 |Репликация|Локально избыточное хранилище (LRS)|
 |Метод подключения|Общедоступная конечная точка (выбранные сети) или частная конечная точка|
-|Требуется безопасная передача данных|Отключен|
-|Иерархическое пространство имен|Включен|
-|NFS V3|Включен|
+|Требуется безопасная передача данных|Выключено|
+|Иерархическое пространство имен|Активировано|
+|NFS V3|Активировано|
 
 Можно принять значения по умолчанию для всех остальных параметров. 
 
@@ -112,10 +112,14 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 |[Обозреватель службы хранилища Azure](data-lake-storage-explorer.md#create-a-container)|[.NET](data-lake-storage-directory-file-acl-dotnet.md#create-a-container)|
 |[AzCopy](../common/storage-use-azcopy-blobs.md#create-a-container)|[Java](data-lake-storage-directory-file-acl-java.md#create-a-container)|
 |[PowerShell](data-lake-storage-directory-file-acl-powershell.md#create-a-container)|[Python](data-lake-storage-directory-file-acl-python.md#create-a-container)|
-|[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container)|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
+|[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container);|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
 |[Портал Azure](https://portal.azure.com)|[REST](https://docs.microsoft.com/rest/api/storageservices/create-container)|
 
 ## <a name="step-7-mount-the-container"></a>Шаг 7. Подключение контейнера
+
+Создайте каталог в системе Windows или Linux, а затем подключите контейнер в учетной записи хранения.
+
+### <a name="linux"></a>[Linux](#tab/linux)
 
 1. В системе Linux создайте каталог.
 
@@ -133,14 +137,33 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 
    - Замените `<container-name>` заполнитель именем своего контейнера.
 
+
+### <a name="windows"></a>[Windows](#tab/windows)
+
+1. Откройте диалоговое окно **компоненты Windows** , а затем включите функцию **клиент для NFS** . 
+
+   ![Клиент для сетевой файловой системы](media/network-file-system-protocol-how-to/client-for-network-files-system-feature.png)
+
+2. Подключите контейнер с помощью команды [Mount](https://docs.microsoft.com/windows-server/administration/windows-commands/mount) .
+
+   ```
+   mount -o nolock <storage-account-name>.blob.core.windows.net:/<storage-account-name>/<container-name> *
+   ```
+
+   - Замените `<storage-account-name>` заполнитель, который отображается в этой команде, именем вашей учетной записи хранения.  
+
+   - Замените `<container-name>` заполнитель именем своего контейнера.
+
+---
+
 ## <a name="resolve-common-issues"></a>Устранение распространенных проблем
 
 |Вопрос или ошибка | Решение|
 |---|---|
-|`Access denied by server while mounting`|Убедитесь, что ваш клиент работает в поддерживаемой подсети. См. раздел [Поддерживаемые сетевые расположения](network-file-system-protocol-support.md#supported-network-connections).|
-|`No such file or directory`| Убедитесь, что подключенный контейнер был создан после проверки того, что компонент был зарегистрирован. См. [Шаг 2. Убедитесь, что компонент зарегистрирован](#step-2-verify-that-the-feature-is-registered). Кроме того, обязательно введите команду mount и ее параметры непосредственно в терминале. Если скопировать и вставить любую часть этой команды в терминал из другого приложения, то эта ошибка может быть вызвана скрытыми символами в вставленных данных.|
+|`Access denied by server while mounting`|Убедитесь, что клиент работает в поддерживаемой подсети. См. раздел [Поддерживаемые сетевые расположения](network-file-system-protocol-support.md#supported-network-connections).|
+|`No such file or directory`| Убедитесь, что подключенный контейнер был создан после того, как подтвердилась регистрация этой возможности. См. [Шаг 2. Убедитесь, что компонент зарегистрирован](#step-2-verify-that-the-feature-is-registered). Кроме того, обязательно введите команду mount и ее параметры непосредственно в терминале. Если вы скопируете любую часть этой команды в терминал из другого приложения, скрытые символы в скопированных данных могут вызвать ошибку.|
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также раздел
 
 [Поддержка протокола NFS 3,0 в хранилище BLOB-объектов Azure (Предварительная версия)](network-file-system-protocol-support.md)
 

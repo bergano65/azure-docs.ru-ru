@@ -3,7 +3,7 @@ title: Управление доступом пользователей с по�
 description: Сведения об управлении доступом пользователей для членства в группе или работы с приложением при помощи проверки доступа Azure Active Directory
 services: active-directory
 documentationcenter: ''
-author: msaburnley
+author: ajburnle
 manager: daveba
 editor: markwahl-msft
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.date: 06/21/2018
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c307b349144974a4d38f937feeebb98f369d047
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 001adaff1fed901638276e548ac1d5fdb41bdc53
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75932412"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87798313"
 ---
 # <a name="manage-user-access-with-azure-ad-access-reviews"></a>Управление пользовательским доступом с помощью проверок доступа Azure AD
 
@@ -30,7 +30,7 @@ ms.locfileid: "75932412"
 > [!NOTE]
 > Сведения о том, как проверить только доступ гостевых пользователей, исключив из процесса другие типы доступа, см. в статье об [управлении доступом гостевых пользователей при помощи проверки доступа](manage-guest-access-with-access-reviews.md). Если же необходимо проверить членство пользователя с административной ролью, например с ролью глобального администратора, см. статью [Запуск проверки доступа в управлении привилегированными пользователями Azure AD](../privileged-identity-management/pim-how-to-start-security-review.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Azure AD Premium P2
 

@@ -3,7 +3,7 @@ title: Делегирование управления доступом для �
 description: Узнайте, как делегировать управление доступом от ИТ – администраторов в каталог создателям и руководителям проектов, чтобы они могли управлять доступом.
 services: active-directory
 documentationCenter: ''
-author: msaburnley
+author: ajburnle
 manager: daveba
 editor: markwahl-msft
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02f44543f78789284e7b8d39471d1346ca7b8e74
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e41f372cd0105896765d5a267456b6bda767dd4d
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85078378"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87798432"
 ---
 # <a name="delegate-access-governance-to-catalog-creators-in-azure-ad-entitlement-management"></a>Делегирование управления доступом к авторам каталогов в управлении назначением Azure AD
 
@@ -47,7 +47,7 @@ ms.locfileid: "85078378"
 
 1. Нажмите кнопку **Выбрать**.
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ## <a name="allow-delegated-roles-to-access-the-azure-portal"></a>Разрешить делегированным ролям доступ к портал Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "85078378"
 
     ![Параметры пользователя Azure AD — портал администрирования](./media/entitlement-management-delegate-catalog/user-settings.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание каталога ресурсов и управление им](entitlement-management-catalog-create.md)
 - [Делегирование управления доступом для доступа к диспетчерам пакетов](entitlement-management-delegate-managers.md)

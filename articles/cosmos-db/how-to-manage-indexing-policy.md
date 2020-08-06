@@ -4,15 +4,15 @@ description: Узнайте, как управлять политиками ин
 author: timsander1
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 04/28/2020
+ms.date: 08/04/2020
 ms.author: tisande
 ms.custom: tracking-python, devx-track-javascript, devx-track-azurecli
-ms.openlocfilehash: ccee172f4b8df8d930bc06faca929e5206f8765e
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: b3234d524adc8256373acce7480319a8fd4b76ac
+ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87498452"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87761112"
 ---
 # <a name="manage-indexing-policies-in-azure-cosmos-db"></a>Управление политиками индексирования в Azure Cosmos DB
 
@@ -344,13 +344,13 @@ WHERE c.name = "Tim" AND c.age > 18
 [Обновление политики индексирования](index-policy.md#modifying-the-indexing-policy) приводит к преобразованию индекса. Ход выполнения этого преобразования можно отслеживать с помощью пакетов SDK.
 
 > [!NOTE]
-> При обновлении политики индексации операции записи в Azure Cosmos DB будут непрерывными. Во время повторного индексирования запросы могут возвращать частичные результаты по мере обновления индекса.
+> При обновлении политики индексации операции записи в Azure Cosmos DB будут непрерывными. Дополнительные сведения о [преобразованиях индексирования](indexing-policy.md#modifying-the-indexing-policy)
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure
 
 Контейнеры Azure Cosmos хранят используемую политику индексирования в виде документа JSON, который можно непосредственно редактировать на портале Azure.
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. Создайте новую учетную запись Azure Cosmos или выберите имеющуюся.
 

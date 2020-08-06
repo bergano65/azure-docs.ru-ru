@@ -2,7 +2,7 @@
 title: Восстановление или окончательное удаление недавно удаленного пользователя в Azure AD
 description: Сведения о том, как просмотреть подходящих для восстановления пользователей, восстановить удаленного пользователя или удалить пользователя без возможности восстановления с помощью Azure Active Directory.
 services: active-directory
-author: msaburnley
+author: ajburnle
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ad71d75eb80f15c09e0a4dff4edc4a0eaae9e1b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a1822e41c8cfb3646ab43fde1b9a86569ce2c399
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85603933"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87796766"
 ---
 # <a name="restore-or-remove-a-recently-deleted-user-using-azure-active-directory"></a>Восстановление или удаление недавно удаленного пользователя с помощью Azure Active Directory
 После удаления пользователя его учетная запись остается в заблокированном состоянии в течение 30 дней. В течение этого времени учетную запись пользователя и все ее свойства можно восстановить. По истечении 30 дней пользователь удаляется автоматически без возможности восстановления.
@@ -79,7 +79,7 @@ ms.locfileid: "85603933"
 
     ![Страница "Пользователи — Удаленные пользователи" с выделенной командой "Восстановить пользователя"](media/active-directory-users-restore/users-deleted-users-permanent-delete-user.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После восстановления или удаления пользователей можно выполнить следующие основные операции:
 
 - [Добавление или удаление пользователей](add-users-azure-active-directory.md)

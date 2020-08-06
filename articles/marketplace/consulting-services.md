@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/08/2020
 author: Microsoft-BradleyWright
 ms.author: brwrigh
-ms.openlocfilehash: 5cea220b44618787e34ce2297921d715476b7f14
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 31bb6dd188786fda532bf85d071e119e69e5bccc
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87280959"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87797871"
 ---
 # <a name="consulting-service-offers"></a>Предложения консультационных услуг
 
@@ -86,12 +86,12 @@ ms.locfileid: "87280959"
 Прежде всего следует [зарегистрировать](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) сведения о компании в Marketplace. Полный контрольный список требований к регистрации можно найти в статье [Become a Publisher in the Marketplace](become-publisher.md) (Как стать издателем в Marketplace). 
 
 ## <a name="prepare-your-publishing-artifacts"></a>Подготовка материалов для публикации
-Еще до регистрации вы можете начать сбор и подготовку содержимого, которое поможет объяснить клиентам суть и ценность ваших услуг и (или) решений. 
+Еще до регистрации вы можете начать сбор и подготовку содержимого, которое поможет объяснить клиентам суть и ценность ваших услуг и (или) решений.
 
 |Настройка для издателей-новичков  |
 |---------|
 |Идентификатор MPN     |
-|Логотипы компании (48x48, 216x216 пикселей)     |
+|Логотипы компании: 48 x 48 пикселей (необязательно), 216 x 216 пикселей — 350 x 350 пикселей (обязательно)  |
 |Назначение потенциального клиента     |
 ||
 

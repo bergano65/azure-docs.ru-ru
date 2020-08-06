@@ -2,7 +2,7 @@
 title: Общие сведения об архитектуре Azure Active Directory | Документация Майкрософт
 description: Сведения о том, что такое клиент Azure Active Directory и как управлять Azure с помощью Azure Active Directory.
 services: active-directory
-author: msaburnley
+author: ajburnle
 manager: daveba
 ms.service: active-directory
 ms.subservice: fundamentals
@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 854fb4649f8c1113f20abe5807dd0ce473ba6ee3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5599ce6f086ca9c3dcbf7ac406306b6198d3080a
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77368063"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87797620"
 ---
 # <a name="what-is-the-azure-active-directory-architecture"></a>Что такое архитектура Azure Active Directory?
 
@@ -121,6 +121,6 @@ Azure AD выполняет ежедневное резервное копиро
 
 Мы используем операционные элементы управления, такие как многофакторная проверка подлинности (MFA), для всех операций, а также ведем аудит всех операций. Кроме того, мы используем JIT-систему повышения прав, чтобы предоставлять необходимый временный доступ к любой рабочей задаче по запросу на постоянной основе. Дополнительные сведения см. на странице [Надежное облако](https://azure.microsoft.com/support/trust-center).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Azure Active Directoryное руководством разработчика](https://docs.microsoft.com/azure/active-directory/develop)

@@ -7,12 +7,12 @@ ms.topic: article
 author: AarathiN
 ms.author: aarathin
 ms.date: 07/14/2020
-ms.openlocfilehash: f9d7e88e78800df07dfe82d7336324eef38b92d5
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 7a0f04344d2e4213bbbabb63d57bdaf933154388
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326684"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87797902"
 ---
 # <a name="create-an-azure-application-offer"></a>Создание предложения приложения Azure
 
@@ -247,14 +247,15 @@ ms.locfileid: "87326684"
 
 #### <a name="store-logos"></a>Логотипы магазина
 
-Предоставьте PNG-файлы логотипа вашего предложения в следующих трех размерах.
+Укажите PNG-файл для логотипа **крупного** размера (от 216 x 216 до 350 x 350 пикселей). Центр партнеров будет использовать его для создания **мелких** (48 x 48 пикселей) и логотипа **среднего** размера (90 x 90 пикселей). При необходимости можно заменить их разными изображениями.
+
+Для использования в разных местах в списке необходимо использовать все три логотипа:
 
 - **Малый** (48 x 48)
 - **Средний** (90 x 90)
-- **Крупный** (216 x 216)
-- **Широкий** (255 x 115)
+- **Крупный** (от 216 x 216 до 350 x 350)
 
-Все три логотипа являются обязательными и используются в разных местах в листинге.
+[!INCLUDE [Logo suggestions](./includes/graphics-suggestions.md)]
 
 #### <a name="screenshots"></a>Снимки экрана
 

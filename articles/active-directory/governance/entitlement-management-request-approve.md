@@ -3,7 +3,7 @@ title: Утверждение или отклонение запросов на 
 description: Узнайте, как с помощью портала "мой доступ" утверждать или отклонять запросы к пакету Access в Azure Active Directory управлении назначением.
 services: active-directory
 documentationCenter: ''
-author: msaburnley
+author: ajburnle
 manager: daveba
 editor: mamtakumar
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78c3c177bfcd5ee969e1430306c7294f0a14b658
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4703a7d1928415d78eae63c42051542b035d3b1a
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85078104"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87798364"
 ---
 # <a name="approve-or-deny-access-requests-in-azure-ad-entitlement-management"></a>Утверждение или отклонение запросов на доступ в управлении назначениями Azure AD
 
@@ -73,7 +73,7 @@ ms.locfileid: "85078104"
 
     Если ни один из настроенных утверждающих не может утвердить или отклонить запрос доступа, срок действия запроса истечет через настроенную длительность запроса. Пользователь получает оповещение о том, что срок действия запроса на доступ истек, и необходимо повторно отправить запрос на доступ.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Запрос доступа к пакету Access](entitlement-management-request-access.md)
 - [Обработка запросов и уведомления по электронной почте](entitlement-management-process.md)

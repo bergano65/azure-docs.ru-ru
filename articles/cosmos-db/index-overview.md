@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/21/2020
 ms.author: tisande
-ms.openlocfilehash: 44a51972e459f64f44a791ef1cf40825dddedf91
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7417515d6f3c293368868e380ac53f0c524b872d
+ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85798159"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87760878"
 ---
 # <a name="indexing-in-azure-cosmos-db---overview"></a>Индексирование в Azure Cosmos DB — обзор
 
@@ -173,7 +173,6 @@ Azure Cosmos DB — это база данных без использовани
 * Приведенный выше запрос сначала фильтрует записи со значением firstName = "Andrew", используя индекс. Затем он передает все записи firstName = "Andrew" через последующий конвейер для вычисления предиката CONTAINS.
 
 * Вы можете ускорить запросы и избежать полной проверки при использовании функций, которые не используют индекс (например, CONTAINS), добавив дополнительные предикаты фильтра, которые используют этот индекс. Порядок предложений фильтра не важен. Обработчик запросов позволяет определить, какие предикаты являются более избирательными, и выполнить запрос соответствующим образом.
-
 
 ## <a name="querying-with-indexes"></a>Выполнение запросов с использованием индексов
 
