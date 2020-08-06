@@ -3,12 +3,12 @@ title: Отправка событий хранилища BLOB-объектов 
 description: Использование шаблона службы "Сетка событий Azure" и Resource Manager для создания учетной записи хранения BLOB-объектов и подписки на связанные события. Отправка событий в веб-перехватчик.'
 ms.date: 07/07/2020
 ms.topic: quickstart
-ms.openlocfilehash: 603d6bf11f2ec6988d52e69817bddf2fd3ccf3b3
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: e1d266f747671542059e0610cfcdd8cd12594e51
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86103319"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460445"
 ---
 # <a name="route-blob-storage-events-to-web-endpoint-by-using-an-arm-template"></a>Маршрутизация событий хранилища больших двоичных объектов в конечную веб-точку с помощью шаблона ARM
 
@@ -86,7 +86,7 @@ ms.locfileid: "86103319"
 
 Дополнительные сведения о шаблонах Azure Resource Manager см. в перечисленных ниже статьях.
 
-* [Документация по Azure Resource Manager](/azure/azure-resource-manager)
+* [Документация по Azure Resource Manager](../azure-resource-manager/index.yml)
 * [Define resources in Azure Resource Manager templates](/azure/templates/) (Определение ресурсов в шаблонах Azure Resource Manager)
 * [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/)
 * [Шаблоны службы "Сетка событий Azure"](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Eventgrid)

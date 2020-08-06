@@ -3,20 +3,20 @@ title: Сравнение служб обмена сообщениями Azure
 description: 'Описаны три службы обмена сообщениями Azure: Сетка событий, Центры событий и Служебная шина Azure. Рекомендации по выбору служб для различных сценариев.'
 ms.topic: overview
 ms.date: 07/07/2020
-ms.openlocfilehash: 9c539accbc41f56e4421b9e793c25496987363aa
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 7a3a0cd7f63a67206053ae55f33bd71aee2c19c6
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86101381"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460411"
 ---
 # <a name="choose-between-azure-messaging-services---event-grid-event-hubs-and-service-bus"></a>Сравнение трех служб обмена сообщениями Azure: Сетка событий, Центры событий и Служебная шина
 
 Azure предлагает три службы, с помощью которых реализуется доставка сообщений о событиях в решениях. Такими службами являются:
 
-* [Сетка событий](/azure/event-grid/)
-* [Центры событий](/azure/event-hubs/)
-* [Служебная шина](/azure/service-bus-messaging/)
+* [Сетка событий](./index.yml)
+* [Центры событий](../event-hubs/index.yml)
+* [Служебная шина](../service-bus-messaging/index.yml)
 
 Несмотря на то что они имеют некоторые сходства, каждая служба предназначена для определенного сценария. С помощью этой статьи вы узнаете о различиях между этими службами, а также определите, какую из них следует выбрать для своего приложения. Во многих случаях службы обмена сообщениями дополняют друг друга и могут использоваться совместно.
 
