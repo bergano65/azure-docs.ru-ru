@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.workload: infrastructure-services
 ms.date: 07/07/2020
 ms.author: eamono
-ms.openlocfilehash: 79f3d83417a99d40ea0d4bd101a89300bc85a393
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 3b9b49a4d38566891f442a3d2d7eac9bf1d36465
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86114522"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87462009"
 ---
 # <a name="tutorial-integrate-azure-automation-with-event-grid-and-microsoft-teams"></a>Руководство по Интеграция службы автоматизации Azure со службой "Сетка событий Azure" и Microsoft Teams
 
@@ -33,7 +33,7 @@ ms.locfileid: "86114522"
 
 [!INCLUDE [requires-azurerm](../../includes/requires-azurerm.md)]
 
-Чтобы выполнить инструкции из этого руководства, вам понадобится [учетная запись службы автоматизации Azure](../automation/automation-offering-get-started.md), в которой будет храниться runbook для запуска из подписки служба "Сетка событий".
+Чтобы выполнить инструкции из этого руководства, вам понадобится [учетная запись службы автоматизации Azure](../automation/index.yml), в которой будет храниться runbook для запуска из подписки служба "Сетка событий".
 
 * Модуль `AzureRM.Tags` нужно загрузить в учетной записи службы автоматизации. См. инструкции по [импорту модулей в службе автоматизации Azure](../automation/automation-update-azure-modules.md).
 

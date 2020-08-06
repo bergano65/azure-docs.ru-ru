@@ -4,12 +4,12 @@ description: В этой статье приведен пример скрипт
 ms.devlang: powershell
 ms.topic: sample
 ms.date: 07/08/2020
-ms.openlocfilehash: 7540c8eb181e064c5df5372a4bc9b27ebe16bf56
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 0aae1d64b789cedab6420ac1f323a2379bff17be
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86171250"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460819"
 ---
 # <a name="subscribe-to-events-for-an-azure-subscription-with-powershell"></a>Создание подписки на события, связанные с подпиской Azure, с помощью PowerShell
 
@@ -37,9 +37,9 @@ ms.locfileid: "86171250"
 
 | Get-Help | Примечания |
 |---|---|
-| [New-AzEventGridSubscription](https://docs.microsoft.com/powershell/module/az.eventgrid/new-azeventgridsubscription) | создание подписки в службе "Сетка событий"; |
+| [New-AzEventGridSubscription](/powershell/module/az.eventgrid/new-azeventgridsubscription) | создание подписки в службе "Сетка событий"; |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения об управляемых приложениях Azure см. в [этой статье](../overview.md).
-* Дополнительные сведения см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
+* Дополнительные сведения см. в [документации по Azure PowerShell](/powershell/azure/get-started-azureps).

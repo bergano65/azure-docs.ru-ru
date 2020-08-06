@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 04/24/2020
-ms.openlocfilehash: b78364cef6bfd6cf91e6edf81fd57fa5912125db
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: be04b690add70468335ac694e3be54fa55a94249
+ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86260679"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87475657"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-4-cluster"></a>Руководство по созданию кластера Azure Red Hat OpenShift 4
 
@@ -33,42 +33,12 @@ ms.locfileid: "86260679"
 |**Администратор доступа пользователей**|X|X| |
 |**Участник**|X|X|X|
 
-### <a name="install-the-az-aro-extension"></a>Установка расширения `az aro`
-Расширение `az aro` позволяет создавать и удалять кластеры Azure Red Hat OpenShift и получать к ним доступ непосредственно из командной строки с помощью Azure CLI.
-
-Чтобы установить расширение `az aro`, выполните следующую команду:
-
-```azurecli-interactive
-az extension add -n aro --index https://az.aroapp.io/stable
-```
-
-Если расширение уже установлено, его можно обновить, выполнив следующую команду:
-
-```azurecli-interactive
-az extension update -n aro --index https://az.aroapp.io/stable
-```
-
 ### <a name="register-the-resource-provider"></a>Регистрация поставщика ресурсов
 
 Затем необходимо зарегистрировать поставщик ресурсов `Microsoft.RedHatOpenShift` в подписке.
 
 ```azurecli-interactive
 az provider register -n Microsoft.RedHatOpenShift --wait
-```
-
-Убедитесь, что расширение зарегистрировано.
-
-```azurecli-interactive
-az -v
-```
-
-  Должен отобразиться результат, аналогичный приведенному ниже.
-
-```output
-...
-Extensions:
-aro                                1.0.0
-...
 ```
 
 ### <a name="get-a-red-hat-pull-secret-optional"></a>Получение секрета для извлечения Red Hat (необязательно)

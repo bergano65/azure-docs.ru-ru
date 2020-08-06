@@ -13,12 +13,12 @@ ms.custom:
 - 'role: System Architecture'
 ms.service: iot-hub
 services: iot-hub
-ms.openlocfilehash: b5b92de195e4ff4d5b00de041f5b021ee75f9800
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: cde9d8614883168c3fbb3ab8219cdbef6087c9d0
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87307698"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87428975"
 ---
 # <a name="what-is-azure-iot-hub"></a>Что такое Центр Интернета вещей в Azure?
 
@@ -68,7 +68,7 @@ ms.locfileid: "87307698"
 
 * [Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps/) позволяет автоматизировать бизнес-процесс.
 
-* [Машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/) позволяет добавлять машинное обучение и модели искусственного интеллекта к решению.
+* [Машинное обучение Azure](iot-hub-weather-forecast-machine-learning.md) позволяет добавлять машинное обучение и модели искусственного интеллекта к решению.
 
 * [Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/) позволяет выполнять аналитические вычисления в режиме реального времени для данных потоковой передачи с устройств.
 
