@@ -4,18 +4,18 @@ description: Применяйте собственные ключи (BYOK), чт
 services: container-service
 ms.topic: article
 ms.date: 07/17/2020
-ms.openlocfilehash: f0b96b3f78adf4a7efb1d43626a5aaf82a5b5d43
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: d4f7842330862013644cf961f5bd8e079d097069
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87499625"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87985855"
 ---
 # <a name="bring-your-own-keys-byok-with-azure-disks-in-azure-kubernetes-service-aks"></a>Перенесите собственные ключи (BYOK) с помощью дисков Azure в службе Kubernetes Azure (AKS)
 
 Служба хранилища Azure шифрует все данные в неактивных учетных записях хранения. По умолчанию данные шифруются с помощью ключей, управляемых корпорацией Майкрософт. Для дополнительного контроля над ключами шифрования можно предоставить [ключи, управляемые клиентом][customer-managed-keys] , для шифрования неактивных данных как для дисков операционной системы, так и для диска с данными для кластеров AKS.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка
 
 * В этой статье предполагается, что вы создаете *новый кластер AKS*.
 
@@ -23,11 +23,7 @@ ms.locfileid: "87499625"
 
 * Требуется Azure CLI версии 2.0.79 или более поздней, а также расширение AKS-Preview 0.4.26
 
-> [!IMPORTANT]
-> Функции предварительной версии AKS — это самостоятельная служба. Предварительные версии предоставляются "как есть" и "как есть" и исключаются из соглашений об уровне обслуживания и ограниченной гарантии. Предварительные версии AKS частично покрываются службой поддержки клиентов на основе лучших усилий. Таким образом, эти функции не предназначены для использования в рабочей среде. Дополнительные сведения об отсутствии см. в следующих статьях поддержки:
->
-> * [Политики поддержки AKS](support-policies.md)
-> * [Часто задаваемые вопросы о поддержке Azure](faq.md)
+[!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
 ## <a name="install-latest-aks-cli-preview-extension"></a>Установка последнего расширения AKS CLI Preview
 

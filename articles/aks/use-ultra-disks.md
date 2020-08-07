@@ -4,12 +4,12 @@ description: Узнайте, как включить и настроить Ultra
 services: container-service
 ms.topic: article
 ms.date: 07/10/2020
-ms.openlocfilehash: 540269c7ecf42a7e022aa2efb048df7b11587d1a
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: f74da764f5a0b021199782dbad03e6e95cceb7f2
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926745"
+ms.locfileid: "87986837"
 ---
 # <a name="use-azure-ultra-disks-on-azure-kubernetes-service-preview"></a>Использование Azure Ultra Disks в службе Kubernetes Azure (Предварительная версия)
 
@@ -22,7 +22,7 @@ ms.locfileid: "87926745"
 > [!IMPORTANT]
 > Для дисков Azure Ultra требуются нодепулс, развернутые в зонах доступности и регионах, которые поддерживают эти диски, а также только определенные серии виртуальных машин. См. [**область и ограничения для Ultra дисков уровня "Глобальный**](../virtual-machines/linux/disks-enable-ultra-ssd.md#ga-scope-and-limitations)".
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 - Убедитесь, что `EnableUltraSSD` включен флаг компонента.
 - Убедитесь, что установлено Последнее `aks-preview` [расширение CLI][az-extension-add] .
@@ -49,11 +49,7 @@ az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/E
 az provider register --namespace Microsoft.ContainerService
 ```
 
-> [!IMPORTANT]
-> Функции предварительной версии AKS — это самостоятельная служба. Предварительные версии предоставляются "как есть" и "как есть" и исключаются из соглашений об уровне обслуживания и ограниченной гарантии. Предварительные версии AKS частично покрываются службой поддержки клиентов на основе лучших усилий. Таким образом, эти функции не предназначены для использования в рабочей среде. Дополнительные сведения см. в следующих статьях поддержки:
->
-> - [Политики поддержки AKS](support-policies.md)
-> - [Часто задаваемые вопросы о поддержке Azure](faq.md)
+[!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
 ### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки предварительной версии AKS
 
@@ -95,9 +91,8 @@ az aks create -g MyResourceGroup -n MyManagedCluster -l westus2 --node-vm-size S
 
 Вы можете включить Ultra Disks в существующих кластерах, добавив новый пул узлов в кластер, поддерживающий Ultra Disks. Настройте новый пул узлов для использования шифрования на основе узла с помощью `--aks-custom-headers` флага.
 
-
 ```azurecli
-az aks nodepool add --name hostencrypt --cluster-name myAKSCluster --resource-group myResourceGroup --node-vm-size Standard_L8s_v2 --zones 1 2 --node-count 2 --aks-custom-headers EnableUltraSSD=true
+az aks nodepool add --name ultradisk --cluster-name myAKSCluster --resource-group myResourceGroup --node-vm-size Standard_L8s_v2 --zones 1 2 --node-count 2 --aks-custom-headers EnableUltraSSD=true
 ```
 
 Если вы хотите создать новые пулы узлов без поддержки Ultra Disks, это можно сделать, опустив пользовательский `--aks-custom-headers` параметр.

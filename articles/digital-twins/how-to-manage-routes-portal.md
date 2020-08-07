@@ -2,17 +2,17 @@
 title: Управление конечными точками и маршрутами (портал)
 titleSuffix: Azure Digital Twins
 description: Узнайте, как настроить конечные точки и маршруты событий для данных Azure Digital двойников с помощью портал Azure и управлять ими.
-author: v-lakast
-ms.author: v-lakast
+author: baanders
+ms.author: baanders
 ms.date: 7/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 7d563c7706529c6f3e280f7d138c0d6ba0dfc849
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 87b674a9c6b7f7d591b39f1baf54c4d54082f306
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87902215"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87987313"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-portal"></a>Управление конечными точками и маршрутами в Azure Digital двойников (портал)
 
@@ -24,7 +24,7 @@ ms.locfileid: "87902215"
 
 Вы также можете управлять конечными точками и маршрутами с помощью [API евентраутес](how-to-use-apis-sdks.md), [пакета SDK для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md). Версию этой статьи, которая использует эти механизмы вместо портала, см. [*в разделе Практические руководства. Управление конечными точками и маршрутами (API и интерфейс командной строки)*](how-to-manage-routes-apis-cli.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Вам потребуется **учетная запись Azure** (вы можете настроить ее [здесь](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)бесплатно).
 * Вам потребуется **экземпляр Azure Digital двойников** в подписке Azure. Если у вас еще нет экземпляра, его можно создать, выполнив действия, описанные в разделе [*инструкции. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-scripted.md). Используйте следующие значения из программы установки, которые можно использовать далее в этой статье:
@@ -211,7 +211,7 @@ ms.locfileid: "87902215"
 
 [!INCLUDE [digital-twins-route-metrics](../../includes/digital-twins-route-metrics.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о различных типах сообщений о событиях, которые можно получить:
 * [*Пошаговое руководство. анализ данных события*](how-to-interpret-event-data.md)

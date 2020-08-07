@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/04/2020
 ms.topic: how-to
-ms.openlocfilehash: 0a0feb6b638cb6e3a74fcd30baea5e8a04375699
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5c638b434ceb31b57689b11971f48eb322b94726
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82857791"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87985620"
 ---
 # <a name="use-the-model-conversion-rest-api"></a>Использование REST API преобразования модели
 
@@ -53,6 +53,8 @@ ms.locfileid: "82857791"
 
 #### <a name="request-body"></a>Тело запроса
 
+> [!NOTE]
+> Все, что находится в разделе `input.folderPath` , будет извлечено для выполнения преобразования в Azure. Если `input.folderPath` параметр не указан, будет получено содержимое контейнера целиком. Все получаемые BLOB-объекты и папки должны иметь [Допустимые имена файлов Windows](https://docs.microsoft.com/windows/win32/fileio/naming-a-file#naming-conventions).
 
 ```json
 {
@@ -79,7 +81,7 @@ ms.locfileid: "82857791"
 |-----------|:-----------|
 | /v1/Accounts/**accountID**/конверсионс/креатевисшаредакцесссигнатуре | POST |
 
-Возвращает идентификатор текущего преобразования, заключенного в документ JSON. Имя поля — "Конверсионид".
+Возвращает идентификатор текущего преобразования, заключенного в документ JSON. Имя поля — `conversionId` .
 
 #### <a name="request-body"></a>Тело запроса
 
@@ -88,6 +90,8 @@ ms.locfileid: "82857791"
 > [!NOTE]
 > Эти маркеры URI SAS являются строками запросов, а не полным URI. 
 
+> [!NOTE]
+> Все, что находится в разделе `input.folderPath` , будет извлечено для выполнения преобразования в Azure. Если `input.folderPath` параметр не указан, будет получено содержимое контейнера целиком. Все получаемые BLOB-объекты и папки должны иметь [Допустимые имена файлов Windows](https://docs.microsoft.com/windows/win32/fileio/naming-a-file#naming-conventions).
 
 ```json
 {
@@ -127,7 +131,7 @@ ms.locfileid: "82857791"
 
 Если состояние имеет значение "сбой", появится дополнительное поле "ошибка" с вложенным полем "сообщение", содержащим сведения об ошибке. Дополнительные журналы будут отправлены в контейнер выходных данных.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Использование хранилища BLOB-объектов Azure для преобразования модели](blob-storage.md)
 - [Преобразование модели](model-conversion.md)

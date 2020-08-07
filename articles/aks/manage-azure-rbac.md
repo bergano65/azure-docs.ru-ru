@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 07/20/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 824146e7e0b1130b8e5f6c087dbf5ccbac2c8224
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 064a62b030a1fd9f3c875fce646ad8553b75d513
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87799367"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87986633"
 ---
 # <a name="use-azure-rbac-for-kubernetes-authorization-preview"></a>Использование Azure RBAC для авторизации Kubernetes (предварительная версия)
 
@@ -21,15 +21,11 @@ ms.locfileid: "87799367"
 
 В этом документе рассматривается новый подход, обеспечивающий унифицированный контроль и управление доступом к ресурсам Azure, AKS и Kubernetes.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка
 
 Возможность управления RBAC для ресурсов Kubernetes из Azure дает возможность управлять RBAC для ресурсов кластера с помощью Azure или собственных механизмов Kubernetes. Если этот параметр включен, субъекты Azure AD будут проверяться исключительно в Azure RBAC, а обычные пользователи Kubernetes и учетные записи служб будут проверены только с помощью Kubernetes RBAC. Дополнительные сведения о проверке подлинности, авторизации и RBAC в AKS см. [здесь](concepts-identity.md#azure-rbac-for-kubernetes-authorization-preview).
 
-> [!IMPORTANT]
-> Функции предварительной версии AKS доступны на уровне самообслуживания. Предварительные версии предоставляются "как есть" и "как есть" и исключаются из соглашений об уровне обслуживания и ограниченной гарантии. Предварительные версии AKS частично охвачены службой поддержки клиентов. Таким образом, эти функции не предназначены для использования в рабочей среде. Дополнительные сведения доступны в следующих статьях поддержки.
->
-> - [Политики поддержки AKS](support-policies.md)
-> - [Часто задаваемые вопросы о поддержке Azure](faq.md)
+[!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
 ### <a name="prerequisites"></a>Предварительные требования 
 - Зарегистрируйтесь для просмотра <https://aka.ms/aad-rbac-sign-up-form> .

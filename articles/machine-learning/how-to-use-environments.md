@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 08e36f8ef31114b18a166e7a14d6d7ad8385582c
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 3fb13a4912fbd2a9bea39b56333adbd1329efef6
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87850378"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87985909"
 ---
 # <a name="create--use-software-environments-in-azure-machine-learning"></a>Создание & использование программных сред в Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "87850378"
 
 Общий обзор работы сред в Машинное обучение Azure см. в разделе [что такое среды машинного обучения?](concept-environments.md) Сведения о настройке сред разработки см. [здесь](how-to-configure-environment.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md)
@@ -320,6 +320,14 @@ myenv.python.interpreter_path = "/opt/miniconda/bin/python"
 > [!WARNING]
 > Если в образе DOCKER установлены некоторые зависимости Python и не забудьте установить user_managed_dependencies = true, эти пакеты не будут существовать в среде выполнения, что приведет к сбоям во время выполнения. По умолчанию служба машинного обучения Azure создает среду Conda с указанными зависимостями и выполняет запуск в этой среде вместо использования библиотек Python, установленных на базовом образе.
 
+### <a name="retrieve-image-details"></a>Получение сведений об образе
+
+Для зарегистрированной среды можно получить сведения об образе, используя следующий код, где `details` является экземпляром [доккеримажедетаилс](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.dockerimagedetails?view=azure-ml-py) (пакет SDK для AzureML Python >= 1,11) и предоставляет все сведения об образе среды, такие как dockerfile, реестр и имя образа.
+
+```python
+details = environment.get_image_details()
+```
+
 ## <a name="use-environments-for-training"></a>Использование сред для обучения
 
 Чтобы запустить выполнение обучения, необходимо объединить среду, [целевой объект вычислений](concept-compute-target.md), а также скрипт обучения Python в конфигурацию запуска. Эта конфигурация является программой-оболочкой, используемой для отправки запусков.
@@ -376,12 +384,6 @@ sk_est = Estimator(source_directory='./my-sklearn-proj',
 
 # Submit the run 
 run = experiment.submit(sk_est)
-```
-### <a name="retrieve-dockerfile-from-a-run"></a>Получение Dockerfile из запуска
-
-Используйте следующий код, чтобы получить Dockerfile для запуска с поддержкой DOCKER.
-```python
-print(run.get_environment().get_image_details().dockerfile)
 ```
 
 ## <a name="use-environments-for-web-service-deployment"></a>Использование сред для развертывания веб-служб
@@ -454,7 +456,7 @@ az ml environment list
 az ml environment download -n myenv -d downloaddir
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об использовании управляемого целевого объекта вычислений для обучения модели см. в разделе [учебник. Обучение модели](tutorial-train-models-with-aml.md).
 * После создания обученной модели Узнайте, [как и где развертываются модели](how-to-deploy-and-where.md).

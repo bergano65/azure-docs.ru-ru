@@ -12,12 +12,12 @@ manager: mflasko
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 07/09/2020
-ms.openlocfilehash: c3f3e7540f837722d4dd730c5635ac30c699ccd3
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 8b29708dbcc6bbb0d127b4277fd4b2d962da6e6a
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86184367"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87986395"
 ---
 # <a name="customize-the-setup-for-an-azure-ssis-integration-runtime"></a>Настройка среды выполнения интеграции Azure Integration Services
 
@@ -129,11 +129,11 @@ ms.locfileid: "86184367"
 
    * Если выбран тип **Установка лицензированного компонента**, можно выбрать интегрированный компонент от наших партнеров независимых поставщиков программных продуктов в раскрывающемся списке **Название компонента**:
 
-     * Если выбран компонент **SentryOne's Task Factory**, можно установить набор компонентов [Task Factory](https://www.sentryone.com/products/task-factory/high-performance-ssis-components) от SentryOne в Azure-SSIS IR, введя лицензионный ключ продукта, который вы приобрели у этой компании и указали в поле **Ключ лицензии**. Текущая интегрированная версия — **2019.4.3**.
+     * Если выбран компонент **SentryOne's Task Factory**, можно установить набор компонентов [Task Factory](https://www.sentryone.com/products/task-factory/high-performance-ssis-components) от SentryOne в Azure-SSIS IR, введя лицензионный ключ продукта, который вы приобрели у этой компании и указали в поле **Ключ лицензии**. Текущая интегрированная версия — **2020.1.3**.
 
-     * Если выбран компонент **oh22's HEDDA.IO**, можно установить компонент качества и очистки данных [HEDDA.IO](https://hedda.io/ssis-component/) от oh22 в Azure-SSIS IR после приобретения их службы. Текущая интегрированная версия — **1.0.13**.
+     * Если выбран компонент **oh22's HEDDA.IO**, можно установить компонент качества и очистки данных [HEDDA.IO](https://hedda.io/ssis-component/) от oh22 в Azure-SSIS IR после приобретения их службы. Текущая интегрированная версия — **1.0.14**.
 
-     * Если выбран компонент **oh22's SQLPhonetics.NET**, можно установить компонент качества и очистки данных [SQLPhonetics.NET](https://appsource.microsoft.com/product/web-apps/oh22.sqlphonetics-ssis) от oh22 в Azure-SSIS IR, введя лицензионный ключ продукта, который вы приобрели у этой компании и указали в поле **Ключ лицензии**. Текущая интегрированная версия — **1.0.43**.
+     * Если выбран компонент **oh22's SQLPhonetics.NET**, можно установить компонент качества и очистки данных [SQLPhonetics.NET](https://appsource.microsoft.com/product/web-apps/oh22.sqlphonetics-ssis) от oh22 в Azure-SSIS IR, введя лицензионный ключ продукта, который вы приобрели у этой компании и указали в поле **Ключ лицензии**. Текущая интегрированная версия — **1.0.45**.
 
      * Если выбран компонент **KingswaySoft's SSIS Integration Toolkit**, можно установить набор соединителей [SSIS Integration Toolkit](https://www.kingswaysoft.com/products/ssis-integration-toolkit-for-microsoft-dynamics-365) для приложений CRM/ERP/маркетинга/совместной работы, таких как Microsoft Dynamics, SharePoint, Project Server, Oracle/Salesforce Marketing и т. п. от KingswaySoft в Azure-SSIS IR, введя лицензионный ключ продукта, который вы приобрели у этой компании и указали в поле **Ключ лицензии**. Текущая интегрированная версия — **2019.2**.
 

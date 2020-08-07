@@ -6,12 +6,12 @@ manager: gwallace
 ms.topic: article
 ms.date: 07/10/2020
 author: jluk
-ms.openlocfilehash: f6cb370d258a79420b03baf17ec964b091cdebb7
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5b3dc3803cfb89f4a74d082b5913e69df1d03a00
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87056578"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87986718"
 ---
 # <a name="reduce-latency-with-proximity-placement-groups-preview"></a>Сокращение задержки с помощью групп размещения с учетом расположения (Предварительная версия)
 
@@ -26,13 +26,9 @@ ms.locfileid: "87056578"
 * Пул узлов должен использовать масштабируемые наборы виртуальных машин, чтобы связать группу размещения с близкой назначением.
 * Пул узлов может связать группу размещения с учетом расположения в пуле узлов только время создания.
 
-> [!IMPORTANT]
-> Функции предварительной версии AKS доступны на уровне самообслуживания. Предварительные версии предоставляются "как есть" и "как есть" и исключаются из соглашений об уровне обслуживания и ограниченной гарантии. Предварительные версии AKS частично охвачены службой поддержки клиентов. Таким образом, эти функции не предназначены для использования в рабочей среде. Дополнительные сведения доступны в следующих статьях поддержки.
->
-> - [Политики поддержки AKS](support-policies.md)
-> - [Часто задаваемые вопросы о поддержке Azure](faq.md)
+[!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка
 
 Нужно установить следующие ресурсы:
 

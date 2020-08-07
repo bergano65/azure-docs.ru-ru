@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 07/28/2020
 ms.author: aahi
-ms.openlocfilehash: dbd0699924268b38d69bc576a5886e8d31fa1208
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 9b76dac0734985b01a4a73ad4fc7f2a5f35838db
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87373476"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87986905"
 ---
 # <a name="how-to-use-text-analytics-for-health-preview"></a>Как использовать Анализ текста для работоспособности (Предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "87373476"
 
 Анализ текста для работоспособности — это Контейнерная служба, которая извлекает и помечает соответствующие медицинские сведения из неструктурированных текстов, таких как заметки Doctor, сводки разрядов, документы клинической практике и электронные записи о работоспособности.  
 
-## <a name="features"></a>Компоненты
+## <a name="features"></a>Функции
 
 Анализ текста для контейнера работоспособности в настоящее время выполняет распознавание имен сущностей (NER), извлечение отношений, отрицание сущностей и связывание сущностей для английского языка в собственной среде разработки, которая соответствует вашим требованиям к безопасности и управлению данными.
 
@@ -90,7 +90,7 @@ Azure [веб-приложение для контейнеров](https://azure.
 > [!NOTE]
 > С помощью веб-приложения Azure вы автоматически получите домен в виде`<appservice_name>.azurewebsites.net`
 
-Запустите этот скрипт PowerShell с помощью Azure CLI, чтобы создать Веб-приложение для контейнеров, используя подписку и образ контейнера по протоколу HTTPS. Дождитесь завершения сценария (примерно 20 минут) перед отправкой первого запроса.
+Запустите этот скрипт PowerShell с помощью Azure CLI, чтобы создать Веб-приложение для контейнеров, используя подписку и образ контейнера по протоколу HTTPS. Дождитесь завершения сценария (приблизительно 25-30 минут) перед отправкой первого запроса.
 
 ```bash
 $subscription_name = ""                    # THe name of the subscription you want you resource to be created on.
@@ -120,7 +120,8 @@ az webapp config appsettings set -g $resource_group_name -n $appservice_name --s
 
 Вы также можете использовать экземпляр контейнера Azure (ACI), чтобы упростить развертывание. ACI — это ресурс, который позволяет запускать контейнеры DOCKER по запросу в управляемой среде Azure, не поддерживающей работу сервера. 
 
-Инструкции по развертыванию ресурса ACI с помощью портал Azure см. в статье Использование службы " [экземпляры контейнеров Azure](text-analytics-how-to-use-container-instances.md) ". Вы также можете использовать приведенный ниже сценарий PowerShell с помощью Azure CLI, который создаст ACI в подписке с помощью образа контейнера.  Дождитесь завершения сценария (примерно 20 минут) перед отправкой первого запроса.
+Инструкции по развертыванию ресурса ACI с помощью портал Azure см. в статье Использование службы " [экземпляры контейнеров Azure](text-analytics-how-to-use-container-instances.md) ". Вы также можете использовать приведенный ниже сценарий PowerShell с помощью Azure CLI, который создаст ACI в подписке с помощью образа контейнера.  Дождитесь завершения сценария (приблизительно 25-30 минут) перед отправкой первого запроса.  Из-за ограничения на максимальное число ЦП на ресурс ACI не выбирайте этот параметр, если предполагается отправлять более 5 больших документов (примерно 5000 символов каждый) для каждого запроса.
+Сведения о доступности см. в статье [ACI региональные службы поддержки](https://docs.microsoft.com/azure/container-instances/container-instances-region-availability) . 
 
 > [!NOTE] 
 > В службе "экземпляры контейнеров Azure" не включена поддержка HTTPS для встроенных доменов. Если требуется протокол HTTPS, необходимо настроить его вручную, включая создание сертификата и регистрацию домена. Инструкции для этого можно найти в NGINX ниже.
@@ -143,7 +144,7 @@ $DOCKER_IMAGE_NAME = "containerpreview.azurecr.io/microsoft/cognitive-services-h
 
 az login
 az account set -s $subscription_name
-az container create --resource-group $resource_group_name --name $azure_container_instance_name --image $DOCKER_IMAGE_NAME --cpu 5 --memory 12 --registry-login-server $DOCKER_REGISTRY_LOGIN_SERVER --registry-username $DOCKER_REGISTRY_SERVER_USERNAME --registry-password $DOCKER_REGISTRY_SERVER_PASSWORD --port 5000 --dns-name-label $DNS_LABEL --environment-variables Eula=accept Billing=$TEXT_ANALYTICS_RESOURCE_API_ENDPOINT ApiKey=$TEXT_ANALYTICS_RESOURCE_API_KEY
+az container create --resource-group $resource_group_name --name $azure_container_instance_name --image $DOCKER_IMAGE_NAME --cpu 4 --memory 12 --registry-login-server $DOCKER_REGISTRY_LOGIN_SERVER --registry-username $DOCKER_REGISTRY_SERVER_USERNAME --registry-password $DOCKER_REGISTRY_SERVER_PASSWORD --port 5000 --dns-name-label $DNS_LABEL --environment-variables Eula=accept Billing=$TEXT_ANALYTICS_RESOURCE_API_ENDPOINT ApiKey=$TEXT_ANALYTICS_RESOURCE_API_KEY
 
 # Once deployment complete, the resource should be available at: http://<unique_dns_label>.<resource_group_region>.azurecontainer.io:5000
 ```

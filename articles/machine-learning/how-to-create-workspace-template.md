@@ -10,12 +10,12 @@ ms.custom: how-to, devx-track-azurecli
 ms.author: larryfr
 author: Blackmist
 ms.date: 07/27/2020
-ms.openlocfilehash: 06ab819065f96508bcc4ebd26371c743c89b9220
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 5ddd4fc368a4e479d3d720698c7447d2b3cdf3cc
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87487808"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87986568"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Создание рабочей области для Машинного обучения Azure с помощью шаблона Azure Resource Manager
 
@@ -750,6 +750,32 @@ New-AzResourceGroupDeployment `
 
     ```text
     /subscriptions/{subscription-guid}/resourceGroups/myresourcegroup/providers/Microsoft.KeyVault/vaults/mykeyvault
+    ```
+
+### <a name="virtual-network-not-linked-to-private-dns-zone"></a>Виртуальная сеть не связана с частной зоной DNS
+
+При создании рабочей области с закрытой конечной точкой шаблон создает Частная зона DNS зону с именем __privatelink.API.azureml.MS__. В эту частную зону DNS автоматически добавляется __ссылка на виртуальную сеть__ . Эта ссылка добавляется только для первой рабочей области и частной конечной точки, созданной в группе ресурсов. Если вы создаете другую виртуальную сеть и рабочую область с частной конечной точкой в той же группе ресурсов, вторая виртуальная сеть может не добавляться в частную зону DNS.
+
+Чтобы просмотреть связи виртуальной сети, которые уже существуют для частной зоны DNS, используйте следующую команду Azure CLI.
+
+```azurecli
+az network private-dns link vnet list --zone-name privatelink.api.azureml.ms --resource-group myresourcegroup
+```
+
+Чтобы добавить виртуальную сеть, содержащую другую рабочую область и закрытую конечную точку, выполните следующие действия.
+
+1. Чтобы найти идентификатор виртуальной сети для добавляемой сети, используйте следующую команду:
+
+    ```azurecli
+    az network vnet show --name myvnet --resource-group myresourcegroup --query id
+    ```
+    
+    Эта команда возвращает значение, похожее на ""/Субскриптионс/гуид/ресаурцеграупс/миресаурцеграуп/провидерс/Микрософт.Нетворк/виртуалнетворкс/мивнет "". Сохраните это значение и используйте его на следующем шаге.
+
+2. Чтобы добавить ссылку на виртуальную сеть в зону Частная зона DNS privatelink.api.azureml.ms, используйте следующую команду. Для `--virtual-network` параметра используйте выходные данные предыдущей команды:
+
+    ```azurecli
+    az network private-dns link vnet create --name mylinkname --registration-enabled true --resource-group myresourcegroup --virtual-network myvirtualnetworkid --zone-name privatelink.api.azureml.ms
     ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 2d062ea4f38742129d44be0e2b7ff51fe3ad8dd1
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: 4d0ed9826326256e3b91815746e43d34b6934ba0
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87562435"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87985889"
 ---
 # <a name="understand-twin-models-in-azure-digital-twins"></a>Общие сведения о моделях двойника в Azure Digital двойников
 
@@ -204,14 +204,7 @@ ms.locfileid: "87562435"
 
 ## <a name="validating-models"></a>Проверка моделей
 
-> [!TIP]
-> Перед отправкой в свой экземпляр Azure Digital двойников рекомендуется проверить свои модели в автономном режиме.
-
-Существует независимый от языка пример, доступный для проверки документов модели, чтобы убедиться в правильности ДТДЛ. Он расположен здесь: [**Пример проверяющего элемента управления дтдл**](https://docs.microsoft.com/samples/azure-samples/dtdl-validator/dtdl-validator).
-
-Пример проверяющего элемента управления ДТДЛ основан на библиотеке средства синтаксического анализа .NET ДТДЛ, которая доступна в NuGet в качестве клиентской библиотеки: [**Microsoft. Azure. дигиталтвинс. Parser**](https://nuget.org/packages/Microsoft.Azure.DigitalTwins.Parser/). Библиотеку можно также использовать непосредственно для разработки собственного решения проверки. При использовании библиотеки средства синтаксического анализа обязательно используйте версию, совместимую с версией, которая работает в Azure Digital двойников. На этапе предварительной версии это *3.7.0*версии.
-
-Дополнительные сведения о библиотеке анализатора, включая примеры использования, см. в статье [*инструкции. анализ и проверка моделей*](how-to-use-parser.md).
+[!INCLUDE [Azure Digital Twins: validate models info](../../includes/digital-twins-validate.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
