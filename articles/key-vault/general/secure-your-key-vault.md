@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.author: sudbalas
-ms.openlocfilehash: 26dba14baa95a91c12e9ccd277731b91207b4a4c
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: f9995b82c1dc437cdaa2f9f987abba3e9681454a
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87533263"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926762"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Безопасный доступ к хранилищу ключей
 
@@ -197,7 +197,7 @@ Set-AzKeyVaultAccessPolicy -VaultName ContosoKeyVault -ObjectId (Get-AzADGroup -
 
 ## <a name="resources"></a>Ресурсы
 
-* [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md)
+* [Azure RBAC](../../role-based-access-control/role-assignments-portal.md)
 
 * [Сведения о встроенных ролях встроенные роли](../../role-based-access-control/built-in-roles.md).
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: 1a516374e0ac478b24fa1c3ced1627c4814f9bbd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0538902897d088c8ce271487b3f30698af0bb1eb
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85367603"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926558"
 ---
 # <a name="tutorial-configure-juno-journey-for-automatic-user-provisioning"></a>Руководство по Настройка Juno Journey для автоматической подготовки пользователей
 
@@ -151,7 +151,7 @@ ms.locfileid: "85367603"
 Настроив подготовку, используйте следующие ресурсы для мониторинга развертывания:
 
 * Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
-* Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
+* Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
 * Если конфигурация подготовки находится в неработоспособном состоянии, приложение перейдет в режим карантина. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

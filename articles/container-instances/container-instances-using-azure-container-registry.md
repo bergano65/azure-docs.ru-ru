@@ -6,18 +6,18 @@ ms.topic: article
 ms.date: 07/02/2020
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 8a82b0b70b7be8897d8f85cabea2ee21ce84d913
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 0a997733e015a9f65b59ffc99cc137dae3d2d62a
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86169618"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927442"
 ---
 # <a name="deploy-to-azure-container-instances-from-azure-container-registry"></a>Развертывание в службе "Экземпляры контейнеров Azure" из реестра контейнеров Azure
 
 [Реестр контейнеров Azure](../container-registry/container-registry-intro.md) — это управляемая служба реестра контейнеров на базе Azure, используемая для хранения частных образов контейнеров Docker. В этой статье описывается, как извлечь образы контейнеров, хранящиеся в реестре контейнеров Azure, при развертывании в службе "экземпляры контейнеров Azure". Для настройки доступа к реестру рекомендуется создать субъект-службу Azure Active Directory и пароль, а также сохранить учетные данные входа в хранилище ключей Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 **Реестр контейнеров Azure**. для выполнения действий, описанных в этой статье, требуется реестр контейнеров Azure, а также по крайней мере один образ контейнера в реестре. Если вам нужен реестр, см. сведения о его создании в статье [Краткое руководство. Создание реестра контейнеров с использованием Azure CLI](../container-registry/container-registry-get-started-azure-cli.md).
 
@@ -25,7 +25,7 @@ ms.locfileid: "86169618"
 
 ## <a name="configure-registry-authentication"></a>Настройка проверки подлинности в реестре
 
-В рабочем сценарии, где предоставляется доступ к службам и приложениям без монитора, рекомендуется настроить доступ к реестру с помощью [субъекта-службы](../container-registry/container-registry-auth-service-principal.md). Субъект-служба позволяет предоставлять [Управление доступом на основе ролей](../container-registry/container-registry-roles.md) для образов контейнеров. Например, вы можете настроить субъект-службу с доступом только на извлечение к реестру.
+В рабочем сценарии, где предоставляется доступ к службам и приложениям без монитора, рекомендуется настроить доступ к реестру с помощью [субъекта-службы](../container-registry/container-registry-auth-service-principal.md). Субъект-служба позволяет предоставлять [Управление доступом на основе ролей Azure (Azure RBAC)](../container-registry/container-registry-roles.md) для образов контейнеров. Например, вы можете настроить субъект-службу с доступом только на извлечение к реестру.
 
 Реестр контейнеров Azure предоставляет дополнительные [Параметры проверки подлинности](../container-registry/container-registry-authentication.md).
 
@@ -160,7 +160,7 @@ az container create \
 
     ![Представление сведений для группы контейнеров службы "Экземпляры контейнеров Azure"][aci-detailsview]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Более подробные сведения об аутентификации в реестре контейнеров Azure см. в статье [Аутентификация с помощью частного реестра контейнеров Docker](../container-registry/container-registry-authentication.md).
 

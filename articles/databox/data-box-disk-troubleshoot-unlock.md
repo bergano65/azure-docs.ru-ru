@@ -1,6 +1,6 @@
 ---
 title: Диск Azure Data Box устранении неполадок при разблокировании диска | Документация Майкрософт
-description: В этой статье описывается, как устранить проблемы, обнаруженные на диске Azure Data Box.
+description: Сведения о рабочих процессах для устранения неполадок, связанных с использованием средства Unlock с Диск Azure Data Box. См. статью Диск Data Box Unlock Errors Tools.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: troubleshooting
 ms.date: 08/05/2020
 ms.author: alkohli
-ms.openlocfilehash: 61f6da7df09f9569af1746563dc3be2922f4e2c1
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 866cf01243983863292ada0b086f8f5b2f94e412
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87833574"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87925567"
 ---
 # <a name="troubleshoot-disk-unlocking-issues-in-azure-data-box-disk"></a>Устранение неполадок, связанных с разблокировкой диска, в Диск Azure Data Box
 
@@ -71,6 +71,6 @@ To figure out who accessed the **Device credentials** blade, you can query the A
  
 Если тома по-прежнему не удается разблокировать, скопируйте журналы из папки, которая содержит средство разблокировки Диска Data Box, и [обратитесь в службу поддержки Майкрософт](data-box-disk-contact-microsoft-support.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об [устранении неполадок при проверке](data-box-disk-troubleshoot.md).

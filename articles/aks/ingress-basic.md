@@ -5,12 +5,12 @@ description: Узнайте, как установить и настроить �
 services: container-service
 ms.topic: article
 ms.date: 07/20/2020
-ms.openlocfilehash: d96118e8f9de37432874a9864fc5c35faeb95a5a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2c75d41d827ad1838898736ba8ff41aaef0b6f13
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87057207"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927059"
 ---
 # <a name="create-an-ingress-controller-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика в Службе Azure Kubernetes (AKS)
 
@@ -25,7 +25,7 @@ ms.locfileid: "87057207"
 - [Создать контроллер входящего трафика, который использует ваши собственные сертификаты TLS][aks-ingress-own-tls]
 - Создать контроллер входящего трафика, использующий службу Let's Encrypt для автоматического создания сертификатов TLS [с динамическим общедоступным IP-адресом][aks-ingress-tls] или [со статическим общедоступным IP-адресом][aks-ingress-static-tls].
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка
 
 В этой статье для установки контроллера входящих данных NGINX используется [Helm 3][helm] .
 
@@ -182,7 +182,7 @@ spec:
       - backend:
           serviceName: aks-helloworld-one
           servicePort: 80
-        path: /(.*)
+        path: /hello-world-one(/|$)(.*)
       - backend:
           serviceName: aks-helloworld-two
           servicePort: 80

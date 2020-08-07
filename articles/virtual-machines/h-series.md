@@ -5,15 +5,15 @@ author: ju-shim
 ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
-ms.date: 08/01/2020
+ms.date: 08/06/2020
 ms.author: amverma
 ms.reviewer: jushiman
-ms.openlocfilehash: 797a036b9cf2e77dfbcdf8dc7596179c4673e6a6
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: e9f876f3d20af01867283f550590b3af23dec662
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87513746"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926626"
 ---
 # <a name="h-series"></a>Серия H
 
@@ -42,51 +42,8 @@ ACU: 290–300
 
 [!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
 
-
-## <a name="supported-os-images-linux"></a>Поддерживаемые образы ОС (Linux)
- 
-В Azure Marketplace имеется множество дистрибутивов Linux, поддерживающих подключение RDMA.
-  
-* **HPC на основе CentOS** . для виртуальных машин, не использующих SR-IOV, CentOS версии 6,5 HPC или более поздней версии, подходят до 7,5. Для виртуальных машин серии H рекомендуется использовать версии 7,1 и 7,5. Драйверы RDMA и Intel MPI 5.1 будут установлены на виртуальной машине.
-  Для виртуальных машин SR-IOV CentOS-HPC 7,6 оптимизирован и предварительно загружен с драйверами RDMA и различными установленными пакетами MPI.
-  Для других образов виртуальных машин RHEL/CentOS добавьте расширение Инфинибандлинукс, чтобы включить InfiniBand. Это расширение виртуальной машины Linux устанавливает драйверы Mellanox ОФЕД (на виртуальных машинах SR-IOV) для подключения RDMA. Следующий командлет PowerShell устанавливает последнюю версию (версии 1,0) расширения Инфинибанддриверлинукс на существующую виртуальную машину с поддержкой RDMA. Виртуальная машина с поддержкой RDMA называется *myVM* и развертывается в группе ресурсов с именем *MyResourceGroup* в регионе *Западная часть США* следующим образом:
-
-  ```powershell
-  Set-AzVMExtension -ResourceGroupName "myResourceGroup" -Location "westus" -VMName "myVM" -ExtensionName "InfiniBandDriverLinux" -Publisher "Microsoft.HpcCompute" -Type "InfiniBandDriverLinux" -TypeHandlerVersion "1.0"
-  ```
-  Кроме того, расширения ВМ можно добавить в шаблоны Azure Resource Manager для простоты развертывания с помощью следующего элемента JSON:
-  ```json
-  "properties":{
-  "publisher": "Microsoft.HpcCompute",
-  "type": "InfiniBandDriverLinux",
-  "typeHandlerVersion": "1.0",
-  } 
-  ```
-  
-  Следующая команда устанавливает последнюю версию расширения Инфинибанддриверлинукс версии 1,0 на всех виртуальных машинах с поддержкой RDMA в существующем масштабируемом наборе виртуальных машин с именем *myVMSS* , развернутом в группе ресурсов с именем *myResourceGroup*:
-  ```powershell
-  $VMSS = Get-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myVMSS"
-  Add-AzVmssExtension -VirtualMachineScaleSet $VMSS -Name "InfiniBandDriverLinux" -Publisher "Microsoft.HpcCompute" -Type "InfiniBandDriverLinux" -TypeHandlerVersion "1.0"
-  Update-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "MyVMSS" -VirtualMachineScaleSet $VMSS
-  Update-AzVmssInstance -ResourceGroupName "myResourceGroup" -VMScaleSetName "myVMSS" -InstanceId "*"
-  ```
-  
-  > [!NOTE]
-  > В образах HPC на основе CentOS обновления ядра отключены в файле конфигурации **yum** . Это связано с тем, что драйверы Linux RDMA распространяются в виде пакета RPM, а обновления драйверов могут не работать при обновлении ядра.
-  >
-  
-
-* **SUSE Linux Enterprise Server** SLES 12 SP3 для HPC, SLES 12 SP3 для HPC (Premium), SLES 12 SP1 для HPC, SLES 12 SP1 для HPC (Premium), SLES 12 SP4 и SLES 15. Драйверы RDMA и пакеты Intel MPI будут установлены на виртуальной машине. Установите MPI, выполнив следующую команду:
-
-  ```bash
-  sudo rpm -v -i --nodeps /opt/intelMPI/intel_mpi_packages/*.rpm
-  ```
-  
-* **Ubuntu** -ubuntu Server 16,04 LTS, 18,04 LTS. Настройте драйверы RDMA на виртуальной машине и выполните регистрацию на сайте Intel, чтобы скачать Intel MPI.
-
-  [!INCLUDE [virtual-machines-common-ubuntu-rdma](../../includes/virtual-machines-common-ubuntu-rdma.md)]  
-
-  Дополнительные сведения о включении InfiniBand с настройкой MPI см. в разделе [Enable InfiniBand](./workloads/hpc/enable-infiniband.md).
+> [!NOTE]
+> Среди [виртуальных машин, поддерживающих RDMA](sizes-hpc.md#rdma-capable-instances), Серия H не поддерживает SR-IOV. Поэтому поддерживаемые [образы виртуальных машин](./workloads/hpc/configure.md#vm-images), требования к [драйверу InfiniBand](./workloads/hpc/enable-infiniband.md) и поддерживаемые [библиотеки MPI](./workloads/hpc/setup-mpi.md) ОТЛИЧАЮТСЯ от ВИРТУАЛЬНЫХ машин с поддержкой SR-IOV.
 
 ## <a name="other-sizes"></a>Остальные размеры
 
@@ -99,7 +56,7 @@ ACU: 290–300
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте больше об оптимизации приложений HPC для Azure и некоторых примерах на [рабочих нагрузках HPC](./workloads/hpc/overview.md).
+- Узнайте больше о [настройке виртуальных машин](./workloads/hpc/configure.md), [включении INFINIBAND](./workloads/hpc/enable-infiniband.md), [настройке MPI](./workloads/hpc/setup-mpi.md) и оптимизации приложений HPC для [рабочих нагрузок](./workloads/hpc/overview.md)Azure в HPC.
 - Ознакомьтесь с последними объявлениями и некоторыми примерами HPC и результатами в [блогах сообщества разработчиков Azure](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
 - Для более высокого уровня архитектуры выполнения рабочих нагрузок HPC см. статью [высокопроизводительные вычисления (HPC) в Azure](/azure/architecture/topics/high-performance-computing/).
 - Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

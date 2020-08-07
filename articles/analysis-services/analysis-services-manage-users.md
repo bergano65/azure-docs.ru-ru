@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b1f848b5e6fa053d81754d441fd4845c1a24ee5b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 15ae1ca6902c27732812a591f492430150c84ecb
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85361495"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926184"
 ---
 # <a name="authentication-and-user-permissions"></a>Аутентификация и разрешения пользователей
 
@@ -68,7 +68,7 @@ Power BI Desktop подключается к Azure Analysis Services с помо
 
 ![Управление доступом на портале Azure](./media/analysis-services-manage-users/aas-manage-users-rbac.png)
 
-Роли на этом уровне применяются к пользователям или учетным записям, которым необходимо выполнить задачи на портале или с помощью шаблонов Azure Resource Manager. Дополнительные сведения см. в статье об [управлении доступом на основе ролей](../role-based-access-control/overview.md). 
+Роли на этом уровне применяются к пользователям или учетным записям, которым необходимо выполнить задачи на портале или с помощью шаблонов Azure Resource Manager. Дополнительные сведения см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../role-based-access-control/overview.md). 
 
 ## <a name="database-roles"></a>Роли базы данных
 
@@ -81,4 +81,4 @@ Power BI Desktop подключается к Azure Analysis Services с помо
 [Управление доступом к ресурсам с помощью групп Azure Active Directory](../active-directory/fundamentals/active-directory-manage-groups.md)   
 [Управление ролями и пользователями базы данных](analysis-services-database-users.md)  
 [Управление администраторами сервера](analysis-services-server-admins.md)  
-[Управление доступом на основе ролей](../role-based-access-control/overview.md)  
+[Управление доступом на основе ролей в Azure (Azure RBAC)](../role-based-access-control/overview.md)  

@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 10/05/2019
 ms.author: rohink
-ms.openlocfilehash: 0945f89e3c18ab20ece0b493a49ec9f7f31e4e13
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: d6faf5bd42c90ea1510d454a2ab7939f121b3d0d
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87529200"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87925011"
 ---
 # <a name="azure-private-dns-faq"></a>Частная зона DNS: часто задаваемые вопросы
 
@@ -38,7 +38,7 @@ ms.locfileid: "87529200"
 
 ## <a name="can-a-virtual-network-that-belongs-to-a-different-subscription-be-linked-to-a-private-zone"></a>Можно ли связать с частной зоной виртуальную сеть, принадлежащую другой подписке?
 
-Да. Вы должны обладать разрешением на операцию записи для виртуальных сетей и частной зоны DNS. Разрешение на запись может быть предоставлено нескольким ролям Azure. Например, роль Azure "участник классической сети" имеет разрешения на запись в виртуальные сети и роль участника "зоны Частная зона DNS" имеет разрешения на запись в частные зоны DNS. Дополнительные сведения о ролях Azure см. в разделе [Управление доступом на основе ролей](../role-based-access-control/overview.md).
+Да. Вы должны обладать разрешением на операцию записи для виртуальных сетей и частной зоны DNS. Разрешение на запись может быть предоставлено нескольким ролям Azure. Например, роль Azure "участник классической сети" имеет разрешения на запись в виртуальные сети и роль участника "зоны Частная зона DNS" имеет разрешения на запись в частные зоны DNS. Дополнительные сведения о ролях Azure см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../role-based-access-control/overview.md).
 
 ## <a name="will-the-automatically-registered-virtual-machine-dns-records-in-a-private-zone-be-automatically-deleted-when-you-delete-the-virtual-machine"></a>Будут ли автоматически зарегистрированные записи DNS виртуальных машин в частной зоне автоматически удалены при удалении виртуальной машины?
 

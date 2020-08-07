@@ -3,12 +3,12 @@ title: Резервное копирование баз данных SQL Server 
 description: В этой статье объясняется, как создать резервную копию SQL Server в Azure. Здесь также описывается восстановление SQL Server.
 ms.topic: conceptual
 ms.date: 06/18/2019
-ms.openlocfilehash: df8543d7f083dd2bf9d2421b4808de5b60a51e30
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 28644065619771069e556c941d2c5a77626e1ba6
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86513784"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87922903"
 ---
 # <a name="about-sql-server-backup-in-azure-vms"></a>Сведения о резервном копировании SQL Server на виртуальных машинах Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "86513784"
 Прежде чем начать, проверьте следующее:
 
 1. Убедитесь, что у вас есть экземпляр SQL Server, работающий в Azure. Вы можете [быстро создать экземпляр SQL Server](../azure-sql/virtual-machines/windows/sql-vm-create-portal-quickstart.md) в marketplace.
-2. Просмотрите [рекомендации о функциях](sql-support-matrix.md#feature-consideration-and-limitations) и сведения о [поддержке сценариев](sql-support-matrix.md#scenario-support).
+2. Ознакомьтесь с [вопросами](sql-support-matrix.md#feature-considerations-and-limitations) и [поддержкой сценариев](sql-support-matrix.md#scenario-support).
 3. [Ознакомьтесь с часто задаваемыми вопросами об этом сценарии](faq-backup-sql-server.md).
 
 ## <a name="set-vm-permissions"></a>Настройка разрешений виртуальной машины

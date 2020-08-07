@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 05/31/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: ecd7b0bc34d532e7d748bc9468d3a155b9aa2ad2
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: f9e4fdb0fe8872c505bbbbb10da11d8fb74a22b3
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87901748"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927221"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Устранение неполадок службы файлов Azure в Windows
 
@@ -305,27 +305,27 @@ TcpTestSucceeded : True
  
 Например, его можно присвоить 0x100000 и просмотреть станет ли производительность лучше.
 
-## <a name="error-aaddstenantnotfound-in-enabling-azure-active-directory-domain-service-aad-ds-authentication-for-azure-files-unable-to-locate-active-tenants-with-tenant-id-aad-tenant-id"></a>Ошибка Ааддстенантнотфаунд при включении проверки подлинности службы домена Azure Active Directory (AAD DS) для файлов Azure "не удается нахождение активных клиентов с идентификатором клиента AAD-клиент-ID"
+## <a name="error-aaddstenantnotfound-in-enabling-azure-active-directory-domain-service-azure-ad-ds-authentication-for-azure-files-unable-to-locate-active-tenants-with-tenant-id-aad-tenant-id"></a>Ошибка Ааддстенантнотфаунд при включении проверки подлинности Azure Active Directory службы домена (Azure AD DS) для файлов Azure "не удается нахождение активных клиентов с ИДЕНТИФИКАТОРом клиента AAD-клиент-ID"
 
 ### <a name="cause"></a>Причина
 
-Ошибка Ааддстенантнотфаунд возникает при попытке [включить проверку подлинности Azure Active Directory доменных служб (Azure AD DS) в службе файлов Azure](storage-files-identity-auth-active-directory-domain-service-enable.md) в учетной записи хранения, где [Служба домена AAD (AAD DS)](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) не создана в клиенте AAD связанной подписки.  
+Ошибка Ааддстенантнотфаунд возникает при попытке [включить проверку подлинности Azure Active Directory доменных служб (azure AD DS) в службе файлов Azure](storage-files-identity-auth-active-directory-domain-service-enable.md) в учетной записи хранения, где [Служба домена Azure ad (Azure AD DS)](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) не создана в клиенте Azure AD связанной подписки.  
 
 ### <a name="solution"></a>Решение
 
-Включите доменную службу AAD в клиенте AAD подписки, в которой развернута учетная запись хранения. Вам необходимы права администратора клиента AAD, чтобы создать управляемый домен. Если вы не администратор клиента Azure AD, обратитесь к администратору и следуйте пошаговым инструкциям, чтобы [включить доменные службы Azure Active Directory на портале Azure](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started).
+Включите AD DS Azure в клиенте Azure AD подписки, в которой развернута ваша учетная запись хранения. Для создания управляемого домена требуются права администратора клиента Azure AD. Если вы не администратор клиента Azure AD, обратитесь к администратору и следуйте пошаговым инструкциям, чтобы [включить доменные службы Azure Active Directory на портале Azure](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started).
 
 [!INCLUDE [storage-files-condition-headers](../../../includes/storage-files-condition-headers.md)]
 
-## <a name="error-system-error-1359-has-occurred-an-internal-error-received-over-smb-access-to-file-shares-with-azure-active-directory-domain-service-aad-ds-authentication-enabled"></a>Произошла ошибка "системная ошибка 1359. Внутренняя ошибка "полученный через SMB доступ к общим папкам с включенной аутентификацией службы домена Azure Active Directory (AAD DS)
+## <a name="error-system-error-1359-has-occurred-an-internal-error-received-over-smb-access-to-file-shares-with-azure-active-directory-domain-service-azure-ad-ds-authentication-enabled"></a>Произошла ошибка "системная ошибка 1359. Внутренняя ошибка "получено через SMB-доступ к общим файловым ресурсам с включенной аутентификацией службы домена Azure Active Directory (Azure AD DS)
 
 ### <a name="cause"></a>Причина
 
-Произошла ошибка "системная ошибка 1359. Произошла внутренняя ошибка "при попытке подключения к файловому ресурсу с использованием проверки подлинности AAD DS в доменных СЛУЖБах AAD с DNS-именем домена, начинающимся с числового символа. Например, если DNS-имя домена доменных служб AAD — "1domain", эта ошибка возникает при попытке подключения общей папки с помощью учетных данных AAD. 
+Произошла ошибка "системная ошибка 1359. Внутренняя ошибка "происходит при попытке подключения к файловому ресурсу с помощью Azure AD DS Authentication с AD DS Azure с DNS-именем домена, начинающимся с числового символа. Например, если DNS-имя домена AD DS Azure — "1domain", при попытке подключения общей папки с использованием учетных данных Azure AD возникнет эта ошибка. 
 
 ### <a name="solution"></a>Решение
 
-Сейчас можно рассмотреть возможность повторного развертывания Azure DS с помощью нового DNS-имени домена, которое применяется в следующих правилах:
+Сейчас вы можете повторно развернуть AD DS Azure, используя новое DNS-имя домена, которое применяется в следующих правилах:
 - Имена не могут начинаться с числового символа.
 - Имена должны иметь длину от 3 до 63 символов.
 

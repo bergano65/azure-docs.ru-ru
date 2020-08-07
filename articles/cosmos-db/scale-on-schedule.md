@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 01/13/2020
 ms.author: mjbrown
-ms.openlocfilehash: 670a38b48ee89930078078dc4a8ac1a2876648e2
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: ec5c98d90facf9458769f235880f17d14708e425
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87503741"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87923661"
 ---
 # <a name="scale-azure-cosmos-db-throughput-by-using-azure-functions-timer-trigger"></a>Масштабирование Azure Cosmos DB пропускной способности с помощью триггера таймера для функций Azure
 
@@ -23,8 +23,8 @@ ms.locfileid: "87503741"
 
 Чтобы упростить процесс масштабирования Azure Cosmos DB по расписанию, мы создали пример проекта, именуемый [планировщиком пропускной способности Azure Cosmos](https://github.com/Azure-Samples/azure-cosmos-throughput-scheduler). Этот проект является приложением функций Azure с двумя триггерами таймера: "Скалеуптригжер" и "Скаледовнтригжер". Триггеры запускают сценарий PowerShell, который задает пропускную способность для каждого ресурса, как определено в `resources.json` файле каждого триггера. Скалеуптригжер настроен на запуск в течение 8 часов UTC, а Скаледовнтригжер настроен на запуск в 6 РМ UTC, и эти времена можно легко обновить в `function.json` файле для каждого триггера.
 
-Вы можете клонировать этот проект локально, изменить его, указав Azure Cosmos DBные ресурсы для увеличения и уменьшения масштаба, а также расписание выполнения. Позже вы сможете развернуть его в подписке Azure и защитить его с помощью управляемого удостоверения службы с разрешениями [управления доступом на основе ролей](role-based-access-control.md) (RBAC) с ролью "Azure Cosmos DB оператор", чтобы настроить пропускную способность для учетных записей Azure Cosmos.
+Вы можете клонировать этот проект локально, изменить его, указав Azure Cosmos DBные ресурсы для увеличения и уменьшения масштаба, а также расписание выполнения. Позже вы сможете развернуть его в подписке Azure и защитить его с помощью управляемого удостоверения службы с разрешениями [управления доступом на основе ролей Azure (Azure RBAC)](role-based-access-control.md) с ролью "Azure Cosmos DB оператор", чтобы настроить пропускную способность для учетных записей Azure Cosmos.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 - Узнайте больше и загрузите пример из [планировщика пропускной способности Azure Cosmos DB](https://github.com/Azure-Samples/azure-cosmos-throughput-scheduler).

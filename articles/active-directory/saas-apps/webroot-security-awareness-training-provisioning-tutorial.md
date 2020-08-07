@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/06/2020
 ms.author: Zhchia
-ms.openlocfilehash: 0bed20dfd087783e865dd2e68897870ad56507c2
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 0b9792ce25541917bfde3291b3864f58d70d6d03
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87294640"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87924042"
 ---
 # <a name="tutorial-configure-webroot-security-awareness-training-for-automatic-user-provisioning"></a>Руководство по настройке службы "осведомленность о безопасности корневого каталога" для автоматической подготовки пользователей
 
@@ -65,7 +65,7 @@ ms.locfileid: "87294640"
 
 4. Скопируйте и сохраните **секретный токен**. Это значение будет указано в поле Секретный токен на вкладке Подготовка приложения для обучения безопасности корневого каталога в портал Azure.
 
-5. Нажмите кнопку **Done**(Готово).
+5. Нажмите кнопку **Готово**.
 
     ![Копировать токен секрета](./media/webroot-security-awareness-training-provisioning-tutorial/copy-secret-token.png)
 
@@ -120,10 +120,10 @@ ms.locfileid: "87294640"
 
    |attribute|Тип|Поддерживается для фильтрации|
    |---|---|---|
-   |externalId|Тип String|&check;|
-   |name.givenName|Тип String|
-   |name.familyName|Тип String|
-   |emails[type eq "work"].value|Тип String|
+   |externalId|Строка|&check;|
+   |name.givenName|Строка|
+   |name.familyName|Строка|
+   |emails[type eq "work"].value|Строка|
 
 10. В разделе **сопоставления** выберите **подготавливать Azure Active Directory группы**.
 
@@ -133,7 +133,7 @@ ms.locfileid: "87294640"
       |---|---|---|
       |displayName|Строка|&check;|
       |members|Справочник|
-      |externalId|Тип String|
+      |externalId|Строка|
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -155,7 +155,7 @@ ms.locfileid: "87294640"
 После настройки подготовки используйте следующие ресурсы для мониторинга развертывания.
 
 1. Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
-2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
+2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
 3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).  
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

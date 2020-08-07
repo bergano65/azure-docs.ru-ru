@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: trbye
-ms.openlocfilehash: 7c30ee2ef4a6ab0cd4241cac921a59eeadf5ce17
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 15b69e664ae9a01635afb44d7b6b7c24d7551ce9
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81401042"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87921424"
 ---
 # <a name="what-is-multi-device-conversation-preview"></a>Что такое беседа с несколькими устройствами (Предварительная версия)?
 
@@ -60,7 +60,7 @@ ms.locfileid: "81401042"
 Вы также можете предоставлять субтитры для презентаций и лекций на экране и на собственных устройствах участников аудитории. После того как аудитория присоединяется к коду диалога, он может увидеть запись на своем предпочитаемом языке на своем устройстве.
 
 > [!NOTE]
-> Чтобы увидеть пример, ознакомьтесь с преобразованием [конвертера презентаций](https://www.microsoft.com/translator/apps/presentation-translator/), надстройкой PowerPoint, которая использует службу бесед с несколькими устройствами. Его можно загрузить [здесь](https://www.microsoft.com/download/details.aspx?id=55024).
+> Чтобы увидеть пример, ознакомьтесь с преобразованием [конвертера презентаций](https://www.microsoft.com/translator/apps/presentation-translator/), надстройкой PowerPoint, которая использует службу бесед с несколькими устройствами. Его можно загрузить [здесь](https://download.cnet.com/s/powerpoint-add-in/).
 
 ## <a name="how-it-works"></a>Принцип работы
 
@@ -123,7 +123,7 @@ ms.locfileid: "81401042"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Преобразование диалогов в режиме реального времени](quickstarts/multi-device-conversation.md)

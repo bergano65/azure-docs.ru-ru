@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 07/10/2020
-ms.openlocfilehash: 1ff366e24adb82a0d7d4660d4afaffa0bbca0b3c
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 737e2fc682e630775b763dd2f22f904d895a120f
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87328480"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87921272"
 ---
 # <a name="build-the-landing-page-for-your-transactable-saas-offer-in-the-commercial-marketplace"></a>Создание целевой страницы для вашего предложения SaaS в коммерческом магазине
 
@@ -56,7 +56,7 @@ ms.locfileid: "87328480"
 
 Если вы собираетесь запросить API Microsoft Graph, [Настройте новое приложение для доступа к веб-API](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-access-web-apis). При выборе разрешений API для этого приложения значение по умолчанию " **пользователь. чтение** " достаточно для сбора основных сведений о покупателе, чтобы процесс адаптации был гладким и автоматическим. Не запрашивать разрешения API с меткой **"требуется согласие администратора"**, так как это позволит всем пользователям, не являющимся администраторами, посетить целевую страницу.
 
-Если вам требуются повышенные разрешения в процессе адаптации или подготовки, рассмотрите возможность использования функции [добавочного согласия](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-access-web-apis) Azure AD, чтобы все покупатели, отправленные из Marketplace, могли изначально взаимодействовать с целевой страницей.
+Если вам требуются повышенные разрешения в процессе адаптации или подготовки, рассмотрите возможность использования функции [добавочного согласия](https://aka.ms/incremental-consent) Azure AD, чтобы все покупатели, отправленные из Marketplace, могли изначально взаимодействовать с целевой страницей.
 
 ## <a name="use-a-code-sample-as-a-starting-point"></a>Использование примера кода в качестве отправной точки
 
@@ -90,16 +90,7 @@ ms.locfileid: "87328480"
 
 ### <a name="call-the-resolve-endpoint"></a>Вызов конечной точки разрешения
 
-Интерфейсы API выполнения SaaS реализуют конечную точку [разрешения](./partner-center-portal/pc-saas-fulfillment-api-v2.md#resolve-a-purchased-subscription) , которую можно вызвать, чтобы подтвердить допустимость токена Marketplace и получить сведения о подписке, включая значения, приведенные в этой таблице.
-
-| Значение | Описание |
-| ------------ | ------------- |
-| Идентификатор | Уникальный идентификатор (GUID) для этой подписки. Это значение потребуется в будущих вызовах API-интерфейсов выполнения SaaS. |
-| subscriptionName | Имя подписки, которая была задана при добавлении предложения в центр партнеров. |
-| offerId | Идентификатор для конкретного предложения (устанавливается при добавлении предложения). |
-| planId | Идентификатор для конкретного плана предложения (устанавливается при добавлении предложения). |
-| Количество | Количество входных данных покупателем во время покупки. |
-|||
+Интерфейсы API выполнения SaaS реализуют конечную точку [разрешения](./partner-center-portal/pc-saas-fulfillment-api-v2.md#resolve-a-purchased-subscription) , которую можно вызвать, чтобы подтвердить допустимость токена Marketplace и получить сведения о подписке.
 
 ## <a name="read-information-from-claims-encoded-in-the-id-token"></a>Чтение сведений из утверждений, закодированных в маркере идентификации
 

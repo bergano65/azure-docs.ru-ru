@@ -3,16 +3,16 @@ title: Роли и разрешения Azure
 description: Используйте управление доступом на основе ролей Azure (Azure RBAC) и управление удостоверениями и доступом (IAM), чтобы обеспечить детальные разрешения для ресурсов в реестре контейнеров Azure.
 ms.topic: article
 ms.date: 12/02/2019
-ms.openlocfilehash: 90546b96f081893d312e66aae04e2125c1c210e5
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 23a9c08162c03d4b34ed289d650fddcd7413ed08
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87533314"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87920081"
 ---
 # <a name="azure-container-registry-roles-and-permissions"></a>Роли и разрешения реестра контейнеров Azure
 
-Служба реестра контейнеров Azure поддерживает набор [встроенных ролей Azure](../role-based-access-control/built-in-roles.md) , которые предоставляют различные уровни разрешений для реестра контейнеров Azure. Используйте [Управление доступом на основе ролей](../role-based-access-control/index.yml) Azure (RBAC), чтобы назначить определенные разрешения пользователям, субъектам-службам или другим удостоверениям, которые должны взаимодействовать с реестром. 
+Служба реестра контейнеров Azure поддерживает набор [встроенных ролей Azure](../role-based-access-control/built-in-roles.md) , которые предоставляют различные уровни разрешений для реестра контейнеров Azure. Используйте [Управление доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/index.yml) , чтобы назначить определенные разрешения пользователям, субъектам-службам или другим удостоверениям, которые должны взаимодействовать с реестром. 
 
 | Роль или разрешение       | [Доступ к Resource Manager](#access-resource-manager) | [Создание и удаление реестра](#create-and-delete-registry) | [Отправка образа](#push-image) | [Получение образа](#pull-image) | [Удаление данных образа](#delete-image-data) | [Изменение политик](#change-policies) |   [Подписывание образов](#sign-images)  |
 | ---------| --------- | --------- | --------- | --------- | --------- | --------- | --------- |

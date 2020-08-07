@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 699eb37176d6737744fb0ba01f9f3f4a2d4e55b1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c23c57e77f69cd7043e09ff5e2809d8329d62da3
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85318753"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87925528"
 ---
 # <a name="tutorial-configure-smartsheet-for-automatic-user-provisioning"></a>Учебник. Настройка Smartsheet для автоматической подготовки пользователей
 
@@ -155,7 +155,7 @@ ms.locfileid: "85318753"
    |роли [основной EQ "true"]. Отображение|Строка|
    |роли [основной EQ "true"]. Type|Строка|
    |роли [первичный EQ "true"]. Value|Строка|
-   |roles|Строка|
+   |Роли|Строка|
    urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Строка|
@@ -182,7 +182,7 @@ ms.locfileid: "85318753"
 После настройки подготовки используйте следующие ресурсы для мониторинга развертывания.
 
 1. Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
-2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
+2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
 3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).  
 
 ## <a name="connector-limitations"></a>Ограничения соединителя

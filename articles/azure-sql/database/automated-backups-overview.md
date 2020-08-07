@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab, danil
 ms.date: 08/04/2020
-ms.openlocfilehash: 205e99303cd53adf6aa952ccd65441b72471f3a2
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 3e37d907d00acd3e2b368700b70b4e268bad3ec9
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810290"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87921951"
 ---
 # <a name="automated-backups---azure-sql-database--sql-managed-instance"></a>Автоматическое резервное копирование базы данных SQL Azure & SQL Управляемый экземпляр
 
@@ -111,7 +111,7 @@ RA-GRS Storage blobs реплицируются в [парный регион](.
 
 - Сократите [срок хранения резервных копий](#change-the-pitr-backup-retention-period-by-using-the-azure-portal) до минимально возможной потребности.
 - Избегайте выполнения больших операций записи, таких как перестроение индекса, чаще, чем требуется.
-- Для операций загрузки больших данных рассмотрите возможность использования [кластеризованных индексов columnstore](https://docs.microsoft.com/sql/database-engine/using-clustered-columnstore-indexes) и [следующих связанных рекомендаций](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance), а также уменьшения числа некластеризованных индексов.
+- Для операций загрузки больших данных рассмотрите возможность использования [кластеризованных индексов columnstore](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-overview) и [следующих связанных рекомендаций](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance), а также уменьшения числа некластеризованных индексов.
 - На уровне служб общего назначения подготовленное хранилище данных менее затратно, чем стоимость хранилища резервных копий. При постоянном повышении затрат на хранение резервных копий можно увеличить объем хранилища данных для сохранения в хранилище резервных копий.
 - Используйте базу данных TempDB вместо постоянных таблиц в логике приложения для хранения временных результатов и (или) временных данных.
 - Используйте локально избыточное хранилище резервных копий везде, где это возможно (например, в средах разработки и тестирования).

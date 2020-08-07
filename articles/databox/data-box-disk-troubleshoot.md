@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок диска Azure Data Box | Документация Майкрософт
-description: В этой статье описывается, как устранить проблемы, обнаруженные на диске Azure Data Box.
+description: Узнайте, как использовать журналы для устранения проблем проверки, которые могут возникнуть при развертывании Диск Azure Data Box.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: troubleshooting
 ms.date: 06/14/2019
 ms.author: alkohli
-ms.openlocfilehash: 35b4b206de9c16d66387135b0ca75b6aaeb7c744
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1c1b38c4021660b9f59098f8442d16bfd0ecc582
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85565002"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87925548"
 ---
 # <a name="use-logs-to-troubleshoot-validation-issues-in-azure-data-box-disk"></a>Используйте журналы для устранения неполадок, связанных с проверкой, в Диск Azure Data Box
 
@@ -94,6 +94,6 @@ ms.locfileid: "85565002"
 | `NonVhdFileNotSupportedForManagedDisk` | Не удается отправить файл, не являющийся VHD-файлом, в качестве управляемого диска. |Удалите из папки файлы, не являющиеся VHD-файлами, `ManagedDisk` так как они не поддерживаются, или переместите эти файлы в `PageBlob` папку. Повторите проверку. |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Устранение [ошибок передачи данных](data-box-disk-troubleshoot-upload.md).

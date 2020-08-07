@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/29/2019
 ms.author: Zhchia
-ms.openlocfilehash: 16cba1896a9e9e4038091769fb78ca0c0469710e
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 799713c237d8a528b7e458da1e26695484ca1080
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448833"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87923175"
 ---
 # <a name="tutorial-configure-iprova-for-automatic-user-provisioning"></a>Учебник. Настройка Ипрова для автоматической подготовки пользователей
 
@@ -114,7 +114,7 @@ ms.locfileid: "87448833"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с ипрова**.
 
@@ -123,33 +123,33 @@ ms.locfileid: "87448833"
    |attribute|Тип|
    |---|---|
    |active|Логическое|
-   |displayName|Тип String|
-   |title|Тип String|
-   |emails[type eq "work"].value|Тип String|
-   |preferredLanguage|Тип String|
-   |userName|Тип String|
+   |displayName|Строка|
+   |title|Строка|
+   |emails[type eq "work"].value|Строка|
+   |preferredLanguage|Строка|
+   |userName|Строка|
    |addresses[type eq "work"].country|Строка|
-   |addresses[type eq "work"].locality|Тип String|
-   |addresses[type eq "work"].postalCode|Тип String|
-   |addresses[type eq "work"].formatted|Тип String|
-   |addresses[type eq "work"].region|Тип String|
-   |addresses[type eq "work"].streetAddress|Тип String|
-   |адреса [Введите EQ "Other"]. форматированный|Тип String|
-   |name.givenName|Тип String|
-   |name.familyName|Тип String|
-   |name.formatted|Тип String|
-   |phoneNumbers[type eq "fax"].value|Тип String|
-   |phoneNumbers[type eq "mobile"].value|Тип String|
-   |phoneNumbers[type eq "work"].value|Тип String|
-   |externalId|Тип String|
-   |роли [основной EQ "true"]. Отображение|Тип String|
-   |роли [основной EQ "true"]. Type|Тип String|
-   |роли [первичный EQ "true"]. Value|Тип String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Тип String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Тип String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Тип String|
+   |addresses[type eq "work"].locality|Строка|
+   |addresses[type eq "work"].postalCode|Строка|
+   |addresses[type eq "work"].formatted|Строка|
+   |addresses[type eq "work"].region|Строка|
+   |addresses[type eq "work"].streetAddress|Строка|
+   |адреса [Введите EQ "Other"]. форматированный|Строка|
+   |name.givenName|Строка|
+   |name.familyName|Строка|
+   |name.formatted|Строка|
+   |phoneNumbers[type eq "fax"].value|Строка|
+   |phoneNumbers[type eq "mobile"].value|Строка|
+   |phoneNumbers[type eq "work"].value|Строка|
+   |externalId|Строка|
+   |роли [основной EQ "true"]. Отображение|Строка|
+   |роли [основной EQ "true"]. Type|Строка|
+   |роли [первичный EQ "true"]. Value|Строка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Строка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Строка|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Тип String|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Строка|
 
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с ипрова**.
@@ -182,7 +182,7 @@ ms.locfileid: "87448833"
 После настройки подготовки используйте следующие ресурсы для мониторинга развертывания.
 
 1. Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
-2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
+2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
 3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).  
 
 ## <a name="change-log"></a>Журнал изменений

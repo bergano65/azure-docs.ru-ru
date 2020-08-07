@@ -1,25 +1,25 @@
 ---
 title: Создание VPN-шлюза на основе маршрутов. портал
 titleSuffix: Azure VPN Gateway
-description: Создание VPN-шлюза на основе маршрутов с помощью портала Azure
+description: Узнайте, как создать VPN-шлюз Azure на основе маршрутов с помощью портал Azure. Используйте VPN-шлюз для подключения к локальной сети.
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 03/03/2020
 ms.author: cherylmc
-ms.openlocfilehash: 4409df576c23e0dbc3e663cc348b45bc23ad5460
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d78dff60c08a67305824139ba11f336380b0a018
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84987705"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87923380"
 ---
 # <a name="create-a-route-based-vpn-gateway-using-the-azure-portal"></a>Создание VPN-шлюза на основе маршрутов с помощью портала Azure
 
 Эта статья поможет быстро создать VPN-шлюз Azure на основе маршрутов, используя портал Azure.  VPN-шлюз используется при создании VPN-подключения к локальной сети. Также вы можете использовать VPN-шлюз для подключения виртуальных сетей. 
 
-Инструкции в этой статье позволяют создать виртуальную сеть, подсеть, подсеть шлюза и VPN-шлюз на основе маршрутов (шлюз виртуальной сети). Создав шлюз, можно создавать подключения. Для этих действий требуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Инструкции в этой статье позволяют создать виртуальную сеть, подсеть, подсеть шлюза и VPN-шлюз на основе маршрутов (шлюз виртуальной сети). Создав шлюз, можно создавать подключения. Для этих действий требуется подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-a-virtual-network"></a><a name="vnet"></a>Создание виртуальной сети
 
@@ -48,7 +48,7 @@ ms.locfileid: "84987705"
 
    ![Просмотр VPN-шлюза](./media/create-routebased-vpn-gateway-portal/view-gateway.png "Просмотр VPN-шлюза")
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Создав шлюз, можно создать подключение между вашей и другой виртуальной сетью. Также можно создать подключение между виртуальной сетью и локальным расположением.
 

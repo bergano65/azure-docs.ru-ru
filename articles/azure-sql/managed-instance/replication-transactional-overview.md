@@ -12,17 +12,19 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 04/20/2020
-ms.openlocfilehash: ee481067a3904c208061607b7109fcba0f3faaa7
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ec1dfa3edea5364151c543889d974944a1a1cd5a
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86504073"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87920132"
 ---
 # <a name="transactional-replication-with-azure-sql-managed-instance"></a>Репликация транзакций с помощью Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
-Репликация транзакций — это функция Управляемый экземпляр Azure SQL и SQL Server, которая позволяет реплицировать данные из таблицы в Управляемый экземпляр SQL Azure или экземпляре SQL Server в таблицы, размещенные в удаленных базах данных. Она обеспечивает синхронизацию множества таблиц в различных базах данных.
+Репликация транзакций — это функция Управляемый экземпляр Azure SQL и SQL Server, которая позволяет реплицировать данные из таблицы в Управляемый экземпляр SQL Azure или экземпляре SQL Server в таблицы, размещенные в удаленных базах данных. Она обеспечивает синхронизацию множества таблиц в различных базах данных. 
+
+В настоящее время репликация транзакций доступна в общедоступной предварительной версии Управляемый экземпляр SQL. 
 
 ## <a name="overview"></a>Обзор
 
@@ -35,7 +37,7 @@ ms.locfileid: "86504073"
   > [!NOTE]
   > Чтобы использовать все функции Управляемый экземпляр Azure SQL, необходимо использовать последние версии [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) и [SQL Server Data Tools (SSDT)](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt).
 
-### <a name="components"></a>Компоненты
+### <a name="components"></a>Components
 
 Ключевыми компонентами в репликации транзакций являются **Издатель**, **распространитель**и **подписчик**, как показано на следующем рисунке:  
 
@@ -43,10 +45,10 @@ ms.locfileid: "86504073"
 
 | Роль | База данных SQL Azure | Управляемый экземпляр SQL Azure |
 | :----| :------------- | :--------------- |
-| **Издатель** | Нет | Да |
-| **Распространитель** | Нет | Да|
-| **Подписчик по запросу** | Нет | Да|
-| **Принудительный подписчик**| Да | Да|
+| **Издатель** | Нет | да |
+| **Распространитель** | Нет | да|
+| **Подписчик по запросу** | Нет | да|
+| **Принудительный подписчик**| да | да|
 | &nbsp; | &nbsp; | &nbsp; |
 
 **Издатель** публикует изменения, внесенные в некоторые таблицы (статьи), отправляя обновления на распространитель. Издатель может быть Управляемый экземпляром SQL Azure или экземпляром SQL Server.
@@ -72,11 +74,11 @@ ms.locfileid: "86504073"
 
 | Репликация | База данных SQL Azure | Управляемый экземпляр SQL Azure |
 | :----| :------------- | :--------------- |
-| [**Стандартная транзакционная**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) | Да (только в качестве подписчика) | Да |
-| [**Моментальный снимок**](https://docs.microsoft.com/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | Да|
+| [**Стандартная транзакционная**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) | Да (только в качестве подписчика) | да |
+| [**Моментальный снимок**](https://docs.microsoft.com/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | да|
 | [**Репликация слиянием**](https://docs.microsoft.com/sql/relational-databases/replication/merge/merge-replication) | Нет | Нет|
 | [**Одноранговая репликация**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/peer-to-peer-transactional-replication) | Нет | Нет|
-| [**Двунаправленная репликация**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Нет | Да|
+| [**Двунаправленная репликация**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Нет | да|
 | [**Обновляемые подписки**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/updatable-subscriptions-for-transactional-replication) | Нет | Нет|
 | &nbsp; | &nbsp; | &nbsp; |
 
@@ -197,7 +199,7 @@ ms.locfileid: "86504073"
 - [Создайте публикацию](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication).
 - [Создайте принудительную подписку](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription) , используя имя сервера в качестве подписчика (например, `N'azuresqldbdns.database.windows.net` и базу данных в имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**). )
 
-## <a name="see-also"></a>См. также раздел  
+## <a name="see-also"></a>См. также статью  
 
 - [Репликация с помощью Управляемый экземпляр SQL и группы отработки отказа](transact-sql-tsql-differences-sql-server.md#replication)
 - [Репликация в Базу данных SQL](../database/replication-to-sql-database.md)

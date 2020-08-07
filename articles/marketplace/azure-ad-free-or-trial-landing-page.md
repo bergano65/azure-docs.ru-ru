@@ -7,13 +7,13 @@ ms.reviewer: dannyevers
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
-ms.date: 07/10/2020
-ms.openlocfilehash: d360b890023c1a14f80d9fc8efc703abd7544710
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.date: 08/06/2020
+ms.openlocfilehash: 96e23c22568229ec5f5ba2365747e261b7e471ad
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87328504"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87921390"
 ---
 # <a name="build-the-landing-page-for-your-free-or-trial-saas-offer-in-the-commercial-marketplace"></a>Создание целевой страницы для бесплатного или пробного предложения SaaS в коммерческом магазине
 
@@ -53,7 +53,7 @@ ms.locfileid: "87328504"
 
 Если вы собираетесь запросить API Microsoft Graph, [Настройте новое приложение для доступа к веб-API](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-access-web-apis). При выборе разрешений API для этого приложения значение по умолчанию " **пользователь. чтение** " достаточно для сбора основных сведений о пользователе, чтобы обеспечить гладкий и автоматический процесс адаптации. Не запрашивать разрешения API с меткой **"требуется согласие администратора"**, так как это позволит всем пользователям, не являющимся администраторами, посетить целевую страницу.
 
-Если вам требуются повышенные разрешения в рамках процесса адаптации или подготовки, рассмотрите возможность использования функции [добавочного согласия](https://docs.microsoft.com/azure/active-directory/azuread-dev/azure-ad-endpoint-comparison#incremental-and-dynamic-consent) Azure AD, чтобы все пользователи, отправленные из Marketplace, могли изначально взаимодействовать с целевой страницей.
+Если вам требуются повышенные разрешения в рамках процесса адаптации или подготовки, рассмотрите возможность использования функции [добавочного согласия](https://aka.ms/incremental-consent) Azure AD, чтобы все пользователи, отправленные из Marketplace, могли изначально взаимодействовать с целевой страницей.
 
 ## <a name="use-a-code-sample-as-a-starting-point"></a>Использование примера кода в качестве отправной точки
 

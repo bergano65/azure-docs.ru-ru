@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2020
 ms.author: Zhchia
-ms.openlocfilehash: 7035a4f6e3fe8a3c104568697fcf323e4c0bd2c0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fcde2ed4986b367e35965f6524e7d7727eaa07c9
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87098327"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926779"
 ---
 # <a name="tutorial-configure-linkedin-learning-for-automatic-user-provisioning"></a>Руководство по настройке LinkedIn Learning для автоматической подготовки пользователей
 
@@ -155,7 +155,7 @@ ms.locfileid: "87098327"
 После настройки подготовки используйте следующие ресурсы для мониторинга развертывания.
 
 1. Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
-2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
+2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
 3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).  
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

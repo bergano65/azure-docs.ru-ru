@@ -1,18 +1,18 @@
 ---
 title: 'VPN-шлюз Azure: сведения о маршрутизации P2S'
-description: Эта статья поможет вам понять, как функционирует маршрутизация VPN-подключений типа "точка — сеть".
+description: Сведения о поведении маршрутизации VPN типа "точка — сеть" Azure, которая зависит от ОС клиента, протокола, используемого для подключения, и способа подключения виртуальных сетей.
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: article
 ms.date: 03/24/2020
 ms.author: kumud
-ms.openlocfilehash: 536e1e57af16a87fba85323e9448bfb904d56384
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 8ee75f80ea2e1ee379561b743c2b4add4ef1d7b9
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87027875"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926915"
 ---
 # <a name="about-point-to-site-vpn-routing"></a>Сведения о маршрутизации VPN-подключений "точка — сеть"
 

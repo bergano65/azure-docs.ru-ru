@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: j-martens
 ms.author: jmartens
 ms.date: 06/11/2020
-ms.openlocfilehash: 173ff8b638c40773ca2c4bdac5021f2ea4b84549
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: aa754868677802b7d0000045f22090fbca62d9b6
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85555534"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927425"
 ---
 # <a name="enterprise-and-basic-editions-of-azure-machine-learning"></a>Выпуски Enterprise и Basic Машинное обучение Azure 
 
@@ -112,13 +112,13 @@ ms.locfileid: "85555534"
 
 | Характеристики     | Выпуск                 |
 |------------------------------------------------------------------------------------|:-----------:|
-| Поддержка [управления доступом на основе ролей](how-to-assign-roles.md) (RBAC)                                           | Все                     |
+| Поддержка [управления доступом на основе ролей в Azure (Azure RBAC)](how-to-assign-roles.md)                                           | Все                     |
 | Поддержка [виртуальных сетей (VNet)](how-to-enable-virtual-network.md) для вычислений                                         | Все                     |
 | Оценка проверки подлинности конечной точки                                                    | Все                     |
 | [Частная ссылка рабочей области](how-to-configure-private-link.md)                                                            | Все                     |
 | [Управление квотами](how-to-manage-quotas.md) в рабочих областях                                                 | Только выпуск Enterprise Edition |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о доступных возможностях см. на [странице с обзором машинное обучение Azure Edition и ценах](https://azure.microsoft.com/pricing/details/machine-learning/). 
 

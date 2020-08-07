@@ -1,6 +1,6 @@
 ---
 title: 'BGP и VPN-шлюз Azure: обзор'
-description: В статье описывается использование BGP с VPN-шлюзами Azure.
+description: Сведения о VPN-шлюзе Azure поддерживает протокол BGP, стандартный протокол маршрутизации, используемый для обмена информацией о маршрутизации и доступе.
 services: vpn-gateway
 author: yushwang
 manager: rossort
@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 07/25/2019
 ms.author: yushwang
-ms.openlocfilehash: 0b4bb7ed90225fcb52ea170c07be2b57f8afbafe
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f514c2708c3a81ff56c6029d5e43df43ad503036
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708099"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87924705"
 ---
 # <a name="about-bgp-with-azure-vpn-gateway"></a>Использования BGP с VPN-шлюзами Azure
 В этой статье содержаться общие сведения о поддержке протокола BGP VPN-шлюзами Azure.
@@ -47,6 +47,6 @@ BGP позволяет нескольким шлюзам получать и р�
 ## <a name="bgp-faq"></a><a name="faq"></a>Часто задаваемые вопросы о BGP
 [!INCLUDE [vpn-gateway-faq-bgp-include](../../includes/vpn-gateway-faq-bgp-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Действия по настройке BGP для межсистемных подключений и подключений между виртуальными сетями описаны в разделе [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md) .
 

@@ -1,18 +1,18 @@
 ---
 title: 'VPN-шлюз Azure: Устранение неполадок подключений типа "точка — сеть": клиенты Mac OS X'
-description: Инструкции по устранению неполадок VPN-подключений "точка — сеть" для клиентов Mac OS X
+description: 'Устранение неполадок подключения "точка — сеть" от Mac OS X. Проверьте следующие параметры: адрес сервера, удаленный идентификатор, локальный идентификатор, параметры проверки подлинности и версия ОС.'
 services: vpn-gateway
 author: kumudD
 ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 03/27/2018
 ms.author: alzam
-ms.openlocfilehash: 8dbed35659e409e5e3bcad74b378dba1f71b1f29
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ae7ca9ad69bc5bea20fc959f86e41439bd01cd5c
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86998499"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87920761"
 ---
 # <a name="troubleshoot-point-to-site-vpn-connections-from-mac-os-x-vpn-clients"></a>Устранение неполадок VPN-подключений "точка — сеть" для клиентов Mac OS X
 

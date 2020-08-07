@@ -4,25 +4,25 @@ description: Узнайте, как включить и настроить Ultra
 services: container-service
 ms.topic: article
 ms.date: 07/10/2020
-ms.openlocfilehash: 46be67a415f67e260262e5b80e5a1dad534aea79
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 540269c7ecf42a7e022aa2efb048df7b11587d1a
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86532128"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926745"
 ---
 # <a name="use-azure-ultra-disks-on-azure-kubernetes-service-preview"></a>Использование Azure Ultra Disks в службе Kubernetes Azure (Предварительная версия)
 
 [Диски Azure "Ultra](../virtual-machines/linux/disks-enable-ultra-ssd.md) " обеспечивают высокую пропускную способность, высокую скорость операций ввода-вывода и постоянную задержку на диске для приложений с отслеживанием состояния. Одним из основных преимуществ использования Ultra Disks является возможность динамического изменения производительности SSD вместе с рабочими нагрузками без необходимости перезапуска узлов агента. Ultra Disks подходит для рабочих нагрузок, интенсивно использующих данные.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка
 
 Этот компонент можно задать только при создании кластера или во время создания пула узлов.
 
 > [!IMPORTANT]
 > Для дисков Azure Ultra требуются нодепулс, развернутые в зонах доступности и регионах, которые поддерживают эти диски, а также только определенные серии виртуальных машин. См. [**область и ограничения для Ultra дисков уровня "Глобальный**](../virtual-machines/linux/disks-enable-ultra-ssd.md#ga-scope-and-limitations)".
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 - Убедитесь, что `EnableUltraSSD` включен флаг компонента.
 - Убедитесь, что установлено Последнее `aks-preview` [расширение CLI][az-extension-add] .
@@ -97,7 +97,7 @@ az aks create -g MyResourceGroup -n MyManagedCluster -l westus2 --node-vm-size S
 
 
 ```azurecli
-az aks nodepool add --name hostencrypt --cluster-name myAKSCluster --resource-group myResourceGroup --node-vm-size Standard_L8s_v2 --zones 1 2 --node-count 2 --aks-custom-headers EnableEncryptionAtHost=true
+az aks nodepool add --name hostencrypt --cluster-name myAKSCluster --resource-group myResourceGroup --node-vm-size Standard_L8s_v2 --zones 1 2 --node-count 2 --aks-custom-headers EnableUltraSSD=true
 ```
 
 Если вы хотите создать новые пулы узлов без поддержки Ultra Disks, это можно сделать, опустив пользовательский `--aks-custom-headers` параметр.

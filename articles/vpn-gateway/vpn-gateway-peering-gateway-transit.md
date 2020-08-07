@@ -1,6 +1,6 @@
 ---
 title: Настройка транзита VPN-шлюзов для пиринга между виртуальными сетями
-description: Настройка транзита VPN-шлюзов для пиринга между виртуальными сетями.
+description: Узнайте, как настроить транзит шлюза для пиринга виртуальных сетей, что позволяет легко подключить две виртуальные сети Azure.
 services: vpn-gateway
 titleSuffix: Azure VPN Gateway
 author: yushwang
@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 03/25/2018
 ms.author: yushwang
-ms.openlocfilehash: 05df14005bb52d67aed0f616854c7b6b55e6e35d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 66380fb7c8b9e3d88fe1c814042b51323ff3160a
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84982898"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87925895"
 ---
 # <a name="configure-vpn-gateway-transit-for-virtual-network-peering"></a>Настройка транзита VPN-шлюзов для пиринга между виртуальными сетями
 

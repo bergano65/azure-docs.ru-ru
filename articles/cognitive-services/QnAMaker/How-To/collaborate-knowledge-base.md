@@ -3,12 +3,12 @@ title: Совместная работа с базой знаний — QnA Make
 description: QnA Maker позволяет нескольким пользователям совместно работать с базой знаний. Эта функция предоставляется с помощью управления доступом на основе ролей в Azure (Azure RBAC).
 ms.topic: conceptual
 ms.date: 07/13/2020
-ms.openlocfilehash: 86c8d919618b37223e51a23635a1322a4e0d780c
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 0d59ca83e6067c083e4bfebdb7afaaf6669dda8a
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837437"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926853"
 ---
 # <a name="collaboration-with-authors-and-editors"></a>Совместная работа с авторами и редакторами
 
@@ -16,7 +16,7 @@ ms.locfileid: "87837437"
 
 ## <a name="add-azure-role-based-access-control-azure-rbac-to-your-qna-maker-resource"></a>Добавление управления доступом на основе ролей Azure (Azure RBAC) в ресурс QnA Maker
 
-QnA Maker позволяет нескольким пользователям совместно работать над всеми базами знаний в одном и том же QnA Maker ресурсе. Эта возможность предоставляется в рамках [управления доступом на основе ролей](../../../active-directory/role-based-access-control-configure.md) в Azure.
+QnA Maker позволяет нескольким пользователям совместно работать над всеми базами знаний в одном и том же QnA Maker ресурсе. Эта функция предоставляется с помощью [управления доступом на основе ролей в Azure (Azure RBAC)](../../../active-directory/role-based-access-control-configure.md).
 
 ## <a name="access-at-the-qna-maker-resource-level"></a>Доступ на уровне ресурсов QnA Maker
 
@@ -36,7 +36,7 @@ QnA Maker позволяет нескольким пользователям с�
 
     ![IAM в QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-iam.png)
 
-1. Щелкните **Добавить**.
+1. Нажмите кнопку **Добавить**.
 
     ![Добавление IAM в QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-iam-add.png)
 

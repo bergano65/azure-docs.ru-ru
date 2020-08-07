@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: mayg
-ms.openlocfilehash: 1b77eb136b8415e5a6e4596dc0b192ea426f378f
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: b7cf0d35ae610c3f9fe477267e28e5449459148b
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87292834"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87924586"
 ---
 # <a name="set-up-vmware-disaster-recovery-in-a-multi-tenancy-environment-with-the-cloud-solution-provider-csp-program"></a>Настройка аварийного восстановления VMware в мультитенантном окружении с использованием программы поставщика облачных решений (CSP)
 
@@ -22,7 +22,7 @@ ms.locfileid: "87292834"
 
 В этой статье описано, как вы в качестве партнера можете создавать подписки клиентов и управлять ими через CSP в мультитенантном сценарии репликации VMware.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для настройки репликации VMware необходимо сделать следующее:
 
@@ -80,7 +80,7 @@ ms.locfileid: "87292834"
 
     д) Щелкните **Добавить назначение ролей**, чтобы добавить пользователя с соответствующим уровнем доступа. Имена пользователей, созданных на портале CSP, отображаются на вкладке "Назначения ролей".
 
-      ![Добавление пользователя](./media/vmware-azure-multi-tenant-csp-disaster-recovery/add-user-subscription.png)
+      ![Добавление пользователей](./media/vmware-azure-multi-tenant-csp-disaster-recovery/add-user-subscription.png)
 
 - Для большинства операций управления подойдет роль *Участник*. Пользователи с этим уровнем доступа могут выполнять практически все действия, кроме изменения уровня доступа (для этого требуется уровень доступа *Владелец*).
 - В Site Recovery также предусмотрены три [предварительно определенные роли пользователей](site-recovery-role-based-linked-access-control.md). Это позволяет при необходимости дополнительно ограничивать уровни доступа.
@@ -98,7 +98,7 @@ ms.locfileid: "87292834"
 Настроив подписки клиента, как описано в этой статье, вы сможете быстро начать предоставлять доступ клиентам в любых соответствующих мультитенантных моделях. Дополнительные сведения о различных мультитенантных моделях и включении локального управления доступом доступны [здесь](vmware-azure-multi-tenant-overview.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Ознакомьтесь с дополнительными сведениями](site-recovery-role-based-linked-access-control.md) об управлении доступом на основе ролей для развертываний Azure Site Recovery.
+- Дополнительные сведения об управлении [доступом на основе ролей Azure (Azure RBAC)](site-recovery-role-based-linked-access-control.md) для управления Azure Site Recovery развертываниями.
 - Дополнительные сведения об [архитектуре репликации](vmware-azure-architecture.md)из VMware в Azure.
 - См. дополнительные сведения о [репликации виртуальных машин VMware в Azure](vmware-azure-tutorial.md).
 Узнайте больше о [мультитенантных средах](vmware-azure-multi-tenant-overview.md) для репликации виртуальных машин VMware в Azure.

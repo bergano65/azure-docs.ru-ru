@@ -17,12 +17,12 @@ ms.date: 11/04/2019
 ms.author: markvi
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30cc8be6ad9ebffcad58c5b2412ae15ff3f26fa5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 38cffdcc9c99cdec2aeac8bf6fe1dc1575691c8d
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81113327"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87924036"
 ---
 # <a name="provisioning-reports-in-the-azure-active-directory-portal-preview"></a>Подготовка отчетов на портале Azure Active Directory (Предварительная версия)
 
@@ -99,13 +99,13 @@ ms.locfileid: "81113327"
 - Действие
 
 
-![Фильтр](./media/concept-provisioning-logs/default-filter.png "Filter")
+![Filter](./media/concept-provisioning-logs/default-filter.png "Filter")
 
 Фильтр **удостоверений** позволяет указать имя или удостоверение, которое вас интересуют. Этим удостоверением может быть пользователь, группа, роль или другой объект. Можно выполнить поиск по имени или ИДЕНТИФИКАТОРу объекта. Идентификатор зависит от сценария. Например, при подготовке объекта из Azure AD в SalesForce идентификатор источника — это идентификатор объекта пользователя в Azure AD, а TargetID — идентификатор пользователя в Salesforce. При подготовке от Workday к Active Directoryу идентификатор источника — это идентификатор сотрудника рабочего дня Workday. Обратите внимание, что имя пользователя может не всегда присутствовать в столбце идентификаторов. Всегда будет один идентификатор. 
 
 
 Фильтр **дат** позволяет определить интервал времени для возвращаемых данных.  
-Доступны следующие значения:
+Возможны следующие значения:
 
 - 1 месяц
 - 7 дней
@@ -128,10 +128,10 @@ ms.locfileid: "81113327"
 Фильтр **действий** позволяет фильтровать:
 
 - Создание 
-- Update
+- Обновление
 - DELETE
-- Отключено
-- Другое
+- Отключить
+- Другие
 
 Кроме того, в фильтры представления по умолчанию можно также задать следующие фильтры:
 
@@ -166,7 +166,7 @@ ms.locfileid: "81113327"
 При выборе элемента в представлении списка подготовки вы получите дополнительные сведения об этом элементе.
 Подробные сведения группируются по следующим категориям:
 
-- Шаги
+- Этапы
 
 - Устранение неполадок и рекомендации
 
@@ -175,11 +175,11 @@ ms.locfileid: "81113327"
 - Сводка
 
 
-![Фильтр](./media/concept-provisioning-logs/provisioning-tabs.png "Вкладки")
+![Filter](./media/concept-provisioning-logs/provisioning-tabs.png "Вкладки")
 
 
 
-### <a name="steps"></a>Шаги
+### <a name="steps"></a>Этапы
 
 На вкладке **шаги** описаны действия по подготовке объекта. Подготовка объекта может состоять из четырех шагов: 
 
@@ -190,7 +190,7 @@ ms.locfileid: "81113327"
 
 
 
-![Фильтр](./media/concept-provisioning-logs/steps.png "Filter")
+![Filter](./media/concept-provisioning-logs/steps.png "Filter")
 
 
 ### <a name="troubleshoot-and-recommendations"></a>Устранение неполадок и рекомендации
@@ -208,7 +208,7 @@ ms.locfileid: "81113327"
 
 На вкладке **Сводка** представлен обзор того, что случилось и идентификаторы для объекта в исходной и целевой системе. 
 
-## <a name="what-you-should-know"></a>Необходимая информация
+## <a name="what-you-should-know"></a>Учитываемые аспекты
 
 - Портал Azure сохраняет данные о подготовке в течение 30 дней, если у вас выпуск Premium и 7 дней, если у вас есть бесплатный выпуск.
 
@@ -243,9 +243,9 @@ ms.locfileid: "81113327"
 |дупликатетаржетентриес  |Не удалось выполнить операцию, так как найдено более одного пользователя в целевом приложении с настроенными атрибутами сопоставления. Удалите дублирующего пользователя из целевого приложения или измените сопоставления атрибутов, как описано [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes).|
 |дупликатесаурцеентриес | Не удалось выполнить операцию, так как обнаружено несколько пользователей с настроенными соответствующими атрибутами. Удалите дублирующего пользователя или перенастройте сопоставления атрибутов, как описано [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes).|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Проверка состояния подготовки пользователей](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user)
+* [Проверка состояния подготовки пользователей](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user)
 * [Проблема при настройке подготовки пользователей для приложения из коллекции Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-config-problem)
 
 

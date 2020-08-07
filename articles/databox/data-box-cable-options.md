@@ -1,6 +1,6 @@
 ---
 title: Варианты подключения кабелей к устройству Azure Data Box | Документация Майкрософт
-description: В этой статье описаны различные варианты подключения кабелей к устройству Azure Data Box.
+description: Узнайте о различных способах подключения Azure Data Box к переносу данных с помощью порта или порта для руководства по работе с данными.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: how-to
 ms.date: 10/24/2018
 ms.author: alkohli
-ms.openlocfilehash: ffabd917eff1c545bba734ab1621b947ee8d9ae9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1a1ce22cd700368d630d70912ea266d16fd772bf
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77920643"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87925215"
 ---
 # <a name="cabling-options-for-your-azure-data-box"></a>Варианты подключения кабелей к устройству Azure Data Box
 
@@ -129,6 +129,6 @@ ms.locfileid: "77920643"
 2. Для определения IP-адреса используйте DHCP-сервер или DNS-сервер.
 3. С сервера в той же сети обратитесь к локальному веб-интерфейсу устройства, используя IP-адрес, назначенный сервером DHCP. Войдите в систему и разблокируйте Data Box, используя пароль разблокировки с портала Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - После подключения устройства ознакомьтесь со статьей [Руководство: копирование данных в Azure Data Box](data-box-deploy-copy-data.md).

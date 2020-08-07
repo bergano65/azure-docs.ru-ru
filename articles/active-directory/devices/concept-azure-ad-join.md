@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3839c7b87e5d07368727d037b585965dce91303a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 31374b851d90e43e7380024923c3ad025859b7a0
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87058106"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87923736"
 ---
 # <a name="azure-ad-joined-devices"></a>Устройства, присоединенные к Azure AD
 
@@ -28,7 +28,7 @@ ms.locfileid: "87058106"
 | **Основная аудитория** | Подходит для полностью облачных и гибридных организаций. |
 |   | Применимо ко всем пользователям в организации. |
 | **Владение устройствами** | План |
-| **Операционные системы** | Все устройства Windows 10. |
+| **Операционные системы** | Все устройства с Windows 10, кроме Windows 10 Домашняя |
 |   | [Виртуальные машины Windows Server 2019, работающие в Azure](howto-vm-sign-in-azure-ad-windows.md) (Server Core не поддерживается) |
 | **Подготовка** | Самообслуживание. OOBE и параметры Windows |
 |   | Массовая регистрация |
@@ -62,7 +62,7 @@ ms.locfileid: "87058106"
 - вы хотите управлять группой пользователей в Azure AD, а не в Active Directory. Этот сценарий может применяться, например, для сезонных сотрудников, подрядчиков или учащихся.
 - вы хотите, чтобы работники удаленных филиалов с ограниченной локальной инфраструктурой могли подключаться к основной сети;
 
-Можно настроить устройства, присоединенные к Azure AD, для устройств Windows 10.
+Вы можете настроить устройства, присоединенные к Azure AD, для всех устройств Windows 10, за исключением Windows 10 Home.
 
 Устройства, присоединенные к Azure AD, упрощают выполнение следующих задач:
 

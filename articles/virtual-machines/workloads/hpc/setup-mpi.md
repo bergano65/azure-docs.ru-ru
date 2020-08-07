@@ -10,15 +10,15 @@ tags: azure-resource-manager
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
-ms.date: 08/04/2020
+ms.date: 08/06/2020
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 1b2d707569221a79ad53f04bcc379f5067ed9b04
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 210b2935cd2df81b0ff079c9a1c945fe770933f9
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905539"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926524"
 ---
 # <a name="set-up-message-passing-interface-for-hpc"></a>Настройка интерфейса передачи сообщений для HPC
 
@@ -95,11 +95,24 @@ ${INSTALL_PREFIX}/bin/mpirun -np 2 --map-by node --hostfile ~/hostfile -mca pml 
 
 ## <a name="intel-mpi"></a>Intel MPI
 
-[Загрузите Intel MPI](https://software.intel.com/mpi-library/choose-download).
+Скачайте версию [Intel MPI](https://software.intel.com/mpi-library/choose-download). Измените переменную среды I_MPI_FABRICS в зависимости от версии. Для Intel MPI 2018 используйте, `I_MPI_FABRICS=shm:ofa` а для 2019 — `I_MPI_FABRICS=shm:ofi` .
 
-Измените переменную среды I_MPI_FABRICS в зависимости от версии. Для Intel MPI 2018 используйте, `I_MPI_FABRICS=shm:ofa` а для 2019 — `I_MPI_FABRICS=shm:ofi` .
+### <a name="non-sr-iov-vms"></a>Виртуальные машины без SR-IOV
+Для виртуальных машин, не использующих SR-IOV, пример загрузки [бесплатной оценочной версии](https://registrationcenter.intel.com/en/forms/?productid=1740) среды выполнения 5. x выглядит следующим образом:
+```bash
+wget http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/9278/l_mpi_p_5.1.3.223.tgz
+```
+Шаги установки см. в [руководстве по установке библиотеки Intel MPI](https://registrationcenter-download.intel.com/akdlm/irc_nas/1718/INSTALL.html?lang=en&fileExt=.html).
+При необходимости вы можете включить птраце для некорневых процессов, не использующих отладчик (требуется для самых последних версий Intel MPI).
+```bash
+echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+```
 
-По умолчанию закрепление процессов работает правильно для 15, 30 и 60 ППН.
+### <a name="suse-linux"></a>SUSE Linux
+Для SUSE Linux Enterprise Server версии образа виртуальной машины — SLES 12 SP3 для HPC, SLES 12 SP3 для HPC (Premium), SLES 12 SP1 для HPC, SLES 12 SP1 для HPC (Premium), SLES 12 SP4 и SLES 15, установлены драйверы RDMA и пакеты Intel MPI распределяются на виртуальной машине. Установите Intel MPI, выполнив следующую команду:
+```bash
+sudo rpm -v -i --nodeps /opt/intelMPI/intel_mpi_packages/*.rpm
+```
 
 ## <a name="mpich"></a>MPICH
 
