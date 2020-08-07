@@ -7,13 +7,13 @@ ms.topic: how-to
 ms.date: 12/14/2018
 ms.author: rogarana
 ms.subservice: files
-ms.custom: tracking-python
-ms.openlocfilehash: c612ddc324144a818dd738b440660d473ec3a1bd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-python
+ms.openlocfilehash: 46512d61238c45936e7ebed4310993159cb43d34
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85509648"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87845448"
 ---
 # <a name="develop-for-azure-files-with-python"></a>Разработка для файлов Azure с помощью Python
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -66,7 +66,7 @@ from azure.storage.file import FileService
 file_service = FileService(account_name='myaccount', account_key='mykey')
 ```
 
-## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
+## <a name="create-an-azure-file-share"></a>Создание файлового ресурса Azure
 В следующем примере кода для создания общего ресурса (если он не существует) можно использовать объект `FileService`.
 
 ```python
@@ -108,7 +108,7 @@ file_service.create_file_from_path(
     content_settings=ContentSettings(content_type='image/png'))
 ```
 
-## <a name="download-a-file"></a>скачать файл;
+## <a name="download-a-file"></a>Скачивание файла
 Чтобы загрузить данные из файла, используйте методы `get_file_to_path`, `get_file_to_stream`, `get_file_to_bytes` или `get_file_to_text`. Это высокоуровневые методы, которые выполняют необходимое фрагментирование данных, если их размер превышает 64 МБ.
 
 В следующем примере показано использование метода `get_file_to_path` для загрузки содержимого файла **myfile** и его сохранения в файл **out-sunset.png**.
@@ -180,6 +180,6 @@ file_service.delete_share(share_name, delete_snapshots=DeleteSnapshot.Include)
 ## <a name="next-steps"></a>Дальнейшие шаги
 Теперь, когда вы узнали, как работать с файлами Azure с помощью Python, воспользуйтесь следующими ссылками для получения дополнительных сведений.
 
-* [Центр разработчиков Python](https://azure.microsoft.com/develop/python/)
+* [Центр по разработке для Python](https://azure.microsoft.com/develop/python/)
 * [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355)
 * [пакет SDK для службы хранилища Microsoft Azure для Python](https://github.com/Azure/azure-storage-python)

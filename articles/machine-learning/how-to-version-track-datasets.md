@@ -10,13 +10,13 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 03/09/2020
 ms.topic: conceptual
-ms.custom: how-to, tracking-python
-ms.openlocfilehash: 58458c4a4e5ff1317ef740208a7d7ff9f6fa925c
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.custom: how-to, devx-track-python
+ms.openlocfilehash: 4ae0ebaec011634153e4ac9bbe43ef519c58a251
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87325752"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87845890"
 ---
 # <a name="version-and-track-datasets-in-experiments"></a>Версии и отслеживание наборов данных в экспериментах
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "87325752"
 * Когда новые данные доступны для повторного обучения
 * При применении различных подходов к подготовке данных или проектированию компонентов
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
@@ -189,7 +189,7 @@ model = run.register_model(model_name='keras-mlp-mnist',
 
 ![Модели входных наборов данных](./media/how-to-version-track-datasets/dataset-models.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Обучение с наборами данных](how-to-train-with-datasets.md)
 * [Дополнительные образцы набора данных записные книжки](https://aka.ms/dataset-tutorial)

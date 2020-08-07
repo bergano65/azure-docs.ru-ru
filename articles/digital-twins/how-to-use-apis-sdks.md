@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 06/04/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 5b83c60182c311d9b04a205da4ab0c3477dc9b9e
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: 73e23f24717616ef417460d2fdae6116cfdbdb3a
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87563710"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810417"
 ---
 # <a name="use-the-azure-digital-twins-apis-and-sdks"></a>Использование интерфейсов API и пакетов SDK для Azure Digital Twins
 
@@ -284,11 +284,11 @@ client.UpdateDigitalTwin("myTwin", uou.Serialize());
 
 На домашней странице портала найдите свой экземпляр Azure Digital двойников, чтобы получить сведения о нем. Выберите параметр **метрики** в меню экземпляра Azure Digital двойников, чтобы открыть страницу *метрики* .
 
-:::image type="content" source="media/how-to-view-metrics/azure-digital-twins-metrics.png" alt-text="Снимок экрана со страницей "метрики" для Azure Digital двойников":::
+:::image type="content" source="media/troubleshoot-metrics/azure-digital-twins-metrics.png" alt-text="Снимок экрана со страницей "метрики" для Azure Digital двойников":::
 
 Здесь можно просмотреть метрики для своего экземпляра и создать пользовательские представления.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения об использовании API для настройки экземпляра и проверки подлинности Azure Digital двойников:
 * [*Пошаговое руководство. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-scripted.md)

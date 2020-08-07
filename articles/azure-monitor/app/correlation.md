@@ -6,13 +6,13 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
-ms.custom: tracking-python
-ms.openlocfilehash: fa68f1ea8c0dd0d4367d3dcf39f059d0bd8a77ea
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-python
+ms.openlocfilehash: f2645cc76f6b1a59e84ee01cbc8d4c650cd6c789
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421932"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87843630"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -370,7 +370,7 @@ ASP.NET Core 2,0 поддерживает извлечение заголовк�
 
   Начальная загрузочная загрузка автоматически присваивает `cloudRoleName` значение, введенное для `spring.application.name` Свойства.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Запись [пользовательской телеметрии](../../azure-monitor/app/api-custom-events-metrics.md).
 - Дополнительные сценарии корреляции в ASP.NET Core и ASP.NET см. в разделе [Track Custom Operations](custom-operations-tracking.md).

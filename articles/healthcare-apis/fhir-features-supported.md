@@ -2,20 +2,20 @@
 title: Поддерживаемые функции FHIR в Azure — API Azure для FHIR
 description: В этой статье объясняется, какие функции спецификации FHIR реализованы в API Azure для FHIR.
 services: healthcare-apis
-author: hansenms
+author: matjazl
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: reference
 ms.date: 02/07/2019
-ms.author: mihansen
-ms.openlocfilehash: 7f92395f19d84f904493af458d1334f8013fd263
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: matjazl
+ms.openlocfilehash: 1cb3af32f1ad16218c82f91c3f28d4f4ab47e677
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85808035"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87843510"
 ---
-# <a name="features"></a>Функции
+# <a name="features"></a>Компоненты
 
 API Azure для FHIR обеспечивает полностью управляемое развертывание сервера Microsoft FHIR для Azure. Сервер является реализацией стандарта [FHIR](https://hl7.org/fhir) . В этом документе перечислены основные возможности сервера FHIR.
 
@@ -29,7 +29,7 @@ API Azure для FHIR обеспечивает полностью управля
 
 | API                            | Поддерживается — PaaS | Поддерживаемые — OSS (SQL) | Поддерживаемые — OSS (Cosmos DB) | Комментировать                                             |
 |--------------------------------|-----------|-----------|-----------|-----------------------------------------------------|
-| чтение                           | Да       | Да       | Да       |                                                     |
+| read                           | Да       | Да       | Да       |                                                     |
 | вреад                          | Да       | Да       | Да       |                                                     |
 | обновить                         | Да       | Да       | Да       |                                                     |
 | Обновление с оптимистичной блокировкой | Да       | Да       | Да       |                                                     |
@@ -39,7 +39,7 @@ API Azure для FHIR обеспечивает полностью управля
 | Delete (условный)           | Нет        | Нет        | Нет        |                                                     |
 | create                         | Да       | Да       | Да       | Поддержка как POST, так и постановки                               |
 | создать (условный)           | Да       | Да       | Да       |                                                     |
-| поиск                         | Partial   | Partial   | Partial   | См. ниже                                           |
+| search                         | Partial   | Partial   | Partial   | См. ниже                                           |
 | цепочка поиска                 | Нет        | Да       | Нет        |                                           |
 | обратный поиск в цепочке         | Нет        | Нет        | Нет        |                                            |
 | capabilities                   | Да       | Да       | Да       |                                                     |
@@ -55,11 +55,11 @@ API Azure для FHIR обеспечивает полностью управля
 
 | Тип параметра поиска | Поддерживается — PaaS | Поддерживаемые — OSS (SQL) | Поддерживаемые — OSS (Cosmos DB) | Комментировать |
 |-----------------------|-----------|-----------|-----------|---------|
-| number                | Да       | Да       | Да       |         |
+| Число                | Да       | Да       | Да       |         |
 | Date/DateTime         | Да       | Да       | Да       |         |
 | Строка                | Да       | Да       | Да       |         |
 | Токен                 | Да       | Да       | Да       |         |
-| Справка             | Да       | Да       | Да       |         |
+| Справочник             | Да       | Да       | Да       |         |
 | Составной             | Да       | Да       | Да       |         |
 | Количество              | Да       | Да       | Да       |         |
 | URI                   | Да       | Да       | Да       |         |
@@ -101,7 +101,7 @@ API Azure для FHIR обеспечивает полностью управля
 | `_sort`                 | Нет        | Нет        | Нет        |         |
 | `_score`                | Нет        | Нет        | Нет        |         |
 | `_count`                | Да       | Да       | Да       |         |
-| `_summary`              | Partial   | Partial   | Partial   | `_summary=count` поддерживается. |
+| `_summary`              | Частично   | Partial   | Partial   | `_summary=count` поддерживается. |
 | `_include`              | Нет        | Да       | Нет        |         |
 | `_revinclude`           | Нет        | Нет        | Нет        |         |
 | `_contained`            | Нет        | Нет        | Нет        |         |
@@ -115,7 +115,7 @@ API Azure для FHIR обеспечивает полностью управля
 
 Cosmos DB — это глобально распределенная база данных с несколькими моделями (API SQL, API MongoDB и т. д.). Он поддерживает различные [уровни согласованности](../cosmos-db/consistency-levels.md). Шаблон развертывания по умолчанию настраивает сервер FHIR с `Strong` согласованностью, но политика согласованности может быть изменена (обычно нестрогая) для запроса с помощью `x-ms-consistency-level` заголовка запроса.
 
-## <a name="role-based-access-control"></a>Управление доступом на основе ролей
+## <a name="role-based-access-control"></a>управление доступом на основе ролей;
 
 Сервер FHIR использует [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) для контроля доступа. В частности, применяется управление доступом на основе ролей (RBAC), если `FhirServer:Security:Enabled` параметру конфигурации присвоено значение `true` , а всем запросам (кроме `/metadata` ) на сервер FHIR должен быть `Authorization` задан заголовок запроса `Bearer <TOKEN>` . Токен должен содержать одну или несколько ролей, как определено в `roles` утверждении. Запрос будет разрешен, если маркер содержит роль, которая разрешает указанное действие для указанного ресурса.
 
