@@ -7,16 +7,16 @@ ms.service: azure-arc
 ms.subservice: azure-arc-servers
 author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: e04b2c63f782a4fcbb64273c08511ecb0bbc2bc3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eb1de0c2a5b995231c2972fca7279195cbaea9e7
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84977651"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87809635"
 ---
 # <a name="virtual-machine-extension-management-with-azure-arc-for-servers-preview"></a>Управление расширениями виртуальной машины с помощью дуги Azure для серверов (Предварительная версия)
 
-Расширения виртуальных машин — это небольшие приложения, которые обеспечивают настройку и задачи автоматизации, выполняемые после развертывания на виртуальных машинах Azure. Например, с помощью расширения виртуальной машины (далее — расширение ВМ) на виртуальной машине можно установить программное обеспечение, настроить антивирусную защиту или средство для выполнения сценариев.
+Расширения виртуальных машин — это небольшие приложения, которые обеспечивают настройку и задачи автоматизации, выполняемые после развертывания на виртуальных машинах Azure. Например, если на виртуальную машину требуется установить программное обеспечение, антивирусную защиту или выполнить сценарий внутри него, можно использовать расширение виртуальной машины.
 
 Служба "Дуга Azure для серверов (Предварительная версия)" позволяет развертывать расширения виртуальных машин Azure на виртуальных машинах Windows и Linux без Azure, упрощая управление гибридными компьютерами в локальной среде, пограничных и других облачных средах с помощью своего жизненного цикла.
 
@@ -36,11 +36,11 @@ ms.locfileid: "84977651"
 
 Функциональность расширения виртуальной машины доступна только в списке [поддерживаемых регионов](overview.md#supported-regions). Убедитесь, что ваш компьютер подключен в одном из этих регионов.
 
-## <a name="extensions"></a>Расширения
+## <a name="extensions"></a>Модули
 
 В этой предварительной версии мы поддерживаем следующие расширения виртуальных машин на компьютерах Windows и Linux.
 
-|Расширение |Операционная система |Publisher |Дополнительные сведения |
+|Расширение |ОС |Publisher |Дополнительные сведения |
 |----------|---|----------|-----------------------|
 |CustomScriptExtension |Windows |Microsoft.Compute; |[Расширение пользовательских сценариев Windows](../../virtual-machines/extensions/custom-script-windows.md)|
 |DSC |Windows |Microsoft. PowerShell|[Расширение DSC Windows PowerShell](../../virtual-machines/extensions/dsc-windows.md)|
@@ -727,6 +727,6 @@ New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateF
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как управлять компьютером с помощью [Политики Azure](../../governance/policy/overview.md), например для [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md) виртуальной машины, проверять отправку отчетов с компьютера в ожидаемую рабочую область Log Analytics, включать мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/insights/vminsights-enable-at-scale-policy.md) и т. д.
+- Узнайте, как управлять компьютером с помощью [Политики Azure](../../governance/policy/overview.md), например для [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md) виртуальной машины, проверять отправку отчетов с компьютера в ожидаемую рабочую область Log Analytics, включать мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/insights/vminsights-enable-policy.md) и т. д.
 
 - Узнайте больше об [агенте Log Analytics](../../azure-monitor/platform/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется упреждающе отслеживать ОС и рабочие нагрузки на компьютере, выполнять управление с помощью runbook службы автоматизации или с помощью решений, таких как Управление обновлениями, или использовать другие службы Azure, например, [Центр безопасности Azure](../../security-center/security-center-intro.md).

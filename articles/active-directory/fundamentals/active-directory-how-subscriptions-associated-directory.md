@@ -2,7 +2,7 @@
 title: Добавление существующей подписки Azure в клиент Azure AD
 description: Инструкции по добавлению имеющейся подписки Azure в клиент Azure Active Directory.
 services: active-directory
-author: msaburnley
+author: ajburnle
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18, contperfq4
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86223c35118c9c54be49fa830a264a0059ef3937
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 95c3ad5fa66e1327c1fe646303f268ae4e84bd89
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87494440"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87825027"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
 
@@ -31,7 +31,7 @@ ms.locfileid: "87494440"
 Все пользователи имеют один *домашний* каталог для проверки подлинности. Пользователи также могут быть гостями в других каталогах. Домашний и гостевые каталоги для каждого пользователя отображаются в Azure AD.
 
 > [!Important]
-> При связывании подписки с другим каталогом пользователи, которым назначены роли с помощью [управления доступом на основе ролей (RBAC)](../../role-based-access-control/role-assignments-portal.md) , теряют доступ к ним. Администраторы классической подписки, включая администратора служб и соадминистраторов, также теряют доступ.
+> При связывании подписки с другим каталогом пользователи, которым назначены роли с помощью [управления доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md) , теряют доступ к ним. Администраторы классической подписки, включая администратора служб и соадминистраторов, также теряют доступ.
 >
 > Назначения политик также удаляются из подписки, если подписка связана с другим каталогом.
 >
@@ -91,7 +91,7 @@ ms.locfileid: "87494440"
 
 - Если вы зарегистрировали Azure Stack с помощью этой подписки, необходимо выполнить повторную регистрацию. Дополнительные сведения см. в статье [регистрация Azure Stack в Azure](/azure-stack/operator/azure-stack-registration).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о создании нового клиента Azure AD см. [в разделе Краткое руководство. Создание нового клиента в Azure Active Directory](active-directory-access-create-new-tenant.md).
 

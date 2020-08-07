@@ -5,13 +5,13 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
-ms.custom: tracking-python
-ms.openlocfilehash: c1ae7f0aff06f269d4e4949eb5a8bed0e3371684
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.custom: devx-track-python
+ms.openlocfilehash: 7e8cb6dfd2a1983ac4a98f0be0af1fd92c902fc4
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86540253"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87843153"
 ---
 # <a name="azure-blob-storage-input-binding-for-azure-functions"></a>Входная привязка хранилища BLOB-объектов Azure для функций Azure
 
@@ -304,11 +304,11 @@ public static void Run(
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | н/д | Нужно задать значение `blob`. |
-|**direction** | н/д | Нужно задать значение `in`. Исключения приведены в этом [разделе](#usage). |
+|**type** | Недоступно | Нужно задать значение `blob`. |
+|**direction** | Недоступно | Нужно задать значение `in`. Исключения приведены в этом [разделе](#usage). |
 |**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции.|
 |**путь** |**BlobPath** | Путь к BLOB-объекту. |
-|**connection**; |**Подключение**| Имя параметра приложения, содержащего [строку подключения к хранилищу](../storage/common/storage-configure-connection-string.md) , используемую для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "MyStorage", среда выполнения функций ищет параметр приложения с именем "азуревебжобсмистораже". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
+|**connection**; |**Соединение**| Имя параметра приложения, содержащего [строку подключения к хранилищу](../storage/common/storage-configure-connection-string.md) , используемую для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "MyStorage", среда выполнения функций ищет параметр приложения с именем "азуревебжобсмистораже". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
 |н/д | **Доступ** | Указывает, какая операция будет выполняться (запись или чтение). |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
@@ -337,7 +337,7 @@ public static void Run(
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Выполнение функции при изменении данных хранилища BLOB-объектов](./functions-bindings-storage-blob-trigger.md)
 - [Запись данных хранилища BLOB-объектов из функции](./functions-bindings-storage-blob-output.md)

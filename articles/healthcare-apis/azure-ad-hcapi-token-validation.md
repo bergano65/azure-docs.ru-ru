@@ -3,18 +3,18 @@ title: Проверка маркера доступа Azure API для FHIR
 description: Пошаговые инструкции по проверке маркера и советы по устранению проблем доступа
 services: healthcare-apis
 author: caitlinv39
-ms.reviewer: mihansen
+ms.reviewer: matjazl
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: cavoeg
-ms.openlocfilehash: 672acd4f68acd4998fd7631240c2f998299def11
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 426ec0c2d6cc274aa0b6829eb4a30fd29b9ba8e2
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84871234"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87844666"
 ---
 # <a name="azure-api-for-fhir-access-token-validation"></a>Проверка маркера доступа Azure API для FHIR
 
@@ -118,7 +118,7 @@ Azure AD вернет на сервер FHIR документ, подобный 
 
 Сервер FHIR также может проверить, что маркер доступа имеет области (в утверждении токена `scp` ) для доступа к части API FHIR, к которому пытается получить доступ клиент. В настоящее время API Azure для FHIR и сервер FHIR для Azure не проверяют области токенов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь, когда вы узнали, как пройти проверку маркера, вы можете пройти это руководство, чтобы создать приложение JavaScript и прочесть данные FHIR.
 
 >[!div class="nextstepaction"]
