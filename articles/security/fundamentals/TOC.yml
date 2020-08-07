@@ -58,6 +58,8 @@
       href: network-best-practices.md
     - name: Защита от атак DDoS
       href: ddos-best-practices.md
+    - name: Базовые показатели безопасности Защиты от атак DDoS
+      href: ddos-protection-security-baseline.md
     - name: Несвязанные DNS и перенаправление поддомена
       href: subdomain-takeover.md
     - name: Архитектура защищенной гибридной сети

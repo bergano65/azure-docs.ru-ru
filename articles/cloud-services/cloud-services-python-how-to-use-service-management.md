@@ -14,13 +14,13 @@ ms.devlang: python
 ms.topic: article
 ms.date: 05/30/2017
 ms.author: tagore
-ms.custom: tracking-python
-ms.openlocfilehash: 311d882814c45b3b001fde2a4f3f9027e879f29c
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.custom: devx-track-python
+ms.openlocfilehash: 35d0f77d5f4dde9e156d22e64881ba674189d327
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85919889"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87851517"
 ---
 # <a name="use-service-management-from-python"></a>Использование управления службами в Python
 В этом руководстве показано, как программными средствами Python выполнять общие задачи управления службами. Класс **ServiceManagementService** в [пакете SDK Azure для Python](https://github.com/Azure/azure-sdk-for-python) поддерживает программный доступ к большинству функций, связанных с управлением службами, которые доступны на [портале Azure][management-portal]. Эти функции можно использовать для создания, обновления и удаления облачных служб, развернутых служб, служб управления данными и виртуальных машин. Эта возможность может быть полезна при создании приложений, которым требуется программный доступ к управлению службами.
@@ -127,7 +127,7 @@ for location in result:
 * Восточная часть США
 * Восточная Япония
 * Западная Япония
-* Южная Бразилия
+* Brazil South
 * Восточная Австралия
 * Юго-Восточная часть Австралии
 
@@ -364,7 +364,7 @@ sms.create_virtual_machine_deployment(service_name=name,
     role_size='Small')
 ```
 
-## <a name="delete-a-virtual-machine"></a><a name="DeleteVM"> </a>удаление виртуальной машины
+## <a name="delete-a-virtual-machine"></a><a name="DeleteVM"> </a>Удаление виртуальной машины
 Чтобы удалить виртуальную машину, необходимо сначала удалить развертывание с помощью метода **delete\_deployment**.
 
 ```python

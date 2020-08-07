@@ -6,14 +6,18 @@ ms.author: harelbr
 ms.topic: conceptual
 ms.date: 04/03/2017
 ms.subservice: alerts
-ms.openlocfilehash: 5561dfee3ede72f9cd28adbd47caf2db4e634360
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 47ed723ecfc544673ac8aa6374c27ae5a7cf166b
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87073585"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87852112"
 ---
 # <a name="call-a-webhook-with-a-classic-metric-alert-in-azure-monitor"></a>Вызов веб-перехватчика с помощью классического оповещения метрики в Azure Monitor
+
+> [!WARNING]
+> В этой статье описывается, как использовать старые оповещения о классической метрике. Azure Monitor теперь поддерживает новые [оповещения метрик практически в реальном времени и новые возможности оповещений](./alerts-overview.md). Классические оповещения удаляются, но по-прежнему используются для [ресурсов, которые](./monitoring-classic-retirement.md)пока не поддерживают новые оповещения.
+>
 
 С помощью веб-перехватчика можно направлять уведомления об оповещениях Azure в другие системы для постобработки или выполнения настраиваемых действий. Веб-перехватчик можно использовать, чтобы направить оповещение к службам, которые отправляют SMS-сообщения, ведут журналы об ошибках, уведомляют членов команды в чате или службах обмена сообщениями либо выполняют другие действия. 
 

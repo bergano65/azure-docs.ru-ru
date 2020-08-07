@@ -6,15 +6,15 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 05/20/2020
+ms.date: 08/05/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 51582fd9aba8721b28f6fb18daec4d0009d0ac15
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 072beb4f6bd8f823b150a6e81f4308bdd6b29402
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500663"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87852248"
 ---
 # <a name="azure-cosmos-db-java-sdk-v4-for-core-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Java версии 4 для API-интерфейса Core (SQL)
 > [!div class="op_single_selector"]
@@ -26,6 +26,8 @@ ms.locfileid: "87500663"
 > * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
 > * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
+> * [Spring Data](sql-api-sdk-java-spring.md)
+> * [Соединитель Spark](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
 > * [REST](/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](/rest/api/cosmos-db-resource-provider/)
@@ -46,15 +48,17 @@ ms.locfileid: "87500663"
 > [Семинары и лабораторные занятия по Azure Cosmos DB](https://aka.ms/cosmosworkshop) — еще один отличный ресурс для освоения пакета SDK Java версии 4 для Azure Cosmos DB.
 >
 
-| |  |
+## <a name="helpful-content"></a>Полезное содержимое
+
+| Содержимое | Ссылка |
 |---|---|
-| **Скачивание пакета SDK** | [Maven](https://mvnrepository.com/artifact/com.azure/azure-cosmos) |
+|**Скачивание пакета SDK**| [Maven](https://mvnrepository.com/artifact/com.azure/azure-cosmos) |
 |**Документация по API** | [Справочная документация по API Java](https://docs.microsoft.com/java/api/overview/azure/cosmosdb/client?view=azure-java-stable) |
 |**Участие в разработке пакета SDK** | [Центральный репозиторий пакета SDK Azure для Java в GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos) | 
-|**Начало работы** | [Краткое руководство. Создайте приложение Java для управления данными API SQL для Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/create-sql-api-java) — [репозиторий GitHub с простым примером кода](https://github.com/Azure-Samples/azure-cosmos-java-getting-started) | 
-|**Простые примеры кода** | [Разработка Примеры Java для API SQL](sql-api-java-sdk-samples.md) — [репозиторий GitHub с примером кода](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples)|
-|**Консольное приложение с каналом изменений**| [Канал изменений — пример использования пакета SDK Java версии 4](create-sql-api-java-changefeed.md) — [репозиторий GitHub с примером кода](https://github.com/Azure-Samples/azure-cosmos-java-sql-app-example)| 
-|**Пример веб-приложения**| [Создание веб-приложения с помощью пакета SDK Java версии 4](sql-api-java-application.md) — [репозиторий GitHub с примером кода](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-todo-app)|
+|**Начало работы** | [Краткое руководство. Создание приложения Java для управления данными API SQL для Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/create-sql-api-java) <br> [Репозиторий GitHub с кодом краткого руководства](https://github.com/Azure-Samples/azure-cosmos-java-getting-started) | 
+|**Простые примеры кода** | [Azure Cosmos DB. Примеры Java для API SQL](sql-api-java-sdk-samples.md) <br> [Репозиторий GitHub с примером кода](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples)|
+|**Консольное приложение с каналом изменений**| [Веб-канал изменений — пример пакета SDK для Java v4](create-sql-api-java-changefeed.md) <br> [Репозиторий GitHub с примером кода](https://github.com/Azure-Samples/azure-cosmos-java-sql-app-example)| 
+|**Пример веб-приложения**| [Создание веб-приложения с помощью пакета SDK для Java v4](sql-api-java-application.md) <br> [Репозиторий GitHub с примером кода](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-todo-app)|
 | **Советы по улучшению производительности**| [Советы по повышению производительности при использовании пакета SDK для Java версии 4](performance-tips-java-sdk-v4-sql.md)| 
 | **Устранение неполадок** | [Устранение неполадок с пакетом SDK для Java версии 4](troubleshoot-java-sdk-v4-sql.md) |
 | **Переход на пакет SDK версии 4 с более ранней версии** | [Переход на пакет SDK для Java версии 4](migrate-java-v4-sdk.md) |
@@ -66,7 +70,7 @@ ms.locfileid: "87500663"
 ### <a name="440-beta1-unreleased"></a>4.4.0-Beta. 1 (не выпущено)
 
 ### <a name="430-2020-07-29"></a>4.3.0 (2020-07-29)
-#### <a name="new-features"></a>Новые возможности
+#### <a name="new-features"></a>Новые функции
 * Обновлена версия библиотеки реактора-Core до `3.3.8.RELEASE` . 
 * Обновлена версия библиотеки реактора-NETTY до `0.9.10.RELEASE` . 
 * Версия библиотеки NETTY обновлена до версии `4.1.51.Final` . 
@@ -86,7 +90,7 @@ ms.locfileid: "87500663"
 * Исправлена проблема с `.single()` оператором, вызывающий срабатывание цепочки реактора в случае возникновения исключения "не найдено". 
 
 ### <a name="420-2020-07-14"></a>4.2.0 (2020-07-14)
-#### <a name="new-features"></a>Новые возможности
+#### <a name="new-features"></a>Новые функции
 * Добавлен API с поддержкой регистрации скриптов в `CosmosStoredProcedureRequestOptions` .
 * `DirectConnectionConfig`По умолчанию изменено `idleEndpointTimeout` на 1 ч, а по умолчанию — `connectTimeout` на 5S.
 #### <a name="key-bug-fixes"></a>Исправления основных ошибок
@@ -98,7 +102,7 @@ ms.locfileid: "87500663"
 * Исправлена проблема с обработкой отмененных запросов в режиме прямого подключения, вызывающих `onErrorDropped` вызов реактора. 
 
 ### <a name="410-2020-06-25"></a>4.1.0 (2020-06-25)
-#### <a name="new-features"></a>Новые возможности
+#### <a name="new-features"></a>Новые функции
 * Добавлена поддержка `GROUP BY` запроса.
 * Увеличено значение по умолчанию Максконнектионсперендпоинт до 130 в Директконнектионконфиг.
 * Увеличено значение по умолчанию Максрекуестсперконнектион до 30 в Директконнектионконфиг.
@@ -108,7 +112,7 @@ ms.locfileid: "87500663"
 * Исправлено исключение пустого указателя в диспетчере запросов в Рнтбдклиентчаннелпул.
 
 ### <a name="401-2020-06-10"></a>4.0.1 (2020-06-10)
-#### <a name="new-features"></a>Новые возможности
+#### <a name="new-features"></a>Новые функции
 * `QueryRequestOptions` переименован в `CosmosQueryRequestOptions`.
 * Обновлен `ChangeFeedProcessorBuilder` шаблон построителя.
 * Добавлены `CosmosPermissionProperties` новые интерфейсы API имени контейнера и дочерних ресурсов.
@@ -174,5 +178,5 @@ ms.locfileid: "87500663"
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
-## <a name="see-also"></a>См. также раздел
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о Cosmos DB см. на странице службы [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/).

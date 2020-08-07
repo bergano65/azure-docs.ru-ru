@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
-ms.custom: hdinsightactive,hdiseo17may2017, tracking-python
+ms.custom: hdinsightactive,hdiseo17may2017, devx-track-python
 ms.date: 12/16/2019
-ms.openlocfilehash: 0e8f13a8420873bdc753ed1b7d8c8928705e1f43
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 1f062a8f358ac311b53e657fb5714583458bd9b5
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086880"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87872588"
 ---
 # <a name="develop-apache-storm-topologies-using-python-on-hdinsight"></a>Разработка топологий Apache Storm с помощью Python в HDInsight
 
@@ -72,7 +72,7 @@ Flux ожидает, что сценарии Python находятся в кат
 
 Как упоминалось ранее, существует `storm.py` файл, реализующий определение Thrift для работы с расширением. Платформа Flux добавляет `storm.py` автоматически при выполнении сборки проекта, поэтому не нужно беспокоиться о его добавлении.
 
-## <a name="build-the-project"></a>Сборка проекта
+## <a name="build-the-project"></a>Построение проекта
 
 1. Скачайте проект из [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount) .
 

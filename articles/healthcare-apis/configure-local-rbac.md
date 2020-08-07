@@ -1,18 +1,18 @@
 ---
 title: Настройка локального управления доступом на основе ролей (Local RBAC) для Azure API для FHIR
 description: В этой статье описывается, как настроить API Azure для FHIR на использование внешнего клиента Azure AD для плоскости данных.
-author: hansenms
+author: matjazl
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: reference
 ms.date: 03/15/2020
-ms.author: mihansen
-ms.openlocfilehash: 11e7d31385140206070e3b415224ccca725d110f
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.author: matjazl
+ms.openlocfilehash: c62593251cb0e19c91d1c4877d1b33fe407ebd06
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87446914"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87847012"
 ---
 # <a name="configure-local-rbac-for-fhir"></a>Настройка локального RBAC для FHIR 
 
@@ -63,7 +63,7 @@ az ad sp create --id 3274406e-4e0a-4852-ba4f-d7226630abb7
 
 API Azure для FHIR будет кэшировать решения в течение 5 минут. Если вы предоставите пользователю доступ к серверу FHIR, добавив его в список разрешенных идентификаторов объектов или удалите их из списка, вы должны пройти до пяти минут на изменение разрешений для распространения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Из этой статьи вы узнали, как назначить FHIR доступ к плоскости данных с помощью внешнего (дополнительного) клиента Azure Active Directory. Далее вы узнаете о дополнительных параметрах для Azure API для FHIR:
  

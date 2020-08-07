@@ -2,14 +2,14 @@
 title: Мониторинг производительности служб приложений Azure | Документация Майкрософт
 description: Мониторинг производительности приложений для служб приложений Azure. Загрузка диаграммы и время отклика, сведения о зависимостях и Настройка оповещений о производительности.
 ms.topic: conceptual
-ms.date: 12/11/2019
+ms.date: 08/06/2020
 ms.custom: devx-track-javascript
-ms.openlocfilehash: f96d994f9f88a0debf110de2ca4f6da60e8ea3bc
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 6c0d99e89e17c2aad3c7dcfe0056b597aa88d2a2
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87373170"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87876399"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Мониторинг производительности Службы приложений Azure
 
@@ -377,7 +377,7 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 В таблице ниже приведено более подробное описание этих значений, их основных причин и Рекомендуемые исправления.
 
-|Значение проблемы|Объяснение|Fix
+|Значение проблемы|Описание|Исправление
 |---- |----|---|
 | `AppAlreadyInstrumented:true` | Это значение указывает, что расширение обнаружило, что некоторые аспекты пакета SDK уже имеются в приложении и будут отключаться. Это может быть вызвано ссылкой на `System.Diagnostics.DiagnosticSource` , `Microsoft.AspNet.TelemetryCorrelation` или`Microsoft.ApplicationInsights`  | Удалите ссылки. Некоторые из этих ссылок добавляются по умолчанию из определенных шаблонов Visual Studio, а в более ранних версиях Visual Studio могут быть добавлены ссылки на `Microsoft.ApplicationInsights` .
 |`AppAlreadyInstrumented:true` | Если приложение предназначено для .NET Core 2,1 или 2,2, а ссылается на [Microsoft. AspNetCore. ALL](https://www.nuget.org/packages/Microsoft.AspNetCore.All) meta-Package, то оно переносится в Application Insights, а расширение будет отключаться. | Клиентам в .NET Core 2.1, 2.2 [рекомендуется](https://github.com/aspnet/Announcements/issues/287) использовать вместо него мета-пакет Microsoft. AspNetCore. app.|
@@ -397,6 +397,12 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 Последние сведения об агенте или расширении Application Insights см. в [заметках о выпуске](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/app-insights-web-app-extensions-releasenotes.md).
 
+### <a name="default-website-deployed-with-web-apps-does-not-support-automatic-client-side-monitoring"></a>Веб-сайт по умолчанию, развернутый с помощью веб-приложений, не поддерживает автоматический мониторинг на стороне клиента
+
+При создании веб-приложения со `ASP.NET` `.NET Core` средами выполнения или в службах приложений Azure она развертывает одну статическую HTML-страницу в качестве начального веб-сайта. Статическая веб-страница также загружает управляемую платформу .NET Web Part в IIS. Это позволяет тестировать мониторинг на стороне сервера без кода, но не поддерживает автоматическое наблюдение на стороне клиента.
+
+Если вы хотите протестировать серверный и клиентский мониторинг для ASP.NET или ASP.NET Core в веб-приложении служб приложений Azure, мы рекомендуем использовать официальные руководства по [созданию веб](../../app-service/app-service-web-get-started-dotnet.md) -приложения ASP.NET Core и [созданию веб-приложения ASP.NET Framework](../../app-service/app-service-web-get-started-dotnet-framework.md) , а затем выполнить инструкции в текущей статье, чтобы включить мониторинг.
+
 ### <a name="php-and-wordpress-are-not-supported"></a>PHP и WordPress не поддерживаются
 
 Сайты PHP и WordPress не поддерживаются. В настоящее время официально поддерживаемый пакет SDK или агент не поддерживается для наблюдения за этими рабочими нагрузками на стороне сервера. Однако ручное инструментирование транзакций на стороне клиента на сайте PHP или WordPress путем добавления клиентского сценария JavaScript к веб-страницам можно выполнить с помощью [пакета SDK для JavaScript](./javascript.md).
@@ -405,7 +411,7 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 При использовании мониторинга без кода требуется только строка подключения. Однако мы по-прежнему рекомендуем задать ключ инструментирования, чтобы сохранить обратную совместимость с более старыми версиями пакета SDK при выполнении инструментирования вручную.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Запуск профилировщика в живом приложении](./profiler.md).
 * [Функции Azure.](https://github.com/christopheranderson/azure-functions-app-insights-sample) Отслеживайте функции Azure с помощью Application Insights.
 * [Включите отправку данных диагностики Azure](../platform/diagnostics-extension-to-application-insights.md) в Application Insights.
