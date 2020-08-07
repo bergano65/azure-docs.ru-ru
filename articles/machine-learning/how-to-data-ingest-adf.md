@@ -11,13 +11,13 @@ manager: davete
 ms.reviewer: larryfr
 ms.date: 03/01/2020
 ms.topic: conceptual
-ms.custom: how-to, tracking-python
-ms.openlocfilehash: 80e912cb5d4cf428c406242b06c30ccf56ccd6ca
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.custom: how-to, devx-track-python
+ms.openlocfilehash: b756e83f1d810007e9e9ef6cf2987c3cf60b7f7d
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326330"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87852860"
 ---
 # <a name="data-ingestion-with-azure-data-factory"></a>Прием данных с помощью Фабрики данных Azure
 
@@ -95,7 +95,7 @@ ms.locfileid: "87326330"
 
 Так как наборы данных поддерживают управление версиями, и каждый запуск из конвейера создает новую версию, легко понять, какая версия используется для обучения модели.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Запуск записной книжки кирпичей в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/transform-data-using-databricks-notebook)
 * [Доступ к данным в службах хранилища Azure](https://docs.microsoft.com/azure/machine-learning/how-to-access-data#create-and-register-datastores)
