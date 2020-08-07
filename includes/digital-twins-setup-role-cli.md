@@ -5,12 +5,12 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 7/17/2020
 ms.author: baanders
-ms.openlocfilehash: 1714fac465531a2d3a5829e7080132510ccd1ec4
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 2f10a6915a3edf673316ae9151b6052442678ef9
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87407476"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87832363"
 ---
 [!INCLUDE [cloud-shell-try-it.md](cloud-shell-try-it.md)]
 
@@ -24,7 +24,18 @@ ms.locfileid: "87407476"
 az role assignment list --assignee <your-Azure-email>
 ```
 
-Если вы являетесь владельцем, `roleDefinitionName` значением в выходных данных будет *owner*:
+> [!NOTE]
+> Если эта команда возвращает ошибку, сообщающую, что CLI **не может найти пользователя или субъект-службу в базе данных Graph**:
+>
+> Используйте *идентификатор объекта* пользователя вместо электронной почты в оставшейся части этой статьи. Это может произойти для пользователей в личных [учетных записях Майкрософт (MSAS)](https://account.microsoft.com/account). 
+>
+> Используйте [страницу портал Azure Azure Active Directory пользователей](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/AllUsers) , чтобы выбрать учетную запись пользователя и открыть сведения о ней. Скопируйте идентификатор *ObjectID*пользователя:
+>
+> :::image type="content" source="../articles/digital-twins/media/includes/user-id.png" alt-text="Представление страницы пользователя в портал Azure выделение идентификатора GUID в поле "идентификатор объекта"" lightbox="../articles/digital-twins/media/includes/user-id.png":::
+>
+> Затем повторите команду списка назначений ролей, используя *идентификатор объекта* пользователя вместо сообщения электронной почты.
+
+После выполнения команды Список назначений ролей, если вы являетесь владельцем, `roleDefinitionName` значением в выходных данных будет *owner*:
 
 :::image type="content" source="../articles/digital-twins/media/how-to-set-up-instance/cloud-shell/owner-role.png" alt-text="Окно Cloud Shell, в котором отображаются выходные данные команды AZ Role назначение List":::
 

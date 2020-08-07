@@ -5,17 +5,17 @@ description: Выполнение задач по исследованию и м
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.custom: tracking-python
+ms.custom: devx-track-python
 author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: 7d9aced42efefc8651605be44f0091b2f4f2815e
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 82e7cd67da6b64788d597e84c723d797138ac608
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85959285"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87848542"
 ---
 # <a name="ten-things-you-can-do-on-the-windows-data-science-virtual-machine"></a>10 задач, которые можно выполнить на виртуальной машине Windows для обработки и анализа данных
 
@@ -130,7 +130,7 @@ IrisPredictor(3,2,3,4)
 ```
 
 ### <a name="build-and-operationalize-r-models"></a>Создание и эксплуатацию моделей R
-Вы можете развернуть модели R, построенные на виртуальной машине для обработки и анализа данных, или в других местах, Машинное обучение Azure так же, как это делается для Python. Ниже приводятся шаги:
+Вы можете развернуть модели R, построенные на виртуальной машине для обработки и анализа данных, или в других местах, Машинное обучение Azure так же, как это делается для Python. Ниже приведены инструкции.
 
 1. Создайте settings.jsв файле, чтобы указать идентификатор рабочей области и маркер проверки подлинности. 
 2. Напишите оболочку для функции Predict модели.
@@ -494,7 +494,7 @@ in
 
 Теперь ваши данные находятся в модели данных Power BI. Экземпляр Power BI Desktop должен выглядеть следующим образом:
 
-![Power BI Desktop](./media/vm-do-ten-things/PowerBIVolcanoData.png)
+![Power BI Desktop](./media/vm-do-ten-things/PowerBIVolcanoData.png)
 
 Вы можете приступить к созданию отчетов и визуализаций с помощью модели данных. Для создания отчета можно выполнить действия, описанные в [этой Power BI статье](../../cosmos-db/powerbi-visualize.md#build-the-reports) .
 
@@ -528,6 +528,6 @@ in
 
 - [Классификация текстовых документов](https://github.com/anargyri/lstm_han). в этом пошаговом руководстве показано, как создать и обучить две архитектуры нейронных сетей: сетевое внимание и сеть с длительной краткосрочной памятью (LSTM). Эти нейронные сети выполняют классификацию текстовых документов с помощью API Keras для глубокого обучения. Keras — это внешний интерфейс до трех наиболее популярных платформ для глубокого обучения: Microsoft Cognitive Toolkit, TensorFlow и Theano.
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 В этой статье описаны некоторые действия, которые можно выполнить на виртуальной машине Майкрософт для обработки и анализа данных. Существует множество вещей, которые можно сделать, чтобы сделать DSVM эффективной средой аналитики.
 

@@ -145,7 +145,11 @@
         - name: Создание пользователей
           href: howto-create-users.md
         - name: Строки подключения
-          href: howto-connection-string.md
+          items:
+            - name: Подключение приложений
+              href: howto-connection-string.md
+            - name: Azure PowerShell
+              href: howto-connection-string-powershell.md
         - name: Настройка SSL
           href: howto-configure-ssl.md
         - name: Настройка TLS

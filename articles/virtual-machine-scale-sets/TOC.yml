@@ -25,25 +25,25 @@
   items:
     - name: 1. Создание масштабируемого набора и управление им
       items:
-        - name: Azure CLI;
+        - name: Azure CLI
           href: tutorial-create-and-manage-cli.md
         - name: Azure PowerShell
           href: tutorial-create-and-manage-powershell.md
     - name: 2. Использование дисков данных
       items:
-        - name: Azure CLI;
+        - name: Azure CLI
           href: tutorial-use-disks-cli.md
         - name: Azure PowerShell
           href: tutorial-use-disks-powershell.md
     - name: 3. Использование пользовательского образа виртуальной машины
       items:
-        - name: Azure CLI;
+        - name: Azure CLI
           href: tutorial-use-custom-image-cli.md
         - name: Azure PowerShell
           href: tutorial-use-custom-image-powershell.md
     - name: 4. Развертывание приложений в масштабируемый набор
       items:
-        - name: Azure CLI;
+        - name: Azure CLI
           href: tutorial-install-apps-cli.md
         - name: Azure PowerShell
           href: tutorial-install-apps-powershell.md
@@ -117,7 +117,7 @@
     - name: Изображения
       href: shared-image-galleries.md
     - name: Типы и размеры виртуальных машин
-      href: ../virtual-machines/windows/sizes.md
+      href: ../virtual-machines/sizes.md
       items:
         - name: Общего назначения
           href: ../virtual-machines/sizes-general.md
@@ -193,10 +193,10 @@
           href: ../virtual-machines/windows/backup-and-disaster-recovery-for-azure-iaas-disks.md
           maintainContext: true
     - name: Сеть
-      href: ../virtual-machines/windows/network-overview.md
+      href: ../virtual-machines/network-overview.md
       maintainContext: true
     - name: Автоматизация инфраструктуры
-      href: ../virtual-machines/windows/infrastructure-automation.md
+      href: ../virtual-machines/infrastructure-automation.md
       maintainContext: true
     - name: Безопасность
       items:
@@ -378,13 +378,13 @@
     - name: Использование Ansible
       items:
         - name: Создание и администрирование масштабируемого набора
-          href: /azure/ansible/ansible-create-configure-vmss
+          href: /azure/developer/ansible/vm-scale-set-configure
           maintainContext: true
         - name: Развертывание приложений в масштабируемые наборы
-          href: /azure/ansible/ansible-deploy-app-vmss
+          href: /azure/developer/ansible/vm-scale-set-deploy-app
           maintainContext: true
         - name: Автоматическое масштабирование масштабируемого набора
-          href: /azure/ansible/ansible-auto-scale-vmss
+          href: /azure/developer/ansible/vm-scale-set-auto-scale
           maintainContext: true
 - name: Справочник
   items:

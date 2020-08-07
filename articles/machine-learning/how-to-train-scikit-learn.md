@@ -9,13 +9,13 @@ ms.author: jordane
 author: jpe316
 ms.date: 07/24/2020
 ms.topic: conceptual
-ms.custom: how-to, tracking-python
-ms.openlocfilehash: dfe3d0e7bf0d291807a5a051f834753c7816801a
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.custom: how-to, devx-track-python
+ms.openlocfilehash: d023fa5786375f8fb4dbcdfe01e32da0400088f8
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320890"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87849398"
 ---
 # <a name="build-scikit-learn-models-at-scale-with-azure-machine-learning"></a>Создание scikit. изучение моделей в масштабе с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "87320890"
 
 Если вы научитесь изучать модель машинного обучения scikit-учиться с нуля или используете существующую модель в облаке, вы можете использовать Машинное обучение Azure для масштабирования заданий обучения с открытым исходным кодом с помощью эластичных облачных ресурсов. Вы можете создавать, развертывать, выполнять версии и отслеживать модели производственного уровня с помощью Машинное обучение Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Запустите этот код в любой из этих сред:
  - Вычислительная операция Машинного обучения Azure — загрузка или установка не требуется
@@ -183,7 +183,7 @@ web_service = Model.deploy(ws, "scikit-learn-service", [model])
 Полное [Описание процесса](how-to-deploy-and-where.md) развертывания в машинное обучение Azure более подробно.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы обучили и зарегистрировали модель scikit-учиться и узнали о вариантах развертывания. Дополнительные сведения о Машинное обучение Azure см. в других статьях.
 
