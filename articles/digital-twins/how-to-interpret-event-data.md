@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 34624358a26fbd52db5832cf3531a6f1d3b91e5b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3bb4d70b4c4f3f9edc525ffe5973bca633ddd1be
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87061746"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87800421"
 ---
 # <a name="understand-event-data"></a>Общие сведения о событиях
 
@@ -297,10 +297,10 @@ ms.locfileid: "87061746"
   }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. раздел Создание конечных точек и маршрутов для доставки событий.
-* [*Руководство. Управление конечными точками и маршрутами*](how-to-manage-routes.md)
+* [*Руководство. Управление конечными точками и маршрутами*](how-to-manage-routes-apis-cli.md)
 
 Или ознакомьтесь с дополнительными сведениями о параметрах API и пакета SDK для цифровых двойников Azure:
 * [*Практические руководства. Использование API-интерфейсов и пакетов SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md)

@@ -5,13 +5,13 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/24/2020
 ms.author: cshoe
-ms.custom: tracking-python
-ms.openlocfilehash: 2c3e872dee06ac4fa0c8c37ce8fb77bd34dc78bc
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-python
+ms.openlocfilehash: 896ffb148ec781280d103b27a4dddddb1f9ef4b0
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87041867"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87874662"
 ---
 # <a name="azure-cosmos-db-input-binding-for-azure-functions-2x-and-higher"></a>Azure Cosmos DB входную привязку для функций Azure 2. x и более поздних версий
 
@@ -43,8 +43,12 @@ namespace CosmosDBSamplesV2
 {
     public class ToDoItem
     {
+        [JsonProperty("id")]
         public string Id { get; set; }
+        
+        [JsonProperty("partitionKey")]
         public string PartitionKey { get; set; }
+        
         public string Description { get; set; }
     }
 }
@@ -1430,12 +1434,12 @@ public class DocsFromRouteSqlQuery {
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type**     | н/д | Нужно задать значение `cosmosDB`.        |
-|**direction**     | н/д | Нужно задать значение `in`.         |
+|**type**     | Недоступно | Нужно задать значение `cosmosDB`.        |
+|**direction**     | Недоступно | Нужно задать значение `in`.         |
 |**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
 |**Имя** |**DatabaseName** |База данных, содержащая документ.        |
 |**collectionName** |**CollectionName** | Имя коллекции, содержащей документ. |
-|**идентификатор**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте `id` Свойства и **sqlQuery** . Если не задать ни одного из них, извлекается вся коллекция. |
+|**id**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте `id` Свойства и **sqlQuery** . Если не задать ни одного из них, извлекается вся коллекция. |
 |**sqlQuery**  |**SqlQuery**  | SQL-запрос к Azure Cosmos DB, используемый для извлечения нескольких документов. Свойство поддерживает привязки времени выполнения, как показано в примере: `SELECT * FROM c where c.departmentId = {departmentId}`. Не устанавливайте `id` и свойства, и `sqlQuery` . Если не задать ни одного из них, извлекается вся коллекция.|
 |**коннектионстрингсеттинг**     |**ConnectionStringSetting**|Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB. |
 |**partitionKey**|**PartitionKey**|Задает значение ключа секции для поиска. Может включать параметры привязки. Он необходим для уточняющих запросов в [секционированных](../cosmos-db/partition-data.md#logical-partitions) коллекциях.|
@@ -1467,7 +1471,7 @@ public class DocsFromRouteSqlQuery {
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Выполнение функции при создании или изменении документа Azure Cosmos DB (триггер)](./functions-bindings-cosmosdb-v2-trigger.md)
 - [Сохранение изменений в документе Azure Cosmos DB (Выходная привязка)](./functions-bindings-cosmosdb-v2-output.md)

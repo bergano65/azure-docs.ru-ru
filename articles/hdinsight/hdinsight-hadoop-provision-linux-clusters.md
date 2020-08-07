@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
-ms.date: 04/30/2020
-ms.openlocfilehash: 4eaa9c4e3d200eedd57c468639c1af3830911d1d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/06/2020
+ms.openlocfilehash: 1d11318d2af640a0cf417286ee777ce833297a4f
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82889261"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87873608"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий
 
@@ -43,7 +43,7 @@ ms.locfileid: "82889261"
 
 В этой статье описывается настройка в [портал Azure](https://portal.azure.com), где можно создать кластер HDInsight.
 
-## <a name="basics"></a>Основы
+## <a name="basics"></a>Основные сведения
 
 ![быстрое создание параметров hdinsight — настраиваемая Быстрая](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-basics-blank-fs.png)
 
@@ -82,7 +82,7 @@ ms.locfileid: "82889261"
 | [Kafka](kafka/apache-kafka-introduction.md) | Распределенная платформа потоковой передачи с открытым кодом, которую можно использовать для создания конвейеров и приложений потоковой передачи данных в режиме реального времени. |
 | [Службы машинного обучения](r-server/r-server-overview.md) |Разнообразная статистика больших данных, прогнозное моделирование и возможности машинного обучения |
 | [Spark](spark/apache-spark-overview.md) |Обработка в памяти, интерактивные запросы, обработка потоков микро-пакетов |
-| [Storm](storm/apache-storm-overview.md) |Обработка событий в режиме реального времени |
+| [Буря](storm/apache-storm-overview.md) |Обработка событий в режиме реального времени |
 
 #### <a name="version"></a>Версия
 
@@ -108,7 +108,7 @@ ms.locfileid: "82889261"
 * Максимальная длина: 64
 * Зарезервированные имена: Hadoop, Users, Oozie, Hive, mapred, ambari-QA, Zookeeper, TEZ, HDFS, sqoop, Yarn, хкат, AMS, HBase, множество, администратор, администратор, пользователь, Пользователь1, тест, Пользователь2, test1, user3, admin1, 1, 123, a, актусер, ADM, Admin2, ASPNET, резервное копирование, консоль, Дэвид, гость, Джон, владелец, корень, сервер, SQL, поддержка, support_388945a0, sys, test2, test3, user4, User5, Spark
 
-## <a name="storage"></a>Память
+## <a name="storage"></a>Хранилище
 
 ![Параметры хранилища кластера: конечные точки, совместимые с HDFS](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-storage.png)
 
@@ -148,6 +148,9 @@ ms.locfileid: "82889261"
 Если вы хотите сохранить таблицы Hive после удаления кластера HDInsight, используйте пользовательское хранилище метаданных. Затем можно будет подключить это хранилище к другому кластеру HDInsight.
 
 HDInsight An хранилище метаданных, созданный для одной версии кластера HDInsight, нельзя совместно использовать в разных версиях кластера HDInsight. Список версий HDInsight см. в разделе [Поддерживаемые версии HDInsight](hdinsight-component-versioning.md#supported-hdinsight-versions).
+
+> [!IMPORTANT]
+> По умолчанию хранилище метаданных предоставляет базу данных SQL Azure с **базовым ограничением DTU уровня 5 (не обновляемым)**. Подходит для базовых целей тестирования. Для больших или рабочих нагрузок рекомендуется переходить на внешний хранилище метаданных.
 
 #### <a name="sql-database-for-oozie"></a>База данных SQL для Oozie
 
@@ -210,7 +213,7 @@ Ambari используется для мониторинга кластеров
 | --- | --- | --- |
 | Hadoop |Головной узел (2), Рабочий узел (1 +) |![Узлы кластера HDInsight Hadoop](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hadoop-cluster-type-nodes.png) |
 | HBase |Головной сервер (2), региональный сервер (от 1), основной узел или узел Zookeeper (3) |![Установка типа кластера HDInsight HBase](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hbase-cluster-type-setup.png) |
-| Storm |Узел Nimbus (2), сервер супервизора (от 1), узел Zookeeper (3) |![Установка типа кластера HDInsight](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-storm-cluster-type-setup.png) |
+| Буря |Узел Nimbus (2), сервер супервизора (от 1), узел Zookeeper (3) |![Установка типа кластера HDInsight](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-storm-cluster-type-setup.png) |
 | Spark |Головной узел (2), Рабочий узел (1 +), узел ZooKeeper (3) (бесплатно для размера виртуальной машины a1 ZooKeeper) |![Установка типа кластера HDInsight Spark](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-spark-cluster-type-setup.png) |
 
 Дополнительные сведения см. в разделе [Конфигурация узлов и размеры виртуальных машин по умолчанию для кластеров](hdinsight-component-versioning.md#default-node-configuration-and-virtual-machine-sizes-for-clusters) статьи "Что представляют собой компоненты и версии Hadoop, доступные в HDInsight?"

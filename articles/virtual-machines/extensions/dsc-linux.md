@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: a33d74c01771c2b60ac8667a1494ebe80271a8ac
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: a1a166d12ef753a7a6fc7225d0467ead08514f99
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86494791"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87876722"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft. OSTCExtensions. Дскфорлинукс)
 
@@ -29,25 +29,17 @@ ms.locfileid: "86494791"
 
 Расширение Дскфорлинукс публикуется и поддерживается корпорацией Майкрософт. Оно устанавливает агенты OMI и DSC на виртуальных машинах Azure. Расширение DSC также может выполнять следующие действия:
 
-
 - Зарегистрируйте виртуальную машину Linux в учетной записи службы автоматизации Azure, чтобы извлекать конфигурации в службе автоматизации Azure (Register Екстенсионактион).
 - Принудительная отправка конфигураций MOF на виртуальную машину Linux (Push Екстенсионактион).
 - Примените конфигурацию meta MOF к виртуальной машине Linux, чтобы настроить опрашивающий сервер для настройки опрашивающего узла (Pull Екстенсионактион).
 - Установите пользовательские модули DSC на виртуальную машину Linux (установите Екстенсионактион).
 - Удалите пользовательские модули DSC с виртуальной машины Linux (удалите Екстенсионактион).
 
- 
-
 ## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
-Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](../linux/endorsed-distros.md), за исключением следующих.
-
-| Distribution | Версия |
-|---|---|
-| Debian | Все версии |
-| Ubuntu| 18,04 |
+Для узлов под управлением Linux расширение DSC для Linux поддерживает все дистрибутивы Linux, перечисленные в [документации по DSC PowerShell](/powershell/scripting/dsc/getting-started/lnxgettingstarted).
  
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 

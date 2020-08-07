@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 04/07/2020
-ms.custom: tracking-python
-ms.openlocfilehash: d00e4ad8b0a9f1f50c30144867babcd8c782734d
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.custom: devx-track-python
+ms.openlocfilehash: bf31ad3311d6cbfd82ad1071d28bb7fee1bb9d2b
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86087135"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87876790"
 ---
 # <a name="use-spark--hive-tools-for-visual-studio-code"></a>Использование Spark & средств Hive для Visual Studio Code
 
@@ -331,7 +331,7 @@ ms.locfileid: "86087135"
 
     **Опубликовать/батчес** Текст запроса
 
-    | name | description | тип |
+    | name | description | type |
     | --- | --- | --- |
     | файл | Файл, содержащий приложение для выполнения | Путь (обязательно) |
     | proxyUser | Пользователь, олицетворяемый при выполнении задания | Строка |
@@ -339,7 +339,7 @@ ms.locfileid: "86087135"
     | args | Аргументы командной строки для приложения | Список строк |
     | jars | JAR для использования в этом сеансе | Список строк | 
     | pyFiles | Файлы Python для использования в этом сеансе | Список строк |
-    | files | Файлы, используемые в этом сеансе | Список строк |
+    | файлы | Файлы, используемые в этом сеансе | Список строк |
     | driverMemory | Объем памяти, используемый для процесса драйвера | Строка |
     | driverCores | Число ядер, используемых для процесса драйвера | Int |
     | executorMemory | Объем памяти, используемый для каждого процесса исполнителя | Строка |
@@ -352,7 +352,7 @@ ms.locfileid: "86087135"
 
     Текст ответа созданного объекта пакета.
 
-    | name | description | тип |
+    | name | description | type |
     | --- | ---| --- |
     | ID | Идентификатор сеанса | Int |
     | appId | Идентификатор приложения для этого сеанса | Строка |

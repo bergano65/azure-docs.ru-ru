@@ -3,12 +3,12 @@ title: Защита Функций Azure
 description: Узнайте, как улучшить защиту кода функций, выполняемых в Azure, от распространенных атак.
 ms.date: 4/13/2020
 ms.topic: conceptual
-ms.openlocfilehash: e0c5036681aace103ea69d1e9cc73e96dc30821f
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 9bec32c4c3d8005ef0d3c9fc5732785a5fa19a0c
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87502687"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87850718"
 ---
 # <a name="securing-azure-functions"></a>Защита Функций Azure
 
@@ -70,6 +70,18 @@ ms.locfileid: "87502687"
 <sup>2</sup>Конкретные имена задаются расширением.
 
 Дополнительные сведения о ключах доступа см. в статье о [привязке триггера HTTP](functions-bindings-http-webhook-trigger.md#obtaining-keys).
+
+
+#### <a name="secret-repositories"></a>Секретные репозитории
+
+По умолчанию ключи хранятся в контейнере хранилища BLOB-объектов в учетной записи, предоставляемой `AzureWebJobsStorage` параметром. Вы можете использовать определенные параметры приложения, чтобы переопределить это поведение и сохранить ключи в другом расположении.
+
+|Расположение  |Параметр | Значение | Описание:  |
+|---------|---------|---------|---------|
+|Другая учетная запись хранения     |  `AzureWebJobsSecretStorageSas`       | `<BLOB_SAS_URL` | Сохраняет ключи в хранилище BLOB-объектов второй учетной записи хранения на основе предоставленного URL-адреса SAS. Ключи шифруются перед сохранением с использованием секрета, уникального для приложения-функции. |
+|Файловая система   | `AzureWebJobsSecretStorageType`   |  `files`       | Ключи сохраняются в файловой системе, зашифрованные перед хранилищем, с использованием секрета, уникального для вашего приложения-функции. |
+|Хранилище ключей Azure;  | `AzureWebJobsSecretStorageType`<br/>`AzureWebJobsSecretStorageKeyVaultName` | `keyvault`<br/>`<VAULT_NAME>` | Хранилище должно иметь политику доступа, соответствующую управляемому системой удостоверению ресурса размещения. Политика доступа должна предоставить удостоверению следующие разрешения секрета: `Get` , `Set` , `List` и `Delete` . <br/>При локальном запуске используется удостоверение разработчика, а параметры должны находиться в [local.settings.jsв файле](functions-run-local.md#local-settings-file). | 
+|Секреты Kubernetes  |`AzureWebJobsSecretStorageType`<br/>Среда `AzureWebJobsKubernetesSecretName` (необязательно) | `kubernetes`<br/>`<SECRETS_RESOURCE>` | Поддерживается только при выполнении среды выполнения функций в Kubernetes. Если `AzureWebJobsKubernetesSecretName` параметр не установлен, репозиторий считается доступен только для чтения. В этом случае перед развертыванием необходимо создать значения. Azure Functions Core Tools автоматически создает значения при развертывании в Kubernetes.|
 
 ### <a name="authenticationauthorization"></a>Проверка подлинности и авторизация
 

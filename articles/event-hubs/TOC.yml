@@ -75,7 +75,7 @@
     - name: Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics
       href: event-hubs-kafka-stream-analytics.md
     - name: Потоковая передача данных в Azure Databricks при помощи Центров событий
-      href: ../azure-databricks/databricks-stream-from-eventhubs.md
+      href: /azure/databricks/scenarios/databricks-stream-from-eventhubs
       maintainContext: true
 - name: Примеры
   items:

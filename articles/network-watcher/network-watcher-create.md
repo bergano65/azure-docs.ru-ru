@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 6b7453a0100233896e3d01769897ed224a0b2618
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 03fe71855c43ba831f4b7a4ab746f05bd3bbb4a3
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84737552"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87846859"
 ---
 # <a name="create-an-azure-network-watcher-instance"></a>Создание экземпляра Наблюдателя за сетями Azure
 
@@ -57,7 +57,7 @@ az provider register -n Microsoft.Network
 
 Экземпляр Наблюдателя за сетями автоматически создается в группе ресурсов с именем *NetworkWatcherRG*. Если эта группа ресурсов не существует, она создается.
 
-Если вы хотите указать имя экземпляра Наблюдателя за сетями и имя группы ресурсов, в которую он добавляется, используйте PowerShell, интерфейс командной строки Azure, REST API или методы ARMClient, описанные в следующих разделах. Во всех этих вариантах должна заранее существовать группа ресурсов, в которой вы создаете Наблюдатель за сетями.  
+Если вы хотите настроить имя экземпляра наблюдателя за сетями и группу ресурсов, в которую он помещен, можно использовать PowerShell, Azure CLI, REST API или методы ARMClient, описанные в следующих разделах. Во всех этих вариантах должна заранее существовать группа ресурсов, в которой вы создаете Наблюдатель за сетями.  
 
 ## <a name="create-a-network-watcher-with-powershell"></a>Создание Наблюдателя за сетями с помощью PowerShell
 
@@ -101,6 +101,10 @@ $requestBody = @"
 armclient put "https://management.azure.com/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/Microsoft.Network/networkWatchers/${networkWatcherName}?api-version=${api-version}" $requestBody
 ```
 
+## <a name="create-a-network-watcher-using-azure-quickstart-template"></a>Создание наблюдателя за сетями с помощью шаблона быстрого запуска Azure
+
+Чтобы создать экземпляр наблюдателя за сетями, обратитесь к этому [шаблону краткого руководства](https://azure.microsoft.com/resources/templates/101-networkwatcher-create/)
+
 ## <a name="delete-a-network-watcher-in-the-portal"></a>Удаление наблюдателя за сетями на портале
 
 Последовательно выберите **все службы**  >  **сеть**  >  **наблюдатель за сетями**.
@@ -129,6 +133,6 @@ Remove-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup Networ
 * [Запись пакетов](network-watcher-packet-capture-overview.md)
 * [Проверка IP-потока](network-watcher-ip-flow-verify-overview.md)
 * [Следующий прыжок](network-watcher-next-hop-overview.md)
-* [Представление группы безопасности](network-watcher-security-group-view-overview.md)
+* [Представление групп безопасности](network-watcher-security-group-view-overview.md)
 * [Ведение журнала потоков NSG](network-watcher-nsg-flow-logging-overview.md)
 * [Устранение неполадок шлюза виртуальной сети](network-watcher-troubleshoot-overview.md)

@@ -1,6 +1,6 @@
 ---
 title: Выполнение действий хранилища очередей Azure в PowerShell
-description: Как выполнять операции с хранилищем очередей Azure при помощи PowerShell
+description: Сделайте операции в хранилище очередей Azure с помощью PowerShell. С помощью хранилища очередей Azure можно хранить большое количество сообщений, доступных по протоколу HTTP/HTTPS.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.date: 05/15/2019
@@ -8,16 +8,16 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
-ms.openlocfilehash: 8a3de37f6442900f600f3c6a3efaf75141d151bd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 873f1bd0187eb5609456592b7dc37a48671b7e42
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84808991"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905709"
 ---
 # <a name="perform-azure-queue-storage-operations-with-azure-powershell"></a>Выполнение операций хранилища очередей Azure с помощью Azure PowerShell
 
-Хранилище очередей Azure — это служба хранения большого количества сообщений, к которым можно получить доступ по протоколам HTTP или HTTPS практически из любой точки мира. Дополнительные сведения см. в статье [Общие сведения об очередях](storage-queues-introduction.md). В этом практическом руководстве рассматриваются распространенные операции с хранилищем очередей. Вы научитесь:
+Хранилище очередей Azure — это служба хранения большого количества сообщений, к которым можно получить доступ по протоколам HTTP или HTTPS практически из любой точки мира. Дополнительные сведения см. в статье [Общие сведения об очередях](storage-queues-introduction.md). В этом практическом руководстве рассматриваются распространенные операции с хранилищем очередей. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 >

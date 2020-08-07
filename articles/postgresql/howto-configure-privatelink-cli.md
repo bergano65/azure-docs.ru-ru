@@ -7,19 +7,19 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 01/09/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: adb3104fe5874ab80134f267553b90a4b8823039
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 15ddf9392fffb8a9ed196b75b1c5e80d4484b0ad
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497993"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837250"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-using-cli"></a>Создание и управление частной связью для базы данных Azure для PostgreSQL — одиночный сервер с помощью интерфейса командной строки
 
 Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. В этой статье вы узнаете, как использовать Azure CLI для создания виртуальной машины в виртуальной сети Azure и базы данных Azure для PostgreSQL с помощью частной конечной точки Azure.
 
 > [!NOTE]
-> Эта функция доступна во всех регионах Azure, где база данных Azure для PostgreSQL-Single Server поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
+> Функция "Частная связь" доступна только для серверов базы данных Azure для PostgreSQL в общего назначения или ценовых категориях, оптимизированных для памяти. Убедитесь, что сервер базы данных находится в одной из этих ценовых категорий.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

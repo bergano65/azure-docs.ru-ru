@@ -1,6 +1,6 @@
 ---
 title: Передача сертификата управления службами Azure | Документация Майкрософт
-description: Узнайте, как передать сертификат управления службами на портал Azure.
+description: Узнайте, как передать сертификат управления службами на портал Azure. Сертификаты управления позволяют выполнять проверку подлинности с помощью классической модели развертывания.
 services: cloud-services
 documentationcenter: .net
 author: georgewallace
@@ -10,15 +10,15 @@ ms.service: api-management
 ms.topic: article
 ms.date: 08/01/2017
 ms.author: gwallace
-ms.openlocfilehash: 4b49a9b391eeca2d2e249b171d99f231bda6fdff
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0d2436b524ba6df68b12206bcb545e54a405b731
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78329126"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87848559"
 ---
 # <a name="upload-an-azure-service-management-certificate"></a>Передача сертификата управления службами Azure
-Сертификаты управления позволяют выполнять аутентификацию с помощью классической модели развертывания Azure. Многие программы и инструменты (например, Visual Studio или пакет SDK Azure) будут использовать эти сертификаты для автоматизации настройки и развертывания разных служб Azure. 
+Сертификаты управления позволяют выполнять аутентификацию с помощью классической модели развертывания Azure. Многие программы и средства (например, Visual Studio или пакет SDK Azure) будут использовать эти сертификаты для автоматизации настройки и развертывания разных служб Azure. 
 
 > [!WARNING]
 > Будьте осторожны! Эти типы сертификатов позволяют каждому, кто прошел проверку подлинности, управлять подпиской, с которой они связаны.
@@ -42,14 +42,14 @@ ms.locfileid: "78329126"
 3. Обязательно выберите именно ту подписку, с которой необходимо связать сертификат.     
 4. Выбрав правильную подписку, щелкните **Сертификаты управления** в группе _Параметры_.
 
-    ![Параметры](./media/azure-api-management-certs/mgmtcerts_menu.png)
+    !["Настройки"](./media/azure-api-management-certs/mgmtcerts_menu.png)
 
 5. Нажмите кнопку **Отправить** .
 
     ![Кнопка "Отправить" на странице сертификатов](./media/azure-api-management-certs/certificates_page.png)
 6. Укажите сведения в диалоговом окне и нажмите кнопку **Отправить**.
 
-    ![Параметры](./media/azure-api-management-certs/certificate_details.png)
+    !["Настройки"](./media/azure-api-management-certs/certificate_details.png)
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 Связав сертификат управления с подпиской и установив соответствующий сертификат локально, вы можете программно подключаться к [REST API классической модели управления](/azure/?pivot=sdkstools) и автоматизировать различные ресурсы Azure, связанные с этой же подпиской.

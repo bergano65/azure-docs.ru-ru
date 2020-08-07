@@ -75,7 +75,7 @@
       href: ./policy-samples.md
 - name: Основные понятия
   items:
-    - name: Хранилище ключ-значение
+    - name: Ключи и значения
       href: concept-key-value.md
     - name: Моментальный снимок на определенный момент времени
       href: concept-point-time-snapshot.md

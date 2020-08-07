@@ -1,18 +1,18 @@
 ---
 title: Использование общей папки Azure в Windows | Документация Майкрософт
-description: Узнайте, как использовать общую папку Azure в Windows и Windows Server.
+description: Узнайте, как использовать файловые ресурсы Azure с Windows и Windows Server. Используйте общие файловые ресурсы Azure с SMB 3,0 в операционных системах Windows, работающих локально или на виртуальных машинах Azure.
 author: roygara
 ms.service: storage
 ms.topic: how-to
 ms.date: 06/22/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: bb9e7582317851d1968e104cd351a2b5e02b1e19
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fcc79a0763d7441a8a3c04723578ccc27cf5fe4e
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85509784"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905760"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно легко использовать в Windows и Windows Server. В этой статье рассматриваются рекомендации по использованию общей папки Azure в Windows и Windows Server.
@@ -59,7 +59,7 @@ ms.locfileid: "85509784"
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 1. Перейдите к учетной записи хранения, содержащей общую папку, которую вы хотите подключить.
-1. Выберите **файловые ресурсы**.
+1. Выберите **Общие папки**.
 1. Выберите общую папку, которую вы хотите подключить.
 
     :::image type="content" source="media/storage-how-to-use-files-windows/select-file-shares.png" alt-text="Например":::
@@ -132,10 +132,10 @@ ms.locfileid: "85509784"
 | Windows Server 2019                       | Выключено             | Удаление с помощью функции Windows |
 | Windows Server версии 1709 или выше            | Выключено             | Удаление с помощью функции Windows |
 | Windows 10 версии 1709 или выше                | Выключено             | Удаление с помощью функции Windows |
-| Windows Server 2016                       | Включено              | Удаление с помощью функции Windows |
-| Windows 10 версии 1507, 1607 и 1703 | Включено              | Удаление с помощью функции Windows |
-| Windows Server 2012 R2                    | Включено              | Удаление с помощью функции Windows | 
-| Windows 8.1                               | Включено              | Удаление с помощью функции Windows | 
+| Windows Server 2016                       | Активировано              | Удаление с помощью функции Windows |
+| Windows 10 версии 1507, 1607 и 1703 | Активировано              | Удаление с помощью функции Windows |
+| Windows Server 2012 R2                    | Активировано              | Удаление с помощью функции Windows | 
+| Windows 8.1                               | Активировано              | Удаление с помощью функции Windows | 
 | Windows Server 2012                       | Активировано              | Отключение с помощью реестра       | 
 | Windows Server 2008 R2                    | Активировано              | Отключение с помощью реестра       |
 | Windows 7                                 | Активировано              | Отключение с помощью реестра       | 

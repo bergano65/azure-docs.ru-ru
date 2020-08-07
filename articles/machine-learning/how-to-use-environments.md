@@ -10,13 +10,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.date: 07/23/2020
 ms.topic: conceptual
-ms.custom: how-to, tracking-python
-ms.openlocfilehash: 9464544e8c80ad32269ad27ed3592871d0077713
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.custom: how-to, devx-track-python
+ms.openlocfilehash: 08e36f8ef31114b18a166e7a14d6d7ad8385582c
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87544036"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87850378"
 ---
 # <a name="create--use-software-environments-in-azure-machine-learning"></a>Создание & использование программных сред в Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "87544036"
 
 Общий обзор работы сред в Машинное обучение Azure см. в разделе [что такое среды машинного обучения?](concept-environments.md) Сведения о настройке сред разработки см. [здесь](how-to-configure-environment.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * [Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md)
@@ -454,7 +454,7 @@ az ml environment list
 az ml environment download -n myenv -d downloaddir
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения об использовании управляемого целевого объекта вычислений для обучения модели см. в разделе [учебник. Обучение модели](tutorial-train-models-with-aml.md).
 * После создания обученной модели Узнайте, [как и где развертываются модели](how-to-deploy-and-where.md).

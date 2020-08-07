@@ -8,13 +8,13 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
-ms.custom: seo-javascript-october2019, tracking-python
-ms.openlocfilehash: 46d144a95708ac834478871ca27763f0ebd3b201
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: seo-javascript-october2019, devx-track-python
+ms.openlocfilehash: 97cb41a47b18d403881432098ecdda9bb26146d2
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84805241"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87848202"
 ---
 # <a name="how-to-use-azure-queue-storage-v21-from-python"></a>Использование Хранилища очередей Azure версии 2.1 из Python
 
@@ -27,7 +27,7 @@ ms.locfileid: "84805241"
 
 [!INCLUDE [storage-try-azure-tools-queues](../../../includes/storage-try-azure-tools-queues.md)]
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 
 Примеры в этой статье написаны на языке Python и используют [пакет SDK для Служба хранилища Microsoft Azure для Python]. Дополнительные сведения об очередях см. в разделе [Дальнейшие действия](#next-steps).
 
@@ -149,12 +149,12 @@ count = metadata.approximate_message_count
 queue_service.delete_queue('taskqueue')
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали основные сведения о хранилище очередей, воспользуйтесь следующими ссылками для получения дополнительных сведений.
 
 * [Справочник по API Python для очередей Azure](/python/api/azure-storage-queue)
-* [Центр разработчиков Python](https://azure.microsoft.com/develop/python/)
+* [Центр по разработке для Python](https://azure.microsoft.com/develop/python/)
 * [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355)
 
 [Azure Storage Team Blog]: https://blogs.msdn.com/b/windowsazurestorage/

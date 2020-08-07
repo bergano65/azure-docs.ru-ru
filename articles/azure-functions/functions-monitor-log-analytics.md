@@ -5,13 +5,13 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: cshoe
-ms.custom: tracking-python
-ms.openlocfilehash: a84dda648ccc1dc73956aeb5d8364c4c3f31c9f6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-python
+ms.openlocfilehash: a6b7d158014a49866c6fffadcdc57c00b53deafc
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87055270"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87853279"
 ---
 # <a name="monitoring-azure-functions-with-azure-monitor-logs"></a>Мониторинг функций Azure с помощью журналов Azure Monitor
 
@@ -121,7 +121,7 @@ FunctionAppLogs
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [обзором функций Azure](functions-overview.md).
 - Дополнительные сведения о [журналах Azure Monitor](../azure-monitor/platform/data-platform-logs.md).
