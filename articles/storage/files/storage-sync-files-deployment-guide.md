@@ -1,18 +1,18 @@
 ---
 title: Развертывание службы "Синхронизация файлов Azure" | Документация Майкрософт
-description: Сведения о развертывании службы синхронизации файлов Azure от начала до конца.
+description: Узнайте, как развернуть Синхронизация файлов Azure, от начала до конца, с помощью портал Azure, PowerShell или Azure CLI.
 author: roygara
 ms.service: storage
 ms.topic: how-to
 ms.date: 07/19/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 006825b5040db482262f79497b9fd810ed3b790c
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 27615d1367bd0faa035e68bf9f03df05cdccfa7f
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87460632"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87903856"
 ---
 # <a name="deploy-azure-file-sync"></a>Развертывание Синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -61,7 +61,7 @@ ms.locfileid: "87460632"
     > [!Note]  
     > Теперь модуль AZ. StorageSync устанавливается автоматически при установке модуля AZ PowerShell.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 1. Файловый ресурс Azure в том же регионе, который требуется развернуть Синхронизация файлов Azure. Дополнительные сведения см. в следующих статьях:
     - [Доступность по регионам](storage-sync-files-planning.md#azure-file-sync-region-availability). Здесь представлены сведения о регионах службы синхронизации файлов Azure.
@@ -140,7 +140,7 @@ if ($installType -ne "Server Core") {
 }
 ``` 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Следуйте инструкциям по портал Azure или PowerShell.
 
@@ -211,7 +211,7 @@ $storageSyncName = "<my_storage_sync_service>"
 $storageSync = New-AzStorageSyncService -ResourceGroupName $resourceGroup -Name $storageSyncName -Location $region
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Следуйте инструкциям по портал Azure или PowerShell.
 
@@ -267,7 +267,7 @@ Start-Process -FilePath "StorageSyncAgent.msi" -ArgumentList "/quiet" -Wait
 # You may remove the temp folder containing the MSI and the EXE installer
 Remove-Item -Path ".\StorageSyncAgent.msi" -Recurse -Force
 ```
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Следуйте инструкциям по портал Azure или PowerShell.
 
@@ -378,7 +378,7 @@ New-AzStorageSyncCloudEndpoint `
     -AzureFileShareName $fileShare.Name
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Используйте команду [AZ storagesync Sync-Group](/cli/azure/ext/storagesync/storagesync/sync-group#ext-storagesync-az-storagesync-sync-group-create) , чтобы создать новую группу синхронизации.  Чтобы настроить группу ресурсов по умолчанию для всех команд интерфейса командной строки, используйте команду [AZ configure](/cli/azure/reference-index#az-configure).
 
@@ -452,7 +452,7 @@ if ($cloudTieringDesired) {
 }
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Чтобы создать новую конечную точку сервера, используйте команду [AZ storagesync Sync-Group Server-Endpoint](/cli/azure/ext/storagesync/storagesync/sync-group/server-endpoint#ext-storagesync-az-storagesync-sync-group-server-endpoint-create) .
 
@@ -584,7 +584,7 @@ Get-StorageSyncSelfServiceRestore [[-Driveletter] <string>]
 
 Дополнительные сведения см. в статье [Azure File Sync interop with Distributed File System (DFS)](storage-sync-files-planning.md#distributed-file-system-dfs) (Взаимодействие службы "Синхронизация файлов Azure" с распределенной файловой системой (DFS)).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Добавление и удаление конечных точек сервера службы синхронизации файлов Azure](storage-sync-files-server-endpoint.md)
 - [Регистрация и отмена регистрации сервера в службе синхронизации файлов Azure (предварительная версия)](storage-sync-files-server-registration.md)
 - [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)

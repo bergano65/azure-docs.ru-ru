@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 23556d6c0d64c6b6351d09ac1a658da0e5a4dd68
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c119ebc8d87c00608fc515099711463f47b8ed1a
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87088841"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87901816"
 ---
 # <a name="migrate-from-a-managed-image-to-a-shared-image-gallery-image"></a>Миграция из управляемого образа в общий образ коллекции образов
 
@@ -25,7 +25,7 @@ ms.locfileid: "87088841"
 - **Версия образа** — это то, что используется для создания виртуальной машины при использовании общей коллекции образов. В зависимости от требований для вашей среды, у вас может быть несколько версий образа. При создании виртуальной машины используется версия образа для создания новых дисков для виртуальной машины. Версии образов можно использовать несколько раз.
 
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для работы с этой статьей необходим существующий управляемый образ. Если управляемый образ содержит диск данных, размер диска данных не может превышать 1 ТБ.
 
@@ -99,8 +99,8 @@ $job = $imageVersion = New-AzGalleryImageVersion `
    -GalleryImageDefinitionName $imageDefinition.Name `
    -GalleryImageVersionName '1.0.0' `
    -GalleryName $gallery.Name `
-   -ResourceGroupName $resourceGroup.ResourceGroupName `
-   -Location $resourceGroup.Location `
+   -ResourceGroupName $imageDefinition.ResourceGroupName `
+   -Location $imageDefinition.Location `
    -TargetRegion $targetRegions  `
    -Source $managedImage.Id.ToString() `
    -PublishingProfileEndOfLifeDate '2020-12-31' `
@@ -130,7 +130,7 @@ Remove-AzImage `
    -ResourceGroupName $managedImage.ResourceGroupName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Убедившись, что репликация завершена, можно создать виртуальную машину из [обобщенного образа](vm-generalized-image-version-powershell.md).
 

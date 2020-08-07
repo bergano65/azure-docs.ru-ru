@@ -8,15 +8,15 @@ ms.subservice: core
 author: clauren42
 ms.author: clauren
 ms.reviewer: jmartens
-ms.date: 03/05/2020
+ms.date: 08/06/2020
 ms.topic: conceptual
-ms.custom: troubleshooting, contperfq4, tracking-python
-ms.openlocfilehash: 4741c6348c2a4077776d2d79bee56de26f62e2d1
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.custom: troubleshooting, contperfq4, devx-track-python
+ms.openlocfilehash: 3f8a3c705878e212e6a26670e20b5a81a3f2a6ba
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87540943"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87904383"
 ---
 # <a name="troubleshoot-docker-deployment-of-models-with-azure-kubernetes-service-and-azure-container-instances"></a>Устранение неполадок при развертывании в DOCKER моделей с помощью службы Kubernetes Azure и экземпляров контейнеров Azure 
 
@@ -286,175 +286,7 @@ def run(input_data):
 
 ## <a name="advanced-debugging"></a>Расширенная отладка
 
-В некоторых случаях может потребоваться интерактивная отладка кода Python, содержащегося в развертывании модели. Например, если начальный сценарий не работает и причину невозможно определить с помощью дополнительного ведения журнала. Используя Visual Studio Code и Инструменты Python для Visual Studio (PTVSD), вы можете присоединить отладчик к коду, выполняющемуся внутри контейнера Docker.
-
-> [!IMPORTANT]
-> Этот метод отладки не работает при использовании `Model.deploy()` и `LocalWebservice.deploy_configuration` для развертывания модели в локальной среде. В этом случае необходимо создать образ, используя метод [Model.package()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#package-workspace--models--inference-config-none--generate-dockerfile-false-).
-
-Для локальных развертываний веб-службы требуется рабочая установка Docker в локальной системе. Дополнительные сведения об использовании Docker см. в [соответствующей документации](https://docs.docker.com/).
-
-### <a name="configure-development-environment"></a>Настройка среды разработки
-
-1. Чтобы установить Инструменты Python для Visual Studio (PTVSD) в локальной среде разработки VS Code, используйте следующую команду:
-
-    ```
-    python -m pip install --upgrade ptvsd
-    ```
-
-    Дополнительные сведения об использовании PTVSD в VS Code см. на [этой странице](https://code.visualstudio.com/docs/python/debugging#_remote-debugging).
-
-1. Чтобы настроить VS Code для взаимодействия с образом Docker, создайте новую конфигурацию отладки:
-
-    1. В VS Code выберите меню __Отладка__, а затем щелкните __Открыть конфигурации__. Откроется файл с именем __launch.json__.
-
-    1. В файле __launch.json__ найдите строку, содержащую `"configurations": [`, и вставьте после нее следующий текст:
-
-        ```json
-        {
-            "name": "Azure Machine Learning: Docker Debug",
-            "type": "python",
-            "request": "attach",
-            "port": 5678,
-            "host": "localhost",
-            "pathMappings": [
-                {
-                    "localRoot": "${workspaceFolder}",
-                    "remoteRoot": "/var/azureml-app"
-                }
-            ]
-        }
-        ```
-
-        > [!IMPORTANT]
-        > Если в разделе конфигурации уже есть другие записи, добавьте запятую (,) после вставленного кода.
-
-        Этот раздел присоединяется к контейнеру Docker через порт 5678.
-
-    1. Сохраните файл __launch.json__.
-
-### <a name="create-an-image-that-includes-ptvsd"></a>Создание образа, содержащего PTVSD
-
-1. Измените среду conda для своего развертывания, добавив в нее PTVSD. В следующем примере демонстрируется добавление с помощью параметра `pip_packages`:
-
-    ```python
-    from azureml.core.conda_dependencies import CondaDependencies 
-
-
-    # Usually a good idea to choose specific version numbers
-    # so training is made on same packages as scoring
-    myenv = CondaDependencies.create(conda_packages=['numpy==1.15.4',            
-                                'scikit-learn==0.19.1', 'pandas==0.23.4'],
-                                 pip_packages = ['azureml-defaults==1.0.45', 'ptvsd'])
-
-    with open("myenv.yml","w") as f:
-        f.write(myenv.serialize_to_string())
-    ```
-
-1. Чтобы запустить PTVSD и дождаться подключения при запуске службы, добавьте в начало своего файла `score.py` следующее:
-
-    ```python
-    import ptvsd
-    # Allows other computers to attach to ptvsd on this IP address and port.
-    ptvsd.enable_attach(address=('0.0.0.0', 5678), redirect_output = True)
-    # Wait 30 seconds for a debugger to attach. If none attaches, the script continues as normal.
-    ptvsd.wait_for_attach(timeout = 30)
-    print("Debugger attached...")
-    ```
-
-1. Создайте образ на основе определения среды и извлеките его в локальный реестр. Во время отладки вы можете внести изменения в файлы образа, не создавая его повторно. Чтобы установить текстовый редактор (vim) в образе Docker, используйте свойства `Environment.docker.base_image` и `Environment.docker.base_dockerfile`:
-
-    > [!NOTE]
-    > В этом примере предполагается, что `ws` указывает на вашу рабочую область Машинное обучение Azure, а `model` представляет собой развертываемую модель. Файл `myenv.yml` содержит зависимости conda, созданные на шаге 1.
-
-    ```python
-    from azureml.core.conda_dependencies import CondaDependencies
-    from azureml.core.model import InferenceConfig
-    from azureml.core.environment import Environment
-
-
-    myenv = Environment.from_conda_specification(name="env", file_path="myenv.yml")
-    myenv.docker.base_image = None
-    myenv.docker.base_dockerfile = "FROM mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04\nRUN apt-get update && apt-get install vim -y"
-    inference_config = InferenceConfig(entry_script="score.py", environment=myenv)
-    package = Model.package(ws, [model], inference_config)
-    package.wait_for_creation(show_output=True)  # Or show_output=False to hide the Docker build logs.
-    package.pull()
-    ```
-
-    После создания и скачивания образа путь к нему (включая репозиторий, имя и тег, который в данном случае также является хэш-кодом) отображается в сообщении следующего вида:
-
-    ```text
-    Status: Downloaded newer image for myregistry.azurecr.io/package@sha256:<image-digest>
-    ```
-
-1. Чтобы упростить работу с образом, используйте приведенную ниже команду для добавления тега. Замените `myimagepath` значением расположения из предыдущего шага.
-
-    ```bash
-    docker tag myimagepath debug:1
-    ```
-
-    На остальных шагах для обозначения расположения локального образа вы можете указывать `debug:1` вместо значения полного пути.
-
-### <a name="debug-the-service"></a>Отладка службы
-
-> [!TIP]
-> Если вы установили время ожидания для подключения PTVSD в файле `score.py`, необходимо подключить VS Code к сеансу отладки до истечения этого времени. Запустите VS Code, откройте локальную копию `score.py`, установите точку останова и подготовьте ее к работе, прежде чем выполнять действия, описанные в этом разделе.
->
-> Дополнительные сведения об отладке и установке точек останова см. на [этой странице](https://code.visualstudio.com/Docs/editor/debugging).
-
-1. Чтобы запустить контейнер Docker с помощью образа, используйте следующую команду:
-
-    ```bash
-    docker run --rm --name debug -p 8000:5001 -p 5678:5678 debug:1
-    ```
-
-1. Чтобы присоединить VS Code к PTVSD внутри контейнера, откройте код VS Code и нажмите клавишу F5 или выберите __Отладка__. При появлении запроса выберите конфигурацию__Azure Machine Learning: Docker Debug__ (Машинное обучение Azure: отладка Docker). Вы также можете выбрать значок отладки на боковой панели, запись __Azure Machine Learning: Docker Debug__ (Машинное обучение Azure: отладка Docker), а затем щелкнуть зеленую стрелку, чтобы присоединить отладчик.
-
-    ![Значок отладки, кнопка запуска отладки и селектор конфигурации](./media/how-to-troubleshoot-deployment/start-debugging.png)
-
-На этом этапе VS Code подключается к PTVSD внутри контейнера Docker и останавливается при достижении точки останова, заданной ранее. Теперь вы можете пошагово выполнять код, просматривать переменные и т. д.
-
-Дополнительные сведения об использовании VS Code для отладки Python см. на странице [Отладка кода Python](https://docs.microsoft.com/visualstudio/python/debugging-python-in-visual-studio?view=vs-2019).
-
-<a id="editfiles"></a>
-### <a name="modify-the-container-files"></a>Изменение файлов контейнера
-
-Чтобы изменить файлы в образе, вы можете подключиться к работающему контейнеру и выполнить оболочку bash. В нем можно использовать vim для редактирования файлов:
-
-1. Чтобы подключиться к работающему контейнеру и запустить оболочку bash в контейнере, используйте следующую команду:
-
-    ```bash
-    docker exec -it debug /bin/bash
-    ```
-
-1. Чтобы найти файлы, используемые службой, выполните приведенную ниже команду из оболочки bash в контейнере, если каталог по умолчанию отличается от `/var/azureml-app`:
-
-    ```bash
-    cd /var/azureml-app
-    ```
-
-    В нем можно использовать vim для редактирования файла `score.py`. Дополнительные сведения об использовании vim см. на [этой странице](https://www.tldp.org/LDP/intro-linux/html/sect_06_02.html).
-
-1. Изменения в контейнере обычно не сохраняются. Чтобы сохранить внесенные изменения, используйте следующую команду перед выходом из оболочки, запущенной на шаге выше (то есть в другой оболочке):
-
-    ```bash
-    docker commit debug debug:2
-    ```
-
-    Эта команда создаст новый образ с именем `debug:2`, содержащий изменения.
-
-    > [!TIP]
-    > Вам нужно будет остановить текущий контейнер и начать использование новой версии, прежде чем изменения вступят в силу.
-
-1. Обязательно синхронизируйте изменения, внесенные в файлы в контейнере, с локальными файлами, которые использует VS Code. В противном случае интерфейс отладчика не будет функционировать должным образом.
-
-### <a name="stop-the-container"></a>Остановка контейнера
-
-Чтобы остановить контейнер, используйте следующую команду:
-
-```bash
-docker stop debug
-```
+В некоторых случаях может потребоваться интерактивная отладка кода Python, содержащегося в развертывании модели. Например, если начальный сценарий не работает и причину невозможно определить с помощью дополнительного ведения журнала. С помощью Visual Studio Code и дебугпи можно присоединяться к коду, выполняющемуся в контейнере DOCKER. Дополнительные сведения см. в [разделе Интерактивная Отладка в VS Code Guide](how-to-debug-visual-studio-code.md#debug-and-troubleshoot-deployments).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

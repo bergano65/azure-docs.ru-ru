@@ -1,7 +1,7 @@
 ---
 title: Авторизация учетных записей разработчиков с помощью OAuth 2,0 в управлении API
 titleSuffix: Azure API Management
-description: Сведения об авторизации пользователей с помощью OAuth 2.0 в службе управления API.
+description: Сведения об авторизации пользователей с помощью OAuth 2.0 в службе управления API. OAuth 2,0 защищает API таким образом, чтобы пользователи могли обращаться только к тем ресурсам, к которым они имеют право.
 services: api-management
 documentationcenter: ''
 author: mikebudzynski
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 7eb77b9ffae49c7d8d3e5612b685e5725829898f
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 4a0e8c6eb87b053c0e3ee524c60435dc45d81ff3
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86499789"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87902264"
 ---
 # <a name="how-to-authorize-developer-accounts-using-oauth-20-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью протокола OAuth 2.0 в службе управления Azure API
 
@@ -27,7 +27,7 @@ ms.locfileid: "86499789"
 > [!IMPORTANT]
 > Авторизация OAuth 2,0 пока недоступна в интерактивной консоли нового портала разработчика.
 
-## <a name="prerequisites"></a><a name="prerequisites"> </a>Предварительные требования
+## <a name="prerequisites"></a><a name="prerequisites"> </a>Предварительные условия
 
 В этом руководстве описано, как настроить экземпляр службы API Management для авторизации учетных записей разработчиков по протоколу OAuth 2.0. В нем не рассматривается настройка поставщика OAuth 2.0. Настройка каждого поставщика OAuth 2.0 имеет свои особенности, хотя инструкции в целом схожи, а данные, необходимые для настройки этого протокола в экземпляре службы API Management, одинаковы. В примерах в этом разделе в качестве поставщика OAuth 2.0 используется служба Azure Active Directory.
 
@@ -123,7 +123,7 @@ ms.locfileid: "86499789"
 > [!NOTE]
 > Если всплывающие окна отключены, то в браузере появится запрос на их включение. Включив всплывающие окна, еще раз выберите пункт **Authorization code** , чтобы открыть форму входа.
 
-![Войти][api-management-oauth2-signin]
+![Вход][api-management-oauth2-signin]
 
 После входа поле **Request headers** (Заголовки запроса) заполняется заголовком `Authorization : Bearer`, используемым для авторизации запроса.
 
@@ -131,7 +131,7 @@ ms.locfileid: "86499789"
 
 Теперь вы можете настроить остальные параметры и отправить запрос.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Для получения дополнительных сведений об использовании OAuth 2.0 и службы управления API см. следующий видеоролик и эту [статью](api-management-howto-protect-backend-with-aad.md).
 

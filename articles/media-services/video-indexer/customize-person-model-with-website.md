@@ -8,14 +8,14 @@ manager: johndeu
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 08/06/2020
 ms.author: kumud
-ms.openlocfilehash: 28cb73df2df91fc96d7ac19e25d7bd13f47df41e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6894eb783b990ebe98f9ebe5eb2fe112a59309a4
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87047303"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87904502"
 ---
 # <a name="customize-a-person-model-with-the-video-indexer-website"></a>Настройка модели Person с помощью веб-сайта Индексатора видео
 
@@ -126,9 +126,20 @@ ms.locfileid: "87047303"
 
 ### <a name="manage-a-person"></a>Управление человеком
 
-Если выбрать **Управление**, отобразятся все лица, из которых выполняется обучение этой модели Person. Эти лица берутся из копий этого человека в видеороликах, использующих эту модель или изображения, передаваемые вручную.
+Если выбрать **Управление**, отобразится окно **сведений о лице** со всеми лицами, из которых выполняется обучение этой модели Person. Эти лица берутся из копий этого человека в видеороликах, использующих эту модель или изображения, передаваемые вручную.
+
+> [!TIP]
+> Чтобы открыть окно **сведений о пользователе** , щелкните его имя или нажмите кнопку **Управление**, как показано выше.
+
+#### <a name="add-a-face"></a>Добавление лица
 
 Вы можете добавить других лиц к человеку, выбрав **Добавить изображения**.
+
+#### <a name="delete-a-face"></a>Удаление лица
+
+Выберите образ, который нужно удалить, и нажмите кнопку **Удалить**.
+
+#### <a name="rename-and-delete-the-person"></a>Переименование и удаление пользователя 
 
 С помощью панели Управление можно переименовать пользователя и удалить пользователя из модели Person.
 
@@ -210,6 +221,6 @@ ms.locfileid: "87047303"
 
 ![Удаление лица из видео](./media/customize-face-model/delete-face.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Customize a Person model with the Video Indexer API](customize-person-model-with-api.md) (Настройка модели Person с помощью API Индексатора видео)

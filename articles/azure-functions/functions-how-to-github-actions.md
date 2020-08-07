@@ -5,13 +5,13 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 04/16/2020
 ms.author: cshoe
-ms.custom: tracking-python
-ms.openlocfilehash: 1a7cc37f297f902fb5de473303f1dc260cbea9ca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-python
+ms.openlocfilehash: 3fcf26670ec03b1d3a496574e58ae706acdf5c53
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84559107"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87853297"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Непрерывная поставка с помощью действия GitHub
 
@@ -204,8 +204,8 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 |Параметр |Объяснение  |
 |---------|---------|
-|**_app-name_** | Заполнен Имя приложения функции. |
-|_**slot-name**_ | Используемых Имя [слота развертывания](functions-deployment-slots.md) , в который требуется выполнить развертывание. Слот уже должен быть определен в приложении функции. |
+|**_имя приложения_** | Заполнен Имя приложения функции. |
+|_**имя слота**_ | Используемых Имя [слота развертывания](functions-deployment-slots.md) , в который требуется выполнить развертывание. Слот уже должен быть определен в приложении функции. |
 
 
 В следующем примере используется версия 1 из `functions-action` :
@@ -223,4 +223,4 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 Чтобы просмотреть полный файл Workflow. YAML, ознакомьтесь с одним из файлов в [репозитории примеров рабочих процессов Azure GitHub](https://aka.ms/functions-actions-samples) , имеющих `functionapp` имя. Эти примеры можно использовать в качестве отправной точки для рабочего процесса.
 
 > [!div class="nextstepaction"]
-> [Дополнительные сведения о действиях GitHub](https://help.github.com/en/articles/about-github-actions)
+> [Подробнее о GitHub Actions](https://help.github.com/en/articles/about-github-actions)

@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 04/17/2020
+ms.date: 08/06/2020
 ms.author: swmachan
-ms.openlocfilehash: 512632faae453ebdf7cb7b279fe2d29b25d23d6b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a853a28cf7633b5e81bfec2865cc8dc91f2d2f40
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87090864"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87903992"
 ---
 # <a name="translator-30-translate"></a>Переводчик 3,0: преобразование
 
 Этот интерфейс позволяет переводить текст.
 
-## <a name="request-url"></a>URL-адрес запроса
+## <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -43,7 +43,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
     <td><em>Обязательный параметр</em>.<br/>Версия API, запрошенная клиентом. Необходимое значение: <code>3.0</code>.</td>
   </tr>
   <tr>
-    <td>в</td>
+    <td>значение</td>
     <td><em>Обязательный параметр</em>.<br/>Определяет язык выходного текста. Целевой язык должен быть одним из <a href="./v3-0-languages.md">поддерживаемых языков</a>, включенных в область <code>translation</code>. Например, используйте параметр <code>to=de</code>, чтобы перевести на немецкий.<br/>Вы можете одновременно переводить на различные языки, использовав этот параметр в строке запроса несколько раз. Например, используйте параметр <code>to=de&to=it</code>, чтобы перевести на немецкий и итальянский.</td>
   </tr>
 </table>
@@ -104,7 +104,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>Описание</th>
+  <th>Описание:</th>
   <tr>
     <td>Заголовки проверки подлинности</td>
     <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
@@ -123,7 +123,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
 </table> 
 
-## <a name="request-body"></a>Текст запроса
+## <a name="request-body"></a>Тело запроса
 
 Текст запроса является массивом в формате JSON. Каждый элемент этого массива представляет собой объект JSON со строковым свойством `Text`, который являет собой строку для перевода.
 
@@ -136,7 +136,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 Действительны следующие ограничения.
 
 * Массив может содержать не более 100 элементов.
-* Общий объем текста запроса не должен превышать 5000 символов, в том числе пробелы.
+* Весь текст, включенный в запрос, не может содержать более 10 000 символов, включая пробелы.
 
 ## <a name="response-body"></a>Текст ответа
 
@@ -182,7 +182,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>Описание</th>
+  <th>Описание:</th>
     <tr>
     <td>X-RequestId</td>
     <td>Сформированное службой значение для идентификации запроса. Оно используется для устранения неполадок.</td>
@@ -391,7 +391,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
   </tr>
 </table> 
 
-Например.
+Пример:
 
 ```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&profanityAction=Marked" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'This is a freaking good idea.'}]"

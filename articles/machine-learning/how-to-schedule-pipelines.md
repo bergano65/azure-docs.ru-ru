@@ -9,13 +9,13 @@ ms.author: laobri
 author: lobrien
 ms.date: 11/12/2019
 ms.topic: conceptual
-ms.custom: how-to, tracking-python
-ms.openlocfilehash: c076ceafc35a11f172ff35b7ab5ce89d1bf99f17
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.custom: how-to, devx-track-python
+ms.openlocfilehash: 351d52128660c25c557c536f2835e0e71c0115f7
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319564"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87842966"
 ---
 # <a name="schedule-machine-learning-pipelines-with-azure-machine-learning-sdk-for-python"></a>Планирование конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure для Python
 
@@ -142,11 +142,11 @@ stop_by_schedule_id(ws, schedule_id)
 
 При `Schedule.list(ws)` повторном запуске необходимо получить пустой список.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы использовали пакет SDK для Машинное обучение Azure для Python, чтобы запланировать конвейер двумя разными способами. Одно расписание повторяется на основе затраченного времени. Другое расписание выполняется при изменении файла на указанном `Datastore` или в каталоге в этом хранилище. Вы узнали, как использовать портал для проверки конвейера и отдельных запусков. Наконец, вы узнали, как отключить расписание, чтобы остановить выполнение конвейера.
 
-Дополнительные сведения см. в разделе:
+Дополнительные сведения можно найти в разделе
 
 > [!div class="nextstepaction"]
 > [Использование конвейеров Машинного обучения Azure для пакетной оценки](tutorial-pipeline-batch-scoring-classification.md)

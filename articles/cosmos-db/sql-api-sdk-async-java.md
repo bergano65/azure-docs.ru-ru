@@ -6,15 +6,15 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 05/11/2020
+ms.date: 08/05/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 5b656286a2958957e8518deca88ec22d7279d767
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 3f7b6c46a69acf8eea546469cf7919e86703f17c
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87323865"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87852690"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK Async Java в Azure Cosmos DB для API-интерфейса SQL: Заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -26,6 +26,8 @@ ms.locfileid: "87323865"
 > * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
 > * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
+> * [Spring Data](sql-api-sdk-java-spring.md)
+> * [Соединитель Spark](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
 > * ПОСЛЕДУЮЩИЕ (/рест/АПИ
 > * [Поставщик ресурсов REST](/azure/azure-resource-manager/management/azure-services-resource-providers)

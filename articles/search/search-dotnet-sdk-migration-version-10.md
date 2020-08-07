@@ -1,5 +1,5 @@
 ---
-title: Обновление до Azure Когнитивный поиск .NET SDK версии 10
+title: Обновление до пакета SDK для .NET версии 10
 titleSuffix: Azure Cognitive Search
 description: Перенос кода в пакет SDK Azure Когнитивный поиск .NET версии 10 из более старых версий. Сведения о новых возможностях и необходимых изменениях кода.
 manager: nitinme
@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 6ce4e308420fc3ea1928b44013a78d0ae57d2c35
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 61fee97323d110875cb05fb48157527a39c80f56
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85562379"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905787"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-10"></a>Обновление до Azure Когнитивный поиск .NET SDK версии 10
 

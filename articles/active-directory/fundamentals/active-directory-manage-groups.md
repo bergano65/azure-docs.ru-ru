@@ -2,7 +2,7 @@
 title: Управление доступом к ресурсам & приложений с помощью групп в Azure AD
 description: Узнайте, как управлять доступом к корпоративным облачным приложениям, локальным приложениям и ресурсам с помощью групп Azure Active Directory.
 services: active-directory
-author: msaburnley
+author: ajburnle
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: piotrci
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89c4fa536994ecc8cecb50c907d43df2110be7df
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 25dace3ad7d467d6add236782c5e39f85d6462a6
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80982605"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87797313"
 ---
 # <a name="manage-app-and-resource-access-using-azure-active-directory-groups"></a>Управление доступом к приложениям и ресурсам с помощью групп Azure Active Directory
 Azure Active Directory (Azure AD) позволяет использовать группы для управления доступом к облачным приложениям, локальным приложениям и ресурсам. Ресурсы могут входить в состав Организации Azure AD, например разрешения на управление объектами с помощью ролей в Azure AD или внешних для Организации, например для приложений SaaS, служб Azure, сайтов SharePoint и локальных ресурсов.
@@ -31,7 +31,7 @@ Azure Active Directory (Azure AD) позволяет использовать г
 
 ## <a name="how-access-management-in-azure-ad-works"></a>Как работает управление доступом в Azure AD
 
-Azure AD позволяет предоставлять доступ к корпоративным ресурсам, предоставляя права доступа одному пользователю или группе Azure AD. Используя группы, владелец ресурса (или владелец каталога Azure AD) может назначить набор разрешений на доступ всем членам группы, а не предоставлять права по-отдельности. Владелец ресурса или каталога может также предоставить права на управление списком членов кому-либо другому, например руководителю отдела или администратору службы технической поддержки, позволяя этому лицу добавлять и удалять участников по мере необходимости. См. дополнительные сведения о том, как [управлять владельцами групп](active-directory-accessmanagement-managing-group-owners.md).
+Azure AD позволяет предоставлять доступ к корпоративным ресурсам, предоставляя права доступа одному пользователю или группе Azure AD. Используя группы, владелец ресурса (или владелец каталога Azure AD) может назначить набор разрешений на доступ всем членам группы, а не предоставлять права по отдельности. Владелец ресурса или каталога может также предоставить права на управление списком членов кому-либо другому, например руководителю отдела или администратору службы технической поддержки, позволяя этому лицу добавлять и удалять участников по мере необходимости. См. дополнительные сведения о том, как [управлять владельцами групп](active-directory-accessmanagement-managing-group-owners.md).
 
 ![Схема управления доступом Azure Active Directory](./media/active-directory-manage-groups/active-directory-access-management-works.png)
 

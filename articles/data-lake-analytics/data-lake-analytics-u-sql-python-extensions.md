@@ -6,17 +6,17 @@ ms.service: data-lake-analytics
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 06/20/2017
-ms.custom: tracking-python
-ms.openlocfilehash: 89c974f6a2a6374370ff33940515b2a9f7904ce7
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.custom: devx-track-python
+ms.openlocfilehash: b15ab268433e4220d499f3e1fe7cb90ffac2a1be
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87129769"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87876023"
 ---
 # <a name="extend-u-sql-scripts-with-python-code-in-azure-data-lake-analytics"></a>Расширение возможностей сценариев U-SQL c кодом Python в Azure Data Lake Analytics
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Прежде чем начать, убедитесь, что в вашей учетной записи Azure Data Lake Analytics установлены расширения Python:
 
@@ -97,7 +97,7 @@ OUTPUT @m
 
 Каждой вершине назначен ограниченный объем памяти. В настоящее время он составляет 6 ГБ на единицу аналитики. Так как входящие и исходящие кадры данных должны существовать в памяти кода Python, общий размер входных и выходных данных должен находиться в пределах 6 ГБ.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Разработка сценариев U-SQL с помощью средств озера данных для Visual Studio.](data-lake-analytics-data-lake-tools-get-started.md)
