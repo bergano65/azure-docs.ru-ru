@@ -1,18 +1,18 @@
 ---
 title: Средства управления безопасностью для управления API Azure
-description: Контрольный список средств управления безопасностью для оценки управления API
+description: Ознакомьтесь с контрольным списком средств управления безопасностью для оценки управления API. Сюда входят элементы управления сетью, удостоверениями и защитой данных.
 services: api-management
 author: vladvino
 ms.service: api-management
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.author: vlvinogr
-ms.openlocfilehash: 670050efe01fb658fab52a43914f193e9798b828
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a147179f7b55e43379b3c3fa3a7a0767cc97b198
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75751138"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87902581"
 ---
 # <a name="security-controls-for-api-management"></a>Элементы управления безопасностью для управления API
 
@@ -42,7 +42,7 @@ ms.locfileid: "75751138"
 
 | Управление безопасностью | Да/нет | Примечания| Документация |
 |---|---|--|--|
-| Аутентификация| Да | |  |
+| Проверка подлинности| Да | |  |
 | Авторизация| Да | |  |
 
 ## <a name="data-protection"></a>Защита данных

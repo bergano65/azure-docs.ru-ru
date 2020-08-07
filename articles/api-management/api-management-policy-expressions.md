@@ -1,6 +1,6 @@
 ---
 title: Выражения политики в службе управления API Azure | Документация Майкрософт
-description: Сведения о выражениях политики в службе управления API Azure.
+description: Сведения о выражениях политики в службе управления API Azure. См. примеры и Просмотр дополнительных доступных ресурсов.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: apimpm
-ms.openlocfilehash: 1713f2ca8fda0c768727ea12e682b373d644bcba
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 7117ffcbaf4eba8d83a6e968f4fed7422673610b
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86249824"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87844246"
 ---
 # <a name="api-management-policy-expressions"></a>Выражения политики в службе управления API
 В этой статье рассматривается синтаксис выражений политики в C# 7. Каждому выражению предоставлен доступ к неявно заданной переменной [context](api-management-policy-expressions.md#ContextVariables) и допустимому [подмножеству](api-management-policy-expressions.md#CLRTypes) типов платформы .NET Framework.
 
-Дополнительные сведения
+Дополнительные сведения:
 
 - Способы передачи сведений о контексте во внутреннюю службу. Используйте политики [настройки параметра строки запроса](api-management-transformation-policies.md#SetQueryStringParameter) и [настройки HTTP-заголовка](api-management-transformation-policies.md#SetHTTPheader), чтобы передать эти сведения.
 - Использование политики [проверки JWT](api-management-access-restriction-policies.md#ValidateJWT) для предварительной авторизации доступа к операциям на основе утверждений маркеров.
@@ -65,7 +65,7 @@ ms.locfileid: "86249824"
 }
 ```
 
-## <a name="usage"></a><a name="PolicyExpressionsUsage"></a>Использование
+## <a name="usage"></a><a name="PolicyExpressionsUsage"></a>Загрузка
 Выражения можно использовать в качестве значений атрибутов или текстовых значений в любой [политике](api-management-policies.md) службы управления API, если в справочнике по политике не указано иное.
 
 > [!IMPORTANT]
@@ -74,7 +74,7 @@ ms.locfileid: "86249824"
 ## <a name="net-framework-types-allowed-in-policy-expressions"></a><a name="CLRTypes"></a> Типы .NET Framework, допустимые в выражениях политики
 В следующей таблице перечислены типы .NET Framework и их члены, допустимые в выражениях политики.
 
-|Тип|Поддерживаемые члены|
+|Type|Поддерживаемые члены|
 |--------------|-----------------------|
 |Newtonsoft.Js. Форматирован|Все|
 |Newtonsoft.Json.Jsное преобразование|Для SerializeObject, методов DeserializeObject|
@@ -246,7 +246,7 @@ ms.locfileid: "86249824"
 |bool Верифиноревокатион (входные данные: Этот системный. Security. Cryptography. X509Certificates. X509Certificate2)|Выполняет проверку цепочки X. 509 без проверки состояния отзыва сертификата.<br /><br />input-Certificate, объект<br /><br />Возвращает значение `true` , если проверка прошла успешно; `false` значение, если проверка завершается неудачно.|
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 

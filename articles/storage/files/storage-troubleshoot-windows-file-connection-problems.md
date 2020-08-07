@@ -1,18 +1,18 @@
 ---
 title: Устранение неполадок службы файлов Azure в Windows | Документация Майкрософт
-description: Сведения об устранении неполадок со службой файлов Azure в Windows.
+description: Устранение неполадок службы файлов Azure в Windows. Ознакомьтесь с общими проблемами, относящимися к службе файлов Azure при подключении из клиентов Windows, и ознакомьтесь с возможными решениями.
 author: jeffpatt24
 ms.service: storage
 ms.topic: troubleshooting
 ms.date: 05/31/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: e855ed169a0c4eca7dda696c03deedb9e519e9bf
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: ecd7b0bc34d532e7d748bc9468d3a155b9aa2ad2
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86259985"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87901748"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Устранение неполадок службы файлов Azure в Windows
 

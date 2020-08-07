@@ -2,7 +2,7 @@
 title: Добавление сведений о конфиденциальности организации в Azure Active Directory | Документация Майкрософт
 description: Инструкции по добавлению сведений о конфиденциальности организации в область свойств Azure Active Directory.
 services: active-directory
-author: msaburnley
+author: ajburnle
 manager: daveba
 ms.service: active-directory
 ms.subservice: fundamentals
@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: bpham
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03a8d1f3e541d61d515b28bf56964c0add3b390e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dfc60eacd70576d9cfa79dbc03368c8e8c4a8636
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85830644"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87797399"
 ---
 # <a name="add-your-organizations-privacy-info-using-azure-active-directory"></a>Добавление сведений о конфиденциальности организации в Azure Active Directory
 В этой статье объясняется, как администратор клиента может добавлять сведения о конфиденциальности в клиент Azure Active Directory (Azure AD) Организации с помощью портал Azure.

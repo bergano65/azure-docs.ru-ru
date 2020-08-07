@@ -6,19 +6,18 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.subservice: alerts
-ms.openlocfilehash: 09db7684c84bbde038c67f9ccfb3f27f6b61bee6
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 24897826c6a70d0810b239b9b8f639787c3dac2a
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86539556"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87843391"
 ---
 # <a name="prepare-your-logic-apps-and-runbooks-for-migration-of-classic-alert-rules"></a>Prepare your logic apps and runbooks for migration of classic alert rules (Подготовка приложений логики и модулей runbook для миграции классических правил генерации оповещений)
 
-Как [было объявлено ранее](monitoring-classic-retirement.md), классические оповещения в Azure Monitor выводятся в сентябре 2019 (первоначально Июль 2019 г.). Средство миграции доступно в портал Azure клиентам, которые используют классические правила генерации оповещений и хотят активировать миграцию.
-
 > [!NOTE]
-> В связи с задержкой развертывания средства миграции Дата выбытия классических предупреждений была продлена до 31 августа 2019 с первоначального объявления даты 30 июня 2019.
+> Как [было объявлено ранее](monitoring-classic-retirement.md), классические оповещения в Azure Monitor удаляются, но по-прежнему используются только для ресурсов, которые еще не поддерживают новые оповещения. Дата прекращения использования этих оповещений была дополнительно расширена. Новая дата будет объявлена вскоре.
+>
 
 Если вы решили самостоятельно перенести классические правила генерации оповещений в новые правила генерации оповещений, имейте в виду, что между этими двумя системами есть некоторые различия. В этой статье объясняются эти различия и способы подготовки к изменению.
 
@@ -32,7 +31,7 @@ ms.locfileid: "86539556"
 | ---------------------- | -------------- | ----------------- |
 |REST API     | [microsoft.insights/alertrules](/rest/api/monitor/alertrules)         | [microsoft.insights/metricalerts](/rest/api/monitor/metricalerts)       |
 |Azure CLI     | [az monitor alert](/cli/azure/monitor/alert?view=azure-cli-latest)        | [предупреждение о метриках монитора AZ](/cli/azure/monitor/metrics/alert?view=azure-cli-latest)        |
-|PowerShell      | [Ссылка](/powershell/module/az.monitor/add-azmetricalertrule)       |  [Ссылка](/powershell/module/az.monitor/add-azmetricalertrulev2)    |
+|PowerShell      | [Ссылки](/powershell/module/az.monitor/add-azmetricalertrule)       |  [Ссылки](/powershell/module/az.monitor/add-azmetricalertrulev2)    |
 | Шаблон Azure Resource Manager | [Для классических оповещений](./alerts-enable-template.md)|[Для новых оповещений метрик](./alerts-metric-create-templates.md)|
 
 ## <a name="notification-payload-changes"></a>Изменения полезных данных уведомлений
@@ -162,7 +161,7 @@ else {
 
 Если вы используете интеграцию с партнером, не указанную здесь, уточните у поставщика интеграции, что интеграция работает с новыми оповещениями метрик.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Как использовать средство миграции](alerts-using-migration-tool.md)
 - [Принцип работы средства миграции](alerts-understand-migration.md)

@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a468b5f43e8b024dd1da6e382049f8cce6de295
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 77ba802d5e337851b3b5141695e5b2f0c6456719
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87797371"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87902360"
 ---
 # <a name="assign-administrator-and-non-administrator-roles-to-users-with-azure-active-directory"></a>Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory
 
@@ -28,7 +28,7 @@ ms.locfileid: "87797371"
 
 ## <a name="assign-roles"></a>Назначение ролей
 
-Распространенным способом назначения ролей Azure AD для пользователя является страница « **назначенные роли** » для пользователя. Вы также можете получить право на повышение прав в роли с помощью управление привилегированными пользователями (PIM). Дополнительные сведения об использовании PIM см. в разделе [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management).
+Распространенным способом назначения ролей Azure AD для пользователя является страница « **назначенные роли** » для пользователя. Кроме того, можно настроить право на повышение прав пользователя в роли с помощью управление привилегированными пользователями (PIM). Дополнительные сведения об использовании PIM см. в разделе [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management).
 
 > [!Note]
 > Если у вас есть план лицензирования Azure AD Premium P2 и уже используется PIM, все задачи управления ролями выполняются в [Управление привилегированными пользователями](../users-groups-roles/directory-manage-roles-portal.md).
@@ -73,7 +73,7 @@ ms.locfileid: "87797371"
 
     Роль администратора приложения удаляется из (Alain Чарон и больше не отображается на странице **(Alain Чарон-административные роли** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Добавление или удаление пользователей](add-users-azure-active-directory.md)
 

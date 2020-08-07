@@ -10,13 +10,13 @@ ms.subservice: core
 ms.reviewer: larryfr
 ms.date: 12/27/2019
 ms.topic: conceptual
-ms.custom: how-to, tracking-python
-ms.openlocfilehash: f0ac64fa184382f3939530565caa93f87da0fbf6
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.custom: how-to, devx-track-python
+ms.openlocfilehash: 09d82c4834e50e0dff74edb5ccd14287736b937e
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321485"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87844479"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -136,7 +136,7 @@ DSVM — это настраиваемый образ виртуальной м
 
 ## <a name="local-computer"></a><a id="local"></a>Локальный компьютер
 
-Если вы используете локальный компьютер (который может также быть удаленной виртуальной машиной), создайте среду Anaconda и установите пакет SDK. Приведем пример:
+Если вы используете локальный компьютер (который может также быть удаленной виртуальной машиной), создайте среду Anaconda и установите пакет SDK. Ниже приведен пример.
 
 1. Скачайте и установите [Anaconda](https://www.anaconda.com/distribution/#download-section) (версия Python 3,7), если у вас ее еще нет.
 
@@ -386,7 +386,7 @@ Azure Databricks — это среда на основе Apache Spark в обл�
 
     Этот код записывает файл конфигурации в файл *. azureml/config.jsв* файле.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Обучение модели](tutorial-train-models-with-aml.md) на машинное обучение Azure с помощью набора данных MNIST
 - Просмотрите статью [What is the Azure Machine Learning SDK for Python?](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) (Что такое пакет SDK для Машинного обучения Azure для Python?)

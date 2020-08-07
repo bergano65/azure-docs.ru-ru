@@ -1,20 +1,20 @@
 ---
 title: Управление индексированием в API Azure Cosmos DB для MongoDB
-description: В этой статье представлен обзор возможностей индексирования Azure Cosmos DB с помощью API-интерфейса MongoDB.
+description: В этой статье представлен обзор возможностей индексирования Azure Cosmos DB с помощью API Azure Cosmos DB для MongoDB.
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: how-to
-ms.date: 08/04/2020
+ms.date: 08/06/2020
 author: timsander1
 ms.author: tisande
 ms.custom: devx-track-javascript
-ms.openlocfilehash: b8db9e2d8b58047ebe29865bb95d7f218732c88e
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: e47b8727eccd1b185f381ae3f8474fe13a406501
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87761167"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87843816"
 ---
 # <a name="manage-indexing-in-azure-cosmos-dbs-api-for-mongodb"></a>Управление индексированием в API Azure Cosmos DB для MongoDB
 
@@ -219,7 +219,7 @@ globaldb:PRIMARY> db.coll.createIndex( { "student_id" : 1, "university" : 1 }, {
 
 Чтобы включить истечение срока действия документа в определенной коллекции, необходимо создать индекс срока [жизни (TTL)](../cosmos-db/time-to-live.md). Индекс TTL — это индекс `_ts` поля со `expireAfterSeconds` значением.
 
-Пример.
+Пример
 
 ```JavaScript
 globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})
@@ -315,7 +315,7 @@ globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})
    }
    ```
 
-### <a name="background-index-updates"></a>Фоновые обновления индекса
+## <a name="background-index-updates"></a>Фоновые обновления индекса
 
 Независимо от значения, указанного для свойства **фонового** индекса, обновления индекса всегда выполняются в фоновом режиме. Поскольку обновления индекса потребляют единицы запросов (с более низким приоритетом) по сравнению с другими операциями базы данных, изменения индекса не будут приводить к простою для записи, обновления или удаления.
 
@@ -355,7 +355,7 @@ globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})
 
 Если вы хотите создать индекс с подстановочными знаками, выполните обновление до версии 3,6, выполнив [запрос на поддержку](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Индексирование в Azure Cosmos DB](../cosmos-db/index-policy.md)
 * [Срок жизни для данных Azure Cosmos DB](../cosmos-db/time-to-live.md)

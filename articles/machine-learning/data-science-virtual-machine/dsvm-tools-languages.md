@@ -6,17 +6,17 @@ keywords: средства анализа и обработки данных, в
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.custom: tracking-python
+ms.custom: devx-track-python
 author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: 7d3ab058d76186f73fa1a985d7e8af38dbd7a6f8
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 8a73336ba0a324c65ee0de764d81a8e69ab6079c
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86536187"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87843272"
 ---
 # <a name="languages-supported-on-the-data-science-virtual-machine"></a>Языки, поддерживаемые на виртуальных машинах для обработки и анализа данных 
 
@@ -62,7 +62,7 @@ ms.locfileid: "86536187"
 
   Откройте Jupyter **и выберите Создать, чтобы** создать новую записную книжку. Вы можете задать тип ядра _Python [Conda root]_ для Python 3,7 и _Python [Conda env: python2]_ для Python 2,7.
 
-* Установить пакеты Python:
+* Установите пакеты Python:
 
   Окружения Python по умолчанию в DSVM являются глобальными средами, которые доступны для чтения всеми пользователями. Но только администраторы могут записывать и устанавливать глобальные пакеты. Чтобы установить пакеты в глобальную среду, активируйте в корневой или python2 среде с помощью `activate` команды в качестве администратора. Затем можно использовать диспетчер пакетов, например `conda` или `pip` для установки или обновления пакетов.
 
@@ -100,7 +100,7 @@ ms.locfileid: "86536187"
 
   Откройте Jupyter **и выберите Создать, чтобы** создать новую записную книжку. Вы можете задать тип ядра **Python [Conda root]** для Python 2,7 и **Python [Conda env: PY35]** для среды Python 3,5. 
 
-* Установить пакеты Python:
+* Установите пакеты Python:
 
   Среды Python по умолчанию на DSVM — это глобальные среды, которые могут читать все пользователи. Но только администраторы могут записывать и устанавливать глобальные пакеты. Чтобы установить пакеты в глобальную среду, активируйте в корневой или PY35 среде с помощью `source activate` команды в качестве администратора или пользователя с разрешениями sudo. Затем можно использовать диспетчер пакетов, например `conda` или `pip` для установки или обновления пакетов.
 

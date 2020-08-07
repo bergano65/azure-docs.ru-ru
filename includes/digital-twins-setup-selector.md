@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить файл
 description: включаемый файл для выбора версий статьи об установке Azure Digital двойников
 services: digital-twins
 author: baanders
