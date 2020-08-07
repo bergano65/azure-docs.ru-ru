@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 287ee62acf3a078c4b47803060f61c9dd4134ab7
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: ba03acabb3325045a71d55f583343a26b4d121ca
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408354"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87832364"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-cli"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (CLI)
 
@@ -46,7 +46,7 @@ ms.locfileid: "87408354"
 az dt create --dt-name <name-for-your-Azure-Digital-Twins-instance> -g <your-resource-group> -l <region>
 ```
 
-### <a name="verify-success"></a>Проверка успешного выполнения
+### <a name="verify-success-and-collect-important-values"></a>Проверка успешности и получение важных значений
 
 Если экземпляр успешно создан, результат в Cloud Shell выглядит примерно так, выводя сведения о созданном ресурсе:
 
@@ -71,12 +71,16 @@ az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --ass
 
 Результат этой команды выводит сведения о созданном назначении роли.
 
-> [!TIP]
-> Если вместо этого возникает ошибка *400: BadRequest* , выполните следующую команду, чтобы получить *ObjectID* для пользователя:
-> ```azurecli
-> az ad user show --id <Azure-AD-email-of-user-to-assign> --query objectId
-> ```
-> Затем повторите команду назначения роли, используя *идентификатор объекта* пользователя вместо его электронной почты.
+> [!NOTE]
+> Если эта команда возвращает ошибку, сообщающую, что CLI **не может найти пользователя или субъект-службу в базе данных Graph**:
+>
+> Используйте *идентификатор объекта* пользователя вместо его электронной почты. Это может произойти для пользователей в личных [учетных записях Майкрософт (MSAS)](https://account.microsoft.com/account). 
+>
+> Используйте [страницу портал Azure Azure Active Directory пользователей](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/AllUsers) , чтобы выбрать учетную запись пользователя и открыть сведения о ней. Скопируйте *ObjectID*пользователя:
+>
+> :::image type="content" source="media/includes/user-id.png" alt-text="Представление страницы пользователя в портал Azure выделение идентификатора GUID в поле "идентификатор объекта"" lightbox="media/includes/user-id.png":::
+>
+> Затем повторите команду списка назначений ролей, используя *идентификатор объекта* пользователя вместо сообщения электронной почты.
 
 ### <a name="verify-success"></a>Проверка успешного выполнения
 
@@ -117,7 +121,7 @@ az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --ass
 Затем выполните следующую команду, чтобы создать регистрацию приложения (заменяя заполнители по мере необходимости):
 
 ```azurecli
-az ad app create --display-name <name-for-your-app> --native-app --required-resource-accesses manifest.json --reply-url http://localhost
+az ad app create --display-name <name-for-your-app-registration> --native-app --required-resource-accesses manifest.json --reply-url http://localhost
 ```
 
 Ниже приведен фрагмент выходных данных этой команды, в котором отображаются сведения о созданной регистрации:
@@ -144,7 +148,7 @@ az ad app create --display-name <name-for-your-app> --native-app --required-reso
 
 [!INCLUDE [digital-twins-setup-additional-requirements.md](../../includes/digital-twins-setup-additional-requirements.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. раздел как подключить клиентское приложение к экземпляру, написав код проверки подлинности клиентского приложения:
 * [*Пошаговое руководство. Написание кода проверки подлинности приложения*](how-to-authenticate-client.md)

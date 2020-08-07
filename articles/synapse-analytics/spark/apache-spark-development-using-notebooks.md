@@ -9,13 +9,13 @@ ms.subservice: spark
 ms.date: 05/01/2020
 ms.author: ruxu
 ms.reviewer: ''
-ms.custom: tracking-python
-ms.openlocfilehash: a7dc0fcae9a6fea789d30bac10511007454ecc5f
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-python
+ms.openlocfilehash: 6e0062450889a2bbbdfcd47137ffbe36b83cae57
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87504017"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87849104"
 ---
 # <a name="create-develop-and-maintain-synapse-studio-preview-notebooks-in-azure-synapse-analytics"></a>Создание, разработка и обслуживание записных книжек синапсе Studio (Предварительная версия) в Azure синапсе Analytics
 
@@ -402,8 +402,8 @@ displayHTML(html)
 |--|--|
 |Запуск текущей ячейки и выбор ниже | SHIFT+ВВОД |
 |Запуск текущей ячейки и вставка ниже | ALT+ВВОД |
-|Выбор ячейки выше| Up |
-|Выбор ячейки ниже| Down |
+|Выбор ячейки выше| Вверх |
+|Выбор ячейки ниже| Вниз |
 |Вставка ячейки выше| Объект |
 |Вставка ячейки ниже| B |
 |Расширение выбранных ячеек выше| Shift+Up |

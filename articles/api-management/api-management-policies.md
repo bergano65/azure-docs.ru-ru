@@ -1,6 +1,6 @@
 ---
 title: Политики в службе управления API Azure | Документация Майкрософт
-description: Сведения о политиках, доступных для использования в службе управления API Azure.
+description: Сведения о политиках, доступных для использования в службе управления API Azure. Политики позволяют издателю изменять поведение API через конфигурацию.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 069fc95d226e4417bb650b6092a7d00953f69e8d
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 4cdd9b7ace107d09ec14b23e02c56d2b13f264e6
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86252861"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905675"
 ---
 # <a name="api-management-policies"></a>Политики управления API
 В этом разделе рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](api-management-howto-policies.md).  
@@ -80,7 +80,7 @@ ms.locfileid: "86252861"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 
 + [Политики в управлении API](api-management-howto-policies.md)

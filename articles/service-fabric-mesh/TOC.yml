@@ -82,11 +82,9 @@
     - name: Справочник по CLI Сетки Service Fabric
       href: /cli/azure/ext/mesh
     - name: Интерфейсы REST API ресурсов клиента Service Fabric
-      href: '/rest/api/servicefabric/sfclient-index#service-fabric-resource-model'
+      href: /rest/api/servicefabric/sfclient-index#service-fabric-resource-model
     - name: Справочник по CLI Maven для Service Fabric
       href: service-fabric-mesh-reference-maven.md
-    - name: Шаблон Resource Manager
-      href: /azure/templates/microsoft.servicefabricmesh/allversions
 - name: Ресурсы
   items:
     - name: Часто задаваемые вопросы

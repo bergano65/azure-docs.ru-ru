@@ -16,13 +16,13 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.custom: tracking-python
-ms.openlocfilehash: 5688caa16faf4a9d83b6d23b24676d43ad16697b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-python
+ms.openlocfilehash: 3b6a38087aee7f33861f980cb6d245024f8d51ee
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084302"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87852333"
 ---
 # <a name="how-to-use-notification-hubs-from-python"></a>Использование концентраторов уведомлений с Python
 
@@ -446,9 +446,9 @@ hub.send_template_notification(template_payload)
 
 ![Снимок экрана консоли с подробными сведениями о запросе H T T, типом содержимого и значениями формата уведомлений служебной шины, выделенными красным цветом.][5]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 
-В этой статье рассмотрено создание простого клиента REST Python для службы "Центры уведомлений". Здесь можно выполнять следующие действия:
+В этой статье рассмотрено создание простого клиента REST Python для службы "Центры уведомлений". В этом разделе можно выполнить следующие действия:
 
 - Скачать полный [пример программы-оболочки REST Python], содержащий весь код из этой статьи.
 - Продолжение изучения функции добавления тегов для концентраторов уведомлений в [учебнике "экстренные новости] "

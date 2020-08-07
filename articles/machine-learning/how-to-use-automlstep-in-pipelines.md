@@ -10,13 +10,13 @@ author: lobrien
 manager: cgronlun
 ms.date: 06/15/2020
 ms.topic: conceptual
-ms.custom: how-to, tracking-python
-ms.openlocfilehash: 698fdf1295ec38fc7eca9a58e681d7fe13ec32fc
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.custom: how-to, devx-track-python
+ms.openlocfilehash: 3973e94c9d3add25dba0af7a6b0c0deb18b77440
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319513"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87850446"
 ---
 # <a name="use-automated-ml-in-an-azure-machine-learning-pipeline-in-python"></a>Использование автоматизированного ML в конвейере Машинное обучение Azure в Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -339,7 +339,7 @@ train_step = AutoMLStep(name='AutoML_Classification',
 - `task`для этого примера задано значение `classification` . Другие допустимые значения — `regression` и.`forecasting`
 - `path`и `debug_log` Опишите путь к проекту и локальный файл, в который будут записываться отладочные данные 
 - `compute_target`ранее определено `compute_target` , что в этом примере является недорогым компьютером на основе ЦП. Если вы используете средства глубокого обучения Аутомл, необходимо изменить целевой объект вычислений так, чтобы он был основан на GPU
-- `featurization` задан как `auto`. Дополнительные сведения см. в разделе [Data Добавление признаков](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train#data-featurization) документа автоматической настройки ml. 
+- Параметру `featurization` задается значение `auto`. Дополнительные сведения см. в разделе [Data Добавление признаков](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train#data-featurization) документа автоматической настройки ml. 
 - `training_data`задается для `PipelineOutputTabularDataset` объектов, сделанных из выходных файлов этапа подготовки данных 
 - `label_column_name`Указывает, какой столбец нам нужен для прогнозирования 
 
@@ -506,7 +506,7 @@ model.get_port_data_reference().download('.')
 
 Наконец, фактические метрики и модель загружаются на локальный компьютер, как было сказано в разделе "анализ результатов конвейера" выше.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 
 - Запустите эту записную книжку Jupyter, где [приведен полный пример автоматизированного ML в конвейере](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/nyc-taxi-data-regression-model-building/nyc-taxi-data-regression-model-building.ipynb) , который использует регрессию для прогнозирования такси году
 - [Создание автоматизированных экспериментов ML без написания кода](how-to-use-automated-ml-for-ml-models.md)

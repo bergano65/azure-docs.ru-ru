@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 06/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: ad6761466cc958235557609e929e641a0311ee43
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fdf3dc56575a45ad0c9e716054184ba2691133ba
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86999201"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87831708"
 ---
 # <a name="analyze-complex-data-types-in-azure-synapse-analytics"></a>Анализ сложных типов данных в Azure синапсе Analytics
 
@@ -165,7 +165,7 @@ display(df_flat_explode_flat.limit(10))
 | BULK              | FORMAT |
 | -------------------- | --- |
 | 'https://ACCOUNTNAME.dfs.core.windows.net/FILESYSTEM/PATH/FINENAME.parquet' |"Parquet" (ADLSg2)|
-| Н'ендпоинт = https://ACCOUNTNAME.documents-staging.windows-ppe.net:443/ ; Account = ACCOUNTNAME; база данных = DATABASENAME; коллекция = COLLECTIONNAME; регион = регионтокуери, секрет = ' йоурсекрет ' |"CosmosDB" (ссылка синапсе)|
+| Н'ендпоинт = https://ACCOUNTNAME.documents-staging.windows-ppe.net:443/ ; Account = ACCOUNTNAME; база данных = DATABASENAME; коллекция = COLLECTIONNAME; регион = регионтокуери ', секрет = ' йоурсекрет ' |"CosmosDB" (ссылка синапсе)|
 
 
 > [!NOTE]
@@ -179,8 +179,8 @@ display(df_flat_explode_flat.limit(10))
 select *
 FROM
 openrowset(
-BULK 'YOUR BULK ABOVE',
-            FORMAT='YOUR TYPE ABOVE'
+    BULK 'YOUR BULK ABOVE',
+    FORMAT='YOUR TYPE ABOVE'
 )
 with (id varchar(50),
         contextdataeventTime varchar(50) '$.context.data.eventTime',
@@ -215,7 +215,7 @@ with ( ProfileType varchar(50) '$.customerInfo.ProfileType',
 
 Если массив содержит 5 элементов с 4 вложенными структурами, то SQL Server не будет возвращать 5 строк и 4 столбца. SQL Server не может выполнять запросы на месте, сопоставлять массив в двух строках и отображать все вложенные структуры в столбцах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Узнайте, как запросить ссылку синапсе для Azure Cosmos DB с помощью Spark](./synapse-link/how-to-query-analytical-store-spark.md)
 * [Запрос Parquet вложенных типов](./sql/query-parquet-nested-types.md) 

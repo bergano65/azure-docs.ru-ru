@@ -2,18 +2,18 @@
 title: Получение маркера доступа с помощью Azure CLI Azure API для FHIR
 description: В этой статье объясняется, как получить маркер доступа для Azure API для FHIR с помощью Azure CLI.
 services: healthcare-apis
-author: hansenms
+author: matjazl
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.author: mihansen
-ms.openlocfilehash: bdecf0dafa80f72eb528b4771c00befff8355e83
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.author: matjazl
+ms.openlocfilehash: 7528f9d4e3b3043af1e4790c063eb6ddc6d9a828
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87072855"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87849052"
 ---
 # <a name="get-access-token-for-azure-api-for-fhir-using-azure-cli"></a>Получение маркера доступа для API Azure для FHIR с помощью Azure CLI
 
@@ -43,7 +43,7 @@ token=$(az account get-access-token --resource=https://<FHIR ACCOUNT NAME>.azure
 curl -X GET --header "Authorization: Bearer $token" https://<FHIR ACCOUNT NAME>.azurehealthcareapis.com/Patient
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как получить маркер доступа для API Azure для FHIR с помощью Azure CLI. Чтобы узнать, как получить доступ к API FHIR с помощью Postman, перейдите к руководству по Postman.
 

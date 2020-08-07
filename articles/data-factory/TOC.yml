@@ -153,7 +153,7 @@
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=data-factory'
-    - name: Azure PowerShell;
+    - name: Azure PowerShell
       href: samples-powershell.md
 - name: Основные понятия
   items:
@@ -209,14 +209,14 @@
       items:
         - name: Визуальная разработка фабрик данных
           href: author-visually.md
+        - name: Последовательная разработка и отладка
+          href: iterative-development-debugging.md
         - name: Центр управления
           href: author-management-hub.md
         - name: Система управления версиями
           href: source-control.md
         - name: Непрерывная интеграция и поставка
           href: continuous-integration-deployment.md
-        - name: Последовательная разработка и отладка
-          href: iterative-development-debugging.md
     - name: Соединители
       items:
         - name: Обзор соединителей
@@ -562,6 +562,8 @@
       items:
         - name: Параметризация связанных служб
           href: parameterize-linked-services.md
+        - name: Глобальные параметры
+          href: author-global-parameters.md
         - name: Язык выражений
           href: control-flow-expression-language-functions.md
         - name: Системные переменные

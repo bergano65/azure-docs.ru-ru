@@ -5,17 +5,17 @@ description: Устранение неполадок с кодами ошибо�
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: reference
 ms.custom: troubleshooting
 author: likebupt
 ms.author: keli19
 ms.date: 04/16/2020
-ms.openlocfilehash: 8d044d8921db53d9d38ae93a68f22e0e5f414bf8
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 023a28c6f1d89d0975ff8ecac2466c51c05fa9da
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372490"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87876926"
 ---
 # <a name="exceptions-and-error-codes-for-the-designer-preview"></a>Исключения и коды ошибок для конструктора (предварительная версия)
 

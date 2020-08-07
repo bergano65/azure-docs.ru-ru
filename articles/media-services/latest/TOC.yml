@@ -174,7 +174,7 @@
     - name: Проигрыватель мультимедиа Azure
       items:
         - name: Обзор Проигрывателя мультимедиа Azure
-          href: 'https://docs.microsoft.com/en-us/azure/media-services/azure-media-player/azure-media-player-overview'
+          href: ../azure-media-player/azure-media-player-overview.md
     - name: "Разработка с использованием API-интерфейсов версии\_3"
       items:
         - name: Обзор
@@ -362,7 +362,7 @@
     - name: Использование проигрывателей мультимедиа
       items:
         - name: Полная настройка Проигрывателя мультимедиа Azure
-          href: 'https://docs.microsoft.com/azure/media-services/azure-media-player/azure-media-player-full-setup'
+          href: ../azure-media-player/azure-media-player-full-setup.md
         - name: Использование проигрывателя Video.js
           href: how-to-video-js-player.md
         - name: Использование видеопроигрывателя Shaka
@@ -373,7 +373,7 @@
       href: 'https://aka.ms/ams-v3-rest-sdk'
       displayName: schema
     - name: REST
-      href: 'https://docs.microsoft.com/rest/api/media/'
+      href: /rest/api/media/
     - name: Azure CLI
       href: 'https://aka.ms/ams-v3-cli-ref'
     - name: Пакеты SDK

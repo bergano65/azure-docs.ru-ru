@@ -9,12 +9,12 @@ author: djpmsft
 ms.author: daperlov
 manager: anandsub
 ms.date: 06/02/2020
-ms.openlocfilehash: 308d19fde78edacebb168b8d4e459169338acc41
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bba49014fd6b082ea015da259402a8e87bf4afff
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84345945"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87851999"
 ---
 # <a name="management-hub-in-azure-data-factory"></a>Центр управления в фабрике данных Azure
 
@@ -57,6 +57,12 @@ ms.locfileid: "84345945"
 Триггеры определяют, когда следует запускать запуск конвейера. В настоящее время триггеры могут находиться в расписании часов стены, работать с периодической периодичностью или зависеть от события. Дополнительные сведения см. в статье о [выполнении триггеров](concepts-pipeline-execution-triggers.md#trigger-execution). В центре управления можно создавать, изменять, удалять и просматривать текущее состояние триггера.
 
 ![Управление пользовательскими параметрами](media/author-management-hub/management-hub-triggers.png)
+
+### <a name="global-parameters"></a>Глобальные параметры
+
+Глобальные параметры — это константы в фабрике данных, которые могут использоваться конвейером в любом выражении. Дополнительные сведения см. в статье [глобальные параметры](author-global-parameters.md).
+
+![Создание глобальных параметров](media/author-global-parameters/create-global-parameter-3.png)
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

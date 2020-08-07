@@ -63,6 +63,8 @@
           href: security-center-policy-definitions.md
         - name: Использование рекомендаций для повышения уровня безопасности
           href: security-center-using-recommendations.md
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Защита от угроз и оповещения системы безопасности
       items:
         - name: Общие сведения о защите от угроз в Центре безопасности

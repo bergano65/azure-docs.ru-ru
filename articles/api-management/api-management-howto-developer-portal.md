@@ -1,7 +1,7 @@
 ---
 title: Обзор портала разработчика службы управления API Azure
 titleSuffix: Azure API Management
-description: Сведения о портале разработчика в оснастке управления API.
+description: Сведения о портале разработчика в оснастке управления API. Портал разработчика — это место, где потребители могут найти ваши API.
 services: api-management
 documentationcenter: API Management
 author: mikebudzynski
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/28/2020
 ms.author: apimpm
-ms.openlocfilehash: f5f4df58a4b147ccb73c7d69f5307a8328803442
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 6a8c4c3fa2bd73fa689458d6877d09900ea86938
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87373153"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87852163"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика в службе управления API Azure
 
@@ -222,7 +222,7 @@ New-AzRoleAssignment -SignInName "user1@contoso.com" -RoleDefinitionName "APIM N
 
  <small><sup>1</sup> поддерживается в двух последних рабочих версиях.</small>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о новом портале разработчика:
 

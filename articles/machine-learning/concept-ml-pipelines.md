@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.author: laobri
 author: lobrien
 ms.date: 04/01/2020
-ms.custom: tracking-python
-ms.openlocfilehash: 7d34b54349a681061f80798a19ce65d2266f589d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-python
+ms.openlocfilehash: 441575a33e7c3d54de7b25c06f7a839805f8ac1b
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84559473"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87875291"
 ---
 # <a name="what-are-azure-machine-learning-pipelines"></a>Что такое Машинное обучение Azure конвейеров?
 
@@ -43,7 +43,7 @@ ms.locfileid: "84559473"
 | Сценарий | Первичный персонаж | Предложение Azure | Предложение OSS | Канонический канал | Преимущества | 
 | -------- | --------------- | -------------- | ------------ | -------------- | --------- | 
 | Оркестрации модели (машинное обучение) | специалист по анализу и обработке данных; | Конвейеры Машинного обучение Azure | Конвейеры Kubeflow | Модель > данных | Распространение, кэширование, сначала код, повторное использование | 
-| Оркестрации данных (подготовка данных) | Инженер данных | [Конвейеры Фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities) | Apache Airflow | Данные > данных | Строго типизированное перемещение. Действия, ориентированные на данные. |
+| Оркестрации данных (подготовка данных) | Инженер по анализу и обработке данных | [Конвейеры Фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities) | Apache Airflow | Данные > данных | Строго типизированное перемещение. Действия, ориентированные на данные. |
 | Согласование кода & приложений (CI/CD) | Разработка и Ops приложения | [Конвейеры Azure DevOps](https://azure.microsoft.com/services/devops/pipelines/) | Jenkins | Код + модель — > приложения или службы | Поддержка наиболее открытых и гибких действий, очереди утверждений, фазы с ограничением | 
 
 ## <a name="what-can-azure-ml-pipelines-do"></a>Что могут выполнять конвейеры машинного обучения Azure?

@@ -1,6 +1,6 @@
 ---
 title: Горячий, крутой и архивный уровни доступа для больших двоичных объектов в службе хранилища Azure
-description: Ознакомьтесь со сведениями о горячий, холодной и архивной уровнях доступа для хранилища BLOB-объектов Azure. Проверьте учетные записи хранения, поддерживающие распределение по уровням. Сравнить параметры хранилища блогов.
+description: Ознакомьтесь со сведениями о горячий, холодной и архивной уровнях доступа для хранилища BLOB-объектов Azure. Проверьте учетные записи хранения, поддерживающие распределение по уровням. Сравните параметры хранилища блочных BLOB-объектов.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.date: 03/23/2019
@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: clausjor
-ms.openlocfilehash: 17df78f846d8422c0200ce5fc75b4722d21d35df
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: a46597087a3eee03f7c5b8d1c9746f968ea1980d
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/06/2020
-ms.locfileid: "87828278"
+ms.locfileid: "87849732"
 ---
 # <a name="azure-blob-storage-hot-cool-and-archive-access-tiers"></a>Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа
 
