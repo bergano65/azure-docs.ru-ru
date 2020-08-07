@@ -3,19 +3,19 @@ title: Ресурсы, роли и контроль доступа в Azure Appl
 description: Владельцы, участники и читатели Insights вашей организации.
 ms.topic: conceptual
 ms.date: 02/14/2019
-ms.openlocfilehash: 38c7d7bcbcf193149fd8ab5e632674b6f8530a44
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 3d69ad7eeb7c8dd32c2e3cb286f9596bed7fe042
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87325701"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926507"
 ---
 # <a name="resources-roles-and-access-control-in-application-insights"></a>Ресурсы, роли и контроль доступа в Application Insights
 
-Вы можете управлять доступом на чтение и обновлять права доступа к данным в Azure [Application Insights][start], используя [Управление доступом на основе ролей в Microsoft Azure](../../role-based-access-control/role-assignments-portal.md).
+Вы можете контролировать, кто имеет доступ к данным в Azure [Application Insights][start]для чтения и обновления, используя [Управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md).
 
 > [!IMPORTANT]
-> Вы также можете предоставлять доступ пользователям в **группе ресурсов или подписке** , к которым относится ресурс приложения, а не в самом ресурсе. Назначьте им роль **участника компонента Application Insights** . Это обеспечит универсальный контроль доступа к веб-тестам и оповещениям с помощью ресурса приложения. [Подробнее.](#access)
+> Вы также можете предоставлять доступ пользователям в **группе ресурсов или подписке** , к которым относится ресурс приложения, а не в самом ресурсе. Назначьте им роль **участника компонента Application Insights** . Это обеспечит универсальный контроль доступа к веб-тестам и оповещениям с помощью ресурса приложения. [Подробнее](#access).
 
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
@@ -101,7 +101,7 @@ ms.locfileid: "87325701"
 
 ## <a name="related-content"></a>См. также
 
-* [Управление доступом на основе ролей в Azure](../../role-based-access-control/role-assignments-portal.md)
+* [Управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md)
 
 ## <a name="powershell-query-to-determine-role-membership"></a>Запрос PowerShell для определения членства в роли
 
@@ -135,4 +135,3 @@ $resourceGroup = "RGNAME"
 [group]: ../../azure-resource-manager/management/overview.md
 [portal]: https://portal.azure.com/
 [start]: ./app-insights-overview.md
-

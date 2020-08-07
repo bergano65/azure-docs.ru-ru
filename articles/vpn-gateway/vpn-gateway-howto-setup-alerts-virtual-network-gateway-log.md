@@ -1,18 +1,18 @@
 ---
 title: 'VPN-шлюз Azure: Настройка оповещений для событий журнала диагностики'
-description: Действия по настройке оповещений для событий журнала диагностики VPN-шлюза
+description: Узнайте, как настроить оповещения на основе событий журнала ресурсов из VPN-шлюза Azure с помощью Azure Monitor Log Analytics и журналов ресурсов, доступных в Azure.
 services: vpn-gateway
 author: kumudD
 ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 06/12/2019
 ms.author: alzam
-ms.openlocfilehash: 21fcebf6667eb1bc7741dfb4ba268af42567d58e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d79bdc669ab2c3785b1cde569cfce3021e4d924f
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87075588"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87923192"
 ---
 # <a name="set-up-alerts-on-resource-log-events-from-vpn-gateway"></a>Настройка оповещений о событиях журнала ресурсов из VPN-шлюза
 
@@ -20,7 +20,7 @@ ms.locfileid: "87075588"
 
 В Azure доступны следующие журналы ресурсов:
 
-|***имя***; | ***Описание*** |
+|***Имя*** | ***Описание*** |
 |---        | ---               |
 |GatewayDiagnosticLog | Содержит журналы ресурсов для событий настройки шлюза, основные изменения и события обслуживания. |
 |TunnelDiagnosticLog | Содержит события изменения состояния туннеля. События подключения и отключения туннеля имеют обобщенную причину изменения состояния, если применимо |
@@ -35,7 +35,7 @@ ms.locfileid: "87075588"
 
 1. В портал Azure найдите **log Analytics** в разделе **все службы** и выберите **log Analytics рабочие области**.
 
-   ![Параметры для перехода в Log Analytics рабочие области](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert0.png "Создать")
+   ![Параметры для перехода в Log Analytics рабочие области](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert0.png "Создание")
 
 2. На странице **log Analytics** выберите **создать** .
 

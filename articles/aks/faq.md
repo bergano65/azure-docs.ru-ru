@@ -2,13 +2,13 @@
 title: Вопросы и ответы о Службе Azure Kubernetes (AKS)
 description: найдите ответы на некоторые распространенные вопросы о Службе Azure Kubernetes (AKS).
 ms.topic: conceptual
-ms.date: 07/31/2020
-ms.openlocfilehash: 6d30bc1faa6a896233d09f9247fe8c56f82371fa
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.date: 08/06/2020
+ms.openlocfilehash: 7a56756855319ee72bd5b3dc60ad1ae440afd7fe
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87485632"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927153"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
 
@@ -193,7 +193,7 @@ AKS предоставляет гарантии в рамках соглашен
 
 ## <a name="does-aks-store-any-customer-data-outside-of-the-clusters-region"></a>Сохраняет ли AKS данные клиентов за пределами региона кластера?
 
-Нет. Все данные, созданные в кластере AKS, сохраняются в регионе кластера.
+Функция, позволяющая хранить данные клиентов в одном регионе, в настоящее время доступна только в регионе Юго-Восточной Азии (Сингапур) Азиатско-Тихоокеанский регион Geo. Для всех других регионов данные клиента хранятся в географическом виде.
 
 <!-- LINKS - internal -->
 

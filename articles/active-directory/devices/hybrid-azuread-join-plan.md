@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c4b9ae0ed682d6b34099c8eff941f1d0b6cabad
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 8367ec2ece59ca8794bc1eeb2027eb6c14db12a0
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87461771"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87925351"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Руководство. Планирование реализации гибридного присоединения к Azure Active Directory.
 
@@ -30,7 +30,7 @@ ms.locfileid: "87461771"
 
 Если у вас есть локальная среда Active Directory (AD) и вы хотите присоединить к Azure AD компьютеры, присоединенные к домену AD, это можно сделать, выполнив гибридное присоединение к Azure AD. В этой статье приведены соответствующие шаги для реализации гибридного присоединения устройств к Azure AD в вашей среде. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этой статье предполагается, что вы знакомы с [введением в Управление удостоверениями устройств в Azure Active Directory](../device-management-introduction.md).
 
@@ -57,7 +57,7 @@ ms.locfileid: "87461771"
 - Windows 10
 - Windows Server 2016
   - **Примечание**. клиентам национального облака Azure требуется версия 1809
-- Windows Server 2019
+- Windows Server 2019
 
 Для устройств под управлением операционной системы Windows, поддерживаемая версия, указана в этой статье [сведения о выпуске Windows 10](/windows/release-information/). Рекомендуется выполнить обновление до последней версии Windows 10.
 
@@ -123,7 +123,7 @@ ms.locfileid: "87461771"
 В этих сценариях не требуется настраивать сервер федерации для проверки подлинности.
 
 > [!NOTE]
-> [Облачная аутентификация с использованием промежуточного развертывания](/hybrid/how-to-connect-staged-rollout) поддерживается только при запуске обновления Windows 10 1903.
+> [Облачная аутентификация с использованием промежуточного развертывания](/azure/active-directory/hybrid/how-to-connect-staged-rollout) поддерживается только при запуске обновления Windows 10 1903.
 
 ### <a name="federated-environment"></a>Федеративная среда
 

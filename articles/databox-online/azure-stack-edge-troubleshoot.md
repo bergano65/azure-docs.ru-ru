@@ -1,6 +1,6 @@
 ---
 title: Использование портал Azure для устранения неполадок Azure Stack пограничных устройств | Документация Майкрософт
-description: Описывает, как устранять неполадки Azure Stack пограничных проблем.
+description: Узнайте, как устранять неполадки на Azure Stack пограничных устройствах. Можно выполнять диагностику, получать сведения о поддержке и использовать журналы для устранения неполадок.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: troubleshooting
 ms.date: 03/15/2019
 ms.author: alkohli
-ms.openlocfilehash: 00aae3386b3f648eafdef31dccb640d8120f7ad8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b80b47a1be67a9771d138c43178d50156a6f1a95
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85564007"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926439"
 ---
 # <a name="troubleshoot-your-azure-stack-edge-issues"></a>Устранение неполадок Azure Stack пограничных проблем
 
@@ -84,6 +84,6 @@ ms.locfileid: "85564007"
     [!INCLUDE [data-box-edge-edge-upload-error-reference](../../includes/data-box-edge-gateway-upload-error-reference.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об [известных проблемах в этом выпуске](data-box-gateway-release-notes.md).

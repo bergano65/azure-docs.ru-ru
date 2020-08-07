@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: how-to
 ms.date: 09/06/2019
-ms.openlocfilehash: 45bfba5b0ab25aa9930719f136428ccc0df5014d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 211dce8a2810d9eb07bf0f388753afd50add4945
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85263567"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87919962"
 ---
 # <a name="use-azure-cosmos-db-resource-tokens-with-the-gremlin-sdk"></a>Использование маркеров ресурса Azure Cosmos DB с пакетом SDK Gremlin
 
@@ -101,6 +101,6 @@ builder.authProperties(authenticationProperties);
 
 Распространенная ошибка, с которой сталкиваются приложения при использовании маркеров ресурсов: "Недостаточно разрешений в заголовке авторизации для соответствующего запроса. Повторите попытку используя другой заголовок авторизации." Эта ошибка возвращается, когда обход Gremlin пытается записать край или вершину, но маркер ресурса предоставляет только разрешения на *Чтение*. Проверьте обход на содержание какого-либо из следующих шагов: *.addV ()*, *.addE ()*, *.drop ()* или *.property()*.
 
-## <a name="next-steps"></a>Дальнейшие шаги
-* [Управление доступом на основе ролей](role-based-access-control.md) в Azure Cosmos DB
+## <a name="next-steps"></a>Дальнейшие действия
+* [Управление доступом на основе ролей в Azure (Azure RBAC)](role-based-access-control.md) в Azure Cosmos DB
 * [Узнайте, как защитить доступ к данным](secure-access-to-data.md) в Azure Cosmos DB

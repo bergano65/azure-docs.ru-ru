@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - 'Role: IoT Device'
 - 'Role: Cloud Development'
-ms.openlocfilehash: df6de62eefc0971ece0e0035299425689af5f784
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: c11de5daacfd0d0b3d12c38064dac704c98ce60b
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87307630"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87924195"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
 
@@ -78,8 +78,8 @@ device_client = IoTHubDeviceClient.create_from_connection_string(deviceConnectio
 
 |Язык  |Интервал проверки активности по умолчанию  |Настраивается  |
 |---------|---------|---------|
-|Node.js     |   180 секунд      |     Нет    |
-|Java     |    230 секунд     |     Нет    |
+|Node.js     |   180 секунд      |     нет    |
+|Java     |    230 секунд     |     нет    |
 |C     | 240 секунд |  [Да](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/Iothub_sdk_options.md#mqtt-transport)   |
 |C#     | 300 секунд |  [Да](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/iothub/device/src/Transport/Mqtt/MqttTransportSettings.cs#L89)   |
 |Python   | 60 секунд |  нет   |
@@ -310,7 +310,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 В сообщениях, отправляемых из облака на устройство, значения в контейнере свойств представлены в следующей таблице.
 
-| Значение свойства | Представление | Описание: |
+| Значение свойства | Представление | Описание |
 |----|----|----|
 | `null` | `key` | В контейнере свойств отображается только ключ. |
 | пустая строка | `key=` | Ключ, за которым следует знак равенства без значения |
@@ -368,7 +368,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 3. Затем служба отправляет ответное сообщение, содержащее новое значение ETag для коллекции сообщаемых свойств в разделе `$iothub/twin/res/{status}/?$rid={request id}`. В этом ответном сообщении используется то же значение **request ID**, что и в запросе.
 
-Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Например:
+Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Пример:
 
 ```json
 {
@@ -437,7 +437,7 @@ client.publish("$iothub/twin/PATCH/properties/reported/?$rid=" +
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о протоколе MQTT см. в [документации по MQTT](https://mqtt.org/documentation).
+Дополнительные сведения о протоколе MQTT см. в [документации по MQTT](https://mqtt.org/).
 
 Дополнительные сведения о планировании развертывания Центра Интернета вещей см. в следующих руководствах:
 

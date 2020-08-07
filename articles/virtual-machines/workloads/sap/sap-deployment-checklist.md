@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 02/13/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ea691ff42f9e5f214aa9987fae53732be844e034
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 9f517eb5bd113d8d54714b75bea4c8436882d0f9
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836349"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87924433"
 ---
 # <a name="sap-workloads-on-azure-planning-and-deployment-checklist"></a>Рабочие нагрузки SAP в Azure: контрольный список для планирования и развертывания
 
@@ -74,7 +74,7 @@ ms.locfileid: "87836349"
 4.  Проектирование базовых служб. Этот проект должен включать следующие элементы:
     - Active Directory и структура DNS.
     - Топология сети в Azure и назначение различных систем SAP.
-    - Структура [доступа на основе ролей](../../../role-based-access-control/overview.md) для команд, управляющих инфраструктурой и приложениями SAP в Azure.
+    - Структура [управления доступом на основе ролей Azure (Azure RBAC)](../../../role-based-access-control/overview.md) для групп, которые управляют инфраструктурой и приложениями SAP в Azure.
     - Топология группы ресурсов.
     - [Стратегия тегирования](../../../azure-resource-manager/management/tag-resources.md#tags-and-billing).
     - Соглашения об именовании для виртуальных машин и других компонентов инфраструктуры и (или) логических имен.

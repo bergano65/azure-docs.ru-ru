@@ -2,15 +2,15 @@
 title: Обзор спецификаций шаблонов
 description: Описание способов создания спецификаций шаблонов и предоставления к ним общего доступа другим пользователям в Организации.
 ms.topic: conceptual
-ms.date: 07/31/2020
+ms.date: 08/06/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 829aaa41bc60b3dcbf78ef6083457fff3b794914
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: f5151550b9f23ba63380688f53325f8976f14a51
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497806"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87921884"
 ---
 # <a name="azure-resource-manager-template-specs-preview"></a>Спецификации шаблонов Azure Resource Manager (Предварительная версия)
 
@@ -18,10 +18,10 @@ ms.locfileid: "87497806"
 
 **Microsoft. Resources/темплатеспекс** — это новый тип ресурсов для спецификаций шаблонов. Он состоит из основного шаблона и любого количества связанных шаблонов. Azure безопасно сохраняет спецификации шаблонов в группах ресурсов. Спецификации шаблонов поддерживают [Управление версиями](#versioning).
 
-Для развертывания спецификации шаблона используются стандартные инструменты Azure, такие как PowerShell, Azure CLI, портал Azure, остальные и другие поддерживаемые пакеты SDK и клиенты. Используйте те же команды и передайте одни и те же параметры для шаблона.
+Для развертывания спецификации шаблона используются стандартные инструменты Azure, такие как PowerShell, Azure CLI, портал Azure, остальные и другие поддерживаемые пакеты SDK и клиенты. Вы используете те же команды, что и для шаблона.
 
 > [!NOTE]
-> Спецификации шаблонов в настоящее время находятся на этапе предварительной версии. Чтобы использовать его, необходимо [зарегистрироваться в списке ожидания](https://aka.ms/templateSpecOnboarding).
+> Сейчас спецификации шаблонов доступны в предварительной версии. Чтобы использовать их, нужно [зарегистрироваться в списке ожидания](https://aka.ms/templateSpecOnboarding).
 
 ## <a name="why-use-template-specs"></a>Зачем использовать спецификации шаблонов?
 
@@ -31,27 +31,38 @@ ms.locfileid: "87497806"
 
 Шаблоны, включаемые в спецификацию шаблона, должны быть проверены администраторами в вашей организации в соответствии с требованиями и рекомендациями Организации.
 
-## <a name="create-template-spec"></a>Создать спецификацию шаблона
+## <a name="create-template-spec"></a>Создание спецификации шаблона
 
 В следующем примере показан простой шаблон для создания учетной записи хранения в Azure.
 
 ```json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "resources": [
-    {
-      "name": "[concat('storage', uniqueString(resourceGroup().id))]",
-      "type": "Microsoft.Storage/storageAccounts",
-      "apiVersion": "2019-06-01",
-      "location": "[resourceGroup().location]",
-      "kind": "StorageV2",
-      "sku": {
-        "name": "Premium_LRS",
-        "tier": "Premium"
-      }
-    }
-  ]
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageAccountType": {
+            "type": "string",
+            "defaultValue": "Standard_LRS",
+            "allowedValues": [
+                "Standard_LRS",
+                "Standard_GRS",
+                "Standard_ZRS",
+                "Premium_LRS"
+            ]
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-06-01",
+            "name": "[concat('store', uniquestring(resourceGroup().id))]",
+            "location": "[resourceGroup().location]",
+            "kind": "StorageV2",
+            "sku": {
+                "name": "[parameters('storageAccountType')]"
+            }
+        }
+    ]
 }
 ```
 
@@ -105,6 +116,42 @@ $id = (Get-AzTemplateSpec -Name storageSpec -ResourceGroupName templateSpecsRg -
 New-AzResourceGroupDeployment `
   -TemplateSpecId $id `
   -ResourceGroupName demoRG
+```
+
+## <a name="parameters"></a>Параметры
+
+Передача параметров в спецификацию шаблона в точности аналогична передаче параметров в шаблон ARM. Добавьте значения параметров как встроенные, так и в файле параметров.
+
+Чтобы передать параметр встроенным, используйте:
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -TemplateSpecId $id `
+  -ResourceGroupName demoRG `
+  -StorageAccountType Standard_GRS
+```
+
+Чтобы создать локальный файл параметров, используйте:
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "StorageAccountType": {
+      "value": "Standard_GRS"
+    }
+  }
+}
+```
+
+И передайте этот файл параметров с помощью:
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -TemplateSpecId $id `
+  -ResourceGroupName demoRG `
+  -TemplateParameterFile ./mainTemplate.parameters.json
 ```
 
 ## <a name="create-a-template-spec-with-linked-templates"></a>Создание спецификации шаблона со связанными шаблонами

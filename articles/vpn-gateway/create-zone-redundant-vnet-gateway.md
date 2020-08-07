@@ -1,6 +1,6 @@
 ---
 title: Создание избыточного между зонами шлюза виртуальной сети в Зонах доступности Azure
-description: Развертывание VPN-шлюза и шлюзов ExpressRoute в Зонах доступности Azure
+description: Узнайте, как развертывать шлюзы VPN и ExpressRoute в Зоны доступности Azure, добавив устойчивость, масштабируемость и более высокий уровень доступности для шлюзов виртуальной сети.
 services: vpn-gateway
 titleSuffix: Azure VPN Gateway
 author: cherylmc
@@ -8,18 +8,18 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 02/10/2020
 ms.author: cherylmc
-ms.openlocfilehash: 6cd0b2f31af187d881fe650c0829bb28e353dcbf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ccb6050ae4d56d2f8e57b4a590d01fb6acd9bd8a
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84987634"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87925162"
 ---
 # <a name="create-a-zone-redundant-virtual-network-gateway-in-azure-availability-zones"></a>Создание избыточного между зонами шлюза виртуальной сети в Зонах доступности Azure
 
 Вы можете развернуть VPN-шлюзы и шлюзы ExpressRoute в Зонах доступности Azure. В результате шлюзы виртуальной сети смогут работать на более высоких уровнях отказоустойчивости, масштабируемости и доступности. При развертывании в зонах доступности Azure происходит физическое и логическое разделение шлюзов в пределах региона с одновременной защитой локального сетевого подключения к Azure от сбоев на уровне зоны. Дополнительные сведения см. в статье [об избыточных между зонами шлюзах виртуальной сети](about-zone-redundant-vnet-gateways.md) и статье [Что такое Зоны доступности в Azure?](../availability-zones/az-overview.md).
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка
 
 [!INCLUDE [powershell](../../includes/vpn-gateway-cloud-shell-powershell-about.md)]
 

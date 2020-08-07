@@ -1,6 +1,6 @@
 ---
 title: Использование портала Azure для устранения неполадок в шлюзе Azure Data Box | Документация Майкрософт
-description: В этой статье описывается, как устранить неполадки в Шлюзе Azure Data Box.
+description: Узнайте, как устранять неполадки Шлюз Azure Data Box. Можно выполнять диагностику, получать сведения о поддержке и использовать журналы для устранения неполадок.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: troubleshooting
 ms.date: 03/20/2019
 ms.author: alkohli
-ms.openlocfilehash: 9688df6c27717cc74c874c75a9df0b47ffd24853
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e49cc400fd8af3d284a223363f3384063d862981
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85564022"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927187"
 ---
 # <a name="troubleshoot-your-azure-data-box-gateway-issues"></a>Устранение неполадок в Шлюзе Azure Data Box
 
@@ -107,6 +107,6 @@ ms.locfileid: "85564022"
     |    16002           |    RefreshWorkNeededException                              |    Не удалось обновить этот файл, так как он отправлен не полностью.                                                                                                                                                                          | 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об [известных проблемах в этом выпуске](data-box-gateway-release-notes.md).

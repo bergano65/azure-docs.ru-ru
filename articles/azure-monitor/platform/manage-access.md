@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 04/10/2019
-ms.openlocfilehash: 630364a95c4ee427b71aa5e8b763b4447a41c962
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 5b450254648cb253d6631397d703430401009f14
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87489458"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87925640"
 ---
 # <a name="manage-access-to-log-data-and-workspaces-in-azure-monitor"></a>Управление доступом к данным журнала и рабочим областям в Azure Monitor
 
@@ -102,7 +102,7 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 
 ## <a name="manage-access-using-workspace-permissions"></a>Управление доступом с помощью разрешений рабочей области
 
-Каждая рабочая область может включать учетных записей, каждая из которых может иметь доступ к нескольким рабочим областям. Управление доступом осуществляется с помощью [доступа на основе ролей Azure](../../role-based-access-control/role-assignments-portal.md).
+Каждая рабочая область может включать учетных записей, каждая из которых может иметь доступ к нескольким рабочим областям. Управление доступом осуществляется с помощью [управления доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md).
 
 Разрешения Azure также требуются для следующих действий:
 

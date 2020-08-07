@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: how-to
 ms.date: 02/18/2020
 ms.author: allensu
-ms.openlocfilehash: 550ed5791df821b1793755f5046da92adf6e3f3a
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 1bbb410b3aac7d1e30db075003eb30ec27b11a38
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87131554"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926592"
 ---
 # <a name="how-to-protect-private-dns-zones-and-records"></a>Как защитить частные зоны и записи DNS
 
@@ -20,7 +20,7 @@ ms.locfileid: "87131554"
 
 Зоны и записи Частная зона DNS являются критически важными ресурсами. Удаление зоны DNS или отдельной записи DNS может привести к сбою службы. Важно, чтобы зоны и записи DNS были защищены от несанкционированных или случайных изменений.
 
-В этой статье объясняется, как Azure DNS позволяет защищать частные зоны и записи DNS для таких изменений.  Мы применяем две эффективные функции для ценных бумаг, предоставляемые Azure Resource Manager: [Управление доступом на основе ролей](../role-based-access-control/overview.md) и [блокировки ресурсов](../azure-resource-manager/management/lock-resources.md).
+В этой статье объясняется, как Azure DNS позволяет защищать частные зоны и записи DNS для таких изменений.  Мы применяем две эффективные функции для ценных бумаг, предоставляемые Azure Resource Manager: [Управление доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/overview.md) и [блокировки ресурсов](../azure-resource-manager/management/lock-resources.md).
 
 ## <a name="role-based-access-control"></a>Управление доступом на основе ролей
 

@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 08/05/2020
-ms.openlocfilehash: 644184f5bb51d049d890655ada5be5ebd4c11bf7
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 03d40dcaeaefe01fecbc201cf28dc20c8634af9d
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87910409"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926677"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-11"></a>Обновление до Azure Когнитивный поиск .NET SDK версии 11
 
@@ -48,7 +48,7 @@ ms.locfileid: "87910409"
 | Клиент, используемый для индексаторов, источников данных, навыков | [SearchServiceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient) | [Сеарчиндексерклиент (**новое**)](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.searchindexerclient) |
 
 > [!Important]
-> Версия 11 переименовывает версию 10 `SearchIndexClient` в `SearchClient` , а затем повторно использует имя клиента, работающего с объектами index, Analyzer и SYNONYM Map. При обновлении клиентских ссылок выполните последовательность действий по [обновлению](#UpgradeSteps) , чтобы избежать путаницы во время поиска и замены.
+> `SearchIndexClient`существует в обеих версиях, но поддерживает различные вещи. В версии 10 `SearchIndexClient` Создайте индексы и другие объекты. В версии 11 `SearchIndexClient` работает с существующими индексами. Чтобы избежать путаницы при обновлении кода, учитывать порядок обновления клиентских ссылок. После выполнения последовательности [действий по обновлению](#UpgradeSteps) необходимо устранить любые проблемы замены строк.
 
 <a name="naming-differences"></a>
 
@@ -125,7 +125,7 @@ ms.locfileid: "87910409"
 
 Следующие функции версии 10 пока недоступны в версии 11. Если вы используете эти функции, отключитесь от миграции, пока они не будут поддерживаться.
 
-+ [Геопространственные типы](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.serialization.geojsonextensions)
++ Геопространственные типы
 + [Фиелдбуилдер](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.fieldbuilder) (хотя [это решение](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/tests/Samples/FieldBuilder/FieldBuilder.cs)можно использовать).
 + [Хранилище знаний](knowledge-store-concept-intro.md)
 
@@ -173,7 +173,7 @@ ms.locfileid: "87910409"
 
 + [Упорядоченные результаты](search-query-odata-orderby.md) для значений NULL были изменены в этой версии, и значения NULL появлялись первыми, если сортировка имеет значение `asc` и последний `desc` . Если вы написали код, который обрабатывает, как сортируются значения NULL, следует проверить и, возможно, удалить этот код, если он больше не нужен.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 + [Azure.Search.Docпакет ументс](https://www.nuget.org/packages/Azure.Search.Documents/)
 + [Примеры на GitHub](https://github.com/azure/azure-sdk-for-net/tree/Azure.Search.Documents_11.0.0/sdk/search/Azure.Search.Documents/samples)

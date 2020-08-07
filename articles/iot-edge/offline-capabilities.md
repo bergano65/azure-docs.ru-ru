@@ -7,12 +7,12 @@ ms.date: 11/22/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: ef6ed74149f106b801049da429dfe7b79b984a70
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.openlocfilehash: e929463c33603c650bec2e9a49a13dde6965e39f
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83725250"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926660"
 ---
 # <a name="understand-extended-offline-capabilities-for-iot-edge-devices-modules-and-child-devices"></a>Сведения о расширенных возможностях автономной работы устройств, модулей и дочерних устройств IoT Edge
 
@@ -95,7 +95,7 @@ az iot hub device-identity add-children \
 
 #### <a name="option-3-use-iot-hub-service-sdk"></a>Способ 3. Использование пакета SDK для службы Центра Интернета вещей
 
-Наконец, можно управлять отношениями между "родителями" и "потомками" программно с помощью пакета SDK для C#, Java или службы Центра Интернета вещей Node.js. Ниже приведен [пример назначения дочернего устройства](https://aka.ms/set-child-iot-device-c-sharp) с помощью пакета SDK C#.
+Наконец, можно управлять отношениями между "родителями" и "потомками" программно с помощью пакета SDK для C#, Java или службы Центра Интернета вещей Node.js. Ниже приведен [пример назначения дочернего устройства](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/e2e/test/iothub/service/RegistryManagerE2ETests.cs) с помощью пакета SDK C#.
 
 ### <a name="set-up-the-parent-device-as-a-gateway"></a>Настройка родительского устройства в качестве шлюза
 

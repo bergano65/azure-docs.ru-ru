@@ -3,12 +3,12 @@ title: Узнайте больше про аудит содержимого ви
 description: Узнайте, как служба "Политика Azure" использует гостевую конфигурацию для аудита параметров виртуальной машины.
 ms.date: 05/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: bec0215d3f10aa9f6a20eea7258ec9d5081e8f98
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 8c0f5d4df640fa29f88b3c4c6c0403ad9de97dea
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87901986"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87921696"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
@@ -69,7 +69,7 @@ ms.locfileid: "87901986"
 |Microsoft|Windows Server|2012 и более поздних версии|
 |Microsoft|Клиент Windows|Windows 10|
 |OpenLogic|CentOS|Версия 7.3 и позднее|
-|Red Hat|Red Hat Enterprise Linux|7,4-7,8, 9,0 и более поздние версии|
+|Red Hat|Red Hat Enterprise Linux|7,4-7,8|
 |Suse|SLES|12 SP3 и более поздние версии|
 
 Пользовательские образы виртуальных машин поддерживаются политиками гостевой конфигурации, если они являются одной из операционных систем в приведенной выше таблице.

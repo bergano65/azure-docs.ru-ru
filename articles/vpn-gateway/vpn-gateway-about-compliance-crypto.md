@@ -1,18 +1,18 @@
 ---
 title: 'VPN-шлюз Azure: требования к шифрованию'
-description: В этой статье рассматриваются требования к шифрованию и VPN-шлюзы Azure
+description: Узнайте, как настроить VPN-шлюзы Azure для удовлетворения требований к шифрованию для распределенных VPN-туннелей S2S и подключений между виртуальными сетями в Azure.
 services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: article
 ms.date: 01/10/2020
 ms.author: yushwang
-ms.openlocfilehash: 93e13592d9c434b159ad4f4c10ef30328941c64e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b591baa3fd942eb46cc7351a15c8849c44fe0d12
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75902829"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926967"
 ---
 # <a name="about-cryptographic-requirements-and-azure-vpn-gateways"></a>Требования к шифрованию и VPN-шлюзы Azure
 
@@ -57,7 +57,7 @@ VPN-шлюзы Azure теперь поддерживают настраивае�
 
 [!INCLUDE [vpn-gateway-ipsecikepolicy-faq-include](../../includes/vpn-gateway-faq-ipsecikepolicy-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Пошаговые инструкции по настройке пользовательской политики IPsec/IKE для подключения см. в статье о [настройке политики IPsec/IKE](vpn-gateway-ipsecikepolicy-rm-powershell.md).
 

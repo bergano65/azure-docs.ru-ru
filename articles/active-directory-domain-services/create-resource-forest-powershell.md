@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/27/2020
 ms.author: iainfou
-ms.openlocfilehash: d5eef553d0d3bf5acbcb61ef8f2dcfab88a53266
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: eb627b8069bcd9efd1d56adab5eda45dc34a1a10
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87505774"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87922002"
 ---
 # <a name="create-an-azure-active-directory-domain-services-resource-forest-and-outbound-forest-trust-to-an-on-premises-domain-using-azure-powershell"></a>Создание Azure Active Directory леса ресурсов доменных служб и исходящего доверия лесов в локальном домене с помощью Azure PowerShell
 
@@ -36,7 +36,7 @@ ms.locfileid: "87505774"
 > [!IMPORTANT]
 > В настоящее время леса управляемых ресурсов домена не поддерживают файлы Azure HDInsight или Azure. Управляемые по умолчанию леса пользователей домена поддерживают обе эти дополнительные службы.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для работы с этой статьей требуются следующие ресурсы и разрешения:
 
@@ -148,8 +148,8 @@ New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
 
 1. Создайте гибридное подключение к локальной сети в Azure с помощью VPN-подключения Azure или Azure ExpressRoute. Конфигурация гибридной сети выходит за рамки этой документации и может уже существовать в вашей среде. Дополнительные сведения о конкретных сценариях см. в следующих статьях:
 
-    * [VPN-подключение типа "сеть — сеть" Azure](/vpn-gateway/vpn-gateway-about-vpngateways).
-    * [Обзор Azure ExpressRoute](/vpn-gateway/vpn-gateway-about-vpngateways).
+    * [VPN-подключение типа "сеть — сеть" Azure](/azure/vpn-gateway/vpn-gateway-about-vpngateways).
+    * [Обзор Azure ExpressRoute](/azure/expressroute/expressroute-introduction).
 
     > [!IMPORTANT]
     > Если вы создаете подключение непосредственно к виртуальной сети управляемого домена, используйте отдельную подсеть шлюза. Не создавайте шлюз в подсети управляемого домена.

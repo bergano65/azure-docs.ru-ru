@@ -1,6 +1,6 @@
 ---
 title: Избыточные между зонами шлюзы виртуальной сети в Зонах доступности Azure
-description: Узнайте о VPN-шлюзах и шлюзах ExpressRoute в Зонах доступности.
+description: Узнайте о шлюзах VPN и ExpressRoute в Зоны доступности Azure, добавив устойчивость, масштабируемость и более высокий уровень доступности для шлюзов виртуальной сети.
 titleSuffix: Azure VPN Gateway
 services: vpn-gateway
 author: cherylmc
@@ -9,12 +9,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 12/05/2019
 ms.author: cherylmc
-ms.openlocfilehash: f1bbaab99b6422de4053839e2099869d2d08db95
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6a0a3d59477511ebf019e2c2019786788a92ad70
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75864304"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87922699"
 ---
 # <a name="about-zone-redundant-virtual-network-gateways-in-azure-availability-zones"></a>Избыточные между зонами шлюзы виртуальной сети в Зонах доступности Azure
 
@@ -85,6 +85,6 @@ ms.locfileid: "75864304"
 
 Допускается одновременное функционирование VPN-шлюзов и шлюзов Express Route в одной виртуальной сети. Но при этом необходимо зарезервировать диапазон IP-адресов /27 для подсети шлюза.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание шлюза виртуальной сети, избыточного между зонами](create-zone-redundant-vnet-gateway.md)

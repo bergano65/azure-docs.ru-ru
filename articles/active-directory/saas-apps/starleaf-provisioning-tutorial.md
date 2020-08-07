@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2019
 ms.author: zhchia
-ms.openlocfilehash: 520373fc6a05bcaada973273e3553f9da623c669
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 74e37bda28bed3ecd2c842c4659bcff3cb86eb6a
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77064297"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87920693"
 ---
 # <a name="tutorial-configure-starleaf-for-automatic-user-provisioning"></a>Учебник. Настройка Старлеаф для автоматической подготовки пользователей
 
@@ -36,7 +36,7 @@ ms.locfileid: "77064297"
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
 * Клиент Azure AD.
-* [Клиент старлеаф](https://www.starleaf.com/solutions/).
+* [Клиент старлеаф](https://starleaf.com/).
 * Учетная запись пользователя в Старлеаф с разрешениями администратора.
 
 ## <a name="assign-users-to-starleaf"></a>Назначение пользователей Старлеаф
@@ -58,7 +58,7 @@ ms.locfileid: "77064297"
 
     ![Старлеаф добавить SCIM](media/starleaf-provisioning-tutorial/image00.png)
 
-2. Выберите **тип** для Microsoft Azure Active Directory. Введите подходящее имя в списке **имя**. Нажмите кнопку **Применить**.
+2. Выберите **тип** для Microsoft Azure Active Directory. Введите подходящее имя в списке **имя**. Щелкните **Применить**.
 
     ![Старлеаф добавить SCIM](media/starleaf-provisioning-tutorial/image01.png)
 

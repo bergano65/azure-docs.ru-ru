@@ -3,16 +3,16 @@ title: Разрешения в Azure Advisor
 description: Разрешения Advisor и способ, которым они могут препятствовать настройке подписок или отложить или отклонить рекомендации.
 ms.topic: article
 ms.date: 04/03/2019
-ms.openlocfilehash: 6b5dfdeb888b0577a40562536bd7a6dfc271cb19
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3c7b42372ae6de5c2f519b69aec8a154a2f35a82
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87057584"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927391"
 ---
 # <a name="permissions-in-azure-advisor"></a>Разрешения в Azure Advisor
 
-Помощник по Azure предоставляет рекомендации на основе использования и конфигурации ресурсов и подписок Azure. Advisor использует [встроенные роли](../role-based-access-control/built-in-roles.md) , предоставляемые [контролем доступа на основе ролей](../role-based-access-control/overview.md) (RBAC), для управления доступом к рекомендациям и функциональным возможностям Advisor. 
+Помощник по Azure предоставляет рекомендации на основе использования и конфигурации ресурсов и подписок Azure. Advisor использует [встроенные роли](../role-based-access-control/built-in-roles.md) , предоставляемые службой [управления доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/overview.md) , для управления доступом к рекомендациям и функциональным возможностям Advisor. 
 
 ## <a name="roles-and-their-access"></a>Роли и их доступ
 
