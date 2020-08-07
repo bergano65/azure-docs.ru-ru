@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/26/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 3250e4c35f6b898f4431d0f2fe15f84d915c1c8e
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: 1fdc6b79bf86272afac038d8f91e4663514830fe
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87760402"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905604"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Запрос к графу Azure Digital двойников двойника
 
@@ -131,6 +131,22 @@ AND R.reportedCondition = 'clean'
 
 В приведенном выше примере обратите внимание на то, как *репортедкондитион* является свойством отношения *сервицедби* (не некоторых цифровых двойника с отношением *сервицедби* ).
 
+### <a name="query-with-multiple-joins"></a>Запрос с несколькими ОБЪЕДИНЕНИЯми
+
+В настоящее время в одном запросе поддерживается Предварительная версия, а до пяти `JOIN` . Это позволяет одновременно просматривать несколько уровней связей.
+
+Ниже приведен пример запроса с несколькими объединениями, который получает все лампочки, содержащиеся в светлых панелях 1 и 2.
+
+```sql
+SELECT LightBulb 
+FROM DIGITALTWINS Room 
+JOIN LightPanel RELATED Room.contains 
+JOIN LightBulb RELATED LightPanel.contains 
+WHERE IS_OF_MODEL(LightPanel, ‘dtmi:contoso:com:lightpanel;1’) 
+AND IS_OF_MODEL(LightBulb, ‘dtmi:contoso:com:lightbulb ;1’) 
+AND Room.$dtId IN [‘room1’, ‘room2’] 
+```
+
 ## <a name="run-queries-with-an-api-call"></a>Выполнение запросов с помощью вызова API
 
 После выбора строки запроса ее необходимо выполнить, вызвав **API запроса**.
@@ -208,6 +224,6 @@ catch (RequestFailedException e)
 * В именах и значениях свойств учитывается регистр, поэтому следует использовать точные имена, определенные в моделях. Если имена свойств написаны с ошибками или имеют неправильный регистр, результирующий набор будет пустым без возвращаемых ошибок.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте больше о [API-интерфейсах и пакетах SDK для цифровых двойников Azure](how-to-use-apis-sdks.md), включая API запросов, который используется для выполнения запросов из этой статьи.

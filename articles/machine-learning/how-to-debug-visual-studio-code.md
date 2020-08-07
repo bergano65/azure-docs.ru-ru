@@ -1,0 +1,433 @@
+---
+title: Интерактивная Отладка с помощью Visual Studio Code
+titleSuffix: Azure Machine Learning
+description: Интерактивная Отладка Машинное обучение Azure кода, конвейеров и развертываний с помощью Visual Studio Code
+services: machine-learning
+ms.service: machine-learning
+ms.subservice: core
+ms.topic: troubleshooting
+author: luisquintanilla
+ms.author: luquinta
+ms.date: 08/06/2020
+ms.openlocfilehash: 73cb8396876a5baad74190ec9a86237362037c36
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87908906"
+---
+# <a name="interactive-debugging-with-visual-studio-code"></a>Интерактивная Отладка с помощью Visual Studio Code
+
+[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
+Узнайте, как выполнять интерактивную отладку Машинное обучение Azure конвейеров и развертываний с помощью Visual Studio Code (VS Code) и [депугпи](https://github.com/microsoft/debugpy/).
+
+## <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Отладка и устранение неполадок в конвейерах машинного обучения
+
+В некоторых случаях может потребоваться интерактивно отлаживать код Python, используемый в конвейере машинного обучения. С помощью VS Code и дебугпи можно присоединяться к коду, как он выполняется в среде обучения.
+
+### <a name="prerequisites"></a>Предварительные условия
+
+* __Рабочая область машинное обучение Azure__ , настроенная для использования __виртуальной сети Azure__.
+* __Конвейер машинное обучение Azure__ , использующий скрипты Python в рамках этапов конвейера. Например, Писонскриптстеп.
+* Машинное обучение Azureного кластерного кластера, который находится __в виртуальной сети__ и __используется конвейером для обучения__.
+* __Среда разработки__ , которая находится __в виртуальной сети__. Среда разработки может быть одной из следующих:
+
+  * Виртуальная машина Azure в виртуальной сети
+  * Вычислительный экземпляр виртуальной машины записной книжки в виртуальной сети
+  * Клиентский компьютер, имеющий подключение к виртуальной сети по частной сети либо по VPN, либо через ExpressRoute.
+
+Дополнительные сведения об использовании виртуальной сети Azure с Машинное обучение Azure см. в статье [Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure](how-to-enable-virtual-network.md).
+
+> [!TIP]
+> Хотя вы можете работать с Машинное обучение Azureными ресурсами, которые не находятся за виртуальной сетью, рекомендуется использовать виртуальную сеть.
+
+### <a name="how-it-works"></a>Принцип работы
+
+Этапы конвейера машинного обучения запускают скрипты Python. Эти скрипты изменяются для выполнения следующих действий.
+
+1. Регистрировать IP-адрес узла, на котором они выполняются. Используйте IP-адрес для подключения отладчика к сценарию.
+
+2. Запустите компонент отладки дебугпи и дождитесь подключения отладчика.
+
+3. В среде разработки вы отслеживаете журналы, созданные процессом обучения, чтобы найти IP-адрес, на котором выполняется сценарий.
+
+4. Вы указываете VS Code IP-адреса для подключения отладчика к с помощью `launch.json` файла.
+
+5. Вы подключаете отладчик и интерактивно пройдите по сценарию.
+
+### <a name="configure-python-scripts"></a>Настройка скриптов Python
+
+Чтобы включить отладку, внесите следующие изменения в скрипты Python, используемые шагами в конвейере ML:
+
+1. Добавьте следующие операторы импорта:
+
+    ```python
+    import argparse
+    import os
+    import debugpy
+    import socket
+    from azureml.core import Run
+    ```
+
+1. Добавьте следующие аргументы. Эти аргументы позволяют включить отладчик по мере необходимости и задать время ожидания для подключения отладчика:
+
+    ```python
+    parser.add_argument('--remote_debug', action='store_true')
+    parser.add_argument('--remote_debug_connection_timeout', type=int,
+                        default=300,
+                        help=f'Defines how much time the AML compute target '
+                        f'will await a connection from a debugger client (VSCODE).')
+    parser.add_argument('--remote_debug_client_ip', type=str,
+                        help=f'Defines IP Address of VS Code client')
+    parser.add_argument('--remote_debug_port', type=int,
+                        default=5678,
+                        help=f'Defines Port of VS Code client')
+    ```
+
+1. Добавьте следующие инструкции. Эти инструкции загружают текущий контекст выполнения, чтобы можно было зарегистрировать IP-адрес узла, на котором выполняется код:
+
+    ```python
+    global run
+    run = Run.get_context()
+    ```
+
+1. Добавьте `if` инструкцию, запускающую дебугпи, и дождитесь присоединения отладчика. Если отладчик не подключается до истечения времени ожидания, сценарий продолжится в нормальном режиме. Обязательно замените `HOST` значения, а `PORT` — `listen` собственной функцией.
+
+    ```python
+    if args.remote_debug:
+        print(f'Timeout for debug connection: {args.remote_debug_connection_timeout}')
+        # Log the IP and port
+        try:
+            ip = args.remote_debug_client_ip
+        except:
+            print("Need to supply IP address for VS Code client")
+        print(f'ip_address: {ip}')
+        debugpy.listen(address=(ip, args.remote_debug_port))
+        # Wait for the timeout for debugger to attach
+        debugpy.wait_for_client()
+        print(f'Debugger attached = {debugpy.is_client_connected()}')
+    ```
+
+В следующем примере кода Python показан базовый `train.py` файл, позволяющий выполнять отладку:
+
+```python
+# Copyright (c) Microsoft. All rights reserved.
+# Licensed under the MIT license.
+
+import argparse
+import os
+import debugpy
+import socket
+from azureml.core import Run
+
+print("In train.py")
+print("As a data scientist, this is where I use my training code.")
+
+parser = argparse.ArgumentParser("train")
+
+parser.add_argument("--input_data", type=str, help="input data")
+parser.add_argument("--output_train", type=str, help="output_train directory")
+
+# Argument check for remote debugging
+parser.add_argument('--remote_debug', action='store_true')
+parser.add_argument('--remote_debug_connection_timeout', type=int,
+                    default=300,
+                    help=f'Defines how much time the AML compute target '
+                    f'will await a connection from a debugger client (VSCODE).')
+parser.add_argument('--remote_debug_client_ip', type=str,
+                    help=f'Defines IP Address of VS Code client')
+parser.add_argument('--remote_debug_port', type=int,
+                    default=5678,
+                    help=f'Defines Port of VS Code client')
+
+# Get run object, so we can find and log the IP of the host instance
+global run
+run = Run.get_context()
+
+args = parser.parse_args()
+
+# Start debugger if remote_debug is enabled
+if args.remote_debug:
+    print(f'Timeout for debug connection: {args.remote_debug_connection_timeout}')
+    # Log the IP and port
+    # ip = socket.gethostbyname(socket.gethostname())
+    try:
+        ip = args.remote_debug_client_ip
+    except:
+        print("Need to supply IP address for VS Code client")
+    print(f'ip_address: {ip}')
+    debugpy.listen(address=(ip, args.remote_debug_port))
+    # Wait for the timeout for debugger to attach
+    debugpy.wait_for_client()
+    print(f'Debugger attached = {debugpy.is_client_connected()}')
+
+print("Argument 1: %s" % args.input_data)
+print("Argument 2: %s" % args.output_train)
+
+if not (args.output_train is None):
+    os.makedirs(args.output_train, exist_ok=True)
+    print("%s created" % args.output_train)
+```
+
+### <a name="configure-ml-pipeline"></a>Настройка конвейера машинного обучения
+
+Чтобы предоставить пакеты Python, необходимые для запуска дебугпи и получения контекста выполнения, создайте среду и задайте `pip_packages=['debugpy', 'azureml-sdk==<SDK-VERSION>']` . Измените версию пакета SDK, чтобы она соответствовала используемой. В следующем фрагменте кода показано, как создать среду.
+
+```python
+# Use a RunConfiguration to specify some additional requirements for this step.
+from azureml.core.runconfig import RunConfiguration
+from azureml.core.conda_dependencies import CondaDependencies
+from azureml.core.runconfig import DEFAULT_CPU_IMAGE
+
+# create a new runconfig object
+run_config = RunConfiguration()
+
+# enable Docker 
+run_config.environment.docker.enabled = True
+
+# set Docker base image to the default CPU-based image
+run_config.environment.docker.base_image = DEFAULT_CPU_IMAGE
+
+# use conda_dependencies.yml to create a conda environment in the Docker image for execution
+run_config.environment.python.user_managed_dependencies = False
+
+# specify CondaDependencies obj
+run_config.environment.python.conda_dependencies = CondaDependencies.create(conda_packages=['scikit-learn'],
+                                                                           pip_packages=['debugpy', 'azureml-sdk==<SDK-VERSION>'])
+```
+
+В разделе [Настройка скриптов Python](#configure-python-scripts) в скрипты, используемые этапами КОНВЕЙЕРа машинного обучения, были добавлены новые аргументы. В следующем фрагменте кода показано, как использовать эти аргументы, чтобы включить отладку для компонента и установить время ожидания. Здесь также показано, как использовать созданную ранее среду, задав `runconfig=run_config` следующие параметры.
+
+```python
+# Use RunConfig from a pipeline step
+step1 = PythonScriptStep(name="train_step",
+                         script_name="train.py",
+                         arguments=['--remote_debug', '--remote_debug_connection_timeout', 300,'--remote_debug_client_ip','<VS-CODE-CLIENT-IP>','--remote_debug_port',5678],
+                         compute_target=aml_compute,
+                         source_directory=source_directory,
+                         runconfig=run_config,
+                         allow_reuse=False)
+```
+
+При выполнении конвейера каждый шаг создает дочерний запуск. Если включена отладка, то измененный сценарий записывает в журнал сведения, аналогичные следующему тексту в `70_driver_log.txt` для дочернего запуска:
+
+```text
+Timeout for debug connection: 300
+ip_address: 10.3.0.5
+```
+
+Сохраните `ip_address` значение. Они будут использоваться в следующем разделе.
+
+> [!TIP]
+> Вы также можете найти IP-адрес из журналов выполнения для дочернего выполнения этого шага конвейера. Дополнительные сведения о просмотре этих сведений см. в статье [мониторинг запусков и метрик эксперимента машинного обучения Azure](how-to-track-experiments.md).
+
+### <a name="configure-development-environment"></a>Настройка среды разработки
+
+1. Чтобы установить дебугпи в среде разработки VS Code, используйте следующую команду:
+
+    ```bash
+    python -m pip install --upgrade debugpy
+    ```
+
+    Дополнительные сведения об использовании дебугпи с VS Code см. в разделе [Удаленная отладка](https://code.visualstudio.com/docs/python/debugging#_debugging-by-attaching-over-a-network-connection).
+
+1. Чтобы настроить VS Code для взаимодействия с Машинное обучение Azure вычислений, в котором работает отладчик, создайте новую конфигурацию отладки:
+
+    1. В VS Code выберите меню __Отладка__, а затем щелкните __Открыть конфигурации__. Откроется файл с именем __launch.json__.
+
+    1. В __launch.jsв__ файле найдите строку, содержащую `"configurations": [` и вставьте следующий текст после него. Измените `"host": "<IP-ADDRESS>"` запись на IP-адрес, возвращенный в журналах из предыдущего раздела. Измените `"localRoot": "${workspaceFolder}/code/step"` запись на локальный каталог, содержащий копию отлаживаемого скрипта:
+
+        ```json
+        {
+            "name": "Azure Machine Learning Compute: remote debug",
+            "type": "python",
+            "request": "attach",
+            "port": 5678,
+            "host": "<IP-ADDRESS>",
+            "redirectOutput": true,
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}/code/step1",
+                    "remoteRoot": "."
+                }
+            ]
+        }
+        ```
+
+        > [!IMPORTANT]
+        > Если в разделе конфигурации уже есть другие записи, добавьте запятую (,) после вставленного кода.
+
+        > [!TIP]
+        > Рекомендуется, особенно для конвейеров, размещать ресурсы для скриптов в отдельных каталогах, чтобы код был важен только для каждого из шагов. В этом примере `localRoot` Пример значения ссылается на `/code/step1` .
+        >
+        > При отладке нескольких скриптов в разных каталогах создайте отдельный раздел конфигурации для каждого скрипта.
+
+    1. Сохраните файл __launch.json__.
+
+### <a name="connect-the-debugger"></a>Подключение отладчика
+
+1. Откройте VS Code и откройте локальную копию скрипта.
+2. Задайте точки останова, где сценарий должен останавливаться после присоединения.
+3. Пока в дочернем процессе выполняется сценарий, а в `Timeout for debug connection` журналах отображается, используйте клавишу F5 или выберите __Отладка__. При появлении запроса выберите конфигурацию __удаленной отладки машинное обучение Azure вычисление: Удаленная отладка__ . Можно также выбрать значок отладки на боковой панели, в раскрывающемся меню Отладка выберите __машинное обучение Azure: Удаленная отладка__ , а затем с помощью зеленой стрелки присоединить отладчик.
+
+    На этом этапе VS Code подключается к дебугпи на кластерном узле и останавливается в точке останова, заданной ранее. Теперь вы можете пошагово выполнять код, просматривать переменные и т. д.
+
+    > [!NOTE]
+    > Если в журнале отображается запись, то `Debugger attached = False` время ожидания истекает, и скрипт продолжает работу без отладчика. Снова отправьте конвейер и Подключите отладчик после `Timeout for debug connection` сообщения и до истечения времени ожидания.
+
+## <a name="debug-and-troubleshoot-deployments"></a>Отладка и устранение неполадок развертывания
+
+В некоторых случаях может потребоваться интерактивная отладка кода Python, содержащегося в развертывании модели. Например, если начальный сценарий не работает и причину невозможно определить с помощью дополнительного ведения журнала. С помощью VS Code и дебугпи можно присоединяться к коду, выполняющемуся в контейнере DOCKER.
+
+> [!IMPORTANT]
+> Этот метод отладки не работает при использовании `Model.deploy()` и `LocalWebservice.deploy_configuration` для развертывания модели в локальной среде. В этом случае необходимо создать образ, используя метод [Model.package()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#package-workspace--models--inference-config-none--generate-dockerfile-false-).
+
+Для локальных развертываний веб-службы требуется рабочая установка Docker в локальной системе. Дополнительные сведения об использовании Docker см. в [соответствующей документации](https://docs.docker.com/). Обратите внимание, что при работе с экземплярами вычислений DOCKER уже установлен.
+
+### <a name="configure-development-environment"></a>Настройка среды разработки
+
+1. Чтобы установить дебугпи в локальной среде разработки VS Code, используйте следующую команду:
+
+    ```bash
+    python -m pip install --upgrade debugpy
+    ```
+
+    Дополнительные сведения об использовании дебугпи с VS Code см. в разделе [Удаленная отладка](https://code.visualstudio.com/docs/python/debugging#_debugging-by-attaching-over-a-network-connection).
+
+1. Чтобы настроить VS Code для взаимодействия с образом Docker, создайте новую конфигурацию отладки:
+
+    1. В VS Code выберите меню __Отладка__, а затем щелкните __Открыть конфигурации__. Откроется файл с именем __launch.json__.
+
+    1. В файле __launch.json__ найдите строку, содержащую `"configurations": [`, и вставьте после нее следующий текст:
+
+        ```json
+        {
+            "name": "Azure Machine Learning Deployment: Docker Debug",
+            "type": "python",
+            "request": "attach",
+            "connect": {
+                "port": 5678,
+                "host": "0.0.0.0",
+            },
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}",
+                    "remoteRoot": "/var/azureml-app"
+                }
+            ]
+        }
+        ```
+
+        > [!IMPORTANT]
+        > Если в разделе конфигурации уже есть другие записи, добавьте запятую (,) после вставленного кода.
+
+        Этот раздел присоединяется к контейнеру Docker через порт 5678.
+
+    1. Сохраните файл __launch.json__.
+
+### <a name="create-an-image-that-includes-debugpy"></a>Создание образа, включающего дебугпи
+
+1. Измените среду conda для развертывания, чтобы она включала дебугпи. В следующем примере демонстрируется добавление с помощью параметра `pip_packages`:
+
+    ```python
+    from azureml.core.conda_dependencies import CondaDependencies 
+
+
+    # Usually a good idea to choose specific version numbers
+    # so training is made on same packages as scoring
+    myenv = CondaDependencies.create(conda_packages=['numpy==1.15.4',
+                                'scikit-learn==0.19.1', 'pandas==0.23.4'],
+                                 pip_packages = ['azureml-defaults==1.0.83', 'debugpy'])
+
+    with open("myenv.yml","w") as f:
+        f.write(myenv.serialize_to_string())
+    ```
+
+1. Чтобы запустить дебугпи и дождаться подключения при запуске службы, добавьте следующее в начало `score.py` файла:
+
+    ```python
+    import debugpy
+    # Allows other computers to attach to debugpy on this IP address and port.
+    debugpy.listen(('0.0.0.0', 5678))
+    # Wait 30 seconds for a debugger to attach. If none attaches, the script continues as normal.
+    debugpy.wait_for_client()
+    print("Debugger attached...")
+    ```
+
+1. Создайте образ на основе определения среды и извлеките его в локальный реестр. 
+
+    > [!NOTE]
+    > В этом примере предполагается, что `ws` указывает на вашу рабочую область Машинное обучение Azure, а `model` представляет собой развертываемую модель. Файл `myenv.yml` содержит зависимости conda, созданные на шаге 1.
+
+    ```python
+    from azureml.core.conda_dependencies import CondaDependencies
+    from azureml.core.model import InferenceConfig
+    from azureml.core.environment import Environment
+
+
+    myenv = Environment.from_conda_specification(name="env", file_path="myenv.yml")
+    myenv.docker.base_image = None
+    myenv.docker.base_dockerfile = "FROM mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04"
+    inference_config = InferenceConfig(entry_script="score.py", environment=myenv)
+    package = Model.package(ws, [model], inference_config)
+    package.wait_for_creation(show_output=True)  # Or show_output=False to hide the Docker build logs.
+    package.pull()
+    ```
+
+    После создания и скачивания образа путь к нему (включая репозиторий, имя и тег, который в данном случае также является хэш-кодом) отображается в сообщении следующего вида:
+
+    ```text
+    Status: Downloaded newer image for myregistry.azurecr.io/package@sha256:<image-digest>
+    ```
+
+1. Чтобы упростить работу с образом, используйте приведенную ниже команду для добавления тега. Замените `myimagepath` значением расположения из предыдущего шага.
+
+    ```bash
+    docker tag myimagepath debug:1
+    ```
+
+    На остальных шагах для обозначения расположения локального образа вы можете указывать `debug:1` вместо значения полного пути.
+
+### <a name="debug-the-service"></a>Отладка службы
+
+> [!TIP]
+> Если для подключения дебугпи в файле задано время ожидания `score.py` , необходимо подключить VS Code к сеансу отладки до истечения времени ожидания. Запустите VS Code, откройте локальную копию `score.py`, установите точку останова и подготовьте ее к работе, прежде чем выполнять действия, описанные в этом разделе.
+>
+> Дополнительные сведения об отладке и установке точек останова см. на [этой странице](https://code.visualstudio.com/Docs/editor/debugging).
+
+1. Чтобы запустить контейнер Docker с помощью образа, используйте следующую команду:
+
+    ```bash
+    docker run -it --name debug -p 8000:5001 -p 5678:5678 -v <my_path_to_score.py>:/var/azureml-apps/score.py debug:1 /bin/bash
+    ```
+
+    Это присоединяет ваш `score.py` локальный объект к контейнеру. Таким образом, любые изменения, внесенные в редакторе, автоматически отражаются в контейнере.
+
+1. В контейнере выполните следующую команду в оболочке.
+
+    ```bash
+    runsvdir /var/runit
+    ```
+
+1. Чтобы присоединить VS Code к дебугпи в контейнере, откройте VS Code и используйте клавишу F5 или выберите __Отладка__. При появлении запроса выберите __развертывание машинное обучение Azure: конфигурация отладки DOCKER__ . Можно также выбрать значок отладки на боковой панели, в раскрывающемся меню Отладка __машинное обучение Azure развертывание: DOCKER__ , а затем с помощью зеленой стрелки присоединить отладчик.
+
+    ![Значок отладки, кнопка запуска отладки и селектор конфигурации](./media/how-to-troubleshoot-deployment/start-debugging.png)
+
+На этом этапе VS Code подключается к дебугпи в контейнере DOCKER и останавливается в точке останова, заданной ранее. Теперь вы можете пошагово выполнять код, просматривать переменные и т. д.
+
+Дополнительные сведения об использовании VS Code для отладки Python см. на странице [Отладка кода Python](https://docs.microsoft.com/visualstudio/python/debugging-python-in-visual-studio?view=vs-2019).
+
+### <a name="stop-the-container"></a>Остановка контейнера
+
+Чтобы остановить контейнер, используйте следующую команду:
+
+```bash
+docker stop debug
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Теперь, когда вы настроили Visual Studio Code удаленно, вы можете использовать вычислительный экземпляр в качестве удаленного вычислений от Visual Studio Code для интерактивной отладки кода. 
+
+[Руководство. Обучение модели Машинного обучения](tutorial-1st-experiment-sdk-train.md) — демонстрация использования вычислительного экземпляра со встроенной записной книжкой.

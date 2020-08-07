@@ -8,16 +8,20 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 07/23/2020
 ms.author: mbullwin
-ms.openlocfilehash: 044786d6a6aa4f9f3d163090c0edfa3832023b10
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: 1d85f011289bfa27bcf1e94d8da8cd7a32092c2c
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87116966"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87799571"
 ---
 # <a name="azure-monitor-workbooks"></a>Изучение и предоставление общего доступа к данным об использовании c интерактивными книгами в Application Insights
 
 Книги предоставляют гибкий холст для анализа данных и создания полнофункциональных визуальных отчетов в портал Azure. Они позволяют переходить к нескольким источникам данных из Azure и объединять их в единый интерактивный интерфейс. 
+
+Ниже приведено видео пошаговое руководство по созданию книг.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4B4Ap]
 
 ## <a name="data-sources"></a>Источники данных
 
@@ -39,10 +43,10 @@ ms.locfileid: "87116966"
 
 Книги предоставляют широкий набор возможностей для визуализации данных. Подробные примеры каждого типа визуализации см. в приведенных ниже ссылках на примеры.
 
-* [Текстовые](workbooks-visualizations.md#text)
+* [Текст](workbooks-visualizations.md#text)
 * [Создание графиков](workbooks-visualizations.md#charts)
 * [Сетки](workbooks-visualizations.md#grids)
-* [Перевернуто](workbooks-visualizations.md#tiles)
+* [Плитки](workbooks-visualizations.md#tiles)
 * [Деревья](workbooks-visualizations.md#trees)
 * [Графы](workbooks-visualizations.md#graphs)
 
@@ -124,7 +128,7 @@ ms.locfileid: "87116966"
 
 Создав собственные шаблоны книг, вы можете поделиться им с более широким сообществом. Чтобы узнать больше, а также просмотреть другие шаблоны, которые не входят в представление коллекции по умолчанию Azure Monitor, посетите наш [репозиторий GitHub](https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/README.md). Чтобы просмотреть существующие книги, посетите [библиотеку книг](https://github.com/microsoft/Application-Insights-Workbooks/tree/master/Workbooks) на сайте GitHub.
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 * [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.

@@ -7,7 +7,7 @@ author: brjohnstmsft
 ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 08/05/2020
 translation.priority.mt:
 - de-de
 - es-es
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 68e6ec0af0b24771b21dac35c944fc7fa098b404
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 333e48ff963ec42dd2ee00956fa046a5a038c099
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86203112"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87903788"
 ---
 # <a name="odata-orderby-syntax-in-azure-cognitive-search"></a>Синтаксис $orderby OData в Azure Когнитивный поиск
 
@@ -50,7 +50,9 @@ sortable_function ::= geo_distance_call | 'search.score()'
 > [!NOTE]
 > Полный EBNF см. в [справочнике по синтаксису выражений OData для Azure когнитивный Поиск](search-query-odata-syntax-reference.md) .
 
-Каждое предложение имеет критерий сортировки, при необходимости за которым следует направление сортировки ( `asc` для по возрастанию или `desc` по убыванию). Если не указать направление, по умолчанию используется значение по возрастанию. Критерий сортировки может быть либо путем к полю, `sortable` либо вызовом либо [`geo.distance`](search-query-odata-geo-spatial-functions.md) функций, либо [`search.score`](search-query-odata-search-score-function.md) .
+Каждое предложение имеет критерий сортировки, при необходимости за которым следует направление сортировки ( `asc` для по возрастанию или `desc` по убыванию). Если не указать направление, по умолчанию используется значение по возрастанию. Если в поле есть значения NULL, то значения NULL отображаются первыми, если сортировка имеет тип `asc` и Last, если сортировка имеет значение `desc` .
+
+Критерий сортировки может быть либо путем к полю, `sortable` либо вызовом либо [`geo.distance`](search-query-odata-geo-spatial-functions.md) функций, либо [`search.score`](search-query-odata-search-score-function.md) .
 
 Если несколько документов имеют одинаковые условия сортировки и `search.score` функция не используется (например, если сортировка выполняется по числовому `Rating` полю, а все три документа имеют оценку 4), то в убывающем порядке они будут разорваны. Если оценки документа одинаковы (например, если в запросе не указан запрос полнотекстового поиска), относительный порядок связанных документов является неопределенным.
 
@@ -86,7 +88,7 @@ sortable_function ::= geo_distance_call | 'search.score()'
     $orderby=search.score() desc,Rating desc,geo.distance(Location, geography'POINT(-122.131577 47.678581)') asc
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дальнейшие шаги  
 
 - [Работа с результатами поиска в Azure Когнитивный поиск](search-pagination-page-layout.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

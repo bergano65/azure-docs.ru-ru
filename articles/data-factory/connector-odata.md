@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 06/12/2020
+ms.date: 08/05/2020
 ms.author: jingwang
-ms.openlocfilehash: 12a858364fc58972894f9fb365955496f8832246
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 10121243961d4c81ecc67d7453019c26743fe610
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84987790"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87845771"
 ---
 # <a name="copy-data-from-an-odata-source-by-using-azure-data-factory"></a>Копирование данных из источника OData с помощью Фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -55,7 +55,7 @@ ms.locfileid: "84987790"
 
 Для связанной службы OData поддерживаются следующие свойства.
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства **type** необходимо задать значение **OData**. |Да |
 | url | Корневой URL-адрес службы OData. |Да |
@@ -68,7 +68,8 @@ ms.locfileid: "84987790"
 | servicePrincipalEmbeddedCert | Укажите сертификат в кодировке base64 приложения, зарегистрированного в Azure Active Directory. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет |
 | servicePrincipalEmbeddedCertPassword | Если ваш сертификат защищен паролем, укажите пароль сертификата. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md).  | Нет|
 | tenant | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Его можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Нет |
-| aadResourceId | Укажите ресурс AAD, для которого запрашивается авторизация.| нет |
+| aadResourceId | Укажите ресурс AAD, для которого запрашивается авторизация.| Нет |
+| азуреклаудтипе | Для проверки подлинности субъекта-службы укажите тип облачной среды Azure, в которой зарегистрировано приложение AAD. <br/> Допустимые значения: **азурепублик**, **AzureChina**, **AzureUsGovernment**и **азурежермани**. По умолчанию используется облачная среда фабрики данных. | Нет |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе [Предварительные условия](#prerequisites). Если не указано другое, по умолчанию используется интегрированная Azure Integration Runtime. |Нет |
 
 **Пример 1. Использование анонимной проверки подлинности**
@@ -240,7 +241,7 @@ ms.locfileid: "84987790"
 
 Чтобы скопировать данные из OData, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство **Type** источника действия копирования должно иметь значение **одатасаурце**. | Да |
 | query | Параметры запроса OData для фильтрации данных. Например, `"$select=Name,Description&$top=5"`.<br/><br/>**Примечание.** Соединитель OData копирует данные из объединенного URL-адреса: `[URL specified in linked service]/[path specified in dataset]?[query specified in copy activity source]`. Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |

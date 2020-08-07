@@ -10,13 +10,13 @@ ms.reviewer: nibaccam
 author: nibaccam
 ms.author: nibaccam
 ms.date: 04/24/2020
-ms.custom: tracking-python
-ms.openlocfilehash: 6234e9efe4f6dd122a22ee834ef9c35269eea95f
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-python
+ms.openlocfilehash: ff335cd6276083eb76efd74a4921d2bae96cd7c9
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500986"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87875308"
 ---
 # <a name="secure-data-access-in-azure-machine-learning"></a>Защита доступа к данным в Машинное обучение Azure
 
@@ -115,7 +115,7 @@ ms.locfileid: "87500986"
 
 Дополнительные сведения о способах обнаружения и оповещения о смещении данных для новых данных в наборе данных см. в статье [Создание монитора набора данных](how-to-monitor-datasets.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
 
 + Создайте набор данных в Машинное обучение Azure Studio или с помощью пакета SDK для Python, [выполнив следующие действия.](how-to-create-register-datasets.md)
 + Испытайте примеры обучения наборов данных с помощью [примеров записных книжек](https://aka.ms/dataset-tutorial).

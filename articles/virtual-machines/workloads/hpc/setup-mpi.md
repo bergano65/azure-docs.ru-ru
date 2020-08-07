@@ -10,24 +10,32 @@ tags: azure-resource-manager
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 08/04/2020
 ms.author: amverma
-ms.openlocfilehash: 3ca9a21d105be6f17c1aa40ae1a0ab7f01c38184
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.reviewer: cynthn
+ms.openlocfilehash: 1b2d707569221a79ad53f04bcc379f5067ed9b04
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87083418"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905539"
 ---
 # <a name="set-up-message-passing-interface-for-hpc"></a>Настройка интерфейса передачи сообщений для HPC
 
-Рабочие нагрузки интерфейса передачи сообщений (MPI) являются важной частью традиционных рабочих нагрузок HPC. Размеры виртуальных машин с поддержкой SR-IOV в Azure позволяют использовать почти любую разновидность MPI. 
+[Интерфейс передачи сообщений (MPI)](https://en.wikipedia.org/wiki/Message_Passing_Interface) — это открытая библиотека и де-факто Standard для параллелизации распределенной памяти. Обычно он используется во многих рабочих нагрузках HPC. Рабочие нагрузки HPC на виртуальных машинах серии [H](../../sizes-hpc.md) и серии [N](../../sizes-gpu.md) с [поддержкой RDMA](../../sizes-hpc.md#rdma-capable-instances) могут использовать MPI для обмена данными через сеть InfiniBand с низкой задержкой и с высокой пропускной способностью.
 
-Для выполнения заданий MPI на виртуальных машинах необходимо настроить ключи секций (p-ключи) в клиенте. Чтобы узнать о том, как определить значения p-ключа, выполните действия, описанные в разделе [Обнаружение ключей разделов](#discover-partition-keys) .
+Размеры виртуальных машин с поддержкой SR-IOV в Azure (HBv2, хб, HC, NCv3, NDv2) позволяют использовать почти любую разновидность MPI с Mellanox ОФЕД. На виртуальных машинах, не использующих SR-IOV, поддерживаемые реализации MPI используют интерфейс Microsoft Network Direct (ND) для обмена данными между виртуальными машинами. Таким образом, поддерживаются только версии Microsoft MPI (MS-MPI) 2012 R2 и более поздних версий и Intel MPI 5. x. Более поздние версии (2017, 2018) библиотеки Intel MPI Runtime могут быть несовместимыми с драйверами Azure RDMA.
+
+Для [виртуальных машин с поддержкой RDMA](../../sizes-hpc.md#rdma-capable-instances), поддерживающих SR-IOV, [CentOS-HPC версии 7,6 или более поздней](https://techcommunity.microsoft.com/t5/Azure-Compute/CentOS-HPC-VM-Image-for-SR-IOV-enabled-Azure-HPC-VMs/ba-p/665557) версии образы виртуальных машин в Marketplace оптимизируются и предварительно загружаются с драйверами офед для RDMA и различными часто используемыми библиотеками MPI и многосторонними средами, а также представляют собой самый простой способ начать работу.
+
+Хотя здесь приведены примеры для RHEL/CentOS, но эти действия являются общими и могут использоваться для любой совместимой операционной системы Linux, такой как Ubuntu (16,04, 18,04 19,04, 20,04) и SLES (12 SP4 и 15). Дополнительные примеры настройки других реализаций MPI на других реализациях дистрибутивов см. в [репозитории азпк-Images](https://github.com/Azure/azhpc-images/blob/master/ubuntu/ubuntu-18.x/ubuntu-18.04-hpc/install_mpis.sh).
+
+> [!NOTE]
+> Для выполнения заданий MPI на виртуальных машинах с поддержкой SR-IOV необходимо настроить ключи разделов (p-ключи) в клиенте для изоляции и безопасности. Выполните действия, описанные в разделе [Обнаружение ключей разделов](#discover-partition-keys) , чтобы узнать о том, как определить значения p-ключа и правильно настроить их для задания MPI.
 
 ## <a name="ucx"></a>уккс
 
-[Уккс](https://github.com/openucx/ucx) обеспечивает наилучшую производительность при работе с Мпич и опенмпи.
+[Единая связь X (уккс)](https://github.com/openucx/ucx) — это платформа интерфейсов API взаимодействия для HPC. Она оптимизирована для связи MPI через InfiniBand и работает со многими реализациями MPI, такими как Опенмпи и МПИЧ.
 
 ```bash
 wget https://github.com/openucx/ucx/releases/download/v1.4.0/ucx-1.4.0.tar.gz
@@ -37,9 +45,30 @@ cd ucx-1.4.0
 make -j 8 && make install
 ```
 
+## <a name="hpc-x"></a>HPC-X
+
+[Набор программного обеспечения HPC-X](https://www.mellanox.com/products/hpc-x-toolkit) содержит УККС и хколл.
+
+```bash
+HPCX_VERSION="v2.6.0"
+HPCX_DOWNLOAD_URL=https://azhpcstor.blob.core.windows.net/azhpc-images-store/hpcx-v2.6.0-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64.tbz
+get --retry-connrefused --tries=3 --waitretry=5 $HPCX_DOWNLOAD_URL
+tar -xvf hpcx-${HPCX_VERSION}-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64.tbz
+mv hpcx-${HPCX_VERSION}-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64 ${INSTALL_PREFIX}
+HPCX_PATH=${INSTALL_PREFIX}/hpcx-${HPCX_VERSION}-gcc-MLNX_OFED_LINUX-5.0-1.0.0.0-redhat7.7-x86_64
+```
+
+Запуск HPC-X
+
+```bash
+${HPCX_PATH}mpirun -np 2 --map-by ppr:2:node -x UCX_TLS=rc ${HPCX_PATH}/ompi/tests/osu-micro-benchmarks-5.3.2/osu_latency
+```
+
 ## <a name="openmpi"></a>опенмпи
 
-Установите УККС, как описано выше.
+Установите УККС, как описано выше. ХКОЛЛ является частью [набора программного обеспечения HPC-X](https://www.mellanox.com/products/hpc-x-toolkit) и не требует специальной установки.
+
+Установите Опенмпи из пакетов, доступных в репозитории.
 
 ```bash
 sudo yum install –y openmpi
@@ -48,39 +77,46 @@ sudo yum install –y openmpi
 Сборка Опенмпи.
 
 ```bash
-wget https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.0.tar.gz
-tar -xvf openmpi-4.0.0.tar.gz
-cd openmpi-4.0.0
-./configure --with-ucx=<ucx-install-path> --prefix=<ompi-install-path>
-make -j 8 && make install
+OMPI_VERSION="4.0.3"
+OMPI_DOWNLOAD_URL=https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-${OMPI_VERSION}.tar.gz
+wget --retry-connrefused --tries=3 --waitretry=5 $OMPI_DOWNLOAD_URL
+tar -xvf openmpi-${OMPI_VERSION}.tar.gz
+cd openmpi-${OMPI_VERSION}
+./configure --prefix=${INSTALL_PREFIX}/openmpi-${OMPI_VERSION} --with-ucx=${UCX_PATH} --with-hcoll=${HCOLL_PATH} --enable-mpirun-prefix-by-default --with-platform=contrib/platform/mellanox/optimized && make -j$(nproc) && make install
 ```
 
 Запустите Опенмпи.
 
 ```bash
-<ompi-install-path>/bin/mpirun -np 2 --map-by node --hostfile ~/hostfile -mca pml ucx --mca btl ^vader,tcp,openib -x UCX_NET_DEVICES=mlx5_0:1  -x UCX_IB_PKEY=0x0003  ./osu_latency
+${INSTALL_PREFIX}/bin/mpirun -np 2 --map-by node --hostfile ~/hostfile -mca pml ucx --mca btl ^vader,tcp,openib -x UCX_NET_DEVICES=mlx5_0:1  -x UCX_IB_PKEY=0x0003  ./osu_latency
 ```
 
 Проверьте ключ раздела, как упоминалось выше.
 
+## <a name="intel-mpi"></a>Intel MPI
+
+[Загрузите Intel MPI](https://software.intel.com/mpi-library/choose-download).
+
+Измените переменную среды I_MPI_FABRICS в зависимости от версии. Для Intel MPI 2018 используйте, `I_MPI_FABRICS=shm:ofa` а для 2019 — `I_MPI_FABRICS=shm:ofi` .
+
+По умолчанию закрепление процессов работает правильно для 15, 30 и 60 ППН.
+
 ## <a name="mpich"></a>MPICH
 
-Установите УККС, как описано выше.
-
-Сборка МПИЧ.
+Установите УККС, как описано выше. Сборка МПИЧ.
 
 ```bash
 wget https://www.mpich.org/static/downloads/3.3/mpich-3.3.tar.gz
 tar -xvf mpich-3.3.tar.gz
 cd mpich-3.3
-./configure --with-ucx=<ucx-install-path> --prefix=<mpich-install-path> --with-device=ch4:ucx
+./configure --with-ucx=${UCX_PATH} --prefix=${INSTALL_PREFIX} --with-device=ch4:ucx
 make -j 8 && make install
 ```
 
 Выполнение МПИЧ.
 
 ```bash
-<mpich-install-path>/bin/mpiexec -n 2 -hostfile ~/hostfile -env UCX_IB_PKEY=0x0003 -bind-to hwthread ./osu_latency
+${INSTALL_PREFIX}/bin/mpiexec -n 2 -hostfile ~/hostfile -env UCX_IB_PKEY=0x0003 -bind-to hwthread ./osu_latency
 ```
 
 Проверьте ключ раздела, как упоминалось выше.
@@ -93,14 +129,14 @@ make -j 8 && make install
 wget http://mvapich.cse.ohio-state.edu/download/mvapich/mv2/mvapich2-2.3.tar.gz
 tar -xv mvapich2-2.3.tar.gz
 cd mvapich2-2.3
-./configure --prefix=<mvapich2-install-path>
+./configure --prefix=${INSTALL_PREFIX}
 make -j 8 && make install
 ```
 
 Выполнение MVAPICH2.
 
 ```bash
-<mvapich2-install-path>/bin/mpirun_rsh -np 2 -hostfile ~/hostfile MV2_CPU_MAPPING=48 ./osu_latency
+${INSTALL_PREFIX}/bin/mpirun_rsh -np 2 -hostfile ~/hostfile MV2_CPU_MAPPING=48 ./osu_latency
 ```
 
 ## <a name="platform-mpi-community-edition"></a>Платформа MPI Community Edition
@@ -116,17 +152,9 @@ sudo ./platform_mpi-09.01.04.03r-ce.bin
 
 Выполните процедуру установки.
 
-## <a name="intel-mpi"></a>Intel MPI
-
-[Загрузите Intel MPI](https://software.intel.com/mpi-library/choose-download).
-
-Измените переменную среды I_MPI_FABRICS в зависимости от версии. Для Intel MPI 2018 используйте, `I_MPI_FABRICS=shm:ofa` а для 2019 — `I_MPI_FABRICS=shm:ofi` .
-
-По умолчанию закрепление процессов работает правильно для 15, 30 и 60 ППН.
-
 ## <a name="osu-mpi-benchmarks"></a>Тесты производительности осу MPI
 
-[Скачайте тесты производительности осу MPI](http://mvapich.cse.ohio-state.edu/benchmarks/) и распаковать.
+Скачайте [тесты производительности осу MPI](http://mvapich.cse.ohio-state.edu/benchmarks/) и распаковать.
 
 ```bash
 wget http://mvapich.cse.ohio-state.edu/download/mvapich/osu-micro-benchmarks-5.5.tar.gz
@@ -146,7 +174,7 @@ make
 
 ## <a name="discover-partition-keys"></a>Обнаружение ключей разделов
 
-Обнаружение ключей разделов (p-Keys) для взаимодействия с другими виртуальными машинами в рамках одного клиента (группы доступности или масштабируемого набора ВМ).
+Обнаружение ключей разделов (p-Keys) для взаимодействия с другими виртуальными машинами в пределах одного клиента (группы доступности или масштабируемого набора виртуальных машин).
 
 ```bash
 /sys/class/infiniband/mlx5_0/ports/1/pkeys/0
@@ -164,7 +192,7 @@ cat /sys/class/infiniband/mlx5_0/ports/1/pkeys/1
 
 Используйте раздел, отличный от ключа раздела по умолчанию (0x7FFF). УККС требует, чтобы был сброшен параметр p-Key. Например, задайте UCX_IB_PKEY как 0x000b для 0x800b.
 
-Также обратите внимание, что пока существует клиент (AVSet или VMSS), PKEY остается неизменным. Это справедливо даже при добавлении или удалении узлов. Новые клиенты получают разные PKEY.
+Кроме того, обратите внимание, что если клиент (Группа доступности или масштабируемый набор виртуальных машин) существует, то PKEY не изменится. Это справедливо даже при добавлении или удалении узлов. Новые клиенты получают разные PKEY.
 
 
 ## <a name="set-up-user-limits-for-mpi"></a>Настройка ограничений пользователей для MPI
@@ -179,7 +207,6 @@ cat << EOF | sudo tee -a /etc/security/limits.conf
 *               soft    nofile          65535
 EOF
 ```
-
 
 ## <a name="set-up-ssh-keys-for-mpi"></a>Настройка ключей SSH для MPI
 
@@ -198,6 +225,9 @@ chmod 644 /home/$USER/.ssh/config
 
 В приведенном выше синтаксисе предполагается наличие общего домашнего каталога, иначе каталог. ssh должен быть скопирован на каждый узел.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Дополнительные сведения о [HPC](/azure/architecture/topics/high-performance-computing/) в Azure.
+- Сведения о виртуальных машинах серии [H](../../sizes-hpc.md) и [N](../../sizes-gpu.md) с [поддержкой InfiniBand](../../sizes-hpc.md#rdma-capable-instances)
+- Ознакомьтесь с обзором [ХБ](hb-series-overview.md) и [описанием серии HC](hc-series-overview.md) , чтобы узнать о оптимальной настройке рабочих нагрузок для повышения производительности и масштабируемости.
+- Ознакомьтесь с последними объявлениями и некоторыми примерами HPC и результатами в [блогах сообщества разработчиков Azure](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+- Для более высокого уровня архитектуры выполнения рабочих нагрузок HPC см. статью [высокопроизводительные вычисления (HPC) в Azure](/azure/architecture/topics/high-performance-computing/).

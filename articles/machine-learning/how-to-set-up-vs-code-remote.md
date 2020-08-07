@@ -9,31 +9,31 @@ ms.topic: conceptual
 ms.custom: how-to
 ms.author: jmartens
 author: j-martens
-ms.date: 07/09/2020
-ms.openlocfilehash: dfb8dac1b9027acd01b3c13c919d9c3cd8368819
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.date: 08/06/2020
+ms.openlocfilehash: 37d0ec0295d76f740b2e8bf70ae72f0c95e68d14
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320125"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87904485"
 ---
 # <a name="debug-interactively-on-an-azure-machine-learning-compute-instance-with-vs-code-remote-preview"></a>Отладка в интерактивном режиме на Машинное обучение Azure вычислительного экземпляра с VS Code удаленно (Предварительная версия)
 
-В этой статье вы узнаете, как настроить Visual Studio Code удаленно на Машинное обучение Azure вычислительного экземпляра, чтобы можно было выполнять **интерактивную отладку кода** из VS Code. 
+В этой статье вы узнаете, как настроить Visual Studio Code удаленное расширение на Машинное обучение Azure вычислительного экземпляра, чтобы можно было выполнять **интерактивную отладку кода** из VS Code.
 
-+ [Вычислительный экземпляр машинное обучение Azure](concept-compute-instance.md) — это полностью управляемая облачная Рабочая станция для специалистов по обработке и анализу данных, которая предоставляет ИТ-администраторам возможности управления и готовности предприятия. 
+* [Вычислительный экземпляр машинное обучение Azure](concept-compute-instance.md) — это полностью управляемая облачная Рабочая станция для специалистов по обработке и анализу данных, которая предоставляет ИТ-администраторам возможности управления и готовности предприятия. 
 
-
-+ [Visual Studio Code удаленный](https://code.visualstudio.com/docs/remote/remote-overview) Разработка позволяет использовать контейнер, удаленный компьютер или подсистему Windows для Linux (WSL) в качестве полнофункциональной среды разработки. 
+* [Visual Studio Code удаленный](https://code.visualstudio.com/docs/remote/remote-overview) Разработка позволяет использовать контейнер, удаленный компьютер или подсистему Windows для Linux (WSL) в качестве полнофункциональной среды разработки. 
 
 ## <a name="prerequisite"></a>Предварительные требования  
 
-На платформах Windows необходимо [установить клиент SSH, совместимый с OpenSSH](https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-client) , если он еще не существует. 
+* Вычислительный экземпляр с поддержкой SSH. Дополнительные сведения [см. в разделе "создание вычислительного экземпляра".](https://docs.microsoft.com/azure/machine-learning/concept-compute-instance#create)
+* На платформах Windows необходимо [установить клиент SSH, совместимый с OpenSSH](https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-client) , если он еще не существует. 
 
 > [!Note]
 > Выводимое значение не поддерживается в Windows, так как команда SSH должна находиться в пути. 
 
-## <a name="get-ip-and-ssh-port"></a>Получение IP-адреса и порта SSH 
+## <a name="get-the-ip-and-ssh-port-for-your-compute-instance"></a>Получение IP-адреса и порта SSH для вычислительного экземпляра
 
 1. Перейдите в Машинное обучение Azure Studio по адресу https://ml.azure.com/ .
 
@@ -43,33 +43,37 @@ ms.locfileid: "87320125"
 1. В диалоговом окне запишите IP-адрес и порт SSH. 
 1. Сохраните закрытый ключ в каталоге ~/.СШ/на локальном компьютере. Например, откройте редактор для нового файла и вставьте ключ в: 
 
-   **Linux**: 
+   **Linux**:
+
    ```sh
    vi ~/.ssh/id_azmlcitest_rsa  
    ```
 
-   **Windows**: 
-   ```
-   notepad C:\Users\<username>\.ssh\id_azmlcitest_rsa 
+   **Windows**:
+
+   ```cmd
+   notepad C:\Users\<username>\.ssh\id_azmlcitest_rsa
    ```
 
    Закрытый ключ будет выглядеть примерно так:
-   ```
-   -----BEGIN RSA PRIVATE KEY----- 
 
-   MIIEpAIBAAKCAQEAr99EPm0P4CaTPT2KtBt+kpN3rmsNNE5dS0vmGWxIXq4vAWXD 
+   ```text
+   -----BEGIN RSA PRIVATE KEY-----
+
+   MIIEpAIBAAKCAQEAr99EPm0P4CaTPT2KtBt+kpN3rmsNNE5dS0vmGWxIXq4vAWXD
    ..... 
-   ewMtLnDgXWYJo0IyQ91ynOdxbFoVOuuGNdDoBykUZPQfeHDONy2Raw== 
+   ewMtLnDgXWYJo0IyQ91ynOdxbFoVOuuGNdDoBykUZPQfeHDONy2Raw==
 
-   -----END RSA PRIVATE KEY----- 
+   -----END RSA PRIVATE KEY-----
    ```
 
 1. Измените разрешения для файла, чтобы убедиться, что файл доступен только для чтения.  
+
    ```sh
-   chmod 600 ~/.ssh/id_azmlcitest_rsa   
+   chmod 600 ~/.ssh/id_azmlcitest_rsa
    ```
 
-## <a name="add-instance-as-a-host"></a>Добавление экземпляра в качестве узла 
+## <a name="add-instance-as-a-host"></a>Добавление экземпляра в качестве узла
 
 Откройте файл `~/.ssh/config` (Linux) или `C:\Users<username>.ssh\config` (Windows) в редакторе и добавьте новую запись, подобную следующей:
 
@@ -82,26 +86,26 @@ Host azmlci1
 
     User azureuser 
 
-    IdentityFile ~/.ssh/id_azmlcitest_rsa   
+    IdentityFile ~/.ssh/id_azmlcitest_rsa
 ```
 
-Ниже приведены некоторые сведения о полях. 
+Ниже приведены некоторые сведения о полях.
 
 |Поле|Описание:|
 |----|---------|
 |Узел|Использование любой краткой формы для вычислительного экземпляра |
 |HostName|Это IP-адрес вычислительного экземпляра |
-|Port|Это порт, показанный в диалоговом окне SSH выше |
+|Порт|Это порт, показанный в диалоговом окне SSH выше |
 |Пользователь|Это должно быть `azureuser` |
 |идентитифиле|Должен указывать на файл, в который был сохранен закрытый ключ |
 
-Теперь вы можете подключиться к вычислительному экземпляру по протоколу SSH, используя сокращенную версию, которую вы использовали ранее `ssh azmlci1` . 
+Теперь вы можете подключиться к вычислительному экземпляру по протоколу SSH, используя сокращенную версию, которую вы использовали ранее `ssh azmlci1` .
 
-## <a name="connect-vs-code-to-the-instance"></a>Подключение VS Code к экземпляру 
+## <a name="connect-vs-code-to-the-instance"></a>Подключение VS Code к экземпляру
 
 1. [Установите Visual Studio Code](https://code.visualstudio.com/).
 
-1. [Установите удаленное расширение SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh). 
+1. [Установите удаленное расширение SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh).
 
 1. Щелкните значок Remote-SSH слева, чтобы отобразить конфигурации SSH.
 
@@ -109,10 +113,10 @@ Host azmlci1
 
 1. Выберите **Подключение к узлу в текущем окне**. 
 
-С этого момента вы полностью работаете с вычислительным экземпляром, и теперь можете редактировать, отлаживать, использовать Git, использовать расширения и т. д., как и в случае с локальными Visual Studio Code. 
+С этого момента вы полностью работаете с вычислительным экземпляром, и теперь можете редактировать, отлаживать, использовать Git, использовать расширения и т. д., как и в случае с локальными Visual Studio Code.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Теперь, когда вы настроили Visual Studio Code удаленно, вы можете использовать вычислительный экземпляр в качестве удаленного вычислений от Visual Studio Code для интерактивной отладки кода. 
+Теперь, когда вы настроили Visual Studio Code удаленно, вы можете использовать вычислительный экземпляр в качестве удаленного вычислений от Visual Studio Code для [интерактивной отладки кода](how-to-debug-visual-studio-code.md).
 
 [Руководство. Обучение модели Машинного обучения](tutorial-1st-experiment-sdk-train.md) — демонстрация использования вычислительного экземпляра со встроенной записной книжкой.

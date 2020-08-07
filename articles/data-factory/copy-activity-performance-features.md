@@ -11,13 +11,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 06/15/2020
-ms.openlocfilehash: dfd439affe488805b4645211477c6d32bbbe7489
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/05/2020
+ms.openlocfilehash: 45cecccd88b0b84b478bc6fc7346cb9ef9c2f454
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84770940"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87846349"
 ---
 # <a name="copy-activity-performance-optimization-features"></a>Функции оптимизации производительности действий копирования
 
@@ -35,14 +35,14 @@ ms.locfileid: "84770940"
 |:--- |:--- |---- |
 | Между хранилищами файлов |- **Копирование из одного файла или в**него: 2-4 <br>- **Копировать из и в несколько файлов**: 2-256 в зависимости от числа и размера файлов <br><br>Например, если скопировать данные из папки с 4 большими файлами и выбрать сохранение иерархии, то максимальный эффективный Диу равен 16; При выборе объединения файла максимальный действующий Диу имеет значение 4. |От 4 до 32 в зависимости от числа и размера файлов |
 | Из хранилища файлов в хранилище, отличное от файлов |- **Копирование из одного файла**: 2-4 <br/>- **Копирование из нескольких файлов**: 2-256 в зависимости от числа и размера файлов <br/><br/>Например, если скопировать данные из папки с 4 большими файлами, максимальная эффективная Диу — 16. |- **Копирование в базу данных SQL Azure или Azure Cosmos DB**: от 4 до 16 в зависимости от уровня приемника (DTU/RUs) и шаблона исходного файла<br>- **Копирование в Azure синапсе Analytics** с помощью polybase или инструкции Copy: 2<br>— Другой сценарий: 4 |
-| Из нефайлового хранилища в хранилище файлов |- **Копирование из хранилищ данных с поддержкой параметров секционирования** (включая [Oracle](connector-oracle.md#oracle-as-source) / [Netezza](connector-netezza.md#netezza-as-source) / [Teradata](connector-teradata.md#teradata-as-source)): 2-256 при записи в папку и 2-4 при записи в один файл. Примечание. для каждого исходного раздела данных можно использовать до 4 диус.<br>- **Другие сценарии**: 2-4 |- **Копировать из RESTful или HTTP**: 1<br/>- **Копирование из Amazon RedShift** с помощью выгрузки: 2<br>- **Другой сценарий**: 4 |
-| Между нефайловыми хранилищами |- **Копирование из хранилищ данных с поддержкой параметров секционирования** (включая [Oracle](connector-oracle.md#oracle-as-source) / [Netezza](connector-netezza.md#netezza-as-source) / [Teradata](connector-teradata.md#teradata-as-source)): 2-256 при записи в папку и 2-4 при записи в один файл. Примечание. для каждого исходного раздела данных можно использовать до 4 диус.<br/>- **Другие сценарии**: 2-4 |- **Копировать из RESTful или HTTP**: 1<br>- **Другой сценарий**: 4 |
+| Из нефайлового хранилища в хранилище файлов |- **Копирование из хранилищ данных с поддержкой параметров разделов** (включая [базу данных sql Azure](connector-azure-sql-database.md#azure-sql-database-as-the-source), [управляемый экземпляр Azure SQL](connector-azure-sql-managed-instance.md#sql-managed-instance-as-a-source), [Azure синапсе Analytics](connector-azure-sql-data-warehouse.md#azure-synapse-analytics-as-the-source), [Oracle](connector-oracle.md#oracle-as-source), [Netezza](connector-netezza.md#netezza-as-source), [SQL Server](connector-sql-server.md#sql-server-as-a-source)и [Teradata](connector-teradata.md#teradata-as-source)): 2-256 при записи в папку и 2-4 при записи в один файл. Примечание. для каждого исходного раздела данных можно использовать до 4 диус.<br>- **Другие сценарии**: 2-4 |- **Копировать из RESTful или HTTP**: 1<br/>- **Копирование из Amazon RedShift** с помощью выгрузки: 2<br>- **Другой сценарий**: 4 |
+| Между нефайловыми хранилищами |- **Копирование из хранилищ данных с поддержкой параметров разделов** (включая [базу данных sql Azure](connector-azure-sql-database.md#azure-sql-database-as-the-source), [управляемый экземпляр Azure SQL](connector-azure-sql-managed-instance.md#sql-managed-instance-as-a-source), [Azure синапсе Analytics](connector-azure-sql-data-warehouse.md#azure-synapse-analytics-as-the-source), [Oracle](connector-oracle.md#oracle-as-source), [Netezza](connector-netezza.md#netezza-as-source), [SQL Server](connector-sql-server.md#sql-server-as-a-source)и [Teradata](connector-teradata.md#teradata-as-source)): 2-256 при записи в папку и 2-4 при записи в один файл. Примечание. для каждого исходного раздела данных можно использовать до 4 диус.<br/>- **Другие сценарии**: 2-4 |- **Копировать из RESTful или HTTP**: 1<br>- **Другой сценарий**: 4 |
 
 Диус, используемый для каждой копии, можно просмотреть в представлении Мониторинг действия копирования или в выходных данных действия. Дополнительные сведения см. в разделе [мониторинг действий копирования](copy-activity-monitoring.md). Для переопределения этого значения по умолчанию укажите значение для `dataIntegrationUnits` свойства следующим образом. *Фактическое число единиц интеграции данных*, используемых при копировании, не превышает заданного значения, в зависимости от формата данных.
 
 Вам будет выставляться плата **за использование диус \* единицы длительности копирования ( \* Цена за единицу/Диу-час)**. Текущие цены см. [здесь](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/). Местная валюта и отдельные скидки могут применяться для каждого типа подписки.
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[
@@ -74,7 +74,7 @@ ms.locfileid: "84770940"
 Обратите внимание, что в следующих сценариях выполнение одного действия копирования может использовать несколько саморазмещенных IR-узлов:
 
 - Копирование данных из файловых хранилищ в зависимости от числа и размера файлов.
-- Скопируйте данные из хранилища данных с поддержкой параметров разделов (включая [Oracle](connector-oracle.md#oracle-as-source), [Netezza](connector-netezza.md#netezza-as-source), [Teradata](connector-teradata.md#teradata-as-source), [SAP HANA](connector-sap-hana.md#sap-hana-as-source), [таблицу SAP](connector-sap-table.md#sap-table-as-source)и [открытый центр SAP](connector-sap-business-warehouse-open-hub.md#sap-bw-open-hub-as-source)) в зависимости от количества секций данных.
+- Скопируйте данные из хранилища данных с поддержкой параметров разделов (включая [базу данных SQL Azure](connector-azure-sql-database.md#azure-sql-database-as-the-source), [управляемый экземпляр Azure SQL](connector-azure-sql-managed-instance.md#sql-managed-instance-as-a-source), [Azure синапсе Analytics](connector-azure-sql-data-warehouse.md#azure-synapse-analytics-as-the-source), [Oracle](connector-oracle.md#oracle-as-source), [Netezza](connector-netezza.md#netezza-as-source), [SAP HANA](connector-sap-hana.md#sap-hana-as-source), [открытый центр SAP](connector-sap-business-warehouse-open-hub.md#sap-bw-open-hub-as-source), [таблицу SAP](connector-sap-table.md#sap-table-as-source), [SQL Server](connector-sql-server.md#sql-server-as-a-source)и [Teradata](connector-teradata.md#teradata-as-source)) в зависимости от количества секций данных.
 
 ## <a name="parallel-copy"></a>Параллельное копирование
 
@@ -93,14 +93,14 @@ ms.locfileid: "84770940"
 | --- | --- |
 | Между хранилищами файлов | `parallelCopies`Определяет параллелизм **на уровне файлов**. Фрагментирование внутри каждого файла происходит автоматически и прозрачно. Он предназначен для использования наиболее подходящего размера блока для заданного типа хранилища данных для параллельной загрузки данных. <br/><br/>Фактическое число параллельных копий, используемых действием копирования во время выполнения, не превышает количество файлов, которое у вас есть. Если поведение копирования **mergeFile** в приемник файла, действие копирования не сможет воспользоваться параллелизмом на уровне файлов. |
 | Из хранилища файлов в хранилище, отличное от файлов | — При копировании данных в базу данных SQL Azure или Azure Cosmos DB параллельная копия по умолчанию также зависит от уровня приемника (количество DTU/RUs).<br>— При копировании данных в таблицу Azure параллельная копия по умолчанию имеет значение 4. |
-| Из нефайлового хранилища в хранилище файлов | — При копировании данных из хранилища данных с поддержкой параметров секционирования (включая [Oracle](connector-oracle.md#oracle-as-source), [Netezza](connector-netezza.md#netezza-as-source), [Teradata](connector-teradata.md#teradata-as-source), [SAP HANA](connector-sap-hana.md#sap-hana-as-source), [таблицу SAP](connector-sap-table.md#sap-table-as-source)и [открытый центр SAP](connector-sap-business-warehouse-open-hub.md#sap-bw-open-hub-as-source)) по умолчанию используется параллельная копия 4. Фактическое число параллельных копий, используемых действием копирования во время выполнения, не превышает количество секций данных, которые у вас есть. При использовании автономного Integration Runtime и копировании в BLOB-объект или ADLS 2-го поколения Azure, обратите внимание, что максимальная эффективная параллельная копия — 4 или 5 на каждый узел IR.<br>Для других сценариев параллельная копия не вступит в силу. Даже если указан параллелизм, он не применяется. |
-| Между нефайловыми хранилищами | — При копировании данных в базу данных SQL Azure или Azure Cosmos DB параллельная копия по умолчанию также зависит от уровня приемника (количество DTU/RUs).<br/>— При копировании данных из хранилища данных с поддержкой параметров секционирования (включая [Oracle](connector-oracle.md#oracle-as-source), [Netezza](connector-netezza.md#netezza-as-source), [Teradata](connector-teradata.md#teradata-as-source), [SAP HANA](connector-sap-hana.md#sap-hana-as-source), [таблицу SAP](connector-sap-table.md#sap-table-as-source)и [открытый центр SAP](connector-sap-business-warehouse-open-hub.md#sap-bw-open-hub-as-source)) по умолчанию используется параллельная копия 4.<br>— При копировании данных в таблицу Azure параллельная копия по умолчанию имеет значение 4. |
+| Из нефайлового хранилища в хранилище файлов | — При копировании данных из хранилища данных с поддержкой параметров раздела (включая [базу данных SQL](connector-azure-sql-database.md#azure-sql-database-as-the-source)azure, [управляемый экземпляр Azure SQL](connector-azure-sql-managed-instance.md#sql-managed-instance-as-a-source), [Azure синапсе Analytics](connector-azure-sql-data-warehouse.md#azure-synapse-analytics-as-the-source), [Oracle](connector-oracle.md#oracle-as-source), [Netezza](connector-netezza.md#netezza-as-source), [SAP HANA](connector-sap-hana.md#sap-hana-as-source), [открытый центр SAP](connector-sap-business-warehouse-open-hub.md#sap-bw-open-hub-as-source), [Таблица SAP](connector-sap-table.md#sap-table-as-source), [SQL Server](connector-sql-server.md#sql-server-as-a-source)и [Teradata](connector-teradata.md#teradata-as-source)), по умолчанию используется параллельная копия 4. Фактическое число параллельных копий, используемых действием копирования во время выполнения, не превышает количество секций данных, которые у вас есть. При использовании автономного Integration Runtime и копировании в BLOB-объект или ADLS 2-го поколения Azure, обратите внимание, что максимальная эффективная параллельная копия — 4 или 5 на каждый узел IR.<br>Для других сценариев параллельная копия не вступит в силу. Даже если указан параллелизм, он не применяется. |
+| Между нефайловыми хранилищами | — При копировании данных в базу данных SQL Azure или Azure Cosmos DB параллельная копия по умолчанию также зависит от уровня приемника (количество DTU/RUs).<br/>— При копировании данных из хранилища данных с поддержкой параметров раздела (включая [базу данных SQL](connector-azure-sql-database.md#azure-sql-database-as-the-source)azure, [управляемый экземпляр Azure SQL](connector-azure-sql-managed-instance.md#sql-managed-instance-as-a-source), [Azure синапсе Analytics](connector-azure-sql-data-warehouse.md#azure-synapse-analytics-as-the-source), [Oracle](connector-oracle.md#oracle-as-source), [Netezza](connector-netezza.md#netezza-as-source), [SAP HANA](connector-sap-hana.md#sap-hana-as-source), [открытый центр SAP](connector-sap-business-warehouse-open-hub.md#sap-bw-open-hub-as-source), [Таблица SAP](connector-sap-table.md#sap-table-as-source), [SQL Server](connector-sql-server.md#sql-server-as-a-source)и [Teradata](connector-teradata.md#teradata-as-source)), по умолчанию используется параллельная копия 4.<br>— При копировании данных в таблицу Azure параллельная копия по умолчанию имеет значение 4. |
 
 Для управления нагрузкой на компьютеры, на которых размещаются хранилища данных, или для настройки производительности копирования можно переопределить значение по умолчанию и указать значение для `parallelCopies` Свойства. Значение должно быть целым числом больше или равно 1. Во время выполнения для наилучшей производительности действие копирования использует значение, меньшее или равное заданному значению.
 
 При указании значения для `parallelCopies` Свойства переведите нагрузку в хранилище данных источника и приемника в учетную запись. Также учтите увеличение нагрузки на локальную среду выполнения интеграции, если она предоставляет действие копирования. Это увеличение нагрузки происходит в особенности при наличии нескольких действий или параллельных запусков тех же действий, которые выполняются с одним и тем же хранилищем данных. Если вы заметили, что хранилище данных или локальная среда выполнения интеграции перегружена, уменьшите `parallelCopies` значение, чтобы освободить нагрузку.
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[
@@ -140,15 +140,15 @@ ms.locfileid: "84770940"
 
 В настоящее время нельзя копировать данные между двумя хранилищами данных, которые подключены через разные собственные данные IRs, ни с промежуточным копированием, так и без него. Для такого сценария можно настроить два явно связанных действия копирования для копирования из источника в промежуточную среду, а затем из промежуточного хранения в приемник.
 
-### <a name="configuration"></a>Параметр Configuration
+### <a name="configuration"></a>Конфигурация
 
 Настройте параметр **enableStaging** в действии копирования, чтобы указать, должны ли данные быть помещены в хранилище BLOB-объектов перед их загрузкой в целевое хранилище данных. При установке **enableStaging** в `TRUE` Укажите дополнительные свойства, перечисленные в следующей таблице. Кроме того, для промежуточного хранения необходимо создать связанную службу хранилища Azure или подписи общего доступа, если у вас ее нет.
 
-| Свойство. | Описание | Значение по умолчанию | Обязательное значение |
+| Свойство | Описание | Значение по умолчанию | Обязательное |
 | --- | --- | --- | --- |
 | enableStaging |Укажите, следует ли копировать данные в промежуточное хранилище. |False |нет |
 | linkedServiceName |Укажите имя связанной службы [AzureStorage](connector-azure-blob-storage.md#linked-service-properties), которая будет ссылаться на используемый в качестве промежуточного экземпляр хранилища. <br/><br/> Хранилище с подписью общего доступа нельзя использовать для загрузки данных в Azure синапсе Analytics через Polybase. Его можно использовать в других случаях. |Н/Д |Да, если для параметра **enableStaging** задано значение true |
-| путь |Укажите путь к хранилищу BLOB-объектов, в котором будут храниться промежуточные данные. Если не указать путь, служба создает контейнер для хранения временных данных. <br/><br/>  Укажите путь, только если используется хранилище с подписанным URL-адресом или требуется, чтобы временные данные хранились в определенном месте. |Недоступно |Нет |
+| path |Укажите путь к хранилищу BLOB-объектов, в котором будут храниться промежуточные данные. Если не указать путь, служба создает контейнер для хранения временных данных. <br/><br/>  Укажите путь, только если используется хранилище с подписанным URL-адресом или требуется, чтобы временные данные хранились в определенном месте. |Недоступно |Нет |
 | enableCompression |Указывает, следует ли сжимать данные перед их копированием в место назначения. Этот параметр позволяет уменьшить объем передаваемых данных. |False |нет |
 
 >[!NOTE]

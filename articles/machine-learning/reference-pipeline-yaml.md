@@ -10,13 +10,13 @@ ms.reviewer: larryfr
 ms.author: nilsp
 author: NilsPohlmann
 ms.date: 07/31/2020
-ms.custom: tracking-python
-ms.openlocfilehash: 4fc28ca533c6670263c8d559f4d6dd3e21671881
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.custom: devx-track-python
+ms.openlocfilehash: 079341fe1b22db83ded4b11941d8bdf809adfb8d
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87513168"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87845541"
 ---
 # <a name="define-machine-learning-pipelines-in-yaml"></a>Определение конвейеров машинного обучения в YAML
 
@@ -42,7 +42,7 @@ ms.locfileid: "87513168"
 
 В определении конвейера используются следующие ключи, которые соответствуют классу [конвейеров](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline.pipeline?view=azure-ml-py) :
 
-| Ключ YAML | Описание |
+| Ключ YAML | Описание: |
 | ----- | ----- |
 | `name` | Описание конвейера. |
 | `parameters` | Параметры для конвейера. |
@@ -54,7 +54,7 @@ ms.locfileid: "87513168"
 
 `parameters`Раздел использует следующие ключи, которые соответствуют классу [пипелинепараметер](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelineparameter?view=azure-ml-py) :
 
-| Ключ YAML | Описание |
+| Ключ YAML | Описание: |
 | ---- | ---- |
 | `type` | Тип значения параметра. Допустимые типы: `string` , `int` ,, `float` `bool` или `datapath` . |
 | `default` | Значение по умолчанию. |
@@ -82,7 +82,7 @@ pipeline:
 
 `data_references`Раздел использует следующие ключи, которые соответствуют [ссылке](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py)на объект.
 
-| Ключ YAML | Описание |
+| Ключ YAML | Описание: |
 | ----- | ----- |
 | `datastore` | Хранилище данных для ссылки. |
 | `path_on_datastore` | Относительный путь в резервном хранилище для ссылки на данные. |
@@ -106,7 +106,7 @@ pipeline:
 
 Шаги определяют вычислительную среду, а также файлы для выполнения в среде. Чтобы определить тип шага, используйте `type` ключ:
 
-| Тип шага | Описание |
+| Тип шага | Описание: |
 | ----- | ----- |
 | `AdlaStep` | Выполняет скрипт U-SQL с Azure Data Lake Analytics. Соответствует классу [адластеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.adlastep?view=azure-ml-py) . |
 | `AzureBatchStep` | Запускает задания с помощью пакетной службы Azure. Соответствует классу [азуребатчстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.azurebatchstep?view=azure-ml-py) . |
@@ -117,7 +117,7 @@ pipeline:
 
 ### <a name="adla-step"></a>ADLA шаг
 
-| Ключ YAML | Описание |
+| Ключ YAML | Описание: |
 | ----- | ----- |
 | `script_name` | Имя скрипта U-SQL (относительно `source_directory` ). |
 | `compute_target` | Целевой объект Azure Data Lake вычислений, используемый для этого шага. |
@@ -168,7 +168,7 @@ pipeline:
 
 ### <a name="azure-batch-step"></a>Шаг пакетной службы Azure
 
-| Ключ YAML | Описание |
+| Ключ YAML | Описание: |
 | ----- | ----- |
 | `compute_target` | Целевой объект вычислений пакетной службы Azure, который будет использоваться для этого шага. |
 | `inputs` | Входными данными могут быть [инпутпортбиндинг](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding?view=azure-ml-py), [Reference](#data-reference), [портдатареференце](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference?view=azure-ml-py), [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py), [DataSet](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset%28class%29?view=azure-ml-py), [датасетдефинитион](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition?view=azure-ml-py)или [пипелинедатасет](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset?view=azure-ml-py). |
@@ -222,7 +222,7 @@ pipeline:
 
 ### <a name="databricks-step"></a>Шаг "кирпичы"
 
-| Ключ YAML | Описание |
+| Ключ YAML | Описание: |
 | ----- | ----- |
 | `compute_target` | Целевой объект Azure Databricks вычислений, используемый для этого шага. |
 | `inputs` | Входными данными могут быть [инпутпортбиндинг](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding?view=azure-ml-py), [Reference](#data-reference), [портдатареференце](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference?view=azure-ml-py), [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py), [DataSet](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset%28class%29?view=azure-ml-py), [датасетдефинитион](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition?view=azure-ml-py)или [пипелинедатасет](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset?view=azure-ml-py). |
@@ -276,7 +276,7 @@ pipeline:
 
 ### <a name="data-transfer-step"></a>Шаг пересылки данных
 
-| Ключ YAML | Описание |
+| Ключ YAML | Описание: |
 | ----- | ----- |
 | `compute_target` | Целевой объект вычислений фабрики данных Azure, который будет использоваться для этого шага. |
 | `source_data_reference` | Входное соединение, служащее источником операций по переносу данных. Поддерживаемые значения: [инпутпортбиндинг](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding?view=azure-ml-py), [Reference](#data-reference), [портдатареференце](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference?view=azure-ml-py), [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py), [DataSet](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset%28class%29?view=azure-ml-py), [датасетдефинитион](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition?view=azure-ml-py)или [пипелинедатасет](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset?view=azure-ml-py). |
@@ -320,7 +320,7 @@ pipeline:
 
 ### <a name="python-script-step"></a>Шаг скрипта Python
 
-| Ключ YAML | Описание |
+| Ключ YAML | Описание: |
 | ----- | ----- |
 | `inputs` | Входными данными могут быть [инпутпортбиндинг](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding?view=azure-ml-py), [Reference](#data-reference), [портдатареференце](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference?view=azure-ml-py), [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py), [DataSet](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset%28class%29?view=azure-ml-py), [датасетдефинитион](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition?view=azure-ml-py)или [пипелинедатасет](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset?view=azure-ml-py). |
 | `outputs` | Выходные данные могут быть либо [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py) , либо [аутпутпортбиндинг](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding?view=azure-ml-py). |
@@ -367,7 +367,7 @@ pipeline:
 
 ### <a name="parallel-run-step"></a>Шаг параллельного выполнения
 
-| Ключ YAML | Описание |
+| Ключ YAML | Описание: |
 | ----- | ----- |
 | `inputs` | Входными данными могут быть [наборы данных](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset%28class%29?view=azure-ml-py), [датасетдефинитион](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition?view=azure-ml-py)или [пипелинедатасет](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset?view=azure-ml-py). |
 | `outputs` | Выходные данные могут быть либо [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py) , либо [аутпутпортбиндинг](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding?view=azure-ml-py). |
@@ -419,7 +419,7 @@ pipeline:
 
 ### <a name="pipeline-with-multiple-steps"></a>Конвейер с несколькими шагами 
 
-| Ключ YAML | Описание |
+| Ключ YAML | Описание: |
 | ----- | ----- |
 | `steps` | Последовательность из одного или нескольких определений Пипелинестеп. Обратите внимание, что `destination` ключи одного шага `outputs` становятся `source` ключами к `inputs` следующему шагу.| 
 
@@ -480,7 +480,7 @@ pipeline:
 
 При определении расписания для конвейера это может быть либо хранилище данных, либо повторяющееся в зависимости от интервала времени. Ниже приведены ключи, используемые для определения расписания.
 
-| Ключ YAML | Описание |
+| Ключ YAML | Описание: |
 | ----- | ----- |
 | `description` | Описание расписания. |
 | `recurrence` | Содержит параметры повторения, если расписание повторяется. |
@@ -511,7 +511,7 @@ Schedule:
 
 При определении **повторяющегося расписания**используйте следующие ключи в разделе `recurrence` :
 
-| Ключ YAML | Описание |
+| Ключ YAML | Описание: |
 | ----- | ----- |
 | `frequency` | Частота повторения расписания. Допустимые значения: `"Minute"` , `"Hour"` , `"Day"` , `"Week"` или `"Month"` . |
 | `interval` | Частота срабатывания расписания. Целочисленное значение — это количество единиц времени, которое нужно ожидать до повторного запуска расписания. |
@@ -550,6 +550,6 @@ Schedule:
     path_on_datastore: ~ 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как [использовать расширение CLI для машинное обучение Azure](reference-azure-machine-learning-cli.md).

@@ -1,6 +1,6 @@
 ---
 title: Заметки о выпуске агента службы "Синхронизация файлов Azure" | Документация Майкрософт
-description: Заметки о выпуске агента службы "Синхронизация файлов Azure".
+description: Ознакомьтесь с заметками о выпуске агента Синхронизация файлов Azure, который позволяет централизовать общие файловые ресурсы Организации в службе файлов Azure.
 services: storage
 author: wmgries
 ms.service: storage
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 7/28/2020
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: 76b55f7f50f688adb2b35a1b8ed596818cdfac19
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 00590c2b12e8600b2a650444b97b6558e3a52da1
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372864"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87904944"
 ---
 # <a name="release-notes-for-the-azure-file-sync-agent"></a>Заметки о выпуске агента службы "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" позволяет централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Установки серверов Windows Server преобразовываются в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server (в том числе SMB, NFS и FTPS). Кроме того, вы можете создать любое количество кэшей.

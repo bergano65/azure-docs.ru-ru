@@ -3,13 +3,13 @@ title: Создание приложения контейнера Azure Service 
 description: Создание первого приложения-контейнера Linux в Azure Service Fabric. Создание образа Docker с приложением, отправка образа в реестр контейнеров, сборка и развертывание приложения-контейнера Service Fabric.
 ms.topic: conceptual
 ms.date: 1/4/2019
-ms.custom: tracking-python
-ms.openlocfilehash: 547030b983dd02e7b65d404188dccdcc24d53a22
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-python
+ms.openlocfilehash: 35e96f1039dc71427a1a3d2745245eff5d012aaf
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87083843"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87847539"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Создание первого контейнера-приложения Service Fabric в Linux
 > [!div class="op_single_selector"]
@@ -21,7 +21,7 @@ ms.locfileid: "87083843"
 > [!NOTE]
 > Эта статья касается среды разработки Linux.  Среда выполнения кластера Service Fabric и среда выполнения Docker должны работать под управлением одной операционной системы.  Контейнеры Linux нельзя запускать в кластере Windows.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 * Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
   * [Service Fabric пакет SDK и средства](service-fabric-get-started-linux.md).
   * [Предварительные выпуски](https://docs.docker.com/engine/installation/#prior-releases). 
@@ -373,7 +373,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 Чтобы добавить службу контейнеров в приложение, созданное с использованием yeoman, выполните следующие действия:
 
 1. Перейдите в корневой каталог существующего приложения. Например, `cd ~/YeomanSamples/MyApplication`, если `MyApplication` является приложением, созданным с помощью Yeoman.
-2. Выполните команду `yo azuresfcontainer:AddService`.
+2. Выполнить `yo azuresfcontainer:AddService`
 
 <a id="manually"></a>
 
@@ -468,7 +468,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о запуске [контейнеров в Service Fabric](service-fabric-containers-overview.md).
 * Ознакомьтесь с руководством [Развертывание приложения-контейнера .NET в Azure Service Fabric](service-fabric-host-app-in-a-container.md).
 * Дополнительные сведения о [жизненном цикле приложения](service-fabric-application-lifecycle.md) Service Fabric.
