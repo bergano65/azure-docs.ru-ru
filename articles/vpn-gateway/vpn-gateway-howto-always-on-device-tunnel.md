@@ -1,19 +1,19 @@
 ---
 title: Настройка постоянного VPN-туннеля
 titleSuffix: Azure VPN Gateway
-description: Действия по настройке VPN-туннеля Always On для VPN-шлюза
+description: Узнайте, как настроить Always On, который поддерживает VPN-подключение на основе триггеров, таких как вход пользователя, изменение состояния сети или активный экран устройства.
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 03/12/2020
 ms.author: cherylmc
-ms.openlocfilehash: 6db48928ebac115c42c643d669f6541a3654a53a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 24043576fca4910631ccddb3924303dd642c6842
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84983127"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927068"
 ---
 # <a name="configure-an-always-on-vpn-device-tunnel"></a>Настройка туннеля Always On VPN для устройства
 
@@ -33,6 +33,6 @@ ms.locfileid: "84983127"
 
 ![Очистка](./media/vpn-gateway-howto-always-on-device-tunnel/cleanup.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об устранении неполадок см. [в статье проблемы с подключением "точка — сеть" в Azure](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md) .

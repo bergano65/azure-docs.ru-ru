@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 02/04/2020
-ms.openlocfilehash: 36b94f53d3a9113c3980c94c3b8eff0713f11814
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.date: 08/06/2020
+ms.openlocfilehash: ff8bb1fea863c8ba08434df9c718199ad9f51652
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87446533"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87925793"
 ---
 # <a name="log-analytics-agent-overview"></a>Общие сведения об агенте Log Analytics
 Агент Log Analytics разработан для комплексного управления на виртуальных машинах, размещенных на облаке, на локальных компьютерах, и других отслеживаемых с помощью [System Center Operations Manager](/system-center/scom/) компьютерах. Агенты Windows и Linux отправляют в рабочую область вашего Log Analytics в Azure Monitor собранные данные из разных источников, а также уникальные журналы и метрики, как задано в решении мониторинга. Агент Log Analytics также поддерживает аналитику и другие службы в Azure Monitor, такие как [Azure Monitor для виртуальных машин](../insights/vminsights-enable-overview.md), [Центр безопасности Azure](../../security-center/index.yml) и [Служба автоматизации Azure](../../automation/automation-intro.md).
@@ -122,11 +122,19 @@ ms.locfileid: "87446533"
  - Ubuntu, Debian:`apt-get install -y python2`
  - SUSE: `zypper install -y python2`
 
-Исполняемый файл python2 должен иметь псевдоним для Python с помощью следующей команды:
+Исполняемый файл python2 должен быть псевдонимом для *Python* с помощью следующей процедуры:
 
-```
-alternatives --set python `which python2`
-```
+1. Выполните следующую команду, чтобы просмотреть любой текущий псевдоним Python, если он существует. Если это так, запишите приоритет следующего шага.
+ 
+    ```
+    sudo update-alternatives ––display python
+    ```
+
+2. Выполните следующую команду. Замените на *\<priority\>* число, большее, чем у существующей ссылки, или значение 1, если ни одна из ссылок в данный момент не существует.
+
+    ```
+    sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 <priority>
+    ```
 
 ### <a name="supported-distros"></a>Поддерживаемые дистрибутивы
 
@@ -194,7 +202,7 @@ alternatives --set python `which python2`
 |*.blob.core.windows.net |Порт 443 |Исходящие|Да |
 |*.azure-automation.net |Порт 443 |Исходящие|Да |
 
-Сведения о брандмауэре, необходимые для управления Azure для государственных организаций, см. в [здесь](../../azure-government/compare-azure-government-global-azure.md#azure-monitor-logs). 
+Сведения о брандмауэре, необходимые для управления Azure для государственных организаций, см. в [здесь](../../azure-government/compare-azure-government-global-azure.md#azure-monitor). 
 
 Если планируется использование Azure Automation Hybrid Runbook Worker для подключения к службе автоматизации и регистрации в ней, чтобы применить runbook или решения для управления в вашей среде, они должны иметь доступ к номеру порта и URL-адресам, описанным в разделе [Настройка сети для Hybrid Runbook Worker](../../automation/automation-hybrid-runbook-worker.md#network-planning). 
 

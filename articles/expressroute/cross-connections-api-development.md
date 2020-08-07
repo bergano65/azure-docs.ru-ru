@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: mialdrid
-ms.openlocfilehash: b4a83013d2cbeb2871a3963ec0c95144c02f4d66
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 459a70c787dfdcd54fb3010655390787022c8f2e
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77187014"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87921628"
 ---
 # <a name="expressroute-crossconnnections-api-development-and-integration"></a>Разработка и интеграция API Кроссконннектионс ExpressRoute
 
@@ -30,7 +30,7 @@ API-интерфейс диспетчер ресурсов для партнер
 
 * Все будущие улучшения для партнеров ExpressRoute будут доступны в ресурсе Експрессраутекроссконнектион.
 
-* Партнеры могут применять [Управление доступом на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview) к ресурсу експрессраутекроссконнектион. Эти элементы управления могут определять разрешения, для которых учетные записи пользователей могут изменять ресурс Експрессраутекроссконнектион, а также добавлять, обновлять и удалять конфигурации пиринга.
+* Партнеры могут применять [Управление доступом на основе ролей Azure (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview) к ресурсу експрессраутекроссконнектион. Эти элементы управления могут определять разрешения, для которых учетные записи пользователей могут изменять ресурс Експрессраутекроссконнектион, а также добавлять, обновлять и удалять конфигурации пиринга.
 
 * Ресурс Експрессраутекроссконнектион предоставляет интерфейсы API, которые могут быть полезны при устранении неполадок подключений ExpressRoute. Сюда входят таблица ARP, сводка таблицы маршрутов BGP и таблица маршрутов BGP. Эта возможность не поддерживается классическими API развертывания.
 
@@ -82,6 +82,6 @@ API-интерфейс диспетчер ресурсов для партнер
 
 См. раздел [ExpressRoute кроссконнектионс REST API](https://docs.microsoft.com/rest/api/expressroute/expressroutecrossconnections) для REST APIной документации.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о всех API-интерфейсах RESTFUL для ExpressRoute см. в разделе [API-интерфейсы RESTful для expressroute](https://docs.microsoft.com/rest/api/expressroute/).

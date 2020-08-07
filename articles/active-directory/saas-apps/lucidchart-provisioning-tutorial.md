@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/13/2020
 ms.author: Zhchia
-ms.openlocfilehash: 0aea258ac52e078c48255b39145193272aa65b25
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 25fe315e7d1af2e301e761c755470d2e3c24db1c
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85367977"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927017"
 ---
 # <a name="tutorial-configure-lucidchart-for-automatic-user-provisioning"></a>Учебник. Настройка LucidChart для автоматической подготовки пользователей
 
@@ -124,7 +124,7 @@ ms.locfileid: "85367977"
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Строка|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|
    |urn: IETF: params: scim: схемы: Extension: LucidChart: 1.0: пользователь: canEdit|Логическое|
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с LucidChart**.
@@ -156,7 +156,7 @@ ms.locfileid: "85367977"
 После настройки подготовки используйте следующие ресурсы для мониторинга развертывания.
 
 1. Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
-2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
+2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
 3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).  
 
 ## <a name="change-log"></a>Журнал изменений

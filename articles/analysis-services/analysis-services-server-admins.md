@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 9edc43f9b2b62a3d9da9d6fba5ab52318e8b6427
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: bc17d27837d5b96f06b5172fb019db873418db94
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86077513"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87922955"
 ---
 # <a name="manage-server-administrators"></a>Управление администраторами серверов
 
@@ -50,9 +50,8 @@ ms.locfileid: "86077513"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 [Аутентификация и пользовательские разрешения](analysis-services-manage-users.md)  
 [Управление ролями и пользователями базы данных](analysis-services-database-users.md)  
-[Управление доступом на основе ролей](../role-based-access-control/overview.md)  
-
+[Управление доступом на основе ролей в Azure (Azure RBAC)](../role-based-access-control/overview.md)  
