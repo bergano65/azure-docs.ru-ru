@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: 2992324a1080b75a98264958f56ea28e93b54651
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 21b09e6b7a2be6b87288d973b40c566fb6217841
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534589"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87849987"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight
 
@@ -36,12 +36,12 @@ Data Lake Storage 2-го поколения доступен в качестве
 
 Создайте управляемое удостоверение, назначаемое пользователем, если у вас его еще нет.
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. В левом верхнем углу щелкните **создать ресурс**.
 1. В поле поиска введите " **пользователь назначен** " и щелкните " **управляемое удостоверение, назначенное пользователем**".
-1. Нажмите кнопку **Создать**.
+1. Нажмите **Создать**.
 1. Введите имя управляемого удостоверения, выберите подходящую подписку, группу ресурсов и расположение.
-1. Нажмите кнопку **Создать**.
+1. Нажмите **Создать**.
 
 Дополнительные сведения о работе управляемых удостоверений в Azure HDInsight см. [в статье управляемые удостоверения в Azure hdinsight](hdinsight-managed-identities.md).
 
@@ -51,10 +51,10 @@ Data Lake Storage 2-го поколения доступен в качестве
 
 Создайте учетную запись хранения Azure Data Lake Storage 2-го поколения.
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. В левом верхнем углу щелкните **создать ресурс**.
 1. В поле поиска введите **Storage** и щелкните **учетная запись хранения**.
-1. Нажмите кнопку **Создать**.
+1. Нажмите **Создать**.
 1. На экране **Создание учетной записи хранения** выполните следующие действия.
     1. Выберите подходящую подписку и группу ресурсов.
     1. Введите имя учетной записи Data Lake Storage 2-го поколения.
@@ -106,6 +106,7 @@ Data Lake Storage 2-го поколения доступен в качестве
 | `<RESOURCEGROUPNAME>` | Группа ресурсов, в которой вы хотите создать новый кластер и учетную запись хранения. |
 | `<MANAGEDIDENTITYNAME>` | Имя управляемого удостоверения, которому будут предоставлены разрешения на учетную запись Azure Data Lake Storage 2-го поколения. |
 | `<STORAGEACCOUNTNAME>` | Новая учетная запись Azure Data Lake Storage 2-го поколения, которая будет создана. |
+| `<FILESYSTEMNAME>`  | Имя файловой системы, которую этот кластер должен использовать в учетной записи хранения. |
 | `<CLUSTERNAME>` | Это имя вашего кластера HDInsight. |
 | `<PASSWORD>` | Выбранный пароль для входа в кластер с помощью SSH и панели мониторинга Ambari. |
 
@@ -138,7 +139,8 @@ az storage account create --name <STORAGEACCOUNTNAME> \
 
 Затем войдите на портал. Добавьте новое назначенное пользователем управляемое удостоверение в роль **участник данных BLOB-объекта хранилища** в учетной записи хранения. Этот шаг описан на шаге 3 в разделе [использование портал Azure](hdinsight-hadoop-use-data-lake-storage-gen2.md).
 
-После назначения роли для назначаемого пользователем управляемого удостоверения разверните шаблон с помощью следующего фрагмента кода.
+ > [!IMPORTANT]
+ > Убедитесь, что учетной записи хранения назначено пользовательское удостоверение с разрешениями роли **участника данных BLOB-объекта хранилища** . в противном случае создание кластера завершится ошибкой.
 
 ```azurecli
 az group deployment create --name HDInsightADLSGen2Deployment \
@@ -254,7 +256,7 @@ LOCATION 'abfs:///example/data/';
 LOCATION '/example/data/';
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Azure HDInsight integration with Data Lake Storage Gen2 preview - ACL and security update](https://azure.microsoft.com/blog/azure-hdinsight-integration-with-data-lake-storage-gen-2-preview-acl-and-security-update/) (Интеграция Azure HDInsight с Data Lake Storage 2-го поколения (предварительная версия) — обновление списка управления доступом и системы безопасности)
 * [Общие сведения о хранилище Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md)

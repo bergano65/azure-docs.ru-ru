@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: pafarley
-ms.openlocfilehash: c6780d952b9ce6ea58fc6c8a2509a4526add7149
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: da9445b12ce6f35d249fc3af1a4a0ef560ba35de
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86028253"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905097"
 ---
 # <a name="build-a-training-data-set-for-a-custom-model"></a>Создание набора обучающих данных для пользовательской модели
 
@@ -42,7 +42,7 @@ ms.locfileid: "86028253"
 
 ## <a name="upload-your-training-data"></a>Отправка обучающих данных
 
-После объединения набора документов формы, которые будут использоваться для обучения, необходимо передать их в контейнер хранилища BLOB-объектов Azure. Если вы не умеете создавать учетную запись хранения Azure с контейнером, [для портал Azure см. Краткое руководство по службе хранилища Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal).
+После объединения набора документов формы, которые будут использоваться для обучения, необходимо передать их в контейнер хранилища BLOB-объектов Azure. Если вы не умеете создавать учетную запись хранения Azure с контейнером, [для портал Azure см. Краткое руководство по службе хранилища Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal). Используйте уровень производительности "Стандартный".
 
 Если вы хотите использовать данные, помеченные вручную, вам также потребуется передать *.labels.js* и *.ocr.js* файлы, соответствующие учебным документам. Чтобы создать эти файлы, можно использовать [Образец средства создания меток](./quickstarts/label-tool.md) (или собственный пользовательский интерфейс).
 

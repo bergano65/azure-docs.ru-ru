@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 06/05/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 7c6b37cd8c127bf3c7643b39d54bfcdb8093c58c
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: c9636a08b896cefdbec825e4979ad1ec89f8847b
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027398"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87842915"
 ---
 # <a name="create-a-profile-container-with-azure-files-and-ad-ds"></a>Создание контейнера профиля с помощью файлов и AD DS Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "86027398"
 
 4. На странице **Создание учетной записи хранения** введите следующие сведения.
 
-    - Создайте новую группу ресурсов.
+    - Создание группы ресурсов
     - Введите уникальное имя учетной записи хранения.
     - Для **расположения**рекомендуется выбрать то же расположение, что и пул узлов виртуальных рабочих столов Windows.
     - В разделе **Производительность** выберите **Стандартная**. (В зависимости от требований операций ввода-вывода. Дополнительные сведения см. [в статье Параметры хранилища для контейнеров профилей фслогикс в виртуальном рабочем столе Windows](store-fslogix-profile.md).)
@@ -50,7 +50,7 @@ ms.locfileid: "86027398"
 
 Если вам нужны более подробные инструкции по настройке, см. сведения о [региональной доступности](../storage/files/storage-files-identity-auth-active-directory-enable.md#regional-availability).
 
-## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
+## <a name="create-an-azure-file-share"></a>Создание файлового ресурса Azure
 
 Далее необходимо создать файловый ресурс Azure.
 
@@ -62,7 +62,7 @@ ms.locfileid: "86027398"
 
 3. Выберите **+ Общие файловые ресурсы**, создайте новый файловый ресурс с именем **Profiles**, а затем введите соответствующую квоту или оставьте поле пустым, чтобы квоты не применялись.
 
-4. Выберите **Создать**.
+4. Нажмите кнопку **создания**.
 
 ## <a name="enable-active-directory-authentication"></a>Включение проверки подлинности Active Directory
 
@@ -104,7 +104,7 @@ ms.locfileid: "86027398"
 
      Чтобы назначить пользователям разрешения для профилей FSLogix, следуйте тем же инструкциям. Однако при переходе к шагу 5 Выберите " **общий доступ к файлам хранилища SMB Data** ".
 
-7. Нажмите кнопку **Сохранить**.
+7. Щелкните **Сохранить**.
 
 ## <a name="assign-users-permissions-on-the-azure-file-share"></a>Назначение пользователям разрешений для файлового ресурса Azure
 
@@ -133,7 +133,7 @@ ms.locfileid: "86027398"
     - Замените косую черту `/` обратной косой чертой `\` .
     - Добавьте имя общего файлового ресурса, созданного при [создании файлового ресурса Azure](#create-an-azure-file-share) , в конце UNC.
 
-        Например: `\\customdomain.file.core.windows.net\<fileshare-name>`
+        Пример: `\\customdomain.file.core.windows.net\<fileshare-name>`
 
 ### <a name="get-the-storage-account-key"></a>Получение ключа учетной записи хранения
 
@@ -189,8 +189,6 @@ ms.locfileid: "86027398"
      icacls <mounted-drive-letter>: /remove "Authenticated Users"
      icacls <mounted-drive-letter>: /remove "Builtin\Users"
      ```
-
-5. Нажмите кнопку **Применить**.
 
 ## <a name="configure-fslogix-on-session-host-vms"></a>Настройка Фслогикс на виртуальных машинах узла сеансов
 

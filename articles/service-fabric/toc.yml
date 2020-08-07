@@ -635,7 +635,7 @@
             - name: Настройка непрерывной интеграции с помощью Azure Pipelines
               href: ./service-fabric-tutorial-deploy-app-with-cicd-vsts.md
             - name: Развертывание приложений Linux с помощью Jenkins
-              href: service-fabric-cicd-your-linux-applications-with-jenkins.md
+              href: /azure/developer/jenkins/deploy-to-service-fabric-cluster
     - name: Настройка обратного прокси-сервера
       items:
         - name: Настройка обратного прокси-сервера

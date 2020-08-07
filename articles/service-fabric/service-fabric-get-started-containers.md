@@ -3,13 +3,13 @@ title: Создание приложения контейнера Service Fabric
 description: Создание первого приложения-контейнера Windows в Azure Service Fabric. Создайте образ DOCKER с помощью приложения Python, отправьте образ в реестр контейнеров, а затем выполните сборку и развертывание контейнера в Azure Service Fabric.
 ms.topic: conceptual
 ms.date: 01/25/2019
-ms.custom: tracking-python
-ms.openlocfilehash: c0baad5d2596de04b629c4cf9eb86c51b37b8cdc
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-python
+ms.openlocfilehash: 6303e37eaa8fa7ad45677d551b89337d20b1b604
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86247410"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87844445"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-windows"></a>Создание первого контейнера-приложения Service Fabric в Windows
 
@@ -25,7 +25,7 @@ ms.locfileid: "86247410"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
   * Visual Studio 2015 или Visual Studio 2019.
@@ -190,7 +190,7 @@ docker push myregistry.azurecr.io/samples/helloworldapp
 ## <a name="create-the-containerized-service-in-visual-studio"></a>Создание контейнерной службы в Visual Studio
 Пакет SDK и средства для Service Fabric предоставляют шаблон службы для создания контейнерного приложения.
 
-1. Запустите среду Visual Studio. Выберите **Файл** > **Создать** > **Проект**.
+1. Запустите Visual Studio. Выберите **Файл** > **Создать** > **Проект**.
 2. Выберите **Приложение Service Fabric**, назовите его MyFirstContainer и нажмите кнопку **ОК**.
 3. В списке **шаблонов служб** выберите значение **Container** (Контейнер).
 4. В поле **Имя образа** введите myregistry.azurecr.io/samples/helloworldapp — это образ, который вы отправили в репозиторий контейнера.
@@ -344,7 +344,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 
 ## <a name="windows-server-container-os-and-host-os-compatibility"></a>Совместимость ОС контейнера Windows Server и ОС узла
 
-Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Например:
+Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Пример:
  
 - Контейнеры Windows Server, созданные с использованием Windows Server 1709, не работают на узле с ОС Windows Server версии 2016. 
 - Контейнеры Windows Server, созданные с помощью Windows Server 2016, работают в режиме изоляции Hyper-V только на узле под управлением Windows Server версии 1709. 
@@ -352,7 +352,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
  
 Дополнительные сведения см. в разделе [Совместимость версий контейнеров Windows](/virtualization/windowscontainers/deploy-containers/version-compatibility).
 
-Учитывайте совместимость ОС узла и контейнера при создании и развертывании контейнеров в кластере Service Fabric. Например:
+Учитывайте совместимость ОС узла и контейнера при создании и развертывании контейнеров в кластере Service Fabric. Пример:
 
 - Развертывайте контейнеры с ОС, совместимой с ОС на узлах кластера.
 - Убедитесь, что режим изоляции, указанный для приложения-контейнера, поддерживается для ОС контейнера на узле, где оно развертывается.
@@ -596,7 +596,7 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о запуске [контейнеров в Service Fabric](service-fabric-containers-overview.md).
 * Ознакомьтесь с руководством [Развертывание приложения-контейнера .NET в Azure Service Fabric](service-fabric-host-app-in-a-container.md).
 * Дополнительные сведения о [жизненном цикле приложения](service-fabric-application-lifecycle.md) Service Fabric.

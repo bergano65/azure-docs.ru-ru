@@ -5,13 +5,13 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/24/2020
 ms.author: cshoe
-ms.custom: tracking-python
-ms.openlocfilehash: 8773f2f17ec632bbefee6b3bdfeb66e494ad7a54
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-python
+ms.openlocfilehash: 5ac7f5819f07309c319d290f4869707eabb688f9
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87088042"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87848474"
 ---
 # <a name="azure-cosmos-db-output-binding-for-azure-functions-2x-and-higher"></a>Выходная привязка Azure Cosmos DB для функций Azure 2. x и более поздних версий
 
@@ -566,8 +566,8 @@ public String cosmosDbQueryById(
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type**     | н/д | Нужно задать значение `cosmosDB`.        |
-|**direction**     | н/д | Нужно задать значение `out`.         |
+|**type**     | Недоступно | Нужно задать значение `cosmosDB`.        |
+|**direction**     | Недоступно | Нужно задать значение `out`.         |
 |**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
 |**Имя** | **DatabaseName**|База данных, содержащая коллекцию, в которой создается документ.     |
 |**collectionName** |**CollectionName**  | Имя коллекции, в которой создается документ. |
@@ -620,7 +620,7 @@ public String cosmosDbQueryById(
 |Протокол|Https|Протокол подключения, используемый функцией при подключении к службе Azure Cosmos DB.  [Описание обоих режимов](../cosmos-db/performance-tips.md#networking)|
 |leasePrefix|н/д|Префикс аренды для использования во всех функциях приложения.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Выполнение функции при создании или изменении документа Azure Cosmos DB (триггер)](./functions-bindings-cosmosdb-v2-trigger.md)
 - [Чтение Azure Cosmos DB документа (входная привязка)](./functions-bindings-cosmosdb-v2-input.md)

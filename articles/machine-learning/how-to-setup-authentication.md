@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 06/17/2020
 ms.topic: conceptual
 ms.custom: how-to, has-adal-ref, devx-track-javascript
-ms.openlocfilehash: 4061d7a3d21b8c2db2bf161c422994cb2742b0b4
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 9d73492110703e64df5f948ad8a2a1ed8d2c63b9
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87489883"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87904544"
 ---
 # <a name="set-up-authentication-for-azure-machine-learning-resources-and-workflows"></a>Настройка проверки подлинности для ресурсов и рабочих процессов Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -36,6 +36,9 @@ ms.locfileid: "87489883"
 * [Настройте среду разработки](how-to-configure-environment.md) для установки пакета SDK для Машинного обучения Azure или используйте [виртуальную машину записной книжки Машинного обучения Azure](concept-azure-machine-learning-architecture.md#compute-instance) с уже установленным пакетом SDK.
 
 ## <a name="interactive-authentication"></a>Интерактивная проверка подлинности
+
+> [!IMPORTANT]
+> При интерактивной проверке подлинности используется браузер и требуются файлы cookie (включая сторонние файлы cookie). Если вы отключили файлы cookie, может появиться сообщение об ошибке "не удалось войти". Эта ошибка также может возникать, если вы включили [многофакторную идентификацию Azure](/azure/active-directory/authentication/concept-mfa-howitworks).
 
 В большинстве примеров в документации и примерах используется интерактивная проверка подлинности. Например, при использовании пакета SDK есть два вызова функций, которые автоматически запрашивают поток проверки подлинности на основе пользовательского интерфейса:
 

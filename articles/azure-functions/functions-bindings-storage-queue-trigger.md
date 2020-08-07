@@ -5,13 +5,13 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/18/2020
 ms.author: cshoe
-ms.custom: cc996988-fb4f-47, tracking-python
-ms.openlocfilehash: bc560f6a0048377f2174805d7e015b55240d7a71
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.custom: cc996988-fb4f-47, devx-track-python
+ms.openlocfilehash: 4abe3a46c854e0856e4db9a60fa7cd6fc9f8b3c8
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87564050"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87844904"
 ---
 # <a name="azure-queue-storage-trigger-for-azure-functions"></a>Триггер хранилища очередей Azure для функций Azure
 
@@ -313,8 +313,8 @@ public class QueueTriggerDemo {
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | н/д| Нужно задать значение `queueTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
-|**direction**| н/д | Только в файле *function.json*. Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. |
+|**type** | Недоступно| Нужно задать значение `queueTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
+|**direction**| Недоступно | Только в файле *function.json*. Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. |
 |**name** | Недоступно |Имя переменной, содержащей полезные данные элемента очереди в коде функции.  |
 |**queueName** | **QueueName**| Имя очереди для опроса. |
 |**connection**; | **Соединение** |Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "MyStorage", среда выполнения функций ищет параметр приложения с именем "MyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
@@ -363,7 +363,7 @@ public class QueueTriggerDemo {
 
 Триггер очереди предоставляет несколько [свойств метаданных](./functions-bindings-expressions-patterns.md#trigger-metadata). Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Свойства являются членами класса [CloudQueueMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage) .
 
-|Свойство|Тип|Описание|
+|Свойство|Type|Описание:|
 |--------|----|-----------|
 |`QueueTrigger`|`string`|Полезные данные очереди (если это допустимая строка). Если полезная нагрузка сообщения очереди является строкой, `QueueTrigger` то она имеет то же значение, что и переменная, именованная `name` свойством в *function.json*.|
 |`DequeueCount`|`int`|Количество раз, когда сообщение было выведено из очереди.|
@@ -406,7 +406,7 @@ public class QueueTriggerDemo {
 
 В файле [host.json](functions-host-json.md#queues) содержатся параметры, управляющие поведением очереди триггера. Дополнительные сведения о доступных параметрах см. в разделе [host.jsпо параметрам](functions-bindings-storage-queue-output.md#hostjson-settings) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Сообщения хранилища очереди записи (Выходная привязка)](./functions-bindings-storage-blob-output.md)
 

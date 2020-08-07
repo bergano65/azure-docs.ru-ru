@@ -3,12 +3,12 @@ title: Краткое описание примера схемы зоны раз
 description: Обзор и описание архитектуры Cloud Adoption Framework (CAF) с примером схемы целевой зоны для службы "Миграция Azure".
 ms.date: 04/15/2020
 ms.topic: sample
-ms.openlocfilehash: 45479fd6fa3a49d2639e587d3dba2aaaf567d0b1
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 6deb671070a742448560309b1b1a3572f5aa082d
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86044827"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87852316"
 ---
 # <a name="overview-of-the-microsoft-cloud-adoption-framework-for-azure-migration-landing-zone-blueprint-sample"></a>Общие сведения об использовании Microsoft Cloud Adoption Framework с примером схемы зоны размещения для миграции в соответствии с CAF
 
@@ -26,7 +26,6 @@ ms.locfileid: "86044827"
 
 - экземпляр [Azure Key Vault](../../../../key-vault/general/overview.md) для размещения сертификатов, ключей и секретов, используемых для виртуальных машин, которые развернуты в среде общих служб;
 - развернутую службу [Log Analytics](../../../../azure-monitor/overview.md), которая обеспечивает регистрацию всех действий и служб в центральном расположении с момента запуска миграции;
-- развернутый [Центр безопасности Azure](../../../../security-center/security-center-intro.md) (стандартная версия), который обеспечивает защиту от угроз для перенесенных рабочих нагрузок;
 - развернутую [виртуальную сеть Azure](../../../../virtual-network/virtual-networks-overview.md), которая предоставляет изолированную сеть и подсети для виртуальной машины;
 - развернутый [проект Миграции Azure](../../../../migrate/migrate-services-overview.md) для обнаружения и оценки. Мы добавляем средства для оценки серверов, миграции серверов, оценки баз данных и переноса баз данных.  
 
