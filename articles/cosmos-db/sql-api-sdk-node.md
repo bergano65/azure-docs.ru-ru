@@ -6,15 +6,15 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: nodejs
 ms.topic: reference
-ms.date: 05/11/2020
+ms.date: 08/05/2020
 ms.author: anfeldma
 ms.custom: devx-track-javascript
-ms.openlocfilehash: ddbbb9f39dd17daf5c500bf582c100b4e1754a15
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: f280e6754d40ad5dc8cbfa4b760e090d0b5b81aa
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87461363"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87846485"
 ---
 # <a name="azure-cosmos-db-nodejs-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: Заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -26,6 +26,8 @@ ms.locfileid: "87461363"
 > * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
 > * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
+> * [Spring Data](sql-api-sdk-java-spring.md)
+> * [Соединитель Spark](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
 > * [REST](/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](/rest/api/cosmos-db-resource-provider/)
@@ -57,7 +59,7 @@ ms.locfileid: "87461363"
 * Устранена ошибка при предоставлении пользователем параметров частичной повторной попытки
 
 ### <a name="303"></a><a name="3.0.3"></a>3.0.3
-* Webpack запрещено разрешать модули, которые вызываются с помощью требования
+* Запретить пакету обработки пакетов разрешение модулей, которые вызываются с помощью требования
 
 ### <a name="302"></a><a name="3.0.2"></a>3.0.2
 * Исправлена ошибка, при которой для статистических запросов для RU всегда указывалось значение 0
@@ -183,7 +185,7 @@ Add DISTINCT and LIMIT/OFFSET queries (#306)
 ```
 
 #### <a name="improved-browser-experience"></a>Улучшенная работа с браузером
-Хотя в браузере можно использовать пакет SDK версии 2, он не был идеальным. Необходимо было выполнять заполнение нескольких встроенных библиотек Node.js и использовать такие пакеты, как Webpack или Parcel. Пакет SDK версии 3 делает работу с браузером более удобной для пользователей.
+Хотя в браузере можно использовать пакет SDK версии 2, он не был идеальным. Требуется выполнить заполнение нескольких node.js встроенных библиотек и использовать пакет, например пакет или посылка. Пакет SDK версии 3 делает работу с браузером более удобной для пользователей.
 
 * Замена внутренних компонентов запроса выборкой (№ 245)
 * Удаление использования буфера (№ 330)

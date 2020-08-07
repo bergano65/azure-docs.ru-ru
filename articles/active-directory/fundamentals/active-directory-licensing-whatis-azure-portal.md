@@ -3,7 +3,7 @@ title: Что такое групповое лицензирование в Azur
 description: Сведения о лицензиях групп Azure Active Directory, принципы их работы и рекомендации.
 services: active-directory
 keywords: Лицензирование Azure AD
-author: msaburnley
+author: ajburnle
 manager: daveba
 ms.service: active-directory
 ms.subservice: fundamentals
@@ -14,12 +14,12 @@ ms.author: ajburnle
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9eec896e6cccaf58c83820161c54c4f10cfadadd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1ce0d543f11a1dcc61616d8a386176272ab44aee
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77561567"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87797276"
 ---
 # <a name="what-is-group-based-licensing-in-azure-active-directory"></a>Что такое лицензии групп в Azure Active Directory?
 
@@ -39,7 +39,7 @@ ms.locfileid: "77561567"
 ### <a name="required-number-of-licenses"></a>Необходимое количество лицензий
 Если каким-либо группам назначена лицензия, то их каждому уникальному участнику тоже нужно назначить лицензию. Хотя назначить лицензии каждому участнику группы по-отдельности не требуется, необходимо иметь достаточное количество лицензий для всех участников. Например, если имеются 1000 уникальных участников, которые входят в лицензированные группы в клиенте, необходимо иметь по крайней мере 1000 лицензий, чтобы выполнить условия лицензионного соглашения.
 
-## <a name="features"></a>Функции
+## <a name="features"></a>Компоненты
 
 Ниже приведены основные возможности группового лицензирования.
 

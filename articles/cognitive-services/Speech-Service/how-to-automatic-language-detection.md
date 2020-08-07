@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.author: trbye
 zone_pivot_groups: programming-languages-speech-services-nomore-variant
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 3a648b11e795a7d5c8680ac8c3df95e7d0c6bb7d
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: c1d2613661421ae95c34edef3caafe4c6fb3d4a9
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406781"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905080"
 ---
 # <a name="automatic-language-detection-for-speech-to-text"></a>Автоматическое определение языка для речи в текст
 
@@ -26,7 +26,7 @@ ms.locfileid: "87406781"
 В этой статье вы узнаете, как использовать `AutoDetectSourceLanguageConfig` для создания `SpeechRecognizer` объекта и получения обнаруженного языка.
 
 > [!IMPORTANT]
-> Эта функция доступна только для речевого пакета SDK на C#, C++, Java, Python и цели-C.
+> Эта функция доступна только для речевого SDK с C#, C++, Java, Python, JavaScript и цели-C.
 
 ## <a name="automatic-language-detection-with-the-speech-sdk"></a>Автоматическое определение языка с помощью пакета SDK для распознавания речи
 
@@ -238,6 +238,26 @@ var autoDetectConfig = SpeechSDK.AutoDetectSourceLanguageConfig.fromSourceLangua
 
 ::: zone-end
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Справочная документация по пакету SDK для распознавания речи](speech-sdk.md)
+::: zone pivot="programming-language-csharp"
+* См. [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/csharp/sharedcontent/console/speech_recognition_samples.cs#L741) в GitHub для автоматического определения языка
+::: zone-end
+
+::: zone pivot="programming-language-cpp"
+* См. [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/cpp/windows/console/samples/speech_recognition_samples.cpp#L507) в GitHub для автоматического определения языка
+::: zone-end
+
+::: zone pivot="programming-language-java"
+* См. [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/java/jre/console/src/com/microsoft/cognitiveservices/speech/samples/console/SpeechRecognitionSamples.java#L521) в GitHub для автоматического определения языка
+::: zone-end
+
+::: zone pivot="programming-language-python"
+* См. [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/python/console/speech_synthesis_sample.py#L434) в GitHub для автоматического определения языка
+::: zone-end
+
+::: zone pivot="programming-language-objectivec"
+* См. [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/objective-c/ios/speech-samples/speech-samples/ViewController.m#L494) в GitHub для автоматического определения языка
+::: zone-end
+
+* [Справочная документация по пакету SDK для распознавания речи](speech-sdk.md)

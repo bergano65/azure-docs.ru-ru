@@ -10,14 +10,14 @@ author: gvashishtha
 ms.reviewer: larryfr
 ms.date: 07/08/2020
 ms.topic: conceptual
-ms.custom: how-to, tracking-python
+ms.custom: how-to, devx-track-python
 zone_pivot_groups: aml-control-methods
-ms.openlocfilehash: 42205f87e2025fa7f4492cb76aeb44a1fbf46eb6
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 5e73744f3d467d08944d0e8800dd6d8824857abd
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542813"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87846995"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -51,13 +51,13 @@ ms.locfileid: "87542813"
 
 В следующей таблице описаны различные состояния службы.
 
-| Состояние WebService | Описание | Конечное состояние?
+| Состояние WebService | Описание: | Конечное состояние?
 | ----- | ----- | ----- |
 | Переход | Служба находится в процессе развертывания. | Нет |
 | Unhealthy | Служба была развернута, но сейчас недоступна.  | Нет |
 | Непланируемый | В настоящее время служба не может быть развернута из-за нехватки ресурсов. | Нет |
-| Сбой | Не удалось выполнить развертывание службы из-за ошибки или сбоя. | да |
-| Работоспособно | Служба работоспособна, и доступна конечная точка. | да |
+| Сбой | Не удалось выполнить развертывание службы из-за ошибки или сбоя. | Да |
+| Работоспособно | Служба работоспособна, и доступна конечная точка. | Да |
 
 
 ### <a name="batch-inference"></a><a id="azuremlcompute"></a>Вывод пакета
@@ -69,12 +69,12 @@ ms.locfileid: "87542813"
 Поддержка развертывания на границе доступна в предварительной версии. Дополнительные сведения см. в разделе [развертывание машинное обучение Azure как модуля IOT Edge](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-machine-learning).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).
 * [Создание клиентских приложений для использования веб-служб](how-to-consume-web-service.md)
-* [Обновить веб-службу](how-to-deploy-update-web-service.md)
+* [Обновление веб-службы](how-to-deploy-update-web-service.md)
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Использование TLS для защиты веб-службы с помощью Машинного обучения Azure](how-to-secure-web-service.md).
 * [Мониторинг моделей Машинное обучение Azure с помощью Application Insights](how-to-enable-app-insights.md)

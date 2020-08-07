@@ -1,26 +1,29 @@
 ---
-title: Использование Когнитивный поиск Azure в .NET
+title: Использование Microsoft. Azure. Search (V10) в .NET
 titleSuffix: Azure Cognitive Search
-description: Узнайте, как использовать Когнитивный поиск Azure в приложении .NET с помощью C# и пакета SDK для .NET. Задачи на основе кода включают подключение к службе, индексирование содержимого и запрос индекса.
+description: Узнайте, как создавать и администрировать объекты поиска в приложении .NET с помощью C# и версии 10 пакета SDK для .NET. Фрагменты кода демонстрируют подключение к службе, создание индексов и запросов.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
 ms.devlang: dotnet
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: 929241d7bc5db5476bab84d00fde90d4db55aedc
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.date: 08/05/2020
+ms.openlocfilehash: 820ce3078b642f2cc672cd6906895f818c06f5b7
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86146908"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905429"
 ---
-# <a name="how-to-use-azure-cognitive-search-from-a-net-application"></a>Использование Когнитивный поиск Azure из приложения .NET
+# <a name="how-to-use-microsoftazuresearch-v10-in-a-net-application"></a>Как использовать Microsoft. Azure. Search (V10) в приложении .NET
 
-Эта статья представляет собой пошаговое руководство по началу работы с [пакетом SDK Azure когнитивный Поиск .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search). Пакет SDK для .NET можно использовать для реализации расширенных возможностей поиска в приложении с помощью Azure Когнитивный поиск.
+В этой статье объясняется, как создавать объекты поиска и управлять ими с помощью C# и [пакета SDK Azure когнитивный Поиск (V10) .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search). Версия 10 — это последняя версия пакета Microsoft. Azure. Search. После перемещения новые функции будут выдаваться в [Azure.Search.Docументс](https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme) из группы Azure SDK.
 
-## <a name="whats-in-the-azure-cognitive-search-sdk"></a>Что такое Azure Когнитивный поиск SDK
+Если у вас уже есть или порядковых проекты разработки, продолжайте использовать версию 10. Для новых проектов или для использования новых функций необходимо перенести существующее решение поиска в новую библиотеку.
+
+## <a name="whats-in-version-10"></a>Что находится в версии 10
+
 Пакет SDK содержит клиентские библиотеки, позволяющие управлять индексами, источниками данных, индексаторами и картами синонимов, а также отправлять документы, управлять ими и выполнять запросы, не вникая в детали HTTP и JSON. Эти клиентские библиотеки распределяются как пакеты NuGet.
 
 Главный пакет NuGet — `Microsoft.Azure.Search`. Он представляет собой мета пакет, содержащий все остальные пакеты в виде зависимостей. Используйте этот пакет, если вы только начинаете работу или знаете, что приложение потребует всех функций Когнитивный поиск Azure.
@@ -765,7 +768,7 @@ WriteDocuments(results);
 
 На этом руководство заканчивается, но вам не стоит останавливаться. * * Дальнейшие действия предоставляют дополнительные ресурсы для изучения Когнитивный поиск Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Изучите справочную информацию о [пакете SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search) и [REST API](https://docs.microsoft.com/rest/api/searchservice/).
 * Изучите [соглашения о наименовании](https://docs.microsoft.com/rest/api/searchservice/Naming-rules) , чтобы узнать правила именования различных объектов.
 * Проверьте [Поддерживаемые типы данных](https://docs.microsoft.com/rest/api/searchservice/Supported-data-types) в Azure когнитивный Поиск.

@@ -1,6 +1,6 @@
 ---
 title: Управление учетными записями пользователей в службе управления API Azure | Документация Майкрософт
-description: Создание или приглашение пользователей в службе управления API Azure
+description: Узнайте, как создавать или приглашать пользователей в службе управления API Azure. Просмотр дополнительных ресурсов для использования после создания учетной записи разработчика.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 02/13/2018
 ms.author: apimpm
-ms.openlocfilehash: d8f7d7f7707add22d700421b229f6dbe725db465
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 9ec482af2878ba302a4658314723b96fb9a42999
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86250464"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87904893"
 ---
 # <a name="how-to-manage-user-accounts-in-azure-api-management"></a>Управление учетными записями пользователей в службе управления API Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "86250464"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Выполните задачи из статьи [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 

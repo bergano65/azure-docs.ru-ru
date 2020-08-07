@@ -1,6 +1,6 @@
 ---
 title: Вызов REST API операций с авторизацией общего ключа
-titleSuffix: Azure Storage
+titleSuffix: Discover how to call Azure Storage REST API operations with Shared Key authorization. Get detailed information about each step of the sample operation.
 description: Используйте REST API службы хранилища Azure, чтобы выполнить запрос к хранилищу BLOB-объектов с помощью авторизации общего ключа.
 services: storage
 author: tamram
@@ -10,12 +10,12 @@ ms.date: 10/01/2019
 ms.author: tamram
 ms.reviewer: ozge
 ms.subservice: common
-ms.openlocfilehash: 237ad3215ef0330fed8662d987b1b72eca4aec81
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d43df68f48273b03fa9bde9633b487d69c0834ed
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85509189"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905386"
 ---
 # <a name="call-rest-api-operations-with-shared-key-authorization"></a>Вызов REST API операций с авторизацией общего ключа
 
@@ -37,7 +37,7 @@ ms.locfileid: "85509189"
 
 Образец приложения представляет собой консольное приложение, написанное на языке C#.
 
-Используйте [Git](https://git-scm.com/) для загрузки копии приложения в среду разработки.
+Используйте команду [git](https://git-scm.com/), чтобы скачать копию приложения в среду разработки.
 
 ```bash
 git clone https://github.com/Azure-Samples/storage-dotnet-rest-api-with-auth.git
@@ -563,13 +563,13 @@ Content-Length: 1135
 </EnumerationResults>
 ```
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 В этой статье вы узнали, как выполнить запрос к хранилищу BLOB-объектов REST API. С помощью запроса можно получить список контейнеров или список больших двоичных объектов в контейнере. Вы узнали, как создать подпись авторизации для вызова REST API и как использовать ее в запросе RESTFUL. Наконец, вы узнали, как проверить ответ.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Blob Service REST API](/rest/api/storageservices/blob-service-rest-api) (API-интерфейс REST службы BLOB-объектов)
-- [File Service REST API](/rest/api/storageservices/file-service-rest-api) (API-интерфейс REST файловой службы)
+- [REST API службы BLOB-объектов](/rest/api/storageservices/blob-service-rest-api)
+- [REST API файловой службы](/rest/api/storageservices/file-service-rest-api)
 - [REST API службы очередей](/rest/api/storageservices/queue-service-rest-api)
 - [REST API службы таблиц](/rest/api/storageservices/table-service-rest-api)

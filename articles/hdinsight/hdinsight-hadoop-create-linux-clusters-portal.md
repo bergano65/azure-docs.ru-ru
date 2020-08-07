@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
-ms.date: 04/27/2020
-ms.openlocfilehash: 95756e9951b384c779f61651555482b3c8cb7321
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.date: 08/06/2020
+ms.openlocfilehash: 1ba2f5e4b88ae6ae0ed15dbfbbc4fa5c55c45a77
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86083378"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87874033"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-by-using-the-azure-portal"></a>Создание кластеров под управлением Linux в HDInsight с помощью портала Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "86083378"
 
 Портал Azure предоставляет большую часть свойств кластера. С помощью шаблонов Azure Resource Manager можно скрыть множество сведений. Дополнительные сведения см. в статье [Создание кластеров Apache Hadoop в HDInsight с помощью шаблонов Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-clusters"></a>Создание кластеров
 
@@ -39,7 +39,7 @@ ms.locfileid: "86083378"
 
 1. Выберите элементы **Analytics** > **Azure HDInsight**, чтобы перейти на страницу **Создание кластера HDInsight**.
 
-## <a name="basics"></a>Основы
+## <a name="basics"></a>Основные сведения
 
 ![Основы создания кластера HDInsight](./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-basics.png "Создание кластера на портале Azure")
 
@@ -61,7 +61,7 @@ ms.locfileid: "86083378"
 
 Нажмите кнопку **Далее: >>хранилища** , чтобы перейти на следующую вкладку.
 
-## <a name="storage"></a>Служба хранилища
+## <a name="storage"></a>Хранилище
 
 > [!WARNING] 
 > Начиная с 15 июня клиенты 2020 не смогут создать новый субъект-службу с помощью HDInsight. См. раздел [Создание субъекта-службы и сертификатов](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) с помощью Azure Active Directory.
@@ -86,6 +86,9 @@ ms.locfileid: "86083378"
 
 Необязательно. Укажите существующую базу данных SQL для сохранения метаданных Apache Hive, Apache Oozie, и или Apache Ambari за пределами кластера. База данных SQL Azure, используемая для хранилище метаданных, должна разрешать подключение к другим службам Azure, включая Azure HDInsight. При создании хранилища метаданных не следует использовать в названиях базы данных тире или дефисы. Это может привести к сбою при создании кластера.
 
+> [!IMPORTANT]
+> Для фигур кластера, поддерживающих метахранилища, хранилище метаданных по умолчанию предоставляет базу данных SQL Azure с **базовым ограничением DTU уровня 5 (не обновляемым)**. Подходит для базовых целей тестирования. Для больших или рабочих нагрузок рекомендуется переходить на внешний хранилище метаданных.
+
 Нажмите кнопку **Далее: безопасность + сетевые >>** , чтобы перейти на следующую вкладку.
 
 ## <a name="security--networking"></a>Безопасность и работа в сети
@@ -94,7 +97,7 @@ ms.locfileid: "86083378"
 
 На вкладке **безопасность и сеть** укажите следующие сведения.
 
-|Свойство |Описание |
+|Свойство |Описание: |
 |---|---|
 |Пакет безопасности корпоративного уровня|Необязательно: установите флажок, чтобы использовать **Корпоративный пакет безопасности**. Дополнительные сведения см. в статье [Настройка кластера HDInsight с корпоративный пакет безопасности с помощью доменных служб Azure Active Directory](./domain-joined/apache-domain-joined-configure-using-azure-adds.md).|
 |TLS|Необязательно. Выберите версию TLS из раскрывающегося списка. Дополнительные сведения см. в статье [о протоколе TLS](./transport-layer-security.md).|
@@ -111,7 +114,7 @@ ms.locfileid: "86083378"
 
 На вкладке **Настройка и цены** укажите следующие сведения.
 
-|Свойство |Описание |
+|Свойство |Описание: |
 |---|---|
 |+ Добавить приложение|Необязательно. Выберите любые нужные приложения. Эти приложения могут разрабатывать корпорация Майкрософт, независимые поставщики программного обеспечения (ISV) или вы сами. Дополнительные сведения см. в разделе [Установка приложения во время создания кластера](hdinsight-apps-install-applications.md#install-applications-during-cluster-creation).|
 |Размер узла|Необязательно. Выберите узел другого размера.|
@@ -121,7 +124,7 @@ ms.locfileid: "86083378"
 
 Выберите **Проверка + создать >>** , чтобы проверить конфигурацию кластера и перейти на последнюю вкладку.
 
-## <a name="review--create"></a>Отзыв и создание
+## <a name="review--create"></a>Просмотр и создание
 
 ![Сводка по созданию кластера HDInsight](./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-review-create-hadoop.png "Укажите число узлов кластера")
 
@@ -142,17 +145,17 @@ ms.locfileid: "86083378"
 |Обзор|Предоставляет все ценные сведения о кластере. Например, имя, группа ресурсов, к которой она принадлежит, расположение, операционная система и URL-адрес панели мониторинга кластера.|
 |Панели мониторинга кластера|Направляет вас на портал Ambari, связанный с кластером.|
 |SSH + вход в кластер|Предоставляет сведения, необходимые для доступа к кластеру с помощью SSH.|
-|Удалить|Удаление кластера HDInsight.|
+|DELETE|Удаление кластера HDInsight.|
 
 ## <a name="delete-the-cluster"></a>Удаление кластера
 
 См. раздел [Удаление кластера HDInsight с помощью браузера, PowerShell или Azure CLI](./hdinsight-delete-cluster.md).
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](./hdinsight-hadoop-customize-cluster-linux.md#access-control).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы успешно создали кластер HDInsight. Теперь узнайте, как работать с кластером.
 

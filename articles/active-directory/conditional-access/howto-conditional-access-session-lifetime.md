@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu, calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cf89864eb6e52baf925f82aa590619d7cfeabb2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b7d2bb927569a125015f1b0befa27fd3e1f17c00
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85552109"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87874781"
 ---
 # <a name="configure-authentication-session-management-with-conditional-access"></a>Настройка управления сеансом проверки подлинности с условным доступом.
 
@@ -92,7 +92,7 @@ ms.locfileid: "85552109"
 
 ### <a name="policy-1-sign-in-frequency-control"></a>Политика 1. Управление частотой входа
 
-1. Создать новую политику
+1. Создание новой политики
 1. Выберите все необходимые условия для среды клиента, включая целевые облачные приложения.
 
    > [!NOTE]
@@ -107,11 +107,9 @@ ms.locfileid: "85552109"
 
 При входе в систему устройств с Windows Azure AD вход на устройство считается запросом. Например, если вы настроили частоту входа в 24 часа для приложений Office, пользователи на устройствах Windows, зарегистрированных в Azure AD, будут соответствовать политике частоты входа, войдя на устройство и не выполнив запрос повторно при открытии приложений Office.
 
-Если вы настроили другую частоту входа для различных веб-приложений, которые выполняются в одном сеансе браузера, к обоим приложениям будет применена самая политика, так как все приложения, работающие в одном сеансе браузера, совместно используют один маркер сеанса.
-
 ### <a name="policy-2-persistent-browser-session"></a>Политика 2: постоянный сеанс браузера
 
-1. Создать новую политику
+1. Создание новой политики
 1. Выберите все обязательные условия.
 
    > [!NOTE]

@@ -998,7 +998,7 @@
                       href: virtual-machines/windows/failover-cluster-instance-prepare-vm.md
                     - name: Создание FCI с помощью указанных ниже средств
                       items:
-                        - name: "Общие диски Azure (SQL\_2019+)"
+                        - name: Общие диски Azure
                           href: virtual-machines/windows/failover-cluster-instance-azure-shared-disks-manually-configure.md
                         - name: Локальные дисковые пространства (Win2016+)
                           href: virtual-machines/windows/failover-cluster-instance-storage-spaces-direct-manually-configure.md

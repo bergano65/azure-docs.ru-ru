@@ -3,12 +3,12 @@ title: Агент Службы восстановления Microsoft Azure (MAR
 description: Здесь рассматриваются распространенные вопросы о резервном копировании файлов и папок с помощью Azure Backup.
 ms.topic: conceptual
 ms.date: 07/29/2019
-ms.openlocfilehash: c4494b09a5cf838aae3dde01c1268042929ef213
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: e50e424f1a9f044aa1ed8e95c1bce002d134bffe
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87563111"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87874628"
 ---
 # <a name="frequently-asked-questions---microsoft-azure-recovery-services-mars-agent"></a>Часто задаваемые вопросы — агент Службы восстановления Microsoft Azure (MARS)
 
@@ -32,7 +32,7 @@ ms.locfileid: "87563111"
 
 ### <a name="what-characters-are-allowed-for-the-passphrase"></a>Какие символы можно использовать для парольной фразы?
 
-Парольная фраза должна использовать символы из кодировки ASCII со значениями ASCII, меньшими или равными 127.
+Парольная фраза должна использовать символы из кодировки ASCII со [значениями ASCII, меньшими или равными 127](https://docs.microsoft.com/office/vba/language/reference/user-interface-help/character-set-0127).
 
 ### <a name="from-what-drives-can-i-back-up-files-and-folders"></a>С каких дисков можно создавать резервные копии файлов и папок?
 
@@ -80,7 +80,7 @@ ms.locfileid: "87563111"
 
 * Необходимо зарегистрировать новое имя компьютера в хранилище службы архивации.
 * При регистрации нового имени в хранилище первая операция является *полной* резервной копией.
-* Если необходимо восстановить данные из резервной копии в хранилище с прежним именем сервера, используйте параметр для восстановления в альтернативное расположение в мастере восстановления данных. [Подробнее](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine).
+* Если необходимо восстановить данные из резервной копии в хранилище с прежним именем сервера, используйте параметр для восстановления в альтернативное расположение в мастере восстановления данных. [Дополнительные сведения](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine).
 
 ### <a name="what-is-the-maximum-file-path-length-for-backup"></a>Какова максимальная длина пути к файлу для резервного копирования?
 
@@ -163,7 +163,7 @@ ms.locfileid: "87563111"
 
 ### <a name="is-there-a-way-to-adjust-the-amount-of-bandwidth-used-for-backup"></a>Существует ли способ настройки объема пропускной способности, используемой для резервного копирования?
 
-Да, можно использовать параметр **изменить свойства** в АГЕНТе Mars, чтобы настроить пропускную способность и время. [Подробнее](backup-windows-with-mars-agent.md#enable-network-throttling).
+Да, можно использовать параметр **изменить свойства** в АГЕНТе Mars, чтобы настроить пропускную способность и время. [Дополнительные сведения](backup-windows-with-mars-agent.md#enable-network-throttling).
 
 ## <a name="restore"></a>Восстановить
 
@@ -211,6 +211,6 @@ ms.locfileid: "87563111"
 * Для функции восстановления восстановления тома агент MARS предоставляет возможность пропустить восстановление разрешений ACL для восстанавливаемого файла или папки.
 * Для параметра восстановления отдельных файлов и папок агент MARS будет восстанавливаться с разрешениями ACL (отсутствует возможность пропустить восстановление списка ACL).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Узнайте](tutorial-backup-windows-server-to-azure.md) , как создать резервную копию компьютера Windows.

@@ -5,19 +5,26 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 06/12/2020
+ms.date: 08/06/2020
 ms.author: cherylmc
-ms.openlocfilehash: f22f81d69d746764af43d9167874aabedbd56f51
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 475b2aa99296995c3adb51eca2d6bdb53616670e
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84765327"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87903601"
 ---
 # <a name="create-expressroute-direct-using-the-azure-portal"></a>Создание ExpressRoute Direct с помощью портал Azure
 
 В этой статье показано, как создать ExpressRoute Direct с помощью портал Azure.
 Служба ExpressRoute Direct позволяет напрямую подключаться к глобальной сети Майкрософт в местах пиринга, стратегически распределенных по всему миру. См. дополнительные сведения об [ExpressRoute Direct](expressroute-erdirect-about.md).
+
+## <a name="before-you-begin"></a><a name="before"></a>Подготовка к работе
+
+Убедитесь, что поставщик ресурсов **Microsoft. Network** зарегистрирован в вашей подписке. Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов.
+
+1. Получите доступ к параметрам подписки, как описано в разделе [поставщики и типы ресурсов Azure](../azure-resource-manager/management/resource-providers-and-types.md).
+1. В подписке для **поставщиков ресурсов**убедитесь, что поставщик **Microsoft. Network** отображает **зарегистрированное** состояние. Если поставщик ресурсов Microsoft. Network отсутствует в списке зарегистрированных поставщиков, добавьте его.
 
 ## <a name="1-create-expressroute-direct"></a><a name="create-erdir"></a>1. Создание прямого канала ExpressRoute
 
@@ -56,7 +63,7 @@ ms.locfileid: "84765327"
 
     :::image type="content" source="./media/how-to-expressroute-direct-portal/validate.png" alt-text="Просмотр и создание":::
 
-1. Выберите **Создать**. Вы увидите сообщение о том, что развертывание выполняется. Состояние будет отображаться на этой странице при создании ресурсов. 
+1. Нажмите кнопку **создания**. Вы увидите сообщение о том, что развертывание выполняется. Состояние будет отображаться на этой странице при создании ресурсов. 
 
 ## <a name="2-change-admin-state-of-links"></a><a name="state"></a>2. изменение состояния администрирования ссылок
 
@@ -90,7 +97,7 @@ ms.locfileid: "84765327"
 
 1. В разделе **Параметры** прямого подключения к ExpressRoute выберите **каналы**, а затем щелкните **+ добавить**. 
 
-    :::image type="content" source="./media/how-to-expressroute-direct-portal/add.png" alt-text="Добавить" lightbox="./media/how-to-expressroute-direct-portal/add-expand.png":::
+    :::image type="content" source="./media/how-to-expressroute-direct-portal/add.png" alt-text="Добавление" lightbox="./media/how-to-expressroute-direct-portal/add-expand.png":::
 
 1. Настройте параметры на странице **Конфигурация** .
 
@@ -100,7 +107,7 @@ ms.locfileid: "84765327"
 
    :::image type="content" source="./media/how-to-expressroute-direct-portal/review.png" alt-text="Просмотр и создание":::
 
-1. Выберите **Создать**. Вы увидите сообщение о том, что развертывание выполняется. Состояние будет отображаться на этой странице при создании ресурсов. 
+1. Нажмите кнопку **создания**. Вы увидите сообщение о том, что развертывание выполняется. Состояние будет отображаться на этой странице при создании ресурсов. 
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

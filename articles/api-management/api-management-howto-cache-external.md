@@ -1,6 +1,6 @@
 ---
 title: Использование внешнего кэша в службе управления API Azure | Документация Майкрософт
-description: Узнайте, как настроить и использовать внешний кэш в службе управления API Azure.
+description: Узнайте, как настроить и использовать внешний кэш в службе управления API Azure. Использование внешнего кэша позволяет преодолеть некоторые ограничения встроенного кэша.
 services: api-management
 documentationcenter: ''
 author: mikebudzynski
@@ -11,12 +11,12 @@ ms.service: api-management
 ms.topic: conceptual
 ms.date: 04/26/2020
 ms.author: apimpm
-ms.openlocfilehash: 3f1f3d0fd0164a37c8011dc82a95337c89e103df
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: cfb7dd7a3831d90235b25af9598cfbc137ffcb3d
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86250640"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87904961"
 ---
 # <a name="use-an-external-redis-compatible-cache-in-azure-api-management"></a>Использование внешнего Redis кэша в службе управления API Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "86250640"
 3. Щелкните **+ Добавить**.
 4. В раскрывающемся поле **Cache instance** (Экземпляр кэша) выберите свой кэш.
 5. Выберите **значение по умолчанию** или укажите нужный регион в раскрывающемся списке **использовать** .
-6. Нажмите кнопку **Сохранить**.
+6. Щелкните **Сохранить**.
 
 ### <a name="add-an-azure-cache-for-redis-hosted-outside-of-the-current-azure-subscription-or-azure-in-general"></a>Добавление кэша Redis для Azure, размещенного за пределами текущей подписки Azure или Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "86250640"
 4. В раскрывающемся поле **Cache instance** (Экземпляр кэша) выберите **Custom** (Настраиваемый).
 5. Выберите **значение по умолчанию** или укажите нужный регион в раскрывающемся списке **использовать** .
 6. В поле **Строка подключения** укажите строку подключения к кэшу Redis для Azure.
-7. Нажмите кнопку **Сохранить**.
+7. Щелкните **Сохранить**.
 
 ### <a name="add-a-redis-cache-to-a-self-hosted-gateway"></a>Добавление кэша Redis в шлюз, размещенный на собственном сервере
 
@@ -94,7 +94,7 @@ ms.locfileid: "86250640"
 4. В раскрывающемся поле **Cache instance** (Экземпляр кэша) выберите **Custom** (Настраиваемый).
 5. Укажите нужное расположение самостоятельно размещенного шлюза или **значение по умолчанию** в раскрывающемся списке **использовать** .
 6. В поле **Connection string** (Строка подключения) укажите строку подключения к кэшу Redis.
-7. Нажмите кнопку **Сохранить**.
+7. Щелкните **Сохранить**.
 
 ## <a name="use-the-external-cache"></a>Использование внешнего кэша
 

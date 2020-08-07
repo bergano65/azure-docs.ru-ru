@@ -2,7 +2,7 @@
 title: Хранилище данных удостоверений для клиентов Австралии и Новой Зеландии — Azure AD
 description: Узнайте, где Azure Active Directory хранит данные, связанные с удостоверениями, для клиентов Австралии.
 services: active-directory
-author: msaburnley
+author: ajburnle
 manager: daveba
 ms.author: ajburnle
 ms.service: active-directory
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 12/13/2019
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 850298719d5636e964b0c338d7a2a4cc9bb8aece
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 97d651a1a6ce8ef412c148f16d0aa4412df94cb0
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77370298"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87799554"
 ---
 # <a name="identity-data-storage-for-australian-and-new-zealand-customers-in-azure-active-directory"></a>Хранилище данных удостоверений для клиентов Австралии и Новой Зеландии в Azure Active Directory
 
@@ -28,7 +28,7 @@ ms.locfileid: "77370298"
 
 Для клиентов, которые указали адрес в Австралии или Новой Зеландии, Azure AD сохраняет данные удостоверений для этих служб в австралийских центрах обработки данных: 
 - Управление каталогами Azure AD 
-- Аутентификация
+- Проверка подлинности
 
 Все остальные службы Azure AD хранят данные клиентов в глобальных центрах обработки данных. Чтобы найти центр обработки данных для службы, см [. раздел Azure Active Directory – где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located)
 
