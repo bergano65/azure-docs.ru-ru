@@ -58,6 +58,10 @@
               href: threat-modeling-tool-releases-73002061.md
             - name: "Threat Modeling Tool, выпуск обновления\_7.3.00316.1 от 22.03.2020"
               href: threat-modeling-tool-releases-73003161.md
+            - name: "Threat Modeling Tool, выпуск обновления\_7.3.00714.2 от 14\_июля 2020\_г."
+              href: threat-modeling-tool-releases-73007142.md
+            - name: "Threat Modeling Tool, выпуск обновления\_7.3.00729.1 от 29 июля 2020\_г."
+              href: threat-modeling-tool-releases-73007291.md
         - name: Устранение проблем
           href: threat-modeling-tool-mitigations.md
           items:

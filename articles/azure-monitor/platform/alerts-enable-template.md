@@ -398,7 +398,7 @@ ms.locfileid: "87849025"
 }
 ```
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 * [Узнайте больше об оповещениях](alerts-overview.md)
 * [Добавьте параметры диагностики](./diagnostic-settings-template.md) в шаблон Resource Manager.
 * Синтаксис и свойства JSON см. в справочнике по шаблонам [Microsoft.Insights/metricAlerts](/azure/templates/microsoft.insights/alertrules).

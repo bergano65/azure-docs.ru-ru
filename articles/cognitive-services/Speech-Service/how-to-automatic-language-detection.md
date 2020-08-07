@@ -238,7 +238,7 @@ var autoDetectConfig = SpeechSDK.AutoDetectSourceLanguageConfig.fromSourceLangua
 
 ::: zone-end
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 ::: zone pivot="programming-language-csharp"
 * См. [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/csharp/sharedcontent/console/speech_recognition_samples.cs#L741) в GitHub для автоматического определения языка

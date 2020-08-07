@@ -130,7 +130,7 @@ Remove-AzImage `
    -ResourceGroupName $managedImage.ResourceGroupName
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Убедившись, что репликация завершена, можно создать виртуальную машину из [обобщенного образа](vm-generalized-image-version-powershell.md).
 

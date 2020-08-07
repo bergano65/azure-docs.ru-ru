@@ -31,6 +31,6 @@ ms.locfileid: "87901799"
 - [Ionic](https://github.com/Azure/azure-notificationhubs-samples/tree/master/Ionic)
 - [iOS](https://github.com/Azure/azure-notificationhubs-ios)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с учебниками в разделе « **учебники** » оглавления.

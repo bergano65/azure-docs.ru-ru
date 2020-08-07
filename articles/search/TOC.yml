@@ -183,7 +183,7 @@
                   href: search-howto-index-json-blobs.md
             - name: Таблицы Azure
               href: search-howto-indexing-azure-tables.md
-            - name: "Azure\_Cosmos\_DB"
+            - name: Azure Cosmos DB
               href: search-howto-index-cosmosdb.md
             - name: Azure Data Lake Storage 2-го поколения
               href: search-howto-index-azure-data-lake-storage.md
@@ -312,9 +312,15 @@
         - name: Список предварительных версий функций
           href: search-api-preview.md
         - name: Разработка в .NET
-          href: search-howto-dotnet-sdk.md
+          items:
+            - name: "Использование Microsoft.Azure.Search (версии\_10)"
+              href: search-howto-dotnet-sdk.md
+            - name: "Начало работы (версия\_10)"
+              href: search-get-started-dotnet-v10.md
         - name: Обновление пакета SDK
           items:
+            - name: Пакет SDK для .NET версии 11.0
+              href: search-dotnet-sdk-migration-version-11.md
             - name: "Пакет SDK для .NET версии\_10.0"
               href: search-dotnet-sdk-migration-version-10.md
             - name: Пакет SDK для .NET версии 9.0
@@ -349,7 +355,7 @@
           items:
             - name: Фильтры системы безопасности
               href: search-security-trimming-for-azure-search.md
-            - name: Фильтр по удостоверениям AAD
+            - name: Фильтрация по удостоверениям пользователей
               href: search-security-trimming-for-azure-search-with-aad.md
     - name: Управление
       items:
@@ -381,7 +387,7 @@
           href: cognitive-search-common-errors-warnings.md
 - name: Справочник
   items:
-    - name: Azure CLI;
+    - name: Azure CLI
       href: /cli/azure/search?view=azure-cli-latest
     - name: Azure PowerShell
       href: /powershell/module/az.search

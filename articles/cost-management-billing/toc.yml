@@ -94,7 +94,7 @@
               href: reservations/understand-reserved-instance-usage.md?toc=/azure/cost-management-billing/toc.json
             - name: Данные об использовании для корпоративных клиентов
               href: reservations/understand-reserved-instance-usage-ea.md?toc=/azure/cost-management-billing/toc.json
-        - name: Терминология выставления счетов
+        - name: Выставление счетов
           items:
             - name: Условия использования отдельных подписок
               href: understand/understand-usage.md
@@ -108,6 +108,8 @@
               href: manage/mca-understand-pricesheet.md
             - name: Условия выставления счетов в рамках Соглашения с партнером Майкрософт
               href: understand/mpa-invoice-terms.md
+            - name: Изменения в обновленной личной учетной записи выставления счетов
+              href: understand/mosp-new-customer-experience.md
             - name: Учетные записи выставления счетов для клиентского соглашения Майкрософт
               href: understand/mca-overview.md
             - name: Учетные записи выставления счетов для партнерского соглашения Майкрософт

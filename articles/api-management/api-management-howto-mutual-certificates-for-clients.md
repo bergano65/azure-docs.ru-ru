@@ -97,7 +97,7 @@ ms.locfileid: "87904874"
 
 ![Согласование сертификата клиента](./media/api-management-howto-mutual-certificates-for-clients/negotiate-client-certificate.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 -   [Как защитить серверные службы с помощью аутентификации на основе сертификата клиента](./api-management-howto-mutual-certificates.md)
 -   [Как передавать сертификаты](./api-management-howto-mutual-certificates.md)

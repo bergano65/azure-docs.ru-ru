@@ -26,7 +26,7 @@ ms.locfileid: "87849341"
 
 Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azure обучающими продуктами, такими как [скриптрун](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrun?view=azure-ml-py), [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) [, а также](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive?view=azure-ml-py) [конвейеры и машинное обучение Azure](how-to-create-your-first-pipeline.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы создать и обучить наборы данных, вам потребуется:
 
@@ -253,7 +253,7 @@ run_config.source_directory_data_store = "workspaceblobstore"
 
 В этой статье демонстрируются и развертываются [записные книжки набора данных](https://aka.ms/dataset-tutorial) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Автоматическое обучение моделей машинного обучения](how-to-auto-train-remote.md) с помощью табулардатасетс.
 

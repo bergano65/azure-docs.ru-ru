@@ -3,12 +3,12 @@ title: Краткое описание примера схемы CAF Foundation
 description: Обзор и описание архитектуры Cloud Adoption Framework (CAF) с примером схемы для Azure Foundation.
 ms.date: 04/15/2020
 ms.topic: sample
-ms.openlocfilehash: 3291fdc299652d2b22bff89f5b1dadbdc064e561
-ms.sourcegitcommit: 0fda81f271f1a668ed28c55dcc2d0ba2bb417edd
+ms.openlocfilehash: b8bd0015d5f95fc61806197ca21fdaeeb3452700
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82901307"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87852350"
 ---
 # <a name="overview-of-the-microsoft-cloud-adoption-framework-for-azure-foundation-blueprint-sample"></a>Общие сведения об использовании Microsoft Cloud Adoption Framework с примером схемы CAF Foundation
 
@@ -35,7 +35,7 @@ ms.locfileid: "82901307"
   - включение шифрования безопасной передачи учетной записи хранения Azure;
   - запрет на использование типов ресурсов (выбираются при развертывании).  
 - Инициативы
-  - включение мониторинга в Центре безопасности Azure (89 политик).
+  - включение мониторинга в Центре безопасности Azure (более 100 политик).
 
 Все эти элементы соответствуют проверенным на практике рекомендациям, опубликованным в [Центре архитектуры Azure (эталонные архитектуры)](/azure/architecture/reference-architectures/).
 

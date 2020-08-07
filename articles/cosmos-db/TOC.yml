@@ -1248,7 +1248,7 @@
           href: sql-api-sdk-dotnet-changefeed.md
         - name: "Библиотека исполнителя массовых операций для .NET версии\_2"
           href: sql-api-sdk-bulk-executor-dot-net.md
-    - name: Пакеты SDK для Java
+    - name: Соединители и пакеты SDK для Java
       items:
         - name: "Пакет SDK для Java версии\_4"
           href: sql-api-sdk-java-v4.md
@@ -1256,6 +1256,10 @@
           href: sql-api-sdk-async-java.md
         - name: "Пакет SDK для Sync Java версии\_2"
           href: sql-api-sdk-java.md
+        - name: Соединитель Spring Data для API SQL
+          href: sql-api-sdk-java-spring.md
+        - name: Соединитель Spark для API SQL
+          href: sql-api-sdk-java-spark.md
         - name: "Библиотека массового исполнителя для Java версии\_2"
           href: sql-api-sdk-bulk-executor-java.md
     - name: Node.js
