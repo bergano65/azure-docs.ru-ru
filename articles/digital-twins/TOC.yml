@@ -70,8 +70,6 @@
           href: how-to-create-azure-function.md
         - name: Запрос данных о графе двойника
           href: how-to-query-graph.md
-        - name: Просмотр метрик в Azure Monitor
-          href: how-to-view-metrics.md
     - name: Входные данные подключения
       items:
         - name: Прием данных телеметрии из Центра Интернета вещей
@@ -79,15 +77,23 @@
     - name: Выходные данные подключения
       items:
         - name: Управление конечными точками и маршрутами
-          href: how-to-manage-routes.md
+          items:
+            - name: Использование API-интерфейсов и интерфейса командной строки
+              href: how-to-manage-routes-apis-cli.md
+            - name: Версия для портала
+              href: how-to-manage-routes-portal.md
         - name: Интеграция с Azure Maps
           href: how-to-integrate-maps.md
         - name: Интеграция со службой "Аналитика временных рядов Azure"
           href: how-to-integrate-time-series-insights.md
     - name: Диагностика
       items:
+        - name: Просмотр метрик в Azure Monitor
+          href: troubleshoot-metrics.md
         - name: Включение журналов диагностики
           href: troubleshoot-diagnostics.md
+        - name: Включение оповещений
+          href: troubleshoot-alerts.md
         - name: Известные проблемы
           href: troubleshoot-known-issues.md
         - name: Решение проблем

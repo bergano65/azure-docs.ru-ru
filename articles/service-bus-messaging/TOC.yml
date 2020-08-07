@@ -7,13 +7,15 @@
     - name: Сравнение служб обмена сообщениями
       href: ../event-grid/compare-messaging-services.md
       maintainContext: true
+    - name: Использование Служебной шины со службой сообщений Java (JMS) версии 2.0 (предварительная версия)
+      href: how-to-use-java-message-service-20.md
 - name: Краткие руководства
   items:
     - name: Очереди служебной шины
       items:
         - name: Создание очереди служебной шины
           items:
-            - name: портал Azure;
+            - name: Портал Azure
               href: service-bus-quickstart-portal.md
             - name: Azure PowerShell
               href: service-bus-quickstart-powershell.md
@@ -127,6 +129,8 @@
           items:
             - name: 'Очереди, разделы и подписки'
               href: service-bus-queues-topics-subscriptions.md
+            - name: Сущности в службе сообщений Java (JMS) версии 2.0 (предварительная версия)
+              href: java-message-service-20-entities.md
             - name: 'Сообщения, полезные данные и сериализация'
               href: service-bus-messages-payloads.md
             - name: 'Передача, блокировка и согласование сообщений'

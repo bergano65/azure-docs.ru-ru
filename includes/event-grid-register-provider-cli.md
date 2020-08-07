@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 08/17/2018
 ms.author: tomfitz
 ms.custom: include file
-ms.openlocfilehash: ace22a6896a121f5cd8af838c7b0e427bd0287dc
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
-ms.translationtype: MT
+ms.openlocfilehash: b48e5e28b15d17796138d493a7d9c628791df2e6
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "67184969"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87830140"
 ---
-## <a name="enable-event-grid-resource-provider"></a>Включение поставщика ресурсов службы "Сетка событий"
+## <a name="enable-the-event-grid-resource-provider"></a>Включение поставщика ресурсов службы "Сетка событий"
 
 Если вы еще не использовали службу "Сетка событий" в подписке Azure, вам, возможно, потребуется зарегистрировать поставщик ресурсов этой службы. Выполните следующую команду для регистрации поставщика:
 
