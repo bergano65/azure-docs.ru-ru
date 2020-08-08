@@ -10,16 +10,16 @@ ms.workload: mobile
 ms.tgt_pltfrm: ios
 ms.devlang: objective-c
 ms.topic: article
-ms.date: 01/04/2019
+ms.date: 08/07/2020
 ms.author: sethm
-ms.reviewer: jowargo
+ms.reviewer: thsomasu
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 0f5bc9827919c18e327dc263384f0d4b6a01c5bc
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 0d53709a9fd7cb3f40f540e1bb96c2be12b75f2c
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86530185"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88004178"
 ---
 # <a name="tutorial-send-push-notifications-to-specific-users-using-azure-notification-hubs"></a>Руководство. Отправка push-уведомлений конкретным пользователям с помощью центров уведомлений Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "86530185"
 1. Откройте приложение просмотра одной страницы, созданное в руководстве [Отправка push-уведомлений в приложения iOS с помощью центров уведомлений Azure](ios-sdk-get-started.md) .
 
    > [!NOTE]
-   > В этом разделе подразумевается, что вы настроили свой проект, указав пустое имя организации. Если вы этого не сделали, вам нужно будет добавить имя своей организации перед всеми именами классов.
+   > В этом разделе подразумевается, что вы настроили свой проект, указав пустое имя организации. Если это не так, добавьте в начало названия организации все имена классов.
 
 2. В файл `Main.storyboard` добавьте компоненты из библиотеки объектов, показанные на снимке экрана.
 
@@ -66,7 +66,7 @@ ms.locfileid: "86530185"
 
      Некоторые компоненты были добавлены в учебнике [Отправка push-уведомлений в приложения iOS с помощью центров уведомлений Azure](ios-sdk-get-started.md) .
 
-3. Перетащите **CTRL** из компонентов в представлении в `ViewController.h` и добавьте эти новые элементы.
+3. **Перетащите указатель** мыши от компонентов в представлении к `ViewController.h` и добавьте следующие новые розетки:
 
     ```objc
     @property (weak, nonatomic) IBOutlet UITextField *UsernameField;
@@ -86,13 +86,13 @@ ms.locfileid: "86530185"
     - (IBAction)LogInAction:(id)sender;
     ```
 
-4. В файл `ViewController.h` добавьте следующее `#define` после импорта операторов. Замените заполнитель `<Enter Your Backend Endpoint>` URL-адресом назначения, который использовался для развертывания серверной части приложения в предыдущем разделе. Например, `http://your_backend.azurewebsites.net`.
+4. В файл `ViewController.h` добавьте следующее `#define` после импорта операторов. Замените заполнитель `<Your backend endpoint>` URL-адресом назначения, который использовался для развертывания серверной части приложения в предыдущем разделе. Например, `http://your_backend.azurewebsites.net`:
 
     ```objc
-    #define BACKEND_ENDPOINT @"<Enter Your Backend Endpoint>"
+    #define BACKEND_ENDPOINT @"<Your backend endpoint>"
     ```
 
-5. В проекте создайте класс Cocoa Touch с именем `RegisterClient` для взаимодействия с серверной частью ASP.NET. Создайте класс, наследующий `NSObject`. Затем добавьте следующий код в `RegisterClient.h`.
+5. В проекте создайте класс Cocoa Touch с именем `RegisterClient` для взаимодействия с серверной частью ASP.NET. Создайте класс, наследующий `NSObject`. Затем добавьте следующий код в `RegisterClient.h` :
 
     ```objc
     @interface RegisterClient : NSObject
@@ -494,7 +494,7 @@ ms.locfileid: "86530185"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы узнали, как отправлять push-уведомления определенным пользователям, с регистрацией которых связаны теги. Чтобы узнать, как отправлять push-уведомления на основе расположения, перейдите к следующему руководству: 
+В этом руководстве вы узнали, как отправлять push-уведомления определенным пользователям, с регистрацией которых связаны теги. Чтобы узнать, как отправлять push-уведомления на основе расположения, перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
 >[Отправка push-уведомлений с определением геозон с помощью Центров уведомлений Azure и Bing Spatial Data](notification-hubs-push-bing-spatial-data-geofencing-notification.md)

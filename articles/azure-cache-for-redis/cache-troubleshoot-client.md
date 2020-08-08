@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: troubleshooting
 ms.date: 10/18/2019
-ms.openlocfilehash: 7d5ab5c125a8a395d1bc0139421ec804e1221e12
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 122c96c95aea794fbba9cab8a9a5b867f9f34b48
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86506440"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008973"
 ---
 # <a name="troubleshoot-azure-cache-for-redis-client-side-issues"></a>Устранение неполадок с Кэшем Azure для Redis на стороне клиента
 
@@ -53,7 +53,7 @@ ms.locfileid: "86506440"
 - Обратите внимание, что в разделах `IOCP` и `WORKER` значение `Busy` больше, чем значение `Min`. Это различие означает, что ваши `ThreadPool` параметры требуют настройки.
 - Кроме того, обратите внимание на `in: 64221`. Это значение указывает, что 64 211 байт были получены на уровне сокета ядра клиента, но не были считаны приложением. Это различие обычно означает, что ваше приложение (например, StackExchange. Redis) не считывает данные из сети так быстро, как сервер отправляет их вам.
 
-Вы можете [настроить `ThreadPool` Параметры](cache-faq.md#important-details-about-threadpool-growth) , чтобы обеспечить быстрое увеличение масштаба пула потоков в сценариях пакетной обработки.
+Вы можете [настроить `ThreadPool` Параметры](cache-management-faq.md#important-details-about-threadpool-growth) , чтобы обеспечить быстрое увеличение масштаба пула потоков в сценариях пакетной обработки.
 
 ## <a name="high-client-cpu-usage"></a>Высокий коэффициент загрузки ЦП клиента
 
@@ -109,4 +109,4 @@ ms.locfileid: "86506440"
 ## <a name="additional-information"></a>Дополнительные сведения
 
 - [Устранение неполадок с Кэшем Azure для Redis на стороне сервера](cache-troubleshoot-server.md)
-- [Как измерить и протестировать производительность моего кэша?](cache-faq.md#how-can-i-benchmark-and-test-the-performance-of-my-cache)
+- [Как измерить и протестировать производительность моего кэша?](cache-management-faq.md#how-can-i-benchmark-and-test-the-performance-of-my-cache)

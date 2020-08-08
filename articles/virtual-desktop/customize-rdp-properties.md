@@ -1,24 +1,22 @@
 ---
 title: Настройка свойств RDP с помощью PowerShell — Azure
 description: Настройка свойств RDP для виртуальных рабочих столов Windows с помощью командлетов PowerShell.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 07/20/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 630f2a7fe2e95992cb7724a7906a0949ffcea784
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 439f009d70775428a00f627160bf4d6b8ab9b089
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87271116"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009109"
 ---
 # <a name="customize-remote-desktop-protocol-rdp-properties-for-a-host-pool"></a>Настройка свойств протокол удаленного рабочего стола (RDP) для пула узлов
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/customize-rdp-properties-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/customize-rdp-properties-2019.md).
 
 Настройка свойств протокол удаленного рабочего стола пула узлов (RDP), таких как использование нескольких мониторов и перенаправление звука, позволяет обеспечить оптимальную работу пользователей в зависимости от их потребностей. Свойства RDP можно настроить в виртуальном рабочем столе Windows с помощью портал Azure или с помощью параметра *-кустомрдппроперти* в командлете **Update-азввдхостпул** .
 

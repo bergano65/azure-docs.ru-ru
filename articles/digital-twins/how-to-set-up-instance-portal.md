@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: c7027f474c9ff5cbd90ed1800d74e3b4ebd60b3e
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 33772d46f363b161c1faa5c953f48a702ae2b8bf
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836944"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009678"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (портал)
 
@@ -24,27 +24,13 @@ ms.locfileid: "87836944"
 * Чтобы выполнить эти действия вручную с помощью интерфейса командной строки, см. версию CLI этой статьи: [*инструкции по настройке экземпляра и проверки подлинности (CLI)*](how-to-set-up-instance-cli.md).
 * Чтобы выполнить автоматическую установку с помощью примера скрипта развертывания, см. статью [*как настроить экземпляр и проверку подлинности (в скрипте)*](how-to-set-up-instance-scripted.md).
 
-[!INCLUDE [digital-twins-setup-steps.md](../../includes/digital-twins-setup-steps.md)]
- 
-Затем войдите в [портал Azure](https://ms.portal.azure.com/) с вашими учетными данными.
-
-## <a name="prerequisites-permission-requirements"></a>Необходимые условия: требования к разрешениям
-
-Чтобы выполнить все действия, описанные в этой статье, необходимо классифицировать в подписке Azure как владелец. 
-
-Уровень разрешений можно проверить на [странице "подписки](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) " в портал Azure (можно использовать эту ссылку или найти *подписки* с помощью панели поиска портала). Найдите имя используемой подписки и просмотрите ее роль в столбце *Моя роль* . Если вы являетесь владельцем, это значение *owner*:
-
-:::image type="content" source="media/how-to-set-up-instance/portal/subscriptions-role.png" alt-text="Представление страницы "подписки" в портал Azure, показывающее пользователя как владельца" lightbox="media/how-to-set-up-instance/portal/subscriptions-role.png":::
-
-Если вы обнаружите, что значение является *участником* или что-либо, кроме *owner*, можно перейти одним из следующих способов.
-* Обратитесь к владельцу подписки и запросите владельца, чтобы выполнить действия, описанные в этой статье от вашего имени.
-* Обратитесь к владельцу подписки или к кому-либо с ролью администратора доступа пользователей в подписке и попросите его повысить владельца подписки, чтобы у вас были разрешения на продолжение работы. Зависит ли это от вашей организации и вашей роли в ней.
+[!INCLUDE [digital-twins-setup-steps-prereq.md](../../includes/digital-twins-setup-steps-prereq.md)]
 
 ## <a name="create-the-azure-digital-twins-instance"></a>Создание экземпляра Digital двойников для Azure
 
-В этом разделе вы **создадите новый экземпляр Azure Digital двойников** с помощью портал Azure.
+В этом разделе вы **создадите новый экземпляр Azure Digital двойников** с помощью [портал Azure](https://ms.portal.azure.com/). Перейдите на портал и войдите в систему, используя свои учетные данные.
 
-После входа в [портал Azure](https://ms.portal.azure.com/)выберите _создать ресурс_ в меню домашней страницы служб Azure.
+На портале нажмите кнопку _создать ресурс_ в меню домашней страницы служб Azure.
 
 :::image type="content" source= "media/how-to-set-up-instance/portal/create-resource.png" alt-text="Выбор пункта "создать ресурс" на домашней странице портал Azure":::
 
@@ -87,7 +73,7 @@ ms.locfileid: "87836944"
 
 :::image type="content" source="media/how-to-set-up-instance/portal/add-role-assignment-1.png" alt-text="Добавление назначения роли на странице "Управление доступом (IAM)"":::
 
-На следующей странице *Добавление назначения ролей* заполните значения (которые должны быть заполнены владельцем подписки Azure):
+На следующей странице *Добавление назначения ролей* введите значения (они должны быть выполнены пользователем с [достаточными разрешениями](#prerequisites-permission-requirements) в подписке Azure):
 * **Роль**: в раскрывающемся меню выберите *Azure Digital двойников Owner (Предварительная версия)* .
 * **Назначение доступа к**: выберите *пользователя Azure AD, группу или субъект-службу* в раскрывающемся меню
 * **Выберите**: найдите имя или адрес электронной почты пользователя, которого нужно назначить. При выборе результата пользователь будет отображаться в разделе *Выбранные элементы* .

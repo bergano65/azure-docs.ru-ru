@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: ba03acabb3325045a71d55f583343a26b4d121ca
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 50a7fe866d236a7edb30b3cae5ef076d3ebbca56
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87832364"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009721"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-cli"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (CLI)
 
@@ -24,8 +24,8 @@ ms.locfileid: "87832364"
 * Чтобы выполнить эти действия вручную с помощью портал Azure, см. версию портала этой статьи: инструкции по [*настройке экземпляра и проверки подлинности (портал)*](how-to-set-up-instance-portal.md).
 * Чтобы выполнить автоматическую установку с помощью примера скрипта развертывания, см. статью [*как настроить экземпляр и проверку подлинности (в скрипте)*](how-to-set-up-instance-scripted.md).
 
-[!INCLUDE [digital-twins-setup-steps.md](../../includes/digital-twins-setup-steps.md)]
-[!INCLUDE [digital-twins-setup-role-cli.md](../../includes/digital-twins-setup-role-cli.md)]
+[!INCLUDE [digital-twins-setup-steps-prereq.md](../../includes/digital-twins-setup-steps-prereq.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="set-up-cloud-shell-session"></a>Создание сеанса Cloud Shell
 [!INCLUDE [Cloud Shell for Azure Digital Twins](../../includes/digital-twins-cloud-shell.md)]
@@ -63,7 +63,7 @@ az dt create --dt-name <name-for-your-Azure-Digital-Twins-instance> -g <your-res
 
 [!INCLUDE [digital-twins-setup-role-assignment.md](../../includes/digital-twins-setup-role-assignment.md)]
 
-Используйте следующую команду, чтобы назначить роль (должна выполняться владельцем подписки Azure):
+Используйте следующую команду, чтобы назначить роль (она должна выполняться пользователем с [достаточными разрешениями](#prerequisites-permission-requirements) в подписке Azure):
 
 ```azurecli
 az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<Azure-AD-email-of-user-to-assign>" --role "Azure Digital Twins Owner (Preview)"
@@ -148,7 +148,7 @@ az ad app create --display-name <name-for-your-app-registration> --native-app --
 
 [!INCLUDE [digital-twins-setup-additional-requirements.md](../../includes/digital-twins-setup-additional-requirements.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. раздел как подключить клиентское приложение к экземпляру, написав код проверки подлинности клиентского приложения:
 * [*Пошаговое руководство. Написание кода проверки подлинности приложения*](how-to-authenticate-client.md)

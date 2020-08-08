@@ -1,24 +1,22 @@
 ---
 title: Публикация встроенных приложений в виртуальных рабочих столах Windows в Azure
 description: Как опубликовать встроенные приложения в виртуальном рабочем столе Windows.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ad2dd398e5eddd7cbb56b4f293a8a67a0df85316
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: b088f1f58e26dca854c17b0765607ebe76017dfe
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87291391"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009500"
 ---
 # <a name="publish-built-in-apps-in-windows-virtual-desktop"></a>Публикация встроенных приложений в виртуальном рабочем столе Windows
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/publish-apps-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/publish-apps-2019.md).
 
 В этой статье рассказывается, как опубликовать приложения в среде виртуальных рабочих столов Windows.
 

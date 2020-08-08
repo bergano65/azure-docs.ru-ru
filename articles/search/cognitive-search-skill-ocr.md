@@ -8,19 +8,19 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: 27fbc669a81364bcb71160200504d61502169eae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a6902d1420090b81c933f07f7e929aa86c052404
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85609356"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009245"
 ---
 # <a name="ocr-cognitive-skill"></a>Когнитивный навык распознавания текста
 
-Уровень опыта **распознавания текста (OCR)** распознает печатный и рукописный текст в файлах изображений. Этот навык использует модели машинного обучения, предоставляемые [API компьютерного зрения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home) в Cognitive Services. Навык **OCR** сопоставляет следующие функциональные возможности службы.
+Уровень опыта **распознавания текста (OCR)** распознает печатный и рукописный текст в файлах изображений. Этот навык использует модели машинного обучения, предоставляемые [компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home) API [v 3.0](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/5d986960601faab4bf452005) в Cognitive Services. Навык **OCR** сопоставляет следующие функциональные возможности службы.
 
-+ API [OCR](../cognitive-services/computer-vision/concept-recognizing-text.md#ocr-api) используется для языков, отличных от английского. 
-+ Для английского языка используется новый API [Read](../cognitive-services/computer-vision/concept-recognizing-text.md#read-api) .
++ Для английского, испанского, немецкого, французского, итальянского, португальского и нидерландского языка используется новый API для [чтения](../cognitive-services/computer-vision/concept-recognizing-text.md#read-api) .
++ Для всех других языков используется API [OCR](../cognitive-services/computer-vision/concept-recognizing-text.md#ocr-api) .
 
 Навык **OCR** извлекает текст из файлов изображений. Поддерживаемые форматы файлов включают:
 
@@ -51,13 +51,13 @@ ms.locfileid: "85609356"
 
 ## <a name="skill-inputs"></a>Входные данные навыков
 
-| Ввод имени      | Описание:                                          |
+| Ввод имени      | Описание                                          |
 |---------------|------------------------------------------------------|
 | `image`         | Сложный тип. Сейчас работает только с полем /document/normalized_images, созданным индексатором большого двоичного объекта Azure, если для ```imageAction``` установлено значение, отличное от ```none```. Дополнительные сведения см. в [этом примере](#sample-output).|
 
 
 ## <a name="skill-outputs"></a>Выходные данные навыка
-| Имя вывода     | Описание:                   |
+| Имя вывода     | Описание                   |
 |---------------|-------------------------------|
 | `text`            | Обычный текст, извлеченный из изображения.   |
 | `layoutText`    | Сложный тип, описывающий извлеченный текст и расположение, где найден указанный текст.|

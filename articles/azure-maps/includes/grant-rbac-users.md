@@ -9,16 +9,16 @@ ms.topic: include
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 8dfc3714362b082168c32ba73e234e9b5fb43525
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 816e4e439bb98ced8bbc5b5d8a7d38ef65aee33f
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87545208"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88010925"
 ---
 ## <a name="grant-role-based-access-for-users-to-azure-maps"></a>Предоставление пользователям доступа на основе ролей для Azure Maps
 
-Вы предоставляете *Управление доступом на основе ролей* (RBAC), назначив группу Azure AD или субъекты безопасности одному или нескольким определениям ролей управления доступом Azure Maps. Чтобы просмотреть определения ролей Azure, доступные для Azure Maps, перейдите в раздел **Управление доступом (IAM)**. Выберите **роли**, а затем найдите роли, которые начинаются с *Azure Maps*.
+Вы предоставляете *Управление доступом на основе ролей Azure (Azure RBAC)* , назначив группу Azure AD или субъекты безопасности одному или нескольким определениям ролей Azure Maps. Чтобы просмотреть определения ролей Azure, доступные для Azure Maps, перейдите в раздел **Управление доступом (IAM)**. Выберите **роли**, а затем найдите роли, которые начинаются с *Azure Maps*.
 
 * Чтобы эффективно управлять большим объемом доступа пользователей к Azure Maps, см. статью [группы Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-manage-groups).
 * Чтобы разрешить пользователям проходить проверку подлинности в приложении, необходимо создать пользователей в Azure AD. См. статью [Добавление и удаление пользователей с помощью Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/add-users-azure-active-directory).
@@ -27,9 +27,9 @@ ms.locfileid: "87545208"
 
 1. Перейдите к **учетной записи Azure Maps**. Выберите назначение ролей **управления доступом (IAM)**  >  **Role assignment**.
 
-    ![Предоставление RBAC](../media/how-to-manage-authentication/how-to-grant-rbac.png)
+    ![Предоставление доступа с помощью Azure RBAC](../media/how-to-manage-authentication/how-to-grant-rbac.png)
 
-2. На вкладке **назначения ролей** в разделе **роль**выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В поле **Назначение доступа к** выберите **Пользователь, группа или субъект-служба Azure AD**. Выберите участника по имени. Нажмите кнопку **Сохранить**.
+2. На вкладке **назначения ролей** в разделе **роль**выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В поле **Назначение доступа к** выберите **Пользователь, группа или субъект-служба Azure AD**. Выберите участника по имени. Затем нажмите кнопку **Save** (Сохранить).
 
    * См. Дополнительные сведения о [добавлении и удалении назначений ролей](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal).
 

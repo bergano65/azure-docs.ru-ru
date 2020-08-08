@@ -1,23 +1,21 @@
 ---
 title: Настройка GPU для виртуальных рабочих столов Windows (классическая модель) — Azure
 description: Как включить отрисовку и кодирование с помощью GPU с ускорением на виртуальных рабочих столах Windows (классическая модель).
-services: virtual-desktop
 author: gundarev
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: denisgun
-ms.openlocfilehash: e6c8fe95508937604c53d817d60dd637352fb6fa
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 32d5c280e80b2f21b30bb34a182070da51e21026
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288695"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008497"
 ---
 # <a name="configure-graphics-processing-unit-gpu-acceleration-for-windows-virtual-desktop-classic"></a>Настройка ускорения графического процессора для виртуальных рабочих столов Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../configure-vm-gpu.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows (классическому), который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Сведения об обеспечении управления объектами Azure Resource Manager для Виртуального рабочего стола Windows см. в [этой статье](../configure-vm-gpu.md).
 
 Виртуальный рабочий стол Windows поддерживает отрисовку и кодирование с поддержкой ускорения за счет GPU для повышения уровня производительности и масштабируемости. Ускорение GPU особенно важно для приложений с большим объемом графики.
 

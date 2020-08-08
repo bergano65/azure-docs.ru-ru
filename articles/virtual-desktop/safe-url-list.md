@@ -1,19 +1,17 @@
 ---
 title: Список надежных URL-адресов виртуальных рабочих столов Windows — Azure
 description: Список URL-адресов, которые следует разблокировать, чтобы убедиться, что развертывание виртуальных рабочих столов Windows работает правильно.
-services: virtual-desktop
-author: heidilohr
-ms.service: virtual-desktop
+author: Heidilohr
 ms.topic: conceptual
 ms.date: 07/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 9f7a3b51afa11562123a280da8634e100a22e6b6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 9ac147eec7004f109687a6bb0888e25d0db84448
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87075610"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009483"
 ---
 # <a name="safe-url-list"></a>Список надежных URL-адресов
 
@@ -44,13 +42,13 @@ ms.locfileid: "87075610"
 
 |Адрес|Исходящий TCP-порт|Назначение|Тег службы|
 |---|---|---|---|
-|*.microsoftonline.com|443|Проверка подлинности в Microsoft Online Services|Отсутствуют|
-|*.events.data.microsoft.com|443|Служба телеметрии|Отсутствуют|
-|www.msftconnecttest.com|443|Проверка, подключена ли ОС к Интернету.|Отсутствуют|
-|*.prod.do.dsp.mp.microsoft.com|443|Центр обновления Windows|Отсутствуют|
+|*.microsoftonline.com|443|Проверка подлинности в Microsoft Online Services|None|
+|*.events.data.microsoft.com|443|Служба телеметрии|None|
+|www.msftconnecttest.com|443|Проверка, подключена ли ОС к Интернету.|None|
+|*.prod.do.dsp.mp.microsoft.com|443|Центр обновления Windows|None|
 |login.windows.net|443|Вход в Microsoft Online Services, Microsoft 365|None|
 |*.sfx.ms|443|Обновления для клиентского программного обеспечения OneDrive|None|
-|*.digicert.com|443|Проверка отзыва сертификата|Отсутствуют|
+|*.digicert.com|443|Проверка отзыва сертификата|None|
 
 >[!NOTE]
 >В настоящее время виртуальный рабочий стол Windows не содержит список диапазонов IP-адресов, которые можно разблокировать, чтобы разрешить сетевой трафик. В настоящее время поддерживается только разблокирование конкретных URL-адресов.
@@ -69,11 +67,11 @@ ms.locfileid: "87075610"
 
 |Адрес|Исходящий TCP-порт|Назначение|Клиент(ы)|
 |---|---|---|---|
-|*.wvd.microsoft.com|443|Служба трафика|Все|
-|*.servicebus.windows.net|443|Данные диагностики|Все|
-|сайт go.microsoft.com;|443|Microsoft FWLinks|Все|
-|aka.ms|443|Средство сокращения URL-адресов Майкрософт|Все|
-|docs.microsoft.com|443|Документация|Все|
+|*.wvd.microsoft.com|443|Служба трафика|All|
+|*.servicebus.windows.net|443|Данные диагностики|All|
+|сайт go.microsoft.com;|443|Microsoft FWLinks|All|
+|aka.ms|443|Средство сокращения URL-адресов Майкрософт|All|
+|docs.microsoft.com|443|Документация|All|
 |privacy.microsoft.com|443|Заявление о конфиденциальности|All|
 |query.prod.cms.rt.microsoft.com|443|Клиентские обновления|Классические приложения|
 

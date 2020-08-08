@@ -1,30 +1,28 @@
 ---
 title: Развертывание виртуального рабочего стола Windows 7 виртуальная машина Windows в Azure
 description: Настройка и развертывание виртуальной машины Windows 7 в виртуальном рабочем столе Windows.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 07/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 6cb4a31e3360f3f9f8c9ed4684c30295489d27d8
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 0dcf21190b52f966dafb9caa9ae28fdf9b99ba86
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285160"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88007579"
 ---
 # <a name="deploy-a-windows-7-virtual-machine-on-windows-virtual-desktop"></a>Развертывание виртуальной машины Windows 7 в службе "Виртуальный рабочий стол Windows"
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/deploy-windows-7-virtual-machine.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/deploy-windows-7-virtual-machine.md).
 
 Процесс развертывания виртуальной машины Windows 7 на виртуальном рабочем столе Windows немного отличается от процесса для виртуальных машин под управлением более поздних версий Windows. В этом руководство вы узнаете, как развернуть Windows 7.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем начать, следуйте инструкциям в статье [Создание пула узлов с помощью PowerShell](create-host-pools-powershell.md) для создания пула узлов. Если вы используете портал, следуйте инструкциям в шагах 1 – 9 из раздела [Создание пула узлов с помощью портал Azure](create-host-pools-azure-marketplace.md). После этого выберите **проверить и создать** , чтобы создать пустой пул узлов. 
+Прежде чем начать, следуйте инструкциям в статье [Создание пула узлов с помощью PowerShell](create-host-pools-powershell.md) для создания пула узлов. Если вы используете портал, следуйте инструкциям в шагах 1 – 9 из раздела [Создание пула узлов с помощью портал Azure](create-host-pools-azure-marketplace.md). После этого выберите **проверить и создать** , чтобы создать пустой пул узлов.
 
 ## <a name="configure-a-windows-7-virtual-machine"></a>Настройка виртуальной машины Windows 7
 
@@ -49,9 +47,9 @@ ms.locfileid: "87285160"
      ```
 
 12. Чтобы получить маркер регистрации, следуйте инструкциям, приведенным [здесь](/powershell/module/az.desktopvirtualization/new-azwvdregistrationinfo?view=azps-4.3.0) .
-      
+
       - Если вы предпочитаете использовать портал Azure, можно также открыть страницу обзора пула узлов, в который нужно добавить виртуальную машину, и создать маркер.
-  
+
 13. [Скачайте агент виртуальных рабочих столов Windows для Windows 7](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3JZCm).
 14. [Скачайте Windows Virtual Desktop диспетчер агентов для Windows 7](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3K2e3).
 15. Откройте установщик агента виртуальных рабочих столов Windows и следуйте инструкциям. При появлении запроса введите ключ регистрации, созданный на шаге 12.
@@ -59,7 +57,7 @@ ms.locfileid: "87285160"
 17. При необходимости можно заблокировать порт TCP/3389, чтобы удалить прямой протокол удаленного рабочего столаный доступ к виртуальной машине.
 18. При необходимости убедитесь, что платформа .NET Framework имеет версию не ниже 4.7.2. Обновление платформы особенно важно при создании пользовательского образа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь развертывание виртуальных рабочих столов Windows готово к использованию. [Скачайте последнюю версию клиента виртуальных рабочих столов Windows](https://aka.ms/wvd/clients/windows) , чтобы приступить к работе.
 

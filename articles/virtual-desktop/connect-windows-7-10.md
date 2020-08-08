@@ -1,26 +1,24 @@
 ---
 title: Подключение к виртуальному рабочему столу Windows 10 или 7 в Azure
 description: Как подключиться к виртуальному рабочему столу Windows с помощью настольного клиента Windows.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 07/16/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 88e325c5a743513baa5a580ae65005c545a07b78
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 85e0c1b146cfba0cb95a6612f33e42a465bfd20b
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288787"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008752"
 ---
 # <a name="connect-with-the-windows-desktop-client"></a>Подключение к клиенту Windows Desktop
 
 > Область применения: Windows 7, Windows 10 и Windows 10 IoT Корпоративная
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/connect-windows-7-10-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/connect-windows-7-10-2019.md).
 
 Вы можете получить доступ к ресурсам виртуальных рабочих столов Windows на устройствах с Windows 7, Windows 10 и Windows 10 IoT Корпоративная с помощью настольного клиента Windows. Клиент не поддерживает окно 8 или Windows 8.1.
 

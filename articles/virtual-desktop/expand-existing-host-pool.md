@@ -1,24 +1,22 @@
 ---
 title: Развертывание существующего пула узлов с новыми узлами сеансов — Azure
 description: Развертывание существующего пула узлов с новыми узлами сеансов в виртуальном рабочем столе Windows.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 69237c2e4404793ce239710407ed10f02bf07d50
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 339fe25a5a75ca8bc5cc0af7c4d96651e90c7eb6
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288742"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88002435"
 ---
 # <a name="expand-an-existing-host-pool-with-new-session-hosts"></a>Развертывание существующего пула узлов с новыми узлами сеансов
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/expand-existing-host-pool-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/expand-existing-host-pool-2019.md).
 
 По мере увеличения использования в пуле узлов может потребоваться расширить существующий пул узлов с новыми узлами сеансов, чтобы справиться с новой нагрузкой.
 

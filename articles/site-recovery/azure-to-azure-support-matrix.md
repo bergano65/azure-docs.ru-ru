@@ -4,12 +4,12 @@ description: Сводные сведения о поддержке аварий�
 ms.topic: article
 ms.date: 07/14/2020
 ms.author: raynew
-ms.openlocfilehash: 09b6bf6db5927c49950fc5b2a6d1753d53364380
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 09b7fe1cc4f871d1f94844a8551479fabc0e22ff
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836655"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008854"
 ---
 # <a name="support-matrix-for-azure-vm-disaster-recovery-between-azure-regions"></a>Таблица со сведениями о поддержке аварийного восстановления виртуальной машины Azure между регионами Azure
 

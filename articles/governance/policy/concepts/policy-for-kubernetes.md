@@ -1,14 +1,14 @@
 ---
 title: Предварительная версия — знакомство с политикой Azure для Kubernetes
 description: Узнайте, как Политика Azure использует Rego и Open Policy Agent для управления кластерами, работающими под управлением Kubernetes в Azure или в локальной среде. Это ознакомительная версия функции.
-ms.date: 06/12/2020
+ms.date: 08/07/2020
 ms.topic: conceptual
-ms.openlocfilehash: 461dd467ecda2764c6753ed6eeee0405f8420bbc
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: dc81d22677eeab16ae06e782c5ae47c121af04c6
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87373765"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88003501"
 ---
 # <a name="understand-azure-policy-for-kubernetes-clusters-preview"></a>Общие сведения о службе "Политика Azure" для кластеров Kubernetes (предварительная версия)
 
@@ -130,10 +130,16 @@ ms.locfileid: "87373765"
 
   1. На главной странице нажмите кнопку **Включить надстройку**.
 
-     :::image type="content" source="../media/policy-for-kubernetes/enable-policy-add-on.png" alt-text="Включение надстройки "Политика Azure для AKS"" border="false":::
+     :::image type="content" source="../media/policy-for-kubernetes/enable-policy-add-on.png" alt-text="Включение надстройки "Политика Azure для AKS"":::
 
+     <a name="migrate-from-v1"></a>
      > [!NOTE]
-     > Если кнопка **Включить надстройку** неактивна, подписка еще не добавлена в предварительную версию. Если активна кнопка **Отключить надстройку** и отображается предупреждение о миграции на v2, Gatekeeper V2 все еще установлен и должен быть удален.
+     > Если кнопка **Включить надстройку** неактивна, подписка еще не добавлена в предварительную версию. Если кнопка **отключить надстройку** включена и отображается сообщение предупреждение о миграции версии 2, то надстройка v1 установлена и должна быть удалена до назначения определений политики v2. _Устаревшая_ надстройка v1 будет автоматически заменена надстройкой v2, начиная с 24 августа 2020. После этого необходимо назначить новые версии v2 определений политик. Чтобы выполнить обновление сейчас, выполните следующие действия.
+     > 
+     > 1. Проверьте, установлена надстройка v1 в кластере AKS. для этого откройте страницу **политики (Предварительная версия)** в кластере AKS и убедитесь, что в текущем кластере используется надстройка политики Azure v1... Сообщение.
+     > 1. [Удалите надстройку](#remove-the-add-on-from-aks).
+     > 1. Нажмите кнопку **включить надстройку** , чтобы установить версию v2 надстройки.
+     > 1. [Назначение версий 2 для встроенных определений политик v1](#assign-a-built-in-policy-definition)
 
 - Azure CLI
 
@@ -175,7 +181,7 @@ kubectl get pods -n gatekeeper-system
 
 1. Чтобы включить поставщик ресурсов, выполните действия, описанные в статье [Поставщики и типы ресурсов](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-portal), или выполните команду Azure CLI или Azure PowerShell:
 
-   - Azure CLI;
+   - Azure CLI
 
      ```azurecli-interactive
      # Log in first with az login if you're not using Cloud Shell
@@ -279,7 +285,7 @@ kubectl get pods -n gatekeeper-system
 
 1. Чтобы включить поставщик ресурсов, выполните действия, описанные в статье [Поставщики и типы ресурсов](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-portal), или выполните команду Azure CLI или Azure PowerShell:
 
-   - Azure CLI;
+   - Azure CLI
 
      ```azurecli-interactive
      # Log in first with az login if you're not using Cloud Shell

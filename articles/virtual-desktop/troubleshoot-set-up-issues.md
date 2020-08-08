@@ -1,24 +1,22 @@
 ---
 title: Создание пула узлов среды виртуальных рабочих столов Windows — Azure
 description: Устранение неполадок и разрешение проблем с пулом клиентов и узлов во время установки среды виртуальных рабочих столов Windows.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 01/08/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 65a36e21d346e08ebe09f8c4b34f6af529d2a0f0
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 064cdc0189f6b85fa0e5872f49759c2ec67472e6
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87292566"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88006168"
 ---
 # <a name="host-pool-creation"></a>Создание пула узлов
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/troubleshoot-set-up-issues-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/troubleshoot-set-up-issues-2019.md).
 
 В этой статье рассматриваются проблемы во время первоначальной настройки клиента виртуальных рабочих столов Windows и соответствующей инфраструктуры пула узлов сеансов.
 
@@ -37,13 +35,13 @@ ms.locfileid: "87292566"
 > [!div class="mx-imgBorder"]
 > ![Изображение, показывающее, на портал Azure отображается сообщение "создание бесплатной учетной записи"](media/create-new-account.png)
 
-**Причина**: в учетной записи, в которой вы вошли в Azure, нет активных подписок, или у учетной записи нет разрешений на просмотр подписок. 
+**Причина**: в учетной записи, в которой вы вошли в Azure, нет активных подписок, или у учетной записи нет разрешений на просмотр подписок.
 
 **Исправление**. Войдите в подписку, где вы развернете виртуальные машины узла сеансов с учетной записью, которая имеет по крайней мере доступ на уровне участника.
 
 ### <a name="error-exceeding-quota-limit"></a>Ошибка: "превышен предел квоты"
 
-Если операция превышает предельную квоту, можно выполнить одно из следующих действий. 
+Если операция превышает предельную квоту, можно выполнить одно из следующих действий.
 
 - Создайте новый пул узлов с теми же параметрами, но с меньшим числом виртуальных машин и ядер ВМ.
 
@@ -119,9 +117,9 @@ ms.locfileid: "87292566"
 Пример необработанной ошибки:
 
 ```Error
- { …{ "provisioningOperation": 
- "Create", "provisioningState": "Failed", "timestamp": "2019-01-29T20:53:18.904917Z", "duration": "PT3.0574505S", "trackingId": 
- "1f460af8-34dd-4c03-9359-9ab249a1a005", "statusCode": "BadRequest", "statusMessage": { "error": { "code": "InvalidParameter", "message": 
+ { …{ "provisioningOperation":
+ "Create", "provisioningState": "Failed", "timestamp": "2019-01-29T20:53:18.904917Z", "duration": "PT3.0574505S", "trackingId":
+ "1f460af8-34dd-4c03-9359-9ab249a1a005", "statusCode": "BadRequest", "statusMessage": { "error": { "code": "InvalidParameter", "message":
  "The Admin Username specified is not allowed.", "target": "adminUsername" } … }
 ```
 
@@ -138,10 +136,10 @@ ms.locfileid: "87292566"
 
 ```Error
 { … "code": "ResourceDeploymentFailure", "message":
- "The resource operation completed with terminal provisioning state 'Failed'.", "details": [ { "code": 
- "VMExtensionProvisioningError", "message": "VM has reported a failure when processing extension 'dscextension'. 
+ "The resource operation completed with terminal provisioning state 'Failed'.", "details": [ { "code":
+ "VMExtensionProvisioningError", "message": "VM has reported a failure when processing extension 'dscextension'.
  Error message: \"DSC Configuration 'SessionHost' completed with error(s). Following are the first few:
- PowerShell DSC resource MSFT_ScriptResource failed to execute Set-TargetResource functionality with error message: 
+ PowerShell DSC resource MSFT_ScriptResource failed to execute Set-TargetResource functionality with error message:
  One or more errors occurred. The SendConfigurationApply function did not succeed.\"." } ] … }
 ```
 
@@ -162,7 +160,7 @@ ms.locfileid: "87292566"
    "message": "At least one resource deployment operation failed. Please list
  deployment operations for details. 4 Please see https://aka.ms/arm-debug for usage details.",
  "details": [
-         { "code": "Conflict",  
+         { "code": "Conflict",
          "message": "{\r\n \"status\": \"Failed\",\r\n \"error\": {\r\n \"code\":
          \"ResourceDeploymentFailure\",\r\n \"message\": \"The resource
          operation completed with terminal provisioning state 'Failed'.\",\r\n

@@ -1,24 +1,22 @@
 ---
 title: Расположения данных для виртуальных рабочих столов Windows (классическая модель) — Azure
 description: Краткое описание расположений, в которых хранятся данные и метаданные виртуальных рабочих столов Windows (классическая модель).
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 0e12e17914374a64ecd2d17a8e73c6ebf20328d9
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 869defde657c9cb4c8bea6bbacebb9458e5a2b96
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87270045"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008820"
 ---
 # <a name="data-locations-for-windows-virtual-desktop-classic"></a>Расположения данных для виртуальных рабочих столов Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../data-locations.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows (классическому), который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Сведения об обеспечении управления объектами Azure Resource Manager для Виртуального рабочего стола Windows см. в [этой статье](../data-locations.md).
 
 Виртуальный рабочий стол Windows в настоящее время доступен для всех географических расположений. Изначально метаданные службы могут храниться только в географии США (США). Администраторы могут выбрать расположение для хранения пользовательских данных при создании виртуальных машин пула узлов и связанных служб, таких как файловые серверы. Дополнительные сведения о географических регионах Azure см. на [карте центров обработки данных Azure](https://azuredatacentermap.azurewebsites.net/).
 

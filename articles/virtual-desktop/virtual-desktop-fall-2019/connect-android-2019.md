@@ -1,26 +1,24 @@
 ---
 title: Подключение к виртуальному рабочему столу Windows (классическая модель) из Android — Azure
 description: Как подключиться к виртуальному рабочему столу Windows (классическая модель) с помощью клиента Android.
-services: virtual-desktop
-author: heidilohr
-ms.service: virtual-desktop
+author: Heidilohr
 ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: c83d243a24fb0cacdf032dfa77e9bb17fdf5e824
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: b0fadcc592f5dd52bf1b72dc9d5658866ffba7f4
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87383806"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008480"
 ---
 # <a name="connect-to-windows-virtual-desktop-classic-with-the-android-client"></a>Подключение к виртуальному рабочему столу Windows (классическая модель) с помощью клиента Android
 
 > Применимо к: Android 4,1 и более поздней версии, Чромебукс с Чромеос 53 и более поздними версиями.
 
 >[!IMPORTANT]
->Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../connect-android.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows (классическому), который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Сведения об обеспечении управления объектами Azure Resource Manager для Виртуального рабочего стола Windows см. в [этой статье](../connect-android.md).
 
 Доступ к ресурсам виртуальных рабочих столов Windows можно получить с вашего устройства Android с помощью скачиваемого клиента. Вы также можете использовать клиент Android на устройствах свои Chromebook, поддерживающих Google Play Маркет. В этом руководство вы узнаете, как настроить клиент Android.
 

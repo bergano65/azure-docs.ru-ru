@@ -10,12 +10,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 0aa688d6e56629ca376844ce2d0669197b1bb2b7
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 83fbf6fa9190953d902ab60a8a5ce131f1fd8a0e
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87531351"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88006423"
 ---
 # <a name="how-to-secure-a-single-page-application-with-non-interactive-sign-in"></a>Как защитить одностраничное приложение с помощью неинтерактивного входа
 
@@ -102,14 +102,14 @@ ms.locfileid: "87531351"
 
 ## <a name="grant-role-based-access"></a>Предоставление доступа на основе ролей
 
-Вы предоставляете *Управление доступом на основе ролей* (RBAC), назначив назначенное системой удостоверение одному или нескольким определениям ролей Azure. Чтобы просмотреть определения ролей Azure, доступные для Azure Maps, перейдите в раздел **Управление доступом (IAM)**. Выберите **роли**, а затем найдите роли, которые начинаются с *Azure Maps*.
+Вы предоставляете доступ к *управлению доступом на основе ролей Azure (Azure RBAC)* , назначив назначенное системой удостоверение одному или нескольким определениям ролей Azure. Чтобы просмотреть определения ролей Azure, доступные для Azure Maps, перейдите в раздел **Управление доступом (IAM)**. Выберите **роли**, а затем найдите роли, которые начинаются с *Azure Maps*.
 
 1. Перейдите к **учетной записи Azure Maps**. Выберите назначение ролей **управления доступом (IAM)**  >  **Role assignment**.
 
     > [!div class="mx-imgBorder"]
-    > ![Предоставление RBAC](./media/how-to-manage-authentication/how-to-grant-rbac.png)
+    > ![Предоставление доступа с помощью Azure RBAC](./media/how-to-manage-authentication/how-to-grant-rbac.png)
 
-2. На вкладке **назначения ролей** в разделе **роль**выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В разделе **назначение доступа к**выберите **приложение-функция**. Выберите участника по имени. Нажмите кнопку **Сохранить**.
+2. На вкладке **назначения ролей** в разделе **роль**выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В разделе **назначение доступа к**выберите **приложение-функция**. Выберите участника по имени. Затем нажмите кнопку **Save** (Сохранить).
 
    * См. Дополнительные сведения о [добавлении и удалении назначений ролей](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal).
 

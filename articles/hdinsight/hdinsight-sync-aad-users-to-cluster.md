@@ -8,16 +8,16 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/21/2019
-ms.openlocfilehash: 5b2a195e0a3145e97bf101b3354c2781fff15801
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 83e168c5f1d1bad58a193937a4b97fe686dde2a3
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86085979"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88004414"
 ---
 # <a name="synchronize-azure-active-directory-users-to-an-hdinsight-cluster"></a>Синхронизация пользователей Azure Active Directory с кластером HDInsight
 
-[Кластеры HDInsight с Корпоративным пакетом безопасности (ESP)](hdinsight-domain-joined-introduction.md) могут использовать строгую аутентификацию пользователей Azure Active Directory (Azure AD), а также политики *управления доступом на основе ролей* (RBAC). При добавлении пользователей и групп в Azure AD можно синхронизировать пользователей, которым необходим доступ к кластеру.
+[Кластеры HDInsight с корпоративный пакет безопасности (ESP)](hdinsight-domain-joined-introduction.md) могут использовать строгую проверку подлинности для пользователей Azure Active Directory (Azure AD), а также политики *управления доступом на основе ролей Azure (Azure RBAC)* . При добавлении пользователей и групп в Azure AD можно синхронизировать пользователей, которым необходим доступ к кластеру.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -37,7 +37,7 @@ ms.locfileid: "86085979"
 
     ![портал Azure область пользователя "Выбор групп"](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-new-user-form.png)
 
-4. Выберите **Создать**.
+4. Нажмите кнопку **создания**.
 
 ## <a name="use-the-apache-ambari-rest-api-to-synchronize-users"></a>Синхронизация пользователей с помощью REST API Apache Ambari
 
@@ -146,7 +146,7 @@ ms.locfileid: "86085979"
 Когда новый пользователь (или любой другой пользователь домена) входит в Ambari, он использует полное имя пользователя и учетные данные домена Azure AD.  В Ambari показан псевдоним пользователя, являющийся отображаемым именем пользователя в Azure AD.
 В новом примере имя пользователя — `hiveuser3@contoso.com`. В Ambari этот пользователь отображается как `hiveuser3`, но он входит в Ambari как `hiveuser3@contoso.com`.
 
-## <a name="see-also"></a>Дополнительно
+## <a name="see-also"></a>См. также статью
 
 * [Настройка политик Apache Hive в кластере HDInsight с ESP](hdinsight-domain-joined-run-hive.md)
 * [Управление кластерами HDInsight с помощью корпоративного пакета безопасности](hdinsight-domain-joined-manage.md)

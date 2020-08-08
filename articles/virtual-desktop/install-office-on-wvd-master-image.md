@@ -1,19 +1,17 @@
 ---
 title: Установка Office на главном образе VHD в Azure
 description: Как установить и настроить Office в основном образе Windows для виртуальных рабочих столов в Azure.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 05/02/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 3e213ac7a4d0436cf904a8104cea7e76eabaece4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3e53d8bf8f7cb024b468983f596d3d1bd5c91ee7
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85200534"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88007307"
 ---
 # <a name="install-office-on-a-master-vhd-image"></a>Установка Office в главный образ VHD
 
@@ -32,7 +30,7 @@ ms.locfileid: "85200534"
 
 Используйте [средство развертывания Office](https://www.microsoft.com/download/details.aspx?id=49117) для установки Office. Многосеансовая поддержка Windows 10 Enterprise поддерживает только следующие версии Office:
 
-   - Приложения Microsoft 365 для предприятия
+   - Приложения Microsoft 365 для предприятий
    - Microsoft 365 приложения для бизнеса, поставляемые с подпиской Microsoft 365 бизнес Premium
 
 Средству развертывания Office требуется XML-файл конфигурации. Чтобы настроить следующий пример, см. раздел [Параметры конфигурации средства развертывания Office](/deployoffice/configuration-options-for-the-office-2016-deployment-tool/).
@@ -163,6 +161,6 @@ reg add HKLM\SOFTWARE\Policies\Microsoft\office\16.0\common\officeupdate /v hide
 
 Сведения об установке Microsoft Teams см. в статье [использование Microsoft Teams на виртуальных рабочих столах Windows](teams-on-wvd.md). Оптимизация мультимедиа для Microsoft Teams на виртуальных рабочих столах Windows доступна в предварительной версии.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы добавили Office в образ, вы можете продолжить настройку главного образа VHD. См. раздел [Подготовка и настройка главного образа VHD](set-up-customize-master-image.md).

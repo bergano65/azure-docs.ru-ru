@@ -1,26 +1,24 @@
 ---
 title: Подключение к виртуальному рабочему столу Windows из macOS в Azure
 description: Как подключиться к виртуальному рабочему столу Windows с помощью клиента macOS.
-services: virtual-desktop
-author: heidilohr
-ms.service: virtual-desktop
+author: Heidilohr
 ms.topic: how-to
 ms.date: 04/08/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 80d75357baeb3f8afd910e22abca8b11af2d80b3
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 649176a363b1a721fede68c5db2a736d5304f485
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285175"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88007620"
 ---
 # <a name="connect-to-windows-virtual-desktop-with-the-macos-client"></a>Подключение к виртуальному рабочему столу Windows с помощью клиента macOS
 
 > Применимо к: macOS 10,12 или более поздней версии
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/connect-macos-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/connect-macos-2019.md).
 
 Доступ к ресурсам виртуальных рабочих столов Windows с устройств macOS можно получить с помощью скачиваемого клиента. В этом руководство вы узнаете, как настроить клиент.
 
@@ -38,13 +36,13 @@ ms.locfileid: "87285175"
 2. Введите значение параметра Feed URL (URL-адрес веб-канала). Это может быть URL-адрес или адрес электронной почты.
    - В первом случае используйте URL-адрес, предоставленный администратором. Обычно используется URL-адрес <https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery>.
    - Чтобы использовать адрес электронной почты, введите свой адрес электронной почты. При этом клиент будет искать URL-адрес, связанный с вашим адресом электронной почты, если администратор настроил сервер соответствующим образом.
-3. Выберите **Добавить**.
+3. Нажмите кнопку **Добавить**.
 4. При появлении запроса войдите в систему со своей учетной записью.
 
 После входа будет показан список доступных ресурсов.
 
 Когда вы подпишетесь на веб-канал, его содержимое будет регулярно автоматически обновляться. Ресурсы могут добавляться, изменяться или удаляться в соответствии с изменениями, внесенными администратором.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о клиенте macOS см. в статье [Приступая к работе с клиентской](/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac/) документацией по macOS.

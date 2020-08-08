@@ -1,24 +1,22 @@
 ---
 title: Среда виртуальных рабочих столов Windows — Azure
 description: Сведения об основных элементах среды виртуальных рабочих столов Windows, таких как пулы узлов и группы приложений.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: e382c1d52130d44479e94378da895c6add7ba3ee
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 99a07dd1791b539ea44fcbab250aa9c227ee1705
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87283424"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88002618"
 ---
 # <a name="windows-virtual-desktop-environment"></a>Среда Виртуального рабочего стола Windows
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/environment-setup-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/environment-setup-2019.md).
 
 Виртуальный рабочий стол Windows — это служба, которая предоставляет пользователям простой и безопасный доступ к виртуализованным рабочим столам и приложениям RemoteApp. В этом разделе вы узнаете о общей структуре среды виртуальных рабочих столов Windows.
 
@@ -49,7 +47,7 @@ ms.locfileid: "87283424"
 
 ## <a name="workspaces"></a>Рабочие области
 
-Рабочая область — это логическое группирование групп приложений в виртуальном рабочем столе Windows. Каждая группа приложений виртуальных рабочих столов Windows должна быть связана с рабочей областью, чтобы пользователи могли видеть опубликованные им удаленные приложения и настольные компьютеры.  
+Рабочая область — это логическое группирование групп приложений в виртуальном рабочем столе Windows. Каждая группа приложений виртуальных рабочих столов Windows должна быть связана с рабочей областью, чтобы пользователи могли видеть опубликованные им удаленные приложения и настольные компьютеры.
 
 ## <a name="end-users"></a>конечные пользователи;
 

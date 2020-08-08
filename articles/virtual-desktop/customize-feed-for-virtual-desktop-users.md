@@ -1,24 +1,22 @@
 ---
 title: Настройка веб-канала для пользователей виртуальных рабочих столов Windows в Azure
 description: Настройка веб-канала для пользователей виртуальных рабочих столов Windows с помощью командлетов PowerShell.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 08/29/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: f11b4f58a41a3d8ed964169216fda00e7477f7d3
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 1f1779ac27c7e46aa3e608b33e3c006902df8c27
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288780"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009126"
 ---
 # <a name="customize-the-feed-for-windows-virtual-desktop-users"></a>Настройка веб-канала для пользователей виртуальных рабочих столов Windows
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/customize-feed-virtual-desktop-users-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/customize-feed-virtual-desktop-users-2019.md).
 
 Вы можете настроить веб-канал таким образом, чтобы ресурсы RemoteApp и удаленный рабочий стол отображались для пользователей с распознаваемым способом.
 
@@ -115,7 +113,7 @@ Update-AzWvdDesktop -ResourceGroupName <resourcegroupname> -ApplicationGroupName
 
 6. Выберите приложение, которое требуется обновить, а затем введите новое **Отображаемое имя**.
 
-7. Щелкните **Сохранить**. Редактируемое приложение теперь должно отображать обновленное имя.
+7. Нажмите кнопку **Сохранить**. Редактируемое приложение теперь должно отображать обновленное имя.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

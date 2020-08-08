@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: cb93fa266111a0f60a139d7b76a149ba81b486e9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 33084d72e26f2926751def686c0a4c1d0485a5c2
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87075087"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88005122"
 ---
 # <a name="azure-security-baseline-for-data-lake-analytics"></a>Базовый план безопасности Azure для Data Lake Analytics
 
@@ -36,7 +36,7 @@ ms.locfileid: "87075087"
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="12-monitor-and-log-the-configuration-and-traffic-of-virtual-networks-subnets-and-network-interfaces"></a>1,2. Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых интерфейсов
 
@@ -88,7 +88,7 @@ ms.locfileid: "87075087"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1.8. Уменьшение сложности и дополнительных затрат на администрирование в правилах безопасности сети
 
@@ -130,7 +130,7 @@ ms.locfileid: "87075087"
 
 **Руководство**: неприменимо; Корпорация Майкрософт поддерживает источник времени для Data Lake Analytics.
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -164,7 +164,7 @@ ms.locfileid: "87075087"
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="24-collect-security-logs-from-operating-systems"></a>2.4. Сбор журналов безопасности из операционных систем
 
@@ -184,7 +184,7 @@ ms.locfileid: "87075087"
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="26-monitor-and-review-logs"></a>2,6: мониторинг и просмотр журналов
 
@@ -198,7 +198,7 @@ ms.locfileid: "87075087"
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: Включение оповещений для аномальных действий
 
@@ -256,13 +256,13 @@ ms.locfileid: "87075087"
 
 ### <a name="32-change-default-passwords-where-applicable"></a>3.2. Изменение паролей по умолчанию, где применимо
 
-**Рекомендации**. Data Lake Analytics не имеет концепции паролей по умолчанию, так как проверка подлинности обеспечивается Azure Active Directory и защищена с помощью управления доступом на основе РОЛЕЙ (RBAC).
+**Руководство**. Data Lake Analytics не имеет концепции паролей по умолчанию, так как проверка подлинности обеспечивается Azure Active Directory и защищена с помощью управления доступом на основе ролей Azure (Azure RBAC).
 
 * [Обзор Azure Data Lake Analytics](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-overview)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3.3. Применение выделенных административных учетных записей
 
@@ -328,9 +328,9 @@ ms.locfileid: "87075087"
 
 * [Настройка именованных расположений Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
@@ -398,9 +398,9 @@ ms.locfileid: "87075087"
 
 * [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
@@ -540,7 +540,7 @@ ms.locfileid: "87075087"
 
 * [Публикация NIST — общая система оценки уязвимости](https://www.nist.gov/publications/common-vulnerability-scoring-system)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -572,7 +572,7 @@ ms.locfileid: "87075087"
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="63-delete-unauthorized-azure-resources"></a>6.3. Удаление неавторизованных ресурсов Azure
 
@@ -668,7 +668,7 @@ ms.locfileid: "87075087"
 
 * [Настройка условного доступа для блокировки доступа к ARM](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -741,7 +741,7 @@ ms.locfileid: "87075087"
 
 * [О разрешениях и группах в Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/security/about-permissions)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -775,7 +775,7 @@ ms.locfileid: "87075087"
 
 * [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -809,7 +809,7 @@ ms.locfileid: "87075087"
 
 * [Как настроить сканер учетных данных](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -831,7 +831,7 @@ ms.locfileid: "87075087"
 
 Предварительное сканирование любого содержимого, отправляемого в ресурсы Azure, таких как служба приложений, Data Lake Analytics, хранилище BLOB-объектов и т. д. Корпорация Майкрософт не может получить доступ к данным в этих экземплярах.
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -857,7 +857,7 @@ ms.locfileid: "87075087"
 
 * [Обзор службы автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-intro)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -869,7 +869,7 @@ ms.locfileid: "87075087"
 
 * [Копирование данных из больших двоичных объектов службы хранилища Azure в Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-copy-data-azure-storage-blob)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -877,7 +877,7 @@ ms.locfileid: "87075087"
 
 **Руководство**. периодически выполняется восстановление данных резервной копии для проверки целостности данных.
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -889,7 +889,7 @@ ms.locfileid: "87075087"
 
 * [Авторизация доступа к данным в службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-auth)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -907,7 +907,7 @@ ms.locfileid: "87075087"
 
 * [Клиент также может воспользоваться руководством по обработке инцидентов безопасности компьютера NIST, чтобы помочь в создании собственного плана реагирования на инциденты.](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -921,7 +921,7 @@ ms.locfileid: "87075087"
 
 * [использование тегов для упорядочения ресурсов в Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -931,9 +931,9 @@ ms.locfileid: "87075087"
 
 * [Публикация NIST — руководства по тестированию, обучению и выполнению упражнений для ИТ-планов и возможностей](https://csrc.nist.gov/publications/detail/sp/800-84/final)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4. Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
 

@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 01/23/2017
-ms.openlocfilehash: 0dbcbd173ce0a7c4c6a123f0644b870aa3cec2f5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2d00a6b7753a61bb2527a56231b2fe054736f1b0
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85829896"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008582"
 ---
 # <a name="create-an-azure-cache-for-redis-using-a-template"></a>Создание экземпляра кэша Redis для Azure с помощью шаблона
 
@@ -26,7 +26,7 @@ ms.locfileid: "85829896"
 См. [полный шаблон кэша Redis для Azure](https://github.com/Azure/azure-quickstart-templates/blob/master/101-redis-cache/azuredeploy.json).
 
 > [!NOTE]
-> Доступны шаблоны Resource Manager для нового [уровня "Премиум"](cache-premium-tier-intro.md) . 
+> Доступны шаблоны Resource Manager для нового [уровня "Премиум"](cache-overview.md#service-tiers) . 
 > 
 > * [Создание кэша Azure для Redis уровня "Премиум" с кластеризацией](https://azure.microsoft.com/resources/templates/201-redis-premium-cluster-diagnostics/)
 > * [Создание кэша Redis для Azure уровня "Премиум" с сохранением данных](https://azure.microsoft.com/resources/templates/201-redis-premium-persistence/)
@@ -41,7 +41,7 @@ ms.locfileid: "85829896"
 
 Чтобы выполнить развертывание автоматически, нажмите следующую кнопку.
 
-[![Развертывание в Azure](./media/cache-redis-cache-arm-provision/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-redis-cache%2Fazuredeploy.json)
+[![Развернуть в Azure](./media/cache-redis-cache-arm-provision/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-redis-cache%2Fazuredeploy.json)
 
 ## <a name="parameters"></a>Параметры
 С помощью диспетчера ресурсов Azure можно определить параметры значений, которые должны указываться на этапе развертывания шаблона. В шаблоне есть раздел "Параметры", содержащий все значения параметров.

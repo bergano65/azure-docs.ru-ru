@@ -1,19 +1,17 @@
 ---
 title: Создание файлового ресурса службы файлов Azure с помощью контроллера домена в Azure
 description: Настройте контейнер Фслогикс Profile в общем файловом ресурсе Azure в существующем пуле узлов виртуальных рабочих столов Windows с доменом Active Directory.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 06/05/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: c9636a08b896cefdbec825e4979ad1ec89f8847b
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: e03d496881b0d563387ee5a5943b60f456530453
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87842915"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009228"
 ---
 # <a name="create-a-profile-container-with-azure-files-and-ad-ds"></a>Создание контейнера профиля с помощью файлов и AD DS Azure
 
@@ -21,7 +19,7 @@ ms.locfileid: "87842915"
 
 В этом процессе используются службы домен Active Directory Services (AD DS), которые являются локальными службами каталогов. Дополнительные сведения о создании контейнера Фслогикс Profile с помощью Azure AD DS см. в статье [Создание контейнера профиля фслогикс с помощью службы файлов Azure](create-profile-container-adds.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к работе, убедитесь, что контроллер домена синхронизирован с Azure и разрешается из виртуальной сети Azure, к которой подключены узлы сеансов.
 
@@ -104,7 +102,7 @@ ms.locfileid: "87842915"
 
      Чтобы назначить пользователям разрешения для профилей FSLogix, следуйте тем же инструкциям. Однако при переходе к шагу 5 Выберите " **общий доступ к файлам хранилища SMB Data** ".
 
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 ## <a name="assign-users-permissions-on-the-azure-file-share"></a>Назначение пользователям разрешений для файлового ресурса Azure
 
@@ -181,7 +179,7 @@ ms.locfileid: "87842915"
      - Замените <подключенного диска> буквой диска, который использовался для подключения накопителя.
      - Замените <пользовательский адрес электронной почты> именем участника-пользователя или группы Active Directory, содержащей пользователей, которым потребуется доступ к общей папке.
 
-     Пример:
+     Например:
 
      ```powershell
      icacls <mounted-drive-letter>: /grant john.doe@contoso.com:(M)
@@ -234,6 +232,6 @@ ms.locfileid: "87842915"
 
 Для дополнительного тестирования следуйте инструкциям в разделе Проверка [работоспособности профиля](create-profile-container-adds.md#make-sure-your-profile-works).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об устранении неполадок Фслогикс см. в [этом руководство по устранению неполадок](/fslogix/fslogix-trouble-shooting-ht).

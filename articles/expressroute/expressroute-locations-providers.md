@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: d26861c9d3a98c219389cde76ecd30c3d58da4c3
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: e066f810dca9c1b824c5eb30bb9f938df856a819
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87902139"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88002699"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -116,14 +116,14 @@ ms.locfileid: "87902139"
 | **Монреаль** | [Cologix MTL3](https://www.cologix.com/data-centers/montreal/mtl3/) | 1 | Недоступно | 10G, 100G | Bell Canada, Cologix, Megaport, Telus, Zayo |
 | **Мумбай** | Tata Communications | 2 | Западная Индия | 10G | DE-ЦИКС, Global Клаудксчанже (ГККС), зависимость ЖИО, Сифи, Tata Communications, Verizon |
 | **Мумбаи 2** | Airtel | 2 | Западная Индия | Недоступно | Airtel, Sify, Vodafone Idea |
-| **Мюнхен** | [EdgeConneX](https://www.edgeconnex.com/locations/europe/) | 1 | Недоступно | 10G | DE-CIX |
+| **Мюнхен** | [EdgeConneX](https://www.edgeconnex.com/locations/europe/munich/) | 1 | Недоступно | 10G | DE-CIX |
 | **Нью-Йорк** | [Equinix NY9](https://www.equinix.com/locations/americas-colocation/united-states-colocation/new-york-data-centers/ny9/) | 1 | Недоступно | 10G, 100G | CenturyLink Cloud Connect, Colt, Коресите, DE-ЦИКС, Equinix, recloud, Orange, пакет, Zayo |
 | **Ньюпорт (Уэльс)** | [Next Generation Data](https://www.nextgenerationdata.co.uk) | 1 | западная часть Соединенного Королевства | Недоступно | British Telecom, Colt, Level 3 Communications, Next Generation Data |
 | **Осака** | [Equinix OS1](https://www.equinix.com/locations/asia-colocation/japan-colocation/osaka-data-centers/os1/) | 2 | Западная Япония | 10G, 100G | В Токио, Colt, Equinix, Интернет-инициатива Япония Inc. — IIJ, Orange, NTT Communications, NTT Смартконнект, Softbank " |
 | **Осло** | [DigiPlex Ulven](https://www.digiplex.com/locations/oslo-datacentre) | 1 | Восточная Норвегия; | 10G, 100G | Глобальная связь, Orange, Telenor, оператор Телиа |
 | **Париж** | [Interxion PAR5](https://www.interxion.com/Locations/paris/) | 1 | Центральная Франция | 10G, 100G | CenturyLink Cloud Connect, Colt, Equinix, Intercloud, Interxion, Orange, Telia Carrier, Zayo |
 | **Перт** | [NextDC P1](https://www.nextdc.com/data-centres/p1-perth-data-centre) | 2 | Недоступно | 10G | Megaport, NextDC |
-| **Phoenix** | [Еджеконнекст PHX01](https://www.edgeconnex.com/locations/north-america/phoenix-az/) | 1 | Недоступно | 10G | |
+| **Phoenix** | [Еджеконнекс PHX01](https://www.edgeconnex.com/locations/north-america/phoenix-az/) | 1 | Недоступно | 10G | |
 | **Квебек** | [Vantage](https://vantage-dc.com/data_centers/quebec-city-data-center-campus/) | 1 | Восточная Канада | Недоступно | Bell Canada, Megaport |
 | **Куеретаро (Мексика)** | [Кио сети QR01](https://www.kionetworks.com/es-mx/) | 4 | Недоступно | 10G | Transtelco|
 | **куинци** | [Сабэй Datacenter — создание](https://sabeydatacenters.com/data-center-locations/central-washington-data-centers/quincy-data-center) | 1 | западная часть США 2 | 10G, 100G | | 

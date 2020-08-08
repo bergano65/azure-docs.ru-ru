@@ -1,19 +1,17 @@
 ---
 title: Удаление пула узлов виртуальных рабочих столов Windows в Azure
 description: Удаление пула узлов в виртуальном рабочем столе Windows.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 07/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ced0d7513524758975919fad90f19581d15d95f4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: dfc9858bea468389d8ce90677f048e5d1fd3bb82
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87100514"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88007596"
 ---
 # <a name="delete-a-host-pool"></a>Удаление пула узлов
 
@@ -53,7 +51,7 @@ Remove-AzWvdHostPool -Name <hostpoolname> -ResourceGroupName <resourcegroupname>
 
 7. Щелкните **Удалить**.
 
-8. Если в удаляемом пуле узлов есть узлы сеансов, появится сообщение с запросом на продолжение. Выберите ответ **Да**.
+8. Если в удаляемом пуле узлов есть узлы сеансов, появится сообщение с запросом на продолжение. Выберите **Да**.
 
 9. Теперь портал Azure удалит все узлы сеансов и удалит пул узлов. Виртуальные машины, связанные с узлом сеансов, не будут удалены и останутся в вашей подписке.
 

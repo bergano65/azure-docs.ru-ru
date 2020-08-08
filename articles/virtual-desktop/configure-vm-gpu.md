@@ -1,23 +1,21 @@
 ---
 title: Настройка GPU для Виртуального рабочего стола Windows в Azure
 description: Сведения о включении отрисовки и кодирования с поддержкой ускорения за счет GPU на Виртуальном рабочем столе Windows.
-services: virtual-desktop
 author: gundarev
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 05/06/2019
 ms.author: denisgun
-ms.openlocfilehash: a80e9940aff69d351fde7512cfc38a12d6029f74
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: dd5eb8acb76fe5901149d90a6d551d8d14d363cc
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87291491"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88007782"
 ---
 # <a name="configure-graphics-processing-unit-gpu-acceleration-for-windows-virtual-desktop"></a>Настройка ускорения графического процессора (GPU) для Виртуального рабочего стола Windows
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/configure-vm-gpu-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/configure-vm-gpu-2019.md).
 
 Виртуальный рабочий стол Windows поддерживает отрисовку и кодирование с поддержкой ускорения за счет GPU для повышения уровня производительности и масштабируемости. Ускорение GPU особенно важно для приложений с большим объемом графики.
 
@@ -58,7 +56,7 @@ Azure предоставляет несколько [размеров вирту
 ## <a name="configure-gpu-accelerated-frame-encoding"></a>Настройка кодирования кадров с поддержкой ускорения за счет GPU
 
 Удаленный рабочий стол кодирует всю графику в ходе отрисовки приложениями и рабочими столами (выполненной с помощью GPU или ЦП) для передачи клиентам удаленного рабочего стола. Когда часть экрана часто обновляется, эта часть экрана кодируется видеокодеком (H. 264/AVC). По умолчанию удаленный рабочий стол не использует доступные GPU для этого кодирования. Настройте групповую политику для узла сеанса, чтобы включить кодирование кадров с поддержкой ускорения за счет GPU. Продолжите выполнять указанные выше шаги:
- 
+
 >[!NOTE]
 >Кодирование кадров с ускорением GPU недоступно на виртуальных машинах серии NVv4.
 

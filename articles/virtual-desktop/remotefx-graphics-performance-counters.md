@@ -1,19 +1,17 @@
 ---
 title: Диагностика проблем производительности графики удаленный рабочий стол — Azure
 description: В этой статье описывается, как использовать счетчики графики RemoteFX в сеансах протокола удаленного рабочего стола для диагностики проблем с производительностью графики в виртуальном рабочем столе Windows.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 05/23/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 84cee86dbddff77f6142925eec01889cf793a466
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dc5c6499fa47a1e32a517032d5cc2a97b3f2677f
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79127554"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88007172"
 ---
 # <a name="diagnose-graphics-performance-issues-in-remote-desktop"></a>Диагностика проблем производительности графики в удаленный рабочий стол
 
@@ -100,7 +98,7 @@ ms.locfileid: "79127554"
 > [!NOTE]
 > В настоящее время счетчик исходных кадров/секунд не поддерживается. Сейчас счетчик исходных кадров/секунд всегда будет отображать 0.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о создании виртуальной машины Azure, оптимизированной для GPU, см. в разделе [Настройка ускорения графического процессора для среды виртуальных рабочих столов Windows](configure-vm-gpu.md).
 - Общие сведения об устранении неполадок и путях эскалации см. в разделе [Общие сведения об устранении неполадок, Отзывы и поддержка](troubleshoot-set-up-overview.md).

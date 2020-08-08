@@ -6,15 +6,15 @@ ms.service: azure-arc
 ms.subservice: azure-arc-servers
 author: mgoedtel
 ms.author: magoedte
-ms.date: 07/23/2020
+ms.date: 08/07/2020
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: bc9bc034abce789046803bbcad5b750984c905cb
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: f88fc4a1fd5c44b515ab44b604ebf9a885165ddc
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87809533"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008005"
 ---
 # <a name="connect-hybrid-machines-to-azure-from-the-azure-portal"></a>Подключение гибридных компьютеров к Azure на портале Azure
 
@@ -50,7 +50,9 @@ ms.locfileid: "87809533"
 1. На странице **Создать скрипт** в раскрывающемся списке **Операционная система** выберите операционную систему, для которой будет выполняться скрипт.
 
 1. Если компьютер обменивается данными через прокси-сервер для подключения к Интернету, выберите **Next: Proxy Server** (Далее: Прокси-сервер).
+
 1. На вкладке **Прокси-сервер** укажите IP-адрес прокси-сервера или имя и номер порта, которые будет использовать компьютер для связи с прокси-сервером. Введите значение в формате `http://<proxyURL>:<proxyport>`.
+
 1. Выберите вкладку **Проверка и создание**.
 
 1. На вкладке **Проверка и создание** просмотрите сводные данные, а затем щелкните **Загрузка**. Если вам все еще нужно внести изменения, щелкните **Назад**.
@@ -65,7 +67,7 @@ ms.locfileid: "87809533"
 >* Чтобы установить или удалить агент, необходимы разрешения *Администратора*.
 >* Сначала необходимо скачать и скопировать пакет установщика в папку на целевом сервере или сделать это из общей сетевой папки. При запуске пакета установщика без настраивания каких-либо параметров активируется мастер установки, который можно использовать для установки агента в интерактивном режиме.
 
-Если компьютеру необходимо взаимодействовать через прокси-сервер со службой, после установки агента необходимо выполнить команду, описанную далее в этой статье. Она задает переменную системной среды для прокси-сервера `https_proxy`.
+Если компьютеру необходимо взаимодействовать через прокси-сервер со службой, после установки агента необходимо выполнить команду, описанную в следующих шагах. Эта команда задает переменную системной среды прокси-сервера `https_proxy` .
 
 Если вы не работали с параметрами командной строки для пакетов установщика Windows, ознакомьтесь со [стандартными параметрами командной строки Msiexec](/windows/win32/msi/standard-installer-command-line-options) и [параметрами командной строки Msiexec](/windows/win32/msi/command-line-options).
 
@@ -75,13 +77,32 @@ ms.locfileid: "87809533"
 msiexec.exe /i AzureConnectedMachineAgent.msi /?
 ```
 
-Чтобы автоматически установить агент и создать файл журнала установки в существующей папке `C:\Support\Logs`, выполните следующую команду.
+1. Чтобы автоматически установить агент и создать файл журнала установки в существующей папке `C:\Support\Logs`, выполните следующую команду.
 
-```dos
-msiexec.exe /i AzureConnectedMachineAgent.msi /qn /l*v "C:\Support\Logs\Azcmagentsetup.log"
-```
+    ```dos
+    msiexec.exe /i AzureConnectedMachineAgent.msi /qn /l*v "C:\Support\Logs\Azcmagentsetup.log"
+    ```
 
-Если не удается запустить агент после завершения установки, просмотрите подробные сведения об ошибке в журналах. Каталог журнала — *%Programfiles%\AzureConnectedMachineAgentAgent\logs*.
+    Если не удается запустить агент после завершения установки, просмотрите подробные сведения об ошибке в журналах. Каталог журнала — *%Programfiles%\AzureConnectedMachineAgentAgent\logs*.
+
+2. Если компьютеру требуется взаимодействие через прокси-сервер, чтобы задать переменную среды прокси-сервера, выполните следующую команду:
+
+    ```powershell
+    [Environment]::SetEnvironmentVariable("https_proxy", "http://{proxy-url}:{proxy-port}", "Machine")
+    $env:https_proxy = [System.Environment]::GetEnvironmentVariable("https_proxy","Machine")
+    # For the changes to take effect, the agent service needs to be restarted after the proxy environment variable is set.
+    Restart-Service -Name himds
+    ```
+
+    >[!NOTE]
+    >Агент не поддерживает настройку проверки подлинности прокси-сервера в этой предварительной версии.
+    >
+
+3. После установки агента необходимо настроить его для взаимодействия со службой Azure Arc, выполнив следующую команду:
+
+    ```dos
+    "%ProgramFiles%\AzureConnectedMachineAgent\azcmagent.exe" connect --resource-group "resourceGroupName" --tenant-id "tenantID" --location "regionName" --subscription-id "subscriptionID"
+    ```
 
 ### <a name="install-with-the-scripted-method"></a>Установка с помощью метода скрипта
 
@@ -97,34 +118,13 @@ msiexec.exe /i AzureConnectedMachineAgent.msi /qn /l*v "C:\Support\Logs\Azcmagen
 
 Если не удается запустить агент после завершения установки, просмотрите подробные сведения об ошибке в журналах. Каталог журнала — *%Programfiles%\AzureConnectedMachineAgentAgent\logs*.
 
-### <a name="configure-the-agent-proxy-setting"></a>Настройка прокси-агента
-
-Чтобы задать переменную среды прокси-сервера, выполните следующую команду:
-
-```powershell
-# If a proxy server is needed, execute these commands with the proxy URL and port.
-[Environment]::SetEnvironmentVariable("https_proxy", "http://{proxy-url}:{proxy-port}", "Machine")
-$env:https_proxy = [System.Environment]::GetEnvironmentVariable("https_proxy","Machine")
-# For the changes to take effect, the agent service needs to be restarted after the proxy environment variable is set.
-Restart-Service -Name himds
-```
-
->[!NOTE]
->Агент не поддерживает настройку проверки подлинности прокси-сервера в этой предварительной версии.
->
-
-### <a name="configure-agent-communication"></a>Настройка связи с агентом
-
-После установки агента необходимо настроить для него взаимодействие со службой Azure Arc, выполнив следующую команду:
-
-`"%ProgramFiles%\AzureConnectedMachineAgent\azcmagent.exe" connect --resource-group "resourceGroupName" --tenant-id "tenantID" --location "regionName" --subscription-id "subscriptionID"`
-
 ## <a name="install-and-validate-the-agent-on-linux"></a>Установка и проверка агента в Linux
 
 Агент подключенного компьютера для ОС Linux предоставляется в пакете в предпочтительном формате для распространения (RPM или DEB). Он размещен в [репозитории пакетов](https://packages.microsoft.com/) Microsoft. [Пакет скриптов оболочки `Install_linux_azcmagent.sh`](https://aka.ms/azcmagent) выполняет следующие действия:
 
 - настраивает на хост-компьютере скачивание пакета агента по адресу packages.microsoft.com.
 - Устанавливает пакет поставщика гибридных ресурсов.
+- Регистрация компьютера в службе "Дуга Azure"
 
 При необходимости можно указать в агенте сведения о прокси-сервере, включив параметр `--proxy "{proxy-url}:{proxy-port}"`.
 
@@ -150,18 +150,9 @@ wget https://aka.ms/azcmagent -O ~/Install_linux_azcmagent.sh
 bash ~/Install_linux_azcmagent.sh --proxy "{proxy-url}:{proxy-port}"
 ```
 
-### <a name="configure-the-agent-communication"></a>Настройка связи с агентом
+## <a name="verify-the-connection-with-azure-arc"></a>Проверка подключения с помощью Azure Arc
 
-После установки агента настройте в нем связь со службой Azure Arc, выполнив следующую команду:
-
-`azcmagent connect --resource-group "resourceGroupName" --tenant-id "tenantID" --location "regionName" --subscription-id "subscriptionID"`
-
->[!NOTE]
->Для запуска **азкмажент**требуются права доступа *root* на компьютерах Linux.
-
-## <a name="verify-the-connection-with-azure-arc"></a>Проверка подключения с помощью Azure Arc
-
-После установки агента и настройки его подключения к Azure Arc для серверов (предварительная версия) перейдите на портал Azure, чтобы убедиться, что сервер подключен. Просмотрите свои компьютеры на [портале Azure](https://aka.ms/hybridmachineportal).
+После установки агента и его настройки для подключения к службе "Дуга Azure для серверов (Предварительная версия)" перейдите к портал Azure, чтобы убедиться, что сервер успешно подключен. Просмотрите свои компьютеры на [портале Azure](https://aka.ms/hybridmachineportal).
 
 ![Успешное соединение с сервером](./media/onboard-portal/arc-for-servers-successful-onboard.png)
 

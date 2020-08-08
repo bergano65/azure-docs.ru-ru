@@ -11,12 +11,12 @@ ms.author: nigup
 author: nishankgu
 ms.date: 07/24/2020
 ms.custom: how-to, seodec18
-ms.openlocfilehash: 8cff5ec6886c0aceff5270418f9feeb145f6fd17
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 8c2203fec71430840e547115d24330b661bda50f
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836553"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88002228"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинное обучение Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -66,7 +66,7 @@ az ml workspace share -w my_workspace -g my_resource_group --role Contributor --
 
 ## <a name="azure-machine-learning-operations"></a>Машинное обучение Azure операции
 
-Машинное обучение Azure встроенных действий для многих операций и задач. Полный список см. в статье [операции поставщиков ресурсов Azure](/azure/role-based-access-control/resource-provider-operations#microsoftmachinelearningservices).
+Машинное обучение Azure встроенных действий для многих операций и задач. Полный список см. в статье [операции с поставщиками ресурсов Azure](/azure/role-based-access-control/resource-provider-operations#microsoftmachinelearningservices).
 
 ## <a name="create-custom-role"></a>Создание настраиваемой роли
 
@@ -382,9 +382,9 @@ az provider operation show –n Microsoft.MachineLearningServices
 Чтобы назначить удостоверение, назначенное пользователем в кластерах Амлкомпуте, оно должно иметь разрешения на запись для создания вычислений и предоставления [роли управляемого оператора идентификации](/azure/role-based-access-control/built-in-roles#managed-identity-operator). Дополнительные сведения об управляемых удостоверениях RBAC см. [в статье управление назначенными пользователями удостоверениями](/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal) .
 
 
-### <a name="q-do-we-support-role-based-access-controls-on-the-studio-portal"></a>У. Поддерживаются ли элементы управления доступом на основе ролей на портале Studio?
+### <a name="q-do-we-support-role-based-access-control-on-the-studio-portal"></a>У. Поддерживает ли мы управление доступом на основе ролей на портале студии?
 
-Машинное обучение Azure Studio поддерживает управление доступом на основе ролей. 
+Машинное обучение Azure Studio поддерживает управление доступом на основе ролей Azure (Azure RBAC). 
 
 > [!IMPORTANT]
 > После назначения пользовательской роли с конкретными разрешениями на анализу данных в рабочей области соответствующие действия (например, Добавление кнопки вычислений) автоматически скрываются от пользователей. Скрытие этих элементов позволяет избежать путаницы при просмотре элементов управления, возвращающих уведомление о несанкционированном доступе из службы при их использовании.

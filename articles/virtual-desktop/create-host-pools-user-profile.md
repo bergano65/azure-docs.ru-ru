@@ -1,19 +1,17 @@
 ---
 title: Общий ресурс контейнера профиля Фслогикс Windows для виртуальных рабочих столов — Azure
 description: Как настроить контейнер Фслогикс Profile для пула узлов виртуальных рабочих столов Windows с помощью общей папки на основе виртуальной машины.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 08/20/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: bac0047c1eb151f38ff09092b45ca7fd86fcc65a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 35b692033cc16f276b48bc6d973b27d994c1082a
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85211839"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88002591"
 ---
 # <a name="create-a-profile-container-for-a-host-pool-using-a-file-share"></a>Создание контейнера профиля для пула узлов с помощью общей папки
 
@@ -66,7 +64,7 @@ ms.locfileid: "85211839"
 6. Создайте ключ с именем **Profiles**.
 7. Создайте следующие значения для ключа Profiles:
 
-| Имя                | Type               | Данные и значение                        |
+| Имя                | Тип               | Данные и значение                        |
 |---------------------|--------------------|-----------------------------------|
 | Включено             | DWORD              | 1                                 |
 | вхдлокатионс        | Многострочное значение | "Сетевой путь к общей папке"     |

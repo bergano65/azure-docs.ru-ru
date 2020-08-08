@@ -1,24 +1,22 @@
 ---
 title: Создание пула узлов виртуальных рабочих столов Windows (классическая модель) — Azure
 description: Устранение неполадок и разрешение проблем с пулом клиентов и узлов во время установки среды клиента Windows для виртуальных рабочих столов (классическая модель).
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: bd9a6dd5d11ab69635d610eee3f92a90e942b576
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: eed1b0e1b01d5d13330b927429eca9a28ff80658
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87269603"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009262"
 ---
 # <a name="tenant-and-host-pool-creation-in-windows-virtual-desktop-classic"></a>Создание пула клиентов и узлов в виртуальном рабочем столе Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../troubleshoot-set-up-issues.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows (классическому), который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Сведения об обеспечении управления объектами Azure Resource Manager для Виртуального рабочего стола Windows см. в [этой статье](../troubleshoot-set-up-issues.md).
 
 В этой статье рассматриваются проблемы во время первоначальной настройки клиента виртуальных рабочих столов Windows и соответствующей инфраструктуры пула узлов сеансов.
 
@@ -43,9 +41,9 @@ ms.locfileid: "87269603"
 
 ```Error
 AADSTS650052 Message The app needs access to a service(\"{name}\") that your organization
-\"{organization}\" has not subscribed to or enabled. Contact your IT Admin to review the 
+\"{organization}\" has not subscribed to or enabled. Contact your IT Admin to review the
 configuration of your service subscriptions.650052 Message The app needs access to a service
-(\"{name}\") that your organization \"{organization}\" has not subscribed to or enabled. 
+(\"{name}\") that your organization \"{organization}\" has not subscribed to or enabled.
 Contact your IT Admin to review the configuration of your service subscriptions.
 ```
 
@@ -124,12 +122,12 @@ Contact your IT Admin to review the configuration of your service subscriptions.
 1. Выйдите из текущего предложения по развертыванию Azure Marketplace.
 2. В верхней строке поиска найдите и выберите **Журнал действий**.
 3. Найдите действие **Проверка развертывания** с состоянием **Ошибка** и выберите действие.
-   
+
    > [!div class="mx-imgBorder"]
    > ![Снимок экрана: отдельное действие * * проверить развертывание * * с состоянием * * ошибка * *](../media/troubleshooting-marketplace-validation-error-activity-summary.png)
 
 4. Выберите JSON, а затем прокрутите вниз до нижней части экрана, пока не увидите поле "statusMessage".
-   
+
    > [!div class="mx-imgBorder"]
    > ![Снимок экрана невыполненной активности с красной рамкой вокруг свойства statusMessage текста JSON.](../media/troubleshooting-marketplace-validation-error-json-boxed.png)
 
@@ -260,7 +258,7 @@ Contact your IT Admin to review the configuration of your service subscriptions.
    "message": "At least one resource deployment operation failed. Please list
  deployment operations for details. 4 Please see https://aka.ms/arm-debug for usage details.",
  "details": [
-         { "code": "Conflict",  
+         { "code": "Conflict",
          "message": "{\r\n \"status\": \"Failed\",\r\n \"error\": {\r\n \"code\":
          \"ResourceDeploymentFailure\",\r\n \"message\": \"The resource
          operation completed with terminal provisioning state 'Failed'.\",\r\n

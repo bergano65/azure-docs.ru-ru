@@ -7,12 +7,12 @@ author: zr-msft
 ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zarhoads
-ms.openlocfilehash: 9f5fcbda93e4a31b4d328bffe4689a47a4eb89ff
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 4882fadcc2f05e4047366d8d097a3918091035bb
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281571"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88005318"
 ---
 # <a name="best-practices-for-application-developers-to-manage-resources-in-azure-kubernetes-service-aks"></a>Рекомендации для разработчиков приложений по управлению ресурсами в службе Azure Kubernetes (AKS)
 
@@ -74,7 +74,7 @@ spec:
 
 ## <a name="develop-and-debug-applications-against-an-aks-cluster"></a>Разработка и отладка приложений в кластере AKS
 
-**Рекомендация**. Команды разработчиков должны развертывать и отлаживать приложения в кластере AKS, используя Dev Spaces. Эта модель разработки гарантирует реализацию требований к элементам управления доступом на основе ролей, сети или хранилищу перед развертыванием приложения в рабочей среде.
+**Рекомендация**. Команды разработчиков должны развертывать и отлаживать приложения в кластере AKS, используя Dev Spaces. Эта модель разработки гарантирует реализацию управления доступом на основе ролей (RBAC), сети или хранилища перед развертыванием приложения в рабочей среде.
 
 Azure Dev Spaces позволяет разрабатывать, отлаживать и тестировать приложения непосредственно в кластере AKS. Разработчики в команде работают вместе над созданием и тестированием на протяжении всего жизненного цикла приложения. Вы можете использовать существующие средства, такие как Visual Studio или Visual Studio Code. Расширение устанавливается для пространств разработки, которое дает возможность запускать и отлаживать приложение в кластере AKS.
 

@@ -1,24 +1,22 @@
 ---
 title: Виртуальные рабочие столы Windows PowerShell — Azure
 description: Устранение неполадок с PowerShell при настройке среды виртуальных рабочих столов Windows.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 06/05/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: cd34fa2bc4c1083d4bd4dda7d118e0348a1a7fd0
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 03b6da1d35247749d8ec2c6459c8ddee69bfccb6
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288723"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88002275"
 ---
 # <a name="windows-virtual-desktop-powershell"></a>Виртуальный рабочий стол Windows — PowerShell
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/troubleshoot-powershell-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/troubleshoot-powershell-2019.md).
 
 Используйте эту статью для устранения ошибок и проблем при использовании PowerShell с виртуальным рабочим столом Windows. Дополнительные сведения о службы удаленных рабочих столов PowerShell см. в статье [Windows Virtual Desktop PowerShell](/powershell/module/windowsvirtualdesktop/).
 
@@ -33,10 +31,10 @@ ms.locfileid: "87288723"
 ### <a name="error-new-azroleassignment-the-provided-information-does-not-map-to-an-ad-object-id"></a>Ошибка: New-Азролеассигнмент: предоставленные сведения не сопоставляются с ИДЕНТИФИКАТОРом объекта AD
 
 ```powershell
-New-AzRoleAssignment -SignInName "admins@contoso.com" -RoleDefinitionName "Desktop Virtualization User" -ResourceName "0301HP-DAG" -ResourceGroupName 0301RG -ResourceType 'Microsoft.DesktopVirtualization/applicationGroups' 
+New-AzRoleAssignment -SignInName "admins@contoso.com" -RoleDefinitionName "Desktop Virtualization User" -ResourceName "0301HP-DAG" -ResourceGroupName 0301RG -ResourceType 'Microsoft.DesktopVirtualization/applicationGroups'
 ```
 
-**Причина:** Пользователь, указанный параметром *-SignInName* , не может быть найден в Azure Active Directory, привязанном к среде виртуальных рабочих столов Windows. 
+**Причина:** Пользователь, указанный параметром *-SignInName* , не может быть найден в Azure Active Directory, привязанном к среде виртуальных рабочих столов Windows.
 
 **Исправление:** Необходимо выполнить следующие действия.
 
@@ -46,7 +44,7 @@ New-AzRoleAssignment -SignInName "admins@contoso.com" -RoleDefinitionName "Deskt
 
 ### <a name="error-new-azroleassignment-the-client-with-object-id-does-not-have-authorization-to-perform-action-over-scope-code-authorizationfailed"></a>Ошибка: New-Азролеассигнмент: "клиент с идентификатором объекта не имеет авторизации для выполнения действия над областью (код: AuthorizationFailed)"
 
-**Причина 1:** Используемая учетная запись не имеет разрешений владельца на подписку. 
+**Причина 1:** Используемая учетная запись не имеет разрешений владельца на подписку.
 
 **Исправление 1:** Пользователю с разрешениями владельца необходимо выполнить назначение роли. Кроме того, пользователю необходимо назначить роль администратора доступа пользователей, чтобы назначить пользователя группе приложений.
 
@@ -57,7 +55,7 @@ New-AzRoleAssignment -SignInName "admins@contoso.com" -RoleDefinitionName "Deskt
 ### <a name="error-new-azwvdhostpool----the-location-is-not-available-for-resource-type"></a>Ошибка: New-Азввдхостпул--расположение недоступно для типа ресурса
 
 ```powershell
-New-AzWvdHostPool_CreateExpanded: The provided location 'southeastasia' is not available for resource type 'Microsoft.DesktopVirtualization/hostpools'. List of available regions for the resource type is 'eastus,eastus2,westus,westus2,northcentralus,southcentralus,westcentralus,centralus'. 
+New-AzWvdHostPool_CreateExpanded: The provided location 'southeastasia' is not available for resource type 'Microsoft.DesktopVirtualization/hostpools'. List of available regions for the resource type is 'eastus,eastus2,westus,westus2,northcentralus,southcentralus,westcentralus,centralus'.
 ```
 
 Причина: виртуальные рабочие столы Windows поддерживают выбор расположения пулов узлов, групп приложений и рабочих областей для хранения метаданных службы в определенных расположениях. Параметры доступны только в том месте, где доступна эта функция. Эта ошибка означает, что эта функция недоступна в выбранном расположении.
