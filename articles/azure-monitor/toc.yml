@@ -85,6 +85,10 @@
           items:
             - name: Создание ресурса
               href: samples/resource-manager-app-resource.md
+            - name: Служба приложений Azure
+              href: samples/resource-manager-web-app.md
+            - name: Функции Azure
+              href: samples/resource-manager-function-app.md
         - name: Параметры диагностики
           href: samples/resource-manager-diagnostic-settings.md
         - name: Рабочие области Log Analytics
@@ -143,7 +147,7 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: Предупреждения
+    - name: видны узлы
       items:
         - name: Обзор
           href: platform/alerts-overview.md

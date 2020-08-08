@@ -671,7 +671,7 @@
                 - name: Горизонтальное увеличение масштаба программными средствами
                   href: service-fabric-cluster-programmatic-scaling.md
                 - name: Масштабирование типа первичного узла
-                  href: service-fabric-scale-up-node-type.md
+                  href: service-fabric-scale-up-primary-node-type.md
                 - name: Добавление типа узла
                   href: virtual-machine-scale-set-scale-node-type-scale-out.md
                 - name: Удаление типа узла

@@ -60,7 +60,7 @@
           href: ./security-controls-policy.md
     - name: Сеть
       href: concepts-network.md
-    - name: Хранилище
+    - name: Память
       href: concepts-storage.md
     - name: Масштабирование
       href: concepts-scale.md
@@ -290,8 +290,8 @@
           href: windows-container-powershell.md
         - name: Удаленное подключение
           href: rdp.md
-        - name: Известные ограничения
-          href: windows-node-limitations.md
+        - name: "Часто задаваемые вопросы о контейнерах Windows\_Server"
+          href: windows-faq.md
         - name: Использование панели мониторинга Kubernetes
           href: kubernetes-dashboard.md
         - name: Создание файлов Dockerfile для контейнеров Windows Server

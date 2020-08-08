@@ -55,7 +55,7 @@
         - name: Управление пользовательскими моделями
           href: how-to-manage-model.md
         - name: Анализ и проверка моделей
-          href: how-to-use-parser.md
+          href: how-to-parse-models.md
         - name: Добавление тегов
           href: how-to-use-tags.md
     - name: Использование динамической среды выполнения

@@ -7,14 +7,14 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Настройка журналов потоков NSG с помощью шаблона ARM
-      href: quickstart-configure-network-security-group-flow-logs-from-arm-template.md
     - name: Диагностика проблем с фильтрацией трафика виртуальной машины с помощью портала
       href: diagnose-vm-network-traffic-filtering-problem.md
     - name: Диагностика проблем с фильтрацией трафика виртуальной машины с помощью PowerShell
       href: diagnose-vm-network-traffic-filtering-problem-powershell.md
     - name: Диагностика проблем с фильтрацией трафика виртуальной машины с помощью Azure CLI
       href: diagnose-vm-network-traffic-filtering-problem-cli.md
+    - name: Настройка журналов потоков NSG с помощью шаблона ARM
+      href: quickstart-configure-network-security-group-flow-logs-from-arm-template.md
 - name: Учебники
   items:
     - name: Диагностика проблем с маршрутизацией трафика виртуальной машины
