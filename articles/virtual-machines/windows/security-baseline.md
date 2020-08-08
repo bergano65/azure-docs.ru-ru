@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 11b532b5ece10c8a9ac6dad61e4ca64a9f19f901
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 4e62fd43c062d9d33292eac36a16d809bc926c98
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87445208"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009840"
 ---
 # <a name="azure-security-baseline-for-windows-virtual-machines"></a>Базовый план безопасности Azure для Виртуальные машины Windows
 
@@ -166,7 +166,7 @@ ms.locfileid: "87445208"
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11. Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
 
@@ -208,7 +208,7 @@ ms.locfileid: "87445208"
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="23-enable-audit-logging-for-azure-resources"></a>2.3. Включение журналов аудита для ресурсов Azure
 
@@ -308,7 +308,7 @@ ms.locfileid: "87445208"
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="29-enable-dns-query-logging"></a>2.9. Включение ведения журнала запросов DNS
 
@@ -342,7 +342,7 @@ ms.locfileid: "87445208"
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="32-change-default-passwords-where-applicable"></a>3.2. Изменение паролей по умолчанию, где применимо
 
@@ -380,7 +380,7 @@ ms.locfileid: "87445208"
 
 **Руководство**. Включите многофакторную проверку подлинности Azure AD и следуйте рекомендациям по управлению идентификацией и доступом в Центре безопасности Azure.
 
-* [Включение MFA в Azure](../../active-directory/authentication/howto-mfa-getstarted.md)
+* [Как включить MFA в Azure](../../active-directory/authentication/howto-mfa-getstarted.md)
 
 * [Мониторинг идентификации и доступа в Центре безопасности Azure](../../security-center/security-center-identity-access.md)
 
@@ -476,7 +476,7 @@ ms.locfileid: "87445208"
 
 **Мониторинг центра безопасности Azure**: недоступен
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3.13. Предоставление корпорации Майкрософт доступа к соответствующим данным клиентов в рамках сценариев поддержки
 
@@ -556,11 +556,11 @@ ms.locfileid: "87445208"
 
 **Ответственность**: Customer
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Использование управления доступом на основе РОЛЕЙ (RBAC) позволяет разделить обязанности внутри группы и предоставить доступ к пользователям вашей виртуальной машины только для тех пользователей, которые им необходимы для выполнения своих задач. Вместо того чтобы предоставлять всем неограниченные разрешения для виртуальной машины, можно разрешить только определенные действия. Вы можете настроить управление доступом для виртуальной машины на портале Azure с помощью Azure CLI или Azure PowerShell.
+**Руководство**. Использование управления доступом на основе ролей в Azure (Azure RBAC) позволяет разделить обязанности внутри группы и предоставить пользователям только доступ к вашим виртуальным машинам, необходимым для выполнения своих задач. Вместо того чтобы предоставлять всем неограниченные разрешения для виртуальной машины, можно разрешить только определенные действия. Вы можете настроить управление доступом для виртуальной машины на портале Azure с помощью Azure CLI или Azure PowerShell.
 
-* [Управление доступом на основе ролей (RBAC) для ресурсов Azure](../../role-based-access-control/overview.md)
+* [Azure RBAC](../../role-based-access-control/overview.md)
 
 * [Встроенные роли Azure](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor)
 
@@ -612,7 +612,7 @@ ms.locfileid: "87445208"
 
 * [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](../../security-center/security-center-vulnerability-assessment-recommendations.md)
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -624,7 +624,7 @@ ms.locfileid: "87445208"
 
 * [Управление обновлениями и исправлениями для виртуальных машин](../../automation/update-management/update-mgmt-manage-updates-for-vm.md)
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -654,7 +654,7 @@ ms.locfileid: "87445208"
 
 * [Оценка безопасности центра безопасности Azure](../../security-center/secure-score-security-controls.md)
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -684,7 +684,7 @@ ms.locfileid: "87445208"
 
 **Мониторинг центра безопасности Azure**: недоступен
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="63-delete-unauthorized-azure-resources"></a>6.3. Удаление неавторизованных ресурсов Azure
 
@@ -849,7 +849,7 @@ ms.locfileid: "87445208"
 
 **Мониторинг центра безопасности Azure**: недоступен
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="72-establish-secure-operating-system-configurations"></a>7.2. Сохранение безопасных конфигураций для операционных систем
 
@@ -913,11 +913,11 @@ ms.locfileid: "87445208"
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7.6. Безопасное хранение пользовательских образов операционной системы
 
-**Руководство**. при использовании пользовательских образов (например, виртуального жесткого диска) используйте элементы управления доступом на основе ролей Azure, чтобы обеспечить доступ к образам только полномочным пользователям.
+**Руководство**. при использовании пользовательских образов (например, виртуального жесткого диска) используйте управление доступом на основе ролей Azure (Azure RBAC), чтобы обеспечить доступ к образам только полномочным пользователям.
 
-* [Общие сведения о RBAC в Azure](../../role-based-access-control/rbac-and-directory-admin-roles.md)
+* [Общие сведения об Azure RBAC](../../role-based-access-control/rbac-and-directory-admin-roles.md)
 
-* [Настройка RBAC в Azure](../../role-based-access-control/quickstart-assign-role-user-portal.md)
+* [Настройка Azure RBAC](../../role-based-access-control/quickstart-assign-role-user-portal.md)
 
 **Мониторинг центра безопасности Azure**: недоступен
 

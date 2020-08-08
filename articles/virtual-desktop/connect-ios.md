@@ -1,26 +1,24 @@
 ---
 title: Подключение к виртуальному рабочему столу Windows из iOS — Azure
 description: Как подключиться к виртуальному рабочему столу Windows с помощью клиента iOS.
-services: virtual-desktop
-author: heidilohr
-ms.service: virtual-desktop
+author: Heidilohr
 ms.topic: how-to
 ms.date: 02/08/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: bbf169a4be639d8745670a33b47a7392d13b6b07
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 79db3db5a46700f55c1dc759443cae194660372d
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87291453"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88007647"
 ---
 # <a name="connect-to-windows-virtual-desktop-with-the-ios-client"></a>Подключение к виртуальному рабочему столу Windows с помощью клиента iOS
 
 > Применимо к: iOS 13,0 или более поздней версии. Совместимо с iPhone, iPad и iPod Touch.
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/connect-ios-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/connect-ios-2019.md).
 
 Доступ к ресурсам виртуальных рабочих столов Windows можно получить с вашего устройства iOS с помощью скачиваемого клиента. В этом руководство вы узнаете, как настроить клиент iOS.
 

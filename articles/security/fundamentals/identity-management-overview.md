@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 09/19/2018
 ms.author: terrylan
 Customer intent: As an IT Pro or decision maker I am trying to learn about identity management capabilities in Azure
-ms.openlocfilehash: 9de31ba30c4599393d9127c7852cb567cf0258ef
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: c9483363dcf6b4a5c05d71daa75d680dd25b8308
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542082"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88002686"
 ---
 # <a name="azure-identity-management-security-overview"></a>Общие сведения о безопасности при управлении удостоверениями в Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "87542082"
 * Единый вход
 * Обратный прокси-сервер.
 * Многофакторная идентификация
-* управление доступом на основе ролей (RBAC).
+* Управление доступом на основе ролей в Azure (Azure RBAC)
 * Наблюдение за безопасностью, оповещения и отчеты на основе машинного обучения.
 * Управление удостоверениями и доступом клиентов.
 * Регистрация устройства
@@ -87,9 +87,9 @@ Azure AD расширяет локальные среды Active Directory в о
 * [Что такое Многофакторная идентификация Azure?](/azure/active-directory/authentication/multi-factor-authentication)
 * [Принципы работы службы Многофакторной идентификации Azure](../../active-directory/authentication/concept-mfa-howitworks.md)
 
-## <a name="rbac"></a>RBAC
+## <a name="azure-rbac"></a>Azure RBAC
 
-RBAC — это система авторизации на основе Azure Resource Manager, которая обеспечивает точное управление доступом к ресурсам в Azure. RBAC позволяет детально управлять уровнем доступа пользователей. Например, одному пользователю можно разрешить управлять только виртуальными сетями, а другому — управлять всеми ресурсами в группе ресурсов. В Azure есть несколько встроенных ролей. Ниже перечислены четыре основные встроенные роли. Первые три роли охватывают все типы ресурсов.
+Azure RBAC — это система авторизации, созданная на основе Azure Resource Manager, которая обеспечивает детальное управление доступом к ресурсам в Azure. Azure RBAC позволяет детально контролировать уровень доступа пользователей. Например, одному пользователю можно разрешить управлять только виртуальными сетями, а другому — управлять всеми ресурсами в группе ресурсов. В Azure есть несколько встроенных ролей. Ниже перечислены четыре основные встроенные роли. Первые три роли охватывают все типы ресурсов.
 
 - [Владелец](/azure/role-based-access-control/built-in-roles#owner) — имеет полный доступ ко всем ресурсам, включая право делегировать доступ другим пользователям. 
 - [Участник](/azure/role-based-access-control/built-in-roles#contributor) — может создавать все типы ресурсов Azure и управлять ими, но не может предоставлять доступ другим пользователям.

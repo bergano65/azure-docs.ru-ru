@@ -1,26 +1,26 @@
 ---
 title: Настройка ролей Azure для административного доступа Azure
 titleSuffix: Azure Cognitive Search
-description: Административный контроль на основе ролей (RBAC) в портал Azure для управления административными задачами и их делегирования в Azure Когнитивный поиск Management.
+description: Управление доступом на основе ролей (RBAC) в портал Azure для управления административными задачами и их делегирования в Azure Когнитивный поиск Management.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/03/2020
-ms.openlocfilehash: d1b2576eb42cbe25919eb77fc30e2720ed812ca4
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: c01806194156fb43524e2db5f4c9bf636186de95
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534436"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009211"
 ---
 # <a name="set-azure-roles-for-administrative-access-to-azure-cognitive-search"></a>Настройка ролей Azure для административного доступа к Azure Когнитивный поиск
 
 Azure реализует [глобальную модель авторизации на основе ролей](../role-based-access-control/role-assignments-portal.md) для всех служб, управляемых через портал или API Resource Manager. Роли "владелец", "участник" и "читатель" определяют уровень *администрирования служб* для Active Directory пользователей, групп и субъектов безопасности, назначенных каждой роли. 
 
 > [!Note]
-> Элементы управления доступом на основе ролей для защиты частей индекса или набора документов отсутствуют. Чтобы применить доступ к результатам поиска на основе удостоверений, вы можете создать фильтры безопасности по идентификаторам, удаляя из результатов те документы, к которым запрашивающая сторона не должна иметь доступ. Дополнительные сведения см. в статьях о [фильтрах безопасности](search-security-trimming-for-azure-search.md) и [безопасности в Active Directory](search-security-trimming-for-azure-search-with-aad.md).
+> Управление доступом на основе ролей (RBAC) для защиты частей индекса или подмножества документов не предусмотрено. Чтобы применить доступ к результатам поиска на основе удостоверений, вы можете создать фильтры безопасности по идентификаторам, удаляя из результатов те документы, к которым запрашивающая сторона не должна иметь доступ. Дополнительные сведения см. в статьях о [фильтрах безопасности](search-security-trimming-for-azure-search.md) и [безопасности в Active Directory](search-security-trimming-for-azure-search-with-aad.md).
 
 ## <a name="management-tasks-by-role"></a>Задачи управления с использованием разных ролей
 
@@ -50,7 +50,7 @@ Azure реализует [глобальную модель авторизаци
 | Управление ключами администратора | Ключ администратора, владелец или участник RBAC ресурса |
 | Управление ключами запросов |  Ключ администратора, владелец или участник RBAC ресурса  |
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 + [Управление с помощью PowerShell](search-manage-powershell.md) 
 + [Производительность и оптимизация в Azure Когнитивный поиск](search-performance-optimization.md)

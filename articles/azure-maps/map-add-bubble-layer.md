@@ -1,6 +1,6 @@
 ---
 title: Добавление пузырькового слоя в карту | Карты Microsoft Azure
-description: В этой статье вы узнаете, как добавить пузырьковый слой на карту с помощью веб-пакета SDK Microsoft Azure Maps.
+description: Узнайте, как визуализировать точки на картах как круги с фиксированными размерами. См. статью использование веб-пакета SDK Azure Maps для добавления и настройки пузырьковых слоев для этой цели.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: 1a86c1ef12a4cae4132e79a742b99c1b95ee4cd5
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 47ee9e67c6885829e3cb0082aea63367da4aa626
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87287025"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88006185"
 ---
 # <a name="add-a-bubble-layer-to-a-map"></a>Добавление слоя пузырьков на карту
 

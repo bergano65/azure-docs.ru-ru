@@ -1,24 +1,24 @@
 ---
-title: Создание образов виртуальных машин Windows с помощью Packer
-description: Сведения об использовании Packer для создания образов виртуальных машин Windows в Azure
+title: Создание образов виртуальных машин с помощью пакета PowerShell
+description: Узнайте, как использовать Pack и PowerShell для создания образов виртуальных машин в Azure.
 author: cynthn
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.subservice: imaging
 ms.topic: how-to
 ms.workload: infrastructure
-ms.date: 02/22/2019
+ms.date: 08/05/2020
 ms.author: cynthn
-ms.openlocfilehash: 1597d249899756ac0d43d2dcd90019179b81bb3b
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 176aa925e4662731342ec3269e61ce9c7f71cf30
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87284665"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88003837"
 ---
-# <a name="how-to-use-packer-to-create-windows-virtual-machine-images-in-azure"></a>Использование Packer для создания образов виртуальных машин Windows в Azure
+# <a name="powershell-how-to-use-packer-to-create-virtual-machine-images-in-azure"></a>PowerShell: как использовать Pack для создания образов виртуальных машин в Azure
 Каждая виртуальная машина в Azure создается из образа, который определяет дистрибутив Windows и версию операционной системы. Образы могут содержать предварительно установленные приложения и конфигурации. Azure Marketplace предоставляет большое количество образов Майкрософт и сторонних разработчиков для наиболее распространенных операционных систем и приложений. Кроме того, вы можете создать собственные настраиваемые образы, отвечающие конкретным потребностям. В этой статье описывается определение и создание пользовательских образов в Azure с использованием инструмента с открытым кодом [Packer](https://www.packer.io/).
 
-Последнее тестирование этой статьи выполнялось 21.02.2019 г. с помощью [модуля Az PowerShell](/powershell/azure/install-az-ps) версии 1.3.0 и [Packer](https://www.packer.io/docs/install) версии 1.3.4.
+Последняя проверка этой статьи выполнялась на 8/5/2020 с помощью средства [Pack](https://www.packer.io/docs/install) версии 1.6.1.
 
 > [!NOTE]
 > В Azure теперь есть служба "Конструктор образов Azure" (предварительная версия), которая используется для определения и создания собственных пользовательских образов. Так как Конструктор образов Azure создан на основе Packer, вы можете даже использовать имеющиеся скрипты подготовки оболочки Packer. Чтобы приступить к работе с Конструктором образов Azure, ознакомьтесь со статьей [Предварительный просмотр. Создание виртуальной машины Windows с помощью Конструктора образов Azure](image-builder.md).
@@ -26,10 +26,10 @@ ms.locfileid: "87284665"
 ## <a name="create-azure-resource-group"></a>Создание группы ресурсов Azure
 В процессе сборки исходной виртуальной машины Packer создает временные ресурсы Azure. Чтобы сохранить эту исходную виртуальную машину для использования в качестве образа, необходимо определить группу ресурсов. Выходные данные процесса сборки Packer хранятся в этой группе ресурсов.
 
-Создайте группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Создайте группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *мипаккерграуп* в расположении *eastus* :
 
 ```azurepowershell
-$rgName = "myResourceGroup"
+$rgName = "myPackerGroup"
 $location = "East US"
 New-AzResourceGroup -Name $rgName -Location $location
 ```
@@ -37,13 +37,12 @@ New-AzResourceGroup -Name $rgName -Location $location
 ## <a name="create-azure-credentials"></a>Создание учетных данных Azure
 Packer выполняет проверку подлинности с помощью субъекта-службы Azure. Субъект-служба Azure является удостоверением безопасности, которое можно использовать с приложениями, службами и средствами автоматизации, такими как Packer. Вы можете определять разрешения на то, какие операции может выполнять субъект-служба в Azure, и управлять ими.
 
-Создайте субъект-службу с помощью командлета [New-AzADServicePrincipal](/powershell/module/az.resources/new-azadserviceprincipal) и назначьте ей разрешения на создание ресурсов и управление ими с помощью [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment). Значение для `-DisplayName` должно быть уникальным. При необходимости замените его собственным значением.  
+Создайте субъект-службу с помощью [New азадсервицепринЦипал](/powershell/module/az.resources/new-azadserviceprincipal). Значение для `-DisplayName` должно быть уникальным. При необходимости замените его собственным значением.  
 
 ```azurepowershell
-$sp = New-AzADServicePrincipal -DisplayName "PackerServicePrincipal"
+$sp = New-AzADServicePrincipal -DisplayName "PackerSP$(Get-Random)"
 $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($sp.Secret)
 $plainPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
-New-AzRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $sp.ApplicationId
 ```
 
 Затем выведите идентификатор приложения и пароль.
@@ -112,7 +111,6 @@ Get-AzSubscription
     "inline": [
       "Add-WindowsFeature Web-Server",
       "while ((Get-Service RdAgent).Status -ne 'Running') { Start-Sleep -s 5 }",
-      "while ((Get-Service WindowsAzureTelemetryService).Status -ne 'Running') { Start-Sleep -s 5 }",
       "while ((Get-Service WindowsAzureGuestAgent).Status -ne 'Running') { Start-Sleep -s 5 }",
       "& $env:SystemRoot\\System32\\Sysprep\\Sysprep.exe /oobe /generalize /quiet /quit",
       "while($true) { $imageState = Get-ItemProperty HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Setup\\State | Select ImageState; if($imageState.ImageState -ne 'IMAGE_STATE_GENERALIZE_RESEAL_TO_OOBE') { Write-Output $imageState.ImageState; Start-Sleep -s 10  } else { break } }"

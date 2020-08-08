@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 03/06/2019
 ms.author: yegu
-ms.openlocfilehash: 9a2ec2e60ae38506d716a244872baddbbdf570e7
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 956e3e83686677f3eb9895354a008783df5f7dcd
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86184979"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88003700"
 ---
 # <a name="how-to-set-up-geo-replication-for-azure-cache-for-redis"></a>Как настроить георепликацию для кэша Azure для Redis
 
@@ -24,7 +24,7 @@ ms.locfileid: "86184979"
 
 Чтобы настроить георепликацию между двумя кэшами, должны выполняться следующие предварительные условия.
 
-- Оба кэша являются кэшем [уровня "Премиум](cache-premium-tier-intro.md) ".
+- Оба кэша являются кэшем [уровня "Премиум](cache-overview.md#service-tiers) ".
 - Оба кэша находятся в одной подписке Azure.
 - Вторичный связанный кэш имеет один и тот же размер кэша или больший размер кэша, чем основной связанный кэш.
 - Оба кэша создаются и находятся в состоянии выполнения.
@@ -186,5 +186,6 @@ ms.locfileid: "86184979"
 Чтобы запустить отработку отказа, инициированную клиентом, сначала нужно удалить связь кэшей. Затем измените клиент Redis, чтобы он использовал конечную точку подключения вторичного кэша (ранее связанный). При разрыве связи между двумя кэшами Вторичный кэш снова переходит в обычный кэш для чтения и записи и принимает запросы непосредственно от клиентов Redis.
 
 ## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные сведения о кэше Azure для функций Redis.
 
-Ознакомьтесь с дополнительными сведениями о [кэше Redis для Azure категории "Премиум"](cache-premium-tier-intro.md).
+* [Кэш Azure для уровней служб Redis](cache-overview.md#service-tiers)

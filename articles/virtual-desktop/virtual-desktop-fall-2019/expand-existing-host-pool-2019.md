@@ -1,24 +1,22 @@
 ---
 title: Развернуть существующий пул узлов виртуальных рабочих столов Windows (классический) с новыми узлами сеансов — Azure
 description: Развертывание существующего пула узлов с новыми узлами сеансов в Windows Virtual Desktop (классическая модель).
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ecdd63b054fda7f973898b0b3a42a29fc94c03bb
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 61cf28b0f1ebee6a0312ec3f23f22b01c6c4919e
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285039"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009177"
 ---
 # <a name="expand-an-existing-host-pool-with-new-session-hosts-in-windows-virtual-desktop-classic"></a>Развертывание существующего пула узлов с новыми узлами сеансов в виртуальном рабочем столе Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../expand-existing-host-pool.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows (классическому), который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Сведения об обеспечении управления объектами Azure Resource Manager для Виртуального рабочего стола Windows см. в [этой статье](../expand-existing-host-pool.md).
 
 По мере увеличения использования в пуле узлов может потребоваться расширить существующий пул узлов с новыми узлами сеансов, чтобы справиться с новой нагрузкой.
 
@@ -76,7 +74,7 @@ ms.locfileid: "87285039"
 
 Следуйте инструкциям в статье [Создание пула узлов с помощью Azure Marketplace](create-host-pools-azure-marketplace-2019.md) , пока не будет достигнуто [предложение Azure Marketplace для создания пула узлов](create-host-pools-azure-marketplace-2019.md#run-the-azure-marketplace-offering-to-provision-a-new-host-pool). При переходе к этому моменту необходимо ввести следующие сведения для каждой вкладки:
 
-### <a name="basics"></a>Основы
+### <a name="basics"></a>Основные сведения
 
 Все значения в этом разделе должны совпадать с указанными при создании пула узлов и виртуальных машин узла сеансов, за исключением *пользователей рабочего стола по умолчанию*:
 
@@ -126,7 +124,7 @@ ms.locfileid: "87285039"
 
 Следуйте инструкциям в разделе [Запуск шаблона Azure Resource Manager для подготовки нового пула узлов](create-host-pools-arm-template.md#run-the-azure-resource-manager-template-for-provisioning-a-new-host-pool) и укажите все те же значения параметров, кроме *количества экземпляров узлов удаленных рабочих столов*. Введите число виртуальных машин узла сеансов, которые нужно разместить в пуле узлов после запуска шаблона. Например, если вы разрабатываете пул узлов с пяти узлов сеансов до восьми, введите **8**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы развернули существующий пул узлов, вы можете войти в клиент виртуальных рабочих столов Windows, чтобы протестировать их в рамках сеанса пользователя. Подключиться к сеансу можно с помощью любого из следующих клиентов:
 

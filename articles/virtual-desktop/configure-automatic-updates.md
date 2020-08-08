@@ -1,26 +1,24 @@
 ---
 title: Настройка Configuration Manager конечной точки Майкрософт — Azure
 description: Настройка Configuration Manager Microsoft Endpoint для развертывания обновлений программного обеспечения в многосеансовой среде Windows 10 Enterprise на виртуальном рабочем столе Windows.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 06/12/2020
 ms.author: helohr
 ms.reviewer: v-cawood; clemr
 manager: lizross
-ms.openlocfilehash: 100e269bb995f86d0721cd6de28cd4b933b58ecd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bfc797e0c11a1804d27c6c97fea8cb2ba62dca7a
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85204393"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88010129"
 ---
 # <a name="configure-microsoft-endpoint-configuration-manager"></a>Настройка Configuration Manager конечных точек Майкрософт
 
 В этой статье объясняется, как настроить конечную точку Майкрософт Configuration Manager для автоматического применения обновлений на узле виртуальных рабочих столов Windows, работающем в многосеансовой среде Windows 10 Корпоративная.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить этот параметр, необходимо выполнить следующие действия.
 

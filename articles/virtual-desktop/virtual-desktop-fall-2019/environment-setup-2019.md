@@ -1,24 +1,22 @@
 ---
 title: Среда виртуальных рабочих столов Windows (классическая модель) — Azure
 description: Основные элементы среды виртуальных рабочих столов Windows (классическая модель).
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 2c019dd187c0ccd7a63f71c0373a0388135afda9
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 4fa281f6435013e9feb6808aab04ffa69c5f96c4
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285022"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008616"
 ---
 # <a name="windows-virtual-desktop-classic-environment"></a>Среда виртуальных рабочих столов Windows (классическая модель)
 
 >[!IMPORTANT]
->Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../environment-setup.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows (классическому), который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Сведения об обеспечении управления объектами Azure Resource Manager для Виртуального рабочего стола Windows см. в [этой статье](../environment-setup.md).
 
 Виртуальный рабочий стол Windows — это служба, которая предоставляет пользователям простой и безопасный доступ к виртуализованным рабочим столам и приложениям RemoteApp. В этом разделе вы узнаете о общей структуре среды виртуальных рабочих столов Windows.
 

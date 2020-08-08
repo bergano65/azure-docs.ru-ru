@@ -4,12 +4,12 @@ ms.author: erhopf
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/11/2020
-ms.openlocfilehash: 6bbdd3eb62229c3f8f180d2618dd25062ff0c1e9
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 235b7946fbcfc2322878428cce72e77ecceb9cfc
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86062691"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88010973"
 ---
 ## <a name="authenticate-with-azure-active-directory"></a>Проверка подлинности с помощью Azure Active Directory
 
@@ -17,7 +17,7 @@ ms.locfileid: "86062691"
 > 1. В настоящее время **только** API компьютерного зрения, API распознавания лиц, API анализа текста, иммерсивное средство чтения, распознаватель форм, детектор аномалий и все службы Bing, кроме пользовательский поиск Bing, поддерживают проверку подлинности с помощью Azure Active Directory (AAD).
 > 2. Проверку подлинности AAD необходимо всегда использовать вместе с именем пользовательского поддомена ресурса Azure. [Региональные конечные точки](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains#is-there-a-list-of-regional-endpoints) не поддерживают проверку подлинности AAD.
 
-В предыдущих разделах мы показали, как выполнять аутентификацию в Azure Cognitive Services с помощью ключа подписки с одной или несколькими службами. Хотя эти ключи предоставляют быстрый и простой путь для начала разработки, они могут оказаться короткими в более сложных сценариях, требующих управления доступом на основе ролей. Давайте посмотрим, что требуется для проверки подлинности с помощью Azure Active Directory (AAD).
+В предыдущих разделах мы показали, как выполнять аутентификацию в Azure Cognitive Services с помощью ключа подписки с одной или несколькими службами. Хотя эти ключи предоставляют быстрый и простой путь для начала разработки, они немного сложны в более сложных сценариях, требующих управления доступом на основе ролей Azure (Azure RBAC). Давайте посмотрим, что требуется для проверки подлинности с помощью Azure Active Directory (AAD).
 
 В следующих разделах вы будете использовать Azure Cloud Shell среду или Azure CLI для создания поддомена, назначения ролей и получения токена носителя для вызова Cognitive Services Azure. В случае зависания в каждом разделе содержатся ссылки со всеми доступными параметрами для каждой команды в Azure Cloud Shell и Azure CLI.
 
@@ -45,7 +45,7 @@ ms.locfileid: "86062691"
 Теперь, когда у вас есть пользовательский поддомен, связанный с ресурсом, необходимо назначить роль субъекту-службе.
 
 > [!NOTE]
-> Помните, что для распространения назначений ролей AAD может потребоваться до пяти минут.
+> Помните, что для распространения назначений ролей Azure может потребоваться до пяти минут.
 
 1. Сначала выполним регистрацию [приложения AAD](https://docs.microsoft.com/powershell/module/Az.Resources/New-AzADApplication?view=azps-1.8.0).
 
@@ -98,7 +98,7 @@ ms.locfileid: "86062691"
    $token
    ```
    
-   #### <a name="azure-cloud-shell"></a>[Azure Cloud Shell](#tab/azure-cloud-shell);
+   #### <a name="azure-cloud-shell"></a>[Azure Cloud Shell](#tab/azure-cloud-shell)
    ```Azure Cloud Shell
    $authContext = New-Object "Microsoft.IdentityModel.Clients.ActiveDirectory.AuthenticationContext" -ArgumentList "https://login.windows.net/<TENANT_ID>"
    $clientCredential = New-Object "Microsoft.IdentityModel.Clients.ActiveDirectory.ClientCredential" -ArgumentList $app.ApplicationId, <YOUR_PASSWORD>

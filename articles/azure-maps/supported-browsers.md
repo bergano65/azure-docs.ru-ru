@@ -1,6 +1,6 @@
 ---
 title: Поддерживаемые браузеры веб-пакета SDK | Карты Microsoft Azure
-description: В этой статье вы узнаете о поддерживаемых браузерах для веб-пакета SDK для Microsoft Azure Maps и о том, как проверить, поддерживается ли браузер.
+description: Узнайте, как проверить, поддерживает ли веб-пакет SDK Azure Maps браузер. Просмотрите список поддерживаемых браузеров. Узнайте, как использовать службы Map Services с устаревшими браузерами.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 03/25/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: e81b15b974469d319384a67b08512130b7876a30
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e6d4ea19e5547adb7bee25f4bdce295eb9a76d44
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76988793"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88002942"
 ---
 # <a name="web-sdk-supported-browsers"></a>Браузеры, поддерживаемые в веб-пакетах SDK
 
@@ -63,7 +63,7 @@ if (!atlas.isSupported()) {
 
 ## <a name="target-legacy-browsers"></a><a name="Target-Legacy-Browsers"></a>Целевые браузеры прежних версий
 
-Вы можете использовать более старые браузеры, которые не поддерживают WebGL или имеют только ограниченную поддержку. В таких случаях рекомендуется использовать службы Azure Maps вместе с элементом управления картой с открытым кодом, например [леафлет](https://leafletjs.com/). Ниже приведен пример:
+Вы можете использовать более старые браузеры, которые не поддерживают WebGL или имеют только ограниченную поддержку. В таких случаях рекомендуется использовать службы Azure Maps вместе с элементом управления картой с открытым кодом, например [леафлет](https://leafletjs.com/). Ниже приведен пример.
 
 <br/>
 
@@ -72,7 +72,7 @@ if (!atlas.isSupported()) {
 </iframe>
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о веб-пакете SDK для Azure Maps:
 

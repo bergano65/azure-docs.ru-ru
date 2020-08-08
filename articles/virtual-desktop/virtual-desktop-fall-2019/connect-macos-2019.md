@@ -1,26 +1,24 @@
 ---
 title: Подключение к виртуальному рабочему столу Windows (классическая модель) из macOS — Azure
 description: Как подключиться к виртуальному рабочему столу Windows (классическая модель) с помощью клиента macOS.
-services: virtual-desktop
-author: heidilohr
-ms.service: virtual-desktop
+author: Heidilohr
 ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a4aac80f7e4ef93b6503398c225b2aeffe566dbe
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: a0d2bd6a07cfc9e5ebe205322550c9e898022846
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87270572"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008446"
 ---
 # <a name="connect-to-windows-virtual-desktop-classic-with-the-macos-client"></a>Подключение к виртуальному рабочему столу Windows (классическая модель) с помощью клиента macOS
 
 > Применимо к: macOS 10,12 или более поздней версии
 
 >[!IMPORTANT]
->Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектами виртуальных рабочих столов Windows, см. [эту статью](../connect-macos.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows (классическому), который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Сведения об обеспечении управления объектами Azure Resource Manager для Виртуального рабочего стола Windows см. в [этой статье](../connect-macos.md).
 
 Доступ к ресурсам виртуальных рабочих столов Windows с устройств macOS можно получить с помощью скачиваемого клиента. В этом руководство вы узнаете, как настроить клиент.
 
@@ -38,7 +36,7 @@ ms.locfileid: "87270572"
 2. Введите значение параметра Feed URL (URL-адрес веб-канала). Это может быть URL-адрес или адрес электронной почты.
    - В первом случае используйте URL-адрес, предоставленный администратором. Обычно используется URL-адрес <https://rdweb.wvd.microsoft.com>.
    - Чтобы использовать адрес электронной почты, введите свой адрес электронной почты. При этом клиент будет искать URL-адрес, связанный с вашим адресом электронной почты, если администратор настроил сервер соответствующим образом.
-3. Выберите **Добавить**.
+3. Нажмите кнопку **Добавить**.
 4. При появлении запроса войдите в систему со своей учетной записью.
 
 После входа будет показан список доступных ресурсов.

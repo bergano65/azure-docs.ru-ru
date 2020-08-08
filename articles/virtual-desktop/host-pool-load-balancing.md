@@ -1,24 +1,22 @@
 ---
 title: Балансировка нагрузки пула узлов виртуальных рабочих столов Windows — Azure
 description: Сведения о методах балансировки нагрузки пула узлов для среды виртуальных рабочих столов Windows.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 00870de007d590de33881809c57107997b531d8c
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: ee8cb5f2297851d2c2b2f34be3d90573fdcf2530
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285141"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88007443"
 ---
 # <a name="host-pool-load-balancing-methods"></a>Методы балансировки нагрузки пула узлов
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/host-pool-load-balancing-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/host-pool-load-balancing-2019.md).
 
 Виртуальный рабочий стол Windows поддерживает два метода балансировки нагрузки. Каждый метод определяет, на каком узле сеансов будет размещаться сеанс пользователя при подключении к ресурсу в пуле узлов.
 

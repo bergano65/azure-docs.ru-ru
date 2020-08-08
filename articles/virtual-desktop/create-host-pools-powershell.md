@@ -1,24 +1,22 @@
 ---
 title: Создание пула узлов Виртуального рабочего стола Windows с помощью PowerShell (Azure)
 description: Сведения о том, как создать пул узлов в Виртуальном рабочем столе Windows с использованием командлетов PowerShell.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 2a4ba5494cb65738f5443915c013571b98854a91
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: a3e4b326b5a78f4b14bdd87e842d8ca485f56831
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543424"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88002604"
 ---
 # <a name="create-a-windows-virtual-desktop-host-pool-with-powershell"></a>Создание пула узлов виртуальных рабочих столов Windows с помощью PowerShell
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/create-host-pools-powershell-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/create-host-pools-powershell-2019.md).
 
 Пулы узлов — это коллекция, состоящая из одной или нескольких идентичных виртуальных машин в средах клиента Виртуального рабочего стола Windows. Каждый пул узлов может быть связан с несколькими группами RemoteApp, одной группой классических приложений и несколькими узлами сеансов.
 

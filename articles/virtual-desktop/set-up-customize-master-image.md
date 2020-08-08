@@ -1,19 +1,17 @@
 ---
 title: Подготовка и настройка главного образа VHD — Azure
 description: Как подготовить, настроить и передать основной образ Windows Virtual Desktop в Azure.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 10/14/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: fe354991ce19031cc4a51b07098ab12240569a90
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2a10a32a98a240f740f48f7b25e6fa6ac3f2e873
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85832531"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009517"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Подготовка и настройка главного образа VHD
 
@@ -206,7 +204,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\rdp-s
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана уведомления об успешно созданном образе.](media/1f41b7192824a2950718a2b7bb9e9d69.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда у вас есть образ, можно создать или обновить пулы узлов. Дополнительные сведения о создании и обновлении пулов узлов см. в следующих статьях:
 

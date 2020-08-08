@@ -1,6 +1,6 @@
 ---
 title: Кластеризация данных точек на карте | Microsoft Azure Maps
-description: В этой статье вы узнаете, как кластеризовать данные точек и визуализировать их на карте с помощью веб-пакета SDK для Microsoft Azure Maps.
+description: Узнайте, как выполнять кластерные данные на картах. Узнайте, как использовать веб-пакет SDK Azure Maps для данных кластера, реагировать на события мыши в кластере и отображать статистические выражения кластера.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: 05e21e63b104a21757c63b9ad8d2954ed778d4b8
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 207106d8daab4d5d2a6d8d681aad5a20923a5a48
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285753"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009058"
 ---
 # <a name="clustering-point-data"></a>Кластеризация данных точек
 

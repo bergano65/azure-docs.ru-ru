@@ -1,19 +1,17 @@
 ---
 title: Настройка балансировки нагрузки виртуальных рабочих столов Windows в Azure
 description: Настройка метода балансировки нагрузки для среды виртуальных рабочих столов Windows.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 08/29/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 5d5c39ff867add80833ee522ef173506fa1c642c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 07eae73a36bf4051925547fa375f46963a162881
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85204354"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88010112"
 ---
 # <a name="configure-the-windows-virtual-desktop-load-balancing-method"></a>Настройка метода балансировки нагрузки Виртуального рабочего стола Windows
 
@@ -22,7 +20,7 @@ ms.locfileid: "85204354"
 >[!NOTE]
 > Это не относится к пулу узлов постоянного рабочего стола, так как пользователи всегда имеют сопоставление 1:1 с узлом сеанса в пуле узлов.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы использовали инструкции из раздела [Настройка модуля PowerShell для виртуальных рабочих столов Windows](powershell-module.md) для загрузки и установки модуля PowerShell и входа в учетную запись Azure.
 

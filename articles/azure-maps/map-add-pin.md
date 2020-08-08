@@ -1,6 +1,6 @@
 ---
 title: Добавление слоя символов к карте | Карты Microsoft Azure
-description: В этой статье вы узнаете, как использовать слой символов для настройки символа и добавлять символы на карте с помощью веб-пакета SDK для карт Microsoft Azure.
+description: Узнайте, как добавлять в карты настраиваемые символы, например текст или значки. Дополнительные сведения об использовании источников данных и слоев символов в Azure Maps веб-пакете SDK для этой цели.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: c10e47ea10939b60c6c334229fb18ec2702af11f
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: d705a43da2b2db37c6601f5865ad6e569688b2a7
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87286928"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88010197"
 ---
 # <a name="add-a-symbol-layer-to-a-map"></a>Добавление слоя символов на карту
 

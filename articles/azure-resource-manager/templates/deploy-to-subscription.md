@@ -3,16 +3,16 @@ title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
 ms.date: 07/27/2020
-ms.openlocfilehash: a4e21f29762a30baec8d5cf6e3914da2b5faadeb
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: aca1aaf9d7d0c8a97bf2dad437953ccadc02a924
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321774"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88002785"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
-Чтобы упростить управление ресурсами, можно использовать шаблон Azure Resource Manager (шаблон ARM) для развертывания ресурсов на уровне подписки Azure. Например, можно развернуть [политики](../../governance/policy/overview.md) и [элементы управления доступом на основе ролей](../../role-based-access-control/overview.md) в подписке, которые применяют их в рамках подписки. Вы также можете создавать группы ресурсов в подписке и развертывать ресурсы в группах ресурсов в подписке.
+Чтобы упростить управление ресурсами, можно использовать шаблон Azure Resource Manager (шаблон ARM) для развертывания ресурсов на уровне подписки Azure. Например, можно развернуть [политики](../../governance/policy/overview.md) и [Управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md) в подписке, которая применяет их в рамках подписки. Вы также можете создавать группы ресурсов в подписке и развертывать ресурсы в группах ресурсов в подписке.
 
 > [!NOTE]
 > На уровне подписки можно развернуть до 800 различных групп ресурсов.
@@ -473,7 +473,7 @@ New-AzSubscriptionDeployment `
 
 ## <a name="access-control"></a>Управление доступом
 
-Сведения о назначении ролей см. в статье об [управлении доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager](../../role-based-access-control/role-assignments-template.md).
+Дополнительные сведения о назначении ролей см. в статье [Добавление назначений ролей Azure с помощью шаблонов Azure Resource Manager](../../role-based-access-control/role-assignments-template.md).
 
 Следующий пример создает группу ресурсов, применяет к ней блокировку и назначает роль участнику.
 
