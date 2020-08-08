@@ -10,15 +10,15 @@ tags: azure-resource-manager
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
-ms.date: 08/01/2020
+ms.date: 08/07/2020
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: dfa1c790dc0f2e229b3bfa19616e5760c3d3d02e
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: d4661c0819d214a2c750eb1582559f8d8a5959ed
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87825146"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88006610"
 ---
 # <a name="configure-and-optimize-vms"></a>Настройка и оптимизация виртуальных машин
 
@@ -27,9 +27,18 @@ ms.locfileid: "87825146"
 ## <a name="vm-images"></a>Образы виртуальных машин
 На виртуальных машинах с поддержкой InfiniBand для включения RDMA требуются соответствующие драйверы. В Linux образы виртуальных машин CentOS-HPC в Marketplace предварительно настроены с соответствующими драйверами. Образы виртуальных машин Ubuntu можно настроить с помощью правильных драйверов, выполнив приведенные [здесь инструкции](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351). Также рекомендуется создавать [пользовательские образы виртуальных машин](../../linux/tutorial-custom-images.md) с соответствующими драйверами и конфигурацией и повторно использовать их.
 
+> [!NOTE]
+> На виртуальных машинах [серии N](../../sizes-gpu.md) с поддержкой GPU также требуются драйверы GPU, которые можно добавить с помощью [расширений виртуальной машины](../../extensions/hpccompute-gpu-linux.md) или [вручную](../../linux/n-series-driver-setup.md). Некоторые образы виртуальных машин в Marketplace также устанавливаются вместе с драйверами GPU NVIDIA.
+
 ### <a name="centos-hpc-vm-images"></a>CentOS — образы виртуальных машин HPC
+
+#### <a name="non-sr-iov-enabled-vms"></a>Виртуальные машины с поддержкой не SR-IOV
 Для [виртуальных машин с поддержкой RDMA](../../sizes-hpc.md#rdma-capable-instances), не поддерживающих SR-IOV, CENTOS-HPC версии 6,5 или более поздней версии, подходит до 7,5 в Marketplace. Например, для [виртуальных машин серии H16](../../h-series.md)рекомендуется использовать версии 7,1 и 7,5. Эти образы виртуальных машин предварительно загружаются с драйверами сети Direct для RDMA и Intel MPI версии 5,1.
 
+> [!NOTE]
+> В этих образах HPC на основе CentOS для виртуальных машин, не использующих SR-IOV, обновления ядра отключены в файле конфигурации **Yum** . Это обусловлено тем, что драйверы Нетворкдирект Linux RDMA распространяются в виде пакета RPM, а обновления драйверов могут не работать при обновлении ядра.
+
+#### <a name="sr-iov-enabled-vms"></a>Виртуальные машины с поддержкой SR-IOV
   Для [виртуальных машин с поддержкой RDMA](../../sizes-hpc.md#rdma-capable-instances), поддерживающих SR-IOV, подходят [CentOS-HPC версии 7,6 или более ПОЗДНИХ](https://techcommunity.microsoft.com/t5/Azure-Compute/CentOS-HPC-VM-Image-for-SR-IOV-enabled-Azure-HPC-VMs/ba-p/665557) версий виртуальных машин в Marketplace. Эти образы виртуальных машин оптимизированы и предварительно загружены с драйверами ОФЕД для RDMA и различными часто используемыми библиотеками MPI и инженерными пакетами для научных вычислений и являются самым простым способом приступить к работе.
 
   Примеры сценариев, используемых при создании образов виртуальных машин CentOS-HPC версии 7,6 и более поздних версий из базового образа CentOS Marketplace, находятся в [репозитории азпк-Images](https://github.com/Azure/azhpc-images/tree/master/centos).

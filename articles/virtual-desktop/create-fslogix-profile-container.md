@@ -1,19 +1,17 @@
 ---
 title: Контейнеры профилей Фслогикс NetApp виртуальный рабочий стол Windows — Azure
 description: Создание контейнера профиля Фслогикс с помощью Azure NetApp Files в виртуальном рабочем столе Windows.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 06/05/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 2656c7ee433198d2ccd883b1c3a175c141c43813
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6a9f2c62d8e7f17f6ea8377982c79fef3dfbb97c
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85362991"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88002820"
 ---
 # <a name="create-a-profile-container-with-azure-netapp-files-and-ad-ds"></a>Создание контейнера профиля с Azure NetApp Files и AD DS
 
@@ -33,7 +31,7 @@ ms.locfileid: "85362991"
 >[!NOTE]
 >Если вы ищете сравнительные материалы о различных вариантах хранения контейнера профиля Фслогикс в Azure, см. статью [Параметры хранилища для контейнеров профилей фслогикс](store-fslogix-profile.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед созданием контейнера профиля Фслогикс для пула узлов необходимо выполнить следующие действия.
 
@@ -234,7 +232,7 @@ ms.locfileid: "85362991"
    > [!div class="mx-imgBorder"]
    > ![Снимок экрана содержимого папки в пути подключения. Внутри — это один VHD-файл с именем "Profile_ssbb".](media/mount-path-folder.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для настройки общего ресурса профиля пользователя можно использовать контейнеры профилей Фслогикс. Сведения о создании общих папок профилей пользователей с помощью новых контейнеров см. в статье [Создание контейнера профилей для пула узлов с использованием общей папки](create-host-pools-user-profile.md).
 

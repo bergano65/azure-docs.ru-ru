@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 10/18/2019
-ms.openlocfilehash: a68c27de304a0da6470745ee4abf69590d9bf78c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 12d78846f5892e71388de6e6e76b868f9b14d4de
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84698084"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008922"
 ---
 # <a name="troubleshoot-azure-cache-for-redis-server-side-issues"></a>Устранение неполадок с Кэшем Azure для Redis на стороне сервера
 
@@ -76,7 +76,7 @@ Redis предоставляет две статистики через кома
 ## <a name="additional-information"></a>Дополнительные сведения
 
 - [Устранение неполадок с Кэшем Azure для Redis на стороне клиента](cache-troubleshoot-client.md)
-- [Какое предложение и размер кэша Azure для Redis мне следует использовать?](cache-faq.md#what-azure-cache-for-redis-offering-and-size-should-i-use)
-- [Как измерить и протестировать производительность моего кэша?](cache-faq.md#how-can-i-benchmark-and-test-the-performance-of-my-cache)
+- [Выбор подходящего уровня](cache-overview.md#choosing-the-right-tier)
+- [Как измерить и протестировать производительность моего кэша?](cache-management-faq.md#how-can-i-benchmark-and-test-the-performance-of-my-cache)
 - [Как отслеживать кэш Redis для Azure?](cache-how-to-monitor.md)
-- [Как выполнять команды Redis?](cache-faq.md#how-can-i-run-redis-commands)
+- [Как выполнять команды Redis?](cache-development-faq.md#how-can-i-run-redis-commands)

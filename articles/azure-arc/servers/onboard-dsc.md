@@ -8,12 +8,12 @@ author: mgoedtel
 ms.author: magoedte
 ms.date: 03/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 02661ff3c21fa27367cc9f2c399341ed2b86db3f
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 6448a2d449f86e93630d9d555e101291aa84c71e
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87809618"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88003889"
 ---
 # <a name="how-to-install-the-connected-machine-agent-using-windows-powershell-dsc"></a>Установка агента подключенного компьютера с помощью Windows PowerShell DSC
 
@@ -49,7 +49,7 @@ ms.locfileid: "87809618"
 
 Ресурсы в этом модуле предназначены для управления конфигурацией агента подключенного компьютера Azure. Также включен сценарий PowerShell `AzureConnectedMachineAgent.ps1` , находящийся в `AzureConnectedMachineDsc\examples` папке. Он использует ресурсы сообщества для автоматизации загрузки и установки и установления подключения к службе "Дуга Azure". Этот сценарий выполняет аналогичные действия, описанные в статье [портал Azure подключение гибридных компьютеров к Azure](onboard-portal.md) .
 
-Если компьютеру необходимо взаимодействовать через прокси-сервер со службой, после установки агента необходимо выполнить команду, описанную [здесь](onboard-portal.md#configure-the-agent-proxy-setting). Она задает переменную системной среды для прокси-сервера `https_proxy`. Вместо выполнения команды вручную можно выполнить этот шаг с DSC с помощью модуля [компутеманажементдск](https://www.powershellgallery.com/packages/ComputerManagementDsc/6.0.0.0) .
+Если компьютеру необходимо взаимодействовать через прокси-сервер со службой, после установки агента необходимо выполнить команду, описанную [здесь](manage-agent.md#update-or-remove-proxy-settings). Она задает переменную системной среды для прокси-сервера `https_proxy`. Вместо выполнения команды вручную можно выполнить этот шаг с DSC с помощью модуля [компутеманажементдск](https://www.powershellgallery.com/packages/ComputerManagementDsc/6.0.0.0) .
 
 >[!NOTE]
 >Чтобы разрешить выполнение DSC, Windows необходимо настроить на получение удаленных команд PowerShell, даже если используется конфигурация localhost. Чтобы правильно настроить среду, запустите `Set-WsManQuickConfig -Force` в терминале PowerShell с повышенными привилегиями.

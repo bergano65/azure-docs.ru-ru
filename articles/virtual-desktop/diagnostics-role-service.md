@@ -1,24 +1,22 @@
 ---
 title: Диагностика проблем с помощью Виртуального рабочего стола Windows — Azure
 description: Узнайте, как использовать возможности диагностики в Виртуальном рабочем столе Windows для диагностики проблем.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 6ff1e3d8eb9cb40d46ae0624be9d37fd199accd2
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: a985ce4f93b04e4065b5189b2a406b54729720c3
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288765"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88005099"
 ---
 # <a name="identify-and-diagnose-windows-virtual-desktop-issues"></a>Определение и диагностика проблем с виртуальными рабочими столами Windows
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/diagnostics-role-service-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/diagnostics-role-service-2019.md).
 
 Виртуальный рабочий стол Windows включает функцию диагностики, которая позволяет администратору выявлять разные проблемы через единый интерфейс. Дополнительные сведения о возможностях диагностики виртуальных рабочих столов Windows см. в разделе [использование log Analytics для компонента диагностики](diagnostics-log-analytics.md).
 

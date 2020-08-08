@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/28/2020
 ms.author: curtand
 ms.custom: include file
-ms.openlocfilehash: 840357f51bbeeb877aba48fd8d04baad204cec1e
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: ba0791108878dada5088428ce40d1af672d1892a
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87375748"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88010933"
 ---
 Ниже перечислены ограничения на использование и другие ограничения для службы Azure Active Directory (Azure AD).
 
@@ -30,4 +30,4 @@ ms.locfileid: "87375748"
 | Панель доступа |Число приложений, которые могут отображаться на Панели доступа для каждого пользователя, не ограничено независимо от назначенных лицензий.  |
 | Отчеты | В любом отчете можно просматривать и загружать не более 1000 строк. Любые дополнительные данные будут усечены. |
 | Административные единицы | Ресурс Azure AD может входить не более чем в 30 административных единиц. |
-| Роли и разрешения администратора | <ul><li>Группу нельзя добавить в качестве [владельца](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context#object-ownership).</li><li>Группе нельзя назначить [роль](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).</li><li>Возможность чтения сведений о каталоге других пользователей не может быть ограничена за пределами переключателя уровня организации Azure AD, чтобы отключить доступ всех пользователей без прав администратора ко всем данным каталога (не рекомендуется). См. сведения о [разрешениях по умолчанию](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context#to-restrict-the-default-permissions-for-member-users).</li><li>Добавление и отмена членства в роли администратора может занимать до 15 минут и требовать выполнения выхода и входа.</li></ul> |
+| Роли и разрешения администратора | <ul><li>Группу нельзя добавить в качестве [владельца](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context#object-ownership).</li><li>Возможность чтения сведений о каталоге других пользователей не может быть ограничена за пределами переключателя уровня организации Azure AD, чтобы отключить доступ всех пользователей без прав администратора ко всем данным каталога (не рекомендуется). См. сведения о [разрешениях по умолчанию](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context#to-restrict-the-default-permissions-for-member-users).</li><li>Добавление и отмена членства в роли администратора может занимать до 15 минут и требовать выполнения выхода и входа.</li></ul> |

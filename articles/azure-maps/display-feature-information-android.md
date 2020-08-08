@@ -1,6 +1,6 @@
 ---
 title: Отображение сведений о компоненте в пакет SDK для Android Azure Maps | Карты Microsoft Azure
-description: В этой статье вы узнаете, как отображать сведения о компонентах на карте с помощью Microsoft Azure карт пакет SDK для Android.
+description: Сведения о том, как отображать информацию, когда пользователи взаимодействуют с функциями карт. Используйте пакет SDK для Android Azure Maps для вывода всплывающих сообщений и других типов сообщений.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 08/08/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: 26f41a7fd88a3c2018592e89ae95e3b962c1a9e9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 44c5f9f1a7c0d014d101ad45a80e1e53c42f69a3
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75911694"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009041"
 ---
 # <a name="display-feature-information"></a>Отображение сведений о компоненте
 
@@ -74,7 +74,7 @@ map.events.add((OnFeatureClick) (features) -> {
 - Добавление [фрагмента](https://developer.android.com/guide/components/fragments) к текущему действию.
 - Переход к другому действию или представлению.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы добавить дополнительные данные на карту, выполните следующие действия.
 

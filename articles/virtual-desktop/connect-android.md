@@ -1,26 +1,24 @@
 ---
 title: Подключение к виртуальному рабочему столу Windows из Android — Azure
 description: Как подключиться к виртуальному рабочему столу Windows с помощью клиента Android.
-services: virtual-desktop
-author: heidilohr
-ms.service: virtual-desktop
+author: Heidilohr
 ms.topic: how-to
 ms.date: 03/25/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 1d0aebffa5f3d27a77928c2a1c7461384bf99ce8
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 79d88d218d04d00def19bdd2aa98f76d2f128de1
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87387886"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88007766"
 ---
 # <a name="connect-to-windows-virtual-desktop-with-the-android-client"></a>Подключение к виртуальному рабочему столу Windows с помощью клиента Android
 
 > Применимо к: Android 4,1 и более поздней версии, Чромебукс с Чромеос 53 и более поздними версиями.
 
 >[!IMPORTANT]
->Это содержимое применяется к виртуальному рабочему столу Windows с Azure Resource Manager объектами виртуальных рабочих столов Windows. Если вы используете Windows Virtual Desktop (классическая модель) без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/connect-android-2019.md).
+>Это содержимое применимо к Виртуальному рабочему столу Windows с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете Виртуальный рабочий стол Windows (классический) без объектов Azure Resource Manager, ознакомьтесь с [этой статьей](./virtual-desktop-fall-2019/connect-android-2019.md).
 
 Доступ к ресурсам виртуальных рабочих столов Windows можно получить с вашего устройства Android с помощью скачиваемого клиента. Вы также можете использовать клиент Android на устройствах свои Chromebook, поддерживающих Google Play Маркет. В этом руководство вы узнаете, как настроить клиент Android.
 

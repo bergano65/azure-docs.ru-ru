@@ -3,15 +3,15 @@ title: Настройка кластера в Службе Azure Kubernetes (AKS
 description: Сведения о том, как настроить кластер в Службе Kubernetes Azure (AKS)
 services: container-service
 ms.topic: conceptual
-ms.date: 07/02/2020
+ms.date: 08/06/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: f1329aa056e8d1db951e01555634cf1ea709608b
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: c3123d22d2a13be9b9e5360e82990ba3a6320b1a
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86252017"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008803"
 ---
 # <a name="configure-an-aks-cluster"></a>Настройка кластера AKS.
 
@@ -233,6 +233,67 @@ az aks nodepool add --name gen2 --cluster-name myAKSCluster --resource-group myR
 
 Если вы хотите создать обычные пулы узлов Gen1, это можно сделать, опустив пользовательский `--aks-custom-headers` тег.
 
+
+## <a name="ephemeral-os-preview"></a>Эфемерная ОС (Предварительная версия)
+
+По умолчанию диск операционной системы для виртуальной машины Azure автоматически реплицируется в службу хранилища Azure, чтобы избежать потери данных, если виртуальную машину необходимо переместить на другой узел. Однако, поскольку контейнеры не предназначены для сохранения локального состояния, это поведение предлагает ограниченное значение, предоставляя некоторые недостатки, в том числе более медленную подготовку узлов и более низкие задержки при чтении и записи.
+
+Напротив, временные диски ОС хранятся только на главном компьютере, как и временный диск. Это обеспечивает меньшую задержку при чтении и записи, а также ускоряет масштабирование узлов и обновление кластера.
+
+Как и временный диск, диск временного ОС включается в цену виртуальной машины, поэтому дополнительные затраты на хранение не взимается.
+
+Зарегистрируйте компонент `EnableEphemeralOSDiskPreview`:
+
+```azurecli
+az feature register --name EnableEphemeralOSDiskPreview --namespace Microsoft.ContainerService
+```
+
+Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list):
+
+```azurecli
+az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableEphemeralOSDiskPreview')].{Name:name,State:properties.state}"
+```
+
+Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register):
+
+```azurecli
+az provider register --namespace Microsoft.ContainerService
+```
+
+Чтобы установить расширение CLI AKS-Preview, используйте следующие Azure CLI команды:
+
+```azurecli
+az extension add --name aks-preview
+```
+
+Чтобы обновить расширение CLI AKS-Preview, используйте следующие Azure CLI команды:
+
+```azurecli
+az extension update --name aks-preview
+```
+
+### <a name="use-ephemeral-os-on-new-clusters-preview"></a>Использование эфемерной ОС в новых кластерах (Предварительная версия)
+
+Настройте кластер для использования временных дисков ОС при создании кластера. Используйте `--aks-custom-headers` флаг, чтобы задать эфемерную ОС в качестве типа диска ОС для нового кластера.
+
+```azure-cli
+az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_DS3_v2 --aks-custom-headers EnableEphemeralOSDisk=true
+```
+
+Если вы хотите создать обычный кластер с подключенными к сети дисками ОС, это можно сделать, опустив пользовательский `--aks-custom-headers` тег. Вы также можете добавить дополнительные пулы временных узлов ОС, как описано ниже.
+
+### <a name="use-ephemeral-os-on-existing-clusters-preview"></a>Использование эфемерной ОС в существующих кластерах (Предварительная версия)
+Настройте новый пул узлов для использования временных дисков ОС. Используйте `--aks-custom-headers` флаг, чтобы задать в качестве типа диска ОС в качестве типа диска ОС для пула узлов.
+
+```azure-cli
+az aks nodepool add --name ephemeral --cluster-name myAKSCluster --resource-group myResourceGroup -s Standard_DS3_v2 --aks-custom-headers EnableEphemeralOSDisk=true
+```
+
+> [!IMPORTANT]
+> При использовании эфемерной ОС можно развернуть образы виртуальных машин и экземпляров вплоть до размера кэша виртуальной машины. В случае AKS в конфигурации диска с ОС узла по умолчанию используется 100GiB, что означает, что вам потребуется размер виртуальной машины с кэшем, превышающим 100 гиб. Standard_DS2_v2 по умолчанию имеет размер кэша 86 гиб, который недостаточно велик. Standard_DS3_v2 имеет размер кэша 172 гиб, который достаточно большой. Можно также уменьшить размер диска ОС по умолчанию с помощью `--node-osdisk-size` . Минимальный размер AKS изображений — 30GiB. 
+
+Если вы хотите создать пулы узлов с подключенными к сети дисками ОС, это можно сделать, опустив пользовательский `--aks-custom-headers` тег.
+
 ## <a name="custom-resource-group-name"></a>Пользовательское имя группы ресурсов
 
 При развертывании кластера Azure Kubernetes Service в Azure создается дополнительная группа ресурсов для рабочих узлов. По умолчанию AKS присваивает группе ресурсов для узлов имя `MC_resourcegroupname_clustername_location`. Но вы можете изменить его произвольным образом.
@@ -259,6 +320,7 @@ az aks create --name myAKSCluster --resource-group myResourceGroup --node-resour
 - Сведения о том, как обновить кластер до последней версии Kubernetes, см. в статье [Обновление кластера Службы Azure Kubernetes (AKS)](upgrade-cluster.md).
 - Ознакомьтесь с дополнительными сведениями о [ `containerd` и Kubernetes](https://kubernetes.io/blog/2018/05/24/kubernetes-containerd-integration-goes-ga/)
 - В списке [вопросов и ответов об AKS](faq.md) собраны самые популярные рекомендации.
+- Узнайте больше о [временных дисках ОС](../virtual-machines/ephemeral-os-disks.md).
 
 
 <!-- LINKS - internal -->

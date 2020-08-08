@@ -1,6 +1,6 @@
 ---
 title: Добавление слоя тепловой карт в карту | Карты Microsoft Azure
-description: В этой статье вы узнаете, как добавить слой тепловой карты в карту с помощью веб-пакета SDK Microsoft Azure Maps.
+description: Узнайте, как создать тепловую карту. См. статью использование веб-пакета SDK Azure Maps для добавления слоя тепловой карт к карте. Узнайте, как настроить уровни тепловой карт.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: 2558f30c0d2d1e9d652efec1693e7f056426255b
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: a6235ee6bbb476c69114e6895403f05e69fd6e19
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282914"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88010248"
 ---
 # <a name="add-a-heat-map-layer"></a>Добавление слоя тепловой карты
 

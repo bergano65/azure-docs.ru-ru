@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 10/17/2019
-ms.openlocfilehash: ba0430461df5ce1a2d615b819dbe5e8a36ae52b7
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 29492ee6b7bce50c4807a36d0c252e18e6aadf87
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86184537"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008956"
 ---
 # <a name="troubleshoot-data-loss-in-azure-cache-for-redis"></a>Устранение неполадок, связанных с потерей данных, в Кэше Azure для Redis
 
@@ -119,6 +119,6 @@ Redis — это хранилище данных в памяти. Данные 
 ## <a name="additional-information"></a>Дополнительные сведения
 
 - [Устранение неполадок с Кэшем Azure для Redis на стороне сервера](cache-troubleshoot-server.md)
-- [Какое предложение и размер кэша Azure для Redis мне следует использовать?](cache-faq.md#what-azure-cache-for-redis-offering-and-size-should-i-use)
+- [Выбор подходящего уровня](cache-overview.md#choosing-the-right-tier)
 - [Как отслеживать кэш Redis для Azure?](cache-how-to-monitor.md)
-- [Как выполнять команды Redis?](cache-faq.md#how-can-i-run-redis-commands)
+- [Как выполнять команды Redis?](cache-development-faq.md#how-can-i-run-redis-commands)

@@ -1,6 +1,6 @@
 ---
 title: Добавление слоя изображения к карте | Карты Microsoft Azure
-description: Из этой статьи вы узнаете, как наложить изображение на карту с помощью веб-пакета SDK Microsoft Azure Maps.
+description: Узнайте, как добавлять изображения на карту. Узнайте, как использовать веб-пакет SDK Azure Maps для настройки слоев изображения и наложения изображений по фиксированным наборам координат.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: 6ffec1afc44c6b920a64b4b92b384b6ce3829488
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 4a804272a92d98156122397ee7427dcb467fbdf0
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87286954"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88010231"
 ---
 # <a name="add-an-image-layer-to-a-map"></a>Добавление слоя изображений на карту
 

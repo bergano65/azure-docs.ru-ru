@@ -1,25 +1,23 @@
 ---
 title: Создание контейнера профилей Фслогикс службы файлов Azure домен Active Directory Services — Azure
 description: В этой статье описывается создание контейнера профиля Фслогикс с помощью службы файлов Azure и доменных служб Azure Active Directory.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 04/10/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 4ee1b8d849051b9192e53f761050f1c4b6480e1b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 91f5ef4a5065079f0fe385b92af2a1c4bfa5ee84
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85362447"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88007715"
 ---
 # <a name="create-a-profile-container-with-azure-files-and-azure-ad-ds"></a>Создание контейнера профиля с помощью службы файлов Azure и Azure AD DS
 
 В этой статье показано, как создать контейнер профиля Фслогикс с помощью службы файлов Azure и Azure Active Directory доменных служб (AD DS).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы уже настроили экземпляр AD DS Azure. Если у вас еще нет, выполните инструкции в разделе [Создание базового управляемого домена](../active-directory-domain-services/tutorial-create-instance.md) , а затем вернитесь сюда.
 
@@ -109,7 +107,7 @@ ms.locfileid: "85362447"
     - Замените `<share-name>` именем созданной ранее общей папки.
     - Замените `<storage-account-key>` ключом учетной записи хранения из Azure.
 
-    Пример:
+    Например:
 
      ```cmd
      net use y: \\fsprofile.file.core.windows.net\share HDZQRoFP2BBmoYQ=(truncated)= /user:Azure\fsprofile)
@@ -124,7 +122,7 @@ ms.locfileid: "85362447"
     - Замените `<mounted-drive-letter>` буквой диска, который будет использоваться пользователем.
     - Замените `<user-email>` именем участника-пользователя, который будет использовать этот профиль для доступа к виртуальным машинам узла сеансов.
 
-    Пример:
+    Например:
 
      ```cmd
      icacls y: /grant john.doe@contoso.com:(f)
@@ -202,7 +200,7 @@ ms.locfileid: "85362447"
 
     Как и в предыдущих командлетах, обязательно замените `<your-wvd-tenant>` , `<wvd-pool>` и `<user-principal>` соответствующими значениями.
 
-    Пример:
+    Например:
 
      ```powershell
      $pool1 = "contoso"
@@ -236,7 +234,7 @@ ms.locfileid: "85362447"
 
     Если все настроено правильно, вы увидите **Каталог** с именем, которое имеет следующий формат: `<user SID>-<username>` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы ищете альтернативные способы создания контейнеров профилей Фслогикс, ознакомьтесь со следующими статьями:
 

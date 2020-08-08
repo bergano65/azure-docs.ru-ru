@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: yegu
-ms.openlocfilehash: 74308ae79b899a55db4682474e3dcd9dab26db98
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: c51e67dcc3536a3083179451743b1c97cf618dae
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85856937"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88004873"
 ---
 # <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Управление кэшем Azure для Redis с использованием Azure PowerShell
 > [!div class="op_single_selector"]
@@ -655,7 +655,7 @@ ms.locfileid: "85856937"
 Импортировать данные в кэш Azure для Redis можно с помощью командлета `Import-AzRedisCache`.
 
 > [!IMPORTANT]
-> Функция импорта и экспорта доступна только для кэшей категории [Премиум](cache-premium-tier-intro.md). Дополнительные сведения об импорте и экспорте см. в статье [Импорт и экспорт данных кэша Azure для Redis](cache-how-to-import-export-data.md).
+> Импорт и экспорт доступен только для кэшей [уровня "Премиум](cache-overview.md#service-tiers) ". Дополнительные сведения об импорте и экспорте см. в статье [Импорт и экспорт данных кэша Azure для Redis](cache-how-to-import-export-data.md).
 > 
 > 
 
@@ -719,7 +719,7 @@ ms.locfileid: "85856937"
 Экспортировать данные из кэша Azure для Redis можно с помощью командлета `Export-AzRedisCache`.
 
 > [!IMPORTANT]
-> Функция импорта и экспорта доступна только для кэшей категории [Премиум](cache-premium-tier-intro.md). Дополнительные сведения об импорте и экспорте см. в статье [Импорт и экспорт данных кэша Azure для Redis](cache-how-to-import-export-data.md).
+> Импорт и экспорт доступен только для кэшей [уровня "Премиум](cache-overview.md#service-tiers) ". Дополнительные сведения об импорте и экспорте см. в статье [Импорт и экспорт данных кэша Azure для Redis](cache-how-to-import-export-data.md).
 > 
 > 
 
@@ -784,7 +784,7 @@ ms.locfileid: "85856937"
 Перезапустить экземпляр кэша Azure для Redis можно с помощью командлета `Reset-AzRedisCache`.
 
 > [!IMPORTANT]
-> Функция перезагрузки доступна только для кэшей [уровня "Премиум"](cache-premium-tier-intro.md). Дополнительные сведения о перезапуске кэша см. в разделе [Reboot](cache-administration.md#reboot) статьи "Администрирование кэша Redis для Azure".
+> Перезагрузка доступна только для кэшей [уровня "Премиум](cache-overview.md#service-tiers) ". Дополнительные сведения о перезапуске кэша см. в разделе [Reboot](cache-administration.md#reboot) статьи "Администрирование кэша Redis для Azure".
 > 
 > 
 

@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2fcd1c3a9fd3e4be22e4057eb2cfc9a71d09d558
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 4e707393bda3d8820ccf94abed83beb1317027d5
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87529115"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88005025"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -174,7 +174,7 @@ az vm extension set \
 
 ### <a name="using-the-azure-cloud-shell-experience"></a>Использование интерфейса Azure Cloud Shell
 
-В следующем примере используется команда [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create) для назначения роли Имя для входа администратора виртуальной машины виртуальной машине текущего пользователя Azure. Имя пользователя активной учетной записи Azure можно получить с помощью команды [az account show](/cli/azure/account#az-account-show). В качестве области задается виртуальная машина, созданная на предыдущем шаге с помощью команды [az vm show](/cli/azure/vm#az-vm-show). Область также можно назначить на уровне группы ресурсов или подписки. При этом применяются обычные разрешения наследования RBAC. Дополнительные сведения см. в разделе [Управление доступом на основе ролей](../../virtual-machines/linux/login-using-aad.md).
+В следующем примере используется команда [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create) для назначения роли Имя для входа администратора виртуальной машины виртуальной машине текущего пользователя Azure. Имя пользователя активной учетной записи Azure можно получить с помощью команды [az account show](/cli/azure/account#az-account-show). В качестве области задается виртуальная машина, созданная на предыдущем шаге с помощью команды [az vm show](/cli/azure/vm#az-vm-show). Область может также быть назначена на уровне группы ресурсов или подписки, и применяются обычные разрешения на наследование Azure RBAC. Дополнительные сведения см. в статье [Вход в виртуальную машину Linux в Azure с использованием проверки подлинности Azure Active Directory](../../virtual-machines/linux/login-using-aad.md).
 
 ```   AzureCLI
 username=$(az account show --query user.name --output tsv)
@@ -189,11 +189,11 @@ az role assignment create \
 > [!NOTE]
 > Если домен доменных имен AAD и имя пользователя для входа не совпадают, необходимо указать идентификатор объекта учетной записи пользователя, а `--assignee-object-id` не только имя пользователя для `--assignee` . Идентификатор объекта учетной записи пользователя можно получить с помощью команды [az ad user list](/cli/azure/ad/user#az-ad-user-list).
 
-Дополнительные сведения об использовании RBAC для управления доступом к ресурсам подписки Azure см. в следующих статьях:
+Дополнительные сведения об использовании Azure RBAC для управления доступом к ресурсам подписки Azure см. в следующих статьях:
 
-- [Управление доступом к ресурсам Azure с помощью RBAC и Azure CLI](/azure/role-based-access-control/role-assignments-cli)
-- [Управление доступом с помощью RBAC и портала Azure](/azure/role-based-access-control/role-assignments-portal)
-- [Управление доступом к ресурсам Azure с помощью RBAC и Azure PowerShell](/azure/role-based-access-control/role-assignments-powershell).
+- [Добавление или удаление назначений ролей Azure с помощью Azure CLI](/azure/role-based-access-control/role-assignments-cli)
+- [Добавление и удаление назначений ролей Azure с помощью портала Azure](/azure/role-based-access-control/role-assignments-portal)
+- [Добавление или удаление назначений ролей Azure с помощью Azure PowerShell](/azure/role-based-access-control/role-assignments-powershell).
 
 ## <a name="using-conditional-access"></a>Использование условного доступа
 

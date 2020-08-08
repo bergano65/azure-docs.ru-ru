@@ -1,24 +1,22 @@
 ---
 title: В сеансе масштабирования размещена служба автоматизации Azure виртуальный рабочий стол Windows (классическая модель) — Azure
 description: Как автоматически масштабировать узлы сеансов виртуальных рабочих столов Windows (классические) с помощью службы автоматизации Azure.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 4c09ce867a7d4dbc11c42485c39c40bd427fa451
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: f4092b9d5ee7453533561f5921781fee4d1823eb
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288646"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88005590"
 ---
 # <a name="scale-windows-virtual-desktop-classic-session-hosts-using-azure-automation"></a>Масштабирование узлов виртуальных рабочих столов Windows (классические) с помощью службы автоматизации Azure
 
 >[!IMPORTANT]
->Это содержимое относится к виртуальному рабочему столу Windows (классическая модель), который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows.
+>Это содержимое применимо к Виртуальному рабочему столу Windows (классическому), который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows.
 
 Вы можете сократить общие затраты на развертывание Виртуального рабочего стола Windows путем масштабирования виртуальных машин. Это означает завершение работы и освобождение виртуальных машин узла сеансов в часы непиковой нагрузки и их включение и повторное выделение в часы пиковой нагрузки.
 
@@ -94,7 +92,7 @@ ms.locfileid: "87288646"
     ```powershell
     Login-AzAccount
     ```
-    
+
     >[!NOTE]
     >Ваша учетная запись должна иметь права участника в подписке Azure, в которой вы хотите развернуть Средство масштабирования.
 
@@ -119,7 +117,7 @@ ms.locfileid: "87288646"
          "Location"              = "<Azure_region_for_deployment>"
          "WorkspaceName"         = "<Log_analytics_workspace_name>"       # Optional. If specified, Log Analytics will be used to configure the custom log table that the runbook PowerShell script can send logs to
     }
-    
+
     .\CreateOrUpdateAzAutoAccount.ps1 @Params
     ```
 
@@ -208,23 +206,23 @@ New-RdsRoleAssignment -RoleDefinitionName "RDS Contributor" -ApplicationId "<app
     # Set-RdsContext -TenantGroupName "<Tenant_Group_Name>"
     ```
 
-5. Выполните следующий сценарий PowerShell, чтобы создать приложение логики Azure и расписание выполнения для пула узлов. 
+5. Выполните следующий сценарий PowerShell, чтобы создать приложение логики Azure и расписание выполнения для пула узлов.
 
     >[!NOTE]
     >Вам потребуется выполнить этот скрипт для каждого пула узлов, для которого требуется Автомасштабирование, но требуется только одна учетная запись службы автоматизации Azure.
 
     ```powershell
     $AADTenantId = (Get-AzContext).Tenant.Id
-    
+
     $AzSubscription = Get-AzSubscription | Out-GridView -OutputMode:Single -Title "Select your Azure Subscription"
     Select-AzSubscription -Subscription $AzSubscription.Id
-    
+
     $ResourceGroup = Get-AzResourceGroup | Out-GridView -OutputMode:Single -Title "Select the resource group for the new Azure Logic App"
-    
+
     $RDBrokerURL = (Get-RdsContext).DeploymentUrl
     $WVDTenant = Get-RdsTenant | Out-GridView -OutputMode:Single -Title "Select your WVD tenant"
     $WVDHostPool = Get-RdsHostPool -TenantName $WVDTenant.TenantName | Out-GridView -OutputMode:Single -Title "Select the host pool you'd like to scale"
-    
+
     $LogAnalyticsWorkspaceId = Read-Host -Prompt "If you want to use Log Analytics, enter the Log Analytics Workspace ID returned by when you created the Azure Automation account, otherwise leave it blank"
     $LogAnalyticsPrimaryKey = Read-Host -Prompt "If you want to use Log Analytics, enter the Log Analytics Primary Key returned by when you created the Azure Automation account, otherwise leave it blank"
     $RecurrenceInterval = Read-Host -Prompt "Enter how often you'd like the job to run in minutes, e.g. '15'"
@@ -237,12 +235,12 @@ New-RdsRoleAssignment -RoleDefinitionName "RDS Contributor" -ApplicationId "<app
     $LimitSecondsToForceLogOffUser = Read-Host -Prompt "Enter the number of seconds to wait before automatically signing out users. If set to 0, any session host VM that has user sessions, will be left untouched"
     $LogOffMessageTitle = Read-Host -Prompt "Enter the title of the message sent to the user before they are forced to sign out"
     $LogOffMessageBody = Read-Host -Prompt "Enter the body of the message sent to the user before they are forced to sign out"
-    
+
     $AutoAccount = Get-AzAutomationAccount | Out-GridView -OutputMode:Single -Title "Select the Azure Automation account"
     $AutoAccountConnection = Get-AzAutomationConnection -ResourceGroupName $AutoAccount.ResourceGroupName -AutomationAccountName $AutoAccount.AutomationAccountName | Out-GridView -OutputMode:Single -Title "Select the Azure RunAs connection asset"
-    
+
     $WebhookURIAutoVar = Get-AzAutomationVariable -Name 'WebhookURI' -ResourceGroupName $AutoAccount.ResourceGroupName -AutomationAccountName $AutoAccount.AutomationAccountName
-    
+
     $Params = @{
          "AADTenantId"                   = $AADTenantId                             # Optional. If not specified, it will use the current Azure context
          "SubscriptionID"                = $AzSubscription.Id                       # Optional. If not specified, it will use the current Azure context
@@ -267,7 +265,7 @@ New-RdsRoleAssignment -RoleDefinitionName "RDS Contributor" -ApplicationId "<app
          "LogOffMessageBody"             = $LogOffMessageBody                       # Optional. Default: "Your session will be logged off. Please save and close everything."
          "WebhookURI"                    = $WebhookURIAutoVar.Value
     }
-    
+
     .\CreateOrUpdateAzLogicApp.ps1 @Params
     ```
 

@@ -1,6 +1,6 @@
 ---
 title: Шаблоны изображений в Azure Maps веб-пакете SDK | Карты Microsoft Azure
-description: В этой статье вы узнаете, как использовать шаблоны изображений с маркерами HTML и различными слоями в веб-пакете SDK Microsoft Azure Maps.
+description: Узнайте, как добавлять значки изображений и закрашенные многоугольники для карт с помощью веб-пакета SDK Azure Maps. Просмотр доступных шаблонов образцов изображений и заливок.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 8/6/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: 2942ae25e3ac84ae6f91ebbba08581eb87bcd169
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: ae3fa4684e4e71115d2d4ddce3c34ccb4f1cb703
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285685"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88004662"
 ---
 # <a name="how-to-use-image-templates"></a>Использование шаблонов образов
 
@@ -119,7 +119,7 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 
 Если приложение использует один и тот же значок с разными значками или если вы создаете модуль, который добавляет дополнительные шаблоны изображений, вы можете легко добавлять и получать эти значки из веб-пакета SDK Azure Maps. Используйте следующие статические функции в `atlas` пространстве имен.
 
-| Имя | Тип возвращаемых данных | Описание: | 
+| name | Возвращаемый тип | Описание | 
 |-|-|-|
 | `addImageTemplate(templateName: string, template: string, override: boolean)` | | Добавляет пользовательский шаблон изображения SVG в пространство имен Atlas. |
 |  `getImageTemplate(templateName: string, scale?: number)`| строка | Извлекает шаблон SVG по имени. |
