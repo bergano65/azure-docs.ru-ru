@@ -7,14 +7,14 @@ ms.topic: conceptual
 ms.date: 05/18/2020
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: d9413deb99ce938429d05f7c6348c5914e7dd2b1
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 2e6381afb19018822f6f37171a5ca4b3d929b42e
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87304145"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037530"
 ---
-# <a name="saas-fulfillment-apis-in-microsoft-commercial-marketplace"></a>API-интерфейсы выполнения SaaS в коммерческом магазине Майкрософт
+# <a name="saas-fulfillment-apis-in-the-microsoft-commercial-marketplace"></a>API-интерфейсы выполнения SaaS в коммерческом магазине Майкрософт
 
 API-интерфейсы выполнения SaaS позволяют издателям, также известным как независимые поставщики программного обеспечения, публиковать и продавать свои приложения SaaS в Microsoft AppSource, Azure Marketplace и портал Azure. Эти API позволяют приложениям ISV участвовать во всех каналах с поддержкой торговли: Direct, «партнер-участник» (Торговый посредник) и светодиодный индикатор поля.  Интеграция с этими API-интерфейсами является обязательным требованием для создания и публикации предложения SaaS в центре партнеров.
 

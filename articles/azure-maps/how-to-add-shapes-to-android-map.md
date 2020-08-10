@@ -1,6 +1,6 @@
 ---
 title: Добавление фигур в карты Android | Карты Microsoft Azure
-description: В этой статье вы узнаете, как визуализировать различные фигуры на карте с помощью Microsoft Azure карт пакет SDK для Android.
+description: Узнайте, как добавлять фигуры в карты. См. примеры кода, в которых используется Azure Maps пакет SDK для Android для добавления линии и многоугольника к карте.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 04/26/2019
@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 855a05bd228a3bf903b79522549ed519b4745e17
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 9dd8718a6a96627781a578edb514d797e40f01fb
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87127100"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037428"
 ---
 # <a name="add-a-shape-to-a-map-using-azure-maps-android-sdk"></a>Добавление фигуры в карту с помощью Azure Maps пакет SDK для Android
 
 В этой статье показано, как визуализировать фигуры на карте с помощью Azure Maps пакет SDK для Android.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы завершить процесс, описанный в этой статье, необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) , чтобы загрузить карту.
 

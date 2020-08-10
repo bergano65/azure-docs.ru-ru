@@ -1,6 +1,6 @@
 ---
 title: Поддержка локализации | Microsoft Azure Maps
-description: В этой статье собраны сведения о языках, поддерживаемых в Microsoft Azure Maps.
+description: Узнайте, какие регионы Azure Maps поддерживаются службами, такими как карты, поиск, маршрутизация, погода и инциденты трафика. Узнайте, как настроить параметр View.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 11/20/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 0d3adc4bc49379a9ec3408ab76b913a096840dbb
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: a6664b5a2c0c6b4de2435ee5c8bb29f63560c342
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87127899"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037700"
 ---
 # <a name="localization-support-in-azure-maps"></a>Поддержка локализации в Azure Maps
 
@@ -110,37 +110,37 @@ ms.locfileid: "87127899"
 > С 1 августа 2019 года параметр **View** (Представление) будет определять полученное содержимое карты для перечисленных выше новых регионов и стран. В Azure Maps параметр **View** (Представление), который также называется параметром региона пользователя, представляет собой двухбуквенный код страны по стандарту ISO-3166. Он позволяет отображать в службах Azure Maps правильные карты для указанной страны или региона с учетом геополитически спорного содержимого, включая границы и метки на карте. 
 
 Обязательно настройте параметр **View** (Представление) нужным образом в REST API и пакетах SDK, которые используются вашими службами.
->  
->
->  **REST API**
->  
->  Убедитесь, что для параметра View (Представление) задано требуемое значение. Параметр View (Представление) указывает, какой набор геополитически спорного содержимого отображают службы Azure Maps. 
->
->  Этот параметр влияет на следующие службы REST в Azure Maps:
->    
->    * Get Map Tile
->    * Get Map Image 
->    * Get Search Fuzzy
->    * Get Search POI
->    * Get Search POI Category
->    * Get Search Nearby
->    * Get Search Address
->    * Get Search Address Structured
->    * Get Search Address Reverse
->    * Get Search Address Reverse Cross Street
->    * Post Search Inside Geometry
->    * Post Search Address Batch Preview
->    * Post Search Address Reverse Batch Preview
->    * Post Search Along Route
->    * Post Search Fuzzy Batch Preview
->
->    
->  **Пакеты SDK**
->
->  Обязательно укажите нужное значение для параметра **View** (Представление) и всегда используйте последнюю версию веб-пакета SDK и пакета SDK для Android. Этот параметр влияет на следующие пакеты SDK:
->
->    * Веб-пакет SDK Azure Maps
->    * Пакет SDK для Android в Azure Maps
+  
+
+### <a name="rest-apis"></a>Интерфейсы API-интерфейсов RESTful
+  
+Убедитесь, что для параметра View (Представление) задано требуемое значение. Параметр View (Представление) указывает, какой набор геополитически спорного содержимого отображают службы Azure Maps. 
+
+Этот параметр влияет на следующие службы REST в Azure Maps:
+    
+ * Get Map Tile
+ * Get Map Image 
+ * Get Search Fuzzy
+ * Get Search POI
+ * Get Search POI Category
+ * Get Search Nearby
+ * Get Search Address
+ * Get Search Address Structured
+ * Get Search Address Reverse
+ * Get Search Address Reverse Cross Street
+ * Post Search Inside Geometry
+ * Post Search Address Batch Preview
+ * Post Search Address Reverse Batch Preview
+ * Post Search Along Route
+ * Post Search Fuzzy Batch Preview
+
+ 
+### <a name="sdks"></a>Пакеты SDK
+
+Обязательно укажите нужное значение для параметра **View** (Представление) и всегда используйте последнюю версию веб-пакета SDK и пакета SDK для Android. Этот параметр влияет на следующие пакеты SDK:
+
+ * Веб-пакет SDK Azure Maps
+ * Пакет SDK для Android в Azure Maps
 
 По умолчанию параметр View (Представление) имеет значение **Unified** (Унифицированное), даже если это не определено в запросе. Определите расположение пользователя. На его основе задайте правильное значение параметра **View** (Представление). Также вы можете присвоить параметру View (Представление) значение Auto (Автоматически), чтобы возвращать данные карт с учетом IP-адреса запроса.  Параметр **View** (Представление) в Azure Maps должен использоваться в соответствии с применимым законодательством, включая любые законы, регламентирующие использование карт для страны или региона, где предоставляются карты, изображения и другое содержимое сторонних поставщиков, к которым вы можете получить доступ через службы Azure Maps.
 

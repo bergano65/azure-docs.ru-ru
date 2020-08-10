@@ -1,6 +1,6 @@
 ---
 title: Покрытие геокодирования в службе поиска Microsoft Azure Maps
-description: В этой статье вы узнаете о Microsoft Azure Maps о покрытии кода в разных странах и регионах.
+description: Узнайте, какие регионы Azure Maps поиском. К категориям геокодирования относятся адресные точки, Номера домов, уровень улицы, уровень города и интересующие вас точки.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 07/28/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 6014cb4dda18a68b9149206adf034536161eb08e
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 1f79add26af40abfa320bc23a3287d8246237701
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386917"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037445"
 ---
 # <a name="azure-maps-geocoding-coverage"></a>Покрытие для геокодирования в службе "Карты Azure"
 

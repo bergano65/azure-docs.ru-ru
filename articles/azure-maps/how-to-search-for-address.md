@@ -1,6 +1,6 @@
 ---
 title: Поиск расположения с помощью служб поиска Azure Maps
-description: В этой статье вы узнаете, как искать расположение с помощью API-интерфейсов поиска Microsoft Azure Maps для геокодирования, отмены геокодирования, нечеткого поиска и поиска на противоположных улице.
+description: Сведения о службе поиска Azure Maps. См. раздел Использование этого набора API для геокодирования, обратная кодировка, Поиск нечетких запросов и обратные поиски в разных улицы.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 07/21/2020
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 51ee2bb66adedc310f65b2d3b430023ae7767df6
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 48dd0168f878a16e2eabe47151d0b09993d9f5f9
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87126651"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037785"
 ---
 # <a name="search-for-a-location-using-azure-maps-search-services"></a>Поиск расположения с помощью служб поиска Azure Maps
 
@@ -138,10 +138,10 @@ API Azure Maps [нечеткий поиск](https://docs.microsoft.com/rest/api
 
     | Ключ | Значение | Возвращаемое значение
     |-----|------------|------|
-    | number | 1 |Ответ может включать сторону улицы (слева направо), а также смещение для числа.|
-    | returnSpeedLimit | true | Возвращает ограничение скорости по адресу.|
-    | returnRoadUse | true | Возвращает дорожные типы использования по адресу. Все возможные типы использования в пути см. в разделе [типы использования дорожек](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse#uri-parameters).|
-    | ретурнматчтипе | true| Возвращает тип соответствия. Все возможные значения см. в разделе [обратные результаты поиска адресов](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse#searchaddressreverseresult) .
+    | число | 1 |Ответ может включать сторону улицы (слева направо), а также смещение для числа.|
+    | returnSpeedLimit | Да | Возвращает ограничение скорости по адресу.|
+    | returnRoadUse | Да | Возвращает дорожные типы использования по адресу. Все возможные типы использования в пути см. в разделе [типы использования дорожек](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse#uri-parameters).|
+    | ретурнматчтипе | Да| Возвращает тип соответствия. Все возможные значения см. в разделе [обратные результаты поиска адресов](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse#searchaddressreverseresult) .
 
    :::image type="content" source="./media/how-to-search-for-address/search-reverse.png" alt-text="Обратный поиск.":::
 
