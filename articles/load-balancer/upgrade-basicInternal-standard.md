@@ -5,14 +5,14 @@ services: load-balancer
 author: irenehua
 ms.service: load-balancer
 ms.topic: how-to
-ms.date: 02/23/2020
+ms.date: 08/07/2020
 ms.author: irenehua
-ms.openlocfilehash: 801f57c8d5b67e31bd6b3ac25d845dc2e13e365c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 10a0c186bb1a0d9f974d485e7d2d1d7326bd849c
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84809329"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88033161"
 ---
 # <a name="upgrade-azure-internal-load-balancer--no-outbound-connection-required"></a>Обновление внутренней Load Balancer Azure — не требуется исходящее подключение
 [Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](https://docs.microsoft.com/azure/load-balancer/skus#skus).
@@ -48,7 +48,7 @@ ms.locfileid: "84809329"
 
 ## <a name="download-the-script"></a>Скачивание скрипта
 
-Скачайте скрипт миграции из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureILBUpgrade/3.0).
+Скачайте скрипт миграции из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureILBUpgrade/4.0).
 ## <a name="use-the-script"></a>Использование скрипта
 
 В зависимости от настроек и настроек локальной среды PowerShell существует два варианта.
@@ -106,6 +106,6 @@ ms.locfileid: "84809329"
   
 Вы можете отправить сообщение электронной почты slbupgradesupport@microsoft.com , открыть обращение в службу поддержки Azure или выполнить оба действия.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о Load Balancer (цен. категория "Стандартный")](load-balancer-overview.md)

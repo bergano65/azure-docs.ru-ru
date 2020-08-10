@@ -1,6 +1,6 @@
 ---
 title: Перенос из локального хранилища HDFS в службу хранилища Azure с помощью Azure Data Box
-description: Перенос данных из локального хранилища HDFS в службу хранилища Azure
+description: Перенос данных из локального хранилища HDFS в службу хранилища Azure (хранилище BLOB-объектов или Data Lake Storage 2-го поколения) с помощью устройства Data Box.
 author: normesta
 ms.service: storage
 ms.date: 02/14/2019
@@ -8,12 +8,12 @@ ms.author: normesta
 ms.topic: how-to
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: jamesbak
-ms.openlocfilehash: 6c5f2a041f03d53e1ea7c3f981683f4b70d3963b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a50f85e76f16f1e5ba8823adb1ea1aa02157fcee
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84466006"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88032566"
 ---
 # <a name="migrate-from-on-prem-hdfs-store-to-azure-storage-with-azure-data-box"></a>Перенос из локального хранилища HDFS в службу хранилища Azure с помощью Azure Data Box
 
@@ -27,7 +27,7 @@ ms.locfileid: "84466006"
 > * Отправьте устройство обратно в корпорацию Майкрософт.
 > * Применение разрешений доступа к файлам и каталогам (только Data Lake Storage 2-го поколения)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Эти действия необходимы для завершения миграции.
 

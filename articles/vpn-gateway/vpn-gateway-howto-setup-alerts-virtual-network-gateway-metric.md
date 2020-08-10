@@ -1,18 +1,18 @@
 ---
 title: Настройка оповещений в метриках VPN-шлюза Azure
-description: Узнайте, как настроить оповещения в метриках VPN-шлюза Azure. Используйте Azure Monitor, чтобы настроить оповещения для шлюзов виртуальной сети типа VPN.
+description: Узнайте, как использовать портал Azure для настройки оповещений Azure Monitor на основе метрик для VPN-шлюзов виртуальной сети.
 services: vpn-gateway
 author: kumudD
 ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 04/22/2019
 ms.author: alzam
-ms.openlocfilehash: 3819f653cba80854a65a08f92a10f82057abb0fd
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 14bb407cb12e24ca789085e954aaabff2333da7b
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87923073"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88033501"
 ---
 # <a name="set-up-alerts-on-vpn-gateway-metrics"></a>Настройка оповещений для метрик VPN-шлюза
 
@@ -50,11 +50,11 @@ ms.locfileid: "87923073"
 
 2. Выберите VPN-шлюз в качестве ресурса.
 
-   ![Кнопка "выбрать" и VPN-шлюз в списке ресурсов](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert2.png "Выберите пункт")
+   ![Кнопка "выбрать" и VPN-шлюз в списке ресурсов](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert2.png "Выбрать")
 
 3. Выберите метрику для настройки оповещения.
 
-   ![Выбранная метрика в списке метрик](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert3.png "Выберите пункт")
+   ![Выбранная метрика в списке метрик](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert3.png "Выбрать")
 4. Настройте логику сигнала. Существует три компонента:
 
     а. **Измерения**: если у метрики есть измерения, можно выбрать определенные значения измерений, чтобы предупреждение выработало только данные этого измерения. Они необязательны.
@@ -63,11 +63,11 @@ ms.locfileid: "87923073"
 
     c. **Время**: укажите гранулярность данных метрик и период времени для вычисления предупреждения.
 
-   ![Сведения о настройке логики сигнала](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert4.png "Выберите пункт")
+   ![Сведения о настройке логики сигнала](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert4.png "Выбрать")
 
 5. Чтобы просмотреть настроенные правила, выберите **Управление правилами оповещений**.
 
-   ![Кнопка для управления правилами оповещений](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert8.png "Выберите пункт")
+   ![Кнопка для управления правилами оповещений](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert8.png "Выбрать")
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

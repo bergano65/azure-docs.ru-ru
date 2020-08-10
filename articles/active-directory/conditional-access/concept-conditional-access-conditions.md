@@ -5,24 +5,24 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 07/02/2020
+ms.date: 08/07/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a74fe2bf6b326dac782ac75418a7f4960e66501a
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 4b887c91a289730c3d92efe753a2df162f36a047
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87275009"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88032137"
 ---
 # <a name="conditional-access-conditions"></a>Условный доступ. Условия
 
 В рамках политики условного доступа администратор может использовать сигналы из таких условий, как риск, платформа устройства или расположение, чтобы улучшить свои решения по политике. 
 
-![Определение политики условного доступа и определение условий](./media/concept-conditional-access-conditions/conditional-access-conditions.png)
+[![Определение политики условного доступа и определение условий](./media/concept-conditional-access-conditions/conditional-access-conditions.png)](./media/concept-conditional-access-conditions/conditional-access-conditions.png#lightbox)
 
 Для создания детализированных и специальных политик условного доступа можно сочетать несколько условий.
 
@@ -46,7 +46,7 @@ ms.locfileid: "87275009"
 - iOS
 - Windows Phone
 - Windows
-- macOS
+- MacOS
 
 Если вы блокируете устаревшую проверку подлинности с помощью условия **другие клиенты** , можно также задать условие платформы устройства.
 
@@ -60,21 +60,28 @@ ms.locfileid: "87275009"
 
 Дополнительные сведения о расположении можно найти в статье [как условие расположения в Azure Active Directory условном доступе](location-condition.md).
 
-## <a name="client-apps-preview"></a>Клиентские приложения (предварительная версия)
+## <a name="client-apps"></a>Клиентские приложения
 
-Политики условного доступа по умолчанию применяются к приложениям на основе браузера и приложениям, использующим современные протоколы проверки подлинности. Помимо этих приложений, администраторы могут включать клиентов Exchange ActiveSync и других клиентов, использующих устаревшие протоколы.
+По умолчанию все вновь созданные политики условного доступа будут применяться ко всем типам клиентских приложений, даже если условие клиентских приложений не настроено. 
 
 > [!NOTE]
-> Параметр настроить да/нет в условиях клиентских приложений был удален, чтобы было проще увидеть, какие клиентские приложения выбраны. Это не влияет на клиентские приложения, к которым применяется существующая политика.
+> Поведение условия клиентских приложений было Обновлено в августе 2020. При наличии существующих политик условного доступа они останутся без изменений. Однако если щелкнуть существующую политику, переключатель Настройка удален и будут выбраны клиентские приложения, к которым применяется политика.
 
-- Браузер
-   - К ним относятся веб-приложения, использующие такие протоколы, как SAML, WS-Federation, OpenID Connect Connect или службы, зарегистрированные как конфиденциальный клиент OAuth.
-- Мобильные приложения и настольные клиенты
-   - Современные клиенты проверки подлинности
-      - Этот вариант включает такие приложения, как приложения Office для настольных компьютеров и телефонов.
+> [!IMPORTANT]
+> Операции входа от устаревших клиентов проверки подлинности не поддерживают MFA и не передают сведения о состоянии устройства в Azure AD, поэтому они будут заблокированы элементами управления условным доступом, например, требуют использования MFA или соответствующих требованиям устройств. Если у вас есть учетные записи, которые должны использовать устаревшую проверку подлинности, исключите эти учетные записи из политики или настройте политику для применения только к современным клиентам проверки подлинности.
+
+Переключатель **Configure (настроить** ), если задано значение **Да** , применяется к отмеченным элементам, если он имеет значение **нет** , применяется ко всем клиентским приложениям, включая современные и устаревшие клиенты проверки подлинности. Этот переключатель не отображается в политиках, созданных до 2020 августа.
+
+- Современные клиенты проверки подлинности
+   - Браузер
+      - К ним относятся веб-приложения, использующие такие протоколы, как SAML, WS-Federation, OpenID Connect Connect или службы, зарегистрированные как конфиденциальный клиент OAuth.
+   - Мобильные приложения и настольные клиенты
+      -  Этот вариант включает такие приложения, как приложения Office для настольных компьютеров и телефонов.
+- Клиенты устаревшей проверки подлинности
    - Клиенты Exchange ActiveSync
-      - По умолчанию сюда входят все использование протокола Exchange ActiveSync (EAS). Выбор параметра **Применить политику только к поддерживаемым платформам** ограничивается поддерживаемыми платформами, такими как iOS, Android и Windows.
+      - Сюда входит все использование протокола Exchange ActiveSync (EAS).
       - Когда политика блокирует использование Exchange ActiveSync, затронутый пользователь получит одно сообщение электронной почты в карантине. Это сообщение электронной почты с информацией о том, почему они заблокированы и содержат инструкции по исправлению, если это возможно.
+      - Администраторы могут применять политику только к поддерживаемым платформам (например, iOS, Android и Windows) с помощью условного доступа MS API Graph.
    - Другие клиенты
       - Этот параметр включает клиенты, использующие стандартные или устаревшие протоколы проверки подлинности, которые не поддерживают современную проверку подлинности.
          - SMTP с проверкой подлинности — используется клиентами POP и IMAP для отправки сообщений электронной почты.
@@ -97,7 +104,7 @@ ms.locfileid: "87275009"
 
 | Операционная система | Браузеры |
 | :-- | :-- |
-| Windows 10 | Microsoft ребро, Internet Explorer, Chrome |
+| быть под управлением ОС Windows 10; | Microsoft ребро, Internet Explorer, Chrome |
 | Windows 8, Windows 8.1 | Internet Explorer, Chrome |
 | Windows 7 | Internet Explorer, Chrome |
 | iOS | Microsoft ребро, Intune Managed Browser, Safari |
@@ -107,7 +114,7 @@ ms.locfileid: "87275009"
 | Windows Server 2016 | Internet Explorer |
 | Windows Server 2012 R2 | Internet Explorer |
 | Windows Server 2008 R2 | Internet Explorer |
-| macOS | Chrome, Safari |
+| MacOS | Chrome, Safari |
 
 #### <a name="why-do-i-see-a-certificate-prompt-in-the-browser"></a>Почему в браузере отображается запрос на сертификат
 
@@ -142,17 +149,17 @@ ms.locfileid: "87275009"
 | Клиентские приложения | Целевая служба | Платформа |
 | --- | --- | --- |
 | Приложение Dynamics CRM | Dynamics CRM | Windows 10, Windows 8.1, iOS и Android |
-| Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | Windows 10 |
+| Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | быть под управлением ОС Windows 10; |
 | MFA и политика расположения для приложений Политики на основе устройств не поддерживаются.| Все службы приложения "Мои приложения" | Android и iOS |
 | Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
 | Приложения Office 2016, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | Windows 8.1, Windows 7 |
-| Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | Windows 10 |
-| Office 2016 (только Word, Excel, PowerPoint, OneNote). | Office 365 SharePoint Online | macOS |
+| Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | быть под управлением ОС Windows 10; |
+| Office 2016 (только Word, Excel, PowerPoint, OneNote). | Office 365 SharePoint Online | MacOS |
 | Office 2019| Office 365 SharePoint Online | Windows 10, macOS |
 | Мобильные приложения Office | Office 365 SharePoint Online | Android, iOS |
 | Приложение Office Yammer | Office 365 Yammer | Windows 10, iOS, Android |
 | Outlook 2019 | Office 365 SharePoint Online | Windows 10, macOS |
-| Outlook 2016 (Office для macOS) | Office 365 Exchange Online | macOS |
+| Outlook 2016 (Office для macOS) | Office 365 Exchange Online | MacOS |
 | Outlook 2016, Outlook 2013 (с современной проверкой подлинности), Skype для бизнеса (с современной проверкой подлинности) | Office 365 Exchange Online | Windows 8.1, Windows 7 |
 | Мобильное приложение Outlook | Office 365 Exchange Online | Android, iOS |
 | Приложение Power BI | Служба Power BI | Windows 10, Windows 8.1, Windows 7, Android и iOS |

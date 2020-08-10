@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: troubleshooting
-ms.date: 07/03/2019
+ms.date: 08/07/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9aaab58acb00305f76b10847a0417d91d724ba8
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 46d3b8d94148e3db163411c21cccf39c7630c6b3
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83737645"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88032932"
 ---
 # <a name="troubleshooting-conditional-access-using-the-what-if-tool"></a>Устранение неполадок с условным доступом с помощью средства What If
 
@@ -67,7 +67,7 @@ ms.locfileid: "83737645"
 
 Для проверки правильности конфигурации администратор может использовать средство What If для имитации доступа из расположения, которое должно быть разрешено, и из расположения, которое должно быть запрещено.
 
-![Средство What If, отображающее результаты с заблокированным доступом](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png)
+[![What If средство, показывающее результаты с блокированным доступом](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png)](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png#lightbox)
 
 В этом примере пользователю будет отказано в доступе к облачным приложениям во время пребывания в Северной Корее, так Contoso блокирует доступ из этого расположения.
 

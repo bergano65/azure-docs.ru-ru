@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: conceptual
 ms.date: 04/23/2019
 tags: connectors
-ms.openlocfilehash: 9e3bc4cdab62dd304c5266ff6c9cccf66600fb7b
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 198a5da63ed90937c53f7f12f3559f15100e8f19
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87848849"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88031427"
 ---
 # <a name="monitor-receive-and-send-events-with-azure-event-hubs-and-azure-logic-apps"></a>Мониторинг, получение и отправка событий с помощью Центров событий Azure и Azure Logic Apps
 
@@ -20,7 +20,7 @@ ms.locfileid: "87848849"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
+* Учетная запись и подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
 * [Пространство имен концентраторов событий Azure и концентратор событий](../event-hubs/event-hubs-create.md)
 
@@ -82,7 +82,7 @@ ms.locfileid: "87848849"
    | **Имя концентратора событий** | Да | Имя концентратора событий, который требуется отслеживать |
    | **Тип содержимого** | Нет | Тип содержимого события. Значение по умолчанию — `application/octet-stream`. |
    | **Имя группы потребителей** | Нет | [Имя группы потребителей концентратора событий](../event-hubs/event-hubs-features.md#consumer-groups) , используемое для чтения событий. Если оно не задано, используется группа потребителей по умолчанию. |
-   | **Maximum events count (Счетчик максимального количества событий)** | Нет | Максимальное число событий. Триггер возвращает значение от 1 до количества событий, заданного в этом свойстве. |
+   | **Maximum events count (Счетчик максимального количества событий)** | нет | Максимальное число событий. Триггер возвращает значение от 1 до количества событий, заданного в этом свойстве. |
    | **Интервал** | Да | Положительное целое число, описывающее частоту выполнения рабочего процесса в зависимости от частоты. |
    | **Частота** | Да | Единица времени для повторения |
    ||||

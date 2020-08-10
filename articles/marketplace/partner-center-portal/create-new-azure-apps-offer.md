@@ -7,12 +7,12 @@ ms.topic: article
 author: AarathiN
 ms.author: aarathin
 ms.date: 07/14/2020
-ms.openlocfilehash: 425ed63238c07ffcf53df10eeddfa0ac95679a2c
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: c5d52a78dec31dd796929b141556d6da10044099
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87904520"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88031509"
 ---
 # <a name="create-an-azure-application-offer"></a>Создание предложения приложения Azure
 
@@ -187,8 +187,8 @@ ms.locfileid: "87904520"
 4. Условия использования
 5. Адрес политики конфиденциальности (ссылка)
 6. Название предложения
-7. Итоги
-8. Описание:
+7. Сводка
+8. Описание
 9. Снимки экрана и видео
 
 <br>Ниже приведен пример того, как отображаются сведения о предложении в портал Azure:
@@ -197,8 +197,8 @@ ms.locfileid: "87904520"
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
-1. Название
-2. Описание:
+1. Заголовок
+2. Описание
 3. Полезные ссылки
 4. Снимки экрана
 
@@ -242,6 +242,8 @@ ms.locfileid: "87904520"
 
 Предоставьте логотипы и изображения для использования с вашим предложением. Все изображения должны быть в формате PNG. Размытые изображения приведут к отклонению вашей заявки.
 
+[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
+
 >[!Note]
 >Если при отправке файлов возникнет проблема, убедитесь, что ваша локальная сеть не блокирует службу https://upload.xboxlive.com, которую использует Центр партнеров.
 
@@ -255,6 +257,8 @@ ms.locfileid: "87904520"
 - **Широкий** (255 x 115)
 
 Все три логотипа являются обязательными и используются в разных местах в листинге.
+
+[!INCLUDE [logos-azure-marketplace-only](../includes/logos-azure-marketplace-only.md)]
 
 #### <a name="screenshots"></a>Снимки экрана
 

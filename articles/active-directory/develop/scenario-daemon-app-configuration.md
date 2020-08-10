@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 10/30/2019
+ms.date: 08/08/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 567bd0a34c1989403f29ea5a52fad258c2ffe825
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 2e7a0657949a2addbf895666682feee7fd0eb595
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87846162"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88033365"
 ---
 # <a name="daemon-app-that-calls-web-apis---code-configuration"></a>Управляющее приложение, вызывающее веб-API — конфигурация кода
 
@@ -54,6 +54,9 @@ ms.locfileid: "87846162"
 - Центр или облачный экземпляр и идентификатор клиента.
 - Идентификатор клиента, полученный при регистрации приложения.
 - Секрет клиента или сертификат.
+
+> [!NOTE]
+> Фрагменты кода .NET в оставшейся части статьи эталонная [Конфигурация](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/AuthenticationConfig.cs) из образца [Active-Directory-команда dotnetcore-DAEMON-v2](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) .
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 
@@ -286,7 +289,7 @@ X509Certificate2 certificate = ReadCertificate(config.CertificateName);
 app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
                                           .WithAuthority(new Uri(config.Authority))
                                           .WithClientClaims(certificate, claims)
-                                          .Build();```
+                                          .Build();
 ```
 
 Дополнительные сведения см. в разделе [утверждения клиента](msal-net-client-assertions.md).
@@ -325,7 +328,7 @@ ConfidentialClientApplication cca =
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 

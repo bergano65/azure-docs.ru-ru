@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 06/17/2020
-ms.openlocfilehash: ff2745a636d25c429a1a40644757c00b28e2668c
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 77cc63945e5cfc612c074e75e38365ada26073ea
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87799180"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88032787"
 ---
 # <a name="create-an-azure-container-offer-in-azure-marketplace"></a>Создание предложения контейнера Azure в Azure Marketplace
 
@@ -190,20 +190,23 @@ ms.locfileid: "87799180"
 
 Предоставьте логотипы и изображения для использования с вашим предложением. Все изображения должны быть в формате PNG. Размытые изображения не принимаются.
 
+[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
+
 >[!Note]
 >Если при отправке файлов возникнет проблема, убедитесь, что ваша локальная сеть не блокирует службу https://upload.xboxlive.com, которую использует Центр партнеров.
 
 #### <a name="store-logos"></a>Логотипы магазина
 
-Укажите PNG-файл для логотипа **крупного** размера (от 216 x 216 до 350 x 350 пикселей). Центр партнеров будет использовать его для создания **мелких** (48 x 48 пикселей) и логотипа **среднего** размера (90 x 90 пикселей). При необходимости можно заменить их разными изображениями.
+ Предоставьте PNG-файлы логотипа вашего предложения следующих четырех размеров:
 
-Все три размера логотипа необходимы для использования в разных местах в списке:
+- **малый** (48 x 48);
+- **средний** (90 x 90);
+- **крупный** (216 x 216);
+- **широкий** (255 x 115).
 
-- **Малый** (48 x 48)
-- **Средний** (90 x 90)
-- **Крупный** (от 216 x 216 до 350 x 350)
+Все четыре логотипа являются обязательными и используются в разных местах описания на Marketplace.
 
-[!INCLUDE [Logo suggestions](./includes/graphics-suggestions.md)]
+[!INCLUDE [logos-azure-marketplace-only](../includes/logos-azure-marketplace-only.md)]
 
 #### <a name="screenshots-optional"></a>Снимки экрана (необязательно)
 

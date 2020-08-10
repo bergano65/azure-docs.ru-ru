@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 3/18/2020
-ms.openlocfilehash: 20be34191355e6ade40e0f3b218818bfa5345a28
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 8/7/2020
+ms.openlocfilehash: a9d6c1b2438f20a06062842b96b147e094760238
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79533238"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88031223"
 ---
 # <a name="replicate-data-into-azure-database-for-mysql"></a>Репликация данных в базу данных Azure для MySQL
 
@@ -30,7 +30,12 @@ ms.locfileid: "79533238"
 ### <a name="data-not-replicated"></a>Нереплицируемые данные
 [*Системная база данных MySQL*](https://dev.mysql.com/doc/refman/5.7/en/system-schema.html) на главном сервере не реплицируется. Изменения учетных записей и разрешений на главном сервере не реплицируются. Если вы создаете на главном сервере учетную запись, которой необходим доступ к серверу-реплике, вручную создайте ту же учетную запись на стороне сервера-реплики. Чтобы узнать, какие таблицы хранятся в системной базе данных, ознакомьтесь с [руководством по MySQL](https://dev.mysql.com/doc/refman/5.7/en/system-schema.html).
 
-### <a name="requirements"></a>Requirements (Требования)
+### <a name="filtering"></a>Фильтрация
+Чтобы пропустить репликацию таблиц с главного сервера (размещенных локально, на виртуальных машинах или службы базы данных, размещенной другими поставщиками облачных служб), `replicate_wild_ignore_table` параметр поддерживается. При необходимости обновите этот параметр на сервере реплики, размещенном в Azure, с помощью [портал Azure](howto-server-parameters.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
+
+Чтобы узнать больше об этом параметре, ознакомьтесь с документацией по [MySQL](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#option_mysqld_replicate-wild-ignore-table).
+
+### <a name="requirements"></a>Требования
 - На главном сервере должна быть установлена система MySQL по крайней мере версии 5.6. 
 - Версии главного сервера и сервера реплики должны совпадать. Например, на обоих должна быть система MySQL версии 5.6 или 5.7.
 - Каждая таблица должна иметь первичный ключ.

@@ -1,6 +1,6 @@
 ---
 title: Структуры данных службы Mobility Service в Azure Maps | Карты Microsoft Azure
-description: В этой статье вы узнаете об общих полях и структурах данных, возвращаемых с помощью Microsoft Azure Maps службы Mobility Services.
+description: Сведения о том, как данные организованы в области Metro в Azure Maps служб Mobility Services. Узнайте, какие поля хранят сведения о прекращении общей транзитной передачи и строках.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 06/05/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 5c2033557d14a25c786f3f6b08dc5bd54956f7e1
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 02d89226bd2df4bfe5d11897199c50c702e7bc1c
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87131282"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88033229"
 ---
 # <a name="data-structures-in-azure-maps-mobility-service"></a>Структуры данных в службе Mobility Service Azure Maps
 

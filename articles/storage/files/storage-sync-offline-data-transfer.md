@@ -1,18 +1,18 @@
 ---
 title: Перенос данных в Синхронизация файлов Azure с помощью Azure Data Box
-description: Переносите объемные данные способом, совместимым с Синхронизация файлов Azure.
+description: Перенос данных в автономный режим, совместимый с Синхронизация файлов Azure. Избегайте конфликтов файлов и сохраняйте списки ACL файлов и папок и метки времени после включения синхронизации.
 author: roygara
 ms.service: storage
 ms.topic: how-to
 ms.date: 02/12/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: dda05331163d071a9a47c6f6af8c758a11ec7dd8
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: ae9404d366b24c0cc1bcf01ecffc71a427f949d4
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87827900"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88034351"
 ---
 # <a name="migrate-bulk-data-to-azure-file-sync-with-azure-databox"></a>Перенос пакетов данных в Синхронизацию файлов Azure с использованием Azure DataBox
 Можно выполнить миграцию данных большого объема в Синхронизация файлов Azure двумя способами:
@@ -51,7 +51,7 @@ ms.locfileid: "87827900"
 
 | Шаг | Подробный сведения |
 |---|---------------------------------------------------------------------------------------|
-| ![Step 1](media/storage-sync-files-offline-data-transfer/bullet_1.png) | [Заказ Data Box](../../databox/data-box-deploy-ordered.md). Семейство Data Box предлагает [несколько продуктов](https://azure.microsoft.com/services/storage/databox/data) в соответствии с вашими потребностями. Когда вы получаете Data Box, следуйте указаниям [по копированию данных](../../databox/data-box-deploy-copy-data.md#copy-data-to-data-box) по этому пути в формате UNC на Data Box: * \\<девицеипаддрес \> \<StorageAccountName_AzFile\> \<ShareName\> *. *ShareName* — это имя промежуточного ресурса. Отправьте Data Box обратно в Azure. |
+| ![Шаг 1](media/storage-sync-files-offline-data-transfer/bullet_1.png) | [Заказ Data Box](../../databox/data-box-deploy-ordered.md). Семейство Data Box предлагает [несколько продуктов](https://azure.microsoft.com/services/storage/databox/data) в соответствии с вашими потребностями. Когда вы получаете Data Box, следуйте указаниям [по копированию данных](../../databox/data-box-deploy-copy-data.md#copy-data-to-data-box) по этому пути в формате UNC на Data Box: * \\<девицеипаддрес \> \<StorageAccountName_AzFile\> \<ShareName\> *. *ShareName* — это имя промежуточного ресурса. Отправьте Data Box обратно в Azure. |
 | ![Шаг 2](media/storage-sync-files-offline-data-transfer/bullet_2.png) | Дождитесь отображения файлов в общих файловых ресурсах Azure, выбранных в качестве временных промежуточных общих ресурсов. *Не включайте синхронизацию с этими общими папками.* |
 | ![Шаг 3](media/storage-sync-files-offline-data-transfer/bullet_3.png) | <ul><li>Создайте новую пустую общую папку для каждой общей папки, которую Data Box создать. Этот новый общий ресурс должен находиться в той же учетной записи хранения, что и Data Box общий ресурс. [Создание общей папки в службе файлов Azure](storage-how-to-create-file-share.md).</li><li>[Создайте группу синхронизации](storage-sync-files-deployment-guide.md#create-a-sync-group-and-a-cloud-endpoint) в службе синхронизации хранилища. Ссылка на пустой общий ресурс в качестве облачной конечной точки. Повторите этот шаг для каждой общей папки Data Box. [Настройка синхронизация файлов Azure](storage-sync-files-deployment-guide.md).</li></ul> |
 | ![Шаг 4](media/storage-sync-files-offline-data-transfer/bullet_4.png) | [Добавьте каталог своего активного сервера в качестве конечной точки сервера](storage-sync-files-deployment-guide.md#create-a-server-endpoint). В этом процессе укажите, что вы переместили файлы в Azure и ссылаетесь на промежуточные общие папки. При необходимости можно включить или отключить распределение по уровням облака. При создании конечной точки сервера на активном сервере используйте ссылку на промежуточный ресурс. В колонке **Добавление конечной точки сервера** в разделе **автономный передача данных**выберите **включено**, а затем выберите промежуточный ресурс, который должен находиться в той же учетной записи хранения, что и облачная конечная точка. Здесь список доступных общих папок фильтруется по учетной записи хранения и общим папкам, которые еще не синхронизированы. На снимке экрана ниже приведена таблица, в которой показано, как ссылаться на общую папку Датабокс во время создания конечной точки сервера в портал Azure. |
@@ -96,6 +96,6 @@ ms.locfileid: "87827900"
 > [!WARNING]
 > **Выполните процесс заполнения файлов в промежуточном общем ресурсе, а не в окончательной**синхронизация файлов Azure подключенной общей папке. В противном случае могут возникать конфликты файлов (обе версии файлов будут сохранены), а также файлы, удаленные на активном сервере, если они по-прежнему существуют в старом, заполненном наборе файлов. Кроме того, изменения в папках будут объединены друг с другом, что затрудняет разделение пространства имен после такой ошибки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Планирование развертывания службы синхронизации файлов Azure](storage-sync-files-planning.md)
 - [Как развернуть службу синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md)

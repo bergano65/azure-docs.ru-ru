@@ -1,6 +1,6 @@
 ---
 title: Конструктивные шаблоны таблиц в службе хранилища Azure | Документация Майкрософт
-description: Использование шаблонов для решений для службы таблиц Azure.
+description: Ознакомьтесь с шаблонами разработки, которые подходят для использования с решениями службы таблиц в Azure. Устраните проблемы и компромиссы, которые обсуждаются в других статьях.
 services: storage
 author: tamram
 ms.service: storage
@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/08/2019
 ms.author: tamram
 ms.subservice: tables
-ms.openlocfilehash: cbafe7c3e3b76ea13a8ca7a82b2968662b43685a
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 32904044cf6dcecf19b1a78eb4236dc02555bb86
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86081236"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88034203"
 ---
 # <a name="table-design-patterns"></a>Шаблоны для разработки таблиц
 В этой статье приводится описание некоторых шаблонов, которые подходят для использования с решениями для службы таблиц. Кроме того, вы увидите практическое решение ряда проблем и сможете выбрать компромиссный вариант из предлагаемых в других статьях о разработке для хранилища таблиц. На следующей схеме показаны связи между различными шаблонами.  
@@ -1124,7 +1124,7 @@ private static async Task SimpleEmployeeUpsertAsync(
 
 Клиентское приложение может вызывать несколько подобных асинхронных методов, а каждый вызов метода будет выполняться в отдельном потоке.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Моделирование отношений](table-storage-design-modeling.md)
 - [Разработка для запросов](table-storage-design-for-query.md)

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/26/2020
+ms.date: 08/07/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15e3c5ba72ff7b97e03cd7aa2b68eeffb2aa7882
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: b7a4693dabc62ec03897ccc46398bdff77118fe4
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87283016"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88032090"
 ---
 # <a name="conditional-access-block-legacy-authentication"></a>Условный доступ: Блокировка устаревших методов проверки подлинности
 
@@ -36,8 +36,8 @@ ms.locfileid: "87283016"
    1. Нажмите кнопку **Готово**.
 1. В разделе **Облачные приложения или действия** выберите **Все облачные приложения**.
    1. Нажмите кнопку **Готово**.
-1. В разделе **условия**  >  **клиентские приложения (Предварительная версия)** в разделе **выберите клиентские приложения, к которым будет применяться эта политика**:
-   1. Установите только флажки **Мобильные приложения и настольные клиенты** > **Другие клиенты**.
+1. В разделе **условия**  >  **клиентские приложения**задайте для параметра **настроить** значение **Да**.
+   1. Проверьте только списки **клиентов Exchange ActiveSync** и **других клиентов**.
    1. Нажмите кнопку **Готово**.
 1. В разделе **Управление доступом** > **Предоставить разрешение** выберите **Блокировать доступ**.
    1. Щелкните **Выбрать**.

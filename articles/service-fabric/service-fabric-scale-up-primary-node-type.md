@@ -4,12 +4,12 @@ description: Узнайте, как масштабировать кластер 
 ms.topic: article
 ms.date: 08/06/2020
 ms.author: pepogors
-ms.openlocfilehash: 01f6c90f9f7d7679f5b108138e2d2318eb6b9e18
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 5cabe7e377c29812252074336d7c5e9c9d3ba259
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88010865"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88031987"
 ---
 # <a name="scale-up-a-service-fabric-cluster-primary-node-type"></a>Масштабирование типа первичного узла кластера Service Fabric
 В этой статье описывается, как масштабировать тип первичного узла кластера Service Fabric путем добавления дополнительного типа узла в кластер. Кластер Service Fabric — это подключенный к сети набор виртуальных машин или физических компьютеров, в котором вы развертываете микрослужбы и управляете ими. Компьютер или виртуальная машина, которая входит в состав кластера. Масштабируемые наборы виртуальных машин относятся к вычислительным ресурсам Azure. Их можно использовать для развертывания коллекции виртуальных машин и управления ею как набором. Каждый тип узла, определенный в кластере Azure, [настроен как отдельный масштабируемый набор](service-fabric-cluster-nodetypes.md). Затем каждым типом узла можно управлять отдельно.
@@ -62,9 +62,6 @@ New-AzResourceGroupDeployment `
 ### <a name="add-a-new-primary-node-type-to-the-cluster"></a>Добавление нового типа первичного узла в кластер
 > [!Note]
 > Ресурсы, созданные в следующих шагах, станут новым типом первичного узла в кластере после завершения операции масштабирования. Убедитесь, что используются уникальные имена из начальной подсети, общедоступного IP-адреса, Load Balancer, масштабируемого набора виртуальных машин и типа узла. 
-
-> [!Note]
-> Если вы уже используете общедоступный IP-адрес SKU уровня "Стандартный" и SKU "Стандартный", вам может не потребоваться создавать новые сетевые ресурсы. 
 
 Чтобы найти шаблон, выполните все приведенные ниже действия. [Service Fabric — новый кластер типов узлов](https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/Primary-NodeType-Scaling-Sample/AzureDeploy-2.json). Следующие шаги содержат фрагменты частичного ресурса, которые выделяют изменения в новых ресурсах.  
 
@@ -162,7 +159,40 @@ New-AzResourceGroupDeployment `
 ### <a name="remove-the-existing-node-type"></a>Удалить существующий тип узла 
 После завершения развертывания ресурсов можно приступить к отключению узлов в исходном типе первичного узла. После отключения узлов системные службы будут перенесены на новый тип первичного узла, который был развернут на предыдущем шаге.
 
-1. Отключите узлы в типе узла 0. 
+1. Задайте для свойства "Тип первичного узла" в ресурсе кластера Service Fabric значение false. 
+```json
+{
+    "name": "[variables('vmNodeType0Name')]",
+    "applicationPorts": {
+        "endPort": "[variables('nt0applicationEndPort')]",
+        "startPort": "[variables('nt0applicationStartPort')]"
+    },
+    "clientConnectionEndpointPort": "[variables('nt0fabricTcpGatewayPort')]",
+    "durabilityLevel": "Bronze",
+    "ephemeralPorts": {
+        "endPort": "[variables('nt0ephemeralEndPort')]",
+        "startPort": "[variables('nt0ephemeralStartPort')]"
+    },
+    "httpGatewayEndpointPort": "[variables('nt0fabricHttpGatewayPort')]",
+    "isPrimary": false,
+    "reverseProxyEndpointPort": "[variables('nt0reverseProxyEndpointPort')]",
+    "vmInstanceCount": "[parameters('nt0InstanceCount')]"
+}
+```
+2. Разверните шаблон с обновленным свойством во всем исходном типе узла. Шаблон с основным флагом, установленным в значение false на исходном типе узла, можно найти здесь: [Service Fabric-PRIMARY node Type false](https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/Primary-NodeType-Scaling-Sample/AzureDeploy-3.json).
+
+```powershell
+# deploy the updated template files to the existing resource group
+$templateFilePath = "C:\AzureDeploy-3.json"
+$parameterFilePath = "C:\AzureDeploy.Parameters.json"
+
+New-AzResourceGroupDeployment `
+    -ResourceGroupName $resourceGroupName `
+    -TemplateFile $templateFilePath `
+    -TemplateParameterFile $parameterFilePath `
+```
+
+3. Отключите узлы в типе узла 0. 
 ```powershell
 Connect-ServiceFabricCluster -ConnectionEndpoint $ClusterConnectionEndpoint `
     -KeepAliveIntervalInSec 10 `
@@ -196,7 +226,7 @@ foreach($node in $nodes)
 > [!Note]
 > Выполнение этого шага может занять некоторое время. 
 
-2. Останавливает данные на узле типа 0. 
+4. Останавливает данные на узле типа 0. 
 ```powershell
 foreach($node in $nodes)
 {
@@ -208,62 +238,18 @@ foreach($node in $nodes)
   }
 }
 ```
-3. Освобождение узлов в исходном масштабируемом наборе виртуальных машин 
+5. Освобождение узлов в исходном масштабируемом наборе виртуальных машин 
 ```powershell
 $scaleSetName="nt1vm"
 $scaleSetResourceType="Microsoft.Compute/virtualMachineScaleSets"
 
 Remove-AzResource -ResourceName $scaleSetName -ResourceType $scaleSetResourceType -ResourceGroupName $resourceGroupName -Force
 ```
+> [!Note]
+> Шаги 6 и 7 необязательны, если вы уже используете общедоступный IP-адрес SKU уровня "Стандартный" и балансировщик нагрузки "Стандартный". В этом случае в одной подсистеме балансировки нагрузки может быть несколько масштабируемых наборов виртуальных машин или типов узлов. 
 
-4. Удаление состояния узла из типа узла 0.
-```powershell
-foreach($node in $nodes)
-{
-  if ($node.NodeType -eq $nodeType)
-  {
-    $node.NodeName
+6. Теперь можно удалить исходный IP-адрес и Load Balancer ресурсы. На этом шаге будет также обновлен DNS-имя. 
 
-    Remove-ServiceFabricNodeState -NodeName $node.NodeName -Force
-  }
-}
-```
-5. Задайте для свойства "Тип первичного узла" в ресурсе кластера Service Fabric значение false. 
-
-```json
-{
-    "name": "[variables('vmNodeType0Name')]",
-    "applicationPorts": {
-        "endPort": "[variables('nt0applicationEndPort')]",
-        "startPort": "[variables('nt0applicationStartPort')]"
-    },
-    "clientConnectionEndpointPort": "[variables('nt0fabricTcpGatewayPort')]",
-    "durabilityLevel": "Bronze",
-    "ephemeralPorts": {
-        "endPort": "[variables('nt0ephemeralEndPort')]",
-        "startPort": "[variables('nt0ephemeralStartPort')]"
-    },
-    "httpGatewayEndpointPort": "[variables('nt0fabricHttpGatewayPort')]",
-    "isPrimary": false,
-    "reverseProxyEndpointPort": "[variables('nt0reverseProxyEndpointPort')]",
-    "vmInstanceCount": "[parameters('nt0InstanceCount')]"
-}
-```
-
-5. Разверните шаблон с обновленным свойством во всем исходном типе узла. Шаблон с основным флагом, установленным в значение false на исходном типе узла, можно найти здесь: [Service Fabric-PRIMARY node Type false](https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/Primary-NodeType-Scaling-Sample/AzureDeploy-3.json).
-
-```powershell
-# deploy the updated template files to the existing resource group
-$templateFilePath = "C:\AzureDeploy-3.json"
-$parameterFilePath = "C:\AzureDeploy.Parameters.json"
-
-New-AzResourceGroupDeployment `
-    -ResourceGroupName $resourceGroupName `
-    -TemplateFile $templateFilePath `
-    -TemplateParameterFile $parameterFilePath `
-```
-
-7. Теперь можно удалить исходный IP-адрес и Load Balancer ресурсы. На этом шаге будет также обновлен DNS-имя. 
 ```powershell
 $lbname="LB-cluster-name-nt1vm"
 $lbResourceType="Microsoft.Network/loadBalancers"
@@ -283,11 +269,24 @@ $PublicIP.DnsSettings.DomainNameLabel = $primaryDNSName
 $PublicIP.DnsSettings.Fqdn = $primaryDNSFqdn
 Set-AzPublicIpAddress -PublicIpAddress $PublicIP
 ``` 
-6. Обновите конечную точку управления в кластере, чтобы она ссылалась на новый IP-адрес. 
+
+7. Обновите конечную точку управления в кластере, чтобы она ссылалась на новый IP-адрес. 
 ```json
   "managementEndpoint": "[concat('https://',reference(concat(variables('lbIPName'),'-',variables('vmNodeType1Name'))).dnsSettings.fqdn,':',variables('nt0fabricHttpGatewayPort'))]",
 ```
-7. Удалите ссылку на исходный тип узла из ресурса Service Fabric в шаблоне ARM. 
+8. Удаление состояния узла из типа узла 0.
+```powershell
+foreach($node in $nodes)
+{
+  if ($node.NodeType -eq $nodeType)
+  {
+    $node.NodeName
+
+    Remove-ServiceFabricNodeState -NodeName $node.NodeName -Force
+  }
+}
+```
+9. Удалите ссылку на исходный тип узла из ресурса Service Fabric в шаблоне ARM. 
 ```json
 "name": "[variables('vmNodeType0Name')]",
 "applicationPorts": {
@@ -338,13 +337,10 @@ Set-AzPublicIpAddress -PublicIpAddress $PublicIP
  } 
 }
 ```
+10. Удалите все другие ресурсы, связанные с исходным типом узла, из шаблона ARM. См. раздел [Service Fabric — новый кластер типов узлов](https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/Primary-NodeType-Scaling-Sample/AzureDeploy-4.json) для шаблона со всеми удаленными исходными ресурсами.
 
-8. Удалите все другие ресурсы, связанные с исходным типом узла, из шаблона ARM. См. раздел [Service Fabric — новый кластер типов узлов](https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/Primary-NodeType-Scaling-Sample/AzureDeploy-4.json) для шаблона со всеми удаленными исходными ресурсами.
-
-9. Разверните измененный шаблон Azure Resource Manager. * * Этот шаг займет некоторое время, обычно не более двух часов. Это обновление изменит параметры на Инфраструктуресервице, поэтому требуется перезагрузка узла. В этом случае Форцерестарт игнорируется. Параметр upgradeReplicaSetCheckTimeout указывает максимальное время, которое Service Fabric ожидает, когда Секция находится в надежном состоянии, если она еще не находится в надежном состоянии. После проверки безопасности для всех секций на узле Service Fabric переходит к обновлению на этом узле. Значение параметра upgradeTimeout может быть сокращено до 6 часов, но для максимальной безопасности следует использовать 12 часов.
-Затем проверьте следующее:
-
-* Service Fabric ресурс на портале — готово.
+11. Разверните измененный шаблон Azure Resource Manager. * * Этот шаг займет некоторое время, обычно не более двух часов. Это обновление изменит параметры на Инфраструктуресервице, поэтому требуется перезагрузка узла. В этом случае Форцерестарт игнорируется. Параметр upgradeReplicaSetCheckTimeout указывает максимальное время, которое Service Fabric ожидает, когда Секция находится в надежном состоянии, если она еще не находится в надежном состоянии. После проверки безопасности для всех секций на узле Service Fabric переходит к обновлению на этом узле. Значение параметра upgradeTimeout может быть сокращено до 6 часов, но для максимальной безопасности следует использовать 12 часов.
+Затем убедитесь, что ресурс Service Fabric на портале отображается как готовый. 
 
 ```powershell
 # deploy the updated template files to the existing resource group
