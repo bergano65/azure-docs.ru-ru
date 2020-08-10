@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.author: memildin
-ms.openlocfilehash: e74dac779fc1eafaf33ffbc63bf997cf26b64954
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: d049538653ea345935d40bd965afd7d2453b2aa2
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836808"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88041992"
 ---
 # <a name="threat-protection-in-azure-security-center"></a>Защита от угроз с помощью Центра безопасности Azure
 
@@ -114,12 +114,13 @@ ms.locfileid: "87836808"
 
 ### <a name="availability"></a>Доступность
 
-- Состояние выпуска: **Общая доступность**
-- Обязательные роли: **администратор безопасности** может отклонить предупреждения. **Читатель сведений о безопасности** может просматривать результаты.
-- Облако.<br>
-    ✔ коммерческие облака;<br>
-    ✘ US Gov<br>
-    ✘ Китая gov, другие gov
+|Аспект|Сведения|
+|----|:----|
+|Состояние выпуска:|Общедоступная версия|
+|Цены|Уровень служб "Стандартный"|
+|Необходимые роли и разрешения:|**Администратор безопасности** может отклонить предупреждения.<br>**Читатель сведений о безопасности** может просматривать результаты.|
+|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) National/независимых (US Gov, Китай gov, другое gov)|
+|||
 
 [!INCLUDE [AKS in ASC threat protection](../../includes/security-center-azure-kubernetes-threat-protection.md)]
 
@@ -150,14 +151,13 @@ ms.locfileid: "87836808"
 
 ### <a name="availability"></a>Доступность
 
-- Состояние выпуска:
-    - [Хранилище BLOB-объектов](https://azure.microsoft.com/services/storage/blobs/) (общая доступность)
-    - [Файлы Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) (Предварительная версия)
-    - [Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction) (Предварительная версия)
-- Облако.<br>
-    ✔ коммерческие облака;<br>
-    ✔ US Gov<br>
-    ✘ Китая gov, другие gov
+|Аспект|Сведения|
+|----|:----|
+|Состояние выпуска:|[Хранилище BLOB-объектов](https://azure.microsoft.com/services/storage/blobs/) (общая доступность)<br>[Файлы Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) (Предварительная версия)<br>[Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction) (Предварительная версия)|
+|Цены|Уровень служб "Стандартный"|
+|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) US Gov<br>![Нет](./media/icons/no-icon.png) Gov Китая, другое gov|
+|||
+
 
 ### <a name="whats-protected"></a>Что защищено?
 

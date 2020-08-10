@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 03/13/2020
 ms.author: memildin
-ms.openlocfilehash: 7b0fbb7c4f680f9d732a63fff7b0b317c6cf1511
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 3bfaa9f2961dca2b8b717b1506d112943910485a
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86519703"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88042332"
 ---
 # <a name="export-security-alerts-and-recommendations"></a>Экспорт оповещений о безопасности и рекомендаций
 
@@ -31,12 +31,14 @@ ms.locfileid: "86519703"
 
 ## <a name="availability"></a>Доступность
 
-- Состояние выпуска: **Общедоступная версия**
-- Необходимые роли и разрешения:
-    - **Читатель** в подписке, содержащей конфигурацию экспорта
-    - **Роль администратора безопасности** для группы ресурсов (или **владельца**)
-    - Также должны иметь разрешения на запись для целевого ресурса.
-- Облака: ✔ коммерческие облака ✔ US Gov ✘ Китая gov, другие gov
+|Аспект|Сведения|
+|----|:----|
+|Состояние выпуска:|Общедоступная версия|
+|Цены|Уровень служб "Бесплатный"|
+|Необходимые роли и разрешения:|**Читатель** в подписке, содержащей конфигурацию экспорта<br>**Роль администратора безопасности** для группы ресурсов (или **владельца**)<br>Также должны иметь разрешения на запись для целевого ресурса.|
+|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) US Gov<br>![Нет](./media/icons/no-icon.png) Gov Китая, другое gov|
+|||
+
 
 
 ## <a name="setting-up-a-continuous-export"></a>Настройка непрерывного экспорта

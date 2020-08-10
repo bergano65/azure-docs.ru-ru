@@ -15,12 +15,12 @@ ms.topic: reference
 ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: aa9a930195908671cc0e772fd9643dcbce9dbb1c
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: 78a0cb6217d8c1d25f08801066a970d6bc94e1b0
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87562418"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88042111"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
@@ -31,6 +31,9 @@ ms.locfileid: "87562418"
 ### <a name="what-license-is-required-to-use-azure-ad-application-proxy"></a>Какая лицензия необходима для использования AD Application Proxy Azure?
 
 Чтобы использовать Azure AD Application Proxy, необходимо иметь лицензию Azure AD Premium P1 или P2. Дополнительные сведения о лицензировании см. в разделе [цены на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/)
+
+### <a name="what-happens-to-azure-ad-application-proxy-in-my-tenant-if-my-license-expires"></a>Что происходит с Azure AD Application Proxy в моем клиенте, если срок действия моей лицензии истек?
+Если срок действия лицензии истекает, прокси приложения будет автоматически отключен. Сведения о приложении будут сохранены в течение одного года.
 
 ### <a name="why-is-the-enable-application-proxy-button-grayed-out"></a>Почему кнопка "включить прокси приложения" неактивна?
 

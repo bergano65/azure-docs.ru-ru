@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 07/31/2020
 ms.author: cynthn
-ms.openlocfilehash: 39dbf7d9ad933dd47f0a566f02b5e276e4b615a3
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: 17ab7ee75e335d686bf308c4b15a53dc4e2e6b0e
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87514446"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88041754"
 ---
 # <a name="generate-and-store-ssh-keys-in-the-azure-portal"></a>Создание и хранение ключей SSH в портал Azure
 
@@ -22,17 +22,17 @@ ms.locfileid: "87514446"
 
 Если у вас есть ключи и вы хотите упростить их использование на портале, вы можете отправить их и сохранить в Azure для повторного использования.
 
-Более подробные сведения о создании и использовании ключей SSH с виртуальными машинами Linux см. в статье (использование ключей SSH для подключения к виртуальным машинам Linux) [./Линукс/СШ-Фром-Виндовс.МД].
+Более подробные сведения о создании и использовании ключей SSH с виртуальными машинами Linux см. [в статье Использование ключей SSH для подключения к виртуальным машинам Linux](./linux/ssh-from-windows.md).
 
 ## <a name="generate-new-keys"></a>Создание новых ключей
 
-1. Откройте [портал Azure] ( https://portal.azure.com .
+1. Откройте [портал Azure](https://portal.azure.com).
 
 1. В верхней части страницы введите *SSH* для поиска. В разделе **Marketplace*выберите **ключи SSH**.
 
 1. На странице **ключ SSH** выберите **создать**.
 
-:::image type="content" source="./media/ssh-keys/portal-sshkey.png" alt-text="Создание новой группы ресурсов и создание пары ключей SSH":::
+   :::image type="content" source="./media/ssh-keys/portal-sshkey.png" alt-text="Создание новой группы ресурсов и создание пары ключей SSH":::
 
 1. В **группе ресурсов** выберите **создать** , чтобы создать новую группу ресурсов для хранения ключей. Введите имя группы ресурсов и нажмите кнопку **ОК**.
 
@@ -48,7 +48,7 @@ ms.locfileid: "87514446"
 
 1. Затем вы получите всплывающее окно, выберите **скачать закрытый ключ и создать ресурс**. При этом ключ SSH будет скачан как PEM-файл.
 
-:::image type="content" source="./media/ssh-keys/download-key.png" alt-text="Скачивание закрытого ключа в виде PEM-файла":::
+   :::image type="content" source="./media/ssh-keys/download-key.png" alt-text="Скачивание закрытого ключа в виде PEM-файла":::
 
 1. После скачивания PEM-файла его можно переместить в другое место на компьютере, где его легко указать из клиента SSH.
 
@@ -66,15 +66,15 @@ ssh -i <path to the .pem file> username@<ipaddress of the VM>
 
 ## <a name="upload-an-ssh-key"></a>Отправка ключа SSH
 
-Вы также можете отправить открытый ключ SSH для хранения в Azure. Сведения о том, как создать пару ключей SSH, см. в статье [Использование ключей SSH для подключения к виртуальным машинам Linux ](./linux/ssh-from-windows.md).
+Вы также можете отправить открытый ключ SSH для хранения в Azure. Сведения о том, как создать пару ключей SSH, см. в статье [Использование ключей SSH для подключения к виртуальным машинам Linux](./linux/ssh-from-windows.md).
 
-1. Откройте [портал Azure] ( https://portal.azure.com .
+1. Откройте [портал Azure](https://portal.azure.com).
 
 1. В верхней части страницы введите *SSH* для поиска. В разделе **Marketplace*выберите **ключи SSH**.
 
 1. На странице **ключ SSH** выберите **создать**.
 
-:::image type="content" source="./media/ssh-keys/upload.png" alt-text="Отправка открытого ключа SSH для сохранения в Azure":::
+   :::image type="content" source="./media/ssh-keys/upload.png" alt-text="Отправка открытого ключа SSH для сохранения в Azure":::
 
 1. В **группе ресурсов** выберите **создать** , чтобы создать новую группу ресурсов для хранения ключей. Введите имя группы ресурсов и нажмите кнопку **ОК**.
 
@@ -92,4 +92,4 @@ ssh -i <path to the .pem file> username@<ipaddress of the VM>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об использовании ключей SSH с виртуальными машинами Azure см. в статье (использование ключей SSH для подключения к виртуальным машинам Linux) [./Линукс/СШ-Фром-Виндовс.МД].
+Дополнительные сведения об использовании ключей SSH с виртуальными машинами Azure см. в статье [Использование ключей SSH для подключения к виртуальным машинам Linux](./linux/ssh-from-windows.md).

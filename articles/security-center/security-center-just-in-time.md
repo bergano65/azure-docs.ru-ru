@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: a077e1dfd166051ad1cf16e42d11e8eeb61d2c91
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 611124a113a0cce3ab1fb8db5969a6ab6f5f6658
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87419858"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88041958"
 ---
 # <a name="secure-your-management-ports-with-just-in-time-access"></a>Защита портов управления с помощью JIT-доступа
 
@@ -31,21 +31,14 @@ ms.locfileid: "87419858"
 
 ## <a name="availability"></a>Доступность
 
-- Состояние выпуска: **Общая доступность**
-- Цены: **уровень "Стандартный**". Дополнительные [сведения о ценах](/azure/security-center/security-center-pricing).
-- Необходимые роли и разрешения:
-    - Роли **Reader** и **секуритиреадер** могут просматривать состояние JIT и параметры.
-    - Сведения о создании настраиваемых ролей, которые могут работать с JIT-компилятором, см. в разделе [какие разрешения необходимы для настройки и использования JIT?](just-in-time-explained.md#what-permissions-are-needed-to-configure-and-use-jit)
-    - Чтобы создать роль с минимальными привилегиями для пользователей, которым требуется запросить JIT-доступ к виртуальной машине, и не выполнять другие операции JIT, используйте [Скрипт Set-житлеастпривилежедроле](https://github.com/Azure/Azure-Security-Center/tree/master/Powershell%20scripts/JIT%20Custom%20Role) на страницах сообщества центра безопасности GitHub.
-- Поддерживаемые виртуальные машины: 
-    - ✔ Виртуальные машины, развернутые с помощью Azure Resource Manager.
-    - ✘ Виртуальные машины, развернутые с помощью классических моделей развертывания. Дополнительные [сведения об этих моделях развертывания](../azure-resource-manager/management/deployment-models.md).
-    - ✘ Виртуальные машины, защищенные брандмауэрами Azure, которыми управляет [Диспетчер брандмауэра Azure](https://docs.microsoft.com/azure/firewall-manager/overview).
-- Облако. 
-    - ✔ коммерческие облака;
-    - ✔ национальные (US Gov, China Gov, другие правительственные облака).
-
-
+|Аспект|Сведения|
+|----|:----|
+|Состояние выпуска:|Общедоступная версия|
+|Цены|Уровень служб "Стандартный"|
+|Поддерживаемые виртуальные машины:|![Да ](./media/icons/yes-icon.png) , виртуальные машины развернуты с помощью Azure Resource Manager.<br>![Нет ](./media/icons/yes-icon.png) виртуальных машин, развернутых с помощью классических моделей развертывания. Дополнительные [сведения об этих моделях развертывания](../azure-resource-manager/management/deployment-models.md).<br>![Нет ](./media/icons/yes-icon.png) виртуальных машин, защищенных брандмауэрами Azure, которыми управляет [Диспетчер брандмауэра Azure](https://docs.microsoft.com/azure/firewall-manager/overview)|
+|Необходимые роли и разрешения:|Роли **Reader** и **секуритиреадер** могут просматривать состояние JIT и параметры.<br>Сведения о создании настраиваемых ролей, которые могут работать с JIT-компилятором, см. в разделе [какие разрешения необходимы для настройки и использования JIT?](just-in-time-explained.md#what-permissions-are-needed-to-configure-and-use-jit).<br>Чтобы создать роль с минимальными привилегиями для пользователей, которым требуется запросить JIT-доступ к виртуальной машине, и не выполнять другие операции JIT, используйте [Скрипт Set-житлеастпривилежедроле](https://github.com/Azure/Azure-Security-Center/tree/master/Powershell%20scripts/JIT%20Custom%20Role) на страницах сообщества центра безопасности GitHub.|
+|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) National/независимых (US Gov, Китай gov, другое gov)|
+|||
 
 
 ## <a name="enable-jit-vm-access"></a>Включить JIT-доступ к виртуальной машине<a name="jit-configure"></a>

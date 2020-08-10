@@ -4,12 +4,12 @@ description: Научитесь настраивать функцию прове
 ms.topic: article
 ms.date: 07/08/2020
 ms.custom: seodec18
-ms.openlocfilehash: 747729b7cbb3dcce72eb36704b5965e8427b59e1
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 32b7db234cd91aaf9fa5fcfa9b35679d32561474
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424262"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88042621"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -468,6 +468,67 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
     }
 }
 ```
+
+## <a name="pin-your-app-to-a-specific-authentication-runtime-version"></a>Закрепление приложения для конкретной версии среды выполнения проверки подлинности
+
+При включении проверки подлинности и авторизации по промежуточного слоя платформы внедряется в конвейер HTTP-запросов, как описано в [обзоре функций](overview-authentication-authorization.md#how-it-works). Это по промежуточного слоя платформы периодически обновляется новыми функциями и улучшениями в рамках регулярных обновлений платформы. По умолчанию приложение веб-приложения или функции будет выполняться в последней версии этого по промежуточного слоя платформы. Эти автоматические обновления всегда имеют обратную совместимость. Однако в редких случаях, когда это автоматическое обновление вводит ошибку во время выполнения для веб-приложения или функции, можно временно вернуться к предыдущей версии по промежуточного слоя. В этой статье объясняется, как временно закрепить приложение для определенной версии по промежуточного слоя проверки подлинности.
+
+### <a name="automatic-and-manual-version-updates"></a>Обновление версий автоматически и вручную 
+
+Вы можете закрепить приложение на конкретной версии по промежуточного слоя платформы, задав `runtimeVersion` параметр для приложения. Приложение всегда работает в последней версии, если вы не решили явно закрепить его к определенной версии. В каждый момент времени будет поддерживаться несколько версий. Если вы закрепляетесь на недопустимую версию, которая больше не поддерживается, приложение будет использовать последнюю версию. Чтобы всегда запускать последнюю версию, задайте значение `runtimeVersion` ~ 1. 
+
+### <a name="view-and-update-the-current-runtime-version"></a>Просмотр и обновление текущей версии среды выполнения
+
+Вы можете изменить версию среды выполнения, используемую приложением. Новая версия среды выполнения должна вступить в силу после перезапуска приложения. 
+
+#### <a name="view-the-current-runtime-version"></a>Просмотр текущей версии среды выполнения
+
+Текущую версию промежуточного слоя проверки подлинности платформы можно просмотреть либо с помощью Azure CLI, либо с помощью одной из конечных точек HTTP built0 версии в приложении.
+
+##### <a name="from-the-azure-cli"></a>Использование Azure CLI
+
+С помощью Azure CLI просмотрите текущую версию по промежуточного слоя с помощью команды [AZ webapp auth Показать](https://docs.microsoft.com/cli/azure/webapp/auth?view=azure-cli-latest#az-webapp-auth-show) .
+
+```azurecli-interactive
+az webapp auth show --name <my_app_name> \
+--resource-group <my_resource_group>
+```
+
+В этом коде замените `<my_app_name>` именем своего приложения. Также замените `<my_resource_group>` именем группы ресурсов для приложения.
+
+Вы увидите `runtimeVersion` поле в выходных данных CLI. Он будет похож на следующий пример выходных данных, который был усечен для ясности: 
+```output
+{
+  "additionalLoginParams": null,
+  "allowedAudiences": null,
+    ...
+  "runtimeVersion": "1.3.2",
+    ...
+}
+```
+
+##### <a name="from-the-version-endpoint"></a>Из конечной точки версии
+
+Также можно нажать конечную точку/.АУС/версион в приложении, чтобы просмотреть текущую версию по промежуточного слоя, в которой выполняется приложение. Он будет выглядеть примерно следующим образом:
+```output
+{
+"version": "1.3.2"
+}
+```
+
+#### <a name="update-the-current-runtime-version"></a>Обновление текущей версии среды выполнения
+
+С помощью Azure CLI можно обновить `runtimeVersion` параметр в приложении с помощью команды [AZ webapp auth Update](https://docs.microsoft.com/cli/azure/webapp/auth?view=azure-cli-latest#az-webapp-auth-update) .
+
+```azurecli-interactive
+az webapp auth update --name <my_app_name> \
+--resource-group <my_resource_group> \
+--runtime-version <version>
+```
+
+Замените `<my_app_name>` именем своего приложения. Также замените `<my_resource_group>` именем группы ресурсов для приложения. Кроме того, замените на `<version>` допустимую версию среды выполнения 1. x или `~1` для последней версии. Заметки о выпуске можно найти в разных версиях среды выполнения [здесь] ( https://github.com/Azure/app-service-announcements) чтобы определить версию для закрепления.
+
+Эту команду можно выполнить в [Azure Cloud Shell](../cloud-shell/overview.md), выбрав **Попробовать** в предыдущем примере кода. Также можно использовать [Azure CLI локально](https://docs.microsoft.com/cli/azure/install-azure-cli) для выполнения этой команды после выполнения команды [az login](https://docs.microsoft.com/cli/azure/reference-index#az-login) для входа.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

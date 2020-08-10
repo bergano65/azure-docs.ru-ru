@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 9/24/2019
 ms.author: rohink
-ms.openlocfilehash: 9d1854b459e799d5cbb401de9ac717dd7d0fde1d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9da94f80f9a9c1b3cba7b8e3ac4fef7e717918c9
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "71961195"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88042757"
 ---
 # <a name="what-is-the-autoregistration-feature-of-azure-dns-private-zones"></a>Что такое функция авторегистрации в Azure DNS частных зонах
 
@@ -29,6 +29,7 @@ ms.locfileid: "71961195"
 
 * Функция авторегистрации работает только для виртуальных машин. Для всех других ресурсов, таких как внутренние подсистемы балансировки нагрузки и т. д., можно создавать записи DNS вручную в частной зоне DNS, связанной с виртуальной сетью.
 * Записи DNS создаются автоматически только для основной сетевой карты виртуальной машины. Если на виртуальных машинах имеется несколько сетевых адаптеров, можно вручную создать записи DNS для других сетевых интерфейсов.
+* Записи DNS создаются автоматически, только если основной сетевой адаптер виртуальной машины использует DHCP. Если настроены статические IP-адреса (например, для использования [нескольких IP-адресов в Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-multiple-ip-addresses-portal#os-config)), при авторегистрации не создаются записи для этой виртуальной машины.
 * Авторегистрация для IPv6 (записи AAAA) не поддерживается.
 
 ## <a name="next-steps"></a>Дальнейшие действия

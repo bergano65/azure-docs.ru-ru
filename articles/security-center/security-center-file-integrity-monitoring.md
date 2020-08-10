@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/13/2019
 ms.author: memildin
-ms.openlocfilehash: f3006bdd0cb90c22123c8db103a12ef3c0bee75a
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 68d3646b4ebc3fc5dd5943186afdb75307dfd5ed
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86519343"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88042672"
 ---
 # <a name="file-integrity-monitoring-in-azure-security-center"></a>Мониторинг целостности файлов в центре безопасности Azure
 В этом руководстве объясняется, как настроить мониторинг целостности файлов в центре безопасности Azure.
@@ -26,12 +26,16 @@ ms.locfileid: "86519343"
 
 ## <a name="availability"></a>Доступность
 
-- Состояние выпуска: **Общедоступная версия**
-- Обязательные роли. **Владелец рабочей области** может включать и отключать FIM (Дополнительные сведения см. в статье [роли Azure для log Analytics](https://docs.microsoft.com/services-hub/health/azure-roles#azure-roles)). **Читатель** может просматривать результаты.
-- Облако.
-    - ✔ коммерческие облака;
-    - ✔ US Gov Cloud
-    - ✘ Китай gov/other gov
+|Аспект|Сведения|
+|----|:----|
+|Состояние выпуска:|Общедоступная версия|
+|Цены|Уровень служб "Стандартный"|
+|Необходимые роли и разрешения:|**Владелец рабочей области** может включать и отключать FIM (Дополнительные сведения см. в статье [роли Azure для log Analytics](https://docs.microsoft.com/services-hub/health/azure-roles#azure-roles)).<br>**Читатель** может просматривать результаты.|
+|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) US Gov<br>![Нет](./media/icons/no-icon.png) Gov Китая, другое gov|
+|||
+
+
+
 
 
 ## <a name="what-is-fim-in-security-center"></a>Что такое FIM в центре безопасности?
@@ -172,7 +176,7 @@ FIM использует решение "Отслеживание изменен
 
 1. Вернитесь к **панели мониторинга целостности файлов** и выберите **Параметры**.
 
-   ![Параметры][11]
+   !["Настройки"][11]
 
    Откроется страница **Конфигурация рабочей области** с тремя вкладками: **Реестр Windows**, **Файлы Windows** и **Файлы Linux**. На каждой вкладке перечислены сущности, которые можно изменять для этой категории. Для каждой сущности центр безопасности предоставляет информацию о том, включена ли для нее функция FIM (true или false).  Редактирование сущности позволяет включить или отключить для нее функцию FIM.
 

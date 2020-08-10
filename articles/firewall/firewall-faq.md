@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 07/30/2020
+ms.date: 08/10/2020
 ms.author: victorh
-ms.openlocfilehash: 3f2b844163abce0946dc5df29c3121691e83035b
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.openlocfilehash: 1ba8977272817d41334ccf0d9ad01d4d751bfb17
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87439225"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88041703"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -136,6 +136,8 @@ Set-AzFirewall -AzureFirewall $azfw
 Нет. Правила NAT позволяют неявно добавить соответствующее правило сети, чтобы разрешить преобразованный трафик. Чтобы переопределить эту реакцию, явно добавьте коллекцию правил сети с запрещающими правилами, которые соответствуют преобразованному трафику. Дополнительные сведения о логике обработки правил Брандмауэра Azure см. в [соответствующей статье](rule-processing.md).
 
 ## <a name="how-do-wildcards-work-in-an-application-rule-target-fqdn"></a>Как в целевом FQDN правила приложения работают подстановочные знаки?
+
+В настоящее время подстановочные знаки можно использовать только в левой части полного доменного имени. Например, ***. contoso.com** и ***contoso.com**.
 
 Если вы настраиваете * **.contoso.com**, он разрешает *любое значение*.contoso.com, но не contoso.com (вершина домена). Если вы хотите разрешить вершину домена, вы должны явным образом настроить его как целевое FQDN.
 

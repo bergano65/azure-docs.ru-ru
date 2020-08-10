@@ -7,16 +7,18 @@ ms.author: baanders
 ms.date: 3/16/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: d0bca2ad14216873836c751dc002ea915baa3a66
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: ca500401a6bff8a00dd9c51eecb29aa93fdbc82b
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87800489"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88042655"
 ---
 # <a name="integrate-azure-digital-twins-with-other-services"></a>Интеграция Azure Digital двойников с другими службами
 
-Azure Digital двойников обычно используется вместе с другими службами. С помощью [**маршрутов событий**](concepts-route-events.md)Azure Digital двойников получает данные из вышестоящей службы, например [центра Интернета вещей](../iot-hub/about-iot-hub.md), который используется для доставки телеметрии и уведомлений. Azure Digital двойников также может маршрутизировать данные в подчиненные службы для хранения, интеграции рабочих процессов, аналитики и других целей. 
+Azure Digital двойников обычно используется вместе с другими службами. С помощью [**маршрутов событий**](concepts-route-events.md)Azure Digital двойников получает данные из вышестоящей службы, например [центра Интернета вещей](../iot-hub/about-iot-hub.md), который используется для доставки телеметрии и уведомлений. 
+
+Azure Digital двойников также может перенаправлять данные в подчиненные службы, например Azure Maps ([*практические советы: использование Azure Digital двойников для обновления карт Azure Maps*](how-to-integrate-maps.md)) и службы "аналитика временных рядов" ([*как интегрироваться со службой "аналитика временных рядов*](how-to-integrate-time-series-insights.md)"), для хранения, интеграции рабочих процессов, аналитики и т. д. 
 
 ## <a name="data-ingress"></a>Прием данных
 

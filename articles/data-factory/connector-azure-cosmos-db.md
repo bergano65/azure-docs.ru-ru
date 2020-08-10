@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/11/2019
-ms.openlocfilehash: f0aa70333454b327a0ca76beef2985062ce56715
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: be6dbb74883f12498c5c011e35fa955509ff627c
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81415383"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88042774"
 ---
 # <a name="copy-and-transform-data-in-azure-cosmos-db-sql-api-by-using-azure-data-factory"></a>Копирование и преобразование данных в Azure Cosmos DB (API SQL) с помощью фабрики данных Azure
 
@@ -157,7 +157,7 @@ ms.locfileid: "81415383"
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство **Type** источника действия копирования должно иметь значение **космосдбсклаписаурце**. |Да |
-| query |Укажите запрос Azure Cosmos DB для чтения данных.<br/><br/>Пример.<br /> `SELECT c.BusinessEntityID, c.Name.First AS FirstName, c.Name.Middle AS MiddleName, c.Name.Last AS LastName, c.Suffix, c.EmailPromotion FROM c WHERE c.ModifiedDate > \"2009-01-01T00:00:00\"` |Нет <br/><br/>Если не указано, то выполняется инструкция SQL `select <columns defined in structure> from mycollection`. |
+| query |Укажите запрос Azure Cosmos DB для чтения данных.<br/><br/>Пример<br /> `SELECT c.BusinessEntityID, c.Name.First AS FirstName, c.Name.Middle AS MiddleName, c.Name.Last AS LastName, c.Suffix, c.EmailPromotion FROM c WHERE c.ModifiedDate > \"2009-01-01T00:00:00\"` |Нет <br/><br/>Если не указано, то выполняется инструкция SQL `select <columns defined in structure> from mycollection`. |
 | преферредрегионс | Предпочтительный список регионов для подключения при получении данных из Cosmos DB. | Нет |
 | pageSize | Число документов на страницу результата запроса. Значение по умолчанию — "-1", что означает использование динамического размера страницы на стороне службы до 1000. | Нет |
 
@@ -204,7 +204,7 @@ ms.locfileid: "81415383"
 
 Чтобы скопировать данные в Azure Cosmos DB (SQL API), в действии копирования задайте для типа **sink** значение **DocumentDbCollectionSink**. 
 
-В разделе **source** действия копирования поддерживаются следующие свойства:
+В разделе **sink** действия копирования поддерживаются следующие свойства:
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
@@ -297,7 +297,7 @@ ms.locfileid: "81415383"
 
 **Размер пакета.** Определяет, сколько строк записывается в каждую группу. Более крупные размеры пакетов улучшают сжатие и оптимизацию памяти, но при кэшировании данных возникает риск нехватки памяти.
 
-**Ключ секции:** Введите строку, представляющую ключ секции для коллекции. Пример: ```/movies/title```
+**Ключ секции:** Введите строку, представляющую ключ секции для коллекции. Например, ```/movies/title```.
 
 **Пропускная способность:** Задайте необязательное значение для числа RUs, которое вы хотите применить к коллекции CosmosDB для каждого выполнения этого потока данных. Минимум — 400.
 

@@ -6,12 +6,12 @@ manager: jureid
 ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: jureid
-ms.openlocfilehash: 7feb49266a10b7423121dc5362b0bd6bda4d0e08
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: aef9c6781c87ff4e84e46de711308319755e4630
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87824500"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88042077"
 ---
 # <a name="grant-access-to-create-azure-enterprise-subscriptions-preview"></a>Предоставление доступа к созданию подписок Azure Enterprise (предварительная версия)
 
@@ -80,7 +80,7 @@ ms.locfileid: "87824500"
 
     Используйте `principalName` свойство, чтобы указать учетную запись, доступ к которой необходимо предоставить ВЛАДЕЛЬЦУ RBAC. Скопируйте эту `ObjectId` учетную запись. Например, если вы хотите предоставить владельцу RBAC доступ к SignUpEngineering@contoso.com учетной записи регистрации, скопируйте его ```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx``` . Вставьте этот идентификатор объекта где-то, чтобы его можно было использовать на следующем шаге в качестве `enrollmentAccountObjectId` .
 
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
     Используйте [команду Get-EnrollmentAccount](https://aka.ms/EASubCreationPublicPreviewCLI), чтобы вывести список всех учетных записей регистрации, к которым у вас есть доступ. Выберите **попробовать** , чтобы открыть [Azure Cloud Shell](https://shell.azure.com/). Чтобы вставить код, щелкните правой кнопкой мыши окна оболочки и выберите команду **Вставить**.
 
@@ -164,7 +164,7 @@ ms.locfileid: "87824500"
     New-AzRoleAssignment -RoleDefinitionName Owner -ObjectId <userObjectId> -Scope /providers/Microsoft.Billing/enrollmentAccounts/<enrollmentAccountObjectId>
     ```
 
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli-2);
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli-2)
 
     Выполните следующую команду [AZ Role назначений Create](../../role-based-access-control/role-assignments-cli.md) , заменив на имя, ```<enrollmentAccountObjectId>``` `name` скопированное на первом шаге ( ```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx``` ). Замените на ```<userObjectId>``` идентификатор объекта, собранного на втором шаге.
 
@@ -180,7 +180,7 @@ ms.locfileid: "87824500"
 
 Для отслеживания подписок, создаваемых с помощью данного API, используйте [API журнала действий клиента](/rest/api/monitor/tenantactivitylogs). В настоящее время для отслеживания создания подписки невозможно использовать PowerShell, интерфейс командной строки или портал Azure.
 
-1. В качестве администратора клиента Azure AD [повысьте права доступа](../../role-based-access-control/elevate-access-global-admin.md), а затем назначьте роль читателя пользователю-аудитору для области `/providers/microsoft.insights/eventtypes/management`.
+1. В качестве администратора клиента Azure AD [повысьте права доступа](../../role-based-access-control/elevate-access-global-admin.md), а затем назначьте роль читателя пользователю-аудитору для области `/providers/microsoft.insights/eventtypes/management`. Этот доступ доступен в роли [читатель](../../role-based-access-control/built-in-roles.md#reader) , роли [участника мониторинга](../../role-based-access-control/built-in-roles.md#monitoring-contributor) или [пользовательской роли](../../role-based-access-control/custom-roles.md).
 1. В качестве пользователя-аудитора вызовите [API журнала действий клиента](/rest/api/monitor/tenantactivitylogs) для просмотра действий создания подписок. Пример
 
     ```

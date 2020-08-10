@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b887c91a289730c3d92efe753a2df162f36a047
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: f8dfeb8a38e07d94671691bb797d26a32973c910
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/10/2020
-ms.locfileid: "88032137"
+ms.locfileid: "88042485"
 ---
 # <a name="conditional-access-conditions"></a>Условный доступ. Условия
 
@@ -68,7 +68,7 @@ ms.locfileid: "88032137"
 > Поведение условия клиентских приложений было Обновлено в августе 2020. При наличии существующих политик условного доступа они останутся без изменений. Однако если щелкнуть существующую политику, переключатель Настройка удален и будут выбраны клиентские приложения, к которым применяется политика.
 
 > [!IMPORTANT]
-> Операции входа от устаревших клиентов проверки подлинности не поддерживают MFA и не передают сведения о состоянии устройства в Azure AD, поэтому они будут заблокированы элементами управления условным доступом, например, требуют использования MFA или соответствующих требованиям устройств. Если у вас есть учетные записи, которые должны использовать устаревшую проверку подлинности, исключите эти учетные записи из политики или настройте политику для применения только к современным клиентам проверки подлинности.
+> Операции входа от устаревших клиентов проверки подлинности не поддерживают MFA и не передают сведения о состоянии устройства в Azure AD, поэтому они будут заблокированы элементами управления условным доступом, например, требуют использования MFA или соответствующих требованиям устройств. Если у вас есть учетные записи, которые должны использовать устаревшую проверку подлинности, необходимо либо исключить эти учетные записи из политики, либо настроить политику на применение только к современным клиентам проверки подлинности.
 
 Переключатель **Configure (настроить** ), если задано значение **Да** , применяется к отмеченным элементам, если он имеет значение **нет** , применяется ко всем клиентским приложениям, включая современные и устаревшие клиенты проверки подлинности. Этот переключатель не отображается в политиках, созданных до 2020 августа.
 
@@ -104,7 +104,7 @@ ms.locfileid: "88032137"
 
 | Операционная система | Браузеры |
 | :-- | :-- |
-| быть под управлением ОС Windows 10; | Microsoft ребро, Internet Explorer, Chrome |
+| Windows 10 | Microsoft ребро, Internet Explorer, Chrome |
 | Windows 8, Windows 8.1 | Internet Explorer, Chrome |
 | Windows 7 | Internet Explorer, Chrome |
 | iOS | Microsoft ребро, Intune Managed Browser, Safari |
@@ -149,11 +149,11 @@ ms.locfileid: "88032137"
 | Клиентские приложения | Целевая служба | Платформа |
 | --- | --- | --- |
 | Приложение Dynamics CRM | Dynamics CRM | Windows 10, Windows 8.1, iOS и Android |
-| Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | быть под управлением ОС Windows 10; |
+| Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | Windows 10 |
 | MFA и политика расположения для приложений Политики на основе устройств не поддерживаются.| Все службы приложения "Мои приложения" | Android и iOS |
 | Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
 | Приложения Office 2016, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | Windows 8.1, Windows 7 |
-| Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | быть под управлением ОС Windows 10; |
+| Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | Windows 10 |
 | Office 2016 (только Word, Excel, PowerPoint, OneNote). | Office 365 SharePoint Online | MacOS |
 | Office 2019| Office 365 SharePoint Online | Windows 10, macOS |
 | Мобильные приложения Office | Office 365 SharePoint Online | Android, iOS |
