@@ -1,17 +1,17 @@
 ---
 title: Проверка данных о выставлении счетов по подписке Azure с помощью REST API
-description: Узнайте, как использовать интерфейсы REST API Azure для проверки сведений о выставлении счетов по подписке.
+description: Узнайте, как использовать интерфейсы REST API Azure для проверки сведений о выставлении счетов по подписке. Для настройки результатов вы можете использовать фильтры.
 author: lleonard-msft
 ms.service: cost-management-billing
 ms.topic: article
 ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: 7b80bd57906515ffeb0ff9e8ac52cf7178f5ccd8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ac5bbc1d93347654cea118ea9521d6074a9af7c8
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79202813"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87461839"
 ---
 # <a name="review-subscription-billing-using-rest-apis"></a>Проверка данных о выставлении счетов по подписке с помощью интерфейсов REST API
 

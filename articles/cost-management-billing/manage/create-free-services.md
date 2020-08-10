@@ -1,17 +1,17 @@
 ---
 title: Создание бесплатной службы в бесплатной учетной записи Azure
-description: Узнайте, как создать службы, включенные в бесплатную учетную запись Azure.
+description: Узнайте, как создать службы, включенные в бесплатную учетную запись Azure. Эти службы можно создать в любом регионе, где они предоставляются.
 author: amberbhargava
 ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: 1d2c4ed141aeff97f5987b0b23ff1e6201e53c6a
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 540988892a5f5f650a8594b74792e45d25ca9036
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77200886"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460955"
 ---
 # <a name="create-services-included-with-azure-free-account"></a>Создание служб, доступных в бесплатной учетной записи Azure
 

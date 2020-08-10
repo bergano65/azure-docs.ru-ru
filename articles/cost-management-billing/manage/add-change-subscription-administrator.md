@@ -8,12 +8,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: 6d16e663626a1b19271b7d37b39202a0a9b605b9
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: ddb40f470f9b951c786fdab529336af3eff38e54
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87126131"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87530016"
 ---
 # <a name="add-or-change-azure-subscription-administrators"></a>Добавление или изменение администраторов подписки Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "87126131"
 
 ## <a name="assign-a-subscription-administrator"></a>Назначение администратора подписки
 
-Чтобы предоставить пользователю права администратора подписки Azure, имеющийся администратор назначает ему роль [Владелец](../../role-based-access-control/built-in-roles.md#owner) (роль RBAC) в этой подписке. Роль "Владелец" предоставляет пользователю полный доступ ко всем ресурсам в подписке, включая право делегировать доступ другим пользователям. Этот процесс не отличается от любой процедуры назначения ролей.
+Чтобы предоставить пользователю права администратора подписки Azure, имеющийся администратор назначает ему роль [Владелец](../../role-based-access-control/built-in-roles.md#owner) (роль Azure) в этой подписке. Роль "Владелец" предоставляет пользователю полный доступ ко всем ресурсам в подписке, включая право делегировать доступ другим пользователям. Этот процесс не отличается от любой процедуры назначения ролей.
 
 Если вы не знаете, кто является администратором учетной записи для вашей подписки, следуйте инструкциям ниже, чтобы узнать это.
 

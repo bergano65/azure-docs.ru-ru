@@ -8,12 +8,12 @@ ms.service: cost-management-billing
 ms.topic: quickstart
 ms.date: 07/28/2020
 ms.custom: subject-armqs
-ms.openlocfilehash: 984f2d82e21344dd7e3bb8b7267e289832343e1b
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 70408a3ed6638ec76af113c24cc3c8190a44f55c
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87385791"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87445982"
 ---
 # <a name="quickstart-create-a-budget-with-an-arm-template"></a>Краткое руководство. Создание бюджета с помощью шаблона ARM
 
@@ -33,7 +33,7 @@ ms.locfileid: "87385791"
 
 Бюджеты поддерживаются для следующих областей и типов учетных записей Azure:
 
-- Области управления доступом на основе ролей в Azure.
+- Области управления доступом на основе ролей (Azure RBAC)
     - Группы управления
     - Подписка
 - Области Соглашения Enterprise

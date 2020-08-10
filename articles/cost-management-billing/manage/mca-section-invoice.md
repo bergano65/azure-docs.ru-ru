@@ -1,18 +1,18 @@
 ---
 title: Организация счета на основе ваших потребностей — Azure
-description: Узнайте, как организовать стоимость по счету.
+description: Узнайте, как упорядочить затраты в счете. Вы можете настроить учетную запись выставления счетов, создав профили выставления счетов и разделы счетов.
 author: amberbhargava
 tags: billing
 ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: c9cb1d7d1dcc6e7872b22d8c58fe44b9bce25f13
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 553263ebac3c64e27a7711b4407a7d4ba573998c
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77200750"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460037"
 ---
 # <a name="organize-costs-by-customizing-your-billing-account"></a>Упорядочивание расходов с помощью учетной записи выставления счетов
 
@@ -88,7 +88,7 @@ ms.locfileid: "77200750"
 
    [![Снимок экрана, показывающий страницу создания разделов счетов](./media/mca-section-invoice/mca-create-invoice-section.png)](./media/mca-section-invoice/mca-create-invoice-section-zoomed-in.png#lightbox)
 
-6. Нажмите кнопку **Создать**.
+6. Нажмите кнопку **создания**.
 
 ## <a name="create-a-new-billing-profile"></a>Создание нового профиля выставления счетов
 
@@ -123,7 +123,7 @@ ms.locfileid: "77200750"
     |адрес выставления счетов;   | Адрес для выставления счетов будет отображаться в счетах, созданных для профиля выставления счетов. |
     |Отправить счет по электронной почте   | Установите флажок "счет по электронной почте", чтобы получить счета для этого профиля выставления счетов по электронной почте. Если вы не согласитесь, вы можете просматривать и скачивать счета на портале Azure.|
 
-5. Нажмите кнопку **Создать**.
+5. Нажмите кнопку **создания**.
 
 ## <a name="link-charges-to-invoice-sections-and-billing-profiles"></a>Связывание расходов с разделами счетов и профилями выставления счетов
 

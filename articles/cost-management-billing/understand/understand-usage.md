@@ -1,6 +1,6 @@
 ---
 title: Расшифровка подробных данных об использовании и расходах | Документация Майкрософт
-description: Узнайте, как правильно расшифровать подробные сведения об использовании и расходах
+description: Узнайте, как правильно расшифровать подробные сведения в файлах с данными об использовании и расходах. Просмотрите список терминов и описаний, используемых в файле.
 author: bandersmsft
 ms.reviewer: micflan
 tags: billing
@@ -8,12 +8,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 03/20/2020
 ms.author: banders
-ms.openlocfilehash: 3b4a5601f18a07ba1ecd6fdd93628d671a0acad2
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1b53869c9ef90dd0edf3ab9a3120e65db8f16e8a
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80065638"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460292"
 ---
 # <a name="understand-the-terms-in-your-azure-usage-and-charges-file"></a>Общие сведения об условиях в файле сведений об использовании и расходах Azure
 
@@ -23,9 +23,9 @@ ms.locfileid: "80065638"
 
 Тип учетной записи | Использование Azure | Использование Marketplace | Покупки | Возвраты платежей
 --- | --- | --- | --- | ---
-Соглашение Enterprise (EA) | Да | Да | Да | нет
+Соглашение Enterprise (EA) | Да | Да | Да | Нет
 Клиентское соглашение Майкрософт (MCA) | Да | Да | Да | Да
-Оплата по мере использования | Да | Да | нет | нет
+Оплата по мере использования | Да | Да | нет | Нет
 
 Дополнительные сведения о заказах Marketplace (также называются внешними службами) см. в статье [Understand your Azure external services charges](understand-azure-marketplace-charges.md) (Общие сведения о расходах на внешние службы Azure).
 

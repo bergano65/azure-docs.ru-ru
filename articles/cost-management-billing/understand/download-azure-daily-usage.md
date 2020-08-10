@@ -1,6 +1,6 @@
 ---
 title: Просмотр и скачивание сведений об использовании и расходах Azure
-description: Описывает, как скачать или просмотреть ежедневное использование Azure и расходы.
+description: Узнайте, как просмотреть и скачать сведения о ежедневном использовании и затратах в Azure, а также ознакомьтесь с дополнительными ресурсами.
 keywords: использование выставления счетов, оплата за использование, скачивание сведений об использовании, просмотр использования, счет Azure, использование Azure
 author: bandersmsft
 ms.author: banders
@@ -8,12 +8,12 @@ tags: billing
 ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 07/27/2020
-ms.openlocfilehash: bf9a98d6484e7f78a80a4e3018afdec00df51337
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: d09f792e784c89e704691975d44cb3cbfa753cf4
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322042"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460513"
 ---
 # <a name="view-and-download-your-azure-usage-and-charges"></a>Просмотр и скачивание сведений об использовании и расходах Azure
 
