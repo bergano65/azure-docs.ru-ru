@@ -3,16 +3,16 @@ title: Создание предложения управляемой служб
 description: Как создать новое предложение управляемой службы для выставления в Azure Marketplace с помощью портала коммерческой платформы в Центре партнеров.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: conceptual
+ms.topic: how-to
 author: Microsoft-BradleyWright
 ms.author: brwrigh
-ms.date: 07/07/2020
-ms.openlocfilehash: ae079fce02f58d6c6457d7fe6401526f4002662f
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.date: 08/07/2020
+ms.openlocfilehash: f58ec53d1c4f3ad95993fd2faff44f7164c4beeb
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87798194"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88036612"
 ---
 # <a name="create-a-managed-service-offer"></a>Создание предложения управляемой службы
 
@@ -85,7 +85,7 @@ ms.locfileid: "87798194"
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
-1. Название
+1. Заголовок
 2. Описание
 3. Полезные ссылки
 4. Снимки экрана
@@ -130,20 +130,23 @@ ms.locfileid: "87798194"
 
 В этом разделе вы можете указать логотипы и изображения, которые будут использоваться при отображении предложения для клиента. Все изображения должны быть в формате PNG.
 
+[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
+
 >[!NOTE]
 >Если при отправке файлов возникнет проблема, убедитесь, что ваша локальная сеть не блокирует службу https://upload.xboxlive.com, которую использует Центр партнеров.
 
-#### <a name="store-logos"></a>Логотипы магазина
+#### <a name="marketplace-logos"></a>Логотип Marketplace
 
-Укажите PNG-файл для логотипа **крупного** размера (от 216 x 216 до 350 x 350 пикселей). Центр партнеров будет использовать его для создания **мелких** (48 x 48 пикселей) и логотипа **среднего** размера (90 x 90 пикселей). При необходимости можно заменить их разными изображениями.
-
-Все три размера логотипа необходимы для использования в разных местах в списке:
+Укажите логотип вашего предложения в четырех размерах:
 
 - **Малый** (48 x 48)
 - **Средний** (90 x 90)
-- **Крупный** (от 216 x 216 до 350 x 350)
+- **Крупный** (216 x 216)
+- **Широкий** (255 x 115)
 
-[!INCLUDE [Logo suggestions](./includes/graphics-suggestions.md)]
+Эти логотипы используются в разных местах в Azure Marketplace:
+
+[!INCLUDE [logos-azure-marketplace-only](../includes/logos-azure-marketplace-only.md)]
 
 #### <a name="screenshots"></a>Снимки экрана
 

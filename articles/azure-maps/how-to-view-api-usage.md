@@ -1,6 +1,6 @@
 ---
 title: Просмотр Azure Maps метрик использования API | Карты Microsoft Azure
-description: В этой статье вы узнаете, как просмотреть метрики для вызовов API карт Microsoft Azure в портал Azure.
+description: Узнайте, как просматривать метрики использования API Azure Maps, например общее количество запросов, общее количество ошибок и доступность. Узнайте, как фильтровать данные и разбивать результаты.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 08/06/2018
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 57fb699a7225a53af1f093520855e8e2ef132f42
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 766bb2eaf6878a8d7261472ba11ea7acd46de92e
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87130738"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88036493"
 ---
 # <a name="view-azure-maps-api-usage-metrics"></a>Просмотр метрик использования API Azure Maps
 
@@ -42,7 +42,7 @@ ms.locfileid: "87130738"
 
       ![Панель метрик использования Azure Maps](media/how-to-view-api-usage/portal-metrics.png)
 
-5. Затем можно выбрать *диапазон времени*, щелкнув **За последние 24 часа (Автоматически)**. По умолчанию диапазон времени установлен в 24 часа. После нажатия кнопки вы увидите все выбираемые интервалы времени. Вы можете выбрать *степень детализации времени*, а также отображение времени в *местном часовом поясе* или в формате *GMT* в том же раскрывающемся списке. Нажмите кнопку **Применить**.
+5. Затем можно выбрать *диапазон времени*, щелкнув **За последние 24 часа (Автоматически)**. По умолчанию диапазон времени установлен в 24 часа. После нажатия кнопки вы увидите все выбираемые интервалы времени. Вы можете выбрать *степень детализации времени*, а также отображение времени в *местном часовом поясе* или в формате *GMT* в том же раскрывающемся списке. Щелкните **Применить**.
 
     ![Диапазон времени метрик Azure Maps](media/how-to-view-api-usage/time-range.png)
 

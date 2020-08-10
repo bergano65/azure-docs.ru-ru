@@ -1,6 +1,6 @@
 ---
 title: Формат данных геоjson для геозоны | Карты Microsoft Azure
-description: В этой статье вы узнаете, как подготавливать данные геозоны, которые можно использовать в API-интерфейсе Microsoft Azure Maps GET и POST геозоны.
+description: Дополнительные сведения о Azure Maps геозоны данных. Сведения об использовании API GET геозоны и POST геозоны при получении положения координат относительно геозоны.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 02/14/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: 924c23f0fb0156ff585872dded72932a1574a12d
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 27a2fee04afc559a8564aea5e112de07e9c0dcf6
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87131311"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037411"
 ---
 # <a name="geofencing-geojson-data"></a>Данные GeoJSON для геозон
 
@@ -30,12 +30,12 @@ ms.locfileid: "87131311"
 * `expiredTime` обозначает дату и время истечения срока действия для данных геозон. Если в запросе указано более позднее значение `userTime`, чем значение этого свойства, соответствующие данные геозон считаются устаревшими и не включаются в запросы. При запросе идентификатор geometryId этих данных геозон включается в массив `expiredGeofenceGeometryId` в ответе о геозонах.
 * `validityPeriod` содержит список периодов действия для геозон. Если значение `userTime` в запросе не попадает в период действия, соответствующие данные геозоны считаются недопустимыми и не включаются в запрос. Идентификатор geometryId этих данных геозон включается в массив `invalidPeriodGeofenceGeometryId` в ответе о геозонах. В следующей таблице приведены свойства для элемента validityPeriod.
 
-| Имя | Type | Обязательно  | Описание |
+| Имя | Тип | Обязательно  | Описание |
 | :------------ |:------------: |:---------------:| :-----|
-| startTime | Datetime  | true | Дата и время начала периода действия. |
-| endTime   | Datetime  | true |  Дата и время окончания периода действия. |
+| startTime | Datetime  | Да | Дата и время начала периода действия. |
+| endTime   | Datetime  | Да |  Дата и время окончания периода действия. |
 | recurrenceType | строка | false |   Тип повторений для периода. Возможны следующие значения: `Daily`, `Weekly`, `Monthly` или `Yearly`. Значение по умолчанию — `Daily`.|
-| businessDayOnly | Логическое значение | false |  Указывает, что данные считаются допустимыми только в рабочие дни. Значение по умолчанию — `false`.|
+| businessDayOnly | Логическое | false |  Указывает, что данные считаются допустимыми только в рабочие дни. Значение по умолчанию — `false`.|
 
 
 * Все значения координат представлены как [Долгота, Широта], определенная в `WGS84` .

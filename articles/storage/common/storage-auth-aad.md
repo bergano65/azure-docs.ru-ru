@@ -1,7 +1,7 @@
 ---
 title: Авторизация доступа к BLOB-объектам и очередям с помощью Active Directory
 titleSuffix: Azure Storage
-description: Авторизуйте доступ к BLOB-объектам и очередям Azure с помощью Azure Active Directory.
+description: Авторизуйте доступ к BLOB-объектам и очередям Azure с помощью Azure Active Directory (Azure AD). Назначение ролей Azure для прав доступа. Доступ к данным с помощью учетной записи Azure AD.
 services: storage
 author: tamram
 ms.service: storage
@@ -10,12 +10,12 @@ ms.date: 07/16/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 3b29c5b4b1bf682e0f43a0bf9b0c8fcb40d70433
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: a098d4bab4ea8cb083658b205dcb73da619fdbde
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87827883"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88035711"
 ---
 # <a name="authorize-access-to-blobs-and-queues-using-azure-active-directory"></a>Авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory
 

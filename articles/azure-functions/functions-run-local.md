@@ -5,12 +5,12 @@ ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: ae83d8f68b78a3b13f9ebafe3c7cedd18a29de53
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 5c6761b083200556314d7133d5040f7811066e30
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87449143"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037037"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -205,7 +205,23 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 > [!IMPORTANT]
 > По умолчанию версии 2. x и более поздние версии основных средств создают проекты приложения-функции для среды выполнения .NET как [проекты классов C#](functions-dotnet-class-library.md) (. csproj). Эти проекты C#, которые могут использоваться с Visual Studio или Visual Studio Code, собираются во время тестирования и при публикации в Azure. Если вы хотите создавать и работать с тем же файлом сценария C# (.csx), созданным в версии 1.x и на портале, необходимо указать параметр `--csx` при создании и развертывании функций.
 
-[!INCLUDE [functions-core-tools-install-extension](../../includes/functions-core-tools-install-extension.md)]
+## <a name="register-extensions"></a>Регистрация расширений
+
+За исключением триггеров HTTP и таймера, привязки функций в среде выполнения версии 2. x и более поздних реализуются как пакеты расширений. Для привязок HTTP и триггеров таймера расширения не требуются. 
+
+Чтобы снизить несовместимости между различными пакетами расширений, функции позволяют ссылаться на пакет расширений в host.jsв файле проекта. Если вы решили не использовать пакеты расширений, вам также потребуется установить пакет SDK для .NET Core 2. x локально и сохранить расширение. csproj с проектом функций.  
+
+В версиях 2. x и более поздних версиях среды выполнения функций Azure необходимо явным образом зарегистрировать расширения для типов привязки, используемых в функциях. Можно установить расширения привязки по отдельности или добавить ссылку на пакет расширений в host.jsфайла проекта. Пакеты расширений устраняют вероятность проблем совместимости пакетов при использовании нескольких типов привязок. Это рекомендуемый подход для регистрации расширений привязки. Пакеты расширений также удаляют требование установки пакета SDK для .NET Core 2. x. 
+
+### <a name="use-extension-bundles"></a>Использовать пакеты расширений
+
+[!INCLUDE [Register extensions](../../includes/functions-extension-bundles.md)]
+
+Дополнительные сведения см. в статье [Регистрация расширений привязки функций Azure](functions-bindings-register.md#extension-bundles). Перед добавлением привязок в function.jsв файле необходимо добавить расширения расширений в host.js.
+
+### <a name="explicitly-install-extensions"></a>Явно установить расширения
+
+[!INCLUDE [functions-extension-register-core-tools](../../includes/functions-extension-register-core-tools.md)]
 
 [!INCLUDE [functions-local-settings-file](../../includes/functions-local-settings-file.md)]
 
@@ -349,7 +365,7 @@ npm start
 
 `func start` имеет указанные ниже параметры.
 
-| Параметр     | Описание:                            |
+| Параметр     | Описание                            |
 | ------------ | -------------------------------------- |
 | **`--no-build`** | Не выполняйте сборку текущего проекта перед запуском. Только для проектов .NET. По умолчанию установлено значение false. Не поддерживается для версии 1. x. |
 | **`--cors-credentials`** | Разрешить запросы с проверкой подлинности от источника (т. е. файлы cookie и заголовок проверки подлинности), которые не поддерживаются для версии 1. x. |

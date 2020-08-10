@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: emuench
 ms.author: mingshen
-ms.date: 07/28/2020
-ms.openlocfilehash: 0adffbb9058141ea89daefc292b937841659c879
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.date: 08/07/2020
+ms.openlocfilehash: 8d27594b33db72303c71ceb39de92b1d4340b9be
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87798075"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037275"
 ---
 # <a name="create-an-azure-virtual-machine-offer-on-azure-marketplace"></a>Создание предложения виртуальной машины Azure в Azure Marketplace
 
@@ -242,20 +242,23 @@ ms.locfileid: "87798075"
 
 Предоставьте логотипы и изображения для использования с вашим предложением. Все изображения должны быть в формате PNG. Размытые изображения приведут к отклонению вашей заявки.
 
+[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
+
 >[!NOTE]
 >Если при отправке файлов возникнет проблема, убедитесь, что ваша локальная сеть не блокирует службу https://upload.xboxlive.com , которую использует Центр партнеров.
 
-#### <a name="store-logos"></a>Логотипы магазина
+#### <a name="azure-marketplace-logos"></a>Логотипы для Azure Marketplace
 
-Укажите PNG-файл для логотипа **крупного** размера (от 216 x 216 до 350 x 350 пикселей). Центр партнеров будет использовать его для создания **мелких** (48 x 48 пикселей) и логотипа **среднего** размера (90 x 90 пикселей). При необходимости можно заменить их разными изображениями.
+Предоставьте PNG-файлы логотипа вашего предложения в следующих четырех разрешениях.
 
-Все три размера логотипа необходимы для использования в разных местах в списке:
+- **Маленькое** (48 &times; 48 пикселей)
+- **Среднее** (90 &times; 90 пикселей)
+- **Большое** (216 &times; 216 пикселей)
+- **Широкое** (255 &times; 115 пикселей)
 
-- **Малый** (48 x 48)
-- **Средний** (90 x 90)
-- **Крупный** (от 216 x 216 до 350 x 350)
+Все четыре логотипа обязательны и будут отображаться в различных листингах Azure Marketplace.
 
-[!INCLUDE [Logo suggestions](./includes/graphics-suggestions.md)]
+[!INCLUDE [logos-azure-marketplace-only](../includes/logos-azure-marketplace-only.md)]
 
 #### <a name="screenshots"></a>Снимки экрана
 

@@ -1,18 +1,18 @@
 ---
 title: 'Как настроить Опенвпн на VPN-шлюзе Azure: PowerShell'
-description: Узнайте, как настроить протокол Опенвпн на VPN-шлюзе Azure для рабочей среды типа "точка — сеть". При необходимости можно создать VPN-подключение типа "точка — сеть".
+description: Узнайте, как использовать PowerShell для включения протокола Опенвпн на VPN-шлюзе Azure для среды типа "точка — сеть".
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 05/21/2019
 ms.author: cherylmc
-ms.openlocfilehash: 6c1c97bb0e4909bafe2d5ee9012190264b326e6c
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: c13d14ad2d06cbc43d80c05258bdbd3303da4838
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926154"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88036833"
 ---
 # <a name="configure-openvpn-for-azure-point-to-site-vpn-gateway"></a>Настройка Опенвпн для VPN-шлюза типа "точка — сеть" Azure
 

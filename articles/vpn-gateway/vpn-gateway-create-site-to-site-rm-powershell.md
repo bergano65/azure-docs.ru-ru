@@ -1,6 +1,6 @@
 ---
 title: 'Подключение локальной сети к виртуальной сети Azure: VPN типа "сеть — сеть": PowerShell'
-description: Сведения о создании подключения IPsec между локальной сетью и виртуальной сетью Azure через общедоступный Интернет. Они помогут вам создать подключение типа "сеть — сеть" с использованием VPN-шлюза и PowerShell.
+description: Создайте подключение шлюза IPsec типа "сеть — сеть" из локальной сети к виртуальной сети Azure через общедоступный Интернет с помощью PowerShell.
 titleSuffix: Azure VPN Gateway
 services: vpn-gateway
 author: cherylmc
@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 01/15/2020
 ms.author: cherylmc
-ms.openlocfilehash: dd246e4e6a59637c720cbaddf1258b6e01f709b0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2abbab0d6a0fd39b2adf0eade77d355c18b3cc03
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84986120"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88036085"
 ---
 # <a name="create-a-vnet-with-a-site-to-site-vpn-connection-using-powershell"></a>Создание виртуальной сети с VPN-подключением типа "сеть — сеть" с помощью PowerShell
 
@@ -133,7 +133,7 @@ New-AzResourceGroup -Name TestRG1 -Location 'East US'
 
 Обычно термин "шлюз локальной сети" (LNG) означает локальное расположение. Это не то же самое, что шлюз виртуальной сети. Присвойте сайту имя, по которому Azure может обращаться к этому сайту, а затем укажите IP-адрес локального VPN-устройства, к которому вы подключитесь. Вы можете также указать префиксы IP-адресов, которые будут направляться через VPN-шлюз к VPN-устройству. Указываемые префиксы адресов расположены в локальной сети. При изменении локальной сети вы сможете без проблем обновить эти префиксы.
 
-Используйте следующие значения:
+Используйте следующие значения.
 
 * Параметр *GatewayIPAddress* — это IP-адрес локального VPN-устройства.
 * Параметр *AddressPrefix* — локальное адресное пространство.
@@ -182,7 +182,7 @@ $gwipconfig = New-AzVirtualNetworkGatewayIpConfig -Name gwipconfig1 -SubnetId $s
 
 Создайте VPN-шлюз виртуальной сети.
 
-Используйте следующие значения:
+Используйте следующие значения.
 
 * Для конфигурации "сеть — сеть" задайте для параметра *-GatewayType* значение *Vpn*. Тип шлюза всегда зависит от реализуемой конфигурации. Например, для других конфигураций шлюза может потребоваться тип шлюза ExpressRoute.
 * Параметр *-VpnType* может быть *RouteBased* (в некоторых документах он называется динамическим шлюзом) или *PolicyBased* (в некоторых документах он называется статическим шлюзом). Дополнительные сведения о типах VPN-шлюзов см. в статье [Основные сведения о VPN-шлюзах Azure](vpn-gateway-about-vpngateways.md).
@@ -259,7 +259,7 @@ Remove-AzVirtualNetworkGatewayConnection -Name VNet1toSite1 `
 -ResourceGroupName TestRG1
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 *  Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения о виртуальных машинах см. [здесь](https://docs.microsoft.com/azure/).
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).

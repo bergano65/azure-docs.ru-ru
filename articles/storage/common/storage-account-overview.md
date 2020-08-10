@@ -1,7 +1,7 @@
 ---
 title: Общие сведения об учетной записи хранения
 titleSuffix: Azure Storage
-description: Общие сведения о вариантах для создания и использования учетной записи хранения Azure.
+description: Ознакомьтесь с обзором учетных записей хранения в службе хранилища Azure. Проверка именования учетных записей, уровней производительности, уровней доступа, избыточности, шифрования, конечных точек и т. д.
 services: storage
 author: tamram
 ms.service: storage
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 6ae5f4ba88880a53db765ab0ad9fde5bd9a4e4f9
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 8342ffc122f56f4e2a3a41e249007b2ceaad22a6
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86043650"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88034657"
 ---
 # <a name="storage-account-overview"></a>Общие сведения об учетной записи хранения
 
@@ -78,7 +78,7 @@ ms.locfileid: "86043650"
 
 Помните о следующих правилах при назначении имени учетной записи хранения.
 
-- Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв.
+- Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв.
 - Имя учетной записи хранения должно быть уникальным в Azure. Две учетные записи хранения не могут иметь одно имя.
 
 ## <a name="performance-tiers"></a>Уровни производительности

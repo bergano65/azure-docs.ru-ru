@@ -1,7 +1,7 @@
 ---
 title: Управление аутентификацией
 titleSuffix: Azure Maps
-description: Используйте портал Azure для управления проверкой подлинности в картах Microsoft Azure.
+description: Познакомьтесь с Azure Mapsной проверкой подлинности. Узнайте, какой подход лучше подходит в этом сценарии. Узнайте, как использовать портал для просмотра параметров проверки подлинности.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 06/12/2020
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 870ecb8bda9f07c9270724002d381a4f58bc4d13
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 8fc27ea4de7e81f1279f68d2e4a1a7fde1fcf41f
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87531735"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037343"
 ---
 # <a name="manage-authentication-in-azure-maps"></a>Управление аутентификацией в Azure Maps
 
@@ -45,7 +45,7 @@ ms.locfileid: "87531735"
 
 | Сценарий                                                                                    | Аутентификация | Авторизация | Усилия по разработке | Рабочие усилия |
 | ------------------------------------------------------------------------------------------- | -------------- | ------------- | ------------------ | ------------------ |
-| [Доверенная управляющая программа/неинтерактивное клиентское приложение](./how-to-secure-daemon-app.md)        | Общий ключ     | Н/Д           | Средний             | Высокий               |
+| [Доверенная управляющая программа/неинтерактивное клиентское приложение](./how-to-secure-daemon-app.md)        | Общий ключ     | Недоступно           | Средний             | Высокий               |
 | [Доверенная управляющая программа/неинтерактивное клиентское приложение](./how-to-secure-daemon-app.md)        | Azure AD       | Высокий          | Низкий                | Средний             |
 | [Одностраничное веб-приложение с интерактивным единым входом](./how-to-secure-spa-users.md) | Azure AD       | Высокий          | Средний             | Средн.             |
 | [Одностраничное приложение Web с неинтерактивным входом](./how-to-secure-spa-app.md)      | Azure AD       | Высокий          | Средний             | Средн.             |

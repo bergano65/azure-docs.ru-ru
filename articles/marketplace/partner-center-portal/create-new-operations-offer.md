@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: navits09
 ms.author: navits
 ms.date: 06/17/2020
-ms.openlocfilehash: 657c41fbcda30ffb5af4c5a27d58ef17c02a46bc
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 553fd4e49d274fcf4c25356764182d54b91149e4
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87798262"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88036646"
 ---
 # <a name="create-a-dynamics-365-for-operations-offer"></a>Создание предложения Dynamics 365 for Operations
 
@@ -186,19 +186,19 @@ ms.locfileid: "87798262"
 
 В этом разделе вы можете указать логотипы и изображения, которые будут использоваться при отображении предложения для клиента. Все изображения должны быть в формате PNG.
 
+[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
+
 >[!Note]
 >Если при отправке файлов возникнет проблема, убедитесь, что ваша локальная сеть не блокирует службу https://upload.xboxlive.com, которую использует Центр партнеров.
 
 #### <a name="store-logos"></a>Логотипы магазина
 
-Укажите PNG-файл для логотипа **крупного** размера (от 216 x 216 до 350 x 350 пикселей). Центр партнеров будет использовать его для создания **маленького** логотипа размера (48 x 48 пикселей). При необходимости можно заменить его другим изображением.
+Укажите логотип вашего предложения в двух размерах:
 
-Оба размера логотипа необходимы для использования в разных местах в списке:
+- **Малый** (48 x 48)
+- **крупный** (216 x 216).
 
-- **малый** (48 x 48);
-- **Крупный** (от 216 x 216 до 350 x 350)
-
-[!INCLUDE [Logo suggestions](./includes/graphics-suggestions.md)]
+[!INCLUDE [logos-appsource-only](../includes/logos-appsource-only.md)]
 
 #### <a name="screenshots"></a>Снимки экрана
 

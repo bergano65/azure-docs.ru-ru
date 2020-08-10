@@ -1,24 +1,24 @@
 ---
 title: 'Создание VPN-шлюза Azure на основе маршрутов: CLI'
-description: Узнайте, как создать VPN-шлюз Azure на основе маршрутов с помощью Azure CLI. Используйте VPN-шлюз для подключения к локальной сети.
+description: Быстрое создание VPN-шлюза Azure на основе маршрутов с помощью Azure CLI для VPN-подключения к локальной сети или для подключения виртуальных сетей.
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 10/04/2018
 ms.author: cherylmc
-ms.openlocfilehash: 8c207d2c5b2817bacd75ffcd12c9b4c43fe86f55
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 81f451ace7ec3f032dc7752829d12a0a3598811b
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87923345"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88036119"
 ---
 # <a name="create-a-route-based-vpn-gateway-using-cli"></a>Создание VPN-шлюза на основе маршрута с помощью CLI
 
 В статье кратко описано создание VPN-шлюза в Azure с использованием CLI в Azure. VPN-шлюз используется при создании VPN-подключения к локальной сети. Также вы можете использовать VPN-шлюз для подключения виртуальных сетей.
 
-Инструкции в этой статье позволяют создать виртуальную сеть, подсеть, подсеть шлюза и VPN-шлюз на основе маршрутов (шлюз виртуальной сети). Создание шлюза в виртуальной сети может занять 45 минут или более. Создав шлюз, можно создавать подключения. Для этих действий требуется подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Инструкции в этой статье позволяют создать виртуальную сеть, подсеть, подсеть шлюза и VPN-шлюз на основе маршрутов (шлюз виртуальной сети). Создание шлюза в виртуальной сети может занять 45 минут или более. Создав шлюз, можно создавать подключения. Для этих действий требуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 

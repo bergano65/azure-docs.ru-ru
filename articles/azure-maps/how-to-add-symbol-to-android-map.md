@@ -1,6 +1,6 @@
 ---
 title: Добавление слоя символов в карты Android | Карты Microsoft Azure
-description: В этой статье вы узнаете, как визуализировать данные точек на карте, добавив в нее слой символов с помощью Microsoft Azure карт пакет SDK для Android.
+description: Узнайте, как добавить маркер к карте. См. пример, использующий Azure Maps пакет SDK для Android для добавления слоя символов, который содержит данные на основе точек из источника данных.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 04/26/2019
@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 528c5a5ba4314e44334548334e312d1111768cf5
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 99a4f69a814314b233a3129ed31d18ffa1682d8d
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87127083"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037394"
 ---
 # <a name="add-a-symbol-layer-to-a-map-using-azure-maps-android-sdk"></a>Добавление слоя символов в карту с помощью Azure Maps пакет SDK для Android
 
 В этой статье показано, как преобразовать данные точек из источника данных в качестве слоя символов на карте с помощью Azure Maps пакет SDK для Android.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы полностью выполнить действия, описанные в этой статье, необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) , чтобы загрузить карту.
 

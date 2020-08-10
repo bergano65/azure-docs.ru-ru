@@ -1,6 +1,6 @@
 ---
 title: Уровни масштаба и сетка плиток в картах Microsoft Azure
-description: В этой статье вы узнаете об уровнях масштабирования и сетке плиток в Microsoft Azure Maps.
+description: Узнайте, как задать уровни масштаба в Azure Maps. См. раздел Преобразование географических координат в координаты пикселей, координаты плиток и куадкэйс. Просмотр примеров кода.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 07/14/2020
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 9493ad21847cca230606ff1641c9ac02c3355f53
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ced524080df87468116a538d9b7c8e91fb178a41
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87093057"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88035881"
 ---
 # <a name="zoom-levels-and-tile-grid"></a>Уровни увеличения и сетка фрагментов
 

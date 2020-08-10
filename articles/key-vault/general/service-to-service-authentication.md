@@ -5,21 +5,21 @@ keywords: локальные учетные данные проверки под
 author: msmbaldwin
 services: key-vault
 ms.author: mbaldwin
-ms.date: 06/30/2020
+ms.date: 08/08/2020
 ms.topic: conceptual
 ms.service: key-vault
 ms.subservice: general
-ms.openlocfilehash: 6edb6f026f3062dfb2beafd863cf090519f6b66a
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: d48e9ac71ba12ecd2eaadb8ba333f5440c68af4b
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87875989"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88034793"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET
 
 > [!NOTE]
-> **Microsoft. Azure. Services. AppAuthentication** больше не рекомендуется использовать с новым пакетом SDK Key Vault. Она заменена на WIT-новую библиотеку удостоверений Azure **дефаултазурекредентиалс** , доступную для .NET, Java, TypeScript и Python, и должна использоваться для всех новых разработок. Дополнительные сведения можно найти здесь: [Проверка подлинности и пакет Azure SDK](https://azure.github.io/azure-sdk/posts/2020-02-25/defaultazurecredentials.html).
+> **Microsoft. Azure. Services. AppAuthentication** больше не рекомендуется использовать с новым пакетом SDK Key Vault. Она заменена на WIT-новую библиотеку удостоверений Azure **дефаултазурекредентиалс** , доступную для .NET, Java, TypeScript и Python, и должна использоваться для всех новых разработок. Дополнительные сведения можно найти здесь: [Проверка подлинности и пакет Azure SDK](https://devblogs.microsoft.com/azure-sdk/authentication-and-the-azure-sdk/).
 
 Для проверки подлинности в Azure Key Vault требуются учетные данные Azure Active Directory (Azure AD), либо общий секрет, либо сертификат.
 
@@ -27,7 +27,7 @@ ms.locfileid: "87875989"
 
 `Microsoft.Azure.Services.AppAuthentication`Библиотека управляет проверкой подлинности автоматически, что, в свою очередь, позволяет сосредоточиться на решении, а не на ваших учетных данных. Она поддерживает локальную разработку с использованием Microsoft Visual Studio, Azure CLI или встроенной проверки подлинности Azure AD. При развертывании в ресурс Azure, поддерживающий управляемое удостоверение, библиотека автоматически использует [управляемые удостоверения для ресурсов Azure](../../active-directory/msi-overview.md). Изменение кода или конфигурации не требуется. Библиотека также поддерживает прямое использование [учетных данных клиента](../../azure-resource-manager/resource-group-authenticate-service-principal.md) Azure AD, если управляемое удостоверение недоступно, или если контекст безопасности разработчика не может быть определен во время локальной разработки.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Visual studio 2019](https://www.visualstudio.com/downloads/) или [Visual Studio 2017 v 15.5](https://blogs.msdn.microsoft.com/visualstudio/2017/10/11/visual-studio-2017-version-15-5-preview/).
 

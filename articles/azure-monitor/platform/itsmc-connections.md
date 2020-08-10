@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: 2df7d8273b2b25cd0171b38e5cc0ada557ea9a2d
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: bf1721b45ff63c225c378e50bff9040948820c8b
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87325361"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88035031"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](./itsmc-overview.md).
@@ -179,13 +179,14 @@ ms.locfileid: "87325361"
 ### <a name="prerequisites"></a>Предварительные требования
 Выполните указанные ниже предварительные требования.
 - ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-overview.md#adding-the-it-service-management-connector-solution) (Добавление решения "Соединитель управления ИТ-услугами").
-- Установлена поддерживаемая версия ServiceNow: New York, Madrid, London, Kingston, Jakarta, Istanbul, Helsinki, Geneva.
+- Поддерживаемые версии ServiceNow: Орландо, Нью Йорк, Мадрид, Лондон, Kingston), Джакарта, Стамбул, Хельсинки, Geneva.
 > [!NOTE]
 > ITSMC поддерживает только официальное предложение SaaS из Service Now. Закрытые развертывания Service Now не поддерживаются. 
 
 **Администраторы ServiceNow должны выполнить в экземплярах ServiceNow следующие действия:**
 - Создать идентификатор и секрет клиента для продукта ServiceNow. Дополнительные сведения о том, как создать идентификатор и секрет клиента, см. в соответствующих разделах:
 
+    - [Настройка OAuth для Орландо](https://docs.servicenow.com/bundle/orlando-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
     - [Настройка OAuth для версии New York](https://docs.servicenow.com/bundle/newyork-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
     - [Настройка OAuth для версии Madrid](https://docs.servicenow.com/bundle/madrid-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
     - [Настройка OAuth для версии London](https://docs.servicenow.com/bundle/london-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)

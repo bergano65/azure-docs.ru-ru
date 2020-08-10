@@ -1,6 +1,6 @@
 ---
 title: 'Настройка производительности: производительность, Azure Data Lake Storage 2-го поколения & HDInsight | Документация Майкрософт'
-description: Рекомендации по настройке производительности Storm в Azure Data Lake Storage 2-го поколения
+description: Ознакомьтесь с рекомендациями по настройке производительности топологии Azure в кластере Azure HDInsight и Azure Data Lake Storage 2-го поколения.
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
@@ -8,18 +8,18 @@ ms.topic: how-to
 ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 60e0d3fc22fdfc158110e9936748cc0bda280853
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 85499839992f872896153e360507d7d1ba7fea38
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84465921"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037207"
 ---
 # <a name="tune-performance-storm-hdinsight--azure-data-lake-storage-gen2"></a>Настройка производительности: & Azure Data Lake Storage 2-го поколения HDInsight
 
 Изучите факторы, которые важны для настройки производительности в топологии Azure Storm. Например, нужно понимать характеристики работы, выполняемой элементами spout и bolt (в случае, когда работа связана с интенсивными рабочими нагрузками ввода-вывода или активным использованием памяти). В этой статье рассматривается ряд рекомендаций по улучшению производительности, в том числе по устранению типичных неполадок.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 2-го поколения**. Инструкции по ее созданию см. в разделе [Краткое руководство. Создание учетной записи хранения для аналитики](data-lake-storage-quickstart-create-account.md).
@@ -113,7 +113,7 @@ ms.locfileid: "84465921"
 1. В **Ambari**  >  **Storm**  >  **файле config**Ambari  >  **с расширенным набором данных-Worker-log4j**измените значение ** &lt; корневого &gt; уровня = "info"** на ** &lt; root &gt; Level = "Отладка"**. Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
 2. Отслеживайте журналы топологии на рабочих узлах Storm (в разделе /var/log/storm/worker-artifacts/&lt;TopologyName&gt;/&lt;port&gt;/worker.log) на предмет наличия исключений регулирования Data Lake Storage 2-го поколения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В [этом блоге](https://blogs.msdn.microsoft.com/shanyu/2015/05/14/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs/)можно ссылаться на дополнительную настройку производительности для работы с ними.
 
 Дополнительный пример для запуска есть [в этом разделе GitHub](https://github.com/hdinsight/storm-performance-automation).

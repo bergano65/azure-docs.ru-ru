@@ -1,6 +1,6 @@
 ---
 title: 'Подключение локальной сети к виртуальной сети Azure: VPN типа "сеть — сеть": портал'
-description: Сведения о создании подключения IPsec между локальной сетью и виртуальной сетью Azure через общедоступный Интернет. Они помогут вам создать подключение типа "сеть — сеть" с использованием VPN-шлюза и портала.
+description: Создайте подключение VPN-шлюза типа "сеть — сеть" из локальной сети к виртуальной сети Azure через общедоступный Интернет с помощью портала.
 services: vpn-gateway
 titleSuffix: Azure VPN Gateway
 author: cherylmc
@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 03/03/2020
 ms.author: cherylmc
-ms.openlocfilehash: 601e31cde22942abd6d2bc7c5bdcbc5d97f5a591
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ebfd03935f5189a544f11e5b8bbdd4b46e2aa989
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84987669"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037071"
 ---
 # <a name="create-a-site-to-site-connection-in-the-azure-portal"></a>Создание подключения типа "сеть — сеть" на портале Azure
 
@@ -137,7 +137,7 @@ ms.locfileid: "84987669"
 3. Если вы используете подключение "сеть — сеть", но еще не создали шлюз для локальной сети, к которой подключаетесь, создайте этот шлюз.
 4. Укажите необходимый общий ключ и нажмите кнопку **ОК**, чтобы создать подключение.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).
 * Сведения о принудительном туннелировании см. в статье [Настройка принудительного туннелирования с помощью модели развертывания Azure Resource Manager](vpn-gateway-forced-tunneling-rm.md).

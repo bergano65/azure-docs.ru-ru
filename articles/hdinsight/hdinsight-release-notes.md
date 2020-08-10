@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 07/31/2020
-ms.openlocfilehash: 339926fbd3c96f6f6c279d29676950b9915b4256
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.date: 08/09/2020
+ms.openlocfilehash: 82a66d88b3c7c3492e7cb90116ff8ff8e61ca1b0
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87484165"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88036595"
 ---
 # <a name="azure-hdinsight-release-notes"></a>Заметки о выпуске Azure HDInsight
 
@@ -23,11 +23,11 @@ ms.locfileid: "87484165"
 
 Azure HDInsight является одной из самых популярных среди корпоративных клиентов служб для аналитики с открытым кодом в Azure.
 
-## <a name="release-date-07302020"></a>Дата выпуска: 07/30/2020
+## <a name="release-date-08092020"></a>Дата выпуска: 08/09/2020
 
-Этот выпуск применим к HDInsight версий 3.6 и 4.0. Выпуск HDInsight предоставляется для разных регионов на протяжении нескольких дней. Указанная здесь дата выпуска обозначает дату выпуска для первого из регионов. Если вы не видите приведенных ниже изменений, дождитесь выхода выпуска в вашем регионе в течение нескольких дней.
+Этот выпуск относится только к HDInsight 4,0. Выпуск HDInsight предоставляется для разных регионов на протяжении нескольких дней. Указанная здесь дата выпуска обозначает дату выпуска для первого из регионов. Если вы не видите приведенных ниже изменений, дождитесь выхода выпуска в вашем регионе в течение нескольких дней.
 
-## <a name="new-features"></a>новые функции;
+## <a name="new-features"></a>Новые функции
 ### <a name="support-for-sparkcruise"></a>Поддержка Спарккруисе
 Спарккруисе — это система автоматического вычисления повторного использования для Spark. Он выбирает общие части выражения для материализации на основе рабочей нагрузки прошлых запросов. Спарккруисе обрабатывает эти части выражения в процессе обработки запросов, и повторное использование вычислений применяется автоматически в фоновом режиме. Вы можете воспользоваться преимуществами Спарккруисе, не внося никаких изменений в код Spark.
  
@@ -64,6 +64,11 @@ HDInsight постоянно повышает надежность и произ
 * [HIVE — 22121](https://issues.apache.org/jira/browse/HIVE-22121)
 * [HIVE — 22136](https://issues.apache.org/jira/browse/HIVE-22136)
 * [HIVE — 18786](https://issues.apache.org/jira/browse/HIVE-18786)
+
+Ниже Жирас перенесены для HBase:
+* [HBASE – 21458](https://issues.apache.org/jira/browse/HBASE-21458)
+* [HBASE – 24208](https://issues.apache.org/jira/browse/HBASE-24208)
+* [HBASE – 24205](https://issues.apache.org/jira/browse/HBASE-24205)
 
 ## <a name="component-version-change"></a>Изменение версий компонентов
 В этом выпуска не вносилось изменений в версии компонентов. Текущие версии компонентов для HDInsight 4,0 и HDInsight 3,6 можно найти в [этом документе](https://docs.microsoft.com/azure/hdinsight/hdinsight-component-versioning#apache-hadoop-components-available-with-different-hdinsight-versions).

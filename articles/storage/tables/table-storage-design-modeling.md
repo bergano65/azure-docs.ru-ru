@@ -1,6 +1,6 @@
 ---
 title: Моделирование отношений в структуре хранилища таблиц Azure | Документация Майкрософт
-description: Сведения о процессе моделирования при разработке решения хранилища таблиц.
+description: Изучите процесс моделирования при проектировании решения для хранения таблиц Azure. Узнайте о связях «один ко многим», «один к одному» и «наследование».
 services: storage
 author: MarkMcGeeAtAquent
 ms.service: storage
@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/23/2018
 ms.author: sngun
 ms.subservice: tables
-ms.openlocfilehash: 25082c107fbc0feeb533aa2b4fc56cff960e778d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c803a7b11aee3d57d6145bed296bd40ddd9bb5e
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75457562"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88036051"
 ---
 # <a name="modeling-relationships"></a>Моделирование отношений
 В этой статье рассматривается процесс моделирования при разработке решений хранилища таблиц Azure.
@@ -120,7 +120,7 @@ ms.locfileid: "75457562"
 Дополнительные сведения о работе с несколькими типами сущностей в одной таблице в клиентском коде см. в разделе "Работа с разными типами сущностей" в этом руководстве. Там приводятся примеры определения типа сущности в клиентском коде.  
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Шаблоны проектирования таблиц](table-storage-design-patterns.md)
 - [Разработка для запросов](table-storage-design-for-query.md)

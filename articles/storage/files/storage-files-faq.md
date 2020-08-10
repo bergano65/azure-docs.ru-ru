@@ -1,18 +1,18 @@
 ---
 title: Часто задаваемые вопросы о службе файлов Azure | Документация Майкрософт
-description: Получите ответы на некоторые часто задаваемые вопросы о службе "Файлы Azure".
+description: Получите ответы на часто задаваемые вопросы о службе файлов Azure. Вы можете параллельно подключать файловые ресурсы Azure в облачных или локальных развертываниях Windows, Linux или macOS.
 author: roygara
 ms.service: storage
 ms.date: 02/23/2020
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: 87c1aa4d65b313f4c068ef11c9d2209e9318ef02
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0bdc9451f0dbc32e14197cde48a3613196b864c0
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85482876"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037139"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Часто задаваемые вопросы о службе файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предоставляет полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого [протокола SMB](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Общие ресурсы службы файлов Azure можно одновременно подключить к облачным или локальным развертываниям Windows, Linux и macOS. Вы также можете кэшировать общие файловые ресурсы Azure на компьютерах под управлением Windows Server с помощью функции "Синхронизация файлов Azure", чтобы получить быстрый доступ из расположения, где используются данные.

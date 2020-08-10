@@ -1,6 +1,6 @@
 ---
 title: Модели потребления автомобиля для маршрутизации | Карты Microsoft Azure
-description: В этой статье вы узнаете о моделях потребления автомобилей для маршрутизации в Microsoft Azure Maps.
+description: 'Сведения о моделях потребления, которые Azure Maps поддерживает: комбустион и электрический. Узнайте, какие параметры использует каждая модель, и просмотрите ограничения параметров.'
 author: subbarayudukamma
 ms.author: skamma
 ms.date: 05/08/2018
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: c1572eddf78ca2d5f8f4e3ee9f1fe47b0d43f5aa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b44186d783a249192a8c13ee97063034ee319df7
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77190252"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88036765"
 ---
 # <a name="consumption-model"></a>Модель потребления
 

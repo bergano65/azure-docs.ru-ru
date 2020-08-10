@@ -1,6 +1,6 @@
 ---
 title: Перенос Azure Data Lake Storage из Gen1 в Gen2
-description: Перенос Azure Data Lake Storage из Gen1 в Gen2.
+description: Перенос Azure Data Lake Storage из Gen1 в Gen2, который основан на хранилище BLOB-объектов Azure, и предоставляет набор возможностей, предназначенных для аналитики больших данных.
 author: normesta
 ms.topic: how-to
 ms.author: normesta
@@ -8,12 +8,12 @@ ms.date: 03/11/2020
 ms.service: storage
 ms.reviewer: rukmani-msft
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 2cfe5f763b3dedd68c5180f5a0a3c7a3f4ea3e93
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 25879178930c80f1265470645808d9ee81acafa8
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87496429"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88035133"
 ---
 # <a name="migrate-azure-data-lake-storage-from-gen1-to-gen2"></a>Перенос Azure Data Lake Storage из Gen1 в Gen2
 
@@ -95,9 +95,9 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
 
 |Область |Поколение 1   |Поколение 2 |
 |---|---|---|
-|Упорядочение данных|[Иерархическое пространство имен](data-lake-storage-namespace.md)<br>Поддержка файлов и папок|[Иерархическое пространство имен](data-lake-storage-namespace.md)<br>Поддержка контейнеров, файлов и папок |
+|Упорядочение данных|[Иерархическое пространство имен хранилища Azure Data Lake Storage Gen2 (предварительная версия)](data-lake-storage-namespace.md)<br>Поддержка файлов и папок|[Иерархическое пространство имен хранилища Azure Data Lake Storage Gen2 (предварительная версия)](data-lake-storage-namespace.md)<br>Поддержка контейнеров, файлов и папок |
 |Геоизбыточность| [LRS](../common/storage-redundancy.md#locally-redundant-storage)| [LRS](../common/storage-redundancy.md#locally-redundant-storage), [ZRS](../common/storage-redundancy.md#zone-redundant-storage), [GRS](../common/storage-redundancy.md#geo-redundant-storage), [RA-GRS](../common/storage-redundancy.md#read-access-to-data-in-the-secondary-region) |
-|Authentication|[Удостоверение, управляемое AAD](../../active-directory/managed-identities-azure-resources/overview.md)<br>[Субъекты-службы](../../active-directory/develop/app-objects-and-service-principals.md)|[Удостоверение, управляемое AAD](../../active-directory/managed-identities-azure-resources/overview.md)<br>[Субъекты-службы](../../active-directory/develop/app-objects-and-service-principals.md)<br>[Ключ общего доступа](https://docs.microsoft.com/rest/api/storageservices/authorize-with-shared-key)|
+|Аутентификация|[Удостоверение, управляемое AAD](../../active-directory/managed-identities-azure-resources/overview.md)<br>[Субъекты-службы](../../active-directory/develop/app-objects-and-service-principals.md)|[Удостоверение, управляемое AAD](../../active-directory/managed-identities-azure-resources/overview.md)<br>[Субъекты-службы](../../active-directory/develop/app-objects-and-service-principals.md)<br>[Ключ общего доступа](https://docs.microsoft.com/rest/api/storageservices/authorize-with-shared-key)|
 |Авторизация|Управление — [RBAC](../../role-based-access-control/overview.md)<br>Данные — [списки ACL](data-lake-storage-access-control.md)|Управление — [RBAC](../../role-based-access-control/overview.md)<br>Данные — [списки управления доступом](data-lake-storage-access-control.md), [RBAC](../../role-based-access-control/overview.md) |
 |Шифрование — неактивных данных|Серверная часть — ключи, управляемые [корпорацией Майкрософт](../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) или [управляемые клиентом](../common/encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|Серверная часть — ключи, управляемые [корпорацией Майкрософт](../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) или [управляемые клиентом](../common/encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Поддержка виртуальной сети|[интеграция с виртуальной сетью](../../data-lake-store/data-lake-store-network-security.md)|[Конечные точки службы](../common/storage-network-security.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json), [частные конечные точки](../common/storage-private-endpoints.md)|

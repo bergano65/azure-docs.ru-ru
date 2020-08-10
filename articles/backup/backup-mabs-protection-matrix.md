@@ -3,12 +3,12 @@ title: Матрица защиты MABS (Azure Backup Server) v3 UR1
 description: В этой статье приводится матрица поддержки, в которой перечислены все рабочие нагрузки, типы данных и установки, которые защищает Azure Backup Server.
 ms.date: 03/19/2020
 ms.topic: conceptual
-ms.openlocfilehash: 974820389e84f727a9aab284716b3be9020c6dd8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: cdbe874baf45d9858acbf891af3c0aae4bd0c2d2
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87032601"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88036731"
 ---
 # <a name="mabs-azure-backup-server-v3-ur1-protection-matrix"></a>Матрица защиты MABS (Azure Backup Server) v3 UR1
 
@@ -23,6 +23,9 @@ ms.locfileid: "87032601"
 * MABS установка — компьютер или расположение, где требуется установить MABS.
 
 * Защита и восстановление — подробные сведения о рабочих нагрузках, например поддерживаемом контейнере хранилища или поддерживаемом развертывании.
+
+>[!NOTE]
+>Поддержка 32-разрядного агента защиты устарела в MABS v3 UR1. См. раздел [устаревшая версия агента защиты 32](backup-mabs-whats-new-mabs.md#32-bit-protection-agent-deprecation).
 
 ## <a name="protection-support-matrix"></a>Таблица поддержки защиты
 

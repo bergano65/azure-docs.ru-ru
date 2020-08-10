@@ -1,6 +1,6 @@
 ---
 title: Настройка, оптимизация и устранение неполадок AzCopy в службе хранилища Azure | Документация Майкрософт
-description: Настройка, оптимизация и устранение неполадок AzCopy.
+description: Настройка, оптимизация и устранение неполадок AzCopy в службе хранилища Azure. Измените расположение или удалите файлы плана и журнала. Измените уровень ведения журнала по умолчанию.
 author: normesta
 ms.service: storage
 ms.topic: how-to
@@ -8,12 +8,12 @@ ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: 7e79f186688f3b6531ac24df4e3ae4201cf1903c
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 9742f97832c1fc931a1679132e262f92c9f11225
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282438"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037190"
 ---
 # <a name="configure-optimize-and-troubleshoot-azcopy"></a>Configure, optimize, and troubleshoot AzCopy (Настройка, оптимизация и устранение неполадок с AzCopy)
 
@@ -30,7 +30,7 @@ AzCopy — это служебная программа командной ст
 
 Чтобы настроить параметры прокси-сервера для AzCopy, задайте `https_proxy` переменную среды. Если AzCopy выполняется в среде Windows, средство AzCopy автоматически определяет параметры прокси-сервера, поэтому в Windows этот параметр не нужно использовать. Если вы укажете этот параметр в Windows, он переопределит автоматически определяемое значение.
 
-| Операционная система | Команда  |
+| Операционная система | Get-Help  |
 |--------|-----------|
 | **Windows** | В командной строке используйте `set https_proxy=<proxy IP>:<proxy port>`.<br> В PowerShell используйте `$env:https_proxy="<proxy IP>:<proxy port>"`.|
 | **Linux** | `export https_proxy=<proxy IP>:<proxy port>` |
@@ -91,7 +91,7 @@ azcopy jobs resume <job-id> --cap-mbps 10
 
 Если на компьютере установлено менее 5 ЦП, значение этой переменной будет равно `32` . В противном случае значение по умолчанию равно 16, умноженному на число ЦП. Максимальное значение по умолчанию для этой переменной равно `3000` , но можно вручную задать это значение выше или ниже. 
 
-| Операционная система | Команда  |
+| Операционная система | Get-Help  |
 |--------|-----------|
 | **Windows** | `set AZCOPY_CONCURRENCY_VALUE=<value>` |
 | **Linux** | `export AZCOPY_CONCURRENCY_VALUE=<value>` |
@@ -106,7 +106,7 @@ azcopy jobs resume <job-id> --cap-mbps 10
 Задайте `AZCOPY_BUFFER_GB` переменную среды, чтобы указать максимальный объем системной памяти, который будет использоваться AzCopy при скачивании и отправке файлов.
 Выразить это значение в гигабайтах (ГБ).
 
-| Операционная система | Команда  |
+| Операционная система | Get-Help  |
 |--------|-----------|
 | **Windows** | `set AZCOPY_BUFFER_GB=<value>` |
 | **Linux** | `export AZCOPY_BUFFER_GB=<value>` |
@@ -189,7 +189,7 @@ azcopy jobs resume <job-id> --destination-sas="<sas-token>"
 
 Используйте любую из этих команд.
 
-| Операционная система | Команда  |
+| Операционная система | Get-Help  |
 |--------|-----------|
 | **Windows** | Оболочк`$env:AZCOPY_JOB_PLAN_LOCATION="<value>"` <br> В командной строке используйте:`set AZCOPY_JOB_PLAN_LOCATION=<value>` |
 | **Linux** | `export AZCOPY_JOB_PLAN_LOCATION=<value>` |
@@ -201,7 +201,7 @@ azcopy jobs resume <job-id> --destination-sas="<sas-token>"
 
 Используйте любую из этих команд.
 
-| Операционная система | Команда  |
+| Операционная система | Get-Help  |
 |--------|-----------|
 | **Windows** | Оболочк`$env:AZCOPY_LOG_LOCATION="<value>"` <br> В командной строке используйте:`set AZCOPY_LOG_LOCATION=<value>`|
 | **Linux** | `export AZCOPY_LOG_LOCATION=<value>` |

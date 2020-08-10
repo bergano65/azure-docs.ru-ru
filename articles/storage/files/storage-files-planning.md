@@ -1,18 +1,18 @@
 ---
 title: Планирование развертывания службы файлов Azure | Документы Майкрософт
-description: Узнайте, что необходимо учесть при планировании развертывания службы "Файлы Azure".
+description: Общие сведения о планировании развертывания файлов Azure. Можно либо напрямую подключить файловый ресурс Azure, либо кэшировать файловый ресурс Azure локально с Синхронизация файлов Azure.
 author: roygara
 ms.service: storage
 ms.topic: conceptual
 ms.date: 1/3/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 4e39ec197b0bbce5d963650abd5dc7811647fa01
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 2e8a2030acd4297ab3032e8f1e3bde5b6df66659
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87370365"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037173"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Планирование развертывания службы файлов Azure
 Служба [файлов Azure](storage-files-introduction.md) может быть развернута двумя основными способами: путем прямого подключения файловых ресурсов Azure без сервера или путем кэширования файловых ресурсов Azure локально с помощью синхронизация файлов Azure. Выбор варианта развертывания изменяет те вещи, которые необходимо учитывать при планировании развертывания. 
@@ -61,7 +61,7 @@ ms.locfileid: "87370365"
 
 Сведения о планировании сети, связанной с развертыванием файлового ресурса Azure, см. в статье рекомендации по работе с [файлами Azure в сети](storage-files-networking-overview.md).
 
-## <a name="encryption"></a>Encryption
+## <a name="encryption"></a>Шифрование
 Служба файлов Azure поддерживает два разных типа шифрования: шифрование при передаче, которое относится к шифрованию, используемому при подключении или доступе к файловому ресурсу Azure, а также к шифрованию неактивных данных, которые связаны с тем, как данные шифруются при хранении на диске. 
 
 ### <a name="encryption-in-transit"></a>Шифрование при передаче

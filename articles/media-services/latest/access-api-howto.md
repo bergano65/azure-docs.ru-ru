@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 05/21/2020
 ms.author: juliako
-ms.openlocfilehash: 33c762e2f2a9bed90991f7b85e0fb83fbb43765c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a039e1d4442490d3747a302754d521f1f3402bcf
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87090167"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88035813"
 ---
 # <a name="get-credentials-to-access-media-services-api"></a>Получение учетных данных для доступа к API служб мультимедиа  
 
@@ -45,7 +45,7 @@ ms.locfileid: "87090167"
 Страница **доступа к API** позволяет выбрать метод проверки подлинности, который будет использоваться для подключения к API. На этой странице также приведены значения, необходимые для подключения к API.
 
 1. На [портале Azure](https://portal.azure.com/) выберите свою учетную запись служб мультимедиа.
-2. Выберите способ подключения к API служб мультимедиа.
+2. Выберите колонку **доступ к API (Новая)** на панели навигации слева.
 3. В разделе **Подключение к API службы мультимедиа**выберите версию API служб мультимедиа, к которой необходимо подключиться (V3 — последняя версия службы).
 
 ### <a name="service-principal-authentication--recommended"></a>Проверка подлинности на основе участника-службы (рекомендуется)

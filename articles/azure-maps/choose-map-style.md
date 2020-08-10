@@ -1,6 +1,6 @@
 ---
 title: Изменение стиля веб-Map Control Azure Maps
-description: В этой статье вы узнаете о функциях стиля Azure Maps веб-Map Control
+description: Узнайте, как изменить стиль и параметры схемы. См. раздел Добавление элемента управления "Выбор стиля" на карту в Azure Maps, чтобы пользователи могли переключаться между различными стилями.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 07/27/2020
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a4c1629302c72d6f59f7f1fd10dc850d46cea5a7
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 15224afac33a3e236c2d1ed9f60515bdc2f34c4f
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285813"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88036799"
 ---
 # <a name="change-the-style-of-the-map"></a>Изменение стиля карты
 
@@ -113,7 +113,7 @@ map.setStyle({ style: 'satellite' });
 <iframe height='500' scrolling='no' title='Добавление элемента выбора стиля' src='//codepen.io/azuremaps/embed/OwgyvG/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. фрагмент кода <a href='https://codepen.io/azuremaps/pen/OwgyvG/'>Добавление элемента выбора стиля</a> в службе Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, используемых в этой статье.
 

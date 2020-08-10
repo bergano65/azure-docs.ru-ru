@@ -1,6 +1,6 @@
 ---
 title: Создание схемы с помощью Azure Maps | Карты Microsoft Azure
-description: Из этой статьи вы узнаете, как визуализировать карту на веб-странице с помощью веб-пакета SDK Microsoft Azure Maps.
+description: Узнайте, как добавлять карты на веб-страницы с помощью веб-пакета SDK для Azure Maps. Сведения о параметрах анимации, стиля, камеры, служб и взаимодействий пользователей.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 07/26/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: 77eaa3e1f4390182ad210ae3aa2ce6a1427d8b0f
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 9566bcc329b4d148fe9454fe70b556a9010fc4ac
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87551903"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88036476"
 ---
 # <a name="create-a-map"></a>Создание карты
 

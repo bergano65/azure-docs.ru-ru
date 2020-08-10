@@ -1,5 +1,5 @@
 ---
-title: Управление потенциальными клиентами коммерческой платформы | Azure Marketplace и AppSource
+title: Управление интересами для коммерческого рынка | Azure Marketplace и AppSource
 description: Общие сведения о различных темах, относящихся к публикации предложений и техническим артефактам в Azure Marketplace и AppSource
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
@@ -7,14 +7,14 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 04/14/2020
-ms.openlocfilehash: 2abbef88ed7bac41b84eb06c8c0ec9c8a906b2f6
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: d0aea0594a97990c7c89434e73fcd4982b01e20f
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119452"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88035184"
 ---
-# <a name="lead-management-for-commercial-marketplace"></a>Управление потенциальными клиентами коммерческой платформы
+# <a name="lead-management-for-the-commercial-marketplace"></a>Управление интересами для коммерческого рынка
 
 Клиенты являются основой любого успешного бизнеса. В условиях современного рынка поставщикам продуктов и услуг необходимо сосредоточиться на непосредственном общении с клиентами и выстраивании отношений. Именно по этой причине формирование списка потенциальных клиентов является важным инструментом цикла продаж. После того как вы перечислите свои предложения в [Центре партнеров](https://partner.microsoft.com/), вам будут предоставлены инструменты, которые могут программно получать контактные сведения о клиентах непосредственно после того, как клиент развернул ваш продукт или проявил к нему интерес в Marketplace. 
 

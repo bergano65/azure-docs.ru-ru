@@ -1,6 +1,6 @@
 ---
 title: Добавление мозаичного слоя в карты Android | Карты Microsoft Azure
-description: Из этой статьи вы узнаете, как визуализировать мозаичный слой на карте с помощью Microsoft Azure карт пакет SDK для Android.
+description: Узнайте, как добавить мозаичный слой на карту. См. пример, использующий Azure Maps пакет SDK для Android для добавления лепестковой диаграммы погоды на карту.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 04/26/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: e7480ba3befaf560eace2cae4ef4a822012373a2
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: bae1d06f1b5a96ad99d970613d957ce75a0c1393
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87126981"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037360"
 ---
 # <a name="add-a-tile-layer-to-a-map-using-the-azure-maps-android-sdk"></a>Добавление мозаичного слоя в карту с помощью Azure Maps пакет SDK для Android
 
@@ -37,7 +37,7 @@ URL-адрес фрагмента, передаваемый в слой фраг
 * `{bbox-epsg-3857}` — строка ограничивающего прямоугольника в формате `{west},{south},{east},{north}` в системе пространственных ссылок 3857 EPSG.
 * `{subdomain}`— Заполнитель для значений поддомена, если указано значение поддомена.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы завершить процесс, описанный в этой статье, необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) , чтобы загрузить карту.
 

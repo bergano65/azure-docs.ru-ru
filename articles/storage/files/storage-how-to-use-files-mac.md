@@ -1,18 +1,18 @@
 ---
 title: Подключение общей папки Azure через протокол SMB в macOS | Документация Майкрософт
-description: Узнайте, как подключить общую папку Azure через протокол SMB в macOS.
+description: Узнайте, как подключить файловый ресурс Azure через SMB с помощью macOS, используя Finder или Terminal. Файлы Azure — это простая в использовании облачная файловая система от корпорации Майкрософт.
 author: RenaShahMSFT
 ms.service: storage
 ms.topic: how-to
 ms.date: 09/19/2017
 ms.author: renash
 ms.subservice: files
-ms.openlocfilehash: 87271cfc602ff81a65a63426360f3bc0a8a8f030
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2cddf8a7d3dbc7abcc25fb76aba8a0af1790fe4d
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85509835"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88034453"
 ---
 # <a name="mount-azure-file-share-over-smb-with-macos"></a>Подключение общей папки Azure через протокол SMB в macOS
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно подключить с помощью стандартного отраслевого протокола SMB 3 в macOS El Capitan 10.11 и более поздней версии. В этой статье описываются два разных способа подключения общей папки Azure в macOS: с помощью пользовательского интерфейса поиска и терминала.
@@ -56,7 +56,7 @@ ms.locfileid: "85509835"
 
     ![Снимок подключенной общей папки Azure](./media/storage-how-to-use-files-mac/mount-via-terminal-1.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительную информацию о службе файлов Azure см. по следующим ссылкам.
 
 * [Использование функции общего доступа к файлам на компьютере Mac](https://support.apple.com/HT204445)
