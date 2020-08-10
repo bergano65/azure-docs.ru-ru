@@ -8,12 +8,12 @@ ms.subservice: iomt
 ms.topic: tutorial
 ms.date: 06/27/2020
 ms.author: punagpal
-ms.openlocfilehash: aeed0c90eeecd59e23a1d87a3ebc1e1a836a84ec
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: d606cd4f5c4b901c060c97d73524997b94eaf225
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87116840"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87446304"
 ---
 # <a name="tutorial-receive-device-data-through-azure-iot-hub"></a>Руководство по Получение данных устройства через Центр Интернета вещей Azure
 
@@ -96,7 +96,7 @@ ms.locfileid: "87116840"
 Вы можете просматривать ресурсы наблюдения FHIR, созданные соединителем Интернета вещей в Azure API для FHIR, используя Postman. Настройте [доступ к Azure API для FHIR в Postman](access-fhir-postman-tutorial.md) и выполните запрос `GET` к `https://your-fhir-server-url/Observation?code=http://loinc.org|8867-4`, чтобы просмотреть ресурсы наблюдения FHIR с информацией о частоте пульса, отправленной ранее в тестовом сообщении.
 
 > [!TIP]
-> Убедитесь, что пользователь имеет необходимые права доступа к плоскости данных Azure API для FHIR. Для назначения ролей в плоскости данных используйте [управление доступом на основе ролей Azure](configure-azure-rbac.md).
+> Убедитесь, что пользователь имеет необходимые права доступа к плоскости данных Azure API для FHIR. Для назначения ролей в плоскости данных используйте [управление доступом на основе ролей Azure (Azure RBAC)](configure-azure-rbac.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -114,4 +114,3 @@ ms.locfileid: "87116840"
 >[Шаблоны сопоставления для соединителя Интернета вещей](iot-mapping-templates.md)
 
 FHIR — это зарегистрированная торговая марка организации HL7, которая используется с разрешения HL7.
-

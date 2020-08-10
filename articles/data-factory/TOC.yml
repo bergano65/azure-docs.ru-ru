@@ -620,6 +620,8 @@
           href: create-shared-self-hosted-integration-runtime-powershell.md
         - name: Скрипты автоматизации локальной среды выполнения интеграции
           href: self-hosted-integration-runtime-automation-scripts.md
+        - name: Запуск локальной среды выполнения интеграции в контейнере Windows
+          href: how-to-run-self-hosted-integration-runtime-in-windows-container.md
     - name: Запуск пакетов служб Integration Services в Azure
       items:
         - name: Запуск пакетов Integration Services в Azure из SSDT

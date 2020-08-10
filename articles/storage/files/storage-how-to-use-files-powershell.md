@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 10/26/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: c0008ab89f4599e2ada51b5637a9665a249bc1c4
-ms.sourcegitcommit: 61d92af1d24510c0cc80afb1aebdc46180997c69
+ms.openlocfilehash: 360af0406a816a02540881962ed8794d69ce3bbb
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85340833"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87531818"
 ---
 # <a name="quickstart-create-and-manage-an-azure-file-share-with-azure-powershell"></a>Краткое руководство. Создание общих файловых ресурсов Azure и управление ими с помощью Azure PowerShell 
 В этом руководстве рассматриваются основы работы с [общими файловыми ресурсами Azure](storage-files-introduction.md) с помощью PowerShell. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие файловые ресурсы Azure поддерживают отраслевой протокол SMB и позволяют совместно использовать файлы на нескольких компьютерах, а также в нескольких приложениях и экземплярах. 
@@ -88,7 +88,7 @@ New-AzRmStorageShare `
 - Вы используете бессерверные ресурсы, такие как [Функции Azure](../../azure-functions/functions-overview.md). 
 - Вы создаете службу с добавленной стоимостью, которая будет взаимодействовать со многими общими папками Azure, например выполнять резервное копирование или антивирусное сканирование.
 
-В следующих примерах показано, как использовать модуль Azure PowerShell для управления файловым ресурсом Azure с помощью протокола File REST. Параметр `-Context` используется, чтобы извлечь ключ учетной записи хранения для выполнения указанных действий с общей папкой. Чтобы получить ключ учетной записи хранения, вам должна быть назначена роль RBAC `Owner` в учетной записи хранения.
+В следующих примерах показано, как использовать модуль Azure PowerShell для управления файловым ресурсом Azure с помощью протокола File REST. Параметр `-Context` используется, чтобы извлечь ключ учетной записи хранения для выполнения указанных действий с общей папкой. Чтобы получить ключ учетной записи хранения, вам должна быть назначена роль Azure `Owner` в учетной записи хранения.
 
 #### <a name="create-directory"></a>Создание каталога
 Чтобы создать каталог с именем *myDirectory* в корне файлового ресурса Azure, используйте командлет [New-AzStorageDirectory](/powershell/module/az.storage/New-AzStorageDirectory).

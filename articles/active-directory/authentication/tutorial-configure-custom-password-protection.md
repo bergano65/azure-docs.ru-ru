@@ -10,12 +10,12 @@ ms.author: iainfou
 author: iainfoulds
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 642082b3fe23e0d007e21409062fe8e777728cc3
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: a5b2f3a61e2167067bd6e61ee2a36bb1d22950d8
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86518545"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87419671"
 ---
 # <a name="tutorial-configure-custom-banned-passwords-for-azure-active-directory-password-protection"></a>Руководство по настройке пользовательских списков запрещенных слов для защиты паролей в Azure Active Directory
 
@@ -32,7 +32,7 @@ ms.locfileid: "86518545"
 
 Для работы с этим учебником требуются следующие ресурсы и разрешения:
 
-* Рабочий клиент Azure AD с как минимум включенной бесплатной пробной лицензией.
+* Рабочий клиент Azure AD, для которого включена по меньшей мере лицензия Azure AD Premium P1 или пробная лицензия.
     * [Создайте ее бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), если нужно.
 * Учетная запись с привилегиями *глобального администратора*.
 * Тестовый пользователь без прав администратора, пароль которого вам известен, например *testuser*. В рамках этого руководства вы протестируете событие смены пароля, используя эту учетную запись.
@@ -77,7 +77,7 @@ Azure AD поддерживает глобальный список запрещ
 
     Укажите собственные значения паролей для запрета, как показано в следующем примере.
 
-    [![](media/tutorial-configure-custom-password-protection/enable-configure-custom-banned-passwords-cropped.png "Modify the custom banned password list under Authentication Methods in the Azure portal")](media/tutorial-configure-custom-password-protection/enable-configure-custom-banned-passwords.png#lightbox)
+    [ ![Изменение пользовательского списка заблокированных паролей в разделе "Способы аутентификации" на портале Azure](media/tutorial-configure-custom-password-protection/enable-configure-custom-banned-passwords-cropped.png) ](media/tutorial-configure-custom-password-protection/enable-configure-custom-banned-passwords.png#lightbox)
 
 1. Для параметра **Включить защиту паролем в Windows Server Active Directory** оставьте значение *Нет*.
 1. Чтобы включить пользовательский список запрещенных паролей с указанными вами значениями, щелкните **Сохранить**.

@@ -5,12 +5,12 @@ ms.topic: tutorial
 ms.date: 1/24/2020
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: a3cec6cb009e3d83d22f3f2a4140afe16db180a8
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 50bf1ec7f21ccbc3a3fa8feaea02e45bd08a158a
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372932"
+ms.locfileid: "87421422"
 ---
 # <a name="set-up-disaster-recovery-for-azure-vms"></a>Настройка аварийного восстановления для виртуальных машин Azure
 
@@ -66,12 +66,12 @@ ms.locfileid: "87372932"
 
 При использовании прокси-сервера или брандмауэра на основе URL-адресов для управления исходящими подключениями разрешите использование этих URL-адресов:
 
-| **URL-адрес** | **Сведения** |
-| ------- | ----------- |
-| `*.blob.core.windows.net` | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
-| `login.microsoftonline.com` | Обеспечивает авторизацию и проверку подлинности URL-адресов службы Site Recovery. |
-| `*.hypervrecoverymanager.windowsazure.com` | Позволяет виртуальной машине взаимодействовать со службой Site Recovery. |
-| `*.servicebus.windows.net` | Позволяет виртуальной машине записывать данные мониторинга и диагностики службы Site Recovery. |
+| **имя**;                  | **Коммерческие организации**                               | **Государственные организации**                                 | **Описание** |
+| ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
+| Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
+| Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Обеспечивает авторизацию и проверку подлинности URL-адресов службы Site Recovery. |
+| Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Позволяет виртуальной машине взаимодействовать со службой Site Recovery. |
+| Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Позволяет виртуальной машине записывать данные мониторинга и диагностики службы Site Recovery. |
 
 ### <a name="outbound-connectivity-for-ip-address-ranges"></a>Исходящие подключения для диапазонов IP-адресов
 

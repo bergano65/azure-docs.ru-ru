@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 01/26/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 67fe36cf86c886f9d67d98cc8d34a090db4a71cb
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: b61ba7f160d012cc3d9ad9f477e969a626fdc38e
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87373032"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87541425"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-use-one-set-of-authentication-credentials"></a>Автоматизация смены секретов для ресурсов с одним набором учетных данных для аутентификации
 
@@ -41,7 +41,8 @@ ms.locfileid: "87373032"
 
 Если у вас нет существующего Key Vault и SQL Server, можно использовать предоставленную ниже ссылку на развертывание.
 
-<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-SQLPassword-Csharp%2Fmaster%2Farm-templates%2FInitial-Setup%2Fazuredeploy.json" target="_blank"><img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png" alt="Deploy to Azure"/></a>
+[![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-SQLPassword-Csharp%2Fmaster%2Farm-templates%2FInitial-Setup%2Fazuredeploy.json)
+
 1. Для параметра **Группа ресурсов** выберите **Создать**. Присвойте группе имя **akvrotation**.
 1. В разделе **Sql Admin Login** (Имя входа администратора SQL) введите имя для входа администратора SQL. 
 1. Выберите **Review + create** (Просмотреть и создать).
@@ -76,8 +77,10 @@ akvrotation-sql/master  akvrotation      eastus      Microsoft.Sql/servers/datab
 - Политика доступа для получения доступа к секретам в Key Vault с помощью удостоверения приложения-функции.
 - Подписка на событие Сетки событий **SecretNearExpiry**.
 
-1. Щелкните ссылку для развертывания шаблона в Azure:
-<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-SQLPassword-Csharp%2Fmaster%2Farm-templates%2FFunction%2Fazuredeploy.json" target="_blank"><img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png" alt="Deploy to Azure"/></a>
+1. Щелкните ссылку для развертывания шаблона в Azure: 
+
+   [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-SQLPassword-Csharp%2Fmaster%2Farm-templates%2FFunction%2Fazuredeploy.json)
+
 1. В списке **Группа ресурсов** выберите **avkrotation**.
 1. В поле **Sql Server Name** (Имя SQL Server) введите имя SQL Server и пароль для смены.
 1. В поле **Имя Key Vault** введите имя хранилища ключей.
@@ -217,8 +220,10 @@ az keyvault secret set --name sqlPassword --vault-name akvrotation-kv --value "S
 - веб-приложение с управляемым системой удостоверением;
 - политика доступа для получения доступа к секретам в хранилище ключей с использованием управляемого удостоверения веб-приложения.
 
-1. Щелкните ссылку для развертывания шаблона в Azure:
-<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-SQLPassword-Csharp-WebApp%2Fmaster%2Farm-templates%2FWeb-App%2Fazuredeploy.json" target="_blank"> <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png" alt="Deploy to Azure"/></a>
+1. Щелкните ссылку для развертывания шаблона в Azure: 
+
+   [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-SQLPassword-Csharp-WebApp%2Fmaster%2Farm-templates%2FWeb-App%2Fazuredeploy.json)
+
 1. Выберите группу ресурсов **akvrotation**.
 1. В поле **Sql Server Name** (Имя SQL Server) введите имя SQL Server и пароль для смены.
 1. В поле **Имя Key Vault** введите имя хранилища ключей.

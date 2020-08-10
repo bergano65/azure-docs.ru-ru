@@ -3,12 +3,12 @@ title: Клонирование записной книжки Jupyter из GitHu
 description: Быстро клонируйте записную книжку Jupyter из репозитория GitHub и запускайте ее в своей учетной записи Записных книжек Azure.
 ms.topic: quickstart
 ms.date: 12/04/2018
-ms.openlocfilehash: 35352e74a8db071a2f85bd71857d47f3af1953e2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 267e79e7d4bf108ac3b2c72d64cee5a07ba638be
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833092"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87424483"
 ---
 # <a name="quickstart-clone-a-notebook-in-azure-notebooks-preview"></a>Краткое руководство. Клонирование записной книжки в службе "Записные книжки Azure" (предварительная версия)
 
@@ -49,7 +49,7 @@ ms.locfileid: "85833092"
 
 1. После завершения клонирования в службе "Записные книжки Azure" откроется новый проект, где вы увидите копии всех файлов.
 
-    [![](media/quickstarts/completed-clone.png "View of a completed clone")](media/quickstarts/completed-clone.png#lightbox)
+    :::image type="content" source="media/quickstarts/completed-clone.png" alt-text="Представление завершенного клона." lightbox="media/quickstarts/completed-clone.png":::
 
 ## <a name="share-a-notebook"></a>Совместное использование записной книжки
 

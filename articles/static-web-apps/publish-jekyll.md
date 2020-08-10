@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 06/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 3ced7e758669041d11d50ae7bfaf1065cf5439b3
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: c4211f21d78ac0e06743c97f1081804fd641f9d2
+ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84561905"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87563581"
 ---
 # <a name="tutorial-publish-a-jekyll-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта Jekyll в службе "Статические веб-приложения Azure" — предварительный просмотр
 
@@ -146,7 +146,7 @@ ms.locfileid: "84561905"
 
 1. Откройте приложение Jekyll в текстовом редакторе и откройте файл _.github/workflows/azure-pages-<WORKFLOW_NAME>.yml_.
 
-1. Замените всю эту строку `- uses: actions/checkout@v1` следующим блоков параметров.
+1. Добавьте строки после блока `- uses: actions/checkout@v2` в следующий блок конфигурации.
 
     ```yml
     - uses: actions/checkout@v2
@@ -154,12 +154,12 @@ ms.locfileid: "84561905"
         submodules: true
     - name: Set up Ruby
       uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
-        with:
+      with:
         ruby-version: 2.6
     - name: Install dependencies
-        run: bundle install
+      run: bundle install
     - name: Jekyll build
-        run: jekyll build
+      run: jekyll build
     ```
 
 1. Зафиксируйте обновленный рабочий процесс и отправьте его в GitHub.

@@ -39,11 +39,11 @@
       items:
         - name: Использование приложения Spring Boot Initializer
           href: cache-java-spring-boot-initializer-with-redis-cache.md
-    - name: Использование кэширования со списками лидеров
+    - name: Создание списка лидеров
       href: cache-web-app-cache-aside-leaderboard.md
-    - name: Azure PowerShell
+    - name: Управление с помощью Azure PowerShell
       href: cache-how-to-manage-redis-cache-powershell.md
-    - name: Azure CLI
+    - name: Управление с помощью Azure CLI
       href: cli-samples.md
 - name: Основные понятия
   items:
@@ -65,7 +65,7 @@
     - name: План
       items:
         - name: Выбор уровня кэша
-          href: cache-faq.md#what-azure-cache-for-redis-offering-and-size-should-i-use
+          href: cache-overview.md#choosing-the-right-tier
         - name: Распределение кэша с помощью кластеризации
           href: cache-how-to-premium-clustering.md
         - name: Сохранение кэша с помощью функции сохраняемости данных Redis
@@ -82,6 +82,12 @@
           href: cache-migration-guide.md
         - name: Миграция из управляемой службы кэша (устарела)
           href: cache-migrate-to-redis.md
+        - name: Часто задаваемые вопросы о планировании
+          href: cache-planning-faq.md
+    - name: Сборка
+      items:
+        - name: Часто задаваемые вопросы о разработке
+          href: cache-development-faq.md
     - name: Автоматизация
       items:
         - name: Развертывание и управление с помощью Azure PowerShell
@@ -106,12 +112,22 @@
           href: cache-how-to-redis-cli-tool.md
         - name: "Удаление TLS\_1.0 и 1.1"
           href: cache-remove-tls-10-11.md
+        - name: Часто задаваемые вопросы об управлении
+          href: cache-management-faq.md
     - name: Монитор
       items:
         - name: Мониторинг на портале Azure
           href: cache-how-to-monitor.md
         - name: Установка оповещений для исключений
           href: cache-how-to-monitor.md#operations-and-alerts
+        - name: Часто задаваемые вопросы о мониторинге
+          href: cache-monitor-troubleshoot-faq.md
+    - name: Масштабирование
+      items:
+        - name: Обновление до другого размера и уровня
+          href: cache-how-to-scale.md
+        - name: Использование кластера Redis для горизонтального увеличения и уменьшения масштаба
+          href: cache-how-to-premium-clustering.md
     - name: Диагностирование и устранение неполадок
       items:
         - name: Устранение неполадок сервера Redis
@@ -122,12 +138,8 @@
           href: cache-troubleshoot-timeouts.md
         - name: Устранение неполадок с потерей данных
           href: cache-troubleshoot-data-loss.md
-    - name: Масштабирование
-      items:
-        - name: Обновление до другого размера и уровня
-          href: cache-how-to-scale.md
-        - name: Использование кластера Redis для горизонтального увеличения и уменьшения масштаба
-          href: cache-how-to-premium-clustering.md
+        - name: Часто задаваемые вопросы об устранении неполадок
+          href: cache-monitor-troubleshoot-faq.md
 - name: Справочник
   items:
     - name: Примеры использования кэша Redis для Azure
@@ -152,7 +164,7 @@
       href: 'https://redis.io/commands#'
 - name: Ресурсы
   items:
-    - name: Вопросы и ответы по кэшу Redis для Azure
+    - name: Вопросы и ответы по Кэшу Redis для Azure
       href: cache-faq.md
     - name: Видео
       href: 'https://www.youtube.com/results?search_query=azure+redis+cache'

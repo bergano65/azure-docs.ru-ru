@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: c62cb9b64c42446c1f4ba8f6eb496fc792ff59a1
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 8d672c1113f265f9fbbabc7caed8df071f548f2a
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281282"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87503826"
 ---
 # <a name="migrate-servers-running-windows-server-2008-to-azure"></a>Перенос серверов под управлением Windows Server 2008 в Azure
 
@@ -104,7 +104,7 @@ ms.locfileid: "87281282"
 5. Укажите регион Azure. Сведения о поддерживаемых регионах см. в разделе о доступности по регионам на странице [Цены на Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
 6. Для быстрого доступа к хранилищу из панели мониторинга щелкните **Закрепить на панели мониторинга**, а затем — **Создать**.
 
-   ![Новое хранилище](media/migrate-tutorial-windows-server-2008/migrate-windows-server-2008-vault.png)
+   ![Снимок экрана с параметрами при создании нового хранилища.](media/migrate-tutorial-windows-server-2008/migrate-windows-server-2008-vault.png)
 
 Новое хранилище появится в колонке **Панель мониторинга** в разделе **Все ресурсы** и на основной странице **Хранилища Служб восстановления**.
 
@@ -136,15 +136,15 @@ ms.locfileid: "87281282"
 > [!WARNING]
 > Укажите значение **Выкл.** для параметра периодичности создания моментальных снимков с согласованием приложений в политике репликации. При репликации серверов под управлением Windows Server 2008 поддерживаются только отказоустойчивые точки восстановления. Если указать другое значение для периодичности создания моментальных снимков с согласованием приложений, будут возникать ложные предупреждения, так как состояние репликации сервера станет критическим из-за отсутствия согласованных с приложениями точек восстановления.
 
-   ![Создание политики репликации](media/migrate-tutorial-windows-server-2008/create-policy.png)
+   ![Снимок экрана с параметрами при создании политики репликации.](media/migrate-tutorial-windows-server-2008/create-policy.png)
 
 ### <a name="enable-replication"></a>Включение репликации
 
 [Включите репликацию](physical-azure-disaster-recovery.md#enable-replication) для миграции сервера Windows Server 2008 SP2 или Windows Server 2008 R2 SP1.
    
-   ![Добавление физического сервера](media/migrate-tutorial-windows-server-2008/Add-physical-server.png)
+   ![Снимок экрана с параметрами при добавлении физических компьютеров.](media/migrate-tutorial-windows-server-2008/Add-physical-server.png)
 
-   ![Включение репликации](media/migrate-tutorial-windows-server-2008/Enable-replication.png)
+   ![Снимок экрана с параметрами при включении репликации.](media/migrate-tutorial-windows-server-2008/Enable-replication.png)
 
 ### <a name="run-a-test-migration"></a>Выполнение тестовой миграции
 
@@ -152,7 +152,7 @@ ms.locfileid: "87281282"
 
 Запустите [тестовую отработку отказа](tutorial-dr-drill-azure.md) в Azure, чтобы убедиться в надлежащей работе всех компонентов.
 
-   ![Тестовая отработка отказа](media/migrate-tutorial-windows-server-2008/testfailover.png)
+   ![Снимок экрана с командой проверки отработки отказа.](media/migrate-tutorial-windows-server-2008/testfailover.png)
 
 
 ### <a name="migrate-to-azure"></a>Миграция в Azure
@@ -168,7 +168,7 @@ ms.locfileid: "87281282"
     - Завершите миграцию, прекратите репликацию для сервера и остановите для него выставление счетов Site Recovery.
     - Удалите данные репликации. Перенесенные виртуальные машины при этом не будут удалены.
 
-   ![Завершение миграции](media/migrate-tutorial-windows-server-2008/complete-migration.png)
+   ![Снимок экрана с командой завершения миграции.](media/migrate-tutorial-windows-server-2008/complete-migration.png)
 
 
 > [!WARNING]

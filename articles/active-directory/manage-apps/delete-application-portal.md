@@ -10,13 +10,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 07/01/2020
 ms.author: kenwith
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec0b3ef559abe1c65872d8ecf87f63e6ff3ed4b0
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 422c174116bb6973993f5c6093a83f8bdb42a62a
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86223913"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87808241"
 ---
 # <a name="quickstart-delete-an-application-from-your-azure-active-directory-azure-ad-tenant"></a>Краткое руководство. Удаление приложения из арендатора Azure Active Directory (Azure AD)
 
@@ -44,9 +43,15 @@ ms.locfileid: "86223913"
 1. В разделе **Управление** в левой области выберите **Свойства**.
 1. Выберите **Удалить** и нажмите **Да**, чтобы подтвердить, что вы хотите удалить приложение из своего арендатора Azure AD.
 
+> [!TIP]
+> Вы можете автоматизировать управление приложениями с помощью API Graph — см. [соответствующую статью](https://docs.microsoft.com/graph/application-saml-sso-configure-api).
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если вы завершили работу с этой серией кратких руководств, удалите приложение, чтобы очистить тестового арендатора. В этом кратком руководстве был рассмотрен процесс удаления приложения.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Рекомендации по управлению приложениями](application-management-fundamentals.md)
-- [Общие сценарии управления приложениями](common-scenarios.md)
-- [Видимость и контроль управления приложениями](cloud-app-security.md)
+Вы завершили работу с серией кратких руководств! Далее мы рекомендуем вам изучить рекомендации по управлению приложениями.
+> [!div class="nextstepaction"]
+> [Рекомендации по управлению приложениями](application-management-fundamentals.md)

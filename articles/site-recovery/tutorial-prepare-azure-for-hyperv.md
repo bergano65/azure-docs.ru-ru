@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/14/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 3be81d104e32946e2bfd7dc76052dad464f95623
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 4e28a46b8d231b3f228a95ea06b7b9cada50de54
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86130976"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87498996"
 ---
 # <a name="prepare-azure-resources-for-hyper-v-disaster-recovery"></a>Подготовка ресурсов Azure для аварийного восстановления Hyper-V
 
@@ -63,7 +63,7 @@ ms.locfileid: "86130976"
 9. В разделе **Расположение** выберите географическое расположение для учетной записи хранения. Мы будем использовать **Западная Европа**.
 10. Щелкните **Create** (Создать), чтобы создать учетную запись хранения.
 
-   ![Создание учетной записи хранения](media/tutorial-prepare-azure/create-storageacct.png)
+   ![Снимок экрана с параметрами при создании учетной записи хранения.](media/tutorial-prepare-azure/create-storageacct.png)
 
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 
@@ -74,7 +74,7 @@ ms.locfileid: "86130976"
 3. В поле **Расположение** выберите регион, где будет размещаться хранилище. Мы будем использовать **Западная Европа**.
 4. Для быстрого доступа к новому хранилищу с панели мониторинга выберите **Закрепить на панели мониторинга** > **Create** (Создать).
 
-![Создание хранилища](./media/tutorial-prepare-azure/new-vault-settings.png)
+![Снимок экрана со страницей "Создание хранилища Служб восстановления"](./media/tutorial-prepare-azure/new-vault-settings.png)
 
 Новое хранилище появится в колонке **Dashboard** (Панель мониторинга)  > **All resources** (Все ресурсы) и на основной странице **Хранилища служб восстановления**.
 
@@ -91,7 +91,7 @@ ms.locfileid: "86130976"
 7. Оставьте значения по умолчанию: базовые средства защиты от атак DDoS и отсутствие конечной точки службы в сети.
 8. Нажмите кнопку **Создать**.
 
-![Создание виртуальной сети](media/tutorial-prepare-azure/create-network.png)
+![Снимок экрана с параметрами при создании виртуальной сети.](media/tutorial-prepare-azure/create-network.png)
 
 Создание виртуальной сети занимает несколько секунд. После завершения этого процесса она отобразится на панели мониторинга портала Azure.
 

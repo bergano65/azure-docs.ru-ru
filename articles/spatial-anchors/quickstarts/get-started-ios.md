@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание приложения iOS
-description: В этом кратком руководстве вы узнаете, как создать приложение iOS с помощью службы "Пространственные привязки".
+description: Сведения о том, как создать приложение iOS на языке Swift или Objective-C программно с помощью службы "Пространственные привязки Azure".
 author: craigktreasure
 manager: vriveras
 services: azure-spatial-anchors
@@ -9,12 +9,12 @@ ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
 ms.custom: has-adal-ref
-ms.openlocfilehash: 542b5168bb70d876d91f8a747a230f2b754568e9
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 2df66979d1e8f400f2630f5e531cd201244fdc6d
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873106"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87809992"
 ---
 # <a name="quickstart-create-an-ios-app-with-azure-spatial-anchors-in-either-swift-or-objective-c"></a>Краткое руководство. Создание приложения iOS на языке Swift или Objective-C с помощью службы "Пространственные привязки Azure"
 
@@ -101,7 +101,7 @@ open ./SampleObjC.xcworkspace
 
 Найдите поле `spatialAnchorsAccountId` и замените `Set me` идентификатором учетной записи.
 
-Найдите `startSession()` и добавьте следующую строку, подставив в нее полученный ранее домен учетной записи: `cloudSession!.configuration.accountDomain = "MyAccountDomain";`.
+Найдите поле `spatialAnchorsAccountDomain` и замените `Set me` доменом учетной записи.
 
 # <a name="objective-c"></a>[Objective-C](#tab/openproject-objc)
 
@@ -111,7 +111,7 @@ open ./SampleObjC.xcworkspace
 
 Найдите поле `SpatialAnchorsAccountId` и замените `Set me` идентификатором учетной записи.
 
-Найдите `startSession()` и добавьте следующую строку, подставив в нее полученный ранее домен учетной записи: `_cloudSession.configuration.accountDomain = @"MyAccountDomain";`.
+Найдите поле `SpatialAnchorsAccountDomain` и замените `Set me` доменом учетной записи.
 
 ---
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/20/2020
 ms.author: mbaldwin
 ms.custom: mvc
-ms.openlocfilehash: e77701e17ef1b47aa6b8e3b8f2d10e93bf5e054e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ead0c13a1fce0b5d56c9dd875c594a2269e2c78c
+ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87093642"
+ms.lasthandoff: 08/02/2020
+ms.locfileid: "87513117"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-virtual-machine-in-net"></a>Руководство по Использование Azure Key Vault с виртуальной машиной в .NET
 
@@ -56,21 +56,15 @@ Azure Key Vault помогает защитить секреты, такие к�
 az login
 ```
 
-### <a name="create-a-resource-group-and-key-vault"></a>Создание группы ресурсов и хранилища ключей
+## <a name="create-a-resource-group-and-key-vault"></a>Создание группы ресурсов и хранилища ключей
 
 [!INCLUDE [Create a resource group and key vault](../../../includes/key-vault-rg-kv-creation.md)]
 
-### <a name="populate-your-key-vault-with-a-secret"></a>Запись секрета в хранилище ключей
+## <a name="populate-your-key-vault-with-a-secret"></a>Запись секрета в хранилище ключей
 
-Теперь добавьте секрет в хранилище ключей с помощью команды [az keyvault secret set](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-set). Введите следующую команду, чтобы создать секрет с именем **mySecret** в хранилище ключей.
+[!INCLUDE [Create a secret](../../../includes/key-vault-create-secret.md)]
 
-```azurecli
-az keyvault secret set --vault-name "<your-unique-key-vault-name>" --name "mySecret" --value "MySecret"
-```
-
-В этом секрете хранится значение **MySecret**.
-
-### <a name="create-a-virtual-machine"></a>Создание виртуальной машины
+## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 Создайте виртуальную машину Windows или Linux одним из следующих способов.
 
 | Windows | Linux |
@@ -79,7 +73,7 @@ az keyvault secret set --vault-name "<your-unique-key-vault-name>" --name "mySec
 | [PowerShell](../../virtual-machines/windows/quick-create-powershell.md) | [PowerShell](../../virtual-machines/linux/quick-create-powershell.md) |
 | [Портал Azure](../../virtual-machines/windows/quick-create-portal.md) | [Портал Azure](../../virtual-machines/linux/quick-create-portal.md) |
 
-### <a name="assign-an-identity-to-the-vm"></a>Назначение удостоверения виртуальной машине
+## <a name="assign-an-identity-to-the-vm"></a>Назначение удостоверения виртуальной машине
 Создайте назначаемое системой удостоверение для виртуальной машины с помощью команды [az vm identity assign](/cli/azure/vm/identity?view=azure-cli-latest#az-vm-identity-assign):
 
 ```azurecli
@@ -95,16 +89,16 @@ az vm identity assign --name <NameOfYourVirtualMachine> --resource-group <YourRe
 }
 ```
 
-### <a name="assign-permissions-to-the-vm-identity"></a>Назначение разрешения для идентификатора виртуальной машины
+## <a name="assign-permissions-to-the-vm-identity"></a>Назначение разрешения для идентификатора виртуальной машины
 Предоставьте созданному выше удостоверению разрешение для хранилища ключей, выполнив команду [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy).
 
 ```azurecli
 az keyvault set-policy --name '<your-unique-key-vault-name>' --object-id <VMSystemAssignedIdentity> --secret-permissions get list
 ```
 
-### <a name="sign-in-to-the-virtual-machine"></a>Вход в виртуальную машину
+## <a name="sign-in-to-the-virtual-machine"></a>Вход в виртуальную машину
 
-Чтобы войти в виртуальную машину, следуйте инструкциям по подключению и входу в виртуальную машину Azure на платформе [Windows](../../virtual-machines/windows/connect-logon.md) или [Linux](../../virtual-machines/linux/login-using-aad.md).
+Чтобы войти в виртуальную машину, следуйте инструкциям по подключению или входу в виртуальную машину на платформе [Windows](../../virtual-machines/windows/connect-logon.md) или [Linux](../../virtual-machines/linux/login-using-aad.md).
 
 ## <a name="set-up-the-console-app"></a>Настройка консольного приложения
 

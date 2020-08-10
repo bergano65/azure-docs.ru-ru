@@ -9,14 +9,14 @@ ms.subservice: sql
 ms.date: 04/19/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: d7f990b059346c4c782ca923e663997317c4df16
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3c33e2152fc120d406886d89adda26603126a8ba
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87046876"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87483558"
 ---
-# <a name="accessing-external-storage-in-synapse-sql-on-demand"></a>Получение доступа к внешнему хранилищу в Synapse SQL (по запросу)
+# <a name="access-external-storage-in-synapse-sql-on-demand"></a>Доступ к внешнему хранилищу в Synapse SQL (по запросу)
 
 В этом документе описывается, как пользователь может считывать данные из файлов, хранящихся в службе хранилища Azure, в Synapse SQL (по запросу). Пользователи могут обращаться к хранилищу с помощью следующих средств:
 
@@ -59,7 +59,7 @@ GRANT REFERENCES CREDENTIAL::[https://<storage_account>.dfs.core.windows.net/<co
 > [!NOTE]
 > Эта версия OPENROWSET предназначена для быстрого и удобного просмотра данных с использованием аутентификации по умолчанию. Чтобы работать с олицетворением или управляемым удостоверением, используйте OPENROWSET с DATASOURCE, как описано в следующем разделе.
 
-### <a name="querying-data-sources-using-openrowset"></a>Обращение к источникам данных с помощью OPENROWSET
+### <a name="query-data-sources-using-openrowset"></a>Обращение к источникам данных с помощью OPENROWSET
 
 С помощью функции OPENROWSET пользователь может запрашивать файлы, размещенные во внешнем источнике данных:
 
@@ -91,7 +91,7 @@ CREATE EXTERNAL DATA SOURCE MyAzureInvoices
   - `ADMINISTER DATABASE BULK OPERATIONS` позволяет пользователю базы данных выполнить функцию OPENROWSET.
 - REFERENCES DATABASE SCOPED CREDENTIAL для учетных данных, указанных в EXTERNAL DATA SOURCE.
 
-#### <a name="accessing-anonymous-data-sources"></a>Получение доступа к анонимным источникам данных
+#### <a name="access-anonymous-data-sources"></a>Доступ к анонимным источникам данных
 
 Пользователь может создать внешний источник данных без учетных данных со ссылкой на хранилище с открытым доступом ИЛИ использовать сквозную аутентификацию Azure AD.
 
@@ -132,7 +132,7 @@ CREATE EXTERNAL DATA SOURCE AzureDataLakeStore
 
 Учетные данные уровня базы данных определяют способ доступа к файлам в указанном источнике данных.
 
-### <a name="reading-external-files-with-external-table"></a>Считывание внешних файлов с помощью EXTERNAL TABLE
+### <a name="read-external-files-with-external-table"></a>Считывание внешних файлов с помощью EXTERNAL TABLE
 
 Структура EXTERNAL TABLE позволяет считывать данные из файлов, на которые указывает источник данных, с помощью стандартной инструкции SQL SELECT:
 

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 312723818c4cef82ad6c96b013d7ec81ede276cc
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: ed517f2f6e04f60ec1c9c808f2fdf03203fb891b
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86130912"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87498979"
 ---
 # <a name="prepare-azure-for-on-premises-disaster-recovery-to-azure"></a>Подготовка Azure к локальному аварийному восстановлению в Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "86130912"
 6. В поле **Регион** выберите регион, в котором будет размещаться хранилище. выбираем значение **Западная Европа**.
 7. Выберите **Review + create** (Просмотреть и создать).
 
-   ![Создание хранилища](./media/tutorial-prepare-azure/new-vault-settings.png)
+   ![Снимок экрана со страницей "Создание хранилища Служб восстановления"](./media/tutorial-prepare-azure/new-vault-settings.png)
 
    Новое хранилище появится в колонке **Панель мониторинга** > **Все ресурсы** и на основной странице **Хранилища Служб восстановления**.
 
@@ -81,7 +81,7 @@ ms.locfileid: "86130912"
 9. Мы сохраняем значения по умолчанию: базовые средства защиты от атак DDoS и отсутствие конечной точки службы или брандмауэра в сети.
 9. Нажмите кнопку **Создать**.
 
-   ![Создание виртуальной сети](media/tutorial-prepare-azure/create-network.png)
+   ![Снимок экрана с параметрами при создании виртуальной сети.](media/tutorial-prepare-azure/create-network.png)
 
 Создание виртуальной сети занимает несколько секунд. После завершения этого процесса она отобразится на панели мониторинга портала Azure.
 

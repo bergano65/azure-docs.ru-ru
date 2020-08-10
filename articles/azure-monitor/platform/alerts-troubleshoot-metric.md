@@ -4,14 +4,14 @@ description: Распространенные проблемы с Azure Monitor 
 author: harelbr
 ms.author: harelbr
 ms.topic: reference
-ms.date: 07/21/2020
+ms.date: 08/09/2020
 ms.subservice: alerts
-ms.openlocfilehash: 3e691e3f32404af792c852636a257659b629eef4
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 5ea28a7a4669fd000800bf62b7b940abefcf7551
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87824568"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88030968"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Устранение неполадок в Azure Monitor оповещениях метрик 
 
@@ -130,6 +130,15 @@ Azure Monitor оповещения заблаговременно уведомл
         }
 ```
 
+## <a name="export-the-arm-template-of-a-metric-alert-rule-via-the-azure-portal"></a>Экспортируйте шаблон ARM правила генерации оповещений метрики с помощью портал Azure
+
+Экспорт шаблона ARM правила генерации оповещений метрик помогает понять синтаксис и свойства JSON, а также использовать его для автоматизации будущих развертываний.
+1. Перейдите к разделу " **группы ресурсов** " на портале и выберите группу ресурсов, содержащую правило.
+2. В разделе Обзор установите флажок **Показывать скрытые типы** .
+3. В поле Фильтр **типов** выберите *Microsoft. Insights/метрикалертс*.
+4. Выберите соответствующее правило генерации оповещений, чтобы просмотреть сведения о нем.
+5. В разделе **Параметры**выберите **Экспорт шаблона**.
+
 ## <a name="metric-alert-rules-quota-too-small"></a>Квота на правила генерации оповещений метрик слишком мала
 
 Допустимое число правил генерации оповещений метрик на подписку ограничено [квотой](../service-limits.md).
@@ -244,6 +253,6 @@ Azure Monitor оповещения заблаговременно уведомл
     - Так как метрики **транзакций** и **SuccessE2ELatency** поддерживают измерение **ApiName** , мне нужно обновить оба условия, и оба они задают измерение **ApiName** со значением *"BLOB"* .
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения об устранении неполадок с предупреждениями и уведомлениями см. [в разделе Устранение неполадок в Azure Monitor оповещениях](alerts-troubleshoot.md).

@@ -6,13 +6,13 @@ ms.service: service-fabric
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: edoyle
-ms.date: 04/24/2020
-ms.openlocfilehash: 70b5387e5e58bd30aa61feefc1bf4e5e98af9b1d
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.date: 07/29/2020
+ms.openlocfilehash: 359b527733ee8eebf7e1e7d12c40a0c74ec1c9bd
+ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86259346"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87460309"
 ---
 # <a name="quickstart-create-a-service-fabric-cluster-using-arm-template"></a>Краткое руководство. Создание кластера Service Fabric с помощью шаблона ARM
 
@@ -42,7 +42,7 @@ Azure Service Fabric — это платформа распределенных 
 
 Клонируйте или загрузите репозиторий с [шаблонами Resource Manager для быстрого начала работы](https://github.com/Azure/azure-quickstart-templates). Кроме того, скопируйте локально следующие файлы, которые будут использоваться, из папки *Service-Fabric-Secure-Cluster-5-node-1-NodeType*.
 
-* [New-ServiceFabricClusterCertificate.ps1](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/service-fabric-secure-cluster-5-node-1-nodetype/New-ServiceFabricClusterCertificate.ps1)
+* [New-ServiceFabricClusterCertificate.ps1](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/service-fabric-secure-cluster-5-node-1-nodetype/scripts/New-ServiceFabricClusterCertificate.ps1)
 * [azuredeploy.json](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/service-fabric-secure-cluster-5-node-1-nodetype/azuredeploy.json)
 * [azuredeploy.parameters.json](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/service-fabric-secure-cluster-5-node-1-nodetype/azuredeploy.parameters.json)
 
@@ -68,10 +68,10 @@ $keyVaultName = "SFQuickstartKV"
 New-AzResourceGroup -Name $resourceGroupName -Location SouthCentralUS
 
 # Create a Key Vault enabled for deployment
-New-AzKeyVault -VaultName $KeyVaultName -ResourceGroupName $resourceGroupName -Location SouthCentralUS -EnabledForDeployment
+New-AzKeyVault -VaultName $keyVaultName -ResourceGroupName $resourceGroupName -Location SouthCentralUS -EnabledForDeployment
 
 # Generate a certificate and upload it to Key Vault
-.\New-ServiceFabricClusterCertificate.ps1
+.\scripts\New-ServiceFabricClusterCertificate.ps1
 ```
 
 Скрипт предложит вам ввести следующие учетные данные (обязательно измените *CertDNSName* и *KeyVaultName* из приведенных ниже примеров значений):
@@ -178,6 +178,18 @@ New-AzResourceGroupDeployment `
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
 Remove-AzResourceGroup -Name $resourceGroupName
 Write-Host "Press [ENTER] to continue..."
+```
+
+Затем удалите сертификат кластера из локального хранилища. Выведите список установленных сертификатов, чтобы найти отпечаток для своего кластера:
+
+```powershell
+Get-ChildItem Cert:\CurrentUser\My\
+```
+
+Затем удалите сертификат:
+
+```powershell
+Get-ChildItem Cert:\CurrentUser\My\{THUMBPRINT} | Remove-Item
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 11/05/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 5cf23a9c66c76f778dbd5d2b126b28a5a577c978
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 46119b9f7cdac47920d4bba8e00c3fc56b0edc78
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82098005"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87494525"
 ---
 # <a name="quickstart-create-a-windows-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины Windows на портале Azure
 
@@ -32,23 +32,23 @@ ms.locfileid: "82098005"
 1. На странице **Виртуальные машины** выберите **Добавить**. 
 1. На вкладке **Основные сведения** в разделе **Сведения о проекте** убедитесь, что выбрана правильная подписка, и при необходимости щелкните **Создать** для группы ресурсов. Введите *myResourceGroup* в качестве имени. 
 
-    ![Создание группы ресурсов для виртуальной машины](./media/quick-create-portal/project-details.png)
+    ![Снимок экрана с разделом сведений о проекте, в котором вы выбираете подписку Azure и группу ресурсов для виртуальной машины](./media/quick-create-portal/project-details.png)
 
 1. В разделе **Подробности об экземпляре** введите *myVM* в поле **Имя виртуальной машины**, выберите *Восточная часть США* в поле **Регион** и выберите *Windows Server 2019 Datacenter* в поле **Образ**. Оставьте другие значения по умолчанию.
 
-    ![Раздел "Подробности об экземпляре"](./media/quick-create-portal/instance-details.png)
+    ![Снимок экрана с разделом сведений об экземпляре, в котором вы указываете имя виртуальной машины и выбираете ее регион, образ и размер](./media/quick-create-portal/instance-details.png)
 
 1. В разделе **Учетная запись администратора** укажите имя пользователя, например *azureuser*, и пароль. Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](faq.md#what-are-the-password-requirements-when-creating-a-vm).
 
-    ![Ввод имени пользователя и пароля](./media/quick-create-portal/administrator-account.png)
+    ![Снимок экрана с разделом учетной записи администратора, в котором вы указываете имя пользователя и пароль администратора](./media/quick-create-portal/administrator-account.png)
 
 1. В разделе **Правила входящего порта** щелкните **Разрешить выбранные порты**, а затем выберите **RDP (3389)** и **HTTP (80)** из раскрывающегося списка.
 
-    ![Открытие портов для RDP и HTTP](./media/quick-create-portal/inbound-port-rules.png)
+    ![Снимок экрана с разделом правил для входящих портов, в котором вы выбираете, на каких портах разрешены входящие подключения](./media/quick-create-portal/inbound-port-rules.png)
 
 1. Оставьте остальные значения по умолчанию и нажмите кнопку **Просмотр и создание**, расположенную в нижней части страницы.
 
-    ![Просмотр и создание](./media/quick-create-portal/review-create.png)
+    ![Снимок экрана с кнопкой "Проверить и создать" в нижней части страницы](./media/quick-create-portal/review-create.png)
 
 
 ## <a name="connect-to-virtual-machine"></a>Подключение к виртуальной машине
@@ -57,7 +57,7 @@ ms.locfileid: "82098005"
 
 1. Нажмите кнопку **Подключиться** на странице обзора виртуальной машины. 
 
-    ![Подключение к виртуальной машине Azure с портала](./media/quick-create-portal/portal-quick-start-9.png)
+    ![Снимок экрана со страницей обзора виртуальной машины, на которой отображается расположение кнопки подключения](./media/quick-create-portal/portal-quick-start-9.png)
     
 2. На странице **Подключение к виртуальной машине** сохраните значения по умолчанию, чтобы использовать подключение по IP-адресу через порт 3389, и щелкните **Скачать RDP-файл**.
 
@@ -82,7 +82,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 Выберите на портале виртуальную машину. В окне обзора скопируйте IP-адрес с помощью находящейся справа от него кнопки **Щелкните, чтобы скопировать**, а затем вставьте его на вкладку браузера. Откроется страница приветствия IIS по умолчанию, которая будет иметь следующий вид:
 
-![Сайт IIS по умолчанию](./media/quick-create-powershell/default-iis-website.png)
+![Снимок экрана с сайтом IIS по умолчанию в браузере](./media/quick-create-powershell/default-iis-website.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

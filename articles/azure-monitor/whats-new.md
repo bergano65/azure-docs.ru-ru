@@ -6,12 +6,12 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 07/08/2020
-ms.openlocfilehash: 192219a804365957e9eaa0577019ff18d75861bf
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: b36469a89c7bae39ae3c2d62792c2ccde0fcfda9
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86498514"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87799333"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 
@@ -20,7 +20,7 @@ ms.locfileid: "86498514"
 ## <a name="june-2020"></a>Июнь 2020 г.
 
 ### <a name="general"></a>Общие сведения
-- [Развертывание Azure Monitor](platform/deploy-scale.md) — новая статья.
+- [Развертывание Azure Monitor](deploy-scale.md) — новая статья.
 - [Ключ Azure Monitor, управляемый клиентом](platform/customer-managed-keys.md) — обновлено свойство billingtype. Добавлены команды PowerShell.
 
 ### <a name="agents"></a>Агенты

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/01/2020
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f8f19e6b98143bb48430decdd51f5626e72d422
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 461a424f23161e1567c6b32a38db0225efc56b1e
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87387291"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87808394"
 ---
 # <a name="quickstart-set-up-single-sign-on-sso-for-an-application-in-your-azure-active-directory-azure-ad-tenant"></a>Краткое руководство. Настройка единого входа для приложения в арендаторе Azure Active Directory (Azure AD)
 
@@ -61,6 +61,16 @@ ms.locfileid: "87387291"
     :::image type="content" source="media/add-application-portal-setup-sso/github-pricing.png" alt-text="Снимок экрана с параметром единого входа в подписке Enterprise на странице цен на GitHub.":::
 
 
-## <a name="next-step"></a>Следующий шаг
+> [!TIP]
+> Вы можете автоматизировать управление приложениями с помощью API Graph — см. [соответствующую статью](https://docs.microsoft.com/graph/application-saml-sso-configure-api).
 
-- [Удаление приложения](delete-application-portal.md)
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если вы завершили работу с этой серией кратких руководств, удалите приложение, чтобы очистить тестового арендатора. Сведения о том, как удалить приложение, см. в последнем кратком руководстве этой серии, [Удаление приложения](delete-application-portal.md).
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Чтобы узнать, как удалить приложение, перейдите к следующей статье.
+> [!div class="nextstepaction"]
+> [Удаление приложения](delete-application-portal.md)

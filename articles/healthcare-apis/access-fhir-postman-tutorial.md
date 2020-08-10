@@ -9,12 +9,12 @@ ms.reviewer: dseven
 ms.author: mihansen
 author: hansenms
 ms.date: 02/07/2019
-ms.openlocfilehash: 684f85042fd09c14621801ec017fea0e632f2598
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 6e0851a55673792adc905d27fdd3f5c13d572032
+ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "84870534"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87563965"
 ---
 # <a name="access-azure-api-for-fhir-with-postman"></a>Получение доступа к Azure API для FHIR с помощью Postman
 
@@ -23,6 +23,7 @@ ms.locfileid: "84870534"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Конечная точка FHIR в Azure. Ее можно настроить с помощью управляемой службы Azure API для FHIR или сервера FHIR с открытым исходным кодом для Azure. Настройте управляемую службу Azure API для FHIR с помощью [портала Azure](fhir-paas-portal-quickstart.md), [PowerShell](fhir-paas-powershell-quickstart.md) или [Azure CLI](fhir-paas-cli-quickstart.md).
+- [Клиентское приложение](register-confidential-azure-ad-client-app.md), которое вы будете использовать для доступа к службе FHIR.
 - Установленное приложение Postman. Его можно получить на сайте [https://www.getpostman.com](https://www.getpostman.com).
 
 ## <a name="fhir-server-and-authentication-details"></a>Сведения о сервере FHIR и проверке подлинности
@@ -108,7 +109,7 @@ URL-адрес метаданных для Azure API для FHIR — `https://M
 }
 ```
 
-В ситуациях, связанных с устранением неполадок, необходимо выполнить проверку правильности аудитории (утверждение `aud`). Если ваш маркер относится к надлежащему поставщику (утверждение `iss`) и имеет правильную аудиторию (утверждение `aud`), но вы по-прежнему не можете получить доступ к API FHIR, вероятно, что у пользователя или субъекта-службы (утверждение `oid`) нет доступа к плоскости данных FHIR. Для назначения ролей плоскости данных пользователям рекомендуется [использовать управление доступом на основе ролей Azure](configure-azure-rbac.md). Если вы используете внешний, вторичный клиент Azure Active Directory для своей плоскости данных, необходимо [настроить локальные назначения RBAC](configure-local-rbac.md).
+В ситуациях, связанных с устранением неполадок, необходимо выполнить проверку правильности аудитории (утверждение `aud`). Если ваш маркер относится к надлежащему поставщику (утверждение `iss`) и имеет правильную аудиторию (утверждение `aud`), но вы по-прежнему не можете получить доступ к API FHIR, вероятно, что у пользователя или субъекта-службы (утверждение `oid`) нет доступа к плоскости данных FHIR. Для назначения ролей плоскости данных пользователям рекомендуется [использовать управление доступом на основе ролей Azure (Azure RBAC)](configure-azure-rbac.md). Если вы используете внешний, вторичный клиент Azure Active Directory для своей плоскости данных, необходимо [настроить локальные назначения RBAC](configure-local-rbac.md).
 
 Кроме того, можно [получить маркер для Azure API для FHIR с помощью Azure CLI](get-healthcare-apis-access-token-cli.md). Если вы используете маркер, полученный с помощью Azure CLI, следует использовать тип авторизации "Маркер носителя" и вставить маркер непосредственно.
 

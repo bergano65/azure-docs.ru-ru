@@ -1,19 +1,19 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: app-service
 author: ggailey777
 ms.service: app-service
 ms.topic: include
-ms.date: 02/19/2019
+ms.date: 06/26/2020
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: 82e5221daefaecb687ad9feb79305e546d4ec17e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: c255be53a1809bf5dd3fc6b184852767dfec9c66
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "68424169"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88009803"
 ---
 > [!NOTE]
-> Время ожидания веб-приложения может истечь после 20 минут бездействия. Запросы к фактическому сайту сбрасывают таймер. Просмотр конфигурации приложения в портал Azure или выполнение запросов к сайту "дополнительные инструменты" ( `https://<app_name>.scm.azurewebsites.net` ) не приводит к сбросу таймера. Если приложение запускает непрерывное или запланированное (триггер таймера) веб-задания, включите **Always on** , чтобы убедиться в надежном запуске веб-заданий. Эта функция доступна только в [ценовых категориях](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) "Базовый", "Стандартный" и "Премиум".
+> Время ожидания веб-приложения может истечь после 20 минут бездействия. Сбросить таймер можно только с помощью запросов к фактическому веб-приложению. Таймер не будет сброшен при просмотре конфигурации приложения на портале Azure или выполнении запросов к сайту расширенных средств (`https://<app_name>.scm.azurewebsites.net`). Если веб-приложение настроено для выполнения непрерывных или запланированных заданий (триггер таймера), установите параметр **Всегда включено** в Azure на странице **Конфигурация** веб-приложения, чтобы обеспечить надежное выполнение веб-заданий. Эта функция доступна только в [ценовых категориях](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) "Базовый", "Стандартный" и "Премиум".

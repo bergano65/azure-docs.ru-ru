@@ -7,12 +7,13 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.topic: quickstart
 ms.date: 06/09/2020
-ms.openlocfilehash: 1281f5c3355a09659f2f45c4cf944271936f50d8
-ms.sourcegitcommit: ce44069e729fce0cf67c8f3c0c932342c350d890
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 6c2ef52669a0bc5cd29bdcebf920beb1f409e65d
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84636377"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87533110"
 ---
 # <a name="quickstart-set-up-azure-netapp-files-and-create-an-nfs-volume"></a>Краткое руководство. Настройка Azure NetApp Files и создание тома NFS 
 
@@ -411,4 +412,6 @@ ms.locfileid: "84636377"
 ## <a name="next-steps"></a>Дальнейшие действия  
 
 > [!div class="nextstepaction"]
-> [Управление томами с помощью Azure NetApp Files](azure-netapp-files-manage-volumes.md)  
+> [Иерархия хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md)   
+> [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)   
+> [Создание тома NFS](azure-netapp-files-create-volumes.md)   

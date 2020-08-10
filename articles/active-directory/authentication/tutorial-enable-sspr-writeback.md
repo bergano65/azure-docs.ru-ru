@@ -11,12 +11,12 @@ author: iainfoulds
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 70a73cb1f855840831f2e1107baa94dfd54868a5
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: f4687a98bfb58db8ed5e8a853fa0db2207f435e8
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86518493"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87419654"
 ---
 # <a name="tutorial-enable-azure-active-directory-self-service-password-reset-writeback-to-an-on-premises-environment"></a>Руководство по Включение самостоятельного сброса пароля в Azure Active Directory с использованием обратной записи в локальную среду
 
@@ -40,7 +40,7 @@ ms.locfileid: "86518493"
 
 Для работы с этим учебником требуются следующие ресурсы и разрешения:
 
-* Работающий арендатор Azure AD, для которого включена по меньшей мере пробная лицензия Azure AD Premium P1.
+* Рабочий клиент Azure AD, для которого включена по меньшей мере лицензия Azure AD Premium P1 или пробная лицензия.
     * [Создайте ее бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), если нужно.
     * См. [требования к лицензированию для Azure AD SSPR](concept-sspr-licensing.md).
 * Учетная запись с привилегиями *глобального администратора*.
@@ -81,7 +81,7 @@ Azure AD Connect позволяет синхронизировать польз�
     * **Write lockoutTime** (Запись времени блокировки);
     * **Write pwdLastSet** (Запись времени последней установки пароля).
 
-    [![](media/tutorial-enable-sspr-writeback/set-ad-ds-permissions-cropped.png "Set the appropriate permissions in Active Users and Computers for the account that is used by Azure AD Connect")](media/tutorial-enable-sspr-writeback/set-ad-ds-permissions.png#lightbox)
+    [ ![Установка соответствующих разрешений для активных пользователей и компьютеров в рамках учетной записи, используемой Azure AD Connect](media/tutorial-enable-sspr-writeback/set-ad-ds-permissions-cropped.png) ](media/tutorial-enable-sspr-writeback/set-ad-ds-permissions.png#lightbox)
 
 1. Когда все будет готово, щелкните **Применить** и "ОК", чтобы применить изменения, а затем закройте все открытые диалоговые окна.
 

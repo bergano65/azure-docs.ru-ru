@@ -6,19 +6,26 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
-ms.date: 07/15/2020
-ms.openlocfilehash: 8c6486a3a64dcbe3dd37770844296da73724f3a3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/01/2020
+ms.custom: references_regions
+ms.openlocfilehash: 60efc645b1b5824306c1d4aa3e763eb9d2bc745d
+ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87076349"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87553938"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Новые возможности в Когнитивном поиске Azure
 
 Узнайте о новых возможностях службы. Создайте закладку для этой страницы, чтобы получать последние сведения об обновлениях службы.
 
 ## <a name="feature-announcements-in-2020"></a>Объявления о новых возможностях за 2020 год
+
+### <a name="august-2020"></a>Август 2020 г.
+
+|Функция&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Категория | Описание | Доступность  |
+|---------|------------------|-------------|---------------|
+| [Двойное шифрование](search-security-overview.md#encryption) | Безопасность | Включите двойное шифрование на уровне хранилища, настроив шифрование управляемого клиентом ключа (CMK) для новых служб поиска. Создайте новую службу, [настройте и примените управляемые клиентом ключи](search-security-manage-encryption-keys.md) для индексов или карт синонимов, а также используйте двойное шифрование с таким содержимым. | Общедоступна для всех служб поиска, созданных после 1 августа 2020 г. в таких регионах: "Западная часть США 2", "Восточная часть США", "Центрально-южная часть США", "US Gov (Вирджиния)", "US Gov (Аризона)". Для создания службы используйте портал, REST API управления или пакеты SDK. |
 
 ### <a name="july-2020"></a>Июль 2020 г.
 

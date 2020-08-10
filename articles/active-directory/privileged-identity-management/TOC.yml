@@ -8,7 +8,7 @@
   items:
     - name: Требования лицензий
       href: subscription-requirements.md
-    - name: 'Роли, которыми вы не можете управлять'
+    - name: 'Роли, недоступные для управления с помощью PIM'
       href: pim-roles.md
     - name: Обеспечение безопасности привилегированного доступа
       href: ../users-groups-roles/directory-admin-roles-secure.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json
@@ -18,7 +18,7 @@
       href: pim-resource-roles-overview-dashboards.md
     - name: Уведомления по электронной почте
       href: pim-email-notifications.md
-    - name: API-интерфейсы Microsoft Graph
+    - name: API Microsoft Graph и PIM
       href: pim-apis.md
 - name: Практические руководства
   expanded: true
@@ -33,7 +33,7 @@
           href: pim-security-wizard.md
         - name: Обнаружение ресурсов Azure
           href: pim-resource-roles-discover-resources.md
-        - name: Предоставление доступа другим пользователям для управления PIM
+        - name: Делегирование прав доступа к PIM
           href: pim-how-to-give-access-to-pim.md
         - name: Повышение прав доступа для управления всеми подписками
           href: ../../role-based-access-control/elevate-access-global-admin.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json

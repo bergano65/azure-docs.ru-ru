@@ -9,14 +9,14 @@ ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
 ms.custom: has-adal-ref
-ms.openlocfilehash: a1f6548a83736cfb0e519559fd22e16d4527ae0b
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: c578958616e4b4d2d7d3aef1de1650566e0bd40e
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83197660"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496412"
 ---
-# <a name="using-multi-factor-aad-authentication-with-synapse-sql-ssms-support-for-mfa"></a>Использование многофакторной проверки подлинности AAD с Synapse SQL (поддержка SSMS для MFA)
+# <a name="use-multi-factor-aad-authentication-with-synapse-sql-ssms-support-for-mfa"></a>Использование многофакторной проверки подлинности AAD с Synapse SQL (поддержка SSMS для MFA)
 
 Synapse SQL поддерживает подключения из SQL Server Management Studio (SSMS) при использовании *универсальной проверки подлинности Active Directory*. 
 

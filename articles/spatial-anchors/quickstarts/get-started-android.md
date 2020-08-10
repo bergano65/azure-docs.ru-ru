@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 3f794d1c70baee07b9ff3ed5d8299cf8ad3bf983
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 6b7f924c7f115e8eddda93ea0c096ab94411da72
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83652506"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810400"
 ---
 # <a name="quickstart-create-an-android-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения Android с помощью Пространственных привязок Azure
 
@@ -86,7 +86,7 @@ git submodule update --init --recursive
 
 Найдите поле `SpatialAnchorsAccountId` и замените `Set me` идентификатором учетной записи.
 
-Найдите `public AzureSpatialAnchorsManager(Session arCoreSession)` и добавьте следующую строку, подставив в нее полученный ранее домен учетной записи: `spatialAnchorsSession.getConfiguration().setAccountDomain("MyAccountDomain");`.
+Найдите поле `SpatialAnchorsAccountDomain` и замените `Set me` доменом учетной записи.
 
 # <a name="ndk"></a>[NDK](#tab/openproject-ndk)
 
@@ -96,7 +96,7 @@ git submodule update --init --recursive
 
 Найдите поле `SpatialAnchorsAccountId` и замените `Set me` идентификатором учетной записи.
 
-Найдите `AzureSpatialAnchorsApplication::StartCloudSession()` и добавьте следующую строку, подставив в нее полученный ранее домен учетной записи: `m_cloudSession->Configuration()->AccountDomain("MyAccountDomain");`.
+Найдите поле `SpatialAnchorsAccountDomain` и замените `Set me` доменом учетной записи.
 
 ---
 

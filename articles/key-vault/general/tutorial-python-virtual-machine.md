@@ -9,28 +9,26 @@ ms.topic: tutorial
 ms.date: 07/20/2020
 ms.author: mbaldwin
 ms.custom: mvc, tracking-python
-ms.openlocfilehash: 453307b304c4cb1899b1de31117c944ac66fcddb
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 29317e9d5972faf9326a17ebbbe83063f79cdf23
+ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87093935"
+ms.lasthandoff: 08/02/2020
+ms.locfileid: "87512821"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-virtual-machine-in-python"></a>Руководство по Использование Azure Key Vault с виртуальной машиной в Python
 
-Azure Key Vault помогает защитить секреты, такие как ключи API, строки подключения к базам данных, необходимые для доступа к приложениям, службам и ИТ-ресурсам.
+Azure Key Vault помогает защищать ключи, секреты и сертификаты, например ключи API и строки подключения к базам данных.
 
-Из этого руководства вы узнаете, как настроить консольное приложение для считывания сведений из Azure Key Vault. Для этого используйте управляемые удостоверения для ресурсов Azure. 
-
-В этом руководстве описаны следующие процедуры.
+В этом учебнике описано, как настроить приложение Python, чтобы оно считывало данные из Azure Key Vault с помощью управляемых удостоверений для ресурсов Azure. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создать хранилище ключей.
-> * Добавление секрета в хранилище ключей.
-> * получение секрета из хранилища ключей;
-> * Создайте виртуальную машину Azure.
-> * Включение управляемого удостоверения.
-> * Назначение разрешений для идентификатора виртуальной машины.
+> * Создайте хранилище ключей.
+> * хранение секрета в Key Vault;
+> * создание виртуальной машины Linux в Azure;
+> * включение [управляемого удостоверения](../../active-directory/managed-identities-azure-resources/overview.md) для виртуальной машины;
+> * предоставление разрешений, необходимых консольному приложению для чтения данных из Key Vault;
+> * получение секрета из Key Vault.
 
 Перед началом работы ознакомьтесь c [основными понятиями службы Key Vault](basic-concepts.md). 
 
@@ -50,34 +48,43 @@ Azure Key Vault помогает защитить секреты, такие к�
 az login
 ```
 
-### <a name="create-a-resource-group-and-key-vault"></a>Создание группы ресурсов и хранилища ключей
+## <a name="create-a-resource-group-and-key-vault"></a>Создание группы ресурсов и хранилища ключей
 
 [!INCLUDE [Create a resource group and key vault](../../../includes/key-vault-rg-kv-creation.md)]
 
-## <a name="add-a-secret-to-the-key-vault"></a>Добавление секрета в хранилище ключей
+## <a name="populate-your-key-vault-with-a-secret"></a>Запись секрета в хранилище ключей
 
-Теперь мы добавим секрет, чтобы продемонстрировать этот процесс. Секретом может быть строка подключения к серверу SQL или другие сведения, которые должны быть защищены и при этом доступны приложению.
-
-Введите следующую команду, чтобы создать секрет с именем **AppSecret** в хранилище ключей.
-
-```azurecli
-az keyvault secret set --vault-name "<YourKeyVaultName>" --name "AppSecret" --value "MySecret"
-```
-
-В этом секрете хранится значение **MySecret**.
+[!INCLUDE [Create a secret](../../../includes/key-vault-create-secret.md)]
 
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
-Вы можете создать виртуальную машину одним из следующих способов.
 
-* [CLI Azure.](../../virtual-machines/windows/quick-create-cli.md)
-* [PowerShell](../../virtual-machines/windows/quick-create-powershell.md)
-* [Портал Azure](../../virtual-machines/windows/quick-create-portal.md)
+Создайте виртуальную машину с именем **myVM** одним из следующих способов:
+
+| Linux | Windows |
+|--|--|
+| [Azure CLI](../../virtual-machines/linux/quick-create-cli.md) | [Azure CLI](../../virtual-machines/windows/quick-create-cli.md) |
+| [PowerShell](../../virtual-machines/linux/quick-create-powershell.md) | [PowerShell](../../virtual-machines/windows/quick-create-powershell.md) |
+| [Портал Azure](../../virtual-machines/linux/quick-create-portal.md) | [Портал Azure](../../virtual-machines/windows/quick-create-portal.md) |
+
+Чтобы создать виртуальную машину Linux с помощью Azure CLI, используйте команду [az vm create](/cli/azure/vm).  В примере ниже добавляется учетная запись пользователя с именем *azureuser*. Параметр `--generate-ssh-keys` автоматически создает ключ SSH и сохраняет его в стандартное расположение ( *~/.ssh*). 
+
+```azurecli-interactive
+az vm create \
+  --resource-group myResourceGroup \
+  --name myVM \
+  --image UbuntuLTS \
+  --admin-username azureuser \
+  --generate-ssh-keys
+```
+
+Запишите значение `publicIpAddress` в выходных данных.
 
 ## <a name="assign-an-identity-to-the-vm"></a>Назначение удостоверения виртуальной машине
-На этом шаге вы создадите назначаемое системой удостоверение для виртуальной машины, выполнив следующую команду в Azure CLI.
+
+Создайте назначаемое системой удостоверение для виртуальной машины с помощью команды Azure CLI [az vm identity assign](/cli/azure/vm/identity?view=azure-cli-latest#az-vm-identity-assign):
 
 ```azurecli
-az vm identity assign --name <NameOfYourVirtualMachine> --resource-group <YourResourceGroupName>
+az vm identity assign --name "myVM" --resource-group "myResourceGroup"
 ```
 
 Обратите внимание на присвоенный системой идентификатор, который отображается в следующем коде. Выходные данные приведенной выше команды выглядят следующим образом. 
@@ -90,65 +97,73 @@ az vm identity assign --name <NameOfYourVirtualMachine> --resource-group <YourRe
 ```
 
 ## <a name="assign-permissions-to-the-vm-identity"></a>Назначение разрешения для идентификатора виртуальной машины
+
 Теперь вы можете предоставить созданному выше идентификатору разрешение для хранилища ключей, выполнив следующую команду.
 
 ```azurecli
-az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssignedIdentity> --secret-permissions get list
+az keyvault set-policy --name "<your-unique-keyvault-name>" --object-id "<systemAssignedIdentity>" --secret-permissions get list
 ```
 
-## <a name="log-on-to-the-virtual-machine"></a>Вход на виртуальную машину
+## <a name="log-in-to-the-vm"></a>Вход на виртуальную машину
 
-Чтобы войти в виртуальную машину, следуйте инструкциям из статьи [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](../../virtual-machines/windows/connect-logon.md).
+Чтобы войти в виртуальную машину, следуйте инструкциям по подключению и входу в виртуальную машину Azure на платформе [Windows](../../virtual-machines/windows/connect-logon.md) или [Linux](../../virtual-machines/linux/login-using-aad.md).
 
-## <a name="create-and-run-a-sample-python-app"></a>Создание и запуск примера приложения Python
 
-В следующем разделе приведен пример файла с именем *Sample.py*. Он использует библиотеку [requests](https://2.python-requests.org/en/master/) для выполнения вызовов HTTP GET.
+Чтобы войти на виртуальную машину Linux, можно использовать команду SSH с "<publicIpAddress>" из шага по [созданию виртуальной машины](#create-a-virtual-machine):
 
-## <a name="edit-samplepy"></a>Редактирование файла Sample.py
+```terminal
+ssh azureuser@<PublicIpAddress>
+```
 
-После создания *Sample.py* откройте файл и скопируйте код в этом разделе. 
+## <a name="install-python-libraries-on-the-vm"></a>Установка библиотек Python на виртуальной машине
 
-Код представляет собой двухэтапный процесс.
-1. Получение токена из локальной конечной точки MSI на виртуальной машине.  
-  При этом также извлекается токен из Azure AD.
-1. Передача токена в хранилище ключей и получение секрета. 
+На виртуальной машине установите две библиотеки Python, которые будут использоваться в нашем скрипте Python: `azure-keyvault-secrets` и `azure.identity`.  
+
+Например, на виртуальной машине Linux их можно установить с помощью `pip3`:
+
+```bash
+pip3 install azure-keyvault-secrets
+
+pip3 install azure.identity
+```
+
+## <a name="create-and-edit-the-sample-python-script"></a>Создание и изменение примера скрипта Python
+
+На виртуальной машине создайте файл Python с именем **sample.py**. Измените файл, чтобы он содержал следующий код, заменив "<your-unique-keyvault-name>" именем своего хранилища ключей:
 
 ```python
-    # importing the requests library 
-    import requests 
+from azure.keyvault.secrets import SecretClient
+from azure.identity import DefaultAzureCredential
 
-    # Step 1: Fetch an access token from a Managed Identity enabled azure resource.
-    # Resources with an MSI configured recieve an AAD access token by using the Azure Instance Metadata Service (IMDS)
-    # IMDS provides an endpoint accessible to all IaaS VMs using a non-routable well-known IP Address
-    # To learn more about IMDS and MSI Authentication see the following link: https://docs.microsoft.com/azure/virtual-machines/windows/instance-metadata-service
-    # Note that the resource here is https://vault.azure.net for public cloud and api-version is 2018-02-01
-    MSI_ENDPOINT = "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.azure.net"
-    r = requests.get(MSI_ENDPOINT, headers = {"Metadata" : "true"}) 
-      
-    # extracting data in json format 
-    # This request gets an access_token from Azure AD by using the local MSI endpoint.
-    data = r.json() 
-    
-    # Step 2: Pass the access_token received from previous HTTP GET call to your key vault.
-    KeyVaultURL = "https://{YOUR KEY VAULT NAME}.vault.azure.net/secrets/{YOUR SECRET NAME}?api-version=2016-10-01"
-    kvSecret = requests.get(url = KeyVaultURL, headers = {"Authorization": "Bearer " + data["access_token"]})
-    
-    print(kvSecret.json()["value"])
+keyVaultName = "<your-unique-keyvault-name>"
+KVUri = f"https://{keyVaultName}.vault.azure.net"
+secretName = "mySecret"
+
+credential = DefaultAzureCredential()
+client = SecretClient(vault_url=KVUri, credential=credential)
+retrieved_secret = client.get_secret(secretName)
+
+print(f"The value of secret '{secretName}' in '{keyVaultName}' is: '{retrieved_secret.value}'")
 ```
 
-Выполнив следующий код, вы можете отобразить значение секрета. 
+## <a name="run-the-sample-python-app"></a>Запуск примера приложения Python
 
-```console
-python Sample.py
+Теперь выполните **sample.py**. Если все прошло хорошо, должно вернуться значение секрета:
+
+```bash
+python3 sample.py
+
+The value of secret 'mySecret' in '<your-unique-keyvault-name>' is: 'Success!'
 ```
-
-В указанном коде показано, как выполнять операции с Azure Key Vault на виртуальной машине Windows. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Удалите виртуальную машину и хранилище ключей, если они больше не нужны.
+Удалите виртуальную машину и хранилище ключей, если они больше не нужны.  Это можно сделать быстро, просто удалив группу ресурсов, к которой они относятся:
+
+```azurecli
+az group delete -g myResourceGroup
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Справочник по REST API для Azure Key Vault](https://docs.microsoft.com/rest/api/keyvault/)
+[Справочник по REST API для Azure Key Vault](https://docs.microsoft.com/rest/api/keyvault/)

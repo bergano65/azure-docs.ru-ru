@@ -5,19 +5,19 @@ author: uhabiba04
 ms.topic: overview
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 6f0a782309edc33a8a5ce661652922494ead2ec0
-ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
+ms.openlocfilehash: 12bb0b0098b5108bf780b88fc42b86861ea6fcdc
+ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2020
-ms.locfileid: "80667305"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87439557"
 ---
 # <a name="overview-of-azure-farmbeats-preview"></a>Общие сведения об Azure FarmBeats (предварительная версия)
 
 Azure FarmBeats предоставляется в Azure Marketplace как предложение B2B. Оно поддерживает агрегирование наборов данных о сельском хозяйстве между несколькими поставщиками. Azure FarmBeats позволяет создавать модели искусственного интеллекта и (или) машинного обучения на основе объединенных наборов данных. С помощью Azure FarmBeats компании в отрасли сельского хозяйства могут сосредоточиться на важных новых возможностях и не беспокоиться о сложных задачах инжиниринга данных.
 
 > [!NOTE]
-> Сейчас Azure FarmBeats находится на этапе общедоступной предварительной версии. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Azure FarmBeats предоставляется без соглашения об уровне обслуживания. За поддержкой обращайтесь на [форум по Azure FarmBeats](https://aka.ms/FarmBeatsMSDN ).
+> Сейчас Azure FarmBeats находится на этапе общедоступной предварительной версии. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Azure FarmBeats предоставляется без соглашения об уровне обслуживания. За поддержкой обращайтесь на [форум поддержки по Azure FarmBeats](https://aka.ms/farmbeatssupport).
 
 ![Проект FarmBeats](./media/architecture-for-farmbeats/farmbeats-architecture-1.png)
 

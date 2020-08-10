@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 007763d65021b0730c6e4e81ada33790d3cf4c02
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b80cd2e40e54837682e72837cf0d1a9058f3a7fc
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87025784"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87428382"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Руководство по Настройка устройств с гибридным присоединением к Azure Active Directory
 
@@ -59,6 +59,9 @@ Azure AD Connect выполняет следующие функции:
 * `https://login.microsoftonline.com`
 * `https://device.login.microsoftonline.com`
 * Служба токенов безопасности вашей организации (для федеративных доменов) должна быть включена в пользовательских параметрах локальной интрасети.
+
+> [!WARNING]
+> Если ваша организация использует прокси-серверы, которые перехватывают трафик SSL для таких сценариев, как защита от потери данных или ограничения арендатора Azure AD, убедитесь, что трафик к https://device.login.microsoftonline.com исключается из процесса приостановки и изучения TLS-трафика. Если адрес https://device.login.microsoftonline.com не будет исключен, это может вызвать ошибки при аутентификации с помощью сертификата клиента, что приведет к проблемам с регистрацией устройств и условным доступом на основе устройств.
 
 Если ваша организация планирует использовать простой единый вход, следующий URL-адрес должен быть доступен с компьютеров в вашей организации. Его необходимо добавить в зону локальной интрасети пользователя.
 

@@ -1,6 +1,6 @@
 ---
 title: 'Подключение локальных сетей к виртуальной сети: подключение типа "сеть — сеть" с помощью интерфейса командной строки'
-description: Сведения о создании подключения IPsec между локальной сетью и виртуальной сетью Azure через общедоступный Интернет. Они помогут вам создать подключение типа "сеть — сеть" с использованием VPN-шлюза и интерфейса командной строки.
+description: Создайте подключение шлюза IPsec типа "сеть — сеть" из локальной сети к виртуальной сети Azure через общедоступный Интернет с помощью интерфейса командной строки.
 titleSuffix: Azure VPN Gateway
 services: vpn-gateway
 author: cherylmc
@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 10/18/2018
 ms.author: cherylmc
-ms.openlocfilehash: 28d0fa3a0fdc2f8ac65fc3545abab0a273051e37
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a90563f77a1e491bdc7fb7d421dedc7b265790d6
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84987506"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88030612"
 ---
 # <a name="create-a-virtual-network-with-a-site-to-site-vpn-connection-using-cli"></a>Создание виртуальной сети с VPN типа "сеть — сеть" с помощью интерфейса командной строки
 
@@ -32,7 +32,7 @@ ms.locfileid: "84987506"
 
 Подключение VPN-шлюза типа "сеть — сеть" используется для подключения между локальной сетью и виртуальной сетью Azure через туннель VPN по протоколу IPsec/IKE (IKEv1 или IKEv2). Для этого типа подключения требуется локальное VPN-устройство, которому назначен внешний общедоступный IP-адрес. Дополнительные сведения о VPN-шлюзах см. в [этой статье](vpn-gateway-about-vpngateways.md).
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка
 
 Перед началом настройки убедитесь, что удовлетворены следующие требования:
 
@@ -114,7 +114,7 @@ az network vnet subnet create --address-prefix 10.11.255.0/27 --name GatewaySubn
 
 Обычно термин "шлюз локальной сети" означает локальное расположение. Присвойте сайту имя, по которому Azure может обращаться к этому сайту, а затем укажите IP-адрес локального VPN-устройства, к которому вы подключитесь. Вы можете также указать префиксы IP-адресов, которые будут направляться через VPN-шлюз к VPN-устройству. Указываемые префиксы адресов расположены в локальной сети. При изменении локальной сети вы сможете без проблем обновить эти префиксы.
 
-Используйте следующие значения:
+Используйте следующие значения.
 
 * *--Gateway-IP-Address* — это IP-адрес локального VPN-устройства.
 * *--local-address-prefixes* — это локальные адресные пространства.
@@ -139,7 +139,7 @@ az network public-ip create --name VNet1GWIP --resource-group TestRG1 --allocati
 
 Создайте VPN-шлюз виртуальной сети. Создание VPN-шлюза может занять от 45 минут и более.
 
-Используйте следующие значения:
+Используйте следующие значения.
 
 * Параметр *--Gateway-Type* для конфигурации типа "сеть — сеть" — *VPN*. Тип шлюза всегда зависит от реализуемой конфигурации. Дополнительные сведения см. в разделе [Типы шлюзов](vpn-gateway-about-vpn-gateway-settings.md#gwtype).
 * У параметра *--vpn-type* может быть значение *RouteBased* (в некоторых документах такой шлюз называется шлюзом с динамической маршрутизацией) или *PolicyBased* (в некоторых документах — шлюз со статической маршрутизацией). Этот параметр зависит от требований устройства, к которому вы подключаетесь. Дополнительные сведения о VPN-шлюзах см. в [этой статье](vpn-gateway-about-vpn-gateway-settings.md#vpntype).
@@ -194,7 +194,7 @@ az network vpn-connection create --name VNet1toSite2 --resource-group TestRG1 --
 
 [!INCLUDE [local network gateway common tasks](../../includes/vpn-gateway-common-tasks-cli-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения о виртуальных машинах см. [здесь](https://docs.microsoft.com/azure/).
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).

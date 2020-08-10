@@ -4,12 +4,12 @@ description: Быстрое создание и запуск записной к
 ms.topic: quickstart
 ms.date: 12/04/2018
 ms.custom: tracking-python
-ms.openlocfilehash: 809cb006e1ea40e31d079b40febee6a09714731f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ec1a03cb1c05248458a47ec4b22a0243b31bafcd
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85832106"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87423292"
 ---
 # <a name="quickstart-create-and-share-a-notebook-in-azure-notebooks-preview"></a>Краткое руководство. Создание и совместное использование записной книжки в предварительной версии службы "Записные книжки Azure"
 
@@ -43,9 +43,9 @@ ms.locfileid: "85832106"
 
 1. Через несколько секунд Записные книжки Azure перенаправят вас в окно нового проекта. Добавьте записную книжку в проект. Для этого выберите раскрывающийся список **+ Создать** (который может отображаться в виде **+** ), а затем элемент **Notebook** (Записная книжка):
 
-    [![](media/quickstarts/empty-project-new-notebook-button.png "A new, empty project and add notebook command")](media/quickstarts/empty-project-new-notebook-button.png#lightbox)
+    :::image type="content" source="media/quickstarts/empty-project-new-notebook-button.png" alt-text="Новый, пустой проект и команда добавления записной книжки." lightbox="media/quickstarts/empty-project-new-notebook-button.png":::
 
-1. В появившемся всплывающем окне **Create New Notebook** (Создание записной книжки) введите имя файла для записной книжки, например *HelloWorldInPython.ipynb* ( *.ipynb* означает, что это записная книжка IronPython (Jupyter)) и выберите **Python 3.6** в качестве языка (также называемого *ядром*):
+1. В появившемся всплывающем окне **Create New Notebook** (Создание записной книжки) введите имя файла для записной книжки, например *HelloWorldInPython.ipynb* (*.ipynb* означает, что это записная книжка IronPython (Jupyter)) и выберите **Python 3.6** в качестве языка (также называемого *ядром*):
 
     ![Всплывающее окно Create New Notebook (Создание записной книжки)](media/quickstarts/new-notebook-popup.png)
 
@@ -106,4 +106,4 @@ ms.locfileid: "85832106"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание и запуск записной книжки Jupyter для линейной регрессии](tutorial-create-run-jupyter-notebook.md)
+> [Руководство. Создание и запуск записной книжки Jupyter Notebook для линейной регрессии](tutorial-create-run-jupyter-notebook.md)

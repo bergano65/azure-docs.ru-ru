@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 05/22/2020
 ms.author: yegu
 ms.custom: mvc, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 3cd8b18358128c8566c0cde668c084a22dd261d0
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 16a912b2530d567a11a81fc10e9e09eee572e7e6
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320703"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87528840"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-java"></a>Краткое руководство. Использование кэша Azure для Redis с приложениями Java
 
@@ -30,12 +30,24 @@ ms.locfileid: "87320703"
 
 [!INCLUDE [redis-cache-access-keys](../../includes/redis-cache-access-keys.md)]
 
-Добавление переменных среды для **ИМЯ_УЗЛА** и **Основного** ключа доступа. Вместо включения конфиденциальных данных непосредственно в код использоваться будут эти переменные из вашего кода.
+## <a name="setting-up-the-working-environment"></a>Настройка рабочей среды 
+
+Добавьте переменные среды для **имени узла** и **основного ключа доступа** в зависимости от операционной системы. Откройте окно командной строки или окно терминала и задайте следующие значения:
 
 ```CMD 
-set REDISCACHEHOSTNAME=contosoCache.redis.cache.windows.net
-set REDISCACHEKEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+set REDISCACHEHOSTNAME=<YOUR_HOST_NAME>.redis.cache.windows.net
+set REDISCACHEKEY=<YOUR_PRIMARY_ACCESS_KEY>
 ```
+
+```bash
+export REDISCACHEHOSTNAME=<YOUR_HOST_NAME>.redis.cache.windows.net
+export REDISCACHEKEY=<YOUR_PRIMARY_ACCESS_KEY>
+```
+
+Замените значения заполнителей следующими значениями:
+
+- `<YOUR_HOST_NAME>`: имя узла DNS, полученное из раздела *Свойства* вашего ресурса Кэша Azure для Redis на портале Azure.
+- `<YOUR_PRIMARY_ACCESS_KEY>`: основной ключ доступа, полученный из раздела *Ключи доступа* вашего ресурса Кэша Azure для Redis на портале Azure.
 
 ## <a name="create-a-new-java-app"></a>Создание нового приложения Java
 

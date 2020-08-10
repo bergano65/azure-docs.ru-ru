@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
-ms.openlocfilehash: 4eee6aeaff045264c8d23276ac91a83592ddc601
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 297241c5f939ae15fc77b29614b55d9b2bd63c84
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86207812"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87445913"
 ---
 # <a name="tutorial-securing-azure-remote-rendering-and-model-storage"></a>Руководство по Защита службы "Удаленная отрисовка Azure" и хранилища моделей
 
@@ -176,16 +176,13 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
 1. Следуйте указаниям [практического руководства по настройке проверки подлинности, изложенной в разделе "Проверка подлинности для развернутых приложений"](../../../how-tos/authentication.md#authentication-for-deployed-applications). В частности, выполните инструкции в документации по Пространственным привязкам Azure, приведенные в разделе [Аутентификация пользователей с помощью AAD](https://docs.microsoft.com/azure/spatial-anchors/concepts/authentication?tabs=csharp#azure-ad-user-authentication). Такой подход предполагает регистрацию нового приложения Azure Active Directory и настройку доступа к экземпляру Удаленной отрисовки Azure.
 1. После настройки нового приложения AAD убедитесь, что он выглядит так, как на следующих изображениях.
 
-    **Приложение AAD — > Проверка подлинности**\
-    ![Проверка подлинности приложения](./media/app-authentication-public.png)
+    **AAD Application (Приложение AAD) -> Authentication (Аутентификация)** ![Аутентификация приложения](./media/app-authentication-public.png)
 
-    **Приложение AAD — > Разрешения API**\
-    ![API-интерфейсы приложения](./media/request-api-permissions-step-five.png)
+    **AAD Application (Приложение AAD) -> API Permissions (Разрешения API)** ![API приложения](./media/request-api-permissions-step-five.png)
 
 1. После настройки учетной записи Удаленной отрисовки убедитесь, что ваша конфигурацию выглядит так, как на следующем рисунке:
 
-    **AAD — > Управление доступом (IAM)** \
-    ![Роль Удаленной отрисовки Azure](./media/azure-remote-rendering-role-assignment-complete.png)
+    **AAR (Маршрутизация запросов приложений) -> AccessControl (IAM) (Управление доступом (IAM))** ![Роль ARR](./media/azure-remote-rendering-role-assignment-complete.png)
 
     >[!NOTE]
     > Для управления сеансами через клиентское приложение роли *владельца* недостаточно. Каждому пользователю, которому необходимо предоставить возможность управления сеансами, следует назначить роль **клиента Удаленной отрисовки**. Каждому пользователю, которому необходимо управлять сеансами и преобразовывать модели, следует назначить роль **администратора Удаленной отрисовки**.
@@ -357,9 +354,7 @@ return await Task.FromResult(new AzureFrontendAccountInfo(accountDomain, azureRe
 1. Нажмите кнопку воспроизведения в редакторе Unity и дайте согласие на выполнение сеанса.
     Так как компонент **AADAuthentication** имеет контроллер представления, он автоматически привязывается для отображения запроса после модальной панели авторизации сеанса.
 1. Следуйте инструкциям, приведенным на панели справа от **AppMenu**.
-    Должно отображаться примерно следующее:
-    ![Компонент проверки подлинности AAD](./media/device-flow-instructions.png)\
-    После ввода указанного кода на дополнительном устройстве (или в браузере на том же устройстве) и входа с использованием ваших учетных данных запрашивающему приложению (в данном случае редактору Unity) будет возвращен маркер доступа.
+    Должно отображаться примерно следующее: ![Компонент аутентификации AAD](./media/device-flow-instructions.png) После ввода указанного кода на дополнительном устройстве (или в браузере на том же устройстве) и входа с использованием ваших учетных данных запрашивающему приложению (в данном случае редактору Unity) будет возвращен маркер доступа.
 1. После этого все функции приложения должны работать надлежащим образом. Проверьте наличие ошибок в консоли Unity, если вам не удалось выполнить эти этапы так, как ожидалось.
 
 ## <a name="build-to-device"></a>Сборка на устройстве

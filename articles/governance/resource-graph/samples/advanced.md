@@ -3,12 +3,12 @@ title: Примеры расширенных запросов
 description: С помощью Azure Resource Graph можно выполнять расширенные запросы, такие как работа со столбцами, вывод списка используемых тегов и сопоставление ресурсов с регулярными выражениями.
 ms.date: 07/14/2020
 ms.topic: sample
-ms.openlocfilehash: 38013be583c74e968160cb7ec3a4dd32ede213b0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3277d904ebf955c9f924e60dbf6df12eac138a15
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087498"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87534793"
 ---
 # <a name="advanced-resource-graph-query-samples"></a>Примеры расширенных запросов к Resource Graph
 
@@ -322,7 +322,7 @@ Search-AzGraph -Query "Resources | where type =~ 'microsoft.sql/servers/database
 
 ## <a name="list-virtual-machines-with-their-network-interface-and-public-ip"></a><a name="join-vmpip"></a>Список виртуальных машин с их сетевым интерфейсом и общедоступным IP-адресом
 
-В этом запросе для объединения виртуальных машин, связанных с ними сетевых интерфейсов и любых общедоступных IP-адресов, связанных с этими сетевыми интерфейсами, используются две команды **leftouter** `join`.
+В этом запросе для объединения виртуальных машин, которые созданы с помощью модели развертывания Resource Manager, связанных с ними сетевых интерфейсов и любых общедоступных IP-адресов, связанных с этими сетевыми интерфейсами, используются две команды **leftouter** `join`.
 
 ```kusto
 Resources

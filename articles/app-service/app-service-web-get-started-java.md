@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 05/29/2019
 ms.author: jafreebe
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: ca3c7d6bc6621c4b82a44431ae313384c1653f79
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 0ae304763718f649d7895394d67c2aec307f14af
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324239"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87799996"
 ---
 # <a name="quickstart-create-a-java-app-on-azure-app-service-on-windows"></a>Краткое руководство. Создание приложения Java в Службе приложений Azure на платформе Windows
 
@@ -49,13 +49,19 @@ cd helloworld
 
 ## <a name="configure-the-maven-plugin"></a>Настройка подключаемого модуля Maven
 
-В процессе развертывания для Службы приложений Azure автоматически используются учетные данные Azure из Azure CLI. Если Azure CLI не установлен, подключаемый модуль Maven будет выполнять вход с помощью имени для входа OAuth или имени пользователя устройства. При необходимости ознакомьтесь со сведениями о [выполнении проверки подлинности с помощью подключаемых модулей Maven](https://github.com/microsoft/azure-maven-plugins/wiki/Authentication).
+В процессе развертывания для Службы приложений Azure автоматически используются учетные данные Azure из Azure CLI. Если Azure CLI не установлен локально, подключаемый модуль Maven будет выполнять вход с помощью имени для входа OAuth или имени пользователя устройства. При необходимости ознакомьтесь со сведениями о [выполнении проверки подлинности с помощью подключаемых модулей Maven](https://github.com/microsoft/azure-maven-plugins/wiki/Authentication).
 
-Вы можете выполнить в командной строке следующую команду maven, чтобы настроить развертывание, выбрать вариант **2** для операционной системы **windows** на первом шаге, затем принять конфигурации по умолчанию, нажимая клавишу **ВВОД**, пока не появится строка **Confirm (Y/N)** ("Подтверждение (Д/Н)"), а затем нажать клавишу **Y**, чтобы завершить настройку. 
-
+Вы можете выполнить приведенную ниже команду maven для настройки развертывания:
 ```bash
 mvn com.microsoft.azure:azure-webapp-maven-plugin:1.9.1:config
 ```
+
+Вам будет предложено выбрать: 
+* **ОС (по умолчанию: `linux`);**
+* **версию Java (по умолчанию: `1.8`);**
+* **веб-контейнер (по умолчанию: `tomcat 8.5`).** 
+
+Обязательно введите **`2`** , чтобы выбрать ОС **Windows** на первом шаге. Для других настроек можно сохранить значения по умолчанию, нажав клавишу **ВВОД**. Наконец, нажмите **`Y`** при появлении запроса **Confirm (Y/N)** (Подтвердить (Д/Н)), чтобы завершить настройку.
 
 Пример процесса выглядит следующим образом.
 
@@ -135,7 +141,7 @@ Confirm (Y/N)? :
 > [!NOTE]
 > В этой статье мы работаем только с приложениями Java, которые упакованы в WAR-файлы. Подключаемый модуль также поддерживает веб-приложения JAR. См. руководство по [развертыванию файла JAR Java SE в Службе приложений в Linux](https://docs.microsoft.com/java/azure/spring-framework/deploy-spring-boot-java-app-with-maven-plugin?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
 
-Откройте файл `pom.xml`, чтобы посмотреть обновленную конфигурацию.
+Откройте файл `pom.xml`, чтобы просмотреть обновленную конфигурацию.
 
 ```bash
 code pom.xml
@@ -153,8 +159,11 @@ code pom.xml
 `<runtime>` | Да | Конфигурация среды выполнения. Дополнительные сведения см. [здесь](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme). | Версия 0.1.0 и выше
 `<deployment>` | Да | Конфигурация развертывания. Дополнительные сведения см. [здесь](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme). | Версия 0.1.0 и выше
 
+Запишите значения `<appName>` и `<resourceGroup>`(`helloworld-1590394316693` и `helloworld-1590394316693-rg` соответственно в демонстрации), так как они понадобятся позже.
+
 > [!div class="nextstepaction"]
 > [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=app-service-web-get-started-java&step=config)
+
 
 ## <a name="deploy-the-app"></a>Развертывание приложения
 
@@ -169,13 +178,14 @@ az login
 mvn package azure-webapp:deploy
 ```
 
-По завершению развертывания перейдите к развернутому приложению, используя следующий URL-адрес в своем веб-браузере, например `http://<webapp>.azurewebsites.net/`.
+После завершения развертывания ваше приложение будет готово к работе по адресу `http://<appName>.azurewebsites.net/`(`http://helloworld-1590394316693.azurewebsites.net` в демонстрации). Откройте URL-адрес в своем локальном веб-браузере. Вы должны увидеть следующее:
 
 ![Приложение, работающее в Службе приложений Azure](./media/app-service-web-get-started-java/java-hello-world-in-browser-azure-app-service.png)
 
 **Поздравляем!** Вы развернули свое первое приложение Java в Службе приложений на платформе Windows.
 
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]

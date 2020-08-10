@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/12/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: afa8375805ebc5d52ac716126adca86850147166
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 5ce98c785700301bba92926d7d5a243b614eca7f
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134096"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87504234"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Настройка аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -51,14 +51,14 @@ ms.locfileid: "86134096"
 6. В поле **Are you using System Center VMM to manage your Hyper-V hosts?** (Используете ли вы System Center VMM для управления узлами Hyper-V?) выберите **Нет**.
 7. Щелкните **ОК**.
 
-    ![Цель репликации](./media/hyper-v-azure-tutorial/replication-goal.png)
+    ![Снимок экрана с параметрами цели защиты при подготовке инфраструктуры.](./media/hyper-v-azure-tutorial/replication-goal.png)
 
 ## <a name="confirm-deployment-planning"></a>Подтверждение планирования развертывания
 
 1. Если вы планируете выполнить крупномасштабное развертывание, скачайте Планировщик развертывания для Hyper-V, перейдя по ссылке, указанной на странице **Планирование развертывания**. [Ознакомьтесь с дополнительными сведениями](hyper-v-deployment-planner-overview.md) о планировании развертывания Hyper-V.
 2. В рамках этого учебника мы не будем использовать Планировщик развертывания. В разделе **Вы выполнили планирование развертывания?** выберите **Выполню позже** и нажмите кнопку **ОК**.
 
-    ![Планирование развертывания](./media/hyper-v-azure-tutorial/deployment-planning.png)
+    ![Снимок экрана с параметрами планирования развертывания при подготовке инфраструктуры.](./media/hyper-v-azure-tutorial/deployment-planning.png)
 
 ## <a name="set-up-the-source-environment"></a>Настройка исходной среды
 
@@ -68,17 +68,17 @@ ms.locfileid: "86134096"
 2. В разделе **Подготовка источника** выберите **+ Hyper-V Site** (+ Сайт Hyper-V).
 3. В разделе **Создание сайта Hyper-V** укажите имя сайта. Мы используем **ContosoHyperVSite**.
 
-    ![Узел Hyper-V](./media/hyper-v-azure-tutorial/hyperv-site.png)
+    ![Снимок экрана с выбором сайта Hyper-V при подготовке инфраструктуры.](./media/hyper-v-azure-tutorial/hyperv-site.png)
 
 4. После создания сайта выберите **Подготовка источника** > **Step 1: Select Hyper-V site** (Шаг 1. Выбор сайта Hyper-V), а затем выберите созданный сайт.
 5. Выберите **+ Hyper-V Server** (+ Сервер Hyper-V).
 
-    ![Сервер Hyper-V](./media/hyper-v-azure-tutorial/hyperv-server.png)
+    ![Снимок экрана с выбором сервера Hyper-V при подготовке инфраструктуры.](./media/hyper-v-azure-tutorial/hyperv-server.png)
 
 6. Скачайте программу установки поставщика Microsoft Azure Site Recovery.
 7. Скачайте ключ регистрации хранилища. Он понадобится для установки поставщика. Ключ действителен в течение пяти дней после создания.
 
-    ![Скачивание поставщика и ключа регистрации](./media/hyper-v-azure-tutorial/download.png)
+    ![Снимок экрана с параметрами для скачивания поставщика и ключа регистрации.](./media/hyper-v-azure-tutorial/download.png)
     
 
 ### <a name="install-the-provider"></a>Установка поставщика

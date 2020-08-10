@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 06/22/2020
 ms.author: jalichwa
-ms.openlocfilehash: ba9ff0ead1131b091aa1a5ece2ecf94d2319a968
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: 0d2ee8fbcb71d8703702f2c72e0bf629563667b9
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85800703"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87542201"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-with-two-sets-of-authentication-credentials"></a>Автоматизация смены секретов для ресурсов с двумя наборами учетных данных для аутентификации
 
@@ -41,9 +41,8 @@ ms.locfileid: "85800703"
 * Две учетные записи службы хранилища Azure
 
 Если у вас нет существующего хранилища ключей и учетных записей хранения, можно использовать предоставленную ниже ссылку на развертывание.
-<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2Farm-templates%2FInitial-Setup%2Fazuredeploy.json" target="_blank">
-    <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png"/>
-</a>
+
+[![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2Farm-templates%2FInitial-Setup%2Fazuredeploy.json)
 
 1. Для параметра **Группа ресурсов** выберите **Создать**. Присвойте группе имя **akvrotation** и щелкните **ОК**.
 1. Выберите **Просмотр и создание**.
@@ -79,10 +78,9 @@ akvrotationstorage2    akvrotation      eastus      Microsoft.Storage/storageAcc
 - Функции смены ключей учетной записи хранения с активацией по событию и HTTP-триггеру (смена по запросу).
 - Подписка на событие Сетки событий **SecretNearExpiry**.
 
-1. Щелкните ссылку для развертывания шаблона в Azure:
-<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2Farm-templates%2FFunction%2Fazuredeploy.json" target="_blank">
-    <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png"/>
-</a>
+1. Щелкните ссылку для развертывания шаблона в Azure: 
+
+   [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2Farm-templates%2FInitial-Setup%2Fazuredeploy.json)
 
 1. В списке **Группа ресурсов** выберите **avkrotation**.
 1. В поле **Имя учетной записи хранения** введите имя учетной записи хранения, в которой нужно сменить ключи доступа.
@@ -154,10 +152,9 @@ az storage account keys list -n akvrotationstorage
 - Назначенная приложению-функции роль службы оператора ключей учетной записи хранения, чтобы оно могло обращаться к ключам доступа учетной записи хранения.
 - Подписка на событие Сетки событий **SecretNearExpiry**.
 
-1. Щелкните ссылку для развертывания шаблона в Azure:
-<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2Farm-templates%2FAdd-Event-Subscription%2Fazuredeploy.json" target="_blank">
-    <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png"/>
-</a>
+1. Щелкните ссылку для развертывания шаблона в Azure: 
+
+   [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2Farm-templates%2FAdd-Event-Subscription%2Fazuredeploy.json)
 
 1. В списке **Группа ресурсов** выберите **avkrotation**.
 1. В поле **Имя учетной записи хранения** введите имя учетной записи хранения, в которой нужно сменить ключи доступа.

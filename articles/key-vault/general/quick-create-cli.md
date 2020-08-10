@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: quickstart
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 2c71e96dc1c92fc94d403e7c721b2b9f3149b8e9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f3b9758d52c4be8e4d85c398f5ef1d0b3fae7e86
+ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87101153"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87541810"
 ---
 # <a name="quickstart-create-a-key-vault-using-the-azure-cli"></a>Краткое руководство. Создание хранилища ключей с помощью Azure CLI
 
@@ -46,7 +46,7 @@ az group create --name "myResourceGroup" -l "EastUS"
 
 Создайте Key Vault в группе ресурсов, созданной на предыдущем шаге. Необходимо будет указать следующие сведения:
 
-- Имя хранилища ключей: строка длиной от 3 до 24 символов, которая может содержать только цифры (0–9), буквы (a-z, A-Z) и дефисы (-).
+- Имя хранилища ключей: строка длиной от 3 до 24 знаков, которая может содержать только цифры (0–9), буквы (a-z, A-Z) и дефисы (-).
 
   > [!Important]
   > Каждое хранилище ключей должно иметь уникальное имя. В следующих примерах замените <your-unique-keyvault-name> именем своего хранилища ключей.
@@ -61,7 +61,7 @@ az keyvault create --name "<your-unique-keyvault-name>" --resource-group "myReso
 В выходных данных командлета будут показаны свойства созданного Key Vault. Запишите значения двух указанных ниже свойств.
 
 - **Имя хранилища.** Имя, которое вы указали в параметре --name выше.
-- **URI хранилища**. В нашем примере это https://&lt;your-unique-keyvault-name&gt;.vault.vault.azure.net/. Необходимо, чтобы приложения, использующие ваше хранилище через REST API, использовали этот URI.
+- **URI хранилища**. В нашем примере это https://&lt;your-unique-keyvault-name&gt;.vault.vault.azure.net. Необходимо, чтобы приложения, использующие ваше хранилище через REST API, использовали этот URI.
 
 На этом этапе любые операции в этом хранилище ключей может выполнять только учетная запись Azure.
 
@@ -69,7 +69,7 @@ az keyvault create --name "<your-unique-keyvault-name>" --resource-group "myReso
 
 Другие руководства в этой серии созданы на основе этого документа. Если вы планируете продолжить работу с последующими краткими руководствами и статьями, эти ресурсы можно не удалять.
 
-Вы можете удалить ставшие ненужными группу ресурсов и все связанные с ней ресурсы, выполнив команду [az group delete](/cli/azure/group). Удалите ресурсы следующим образом:
+Вы можете удалить ставшую ненужной группу ресурсов и все связанные с ней ресурсы с помощью Azure CLI, выполнив команду [az group delete](/cli/azure/group):
 
 ```azurecli
 az group delete --name myResourceGroup

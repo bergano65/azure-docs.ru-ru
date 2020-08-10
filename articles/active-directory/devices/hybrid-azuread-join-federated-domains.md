@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c44d2d80e311fd42f0e2167cb0495a4070d0a313
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 9cf30324371043d8b702d3e22ec3ecd98e114ba6
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87025869"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87428583"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для федеративных доменов
 
@@ -80,6 +80,9 @@ ms.locfileid: "87025869"
 - `https://device.login.microsoftonline.com`
 - Служба токенов безопасности вашей организации (STS) (для федеративных доменов).
 - `https://autologon.microsoftazuread-sso.com` (если вы используете или планируете использовать простой единый вход).
+
+> [!WARNING]
+> Если ваша организация использует прокси-серверы, которые перехватывают трафик SSL для таких сценариев, как защита от потери данных или ограничения арендатора Azure AD, убедитесь, что трафик к https://device.login.microsoftonline.com исключается из процесса приостановки и изучения TLS-трафика. Если адрес https://device.login.microsoftonline.com не будет исключен, это может вызвать ошибки при аутентификации с помощью сертификата клиента, что приведет к проблемам с регистрацией устройств и условным доступом на основе устройств.
 
 Начиная с Windows 10 версии 1803, если происходит сбой мгновенного гибридного присоединения к Azure AD для федеративной среды с помощью AD FS, мы применяем Azure AD Connect для синхронизации объекта-компьютера в Azure AD. Затем с его помощью завершается регистрация устройств для такого гибридного присоединения. Проверьте, синхронизированы ли в Azure AD Connect объекты-компьютеры гибридных устройств, которые нужно присоединить к Azure AD. Если объекты-компьютеры принадлежат конкретным подразделениям, эти подразделения также нужно настроить для синхронизации в Azure AD Connect. Дополнительные сведения о том, как синхронизировать объекты-компьютеры с помощью Azure AD Connect, см. в статье о [настройке фильтрации с помощью Azure AD Connect](../hybrid/how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering).
 
@@ -207,7 +210,7 @@ ms.locfileid: "87025869"
 1. Откройте Windows PowerShell от имени администратора.
 2. Введите `Connect-MsolService`, чтобы подключится к своему клиенту Azure.
 
-#### <a name="count-all-hybrid-azure-ad-joined-devices-excluding-pending-state"></a>Число всех устройств с гибридным присоединением к Azure AD, кроме тех, для которых отображается состояние **Ожидается**
+#### <a name="count-all-hybrid-azure-ad-joined-devices-excluding-pending-state"></a>Число всех устройств с гибридным присоединением к Azure AD, кроме тех, для кого отображается состояние **Ожидается**
 
 ```azurepowershell
 (Get-MsolDevice -All -IncludeSystemManagedDevices | where {($_.DeviceTrustType -eq 'Domain Joined') -and (([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}).count

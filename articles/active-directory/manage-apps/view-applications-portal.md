@@ -12,13 +12,12 @@ ms.date: 04/09/2019
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: it-pro
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 249cdbef6214eb8c66da841d9eae817bcf794996
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: dce579596563855022f14bb2c07353b84d1e6127
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86055398"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87808377"
 ---
 # <a name="quickstart-view-the-list-of-applications-that-are-using-your-azure-active-directory-azure-ad-tenant-for-identity-management"></a>Краткое руководство. Просмотр списка приложений, которые используют арендатор Azure Active Directory (Azure AD) для управления удостоверениями
 
@@ -68,11 +67,17 @@ ms.locfileid: "86055398"
 3. Попробуйте ввести первые несколько букв имени приложения. В этом примере показаны все приложения, которые начинаются с **Sales**.
     ![Пример, в котором показаны все приложения с именами, начинающимися с Sales](media/view-applications-portal/search-by-prefix.png)
 
+
+> [!TIP]
+> Вы можете автоматизировать управление приложениями с помощью API Graph — см. [соответствующую статью](https://docs.microsoft.com/graph/application-saml-sso-configure-api).
+
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+При работе с этим кратким руководством вы не создавали новые ресурсы, поэтому очистка не требуется.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнали, как просмотреть приложения в клиенте Azure AD. Вы узнали, как фильтровать список приложений по типу приложения, состоянию и видимости. Вы также узнали, как искать конкретное приложение.
-
-- [Добавление приложения](add-application-portal.md)
-- [Настройка приложения](add-application-portal-configure.md)
-- [Настройка единого входа](add-application-portal-setup-sso.md)
-- [Удаление приложения](delete-application-portal.md)
+Перейдите к следующей статье, чтобы узнать, как использовать Azure AD в качестве поставщика удостоверений для приложения.
+> [!div class="nextstepaction"]
+> [Добавление приложения](add-application-portal.md)

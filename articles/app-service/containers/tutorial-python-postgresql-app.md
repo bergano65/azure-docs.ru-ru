@@ -10,12 +10,13 @@ ms.custom:
 - seo-python-october2019
 - cli-validate
 - tracking-python
-ms.openlocfilehash: 718c9a62cc867e5d65cc3c79e78ce3282f1037c7
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+- devx-track-azurecli
+ms.openlocfilehash: 0ab19e538d2ffb97f9bb80c47f9ce5471bdb87a9
+ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285855"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87799470"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-in-azure-app-service"></a>Руководство по развертыванию веб-приложения Django с PostgreSQL в Службе приложений Azure
 
@@ -30,6 +31,9 @@ ms.locfileid: "87285855"
 > * обновление кода и повторное развертывание;
 > * просмотр журналов диагностики;
 > * управление веб-приложением на портале Azure.
+
+Вы также можете воспользоваться версией этого руководства для [портала Azure](/azure/developer/python/tutorial-python-postgresql-app-portal).
+
 
 ## <a name="set-up-your-initial-environment"></a>Настройка начальной среды
 
@@ -106,8 +110,8 @@ cd djangoapp
 
 Пример также изменяется для использования в рабочей среде, такой как Служба приложений.
 
-- Параметры рабочей среды находятся в файле *azuresite/production.py*. Сведения о разработке находятся в файле *azuresite/settings.py*.
-- Приложение использует параметры рабочей среды, если для переменной среды `DJANGO_ENV` задано значение production. В учебнике эта переменная среды создается позже вместе с другими переменными, используемыми для настройки базы данных PostgreSQL.
+- Параметры рабочей среды находятся в файле *azuresite/production.py*. Сведения о разработке хранятся в файле *azuresite/settings.py*.
+- Приложение использует параметры для работы в производственной среде, если для переменной среды `DJANGO_ENV` задано значение production. В учебнике эта переменная среды создается позже вместе с другими переменными, используемыми для настройки базы данных PostgreSQL.
 
 Эти изменения связаны с настройкой Django для запуска в любой рабочей среде и не относятся к Службе приложений. Дополнительные сведения см. в [контрольном списке развертывания Django](https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/).
 

@@ -6,13 +6,13 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 07/09/2020
-ms.openlocfilehash: aabb42dc8d86e500875819cbfc169bcc86733219
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 07/30/2020
+ms.openlocfilehash: e492a5f0afdfc2087e5719df65221d08db0a2e77
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87101241"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87499557"
 ---
 # <a name="quickstart-create-and-manage-logic-apps-using-the-azure-cli"></a>Краткое руководство. Создание приложений логики и управление ими с помощью Azure CLI
 
@@ -271,3 +271,11 @@ Expecting value: line 1 column 1 (char 0)
 | Отладка | `--debug` | Отображение всех журналов отладки. |
 | Справочное сообщение | `--help -h` | Отображение диалогового окна справки. |
 | Запрос | `--query` | Задание строки запроса JMESPath для выходных данных JSON. |
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure/?view=azure-cli-latest).
+
+Пример создания базового приложения логики с помощью CLI см. в статье [Пример скрипта Azure CLI для создания приложения логики](sample-logic-apps-cli-script.md).
+
+Дополнительные примеры скриптов CLI для Logic Apps можно найти в [браузере примеров кода Майкрософт](/samples/browse/?products=azure-logic-apps).

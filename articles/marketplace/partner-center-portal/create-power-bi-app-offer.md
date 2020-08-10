@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: c464e26419648d396b39718f357bcef7e4fa5552
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 4705919f9c6c11678984c016716fe38cb6191557
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87800304"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88030774"
 ---
 # <a name="create-a-power-bi-app-offer"></a>Создание предложения для Power BI приложения
 
@@ -202,19 +202,20 @@ ms.locfileid: "87800304"
 
 Предоставьте логотипы и изображения для использования с вашим предложением. Все изображения должны быть в формате PNG. Размытые изображения не принимаются.
 
+[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
+
 >[!NOTE]
 >Если при отправке файлов возникнет проблема, убедитесь, что ваша локальная сеть не блокирует службу `https://upload.xboxlive.com`, которую использует Центр партнеров.
 
 #### <a name="store-logos"></a>Логотипы магазина
 
-Укажите PNG-файл для логотипа **крупного** размера (от 216 x 216 до 350 x 350 пикселей). Центр партнеров будет использовать его для создания **маленького** логотипа размера (48 x 48 пикселей). При необходимости можно заменить его другим изображением.
-
-Оба размера логотипа необходимы для использования в разных местах в списке:
-
+Предоставьте PNG-файлы эмблемы вашего предложения в двух размерах в пикселях:
 - **малый** (48 x 48);
-- **Крупный** (от 216 x 216 до 350 x 350)
+- **крупный** (216 x 216).
 
-[!INCLUDE [Logo suggestions](./includes/graphics-suggestions.md)]
+Оба логотипа являются обязательными и используются в разных местах описания на Marketplace.
+
+[!INCLUDE [logos-appsource-only](../includes/logos-appsource-only.md)]
 
 #### <a name="screenshots"></a>Снимки экрана
 

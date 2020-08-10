@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/06/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7f840d4a75be72a4317860dcf4a6708642369a24
-ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
+ms.openlocfilehash: fb618f155e659ecd1fa5760117193a9045e6da35
+ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86274226"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87535133"
 ---
 # <a name="bulk-loading-with-synapse-sql"></a>Массовая загрузка в Synapse SQL
 
@@ -28,7 +28,7 @@ ms.locfileid: "86274226"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Этот мастер создает инструкцию COPY, которая использует сквозной доступ через AAD для аутентификации. У [пользователя AAD должны быть разрешения на доступ](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql-examples#d-azure-active-directory-authentication-aad) к рабочей области по меньшей мере с ролью RBAC участника данных BLOB-объектов хранилища в учетной записи ADLS 2-го поколения.
+- Этот мастер создает инструкцию COPY, которая использует сквозной доступ через AAD для аутентификации. У [пользователя AAD должны быть разрешения на доступ](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql-examples#d-azure-active-directory-authentication-aad) к рабочей области по меньшей мере с ролью Azure участника данных BLOB-объектов хранилища в учетной записи ADLS 2-го поколения.
 
 - У вас должны быть [разрешения на использование инструкции COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#permissions) и разрешения на создание таблиц, если для загрузки будет создаваться новая таблица.
 

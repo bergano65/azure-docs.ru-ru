@@ -10,12 +10,12 @@ ms.author: vanto
 ms.reviewer: carlrab
 ms.date: 09/03/2019
 ms.custom: seoapril2019 sqldbrb=1
-ms.openlocfilehash: 73ffe7fe6336d9547ebbbf4c894bd1b9398e0900
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 12c3a35e12e3f432345ea788893d0d0ae6e6433f
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092938"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87496922"
 ---
 # <a name="tutorial-secure-a-database-in-azure-sql-database"></a>Руководство по Защита базы данных в службе "База данных SQL Azure"
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -190,7 +190,7 @@ ms.locfileid: "87092938"
 Для аутентификации Azure Active Directory необходимо, чтобы пользователи базы данных создавались как автономные. Пользователь автономной базы данных сопоставляется с удостоверением в каталоге Azure AD, связанном с базой данных, и у него нет имени для входа в базе данных *master*. Удостоверение Azure AD может быть для отдельного пользователя или группы. Дополнительные сведения об аутентификации с помощью Azure AD см. в статьях [Пользователи автономной базы данных — создание переносимой базы данных](/sql/relational-databases/security/contained-database-users-making-your-database-portable) и [Настройка и администрирование аутентификации Azure Active Directory с помощью SQL](authentication-aad-configure.md).
 
 > [!NOTE]
-> Пользователей баз данных (за исключением администраторов) невозможно создавать с помощью портала Azure. Роли RBAC Azure не распространяются на серверы SQL, базы данных или хранилища данных. Они используются для управления ресурсами Azure и не относятся к разрешениям базы данных.
+> Пользователей баз данных (за исключением администраторов) невозможно создавать с помощью портала Azure. Роли Azure не распространяются на серверы, базы данных или хранилища данных SQL. Они используются для управления ресурсами Azure и не относятся к разрешениям базы данных.
 >
 > Например, роль *Участник SQL Server* не предоставляет разрешение на подключение к базе данных или хранилищу данных. Это разрешение должно быть предоставлено в рамках базы данных с помощью инструкций T-SQL.
 

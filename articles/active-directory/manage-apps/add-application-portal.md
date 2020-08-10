@@ -10,13 +10,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 10/29/2019
 ms.author: kenwith
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 79d80a5b94a753b43715c1ccd8fc2059ff84cfca
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 0818ab782710e6a102d2034790ff8d997cd54f8e
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87338033"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87808445"
 ---
 # <a name="quickstart-add-an-application-to-your-azure-active-directory-azure-ad-tenant"></a>Краткое руководство. Добавление приложения в арендатор Azure Active Directory (Azure AD)
 
@@ -58,8 +57,15 @@ Azure Active Directory (Azure AD) имеет галерею, содержащу�
 
 Приложение добавлено. В следующем руководстве показано, как изменить логотип и другие свойства приложения.
 
+> [!TIP]
+> Вы можете автоматизировать управление приложениями с помощью API Graph — см. [соответствующую статью](https://docs.microsoft.com/graph/application-saml-sso-configure-api).
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если вы не будете продолжать работу с серией кратких руководств, удалите приложение, чтобы очистить тестового арендатора. Сведения о том, как удалить приложение, см. в последнем кратком руководстве этой серии, [Удаление приложения](delete-application-portal.md).
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Настройка приложения](add-application-portal-configure.md)
-- [Настройка единого входа](add-application-portal-setup-sso.md)
-- [Удаление приложения](delete-application-portal.md)
+Чтобы узнать, как настроить приложение, перейдите к следующей статье.
+> [!div class="nextstepaction"]
+> [Настройка приложения](add-application-portal-configure.md)

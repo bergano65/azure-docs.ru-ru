@@ -1,7 +1,7 @@
 ---
 title: Управление параллелизмом
 titleSuffix: Azure Storage
-description: Узнайте, как управлять параллелизмом для служб BLOB-объектов, очередей, таблиц и файлов.
+description: Узнайте, как управлять параллелизмом в службе хранилища Azure для служб BLOB-объектов, очередей, таблиц и файлов. Ознакомьтесь с тремя основными используемыми стратегиями параллелизма данных.
 services: storage
 author: tamram
 ms.service: storage
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 12/20/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 099711bf09fc29a1168ca8ce73ea6ae93f810a08
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b1ec7661bc2823932328bd994ec7bc7f6167f13a
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85504293"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88030390"
 ---
 # <a name="managing-concurrency-in-microsoft-azure-storage"></a>Управление параллелизмом в службе хранилища Microsoft Azure
 

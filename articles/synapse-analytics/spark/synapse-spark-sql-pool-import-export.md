@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: prgomata
 ms.reviewer: euang
-ms.openlocfilehash: ca13cbd8bdba911882f7452e34c45cbc7918dd7f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7b02296d5d9aed5866c0efcdf85fa1c9946617d0
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077701"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87501905"
 ---
 # <a name="introduction"></a>Введение
 
@@ -67,7 +67,7 @@ EXEC sp_addrolemember 'db_exporter',[mike@contoso.com]
 
 Инструкции импорта необязательны, так как они уже импортированы для интерфейса записной книжки.
 
-### <a name="transferring-data-to-or-from-a-sql-pool-attached-with-the-workspace"></a>Передача данных в пул SQL, подключенный к рабочей области, и из него
+### <a name="transfer-data-to-or-from-a-sql-pool-attached-with-the-workspace"></a>Передача данных в пул SQL, подключенный к рабочей области, и из него
 
 > [!NOTE]
 > **Импорт в интерфейсе записной книжки не требуется.**
@@ -134,7 +134,7 @@ df.write.
 
 ```
 
-### <a name="if-you-are-transferring-data-to-or-from-a-sql-pool-or-database-outside-the-workspace"></a>Передача данных в пул SQL или базу данных вне рабочей области и из них
+### <a name="if-you-transfer-data-to-or-from-a-sql-pool-or-database-outside-the-workspace"></a>Передача данных в пул SQL или базу данных вне рабочей области и из них
 
 > [!NOTE]
 > Импорт в интерфейсе записной книжки не требуется.
@@ -160,7 +160,7 @@ option(Constants.SERVER, "samplews.database.windows.net").
 sqlanalytics("<DBName>.<Schema>.<TableName>", <TableType>)
 ```
 
-### <a name="using-sql-auth-instead-of-aad"></a>Использование проверки подлинности SQL вместо AAD
+### <a name="use-sql-auth-instead-of-aad"></a>Использование аутентификации SQL вместо AAD
 
 #### <a name="read-api"></a>API чтения
 
@@ -184,7 +184,7 @@ option(Constants.PASSWORD, <SQLServer Login Password>).
 sqlanalytics("<DBName>.<Schema>.<TableName>", <TableType>)
 ```
 
-### <a name="using-the-pyspark-connector"></a>Использование соединителя PySpark
+### <a name="use-the-pyspark-connector"></a>Использование соединителя PySpark
 
 > [!NOTE]
 > В этом примере используется тот же интерфейс записной книжки.
@@ -208,7 +208,7 @@ pysparkdftemptable.write.sqlanalytics("sqlpool.dbo.PySparkTable", Constants.INTE
 
 Аналогично в сценарии для чтения выполните считывание данных с помощью Scala и запишите их во временную таблицу. Используйте Spark SQL в PySpark, чтобы запросить перенос временной таблицы в кадр данных.
 
-## <a name="allowing-other-users-to-use-the-azure-synapse-apache-spark-to-synapse-sql-connector-in-your-workspace"></a>Предоставление другим пользователям возможности использовать соединитель между Azure Synapse Apache Spark и Synapse SQL в вашей рабочей области
+## <a name="allow-other-users-to-use-the-azure-synapse-apache-spark-to-synapse-sql-connector-in-your-workspace"></a>Предоставление другим пользователям возможности использовать соединитель между Azure Synapse Apache Spark и Synapse SQL в вашей рабочей области
 
 Чтобы изменить отсутствующие разрешения для других пользователей, необходимо быть владельцем данных для BLOB-объекта хранилища в учетной записи хранения ADLS 2-го поколения, подключенной к рабочей области. Убедитесь, что у пользователя есть доступ к этой рабочей области и разрешения на запуск записных книжек.
 

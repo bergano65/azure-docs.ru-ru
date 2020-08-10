@@ -3,12 +3,13 @@ title: Руководство. Активация сборки образов п
 description: С помощью этого руководства вы настроите в Реестре контейнеров Azure автоматическую активацию сборки образа контейнера в облаке при обновлении базового образа в другом реестре контейнеров Azure.
 ms.topic: tutorial
 ms.date: 01/22/2020
-ms.openlocfilehash: e8aae8a91288d470c801dc4d82cfa6b44369d832
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.custom: devx-track-javascript
+ms.openlocfilehash: e28dc65f44f3d9997a59e6204451cc84b0e41e40
+ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77617687"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87407138"
 ---
 # <a name="tutorial-automate-container-image-builds-when-a-base-image-is-updated-in-another-private-container-registry"></a>Руководство по Автоматизация сборки образов контейнера при обновлении базового образа в другом частном реестре контейнеров 
 
@@ -162,7 +163,7 @@ az acr task run --registry $ACR_NAME --name taskhelloworld
 az acr login --name $ACR_NAME
 ```
 
-Затем локально запустите контейнер с помощью `docker run`. Замените код **\<run-id\>** на ИД запуска, полученный в выходных данных на предыдущем шаге (например, "da6"). В этом примере задается имя контейнера `myapp` и включен параметр `--rm` для удаления контейнера при его остановке.
+Затем локально запустите контейнер с помощью `docker run`. Замените **\<run-id\>** идентификатором запуска, полученным в выходных данных на предыдущем шаге (например, "da6"). В этом примере задается имя контейнера `myapp` и включен параметр `--rm` для удаления контейнера при его остановке.
 
 ```bash
 docker run -d -p 8080:80 --name myapp --rm $ACR_NAME.azurecr.io/helloworld:<run-id>

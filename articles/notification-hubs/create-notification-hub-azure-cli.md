@@ -11,20 +11,21 @@ ms.workload: mobile
 ms.topic: quickstart
 ms.date: 05/27/2020
 ms.author: dbradish
-ms.reviewer: sethm
+ms.reviewer: thsomasu
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: d32bae48348e482e0e175760a416097ffbc17a1c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: f1829b6d8ab7b2cab0734ffd3cbab295e6c39678
+ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87080953"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87761116"
 ---
 # <a name="quickstart-create-an-azure-notification-hub-using-the-azure-cli"></a>Краткое руководство. Создание концентратора уведомлений Azure с помощью Azure CLI
 
 Центры уведомлений Azure обеспечивают простой в использовании и масштабируемый механизм отправки push-уведомлений, который позволяет отправлять уведомления на любую платформу (iOS, Android, Windows, Kindle, Baidu и т. д.) из любой серверной части (облачной или локальной). Дополнительные сведения о службе см. в статье [Что такое Центры уведомлений Azure?](notification-hubs-push-notification-overview.md).
 
-В этом кратком руководстве показано, как создать концентратор уведомлений с помощью Azure CLI. В первом разделе приводятся шаги по созданию пространства имен концентратора уведомлений.  Во втором разделе приведены пошаговые инструкции по созданию концентратора уведомлений в существующем пространстве имен.  Вы также узнаете, как создать пользовательскую политику доступа.  
+В этом кратком руководстве показано, как создать концентратор уведомлений с помощью Azure CLI. В первом разделе приводятся шаги по созданию пространства имен Центров уведомлений. Во втором разделе приведены пошаговые инструкции по созданию концентратора уведомлений в существующем пространстве имен. Вы также узнаете, как создать пользовательскую политику доступа.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -34,9 +35,7 @@ ms.locfileid: "87080953"
 
 ## <a name="prepare-your-environment"></a>Подготовка среды
 
-1. Войдите.
-
-   Выполните вход с помощью команды [az login](/cli/azure/reference-index#az-login), если вы используете локальную установку CLI.
+1. Выполните вход с помощью команды [az login](/cli/azure/reference-index#az-login), если вы используете локальную установку CLI.
 
     ```azurecli
     az login
@@ -44,9 +43,7 @@ ms.locfileid: "87080953"
 
     Выполните аутентификацию, следуя инструкциям в окне терминала.
 
-2. Установите расширение Azure CLI.
-
-   При работе со ссылками на расширения для Azure CLI необходимо сначала установить расширение.  Расширения Azure CLI предоставляют доступ к экспериментальным командам и предварительным выпускам команд, которые еще не поставлялись как часть основного CLI.  Дополнительные сведения о расширениях, включая обновление и удаление, см. в статье [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
+2. При работе со ссылками на расширения для Azure CLI необходимо сначала установить расширение. Расширения Azure CLI предоставляют доступ к экспериментальным командам и предварительным выпускам команд, которые еще не поставлялись как часть основного CLI. Дополнительные сведения о расширениях, включая обновление и удаление, см. в статье [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
 
    Установите [расширение для Центров уведомлений](/cli/azure/ext/notification-hub/notification-hub), выполнив следующую команду:
 
@@ -64,19 +61,19 @@ ms.locfileid: "87080953"
    az group create --name spnhubrg --location eastus
    ```
 
-## <a name="create-a-notification-hub-namespace"></a>Создание пространства имен для концентратора уведомлений
+## <a name="create-a-notification-hubs-namespace"></a>Создание пространства имен Центров уведомлений
 
 1. Создайте пространство имен для концентраторов уведомлений.
 
-   Пространство имен содержит один или несколько концентраторов, и **имя должно быть уникальным для всех подписок Azure и иметь длину не менее шести символов**.  Чтобы проверить доступность имени, выполните команду [az notification-hub namespace check-availability](/cli/azure/ext/notification-hub/notification-hub/namespace#ext-notification-hub-az-notification-hub-namespace-check-availability).
+   Пространство имен содержит один или несколько концентраторов, и имя должно быть уникальным для всех подписок Azure и иметь длину не менее шести символов. Чтобы проверить доступность имени, выполните команду [az notification-hub namespace check-availability](/cli/azure/ext/notification-hub/notification-hub/namespace#ext-notification-hub-az-notification-hub-namespace-check-availability).
 
    ```azurecli
    az notification-hub namespace check-availability --name spnhubns
    ```
 
-   Azure CLI будет отвечать на запрос о доступности, отображая следующие выходные данные консоли:
+   Azure CLI отвечает на запрос о доступности, отображая следующие выходные данные консоли:
 
-   ```output
+   ```shell
    {
    "id": "/subscriptions/yourSubscriptionID/providers/Microsoft.NotificationHubs/checkNamespaceAvailability",
    "isAvailable": true,
@@ -89,7 +86,7 @@ ms.locfileid: "87080953"
    }
    ```
 
-   Обратите внимание на вторую строку в ответе Azure CLI (`"isAvailable": true`).  Эта строка будет иметь значение `false`, если необходимое имя, указанное для пространства имен, доступно.  Убедившись в доступности имени, выполните команду [az notification-hub namespace create](/cli/azure/ext/notification-hub/notification-hub/namespace#ext-notification-hub-az-notification-hub-namespace-create), чтобы создать пространство имен.  
+   Обратите внимание на вторую строку в ответе Azure CLI (`"isAvailable": true`). Эта строка будет иметь значение `false`, если необходимое имя, указанное для пространства имен, недоступно. Убедившись в доступности имени, выполните команду [az notification-hub namespace create](/cli/azure/ext/notification-hub/notification-hub/namespace#ext-notification-hub-az-notification-hub-namespace-create), чтобы создать пространство имен.  
 
    ```azurecli
    az notification-hub namespace create --resource-group spnhubrg --name spnhubns  --location eastus --sku Free
@@ -97,22 +94,22 @@ ms.locfileid: "87080953"
 
    Если элемент `--name`, предоставленный для команды `az notification-hub namespace create`, недоступен или не соответствует [правилам именования и ограничениям для ресурсов Azure](../azure-resource-manager/management/resource-name-rules.md), Azure CLI отобразит следующие выходные данные консоли:
 
-   ```output
+   ```shell
    #the name is not available
    The specified name is not available. For more information visit https://aka.ms/eventhubsarmexceptions.
 
-   #the name is invalied
+   #the name is invalid
    The specified service namespace is invalid.
    ```
 
    Если первое имя, которое вы использовали, оказалось неподходящим, выберите другое имя для нового пространства имен и снова выполните команду `az notification-hub namespace create`.
 
    > [!NOTE]
-   > На этом и последующих шагах необходимо заменять значение параметра `--namespace` в каждой команде Azure CLI, которую вы копируете из этого краткого руководства.
+   > На этом и последующих шагах вам необходимо заменять значение параметра `--namespace` в каждой команде Azure CLI, которую вы копируете из этого краткого руководства.
 
 2. Получите список пространств имен.
 
-   Чтобы просмотреть сведения о новом пространстве имен, выполните команду [az notification-hub namespace list](/cli/azure/ext/notification-hub/notification-hub/namespace?view=azure-cli-latest#ext-notification-hub-az-notification-hub-namespace-list).  Параметр `--resource-group` является необязательным, если требуется просмотреть все пространства имен для подписки.
+   Чтобы просмотреть сведения о новом пространстве имен, выполните команду [az notification-hub namespace list](/cli/azure/ext/notification-hub/notification-hub/namespace?view=azure-cli-latest#ext-notification-hub-az-notification-hub-namespace-list). Параметр `--resource-group` является необязательным, если требуется просмотреть все пространства имен для подписки.
 
    ```azurecli
    az notification-hub namespace list --resource-group spnhubrg
@@ -122,7 +119,7 @@ ms.locfileid: "87080953"
 
 1. Создайте первый концентратор уведомлений.
 
-   Теперь можно создать один или несколько концентраторов уведомлений в новом пространстве имен.  Чтобы создать концентратор уведомлений, выполните команду [az notification-hub create](/cli/azure/ext/notification-hub/notification-hub#ext-notification-hub-az-notification-hub-create).
+   Теперь можно создать один или несколько концентраторов уведомлений в новом пространстве имен. Чтобы создать концентратор уведомлений, выполните команду [az notification-hub create](/cli/azure/ext/notification-hub/notification-hub#ext-notification-hub-az-notification-hub-create).
 
    ```azurecli
    az notification-hub create --resource-group spnhubrg --namespace-name spnhubns --name spfcmtutorial1nhub --location eastus --sku Free
@@ -130,7 +127,7 @@ ms.locfileid: "87080953"
 
 2. Создайте второй концентратор уведомлений.
 
-   Вы можете создать несколько концентраторов уведомлений в одном пространстве имен.  Чтобы создать второй концентратор уведомлений в том же пространстве имен, выполните команду `az notification-hub create` еще раз с другим именем концентратора.
+   Вы можете создать несколько концентраторов уведомлений в одном пространстве имен. Чтобы создать второй концентратор уведомлений в том же пространстве имен, выполните команду `az notification-hub create` еще раз с другим именем концентратора.
 
    ```azurecli
    az notification-hub create --resource-group spnhubrg --namespace-name spnhubns --name mysecondnhub --location eastus --sku Free
@@ -138,53 +135,47 @@ ms.locfileid: "87080953"
 
 3. Получите список концентраторов уведомлений.
 
-   С каждой выполненной командой Azure CLI возвращает либо успешное сообщение, либо сообщение об ошибке. Тем не менее, вы всегда можете запросить список концентраторов уведомлений.  Для этой цели была разработана команда [az notification-hub list](/cli/azure/ext/notification-hub/notification-hub?view=azure-cli-latest#ext-notification-hub-az-notification-hub-list).
+   С каждой выполненной командой Azure CLI возвращает либо успешное сообщение, либо сообщение об ошибке. Тем не менее, вы всегда можете запросить список концентраторов уведомлений. Для этой цели была разработана команда [az notification-hub list](/cli/azure/ext/notification-hub/notification-hub?view=azure-cli-latest#ext-notification-hub-az-notification-hub-list).
 
    ```azurecli
    az notification-hub list --resource-group spnhubrg --namespace-name spnhubns --output table
    ```
 
-## <a name="work-with-notification-hub-access-policies"></a>Работа с политиками доступа для концентратора уведомлений
+## <a name="work-with-access-policies"></a>Работа с политиками доступа
 
-1. Получите список политик доступа для концентратора уведомлений.
-
-   Центры уведомлений Azure используют [безопасность на базе подписанного URL-адреса (SAS)](./notification-hubs-push-notification-security.md) с помощью политик доступа.  При создании концентратора уведомлений автоматически создаются две политики.  Строки подключения из этих политик необходимы для настройки push-уведомлений.  Команда [az  notification-hub authorization-rule list](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list) предоставляет список имен политик и их соответствующих групп ресурсов.
+1. Центры уведомлений Azure используют [безопасность на базе подписанного URL-адреса (SAS)](./notification-hubs-push-notification-security.md) с помощью политик доступа. При создании концентратора уведомлений автоматически создаются две политики. Строки подключения из этих политик необходимы для настройки push-уведомлений. Команда [az notification-hub authorization-rule list](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list) предоставляет список имен политик и их соответствующих групп ресурсов.
 
    ```azurecli
    az notification-hub authorization-rule list --resource-group spnhubrg --namespace-name spnhubns --notification-hub-name spfcmtutorial1nhub --output table
    ```
 
    > [!IMPORTANT]
-   > Не используйте в приложении политику _DefaultFullSharedAccessSignature_. Этот параметр можно использовать только в серверной части.  Используйте только политики доступа `Listen` в клиентском приложении.
+   > Не используйте в приложении политику _DefaultFullSharedAccessSignature_. Эту политику можно использовать только в серверной части. Используйте только политики доступа `Listen` в клиентском приложении.
 
-2. Создайте новое правило авторизации для концентратора уведомлений.
-
-   Если вы хотите создать дополнительные правила авторизации с информативными именами, можно создать и настроить собственную политику доступа с помощью команды [az notification-hub authorization-rule create](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-create).  Параметр `--rights` представляет собой список разрешений с разделителями-пробелами, которые вы хотите назначить.
+2. Если вы хотите создать дополнительные правила авторизации с информативными именами, можно создать и настроить собственную политику доступа с помощью команды [az notification-hub authorization-rule create](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-create). Параметр `--rights` представляет собой список разрешений с разделителями-пробелами, которые вы хотите назначить.
 
    ```azurecli
    az notification-hub authorization-rule create --resource-group spnhubrg --namespace-name spnhubns --notification-hub-name spfcmtutorial1nhub --name spnhub1key --rights Listen Manage Send
    ```
 
-3. Получение списка ключей и строк подключения для политик доступа концентратора уведомлений.
-
-   Для каждой политики доступа определены два набора ключей и строк подключения.  Они потребуются позже, чтобы [настроить концентратор уведомлений](./configure-notification-hub-portal-pns-settings.md).  Чтобы получить список ключей и строк подключения для политики доступа концентратора уведомлений, выполните команду [az notification-hub authorization-rule list-keys](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list-keys).
+3. Для каждой политики доступа определены два набора ключей и строк подключения. Они потребуются позже, чтобы [настроить концентратор уведомлений](./configure-notification-hub-portal-pns-settings.md). Чтобы получить список ключей и строк подключения для политики доступа Центров уведомлений, выполните команду [az notification-hub authorization-rule list-keys](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list-keys).
 
    ```azurecli
-   #query the keys and connection strings for DefaultListenSharedAccessSignature
+   # query the keys and connection strings for DefaultListenSharedAccessSignature
    az notification-hub authorization-rule list-keys --resource-group spnhubrg --namespace-name spnhubns --notification-hub-name spfcmtutorial1nhub --name DefaultListenSharedAccessSignature --output table
    ```
 
    ```azurecli
-   #query the keys and connection strings for a custom policy
+   # query the keys and connection strings for a custom policy
    az notification-hub authorization-rule list-keys --resource-group spnhubrg --namespace-name spnhubns --notification-hub-name spfcmtutorial1nhub --name spnhub1key --output table
    ```
 
    > [!NOTE]
-   > Для [пространства имен концентратора уведомлений](/cli/azure/ext/notification-hub/notification-hub/namespace/authorization-rule#ext-notification-hub-az-notification-hub-namespace-authorization-rule-list-keys) и самого [концентратора уведомлений](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list-keys) действуют разные политики доступа.  Убедитесь, что при запросе ключей и строк подключения используется правильная ссылка на Azure CLI.
+   > Для [пространства имен Центров уведомлений](/cli/azure/ext/notification-hub/notification-hub/namespace/authorization-rule#ext-notification-hub-az-notification-hub-namespace-authorization-rule-list-keys) и самого [концентратора уведомлений](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list-keys) действуют разные политики доступа. Убедитесь, что при запросе ключей и строк подключения используется правильная ссылка на Azure CLI.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить ставшие ненужными группу ресурсов и все связанные с ней ресурсы, выполнив команду [az group delete](/cli/azure/group).
+Вы можете удалить ставшие ненужными группу ресурсов и все связанные с ней ресурсы, выполнив команду [az group delete](/cli/azure/group):
 
 ```azurecli
 az group delete --name spnhubrg
@@ -194,7 +185,7 @@ az group delete --name spnhubrg
 
 * В этом кратком руководстве вы создали центр уведомлений. Сведения о настройке концентратора с помощью параметров системы отправки уведомлений платформы (PNS) см. в статье [Краткое руководство. Настройка push-уведомлений в центре уведомлений](configure-notification-hub-portal-pns-settings.md)
 
-* Узнайте о широких возможностях управления концентраторами уведомлений с помощью Azure CLI.
+* Узнайте о широких возможностях управления концентраторами уведомлений с помощью Azure CLI:
 
   [Полный справочный список по Центрам уведомлений](/cli/azure/ext/notification-hub/notification-hub)
 

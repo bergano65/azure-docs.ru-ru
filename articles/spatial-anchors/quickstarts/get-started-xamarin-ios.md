@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 07/22/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 625a1a256ec5f1668c97e74c37e567a4ceb3612f
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 12fb644430d4bfd6444c6bbf09d37b4662ca6fd1
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83871155"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810128"
 ---
 # <a name="quickstart-create-a-xamarin-ios-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложение для iOS с Xamarin с помощью Пространственных привязок Azure
 
@@ -55,9 +55,7 @@ ms.locfileid: "83871155"
 
 Найдите поле `SpatialAnchorsAccountId` и замените `Set me` идентификатором учетной записи.
 
-Откройте файл `Xamarin/SampleXamarin.iOS/ViewControllers/DemoViewControllerBase.cs`.
-
-Найдите `StartSession()` и добавьте следующую строку, подставив в нее полученный ранее домен учетной записи: `this.cloudSession.Configuration.AccountDomain = "MyAccountDomain";`.
+Найдите поле `SpatialAnchorsAccountDomain` и замените `Set me` доменом учетной записи.
 
 ## <a name="deploy-the-app-to-your-ios-device"></a>Развертывание приложения на устройстве iOS
 

@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: e9d6f31674db0744e220a9cd88033a32bb5c1e17
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 02828e0c159e2d30dacc5759f1239dae1268dac5
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86024695"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87491788"
 ---
 # <a name="tutorial-enable-password-synchronization-in-azure-active-directory-domain-services-for-hybrid-environments"></a>Руководство по Включению синхронизации паролей в Доменных службах Azure Active Directory для гибридных сред
 
@@ -22,7 +22,7 @@ ms.locfileid: "86024695"
 
 Чтобы использовать Azure AD DS с учетными записями, синхронизированными из локальной среды AD DS, необходимо настроить Azure AD Connect для синхронизации таких хэшей паролей, которые необходимы для аутентификации NTLM и Kerberos. После настройки Azure AD Connect событие создания локальной учетной записи или изменения пароля также синхронизирует устаревшие хэши паролей с Azure AD.
 
-Если вы используете только облачные учетные записи без локальной среды AD DS, вам не нужно выполнять эти действия.
+Если вы используете только облачные учетные записи без локальной среды AD DS или если вы используете *лес ресурсов*, вам не нужно выполнять эти действия. Для управляемых доменов, которые используют лес ресурсов, локальные хэши паролей не синхронизируются. При аутентификации локальных учетных записей используется доверие леса, связанное с вашими контроллерами домена AD DS.
 
 Из этого руководства вы узнаете:
 

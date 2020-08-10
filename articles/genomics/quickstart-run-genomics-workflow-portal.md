@@ -9,12 +9,12 @@ ms.service: genomics
 ms.topic: quickstart
 ms.date: 01/11/2019
 ms.custom: tracking-python
-ms.openlocfilehash: 167bcf4364b88529256b79574c6b8c03098fed02
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: cd0cf3bb7df8efc944fabb8e236f32adb38749d4
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84607131"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87424140"
 ---
 # <a name="quickstart-run-a-workflow-through-the-microsoft-genomics-service"></a>Краткое руководство. Запуск рабочего процесса в службе Microsoft Genomics
 
@@ -48,18 +48,18 @@ ms.locfileid: "84607131"
 
 ## <a name="set-up-install-the-microsoft-genomics-python-client"></a>Настройка. Установка клиента Microsoft Genomics Python
 
-Вам нужно установить в своей локальной среде два клиента: Python и Microsoft Genomics Python. 
+Вам нужно установить в своей локальной среде два клиента `msgen`: Python и Microsoft Genomics Python. 
 
 ### <a name="install-python"></a>Установка Python
 
 Клиент Microsoft Genomics Python совместим с Python 2.7.12 или более поздней версией 2.7.xx. Предлагаемая версия — 2.7.14 Файл установки можно скачать [здесь](https://www.python.org/downloads/release/python-2714/). 
 
 > [!IMPORTANT]
-> Версия Python 3.x не совместима с версией Python 2.7.xx.  MSGen — это приложение Python 2.7. При выполнении MSGen убедитесь, что вы используете в своей среде Python версию Python 2.7.xx. При попытке использования MSGen с версией Python 3.x могут возникнуть ошибки.
+> Версия Python 3.x не совместима с версией Python 2.7.xx.  `msgen` — это приложение Python 2.7. При выполнении `msgen` убедитесь, что вы используете в своей среде Python версию Python 2.7.xx. При попытке использования `msgen` с версией Python 3.x могут возникнуть ошибки.
 
-### <a name="install-the-microsoft-genomics-client"></a>Установка клиента Microsoft Genomics
+### <a name="install-the-microsoft-genomics-python-client-msgen"></a>Установка клиента Microsoft Genomics Python `msgen`
 
-Используйте Python `pip`, чтобы установить клиент Microsoft Genomics `msgen`. В следующих инструкциях предполагается, что Python уже есть в системном пути. Если не удается распознать установку `pip`, добавьте Python и вложенную папку скриптов в системный путь.
+Используйте Python `pip`, чтобы установить клиент Microsoft Genomics `msgen`. В следующих инструкциях предполагается, что Python2.x уже есть в системном пути. Если не удается распознать установку `pip`, добавьте Python и вложенную папку скриптов в системный путь.
 
 ```
 pip install --upgrade --no-deps msgen
@@ -67,14 +67,9 @@ pip install msgen
 ```
 
 Если вы не хотите устанавливать `msgen` как двоичный файл во всей системе и изменять пакеты Python во всей системе, используйте флаг `–-user` с `pip`.
-Если вы выполняете установку с помощью пакетов или файла setup.py, устанавливаются все необходимые пакеты. Если вы выполняете установку иначе, базовые необходимые пакеты для `msgen` можно скачать по этим ссылкам: 
+Если вы выполняете установку с помощью пакетов или файла setup.py, устанавливаются все необходимые пакеты.
 
- * [Azure-storage](https://pypi.python.org/pypi/azure-storage); 
- * [Requests](https://pypi.python.org/pypi/requests). 
-
-Эти пакеты также можно установить с помощью `pip`, `easy_install` или стандартной процедуры `setup.py`. 
-
-### <a name="test-the-microsoft-genomics-client"></a>Тестирование клиента Microsoft Genomics
+### <a name="test-msgen-python-client"></a>Тестирование клиента Python `msgen`
 Чтобы протестировать клиент Microsoft Genomics, скачайте файл конфигурации из своей учетной записи Genomics. Перейдите к учетной записи Genomics на портале Azure, выберите пункт **Все службы** в левом верхнем углу, а затем найдите и выберите учетную запись Genomics.
 
 ![Поиск Microsoft Genomics на портале Azure](./media/quickstart-run-genomics-workflow-portal/genomics-filter-box.png "Поиск Microsoft Genomics на портале Azure")
@@ -103,7 +98,7 @@ msgen list -f "<full path where you saved the config file>"
  |Группа ресурсов       | MyResourceGroup       |  Вы можете выбрать группу ресурсов, к которой относится учетная запись Genomics. Допустимые имена групп ресурсов см. в статье [Naming rules and restrictions for Azure resources](/azure/architecture/best-practices/resource-naming) (Правила и ограничения именования для ресурсов Azure) |
  |Имя учетной записи хранения         | MyStorageAccount     |Выберите уникальный идентификатор учетной записи. Допустимые имена см. в статье [Naming rules and restrictions for Azure resources](/azure/architecture/best-practices/resource-naming) (Правила и ограничения именования для ресурсов Azure) |
  |Расположение                  | западная часть США 2                  | Используйте то же расположение, что и для учетной записи Genomics, для сокращения расходов на исходящий трафик и уменьшения задержки при передаче данных.  | 
- |Производительность                  | Standard                   | По умолчанию используется уровень "Стандартный". Дополнительные сведения об учетных записях хранения уровня "Стандартный" и "Премиум" см. в статье [Introduction to Azure Storage](https://docs.microsoft.com/azure/storage/common/storage-introduction) (Введение в хранилище Microsoft Azure).    |
+ |Производительность                  | Стандартный                   | По умолчанию используется уровень "Стандартный". Дополнительные сведения об учетных записях хранения уровня "Стандартный" и "Премиум" см. в статье [Introduction to Azure Storage](https://docs.microsoft.com/azure/storage/common/storage-introduction) (Введение в хранилище Microsoft Azure).    |
  |Тип учетной записи       | BlobStorage       |  В хранилище BLOB-объектов операции скачивания или отправки могут выполняться в 2–5 раз быстрее, чем в хранилище общего назначения. |
  |Репликация                  | Локально избыточное хранилище                  | Локально избыточное хранилище реплицирует ваши данные в центр данных в регионе, в котором создана учетная запись хранения. Дополнительные сведения см. в статье о [репликации службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy).    |
  |Уровень доступа                  | Горячий                   | Горячий уровень доступа означает, что доступ к объектам в учетной записи хранения будет осуществляться часто.    |
@@ -119,18 +114,20 @@ msgen list -f "<full path where you saved the config file>"
 
 Создайте в своей учетной записи хранения один контейнер больших двоичных объектов для входных данных и еще один — для выходных данных.  Передайте входные данные в контейнер больших двоичных объектов. Для этого можно использовать различные инструменты, например [Обозреватель службы хранилища Microsoft Azure](https://azure.microsoft.com/features/storage-explorer/), [BlobPorter](https://github.com/Azure/blobporter) или [AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). 
 
-## <a name="run-a-workflow-through-the-microsoft-genomics-service-using-the-python-client"></a>Запуск рабочего процесса в службе Microsoft Genomics с помощью Python 
+## <a name="run-a-workflow-through-the-microsoft-genomics-service-using-the-msgen-python-client"></a>Запуск рабочего процесса в службе Microsoft Genomics с помощью клиента Python `msgen`
 
 Для запуска рабочего процесса в службе Microsoft Genomics измените файл *config.txt*, указав в нем контейнер хранилища входных и выходных данных.
 Откройте файл *config.txt*, скачанный из учетной записи Genomics. Разделы, которые необходимо указать: ключ подписки и шесть элементов в конце файла (имя учетной записи хранения, ключ и имя контейнера для входных данных, имя учетной записи хранения, ключ и имя контейнера для выходных данных). Чтобы найти эти сведения, перейдите на портале в раздел **Ключи доступа** вашей учетной записи хранения или непосредственно в Обозреватель службы хранилища Azure.  
 
-![Конфигурация Genomics](./media/quickstart-run-genomics-workflow-portal/genomics-config.png "Конфигурация Genomics")
+![Конфигурация Genomics](./media/quickstart-run-genomics-workflow-portal/genomics-config.PNG "Конфигурация Genomics")
 
 Если необходимо запустить GATK4, установите значение `gatk4` для параметра `process_name`.
 
 Служба Genomics записывает файлы VCF по умолчанию. Если необходимо получить выходные данные в формате gVCF, а не VCF (эквивалентные `-emitRefConfidence` в GATK 3.x и `emit-ref-confidence` в GATK 4.x), добавьте параметр `emit_ref_confidence` в ваш *config.txt* и установите для него `gvcf`, как показано на рисунке, приведенном выше.  Чтобы изменить выходные данные VCF, удалите их из файла *config.txt* или установите для параметра `emit_ref_confidence` значение `none`. 
 
-### <a name="submit-your-workflow-to-the-microsoft-genomics-service-the-microsoft-genomics-client"></a>Отправка рабочего процесса в клиент Microsoft Genomics службы Microsoft Genomics
+`bgzip` — это средство, которое сжимает файл VCF или GVCF. `tabix` создает индекс для сжатого файла. По умолчанию служба Genomics выполняет `bgzip`, а затем — `tabix` для выходных данных .g.vcf, но не запускает эти средства по умолчанию для выходных данных .vcf. При запуске служба создает файлы GZ (выходные данные bgzip) и TBI (выходные данные tabix). Аргумент является логическим значением, которое по умолчанию имеет значение false для выходных данных VCF и значение true для выходных данных .g.vcf. Для использования в командной строке укажите для `-bz` или `--bgzip-output` значение `true` (запустите bgzip и tabix) или `false`. Чтобы использовать этот аргумент в файле *config.txt*, добавьте в файл значение `bgzip_output: true` или `bgzip_output: false`.
+
+### <a name="submit-your-workflow-to-the-microsoft-genomics-service-using-the-msgen-python-client"></a>Отправка рабочего процесса в службу Microsoft Genomics с помощью клиента Python `msgen`
 
 Используйте клиент Microsoft Genomics Python для отправки рабочего процесса с помощью следующей команды:
 
@@ -146,4 +143,5 @@ msgen list -f c:\temp\config.txt
 После выполнения рабочего процесса вы можете просмотреть выходные файлы в контейнере выходных данных своей учетной записи хранения Azure. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-С помощью инструкций из этой статьи вы научились отправлять примеры входных данных в службу хранилища Azure и отправлять рабочий процесс в службу Microsoft Genomics через клиент Python `msgen`. Дополнительные сведения о других типах входных файлов, которые могут использоваться в службе Microsoft Genomics, см. в статьях об отправке [парных FASTQ-файлов](quickstart-input-pair-FASTQ.md) | [BAM-файлов](quickstart-input-BAM.md) | [нескольких FASTQ- или BAM-файлов](quickstart-input-multiple.md). Кроме того, вы можете выполнить задачи в этом руководстве с помощью нашего [руководства службы "Записные книжки Azure"](https://aka.ms/genomicsnotebook).
+
+С помощью инструкций из этой статьи вы научились отправлять примеры входных данных в службу хранилища Azure и отправлять рабочий процесс в службу Microsoft Genomics через клиент Python `msgen`. Дополнительные сведения о других типах входных файлов, которые могут использоваться в службе Microsoft Genomics, см. в статьях об отправке [парных FASTQ-файлов](quickstart-input-pair-FASTQ.md) | [BAM-файлов](quickstart-input-BAM.md) | [нескольких FASTQ- или BAM-файлов](quickstart-input-multiple.md). Вы также можете изучить этот учебник с помощью [примера записной книжки Azure](https://aka.ms/genomicsnotebook), загрузив файл Genomics Tutorial.ipynb и использовав средство чтения записной книжки, например [Jupyter](https://docs.microsoft.com/azure/notebooks/tutorial-create-run-jupyter-notebook), чтобы открыть файл и выполнить его.

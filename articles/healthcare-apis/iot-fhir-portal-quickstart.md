@@ -8,12 +8,12 @@ ms.subservice: iomt
 ms.topic: quickstart
 ms.date: 05/11/2020
 ms.author: punagpal
-ms.openlocfilehash: bc85765666ba3baeae7ec795118f615f6b4b4368
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 95f5b5f13401c224ccf67c5f013deedf00379de7
+ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87101362"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87446810"
 ---
 # <a name="quickstart-deploy-iot-connector-preview-using-azure-portal"></a>Краткое руководство. Развертывание соединителя IoT (предварительная версия) с помощью портала Azure
 
@@ -181,7 +181,7 @@ Azure предоставляет обширный набор продуктов 
 Вы можете просматривать ресурсы наблюдения FHIR, созданные соединителем IoT в Azure API для FHIR, используя Postman. Настройте [доступ к Azure API для FHIR в Postman](access-fhir-postman-tutorial.md) и выполните запрос `GET` к `https://your-fhir-server-url/Observation?code=http://loinc.org|8867-4`, чтобы просмотреть ресурсы наблюдения FHIR с информацией о частоте пульса. 
 
 > [!TIP]
-> Убедитесь, что пользователь имеет необходимые права доступа к плоскости данных Azure API для FHIR. Для назначения ролей в плоскости данных используйте [управление доступом на основе ролей Azure](configure-azure-rbac.md).
+> Убедитесь, что пользователь имеет необходимые права доступа к плоскости данных Azure API для FHIR. Для назначения ролей в плоскости данных используйте [управление доступом на основе ролей Azure (Azure RBAC)](configure-azure-rbac.md).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

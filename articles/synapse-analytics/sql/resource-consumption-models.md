@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: a358052d5f3959a236f29461890c989e77edb4dc
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 086c853b21301074cf35f13db52db1fdb145518c
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87369022"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87489577"
 ---
 # <a name="synapse-sql-resource-consumption"></a>Потребление ресурсов Synapse SQL
 
@@ -27,7 +27,7 @@ SQL по запросу — это служба с оплатой за запр
 
 Далее приведены рекомендации по выбору идеального количества единиц использования хранилища данных для оптимизации затрат и производительности, а также по изменению количества единиц.
 
-### <a name="what-are-data-warehouse-units"></a>Что такое единицы использования хранилища данных
+### <a name="data-warehouse-units"></a>Единицы использования хранилища данных
 
 Пул SQL Synapse представляет собой коллекцию аналитических ресурсов, которые подготавливаются. Аналитические ресурсы определяются как сочетание ЦП, памяти и операций ввода-вывода. Эти три ресурса объединены в единицы вычисления, которые называются единицами использования хранилища данных (DWU). Единица DWU представляет собой абстрактный, нормализованный объем вычислительных ресурсов и производительности. Изменяя уровень службы, вы можете изменить число DWU, доступных для системы, что в свою очередь влияет на производительность и стоимость использования системы.
 
@@ -79,7 +79,7 @@ CREATE DATABASE mySQLDW
 
 Для каждого сервера SQL (например, myserver.database.windows.net) предусмотрена квота [DTU (единицы передачи данных)](../../azure-sql/database/service-tiers-dtu.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), которая позволяет применить только определенное число единиц использования хранилища данных. Дополнительные сведения см. в статье об [ограничениях емкости для управления рабочей нагрузкой](../sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#workload-management).
 
-### <a name="how-many-data-warehouse-units-do-i-need"></a>Сколько единиц использования хранилища данных требуется
+### <a name="assess-the-number-of-data-warehouse-units-you-need"></a>Оценка необходимого числа хранилищ данных
 
 Оптимальное количество единиц использования хранилища данных существенно зависит от рабочей нагрузки и объема данных, загруженных в систему.
 

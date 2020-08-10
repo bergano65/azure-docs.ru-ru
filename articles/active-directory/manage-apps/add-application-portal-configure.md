@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 10/29/2019
 ms.author: kenwith
-ms.openlocfilehash: eb4a150a1680dd4101249458894ded652cde15a0
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: a1a99e9f02a25f5e1d57ea485930a4f26149b53f
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87338050"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87808411"
 ---
 # <a name="quickstart-configure-properties-for-an-application-in-your-azure-active-directory-azure-ad-tenant"></a>Краткое руководство. Настройка свойств приложения в арендаторе Azure Active Directory (Azure AD)
 
@@ -95,9 +95,17 @@ ms.locfileid: "87338050"
    > [!NOTE]
    > Эскиз, отображаемый в этой области **Свойства**, не обновляется сразу. Можно закрыть и снова открыть область **Свойства**, чтобы увидеть обновленный значок.
 
+
+> [!TIP]
+> Вы можете автоматизировать управление приложениями с помощью API Graph — см. [соответствующую статью](https://docs.microsoft.com/graph/application-saml-sso-configure-api).
+
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если вы не будете продолжать работу с серией кратких руководств, удалите приложение, чтобы очистить тестового арендатора. Сведения о том, как удалить приложение, см. в последнем кратком руководстве этой серии, [Удаление приложения](delete-application-portal.md).
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы настроили свойства приложения, можно перейти к настройке единого входа.
-
-- [Настройка единого входа](add-application-portal-setup-sso.md)
-- [Удаление приложения](delete-application-portal.md)
+Перейдите к следующей статье, чтобы узнать, как настроить единый вход для приложения.
+> [!div class="nextstepaction"]
+> [Настройка единого входа](add-application-portal-setup-sso.md)

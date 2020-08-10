@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c4a128d46ca1b3f84981f9732f86ff49f72cc18
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a4f30202b08328854296b45e0279fc51b25b0a7c
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87025835"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87428466"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
 
@@ -69,6 +69,9 @@ ms.locfileid: "87025835"
 - `https://login.microsoftonline.com`
 - `https://device.login.microsoftonline.com`
 - `https://autologon.microsoftazuread-sso.com` (если вы используете или планируете использовать простой единый вход).
+
+> [!WARNING]
+> Если ваша организация использует прокси-серверы, которые перехватывают трафик SSL для таких сценариев, как защита от потери данных или ограничения арендатора Azure AD, убедитесь, что трафик к https://device.login.microsoftonline.com исключается из процесса приостановки и изучения TLS-трафика. Если адрес https://device.login.microsoftonline.com не будет исключен, это может вызвать ошибки при аутентификации с помощью сертификата клиента, что приведет к проблемам с регистрацией устройств и условным доступом на основе устройств.
 
 Если вашей организации требуется доступ к Интернету через исходящий прокси-сервер, вы можете [реализовать автоматическое обнаружение веб-прокси (WPAD)](https://docs.microsoft.com/previous-versions/tn-archive/cc995261(v%3dtechnet.10)), чтобы обеспечить регистрацию устройств в Azure AD на компьютерах Windows 10. Если возникли проблемы при настройке и управлении WPAD, см. статью об устранении неполадок с автоматическим обнаружением [здесь](/previous-versions/tn-archive/cc302643(v=technet.10)). На устройствах с ОС Windows 10 версии ниже 1709 WPAD является единственным доступным вариантом, позволяющим настроить прокси-сервер для работы с гибридным присоединением к Azure AD. 
 
@@ -188,7 +191,7 @@ ms.locfileid: "87025835"
 1. Откройте Windows PowerShell от имени администратора.
 2. Введите `Connect-MsolService`, чтобы подключится к своему клиенту Azure.
 
-#### <a name="count-all-hybrid-azure-ad-joined-devices-excluding-pending-state"></a>Число всех устройств с гибридным присоединением к Azure AD, кроме тех, для которых отображается состояние **Ожидается**
+#### <a name="count-all-hybrid-azure-ad-joined-devices-excluding-pending-state"></a>Число всех устройств с гибридным присоединением к Azure AD, кроме тех, для кого отображается состояние **Ожидается**
 
 ```azurepowershell
 (Get-MsolDevice -All -IncludeSystemManagedDevices | where {($_.DeviceTrustType -eq 'Domain Joined') -and (([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}).count

@@ -10,16 +10,16 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: 40dd7f1b177fd1319b145036c8263ba2c6e30137
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: a17764984e33e4312b9d81a5743d851dc14b5c05
+ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86024678"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87492162"
 ---
-# <a name="tutorial-create-an-outbound-forest-trust-to-an-on-premises-domain-in-azure-active-directory-domain-services-preview"></a>Руководство по созданию исходящего доверия леса для локального домена в доменных службах Azure Active Directory (предварительная версия)
+# <a name="tutorial-create-an-outbound-forest-trust-to-an-on-premises-domain-in-azure-active-directory-domain-services"></a>Руководство по Создание исходящего доверия леса для локального домена в доменных службах Azure Active Directory
 
-В средах, где нельзя синхронизировать хэши паролей или где пользователи используют только смарт-карты для входа в систему, так как они не знают своего пароля, вы можете использовать лес ресурсов в доменных службах Azure Active Directory (Azure AD DS). Лес ресурсов использует одностороннее исходящее отношение доверия между Azure AD DS и одной или несколькими локальными средами AD DS. Это отношение доверия позволяет пользователям, приложениям и компьютерам проходить проверку подлинности в локальном домене из управляемого домена Azure AD DS. Леса ресурсов Azure AD DS в настоящее время доступны в предварительной версии.
+В средах, где нельзя синхронизировать хэши паролей или где пользователи используют только смарт-карты для входа в систему, так как они не знают своего пароля, вы можете использовать лес ресурсов в доменных службах Azure Active Directory (Azure AD DS). Лес ресурсов использует одностороннее исходящее отношение доверия между Azure AD DS и одной или несколькими локальными средами AD DS. Это отношение доверия позволяет пользователям, приложениям и компьютерам проходить проверку подлинности в локальном домене из управляемого домена Azure AD DS. В лесе ресурсов локальные хэши паролей не синхронизируются.
 
 ![Схема доверия леса между Azure AD DS и локальными AD DS](./media/concepts-resource-forest/resource-forest-trust-relationship.png)
 

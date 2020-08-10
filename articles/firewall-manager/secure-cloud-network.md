@@ -5,14 +5,14 @@ services: firewall-manager
 author: vhorne
 ms.service: firewall-manager
 ms.topic: tutorial
-ms.date: 07/17/2020
+ms.date: 07/29/2020
 ms.author: victorh
-ms.openlocfilehash: 7634effd5d1ac46955addd723ee7c992eb820a57
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 458ebe14e77c7b190a5c4cdd9b408396589d5d27
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084710"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87420827"
 ---
 # <a name="tutorial-secure-your-virtual-hub-using-azure-firewall-manager"></a>Руководство по Защита виртуального концентратора с помощью Диспетчера брандмауэра Azure
 
@@ -108,7 +108,7 @@ ms.locfileid: "87084710"
 
 ### <a name="configure-the-hub-and-spoke-routing"></a>Настройка маршрутизации звездообразной модели
 
-На портале Azure откройте Cloud Shell и выполните следующие команды Azure PowerShell, чтобы настроить требуемую маршрутизацию звездообразной модели.
+На портале Azure откройте Cloud Shell и выполните следующие команды Azure PowerShell, чтобы настроить требуемую маршрутизацию звездообразной модели. Для пиринговых подключений в звездообразной модели/филиалах необходимо настроить распространение как **НЕТ**. Это предотвращает обмен данными типа "любой к любому" между периферийными зонами и перенаправляет трафик к брандмауэру с использованием маршрута по умолчанию.
 
 ```azurepowershell
 $noneRouteTable = Get-AzVHubRouteTable -ResourceGroupName fw-manager `

@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: overview
 ms.date: 07/27/2020
-ms.openlocfilehash: 113249f56c1f5f9c035ec2ff6ccb7309dd355763
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 9642f6d1090ef358cf86241640255c647dea52eb
+ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281350"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87432670"
 ---
 # <a name="changelog"></a>Журнал изменений #
 
@@ -57,13 +57,13 @@ ms.locfileid: "87281350"
 
 ### <a name="changes-234"></a>Изменения в версии 2.3.4
 
-- Удалена пустая метка субтитров и дорожка при воспроизведении HLS в iOS и MacOS Safari
+- Удалена пустая метка субтитров и дорожка при воспроизведении HLS в iOS и macOS Safari
 - Сокращено количество проблем 412 для субтитров IMSC1
 - После 10 последовательных пустых ответов для субтитров IMSC1 в консоли выводится предупреждение, помогающее выполнять динамическую отладку
 
 ## <a name="232-official-update-october-9-2019"></a>2.3.2 (официальное обновление от 9 октября 2019 г.)
 
-### <a name="features"></a>Компоненты
+### <a name="features-232"></a>Функции версии 2.3.2
 
 — Добавлена поддержка PlayReady для воспроизведения DASH в браузере Chromium Edge
 

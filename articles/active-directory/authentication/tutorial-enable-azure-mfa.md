@@ -10,12 +10,12 @@ ms.author: iainfou
 author: iainfoulds
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1df88e26284dc868267cbc79e27df6f0e25f1250
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5aa84faea43846a2f930373529769e62f76e5bbf
+ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87035066"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87419552"
 ---
 # <a name="tutorial-secure-user-sign-in-events-with-azure-multi-factor-authentication"></a>Руководство по Защита событий входа с помощью Многофакторной идентификации Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "87035066"
 
 Для работы с этим учебником требуются следующие ресурсы и разрешения:
 
-* Рабочий арендатор Azure AD с включенной лицензией Azure AD Premium или пробной лицензией.
+* Рабочий клиент Azure AD, для которого включена по меньшей мере лицензия Azure AD Premium P1 или пробная лицензия.
     * [Создайте ее бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), если нужно.
 * Учетная запись с привилегиями *глобального администратора*.
 * Тестовый пользователь без прав администратора, пароль которого вам известен, например *testuser*. В этом руководстве вы протестируете работу пользователей с Многофакторной идентификацией Azure, используя эту учетную запись.
@@ -65,7 +65,7 @@ ms.locfileid: "87035066"
 1. Установите флажок **Пользователи и группы**, а затем щелкните **Выбрать**, чтобы просмотреть доступных пользователей и группы Azure AD.
 1. Найдите и выберите соответствующую группу AAD, например *MFA-Test-Group*, а затем щелкните **Выбрать**.
 
-    [![](media/tutorial-enable-azure-mfa/select-group-for-conditional-access-cropped.png "Select your Azure AD group to use with the Conditional Access policy")](media/tutorial-enable-azure-mfa/select-group-for-conditional-access.png#lightbox)
+    [ ![Выбор группы Azure AD для применения политики условного доступа](media/tutorial-enable-azure-mfa/select-group-for-conditional-access-cropped.png) ](media/tutorial-enable-azure-mfa/select-group-for-conditional-access.png#lightbox)
 
 1. Чтобы применить политику условного доступа к этой группе, выберите **Готово**.
 

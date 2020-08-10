@@ -11,18 +11,19 @@ ms.date: 06/22/2020
 ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 02/14/2019
-ms.openlocfilehash: de135b57755919a1d312783409caf3e800e03fd5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: c8e2372e22c9db3aa5ea8b0bd953f18a2c01fbe2
+ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077998"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87761031"
 ---
 # <a name="quickstart-set-up-push-notifications-in-a-notification-hub"></a>Краткое руководство. Настройка push-уведомлений в центре уведомлений
 
 Центры уведомлений Azure предоставляют удобный в использовании масштабируемый механизм отправки push-уведомлений. С помощью Центров уведомлений можно отправлять уведомления на любую платформу (iOS, Android, Windows, Baidu) и из любой серверной части (облачной или локальной). Дополнительные сведения см. в статье [Что такое Центры уведомлений Azure?](notification-hubs-push-notification-overview.md).
 
-В этом кратком руководстве вы используете параметры системы отправки уведомлений платформы (PNS) в Центрах уведомлений для настройки push-уведомлений для нескольких платформ. Здесь описаны действия, которые необходимо выполнить на портале Azure.  Раздел [Google Firebase Cloud Messaging](?tabs=azure-cli#google-firebase-cloud-messaging-fcm) содержит инструкции по использованию Azure CLI.
+В этом кратком руководстве вы используете параметры системы отправки уведомлений платформы (PNS) в Центрах уведомлений для настройки push-уведомлений для нескольких платформ. Здесь описаны действия, которые необходимо выполнить на портале Azure. Раздел [Google Firebase Cloud Messaging](?tabs=azure-cli#google-firebase-cloud-messaging-fcm) содержит инструкции по использованию Azure CLI.
 
 Если вы еще не создали центр уведомлений, сделайте это сейчас. Дополнительные сведения см. в кратких руководствах по созданию центра уведомлений Azure с помощью [портала Azure](create-notification-hub-portal.md) и [Azure CLI](create-notification-hub-azure-cli.md).
 
@@ -108,9 +109,7 @@ ms.locfileid: "87077998"
 
 Получите ссылки на Azure CLI для других платформ с помощью команды [az notification-hub credential](/cli/azure/ext/notification-hub/notification-hub/credential).
 
----
-
-Дополнительные сведения об отправке push-уведомлений в приложение Android с помощью Firebase см. в [этом руководстве](notification-hubs-android-push-notification-google-fcm-get-started.md).
+Дополнительные сведения об отправке уведомлений в приложение Android с помощью Firebase см. в [этом руководстве](notification-hubs-android-push-notification-google-fcm-get-started.md).
 
 ## <a name="windows-push-notification-service"></a>Служба push-уведомлений Windows
 
