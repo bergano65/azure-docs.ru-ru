@@ -5,12 +5,12 @@ author: spelluru
 ms.topic: article
 ms.date: 06/23/2020
 ms.author: spelluru
-ms.openlocfilehash: beafd0d49e8fccaef4ccc043d198875b9f1b1ebd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 750ee2f05e81fe18560a20227aefb52ca343e07b
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85341024"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88067534"
 ---
 # <a name="service-bus-messaging-samples"></a>Примеры обмена сообщениями с помощью служебной шины
 В этих примерах демонстрируются ключевые возможности [обмена сообщениями служебной шины](https://azure.microsoft.com/services/service-bus/). В настоящее время примеры можно найти в следующих местах:
@@ -25,10 +25,9 @@ ms.locfileid: "85341024"
 
 Кроме того, можно использовать пример [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer), размещенный на сайте GitHub, который позволяет подключиться к пространству имен служебной шины и легко управлять сущностями обмена сообщениями. Это средство предоставляет такие дополнительные возможности, как импорт и экспорт, а также тестирование сущностей обмена сообщениями и служб ретрансляции. Полный исходный код и документацию для Service Bus Explorer можно найти на сайте [GitHub](https://github.com/paolosalvatori/ServiceBusExplorer).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Принципиальные сведения о служебной шине см. в следующих статьях:
 
 * [Основные сведения об обмене сообщениями через служебную шину](service-bus-messaging-overview.md)
-* [Архитектура служебной шины](service-bus-architecture.md)
-
+* [Архитектура служебной шины](./service-bus-messaging-overview.md)

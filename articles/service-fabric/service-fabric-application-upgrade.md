@@ -2,16 +2,31 @@
 title: Обновление приложения Service Fabric
 description: Эта статья содержит вводные сведения об обновлении приложения Service Fabric, включая выбор режимов обновления и выполнение проверок работоспособности.
 ms.topic: conceptual
-ms.date: 2/23/2018
-ms.openlocfilehash: 9e7a93dd3ef8a1adf6617dcd57887a0ce694c509
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.date: 8/5/2020
+ms.openlocfilehash: cb0c1c0049957244b94b59707b70e47dc53f6c9f
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86248005"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88067517"
 ---
 # <a name="service-fabric-application-upgrade"></a>Обновление приложения Service Fabric
 Приложение Azure Service Fabric представляет собой коллекцию служб. Во время обновления структура служб сравнивает новый [манифест приложения](service-fabric-application-and-service-manifests.md) с предыдущей версией и определяет, каким службам в приложении требуется обновление. Service Fabric сравнивает номера версий в манифестах служб с номерами версий для предыдущей версии. Если служба не была изменена, эта служба не обновляется.
+
+> [!NOTE]
+> [Аппликатионпараметер](https://docs.microsoft.com/dotnet/api/system.fabric.description.applicationdescription.applicationparameters?view=azure-dotnet#System_Fabric_Description_ApplicationDescription_ApplicationParameters)s не сохраняются в процессе обновления приложения. Чтобы сохранить текущие параметры приложения, пользователь должен сначала получить параметры и передать их в вызов API обновления, как показано ниже:
+```powershell
+$myApplication = Get-ServiceFabricApplication -ApplicationName fabric:/myApplication
+$appParamCollection = $myApplication.ApplicationParameters
+
+$applicationParameterMap = @{}
+foreach ($pair in $appParamCollection)
+{
+    $applicationParameterMap.Add($pair.Name, $pair.Value);
+}
+
+Start-ServiceFabricApplicationUpgrade -ApplicationName fabric:/myApplication -ApplicationTypeVersion 2.0.0 -ApplicationParameter $applicationParameterMap -Monitored -FailureAction Rollback
+```
 
 ## <a name="rolling-upgrades-overview"></a>Обзор последовательных обновлений
 При последовательном обновлении приложения обновление выполняется поэтапно. На каждом этапе обновление применяется к определенному подмножеству узлов в кластере, который называется доменом обновления. В результате этого приложение остается доступным в течение всего времени обновления. Во время обновления в кластере может содержаться сочетание старых и новых версий приложения.
