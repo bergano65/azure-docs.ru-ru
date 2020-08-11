@@ -11,12 +11,12 @@ ms.author: nigup
 author: nishankgu
 ms.date: 07/24/2020
 ms.custom: how-to, seodec18
-ms.openlocfilehash: 5b454c324d475eb4f692e1715cb2ea45105f78e1
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: afffdd0267cde8ffc841587748e51dd27e021369
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056930"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88079592"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинное обучение Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -142,7 +142,7 @@ az ml workspace share -w my_workspace -g my_resource_group --role "Data Scientis
 | Отправка любого типа запуска | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`"/workspaces/*/read", "/workspaces/environments/write", "/workspaces/experiments/runs/write", "/workspaces/metadata/artifacts/write", "/workspaces/metadata/snapshots/write", "/workspaces/environments/build/action", "/workspaces/experiments/runs/submit/action", "/workspaces/environments/readSecrets/action"` |
 | Публикация конечной точки конвейера | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`"/workspaces/pipelines/write", "/workspaces/endpoints/pipelines/*", "/workspaces/pipelinedrafts/*", "/workspaces/modules/*"` |
 | Развертывание зарегистрированной модели в ресурсе AKS/ACI | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`"/workspaces/services/aks/write", "/workspaces/services/aci/write"` |
-| Оценка по развернутой конечной точке AKS | Не требуется | Не требуется | Владелец, участник или настраиваемая роль, позволяющая: `"/workspaces/services/aks/score/action", "/workspaces/services/aks/listkeys/action"` (если не используется проверка подлинности AAD) или `"/workspaces/read"` (при использовании токена проверки подлинности) |
+| Оценка по развернутой конечной точке AKS | Не требуется | Не требуется | Владелец, участник или настраиваемая роль: `"/workspaces/services/aks/score/action", "/workspaces/services/aks/listkeys/action"` (если не используется Azure Active Directory auth) или `"/workspaces/read"` (при использовании токена проверки подлинности) |
 | Доступ к хранилищу с помощью интерактивных записных книжек | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`"/workspaces/computes/read", "/workspaces/notebooks/samples/read", "/workspaces/notebooks/storage/*"` |
 | Создать новую настраиваемую роль | Владелец, участник или пользовательская роль, допускающая`Microsoft.Authorization/roleDefinitions/write` | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`/workspaces/computes/write` |
 
@@ -374,10 +374,14 @@ az provider operation show –n Microsoft.MachineLearningServices
 Ниже приведены некоторые моменты, которые следует учитывать при использовании управления доступом на основе ролей Azure (Azure RBAC).
 
 - При создании ресурса в Azure, скажем, рабочей области, вы не являетесь владельцем рабочей области напрямую. Роль наследуется от самой высокой роли области, которой вы имеете право в этой подписке. Например, если вы являетесь администратором сети и обладаете разрешениями на создание Машинное обучение рабочей области, вам будет назначена роль администратора сети для этой рабочей области, а не роль владельца.
-- При наличии двух назначений ролей для одного и того же пользователя AAD с конфликтующими разделами действий и отсутствия операции, перечисленные в неизменности одной роли, могут не действовать, если они также перечислены как действия в другой роли. Дополнительные сведения о том, как Azure анализирует назначения ролей, см. в статье [Определение того, как Azure RBAC определяет, имеет ли пользователь доступ к ресурсу](/azure/role-based-access-control/overview#how-azure-rbac-determines-if-a-user-has-access-to-a-resource) .
-- Чтобы развернуть ресурсы для вычислений в виртуальной сети, необходимо явным образом иметь разрешения для "Microsoft. Network/virtualNetworks/соединение/действие" в этом ресурсе виртуальной сети.
-- Для того чтобы новые назначения ролей вступили в силу по кэшированным разрешениям в стеке, иногда может потребоваться 1 час.
+- При наличии двух назначений ролей для одного и того же Azure Active Directory пользователя с конфликтующими разделами действий и отсутствия операции, перечисленные в неизменности одной роли, могут не действовать, если они также перечислены как действия в другой роли. Дополнительные сведения о том, как Azure анализирует назначения ролей, см. в статье [Определение того, как Azure RBAC определяет, имеет ли пользователь доступ к ресурсу](/azure/role-based-access-control/overview#how-azure-rbac-determines-if-a-user-has-access-to-a-resource) .
+- Чтобы развернуть ресурсы для вычислений в виртуальной сети, необходимо явно иметь разрешения для следующих действий.
+    - "Microsoft. Network/virtualNetworks/соединение/действие" для ресурса виртуальной сети.
+    - "Microsoft. Network/virtualNetworks/подсеть/соединение/действие" в ресурсе подсети.
+    
+    Дополнительные сведения о сетях RBAC с сетью см. в разделе [встроенные сетевые роли](/azure/role-based-access-control/built-in-roles#networking).
 
+- Для того чтобы новые назначения ролей вступили в силу по кэшированным разрешениям в стеке, иногда может потребоваться 1 час.
 
 ### <a name="q-what-permissions-do-i-need-to-use-a-user-assigned-managed-identity-with-my-amlcompute-clusters"></a>У. Какие разрешения требуются для использования назначенного пользователем управляемого удостоверения с моими кластерами Амлкомпуте?
 

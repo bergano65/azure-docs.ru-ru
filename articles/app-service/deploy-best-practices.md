@@ -7,12 +7,12 @@ ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: jafreebe
-ms.openlocfilehash: 4dd959d75fd582d787e68db4a415a4a694b9cda8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: addc4edba734c350a1e0e4246203c64315f345dd
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81770689"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88081057"
 ---
 # <a name="deployment-best-practices"></a>Рекомендации по развертыванию
 
@@ -69,7 +69,7 @@ ms.locfileid: "81770689"
 
 ### <a name="use-github-actions"></a>Использование действий GitHub
 
-Вы также можете автоматизировать развертывание контейнера [с помощью действий GitHub](containers/deploy-container-github-action.md).  Файл рабочего процесса, приведенный ниже, построит контейнер с ИДЕНТИФИКАТОРом фиксации, отправит его в реестр контейнеров и обновит указанный слот сайта, указав новый тег Image.
+Вы также можете автоматизировать развертывание контейнера [с помощью действий GitHub](deploy-container-github-action.md).  Файл рабочего процесса, приведенный ниже, построит контейнер с ИДЕНТИФИКАТОРом фиксации, отправит его в реестр контейнеров и обновит указанный слот сайта, указав новый тег Image.
 
 ```yaml
 name: Build and deploy a container image to Azure Web Apps

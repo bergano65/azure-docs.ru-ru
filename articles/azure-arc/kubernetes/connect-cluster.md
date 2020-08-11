@@ -9,12 +9,12 @@ ms.author: mlearned
 description: Подключение к Azure Arc кластера Kubernetes, который поддерживает Azure Arc
 keywords: Kubernetes, Arc, Azure, K8s, контейнеры
 ms.custom: references_regions
-ms.openlocfilehash: 2c5e697f3dd67087582118fb6a6e083feecf549f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 761263a4cb8c83475142c2afcc39695bb84d46cd
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87050086"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080496"
 ---
 # <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Подключение кластера Kubernetes с поддержкой Azure Arc (предварительная версия)
 
@@ -172,6 +172,41 @@ AzureArcTest1  eastus      AzureArcTest
 > [!NOTE]
 > После подключения кластера потребуется от 5 до 10 минут для метаданных кластера (версия кластера, версия агента, число узлов) на странице Обзор ресурса Kubernetes в службе "Дуга Azure", включенной в портал Azure.
 
+## <a name="connect-using-an-outbound-proxy-server"></a>Подключение с использованием исходящего прокси-сервера
+
+Если кластер находится за исходящим прокси-сервером, Azure CLI и для агентов Kubernetes должны маршрутизировать запросы через исходящий прокси-сервер. Следующая конфигурация помогает добиться этого:
+
+1. Проверьте версию расширения, `connectedk8s` установленную на компьютере, выполнив следующую команду:
+
+    ```bash
+    az -v
+    ```
+
+    `connectedk8s`Для установки агентов с исходящим прокси-сервером требуется версия расширения >= 0.2.3. Если на компьютере установлена версия < 0.2.3, выполните [инструкции по обновлению](#before-you-begin) , чтобы получить последнюю версию расширения на компьютере.
+
+2. Задайте переменные среды, необходимые для Azure CLI:
+
+    ```bash
+    export HTTP_PROXY=<proxy-server-ip-address>:<port>
+    export HTTPS_PROXY=<proxy-server-ip-address>:<port>
+    export NO_PROXY=<cluster-apiserver-ip-address>:<port>
+    ```
+
+3. Выполните команду Connect с указанными параметрами прокси-сервера:
+
+    ```bash
+    az connectedk8s connect -n <cluster-name> -g <resource-group> \
+    --proxy-https https://<proxy-server-ip-address>:<port> \
+    --proxy-http http://<proxy-server-ip-address>:<port> \
+    --proxy-skip-range <excludedIP>,<excludedCIDR>
+    ```
+
+> [!NOTE]
+> 1. Чтобы гарантировать, что взаимодействие в кластере не будет разорвано для агентов, необходимо указать ЕксклудедЦидр ниже--proxy-Skip-Range.
+> 2. Приведенная выше спецификация прокси-сервера применяется только для агентов Arc, а не для модулей Flux Pod, используемых в Саурцеконтролконфигуратион. Группа Kubernetes с поддержкой дуги активно работает над этой функцией, и вскоре она будет доступна.
+
+## <a name="azure-arc-agents-for-kubernetes"></a>Агенты Azure Arc для Kubernetes
+
 Kubernetes с поддержкой Azure Arc развертывает в пространстве имен `azure-arc` ряд операторов. Эти развертывания и объекты pod можно просмотреть здесь:
 
 ```console
@@ -199,8 +234,6 @@ pod/flux-logs-agent-7c489f57f4-mwqqv            2/2     Running  0       16h
 pod/metrics-agent-58b765c8db-n5l7k              2/2     Running  0       16h
 pod/resource-sync-agent-5cf85976c7-522p5        3/3     Running  0       16h
 ```
-
-## <a name="azure-arc-agents-for-kubernetes"></a>Агенты Azure Arc для Kubernetes
 
 Kubernetes с поддержкой Azure Arc состоит из нескольких агентов (операторов), которые выполняются в кластере, развернутом в пространстве имен `azure-arc`.
 

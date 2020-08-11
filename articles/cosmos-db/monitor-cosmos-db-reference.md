@@ -2,19 +2,18 @@
 title: Справочник по данным мониторинга Azure Cosmos DB | Документация Майкрософт
 description: Справочник по журналам и метрикам для мониторинга данных из Azure Cosmos DB.
 author: bwren
-services: azure-monitor
-ms.service: azure-monitor
+services: cosmos-db
+ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 07/17/2020
 ms.author: bwren
 ms.custom: subject-monitoring
-ms.subservice: logs
-ms.openlocfilehash: 89dc81cdd06bedb6237cf48312ee7ed0510d93ce
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 21e1d93e206751b5a55b0b3549e8bd566612ddbe
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084744"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080459"
 ---
 # <a name="azure-cosmos-db-monitoring-data-reference"></a>Справочник по данным мониторинга Azure Cosmos DB
 
@@ -35,7 +34,7 @@ ms.locfileid: "87084744"
 | **Агента** | **userAgent_s** | Строка, указывающая агент пользователя клиента, из которого был отправлен запрос. Формат агента пользователя — `{user agent name}/{version}` .|
 | **рекуестресаурцетипе** | **requestResourceType_s** | Тип доступного ресурса. Это значение может быть базой данных, контейнером, документом, вложением, пользователем, разрешениями, хранимой процедурой, триггером, определяемой пользователем функцией или предложением. |
 | **statusCode** | **statusCode_s** | Состояние ответа операции. |
-| **requestResourceId** | **Идентификатора** | Идентификатор ресурса, который относится к запросу. В зависимости от выполняемой операции это значение может указывать на `databaseRid` , `collectionRid` или `documentRid` .|
+| **requestResourceId** | **ResourceId** | Идентификатор ресурса, который относится к запросу. В зависимости от выполняемой операции это значение может указывать на `databaseRid` , `collectionRid` или `documentRid` .|
 | **clientIpAddress** | **clientIpAddress_s** | IP-адрес клиента. |
 | **requestCharge** | **requestCharge_s** | Количество единиц запросов в секунду, используемых операцией |
 | **collectionRid** | **collectionId_s** | Уникальный идентификатор коллекции.|
@@ -102,7 +101,7 @@ ms.locfileid: "87084744"
 | Кассандрарекуестчаржес (плата за запрос Cassandra) | Количество (SUM, min, Max, AVG) | Единицы запросов, потребляемые API Cassandra | DatabaseName, CollectionName, Region, OperationType, ResourceType| Все| Позволяет отслеживать единицы запросов, используемые в минуту учетной записью API Cassandra.|
 | Кассандраконнектионклосурес (замыкания на Cassandra подключения) |Количество (число) |Число закрытых подключений Cassandra| ClosureReason, Region| Все | Позволяет отслеживать возможность подключения между клиентами и API Cassandra для Azure Cosmos DB.|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 - Описание Azure Cosmos DB мониторинга см. в разделе [monitoring Azure Cosmos DB](monitor-cosmos-db.md) .
 - Подробные сведения о мониторинге ресурсов Azure см. в статье [Мониторинг ресурсов Azure с помощью Azure Monitor](../azure-monitor/insights/monitor-azure-resource.md).

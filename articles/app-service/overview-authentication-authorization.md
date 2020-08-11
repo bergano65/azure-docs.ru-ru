@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 07/08/2020
 ms.reviewer: mahender
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: c8e0b476c50378bde00e01a39985fbcc188f04ed
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: 8362cc3b8f8477f77d8ec672144e7c68d2e3434d
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87562384"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080734"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service-and-azure-functions"></a>Проверка подлинности и авторизация в службе приложений Azure и функциях Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "87562384"
 
 ### <a name="userapplication-claims"></a>Утверждения для пользователей и приложений
 
-Для всех языковых платформ служба приложений делает утверждения в входящем токене (от пользователя, прошедшего проверку подлинности или клиентское приложение) доступным для кода путем их вставки в заголовки запроса. Для приложений ASP.NET 4.6 служба приложений заполняет свойство [ClaimsPrincipal.Current](/dotnet/api/system.security.claims.claimsprincipal.current) утверждениями пользователя, прошедшими проверку подлинности, поэтому вы можете следовать стандартным шаблонам кода .NET, включая атрибут `[Authorize]`. Аналогичным образом для приложений PHP служба приложений заполняет переменную `_SERVER['REMOTE_USER']`. Для приложений Java утверждения доступны в [Tomcat сервлета](containers/configure-language-java.md#authenticate-users-easy-auth).
+Для всех языковых платформ служба приложений делает утверждения в входящем токене (от пользователя, прошедшего проверку подлинности или клиентское приложение) доступным для кода путем их вставки в заголовки запроса. Для приложений ASP.NET 4.6 служба приложений заполняет свойство [ClaimsPrincipal.Current](/dotnet/api/system.security.claims.claimsprincipal.current) утверждениями пользователя, прошедшими проверку подлинности, поэтому вы можете следовать стандартным шаблонам кода .NET, включая атрибут `[Authorize]`. Аналогичным образом для приложений PHP служба приложений заполняет переменную `_SERVER['REMOTE_USER']`. Для приложений Java утверждения доступны в [Tomcat сервлета](configure-language-java.md#authenticate-users-easy-auth).
 
 Для [функций Azure](../azure-functions/functions-overview.md) `ClaimsPrincipal.Current` не заполняется для кода .NET, но вы по-прежнему можете найти утверждения пользователя в заголовках запроса или получить `ClaimsPrincipal` объект из контекста запроса или даже через параметр привязки. Дополнительные сведения см. [в разделе Работа с удостоверениями клиентов](../azure-functions/functions-bindings-http-webhook-trigger.md#working-with-client-identities) .
 
@@ -149,7 +149,7 @@ ms.locfileid: "87562384"
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
-[Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Windows)](app-service-web-tutorial-auth-aad.md)  
+[Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Windows)](tutorial-auth-aad.md)  
 [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Linux)](containers/tutorial-auth-aad.md)  
 [Настройка проверки подлинности и авторизации в службе приложений](app-service-authentication-how-to.md) 
  [Интеграция .NET Core с Azure AppService еасяус (третья сторона)](https://github.com/MaximRouiller/MaximeRouiller.Azure.AppService.EasyAuth) 

@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 08/20/2019
-ms.openlocfilehash: 0e6229e38674651f3db068d30f68ef4c7e293c0a
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 7f5ce25edfc4c3afd8a30528396f1f285b9af571
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386849"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080700"
 ---
 # <a name="what-is-sql-data-sync-for-azure"></a>Что такое синхронизация данных SQL для Azure?
 
@@ -131,6 +131,7 @@ ms.locfileid: "87386849"
 ### <a name="general-limitations"></a>Общие ограничения
 
 - Таблица не может иметь столбец идентификаторов, который не является первичным ключом.
+- Для использования синхронизации данных таблица должна иметь кластеризованный индекс.
 - Первичный ключ не может иметь следующие типы данных: sql_variant, binary, varbinary, Image, XML.
 - При использовании типов данных time, datetime, datetime2, datetimeoffset для первичного ключа нужно учитывать, что поддерживается точность только до секунды.
 - Имена объектов (баз данных, таблиц и столбцов) не могут содержать печатные символы (.), левые квадратные скобки ([) или правая квадратная скобка (]).

@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 05/26/2020
 ms.author: dapine
-ms.openlocfilehash: 6f5df14d9488f8ccb1f93c2a16ba52998f25e268
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: db1b88b9c22012cb4e6b5025dda31432c9278ff8
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876586"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080904"
 ---
 # <a name="configure-azure-cognitive-services-virtual-networks"></a>Настройка виртуальных сетей Azure Cognitive Services
 
@@ -40,10 +40,9 @@ Azure Cognitive Services предоставляет многоуровневую
 
 ## <a name="supported-regions-and-service-offerings"></a>Поддерживаемые регионы и предложения услуг
 
-Cognitive Services, перечисленные ниже, поддерживают виртуальные сети в коммерческом облаке и US Gov облаке. Если служба отсутствует в списке, она еще не поддерживает виртуальные сети.
+Виртуальные сети (виртуальных сетей) поддерживаются в [регионах, где доступны Cognitive Services](https://azure.microsoft.com/global-infrastructure/services/). Если служба не указана в списке, она сейчас не поддерживает виртуальные сети.
 
 > [!div class="checklist"]
-
 > * [Детектор аномалий](./anomaly-detector/index.yml)
 > * [Компьютерное зрение](./computer-vision/index.yml)
 > * [Content Moderator](./content-moderator/index.yml)
@@ -59,8 +58,8 @@ Cognitive Services, перечисленные ниже, поддерживаю�
 ## <a name="service-tags"></a>Теги служб
 
 Cognitive Services поддерживает теги службы для конфигурации сетевых правил. Перечисленные ниже службы включены в тег службы **когнитивесервицесманажемент** .
-> [!div class="checklist"]
 
+> [!div class="checklist"]
 > * [Детектор аномалий](./anomaly-detector/index.yml)
 > * [Компьютерное зрение](./computer-vision/index.yml)
 > * [Content Moderator](./content-moderator/index.yml)
@@ -136,7 +135,7 @@ Cognitive Services поддерживает теги службы для кон�
     Update-AzCognitiveServicesAccountNetworkRuleSet @parameters
     ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli), или выберите **попробовать**.
 
@@ -282,7 +281,7 @@ Cognitive Services ресурс и виртуальные сети, которы
     Remove-AzCognitiveServicesAccountNetworkRule @parameters
     ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli), или выберите **попробовать**.
 
@@ -439,7 +438,7 @@ Cognitive Services ресурс и виртуальные сети, которы
     Remove-AzCognitiveServicesAccountNetworkRule @parameters
     ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli), или выберите **попробовать**.
 
@@ -549,7 +548,7 @@ Cognitive Services владельцы ресурсов могут управля
 
 Дополнительные сведения о ценах см. на [странице цен на службу "Приватный канал" Azure](https://azure.microsoft.com/pricing/details/private-link).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Изучите различные [Cognitive Services Azure](welcome.md)
 * Дополнительные сведения о [конечных точках службы виртуальной сети Azure](../virtual-network/virtual-network-service-endpoints-overview.md)

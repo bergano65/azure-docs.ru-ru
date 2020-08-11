@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы о служебной ши
 description: В этой статье содержатся ответы на некоторые часто задаваемые вопросы о служебной шине Azure.
 ms.topic: article
 ms.date: 07/15/2020
-ms.openlocfilehash: 04ff12d28be1dd232c5666b17d8a121f8020ca89
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: e098b05dba25a51d5d6ef7c50a1b73730828357a
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87371249"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080819"
 ---
 # <a name="azure-service-bus---frequently-asked-questions-faq"></a>Служебная шина Azure — часто задаваемые вопросы
 
@@ -57,7 +57,7 @@ ms.locfileid: "87371249"
 1. В командной строке выполните следующую команду: 
 
     ```
-    nslookup <YourNamespaceName>.cloudapp.net
+    nslookup <YourNamespaceName>.servicebus.windows.net
     ```
 2. Запишите IP-адрес, возвращенный в `Non-authoritative answer`. Этот IP-адрес является статическим. Единственный случай, который может измениться, — восстановление пространства имен в другой кластер.
 
@@ -66,7 +66,7 @@ ms.locfileid: "87371249"
 1. Сначала следует запустить nslookup в пространстве имен.
 
     ```
-    nslookup <yournamespace>.cloudapp.net
+    nslookup <yournamespace>.servicebus.windows.net
     ```
 2. Запишите имя в разделе **не заслуживающий доверия ответ**, который имеет один из следующих форматов: 
 
@@ -90,7 +90,7 @@ ms.locfileid: "87371249"
 Приведенные ниже свойства очереди и раздела являются неизменяемыми. Учитывайте это ограничение при подготовке сущностей, так как эти свойства нельзя изменить, не создавая новую заменяющую сущность.
 
 * Секционирование
-* сеансы;
+* Сеансы
 * Обнаружение дубликатов
 * экспресс-сущность.
 

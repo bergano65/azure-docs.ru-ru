@@ -1,24 +1,27 @@
 ---
-title: Настройка приложений ASP.NET Core Windows
-description: Узнайте, как настроить ASP.NET Core приложение в собственных экземплярах Windows службы приложений. В этой статье показаны наиболее распространенные задачи настройки.
+title: Настройка ASP.NET Core приложений
+description: Узнайте, как настроить ASP.NET Core приложение в собственных экземплярах Windows или в предварительно созданном контейнере Linux в службе приложений Azure. В этой статье показаны наиболее распространенные задачи настройки.
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 06/02/2020
-ms.openlocfilehash: 5819fc5b2d6e64d1812dacd88a2a4f840f6e03c5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+zone_pivot_groups: app-service-platform-windows-linux
+ms.openlocfilehash: 77bff369e2af09921a2065a031166c017128f008
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84907997"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080170"
 ---
-# <a name="configure-a-windows-aspnet-core-app-for-azure-app-service"></a>Настройка приложения ASP.NET Core Windows для службы приложений Azure
+# <a name="configure-an-aspnet-core-app-for-azure-app-service"></a>Настройка приложения ASP.NET Core для службы приложений Azure
 
 > [!NOTE]
 > Сведения о ASP.NET в .NET Framework см. в статье [Настройка приложения ASP.NET для службы приложений Azure](configure-language-dotnet-framework.md) .
 
-ASP.NET Core приложения должны быть развернуты в службе приложений Azure как скомпилированные двоичные файлы. Средство публикации Visual Studio создает решение, а затем развертывает скомпилированные двоичные файлы напрямую, в то время как модуль развертывания службы приложений сначала развертывает репозиторий кода, а затем компилирует двоичные файлы. Сведения о приложениях Linux см. [в статье Настройка приложения ASP.NET Core Linux для службы приложений Azure](containers/configure-language-dotnetcore.md).
+ASP.NET Core приложения должны быть развернуты в службе приложений Azure как скомпилированные двоичные файлы. Средство публикации Visual Studio создает решение, а затем развертывает скомпилированные двоичные файлы напрямую, в то время как модуль развертывания службы приложений сначала развертывает репозиторий кода, а затем компилирует двоичные файлы.
 
-Это краткое описание содержит основные понятия и инструкции для ASP.NET Core разработчиков. Если вы никогда не использовали службу приложений Azure, сначала следуйте инструкциям в [кратком](app-service-web-get-started-dotnet.md) руководстве по ASP.NET и [ASP.NET Core с базой данных SQL](app-service-web-tutorial-dotnetcore-sqldb.md) .
+Это краткое описание содержит основные понятия и инструкции для ASP.NET Core разработчиков. Если вы никогда не использовали службу приложений Azure, сначала следуйте инструкциям в руководстве по [ASP.NET Core](quickstart-dotnetcore.md) и [ASP.NET Core с базой данных SQL](tutorial-dotnetcore-sqldb-app.md) .
+
+::: zone pivot="platform-windows"  
 
 ## <a name="show-supported-net-core-runtime-versions"></a>Отображение поддерживаемых версий среды выполнения .NET Core
 
@@ -28,9 +31,69 @@ ASP.NET Core приложения должны быть развернуты в 
 dotnet --info
 ```
 
+::: zone-end
+
+::: zone pivot="platform-linux"
+
+## <a name="show-net-core-version"></a>Показывать версию .NET Core
+
+Чтобы отобразить текущую версию .NET Core, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
+
+```azurecli-interactive
+az webapp config show --resource-group <resource-group-name> --name <app-name> --query linuxFxVersion
+```
+
+Чтобы отобразить все поддерживаемые версии .NET Core, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
+
+```azurecli-interactive
+az webapp list-runtimes --linux | grep DOTNETCORE
+```
+
+::: zone-end
+
 ## <a name="set-net-core-version"></a>Задать версию .NET Core
 
+::: zone pivot="platform-windows"  
+
 Задайте целевую платформу в файле проекта для проекта ASP.NET Core. Дополнительные сведения см. в статье [Выбор версии .NET Core для использования](https://docs.microsoft.com/dotnet/core/versions/selection) в документации по .NET Core.
+
+::: zone-end
+
+::: zone pivot="platform-linux"
+
+Выполните следующую команду в [Cloud Shell](https://shell.azure.com) , чтобы установить версию .NET Core равным 3,1:
+
+```azurecli-interactive
+az webapp config set --name <app-name> --resource-group <resource-group-name> --linux-fx-version "DOTNETCORE|3.1"
+```
+
+::: zone-end
+
+::: zone pivot="platform-linux"
+
+## <a name="customize-build-automation"></a>Настройка автоматизации сборки
+
+Если приложение развертывается с использованием Git или ZIP-пакетов с включенной автоматизацией сборки, то автоматизация сборки cлужбы приложений проходит в такой последовательности:
+
+1. Запустите пользовательский скрипт, если он указан `PRE_BUILD_SCRIPT_PATH`.
+1. Выполните команду `dotnet restore` , чтобы восстановить зависимости NuGet.
+1. Выполните команду `dotnet publish` , чтобы создать двоичный файл для рабочей среды.
+1. Запустите пользовательский скрипт, если он указан `POST_BUILD_SCRIPT_PATH`.
+
+`PRE_BUILD_COMMAND` и `POST_BUILD_COMMAND` являются переменными среды, которые по умолчанию пустые. Чтобы выполнить команды перед сборкой, определите `PRE_BUILD_COMMAND`. Чтобы выполнить команды после сборки, определите `POST_BUILD_COMMAND`.
+
+В следующем примере указываются две переменные для ряда команд, разделенных запятыми.
+
+```azurecli-interactive
+az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings PRE_BUILD_COMMAND="echo foo, scripts/prebuild.sh"
+az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings POST_BUILD_COMMAND="echo foo, scripts/postbuild.sh"
+```
+
+Дополнительные переменные среды для настройки автоматизации сборки см. в статье [Конфигурация Oryx](https://github.com/microsoft/Oryx/blob/master/doc/configuration.md).
+
+Дополнительные сведения о том, как служба приложений работает и создает ASP.NET Core приложений в Linux, см. в [документации по Орикс: как обнаруживаются и строятся приложения .NET Core](https://github.com/microsoft/Oryx/blob/master/doc/runtimes/dotnetcore.md).
+
+::: zone-end
 
 ## <a name="access-environment-variables"></a>Доступ к переменным среды
 
@@ -115,7 +178,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 - Настройте ПО промежуточного слоя с помощью [ForwardedHeadersOptions](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions), чтобы заголовки `X-Forwarded-For` и `X-Forwarded-Proto` перенаправлялись в `Startup.ConfigureServices`.
 - Добавьте в известные сети диапазоны частных IP-адресов, чтобы по промежуточного слоя можно было доверять подсистеме балансировки нагрузки службы приложений.
-- Вызовите метод [усефорвардедхеадерс](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) в `Startup.Configure` перед вызовом других по промежуточного слоя.
+- Вызовите метод [усефорвардедхеадерс](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) в `Startup.Configure` перед вызовом другого по промежуточного слоя.
 
 Поместив все три элемента вместе, код будет выглядеть следующим образом:
 
@@ -146,7 +209,25 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 Дополнительные сведения см. в разделе [Настройка ASP.NET Core для работы с прокси-серверами и подсистемами балансировки нагрузки](https://docs.microsoft.com/aspnet/core/host-and-deploy/proxy-load-balancer).
 
+::: zone pivot="platform-linux"
+
+## <a name="open-ssh-session-in-browser"></a>Открытие сеанса SSH в браузере
+
+[!INCLUDE [Open SSH session in browser](../../includes/app-service-web-ssh-connect-builtin-no-h.md)]
+
+[!INCLUDE [robots933456](../../includes/app-service-web-configure-robots933456.md)]
+
+::: zone-end
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство. по приложению ASP.NET Core с Базой данных SQL](app-service-web-tutorial-dotnetcore-sqldb.md)
+> [Руководство. по приложению ASP.NET Core с Базой данных SQL](tutorial-dotnetcore-sqldb-app.md)
+
+::: zone pivot="platform-linux"
+
+> [!div class="nextstepaction"]
+> [Служба приложений под управлением Linux: вопросы и ответы](faq-app-service-linux.md)
+
+::: zone-end
+

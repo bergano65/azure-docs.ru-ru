@@ -12,12 +12,12 @@ ms.devlang: PHP
 ms.topic: article
 ms.date: 11/25/2014
 ms.author: gwallace
-ms.openlocfilehash: fb1623c4a409f1c6cba94bad56d773e166d2b182
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e75b5a265ba85813581e39a548d897ea57a33da6
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "69637327"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080564"
 ---
 # <a name="how-to-make-a-phone-call-using-twilio-in-a-php-application-on-azure"></a>Как в Azure выполнить телефонный звонок с помощью Twilio в PHP-приложении
 В следующем примере показано, как выполнить звонок с веб-страницы PHP, размещенной в Azure, с помощью службы Twilio. Полученное приложение запрашивает у пользователя значения телефонного звонка, как показано на следующем снимке экрана.
@@ -105,7 +105,7 @@ echo "URI resource: " . $call->uri . "<br />";
 ![Ответ на звонок Azure с использованием службы Twilio и PHP][twilio_php_response]
 
 ## <a name="run-the-application"></a>Выполнение приложения
-Следующим шагом является [развертывание приложения в веб-приложениях Azure с Git](app-service/app-service-web-get-started-php.md) (хотя не все сведения в статье по ссылке применимы). 
+Следующим шагом является [развертывание приложения в веб-приложениях Azure с Git](app-service/quickstart-php.md) (хотя не все сведения в статье по ссылке применимы). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Данный код демонстрирует базовую функциональность, доступную через PHP-библиотеку Twillio в Azure. Возможно, перед развертыванием в рабочей среде Azure потребуется добавить в него дополнительные обработчики ошибок и другие функции. Пример:
@@ -116,7 +116,7 @@ echo "URI resource: " . $call->uri . "<br />";
 
 Дополнительные сведения о Twilio см. в разделе [https://www.twilio.com/docs][twilio_docs] .
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 * [Использование Twilio для поддержки голосовых возможностей и SMS в PHP](partner-twilio-php-how-to-use-voice-sms.md)
 
 [twilio_console]: https://www.twilio.com/console

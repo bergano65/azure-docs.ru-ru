@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 12/09/2019
 ms.author: madsd
 ms.custom: seodec18
-ms.openlocfilehash: 5e32baa10e98f0f57a861f8cebfb7506ad615631
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2bedd8d9ab0b879886042de3dc2fcff7f7b36f2f
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74980066"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080938"
 ---
 # <a name="application-gateway-integration-with-service-endpoints"></a>Интеграция шлюза приложений с конечными точками службы
 Существует три варианта службы приложений, требующие немного иной настройки интеграции с шлюзом приложений Azure. Варианты включают в себя обычную службу приложений, которая также называется многоклиентской, внутренней Load Balancer (ILB) Среда службы приложений (ASE) и External ASE. В этой статье описано, как настроить службу приложений (с несколькими клиентами) и обсудить ILB и внешние ASE.
@@ -33,7 +33,7 @@ ms.locfileid: "74980066"
 
 ## <a name="using-azure-portal"></a>Использование портала Azure
 С помощью портал Azure вы выполните четыре шага для инициализации и настройки программы установки. При наличии существующих ресурсов можно пропустить первые шаги.
-1. Создайте службу приложений, используя одно из кратких руководств документации по службе приложений, например [.NET Core краткое руководство](../../app-service/app-service-web-get-started-dotnet.md) .
+1. Создайте службу приложений, используя одно из кратких руководств документации по службе приложений, например [.NET Core краткое руководство](../quickstart-dotnetcore.md) .
 2. Создайте шлюз приложений с помощью [краткого руководства по порталу](../../application-gateway/quick-create-portal.md), но пропустите раздел Add серверные целевые объекты.
 3. Настройте [службу приложений в качестве серверной части в шлюзе приложений](../../application-gateway/configure-web-app-portal.md), но перейдите к разделу ограничение доступа.
 4. Наконец, создайте [ограничение доступа с помощью конечных точек службы](../../app-service/app-service-ip-restrictions.md#service-endpoints).
@@ -83,7 +83,7 @@ az webapp config access-restriction set --resource-group myRG --name myWebApp --
 az webapp config access-restriction add --resource-group myRG --name myWebApp --scm-site --rule-name KudoAccess --priority 200 --ip-address 208.130.0.0/16
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о Среда службы приложений см. в [документации по среда службы приложений](https://docs.microsoft.com/azure/app-service/environment).
 
 Для дальнейшей защиты веб-приложения сведения о брандмауэре веб-приложения в шлюзе приложений можно найти в [документации по брандмауэру веб-приложения Azure](../../web-application-firewall/ag/ag-overview.md).

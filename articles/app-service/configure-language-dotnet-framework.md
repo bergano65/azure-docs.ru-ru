@@ -4,12 +4,12 @@ description: Узнайте, как настроить приложение ASP.
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 06/02/2020
-ms.openlocfilehash: 1aeb243b3ff4a1e6bd2ae984510d2ec709776fa9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 53654520ea20bd8ee797de61449a616eadd001a5
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84908000"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080153"
 ---
 # <a name="configure-an-aspnet-app-for-azure-app-service"></a>Настройка приложения ASP.NET для службы приложений Azure
 
@@ -18,7 +18,7 @@ ms.locfileid: "84908000"
 
 Приложения ASP.NET должны быть развернуты в службе приложений Azure как скомпилированные двоичные файлы. Средство публикации Visual Studio создает решение, а затем развертывает скомпилированные двоичные файлы напрямую, в то время как модуль развертывания службы приложений сначала развертывает репозиторий кода, а затем компилирует двоичные файлы.
 
-Это краткое описание содержит основные понятия и инструкции для разработчиков ASP.NET. Если вы никогда не использовали службу приложений Azure, сначала выполните инструкции из руководства по [ASP.NET](app-service-web-get-started-dotnet-framework.md) и [ASP.NET с базой данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md) .
+Это краткое описание содержит основные понятия и инструкции для разработчиков ASP.NET. Если вы никогда не использовали службу приложений Azure, сначала выполните инструкции из руководства по [ASP.NET](quickstart-dotnet-framework.md) и [ASP.NET с базой данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md) .
 
 ## <a name="show-supported-net-framework-runtime-versions"></a>Отображение поддерживаемых версий среды выполнения .NET Framework
 

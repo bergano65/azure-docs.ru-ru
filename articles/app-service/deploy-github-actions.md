@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: devx-track-python
-ms.openlocfilehash: 51a340c2fb32de60f20c678e0bc23f2420261e44
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 713f4228bc2ba968fc96668d4d5c568f33b7e786
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87849885"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080289"
 ---
 # <a name="deploy-to-app-service-using-github-actions"></a>Развертывание в Службе приложений с помощью GitHub Actions
 
@@ -28,49 +28,76 @@ ms.locfileid: "87849885"
 
 |Section  |Задания  |
 |---------|---------|
-|**Аутентификация** | 1. Определение субъекта-службы <br /> 2. Создание секрета GitHub |
-|**Сборка** | 1. Настройка среды <br /> 2. Создание веб-приложения |
-|**Развертывание** | 1. Развертывание веб-приложения |
+|**Аутентификация** | 1. Определите субъект-службу. <br /> 2. Создайте секрет GitHub. |
+|**Сборка** | 1. Настройте среду. <br /> 2. Создайте веб-приложение. |
+|**Развертывание** | 1. Разверните веб-приложение. |
 
-## <a name="create-a-service-principal"></a>Создание субъекта-службы
+## <a name="generate-deployment-credentials"></a>Создать учетные данные развертывания
+
+# <a name="user-level-credentials"></a>[Учетные данные уровня пользователя](#tab/userlevel)
 
 Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [az ad sp create-for-rbac](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) в [Azure CLI](https://docs.microsoft.com/cli/azure/). Эту команду можно выполнить в [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или с помощью кнопки **Попробовать**.
 
 ```azurecli-interactive
-az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptions/<subscription-id>/resourceGroups/<group-name>/providers/Microsoft.Web/sites/<app-name> --sdk-auth
+az ad sp create-for-rbac --name "myApp" --role contributor \
+                            --scopes /subscriptions/<subscription-id>/resourceGroups/<group-name>/providers/Microsoft.Web/sites/<app-name> \
+                            --sdk-auth
 ```
 
-В этом примере замените заполнители в ресурсе своими значениями для идентификатора подписки, имени группы ресурсов и имени приложения. В выходных данных вы получите учетные данные назначения роли, предоставляющие доступ к приложению Службы приложений. Скопируйте этот объект JSON, который затем можно использовать для выполнения аутентификации из GitHub.
+В приведенном выше примере Замените заполнители ИДЕНТИФИКАТОРом подписки, именем группы ресурсов и именем приложения. Выходные данные — это объект JSON с учетными данными назначения роли, которые предоставляют доступ к приложению службы приложений, как показано ниже. Скопируйте этот объект JSON для последующего использования.
 
-> [!NOTE]
-> Вам не нужно создавать субъект-службу, если для аутентификации вы хотите использовать профиль публикации.
+```output 
+  {
+    "clientId": "<GUID>",
+    "clientSecret": "<GUID>",
+    "subscriptionId": "<GUID>",
+    "tenantId": "<GUID>",
+    (...)
+  }
+```
 
 > [!IMPORTANT]
-> Рекомендуется всегда предоставлять минимальные разрешения доступа. Именно поэтому область в предыдущем примере ограничена конкретным приложением Службы приложений, а не всей группой ресурсов.
+> Рекомендуется всегда предоставлять минимальные разрешения доступа. Область в предыдущем примере ограничена конкретным приложением службы приложений, а не всей группой ресурсов.
+
+# <a name="app-level-credentials"></a>[Учетные данные уровня приложения](#tab/applevel)
+
+Учетные данные уровня приложения можно использовать с помощью профиля публикации для приложения. Перейдите на страницу управления приложения на портале. На странице " **Обзор** " щелкните **получить профиль публикации** .
+
+Содержимое файла потребуется позже.
+
+---
 
 ## <a name="configure-the-github-secret"></a>Настройка секрета GitHub
 
-Вы также можете использовать учетные данные уровня приложения, например профиль публикации для развертывания. Выполните следующие действия, чтобы настроить секрет:
+# <a name="user-level-credentials"></a>[Учетные данные уровня пользователя](#tab/userlevel)
 
-1. Скачайте профиль публикации для приложения Службы приложений на портале, щелкнув **Получить профиль публикации**.
+В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**.
 
-2. В [GitHub](https://github.com/) перейдите к репозиторию и выберите **Settings > Secrets > Add a new secret** (Параметры > Секреты > Добавить секрет).
+Чтобы использовать [учетные данные на уровне пользователя](#generate-deployment-credentials), вставьте все выходные данные JSON из команды Azure CLI в поле значения секрета. Присвойте секрету имя, например `AZURE_CREDENTIALS` .
 
-    ![секретные коды](media/app-service-github-actions/secrets.png)
+Когда вы настроите файл рабочего процесса позже, используйте секрет для входа `creds` в действие Azure Login. Пример:
 
-3. Вставьте содержимое скачанного файла профиля публикации в поле значения секрета.
+```yaml
+- uses: azure/login@v1
+  with:
+    creds: ${{ secrets.AZURE_CREDENTIALS }}
+```
 
-4. Теперь в файле рабочего процесса в ветви `.github/workflows/workflow.yml` замените секрет для входного профиля `publish-profile` для действия развертывания веб-приложения Azure.
+# <a name="app-level-credentials"></a>[Учетные данные уровня приложения](#tab/applevel)
+
+В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**.
+
+Чтобы использовать [учетные данные уровня приложения](#generate-deployment-credentials), вставьте содержимое скачанного файла профиля публикации в поле значение секрета. Присвойте секрету имя, например `azureWebAppPublishProfile` .
+
+Когда вы настраиваете файл рабочего процесса позже, вы используете секрет для входа `publish-profile` в действие развертывания веб-приложения Azure. Пример:
     
-    ```yaml
-        - uses: azure/webapps-deploy@v2
-          with:
-            publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-    ```
+```yaml
+- uses: azure/webapps-deploy@v2
+  with:
+    publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+```
 
-5. После определения секрет будет отображаться, как показано ниже.
-
-    ![секретные коды](media/app-service-github-actions/app-service-secrets.png)
+---
 
 ## <a name="set-up-the-environment"></a>Настройка среды
 
@@ -192,43 +219,9 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 | **package** | (Необязательный) Путь к пакету или папке. Файлы ZIP, WAR, JAR или папка для развертывания. |
 | **slot-name** | (Необязательный) Введите существующий слот вместо рабочего. |
 
-### <a name="deploy-using-publish-profile"></a>Развертывание с помощью профиля публикации
+# <a name="user-level-credentials"></a>[Учетные данные уровня пользователя](#tab/userlevel)
 
-Ниже приведен пример рабочего процесса для сборки и развертывания приложения Node.js в Azure с помощью профиля публикации.
-
-```yaml
-# File: .github/workflows/workflow.yml
-
-on: push
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    # checkout the repo
-    - name: 'Checkout GitHub Action' 
-      uses: actions/checkout@master
-    
-    - name: Setup Node 10.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - name: 'npm install, build, and test'
-      run: |
-        npm install
-        npm run build --if-present
-        npm run test --if-present
-       
-    - name: 'Run Azure webapp deploy action using publish profile credentials'
-          uses: azure/webapps-deploy@v2
-          with: 
-            app-name: node-rn
-            publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-```
-
-### <a name="deploy-using-azure-service-principal"></a>Развертывание с помощью субъекта-службы Azure
-
-Ниже приведен пример рабочего процесса для сборки и развертывания приложения Node.js в Azure с помощью субъекта-службы.
+Ниже приведен пример рабочего процесса для сборки и развертывания приложения Node.js в Azure с помощью субъекта-службы. Обратите внимание, как `creds` входные данные ссылаются на `AZURE_CREDENTIALS` секрет, созданный ранее.
 
 ```yaml
 on: [push]
@@ -269,11 +262,47 @@ jobs:
         az logout
 ```
 
+# <a name="app-level-credentials"></a>[Учетные данные уровня приложения](#tab/applevel)
+
+Ниже приведен пример рабочего процесса для сборки и развертывания Node.js приложения в Azure с помощью профиля публикации приложения. Обратите внимание, как `publish-profile` входные данные ссылаются на `azureWebAppPublishProfile` секрет, созданный ранее.
+
+```yaml
+# File: .github/workflows/workflow.yml
+
+on: push
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    # checkout the repo
+    - name: 'Checkout GitHub Action' 
+      uses: actions/checkout@master
+    
+    - name: Setup Node 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: 'npm install, build, and test'
+      run: |
+        npm install
+        npm run build --if-present
+        npm run test --if-present
+       
+    - name: 'Run Azure webapp deploy action using publish profile credentials'
+          uses: azure/webapps-deploy@v2
+          with: 
+            app-name: node-rn
+            publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+```
+
+---
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете найти наш набор компонентов Actions, объединенных в разных репозитории, а также соответствующую документацию и примеры использования GitHub для CI/CD и развертыванию приложений в Azure на GitHub.
 
-- [Рабочий процесс действия для развертывания в Azure](https://github.com/Azure/actions-workflow-samples)
+- [Рабочие процессы действий для развертывания в Azure](https://github.com/Azure/actions-workflow-samples)
 
 - [Вход в Azure](https://github.com/Azure/login)
 
