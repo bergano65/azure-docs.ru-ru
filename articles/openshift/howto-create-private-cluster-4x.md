@@ -8,12 +8,12 @@ author: ms-jasondel
 ms.author: jasondel
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
-ms.openlocfilehash: 581587382c3bfd03ed329672e5c6ca065554d1c7
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.openlocfilehash: c196d48d22a2bd714c4b6252ad927d18790f4674
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83727442"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056777"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-private-cluster"></a>Создание частного кластера Azure Red Hat OpenShift 4
 
@@ -23,24 +23,9 @@ ms.locfileid: "83727442"
 > * настраивать необходимые компоненты и создавать необходимую виртуальную сеть и подсети;
 > * Развертывание кластера с частной конечной точкой сервера API и закрытым контроллером входящего трафика
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.75 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать CLI локально, для работы с этим руководством вам потребуется Azure CLI версии 2.6.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="before-you-begin"></a>Перед началом
-
-### <a name="install-the-az-aro-extension"></a>Установка расширения "az aro"
-Расширение `az aro` позволяет создавать и удалять кластеры Azure Red Hat OpenShift и получать к ним доступ непосредственно из командной строки с помощью Azure CLI.
-
-Чтобы установить расширение `az aro`, выполните следующую команду:
-
-```azurecli-interactive
-az extension add -n aro --index https://az.aroapp.io/stable
-```
-
-Если расширение уже установлено, его можно обновить, выполнив следующую команду:
-
-```azurecli-interactive
-az extension update -n aro --index https://az.aroapp.io/stable
-```
 
 ### <a name="register-the-resource-provider"></a>Регистрация поставщика ресурсов
 
@@ -48,21 +33,6 @@ az extension update -n aro --index https://az.aroapp.io/stable
 
 ```azurecli-interactive
 az provider register -n Microsoft.RedHatOpenShift --wait
-```
-
-Убедитесь, что расширение зарегистрировано.
-
-```azurecli-interactive
-az -v
-```
-
-  Должен отобразиться результат, аналогичный приведенному ниже.
-
-```output
-...
-Extensions:
-aro                                1.0.0
-...
 ```
 
 ### <a name="get-a-red-hat-pull-secret-optional"></a>Получение секрета для извлечения Red Hat (необязательно)
@@ -262,7 +232,7 @@ apiServer=$(az aro show -g $RESOURCEGROUP -n $CLUSTER --query apiserverProfile.u
 >[!IMPORTANT]
 > Чтобы подключиться к частному кластеру Azure Red Hat OpenShift, необходимо выполнить следующий шаг с узла, который находится либо в созданной виртуальной сети, либо в виртуальной сети с [пиринговым](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) подключением к виртуальной сети, в которой был развернут кластер.
 
-Войдите на сервер API кластера OpenShift с помощью следующей команды. Замените **\<kubeadmin password>** паролем, который вы только что получили.
+Войдите на сервер API кластера OpenShift с помощью следующей команды. Замените **\<kubeadmin password>** паролем, который вы только что извлекли.
 
 ```azurecli-interactive
 oc login $apiServer -u kubeadmin -p <kubeadmin password>

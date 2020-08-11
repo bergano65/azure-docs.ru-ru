@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: trbye
-ms.openlocfilehash: 5dc0a7fc9797948e834b8b3cb802bb92fce0eb59
-ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
+ms.openlocfilehash: 79f7924b021de9426eeb66adf2ec12f8033efcea
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85610767"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056862"
 ---
 # <a name="about-the-speech-sdk"></a>Сведения о пакете SDK службы "Речь"
 
@@ -125,5 +125,5 @@ ms.locfileid: "85610767"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
+* [Создание бесплатной учетной записи Azure.](https://azure.microsoft.com/free/cognitive-services/)
 * [Распознавание речи в C#](quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnet)

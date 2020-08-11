@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
-ms.openlocfilehash: 0f43d1f780f838fdc49eb055536204026edcc729
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6fafb668ecc2ae36dbe5a6bbc3d1e1d501545b50
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87079236"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056811"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API преобразования текста в речь.
 
@@ -56,14 +56,14 @@ REST API преобразования текста в речь поддержи�
 | Республика Корея, центральный регион | `https://koreacentral.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Центрально-северная часть США | `https://northcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Северная Европа | `https://northeurope.tts.speech.microsoft.com/cognitiveservices/voices/list` |
-| South Central US | `https://southcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| Центрально-южная часть США | `https://southcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Юго-Восточная Азия | `https://southeastasia.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | южная часть Соединенного Королевства | `https://uksouth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Западная Европа | `https://westeurope.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | западная часть США | `https://westus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | западная часть США 2 | `https://westus2.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 
-### <a name="request-headers"></a>Заголовки запросов
+### <a name="request-headers"></a>Заголовки запроса
 
 В этой таблице перечислены обязательные и необязательные заголовки для запросов преобразования текста в речь.
 
@@ -71,7 +71,7 @@ REST API преобразования текста в речь поддержи�
 |--------|-------------|---------------------|
 | `Authorization` | Маркеру авторизации предшествует слово `Bearer`. Дополнительные сведения см. в разделе [Authenticate to the Speech API](#authentication) (Аутентификация в API речи). | Обязательно |
 
-### <a name="request-body"></a>Текст запроса
+### <a name="request-body"></a>Тело запроса
 
 Для `GET` запросов к этой конечной точке тело не требуется.
 
@@ -163,7 +163,7 @@ Authorization: Bearer [Base64 access_token]
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-endpoints-text-to-speech.md)]
 
-### <a name="request-headers"></a>Заголовки запросов
+### <a name="request-headers"></a>Заголовки запроса
 
 В этой таблице перечислены обязательные и необязательные заголовки для запросов преобразования текста в речь.
 
@@ -191,7 +191,7 @@ audio-24khz-48kbitrate-mono-mp3     ogg-24khz-16bit-mono-opus
 > [!NOTE]
 > Если у выбранного голоса и формата вывода будет разная скорость передачи звука, то при необходимости звук будет обработан повторно. OGG-24khz-16-разрядный-Mono-опус можно декодировать с помощью [кодека опус](https://opus-codec.org/downloads/)
 
-### <a name="request-body"></a>Текст запроса
+### <a name="request-body"></a>Тело запроса
 
 Текст каждого запроса `POST` отправляется с соблюдением синтаксиса [языка SSML](speech-synthesis-markup.md). SSML позволяет выбрать голос и язык для синтезированной речи, возвращаемой службой преобразования текста в речь. Полный список поддерживаемых голосовых моделей см. в разделе о [поддерживаемых языках](language-support.md#text-to-speech).
 
@@ -241,6 +241,6 @@ Authorization: Bearer [Base64 access_token]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services)
+- [Создание бесплатной учетной записи Azure.](https://azure.microsoft.com/free/cognitive-services/)
 - [Асинхронное синтез для больших аудио-форм](quickstarts/text-to-speech/async-synthesis-long-form-audio.md)
 - [Начало работы с набором средств "Пользовательский голос"](how-to-custom-voice.md)
