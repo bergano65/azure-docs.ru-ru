@@ -3,12 +3,12 @@ title: Фильтры разделов в служебной шине Azure | Д
 description: В этой статье объясняется, как подписчики могут определить, какие сообщения они хотят получить из раздела, указав фильтры.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: b722c040248c199782f6c8dea020ae582762e102
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5df343ff63c01a7cf10315b758e3d6fba8ac5674
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85339961"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88066752"
 ---
 # <a name="topic-filters-and-actions"></a>Фильтры и действия разделов
 
@@ -57,11 +57,9 @@ ms.locfileid: "85339961"
 > [!NOTE]
 > Поскольку портал Azure теперь поддерживает работу обозревателя служебной шины, фильтры подписки можно создавать и изменять на портале. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующие примеры: 
 
 - [.NET — руководство по отправке и получению с фильтрами](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/GettingStarted/BasicSendReceiveTutorialwithFilters/BasicSendReceiveTutorialWithFilters)
 - [Фильтры разделов .NET](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/TopicFilters)
-- [Шаблон Azure Resource Manager](https://docs.microsoft.com/azure/templates/microsoft.servicebus/2017-04-01/namespaces/topics/subscriptions/rules)
-
-
+- [Шаблон Azure Resource Manager](/azure/templates/microsoft.servicebus/2017-04-01/namespaces/topics/subscriptions/rules)

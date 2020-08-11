@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/04/2018
-ms.openlocfilehash: 200a6b1bc2f960555fae1d910dfebde66628d13a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1cd03814e1590abebb74db490a2692d492a9207d
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84031975"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88064950"
 ---
 # <a name="deploy-a-split-merge-service-to-move-data-between-sharded-databases"></a>Развертывание службы разбиения и объединения, чтобы перемещать данные между сегментированными базами данных
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "84031975"
 
 Файлы находятся в каталоге **Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge.x.x.xxx.x** , где *x.x.xxx.x* отражает номер версии. Файлы службы разбиения и объединения находятся в подкаталоге **content\splitmerge\service**, а скрипты разбиения и объединения PowerShell (и необходимые библиотеки DLL клиентов) — в подкаталоге **content\splitmerge\powershell**.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Создайте базу данных SQL Azure, которая будет использоваться в качестве базы данных состояния разбиения и объединения. Перейдите на [портал Azure](https://portal.azure.com). Создайте новую **Базу данных SQL**. Присвойте базе данных имя и создайте администратор и пароль. Обязательно запишите имя и пароль для последующего использования.
 
@@ -173,6 +173,9 @@ ms.locfileid: "84031975"
 ### <a name="test-with-powershell-scripts"></a>Тестирование с помощью скриптов PowerShell
 
 Развертывание и среду можно проверить путем запуска включенных примеров скриптов PowerShell.
+
+> [!IMPORTANT]
+> Примеры сценариев выполняются в PowerShell 5,1. В настоящее время они не выполняются в PowerShell 6 или более поздней версии.
 
 Будут включены файлы скриптов:
 

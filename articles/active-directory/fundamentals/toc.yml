@@ -49,6 +49,8 @@
       items:
         - name: Архитектура Azure AD
           href: active-directory-architecture.md
+        - name: "Интеграция всех приложений с Azure\_AD"
+          href: five-steps-to-full-application-integration-with-azure-ad.md
     - name: Руководство по развертыванию
       items:
         - name: 'Развертывание 30, 90 и выше'

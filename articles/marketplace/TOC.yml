@@ -272,7 +272,7 @@
           href: ./partner-center-portal/payout-policy-details.md
         - name: Сведения о налогах
           href: ./partner-center-portal/tax-details-paid-transactions.md
-    - name: Справочник по интерфейсам API Портала Cloud Partner
+    - name: Справочные материалы по API-интерфейсам Портала Cloud Partner
       items:
         - name: Обзор
           href: ./cloud-partner-portal-api-overview.md

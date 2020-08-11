@@ -4,14 +4,14 @@ description: Узнайте, как использовать портал Azure 
 author: harelbr
 ms.author: harelbr
 ms.topic: conceptual
-ms.date: 08/10/2020
+ms.date: 08/11/2020
 ms.subservice: alerts
-ms.openlocfilehash: 8afe62173dc0e90783c494fa51994e9ebac506f3
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: 7b5332f68bb35e3c9b9ed82bb7bed2908e744e9f
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88042740"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88065868"
 ---
 # <a name="create-view-and-manage-metric-alerts-using-azure-monitor"></a>Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -139,9 +139,18 @@ ms.locfileid: "88042740"
 
 Правила генерации оповещений метрик имеют доступные командлеты PowerShell:
 
-- [Add-AzMetricAlertRuleV2](/powershell/module/az.monitor/add-azmetricalertrulev2): создает новое правило генерации оповещений метрик или обновляет существующее.
-- [Get-AzMetricAlertRuleV2](/powershell/module/az.monitor/get-azmetricalertrulev2): получает одно или несколько правил генерации оповещений метрик.
-- [Remove-AzMetricAlertRuleV2](/powershell/module/az.monitor/remove-azmetricalertrulev2): удаляет правило оповещения метрики.
+- [Add-AzMetricAlertRuleV2](/powershell/module/az.monitor/add-azmetricalertrulev2): создание нового правила оповещения метрики или обновление существующего.
+- [Get-AzMetricAlertRuleV2](/powershell/module/az.monitor/get-azmetricalertrulev2): получение одного или нескольких правил оповещений метрик.
+- [Remove-AzMetricAlertRuleV2](/powershell/module/az.monitor/remove-azmetricalertrulev2): Удаление правила оповещения метрики.
+
+## <a name="with-rest-api"></a>С помощью REST API
+
+- [Создать или обновить](/rest/api/monitor/metricalerts/createorupdate): создание нового правила оповещения метрики или обновление существующего.
+- [Получить](/rest/api/monitor/metricalerts/get): получение определенного правила оповещения метрики.
+- [Список по группе ресурсов](/rest/api/monitor/metricalerts/listbyresourcegroup): получение списка правил генерации оповещений метрик в определенной группе ресурсов.
+- [Список по подписке](/rest/api/monitor/metricalerts/listbysubscription): получение списка правил оповещений метрик в определенной подписке.
+- [Обновление](/rest/api/monitor/metricalerts/update): обновление правила оповещения метрики.
+- [Удалить](/rest/api/monitor/metricalerts/delete): Удаление правила оповещения метрики.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

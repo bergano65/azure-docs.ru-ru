@@ -3,12 +3,12 @@ title: Рекомендации по повышению производител
 description: В этой статье описывается использование служебной шины Azure для оптимизации производительности при обмене сообщениями в брокере.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: e0a6e54c1e941d7b7ff244ac40066a564e2ebbc4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a81e6fa1c6097f46bbfa3016beb1b7780ad3c351
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85341106"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88065307"
 ---
 # <a name="best-practices-for-performance-improvements-using-service-bus-messaging"></a>Рекомендации по повышению производительности с помощью обмена сообщениями через служебную шину
 
@@ -40,7 +40,7 @@ AMQP является наиболее эффективным, так как п�
 | <a href="https://www.nuget.org/packages/Microsoft.Azure.ServiceBus" target="_blank">Microsoft. Azure. ServiceBus<span class="docon docon-navigate-external x-hidden-focus"></span></a> | `Microsoft.Azure.ServiceBus`<br>`Microsoft.Azure.ServiceBus.Management` | .NET Core 2.0;<br>.NET Framework 4.6.1<br>Mono 5.4<br>Xamarin.iOS 10.14<br>Xamarin.Mac 3.8<br>Xamarin.Android 8.0;<br>универсальная платформа Windows 10.0.16299. | AMQP<br>HTTP |
 | <a href="https://www.nuget.org/packages/WindowsAzure.ServiceBus" target="_blank">WindowsAzure. ServiceBus<span class="docon docon-navigate-external x-hidden-focus"></span></a> | `Microsoft.ServiceBus`<br>`Microsoft.ServiceBus.Messaging` | .NET Framework 4.6.1 | AMQP<br>SBMP<br>HTTP |
 
-Дополнительные сведения о минимальной .NET Standard поддержки платформ см. в разделе [Поддержка реализации .NET](https://docs.microsoft.com/dotnet/standard/net-standard#net-implementation-support).
+Дополнительные сведения о минимальной .NET Standard поддержки платформ см. в разделе [Поддержка реализации .NET](/dotnet/standard/net-standard#net-implementation-support).
 
 ## <a name="reusing-factories-and-clients"></a>Повторное использование фабрик и клиентов
 
@@ -180,7 +180,7 @@ receiver.OnMessageAsync(
 
 По умолчанию интервал пакетной обработки в клиенте составляет 20 мс. Интервал пакетной обработки можно изменить с помощью свойства [BatchFlushInterval][BatchFlushInterval], которое задается перед созданием фабрики обмена сообщениями. Этот параметр влияет на все клиенты, создаваемые этой фабрикой.
 
-Чтобы отключить пакетную обработку, задайте для свойства [BatchFlushInterval][BatchFlushInterval] значение **TimeSpan.Zero**. Пример:
+Чтобы отключить пакетную обработку, задайте для свойства [BatchFlushInterval][BatchFlushInterval] значение **TimeSpan.Zero**. Пример.
 
 ```csharp
 var settings = new MessagingFactorySettings

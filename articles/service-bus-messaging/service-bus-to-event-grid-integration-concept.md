@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/23/2020
 ms.author: spelluru
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0d9c9c061e31ac4d3eba8d31352253bb25b62a9b
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 641cae751b0b87d93235e1272bc5f46f7797d834
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87503299"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88065137"
 ---
 # <a name="azure-service-bus-to-event-grid-integration-overview"></a>Общие сведения об интеграции служебной шины Azure со службой "Сетка событий"
 
@@ -41,9 +41,9 @@ ms.locfileid: "87503299"
 * [ActiveMessagesWithNoListenersAvailable](#active-messages-available-event)
 * DeadletterMessagesAvailable
 
-Кроме того, служебная шина использует стандартные механизмы безопасности и [проверки подлинности](https://docs.microsoft.com/azure/event-grid/security-authentication) службы "Сетка событий".
+Кроме того, служебная шина использует стандартные механизмы безопасности и [проверки подлинности](../event-grid/security-authentication.md) службы "Сетка событий".
 
-Дополнительные сведения см. в статье [Схема событий службы "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/event-schema).
+Дополнительные сведения см. в статье [Схема событий службы "Сетка событий Azure"](../event-grid/event-schema.md).
 
 #### <a name="active-messages-available-event"></a>Событие наличия активных сообщений
 
@@ -132,7 +132,7 @@ ms.locfileid: "87503299"
 
 ## <a name="azure-cli-instructions"></a>Инструкции по работе в Azure CLI
 
-Для начала установите Azure CLI 2.0 или более поздней версии. [Скачайте установщик](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Выберите **Windows + X**, а затем откройте новую консоль PowerShell с разрешениями администратора. В качестве альтернативы можно использовать командную оболочку на портале Azure.
+Для начала установите Azure CLI 2.0 или более поздней версии. [Скачайте установщик](/cli/azure/install-azure-cli?view=azure-cli-latest). Выберите **Windows + X**, а затем откройте новую консоль PowerShell с разрешениями администратора. В качестве альтернативы можно использовать командную оболочку на портале Azure.
 
 Выполните следующий код.
 
@@ -150,7 +150,7 @@ az eventgrid event-subscription create --resource-id $namespaceid --name "<YOUR 
 
 ## <a name="powershell-instructions"></a>Инструкции по работе в среде PowerShell
 
-Убедитесь в наличии Azure PowerShell. [Скачайте установщик](https://docs.microsoft.com/powershell/azure/install-Az-ps). Нажмите клавиши **Windows+X** и откройте новую консоль PowerShell с разрешениями администратора. В качестве альтернативы можно использовать командную оболочку на портале Azure.
+Убедитесь в наличии Azure PowerShell. [Скачайте установщик](/powershell/azure/install-Az-ps). Нажмите клавиши **Windows+X** и откройте новую консоль PowerShell с разрешениями администратора. В качестве альтернативы можно использовать командную оболочку на портале Azure.
 
 ```powershell-interactive
 Connect-AzAccount
@@ -171,10 +171,10 @@ New-AzEVentGridSubscription -EventSubscriptionName "<YOUR EVENT GRID SUBSCRIPTIO
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Примеры](service-bus-to-event-grid-integration-example.md) использования служебной шины со службой "Сетка событий".
-* Дополнительные сведения о [службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/).
-* Дополнительные сведения о [функциях Azure](https://docs.microsoft.com/azure/azure-functions/).
-* Дополнительные сведения о [Logic Apps](https://docs.microsoft.com/azure/logic-apps/).
-* Дополнительные сведения о [служебной шине](https://docs.microsoft.com/azure/service-bus/).
+* Дополнительные сведения о [службе "Сетка событий Azure"](../event-grid/index.yml).
+* Дополнительные сведения о [функциях Azure](../azure-functions/index.yml).
+* Дополнительные сведения о [Logic Apps](../logic-apps/index.yml).
+* Дополнительные сведения о [служебной шине](/azure/service-bus/).
 
 [1]: ./media/service-bus-to-event-grid-integration-concept/sbtoeventgrid1.png
 [стр]: ./media/service-bus-to-event-grid-integration-concept/sbtoeventgriddiagram.png

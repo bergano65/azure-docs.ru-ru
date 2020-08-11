@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.service: service-bus
 ms.date: 07/02/2020
 ms.author: alvidela
-ms.openlocfilehash: cf21030fbf1aaa9f36e4d34aac918c4604066ec2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 373629c86f2d842ad2e02dd2b66739f3963bf7ed
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87071637"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88064559"
 ---
 # <a name="how-to-integrate-rabbitmq-with-azure-service-bus"></a>Как интегрировать RabbitMQ с служебной шиной Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "87071637"
 
 Вот несколько сценариев, в которых можно использовать следующие возможности:
 
-- **Настройки ребра**. у нас есть настройка ребра, где мы отправляем сообщения в RabbitMQ, но мы хотим пересылать эти сообщения в [служебную шину Azure](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) для дальнейшей обработки, поэтому мы можем использовать многие [возможности больших данных Azure](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/big-data).
+- **Настройки ребра**. у нас есть настройка ребра, где мы отправляем сообщения в RabbitMQ, но мы хотим пересылать эти сообщения в [служебную шину Azure](./service-bus-messaging-overview.md) для дальнейшей обработки, поэтому мы можем использовать многие [возможности больших данных Azure](/azure/architecture/guide/architecture-styles/big-data).
 - **Гибридное облако**. Ваша компания приобрела только третью сторону, которая использует RabbitMQ для обмена сообщениями. Они находятся в другом облаке. При переходе в Azure вы уже можете приступить к совместному использованию данных, выполнив мост RabbitMQ с помощью служебной шины Azure.
 - **Интеграция**со сторонними разработчиками. Третья сторона использует RabbitMQ в качестве брокера и хочет отправить нам свои данные, но они выходят за пределы нашей Организации. Мы можем предоставить им ключ SAS, который предоставляет им доступ к ограниченному набору очередей служебной шины Azure, куда они могут пересылать свои сообщения.
 
@@ -28,7 +28,7 @@ ms.locfileid: "87071637"
 
 Сначала необходимо создать бесплатную учетную запись Azure, зарегистрировавшись [здесь](https://azure.microsoft.com/free/) .
 
-После входа в учетную запись перейдите в [портал Azure](https://portal.azure.com/) и создайте новое [пространство имен](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-create-namespace-portal)служебной шины Azure. Пространства имен — это контейнеры областей, в которых будут находиться наши компоненты обмена сообщениями, такие как очереди и разделы.
+После входа в учетную запись перейдите в [портал Azure](https://portal.azure.com/) и создайте новое [пространство имен](./service-bus-create-namespace-portal.md)служебной шины Azure. Пространства имен — это контейнеры областей, в которых будут находиться наши компоненты обмена сообщениями, такие как очереди и разделы.
 
 ## <a name="adding-a-new-azure-service-bus-namespace"></a>Добавление нового пространства имен служебной шины Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "87071637"
 
 :::image type="content" source="./media/service-bus-integrate-with-rabbitmq/integration.png" alt-text="Выбор служебной шины Azure":::
 
-Вам будет предложено ввести сведения о пространстве имен. Выберите подписку Azure, которую нужно использовать. Если у вас нет [группы ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal), можно создать новую.
+Вам будет предложено ввести сведения о пространстве имен. Выберите подписку Azure, которую нужно использовать. Если у вас нет [группы ресурсов](../azure-resource-manager/management/manage-resource-groups-portal.md), можно создать новую.
 
 :::image type="content" source="./media/service-bus-integrate-with-rabbitmq/create-namespace.png" alt-text="Создание пространства имен":::
 
@@ -76,7 +76,7 @@ rabbitmq-plugins enable rabbitmq_shovel_management
 
 ## <a name="connecting-rabbitmq-to-azure-service-bus"></a>Подключение RabbitMQ к служебной шине Azure
 
-Вам потребуется создать [политику общего доступа](https://docs.microsoft.com/azure/storage/common/storage-sas-overview) (SAS) для своей очереди, чтобы RabbitMQ мог публиковать в ней сообщения. Политика SAS позволяет указать, какая внешняя сторона может делать с вашим ресурсом. Идея заключается в том, что RabbitMQ может отсылать сообщения, но не прослушивать очередь или управлять ею.
+Вам потребуется создать [политику общего доступа](../storage/common/storage-sas-overview.md) (SAS) для своей очереди, чтобы RabbitMQ мог публиковать в ней сообщения. Политика SAS позволяет указать, какая внешняя сторона может делать с вашим ресурсом. Идея заключается в том, что RabbitMQ может отсылать сообщения, но не прослушивать очередь или управлять ею.
 
 :::image type="content" source="./media/service-bus-integrate-with-rabbitmq/create-sas-policy.png" alt-text="Добавление политики SAS":::
 

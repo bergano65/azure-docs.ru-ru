@@ -2,13 +2,13 @@
 title: Service Fabric обновление приложения с помощью PowerShell
 description: В этой статье рассматривается процесс развертывания приложения Service Fabric, изменения кода и развертывания обновления с помощью PowerShell.
 ms.topic: conceptual
-ms.date: 2/23/2018
-ms.openlocfilehash: d277df6959ea3e7985514f81faed520f163c6012
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 8/5/2020
+ms.openlocfilehash: 2bd74d071d5dfb3385d4203704eacd5ba685917e
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82195890"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88064593"
 ---
 # <a name="service-fabric-application-upgrade-using-powershell"></a>Обновление приложения Service Fabric с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -24,6 +24,21 @@ ms.locfileid: "82195890"
 Отслеживаемое обновление приложения может выполняться с использованием управляемых или собственных API, PowerShell, Azure CLI, Java или REST. Инструкции по обновлению с помощью Visual Studio см. в статье [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md).
 
 Service Fabric выполняет отслеживаемое последовательное обновление, позволяя администратору приложений настраивать политики оценки работоспособности, которые Service Fabric будет использовать для определения работоспособности приложения. Кроме того, администратор может настроить действие, выполняемое при сбое оценки работоспособности (например, выполнение автоматического отката). В этом разделе рассматривается наблюдаемое обновление одного из примеров пакета SDK, использующего PowerShell. 
+
+> [!NOTE]
+> [Аппликатионпараметер](https://docs.microsoft.com/dotnet/api/system.fabric.description.applicationdescription.applicationparameters?view=azure-dotnet#System_Fabric_Description_ApplicationDescription_ApplicationParameters)s не сохраняются в процессе обновления приложения. Чтобы сохранить текущие параметры приложения, пользователь должен сначала получить параметры и передать их в вызов API обновления, как показано ниже:
+```powershell
+$myApplication = Get-ServiceFabricApplication -ApplicationName fabric:/myApplication
+$appParamCollection = $myApplication.ApplicationParameters
+
+$applicationParameterMap = @{}
+foreach ($pair in $appParamCollection)
+{
+    $applicationParameterMap.Add($pair.Name, $pair.Value);
+}
+
+Start-ServiceFabricApplicationUpgrade -ApplicationName fabric:/myApplication -ApplicationTypeVersion 2.0.0 -ApplicationParameter $applicationParameterMap -Monitored -FailureAction Rollback
+```
 
 ## <a name="step-1-build-and-deploy-the-visual-objects-sample"></a>Шаг 1. Построение и развертывание образца визуальных объектов
 Создайте и опубликуйте приложение. Для этого щелкните правой кнопкой мыши проект приложения **VisualObjectsApplication** и выберите **Опубликовать**.  Дополнительные сведения см. в [руководстве по обновлению приложений Service Fabric](service-fabric-application-upgrade-tutorial.md).  Или разверните приложение с помощью PowerShell.

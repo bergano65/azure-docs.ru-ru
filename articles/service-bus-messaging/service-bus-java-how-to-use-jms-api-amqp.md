@@ -4,12 +4,12 @@ description: Как использовать службу сообщений Jav
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 935579bdcb142969d9baf7ca24cf03268620bf46
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: be6b5de7946fc54ab58087fccabed9f5ed09251d
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87799690"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88065783"
 ---
 # <a name="use-the-java-message-service-jms-with-azure-service-bus-and-amqp-10"></a>Использование службы сообщений Java (JMS) с служебной шиной Azure и AMQP 1,0
 
@@ -29,7 +29,7 @@ AMQP 1.0 — это эффективный и надежный протокол 
 В этом учебнике предполагается, что у вас уже есть пространство имен служебной шины, содержащее очередь с именем `basicqueue` . Если этого не сделать, то можно [создать пространство имен и очередь](service-bus-create-namespace-portal.md) с помощью [портал Azure](https://portal.azure.com). Дополнительные сведения о создании пространства имен и очередей служебной шины см. в статье [Приступая к работе с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md).
 
 > [!NOTE]
-> Секционированные очереди и разделы также поддерживают AMQP. Дополнительные сведения см. в статьях [Секционированные сущности обмена сообщениями](service-bus-partitioning.md) и [Поддержка AMQP 1.0 для секционированных очередей и разделов служебной шины](service-bus-partitioned-queues-and-topics-amqp-overview.md).
+> Секционированные очереди и разделы также поддерживают AMQP. Дополнительные сведения см. в статьях [Секционированные сущности обмена сообщениями](service-bus-partitioning.md) и [Поддержка AMQP 1.0 для секционированных очередей и разделов служебной шины](./service-bus-amqp-protocol-guide.md).
 > 
 > 
 
@@ -294,7 +294,7 @@ public class JmsQueueQuickstart {
 }
 ```
 
-### <a name="run-the-application"></a>Запуск приложения
+### <a name="run-the-application"></a>Выполнение приложения
 Передайте **Строку подключения** из политики совместного доступа для запуска приложения.
 Ниже приведены следующие данные запуска приложения.
 
@@ -380,7 +380,7 @@ MODIFIED_FAILED_UNDELIVERABLE = 5; -> Defer()
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Поддержка AMQP 1.0 в служебной шине](service-bus-amqp-overview.md)
-* [Как использовать AMQP 1.0 с API .NET служебной шины](service-bus-dotnet-advanced-message-queuing.md)
+* [Как использовать AMQP 1.0 с API .NET служебной шины](./service-bus-amqp-dotnet.md)
 * [Инструкции для разработчиков служебной шины AMQP 1,0](service-bus-amqp-dotnet.md)
 * [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)
 * [Центр разработчиков Java](https://azure.microsoft.com/develop/java/)

@@ -128,6 +128,8 @@
           href: move-across-regions-internal-load-balancer-portal.md
         - name: "Внутренний балансировщик нагрузки\_— PowerShell"
           href: move-across-regions-internal-load-balancer-powershell.md
+    - name: Конфигурация подсистемы балансировки нагрузки только для исходящего трафика
+      href: egress-only.md
 - name: Диагностика
   items:
     - name: Устранение неполадок Azure Load Balancer

@@ -3,12 +3,12 @@ title: Управление доступом к служебной шине Azur
 description: Обзор управления доступом к служебной шине с помощью подписанных URL-адресов, а также сведения об авторизации SAS в служебной шине Azure.
 ms.topic: article
 ms.date: 07/30/2020
-ms.openlocfilehash: b75f1ec3a1aac36124287523140c24d468329aaa
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 8e48858fd76bcf4667cfff1237f49597a477b3e8
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87460700"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88066191"
 ---
 # <a name="service-bus-access-control-with-shared-access-signatures"></a>Управление доступом к служебной шине с помощью подписанных URL-адресов
 
@@ -27,7 +27,7 @@ ms.locfileid: "87460700"
 
 Подписанные URL-адреса — это механизм авторизации на основе утверждений, использующий простые маркеры. При использовании SAS ключи никогда не передаются по сети. Ключи криптографически подписывают сведения, которые впоследствии будут проверены службой. SAS можно использовать так же, как и имя пользователя и пароль, где клиент немедленно получает имя и соответствующий ключ правила авторизации. Кроме того, SAS можно использовать подобно федеративной модели безопасности, где клиент получает подписанный маркер доступа с ограниченным временем действия из службы маркеров безопасности, не используя ключ для подписи.
 
-Проверка подлинности SAS в служебной шине выполняется с помощью именованных [правил авторизации общего доступа](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule) со связанными правами доступа и пары первичного и вторичного криптографических ключей. Ключи представляют собой 256-разрядные значения в кодировке Base64. Вы можете настроить правила на уровне пространства имен в [ретрансляторах](../service-bus-relay/relay-what-is-it.md), [очередях](service-bus-messaging-overview.md#queues) и [разделах](service-bus-messaging-overview.md#topics) служебной шины.
+Проверка подлинности SAS в служебной шине выполняется с помощью именованных [правил авторизации общего доступа](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule) со связанными правами доступа и пары первичного и вторичного криптографических ключей. Ключи представляют собой 256-разрядные значения в кодировке Base64. Вы можете настроить правила на уровне пространства имен в [ретрансляторах](../azure-relay/relay-what-is-it.md), [очередях](service-bus-messaging-overview.md#queues) и [разделах](service-bus-messaging-overview.md#topics) служебной шины.
 
 Маркер [подписанного URL-адреса](/dotnet/api/microsoft.servicebus.sharedaccesssignaturetokenprovider) содержит имя выбранного правила авторизации, универсальный код ресурса (URI), к которому запрашивается доступ, срок действия и криптографическую подпись HMAC-SHA256, вычисленную на основе этих полей с помощью первичного или вторичного криптографического ключа выбранного правила авторизации.
 
@@ -84,7 +84,7 @@ SHA-256('https://<yournamespace>.servicebus.windows.net/'+'\n'+ 1438205742)
 
 URI ресурса — это полный URI ресурса служебной шины, к которому запрашивается доступ. Например, `http://<namespace>.servicebus.windows.net/<entityPath>` или `sb://<namespace>.servicebus.windows.net/<entityPath>`. Вся строка будет выглядеть так: `http://contoso.servicebus.windows.net/contosoTopics/T1/Subscriptions/S3`. 
 
-**URI должен быть [закодирован в процентах](https://msdn.microsoft.com/library/4fkewx0t.aspx).**
+**URI должен быть [закодирован в процентах](/dotnet/api/system.web.httputility.urlencode?view=netcore-3.1).**
 
 Правило авторизации общего доступа, используемое для подписи, необходимо настроить для сущности, указанной данным URI или одной из ее иерархических родительских сущностей. Например, в предыдущем примере это — `http://contoso.servicebus.windows.net/contosoTopics/T1` или `http://contoso.servicebus.windows.net`.
 

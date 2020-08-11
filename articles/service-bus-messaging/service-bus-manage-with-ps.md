@@ -3,12 +3,12 @@ title: Управление ресурсами служебной шины Azure
 description: В этой статье объясняется, как использовать модуль Azure PowerShell для создания сущностей служебной шины и управления ими (пространства имен, очереди, разделы, подписки).
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 7ff79d8cf2aac09a0b8d2f04ade0b3d1d9b2e74e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b6439deb2b86c2ea5b50fe3bdbad89a0875b2acc
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85341749"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88065749"
 ---
 # <a name="use-powershell-to-manage-service-bus-resources"></a>Управление ресурсами служебной шины с помощью модуля PowerShell
 
@@ -18,7 +18,7 @@ Microsoft Azure PowerShell — это среда сценариев, котор
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы проверьте следующие необходимые компоненты:
 
@@ -151,7 +151,7 @@ Set-AzServiceBusQueue -ResourceGroup $ResGrpName -NamespaceName $Namespace -Queu
 
 Можно использовать [модуль PowerShell для служебной шины](/powershell/module/az.servicebus) для подготовки других сущностей, таких как разделы и подписки. Эти командлеты синтаксически аналогичны командлетам создания очередей, показанным в предыдущем разделе.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - С полной документацией по модулю Resource Manager PowerShell для служебной шины можно ознакомиться [здесь](/powershell/module/az.servicebus). На этой странице перечислены все доступные командлеты.
 - Дополнительные сведения об использовании шаблонов Azure Resource Manager см. в статье [Создание ресурсов служебной шины с использованием шаблонов Azure Resource Manager](service-bus-resource-manager-overview.md).
@@ -159,8 +159,8 @@ Set-AzServiceBusQueue -ResourceGroup $ResGrpName -NamespaceName $Namespace -Queu
 
 Существуют альтернативные способы управления сущностями служебной шины, как описано в следующих блогах.
 
-* [Как создать запросы, разделы и подписки Service Bus с помощью сценария PowerShell](https://docs.microsoft.com/archive/blogs/paolos/how-to-create-service-bus-queues-topics-and-subscriptions-using-a-powershell-script)
-* [Как создать пространство имен и концентратор событий служебной шины с помощью сценария PowerShell](https://docs.microsoft.com/archive/blogs/paolos/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script)
+* [Как создать запросы, разделы и подписки Service Bus с помощью сценария PowerShell](/archive/blogs/paolos/how-to-create-service-bus-queues-topics-and-subscriptions-using-a-powershell-script)
+* [Как создать пространство имен и концентратор событий служебной шины с помощью сценария PowerShell](/archive/blogs/paolos/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script)
 * [Сценарии PowerShell для Service Bus](https://code.msdn.microsoft.com/Service-Bus-PowerShell-a46b7059)
 
 <!--Anchors-->

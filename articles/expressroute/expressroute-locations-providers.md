@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: e066f810dca9c1b824c5eb30bb9f938df856a819
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 6fb065e48b744a31bcce2ca3249d0d6bd0216049
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88002699"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88066429"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -88,7 +88,7 @@ ms.locfileid: "88002699"
 | **Канберра 2** | [CDC](https://cdcdatacentres.com.au/content/about-cdc) | 1 | Центральная Австралия 2| 10G, 100G | CDC |
 | **Кейптаун** | [Teraco CT1](https://www.teraco.co.za/data-centre-locations/cape-town/) | 3 | Западная часть ЮАР | 10G | BCX, Internet Solutions — Cloud Connect, Liquid Telecom, Teraco |
 | **Ченнай** | Tata Communications | 2 | Южная Индия | 10G | Global CloudXchange (GCX), SIFY, Tata Communications |
-| **Chennai2** | Airtel | 2 | Южная Индия | Недоступно | Airtel |
+| **Chennai2** | Airtel | 2 | Южная Индия | 10G | Airtel |
 | **Чикаго** | [Equinix CH1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/chicago-data-centers/ch1/) | 1 | Центрально-северная часть США | 10G, 100G | Aryaka Networks, AT&T NetBond, CenturyLink Cloud Connect, Cologix, Colt, Comcast, Coresite, Equinix, InterCloud, Internet2, Level 3 Communications, Megaport, PacketFabric, PCCW Global Limited, Sprint, Telia Carrier, Verizon, Zayo |
 | **Копенгаген** | [Interxion CPH1](https://www.interxion.com/Locations/copenhagen/) | 1 | Недоступно | 10G | Interxion |
 | **Даллас** | [Equinix DA3](https://www.equinix.com/locations/americas-colocation/united-states-colocation/dallas-data-centers/da3/) | 1 | Недоступно | 10G, 100G | Aryaka Networks, AT&T NetBond, Cologix, Equinix, Internet2, Level 3 Communications, Megaport, Neutrona Networks, Telmex Uninet, Telia Carrier, Transtelco, Verizon, Zayo|
@@ -115,7 +115,7 @@ ms.locfileid: "88002699"
 | **Миннеаполисе** | [Кологикс MIN1](https://www.cologix.com/data-centers/minneapolis/min1/) | 1 | Недоступно | 10G, 100G | Cologix |
 | **Монреаль** | [Cologix MTL3](https://www.cologix.com/data-centers/montreal/mtl3/) | 1 | Недоступно | 10G, 100G | Bell Canada, Cologix, Megaport, Telus, Zayo |
 | **Мумбай** | Tata Communications | 2 | Западная Индия | 10G | DE-ЦИКС, Global Клаудксчанже (ГККС), зависимость ЖИО, Сифи, Tata Communications, Verizon |
-| **Мумбаи 2** | Airtel | 2 | Западная Индия | Недоступно | Airtel, Sify, Vodafone Idea |
+| **Мумбаи 2** | Airtel | 2 | Западная Индия | 10G | Airtel, Sify, Vodafone Idea |
 | **Мюнхен** | [EdgeConneX](https://www.edgeconnex.com/locations/europe/munich/) | 1 | Недоступно | 10G | DE-CIX |
 | **Нью-Йорк** | [Equinix NY9](https://www.equinix.com/locations/americas-colocation/united-states-colocation/new-york-data-centers/ny9/) | 1 | Недоступно | 10G, 100G | CenturyLink Cloud Connect, Colt, Коресите, DE-ЦИКС, Equinix, recloud, Orange, пакет, Zayo |
 | **Ньюпорт (Уэльс)** | [Next Generation Data](https://www.nextgenerationdata.co.uk) | 1 | западная часть Соединенного Королевства | Недоступно | British Telecom, Colt, Level 3 Communications, Next Generation Data |

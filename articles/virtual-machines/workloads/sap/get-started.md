@@ -13,15 +13,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 08/04/2020
+ms.date: 08/10/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a882e3a21d5e1e99f6f9154fd2162071752b4499
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 6151bb915298cc4f771b6d49628f39c8d27b62b4
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87800354"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88064372"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и выполнения сценариев рабочей нагрузки SAP
 
@@ -45,6 +45,7 @@ Azure для SAP HANA — это предложение, выделяющее A
     - [Поддерживаемые сценарии для крупных экземпляров HANA](./hana-supported-scenario.md)
 - Информацию о том, что такое службы Azure, какие типы виртуальных машин и службы хранилища Azure доступны в разных регионах Azure, см. на сайте [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). 
 - Работают ли кадры высокой доступности сторонних производителей, помимо Windows и Pacemaker? Ознакомьтесь с [примечаниями о поддержке SAP](https://launchpad.support.sap.com/#/notes/1928533) в нижней части #1928533
+- Какую службу хранилища Azure лучше использовать в моем сценарии? Чтение [типов хранилища Azure для рабочей нагрузки SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide-storage)
 
  
 ## <a name="sap-hana-on-azure-large-instances"></a>SAP HANA в Azure (крупные экземпляры)
@@ -59,23 +60,7 @@ Azure для SAP HANA — это предложение, выделяющее A
  
 
 ## <a name="sap-netweaver-deployed-on-azure-virtual-machines"></a>Развертывание SAP NetWeaver на виртуальных машинах Azure
-В этом разделе перечислены документы по планированию и развертыванию SAP NetWeaver и Business One в Azure. В этих документах основное внимание уделяется обзору и использованию баз данных, помимо HANA, с рабочей нагрузкой SAP в Azure. Кроме того, информацию о высокой доступности HANA в Azure содержат следующие документы и статьи.
-
-- [Руководство по планированию Azure](./planning-guide.md). 
-- [Использование SAP Business One на виртуальных машинах Azure](./business-one-azure.md)
-- [Защита многоуровневого развертывания приложения SAP NetWeaver с помощью Site Recovery](../../../site-recovery/site-recovery-sap.md)
-- [Соединитель SAP LaMa для Azure](./lama-installation.md)
-
-Информацию о базах данных, кроме HANA, с рабочей нагрузкой SAP в Azure см. в следующих статьях.
-
-- [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](./dbms_guide_general.md)
-- [SAP NetWeaver на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server](./dbms_guide_sqlserver.md)
-- [Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД Oracle](./dbms_guide_oracle.md)
-- [Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД IBM DB2](./dbms_guide_ibm.md)
-- [Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД SAP ASE](./dbms_guide_sapase.md)
-- [Развертывание SAP MaxDB, liveCache и сервера содержимого на виртуальных машинах Azure](./dbms_guide_maxdb.md)
-
-Информацию о базах данных SAP HANA в Azure см. в разделе "SAP HANA на виртуальных машинах Azure".
+В этом разделе перечислены документы по планированию и развертыванию SAP NetWeaver и Business One в Azure. В этих документах основное внимание уделяется обзору и использованию баз данных, помимо HANA, с рабочей нагрузкой SAP в Azure. Документы и статьи для обеспечения высокой доступности также основаны на высоком уровне доступности HANA в Azure.
 
 Информацию о высокой доступности рабочей нагрузки SAP в Azure см. в следующем документе:
 
@@ -104,6 +89,7 @@ Azure для SAP HANA — это предложение, выделяющее A
 
 ## <a name="change-log"></a>Журнал изменений
 
+- 08/10/2020. Общие сведения о затратах SAP HANA конфигурации хранилища в [SAP HANA конфигурациях хранилища виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage) и внесении некоторых обновлений в [рабочие нагрузки SAP в Azure: контрольный список для планирования и развертывания](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-deployment-checklist)
 - 08/04/2020: измените [настройку Pacemaker в SLES в Azure](./high-availability-guide-suse-pacemaker.md) и [настроив Pacemaker на RHEL в Azure](./high-availability-guide-rhel-pacemaker.md) , чтобы подчеркнуть важность надежного разрешения имен для кластеров Pacemaker.
 - 08/04/2020: изменение в [SAP NW ha в вфкс с общей папкой](./sap-high-availability-installation-wsfc-file-share.md), [SAP NW HA на вфкс с общим диском](./sap-high-availability-installation-wsfc-shared-disk.md), [HA для SAP NW на виртуальных машинах Azure](./high-availability-guide.md), [HA для SAP NW на виртуальных машинах Azure в SLES](./high-availability-guide-suse.md), высокая доступность для SAP NW [на виртуальных машинах Azure в SLES с использовании](./high-availability-guide-suse-netapp-files.md), [HA для SAP NW на виртуальных машинах Azure по SLES Multi-SID](./high-availability-guide-suse-multi-sid.md), [высокий уровень доступности для SAP NetWeaver на](./high-availability-guide-rhel.md)виртуальных машинах Azure в RHEL, HA для SAP NW на виртуальных машинах Azure в [RHEL с использовании](./high-availability-guide-rhel-netapp-files.md) и [HA для SAP NW на виртуальных машинах Azure в RHEL Multi-ИД безопасности](./high-availability-guide-rhel-multi-sid.md) для уточнения использования параметра`enque/encni/set_so_keepalive`
 - 07/23/2020: добавлена статья " [Сохранение в SAP HANA (крупные экземпляры) с резервированием Azure](../../../cost-management-billing/reservations/prepay-hana-large-instances-reserved-capacity.md) ", объясняющая, что необходимо знать перед покупкой SAP HANA (крупные экземпляры) резервирования и о том, как выполнить покупку.

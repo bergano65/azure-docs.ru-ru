@@ -3,12 +3,12 @@ title: Устранение ошибок AMQP в служебной шине Azu
 description: Содержит список ошибок AMQP, которые могут возникнуть при использовании служебной шины Azure, и причины этих ошибок.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 9680e930dd8c1cb8cbd062f029af9d674d62c0e2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 88b10940e0b910f50e6ccf7f8c53134fa7f0ba2f
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85337816"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88064355"
 ---
 # <a name="amqp-errors-in-azure-service-bus"></a>Ошибки AMQP в служебной шине Azure
 В этой статье приведены некоторые ошибки, которые вы получаете при использовании AMQP с служебной шиной Azure. Все это стандартное поведение службы. Вы можете избежать их, сделав вызов отправки и получения для соединения или ссылки, который автоматически воссоздает соединение или связь.
@@ -34,7 +34,7 @@ Error{condition=amqp:connection:forced, description='The connection was inactive
 Error{condition=amqp:connection:forced, description='The connection was inactive for more than the allowed 60000 milliseconds and is closed by container 'LinkTracker'. TrackingId:0000000000000000000000000000000000000_G21, SystemTracker:gateway5, Timestamp:2019-03-06T18:41:51', info=null}
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о служебной шине и AMQP см. по следующим ссылкам.
 
@@ -44,4 +44,4 @@ Error{condition=amqp:connection:forced, description='The connection was inactive
 
 [Протокол AMQP служебной шины — обзор]: service-bus-amqp-overview.md
 [Руководство по использованию протокола AMQP 1.0]: service-bus-amqp-protocol-guide.md
-[Протокол AMQP служебной шины для Windows Server]: https://docs.microsoft.com/previous-versions/service-bus-archive/dn282144(v=azure.100)
+[Протокол AMQP служебной шины для Windows Server]: /previous-versions/service-bus-archive/dn282144(v=azure.100)

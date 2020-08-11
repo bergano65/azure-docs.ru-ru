@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ae598fb9e4018369230de5fadcf173a3df9fb4c
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 09050bc6895076994baf1c98c65aa87672a5652e
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87551699"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88066072"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -414,7 +414,7 @@ ms.locfileid: "87551699"
 
 В | Может
 --- | ---
-[Центр безопасности Microsoft 365](https://protection.office.com) | Отслеживает политики, связанные с безопасностью во всех службах Microsoft 365.<br>Управляет угрозами безопасности и оповещениями.<br>Отображение отчетов
+[Центр безопасности Microsoft 365](https://protection.office.com) | Отслеживает политики, связанные с безопасностью во всех службах Microsoft 365.<br>Управляет угрозами безопасности и оповещениями.<br>Просмотр отчетов
 Центр защиты идентификации | Все разрешения роли читателя сведений о безопасности.<br>А также возможность выполнять все операции центра защиты идентификации, кроме сброса паролей.
 [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Все разрешения роли читателя сведений о безопасности.<br>**Не может** управлять членством в роли или параметрами ролей Azure AD.
 [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Управление политиками безопасности.<br>Просмотр, исследование и реагирование на угрозы безопасности.<br>Просмотр отчетов
@@ -448,7 +448,7 @@ EDR и ATP в Защитнике Windows | Все разрешения роли 
 
 В | Может
 --- | ---
-[Центр безопасности Microsoft 365](https://protection.office.com) | Просмотр политик связанных с безопасностью во всех службах Microsoft 365.<br>Просмотр угроз безопасности и оповещений.<br>Отображение отчетов
+[Центр безопасности Microsoft 365](https://protection.office.com) | Просмотр политик связанных с безопасностью во всех службах Microsoft 365.<br>Просмотр угроз безопасности и оповещений.<br>Просмотр отчетов
 Центр защиты идентификации | Чтение всех отчетов о безопасности и сведений о параметрах функций безопасности<br><ul><li>Защита от нежелательной почты<li>Шифрование<li>Защита от потери данных<li>Защита от вредоносных программ<li>Дополнительная защита от угроз<li>Защита от фишинга<li>Правила обработки почты
 [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Имеет доступ только для чтения ко всем сведениям, отображаемым в Azure AD Privileged Identity Management: политикам и отчетам по назначению ролей Azure AD и проверке безопасности.<br>**Не может** регистрироваться в службе Azure AD Privileged Identity Management или вносить в нее какие-либо изменения. Используя портал Privileged Identity Management или PowerShell, кто-то в этой роли может активировать дополнительные роли (например, глобальный администратор или администратор привилегированных ролей), если пользователь является допустимым для них.
 [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Просмотр политик безопасности<br>Просмотр и анализ угроз безопасности.<br>Просмотр отчетов
@@ -545,11 +545,11 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/appRoleAssignments/update | Изменение объектов appRoleAssignment в Azure Active Directory. |
 | microsoft.directory/appRoleAssignments/delete | Удаление объектов appRoleAssignment в Azure Active Directory. |
 | microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| microsoft.directory/connectorGroups/everything/read | Чтение свойств группы соединителей для прокси приложения в Azure Active Directory. |
-| microsoft.directory/connectorGroups/everything/update | Изменение всех свойств группы соединителей для прокси приложения в Azure Active Directory. |
+| Microsoft. Directory/Коннекторграупс/Аллпропертиес/Read | Чтение свойств группы соединителей для прокси приложения в Azure Active Directory. |
+| Microsoft. Directory/Коннекторграупс/Аллпропертиес/Update | Изменение всех свойств группы соединителей для прокси приложения в Azure Active Directory. |
 | microsoft.directory/connectorGroups/create | Создание групп соединителей для прокси приложения в Azure Active Directory. |
 | microsoft.directory/connectorGroups/delete | Удаление групп соединителей для прокси приложения в Azure Active Directory. |
-| microsoft.directory/connectors/everything/read | Чтение всех свойств соединителей для прокси приложения в Azure Active Directory. |
+| Microsoft. Directory/Connectors/Аллпропертиес/Read | Чтение всех свойств соединителей для прокси приложения в Azure Active Directory. |
 | microsoft.directory/connectors/create | Создание соединителей для прокси приложения в Azure Active Directory. |
 | microsoft.directory/policies/applicationConfiguration/basic/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
 | microsoft.directory/policies/applicationConfiguration/basic/update | Обновление свойства applicationConfiguration в Azure Active Directory. |
@@ -1426,7 +1426,6 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.office365.messageCenter/messages/read | Чтение сообщений в microsoft.office365.messageCenter. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
-| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
 | microsoft.office365.userCommunication/allEntities/allTasks | Чтение сообщений о новых возможностях и изменение их видимости. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 

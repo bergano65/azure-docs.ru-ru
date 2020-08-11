@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 04/20/2020
 ms.author: apimpm
-ms.openlocfilehash: 17c92558ebef2eee0a4daead45d16a295cedd1bb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 427ebfe865002612be2f9aeb9db416f5c2f41e52
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82790485"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88065460"
 ---
 # <a name="how-to-deploy-an-azure-api-management-service-instance-to-multiple-azure-regions"></a>Развертывание экземпляра службы управления Azure API в различных регионах Azure
 
@@ -28,6 +28,9 @@ ms.locfileid: "82790485"
 
 > [!NOTE]
 > Во все регионы развертываются только компоненты шлюза управления API. Компонент управления службами и портал разработчика размещаются только в основном регионе. Поэтому в случае сбоя основного региона доступ к порталу разработчика и возможность изменения конфигурации (например, добавление API-интерфейсов, применение политик) будут ограничены до тех пор, пока основной регион не вернется в режим "в сети". В то время как основной регион доступен в автономном режиме, вторичные регионы продолжат обслуживать трафик API, используя последнюю доступную конфигурацию.
+
+>[!IMPORTANT]
+> Функция, позволяющая хранить данные клиентов в одном регионе, в настоящее время доступна только в регионе Юго-Восточной Азии (Сингапур) Азиатско-Тихоокеанский регион Geo. Для всех других регионов данные клиента хранятся в географическом виде.
 
 [!INCLUDE [premium.md](../../includes/api-management-availability-premium.md)]
 

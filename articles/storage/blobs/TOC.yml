@@ -158,8 +158,10 @@
           items:
             - name: Управление версиями
               href: versioning-overview.md
-            - name: Обратимое удаление
-              href: soft-delete-overview.md
+            - name: Обратимое удаление для больших двоичных объектов
+              href: soft-delete-blob-overview.md
+            - name: Обратимое удаление для контейнеров
+              href: soft-delete-container-overview.md
             - name: Моментальные снимки
               href: snapshots-overview.md
             - name: Канал изменений
@@ -423,8 +425,10 @@
           items:
             - name: Включение управления версиями BLOB-объектов
               href: versioning-enable.md
-            - name: Включение обратимого удаления
-              href: soft-delete-enable.md
+            - name: Включение обратимого удаления для больших двоичных объектов
+              href: soft-delete-blob-enable.md
+            - name: Включение обратимого удаления для контейнеров
+              href: soft-delete-container-enable.md
             - name: Создание моментальных снимков (.NET)
               href: snapshots-manage-dotnet.md
             - name: Обработка журналов канала изменений
