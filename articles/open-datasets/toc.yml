@@ -15,7 +15,7 @@
 - name: Практические руководства
   items:
     - name: Наборы данных в Машинном обучении Azure
-      href: ../machine-learning/how-to-create-register-datasets.md?toc=/azure/open-datasets/toc.json&bc=/azure/open-datasets/breadcrumb/toc.json
+      href: how-to-create-dataset-from-open-dataset.md
 - name: Примеры
   displayName: 'example, examples, Jupyter, azure notebooks, python, notebook, GitHub'
   href: samples.md

@@ -103,6 +103,7 @@
           href: functions-bindings-example.md
         - name: Регистрация расширений привязки
           href: functions-bindings-register.md
+          displayName: 'bundles, extension bundles'
         - name: Шаблоны выражений привязок
           href: functions-bindings-expressions-patterns.md
         - name: Использование возвращаемых значений привязок
@@ -272,8 +273,6 @@
           displayName: 'app setting, application setting'
         - name: Установка версии среды выполнения
           href: set-runtime-version.md
-        - name: Регистрация расширения вручную
-          href: install-update-binding-extensions-manual.md
         - name: Отключение функции
           href: disable-function.md
         - name: Геоизбыточное аварийное восстановление

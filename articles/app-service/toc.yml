@@ -57,7 +57,7 @@
       href: tutorial-send-email.md
 - name: Примеры
   items:
-    - name: Azure CLI;
+    - name: Azure CLI
       href: samples-cli.md
     - name: Azure PowerShell
       href: samples-powershell.md
@@ -66,6 +66,8 @@
     - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-samples.md
+    - name: Terraform
+      href: samples-terraform.md
 - name: Основные понятия
   items:
     - name: Планы службы приложений
@@ -247,7 +249,7 @@
           href: webjobs-sdk-how-to.md
 - name: Справочник
   items:
-    - name: Azure CLI;
+    - name: Azure CLI
       href: /cli/azure/appservice
     - name: Azure PowerShell
       href: /powershell/module/az.websites/#app_service
