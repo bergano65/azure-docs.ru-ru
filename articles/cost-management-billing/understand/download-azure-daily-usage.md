@@ -55,7 +55,7 @@ ms.locfileid: "87460513"
 3. Выберите профиль выставления счетов. В зависимости от уровня вашего доступа вам, возможно, сначала потребуется выбрать учетную запись выставления счетов.
 4. В области **Обзор** найдите ссылки для скачивания под последними выплатами.
 5. Выберите **Download usage and prices** (Скачать сведения об использовании и ценах).  
-    :::image type="content" source="./media/download-azure-daily-usage/open-usage01.png" alt-text="Снимок экрана, показывающий загрузку из раздела "Обзор"" lightbox="./media/download-azure-daily-usage/open-usage01.png" :::
+    :::image type="content" source="./media/download-azure-daily-usage/open-usage01.png" alt-text="Снимок экрана, показывающий загрузку из раздела Обзор" lightbox="./media/download-azure-daily-usage/open-usage01.png" :::
 
 ## <a name="check-your-billing-account-type"></a>Проверка типа учетной записи выставления счетов
 [!INCLUDE [billing-check-account-type](../../../includes/billing-check-account-type.md)]

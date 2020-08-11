@@ -89,7 +89,7 @@ ms.locfileid: "87462452"
 
 4. На вкладке **Отзыв и создание** выберите **Создать**.   
     
-    :::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/create-standard-internal-load-balancer.png" alt-text="Создание внутренней подсистемы балансировки нагрузки уровня "Стандартный"" border="true":::
+    :::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/create-standard-internal-load-balancer.png" alt-text="Создание внутренней подсистемы балансировки нагрузки уровня Стандартный" border="true":::
  
 ## <a name="create-load-balancer-resources"></a>Создание ресурсов подсистемы балансировки нагрузки
 
@@ -293,7 +293,7 @@ ms.locfileid: "87462452"
 
 4. На вкладке **Отзыв и создание** выберите **Создать**.   
 
-    :::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/create-basic-internal-load-balancer.png" alt-text="Создание внутренней подсистемы балансировки нагрузки уровня "Стандартный"" border="true":::
+    :::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/create-basic-internal-load-balancer.png" alt-text="Создание внутренней подсистемы балансировки нагрузки уровня Стандартный" border="true":::
 
 ## <a name="create-load-balancer-resources"></a>Создание ресурсов подсистемы балансировки нагрузки
 
@@ -573,7 +573,7 @@ ms.locfileid: "87462452"
 
 4. Скопируйте частный IP-адрес и вставьте его в адресную строку этого браузера. В браузере отобразится страница по умолчанию веб-сервера IIS.
 
-    :::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/load-balancer-test.png" alt-text="Создание внутренней подсистемы балансировки нагрузки уровня "Стандартный"" border="true":::
+    :::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/load-balancer-test.png" alt-text="Создание внутренней подсистемы балансировки нагрузки уровня Стандартный" border="true":::
    
 Чтобы подсистема балансировки нагрузки распределяла трафик между всеми тремя виртуальными машинами, вы можете настроить стандартную страницу веб-сервера IIS каждой из них, а затем принудительно обновить браузер с клиентского компьютера.
 
