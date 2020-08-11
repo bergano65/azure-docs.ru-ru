@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: weixu
-ms.openlocfilehash: fc22dea201ccd19c4e7bee92a1092b4ff50117db
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: f9670733f8aa040b87cec20ac28aacc636c04698
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134940"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056216"
 ---
 # <a name="real-time-conversation-transcription-preview"></a>Запись разговора в реальном времени (Предварительная версия)
 
@@ -37,7 +37,7 @@ API **конверсатионтранскрибер** для речевых с�
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Подписка на службу распознавания речи. Если у вас ее нет, вы можете [получить подписку на пробную версию речи](https://azure.microsoft.com/try/cognitive-services/) .
+Подписка на службу распознавания речи. Если у вас ее нет, можно создать [бесплатную учетную запись Azure](https://azure.microsoft.com/free/cognitive-services/) .
 
 ## <a name="create-voice-signatures"></a>Создание подписок
 

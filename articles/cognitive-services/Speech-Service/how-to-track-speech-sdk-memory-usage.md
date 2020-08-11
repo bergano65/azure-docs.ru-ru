@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: rhurey
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: da5103317a2215aca68cec14ba8a0951258c9b89
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: a6be6ca00b2bc5d7b35fb71437809754f129df96
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75456435"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88054641"
 ---
 # <a name="how-to-track-speech-sdk-memory-usage"></a>Как отслеживание использования памяти пакетом SDK для речи
 
@@ -40,7 +40,7 @@ ms.locfileid: "75456435"
 
 Вы можете создать порог предупреждения и, если это пороговое значение превышено (при условии, что включено ведение журнала), в журнал записывается предупреждающее сообщение. Предупреждающее сообщение содержит дамп всех объектов в существовании вместе с их количеством. Эти сведения можно использовать для лучшего понимания проблем. 
 
-Чтобы включить пороговое значение предупреждения, оно должно быть задано для `SpeechConfig` объекта. Этот объект проверяется при создании нового распознавателя. В следующих примерах Предположим, что вы создали экземпляр с `SpeechConfig` именем: `config`
+Чтобы включить пороговое значение предупреждения, оно должно быть задано для `SpeechConfig` объекта. Этот объект проверяется при создании нового распознавателя. В следующих примерах Предположим, что вы создали экземпляр с `SpeechConfig` именем `config` :
 
 ::: zone pivot="programming-language-csharp"
 
@@ -69,7 +69,7 @@ config.setProperty("SPEECH-ObjectCountWarnThreshold", "10000");
 ::: zone pivot="programming-language-python"
 
 ```Python
-speech_config.set_property_by_name(“SPEECH-ObjectCountWarnThreshold", "10000")?
+speech_config.set_property_by_name("SPEECH-ObjectCountWarnThreshold", "10000")?
 ```
 
 ::: zone-end
@@ -102,7 +102,7 @@ class Microsoft::CognitiveServices::Speech::Impl::ISpxAudioConfig 0
 class Microsoft::CognitiveServices::Speech::Impl::ISpxSpeechConfig 0
 ```
 
-Чтобы включить пороговое значение ошибки, оно должно быть задано для `SpeechConfig` объекта. Этот объект проверяется при создании нового распознавателя. В следующих примерах Предположим, что вы создали экземпляр с `SpeechConfig` именем: `config`
+Чтобы включить пороговое значение ошибки, оно должно быть задано для `SpeechConfig` объекта. Этот объект проверяется при создании нового распознавателя. В следующих примерах Предположим, что вы создали экземпляр с `SpeechConfig` именем `config` :
 
 ::: zone pivot="programming-language-csharp"
 
@@ -131,7 +131,7 @@ config.setProperty("SPEECH-ObjectCountErrorThreshold", "10000");
 ::: zone pivot="programming-language-python"
 
 ```Python
-speech_config.set_property_by_name(“SPEECH-ObjectCountErrorThreshold", "10000")?
+speech_config.set_property_by_name("SPEECH-ObjectCountErrorThreshold", "10000")?
 ```
 
 ::: zone-end
@@ -145,9 +145,8 @@ speech_config.set_property_by_name(“SPEECH-ObjectCountErrorThreshold", "10000"
 ::: zone-end
 
 > [!TIP]
-> Значение этого свойства по умолчанию — это максимальное значение, зависящее от платформы `size_t` , для типа данных. Обычное распознавание будет использовать от 7 до 10 внутренних объектов.
+> Значение этого свойства по умолчанию — это максимальное значение, зависящее от платформы, для `size_t` типа данных. Обычное распознавание будет использовать от 7 до 10 внутренних объектов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Получите пробную подписку на службу распознавания речи](get-started.md)
-* [Узнайте, как распознать речь с помощью микрофона](quickstarts/speech-to-text-from-microphone.md)
+* [Дополнительные сведения о пакете SDK для распознавания речи](speech-sdk.md)

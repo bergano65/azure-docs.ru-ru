@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 091555bac780f3abc7089d6214d0f9a8cfbf98cd
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 08e236d798f700a3c48dd41ba61941bc0037d613
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86518442"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88055383"
 ---
 # <a name="using-the-location-condition-in-a-conditional-access-policy"></a>Использование условия расположения в политике условного доступа 
 
@@ -165,7 +165,7 @@ Azure Active Directory (Azure AD) в настоящее время не подд
 
 Клиентский IP-адрес можно также найти, щелкнув строку в отчете, а затем перейдя на вкладку "расположение" в разделе сведения о действии входа. 
 
-## <a name="what-you-should-know"></a>Необходимая информация
+## <a name="what-you-should-know"></a>Учитываемые аспекты
 
 ### <a name="when-is-a-location-evaluated"></a>Когда выполняется проверка расположения
 
@@ -190,7 +190,7 @@ Azure Active Directory (Azure AD) в настоящее время не подд
 
 Если используется прокси-сервер, размещенный в облаке, или решение VPN, при оценке политики Azure AD использует IP-адрес прокси-сервера. Заголовок X-Forwarded-For (XFF), содержащий общедоступный IP-адрес пользователей, не используется, так как нет подтверждения того, что он поступает из надежного источника, а значит может быть поддельным.
 
-При наличии облачного прокси-сервера можно использовать политику, требующую присоединенного к домену устройства, или внутреннее утверждение корпоративной сети из AD FS.
+Если используется облачный прокси-сервер, можно использовать политику, которая требует гибридного устройства, присоединенного к Azure AD, или утверждение внутренней корпоративной сети от AD FS.
 
 ### <a name="api-support-and-powershell"></a>Поддержка API и PowerShell
 

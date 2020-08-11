@@ -9,18 +9,18 @@ ms.date: 01/23/2020
 ms.author: normesta
 ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: 95fd62584ef73f3f2f198c84913652f460fc5b1a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 903413b6ca00600e15ac3af0a93b98a8d67a1c28
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84465547"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88053632"
 ---
 # <a name="map-a-custom-domain-to-an-azure-blob-storage-endpoint"></a>Сопоставьте личный домен с конечной точкой хранилища BLOB-объектов Azure
 
 Вы можете сопоставлять личный домен с конечной точкой службы BLOB-объектов или с конечной точкой для [статического сайта](storage-blob-static-website.md) . 
 
-[!INCLUDE [updated-for-az](../../../includes/storage-data-lake-gen2-support.md)]
+[!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 > [!NOTE] 
 > Это сопоставление работает только для поддоменов (например `www.contoso.com` ,). Если вы хотите, чтобы конечная точка веб-узла была доступна в корневом домене (например `contoso.com` ,), необходимо использовать Azure CDN. Инструкции см. в разделе о [сопоставлении пользовательского домена с включенным протоколом HTTPS](#enable-https) этой статьи. Так как вы переходите к этому разделу этой статьи, чтобы включить корневой домен личного домена, шаг в этом разделе для включения HTTPS является необязательным. 
@@ -326,6 +326,6 @@ ms.locfileid: "84465547"
 
    * [Цены и выставление счетов при использовании хранилища BLOB-объектов с Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-storage-custom-domain-https#http-to-https-redirection).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о размещении статических веб-сайтов в хранилище больших двоичных объектов Azure](storage-blob-static-website.md)

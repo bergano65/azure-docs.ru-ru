@@ -10,12 +10,12 @@ ms.date: 05/05/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 2085f0e8a148e27914b517f25e48894009592dd2
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 494c1fc1c1c91538240258ab0517c7ff79bdfa74
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87498605"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056539"
 ---
 # <a name="blob-versioning-preview"></a>Управление версиями BLOB-объектов (предварительная версия)
 
@@ -24,6 +24,8 @@ ms.locfileid: "87498605"
 Управление версиями BLOB-объектов включено в учетной записи хранения и применяется ко всем большим двоичным объектам в учетной записи хранения. После включения управления версиями BLOB-объектов для учетной записи хранения служба хранилища Azure автоматически сохраняет версии для каждого большого двоичного объекта в учетной записи хранения.
 
 Корпорация Майкрософт рекомендует использовать управление версиями BLOB-объектов для поддержки более ранних версий большого двоичного объекта для обеспечения высокой защиты данных. По возможности используйте управление версиями больших двоичных объектов вместо моментальных снимков BLOB-объектов для поддержки предыдущих версий. Моментальные снимки больших двоичных объектов предоставляют аналогичные функциональные возможности в том, что они поддерживают более ранние версии большого двоичного объекта, но моментальные снимки должны поддерживаться приложением вручную.
+
+Сведения о включении управления версиями BLOB-объектов см. в разделе [Включение управления версиями BLOB-объектов и управление ими](versioning-enable.md).
 
 > [!IMPORTANT]
 > Управление версиями BLOB-объектов не может помочь в восстановлении после случайного удаления учетной записи хранения или контейнера. Чтобы предотвратить случайное удаление учетной записи хранения, Настройте блокировку **CannotDelete** для ресурса учетной записи хранения. Дополнительные сведения о блокировке ресурсов Azure см. [в разделе Блокировка ресурсов для предотвращения непредвиденных изменений](../../azure-resource-manager/management/lock-resources.md).
@@ -204,7 +206,8 @@ ms.locfileid: "87498605"
 - Восточная Канада
 - Центральная Канада
 
-Эта предварительная версия не предназначена для использования в рабочей среде.
+> [!IMPORTANT]
+> Предварительный просмотр версий BLOB-объектов предназначен только для использования в рабочей среде. Соглашения об уровне обслуживания (SLA) для рабочих сред сейчас недоступны.
 
 Версия 2019-10-10 и более поздние версии REST API службы хранилища Azure поддерживают управление версиями BLOB-объектов.
 
@@ -226,7 +229,7 @@ ms.locfileid: "87498605"
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Чтобы зарегистрироваться в PowerShell, вызовите команду [Get-азпровидерфеатуре](/powershell/module/az.resources/get-azproviderfeature) .
+Чтобы зарегистрироваться в PowerShell, вызовите команду [Register-азпровидерфеатуре](/powershell/module/az.resources/register-azproviderfeature) .
 
 ```powershell
 # Register for blob versioning (preview)
@@ -242,8 +245,8 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.Storage
 Чтобы зарегистрироваться в Azure CLI, вызовите команду [AZ Feature Register](/cli/azure/feature#az-feature-register) .
 
 ```azurecli
-az feature register --namespace Microsoft.Storage \
-    --name Versioning
+az feature register --namespace Microsoft.Storage --name Versioning
+az provider register --namespace 'Microsoft.Storage'
 ```
 
 ---
@@ -266,8 +269,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage `
 Чтобы проверить состояние регистрации с помощью Azure CLI, вызовите команду [AZ Feature](/cli/azure/feature#az-feature-show) .
 
 ```azurecli
-az feature show --namespace Microsoft.Storage \
-    --name Versioning
+az feature show --namespace Microsoft.Storage --name Versioning
 ```
 
 ---

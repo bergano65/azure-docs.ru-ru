@@ -9,19 +9,19 @@ author: shohamMSFT
 ms.author: shohamd
 ms.reviewer: vanto
 ms.date: 07/27/2020
-ms.openlocfilehash: b3abda9787654734b24cc27987921ef40d8070fc
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 2c8aa39b6819e135181e2d153825e89686359538
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87294460"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88053768"
 ---
 # <a name="create-azure-ad-guest-users-and-set-as-an-azure-ad-admin"></a>Создание гостевых пользователей Azure AD и предоставление им прав администратора Azure AD
 
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
 > [!NOTE]
-> Эта статья доступна в **общедоступной предварительной версии**.
+> Эта статья предоставляется в режиме **общедоступной предварительной версии**.
 
 Гостевые пользователи в Azure Active Directory (Azure AD) — это пользователи, которые были импортированы в текущую службу Azure AD из других каталогов Azure Active Directory или за ее пределами. Например, гостевые пользователи могут включать пользователей из других каталогов Azure Active Directory или из таких учетных записей, как * \@ Outlook.com*, * \@ Hotmail.com*, * \@ Live.com*или * \@ Gmail.com*. В этой статье показано, как создать гостевой пользователь Azure AD и задать этого пользователя в качестве администратора Azure AD для логического сервера Azure SQL, не требуя, чтобы гостевой пользователь был членом группы в Azure AD.
 
@@ -103,7 +103,7 @@ ms.locfileid: "87294460"
 1. Выполните следующую команду PowerShell, чтобы добавить гостевого пользователя в качестве администратора Azure AD для логического сервера Azure SQL:
 
     - Замените `<ResourceGroupName>` именем группы ресурсов Azure, содержащей логический сервер SQL Azure.
-    - Замените на `<ServerName>` имя логического сервера SQL Azure. Если имя сервера — `myserver.database.windows.net` , замените `<Server Name>` на `myserver` .
+    - Замените на `<ServerName>` имя логического сервера SQL Azure. Если имя сервера `myserver.database.windows.net`, замените `<Server Name>` на `myserver`.
     - Замените `<DisplayNameOfGuestUser>` именем гостевого пользователя.
 
     ```powershell
@@ -133,9 +133,9 @@ ms.locfileid: "87294460"
 
 ## <a name="limitations"></a>Ограничения
 
-Существует ограничение на портал Azure, которое предотвращает выбор гостевого пользователя Azure AD в качестве администратора Azure AD для базы данных SQL, Управляемый экземпляр SQL и Azure синапсе. Для гостевых учетных записей за пределами Azure AD, например * \@ Outlook.com*, * \@ Hotmail.com*, * \@ Live.com*или * \@ Gmail.com*, в селекторе администратора Active Directory отображаются эти учетные записи, но они не могут быть выбраны. Используйте указанные выше [команды PowerShell или CLI](#setting-a-guest-user-as-an-azure-ad-admin) , чтобы задать администратора Azure AD. Кроме того, группу Azure AD, содержащую гостевого пользователя, можно задать в качестве администратора Azure AD для логического сервера SQL.
+Существует ограничение на портал Azure, которое предотвращает выбор гостевого пользователя Azure AD в качестве администратора Azure AD для Управляемый экземпляр SQL. Для гостевых учетных записей за пределами Azure AD, например * \@ Outlook.com*, * \@ Hotmail.com*, * \@ Live.com*или * \@ Gmail.com*, в селекторе администратора Active Directory отображаются эти учетные записи, но они не могут быть выбраны. Используйте указанные выше [команды PowerShell или CLI](#setting-a-guest-user-as-an-azure-ad-admin) , чтобы задать администратора Azure AD. Кроме того, Группа Azure AD, содержащая гостевого пользователя, может быть задана в качестве администратора Azure AD для Управляемый экземпляр SQL.
 
-Эта функция будет включена для базы данных SQL и Azure синапсе до общей доступности этой функции.
+Эта функция будет включена для Управляемый экземпляр SQL до общего доступа к этой функции.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

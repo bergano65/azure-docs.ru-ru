@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/18/2020
 ms.author: wolfma
-ms.openlocfilehash: 9804992aee318fdc34815bdbe4187144704cd667
-ms.sourcegitcommit: 51718f41d36192b9722e278237617f01da1b9b4e
+ms.openlocfilehash: 3e7f310f37bd016a73c589db3c9a23e197465427
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85099765"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88053922"
 ---
 # <a name="what-is-batch-transcription"></a>Что такое Пакетная транскрипция?
 
@@ -71,7 +71,7 @@ API пакетного транскрибирования поддерживае
 
 Для звуковых потоков стереозвука левый и правый каналы разбиваются во время транскрипции. Для каждого канала создается файл результатов JSON. Метки времени, созданные для каждого utterance, позволяют разработчику создавать упорядоченную окончательную запись.
 
-### <a name="configuration"></a>Конфигурация
+### <a name="configuration"></a>Параметр Configuration
 
 Параметры конфигурации предоставляются в виде JSON (один или несколько отдельных файлов):
 
@@ -319,7 +319,7 @@ API пакетного транскрибирования поддерживае
 
 Служба транскрипции может работать с большим количеством отправленных транскрипций. Вы можете запросить состояние ваших транскрипций, используя `GET` для [получения транскрипции](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/GetTranscriptions). Регулярно вызывайте функцию [транскрипции удаления](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/DeleteTranscription) из службы после получения результатов. В качестве альтернативы можно задать `timeToLive` для свойства разумное значение, чтобы обеспечить окончательное удаление результатов.
 
-## <a name="sample-code"></a>Пример кода
+## <a name="sample-code"></a>Образец кода
 
 Полные примеры доступны в [репозитории примера GitHub](https://aka.ms/csspeech/samples) внутри `samples/batch` подкаталога.
 
@@ -344,6 +344,6 @@ API пакетного транскрибирования поддерживае
 
 Пример можно скачать в [репозитории с примерами GitHub](https://aka.ms/csspeech/samples) в каталоге `samples/batch`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
+- [Справочник по API для преобразования речи в текст v3](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/CopyModelToSubscription)

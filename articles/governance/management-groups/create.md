@@ -1,14 +1,14 @@
 ---
 title: Создание групп управления для Организации ресурсов. Управление Azure
 description: Узнайте, как создавать группы управления Azure для управления множеством ресурсов с помощью портала, Azure PowerShell и Azure CLI.
-ms.date: 04/15/2020
+ms.date: 08/10/2020
 ms.topic: conceptual
-ms.openlocfilehash: 6fe7f2ea74c697701084321e068042b36acbdb11
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: 0739eafdf4cf41195b189a8496c331ab470bbec0
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85971142"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056641"
 ---
 # <a name="create-management-groups-for-resource-organization-and-management"></a>Создание групп управления для упорядочения ресурсов и управления ими
 
@@ -43,7 +43,7 @@ ms.locfileid: "85971142"
 
    :::image type="content" source="./media/create_context_menu.png" alt-text="Область параметров для создания новой группы управления" border="false":::
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ### <a name="create-in-powershell"></a>Создание в PowerShell
 

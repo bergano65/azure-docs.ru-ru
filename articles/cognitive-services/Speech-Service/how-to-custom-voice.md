@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: trbye
-ms.openlocfilehash: 2aacf8881a57f0677177cd341a0ddc63224b26b6
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 272367d5311952b45c73febe0e05b1ec2d225261
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81402050"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056692"
 ---
 # <a name="get-started-with-custom-voice"></a>Начало работы с настраиваемыми голосовыми моделями
 
@@ -56,7 +56,7 @@ ms.locfileid: "81402050"
 4. Если вы хотите переключиться на другую подписку на речь, используйте значок шестеренки, расположенный в верхней области навигации.
 
 > [!NOTE]
-> Пользовательская служба Voice не поддерживает 30-дневную бесплатную пробную версию ключа. Для использования службы необходимо создать ключ F0 или S0 в Azure.
+> Для использования службы необходимо создать ключ F0 или S0 в Azure.
 
 ## <a name="how-to-create-a-project"></a>Создание проекта
 
@@ -67,7 +67,7 @@ ms.locfileid: "81402050"
 > [!IMPORTANT]
 > [Пользовательское голосовое портал](https://aka.ms/custom-voice) недавно обновлялось! Если вы создали предыдущие данные, модели, тесты и опубликованные конечные точки на портале CRIS.ai или с помощью API, необходимо создать новый проект на новом портале для подключения к этим старым сущностям.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Подготовка настраиваемых голосов данных](how-to-custom-voice-prepare-data.md)
 - [Создание пользовательского голоса](how-to-custom-voice-create-voice.md)

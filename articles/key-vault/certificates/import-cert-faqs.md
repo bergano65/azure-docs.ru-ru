@@ -10,16 +10,16 @@ ms.subservice: certificates
 ms.topic: conceptual
 ms.date: 07/20/2020
 ms.author: sebansal
-ms.openlocfilehash: 493c77a8f875018627bfe3167e66addeaf65d089
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 402672d8eeaae8a5097e2ab2905997eb1f646ad6
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87445793"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056352"
 ---
 # <a name="frequently-asked-questions---azure-key-vault-certificate-import"></a>Часто задаваемые вопросы о Azure Key Vault импорте сертификатов
 
-## <a name="frequently-asked-questions"></a>Вопросы и ответы
+## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
 ### <a name="how-can-i-import-a-certificate-in-azure-key-vault"></a>Как импортировать сертификат в Azure Key Vault?
 
@@ -32,6 +32,10 @@ ms.locfileid: "87445793"
 ### <a name="how-can-i-resolve-bad-parameter-error-what-are-the-supported-certificate-formats-for-importing-in-key-vault"></a>Как устранить ошибку "неверный параметр"? Какие форматы сертификатов поддерживаются для импорта в Key Vault?
 
 При импорте сертификата необходимо убедиться, что ключ включен в сам файл. Если закрытый ключ имеется по отдельности в другом формате, необходимо объединить ключ с сертификатом. Некоторые центры сертификации предоставляют сертификаты в разных форматах, поэтому перед импортом сертификата убедитесь, что они находятся в формате PEM или PFX и что используется ключ RSA или ECC. Сведения о [требованиях к сертификатам](https://docs.microsoft.com/azure/key-vault/certificates/certificate-scenarios#formats-of-import-we-support) и [ключах сертификатов](https://docs.microsoft.com/azure/key-vault/keys/about-keys#cryptographic-protection)см. в этой статье.
+
+###  <a name="can-i-import-certificate-using-arm-template"></a>Можно ли импортировать сертификат с помощью шаблона ARM?
+
+Нет, операции сертификата нельзя выполнять с помощью шаблонов ARM. Рекомендуемым решением будет использование методов импорта сертификатов в API или CLI или PowerShell. Если у вас есть сертификат существующего, вы можете импортировать его в качестве секрета.
 
 ### <a name="error-when-importing-certificate-via-portal-something-went-wrong-how-can-i-investigate-further"></a>Ошибка при импорте сертификата с помощью портала: "Что-то пошло не так". Как можно исследовать дальнейшие исследования?
     

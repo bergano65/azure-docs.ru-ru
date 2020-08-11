@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/21/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 44d58b4e68e9f846b6bdb87765e96bcab90274a3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0309f4d07056e3986138139e10ab29faa675cfcd
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87083605"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056084"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -54,8 +54,6 @@ API больших двоичных объектов и API Data Lake Storage 2-
 * [Get Page Ranges](https://docs.microsoft.com/rest/api/storageservices/get-page-ranges) (получение диапазона страницы);
 * [Incremental Copy Blob](https://docs.microsoft.com/rest/api/storageservices/incremental-copy-blob) (инкрементная копия Blob);
 * [Put Page from URL](https://docs.microsoft.com/rest/api/storageservices/put-page-from-url) (размещение страницы по URL-адресу);
-* [Put Blob](https://docs.microsoft.com/rest/api/storageservices/put-blob) (добавление BLOB-объекта);
-* [Append Block](https://docs.microsoft.com/rest/api/storageservices/append-block)
 * [Append Block from URL](https://docs.microsoft.com/rest/api/storageservices/append-block-from-url) (добавление блока по URL-адресу).
 
 Неуправляемые диски виртуальной машины не поддерживаются в учетных записях с иерархическим пространством имен. Если вы хотите использовать в учетной записи хранения иерархические пространства имен, разместите неуправляемые диски виртуальных машин в другой учетной записи хранения, для которой не включена функция иерархического пространства имен.

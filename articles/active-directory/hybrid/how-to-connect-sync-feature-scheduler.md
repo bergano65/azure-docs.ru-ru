@@ -16,12 +16,12 @@ ms.date: 05/01/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eaeaa8625a5bdb5bbf8ce76a68e616a913da5655
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: c2b65f8cd22e72e0ba90918121a02d66fe6bf3e7
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86146993"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88053054"
 ---
 # <a name="azure-ad-connect-sync-scheduler"></a>Синхронизация Azure AD Connect: планировщик
 В этом разделе описывается встроенный планировщик в Azure AD Connect Sync (модуль синхронизации).
@@ -171,7 +171,7 @@ ms.locfileid: "86146993"
 Планировщик останется активным и при первой возможности запустится снова.
 
 ## <a name="custom-scheduler"></a>Настраиваемый планировщик
-Командлеты, описанные в этом разделе, доступны только в сборке [1.1.130.0](reference-connect-version-history.md#111300) и более поздних версий.
+Командлеты, описанные в этом разделе, доступны только в сборке [1.1.130.0](reference-connect-version-history.md) и более поздних версий.
 
 Если встроенный планировщик не соответствует вашим требованиям, составить расписание для соединителей можно с помощью PowerShell.
 

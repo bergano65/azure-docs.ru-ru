@@ -5,17 +5,17 @@ author: mamccrea
 ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: troubleshooting
-ms.date: 03/27/2020
-ms.openlocfilehash: 725d1cf38a0c7f6de02addc62577e397a935af94
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.date: 08/07/2020
+ms.openlocfilehash: 1c649499fd9eaedac0ca4ff9c182e13a9da223ef
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86041053"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88053156"
 ---
 # <a name="azure-stream-analytics-data-errors"></a>Ошибки данных в Azure Stream Analytics
 
-Ошибки данных — это ошибки, возникающие при обработке данных.  Эти ошибки чаще всего возникают во время операций десериализации, сериализации и записи данных.  При возникновении ошибок данных Stream Analytics записывает подробные сведения и примеры событий в журналы ресурсов.  В некоторых случаях сводка этих сведений также предоставляется через уведомления портала.
+Ошибки данных — это ошибки, возникающие при обработке данных.  Эти ошибки чаще всего возникают во время операций десериализации, сериализации и записи данных.  При возникновении ошибок данных Stream Analytics записывает подробные сведения и примеры событий в журналы ресурсов. Включите журналы диагностики в задание, чтобы получить эти дополнительные сведения. В некоторых случаях сводка этих сведений также предоставляется через уведомления портала.
 
 В этой статье описаны различные типы ошибок, причины и сведения о журнале ресурсов для ошибок ввода и вывода данных.
 
@@ -287,7 +287,7 @@ ms.locfileid: "86041053"
 "BriefMessage": "Column 'devicePartitionKey' is being mapped to multiple columns."
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок Azure Stream Analytics с помощью журналов диагностики](stream-analytics-job-diagnostic-logs.md)
 

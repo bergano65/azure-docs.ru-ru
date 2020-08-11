@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 05283c02c2e5f95e22beb6fbeaad7a99e42ee6aa
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: b6111529d1a3d37f08b29fb5c0751fb6a49acea5
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87540841"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88054074"
 ---
 # <a name="what-authentication-and-verification-methods-are-available-in-azure-active-directory"></a>Какие методы проверки подлинности и подтверждения доступны в Azure Active Directory?
 
@@ -39,7 +39,7 @@ ms.locfileid: "87540841"
 | [Приложение Microsoft Authenticator](#microsoft-authenticator-app) | Да (предварительная версия) | MFA и SSPR |
 | [Ключи безопасности FIDO2 (предварительная версия)](#fido2-security-keys) | Да | Только MFA |
 | [Программные маркеры OATH](#oath-software-tokens) | нет | MFA |
-| [Аппаратные маркеры OATH (предварительная версия)](#oath-hardware-tokens-preview) | Да | MFA |
+| [Аппаратные маркеры OATH (предварительная версия)](#oath-hardware-tokens-preview) | нет | MFA |
 | [СМС](#phone-options) | Да (предварительная версия) | MFA и SSPR |
 | [Голосовой вызов](#phone-options) | нет | MFA и SSPR |
 | [Контрольные вопросы](#security-questions) | нет | Только SSPR |

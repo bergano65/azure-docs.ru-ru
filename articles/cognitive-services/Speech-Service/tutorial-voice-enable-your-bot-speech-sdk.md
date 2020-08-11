@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: trbye
-ms.openlocfilehash: 7a5e6bd262a1772356653eaaff7688ade9b4bfb7
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: 47448a97c89b1feddfc43da300cb53fd65eaff05
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/10/2020
-ms.locfileid: "88041790"
+ms.locfileid: "88056658"
 ---
 # <a name="tutorial-voice-enable-your-bot-using-the-speech-sdk"></a>Учебник. Включение программы-робота с помощью речевого пакета SDK
 
@@ -60,7 +60,7 @@ ms.locfileid: "88041790"
 - КОМПЬЮТЕР с Windows 10 с рабочим микрофоном и динамиками (или наушниками)
 - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) или более поздней версии с установленной рабочей нагрузкой **ASP.NET и Web Development**
 - [.NET Framework среды выполнения 4.6.1](https://dotnet.microsoft.com/download) или выше
-- Учетная запись Azure. [Зарегистрируйтесь бесплатно](https://azure.microsoft.com/free/ai/).
+- Учетная запись Azure. [Зарегистрируйтесь бесплатно](https://azure.microsoft.com/free/cognitive-services/)
 - Учетная запись [GitHub](https://github.com/)
 - [Git для Windows](https://git-scm.com/download/win)
 
@@ -83,7 +83,6 @@ ms.locfileid: "88041790"
 
 * Убедитесь, что вы используете [поддерживаемый регион Azure](regions.md#voice-assistants).
 * В канале голосового перевода прямой линии используется служба преобразования текста в речь, которая имеет стандартные и нейронные голоса. Нейронные голоса [ограничены конкретными регионами Azure](regions.md#standard-and-neural-voices).
-* Ключи бесплатных пробных версий могут быть ограничены конкретным регионом.
 
 Дополнительные сведения о регионах см. в разделе [расположения Azure](https://azure.microsoft.com/global-infrastructure/locations/).
 

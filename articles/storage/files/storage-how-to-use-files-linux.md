@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: bc0390ba9bf8d0f80d1533fe6e40b42df0cb5359
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: d00b0558f85e18dfb53736d89fead953cc01ee60
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87835720"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88053173"
 ---
 # <a name="use-azure-files-with-linux"></a>Использование Файлов Azure в Linux
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от Майкрософт. Файловые ресурсы Azure можно подключить в дистрибутивах Linux с помощью [SMB-клиента в ядре](https://wiki.samba.org/index.php/LinuxCIFS). В этой статье описаны два способа подключения файлового ресурса Azure: по запросу с помощью команды `mount` и при загрузке путем создания записи в `/etc/fstab`.
@@ -26,7 +26,7 @@ ms.locfileid: "87835720"
 | CentOS | 7 или выше |  7.5 или выше |
 | Debian | 8+ | 10+ |
 | openSUSE | 13.2 или выше | 42.3 или выше |
-| SUSE Linux Enterprise Server | 12+ | 12 SP3 или выше |
+| SUSE Linux Enterprise Server | 12+ | 12 с пакетом обновления 2+ |
 
 Если вы используете дистрибутив Linux, не указанный в приведенной выше таблице, можно проверить, поддерживает ли дистрибутив Linux протокол SMB 3,0 с шифрованием, проверив версию ядра Linux. SMB 3,0 с шифрованием было добавлено в ядро Linux версии 4,11. `uname`Команда возвратит используемую версию ядра Linux:
 
@@ -246,7 +246,7 @@ uname -r
 
 Начиная с Linux ядра 4,18, модуль ядра SMB, вызываемый `cifs` по старым причинам, предоставляет новый параметр модуля (часто называемый *ParM* различными внешними документами) `disable_legacy_dialects` . Несмотря на то, что впервые появились в ядре Linux 4,18, некоторые поставщики отменяли это изменение на более старые ядра, которые они поддерживают. Для удобства в следующей таблице подробно описывается доступность этого параметра модуля в распространенных дистрибутивах Linux.
 
-| Распределение | Можно отключить SMB 1 |
+| Distribution | Можно отключить SMB 1 |
 |--------------|-------------------|
 | Ubuntu 14.04 — 16.04 | Нет |
 | Ubuntu 18.04 | Да |

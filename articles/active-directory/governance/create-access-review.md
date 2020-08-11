@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 06/29/2020
+ms.date: 08/09/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cf82080a54075353d2ff1d98a2ea19fc6a96dc7
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 9bb290106c5ceafe8c636bbeeab38b74ea475eb4
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86204015"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056199"
 ---
 # <a name="create-an-access-review-of-groups-and-applications-in-azure-ad-access-reviews"></a>Создание проверки доступа для групп и приложений в проверках доступа Azure AD
 
@@ -93,7 +93,7 @@ ms.locfileid: "86204015"
 
     ![Создание параметров завершения проверки доступа](./media/create-access-review/upon-completion-settings.png)
 
-1. Если требуется автоматическое удаление, доступ для пользователей, которым не было отказано, задайте для параметра **автоматически применять результаты значение ресурс** , чтобы **включить**. Если вы хотите вручную применять результаты по завершении проверки, выберите здесь значение **Отключить**.
+1. Если вы хотите автоматически удалять доступ пользователей, для которых были получены запреты, задайте для параметра **Автоматически применять результаты к ресурсу** значение **Включить**. Если вы хотите вручную применять результаты по завершении проверки, выберите здесь значение **Отключить**.
 
 1. Список **Если рецензент не отвечает** позволяет указать, что нужно делать для тех пользователей, которые не будут проверены рецензентами в установленный период проверки. Этот параметр не влияет на пользователей, для которых рецензенты выполняют проверку вручную. Если в качестве решения рецензент выберет запрет, доступ пользователя будет заблокирован.
 
@@ -151,7 +151,7 @@ ms.locfileid: "86204015"
 
 Проверки доступа можно также создать с помощью API. Все действия по управлению проверками доступа для групп и пользователей приложений, которые выполняются на портале Azure, доступны и через API Microsoft Graph. Дополнительные сведения см. в [справочнике по API проверок доступа Azure AD](https://docs.microsoft.com/graph/api/resources/accessreviews-root?view=graph-rest-beta). Пример кода см. в разделе [Пример получения проверок доступа Azure AD с помощью Microsoft Graph](https://techcommunity.microsoft.com/t5/Azure-Active-Directory/Example-of-retrieving-Azure-AD-access-reviews-via-Microsoft/m-p/236096).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Проверка доступа к группам или приложениям](perform-access-review.md)
 - [Обзор доступа к группам или приложениям](review-your-access.md)

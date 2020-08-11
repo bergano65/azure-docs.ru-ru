@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea90c80d9edbefe9df05a5d64da612a89c3b251f
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: a5fc1b84e624828d7feb64bd53e8fe8ffff2a7ff
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85850821"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88054840"
 ---
 # <a name="create-an-unattended-installation-script-for-the-azure-ad-application-proxy-connector"></a>Создание скрипта автоматической установки для соединителя прокси приложения Azure AD
 
@@ -37,6 +37,9 @@ ms.locfileid: "85850821"
 Чтобы [соединитель прокси приложения](application-proxy-connectors.md) работал, он должен быть зарегистрирован в каталоге Azure AD с помощью администратора приложения и пароля. Обычно эти сведения вводятся во всплывающем окне во время установки соединителя, но для автоматизации этого процесса можно использовать PowerShell.
 
 Этот процесс состоит из двух этапов. Сначала выполняется установка соединителя, а затем он регистрируется в Azure AD.
+
+> [!IMPORTANT]
+> Если вы устанавливаете соединитель для облака Azure для государственных организаций, проверьте [Предварительные требования](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-government-cloud#allow-access-to-urls) и [шаги по установке](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-government-cloud#install-the-agent-for-the-azure-government-cloud). Для этого необходимо включить доступ к другому набору URL-адресов и дополнительный параметр для запуска установки.
 
 ## <a name="install-the-connector"></a>Установка соединителя
 Чтобы установить соединитель без регистрации, сделайте следующее:
@@ -203,7 +206,7 @@ ms.locfileid: "85850821"
    .\RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft AAD App Proxy Connector\Modules\" -moduleName "AppProxyPSModule" -Authenticationmode Token -Token $SecureToken -TenantId <tenant GUID> -Feature ApplicationProxy
    ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Публикация приложений с помощью доменного имени](application-proxy-configure-custom-domain.md)
 * [Включение единого входа](application-proxy-configure-single-sign-on-with-kcd.md)
 * [Устранение неполадок с прокси приложения](application-proxy-troubleshoot.md)

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: fmegen
-ms.openlocfilehash: 23a426bf8cc3f30516fff0a672d7118a49666433
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 1574ea1c6f97606198d071d79ea69d58304a6159
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83584932"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88053564"
 ---
 # <a name="about-the-speech-sdk-audio-input-stream-api"></a>Об API входного аудиопотока в пакете SDK для службы "Речь"
 
@@ -75,5 +75,5 @@ API **потока входных данных** РЕЧЕВОГО пакета S
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
+- [Создание бесплатной учетной записи Azure.](https://azure.microsoft.com/free/cognitive-services/)
 - [Распознавание речи в C#](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnet)
