@@ -6,16 +6,16 @@ documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 07/25/2020
+ms.date: 08/11/2020
 author: djpmsft
 ms.author: daperlov
 manager: anandsub
-ms.openlocfilehash: 14f9ab0b1c3b8b437e46a7b6a2d8b87f03442a02
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: b8d3472eeedab72644456b4278d3b9f3625c5850
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87290572"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88078210"
 ---
 # <a name="monitor-an-integration-runtime-in-azure-data-factory"></a>Мониторинг среды выполнения интеграции в фабрике данных Azure
 
@@ -45,14 +45,14 @@ Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName MyDataFactory -ResourceGr
 
 В следующей таблице приведены описания свойств, возвращаемых командлетом для среды выполнения интеграции Azure:
 
-| Свойство | Описание: |
+| Свойство | Описание |
 -------- | ------------- | 
 | Имя | Имя среды выполнения интеграции Azure. |  
 | Состояние | Состояние среды выполнения интеграции Azure. | 
 | Расположение | Расположение среды выполнения интеграции Azure. Дополнительные сведения о расположении среды выполнения интеграции Azure см. в статье [Integration runtime in Azure Data Factory](concepts-integration-runtime.md) (Среда выполнения интеграции в фабрике данных Azure). |
 | DataFactoryName | Имя фабрики данных, к которой принадлежит среда выполнения интеграции Azure. | 
 | ResourceGroupName | Имя группы ресурсов, к которой принадлежит фабрика данных.  |
-| Описание: | Описание среды выполнения интеграции.  |
+| Описание | Описание среды выполнения интеграции.  |
 
 ### <a name="status"></a>Состояние
 
@@ -74,7 +74,7 @@ Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName MyDataFactory -ResourceGr
 
 В следующей таблице приведены описания свойств наблюдения **каждого узла**:
 
-| Свойство | Описание: | 
+| Свойство | Описание | 
 | -------- | ----------- | 
 | Имя | Имя локальной среды выполнения интеграции и узлов, связанных с ней. Узел — это локальный компьютер с Windows, на котором установлена локальная среда выполнения интеграции. |  
 | Состояние | Состояние локальной среды выполнения интеграции и каждого узла. Пример: оперативный/автономный/ограниченный/т. д. Сведения об этих состояниях см. в следующем разделе. | 
@@ -161,7 +161,7 @@ Get-AzDataFactoryV2IntegrationRuntimeMetric -name $integrationRuntimeName -Resou
 
 ## <a name="azure-ssis-integration-runtime"></a>Azure-SSIS Integration Runtime
 
-Azure-SSIS IR — это полностью управляемый кластер виртуальных машин Azure (или узлов), выделенных для выполнения пакетов служб SSIS. Выполнение пакетов SSIS можно вызывать на Azure-SSIS IR с помощью различных методов, например с помощью SQL Server Data Tools (SSDT) с поддержкой Azure, программы командной строки Азуредтексек, T-SQL на SQL Server Management Studio (SSMS)/SQL Server Agent и выполнения действий пакета служб SSIS в конвейерах ADF. Azure-SSIS IR не выполняет никаких других действий ADF. После подготовки можно отслеживать общие и относящиеся к узлу свойства и состояния с помощью Azure PowerShell, портал Azure и Azure Monitor.
+Azure-SSIS IR — это полностью управляемый кластер виртуальных машин Azure (виртуальных машин или узлов), выделенный для выполнения пакетов служб SSIS. Выполнение пакетов SSIS можно вызывать на Azure-SSIS IR с помощью различных методов, например с помощью SQL Server Data Tools (SSDT) с поддержкой Azure, программы командной строки Азуредтексек, T-SQL на SQL Server Management Studio (SSMS)/SQL Server Agent и выполнения действий пакета служб SSIS в конвейерах ADF. Azure-SSIS IR не выполняет никаких других действий ADF. После подготовки можно отслеживать общие и относящиеся к узлу свойства и состояния с помощью Azure PowerShell, портал Azure и Azure Monitor.
 
 ### <a name="monitor-the-azure-ssis-integration-runtime-with-azure-powershell"></a>Мониторинг среды выполнения интеграции Azure SSIS с помощью Azure PowerShell
 
@@ -175,7 +175,7 @@ Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $A
 
 В следующей таблице приведены описания свойств, возвращаемых приведенным выше командлетом для Azure-SSIS IR.
 
-| Свойство или состояние              | Описание:                  |
+| Свойство или состояние              | Описание                  |
 | ---------------------------- | ---------------------------- |
 | CreateTime                   | Время создания Azure-SSIS IR в формате UTC. |
 | Узлы                        | Выделенные и доступные узлы Azure-SSIS IR с состоянием, зависящим от узла (запуск/доступ/перезапуск/недоступно) и ошибками, которые можно предпринимать. |
@@ -197,7 +197,7 @@ Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $A
 | ResourceGroupName            | Имя группы ресурсов Azure, в которой были созданы ADF и Azure-SSIS IR. |
 | DataFactoryName              | Имя ADF. |
 | Имя                         | Имя Azure-SSIS IR. |
-| Описание:                  | Описание Azure-SSIS IR. |
+| Описание                  | Описание Azure-SSIS IR. |
   
 #### <a name="status-per-azure-ssis-ir-node"></a>Состояние (для каждого Azure-SSIS IR узла)
 
@@ -214,7 +214,7 @@ Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $A
 
 В следующей таблице приведены возможные общие состояния Azure-SSIS IR. Общее состояние, в свою очередь, зависит от Объединенного состояния всех узлов, принадлежащих к Azure-SSIS IR. 
 
-| Общее состояние | Описание: | 
+| Общее состояние | Описание | 
 | -------------- | ----------- | 
 | Initial        | Узлы Azure-SSIS IR не были выделены или подготовлены. | 
 | Запуск       | Узлы Azure-SSIS IR выделяются, подготавливаются и начата оплата. |
@@ -228,31 +228,55 @@ Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $A
 
 ![Мониторинг всех сред выполнения интеграции](media/monitor-integration-runtime/monitor-integration-runtimes.png)
 
-Затем выберите имя Azure-SSIS IR, чтобы открыть страницу наблюдения, где можно просмотреть общие свойства и состояния для конкретного узла.
+Затем выберите имя Azure-SSIS IR, чтобы открыть страницу наблюдения, где можно просмотреть общие свойства и состояния для конкретного узла. На этой странице в зависимости от настройки параметров "Общие", "развертывание" и "дополнительные" для Azure-SSIS IR можно найти различные информационные и функциональные плитки.  Информационные плитки **типа** и **региона** показывают тип и регион Azure-SSIS IR соответственно. На информационном плитке **размер узла** отображается номер SKU (серии tier_VM SSIS edition_VM), количество ядер ЦП и размер ОЗУ на узел для Azure-SSIS IR. Плитка " **выполняющиеся/запрошенные узлы"** сравнивает количество узлов, которые в настоящее время выполняются, с общим числом узлов, ранее запрошенных для Azure-SSIS IR. Функциональные плитки подробно описаны ниже.
 
 ![Мониторинг Azure-SSIS IR](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime.png)
 
-На плитке **состояние** на странице мониторинга Azure-SSIS IR можно увидеть ее общее состояние, например " **выполняется** " или " **остановлено**". Если выбрать состояние **выполнения** , откроется окно с активной кнопкой " **Отключить** ", чтобы прерывать Azure-SSIS IR. Если выбрать **остановленное** состояние, откроется окно с кнопкой **Пуск** , чтобы начать Azure-SSIS IR. Во всплывающем окне также имеется кнопка **выполнить пакет служб SSIS** для автоматического создания конвейера ADF с действием выполнить пакет служб SSIS, которое выполняется на Azure-SSIS IR (см. раздел [Запуск пакетов служб SSIS как выполнение действий пакета SSIS в конвейерах ADF](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity)) и текстовое поле **идентификатор ресурса** . с помощью которого можно скопировать Azure-SSIS IRный идентификатор ресурса ( `/subscriptions/YourAzureSubscripton/resourcegroups/YourResourceGroup/providers/Microsoft.DataFactory/factories/YourADF/integrationruntimes/YourAzureSSISIR` ), который можно использовать для приобретения дополнительных или лицензированных компонентов служб SSIS от независимых поставщиков программного обеспечения, и привязать их к Azure-SSIS IR (см. раздел [Установка компонентов Premium/Licensed в Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/how-to-develop-azure-ssis-ir-licensed-components)).
+#### <a name="status-tile"></a>Плитка состояния
+
+На плитке **состояние** на странице мониторинга Azure-SSIS IR можно увидеть ее общее состояние, например " **выполняется** " или " **остановлено**". Если выбрать состояние **выполнения** , откроется окно с активной кнопкой " **Отключить** ", чтобы прерывать Azure-SSIS IR. Если выбрать **остановленное** состояние, откроется окно с кнопкой **Пуск** , чтобы начать Azure-SSIS IR. Во всплывающем окне также имеется кнопка **выполнить пакет служб SSIS** для автоматического создания конвейера ADF с действием выполнить пакет служб SSIS, которое выполняется на Azure-SSIS IR (см. раздел [Запуск пакетов служб SSIS как выполнение действий пакета SSIS в конвейерах ADF](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity)) и текстовое поле **идентификатор ресурса** , с которого можно скопировать идентификатор ресурса Azure-SSIS IR ( `/subscriptions/YourAzureSubscripton/resourcegroups/YourResourceGroup/providers/Microsoft.DataFactory/factories/YourADF/integrationruntimes/YourAzureSSISIR` ). Суффикс идентификатора ресурса Azure-SSIS IR, который содержит имена ADF и Azure-SSIS IR, образует идентификатор кластера, который можно использовать для приобретения дополнительных или лицензированных компонентов служб SSIS от независимых поставщиков программного обеспечения и их привязки к Azure-SSIS IR (см. статью [Установка компонентов Premium/licenseed на Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/how-to-develop-azure-ssis-ir-licensed-components)).
 
 ![Мониторинг плитки Azure-SSIS IR состояния](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-status.png)
+
+#### <a name="ssisdb-server-endpoint-tile"></a>Плитка "КОНЕЧная точка сервера SSISDB"
 
 Если вы используете модель развертывания проекта, где пакеты хранятся в SSISDB, размещенной на сервере базы данных SQL Azure или управляемом экземпляре, вы увидите плитку " **Конечная точка сервера SSISDB** " на странице мониторинга Azure-SSIS IR (см. раздел [настройка параметров развертывания Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/tutorial-deploy-ssis-packages-azure#deployment-settings-page)). На этой плитке можно выбрать ссылку, указывающую на сервер базы данных SQL Azure или управляемый экземпляр, чтобы открыть окно, где можно скопировать конечную точку сервера из текстового поля и использовать ее при подключении из SSMS для развертывания, настройки, запуска и управления пакетами. Во всплывающем окне можно также выбрать ссылку **Просмотреть базу данных SQL Azure или параметры управляемого экземпляра** , чтобы изменить или изменить размер SSISDB в портал Azure.
 
 ![Мониторинг плитки Azure-SSIS IR-SSISDB](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-ssisdb.png)
 
+#### <a name="proxy--staging-tile"></a>Плитка прокси-сервера или промежуточного хранения
+
+Если вы скачиваете, устанавливаете и настраиваете локальные IR (шир) в качестве прокси-сервера Azure-SSIS IR для доступа к локальным данным, на странице мониторинга Azure-SSIS IR вы увидите плитку " **прокси-сервер/промежуточное размещение** " (см. раздел [Настройка Шир в качестве прокси-сервера для Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/self-hosted-integration-runtime-proxy-ssis)). На этой плитке можно выбрать ссылку, указывающую на Шир, чтобы открыть страницу мониторинга. Вы также можете выбрать другую ссылку, обозначая хранилище BLOB-объектов Azure для промежуточного хранения, чтобы перенастроить связанную службу.
+
+#### <a name="validate-vnet--subnet-tile"></a>Плитка "проверить ВИРТУАЛЬную сеть и подсети"
+
 Если вы присоединяете Azure-SSIS IR к виртуальной сети, на странице мониторинга Azure-SSIS IR отображается плитка **проверить виртуальную сеть и подсети** (см. раздел [Присоединение Azure-SSIS IR к виртуальной сети](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network)). На этой плитке можно выбрать ссылку, указывающую виртуальную сеть и подсети, чтобы открыть окно, в котором можно скопировать идентификатор ресурса виртуальной сети ( `/subscriptions/YourAzureSubscripton/resourceGroups/YourResourceGroup/providers/Microsoft.Network/virtualNetworks/YourARMVNet` ) и имя подсети из текстовых полей, а также проверить конфигурации виртуальной сети и подсети, чтобы убедиться, что необходимый входящий и исходящий сетевой трафик и управление Azure-SSIS IR не препятствуют блокировке.
 
 ![Мониторинг плитки Azure-SSIS IR-VALIDATE](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-validate.png)
+
+#### <a name="diagnose-connectivity-tile"></a>Плитка "Диагностика подключения"
 
 На плитке **Диагностика подключения** на странице "Мониторинг Azure-SSIS IR" можно выбрать ссылку **проверить подключение** , чтобы открыть окно, где можно проверить подключения между Azure-SSIS IR и соответствующими пакетами, конфигурациями, хранилищами данных, а также службами управления, используя полные доменные имена (FQDN)/IP адрес и назначенный порт (см. раздел [тестирование подключений из Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/ssis-integration-runtime-diagnose-connectivity-faq)).
 
 ![Отслеживание Azure-SSIS IR. плитка диагностики](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-diagnose.png)
 
+#### <a name="static-public-ip-addresses-tile"></a>Плитка "СТАТИЧЕСКИе общедоступные IP-адреса"
+
+Если вы используете для Azure-SSIS IR собственные статические общедоступные IP-адреса, на странице мониторинга Azure-SSIS IR вы увидите плитку **статических ОБЩЕдоступных IP** -адресов (см. раздел Использование [собственных статических ОБЩЕДОСТУПных IP-адресов для Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network#publicIP)). На этой плитке можно выбрать ссылки, обозначающие первые или вторые статические IP-адреса для Azure-SSIS IR для всплывающего окна, где можно скопировать идентификатор ресурса ( `/subscriptions/YourAzureSubscripton/resourceGroups/YourResourceGroup/providers/Microsoft.Network/publicIPAddresses/YourPublicIPAddress` ) из текстового поля. Во всплывающем окне можно также выбрать ссылку **просмотреть первые/вторые параметры статического общедоступного IP-адреса** для управления первым или вторым статическим общедоступным IP-адресом в портал Azure.
+
+![Отслеживание Azure-SSIS IR. плитка диагностики](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-static.png)
+
+#### <a name="package-stores-tile"></a>Плитка "хранилища пакетов"
+
 Если вы используете модель развертывания пакетов, где пакеты хранятся в файловой системе, файлах Azure или базе данных SQL Server (MSDB), размещенной в Управляемый экземпляр SQL Azure, и управляются с помощью Azure-SSIS IR хранилищ пакетов, на странице мониторинга Azure-SSIS IR отображается плитка **хранилища пакетов** (см. раздел [настройка параметров развертывания Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/tutorial-deploy-ssis-packages-azure#deployment-settings-page)). На этой плитке можно выбрать ссылку, указывающую число хранилищ пакетов, прикрепленных к Azure-SSIS IR, чтобы открыть окно, где можно перенастроить соответствующие связанные службы для Azure-SSIS IRного пакета, расположенного на основе файловой системы, файлов Azure или базы данных MSDB, размещенных Управляемый экземпляр Azure SQL.
 
 ![Мониторинг плитки Azure-SSIS IR пакета](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-package.png)
 
+#### <a name="errors-tile"></a>Плитка ошибок
+
 Если возникли проблемы с запуском/остановкой или обслуживанием или обновлением Azure-SSIS IR, на странице мониторинга Azure-SSIS IR вы увидите плитку дополнительные **ошибки** . На этой плитке можно выбрать ссылку, указывающую число ошибок, создаваемых Azure-SSIS IR, на всплывающее окно, где можно просмотреть эти ошибки в более подробных сведениях и скопировать их для поиска рекомендуемых решений в нашем руководство по устранению неполадок (см. раздел [Устранение неполадок Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/ssis-integration-runtime-management-troubleshoot)).
+
+![Отслеживание Azure-SSIS IR. плитка диагностики](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-error.png)
 
 ### <a name="monitor-the-azure-ssis-integration-runtime-with-azure-monitor"></a>Мониторинг среды выполнения интеграции Azure SSIS с помощью Azure Monitor
 
@@ -262,11 +286,11 @@ Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $A
 
 Дополнительные сведения о среде выполнения интеграции SSIS Azure см. в следующих разделах:
 
-- [Azure-SSIS Integration Runtime](concepts-integration-runtime.md#azure-ssis-integration-runtime). В этой статье содержатся общие сведения о средах выполнения интеграции в целом, включая Azure SSIS IR. 
-- [Развертывание пакетов служб интеграции SQL Server (SSIS) в Azure](tutorial-create-azure-ssis-runtime-portal.md). В этой статье приводятся пошаговые инструкции по созданию Azure-SSIS IR и использованию базы данных SQL для размещения каталога служб SSIS. 
-- [Создание среды выполнения интеграции Azure SSIS](create-azure-ssis-integration-runtime.md). Эта статья раскрывает учебник и содержит инструкции по использованию Управляемый экземпляр SQL и присоединению инфракрасной связи к виртуальной сети. 
-- [Manage an Azure-SSIS integration runtime](manage-azure-ssis-integration-runtime.md) (Управление средой выполнения интеграции Azure SSIS). В этой статье показано, как остановить, запустить или удалить Azure SSIS IR. В ней также показано, как развернуть Azure SSIS IR путем добавления дополнительных узлов в среду выполнения интеграции. 
-- [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) В этой статье содержатся общие сведения о присоединении среды выполнения интеграции Azure–SSIS к виртуальной сети Azure. Из статьи вы также узнаете, как настроить виртуальную сеть, чтобы присоединить среду выполнения интеграции SQL Server Integration Services Azure к виртуальной сети с помощью портала Azure. 
+- [Azure-SSIS Integration Runtime](concepts-integration-runtime.md#azure-ssis-integration-runtime). В этой статье содержатся общие сведения о средах выполнения интеграции в целом, включая IR Azure SSIS. 
+- [Развертывание пакетов служб интеграции SQL Server (SSIS) в Azure](tutorial-create-azure-ssis-runtime-portal.md). В этой статье приведены пошаговые инструкции по созданию Azure-SSIS IR и использованию базы данных SQL Azure для размещения каталога SSIS (SSISDB). 
+- [Создание среды выполнения интеграции Azure SSIS](create-azure-ssis-integration-runtime.md). Эта статья разворачивается в этом руководстве и содержит инструкции по использованию Управляемый экземпляр Azure SQL для размещения SSISDB. 
+- [Manage an Azure-SSIS integration runtime](manage-azure-ssis-integration-runtime.md) (Управление средой выполнения интеграции Azure SSIS). В этой статье показано, как запускать, прекращать или удалять Azure-SSIS IR. Здесь также показано, как увеличить масштаб, добавив дополнительные узлы. 
+- [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) В этой статье приводятся инструкции по присоединению Azure-SSIS IR к виртуальной сети.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В следующих статьях представлены сведения о способах мониторинга конвейеров: 

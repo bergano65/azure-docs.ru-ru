@@ -4,12 +4,12 @@ description: Научитесь настраивать функцию прове
 ms.topic: article
 ms.date: 07/08/2020
 ms.custom: seodec18
-ms.openlocfilehash: 32b7db234cd91aaf9fa5fcfa9b35679d32561474
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: d69a75092f4ede5d5467357a7ac254be6e7c379b
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88042621"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88078399"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -17,8 +17,7 @@ ms.locfileid: "88042621"
 
 Чтобы быстро приступить к работе, ознакомьтесь с одним из следующих руководств:
 
-* [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Windows)](app-service-web-tutorial-auth-aad.md)
-* [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Linux)](containers/tutorial-auth-aad.md)
+* [Руководство. Сквозная проверка подлинности и авторизация в Службе приложений Azure](tutorial-auth-aad.md)
 * [Настройка приложения службы приложений для использования службы входа Azure Active Directory](configure-authentication-provider-aad.md)
 * [Как настроить приложение службы приложений для использования имени для входа Facebook](configure-authentication-provider-facebook.md)
 * [Настройка приложения для использования имени входа Google](configure-authentication-provider-google.md)
@@ -533,5 +532,4 @@ az webapp auth update --name <my_app_name> \
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство. сквозная проверка подлинности и авторизация пользователей (Windows)](app-service-web-tutorial-auth-aad.md) 
->  [Руководство. сквозная проверка подлинности и авторизация пользователей (Linux)](containers/tutorial-auth-aad.md)
+> [Руководство. Сквозная аутентификация и авторизация пользователей](tutorial-auth-aad.md)

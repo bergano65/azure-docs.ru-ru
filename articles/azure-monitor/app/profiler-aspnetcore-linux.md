@@ -6,12 +6,12 @@ author: cweining
 ms.author: cweining
 ms.date: 02/23/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: f01eaf879e70406c6dbe17e6fc544f7aed367e8b
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: a21d48787a39c491a2ab1ace1bf42ff85bd34993
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324120"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88078093"
 ---
 # <a name="profile-aspnet-core-azure-linux-web-apps-with-application-insights-profiler"></a>Профилирование веб-приложений ASP.NET Core в Azure для Linux с помощью Application Insights Profiler
 
@@ -23,7 +23,7 @@ ms.locfileid: "87324120"
 
 ![Трассировки профилировщика](./media/profiler-aspnetcore-linux/profiler-traces.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Приведенные ниже инструкции применяются ко всем средам разработки для Windows, Linux и Mac:
 
 * Установите [пакет SDK для .NET Core 2.1.2 или более поздней версии](https://dotnet.microsoft.com/download/archives).
@@ -106,7 +106,7 @@ ms.locfileid: "87324120"
 
     ![Настройка репозитория Git](./media/profiler-aspnetcore-linux/setup-git-repo.png)
 
-Дополнительные варианты развертывания см. в [этой статье](../../app-service/containers/choose-deployment-type.md).
+Дополнительные параметры развертывания см. в [документации по службе приложений](https://docs.microsoft.com/azure/app-service).
 
 ## <a name="deploy-your-project"></a>Развертывание проекта
 

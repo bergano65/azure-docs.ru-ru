@@ -5,12 +5,12 @@ ms.date: 09/25/2019
 ms.topic: troubleshooting
 description: Узнайте, как устранять распространенные неполадки при включении и использовании Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 1efaa178c2abda316cfad3e375dfdd38b41d75e0
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 7696cc8eaeef9ba5e2e0955bad6f17d28e95b5e5
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87835703"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88077039"
 ---
 # <a name="azure-dev-spaces-troubleshooting"></a>Устранение неполадок с Azure Dev Spaces
 
@@ -284,7 +284,7 @@ Service cannot be started.
 
 При запуске службы с Azure Dev Spaces в кластере AKS с установленным [управляемым удостоверением](../aks/use-managed-identity.md) и [управляемыми удостоверениями Pod](../aks/developer-best-practices-pod-security.md#use-pod-managed-identities) процесс может перестать отвечать после шага *установки диаграммы* . Проверив значение *azds-injector-webhook* в пространстве имен *azds*, вы можете столкнуться с такой ошибкой.
 
-Службы, которые Azure Dev Spaces выполняет в кластере, используют управляемое удостоверение кластера для взаимодействия с внутренними службами Azure Dev Spaces, расположенными за пределами кластера. При установке управляемого удостоверения pod на узлах кластера настраиваются сетевые правила для перенаправления всех вызовов учетных данных управляемого удостоверения в [кластерную установку Node Managed Identity (NMI)](https://github.com/Azure/aad-pod-identity#node-managed-identity). Этот контроллер DaemonSet NMI определяет вызывающую группу pod и проверяет, что она отмечена для получения доступа к запрошенному управляемому удостоверению. Azure Dev Spaces не может определить, установлено ли в кластере управляемое удостоверение pod, и не может выполнить необходимую настройку, чтобы разрешить службам Azure Dev Spaces доступ к управляемому удостоверению кластера. Так как в службах Azure Dev Spaces не настроен доступ к управляемому удостоверению кластера, контроллер DaemonSet NMI не разрешит им получить маркер AAD для управляемого удостоверения, и взаимодействие с внутренними службами Azure Dev Spaces завершится ошибкой.
+Службы, которые Azure Dev Spaces выполняет в кластере, используют управляемое удостоверение кластера для взаимодействия с внутренними службами Azure Dev Spaces, расположенными за пределами кластера. При установке управляемого удостоверения pod на узлах кластера настраиваются сетевые правила для перенаправления всех вызовов учетных данных управляемого удостоверения в [кластерную установку Node Managed Identity (NMI)](https://github.com/Azure/aad-pod-identity#node-managed-identity). Этот контроллер DaemonSet NMI определяет вызывающую группу pod и проверяет, что она отмечена для получения доступа к запрошенному управляемому удостоверению. Azure Dev Spaces не может определить, установлено ли в кластере управляемое удостоверение pod, и не может выполнить необходимую настройку, чтобы разрешить службам Azure Dev Spaces доступ к управляемому удостоверению кластера. Так как службы Azure Dev Spaces не настроены для доступа к управляемому удостоверению кластера, Демон NMI не позволит им получить маркер Azure AD для управляемого удостоверения и не сможет взаимодействовать с Azure Dev Spaces серверными службами.
 
 Чтобы устранить эту проблему, примените [AzurePodIdentityException](https://github.com/Azure/aad-pod-identity/blob/master/docs/readmes/README.app-exception.md) к *azds-injector-webhook* и обновите все группы pod, инструментированные Azure Dev Spaces, предоставив им доступ к управляемому удостоверению.
 
@@ -416,7 +416,7 @@ spec:
 
 Такая ошибка может возникнуть при запуске отладчика Visual Studio Code. Возможно, на компьютере разработки не установлено расширение VS Code для Azure Dev Spaces.
 
-Чтобы устранить эту проблему, установите [расширение VS Code для Azure Dev Spaces](get-started-netcore.md).
+Чтобы устранить эту проблему, установите расширение VS Code для Azure Dev Spaces.
 
 ### <a name="error-invalid-cwd-value-src-the-system-cannot-find-the-file-specified-or-launch-program-srcpath-to-project-binary-does-not-exist"></a>Ошибка Invalid 'cwd' value '/src' (Недопустимое для cwd значение /src) The system cannot find the file specified" ("Недопустимое значение "/src" каталога "cwd". Системе не удается найти указанный файл") или "launch: program '/src/[path to project binary]' does not exist" ("запуск: программа "/src/[путь к двоичному файлу проекта]" не существует")
 

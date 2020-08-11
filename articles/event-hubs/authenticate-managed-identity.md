@@ -3,12 +3,12 @@ title: Проверка подлинности управляемого удос
 description: В этой статье содержатся сведения о проверке подлинности управляемого удостоверения с Azure Active Directory для доступа к ресурсам концентраторов событий Azure.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 707c93d1f104dcc2982999c4e7461947280918ef
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: c74e49eff8233d9918fcdb55e6fa2ad8d7517f6f
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534419"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88079147"
 ---
 # <a name="authenticate-a-managed-identity-with-azure-active-directory-to-access-event-hubs-resources"></a>Проверка подлинности управляемого удостоверения с Azure Active Directory для доступа к ресурсам концентраторов событий
 Концентраторы событий Azure поддерживают проверку подлинности Azure Active Directory (Azure AD) с помощью [управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md). Управляемые удостоверения для ресурсов Azure могут авторизовать доступ к ресурсам концентраторов событий с помощью учетных данных Azure AD из приложений, работающих на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и других служб. Используя управляемые удостоверения для ресурсов Azure вместе с проверкой подлинности Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке.
@@ -32,7 +32,7 @@ ms.locfileid: "87534419"
 ## <a name="use-event-hubs-with-managed-identities"></a>Использование Центров событий с управляемыми удостоверениями для ресурсов Azure
 Чтобы использовать концентраторы событий с управляемыми удостоверениями, необходимо назначить удостоверение роли и соответствующую область. Процедура в этом разделе использует простое приложение, которое выполняется под управляемым удостоверением и обращается к ресурсам концентраторов событий.
 
-Здесь мы используем пример веб-приложения, размещенного в [службе приложений Azure](https://azure.microsoft.com/services/app-service/). Пошаговые инструкции по созданию веб-приложения см. [в статье создание ASP.NET Core веб-приложения в Azure](../app-service/app-service-web-get-started-dotnet.md) .
+Здесь мы используем пример веб-приложения, размещенного в [службе приложений Azure](https://azure.microsoft.com/services/app-service/). Пошаговые инструкции по созданию веб-приложения см. [в статье создание ASP.NET Core веб-приложения в Azure](../app-service/quickstart-dotnetcore.md) .
 
 После создания приложения выполните следующие действия. 
 

@@ -6,12 +6,12 @@ ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
 ms.date: 08/13/2019
 ms.custom: seodec18
-ms.openlocfilehash: e4ebb33333dc59432fd269c4847abdeab91d935c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9371b39bd37ba2514256a3b2fa90812f45c7ce5e
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85389787"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88077379"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Настройка приложения службы приложений в портал Azure
 
@@ -33,13 +33,13 @@ ms.locfileid: "85389787"
 
 Другие стеки языков, аналогично, получают параметры приложения в виде переменных среды во время выполнения. Инструкции по стеку для конкретного языка см. в следующих статьях:
 
-- [ASP.NET Core](containers/configure-language-dotnetcore.md#access-environment-variables)
-- [Node.js](containers/configure-language-nodejs.md#access-environment-variables)
-- [PHP](containers/configure-language-php.md#access-environment-variables)
-- [Python](containers/how-to-configure-python.md#access-environment-variables)
-- [Java](containers/configure-language-java.md#data-sources)
-- [Ruby](containers/configure-language-ruby.md#access-environment-variables)
-- [Пользовательские контейнеры](containers/configure-custom-container.md#configure-environment-variables)
+- [ASP.NET Core](configure-language-dotnetcore.md#access-environment-variables)
+- [Node.js](configure-language-nodejs.md#access-environment-variables)
+- [PHP](configure-language-php.md#access-environment-variables)
+- [Python](configure-language-python.md#access-environment-variables)
+- [Java](configure-language-java.md#data-sources)
+- [Ruby](configure-language-ruby.md#access-environment-variables)
+- [Пользовательские контейнеры](configure-custom-container.md#configure-environment-variables)
 
 Параметры приложения всегда шифруются при хранении.
 
@@ -104,13 +104,13 @@ ms.locfileid: "85389787"
 
 Например, можно получить доступ к строке подключения MySql с именем *connectionstring1* в качестве переменной среды `MYSQLCONNSTR_connectionString1` . Инструкции по стеку для конкретного языка см. в следующих статьях:
 
-- [ASP.NET Core](containers/configure-language-dotnetcore.md#access-environment-variables)
-- [Node.js](containers/configure-language-nodejs.md#access-environment-variables)
-- [PHP](containers/configure-language-php.md#access-environment-variables)
-- [Python](containers/how-to-configure-python.md#access-environment-variables)
-- [Java](containers/configure-language-java.md#data-sources)
-- [Ruby](containers/configure-language-ruby.md#access-environment-variables)
-- [Пользовательские контейнеры](containers/configure-custom-container.md#configure-environment-variables)
+- [ASP.NET Core](configure-language-dotnetcore.md#access-environment-variables)
+- [Node.js](configure-language-nodejs.md#access-environment-variables)
+- [PHP](configure-language-php.md#access-environment-variables)
+- [Python](configure-language-python.md#access-environment-variables)
+- [Java](configure-language-java.md#data-sources)
+- [Ruby](configure-language-ruby.md#access-environment-variables)
+- [Пользовательские контейнеры](configure-custom-container.md#configure-environment-variables)
 
 Строки подключения всегда шифруются при хранении.
 
@@ -176,7 +176,7 @@ ms.locfileid: "85389787"
     > [!NOTE]
     > Большинство современных браузеров поддерживают протокол HTTP/2 только через TLS, а для незашифрованного трафика продолжает использоваться протокол HTTP/1.1. Чтобы обеспечить подключение клиентских браузеров к приложению по протоколу HTTP/2, обеспечьте безопасность настраиваемого DNS-имени. Дополнительные сведения см. [в статье Защита настраиваемого DNS-имени с помощью привязки TLS/SSL в службе приложений Azure](configure-ssl-bindings.md).
     - **Сопоставление arr**. в развертывании с несколькими экземплярами убедитесь, что клиент направляется на один и тот же экземпляр в течение сеанса. Этот параметр можно установить в значение **Off** для приложений без отслеживания состояния.
-- **Отладка**: включить удаленную отладку для [ASP.NET](troubleshoot-dotnet-visual-studio.md#remotedebug), [ASP.NET Core](/visualstudio/debugger/remote-debugging-azure)или [Node.js](containers/configure-language-nodejs.md#debug-remotely) приложений. Этот параметр автоматически отключается через 48 часов.
+- **Отладка**: включить удаленную отладку для [ASP.NET](troubleshoot-dotnet-visual-studio.md#remotedebug), [ASP.NET Core](/visualstudio/debugger/remote-debugging-azure)или [Node.js](configure-language-nodejs.md#debug-remotely) приложений. Этот параметр автоматически отключается через 48 часов.
 - **Входящие сертификаты клиентов**: требовать [взаимной проверки подлинности](app-service-web-configure-tls-mutual-auth.md)сертификаты клиентов.
 
 ## <a name="configure-default-documents"></a>Настройка документов по умолчанию
@@ -215,7 +215,7 @@ ms.locfileid: "85389787"
 
 ### <a name="containerized-apps"></a>Контейнерные приложения
 
-Вы можете [Добавить пользовательское хранилище для контейнерного приложения](containers/how-to-serve-content-from-azure-storage.md). Контейнерные приложения включают все приложения Linux, а также настраиваемые контейнеры Windows и Linux, выполняющиеся в службе приложений. Щелкните **создать подключение к службе хранилища Azure** и настройте настраиваемое хранилище следующим образом.
+Вы можете [Добавить пользовательское хранилище для контейнерного приложения](configure-connect-to-azure-storage.md). Контейнерные приложения включают все приложения Linux, а также настраиваемые контейнеры Windows и Linux, выполняющиеся в службе приложений. Щелкните **создать подключение к службе хранилища Azure** и настройте настраиваемое хранилище следующим образом.
 
 - **Имя**: отображаемое имя.
 - **Параметры конфигурации**: **базовый** или **Расширенный**.
@@ -228,27 +228,27 @@ ms.locfileid: "85389787"
 - **Ключ доступа**: для расширенной настройки — ключ доступа.
 - **Путь подключения**: абсолютный путь в контейнере для подключения пользовательского хранилища.
 
-См. сведения в руководстве по [обработке содержимого из службы хранилища Azure в Службе приложений в Linux](containers/how-to-serve-content-from-azure-storage.md).
+Дополнительные сведения см. [в статье доступ к службе хранилища Azure в качестве общей сетевой папки из контейнера службы приложений](configure-connect-to-azure-storage.md).
 
 ## <a name="configure-language-stack-settings"></a>Настройка параметров языкового стека
 
 Для приложений Linux см.:
 
-- [ASP.NET Core](containers/configure-language-dotnetcore.md)
-- [Node.js](containers/configure-language-nodejs.md)
-- [PHP](containers/configure-language-php.md)
-- [Python](containers/how-to-configure-python.md)
-- [Java](containers/configure-language-java.md)
-- [Ruby](containers/configure-language-ruby.md)
+- [ASP.NET Core](configure-language-dotnetcore.md)
+- [Node.js](configure-language-nodejs.md)
+- [PHP](configure-language-php.md)
+- [Python](configure-language-python.md)
+- [Java](configure-language-java.md)
+- [Ruby](configure-language-ruby.md)
 
 ## <a name="configure-custom-containers"></a>Настройка пользовательских контейнеров
 
-См. статью [Настройка пользовательского контейнера Linux для службы приложений Azure](containers/configure-custom-container.md) .
+См. статью [Настройка пользовательского контейнера Linux для службы приложений Azure](configure-custom-container.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка личного доменного имени в службе приложений Azure]
-- [Настройка промежуточных сред в службе приложений Azure]
+- [Настройка промежуточных сред в Службе приложений Azure]
 - [Защита пользовательского доменного имени с помощью привязки TLS/SSL в Службе приложений Azure](configure-ssl-bindings.md)
 - [Включение журналов диагностики](troubleshoot-diagnostic-logs.md)
 - [Масштабирование приложения в службе приложений Azure]
@@ -258,9 +258,9 @@ ms.locfileid: "85389787"
 <!-- URL List -->
 
 [ASP.NET SignalR]: https://www.asp.net/signalr
-[портале Azure]: https://portal.azure.com/
+[Портал Azure]: https://portal.azure.com/
 [Настройка личного доменного имени в службе приложений Azure]: ./app-service-web-tutorial-custom-domain.md
-[Настройка промежуточных сред в службе приложений Azure]: ./deploy-staging-slots.md
+[Настройка промежуточных сред в Службе приложений Azure]: ./deploy-staging-slots.md
 [How to: Monitor web endpoint status]: https://go.microsoft.com/fwLink/?LinkID=279906
 [Основы мониторинга в службе приложений Azure]: ./web-sites-monitor.md
 [режим конвейера]: https://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application

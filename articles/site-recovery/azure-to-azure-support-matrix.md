@@ -4,12 +4,12 @@ description: Сводные сведения о поддержке аварий�
 ms.topic: article
 ms.date: 07/14/2020
 ms.author: raynew
-ms.openlocfilehash: 09b7fe1cc4f871d1f94844a8551479fabc0e22ff
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: c8890afcdab1b6247fe072f2e34437d790185e58
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88008854"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88076935"
 ---
 # <a name="support-matrix-for-azure-vm-disaster-recovery-between-azure-regions"></a>Таблица со сведениями о поддержке аварийного восстановления виртуальной машины Azure между регионами Azure
 
@@ -163,7 +163,9 @@ SUSE Linux Enterprise Server 15 и 15 SP1 | 9.32 | По умолчанию по
 
 * Файловые системы: ext3, ext4, XFS, BTRFS
 * Диспетчер томов: LVM2
-* Многопутевое программное обеспечение: Device Mapper
+
+> [!NOTE]
+> Многопутевое программное обеспечение не поддерживается. 
 
 
 ## <a name="replicated-machines---compute-settings"></a>Параметры вычислений реплицированных компьютеров

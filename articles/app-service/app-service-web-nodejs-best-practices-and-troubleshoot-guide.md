@@ -8,16 +8,16 @@ ms.topic: article
 ms.date: 11/09/2017
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: e2c60e851d61a5f33e1b050412b0e91b81e20a16
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 3fd9a013eb3318abc48745e163d9ee0118b52b1d
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86169991"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88077481"
 ---
 # <a name="best-practices-and-troubleshooting-guide-for-node-applications-on-azure-app-service-windows"></a>Рекомендации и руководство по устранению неполадок в приложениях Node.js в Службе приложений Azure (Windows)
 
-В этой статье описываются рекомендации и способы устранения неполадок [приложений Node](app-service-web-get-started-nodejs.md), запущенных в службе приложений Azure (с помощью [iisnode](https://github.com/azure/iisnode)).
+В этой статье вы узнаете о рекомендациях и действиях по устранению неполадок для [приложений Windows Node.js](quickstart-nodejs.md?pivots=platform-windows) , работающих в службе приложений Azure (с помощью [iisnode](https://github.com/azure/iisnode)).
 
 > [!WARNING]
 > Будьте осторожны при выполнении действий по устранению неполадок на рабочем сайте. Действия по устранению неполадок приложения рекомендуется выполнять на нерабочем сайте. Например, настройте там промежуточный слот, а когда проблема будет решена, замените промежуточный слот на рабочий.
@@ -87,7 +87,7 @@ ms.locfileid: "86169991"
 
 ### <a name="recyclesignalenabled"></a>recycleSignalEnabled
 
-Значение по умолчанию — false. Этот параметр, если он включен, позволяет приложению Node подключаться к определенному каналу (переменная среды — IISNODE\_CONTROL\_PIPE) и отправлять сообщение о перезапуске. Это приведет к перезапуску процесса w3wp.
+Значением по умолчанию является false. Этот параметр, если он включен, позволяет приложению Node подключаться к определенному каналу (переменная среды — IISNODE\_CONTROL\_PIPE) и отправлять сообщение о перезапуске. Это приведет к перезапуску процесса w3wp.
 
 ### <a name="idlepageouttimeperiod"></a>idlePageOutTimePeriod
 
@@ -99,7 +99,7 @@ ms.locfileid: "86169991"
 
 ### <a name="debugheaderenabled"></a>debugHeaderEnabled
 
-Значение по умолчанию — false. Если изменить его на true, iisnode добавляет HTTP-заголовок ответа `iisnode-debug` к каждому отправленному им ответу HTTP. Значение заголовка `iisnode-debug` имеет формат URL-адреса. Некоторые элементы диагностических данных можно извлечь из фрагмента URL-адреса, а для более детальных сведений вы можете открыть URL-адрес в веб-браузере.
+Значением по умолчанию является false. Если изменить его на true, iisnode добавляет HTTP-заголовок ответа `iisnode-debug` к каждому отправленному им ответу HTTP. Значение заголовка `iisnode-debug` имеет формат URL-адреса. Некоторые элементы диагностических данных можно извлечь из фрагмента URL-адреса, а для более детальных сведений вы можете открыть URL-адрес в веб-браузере.
 
 ### <a name="loggingenabled"></a>loggingEnabled
 
@@ -107,7 +107,7 @@ ms.locfileid: "86169991"
 
 ### <a name="deverrorsenabled"></a>devErrorsEnabled
 
-Значение по умолчанию — false. Если изменить его на true, iisnode отобразит в браузере код состояния HTTP и код ошибки Win32. Код win32 полезен при отладке проблем определенных типов.
+Значением по умолчанию является false. Если изменить его на true, iisnode отобразит в браузере код состояния HTTP и код ошибки Win32. Код win32 полезен при отладке проблем определенных типов.
 
 ### <a name="debuggingenabled-do-not-enable-on-live-production-site"></a>debuggingEnabled (не включайте этот параметр на активном рабочем сайте)
 
@@ -273,7 +273,7 @@ NODE.exe поддерживает параметр с именем `NODE_PENDING
 
 Дополнительные сведения о приложениях Node.js в службе приложений Azure см. по следующим ссылкам.
 
-* [Приступая к работе с веб-приложениями Node.js в службе приложений Azure](app-service-web-get-started-nodejs.md)
+* [Приступая к работе с веб-приложениями Node.js в службе приложений Azure](quickstart-nodejs.md)
 * [Отладка веб-приложения Node.js в службе приложений Azure](https://blogs.msdn.microsoft.com/azureossds/2018/08/03/debugging-node-js-apps-on-azure-app-services/)
 * [Использование модулей Node.js с приложениями Azure](../nodejs-use-node-modules-azure-apps.md)
 * [Azure App Service Web Apps: Node.js (Веб-приложения службы приложений Azure: Node.js)](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/)
