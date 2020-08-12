@@ -13,12 +13,12 @@ ms.date: 09/16/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: e86b89fbf325eb0af5e4127e7fe113b87b1b70c2
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: f9ad5eeec17027b0e2891069af703c28aee9c528
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87874271"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88119102"
 ---
 # <a name="token-cache-serialization-in-msalnet"></a>Сериализация кэша маркеров в MSAL.NET
 Библиотека аутентификации Майкрософт (MSAL) кэширует каждый [полученный маркер](msal-acquire-cache-tokens.md).  В коде приложения следует сначала попытаться получить маркер из кэша, а лишь затем использовать для этого другие средства.  В этой статье рассматриваются стандартная и пользовательская сериализации для кэша маркеров в MSAL.NET.
@@ -281,7 +281,7 @@ MSAL.NET обеспечивает сериализацию кэша пользо
 
 Библиотека [Microsoft. Identity. Web](https://github.com/AzureAD/microsoft-identity-web) предоставляет предварительный просмотр пакета NuGet [Microsoft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) , содержащего сериализацию кэша маркеров:
 
-| Метод расширения | Подпространство имен Microsoft. Identity. Web | Описание:  |
+| Метод расширения | Подпространство имен Microsoft. Identity. Web | Описание  |
 | ---------------- | --------- | ------------ |
 | `AddInMemoryTokenCaches` | `TokenCacheProviders.InMemory` | В сериализации кэша маркеров памяти. Эта реализация отлично подходит для примеров. Это также хорошо в рабочих приложениях, если при перезапуске веб-приложения вы не будете иметь в виду, что кэш маркеров будет потерян. `AddInMemoryTokenCaches`принимает необязательный параметр типа `MsalMemoryTokenCacheOptions` , который позволяет указать срок действия записи кэша, если он не используется.
 | `AddSessionTokenCaches` | `TokenCacheProviders.Session` | Кэш маркеров привязан к сеансу пользователя. Этот параметр не является идеальным, если маркер идентификатора содержит много утверждений, так как файл cookie становится слишком большим.
@@ -325,9 +325,9 @@ services.AddDistributedSqlServerCache(options =>
 });
 ```
 
-Их использование описывается в руководстве по [веб-приложению ASP.NET Core](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/) в [кэше маркеров этапа 2-2](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache).
+Их использование описывается в руководстве по [веб-приложению ASP.NET Core](/aspnet/core/tutorials/first-mvc-app/) в [кэше маркеров этапа 2-2](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Приведенные ниже примеры демонстрируют сериализацию кэша маркеров.
 

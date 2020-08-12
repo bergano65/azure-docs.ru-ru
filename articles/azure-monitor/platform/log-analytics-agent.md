@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/06/2020
-ms.openlocfilehash: ff8bb1fea863c8ba08434df9c718199ad9f51652
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: d507db415a2438c97444ca008f0c9b182306242b
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87925793"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121533"
 ---
 # <a name="log-analytics-agent-overview"></a>Общие сведения об агенте Log Analytics
 Агент Log Analytics разработан для комплексного управления на виртуальных машинах, размещенных на облаке, на локальных компьютерах, и других отслеживаемых с помощью [System Center Operations Manager](/system-center/scom/) компьютерах. Агенты Windows и Linux отправляют в рабочую область вашего Log Analytics в Azure Monitor собранные данные из разных источников, а также уникальные журналы и метрики, как задано в решении мониторинга. Агент Log Analytics также поддерживает аналитику и другие службы в Azure Monitor, такие как [Azure Monitor для виртуальных машин](../insights/vminsights-enable-overview.md), [Центр безопасности Azure](../../security-center/index.yml) и [Служба автоматизации Azure](../../automation/automation-intro.md).
@@ -174,7 +174,7 @@ ms.locfileid: "87925793"
 
 
 ## <a name="sha-2-code-signing-support-requirement-for-windows"></a>Требования для поддержки подписывания кода SHA-2 для Windows
-Агент Windows начнет монопольное использование подписывания SHA-2 с 17 августа 2020 года. Это изменение повлияет на клиентов, использующих агент Log Analytics в устаревшей ОС в составе любой службы Azure (Azure Monitor, Служба автоматизации Azure, Управление обновлениями Azure, Отслеживание изменений Azure, Центр безопасности Azure, Azure Sentinel, Защитник Windows ATP). Это изменение не требует никаких действий клиента, если только агент не используется в устаревшей версии ОС (Windows 7, Windows Server 2008 R2 и Windows Server 2008). Клиенты, работающие в устаревшей версии ОС, должны выполнить такие действия на своих компьютерах до 17 августа 2020 года, или их агенты перестанут отправлять данные в свои рабочие области Log Analytics:
+Агент Windows будет использовать монопольный вход SHA-2 в течение 2 ноября 2020 г. Это изменение повлияет на клиентов, использующих агент Log Analytics в устаревшей ОС в составе любой службы Azure (Azure Monitor, Служба автоматизации Azure, Управление обновлениями Azure, Отслеживание изменений Azure, Центр безопасности Azure, Azure Sentinel, Защитник Windows ATP). Это изменение не требует никаких действий клиента, если только агент не используется в устаревшей версии ОС (Windows 7, Windows Server 2008 R2 и Windows Server 2008). Клиенты, работающие в устаревшей версии ОС, должны выполнить следующие действия на своих компьютерах до 2 ноября 2020 или их агенты перестанут отправлять данные в свои рабочие области Log Analytics:
 
 1. установить последний пакет обновления для своей ОС. Необходимые версии пакета обновления:
     - Windows 7 с пакетом обновления 1 (SP1)

@@ -12,12 +12,12 @@ ms.date: 08/05/2019
 ms.author: kenwith
 ms.reviewer: paulgarn
 ms.custom: aaddev
-ms.openlocfilehash: 2d745ddcf7b1d5bd7976a0ca8461c13d8ae3c849
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: e0db5bec00ce864536b3559eda160acdada5e157
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282387"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88114699"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-saml-bearer-assertion-flow"></a>Платформа удостоверений Майкрософт и поток утверждения носителя OAuth 2.0 SAML
 Поток утверждения носителя OAuth 2.0 SAML позволяет запросить маркер доступа OAuth с помощью утверждения SAML, когда клиенту необходимо использовать существующее отношение доверия. Подпись, применяемая к утверждению SAML, обеспечивает проверку подлинности авторизованного приложения. Утверждение SAML — это маркер безопасности XML, выданный поставщиком удостоверений и используемый поставщиком услуг. Поставщик услуг использует его содержимое для идентификации субъекта утверждения в целях безопасности.
@@ -37,7 +37,7 @@ ms.locfileid: "87282387"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-Установите отношение доверия между сервером авторизации/средой (Microsoft 365) и поставщиком удостоверений или издателем утверждения носителя SAML 2.0 (ADFS). Чтобы настроить ADFS для единого входа и в качестве поставщика удостоверений, см. [эту статью](https://blogs.technet.microsoft.com/canitpro/2015/09/11/step-by-step-setting-up-ad-fs-and-enabling-single-sign-on-to-office-365/).
+Установите отношение доверия между сервером авторизации/средой (Microsoft 365) и поставщиком удостоверений или издателем утверждения носителя SAML 2.0 (ADFS). Чтобы настроить ADFS для единого входа и в качестве поставщика удостоверений, см. [эту статью](/archive/blogs/canitpro/step-by-step-setting-up-ad-fs-and-enabling-single-sign-on-to-office-365).
 
 Зарегистрируйте приложение на [портале](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade):
 1. Войдите в [колонку регистрации приложения на портале](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) (обратите внимание, что для API Graph используются конечные точки версии 2.0 и, следовательно, необходимо зарегистрировать приложение на портале. В противном случае мы могли бы использовать регистрации в Azure Active Directory). 

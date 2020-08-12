@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/15/2020
 ms.author: damaerte
-ms.openlocfilehash: 5abc10d149cdb2c054f4122cd805ec22b2e37e2f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1cb5716e2f02a99e4d39a4041a2e54e87cf43568
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87098133"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88114665"
 ---
 # <a name="deploy-cloud-shell-into-an-azure-virtual-network"></a>Развертывание Cloud Shell в виртуальной сети Azure
 > [!NOTE]
@@ -103,7 +103,7 @@ ResourceTypes                             RegistrationState
 > [!NOTE]
 > Этот шаг необходимо выполнить для каждого администратора, который будет использовать Cloud Shell.
 
-После развертывания выполните указанные выше действия, перейдя по адресу Cloud Shell в портал Azure или в https://shell.azure.com .
+После развертывания выполните указанные выше действия, перейдя по адресу Cloud Shell в портал Azure или в https://shell.azure.com . Один из этих функций должен использоваться каждый раз, когда необходимо подключиться к изолированной Cloud Shell.
 
 > [!NOTE]
 > Если Cloud Shell использовался в прошлом, существующие clouddrive должны быть отключены. Чтобы выполнить это действие `clouddrive unmount` из активного сеанса Cloud Shell, обновите страницу.

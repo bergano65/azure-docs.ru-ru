@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 1adff446e6d41e30db109d0871811dc651f1f4f5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b16ee98b44e52482423229a0940c8927a94d4c83
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87026269"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118677"
 ---
 # <a name="web-app-that-signs-in-users-app-registration"></a>Веб-приложение, которое входит в систему пользователей: регистрация приложения
 
@@ -41,7 +41,7 @@ ms.locfileid: "87026269"
 > Используемый портал отличается в зависимости от того, выполняется ли ваше приложение в Microsoft Azure общедоступном облаке или в национальной или независимых облаке. Дополнительные сведения см. в статье [местные облака](./authentication-national-cloud.md#app-registration-endpoints).
 
 
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи. Кроме того, можно войти в [портал Azure](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud#app-registration-endpoints) для национального облака.
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи. Кроме того, можно войти в [портал Azure](./authentication-national-cloud.md#app-registration-endpoints) для национального облака.
 2. Если ваша учетная запись предоставляет доступ к нескольким клиентам, выберите свою учетную запись в правом верхнем углу. Затем задайте для сеанса портала требуемый клиент Azure Active Directory (Azure AD).
 3. В левой области выберите службу **Azure Active Directory** , а затем выберите **Регистрация приложений**  >  **Новая регистрация**.
 
@@ -91,7 +91,7 @@ ms.locfileid: "87026269"
 
    1. Введите описание ключа.
    1. Выберите продолжительность ключа **в 1 году**.
-   1. Выберите **Добавить**.
+   1. Нажмите **Добавить**.
    1. Когда отобразится значение ключа, скопируйте его для последующего использования. Это значение не будет отображаться повторно или быть извлечено другими способами.
 
 # <a name="python"></a>[Python](#tab/python)
@@ -107,7 +107,7 @@ ms.locfileid: "87026269"
 
    1. Введите описание ключа.
    1. Выберите срок действия ключа**в 1 год**.
-   1. Выберите **Добавить**.
+   1. Нажмите **Добавить**.
    1. Когда отобразится значение ключа, скопируйте его. Он понадобится вам позднее.
 ---
 
@@ -119,7 +119,7 @@ ms.locfileid: "87026269"
 > - Мйорг (учетные записи только в этом каталоге организации)
 > - Анйорг (учетные записи в любом каталоге организации)
 >
-> Вы можете создать приложение, которое будет выполнять вход пользователей с помощью личных учетных записей Майкрософт (например, Skype, Xbox или Outlook.com). Сначала создайте многоклиентское приложение. Поддерживаемые типы учетных записей — это учетные записи в любом каталоге Организации. Затем измените [`accessTokenAcceptedVersion`](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest#accesstokenacceptedversion-attribute) значение свойства на **2** , а свойство — на [`signInAudience`](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest#signinaudience-attribute) `AzureADandPersonalMicrosoftAccount` в [манифесте приложения](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest) из портал Azure. Дополнительные сведения см. в описании [шага 1,3](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-3-AnyOrgOrPersonal#step-1-register-the-sample-with-your-azure-ad-tenant) в руководстве по ASP.NET Core. Этот шаг можно обобщить для веб-приложений на любом языке.
+> Вы можете создать приложение, которое будет выполнять вход пользователей с помощью личных учетных записей Майкрософт (например, Skype, Xbox или Outlook.com). Сначала создайте многоклиентское приложение. Поддерживаемые типы учетных записей — это учетные записи в любом каталоге Организации. Затем измените [`accessTokenAcceptedVersion`](./reference-app-manifest.md#accesstokenacceptedversion-attribute) значение свойства на **2** , а свойство — на [`signInAudience`](./reference-app-manifest.md#signinaudience-attribute) `AzureADandPersonalMicrosoftAccount` в [манифесте приложения](./reference-app-manifest.md) из портал Azure. Дополнительные сведения см. в описании [шага 1,3](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-3-AnyOrgOrPersonal#step-1-register-the-sample-with-your-azure-ad-tenant) в руководстве по ASP.NET Core. Этот шаг можно обобщить для веб-приложений на любом языке.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

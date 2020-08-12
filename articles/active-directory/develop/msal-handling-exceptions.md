@@ -13,12 +13,12 @@ ms.date: 05/18/2020
 ms.author: marsma
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: c27938227a13934de11dd6e88d58138c46c3f58e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 60c61ff4753413d2241820400dcbc899e925eecc
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85204632"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88120955"
 ---
 # <a name="handle-msal-exceptions-and-errors"></a>Обработка ошибок и исключений MSAL
 
@@ -236,7 +236,7 @@ myMSALObj.acquireTokenSilent(request).then(function (response) {
 * В случае успешного выполнения ответ будет содержать ключ `"access_token"`. Формат ответа определяется протоколом OAuth2. Дополнительные сведения см. в разделе 5.1 [Успешный ответ](https://tools.ietf.org/html/rfc6749#section-5.1).
 * Ответ со сведениями об ошибке содержит `"error"` и обычно `"error_description"`. Формат ответа определяется протоколом OAuth2. Дополнительные сведения см. в разделе 5.2 [Ответ со сведениями об ошибке](https://tools.ietf.org/html/rfc6749#section-5.2).
 
-При возвращении ошибки ключ `"error_description"` содержит удобное для чтения сообщение, которое, в свою очередь, обычно содержит код ошибки платформы удостоверений Майкрософт. Дополнительные сведения см. в статье [Коды ошибок аутентификация Azure AD и авторизации](https://docs.microsoft.com/azure/active-directory/develop/reference-aadsts-error-codes).
+При возвращении ошибки ключ `"error_description"` содержит удобное для чтения сообщение, которое, в свою очередь, обычно содержит код ошибки платформы удостоверений Майкрософт. Дополнительные сведения см. в статье [Коды ошибок аутентификация Azure AD и авторизации](./reference-aadsts-error-codes.md).
 
 В MSAL для Python исключения редки, поскольку большинство ошибок обрабатывается путем возврата значения ошибки. Исключение `ValueError` происходит только в случае проблем из-за попытки использовать библиотеку определенным способом, например, если параметры API имеют неправильный формат.
 

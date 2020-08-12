@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: b6111529d1a3d37f08b29fb5c0751fb6a49acea5
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 40ea8c3d070d8895a6da063789279895f52189e3
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88054074"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88116773"
 ---
 # <a name="what-authentication-and-verification-methods-are-available-in-azure-active-directory"></a>Какие методы проверки подлинности и подтверждения доступны в Azure Active Directory?
 
@@ -45,6 +45,8 @@ ms.locfileid: "88054074"
 | [Контрольные вопросы](#security-questions) | нет | Только SSPR |
 | [Адрес электронной почты](#email-address) | нет | Только SSPR |
 | [Пароли приложений](#app-passwords) | нет | Только MFA в некоторых случаях |
+
+Эти методы проверки подлинности можно настроить в портал Azure и все чаще использовать [Microsoft Graph REST API бета-версии](/graph/api/resources/authenticationmethods-overview?view=graph-rest-beta).
 
 В этой статье описаны различные методы проверки подлинности и подтверждения, доступные в Azure AD, а также их ограничения.
 
@@ -297,6 +299,8 @@ Helga@contoso.com,1234567,1234567abcdef1234567abcdef,60,Contoso,HardwareKey
 Узнать больше об основных понятиях SSPR можно в разделе [Принципы самостоятельного сброса пароля в Azure AD][concept-sspr].
 
 Узнать больше об основных понятиях многофакторной проверки подлинности можно в разделе [Принципы многофакторной идентификации Azure][concept-mfa].
+
+Дополнительные сведения о настройке методов проверки подлинности с помощью [Microsoft Graph REST API бета-версии](/graph/api/resources/authenticationmethods-overview?view=graph-rest-beta).
 
 <!-- INTERNAL LINKS -->
 [tutorial-sspr]: tutorial-enable-sspr.md

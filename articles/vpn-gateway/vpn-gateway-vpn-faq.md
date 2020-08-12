@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 03/05/2020
 ms.author: yushwang
-ms.openlocfilehash: 027047a212df72479a4f1b2511729365f3fa09e4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b5d66e79e79edd98f3192d0187d6f0454c3aeffa
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708932"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121482"
 ---
 # <a name="vpn-gateway-faq"></a>VPN-шлюз: вопросы и ответы
 
@@ -126,6 +126,10 @@ VPN Azure использует проверку подлинности с пом
 ### <a name="can-i-configure-force-tunneling"></a>Можно ли настроить принудительное туннелирование?
 
 Да. См. руководство по использованию [принудительного туннелирования](vpn-gateway-about-forced-tunneling.md).
+
+### <a name="can-i-use-nat-t-on-my-vpn-connections"></a>Можно ли использовать NAT-T в моих VPN-подключениях?
+
+Да, поддерживается обход NAT (NAT-T). VPN-шлюз Azure не будет выполнять никаких функций NAT, таких как внутренние пакеты, в туннели IPsec и обратно.  В этой конфигурации убедитесь, что локальное устройство инициирует туннель IPSec.
 
 ### <a name="can-i-set-up-my-own-vpn-server-in-azure-and-use-it-to-connect-to-my-on-premises-network"></a>Можно ли настроить собственный VPN-сервер в Azure и использовать его для подключения к локальной сети?
 
@@ -247,7 +251,7 @@ VPN Azure использует проверку подлинности с пом
 
 Дополнительные сведения о виртуальных сетях см. в статье [Часто задаваемые вопросы по виртуальной сети](../virtual-network/virtual-networks-faq.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о VPN-шлюзах см. в [этой статье](vpn-gateway-about-vpngateways.md).
 * Дополнительные сведения о параметрах конфигурации VPN-шлюза см. в [этой статье](vpn-gateway-about-vpn-gateway-settings.md).

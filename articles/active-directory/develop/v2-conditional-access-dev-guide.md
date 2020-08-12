@@ -14,12 +14,12 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.topic: conceptual
 ms.workload: identity
-ms.openlocfilehash: 6b31a03a6367c9c6f2025c1544b59c95b3f69175
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.openlocfilehash: b1bfefb3b72c151e7a61068b3c0ad9f3e2bc4a6f
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83771083"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88120632"
 ---
 # <a name="developer-guidance-for-azure-active-directory-conditional-access"></a>Руководство для разработчиков по условному доступу в Azure Active Directory
 
@@ -33,7 +33,7 @@ ms.locfileid: "83771083"
 
 Эта статья адресуется разработчикам, создающим приложения для Azure AD. В ней показано, как можно использовать условный доступ, и описано влияние на доступ к неконтролируемым ресурсам, к которым могут применяться политики условного доступа. В статье рассматриваются последствия применения условного доступа в потоке On-Behalf-Of, веб-приложениях, а также при доступе к Microsoft Graph и вызове API.
 
-Предполагается знание [однотенантных](quickstart-register-app.md) и [мультитенантных](howto-convert-app-to-be-multi-tenant.md) приложений, а также [распространенных шаблонов аутентификации](authentication-scenarios.md).
+Предполагается знание [однотенантных](quickstart-register-app.md) и [мультитенантных](howto-convert-app-to-be-multi-tenant.md) приложений, а также [распространенных шаблонов аутентификации](./authentication-vs-authorization.md).
 
 > [!NOTE]
 > Для использования этой функции требуется лицензия Azure AD Premium P1. Чтобы найти подходящую лицензию, ознакомьтесь с разделом [Сравнение общедоступных функций выпусков Free, Basic и Premium](https://azure.microsoft.com/pricing/details/active-directory/).
@@ -52,7 +52,7 @@ ms.locfileid: "83771083"
 * одностраничные приложения, использующие MSAL.js;
 * веб-приложения, которые вызывают ресурс.
 
-Политики условного доступа могут применяться не только к приложению, но и к веб-API, к которому получает доступ ваше приложение. Сведения о том, как настроить политику условного доступа, см. в статье [Руководство по защите событий входа с помощью Многофакторной идентификации Azure](../conditional-access/app-based-mfa.md).
+Политики условного доступа могут применяться не только к приложению, но и к веб-API, к которому получает доступ ваше приложение. Сведения о том, как настроить политику условного доступа, см. в статье [Руководство по защите событий входа с помощью Многофакторной идентификации Azure](../authentication/tutorial-enable-azure-mfa.md).
 
 В зависимости от сценария корпоративный клиент может в любое время применять и удалять политики условного доступа. Чтобы ваше приложение продолжало функционировать при применении новой политики, необходимо реализовать обработку запросов. В следующих примерах показана обработка запроса.
 
@@ -93,7 +93,7 @@ claims={"access_token":{"polids":{"essential":true,"Values":["<GUID>"]}}}
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-Условный доступ Azure AD — это функция, доступная в [Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-whatis). Клиенты с [лицензиями Microsoft 365 бизнес](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-business-service-description) также имеют доступ к функциям условного доступа.
+Условный доступ Azure AD — это функция, доступная в [Azure AD Premium](../fundamentals/active-directory-whatis.md). Клиенты с [лицензиями Microsoft 365 бизнес](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-business-service-description) также имеют доступ к функциям условного доступа.
 
 ### <a name="considerations-for-specific-scenarios"></a>Рекомендации для конкретных сценариев
 
@@ -180,7 +180,7 @@ error_description=AADSTS50076: Due to a configuration change made by your admini
 
 ## <a name="see-also"></a>См. также раздел
 
-* Дополнительные сведения о возможностях условного доступа см. в статье об [условном доступе в Azure Active Directory](/azure/active-directory/conditional-access/overview).
+* Дополнительные сведения о возможностях условного доступа см. в статье об [условном доступе в Azure Active Directory](../conditional-access/overview.md).
 * Дополнительные примеры кода Azure AD доступны [здесь](sample-v2-code.md).
 * Дополнительные сведения о пакете SDK ADAL и ссылки на справочную документацию см. в статье [Обзор библиотеки проверки подлинности Майкрософт (MSAL)](msal-overview.md).
 * Дополнительные сведения о сценариях с несколькими клиентами см. в статье [Как реализовать вход любого пользователя Azure Active Directory (AD) с помощью шаблона мультитенантного приложения](howto-convert-app-to-be-multi-tenant.md).

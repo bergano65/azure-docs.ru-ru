@@ -13,12 +13,12 @@ ms.date: 09/24/2018
 ms.author: kkrishna
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 6e20b2f8c0e12fdb23668d16e2cbd7936cc4e48c
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: a9b0090fa13a6d2f7a837a4f5ffee37d70893318
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87445462"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88116909"
 ---
 # <a name="how-to-restrict-your-azure-ad-app-to-a-set-of-users-in-an-azure-ad-tenant"></a>Как ограничить приложение Azure AD набором пользователей в клиенте Azure AD
 
@@ -39,7 +39,7 @@ ms.locfileid: "87445462"
 - Приложения, созданные непосредственно на платформе приложений Azure AD, использующих проверку подлинности OAuth 2.0 или OpenID Connect после того, как пользователь или администратор согласились с условиями использования этого приложения.
 
      > [!NOTE]
-     > Эта функция доступна только для веб-приложений, веб-API и корпоративных приложений. Приложения, зарегистрированные как [собственные](quickstart-v1-integrate-apps-with-azure-ad.md), нельзя ограничивать набором пользователей или групп безопасности в клиенте.
+     > Эта функция доступна только для веб-приложений, веб-API и корпоративных приложений. Приложения, зарегистрированные как [собственные](./quickstart-register-app.md), нельзя ограничивать набором пользователей или групп безопасности в клиенте.
 
 ## <a name="update-the-app-to-enable-user-assignment"></a>Обновление приложения для включения назначения пользователя
 
@@ -95,8 +95,8 @@ ms.locfileid: "87445462"
 
 ## <a name="more-information"></a>Дополнительные сведения
 
-- [Как добавить роли приложения в приложение](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps)
+- [Как добавить роли приложения в приложение](./howto-add-app-roles-in-azure-ad-apps.md)
 - [Добавление авторизации с помощью ролей приложения и утверждения ролей в веб-приложение ASP.NET Core](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/5-WebApp-AuthZ/5-1-Roles)
 - [August 9: Using application roles and security groups in your apps (Video)](https://www.youtube.com/watch?v=V8VUPixLSiM) (9 августа. Использование ролей приложения и групп безопасности в приложениях (видео))
 - [Azure Active Directory, now with Group Claims and Application Roles](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-Active-Directory-now-with-Group-Claims-and-Application/ba-p/243862) (Azure Active Directory с утверждениями групп и ролями приложения)
-- [Манифест приложения Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest)
+- [Манифест приложения Azure Active Directory](./reference-app-manifest.md)

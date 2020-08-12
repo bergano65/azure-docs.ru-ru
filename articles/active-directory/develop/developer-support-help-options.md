@@ -12,12 +12,12 @@ ms.date: 05/23/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: ea1afd2ecac8974c0e865e235288da545a9f1244
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: af363bb30d6515ce969afe146c780baa4b31cd83
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80885537"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88117215"
 ---
 # <a name="support-and-help-options-for-developers"></a>Возможности получения поддержки и справки для разработчиков
 
@@ -30,7 +30,7 @@ ms.locfileid: "80885537"
 > * Если возникла проблема с одной из наших библиотек аутентификации, сообщите об этом на сайте *GitHub*.
 > * И, наконец, если вам требуется консультация, подайте запрос в службу поддержки.
 
-## <a name="search"></a>Найти
+## <a name="search"></a>Поиск
 
 Если у вас есть вопрос по разработке, вы можете найти ответ на него в нашей документации, [примерах на сайте GitHub](https://github.com/azure-samples) или на сайте [Stack Overflow](https://www.stackoverflow.com).
 
@@ -57,12 +57,12 @@ Stack Overflow — это идеальное место для вопросов
 
 Если вы не нашли ответ на свой вопрос через поиск, опубликуйте его на сайте Stack Overflow. При этом используйте один из указанных ниже тегов. Это поможет сообществу своевременно определить ваш вопрос и ответить на него.
 
-|Компонент/область  | Tags |
+|Компонент/область  | Теги |
 |---------|---------|
 | Библиотека ADAL | [ADAL](https://stackoverflow.com/questions/tagged/adal) |
 | Библиотека MSAL     | [msal](https://stackoverflow.com/questions/tagged/msal) |
 | ПО промежуточного слоя OWIN  | [[Azure-Active-Directory]](https://stackoverflow.com/questions/tagged/azure-active-directory) |
-| [Azure B2B](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)  | [[azure-ad-b2b]](https://stackoverflow.com/questions/tagged/azure-ad-b2b) |
+| [Azure B2B](../external-identities/what-is-b2b.md)  | [[azure-ad-b2b]](https://stackoverflow.com/questions/tagged/azure-ad-b2b) |
 | [Azure B2C](https://azure.microsoft.com/services/active-directory-b2c/)  | [[azure-ad-b2c]](https://stackoverflow.com/questions/tagged/azure-ad-b2c) |
 | [API Microsoft Graph](https://developer.microsoft.com/graph/) | [[Microsoft-Graph]](https://stackoverflow.com/questions/tagged/microsoft-graph) |
 | Любая другая область, которая относится к аутентификации или авторизации | [[Azure-Active-Directory]](https://stackoverflow.com/questions/tagged/azure-active-directory) |

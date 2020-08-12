@@ -3,16 +3,12 @@ title: Управление расширениями виртуальной ма
 description: Служба "Дуга Azure для серверов (Предварительная версия)" может управлять развертыванием расширений виртуальных машин, которые обеспечивают настройку и задачи автоматизации после развертывания с помощью виртуальных машин, не относящихся к Azure.
 ms.date: 06/17/2020
 ms.topic: conceptual
-ms.service: azure-arc
-ms.subservice: azure-arc-servers
-author: mgoedtel
-ms.author: magoedte
-ms.openlocfilehash: eb1de0c2a5b995231c2972fca7279195cbaea9e7
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 0319420fe528d41a23ee8fae90c4ad8c326f35a0
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87809635"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121312"
 ---
 # <a name="virtual-machine-extension-management-with-azure-arc-for-servers-preview"></a>Управление расширениями виртуальной машины с помощью дуги Azure для серверов (Предварительная версия)
 
@@ -55,7 +51,7 @@ ms.locfileid: "87809635"
 
 Сведения о пакете агента подключенного компьютера Azure и сведения о компоненте агента расширения см. в разделе [Обзор агентов](agent-overview.md#agent-component-details).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Эта функция зависит от следующих поставщиков ресурсов Azure в вашей подписке:
 
