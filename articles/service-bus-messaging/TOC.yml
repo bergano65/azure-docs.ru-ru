@@ -281,9 +281,9 @@
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=enterprise-integration'
     - name: Блог
-      href: 'https://blogs.msdn.microsoft.com/servicebus/'
+      href: /archive/blogs/servicebus/
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-service-bus.html'
+      href: /answers/topics/azure-service-bus.html
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/service-bus/'
     - name: Калькулятор цен

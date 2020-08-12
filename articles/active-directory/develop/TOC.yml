@@ -34,7 +34,7 @@
       items:
         - name: ASP.NET
           href: quickstart-v2-aspnet-webapp.md
-        - name: ASP.NET Core
+        - name: "ASP.NET\_Core"
           href: quickstart-v2-aspnet-core-webapp.md
         - name: Node.js
           href: quickstart-v2-nodejs-webapp.md
@@ -468,13 +468,13 @@
     - name: Автоматическая подготовка пользователей (SCIM)
       items:
         - name: Что собой представляет автоматическая подготовка пользователей?
-          href: /azure/active-directory/app-provisioning/user-provisioning
+          href: ../app-provisioning/user-provisioning.md
         - name: Разработка и интеграция конечной точки SCIM
-          href: /azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups
+          href: ../app-provisioning/use-scim-to-provision-users-and-groups.md
         - name: Распространенные сценарии подготовки
-          href: /azure/active-directory/app-provisioning/scim-graph-scenarios
+          href: ../app-provisioning/scim-graph-scenarios.md
         - name: Автоматизация настройки с помощью MS Graph
-          href: /azure/active-directory/app-provisioning/application-provisioning-configure-api
+          href: ../app-provisioning/application-provisioning-configure-api.md
     - name: Статьи справки на портале Azure
       items:
         - name: Время существования токена по умолчанию для специально разработанного приложения
@@ -630,7 +630,7 @@
         - name: "Публикация в коллекции приложений Azure\_AD"
           href: v2-howto-app-gallery-listing.md
         - name: "Публикация в службе \"Панель мониторинга продаж\" для Office\_365"
-          href: 'https://docs.microsoft.com/office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store'
+          href: /office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store
 - name: Справочник
   items:
     - name: Манифест приложения
@@ -642,7 +642,7 @@
       displayName: 'MSAL, auth library, SDK'
       href: reference-v2-libraries.md
     - name: Идентификация и доступ к API-интерфейсам в Microsoft Graph
-      href: 'https://docs.microsoft.com/graph/api/resources/azure-ad-overview'
+      href: /graph/api/resources/azure-ad-overview
     - name: Коды ошибок проверки подлинности и авторизации
       displayName: AADSTS
       href: reference-aadsts-error-codes.md
@@ -663,7 +663,7 @@
     - name: Выполнение входа с помощью учетной записи Майкрософт
       href: 'https://azure.microsoft.com/develop/identity/signin/'
     - name: Управляемые удостоверения для ресурсов Azure
-      href: 'https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview'
+      href: ../managed-identities-azure-resources/overview.md
     - name: Получение справки
       displayName: 'support, help options'
       href: developer-support-help-options.md

@@ -25,38 +25,8 @@
           href: quickstart-existing-helm-chart.md
     - name: Учебники
       items:
-        - name: Java (VS Code и CLI)
-          items:
-            - name: "1.\_Начало работы"
-              href: get-started-java.md
-            - name: "2.\_Разработка с использованием нескольких служб"
-              href: multi-service-java.md
-            - name: "3.\_Командная разработка"
-              href: team-development-java.md
-        - name: .NET Core (VS Code и CLI)
-          items:
-            - name: "1.\_Начало работы"
-              href: get-started-netcore.md
-            - name: "2.\_Разработка с использованием нескольких служб"
-              href: multi-service-netcore.md
-            - name: "3.\_Командная разработка"
-              href: team-development-netcore.md
-        - name: .NET Core (Visual Studio)
-          items:
-            - name: "1.\_Начало работы"
-              href: get-started-netcore-visualstudio.md
-            - name: "2.\_Разработка с использованием нескольких служб"
-              href: multi-service-netcore-visualstudio.md
-            - name: "3.\_Командная разработка"
-              href: team-development-netcore-visualstudio.md
-        - name: Node.js (VS Code и CLI)
-          items:
-            - name: "1.\_Начало работы"
-              href: get-started-nodejs.md
-            - name: "2.\_Разработка с использованием нескольких служб"
-              href: multi-service-nodejs.md
-            - name: "3.\_Командная разработка"
-              href: team-development-nodejs.md
+        - name: Начало работы с Visual Studio
+          href: get-started-netcore-visualstudio.md
     - name: Основные понятия
       items:
         - name: Принцип работы Dev Spaces
@@ -83,8 +53,6 @@
           href: how-to/install-dev-spaces.md
         - name: Создание кластера Kubernetes с помощью Azure Cloud Shell
           href: how-to/create-cluster-cloud-shell.md
-        - name: Общий доступ к средам разработки в Azure Dev Spaces
-          href: how-to/share-dev-spaces.md
         - name: Управление секретами
           href: how-to/manage-secrets.md
         - name: Использование пользовательского веб-канала NuGet

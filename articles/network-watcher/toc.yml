@@ -49,6 +49,8 @@
       items:
         - name: Базовые средства безопасности
           href: security-baseline.md
+    - name: Местонахождение данных
+      href: data-residency.md
 - name: Практические руководства
   items:
     - name: Настройка Наблюдателя за сетями

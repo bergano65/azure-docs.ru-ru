@@ -217,7 +217,7 @@ ms.locfileid: "83847979"
 
 На этом снимке экрана показана страница **Описание предложения** в Azure Marketplace.
 
-:::image type="content" source="media/iot-edge-module-creation/iot-edge-module-offer-listing-page.png" alt-text="Показана страница "Описание предложения" в Azure Marketplace.":::
+:::image type="content" source="media/iot-edge-module-creation/iot-edge-module-offer-listing-page.png" alt-text="Показана страница Описание предложения в Azure Marketplace.":::
 
 На этом снимке экрана показаны результаты поиска в Azure Marketplace.
 
@@ -225,11 +225,11 @@ ms.locfileid: "83847979"
 
 На этом снимке экрана показана страница **Описание предложения** на портале Azure.
 
-:::image type="content" source="media/iot-edge-module-creation/iot-edge-module-listing-page-azure-portal.png" alt-text="Показана страница "Описание предложения" на портале Azure.":::
+:::image type="content" source="media/iot-edge-module-creation/iot-edge-module-listing-page-azure-portal.png" alt-text="Показана страница Описание предложения на портале Azure.":::
 
 На этом снимке экрана показаны результаты поиска на портале Azure.
 
-:::image type="content" source="media/iot-edge-module-creation/iot-edge-module-azure-portal-search-results.png" alt-text="Показана страница "Описание предложения" на портале Azure.":::
+:::image type="content" source="media/iot-edge-module-creation/iot-edge-module-azure-portal-search-results.png" alt-text="Показана страница Описание предложения на портале Azure.":::
 
 Перед переходом к следующему разделу под названием "Предварительная версия" нажмите **Сохранить черновик**.
 

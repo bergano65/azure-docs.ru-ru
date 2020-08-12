@@ -211,8 +211,6 @@
           href: how-to-devops-project.md
         - name: Azure DevOps
           href: how-to-ci-cd.md
-        - name: Подключаемый модуль IoT Edge для Jenkins
-          href: how-to-devops-plugins.md
     - name: Диагностика
       items:
         - name: Стандартные действия диагностики
