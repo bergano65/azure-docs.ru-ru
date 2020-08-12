@@ -7,12 +7,12 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 07/3/2019
 ms.custom: mvc
-ms.openlocfilehash: 706ae5a6c93468da9a65293c1bb4eefb136b938d
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 49984349ce8d9d1bc43778c0042dd21485eded15
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87553280"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87829685"
 ---
 # <a name="create-custom-kpi-dashboards-using-azure-application-insights"></a>Создание настраиваемых панелей мониторинга ключевых показателей эффективности с помощью Azure Application Insights
 
@@ -34,7 +34,7 @@ ms.locfileid: "87553280"
 - Разверните приложение .NET в Azure и [включите пакет SDK для Application Insights](../app/asp-net.md).
 
 > [!NOTE]
-> Необходимые разрешения для работы с панелями мониторинга приведены в статье с [общими сведениями об управлении доступом к панелям мониторинга](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboard-share-access#understanding-access-control-for-dashboards).
+> Необходимые разрешения для работы с панелями мониторинга приведены в статье с [общими сведениями об управлении доступом к панелям мониторинга](../../azure-portal/azure-portal-dashboard-share-access.md#understanding-access-control-for-dashboards).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
@@ -131,4 +131,3 @@ ms.locfileid: "87553280"
 
 > [!div class="nextstepaction"]
 > [Углубленная диагностика для веб-приложений и служб с помощью Application Insights](../app/devops.md)
-

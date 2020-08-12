@@ -4,12 +4,12 @@ description: Руководство по В этом руководстве по
 services: event-hubs
 ms.date: 06/23/2020
 ms.topic: tutorial
-ms.openlocfilehash: 8d45681b53aa2dd8df8c2288fecdde1b45fb7bd4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1a7030014a8926b1db11ad99ba031e51194ddfd9
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87039503"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87833731"
 ---
 # <a name="tutorial-migrate-captured-event-hubs-data-to-a-sql-data-warehouse-using-event-grid-and-azure-functions"></a>Руководство по Перенос собранных данных из Центров событий Azure в Хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"
 
@@ -178,4 +178,4 @@ WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
 ## <a name="next-steps"></a>Дальнейшие действия 
 Вы можете использовать мощные инструменты визуализации данных в хранилище данных, чтобы получить аналитические сведения.
 
-В этой статье описано, как использовать [Power BI с хранилищем данных SQL](/azure/sql-data-warehouse/sql-data-warehouse-integrate-power-bi).
+В этой статье описано, как использовать [Power BI с хранилищем данных SQL](/power-bi/connect-data/service-azure-sql-data-warehouse-with-direct-connect).

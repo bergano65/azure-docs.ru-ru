@@ -3,12 +3,12 @@ title: Учебник по резервному копированию баз д
 description: Из этого учебника вы узнаете, как выполнять резервное копирование баз данных SAP HANA, запущенных на виртуальной машине Azure, в хранилище Служб восстановления для Azure Backup.
 ms.topic: tutorial
 ms.date: 02/24/2020
-ms.openlocfilehash: f89d21a252870befae7807d2dda96828aaaa1326
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.openlocfilehash: e892bf2b943d35728b15a9354308e149af2e478e
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87439657"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810213"
 ---
 # <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm"></a>Руководство по резервному копированию баз данных SAP HANA на виртуальной машине Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "87439657"
 
 1. Щелкните **Добавить**, чтобы сохранить только что созданное исходящее правило безопасности.
 
-Аналогичным образом можно создавать правила безопасности для исходящего трафика NSG для службы хранилища Azure и Azure AD. Дополнительные сведения о тегах служб см. в [этой статье](https://docs.microsoft.com/azure/virtual-network/service-tags-overview).
+Аналогичным образом можно создавать правила безопасности для исходящего трафика NSG для службы хранилища Azure и Azure AD. Дополнительные сведения о тегах служб см. в [этой статье](../virtual-network/service-tags-overview.md).
 
 ### <a name="azure-firewall-tags"></a>Теги Брандмауэра Azure
 

@@ -4,12 +4,12 @@ description: Руководство по Используйте службу "С
 ms.date: 07/07/2020
 ms.topic: tutorial
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 679cccf892d7b30964881d9a6146e02f3ee5dc90
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 77633a717478ff143c3b084adc0b69019abb203f
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87503180"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87832133"
 ---
 # <a name="tutorial-route-custom-events-to-azure-relay-hybrid-connections-with-azure-cli-and-event-grid"></a>Руководство по Маршрутизация пользовательских событий на гибридные подключения Azure Relay с помощью Azure CLI и службы "Сетка событий"
 
@@ -17,7 +17,7 @@ ms.locfileid: "87503180"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этой статье предполагается, что у вас уже есть гибридное подключение и приложение-прослушиватель. Чтобы приступить к работе с гибридными подключениями, см. статью [Приступая к работе с гибридными подключениями к ретранслятору](/azure/azure-relay/relay-hybrid-connections-dotnet-get-started) (.NET) или [Приступая к работе с гибридными подключениями к ретранслятору](/azure/azure-relay/relay-hybrid-connections-node-get-started) (Node).
+В этой статье предполагается, что у вас уже есть гибридное подключение и приложение-прослушиватель. Чтобы приступить к работе с гибридными подключениями, см. статью [Приступая к работе с гибридными подключениями к ретранслятору](../azure-relay/relay-hybrid-connections-dotnet-get-started.md) (.NET) или [Приступая к работе с гибридными подключениями к ретранслятору](../azure-relay/relay-hybrid-connections-node-get-started.md) (Node).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 

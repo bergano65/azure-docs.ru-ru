@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: notification-hubs
 ms.reviewer: thsomasu
 ms.lastreviewed: 05/27/2020
-ms.openlocfilehash: 292f7b65528c13d23d4f2b72467538c43c6ad75e
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: d8c61c90456607d73fc0e8abc24709d901328ecf
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84172042"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87829532"
 ---
 # <a name="tutorial-send-push-notifications-to-android-devices-using-firebase-sdk-version-100-preview1"></a>Руководство по отправке push-уведомлений на устройства Android с помощью SDK Firebase версии 1.0.0-preview1
 
@@ -278,7 +278,7 @@ Push-уведомления обычно отправляются во внут�
 
 Ниже приведен список других учебников, касающихся отправки уведомлений:
 
-- Мобильные приложения Azure. Пример отправки уведомлений с сервера мобильных приложений, интегрированного с Центрами уведомлений, см. в статье  [Add Push Notifications to your iOS App](/azure/app-service-mobile/app-service-mobile-ios-get-started-push) (Добавление push-уведомлений в приложение iOS).
+- Мобильные приложения Azure. Пример отправки уведомлений с сервера мобильных приложений, интегрированного с Центрами уведомлений, см. в статье  [Add Push Notifications to your iOS App](/previous-versions/azure/app-service-mobile/app-service-mobile-ios-get-started-push) (Добавление push-уведомлений в приложение iOS).
 
 - ASP.NET.  [Отправка push-уведомлений конкретным пользователям с помощью центров уведомлений Azure](notification-hubs-aspnet-backend-ios-apple-apns-notification.md).
 

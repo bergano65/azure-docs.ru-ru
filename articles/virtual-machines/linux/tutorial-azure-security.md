@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 06/11/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 6711075ba3a58e526733c3a18cab03084edc067e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 24117e914afa0e443ce979ae71eb506156fa11b3
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87080103"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87830416"
 ---
 # <a name="tutorial-use-azure-security-center-to-monitor-linux-virtual-machines"></a>Руководство по Использование Центра безопасности Azure для мониторинга виртуальных машин Linux
 
@@ -133,4 +133,4 @@ ms.locfileid: "87080103"
 Перейдите к следующему руководству, чтобы узнать больше о создании конвейера CI/CD с помощью Jenkins, GitHub и Docker.
 
 > [!div class="nextstepaction"]
-> [Создание конвейера для непрерывной интеграции и доставки с использованием Jenkins, GitHub и Docker](../../jenkins/tutorial-jenkins-github-docker-cicd.md)
+> [Создание конвейера для непрерывной интеграции и доставки с использованием Jenkins, GitHub и Docker](/azure/developer/jenkins/pipeline-with-github-and-docker)
