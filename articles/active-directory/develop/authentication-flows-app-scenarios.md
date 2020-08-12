@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 03/03/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: d6cb8cf4b97ed3882d41a4eb179f11bf05f42118
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 99d16407d1cfadcb7d3a79968fae4436e7c631e3
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82593171"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115651"
 ---
 # <a name="authentication-flows-and-application-scenarios"></a>Потоки проверки подлинности и сценарии приложений
 
@@ -154,9 +154,9 @@ MSAL для iOS и MSAL для Android по умолчанию использу�
 См. сведения о [мобильных приложениях, которые вызывают веб-API](scenario-mobile-overview.md).
 
 > [!NOTE]
-> Мобильное приложение, использующее MSAL. iOS, MSAL. Для Android или MSAL.NET в Xamarin могут применяться политики защиты приложений. Например, политика может запретить пользователю копировать защищенный текст. Мобильное приложение управляется Intune и распознается Intune как управляемое приложение. Дополнительные сведения см. в разделе [Обзор пакета SDK для Microsoft Intune приложений](https://docs.microsoft.com/intune/app-sdk).
+> Мобильное приложение, использующее MSAL. iOS, MSAL. Для Android или MSAL.NET в Xamarin могут применяться политики защиты приложений. Например, политика может запретить пользователю копировать защищенный текст. Мобильное приложение управляется Intune и распознается Intune как управляемое приложение. Дополнительные сведения см. в разделе [Обзор пакета SDK для Microsoft Intune приложений](/intune/app-sdk).
 >
-> [Пакет SDK для приложений в Intune](https://docs.microsoft.com/intune/app-sdk-get-started) отделен от библиотек MSAL и самостоятельно взаимодействует с AAD.
+> [Пакет SDK для приложений в Intune](/intune/app-sdk-get-started) отделен от библиотек MSAL и самостоятельно взаимодействует с AAD.
 
 ### <a name="protected-web-api"></a>Защищенный веб-API
 
@@ -204,14 +204,14 @@ MSAL для iOS и MSAL для Android по умолчанию использу�
 
   <tr>
    <td><a href="scenario-web-app-sign-user-overview.md"><img alt="Web app that signs in users" src="media/scenarios/scenario-webapp-signs-in-users.svg"></a></td>
-   <td><a href="scenario-web-app-sign-user-overview.md">Веб-приложение, которое реализует вход пользователей в систему</a></td>
+   <td><a href="scenario-web-app-sign-user-overview.md">Веб-приложение, которое поддерживает вход пользователей</a></td>
    <td><a href="v2-oauth2-auth-code-flow.md">Код авторизации</a></td>
    <td>Рабочие или учебные учетные записи, личные учетные записи и Azure AD B2C</td>
  </tr>
 
   <tr>
    <td><a href="scenario-web-app-call-api-overview.md"><img alt="Web app that signs in users" src="media/scenarios/web-app.svg"></a></td>
-   <td><a href="scenario-web-app-call-api-overview.md">Веб-приложение, вызывающее веб-API</a></td>
+   <td><a href="scenario-web-app-call-api-overview.md">Веб-приложение, которое вызывает веб-API</a></td>
    <td><a href="v2-oauth2-auth-code-flow.md">Код авторизации</a></td>
    <td>Рабочие или учебные учетные записи, личные учетные записи и Azure AD B2C</td>
  </tr>
@@ -278,7 +278,7 @@ MSAL для iOS и MSAL для Android по умолчанию использу�
 - Windows 10/UWP
 - Xamarin.iOS
 - Xamarin.Android
-- iOS (собственная)
+- нативные приложения для iOS;
 - MacOS
 - Нативные приложения для Android
 - Java
@@ -294,16 +294,16 @@ MSAL для iOS и MSAL для Android по умолчанию использу�
 |Сценарий  | Windows | Linux | Mac | iOS | Android
 |--|--|--|--|--|--|--|
 | [Одностраничное приложение](scenario-spa-overview.md) <br/>[![Одностраничное приложение](media/scenarios/spa-app.svg)](scenario-spa-overview.md) | ![MSAL.js](media/sample-v2-code/small_logo_js.png)<br/>MSAL.js | ![MSAL.js](media/sample-v2-code/small_logo_js.png)<br/>MSAL.js | ![MSAL.js](media/sample-v2-code/small_logo_js.png)<br/>MSAL.js | ![MSAL.js](media/sample-v2-code/small_logo_js.png) MSAL.js | ![MSAL.js](media/sample-v2-code/small_logo_js.png)<br/>MSAL.js
-| [Веб-приложение, которое реализует вход пользователей в систему](scenario-web-app-sign-user-overview.md) <br/>[![Веб-приложение, которое входит в систему пользователей](media/scenarios/scenario-webapp-signs-in-users.svg)](scenario-web-app-sign-user-overview.md) | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core
-| [Веб-приложение, вызывающее веб-API](scenario-web-app-call-api-overview.md) <br/> <br/>[![Веб-приложение, вызывающее веб-API](media/scenarios/web-app.svg)](scenario-web-app-call-api-overview.md) | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png) <br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>Flask + MSAL Python| ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>Flask + MSAL Python| ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/> ![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>Flask + MSAL Python
+| [Веб-приложение, которое поддерживает вход пользователей](scenario-web-app-sign-user-overview.md) <br/>[![Веб-приложение, которое входит в систему пользователей](media/scenarios/scenario-webapp-signs-in-users.svg)](scenario-web-app-sign-user-overview.md) | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core
+| [Веб-приложение, которое вызывает веб-API](scenario-web-app-call-api-overview.md) <br/> <br/>[![Веб-приложение, вызывающее веб-API](media/scenarios/web-app.svg)](scenario-web-app-call-api-overview.md) | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png) <br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>Flask + MSAL Python| ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>Flask + MSAL Python| ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/> ![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>Flask + MSAL Python
 | [Классическое приложение, которое вызывает веб-API](scenario-desktop-overview.md) <br/> <br/>[ ![ Классическое приложение, вызывающее веб-API](media/scenarios/desktop-app.svg)](scenario-desktop-overview.md) ![ Поток кода устройства](media/scenarios/device-code-flow-app.svg) | ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/> ![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python <br/> ![iOS, Objective-C или swift](media/sample-v2-code/small_logo_iOS.png) MSAL.objc |
 | [Мобильное приложение, которое вызывает веб-API](scenario-mobile-overview.md) <br/> [![Мобильное приложение, которое вызывает веб-API](media/scenarios/mobile-app.svg)](scenario-mobile-overview.md) | ![UWP](media/sample-v2-code/small_logo_windows.png) MSAL.NET ![Xamarin](media/sample-v2-code/small_logo_xamarin.png) MSAL.NET | | | ![iOS, Objective-C или swift](media/sample-v2-code/small_logo_iOS.png) MSAL.objc | ![Android](media/sample-v2-code/small_logo_Android.png) MSAL.Android
 | [Управляющая программа](scenario-daemon-overview.md) <br/> [![Управляющая программа](media/scenarios/daemon-app.svg)](scenario-daemon-overview.md) | ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png) MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python
-| [Веб-API, которые вызывают веб-API](scenario-web-api-call-api-overview.md) <br/><br/> [![Веб-API, которые вызывают веб-API](media/scenarios/web-api.svg)](scenario-web-api-call-api-overview.md) | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python
+| [Веб-API, которые вызывают веб-API](scenario-web-api-call-api-overview.md) <br/><br/> [![Веб-API, которые вызывают веб-API](media/scenarios/web-api.svg)](scenario-web-api-call-api-overview.md) | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python
 
 Дополнительные сведения см. [в разделе библиотеки, поддерживаемые корпорацией Майкрософт, по ОС и языку](reference-v2-libraries.md#microsoft-supported-libraries-by-os--language).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте больше об [основах проверки подлинности](authentication-scenarios.md) и [маркерах доступа на платформе Microsoft Identity](access-tokens.md).
+* Узнайте больше об [основах проверки подлинности](./authentication-vs-authorization.md) и [маркерах доступа на платформе Microsoft Identity](access-tokens.md).
 * Дополнительные сведения о [защите доступа к приложениям IOT](/azure/architecture/example-scenario/iot-aad/iot-aad).

@@ -3,15 +3,15 @@ title: Создание пула узлов среды виртуальных р
 description: Устранение неполадок и разрешение проблем с пулом клиентов и узлов во время установки среды виртуальных рабочих столов Windows.
 author: Heidilohr
 ms.topic: troubleshooting
-ms.date: 01/08/2020
+ms.date: 08/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 064cdc0189f6b85fa0e5872f49759c2ec67472e6
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 4d504c46288ebe2a8112586ce6be6449178df16a
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88006168"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121380"
 ---
 # <a name="host-pool-creation"></a>Создание пула узлов
 
@@ -252,6 +252,12 @@ the VM.\\\"
 **Причина:** Эта ошибка возникает из-за статического маршрута, правила брандмауэра или NSG блокировки загрузки ZIP-файла, привязанного к шаблону Azure Resource Manager.
 
 **Исправление:** Удалите заблокированный статический маршрут, правило брандмауэра или NSG. При необходимости откройте JSON-файл шаблона Azure Resource Manager в текстовом редакторе, перейдите по ссылке к ZIP-файлу и скачайте ресурс в разрешенное расположение.
+
+### <a name="error-cant-delete-a-session-host-from-the-host-pool-after-deleting-the-vm"></a>Ошибка: не удается удалить узел сеанса из пула узлов после удаления виртуальной машины
+
+**Причина:** Перед удалением виртуальной машины необходимо удалить узел сеансов.
+
+**Исправление:** Переводить узел сеанса в режим стока, выписывать всех пользователей с узла сеансов, а затем удалять узел.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

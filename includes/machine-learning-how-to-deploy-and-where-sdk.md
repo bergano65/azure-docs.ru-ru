@@ -6,12 +6,12 @@ ms.subservice: core
 ms.topic: include
 ms.date: 07/31/2020
 ms.author: gopalv
-ms.openlocfilehash: 624824f5b6b8f7154ccd7b50da49f3f4bb179bb9
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 97f0412141f15ad0a72c02b92cfcf089b61db0cf
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542814"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88120356"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -100,12 +100,11 @@ ws = Workspace.from_config(path=".file-path/ws_config.json")
 
 Дополнительные сведения о работе с моделями, обученными вне Машинное обучение Azure, см. [в разделе Развертывание существующей модели](../articles/machine-learning/how-to-deploy-existing-model.md).
 
-
 ## <a name="define-an-entry-script"></a>Определение скрипта записи
 
 [!INCLUDE [write entry script](machine-learning-entry-script.md)]
 
-## <a name="define-an-inference-configuration"></a>Определение конфигурации вывода
+## <a name="define-an-inferenceconfig"></a>Определение Инференцеконфиг
 
 Конфигурация вывода описывает, как настроить веб-службу, содержащую модель. Он используется позже при развертывании модели.
 
@@ -162,12 +161,9 @@ inference_config = InferenceConfig(entry_script='path-to-score.py',
 
 ## <a name="choose-a-compute-target"></a>Выбор целевого объекта вычислений
 
-
 [!INCLUDE [aml-compute-target-deploy](aml-compute-target-deploy.md)]
 
-
-
-## <a name="define-a-deployment-configuration"></a>Определение конфигурации развертывания
+## <a name="define-a-deploymentconfiguration"></a>Определение Деплойментконфигуратион
 
 Перед развертыванием модели необходимо определить конфигурацию развертывания. *Конфигурация развертывания зависит от целевого объекта вычислений, в котором будет размещена веб-служба.* Например, при локальном развертывании модели необходимо указать порт, на котором служба принимает запросы. Конфигурация развертывания не является частью скрипта записи. Он используется для определения характеристик целевого объекта вычислений, в котором будет размещаться скрипт модели и входа.
 
@@ -179,14 +175,13 @@ inference_config = InferenceConfig(entry_script='path-to-score.py',
 | ----- | ----- |
 | Локальная | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
 | Экземпляры контейнеров Azure | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
-| Служба контейнеров Azure | `deployment_config = AksWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
+| Служба Azure Kubernetes | `deployment_config = AksWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 
 Классы для локальных объектов, экземпляров контейнеров Azure и веб-служб AKS можно импортировать из `azureml.core.webservice` :
 
 ```python
 from azureml.core.webservice import AciWebservice, AksWebservice, LocalWebservice
 ```
-
 
 ## <a name="deploy-your-model"></a>Развертывание модели
 
@@ -203,11 +198,9 @@ print(service.state)
 
 Дополнительные сведения см. в документации по [локалвебсервице](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py), [model. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-)и [WebService](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice?view=azure-ml-py).
 
-
 ## <a name="delete-resources"></a>Удаление ресурсов
 
 Для удаления развернутой веб-службы используйте `service.delete()`.
 Чтобы удалить зарегистрированную модель, используйте `model.delete()`.
 
 Дополнительные сведения см. в документации по [WebService. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#delete--) и [model. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#delete--).
-

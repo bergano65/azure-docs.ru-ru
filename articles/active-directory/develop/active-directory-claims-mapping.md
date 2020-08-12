@@ -13,12 +13,12 @@ ms.topic: how-to
 ms.date: 08/06/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
-ms.openlocfilehash: 82866daaf720fc6b1ea9ba823587c921fd438b9c
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 8923cb19c24b0e392026dc0f4b8f67c31956894a
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87902479"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115940"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Руководство. Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)
 
@@ -418,7 +418,7 @@ ms.locfileid: "87902479"
 
 ### <a name="custom-signing-key"></a>Пользовательский ключ подписывания
 
-Чтобы политика сопоставления утверждений вступила в силу, объекту субъекта-службы необходимо назначить пользовательский ключ подписывания. Это гарантирует подтверждение того, что токены были изменены создателем политики сопоставления утверждений и защищают приложения от политик сопоставления утверждений, созданных злоумышленниками. Чтобы добавить пользовательский ключ подписывания, можно использовать командлет `new-azureadapplicationkeycredential` Azure PowerShell, чтобы создать учетные данные симметричного ключа для объекта приложения. Дополнительные сведения об этом командлете Azure PowerShell см. в [New-AzureADApplicationKeyCredential](https://docs.microsoft.com/powerShell/module/Azuread/New-AzureADApplicationKeyCredential?view=azureadps-2.0).
+Чтобы политика сопоставления утверждений вступила в силу, объекту субъекта-службы необходимо назначить пользовательский ключ подписывания. Это гарантирует подтверждение того, что токены были изменены создателем политики сопоставления утверждений и защищают приложения от политик сопоставления утверждений, созданных злоумышленниками. Чтобы добавить пользовательский ключ подписывания, можно использовать командлет `new-azureadapplicationkeycredential` Azure PowerShell, чтобы создать учетные данные симметричного ключа для объекта приложения. Дополнительные сведения об этом командлете Azure PowerShell см. в [New-AzureADApplicationKeyCredential](/powerShell/module/Azuread/New-AzureADApplicationKeyCredential?view=azureadps-2.0).
 
 Приложения с включенным сопоставлением утверждений должны проверять ключи подписывания маркеров, добавляя `appid={client_id}` к их [запросам метаданных](v2-protocols-oidc.md#fetch-the-openid-connect-metadata-document). Ниже указан формат документа метаданных OpenID Connect, который следует использовать. 
 

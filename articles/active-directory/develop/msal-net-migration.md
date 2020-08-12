@@ -13,12 +13,12 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: e758c69f91fb60a83dfcc119b2c7f7aba44384ca
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: e210c19f40ed77bd7c1bc1dcfc2f2787e3ea2087
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86054667"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88120292"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Перенос приложений на MSAL.NET
 
@@ -37,7 +37,7 @@ ms.locfileid: "86054667"
 
 В большинстве случаев рекомендуется использовать MSAL.NET и конечную точку платформы удостоверений Майкрософт, так как это последнее поколение библиотек аутентификации Майкрософт. Используя MSAL.NET, вы получаете маркеры для пользователей, входящих в приложение с учетной записью Azure AD (рабочей или учебной), учетной записью Майкрософт (личной MSA) или через Azure AD B2C.
 
-Если вы уже знакомы с конечной точкой Azure AD для разработчиков (версия 1.0) и библиотекой ADAL.NET, ознакомьтесь со статьей [об отличиях платформы удостоверений Майкрософт версии 2.0](active-directory-v2-compare.md).
+Если вы уже знакомы с конечной точкой Azure AD для разработчиков (версия 1.0) и библиотекой ADAL.NET, ознакомьтесь со статьей [об отличиях платформы удостоверений Майкрософт версии 2.0](../azuread-dev/azure-ad-endpoint-comparison.md).
 
 Но ADAL.NET пока остается обязательной для тех случаев, когда приложению нужно обрабатывать вход пользователей из более ранних версий [служб федерации Active Directory (ADFS)](/windows-server/identity/active-directory-federation-services). Дополнительные сведения см. в разделе [Поддержка ADFS](https://aka.ms/msal-net-adfs-support).
 
@@ -161,7 +161,7 @@ MSAL.NET предоставляет кэш маркеров в закрытом 
 
 ## <a name="scopes-for-a-web-api-accepting-v10-tokens"></a>Области для веб-API, принимающие токены версии 1.0
 
-Разрешения OAuth2 задаются для областей разрешений, которые веб-API (ресурс) версии 1.0 предоставляет клиентским приложениям. Эти области действия разрешений могут быть назначены клиентским приложениям во время предоставления согласия. См. раздел об oauth2Permissions в документации по [манифесту приложения Azure Active Directory](active-directory-application-manifest.md).
+Разрешения OAuth2 задаются для областей разрешений, которые веб-API (ресурс) версии 1.0 предоставляет клиентским приложениям. Эти области действия разрешений могут быть назначены клиентским приложениям во время предоставления согласия. См. раздел об oauth2Permissions в документации по [манифесту приложения Azure Active Directory](./reference-app-manifest.md).
 
 ### <a name="scopes-to-request-access-to-specific-oauth2-permissions-of-a-v10-application"></a>Области для запроса доступа к конкретным разрешениям OAuth2 в приложении версии 1.0
 
@@ -264,6 +264,6 @@ AuthenticationResult result = await appRt.AcquireTokenByRefreshToken(null, rt)
 
 Этот метод можно использовать в разных процессах интеграции, если у вас есть готовый маркер обновления.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об областях можно найти в статье [Permissions and consent in the Microsoft identity platform endpoint](v2-permissions-and-consent.md) (Разрешения и согласие для конечной точки платформы удостоверений Майкрософт).

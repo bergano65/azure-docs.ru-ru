@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 10/09/2019
 ms.author: cherylmc
-ms.openlocfilehash: 5a74f1ca8d1055885561a35dbd18899193d3924d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0561be00f50dad0fe89ca47428802f45ee44f50d
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84984139"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121431"
 ---
 # <a name="add-a-site-to-site-connection-to-a-vnet-with-an-existing-vpn-gateway-connection"></a>Добавление подключения типа "сеть — сеть" к виртуальной сети с помощью существующего подключения VPN-шлюза
 
@@ -43,7 +43,7 @@ ms.locfileid: "84984139"
 * Тип шлюза виртуальной сети — RouteBased. При наличии VPN-шлюза типа PolicyBased необходимо удалить шлюз виртуальной сети и создать VPN-шлюз типа RouteBased.
 * Ни один из диапазонов адресов не должен перекрываться ни в одной из виртуальных сетей, к которой подключается эта виртуальная сеть.
 * У вас есть совместимое VPN-устройство и пользователь, который может настроить его. См. статью о [VPN-устройствах](vpn-gateway-about-vpn-devices.md). Если вы не умеете настраивать VPN-устройство или не знаете диапазоны IP-адресов в своей локальной сети, вам следует найти того, кто сможет предоставить вам нужную информацию.
-* Имеется внешний общедоступный IP-адрес для VPN-устройства. Этот IP-адрес не может располагаться вне преобразования сетевых адресов (NAT).
+* Имеется внешний общедоступный IP-адрес для VPN-устройства.
 
 ## <a name="part-1---configure-a-connection"></a><a name="part1"></a>Часть 1. Настройка подключения
 1. В браузере перейдите к [портал Azure](https://portal.azure.com) и при необходимости войдите с помощью учетной записи Azure.
@@ -86,6 +86,6 @@ ms.locfileid: "84984139"
 
 [!INCLUDE [vpn-gateway-verify-connection-ps-rm](../../includes/vpn-gateway-verify-connection-ps-rm-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительную информацию о виртуальных машинах см. в [схеме обучения](/learn/paths/deploy-a-website-with-azure-virtual-machines/).

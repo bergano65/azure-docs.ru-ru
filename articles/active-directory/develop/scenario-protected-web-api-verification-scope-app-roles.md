@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 005fb194a5c1539b70ccb8e8ac7d938b190ee4f5
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: 204bc7dd8cc31f48fdc09eae6b00247023de64f3
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87563319"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88120972"
 ---
 # <a name="protected-web-api-verify-scopes-and-app-roles"></a>Защищенный веб-API: проверка областей и ролей приложений
 
@@ -88,7 +88,7 @@ public class TodoListController : Controller
 
 #### <a name="verify-the-scopes-more-globally"></a>Проверка областей на глобальном уровне
 
-Рекомендуемым подходом является определение детализированных областей для веб-API и проверка областей в каждом действии контроллера. Однако можно также проверить области на уровне приложения или контроллера с помощью ASP.NET Core. Дополнительные сведения см. в разделе [авторизация на основе утверждений](https://docs.microsoft.com/aspnet/core/security/authorization/claims) в документации по ASP.NET Core.
+Рекомендуемым подходом является определение детализированных областей для веб-API и проверка областей в каждом действии контроллера. Однако можно также проверить области на уровне приложения или контроллера с помощью ASP.NET Core. Дополнительные сведения см. в разделе [авторизация на основе утверждений](/aspnet/core/security/authorization/claims) в документации по ASP.NET Core.
 
 ### <a name="net-mvc"></a>ПЛАТФОРМА .NET MVC
 
@@ -96,11 +96,11 @@ public class TodoListController : Controller
 
 ## <a name="verify-app-roles-in-apis-called-by-daemon-apps"></a>Проверка ролей приложения в интерфейсах API, которые вызываются приложениями управляющей программы
 
-Если веб-API вызывается [приложением управляющей программы](scenario-daemon-overview.md), это приложение должно требовать разрешения приложения для веб-API. Как показано в разделе [Предоставление разрешений приложения (роли приложений)](https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-app-registration#exposing-application-permissions-app-roles), API предоставляет такие разрешения. Одним из примеров является роль приложения `access_as_application`.
+Если веб-API вызывается [приложением управляющей программы](scenario-daemon-overview.md), это приложение должно требовать разрешения приложения для веб-API. Как показано в разделе [Предоставление разрешений приложения (роли приложений)](./scenario-protected-web-api-app-registration.md#exposing-application-permissions-app-roles), API предоставляет такие разрешения. Одним из примеров является роль приложения `access_as_application`.
 
 Теперь необходимо, чтобы ваш API проверял, что полученный маркер содержит утверждение `roles` и что это утверждение имеет ожидаемое значение. Код проверки аналогичен коду, который проверяет делегированные разрешения, за исключением того, что действие контроллера проверяет роли, а не области.
 
-### <a name="aspnet-core"></a>ASP.NET Core
+### <a name="aspnet-core"></a>ASP.NET Core
 
 ```csharp
 [Authorize]

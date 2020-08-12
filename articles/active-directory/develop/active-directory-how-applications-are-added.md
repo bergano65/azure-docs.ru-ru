@@ -13,12 +13,12 @@ ms.date: 11/26/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: lenalepa, sureshja
-ms.openlocfilehash: 01ea22af472877abe34236ec82a7750eccfcdfb9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d89f0d08fec0b0f341094d422b1091de5a61055e
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80884279"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115770"
 ---
 # <a name="how-and-why-applications-are-added-to-azure-ad"></a>Как и почему приложения добавляются в Azure AD
 
@@ -74,7 +74,7 @@ ms.locfileid: "80884279"
   * Когда вы подписываетесь на Office 365 или начинаете работать с пробной версией, в каталоге создается один или несколько субъектов-служб, которые представляют различные службы, используемые для предоставления всех возможностей, связанных с Office 365.
   * Некоторые службы Office 365, например SharePoint, создают субъекты-службы на постоянной основе, чтобы обеспечивать безопасное взаимодействие между компонентами, включая рабочие процессы.
 * Когда администратор добавляет приложение из коллекции приложений (при этом также создается объект базового приложения).
-* Добавление приложения для использования [Azure AD Application Proxy](/azure/active-directory/manage-apps/application-proxy).
+* Добавление приложения для использования [Azure AD Application Proxy](../manage-apps/application-proxy.md).
 * Подключение приложения для единого входа в систему с помощью SAML или единого входа по паролю (SSO)
 * Программно с помощью Microsoft Graph API или PowerShell
 
@@ -104,8 +104,8 @@ ms.locfileid: "80884279"
   * утверждает правила преобразования.
   * Сопоставление атрибутов (подготовка пользователей)
 * Более подробные сведения о субъекте-службе и объектах приложения см. в справочной документации по Microsoft Graph API:
-  * [Приложение](https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0)
-  * [Субъект-служба](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta)
+  * [Приложение](/graph/api/resources/application?view=graph-rest-1.0)
+  * [Субъект-служба](/graph/api/resources/serviceprincipal?view=graph-rest-beta)
 
 ## <a name="why-do-applications-integrate-with-azure-ad"></a>Зачем интегрировать приложения с Azure AD?
 

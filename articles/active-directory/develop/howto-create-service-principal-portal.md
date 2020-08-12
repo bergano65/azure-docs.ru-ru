@@ -12,12 +12,12 @@ ms.date: 06/26/2020
 ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: aaddev, seoapril2019, identityplatformtop40
-ms.openlocfilehash: 06e1abc4f863674cc67c1a78a9f2f626565d296f
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: c8f9bc283d88121ad4b6144b8ac9463510349212
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87828937"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88117232"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Практическое руководство. Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала
 
@@ -159,7 +159,7 @@ $cert=New-SelfSignedCertificate -Subject "CN=DaemonConsoleCert" -CertStoreLocati
 
     ![Выберите отправить сертификат и выберите тот, который вы хотите добавить.](./media/howto-create-service-principal-portal/upload-cert.png)
 
-1. Щелкните **Добавить**.
+1. Нажмите **Добавить**.
 
 После регистрации сертификата в приложении на портале регистрации приложений необходимо включить код клиентского приложения для использования сертификата.
 
@@ -178,7 +178,7 @@ $cert=New-SelfSignedCertificate -Subject "CN=DaemonConsoleCert" -CertStoreLocati
    ![Скопируйте значение секрета, так как вы не сможете получить его позже](./media/howto-create-service-principal-portal/copy-secret.png)
 
 ## <a name="configure-access-policies-on-resources"></a>Настройка политик доступа к ресурсам
-Помните, что может потребоваться настроить дополнительные разрешения для ресурсов, к которым приложению требуется доступ. Например, необходимо также [обновить политики доступа для хранилища ключей](/azure/key-vault/key-vault-secure-your-key-vault#data-plane-and-access-policies) , чтобы предоставить приложению доступ к ключам, секретам или сертификатам.  
+Помните, что может потребоваться настроить дополнительные разрешения для ресурсов, к которым приложению требуется доступ. Например, необходимо также [обновить политики доступа для хранилища ключей](../../key-vault/general/secure-your-key-vault.md#data-plane-and-access-policies) , чтобы предоставить приложению доступ к ключам, секретам или сертификатам.  
 
 1. В [портал Azure](https://portal.azure.com)перейдите к своему хранилищу ключей и выберите **политики доступа**.  
 1. Выберите **Добавить политику доступа**, а затем выберите разрешения ключа, секрета и сертификата, которые вы хотите предоставить приложению.  Выберите ранее созданный субъект-службу.

@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
-ms.openlocfilehash: 36479acca56aa97a5453a9ab99691ed1993daaf3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e260e36aaa06cf9e157d58ad870b9817218c15da
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85477011"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88114648"
 ---
 # <a name="getting-started-with-azure-active-directory-aspnet-mvc-projects"></a>Приступая к работе с Azure Active Directory (проекты ASP.NET MVC)
 
@@ -82,5 +82,5 @@ ms.locfileid: "85477011"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
+- [Сценарии аутентификации в Azure Active Directory](./authentication-vs-authorization.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v2-aspnet-webapp.md)

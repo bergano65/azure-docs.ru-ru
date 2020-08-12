@@ -13,12 +13,12 @@ ms.date: 04/17/2020
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: d6b6e300a3bd799e94405af143d84cf9fdd8d4c1
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: e50b4aa300c74ed5fff9a345f83d41fdda5a1054
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/11/2020
-ms.locfileid: "88077141"
+ms.locfileid: "88115872"
 ---
 # <a name="configurable-token-lifetimes-in-microsoft-identity-platform-preview"></a>Настраиваемое время существования маркеров в платформе Microsoft Identity (Предварительная версия)
 
@@ -84,7 +84,7 @@ ms.locfileid: "88077141"
 Политика времени жизни маркера — это объект политики, который содержит правила времени жизни маркера. Свойства этой политики и определяют срок действия соответствующих маркеров. Если политика не задана, система использует стандартное значение для времени жизни.
 
 ### <a name="configurable-token-lifetime-properties"></a>Свойства для настройки времени жизни маркера
-| Свойство | Строка свойства политики | Область применения | По умолчанию | Минимальные | Максимум |
+| Свойство. | Строка свойства политики | Область применения | Значение по умолчанию | Минимальные | Максимум |
 | --- | --- | --- | --- | --- | --- |
 | Время жизни маркера доступа |Акцесстокенлифетиме<sup>2</sup> |Маркеры доступа, маркеры безопасности, маркеры SAML2 |1 час |10 минут. |1 день |
 | Максимальное время неактивности для маркеров обновления |MaxInactiveTime |Маркеры обновления |90 дней |10 минут. |90 дней |
@@ -97,7 +97,7 @@ ms.locfileid: "88077141"
 * <sup>2</sup> Чтобы обеспечить работу веб-клиента Microsoft Teams, рекомендуется Акцесстокенлифетиме более 15 минут для Microsoft Teams.
 
 ### <a name="exceptions"></a>Исключения
-| Свойство | Область применения | По умолчанию |
+| Свойство. | Область применения | Значение по умолчанию |
 | --- | --- | --- |
 | Обновление максимального возраста маркеров (выданные для федеративных пользователей с недостаточной информацией об отзыве <sup>1</sup>) |Маркеры обновления (выданные для федеративных пользователей с недостаточной информацией об отзыве <sup>1</sup>) |12 часов |
 | Максимальное время неактивности для маркера обновления (выданного для конфиденциальных клиентов) |Маркеры обновления (выданные для конфиденциальных клиентов) |90 дней |
@@ -551,4 +551,4 @@ Remove-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal>  -Policy
 
 Для использования этой функции требуется лицензия Azure AD Premium P1. Чтобы найти подходящую лицензию для ваших требований, см. статью [Сравнение общедоступных функций выпусков Free и Premium](https://azure.microsoft.com/pricing/details/active-directory/).
 
-Клиенты с [лицензиями Microsoft 365 бизнес](https://docs.microsoft.com/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-business-service-description) также имеют доступ к функциям условного доступа.
+Клиенты с [лицензиями Microsoft 365 бизнес](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-business-service-description) также имеют доступ к функциям условного доступа.

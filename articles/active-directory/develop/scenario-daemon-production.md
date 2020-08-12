@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: e5d25169aa3daee33a9f02e605cbff91776dc7f1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 72e6d0a8677f7a8175223b80541c99026a9eb16f
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80885435"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88119170"
 ---
 # <a name="daemon-app-that-calls-web-apis---move-to-production"></a>Приложение управляющей программы, вызывающее веб-API — переместить в рабочую среду
 
@@ -33,7 +33,7 @@ ms.locfileid: "80885435"
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вот несколько ссылок, которые помогут вам получить дополнительные сведения:
 
@@ -41,8 +41,8 @@ ms.locfileid: "80885435"
 
 - Краткое руководство. [Получение маркера и вызов Microsoft Graph API из консольного приложения с помощью удостоверения приложения](./quickstart-v2-netcore-daemon.md).
 - Справочная документация по:
-  - Создание экземпляра [конфидентиалклиентаппликатион](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder).
-  - Вызов [аккуиретокенфорклиент](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.acquiretokenforclientparameterbuilder).
+  - Создание экземпляра [конфидентиалклиентаппликатион](/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder).
+  - Вызов [аккуиретокенфорклиент](/dotnet/api/microsoft.identity.client.acquiretokenforclientparameterbuilder).
 - Другие примеры и учебники:
   - [Microsoft-Identity-Platform-Console-DAEMON —](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) это простое консольное приложение управляющей программы .NET Core, в котором отображаются пользователи запросов клиентов Microsoft Graph.
 

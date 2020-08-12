@@ -13,12 +13,12 @@ ms.author: marsma
 ms.custom: aaddev
 ms.reviewer: celested
 titleSuffix: Microsoft identity platform
-ms.openlocfilehash: e71f555f7a9cefef3aeada79031db3a07e3db49a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7865fbe758b35ae9ff1ffe526da5e7100e83c966
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77202064"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88117555"
 ---
 # <a name="azure-active-directory-developer-platform-videos"></a>Видео о платформе Azure Active Directory разработчиков
 
@@ -71,6 +71,6 @@ ms.locfileid: "77202064"
     :::column-end:::
 :::row-end:::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения о новой [платформе Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop)
+Сведения о новой [платформе Microsoft Identity](../develop/index.yml)

@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: feb7c4a4417d64e039793bd96141c965f6437414
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e09ad2991d552cb9886911ac75ea23c690204a71
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87050933"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88116654"
 ---
 # <a name="enforce-on-premises-azure-ad-password-protection-for-active-directory-domain-services"></a>Принудительная защита паролей в локальной среде Azure AD для домен Active Directory Services
 
@@ -87,6 +87,9 @@ ms.locfileid: "87050933"
 Для развертывания защиты паролей Azure AD в лесу AD DS требуется регистрация этого леса в Azure AD. Каждая развернутая служба прокси-сервера также должна быть зарегистрирована в Azure AD. Эти регистрации леса и прокси-сервера связаны с определенным клиентом Azure AD, который неявно определяется учетными данными, используемыми во время регистрации.
 
 Лес AD DS и все развернутые прокси-службы в лесу должны быть зарегистрированы в одном и том же клиенте. Не поддерживается наличие AD DS леса или любых прокси-служб в этом лесу, которые регистрируются в разных клиентах Azure AD. Симптомы такого неправильного развертывания включают невозможность загрузки политик паролей.
+
+> [!NOTE]
+> Поэтому клиенты, имеющие несколько клиентов Azure AD, должны выбрать один различающиеся клиенты для регистрации каждого леса в целях защиты паролей Azure AD.
 
 ## <a name="download"></a>Скачать
 

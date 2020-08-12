@@ -13,12 +13,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur, andret
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: c290cbf36fd53d5afb5fd805cda896fb6879bb4b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5ff2858dd8b91ba036c517cbff07be96a729ef8c
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80154956"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88116450"
 ---
 # <a name="application-types-in-v10"></a>Типы приложений в версии 1.0
 
@@ -41,7 +41,7 @@ Azure Active Directory (Azure AD) поддерживает проверку по
 Прежде чем начать работу с кодом, воспользуйтесь этими ссылками, чтобы подробнее изучить каждый тип приложения и ознакомиться с общими сценариями. Вы также узнаете о различиях, которые нужно учитывать при написании конкретного приложения, работающего с конечной точкой версии 1.0 или 2.0.
 
 > [!NOTE]
-> Конечная точка версии 2.0 поддерживает не все сценарии и возможности Azure AD. Чтобы определить, стоит ли вам использовать конечную точку версии 2.0, ознакомьтесь с [ограничениями версии 2.0](../develop/active-directory-v2-limitations.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json).
+> Конечная точка версии 2.0 поддерживает не все сценарии и возможности Azure AD. Чтобы определить, стоит ли вам использовать конечную точку версии 2.0, ознакомьтесь с [ограничениями версии 2.0](./azure-ad-endpoint-comparison.md?bc=%2fazure%2factive-directory%2fazuread-dev%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fazuread-dev%2ftoc.json).
 
 Вы можете разрабатывать любые приложения и сценарии, описанные здесь, используя различные языки и платформы. Все сценарии снабжены полными примерами кода, доступными в соответствующих руководствах: [примеры кода для сценариев с использованием версии 1.0](sample-v1-code.md) и [примеры кода для сценариев с использованием версии 2.0](../develop/sample-v2-code.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json). Примеры кода также можно скачать напрямую из соответствующих [репозиториев с примерами на сайте GitHub](https://github.com/Azure-Samples?q=active-directory).
 

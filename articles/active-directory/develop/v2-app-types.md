@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: bdacee476fbc25154fe225700730f1b8f7f872ec
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 7b89add55a060c7ba0ef9488f1f6438090b8d3d2
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83682272"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121176"
 ---
 # <a name="application-types-for-microsoft-identity-platform"></a>Типы приложений для платформы удостоверений Microsoft
 
@@ -83,7 +83,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImtyaU1QZG1Cd...
 
 Чтобы увидеть этот сценарий в действии, изучите один из примеров кода для входа в веб-приложение в руководстве по [началу работы с платформой удостоверений Microsoft](v2-overview.md#getting-started).
 
-Помимо простого входа в систему, приложению веб-сервера может потребоваться доступ к некоторым другим веб-службам, например интерфейсу REST API. В этом случае приложение веб-сервера участвует в объединенном потоке OpenID Connect и OAuth 2.0 с использованием [потока кода авторизации OAuth 2.0](v2-oauth2-auth-code-flow.md). Чтобы больше узнать об этом сценарии, ознакомьтесь с тем, как [приступить к работе с веб-приложениями и интерфейсами веб-API](active-directory-v2-devquickstarts-webapp-webapi-dotnet.md).
+Помимо простого входа в систему, приложению веб-сервера может потребоваться доступ к некоторым другим веб-службам, например интерфейсу REST API. В этом случае приложение веб-сервера участвует в объединенном потоке OpenID Connect и OAuth 2.0 с использованием [потока кода авторизации OAuth 2.0](v2-oauth2-auth-code-flow.md). Чтобы больше узнать об этом сценарии, ознакомьтесь с тем, как [приступить к работе с веб-приложениями и интерфейсами веб-API](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-WebAPI-OpenIDConnect-DotNet).
 
 
 ## <a name="web-apis"></a>Веб-API

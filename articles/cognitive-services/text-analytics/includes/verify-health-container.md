@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 07/07/2020
 ms.author: aahi
-ms.openlocfilehash: 5c598807f36000a18211e32eba53220bfbeea2f7
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 1a8ce0bc94c61a0cfe6cdad11375763ba954957d
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86108722"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88122349"
 ---
 ### <a name="verify-that-a-container-is-running"></a>Проверка выполнения контейнера
 
@@ -29,7 +29,7 @@ ms.locfileid: "86108722"
 
 Существует несколько URL-адресов, которые можно также использовать для проверки того, что контейнер работает.
 
-|Запрос|Цель|
+|Запрос|Назначение|
 |--|--|
 |`http://localhost:5000/`|Контейнер предоставляет домашнюю страницу.|
 |`http://localhost:5000/ready`|Запрашивается с помощью GET, это обеспечивает проверку готовности контейнера к принятию запроса к модели. Этот запрос может использоваться для [проб активности и готовности](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) Kubernetes.|
@@ -37,4 +37,4 @@ ms.locfileid: "86108722"
 |`http://localhost:5000/swagger`|С помощью этого URL-адреса контейнер предоставляет полный набор документации по конечным точкам и `Try it now` функции. Эта функция позволяет ввести параметры в веб-форму HTML и создать запрос без необходимости писать код. После возвращения результатов запроса предоставляется пример команды CURL с примером требуемого формата HTTP-заголовков и текста. |
 |`http://localhost:5000/demo`| Этот компонент, запрошенный через браузер, предоставляет интерактивную визуализацию результатов из запросов примеров входного текста или предоставленного вами.  |
 
-Используйте этот URL-адрес запроса, `http://localhost:5000/text/analytics/v3.0-preview.1/domains/health` чтобы отправить запрос в контейнер.
+Используйте этот URL-адрес запроса, `http://localhost:5000/text/analytics/v3.2-preview.1/entities/health` чтобы отправить запрос в контейнер.

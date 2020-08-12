@@ -13,12 +13,12 @@ ms.author: ryanwi
 ms.reviewer: jeedes
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7654de8bf26c3eaa3c93c8efcf99577fe88e6f24
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 85c4488c4e8e1e2f9591b7d734c522c34ea4ba2d
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87540348"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88116331"
 ---
 # <a name="how-to-get-appsource-certified-for-azure-active-directory"></a>Как получить сертификат AppSource для Azure Active Directory
 
@@ -47,7 +47,7 @@ ms.locfileid: "87540348"
 
 *Приложения с одним клиентом* являются приложениями, которые принимают вход пользователей только из определенного экземпляра Azure AD. Внешние пользователи (включая рабочие или учебные учетные записи из других организаций или личные учетные записи) могут войти в приложение с одним клиентом после добавления каждого пользователя в качестве гостевой учетной записи в экземпляр Azure AD, в котором регистрируется приложение. 
 
-В Azure AD пользователей можно добавлять в качестве гостевых учетных записей через [службу совместной работы Azure AD B2B](../b2b/what-is-b2b.md). Это можно сделать [программным образом](../../active-directory-b2c/code-samples.md). При использовании B2B пользователи могут создать портал самообслуживания, для входа на которой не требуется приглашение. Дополнительные сведения см. в статье [Самостоятельная регистрация на портале для службы совместной работы Azure AD B2B](https://docs.microsoft.com/azure/active-directory/b2b/self-service-portal).
+В Azure AD пользователей можно добавлять в качестве гостевых учетных записей через [службу совместной работы Azure AD B2B](../external-identities/what-is-b2b.md). Это можно сделать [программным образом](../../active-directory-b2c/code-samples.md). При использовании B2B пользователи могут создать портал самообслуживания, для входа на которой не требуется приглашение. Дополнительные сведения см. в статье [Самостоятельная регистрация на портале для службы совместной работы Azure AD B2B](../external-identities/self-service-portal.md).
 
 В приложениях с одним клиентом можно включить возможность *Свяжитесь со мной*. Однако если требуется включить возможность входа одним щелчком или пробную версию возможностей, рекомендуемые AppSource, то включите в приложении мультитенантность.
 
@@ -108,7 +108,7 @@ ms.locfileid: "87540348"
 
 ## <a name="next-steps"></a>Next Steps
 
-- Дополнительные сведения о разработке приложений, поддерживающих вход с помощью Azure AD, см. в статье [Сценарии проверки подлинности в Azure AD](https://docs.microsoft.com/azure/active-directory/develop/v1-authentication-scenarios).
+- Дополнительные сведения о разработке приложений, поддерживающих вход с помощью Azure AD, см. в статье [Сценарии проверки подлинности в Azure AD](./v1-authentication-scenarios.md).
 - Сведения о выводе списка приложений SaaS в AppSource см. на [странице сведений для партнеров AppSource](https://appsource.microsoft.com/partners).
 
 ## <a name="get-support"></a>Получение поддержки

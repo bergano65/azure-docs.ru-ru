@@ -13,12 +13,12 @@ ms.date: 08/28/2019
 ms.author: negoe
 ms.reviewer: negoe,celested
 ms.custom: aaddev,references_regions
-ms.openlocfilehash: 20a158aac6a03dfe0bd8929de9fa66ea215aa29c
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
+ms.openlocfilehash: 9d703eab97b087ed6b3e4d9c3519a7e3ee7489cd
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84194118"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88117419"
 ---
 # <a name="national-clouds"></a>Национальные облака
 
@@ -78,7 +78,7 @@ ms.locfileid: "84194118"
 
 См. также:
 
-- [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/)
-- [Azure China 21Vianet](https://docs.microsoft.com/azure/china/)
-- [Azure для Германии](https://docs.microsoft.com/azure/germany/)
-- [Проверка подлинности Azure AD — основы](authentication-scenarios.md)
+- [Azure для государственных организаций](../../azure-government/index.yml)
+- [Azure China 21Vianet](/azure/china/)
+- [Azure для Германии](../../germany/index.yml)
+- [Проверка подлинности Azure AD — основы](./authentication-vs-authorization.md)

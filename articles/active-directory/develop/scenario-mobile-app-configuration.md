@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 06/16/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 78e3bbfe910ebc3d7f21167c2a15f0c255fdc8ff
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9fe084d931ee735f9eaecc58ca5445ae56a951cc
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84904802"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121057"
 ---
 # <a name="configure-a-mobile-app-that-calls-web-apis"></a>Настройка мобильного приложения, вызывающего веб-API
 
@@ -102,9 +102,9 @@ var pca = PublicClientApplicationBuilder
 
 ##### <a name="find-more-app-building-parameters"></a>Найти дополнительные параметры сборки приложений
 
-Список всех методов, доступных в `PublicClientApplicationBuilder` , см. в [списке методов](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder#methods).
+Список всех методов, доступных в `PublicClientApplicationBuilder` , см. в [списке методов](/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder#methods).
 
-Описание всех параметров, предоставляемых в `PublicClientApplicationOptions` , см. в [справочной документации](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationoptions).
+Описание всех параметров, предоставляемых в `PublicClientApplicationOptions` , см. в [справочной документации](/dotnet/api/microsoft.identity.client.publicclientapplicationoptions).
 
 ## <a name="tasks-for-xamarin-ios"></a>Задачи для Xamarin iOS
 
@@ -365,7 +365,7 @@ MSAL для iOS и macOS использует URL-адреса для вызов
 
 Сведения о включении брокера в Android см. [в статье Проверка подлинности через посредника в Xamarin. Android](msal-net-use-brokers-with-xamarin-apps.md#brokered-authentication-for-android).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Получение маркера](scenario-mobile-acquire-token.md)

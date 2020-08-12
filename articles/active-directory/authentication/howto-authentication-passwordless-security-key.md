@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 300bb317d521ac9202fdd1a02328f844110a48e4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9f17a634a9bc3b410eec8ed6e868d454dc9ecee6
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85550423"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88116603"
 ---
 # <a name="enable-passwordless-security-key-sign-in-preview"></a>Включить вход в систему без пароля (Предварительная версия)
 
@@ -27,10 +27,10 @@ ms.locfileid: "85550423"
 > [!NOTE]
 > Ключи безопасности FIDO2 — это общедоступная Предварительная версия функции Azure Active Directory. Дополнительные сведения о предварительных версиях см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 - [Многофакторная идентификация Azure](howto-mfa-getstarted.md)
-- [Общая Предварительная версия регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md)
+- Разрешить [объединенную предварительную версию регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md)
 - Совместимые [ключи безопасности FIDO2](concept-authentication-passwordless.md#fido2-security-keys)
 - Для WebAuthN требуется Windows 10 версии 1809 или более поздней * *
 
@@ -68,7 +68,7 @@ ms.locfileid: "85550423"
 1. Выберите **USB-устройство** или **устройство NFC**.
 1. Получите ключ и нажмите кнопку **Далее**.
 1. Появится окно с просьбой создать или ввести ПИН-код для ключа безопасности, а затем выполнить требуемый жест для ключа — Биометрия или сенсорного ввода.
-1. Пользователь вернется к объединенному интерфейсу регистрации и попросит ввести понятное имя для ключа, чтобы пользователь мог указать, какой из них имеет несколько. Нажмите кнопку **Далее**.
+1. Пользователь вернется к объединенному интерфейсу регистрации и попросит ввести понятное имя для ключа, чтобы пользователь мог указать, какой из них имеет несколько. Щелкните **Далее**.
 1. Нажмите кнопку **Готово** , чтобы завершить процесс.
 
 ## <a name="sign-in-with-passwordless-credential"></a>Вход с использованием учетных данных без пароля
@@ -97,7 +97,7 @@ ms.locfileid: "85550423"
 
 Мы работаем над поддержкой функции, которая разрешает изменение имени участника-пользователя для гибридного присоединения к Azure AD и устройств, присоединенных к Azure AD. При изменении имени участника-пользователя вы больше не сможете изменить ключи безопасности FIDO2, чтобы учитывать изменения. Решение заключается в сбросе устройства и повторной регистрации пользователя.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [FIDO2 безопасность ключ безопасности Windows 10 вход](howto-authentication-passwordless-security-key-windows.md)
 

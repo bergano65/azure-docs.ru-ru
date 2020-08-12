@@ -13,12 +13,12 @@ ms.date: 04/24/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: bb5950360734bc46923ef18424e3ad1ce275ad7a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d244bbbe96bcea45da5c0860e4af52409123fb7f
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82652668"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118694"
 ---
 # <a name="considerations-for-using-xamarin-android-with-msalnet"></a>Рекомендации по использованию Xamarin Android с MSAL.NET
 В этой статье рассматриваются вопросы, которые следует учитывать при использовании Xamarin Android с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
@@ -92,7 +92,7 @@ protected override void OnActivityResult(int requestCode,
 
 Замените имя пакета, зарегистрированное в портал Azure, на `android:host=` значение. Замените хэш ключа, зарегистрированный в портал Azure, на `android:path=` значение. Хэш подписи *не* должен быть закодирован в URL-адресе. Убедитесь, что в начале хэша подписи отображается начальная косая черта ( `/` ).
 
-Кроме того, можно [создать действие в коде](https://docs.microsoft.com/xamarin/android/platform/android-manifest#the-basics) , а не вручную изменять *AndroidManifest.xml*. Чтобы создать действие в коде, сначала создайте класс, включающий `Activity` атрибут и `IntentFilter` атрибут. 
+Кроме того, можно [создать действие в коде](/xamarin/android/platform/android-manifest#the-basics) , а не вручную изменять *AndroidManifest.xml*. Чтобы создать действие в коде, сначала создайте класс, включающий `Activity` атрибут и `IntentFilter` атрибут. 
 
 Ниже приведен пример класса, представляющего значения XML-файла:
 
@@ -129,7 +129,7 @@ var authResult = AcquireTokenInteractive(scopes)
 Дополнительные сведения см. в статье [Использование веб-браузеров для MSAL.NET и в](msal-net-web-browsers.md) [браузере Xamarin Android System](msal-net-system-browser-android-considerations.md).
 
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 Вы можете создать новое приложение Xamarin. Forms и добавить ссылку на пакет NuGet MSAL.NET.
 Но при обновлении существующего приложения Xamarin. Forms до MSAL.NET предварительной версии 1.1.2 или более поздней может возникнуть проблема сборки.
 
@@ -160,6 +160,6 @@ var authResult = AcquireTokenInteractive(scopes)
 
 Дополнительные сведения см. в примере [мобильного приложения Xamarin, использующего платформу Microsoft Identity](https://github.com/azure-samples/active-directory-xamarin-native-v2#android-specific-considerations). В следующей таблице перечислены соответствующие сведения в файле сведений.
 
-| Пример | Платформа | Описание |
+| Образец | Платформа | Описание |
 | ------ | -------- | ----------- |
 |[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin. iOS, Android, UWP | Простое приложение Xamarin. Forms, которое показывает, как использовать MSAL для проверки подлинности личных учетных записей Майкрософт и Azure AD через конечную точку Azure AD 2,0. В приложении также показано, как получить доступ к Microsoft Graph и показать получившийся маркер. <br>![Топология](media/msal-net-xamarin-android-considerations/topology.png) |

@@ -13,12 +13,12 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: luleon, hirsin, paulgarn
 ROBOTS: NOINDEX
-ms.openlocfilehash: bbd622ccb7aeecfff4d3dc744623105a593e6a67
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3f1829127d1eaf65be586ddff3fb2615cae72c5d
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85383586"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88116144"
 ---
 # <a name="debug-saml-based-single-sign-on-to-applications-in-azure-active-directory"></a>Отладка единого входа на основе SAML в приложениях в Azure Active Directory
 
@@ -102,6 +102,6 @@ ms.locfileid: "85383586"
 1. Теперь, когда вы проверили ответ SAML, ознакомьтесь со статьей [Ошибка на странице приложения после входа в](../manage-apps/application-sign-in-problem-application-error.md) систему, чтобы получить рекомендации по устранению проблемы. 
 1. Если вы по-прежнему не можете войти в систему, можно попросить поставщика приложения, что отсутствует в ответе SAML.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда единый вход работает в вашем приложении, вы можете [автоматизировать подготовку пользователей и отменить подготовку к приложениям SaaS](../manage-apps/user-provisioning.md) или начать [работу с условным доступом](../conditional-access/app-based-conditional-access.md).
+Теперь, когда единый вход работает в вашем приложении, вы можете [автоматизировать подготовку пользователей и отменить подготовку к приложениям SaaS](../app-provisioning/user-provisioning.md) или начать [работу с условным доступом](../conditional-access/app-based-conditional-access.md).

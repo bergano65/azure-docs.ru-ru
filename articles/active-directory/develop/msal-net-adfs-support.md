@@ -13,12 +13,12 @@ ms.date: 07/16/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 15af18177cea217612a4d5276d130abe02d339f4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8aaac1beaae70325bee9752ca51a499f2908bdda
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77160766"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88119238"
 ---
 # <a name="active-directory-federation-services-support-in-msalnet"></a>Поддержка службы федерации Active Directory (AD FS) в MSAL.NET
 Службы федерации Active Directory (AD FS) (AD FS) в Windows Server позволяет добавлять аутентификацию и авторизацию на основе OpenID Connect Connect и OAuth 2,0 для разрабатываемых приложений. Эти приложения могут выполнять проверку подлинности пользователей непосредственно в AD FS. Дополнительные сведения см. в статье [сценарии AD FS для разработчиков](/windows-server/identity/ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios).
@@ -56,6 +56,6 @@ MSAL.NET поддерживает подключение к AD FS 2019, что �
 
  Если требуется поддержка сценариев, требующих прямого подключения к AD FS 2016, используйте последнюю версию [библиотеки проверки Подлинности Azure Active Directory](../azuread-dev/active-directory-authentication-libraries.md#microsoft-supported-client-libraries). После обновления локальной системы до AD FS 2019 вы сможете использовать MSAL.NET.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения об объединенном варианте см. в статье [Настройка поведения при входе Azure Active Directory для приложения с помощью политики обнаружения домашней области](https://docs.microsoft.com/azure/active-directory/manage-apps/configure-authentication-for-federated-users-portal) .
+Сведения об объединенном варианте см. в статье [Настройка поведения при входе Azure Active Directory для приложения с помощью политики обнаружения домашней области](../manage-apps/configure-authentication-for-federated-users-portal.md) .

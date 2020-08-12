@@ -13,12 +13,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 28ace84f9a80b71209d7963d02b66317292b151b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d1a7407c947c1c5bae1eed00acb0f216722f3d09
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80882545"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121040"
 ---
 # <a name="prepare-mobile-apps-for-production"></a>Подготовка мобильных приложений для рабочей среды
 
@@ -36,7 +36,7 @@ ms.locfileid: "80882545"
 
 ## <a name="mitigate-and-investigate-issues"></a>Устранение неполадок и их анализ
 
-Чтобы лучше диагностировать проблемы в приложении, собирайте данные. Сведения о типах данных, которые можно отслеживать, см. в разделе [ведение журнала в приложениях MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-logging).
+Чтобы лучше диагностировать проблемы в приложении, собирайте данные. Сведения о типах данных, которые можно отслеживать, см. в разделе [ведение журнала в приложениях MSAL](./msal-logging.md).
 
 Ниже приведены некоторые рекомендации по сбору данных.
 
@@ -44,7 +44,7 @@ ms.locfileid: "80882545"
 
 - Если данные телеметрии доступны, включите ее через MSAL для сбора данных о том, как пользователи входят в приложение.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [Common steps to move to production](../../../includes/active-directory-develop-scenarios-production.md)]
 

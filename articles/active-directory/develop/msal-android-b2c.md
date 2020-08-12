@@ -13,16 +13,16 @@ ms.date: 9/18/2019
 ms.author: brianmel
 ms.reviewer: rapong
 ms.custom: aaddev
-ms.openlocfilehash: 0998bb04b0dfc69db4696f2e390cfe259eba6718
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0ad5fab685757d2efd91cd1df0e48a5f1258d17e
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76696527"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88119884"
 ---
 # <a name="use-msal-for-android-with-b2c"></a>Использование MSAL для Android с B2C
 
-Библиотека аутентификации Майкрософт (MSAL) позволяет разработчикам приложений аутентифицировать пользователей с помощью удостоверений социальных сетей и локальных удостоверений, используя [Azure Active Directory B2C (Azure AD B2C)](https://docs.microsoft.com/azure/active-directory-b2c/). Azure AD B2C — это служба управления удостоверениями. Используйте его для настройки и управления регистрацией клиентов, входом в систему и управлением их профилями при использовании ваших приложений.
+Библиотека аутентификации Майкрософт (MSAL) позволяет разработчикам приложений аутентифицировать пользователей с помощью удостоверений социальных сетей и локальных удостоверений, используя [Azure Active Directory B2C (Azure AD B2C)](../../active-directory-b2c/index.yml). Azure AD B2C — это служба управления удостоверениями. Используйте его для настройки и управления регистрацией клиентов, входом в систему и управлением их профилями при использовании ваших приложений.
 
 ## <a name="configure-known-authorities-and-redirect-uri"></a>Настройка известных центров и URI перенаправления
 
@@ -54,7 +54,7 @@ ms.locfileid: "76696527"
 }
 ```
 
-`redirect_uri`Должен быть зарегистрирован в конфигурации приложения, а также в `AndroidManifest.xml` для поддержки перенаправления во время [потока предоставления кода авторизации](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-oauth-code).
+`redirect_uri`Должен быть зарегистрирован в конфигурации приложения, а также в `AndroidManifest.xml` для поддержки перенаправления во время [потока предоставления кода авторизации](../../active-directory-b2c/authorization-code-flow.md).
 
 ## <a name="initialize-ipublicclientapplication"></a>Инициализация Ипубликклиентаппликатион
 
@@ -153,7 +153,7 @@ AcquireTokenParameters parameters = new AcquireTokenParameters.Builder()
 
 ## <a name="handle-password-change-policies"></a>Работа с политиками изменения паролей
 
-Пользовательский поток регистрации или входа в локальную учетную запись отображает "**забыли пароль?**" . При переходе по этой ссылке поток пользователя сброса паролей не активируется автоматически.
+Пользовательский поток регистрации или входа в локальную учетную запись отображает "**забыли пароль?**" и создайте ее бесплатно. При переходе по этой ссылке поток пользователя сброса паролей не активируется автоматически.
 
 Вместо этого в приложение возвращается код ошибки `AADB2C90118`. Приложение должно справиться с этим кодом ошибки, запустив конкретный поток пользователя, который сбрасывает пароль.
 
@@ -227,7 +227,7 @@ String tenantId = account.getTenantId();
 
 ### <a name="idtoken-claims"></a>Утверждения IdToken
 
-Утверждения, возвращенные в IdToken, заполняются службой маркеров безопасности (STS), а не MSAL. В зависимости от используемого поставщика удостоверений (IdP) некоторые утверждения могут отсутствовать. Некоторые поставщиков удостоверений в настоящее время не предоставляют `preferred_username` заявку. Так как это утверждение используется MSAL для кэширования, `MISSING FROM THE TOKEN RESPONSE` вместо него используется значение заполнителя. Дополнительные сведения об утверждениях B2C IdToken см. [в разделе Обзор маркеров в Azure Active Directory B2C](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-tokens#claims).
+Утверждения, возвращенные в IdToken, заполняются службой маркеров безопасности (STS), а не MSAL. В зависимости от используемого поставщика удостоверений (IdP) некоторые утверждения могут отсутствовать. Некоторые поставщиков удостоверений в настоящее время не предоставляют `preferred_username` заявку. Так как это утверждение используется MSAL для кэширования, `MISSING FROM THE TOKEN RESPONSE` вместо него используется значение заполнителя. Дополнительные сведения об утверждениях B2C IdToken см. [в разделе Обзор маркеров в Azure Active Directory B2C](../../active-directory-b2c/tokens-overview.md#claims).
 
 ## <a name="managing-accounts-and-policies"></a>Управление учетными записями и политиками
 
@@ -237,6 +237,6 @@ B2C рассматривает каждую политику как отдель
 
 При обновлении маркеров для политики с помощью `acquireTokenSilent` Укажите то же значение `IAccount` , которое было возвращено предыдущими вызовами политики в `AcquireTokenSilentParameters` . Предоставление учетной записи, возвращаемой другой политикой, приведет к ошибке.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Azure Active Directory B2C (Azure AD B2C) о том [, что Azure Active Directory B2C?](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-overview)
+Дополнительные сведения о Azure Active Directory B2C (Azure AD B2C) о том [, что Azure Active Directory B2C?](../../active-directory-b2c/overview.md)

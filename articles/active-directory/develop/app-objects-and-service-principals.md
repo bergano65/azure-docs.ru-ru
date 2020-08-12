@@ -13,12 +13,12 @@ ms.date: 07/22/2020
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: sureshja
-ms.openlocfilehash: 65726a1b43cdbcb5a36d4a6d3f3df97669e1028f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5a3e6d918f4ab94c4533e930ea73b5267deb53a4
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87027268"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115532"
 ---
 # <a name="application-and-service-principal-objects-in-azure-active-directory"></a>Объекты приложения и субъекта-службы в Azure Active Directory
 
@@ -91,12 +91,12 @@ ms.locfileid: "87027268"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Можно использовать [проводник Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer) для запроса объектов приложения и субъекта-службы.
-- Доступ к объекту приложения приложения можно получить с помощью Microsoft Graph API, редактора манифеста приложения [портал Azure][AZURE-Portal] или [командлетов Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/?view=azureadps-2.0), представленных в [сущности приложения][MS-Graph-App-Entity]OData.
-- Доступ к объекту субъекта-службы приложения можно получить с помощью Microsoft Graph API или [командлетов Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/?view=azureadps-2.0), представленных в [сущности ServicePrincipal][MS-Graph-Sp-Entity]OData.
+- Доступ к объекту приложения приложения можно получить с помощью Microsoft Graph API, редактора манифеста приложения [портал Azure][AZURE-Portal] или [командлетов Azure AD PowerShell](/powershell/azure/?view=azureadps-2.0), представленных в [сущности приложения][MS-Graph-App-Entity]OData.
+- Доступ к объекту субъекта-службы приложения можно получить с помощью Microsoft Graph API или [командлетов Azure AD PowerShell](/powershell/azure/?view=azureadps-2.0), представленных в [сущности ServicePrincipal][MS-Graph-Sp-Entity]OData.
 
 <!--Image references-->
 
 <!--Reference style links -->
-[MS-Graph-App-Entity]: https://docs.microsoft.com/graph/api/resources/application
-[MS-Graph-Sp-Entity]: https://docs.microsoft.com/graph/api/resources/serviceprincipal
+[MS-Graph-App-Entity]: /graph/api/resources/application
+[MS-Graph-Sp-Entity]: /graph/api/resources/serviceprincipal
 [AZURE-Portal]: https://portal.azure.com

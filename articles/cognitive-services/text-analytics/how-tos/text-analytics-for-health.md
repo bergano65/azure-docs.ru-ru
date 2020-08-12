@@ -8,16 +8,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 07/28/2020
+ms.date: 08/06/2020
 ms.author: aahi
-ms.openlocfilehash: 9b76dac0734985b01a4a73ad4fc7f2a5f35838db
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: 71cbf03a36dd95eb66c3dcbaffbf4b63d889f507
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87986905"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121584"
 ---
 # <a name="how-to-use-text-analytics-for-health-preview"></a>Как использовать Анализ текста для работоспособности (Предварительная версия)
+
+> [!NOTE]
+> Анализ текста для контейнера работоспособности недавно обновлялись. Дополнительные сведения о последних изменениях см. в разделе [новые](../whats-new.md) возможности. Не забудьте извлечь последний контейнер для использования перечисленных обновлений.
 
 > [!IMPORTANT] 
 > Анализ текста для работоспособности — это возможность предварительной версии, предоставленная "как есть" и "со всеми ОШИБКАми". Таким образом, **анализ текста для работоспособности (Предварительная версия) не следует реализовывать и развертывать в любом рабочем использовании.** Анализ текста для обеспечения работоспособности не предназначены для использования в качестве медицинских устройств, поддержки клинической практике, диагностического средства или других технологий, предназначенных для диагностики, получения, устранения, обработки или предотвращения болезни или других условий, и ни одна из лицензий или прав не предоставляется корпорацией Майкрософт для использования этой возможности в таких целях. Эта возможность не предназначена для реализации или развертывания в качестве замены для профессиональных медицинских консультаций или здравоохранения, диагностики, лечения или клинической практике, которые являются нежелательными специалистами здравоохранения и не должны использоваться. Клиент несет ответственность за использование Анализ текста для работоспособности. Корпорация Майкрософт не гарантирует, что Анализ текста для обеспечения работоспособности или каких бы то ни было материалов, предоставляемых в связи с этой возможностью, будет достаточно для любых медицинских целей или иным образом соответствовать требованиям или медицинских нужд любого человека. 
@@ -25,7 +28,7 @@ ms.locfileid: "87986905"
 
 Анализ текста для работоспособности — это Контейнерная служба, которая извлекает и помечает соответствующие медицинские сведения из неструктурированных текстов, таких как заметки Doctor, сводки разрядов, документы клинической практике и электронные записи о работоспособности.  
 
-## <a name="features"></a>Функции
+## <a name="features"></a>Компоненты
 
 Анализ текста для контейнера работоспособности в настоящее время выполняет распознавание имен сущностей (NER), извлечение отношений, отрицание сущностей и связывание сущностей для английского языка в собственной среде разработки, которая соответствует вашим требованиям к безопасности и управлению данными.
 
@@ -229,7 +232,7 @@ docker-compose up
 Используйте приведенный ниже запрос в виде фигурной скобки, чтобы отправить запрос в развернутый контейнер, заменив `serverURL` переменную соответствующим значением.
 
 ```bash
-curl -X POST 'http://<serverURL>:5000/text/analytics/v3.0-preview.1/domains/health' --header 'Content-Type: application/json' --header 'accept: application/json' --data-binary @example.json
+curl -X POST 'http://<serverURL>:5000/text/analytics/v3.2-preview.1/entities/health' --header 'Content-Type: application/json' --header 'accept: application/json' --data-binary @example.json
 
 ```
 
@@ -269,8 +272,8 @@ example.json
                     "offset": 17,
                     "length": 11,
                     "text": "itchy sores",
-                    "type": "SYMPTOM_OR_SIGN",
-                    "score": 0.97,
+                    "category": "SymptomOrSign",
+                    "ConfidenceScore": 1.0,
                     "isNegated": false
                 }
             ]
@@ -283,8 +286,8 @@ example.json
                     "offset": 11,
                     "length": 4,
                     "text": "50mg",
-                    "type": "DOSAGE",
-                    "score": 1.0,
+                    "category": "Dosage",
+                    "ConfidenceScore": 1.0,
                     "isNegated": false
                 },
                 {
@@ -292,8 +295,8 @@ example.json
                     "offset": 16,
                     "length": 8,
                     "text": "benadryl",
-                    "type": "MEDICATION_NAME",
-                    "score": 0.99,
+                    "category": "MedicationName",
+                    "ConfidenceScore": 1.0,
                     "isNegated": false,
                     "links": [
                         {
@@ -339,50 +342,35 @@ example.json
                     "offset": 32,
                     "length": 11,
                     "text": "twice daily",
-                    "type": "FREQUENCY",
-                    "score": 1.0,
+                    "category": "Frequency",
+                    "ConfidenceScore": 1.0,
                     "isNegated": false
                 }
             ],
             "relations": [
                 {
-                    "relationType": "DOSAGE_OF_MEDICATION",
-                    "score": 1.0,
-                    "entities": [
-                        {
-                            "id": "0",
-                            "role": "ATTRIBUTE"
-                        },
-                        {
-                            "id": "1",
-                            "role": "ENTITY"
-                        }
-                    ]
+                    "relationType": "DosageOfMedication",
+                    "bidirectional": false,
+                    "source": "#/documents/1/entities/0",
+                    "target": "#/documents/1/entities/1"
                 },
                 {
-                    "relationType": "FREQUENCY_OF_MEDICATION",
-                    "score": 1.0,
-                    "entities": [
-                        {
-                            "id": "1",
-                            "role": "ENTITY"
-                        },
-                        {
-                            "id": "2",
-                            "role": "ATTRIBUTE"
-                        }
-                    ]
+                    "relationType": "FrequencyOfMedication",
+                    "bidirectional": false,
+                    "source": "#/documents/1/entities/2",
+                    "target": "#/documents/1/entities/1"
                 }
             ]
         }
     ],
     "errors": [],
-    "modelVersion": "2020-05-08"
+    "modelVersion": "2020-07-24"
 }
 ```
 
-> [!NOTE] 
-> При обнаружении отрицания в некоторых случаях один термин отрицания может одновременно обращаться к нескольким терминам. Отрицание распознанной сущности представлено в выходных данных JSON по логическому значению `isNegated` флага:
+### <a name="negation-detection-output"></a>Вывод обнаружения отрицания
+
+При использовании обнаружения отрицания в некоторых случаях один термин отрицания может одновременно обращаться к нескольким терминам. Отрицание распознанной сущности представлено в выходных данных JSON по логическому значению `isNegated` флага:
 
 ```json
 {
@@ -390,7 +378,7 @@ example.json
   "offset": 90,
   "length": 10,
   "text": "chest pain",
-  "type": "SYMPTOM_OR_SIGN",
+  "category": "SymptomOrSign",
   "score": 0.9972,
   "isNegated": true,
   "links": [
@@ -403,6 +391,33 @@ example.json
       "id": "0000023593"
     },
     ...
+```
+
+### <a name="relation-extraction-output"></a>Выход извлечения связи
+
+Выход извлечения связи содержит ссылки URI на *источник* связи и его *целевой объект*. Сущности с ролью отношения `ENTITY` принадлежат `target` полю. Сущности с ролью отношения `ATTRIBUTE` принадлежат `source` полю. Связи аббревиатур содержат двунаправленную форму `source` и `target` поля, `bidirectional` для которых будет задано значение `true` . 
+
+```json
+"relations": [
+  {
+      "relationType": "DosageOfMedication",
+      "score": 1.0,
+      "bidirectional": false,
+      "source": "#/documents/2/entities/0",
+      "target": "#/documents/2/entities/1",
+      "entities": [
+          {
+              "id": "0",
+              "role": "ATTRIBUTE"
+          },
+          {
+              "id": "1",
+              "role": "ENTITY"
+          }
+      ]
+  },
+...
+]
 ```
 
 ## <a name="see-also"></a>См. также раздел

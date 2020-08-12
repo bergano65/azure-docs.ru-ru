@@ -13,12 +13,12 @@ ms.date: 11/22/2019
 ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: f3bb4dd1c564e5f6c4a8ee1bb5bf7424a74a339e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 479e74f9c36864e041685393d35972e7365260da
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81533995"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88119445"
 ---
 # <a name="use-msal-in-a-national-cloud-environment"></a>Использование MSAL в национальной облачной среде
 
@@ -34,13 +34,13 @@ ms.locfileid: "81533995"
 
 В этом руководстве показано, как войти в рабочие и учебные учетные записи, получить маркер доступа и вызвать API Microsoft Graph в [облачной среде Azure для государственных организаций](https://azure.microsoft.com/global-infrastructure/government/) .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем начать, убедитесь, что выполнены все необходимые условия.
 
 ### <a name="choose-the-appropriate-identities"></a>Выберите соответствующие удостоверения
 
-Приложения [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/) могут использовать удостоверения государственных организаций Azure AD и общедоступные удостоверения Azure AD для проверки подлинности пользователей. Так как вы можете использовать любое из этих удостоверений, необходимо решить, какую конечную точку следует выбрать для вашего сценария:
+Приложения [Azure для государственных организаций](../../azure-government/index.yml) могут использовать удостоверения государственных организаций Azure AD и общедоступные удостоверения Azure AD для проверки подлинности пользователей. Так как вы можете использовать любое из этих удостоверений, необходимо решить, какую конечную точку следует выбрать для вашего сценария:
 
 - Общедоступная служба Azure AD. обычно используется, если в Организации уже есть общедоступный клиент Azure AD для поддержки Office 365 (общедоступная или GCC) или другого приложения.
 - Azure AD для государственных организаций. обычно используется, если в Организации уже есть клиент Azure AD для государственных организаций, поддерживающий Office 365 (GCC High или DoD) или создающий новый клиент в Azure AD для государственных организаций.
@@ -49,7 +49,7 @@ ms.locfileid: "81533995"
 
 ### <a name="get-an-azure-government-subscription"></a>Получение подписки Azure для государственных организаций
 
-Чтобы получить подписку Azure для государственных организаций, см. статью [Управление подпиской и подключение к ней в Azure](https://docs.microsoft.com/azure/azure-government/documentation-government-manage-subscriptions)для государственных организаций.
+Чтобы получить подписку Azure для государственных организаций, см. статью [Управление подпиской и подключение к ней в Azure](../../azure-government/documentation-government-manage-subscriptions.md)для государственных организаций.
 
 Если у вас нет подписки Azure для государственных организаций, создайте [бесплатную учетную запись](https://azure.microsoft.com/global-infrastructure/government/request/) , прежде чем начинать работу.
 
@@ -89,7 +89,7 @@ ms.locfileid: "81533995"
 
 - [Скачайте файлы проекта](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip) для локального веб-сервера, например node.
 
-  или диспетчер конфигурации служб
+  или
 
 - [Скачайте проект Visual Studio](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/vsquickstart.zip).
 
@@ -127,14 +127,14 @@ const myMSALObj = new UserAgentApplication(msalConfig);
     - Если приложение поддерживает **учетные записи в этом каталоге Организации**, замените это значение на идентификатор клиента или имя клиента (например, contoso.Microsoft.com).
     - Если приложение поддерживает **учетные записи в любом каталоге Организации**, замените это значение на `organizations` .
 
-    Чтобы найти конечные точки проверки подлинности для всех национальных облаков, см. раздел [конечные точки аутентификации Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud#azure-ad-authentication-endpoints).
+    Чтобы найти конечные точки проверки подлинности для всех национальных облаков, см. раздел [конечные точки аутентификации Azure AD](./authentication-national-cloud.md#azure-ad-authentication-endpoints).
 
     > [!NOTE]
     > Личные учетные записи Майкрософт не поддерживаются в национальных облаках.
 
 - `graphEndpoint`является Microsoft Graph конечной точкой для Microsoft Cloud для государственных организаций США.
 
-   Чтобы найти Microsoft Graph конечных точек для всех национальных облаков, см. раздел [Microsoft Graph конечных точек в национальных облаках](https://docs.microsoft.com/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
+   Чтобы найти Microsoft Graph конечных точек для всех национальных облаков, см. раздел [Microsoft Graph конечных точек в национальных облаках](/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
 
 ## <a name="python"></a>[Python](#tab/python)
 
@@ -150,7 +150,7 @@ const myMSALObj = new UserAgentApplication(msalConfig);
     "authority": "https://login.microsoftonline.us/Enter_the_Tenant_Info_Here"
     ```
 
-- Для вызова Microsoft Graph требуется конкретный URL-адрес конечной точки графа, зависящий от используемого облака. Чтобы найти Microsoft Graph конечных точек для всех национальных облаков, см. статью [Microsoft Graph и корневые конечные точки службы Graph Explorer](https://docs.microsoft.com/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
+- Для вызова Microsoft Graph требуется конкретный URL-адрес конечной точки графа, зависящий от используемого облака. Чтобы найти Microsoft Graph конечных точек для всех национальных облаков, см. статью [Microsoft Graph и корневые конечные точки службы Graph Explorer](/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
 
     Ниже приведен пример конечной точки графа с областью действия:
 
@@ -173,7 +173,7 @@ const myMSALObj = new UserAgentApplication(msalConfig);
 "authority": "https://login.microsoftonline.us/Enter_the_Tenant_Info_Here"
 ```
 
-- Для вызова Microsoft Graph требуется конкретный URL-адрес конечной точки графа, зависящий от используемого облака. Чтобы найти Microsoft Graph конечных точек для всех национальных облаков, см. статью [Microsoft Graph и корневые конечные точки службы Graph Explorer](https://docs.microsoft.com/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
+- Для вызова Microsoft Graph требуется конкретный URL-адрес конечной точки графа, зависящий от используемого облака. Чтобы найти Microsoft Graph конечных точек для всех национальных облаков, см. статью [Microsoft Graph и корневые конечные точки службы Graph Explorer](/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
 
 Ниже приведен пример конечной точки графа с областью действия:
 
@@ -225,6 +225,6 @@ if let application = try? MSALPublicClientApplication(configuration: config) { /
 См. также:
 
 - [Проверка подлинности в национальных облаках](authentication-national-cloud.md)
-- [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/)
-- [Azure China 21Vianet](https://docs.microsoft.com/azure/china/)
-- [Azure для Германии](https://docs.microsoft.com/azure/germany/)
+- [Azure для государственных организаций](../../azure-government/index.yml)
+- [Azure China 21Vianet](/azure/china/)
+- [Azure для Германии](../../germany/index.yml)

@@ -13,12 +13,12 @@ ms.date: 06/22/2018
 ms.author: kenwith
 ms.reviewer: paulgarn
 ms.custom: aaddev
-ms.openlocfilehash: 59ba97ccc0bc4a1a273873d638ef3f519b91e530
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: bab21bfc6dba6e9cd35c8053e943cb76339e2254
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87284444"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88114971"
 ---
 # <a name="azure-ad-saml-token-reference"></a>Справочник по токенам SAML в Azure AD
 
@@ -27,7 +27,7 @@ ms.locfileid: "87284444"
 ## <a name="claims-in-saml-tokens"></a>Утверждения в токенах SAML
 
 > [!div class="mx-codeBreakAll"]
-> | Имя | Эквивалентное утверждение JWT | Описание: | Пример |
+> | Имя | Эквивалентное утверждение JWT | Описание | Пример |
 > | --- | --- | --- | ------------|
 > |Аудитория | `aud` |Целевой получатель маркера. Приложение, которое получает токен, должно проверять, верно ли значение, обозначающее аудиторию, и отклонять любые токены, предназначенные для другой аудитории. | `<AudienceRestriction>`<br>`<Audience>`<br>`https://contoso.com`<br>`</Audience>`<br>`</AudienceRestriction>`  |
 > | Время выполнения проверки подлинности | |Фиксирует дату и время выполнения сеанса проверки подлинности. | `<AuthnStatement AuthnInstant="2011-12-29T05:35:22.000Z">` | 
@@ -42,7 +42,7 @@ ms.locfileid: "87284444"
 > |Имя | `unique_name` |Предоставляет удобное для восприятия значение, которое идентифицирует субъект маркера. Это значение не обязательно должно быть уникальным в пределах клиента. Оно предназначено только для отображения. | `<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">`<br>`<AttributeValue>frankm@contoso.com<AttributeValue>`|
 > |Идентификатор объекта. | `oid` |Содержит уникальный идентификатор объекта в Azure AD. Это значение является неизменяемым и не может быть переназначено или повторно использовано. Используйте идентификатор объекта для идентификации объекта в запросах, адресованных Azure AD. | `<Attribute Name="http://schemas.microsoft.com/identity/claims/objectidentifier">`<br>`<AttributeValue>528b2ac2-aa9c-45e1-88d4-959b53bc7dd0<AttributeValue>` |
 > |Роли | `roles` |Представляет все роли приложения, предоставленные субъекту напрямую или косвенно через членство в группе, и может использоваться для реализации управления доступом на основе ролей. Роли приложения определяются на уровне приложения с использованием свойства `appRoles` манифеста приложения. Свойство `value` каждой роли приложения представляет значение, которое отображается в утверждении Roles. | `<Attribute Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/role">`|
-> |Субъект | `sub` |Указывает субъекта, сведения о котором утверждает токен, например данные о пользователе приложения. Это значение является неизменным, его невозможно назначить другому объекту или использовать повторно. Следовательно, это значение можно использовать для безопасного проведения проверок авторизации. Так как субъект всегда присутствует в выдаваемых Azure AD токенах, мы советуем использовать это значение в системе авторизации общего назначения. <br> `SubjectConfirmation` не является утверждением. Он описывает, как проверяется субъект токена. `Bearer` указывает, что субъект подтвержден благодаря владению токеном. | `<Subject>`<br>`<NameID>S40rgb3XjhFTv6EQTETkEzcgVmToHKRkZUIsJlmLdVc</NameID>`<br>`<SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer" />`<br>`</Subject>`|
+> |Тема | `sub` |Указывает субъекта, сведения о котором утверждает токен, например данные о пользователе приложения. Это значение является неизменным, его невозможно назначить другому объекту или использовать повторно. Следовательно, это значение можно использовать для безопасного проведения проверок авторизации. Так как субъект всегда присутствует в выдаваемых Azure AD токенах, мы советуем использовать это значение в системе авторизации общего назначения. <br> `SubjectConfirmation` не является утверждением. Он описывает, как проверяется субъект токена. `Bearer` указывает, что субъект подтвержден благодаря владению токеном. | `<Subject>`<br>`<NameID>S40rgb3XjhFTv6EQTETkEzcgVmToHKRkZUIsJlmLdVc</NameID>`<br>`<SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer" />`<br>`</Subject>`|
 > |Tenant ID | `tid` |Tenant ID — неизменяемый идентификатор без возможности повторного использования, который идентифицирует клиент каталога, выдавший токен. Это значение можно использовать для доступа к ресурсам каталога конкретного клиента в мультитенантном приложении. Например, это значение можно использовать для идентификации клиента при вызове API Graph. | `<Attribute Name="http://schemas.microsoft.com/identity/claims/tenantid">`<br>`<AttributeValue>cbb1a5ac-f33b-45fa-9bf5-f37db0fed422<AttributeValue>`|
 > |Token Lifetime | `nbf`, `exp` |Определяет интервал времени, в течение которого маркер является действительным. Служба, проверяющая токен, должна проверить, не выходит ли текущая дата за пределы периода действия токена. Если выходит, токен должен быть отклонен. Служба может разрешить использовать токен в течение пяти минут после окончания срока его действия, тем самым учитывая возможные различия во времени ("разница во времени") между Azure AD и службой. | `<Conditions`<br>`NotBefore="2013-03-18T21:32:51.261Z"`<br>`NotOnOrAfter="2013-03-18T22:32:51.261Z"`<br>`>` <br>|
 
@@ -154,7 +154,7 @@ ms.locfileid: "87284444"
 
 ## <a name="related-content"></a>См. также
 
-* Дополнительные сведения об управлении политикой времени существования маркеров с помощью API Microsoft Graph см. в разделе [ресурс политики](https://docs.microsoft.com/graph/api/resources/policy?view=graph-rest-beta).
+* Дополнительные сведения об управлении политикой времени существования маркеров с помощью API Microsoft Graph см. в разделе [ресурс политики](/graph/api/resources/policy?view=graph-rest-beta).
 * Дополнительные сведения об управлении политиками посредством командлетов PowerShell, включая примеры, см. в разделе [Configurable Token Lifetimes in Azure Active Directory (Public Preview)](../develop/active-directory-configurable-token-lifetimes.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json) (Настраиваемое время существования маркеров в Azure Active Directory (общедоступная предварительная версия)). 
 * Добавьте [пользовательские и необязательные утверждения](../develop/active-directory-optional-claims.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json) в токены для приложения.
 * Используйте [единый вход с помощью SAML](single-sign-on-saml-protocol.md).
