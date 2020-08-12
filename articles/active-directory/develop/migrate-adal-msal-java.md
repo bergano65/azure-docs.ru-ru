@@ -14,12 +14,12 @@ ms.date: 11/04/2019
 ms.author: sagonzal
 ms.reviewer: nacanuma, twhitney
 ms.custom: aaddev, devx-track-java
-ms.openlocfilehash: 3b775d88409a03f6de54b9db3ab62d6988c5bddd
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: ec4103251d27114b8fe40101c0e78c259106a440
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87313053"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88120887"
 ---
 # <a name="adal-to-msal-migration-guide-for-java"></a>Инструкции по миграции ADAL в MSAL для Java
 
@@ -37,15 +37,15 @@ MSAL для Java — это библиотека проверки подлинн
 
 ## <a name="differences"></a>Различия
 
-Если вы работали с конечной точкой Azure AD для разработчиков (v 1.0) (и ADAL4J), вам может потребоваться ознакомиться с [другими сведениями о конечной точке платформы Microsoft Identity Platform (v 2.0)?](https://docs.microsoft.com/azure/active-directory/develop/azure-ad-endpoint-comparison).
+Если вы работали с конечной точкой Azure AD для разработчиков (v 1.0) (и ADAL4J), вам может потребоваться ознакомиться с [другими сведениями о конечной точке платформы Microsoft Identity Platform (v 2.0)?](../azuread-dev/azure-ad-endpoint-comparison.md).
 
 ## <a name="scopes-not-resources"></a>Области вместо ресурсов
 
-ADAL4J получает маркеры для ресурсов, тогда как MSAL для Java получает маркеры для областей. Для нескольких MSAL для классов Java требуется параметр областей. Этот параметр представляет собой список строк, объявляющих требуемые разрешения и ресурсы. См. раздел [области Microsoft Graph](https://docs.microsoft.com/graph/permissions-reference) для просмотра примеров областей.
+ADAL4J получает маркеры для ресурсов, тогда как MSAL для Java получает маркеры для областей. Для нескольких MSAL для классов Java требуется параметр областей. Этот параметр представляет собой список строк, объявляющих требуемые разрешения и ресурсы. См. раздел [области Microsoft Graph](/graph/permissions-reference) для просмотра примеров областей.
 
 Вы можете добавить `/.default` суффикс области к ресурсу, чтобы упростить перенос приложений из конечной точки версии 1.0 (ADAL) в конечную точку платформы Microsoft Identity (MSAL). Например, для значения ресурса `https://graph.microsoft.com` в качестве эквивалентного значения области является `https://graph.microsoft.com/.default` .  Если ресурс отсутствует в форме URL-адреса, но идентификатор ресурса формы `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX` , можно по-прежнему использовать значение области в качестве `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX/.default` .
 
-Дополнительные сведения о различных типах областей см. в статьях [разрешения и согласие на платформе Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent) , а также [области для веб-API, принимающего статьи о токенах версии 1.0](https://docs.microsoft.com/azure/active-directory/develop/msal-v1-app-scopes) .
+Дополнительные сведения о различных типах областей см. в статьях [разрешения и согласие на платформе Microsoft Identity](./v2-permissions-and-consent.md) , а также [области для веб-API, принимающего статьи о токенах версии 1.0](./msal-v1-app-scopes.md) .
 
 ## <a name="core-classes"></a>Основные классы
 
@@ -86,9 +86,9 @@ MSAL для Java добавляет [кэш маркеров](msal-acquire-cache
 
 Конечная точка версии 1.0 (используется в ADAL) выдает только маркеры версии 1.0.
 
-Конечная точка версии 2.0 (используемая MSAL) может выдавать маркеры v 1.0 и v 2.0. Свойство манифеста приложения веб-API позволяет разработчикам выбрать версию токена, которая принимается. См `accessTokenAcceptedVersion` . в справочной документации по [манифесту приложения](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest) .
+Конечная точка версии 2.0 (используемая MSAL) может выдавать маркеры v 1.0 и v 2.0. Свойство манифеста приложения веб-API позволяет разработчикам выбрать версию токена, которая принимается. См `accessTokenAcceptedVersion` . в справочной документации по [манифесту приложения](./reference-app-manifest.md) .
 
-Дополнительные сведения о маркерах v 1.0 и v 2.0 см. в разделе [Azure Active Directory доступа к маркерам](https://docs.microsoft.com/azure/active-directory/develop/access-tokens).
+Дополнительные сведения о маркерах v 1.0 и v 2.0 см. в разделе [Azure Active Directory доступа к маркерам](./access-tokens.md).
 
 ## <a name="adal-to-msal-migration"></a>Переход с ADAL на MSAL
 

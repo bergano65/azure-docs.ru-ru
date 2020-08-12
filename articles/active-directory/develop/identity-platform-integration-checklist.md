@@ -12,12 +12,12 @@ ms.date: 05/08/2020
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 9a1f86a78eaac96f2a6202b4ec29e99a0a978ff1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 036c40395e5da5ebc09a87e420893d7dbd2ec668
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85554385"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88116807"
 ---
 # <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Рекомендации и рекомендации по платформе Microsoft Identity
 
@@ -25,12 +25,12 @@ ms.locfileid: "85554385"
 
 Если вы только начинаете работу, ознакомьтесь с [документацией по платформе идентификации Майкрософт](index.yml) , чтобы узнать об основах проверки подлинности, сценариях приложений на платформе Microsoft Identity и многом другое.
 
-Используйте следующий контрольный список, чтобы убедиться, что приложение эффективно интегрировано с [платформой Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/).
+Используйте следующий контрольный список, чтобы убедиться, что приложение эффективно интегрировано с [платформой Microsoft Identity](./index.yml).
 
 > [!TIP]
 > *Помощник по интеграции* в портал Azure может помочь в применении многих из этих рекомендаций и рекомендаций. Выберите любую из [регистраций приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure, а затем выберите пункт меню **Помощник по интеграции (Предварительная версия)** , чтобы начать работу с помощником.
 
-## <a name="basics"></a>Основы
+## <a name="basics"></a>Основные сведения
 
 ![CheckBox ](./media/active-directory-integration-checklist/checkbox-two.svg) Прочтите и изучите [политики платформы Майкрософт](https://go.microsoft.com/fwlink/?linkid=2090497&clcid=0x409). Убедитесь, что ваше приложение соответствует условиям, которые были разработаны для защиты пользователей и платформы.
 
@@ -38,7 +38,7 @@ ms.locfileid: "85554385"
 
 ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) Убедитесь, что сведения, связанные с учетной записью, используемой для регистрации и управления приложениями, обновлены.
 
-## <a name="branding"></a>Branding
+## <a name="branding"></a>Фирменная символика
 
 ![](./media/active-directory-integration-checklist/checkbox-two.svg)должен соответствовать [рекомендациям по фирменной символике для приложений](howto-add-branding-in-azure-ad-apps.md).
 
@@ -58,9 +58,9 @@ ms.locfileid: "85554385"
 
 ![флажок " ](./media/active-directory-integration-checklist/checkbox-two.svg) Переместить" после имени пользователя и пароля. Не используйте [поток учетных данных пароля владельца ресурса (ропк)](v2-oauth-ropc.md), который напрямую обрабатывает пароли пользователей. Этот поток требует высокого уровня доверия и раскрытия пользователей, и его следует использовать, только если другие, более безопасные, потоки использовать нельзя. Этот поток по-прежнему необходим в некоторых сценариях (например, DevOps), но следует помнить, что его использование накладывает ограничения на приложение.  Для более современных подходов прочитайте [потоки проверки подлинности и сценарии приложений](authentication-flows-app-scenarios.md).
 
-![Установите флажок ](./media/active-directory-integration-checklist/checkbox-two.svg) защитить учетные данные конфиденциальных приложений для веб-приложений, веб-API и управляющих приложений и управляйте ими. Используйте [учетные данные сертификата](active-directory-certificate-credentials.md), а не пароль (секреты клиента). Если необходимо использовать учетные данные пароля, не устанавливайте их вручную. Не храните учетные данные в коде или конфигурации и никогда не разрешите им обрабатывать их. По возможности используйте [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) или [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-whatis) для хранения и регулярного смены учетных данных.
+![Установите флажок ](./media/active-directory-integration-checklist/checkbox-two.svg) защитить учетные данные конфиденциальных приложений для веб-приложений, веб-API и управляющих приложений и управляйте ими. Используйте [учетные данные сертификата](active-directory-certificate-credentials.md), а не пароль (секреты клиента). Если необходимо использовать учетные данные пароля, не устанавливайте их вручную. Не храните учетные данные в коде или конфигурации и никогда не разрешите им обрабатывать их. По возможности используйте [управляемые удостоверения для ресурсов Azure](../managed-identities-azure-resources/overview.md) или [Azure Key Vault](../../key-vault/general/basic-concepts.md) для хранения и регулярного смены учетных данных.
 
-![](./media/active-directory-integration-checklist/checkbox-two.svg)Убедитесь, что приложение запрашивает разрешения с минимальными правами доступа. Запрашивать только разрешения, необходимые приложению, и только тогда, когда это необходимо. Изучите различные [типы разрешений](v2-permissions-and-consent.md#permission-types). При необходимости используйте только разрешения приложения. по возможности используйте делегированные разрешения. Полный список разрешений Microsoft Graph см. в этом [справочнике по разрешениям](https://docs.microsoft.com/graph/permissions-reference).
+![](./media/active-directory-integration-checklist/checkbox-two.svg)Убедитесь, что приложение запрашивает разрешения с минимальными правами доступа. Запрашивать только разрешения, необходимые приложению, и только тогда, когда это необходимо. Изучите различные [типы разрешений](v2-permissions-and-consent.md#permission-types). При необходимости используйте только разрешения приложения. по возможности используйте делегированные разрешения. Полный список разрешений Microsoft Graph см. в этом [справочнике по разрешениям](/graph/permissions-reference).
 
 ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) Если вы защищаете API с помощью платформы Microsoft Identity, тщательно обдумайте предоставляемые им разрешения. Подумайте, какова правильная степень гранулярности для вашего решения и какие разрешения требуются для предоставления согласия администратора. Проверьте наличие ожидаемых разрешений во входящих маркерах перед принятием решений об авторизации.
 
@@ -68,7 +68,7 @@ ms.locfileid: "85554385"
 
 ![Установите флажок ](./media/active-directory-integration-checklist/checkbox-two.svg) использовать современные решения проверки подлинности (OAuth 2,0, [OpenID Connect Connect](v2-protocols-oidc.md)) для безопасного входа пользователей.
 
-![флажок ](./media/active-directory-integration-checklist/checkbox-two.svg) не программировать напрямую для таких протоколов, как OAuth 2,0 и Open ID. Вместо этого используйте [библиотеку проверки подлинности Майкрософт (MSAL)](msal-overview.md). Библиотеки MSAL безопасно заключают протоколы безопасности в удобной библиотеке и получают встроенную поддержку сценариев [условного доступа](/azure/active-directory/conditional-access/overview) , единого [входа на уровне устройства (SSO)](/azure/active-directory/manage-apps/what-is-single-sign-on)и встроенной поддержки кэширования маркеров. Дополнительные сведения см. в списке [клиентских библиотек](reference-v2-libraries.md#microsoft-supported-client-libraries) , поддерживаемых корпорацией Майкрософт, и в списке [библиотек по промежуточного слоя](reference-v2-libraries.md#microsoft-supported-server-middleware-libraries) и списка [совместимых сторонних клиентских библиотек](reference-v2-libraries.md#compatible-client-libraries).<br/><br/>Если необходимо выполнить код для протоколов проверки подлинности, следует использовать такую методологию, как [Microsoft SDL](https://www.microsoft.com/sdl/default.aspx). Обратите особое внимание на вопросы безопасности в спецификациях стандартов для каждого протокола.
+![флажок ](./media/active-directory-integration-checklist/checkbox-two.svg) не программировать напрямую для таких протоколов, как OAuth 2,0 и Open ID. Вместо этого используйте [библиотеку проверки подлинности Майкрософт (MSAL)](msal-overview.md). Библиотеки MSAL безопасно заключают протоколы безопасности в удобной библиотеке и получают встроенную поддержку сценариев [условного доступа](../conditional-access/overview.md) , единого [входа на уровне устройства (SSO)](../manage-apps/what-is-single-sign-on.md)и встроенной поддержки кэширования маркеров. Дополнительные сведения см. в списке [клиентских библиотек](reference-v2-libraries.md#microsoft-supported-client-libraries) , поддерживаемых корпорацией Майкрософт, и в списке [библиотек по промежуточного слоя](reference-v2-libraries.md#microsoft-supported-server-middleware-libraries) и списка [совместимых сторонних клиентских библиотек](reference-v2-libraries.md#compatible-client-libraries).<br/><br/>Если необходимо выполнить код для протоколов проверки подлинности, следует использовать такую методологию, как [Microsoft SDL](https://www.microsoft.com/sdl/default.aspx). Обратите особое внимание на вопросы безопасности в спецификациях стандартов для каждого протокола.
 
 ![флажок ](./media/active-directory-integration-checklist/checkbox-two.svg) переносить существующие приложения из библиотеки проверки подлинности [Azure Active Directory (ADAL)](../azuread-dev/active-directory-authentication-libraries.md) в [библиотеку проверки подлинности Майкрософт](msal-overview.md). MSAL — это новейшее решение для платформы идентификации Майкрософт, которое является предпочтительным для ADAL. Он доступен на платформах .NET, JavaScript, Android, iOS и macOS, а также в общедоступной предварительной версии для Python и Java. Узнайте больше о миграции [ADAL.NET](msal-net-migration.md), [ADAL.js](msal-compare-msal-js-and-adal-js.md)и [ADAL.NET и приложений брокера iOS](msal-net-migration-ios-broker.md) .
 
@@ -80,7 +80,7 @@ ms.locfileid: "85554385"
 
 ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) Не Проанализируйте значение маркера доступа или попытайтесь проанализировать его как клиент.  Они могут изменять значения, форматы и даже быть зашифрованными без предупреждения. всегда используйте id_token, если клиенту необходимо узнать о пользователе или вызвать Microsoft Graph.  Только веб-API должны анализировать маркеры доступа (поскольку они определяют формат и устанавливают ключи шифрования).
 
-## <a name="end-user-experience"></a>Возможности для пользователей
+## <a name="end-user-experience"></a>Взаимодействие с конечным пользователем
 
 ![Установите флажок для получения ](./media/active-directory-integration-checklist/checkbox-two.svg) [согласия](application-consent-experience.md) и настройте части запроса согласия вашего приложения таким образом, чтобы конечные пользователи и администраторы имели достаточную информацию для определения того, доверяете ли они вашему приложению.
 

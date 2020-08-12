@@ -14,12 +14,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin, nacanuma
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: 6fc4de3ef934e2d1b9dcff46c78f45e7d0f3b6d8
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: f746cc654934464d907c6ad669eb7470e4dcaeeb
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87845465"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88117742"
 ---
 # <a name="service-to-service-calls-that-use-delegated-user-identity-in-the-on-behalf-of-flow"></a>Вызовы между службами с использованием делегированного удостоверения пользователя в потоке On-Behalf-Of
 
@@ -264,7 +264,7 @@ Authorization: Bearer eyJ0eXAiO ... 0X2tnSQLEANnSPHY0gKcgw
 - **SubjectConfirmationData для утверждения SAML, полученного из вызова OBO.** Если целевому приложению необходимо значение получателя в параметре **SubjectConfirmationData**, то значением должен быть URL-адрес ответа без подстановочных знаков в конфигурации приложения-ресурса.
 - **Узел SubjectConfirmationData.** Узел не может содержать атрибут **InResponseTo**, так как он не входит в состав отклика SAML. Приложение, получающее токен SAML, должно иметь возможность принимать утверждение SAML без атрибута **InResponseTo**.
 
-- **Согласие.** Должно быть предоставлено согласие на получение токена SAML, содержащего данные пользователей в потоке OAuth. Сведения о разрешениях и получении согласия администратора см. в статье [Разрешения и согласие в конечной точке Azure Active Directory версии 1.0](https://docs.microsoft.com/azure/active-directory/azuread-dev/v1-permissions-consent).
+- **Согласие.** Должно быть предоставлено согласие на получение токена SAML, содержащего данные пользователей в потоке OAuth. Сведения о разрешениях и получении согласия администратора см. в статье [Разрешения и согласие в конечной точке Azure Active Directory версии 1.0](./v1-permissions-consent.md).
 
 ### <a name="response-with-saml-assertion"></a>Отклик с утверждением SAML
 

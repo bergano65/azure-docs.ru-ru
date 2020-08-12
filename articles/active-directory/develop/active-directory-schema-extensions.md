@@ -13,12 +13,12 @@ ms.topic: how-to
 ms.date: 07/29/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
-ms.openlocfilehash: cd21ef8d697570afb2109bb56d552284c03fd9a2
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 4450b0bcc06b048fd9ad42d2a7bf1c588816eae7
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87552787"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115617"
 ---
 # <a name="using-directory-schema-extension-attributes-in-claims"></a>Использование атрибутов расширения схемы каталога в заявках
 
@@ -34,7 +34,7 @@ ms.locfileid: "87552787"
 ## <a name="registering-and-using-directory-schema-extensions"></a>Регистрация и использование расширений схемы каталога
 Атрибуты расширения схемы каталога могут быть зарегистрированы и заполнены одним из двух способов:
 
-- Настроив AD Connect для создания и синхронизации данных в них из локальной службы AD. См. раздел [Azure AD Connect Синхронизация расширений каталогов](/azure/active-directory/hybrid/how-to-connect-sync-feature-directory-extensions).
+- Настроив AD Connect для создания и синхронизации данных в них из локальной службы AD. См. раздел [Azure AD Connect Синхронизация расширений каталогов](../hybrid/how-to-connect-sync-feature-directory-extensions.md).
 - Использование Microsoft Graph для регистрации, установки значений и чтения из атрибутов расширения схемы каталога [расширения схемы каталогов | API Graph основные понятия](/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-directory-schema-extensions) и (или) PowerShell + [Управление атрибутами расширения с помощью командлетов PowerShell AzureAD](/powershell/azure/active-directory/using-extension-attributes-sample?view=azureadps-2.0).
 
 ### <a name="emitting-claims-with-data-from-directory-schema-extension-attributes-created-with-ad-connect"></a>Эмиссия утверждений с данными из атрибутов расширения схемы каталога, созданных с помощью AD Connect

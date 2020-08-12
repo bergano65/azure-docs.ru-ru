@@ -11,21 +11,21 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/15/2019
 ms.author: ryanwi
-ms.openlocfilehash: a27524f860f17642dcd0640bcb740fc04c187407
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d865ac8bae475365dbfc6c8bad990a1acc7998f0
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80881389"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88116756"
 ---
 # <a name="how-to-configure-a-new-multi-tenant-application"></a>Настройка нового мультитенантного приложения
 
 Ниже приведен список рекомендуемых статей с дополнительными сведениями о мультитенантных приложениях.
 
-- Получите общее представление о том, [что собой представляет мультитенантное приложение](https://docs.microsoft.com/azure/active-directory/develop/active-directory-dev-glossary#multi-tenant-application).
-- Получите общее представление о [настройке мультитенантности в приложении](https://docs.microsoft.com/azure/active-directory/develop/howto-convert-app-to-be-multi-tenant).
-- Ознакомьтесь с пошаговым руководством по [использованию платформы согласия Azure AD для реализации согласия](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications), необходимого для мультитенантных приложений.
-- Узнайте подробнее [о процедуре настройки и кодирования мультитенантного приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview), включая регистрацию, использование простой конечной точки, предоставление согласия пользователя и администратора, реализацию более сложных многоуровневых сценариев.
+- Получите общее представление о том, [что собой представляет мультитенантное приложение](./developer-glossary.md#multi-tenant-application).
+- Получите общее представление о [настройке мультитенантности в приложении](./howto-convert-app-to-be-multi-tenant.md).
+- Ознакомьтесь с пошаговым руководством по [использованию платформы согласия Azure AD для реализации согласия](./quickstart-register-app.md), необходимого для мультитенантных приложений.
+- Узнайте подробнее [о процедуре настройки и кодирования мультитенантного приложения](./howto-convert-app-to-be-multi-tenant.md), включая регистрацию, использование простой конечной точки, предоставление согласия пользователя и администратора, реализацию более сложных многоуровневых сценариев.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [StackOverflow в AzureAD](https://stackoverflow.com/questions/tagged/azure-active-directory)

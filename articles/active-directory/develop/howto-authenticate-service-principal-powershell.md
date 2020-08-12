@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.date: 06/26/2020
 ms.author: ryanwi
 ms.reviewer: tomfitz
-ms.openlocfilehash: 6204fcefa60d1a627e6e3d4e6b799efd3ee9298b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 423ec19d249d183f8888bf9e1eb837e2c860b1ed
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85505874"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88117147"
 ---
 # <a name="how-to-use-azure-powershell-to-create-a-service-principal-with-a-certificate"></a>Практическое руководство по использованию Azure PowerShell для создания субъекта-службы с сертификатом
 
@@ -43,13 +43,13 @@ ms.locfileid: "85505874"
 Проверить, есть ли у вас соответствующие разрешения, проще всего на портале. Ознакомьтесь с [проверкой наличия необходимых разрешений](howto-create-service-principal-portal.md#permissions-required-for-registering-an-app).
 
 ## <a name="assign-the-application-to-a-role"></a>Назначение приложению роли
-Чтобы обеспечить доступ к ресурсам в подписке, необходимо назначить приложению роль. Укажите, какая роль предоставляет приложению необходимые разрешения. Дополнительные сведения о доступных ролях см. в статье [RBAC: встроенные роли](/azure/role-based-access-control/built-in-roles).
+Чтобы обеспечить доступ к ресурсам в подписке, необходимо назначить приложению роль. Укажите, какая роль предоставляет приложению необходимые разрешения. Дополнительные сведения о доступных ролях см. в статье [RBAC: встроенные роли](../../role-based-access-control/built-in-roles.md).
 
 Вы можете задать область действия на уровне подписки, группы ресурсов или ресурса. Разрешения наследуют более низкие уровни области действия. Например, Добавление приложения в роль *читатель* для группы ресурсов означает, что она может читать группу ресурсов и все содержащиеся в ней ресурсы. Чтобы разрешить приложению выполнять такие действия, как перезагрузка, запуск и завершение экземпляров, выберите роль *участник* .
 
 ## <a name="create-service-principal-with-self-signed-certificate"></a>Создание субъекта-службы с самозаверяющим сертификатом
 
-Ниже приводится простой пример сценария. Для создания субъекта-службы с самозаверяющим сертификатом используются [новые азадсервицепринЦипал](/powershell/module/az.resources/new-azadserviceprincipal) . с помощью [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment) можно назначить роль [читателя](/azure/role-based-access-control/built-in-roles#reader) субъекту-службе. Назначение ролей ограничивается текущей выбранной подпиской Azure. Чтобы выбрать другую подписку, выполните командлет [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext).
+Ниже приводится простой пример сценария. Для создания субъекта-службы с самозаверяющим сертификатом используются [новые азадсервицепринЦипал](/powershell/module/az.resources/new-azadserviceprincipal) . с помощью [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment) можно назначить роль [читателя](../../role-based-access-control/built-in-roles.md#reader) субъекту-службе. Назначение ролей ограничивается текущей выбранной подпиской Azure. Чтобы выбрать другую подписку, выполните командлет [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext).
 
 > [!NOTE]
 > Командлет New-SelfSignedCertificate и модуль PKI сейчас не поддерживаются в PowerShell Core. 
@@ -220,8 +220,8 @@ Get-AzADApplication -DisplayName exampleapp | New-AzADAppCredential `
 
 * Ваша учетная запись **"не авторизована для выполнения действия 'Microsoft.Authorization/roleAssignments/write' с областью '/subscriptions/{guid}'."** Эта ошибка возникает, когда учетная запись не имеет достаточно разрешений для назначения роли удостоверению. Попросите администратора подписки назначить вам роль администратора доступа пользователей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Настройка субъекта-службы с паролем описана в статье [Создание субъекта-службы Azure с помощью Azure PowerShell](/powershell/azure/create-azure-service-principal-azureps).
 * Более подробное описание приложений и субъектов-служб см. в статье [Объекты приложений и объекты участников-служб](app-objects-and-service-principals.md).
-* Дополнительные сведения о проверке подлинности Azure AD см. [здесь](authentication-scenarios.md).
+* Дополнительные сведения о проверке подлинности Azure AD см. [здесь](./authentication-vs-authorization.md).

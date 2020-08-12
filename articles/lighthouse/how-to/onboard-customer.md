@@ -1,16 +1,16 @@
 ---
-title: Подключение клиента к Azure Лигхсаусе
+title: Подключение клиента к Azure Lighthouse
 description: Узнайте, как подключить клиента к Azure Лигхсаусе, предоставив доступ к ресурсам и управление ими с помощью собственного клиента, используя делегированное управление ресурсами Azure.
 ms.date: 05/26/2020
 ms.topic: how-to
-ms.openlocfilehash: 3cc754dba124c5f647cd4b51246ced19360c82c3
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: cac40a835ff3227a31611b31655865d43fa378ab
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86133482"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118881"
 ---
-# <a name="onboard-a-customer-to-azure-lighthouse"></a>Подключение клиента к Azure Лигхсаусе
+# <a name="onboard-a-customer-to-azure-lighthouse"></a>Подключение клиента к Azure Lighthouse
 
 В этой статье объясняется, как поставщик услуг может подключить клиента к Azure Лигхсаусе. При этом можно получить доступ к делегированным ресурсам клиента (подпискам и группам ресурсов) и управлять ими с помощью собственного клиента Azure Active Directory (Azure AD), используя [делегированное управление ресурсами Azure](../concepts/azure-delegated-resource-management.md).
 
@@ -86,7 +86,7 @@ az account show
 (Get-AzADUser -UserPrincipalName '<yourUPN>').id
 
 # To retrieve the objectId for an SPN
-(Get-AzADApplication -DisplayName '<appDisplayName>').objectId
+(Get-AzADApplication -DisplayName '<appDisplayName>' | Get-AzADServicePrincipal).Id
 
 # To retrieve role definition IDs
 (Get-AzRoleDefinition -Name '<roleName>').id

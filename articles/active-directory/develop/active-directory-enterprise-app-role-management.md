@@ -12,18 +12,18 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 04/22/2019
 ms.author: jeedes
-ms.openlocfilehash: ad66e0698cf0705c7a4db90a6dd515b71fed84e6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 85c406fc561424d7b02d39dfd58dc3c8fe34aab2
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85478626"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88116093"
 ---
 # <a name="how-to-configure-the-role-claim-issued-in-the-saml-token-for-enterprise-applications"></a>Узнайте как настроить утверждения роли, выдаваемые в токене SAML для корпоративных приложений
 
 С помощью Azure Active Directory (Azure AD) вы можете настроить тип утверждения для утверждения роли в токене ответа, который вы получаете после авторизации приложения.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure AD с настроенным каталогом.
 - Подписка с поддержкой единого входа (SSO). Настроенный единый вход в приложении.
@@ -263,9 +263,9 @@ ms.locfileid: "85478626"
     > [!NOTE]
     > Прежде чем роль можно будет удалить, ее необходимо отключить.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные инструкции см. в [документации по приложениям](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list).
+Дополнительные инструкции см. в [документации по приложениям](../saas-apps/tutorial-list.md).
 
 <!--Image references-->
 <!--Image references-->

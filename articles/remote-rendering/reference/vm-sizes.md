@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 05/28/2020
 ms.topic: reference
-ms.openlocfilehash: aab914caa2647146639aa366f558c80bebcfde54
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e8e439a055b71ed291573965c561ee31610e3ed4
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84809941"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121618"
 ---
 # <a name="vm-sizes"></a>Размеры виртуальной машины
 
@@ -76,13 +76,13 @@ void CreateRenderingSession(ApiHandle<AzureFrontend> frontend)
 
 Существует два способа определить количество многоугольников модели или сцены, влияющих на бюджетное ограничение `standard` размера виртуальной машины.
 * На стороне преобразования модели Извлеките [выходной JSON файл преобразования](../how-tos/conversion/get-information.md)и проверьте `numFaces` запись в [разделе *инпутстатистикс* ](../how-tos/conversion/get-information.md#the-inputstatistics-section) .
-* Если приложение работает с динамическим содержимым, количество визуализированных многоугольников можно запросить динамически во время выполнения. Используйте [запрос оценки производительности](../overview/features/performance-queries.md#performance-assessment-queries) и проверьте наличие `polygonsRendered` элемента в `FrameStatistics` структуре. Фон шахматной доски всегда прокладывается с некоторой задержкой, чтобы обеспечить возможность выполнения действий пользователя после этого асинхронного запроса. Действие пользователя может сделать экземпляр недоступным для скрытия или удаления экземпляров модели.
+* Если приложение работает с динамическим содержимым, количество визуализированных многоугольников можно запросить динамически во время выполнения. Используйте [запрос оценки производительности](../overview/features/performance-queries.md#performance-assessment-queries) и проверьте наличие `polygonsRendered` элемента в `FrameStatistics` структуре. `polygonsRendered`Поле будет иметь значение, `bad` когда модуль подготовки отчетов достигнет предельного значения многоугольника. Фон шахматной доски всегда прокладывается с некоторой задержкой, чтобы обеспечить возможность выполнения действий пользователя после этого асинхронного запроса. Действие пользователя может сделать экземпляр недоступным для скрытия или удаления экземпляров модели.
 
 ## <a name="pricing"></a>Цены
 
 Подробные сведения о ценах на каждый тип виртуальной машины см. на странице [цен на удаленную визуализацию](https://azure.microsoft.com/pricing/details/remote-rendering) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Примеры скриптов PowerShell](../samples/powershell-example-scripts.md)
 * [Преобразование модели](../how-tos/conversion/model-conversion.md)
 

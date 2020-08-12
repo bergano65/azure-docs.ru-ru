@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 9388ef4aa320147815bec79c2fa4b90bce3cdac1
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 56d2e01d35f25ac469e808a805382463d2b23ceb
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87846145"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121108"
 ---
 # <a name="desktop-app-that-calls-web-apis-code-configuration"></a>Классическое приложение, вызывающее веб-API: конфигурация кода
 
@@ -103,12 +103,12 @@ app = PublicClientApplicationBuilder.Create(clientId)
         .Build();
 ```
 
-### <a name="learn-more"></a>Подробнее
+### <a name="learn-more"></a>Дополнительные сведения
 
 Дополнительные сведения о настройке классического приложения MSAL.NET:
 
-- Список всех модификаторов, доступных в `PublicClientApplicationBuilder` , см. в справочной документации [публикклиентаппликатионбуилдер](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder#methods).
-- Описание всех параметров, предоставляемых в `PublicClientApplicationOptions` , см. в разделе [публикклиентаппликатионоптионс](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationoptions) в справочной документации.
+- Список всех модификаторов, доступных в `PublicClientApplicationBuilder` , см. в справочной документации [публикклиентаппликатионбуилдер](/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder#methods).
+- Описание всех параметров, предоставляемых в `PublicClientApplicationOptions` , см. в разделе [публикклиентаппликатионоптионс](/dotnet/api/microsoft.identity.client.publicclientapplicationoptions) в справочной документации.
 
 ### <a name="complete-example-with-configuration-options"></a>Полный пример с параметрами конфигурации
 

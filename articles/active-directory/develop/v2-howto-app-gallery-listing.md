@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: ryanwi
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 6a20bbeef83072b6fb76bd4e9214e63f094736a1
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.openlocfilehash: b76e77d6d8575fa086f74c956594a344076f7c74
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87172618"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118847"
 ---
 # <a name="add-your-application-to-the-azure-active-directory-application-gallery"></a>Добавление приложения в коллекцию приложений Azure Active Directory
 
@@ -32,7 +32,7 @@ ms.locfileid: "87172618"
 - Нашим общим клиентам предлагается пошаговое руководство по настройке.
 - Клиенты, использующие систему для управления идентификаторами в разных доменах ([scim](https://techcommunity.microsoft.com/t5/Identity-Standards-Blog/Provisioning-with-SCIM-getting-started/ba-p/880010)), могут использовать подготовку для одного и того же приложения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Для федеративных приложений (Open ID и SAML/WS-подача) приложение должно поддерживать модель SaaS (программное обеспечение как услуга) для получения списка в коллекции приложений Azure AD. Приложения из коллекции предприятия должны поддерживать несколько пользовательских конфигураций, а не конкретных клиентов.
 - Для Open ID Connect приложение должно быть многоклиентским, а [инфраструктура согласия Azure AD](consent-framework.md) должна быть правильно реализована для приложения. Пользователь может отправить запрос на вход в общую конечную точку, чтобы любой клиент мог предоставить согласие для приложения. Доступом пользователей можно управлять на основе идентификатора клиента и имени участника-пользователя, которые передаются в маркере.
@@ -89,14 +89,14 @@ ms.locfileid: "87172618"
 
 Чтобы включить приложение в коллекцию Azure AD, сначала необходимо реализовать один из следующих протоколов федерации, поддерживаемых Azure AD. Кроме того, необходимо принять условия и условия для коллекции приложений Azure AD. Ознакомьтесь с условиями коллекции приложений Azure AD на [этом веб-сайте](https://azure.microsoft.com/support/legal/active-directory-app-gallery-terms/).
 
-- **OpenID Connect Connect**: чтобы интегрировать приложение с Azure AD с помощью протокола Open ID Connect, следуйте [инструкциям для разработчиков](v1-authentication-scenarios.md).
+- **OpenID Connect Connect**: чтобы интегрировать приложение с Azure AD с помощью протокола Open ID Connect, следуйте [инструкциям для разработчиков](../azuread-dev/v1-authentication-scenarios.md).
 
     ![Перечисление приложения OpenID Connect Connect в коллекции](./media/howto-app-gallery-listing/openid.png)
 
     * Если вы хотите добавить приложение в список в коллекции с помощью OpenID Connect Connect, выберите **OpenID Connect connect & OAuth 2,0** , как показано ниже.
     * Если у вас возникли проблемы с доступом, обратитесь к [группе интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>).
 
-- **Saml 2,0** или **WS-подач**. если приложение поддерживает SAML 2,0, его можно интегрировать непосредственно с клиентом Azure AD, следуя [инструкциям по добавлению пользовательского приложения](../active-directory-saas-custom-apps.md).
+- **Saml 2,0** или **WS-подач**. если приложение поддерживает SAML 2,0, его можно интегрировать непосредственно с клиентом Azure AD, следуя [инструкциям по добавлению пользовательского приложения](../manage-apps/view-applications-portal.md).
 
   ![Перечисление приложения SAML 2,0 или WS-подач в коллекции](./media/howto-app-gallery-listing/saml.png)
 

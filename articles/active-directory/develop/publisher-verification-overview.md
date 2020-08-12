@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jesakowi
-ms.openlocfilehash: 73a96f295d5dfa74130927e5096e9278a0e348e8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f611eefc50fede2ef4d738cd5abfd6afcc08b9ff
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83682428"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88120785"
 ---
 # <a name="publisher-verification-preview"></a>Проверка издателя (предварительная версия)
 
@@ -42,13 +42,13 @@ ms.locfileid: "83682428"
 
 -  Идентификатор MPN для допустимой учетной записи [Microsoft Partner Network](https://partner.microsoft.com/membership), которая завершила процесс [проверки](/partner-center/verification-responses). Эта учетная запись MPN должна быть [глобальной учетной записью партнера (PGA)](/partner-center/account-structure#the-top-level-is-the-partner-global-account-pga) для вашей организации. 
 
--  Клиент Azure AD с [пользовательским доменом](/azure/active-directory/fundamentals/add-custom-domain), проверенным DNS. Этот домен должен соответствовать домену адреса электронной почты, используемого в процессе проверки на предыдущем шаге. 
+-  Клиент Azure AD с [пользовательским доменом](../fundamentals/add-custom-domain.md), проверенным DNS. Этот домен должен соответствовать домену адреса электронной почты, используемого в процессе проверки на предыдущем шаге. 
 
 -  Приложение, зарегистрированное в клиенте Azure AD, с [доменом издателя](howto-configure-publisher-domain.md), настроенным с помощью того же домена, который использовался ранее. 
 
 -  Пользователь, выполняющий проверку, должен иметь разрешение на внесение изменений как в регистрацию приложения в Azure AD, так и в учетную запись MPN в Центре партнеров. 
 
-    -  В Azure AD этот пользователь должен быть владельцем приложения или иметь одну из следующих [ролей](/azure/active-directory/users-groups-roles/directory-assign-admin-roles): Администратор приложения, администратор облачного приложения, глобальный администратор. 
+    -  В Azure AD этот пользователь должен быть владельцем приложения или иметь одну из следующих [ролей](../users-groups-roles/directory-assign-admin-roles.md): Администратор приложения, администратор облачного приложения, глобальный администратор. 
 
     -  В Центре партнеров этот пользователь должен иметь следующие [роли](/partner-center/permissions-overview): Администратор MPN, администратор учетных записей или глобальный администратор (это общая роль, приобретенная в Azure AD).
     
@@ -67,7 +67,7 @@ ms.locfileid: "83682428"
 
   Разработчики, которые также интегрируются с Microsoft 365, могут получить дополнительные преимущества от этих программ. Дополнительные сведения см. в статьях об [аттестации издателя для Microsoft 365](/microsoft-365-app-certification/docs/attestation) и [сертификации приложений для Microsoft 365 ](/microsoft-365-app-certification/docs/certification). 
 
-- **Это то же самое, что и коллекция приложений Azure Active Directory?** Нет. Проверка издателя является дополняющей, но отдельной программой для [коллекции приложений Azure Active Directory](/azure/active-directory/azuread-dev/howto-app-gallery-listing). Разработчики, которые соответствуют указанным выше критериям, должны завершить процесс проверки издателя независимо от участия в этой программе. 
+- **Это то же самое, что и коллекция приложений Azure Active Directory?** Нет. Проверка издателя является дополняющей, но отдельной программой для [коллекции приложений Azure Active Directory](../azuread-dev/howto-app-gallery-listing.md). Разработчики, которые соответствуют указанным выше критериям, должны завершить процесс проверки издателя независимо от участия в этой программе. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [пометить приложение как "проверенный издатель"](mark-app-as-publisher-verified.md).

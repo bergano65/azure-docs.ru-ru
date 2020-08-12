@@ -13,12 +13,12 @@ ms.date: 05/07/2020
 ms.author: jeferrie
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 3aac63369dffa5b8ba0b9e55b5063ad8136c95cf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ea5cc53d909ed090e152af84da49c8e87907f6bf
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82883232"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88120615"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Использование MSAL.NET для входа пользователей с удостоверениями социальных сетей
 
@@ -134,7 +134,7 @@ private async void EditProfileButton_Click(object sender, RoutedEventArgs e)
 
 ### <a name="configure-the-ropc-flow-in-azure-ad-b2c"></a>Настройка потока РОПК в Azure AD B2C
 
-В клиенте Azure AD B2C создайте новый поток пользователя и выберите **Вход с помощью ропк** , чтобы включить ропк для потока пользователя. Дополнительные сведения см. [в статье Настройка потока учетных данных для пароля владельца ресурса](/azure/active-directory-b2c/configure-ropc).
+В клиенте Azure AD B2C создайте новый поток пользователя и выберите **Вход с помощью ропк** , чтобы включить ропк для потока пользователя. Дополнительные сведения см. [в статье Настройка потока учетных данных для пароля владельца ресурса](../../active-directory-b2c/configure-ropc.md).
 
 `IPublicClientApplication`содержит `AcquireTokenByUsernamePassword` метод:
 
@@ -182,7 +182,7 @@ MSAL.NET поддерживает [кэш маркеров](/dotnet/api/microsof
 
 Предлагаемый обходной путь заключается в использовании [кэширования согласно политике,](#acquire-a-token-to-apply-a-policy) описанной выше.
 
-Кроме того, можно использовать `tid` утверждение, если вы используете [пользовательские политики](../../active-directory-b2c/custom-policy-get-started.md) в Azure AD B2C. Пользовательские политики могут возвращать дополнительные утверждения приложению с помощью [преобразования утверждений](/azure/active-directory-b2c/claims-transformation-technical-profile).
+Кроме того, можно использовать `tid` утверждение, если вы используете [пользовательские политики](../../active-directory-b2c/custom-policy-get-started.md) в Azure AD B2C. Пользовательские политики могут возвращать дополнительные утверждения приложению с помощью [преобразования утверждений](../../active-directory-b2c/claims-transformation-technical-profile.md).
 
 #### <a name="mitigation-for-missing-from-the-token-response"></a>Устранение рисков "отсутствует в ответе маркера"
 
@@ -190,10 +190,10 @@ MSAL.NET поддерживает [кэш маркеров](/dotnet/api/microsof
 
 Дополнительные сведения об указании утверждений, возвращаемых потоками пользователей, см. [в разделе Учебник. Создание пользовательских потоков в Azure AD B2C](../../active-directory-b2c/tutorial-create-user-flows.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о получении маркеров в интерактивном режиме с помощью MSAL.NET для Azure AD B2C приложений приведены в следующем примере.
 
-| Пример | Платформа | Описание|
+| Образец | Платформа | Описание|
 |------ | -------- | -----------|
 |[Active-Directory-B2C-Xamarin-Native](https://github.com/Azure-Samples/active-directory-b2c-xamarin-native) | Xamarin iOS, Xamarin Android, UWP | Приложение Xamarin Forms, использующее MSAL.NET для проверки подлинности пользователей с помощью Azure AD B2C и последующего доступа к веб-API с возвращаемыми маркерами.|

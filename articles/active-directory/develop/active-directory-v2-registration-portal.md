@@ -13,12 +13,12 @@ ms.date: 08/13/2019
 ms.author: ryanwi
 ms.reviewer: lenalepa
 ms.custom: aaddev
-ms.openlocfilehash: 53a44ed270dc47725dddfd57d6a212e859d46bad
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 0574eb0b8ab0b5d4de671ad44a45a85e434393f1
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87552719"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115583"
 ---
 # <a name="app-registration-reference"></a>Справка по регистрации приложений
 
@@ -26,7 +26,7 @@ ms.locfileid: "87552719"
 
 ## <a name="my-applications-or-converged-applications"></a>Мои приложения или конвергированные приложения
 
-Список содержит все приложения, зарегистрированные для использования с конечной точкой платформы удостоверений Майкрософт (версия 2.0). Эти приложения позволяют пользователям с личными учетными записями Майкрософт и рабочими или учебными учетными записями Azure Active Directory выполнять вход. Дополнительные сведения о конечной точке платформы удостоверений приведены в [обзоре версии 2.0](active-directory-appmodel-v2-overview.md). Эти приложения можно также интегрировать с конечной точки проверки подлинности учетных записей Microsoft `https://login.live.com`.
+Список содержит все приложения, зарегистрированные для использования с конечной точкой платформы удостоверений Майкрософт (версия 2.0). Эти приложения позволяют пользователям с личными учетными записями Майкрософт и рабочими или учебными учетными записями Azure Active Directory выполнять вход. Дополнительные сведения о конечной точке платформы удостоверений приведены в [обзоре версии 2.0](./v2-overview.md). Эти приложения можно также интегрировать с конечной точки проверки подлинности учетных записей Microsoft `https://login.live.com`.
 
 ## <a name="azure-ad-only-applications"></a>Только приложения Azure AD
 

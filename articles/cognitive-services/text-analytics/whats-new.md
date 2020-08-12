@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.author: aahi
-ms.openlocfilehash: 67850490a3c1d972d4d03eec545068b1d9eb9fff
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: 95e9b208159e9af41563f12ce8af7892e13f6629
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87986304"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121856"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
@@ -23,9 +23,45 @@ API анализа текста обновляется на постоянной
 
 ## <a name="august-2020"></a>Август 2020 г.
 
+### <a name="general-api-updates"></a>Общие обновления API
+
 * Версия модели `2020-07-01` для v3 `/keyphrases` , `/pii` а также `/languages` конечные точки, которые добавляют:
     * Дополнительные [категории сущностей](named-entity-types.md?tabs=personal) для государственных организаций и страны для распознавания именованных сущностей.
 * Теперь будет возвращена ошибка HTTP 400 для запросов API V3, превышающих [пределы](concepts/data-limits.md)опубликованных данных. 
+
+### <a name="text-analytics-for-health-container-august-updates"></a>Анализ текста обновлений для контейнера работоспособности за Август
+
+Следующие обновления относятся только к выпуску Анализ текста за Август только для контейнера работоспособности.
+
+* Новая модель — версия для Анализ текста работоспособности:`2020-07-24`
+* Новый URL-адрес для отправки Анализ текста запросов на работоспособность:`http://<serverURL>:5000/text/analytics/v3.2-preview.1/entities/health` 
+
+Изменены следующие свойства в ответе JSON:
+
+* `type` был переименован в `category`. 
+* `score` был переименован в `confidenceScore`.
+* Сущности в `category` поле выходных данных JSON теперь находятся в стиле Pascal. Следующие сущности были переименованы:
+    * `EXAMINATION_RELATION` переименован в `RelationalOperator`.
+    * `EXAMINATION_UNIT` переименован в `MeasurementUnit`.
+    * `EXAMINATION_VALUE` переименован в `MeasurementValue`.
+    * `ROUTE_OR_MODE`был переименован `MedicationRoute` .
+    * Реляционная сущность `ROUTE_OR_MODE_OF_MEDICATION` была переименована в `RouteOfMedication` .
+
+Добавлены следующие сущности:
+
+* NER
+    * `AdministrativeEvent`
+    * `CareEnvironment`
+    * `HealthcareProfession`
+    * `MedicationForm` 
+
+* Извлечение связей
+    * `DirectionOfCondition`
+    * `DirectionOfExamination`
+    * `DirectionOfTreatment`
+
+> [!div class="nextstepaction"]
+> [Дополнительные сведения о Анализ текста контейнере работоспособности](how-tos/text-analytics-for-health.md)
 
 ## <a name="july-2020"></a>Июль 2020 г. 
 
@@ -39,10 +75,6 @@ API анализа текста обновляется на постоянной
 * Извлечение связей
 * Связывание сущностей
 * Отрицание
-
-
-> [!div class="nextstepaction"]
-> [Дополнительные сведения о Анализ текста контейнере работоспособности](how-tos/text-analytics-for-health.md)
 
 ## <a name="may-2020"></a>Май 2020 г.
 
@@ -114,10 +146,10 @@ API анализа текста v3 теперь общедоступен со с
 
 * Распознавание следующих типов сущностей личных сведений (только на английском языке):
     * Модель Person
-    * Организация
+    * План
     * Возраст в качестве подтипа по количеству
     * Дата в качестве подтипа в разделе DateTime
-    * Электронная почта 
+    * Адрес электронной почты 
     * Номер телефона (только США)
     * URL-адрес
     * IP-адрес

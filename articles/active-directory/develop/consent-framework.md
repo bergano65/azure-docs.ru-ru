@@ -13,12 +13,12 @@ ms.date: 11/30/2018
 ms.author: ryanwi
 ms.reviewer: zachowd, lenalepa, jesakowi
 ms.custom: aaddev, has-adal-ref
-ms.openlocfilehash: e706c0eeb848b6cd14a3c14de821ca59a9c52ee9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fe321de279397d24e0926cf1ef26a1d66adac8c4
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82611370"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88117317"
 ---
 # <a name="azure-active-directory-consent-framework"></a>Платформа предоставления согласия Azure Active Directory
 
@@ -28,7 +28,7 @@ ms.locfileid: "82611370"
 
 Платформа согласия основана на OAuth 2.0 и различных его процедурах, таких как предоставление кода авторизации и учетных данных пользователя, с помощью общедоступных или конфиденциальных клиентов. Благодаря OAuth 2.0 среда Azure AD позволяет создавать различные клиентские приложения, например на телефоне, планшете, сервере или в Интернете, и получать доступ к необходимым ресурсам.
 
-Дополнительные сведения об использовании платформы предоставления согласия с разрешениями на авторизацию OAuth 2.0 см. в статьях [Авторизация доступа к веб-приложениям Azure Active Directory с помощью последовательности предоставления кода OAuth 2.0](v2-oauth2-auth-code-flow.md) и [Сценарии проверки подлинности в Azure AD](authentication-scenarios.md). Дополнительные сведения о получении авторизованного доступа к Office 365 через Microsoft Graph см. в руководстве по [получению маркеров доступа для вызова Microsoft Graph](https://developer.microsoft.com/graph/docs/authorization/auth_overview).
+Дополнительные сведения об использовании платформы предоставления согласия с разрешениями на авторизацию OAuth 2.0 см. в статьях [Авторизация доступа к веб-приложениям Azure Active Directory с помощью последовательности предоставления кода OAuth 2.0](v2-oauth2-auth-code-flow.md) и [Сценарии проверки подлинности в Azure AD](./authentication-vs-authorization.md). Дополнительные сведения о получении авторизованного доступа к Office 365 через Microsoft Graph см. в руководстве по [получению маркеров доступа для вызова Microsoft Graph](https://developer.microsoft.com/graph/docs/authorization/auth_overview).
 
 ## <a name="consent-experience---an-example"></a>Пример процедуры предоставления согласия
 
@@ -65,4 +65,4 @@ ms.locfileid: "82611370"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в руководстве по [преобразованию приложения в мультитенантное](howto-convert-app-to-be-multi-tenant.md).
-* Узнайте подробнее о том, [как согласие поддерживается на уровне протокола OAuth 2.0 во время предоставления кода авторизации.](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code#request-an-authorization-code)
+* Узнайте подробнее о том, [как согласие поддерживается на уровне протокола OAuth 2.0 во время предоставления кода авторизации.](../azuread-dev/v1-protocols-oauth-code.md#request-an-authorization-code)

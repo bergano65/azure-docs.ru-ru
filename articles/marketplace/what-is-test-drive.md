@@ -7,12 +7,12 @@ ms.topic: article
 author: keferna
 ms.author: keferna
 ms.date: 06/19/2020
-ms.openlocfilehash: abad72145b095b4da77ec499f936c6912fd970a6
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: bd3b77f80a414dd3db1d5106929fa0e215e34c1f
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86229454"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121873"
 ---
 # <a name="what-is-a-test-drive"></a>Что такое тестовый выпуск?
 
@@ -44,7 +44,17 @@ ms.locfileid: "86229454"
 
 ### <a name="azure-resource-manager-test-drive"></a>Azure Resource Manager тестовый накопитель
 
-Этот шаблон развертывания содержит все ресурсы Azure, составляющие ваше решение. Для этого сценария подходят приложения, использующие только ресурсы Azure. Это единственный вариант тестового диска для виртуальных машин или предложений приложений Azure.
+Этот шаблон развертывания содержит все ресурсы Azure, составляющие ваше решение. Для этого сценария подходят приложения, использующие только ресурсы Azure. Azure Resource Manager тестовый накопитель доступен для следующих типов предложений: 
+
+- Приложения Azure
+- Dynamics 365 для Business Central
+- Dynamics 365 для участия клиентов & PowerApps
+- Dynamics 365 for Operations
+- SaaS
+- Виртуальные машины
+
+>[!NOTE]
+>Это единственный вариант тестового диска для предложений виртуальных машин и приложений Azure.
 
 ### <a name="hosted-test-drive"></a>Размещенный тестовый диск
 
@@ -78,13 +88,13 @@ ms.locfileid: "86229454"
 
 Если вы закроете свой ведущий тестовый выпуск, обязательно зарегистрируйте его в [партнерской продаже Microsoft Partner Connect](https://support.microsoft.com/help/3155788/getting-started-with-microsoft-partner-sales-connect). Кроме того, мы будем рады услышать ваше мнение о клиенте, где проигрывается тестовый диск.
 
-## <a name="other-resources"></a>Другие ресурсы
+## <a name="other-resources"></a>Другие источники
 
 Дополнительные материалы о тестовом выпуске:
 
 - [Технические рекомендации](https://github.com/Azure/AzureTestDrive/wiki/Test-Drive-Best-Practices)
 - [Обзор](https://assetsprod.microsoft.com/mpn/azure-marketplace-appsource-test-drives.pdf) (PDF; убедитесь, что блокирование всплывающих окон отключено)
 
-## <a name="next-step"></a>Следующий этап
+## <a name="next-step"></a>Следующий шаг
 
 - [Техническая конфигурация тестового выпуска](test-drive-technical-configuration.md)

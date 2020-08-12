@@ -13,12 +13,12 @@ ms.date: 03/17/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur, lenalepa, sureshja, kkrishna
 ms.custom: aaddev
-ms.openlocfilehash: 6a48467100e396ed1b43544d1b10ae5007415e3e
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: d3810d3998f82127fc32327f696a2784382b4537
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86201947"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88117045"
 ---
 # <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>Реализация входа любого пользователя Azure Active Directory с помощью шаблона мультитенантного приложения
 
@@ -47,7 +47,7 @@ ms.locfileid: "86201947"
 По умолчанию при создании приложений с помощью портала Azure им присваивается глобальный уникальный URI идентификатор приложения, но позже это значение можно изменить. Например, если имя клиента — contoso.onmicrosoft.com, то допустимым URI кода приложения будет `https://contoso.onmicrosoft.com/myapp`. Если проверенный домен клиента — `contoso.com`, то допустимым URI кода приложения тоже будет `https://contoso.com/myapp`. Если URI идентификатора приложения не соответствует этому шаблону, вы не сможете сделать приложение мультитенантным.
 
 > [!NOTE]
-> Регистрация собственного клиента, а также [приложения платформы идентификации Майкрософт](./active-directory-appmodel-v2-overview.md) по умолчанию являются несколькими клиентами. Не нужно предпринимать никаких действий, чтобы зарегистрировать приложение как мультитенантное.
+> Регистрация собственного клиента, а также [приложения платформы идентификации Майкрософт](./v2-overview.md) по умолчанию являются несколькими клиентами. Не нужно предпринимать никаких действий, чтобы зарегистрировать приложение как мультитенантное.
 
 ## <a name="update-your-code-to-send-requests-to-common"></a>Обновление кода для отправки запросов в конечную точку "/common"
 
@@ -141,7 +141,7 @@ ms.locfileid: "86201947"
 
 #### <a name="multiple-tiers-in-a-single-tenant"></a>Несколько уровней в одном клиенте
 
-Это может быть проблемой, если ваше логические приложение состоит из двух или более регистраций приложения, например, отдельно для клиента и ресурса. Как сначала поместить ресурс в клиент пользователя? На этот случай в Azure AD предусмотрена возможность получения согласия для клиента и ресурса за один шаг. Пользователь видит общее число разрешений, запрошенных клиентом и ресурсом на странице получения согласия. Чтобы активировать такое поведение, регистрация приложения ресурса должна включать в себя идентификатор приложения клиента как `knownClientApplications` в [манифесте соответствующего приложения][AAD-App-Manifest]. Вот несколько примеров:
+Это может быть проблемой, если ваше логические приложение состоит из двух или более регистраций приложения, например, отдельно для клиента и ресурса. Как сначала поместить ресурс в клиент пользователя? На этот случай в Azure AD предусмотрена возможность получения согласия для клиента и ресурса за один шаг. Пользователь видит общее число разрешений, запрошенных клиентом и ресурсом на странице получения согласия. Чтобы активировать такое поведение, регистрация приложения ресурса должна включать в себя идентификатор приложения клиента как `knownClientApplications` в [манифесте соответствующего приложения][AAD-App-Manifest]. Пример:
 
 ```aad-app-manifest
     knownClientApplications": ["94da0930-763f-45c7-8d26-04d5938baab2"]
@@ -183,7 +183,7 @@ ms.locfileid: "86201947"
 
 В этой статье было показано, как создать приложение, поддерживающее вход пользователя с любого клиента Azure AD. После включения единого входа между своим приложением и Azure AD вы также можете обновить приложение для доступа к API, которые предоставляются ресурсами Майкрософт, например Office 365. Это позволит вам предлагать своим пользователям персонализированные возможности при работе с приложением, например отображать контекстную информацию — такую, как изображение профиля или следующая встреча из календаря. Дополнительные сведения о вызовах API к службам Azure AD и Office 365 (например, Exchange, SharePoint, OneDrive, OneNote и др.) см. в статье об [API Microsoft Graph][MSFT-Graph-overview].
 
-## <a name="related-content"></a>Связанная информация
+## <a name="related-content"></a>См. также
 
 * [Пример приложения с несколькими клиентами](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-3-Multi-Tenant/README.md)
 * [Рекомендации по фирменной символике для приложений][AAD-App-Branding]
@@ -201,7 +201,7 @@ ms.locfileid: "86201947"
 [AAD-Consent-Overview]:consent-framework.md
 [AAD-Dev-Guide]:azure-ad-developers-guide.md
 [AAD-Integrating-Apps]:quickstart-v1-integrate-apps-with-azure-ad.md
-[AAD-Samples-MT]: https://docs.microsoft.com/samples/browse/?products=azure-active-directory
+[AAD-Samples-MT]: /samples/browse/?products=azure-active-directory
 [AAD-Why-To-Integrate]: ./active-directory-how-to-integrate.md
 [AZURE-portal]: https://portal.azure.com
 [MSFT-Graph-overview]: https://developer.microsoft.com/graph/docs/overview/overview
@@ -226,9 +226,9 @@ ms.locfileid: "86201947"
 [AZURE-portal]: https://portal.azure.com
 [Duyshant-Role-Blog]: http://www.dushyantgill.com/blog/2014/12/10/roles-based-access-control-in-cloud-applications-using-azure-ad/
 [JWT]: https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32
-[O365-Perm-Ref]: https://msdn.microsoft.com/office/office365/howto/application-manifest
+[O365-Perm-Ref]: /graph/permissions-reference
 [OAuth2-Access-Token-Scopes]: https://tools.ietf.org/html/rfc6749#section-3.3
-[OAuth2-AuthZ-Code-Grant-Flow]: https://msdn.microsoft.com/library/azure/dn645542.aspx
+[OAuth2-AuthZ-Code-Grant-Flow]: /previous-versions/azure/dn645542(v=azure.100)
 [OAuth2-AuthZ-Grant-Types]: https://tools.ietf.org/html/rfc6749#section-1.3 
 [OAuth2-Client-Types]: https://tools.ietf.org/html/rfc6749#section-2.1
 [OAuth2-Role-Def]: https://tools.ietf.org/html/rfc6749#page-6

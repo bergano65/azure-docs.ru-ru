@@ -14,12 +14,12 @@ ms.date: 11/11/2019
 ms.author: rayluo
 ms.reviewer: rayluo, nacanuma, twhitney
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 4737b2ef701f643ff5bec47be29b3139e27fb146
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 8dcd2b55d177c533336842293b2aedaef6b4222c
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87845159"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88119918"
 ---
 # <a name="adal-to-msal-migration-guide-for-python"></a>Руководством по миграции ADAL в MSAL для Python
 
@@ -38,19 +38,19 @@ ADAL работает с конечной точкой Azure Active Directory (A
   - OAuth 2.0
   - OpenID Connect Connect (OIDC)
 
-Дополнительные сведения см. [в разделе чем отличаются конечная точка платформы Microsoft Identity Platform (v 2.0)?](https://docs.microsoft.com/azure/active-directory/develop/azure-ad-endpoint-comparison) .
+Дополнительные сведения см. [в разделе чем отличаются конечная точка платформы Microsoft Identity Platform (v 2.0)?](../azuread-dev/azure-ad-endpoint-comparison.md) .
 
 ### <a name="scopes-not-resources"></a>Области вместо ресурсов
 
-ADAL Python получает маркеры для ресурсов, но MSAL Python получает маркеры для областей. У поверхности API в MSAL Python больше нет параметра ресурса. Необходимо указать области в виде списка строк, которые объявляют требуемые разрешения и ресурсы. Некоторые примеры областей см. в разделе [области Microsoft Graph](https://docs.microsoft.com/graph/permissions-reference).
+ADAL Python получает маркеры для ресурсов, но MSAL Python получает маркеры для областей. У поверхности API в MSAL Python больше нет параметра ресурса. Необходимо указать области в виде списка строк, которые объявляют требуемые разрешения и ресурсы. Некоторые примеры областей см. в разделе [области Microsoft Graph](/graph/permissions-reference).
 
 Вы можете добавить `/.default` суффикс области к ресурсу, чтобы упростить перенос приложений из конечной точки версии 1.0 (ADAL) в конечную точку платформы Microsoft Identity (MSAL). Например, для значения ресурса `https://graph.microsoft.com` в качестве эквивалентного значения области является `https://graph.microsoft.com/.default` .  Если ресурс отсутствует в форме URL-адреса, но идентификатор ресурса формы `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX` , можно по-прежнему использовать значение области в качестве `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX/.default` .
 
-Дополнительные сведения о различных типах областей см. в статьях [разрешения и согласие на платформе Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent) , а также [области для веб-API, принимающего статьи о токенах версии 1.0](https://docs.microsoft.com/azure/active-directory/develop/msal-v1-app-scopes) .
+Дополнительные сведения о различных типах областей см. в статьях [разрешения и согласие на платформе Microsoft Identity](./v2-permissions-and-consent.md) , а также [области для веб-API, принимающего статьи о токенах версии 1.0](./msal-v1-app-scopes.md) .
 
 ### <a name="error-handling"></a>Обработка ошибок
 
-Azure Active Directory Библиотека проверки подлинности (ADAL) для Python использует исключение `AdalError` , чтобы указать, что возникла проблема. MSAL для Python обычно использует коды ошибок. Дополнительные сведения см. в разделе [MSAL for Python Error обработка ошибок](https://docs.microsoft.com/azure/active-directory/develop/msal-handling-exceptions?tabs=python).
+Azure Active Directory Библиотека проверки подлинности (ADAL) для Python использует исключение `AdalError` , чтобы указать, что возникла проблема. MSAL для Python обычно использует коды ошибок. Дополнительные сведения см. в разделе [MSAL for Python Error обработка ошибок](./msal-handling-exceptions.md?tabs=python).
 
 ### <a name="api-changes"></a>Изменения API
 
@@ -120,6 +120,6 @@ print("Migration completed")
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о сравнении версий 1.0 и 2.0 см. [здесь](active-directory-v2-compare.md).
+Дополнительные сведения о сравнении версий 1.0 и 2.0 см. [здесь](../azuread-dev/azure-ad-endpoint-comparison.md).

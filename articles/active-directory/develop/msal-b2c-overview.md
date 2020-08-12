@@ -13,12 +13,12 @@ ms.date: 06/05/2020
 ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: f43711652bb205c75870fdb969c44298087a2b07
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 13b478e85278827258ea2fc25a0ee4298039fb1c
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84308589"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88119796"
 ---
 # <a name="use-microsoft-authentication-library-for-javascript-to-work-with-azure-ad-b2c"></a>Использование библиотеки проверки подлинности Майкрософт для JavaScript для работы с Azure AD B2C
 
@@ -32,7 +32,7 @@ ms.locfileid: "84308589"
 - Поддержка входа в одностраничное приложение (SPA) *и вызов* защищенного веб-API
 - Включить поддержку сброса паролей
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Создайте [клиент Azure AD B2C](../../active-directory-b2c/tutorial-create-tenant.md), если вы этого еще не сделали.
 
@@ -44,7 +44,7 @@ MSAL.js для Node в настоящее время находится в ра�
 
 ### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 
-Чтобы защитить веб-API с помощью Azure AD B2C, необходимо сначала зарегистрировать его. Подробные шаги описаны в статье [Register your application](../../active-directory-b2c/add-web-application.md) (Регистрация вашего приложения).
+Чтобы защитить веб-API с помощью Azure AD B2C, необходимо сначала зарегистрировать его. Подробные шаги описаны в статье [Register your application](../../active-directory-b2c/add-web-api-application.md) (Регистрация вашего приложения).
 
 ### <a name="step-2-download-the-sample-application"></a>Шаг 2. скачивание примера приложения
 
@@ -205,7 +205,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 
     Дополнительные сведения о кодах ошибок и обработке исключений см. в разделе [MSAL Error and Exception Codes](msal-handling-exceptions.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об этих Azure AD B2C концепциях:
 

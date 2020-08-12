@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: 6c5e0779ce0dfe2730a60873316c66184e038a35
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 50cf58f83115cfb8c84fe7b2a37b6664c2d9c567
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86039880"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88116688"
 ---
 # <a name="disable-weak-ciphers-and-password-hash-synchronization-to-secure-an-azure-active-directory-domain-services-managed-domain"></a>Отключение слабых шифров и синхронизации хэшей паролей для обеспечения безопасности управляемого домена доменных служб Azure Active Directory
 
@@ -75,7 +75,12 @@ Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $securitySetti
 
 Применение параметров безопасности к управляемому домену займет несколько секунд.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+> [!IMPORTANT]
+> После отключения NTLM выполните полную синхронизацию хэша паролей в Azure AD Connect, чтобы удалить все хэши паролей из управляемого домена. Если отключить NTLM, но не выполнять принудительную синхронизацию хэша паролей, хэши паролей NTLM для учетной записи пользователя удаляются только при следующей смене пароля. Такое поведение может позволить пользователю продолжить вход, если у него есть кэшированные учетные данные в системе, где в качестве метода проверки подлинности используется NTLM.
+>
+> После того как хэш пароля NTLM отличается от хэша пароля Kerberos, откат к NTLM не будет работать. Кэшированные учетные данные также больше не работают, если виртуальная машина подключена к управляемому контроллеру домена.  
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о процессе синхронизации см. в статье [как синхронизировать объекты и учетные данные в управляемом домене][synchronization].
 

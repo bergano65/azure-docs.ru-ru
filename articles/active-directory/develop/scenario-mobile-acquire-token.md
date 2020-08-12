@@ -13,12 +13,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: 499b7348c645f4792332769ac598ffcea07ea102
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 79b9be504639b35c7c15d427bd7766ed2dd15535
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87541912"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121091"
 ---
 # <a name="get-a-token-for-a-mobile-app-that-calls-web-apis"></a>Получение маркера для мобильного приложения, вызывающего веб-API
 
@@ -209,7 +209,7 @@ catch(MsalUiRequiredException)
 
 `AcquireTokenInteractive`имеет только один обязательный параметр: `scopes` . `scopes`Параметр перечисляет строки, определяющие области, для которых требуется токен. Если маркер предназначен для Microsoft Graph, необходимые области можно найти в справочнике по API для каждого Microsoft Graph API. В справочной документации перейдите к разделу "разрешения".
 
-Например, чтобы получить [список контактов пользователя](https://docs.microsoft.com/graph/api/user-list-contacts), используйте область "пользователь. чтение", "Контакты. чтение". См. сведения о [разрешениях Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/permissions_reference).
+Например, чтобы получить [список контактов пользователя](/graph/api/user-list-contacts), используйте область "пользователь. чтение", "Контакты. чтение". См. сведения о [разрешениях Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/permissions_reference).
 
 В Android можно указать родительские действия при создании приложения с помощью `PublicClientApplicationBuilder` . Если вы не укажете родительские действия в это время, позже его можно будет указать с помощью команды `.WithParentActivityOrWindow` , как в следующем разделе. При указании родительского действия маркер возвращается к родительскому действию после взаимодействия. Если он не указан, `.ExecuteAsync()` вызов создает исключение.
 
@@ -234,7 +234,7 @@ catch(MsalUiRequiredException)
 - `ForceLogin`позволяет службе предлагать пользователю ввести учетные данные, даже если запрос не требуется.
 
     Этот параметр может быть полезен в случае сбоя при получении маркера и необходимости повторного входа пользователя. В этом случае MSAL отправляет `prompt=login` поставщику удостоверений. Этот параметр может потребоваться использовать в приложениях, ориентированных на безопасность, где управление Организацией требует от пользователя входа при каждом доступе к конкретным частям приложения.
-- `Never`предназначен только для .NET 4,5 и среда выполнения Windows (WinRT). Эта константа не будет запрашивать пользователя, но будет пытаться использовать файл cookie, хранящийся в скрытом внедренном веб-представлении. Дополнительные сведения см. [в разделе Использование веб-браузеров с MSAL.NET](https://docs.microsoft.com/azure/active-directory/develop/msal-net-web-browsers).
+- `Never`предназначен только для .NET 4,5 и среда выполнения Windows (WinRT). Эта константа не будет запрашивать пользователя, но будет пытаться использовать файл cookie, хранящийся в скрытом внедренном веб-представлении. Дополнительные сведения см. [в разделе Использование веб-браузеров с MSAL.NET](./msal-net-web-browsers.md).
 
     При сбое этого параметра `AcquireTokenInteractive` выдается исключение, уведомляющее о необходимости взаимодействия с ИП. Затем необходимо использовать другой `Prompt` параметр.
 - `NoPrompt`не отправляет запрос поставщику удостоверений.
@@ -292,7 +292,7 @@ client_id=<CLIENT_ID>
 &grant_type=authorization_code
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Вызов веб-API](scenario-mobile-call-api.md)

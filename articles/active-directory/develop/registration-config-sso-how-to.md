@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/15/2019
 ms.author: ryanwi
-ms.openlocfilehash: 9b6451d29a3a874e09d74cbe664662a395b647f9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 465adbb71abaa45160399ecba2ebfb692a8307c2
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82890461"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88120683"
 ---
 # <a name="how-to-configure-single-sign-on-for-an-application"></a>Настройка единого входа для приложения
 
@@ -26,20 +26,20 @@ ms.locfileid: "82890461"
 
 * При создании мобильного приложения для включения единого входа с использованием или без использования брокера может потребоваться дополнительная настройка.
 
-Для Android см. раздел [Включение единого входа для нескольких приложений в Android](https://docs.microsoft.com/azure/active-directory/develop/active-directory-sso-android).<br>
+Для Android см. раздел [Включение единого входа для нескольких приложений в Android](../azuread-dev/howto-v1-enable-sso-android.md).<br>
 
-Для iOS см. раздел [Включение единого входа для нескольких приложений в iOS](https://docs.microsoft.com/azure/active-directory/develop/active-directory-sso-ios).
+Для iOS см. раздел [Включение единого входа для нескольких приложений в iOS](../azuread-dev/howto-v1-enable-sso-ios.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Единый вход Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)<br>
+[Единый вход Azure AD](../manage-apps/what-is-single-sign-on.md)<br>
 
-[Включение единого входа для нескольких приложений в Android](https://docs.microsoft.com/azure/active-directory/develop/active-directory-sso-android)<br>
+[Включение единого входа для нескольких приложений в Android](../azuread-dev/howto-v1-enable-sso-android.md)<br>
 
-[Включение единого входа для нескольких приложений в iOS](https://docs.microsoft.com/azure/active-directory/develop/active-directory-sso-ios)<br>
+[Включение единого входа для нескольких приложений в iOS](../azuread-dev/howto-v1-enable-sso-ios.md)<br>
 
-[Интеграция приложений с Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications)<br>
+[Интеграция приложений с Azure AD](./quickstart-register-app.md)<br>
 
-[Разрешения и согласие для конечной точки платформы удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes)<br>
+[Разрешения и согласие для конечной точки платформы удостоверений Майкрософт](./v2-permissions-and-consent.md)<br>
 
 [StackOverflow в AzureAD](https://stackoverflow.com/questions/tagged/azure-active-directory)

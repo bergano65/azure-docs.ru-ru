@@ -13,12 +13,12 @@ ms.date: 04/10/2019
 ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 7238a78279528b4522d09178d00bf916f14bad88
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5d91514af9aea3dd7ea13b94681fbb27c53772fe
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76696424"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88120904"
 ---
 # <a name="differences-between-msal-js-and-adal-js"></a>Различия между ADAL и MSAL для JavaScript
 
@@ -30,7 +30,7 @@ ms.locfileid: "76696424"
 
 В большинстве случаев лучше использовать платформу удостоверений Майкрософт и MSAL.js, так как это последнее поколение библиотек проверки подлинности Майкрософт. Используя MSAL.js, вы получаете маркеры для пользователей, входящих в приложение с учетной записью Azure AD (рабочей или учебной), учетной записью Майкрософт (личной MSA) или через Azure AD B2C.
 
-Если вы уже знакомы с конечной точкой версии 1.0 и библиотекой ADAL.js, ознакомьтесь со статьей [об отличиях конечной точки версии 2.0](active-directory-v2-compare.md).
+Если вы уже знакомы с конечной точкой версии 1.0 и библиотекой ADAL.js, ознакомьтесь со статьей [об отличиях конечной точки версии 2.0](../azuread-dev/azure-ad-endpoint-comparison.md).
 
 Но ADAL.js пока остается обязательной для тех случаев, когда приложению нужно обрабатывать вход пользователей из более ранних версий [служб федерации Active Directory (ADFS)](/windows-server/identity/active-directory-federation-services).
 
@@ -96,4 +96,4 @@ ms.locfileid: "76696424"
     ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о сравнении версий 1.0 и 2.0 см. [здесь](active-directory-v2-compare.md).
+Дополнительные сведения о сравнении версий 1.0 и 2.0 см. [здесь](../azuread-dev/azure-ad-endpoint-comparison.md).

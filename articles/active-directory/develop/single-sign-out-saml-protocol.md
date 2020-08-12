@@ -12,12 +12,12 @@ ms.date: 07/19/2017
 ms.author: kenwith
 ms.custom: aaddev
 ms.reviewer: paulgarn
-ms.openlocfilehash: c2673552638c1829b1640724634e365dc6595703
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 1d09355993af96e9e0cd334c57174cdaa771b388
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87284427"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118269"
 ---
 # <a name="single-sign-out-saml-protocol"></a>Протокол единого выхода SAML
 
@@ -42,7 +42,7 @@ Azure Active Directory (Azure AD) поддерживает профиль SAML 2
 
 * `ID` — признак запроса на выход. Значение `ID` не должно начинаться с цифры. Обычно здесь указывается строковое представление идентификатора GUID с добавлением перед ним строки **id** .
 * `Version` — установите для этого элемента значение **2.0**. Это значение обязательно.
-* `IssueInstant` — это строка `DateTime` со значением в формате всемирного времени (UTC) и [форматом кругового пути ("o")](https://msdn.microsoft.com/library/az4se3k1.aspx). Azure AD ожидает значение такого типа, но не требует его.
+* `IssueInstant` — это строка `DateTime` со значением в формате всемирного времени (UTC) и [форматом кругового пути ("o")](/dotnet/standard/base-types/standard-date-and-time-format-strings). Azure AD ожидает значение такого типа, но не требует его.
 
 ### <a name="issuer"></a>Издатель
 Элемент `Issuer` в `LogoutRequest` должен точно соответствовать одному из имен из списка **ServicePrincipalNames** в облачной службе в Azure AD. Обычно здесь передается **URI идентификатора приложения** , указанный во время регистрации приложения.

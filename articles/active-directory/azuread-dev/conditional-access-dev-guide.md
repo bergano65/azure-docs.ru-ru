@@ -13,12 +13,12 @@ ms.custom: aaddev
 ms.topic: conceptual
 ms.workload: identity
 ROBOTS: NOINDEX
-ms.openlocfilehash: 8895e52209622025f943aaa6a4261b68a7e2899c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1075cce9b9e3bc3267756bba84691788293fa8d2
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87034845"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88116317"
 ---
 # <a name="developer-guidance-for-the-azure-active-directory-conditional-access-feature"></a>Руководство разработчика для функции условного доступа Azure Active Directory
 
@@ -90,7 +90,7 @@ claims={"access_token":{"polids":{"essential":true,"Values":["<GUID>"]}}}
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-Условный доступ Azure AD — это функция, включенная в [Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-whatis). Дополнительные сведения о требованиях к лицензиям см. в статье [Отчет о нелицензированном использовании](../active-directory-conditional-access-unlicensed-usage-report.md). Разработчики могут присоединиться к сети разработчиков [Microsoft Developer Network](https://msdn.microsoft.com/dn308572.aspx), которая включает бесплатную подписку на Enterprise Mobility Suite, содержащую Azure AD Premium.
+Условный доступ Azure AD — это функция, включенная в [Azure AD Premium](../fundamentals/active-directory-whatis.md). Дополнительные сведения о требованиях к лицензиям см. в статье [Отчет о нелицензированном использовании](../reports-monitoring/overview-reports.md). Разработчики могут присоединиться к сети разработчиков [Microsoft Developer Network](/), которая включает бесплатную подписку на Enterprise Mobility Suite, содержащую Azure AD Premium.
 
 ### <a name="considerations-for-specific-scenarios"></a>Рекомендации для конкретных сценариев
 
@@ -177,7 +177,7 @@ error_description=AADSTS50076: Due to a configuration change made by your admini
 
 ## <a name="see-also"></a>См. также раздел
 
-* Дополнительные сведения о возможностях условного доступа см. в статье об [условном доступе в Azure Active Directory](../active-directory-conditional-access-azure-portal.md).
+* Дополнительные сведения о возможностях условного доступа см. в статье об [условном доступе в Azure Active Directory](../conditional-access/overview.md).
 * Дополнительные примеры кода Azure AD доступны в [репозитории примеров кода GitHub](https://github.com/azure-samples?utf8=%E2%9C%93&q=active-directory).
 * Дополнительные сведения о пакете SDK ADAL и доступу к справочной документации см. в статье [Библиотеки проверки подлинности Azure Active Directory](active-directory-authentication-libraries.md).
 * Дополнительные сведения о сценариях с несколькими клиентами см. в статье [Как реализовать вход любого пользователя Azure Active Directory (AD) с помощью шаблона мультитенантного приложения](../develop/howto-convert-app-to-be-multi-tenant.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json).
