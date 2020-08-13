@@ -63,13 +63,13 @@ ms.locfileid: "88135776"
 
 1. Справа откроется панель **Добавление назначения ролей** .
 
-   :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane.png" alt-text="Снимок экрана, показывающий панель "Добавление назначения ролей".":::
+   :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane.png" alt-text="Снимок экрана, показывающий панель Добавление назначения ролей.":::
 
    * **Роль**: выбор **участника учетной записи DocumentDB**
    * **Назначение доступа к**: в подразделе **Выбор управляемого системой удостоверения** выберите **приложение-функция**.
    * **SELECT**: область будет заполнена всеми приложениями-функциями в подписке, которые имеют **управляемое удостоверение системы**. В этом случае выберите приложение функции **фиштанктемпературесервице** : 
 
-      :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane-filled.png" alt-text="Снимок экрана, на котором отображается панель "Добавление назначения ролей", заполненная примерами.":::
+      :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane-filled.png" alt-text="Снимок экрана, на котором отображается панель Добавление назначения ролей, заполненная примерами.":::
 
 1. После выбора приложения функции нажмите кнопку **сохранить**.
 
