@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание виртуальной машины Azure VMware в частном облаке — решение VMware для Azure от Клаудсимпле
-description: Описание процесса создания виртуальной машины Azure VMware в Клаудсимпле частном облаке
+description: Узнайте, как создать виртуальную машину VMware в частном облаке Клаудсимпле. Доступ к порталу Клаудсимпле из портал Azure.
 author: sharaths-cs
 ms.author: b-shsury
 ms.date: 08/16/2019
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 000e30f2656b88c068654fd8099cdff0ce0a4b37
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 32ac78c6bc613daf04fc98c03044699f387f290d
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091272"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140859"
 ---
 # <a name="create-vmware-virtual-machines-on-your-private-cloud"></a>Создание виртуальных машин VMware в частном облаке
 
@@ -102,7 +102,7 @@ ms.locfileid: "87091272"
 
 Приложениям и рабочим нагрузкам, выполняемым в среде частного облака, требуется разрешение имен и службы DHCP для назначения адресов и поиска по IP-адресам. Для предоставления этих служб требуется определенная инфраструктура DHCP и DNS. Вы можете настроить виртуальную машину в vCenter, чтобы предоставить эти службы в среде частного облака.
 
-Обязательные условия
+Предварительные требования
 
 * Группа распределенных портов с настроенной виртуальной ЛС
 
@@ -139,7 +139,7 @@ Linux предлагает различные пакеты для настрой
 5. При необходимости используйте ползунок, чтобы изменить время ожидания простоя.
 6. Введите локальный IP-адрес, для которого требуется назначить общедоступный IP-адрес.
 7. При необходимости введите соответствующее DNS-имя.
-8. Нажмите кнопку **Done**(Готово).
+8. Нажмите кнопку **Готово**.
 
     ![Общедоступный IP-адрес](media/quick-create-pc-public-ip.png)
 
@@ -200,7 +200,7 @@ netstat -an | grep 80
 python2.7 -m SimpleHTTPServer 80
 ```
 
-or
+или диспетчер конфигурации служб
 
 ```
 python3 -m http.server 80

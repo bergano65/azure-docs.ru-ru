@@ -1,6 +1,6 @@
 ---
 title: Обзор решения Azure VMware по Клаудсимпле — узлы
-description: Сведения об узлах и концепциях Клаудсимпле.
+description: Узнайте об основных понятиях Клаудсимпле, включая узлы, подготовленные узлы, частное облако и решение VMware по номерам SKU узлов Клаудсимпле.
 author: sharaths-cs
 ms.author: dikamath
 ms.date: 08/20/2019
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 65afe26a98a53b00b72a1ea2b49799db2049b727
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7de4b5faa997d909089daedab7e48e5d5a6de2e7
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77024931"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140842"
 ---
 # <a name="cloudsimple-nodes-overview"></a>Обзор узлов Клаудсимпле
 
@@ -56,7 +56,7 @@ ms.locfileid: "77024931"
 | Максимальное число узлов в частном облаке | 64 |
 | Минимальное число узлов в новом кластере | 3 |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о [подготовке узлов](create-nodes.md)
 * Сведения о [частных облаках](cloudsimple-private-cloud.md)
