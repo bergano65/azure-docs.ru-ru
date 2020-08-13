@@ -98,7 +98,7 @@ ms.locfileid: "87873149"
 
     Скопируйте первую часть значения URI.
 
-    :::image type="content" source="./media/create-graph-python/keys.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, страница "Ключи"":::
+    :::image type="content" source="./media/create-graph-python/keys.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, страница Ключи":::
 
 2. Откройте файл *connect.py* `<YOUR_ENDPOINT>` и в строке 104 вставьте значение URI вместо :
 
