@@ -1,18 +1,18 @@
 ---
 title: 'Azure ExpressRoute: мониторинг, метрики и оповещения'
-description: Эта страница содержит сведения о мониторинге в ExpressRoute
+description: Сведения о мониторинге, метриках и оповещениях Azure ExpressRoute с помощью Azure Monitor. это средство останавливает магазин для всех метрик, предупреждений, журналов диагностики в Azure.
 services: expressroute
 author: mialdrid
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 08/22/2019
 ms.author: cherylmc
-ms.openlocfilehash: 6622a6e9f6865dbbafa145d6773440599b0c2777
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 49e5acb7fc0cfe947d846f2943fb5071d6554ea5
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738912"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192473"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Мониторинг, метрики и оповещения в ExpressRoute
 
@@ -39,8 +39,8 @@ ms.locfileid: "84738912"
 |GlobalReachBitsOutPerSecond|Трафик|<ui><li>Скэйная цепь (ключ службы)</ui></li>|Global Reach|
 |AdminState|Физическое подключение|Ссылка|ExpressRoute Direct|
 |LineProtocol|Физическое подключение|Ссылка|ExpressRoute Direct|
-|RxLightLevel|Физическое подключение|<ui><li>Ссылка</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
-|TxLightLevel|Физическое подключение|<ui><li>Ссылка</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
+|RxLightLevel|Физическое подключение|<ui><li>Ссылку</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
+|TxLightLevel|Физическое подключение|<ui><li>Ссылку</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
 >[!NOTE]
 >Использование *глобалглобалреачбитсинперсеконд* и *глобалглобалреачбитсаутперсеконд* будет видимым, только если установлено хотя бы одно Global REACH соединение.
 >

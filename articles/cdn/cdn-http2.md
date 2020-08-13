@@ -1,6 +1,6 @@
 ---
 title: Поддержка HTTP/2 в Azure CDN | Документы Майкрософт
-description: Сведения о поддержке HTTP/2 и CDN.
+description: Сеть доставки содержимого Azure поддерживает HTTP/2, которая имеет преимущества по сравнению с HTTP/1, например мультиплексирование & параллелизм, сжатие заголовков и зависимости потоков.
 services: cdn
 documentationcenter: ''
 author: lichard
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 5/04/2017
 ms.author: ril
-ms.openlocfilehash: 703623e3f7f314d87417458f3f9a218dfdf45427
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 698b1c7734882ea7f11114476b5e9a7f36a23a0e
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "67849968"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192617"
 ---
 # <a name="http2-support-in-azure-cdn"></a>Поддержка HTTP/2 в Azure CDN
 
@@ -49,7 +49,7 @@ HTTP/2 является основной редакцией HTTP/1.1\. Этот 
 |-------------|------------|
 |Microsoft Edge| 12|
 |Google Chrome| 43|
-|Mozilla Firefox| 38|
+|Mozilla Firefox;| 38|
 |Opera| 32|
 |Safari| 9|
 
@@ -57,7 +57,7 @@ HTTP/2 является основной редакцией HTTP/1.1\. Этот 
 
 Сейчас HTTP/2 поддерживается во всех профилях Azure CDN. Никаких действий со стороны пользователей не требуется.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Преимущества HTTP/2 в действии представлены в [этой демонстрации от Akamai](https://http2.akamai.com/demo).
 

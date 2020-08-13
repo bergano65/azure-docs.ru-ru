@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: brbell
 ms.reviewer: mimckitt
 ms.date: 06/15/2020
-ms.openlocfilehash: c36e37ba876b4b768d852d6ecedb8e3b4d8f09d0
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 15b9495b95ec4efb4f8e9f315595ea6bfca6cd5a
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288546"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88191150"
 ---
 # <a name="azure-vm-sizes-with-no-local-temporary-disk"></a>Размеры виртуальных машин Azure без локального временного диска 
 В этой статье приведены ответы на часто задаваемые вопросы о размерах виртуальных машин Azure, у которых нет локального временного диска (т. е. локальный временный диск отсутствует). Дополнительные сведения об этих размерах виртуальных машин см. в статьях [спецификации для dv4 и Dsv4 (общего назначения рабочих нагрузок)](dv4-dsv4-series.md) или [спецификации для Ev4 и Esv4 (рабочих нагрузок, оптимизированных для памяти)](ev4-esv4-series.md).
@@ -55,8 +55,8 @@ ms.locfileid: "87288546"
 ## <a name="have-questions-or-feedback"></a>Есть вопросы или предложения?
 Заполните [форму обратной связи]( https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_Y3toRKxchLjARedqtguBRUMzdCQkw0OVVRTldFUUtXSTlLQVBPUkVHSy4u). 
 
-## <a name="next-steps"></a>Дальнейшие действия 
-В этом документе вы узнали больше о наиболее часто встречающихся вопросах, связанных с виртуальными машинами Azure с локальным временным диском. Дополнительные сведения об этих размерах виртуальных машин см. в следующих статьях:
+## <a name="next-steps"></a>Дальнейшие шаги 
+В этом документе вы узнали больше о наиболее часто встречающихся вопросах, связанных с виртуальными машинами Azure без локального временного диска. Дополнительные сведения об этих размерах виртуальных машин см. в следующих статьях:
 
 - [Спецификации для серии dv4 и Dsv4 (общего назначенияная Рабочая нагрузка)](dv4-dsv4-series.md)
 - [Спецификации для серии Ev4 и Esv4 (Рабочая нагрузка, оптимизированная для памяти)](ev4-esv4-series.md)

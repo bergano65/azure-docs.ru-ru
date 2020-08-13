@@ -1,6 +1,6 @@
 ---
 title: Оптимизация Azure CDN для типа доставки содержимого
-description: Оптимизация Azure CDN для типа доставки содержимого
+description: Узнайте, как сеть доставки содержимого Azure может оптимизировать доставку на основе типа содержимого. Рекомендации по оптимизации улучшают производительность и разгрузку источника.
 services: cdn
 documentationcenter: ''
 author: asudbring
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 03/25/2019
 ms.author: allensu
-ms.openlocfilehash: 0255d7f47c8f9c63a2943830fa323a2e11994a9e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0710f2f31510ae299fafe89dc1798f40e325e8b4
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84887554"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192592"
 ---
 # <a name="optimize-azure-cdn-for-the-type-of-content-delivery"></a>Оптимизация Azure CDN для типа доставки содержимого
 

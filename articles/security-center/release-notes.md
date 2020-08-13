@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/12/2020
 ms.author: memildin
-ms.openlocfilehash: 034e72238375750651a1374a94b844d36fd97d03
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: caad034c2cc3403bc88ee5f50d101702ec692c35
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/13/2020
-ms.locfileid: "88166456"
+ms.locfileid: "88192253"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "88166456"
 
 |Политика|Область|
 |----|:----|
-|**Оценка уязвимостей должна быть включена на виртуальных машинах**<br>Идентификатор политики: 501541f7-f7e7-4cd6-868c-4190fdad3ac9|Встроено|
+|**На виртуальных машинах должна быть включена оценка уязвимостей**<br>Идентификатор политики: 501541f7-f7e7-4cd6-868c-4190fdad3ac9|Встроено|
 |**Уязвимости следует устранять с помощью решения для оценки уязвимостей**<br>Идентификатор политики: 760a85ff-6162-42b3-8d70-698e268f648c|BYOL|
 ||||
 

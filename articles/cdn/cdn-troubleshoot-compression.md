@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок со сжатием файлов в Azure CDN | Документация Майкрософт
-description: Узнайте, как устранить неполадки со сжатием файлов Azure CDN.
+description: Узнайте, как устранять неполадки, связанные с сжатием файлов в сети доставки содержимого Azure. В этой статье рассматривается несколько возможных причин.
 services: cdn
 documentationcenter: ''
 author: sohamnc
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 5c56564ee6f07c5d208ea5d3089a2c96fd8bbc33
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 53db148eac0d56e53bb96e0597ad53d3183d86e9
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84888695"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192516"
 ---
 # <a name="troubleshooting-cdn-file-compression"></a>Устранение неполадок со сжатием файлов CDN
 Эта статья поможет вам устранить неполадки со [сжатием файлов CDN](cdn-improve-performance.md).
@@ -36,7 +36,7 @@ ms.locfileid: "84888695"
 > 
 > 
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 Возможно несколько причин, включая указанные ниже.
 
 * Запрошенное содержимое не подходит для сжатия.

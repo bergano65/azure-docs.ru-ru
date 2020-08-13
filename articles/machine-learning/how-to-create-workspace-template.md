@@ -10,12 +10,12 @@ ms.custom: how-to, devx-track-azurecli
 ms.author: larryfr
 author: Blackmist
 ms.date: 07/27/2020
-ms.openlocfilehash: 5ddd4fc368a4e479d3d720698c7447d2b3cdf3cc
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: 6d1042ea21308dd0f82165c288824aaef000e36d
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87986568"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192334"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Создание рабочей области для Машинного обучения Azure с помощью шаблона Azure Resource Manager
 
@@ -380,7 +380,7 @@ New-AzResourceGroupDeployment `
 Если связанные ресурсы не находятся за виртуальной сетью, можно задать для параметра **приватиндпоинттипе** значение `AutoAproval` или, `ManualApproval` чтобы развернуть рабочую область за частной конечной точкой. Это можно сделать как для новых, так и для существующих рабочих областей. При обновлении существующей рабочей области заполните параметры шаблона данными из существующей рабочей области.
 
 > [!IMPORTANT]
-> Развертывание допустимо только в регионах, поддерживающих частные конечные точки.
+> Использование частной ссылки Azure для создания частной конечной точки для Машинное обучение Azure рабочей области в настоящее время находится в общедоступной предварительной версии. Эта функция доступна только в регионах **Восточная часть США** и **Западная часть США 2** . Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 

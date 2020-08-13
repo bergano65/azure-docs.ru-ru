@@ -1,6 +1,6 @@
 ---
 title: Рекомендации по использованию Key Vault-Azure Key Vault | Документация Майкрософт
-description: В этом документе описаны некоторые рекомендации по использованию Key Vault
+description: Узнайте о рекомендациях по Azure Key Vault, включая управление доступом, использование отдельных хранилищ ключей, резервное копирование, ведение журнала и параметры восстановления.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 03/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 93ada332fdf9179cf0f582195779afc085416e1a
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: cec3ad4e113fd6ee3f4e30ad2a6877b886a958e0
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386237"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88189879"
 ---
 # <a name="best-practices-to-use-key-vault"></a>Рекомендации по использованию Key Vault
 
@@ -33,7 +33,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 Мы рекомендуем использовать хранилище для каждого приложения в каждой среде (разработка, подготовка и Рабочая среда). Это позволяет не обмениваться секретами в разных средах, а также снизить угрозу в случае нарушения.
 
-## <a name="backup"></a>Резервное копирование
+## <a name="backup"></a>Backup
 
 Убедитесь, что вы регулярно создаете резервные копии хранилища на стороне обновления, удаления или создания объектов в хранилище.
 

@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.author: aahi
-ms.openlocfilehash: 95e9b208159e9af41563f12ce8af7892e13f6629
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 1a5f7dcd37a970d5e039ebc38f1059839424ff68
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121856"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192024"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
@@ -33,8 +33,8 @@ API анализа текста обновляется на постоянной
 
 Следующие обновления относятся только к выпуску Анализ текста за Август только для контейнера работоспособности.
 
-* Новая модель — версия для Анализ текста работоспособности:`2020-07-24`
-* Новый URL-адрес для отправки Анализ текста запросов на работоспособность:`http://<serverURL>:5000/text/analytics/v3.2-preview.1/entities/health` 
+* Новая модель — версия для Анализ текста работоспособности: `2020-07-24`
+* Новый URL-адрес для отправки Анализ текста для запросов на работоспособность: `http://<serverURL>:5000/text/analytics/v3.2-preview.1/entities/health` (Обратите внимание, что для использования демонстрационного веб-приложения, входящего в этот новый образ контейнера, требуется очистка кэша браузера)
 
 Изменены следующие свойства в ответе JSON:
 
@@ -44,7 +44,7 @@ API анализа текста обновляется на постоянной
     * `EXAMINATION_RELATION` переименован в `RelationalOperator`.
     * `EXAMINATION_UNIT` переименован в `MeasurementUnit`.
     * `EXAMINATION_VALUE` переименован в `MeasurementValue`.
-    * `ROUTE_OR_MODE`был переименован `MedicationRoute` .
+    * `ROUTE_OR_MODE` был переименован `MedicationRoute` .
     * Реляционная сущность `ROUTE_OR_MODE_OF_MEDICATION` была переименована в `RouteOfMedication` .
 
 Добавлены следующие сущности:
@@ -82,7 +82,7 @@ API анализа текста обновляется на постоянной
 
 API анализа текста v3 теперь общедоступен со следующими обновлениями:
 
-* Версия модели`2020-04-01`
+* Версия модели `2020-04-01`
 * Новые [ограничения данных](concepts/data-limits.md) для каждого компонента
 * Обновленная [языковая поддержка](language-support.md) для [Анализ тональности (SA) v3](how-tos/text-analytics-how-to-sentiment-analysis.md)
 * Отдельная конечная точка для связывания сущностей 
@@ -98,13 +98,13 @@ API анализа текста v3 теперь общедоступен со с
    * Событие — Спорт
 
 Были добавлены следующие свойства в ответе JSON:
-   * `SentenceText`в анализ тональности
-   * `Warnings`для каждого документа 
+   * `SentenceText` в анализ тональности
+   * `Warnings` для каждого документа 
 
 Имена следующих свойств в ответе JSON были изменены, где это применимо:
 
 * `score` был переименован в `confidenceScore`.
-    * `confidenceScore`имеет две десятичные точки точности. 
+    * `confidenceScore` имеет две десятичные точки точности. 
 * `type` был переименован в `category`.
 * `subtype` был переименован в `subcategory`.
 
@@ -146,7 +146,7 @@ API анализа текста v3 теперь общедоступен со с
 
 * Распознавание следующих типов сущностей личных сведений (только на английском языке):
     * Модель Person
-    * План
+    * Организация
     * Возраст в качестве подтипа по количеству
     * Дата в качестве подтипа в разделе DateTime
     * Адрес электронной почты 
@@ -187,7 +187,7 @@ API анализа текста v3 теперь общедоступен со с
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о анализ тональности v3](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Что такое API "Анализ текста"?](overview.md)  
 * [Примеры пользовательских сценариев](text-analytics-user-scenarios.md)

@@ -7,16 +7,16 @@ manager: craigg
 ms.service: synapse-analytics
 ms.subservice: sql-dw
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 08/13/2020
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 8032e8809f7849ab7497da7821788c017adff12d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c61e8df05c4bc199c0d91b8ed0cbd73fa6f196cf
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85212060"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192311"
 ---
 # <a name="convert-resource-classes-to-workload-groups"></a>Преобразование классов ресурсов в группы рабочей нагрузки
 
@@ -44,13 +44,13 @@ SELECT Request_min_resource_grant_percent = Effective_request_min_resource_grant
 
 Зная `REQUEST_MIN_RESOURCE_GRANT_PERCENT`, вы можете создать группу рабочей нагрузки с помощью синтаксиса CREATE WORKLOAD GROUP <link>.  При желании можно указать для `MIN_PERCENTAGE_RESOURCE` значение больше нуля, чтобы изолировать ресурсы для группы рабочей нагрузки.  Также можно указать для `CAP_PERCENTAGE_RESOURCE` значение меньше 100, чтобы ограничить объем ресурсов, потребляемый группой рабочей нагрузки.  
 
-В приведенном ниже примере для `MIN_PERCENTAGE_RESOURCE` задается значение, выделяющее для `wgDataLoads` 9,6 % системных ресурсов и гарантирующее, что в любой момент будет возможность выполнить один запрос.  Кроме того, для `CAP_PERCENTAGE_RESOURCE` задается значение 38,4 %, что устанавливает для этой группы рабочей нагрузки ограничение в четыре параллельных запроса.  Если задать для параметра `QUERY_EXECUTION_TIMEOUT_SEC` значение 3600, все выполняемые более одного часа запросы будут автоматически отменяться.
+С помощью mediumrc в качестве основания для примера приведенный ниже код задает `MIN_PERCENTAGE_RESOURCE` для выделения 10% системных ресурсов `wgDataLoads` и гарантирует, что один запрос сможет выполняться все время.  Кроме того, `CAP_PERCENTAGE_RESOURCE` имеет значение 40% и ограничивает эту группу рабочей нагрузки четырьмя одновременными запросами.  Если задать для параметра `QUERY_EXECUTION_TIMEOUT_SEC` значение 3600, все выполняемые более одного часа запросы будут автоматически отменяться.
 
 ```sql
 CREATE WORKLOAD GROUP wgDataLoads WITH  
-( REQUEST_MIN_RESOURCE_GRANT_PERCENT = 9.6
- ,MIN_PERCENTAGE_RESOURCE = 9.6
- ,CAP_PERCENTAGE_RESOURCE = 38.4
+( REQUEST_MIN_RESOURCE_GRANT_PERCENT = 10
+ ,MIN_PERCENTAGE_RESOURCE = 10
+ ,CAP_PERCENTAGE_RESOURCE = 40
  ,QUERY_EXECUTION_TIMEOUT_SEC = 3600)
 ```
 

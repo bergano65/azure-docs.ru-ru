@@ -12,12 +12,12 @@ author: sashan
 ms.author: sashan
 ms.reviewer: carlrab, sashan
 ms.date: 08/12/2020
-ms.openlocfilehash: 33521a5aed38cacbc7ce87b4a2a917ade866e378
-ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
+ms.openlocfilehash: 62dfa3214b86139a8f836b3d9bd72585653b7fa2
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88142440"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88189938"
 ---
 # <a name="high-availability-for-azure-sql-database-and-sql-managed-instance"></a>Высокий уровень доступности для базы данных SQL Azure и Управляемый экземпляр SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -112,9 +112,10 @@ ms.locfileid: "88142440"
 
 База данных SQL Azure и Управляемый экземпляр Azure SQL — это встроенное решение с высоким уровнем доступности, которое тесно интегрировано с платформой Azure. Это зависит от Service Fabric для обнаружения сбоев и восстановления, в хранилище BLOB-объектов Azure для защиты данных, а также на Зоны доступности для повышения отказоустойчивости (как упоминалось ранее в документе, который еще не применим к Azure SQL Управляемый экземпляр). Кроме того, база данных SQL и SQL Управляемый экземпляр используют технологию группы доступности Always On из экземпляра SQL Server для репликации и отработки отказа. Сочетание этих технологий позволяет приложениям полностью реализовать преимущества модели смешанного хранения и поддерживать наиболее ресурсоемкие соглашения об уровне обслуживания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше о [зонах доступности Azure](../../availability-zones/az-overview.md).
 - Дополнительные сведения о [Service Fabric](../../service-fabric/service-fabric-overview.md)
 - Дополнительные сведения о [диспетчере трафика Azure](../../traffic-manager/traffic-manager-overview.md).
+- Узнайте, [как инициировать отработку отказа вручную на управляемый экземпляр SQL](../managed-instance/user-initiated-failover.md)
 - Чтобы изучить дополнительные возможности обеспечения высокой доступности и аварийного восстановления, ознакомьтесь с [непрерывностью бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md).

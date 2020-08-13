@@ -1,17 +1,17 @@
 ---
 title: Руководство по аварийному восстановлению Azure Data Lake Storage 1-го поколения | Документы Майкрософт
-description: Рекомендации по обеспечению высокого уровня доступности и аварийному восстановлению для Azure Data Lake Storage 1-го поколения
+description: Узнайте, как обеспечить дополнительную защиту данных от небольшого количества сбоев или случайных удалений за пределами локально избыточного хранилища Azure Data Lake Storage 1-го поколения.
 author: twooley
 ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: twooley
-ms.openlocfilehash: ebcdeed608a5b9dc6202071869c4df1dcfd327a8
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: b124f828c4a6a019c45243528ed2d957e3f781f3
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87512760"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88191415"
 ---
 # <a name="high-availability-and-disaster-recovery-guidance-for-data-lake-storage-gen1"></a>Рекомендации по обеспечению высокого уровня доступности и аварийного восстановления для Data Lake Storage 1-го поколения
 
@@ -40,7 +40,7 @@ Data Lake Storage 1-го поколения предоставляет лока�
 
 Вы можете попытаться восстановить удаленный элемент с помощью модуля [AZ. data lake store](https://docs.microsoft.com/powershell/module/az.datalakestore/) Azure PowerShell для Data Lake Storage Gen 1. В частности, см. команду [RESTORE-аздаталакестоределетедитем](https://docs.microsoft.com/powershell/module/az.datalakestore/restore-azdatalakestoredeleteditem) . Перед использованием этой команды обязательно ознакомьтесь с [описанием](https://docs.microsoft.com/powershell/module/az.datalakestore/restore-azdatalakestoredeleteditem#description) раздела.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Начало работы с Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md)
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

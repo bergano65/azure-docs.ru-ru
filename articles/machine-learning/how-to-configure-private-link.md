@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 07/28/2020
-ms.openlocfilehash: 28fa3fdfdb8915d528d0765bd1fded8128621208
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: bdb7ba30d9fa2d0bd1eff9368d6e30e516b53895
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/13/2020
-ms.locfileid: "88166524"
+ms.locfileid: "88192724"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace-preview"></a>Настройка частной ссылки Azure для Машинное обучение Azure рабочей области (Предварительная версия)
 
@@ -39,7 +39,7 @@ ms.locfileid: "88166524"
 > [!IMPORTANT]
 > Сейчас мы поддерживаем только включение частной конечной точки при создании новой рабочей области Машинное обучение Azure.
 
-[https://github.com/Azure/azure-quickstart-templates/tree/master/201-machine-learning-advanced](https://github.com/Azure/azure-quickstart-templates/tree/master/201-machine-learning-advanced)Можно использовать для создания рабочей области с частной конечной точкой.
+Шаблон [https://github.com/Azure/azure-quickstart-templates/tree/master/201-machine-learning-advanced](https://github.com/Azure/azure-quickstart-templates/tree/master/201-machine-learning-advanced) можно использовать для создания рабочей области с частной конечной точкой.
 
 Сведения об использовании этого шаблона, включая частные конечные точки, см. в разделе [Использование шаблона Azure Resource Manager для создания рабочей области для машинное обучение Azure](how-to-create-workspace-template.md).
 
@@ -134,6 +134,6 @@ ms.locfileid: "88166524"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о защите рабочей области Машинное обучение Azure см. в статье [Корпоративная безопасность](concept-enterprise-security.md) .

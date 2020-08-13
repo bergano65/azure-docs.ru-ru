@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок Azure CDN конечных точек — код состояния 404
-description: Устранение неполадок с конечными точками Azure CDN, связанных с кодами ответа 404.
+description: Узнайте, как устранять проблемы с конечными точками сети доставки содержимого Azure, которые возвращают коды состояния ответа HTTP 404.
 services: cdn
 documentationcenter: ''
 author: zhangmanling
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 6476993627708670a210cce50072f1b183d90a8a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d6ad0b8b37bd4f04c22ed52d4ac6717202f22889
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84888680"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192494"
 ---
 # <a name="troubleshooting-azure-cdn-endpoints-that-return-a-404-status-code"></a>Устранение неполадок с конечными точками Azure CDN, которые возвращают код состояния 404
 Сведения в этой статье позволяют устранить неполадки, связанные с конечными точками сети доставки содержимого (CDN) Azure, которые возвращают ответы с кодом состояния HTTP 404.
@@ -29,7 +29,7 @@ ms.locfileid: "84888680"
 ## <a name="symptom"></a>Симптом
 Вы создали профиль CDN и конечную точку, но содержимое недоступно в сети CDN. Пользователи, пытающиеся получить доступ к вашему содержимому через URL-адрес CDN, получают коды состояния HTTP 404. 
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 Возможно несколько причин, включая указанные ниже.
 
 * Источник файла недоступен для CDN.

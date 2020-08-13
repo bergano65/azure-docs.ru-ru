@@ -4,14 +4,14 @@ description: Распространенные проблемы с Azure Monitor 
 author: harelbr
 ms.author: harelbr
 ms.topic: reference
-ms.date: 08/09/2020
+ms.date: 08/13/2020
 ms.subservice: alerts
-ms.openlocfilehash: c6b7d1fb28e81957ded56662a06946e56c3dc00e
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 1c1fe613721ea2bc2d4b9665d6da73b094487efc
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88114903"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88190670"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Устранение неполадок в Azure Monitor оповещениях метрик 
 
@@ -130,9 +130,9 @@ Azure Monitor оповещения заблаговременно уведомл
         }
 ```
 
-## <a name="export-the-arm-template-of-a-metric-alert-rule-via-the-azure-portal"></a>Экспортируйте шаблон ARM правила генерации оповещений метрики с помощью портал Azure
+## <a name="export-the-azure-resource-manager-template-of-a-metric-alert-rule-via-the-azure-portal"></a>Экспортируйте шаблон Azure Resource Manager правила оповещения метрики с помощью портал Azure
 
-Экспорт шаблона ARM правила генерации оповещений метрик помогает понять синтаксис и свойства JSON, а также использовать его для автоматизации будущих развертываний.
+Экспорт шаблона диспетчер ресурсов правила оповещения метрики помогает понять синтаксис и свойства JSON, а также использовать его для автоматизации будущих развертываний.
 1. Перейдите к разделу " **группы ресурсов** " на портале и выберите группу ресурсов, содержащую правило.
 2. В разделе Обзор установите флажок **Показывать скрытые типы** .
 3. В поле Фильтр **типов** выберите *Microsoft. Insights/метрикалертс*.
@@ -207,7 +207,7 @@ Azure Monitor оповещения заблаговременно уведомл
 
    - Для метрики платформы: Убедитесь, что вы используете имя **метрики** на [странице Azure Monitor поддерживаемые метрики](./metrics-supported.md), а не **Отображаемое имя метрики** .
 
-   - Для пользовательской метрики убедитесь, что метрика уже выдается (вы не можете создать правило генерации оповещений для пользовательской метрики, которая еще не существует) и что вы предоставляете пространство имен пользовательской метрики (см. Пример шаблона ARM [здесь](./alerts-metric-create-templates.md#template-for-a-static-threshold-metric-alert-that-monitors-a-custom-metric)).
+   - Для пользовательской метрики убедитесь, что метрика уже выдается (вы не можете создать правило генерации оповещений для пользовательской метрики, которая еще не существует) и что вы предоставляете пространство имен пользовательской метрики (см. Пример шаблона диспетчер ресурсов [здесь](./alerts-metric-create-templates.md#template-for-a-static-threshold-metric-alert-that-monitors-a-custom-metric)).
 
 - Если вы создаете [оповещения метрик в журналах](./alerts-metric-logs.md), убедитесь, что включены соответствующие зависимости. Ознакомьтесь с [примером шаблона](./alerts-metric-logs.md#resource-template-for-metric-alerts-for-logs).
 
@@ -253,6 +253,6 @@ Azure Monitor оповещения заблаговременно уведомл
     - Так как метрики **транзакций** и **SuccessE2ELatency** поддерживают измерение **ApiName** , мне нужно обновить оба условия, и оба они задают измерение **ApiName** со значением *"BLOB"* .
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Общие сведения об устранении неполадок с предупреждениями и уведомлениями см. [в разделе Устранение неполадок в Azure Monitor оповещениях](alerts-troubleshoot.md).

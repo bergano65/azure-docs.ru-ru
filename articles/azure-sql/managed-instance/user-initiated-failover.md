@@ -10,12 +10,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: douglas, carlrab, sstein
 ms.date: 08/12/2020
-ms.openlocfilehash: faef8c29b2a5e75745e36c5d826b4feee2d60a98
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: e1a5cb4a5ce02954a14a6936ec14379701354a79
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/13/2020
-ms.locfileid: "88169146"
+ms.locfileid: "88191202"
 ---
 # <a name="user-initiated-manual-failover-on-sql-managed-instance"></a>Ручная отработка отказа, инициированная пользователем в SQL Управляемый экземпляр
 
@@ -31,6 +31,9 @@ ms.locfileid: "88169146"
 - Проверка влияния отработки отказа на существующие сеансы базы данных
 - Проверьте, изменяет ли отработка отказа сквозную производительность из-за изменений в сетевой задержке.
 - В некоторых случаях снижения производительности запросов отработка отказа вручную может помочь устранить проблемы с производительностью.
+
+> [!NOTE]
+> Обеспечение отказоустойчивости приложений до развертывания в рабочей среде поможет снизить риск сбоев приложений в рабочей среде и повлиять на доступность приложений для ваших клиентов.
 
 ## <a name="initiate-manual-failover-on-sql-managed-instance"></a>Запуск отработки отказа вручную на Управляемый экземпляр SQL
 
@@ -129,7 +132,7 @@ SELECT DISTINCT replication_endpoint_url, fabric_replica_role_desc FROM sys.dm_h
 > - Для экземпляров BC должен существовать кворум реплик, чтобы запрос отработки отказа был принят.
 > - Для экземпляров BC невозможно указать, на какой вторичной реплике для запуска отработки отказа будет выполняться операция.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше о высокой доступности управляемого экземпляра [Высокая доступность для управляемый экземпляр Azure SQL](../database/high-availability-sla.md).
 - Общие сведения см. в статье [что такое Azure SQL управляемый экземпляр?](sql-managed-instance-paas-overview.md).

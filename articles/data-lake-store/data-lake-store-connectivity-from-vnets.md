@@ -1,6 +1,6 @@
 ---
 title: Подключение к Azure Data Lake Storage 1-го поколения из виртуальных сетей | Документация Майкрософт
-description: Сведения о подключении к Azure Data Lake Storage 1-го поколения из виртуальных сетей Azure.
+description: Узнайте, как включить доступ к Azure Data Lake Storage 1-го поколения из виртуальных машин Azure, имеющих ограниченный доступ к ресурсам.
 services: data-lake-store,data-catalog
 documentationcenter: ''
 author: esung22
@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 01/31/2018
 ms.author: elsung
-ms.openlocfilehash: 5793e1659f18818b85748dc0f2979895318ea913
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 0fa836ea31793d9177ad6e838ddea1516bf51733
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85985413"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88191403"
 ---
 # <a name="access-azure-data-lake-storage-gen1-from-vms-within-an-azure-vnet"></a>Доступ к Azure Data Lake Storage 1-го поколения с виртуальных машин в виртуальной сети Azure
 Azure Data Lake Storage 1-го поколения — это служба PaaS, которая использует общедоступные IP-адреса в Интернете. Любой сервер с доступом к общедоступному Интернету, как правило, может подключаться к конечным точкам Azure Data Lake Storage 1-го поколения. По умолчанию все виртуальные машины, которые находятся в виртуальных сетях Azure, могут подключиться к Интернету, а значит и получить доступ к Azure Data Lake Storage 1-го поколения. Тем не менее для виртуальных машин в виртуальной сети можно настроить ограничение доступа к Интернету. Такие виртуальные машины также не смогут подключаться к Azure Data Lake Storage 1-го поколения. Блокировать доступ к общедоступному Интернету для виртуальных машин в виртуальных сетях Azure можно с помощью одного из следующих методов.
@@ -54,7 +54,7 @@ Aliases:  mydatastore.azuredatalakestore.net
 ### <a name="enabling-connectivity-from-vms-restricted-by-using-expressroute"></a>Настройка подключения из виртуальных машин, ограниченных с помощью ExpressRoute
 Если настроен канал ExpressRoute, локальные серверы могут получать доступ к Data Lake Storage 1-го поколения через общедоступный пиринг. Дополнительные сведения о настройке ExpressRoute для общедоступного пиринга см. в статье [Вопросы и ответы по ExpressRoute](../expressroute/expressroute-faqs.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
 * [Обеспечение безопасности в Azure Data Lake Storage 1-го поколения](data-lake-store-security-overview.md)
 

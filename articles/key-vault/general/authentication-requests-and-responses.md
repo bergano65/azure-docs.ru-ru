@@ -1,6 +1,6 @@
 ---
 title: Аутентификация, запросы и ответы
-description: Проверка подлинности в AD для использования Key Vault
+description: Узнайте, как Azure Key Vault использует запросы и ответы в формате JSON и необходимую проверку подлинности для использования хранилища ключей.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 33e3bc13e67e268b82bf517033b4b1c7c51c361f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2b4c8ad666efa32d98e78a0bc2544d0f8851be5e
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81430894"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88191797"
 ---
 # <a name="authentication-requests-and-responses"></a>Аутентификация, запросы и ответы
 
@@ -88,7 +88,7 @@ Azure Key Vault поддерживает запросы и ответы в фо�
 
 ```  
 
-## <a name="authentication"></a>Проверка подлинности  
+## <a name="authentication"></a>Аутентификация  
  Все запросы к Azure Key Vault должны пройти проверку подлинности. Azure Key Vault поддерживает маркеры доступа Azure Active Directory, которые могут быть получены с помощью OAuth2 [[RFC6749](https://tools.ietf.org/html/rfc6749)]. 
  
  Дополнительные сведения о регистрации приложения и выполнении проверки подлинности для использования Azure Key Vault см. в статье о [регистрации клиентского приложения в Azure AD](https://docs.microsoft.com/rest/api/azure/index#register-your-client-application-with-azure-ad).

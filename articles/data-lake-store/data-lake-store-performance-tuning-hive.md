@@ -1,17 +1,17 @@
 ---
 title: Настройка производительности — Hive на Azure Data Lake Storage 1-го поколения
-description: Рекомендации по настройке производительности для Hive в HdInsight и Azure Data Lake Storage 1-го поколения.
+description: Сведения о настройке производительности для Hive в HdInsight и Azure Data Lake Storage 1-го поколения. Для запросов с интенсивным вводом-выводом настройте Hive, чтобы повысить производительность.
 author: stewu
 ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 12/19/2016
 ms.author: stewu
-ms.openlocfilehash: 9e05773955fb79007a5d5899babf8680c69aa654
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: d10b1811257e14238cb04a79ff184cee57aab471
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281724"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88189955"
 ---
 # <a name="performance-tuning-guidance-for-hive-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для Hive в HDInsight и Azure Data Lake Storage 1-го поколения
 

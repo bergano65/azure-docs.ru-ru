@@ -1,18 +1,18 @@
 ---
 title: 'ExpressRoute: Перемещение цепей из классической модели в Azure Resource Manager'
-description: Сведения о связывании классической модели и модели развертывания с помощью Resource Manager.
+description: Узнайте о том, что означает перемещение канала Azure ExpressRoute из классической модели в модель развертывания Azure Resource Manager.
 services: expressroute
 author: ganesr
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 12/07/2018
 ms.author: ganesr
-ms.openlocfilehash: b6fb087e0faecc51b44b5b796fed29756356e669
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2fc3a72ff9d6ec4dbd2eaa33e4af3054ad2a57b9
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738826"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192391"
 ---
 # <a name="moving-expressroute-circuits-from-the-classic-to-the-resource-manager-deployment-model"></a>Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager
 В этой статье описывается перемещение канала Azure ExpressRoute из классической модели развертывания в модель развертывания с помощью Azure Resource Manager.
@@ -87,7 +87,7 @@ ms.locfileid: "84738826"
 * Управление жизненным циклом канала ExpressRoute в классической модели развертывания.
 * Управление доступом на основе ролей (RBAC) в классической модели развертывания. Элементы управления RBAC невозможно использовать для канала в классической модели развертывания. Любой администратор или соадминистратор подписки может связать виртуальную сеть с каналом или удалить связь между ними.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 Следуйте указаниям в статье [Перемещение каналов ExpressRoute из классической модели развертывания в модель Resource Manager](expressroute-howto-move-arm.md).
 
 ## <a name="next-steps"></a>Дальнейшие шаги
