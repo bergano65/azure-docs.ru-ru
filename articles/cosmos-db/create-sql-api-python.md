@@ -52,7 +52,7 @@ ms.locfileid: "87872945"
     
     Справа отобразится область **Добавить контейнер**. Возможно, вам придется прокрутить экран вправо, чтобы увидеть ее.
 
-    :::image type="content" source="./media/create-sql-api-python/azure-cosmosdb-data-explorer.png" alt-text="Панель "Добавить контейнер" в обозревателе данных на портале Azure":::
+    :::image type="content" source="./media/create-sql-api-python/azure-cosmosdb-data-explorer.png" alt-text="Панель Добавить контейнер в обозревателе данных на портале Azure":::
 
 2. На странице **Добавить контейнер** введите параметры для нового контейнера.
 
