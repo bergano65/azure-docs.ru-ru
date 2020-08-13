@@ -12,17 +12,17 @@ ms.date: 11/26/2019
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: b899e1d651f41c9c1e1e54af1b5ec19162dfc28d
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: b4de8a5e96466ea324475030df1f00eb6bb5cf1a
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81380062"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118294"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-from-an-android-application"></a>Руководство по Вход пользователей и вызов Microsoft Graph из приложения Android 
 
 >[!NOTE]
->В этом учебнике представлены упрощенные примеры работы с MSAL для Android. Для простоты здесь используется режим одной учетной записи. Вы также можете открыть репозиторий и клонировать [предварительно настроенный пример приложения](https://github.com/Azure-Samples/ms-identity-android-java/) для изучения более сложных сценариев. Дополнительные сведения о примере приложения, конфигурации и регистрации вы найдете в [этом кратком руководстве](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v2-android). 
+>В этом учебнике представлены упрощенные примеры работы с MSAL для Android. Для простоты здесь используется режим одной учетной записи. Вы также можете открыть репозиторий и клонировать [предварительно настроенный пример приложения](https://github.com/Azure-Samples/ms-identity-android-java/) для изучения более сложных сценариев. Дополнительные сведения о примере приложения, конфигурации и регистрации вы найдете в [этом кратком руководстве](./quickstart-v2-android.md). 
 
 Из этого руководства вы узнаете, как интегрировать приложение Android с платформой удостоверений Майкрософт с помощью библиотеки проверки подлинности Майкрософт для Android. Вы потренируетесь обрабатывать вход и выход пользователя, получать маркер доступа для вызова API Microsoft Graph и выполнять запрос к API Graph. 
 
@@ -117,7 +117,7 @@ ms.locfileid: "81380062"
    ```
     
    >[!NOTE]
-   >В этом учебнике настройка приложения демонстрируется только в режиме одной учетной записи. В документации вы найдете дополнительные сведения [о режимах одной и нескольких учетных записей](https://docs.microsoft.com/azure/active-directory/develop/single-multi-account) и [о настройке приложения](https://docs.microsoft.com/azure/active-directory/develop/msal-configuration).
+   >В этом учебнике настройка приложения демонстрируется только в режиме одной учетной записи. В документации вы найдете дополнительные сведения [о режимах одной и нескольких учетных записей](./single-multi-account.md) и [о настройке приложения](./msal-configuration.md).
    
 4. В **app** > **src** > **main** > **AndroidManifest.xml** добавьте действие `BrowserTabActivity` в код приложения, как показано ниже. Эта запись позволяет корпорации Майкрософт выполнять обратный вызов приложения после завершения проверки подлинности:
 
@@ -582,4 +582,4 @@ private void performOperationOnSignOut() {
 
 ## <a name="get-help"></a>Получить справку
 
-Если у вас возникли вопросы касательно этого руководства или платформы удостоверений Майкрософт, см. статью, посвященную [справке и поддержке](https://docs.microsoft.com/azure/active-directory/develop/developer-support-help-options).
+Если у вас возникли вопросы касательно этого руководства или платформы удостоверений Майкрософт, см. статью, посвященную [справке и поддержке](./developer-support-help-options.md).

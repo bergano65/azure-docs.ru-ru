@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java, devx-track-java
-ms.openlocfilehash: 1474a8ad73f7deb9a7c321f7d7994a7b2b73d624
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 10ae1c76d48c1cedbb915fec66177ac3612feea0
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87312407"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115226"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт
 
@@ -212,7 +212,7 @@ ms.locfileid: "87312407"
 
 
 > [!IMPORTANT]
-> В этом кратком руководстве приложение использует секрет клиента для собственной идентификации в качестве конфиденциального клиента. Так как секрет клиента добавляется в качестве обычного текста в файлы проекта, по соображениям безопасности рекомендуется использовать сертификат вместо секрета клиента, прежде чем использовать приложение в качестве рабочего. Дополнительные сведения о том, как использовать сертификат, см. в статье [Учетные данные сертификата для аутентификации приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-certificate-credentials).
+> В этом кратком руководстве приложение использует секрет клиента для собственной идентификации в качестве конфиденциального клиента. Так как секрет клиента добавляется в качестве обычного текста в файлы проекта, по соображениям безопасности рекомендуется использовать сертификат вместо секрета клиента, прежде чем использовать приложение в качестве рабочего. Дополнительные сведения о том, как использовать сертификат, см. в статье [Учетные данные сертификата для аутентификации приложения](./active-directory-certificate-credentials.md).
 
 ## <a name="more-information"></a>Дополнительные сведения
 
@@ -254,11 +254,11 @@ import com.microsoft.aad.msal4j.*;
 Дополнительные сведения о разрешениях и согласии:
 
 > [!div class="nextstepaction"]
-> [Разрешения и согласие](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent)
+> [Разрешения и согласие](./v2-permissions-and-consent.md)
 
 Дополнительные сведения о потоке авторизации для этого сценария, см. в разделе "Поток кода авторизации Oauth 2.0":
 
 > [!div class="nextstepaction"]
-> [Поток кода авторизации Oauth](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-auth-code-flow)
+> [Поток кода авторизации Oauth](./v2-oauth2-auth-code-flow.md)
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

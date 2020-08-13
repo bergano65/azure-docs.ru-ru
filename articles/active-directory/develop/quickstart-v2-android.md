@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/15/2019
 ms.author: marsma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:Android
-ms.openlocfilehash: 9afb5b7602b220c25d919f8fe0773d5cfa143d89
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: a46cd1b916edeae8a24fb997db46e5a0651567cb
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80991200"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115277"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из приложения Android
 
@@ -483,7 +483,7 @@ mMultipleAccountApp.removeAccount(accountList.get(accountListSpinner.getSelected
 Ознакомьтесь с пошаговым руководством [Вход пользователей и вызов Microsoft Graph из приложения Android](tutorial-v2-android.md). В нем приведены сведения о создании приложения Android, которое получает маркер доступа и с его помощью вызывает API Microsoft Graph.
 
 > [!div class="nextstepaction"]
-> [Вход пользователей и вызов API Microsoft Graph из приложения Android](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-android)
+> [Вход пользователей и вызов API Microsoft Graph из приложения Android](./tutorial-v2-android.md)
 
 ### <a name="msal-for-android-library-wiki"></a>MSAL для вики-сайта библиотеки Android
 

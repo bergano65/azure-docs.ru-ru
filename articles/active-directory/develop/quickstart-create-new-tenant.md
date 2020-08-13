@@ -12,12 +12,12 @@ ms.date: 03/12/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 19c94a4807b8958fa8b1ec46ccae660c7cbe92de
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: df873e49e1bc581a32bcb4e4b40b2b24db98cee5
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86256702"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88120819"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Краткое руководство. Настройка клиента
 
@@ -72,5 +72,5 @@ ms.locfileid: "86256702"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Зарегистрируйте приложение](quickstart-register-app.md) и выполните интеграцию с платформой идентификации Майкрософт. 
-* Ознакомьтесь с [основами аутентификации](authentication-scenarios.md).
+* Ознакомьтесь с [основами аутентификации](./authentication-vs-authorization.md).
 * Для получения сведений о том, как подписки Azure связаны с клиентом Azure AD см. статью [Привязка или добавление подписки Azure к клиенту Azure Active Directory](../fundamentals/active-directory-how-subscriptions-associated-directory.md).

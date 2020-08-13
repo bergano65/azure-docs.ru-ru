@@ -12,12 +12,12 @@ ms.date: 09/24/2019
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.openlocfilehash: bd17c20707c3bf1a153e9209cd7e2ec279de0501
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 39062396e0076af5901f2fc7d76f5c989e2ccc3a
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85554057"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115260"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Краткое руководство. Вход пользователей и вызов Microsoft API Graph из приложения iOS или macOS
 
@@ -101,12 +101,12 @@ ms.locfileid: "85554057"
 >    ```swift
 >    let kClientID = "Enter_the_Application_Id_Here"
 >    ```
-> 1. Если вы создаете приложение для [национальных облаков Azure AD](https://docs.microsoft.com/graph/deployments#app-registration-and-token-service-root-endpoints), замените строку, начинающуюся с let kGraphEndpoint и let kAuthority соответствующими конечными точками. Для предоставления глобального доступа используйте значения по умолчанию:
+> 1. Если вы создаете приложение для [национальных облаков Azure AD](/graph/deployments#app-registration-and-token-service-root-endpoints), замените строку, начинающуюся с let kGraphEndpoint и let kAuthority соответствующими конечными точками. Для предоставления глобального доступа используйте значения по умолчанию:
 >     ```swift
 >     let kGraphEndpoint = "https://graph.microsoft.com/"
 >     let kAuthority = "https://login.microsoftonline.com/common"
 >     ```
-> 1. См. описание [других конечных точек](https://docs.microsoft.com/graph/deployments#app-registration-and-token-service-root-endpoints). Например, чтобы выполнить процесс для Azure AD Germany, используйте следующее:
+> 1. См. описание [других конечных точек](/graph/deployments#app-registration-and-token-service-root-endpoints). Например, чтобы выполнить процесс для Azure AD Germany, используйте следующее:
 >     ```swift
 >     let kGraphEndpoint = "https://graph.microsoft.de/"
 >     let kAuthority = "https://login.microsoftonline.de/common"
@@ -269,6 +269,6 @@ self.applicationContext!.getCurrentAccount(with: nil) { (currentAccount, previou
 ### <a name="learn-how-to-create-the-application-used-in-this-quickstart"></a>Узнайте, как создавать приложения, используемые в этом кратком руководстве.
 
 > [!div class="nextstepaction"]
-> [Руководство по вызову API Graph для iOS и macOS](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-ios)
+> [Руководство по вызову API Graph для iOS и macOS](./tutorial-v2-ios.md)
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

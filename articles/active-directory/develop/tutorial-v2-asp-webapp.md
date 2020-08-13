@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: c0d8d2b009194b58c76dbd0a171f701f90df4086
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f62f6702b36915c6a6e1350072982e231cd9c07e
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87058293"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118235"
 ---
 # <a name="add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Реализация входа в веб-приложение ASP.NET с использованием учетной записи Майкрософт.
 
@@ -264,7 +264,7 @@ ms.locfileid: "87058293"
     ```
 
 ### <a name="more-information"></a>Дополнительные сведения
-С помощью этой страницы можно добавить кнопку входа в формате SVG с черным фоном:<br/>![Войдите с помощью учетной записи Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-use/aspnetsigninbuttonsample.png)<br/> См. расширенный список кнопок входа в [рекомендациях по использованию фирменной символики](https://docs.microsoft.com/azure/active-directory/develop/active-directory-branding-guidelines "Рекомендации по фирменной символике").
+С помощью этой страницы можно добавить кнопку входа в формате SVG с черным фоном:<br/>![Войдите с помощью учетной записи Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-use/aspnetsigninbuttonsample.png)<br/> См. расширенный список кнопок входа в [рекомендациях по использованию фирменной символики](./howto-add-branding-in-azure-ad-apps.md "Рекомендации по фирменной символике").
 
 ## <a name="add-a-controller-to-display-users-claims"></a>Добавление контроллера для отображения утверждений пользователя
 Этот контроллер демонстрирует использование атрибута `[Authorize]` для защиты. Этот атрибут разрешает доступ к контроллеру только тем пользователям, которые прошли аутентификацию. В приведенном ниже коде этот атрибут используется для отображения утверждений пользователя, полученных при выполнении входа:
@@ -403,7 +403,7 @@ ms.locfileid: "87058293"
 - Разработчик приложения добавил дополнительные разрешения, для которых требуется **согласие администратора**.
 - Клиент настроен (в разделе **Корпоративные приложения -> Параметры пользователя**) так, что пользователи не могут разрешать приложениям доступ к корпоративным данным от своего имени.
 
-См. сведения о [разрешениях и согласии для конечной точки платформы удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent).
+См. сведения о [разрешениях и согласии для конечной точки платформы удостоверений Майкрософт](./v2-permissions-and-consent.md).
 
 ### <a name="view-application-results"></a>Просмотр результатов приложения
 
@@ -424,7 +424,7 @@ ms.locfileid: "87058293"
 |**Тема** |Тема |Строка, уникально идентифицирующая пользователя в Интернете.|
 |**Идентификатор клиента** |Guid | **Уникальный идентификатор**, который представляет организацию Azure AD пользователя.|
 
-Кроме того, вы увидите таблицу со всеми утверждениями, которые включены в запрос на аутентификацию. Дополнительные сведения см. в статье [Microsoft identity platform ID tokens](https://docs.microsoft.com/azure/active-directory/develop/active-directory-token-and-claims) (Токены идентификаторов платформы удостоверений Майкрософт).
+Кроме того, вы увидите таблицу со всеми утверждениями, которые включены в запрос на аутентификацию. Дополнительные сведения см. в статье [Microsoft identity platform ID tokens](./id-tokens.md) (Токены идентификаторов платформы удостоверений Майкрософт).
 
 ### <a name="test-access-to-a-method-that-has-an-authorize-attribute-optional"></a>Проверка доступа к методу, включающему атрибут Authorize (необязательно)
 
@@ -484,6 +484,6 @@ GlobalFilters.Filters.Add(new AuthorizeAttribute());
 Узнайте, как создавать веб-приложения, вызывающие Microsoft Graph:
 
 > [!div class="nextstepaction"]
-> [Руководство по Microsoft Graph для ASP.NET](https://docs.microsoft.com/graph/tutorials/aspnet)
+> [Руководство по Microsoft Graph для ASP.NET](/graph/tutorials/aspnet)
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

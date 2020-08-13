@@ -12,12 +12,12 @@ ms.date: 07/09/2020
 ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
 ms.custom: identityplatformtop40
-ms.openlocfilehash: 566893a9babc3f771e3198970e0a5ae97592e322
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: e34eeeca3b17087fb5bd43ae353e43b5ab355831
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86231681"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88119561"
 ---
 # <a name="microsoft-identity-platform-overview"></a>Общие сведения о платформе удостоверений Майкрософт
 
@@ -59,7 +59,7 @@ ms.locfileid: "86231681"
 
 Узнайте, как основные понятия, касающиеся проверки подлинности и Azure AD, применяются на платформе удостоверений Майкрософт, из этой рекомендуемой подборки статей:
 
-- [Основные сведения об аутентификации](authentication-scenarios.md)
+- [Основные сведения об аутентификации](./authentication-vs-authorization.md)
 - [Приложения и субъекты-службы](app-objects-and-service-principals.md)
 - [Аудитории](v2-supported-account-types.md)
 - [Разрешения и согласие](v2-permissions-and-consent.md)
@@ -71,7 +71,7 @@ ms.locfileid: "86231681"
 
 [Azure AD B2C.](../../active-directory-b2c/overview.md) Создавайте приложения для клиентов, в которые можно входить с помощью учетных записей социальных сетей, например Facebook или Google, либо с помощью адреса электронной почты и пароля.
 
-[Azure AD B2B.](../b2b/what-is-b2b.md) Приглашайте внешних пользователей в свой клиент Azure AD в качестве "гостевых" пользователей и назначайте им разрешения для авторизации, предоставив им возможность использовать для проверки подлинности существующие учетные данные.
+[Azure AD B2B.](../external-identities/what-is-b2b.md) Приглашайте внешних пользователей в свой клиент Azure AD в качестве "гостевых" пользователей и назначайте им разрешения для авторизации, предоставив им возможность использовать для проверки подлинности существующие учетные данные.
 
 > [!TIP]
 > Ищете документацию по *платформе для разработчиков Azure Active Directory (версия 1.0)* ? См. [общие сведения об Azure Active Directory (версия 1.0) для разработчиков](../azuread-dev/v1-overview.md).

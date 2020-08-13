@@ -14,12 +14,12 @@ ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: 822390200b7a94f2bbf8aac56d26812f36b5f12a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1efae6563b88f82318f9b8358d255b234c6cb7fd
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85387615"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88116212"
 ---
 # <a name="azure-active-directory-code-samples-v10-endpoint"></a>Примеры кода Azure Active Directory (конечная точка версии 1.0)
 
@@ -124,4 +124,4 @@ ms.locfileid: "85387615"
 
 - [Руководство разработчика по Azure Active Directory](v1-overview.md)
 - [Библиотеки аутентификации Azure Active Directory](active-directory-authentication-libraries.md)
-- [Основные понятия и справочные материалы по API Microsoft Graph](https://docs.microsoft.com/graph/use-the-api)
+- [Основные понятия и справочные материалы по API Microsoft Graph](/graph/use-the-api)

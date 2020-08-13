@@ -11,7 +11,11 @@
           expanded: true
           items:
             - name: Настройка (портал Azure)
-              href: data-box-quickstart-portal.md
+              items:
+                - name: Для импорта
+                  href: data-box-quickstart-portal.md
+                - name: Для экспорта
+                  href: data-box-quickstart-export.md
         - name: Учебники
           items:
             - name: Импорт данных в Azure

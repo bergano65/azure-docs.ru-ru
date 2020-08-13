@@ -139,6 +139,8 @@
               href: howto-monitor-application-health.md
             - name: Сведения о приложении
               href: howto-get-app-info.md
+            - name: Смена сертификатов X.509
+              href: how-to-roll-x509-certificates.md
         - name: Управление с помощью других решений
           items:
             - name: Управление с помощью портала Azure

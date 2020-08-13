@@ -12,18 +12,18 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 02652243b3c25c0a02e325c8b7b1d7e7c226abcd
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 461f05b90b79852194d657a5dcbc3ba7583cff8d
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87311948"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115192"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa-using-the-auth-code-flow"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript с помощью потока кода авторизации
 
 В этом кратком руководстве вы выполните пример кода, который демонстрирует, как одностраничное приложение (SPA) JavaScript может выполнять вход с помощью личных, рабочих и учебных учетных записей с помощью потока кода авторизации. Также в этом примере кода демонстрируется получение маркера доступа для вызова веб-API, в данном случае API Microsoft Graph. Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).
 
-В этом кратком руководстве используется MSAL.js версии 2.0 с потоком кода авторизации. Есть аналогичное руководство для MSAL.js версии 1.0 с неявным потоком: [Краткое руководство. Вход пользователей в одностраничных приложениях JavaScript](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v2-javascript).
+В этом кратком руководстве используется MSAL.js версии 2.0 с потоком кода авторизации. Есть аналогичное руководство для MSAL.js версии 1.0 с неявным потоком: [Краткое руководство. Вход пользователей в одностраничных приложениях JavaScript](./quickstart-v2-javascript.md).
 
 [!INCLUDE [MSAL.js 2.0 and Azure AD B2C temporary incompatibility notice](../../../includes/msal-b2c-cors-compatibility-notice.md)]
 
@@ -152,7 +152,7 @@ ms.locfileid: "87311948"
 >
 > [!div renderon="docs"]
 >
-> `Enter_the_Graph_Endpoint_Here` обозначает конечную точку, к которой будут направляться вызовы API. Для основной (глобальной) службы API Microsoft Graph введите значение `https://graph.microsoft.com/` (включая замыкающую косую черту). Дополнительные сведения о службе Microsoft Graph в национальных облаках см. [здесь](https://docs.microsoft.com/graph/deployments).
+> `Enter_the_Graph_Endpoint_Here` обозначает конечную точку, к которой будут направляться вызовы API. Для основной (глобальной) службы API Microsoft Graph введите значение `https://graph.microsoft.com/` (включая замыкающую косую черту). Дополнительные сведения о службе Microsoft Graph в национальных облаках см. [здесь](/graph/deployments).
 >
 > Если вы используете основное (глобальное) облако Azure, значения `graphMeEndpoint` и `graphMailEndpoint` в файле *graphConfig.js* должны выглядеть примерно так:
 >
@@ -202,4 +202,4 @@ npm install @azure/msal-browser
 Более подробное пошаговое руководство по созданию приложения для этого краткого руководства см. в следующем учебнике:
 
 > [!div class="nextstepaction"]
-> [Руководство по входу и вызовам в Microsoft Graph >](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-javascript-auth-code)
+> [Руководство по входу и вызовам в Microsoft Graph >](./tutorial-v2-javascript-auth-code.md)

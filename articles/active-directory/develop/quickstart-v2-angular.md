@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 03/18/2020
 ms.author: janutter
-ms.openlocfilehash: a7553eea8941b93e589f38f8229ef35b70361f8e
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: bf921ce4ce3ad65f0787ccab2f0a064da8973af1
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87129191"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115243"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-an-angular-single-page-application"></a>Краткое руководство. Вход пользователей и получение маркера доступа в одностраничное приложение Angular
 
@@ -47,7 +47,7 @@ ms.locfileid: "87129191"
 >
 > 1. Войдите на [портал Azure](https://portal.azure.com).
 > 1. Если ваша учетная запись предоставляет доступ к нескольким клиентам, в правом верхнем углу щелкните свою учетную запись и выберите для текущего сеанса работы нужный клиент Azure AD.
-> 1. Следуйте инструкциям, чтобы [зарегистрировать одностраничное приложение](https://docs.microsoft.com/azure/active-directory/develop/scenario-spa-app-registration) на портале Azure.
+> 1. Следуйте инструкциям, чтобы [зарегистрировать одностраничное приложение](./scenario-spa-app-registration.md) на портале Azure.
 > 1. Добавьте новую платформу в область **Проверка подлинности** регистрации приложения и зарегистрируйте URI перенаправления: `http://localhost:4200/`.
 > 1. В этом кратком руководстве используется [поток неявного предоставления разрешений](v2-oauth2-implicit-grant-flow.md). Выберите параметры **неявного предоставления разрешений** для **маркеров идентификаторов** и **маркеров доступа**. Маркеры идентификатора и маркеры доступа необходимы, так как это приложение поддерживает вход пользователей и вызов API.
 
@@ -99,7 +99,7 @@ ms.locfileid: "87129191"
 >|Имя значения|Описание|
 >|---------|---------|
 >|Enter_the_Application_Id_Here|Это значение **идентификатора приложения (клиента)** со страницы **обзора** регистрации приложения. |
->|Enter_the_Cloud_Instance_Id_Here|Это экземпляр облака Azure. Для основного или глобального облака Azure введите **https://login.microsoftonline.com** . Сведения для национальных облаков (например, Китая) см. в [этой статье](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud).|
+>|Enter_the_Cloud_Instance_Id_Here|Это экземпляр облака Azure. Для основного или глобального облака Azure введите **https://login.microsoftonline.com** . Сведения для национальных облаков (например, Китая) см. в [этой статье](./authentication-national-cloud.md).|
 >|Enter_the_Tenant_Info_Here| Задайте один из следующих параметров: Если приложение поддерживает *учетные записи только в этом каталоге организации*, замените это значение идентификатором каталога (клиента) или именем клиента (например, **contoso.microsoft.com**). Если ваше приложение поддерживает *учетные записи в любом каталоге организации*, замените это значение на **organizations**. Если приложение поддерживает *учетные записи в любом каталоге организации и личные учетные записи Майкрософт*, замените это значение на **common**. Чтобы ограничить поддержку только *личными учетными записями Майкрософт*, замените это значение на **consumers**. |
 >|Enter_the_Redirect_Uri_Here|Замените на **http://localhost:4200** .|
 >|cacheLocation  | (Необязательно) Этот параметр настраивает хранилище браузера для состояния проверки подлинности. По умолчанию используется **sessionStorage**.   |
@@ -142,5 +142,4 @@ ms.locfileid: "87129191"
 Далее в учебнике по Angular вы узнаете, как выполнить для пользователя вход в систему и получить маркеры:
 
 > [!div class="nextstepaction"]
-> [Учебник по Angular](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-angular)
-
+> [Учебник по Angular](./tutorial-v2-angular.md)

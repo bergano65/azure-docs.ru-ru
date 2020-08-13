@@ -12,12 +12,12 @@ ms.date: 06/16/2020
 ms.author: jmprieur
 ms.reviewer: oldalton
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 0f712dbee6218ce8e012639b82a3a2ee7c177bb3
-ms.sourcegitcommit: 34eb5e4d303800d3b31b00b361523ccd9eeff0ab
+ms.openlocfilehash: 61a3884ce4d1075dbcac61a0c202c3a393d2d943
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84904768"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118150"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-from-an-ios-or-macos-app"></a>Вход пользователей и вызов Microsoft Graph из приложения iOS или macOS
 
@@ -149,7 +149,7 @@ var webViewParameters : MSALWebviewParameters?
 var currentAccount: MSALAccount?
 ```
 
-Единственное значение выше, которое необходимо изменить, — это значение, присваиваемое `kClientID` в качестве [идентификатора приложения](https://docs.microsoft.com/azure/active-directory/develop/developer-glossary#application-id-client-id). Это значение является частью данных конфигурации MSAL, сохраненного на шаге в начале этого руководства для регистрации приложения на портале Azure.
+Единственное значение выше, которое необходимо изменить, — это значение, присваиваемое `kClientID` в качестве [идентификатора приложения](./developer-glossary.md#application-id-client-id). Это значение является частью данных конфигурации MSAL, сохраненного на шаге в начале этого руководства для регистрации приложения на портале Azure.
 
 ## <a name="configure-xcode-project-settings"></a>Настройка параметров проекта Xcode
 
@@ -842,4 +842,4 @@ func acquireTokenInteractively() {
 
 ## <a name="get-help"></a>Получить справку
 
-Если у вас возникли вопросы касательно этого руководства или платформы удостоверений Майкрософт, см. статью, посвященную [справке и поддержке](https://docs.microsoft.com/azure/active-directory/develop/developer-support-help-options).
+Если у вас возникли вопросы касательно этого руководства или платформы удостоверений Майкрософт, см. статью, посвященную [справке и поддержке](./developer-support-help-options.md).

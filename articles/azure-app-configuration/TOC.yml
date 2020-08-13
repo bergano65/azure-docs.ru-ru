@@ -109,6 +109,8 @@
       href: howto-labels-aspnet-core.md
     - name: Импорт и экспорт данных конфигурации
       href: howto-import-export-data.md
+    - name: Использование свойства JSON content-type для пар "ключ-значение"
+      href: howto-leverage-json-content-type.md
     - name: Маршрутизация событий в пользовательскую конечную точку
       href: howto-app-configuration-event.md
     - name: Автоматическое резервное копирование хранилища конфигурации

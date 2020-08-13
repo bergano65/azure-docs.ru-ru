@@ -12,12 +12,12 @@ ms.date: 1/15/2020
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: b2f74d2d441007f195abd38ca26ca7fa73605318
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: f49a5703b19a76095c8eafe358742b442725d3d0
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80886438"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118252"
 ---
 # <a name="tutorial-use-shared-device-mode-in-your-android-application"></a>Руководство по Использование режима общего устройства в приложении Android
 
@@ -28,11 +28,11 @@ ms.locfileid: "80886438"
 
 ## <a name="developer-guide"></a>Руководство разработчика
 
-Это руководство содержит рекомендации для разработчиков по реализации режима общего устройства в приложении Android с помощью библиотеки проверки подлинности Майкрософт (MSAL). Сведения о том, как интегрировать MSAL с приложением Android, войти в систему, вызвать Microsoft Graph и выйти из учетной записи пользователя, см. в [руководстве по MSAL Android](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-android).
+Это руководство содержит рекомендации для разработчиков по реализации режима общего устройства в приложении Android с помощью библиотеки проверки подлинности Майкрософт (MSAL). Сведения о том, как интегрировать MSAL с приложением Android, войти в систему, вызвать Microsoft Graph и выйти из учетной записи пользователя, см. в [руководстве по MSAL Android](./tutorial-v2-android.md).
 
 ### <a name="download-the-sample"></a>Скачивание примера приложения
 
-Клонируйте [пример приложения](https://github.com/Azure-Samples/ms-identity-android-java/) из GitHub. Этот пример поддерживает работу в [режиме одной или нескольких учетных записей](https://docs.microsoft.com/azure/active-directory/develop/single-multi-account).
+Клонируйте [пример приложения](https://github.com/Azure-Samples/ms-identity-android-java/) из GitHub. Этот пример поддерживает работу в [режиме одной или нескольких учетных записей](./single-multi-account.md).
 
 ### <a name="add-the-msal-sdk-to-your-local-maven-repository"></a>Добавление пакета SDK для MSAL в локальный репозиторий Maven
 
@@ -46,7 +46,7 @@ dependencies{
 
 ### <a name="configure-your-app-to-use-shared-device-mode"></a>Настройка приложения для использования режима общего устройства
 
-Дополнительные сведения о настройках в файле конфигурации см. в [документации по настройке](https://docs.microsoft.com/azure/active-directory/develop/msal-configuration).
+Дополнительные сведения о настройках в файле конфигурации см. в [документации по настройке](./msal-configuration.md).
 
 В файле конфигурации MSAL укажите для `"shared_device_mode_supported"` значение `true`.
 
@@ -204,7 +204,7 @@ private void onSignOutClicked()
 
 Сначала зарегистрируйте приложение в клиенте организации. Затем предоставьте в файле auth_config.json указанные далее значения, чтобы приложение выполнялось правильно.
 
-Дополнительные сведения об этом см. в статье о [регистрации приложения](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-android#register-your-application).
+Дополнительные сведения об этом см. в статье о [регистрации приложения](./tutorial-v2-android.md#register-your-application).
 
 > [!NOTE]
 > При регистрации приложения используйте краткое руководство, которое предоставляется на экране слева, а затем выберите **Android**. Вы перейдете к странице, где будет предложено ввести **имя пакета** и **хэш подписи** для приложения. Эти параметры очень важны для того, чтобы конфигурация приложения работала нормально. Затем вы получите объект конфигурации, который можно использовать для приложения. Его нужно скопировать и вставить в файл auth_config.json.
