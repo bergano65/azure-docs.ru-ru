@@ -24,7 +24,7 @@
       href: tutorial-backup-vm-at-scale.md
     - name: Резервное копирование виртуальных машин Azure с помощью PowerShell
       href: tutorial-backup-azure-vm.md
-    - name: Восстановление диска
+    - name: "Восстановление виртуальной машины с помощью Azure\_CLI"
       href: tutorial-restore-disk.md
     - name: Восстановление отдельных файлов
       href: tutorial-restore-files.md

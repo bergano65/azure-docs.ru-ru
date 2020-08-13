@@ -1,10 +1,11 @@
-- name: Документация по Каталогу данных
+- name: Документация по службе "Каталог данных"
   href: index.yml
 - name: Обзор
   items:
     - name: Что такое Каталог данных?
       href: overview.md
 - name: Краткие руководства
+  expanded: true
   items:
     - name: Создание Каталога данных Azure
       href: data-catalog-get-started.md
@@ -20,11 +21,9 @@
       href: data-catalog-dsr.md
     - name: Внедрение Каталога данных Azure
       href: data-catalog-adopting-data-catalog.md
-    - name: Предварительные требования
-      href: data-catalog-prerequisites.md
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: data-catalog-frequently-asked-questions.md
-- name: Инструкции
+- name: Практическое руководство
   items:
     - name: Регистрация источников данных
       href: data-catalog-how-to-register.md

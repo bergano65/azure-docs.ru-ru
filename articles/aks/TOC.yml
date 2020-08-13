@@ -170,6 +170,8 @@
         - name: Развертывание AKS с помощью Terraform
           href: ../terraform/terraform-create-k8s-cluster-with-tf-and-aks.md
           maintainContext: true
+        - name: Использование средства просмотра ресурсов Kubernetes (предварительная версия)
+          href: kubernetes-portal.md
         - name: Использование панели мониторинга Kubernetes
           href: kubernetes-dashboard.md
     - name: Настройка томов данных

@@ -72,7 +72,7 @@
               items:
                 - name: "Настройка аутентификации Azure\_AD"
                   href: database/authentication-aad-configure.md
-                - name: Многофакторная проверка подлинности с помощью AAD
+                - name: "Многофакторная проверка подлинности Azure\_AD"
                   href: database/authentication-mfa-ssms-overview.md
                 - name: Настройка многофакторной проверки подлинности
                   href: database/authentication-mfa-ssms-configure.md
@@ -891,8 +891,10 @@
           href: managed-instance/threat-detection-configure.md
         - name: Подключение приложений
           href: managed-instance/connect-application-instance.md
-        - name: Создание оповещений
+        - name: Создание оповещений об управляемом экземпляре
           href: managed-instance/alerts-create.md
+        - name: Запуск отработки отказа на управляемом экземпляре вручную
+          href: managed-instance/user-initiated-failover.md
     - name: Примеры
       items:
         - name: Azure CLI

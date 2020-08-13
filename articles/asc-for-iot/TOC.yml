@@ -29,6 +29,8 @@
       href: quickstart-configure-your-solution.md
     - name: Создание двойника модуля для Центра безопасности Azure для Интернета вещей
       href: quickstart-create-security-twin.md
+    - name: Изучение рекомендаций по обеспечению безопасности
+      href: quickstart-investigate-security-recommendations.md
     - name: Создание пользовательских оповещений системы безопасности
       href: quickstart-create-custom-alerts.md
     - name: Анализ оповещений системы безопасности

@@ -49,14 +49,8 @@
           href: developer-guidance-for-integrating-applications.md
     - name: Единый вход
       items:
-        - name: Включение единого входа для мультитенантного приложения
-          href: isv-sso-content.md
-        - name: Создание клиента Azure для мультитенантного приложения
-          href: isv-tenant-multi-tenant-app.md
-        - name: Выбор федерации нескольких клиентов
-          href: isv-choose-multi-tenant-federation.md
-        - name: Создание документации для мультитенантного приложения
-          href: isv-create-sso-documentation.md
+        - name: Варианты реализации единого входа
+          href: sso-options.md
         - name: Планирование развертывания единого входа
           href: plan-sso-deployment.md
         - name: Единый вход одним щелчком
@@ -97,6 +91,16 @@
           href: application-proxy-high-availability-load-balancing.md
         - name: Сравнение решений для удаленного доступа
           href: application-proxy-migration.md
+    - name: Вывод приложения на рынок
+      items:
+        - name: Включение единого входа для мультитенантного приложения
+          href: isv-sso-content.md
+        - name: Создание клиента Azure для мультитенантного приложения
+          href: isv-tenant-multi-tenant-app.md
+        - name: Выбор федерации нескольких клиентов
+          href: isv-choose-multi-tenant-federation.md
+        - name: Создание документации для мультитенантного приложения
+          href: isv-create-sso-documentation.md
 - name: Практические руководства
   expanded: false
   items:

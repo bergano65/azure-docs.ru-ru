@@ -10,16 +10,22 @@
   items:
     - name: Назначение политики с помощью портала
       displayName: 'assign, compliance'
-      href: assign-policy-portal.md
-    - name: "Назначение политики\_— Azure PowerShell"
-      displayName: 'assign, compliance'
-      href: assign-policy-powershell.md
+      href: ./assign-policy-portal.md
     - name: Назначение политики с помощью Azure CLI
       displayName: 'assign, compliance'
-      href: assign-policy-azurecli.md
+      href: ./assign-policy-azurecli.md
+    - name: "Назначение политики\_— Azure PowerShell"
+      displayName: 'assign, compliance'
+      href: ./assign-policy-powershell.md
+    - name: "Назначение политики\_— Python"
+      displayName: 'assign, compliance'
+      href: ./assign-policy-python.md
+    - name: "Назначение политики\_— REST"
+      displayName: 'armclient, postman'
+      href: ./assign-policy-rest-api.md
     - name: "Назначение политики\_— шаблон Resource Manager"
       displayName: 'assign, compliance, resource manager'
-      href: assign-policy-template.md
+      href: ./assign-policy-template.md
 - name: Учебники
   items:
     - name: Создание политики Azure и управление ею

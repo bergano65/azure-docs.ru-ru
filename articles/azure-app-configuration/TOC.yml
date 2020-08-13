@@ -91,8 +91,6 @@
           href: concept-customer-managed-keys.md
         - name: Защита хранилища конфигураций с помощью частных конечных точек
           href: concept-private-endpoint.md
-        - name: Интеграции с управляемыми удостоверениями Azure
-          href: howto-integrate-azure-managed-service-identity.md
         - name: Предоставление доступа с помощью Azure Active Directory
           href: concept-enable-rbac.md
         - name: Назначение управляемого удостоверения Azure
@@ -115,6 +113,8 @@
       href: howto-app-configuration-event.md
     - name: Автоматическое резервное копирование хранилища конфигурации
       href: howto-backup-config-store.md
+    - name: Использование управляемых удостоверений для получения доступа к службе "Конфигурация приложений"
+      href: howto-integrate-azure-managed-service-identity.md
 - name: Справочник
   items:
     - name: Конфигурация

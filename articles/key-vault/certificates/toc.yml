@@ -46,6 +46,8 @@
       href: how-to-integrate-certificate-authority.md
     - name: "Устранение неполадок\_— импорт сертификатов"
       href: import-cert-faqs.md
+    - name: Экспорт сертификата из хранилища ключей
+      href: how-to-export-certificate.md
 - name: Справочник
   items:
     - name: Azure PowerShell

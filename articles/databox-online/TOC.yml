@@ -117,10 +117,14 @@
               href: azure-stack-edge-manage-access-power-connectivity-mode.md
             - name: Использование PowerShell
               href: azure-stack-edge-connect-powershell-interface.md
-        - name: Диагностика
-          href: azure-stack-edge-troubleshoot.md
-        - name: Обращение в службу поддержки Майкрософт
-          href: azure-stack-edge-contact-microsoft-support.md
+            - name: Диагностика
+              items:
+                - name: Использование журналов
+                  href: azure-stack-edge-troubleshoot.md
+                - name: Проблемы с заказом
+                  href: azure-stack-edge-troubleshoot-ordering.md
+                - name: Обращение в службу поддержки Майкрософт
+                  href: azure-stack-edge-contact-microsoft-support.md
         - name: Монитор
           href: azure-stack-edge-monitor.md
         - name: Возврат устройства

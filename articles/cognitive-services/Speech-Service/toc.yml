@@ -117,30 +117,16 @@
   items:
     - name: Документация по преобразованию текста в речь
       href: index-text-to-speech.yml
-    - name: Обзор
-      items:
-        - name: Что такое преобразование текста в речь?
-          href: text-to-speech.md
-        - name: Основные сведения о преобразовании текста в речь
-          href: text-to-speech-basics.md
-    - name: Краткое руководство
-      items:
-        - name: Синтезирование речи в виде речи докладчика
-          href: quickstarts/text-to-speech.md
-        - name: Синтезирование речи в звуковой файл
-          href: quickstarts/text-to-speech-audio-file.md
-        - name: Синтез речи с использованием длинных аудиоматериалов
-          href: quickstarts/text-to-speech/async-synthesis-long-form-audio.md
+    - name: Что такое преобразование текста в речь?
+      href: text-to-speech.md
+    - name: Краткое руководство по преобразованию текста в речь
+      href: get-started-text-to-speech.md
     - name: Практические руководства
       items:
         - name: Улучшение синтеза с помощью SSML
           href: speech-synthesis-markup.md
         - name: Синтезирование речи с помощью API длинных аудиоматериалов
           href: long-audio-api.md
-        - name: Получение списка голосовых моделей с помощью REST (Python)
-          href: quickstart-python-get-text-to-speech-voices.md
-        - name: Преобразование текста в речь с помощью REST (Python)
-          href: quickstart-python-text-to-speech.md
     - name: Настройка
       items:
         - name: Ответственное развертывание

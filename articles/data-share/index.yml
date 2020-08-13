@@ -10,13 +10,13 @@ metadata:
   ms.collection: collection
   author: hrasheed-msft
   ms.author: hrasheed
-  ms.date: 09/13/2019
-  ms.openlocfilehash: 66350050a84617b789c6a73c38170dc25dad331d
-  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.date: 08/11/2020
+  ms.openlocfilehash: 43de19b3caa87bf410ad30a237c2c9e91beba63f
+  ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "73802900"
+  ms.lasthandoff: 08/12/2020
+  ms.locfileid: "88136377"
 landingContent:
 - title: Сведения об Azure Data Share
   linkLists:
@@ -24,13 +24,17 @@ landingContent:
     links:
     - text: Что такое Azure Data Share?
       url: overview.md
+    - text: Поддерживаемые хранилища данных
+      url: supported-data-stores.md
   - linkListType: concept
     links:
-    - text: Понятия Azure Data Share
+    - text: Терминология Azure Data Share
       url: terminology.md
     - text: Роли и требования для Azure Data Share
       url: concepts-roles-permissions.md
-- title: Совместное использование данных
+    - text: Общие сведения о ценах
+      url: concepts-pricing.md
+- title: Совместное использование и получение данных
   linkLists:
   - linkListType: tutorial
     links:
@@ -40,21 +44,25 @@ landingContent:
       url: subscribe-to-data-share.md
   - linkListType: how-to-guide
     links:
-    - text: Настройка сопоставления наборов данных
-      url: how-to-configure-mapping.md
     - text: Добавление наборов данных
       url: how-to-add-datasets.md
+    - text: Настройка сопоставления наборов данных
+      url: how-to-configure-mapping.md
 - title: Отслеживание и управление
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Мониторинг в Azure Data Share
+    - text: Мониторинг совместного использования
       url: how-to-monitor.md
     - text: Устранение распространенных неполадок
       url: data-share-troubleshoot.md
-    - text: Добавление наборов данных
-      url: how-to-add-datasets.md
+    - text: Добавление получателей
+      url: how-to-add-recipients.md
     - text: Удаление приглашения
       url: how-to-delete-invitation.md
     - text: Отмена подписки на общую папку
       url: how-to-revoke-share-subscription.md
+    - text: Общие сведения о безопасности в Azure Data Share
+      url: security.md
+    - text: Аварийное восстановление
+      url: disaster-recovery.md

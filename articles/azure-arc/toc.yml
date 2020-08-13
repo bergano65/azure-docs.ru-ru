@@ -6,6 +6,16 @@
       href: ./kubernetes/overview.md
     - name: Сведения о серверах с поддержкой Azure Arc?
       href: ./servers/overview.md
+- name: Краткие руководства
+  items:
+    - name: Включение агента Arc для серверов
+      href: ./servers/learn/quick-enable-hybrid-vm.md
+- name: Учебники
+  items:
+    - name: Назначение политики для оценки соответствия
+      href: ./servers/learn/tutorial-assign-policy-portal.md
+    - name: Мониторинг компьютера
+      href: ./servers/learn/tutorial-enable-vm-insights.md
 - name: Примеры
   items:
     - name: Встроенные политики службы "Политика Azure"
