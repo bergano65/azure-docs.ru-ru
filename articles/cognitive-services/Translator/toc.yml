@@ -6,6 +6,8 @@
       items:
         - name: Что такое Переводчик?
           href: translator-info-overview.md
+        - name: Поддержка языков
+          href: 'https://docs.microsoft.com/azure/cognitive-services/translator/language-support#customization'
     - name: Краткие руководства
       items:
         - name: Перевод текста
@@ -22,7 +24,7 @@
           href: quickstart-sentences.md
     - name: Учебники
       items:
-        - name: 'Создание приложения WPF для службы "Переводчик" (C#)'
+        - name: Создание приложения WPF для службы "Переводчик" (C#)
           href: tutorial-wpf-translation-csharp.md
         - name: Создание приложения Flask для перевода на Python
           href: tutorial-build-flask-app-translation-synthesis.md
@@ -50,7 +52,7 @@
           href: firewalls.md
     - name: Примеры
       items:
-        - name: 'C#'
+        - name: C#
           href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-C-Sharp'
         - name: Java
           href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Java'
@@ -92,22 +94,20 @@
               href: ctf-reporting.md
             - name: Возврат определенного количества (N) лучших переводов
               href: return-n-best-translations.md
+        - name: Ограничения запроса
+          href: request-limits.md
     - name: Ресурсы
       items:
         - name: Примеры кода в GitHub
           href: 'https://aka.ms/TranslatorGitHub'
         - name: ВОПРОСЫ И ОТВЕТЫ
           href: 'https://www.microsoft.com/translator/faq.aspx'
-        - name: Поддержка языков
-          href: language-support.md
         - name: Цены
           href: 'https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/'
         - name: Доступность по регионам
           href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
         - name: Соответствие нормативным требованиям
           href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-        - name: Ограничения запроса
-          href: request-limits.md
         - name: Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/microsoft-translator'
 - name: Пользовательский переводчик
@@ -162,8 +162,6 @@
           href: custom-translator/unsupported-language-deployments.md
     - name: Ресурсы
       items:
-        - name: Поддержка языков
-          href: 'https://docs.microsoft.com/azure/cognitive-services/translator/language-support#customization'
         - name: Глоссарий
           href: custom-translator/glossary.md
         - name: ВОПРОСЫ И ОТВЕТЫ

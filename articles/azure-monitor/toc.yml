@@ -935,6 +935,10 @@
               href: app/sharepoint.md
             - name: Классические приложения Windows
               href: app/windows-desktop.md
+        - name: Другие средства
+          items:
+            - name: Анализ изменений
+              href: app/change-analysis.md
     - name: Azure Monitor для виртуальных машин
       items:
         - name: Обзор
@@ -1062,10 +1066,6 @@
           href: insights/resource-group-insights.md
         - name: Устранение неполадок при использовании аналитических сведений
           href: insights/troubleshoot-workbooks.md
-    - name: Анализ изменений
-      items:
-        - name: Анализ изменений
-          href: app/change-analysis.md
     - name: Решения
       items:
         - name: Обзор

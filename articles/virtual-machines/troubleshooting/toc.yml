@@ -56,7 +56,7 @@
     - name: Зависание виртуальной машины при запуске
       href: troubleshoot-vm-boot-configure-update.md
     - name: Жизненный цикл и состояния виртуальной машины
-      href: ../windows/states-lifecycle.md
+      href: ../states-lifecycle.md
 - name: Виртуальная машина не загружается
   items:
     - name: Linux

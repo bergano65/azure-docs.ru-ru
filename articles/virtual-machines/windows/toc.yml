@@ -354,7 +354,7 @@
         - name: Бастион
           href: ../../bastion/bastion-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Состояния и жизненный цикл
-      href: states-lifecycle.md
+      href: ../states-lifecycle.md
     - name: Наблюдение
       href: ../../azure-monitor/insights/monitor-vm-azure.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Диагностика загрузки
