@@ -4,17 +4,17 @@ description: включить файл
 services: cognitive-services
 author: diberry
 manager: cgronlun
-ms.custom: include file
+ms.custom: seodec18, include file
 ms.service: cognitive-services
 ms.subservice: luis
 ms.topic: include
 ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: 6ec45835038f6daa55051fbfb4b727707a3d9547
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: ba394d0603557fe6c1a438d15927b71ee4fcf6f8
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "67185596"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88057715"
 ---
 Эти несколько фраз предназначены только для демонстрации. В реальном приложении следует использовать не менее 15 фраз различной длины, с различным порядком и количеством слов, в различных временах и с различной степенью грамматической и пунктуационной правильности.
