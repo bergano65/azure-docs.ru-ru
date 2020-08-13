@@ -1,20 +1,23 @@
 ---
 title: Развертывание службы "Политика Azure" для делегированных подписок в масштабе
 description: Узнайте, как Azure Лигхсаусе позволяет развернуть определение политики и назначение политики для нескольких клиентов.
-ms.date: 07/07/2020
+ms.date: 08/12/2020
 ms.topic: how-to
-ms.openlocfilehash: 6d7c6206916f87072f68cc0fe953c8049896cd0b
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 27d32a68c1a3806e514533efbae581aa97bc6d0c
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86111802"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167289"
 ---
 # <a name="deploy-azure-policy-to-delegated-subscriptions-at-scale"></a>Развертывание службы "Политика Azure" для делегированных подписок в масштабе
 
 Как поставщик услуг, вы могли подключить несколько клиентов клиента к [Azure лигхсаусе](../overview.md). Azure Lighthouse позволяет поставщикам служб выполнять операции одновременно в нескольких клиентах, что делает задачи управления более эффективными.
 
 В этой статье показано, как с помощью службы [Политика Azure](../../governance/policy/index.yml) развернуть определение и назначение политики в нескольких клиентах с использованием команд PowerShell. В этом примере определение политики обеспечивает защиту учетных записей хранения, разрешая только HTTPS-трафик.
+
+> [!TIP]
+> Хотя в этом разделе мы будем называть поставщиков услуг и клиентов, [предприятия, управляющие несколькими клиентами](../concepts/enterprise.md) , могут использовать одни и те же процессы.
 
 ## <a name="use-azure-resource-graph-to-query-across-customer-tenants"></a>Отправка запросов между клиентами с помощью Azure Resource Graph
 

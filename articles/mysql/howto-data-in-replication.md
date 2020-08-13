@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 8/7/2020
-ms.openlocfilehash: dbf3a13ed5a544406950dbcfb5ea8796eceb03c1
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: f8dbdf87eef193540fd5c1bf9d9e7f3794ae46ce
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88030559"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88168224"
 ---
 # <a name="how-to-configure-azure-database-for-mysql-data-in-replication"></a>Настройка Базы данных Azure для MySQL для репликации входных данных
 
@@ -204,9 +204,11 @@ ms.locfileid: "88030559"
 
 1. Фильтрация 
  
-   Если вы хотите пропустить репликацию некоторых таблиц из главной таблицы, обновите `replicate_wild_ignore_table` параметр сервера на сервере реплики. Чтобы узнать больше об этом параметре, ознакомьтесь с документацией по [MySQL](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#option_mysqld_replicate-wild-ignore-table).
+   Если вы хотите пропустить репликацию некоторых таблиц из главной таблицы, обновите `replicate_wild_ignore_table` параметр сервера на сервере реплики. Можно указать несколько шаблонов таблиц, используя список с разделителями-запятыми.
+
+   Чтобы узнать больше об этом параметре, ознакомьтесь с документацией по [MySQL](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#option_mysqld_replicate-wild-ignore-table). 
     
-    Чтобы обновить параметр, можно использовать [портал Azure](howto-server-parameters.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
+   Чтобы обновить параметр, можно использовать [портал Azure](howto-server-parameters.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
 
 1. Запустите репликацию.
 

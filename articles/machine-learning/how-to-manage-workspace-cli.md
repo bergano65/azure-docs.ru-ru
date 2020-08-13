@@ -10,12 +10,12 @@ author: Blackmist
 ms.date: 07/28/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 6c2d1b3db422a40f7bcf237c292b48183d99962b
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 0eec9ce6b035b7bf3627c844abb97649ce972693
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121278"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167646"
 ---
 # <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочей области для Машинного обучения Azure с помощью Azure CLI
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -144,13 +144,16 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
 
 ### <a name="virtual-network-and-private-endpoint"></a>Виртуальная сеть и частная конечная точка
 
+> [!IMPORTANT]
+> Использование частной связи Azure с Машинное обучение Azure рабочей областью в настоящее время находится в общедоступной предварительной версии. Эта функция доступна только в регионах **Восточная часть США** и **Западная часть США 2** . Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 Если вы хотите ограничить доступ к рабочей области виртуальной сети, можно использовать следующие параметры:
 
 * `--pe-name`— Имя создаваемой частной конечной точки.
 * `--pe-auto-approval`— Следует ли автоматически утверждать подключения частной конечной точки к рабочей области.
 * `--pe-resource-group`: Группа ресурсов для создания частной конечной точки в. Должна быть той же группой, которая содержит виртуальную сеть.
 * `--pe-vnet-name`— Существующая виртуальная сеть для создания частной конечной точки в.
-* `--pe-subnet-name`— Имя подсети, в которой создается частная конечная точка. Значение по умолчанию — `default`.
+* `--pe-subnet-name`— Имя подсети, в которой создается частная конечная точка. Значение по умолчанию — `default`.
 
 Дополнительные сведения об использовании частной конечной точки и виртуальной сети с рабочей областью см. в разделе [Сетевая изоляция и конфиденциальность](how-to-enable-virtual-network.md).
 

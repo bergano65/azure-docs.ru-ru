@@ -10,14 +10,14 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 06/30/2020
+ms.date: 08/12/2020
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: e83e6df26a2b3e8eabda142ee6cd89320c59ad8a
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 7384d03595f36e37eb70ec68d4f59b889facf76f
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87922648"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88168037"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
@@ -46,6 +46,7 @@ ms.locfileid: "87922648"
 > Следуйте принципу **разделения проблем** (описанных выше в этом сценарии) при настройке политики безопасности Аналитики временных рядов Azure
 
 > [!NOTE]
+
 > * В статье рассматривается однотенантное приложение — решение, используемое в пределах одной организации.
 > * Обычно однотенантная архитектура используется для создания бизнес-приложений в рамках организации.
 
@@ -115,6 +116,7 @@ ms.locfileid: "87922648"
 
 > [!IMPORTANT]
 > Маркер должен быть выдан ресурсу `https://api.timeseries.azure.com/` (известному как "аудитория" маркера).
+
 > * Результирующий **AuthURL** [Postman](https://www.getpostman.com/) будет следующим: `https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?scope=https://api.timeseries.azure.com/.default`
 > * `https://api.timeseries.azure.com/` является действительным адресом, а `https://api.timeseries.azure.com` — нет.
 
@@ -155,7 +157,7 @@ ms.locfileid: "87922648"
 
 | Необязательный параметр запроса | Описание | Версия |
 | --- |  --- | --- |
-| `timeout=<timeout>` | Время ожидания на стороне сервера для выполнения HTTP-запроса. Применяется только к API [получения событий среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) и [получения агрегатов среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api). Значение времени ожидания должно быть в формате длительности ISO 8601 (например, `"PT20S"`) и должно находиться в диапазоне `1-30 s`. Значение по умолчанию: `30 s`. | Поколение 1 |
+| `timeout=<timeout>` | Время ожидания на стороне сервера для выполнения HTTP-запроса. Применяется только к API [получения событий среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) и [получения агрегатов среды](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api#get-environment-aggregates-api). Значение времени ожидания должно быть в формате длительности ISO 8601 (например, `"PT20S"`) и должно находиться в диапазоне `1-30 s`. Значение по умолчанию: `30 s`. | Поколение 1 |
 | `storeType=<storeType>` | Для сред Gen2 с включенным горячим хранилищем запрос можно выполнить либо в, `WarmStore` либо в `ColdStore` . Этот параметр в запросе определяет, в каком хранилище должен выполняться запрос. Если этот параметр не определен, запрос будет выполнен в холодном хранилище. Чтобы запросить теплое хранилище, параметру **storeType** следует присвоить значение `WarmStore`. Если этот параметр не определен, запрос будет выполнен для холодного хранилища. | Поколение 2 |
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -164,6 +166,6 @@ ms.locfileid: "87922648"
 
 * Пример кода, который вызывает примеры кода API Gen2 для службы "аналитика временных рядов Azure", — чтение [данных запроса Gen2 с помощью C#](./time-series-insights-update-query-data-csharp.md).
 
-* Справочные сведения об API см. в [справочной документации по API запроса](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api).
+* Справочные сведения об API см. в [справочной документации по API запроса](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api).
 
 * Узнайте подробнее о [создании субъекта-службы](../active-directory/develop/howto-create-service-principal-portal.md).

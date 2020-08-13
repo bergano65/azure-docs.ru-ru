@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: erhopf
 ms.custom: seodec18, seo-javascript-october2019
-ms.openlocfilehash: 5dc1f8ed31c8d7199a31643a76e611d828da77ac
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: c15601b4c58ce072881b3c244f10bc196bceb853
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056471"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167816"
 ---
 # <a name="try-the-speech-service-for-free"></a>Бесплатная пробная подписка на службу "Речь"
 
@@ -87,7 +87,7 @@ ms.locfileid: "88056471"
 
 ## <a name="about-regions"></a>О регионах
 
-- Если приложение использует [пакет SDK для службы "Речь"](speech-sdk.md), при создании речевой конфигурации укажите код региона, например `westus`.
+- Если приложение использует [речевой пакет SDK](speech-sdk.md), вы предоставляете идентификатор региона, например `westus` , при создании конфигурации речи.
 - Если приложение использует один из [REST API](rest-apis.md) службы "Речь", регион является частью URI конечной точки, которую вы используете при выполнении запросов.
 - Ключи, созданные для региона, допустимы только в нем. Попытка использовать их в других регионах приведет к ошибкам проверки подлинности.
 

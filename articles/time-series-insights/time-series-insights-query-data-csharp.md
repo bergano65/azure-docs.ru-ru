@@ -9,18 +9,18 @@ manager: diviso
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 08/12/2020
 ms.custom: seodec18
-ms.openlocfilehash: 98077209e8245753bb9dae79fafd6c6a10f3eafb
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: a7307a5ecdc5f6aa4b90480fa769f87317605a61
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87920727"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88168071"
 ---
-# <a name="query-data-from-the-azure-time-series-insights-gen1-environment-using-c"></a>Запрос данных из среды Gen1 "аналитика временных рядов Azure" с помощью C #
+# <a name="query-data-from-the-azure-time-series-insights-gen1-environment-using-c-sharp"></a>Запрос данных из среды Gen1 "аналитика временных рядов Azure" с помощью языка C диезом
 
-В этом примере C# демонстрируется использование [API-интерфейсов Gen1 запросов](https://docs.microsoft.com/rest/api/time-series-insights/ga-query) для запроса данных из сред Gen1 "аналитика временных рядов Azure".
+В этом примере C# демонстрируется использование [API-интерфейсов Gen1 запросов](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query) для запроса данных из сред Gen1 "аналитика временных рядов Azure".
 
 > [!TIP]
 > Просмотрите примеры кода C# Gen1 по адресу [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample) .
@@ -31,26 +31,26 @@ ms.locfileid: "87920727"
 
 * Получение маркера доступа с помощью Azure Active Directory с использованием [Microsoft.IdentityModel.Clients.ActiveDirectory](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/).
 
-* Как передать полученный маркер доступа в `Authorization` заголовке последующих запросов API запросов. 
+* Как передать полученный маркер доступа в `Authorization` заголовке последующих запросов API запросов.
 
 * В примере вызывается каждый из интерфейсов API запроса Gen1, демонстрирующих, как выполняются HTTP-запросы к:
-    * [Получение API сред](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environments-api) для возврата сред, к которым у пользователя есть доступ
-    * [Получить API доступности среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-availability-api)
-    * [Получение API метаданных среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-metadata-api) для получения метаданных среды
-    * [Получение API событий среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api)
-    * [Получение API для агрегатов среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api)
-    
+  * [Получение API сред](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api#get-environments-api) для возврата сред, к которым у пользователя есть доступ
+  * [Получить API доступности среды](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api#get-environment-availability-api)
+  * [Получение API метаданных среды](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api#get-environment-metadata-api) для получения метаданных среды
+  * [Получение API событий среды](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api#get-environment-events-api)
+  * [Получение API для агрегатов среды](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api#get-environment-aggregates-api)
+
 * Как взаимодействовать с API запросов Gen1 с помощью WSS для сообщения:
 
-   * [Получение потоковых API событий среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-streamed-api)
-   * [Получить статистические данные о среде потоковый API](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-streamed-api)
+  * [Получение потоковых API событий среды](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api#get-environment-events-streamed-api)
+  * [Получить статистические данные о среде потоковый API](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api#get-environment-aggregates-streamed-api)
 
 ## <a name="prerequisites-and-setup"></a>Предварительные требования и настройка
 
 Перед компиляцией и запуском примера кода выполните следующие шаги.
 
 1. [Подготавливает среду Gen1 "аналитика временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-get-started) ".
-1. Настройте среду службы Аналитики временных рядов Azure для Azure Active Directory, как описано в разделе [Проверка подлинности и авторизация](time-series-insights-authentication-and-authorization.md). 
+1. Настройте среду службы Аналитики временных рядов Azure для Azure Active Directory, как описано в разделе [Проверка подлинности и авторизация](time-series-insights-authentication-and-authorization.md).
 1. Установите необходимые зависимости проекта.
 1. Измените приведенный ниже пример кода, заменив каждый **#DUMMY #** на соответствующий идентификатор среды.
 1. Выполните код в Visual Studio.
@@ -75,11 +75,11 @@ ms.locfileid: "87920727"
 
 ## <a name="c-sample-code"></a>Пример кода C#
 
-[!code-csharp[csharpquery-example](~/samples-tsi/gen1-sample/csharp-tsi-gen1-sample/Program.cs)]
+Примеры Gen1 временных рядов Insights можно найти по адресу [кшарпкуери-example](https://github.com/Azure-Samples/Azure-Time-Series-Insights#tsi-gen1) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о запросах см. в [справочнике по API запросов](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api).
+* Дополнительные сведения о запросах см. в [справочнике по API запросов](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api).
 
-- Узнайте, как [подключить приложение JavaScript с помощью клиентского пакета SDK](https://github.com/microsoft/tsiclient) к службе Аналитики временных рядов Azure.
+* Узнайте, как [подключить приложение JavaScript с помощью клиентского пакета SDK](https://github.com/microsoft/tsiclient) к службе Аналитики временных рядов Azure.
 Azure-Samples/Azure-Time-Series-Insights/Gen1-Sample/CSharp-TSI-Gen1-Sample/Program. CS

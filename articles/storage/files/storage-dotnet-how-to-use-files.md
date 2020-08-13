@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/7/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 44602c65a08f2e76fa017022f6137a18481f2edd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bbee9881addf66d762f1eadb837e5a4e41bf79de
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85515379"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167901"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Разработка для службы файлов Azure с помощью .NET
 
@@ -70,7 +70,7 @@ API | Назначение | Примечания
 
   Этот пакет предоставляет класс для синтаксического анализа строки подключения в файле конфигурации независимо от того, где выполняется приложение.
 
-Вы можете использовать NuGet для установки обоих пакетов. Выполните следующие действия.
+Вы можете использовать NuGet для установки обоих пакетов. Выполните следующие действия:
 
 1. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите **Управление пакетами NuGet**.
 1. В разделе **Диспетчер пакетов NuGet** выберите **Обзор**. Затем найдите и выберите **Microsoft. Azure. Storage. BLOB**, а затем нажмите кнопку **установить**.
@@ -99,7 +99,7 @@ API | Назначение | Примечания
 ```
 
 > [!NOTE]
-> Последняя версия эмулятора хранения Azure не поддерживает службу файлов Azure. Для работы со службой файлов Azure необходимо, чтобы строка подключения указывала на учетную запись хранения Azure в облаке.
+> Последняя версия эмулятора хранения Azure не поддерживает файлы Azure. Для работы со службой файлов Azure необходимо, чтобы строка подключения указывала на учетную запись хранения Azure в облаке.
 
 ## <a name="add-using-directives"></a>Добавление директив using
 
@@ -480,7 +480,7 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 
 Если возникнут проблемы, см. статью [Устранение неполадок с файлами Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о службе файлов Azure см. в следующих ресурсах:
 
@@ -491,13 +491,13 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 
 ### <a name="tooling-support-for-file-storage"></a>Средства для работы с хранилищем файлов
 
-* [Get started with AzCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) (Начало работы с AzCopy)
+* [Начало работы с AzCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)
 * [Устранение неполадок службы файлов Azure в Windows](https://docs.microsoft.com/azure/storage/storage-troubleshoot-file-connection-problems)
 
-### <a name="reference"></a>Справка
+### <a name="reference"></a>Справочник
 
-* [API-интерфейсы хранилища Azure для .NET](/dotnet/api/overview/azure/storage)
-* [File Service REST API](/rest/api/storageservices/File-Service-REST-API) (API-интерфейс REST файловой службы)
+* [API-интерфейсы службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage)
+* [REST API файловой службы](/rest/api/storageservices/File-Service-REST-API)
 
 ### <a name="blog-posts"></a>Записи блога
 

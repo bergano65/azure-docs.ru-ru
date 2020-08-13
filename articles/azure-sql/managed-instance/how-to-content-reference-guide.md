@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlr
 ms.date: 04/16/2019
-ms.openlocfilehash: 23ce3272d99401340d784f88dd537baa55774a63
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: de8d1b7aba7763799228c831af61bf83a79937bb
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708830"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167986"
 ---
 # <a name="azure-sql-managed-instance-content-reference"></a>Справочник по содержимому Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -75,6 +75,14 @@ ms.locfileid: "84708830"
 - [Хранение расширенных событий в файле событий](../database/xevent-code-event-file.md)
 - [Хранение расширенных событий в кольцевом буфере](../database/xevent-code-ring-buffer.md)
 
+### <a name="alerting"></a>Оповещение
+
+- [Создание предупреждений на управляемом экземпляре](alerts-create.md)
+
+## <a name="operations"></a>Операции
+
+- [Ручная отработка отказа, инициированная пользователем в SQL Управляемый экземпляр](user-initiated-failover.md)
+
 ## <a name="develop-applications"></a>Разработка приложений
 
 - [Соединение](../database/connect-query-content-reference-guide.md#libraries)
@@ -100,8 +108,6 @@ ms.locfileid: "84708830"
 - [Индексатор видео SaaS](../database/saas-tenancy-video-index-wingtip-brk3120-20171011.md)
 - [Безопасность приложений SaaS](../database/saas-tenancy-elastic-tools-multi-tenant-row-level-security.md)
 
-
-
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Начните с [развертывания управляемый экземпляр SQL](instance-create-quickstart.md).

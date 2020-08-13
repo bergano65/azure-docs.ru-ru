@@ -8,14 +8,14 @@ ms.author: dpalled
 manager: diviso
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 08/12/2020
 ms.custom: dpalled
-ms.openlocfilehash: 34cf770a8ac75c2516480ec3136e61da15f4e4ff
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: ab7a30cf6ca71e9260a9cb6e9136f2579e51812c
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87446632"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88168003"
 ---
 # <a name="adding-support-for-long-data-type-in-azure-time-series-insights-gen2"></a>Добавление поддержки для типа данных Long в Azure Time Series Insights Gen2
 
@@ -66,7 +66,7 @@ ms.locfileid: "87446632"
 
 Целочисленные данные записываются в **propertyValue_long**. Ранее принятые (и будущие) числовые данные в **propertyValue_double** не копируются.
 
-Если необходимо запросить данные в этих двух столбцах для свойства **propertyvalue** , необходимо использовать скалярную функцию **объединения ()** в целевом серверном компьютере. Функция принимает аргументы одного и того же **типа данных** и возвращает первое значение, отличное от NULL, в списке аргументов. Дополнительные сведения см. в статье службы " [аналитика временных рядов Azure" Gen2 "Основные понятия доступа к данным](https://docs.microsoft.com/rest/api/time-series-insights/preview#other-functions)".
+Если необходимо запросить данные в этих двух столбцах для свойства **propertyvalue** , необходимо использовать скалярную функцию **объединения ()** в целевом серверном компьютере. Функция принимает аргументы одного и того же **типа данных** и возвращает первое значение, отличное от NULL, в списке аргументов. Дополнительные сведения см. в статье службы " [аналитика временных рядов Azure" Gen2 "Основные понятия доступа к данным](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax#other-functions)".
 
 #### <a name="variable-definition-in-tsx---numeric"></a>Определение переменной в ЦЕЛЕВом числе
 
@@ -78,7 +78,7 @@ ms.locfileid: "87446632"
 
 [![Создать определение переменной](media/time-series-insights-long-data-type/var-def.png)](media/time-series-insights-long-data-type/var-def.png#lightbox)
 
-В качестве пользовательского [выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)также можно использовать **объединение ($Event. PropertyValue. Double, toDouble ($Event. PropertyValue. Long))** .
+В качестве пользовательского [выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)также можно использовать **объединение ($Event. PropertyValue. Double, toDouble ($Event. PropertyValue. Long))** .
 
 #### <a name="inline-variable-definition-using-tsx-query-apis---numeric"></a>Определение встроенных переменных с помощью API целевого запроса — числовые значения
 
@@ -126,7 +126,7 @@ ms.locfileid: "87446632"
 }
 ```
 
-В качестве пользовательского [выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)также можно использовать **объединение ($Event. PropertyValue. Double, toDouble ($Event. PropertyValue. Long))** .
+В качестве пользовательского [выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)также можно использовать **объединение ($Event. PropertyValue. Double, toDouble ($Event. PropertyValue. Long))** .
 
 > [!NOTE]
 > Рекомендуется обновлять эти переменные во всех местах, где они могут использоваться. К таким местам относятся модель временных рядов, сохраненные запросы и Power BI запросы соединителей.
@@ -147,7 +147,7 @@ ms.locfileid: "87446632"
 
 В качестве пользовательского [выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)также можно использовать **объединение ($Event. PropertyValue. Double, toDouble ($Event. PropertyValue. Long))** .
 
-Переменная категории по-прежнему требует, чтобы значение было целочисленным типом. Тип **данных** всех аргументов **объединения ()** должен быть типа **Long** в пользовательском [выражении временных рядов.](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)
+Переменная категории по-прежнему требует, чтобы значение было целочисленным типом. Тип **данных** всех аргументов **объединения ()** должен быть типа **Long** в пользовательском [выражении временных рядов.](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)
 
 #### <a name="inline-variable-definition-using-tsx-query-apis---categorical"></a>Определение встроенных переменных с помощью API целевого запроса — Категория
 
@@ -227,7 +227,7 @@ ms.locfileid: "87446632"
 }
 ```
 
-Переменная категории по-прежнему требует, чтобы значение было целочисленным типом. Тип **данных** всех аргументов **объединения ()** должен быть типа **Long** в пользовательском [выражении временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax).
+Переменная категории по-прежнему требует, чтобы значение было целочисленным типом. Тип **данных** всех аргументов **объединения ()** должен быть типа **Long** в пользовательском [выражении временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax).
 
 > [!NOTE]
 > Рекомендуется обновлять эти переменные во всех местах, где они могут использоваться. К таким местам относятся модель временных рядов, сохраненные запросы и Power BI запросы соединителей.

@@ -1,0 +1,298 @@
+---
+title: Жизненный цикл и состояния виртуальной машины в Azure
+description: Общие сведения о жизненном цикле виртуальной машины в Azure, включая описание различных состояний, в которых виртуальная машина может находиться в любое время.
+services: virtual-machines
+author: shandilvarun
+ms.service: virtual-machines
+ms.topic: conceptual
+ms.workload: infrastructure-services
+ms.date: 08/09/2018
+ms.author: vashan
+ms.openlocfilehash: 127604264850f9845846d0bb6a2768cac23cdc8c
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88169160"
+---
+# <a name="virtual-machines-lifecycle-and-states"></a>Жизненный цикл и состояния виртуальных машин
+
+Виртуальные машины Azure проходят различные состояния, которые могут быть отнесены к состояниям *подготовки* и состояниям *включения*. Цель этой статьи — описать эти состояния и показать, когда клиентам будет выставлен счет, например, за использование экземпляра. 
+
+## <a name="power-states"></a>Состояния включения
+
+Состояние включения представляет собой последнее известное состояние виртуальной машины.
+
+![Схема состояния включения виртуальной машины](./media/vm-power-states.png)
+
+<br>
+В следующей таблице представлено описание каждого состояния экземпляра и указано, будет ли выставлен счет за его использование.
+
+<table>
+<tr>
+<th>
+Состояние
+</th>
+<th>
+Описание
+</th>
+<th>
+Счет за использование экземпляра
+</th>
+</tr>
+<tr>
+<td>
+<p><b>Запуск</b></p>
+</td>
+<td>
+<p>Выполняется запуск виртуальной машины.</p>
+<code>"statuses": [<br>
+   {<br>
+      "code": "PowerState/starting",<br>
+       "level": "Info",<br>
+        "displayStatus": "VM starting"<br>
+    }<br>
+    ]</code><br>
+</td>
+<td>
+<p><b>Счет не выставляется</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>Выполнение</b></p>
+</td>
+<td>
+<p>Нормальное рабочее состояние для виртуальной машины</p>
+<code>"statuses": [<br>
+ {<br>
+ "code": "PowerState/running",<br>
+ "level": "Info",<br>
+ "displayStatus": "VM running"<br>
+ }<br>
+ ]</code><br>
+</td>
+<td>
+<p><b>Выставляются</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>Остановка</b></p>
+</td>
+<td>
+<p>Это переходное состояние. По завершении оно будет отображаться как **Остановлено**.</p>
+<code>"statuses": [<br>
+ {<br>
+ "code": "PowerState/stopping",<br>
+ "level": "Info",<br>
+ "displayStatus": "VM stopping"<br>
+ }<br>
+ ]</code><br>
+</td>
+<td>
+<p><b>Выставляются</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>Остановлена</b></p>
+</td>
+<td>
+<p>Виртуальная машина была отключена из гостевой ОС или с помощью API PowerOff.</p>
+<p>Оборудование по-прежнему выделяется на виртуальную машину и остается на узле. </p>
+<code>"statuses": [<br>
+ {<br>
+ "code": "PowerState/stopped",<br>
+ "level": "Info",<br>
+ "displayStatus": "VM stopped"<br>
+ }<br>
+ ]</code><br>
+</td>
+<td>
+<p><b>Счет выставлен*</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>Отмена выделения</b></p>
+</td>
+<td>
+<p>Переходное состояние. По завершении виртуальная машина будет отображаться как **Освобождена**.</p>
+<code>"statuses": [<br>
+ {<br>
+ "code": "PowerState/deallocating",<br>
+ "level": "Info",<br>
+ "displayStatus": "VM deallocating"<br>
+ }<br>
+ ]</code><br>
+</td>
+<td>
+<p><b>Не выставлен счет*</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>Освобождено</b></p>
+</td>
+<td>
+<p>Виртуальная машина была успешно остановлена и удалена с узла. </p>
+<code>"statuses": [<br>
+ {<br>
+ "code": "PowerState/deallocated",<br>
+ "level": "Info",<br>
+ "displayStatus": "VM deallocated"<br>
+ }<br>
+ ]</code><br>
+</td>
+<td>
+<p><b>Счет не выставляется</b></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+* Некоторые ресурсы Azure, такие как диски и сети, несут расходы. Лицензии на программное обеспечение на экземпляре не несут расходы.
+
+## <a name="provisioning-states"></a>Состояния подготовки
+
+Состояние подготовки — это состояние инициированной пользователем операции уровня управления на виртуальной машине. Эти состояния отделены от состояния включения виртуальной машины.
+
+- **Создание**. Создается виртуальная машина.
+
+- **Обновление**. Обновление модели для существующей виртуальной машины. Некоторые немодельные изменения в виртуальной машине, такие как "Запуск/Перезапуск", также подпадают под обновление.
+
+- **Удаление**. Удаление виртуальной машины.
+
+- **Освобождение**. Это место, где виртуальная машина остановлена и удалена с узла. Освобождение виртуальной машины считается обновлением, поэтому она отображает состояния подготовки, связанные с обновлением.
+
+
+
+Ниже приведены состояния переходной операции после того, как платформа приняла инициированное пользователем действие.
+
+<br>
+
+<table>
+<tbody>
+<tr>
+<td width="162">
+<p><b>Состояния</b></p>
+</td>
+<td width="366">
+<p>Описание</p>
+</td>
+</tr>
+<tr>
+<td width="162">
+<p><b>Создание</b></p>
+</td>
+<td width="366">
+<code>"statuses": [<br>
+ {<br>
+ "code": "ProvisioningState/creating",<br>
+ "level": "Info",<br>
+ "displayStatus": "Creating"<br>
+ }</code><br>
+</td>
+</tr>
+<tr>
+<td width="162">
+<p><b>Обновление</b></p>
+</td>
+<td width="366">
+<code>"statuses": [<br>
+ {<br>
+ "code": "ProvisioningState/updating",<br>
+ "level": "Info",<br>
+ "displayStatus": "Updating"<br>
+ }<br>
+ ]</code><br>
+</td>
+</tr>
+<tr>
+<td width="162">
+<p><b>Удаление</b></p>
+</td>
+<td width="366">
+<code>"statuses": [<br>
+ {<br>
+ "code": "ProvisioningState/deleting",<br>
+ "level": "Info",<br>
+ "displayStatus": "Deleting"<br>
+ }<br>
+ ]</code><br>
+</td>
+</tr>
+<tr>
+<td width="162">
+<p><b>Состояния подготовки ОС</b></p>
+</td>
+<td width="366">
+<p>Если виртуальная машина создается с помощью образа ОС, а не специализированного образа, то могут наблюдаться следующие подсостояния.</p>
+<p>1. <b>OSProvisioningInprogress</b> &ndash; виртуальная машина работает и выполняется установка гостевой ОС. <p /> 
+<code> "statuses": [<br>
+ {<br>
+ "code": "ProvisioningState/creating/OSProvisioningInprogress",<br>
+ "level": "Info",<br>
+ "displayStatus": "OS Provisioning In progress"<br>
+ }<br>
+]</code><br>
+<p>2. <b>OSProvisioningComplete</b> &ndash; кратковременное состояние. Виртуальная машина быстро переходит к состоянию **Успешно**, если не нужно устанавливать какие-либо расширения. Установка расширений может занять некоторое время. <br />
+<code> "statuses": [<br>
+ {<br>
+ "code": "ProvisioningState/creating/OSProvisioningComplete",<br>
+ "level": "Info",<br>
+ "displayStatus": "OS Provisioning Complete"<br>
+ }<br>
+]</code><br>
+<p><b>Примечание</b>. Подготовка ОС может перейти в состояние **Сбой**, если произошел сбой ОС или ОС не устанавливается вовремя. Клиентам будет выставлен счет за развернутую виртуальную машину в инфраструктуре.</p>
+</td>
+</tr>
+</table>
+
+
+После завершения операции виртуальная машина перейдет в одно из следующих состояний.
+
+- **Успешно**. Действия, инициированные пользователем, завершены.
+
+    ```
+  "statuses": [ 
+  {
+     "code": "ProvisioningState/succeeded",
+     "level": "Info",
+     "displayStatus": "Provisioning succeeded",
+     "time": "time"
+  }
+  ]
+    ```
+
+ 
+
+- **Сбой**. Представляет собой сбой при выполнении операции. Для получения дополнительных сведений и возможных решений см. коды ошибок.
+
+    ```
+  "statuses": [
+    {
+      "code": "ProvisioningState/failed/InternalOperationError",
+      "level": "Error",
+      "displayStatus": "Provisioning failed",
+      "message": "Operation abandoned due to internal error. Please try again later.",
+      "time": "time"
+    }
+    ]
+    ```
+
+
+
+## <a name="vm-instance-view"></a>Представление экземпляра виртуальной машины
+
+API представления экземпляра предоставляет информацию о состоянии выполнения виртуальной машины. Дополнительные сведения см. в разделе [Virtual Machines — Instance View](https://docs.microsoft.com/rest/api/compute/virtualmachines/instanceview) (Просмотр экземпляров виртуальных машин в документации по API).
+
+Обозреватель ресурсов Azure предоставляет простой пользовательский интерфейс для просмотра состояния выполнения виртуальной машины — [Обозреватель ресурсов](https://resources.azure.com/).
+
+Состояния подготовки отображаются в свойствах виртуальной машины и в представлении экземпляра. Состояния включения доступно в представлении экземпляра виртуальной машины.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Дополнительные сведения о мониторинге виртуальной машины см. в статье [мониторинг виртуальных машин в Azure](../azure-monitor/insights/monitor-vm-azure.md).

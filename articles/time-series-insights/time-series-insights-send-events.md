@@ -9,16 +9,16 @@ manager: diviso
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 06/30/2020
+ms.date: 08/12/2020
 ms.custom: seodec18
-ms.openlocfilehash: 589dd411e3d340eb8a0bf84b21a306cabd4bb362
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 3a5ee1cc8efead7c29dadaf64adb8e2686a10621
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86495080"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88168088"
 ---
-# <a name="send-events-to-a-azure-time-series-insights-gen1-environment-by-using-an-event-hub"></a>Отправка событий в среду Gen1 "аналитика временных рядов Azure" с помощью концентратора событий
+# <a name="send-events-to-an-azure-time-series-insights-gen1-environment-by-using-an-event-hub"></a>Отправка событий в среду Gen1 "аналитика временных рядов Azure" с помощью концентратора событий
 
 В этой статье объясняется, как создать и настроить концентратор событий в концентраторах событий Azure. Здесь также описывается, как запустить пример приложения для отправки событий в службу "аналитика временных рядов Azure" из концентраторов событий. Если у вас есть концентратор событий с событиями в формате JSON, пропустите этот учебник и просмотрите свою среду в [службе "аналитика временных рядов Azure](./time-series-insights-update-create-environment.md)".
 
@@ -55,9 +55,9 @@ ms.locfileid: "86495080"
 
 ## <a name="add-an-azure-time-series-insights-instance"></a>Добавление экземпляра службы "аналитика временных рядов Azure"
 
-В службе "аналитика временных рядов Azure" (Gen 2) вы можете добавить контекстные данные в входящую телеметрию с помощью модели временных рядов (ТСМ). В ТСМ теги или сигналы указываются как *экземпляры,* и вы можете хранить контекстные данные в *полях экземпляров.* Данные объединяются во время выполнения запроса на основе **идентификатора временного ряда**. **Идентификатор временного ряда** для примера проекта Виндмиллс, который мы используем далее в этой статье, — это `id` . Дополнительные сведения о хранении данных в полях экземпляра см. в статье Общие сведения о [модели временных рядов](./concepts-model-overview.md) .
+В Gen2 службы "аналитика временных рядов Azure" можно добавить контекстные данные в входящую телеметрию с помощью модели временных рядов (ТСМ). В ТСМ теги или сигналы называются *экземплярами,* и вы можете хранить контекстные данные в *полях экземпляров.* Данные объединяются во время выполнения запроса на основе **идентификатора временного ряда**. **Идентификатор временного ряда** для примера проекта Виндмиллс, который мы используем далее в этой статье, — это `id` . Дополнительные сведения о хранении данных в полях экземпляра см. в статье Общие сведения о [модели временных рядов](./concepts-model-overview.md) .
 
-### <a name="create-a-azure-time-series-insights-event-source"></a>Создание источника событий "аналитика временных рядов Azure"
+### <a name="create-an-azure-time-series-insights-event-source"></a>Создание источника событий "аналитика временных рядов Azure"
 
 1. Если вы еще не создали источник событий, создайте его, [выполнив соответствующие шаги](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-how-to-add-an-event-source-eventhub).
 
@@ -73,15 +73,15 @@ ms.locfileid: "86495080"
 
     [![Копирование значения строки подключения первичного ключа](media/send-events/configure-sample-code-connection-string.png)](media/send-events/configure-sample-code-connection-string.png#lightbox)
 
-1. Перейдите по адресу https://tsiclientsample.azurewebsites.net/windFarmGen.html. URL-адрес создает и запускает имитацию устройств Виндмилл.
+1. Перейдите по адресу <https://tsiclientsample.azurewebsites.net/windFarmGen.html>. URL-адрес создает и запускает имитацию устройств Виндмилл.
 1. В поле **строка подключения концентратора событий** на веб-странице вставьте строку подключения, скопированную в [поле ввода Виндмилл](#push-events-to-windmills-sample).
   
     [![Вставка строки подключения первичного ключа в поле Event Hub Connection String (Строка подключения концентратора событий)](media/send-events/configure-wind-mill-sim.png)](media/send-events/configure-wind-mill-sim.png#lightbox)
 
-1. Выберите **Click to start** (Запустить). 
+1. Выберите **Click to start** (Запустить).
 
     > [!TIP]
-    > Имитатор Виндмилл также создает JSON, который можно использовать в качестве полезных данных с [интерфейсами API запроса Azure Time Series Insights](https://docs.microsoft.com/rest/api/time-series-insights/ga-query).
+    > Имитатор Виндмилл также создает JSON, который можно использовать в качестве полезных данных с [интерфейсами API запроса Azure Time Series Insights](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query).
 
     > [!NOTE]
     > Симулятор продолжит отправку данных, пока вкладка браузер не закроется.
@@ -203,6 +203,6 @@ ms.locfileid: "86495080"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Просматривайте свою среду](https://insights.timeseries.azure.com) в обозревателе службы "аналитика временных рядов Azure".
+* [Просматривайте свою среду](https://insights.timeseries.azure.com) в обозревателе службы "аналитика временных рядов Azure".
 
-- Дополнительные сведения об [сообщениях устройств центра Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-construct)
+* Дополнительные сведения об [сообщениях устройств центра Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-construct)
