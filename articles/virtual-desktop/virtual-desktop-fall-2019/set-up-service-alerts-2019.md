@@ -1,19 +1,17 @@
 ---
 title: Настройка оповещений служб для Виртуального рабочего стола Windows (классического) в Azure
 description: Как настроить Работоспособность служб Azure, чтобы получать уведомления служб для Виртуального рабочего стола Windows (классического).
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 05/27/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a3f938c6e4c9bb13794ddd01092f0e79077a89cc
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 3f2171d3271a4ffc4770dd0c9faea16c23e44d02
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87283390"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88005508"
 ---
 # <a name="tutorial-set-up-service-alerts-for-windows-virtual-desktop-classic"></a>Руководство по настройке оповещений служб для Виртуального рабочего стола Windows (классического)
 

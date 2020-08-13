@@ -1,19 +1,17 @@
 ---
 title: Что такое Виртуальный рабочий стол Windows — Azure
 description: Общие сведения о Виртуальном рабочем столе Windows.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: overview
 ms.date: 07/10/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 6ff1f20314d79c507c696325d19c83e10ec4513f
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 003662beefcb2ee8f99a5f565ed680d406421a62
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386580"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88002374"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Что такое Виртуальный рабочий стол Windows
 
@@ -132,14 +130,14 @@ ms.locfileid: "87386580"
 
 |Операционная система|Коллекция образов Azure|Развертывание ВМ вручную|Интеграция шаблона Azure Resource Manager|Подготовка пулов узлов в Azure Marketplace|
 |--------------------------------------|:------:|:------:|:------:|:------:|
-|Windows 10 для нескольких сеансов, версия 1903|да|да|да|Да|
-|Windows 10 для нескольких сеансов, версия 1809|да|да|Нет|Нет|
-|Windows 10 Корпоративная, версия 1903|да|да|да|Да|
-|Windows 10 Корпоративная, версия 1809|да|да|Нет|Нет|
-|Windows 7 Корпоративная|да|да|Нет|Нет|
-|Windows Server 2019|да|да|Нет|Нет|
-|Windows Server 2016|да|да|да|да|
-|Windows Server 2012 R2|Да|да|Нет|Нет|
+|Windows 10 для нескольких сеансов, версия 1903|Да|Да|Да|Да|
+|Windows 10 для нескольких сеансов, версия 1809|Да|Да|нет|нет|
+|Windows 10 Корпоративная, версия 1903|Да|Да|Да|Да|
+|Windows 10 Корпоративная, версия 1809|Да|Да|нет|нет|
+|Windows 7 Корпоративная|Да|Да|нет|нет|
+|Windows Server 2019|Да|Да|нет|нет|
+|Windows Server 2016|Да|Да|Да|Да|
+|Windows Server 2012 R2|Да|Да|нет|нет|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9b141f3722a722a57e5ec7c5662ded4b9a8c790
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 1de6af0f30453d40348e9e836b2a5989652f49f1
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170434"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87925130"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-successfactors"></a>Руководство по Интеграции единого входа Azure Active Directory с SuccessFactors
 
@@ -116,7 +116,7 @@ ms.locfileid: "86170434"
     - `https://<companyname>.sapsf.cn/<companyname>`
 
     > [!NOTE]
-    > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы узнать эти адреса, обратитесь в [службу поддержки клиентов SuccessFactors](https://www.successfactors.com/content/ssf-site/en/support.html).
+    > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы узнать эти адреса, обратитесь в [службу поддержки клиентов SuccessFactors](https://www.sap.com/support.html).
 
 4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
@@ -227,7 +227,7 @@ ms.locfileid: "86170434"
 
 Чтобы пользователи Azure AD могли выполнять вход в SuccessFactors, они должны быть подготовлены для работы с SuccessFactors. В случае SuccessFactors подготовка пользователей осуществляется вручную.
 
-Чтобы создать пользователей в SuccessFactors, необходимо обратиться в [службу поддержки SuccessFactors](https://www.successfactors.com/content/ssf-site/en/support.html).
+Чтобы создать пользователей в SuccessFactors, необходимо обратиться в [службу поддержки SuccessFactors](https://www.sap.com/support.html).
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

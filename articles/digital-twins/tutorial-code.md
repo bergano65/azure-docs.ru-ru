@@ -7,12 +7,12 @@ ms.author: cschorm
 ms.date: 05/05/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: b1039bb94626dec35eff040e023a84283d9d3a4a
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 6000bffb80c83ffce58605bcc7e5bfaf404329da
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86537430"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87986687"
 ---
 # <a name="coding-with-the-azure-digital-twins-apis"></a>Написание кода с помощью API Azure Digital Twins
 
@@ -174,7 +174,7 @@ dotnet run
 > Если для работы с этим учебником вы используете Visual Studio, можно выбрать только что созданный файл JSON и установить для свойства *Копировать в выходной каталог* в инспекторе свойств значение *Копировать более позднюю версию* или *Копировать всегда*. Это позволит Visual Studio найти файл JSON с путем по умолчанию, когда вы будете запускать программу клавишей **F5** при работе с оставшейся частью учебника.
 
 > [!TIP] 
-> Существует не зависящий от языка [пример проверяющего элемента управления DTDL](https://docs.microsoft.com/samples/azure-samples/dtdl-validator/dtdl-validator), который можно использовать для проверки документов модели, чтобы убедиться в правильности DTDL. Он создан на основе библиотеки средства синтаксического анализа DTDL, о которой вы можете подробнее узнать в разделе [*Практическое руководство. Анализ и проверка моделей*](how-to-use-parser.md).
+> Существует не зависящий от языка [пример проверяющего элемента управления DTDL](https://docs.microsoft.com/samples/azure-samples/dtdl-validator/dtdl-validator), который можно использовать для проверки документов модели, чтобы убедиться в правильности DTDL. Он создан на основе библиотеки средства синтаксического анализа DTDL, о которой вы можете подробнее узнать в разделе [*Практическое руководство. Анализ и проверка моделей*](how-to-parse-models.md).
 
 Теперь добавьте еще немного кода в *Program.cs*, чтобы отправить только что созданную модель в свой экземпляр Azure Digital Twins.
 

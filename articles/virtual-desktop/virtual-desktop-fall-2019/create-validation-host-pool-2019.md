@@ -1,19 +1,17 @@
 ---
 title: Обновление службы в пуле узлов Виртуального рабочего стола Windows (классического) в Azure
 description: Сведения о создании пула узлов проверки для мониторинга обновлений службы перед их развертыванием в рабочую среду.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 05/27/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 448f02990798869e3dd5a804d1b0e0038b810a24
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: f5a8d925a9875187358dc96b1770916974d1c6bd
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288672"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88007137"
 ---
 # <a name="tutorial-create-a-host-pool-to-validate-service-updates-in-windows-virtual-desktop-classic"></a>Руководство по Создание пула узлов для проверки обновлений службы в Виртуальном рабочем столе Windows (классическом)
 
@@ -60,12 +58,12 @@ Get-RdsHostPool -TenantName $myTenantName -Name "contosoHostPool"
 Результаты из командлета должны выглядеть подобным образом:
 
 ```
-    TenantName          : contoso 
+    TenantName          : contoso
     TenantGroupName     : Default Tenant Group
     HostPoolName        : contosoHostPool
     FriendlyName        :
     Description         :
-    Persistent          : False 
+    Persistent          : False
     CustomRdpProperty    : use multimon:i:0;
     MaxSessionLimit     : 10
     LoadBalancerType    : BreadthFirst
@@ -79,7 +77,7 @@ Get-RdsHostPool -TenantName $myTenantName -Name "contosoHostPool"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Создав пул узлов проверки, вы можете узнать, как использовать решение "Работоспособность служб Azure" для мониторинга развертывания Виртуального рабочего стола Windows. 
+Создав пул узлов проверки, вы можете узнать, как использовать решение "Работоспособность служб Azure" для мониторинга развертывания Виртуального рабочего стола Windows.
 
 > [!div class="nextstepaction"]
 > [Настройка оповещений служб](set-up-service-alerts-2019.md)

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 5/8/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: ce3f775b7a72239fba7eb7c1538ec4f0831f1c74
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: d02766d82690d2f546fdcbad76efcda043f54471
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87124578"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87986278"
 ---
 # <a name="explore-azure-digital-twins-with-a-sample-client-app"></a>Изучение Azure Digital Twins с помощью примера клиентского приложения
 
@@ -78,7 +78,7 @@ ms.locfileid: "87124578"
 > Если вы хотите попробовать создать свою собственную модель, можно вставить код модели *Room* в новый файл и сохранить его с расширением *JSON* в папке *AdtSampleApp\SampleClientApp\Models*. Затем поэкспериментируйте с добавлением свойств и отношений, представляющих ваши замыслы. Можно также поискать какие-нибудь идеи в других примерах моделей в этой папке.
 
 > [!TIP] 
-> Существует не зависящий от языка [пример проверяющего элемента управления DTDL](https://docs.microsoft.com/samples/azure-samples/dtdl-validator/dtdl-validator), который можно использовать для проверки документов модели, чтобы убедиться в правильности DTDL. Он создан на основе библиотеки средства синтаксического анализа DTDL, о которой вы можете подробнее узнать в разделе [*Практическое руководство. Анализ и проверка моделей*](how-to-use-parser.md).
+> Существует не зависящий от языка [пример проверяющего элемента управления DTDL](https://docs.microsoft.com/samples/azure-samples/dtdl-validator/dtdl-validator), который можно использовать для проверки документов модели, чтобы убедиться в правильности DTDL. Он создан на основе библиотеки средства синтаксического анализа DTDL, о которой вы можете подробнее узнать в разделе [*Практическое руководство. Анализ и проверка моделей*](how-to-parse-models.md).
 
 ### <a name="get-started-with-the-command-line-app"></a>Начало работы с приложением командной строки
 

@@ -1,19 +1,17 @@
 ---
 title: Обновление службы в пуле узлов Виртуального рабочего стола Windows (Azure)
 description: Сведения о создании пула узлов проверки для мониторинга обновлений службы перед их развертыванием в рабочую среду.
-services: virtual-desktop
 author: Heidilohr
-ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 03/13/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 177763e7939de082faa0c83d2ab661292f0758b2
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 8eac40ad958a10b8c853304ee2be8b2dc27af1a2
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87292657"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008718"
 ---
 # <a name="tutorial-create-a-host-pool-to-validate-service-updates"></a>Руководство по Создание пула узлов для проверки обновлений службы
 
@@ -62,7 +60,7 @@ Get-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> | 
     HostPoolName        : hostpoolname
     FriendlyName        :
     Description         :
-    Persistent          : False 
+    Persistent          : False
     CustomRdpProperty   : use multimon:i:0;
     MaxSessionLimit     : 10
     LoadBalancerType    : BreadthFirst
@@ -77,7 +75,7 @@ Get-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> | 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Создав пул узлов проверки, вы можете узнать, как использовать решение "Работоспособность служб Azure" для мониторинга развертывания Виртуального рабочего стола Windows. 
+Создав пул узлов проверки, вы можете узнать, как использовать решение "Работоспособность служб Azure" для мониторинга развертывания Виртуального рабочего стола Windows.
 
 > [!div class="nextstepaction"]
 > [Настройка оповещений служб](./set-up-service-alerts.md)

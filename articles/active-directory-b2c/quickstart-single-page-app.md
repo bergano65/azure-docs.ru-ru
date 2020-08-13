@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 04/04/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0a754873aeafe8d4e7b48d49647469874ff40f7e
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.openlocfilehash: db18c71b09cd9beb58799ad4fbcbc944061153fb
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80875895"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87921764"
 ---
 # <a name="quickstart-set-up-sign-in-for-a-single-page-app-using-azure-active-directory-b2c"></a>Краткое руководство. Настройка входа в одностраничное приложение с помощью Azure Active Directory B2C
 
@@ -75,6 +75,10 @@ Azure Active Directory (Azure AD) B2C обеспечивает управлен�
 ![Пример приложения в браузере, отображающий ответ веб-API](./media/quickstart-single-page-app/call-api-spa.png)
 
 Наше одностраничное приложение включает маркер доступа в запрос к защищенному ресурсу веб-API.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Вы можете использовать свой клиент Azure AD B2C при работе с другими руководствами или краткими пособиями по Azure AD B2C. [Удалите клиент Azure AD B2C](faq.md#how-do-i-delete-my-azure-ad-b2c-tenant), если он больше не нужен.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

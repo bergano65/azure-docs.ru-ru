@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4e497c556bde1be4e498cd85a68282a0e3b2666
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7a6182159275236f023a1647275ed1fb8c8f4112
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72026267"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905794"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cisco-webex-meetings"></a>Руководство по интеграции единого входа Azure Active Directory с Cisco Webex Meetings
 
@@ -39,6 +39,9 @@ ms.locfileid: "72026267"
 
 * Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Cisco Webex Meetings с поддержкой единого входа.
+
+> [!NOTE]
+> Эту интеграцию также можно использовать в облачной среде Azure AD для государственных организаций США. Это приложение можно найти в коллекции облачных приложений с поддержкой Azure AD для государственных организаций США и настроить таким же образом, как и в общедоступном облаке.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -97,7 +100,7 @@ ms.locfileid: "72026267"
     
     b. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: ` https://<customername>.my.webex.com`.
 
-5. Для приложения Cisco Webex Meetings требуются проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
+5. Для приложения Cisco Webex Meetings требуются проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно Атрибуты пользователя.
 
     ![Изображение](common/edit-attribute.png)
 
@@ -180,7 +183,7 @@ ms.locfileid: "72026267"
 
     d. В текстовом поле **AuthContextClassRef** введите `urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified` и, если вы хотите включить многофакторную проверку подлинности с помощью Azure AD, введите два значения, например `urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport;urn:oasis:names:tc:SAML:2.0:ac:classes:X509`.
 
-    д) Щелкните **Auto Account Creation** (Автоматическое создание учетной записи).
+    д. Щелкните **Auto Account Creation** (Автоматическое создание учетной записи).
 
     >[!NOTE]
     >Для включения **JIT**-подготовки пользователей нужно установить флажок **Auto Account Creation** (Автоматическое создание учетной записи). Кроме того, нужно передать атрибуты токена SAML в ответе SAML.
