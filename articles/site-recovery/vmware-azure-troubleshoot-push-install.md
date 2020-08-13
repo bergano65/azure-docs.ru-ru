@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.author: ramamill
 ms.date: 04/03/2020
-ms.openlocfilehash: 04b4feb1219f6a51a1f0a7ac0d19fc3fd70029c6
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: db66137ac4b233a7e5d3040cf38dc69a089b0c9a
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86133531"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185219"
 ---
 # <a name="troubleshoot-mobility-service-push-installation"></a>Устранение неполадок при принудительной установке службы Mobility Service
 
@@ -257,6 +257,10 @@ Site Recovery служба Mobility Service имеет много компоне
 ## <a name="insufficient-space-errorid-95524"></a>Недостаточно места (код ошибки: 95524)
 
 При копировании агента мобильности на исходный компьютер требуется не менее 100 МБ свободного места. Убедитесь, что на исходном компьютере имеется необходимый объем свободного пространства, и повторите операцию.
+
+## <a name="low-system-resources"></a>Недостаточно системных ресурсов
+
+Эта проблема возникает, когда в системе недостаточно свободной памяти и не удается выделить память для установки службы Mobility Service. Убедитесь, что была освобождена достаточная память для продолжения установки и успешного завершения.
 
 ## <a name="vss-installation-failures"></a>Ошибки установки VSS
 

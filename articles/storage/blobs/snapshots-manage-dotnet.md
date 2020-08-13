@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 04/02/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: be3d06d8ea493ab7c246ace5c49d5e5bc0036108
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9404cc8037b9cd7ef3e6f74265ce803177eb0465
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84463541"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185287"
 ---
 # <a name="create-and-manage-a-blob-snapshot-in-net"></a>Создание моментальных снимков больших двоичных объектов и управление ими в .NET
 
@@ -24,7 +24,7 @@ ms.locfileid: "84463541"
 
 ## <a name="create-a-snapshot"></a>Создание моментального снимка
 
-# <a name="net-version-12x"></a>[Версия .NET 12. x](#tab/v12)
+# <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
 
 Чтобы создать моментальный снимок блочного BLOB-объекта с помощью версии 12. x клиентской библиотеки службы хранилища Azure для .NET, используйте один из следующих методов.
 
@@ -77,7 +77,7 @@ private static async Task CreateBlockBlobSnapshot(string accountName, string con
 }
 ```
 
-# <a name="net-version-11x"></a>[.NET версии 11. x](#tab/v11)
+# <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
 
 Чтобы создать моментальный снимок блочного BLOB-объекта с помощью версии 11. x клиентской библиотеки службы хранилища Azure для .NET, используйте один из следующих методов.
 
@@ -126,11 +126,11 @@ private static async Task CreateBlockBlobSnapshot(CloudBlobContainer container)
 
 Чтобы удалить большой двоичный объект, необходимо сначала удалить все моментальные снимки этого большого двоичного объекта. Можно удалить моментальный снимок отдельно или указать, чтобы при удалении исходного большого двоичного объекта были удалены и все его моментальные снимки. Попытка удалить большой двоичный объект, у которого еще есть моментальные снимки, завершится ошибкой.
 
-# <a name="net-version-12x"></a>[Версия .NET 12. x](#tab/v12)
+# <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
 
 Чтобы удалить большой двоичный объект и его моментальные снимки с помощью версии 12. x клиентской библиотеки службы хранилища Azure для .NET, используйте один из следующих методов и включите перечисление [делетеснапшотсоптион](/dotnet/api/azure.storage.blobs.models.deletesnapshotsoption) :
 
-- [Удалить](/dotnet/api/azure.storage.blobs.specialized.blobbaseclient.delete)
+- [Удаление](/dotnet/api/azure.storage.blobs.specialized.blobbaseclient.delete)
 - [DeleteAsync](/dotnet/api/azure.storage.blobs.specialized.blobbaseclient.deleteasync)
 - [DeleteIfExists](/dotnet/api/azure.storage.blobs.specialized.blobbaseclient.deleteifexists)
 - [DeleteIfExistsAsync](/dotnet/api/azure.storage.blobs.specialized.blobbaseclient.deleteifexistsasync)
@@ -141,11 +141,11 @@ private static async Task CreateBlockBlobSnapshot(CloudBlobContainer container)
 await blobClient.DeleteIfExistsAsync(DeleteSnapshotsOption.IncludeSnapshots, null, default);
 ```
 
-# <a name="net-version-11x"></a>[.NET версии 11. x](#tab/v11)
+# <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
 
 Чтобы удалить большой двоичный объект и его моментальные снимки с помощью версии 11. x клиентской библиотеки службы хранилища Azure для .NET, используйте один из следующих методов удаления больших двоичных объектов и включите перечисление [делетеснапшотсоптион](/dotnet/api/microsoft.azure.storage.blob.deletesnapshotsoption) :
 
-- [Удалить](/dotnet/api/microsoft.azure.storage.blob.cloudblob.delete)
+- [Удаление](/dotnet/api/microsoft.azure.storage.blob.cloudblob.delete)
 - [DeleteAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblob.deleteasync)
 - [DeleteIfExists](/dotnet/api/microsoft.azure.storage.blob.cloudblob.deleteifexists)
 - [DeleteIfExistsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblob.deleteifexistsasync)
@@ -158,8 +158,8 @@ await blockBlob.DeleteIfExistsAsync(DeleteSnapshotsOption.IncludeSnapshots, null
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Моментальные снимки BLOB-объектов](snapshots-overview.md)
 - [Версии BLOB-объектов (Предварительная версия)](versioning-overview.md)
-- [Обратимое удаление больших двоичных объектов](storage-blob-soft-delete.md)
+- [Обратимое удаление для больших двоичных объектов](storage-blob-soft-delete.md)

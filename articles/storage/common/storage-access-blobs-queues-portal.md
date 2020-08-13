@@ -1,23 +1,23 @@
 ---
-title: Использование портал Azure для доступа к данным BLOB-объектов или очередей
+title: Выберите способ авторизации доступа к данным BLOB-объектов или очередей в портал Azure
 titleSuffix: Azure Storage
 description: Когда вы обращаетесь к данным большого двоичного объекта или очереди с помощью портал Azure, портал выполняет запросы к службе хранилища Azure, как описано в этой статье. Эти запросы к службе хранилища Azure могут пройти проверку подлинности и авторизоваться с помощью учетной записи Azure AD или ключа доступа к учетной записи хранения.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 04/14/2020
+ms.date: 08/12/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: dcd1280dbe3a00a6a7cbdaaf59aa05326dfa8375
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 27c5b166565dd8f0803f3bca05d137e643325368
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534181"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185746"
 ---
-# <a name="use-the-azure-portal-to-access-blob-or-queue-data"></a>Использование портал Azure для доступа к данным BLOB-объектов или очередей
+# <a name="choose-how-to-authorize-access-to-blob-or-queue-data-in-the-azure-portal"></a>Выберите способ авторизации доступа к данным BLOB-объектов или очередей в портал Azure
 
 Когда вы обращаетесь к данным большого двоичного объекта или очереди с помощью [портал Azure](https://portal.azure.com), портал выполняет запросы к службе хранилища Azure, как описано в этой статье. Запрос к службе хранилища Azure можно авторизовать с помощью учетной записи Azure AD или ключа доступа к учетной записи хранения. Портал указывает, какой метод используется, и позволяет переключаться между ними, если у вас есть соответствующие разрешения.  
 
@@ -38,7 +38,7 @@ ms.locfileid: "87534181"
 При попытке доступа к данным большого двоичного объекта или очереди в портал Azure на портале сначала проверяется, была ли назначена роль с помощью **Microsoft. Storage/storageAccounts/listkeys/Action**. Если вы назначили роль с этим действием, портал использует ключ учетной записи для доступа к данным большого двоичного объекта и очереди. Если вы не назначили роль с этим действием, портал пытается получить доступ к данным с помощью учетной записи Azure AD.
 
 > [!NOTE]
-> Администратор службы ролей администратора и соадминистраторов классической подписки включает в себя эквивалент роли [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager. Роль **владелец** включает все действия, включая **Microsoft. Storage/storageAccounts/listkeys/Action**, поэтому пользователь с одной из этих административных ролей также может обращаться к данным большого двоичного объекта и очереди с помощью ключа учетной записи. Дополнительные сведения см. в статьях [роли администратора классической подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles).
+> Администратор службы ролей администратора и соадминистраторов классической подписки включает в себя эквивалент роли [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager. Роль **владелец** включает все действия, включая **Microsoft. Storage/storageAccounts/listkeys/Action**, поэтому пользователь с одной из этих административных ролей также может обращаться к данным большого двоичного объекта и очереди с помощью ключа учетной записи. Дополнительные сведения см. в статье [Роли классического администратора подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles).
 
 ### <a name="use-your-azure-ad-account"></a>Использование учетной записи Azure AD
 

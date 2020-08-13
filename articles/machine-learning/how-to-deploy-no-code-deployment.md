@@ -9,21 +9,23 @@ ms.author: gopalv
 author: gvashishtha
 ms.date: 07/31/2020
 ms.topic: conceptual
-ms.openlocfilehash: d6c70f27eebc9d502ce7275603e99975c2efc267
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 9d6e234e1f4c8ac5199b92a09eb12bf7aa41b01b
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87544613"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185491"
 ---
 # <a name="preview-no-code-model-deployment"></a>Образца Развертывание модели без кода
 
 Развертывание модели без кода сейчас находится на этапе предварительной версии и поддерживает следующие платформы машинного обучения:
 
-## <a name="tensorflow-savedmodel-format"></a>Формат Саведмодел Tensorflow
-Модели Tensorflow необходимо зарегистрировать в **формате саведмодел** для работы без развертывания модели кода.
+## <a name="tensorflow-savedmodel-format"></a>Формат Саведмодел TensorFlow
+Модели TensorFlow необходимо зарегистрировать в **формате саведмодел** для работы без развертывания модели кода.
 
 Сведения о том, как создать Саведмодел, см. в [этой ссылке](https://www.tensorflow.org/guide/saved_model) .
+
+Поддерживается любая версия TensorFlow, указанная в разделе "Теги" на [TensorFlow, обслуживающем DockerHub](https://registry.hub.docker.com/r/tensorflow/serving/tags).
 
 ```python
 from azureml.core import Model
@@ -124,12 +126,12 @@ print(output)
     - scipy
     - sklearn_pandas
 ```
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).
 * [Создание клиентских приложений для использования веб-служб](how-to-consume-web-service.md)
-* [Обновить веб-службу](how-to-deploy-update-web-service.md)
+* [Обновление веб-службы](how-to-deploy-update-web-service.md)
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Использование TLS для защиты веб-службы с помощью Машинного обучения Azure](how-to-secure-web-service.md).
 * [Мониторинг моделей Машинное обучение Azure с помощью Application Insights](how-to-enable-app-insights.md)

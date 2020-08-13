@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/29/2020
-ms.openlocfilehash: 29c04fc8f6af016200e06ad239095a3665de5869
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: cc294eb1bdfd4a6a8c6ad001c007f83a10983644
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086438"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185814"
 ---
 # <a name="automatically-scale-azure-hdinsight-clusters"></a>Автоматическое масштабирование кластеров Azure HDInsight
 
@@ -72,12 +72,12 @@ ms.locfileid: "86086438"
 
 В следующей таблице описаны типы и версии кластеров, совместимые с функцией автомасштабирования.
 
-| Версия | Spark | Hive | LLAP | HBase | Kafka | Storm | ML |
+| Версия | Spark | Hive | LLAP | Hbase | Kafka | Буря | ML |
 |---|---|---|---|---|---|---|---|
-| HDInsight 3,6 без ESP | Да | Да | Да | Да* | Нет | Нет | Нет |
-| HDInsight 4,0 без ESP | Да | Да | Да | Да* | Нет | Нет | Нет |
-| HDInsight 3,6 с ESP | Да | Да | Да | Да* | Нет | Нет | Нет |
-| HDInsight 4,0 с ESP | Да | Да | Да | Да* | Нет | Нет | Нет |
+| HDInsight 3,6 без ESP | Да | Да | Да | Да* | нет | нет | нет |
+| HDInsight 4,0 без ESP | Да | Да | Да | Да* | нет | нет | нет |
+| HDInsight 3,6 с ESP | Да | Да | Да | Да* | нет | нет | нет |
+| HDInsight 4,0 с ESP | Да | Да | Да | Да* | нет | нет | нет |
 
 \*Кластеры HBase можно настроить только для масштабирования на основе расписания, но не для загрузки.
 
@@ -133,7 +133,7 @@ ms.locfileid: "86086438"
 
 #### <a name="load-based-autoscaling"></a>Автомасштабирование на основе загрузки
 
-Вы можете создать кластер HDInsight с автомасштабированием на основе нагрузки с помощью шаблона Azure Resource Manager, добавив `autoscale` узел в `computeProfile`  >  `workernode` раздел со свойствами `minInstanceCount` и `maxInstanceCount` как показано в следующем фрагменте кода JSON.
+Вы можете создать кластер HDInsight с автомасштабированием на основе нагрузки с помощью шаблона Azure Resource Manager, добавив `autoscale` узел в `computeProfile`  >  `workernode` раздел со свойствами `minInstanceCount` и `maxInstanceCount` как показано в следующем фрагменте кода JSON. Полный шаблон Resource Manager см. в разделе шаблон быстрого запуска [: развертывание кластера Spark с включенным автомасштабированием лоадбасед](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-autoscale-loadbased).
 
 ```json
 {
@@ -161,7 +161,7 @@ ms.locfileid: "86086438"
 
 #### <a name="schedule-based-autoscaling"></a>Автомасштабирование на основе расписания
 
-Вы можете создать кластер HDInsight с автомасштабированием на основе расписания, используя шаблон Azure Resource Manager, добавив `autoscale` узел в `computeProfile`  >  `workernode` раздел. `autoscale`Узел содержит объект с `recurrence` `timezone` и `schedule` , описывающий, когда будет выполнено изменение.
+Вы можете создать кластер HDInsight с автомасштабированием на основе расписания, используя шаблон Azure Resource Manager, добавив `autoscale` узел в `computeProfile`  >  `workernode` раздел. `autoscale`Узел содержит объект с `recurrence` `timezone` и `schedule` , описывающий, когда будет выполнено изменение. Полный шаблон Resource Manager см. в разделе [развертывание кластера Spark с включенным автомасштабированием на основе расписания](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-autoscale-schedulebased).
 
 ```json
 {
@@ -231,7 +231,7 @@ https://management.azure.com/subscriptions/{subscription Id}/resourceGroups/{res
 | Обновление  | Выполняется обновление конфигурации автомасштабирования кластера.  |
 | Конфигурация HDInsight  | Выполняется операция увеличения или уменьшения масштаба кластера.  |
 | Ошибка обновления  | При обновлении конфигурации автомасштабирования в HDInsight возникли проблемы. Клиенты могут либо повторить обновление, либо отключить Автомасштабирование.  |
-| Ошибка  | В кластере что-то не так, и его использование невозможно. Удалите этот кластер и создайте новый.  |
+| Error  | В кластере что-то не так, и его использование невозможно. Удалите этот кластер и создайте новый.  |
 
 Чтобы просмотреть текущее число узлов в кластере, перейдите на диаграмму **Размер кластера** на странице **Обзор** кластера. Или выберите **Размер кластера** в разделе " **Параметры**".
 
@@ -259,6 +259,6 @@ https://management.azure.com/subscriptions/{subscription Id}/resourceGroups/{res
 
 Не уменьшайте размер кластера до трех узлов. Масштабирование кластера до трех узлов может привести к зависанию в защищенном режиме из-за недостаточной репликации файлов.  Дополнительные сведения см. [в разделе зависнуть в защищенном режиме](./hdinsight-scaling-best-practices.md#getting-stuck-in-safe-mode).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с рекомендациями по масштабированию кластеров вручную в [руководстве по масштабированию](hdinsight-scaling-best-practices.md) .

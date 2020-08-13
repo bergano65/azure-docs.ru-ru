@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: a08929c4affbd6eeb4d66a82d787ec5eba122e5b
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: c9c267097f681a78ba940283096b2c18d692e9cc
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87903771"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185372"
 ---
 # <a name="create-a-stored-access-policy-with-net"></a>Создание хранимой политики доступа с помощью .NET
 
@@ -41,7 +41,7 @@ ms.locfileid: "87903771"
 
 В следующих примерах кода создается хранимая политика доступа для контейнера. Политики доступа можно использовать для указания ограничений для SAS службы, накладываемые на контейнер или BLOB-объекты.
 
-# <a name="net-v12-sdk"></a>[NET (пакет SDK версии 12)](#tab/dotnet).
+# <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
 
 Чтобы создать хранимую политику доступа для контейнера с клиентской библиотекой .NET версии 12 для службы хранилища Azure, вызовите один из следующих методов.
 
@@ -92,7 +92,7 @@ async static Task CreateStoredAccessPolicyAsync(string containerName)
 }
 ```
 
-# <a name="net-v11-sdk"></a>[.NET (пакет SDK версии 11)](#tab/dotnet11).
+# <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
 
 Чтобы создать хранимую политику доступа для контейнера с клиентской библиотекой .NET версии 12 для службы хранилища Azure, вызовите один из следующих методов.
 
@@ -125,7 +125,7 @@ private static async Task CreateStoredAccessPolicyAsync(CloudBlobContainer conta
 
 ---
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](storage-sas-overview.md)
 - [Определение хранимой политики доступа](/rest/api/storageservices/define-stored-access-policy)

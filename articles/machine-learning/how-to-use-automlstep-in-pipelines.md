@@ -11,12 +11,12 @@ manager: cgronlun
 ms.date: 06/15/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 3973e94c9d3add25dba0af7a6b0c0deb18b77440
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 20a85c17ccd4167b29e167c55df1bd8a8cc4d56e
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87850446"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185661"
 ---
 # <a name="use-automated-ml-in-an-azure-machine-learning-pipeline-in-python"></a>Использование автоматизированного ML в конвейере Машинное обучение Azure в Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -328,8 +328,9 @@ automl_config = AutoMLConfig(task = 'classification',
 
 train_step = AutoMLStep(name='AutoML_Classification',
     automl_config=automl_config,
-    passthru_automl_config=False,
     outputs=[metrics_data,model_data],
+    enable_default_model_output=False,
+    enable_default_metrics_output=False,
     allow_reuse=True)
 ```
 В фрагменте кода показана идиома, обычно используемая с `AutoMLConfig` . Аргументы, которые являются более гибкими (длинных), задаются в отдельном словаре, а значения с меньшей вероятностью изменяются непосредственно в `AutoMLConfig` конструкторе. В этом случае, `automl_settings` укажите краткий запуск: выполнение будет прерываться только после 2 итераций или 15 минут, в зависимости от того, что происходит раньше.
@@ -346,7 +347,7 @@ train_step = AutoMLStep(name='AutoML_Classification',
 `AutoMLStep`Сам по себе принимает `AutoMLConfig` и имеет, как выходные данные, `PipelineData` объекты, созданные для хранения метрик и данных модели. 
 
 >[!Important]
-> Необходимо задать значение `passthru_automl_config` , `False` Если `AutoMLStep` `PipelineOutputTabularDataset` для входа используются объекты.
+> Необходимо задать `enable_default_model_output` и, `enable_default_metrics_output` Если `False` не используется `AutoMLStep` .
 
 В этом примере автоматизированный процесс машинного обучения выполнит перекрестные проверки на `training_data` . Число перекрестных проверок можно контролировать с помощью `n_cross_validations` аргумента. Если вы уже разделили обучающие данные как часть шагов подготовки данных, вы можете задать собственное значение `validation_data` `Dataset` .
 

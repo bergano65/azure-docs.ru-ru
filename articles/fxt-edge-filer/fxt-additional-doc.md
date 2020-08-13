@@ -1,17 +1,17 @@
 ---
 title: Microsoft Azure ФКСТ пограничной фильтр — дополнительная документация
-description: Дополнительные справочные документы по установке Azure ФКСТ ребра фильтр
+description: Дополнительные справочные документы помогут вам понять принципы использования гибридного кэша Microsoft Azure ФКСТ пограничной фильтр и работать с ним.
 author: ekpgh
 ms.service: fxt-edge-filer
 ms.topic: conceptual
 ms.date: 06/20/2019
 ms.author: rohogue
-ms.openlocfilehash: 4fe2867343f07a7b1a7dd3d8eb2b44dd1ec1e271
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 314d745072d33fecd8fbf9eafe543fd0d52fe3cb
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87086546"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185780"
 ---
 # <a name="additional-documentation-for-azure-fxt-edge-filer"></a>Дополнительная документация по Azure ФКСТ ребр фильтр
 

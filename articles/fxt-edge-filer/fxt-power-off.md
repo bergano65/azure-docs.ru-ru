@@ -1,17 +1,17 @@
 ---
 title: Как завершить работу подразделения Microsoft Azure ФКСТ пограничной фильтр
-description: Процедуры для запуска и безопасного завершения работы узла фильтр Azure ФКСТ ребра
+description: Сведения о процедурах запуска и безопасного завершения работы узла фильтр Azure ФКСТ ребра с помощью программного обеспечения панели управления кластера.
 author: ekpgh
 ms.service: fxt-edge-filer
 ms.topic: how-to
 ms.date: 07/01/2019
 ms.author: rohogue
-ms.openlocfilehash: 92364de82bc3de8229eced4ee02997a27afbde45
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d597d5d1e86a2ea13363bc270fb55304d77dee5c
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85506418"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88184879"
 ---
 # <a name="how-to-safely-power-off-azure-fxt-edge-filer-hardware"></a>Как безопасно отключить оборудование Azure ФКСТ погранично фильтр
 
@@ -33,7 +33,7 @@ ms.locfileid: "85506418"
 1. В списке узлов кластера найдите тот, который требуется завершить. Нажмите кнопку **включения питания** в столбце **действия** . 
 1. Подождите несколько секунд. Узел завершит работу и выключится.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о индикаторах состояния и других индикаторах см. в статье [мониторинг состояния оборудования Azure фкст пограничных устройств фильтр](fxt-monitor.md).
 * Дополнительные сведения о источниках питания Azure ФКСТ пограничных устройств фильтр см. в статье [Подключение кабелей питания](fxt-network-power.md#connect-power-cables).

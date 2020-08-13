@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 07/08/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: e8aa87eecc29a5b664520cb1be2cbc5e65b2969e
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.openlocfilehash: 67a66ae94508a8d7f54d6112de95fa65a8fd5f09
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88134553"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185423"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -39,13 +39,13 @@ ms.locfileid: "88134553"
 
 - Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 - Модель. Если у вас нет обученной модели, можно использовать модель и файлы зависимостей, предоставленные в [этом руководстве](https://aka.ms/azml-deploy-cloud).
-- [Расширение интерфейса командной строки Azure (CLI) для службы машинное обучение](reference-azure-machine-learning-cli.md)
+- [Расширение интерфейса командной строки Azure (CLI) для службы машинное обучение](reference-azure-machine-learning-cli.md).
 
 # <a name="python"></a>[Python](#tab/python)
 
 - Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 - Модель. Если у вас нет обученной модели, можно использовать модель и файлы зависимостей, предоставленные в [этом руководстве](https://aka.ms/azml-deploy-cloud).
-- [Пакет средств разработки программного обеспечения (SDK) для Python (машинное обучение Azure)](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)
+- [Пакет средств разработки машинное обучение Azure Software Development Kit (SDK) для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
 
 ---
 
@@ -242,7 +242,7 @@ myenv = Environment.from_conda_specification(name = 'myenv',
 myenv.register(workspace=ws)
 ```
 
-Подробное описание использования и настройки сред Python с помощью Машинное обучение Azure см. [в разделе создание & использование программных сред в машинное обучение Azure](how-to-use-environments.md)
+Подробное описание использования и настройки сред Python с помощью Машинное обучение Azure см. [в разделе создание & использование программных сред в машинное обучение Azure](how-to-use-environments.md).
 
 Сведения об использовании пользовательского образа DOCKER с конфигурацией вывода см. в статье [развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md).
 
@@ -350,9 +350,9 @@ print(service.state)
 
 | Состояние WebService | Описание | Конечное состояние?
 | ----- | ----- | ----- |
-| Переход | Служба находится в процессе развертывания. | Нет |
-| Unhealthy | Служба была развернута, но сейчас недоступна.  | Нет |
-| Непланируемый | В настоящее время служба не может быть развернута из-за нехватки ресурсов. | Нет |
+| Переход | Служба находится в процессе развертывания. | нет |
+| Unhealthy | Служба была развернута, но сейчас недоступна.  | нет |
+| Непланируемый | В настоящее время служба не может быть развернута из-за нехватки ресурсов. | нет |
 | Сбой | Не удалось выполнить развертывание службы из-за ошибки или сбоя. | Да |
 | Работоспособно | Служба работоспособна, и доступна конечная точка. | Да |
 
@@ -373,7 +373,7 @@ print(service.state)
 
 Чтобы удалить зарегистрированную модель из рабочей области, используйте`az ml model delete <model id>`
 
-Узнайте больше об [удалении WebService](/cli/azure/ext/azure-cli-ml/ml/service#ext-azure-cli-ml-az-ml-service-delete) и [удалении модели](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-delete) .
+Узнайте больше об [удалении WebService](/cli/azure/ext/azure-cli-ml/ml/service#ext-azure-cli-ml-az-ml-service-delete) и [удалении модели](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-delete).
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -385,7 +385,7 @@ print(service.state)
 ---
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).

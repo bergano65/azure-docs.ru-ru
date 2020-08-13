@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94a4b2a44902dde798f760f970ccff2c1e8f15c5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fc8f599860b6095e1bab90e8e29818d8079e89a9
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87025644"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88184947"
 ---
 # <a name="how-to-manage-stale-devices-in-azure-ad"></a>Руководство. управление устаревшими устройствами в Azure AD
 
@@ -150,7 +150,7 @@ $dt = [datetime]’2017/01/01’
 Get-AzureADDevice | Where {$_.ApproximateLastLogonTimeStamp -le $dt} | select-object -Property Enabled, DeviceId, DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | export-csv devicelist-olderthan-Jan-1-2017-summary.csv
 ```
 
-## <a name="what-you-should-know"></a>Необходимая информация
+## <a name="what-you-should-know"></a>Учитываемые аспекты
 
 ### <a name="why-is-the-timestamp-not-updated-more-frequently"></a>Почему метка времени не обновляется чаще?
 
@@ -162,7 +162,7 @@ Get-AzureADDevice | Where {$_.ApproximateLastLogonTimeStamp -le $dt} | select-ob
 
 ### <a name="why-should-i-worry-about-windows-autopilot-devices"></a>Почему следует беспокоиться о устройствах Windows для автопилота?
 
-Если устройство Azure AD связано с объектом Windows автопилота, в случае повторного назначения устройства в будущем могут возникать следующие три сценария:
+При удалении устройства Azure AD, связанного с объектом Windows автопилота, могут возникнуть следующие три ситуации, если устройство будет переназначено в будущем:
 - При развертывании на основе пользователей Windows автопилота без использования белого специализированный будет создано новое устройство Azure AD, но оно не будет помечено как ЗТДИД.
 - При развертывании в режиме саморазвертывания Windows автопилота произойдет сбой, так как не удается найти связанное устройство Azure AD.  (Это механизм безопасности для того, чтобы устройства "фальшивый" не попытаются присоединиться к Azure AD без учетных данных.) Ошибка сообщит о несоответствии ЗТДИД.
 - При наличии белого специализированный развертывания Windows автопилота они завершатся сбоем, так как не удается найти связанное устройство Azure AD. (В фоновом режиме белые специализированный развертывания используют один и тот же процесс саморазвертывания, поэтому они применяют одинаковые механизмы обеспечения безопасности.)

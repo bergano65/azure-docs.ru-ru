@@ -6,17 +6,17 @@ documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 07/06/2020
+ms.date: 08/11/2020
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: 6bf146f043dac4908387a4650130df76bdd07bd1
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 07cfb0048e6027b0bac219b3fe28018db2d10257
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86087866"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185270"
 ---
 # <a name="create-an-azure-ssis-integration-runtime-in-azure-data-factory"></a>Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "86087866"
 - выполнение пакетов, развернутых в каталоге SSIS (SSISDB), которые размещаются на сервере Базы данных SQL Azure или в Управляемом экземпляре (модель развертывания для проектов);
 - выполнение пакетов, развернутых в файловой системе, службе "Файлы Azure" или базе данных SQL Server (MSDB), которые размещаются в Управляемом экземпляре SQL Azure (модель развертывания для пакетов).
 
-После подготовки Azure-SSIS IR вы можете использовать для развертывания и запуска пакетов в Azure любые привычные средства, Эти средства уже включены в Azure и включают SQL Server Data Tools (SSDT), SQL Server Management Studio (SSMS) и служебные программы командной строки, такие как [dtutil](https://docs.microsoft.com/sql/integration-services/dtutil-utility?view=sql-server-2017) и [азуредтексек](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-azure-enabled-dtexec).
+После подготовки Azure-SSIS IR вы можете использовать для развертывания и запуска пакетов в Azure любые привычные средства, уже поддерживающие Azure, например SQL Server Data Tools (SSDT), SQL Server Management Studio (SSMS) или служебные программы командной строки, такие как [dtutil](https://docs.microsoft.com/sql/integration-services/dtutil-utility?view=sql-server-2017) и [AzureDTExec](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-azure-enabled-dtexec).
 
 В руководстве [Azure-SSIS IR подготовки](tutorial-create-azure-ssis-runtime-portal.md) показано, как создать Azure-SSIS IR с помощью портал Azure или приложения фабрики данных. В этом учебнике также показано, как при необходимости использовать сервер базы данных SQL Azure или управляемый экземпляр для размещения SSISDB. Эта статья разворачивается в этом руководстве и описывает, как выполнять эти дополнительные задачи:
 
@@ -79,7 +79,7 @@ ms.locfileid: "86087866"
 
 В следующей таблице сравниваются некоторые возможности сервера базы данных SQL Azure и Управляемый экземпляр SQL, так как они связаны с Azure-ССИР IR.
 
-| Компонент | База данных SQL| Управляемый экземпляр SQL |
+| Функциональная возможность | База данных SQL| Управляемый экземпляр SQL |
 |---------|--------------|------------------|
 | **Планирование** | Агент SQL Server недоступна.<br/><br/>См. раздел [Планирование выполнения пакета в конвейере фабрики данных](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages?view=sql-server-2017#activity).| Доступен агент Управляемый экземпляр. |
 | **Аутентификация** | Экземпляр SSISDB можно создать с пользователем автономной базы данных, который представляет любую группу Azure AD с управляемым удостоверением фабрики данных в качестве члена роли **db_owner** .<br/><br/>См. раздел [Включение аутентификации Azure AD для создания SSISDB на сервере базы данных SQL Azure](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database). | Экземпляр SSISDB можно создать с пользователь автономной базы данных, который представляет управляемое удостоверение фабрики данных. <br/><br/>См. раздел [Включение аутентификации Azure AD для создания SSISDB в Azure SQL управляемый экземпляр](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-sql-managed-instance). |
@@ -130,93 +130,99 @@ ms.locfileid: "86087866"
 
 #### <a name="deployment-settings-page"></a>Страница "Параметры развертывания"
 
-На странице **Параметры развертывания** на панели **Настройка среды выполнения интеграции** выполните описанные ниже действия.
+На странице **Параметры развертывания** панели **настройки среды выполнения интеграции** доступны варианты создания хранилищ пакетов SSISDB и Azure-SSIS IR.
 
-   1. Установите флажок **Создать каталог SSIS (SSISDB), размещенный на сервере базы данных SQL Azure или в Управляемом экземпляре, чтобы сохранять проекты, пакеты, среды и журналы выполнения**, чтобы указать, нужно ли развертывать пакеты в SSISDB (модель развертывания для проектов). Можно также не создавать SSISDB, если нужно развернуть пакеты в файловой системе, службе "Файлы Azure" или базе данных SQL Server (MSDB), размещенной в Управляемом экземпляре SQL Azure (модель развертывания для пакетов).
+##### <a name="creating-ssisdb"></a>Создание SSISDB
+
+Если вы хотите развернуть пакеты в базе данных SSISDB (модель развертывания проекта), на странице **Параметры развертывания** в области **настройки среды выполнения интеграции** установите флажок **создать каталог служб SSIS (SSISDB), размещенный на сервере базы данных SQL Azure/управляемый экземпляр для хранения проектов, пакетов, сред и журналов выполнения** . Кроме того, если вы хотите развернуть пакеты в файловой системе, службе файлов Azure или базе данных SQL Server (MSDB), размещенной в Управляемый экземпляр SQL Azure (модель развертывания пакетов), не нужно создавать SSISDB и устанавливать флажок.
+
+Независимо от модели развертывания, если вы хотите использовать агент SQL Server, размещенные Управляемый экземпляр SQL Azure, для координации или планирования выполнения пакетов, он включается в SSISDB, поэтому установите флажок все равно. Дополнительные сведения см. в статье [Планирование выполнения пакетов SSIS с помощью агента Управляемого экземпляра SQL Azure](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-managed-instance-agent).
    
-      Независимо от модели развертывания установите этот флажок, чтобы выбрать, следует ли использовать агент SQL Server, размещенный в Управляемом экземпляре SQL Azure, для координации или планирования выполнения пакетов, так как он включен SSISDB. Дополнительные сведения см. в статье [Планирование выполнения пакетов SSIS с помощью агента Управляемого экземпляра SQL Azure](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-managed-instance-agent).
+Если вы установите флажок, выполните следующие действия, чтобы перенести свой сервер базы данных на узел SSISDB, который мы создадим и управляем от вашего имени.
+
+   ![Параметры развертывания для SSISDB](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings.png)
    
-      Если этот флажок установлен, вам нужно предоставить собственный сервер базы данных для размещения SSISDB, которую мы создадим и которой будем управлять от вашего имени.
+   1. В раскрывающемся списке **Подписка** выберите подписку Azure, которая соответствует серверу базы данных узла SSISDB. 
 
-      ![Параметры развертывания для SSISDB](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings.png)
+   1. В раскрывающемся списке **Расположение** выберите расположение сервера базы данных узла SSISDB. Для среды выполнения интеграции рекомендуется выбирать одинаковые расположения.
+
+   1. В раскрывающемся списке **Catalog Database Server Endpoint** (Конечная точка сервера базы данных каталога) выберите конечную точку сервера базы данных узла SSISDB. 
    
-      1. В раскрывающемся списке **Подписка** выберите подписку Azure, которая соответствует серверу базы данных узла SSISDB.
+      В зависимости от выбранного сервера базы данных экземпляр SSISDB может быть создан от вашего имени как отдельная база данных, как часть эластичного пула или в виде управляемого экземпляра. Доступ к нему можно получить через общедоступную сеть или после присоединения к виртуальной сети. Инструкции по выбору типа сервера базы данных для размещения SSISDB см. в разделе [Сравнение Базы данных SQL и Управляемого экземпляра SQL](../data-factory/create-azure-ssis-integration-runtime.md#comparison-of-sql-database-and-sql-managed-instance).   
 
-      1. В раскрывающемся списке **Расположение** выберите расположение сервера базы данных узла SSISDB. Для среды выполнения интеграции рекомендуется выбирать одинаковые расположения. 
+      Если выбран сервер Базы данных SQL Azure с правилами брандмауэра для IP-адресов или конечными точками служб в виртуальной сети или с управляемым экземпляром и частной конечной точкой для размещения SSISDB, или вам нужен доступ к локальным данным без настройки локальной среды выполнения интеграции, необходимо присоединить среду выполнения интеграции Azure-SSIS к виртуальной сети. См. сведения о [создании среды выполнения интеграции Azure SSIS в виртуальной сети](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime).
 
-      1. В раскрывающемся списке **Catalog Database Server Endpoint** (Конечная точка сервера базы данных каталога) выберите конечную точку сервера базы данных узла SSISDB. 
-    
-         В зависимости от выбранного сервера базы данных экземпляр SSISDB может быть создан от вашего имени как отдельная база данных, как часть эластичного пула или в виде управляемого экземпляра. Доступ к нему можно получить через общедоступную сеть или после присоединения к виртуальной сети. Рекомендации по выбору типа сервера базы данных для размещения SSISDB см. в разделе [Сравнение базы данных SQL и управляемый экземпляр SQL](#comparison-of-sql-database-and-sql-managed-instance) в этой статье. 
-    
-         Если выбран сервер Базы данных SQL Azure с правилами брандмауэра для IP-адресов или конечными точками служб в виртуальной сети или с управляемым экземпляром и частной конечной точкой для размещения SSISDB, или вам нужен доступ к локальным данным без настройки локальной среды выполнения интеграции, необходимо присоединить среду выполнения интеграции Azure-SSIS к виртуальной сети. Дополнительные сведения см. в статье [Присоединение Azure-SSIS IR к виртуальной сети](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network). 
+   1. Установите флажок **использовать проверку подлинности Azure AD с управляемым удостоверением для ADF** , чтобы выбрать метод проверки подлинности для сервера базы данных, на котором будет размещен SSISDB. Это может быть аутентификация SQL или аутентификация AAD с использованием управляемого удостоверения для Фабрики данных Azure.
 
-      1. Установите флажок **Использовать аутентификацию AAD с управляемым удостоверением для Фабрики данных Azure**, чтобы выбрать метод проверки подлинности сервера базы данных на узле SSISDB. Это может быть аутентификация SQL или аутентификация AAD с использованием управляемого удостоверения для Фабрики данных Azure. 
-    
-         Если этот флажок установлен, управляемое удостоверение ADF нужно добавить в группу AAD с правами на доступ к серверу базы данных. Дополнительные сведения см. [в статье Включение проверки подлинности Azure AD для Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/enable-aad-authentication-azure-ssis-ir). 
-
-      1. В поле **Имя администратора** введите имя входа SQL для проверки подлинности базы данных сервера узла SSISDB. 
-
-      1. В поле **Пароль администратора** введите пароль проверки подлинности SQL для входа сервера базы данных на узел SSISDB. 
-
-      1. В поле **Каталог уровней служб базы данных** выберите уровень служб для сервера базы данных, на котором будет размещаться SSISDB. Это может быть уровень "Базовый", "Стандартный", "Премиум" или имя эластичного пула.
-
-   1. Установите флажок **Создать хранилища пакетов для управления пакетами, развернутыми в файловой системе, службе "Файлы Azure" или базе данных SQL Server (MSDB), размещенной в Управляемом экземпляре Azure SQL**, чтобы выбрать, следует ли управлять пакетами, развернутыми в MSDB, файловой системе или в службе "Файлы Azure" (модель развертывания для пакетов), с использованием хранилищ пакетов Azure-SSIS IR.
+      Если этот флажок установлен, управляемое удостоверение ADF нужно добавить в группу AAD с правами на доступ к серверу базы данных. См. сведения о [создании среды выполнения интеграции Azure SSIS с использованием аутентификации Azure AD](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime).
    
-      Хранилище пакетов Azure-SSIS IR позволяет импортировать, экспортировать, удалять и запускать пакеты, а также отслеживать пакеты и прекращать их выполнение с помощью SSMS, как и [прежнее хранилище пакетов SSIS](https://docs.microsoft.com/sql/integration-services/service/package-management-ssis-service?view=sql-server-2017). Дополнительные сведения см. в статье [Управление пакетами SSIS с помощью хранилищ пакетов Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/azure-ssis-integration-runtime-package-store).
+   1. В поле **Имя администратора** введите имя входа SQL для проверки подлинности базы данных сервера узла SSISDB. 
+
+   1. В поле **Пароль администратора** введите пароль проверки подлинности SQL для входа сервера базы данных на узел SSISDB. 
+
+   1. В поле **Каталог уровней служб базы данных** выберите уровень служб для сервера базы данных, на котором будет размещаться SSISDB. Это может быть уровень "Базовый", "Стандартный", "Премиум" или имя эластичного пула.
+
+Если применимо, выберите **Тестировать подключение**, и если результат будет успешным, выберите **Далее**.
+
+##### <a name="creating-azure-ssis-ir-package-stores"></a>Создание Azure-SSIS IR хранилищ пакетов
+
+Если вы хотите управлять пакетами, развернутыми в базе данных MSDB, файловой системой или службой файлов Azure (модель развертывания пакетов Azure-SSIS IR), на странице **Параметры развертывания** в области **настройки среды выполнения интеграции** , установите флажок **создать хранилища пакетов для управления пакетами, развернутыми в файловой системе, а также в службе файлов Azure или SQL Server Database (msdb), размещенной в Azure SQL управляемый экземпляр** .
    
-      Если этот флажок установлен, можно добавить несколько хранилищ пакетов в Azure-SSIS IR, выбрав **Создать**. И наоборот, одно хранилище пакетов может совместно использоваться несколькими Azure-SSIS IR.
-
-      ![Параметры развертывания для MSDB, файловой системы и службы "Файлы Azure"](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings2.png)
-
-      На панели **Добавление хранилища данных** выполните описанные ниже действия.
+Хранилище пакетов Azure-SSIS IR позволяет импортировать, экспортировать, удалять и запускать пакеты, а также отслеживать пакеты и прекращать их выполнение с помощью SSMS, как и [прежнее хранилище пакетов SSIS](https://docs.microsoft.com/sql/integration-services/service/package-management-ssis-service?view=sql-server-2017). Дополнительные сведения см. в статье [Управление пакетами SSIS с помощью хранилищ пакетов Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/azure-ssis-integration-runtime-package-store).
    
-      1. В поле **Имя хранилища пакетов** введите имя своего хранилища пакетов. 
+Если этот флажок установлен, можно добавить несколько хранилищ пакетов в Azure-SSIS IR, выбрав **Создать**. И наоборот, одно хранилище пакетов может совместно использоваться несколькими Azure-SSIS IR.
 
-      1. Для параметра **Связанная служба хранилища пакетов** выберите имеющуюся связанную службу, в которой хранятся сведения о доступе к файловой системе, службе "Файлы Azure" и Управляемому экземпляру Azure SQL, где развернуты ваши пакеты, или создайте новую, выбрав **Создать**. На панели **Новая связанная служба** выполните описанные ниже действия. 
+![Параметры развертывания для MSDB, файловой системы и службы "Файлы Azure"](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings2.png)
 
-         ![Параметры развертывания для связанных служб](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings-linked-service.png)
+На панели **Добавление хранилища данных** выполните описанные ниже действия.
+   
+   1. В поле **Имя хранилища пакетов** введите имя своего хранилища пакетов. 
 
-         1. В поле **Имя** введите имя своей связанной службы. 
+   1. Для параметра **Связанная служба хранилища пакетов** выберите имеющуюся связанную службу, в которой хранятся сведения о доступе к файловой системе, службе "Файлы Azure" и Управляемому экземпляру Azure SQL, где развернуты ваши пакеты, или создайте новую, выбрав **Создать**. На панели **Новая связанная служба** выполните описанные ниже действия. 
+
+      ![Параметры развертывания для связанных служб](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings-linked-service.png)
+
+      1. В поле **Имя** введите имя своей связанной службы. 
          
-         1. В поле **Описание** введите описание связанной службы. 
+      1. В поле **Описание** введите описание связанной службы. 
          
-         1. Для параметра **Тип** выберите **Файловое хранилище Azure**, **Управляемый экземпляр SQL Azure** или **Файловая система**.
+      1. Для параметра **Тип** выберите **Файловое хранилище Azure**, **Управляемый экземпляр SQL Azure** или **Файловая система**.
 
-         1. Можете пропустить **Подключаться с помощью среды выполнения интеграции**, так как мы всегда используем вашу среду Azure-SSIS IR для получения сведений о доступе для хранилищ пакетов.
+      1. Можете пропустить **Подключаться с помощью среды выполнения интеграции**, так как мы всегда используем вашу среду Azure-SSIS IR для получения сведений о доступе для хранилищ пакетов.
 
-         1. Если вы выбрали **Файловое хранилище Azure**, выполните описанные ниже действия. 
+      1. Если вы выбрали **Файловое хранилище Azure**, выполните описанные ниже действия. 
 
-            1. Для параметра **Метод выбора учетных записей** выберите **Из подписки Azure** или **Вводить вручную**.
+         1. Для параметра **Метод выбора учетных записей** выберите **Из подписки Azure** или **Вводить вручную**.
          
-            1. Если вы выбрали **Из подписки Azure**, выберите соответствующие значения в полях **Подписка Azure**, **Имя учетной записи хранилища** и **Общая папка**.
+         1. Если вы выбрали **Из подписки Azure**, выберите соответствующие значения в полях **Подписка Azure**, **Имя учетной записи хранилища** и **Общая папка**.
             
-            1. Если вы выбрали **Вводить вручную**, введите `\\<storage account name>.file.core.windows.net\<file share name>` для **Узел**, `Azure\<storage account name>` для **Имя пользователя** и `<storage account key>` для **Пароль** или выберите **Azure Key Vault**, где он хранится в секретности.
+         1. Если вы выбрали **Вводить вручную**, введите `\\<storage account name>.file.core.windows.net\<file share name>` для **Узел**, `Azure\<storage account name>` для **Имя пользователя** и `<storage account key>` для **Пароль** или выберите **Azure Key Vault**, где он хранится в секретности.
 
-         1. Если вы выбрали **Управляемый экземпляр SQL Azure**, выполните описанные ниже действия. 
+      1. Если вы выбрали **Управляемый экземпляр SQL Azure**, выполните описанные ниже действия. 
 
-            1. Выберите **Строка подключения**, чтобы ввести ее вручную, или ваш **Azure Key Vault**, где она хранится в секретности.
+         1. Выберите **Строка подключения**, чтобы ввести ее вручную, или ваш **Azure Key Vault**, где она хранится в секретности.
          
-            1. При выборе **Строка подключения** выполните описанные ниже действия. 
+         1. При выборе **Строка подключения** выполните описанные ниже действия. 
 
-               1. Для параметра **Полное доменное имя** введите `<server name>.<dns prefix>.database.windows.net` или `<server name>.public.<dns prefix>.database.windows.net,3342` в качестве частной или общедоступной конечной точки вашего Управляемого экземпляра SQL Azure соответственно. Если ввести частную конечную точку, параметр **Тестировать подключение** будет неприменим, так как пользовательский интерфейс ADF не может связаться с ним.
+            1. Для параметра **Полное доменное имя** введите `<server name>.<dns prefix>.database.windows.net` или `<server name>.public.<dns prefix>.database.windows.net,3342` в качестве частной или общедоступной конечной точки вашего Управляемого экземпляра SQL Azure соответственно. Если ввести частную конечную точку, параметр **Тестировать подключение** будет неприменим, так как пользовательский интерфейс ADF не может связаться с ним.
 
-               1. В поле **Имя базы данных** введите `msdb`.
+            1. В поле **Имя базы данных** введите `msdb`.
                
-               1. В поле **Тип проверки подлинности** выберите **Проверка подлинности SQL**, **Управляемое удостоверение** или **Субъект-служба**.
+            1. В поле **Тип проверки подлинности** выберите **Проверка подлинности SQL**, **Управляемое удостоверение** или **Субъект-служба**.
 
-               1. Если вы выбрали **Проверка подлинности SQL**, введите соответствующие значения в поля **Имя пользователя** и **Пароль** или выберите ваш **Azure Key Vault**, где он хранится в секретности.
+            1. Если вы выбрали **Проверка подлинности SQL**, введите соответствующие значения в поля **Имя пользователя** и **Пароль** или выберите ваш **Azure Key Vault**, где он хранится в секретности.
 
-               1. Если вы выбрали **Управляемое удостоверение**, предоставьте своему управляемому удостоверению ADF доступ к Управляемому экземпляру SQL Azure.
+            1. Если вы выбрали **Управляемое удостоверение**, предоставьте своему управляемому удостоверению ADF доступ к Управляемому экземпляру SQL Azure.
 
-               1. Если вы выбрали **Субъект-служба**, введите соответствующие значения в поля **Идентификатор субъекта-службы** и **Ключ субъект-службы** или выберите свой **Azure Key Vault**, где он хранится в секретности.
+            1. Если вы выбрали **Субъект-служба**, введите соответствующие значения в поля **Идентификатор субъекта-службы** и **Ключ субъект-службы** или выберите свой **Azure Key Vault**, где он хранится в секретности.
 
-         1. Если вы выбрали **Файловая система**, в поле **Узел** введите UNC-путь папки, в которую развернуты ваши пакеты, а также введите соответствующие значения в полях **Имя пользователя** и **Пароль** или выберите свой **Azure Key Vault**, где он хранится в секретности.
+      1. Если вы выбрали **Файловая система**, в поле **Узел** введите UNC-путь папки, в которую развернуты ваши пакеты, а также введите соответствующие значения в полях **Имя пользователя** и **Пароль** или выберите свой **Azure Key Vault**, где он хранится в секретности.
 
-         1. Если применимо, выберите **Тестировать подключение**, и если результат будет успешным, выберите **Создать**.
+      1. Если применимо, выберите **Тестировать подключение**, и если результат будет успешным, выберите **Создать**.
 
-      Добавленные хранилища пакетов будут отображаться на странице **Параметры развертывания**. Чтобы удалить их, установите соответствующие флажки, а затем выберите **Удалить**.
+   1. Добавленные хранилища пакетов будут отображаться на странице **Параметры развертывания**. Чтобы удалить их, установите соответствующие флажки, а затем выберите **Удалить**.
 
-   1. Если применимо, выберите **Тестировать подключение**, и если результат будет успешным, выберите **Далее**.
+Если применимо, выберите **Тестировать подключение**, и если результат будет успешным, выберите **Далее**.
 
 #### <a name="advanced-settings-page"></a>Страница "Дополнительные параметры"
 
@@ -348,7 +354,7 @@ $AzureSSISLicenseType = "LicenseIncluded" # LicenseIncluded by default, whereas 
 $AzureSSISMaxParallelExecutionsPerNode = 8
 # Custom setup info: Standard/express custom setups
 $SetupScriptContainerSasUri = "" # OPTIONAL to provide a SAS URI of blob container for standard custom setup where your script and its associated files are stored
-$ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS or leave it empty]" # OPTIONAL to configure an express custom setup without script
+$ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|InstallAzurePowerShell|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS|AecorSoft.IntegrationService or leave it empty]" # OPTIONAL to configure an express custom setup without script
 # Virtual network info: Classic or Azure Resource Manager
 $VnetId = "[your virtual network resource ID or leave it empty]" # REQUIRED if you use an Azure SQL Database server with IP firewall rules/virtual network service endpoints or a managed instance with private endpoint to host SSISDB, or if you require access to on-premises data without configuring a self-hosted IR. We recommend an Azure Resource Manager virtual network, because classic virtual networks will be deprecated soon.
 $SubnetName = "[your subnet name or leave it empty]" # WARNING: Use the same subnet as the one used for your Azure SQL Database server with virtual network service endpoints, or a different subnet from the one used for your managed instance with a private endpoint
@@ -527,6 +533,11 @@ if(![string]::IsNullOrEmpty($ExpressCustomSetup))
         $variableValue = "YourVariableValue"
         $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.EnvironmentVariableSetup($variableName, $variableValue)
     }
+    if($ExpressCustomSetup -eq "InstallAzurePowerShell")
+    {
+        $moduleVersion = "YourAzModuleVersion"
+        $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.AzPowerShellSetup($moduleVersion)
+    }
     if($ExpressCustomSetup -eq "SentryOne.TaskFactory")
     {
         $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
@@ -557,6 +568,11 @@ if(![string]::IsNullOrEmpty($ExpressCustomSetup))
         $jsonData = $jsonData -replace '\s',''
         $jsonData = $jsonData.replace('"','\"')
         $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString($jsonData)
+        $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+    }
+    if($ExpressCustomSetup -eq "AecorSoft.IntegrationService")
+    {
+        $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
         $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
     }
     # Create an array of one or more express custom setups
@@ -651,7 +667,7 @@ $AzureSSISLicenseType = "LicenseIncluded" # LicenseIncluded by default, whereas 
 $AzureSSISMaxParallelExecutionsPerNode = 8
 # Custom setup info: Standard/express custom setups
 $SetupScriptContainerSasUri = "" # OPTIONAL to provide a SAS URI of blob container for standard custom setup where your script and its associated files are stored
-$ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS or leave it empty]" # OPTIONAL to configure an express custom setup without script
+$ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|InstallAzurePowerShell|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS|AecorSoft.IntegrationService or leave it empty]" # OPTIONAL to configure an express custom setup without script
 # Virtual network info: Classic or Azure Resource Manager
 $VnetId = "[your virtual network resource ID or leave it empty]" # REQUIRED if you use an Azure SQL Database server with IP firewall rules/virtual network service endpoints or a managed instance with private endpoint to host SSISDB, or if you require access to on-premises data without configuring a self-hosted IR. We recommend an Azure Resource Manager virtual network, because classic virtual networks will be deprecated soon.
 $SubnetName = "[your subnet name or leave it empty]" # WARNING: Use the same subnet as the one used for your Azure SQL Database server with virtual network service endpoints, or a different subnet from the one used for your managed instance with a private endpoint
@@ -787,6 +803,11 @@ if(![string]::IsNullOrEmpty($ExpressCustomSetup))
         $variableValue = "YourVariableValue"
         $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.EnvironmentVariableSetup($variableName, $variableValue)
     }
+    if($ExpressCustomSetup -eq "InstallAzurePowerShell")
+    {
+        $moduleVersion = "YourAzModuleVersion"
+        $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.AzPowerShellSetup($moduleVersion)
+    }
     if($ExpressCustomSetup -eq "SentryOne.TaskFactory")
     {
         $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
@@ -817,6 +838,11 @@ if(![string]::IsNullOrEmpty($ExpressCustomSetup))
         $jsonData = $jsonData -replace '\s',''
         $jsonData = $jsonData.replace('"','\"')
         $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString($jsonData)
+        $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+    }
+    if($ExpressCustomSetup -eq "AecorSoft.IntegrationService")
+    {
+        $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
         $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
     }
     # Create an array of one or more express custom setups
@@ -950,13 +976,13 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
 - Для управляемого экземпляра с частной конечной точкой используется формат `<server name>.<dns prefix>.database.windows.net`.
 - Для управляемого экземпляра с общедоступной конечной точкой используется формат `<server name>.public.<dns prefix>.database.windows.net,3342`. 
 
-Если вы не используете SSISDB, вы можете развернуть пакеты в файловую систему, службу файлов Azure или базу данных MSDB, размещенную в Управляемый экземпляр Azure SQL, и запустить их на Azure-SSIS IR с помощью программ командной строки [dtutil](https://docs.microsoft.com/sql/integration-services/dtutil-utility?view=sql-server-2017) и [азуредтексек](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-azure-enabled-dtexec) . 
+Если вы не используете SSISDB, вы можете развертывать пакеты в файловой системе, службе "Файлы Azure" или базе данных MSDB, размещенной в Управляемом экземпляре SQL Azure, и запускать их в Azure-SSIS IR с помощью программ командной строки [dtutil](https://docs.microsoft.com/sql/integration-services/dtutil-utility?view=sql-server-2017) и [AzureDTExec](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-azure-enabled-dtexec). 
 
-Дополнительные сведения см. в разделе [deploy SSIS Projects/Packages](https://docs.microsoft.com/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages?view=sql-server-ver15).
+Дополнительные сведения см. в статье [Развертывание проектов и пакетов служб Integration Services (SSIS)](https://docs.microsoft.com/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages?view=sql-server-ver15).
 
 В обоих случаях вы также можете запустить развернутые пакеты в Azure-SSIS IR, используя действие "Выполнить пакеты служб SSIS" в конвейерах Фабрики данных Azure. См. сведения о [запуске выполнения пакета SSIS с использованием действия Фабрики данных](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. другие разделы Azure-SSIS IR в этой документации:
 

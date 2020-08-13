@@ -10,12 +10,12 @@ ms.date: 07/08/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: d35b02e798d68682a3c55068f1f53f7a28d81721
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: d4bead0ad73bd1315ce114c08320c6673ab0f42d
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86209868"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185161"
 ---
 # <a name="configure-transport-layer-security-tls-for-a-client-application"></a>Настройка протокола TLS для клиентского приложения
 
@@ -43,13 +43,13 @@ $ctx = $storageAccount.Context
 New-AzStorageContainer -Name "sample-container" -Context $ctx
 ```
 
-# <a name="net-v12-sdk"></a>[NET (пакет SDK версии 12)](#tab/dotnet).
+# <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
 
 В следующем примере показано, как включить TLS 1,2 в клиенте .NET с помощью клиентской библиотеки службы хранилища Azure версии 12:
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Networking.cs" id="Snippet_ConfigureTls12":::
 
-# <a name="net-v11-sdk"></a>[.NET (пакет SDK версии 11)](#tab/dotnet11).
+# <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
 
 В следующем примере показано, как включить TLS 1,2 в клиенте .NET с помощью клиентской библиотеки службы хранилища Azure версии 11:
 
@@ -79,7 +79,7 @@ static void EnableTls12()
 
 :::image type="content" source="media/transport-layer-security-configure-client-version/fiddler-trace-tls-version.png" alt-text="Снимок экрана, на котором показана трассировка Fiddler, указывающая версию TLS, используемую в запросе":::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка минимальной требуемой версии протокола TLS для учетной записи хранения](transport-layer-security-configure-minimum-version.md)
 - [Рекомендации по обеспечению безопасности для хранилища BLOB-объектов](../blobs/security-recommendations.md)

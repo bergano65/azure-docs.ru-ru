@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 9/12/2019
-ms.openlocfilehash: c91731d70d5db59ecf5daa726fd42ee42c58f51e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6de08faee78deeb86117084b420eb5043153f62d
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84116315"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186052"
 ---
 # <a name="ssis-migration-with-azure-sql-managed-instance-as-the-database-workload-destination"></a>Миграция служб SSIS с помощью Управляемый экземпляр Azure SQL в качестве назначения рабочей нагрузки базы данных
 
@@ -32,7 +32,9 @@ ms.locfileid: "84116315"
 
 ## <a name="ssis-jobs-to-sql-managed-instance-agent"></a>Задания служб SSIS для агента SQL Управляемый экземпляр
 
-SQL Управляемый экземпляр имеет собственный планировщик первого класса, так же как агент SQL Server локально.  Так как средство миграции для заданий служб SSIS пока недоступно, их необходимо перенести из локальной агент SQL Server в агент SQL Управляемый экземпляр с помощью сценариев или вручную.
+SQL Управляемый экземпляр имеет собственный планировщик первого класса, так же как агент SQL Server локально.  [Пакеты служб SSIS можно запускать с помощью агента Azure SQL управляемый экземпляр](how-to-invoke-ssis-package-managed-instance-agent.md).
+
+Так как средство миграции для заданий служб SSIS пока недоступно, их необходимо перенести из локальной агент SQL Server в агент SQL Управляемый экземпляр с помощью сценариев или вручную.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -42,7 +44,7 @@ SQL Управляемый экземпляр имеет собственный 
 - [Сетевые топологии для миграции SQL Управляемый экземпляр с помощью DMS](https://docs.microsoft.com/azure/dms/resource-network-topologies)
 - [Миграция пакетов служб SSIS в Управляемый экземпляр SQL](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages-managed-instance)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Подключение к каталогу SSIS (SSISDB) в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database)
 - [Запуск пакетов служб SSIS, развернутых в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-run-packages)

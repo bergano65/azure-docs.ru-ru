@@ -10,12 +10,12 @@ ms.date: 07/15/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 213e4092719b274909cc764d94a72886bb4923c9
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 83827c7a39b2833ce1301e78a0bef4e6d61ec62b
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88057414"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185304"
 ---
 # <a name="enable-and-manage-soft-delete-for-blobs"></a>Включение и контроль обратимого удаления для BLOB-объектов
 
@@ -134,7 +134,7 @@ block_blob_service.set_blob_service_properties(
     delete_retention_policy=DeleteRetentionPolicy(enabled=True, days=7))
 ```
 
-# <a name="net-v12-sdk"></a>[NET (пакет SDK версии 12)](#tab/dotnet).
+# <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
 
 Чтобы включить обратимое удаление, обновите свойства клиентской службы BLOB-объектов:
 
@@ -148,7 +148,7 @@ block_blob_service.set_blob_service_properties(
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/DataProtection.cs" id="Snippet_RecoverSpecificBlobVersion":::
 
-# <a name="net-v11-sdk"></a>[.NET (пакет SDK версии 11)](#tab/dotnet11).
+# <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
 
 Чтобы включить обратимое удаление, обновите свойства клиентской службы BLOB-объектов:
 
