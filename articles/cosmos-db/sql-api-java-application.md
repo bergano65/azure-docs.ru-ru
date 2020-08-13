@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 05/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: eeac1c3cb7f92a7e407511c6436fe9d0723b2648
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 9daa09209818b9e01738630911a1bb926e3c257d
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87308786"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88079949"
 ---
 # <a name="tutorial-build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Руководство по Создание веб-приложения Java с использованием Azure Cosmos DB и API SQL
 
@@ -49,7 +49,7 @@ ms.locfileid: "87308786"
 
 * [Комплект разработчика Java (JDK 7 +)](/java/azure/jdk/?view=azure-java-stable).
 * [Интегрированная среда разработки Eclipse для разработчиков Java EE.](https://www.eclipse.org/downloads/packages/release/luna/sr1/eclipse-ide-java-ee-developers)
-* [Открытый веб-сайт Azure со средой выполнения Java (например, Tomcat или Jetty).](../app-service/app-service-web-get-started-java.md)
+* [Открытый веб-сайт Azure со средой выполнения Java (например, Tomcat или Jetty).](../app-service/quickstart-java.md)
 
 При первой установке этих средств воспользуйтесь пошаговыми инструкциями, представленными в разделе "Быстрый запуск" статьи [Tutorial: Installing TomCat7 and Using it with Eclipse](http://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html) (Руководство по установке TomCat7 и его использованию с Eclipse) на сайте coreservlets.com.
 

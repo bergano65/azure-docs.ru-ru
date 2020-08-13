@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 04/30/2020
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: c93938db4632f6509e386d440c9be75596ea254f
-ms.sourcegitcommit: acc558d79d665c8d6a5f9e1689211da623ded90a
+ms.openlocfilehash: fb62d4d2ca22b6043e63645006c2d60cf0b7859b
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82597901"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88078637"
 ---
 # <a name="secure-a-custom-dns-name-with-a-tlsssl-binding-in-azure-app-service"></a>Защита пользовательского DNS-имени с помощью привязки TLS/SSL в Службе приложений Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "82597901"
 
 Выполните следующие шаги:
 
-На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<имя_приложения>** .
+На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<app-name>** .
 
 В левой области навигации приложения запустите диалоговое окно **Привязка TLS/SSL**, выполнив одно из приведенных ниже действий.
 
@@ -153,7 +153,7 @@ ms.locfileid: "82597901"
 
 В Службе приложений [терминирование TLS](https://wikipedia.org/wiki/TLS_termination_proxy) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логика вашего приложения проверяет, зашифрованы ли пользовательские запросы, проверяйте заголовок `X-Forwarded-Proto`.
 
-Руководства по настройке для конкретного языка, например [руководство по настройке Node.js в Linux](containers/configure-language-nodejs.md#detect-https-session), описывают возможность обнаруживать сеанс HTTPS в коде приложения.
+Руководства по настройке для конкретного языка, например [руководство по настройке Node.js в Linux](configure-language-nodejs.md#detect-https-session), описывают возможность обнаруживать сеанс HTTPS в коде приложения.
 
 ## <a name="automate-with-scripts"></a>Автоматизация с помощью сценариев
 

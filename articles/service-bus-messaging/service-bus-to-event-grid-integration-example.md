@@ -6,12 +6,12 @@ author: spelluru
 ms.topic: tutorial
 ms.date: 06/23/2020
 ms.author: spelluru
-ms.openlocfilehash: 8f947489c2298e580ae455763709df1734687130
-ms.sourcegitcommit: 61d92af1d24510c0cc80afb1aebdc46180997c69
+ms.openlocfilehash: 0909fd95238051a6a50e582cb2543dd3bdd307bf
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85337064"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88067296"
 ---
 # <a name="tutorial-respond-to-azure-service-bus-events-received-via-azure-event-grid-by-using-azure-functions-and-azure-logic-apps"></a>Руководство по Реагирование на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps
 Узнайте, как отвечать на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps. 
@@ -355,10 +355,10 @@ ms.locfileid: "85337064"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о службе "Сетка событий" Azure см. [здесь](https://docs.microsoft.com/azure/event-grid/).
-* Дополнительные сведения о решении "Функции Azure" см. [здесь](https://docs.microsoft.com/azure/azure-functions/).
-* Дополнительные сведения о компоненте Logic Apps службы приложений Azure см. [здесь](https://docs.microsoft.com/azure/logic-apps/).
-* Дополнительные сведения о [служебной шине Azure](https://docs.microsoft.com/azure/service-bus/).
+* Дополнительные сведения о службе "Сетка событий" Azure см. [здесь](../event-grid/index.yml).
+* Дополнительные сведения о решении "Функции Azure" см. [здесь](../azure-functions/index.yml).
+* Дополнительные сведения о компоненте Logic Apps службы приложений Azure см. [здесь](../logic-apps/index.yml).
+* Дополнительные сведения о [служебной шине Azure](/azure/service-bus/).
 
 
 [2]: ./media/service-bus-to-event-grid-integration-example/sbtoeventgrid2.png

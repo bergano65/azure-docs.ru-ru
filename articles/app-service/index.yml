@@ -6,13 +6,13 @@ metadata:
   description: Размещение веб-сайтов, веб-приложений, интерфейсов REST API и серверной части мобильных приложений в Службе приложений Azure. Ознакомьтесь с краткими руководствами, учебными материалами и примерами, которые помогут вам в работе со Службой приложений.
   ms.topic: landing-page
   ms.service: app-service
-  ms.date: 02/26/2020
-  ms.openlocfilehash: e8dcbe7288fb72fb5084f210bf38f7fa55f969a2
-  ms.sourcegitcommit: 55b2bbbd47809b98c50709256885998af8b7d0c5
+  ms.date: 08/06/2020
+  ms.openlocfilehash: 3fc31095ec0d8e1ecdbe44c0751c55164d20e088
+  ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 06/18/2020
-  ms.locfileid: "84987972"
+  ms.lasthandoff: 08/11/2020
+  ms.locfileid: "88080034"
 landingContent:
 - title: Сведения о Службе приложений
   linkLists:
@@ -20,8 +20,6 @@ landingContent:
     links:
     - text: Общие сведения о Службе приложений
       url: overview.md
-    - text: Служба приложений в Linux
-      url: /azure/app-service/containers/
     - text: Среда службы приложений
       url: environment/intro.md
     - text: Сравнение вариантов размещения
@@ -35,19 +33,19 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Первое приложение ASP.NET Core
-      url: app-service-web-get-started-dotnet.md
-    - text: Первое приложение ASP.NET
-      url: app-service-web-get-started-dotnet-framework.md
+      url: quickstart-dotnetcore.md
+    - text: Первое приложение ASP.NET (только для Windows)
+      url: quickstart-dotnet-framework.md
     - text: Первое приложение Node.js
-      url: app-service-web-get-started-nodejs.md
+      url: quickstart-nodejs.md
     - text: Первое приложение PHP
-      url: app-service-web-get-started-php.md
+      url: quickstart-php.md
     - text: Первое приложение Java
-      url: app-service-web-get-started-java.md
-    - text: Первое приложение Python (в Linux)
-      url: containers/quickstart-python.md
+      url: quickstart-java.md
+    - text: Первое приложение Python Flask (только для Linux)
+      url: quickstart-python.md
     - text: Первое приложение Ruby (в Linux)
-      url: containers/quickstart-ruby.md
+      url: quickstart-ruby.md
 - title: Стандартные задачи
   linkLists:
   - linkListType: tutorial
@@ -62,6 +60,8 @@ landingContent:
     links:
     - text: Включение журналов диагностики
       url: troubleshoot-diagnostic-logs.md
+    - text: Подключение к контейнеру Linux по протоколу SSH
+      url: configure-linux-open-ssh-session.md
     - text: Перенос активного домена в Службу приложений
       url: manage-custom-dns-migrate-domain.md
 - title: Приложение CRUD с базой данных
@@ -71,11 +71,17 @@ landingContent:
     - text: Использование приложения ASP.NET с базой данных SQL
       url: app-service-web-tutorial-dotnet-sqldatabase.md
     - text: Приложение ASP.NET Core с Базой данных SQL
-      url: app-service-web-tutorial-dotnetcore-sqldb.md
+      url: tutorial-dotnetcore-sqldb-app.md
     - text: Приложение PHP (Laravel) с MySQL в Azure
-      url: app-service-web-tutorial-php-mysql.md
+      url: tutorial-php-mysql-app.md
     - text: Приложение Node.js (MEAN.js) с MongoDB
-      url: app-service-web-tutorial-nodejs-mongodb-app.md
+      url: tutorial-nodejs-mongodb-app.md
+    - text: Приложение Java (Spring Boot) с Cosmos DB
+      url: tutorial-java-spring-cosmosdb.md
+    - text: Приложение Python (Django) с PostgreSQL
+      url: tutorial-python-postgresql-app.md
+    - text: Приложение Ruby (Rails) с PostgreSQL
+      url: tutorial-ruby-postgres-app.md
 - title: Передача кода или содержимого
   linkLists:
   - linkListType: deploy
@@ -90,20 +96,28 @@ landingContent:
       url: deploy-content-sync.md
     - text: CI/CD с использованием GitHub, BitBucket и т. д.
       url: deploy-continuous-deployment.md
-- title: Запуск контейнерных приложений Windows
+    - text: Запуск из пакета
+      url: deploy-run-package.md
+- title: Запуск пользовательских контейнеров
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Запуск пользовательского контейнера Windows
-      url: app-service-web-get-started-windows-container.md
+    - text: с помощью Docker
+      url: quickstart-custom-container.md
   - linkListType: tutorial
     links:
-    - text: Перенос устаревшего приложения в Azure в контейнере Windows
-      url: app-service-web-tutorial-windows-containers-custom-fonts.md
+    - text: Запуск приложения Docker Compose (только для Linux)
+      url: tutorial-multi-container-app.md
+    - text: Перенос пользовательского программного обеспечения в Azure в контейнере
+      url: tutorial-custom-container.md
   - linkListType: how-to-guide
     links:
+    - text: CI/CD в настраиваемом контейнере
+      url: deploy-ci-cd-custom-container.md
     - text: Подключение контейнера к файлам службы хранилища
       url: configure-connect-to-azure-storage.md
+    - text: Развертывание с помощью действий GitHub
+      url: deploy-container-github-action.md
 - title: Управление и интеграция
   linkLists:
   - linkListType: concept
@@ -115,7 +129,7 @@ landingContent:
     - text: Доступ к защищенным ресурсам на основе управляемых удостоверений
       url: app-service-web-tutorial-connect-msi.md
     - text: Аутентификация пользователей
-      url: app-service-web-tutorial-auth-aad.md
+      url: tutorial-auth-aad.md
     - text: размещению REST API с CORS
       url: app-service-web-tutorial-rest-api.md
     - text: Добавление CDN в приложение

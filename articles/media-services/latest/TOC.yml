@@ -290,12 +290,16 @@
                   href: customize-encoder-presets-how-to.md
                 - name: Создание преобразования наложения
                   href: how-to-create-overlay.md
+                - name: Создание эскизов с помощью .NET
+                  href: media-services-generate-thumbnails-dotnet.md
             - name: С помощью CLI
               displayName: 'encode, encoding, custom, transform'
               href: custom-preset-cli-howto.md
             - name: С помощью REST
               displayName: 'encode, encoding, custom, transform'
               href: custom-preset-rest-howto.md
+            - name: Создание эскизов с помощью REST
+              href: media-services-generate-thumbnails-rest.md
         - name: Создание субклипа из видео
           items:
             - name: С помощью .NET

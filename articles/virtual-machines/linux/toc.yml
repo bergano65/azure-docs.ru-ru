@@ -258,6 +258,8 @@
               href: ../ncv2-series.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: Серия NCv3
               href: ../ncv3-series.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+            - name: Серия NCasT4_v3
+              href: ../nct4-v3-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Серия ND
               href: ../nd-series.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: Серия NDv2
@@ -494,8 +496,6 @@
                       href: ../image-version-another-gallery-cli.md
                 - name: Создание виртуальной машины
                   items:
-                    - name: Специализированный
-                      href: ../vm-specialized-image-version-cli.md
                     - name: Универсальный
                       href: ../vm-generalized-image-version-cli.md
                 - name: Обновление ресурсов образа
@@ -547,8 +547,20 @@
               href: ../image-version-encryption.md
         - name: Конструктор изображений (предварительная версия)
           items:
+            - name: Обзор
+              href: image-builder-overview.md
             - name: Использование Azure CLI
               href: image-builder.md
+            - name: "Создание виртуальной машины с использованием VNET\_— CLI"
+              href: image-builder-vnet.md
+            - name: "Настройка разрешений\_— CLI"
+              href: image-builder-permissions-cli.md
+            - name: "Настройка разрешений\_— PowerShell"
+              href: image-builder-permissions-powershell.md
+            - name: Сетевые параметры
+              href: image-builder-networking.md
+            - name: Задание DevOps
+              href: image-builder-devops-task.md
             - name: Справочник по шаблонам ARM
               displayName: 'ARM,Resource Manager'
               href: image-builder-json.md
@@ -557,7 +569,7 @@
             - name: Обновление существующего образа
               href: image-builder-gallery-update-image-version.md
             - name: Диагностика
-              href: 'https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md'
+              href: image-builder-troubleshoot.md
         - name: Поиск и использование образов
           href: cli-ps-findimage.md
         - name: Сведения о плане покупки

@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 06/23/2020
 ms.author: spelluru
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 63b8c33b61d6bff28eca98929e344df7ea54e779
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: c082eff4f70b0255b7701340ac6e8b377223c0b5
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87430667"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88076869"
 ---
 # <a name="quickstart-how-to-use-service-bus-queues-with-nodejs-and-the-azureservice-bus-package"></a>Краткое руководство. Использование очередей служебной шины в Azure с помощью Node.js и пакета azure/service-bus
 Из этого учебника вы узнаете, как написать программу Node.js для отправки и получения сообщений через очередь служебной шины с помощью нового пакета [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus). Этот пакет использует более быстрый [протокол AMQP 1.0](service-bus-amqp-overview.md) вместо [интерфейсов REST API для служебной шины](/rest/api/servicebus/service-bus-runtime-rest), как в старом пакете [azure-sb](https://www.npmjs.com/package/azure-sb). Примеры кода написаны на JavaScript.
@@ -22,7 +22,7 @@ ms.locfileid: "87430667"
 - Если у вас нет подходящей очереди служебной шины, [создайте ее с помощью портала Azure](service-bus-quickstart-portal.md). Запишите строку подключения к экземпляру служебной шины и имя созданной очереди. Эти значения вам понадобятся для приведенных ниже примеров.
 
 > [!NOTE]
-> - Примеры для этого учебника вы можете скопировать и запустить с помощью [Nodejs](https://nodejs.org/). Указания по созданию приложения Node.js можно найти в статьях [Создание веб-приложений Node.js в Azure](../app-service/app-service-web-get-started-nodejs.md) или [Build and deploy a Node.js application to an Azure Cloud Service](../cloud-services/cloud-services-nodejs-develop-deploy-app.md) (Построение и развертывание приложения Node.js в облачной службе Azure).
+> - Примеры для этого учебника вы можете скопировать и запустить с помощью [Nodejs](https://nodejs.org/). Указания по созданию приложения Node.js можно найти в статьях [Создание веб-приложений Node.js в Azure](../app-service/quickstart-nodejs.md) или [Build and deploy a Node.js application to an Azure Cloud Service](../cloud-services/cloud-services-nodejs-develop-deploy-app.md) (Построение и развертывание приложения Node.js в облачной службе Azure).
 > - Новый пакет [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus) пока не поддерживает создание очередей. Чтобы создать их программным образом, используйте пакет [@azure/arm-servicebus](https://www.npmjs.com/package/@azure/arm-servicebus).
 
 ### <a name="use-node-package-manager-npm-to-install-the-package"></a>Использование диспетчера пакета Node (NPM) для установки пакета
@@ -33,7 +33,7 @@ npm install @azure/service-bus
 ```
 
 ## <a name="send-messages-to-a-queue"></a>Отправка сообщений в очередь
-Взаимодействие с очередью служебной шины начинается с создания экземпляра класса [ServiceBusClient](https://docs.microsoft.com/javascript/api/@azure/service-bus/servicebusclient) и применения его для создания экземпляра класса [QueueClient](https://docs.microsoft.com/javascript/api/%40azure/service-bus/queueclient). Получив клиент очереди, вы сможете создать отправителя и использовать его методы [send](https://docs.microsoft.com/javascript/api/%40azure/service-bus/sender#send-sendablemessageinfo-) и [sendBatch](https://docs.microsoft.com/javascript/api/@azure/service-bus/sender#sendbatch-sendablemessageinfo---) для отправки сообщений.
+Взаимодействие с очередью служебной шины начинается с создания экземпляра класса [ServiceBusClient](/javascript/api/@azure/service-bus/servicebusclient) и применения его для создания экземпляра класса [QueueClient](/javascript/api/@azure/service-bus/queueclient). Получив клиент очереди, вы сможете создать отправителя и использовать его методы [send](/javascript/api/@azure/service-bus/sender#send-sendablemessageinfo-) и [sendBatch](/javascript/api/@azure/service-bus/sender#sendbatch-sendablemessageinfo---) для отправки сообщений.
 
 1. Откройте редактор, например [Visual Studio Code](https://code.visualstudio.com/).
 2. Создайте файл с именем `send.js` и вставьте в него приведенный ниже код. Этот код отправляет в указанную очередь 10 сообщений.
@@ -83,7 +83,7 @@ npm install @azure/service-bus
 Очереди служебной шины поддерживают максимальный размер сообщения 256 КБ для [уровня "Стандартный"](service-bus-premium-messaging.md) и 1 МБ для [уровня Premium](service-bus-premium-messaging.md). Число сообщений в очереди может быть любым, но действует ограничение на общий размер сообщений в очереди. Этот размер очереди, определяемый в момент ее создания, не должен превышать 5 ГБ. Дополнительные сведения о квотах см. в статье [Квоты на служебную шину](service-bus-quotas.md).
 
 ## <a name="receive-messages-from-a-queue"></a>Получение сообщений из очереди
-Взаимодействие с очередью служебной шины начинается с создания экземпляра класса [ServiceBusClient](https://docs.microsoft.com/javascript/api/@azure/service-bus/servicebusclient) и применения его для создания экземпляра класса [QueueClient](https://docs.microsoft.com/javascript/api/%40azure/service-bus/queueclient). Получив клиент очереди, вы сможете создать приемник и использовать его методы [receiveMessages](https://docs.microsoft.com/javascript/api/%40azure/service-bus/receiver#receivemessages-number--undefined---number-) и [registerMessageHandler](https://docs.microsoft.com/javascript/api/%40azure/service-bus/receiver#registermessagehandler-onmessage--onerror--messagehandleroptions-) для получения сообщений.
+Взаимодействие с очередью служебной шины начинается с создания экземпляра класса [ServiceBusClient](/javascript/api/@azure/service-bus/servicebusclient) и применения его для создания экземпляра класса [QueueClient](/javascript/api/@azure/service-bus/queueclient). Получив клиент очереди, вы сможете создать приемник и использовать его методы [receiveMessages](/javascript/api/@azure/service-bus/receiver#receivemessages-number--undefined---number-) и [registerMessageHandler](/javascript/api/@azure/service-bus/receiver#registermessagehandler-onmessage--onerror--messagehandleroptions-) для получения сообщений.
 
 1. Откройте редактор, например [Visual Studio Code](https://code.visualstudio.com/).
 2. Создайте файл с именем `recieve.js` и вставьте в него приведенный ниже код. Этот код пытается получить из указанной очереди 10 сообщений. Реальное число полученных сообщений будет зависеть от количества доступных в очереди сообщений и задержки сети.
@@ -119,7 +119,7 @@ npm install @azure/service-bus
 
 Поздравляем! Вы получили сообщения из очереди служебной шины.
 
-Метод [createReceiver](https://docs.microsoft.com/javascript/api/%40azure/service-bus/queueclient#createreceiver-receivemode-) принимает перечисление `ReceiveMode` со значениями [ReceiveAndDelete](message-transfers-locks-settlement.md#settling-receive-operations) и [PeekLock](message-transfers-locks-settlement.md#settling-receive-operations). Не забудьте [сопоставить сообщения](message-transfers-locks-settlement.md#settling-receive-operations), если вы используете для сообщения режим `PeekLock` с любым из методов `complete()`, `abandon()`, `defer()` или `deadletter()`.
+Метод [createReceiver](/javascript/api/@azure/service-bus/queueclient#createreceiver-receivemode-) принимает перечисление `ReceiveMode` со значениями [ReceiveAndDelete](message-transfers-locks-settlement.md#settling-receive-operations) и [PeekLock](message-transfers-locks-settlement.md#settling-receive-operations). Не забудьте [сопоставить сообщения](message-transfers-locks-settlement.md#settling-receive-operations), если вы используете для сообщения режим `PeekLock` с любым из методов `complete()`, `abandon()`, `defer()` или `deadletter()`.
 
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
@@ -129,4 +129,3 @@ npm install @azure/service-bus
 - [Очереди, разделы и подписки](service-bus-queues-topics-subscriptions.md)
 - Просмотрите другие [примеры Node.js для служебной шины на сайте GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/servicebus/service-bus/samples/javascript).
 - [Центр разработчика Node.js](https://azure.microsoft.com/develop/nodejs/)
-

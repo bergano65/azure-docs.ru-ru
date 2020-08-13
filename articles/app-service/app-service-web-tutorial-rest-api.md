@@ -6,12 +6,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/28/2020
 ms.custom: mvc, devcenter, seo-javascript-september2019, seo-javascript-october2019, seodec18
-ms.openlocfilehash: c59ff344cc3e24387c764ba2f23bc3fe0065b371
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.openlocfilehash: 78d44310420558d2f57d2b652f8453028b20c433
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82559807"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88077695"
 ---
 # <a name="tutorial-host-a-restful-api-with-cors-in-azure-app-service"></a>Руководство по Размещение API-интерфейсов RESTful с поддержкой CORS в службе приложений Azure
 
@@ -142,7 +142,7 @@ To https://&lt;app_name&gt;.scm.azurewebsites.net/&lt;app_name&gt;.git
 
 В локальном репозитории откройте _wwwroot/index.html_.
 
-В строке 51 задайте для переменной `apiEndpoint` URL-адрес развернутого API (`http://<app_name>.azurewebsites.net`). Замените _\<appname>_ именем своего приложения в службе приложений.
+В строке 51 задайте для переменной `apiEndpoint` URL-адрес развернутого API (`http://<app_name>.azurewebsites.net`). Замените _\<appname>_ именем своего приложения в Службе приложений.
 
 В локальном окне терминала снова запустите пример приложения.
 
@@ -203,4 +203,4 @@ az webapp cors add --resource-group myResourceGroup --name <app-name> --allowed-
 Перейдите к следующему руководству, чтобы узнать, как выполнять аутентификацию и авторизацию пользователей.
 
 > [!div class="nextstepaction"]
-> [Руководство. Сквозная аутентификация и авторизация пользователей](app-service-web-tutorial-auth-aad.md)
+> [Руководство. Сквозная аутентификация и авторизация пользователей](tutorial-auth-aad.md)

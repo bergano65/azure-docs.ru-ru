@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 05/14/2018
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 18054e47a987a7e79e9083b6f7a2f20b059c7f28
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 470324799cd157c8b33311e1cae8b5b698433e1f
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81254620"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88079915"
 ---
 # <a name="tutorial-add-azure-cdn-to-an-azure-app-service-web-app"></a>Руководство по Добавление сети доставки содержимого Azure в веб-приложение Службы приложений Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "81254620"
 
 ## <a name="create-the-web-app"></a>Создание веб-приложения
 
-Чтобы создать веб-приложение, с которым вы будете работать, следуйте инструкциям в разделе **Переход в приложение** статьи [Создание статического веб-приложения HTML в Azure](../app-service/app-service-web-get-started-html.md).
+Чтобы создать веб-приложение, с которым вы будете работать, следуйте инструкциям в разделе **Переход в приложение** статьи [Создание статического веб-приложения HTML в Azure](../app-service/quickstart-html.md).
 
 ## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.
 
@@ -60,7 +60,7 @@ ms.locfileid: "81254620"
 
 ## <a name="create-a-cdn-profile-and-endpoint"></a>Создание профиля CDN и конечной точки
 
-В области навигации слева выберите раздел **Службы приложений**, а затем и выберите приложение, созданное в соответствии с инструкциями по [созданию статического веб-приложения HTML](../app-service/app-service-web-get-started-html.md).
+В области навигации слева выберите раздел **Службы приложений**, а затем и выберите приложение, созданное в соответствии с инструкциями по [созданию статического веб-приложения HTML](../app-service/quickstart-html.md).
 
 ![Выбор службы приложений на портале](media/cdn-add-to-web-app/portal-select-app-services.png)
 

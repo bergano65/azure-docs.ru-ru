@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: tutorial
 ms.date: 3/11/2019
 ms.author: rohink
-ms.openlocfilehash: 8722a52a097f7f830287d125a4e56e9bbcb9f932
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7a250eaeb8ac4d0c8cacfb1748855700c9986bf5
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76939100"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88079490"
 ---
 # <a name="tutorial-create-dns-records-in-a-custom-domain-for-a-web-app"></a>Руководство. Создание записей DNS для веб-приложения в личном домене 
 
@@ -48,7 +48,7 @@ ms.locfileid: "76939100"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 * У вас должно быть доступное доменное имя, которое можно будет разместить в Azure DNS и использовать для тестирования. У вас должен быть полный контроль над этим доменом, включая возможность определять записи сервера имен (NS) для домена.
-* [Создайте приложение службы приложений](../app-service/app-service-web-get-started-html.md) или используйте приложение, созданное для работы с другим руководством.
+* [Создайте приложение службы приложений](../app-service/quickstart-html.md) или используйте приложение, созданное для работы с другим руководством.
 
 * Создайте зону DNS в Azure DNS и делегируйте ее в регистраторе Azure DNS.
 

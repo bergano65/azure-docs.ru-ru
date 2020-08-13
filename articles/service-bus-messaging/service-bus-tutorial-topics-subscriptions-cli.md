@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: spelluru
 ms.author: spelluru
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: cdbde84780ed7c64f9ad3f4284a74261d2f4a728
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 2526559a8b88309c098e59e8cc6d0ffd2793984f
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500476"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88067602"
 ---
 # <a name="tutorial-update-inventory-using-cli-and-topicssubscriptions"></a>Руководство по Обновление информации о запасах с помощью интерфейса командной строки, разделов и подписок
 
@@ -36,7 +36,7 @@ ms.locfileid: "87500476"
 Для разработки приложения Служебной шины с помощью Java должны быть установлены следующие компоненты:
 
 - [пакет средств разработки Java](https://aka.ms/azure-jdks) последней версии;
-- [Azure CLI](https://docs.microsoft.com/cli/azure)
+- [Azure CLI](/cli/azure)
 - [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]

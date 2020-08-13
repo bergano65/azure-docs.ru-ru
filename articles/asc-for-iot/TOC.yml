@@ -31,6 +31,8 @@
       href: quickstart-create-security-twin.md
     - name: Создание пользовательских оповещений системы безопасности
       href: quickstart-create-custom-alerts.md
+    - name: Анализ оповещений системы безопасности
+      href: quickstart-investigate-security-alerts.md
 - name: Основные понятия
   items:
     - name: Аутентификация агентов безопасности

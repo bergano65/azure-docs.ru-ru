@@ -7,12 +7,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 07/12/2019
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
-ms.openlocfilehash: af75afb2840d2bc14e1fa46310f76f662efa2a54
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 17e01894ac3d26720b1e74be9d0fd7fc193c463f
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87384792"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88077311"
 ---
 # <a name="quickstart-start-monitoring-your-nodejs-web-application-with-azure-application-insights"></a>Краткое руководство. Начало мониторинга веб-приложения Node.js с помощью Application Insights в Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "87384792"
    npm install applicationinsights --save
    ```
 
-3. Измените первый файл *.js* приложения и добавьте две следующие строки в самую верхнюю часть своего скрипта. Если вы используете [приложение быстрого запуска Node.js](../../app-service/app-service-web-get-started-nodejs.md), необходимо изменить файл *index.js*. Замените `<instrumentation_key>` ключом инструментирования для приложения. 
+3. Измените первый файл *.js* приложения и добавьте две следующие строки в самую верхнюю часть своего скрипта. Если вы используете [приложение быстрого запуска Node.js](../../app-service/quickstart-nodejs.md), необходимо изменить файл *index.js*. Замените `<instrumentation_key>` ключом инструментирования для приложения. 
 
    ```JavaScript
    const appInsights = require('applicationinsights');

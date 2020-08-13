@@ -8,12 +8,12 @@ ms.service: mysql
 ms.topic: article
 ms.date: 05/10/2017
 ms.author: sewatson
-ms.openlocfilehash: 2ff389f52da0db4e394e8f6a6c37955a5f0c3861
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 1087f4965145df62c1c7138e7aa7072d09c655ca
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "64691361"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88077107"
 ---
 # <a name="azure-database-for-mysql-documentation"></a>Документация по Базе данных Azure для MySQL
 
@@ -23,15 +23,15 @@ ms.locfileid: "64691361"
 
 Узнайте, как создать базу данных MySQL в Azure с помощью следующих средств:
 
-- [портале Azure](/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal)
+- [Портал Azure](/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal)
 - [Azure CLI](/azure/mysql/quickstart-create-mysql-server-database-using-azure-cli)
 
 ## <a name="step-by-step-tutorials"></a>Пошаговые инструкции
 
 Узнайте, как проектировать базы данных и разрабатывать приложения:
 
-- Проектирование базы данных: [портал Azure](/azure/mysql/tutorial-design-database-using-portal) |  [Azure CLI](/azure/mysql/tutorial-design-database-using-cli)
-- Создание веб-приложения: [Wordpress — портал](https://portal.azure.com/#create/WordPress.WordPress) |  [PHP — Azure CLI](/azure/app-service/app-service-web-tutorial-php-mysql?toc=%2fazure%2fmysql%2ftoc.json)
+- Проектирование базы данных: [Портал Azure](/azure/mysql/tutorial-design-database-using-portal) |  [Azure CLI](/azure/mysql/tutorial-design-database-using-cli)
+- Создание веб-приложения: [Wordpress — портал](https://portal.azure.com/#create/WordPress.WordPress) |  [PHP — Azure CLI](/azure/app-service/tutorial-php-mysql-app?toc=%2fazure%2fmysql%2ftoc.json)
 
 ## <a name="samples"></a>Примеры 
 

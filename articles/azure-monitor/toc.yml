@@ -196,7 +196,21 @@
               href: app/pricing.md
             - name: Использование данных журнала и затраты на использование
               href: platform/manage-cost-storage.md
-        - name: Рабочие области Log Analytics
+    - name: Журналы платформы
+      items:
+        - name: Обзор
+          displayName: 'Platform logs, Resource logs, Activity log'
+          href: platform/platform-logs-overview.md
+        - name: Журнал действий
+          href: platform/activity-log.md
+        - name: Журналы ресурсов
+          href: platform/resource-logs.md
+        - name: Параметры диагностики
+          displayName: 'Platform logs, Resource logs, Activity log'
+          href: platform/diagnostic-settings.md
+    - name: Log Analytics
+      items:
+        - name: Рабочие области
           items:
             - name: Проектирование развертывания рабочей области
               href: platform/design-logs-deployment.md
@@ -218,119 +232,6 @@
               href: platform/service-providers.md
             - name: Управление доступом
               href: platform/manage-access.md
-        - name: Агенты виртуальных машин
-          items:
-            - name: Обзор
-              href: platform/agents-overview.md
-            - name: ВОПРОСЫ И ОТВЕТЫ
-              href: faq.md#agents
-            - name: Расширение службы "Диагностика Azure"
-              items:
-                - name: Обзор
-                  href: platform/diagnostics-extension-overview.md
-                - name: Windows
-                  displayname: diagnostics extension
-                  items:
-                    - name: Установка и настройка.
-                      items:
-                        - name: Варианты установки
-                          href: platform/diagnostics-extension-windows-install.md
-                        - name: PowerShell
-                          href: ../virtual-machines/extensions/diagnostics-windows.md?toc=/azure/azure-monitor/toc.json
-                        - name: Шаблон Resource Manager
-                          href: ../virtual-machines/extensions/diagnostics-template.md?toc=/azure/azure-monitor/toc.json
-                    - name: Отправка данных в Azure Monitor в качестве метрик
-                      items:
-                        - name: Виртуальная машина
-                          href: platform/collect-custom-metrics-guestos-resource-manager-vm.md
-                        - name: Масштабируемый набор виртуальных машин
-                          href: platform/collect-custom-metrics-guestos-resource-manager-vmss.md
-                        - name: Классическая виртуальная машина
-                          href: platform/collect-custom-metrics-guestos-vm-classic.md
-                        - name: облачная служба
-                          href: platform/collect-custom-metrics-guestos-vm-cloud-service-classic.md
-                    - name: Отправка в Центры событий
-                      href: platform/diagnostics-extension-stream-event-hubs.md
-                    - name: Отправка данных в журналы
-                      href: platform/diagnostics-extension-logs.md
-                    - name: Отправка в Application Insights
-                      href: platform/diagnostics-extension-to-application-insights.md
-                    - name: Журнал версий
-                      href: platform/diagnostics-extension-versions.md
-                    - name: Устранение неполадок
-                      href: platform/diagnostics-extension-troubleshooting.md
-                - name: Linux
-                  displayname: diagnostics extension
-                  items:
-                    - name: Обзор
-                      href: ../virtual-machines/extensions/diagnostics-linux.md?toc=/azure/azure-monitor/toc.json
-                    - name: Сбор метрик с помощью Telegraf
-                      href: platform/collect-custom-metrics-linux-telegraf.md
-            - name: Агент Log Analytics
-              items:
-                - name: Обзор
-                  href: platform/log-analytics-agent.md
-                - name: Агенты Windows
-                  href: platform/agent-windows.md
-                - name: Агенты Linux
-                  href: platform/agent-linux.md
-                - name: Расширение виртуальной машины для Windows
-                  href: ../virtual-machines/extensions/oms-windows.md?toc=/azure/azure-monitor/toc.json
-                - name: Расширение виртуальной машины для Linux
-                  href: ../virtual-machines/extensions/oms-linux.md?toc=/azure/azure-monitor/toc.json
-                - name: Шлюз службы анализа журналов
-                  href: platform/gateway.md
-                - name: Управление агентами
-                  href: platform/agent-manage.md
-                - name: Работоспособность агентов
-                  href: insights/solution-agenthealth.md
-                - name: Источники данных
-                  items:
-                    - name: Обзор
-                      href: platform/agent-data-sources.md
-                    - name: События Windows
-                      href: platform/data-sources-windows-events.md
-                    - name: Настраиваемые данные JSON
-                      href: platform/data-sources-json.md
-                    - name: Сбор данных о производительности из CollectD
-                      href: platform/data-sources-collectd.md
-                    - name: Системный журнал
-                      href: platform/data-sources-syslog.md
-                    - name: Счетчики производительности
-                      href: platform/data-sources-performance-counters.md
-                    - name: Производительность приложений Linux
-                      href: platform/data-sources-linux-applications.md
-                    - name: Журналы IIS
-                      href: platform/data-sources-iis-logs.md
-                    - name: Пользовательские журналы
-                      href: platform/data-sources-custom-logs.md
-                    - name: Пользовательские поля
-                      href: platform/custom-fields.md
-            - name: Диагностика
-              items:
-                - name: Расширение службы анализа журналов для виртуальной машины
-                  displayname: 'troubleshoot, troubleshooting'
-                  href: platform/vmext-troubleshoot.md
-                - name: Агент Log Analytics для Windows
-                  displayname: 'troubleshoot, troubleshooting'
-                  href: platform/agent-windows-troubleshoot.md
-                - name: Агент службы анализа журналов для Linux
-                  displayname: 'troubleshoot, troubleshooting'
-                  href: platform/agent-linux-troubleshoot.md
-    - name: Журналы платформы
-      items:
-        - name: Обзор
-          displayName: 'Platform logs, Resource logs, Activity log'
-          href: platform/platform-logs-overview.md
-        - name: Журнал действий
-          href: platform/activity-log.md
-        - name: Журналы ресурсов
-          href: platform/resource-logs.md
-        - name: Параметры диагностики
-          displayName: 'Platform logs, Resource logs, Activity log'
-          href: platform/diagnostic-settings.md
-    - name: Log Analytics
-      items:
         - name: Обзор запросов к журналу
           displayname: 'log query, log queries, query, queries'
           href: log-query/log-query-overview.md
@@ -424,6 +325,135 @@
           href: platform/metric-chart-samples.md
         - name: Устранение неполадок с диаграммами метрик
           href: platform/metrics-troubleshoot.md
+    - name: Сбор данных
+      items:
+        - name: Правила сбора данных
+          href: platform/data-collection-rule-overview.md
+        - name: Настраиваемые метрики
+          items:
+            - name: Настраиваемые метрики
+              href: platform/metrics-custom-overview.md
+            - name: REST API для метрик
+              href: platform/metrics-store-custom-rest-api.md
+        - name: Пользовательские журналы
+          items:
+            - name: API сборщика данных для службы анализа журналов
+              href: platform/data-collector-api.md
+            - name: 'Пример конвейера, созданного с помощью API сборщика данных для службы анализа журналов'
+              href: platform/create-pipeline-datacollector-api.md
+        - name: Logic Apps
+          items:
+            - name: Соединитель для журналов Azure Monitor
+              href: platform/logicapp-flow-connector.md
+            - name: Соединитель Application Insights
+              href: app/automate-with-logic-apps.md
+    - name: Агенты
+      items:
+        - name: Обзор
+          href: platform/agents-overview.md
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: faq.md#agents
+        - name: Агент Azure Monitor
+          items:
+            - name: Обзор
+              displayname: Azure Monitor agent
+              href: platform/azure-monitor-agent-overview.md
+            - name: Сбор данных
+              displayname: 'data collection rule,Azure Monitor agent'
+              href: platform/data-collection-rule-azure-monitor-agent.md
+        - name: Расширение службы "Диагностика Azure"
+          items:
+            - name: Обзор
+              href: platform/diagnostics-extension-overview.md
+            - name: Windows
+              displayname: diagnostics extension
+              items:
+                - name: Установка и настройка.
+                  items:
+                    - name: Варианты установки
+                      href: platform/diagnostics-extension-windows-install.md
+                    - name: PowerShell
+                      href: ../virtual-machines/extensions/diagnostics-windows.md?toc=/azure/azure-monitor/toc.json
+                    - name: Шаблон Resource Manager
+                      href: ../virtual-machines/extensions/diagnostics-template.md?toc=/azure/azure-monitor/toc.json
+                - name: Отправка данных в Azure Monitor в качестве метрик
+                  items:
+                    - name: Виртуальная машина
+                      href: platform/collect-custom-metrics-guestos-resource-manager-vm.md
+                    - name: Масштабируемый набор виртуальных машин
+                      href: platform/collect-custom-metrics-guestos-resource-manager-vmss.md
+                    - name: Классическая виртуальная машина
+                      href: platform/collect-custom-metrics-guestos-vm-classic.md
+                    - name: облачная служба
+                      href: platform/collect-custom-metrics-guestos-vm-cloud-service-classic.md
+                - name: Отправка в Центры событий
+                  href: platform/diagnostics-extension-stream-event-hubs.md
+                - name: Отправка данных в журналы
+                  href: platform/diagnostics-extension-logs.md
+                - name: Отправка в Application Insights
+                  href: platform/diagnostics-extension-to-application-insights.md
+                - name: Журнал версий
+                  href: platform/diagnostics-extension-versions.md
+                - name: Устранение неполадок
+                  href: platform/diagnostics-extension-troubleshooting.md
+            - name: Linux
+              displayname: diagnostics extension
+              items:
+                - name: Обзор
+                  href: ../virtual-machines/extensions/diagnostics-linux.md?toc=/azure/azure-monitor/toc.json
+                - name: Сбор метрик с помощью Telegraf
+                  href: platform/collect-custom-metrics-linux-telegraf.md
+        - name: Агент Log Analytics
+          items:
+            - name: Обзор
+              href: platform/log-analytics-agent.md
+            - name: Агенты Windows
+              href: platform/agent-windows.md
+            - name: Агенты Linux
+              href: platform/agent-linux.md
+            - name: Расширение виртуальной машины для Windows
+              href: ../virtual-machines/extensions/oms-windows.md?toc=/azure/azure-monitor/toc.json
+            - name: Расширение виртуальной машины для Linux
+              href: ../virtual-machines/extensions/oms-linux.md?toc=/azure/azure-monitor/toc.json
+            - name: Шлюз службы анализа журналов
+              href: platform/gateway.md
+            - name: Управление агентами
+              href: platform/agent-manage.md
+            - name: Работоспособность агентов
+              href: insights/solution-agenthealth.md
+            - name: Источники данных
+              items:
+                - name: Обзор
+                  href: platform/agent-data-sources.md
+                - name: События Windows
+                  href: platform/data-sources-windows-events.md
+                - name: Настраиваемые данные JSON
+                  href: platform/data-sources-json.md
+                - name: Сбор данных о производительности из CollectD
+                  href: platform/data-sources-collectd.md
+                - name: Системный журнал
+                  href: platform/data-sources-syslog.md
+                - name: Счетчики производительности
+                  href: platform/data-sources-performance-counters.md
+                - name: Производительность приложений Linux
+                  href: platform/data-sources-linux-applications.md
+                - name: Журналы IIS
+                  href: platform/data-sources-iis-logs.md
+                - name: Пользовательские журналы
+                  href: platform/data-sources-custom-logs.md
+                - name: Пользовательские поля
+                  href: platform/custom-fields.md
+        - name: Диагностика
+          items:
+            - name: Расширение службы анализа журналов для виртуальной машины
+              displayname: 'troubleshoot, troubleshooting'
+              href: platform/vmext-troubleshoot.md
+            - name: Агент Log Analytics для Windows
+              displayname: 'troubleshoot, troubleshooting'
+              href: platform/agent-windows-troubleshoot.md
+            - name: Агент службы анализа журналов для Linux
+              displayname: 'troubleshoot, troubleshooting'
+              href: platform/agent-linux-troubleshoot.md
     - name: Автомасштабирование
       items:
         - name: Обзор
@@ -1148,29 +1178,6 @@
               href: log-query/dashboard-upgrade.md
         - name: Отправка данных в Grafana
           href: platform/grafana-plugin.md
-    - name: Сбор и анализ пользовательских данных
-      items:
-        - name: Настраиваемые метрики
-          items:
-            - name: Настраиваемые метрики
-              href: platform/metrics-custom-overview.md
-            - name: REST API для метрик
-              href: platform/metrics-store-custom-rest-api.md
-        - name: Пользовательские журналы
-          items:
-            - name: API сборщика данных для службы анализа журналов
-              href: platform/data-collector-api.md
-            - name: 'Пример конвейера, созданного с помощью API сборщика данных для службы анализа журналов'
-              href: platform/create-pipeline-datacollector-api.md
-        - name: Logic Apps
-          items:
-            - name: Соединитель для журналов Azure Monitor
-              href: platform/logicapp-flow-connector.md
-            - name: Соединитель Application Insights
-              href: app/automate-with-logic-apps.md
-        - name: REST API
-          displayname: 'metrics, analyze'
-          href: platform/rest-api-walkthrough.md
     - name: Интеграция System Center
       items:
         - name: Подключение Operations Manager
@@ -1274,6 +1281,9 @@
           href: /rest/api/monitor/
         - name: Журналы Azure Monitor
           href: /rest/api/loganalytics
+        - name: "Пошаговое руководство по REST\_API"
+          displayname: 'metrics, analyze'
+          href: platform/rest-api-walkthrough.md
     - name: Шаблоны Resource Manager
       items:
         - name: Azure Monitor

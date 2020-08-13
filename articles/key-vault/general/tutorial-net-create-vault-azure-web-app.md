@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 05/06/2020
 ms.author: mbaldwin
-ms.openlocfilehash: a198456412c3146db2bc3e2a2483377e387f452d
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: b957ea9131c5124925b74576fd78665522afd8dc
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87513338"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080238"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-web-app-with-net"></a>Руководство по использованию управляемого удостоверения для подключения Key Vault к веб-приложению в .NET
 
@@ -140,7 +140,7 @@ az appservice plan create --name myAppServicePlan --resource-group myResourceGro
 
 ### <a name="create-a-remote-web-app"></a>Создание удаленного веб-приложения
 
-Создайте [веб-приложение Azure](../../app-service/containers/app-service-linux-intro.md) в плане службы приложений `myAppServicePlan`. 
+Создайте [веб-приложение Azure](../../app-service/overview.md#app-service-on-linux) в плане службы приложений `myAppServicePlan`. 
 
 > [!Important]
 > Как и хранилище ключей, веб-приложение Azure должно иметь уникальное имя. В следующих примерах замените \<your-webapp-name\> именем своего веб-приложения.
