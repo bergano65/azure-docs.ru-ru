@@ -15,22 +15,22 @@ ms.date: 11/08/2018
 ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94c434a2892060acfdd56c496a31e41597c21357
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 31235936109361f0f15a071346baee128060375a
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84763437"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88164994"
 ---
 # <a name="how-to-deploy-the-access-panel-extension-for-internet-explorer-using-group-policy"></a>Инструкции. Развертывание расширения панели доступа для Internet Explorer с помощью групповой политики
 
-В этом руководстве описывается удаленная установка расширения панели доступа для Internet Explorer на компьютерах пользователей с помощью групповой политики. Это расширение является обязательным для пользователей Internet Explorer, выполняющих вход в приложения, для которых настроен [единый вход по паролю](what-is-single-sign-on.md#password-based-sso).
+В этом руководстве описывается удаленная установка расширения панели доступа для Internet Explorer на компьютерах пользователей с помощью групповой политики. Это расширение является обязательным для пользователей Internet Explorer, выполняющих вход в приложения, для которых настроен [единый вход по паролю](sso-options.md#password-based-sso).
 
 Мы рекомендуем автоматизировать развертывание этого расширения. В противном случае пользователям нужно будет самостоятельно загружать и устанавливать расширение. Для этого требуются права администратора, к тому же пользователи могут совершать ошибки при установке. В этом руководстве рассматривается один из методов автоматизированного развертывания программного обеспечения с помощью групповой политики. [Дополнительные сведения о групповой политике.](https://technet.microsoft.com/windowsserver/bb310732.aspx)
 
 Также существует расширение панели доступа для браузеров [Chrome](https://go.microsoft.com/fwLink/?LinkID=311859) и [Firefox](https://go.microsoft.com/fwLink/?LinkID=626998). Для их установки права администратора не требуются.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Вы уже настроили [доменные службы Active Directory](https://msdn.microsoft.com/library/aa362244%28v=vs.85%29.aspx)и подключили компьютеры пользователей к домену.
 * У вас есть разрешение на изменение параметров для редактирования объекта групповой политики. По умолчанию такое разрешение имеют члены следующих групп безопасности: «Администраторы домена», «Администраторы предприятия» и «Владельцы-создатели групповой политики». [Подробнее.](https://technet.microsoft.com/library/cc781991%28v=ws.10%29.aspx)
@@ -166,7 +166,7 @@ ms.locfileid: "84763437"
 
    ![Убедитесь, что расширение панели доступа установлено и включено.](./media/deploy-access-panel-browser-extension/verify-install.png)
 
-## <a name="learn-more"></a>Подробнее
+## <a name="learn-more"></a>Дополнительные сведения
 
 * [Доступ к приложениям и единый вход с помощью Azure Active Directory](what-is-single-sign-on.md)
 * [Устранение неполадок, связанных с расширением панели доступа для Internet Explorer](manage-access-panel-browser-extension.md)

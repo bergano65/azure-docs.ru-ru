@@ -3,17 +3,17 @@ title: Выберите нужную ценовую категорию для к
 description: Дополнительные сведения о Azure Maps ценовых категориях. Узнайте, какие функции предлагаются на разных уровнях, и ознакомьтесь с основными соображениями по выбору ценовой категории.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 07/27/2020
+ms.date: 08/12/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 30507b289a0ae4f831c8bcf4e038049301da7981
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 3603a4f5d103987b25bd5f976b89f943f98565a8
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036782"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88163991"
 ---
 # <a name="choose-the-right-pricing-tier-in-azure-maps"></a>Выбор подходящей ценовой категории в Azure Maps
 
@@ -47,6 +47,7 @@ Azure Maps предлагает две ценовые категории: S0 и 
 | Azure Maps данных (Предварительная версия)                |                     | ✓        |
 | Мобильность (Предварительная версия)                       |                     | ✓        |
 | Погода (Предварительная версия)                        |✓                    |✓        |
+|  Создатель (Предварительная версия)                         |                   |✓        |
 
 Рассмотрим следующие дополнительные моменты:
 

@@ -7,12 +7,12 @@ ms.topic: how-to
 author: emuench
 ms.author: mingshen
 ms.date: 08/07/2020
-ms.openlocfilehash: 8d27594b33db72303c71ceb39de92b1d4340b9be
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 3e8822462cd7989f6bc1f051b3868d6241f591b1
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88037275"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88166711"
 ---
 # <a name="create-an-azure-virtual-machine-offer-on-azure-marketplace"></a>Создание предложения виртуальной машины Azure в Azure Marketplace
 
@@ -291,6 +291,8 @@ ms.locfileid: "88037275"
 ## <a name="plan-overview"></a>Обзор планов
 
 В Центре партнеров можно настроить различные параметры плана в рамках одного предложения. Для предложения требуется по крайней мере один план (прежнее название — номер SKU), который может варьироваться в зависимости от аудитории монетизацию, региона Azure, функций или образов виртуальных машин.
+
+Вы можете создать до 100 планов для каждого предложения: до 45 могут быть частными. Узнайте больше о частных планах в [частных предложениях в коммерческом магазине Майкрософт](../private-offers.md).
 
 После создания планов откройте вкладку **Обзор планов**, на которой отображаются следующие сведения.
 

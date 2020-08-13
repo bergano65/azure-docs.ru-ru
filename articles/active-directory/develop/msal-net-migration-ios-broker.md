@@ -11,13 +11,13 @@ ms.workload: identity
 ms.date: 09/08/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
-ms.custom: aaddev
-ms.openlocfilehash: 75b6559117420ad75b79c58b219400690b25b4cb
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.custom: devx-track-csharp, aaddev
+ms.openlocfilehash: bc94c7be4e3979cf9aa7624a9aeadf156cc48035
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88117878"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88166082"
 ---
 # <a name="migrate-ios-applications-that-use-microsoft-authenticator-from-adalnet-to-msalnet"></a>Перенос приложений iOS, использующих Microsoft Authenticator из ADAL.NET в MSAL.NET
 
@@ -159,7 +159,7 @@ ADAL.NET и MSAL.NET используют URL-адреса для вызова �
 
 в качестве префикса, за которым следует`CFBundleURLName`
 
-Пример: `$"msauth.(BundleId")`
+Например: `$"msauth.(BundleId")`
 
 ```csharp
  <key>CFBundleURLTypes</key>
@@ -224,14 +224,14 @@ ADAL.NET и MSAL.NET добавляют дополнительные требо�
 
 `"<app-scheme>://<your.bundle.id>"`
 
-Пример. 
+Пример 
 
 `mytestiosapp://com.mycompany.myapp`
 </td><td>
 
 `$"msauth.{BundleId}://auth"`
 
-Пример.
+Пример
 
 `public static string redirectUriOnIos = "msauth.com.yourcompany.XForms://auth"; `
 

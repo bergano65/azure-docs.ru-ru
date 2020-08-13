@@ -4,19 +4,19 @@ description: Добавление соединителей API для польз
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
-ms.topic: how-to
+ms.topic: article
 ms.date: 06/16/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d1a4495b1d637b1cf8592f8c17e63ad456ea3c4
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: d664d7cd169593924917bb02a0220e4047eb0cdb
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87909196"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88165258"
 ---
 # <a name="add-a-custom-approval-workflow-to-self-service-sign-up"></a>Добавление пользовательского рабочего процесса утверждения для самостоятельной регистрации
 
@@ -65,7 +65,7 @@ ms.locfileid: "87909196"
 
   ![Проверка конфигурации соединителя API для состояния утверждения](./media/self-service-sign-up-add-approvals/check-approval-status-api-connector-config-alt.png)
 
-- **Запрос утверждения** — отправка вызова в систему утверждения после того, как пользователь завершит страницу коллекции атрибутов, но до создания учетной записи пользователя, чтобы запросить утверждение. Запрос на утверждение может быть автоматически предоставлен или проверен вручную. Пример соединителя API "Утверждение запроса". Выберите любые **утверждения, чтобы отправить** системе утверждения запрос на утверждение.
+- **Запрос утверждения** — отправка вызова в систему утверждения после того, как пользователь завершит страницу коллекции атрибутов, но до создания учетной записи пользователя, чтобы запросить утверждение. Запрос на утверждение может быть автоматически предоставлен или проверен вручную. Пример соединителя API "Утверждение запроса". 
 
   ![Настройка соединителя API для утверждения запросов](./media/self-service-sign-up-add-approvals/create-approval-request-api-connector-config-alt.png)
 
@@ -90,28 +90,33 @@ ms.locfileid: "87909196"
 
 ## <a name="control-the-sign-up-flow-with-api-responses"></a>Управление потоком регистрации с помощью ответов API
 
-Система утверждения может использовать [типы ответов API](self-service-sign-up-add-api-connector.md#expected-response-types-from-the-web-api) из двух конечных точек API для управления потоком регистрации.
+Ваша система утверждения может использовать свои ответы при вызове для управления потоком регистрации. 
 
 ### <a name="request-and-responses-for-the-check-approval-status-api-connector"></a>Запрос и ответы для соединителя API "проверить состояние утверждения"
 
 Пример запроса, полученного API из соединителя API "проверить состояние утверждения":
 
 ```http
-POST <Approvals-API-endpoint>
+POST <API-endpoint>
 Content-type: application/json
 
 {
- "email": "johnsmith@outlook.com",
- "identities": [
+ "email": "johnsmith@fabrikam.onmicrosoft.com",
+ "identities": [ //Sent for Google and Facebook identity providers
      {
      "signInType":"federated",
      "issuer":"facebook.com",
      "issuerAssignedId":"0123456789"
      }
  ],
+ "displayName": "John Smith",
+ "givenName":"John",
+ "lastName":"Smith",
  "ui_locales":"en-US"
 }
 ```
+
+Точные утверждения, отправляемые в API, зависят от того, какие сведения предоставляются поставщиком удостоверений. "Электронная почта" всегда отправляется.
 
 #### <a name="continuation-response-for-check-approval-status"></a>Ответ на продолжение для "Проверка состояния утверждения"
 
@@ -169,12 +174,12 @@ Content-type: application/json
 Пример HTTP-запроса, полученного API из соединителя API "Утверждение запроса":
 
 ```http
-POST <Approvals-API-endpoint>
+POST <API-endpoint>
 Content-type: application/json
 
 {
- "email": "johnsmith@outlook.com",
- "identities": [
+ "email": "johnsmith@fabrikam.onmicrosoft.com",
+ "identities": [ //Sent for Google and Facebook identity providers
      {
      "signInType":"federated",
      "issuer":"facebook.com",
@@ -182,11 +187,21 @@ Content-type: application/json
      }
  ],
  "displayName": "John Smith",
- "city": "Redmond",
- "extension_<extensions-app-id>_CustomAttribute": "custom attribute value",
+ "givenName":"John",
+ "surname":"Smith",
+ "jobTitle":"Supplier",
+ "streetAddress":"1000 Microsoft Way",
+ "city":"Seattle",
+ "postalCode": "12345",
+ "state":"Washington",
+ "country":"United States",
+ "extension_<extensions-app-id>_CustomAttribute1": "custom attribute value",
+ "extension_<extensions-app-id>_CustomAttribute2": "custom attribute value",
  "ui_locales":"en-US"
 }
 ```
+
+Точные утверждения, отправляемые в API, зависят от того, какие сведения собираются от пользователя или предоставлены поставщиком удостоверений.
 
 #### <a name="continuation-response-for-request-approval"></a>Ответ на продолжение для утверждения запроса
 
@@ -257,7 +272,7 @@ Content-type: application/json
 
 Если пользователь вошел в учетную запись Google или Facebook, вы можете использовать [API создания пользователей](https://docs.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0&tabs=http).
 
-1. Система утверждения получает HTTP-запрос от потока пользователя.
+1. Система утверждения использует получение HTTP-запроса от потока пользователя.
 
 ```http
 POST <Approvals-API-endpoint>
@@ -310,8 +325,8 @@ Content-type: application/json
 | mail                                                | Да      | Эквивалентно `email` утверждению, отправленному в API.                                                                                                               |
 | userType                                            | Да      | Этот параметр должен содержать значение `Guest`. Назначает этого пользователя в качестве гостевого пользователя.                                                                                                                 |
 | удостоверения;                                          | Да      | Сведения об федеративного удостоверения.                                                                                                                                    |
-| \<otherBuiltInAttribute>                            | Нет       | Другие встроенные атрибуты, такие как `displayName` , `city` и другие. Имена параметров совпадают с параметрами, отправленными соединителем API.                            |
-| \<extension\_\{extensions-app-id}\_CustomAttribute> | Нет       | Настраиваемые атрибуты пользователя. Имена параметров совпадают с параметрами, отправленными соединителем API.                                                            |
+| \<otherBuiltInAttribute>                            | нет       | Другие встроенные атрибуты, такие как `displayName` , `city` и другие. Имена параметров совпадают с параметрами, отправленными соединителем API.                            |
+| \<extension\_\{extensions-app-id}\_CustomAttribute> | нет       | Настраиваемые атрибуты пользователя. Имена параметров совпадают с параметрами, отправленными соединителем API.                                                            |
 
 ### <a name="for-a-federated-azure-active-directory-user"></a>Для федеративного Azure Active Directory пользователя
 
@@ -371,7 +386,7 @@ Content-type: application/json
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Приступая к работе с [примерами краткого руководства по функциям Azure](code-samples-self-service-sign-up.md#api-connector-azure-function-quickstarts).
 - Извлечение [самообслуживания для гостевых пользователей с примером утверждения вручную](code-samples-self-service-sign-up.md#custom-approval-workflows). 

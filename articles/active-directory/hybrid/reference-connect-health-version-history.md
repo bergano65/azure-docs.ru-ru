@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
-ms.date: 03/20/2019
+ms.date: 08/10/2020
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31388f27eddcef2c75d4ad4d2030655b35f6aa1c
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 2cb5902e3bc8bbed63d7a6e074ece824e16c5609
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87446962"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88165164"
 ---
 # <a name="azure-ad-connect-health-version-release-history"></a>Azure AD Connect Health: история выпусков версий
 Команда Azure Active Directory регулярно добавляет в Azure AD Connect Health новые функции и возможности. В этой статье перечислены выпущенные версии и компоненты.  
@@ -31,6 +31,14 @@ ms.locfileid: "87446962"
 >
 
 Агент Azure AD Connect Health для синхронизации интегрируется с установленным средством Azure AD Connect. Дополнительные сведения см. в [истории выпусков версий Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-version-history). Вы можете оставить отзыв и проголосовать за функцию на [канале Connect Health на сайте User Voice](https://feedback.azure.com/forums/169401-azure-active-directory/filters/new?category_id=165591).
+
+## <a name="april-2020"></a>Апрель 2020 г.
+**Обновление агента**
+
+- Агент Azure AD Connect Health для AD FS (версия 3.1.77.0)
+
+   1.   Исправление ошибки для предупреждения "Недопустимое имя субъекта-службы (SPN) для службы AD FS", для которого оповещение сообщается неправильно.
+
 
 ## <a name="july-2019"></a>Июль 2019 г.
 **Обновление агента**
@@ -141,7 +149,7 @@ ms.locfileid: "87446962"
   1. Повышение доступности агента. 
   2. Исправления ошибок и общие улучшения.
 
-## <a name="december-2017"></a>Декабрь 2017 г.
+## <a name="december-2017"></a>Декабрь 2017 г.
 **Обновление агента:**
 
 * Агент Azure AD Connect Health для AD DS (версия 3.0.145.0).

@@ -12,13 +12,13 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: marsma
 ms.reviewer: saeeda
-ms.custom: aaddev
-ms.openlocfilehash: 8e37d443d75dccae8704bc1ff7856e1d24131766
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp, aaddev
+ms.openlocfilehash: 8f755b42249a88a2d37117003d561f79aea6b170
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82652703"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88165997"
 ---
 #  <a name="xamarin-android-system-browser-considerations-for-using-msalnet"></a>Рекомендации по использованию MSAL.NET в браузере системы Xamarin Android
 
@@ -45,7 +45,7 @@ ms.locfileid: "82652703"
 | Устройство | Браузер     |  Результат  | 
 | ------------- |:-------------:|:-----:|
 | Huawei/один + | Chrome\* | Успех|
-| Huawei/один + | Пограничный случай\* | Успех|
+| Huawei/один + | Edge\* | Успех|
 | Huawei/один + | Firefox\* | Успех|
 | Huawei/один + | Дивный\* | Успех|
 | Один + | екосиа\* | Успех|

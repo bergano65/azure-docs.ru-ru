@@ -12,13 +12,13 @@ ms.workload: identity
 ms.date: 07/16/2019
 ms.author: marsma
 ms.reviewer: saeeda
-ms.custom: aaddev
-ms.openlocfilehash: 7125559dd39e1626634dae7c45b0744bfff57d8c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp, aaddev
+ms.openlocfilehash: 73303d64d7ebeb94290819226e5e5944f95f6e42
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82652659"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88165708"
 ---
 # <a name="considerations-for-using-xamarin-ios-with-msalnet"></a>Рекомендации по использованию Xamarin iOS с MSAL.NET
 При использовании библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET) в Xamarin iOS необходимо выполнить следующие действия: 
@@ -31,7 +31,7 @@ ms.locfileid: "82652659"
 
 ## <a name="implement-openurl"></a>Реализация OpenUrl
 
-Переопределите `OpenUrl` метод `FormsApplicationDelegate` производного класса и вызовите `AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs` . Ниже приведен пример:
+Переопределите `OpenUrl` метод `FormsApplicationDelegate` производного класса и вызовите `AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs` . Пример:
 
 ```csharp
 public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
@@ -114,7 +114,7 @@ var builder = PublicClientApplicationBuilder
 
 Дополнительные сведения о свойствах для Xamarin iOS см. в разделе [рекомендации для iOS](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/tree/master/1-Basic#ios-specific-considerations) в следующем примере файла readme.md:
 
-Пример | Платформа | Описание
+Образец | Платформа | Описание
 ------ | -------- | -----------
 [https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, универсальная платформа Windows (UWP) | Простое приложение Xamarin Forms, которое показывает, как использовать MSAL для проверки подлинности личных учетных записей Майкрософт и Azure AD через конечную точку Azure AD 2,0. В приложении также показано, как использовать полученный маркер для доступа к Microsoft Graph.
 

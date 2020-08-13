@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/14/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 6ed9d5eb8d230b05a090424d6105865acae69e61
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 96ebfecf01ff147a874674861c7cb64cb3725d52
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87019358"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88164926"
 ---
 # <a name="remote-access-to-on-premises-applications-through-azure-ad-application-proxy"></a>Удаленный доступ к локальным приложениям через Azure AD Application Proxy
 
@@ -41,7 +41,7 @@ Application Proxy поддерживает:
 * Приложения, размещенные за [шлюзом удаленный рабочий стол](application-proxy-integrate-with-remote-desktop-services.md)
 * полнофункциональные клиентские приложения, интегрированные с библиотекой проверки подлинности Майкрософт (MSAL).
 
-Application Proxy поддерживает единый вход. Дополнительные сведения о поддерживаемых методах см. в статье [о выборе метода единого входа](what-is-single-sign-on.md#choosing-a-single-sign-on-method).
+Application Proxy поддерживает единый вход. Дополнительные сведения о поддерживаемых методах см. в статье [о выборе метода единого входа](sso-options.md#choosing-a-single-sign-on-method).
 
 Прокси приложения рекомендуется использовать для предоставления удаленным пользователям доступа к внутренним ресурсам. Прокси приложения заменяет потребность в VPN или обратный прокси-сервер. Он не предназначен для внутренних пользователей в корпоративной сети.  Эти пользователи, которые необязательно используют прокси приложения, могут привести к непредвиденным и нежелательным проблемам с производительностью.
 

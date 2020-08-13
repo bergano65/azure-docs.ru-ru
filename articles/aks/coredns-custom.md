@@ -6,12 +6,12 @@ author: jnoller
 ms.topic: article
 ms.date: 03/15/2019
 ms.author: jenoller
-ms.openlocfilehash: f58232eac6727f10fdccb32e7795bf12a93b7cbb
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 08d3c61ca4b5988847676b12478a5865ac319d37
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87405523"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88164208"
 ---
 # <a name="customize-coredns-with-azure-kubernetes-service"></a>Настройка CoreDNS с использованием Службы Azure Kubernetes
 
@@ -22,7 +22,7 @@ ms.locfileid: "87405523"
 В этой статье показано, как использовать Конфигмапс для базовых параметров настройки Кореднс в AKS. Этот подход отличается от настройки Кореднс в других контекстах, таких как использование Корефиле. Проверьте используемую версию Кореднс, так как значения конфигурации могут изменяться в разных версиях.
 
 > [!NOTE]
-> `kube-dns`предложены различные [варианты настройки][kubednsblog] через карту конфигурации Kubernetes. Кореднс **не** поддерживает обратную совместимость с KUBE-DNS. Все ранее использовавшиеся настройки должны быть обновлены для использования с Кореднс.
+> `kube-dns` предложены различные [варианты настройки][kubednsblog] через карту конфигурации Kubernetes. Кореднс **не** поддерживает обратную совместимость с KUBE-DNS. Все ранее использовавшиеся настройки должны быть обновлены для использования с Кореднс.
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -53,6 +53,9 @@ data:
         forward .  /etc/resolv.conf # you can redirect this to a specific DNS server such as 10.0.0.10, but that server must be able to resolve the rewritten domain name
     }
 ```
+
+> [!IMPORTANT]
+> При перенаправлении на DNS-сервер, например IP-адрес службы Кореднс, этот DNS-сервер должен иметь возможность разрешить перезапись доменного имени.
 
 Создайте ConfigMap с помощью команды [kubectl Apply ConfigMap][kubectl-apply] и укажите имя манифеста YAML:
 

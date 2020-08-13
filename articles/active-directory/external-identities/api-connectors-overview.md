@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c5e546c6eac77c4952a0d32d360f49d4251d49d
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: cdb6e85b6d81de3d4b88ba315ddd35bd5b37ae7a
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87910282"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88165215"
 ---
 # <a name="use-api-connectors-to-customize-and-extend-self-service-sign-up"></a>Использование соединителей API для настройки и расширения самостоятельной регистрации 
 
@@ -30,7 +30,7 @@ ms.locfileid: "87910282"
 <!-- - **Enrich user data**. Integrate with your external cloud systems that store user information to integrate them with the sign-up flow. For example, your API can receive the user's email address, query a CRM system, and return the user's loyalty number. Returned claims can be used to pre-fill form fields or return additional data in the application token.  -->
 - **Запускать пользовательскую бизнес-логику**. Вы можете активировать нисходящие события в облачных системах для отправки push-уведомлений, обновления корпоративных баз данных, управления разрешениями, аудита баз данных и выполнения других настраиваемых действий.
 
-Соединитель API представляет контракт между Azure AD и конечной точкой API, определяя конечную точку HTTP, проверку подлинности, запрос и ожидаемый ответ. После настройки соединителя API его можно включить для определенного шага в потоке пользователя. Когда пользователь достигает этого этапа в потоке регистрации, соединитель API вызывается и представляется как запрос HTTP POST, который отправляет выбранные утверждения в виде пар "ключ-значение" в теле JSON. Ответ API может повлиять на выполнение потока пользователя. Например, ответ API может блокировать регистрацию пользователя, попросите пользователя повторно ввести сведения или перезаписать и добавить атрибуты пользователя.
+Соединитель API предоставляет Azure Active Directory с информацией, необходимой для вызова конечной точки API, определяя URL-адрес конечной точки HTTP и проверку подлинности. После настройки соединителя API его можно включить для определенного шага в потоке пользователя. Когда пользователь достигает этого этапа в потоке регистрации, соединитель API вызывается и представляется как запрос HTTP POST к API, отправляя сведения о пользователе ("утверждения") в качестве пар "ключ-значение" в теле JSON. Ответ API может повлиять на выполнение потока пользователя. Например, ответ API может блокировать регистрацию пользователя, попросите пользователя повторно ввести сведения или перезаписать и добавить атрибуты пользователя.
 
 ## <a name="where-you-can-enable-an-api-connector-in-a-user-flow"></a>Где можно включить соединитель API в потоке пользователя
 
@@ -39,7 +39,8 @@ ms.locfileid: "87910282"
 - После входа с помощью поставщика удостоверений
 - Перед созданием пользователя
 
-В обоих случаях соединители API вызываются во время регистрации, а не для входа.
+> [!IMPORTANT]
+> В обоих случаях соединители API вызываются во время **регистрации**пользователя, а не для входа.
 
 ### <a name="after-signing-in-with-an-identity-provider"></a>После входа с помощью поставщика удостоверений
 
@@ -60,6 +61,6 @@ ms.locfileid: "87910282"
 <!-- > [!IMPORTANT]
 > If an invalid response is returned or another error occurs (for example, a network error), the user will be redirected to the app with the error re -->
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте, как [Добавить соединитель API в поток пользователя](self-service-sign-up-add-api-connector.md)
 - Узнайте, как [добавить пользовательскую систему утверждения для самостоятельной регистрации](self-service-sign-up-add-approvals.md)
