@@ -9,19 +9,19 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: 32eafc41451c42a9c929e94d30450b923e7eae83
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: 41ad20de6b7a800ff1f97a7ff371c8e0012fed27
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87760929"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88166983"
 ---
 # <a name="network-file-system-nfs-30-protocol-support-in-azure-blob-storage-preview"></a>Поддержка протокола NFS 3,0 в хранилище BLOB-объектов Azure (Предварительная версия)
 
 Хранилище BLOB-объектов теперь поддерживает протокол NFS 3,0. Эта поддержка позволяет клиентам Windows или Linux подключать контейнер в хранилище BLOB-объектов из виртуальной машины Azure или локального компьютера. 
 
 > [!NOTE]
-> Поддержка протокола NFS 3,0 в хранилище BLOB-объектов Azure доступна в общедоступной предварительной версии и доступна в следующих регионах: Восточная часть США, Центральная часть США и Центральная Канада.
+> Поддержка протокола NFS 3,0 в хранилище BLOB-объектов Azure доступна в общедоступной предварительной версии. она доступна в следующих регионах: Восточная часть США, Центральная часть США, Центральная часть США, Юго-Восточная Австралия, Северная Европа, западная часть Соединенного Королевства, Центральная Корея, Южная Корея и Центральная Канада.
 
 ## <a name="general-workflow-mounting-a-storage-account-container"></a>Общий рабочий процесс: Подключение контейнера учетной записи хранения
 

@@ -9,19 +9,19 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: 2517a0ac8edf30ac041708a57b166af6eb36440a
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: cb3cb41b46c2def4f99af7f1811e4ff96dff7070
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87760806"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167034"
 ---
 # <a name="mount-blob-storage-by-using-the-network-file-system-nfs-30-protocol-preview"></a>Подключение хранилища BLOB-объектов с помощью протокола NFS 3,0 (Предварительная версия)
 
 Контейнер в хранилище BLOB-объектов можно подключить из виртуальной машины Azure под управлением Windows или Linux или системы Windows или Linux, которая выполняется локально с помощью протокола NFS 3,0. В этой статье приводятся пошаговые инструкции. Дополнительные сведения о поддержке протокола NFS 3,0 в хранилище больших двоичных объектов см. в статье [Поддержка протоколов nfs 3,0 в хранилище BLOB-объектов Azure (Предварительная версия)](network-file-system-protocol-support.md).
 
 > [!NOTE]
-> Поддержка протокола NFS 3,0 в хранилище BLOB-объектов Azure доступна в общедоступной предварительной версии и доступна в следующих регионах: Восточная часть США, Центральная часть США и Центральная Канада.
+> Поддержка протокола NFS 3,0 в хранилище BLOB-объектов Azure доступна в общедоступной предварительной версии. она доступна в следующих регионах: Восточная часть США, Центральная часть США, Центральная часть США, Юго-Восточная Австралия, Северная Европа, западная часть Соединенного Королевства, Центральная Корея, Южная Корея и Центральная Канада.
 
 ## <a name="step-1-register-the-nfs-30-protocol-feature-with-your-subscription"></a>Шаг 1. регистрация функции протокола NFS 3,0 в подписке
 
@@ -92,7 +92,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 
 |Параметр | Значение|
 |----|---|
-|Расположение|Один из следующих регионов: Восточная часть США, Центральная часть США и Центральная Канада |
+|Расположение|Одна из следующих областей: Восток США, Центральная часть США, Центральная часть США, Юго-Восточная Австралия, Северная Европа, западная часть Соединенного Королевства, Центральная Корея, Южная Корея и Центральная Канада |
 |Производительность|Premium|
 |Тип учетной записи|блоккблобстораже|
 |Репликация|Локально избыточное хранилище (LRS)|
@@ -112,7 +112,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 |[Обозреватель службы хранилища Azure](data-lake-storage-explorer.md#create-a-container)|[.NET](data-lake-storage-directory-file-acl-dotnet.md#create-a-container)|
 |[AzCopy](../common/storage-use-azcopy-blobs.md#create-a-container)|[Java](data-lake-storage-directory-file-acl-java.md#create-a-container)|
 |[PowerShell](data-lake-storage-directory-file-acl-powershell.md#create-a-container)|[Python](data-lake-storage-directory-file-acl-python.md#create-a-container)|
-|[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container);|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
+|[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container)|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
 |[Портал Azure](https://portal.azure.com)|[REST](https://docs.microsoft.com/rest/api/storageservices/create-container)|
 
 ## <a name="step-7-mount-the-container"></a>Шаг 7. Подключение контейнера

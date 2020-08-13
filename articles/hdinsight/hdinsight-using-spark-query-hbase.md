@@ -7,19 +7,19 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
-ms.date: 04/20/2020
-ms.openlocfilehash: 3ddb8734a3d15a6cd5f4a43ee069d6364f7523ed
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.date: 08/12/2020
+ms.openlocfilehash: 9454cb83d535d97a3dd95cd9f5d0636769797d08
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86087492"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88166949"
 ---
 # <a name="use-apache-spark-to-read-and-write-apache-hbase-data"></a>Чтение и запись данных Apache HBase с помощью Apache Spark
 
-Обычно для запроса Apache HBase применяется низкоуровневый API (сканирует, получает и помещает) или синтаксис SQL, использующий Apache Phoenix. Apache также предоставляет соединитель Apache Spark HBase. Соединитель — это удобная и производительная альтернатива для запроса и изменения данных, хранящихся в HBase.
+Обычно для запроса Apache HBase применяется низкоуровневый API (сканирует, получает и помещает) или синтаксис SQL, использующий Apache Phoenix. Apache также предоставляет соединитель Apache Spark HBase. Соединитель — это удобная и эффективная альтернатива для запроса и изменения данных, хранящихся в HBase.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Два отдельных кластера HDInsight развернуты в одной [виртуальной сети](./hdinsight-plan-virtual-network-deployment.md). Одна HBase и одна Spark с установленным как минимум Spark 2,1 (HDInsight 3,6). Дополнительные сведения см. в статье [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](hdinsight-hadoop-create-linux-clusters-portal.md).
 
@@ -27,11 +27,10 @@ ms.locfileid: "86087492"
 
 ## <a name="overall-process"></a>Общий процесс
 
-Ниже приведен общий процесс, чтобы позволить кластеру Spark запрашивать кластер HDInsight.
+Высокоуровневый процесс включения кластера Spark для запроса к кластеру HBase выглядит следующим образом:
 
 1. Подготовка демонстрационных данных в HBase.
-2. Извлечение файла hbase-site.xml из папки конфигурации кластера HBase (/etc/hbase/conf).
-3. Помещение копии файла hbase-site.xml в папку конфигурации Spark 2 (/etc/spark2/conf).
+2. Получите файл hbase-site.xml из папки конфигурации кластера HBase (/ЕТК/хбасе/конф) и поместите копию hbase-site.xml в папку конфигурации Spark 2 (/etc/spark2/conf). (Необязательно. используйте скрипт, предоставленный группой HDInsight для автоматизации этого процесса)
 4. Запуск `spark-shell` со ссылкой на соединитель Spark HBase по его координатам Maven в параметре `packages`.
 5. Определение каталога, который сопоставляет схему из Spark с HBase.
 6. Взаимодействие с данными HBase с помощью API RDD или таблицы данных.
@@ -76,36 +75,77 @@ ms.locfileid: "86087492"
     ```hbase
     exit
     ```
+    
+## <a name="run-scripts-to-set-up-connection-between-clusters"></a>Запуск сценариев для настройки подключения между кластерами
 
-## <a name="copy-hbase-sitexml-to-spark-cluster"></a>Копирование hbase-site.xml в кластер Spark
+Чтобы настроить связь между кластерами, выполните следующие действия, чтобы запустить два скрипта в кластерах. Эти сценарии автоматизируют процесс копирования файлов, описанный в разделе "Настройка связи вручную" ниже. 
 
-Скопируйте hbase-site.xml из локального хранилища в корневую папку хранилища по умолчанию кластера Spark.  Измените приведенную ниже команду, чтобы отразить конфигурацию.  Затем из открытого сеанса SSH в кластер HBase введите команду:
+* Скрипт, запускаемый из кластера HBase, будет отправлять `hbase-site.xml` сведения о сопоставлении IP-адресов HBase в хранилище по умолчанию, подключенное к кластеру Spark. 
+* Скрипт, запускаемый из кластера Spark, настраивает два задания cron для периодического запуска двух вспомогательных скриптов:  
+    1.  Задание HBase cron — скачивание новых `hbase-site.xml` файлов и сопоставление IP-адресов HBase из учетной записи хранения Spark по умолчанию на локальный узел
+    2.  Задание Spark cron — проверяет, выполнялось ли масштабирование Spark, а кластер является безопасным. Если это так, измените, `/etc/hosts` чтобы включить IP-сопоставление HBase, сохраненное локально
 
-| Значение синтаксиса | Новое значение|
-|---|---|
-|[Схема URI](hdinsight-hadoop-linux-information.md#URI-and-scheme) | Измените в соответствии с хранилищем.  Приведенный ниже синтаксис предназначен для хранилища BLOB-объектов с включенной безопасной переносю.|
-|`SPARK_STORAGE_CONTAINER`|Замените на имя контейнера хранилища по умолчанию, используемое для кластера Spark.|
-|`SPARK_STORAGE_ACCOUNT`|Замените именем учетной записи хранения по умолчанию, используемой для кластера Spark.|
+__Примечание__. прежде чем продолжать, убедитесь, что вы добавили учетную запись хранения кластера Spark в кластер HBase в качестве учетной записи дополнительного хранилища. Убедитесь, что скрипты заданы в порядке, как показано ниже.
 
-```bash
-hdfs dfs -copyFromLocal /etc/hbase/conf/hbase-site.xml wasbs://SPARK_STORAGE_CONTAINER@SPARK_STORAGE_ACCOUNT.blob.core.windows.net/
-```
 
-Затем завершите подключение SSH к кластеру HBase.
+1. Используйте [действие сценария](hdinsight-hadoop-customize-cluster-linux.md#script-action-to-a-running-cluster) в кластере HBase, чтобы применить изменения со следующими соображениями. 
 
-```bash
-exit
-```
 
-## <a name="put-hbase-sitexml-on-your-spark-cluster"></a>Помещение файла hbase-site.xml в кластер Spark
+    |Свойство | Значение |
+    |---|---|
+    |URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/hbasesparkconnectorscript/connector-hbase.sh`|
+    |Типы узлов|Регион|
+    |Параметры|`-s SECONDARYS_STORAGE_URL`|
+    |Persisted|да|
 
-1. Подключитесь к головному узлу кластера Spark с помощью SSH. Измените приведенную ниже команду, заменив `SPARKCLUSTER` именем кластера Spark, а затем введите следующую команду:
+    * `SECONDARYS_STORAGE_URL`URL-адрес хранилища по умолчанию на стороне Spark. Пример параметра:`-s wasb://sparkcon-2020-08-03t18-17-37-853z@sparkconhdistorage.blob.core.windows.net`
+
+
+2.  Используйте действие сценария в кластере Spark, чтобы применить изменения со следующими соображениями.
+
+    |Свойство | Значение |
+    |---|---|
+    |URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/hbasesparkconnectorscript/connector-spark.sh`|
+    |Типы узлов|Головной, Рабочий, Zookeeper|
+    |Параметры|`-s "SPARK-CRON-SCHEDULE"`(необязательно) `-h "HBASE-CRON-SCHEDULE"` используемых|
+    |Persisted|да|
+
+
+    * Можно указать, как часто этот кластер должен автоматически проверять наличие обновлений. Default:-s "*/1 * * * *"-h 0 (в этом примере Spark cron выполняется каждую минуту, а cron-сервер HBase не запускается)
+    * Поскольку HBase cron не настроен по умолчанию, необходимо повторно выполнить этот сценарий при масштабировании в кластер HBase. Если кластер HBase часто масштабируется, вы можете настроить задание HBase cron автоматически. Например: `-h "*/30 * * * *"` настраивает скрипт для выполнения проверок каждые 30 минут. Это приведет к периодической повторному запуску расписания HBase cron для автоматической загрузки новых сведений HBase в учетную запись хранения на локальный узел.
+    
+    
+
+## <a name="set-up-communication-manually-optional-if-provided-script-in-above-step-fails"></a>Настройка связи вручную (необязательно, если предоставленный скрипт на предыдущем шаге завершается ошибкой)
+
+__Примечание.__ Эти действия должны выполняться каждый раз, когда один из кластеров проходит операцию масштабирования.
+
+1. Скопируйте hbase-site.xml из локального хранилища в корневую папку хранилища по умолчанию кластера Spark.  Измените приведенную ниже команду, чтобы отразить конфигурацию.  Затем из открытого сеанса SSH в кластер HBase введите команду:
+
+    | Значение синтаксиса | Новое значение|
+    |---|---|
+    |[Схема URI](hdinsight-hadoop-linux-information.md#URI-and-scheme) | Измените в соответствии с хранилищем.  Приведенный ниже синтаксис предназначен для хранилища BLOB-объектов с включенной безопасной переносю.|
+    |`SPARK_STORAGE_CONTAINER`|Замените на имя контейнера хранилища по умолчанию, используемое для кластера Spark.|
+    |`SPARK_STORAGE_ACCOUNT`|Замените именем учетной записи хранения по умолчанию, используемой для кластера Spark.|
+
+    ```bash
+    hdfs dfs -copyFromLocal /etc/hbase/conf/hbase-site.xml wasbs://SPARK_STORAGE_CONTAINER@SPARK_STORAGE_ACCOUNT.blob.core.windows.net/
+    ```
+
+2. Затем завершите подключение SSH к кластеру HBase.
+
+    ```bash
+    exit
+    ```
+
+
+3. Подключитесь к головному узлу кластера Spark с помощью SSH. Измените приведенную ниже команду, заменив `SPARKCLUSTER` именем кластера Spark, а затем введите следующую команду:
 
     ```cmd
     ssh sshuser@SPARKCLUSTER-ssh.azurehdinsight.net
     ```
 
-2. Введите следующую команду, чтобы скопировать данные `hbase-site.xml` из хранилища по умолчанию кластера Spark в папку конфигурации Spark 2 в локальном хранилище кластера:
+4. Введите следующую команду, чтобы скопировать данные `hbase-site.xml` из хранилища по умолчанию кластера Spark в папку конфигурации Spark 2 в локальном хранилище кластера:
 
     ```bash
     sudo hdfs dfs -copyToLocal /hbase-site.xml /etc/spark2/conf
@@ -125,7 +165,7 @@ exit
     |      2.1    | HDI 3,6 (HBase 1,1) | 1.1.0.3.1.2.2-1    | `spark-shell --packages com.hortonworks:shc-core:1.1.1-2.1-s_2.11 --repositories https://repo.hortonworks.com/content/groups/public/` |
     |      2.4    | HDI 4,0 (HBase 2,0) | 1.1.1-2.1-s_2.11  | `spark-shell --packages com.hortonworks.shc:shc-core:1.1.0.3.1.2.2-1 --repositories http://repo.hortonworks.com/content/groups/public/` |
 
-2. Не закрывайте этот экземпляр оболочки Spark и продолжайте [определять каталог и запрос](#define-a-catalog-and-query). Если вы не нашли JAR, соответствующие вашим версиям, в репозитории ШК Core, продолжайте чтение. 
+2. Не закрывайте этот экземпляр оболочки Spark и продолжайте [определять каталог и запрос](#define-a-catalog-and-query). Если вы не нашли JAR, соответствующие вашим версиям в репозитории ШК Core, продолжите чтение. 
 
 Вы можете создать JAR непосредственно из ветви GitHub [Spark-HBase-Connector](https://github.com/hortonworks-spark/shc) . Например, если вы используете Spark 2,3 и HBase 1,1, выполните следующие действия:
 
@@ -303,6 +343,6 @@ exit
     :q
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Соединитель Apache Spark HBase](https://github.com/hortonworks-spark/shc)
