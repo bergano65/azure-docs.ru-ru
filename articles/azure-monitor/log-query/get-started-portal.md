@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 03/17/2020
-ms.openlocfilehash: 522a13c6de87dd8074b76f95670baf79fc96d419
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 8917c73474b81ee76e6acdf8c6f274e962ee1215
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87075334"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87874237"
 ---
 # <a name="tutorial-get-started-with-log-analytics-queries"></a>Руководство по Начало работы с запросами Log Analytics
 
@@ -32,7 +32,7 @@ ms.locfileid: "87075334"
 ## <a name="open-log-analytics"></a>Открытие Log Analytics
 Чтобы использовать Log Analytics, необходимо войти в учетную запись Azure. Если у вас нет учетной записи Azure, можно [создать ее бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-Для выполнения большинства действий, описанных в этом учебнике, можно использовать [эту демонстрационную среду](https://portal.loganalytics.io/demo), которая включает в себя множество образцов данных. В демонстрационной среде нельзя сохранять запросы или закреплять результаты на панели мониторинга.
+Для выполнения большинства действий, описанных в этом учебнике, можно использовать [эту демонстрационную среду](https://ms.portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade), которая включает в себя множество образцов данных. В демонстрационной среде нельзя сохранять запросы или закреплять результаты на панели мониторинга.
 
 Вы также можете использовать собственную среду, если вы используете Azure Monitor для сбора данных журнала по крайней мере одного ресурса Azure. Чтобы открыть рабочую область Log Analytics, на левой панели навигации Azure Monitor щелкните **Журналы**. 
 

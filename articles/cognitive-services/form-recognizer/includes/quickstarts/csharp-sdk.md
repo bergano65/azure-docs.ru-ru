@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 05/06/2020
 ms.author: pafarley
-ms.openlocfilehash: 2b46e115b6360b161a1b2ad9b176f3afbfaf27d0
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 8ff353c5386f7ad5f30144ca50740c751b81ffc5
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86277741"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87910699"
 ---
 [Справочная документация](https://docs.microsoft.com/dotnet/api/overview/azure/ai.formrecognizer-readme-pre) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/src) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.AI.FormRecognizer) | [Примеры](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md)
 
@@ -168,7 +168,7 @@ static async Task RunFormRecognizerClient()
 Для распознавания содержимого файла c определенным универсальным кодом ресурса URI используйте метод **StartRecognizeContentFromUri**.
 
 ```csharp
-private static async Task<Guid> GetContent(
+private static async Task GetContent(
     FormRecognizerClient recognizerClient, string invoiceUri)
 {
     Response<FormPageCollection> formPages = await recognizerClient
@@ -214,7 +214,7 @@ private static async Task<Guid> GetContent(
 Для распознавания квитанции с определенным универсальным кодом ресурса (URI) используйте метод **StartRecognizeReceiptsFromUri**. Возвращаемое значение представляет собой коллекцию объектов **RecognizedReceipt**: по одному для каждой страницы обработанного документа. В следующем блоке кода обрабатывается квитанция с указанным универсальным кодом ресурса (URI) и в консоль выводятся все ее основные поля с соответствующими значениями.
 
 ```csharp
-private static async Task<Guid> AnalyzeReceipt(
+private static async Task AnalyzeReceipt(
     FormRecognizerClient recognizerClient, string receiptUri)
 {
     RecognizedReceiptCollection receipts = await recognizerClient.StartRecognizeReceiptsFromUri(new Uri(receiptUri))
@@ -406,10 +406,10 @@ private static async Task<Guid> TrainModelWithLabelsAsync(
 ```csharp
 // Analyze PDF form data
 private static async Task AnalyzePdfForm(
-    FormRecognizerClient formClient, Guid modelId, string pdfFormFile)
+    FormRecognizerClient recognizerClient, Guid modelId, string formUrl)
 {    
     Response<IReadOnlyList<RecognizedForm>> forms = await recognizerClient
-        .StartRecognizeCustomFormsFromUri(modelId, new Uri(formUri))
+        .StartRecognizeCustomFormsFromUri(modelId.ToString(), new Uri(formUrl))
         .WaitForCompletionAsync();
 ```
 

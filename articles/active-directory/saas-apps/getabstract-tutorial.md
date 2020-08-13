@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
-ms.openlocfilehash: ad338ce3758c9c8387cc74cc55f9a905b1e5cd73
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a7de0dfadd7af4f5baca30a037651b4201278cba
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73155260"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87902173"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-getabstract"></a>Руководство по интеграции Azure Active Directory с Getabstract
 
@@ -40,6 +40,9 @@ ms.locfileid: "73155260"
 
 * подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Getabstract с поддержкой единого входа.
+
+> [!NOTE]
+> Эту интеграцию также можно использовать в облачной среде Azure AD для государственных организаций США. Это приложение можно найти в коллекции облачных приложений с поддержкой Azure AD для государственных организаций США и настроить таким же образом, как и в общедоступном облаке.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -102,13 +105,13 @@ ms.locfileid: "73155260"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Getabstract](common/idp-intiated.png)
 
-    а. В текстовом поле **Идентификатор** введите URL-адрес:
+    а. В текстовом поле **Идентификатор** введите URL-адрес: 
 
     На этапе подготовки к разработке: `https://int.getabstract.com`.
 
@@ -124,7 +127,7 @@ ms.locfileid: "73155260"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Getabstract](common/metadata-upload-additional-signon.png)
     
-    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: .
 
     На этапе подготовки к разработке: `https://int.getabstract.com/portal/<org_username>`.
     

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 12/28/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e21b1c72f191f3644975afd511a900667a04ce9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 57eda7e1d5ffedf7d5b867bfa7a59850fbadaf99
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73157902"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905029"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-arcgis-enterprise"></a>Руководство по интеграции Azure Active Directory с ArcGIS Enterprise
 
@@ -41,6 +41,9 @@ ms.locfileid: "73157902"
 
 * подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка ArcGIS Enterprise с поддержкой единого входа
+
+> [!NOTE]
+> Эту интеграцию также можно использовать в облачной среде Azure AD для государственных организаций США. Это приложение можно найти в коллекции облачных приложений с поддержкой Azure AD для государственных организаций США и настроить таким же образом, как и в общедоступном облаке.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -104,7 +107,7 @@ ms.locfileid: "73157902"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вы хотите настроить приложение в инициируемом режиме **выдающейся точки распространения**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 

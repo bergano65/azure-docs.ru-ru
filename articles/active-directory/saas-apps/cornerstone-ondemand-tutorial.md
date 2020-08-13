@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34a92a11880d61ff3e75e0b2a982b6375841b4b7
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b0fb9f10dbe9b5018ce0a5d02bcb668b09cd5e5a
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76983580"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87902309"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cornerstone-ondemand"></a>Руководство по Интеграции и настройке единого входа Azure Active Directory с Cornerstone OnDemand
 
@@ -38,6 +38,9 @@ ms.locfileid: "76983580"
 
 * Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Cornerstone OnDemand с поддержкой единого входа.
+
+> [!NOTE]
+> Эту интеграцию также можно использовать в облачной среде Azure AD для государственных организаций США. Это приложение можно найти в коллекции облачных приложений с поддержкой Azure AD для государственных организаций США и настроить таким же образом, как и в общедоступном облаке.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -138,7 +141,7 @@ ms.locfileid: "76983580"
 
 **Если необходимо создать пользователя вручную, выполните следующие действия:**
 
-Чтобы настроить подготовку пользователей, отправьте сведения (например, имя, адрес электронной почты) о том пользователе Azure AD, которого необходимо подготовить, [группе поддержки Cornerstone OnDemand](mailto:moreinfo@csod.com).
+Чтобы настроить подготовку пользователей, отправьте сведения о пользователе Azure AD, которого необходимо подготовить (например, имя, адрес электронной почты), в [службу поддержки Cornerstone OnDemand](mailto:moreinfo@csod.com).
 
 >[!NOTE]
 >Вы можете использовать любые другие средства создания учетной записи пользователя Cornerstone OnDemand или API, предоставляемые Cornerstone OnDemand, для подготовки учетных записей пользователей AAD.

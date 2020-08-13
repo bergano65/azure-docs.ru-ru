@@ -5,14 +5,14 @@ author: yashesvi
 ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 08/06/2020
 ms.author: banders
-ms.openlocfilehash: 9979ced6d5bd71dd1a42d19c222111a76ed18428
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b8e4c4188b0a3b862715a2e4eec2f31dd3f55ac9
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77200237"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87902071"
 ---
 # <a name="azure-software-plan-discount"></a>Скидка на план программного обеспечения Azure
 
@@ -98,37 +98,11 @@ ms.locfileid: "77200237"
 |SLES для SAP (цен. категория "Приоритетный") с 3–4 виртуальными ЦП |847887de-68ce-4adc-8a33-7a3f4133312f|2|D4s_v3|
 |SLES для SAP (цен. категория "Приоритетный") с 5+ виртуальными ЦП |18ae79cd-dfce-48c9-897b-ebd3053c6058|2,41176|D8s_v3|
 
-### <a name="suse-linux-enterprise-server-priority"></a>SUSE Linux Enterprise Server (цен. категория "Приоритетный")
-
-Имена на портале Azure Marketplace:
-
-- SLES 15 (цен. категория "Приоритетный")
-- SLES 12 SP3 (цен. категория "Приоритетный")
-- SLES 11 SP4 (цен. категория "Приоритетный")
-
-|Виртуальная машина SUSE | Значение MeterId | Коэффициент|Пример размера виртуальной машины|
-| ------- |------------------------| --- |--- |
-|SLES с 1 виртуальным ЦП|462cd632-ec6b-4663-b79f-39715f4e8b38|1|B1ms|
-|SLES с 2–4 виртуальными ЦП |924bee71-5eb8-424f-83ed-a58823c33908|2|D4s_v3|
-|SLES с 2–4 виртуальными ЦП |60b3ae9d-e77a-46b2-9cdf-92fa87407969|2|D4s_v3|
-|SLES с 6 виртуальными ЦП |e8862232-6131-4dbe-bde4-e2ae383afc6f|3||
-|SLES с 8 виртуальными ЦП |e11331a8-fd32-4e71-b60e-4de2a818c67a|3.2|D8s_v3|
-|SLES с 12 виртуальными ЦП |a5afd00d-d3ef-4bcd-8b42-f158b2799782|3.2||
-|SLES с 16 виртуальными ЦП |bb21066f-fe46-46d3-8006-b326b1663e52|3.2| D16s_v3|
-|SLES с 20 виртуальными ЦП |c5228804-1de6-4bd4-a61c-501d9003acc8|3.2| |
-|SLES с 24 виртуальными ЦП |-005d-4075-ac11-822ccde9e8f6|3.2| ND24s|
-|SLES с 32 виртуальными ЦП |180c1a0a-b0a5-4de3-a032-f92925a4bf90|3.2| D32s_v3|
-|SLES с 40 виртуальными ЦП |a161d3d3-0592-4956-9b64-6829678b6506|3.2||
-|SLES с 64 виртуальными ЦП |7f5a36ed-d5b5-4732-b6bb-837dbf0fb9d8|3.2| D64s_v3|
-|SLES с 72 виртуальными ЦП |93329a72-24d7-4faa-93d9-203f367ed334|3.2|F72s_v2|
-|SLES с 96 виртуальными ЦП |2018c3a8-ff13-41f8-b64d-9558c5206547|3.2||
-|SLES с 128 виртуальными ЦП |ac27e4d7-44b5-4fee-bc1a-78ac5b4abaf7|3.2| M128ms|
-
 ### <a name="suse-linux-enterprise-server-standard"></a>SUSE Linux Enterprise Server (цен. категория "Стандартный")
 
 Имена на портале Azure Marketplace:
 
-- SLES 15
+- SLES 15
 - SLES 15 (цен. категория "Стандартный")
 - SLES 12 SP3 (цен. категория "Стандартный")
 

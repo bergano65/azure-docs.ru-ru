@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 07/29/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd85b66894afbd239954f5f32b8297757caddc44
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: 06b52ec552434f74c56333d1afe00cde2a285418
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87513321"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905437"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-freshservice"></a>Руководство по интеграции единого входа Azure Active Directory с приложением Freshservice
 
@@ -38,6 +38,9 @@ ms.locfileid: "87513321"
 
 * Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка FreshService с поддержкой единого входа.
+
+> [!NOTE]
+> Эту интеграцию также можно использовать в облачной среде Azure AD для государственных организаций США. Это приложение можно найти в коллекции облачных приложений с поддержкой Azure AD для государственных организаций США и настроить таким же образом, как и в общедоступном облаке.
 
 ## <a name="scenario-description"></a>Описание сценария
 

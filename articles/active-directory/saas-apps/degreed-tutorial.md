@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6b02fd3593036a6620d7eeec42dd6bae373ca53
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6f98c9881726188980bedf2a1a1b0b2b6d7ae1d4
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73158438"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87902428"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-degreed"></a>Учебник. Интеграция Azure Active Directory с Degreed
 
@@ -41,6 +41,9 @@ ms.locfileid: "73158438"
 
 * подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Degreed с поддержкой единого входа.
+
+> [!NOTE]
+> Эту интеграцию также можно использовать в облачной среде Azure AD для государственных организаций США. Это приложение можно найти в коллекции облачных приложений с поддержкой Azure AD для государственных организаций США и настроить таким же образом, как и в общедоступном облаке.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -102,7 +105,7 @@ ms.locfileid: "73158438"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
