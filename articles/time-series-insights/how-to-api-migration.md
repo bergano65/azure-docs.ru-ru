@@ -8,14 +8,14 @@ ms.author: shresha
 manager: dpalled
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 07/23/2020
+ms.date: 08/12/2020
 ms.custom: shresha
-ms.openlocfilehash: a74a5e2b8e80121324dc8b880d90f493d5b2ddfd
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 784c19844c658af6850c755244314145223c45ef
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423955"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88163957"
 ---
 # <a name="migrating-to-new-azure-time-series-insights-gen2-api-versions"></a>Переход на новые версии API службы "аналитика временных рядов Azure Gen2"
 
@@ -23,7 +23,7 @@ ms.locfileid: "87423955"
 
 Если вы создали среду Gen2 "аналитика временных рядов Azure" в общедоступной предварительной версии (до 16 июля, 2020), обновите среду TSI, чтобы использовать новые общедоступные версии API, выполнив действия, описанные в этой статье.
 
-Новая версия API — `2020-07-31` и использует обновленный [синтаксис выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax).
+Новая версия API — `2020-07-31` и использует обновленный [синтаксис выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax).
 
 Пользователи должны переносить [переменные модели временных рядов](./concepts-variables.md), сохраненные запросы, Power BI запросы, а также любые пользовательские инструменты, осуществляющие вызовы к конечным точкам API. Если у вас возникнут вопросы или проблемы, связанные с процессом миграции, отправьте запрос в службу поддержки через портал Azure и сослаться на этот документ.
 
@@ -60,7 +60,7 @@ ms.locfileid: "87423955"
 
     [![Обновление сохраненных запросов](media/api-migration/ux-migration-tool-updated-variables.png)](media/v2-update-overview/overview-one.png#lightbox)
 
-1. Нажмите кнопку **Done**(Готово).
+1. Нажмите кнопку **Готово**.
 
     [![Завершенная миграция](media/api-migration/ux-migration-tool-updated-saved-queries.png)](media/v2-update-overview/overview-one.png#lightbox)
 
@@ -95,7 +95,7 @@ ms.locfileid: "87423955"
     - [Удаление, получение операций](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch)
     - [Список](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/list)
 
-Для следующих конечных точек RESTFUL необходимо обновить версию API до `2020-07-31` в URI и убедиться, что все экземпляры `tsx` свойства используют обновленный [синтаксис выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax).
+Для следующих конечных точек RESTFUL необходимо обновить версию API до `2020-07-31` в URI и убедиться, что все экземпляры `tsx` свойства используют обновленный [синтаксис выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax).
 
 - Интерфейсы API типов
   - [Операция размещения](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch#typesbatchput)
@@ -355,7 +355,7 @@ ms.locfileid: "87423955"
 
 #### <a name="invalidinput"></a>InvalidInput
 
-Если отображается следующая ошибка, используется новая версия API ( `2020-07-31` ), но синтаксис целевого сервера не был обновлен. Ознакомьтесь с [синтаксисом выражений временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax) и примерами миграции, приведенными выше. Перед повторной `tsx` отправкой запроса API убедитесь, что все свойства правильно обновлены.
+Если отображается следующая ошибка, используется новая версия API ( `2020-07-31` ), но синтаксис целевого сервера не был обновлен. Ознакомьтесь с [синтаксисом выражений временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax) и примерами миграции, приведенными выше. Перед повторной `tsx` отправкой запроса API убедитесь, что все свойства правильно обновлены.
 
 ```JSON
 {
@@ -382,6 +382,6 @@ ms.locfileid: "87423955"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 
 - Протестируйте свою среду с помощью обозревателя службы " [аналитика временных рядов Azure](./concepts-ux-panels.md) " или пользовательского приложения.

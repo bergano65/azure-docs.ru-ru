@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 07/27/2020
-ms.openlocfilehash: f8b532716e14a8a90b0be061f7d93abf43e55e38
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 27c129af9fbf3e76c6c57fbf084596876b51955b
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321995"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141931"
 ---
 #  <a name="what-are-compute-targets-in-azure-machine-learning"></a>Что такое целевые показатели вычислений в Машинное обучение Azure? 
 
@@ -82,17 +82,19 @@ ms.locfileid: "87321995"
 
 | **Поддерживаемые серии виртуальных машин**  | **Ограничения** |
 |------------|------------|
-| D | Нет |
-| Dv2 | Нет |  
-| DSv2 | Нет |  
-| Серия fsv2 | Нет |  
+| D | None |
+| Dv2 | None |  
+| DSv2 | None |  
+| Серия fsv2 | None | 
+| HBv2 | Запрос утверждения |  
+| HCS | Запрос утверждения |  
 | M | Запрос утверждения |
-| NC | Нет |    
+| NC | None |    
 | NCsv2 | Запрос утверждения |
 | NCsv3 | Запрос утверждения |  
 | Структура | Запрос утверждения |
 | NDv2 | Запрос утверждения |
-| NV | Нет |
+| NV | None |
 | NVv3 | Запрос утверждения | 
 
 

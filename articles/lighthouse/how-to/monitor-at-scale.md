@@ -1,20 +1,23 @@
 ---
 title: Мониторинг делегированных ресурсов в масштабе
 description: Узнайте, как эффективно использовать журналы Azure Monitor в масштабируемом способе между клиентами клиентов, которыми вы управляете.
-ms.date: 07/15/2020
+ms.date: 08/12/2020
 ms.topic: how-to
-ms.openlocfilehash: 5cace0396c5a1f430ce10ba29ee051b5e432c125
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: fdd0147737da47613d6b7ef1bf6005e4c03de0dd
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448949"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88163294"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Мониторинг делегированных ресурсов в масштабе
 
 Как поставщик услуг, вы могли подключить несколько клиентов клиента к [Azure лигхсаусе](../overview.md). Azure Lighthouse позволяет поставщикам служб выполнять операции одновременно в нескольких клиентах, что делает задачи управления более эффективными.
 
 В этом разделе показано, как использовать [журналы Azure Monitor](../../azure-monitor/platform/data-platform-logs.md) в масштабируемом способе между клиентами клиентов, которыми вы управляете.
+
+> [!TIP]
+> Хотя в этом разделе мы будем называть поставщиков услуг и клиентов, это руководство также применяется к [предприятиям, использующим Azure лигхсаусе для управления несколькими клиентами](../concepts/enterprise.md).
 
 ## <a name="create-log-analytics-workspaces"></a>Создание рабочих областей Log Analytics
 

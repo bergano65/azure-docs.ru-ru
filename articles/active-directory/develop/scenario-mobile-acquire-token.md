@@ -13,12 +13,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: 79b9be504639b35c7c15d427bd7766ed2dd15535
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: dfccc274ef920c59d39c160055ab27a6900c839c
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121091"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141284"
 ---
 # <a name="get-a-token-for-a-mobile-app-that-calls-web-apis"></a>Получение маркера для мобильного приложения, вызывающего веб-API
 
@@ -209,7 +209,7 @@ catch(MsalUiRequiredException)
 
 `AcquireTokenInteractive`имеет только один обязательный параметр: `scopes` . `scopes`Параметр перечисляет строки, определяющие области, для которых требуется токен. Если маркер предназначен для Microsoft Graph, необходимые области можно найти в справочнике по API для каждого Microsoft Graph API. В справочной документации перейдите к разделу "разрешения".
 
-Например, чтобы получить [список контактов пользователя](/graph/api/user-list-contacts), используйте область "пользователь. чтение", "Контакты. чтение". См. сведения о [разрешениях Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/permissions_reference).
+Например, чтобы получить [список контактов пользователя](/graph/api/user-list-contacts), используйте область "пользователь. чтение", "Контакты. чтение". См. сведения о [разрешениях Microsoft Graph](/graph/permissions-reference).
 
 В Android можно указать родительские действия при создании приложения с помощью `PublicClientApplicationBuilder` . Если вы не укажете родительские действия в это время, позже его можно будет указать с помощью команды `.WithParentActivityOrWindow` , как в следующем разделе. При указании родительского действия маркер возвращается к родительскому действию после взаимодействия. Если он не указан, `.ExecuteAsync()` вызов создает исключение.
 

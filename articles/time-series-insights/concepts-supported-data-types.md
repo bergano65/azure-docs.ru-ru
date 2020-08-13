@@ -8,13 +8,13 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 07/23/2020
-ms.openlocfilehash: 9d29d83ed92ee0fa2217bb1c27fbf6c2fbb3584c
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.date: 08/12/2020
+ms.openlocfilehash: e6fd405d1969a2f40a5f0c3466a57fbec60723e9
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87170868"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141165"
 ---
 # <a name="supported-data-types"></a>Поддерживаемые типы данных
 
@@ -31,7 +31,7 @@ ms.locfileid: "87170868"
 
 ## <a name="sending-mixed-data-types"></a>Отправка смешанных типов данных
 
-Среда Gen2 "аналитика временных рядов Azure" является строго типизированной. Если устройства или теги отправляют данные различных типов для свойства устройства, значения будут храниться в двух отдельных столбцах, а [функция объединения ()](https://docs.microsoft.com/rest/api/time-series-insights/preview#other-functions) должна использоваться при определении выражений переменных временных рядов в вызовах API.
+Среда Gen2 "аналитика временных рядов Azure" является строго типизированной. Если устройства или теги отправляют данные различных типов для свойства устройства, значения будут храниться в двух отдельных столбцах, а [функция объединения ()](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax#other-functions) должна использоваться при определении выражений переменных временных рядов в вызовах API.
 
 Обозреватель службы "аналитика временных рядов Azure" предлагает способ автоматического объединения отдельных столбцов одного и того же свойства устройства. В приведенном ниже примере датчик отправляет `PresentValue` свойство, которое может быть одновременно длинным или двойным. Чтобы запросить все сохраненные значения (независимо от типа данных) `PresentValue` свойства, выберите, `PresentValue (Double | Long)` и столбцы будут объединены.
 
@@ -41,7 +41,7 @@ ms.locfileid: "87170868"
 
 В качестве части полезных данных события можно передавать сложные типы, такие как объекты и массивы. Вложенные объекты будут плоскими, а массивы будут храниться как `dynamic` или сведены для создания нескольких событий в зависимости от конфигурации среды и фигуры JSON. Дополнительные сведения о [правилах плоской обработки и экранирования JSON](./concepts-json-flattening-escaping-rules.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с [правилами преобразования и экранирования JSON](./concepts-json-flattening-escaping-rules.md) , чтобы понять, как будут храниться события.
 

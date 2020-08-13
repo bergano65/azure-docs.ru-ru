@@ -1,14 +1,14 @@
 ---
-title: Настройка брандмауэра для IP-адресов для пространства имен Azure Relay
+title: Настройка брандмауэра IP для пространства имен Azure Relay
 description: Сведения о том, как с помощью правил брандмауэра разрешить подключения к пространствам имен Azure Relay только с определенных IP-адресов.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 2b8d1adef30eea0af9efdb51c31390c33a14b62e
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: e47c5071a5fc7207d4eabc162fcb24ab6ad57d28
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009024"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141862"
 ---
 # <a name="configure-ip-firewall-for-an-azure-relay-namespace"></a>Настройка брандмауэра для IP-адресов для пространства имен Azure Relay
 По умолчанию пространства имен Azure Relay доступны из Интернета при условии, что запрос поступает с действительными данными для аутентификации и авторизации. С помощью брандмауэра для IP-адресов такой доступ можно дополнительно ограничить набором или диапазоном IPv4-адресов в нотации [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).

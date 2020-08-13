@@ -13,12 +13,12 @@ ms.date: 07/15/2020
 ms.author: kkrishna
 ms.reviewer: kkrishna, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 0ba348bc9c97ba8be415cac2e5fd7d102d850568
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 5a2acb08971bc0878c943047c42c9dc2a9525794
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88117079"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141437"
 ---
 # <a name="how-to-add-app-roles-in-your-application-and-receive-them-in-the-token"></a>Руководство. Добавление ролей приложения в приложение, зарегистрированное в Azure Active Directory, и их получение в токене
 
@@ -30,7 +30,7 @@ ms.locfileid: "88117079"
 
 ## <a name="declare-roles-for-an-application"></a>Объявление ролей для приложения
 
-Эти роли приложения определяются на [портале Azure](https://portal.azure.com) в манифесте регистрации приложения.  Когда пользователь входит в приложение, Azure AD выдает утверждение `roles` для каждой отдельной роли пользователя и ролей, имеющихся у него как у члена группы.  Назначение пользователей и групп ролям можно выполнить через пользовательский интерфейс на портале или программным путем, используя [Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/azuread-identity-access-management-concept-overview).
+Эти роли приложения определяются на [портале Azure](https://portal.azure.com) в манифесте регистрации приложения.  Когда пользователь входит в приложение, Azure AD выдает утверждение `roles` для каждой отдельной роли пользователя и ролей, имеющихся у него как у члена группы.  Назначение пользователей и групп ролям можно выполнить через пользовательский интерфейс на портале или программным путем, используя [Microsoft Graph](/graph/azuread-identity-access-management-concept-overview).
 
 ### <a name="declare-app-roles-using-azure-portal"></a>Объявление ролей приложения, использующих портал Azure
 

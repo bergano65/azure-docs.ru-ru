@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 05/18/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: c394a3e84982db31b5727d170c143e9c07636d62
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 300bc6acbe7821841b578dcc2166ecfc498ad750
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121074"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141301"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, которое вызывает веб-API: Получение маркера
 
@@ -175,7 +175,7 @@ catch(MsalUiRequiredException)
 
 ### <a name="mandatory-parameters"></a>Обязательные параметры
 
-`AcquireTokenInteractive` имеет только один обязательный параметр, ``scopes``, содержащий перечисление строк, определяющих области, для которых требуется маркер. Если маркер предназначен для Microsoft Graph, необходимые области можно найти в справочнике по API каждого Microsoft Graph API в разделе "Разрешения". Например, для [списка контактов пользователя](/graph/api/user-list-contacts) необходимо использовать область "User.Read", "Contacts.Read". См. сведения о [разрешениях Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/permissions_reference).
+`AcquireTokenInteractive` имеет только один обязательный параметр, ``scopes``, содержащий перечисление строк, определяющих области, для которых требуется маркер. Если маркер предназначен для Microsoft Graph, необходимые области можно найти в справочнике по API каждого Microsoft Graph API в разделе "Разрешения". Например, для [списка контактов пользователя](/graph/api/user-list-contacts) необходимо использовать область "User.Read", "Contacts.Read". См. сведения о [разрешениях Microsoft Graph](/graph/permissions-reference).
 
 В Android также необходимо указать родительское действие с помощью `.WithParentActivityOrWindow`, как показано, чтобы маркер был возвращен родительскому действию после взаимодействия. Если оно не указано, при вызове `.ExecuteAsync()` возникает исключение.
 

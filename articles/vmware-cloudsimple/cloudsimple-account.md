@@ -1,6 +1,6 @@
 ---
 title: Управление учетными записями Клаудсимпле — Azure
-description: Дополнительные сведения об управлении учетными записями Клаудсимпле
+description: Узнайте, как управлять учетной записью Клаудсимпле, которая создается вместе со службой Клаудсимпле и связана с вашей подпиской Azure.
 author: sharaths-cs
 ms.author: dikamath
 ms.date: 04/10/2019
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: a180e2ba6c1a610116271d5a9b6e3fdf562cecdf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 68ddea6c58bfff5e82643acc947ac1e7de76d699
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77025118"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141046"
 ---
 # <a name="account-management-overview"></a>Общие сведения об управлении учетной записью
 
@@ -34,7 +34,7 @@ ms.locfileid: "77025118"
 
 Все пользователи, у которых есть роль " **владелец** " и " **участник** " в подписке, имеют доступ к порталу клаудсимпле.  При доступе к порталу пользователь создается в учетной записи Клаудсимпле.  Вы можете отключить доступ к порталу Клаудсимпле для конкретных пользователей на странице учетные записи.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Просмотр сводки учетной записи](account.md)
 * [Просмотр списка пользователей](users.md)

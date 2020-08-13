@@ -1,6 +1,6 @@
 ---
 title: Использование приложения Node.js с Socket.IO в Azure
-description: Узнайте, как использовать socket.io в приложении Node.js, размещенном в Azure.
+description: Используйте этот учебник, чтобы узнать, как разместить сокет. Приложение чата на основе операций ввода-вывода в Azure. Socket.IO обеспечивает обмен данными в режиме реального времени для сервера node.js и клиентов.
 services: cloud-services
 documentationcenter: nodejs
 author: tgore03
@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 08/17/2017
 ms.author: tagore
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 8029c243052114b9a0932e5372301be84440cf85
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: f3c19e77739ac8dbc503e51408b9b7830a8b5aa5
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386594"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88142474"
 ---
 # <a name="build-a-nodejs-chat-application-with-socketio-on-an-azure-cloud-service"></a>Создание приложения чата Node.js с помощью Socket.IO в облачной службе Azure
 
@@ -25,7 +25,7 @@ Socket.IO обеспечивает связь в режиме реального
 
 ![Окно браузера со службой, размещенной в Azure][completed-app]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 Убедитесь, что следующие продукты и версии установлены для успешного завершения примера, описанного в этой статье.
 
 * установить [Visual Studio](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx);
@@ -139,7 +139,7 @@ Socket.IO обеспечивает связь в режиме реального
     PS C:\node\chatapp\WorkerRole1> Stop-AzureEmulator
     ```
 
-5. Чтобы развернуть приложение в Azure, воспользуйтесь командлетом **Publish-AzureServiceProject** . Пример.
+5. Чтобы развернуть приложение в Azure, воспользуйтесь командлетом **Publish-AzureServiceProject** . Пример:
 
     ```powershell
     PS C:\node\chatapp\WorkerRole1> Publish-AzureServiceProject -ServiceName mychatapp -Location "East US" -Launch

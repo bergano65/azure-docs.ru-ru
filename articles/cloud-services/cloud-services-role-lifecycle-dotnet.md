@@ -1,6 +1,6 @@
 ---
 title: Обработка событий жизненного цикла облачной службы | Документация Майкрософт
-description: Узнайте об использовании методов жизненного цикла роли облачной службы в .NET
+description: Узнайте, как использовать методы жизненного цикла роли облачной службы в .NET, в том числе RoleEntryPoint, который предоставляет методы для реагирования на события жизненного цикла.
 services: cloud-services
 documentationcenter: .net
 author: tgore03
@@ -8,12 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: tagore
-ms.openlocfilehash: a6030cbb756525137497834ac911835033858401
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e23eea439235659cf68da1063ae50a718a847a8d
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80652082"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88142321"
 ---
 # <a name="customize-the-lifecycle-of-a-web-or-worker-role-in-net"></a>Адаптируйте жизненный цикл веб-роли или рабочей роли в .NET
 Создавая рабочую роль, вы расширяете класс [RoleEntryPoint](/previous-versions/azure/reference/ee758619(v=azure.100)) , который предоставляет вам методы переопределения, которые позволяют реагировать на события жизненного цикла. Этот класс необязателен для веб-ролей, поэтому его следует использовать для реагирования на события жизненного цикла.
@@ -74,7 +74,7 @@ public override bool OnStart()
 ### <a name="implementing-the-aspnet-lifecycle-methods-for-a-web-role"></a>Реализация методов жизненного цикла ASP.NET для веб-роли
 Для управления жизненным циклом роли можно использовать методы ASP.NET в дополнение к тем, которые предоставляет класс **RoleEntryPoint**. Это может быть полезно для обеспечения совместимости при переносе существующего приложения ASP.NET в Azure. Методы жизненного цикла ASP.NET вызываются из методов **RoleEntryPoint**. Метод **Application\_Start** вызывается по завершении вызова метода **RoleEntryPoint.OnStart**. Метод **Application\_End** вызывается перед вызовом метода **RoleEntryPoint.OnStop**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как [создать пакет облачной службы](cloud-services-model-and-package.md).
 
 

@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: sashan
 ms.author: sashan
 ms.reviewer: carlrab, sashan
-ms.date: 04/02/2020
-ms.openlocfilehash: ab3d0a4b33bd2e424141adc9f6b8739380c2947b
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.date: 08/12/2020
+ms.openlocfilehash: 33521a5aed38cacbc7ce87b4a2a917ade866e378
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542014"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88142440"
 ---
 # <a name="high-availability-for-azure-sql-database-and-sql-managed-instance"></a>Высокий уровень доступности для базы данных SQL Azure и Управляемый экземпляр SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -103,7 +103,7 @@ ms.locfileid: "87542014"
 |:---|:---|:---|:---|
 |База данных|[Invoke-Азсклдатабасефаиловер](https://docs.microsoft.com/powershell/module/az.sql/invoke-azsqldatabasefailover)|[Отработка отказа базы данных](/rest/api/sql/databases(failover)/failover/)|[AZ RESTful](https://docs.microsoft.com/cli/azure/reference-index#az-rest) можно использовать для вызова вызова REST API из Azure CLI|
 |Эластичный пул|[Invoke-Азсклеластикпулфаиловер](https://docs.microsoft.com/powershell/module/az.sql/invoke-azsqlelasticpoolfailover)|[Отработка отказа эластичного пула](/rest/api/sql/elasticpools(failover)/failover/)|[AZ RESTful](https://docs.microsoft.com/cli/azure/reference-index#az-rest) можно использовать для вызова вызова REST API из Azure CLI|
-|Базы данных SQL|[Invoke-Азсклинстанцефаиловер](/powershell/module/az.sql/Invoke-AzSqlInstanceFailover/)|[Управляемые экземпляры — отработка отказа](/powershell/module/az.sql/Invoke-AzSqlInstanceFailover/)|[AZ SQL MI Failover](/cli/azure/sql/mi/#az-sql-mi-failover)|
+|Базы данных SQL|[Invoke-Азсклинстанцефаиловер](/powershell/module/az.sql/Invoke-AzSqlInstanceFailover/)|[Управляемые экземпляры — отработка отказа](https://docs.microsoft.com/rest/api/sql/managed%20instances%20-%20failover/failover)|[AZ SQL MI Failover](/cli/azure/sql/mi/#az-sql-mi-failover)|
 
 > [!IMPORTANT]
 > Команда отработки отказа недоступна для доступных для чтения вторичных реплик баз данных с масштабированием.
@@ -112,7 +112,7 @@ ms.locfileid: "87542014"
 
 База данных SQL Azure и Управляемый экземпляр Azure SQL — это встроенное решение с высоким уровнем доступности, которое тесно интегрировано с платформой Azure. Это зависит от Service Fabric для обнаружения сбоев и восстановления, в хранилище BLOB-объектов Azure для защиты данных, а также на Зоны доступности для повышения отказоустойчивости (как упоминалось ранее в документе, который еще не применим к Azure SQL Управляемый экземпляр). Кроме того, база данных SQL и SQL Управляемый экземпляр используют технологию группы доступности Always On из экземпляра SQL Server для репликации и отработки отказа. Сочетание этих технологий позволяет приложениям полностью реализовать преимущества модели смешанного хранения и поддерживать наиболее ресурсоемкие соглашения об уровне обслуживания.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [зонах доступности Azure](../../availability-zones/az-overview.md).
 - Дополнительные сведения о [Service Fabric](../../service-fabric/service-fabric-overview.md)

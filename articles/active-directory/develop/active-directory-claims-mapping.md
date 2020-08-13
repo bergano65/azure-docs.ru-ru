@@ -13,12 +13,12 @@ ms.topic: how-to
 ms.date: 08/06/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
-ms.openlocfilehash: 8923cb19c24b0e392026dc0f4b8f67c31956894a
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: d518dcf833a49e32d72938a31da412d53cc40037
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88115940"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141539"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Руководство. Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)
 
@@ -329,7 +329,7 @@ ms.locfileid: "88115940"
 | Пользователь | facsimiletelephonenumber | Номер телефона, факса |
 | Пользователь | assignedroles | список ролей приложений, назначенных пользователю|
 | application, resource, audience | displayname | Отображаемое имя |
-| application, resource, audience | objected | ObjectID |
+| application, resource, audience | objectid | ObjectID |
 | application, resource, audience | tags | Тег субъекта-службы |
 | Company | tenantcountry | Страна/регион клиента |
 

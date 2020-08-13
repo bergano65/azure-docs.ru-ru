@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: conceptual
 ms.date: 08/10/2020
 ms.author: victorh
-ms.openlocfilehash: 1ba8977272817d41334ccf0d9ad01d4d751bfb17
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: 1dc9521555f2eb158209b494e43fd815e6bab6e8
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88041703"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141199"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -95,8 +95,8 @@ Set-AzFirewall -AzureFirewall $azfw
 
 $azfw = Get-AzFirewall -Name "FW Name" -ResourceGroupName "RG Name"
 $vnet = Get-AzVirtualNetwork -ResourceGroupName "RG Name" -Name "VNet Name"
-$publicip = Get-AzPublicIpAddress -Name "Public IP Name" -ResourceGroupName " RG Name"
-$azfw.Allocate($vnet,$publicip)
+$publicip = Get-AzPublicIpAddress -Name "Public IP Name" -ResourceGroupName "RG Name"
+$azfw.Allocate($vnet, $publicip)
 Set-AzFirewall -AzureFirewall $azfw
 ```
 
@@ -121,7 +121,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 ## <a name="is-forced-tunnelingchaining-to-a-network-virtual-appliance-supported"></a>Поддерживается ли принудительное туннелирование или связывание к сетевому виртуальному модулю?
 
-Принудительное туннелирование поддерживается при создании брандмауэра. Вы не можете настроить имеющийся брандмауэр для принудительного туннелирования. Дополнительные сведения см. в статье [Azure Firewall forced tunneling](forced-tunneling.md) (Принудительное туннелирование в Брандмауэре Azure). 
+Принудительное туннелирование поддерживается при создании брандмауэра. Вы не можете настроить имеющийся брандмауэр для принудительного туннелирования. Дополнительные сведения см. в статье [Azure Firewall forced tunneling](forced-tunneling.md) (Принудительное туннелирование в Брандмауэре Azure).
 
 Брандмауэр Azure должен быть напрямую подключен к Интернету. Если сеть AzureFirewallSubnet использует стандартный маршрут к локальной сети через BGP, установите пользовательский маршрут 0.0.0.0/0 и задайте для параметра **NextHopType** значение **Интернет**, чтобы обеспечить прямое подключение к Интернету.
 
@@ -194,7 +194,7 @@ $fw.ThreatIntelWhitelist = New-AzFirewallThreatIntelWhitelist `
 ## Or Update FQDNs and IpAddresses separately
 
 $fw = Get-AzFirewall -Name $firewallname -ResourceGroupName $RG
-$fw.ThreatIntelWhitelist.IpAddresses = @($fw.ThreatIntelWhitelist.IpAddresses + $ipaddresses )
+$fw.ThreatIntelWhitelist.IpAddresses = @($fw.ThreatIntelWhitelist.IpAddresses + $ipaddresses)
 $fw.ThreatIntelWhitelist.fqdns = @($fw.ThreatIntelWhitelist.fqdns + $fqdns)
 
 

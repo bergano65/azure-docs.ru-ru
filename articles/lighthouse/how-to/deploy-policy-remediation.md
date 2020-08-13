@@ -1,18 +1,21 @@
 ---
 title: Развертывание политики, которую можно исправить
 description: Чтобы развернуть политики, использующие задачу исправления с помощью Azure Лигхсаусе, необходимо создать управляемое удостоверение в клиенте клиента.
-ms.date: 07/07/2020
+ms.date: 08/12/2020
 ms.topic: how-to
-ms.openlocfilehash: fc13b6209826d4a59d82bca5db63d4ca5c39f9fb
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 998576d06d470c525a551463861f7a25d4ab9d8f
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86105342"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88163260"
 ---
 # <a name="deploy-a-policy-that-can-be-remediated-within-a-delegated-subscription"></a>Развертывание политики, которую можно исправить в рамках делегированной подписки
 
 [Azure Lighthouse](../overview.md) позволяет поставщикам служб создавать и редактировать определения политики в рамках делегированной подписки. Однако для развертывания политик, использующих [задачу по исправлению](../../governance/policy/how-to/remediate-resources.md) (то есть политики с [deployIfNotExists](../../governance/policy/concepts/effects.md#deployifnotexists) или [изменением](../../governance/policy/concepts/effects.md#modify) ), необходимо создать [управляемое удостоверение](../../active-directory/managed-identities-azure-resources/overview.md) в клиенте клиента. Это управляемое удостоверение может использоваться политикой Azure для развертывания шаблона в политике. Для включения этого сценария, как при подключении клиента к управлению делегированными ресурсами Azure, так и при развертывании самой политики необходимо выполнять некоторые шаги.
+
+> [!TIP]
+> Хотя в этом разделе мы будем называть поставщиков услуг и клиентов, [предприятия, управляющие несколькими клиентами](../concepts/enterprise.md) , могут использовать одни и те же процессы.
 
 ## <a name="create-a-user-who-can-assign-roles-to-a-managed-identity-in-the-customer-tenant"></a>Создание пользователя, который может назначать роли управляемому удостоверению в клиенте клиента
 

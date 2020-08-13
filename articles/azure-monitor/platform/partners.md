@@ -4,12 +4,12 @@ description: Узнайте о партнерах Azure Monitor и о том, к
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 05/29/2020
-ms.openlocfilehash: 994dfe0d7e252fd2aea489c363e76f0956715048
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 2e3fae1b942083d78798fccebd7a7f2c58f7659a
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318340"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88142419"
 ---
 # <a name="azure-monitor-partner-integrations"></a>Интеграция Azure Monitor с продуктами партнеров
 
@@ -184,6 +184,16 @@ PagerDuty, ведущее решение по управлению инциде�
 
 [Ознакомьтесь с документацией][pagerduty-doc]
 
+## <a name="promitor"></a>промитор
+
+![Логотип промитор](./media/partners/promitor.png)
+
+Промитор — это Azure Monitorный отход, который делает метрики доступными в таких системах, как Atlassian Statuspage, Prometheus и stats.
+
+Отправьте все метрики в Azure Monitor и использовать их там, где они вам нужны.
+
+[Подробнее.][promitor-doc]
+
 ## <a name="qradar"></a>QRadar
 
 ![Логотип QRadar](./media/partners/qradar.png)
@@ -293,6 +303,7 @@ Sumo Logic — это безопасное облачное решение сл�
 [newrelic-doc]: https://newrelic.com/azure "Документация по NewRelic."
 [opsgenie-doc]: https://www.opsgenie.com/docs/integrations/azure-integration "Документация по OpsGenie."
 [pagerduty-doc]: https://www.pagerduty.com/docs/guides/azure-integration-guide/ "Документация по PagerDuty."
+[promitor-doc]: https://promitor.io/ "Документация по промитор."
 [qradar-doc]: https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0 "Документация по QRadar."
 [sciencelogic-doc]: https://www.sciencelogic.com/product/technologies/microsoft/azure "Документация по ScienceLogic."
 [serverless360-doc]: https://docs.serverless360.com/docs/ "Документация по Serverless360."

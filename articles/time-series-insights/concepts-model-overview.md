@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 07/27/2020
+ms.date: 08/12/2020
 ms.custom: seodec18
-ms.openlocfilehash: 74a20e46858aada48151809c5bedf1f93076827e
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: f62a7eb895248f5d39f5c3df136c88a9b1f0e5b1
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87289957"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141726"
 ---
 # <a name="time-series-model-in-azure-time-series-insights-gen2"></a>Модель временных рядов в Gen2 "аналитика временных рядов Azure"
 
@@ -26,7 +26,7 @@ ms.locfileid: "87289957"
 > * Перейдите к [демонстрационной среде фермы "Ветер Contoso](https://insights.timeseries.azure.com/preview/samples) " для примера модели рабочего ряда в реальном времени.
 > * Узнайте, [как работать с моделью временных рядов](/azure/time-series-insights/how-to-edit-your-model) с помощью обозревателя Gen2 "аналитика временных рядов Azure".
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 В большинстве случаев данные, собираемые с устройств Интернета вещей, не содержат контекстных сведений, что усложняет поиск и не позволяет быстро анализировать датчики. Основной мотивацией модели временных рядов является упрощение поиска и анализа данных из Интернета вещей или временных рядов. Эта цель достигается за счет включения контроль, обслуживания и обогащения данных временных рядов, чтобы помочь подготовить готовые к отправке наборам данные для анализа.
 
@@ -75,7 +75,7 @@ ms.locfileid: "87289957"
 
 [![Обзорная диаграмма модели временных рядов](media/v2-update-tsm/time-series-model-overview.png)](media/v2-update-tsm/time-series-model-overview.png#lightbox)
 
-Модель временных рядов можно создать и управлять с помощью [обозревателя Gen2 временных рядов Azure](/azure/time-series-insights/concepts-model-overview). Параметрами модели временных рядов можно управлять через [API параметров модели](https://docs.microsoft.com/rest/api/time-series-insights/preview-model#model-settings-api).
+Модель временных рядов можно создать и управлять с помощью [обозревателя Gen2 временных рядов Azure](/azure/time-series-insights/concepts-model-overview). Параметрами модели временных рядов можно управлять через [API параметров модели](https://docs.microsoft.com/rest/api/time-series-insights/reference-model-apis).
 
 ## <a name="time-series-model-instances"></a>Экземпляры моделей временных рядов
 
@@ -97,7 +97,7 @@ ms.locfileid: "87289957"
 
 Экземпляры определяются с помощью **тимесериесид**, **typeId**, **Name**, **Description**, **хиерарчидс**и **инстанцефиелдс**. Каждый экземпляр сопоставляется только с одним *типом*и одной или несколькими *иерархиями*.
 
-| Свойство | Описание: |
+| Свойство | Описание |
 | --- | ---|
 | тимесериесид | Уникальный идентификатор временного ряда, с которым связан экземпляр. В большинстве случаев экземпляры уникально идентифицируются свойством, например deviceId или assetId. В некоторых случаях можно использовать более конкретный составной идентификатор, сочетающий до 3 свойств. |
 | Типа | Уникальный идентификатор строки с учетом регистра для типа модели временных рядов, с которым связан экземпляр. По умолчанию все обнаруженные новые экземпляры связываются с типом по умолчанию.
@@ -129,7 +129,7 @@ ms.locfileid: "87289957"
 ```
 
 > [!TIP]
-> Инструкции по созданию, чтению, обновлению и удалению API экземпляра (CRUD) см. в статье о [запросах данных](time-series-insights-update-tsq.md#time-series-model-query-tsm-q-apis) и [документации по API экземпляра](https://docs.microsoft.com/rest/api/time-series-insights/preview-model#instances-api).
+> Инструкции по созданию, чтению, обновлению и удалению API экземпляра (CRUD) см. в статье о [запросах данных](time-series-insights-update-tsq.md#time-series-model-query-tsm-q-apis) и [документации по API экземпляра](https://docs.microsoft.com/rest/api/time-series-insights/reference-model-apis#instances-api).
 
 ## <a name="time-series-model-hierarchies"></a>Иерархии моделей временных рядов
 
@@ -186,7 +186,7 @@ ms.locfileid: "87289957"
 * `ManufactureDate`Определяет иерархию с родительским `year` и дочерним `month` . `ManufactureDate`У каждого из них может быть несколько `years` , которые, в свою очередь, могут иметь несколько `months` .
 
 > [!TIP]
-> Инструкции по созданию, чтению, обновлению и удалению API-интерфейсов иерархии см. в статье Создание [запросов к данным](concepts-query-overview.md#time-series-model-query-tsm-q-apis) и [Документация по API иерархии](https://docs.microsoft.com/rest/api/time-series-insights/preview-model#hierarchies-api).
+> Инструкции по созданию, чтению, обновлению и удалению API-интерфейсов иерархии см. в статье Создание [запросов к данным](concepts-query-overview.md#time-series-model-query-tsm-q-apis) и [Документация по API иерархии](https://docs.microsoft.com/rest/api/time-series-insights/reference-model-apis#hierarchies-api).
 
 ### <a name="hierarchy-example"></a>Пример иерархии
 
@@ -231,7 +231,7 @@ ms.locfileid: "87289957"
 [![Пример типа модели временных рядов](media/v2-update-tsm/time-series-model-types.png)](media/v2-update-tsm/time-series-model-types.png#lightbox)
 
 > [!TIP]
-> Инструкции по созданию, чтению, обновлению и удалению API типов (CRUD) см. в статье о [запросах данных](concepts-query-overview.md#time-series-model-query-tsm-q-apis) и [документации по API типа](https://docs.microsoft.com/rest/api/time-series-insights/preview-model#types-api).
+> Инструкции по созданию, чтению, обновлению и удалению API типов (CRUD) см. в статье о [запросах данных](concepts-query-overview.md#time-series-model-query-tsm-q-apis) и [документации по API типа](https://docs.microsoft.com/rest/api/time-series-insights/reference-model-apis#types-api).
 
 ### <a name="type-properties"></a>Свойства типа
 
@@ -288,7 +288,7 @@ ms.locfileid: "87289957"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения об изменении модели с помощью API см. в справочной документации по [модели временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/preview-model) .
+* Дополнительные сведения об изменении модели с помощью API см. в справочной документации по [модели временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-model-apis) .
 
 * Изучите формулы и вычисления, которые можно создать с помощью [переменных модели временных рядов](./concepts-variables.md)
 

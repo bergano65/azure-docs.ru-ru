@@ -1,6 +1,6 @@
 ---
 title: Создание и развертывание облачной службы | Документация Майкрософт
-description: Узнайте, как создать и развернуть облачную службу с помощью портала Azure.
+description: Узнайте, как использовать метод быстрого создания для создания облачной службы и отправки и развертывания пакета облачной службы в Azure с помощью инструкции upload.
 services: cloud-services
 documentationcenter: ''
 author: tgore03
@@ -8,12 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 05/18/2017
 ms.author: tagore
-ms.openlocfilehash: 63cf864a3f3b92728ad613ac45542bdbce2c9858
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fca14ed4e3b338f9b49f949af7498dfd49990d3b
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80811337"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88142389"
 ---
 # <a name="how-to-create-and-deploy-a-cloud-service"></a>Создание и развертывание облачной службы
 Портал Azure предоставляет два способа создания и развертывания облачной службы: *быстрое создание* и *настраиваемое создание*.
@@ -86,7 +86,7 @@ ms.locfileid: "80811337"
 
 [TFSTutorialForCloudService]: https://go.microsoft.com/fwlink/?LinkID=251796
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Общая настройка облачной службы](cloud-services-how-to-configure-portal.md).
 * Настройте [имя пользовательского домена](cloud-services-custom-domain-name-portal.md).
 * [Управляйте облачной службой](cloud-services-how-to-manage-portal.md).

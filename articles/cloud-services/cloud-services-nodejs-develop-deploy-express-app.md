@@ -1,7 +1,7 @@
 ---
 title: Создание и развертывание приложения Node.js Express в облачных службах Azure
 titleSuffix: Azure Cloud Services
-description: Создание и развертывание приложения Express.js в Node.js в облачных службах Azure
+description: Используйте этот учебник для создания нового приложения с помощью модуля Express, который предоставляет платформу MVC для создания веб-приложений Node.js.
 services: cloud-services
 documentationcenter: nodejs
 author: tgore03
@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 08/17/2017
 ms.author: tagore
 ms.custom: devx-track-javascript
-ms.openlocfilehash: d642119d2fe70236ec8cc4b85da07bc8a2dca0c3
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 80b7e80e3636b2005594706e17b088b833c7bce7
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386509"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88142457"
 ---
 # <a name="build-and-deploy-a-nodejs-web-application-using-express-on-an-azure-cloud-services"></a>Создание и развертывание веб-приложения Node.js с использованием модуля Express в облачных службах Azure
 
