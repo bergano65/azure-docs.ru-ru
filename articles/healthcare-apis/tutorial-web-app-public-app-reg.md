@@ -5,16 +5,16 @@ services: healthcare-apis
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: tutorial
-ms.reviewer: mihansen
+ms.reviewer: matjazl
 ms.author: cavoeg
 author: caitlinv39
 ms.date: 01/03/2020
-ms.openlocfilehash: 8414a84190659ff31596bc202d29fe45eefdc588
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 483ca63abbabaabd3b25446c9267a1b0540f60dd
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86536713"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87852979"
 ---
 # <a name="client-application-registration"></a>Регистрация клиентского приложения
 В рамках предыдущего руководства вы развернули и настроили Azure API для FHIR. Теперь, когда настройка Azure API для FHIR завершена, мы зарегистрируем общедоступное клиентское приложение. Вы можете изучить полное практическое руководство по [регистрации общедоступного клиентского приложения](register-public-azure-ad-client-app.md), где более подробно описаны действия по устранению неполадок. Но основные шаги из этого руководства мы перечислим ниже.
