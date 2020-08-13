@@ -42,7 +42,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Создайте учетную запись для базы данных Azure Cosmos DB, [перейдя на портал Azure](https://portal.azure.com/). Найдите в поиске и выберите **Azure Cosmos DB**
 
-   :::image type="content" source="./media/create-cosmosdb-resources-portal/find-nosql-cosmosdb-marketplace.png" alt-text="Область "Базы данных" на портале Azure":::
+   :::image type="content" source="./media/create-cosmosdb-resources-portal/find-nosql-cosmosdb-marketplace.png" alt-text="Область Базы данных на портале Azure":::
 
 1. Выберите **Добавить**.
 1. На странице **создания учетной записи Azure Cosmos DB** введите основные параметры для новой учетной записи Azure Cosmos. 
@@ -64,13 +64,13 @@ Azure Cosmos DB — это глобально распределенная мн
 > [!NOTE]
 > Вы можете использовать не более одной учетной записи Azure Cosmos DB категории "Бесплатный" на подписку Azure. При создании учетной записи нужно зарегистрироваться. Если параметр подачи заявки на скидку на основе категории "Бесплатный" не отображается, это означает, что в подписке уже включена другая учетная запись категории "Бесплатный".
    
-   :::image type="content" source="./media/create-cosmosdb-resources-portal/azure-cosmos-db-create-new-account-detail.png" alt-text="Страница "Новая учетная запись" для Azure Cosmos DB":::
+   :::image type="content" source="./media/create-cosmosdb-resources-portal/azure-cosmos-db-create-new-account-detail.png" alt-text="Страница Новая учетная запись для Azure Cosmos DB":::
 
 1. Выберите **Review + create** (Просмотреть и создать). Вы можете пропустить разделы **Сеть** и **Теги**.
 
 1. Проверьте параметры учетной записи, а затем нажмите кнопку **Создать**. Создание учетной записи занимает несколько минут. Дождитесь, пока на странице портала появится сообщение **Развертывание выполнено**. 
 
-    :::image type="content" source="./media/create-cosmosdb-resources-portal/azure-cosmos-db-account-deployment-successful.png" alt-text="Область "Уведомления" на портале Azure":::
+    :::image type="content" source="./media/create-cosmosdb-resources-portal/azure-cosmos-db-account-deployment-successful.png" alt-text="Область Уведомления на портале Azure":::
 
 1. Выберите **Перейти к ресурсу**, чтобы перейти на страницу учетной записи Azure Cosmos DB. 
 
@@ -85,7 +85,7 @@ Azure Cosmos DB — это глобально распределенная мн
     
     Возможно, потребуется прокрутить страницу вправо, чтобы отобразилось окно **Добавить контейнер**.
     
-    :::image type="content" source="./media/create-sql-api-dotnet/azure-cosmosdb-data-explorer-dotnet.png" alt-text="Панель "Добавить контейнер" в обозревателе данных на портале Azure":::
+    :::image type="content" source="./media/create-sql-api-dotnet/azure-cosmosdb-data-explorer-dotnet.png" alt-text="Панель Добавить контейнер в обозревателе данных на портале Azure":::
     
 1.  На панели **Добавить контейнер** введите параметры для нового контейнера.
     
@@ -123,7 +123,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 1. Щелкните **Сохранить**.
    
-   :::image type="content" source="./media/create-sql-api-dotnet/azure-cosmosdb-save-document.png" alt-text="Копирование данных в формате JSON и нажатие кнопки "Сохранить" в обозревателе данных на портале Azure":::
+   :::image type="content" source="./media/create-sql-api-dotnet/azure-cosmosdb-save-document.png" alt-text="Копирование данных в формате JSON и нажатие кнопки Сохранить в обозревателе данных на портале Azure":::
    
 1. Снова щелкните **Новый документ**, создайте и сохраните другой документ с уникальным значением `id`, присвоив ему все нужные свойства и значения. Документы могут иметь любую структуру, так как Azure Cosmos DB не требует использовать определенные схемы данных.
 
