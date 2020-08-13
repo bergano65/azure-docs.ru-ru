@@ -4,12 +4,12 @@ description: Узнайте о том, как вызывать бизнес-пр
 ms.topic: tutorial
 ms.date: 04/08/2020
 ms.custom: mvc
-ms.openlocfilehash: 2b478ae75c8be978ea93a493b65dafdc7756c4b6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 874c67b0d8d29c163fa5f36b3d100f1d2a013d53
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87083248"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080972"
 ---
 # <a name="tutorial-send-email-and-invoke-other-business-processes-from-app-service"></a>Руководство по Отправка сообщений электронной почты и вызов других бизнес-процессов из Службы приложений
 
@@ -32,23 +32,23 @@ ms.locfileid: "87083248"
 
 ### <a name="aspnet-core"></a>[ASP.NET Core](#tab/dotnetcore)
 
-[Руководство. Создание приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure](app-service-web-tutorial-dotnetcore-sqldb.md)
+[Руководство. Создание приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure](tutorial-dotnetcore-sqldb-app.md)
 
 ### <a name="nodejs"></a>[Node.js](#tab/node)
 
-[Руководство. Разработка приложения на основе Node.js и MongoDB в Azure](app-service-web-tutorial-nodejs-mongodb-app.md)
+[Руководство. Разработка приложения на основе Node.js и MongoDB в Azure](tutorial-nodejs-mongodb-app.md)
 
 ### <a name="php"></a>[PHP](#tab/php)
 
-[Руководство. Разработка приложения на основе PHP и MySQL в Azure](app-service-web-tutorial-php-mysql.md)
+[Руководство. Разработка приложения на основе PHP и MySQL в Azure](tutorial-php-mysql-app.md)
 
 ### <a name="python"></a>[Python](#tab/python)
 
-[Руководство. Запуск веб-приложения Python (Django) с PostgreSQL в Службе приложений Azure](containers/tutorial-python-postgresql-app.md)
+[Руководство. Запуск веб-приложения Python (Django) с PostgreSQL в Службе приложений Azure](tutorial-python-postgresql-app.md)
 
 ### <a name="ruby"></a>[Ruby](#tab/ruby)
 
-[Разработка приложения на основе Ruby и Postgres в Службе приложений Azure в Linux](containers/tutorial-ruby-postgres-app.md)
+[Разработка приложения на основе Ruby и Postgres в Службе приложений Azure в Linux](tutorial-ruby-postgres-app.md)
 
 ---
 
@@ -191,7 +191,7 @@ var jsonData = JsonSerializer.Serialize(new
 });
 
 HttpResponseMessage result = await client.PostAsync(
-    // Requires DI configuration to access app settings. See https://docs.microsoft.com/azure/app-service/containers/configure-language-dotnetcore#access-environment-variables
+    // Requires DI configuration to access app settings. See https://docs.microsoft.com/azure/app-service/configure-language-dotnetcore#access-environment-variables
     _configuration["LOGIC_APP_URL"],
     new StringContent(jsonData, Encoding.UTF8, "application/json"));
     
@@ -201,7 +201,7 @@ var statusCode = result.StatusCode.ToString();
 > [!NOTE]
 > Этот код специально упрощен для ознакомления. В реальной системе не следует создавать новый экземпляр объекта `HttpClient` для каждого запроса. Соблюдайте рекомендации из руководства по [использованию IHttpClientFactory для реализации устойчивых запросов HTTP](https://docs.microsoft.com/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests).
 
-Если вы тестируете этот код в примере приложения для руководства по [ разработке приложения на основе ASP.NET Core с базой данных SQL в Службе приложений Azure](app-service-web-tutorial-dotnetcore-sqldb.md), вы можете с его помощью отправить подтверждение по электронной почте в [действии Create](https://github.com/Azure-Samples/dotnetcore-sqldb-tutorial/blob/master/Controllers/TodosController.cs#L56-L65) после добавления элемента `Todo`.
+Если вы тестируете этот код в примере приложения для руководства по [ разработке приложения на основе ASP.NET Core с базой данных SQL в Службе приложений Azure](tutorial-dotnetcore-sqldb-app.md), вы можете с его помощью отправить подтверждение по электронной почте в [действии Create](https://github.com/Azure-Samples/dotnetcore-sqldb-tutorial/blob/master/Controllers/TodosController.cs#L56-L65) после добавления элемента `Todo`.
 
 ### <a name="nodejs"></a>[Node.js](#tab/node)
 
@@ -228,7 +228,7 @@ var jsonData = {
 
 ```
 
-Если вы тестируете этот код в примере приложения для руководства по [ разработке приложения на основе Node.js и MongoDB в Azure](app-service-web-tutorial-nodejs-mongodb-app.md), вы можете с его помощью отправить подтверждение по электронной почте в [функции create](https://github.com/Azure-Samples/meanjs/blob/master/modules/articles/server/controllers/articles.server.controller.js#L14-L27) после [успешного сохранения статьи](https://github.com/Azure-Samples/meanjs/blob/master/modules/articles/server/controllers/articles.server.controller.js#L24).
+Если вы тестируете этот код в примере приложения для руководства по [ разработке приложения на основе Node.js и MongoDB в Azure](tutorial-nodejs-mongodb-app.md), вы можете с его помощью отправить подтверждение по электронной почте в [функции create](https://github.com/Azure-Samples/meanjs/blob/master/modules/articles/server/controllers/articles.server.controller.js#L14-L27) после [успешного сохранения статьи](https://github.com/Azure-Samples/meanjs/blob/master/modules/articles/server/controllers/articles.server.controller.js#L24).
 
 ### <a name="php"></a>[PHP](#tab/php)
 
@@ -260,7 +260,7 @@ $response = $promise->wait();
 Log::info(print_r($response, TRUE));
 ```
 
-Если вы тестируете этот код в примере приложения для руководства по [ разработке приложения на основе PHP и MySQL в Azure](app-service-web-tutorial-php-mysql.md), вы можете с его помощью отправлять подтверждение по электронной почте из [функции Route::post](https://github.com/Azure-Samples/laravel-tasks/blob/master/routes/web.php#L30-L48) непосредственно перед оператором return.
+Если вы тестируете этот код в примере приложения для руководства по [ разработке приложения на основе PHP и MySQL в Azure](tutorial-php-mysql-app.md), вы можете с его помощью отправлять подтверждение по электронной почте из [функции Route::post](https://github.com/Azure-Samples/laravel-tasks/blob/master/routes/web.php#L30-L48) непосредственно перед оператором return.
 
 ### <a name="python"></a>[Python](#tab/python)
 
@@ -291,7 +291,7 @@ async with aiohttp.post('http://httpbin.org/post', data=json.dump(payload)) as r
     print(await resp.status())
 ``` -->
 
-Если вы тестируете этот код в примере приложения для руководства по [ разработке веб-приложения на основе Python (Django) и PostgreSQL в Службе приложений Azure](containers/tutorial-python-postgresql-app.md), вы можете с его помощью отправлять подтверждение по электронной почте из [функции Route::post](https://github.com/Azure-Samples/laravel-tasks/blob/master/routes/web.php#L30-L48) непосредственно перед оператором return.
+Если вы тестируете этот код в примере приложения для руководства по [ разработке веб-приложения на основе Python (Django) и PostgreSQL в Службе приложений Azure](tutorial-python-postgresql-app.md), вы можете с его помощью отправлять подтверждение по электронной почте из [функции Route::post](https://github.com/Azure-Samples/laravel-tasks/blob/master/routes/web.php#L30-L48) непосредственно перед оператором return.
 
 ### <a name="ruby"></a>[Ruby](#tab/ruby)
 
@@ -308,7 +308,7 @@ body = {
 connection = clnt.post_async(ENV['LOGIC_APP_URL'], body)
 ```
 
-Если вы тестируете этот код в примере приложения для руководства по [разработке приложения на основе Ruby и Postgres в Службе приложений Azure в Linux](containers/tutorial-ruby-postgres-app.md), вы можете использовать его для отправки подтверждения по электронной почте в действии [create](https://github.com/Azure-Samples/rubyrails-tasks/blob/master/app/controllers/tasks_controller.rb#L26-L38) [при успешном выполнении @task.save](https://github.com/Azure-Samples/rubyrails-tasks/blob/master/app/controllers/tasks_controller.rb#L30).
+Если вы тестируете этот код в примере приложения для руководства по [разработке приложения на основе Ruby и Postgres в Службе приложений Azure в Linux](tutorial-ruby-postgres-app.md), вы можете использовать его для отправки подтверждения по электронной почте в действии [create](https://github.com/Azure-Samples/rubyrails-tasks/blob/master/app/controllers/tasks_controller.rb#L26-L38) [при успешном выполнении @task.save](https://github.com/Azure-Samples/rubyrails-tasks/blob/master/app/controllers/tasks_controller.rb#L30).
 
 ---
 
