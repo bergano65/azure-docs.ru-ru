@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 08/06/2020
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: e6e1c6a02979ff6621961e17378c7fe2c9a1592b
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 391a5f054c5d80b255fd333ea416900c8c5ab6d1
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926354"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88135425"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Управление использованием и затратами с помощью журналов Azure Monitor    
 
@@ -266,8 +266,7 @@ Heartbeat
 Чтобы узнать количество узлов, отправляющих данные за последние 24 часа, выполните следующий запрос: 
 
 ```kusto
-union * 
-| where TimeGenerated > ago(24h)
+find where TimeGenerated > ago(24h) project Computer
 | extend computerName = tolower(tostring(split(Computer, '.')[0]))
 | where computerName != ""
 | summarize nodes = dcount(computerName)
@@ -276,15 +275,14 @@ union *
 Чтобы получить список узлов, отправляющих любые данные (и объем данных, отправленных каждым из них), выполните следующий запрос:
 
 ```kusto
-union * 
-| where TimeGenerated > ago(24h)
+find where TimeGenerated > ago(24h) project _BilledSize, Computer
 | extend computerName = tolower(tostring(split(Computer, '.')[0]))
 | where computerName != ""
 | summarize TotalVolumeBytes=sum(_BilledSize) by computerName
 ```
 
 > [!TIP]
-> Используйте эти запросы `union *` только в случае необходимости, так как сканирование по типам данных [требует больших затрат ресурсов](https://docs.microsoft.com/azure/azure-monitor/log-query/query-optimization#query-performance-pane) на выполнение. Если результаты **на компьютер** не нужны, выполните запрос по типу данных об использовании (см. ниже).
+> Используйте эти запросы `find` только в случае необходимости, так как сканирование по типам данных [требует больших затрат ресурсов](https://docs.microsoft.com/azure/azure-monitor/log-query/query-optimization#query-performance-pane) на выполнение. Если результаты **на компьютер** не нужны, выполните запрос по типу данных об использовании (см. ниже).
 
 ## <a name="understanding-ingested-data-volume"></a>Основные сведения о принимаемом объеме данных
 
@@ -346,8 +344,7 @@ Usage
 Тип данных `Usage` не содержит сведений на уровне компьютера. Чтобы увидеть **размер** полученных данных для каждого компьютера, используйте [свойство](log-standard-properties.md#_billedsize) `_BilledSize`, которое предоставляет размер в байтах:
 
 ```kusto
-union * 
-| where TimeGenerated > ago(24h)
+find where TimeGenerated > ago(24h) project _BilledSize, _IsBillable, Computer
 | where _IsBillable == true 
 | extend computerName = tolower(tostring(split(Computer, '.')[0]))
 | summarize BillableDataBytes = sum(_BilledSize) by  computerName 
@@ -359,8 +356,7 @@ union *
 Чтобы узнать **количество** полученных оплачиваемых событий для каждого компьютера, выполните следующий запрос: 
 
 ```kusto
-union * 
-| where TimeGenerated > ago(24h)
+find where TimeGenerated > ago(24h) project _IsBillable, Computer
 | where _IsBillable == true 
 | extend computerName = tolower(tostring(split(Computer, '.')[0]))
 | summarize eventCount = count() by computerName  
@@ -368,15 +364,14 @@ union *
 ```
 
 > [!TIP]
-> Используйте эти запросы `union  *` только в случае необходимости, так как сканирование по типам данных [требует больших затрат ресурсов](https://docs.microsoft.com/azure/azure-monitor/log-query/query-optimization#query-performance-pane) на выполнение. Если результаты **для каждого компьютера** не нужны, выполните запрос по типу данных об использовании.
+> Используйте эти запросы `find` только в случае необходимости, так как сканирование по типам данных [требует больших затрат ресурсов](https://docs.microsoft.com/azure/azure-monitor/log-query/query-optimization#query-performance-pane) на выполнение. Если результаты **для каждого компьютера** не нужны, выполните запрос по типу данных об использовании.
 
 ### <a name="data-volume-by-azure-resource-resource-group-or-subscription"></a>Объем данных по ресурсам, группам ресурсов или подпискам Azure
 
 Для данных из узлов, размещенных в Azure, можно определить **размер** полученных данных __для каждого компьютера__. Используйте [свойство](log-standard-properties.md#_resourceid) _ResourceId, которое предоставляет полный путь к ресурсу:
 
 ```kusto
-union * 
-| where TimeGenerated > ago(24h)
+find where TimeGenerated > ago(24h) project _ResourceId, _BilledSize, _IsBillable
 | where _IsBillable == true 
 | summarize BillableDataBytes = sum(_BilledSize) by _ResourceId | sort by BillableDataBytes nulls last
 ```
@@ -384,22 +379,20 @@ union *
 Для данных из узлов, размещенных в Azure, можно получить **Размер** принимаемых данных для __каждой подписки Azure__, получить идентификатор подписки `_ResourceId` свойство как:
 
 ```kusto
-union * 
-| where TimeGenerated > ago(24h)
+find where TimeGenerated > ago(24h) project _ResourceId, _BilledSize, _IsBillable
 | where _IsBillable == true 
 | summarize BillableDataBytes = sum(_BilledSize) by _ResourceId
-| extend subscriptionId = split(_ResourceId, "/")[2] 
+| extend subscriptionId = tostring(split(_ResourceId, "/")[2]) 
 | summarize BillableDataBytes = sum(BillableDataBytes) by subscriptionId | sort by BillableDataBytes nulls last
 ```
 
 Аналогично, чтобы получить объем данных по группе ресурсов, это будет так:
 
 ```kusto
-union * 
-| where TimeGenerated > ago(24h)
+find where TimeGenerated > ago(24h) project _ResourceId, _BilledSize, _IsBillable
 | where _IsBillable == true 
 | summarize BillableDataBytes = sum(_BilledSize) by _ResourceId
-| extend resourceGroup = split(_ResourceId, "/")[4] 
+| extend resourceGroup = tostring(split(_ResourceId, "/")[4] )
 | summarize BillableDataBytes = sum(BillableDataBytes) by resourceGroup | sort by BillableDataBytes nulls last
 ```
 
@@ -411,7 +404,7 @@ union *
 ```
 
 > [!TIP]
-> Используйте эти запросы `union  *` только в случае необходимости, так как сканирование по типам данных [требует больших затрат ресурсов](https://docs.microsoft.com/azure/azure-monitor/log-query/query-optimization#query-performance-pane) на выполнение. Если вам не нужны результаты для каждой подписки, группы ресурсов или каждого имени ресурса, выполните запрос по типу данных об использовании.
+> Используйте эти запросы `find` только в случае необходимости, так как сканирование по типам данных [требует больших затрат ресурсов](https://docs.microsoft.com/azure/azure-monitor/log-query/query-optimization#query-performance-pane) на выполнение. Если вам не нужны результаты для каждой подписки, группы ресурсов или каждого имени ресурса, выполните запрос по типу данных об использовании.
 
 > [!WARNING]
 > Некоторые поля с типом данных Usage (Потребление) уже устарели и данные в них не заполняются, хотя они пока сохраняются в схеме. Например, сюда относятся поля **Computer** и ряд данных о приеме данных (**TotalBatches**, **BatchesWithinSla**, **BatchesOutsideSla**, **BatchesCapped** и **AverageProcessingTimeMs**).
@@ -458,8 +451,7 @@ union *
 Чтобы получить список компьютеров, которые будут оплачиваться как узлы, если рабочая область находится в устаревшей ценовой категории "За узел", найдите узлы, которые отправляют **счет за типы данных** (некоторые типы данных бесплатные). Для этого используйте [свойство](log-standard-properties.md#_isbillable) `_IsBillable` и крайнее левое поле полного доменного имени. При этом возвращается число компьютеров с оплатой данных за час (степень детализации, при которой подсчитываются узлы и за них выставляются счета):
 
 ```kusto
-union * 
-| where _IsBillable == true 
+find where TimeGenerated > ago(24h) project Computer, TimeGenerated
 | extend computerName = tolower(tostring(split(Computer, '.')[0]))
 | where computerName != ""
 | summarize billableNodes=dcount(computerName) by bin(TimeGenerated, 1h) | sort by TimeGenerated asc

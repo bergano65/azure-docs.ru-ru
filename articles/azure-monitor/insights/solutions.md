@@ -5,28 +5,28 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 05/12/2020
-ms.openlocfilehash: 406991de2441836565c911ef8a8e1402f6398eb0
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.date: 08/07/2020
+ms.openlocfilehash: 04f2d11b9fc8bbd61319a057c091cddbf140b9db
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87824789"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88135541"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Решения мониторинга в Azure Monitor
 
-Решения мониторинга используют службы в Azure для обеспечения дополнительного анализа работы конкретного приложения или службы. Эта статья содержит краткий обзор решений мониторинга в Azure и подробные сведения об их использовании и установке. В Azure Monitor вы можете добавить решения мониторинга для всех используемых приложений и служб. Обычно они предоставляются бесплатно, но сбор данных может повлечь определенную плату за использование ресурсов.
+Решения мониторинга в Azure Monitor обеспечивают анализ операций конкретного приложения или службы Azure. Эта статья содержит краткий обзор решений мониторинга в Azure и подробные сведения об их использовании и установке. В Azure Monitor вы можете добавить решения мониторинга для всех используемых приложений и служб. Обычно они предоставляются бесплатно, но сбор данных может повлечь определенную плату за использование ресурсов.
 
 ## <a name="use-monitoring-solutions"></a>Использование решений для мониторинга
 
-На странице **Обзор** в Azure Monitor отображаются плитки для каждого решения, установленного в этой рабочей области.
+На странице **Обзор** решений в Azure Monitor отображается плитка для каждого решения, установленного в log Analytics рабочей области. Чтобы открыть эту страницу, перейдите к **Azure Monitor** в [портал Azure](https://ms.portal.azure.com). В меню **Insights (аналитика** ) выберите **Дополнительно** , чтобы открыть **центр Insights**, а затем щелкните **log Analytics рабочие области**.
 
-1. Перейдите на [портал Azure](https://ms.portal.azure.com). Найдите и выберите **Monitor**.
-1. В меню **Анализ** выберите пункт **Больше**.
-1. Используйте раскрывающиеся списки в верхней части экрана, чтобы менять рабочую область и диапазон времени, используемые для плиток.
-1. Щелкните плитку решения, чтобы открыть его представление с подробным анализом собранных данных.
+[![Центр Insights](media/solutions/insights-hub.png)](media/solutions/insights-hub.png#lightbox)
 
-![Обзор](media/solutions/overview.png)
+
+Используйте раскрывающиеся списки в верхней части экрана, чтобы менять рабочую область и диапазон времени, используемые для плиток. Щелкните плитку решения, чтобы открыть его представление с подробным анализом собранных данных.
+
+[![Обзор](media/solutions/overview.png)](media/solutions/overview.png#lightbox)
 
 Решения мониторинга могут содержать несколько типов ресурсов Azure, и все ресурсы в составе решения можно просмотреть точно так же, как любой другой ресурс. Например, все включенные в решение запросы по журналам представлены в списке **Запросы решения** в [обозревателе запросов](../log-query/get-started-portal.md#load-queries). Эти запросы вы можете использовать при выполнении динамического анализа с помощью [запросов по журналам](../log-query/log-query-overview.md).
 
@@ -46,7 +46,7 @@ ms.locfileid: "87824789"
 
 ![Свойства решения](media/solutions/solution-properties.png)
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы получить список решений для мониторинга, установленных в вашей подписке, используйте команду [AZ Monitor log-Analytics Solution List](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution#ext-log-analytics-solution-az-monitor-log-analytics-solution-list) .   Перед выполнением `list` команды следуйте предварительным требованиям, приведенным в [статье Установка решения для мониторинга](#install-a-monitoring-solution).
 
@@ -177,7 +177,7 @@ az monitor log-analytics solution create --resource-group MyResourceGroup \
 
 Чтобы удалить установленное решение с помощью портала, выберите его в [списке установленных решений](#list-installed-monitoring-solutions). Щелкните имя решения, чтобы открыть страницу сводки, и выберите **Удалить**.
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы удалить установленное решение с помощью Azure CLI, используйте команду [AZ Monitor log-Analytics решение Delete](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution#ext-log-analytics-solution-az-monitor-log-analytics-solution-delete) .
 

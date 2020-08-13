@@ -1,6 +1,6 @@
 ---
 title: Решение VMware для Azure по Клаудсимпле — частные облака
-description: Сведения о частных облаках и концепциях Клаудсимпле.
+description: Узнайте о концепциях и преимуществах Клаудсимпле, включая полную непрерывность работы VMware, совместимость с существующими инструментами, навыками и процессами.
 author: sharaths-cs
 ms.author: dikamath
 ms.date: 08/20/2019
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 4fb930603455ed1a5df5d357fcab669f41a0c28c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e2096e8c0ebfb233c7449510bf0bc8e80b56231e
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77024960"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140723"
 ---
 # <a name="cloudsimple-private-cloud-overview"></a>Общие сведения о частном облаке Клаудсимпле
 
@@ -46,7 +46,7 @@ ms.locfileid: "77024960"
 * Подготовка приложений
 * Непрерывность бизнес-процессов
 * Поддержка
-* Принудительное применение политик
+* Принудительное применение политики
 
 ## <a name="private-cloud-environment-overview"></a>Общие сведения о среде частного облака
 
@@ -132,7 +132,7 @@ ms.locfileid: "77024960"
 | Максимальное число узлов в частном облаке | 64 |
 | Минимальное число узлов в новом кластере | 3 |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [создать частное облако](create-private-cloud.md)
 * Узнайте, как [настроить среду частного облака](quickstart-create-private-cloud.md)

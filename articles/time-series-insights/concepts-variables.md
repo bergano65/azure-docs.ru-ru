@@ -5,13 +5,13 @@ author: shreyasharmamsft
 ms.author: shresha
 ms.service: time-series-insights
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: 73d5c3abb2edc940bee9727ce1f3b0c4e8e0a62e
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.date: 08/12/2020
+ms.openlocfilehash: d0a5b48e93e839b0a0adaf185700d7f60fec7948
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87289944"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140689"
 ---
 # <a name="time-series-model-variables"></a>Переменные модели временных рядов
 
@@ -27,14 +27,14 @@ ms.locfileid: "87289944"
 
 [![Таблица переменных модели временных рядов](media/v2-update-tsm/time-series-model-variable-table.png)](media/v2-update-tsm/time-series-model-variable-table.png#lightbox)
 
-#### <a name="numeric-variables"></a>Числовые переменные
+## <a name="numeric-variables"></a>Числовые переменные
 
-| Свойство переменной | Описание: |
+| Свойство переменной | Описание |
 | --- | ---|
 | Фильтр переменной | Фильтры являются необязательными условными предложениями для ограничения количества строк, учитываемых при вычислении. |
 | Значение переменной | Значения телеметрии, используемые для вычислений, поступающих от устройства или датчиков или преобразованных с помощью выражений временных рядов. Числовые переменные типа должны иметь тип *Double*.|
 | Интерполяция переменных | Интерполяция указывает, как воссоздать сигнал с помощью существующих данных. Для числовых переменных доступны параметры *Step* и *линейной* интерполяции. |
-| Объединение переменных | Выполнение вычислений с помощью поддерживаемых [агрегатных функций для числовых типов переменных](https://docs.microsoft.com/rest/api/time-series-insights/preview#numeric-variable-kind-1). |
+| Объединение переменных | Выполнение вычислений с помощью поддерживаемых [агрегатных функций для числовых типов переменных](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax#numeric-variable-kind). |
 
 Переменные соответствуют следующему примеру JSON:
 
@@ -57,9 +57,9 @@ ms.locfileid: "87289944"
 }
 ```
 
-#### <a name="categorical-variables"></a>Переменные категорий
+## <a name="categorical-variables"></a>Переменные категорий
 
-| Свойство переменной | Описание: |
+| Свойство переменной | Описание |
 | --- | ---|
 | Фильтр переменной | Фильтры являются необязательными условными предложениями для ограничения количества строк, учитываемых при вычислении. |
 | Значение переменной | Значения телеметрии, используемые для вычислений, поступающих от устройства или датчиков. Переменные вида категорий должны быть *длинными* или *строковыми*. |
@@ -73,7 +73,7 @@ ms.locfileid: "87289944"
 "Status": {
   "kind": "categorical",
   "value": {
-     "tsx": "$event.Status.Long" 
+     "tsx": "$event.Status.Long"
 },
   "interpolation": {
     "kind": "step",
@@ -97,12 +97,12 @@ ms.locfileid: "87289944"
 }
 ```
 
-#### <a name="aggregate-variables"></a>Статистические переменные
+## <a name="aggregate-variables"></a>Статистические переменные
 
-| Свойство переменной | Описание: |
+| Свойство переменной | Описание |
 | --- | ---|
 | Фильтр переменной | Фильтры являются необязательными условными предложениями для ограничения количества строк, учитываемых при вычислении. |
-| Объединение переменных | Выполняйте вычисления с помощью поддерживаемых [агрегатных функций для типов агрегатных переменных](https://docs.microsoft.com/rest/api/time-series-insights/preview#aggregate-variable-kind-1). |
+| Объединение переменных | Выполняйте вычисления с помощью поддерживаемых [агрегатных функций для типов агрегатных переменных](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax#aggregate-variable-kind). |
 
 Переменные соответствуют следующему примеру JSON:
 
@@ -123,4 +123,3 @@ ms.locfileid: "87289944"
 * Дополнительные сведения о [модели временных рядов](./concepts-model-overview.md).
 
 * Узнайте больше о том, как определять переменные встроенными средствами с помощью [API запросов](./concepts-query-overview.md).
-

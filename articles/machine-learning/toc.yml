@@ -161,11 +161,8 @@
             - name: управление пользователями и ролями;
               href: how-to-assign-roles.md
             - name: Использование виртуальных сетей
-              displayName: 'vnet, blob'
+              displayName: 'vnet, blob, private endpoint, private link'
               href: how-to-enable-virtual-network.md
-            - name: Использование Приватного канала
-              displayName: private endpoint
-              href: how-to-configure-private-link.md
             - name: Защита веб-служб с помощью TLS
               displayName: ssl
               href: how-to-secure-web-service.md
@@ -457,8 +454,8 @@
         - name: Отладка конвейеров и устранение возникающих с ними неполадок
           displayName: designer
           href: how-to-debug-pipelines.md
-        - name: Отладка конвейеров в Application Insights
-          href: how-to-debug-pipelines-application-insights.md
+        - name: Запись данных конвейера в журнал в Application Insights
+          href: how-to-log-pipelines-application-insights.md
         - name: Параллельное выполнение шагов
           displayName: score scoring batch consume pipeline parallelrunstep inference
           href: how-to-use-parallel-run-step.md

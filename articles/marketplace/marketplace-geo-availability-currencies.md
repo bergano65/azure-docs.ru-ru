@@ -7,12 +7,12 @@ ms.topic: reference
 author: keferna
 ms.author: keferna
 ms.date: 07/29/2020
-ms.openlocfilehash: bf6215bd9225292f7b85ed6d4c4566cd4ee860b7
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: b1baeaa31eddc13a68f2cc1d374b850f1c1a26bd
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87902105"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88136343"
 ---
 # <a name="geographic-availability-and-currency-support-for-commercial-marketplace"></a>Поддержка географической доступности и валюты для коммерческой платформы
 
@@ -179,11 +179,7 @@ ms.locfileid: "87902105"
 > [!NOTE]
 > После публикации плана цены для отдельных рынков в плане нельзя будет изменить. Чтобы проверить правильность цен перед публикацией, экспортируйте электронную таблицу цен и изучите цены для каждого рынка.
 
-## <a name="rate-changes"></a>Частота изменений
-
-Ставка, используемая для вычисления местных цен, обновляется ежедневно. Это вычисление выполняется, когда поставщик программного обеспечения сохраняет страницу и может просматривать все ставки путем экспорта и просмотра цен перед публикацией.
-
-### <a name="retrieving-currency-information-by-api"></a>Получение сведений о валюте по API
+## <a name="retrieving-currency-information-by-api"></a>Получение сведений о валюте по API
 
 Отдельные цены (которые, в зависимости от того, как они были заданы), могут быть получены с помощью API. сведения о валюте не могут быть.
 

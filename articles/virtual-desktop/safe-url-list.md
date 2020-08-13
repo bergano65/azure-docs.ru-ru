@@ -3,15 +3,15 @@ title: Список надежных URL-адресов виртуальных �
 description: Список URL-адресов, которые следует разблокировать, чтобы убедиться, что развертывание виртуальных рабочих столов Windows работает правильно.
 author: Heidilohr
 ms.topic: conceptual
-ms.date: 08/10/2020
+ms.date: 08/12/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 37fb5ccf121fed6e772dc1cd3dcba2345d62c66f
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: d75d6ecf73dece6dad43367a7f869a1b8ec3d86b
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067211"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88135867"
 ---
 # <a name="safe-url-list"></a>Список надежных URL-адресов
 
@@ -27,11 +27,12 @@ ms.locfileid: "88067211"
 |mrsglobalsteus2prod.blob.core.windows.net|443|Обновления агента и стека SxS|AzureCloud;|
 |*.core.windows.net|443|Агент трафика|AzureCloud;|
 |*.servicebus.windows.net|443|Агент трафика|AzureCloud;|
-|prod.warmpath.msftcloudes.com;|443|Агент трафика|AzureCloud;|
+|gcs.prod.monitoring.core.windows.net|443|Агент трафика|AzureCloud;|
 |catalogartifact.azureedge.net|443|Azure Marketplace|AzureCloud;|
 |kms.core.windows.net|1688;|Активация Windows|Интернет|
 |wvdportalstorageblob.blob.core.windows.net|443|Поддержка портала Azure|AzureCloud;|
 | 169.254.169.254 | 80 | [Конечная точка службы метаданных экземпляра Azure](../virtual-machines/windows/instance-metadata-service.md) | Н/Д |
+| 168.63.129.16 | 80 | [Мониторинг работоспособности узла сеансов](../virtual-network/security-overview.md#azure-platform-considerations) | Н/Д |
 
 >[!IMPORTANT]
 >Виртуальный рабочий стол Windows теперь поддерживает тег полного доменного имени. Дополнительные сведения см. в статье [Использование Брандмауэра Azure для защиты развертываний виртуального рабочего стола Windows](../firewall/protect-windows-virtual-desktop.md).

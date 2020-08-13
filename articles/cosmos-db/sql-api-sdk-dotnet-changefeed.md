@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 08/05/2020
 ms.author: anfeldma
-ms.openlocfilehash: 5f0d66a515ed13f96645e5916af2b01841950375
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: f38b2715115efadef4e09a95e9392b1dfd4c68b0
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87846604"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88135748"
 ---
 # <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>Пакет SDK обработчика канала изменений: заметки о скачивании и выпуске
 
@@ -49,6 +49,9 @@ ms.locfileid: "87846604"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 ### <a name="v2-builds"></a>Сборки версии 2
+
+### <a name="232"></a><a name="2.3.2"/>2.3.2
+* Добавлена совместимость хранилища аренды с [пакетом SDK v3](sql-api-sdk-dotnet-standard.md) , которая обеспечивает пути для оперативной миграции. Приложение может перейти на пакет SDK v3 и выполнить миграцию обратно в библиотеку обработчика веб-канала изменений без потери состояния.
 
 ### <a name="231"></a><a name="2.3.1"/>2.3.1
 * Исправлен случай, когда `FeedProcessing.ChangeFeedObserverCloseReason.Unknown` была отправлена Причина закрытия, `FeedProcessing.IChangeFeedObserver.CloseAsync` если не удается найти секцию или если Целевая реплика не устарела в сеансе чтения. В этих случаях и в этом случае `FeedProcessing.ChangeFeedObserverCloseReason.ResourceGone` `FeedProcessing.ChangeFeedObserverCloseReason.ReadSessionNotAvailable` используются закрытые причины.
@@ -193,6 +196,7 @@ ms.locfileid: "87846604"
 
 | Версия | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.3.2](#2.3.2) |11 августа 2020 г. |--- |
 | [2.3.1](#2.3.1) |30 июля 2020 г. |--- |
 | [2.3.0](#2.3.0) |2 апреля 2020 г. |--- |
 | [2.2.8](#2.2.8) |28 октября 2019 г. |--- |

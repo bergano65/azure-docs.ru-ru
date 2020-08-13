@@ -1,25 +1,15 @@
 ---
 title: Остановка работы и удаление виртуальной машины в лаборатории с помощью Azure CLI
 description: В этой статье представлен скрипт Azure CLI, который позволяет остановить и удалить виртуальную машину в лаборатории в Azure DevTest Labs.
-services: lab-services
-author: spelluru
-manager: ''
-editor: ''
-ms.assetid: ''
-ms.service: lab-services
 ms.devlang: azurecli
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/24/2020
-ms.author: spelluru
-ms.custom: mvc
-ms.openlocfilehash: 3ba2b2c3924f7fea481907b825ba5a04ab50b0bf
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.date: 08/11/2020
+ms.openlocfilehash: 45d5b3453e29571760d47d52a1a21288be31ea90
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87290314"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88136136"
 ---
 # <a name="use-azure-cli-to-stop-and-delete-a-virtual-machine-in-a-lab-in-azure-devtest-labs"></a>Остановка и удаление виртуальной машины в лаборатории в Azure DevTest Labs с помощью Azure CLI
 
