@@ -1,6 +1,6 @@
 ---
 title: Развертывание виртуального массива StorSimple для программы поставщика облачных решений
-description: Общие сведения о StorSimple и CSP для партнеров StorSimple.
+description: Узнайте, как партнер CSP может добавить клиента или новую подписку к существующему клиенту, а затем создать службу для развертывания виртуального массива StorSimple в CSP.
 services: storsimple
 documentationcenter: NA
 author: alkohli
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: 7f1927a67127766c72be463c283225135b2a2aad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dc0cf718ee51e23fb749bdf57d5344977de009d8
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77466915"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88182227"
 ---
 # <a name="deploy-storsimple-virtual-array-for-cloud-solution-provider-program"></a>Развертывание виртуального массива StorSimple для программы поставщика облачных решений
 
@@ -29,7 +29,7 @@ ms.locfileid: "77466915"
 
 В этой статье описывается, как партнер CSP может добавить клиента или новую подписку имеющегося клиента, а затем создать службу для развертывания виртуального массива StorSimple в CSP.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы убедитесь, что выполнены следующие условия:
 
@@ -101,7 +101,7 @@ ms.locfileid: "77466915"
 
     ![Создание службы диспетчера устройств StorSimple](./media/storsimple-partner-csp-deploy/image8.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если у вас есть дополнительные вопросы о StorSimple в CSP, перейдите к статье [StorSimple in CSP: Frequently asked questions](storsimple-partner-csp-faq.md) (StorSimple в CSP: часто задаваемые вопросы).
 - Если вы уже готовы развернуть StorSimple, перейдите к статье [Deploy your StorSimple in CSP](storsimple-partner-csp-deploy.md) (Развертывание StorSimple в рамках программы CSP).

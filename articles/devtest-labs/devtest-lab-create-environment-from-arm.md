@@ -2,13 +2,13 @@
 title: Создание сред с несколькими виртуальными машинами и ресурсов PaaS с помощью шаблонов
 description: Узнайте, как в Azure DevTest Labs создавать среды со множеством виртуальных машин и ресурсов PaaS, используя шаблон Azure Resource Manager.
 ms.topic: article
-ms.date: 06/26/2020
-ms.openlocfilehash: bab107257a6233543cecfb664b3a6d313dd0e538
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/12/2020
+ms.openlocfilehash: 97659d4ab95fdbe75460161d0ceed71a1cb5cf82
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85481431"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88182414"
 ---
 # <a name="create-multi-vm-environments-and-paas-resources-with-azure-resource-manager-templates"></a>Создание сред со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Azure Resource Manager
 
@@ -85,7 +85,7 @@ Azure DevTest Labs имеет [общедоступный репозиторий
      - Чтобы получить токен из GitHub, в разделе Профиль выберите **Параметры**  >  **разработчика параметры**  >  **личные права доступа**.
    - **Пути к папкам**. Введите путь к папке относительно URI клона Git для определений артефактов или определений шаблонов Azure Resource Manager.
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
    ![Добавить новый репозиторий](./media/devtest-lab-create-environment-from-arm/repo-values.png)
 
@@ -203,10 +203,10 @@ Azure DevTest Labs имеет [общедоступный репозиторий
    Set-AzContext -SubscriptionId $SubscriptionId | Out-Null
 
    # Get information about the user, specifically the user ID, which is used later in the script.  
-   $UserId = $((Get-AzADUser -UserPrincipalName (Get-AzContext).Account).Id.Guid)
+   $UserId = $((Get-AzADUser -UserPrincipalName ((Get-AzContext).Account).Id).Id)
 
    # Get information about the lab, such as lab location.
-   $lab = Get-AzResource -ResourceType "Microsoft.DevTestLab/labs" -Name $LabName -ResourceGroupName $ResourceGroupName
+   $lab = Get-AzResource -ResourceType "Microsoft.DevTestLab/labs" -Name $LabName
    if ($lab -eq $null) { throw "Unable to find lab $LabName in subscription $SubscriptionId." }
 
    # Get information about the repository in the lab.
@@ -282,7 +282,7 @@ Azure DevTest Labs имеет [общедоступный репозиторий
 
   - число дисков уровня Premium на пользователя лаборатории.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - После создания виртуальной машины можно подключиться к ней, нажав кнопку **подключить** на панели управления виртуальной машины.
 - Для просмотра и администрирования ресурсов в среде выберите среду в списке **Мои виртуальные машины** в вашей лаборатории.
 - Изучите [шаблоны Azure Resource Manager из коллекции шаблонов](https://github.com/Azure/azure-quickstart-templates)быстрого запуска Azure.

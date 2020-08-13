@@ -5,17 +5,20 @@ author: sideeksh
 manager: rochakm
 ms.topic: troubleshooting
 ms.date: 11/27/2018
-ms.openlocfilehash: 913f1f2a7a03c1abb83d8daa6d4b0c3f6e77e309
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: c1915d108bf9465d3e5b8d6a55053b583ee4f580
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86133756"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88184624"
 ---
 # <a name="troubleshoot-azure-vm-extension-issues"></a>Устранение проблем с расширением виртуальной машины Azure
 
 В этой статье приведены инструкции по устранению ошибок Azure Site Recovery, связанных с агентом и расширением виртуальной машины.
 
+## <a name="low-system-resources"></a>Недостаточно системных ресурсов
+
+Эта проблема возникает, когда в системе недостаточно свободной памяти и не удается выделить память для установки службы Mobility Service. Убедитесь, что была освобождена достаточная память для продолжения установки и успешного завершения.
 
 ## <a name="azure-site-recovery-extension-time-out"></a>Время ожидания расширения Azure Site Recovery  
 

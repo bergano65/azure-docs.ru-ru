@@ -1,17 +1,17 @@
 ---
 title: Использование сценариев PowerShell AzureRM для управления устройствами StorSimple
-description: Узнайте, как использовать сценарии Azure Resource Manager для автоматизации заданий StorSimple
+description: Узнайте, как использовать Azure Resource Manager сценарии на основе пакета SDK для управления устройством серии StorSimple 8000.
 author: alkohli
 ms.service: storsimple
 ms.topic: how-to
 ms.date: 10/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 3b9a7bf243931443b8273253dee7618c0e594aaf
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4a53dd803b22899b7dd15db0aa1ff411641a11dc
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87020871"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88183264"
 ---
 # <a name="use-azure-resource-manager-sdk-based-scripts-to-manage-storsimple-devices"></a>Использование сценариев Azure Resource Manager для управления устройствами StorSimple на основе пакета SDK
 
@@ -49,7 +49,7 @@ ms.locfileid: "87020871"
 
 В этом разделе приведен пример сценария и подробно описаны различные шаги, необходимые для его запуска.
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы убедитесь, что у вас есть следующие компоненты:
 
@@ -97,7 +97,7 @@ ms.locfileid: "87020871"
 
     ```
 
-### <a name="sample-output"></a>Пример выходных данных
+### <a name="sample-output"></a>Пример полученных результатов
 
 При запуске примера сценария можно получить следующие выходные данные. Выходные данные содержат все задания, работающие на зарегистрированном устройстве, запущенном 25 сентября 2017 г. и завершенном 2 октября 2017 г.
 

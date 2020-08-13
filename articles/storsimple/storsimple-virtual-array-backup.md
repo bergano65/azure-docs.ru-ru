@@ -1,6 +1,6 @@
 ---
 title: Руководство по архивации виртуального массива Microsoft Azure StorSimple | Документация Майкрософт
-description: В этой статье описано резервное копирование общих папок и томов виртуального массива StorSimple.
+description: Создайте запланированные и ручные резервные копии для Microsoft Azure StorSimple виртуального массива и выполните восстановление на уровне элементов, чтобы восстановить удаленный файл в виртуальном массиве.
 services: storsimple
 documentationcenter: NA
 author: alkohli
@@ -15,12 +15,12 @@ ms.workload: TBD
 ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 26bf018d8823495c00b09af3a40b39315dadb31c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 41cb02e77fa77c5a7452c5e3e0d2080ee3d472d5
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85513673"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88183230"
 ---
 # <a name="back-up-shares-or-volumes-on-your-storsimple-virtual-array"></a>Архивация общих ресурсов или томов на виртуальном массиве StorSimple
 
@@ -58,7 +58,7 @@ ms.locfileid: "85513673"
    
     ![переход к политикам архивации](./media/storsimple-virtual-array-backup/changebuschedule5.png)
 
-4. Нажмите кнопку **Сохранить**.
+4. Выберите команду **Сохранить**.
 
 ### <a name="take-a-manual-backup"></a>Создание резервной копии вручную
 
@@ -112,7 +112,7 @@ ms.locfileid: "85513673"
    
     ![Обновленный каталог резервных копий](./media/storsimple-virtual-array-backup/viewbackups3.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
 

@@ -1,6 +1,6 @@
 ---
 title: Отработка отказа и аварийное восстановление для виртуального массива StorSimple
-description: Дополнительные сведения об отработке отказа виртуального массива StorSimple.
+description: Сведения об аварийном восстановлении для виртуального массива Microsoft Azure StorSimple, включая подробные инструкции по отработки отказа на другой виртуальный массив.
 services: storsimple
 documentationcenter: NA
 author: alkohli
@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 05f31993b7491dbfb0bff46c8fd2362b6bab0d4e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 24eb03069689d6dc89d8e237e0e65c71af6c6173
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077794"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88184726"
 ---
 # <a name="disaster-recovery-and-device-failover-for-your-storsimple-virtual-array-via-azure-portal"></a>Аварийное восстановление и отработка отказа устройства для виртуального массива StorSimple на портале Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "87077794"
 
 ## <a name="prerequisites-for-device-failover"></a>Предварительные требования для отработки отказа устройства
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 При любой отработке отказа устройства должны выполняться следующие предварительные требования.
 

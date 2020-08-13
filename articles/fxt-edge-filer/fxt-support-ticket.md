@@ -1,17 +1,17 @@
 ---
 title: Отправьте запрос в службу поддержки для Microsoft Azure ФКСТ пограничных фильтр
-description: Процедура открытия билета для получения помощи в работе с системой фильтр Azure ФКСТ пограничной Организации
+description: Отправьте запрос в службу поддержки со службой поддержки пользователей Майкрософт, чтобы получить помощь по работе с системой Azure ФКСТ погранично фильтр.
 author: ekpgh
 ms.service: fxt-edge-filer
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: rohogue
-ms.openlocfilehash: 292844f611008b6dafbed4e46cad07c45dbecc54
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 16b219afa329cc105fb70000d8a088d67883feed
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72255982"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88184675"
 ---
 # <a name="open-a-support-ticket-for-the-azure-fxt-edge-filer"></a>Откройте запрос в службу поддержки для фильтр Azure ФКСТ.
 

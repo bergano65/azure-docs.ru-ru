@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 07/01/2020
 ms.author: tamram
-ms.openlocfilehash: 455595a2e41ecc05f7064044e09df8efcd9d4548
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3a48e598680ee969f3823dee6699c8c981dff392
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85833406"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88182482"
 ---
 # <a name="manage-container-properties-and-metadata-with-net"></a>Управление свойствами контейнера и метаданными с помощью .NET
 
@@ -29,7 +29,7 @@ ms.locfileid: "85833406"
 
 ## <a name="retrieve-container-properties"></a>Получение свойств контейнера
 
-# <a name="net-v12-sdk"></a>[NET (пакет SDK версии 12)](#tab/dotnet).
+# <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
 
 Чтобы получить свойства контейнера, вызовите один из следующих методов:
 
@@ -40,7 +40,7 @@ ms.locfileid: "85833406"
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Metadata.cs" id="Snippet_ReadContainerProperties":::
 
-# <a name="net-v11-sdk"></a>[.NET (пакет SDK версии 11)](#tab/dotnet11).
+# <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
 
 Получение значений свойств и метаданных для ресурса хранилища BLOB-объектов — это двухэтапный процесс. Прежде чем считывать эти значения, необходимо их четко получить, вызвав метод **FetchAttributes** или **FetchAttributesAsync**. Исключением из этого правила является то, что методы **Exists** и **ексистсасинк** вызывают соответствующий метод **FetchAttributes** , как описано в разделе. При вызове одного из этих методов не требуется также вызывать **FetchAttributes**.
 
@@ -80,7 +80,7 @@ private static async Task ReadContainerPropertiesAsync(CloudBlobContainer contai
 
 ## <a name="set-and-retrieve-metadata"></a>Установка и получение метаданных
 
-# <a name="net-v12-sdk"></a>[NET (пакет SDK версии 12)](#tab/dotnet).
+# <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
 
 Метаданные можно указать как одну или несколько пар "имя-значение" для BLOB-ресурса или ресурса контейнера. Чтобы задать метаданные, добавьте пары "имя-значение" в объект [IDictionary](/dotnet/api/system.collections.idictionary) , а затем вызовите один из следующих методов для записи значений:
 
@@ -102,7 +102,7 @@ private static async Task ReadContainerPropertiesAsync(CloudBlobContainer contai
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Metadata.cs" id="Snippet_ReadContainerMetadata":::
 
-# <a name="net-v11-sdk"></a>[.NET (пакет SDK версии 11)](#tab/dotnet11).
+# <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
 
 Метаданные можно указать как одну или несколько пар "имя-значение" для BLOB-ресурса или ресурса контейнера. Чтобы задать метаданные, добавьте пары "имя-значение" в коллекцию **метаданных** ресурса, а затем вызовите один из следующих методов для записи значений:
 
@@ -169,7 +169,7 @@ public static async Task ReadContainerMetadataAsync(CloudBlobContainer container
 
 [!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Операция получения свойств контейнера](/rest/api/storageservices/get-container-properties)
 - [Операция задания метаданных контейнера](/rest/api/storageservices/set-container-metadata)

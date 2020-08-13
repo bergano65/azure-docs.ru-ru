@@ -1,18 +1,18 @@
 ---
 title: Параметры для передачи данных в Azure с помощью устройства | Документация Майкрософт
-description: Узнайте, как выбрать подходящее устройство для передачи данных в Azure
+description: Узнайте, как выбрать подходящее устройство для локальной пересылки данных в Azure между Data Box Edge, Синхронизация файлов Azure и сериями StorSimple 8000.
 services: storsimple
 author: alkohli
 ms.service: storsimple
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: dc7de4e69d42a2165f5845f3d8214975d67cdc3c
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 903342230b28f8e4fbdcdfd93543e5a0aa54975e
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86203984"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88183281"
 ---
 # <a name="compare-storsimple-with-azure-file-sync-and-data-box-edge-data-transfer-options"></a>Сравнение StorSimple с Синхронизацией файлов Azure и параметрами передачи данных Data Box Edge 
 

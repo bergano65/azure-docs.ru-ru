@@ -1,15 +1,15 @@
 ---
 title: Microsoft Kubernetes Service Fabric Consortium в службе Azure (AKS)
 description: Развертывание и настройка сети консорциума Kubernetes для структуры Microsoft Azure
-ms.date: 07/27/2020
+ms.date: 08/06/2020
 ms.topic: how-to
 ms.reviewer: ravastra
-ms.openlocfilehash: 4bc55090234a4ab33125ba43b8416de1eadb702f
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: d6999b32224e6c41cdf9869554c884fc4779c217
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87533433"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88184216"
 ---
 # <a name="hyperledger-fabric-consortium-on-azure-kubernetes-service-aks"></a>Microsoft Kubernetes Service Fabric Consortium в службе Azure (AKS)
 
@@ -300,7 +300,7 @@ AZURE_FILE_CONNECTION_STRING=https://$STORAGE_ACCOUNT.file.core.windows.net/$STO
 ./azhlf channel setAnchorPeers -c $CHANNEL_NAME -p <anchorPeersList> -o $PEER_ORG_NAME -u $PEER_ADMIN_IDENTITY --ordererOrg $ORDERER_ORG_NAME
 ```
 
-`<anchorPeersList>`Разделенный пробелом список одноранговых узлов, которые должны быть установлены в качестве однорангового узла. Например, примененная к объекту директива
+`<anchorPeersList>` Разделенный пробелом список одноранговых узлов, которые должны быть установлены в качестве однорангового узла. Например,
 
   - Задайте `<anchorPeersList>` как "Peer1", если вы хотите задать только узел Peer1 в качестве закрепленного однорангового узла.
   - Задайте `<anchorPeersList>` "Peer1" "peer3", если вы хотите задать узел Peer1 и peer3 в качестве закрепленного однорангового узла.
@@ -350,10 +350,22 @@ CHANNEL_NAME=<channelName>
 Из однорангового клиентского приложения выполните приведенную ниже команду, чтобы создать экземпляр чаинкоде в канале.  
 
 ```bash
-./azhlf chaincode instantiate -o $ORGNAME -u $USER_IDENTITY -n $CC_NAME -v $CC_VERSION -c $CHANNEL_NAME -f <instantiateFunc> --args <instantiateFuncArgs>  
+./azhlf chaincode instantiate -o $ORGNAME -u $USER_IDENTITY -n $CC_NAME -v $CC_VERSION -c $CHANNEL_NAME -f <instantiateFunc> --args <instantiateFuncArgs>
 ```
 
 Передайте имя функции создания экземпляра и список аргументов, разделенных пробелами, в `<instantiateFunc>` и `<instantiateFuncArgs>` соответственно. Например, в chaincode_example02. Go чаинкоде, чтобы создать экземпляр чаинкоде со значением `<instantiateFunc>` `init` и `<instantiateFuncArgs>` в "a" "2000" "b" "1000".
+
+Можно также передать JSON файл конфигурации коллекций с помощью `--collections-config` флага. Или задайте временные аргументы с помощью `-t` флага при создании экземпляра чаинкоде, используемого для частных транзакций.
+
+Пример:
+
+```bash
+./azhlf chaincode instantiate -c $CHANNEL_NAME -n $CC_NAME -v $CC_VERSION -o $ORGNAME -u $USER_IDENTITY --collections-config <collectionsConfigJSONFilePath>
+./azhlf chaincode instantiate -c $CHANNEL_NAME -n $CC_NAME -v $CC_VERSION -o $ORGNAME -u $USER_IDENTITY --collections-config <collectionsConfigJSONFilePath> -t <transientArgs>
+```
+
+\<collectionConfigJSONFilePath\>— Это путь к JSON-файлу, содержащему коллекции, определенные для создания экземпляра закрытых чаинкоде данных. Образец JSON-файла конфигурации коллекций можно найти относительно каталога Азлфтул по следующему пути: `./samples/chaincode/src/private_marbles/collections_config.json` .
+Передача \<transientArgs\> в виде допустимого JSON в строковом формате. Экранирование любых специальных символов. Например: `'{\\\"asset\":{\\\"name\\\":\\\"asset1\\\",\\\"price\\\":99}}'`
 
 > [!NOTE]
 > Выполните команду один раз из любой одноранговой Организации в канале. После успешной отправки транзакции в заказ, заказ распределяет эту транзакцию всем одноранговым организациям в канале. Таким образом, экземпляр чаинкоде создается на всех одноранговых узлах во всех одноранговых организациях в канале.  
@@ -377,11 +389,15 @@ CHANNEL_NAME=<channelName>
 Выполните приведенную ниже команду, чтобы запросить чаинкоде:  
 
 ```bash
-./azhlf chaincode query -o $ORGNAME -u $USER_IDENTITY -n $CC_NAME -c $CHANNEL_NAME -f <queryFunction> -a <queryFuncArgs>  
+./azhlf chaincode query -o $ORGNAME -p <endorsingPeers> -u $USER_IDENTITY -n $CC_NAME -c $CHANNEL_NAME -f <queryFunction> -a <queryFuncArgs> 
 ```
+Одноранговые узлы подтверждающий — это равноправные узлы, где чаинкоде установлен и вызывается для выполнения транзакций. Необходимо задать \<endorsingPeers\> имена содержащих одноранговых узлов из текущей одноранговой Организации. Список одноранговых узлов подтверждающий для заданных чаинкоде и комбинаций каналов, разделенных пробелами. Например, `-p "peer1" "peer3"`.
+
+Если вы используете Азлфтул для установки чаинкоде, передайте имя однорангового узла в качестве значения аргумента Peer подтверждающий. Чаинкоде устанавливается на каждом одноранговом узле этой Организации. 
+
 Передайте имя функции запроса и список аргументов, разделенных пробелами, в  `<queryFunction>`   и  `<queryFuncArgs>`   соответственно. Опять же, chaincode_example02. Go в качестве ссылки, чтобы запросить значение "a" в мировом состоянии со значением  `<queryFunction>`    `query` и  `<queryArgs>` в "a".  
 
-## <a name="troubleshoot"></a>Диагностика
+## <a name="troubleshoot"></a>Устранение неполадок
 
 **Проверка версии выполняющегося шаблона**
 

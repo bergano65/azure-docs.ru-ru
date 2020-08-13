@@ -1,17 +1,17 @@
 ---
 title: Использование пакета SDK для .NET для Microsoft Azure StorSimple заданий Диспетчер данных
-description: Узнайте, как запускать задания диспетчера данных StorSimple с помощью пакета SDK для .NET
+description: Узнайте, как использовать пакет SDK для .NET в службе Диспетчер данных StorSimple для преобразования данных устройства StorSimple.
 author: alkohli
 ms.service: storsimple
 ms.topic: how-to
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: 316eddc98de78974bb2583f91ced635b148686c1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e34701640de24a4c3c13f8d10073b4392af2f28a
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85514898"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88183655"
 ---
 # <a name="use-the-net-sdk-to-initiate-data-transformation"></a>Запуск преобразования данных с помощью пакета SDK для .NET
 
@@ -26,7 +26,7 @@ ms.locfileid: "85514898"
  
   В статье содержится подробная информация по созданию примера консольного приложения .NET для запуска задания преобразования данных и отслеживания его завершения. Дополнительные сведения о том, как запустить преобразование данных через службу автоматизации, можно узнать из статьи [Активация задания с помощью службы автоматизации Azure (закрытая предварительная версия)](storsimple-data-manager-job-using-automation.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы убедитесь, что у вас есть следующие компоненты:
 *   Компьютер с такими запущенными средами:
@@ -192,6 +192,6 @@ ms.locfileid: "85514898"
 
     ![Полный фрагмент кода для запуска задания .NET](media/storsimple-data-manager-dotnet-jobs/start-dotnet-job-code-snippet.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Используйте диспетчер данных StorSimple пользовательский интерфейс для преобразования данных](storsimple-data-manager-ui.md).
