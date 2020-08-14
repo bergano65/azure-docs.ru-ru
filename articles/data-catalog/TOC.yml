@@ -1,4 +1,4 @@
-- name: Документация по службе "Каталог данных"
+- name: Документация по Каталогу данных Azure
   href: index.yml
 - name: Обзор
   items:
@@ -23,7 +23,7 @@
       href: data-catalog-adopting-data-catalog.md
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: data-catalog-frequently-asked-questions.md
-- name: Практическое руководство
+- name: Практические руководства
   items:
     - name: Регистрация источников данных
       href: data-catalog-how-to-register.md

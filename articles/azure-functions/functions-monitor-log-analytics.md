@@ -121,7 +121,7 @@ FunctionAppLogs
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [обзором функций Azure](functions-overview.md).
 - Дополнительные сведения о [журналах Azure Monitor](../azure-monitor/platform/data-platform-logs.md).
