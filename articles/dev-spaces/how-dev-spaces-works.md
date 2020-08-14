@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: conceptual
 description: Описывает процессы, которые Power Azure Dev Spaces
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: 40125b07029c78b4e8858d54058aabe038109057
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 48bde5f3cc6f397d51a31f80f41ab299ba8866ee
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837420"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212544"
 ---
 # <a name="how-azure-dev-spaces-works"></a>Принцип работы Azure Dev Spaces
 
@@ -42,11 +42,10 @@ Azure Dev Spaces помогает группам работать с прило�
 
 Вы также можете использовать действия GitHub с Azure Dev Spaces для тестирования изменений в приложении в запросе на вытягивание непосредственно в кластере перед слиянием. Azure Dev Spaces может автоматически развернуть версию проверки приложения в кластере, позволяя автору и другим участникам команды просматривать изменения в контексте всего приложения. Используя возможности маршрутизации Azure Dev Spaces, эта версия проверки приложения также развертывается в кластере без влияния на другие пространства разработки. Все эти возможности позволяют уверенно утверждать и объединять запросы на вытягивание. Пример действий GitHub и Azure Dev Spaces см. в разделе [действия github & службе Kubernetes Azure][pr-flow].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы приступить к подключению локального компьютера разработки к кластеру AKS, см. статью [Подключение компьютера разработчика к кластеру AKS][connect].
 
-См. сведения о том, как [начать работу с Azure Dev Spaces для командной разработки][quickstart-team].
 
 [connect]: https://code.visualstudio.com/docs/containers/local-process-kubernetes
 [how-it-works-local-process-kubernetes]: /visualstudio/containers/overview-local-process-kubernetes
@@ -55,5 +54,4 @@ Azure Dev Spaces помогает группам работать с прило�
 [how-it-works-routing]: how-dev-spaces-works-routing.md
 [how-it-works-up]: how-dev-spaces-works-up.md
 [pr-flow]: how-to/github-actions.md
-[quickstart-team]: quickstart-team-development.md
 [routing]: #team-development

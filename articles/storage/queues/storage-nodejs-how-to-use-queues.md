@@ -9,19 +9,19 @@ ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
 ms.custom: seo-javascript-september2019, devx-track-javascript
-ms.openlocfilehash: 56099a7d350a29db5a57708bc87b7174cfdb3b29
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 53bd4905cf4b8829d65ce2b10c85260ff3f8926c
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88079285"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88210531"
 ---
 # <a name="use-azure-queue-service-to-create-and-delete-queues-from-nodejs"></a>Использование службы очередей Azure для создания и удаления очередей из Node.js
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
 [!INCLUDE [storage-check-out-samples-all](../../../includes/storage-check-out-samples-all.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 В этом руководстве показано, как реализовать типичные сценарии с использованием службы очередей Microsoft Azure. Примеры написаны с использованием интерфейса API Node.js. Здесь описаны такие сценарии, как **вставка**, **просмотр**, **получение** и **удаление** сообщений очереди, а также **создание и удаление очередей**.
 
 > [!IMPORTANT]
@@ -195,7 +195,7 @@ queueSvc.getMessages('myqueue', function(error, getResults, getResponse){
 queueSvc.getMessages('myqueue', {numOfMessages: 15, visibilityTimeout: 5 * 60}, function(error, results, getResponse){
   if(!error){
     // Messages retrieved
-    for(var index in result){
+    for(var index in results){
       // text is available in result[index].messageText
       var message = results[index];
       queueSvc.deleteMessage(queueName, message.messageId, message.popReceipt, function(error, deleteResponse){
@@ -327,7 +327,7 @@ queueSvc.getQueueAcl('myqueue', function(error, result, response) {
 queueSAS = queueSvc.generateSharedAccessSignature('myqueue', { Id: 'user2' });
 ```
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
 * Посетите [блог команды разработчиков службы хранилища Azure][Azure Storage Team Blog].

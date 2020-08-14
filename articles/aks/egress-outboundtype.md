@@ -6,12 +6,12 @@ ms.topic: article
 ms.author: juluk
 ms.date: 06/29/2020
 author: jluk
-ms.openlocfilehash: 5fe674fa7ab6a6a3f222a215ebc6912549776fee
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 2ffe9d525e92fa2154889cea43f681a0f31a18ab
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067364"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88214224"
 ---
 # <a name="customize-cluster-egress-with-a-user-defined-route"></a>Настройка исходящего трафика кластера с помощью определяемого пользователем маршрута
 
@@ -71,7 +71,8 @@ ms.locfileid: "88067364"
 > [!IMPORTANT]
 > Для исходящего типа UDR требуется маршрут для 0.0.0.0/0 и назначения следующего прыжка NVA (сетевого виртуального модуля) в таблице маршрутов.
 > Таблица маршрутов уже имеет значение по умолчанию 0.0.0.0/0 для Интернета, без общедоступного IP-адреса для SNAT. только что добавление этого маршрута не даст вам исходящего трафика. AKS проверит, что вы не создадите маршрут 0.0.0.0/0, указывающий на Интернет, а не NVA, шлюз и т. д.
-
+> 
+> При использовании исходящего типа UDR общедоступный IP-адрес подсистемы балансировки нагрузки не создается, если *не настроена служба типа "* балансировщик".
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -5,12 +5,12 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 description: Описание процессов выполнения кода в службе Azure Kubernetes с Azure Dev Spaces
 keywords: аздс. YAML, Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: c343c32f0817cc922784bb25283290dc9ed88d29
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 9dbc1f0f21c2883e5caadbdae268a515eb94d145
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87072962"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88208681"
 ---
 # <a name="how-running-your-code-with-azure-dev-spaces-works"></a>Как работает код с Azure Dev Spaces
 
@@ -130,7 +130,7 @@ install:
 
 В приведенном выше примере свойство *install. Set. replicaCount* указывает контроллеру, сколько экземпляров приложения нужно запустить в пространстве разработки. В зависимости от сценария вы можете увеличить это значение, но оно повлияет на подключение отладчика к модулю приложения. Дополнительные сведения см. в [статье Устранение неполадок][troubleshooting].
 
-В созданной диаграмме Helm образ контейнера имеет значение *{{. Values. Image. репозиторий}}: {{. Значения. Image. Tag}}*. `azds.yaml`Файл определяет свойство *install. Set. Image. Tag* как *$ (Tag)* по умолчанию, которое используется как значение для *{{. Значения. Image. Tag}}*. Если задать свойство *install. Set. Image. Tag* таким образом, то при запуске Azure dev Spaces образ контейнера для приложения можно помечать по отдельности. В этом конкретном случае образ помечается как * \<value from image.repository> $ (Tag)*. Необходимо использовать переменную *$ (Tag)* в качестве значения *install. Set. Image. Tag* , чтобы пространства разработки распознавать и найти контейнер в кластере AKS.
+В созданной диаграмме Helm образ контейнера имеет значение *{{. Values. Image. репозиторий}}: {{. Значения. Image. Tag}}*. `azds.yaml`Файл определяет свойство *install. Set. Image. Tag* как *$ (Tag)* по умолчанию, которое используется как значение для *{{. Значения. Image. Tag}}*. Если задать свойство *install. Set. Image. Tag* таким образом, то при запуске Azure dev Spaces образ контейнера для приложения можно помечать по отдельности. В этом конкретном случае образ помечается как * \<value from image.repository> $ (Tag)*. Необходимо использовать переменную *$ (Tag)* в качестве значения   *install. Set. Image. Tag* , чтобы пространства разработки распознавать и найти контейнер в кластере AKS.
 
 В приведенном выше примере `azds.yaml` определяет *install. Set. входящий. Hosts*. Свойство *install. Set. входящий. Hosts* определяет формат имени узла для общедоступных конечных точек. В этом свойстве также используются *$ (спацепрефикс)*, *$ (рутспацепрефикс)* и *$ (хостсуффикс)*, которые являются значениями, предоставленными контроллером.
 
@@ -195,19 +195,11 @@ ingress:
   enabled: true
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о сетях и способах маршрутизации запросов в Azure Dev Spaces см. в статье [как маршрутизация работает с Azure dev Spaces][how-it-works-routing].
 
 Дополнительные сведения об использовании Azure Dev Spaces для быстрого выполнения итераций и разработки см. в статье [как локальный процесс с Kubernetes работает][how-it-works-local-process-kubernetes] и [как выполняется удаленная отладка кода с Azure dev Spaces][how-it-works-remote-debugging].
-
-Чтобы приступить к работе с Azure Dev Spaces для запуска проекта, см. следующие краткие руководства.
-
-* [Быстрое перебор и отладка с помощью Visual Studio Code и Java][quickstart-java]
-* [Быстрое перебор и отладка с помощью Visual Studio Code и .NET][quickstart-netcore]
-* [Быстрое перебор и отладка с помощью Visual Studio Code и Node.js][quickstart-node]
-* [Быстрое перебор и отладка с помощью Visual Studio и .NET Core][quickstart-vs]
-* [Разработка приложения на Kubernetes с помощью интерфейса командной строки][quickstart-cli]
 
 
 [azds-yaml-section]: #how-running-your-code-is-configured
@@ -216,10 +208,5 @@ ingress:
 [how-it-works-prep]: how-dev-spaces-works-prep.md
 [how-it-works-remote-debugging]: how-dev-spaces-works-remote-debugging.md
 [how-it-works-routing]: how-dev-spaces-works-routing.md
-[quickstart-cli]: quickstart-cli.md
-[quickstart-java]: quickstart-java.md
-[quickstart-netcore]: quickstart-netcore.md
-[quickstart-node]: quickstart-nodejs.md
-[quickstart-vs]: quickstart-netcore-visualstudio.md
 [sync-section]: #file-synchronization
 [troubleshooting]: troubleshooting.md

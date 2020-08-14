@@ -1,18 +1,18 @@
 ---
-title: Устранение неполадок подключения агента ARC для серверов Azure
-description: В этой статье рассказывается, как устранять неполадки и устранять проблемы с агентом подключенных компьютеров, которые возникают при попытке подключения к службе с помощью Azure ARC для серверов (Предварительная версия).
+title: Устранение проблем подключения агента серверов с поддержкой ARC в Azure (Предварительная версия)
+description: В этой статье рассказывается, как устранять неполадки и устранять проблемы с агентом подключенных компьютеров, которые возникают с серверами с поддержкой ARC (Предварительная версия) при попытке подключения к службе.
 ms.date: 07/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5cd2560279085485a8ac7b285e4f601060a924f1
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: aeb370fb6cd4eacf20c1acf29e84c03e5e322d39
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88118014"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213533"
 ---
 # <a name="troubleshoot-the-connected-machine-agent-connection-issues"></a>Устранение проблем с подключением агента подключенных компьютеров
 
-В этой статье содержатся сведения об устранении неполадок и способах устранения проблем, которые могут возникнуть при попытке настроить агент машинного соединения Azure для серверов (предварительной версии) для Windows или Linux. При настройке подключения к службе включаются как интерактивные, так и масштабируемые методы установки. Общие сведения см. в разделе [Обзор ARC для серверов](./overview.md).
+Эта статья содержит сведения об устранении неполадок и способах устранения проблем, которые могут возникнуть при попытке настроить подключенный к службе "Дуга" (Предварительная версия) агент компьютера для Windows или Linux. При настройке подключения к службе включаются как интерактивные, так и масштабируемые методы установки. Общие сведения см. в статье [Обзор серверов с поддержкой Arc](./overview.md).
 
 ## <a name="agent-verbose-log"></a>Подробный журнал агента
 
@@ -22,13 +22,13 @@ ms.locfileid: "88118014"
 
 Ниже приведен пример команды для включения подробного ведения журнала с помощью агента подключенного компьютера для Windows при выполнении интерактивной установки.
 
-```
+```console
 & "$env:ProgramFiles\AzureConnectedMachineAgent\azcmagent.exe" connect --resource-group "resourceGroupName" --tenant-id "tenantID" --location "regionName" --subscription-id "subscriptionID" --verbose
 ```
 
 Ниже приведен пример команды для включения подробного ведения журнала с помощью агента подключенного компьютера для Windows при выполнении масштабируемой установки с использованием субъекта-службы.
 
-```
+```console
 & "$env:ProgramFiles\AzureConnectedMachineAgent\azcmagent.exe" connect `
   --service-principal-id "{serviceprincipalAppID}" `
   --service-principal-secret "{serviceprincipalPassword}" `
@@ -46,13 +46,13 @@ ms.locfileid: "88118014"
 >[!NOTE]
 >Для запуска **азкмажент**требуются права доступа *root* на компьютерах Linux.
 
-```
+```bash
 azcmagent connect --resource-group "resourceGroupName" --tenant-id "tenantID" --location "regionName" --subscription-id "subscriptionID" --verbose
 ```
 
 Ниже приведен пример команды для включения подробного ведения журнала с помощью агента подключенного компьютера для Linux при выполнении масштабируемой установки с использованием субъекта-службы.
 
-```
+```bash
 azcmagent connect \
   --service-principal-id "{serviceprincipalAppID}" \
   --service-principal-secret "{serviceprincipalPassword}" \
@@ -67,7 +67,7 @@ azcmagent connect \
 
 В следующей таблице перечислены некоторые известные ошибки и рекомендации по их устранению.
 
-|Сообщение |Ошибка |Возможные причины |Решение |
+|Message (Сообщение) |Ошибка |Возможные причины |Решение |
 |--------|------|---------------|---------|
 |Не удалось получить поток устройства маркера авторизации |`Error occurred while sending request for Device Authorization Code: Post https://login.windows.net/fb84ce97-b875-4d12-b031-ef5e7edf9c8e/oauth2/devicecode?api-version=1.0:  dial tcp 40.126.9.7:443: connect: network is unreachable.` |Не удается получить доступ к `login.windows.net` конечной точке | Проверьте подключение к конечной точке. |
 |Не удалось получить поток устройства маркера авторизации |`Error occurred while sending request for Device Authorization Code: Post https://login.windows.net/fb84ce97-b875-4d12-b031-ef5e7edf9c8e/oauth2/devicecode?api-version=1.0:  dial tcp 40.126.9.7:443: connect: network is Forbidden`. |Прокси-сервер или брандмауэр блокирует доступ к `login.windows.net` конечной точке. | Проверьте подключение к конечной точке, которое не блокируется брандмауэром или прокси-сервером. |

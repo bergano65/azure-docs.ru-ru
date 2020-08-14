@@ -5,13 +5,14 @@ author: yegu-ms
 ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
+ms.custom: devx-track-csharp
 ms.date: 08/06/2020
-ms.openlocfilehash: 1a0bcfadb79d6d2cb13c67b3ebadfcba97bc1fb9
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: ef85b6f9e4595e7b4ff367da415fad777de68679
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88010304"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88211311"
 ---
 # <a name="azure-cache-for-redis-development-faqs"></a>Часто задаваемые вопросы по разработке кэша Azure для Redis
 
@@ -139,6 +140,6 @@ Microsoft Azure кэш для Redis основан на популярном х�
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о другом [кэше Azure для Redis часто задаваемых вопросов](cache-faq.md).

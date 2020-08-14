@@ -5,12 +5,12 @@ ms.date: 03/17/2020
 ms.topic: conceptual
 description: Описание требований к сети для запуска Azure Dev Spaces в Azure Kubernetes Services
 keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, CNI, кубенет, SDN, сеть
-ms.openlocfilehash: c3ee84819172fe28aef779493d01e2433ccca336
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0d9ebbec3e3c07a466acb58e88b67e6a32a20edb
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84300697"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88214173"
 ---
 # <a name="configure-networking-for-azure-dev-spaces-in-different-network-topologies"></a>Настройка сети для Azure Dev Spaces в различных сетевых топологиях
 
@@ -85,12 +85,12 @@ az aks use-dev-spaces -g MyResourceGroup -n MyAKS -e private
 
 Azure Dev Spaces использует средства на стороне клиента, такие как расширение CLI Azure Dev Spaces, расширение Visual Studio Code и расширение Visual Studio, чтобы взаимодействовать с кластером AKS для отладки. Чтобы использовать средства Azure Dev Spaces на стороне клиента, разрешите трафик от компьютеров разработки к [инфраструктуре Azure dev Spaces][dev-spaces-allow-infrastructure]. При использовании [IP-диапазонов разрешенного сервера API][auth-range-section]необходимо также разрешить IP-адрес любых компьютеров разработки, подключающихся к кластеру AKS для отладки, для подключения к серверу API.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
+Дополнительные сведения о работе Azure Dev Spaces.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Коллективная разработка в Kubernetes с использованием Azure Dev Spaces][team-quickstart]
+> [Принцип работы Azure Dev Spaces](how-dev-spaces-works.md)
 
 [aks-cni]: ../aks/configure-azure-cni.md
 [aks-cni-ip-planning]: ../aks/configure-azure-cni.md#plan-ip-addressing-for-your-cluster
@@ -111,4 +111,3 @@ Azure Dev Spaces использует средства на стороне кл�
 [nginx-ingress]: how-to/ingress-https-nginx.md
 [sample-repo]: https://github.com/Azure/dev-spaces/tree/master/advanced%20networking
 [service-tags]: ../virtual-network/service-tags-overview.md#available-service-tags
-[team-quickstart]: quickstart-team-development.md

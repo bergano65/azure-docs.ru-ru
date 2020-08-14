@@ -4,13 +4,13 @@ description: Узнайте, как создать кластер, которы�
 services: container-service
 ms.custom: fasttrack-edit, references_regions
 ms.topic: article
-ms.date: 02/27/2020
-ms.openlocfilehash: feea8c3cba170244be2ca3ec7a11c36a3c39f700
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.date: 08/13/2020
+ms.openlocfilehash: 6bca57f799681a9f51b983da6f565bb465da8814
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281231"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88214258"
 ---
 # <a name="create-an-azure-kubernetes-service-aks-cluster-that-uses-availability-zones"></a>Создание кластера Службы Azure Kubernetes (AKS), который использует зоны доступности
 

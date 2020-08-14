@@ -10,49 +10,49 @@ ms.assetid: 0a8f4a58-e96a-4883-adf3-6b8b49208e6a
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/23/2019
+ms.date: 08/11/2020
 ms.author: yelevin
-ms.openlocfilehash: a19ced1cb9496bddd1f9aa7ea9e3eb58ba7eea3d
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.openlocfilehash: 279f54c3de964580cc37d1288a6e1b7726348e10
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88185695"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88208622"
 ---
 # <a name="connect-data-from-azure-active-directory-azure-ad"></a>Подключение данных из Azure Active Directory (Azure AD)
 
 
 
-Azure Sentinel позволяет получать данные из [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) и передавать их в Azure Sentinel. Вы можете выбрать потоковую передачу [журналов входа](../active-directory/reports-monitoring/concept-sign-ins.md) и [журналов аудита](../active-directory/reports-monitoring/concept-audit-logs.md) .
+С помощью встроенного соединителя Azure Sentinel можно собирать данные из [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) и передавать их в поток Azure Sentinel. Соединитель позволяет выполнять потоковую передачу [журналов входа](../active-directory/reports-monitoring/concept-sign-ins.md) и [журналов аудита](../active-directory/reports-monitoring/concept-audit-logs.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Любая лицензия Azure AD (Free/O365/P1/P2) может интегрироваться с Azure Monitor и принимать журналы входа в Azure Sentinel. Для Azure Monitor или Azure Sentinel будет взиматься дополнительная плата за гигабайты.
 
-- Пользователь с разрешениями глобального администратора или администратора безопасности в клиенте, из которого нужно выполнять потоковую передачу журналов.
+- Любой лицензии Azure AD (Free/O365/P1/P2) достаточно для приема журналов входа в Azure Sentinel. Для Azure Monitor (Log Analytics) и Azure Sentinel может взиматься дополнительная плата за гигабайт.
 
-- Чтобы иметь возможность видеть состояние подключения, необходимо иметь разрешение на доступ к журналам диагностики Azure AD. 
+- Пользователю должна быть назначена роль "участник Sentinel Azure" в рабочей области.
+
+- Пользователю должны быть назначены роли глобального администратора или администратора безопасности на клиенте, с которого нужно выполнять потоковую передачу журналов.
+
+- Чтобы увидеть состояние подключения, пользователь должен иметь разрешения на чтение и запись для параметров диагностики Azure AD. 
 
 
 ## <a name="connect-to-azure-active-directory"></a>Подключение к Azure Active Directory
 
 1. В пункте Azure Sentinel выберите **соединители данных** в меню навигации.
 
-1. В коллекции соединителей данных выберите **Azure Active Directory** и нажмите кнопку **открыть страницу соединителя** .
+1. В коллекции соединителей данных выберите **Azure Active Directory** а затем щелкните **открыть страницу соединителя**.
 
 1. Установите флажки рядом с журналами, которые вы хотите передавать в Azure Sentinel, и нажмите кнопку **подключить**.
 
-1. Вы можете выбрать, будут ли оповещения из Azure AD автоматически создавать инциденты в Azure Sentinel. В разделе **Создать инциденты** выберите **Разрешить**, чтобы включить правило аналитики по умолчанию, которое автоматически создает инциденты на основе оповещений, созданных в подключенной службе безопасности. Затем это правило можно изменить в разделе **Аналитика**, а затем **Активные правила**.
+1. Вы можете выбрать, будут ли оповещения из Azure AD автоматически создавать инциденты в Azure Sentinel. В разделе **Создание инцидентов** выберите **включить** , чтобы включить правило аналитики по умолчанию, которое автоматически создает инциденты на основе предупреждений, созданных в подключенной службе безопасности. Затем это правило можно изменить в разделе **Аналитика**, а затем **Активные правила**.
 
 1. Чтобы использовать соответствующую схему в Log Analytics для запроса оповещений Azure AD, введите `SigninLogs` или `AuditLogs` в окне запроса.
 
-
-
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как подключить Azure Active Directory к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

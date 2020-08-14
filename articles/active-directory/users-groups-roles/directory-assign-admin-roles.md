@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: reference
-ms.date: 06/15/2020
+ms.date: 08/13/2020
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09050bc6895076994baf1c98c65aa87672a5652e
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 03a51cc8aa86f40b5333bd79e95e6d02be1adfc4
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88066072"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213839"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -89,11 +89,11 @@ ms.locfileid: "88066072"
 > [!IMPORTANT]
 > Пользователи с этой ролью могут изменять учетные данные для пользователей, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в службе Azure Active Directory и за ее пределами. Изменение учетных данных пользователя подразумевает возможность предполагать идентификатор и разрешения пользователя. Пример:
 >
->- Владельцы при регистрации приложения и владельцы корпоративных приложений, которые могут управлять учетными данными принадлежащих им приложений. У этих приложений в Azure AD и в других местах могут быть привилегированные разрешения, которые не предоставлены администраторам проверки подлинности. По этому пути администратор проверки подлинности сможет предположить идентификатор владельца приложения, а затем идентификатор привилегированного приложения, обновив учетные данные приложения.
->- Владельцы подписок Azure, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure.
->- Владельцы групп безопасности и групп Office 365, которые могут управлять принадлежностью к группе. Эти группы могут предоставлять доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure AD и другом месте.
->- Администраторы в других службах за пределами Azure AD, таких как Exchange Online, Центр безопасности и соответствия требованиям Office и системы управления персоналом.
->- Пользователи без прав администратора, например руководители, юристы и сотрудники отдела кадров, у которых может быть доступ к конфиденциальным или частным сведениям.
+>* Владельцы при регистрации приложения и владельцы корпоративных приложений, которые могут управлять учетными данными принадлежащих им приложений. У этих приложений в Azure AD и в других местах могут быть привилегированные разрешения, которые не предоставлены администраторам проверки подлинности. По этому пути администратор проверки подлинности сможет предположить идентификатор владельца приложения, а затем идентификатор привилегированного приложения, обновив учетные данные приложения.
+>* Владельцы подписок Azure, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure.
+>* Владельцы группы безопасности и группы Microsoft 365, которые могут управлять членством в группе. Эти группы могут предоставлять доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure AD и другом месте.
+>* Администраторы в других службах за пределами Azure AD, таких как Exchange Online, Центр безопасности и соответствия требованиям Office и системы управления персоналом.
+>* Пользователи без прав администратора, например руководители, юристы и сотрудники отдела кадров, у которых может быть доступ к конфиденциальным или частным сведениям.
 
 ### <a name="azure-devops-administrator"></a>[Администратор Azure DevOps](#azure-devops-administrator-permissions)
 
@@ -206,7 +206,7 @@ ms.locfileid: "88066072"
 
 ### <a name="exchange-administrator"></a>[Администратор Exchange](#exchange-service-administrator-permissions)
 
-пользователи с этой ролью имеют глобальные разрешения в Microsoft Exchange Online (если служба используется). У них также есть возможность создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
+пользователи с этой ролью имеют глобальные разрешения в Microsoft Exchange Online (если служба используется). Также имеет возможность создавать все группы Microsoft 365, управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
 > [!NOTE]
 > В API Microsoft Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Exchange". На [портале Azure](https://portal.azure.com) она называется "Администратор Exchange". Это "Администратор Exchange Online" в [Центре администрирования Exchange](https://go.microsoft.com/fwlink/p/?LinkID=529144).
@@ -277,7 +277,7 @@ ms.locfileid: "88066072"
 >
 >- Владельцы при регистрации приложения и владельцы корпоративных приложений, которые могут управлять учетными данными принадлежащих им приложений. У этих приложений в Azure AD и в других местах могут быть привилегированные разрешения, которые не предоставлены администраторам службы технической поддержки. По этому пути администратор службы технической поддержки сможет предположить идентификатор владельца приложения, а затем идентификатор привилегированного приложения, обновив учетные данные приложения.
 >- Владельцы подписок Azure, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure.
->- Владельцы групп безопасности и групп Office 365, которые могут управлять принадлежностью к группе. Эти группы могут предоставлять доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure AD и другом месте.
+>- Владельцы группы безопасности и группы Microsoft 365, которые могут управлять членством в группе. Эти группы могут предоставлять доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure AD и другом месте.
 >- Администраторы в других службах за пределами Azure AD, таких как Exchange Online, Центр безопасности и соответствия требованиям Office и системы управления персоналом.
 >- Пользователи без прав администратора, например руководители, юристы и сотрудники отдела кадров, у которых может быть доступ к конфиденциальным или частным сведениям.
 
@@ -331,7 +331,7 @@ ms.locfileid: "88066072"
 **Когда назначена современная роль пользователя "коммерческий Commerce"?**
 
 * **Самостоятельная покупка в Центре администрирования Microsoft 365** — самостоятельная покупка дает пользователям возможность опробовать новые продукты, самостоятельно купив их или зарегистрировавшись в них. Управление этими продуктами осуществляется в центре администрирования. Пользователям, которые выполняют самостоятельную покупку, назначается роль в системе торговли, а также современная роль пользователя Commerce для управления покупками в центре администрирования. Администраторы могут блокировать самостоятельную покупку (для Power BI, Power Apps, Power Automate) с помощью [PowerShell](https://docs.microsoft.com/microsoft-365/commerce/subscriptions/allowselfservicepurchase-powershell?view=o365-worldwide). Дополнительные сведения см. на странице [Вопросы и ответы по самостоятельной покупке](https://docs.microsoft.com/microsoft-365/commerce/subscriptions/self-service-purchase-faq?view=o365-worldwide).  
-* **Покупки в коммерческом магазине Майкрософт** — как при самостоятельном приобретении, когда пользователь покупает продукт или услугу Microsoft AppSource или Azure Marketplace, роль пользователя современной Commerce назначается, если у них нет роли администратора глобального администратора или выставления счетов. В некоторых случаях пользователям может запрещаться совершать эти покупки. Дополнительные сведения см. в статье [Коммерческая платформа Майкрософт](https://docs.microsoft.com/azure/marketplace/marketplace-faq-publisher-guide#what-could-block-a-customer-from-completing-a-purchase).
+* **Покупки в коммерческом магазине Майкрософт**  — как при самостоятельном приобретении, когда пользователь покупает продукт или услугу Microsoft AppSource или Azure Marketplace, роль пользователя современной Commerce назначается, если у них нет роли администратора глобального администратора или выставления счетов. В некоторых случаях пользователям может запрещаться совершать эти покупки. Дополнительные сведения см. в статье [Коммерческая платформа Майкрософт](https://docs.microsoft.com/azure/marketplace/marketplace-faq-publisher-guide#what-could-block-a-customer-from-completing-a-purchase).
 * **Предложения от Майкрософт** — официальное предложение от корпорации Майкрософт приобрести продукты и службы Майкрософт. Когда лицо, принимающее предложение, не имеет роли глобального администратора или администратора выставления счетов в Azure AD, им назначаются как роль для коммерческого выполнения предложения, так и роль пользователя современного Commerce для доступа к центру администрирования. При доступе к центру администрирования он может использовать только те функции, которые разрешены его коммерческой ролью.
 * **Коммерческие роли** — некоторым пользователям назначаются коммерческие роли. Если пользователь не является администратором глобальной группы или администратора выставления счетов, он получает роль пользователя современной коммерческой коммерции, чтобы они могли получить доступ к центру администрирования.  
 
@@ -467,7 +467,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 ### <a name="sharepoint-administrator"></a>[Администратор SharePoint](#sharepoint-service-administrator-permissions)
 
-пользователи с этой ролью имеют глобальные разрешения в Microsoft SharePoint Online при наличии этой службы, возможность создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
+Пользователи с этой ролью имеют глобальные разрешения в Microsoft SharePoint Online, при наличии службы, а также возможность создания всех групп Microsoft 365 и управления ими, управления запросами в службу поддержки и мониторинга работоспособности служб. Дополнительные сведения см. в статье [Роли администраторов](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
 > [!NOTE]
 > В API Microsoft Graph и Azure AD PowerShell эта роль определяется как "Администратор службы SharePoint". На [портале Azure](https://portal.azure.com) она называется "Администратор SharePoint".
@@ -496,7 +496,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 ### <a name="teams-service-administrator"></a>[Администратор службы Teams](#teams-service-administrator-permissions)
 
-пользователи с этой ролью могут управлять всеми функциями рабочей нагрузки Microsoft Teams с помощью центра администрирования Microsoft Teams и Skype для бизнеса и соответствующих модулей PowerShell. Сюда входят, помимо прочего, все средства управления, связанные с телефонией, обменом сообщениями, собраниями и самими командами Teams. Кроме того, эта роль позволяет создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб.
+пользователи с этой ролью могут управлять всеми функциями рабочей нагрузки Microsoft Teams с помощью центра администрирования Microsoft Teams и Skype для бизнеса и соответствующих модулей PowerShell. Сюда входят, помимо прочего, все средства управления, связанные с телефонией, обменом сообщениями, собраниями и самими командами Teams. Эта роль дополнительно предоставляет возможность создания всех Microsoft 365 групп и управления ими, управления запросами в службу поддержки и наблюдения за работоспособностью служб.
 
 ### <a name="user-administrator"></a>[Администратор пользователей](#user-administrator-permissions)
 
@@ -513,7 +513,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 >
 >- Владельцы при регистрации приложения и владельцы корпоративных приложений, которые могут управлять учетными данными принадлежащих им приложений. У этих приложений в Azure AD и в других местах могут быть привилегированные разрешения, которые не предоставлены администраторам пользователей. По этому пути администратор пользователей сможет предположить идентификатор владельца приложения, а затем идентификатор привилегированного приложения, обновив учетные данные приложения.
 >- Владельцы подписок Azure, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure.
->- Владельцы групп безопасности и групп Office 365, которые могут управлять принадлежностью к группе. Эти группы могут предоставлять доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure AD и другом месте.
+>- Владельцы группы безопасности и группы Microsoft 365, которые могут управлять членством в группе. Эти группы могут предоставлять доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure AD и другом месте.
 >- Администраторы в других службах за пределами Azure AD, таких как Exchange Online, Центр безопасности и соответствия требованиям Office и системы управления персоналом.
 >- Пользователи без прав администратора, например руководители, юристы и сотрудники отдела кадров, у которых может быть доступ к конфиденциальным или частным сведениям.
 
@@ -1030,7 +1030,6 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/Users/Репроцесслиценсеассигнмент | Повторно обработайте назначения лицензий для пользователя в Azure Active Directory. |
 | Microsoft. Directory/Users/userPrincipalName/Update | Обновите свойство Users. userPrincipalName в Azure Active Directory. |
 
-
 ### <a name="exchange-service-administrator-permissions"></a>Разрешения администратора службы Exchange
 
 Может контролировать все аспекты продукта Exchange.
@@ -1045,11 +1044,11 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
-| microsoft.directory/groups/unified/basic/update | Обновление основных свойств групп Office 365. |
-| microsoft.directory/groups/unified/create | Создание групп Office 365. |
-| microsoft.directory/groups/unified/delete | Удаление групп Office 365. |
-| microsoft.directory/groups/unified/members/update | Обновление членства в группах Office 365. |
-| microsoft.directory/groups/unified/owners/update | Обновление владельцев в группах Office 365. |
+| microsoft.directory/groups/unified/basic/update | Обновление основных свойств групп Microsoft 365. |
+| microsoft.directory/groups/unified/create | Создание групп Microsoft 365. |
+| microsoft.directory/groups/unified/delete | Удаление групп Microsoft 365. |
+| microsoft.directory/groups/unified/members/update | Обновление членства в группах Microsoft 365. |
+| microsoft.directory/groups/unified/owners/update | Обновление владельца групп Microsoft 365. |
 | microsoft.office365.exchange/allEntities/allTasks | Управление всеми аспектами Exchange Online. |
 | microsoft.office365.network/performance/allProperties/read | Чтение страниц производительности сети в Центре администрирования Microsoft 365. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
@@ -1759,11 +1758,11 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
-| microsoft.directory/groups/unified/basic/update | Обновление основных свойств групп Office 365. |
-| microsoft.directory/groups/unified/create | Создание групп Office 365. |
-| microsoft.directory/groups/unified/delete | Удаление групп Office 365. |
-| microsoft.directory/groups/unified/members/update | Обновление членства в группах Office 365. |
-| microsoft.directory/groups/unified/owners/update | Обновление владельцев в группах Office 365. |
+| microsoft.directory/groups/unified/basic/update | Обновление основных свойств групп Microsoft 365. |
+| microsoft.directory/groups/unified/create | Создание групп Microsoft 365. |
+| microsoft.directory/groups/unified/delete | Удаление групп Microsoft 365. |
+| microsoft.directory/groups/unified/members/update | Обновление членства в группах Microsoft 365. |
+| microsoft.directory/groups/unified/owners/update | Обновление владельца групп Microsoft 365. |
 | microsoft.office365.network/performance/allProperties/read | Чтение страниц производительности сети в Центре администрирования Microsoft 365. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.sharepoint/allEntities/allTasks | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в microsoft.office365.sharepoint. |
@@ -1834,11 +1833,11 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.directory/groups/hiddenMembers/read | Чтение свойства roups.hiddenMembers в Azure Active Directory. |
 | microsoft.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
-| microsoft.directory/groups/unified/basic/update | Обновление основных свойств групп Office 365. |
-| microsoft.directory/groups/unified/create | Создание групп Office 365. |
-| microsoft.directory/groups/unified/delete | Удаление групп Office 365. |
-| microsoft.directory/groups/unified/members/update | Обновление членства в группах Office 365. |
-| microsoft.directory/groups/unified/owners/update | Обновление владельцев в группах Office 365. |
+| microsoft.directory/groups/unified/basic/update | Обновление основных свойств групп Microsoft 365. |
+| microsoft.directory/groups/unified/create | Создание групп Microsoft 365. |
+| microsoft.directory/groups/unified/delete | Удаление групп Microsoft 365. |
+| microsoft.directory/groups/unified/members/update | Обновление членства в группах Microsoft 365. |
+| microsoft.directory/groups/unified/owners/update | Обновление владельца групп Microsoft 365. |
 | microsoft.office365.network/performance/allProperties/read | Чтение страниц производительности сети в Центре администрирования Microsoft 365. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |

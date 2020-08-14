@@ -1,18 +1,18 @@
 ---
 title: Политики IPsec по умолчанию виртуальной глобальной сети Azure | Документация Майкрософт
-description: В этой статье содержатся сведения о политиках IPsec для виртуальной глобальной сети.
+description: Узнайте о политиках подключения к виртуальной сети IPsec Azure, включая политики инициатора и ответчика по умолчанию и пользовательские сочетания политик.
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 10/07/2019
 ms.author: cherylmc
-ms.openlocfilehash: 877a17327f13e407f86cb3a1a21f051572f74343
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 784f43cfa259ad7bdf161aea8e9b1ce559855db7
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73499723"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213895"
 ---
 # <a name="virtual-wan-default-policies-for-ipsec-connectivity"></a>Политики виртуальной глобальной сети по умолчанию для подключений IPsec
 
@@ -26,7 +26,7 @@ ms.locfileid: "73499723"
 
 [!INCLUDE [IPsec](../../includes/virtual-wan-ipsec-custom-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Действия по настройке настраиваемой политики IPsec см. в статье [Настройка настраиваемой политики IPSec для виртуальной глобальной сети](virtual-wan-custom-ipsec-portal.md).
 Дополнительные сведения о Виртуальной глобальной сети см. в разделе [Сведения о Виртуальной глобальной сети Azure](virtual-wan-about.md) и [Часто задаваемые вопросы о Виртуальной глобальной сети Azure (WAN)](virtual-wan-faq.md).

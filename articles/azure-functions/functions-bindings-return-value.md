@@ -3,14 +3,15 @@ title: Использование возвращаемого значения и
 description: Узнайте, как управлять возвращаемыми значениями для функций Azure.
 author: craigshoemaker
 ms.topic: reference
+ms.custom: devx-track-csharp
 ms.date: 01/14/2019
 ms.author: cshoe
-ms.openlocfilehash: 7ba104e288204dfbf3d24f5783bf69682a286553
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1dd9fabbe235e45290e607f861b67466d33319ce
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74480575"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212175"
 ---
 # <a name="using-the-azure-function-return-value"></a>Использование возвращаемого значения функции Azure
 

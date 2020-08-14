@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 08/05/2020
-ms.openlocfilehash: 03d40dcaeaefe01fecbc201cf28dc20c8634af9d
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 390376216700b760e96c2348b1ad61bb4561aad2
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926677"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88211517"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-11"></a>Обновление до Azure Когнитивный поиск .NET SDK версии 11
 
@@ -26,7 +26,7 @@ ms.locfileid: "87926677"
 
 + Один пакет и библиотека, а не несколько
 + Новое имя пакета: `Azure.Search.Documents` вместо `Microsoft.Azure.Search` .
-+ Три клиента вместо двух: `SearchClient` , `SearchIndexClient` ,`SearchIndexerClient`
++ Три клиента вместо двух: `SearchClient` , `SearchIndexClient` , `SearchIndexerClient`
 + Различия в именовании в диапазоне API и небольших структурных отличий, упрощающих некоторые задачи
 
 ## <a name="package-and-library-consolidation"></a>Консолидация пакетов и библиотек
@@ -48,7 +48,7 @@ ms.locfileid: "87926677"
 | Клиент, используемый для индексаторов, источников данных, навыков | [SearchServiceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient) | [Сеарчиндексерклиент (**новое**)](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.searchindexerclient) |
 
 > [!Important]
-> `SearchIndexClient`существует в обеих версиях, но поддерживает различные вещи. В версии 10 `SearchIndexClient` Создайте индексы и другие объекты. В версии 11 `SearchIndexClient` работает с существующими индексами. Чтобы избежать путаницы при обновлении кода, учитывать порядок обновления клиентских ссылок. После выполнения последовательности [действий по обновлению](#UpgradeSteps) необходимо устранить любые проблемы замены строк.
+> `SearchIndexClient` существует в обеих версиях, но поддерживает различные вещи. В версии 10 `SearchIndexClient` Создайте индексы и другие объекты. В версии 11 `SearchIndexClient` работает с существующими индексами. Чтобы избежать путаницы при обновлении кода, учитывать порядок обновления клиентских ссылок. После выполнения последовательности [действий по обновлению](#UpgradeSteps) необходимо устранить любые проблемы замены строк.
 
 <a name="naming-differences"></a>
 
@@ -61,7 +61,7 @@ ms.locfileid: "87926677"
 | Версия 10 | Эквивалент версии 11 |
 |------------|-----------------------|
 | [сеарчкредентиалс](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchcredentials) | [азурекэйкредентиал](https://docs.microsoft.com/dotnet/api/azure.azurekeycredential) |
-| `EncryptionKey`(существовало в [предварительной версии пакета SDK](https://www.nuget.org/packages/Microsoft.Azure.Search/8.0.0-preview) как общедоступная функция) | [сеарчресаурцеенкриптионкэй](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchresourceencryptionkey) |
+| `EncryptionKey` (существовало в [предварительной версии пакета SDK](https://www.nuget.org/packages/Microsoft.Azure.Search/8.0.0-preview) как общедоступная функция) | [сеарчресаурцеенкриптионкэй](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchresourceencryptionkey) |
 
 ### <a name="indexes-analyzers-synonym-maps"></a>Индексы, анализаторы, сопоставления синонимов
 
@@ -71,7 +71,7 @@ ms.locfileid: "87926677"
 | [Поле](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field) | [сеарчфиелд](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchfield) |
 | [DataType](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datatype) | [сеарчфиелддататипе](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchfielddatatype) |
 | [итемеррор](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.itemerror) | [сеарчиндексереррор](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchindexererror) |
-| [Analyzer](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.analyzer) | [Лексикаланализер](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.lexicalanalyze) (также `AnalyzerName` `LexicalAnalyzerName` ) |
+| [Analyzer](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.analyzer) | [Лексикаланализер](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzer) (также `AnalyzerName` `LexicalAnalyzerName` ) |
 | [анализерекуест](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.analyzerequest) | [анализетекстоптионс](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.analyzetextoptions) |
 | [StandardAnalyzer](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.standardanalyzer) | [луценестандарданализер](https://docs.microsoft.com//dotnet/api/azure.search.documents.indexes.models.lucenestandardanalyzer) |
 | [стандардтокенизер](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.standardtokenizer) | [Луценестандардтокенизер](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.lucenestandardtokenizer) (также `StandardTokenizerV2` `LuceneStandardTokenizerV2` ) |
@@ -88,7 +88,7 @@ ms.locfileid: "87926677"
 | [Индексатор](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexer) | [сеарчиндексер](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchindexer) |
 | [DataSource](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasource) | [сеарчиндексердатасаурцеконнектион](https://docs.microsoft.com//dotnet/api/azure.search.documents.indexes.models.searchindexerdatasourceconnection) |
 | [Навыков](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.skill) | [сеарчиндексерскилл](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchindexerskill) |
-| [Набор навыков](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.skillset) | [сеарчиндексерскиллсет](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchindexerskillse) |
+| [Набор навыков](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.skillset) | [сеарчиндексерскиллсет](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchindexerskill) |
 | [DataSourceType](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasourcetype) | [сеарчиндексердатасаурцетипе](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchindexerdatasourcetype) |
 
 ### <a name="data-import"></a>Импорт данных
@@ -153,7 +153,7 @@ ms.locfileid: "87926677"
 
 1. Обновление клиентских ссылок для запросов и импорта данных. Экземпляры [SearchIndexClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchindexclient) должны быть изменены на [сеарчклиент](https://docs.microsoft.com/dotnet/api/azure.search.documents.searchclient). Чтобы избежать путаницы с именами, убедитесь, что все экземпляры перехватываются перед переходом к следующему шагу.
 
-1. Обновление клиентских ссылок для объектов index, индексатора, преобразования синонимов и анализатора. Экземпляры [SearchServiceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient) должны быть изменены на [SearchIndexClient](https://docs.microsoft.com/dotnet/api/azure.search.documents.searchindexclient). 
+1. Обновление клиентских ссылок для объектов index, индексатора, преобразования синонимов и анализатора. Экземпляры [SearchServiceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient) должны быть изменены на [SearchIndexClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchindexclient). 
 
 1. Как можно скорее, обновите классы, методы и свойства, чтобы использовать API новой библиотеки. Раздел [различия имен](#naming-differences) можно запустить, но вы также можете ознакомиться с [журналом изменений](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/CHANGELOG.md).
 
@@ -173,8 +173,8 @@ ms.locfileid: "87926677"
 
 + [Упорядоченные результаты](search-query-odata-orderby.md) для значений NULL были изменены в этой версии, и значения NULL появлялись первыми, если сортировка имеет значение `asc` и последний `desc` . Если вы написали код, который обрабатывает, как сортируются значения NULL, следует проверить и, возможно, удалить этот код, если он больше не нужен.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 + [Azure.Search.Docпакет ументс](https://www.nuget.org/packages/Azure.Search.Documents/)
 + [Примеры на GitHub](https://github.com/azure/azure-sdk-for-net/tree/Azure.Search.Documents_11.0.0/sdk/search/Azure.Search.Documents/samples)
-+ [Справочник по APIAzure.Search.Docумент](https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet)
++ [ Справочник по APIAzure.Search.Docумент](https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet)

@@ -1,18 +1,18 @@
 ---
 title: Общие сведения об агенте Connected Machine для Windows
-description: В этой статье представлен подробный обзор доступных агентов Azure ARC для серверов (Предварительная версия), который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
+description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой ARC (Предварительная версия), который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
 ms.date: 08/06/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8e8abfcc3c6ec7b7893563c67dc6bb82ccdda850
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: d922652537034bef258c5bcde78fb178b092ed16
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121839"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212978"
 ---
-# <a name="overview-of-azure-arc-for-servers-preview-agent"></a>Обзор агента Azure ARC для серверов (Предварительная версия)
+# <a name="overview-of-azure-arc-enabled-servers-preview-agent"></a>Обзор агента серверов с поддержкой Arc Azure (Предварительная версия)
 
-Агент подключенного компьютера ARC для серверов (Предварительная версия) позволяет управлять компьютерами Windows и Linux, размещенными за пределами Azure, в корпоративной сети или другом поставщике облачных служб. В этой статье предоставлен подробный обзор требований к агенту, системе и сети, а также различных методов развертывания.
+Агент подключенного компьютера с поддержкой Arc Azure (Предварительная версия) позволяет управлять компьютерами Windows и Linux, размещенными за пределами Azure, в корпоративной сети или другом поставщике облачных служб. В этой статье предоставлен подробный обзор требований к агенту, системе и сети, а также различных методов развертывания.
 
 ## <a name="agent-component-details"></a>Сведения о компоненте агента
 
@@ -65,7 +65,7 @@ ms.locfileid: "88121839"
 
 ### <a name="azure-subscription-and-service-limits"></a>Ограничения подписки и служб Azure
 
-Прежде чем настраивать компьютеры с помощью дуги Azure для серверов (Предварительная версия), просмотрите [ограничения для подписок](../../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits) на Azure Resource Manager и [групп ресурсов](../../azure-resource-manager/management/azure-subscription-service-limits.md#resource-group-limits) , чтобы спланировать число подключенных компьютеров.
+Перед настройкой компьютеров с помощью серверов с поддержкой ARC (Предварительная версия) просмотрите [ограничения для подписок](../../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits) на Azure Resource Manager и [групп ресурсов](../../azure-resource-manager/management/azure-subscription-service-limits.md#resource-group-limits) , чтобы спланировать число подключенных компьютеров.
 
 ### <a name="transport-layer-security-12-protocol"></a>Протокол безопасности транспортного уровня 1,2
 
@@ -105,7 +105,7 @@ URL-адреса в предыдущей таблице необходимы в 
 
 ### <a name="register-azure-resource-providers"></a>Регистрация поставщиков ресурсов Azure
 
-Использование службы Azure Arc для серверов (предварительная версия) зависит от следующих поставщиков ресурсов Azure в подписке:
+Серверы с поддержкой ARC в Azure (Предварительная версия) зависят от следующих поставщиков ресурсов Azure в подписке для использования этой службы:
 
 * **Microsoft.HybridCompute**
 * **Microsoft.GuestConfiguration**
@@ -246,6 +246,6 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     * /var/opt/azcmagent
     * /opt/logs
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Чтобы начать оценку Azure Arc для серверов (предварительная версия), следуйте инструкциям в статье [Краткое руководство. Подключение компьютеров к Azure с помощью Azure Arc для серверов на портале](onboard-portal.md).
+Чтобы начать оценку серверов с поддержкой дуги Azure (Предварительная версия), следуйте указаниям в статье [подключение гибридных компьютеров к Azure из портал Azure](onboard-portal.md).

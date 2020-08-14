@@ -3,15 +3,16 @@ title: Использование пакета SDK для веб-заданий
 description: Ознакомьтесь со сведениями о написании кода для пакета SDK WebJobs. Создавайте задания фоновой обработки на основе событий, с помощью которых можно получить доступ к данным в Azure и сторонних службах.
 author: ggailey777
 ms.devlang: dotnet
+ms.custom: devx-track-csharp
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: 97b17f7e80590b9b907b8dc25253e6d706117357
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 25aaf49d32da29fe5fb082e6e4481cd9266f88e1
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85807984"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88208642"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
 

@@ -5,13 +5,13 @@ keywords: служба приложений Azure, веб-приложение, 
 ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
 ms.date: 08/13/2019
-ms.custom: seodec18
-ms.openlocfilehash: 9371b39bd37ba2514256a3b2fa90812f45c7ce5e
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.custom: devx-track-csharp, seodec18
+ms.openlocfilehash: 57039149afd22546bbd584db47e7a015b8b5f85c
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88077379"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213568"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Настройка приложения службы приложений в портал Azure
 
@@ -96,11 +96,11 @@ ms.locfileid: "88077379"
 
 Во время выполнения строки подключения доступны в виде переменных среды с префиксом со следующими типами соединений:
 
-* Server`SQLCONNSTR_`  
+* Server `SQLCONNSTR_`  
 * MySQL: `MYSQLCONNSTR_` 
-* SQLAzure`SQLAZURECONNSTR_` 
+* SQLAzure `SQLAZURECONNSTR_` 
 * Пользовательская: `CUSTOMCONNSTR_`
-* PostgreSQL`POSTGRESQLCONNSTR_`  
+* PostgreSQL `POSTGRESQLCONNSTR_`  
 
 Например, можно получить доступ к строке подключения MySql с именем *connectionstring1* в качестве переменной среды `MYSQLCONNSTR_connectionString1` . Инструкции по стеку для конкретного языка см. в следующих статьях:
 
@@ -245,7 +245,7 @@ ms.locfileid: "88077379"
 
 См. статью [Настройка пользовательского контейнера Linux для службы приложений Azure](configure-custom-container.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка личного доменного имени в службе приложений Azure]
 - [Настройка промежуточных сред в Службе приложений Azure]

@@ -1,19 +1,19 @@
 ---
 title: 'Архитектура: Глобальная архитектура транзитной сети'
 titleSuffix: Azure Virtual WAN
-description: Дополнительные сведения о глобальной транзитной архитектуре сети для виртуальной глобальной сети
+description: Узнайте, как виртуальная Глобальная сеть Azure позволяет использовать глобальную транзитную сетевую архитектуру, обеспечивая повсеместное подключение между облачными рабочими нагрузками.
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: cherylmc
-ms.openlocfilehash: c0ab2b2f61c4aa7a83d82b0300bb28cae91992d2
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 63a9c3a6c23d78411c04250359dac3c3aacde2ba
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056896"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212716"
 ---
 # <a name="global-transit-network-architecture-and-virtual-wan"></a>Архитектура глобальной транзитной сети и Виртуальная глобальная сеть
 
@@ -25,7 +25,7 @@ ms.locfileid: "88056896"
 * Виртуальная сеть (виртуальных сетей)
 * Сайт физической ветви
 * Удаленный пользователь
-* Internet
+* Интернет
 
 ![Центральная и лучевая](./media/virtual-wan-global-transit-network-architecture/figure1.png)
 
@@ -171,7 +171,7 @@ ExpressRoute Global Reach — это дополнительный компоне
 > В настоящее время нет возможности выбрать локальный брандмауэр или брандмауэр Azure (и доверенный поставщик безопасности) для трафика, связанного с Интернетом, из виртуальных сетей, ветвей или пользователей. Маршрут по умолчанию, полученный из параметра диспетчера брандмауэра Azure, всегда является предпочтительным для маршрута по умолчанию, полученного из одной из ветвей.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Создайте подключение с помощью виртуальной глобальной сети и разверните брандмауэр Azure в центрах ВВАН.
 

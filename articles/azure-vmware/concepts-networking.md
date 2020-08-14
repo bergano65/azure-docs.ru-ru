@@ -3,14 +3,14 @@ title: Основные понятия — сетевое взаимодейст
 description: Сведения о ключевых аспектах и использовании сетевых подключений и взаимосвязь в решении Azure VMware (AVS)
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: c0416da9c745ccf92970ff39f623a782d5784983
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6f1f1f5a089781f1f7e882c9c8692f0c845ae485
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87062842"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88214109"
 ---
-# <a name="azure-vmware-solution-avs-preview-networking-and-interconnectivity-concepts"></a>Предварительная версия решения Azure VMware (AVS) — основные понятия взаимодействия
+# <a name="azure-vmware-solution-avs-preview-networking-and-interconnectivity-concepts"></a>Основные понятия о сетях и подключениях для предварительной версии решения Azure VMware (AVS)
 
 Сетевое взаимодействие между частными облаками решения Azure VMware (AVS) и локальными средами или виртуальными сетями в Azure позволяет получить доступ к частному облаку и использовать его. В этой статье мы рассмотрим несколько ключевых концепций, которые устанавливают основы работы с сетью и взаимосвязьм.
 
@@ -77,14 +77,14 @@ ms.locfileid: "87062842"
 
 На схеме ниже показано взаимодействие между локальными и частным облаком, которое позволяет использовать следующие варианты использования:
 * Горячий/холодный кросс-vCenter vMotion
-* Локальный доступ для управления частным облаком в AVS
+* Доступ к управлению частным облаком из локальной среды в AVS
 
 :::image type="content" source="media/concepts/adjacency-overview-drawing-double.png" alt-text="Виртуальная сеть и локальное полное подключение к частному облаку" border="false":::
 
 Чтобы обеспечить полное взаимодействие с частным облаком, включите ExpressRoute Global Reach а затем запросите ключ авторизации и идентификатор частного пиринга для Global Reach в портал Azure. Ключ авторизации и идентификатор пиринга используются для установления Global Reach между каналом ExpressRoute в подписке и каналом ExpressRoute для нового частного облака. После связывания две цепи ExpressRoute направляют сетевой трафик между локальными средами в частное облако.  Инструкции по запросу и использованию ключа авторизации и идентификатора пиринга см. в [руководстве по созданию подключения ExpressRoute Global REACH к частному облаку](tutorial-expressroute-global-reach-private-cloud.md) .
 
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
 
 Следующим шагом является изучение [концепций частного облачного хранилища](concepts-storage.md).
 

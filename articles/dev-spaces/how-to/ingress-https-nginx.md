@@ -6,12 +6,12 @@ ms.topic: conceptual
 description: Узнайте, как настроить Azure Dev Spaces для использования пользовательского контроллера входящих данных NGINX и настройки HTTPS с помощью этого контроллера входящего трафика.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 1b4bc686d0795767c259a3e0407393d7b6ebf486
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 199b077f20f396919d26b69d3fea422a8d9b4358
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420929"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212488"
 ---
 # <a name="use-a-custom-nginx-ingress-controller-and-configure-https"></a>Использование пользовательского контроллера входящих данных NGINX и настройка HTTPS
 
@@ -21,7 +21,7 @@ ms.locfileid: "87420929"
 
 * Подписка Azure. Если ее нет, можно создать [бесплатную учетную запись][azure-account-create].
 * [Установленный Azure CLI][az-cli].
-* [Кластер Azure Kubernetes Service (AKS) с включенным Azure dev Spaces][qs-cli].
+* Кластер Azure Kubernetes Service (AKS) с включенным Azure Dev Spaces.
 * [kubectl][kubectl] установлен.
 * [Установленная версия Helm 3][helm-installed].
 * [Личный домен][custom-domain] с [зоной DNS][dns-zone].  В этой статье предполагается, что личный домен и зона DNS находятся в той же группе ресурсов, что и кластер AKS, но можно использовать личный домен и зону DNS в другой группе ресурсов.
@@ -315,12 +315,12 @@ azds up
 
 Перейдите к образцу приложения в дочернем пространстве *dev/azureuser1* и обратите внимание, что вы перенаправлялись на использование протокола HTTPS без ошибок.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
+Дополнительные сведения о работе Azure Dev Spaces.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Коллективная разработка в Kubernetes с использованием Azure Dev Spaces][team-development-qs]
+> [Принцип работы Azure Dev Spaces](../how-dev-spaces-works.md)
 
 
 [az-cli]: /cli/azure/install-azure-cli?view=azure-cli-latest
@@ -328,9 +328,6 @@ azds up
 [az-network-dns-record-set-a-add-record]: /cli/azure/network/dns/record-set/a?view=azure-cli-latest#az-network-dns-record-set-a-add-record
 [custom-domain]: ../../app-service/manage-custom-dns-buy-domain.md#buy-the-domain
 [dns-zone]: ../../dns/dns-getstarted-cli.md
-[qs-cli]: ../quickstart-cli.md
-[team-development-qs]: ../quickstart-team-development.md
-
 [azds-yaml]: https://github.com/Azure/dev-spaces/blob/master/samples/BikeSharingApp/BikeSharingWeb/azds.yaml
 [azure-account-create]: https://azure.microsoft.com/free
 [cert-manager]: https://cert-manager.io/

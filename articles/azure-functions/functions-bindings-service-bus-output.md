@@ -6,13 +6,13 @@ ms.assetid: daedacf0-6546-4355-a65c-50873e74f66b
 ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
-ms.custom: devx-track-python
-ms.openlocfilehash: c377d9882b59731857641e1f593dd6b7b24ca7f9
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: devx-track-csharp, devx-track-python
+ms.openlocfilehash: 3fc8f205bff52fad6e55b7aa6692ec80ae5e954a
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87844088"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212155"
 ---
 # <a name="azure-service-bus-output-binding-for-azure-functions"></a>Выходная привязка служебной шины Azure для функций Azure
 
@@ -303,9 +303,9 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 * `out T paramName` - `T` может быть любым сериализуемым в JSON типом. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" создает сообщение с пустым объектом.
 * `out string`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
 * `out byte[]`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
-* `out BrokeredMessage`— Если при выходе из функции значение параметра равно null, функции не создают сообщение (для функций 1. x).
-* `out Message`— Если при выходе из функции значение параметра равно null, функции не создают сообщение (для функций 2. x и выше).
-* `ICollector<T>`или `IAsyncCollector<T>` (для асинхронных методов) — для создания нескольких сообщений. Сообщение создается при вызове метода `Add` .
+* `out BrokeredMessage` — Если при выходе из функции значение параметра равно null, функции не создают сообщение (для функций 1. x).
+* `out Message` — Если при выходе из функции значение параметра равно null, функции не создают сообщение (для функций 2. x и выше).
+* `ICollector<T>` или `IAsyncCollector<T>` (для асинхронных методов) — для создания нескольких сообщений. Сообщение создается при вызове метода `Add` .
 
 При работе с функциями C#:
 
@@ -320,8 +320,8 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 * `out T paramName` - `T` может быть любым сериализуемым в JSON типом. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" создает сообщение с пустым объектом.
 * `out string`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
 * `out byte[]`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
-* `out BrokeredMessage`— Если при выходе из функции значение параметра равно null, функции не создают сообщение (для функций 1. x).
-* `out Message`— Если при выходе из функции значение параметра равно null, функции не создают сообщение (для функций 2. x и выше).
+* `out BrokeredMessage` — Если при выходе из функции значение параметра равно null, функции не создают сообщение (для функций 1. x).
+* `out Message` — Если при выходе из функции значение параметра равно null, функции не создают сообщение (для функций 2. x и выше).
 * `ICollector<T>` или `IAsyncCollector<T>`. Используется для создания нескольких сообщений. Сообщение создается при вызове метода `Add` .
 
 При работе с функциями C#:
@@ -346,16 +346,16 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка | Справочник |
+| Привязка | Ссылка |
 |---|---|
-| Служебная шина Azure | [Коды ошибок службы "Служебная шина"](../service-bus-messaging/service-bus-messaging-exceptions.md) |
-| Служебная шина Azure | [Ограничения службы "Служебная шина"](../service-bus-messaging/service-bus-quotas.md) |
+| Cлужебная шина | [Коды ошибок службы "Служебная шина"](../service-bus-messaging/service-bus-messaging-exceptions.md) |
+| Cлужебная шина | [Ограничения службы "Служебная шина"](../service-bus-messaging/service-bus-quotas.md) |
 
 <a name="host-json"></a>  
 
 ## <a name="hostjson-settings"></a>Параметры файла host.json
 
-В этом разделе описаны глобальные параметры конфигурации, доступные для этой привязки в версиях 2. x и более поздних. Пример host.jsв файле ниже содержит только параметры для этой привязки. Дополнительные сведения о глобальных параметрах конфигурации см. [в разделеhost.jsпо Справочнику по функциям Azure](functions-host-json.md).
+В этом разделе описаны глобальные параметры конфигурации, доступные для этой привязки в версиях 2. x и более поздних. Пример host.jsв файле ниже содержит только параметры для этой привязки. Дополнительные сведения о глобальных параметрах конфигурации см. [ в разделеhost.jsпо Справочнику по функциям Azure](functions-host-json.md).
 
 > [!NOTE]
 > Чтобы получить дополнительные сведения о файле host.json в Функции 1.x, см. статью [host.json reference for Azure Functions 1.x](functions-host-json-v1.md)(Справочник по файлу host.json для службы "Функции Azure" версии 1.x.).

@@ -6,13 +6,13 @@ ms.assetid: d2f013d1-f458-42ae-baf8-1810138118ac
 ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
-ms.custom: devx-track-python
-ms.openlocfilehash: 49bbc2199c7dc3040a24071b8eb5a91929d88e08
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: devx-track-csharp, devx-track-python
+ms.openlocfilehash: 45f704afce28967237b2905ef068678ba05ae085
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87849248"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88206644"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Триггеры таймера для службы "Функции Azure" 
 
@@ -168,7 +168,7 @@ public void keepAlive(
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте [TimerTriggerAttribute](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Timers/TimerTriggerAttribute.cs).
 
-Конструктор атрибута принимает выражение CRON или `TimeSpan`. Можно использовать, `TimeSpan` только если приложение-функция выполняется в плане службы приложений. `TimeSpan`не поддерживается для функций использования или эластичных баз данных Premium.
+Конструктор атрибута принимает выражение CRON или `TimeSpan`. Можно использовать, `TimeSpan` только если приложение-функция выполняется в плане службы приложений. `TimeSpan` не поддерживается для функций использования или эластичных баз данных Premium.
 
 В приведенном ниже примере показано выражение CRON.
 
@@ -315,7 +315,7 @@ public void keepAlive(
 | Версия службы "Функции" | Параметр                                              |
 | ----------------- | ---------------------------------------------------- |
 | 2. x (и выше)  | Переменная среды `AzureFunctionsWebHost__hostid`. |
-| 1.x               | `id`в *host.js*                                  |
+| 1.x               | `id` в *host.js*                                  |
 
 Можно опустить идентифицирующее значение или вручную задать для каждой идентифицирующей конфигурации приложения-функции другое значение.
 

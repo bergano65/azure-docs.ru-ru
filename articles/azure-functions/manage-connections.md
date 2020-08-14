@@ -2,13 +2,14 @@
 title: Управление подключениями в функциях Azure
 description: Узнайте, как избежать проблем с производительностью в службе "Функции Azure" с помощью статического подключения клиентов.
 ms.topic: conceptual
+ms.custom: devx-track-csharp
 ms.date: 02/25/2018
-ms.openlocfilehash: 5ab59d82ad4b11e4ac5179ef727392a83bb263e3
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7ce933511532fdb1bfb5189e5a900e87f3d83fa2
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86505998"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213972"
 ---
 # <a name="manage-connections-in-azure-functions"></a>Управление подключениями в функциях Azure
 
@@ -129,7 +130,7 @@ module.exports = async function (context) {
 > [!TIP]
 > Некоторые платформы данных, такие как Entity Framework, обычно получают строки подключения из раздела **ConnectionString** файла конфигурации. В этом случае необходимо добавить строки подключений базы данных SQL непосредственно в список функциональных настроек приложения **Строки подключения** и в [файл local.settings.json](functions-run-local.md#local-settings-file) в локальном проекте. Если вы создаете экземпляр [SqlConnection](/dotnet/api/system.data.sqlclient.sqlconnection?view=dotnet-plat-ext-3.1) в коде функции, вы должны сохранить значение строки подключения в **параметрах приложения** с другими соединениями.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о том, почему мы рекомендуем использовать статические клиенты, см. в разделе [неправильное антишаблонное создание экземпляра](/azure/architecture/antipatterns/improper-instantiation/).
 

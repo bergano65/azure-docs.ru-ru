@@ -4,12 +4,12 @@ description: Узнайте, как использовать GPU для ресу
 services: container-service
 ms.topic: article
 ms.date: 03/27/2020
-ms.openlocfilehash: 30cbac0984236717581c994700483b85829c4571
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: ed655a6809f2932bbe8e85fb1cd9fd7996cf7647
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86244299"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213185"
 ---
 # <a name="use-gpus-for-compute-intensive-workloads-on-azure-kubernetes-service-aks"></a>Использование процессоров GPU для интенсивных вычислительных рабочих нагрузок в Службе Azure Kubernetes (AKS)
 
@@ -20,7 +20,7 @@ ms.locfileid: "86244299"
 
 В настоящее время использование пулов узлов с поддержкой GPU доступно только для пулов узлов Linux.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Перед началом работы
 
 В этой статье предполагается, что у вас есть кластер AKS с узлами, поддерживающими процессоры GPU. Кластер AKS должен работать на платформе Kubernetes 1.10 или более поздней версии. Если вам нужен кластер AKS, соответствующий этим требованиям, обратитесь к первой части этой статьи, чтобы [создать кластер AKS](#create-an-aks-cluster).
 
@@ -52,7 +52,7 @@ az aks create \
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
-## <a name="install-nvidia-drivers"></a>Установка драйверов NVIDIA
+## <a name="install-nvidia-device-plugin"></a>Установка подключаемого модуля устройства NVIDIA
 
 Прежде чем можно будет использовать GPU на узлах, необходимо развернуть управляющий набор для подключаемого модуля устройства NVIDIA. Этот DaemonSet запускает pod на каждом узле, чтобы предоставить необходимые драйверы для процессоров GPU.
 
@@ -188,7 +188,7 @@ Non-terminated Pods:         (9 in total)
 Создайте файл *samples-tf-mnist-demo.yaml* и вставьте в него приведенный ниже манифест YAML. Следующий манифест задания включает в себя ограничение ресурсов: `nvidia.com/gpu: 1`.
 
 > [!NOTE]
-> Если при вызове драйверов возникла ошибка несоответствия версий, например версия драйвера CUDA недостаточна для версии среды выполнения CUDA, см. диаграмму совместимости с матричным драйвером NVIDIA.[https://docs.nvidia.com/deploy/cuda-compatibility/index.html](https://docs.nvidia.com/deploy/cuda-compatibility/index.html)
+> Если при вызове драйверов возникла ошибка несоответствия версий, например версия драйвера CUDA недостаточна для версии среды выполнения CUDA, см. диаграмму совместимости с матричным драйвером NVIDIA. [https://docs.nvidia.com/deploy/cuda-compatibility/index.html](https://docs.nvidia.com/deploy/cuda-compatibility/index.html)
 
 ```yaml
 apiVersion: batch/v1
@@ -327,7 +327,7 @@ Adding run metadata for 499
 kubectl delete jobs samples-tf-mnist-demo
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы выполнять задания Apache Spark, ознакомьтесь с разделом [Запуск заданий Apache Spark в AKS][aks-spark].
 

@@ -3,16 +3,17 @@ title: Использование фильтров компонентов для
 titleSuffix: Azure App Configuration
 description: Узнайте, как использовать фильтры компонентов, чтобы включить функцию для подмножества пользователей.
 ms.service: azure-app-configuration
+ms.custom: devx-track-csharp
 author: lisaguthrie
 ms.author: lcozzens
 ms.topic: conceptual
 ms.date: 3/9/2020
-ms.openlocfilehash: 181c97615985283011834dcf9145810b1563fb4a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5b2eb942581f6e4163012b0f767d04c02689bb7b
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80057002"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88206773"
 ---
 # <a name="use-feature-filters-to-enable-a-feature-for-a-subset-of-users"></a>Использование фильтров компонентов для включения функции для подмножества пользователей
 
@@ -22,8 +23,8 @@ ms.locfileid: "80057002"
 
 `Microsoft.FeatureManagement`Библиотека содержит два фильтра компонентов:
 
-- `PercentageFilter`включает флаг компонента на основе процента.
-- `TimeWindowFilter`включает флаг компонента в течение указанного периода времени.
+- `PercentageFilter` включает флаг компонента на основе процента.
+- `TimeWindowFilter` включает флаг компонента в течение указанного периода времени.
 
 Можно также создать собственный фильтр компонентов, реализующий [интерфейс Microsoft. феатуреманажемент. ифеатурефилтер](/dotnet/api/microsoft.featuremanagement.ifeaturefilter).
 
@@ -85,7 +86,7 @@ public void ConfigureServices(IServiceCollection services)
 > [!div class="mx-imgBorder"]
 > ![Перцентажефилтер в действии](./media/feature-flags-percentagefilter.gif)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Общие сведения об управлении функциями](./concept-feature-management.md)
