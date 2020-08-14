@@ -156,7 +156,7 @@
         - name: Доступ к данным 1-го поколения
           items:
             - name: Обзор
-              href: 'https://docs.microsoft.com/rest/api/time-series-insights/ga'
+              href: 'https://docs.microsoft.com/rest/api/time-series-insights/gen1'
             - name: Запрос
               items:
                 - name: Запрос
