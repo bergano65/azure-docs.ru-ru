@@ -9,17 +9,18 @@ editor: ''
 ms.assetid: 4539c0fa-21ef-4b1c-a1d4-d89a38c242fa
 ms.service: api-management
 ms.devlang: dotnet
+ms.custom: devx-track-csharp
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/15/2016
 ms.author: apimpm
-ms.openlocfilehash: ac5f6b4d2d197bbd4f4aff9236837eab062b4a63
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 10beee563e4a93332cd817ee04c1e74bda6e9c51
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86243313"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88210349"
 ---
 # <a name="using-external-services-from-the-azure-api-management-service"></a>Использование внешних служб из службы управления API Azure
 Политики, доступные в службе управления API Azure, позволяют выполнять множество полезных задач исключительно на основе входящих запросов, исходящих ответов и сведений о базовой конфигурации. Однако возможность взаимодействия с внешними службами управления из политик управления API предоставляет гораздо больше преимуществ.
@@ -285,5 +286,5 @@ ms.locfileid: "86243313"
 
 В конфигурации операции заполнителя можно настроить ресурс панели мониторинга для кэширования в течение как минимум часа. 
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 Служба управления API Azure предоставляет гибкие политики, выборочно применяемые к HTTP-трафику, и позволяет формировать серверные службы. Если вы хотите усовершенствовать имеющийся шлюз API за счет функций оповещения, проверки или создать новые сложные ресурсы на основе нескольких серверных служб, `send-request` и связанные политики предоставят вам широкий диапазон новых возможностей.

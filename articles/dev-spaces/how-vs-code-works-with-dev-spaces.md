@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: conceptual
 description: Узнайте, как Visual Studio Code и Azure Dev Spaces помочь в отладке и быстром переборе Kubernetes приложений.
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: 73a2ae1f603626acf7ec4d42838b301c88ee21da
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: decf61bd55ed15182f030bb02a2fe9c959749556
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84307356"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88209883"
 ---
 # <a name="how-visual-studio-code-works-with-azure-dev-spaces"></a>Как Visual Studio Code работает с Azure Dev Spaces
 
@@ -43,19 +43,15 @@ Dockerfile, Helm диаграмма и `azds.yaml` файлы — это те ж
 
 После запуска проекта можно выполнить отладку служб Java, Node.js и .NET Core, работающих в пространстве разработки, непосредственно из Visual Studio Code. Конфигурация запуска в `.vscode` каталоге предоставляет дополнительные отладочные сведения для запуска службы с включенной отладкой в пространстве разработки. Visual Studio Code также присоединяется к процессу отладки в работающем контейнере в пространствах разработки, что позволяет задавать точки останова, проверять переменные и выполнять другие операции отладки.
 
-## <a name="use-visual-studio-code-with-azure-dev-spaces"></a>Использование Visual Studio Code с Azure Dev Spaces
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Visual Studio Code и расширение Azure Dev Spaces, работающее с Azure Dev Spaces, можно просмотреть в следующих кратких руководствах:
+Дополнительные сведения о работе Azure Dev Spaces.
 
-* [Быстрое перебор и отладка с помощью Visual Studio Code и Java][quickstart-java]
-* [Быстрое перебор и отладка с помощью Visual Studio Code и .NET][quickstart-netcore]
-* [Быстрое перебор и отладка с помощью Visual Studio Code и Node.js][quickstart-node]
+> [!div class="nextstepaction"]
+> [Принцип работы Azure Dev Spaces](how-dev-spaces-works.md)
 
 [azds-extension]: https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds
 [azds-yaml]: how-dev-spaces-works-prep.md#prepare-your-code
 [csharp-extension]: https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
 [java-extension]: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debugger-azds
 [maven]: https://maven.apache.org
-[quickstart-java]: quickstart-java.md
-[quickstart-netcore]: quickstart-netcore.md
-[quickstart-node]: quickstart-nodejs.md

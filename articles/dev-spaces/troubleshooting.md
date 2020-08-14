@@ -5,12 +5,12 @@ ms.date: 09/25/2019
 ms.topic: troubleshooting
 description: Узнайте, как устранять распространенные неполадки при включении и использовании Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 7696cc8eaeef9ba5e2e0955bad6f17d28e95b5e5
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: e26f066294cb0a6a48c5a3299213206fe4226ad0
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88077039"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88210837"
 ---
 # <a name="azure-dev-spaces-troubleshooting"></a>Устранение неполадок с Azure Dev Spaces
 
@@ -55,8 +55,6 @@ azds remove -g <resource group name> -n <cluster name>
 ```azurecli
 az aks use-dev-spaces -g <resource group name> -n <cluster name>
 ```
-
-Чтобы повторно создать контроллер, можно использовать CLI или Visual Studio. Примеры см. в статьях [Краткое руководство. Коллективная разработка в Kubernetes с использованием Azure Dev Spaces](quickstart-team-development.md) и [Краткое руководство. Отладка и итерация в Kubernetes: Использование Visual Studio и .NET Core в Azure Dev Spaces](quickstart-netcore-visualstudio.md).
 
 ### <a name="controller-create-failing-because-of-controller-name-length"></a>Ошибка создания контроллера из-за длины имени контроллера
 

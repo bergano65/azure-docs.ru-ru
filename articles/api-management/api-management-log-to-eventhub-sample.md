@@ -12,15 +12,16 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
+ms.custom: devx-track-csharp
 ms.topic: article
 ms.date: 01/23/2018
 ms.author: apimpm
-ms.openlocfilehash: ace0ef2660a44af41d8942cfe4d225bc1a03228e
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: abb9cbb73f8957cec2cb3240bbf186623b9b2ef9
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86254594"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88205507"
 ---
 # <a name="monitor-your-apis-with-azure-api-management-event-hubs-and-moesif"></a>Мониторинг API-интерфейсов с помощью Управления API Azure, Центров событий и Moesif
 [Служба управления API](api-management-key-concepts.md) предоставляет множество возможностей для улучшения обработки HTTP-запросов, адресованных API-интерфейсу HTTP. Однако запросы и ответы существуют очень недолго. Созданный запрос проходит через службу управления API на серверный API вашей службы. API обрабатывает запрос и отправляет ответ обратно потребителю API. Служба управления API частично сохраняет важные статистические данные об интерфейсах API и отображает их на панели мониторинга портала Azure, но вся остальная информация теряется безвозвратно.
@@ -305,10 +306,10 @@ public class MoesifHttpMessageProcessor : IHttpMessageProcessor
 
 ![Демонстрация передачи запроса в Runscope](./media/api-management-log-to-eventhub-sample/apim-eventhub-runscope.gif)
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 Служба управления API Azure— это идеальное место для фиксации HTTP-трафика, поступающего на API-интерфейсы и в обратном направлении. Центры событий Azure — это высокомасштабируемое недорогое решение, которое собирает информацию о трафике и передает ее в системы дополнительной обработки для регистрации, мониторинга и сложного анализа. Для подключения к сторонним системам мониторинга трафика, например Moesif, потребуется всего несколько десятков строк кода.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительная информация о Центрах событий Azure
   * [Приступая к работе с Центрами событий Azure](../event-hubs/event-hubs-c-getstarted-send.md)
   * [Прием сообщений через EventProcessorHost](../event-hubs/event-hubs-dotnet-standard-getstarted-send.md)

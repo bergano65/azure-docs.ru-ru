@@ -16,12 +16,12 @@ ms.date: 06/25/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83a05636f8e673e08bfd390aa10069da0abd561d
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: b0754c8e2be62c0a5568e97e7e5cf4376fb3c593
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542065"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88210907"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure Active Directory (Azure AD) Connect.
@@ -29,7 +29,7 @@ ms.locfileid: "87542065"
 ## <a name="before-you-install-azure-ad-connect"></a>Перед установкой Azure AD Connect
 Прежде чем установить Azure AD Connect и обновить DirSync, вам потребуется ряд элементов.
 
-### <a name="azure-ad"></a>Azure AD
+### <a name="azure-ad"></a>Azure AD
 * Необходим клиент Azure AD. Вы получите его с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/). Вы можете использовать один из следующих порталов для управления Azure AD Connect:
   * [Портал Azure](https://portal.azure.com).
   * [Портал Office](https://portal.office.com).
@@ -72,7 +72,7 @@ Azure AD Connect сервер должен рассматриваться как
 - Рассматривайте Azure AD Connect так же, как и контроллер домена, и другие ресурсы уровня 0. Дополнительные сведения см. в разделе [модель административного уровня Active Directory](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material).
 - Ограничьте административный доступ к серверу Azure AD Connect только администраторам домена или другим жестко управляемым группам безопасности.
 - Создайте [выделенную учетную запись для всех сотрудников с привилегированным доступом](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access). Администраторы не должны просматривать веб-узел, проверять электронную почту и выполнять повседневные задачи по повышению производительности с помощью учетных записей с высоким уровнем привилегий.
-- Следуйте инструкциям, приведенным в статье [Защита привилегированного доступа](https://docs.microsoft.com/windows-server/security/credentials-protection-and-management/how-to-configure-protected-accounts). 
+- Следуйте инструкциям, приведенным в статье [Защита привилегированного доступа](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access). 
 - Убедитесь, что у каждого компьютера есть уникальный пароль локального администратора. Дополнительные сведения см. в статье [решение "пароль локального администратора" (Lap)](https://support.microsoft.com/help/3062591/microsoft-security-advisory-local-administrator-password-solution-laps) , позволяющее настроить уникальные случайные пароли на каждой рабочей станции и сервере для хранения их в Active Directory, защищенных ACL. Только допустимые, авторизованные пользователи могут читать или запрашивать сброс паролей учетной записи локального администратора. Вы можете получить Lap для использования на рабочих станциях и серверах из [центра загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=46899#:~:text=The%20%22Local%20Administrator%20Password%20Solution,it%20or%20request%20its%20reset.). Дополнительные рекомендации по работе с рабочей средой с Lap и привилегированным доступом (лапы) можно найти в статье [эксплуатационные стандарты на основе принципа чистого источника](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#operational-standards-based-on-clean-source-principle). 
 - Реализуйте выделенные [рабочие станции привилегированного доступа](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations) для всех сотрудников, имеющих привилегированный доступ к информационным системам вашей организации. 
 - Следуйте этим [дополнительным рекомендациям](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface) , чтобы уменьшить уязвимую область Active Directoryной среды.
@@ -141,7 +141,7 @@ Azure AD Connect сервер должен рассматриваться как
 * Windows Server 2012 R2
   * Microsoft PowerShell устанавливается по умолчанию. Никаких действий не требуется.
   * Платформа .NET Framework 4.5.1 и более поздних версий распространяется через Центр обновления Windows. Убедитесь, что установлены последние обновления для Windows Server на панели управления.
-* Windows Server 2012
+* Windows Server 2012
   * Последняя версия Microsoft PowerShell доступна в Windows Management Framework 4,0, доступной в [центре загрузки Майкрософт](https://www.microsoft.com/downloads).
   * .NET Framework 4.5.1 и более поздние версии доступны в [центре загрузки Майкрософт](https://www.microsoft.com/downloads).
 

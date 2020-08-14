@@ -14,12 +14,12 @@ ms.custom:
 - it-pro
 - seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 824520e04bd4a98b1a00c8369848163a38bcf54b
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: eb81e5a72ff1f5a8d4442e6e1f211ad2368f6277
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87909106"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88206285"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Устранение неполадок службы совместной работы Azure Active Directory B2B
 
@@ -93,7 +93,7 @@ ms.locfileid: "87909106"
 
 Пользователь имеет учетную запись пользователя Azure и является вирусным клиентом, который был отменен или неуправляем. Кроме того, в клиенте нет глобальных или корпоративных администраторов.
 
-Чтобы устранить эту проблему, необходимо принять отброшенный клиент. Ознакомьтесь с [разработкой неуправляемого каталога от имени администратора в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover). Кроме того, необходимо получить доступ к Интернету DNS для суффикса домена, чтобы предоставить прямые доказательства, которыми вы управляете пространством имен. После возвращения клиента в управляемое состояние следует обсудить с клиентом, следует ли выпустить пользователей и проверенное доменное имя, наилучшим способом для своей организации.
+Чтобы устранить эту проблему, необходимо принять отброшенный клиент. Ознакомьтесь с  [разработкой неуправляемого каталога от имени администратора в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover). Кроме того, необходимо получить доступ к Интернету DNS для суффикса домена, чтобы предоставить прямые доказательства, которыми вы управляете пространством имен. После возвращения клиента в управляемое состояние следует обсудить с клиентом, следует ли выпустить пользователей и проверенное доменное имя, наилучшим способом для своей организации.
 
 ## <a name="a-guest-user-with-a-just-in-time-or-viral-tenant-is-unable-to-reset-their-password"></a>Гостевому пользователю клиента JIT или "вирусного" клиента не удается сбросить пароль
 
@@ -109,4 +109,4 @@ ms.locfileid: "87909106"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-[Получение поддержки для службы совместной работы B2B](/azure/active-directory/fundamentals/active-directory-troubleshooting-support-howto.md)
+[Получение поддержки для службы совместной работы B2B](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-troubleshooting-support-howto)

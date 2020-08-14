@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/26/2020
 ms.author: kumud
-ms.openlocfilehash: 19c08029e78e68273298e76635136ff35ae724e0
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: c242b08c598b04c84ab330e846704eace23c4858
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87924127"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88205473"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Виртуальная сеть Azure: часто задаваемые вопросы
 
@@ -356,7 +356,7 @@ TAP для виртуальной сети используется предва
 Да, это возможно. Виртуальные сети и ресурсы служб Azure могут находиться в одной или разных подписках. Единственное требование заключается в том, чтобы они были размещены в одном клиенте Active Directory (AD).
 
 ### <a name="can-i-turn-on-vnet-service-endpoints-and-set-up-vnet-acls-if-the-virtual-network-and-the-azure-service-resources-belong-to-different-ad-tenants"></a>Можно ли включить конечные точки службы виртуальной сети и настроить списки управления доступом в виртуальной сети, если виртуальная сеть и ресурсы служб Azure относятся к разным клиентам AD?
-Нет, конечные точки службы виртуальной сети и списки управления доступом в виртуальной сети в разных клиентах AD не поддерживаются.
+Да, можно использовать конечные точки служб для службы хранилища Azure и Azure Key Vault. Для остальных служб конечные точки службы виртуальной сети и списки ACL виртуальной сети не поддерживаются в клиентах AD.
 
 ### <a name="can-an-on-premises-devices-ip-address-that-is-connected-through-azure-virtual-network-gateway-vpn-or-expressroute-gateway-access-azure-paas-service-over-vnet-service-endpoints"></a>Может ли IP-адрес локального устройства, подключенный через шлюз виртуальной сети Azure (VPN) или шлюз ExpressRoute, получать доступ к службе Azure PaaS через конечные точки службы виртуальной сети?
 По умолчанию ресурсы служб Azure, которые защищены в виртуальной сети, недоступны для локальных сетей. Чтобы разрешить трафик из локальной среды, необходимо также разрешить общедоступные IP-адреса (обычно это NAT) из локальных каналов или каналов ExpressRoute. Эти IP-адреса можно добавить в конфигурации брандмауэра IP-адресов для ресурсов служб Azure.
@@ -412,9 +412,9 @@ Azure Active Directory (Azure AD) не поддерживает конечные
 |Azure SQL| 128|
 |Хранилище данных SQL Azure|  128|
 |Azure KeyVault|    127|
-|Azure Cosmos DB|   64|
+|Azure Cosmos DB|   64|
 |концентратору событий Azure|   128|
-|Служебная шина Azure| 128|
+|Azure Service Bus| 128|
 |Azure Data Lake Store V1|  100|
  
 >[!NOTE]

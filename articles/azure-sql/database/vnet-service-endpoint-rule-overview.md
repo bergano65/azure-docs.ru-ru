@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 11/14/2019
-ms.openlocfilehash: 880ec24c377091173202098a3c54b5776bf69a98
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 76a31b10c15f2dff3d6d9304dcff6d0fb489ea7f
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836621"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88210389"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Использование конечных точек службы и правил виртуальной сети для серверов в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -106,20 +106,20 @@ When searching for blogs about ASM, you probably need to use this old and now-fo
 
 Служба хранилища Azure реализовала ту же функцию, которая позволяет ограничить возможность подключения к учетной записи службы хранилища Azure. Если вы решили применить эту функцию к учетной записи службы хранилища Azure, используемой Базой данных Azure SQL, могут возникнуть проблемы. Ниже приведен список и описание функций Базы данных SQL Azure и Хранилища данных SQL Azure, на которых это отразится.
 
-### <a name="azure-synapse-polybase"></a>Azure синапсе Polybase
+### <a name="azure-synapse-polybase-and-copy-statement"></a>Azure синапсе Polybase и инструкция COPY
 
-PolyBase часто используют для загрузки данных в Azure Synapse Analytics из учетных записей службы хранилища Azure. Если учетная запись службы хранилища Azure, из которой загружаются данные, предоставляет доступ только к набору подсетей виртуальной сети, подключение из PolyBase к учетной записи будет прервано. Чтобы включить сценарии импорта и экспорта Polybase с подключением Azure синапсе Analytics к службе хранилища Azure, защищенной для виртуальной сети, выполните указанные ниже действия.
+Polybase и инструкция COPY обычно используются для загрузки данных в Azure синапсе Analytics из учетных записей хранения Azure для приема данных с высокой пропускной способностью. Если учетная запись хранения Azure, из которой загружаются данные, ограничивает доступ только на набор подсетей виртуальной сети, подключение при использовании Polybase и инструкция COPY в учетной записи хранения будут нарушены. Чтобы включить сценарии импорта и экспорта с использованием копирования и Polybase с помощью Azure синапсе Analytics и подключения к службе хранилища Azure, защищенной для виртуальной сети, выполните указанные ниже действия.
 
 #### <a name="prerequisites"></a>Предварительные требования
 
 - Установите Azure PowerShell, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/powershell/azure/install-az-ps).
 - При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо сначала выполнить обновление до учетной записи хранения общего назначения версии 2, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
-- Необходимо включить параметр **Разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения** в меню параметров **Брандмауэры и виртуальные сети** учетной записи службы хранилища Azure. Дополнительные сведения см. в [этом руководстве](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
+- Необходимо включить параметр **Разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения** в меню параметров **Брандмауэры и виртуальные сети** учетной записи службы хранилища Azure. Включение этой конфигурации позволит использовать Polybase и инструкцию COPY для подключения к учетной записи хранения с помощью надежной проверки подлинности, когда сетевой трафик остается в магистрали Azure. Дополнительные сведения см. в [этом руководстве](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
 
 > [!IMPORTANT]
 > Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Модуль AzureRM продолжит принимать исправления ошибок до 2020 декабря.  Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Дополнительные сведения о совместимости см. [в разделе Введение в новый модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
 
-#### <a name="steps"></a>Этапы
+#### <a name="steps"></a>Шаги
 
 1. В PowerShell **Зарегистрируйте сервер** , на котором размещена служба Azure синапсе, с Azure Active Directory (AAD):
 
@@ -280,7 +280,7 @@ PolyBase часто используют для загрузки данных в
 - [Конечные точки службы виртуальной сети Azure][vm-virtual-network-service-endpoints-overview-649d]
 - [Правила брандмауэра уровня сервера и базы данных][sql-db-firewall-rules-config-715d]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [С помощью PowerShell создайте конечную точку службы виртуальной сети, а затем правило виртуальной сети для базы данных SQL Azure.][sql-db-vnet-service-endpoint-rule-powershell-md-52d]
 - [Правила виртуальной сети: операции][rest-api-virtual-network-rules-operations-862r] с REST API

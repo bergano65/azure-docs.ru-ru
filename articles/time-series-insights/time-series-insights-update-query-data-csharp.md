@@ -11,19 +11,19 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 04/14/2020
 ms.custom: seodec18
-ms.openlocfilehash: 902dfc924fdac28c0aed46745604c5d4d19f084b
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 158715a312af5d368b6f1125a7f1acc36dbefe51
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87920336"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88207508"
 ---
 # <a name="query-data-from-the-azure-time-series-insights-gen2-environment-using-c"></a>Запрос данных из среды Gen2 "аналитика временных рядов Azure" с помощью C #
 
 В этом примере на C# показано, как запрашивать данные из [API-интерфейсов Gen2 доступа к данным](https://docs.microsoft.com/rest/api/time-series-insights/preview) в средах Gen2 "аналитика временных рядов Azure".
 
 > [!TIP]
-> Просмотрите примеры кода C# Gen2 по адресу [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-preview-sample) .
+> Просмотрите примеры кода C# Gen2 по адресу [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/gen1-sample/csharp-tsi-gen1-sample) .
 
 ## <a name="summary"></a>Сводка
 
@@ -50,7 +50,7 @@ ms.locfileid: "87920336"
 
 1. [Подготавливает среду Gen2 "аналитика временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-how-to-manage#create-the-environment) ".
 1. Настройте среду службы Аналитики временных рядов Azure для Azure Active Directory, как описано в разделе [Проверка подлинности и авторизация](time-series-insights-authentication-and-authorization.md). 
-1. Запустите [GenerateCode.bat](https://github.com/Azure-Samples/Azure-Time-Series-Insights/blob/master/csharp-tsi-preview-sample/DataPlaneClient/GenerateCode.bat) , как указано в [readme.md](https://github.com/Azure-Samples/Azure-Time-Series-Insights/blob/master/csharp-tsi-preview-sample/DataPlaneClient/Readme.md) , чтобы создать клиентские зависимости Gen2 временных рядов Azure.
+1. Запустите [GenerateCode.bat](https://github.com/Azure-Samples/Azure-Time-Series-Insights/blob/master/gen2-sample/csharp-tsi-gen2-sample/DataPlaneClient/GenerateCode.bat) , как указано в [readme.md](https://github.com/Azure-Samples/Azure-Time-Series-Insights/blob/master/gen2-sample/csharp-tsi-gen2-sample/DataPlaneClient/Readme.md) , чтобы создать клиентские зависимости Gen2 временных рядов Azure.
 1. Откройте решение `TSIPreviewDataPlaneclient.sln` и задайте `DataPlaneClientSampleApp` в качестве проекта по умолчанию в Visual Studio.
 1. Установите необходимые зависимости проекта, выполнив действия, описанные [ниже](#project-dependencies), и скомпилируйте пример в исполняемый файл `.exe`.
 1. Запустите файл `.exe`, дважды щелкнув его.
@@ -61,7 +61,7 @@ ms.locfileid: "87920336"
 
 * [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) — версия 16.4.2 или более поздняя
 
-В примере кода имеется несколько обязательных зависимостей, которые можно просмотреть в файле [packages.config](https://github.com/Azure-Samples/Azure-Time-Series-Insights/blob/master/csharp-tsi-preview-sample/DataPlaneClientSampleApp/packages.config).
+В примере кода имеется несколько обязательных зависимостей, которые можно просмотреть в файле [packages.config](https://github.com/Azure-Samples/Azure-Time-Series-Insights/blob/master/gen2-sample/csharp-tsi-gen2-sample/DataPlaneClientSampleApp/packages.config).
 
 Скачайте пакеты в Visual Studio 2019, выбрав параметр **Сборка** > **Собрать решение**. 
 

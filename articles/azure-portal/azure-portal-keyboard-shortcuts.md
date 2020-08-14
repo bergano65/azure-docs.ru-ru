@@ -15,12 +15,12 @@ ms.workload: na
 ms.date: 12/20/2019
 ms.author: mblythe
 ms.custom: accessibility
-ms.openlocfilehash: e42dfc82fa0db028894dd77225621e867d79dac6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7d9bc6365070c0aec96def2f55758204925fe7ba
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75641339"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88205945"
 ---
 # <a name="keyboard-shortcuts-in-the-azure-portal"></a>Сочетания клавиш на портале Azure
 
@@ -55,5 +55,5 @@ ms.locfileid: "75641339"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Включение режима высокой контрастности или изменение темы](azure-portal-change-theme-high-contrast.md)
-- [Поддерживаемые браузеры и устройства](../azure-preview-portal-supported-browsers-devices.md)
+- [Включение режима высокой контрастности или изменение темы](set-preferences.md#choose-a-theme-or-enable-high-contrast)
+- [Поддерживаемые браузеры и устройства](azure-portal-supported-browsers-devices.md)

@@ -5,12 +5,12 @@ ms.date: 01/28/2020
 ms.topic: conceptual
 description: Найдите ответы на некоторые распространенные вопросы о Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 27e834e71f9e5cfdf3d72fb3b221c24edecab4e8
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 739cfdb4f930d384e180ffd0f3ce2311cd41c70a
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86258304"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88207991"
 ---
 # <a name="frequently-asked-questions-about-azure-dev-spaces"></a>Часто задаваемые вопросы о Azure Dev Spaces
 
@@ -37,9 +37,6 @@ Azure Dev Spaces поддерживает все [текущие версии Ku
 * Helm диаграмма должна поддерживать передачу части или всего тега Image в виде значения из Values *. YAML*.
 * Если вы изменяете что-то с помощью входящего, можно также обновить диаграмму Helm, чтобы использовать входящее решение, предоставляемое Azure Dev Spaces.
 * Если вы хотите использовать [возможности маршрутизации, предоставляемые Azure dev Spaces][dev-spaces-routing], все службы для отдельного проекта должны быть размещены в одном пространстве имен Kubernetes и должны быть развернуты с простым именем, например *Service-a*. В стандартных диаграммах Helm это обновление именования можно выполнить, указав значение для свойства *фуллнамеоверриде* .
-
-Чтобы сравнить собственную диаграмму Dockerfile или Helm с существующей версией, которая работает с Azure Dev Spaces, ознакомьтесь с файлами, созданными в [кратком руководстве][quickstart-cli].
-
 
 ## <a name="can-i-modify-the-files-generated-by-azure-dev-spaces"></a>Можно ли изменить файлы, созданные Azure Dev Spaces?
 
@@ -115,7 +112,6 @@ Azure Dev Spaces поддерживает все [текущие версии Ku
 [ingress-https-traefik]: how-to/ingress-https-traefik.md#configure-the-traefik-ingress-controller-to-use-https
 [istio]: https://istio.io/
 [linkerd]: https://linkerd.io/
-[quickstart-cli]: quickstart-cli.md
 [supported-regions]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service
 [vs-code-multi-root-workspaces]: https://code.visualstudio.com/docs/editor/multi-root-workspaces
 [windows-containers]: how-to/run-dev-spaces-windows-containers.md

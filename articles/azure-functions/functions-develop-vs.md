@@ -1,15 +1,15 @@
 ---
 title: Разработка Функций Azure с помощью Visual Studio
 description: Узнайте, как разрабатывать и тестировать функции Azure с помощью инструментов функций Azure для Visual Studio 2019.
-ms.custom: vs-azure
+ms.custom: vs-azure, devx-track-csharp
 ms.topic: conceptual
 ms.date: 06/10/2020
-ms.openlocfilehash: 0df65c4cdbf40b49bc265f4accafde67f41dafb7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 81de0af335e0a233ac568921b298c9bb168eb174
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84731073"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88209981"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Разработка Функций Azure с помощью Visual Studio  
 
@@ -65,7 +65,7 @@ Visual Studio предоставляет следующие преимущест
 > [!NOTE]  
 > В Visual Studio 2019 и более поздних версиях расширение "средства функций Azure" обновляется как часть Visual Studio.  
 
-## <a name="create-an-azure-functions-project"></a>Создание проекта Функций Azure
+## <a name="create-an-azure-functions-project"></a>Создание проекта Функций Azure
 
 [!INCLUDE [Create a project using the Azure Functions](../../includes/functions-vstools-create.md)]
 
@@ -235,7 +235,7 @@ For an example of how to test a queue triggered function, see the [queue trigger
 
 Дополнительные сведения см. в статье [Мониторинг Функций Azure](functions-monitoring.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о Azure Functions Core Tools см. в разделе [Работа с Azure functions Core Tools](functions-run-local.md).
 

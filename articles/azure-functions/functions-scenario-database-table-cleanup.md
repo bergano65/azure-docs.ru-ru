@@ -3,13 +3,14 @@ title: Использование функций Azure для выполнени
 description: С помощью Функций Azure можно запланировать задачу, которая периодически подключается к базе данных SQL Azure для очистки строк.
 ms.assetid: 076f5f95-f8d2-42c7-b7fd-6798856ba0bb
 ms.topic: conceptual
+ms.custom: devx-track-csharp
 ms.date: 10/02/2019
-ms.openlocfilehash: 29e90838d91de69af43ae9cf8ec0d99b534f66be
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 0b5e255d7d108eb063ece4e5489a8762261a0bed
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86506083"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88207260"
 ---
 # <a name="use-azure-functions-to-connect-to-an-azure-sql-database"></a>Подключение к базе данных SQL Azure с помощью Функций Azure
 
@@ -122,7 +123,7 @@ ms.locfileid: "86506083"
 
 Если вы планируете [опубликовать эту функцию](functions-develop-vs.md#publish-to-azure), не забудьте указать для атрибута `TimerTrigger` другое [расписание в формате выражения Cron](functions-bindings-timer.md#ncrontab-expressions) (выполнение каждые 15 секунд).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как использовать Функции с Logic Apps для интеграции с другими службами.
 

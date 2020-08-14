@@ -6,15 +6,16 @@ author: avanigupta
 ms.assetid: ''
 ms.service: azure-app-configuration
 ms.devlang: csharp
+ms.custom: devx-track-dotnet
 ms.topic: how-to
 ms.date: 04/27/2020
 ms.author: avgupta
-ms.openlocfilehash: b06d38d69f331df2f48637c6cdee527090955a47
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: a3c1699dd4b7b828c7dc652f14f431878f785061
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87830141"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88207143"
 ---
 # <a name="back-up-app-configuration-stores-automatically"></a>Автоматическое резервное копирование хранилищ конфигурации приложений
 
@@ -22,7 +23,7 @@ ms.locfileid: "87830141"
 
 После настройки автоматического резервного копирования Конфигурация приложения будет публиковать события в службе "Сетка событий Azure" для любых изменений, внесенных в значения ключа в хранилище конфигураций. Служба "Сетка событий" поддерживает различные службы Azure, от которых пользователи могут подписываться на события, генерируемые при создании, обновлении или удалении значений ключей.
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 
 В этой статье вы будете использовать хранилище очередей Azure для получения событий из службы "Сетка событий" и использования триггера таймера для функций Azure для обработки событий в очереди в пакетах. 
 
@@ -254,7 +255,7 @@ az appconfig kv show --name $secondaryAppConfigName --key Foo
 az group delete --name $resourceGroupName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как настроить автоматическую архивацию значений ключей, Узнайте больше о том, как можно повысить геоустойчивость приложения.
 

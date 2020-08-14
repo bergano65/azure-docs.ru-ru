@@ -4,13 +4,13 @@ description: Создавайте независимые от сервера ф�
 ms.assetid: 0b609bc0-c264-4092-8e3e-0784dcc23b5d
 ms.topic: how-to
 ms.date: 04/24/2020
-ms.custom: mvc
-ms.openlocfilehash: 5ae282750580ed5b4e53e78c52ca285e40365fd3
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.custom: devx-track-csharp, mvc
+ms.openlocfilehash: 6c16aad9bb04ffb4cb4df52799d63f7ec2e19725
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83122042"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88210851"
 ---
 # <a name="add-messages-to-an-azure-storage-queue-using-functions"></a>Добавление сообщений в очередь службы хранилища Azure с помощью Функций
 

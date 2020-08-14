@@ -3,12 +3,12 @@ title: Работа с большими наборами данных
 description: Узнайте, как получать, форматировать, разбивать на страницы и пропускать записи в больших наборах данных в Azure Resource Graph.
 ms.date: 08/10/2020
 ms.topic: conceptual
-ms.openlocfilehash: 77ec7cc342672becddcbca7e6173eb1968519f02
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 2de62af5f7a59837876ed3348bc14de232fdee38
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056412"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88206353"
 ---
 # <a name="working-with-large-azure-resource-data-sets"></a>Работа с большими наборами данных ресурса Azure
 
@@ -33,7 +33,7 @@ az graph query -q "Resources | project name | order by name asc" --first 200 --o
 Search-AzGraph -Query "Resources | project name | order by name asc" -First 200
 ```
 
-В [REST API](/rest/api/azureresourcegraph/resourcegraph(2018-09-01-preview)/resources/resources) элемент управления является **$top** и частью **QueryRequestOptions**.
+В [REST API](/rest/api/azureresourcegraph/resourcegraph(2019-04-01)/resources/resources) элемент управления является **$top** и частью **QueryRequestOptions**.
 
 Элемент управления, который является _наиболее строгим_, победит. Например, если ваш запрос использует операторы **top** или **limit** и приводит к большему количеству записей, чем **First**, максимальное количество возвращаемых записей будет равно **First**. Аналогичным образом, если **top** или **limit** меньше, чем **First**, возвращенный набор записей будет меньшим значением, настроенным с помощью **top** или **limit**.
 
@@ -59,11 +59,11 @@ az graph query -q "Resources | project name | order by name asc" --skip 10 --out
 Search-AzGraph -Query "Resources | project name | order by name asc" -Skip 10
 ```
 
-В [REST API](/rest/api/azureresourcegraph/resourcegraph(2018-09-01-preview)/resources/resources) элемент управления является **$skip** и частью **QueryRequestOptions**.
+В [REST API](/rest/api/azureresourcegraph/resourcegraph(2019-04-01)/resources/resources) элемент управления является **$skip** и частью **QueryRequestOptions**.
 
 ## <a name="paging-results"></a>Разбиение результатов по страницам
 
-Если необходимо разбить результирующий набор на меньшие наборы записей для обработки или если он превышает максимально допустимое значение возвращаемых записей (_1000_), используйте разбиение на страницы. [REST API](/rest/api/azureresourcegraph/resourcegraph(2018-09-01-preview)/resources/resources) 
+Если необходимо разбить результирующий набор на меньшие наборы записей для обработки или если он превышает максимально допустимое значение возвращаемых записей (_1000_), используйте разбиение на страницы. [REST API](/rest/api/azureresourcegraph/resourcegraph(2019-04-01)/resources/resources) 
  **куериреспонсе** предоставляет значения, указывающие на то, что набор результатов был разбит: **ресулттрункатед** и **$skipToken**. **resultTruncated** является логическим значением, которое оповещает потребителя, если существуют дополнительные записи, которые не возвращаются в ответе. Это условие также можно определить, когда свойство **count** меньше, чем свойство **totalRecords**. **totalRecords** определяет, сколько записей соответствует запросу.
 
  **ресулттрункатед** имеет **значение true** , если разбиение по страницам отключено или невозможно, так как ни один `id` столбец не существует, или если доступно меньше ресурсов, чем запрашивает запрос. Если **ресулттрункатед** имеет **значение true**, свойство **$skipToken** не задано.
@@ -81,7 +81,7 @@ Search-AzGraph -Query "Resources | project id, name | order by id asc" -First 10
 > [!IMPORTANT]
 > Запрос должен **проецировать** поле **id**, чтобы сработала нумерация страниц. Если оно отсутствует в запросе, ответ не будет содержать **$skipToken**.
 
-Пример см. в разделе [Запрос следующей страницы](/rest/api/azureresourcegraph/resourcegraph(2018-09-01-preview)/resources/resources#next-page-query) в документации REST API.
+Пример см. в разделе [Запрос следующей страницы](/rest/api/azureresourcegraph/resourcegraph(2019-04-01)/resources/resources#next-page-query) в документации REST API.
 
 ## <a name="formatting-results"></a>Результаты форматирования
 

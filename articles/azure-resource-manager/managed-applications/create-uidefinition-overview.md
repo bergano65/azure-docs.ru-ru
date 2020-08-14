@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 07/14/2020
 ms.author: tomfitz
-ms.openlocfilehash: 4ee489e8b596adf0767856e3358c9bdcb17fbb6a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0e2aee194d3c97655dd4ec5aaeea46fb607c4c5e
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87004377"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88210961"
 ---
 # <a name="createuidefinitionjson-for-azure-managed-applications-create-experience"></a>Использование файла CreateUiDefinition.json для создания управляемого приложения Azure
 
@@ -39,7 +39,7 @@ CreateUiDefinition всегда содержит три свойства:
 
 * handler;
 * version
-* параметры
+* parameters
 
 Обработчик всегда должен иметь значение `Microsoft.Azure.CreateUIDef` , а последняя поддерживаемая версия — `0.1.2-preview` .
 
@@ -49,7 +49,7 @@ CreateUiDefinition всегда содержит три свойства:
 
 С помощью редактора JSON можно создать createUiDefinition, а затем протестировать его в [песочнице createUiDefinition](https://portal.azure.com/?feature.customPortal=false&#blade/Microsoft_Azure_CreateUIDef/SandboxBlade) для предварительного просмотра. Дополнительные сведения о песочнице см. в статье [тестирование интерфейса портала для управляемых приложений Azure](test-createuidefinition.md).
 
-## <a name="basics"></a>Основы
+## <a name="basics"></a>Основные сведения
 
 Этап **основы** — это первый шаг, созданный при портал Azure синтаксического анализа файла. По умолчанию на этапе основ пользователи выбирают подписку, группу ресурсов и расположение для развертывания.
 
@@ -77,49 +77,56 @@ CreateUiDefinition всегда содержит три свойства:
 Элемент config указывается, когда необходимо переопределить поведение по умолчанию для основных шагов. В следующем примере показаны доступные свойства.
 
 ```json
-"config": {  
-    "basics": {  
-        "description": "Customized description with **markdown**, see [more](https://www.microsoft.com).",
-        "subscription": {
-            "constraints": {
-                "validations": [
-                    {
-                        "isValid": "[expression for checking]",
-                        "message": "Please select a valid subscription."
-                    },
+"config": {
+    "basics": {
+        "description": "Customized description with **markdown**, see [more](https://www.microsoft.com).",
+        "subscription": {
+            "constraints": {
+                "validations": [
                     {
-                        "permission": "<Resource Provider>/<Action>",
-                        "message": "Must have correct permission to complete this step."
-                    }
-                ]
-            },
-            "resourceProviders": [ "<Resource Provider>" ]
-        },
-        "resourceGroup": {
-            "constraints": {
-                "validations": [
-                    {
-                        "isValid": "[expression for checking]",
-                        "message": "Please select a valid resource group."
-                    }
-                ]
-            },
-            "allowExisting": true
-        },
-        "location": {  
-            "label": "Custom label for location",  
-            "toolTip": "provide a useful tooltip",  
-            "resourceTypes": [ "Microsoft.Compute/virtualMachines" ],
-            "allowedValues": [ "eastus", "westus2" ],  
-            "visible": true  
-        }  
-    }  
-},  
+                        "isValid": "[expression for checking]",
+                        "message": "Please select a valid subscription."
+                    },
+                    {
+                        "permission": "<Resource Provider>/<Action>",
+                        "message": "Must have correct permission to complete this step."
+                    }
+                ]
+            },
+            "resourceProviders": [
+                "<Resource Provider>"
+            ]
+        },
+        "resourceGroup": {
+            "constraints": {
+                "validations": [
+                    {
+                        "isValid": "[expression for checking]",
+                        "message": "Please select a valid resource group."
+                    }
+                ]
+            },
+            "allowExisting": true
+        },
+        "location": {
+            "label": "Custom label for location",
+            "toolTip": "provide a useful tooltip",
+            "resourceTypes": [
+                "Microsoft.Compute/virtualMachines"
+            ],
+            "allowedValues": [
+                "eastus",
+                "westus2"
+            ],
+            "visible": true
+        }
+    }
+},
 ```
 
 Для `description` Укажите строку с поддержкой Markdown, которая описывает ресурс. Поддерживается многострочный формат и ссылки.
 
-Для `location` укажите свойства элемента управления расположением, который необходимо переопределить. Все свойства, которые не переопределены, устанавливаются в значения по умолчанию. `resourceTypes`принимает массив строк, содержащих полные имена типов ресурсов. Параметры расположения ограничены только регионами, которые поддерживают типы ресурсов.  `allowedValues`   принимает массив строк региона. В раскрывающемся списке отображаются только регионы.Можно задать `allowedValues`   и, и  `resourceTypes` . Результатом является пересечение обоих списков. Наконец, `visible` свойство можно использовать для условного или полного отключения раскрывающегося списка расположение.  
+Для `location` укажите свойства элемента управления расположением, который необходимо переопределить. Все свойства, которые не переопределены, устанавливаются в значения по умолчанию. `resourceTypes` принимает массив строк, содержащих полные имена типов ресурсов. Параметры расположения ограничены только регионами, которые поддерживают типы ресурсов.  `allowedValues`   принимает массив строк региона. В раскрывающемся списке отображаются только регионы.Можно задать `allowedValues`   и, и  `resourceTypes` . Результатом является пересечение обоих списков. Наконец, `visible` свойство можно использовать для условного или полного отключения раскрывающегося списка расположение.  
 
 `subscription`Элементы и `resourceGroup` позволяют указать дополнительные проверки. Синтаксис для указания проверок аналогичен настраиваемой проверке для [текстового поля](microsoft-common-textbox.md). Также можно указать `permission` проверки подписки или группы ресурсов.  
 
@@ -127,7 +134,7 @@ CreateUiDefinition всегда содержит три свойства:
 
 Элемент управления "Группа ресурсов" имеет параметр для `allowExisting` . Когда `true` пользователи могут выбрать группы ресурсов, у которых уже есть ресурсы. Этот флаг наиболее применим к шаблонам решений, где поведение по умолчанию требует от пользователя выбрать новую или пустую группу ресурсов. В большинстве случаев указание этого свойства не требуется.  
 
-## <a name="steps"></a>Этапы
+## <a name="steps"></a>Шаги
 
 Свойство шаги содержит ноль или более дополнительных шагов, отображаемых после основ. Каждый шаг содержит один или несколько элементов. Вы можете добавить действия для каждой роли или уровня развертываемого приложения. Например, добавьте шаг для входных данных главного узла и шаг для рабочих узлов в кластере.
 
@@ -161,7 +168,7 @@ CreateUiDefinition всегда содержит три свойства:
 
 ## <a name="resource-types"></a>Типы ресурсов
 
-Чтобы отфильтровать доступные расположения только для тех мест, которые поддерживают типы ресурсов для развертывания, укажите массив типов ресурсов. При предоставлении более одного типа ресурсов возвращаются только те расположения, которые поддерживают все типы ресурсов. Это свойство является необязательным.
+Чтобы отфильтровать доступные расположения только для тех мест, которые поддерживают типы ресурсов для развертывания, укажите массив типов ресурсов. При предоставлении более одного типа ресурсов возвращаются только те расположения, которые поддерживают все типы ресурсов. Это необязательное свойство.
 
 ```json
 {
@@ -178,7 +185,7 @@ CreateUiDefinition всегда содержит три свойства:
 
 CreateUiDefinition предоставляет [функции](create-uidefinition-functions.md) для работы с входными и выходными элементами элементов, а также такими функциями, как условия. Эти функции похожи как в синтаксисе, так и в функциональности для Azure Resource Manager функций шаблонов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Файл createUiDefinition.json имеет простую схему. Его реальные возможности основаны на поддерживаемых элементах и функциях. Эти элементы более подробно описаны здесь:
 

@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 08/05/2020
-ms.openlocfilehash: 4d8a38666991760fbb133e617984ba23788034ca
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 4a8a2455ea3e5889293cb8285f36699942a46437
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87910397"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88209340"
 ---
 # <a name="quickstart-create-a-search-index-using-the-microsoftazuresearch-v10-client-library"></a>Краткое руководство. Создание индекса поиска с помощью клиентской библиотеки Microsoft. Azure. Search V10
 
@@ -106,9 +106,9 @@ ms.locfileid: "87910397"
 
 1. Добавьте в проект два пустых определения классов: Address.Methods.cs и Hotel.Methods.cs.
 
-1. В файле Address.Methods.cs замените содержимое по умолчанию [в строках 1–25](https://github.com/Azure-Samples/azure-search-dotnet-samples/blob/master/Quickstart/AzureSearchQuickstart/Address.Methods.cs/#L1-L25) следующим кодом.
+1. В файле Address.Methods.cs замените содержимое по умолчанию [в строках 1–25](https://github.com/Azure-Samples/azure-search-dotnet-samples/blob/master/quickstart-v10/AzureSearchQuickstart/Address.Methods.cs#L1-L25) следующим кодом.
 
-1. Из файла Hotel.Methods.cs скопируйте [строки 1–68](https://github.com/Azure-Samples/azure-search-dotnet-samples/blob/master/Quickstart/AzureSearchQuickstart/Hotel.Methods.cs/#L1-L68).
+1. Из файла Hotel.Methods.cs скопируйте [строки 1–68](https://github.com/Azure-Samples/azure-search-dotnet-samples/blob/master/quickstart-v10/AzureSearchQuickstart/Hotel.Methods.cs#L1-L68).
 
 ## <a name="1---create-index"></a>1\. Создание индекса
 
@@ -552,7 +552,7 @@ ms.locfileid: "87910397"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы работаете в своей подписке, по окончании проекта рекомендуем решить, нужны ли вам созданные ресурсы. Работающие ресурсы могут означать лишние затраты. Можно удалить отдельные ресурсы или удалить группу ресурсов, что позволит удалить весь набор ресурсов.
+Если вы работаете в своей подписке, по окончании проекта рекомендуем решить, нужны ли вам созданные ресурсы. За работу ресурсов может взиматься плата. Можно удалить отдельные ресурсы или удалить группу ресурсов, что позволит удалить весь набор ресурсов.
 
 Просматривать ресурсы и управлять ими можно на портале с помощью ссылок **Все ресурсы** или **Группы ресурсов** на панели навигации слева.
 

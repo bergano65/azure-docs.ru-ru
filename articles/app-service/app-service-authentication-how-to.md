@@ -4,12 +4,12 @@ description: Научитесь настраивать функцию прове
 ms.topic: article
 ms.date: 07/08/2020
 ms.custom: seodec18
-ms.openlocfilehash: d69a75092f4ede5d5467357a7ac254be6e7c379b
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 52213999ae0ec9f6891c8ec10ab65471926e87d2
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88078399"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88208032"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -298,6 +298,9 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
     2.  Значение `isAuthFromFile` "true"
     3.  Задайте `authFilePath` в качестве имени файла (например, "auth.js").
 
+> [!NOTE]
+> Формат `authFilePath` различается для разных платформ. В Windows поддерживаются как относительные, так и абсолютные пути. Рекомендуется использовать относительный вариант. В Linux в настоящее время поддерживаются только абсолютные пути, поэтому значение параметра должно быть "/Хоме/Сите/ввврут/auth.json" или аналогичным образом.
+
 После внесения этого обновления конфигурации содержимое файла будет использоваться для определения поведения проверки подлинности и авторизации службы приложений для этого сайта. Если вы хотите вернуться к Azure Resource Managerной конфигурации, это можно сделать, задав значение `isAuthFromFile` "false".
 
 ### <a name="configuration-file-reference"></a>Ссылка на файл конфигурации
@@ -529,7 +532,7 @@ az webapp auth update --name <my_app_name> \
 
 Эту команду можно выполнить в [Azure Cloud Shell](../cloud-shell/overview.md), выбрав **Попробовать** в предыдущем примере кода. Также можно использовать [Azure CLI локально](https://docs.microsoft.com/cli/azure/install-azure-cli) для выполнения этой команды после выполнения команды [az login](https://docs.microsoft.com/cli/azure/reference-index#az-login) для входа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Руководство. Сквозная аутентификация и авторизация пользователей](tutorial-auth-aad.md)

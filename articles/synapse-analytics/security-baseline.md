@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 2cd42d8d4ba1ecabc1b87942536e2ef9a9017b22
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 7f05e4fb0443107370f9182706bd35b45771e0f2
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87501956"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88210897"
 ---
 # <a name="azure-security-baseline-for-synapse-analytics"></a>Базовые показатели безопасности Azure для синапсе Analytics
 
@@ -144,9 +144,9 @@ ms.locfileid: "87501956"
 
 * [Создание схемы Azure](https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="110-document-traffic-configuration-rules"></a>1.10. Документация по правилам конфигурации трафика
 
@@ -184,7 +184,7 @@ ms.locfileid: "87501956"
 
 * [Настройка синхронизации времени для ресурсов вычислений Azure](https://docs.microsoft.com/azure/virtual-machines/windows/time-sync)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -332,7 +332,7 @@ ms.locfileid: "87501956"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="32-change-default-passwords-where-applicable"></a>3.2. Изменение паролей по умолчанию, где применимо
 
@@ -344,7 +344,7 @@ ms.locfileid: "87501956"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3.3. Применение выделенных административных учетных записей
 
@@ -358,7 +358,7 @@ ms.locfileid: "87501956"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="34-use-azure-active-directory-single-sign-on-sso"></a>3,4. Использование единого входа Azure Active Directory (SSO)
 
@@ -372,7 +372,7 @@ ms.locfileid: "87501956"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: используйте многофакторную проверку подлинности для всех Azure Active Directory доступа
 
@@ -398,7 +398,7 @@ ms.locfileid: "87501956"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="37-log-and-alert-on-suspicious-activities-from-administrative-accounts"></a>3,7: журналы и оповещения о подозрительных действиях учетных записей администраторов
 
@@ -562,7 +562,7 @@ ms.locfileid: "87501956"
 
 * [Общие сведения о шифровании SQL Azure при передаче](https://docs.microsoft.com/azure/sql-database/sql-database-security-overview#information-protection-and-encryption)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**. Microsoft
 
@@ -578,7 +578,7 @@ ms.locfileid: "87501956"
 
 * [Общие сведения о динамическом маскировании данных для Azure синапсе SQL](https://docs.microsoft.com/azure/sql-database/sql-database-dynamic-data-masking-get-started)
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -594,7 +594,7 @@ ms.locfileid: "87501956"
 
 * [Общие сведения о авторизации и проверке подлинности в SQL Azure](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage)
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -620,7 +620,7 @@ ms.locfileid: "87501956"
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Совмещаемая блокировка
+**Ответственность**: Совмещаемая блокировка
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9. Включение в журнал и создание оповещений по изменениям критических ресурсов Azure
 
@@ -632,7 +632,7 @@ ms.locfileid: "87501956"
 
 * [Создание оповещений для Azure SQL синапсе](https://docs.microsoft.com/azure/azure-sql/database/alerts-insights-configure-portal)
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -650,7 +650,7 @@ ms.locfileid: "87501956"
 
 * [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-vulnerability-assessment-recommendations)
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -690,7 +690,7 @@ ms.locfileid: "87501956"
 
 * [Общие сведения о &amp; классификации обнаружения данных](https://docs.microsoft.com/azure/azure-sql/database/data-discovery-and-classification-overview)
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -710,9 +710,9 @@ ms.locfileid: "87501956"
 
 * [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="62-maintain-asset-metadata"></a>6.2. Ведение метаданных активов
 
@@ -734,17 +734,17 @@ ms.locfileid: "87501956"
 
 * [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="64-define-and-maintain-inventory-of-approved-azure-resources"></a>6,4: определение и обслуживание инвентаризации утвержденных ресурсов Azure
 
 **Руководство**. Определите список утвержденных ресурсов Azure, связанных с ПУЛОМ синапсе SQL.
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
 
@@ -874,9 +874,9 @@ ms.locfileid: "87501956"
 
 * [Сведения о действии Политик Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="74-maintain-secure-operating-system-configurations"></a>7.4. Сохранение безопасных конфигураций для операционных систем
 
@@ -896,7 +896,7 @@ ms.locfileid: "87501956"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7.6. Безопасное хранение пользовательских образов операционной системы
 
@@ -912,7 +912,7 @@ ms.locfileid: "87501956"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="78-deploy-configuration-management-tools-for-operating-systems"></a>7,8: развертывание средств управления конфигурацией для операционных систем
 
@@ -972,7 +972,7 @@ ms.locfileid: "87501956"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
@@ -996,7 +996,7 @@ ms.locfileid: "87501956"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="83-ensure-anti-malware-software-and-signatures-are-updated"></a>8.3. Своевременное обновление программного обеспечения для защиты от вредоносных программ и подписей
 
@@ -1030,7 +1030,7 @@ ms.locfileid: "87501956"
 
 * [Резервное копирование ключей Azure Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Совмещаемая блокировка
 
@@ -1040,13 +1040,13 @@ ms.locfileid: "87501956"
 
 * [Восстановление ключей Azure Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
-* [Резервное копирование и восстановление в пуле SQL Azure синапсе](https://docs.microsoft.coms/azure/synapse-analytics/sql-data-warehouse/backup-and-restore)
+* [Резервное копирование и восстановление в пуле SQL Azure синапсе](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/backup-and-restore)
 
 * [Восстановление существующего пула SQL](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-restore-active-paused-dw)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: Обеспечьте защиту резервных копий и ключей, управляемых клиентом
 
@@ -1126,7 +1126,7 @@ ms.locfileid: "87501956"
 
 * [Как настроить автоматизацию рабочего процесса и Logic Apps](https://docs.microsoft.com/azure/security-center/workflow-automation)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 

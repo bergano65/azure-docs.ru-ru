@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 06/16/2020
 ms.custom: sfrev
-ms.openlocfilehash: 1dcb2095416b74eb8dd805d811ecc7142a6bafb8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 005a04833b95e893758fda768113801c5a4f6f66
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091629"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88207466"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 
@@ -23,7 +23,7 @@ ms.locfileid: "87091629"
 
 Чтобы создавать и запускать [приложения Service Fabric][1] на компьютере для разработки Windows, установите среду выполнения Service Fabric, пакет SDK и инструменты. Также необходимо [включить выполнение сценариев Windows PowerShell](#enable-powershell-script-execution) , включенных в пакет SDK.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="supported-operating-system-versions"></a>Поддерживаемые версии операционных систем
 
@@ -68,8 +68,8 @@ ms.locfileid: "87091629"
 
 Текущие версии:
 
-* Service Fabric SDK и средства 4.1.428
-* 7.1.428 среды выполнения Service Fabric
+* Service Fabric SDK и средства 4.1.456
+* 7.1.456 среды выполнения Service Fabric
 
 Список поддерживаемых версий см. в статье [Поддерживаемые версии Service Fabric](service-fabric-versions.md).
 
@@ -88,7 +88,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
 
 [Service Fabric — это оркестратор контейнеров](service-fabric-containers-overview.md) для развертывания микрослужб в кластере компьютеров. Для запуска приложений контейнера Windows на локальном кластере разработки необходимо сначала установить Docker для Windows. Скачайте [Docker CE для Windows (стабильная версия)](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description). После установки и запуска Docker щелкните правой кнопкой мыши значок в области уведомлений и выберите **Switch to Windows containers** (Переключиться на контейнеры Windows). Это необходимо для запуска образов Docker на базе Windows.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Среда разработки настроена, и вы готовы к созданию и запуску собственных приложений.
 

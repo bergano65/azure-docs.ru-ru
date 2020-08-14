@@ -5,12 +5,12 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 description: Узнайте, как работает настройка кластера Службы Azure Kubernetes для Azure Dev Spaces
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: 60f6c466e7c016ccd07e37b2f0d1ce9989fb8f9f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 41b955fac7abcc700d73d8ace601f80982b2253d
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83995893"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88207951"
 ---
 # <a name="how-setting-up-a-cluster-for-azure-dev-spaces-works"></a>Как работает настройка кластера для Azure Dev Spaces
 
@@ -19,8 +19,6 @@ Azure Dev Spaces предоставляет несколько способов
 ## <a name="prepare-your-aks-cluster"></a>Подготовка кластера AKS
 
 Чтобы подготовить кластер AKS для Dev Spaces, такой кластер AKS должен находиться в [поддерживаемом для Azure Dev Spaces регионе][supported-regions] и работать под управлением Kubernetes 1.10.3 или более поздней версии. Вы можете включить Azure Dev Spaces из Azure CLI, выполнив `az aks use-dev-spaces` .
-
-Пример настройки кластера AKS для Dev Spaces см. в [кратком руководстве по групповой разработке][quickstart-team].
 
 При включении Azure Dev Spaces в кластере AKS устанавливается контроллер для кластера. Этот контроллер находится за пределами кластера AKS. Он управляет поведением средств на стороне клиента и их взаимодействием с кластером AKS. После включения контроллера вы сможете взаимодействовать с ним, используя клиентские средства.
 
@@ -92,10 +90,8 @@ Azure Dev Spaces предоставляет несколько способов
 
 Дополнительные сведения об использовании клиентских средств для подготовки и выполнения кода в пространстве разработки см. в статье [Как готовится проект для Azure Dev Spaces][how-it-works-prep].
 
-См. сведения о том, как [начать работу с Azure Dev Spaces для командной разработки][quickstart-team].
 
 [how-it-works-prep]: how-dev-spaces-works-prep.md
 [how-it-works-routing]: how-dev-spaces-works-routing.md
 [how-it-works-up]: how-dev-spaces-works-up.md
 [supported-regions]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service
-[quickstart-team]: quickstart-team-development.md

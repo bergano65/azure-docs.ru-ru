@@ -2,13 +2,14 @@
 title: Справочник разработчика C# по функциям Azure
 description: Узнайте, как разрабатывать Функции Azure с помощью C#.
 ms.topic: conceptual
+ms.custom: devx-track-csharp
 ms.date: 07/24/2020
-ms.openlocfilehash: 7c00dcd3648ef175d4e834fceef3444f7943e70b
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 23b0961c369c21f50d9a873678a1c910385e6a91
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288191"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88206210"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
 
@@ -138,7 +139,7 @@ public static class BindingExpressionsExample
 
 Цель этого файла — предоставить сведения контроллеру масштабирования, который будет использоваться для [принятия решений о масштабировании в плане потребления](functions-scale.md#how-the-consumption-and-premium-plans-work). По этой причине файл содержит только сведения о триггерах, но не о входных или выходных привязках.
 
-Создаваемый файл *function.json* содержит свойство `configurationSource`, которое указывает среде выполнения использовать атрибуты .NET для привязок, вместо конфигурации *function.json*. Приведем пример:
+Создаваемый файл *function.json* содержит свойство `configurationSource`, которое указывает среде выполнения использовать атрибуты .NET для привязок, вместо конфигурации *function.json*. Пример:
 
 ```json
 {
