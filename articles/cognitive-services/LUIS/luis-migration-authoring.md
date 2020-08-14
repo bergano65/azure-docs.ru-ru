@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
-ms.date: 06/17/2020
+ms.date: 08/13/2020
 ms.author: diberry
-ms.openlocfilehash: cc14f1cd60f048ba01060b9ebdbca434af6b9751
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: 390080fecefcc22decd8bec70d043b28311a725d
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86145626"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212632"
 ---
 # <a name="migrate-to-an-azure-resource-authoring-key"></a>Миграция в ключ создания ресурсов Azure
 
@@ -34,6 +34,7 @@ Language Understanding (LUIS) создание аутентификации из
 
 ## <a name="note-before-you-migrate"></a>Примечание перед миграцией
 
+* Вы должны переносить свой интерфейс разработки на **ноября, 2, 2020**. 
 * Миграция является односторонним процессом. После миграции вы не сможете вернуться.
 * Приложения будут автоматически перенесены вместе с вами, если вы являетесь владельцем приложения.
 * Владелец не может выбрать подмножество приложений для миграции, и процесс будет необратимым.
@@ -244,7 +245,7 @@ Language Understanding (LUIS) создание аутентификации из
 ![Ошибка, показывающая, что произошел сбой миграции для участников совместной работы](./media/migrate-authoring-key/migration-failed-for-collab-2.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь [с основными понятиями о создании и использовании ключей среды выполнения](luis-how-to-azure-subscription.md).
 * Узнайте, как [назначать ключи](luis-how-to-azure-subscription.md) и [добавлять участников](luis-how-to-collaborate.md).

@@ -3,14 +3,15 @@ title: Выражения и шаблоны привязок функций Azur
 description: Научитесь создавать различные выражения привязки функций Azure на основе общих шаблонов.
 author: craigshoemaker
 ms.topic: reference
+ms.custom: devx-track-csharp
 ms.date: 02/18/2019
 ms.author: cshoe
-ms.openlocfilehash: ca3e342d42e6baf2bc4caaed07dc196203d8a032
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b4e2b5afd7742791218394422d00ee8ee46cb23a
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85261075"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212611"
 ---
 # <a name="azure-functions-binding-expression-patterns"></a>Шаблоны выражений привязки функций Azure
 
@@ -25,7 +26,7 @@ ms.locfileid: "85261075"
 * [Метаданные триггера](#trigger-metadata)
 * [Полезные данные JSON](#json-payloads)
 * [Новый GUID](#create-guids)
-* [Текущая дата и время](#current-time)
+* [Текущие дата и время](#current-time)
 
 ## <a name="binding-expressions---app-settings"></a>Выражения привязки. Параметры приложения
 
@@ -132,7 +133,7 @@ public static void Run(
 
 ```
 
-Можно также создать выражения для частей имени файла. В следующем примере функция активируется только для имен файлов, соответствующих шаблону:`anyname-anyfile.csv`
+Можно также создать выражения для частей имени файла. В следующем примере функция активируется только для имен файлов, соответствующих шаблону: `anyname-anyfile.csv`
 
 ```json
 {

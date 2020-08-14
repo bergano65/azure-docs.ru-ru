@@ -3,12 +3,12 @@ title: Базовый план безопасности Azure для Azure DevTe
 description: Базовый план безопасности Azure для Azure DevTest Labs
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: 158ead7531b0b3da2e495e36e40e761961bea498
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: ed263ad80250531431840516f2764055c75abd50
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87761014"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212310"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Базовый план безопасности Azure для Azure DevTest Labs
 
@@ -629,8 +629,8 @@ DevTest Labs не имеет концепции паролей по умолча
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7.5. Безопасное хранение конфигурации ресурсов Azure
 **Руководство.** Используйте Azure DevOps для безопасного хранения и управления кодом, например пользовательскими политиками Azure, Azure Resource Manager шаблонами и скриптами настройки требуемого состояния. Чтобы получить доступ к ресурсам, которыми вы управляете в Azure DevOps, вы можете предоставить или отклонить разрешения для определенных пользователей, встроенных групп безопасности или групп, определенных в Azure Active Directory (Azure AD), если они интегрированы с Azure DevOps.
 
-- [Учебник по Azure Repos Git](/devops/repos/git/gitworkflow?view=azure-devops)
-- [О разрешениях и группах](/devops/organizations/security/about-permissions?view=azure-devops&tabs=preview-page)
+- [Учебник по Azure Repos Git](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow)
+- [О разрешениях и группах](https://docs.microsoft.com/azure/devops/organizations/security/about-permissions?view=azure-devops&tabs=preview-page)
 - [Интеграция между Azure DevTest Labs и рабочим процессом DevOps Azure](devtest-lab-dev-ops.md)
 
 **Мониторинг центра безопасности Azure:** Неприменимо
@@ -885,7 +885,7 @@ DevTest Labs не имеет концепции паролей по умолча
 
 **Ответственность:** Используемый
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 См. следующую статью:
 
 - [Оповещения системы безопасности для сред в Azure DevTest Labs](environment-security-alerts.md)

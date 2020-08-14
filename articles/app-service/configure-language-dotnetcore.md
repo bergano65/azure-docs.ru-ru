@@ -2,15 +2,16 @@
 title: Настройка ASP.NET Core приложений
 description: Узнайте, как настроить ASP.NET Core приложение в собственных экземплярах Windows или в предварительно созданном контейнере Linux в службе приложений Azure. В этой статье показаны наиболее распространенные задачи настройки.
 ms.devlang: dotnet
+ms.custom: devx-track-csharp
 ms.topic: article
 ms.date: 06/02/2020
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 77bff369e2af09921a2065a031166c017128f008
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: d6e85bad7705647164fb1010f6c782729e20596b
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080170"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88211910"
 ---
 # <a name="configure-an-aspnet-core-app-for-azure-app-service"></a>Настройка приложения ASP.NET Core для службы приложений Azure
 

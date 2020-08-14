@@ -9,28 +9,28 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: how-to
-ms.date: 03/20/2020
+ms.date: 08/13/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd060972e562759fcc1071f2c6549578bd3d4ed9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 58fc6726811ac01b585dd51b2086966f7a3f7c51
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87015720"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213593"
 ---
 # <a name="azure-active-directory-cmdlets-for-configuring-group-settings"></a>Настройка параметров групп с помощью командлетов Azure Active Directory
 
-Эта статья содержит инструкции по использованию командлетов PowerShell в Azure Active Directory (Azure AD) для создания и изменения групп. Это содержимое относится только к группам Office 365, также известным как единые группы.
+Эта статья содержит инструкции по использованию командлетов PowerShell в Azure Active Directory (Azure AD) для создания и изменения групп. Это содержимое применяется только к Microsoft 365 группам (иногда называемым группами Объединенных групп).
 
 > [!IMPORTANT]
 > Для доступа к некоторым параметрам требуется лицензия Azure Active Directory Premium P1. Дополнительные сведения см. [здесь](#template-settings).
 
 Дополнительные сведения о том, как запретить пользователям без прав администратора создавать группы безопасности, см  `Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False` . в разделе [Set-MSOLCompanySettings](https://docs.microsoft.com/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0).
 
-Параметры групп Office 365 настраиваются с помощью объектов Settings и SettingsTemplate. Изначально в каталоге не отображаются все объекты параметров, так как он настроен с параметрами по умолчанию. Чтобы изменить параметры по умолчанию, необходимо с помощью шаблона параметров создать объект параметров. Шаблоны параметров определены корпорацией Майкрософт. Поддерживается несколько разных шаблонов параметров. Чтобы настроить параметры группы Office 365 для каталога, используйте шаблон Group.Unified. Для настройки параметров отдельной группы Office 365 используйте шаблон Group.Unified.Guest. Этот шаблон используется для управления гостевым доступом к группе Office 365. 
+Параметры групп Microsoft 365 настраиваются с помощью объекта параметров и объекта SettingsTemplate. Изначально в каталоге не отображаются все объекты параметров, так как он настроен с параметрами по умолчанию. Чтобы изменить параметры по умолчанию, необходимо с помощью шаблона параметров создать объект параметров. Шаблоны параметров определены корпорацией Майкрософт. Поддерживается несколько разных шаблонов параметров. Чтобы настроить параметры группы Microsoft 365 для каталога, используйте шаблон с именем Group. Unified. Чтобы настроить параметры Microsoft 365 группы в одной группе, используйте шаблон с именем Group. Unified. Guest. Этот шаблон используется для управления гостевым доступом к группе Microsoft 365. 
 
 Командлеты являются частью модуля PowerShell версии 2 для Azure Active Directory. Дополнительные сведения о скачивании и установке модуля на компьютер см. в статье [PowerShell версии 2 для Azure Active Directory](https://docs.microsoft.com/powershell/azure/active-directory/overview). Вы можете установить выпуск версии 2 модуля [из коллекции PowerShell](https://www.powershellgallery.com/packages/AzureAD/).
 
@@ -53,7 +53,7 @@ ms.locfileid: "87015720"
    ```
    
 ## <a name="create-settings-at-the-directory-level"></a>Создание параметров на уровне каталога
-Далее приведены действия, необходимые для создания параметров на уровне каталога, применимые ко всем группам Office 365 в каталоге. Командлет Get-AzureADDirectorySettingTemplate доступен только в [модуле предварительной версии Azure AD PowerShell для Graph](https://www.powershellgallery.com/packages/AzureADPreview).
+Эти шаги создают параметры на уровне каталога, которые применяются ко всем Microsoft 365 группам в каталоге. Командлет Get-AzureADDirectorySettingTemplate доступен только в [модуле предварительной версии Azure AD PowerShell для Graph](https://www.powershellgallery.com/packages/AzureADPreview).
 
 1. В командлетах DirectorySettings необходимо указать идентификатор объекта SettingsTemplate, который вы хотите использовать. Если он вам неизвестен, выполните приведенный ниже командлет, чтобы отобразить все шаблоны параметров.
   
@@ -67,7 +67,7 @@ ms.locfileid: "87015720"
    Id                                   DisplayName         Description
    --                                   -----------         -----------
    62375ab9-6b52-47ed-826b-58e47e0e304b Group.Unified       ...
-   08d542b9-071f-4e16-94b0-74abb372e3d9 Group.Unified.Guest Settings for a specific Office 365 group
+   08d542b9-071f-4e16-94b0-74abb372e3d9 Group.Unified.Guest Settings for a specific Microsoft 365 group
    16933506-8a8d-4f0d-ad58-e1db05a5b929 Company.BuiltIn     Setting templates define the different settings that can be used for the associ...
    4bc7f740-180e-4586-adb6-38b2e9024e6b Application...
    898f1161-d651-43d1-805c-3b0b388a9fc2 Custom Policy       Settings ...
@@ -149,20 +149,20 @@ ms.locfileid: "87015720"
 
 | **Параметр** | **Описание** |
 | --- | --- |
-|  <ul><li>EnableGroupCreation<li>Тип: логический<li> значение по умолчанию: True |Флаг, указывающий, разрешено ли пользователям без прав администратора создание группы Office 365 в каталоге. Для этого параметра не требуется лицензия Azure Active Directory Premium P1.|
-|  <ul><li>GroupCreationAllowedGroupId<li>Тип: строка<li>Значение по умолчанию: "" |Идентификатор GUID группы безопасности, участникам которой разрешено создавать группы Office 365, даже когда EnableGroupCreation == false. |
+|  <ul><li>EnableGroupCreation<li>Тип: логический<li> значение по умолчанию: True |Флаг, указывающий, разрешено ли в каталоге создание Microsoft 365 групп пользователями, не являющимися администраторами. Для этого параметра не требуется лицензия Azure Active Directory Premium P1.|
+|  <ul><li>GroupCreationAllowedGroupId<li>Тип: строка<li>Значение по умолчанию: "" |Идентификатор GUID группы безопасности, членам которой разрешено создавать группы Microsoft 365, даже если EnableGroupCreation = = false. |
 |  <ul><li>UsageGuidelinesUrl<li>Тип: строка<li>Значение по умолчанию: "" |Ссылка на правила использования группы. |
 |  <ul><li>ClassificationDescriptions<li>Тип: строка<li>Значение по умолчанию: "" | Разделенный запятыми список описаний классификаций. Значение ClassificationDescriptions допустимо только в следующем формате:<br>$setting ["Классификатиондескриптионс"] = "Классификация: описание, классификация: описание"<br>где классификация соответствует записи в Классификатионлист.<br>Этот параметр не применяется, если Енаблемиплабелс = = true.|
 |  <ul><li>DefaultClassification<li>Тип: строка<li>Значение по умолчанию: "" | Классификация, которая должна использоваться по умолчанию для группы, если не была указана иная классификация.<br>Этот параметр не применяется, если Енаблемиплабелс = = true.|
-|  <ul><li>PrefixSuffixNamingRequirement<li>Тип: строка<li>Значение по умолчанию: "" | Строка с максимальной длиной 64 символа, которая определяет соглашение об именовании, настроенное для групп Office 365. Дополнительные сведения см. [в разделе принудительная политика именования для групп Office 365](groups-naming-policy.md). |
-| <ul><li>CustomBlockedWordsList<li>Тип: строка<li>Значение по умолчанию: "" | Строка фраз с разделителями-запятыми, которые не разрешено использовать в именах или псевдонимах групп. Дополнительные сведения см. [в разделе принудительная политика именования для групп Office 365](groups-naming-policy.md). |
+|  <ul><li>PrefixSuffixNamingRequirement<li>Тип: строка<li>Значение по умолчанию: "" | Строка, которая содержит максимальную длину 64 символов, определяющую соглашение об именовании, настроенное для групп Microsoft 365. Дополнительные сведения см. [в разделе принудительная политика именования для групп Microsoft 365](groups-naming-policy.md). |
+| <ul><li>CustomBlockedWordsList<li>Тип: строка<li>Значение по умолчанию: "" | Строка фраз с разделителями-запятыми, которые не разрешено использовать в именах или псевдонимах групп. Дополнительные сведения см. [в разделе принудительная политика именования для групп Microsoft 365](groups-naming-policy.md). |
 | <ul><li>EnableMSStandardBlockedWords<li>Тип: логический<li>Значение по умолчанию: false | Не использовать
 |  <ul><li>AllowGuestsToBeGroupOwner<li>Тип: логический<li> значение по умолчанию: False | Логическое значение, указывающее, может ли гостевой пользователь быть владельцем группы. |
-|  <ul><li>AllowGuestsToAccessGroups<li>Тип: логический<li> значение по умолчанию: True | Логическое значение, указывающее, может ли гостевой пользователь иметь доступ к содержимому групп Office 365.  Для этого параметра не требуется лицензия Azure Active Directory Premium P1.|
+|  <ul><li>AllowGuestsToAccessGroups<li>Тип: логический<li> значение по умолчанию: True | Логическое значение, указывающее, может ли гостевой пользователь получить доступ к содержимому группы Microsoft 365.  Для этого параметра не требуется лицензия Azure Active Directory Premium P1.|
 |  <ul><li>GuestUsageGuidelinesUrl<li>Тип: строка<li>Значение по умолчанию: "" | URL-адрес ссылки на правила использования гостя. |
 |  <ul><li>AllowToAddGuests<li>Тип: логический<li> значение по умолчанию: True | Логическое значение, указывающее, разрешено ли добавлять гостей в этот каталог. <br>Этот параметр может быть переопределен и доступен только для чтения, если *енаблемиплабелс* имеет значение *true* , а гостевая политика связана с меткой конфиденциальности, назначенной группе.<br>Если для параметра Алловтоаддгуестс задано значение false на уровне Организации, то любой параметр Алловтоаддгуестс на уровне группы игнорируется. Если вы хотите включить гостевой доступ только для нескольких групп, необходимо задать для параметра Алловтоаддгуестс значение true на уровне Организации, а затем отключить его для конкретных групп. |
-|  <ul><li>ClassificationList<li>Тип: строка<li>Значение по умолчанию: "" | Разделенный запятыми список допустимых значений классификации, которые можно применять к группам Office 365. <br>Этот параметр не применяется, если Енаблемиплабелс = = true.|
-|  <ul><li>енаблемиплабелс<li>Тип: логический<li>Значение по умолчанию: false |Флаг, указывающий, можно ли применить метки чувствительности, опубликованные в Microsoft 365 центре соответствия требованиям, к группам Office 365. Дополнительные сведения см. в статье [Назначение меток чувствительности для групп Office 365](groups-assign-sensitivity-labels.md). |
+|  <ul><li>ClassificationList<li>Тип: строка<li>Значение по умолчанию: "" | Разделенный запятыми список допустимых значений классификации, которые можно применить к Microsoft 365 группам. <br>Этот параметр не применяется, если Енаблемиплабелс = = true.|
+|  <ul><li>енаблемиплабелс<li>Тип: логический<li>Значение по умолчанию: false |Флаг, указывающий, можно ли применить метки чувствительности, опубликованные в Microsoft 365 центре соответствия требованиям, к группам Microsoft 365. Дополнительные сведения см. в разделе [Назначение меток чувствительности для групп Microsoft 365](groups-assign-sensitivity-labels.md). |
 
 ## <a name="example-configure-guest-policy-for-groups-at-the-directory-level"></a>Пример. Настройка гостевой политики для групп на уровне каталога
 1. Получите все шаблоны параметров:
@@ -255,7 +255,7 @@ ms.locfileid: "87015720"
    Id                                   DisplayName            Description
    --                                   -----------            -----------
    62375ab9-6b52-47ed-826b-58e47e0e304b Group.Unified          ...
-   08d542b9-071f-4e16-94b0-74abb372e3d9 Group.Unified.Guest    Settings for a specific Office 365 group
+   08d542b9-071f-4e16-94b0-74abb372e3d9 Group.Unified.Guest    Settings for a specific Microsoft 365 group
    4bc7f740-180e-4586-adb6-38b2e9024e6b Application            ...
    898f1161-d651-43d1-805c-3b0b388a9fc2 Custom Policy Settings ...
    5cf42378-d67d-4f36-ba46-e8b86229381d Password Rule Settings ...

@@ -5,12 +5,12 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 description: Описание процессов удаленной отладки в службе Kubernetes Azure с помощью Azure Dev Spaces
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: a9f303ea6f954285a319be137a594f7ce127f740
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fd984ff6a8ebe336f76643406c0957769dbfd3da
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80241404"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213385"
 ---
 # <a name="how-remote-debugging-your-code-with-azure-dev-spaces-works"></a>Как выполняется удаленная отладка кода с помощью Azure Dev Spaces
 
@@ -28,17 +28,9 @@ Azure Dev Spaces предоставляет несколько способов
 
 Изображение отладчика автоматически определяется средствами на стороне клиента. В нем используется метод, аналогичный использованному во время работы Dockerfile и Helm диаграмма `azds prep` . После подключения отладчика к образу приложения он запускается с помощью `azds exec` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Чтобы приступить к использованию Azure Dev Spaces для удаленной отладки проекта, см. следующие краткие руководства.
+Дополнительные сведения о работе Azure Dev Spaces.
 
-* [Быстрое перебор и отладка с помощью Visual Studio Code и Java][quickstart-java]
-* [Быстрое перебор и отладка с помощью Visual Studio Code и .NET][quickstart-netcore]
-* [Быстрое перебор и отладка с помощью Visual Studio Code и Node.js][quickstart-node]
-* [Быстрое перебор и отладка с помощью Visual Studio и .NET Core][quickstart-vs]
-
-
-[quickstart-java]: quickstart-java.md
-[quickstart-netcore]: quickstart-netcore.md
-[quickstart-node]: quickstart-nodejs.md
-[quickstart-vs]: quickstart-netcore-visualstudio.md
+> [!div class="nextstepaction"]
+> [Принцип работы Azure Dev Spaces](how-dev-spaces-works.md)

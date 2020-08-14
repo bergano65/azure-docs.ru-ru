@@ -5,13 +5,13 @@ author: craigshoemaker
 ms.author: cshoe
 ms.topic: reference
 ms.date: 11/21/2017
-ms.custom: seodec18
-ms.openlocfilehash: 37c98ca2fbffddd064b55192e9b5d83c948d88e6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp, seodec18
+ms.openlocfilehash: 8ae7613eea4b952c079be90b05e615087ea80a32
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87041961"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88214149"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-1x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х
 
@@ -180,8 +180,8 @@ namespace CosmosDBSamplesV1
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | н/д | Нужно задать значение `cosmosDBTrigger`. |
-|**direction** | н/д | Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
+|**type** | Недоступно | Нужно задать значение `cosmosDBTrigger`. |
+|**direction** | Недоступно | Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
 |**name** | Недоступно | Имя переменной, используемое в коде функции, представляющей список документов с изменениями. |
 |**коннектионстрингсеттинг**|**ConnectionStringSetting** | Имя параметра приложения, содержащего строку подключения, используемую для подключения к отслеживаемой учетной записи Azure Cosmos DB. |
 |**Имя**|**DatabaseName**  | Имя базы данных Azure Cosmos DB с отслеживаемой коллекцией. |
@@ -1115,12 +1115,12 @@ module.exports = function (context, req, toDoItem) {
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type**     | н/д | Нужно задать значение `documentdb`.        |
-|**direction**     | н/д | Нужно задать значение `in`.         |
+|**type**     | Недоступно | Нужно задать значение `documentdb`.        |
+|**direction**     | Недоступно | Нужно задать значение `in`.         |
 |**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
 |**Имя** |**DatabaseName** |База данных, содержащая документ.        |
 |**collectionName** |**CollectionName** | Имя коллекции, содержащей документ. |
-|**идентификатор**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция. |
+|**id**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция. |
 |**sqlQuery**  |**SqlQuery**  | SQL-запрос к Azure Cosmos DB, используемый для извлечения нескольких документов. Свойство поддерживает привязки времени выполнения, как показано в примере: `SELECT * FROM c where c.departmentId = {departmentId}`. Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция.|
 |**connection**;     |**ConnectionStringSetting**|Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
 |**partitionKey**|**PartitionKey**|Задает значение ключа секции для поиска. Может включать параметры привязки.|
@@ -1152,7 +1152,7 @@ module.exports = function (context, req, toDoItem) {
 Этот раздел содержит следующие примеры.
 
 * Триггер очереди, запись одного документа
-* Триггер очереди, запись документов с помощью`IAsyncCollector`
+* Триггер очереди, запись документов с помощью `IAsyncCollector`
 
 В примерах используется `ToDoItem` простого типа:
 
@@ -1238,7 +1238,7 @@ namespace CosmosDBSamplesV1
 Этот раздел содержит следующие примеры.
 
 * Триггер очереди, запись одного документа
-* Триггер очереди, запись документов с помощью`IAsyncCollector`
+* Триггер очереди, запись документов с помощью `IAsyncCollector`
 
 ### <a name="queue-trigger-write-one-doc"></a>Триггер очереди, запись одного документа
 
@@ -1454,8 +1454,8 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type**     | н/д | Нужно задать значение `documentdb`.        |
-|**direction**     | н/д | Нужно задать значение `out`.         |
+|**type**     | Недоступно | Нужно задать значение `documentdb`.        |
+|**direction**     | Недоступно | Нужно задать значение `out`.         |
 |**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
 |**Имя** | **DatabaseName**|База данных, содержащая коллекцию, в которой создается документ.     |
 |**collectionName** |**CollectionName**  | Имя коллекции, в которой создается документ. |
@@ -1475,11 +1475,11 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка | Справочник |
+| Привязка | Ссылка |
 |---|---|
 | Cosmos DB | [Коды ошибок Cosmos DB](/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"](../cosmos-db/serverless-computing-database.md)
 * [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

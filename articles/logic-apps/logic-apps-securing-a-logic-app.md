@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
 ms.date: 08/11/2020
-ms.openlocfilehash: e7199b6d54a0150845bfc09c38e002e6cc298ee7
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: c7b4cf688d02ebbcb099f116c0eb7b4ebe7c6074
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88066735"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212415"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -240,7 +240,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 ],
 ```
 
-Дополнительные сведения `accessControl` см. в разделе [ограничение диапазона входящих IP-адресов в шаблоне Azure Resource Manager](#restrict-inbound-ip-template) и [справочнике по шаблону рабочих процессов Microsoft. Logic](/templates/microsoft.logic/2019-05-01/workflows).
+Дополнительные сведения `accessControl` см. в разделе [ограничение диапазона входящих IP-адресов в шаблоне Azure Resource Manager](#restrict-inbound-ip-template) и [справочнике по шаблону рабочих процессов Microsoft. Logic](/azure/templates/microsoft.logic/2019-05-01/workflows).
 
 <a name="restrict-inbound-ip"></a>
 
@@ -786,8 +786,8 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 В этой таблице указаны типы проверки подлинности, доступные в триггерах и действиях, в которых можно выбрать тип проверки подлинности:
 
-| Authentication type (Тип проверки подлинности) | Доступность |
-|---------------------|--------------|
+| Authentication type (Тип проверки подлинности) | Поддерживаемые триггеры и действия |
+|---------------------|--------------------------------|
 | [Основной](#basic-authentication) | Управление API Azure, службы приложений Azure, HTTP, HTTP + Swagger, веб-перехватчик HTTP |
 | [Сертификат клиента](#client-certificate-authentication) | Управление API Azure, службы приложений Azure, HTTP, HTTP + Swagger, веб-перехватчик HTTP |
 | [Active Directory OAuth](#azure-active-directory-oauth-authentication) | Управление API Azure, службы приложений Azure, функции Azure, HTTP, HTTP + Swagger, веб-перехватчик HTTP |
@@ -952,7 +952,7 @@ Authorization: OAuth realm="Photos",
 
 ### <a name="managed-identity-authentication"></a>Проверка подлинности управляемого удостоверения
 
-Если доступен параметр [управляемый идентификатор](../active-directory/managed-identities-azure-resources/overview.md) , приложение логики может использовать назначенное системой удостоверение или *однократно* созданное вручную удостоверение для проверки подлинности доступа к другим ресурсам, защищенным Azure Active Directory (Azure AD) без входа. Azure управляет этим удостоверением за вас и помогает защитить учетные данные, потому что вам не нужно предоставлять или сменять секреты. Подробнее см. в статье [Службы, которые поддерживают управляемые удостоверения для проверки подлинности Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication).
+Если параметр [управляемое удостоверение](../active-directory/managed-identities-azure-resources/overview.md) доступен для [конкретного триггера или действия](#add-authentication-outbound), приложение логики может использовать назначенное системой удостоверение или *однократно* созданное вручную удостоверение для проверки подлинности доступа к другим ресурсам, защищенным Azure Active Directory (Azure AD) без входа. Azure управляет этим удостоверением за вас и помогает защитить учетные данные, потому что вам не нужно предоставлять или сменять секреты. Подробнее см. в статье [Службы, которые поддерживают управляемые удостоверения для проверки подлинности Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication).
 
 1. Прежде чем приложение логики сможет использовать управляемое удостоверение, выполните действия, описанные в разделе [Проверка подлинности доступа к ресурсам Azure с помощью управляемых удостоверений в Azure Logic Apps](../logic-apps/create-managed-service-identity.md). Это действия позволяют включить управляемое удостоверение в приложении логики и настроить доступ этого удостоверения к целевому ресурсу Azure.
 
@@ -1020,7 +1020,7 @@ Authorization: OAuth realm="Photos",
 * [Изоляция в общедоступном облаке Azure](../security/fundamentals/isolation-choices.md)
 * [Безопасность для приложений IaaS с высоким уровнем безопасности в Azure](/azure/architecture/reference-architectures/n-tier/high-security-iaas)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Базовый план безопасности Azure для Azure Logic Apps](../logic-apps/security-baseline.md)
 * [Автоматизация развертывания для Azure Logic Apps](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)

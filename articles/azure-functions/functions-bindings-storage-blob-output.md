@@ -5,13 +5,13 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
-ms.custom: devx-track-python
-ms.openlocfilehash: d089cb1844356032b956110a7475d839031ef006
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: devx-track-csharp, devx-track-python
+ms.openlocfilehash: 9596e6a6fd32994f782125c9bd4b8ca6d5a94b03
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87849834"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213058"
 ---
 # <a name="azure-blob-storage-output-binding-for-azure-functions"></a>Выходная привязка хранилища BLOB-объектов Azure для функций Azure
 
@@ -379,8 +379,8 @@ public static void Run(
 
 Параметры функции можно объявить как следующие типы для записи в хранилище BLOB-объектов:
 
-* Строки как`func.Out(str)`
-* Потоки как`func.Out(func.InputStream)`
+* Строки как `func.Out(str)`
+* Потоки как `func.Out(func.InputStream)`
 
 Дополнительные сведения см. в [примере выходных данных](#example) .
 
@@ -392,7 +392,7 @@ public static void Run(
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка |  Справочник |
+| Привязка |  Ссылка |
 |---|---|
 | BLOB-объект | [Коды ошибок больших двоичных объектов](/rest/api/storageservices/fileservices/blob-service-error-codes) |
 | Большой двоичный объект, таблица, очередь |  [Коды ошибок хранилища](/rest/api/storageservices/fileservices/common-rest-api-error-codes) |

@@ -5,13 +5,13 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/18/2020
 ms.author: cshoe
-ms.custom: cc996988-fb4f-47, devx-track-python
-ms.openlocfilehash: 29f90261e4d9a0e76c7760a2e3142f178510f6d6
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: devx-track-csharp, cc996988-fb4f-47, devx-track-python
+ms.openlocfilehash: 06d9ea895607332c8de25176376d52987ceed7a1
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87844887"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212269"
 ---
 # <a name="azure-queue-storage-output-bindings-for-azure-functions"></a>Выходные привязки хранилища очередей Azure для функций Azure
 
@@ -301,7 +301,7 @@ public class HttpTriggerQueueOutput {
 }
 ```
 
-| Свойство    | Описание: |
+| Свойство.    | Описание |
 |-------------|-----------------------------|
 |`name`       | Объявляет имя параметра в сигнатуре функции. При активации функции значение этого параметра будет иметь содержимое сообщения очереди. |
 |`queueName`  | Объявляет имя очереди в учетной записи хранения. |
@@ -340,7 +340,7 @@ public class HttpTriggerQueueOutput {
 
 В коде и скрипте C# запишите несколько сообщений очереди с помощью одного из следующих типов: 
 
-* `ICollector<T>` или `IAsyncCollector<T>`
+* `ICollector<T>` либо `IAsyncCollector<T>`
 * [CloudQueue](/dotnet/api/microsoft.azure.storage.queue.cloudqueue).
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
@@ -356,7 +356,7 @@ public class HttpTriggerQueueOutput {
 
 В коде и скрипте C# запишите несколько сообщений очереди с помощью одного из следующих типов: 
 
-* `ICollector<T>` или `IAsyncCollector<T>`
+* `ICollector<T>` либо `IAsyncCollector<T>`
 * [CloudQueue](/dotnet/api/microsoft.azure.storage.queue.cloudqueue).
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
@@ -383,7 +383,7 @@ public class HttpTriggerQueueOutput {
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка |  Справочник |
+| Привязка |  Ссылка |
 |---|---|
 | Очередь | [Коды ошибок очередей](/rest/api/storageservices/queue-service-error-codes) |
 | Большой двоичный объект, таблица, очередь | [Коды ошибок хранилища](/rest/api/storageservices/fileservices/common-rest-api-error-codes) |

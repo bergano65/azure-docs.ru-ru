@@ -9,22 +9,23 @@ editor: ''
 ms.assetid: 772bc8dd-5cda-41c4-95bf-b9f6f052bc85
 ms.service: api-management
 ms.devlang: dotnet
+ms.custom: devx-track-csharp
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/15/2016
 ms.author: apimpm
-ms.openlocfilehash: a366cf6d4e17e83fd89ae21631ad5b40e8971c1b
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: cf9901b4e49460dd2fb91dceaf239571058c5284
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87903448"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213323"
 ---
 # <a name="custom-caching-in-azure-api-management"></a>Пользовательское кэширование в службе управления API Azure
 В службе управления API Azure есть встроенная поддержка [кэширования ответов HTTP](api-management-howto-cache.md) с помощью URL-адреса ресурса в качестве ключа. Ключ можно изменить с помощью заголовков запроса, используя свойства `vary-by` . Это полезно для кэширования всех ответов HTTP (также известных как представления), но иногда бывает полезно кэшировать часть представления. Новые политики [cache-lookup-value](./api-management-caching-policies.md#GetFromCacheByKey) и [cache-store-value](./api-management-caching-policies.md#StoreToCacheByKey) позволяют сохранять и извлекать произвольные фрагменты данных из определений политики. Эта возможность также полезна для ранее представленной политики [send-request](./api-management-advanced-policies.md#SendRequest) , так как теперь можно кэшировать ответы от внешних служб.
 
-## <a name="architecture"></a>Architecture
+## <a name="architecture"></a>Архитектура
 Служба управления API использует общий кэш данных клиентов таким образом, чтобы при увеличении масштаба до нескольких единиц вы по-прежнему получали доступ к тем же кэшированным данным. Но если вы работаете с развертыванием в нескольких регионах, в каждом регионе существует отдельный кэш. Важно обрабатывать кэш как хранилище данных, которое является единственным источником конкретной информации. Если вы так и делали, а затем решили воспользоваться преимуществами развертывания в нескольких регионах, клиенты с пользователями, которые ездят в командировки, могут потерять доступ к кэшированным данным.
 
 ## <a name="fragment-caching"></a>Кэширование фрагментов

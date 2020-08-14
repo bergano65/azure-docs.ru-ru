@@ -1,18 +1,18 @@
 ---
 title: Установка агента подключенного компьютера с помощью Windows PowerShell DSC
-description: Из этой статьи вы узнаете, как подключить компьютеры к Azure с помощью дуги Azure для серверов (Предварительная версия) с помощью Windows PowerShell DSC.
+description: Из этой статьи вы узнаете, как подключить компьютеры к Azure с помощью серверов с поддержкой ARC (Предварительная версия) с помощью Windows PowerShell DSC.
 ms.date: 03/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: cdda3e6681d3e6912d031c45f5c6da9e92814e8f
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 25d6e435c261a83bf81c15d5dd445a936d48a08b
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121006"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213090"
 ---
 # <a name="how-to-install-the-connected-machine-agent-using-windows-powershell-dsc"></a>Установка агента подключенного компьютера с помощью Windows PowerShell DSC
 
-С помощью [настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/getting-started/winGettingStarted?view=powershell-7) (DSC) можно автоматизировать установку и настройку программного обеспечения для компьютера Windows. В этой статье описывается, как с помощью DSC установить дугу Azure для подключенных к серверам агентов компьютера на гибридных компьютерах Windows.
+С помощью [настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/getting-started/winGettingStarted?view=powershell-7) (DSC) можно автоматизировать установку и настройку программного обеспечения для компьютера Windows. В этой статье описывается, как использовать DSC для установки агента подключенного компьютера с поддержкой ARC (Предварительная версия) Azure на гибридных компьютерах Windows.
 
 ## <a name="requirements"></a>Требования
 
@@ -20,7 +20,7 @@ ms.locfileid: "88121006"
 
 - Модуль DSC [азуреконнектедмачинедск](https://www.powershellgallery.com/packages/AzureConnectedMachineDsc/1.0.1.0)
 
-- Субъект-служба для подключения компьютеров к службе "Дуга Azure" для серверов в неинтерактивном режиме. Выполните действия, описанные в разделе [Создание субъекта-службы для адаптации в масштабе](onboard-service-principal.md#create-a-service-principal-for-onboarding-at-scale) , если вы еще не создали субъект-службу для серверов ARC.
+- Субъект-служба для подключения компьютеров к серверам с поддержкой ARC в Azure (Предварительная версия) в неинтерактивном режиме. Выполните действия, описанные в разделе [Создание субъекта-службы для адаптации в масштабе](onboard-service-principal.md#create-a-service-principal-for-onboarding-at-scale) , если вы еще не создали субъект-службу для серверов с поддержкой ARC (Предварительная версия).
 
 ## <a name="install-the-connectedmachine-dsc-module"></a>Установка модуля DSC Коннектедмачине
 
@@ -76,7 +76,7 @@ ms.locfileid: "88121006"
 
 3. Будет создан `localhost.mof file` в новой папке с именем `C:\dsc` .
 
-После установки агента и настройки его подключения к Azure Arc для серверов (предварительная версия) перейдите на портал Azure, чтобы убедиться, что сервер подключен. Просмотрите свои компьютеры на [портале Azure](https://aka.ms/hybridmachineportal).
+После установки агента и его настройки для подключения к серверам с поддержкой ARC (Предварительная версия) перейдите к портал Azure, чтобы убедиться, что сервер успешно подключен. Просмотрите свои компьютеры на [портале Azure](https://aka.ms/hybridmachineportal).
 
 ## <a name="adding-to-existing-configurations"></a>Добавление в существующие конфигурации
 

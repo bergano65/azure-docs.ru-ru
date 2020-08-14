@@ -5,12 +5,12 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 description: Описание подготовки проекта с помощью Azure Dev Spaces
 keywords: аздс. YAML, Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: 24a54fffdc8e94493d2a4a9aeb1c5f02dcd192b9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 61351072494b51d02a1d6c31399208b9e9b54fce
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80241638"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213415"
 ---
 # <a name="how-preparing-a-project-for-azure-dev-spaces-works"></a>Как готовится проект для Azure Dev Spaces
 
@@ -94,21 +94,8 @@ configurations:
 
 `azds.yaml`Файл, созданный командой, `prep` предназначен для простого сценария разработки с одним проектом. Если в конкретном проекте увеличилась сложность, может потребоваться обновить этот файл после выполнения `prep` команды. Например, проект может потребовать внесения некоторых изменений в процесс сборки или запуска в зависимости от потребностей разработки или отладки. Кроме того, в проекте может быть несколько приложений, для которых требуется несколько процессов сборки или другое содержимое сборки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о выполнении кода в сфере разработки см. в статье [как выполнять код с помощью Azure dev Spaces Works][how-it-works-up].
 
-Чтобы приступить к использованию Azure Dev Spaces для подготовки проекта к пространству разработки Azure, ознакомьтесь со следующими краткими руководствами:
-
-* [Быстрое перебор и отладка с помощью Visual Studio Code и Java][quickstart-java]
-* [Быстрое перебор и отладка с помощью Visual Studio Code и .NET][quickstart-netcore]
-* [Быстрое перебор и отладка с помощью Visual Studio Code и Node.js][quickstart-node]
-* [Быстрое перебор и отладка с помощью Visual Studio и .NET Core][quickstart-vs]
-* [Разработка приложения на Kubernetes с помощью интерфейса командной строки][quickstart-cli]
-
 [how-it-works-up]: how-dev-spaces-works-up.md
-[quickstart-cli]: quickstart-cli.md
-[quickstart-java]: quickstart-java.md
-[quickstart-netcore]: quickstart-netcore.md
-[quickstart-node]: quickstart-nodejs.md
-[quickstart-vs]: quickstart-netcore-visualstudio.md
