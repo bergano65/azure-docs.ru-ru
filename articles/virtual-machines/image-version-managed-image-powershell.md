@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: c119ebc8d87c00608fc515099711463f47b8ed1a
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: c1b40cc8d52ffe5655401f7698790cdc05898331
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87901816"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225551"
 ---
 # <a name="migrate-from-a-managed-image-to-a-shared-image-gallery-image"></a>Миграция из управляемого образа в общий образ коллекции образов
 
@@ -25,7 +25,7 @@ ms.locfileid: "87901816"
 - **Версия образа** — это то, что используется для создания виртуальной машины при использовании общей коллекции образов. В зависимости от требований для вашей среды, у вас может быть несколько версий образа. При создании виртуальной машины используется версия образа для создания новых дисков для виртуальной машины. Версии образов можно использовать несколько раз.
 
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Для работы с этой статьей необходим существующий управляемый образ. Если управляемый образ содержит диск данных, размер диска данных не может превышать 1 ТБ.
 
@@ -117,7 +117,7 @@ $job.State
 > [!NOTE]
 > Прежде чем использовать тот же управляемый образ для создания другой версии образа, необходимо дождаться завершения сборки и репликации версии образа. 
 >
-> Вы также можете сохранить образ в хранилище класса Premium, добавив `-StorageAccountType Premium_LRS`, или [хранилище, избыточное между зонами](../storage/common/storage-redundancy.md), добавив `-StorageAccountType Standard_ZRS` при создании версии образа.
+> Вы также можете сохранить образ в хранилище класса Premium, добавив `-StorageAccountType Premium_LRS` [хранилище или избыточное в зону](../storage/common/storage-redundancy.md) , добавив `-StorageAccountType Standard_ZRS` его при создании версии образа.
 >
 
 ## <a name="delete-the-managed-image"></a>Удаление управляемого образа

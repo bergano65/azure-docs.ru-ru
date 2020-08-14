@@ -6,12 +6,12 @@ ms.topic: how-to
 author: markjbrown
 ms.author: mjbrown
 ms.date: 01/31/2020
-ms.openlocfilehash: 7a115de449588ea69951e6d997aa5332e5d55ad1
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 87fe128a79413af024d72726d936b85db3f9ef52
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88119527"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225977"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде
 
@@ -114,12 +114,13 @@ Account key: C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZ
 
 ### <a name="sql-api"></a>API SQL
 
-Когда эмулятор Azure Cosmos будет запущен на локальном компьютере, вы сможете работать с ним с помощью любых поддерживаемых [пакетов SDK для Azure Cosmos DB](sql-api-sdk-dotnet.md) или [REST API Azure Cosmos DB](/rest/api/cosmos-db/). Эмулятор Azure Cosmos также содержит встроенный обозреватель данных, который позволяет создавать коллекции для API SQL или API Cosmos DB для MongoDB, а также просматривать и редактировать элементы без необходимости писать код.
+Когда эмулятор Azure Cosmos будет запущен на локальном компьютере, вы сможете работать с ним с помощью любых поддерживаемых [пакетов SDK для Azure Cosmos DB](sql-api-sdk-dotnet-standard.md) или [REST API Azure Cosmos DB](/rest/api/cosmos-db/). Эмулятор Azure Cosmos также содержит встроенный обозреватель данных, который позволяет создавать коллекции для API SQL или API Cosmos DB для MongoDB, а также просматривать и редактировать элементы без необходимости писать код.
 
 ```csharp
 // Connect to the Azure Cosmos Emulator running locally
-DocumentClient client = new DocumentClient(
-   new Uri("https://localhost:8081"), "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==");
+CosmosClient client = new CosmosClient(
+   "https://localhost:8081", 
+    "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==");
 
 ```
 
@@ -428,7 +429,7 @@ cd $env:LOCALAPPDATA\CosmosDBEmulator\bind-mount
 
 ## <a name="running-on-mac-or-linux"></a>Запуск на компьютере Mac или Linux<a id="mac"></a>
 
-В настоящее время эмулятор Cosmos можно запустить только на компьютере с Windows. Пользователи компьютеров Mac или Linux могут запускать эмулятор на виртуальной машине Windows, на которой размещен гипервизор, такой как Parallels или VirtualBox. Ниже приведены шаги по реализации.
+В настоящее время эмулятор Cosmos можно запустить только на компьютере с Windows. Пользователи, работающие под управлением Mac или Linux, могут запускать эмулятор на виртуальной машине Windows, размещенной в гипервизоре, например Parallels или VirtualBox. Ниже приведены шаги по реализации.
 
 На виртуальной машине Windows выполните приведенную ниже команду и запишите адрес IPv4.
 
@@ -444,7 +445,36 @@ ipconfig.exe
 Microsoft.Azure.Cosmos.Emulator.exe /AllowNetworkAccess /Key=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
 ```
 
-Наконец, сертификат ЦС эмулятора необходимо импортировать в среду Linux или Mac.
+Наконец, необходимо разрешить процесс доверия сертификатов между приложением, работающим в среде Linux или Mac, и эмулятором. Это можно сделать двумя способами.
+
+1. Отключите проверку SSL в приложении:
+
+# <a name="net-standard-21"></a>[.NET Standard 2.1 +](#tab/ssl-netstd21)
+
+   Для любого приложения, работающего в платформе, совместимой с .NET Standard 2,1 или более поздней версии, мы можем использовать `CosmosClientOptions.HttpClientFactory` :
+
+   [!code-csharp[Main](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/HttpClientFactory/Program.cs?name=DisableSSLNETStandard21)]
+
+# <a name="net-standard-20"></a>[.NET Standard 2.0](#tab/ssl-netstd20)
+
+   Для любого приложения, работающего в платформе, совместимой с .NET Standard 2,0, мы можем использовать `CosmosClientOptions.HttpClientFactory` :
+
+   [!code-csharp[Main](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/HttpClientFactory/Program.cs?name=DisableSSLNETStandard20)]
+
+# <a name="nodejs"></a>[Node.js](#tab/ssl-nodejs)
+
+   Для Node.js приложений можно изменить `package.json` файл, чтобы задать `NODE_TLS_REJECT_UNAUTHORIZED` время при запуске приложения:
+
+   ```json
+   "start": NODE_TLS_REJECT_UNAUTHORIZED=0 node app.js
+   ```
+
+--- 
+
+> [!NOTE]
+> Отключение проверки SSL рекомендуется только для целей разработки и не должно выполняться при работе в рабочей среде.
+
+2. Импортируйте сертификат ЦС эмулятора в среду Linux или Mac:
 
 ### <a name="linux"></a>Linux
 

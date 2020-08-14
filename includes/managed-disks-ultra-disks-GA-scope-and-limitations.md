@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: virtual-machines
 author: roygara
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/25/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: aa9327bd0ba6763aa4e89630611aabb3c5195655
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 546c21802d275fe99ed2acbf00e32d37db3603f2
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85448777"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225208"
 ---
 Сейчас у Ultra Disks есть дополнительные ограничения:
 
@@ -26,23 +26,32 @@ ms.locfileid: "85448777"
 
 |Регионы  |Число зон доступности, поддерживающих Ultra Disks  |
 |---------|---------|
-|US Gov (Вирджиния)     |Отсутствуют         |
-|Центрально-южная часть США     |Отсутствуют         |
+|US Gov (Вирджиния)     |Нет         |
+|US Gov (Аризона)     |Нет         |
+|Центрально-южная часть США     |Нет         |
 |Центральная часть США     |Три зоны         |
-|западная часть США     |Отсутствуют         |
-|западная часть США 2    |Три зоны         |
+|западная часть США     |Нет         |
+|Западная часть США 2    |Три зоны         |
 |Восточная часть США     |Три зоны         |
-|восточная часть США 2     |Две зоны         |
+|восточная часть США 2     |Три зоны         |
 |Юго-Восточная Азия     |Три зоны         |
+|Восточная Азия     |Нет         |
 |Северная Европа     |Три зоны          |
 |Западная Европа     |Три зоны          |
 |южная часть Соединенного Королевства     |Три зоны          |
-|Восточная Япония     |Две зоны         |
+|Japan East     |Три зоны         |
 |Центральная Франция    |Две зоны        |
+|Brazil South    |Нет        |
+|Восточная Австралия    |Три зоны        |
+|Центральная Канада *    |Три зоны        |
 
+\* Обратитесь в службу поддержки Azure, чтобы получить доступ к Зоны доступности для этого региона.
 
 - Поддерживаются только в следующей серии виртуальных машин:
     - [ESv3](../articles/virtual-machines/ev3-esv3-series.md#esv3-series)
+    - [Easv4](../articles/virtual-machines/eav4-easv4-series.md#easv4-series)
+    - [Edsv4](../articles/virtual-machines/edv4-edsv4-series.md#edsv4-series)
+    - [Esv4](../articles/virtual-machines/ev4-esv4-series.md#esv4-series)
     - [DSv3](../articles/virtual-machines/dv3-dsv3-series.md#dsv3-series)
     - [Серия fsv2](../articles/virtual-machines/fsv2-series.md)
     - [LSv2](../articles/virtual-machines/lsv2-series.md)

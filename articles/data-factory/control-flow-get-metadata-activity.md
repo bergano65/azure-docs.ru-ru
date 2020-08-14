@@ -10,16 +10,17 @@ ms.assetid: 1c46ed69-4049-44ec-9b46-e90e964a4a8e
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 07/24/2020
+ms.date: 08/14/2020
 ms.author: jingwang
-ms.openlocfilehash: a5d203664520aebadefd16c19813d7957dd37fc4
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.openlocfilehash: 26d52eed02c9d25ed2f18afa3a5262ba9224b0ba
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87171242"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88224872"
 ---
 # <a name="get-metadata-activity-in-azure-data-factory"></a>Действие "получить метаданные" в фабрике данных Azure
+
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Действие получить метаданные можно использовать для получения метаданных любых данных в фабрике данных Azure. Это действие можно использовать в следующих сценариях:
@@ -32,7 +33,7 @@ ms.locfileid: "87171242"
 - Для выполнения проверки можно использовать выходные данные действия получение метаданных в условных выражениях.
 - Вы можете активировать конвейер, когда условие выполняется с помощью оператора Do до цикла.
 
-## <a name="capabilities"></a>Возможности
+## <a name="capabilities"></a>Характеристики
 
 Действие получить метаданные принимает в качестве входного аргумента набор данных и возвращает сведения о метаданных в виде выходных данных. В настоящее время поддерживаются следующие соединители и соответствующие доступные для получения метаданные. Максимальный размер возвращаемых метаданных — 2 МБ.
 
@@ -58,9 +59,9 @@ ms.locfileid: "87171242"
 - При использовании действия получить метаданные для папки убедитесь, что у вас есть разрешение LIST/EXECUTE для данной папки.
 - Для Amazon S3 и Google Cloud Storage `lastModified` применяется к контейнеру и ключу, но не к виртуальной папке и `exists` применяется к контейнеру и ключу, но не к префиксу или виртуальной папке.
 - Для хранилища BLOB-объектов Azure `lastModified` применяется к контейнеру и большому двоичному объекту, но не к виртуальной папке.
-- `lastModified`фильтр в настоящее время применяется для фильтрации дочерних элементов, но не для указанной папки или файла.
+- `lastModified` фильтр в настоящее время применяется для фильтрации дочерних элементов, но не для указанной папки или файла.
 - Фильтр с подстановочными знаками для папок и файлов не поддерживается для действия "получение метаданных".
-- `structure`и `columnCount` не поддерживаются при получении метаданных из двоичных, JSON или XML-файлов.
+- `structure` и `columnCount` не поддерживаются при получении метаданных из двоичных, JSON или XML-файлов.
 
 **Реляционная база данных**
 
@@ -100,13 +101,36 @@ ms.locfileid: "87171242"
 
 ```json
 {
-    "name": "MyActivity",
-    "type": "GetMetadata",
-    "typeProperties": {
-        "fieldList" : ["size", "lastModified", "structure"],
-        "dataset": {
-            "referenceName": "MyDataset",
-            "type": "DatasetReference"
+    "name":"MyActivity",
+    "type":"GetMetadata",
+    "dependsOn":[
+
+    ],
+    "policy":{
+        "timeout":"7.00:00:00",
+        "retry":0,
+        "retryIntervalInSeconds":30,
+        "secureOutput":false,
+        "secureInput":false
+    },
+    "userProperties":[
+
+    ],
+    "typeProperties":{
+        "dataset":{
+            "referenceName":"MyDataset",
+            "type":"DatasetReference"
+        },
+        "fieldList":[
+            "size",
+            "lastModified",
+            "structure"
+        ],
+        "storeSettings":{
+            "type":"AzureBlobStorageReadSettings"
+        },
+        "formatSettings":{
+            "type":"JsonReadSettings"
         }
     }
 }
@@ -116,18 +140,22 @@ ms.locfileid: "87171242"
 
 ```json
 {
-    "name": "MyDataset",
-    "properties": {
-    "type": "AzureBlob",
-        "linkedService": {
-            "referenceName": "StorageLinkedService",
-            "type": "LinkedServiceReference"
+    "name":"MyDataset",
+    "properties":{
+        "linkedServiceName":{
+            "referenceName":"AzureStorageLinkedService",
+            "type":"LinkedServiceReference"
         },
-        "typeProperties": {
-            "folderPath":"container/folder",
-            "filename": "file.json",
-            "format":{
-                "type":"JsonFormat"
+        "annotations":[
+
+        ],
+        "type":"Json",
+        "typeProperties":{
+            "location":{
+                "type":"AzureBlobStorageLocation",
+                "fileName":"file.json",
+                "folderPath":"folder",
+                "container":"container"
             }
         }
     }
@@ -138,14 +166,14 @@ ms.locfileid: "87171242"
 
 В настоящее время действие получить метаданные может возвращать следующие типы сведений о метаданных:
 
-Свойство | Описание | Обязательное значение
+Свойство | Описание | Обязательно
 -------- | ----------- | --------
 fieldList | Типы необходимых сведений о метаданных. Дополнительные сведения о поддерживаемых метаданных см. в разделе [Параметры метаданных](#metadata-options) этой статьи. | Да 
 набор данных | Эталонный набор данных, метаданные которого будут извлечены действием "получение метаданных". Сведения о поддерживаемых соединителях см. в разделе [возможности](#capabilities) . Сведения о синтаксисе набора данных см. в разделах, посвященных конкретным соединителям. | Да
 форматсеттингс | Применяется при использовании набора данных типа Format. | Нет
 сторесеттингс | Применяется при использовании набора данных типа Format. | Нет
 
-## <a name="sample-output"></a>Пример выходных данных
+## <a name="sample-output"></a>Пример полученных результатов
 
 Результаты получения метаданных отображаются в выходных данных действия. Ниже приведены два примера, в которых показаны расширенные параметры метаданных. Чтобы использовать результаты в последующем действии, используйте следующий шаблон: `@{activity('MyGetMetadataActivity').output.itemName}` .
 

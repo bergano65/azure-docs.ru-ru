@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 07/08/2019
 ms.author: cshoe
-ms.openlocfilehash: a045ef0fea70347f168e8ae0cc93e0c359f31dfa
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 43bc278ea3cbd14690f1a9ac9263872536b5b174
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88031134"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88224787"
 ---
 # <a name="register-azure-functions-binding-extensions"></a>Регистрация расширений привязки функций Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "88031134"
 |Библиотека классов C# с использованием Visual Studio|[С помощью средств NuGet](#vs)|[С помощью средств NuGet](#vs)|
 |Библиотека классов C# с использованием Visual Studio Code|Недоступно|[С помощью .NET Core CLI](#vs-code)|
 
-<sup>*</sup>Портал использует пакеты расширений.
+<sup>*</sup> Портал использует пакеты расширений.
 
 ## <a name="extension-bundles"></a><a name="extension-bundles"></a>Пакеты расширений
 
@@ -53,7 +53,7 @@ ms.locfileid: "88031134"
 
 ## <a name="nuget-packages"></a><a name="local-csharp"></a>Пакеты NuGet
 
-Для проекта функций на основе библиотеки классов C# следует устанавливать пакеты расширений специально для проектов, которые не являются классами 
+Для проекта функций на основе библиотеки классов C# следует устанавливать расширения напрямую. Пакеты расширений предназначены специально для проектов, которые не основаны на библиотеке классов C#.
 
 ### <a name="c-class-library-with-visual-studio"></a><a name="vs"></a>\#Библиотека классов C в Visual Studio
 
@@ -69,7 +69,7 @@ Install-Package Microsoft.Azure.WebJobs.Extensions.ServiceBus -Version <TARGET_V
 
 При использовании `Install-Package` для ссылки на привязку не нужно использовать [пакеты расширений](#extension-bundles). Этот подход характерен для библиотек классов, созданных в Visual Studio.
 
-## <a name="c-class-library-with-visual-studio-code"></a><a name="vs-code"></a>Библиотека классов C# с Visual Studio Code
+## <a name="c-class-library-with-visual-studio-code"></a><a name="vs-code"></a> Библиотека классов C# с Visual Studio Code
 
 В **Visual Studio Code**установите пакеты для проекта библиотеки классов C# из командной строки с помощью команды [DotNet add package](/dotnet/core/tools/dotnet-add-package) в .NET Core CLI. В следующем примере показано, как добавить привязку:
 

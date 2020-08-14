@@ -4,12 +4,12 @@ description: Языки, платформы и интеграции, досту�
 ms.topic: conceptual
 ms.date: 07/18/2019
 ms.reviewer: olegan
-ms.openlocfilehash: 35dc6c5146edd13309a42702d1bc247333ff0fd7
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: d3bb1473d94db04d1dedf2b09e19b83197cc6e0e
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322454"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225110"
 ---
 # <a name="supported-languages"></a>Поддерживаемые языки
 
@@ -37,6 +37,8 @@ ms.locfileid: "87322454"
 * [Python](./opencensus-python.md)
 * [Универсальное приложение для Windows](../learn/mobile-center-quickstart.md) (Центр приложений)
 * [Классические приложения, службы и рабочие роли Windows](./windows-desktop.md)
+* [React](./javascript-react-plugin.md)
+* [React Native](./javascript-react-native-plugin.md)
 
 ## <a name="logging-frameworks"></a>Платформы ведения журналов
 * [ILogger](./ilogger.md)

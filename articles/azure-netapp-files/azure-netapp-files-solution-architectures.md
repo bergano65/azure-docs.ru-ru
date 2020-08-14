@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/10/2020
+ms.date: 08/13/2020
 ms.author: b-juche
-ms.openlocfilehash: 48e3f895fb123429f1bedd106bd92113533c84ae
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 8ed9f6565da55d3ffbe522bbdf404265c487f67c
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88055808"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225620"
 ---
 # <a name="solution-architectures-using-azure-netapp-files"></a>Архитектура решений, использующих Azure NetApp Files
 В этой статье содержатся ссылки на рекомендации, которые помогут вам понять архитектуру решения для использования Azure NetApp Files.  
@@ -85,6 +85,7 @@ ms.locfileid: "88055808"
 
 ### <a name="windows-virtual-desktop"></a>Виртуальный рабочий стол Windows
 
+* [Использование виртуального рабочего стола Windows с Azure NetApp Files](solutions-windows-virtual-desktop.md)
 * [Варианты хранения для контейнеров профилей Фслогикс в виртуальном рабочем столе Windows](https://docs.microsoft.com/azure/virtual-desktop/store-fslogix-profile#azure-platform-details)
 * [Создание контейнера профиля Фслогикс для пула узлов с помощью Azure NetApp Files](https://docs.microsoft.com/azure/virtual-desktop/create-fslogix-profile-container)
 * [Виртуальный рабочий стол Windows в масштабе предприятия](https://docs.microsoft.com/azure/architecture/example-scenario/wvd/windows-virtual-desktop)
@@ -109,7 +110,7 @@ ms.locfileid: "88055808"
 * [Преимущества использования Azure NetApp Files для автоматизации работы с электронными макетами](solutions-benefits-azure-netapp-files-electronic-design-automation.md)
 * [Azure Циклеклауд: EDA HPC Lab с Azure NetApp Files](https://github.com/Azure/cyclecloud-hands-on-labs/blob/master/EDA/README.md)
 
-### <a name="analytics"></a>Аналитика
+### <a name="analytics"></a>Analytics
 
 * [Azure NetApp Files: Новая Общая файловая система, используемая в сетке SAS на Microsoft Azure](https://communities.sas.com/t5/Architecture/Azure-NetApp-Files-A-new-shared-file-system-to-use-with-SAS-Grid/m-p/606978)
 

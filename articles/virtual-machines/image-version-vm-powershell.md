@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 681bd0aff909552531d682186d5b22dce5ef33f9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 757b297d3d74365928cda0934485c0018f28ffee
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87010773"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225654"
 ---
 # <a name="preview-create-an-image-from-a-vm"></a>Предварительная версия: создание образа из виртуальной машины
 
@@ -133,7 +133,7 @@ $job.State
 > [!NOTE]
 > Прежде чем использовать тот же управляемый образ для создания другой версии образа, необходимо дождаться завершения сборки и репликации версии образа.
 >
-> Вы также можете сохранить образ в хранилище класса Premium, добавив `-StorageAccountType Premium_LRS`, или [хранилище, избыточное между зонами](../storage/common/storage-redundancy.md), добавив `-StorageAccountType Standard_ZRS` при создании версии образа.
+> Вы также можете сохранить образ в хранилище класса Premium, добавив `-StorageAccountType Premium_LRS` [хранилище или избыточное в зону](../storage/common/storage-redundancy.md) , добавив `-StorageAccountType Standard_ZRS` его при создании версии образа.
 >
 
 ## <a name="next-steps"></a>Дальнейшие действия

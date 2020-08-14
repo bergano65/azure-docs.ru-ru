@@ -5,14 +5,14 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 08/05/2020
+ms.date: 08/13/2020
 ms.author: cherylmc
-ms.openlocfilehash: 6fb065e48b744a31bcce2ca3249d0d6bd0216049
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 73a22efdc43911869c27a15c3f6918be4e35bc38
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88066429"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225569"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -99,7 +99,7 @@ ms.locfileid: "88066429"
 | **Франкфурт** | [Interxion FRA11](https://www.interxion.com/Locations/frankfurt/) | 1 | Центрально-Западная Германия | 10G, 100G | В&T NetBond, CenturyLink Cloud Connect, Colt, DE-ЦИКС, Equinix, Еунетворкс, ЖЕАНТ, Interxion, Orange, оранжевый, Телиа |
 | **Женева** | [Equinix GV2](https://www.equinix.com/locations/europe-colocation/switzerland-colocation/geneva-data-centers/gv2/) | 1 | Западная Швейцария | 10G, 100G | Equinix, Megaport |
 | **Специальный административный регион Гонконг** | [Equinix HK1](https://www.equinix.com/locations/asia-colocation/hong-kong-colocation/hong-kong-data-center/hk1/) | 2 | Восточная Азия | 10G | Aryaka Networks, British Telecom, CenturyLink Cloud Connect, Chief Telecom, China Telecom Global, Equinix, InterCloud, Megaport, NTT Communications, Orange, PCCW Global Limited, Tata Communications, Telia Carrier, Verizon |
-| **Гонконг 2** | [MEGA-i](https://www.iadvantage.net/index.php/locations/mega-i) | 2 | Восточная Азия | 10G | Китайская, Международная, Китайская, Глобальная, ПККВ |
+| **Гонконг 2** | [MEGA-i](https://www.iadvantage.net/index.php/locations/mega-i) | 2 | Восточная Азия | 10G | Китайская, Международная, Китайская, Глобальная, ПККВ, SingTel |
 | **Джакарта** | Telkom Indonesia | 4 | Недоступно | 10G | |
 | **Йоханнесбург** | [Teraco JB1](https://www.teraco.co.za/data-centre-locations/johannesburg/#jb1) | 3 | Северная часть ЮАР; | 10G | BCX, British Telecom, Internet Solutions — Cloud Connect, Liquid Telecom, Orange, Teraco |
 | **Куала-Лумпур** | [TIME dotCom Menara AIMS](https://www.time.com.my/enterprise/connectivity/direct-cloud) | 2 | Недоступно | Недоступно | TIME dotCom |

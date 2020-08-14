@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/15/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: acdf830c9bf0eaedcca5bf0ffe1b2bd373750276
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 17274c2b5308b1e5069370400895c001dc03e5bb
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88030679"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88224447"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Планирование развертывания службы синхронизации файлов Azure
 
@@ -376,7 +376,7 @@ $validation.Results | Select-Object -Property Type, Path, Level, Description, Re
 > Восстановление исходного состояния системы (BMR) может привести к непредвиденным результатам и сейчас не поддерживается.
 
 > [!Note]  
-> С агентом Синхронизации файлов Azure версии 9 моментальные снимки VSS (включая вкладку "Предыдущие версии") не поддерживаются в томах, для которых включено распределение по уровням в облаке. Однако необходимо включить совместимость с предыдущими версиями с помощью PowerShell. [Подробнее](storage-files-deployment-guide.md).
+> С агентом Синхронизации файлов Azure версии 9 моментальные снимки VSS (включая вкладку "Предыдущие версии") не поддерживаются в томах, для которых включено распределение по уровням в облаке. Однако необходимо включить совместимость с предыдущими версиями с помощью PowerShell. [Подробнее](storage-sync-files-deployment-guide.md#self-service-restore-through-previous-versions-and-vss-volume-shadow-copy-service).
 
 ## <a name="azure-file-sync-agent-update-policy"></a>Политика обновления агента службы синхронизации файлов Azure
 [!INCLUDE [storage-sync-files-agent-update-policy](../../../includes/storage-sync-files-agent-update-policy.md)]

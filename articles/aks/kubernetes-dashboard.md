@@ -6,12 +6,12 @@ author: mlearned
 ms.topic: article
 ms.date: 06/03/2020
 ms.author: mlearned
-ms.openlocfilehash: 69e60c3e4ac91a5d0ca9a0245dc61f090c625c60
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 35424c0a9e566a9dfa780c524e23945348335040
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86499874"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225994"
 ---
 # <a name="access-the-kubernetes-web-dashboard-in-azure-kubernetes-service-aks"></a>Подключение веб-панели мониторинга Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -20,7 +20,7 @@ ms.locfileid: "86499874"
 Дополнительные сведения о панели мониторинга Kubernetes см. в разделе [панель мониторинга пользовательского веб-интерфейса Kubernetes][kubernetes-dashboard]. AKS использует панель мониторинга с открытым исходным кодом версии 2,0 и более поздней.
 
 > [!WARNING]
-> **Надстройка панели мониторинга AKS задается для устаревания.** 
+> **Надстройка панели мониторинга AKS задается для устаревания. Вместо этого используйте [представление ресурсов Kubernetes в портал Azure (Предварительная версия)][kubernetes-portal] .** 
 > * Панель мониторинга Kubernetes включена по умолчанию для кластеров с версией Kubernetes менее 1,18.
 > * Надстройка панели мониторинга будет отключена по умолчанию для всех новых кластеров, созданных в Kubernetes 1,18 или более поздней версии. 
  > * Начиная с Kubernetes 1,19 в предварительной версии AKS больше не будет поддерживать установку управляемой надстройки KUBE-Dashboard. 
@@ -54,8 +54,8 @@ az aks browse --resource-group myResourceGroup --name myAKSCluster
 
 > [!NOTE]
 > Если панель мониторинга не отображается, `http://127.0.0.1:8001` можно вручную направить на следующие адреса. Кластеры на 1,16 или более поздней версии используют HTTPS и должны иметь отдельную конечную точку.
-> * K8s 1,16 или более поздней версии:`http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy`
-> * K8s 1,15 и ниже:`http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard:/proxy`
+> * K8s 1,16 или более поздней версии: `http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy`
+> * K8s 1,15 и ниже: `http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard:/proxy`
 
 <!--
 ![The login page of the Kubernetes web dashboard](./media/kubernetes-dashboard/dashboard-login.png)
@@ -117,7 +117,7 @@ After you choose a method to sign in, the Kubernetes dashboard is displayed. If 
 
 Как для Azure AD, так и для кластеров, не использующих Azure AD, можно передать kubeconfig. Убедитесь, что маркеры доступа допустимы, если срок действия маркеров истек, вы можете обновить маркеры через kubectl.
 
-1. Задайте для kubeconfig администратора значение`az aks get-credentials -a --resource-group <RG_NAME> --name <CLUSTER_NAME>`
+1. Задайте для kubeconfig администратора значение `az aks get-credentials -a --resource-group <RG_NAME> --name <CLUSTER_NAME>`
 1. Выберите `Kubeconfig` и щелкните, `Choose kubeconfig file` чтобы открыть средство выбора файлов
 1. Выберите файл kubeconfig (по умолчанию $HOME/.KUBE/config.)
 1. Щелкните `Sign In`.
@@ -209,3 +209,4 @@ kubectl config view -o jsonpath='{.users[?(@.name == "clusterUser_<RESOURCE GROU
 [az-aks-browse]: /cli/azure/aks#az-aks-browse
 [az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
 [install-azure-cli]: /cli/azure/install-azure-cli
+[kubernetes-portal]: ./kubernetes-portal.md

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 07/19/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 27615d1367bd0faa035e68bf9f03df05cdccfa7f
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: f2c8dbebce685eea67672a2b8c93d51e356ac69c
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87903856"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88226058"
 ---
 # <a name="deploy-azure-file-sync"></a>Развертывание Синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -61,7 +61,7 @@ ms.locfileid: "87903856"
     > [!Note]  
     > Теперь модуль AZ. StorageSync устанавливается автоматически при установке модуля AZ PowerShell.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Файловый ресурс Azure в том же регионе, который требуется развернуть Синхронизация файлов Azure. Дополнительные сведения см. в следующих статьях:
     - [Доступность по регионам](storage-sync-files-planning.md#azure-file-sync-region-availability). Здесь представлены сведения о регионах службы синхронизации файлов Azure.
@@ -74,7 +74,7 @@ ms.locfileid: "87903856"
 
    - Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. **Попробуйте** открыть Azure Cloud Shell, но автоматически не скопирует код в Cloud Shell.
 
-   - Откройте Cloud Shell, перейдя по[https://shell.azure.com](https://shell.azure.com)
+   - Откройте Cloud Shell, перейдя по [https://shell.azure.com](https://shell.azure.com)
 
    - Нажмите кнопку **Cloud Shell** в строке меню в верхнем правом углу [портал Azure](https://portal.azure.com)
 
@@ -140,7 +140,7 @@ if ($installType -ne "Server Core") {
 }
 ``` 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Следуйте инструкциям по портал Azure или PowerShell.
 
@@ -211,7 +211,7 @@ $storageSyncName = "<my_storage_sync_service>"
 $storageSync = New-AzStorageSyncService -ResourceGroupName $resourceGroup -Name $storageSyncName -Location $region
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Следуйте инструкциям по портал Azure или PowerShell.
 
@@ -267,7 +267,7 @@ Start-Process -FilePath "StorageSyncAgent.msi" -ArgumentList "/quiet" -Wait
 # You may remove the temp folder containing the MSI and the EXE installer
 Remove-Item -Path ".\StorageSyncAgent.msi" -Recurse -Force
 ```
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Следуйте инструкциям по портал Azure или PowerShell.
 
@@ -378,7 +378,7 @@ New-AzStorageSyncCloudEndpoint `
     -AzureFileShareName $fileShare.Name
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Используйте команду [AZ storagesync Sync-Group](/cli/azure/ext/storagesync/storagesync/sync-group#ext-storagesync-az-storagesync-sync-group-create) , чтобы создать новую группу синхронизации.  Чтобы настроить группу ресурсов по умолчанию для всех команд интерфейса командной строки, используйте команду [AZ configure](/cli/azure/reference-index#az-configure).
 
@@ -415,16 +415,19 @@ az storagesync sync-group cloud-endpoint create --resource-group myResourceGroup
 - **Путь**: путь Windows Server для синхронизации в составе группы синхронизации.
 - **Уровни в облаке.** Параметр, позволяющий включать и отключать распределение по уровням облака. С помощью этого параметра редко используемые файлы можно распределить по уровням компонента "Файлы Azure".
 - **Свободное место в томе**: объем свободного места, резервируемого на томе, на котором находится конечная точка сервера. Например, если объем свободного места тома с единственной конечной точкой сервера равен 50 %, примерно половина объема данных будет распределена по уровням компонента "Файлы Azure". Независимо от того, включено ли распределение по уровням в облаке, общий файловый ресурс Azure всегда содержит полную копию данных в группе синхронизации.
+- **Начальный режим загрузки**. Это необязательный вариант, начиная с версии агента 11, который может быть полезен при наличии файлов в общей папке Azure, но не на сервере. Такая ситуация может существовать, например, при создании конечной точки сервера для добавления другого сервера филиала в группу синхронизации или при аварийном восстановлении сервера, на котором произошел сбой. Если включено распределение по уровням облака, по умолчанию используется только для повторного вызова пространства имен без содержимого файла. Это полезно, если вы считаете, что вместо запросов доступа пользователей следует решить, какое содержимое файлов будет отозвано на сервере. Если распределение по уровням облака отключено, по умолчанию пространство имен будет скачиваться первыми, а затем файлы будут отозваны на основе метки времени последнего изменения, пока не будет достигнута локальная емкость. Однако можно изменить режим начальной загрузки на только пространство имен. Третий режим можно использовать, только если для этой конечной точки сервера отключено распределение по уровням облака. Этот режим позволяет избежать повторного вызова пространства имен. Файлы будут отображаться только на локальном сервере, если у них есть возможность полной загрузки. Этот режим удобен, если для экземпляра приложения требуется наличие полных файлов, которые не допускают использования многоуровневых файлов в пространстве имен.
 
 Чтобы добавить конечную точку сервера, нажмите кнопку **создать**. Теперь ваши файлы будут синхронизироваться по всем общим файловым ресурсам Azure и Windows Server. 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
-Выполните следующие команды PowerShell для создания конечной точки сервера и замените `<your-server-endpoint-path>` и `<your-volume-free-space>` нужными значениями.
+Выполните следующие команды PowerShell, чтобы создать конечную точку сервера, и обязательно замените `<your-server-endpoint-path>` `<your-volume-free-space>` и с нужными значениями и проверьте дополнительный параметр для необязательной политики начальной загрузки.
 
 ```powershell
 $serverEndpointPath = "<your-server-endpoint-path>"
 $cloudTieringDesired = $true
 $volumeFreeSpacePercentage = <your-volume-free-space>
+# Optional property. Choose from: [NamespaceOnly] default when cloud tiering is enabled. [NamespaceThenModifiedFiles] default when cloud tiering is disabled. [AvoidTieredFiles] only available when cloud tiering is disabled.
+$initialDownloadPolicy = NamespaceOnly
 
 if ($cloudTieringDesired) {
     # Ensure endpoint path is not the system volume
@@ -441,18 +444,20 @@ if ($cloudTieringDesired) {
         -ServerResourceId $registeredServer.ResourceId `
         -ServerLocalPath $serverEndpointPath `
         -CloudTiering `
-        -VolumeFreeSpacePercent $volumeFreeSpacePercentage
+        -VolumeFreeSpacePercent $volumeFreeSpacePercentage `
+        -InitialDownloadPolicy $initialDownloadPolicy
 } else {
     # Create server endpoint
     New-AzStorageSyncServerEndpoint `
         -Name $registeredServer.FriendlyName `
         -SyncGroup $syncGroup `
         -ServerResourceId $registeredServer.ResourceId `
-        -ServerLocalPath $serverEndpointPath 
+        -ServerLocalPath $serverEndpointPath `
+        -InitialDownloadPolicy $initialDownloadPolicy
 }
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы создать новую конечную точку сервера, используйте команду [AZ storagesync Sync-Group Server-Endpoint](/cli/azure/ext/storagesync/storagesync/sync-group/server-endpoint#ext-storagesync-az-storagesync-sync-group-server-endpoint-create) .
 
@@ -460,23 +465,24 @@ if ($cloudTieringDesired) {
 # Create a new sync group server endpoint 
 az storagesync sync-group server-endpoint create --resource-group myResourceGroupName \
                                                  --name myNewServerEndpointName
-                                                 --registered-server-id 91beed22-7e9e-4bda-9313-fec96cf286e0
+                                                 --registered-server-id 91beed22-7e9e-4bda-9313-fec96c286e0
                                                  --server-local-path d:\myPath
                                                  --storage-sync-service myStorageSyncServiceNAme
                                                  --sync-group-name mySyncGroupName
 
 # Create a new sync group server endpoint with additional optional parameters
 az storagesync sync-group server-endpoint create --resource-group myResourceGroupName \
-                                                 --name myNewServerEndpointName \
-                                                 --registered-server-id 91beed22-7e9e-4bda-9313-fec96cf286e0 \
-                                                 --server-local-path d:\myPath \
                                                  --storage-sync-service myStorageSyncServiceName \
                                                  --sync-group-name mySyncGroupName \
+                                                 --name myNewServerEndpointName \
+                                                 --registered-server-id 91beed22-7e9e-4bda-9313-fec96c286e0 \
+                                                 --server-local-path d:\myPath \
                                                  --cloud-tiering on \
+                                                 --volume-free-space-percent 85 \
+                                                 --tier-files-older-than-days 15 \
+                                                 --initial-download-policy NamespaceOnly [OR] NamespaceThenModifiedFiles [OR] AvoidTieredFiles
                                                  --offline-data-transfer on \
                                                  --offline-data-transfer-share-name myfilesharename \
-                                                 --tier-files-older-than-days 15 \
-                                                 --volume-free-space-percent 85 \
 
 ```
 
@@ -568,6 +574,40 @@ Get-StorageSyncSelfServiceRestore [[-Driveletter] <string>]
 Если значение параметра max. 64. моментальные снимки VSS на том не являются правильными параметрами. это [значение можно изменить с помощью раздела реестра](https://docs.microsoft.com/windows/win32/backup/registry-keys-for-backup-and-restore#maxshadowcopies).
 Чтобы новое ограничение вступило в силу, необходимо повторно запустить командлет, чтобы включить предыдущую совместимость версий для всех ранее включенных томов, с флагом-Force, который принимает новое максимальное число моментальных снимков VSS на том. Это приведет к появлению нового вычисленного числа совместимых дней. Обратите внимание, что это изменение вступит в силу только для новых многоуровневых файлов и перезапишет настройки, которые могли быть сделаны в расписании VSS.
 
+<a id="proactive-recall"></a>
+## <a name="proactively-recall-new-and-changed-files-from-an-azure-file-share"></a>Заранее отозвать новые и измененные файлы из общей папки Azure
+
+При использовании агента версии 11 в конечной точке сервера будет доступен новый режим. Этот режим позволяет глобально распределенным компаниям использовать кэш сервера в удаленном регионе, предварительно заполненный до тех пор, пока локальные пользователи не будут получать доступ к файлам. При включении в конечной точке сервера этот режим приведет к тому, что этот сервер будет отзывать файлы, созданные или измененные в общем файловом ресурсе Azure.
+
+### <a name="scenario"></a>Сценарий
+
+Глобально распределенная компания имеет филиалы в США и Индии. В утром (США) информационные работники создают новую папку и новые файлы для нового проекта, а также работают со всеми днями. Синхронизация файлов Azure будет синхронизировать папки и файлы в общую папку Azure (облачная конечная точка). Информационные работники в Индии продолжат работу над проектом в своем часовом поясе. Когда они поступают утром, локальный сервер Синхронизация файлов Azure с поддержкой в Индии должен иметь доступ к этим новым файлам локально, чтобы группа Индии могла эффективно работать с локальным кэшем. Включение этого режима предотвращает медленный доступ к файлам из-за отзыва по требованию и позволяет серверу заранее отозвать файлы сразу после их изменения или создания в общей папке Azure.
+
+> [!IMPORTANT]
+> Важно понимать, что отслеживание изменений в файловом ресурсе Azure, которые близко к серверу, может увеличить трафик исходящего трафика и счет за использование Azure. Если файлы, отозванные на сервере, на самом деле не требуются локально, ненужный отзыв на сервере может негативно сказаться. Используйте этот режим, если вы уверены, что предварительно заполнение кэша на сервере с недавними изменениями в облаке повлияет на пользователей или приложения, использующие файлы на этом сервере.
+
+### <a name="enable-a-server-endpoint-to-proactively-recall-what-changed-in-an-azure-file-share"></a>Включение конечной точки сервера для упреждающего отзыва изменений в общей папке Azure
+
+# <a name="portal"></a>[Портал](#tab/proactive-portal)
+
+1. В [портал Azure](https://portal.azure.com/)перейдите к службе синхронизации хранилища, выберите правильную группу синхронизации, а затем укажите конечную точку сервера, для которой необходимо тщательно отслеживать изменения в общей папке Azure (облачная конечная точка).
+1. В разделе распределение по уровням облака найдите раздел "Загрузка общей папки Azure". Вы увидите выбранный режим и можете изменить его, чтобы более точно отслеживать изменения в общей папке Azure и заранее отзывать их на сервере.
+
+:::image type="content" source="media/storage-sync-files-deployment-guide/proactive-download.png" alt-text="Изображение, показывающее поведение скачивания файлового ресурса Azure для конечной точки сервера, которое в настоящий момент действует, и кнопку для открытия меню, позволяющее изменить его.":::
+
+# <a name="powershell"></a>[PowerShell](#tab/proactive-powershell)
+
+Вы можете изменить свойства конечной точки сервера в PowerShell с помощью командлета [Set-азсторажесинксерверендпоинт](https://docs.microsoft.com/powershell/module/az.storagesync/set-azstoragesyncserverendpoint) .
+
+```powershell
+# Optional parameter. Default: "UpdateLocallyCachedFiles", alternative behavior: "DownloadNewAndModifiedFiles"
+$recallBehavior = "DownloadNewAndModifiedFiles"
+
+Set-AzStorageSyncServerEndpoint -InputObject <PSServerEndpoint> -LocalCacheMode $recallBehavior
+```
+
+---
+
 ## <a name="migrate-a-dfs-replication-dfs-r-deployment-to-azure-file-sync"></a>Перенос развертывания репликации DFS (DFS-R) в службу синхронизации файлов Azure
 Чтобы перенести развертывание DFS-R в службу "Синхронизация файлов Azure", сделайте следующее:
 
@@ -584,7 +624,7 @@ Get-StorageSyncSelfServiceRestore [[-Driveletter] <string>]
 
 Дополнительные сведения см. в статье [Azure File Sync interop with Distributed File System (DFS)](storage-sync-files-planning.md#distributed-file-system-dfs) (Взаимодействие службы "Синхронизация файлов Azure" с распределенной файловой системой (DFS)).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Добавление и удаление конечных точек сервера службы синхронизации файлов Azure](storage-sync-files-server-endpoint.md)
 - [Регистрация и отмена регистрации сервера в службе синхронизации файлов Azure (предварительная версия)](storage-sync-files-server-registration.md)
 - [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)
