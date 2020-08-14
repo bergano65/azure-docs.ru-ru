@@ -1,17 +1,17 @@
 ---
 title: Анализ данных в Azure Data Lake Storage 1-го поколения — Power BI
-description: Используйте Power BI для анализа данных, хранящихся в Azure Data Lake Storage 1-го поколения.
+description: Узнайте, как использовать Power BI Desktop для анализа и визуализации данных, хранящихся в Azure Data Lake Storage 1-го поколения.
 author: twooley
 ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: a692c5b23eaf23b33eef9bd2baf1e62b4bcca74e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 282ac6f87d5ecff75e77b075ee1092f79b4923ad
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85504939"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192855"
 ---
 # <a name="analyze-data-in-azure-data-lake-storage-gen1-by-using-power-bi"></a>Анализ данных в Azure Data Lake Storage 1-го поколения с помощью Power BI
 В этой статье вы узнаете, как использовать Power BI Desktop для анализа и визуализации данных в Azure Data Lake Storage 1-го поколения.

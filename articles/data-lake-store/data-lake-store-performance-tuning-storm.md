@@ -1,23 +1,23 @@
 ---
 title: Настройка производительности — комплекс с Azure Data Lake Storage 1-го поколения
-description: Узнайте о рекомендациях по настройке производительности для кластера с Azure Data Lake Storage 1-го поколения.
+description: Изучите факторы, которые следует учитывать при настройке производительности топологии в Azure, включая устранение распространенных проблем.
 author: stewu
 ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 12/19/2016
 ms.author: stewu
-ms.openlocfilehash: 47fb385e5e1fb60f860735530356fa87031c51e8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 71207509f20c80cf85311cba7b647aaca0a49e42
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85513794"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192817"
 ---
 # <a name="performance-tuning-guidance-for-storm-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для Storm в HDInsight и Azure Data Lake Storage 1-го поколения
 
 Изучите факторы, которые важны для настройки производительности в топологии Azure Storm. Например, нужно понимать характеристики работы, выполняемой элементами spout и bolt (в случае, когда работа связана с интенсивными рабочими нагрузками ввода-вывода или активным использованием памяти). В этой статье рассматривается ряд рекомендаций по улучшению производительности, в том числе по устранению типичных неполадок.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
