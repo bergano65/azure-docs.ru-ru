@@ -1,6 +1,6 @@
 ---
 title: Замена выпуска SQL Server на месте
-description: Узнайте, как изменить выпуск виртуальной машины SQL Server в Azure.
+description: Узнайте, как изменить выпуск виртуальной машины SQL Server в Azure на более раннюю версию, чтобы снизить затраты или обновить, чтобы включить дополнительные функции.
 services: virtual-machines-windows
 documentationcenter: na
 author: MashaMSFT
@@ -13,12 +13,12 @@ ms.date: 01/14/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 228f76c9ecb262ffca7851f4339b73c5574f09dc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 60020667126fe76d33264795ddb2e17e1241a7b2
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84669174"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88236290"
 ---
 # <a name="in-place-change-of-sql-server-edition-on-azure-vm"></a>Замена выпуска SQL Server на месте на виртуальной машине Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]

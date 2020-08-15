@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 06/23/2020
 ms.author: mimart
 ms.reviewer: arvinh
-ms.openlocfilehash: 3c3706cc3a15a8832cec3d799ea551810c849379
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 52819fc37cf0d10cb36009feb82dec234184752c
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87313614"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235542"
 ---
 # <a name="on-demand-provisioning"></a>Подготовка по требованию
 Используйте подготовку по требованию для подготовки пользователя в приложении за считаные секунды. Помимо прочего, эту возможность можно использовать в следующих целях:
@@ -47,9 +47,9 @@ ms.locfileid: "87313614"
 
 #### <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 
-* Убедитесь, что в целевое приложение предоставлены допустимые учетные данные, такие как маркер секрета и URL-адрес клиента. Требуемые учетные данные зависят от приложения. Подробные руководства по настройке см. в [списке учебников](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list). 
+* Убедитесь, что в целевое приложение предоставлены допустимые учетные данные, такие как маркер секрета и URL-адрес клиента. Требуемые учетные данные зависят от приложения. Подробные руководства по настройке см. в [списке учебников](../saas-apps/tutorial-list.md). 
 * Убедитесь, что целевое приложение поддерживает фильтрацию по соответствующим атрибутам, определенным на панели **сопоставления атрибутов** . Чтобы узнать о поддерживаемых фильтрах, вам может потребоваться ознакомиться с документацией по API, предоставленной разработчиком приложения.
-* Для системы для приложений с междоменным управлением идентификацией (SCIM) можно использовать такой инструмент, как POST. Такие средства помогают убедиться, что приложение отвечает на запросы авторизации так, как предполагается служба подготовки Azure Active Directory (Azure AD). Взгляните на [Пример запроса](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups#request-3).
+* Для системы для приложений с междоменным управлением идентификацией (SCIM) можно использовать такой инструмент, как POST. Такие средства помогают убедиться, что приложение отвечает на запросы авторизации так, как предполагается служба подготовки Azure Active Directory (Azure AD). Взгляните на [Пример запроса](./use-scim-to-provision-users-and-groups.md#request-3).
 
 ### <a name="step-2-import-user"></a>Шаг 2. Импорт пользователя
 
@@ -76,7 +76,7 @@ ms.locfileid: "87313614"
 
 ### <a name="step-3-determine-if-user-is-in-scope"></a>Шаг 3. определение, входит ли пользователь в область
 
-Затем служба подготовки определяет, находится ли пользователь в [области](https://docs.microsoft.com/azure/active-directory/app-provisioning/how-provisioning-works#scoping) для подготовки. Служба учитывает такие аспекты, как:
+Затем служба подготовки определяет, находится ли пользователь в [области](./how-provisioning-works.md#scoping) для подготовки. Служба учитывает такие аспекты, как:
 
 * Указывает, назначено ли приложение пользователю.
 * Указывает, задана ли для области синхронизации значение " **назначено** " или " **синхронизировать все**".
@@ -94,8 +94,8 @@ ms.locfileid: "87313614"
 
 #### <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 
-* Убедитесь, что определена допустимая роль области. Например, старайтесь не использовать [оператор Greater_Than](https://docs.microsoft.com/azure/active-directory/app-provisioning/define-conditional-rules-for-provisioning-user-accounts#create-a-scoping-filter) с нецелочисленным значением.
-* Если у пользователя нет необходимой роли, ознакомьтесь с [советами по подготовке пользователей, назначенных роли доступа по умолчанию](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-config-problem-no-users-provisioned#provisioning-users-assigned-to-the-default-access-role).
+* Убедитесь, что определена допустимая роль области. Например, старайтесь не использовать [оператор Greater_Than](./define-conditional-rules-for-provisioning-user-accounts.md#create-a-scoping-filter) с нецелочисленным значением.
+* Если у пользователя нет необходимой роли, ознакомьтесь с [советами по подготовке пользователей, назначенных роли доступа по умолчанию](./application-provisioning-config-problem-no-users-provisioned.md#provisioning-users-assigned-to-the-default-access-role).
 
 ### <a name="step-4-match-user-between-source-and-target"></a>Шаг 4. Сопоставление пользователя между исходным и целевым элементами
 
@@ -129,7 +129,7 @@ ms.locfileid: "87313614"
 
 #### <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 
-* Сбои при экспорте изменений могут сильно различаться. Ознакомьтесь с [документацией по подготовке журналов](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs#error-codes) для распространенных сбоев.
+* Сбои при экспорте изменений могут сильно различаться. Ознакомьтесь с [документацией по подготовке журналов](../reports-monitoring/concept-provisioning-logs.md#error-codes) для распространенных сбоев.
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -148,6 +148,6 @@ ms.locfileid: "87313614"
 * Подготовка групп и ролей по требованию не поддерживается.
 * Подготовка по требованию поддерживает отключение пользователей, которые не были назначены в приложении. Однако он не поддерживает отключение или удаление пользователей, которые были отключены или удалены из Azure AD. Эти пользователи не будут отображаться при поиске пользователя.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Устранение неполадок при подготовке](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-config-problem)
+* [Устранение неполадок при подготовке](./application-provisioning-config-problem.md)

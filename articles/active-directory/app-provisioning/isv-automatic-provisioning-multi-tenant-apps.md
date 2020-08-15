@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/23/2019
 ms.author: kenwith
 ms.reviewer: zhchia
-ms.openlocfilehash: 479bbe2dbef2d28a2744b667184c45e85faf9adc
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 7ffdef43aa0fdcaab9e8ceae519cef9dfe5cdf6e
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87283101"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235644"
 ---
 # <a name="enable-automatic-user-provisioning-for-your-multi-tenant-application"></a>Включение автоматической подготовки пользователей для приложения с несколькими клиентами
 
@@ -54,7 +54,7 @@ Azure AD предоставляет несколько путей интегра
 
 * [Служба подготовки Azure AD](../app-provisioning/user-provisioning.md) управляет подготовкой и отменой подготовки пользователей из Azure AD в ваше приложение (исходящая подготовка) и из приложения в Azure AD (входящая подготовка). Служба подключается к системе для конечных точек API управления пользовательским удостоверением (SCIM), предоставляемых вашим приложением.
 
-* При использовании [Microsoft Graph](https://docs.microsoft.com/graph/)приложение управляет входящей и исходящей подготовкой пользователей и групп из Azure AD в приложение, запрашивая API Microsoft Graph.
+* При использовании [Microsoft Graph](/graph/)приложение управляет входящей и исходящей подготовкой пользователей и групп из Azure AD в приложение, запрашивая API Microsoft Graph.
 
 * Подготовка пользователей в язык разметки зявлений системы безопасности (SAML) JIT (SAML JIT) может быть включена, если приложение использует SAML для Федерации. Он использует сведения о заявках, отправленные в токене SAML для предоставления пользователям.
 
@@ -72,8 +72,8 @@ Azure AD предоставляет несколько путей интегра
 | Поддержка учетных записей гостей (B2B)| √| √| √ |
 | Поддержка некорпоративных учетных записей (B2C)| X| √| √ |
 
-<sup>*</sup>— Для синхронизации пользователей из AD с Azure AD требуется Azure AD Connect Setup.  
-<sup>+</sup >— Использование SCIM для подготовки не исключает возможность интеграции приложения с MIcrosoft Graph для других целей.
+<sup>*</sup> — Для синхронизации пользователей из AD с Azure AD требуется Azure AD Connect Setup.  
+<sup>+</sup >— Использование SCIM для подготовки не исключает возможность интеграции приложения с Microsoft Graph для других целей.
 
 ## <a name="azure-ad-provisioning-service-scim"></a>Служба подготовки Azure AD (SCIM)
 
@@ -89,7 +89,7 @@ Azure AD предоставляет несколько путей интегра
 
 ## <a name="microsoft-graph-for-provisioning"></a>Microsoft Graph для подготовки
 
-При использовании Microsoft Graph для подготовки предоставляется доступ ко всем пользовательским данным, доступным в Graph. Помимо сведений о пользователях и группах, можно также получить дополнительные сведения, такие как роли пользователя, диспетчер и прямые отчеты, принадлежащие и зарегистрированные устройства, а также сотни других элементов данных, доступных в [Microsoft Graph](https://docs.microsoft.com/graph/api/overview?view=graph-rest-1.0). 
+При использовании Microsoft Graph для подготовки предоставляется доступ ко всем пользовательским данным, доступным в Graph. Помимо сведений о пользователях и группах, можно также получить дополнительные сведения, такие как роли пользователя, диспетчер и прямые отчеты, принадлежащие и зарегистрированные устройства, а также сотни других элементов данных, доступных в [Microsoft Graph](/graph/api/overview?view=graph-rest-1.0). 
 
 Более 15 000 000 организаций и 90% компаний из списка Fortune 500 используют Azure AD при подписке на облачные службы Майкрософт, такие как Office 365, Microsoft Azure, Enterprise Mobility Suite или Microsoft 365. Microsoft Graph можно использовать для интеграции приложения с рабочими процессами администрирования, например для адаптации сотрудников (и завершения работы), обслуживания профиля и многого другого. 
 
@@ -97,9 +97,9 @@ Azure AD предоставляет несколько путей интегра
 
 * [Домашняя страница Microsoft Graph](https://developer.microsoft.com/graph)
 
-* [Overview of Microsoft Graph (Обзор Microsoft Graph)](https://docs.microsoft.com/graph/overview)
+* [Overview of Microsoft Graph (Обзор Microsoft Graph)](/graph/overview)
 
-* [Обзор Microsoft Graph проверки подлинности](https://docs.microsoft.com/graph/auth/)
+* [Обзор Microsoft Graph проверки подлинности](/graph/auth/)
 
 * [Приступая к работе с Microsoft Graph](https://developer.microsoft.com/graph/get-started)
 
@@ -109,7 +109,7 @@ Azure AD предоставляет несколько путей интегра
 
 SAML JIT использует сведения о заявках в токене SAML для создания и обновления сведений о пользователях в приложении. Клиенты могут настроить эти обязательные утверждения в приложении Azure AD по мере необходимости. Иногда необходимо включить JIT-подготовку на стороне приложения, чтобы клиент мог использовать эту функцию. SAML JIT удобен для создания и обновления пользователей, но не может удалять или деактивировать пользователей в приложении.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 
 * [Включение единого входа для приложения](../manage-apps/isv-sso-content.md)
 

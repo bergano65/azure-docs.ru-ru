@@ -8,16 +8,16 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 11/08/2019
 ms.author: cawa
-ms.openlocfilehash: ff5480e6b78beda7fe50dc772eae925ccdb80664
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 9922601d67393d103b95da7286d8db71d913434a
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905352"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235251"
 ---
 # <a name="get-started-with-storage-explorer"></a>Начало работы с Обозревателем службы хранилища
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Overview
 
 Обозреватель службы хранилища Microsoft Azure — это изолированное приложение, которое упрощает работу с данными из Cлужбы хранилища Azure на платформе Windows, macOS и Linux. В этой статье вы узнаете о нескольких способах подключения к учетным записям хранения Azure и управления ими.
 

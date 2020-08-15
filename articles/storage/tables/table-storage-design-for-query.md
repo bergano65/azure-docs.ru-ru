@@ -2,18 +2,18 @@
 title: Создание табличного хранилища Azure для запросов | Документация Майкрософт
 description: Проектирование таблиц для запросов в хранилище таблиц Azure. Выберите подходящий ключ секции, оптимизируйте запросы и отсортируйте данные для службы таблиц.
 services: storage
-author: MarkMcGeeAtAquent
+author: tamram
+ms.author: tamram
 ms.service: storage
 ms.topic: article
 ms.date: 04/23/2018
-ms.author: sngun
 ms.subservice: tables
-ms.openlocfilehash: 28a15541b9d706095bcd3d6d361bd7c983f195df
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: a15415ab7f5e01619a4a022d7254ef3995a825b0
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926252"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88236341"
 ---
 # <a name="design-for-querying"></a>Разработка для запросов
 в решениях службы таблиц может быть связана с большим количеством операций чтения, записи или сочетания этих двух видов нагрузки. В этой статье рассматриваются вопросы, которые необходимо учесть при разработке службы таблиц для эффективной поддержки операций чтения. Как правило, схема, поддерживающая операции чтения, также эффективна для операций записи. Тем не менее, при реализации поддержки операций записи следует придерживаться дополнительных рекомендаций, которые приводятся в статье [Design for data modification](table-storage-design-for-modification.md) (Проектирование изменения данных).
@@ -96,7 +96,7 @@ ms.locfileid: "87926252"
 * [Шаблон вторичного индекса в разных разделах](table-storage-design-patterns.md#inter-partition-secondary-index-pattern) — хранение нескольких копий каждой сущности с помощью различных значений RowKey в отдельных разделах или отдельных таблицах для выполнения быстрых и эффективных операций поиска и активации альтернативных порядков сортировки с помощью различных значений RowKey.
 * [Шаблон для заключительного фрагмента журнала](table-storage-design-patterns.md#log-tail-pattern) — извлечение *n* сущностей, недавно добавленных в раздел, с помощью значения **RowKey** , выполняющего сортировку по дате и времени в обратном порядке.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Шаблоны проектирования таблиц](table-storage-design-patterns.md)
 - [Моделирование отношений](table-storage-design-modeling.md)

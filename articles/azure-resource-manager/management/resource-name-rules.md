@@ -3,12 +3,12 @@ title: Ограничения именования ресурсов
 description: Сведения о правилах и ограничениях именования для ресурсов Azure.
 ms.topic: conceptual
 ms.date: 05/21/2020
-ms.openlocfilehash: ca13203b6d31c1eeb939c668a58e67f0d462a905
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 56c50354a6ecbd6ba1d9a806f986cea1c4f3215f
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85554345"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235984"
 ---
 # <a name="naming-rules-and-restrictions-for-azure-resources"></a>Правила и ограничения именования для ресурсов Azure
 
@@ -392,6 +392,7 @@ ms.locfileid: "85554345"
 > [!div class="mx-tableFixed"]
 > | Сущность | Область | Длина | Допустимые символы |
 > | --- | --- | --- | --- |
+> | actionGroups | resource group | 1–260 | Нельзя использовать:<br>`/` <br><br>Не может заканчиваться пробелом или точкой.  |
 > | components | resource group | 1–260 | Нельзя использовать:<br>`%&\?/` <br><br>Не может заканчиваться пробелом или точкой.  |
 
 ## <a name="microsoftiotcentral"></a>Microsoft.IoTCentral
@@ -695,6 +696,7 @@ ms.locfileid: "85554345"
 > [!div class="mx-tableFixed"]
 > | Сущность | Область | Длина | Допустимые символы |
 > | --- | --- | --- | --- |
+> | certificates | resource group | 1–260 | Нельзя использовать:<br>`/` <br><br>Не может заканчиваться пробелом или точкой.  | 
 > | serverfarms | resource group | 1–40 | Буквенно-цифровые символы и дефисы. |
 > | sites | глобальная | 2–60 | Содержит буквенно-цифровые символы и дефисы.<br><br>Не может начинаться или заканчиваться дефисом. |
 > | sites / slots | site | 2–59 | Буквенно-цифровые символы и дефисы. |

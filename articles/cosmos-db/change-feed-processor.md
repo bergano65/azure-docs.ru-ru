@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/13/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 4325f75ac8181e088d64e53d3f65e085a09c0224
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8353b7290f0e0073faf93b4ea23bcc0ba50bb89e
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85119415"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88236477"
 ---
 # <a name="change-feed-processor-in-azure-cosmos-db"></a>Обработчик канала изменений в Azure Cosmos DB
 
@@ -95,11 +95,23 @@ ms.locfileid: "85119415"
 
 Вы оплачиваете единицы запросов, так как при перемещении данных в контейнеры Cosmos и из них всегда используются единицы запросов. Плата выставляется за число потребляемых ЕЗ контейнером аренды.
 
+## <a name="where-to-host-the-change-feed-processor"></a>Место размещения обработчика веб-канала изменений
+
+Обработчик веб-канала изменений может размещаться на любой платформе, поддерживающей длительные процессы или задачи:
+
+* Непрерывно выполняющееся [веб-задание Azure](https://docs.microsoft.com/learn/modules/run-web-app-background-task-with-webjobs/).
+* Процесс на [виртуальной машине Azure](https://docs.microsoft.com/azure/architecture/best-practices/background-jobs.md#azure-virtual-machines).
+* Фоновое задание в [службе Azure Kubernetes](https://docs.microsoft.com/azure/architecture/best-practices/background-jobs.md#azure-kubernetes-service).
+* [Размещенная служба ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/host/hosted-services).
+
+Хотя обработчик веб-каналов изменений может работать в средах с кратковременным временем существования, поскольку контейнер аренды сохраняет состояние, цикл запуска и окончания этих сред будет добавлять задержку к получению уведомлений (из-за издержек при запуске процессора при каждом запуске среды).
+
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Azure Cosmos DB](sql-api-sdk-dotnet.md)
-* [Примеры использования в GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed)
-* [Дополнительные примеры на GitHub](https://github.com/Azure-Samples/cosmos-dotnet-change-feed-processor)
+* [Полный пример приложения на GitHub](https://github.com/Azure-Samples/cosmos-dotnet-change-feed-processor)
+* [Дополнительные примеры использования на GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed)
+* [Cosmos DB семинар для обработчика веб-канала изменений](https://azurecosmosdb.github.io/labs/dotnet/labs/08-change_feed_with_azure_functions.html#consume-cosmos-db-change-feed-via-the-change-feed-processor)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

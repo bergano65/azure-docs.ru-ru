@@ -1,19 +1,19 @@
 ---
-title: Использование Azure Digital двойников для обновления карт Azure Maps
+title: Интеграция с Azure Maps
 titleSuffix: Azure Digital Twins
-description: Узнайте, как создать функцию Azure, которая может использовать двойника Graph и уведомления Azure Digital двойников для обновления сведений, отображаемых в Azure Maps.
+description: Узнайте, как создать функцию Azure, которая может использовать двойника Graph и уведомления Azure Digital двойников для обновления карт Azure Maps.
 author: alexkarcher-msft
 ms.author: alkarche
 ms.date: 6/3/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: 6aad6201136bb925d5e094de115cc7274cc7872a
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: a2dff1ea9c830fa48545dc25654cc3c5318c3415
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87131418"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235916"
 ---
 # <a name="use-azure-digital-twins-to-update-an-azure-maps-indoor-map"></a>Использование Azure Digital двойников для обновления карт Azure Maps
 
@@ -25,7 +25,7 @@ ms.locfileid: "87131418"
 2. Создание функции Azure для обновления "Azure Maps" функции сопоставления.
 3. Сведения о хранении идентификатора сопоставления и идентификатора состояния компонентов в графе Azure Digital двойников.
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные условия
 
 * Следуйте указаниям в руководстве по цифровому двойников Azure [*: подключение комплексного решения*](./tutorial-end-to-end.md).
     * Вы будете расширять эту двойника с помощью дополнительной конечной точки и маршрута. Вы также добавите в приложение функции другую функцию из этого руководства. 
@@ -156,7 +156,7 @@ az functionapp config appsettings set --settings "statesetID=<your-Azure-Maps-st
 
 В зависимости от конфигурации топологии вы сможете хранить эти три атрибута на разных уровнях, соотнесенных с степенью детализации вашей схемы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об управлении, обновлении и извлечении данных из графа двойников см. в следующих статьях:
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 33772d46f363b161c1faa5c953f48a702ae2b8bf
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 1f7486f1080c0fbb25b1be6ab70bb647a546ceca
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009678"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88234998"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (портал)
 
@@ -69,7 +69,7 @@ ms.locfileid: "88009678"
 
 [!INCLUDE [digital-twins-setup-role-assignment.md](../../includes/digital-twins-setup-role-assignment.md)]
 
-Сначала откройте страницу для своего экземпляра Azure Digital двойников в портал Azure. В меню экземпляра выберите *Управление доступом (IAM)*. Нажмите кнопку *Добавить* в разделе *Добавление назначения роли*.
+Сначала откройте страницу для своего экземпляра Azure Digital двойников в портал Azure. В меню экземпляра выберите *Управление доступом (IAM)*. Нажмите кнопку  *Добавить* в разделе *Добавление назначения роли*.
 
 :::image type="content" source="media/how-to-set-up-instance/portal/add-role-assignment-1.png" alt-text="Добавление назначения роли на странице "Управление доступом (IAM)"":::
 
@@ -127,6 +127,9 @@ ms.locfileid: "88009678"
 
 :::image type="content" source="media/how-to-set-up-instance/portal/request-api-permissions-1.png" alt-text="Просмотр результатов поиска страниц "разрешения API запроса", демонстрирующих Azure Digital двойников":::
 
+>[!NOTE]
+> При наличии существующего экземпляра Azure Digital двойников из предыдущего общедоступного предварительной версии службы (до июля 2020) по-прежнему в вашей подписке необходимо найти *службу "интеллектуальные модули Azure* ". Это старое имя для того же набора API-интерфейсов, которое не будет изменяться после этого шага.
+
 Далее предстоит выбрать разрешения, которые будут предоставлены для этих API. Разверните разрешение **Чтение (1)** и установите флажок *чтение. запись* , чтобы предоставить этому приложению доступ для чтения и записи регистрации приложения.
 
 :::image type="content" source="media/how-to-set-up-instance/portal/request-api-permissions-2.png" alt-text="Просмотр страницы "разрешения API запросов" Выбор разрешений "чтение. запись" для API-интерфейсов цифрового двойников Azure":::
@@ -157,7 +160,7 @@ ms.locfileid: "88009678"
 
 [!INCLUDE [digital-twins-setup-additional-requirements.md](../../includes/digital-twins-setup-additional-requirements.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. раздел как подключить клиентское приложение к экземпляру, написав код проверки подлинности клиентского приложения:
 * [*Пошаговое руководство. Написание кода проверки подлинности приложения*](how-to-authenticate-client.md)

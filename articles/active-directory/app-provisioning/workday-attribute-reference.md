@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 05/25/2020
 ms.author: kenwith
 ms.reviewer: celested
-ms.openlocfilehash: 8c508e65ef2c6d62716454af151feb0a1c80bba0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 036b3af03dec2bdaa7feacc94abca930ebd9b317
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84781114"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235389"
 ---
 # <a name="workday-attribute-reference"></a>Справочник по атрибутам Workday
 
@@ -211,7 +211,7 @@ ms.locfileid: "84781114"
 ## <a name="custom-xpath-values"></a>Пользовательские значения XPATH
 В таблице ниже приведен список других часто используемых выражений API XPATH при подготовке рабочих ролей из Workday к Active Directory или Azure AD. Протестируйте выражения API XPATH, приведенные здесь, с версией Workday, ссылающейся на инструкции, приведенные в разделе [учебник. Управление конфигурацией](../saas-apps/workday-inbound-tutorial.md#managing-your-configuration).
 
-Чтобы добавить дополнительные атрибуты в таблицу XPATH [, чтобы воспользоваться](https://docs.microsoft.com/contribute) преимуществами клиентов, реализующих эту интеграцию, оставьте комментарий ниже или непосредственно приведите к статье. 
+Чтобы добавить дополнительные атрибуты в таблицу XPATH [, чтобы воспользоваться](/contribute) преимуществами клиентов, реализующих эту интеграцию, оставьте комментарий ниже или непосредственно приведите к статье. 
 
 > [!div class="mx-tdBreakAll"]
 > | \# | Имя атрибута Workday  | Версия API Workday | Выражение XPATH в API Workday   |
@@ -224,12 +224,12 @@ ms.locfileid: "84781114"
 
 
 ## <a name="supported-xpath-functions"></a>Поддерживаемые функции XPATH
-Ниже приведен список функций XPATH, поддерживаемых [Microsoft .NET библиотекой XPath](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256138(v=vs.100)) , которые можно использовать при создании выражения API XPath. 
+Ниже приведен список функций XPATH, поддерживаемых [Microsoft .NET библиотекой XPath](/previous-versions/dotnet/netframework-4.0/ms256138(v=vs.100)) , которые можно использовать при создании выражения API XPath. 
 
 * name
 * last
 * position
-* string
+* строка
 * substring
 * concat
 * substring-after
@@ -240,7 +240,7 @@ ms.locfileid: "84781114"
 * normalize-space
 * substring-before
 * Логическое
-* true
+* Да
 * not
 * false
 * number
@@ -248,4 +248,3 @@ ms.locfileid: "84781114"
 * Sum
 * round
 * floor
-

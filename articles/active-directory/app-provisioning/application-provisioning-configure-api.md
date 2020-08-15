@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 11/15/2019
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 01d4475e73fd436fd0cd2a8aca1e7a946cdd7562
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 17660df34c8039ae96440c417aef051d51a5c91c
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84782064"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88234759"
 ---
 # <a name="configure-provisioning-using-microsoft-graph-apis"></a>Настройка подготовки с помощью API-интерфейсов Microsoft Graph
 
@@ -48,7 +48,7 @@ ms.locfileid: "84782064"
 1. После успешного входа вы увидите данные учетной записи пользователя на панели слева.
 
 ### <a name="retrieve-the-gallery-application-template-identifier"></a>Получение идентификатора шаблона для приложения в коллекции
-У каждого приложения в коллекции приложений Azure AD есть свой [шаблон](https://docs.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-beta&tabs=http), который описывает метаданные для этого приложения. По этому шаблону вы можете создать экземпляр приложения и субъект-службу в клиенте для управления им.
+У каждого приложения в коллекции приложений Azure AD есть свой [шаблон](/graph/api/applicationtemplate-list?tabs=http&view=graph-rest-beta), который описывает метаданные для этого приложения. По этому шаблону вы можете создать экземпляр приложения и субъект-службу в клиенте для управления им.
 
 #### <a name="request"></a>*Запрос*
 
@@ -100,7 +100,7 @@ Content-type: application/json
 
 ### <a name="create-the-gallery-application"></a>Создание приложения из коллекции
 
-Для [создания экземпляра](https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-beta&tabs=http) приложения и субъекта-службы в клиенте используйте идентификатор шаблона, полученный в приложении на предыдущем шаге.
+Для [создания экземпляра](/graph/api/applicationtemplate-instantiate?tabs=http&view=graph-rest-beta) приложения и субъекта-службы в клиенте используйте идентификатор шаблона, полученный в приложении на предыдущем шаге.
 
 #### <a name="request"></a>*Запрос*
 
@@ -169,7 +169,7 @@ Content-type: application/json
 
 ### <a name="retrieve-the-template-for-the-provisioning-connector"></a>Получение шаблона для соединителя подготовки
 
-Приложения в коллекции, для которых включена подготовка, имеют шаблоны для упрощения настройки. Используйте следующий запрос, чтобы [получить шаблон для конфигурации подготовки](https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-list?view=graph-rest-beta&tabs=http). Обратите внимание, что вам потребуется указать идентификатор. ИДЕНТИФИКАТОР ссылается на предыдущий ресурс, который в данном случае является ServicePrincipal. 
+Приложения в коллекции, для которых включена подготовка, имеют шаблоны для упрощения настройки. Используйте следующий запрос, чтобы [получить шаблон для конфигурации подготовки](/graph/api/synchronization-synchronizationtemplate-list?tabs=http&view=graph-rest-beta). Обратите внимание, что вам потребуется указать идентификатор. ИДЕНТИФИКАТОР ссылается на предыдущий ресурс, который в данном случае является ServicePrincipal. 
 
 #### <a name="request"></a>*Запрос*
 
@@ -207,7 +207,7 @@ HTTP/1.1 200 OK
 ```
 
 ### <a name="create-the-provisioning-job"></a>Создание задания подготовки
-Чтобы включить подготовку, сначала необходимо [создать задание](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-post?view=graph-rest-beta&tabs=http). Используйте приведенный ниже запрос для создания задания подготовки. Используйте templateId из предыдущего шага при указании шаблона, который будет использоваться для задания.
+Чтобы включить подготовку, сначала необходимо [создать задание](/graph/api/synchronization-synchronizationjob-post?tabs=http&view=graph-rest-beta). Используйте приведенный ниже запрос для создания задания подготовки. Используйте templateId из предыдущего шага при указании шаблона, который будет использоваться для задания.
 
 #### <a name="request"></a>*Запрос*
 <!-- {
@@ -261,7 +261,7 @@ Content-type: application/json
 
 ### <a name="test-the-connection-to-the-application"></a>Проверка подключения к приложению
 
-Проверьте соединение с приложением стороннего производителя. Ниже приведен пример для приложения, которое требует clientSecret и Секреттокен. Каждое приложение имеет свои требования. Приложения часто используют BaseAddress вместо ClientSecret. Чтобы определить, какие учетные данные требуются приложению, перейдите на страницу конфигурации подготовки для приложения и в режиме разработчика щелкните Проверить подключение. В сетевом трафике будут показаны параметры, используемые для учетных данных. Полный список учетных данных можно найти [здесь](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&tabs=http). 
+Проверьте соединение с приложением стороннего производителя. Ниже приведен пример для приложения, которое требует clientSecret и Секреттокен. Каждое приложение имеет свои требования. Приложения часто используют BaseAddress вместо ClientSecret. Чтобы определить, какие учетные данные требуются приложению, перейдите на страницу конфигурации подготовки для приложения и в режиме разработчика щелкните Проверить подключение. В сетевом трафике будут показаны параметры, используемые для учетных данных. Полный список учетных данных можно найти [здесь](/graph/api/synchronization-synchronizationjob-validatecredentials?tabs=http&view=graph-rest-beta). 
 
 #### <a name="request"></a>*Запрос*
 ```msgraph-interactive
@@ -285,7 +285,7 @@ HTTP/1.1 204 No Content
 
 ### <a name="save-your-credentials"></a>Сохранение учетных данных
 
-Для настройки подготовки необходимо установить доверие между Azure AD и приложением. Авторизуйте доступ к сторонним приложениям. Ниже приведен пример для приложения, которое требует clientSecret и Секреттокен. Каждое приложение имеет свои требования. Просмотрите [документацию по API](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&tabs=http) , чтобы просмотреть доступные варианты. 
+Для настройки подготовки необходимо установить доверие между Azure AD и приложением. Авторизуйте доступ к сторонним приложениям. Ниже приведен пример для приложения, которое требует clientSecret и Секреттокен. Каждое приложение имеет свои требования. Просмотрите [документацию по API](/graph/api/synchronization-synchronizationjob-validatecredentials?tabs=http&view=graph-rest-beta) , чтобы просмотреть доступные варианты. 
 
 #### <a name="request"></a>*Запрос*
 ```msgraph-interactive
@@ -310,7 +310,7 @@ HTTP/1.1 204 No Content
 ```
 
 ## <a name="step-4-start-the-provisioning-job"></a>Шаг 4. Запуск задания подготовки
-Теперь, когда задание подготовки настроено, используйте следующую команду для [запуска задания](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-beta&tabs=http). 
+Теперь, когда задание подготовки настроено, используйте следующую команду для [запуска задания](/graph/api/synchronization-synchronizationjob-start?tabs=http&view=graph-rest-beta). 
 
 
 #### <a name="request"></a>*Запрос*
@@ -392,7 +392,7 @@ Content-length: 2577
 
 
 ### <a name="monitor-provisioning-events-using-the-provisioning-logs"></a>Мониторинг событий подготовки с помощью журналов подготовки
-В дополнение к наблюдению за состоянием задания подготовки можно использовать [журналы подготовки](https://docs.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-beta&tabs=http) для запроса всех происходящих событий (например, запрос определенного пользователя и определения, были ли они успешно подготовлены).
+В дополнение к наблюдению за состоянием задания подготовки можно использовать [журналы подготовки](/graph/api/provisioningobjectsummary-list?tabs=http&view=graph-rest-beta) для запроса всех происходящих событий (например, запрос определенного пользователя и определения, были ли они успешно подготовлены).
 
 #### <a name="request"></a>*Запрос*
 ```msgraph-interactive
@@ -524,7 +524,7 @@ Content-type: application/json
 }
 
 ```
-## <a name="related-articles"></a>Похожие статьи
+## <a name="related-articles"></a>Связанные статьи
 
-- [Обзор документации по Microsoft Graph синхронизации](https://docs.microsoft.com/graph/api/resources/synchronization-overview?view=graph-rest-beta)
+- [Обзор документации по Microsoft Graph синхронизации](/graph/api/resources/synchronization-overview?view=graph-rest-beta)
 - [Интеграция пользовательского приложения SCIM с Azure AD](use-scim-to-provision-users-and-groups.md)

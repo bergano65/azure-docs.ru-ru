@@ -11,20 +11,20 @@ ms.topic: reference
 ms.date: 04/26/2020
 ms.author: kenwith
 ms.reviewer: arvinh, celested
-ms.openlocfilehash: 612663c2edc8aa7bc1eb3a2e4c8106b3e778a961
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b69e2c9b12b2db34f3eb70e54d2c6aede6b54784
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84781690"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235508"
 ---
 # <a name="using-scim-and-microsoft-graph-together-to-provision-users-and-enrich-your-application-with-the-data-it-needs"></a>Использование SCIM и Microsoft Graph вместе для подготовки пользователей и расширения возможностей приложения с помощью необходимых данных
 
-**Целевая аудитория:** Эта статья предназначена для разработчиков, создающих приложения, интегрированные с Azure Active Directory (Azure AD). Если вы хотите использовать приложения, которые уже интегрированы с Azure AD, такие как Zoom, ServiceNow и DropBox, вы можете пропустить эту статью и ознакомиться с [учебниками](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list) по конкретным приложениям или изучить [работу службы подготовки](https://docs.microsoft.com/azure/active-directory/app-provisioning/how-provisioning-works).
+**Целевая аудитория:** Эта статья предназначена для разработчиков, создающих приложения, интегрированные с Azure Active Directory (Azure AD). Если вы хотите использовать приложения, которые уже интегрированы с Azure AD, такие как Zoom, ServiceNow и DropBox, вы можете пропустить эту статью и ознакомиться с [учебниками](../saas-apps/tutorial-list.md) по конкретным приложениям или изучить [работу службы подготовки](./how-provisioning-works.md).
 
 **Распространенные сценарии**
 
-Azure AD предоставляет готовую службу для подготовки и расширяемой платформы для создания приложений. Дерево принятия решений описывает, как разработчик будет использовать [scim](https://aka.ms/scimoverview) и [Microsoft Graph](https://docs.microsoft.com/graph/overview) для автоматизации подготовки. 
+Azure AD предоставляет готовую службу для подготовки и расширяемой платформы для создания приложений. Дерево принятия решений описывает, как разработчик будет использовать [scim](https://aka.ms/scimoverview) и [Microsoft Graph](/graph/overview) для автоматизации подготовки. 
 
 > [!div class="checklist"]
 > * Автоматически создавать пользователей в моем приложении
@@ -97,15 +97,15 @@ DELETE /Users/5171a35d82074e068ce2 HTTP/1.1
 ## <a name="scenario-4-enrich-my-app-with-data-from-microsoft-services-such-as-teams-outlook-and-onedrive"></a>Сценарий 4. расширение возможностей моего приложения с помощью данных служб Майкрософт, таких как команды, Outlook и OneDrive
 Мое приложение встроено в Microsoft Teams и полагается на данные сообщений. Кроме того, мы сохраняем файлы для пользователей в OneDrive. Как можно расширить свое приложение с помощью данных из этих служб и в корпорации Майкрософт?
 
-**Рекомендации:** [Microsoft Graph](https://docs.microsoft.com/graph/) — это точка входа для доступа к данным Майкрософт. Каждая рабочая нагрузка предоставляет API-интерфейсы с необходимыми данными. Microsoft Graph можно использовать вместе с [scim подготовки](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups) для приведенных выше сценариев. SCIM можно использовать для подготовки базовых атрибутов пользователей в приложении при вызове Graph, чтобы получить любые другие необходимые данные. 
+**Рекомендации:** [Microsoft Graph](/graph/) — это точка входа для доступа к данным Майкрософт. Каждая рабочая нагрузка предоставляет API-интерфейсы с необходимыми данными. Microsoft Graph можно использовать вместе с [scim подготовки](./use-scim-to-provision-users-and-groups.md) для приведенных выше сценариев. SCIM можно использовать для подготовки базовых атрибутов пользователей в приложении при вызове Graph, чтобы получить любые другие необходимые данные. 
 
 ## <a name="scenario-5-track-changes-in-microsoft-services-such-as-teams-outlook-and-azure-ad"></a>Сценарий 5. регистрация изменений в службах Майкрософт, таких как команды, Outlook и Azure AD
 Мне нужна возможность отслеживанию изменений в командах и сообщениях Outlook и реагирование на них в режиме реального времени. Как можно вернуть эти изменения в приложение?
 
-**Рекомендации:** Microsoft Graph предоставляет [уведомления об изменениях](https://docs.microsoft.com/graph/webhooks) и [Отслеживание изменений](https://docs.microsoft.com/graph/delta-query-overview) для различных ресурсов. Обратите внимание на следующие ограничения уведомлений об изменениях.
+**Рекомендации:** Microsoft Graph предоставляет [уведомления об изменениях](/graph/webhooks) и [Отслеживание изменений](/graph/delta-query-overview) для различных ресурсов. Обратите внимание на следующие ограничения уведомлений об изменениях.
 - Если получатель событий подтверждает событие, но по какой бы то ни было причине не может действовать по какой бы то ни было причиной, это событие можно потерять.
 - Порядок получения изменений не гарантируется в хронологическом порядке.
-- Уведомления об изменениях не всегда содержат [данные ресурсов](https://docs.microsoft.com/graph/webhooks-with-resource-data) по указанным выше причинам. разработчики часто используют уведомления об изменениях вместе с отслеживанием изменений для сценариев синхронизации. 
+- Уведомления об изменениях не всегда содержат [данные ресурсов](/graph/webhooks-with-resource-data) по указанным выше причинам. разработчики часто используют уведомления об изменениях вместе с отслеживанием изменений для сценариев синхронизации. 
 
 ## <a name="scenario-6-provision-users-and-groups-in-azure-ad"></a>Сценарий 6. предоставление пользователей и групп в Azure AD
 Мое приложение создает сведения о пользователе, который требуется клиентам в Azure AD. Это может быть приложение отдела кадров, чем управление наймом, коммуникационное приложение, которое создает номера телефонов для пользователей, или другое приложение, которое создает данные, которые будут полезны в Azure AD. Разделы справки заполнить запись пользователя в Azure AD этими данными? 
@@ -115,7 +115,7 @@ DELETE /Users/5171a35d82074e068ce2 HTTP/1.1
 > [!NOTE]
 > У Майкрософт есть служба подготовки, которая извлекает данные из приложений отдела кадров, таких как Workday и SuccessFactors. Эти интеграции создаются и управляются корпорацией Майкрософт. Для адаптации нового приложения HR к нашей службе можно запросить его на [UserVoice](https://feedback.azure.com/forums/374982-azure-active-directory-application-requests). 
 
-## <a name="related-articles"></a>Похожие статьи
+## <a name="related-articles"></a>Связанные статьи
 
-- [Обзор документации по Microsoft Graph синхронизации](https://docs.microsoft.com/graph/api/resources/synchronization-overview?view=graph-rest-beta)
+- [Обзор документации по Microsoft Graph синхронизации](/graph/api/resources/synchronization-overview?view=graph-rest-beta)
 - [Интеграция пользовательского приложения SCIM с Azure AD](use-scim-to-provision-users-and-groups.md)
