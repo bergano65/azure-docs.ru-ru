@@ -17,7 +17,7 @@
       items:
         - name: REST API
           items:
-            - name: 'Использование C#'
+            - name: Использование C#
               href: call-endpoint-csharp.md
             - name: Использование Java
               href: call-endpoint-java.md
@@ -103,7 +103,7 @@
     - name: База знаний
       href: 'https://cognitive.uservoice.com/knowledgebase/topics/127875-bing-search-web-image-video-news-autosuggest'
     - name: Получение ключа API
-      href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search-api'
+      href: 'https://azure.microsoft.com/free/cognitive-services'
     - name: Тестирование
       href: 'https://aka.ms/bingcustomsearchtryit'
     - name: Конечные точки Пользовательского поиска Bing

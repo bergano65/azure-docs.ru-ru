@@ -22,11 +22,7 @@
     - name: Использование браузера
       href: luis-get-started-get-intent-from-browser.md
     - name: Использование пакета SDK
-      items:
-        - name: Разработка приложения
-          href: sdk-authoring.md
-        - name: Запрос конечной точки прогнозирования
-          href: sdk-query-prediction-endpoint.md
+      href: quickstart-sdk.md
     - name: Использование REST API
       items:
         - name: Получение сведений о намерении

@@ -12,7 +12,7 @@
   items:
     - name: REST API
       items:
-        - name: 'Использование C#'
+        - name: Использование C#
           href: csharp.md
         - name: Использование Java
           href: java.md
@@ -92,7 +92,7 @@
     - name: База знаний
       href: 'https://cognitive.uservoice.com/knowledgebase/topics/127875-bing-search-web-image-video-news-autosuggest'
     - name: Получение ключа API
-      href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-news-search-api'
+      href: 'https://azure.microsoft.com/free/cognitive-services'
     - name: Тестирование
       href: 'https://dev.cognitive.microsoft.com/docs/services/56b43f72cf5ff8098cef380a/operations/56f02400dbe2d91900c68553'
     - name: Конечные точки API Поиска новостей Bing
