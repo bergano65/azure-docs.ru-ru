@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: JenCook
-ms.openlocfilehash: 6e853edf5b7ba756aaedceaf59b1f7d1d7e48b39
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: f9b73e0919d660947edd0417f7379b3f6e6140c0
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85985432"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245858"
 ---
 # <a name="solutions-on-azure-virtual-machines"></a>Решения для виртуальных машин Azure
 
@@ -32,41 +32,18 @@ ms.locfileid: "85985432"
 Чтобы получить полный список доступных размеров виртуальных машин для конфиденциальных вычислений по регионам и зонам доступности, выполните следующую команду в [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?view=azure-cli-latest):
 
 ```azurecli-interactive
-az vm list-skus 
-    --size dc 
-    --query "[?family=='standardDCSv2Family'].{name:name,locations:locationInfo[0].location,AZ_a:locationInfo[0].zones[0],AZ_b:locationInfo[0].zones[1],AZ_c:locationInfo[0].zones[2]}" 
-    --all 
+az vm list-skus `
+    --size dc `
+    --query "[?family=='standardDCSv2Family'].{name:name,locations:locationInfo[0].location,AZ_a:locationInfo[0].zones[0],AZ_b:locationInfo[0].zones[1],AZ_c:locationInfo[0].zones[2]}" `
+    --all `
     --output table
-```
-
-По состоянию на май 2020 года доступность ценовых категорий по регионам и зонам доступности выглядит так:
-
-```output
-Name              Locations      AZ_a
-----------------  -------------  ------
-Standard_DC8_v2   eastus         2
-Standard_DC1s_v2  eastus         2
-Standard_DC2s_v2  eastus         2
-Standard_DC4s_v2  eastus         2
-Standard_DC8_v2   CanadaCentral
-Standard_DC1s_v2  CanadaCentral
-Standard_DC2s_v2  CanadaCentral
-Standard_DC4s_v2  CanadaCentral
-Standard_DC8_v2   uksouth        3
-Standard_DC1s_v2  uksouth        3
-Standard_DC2s_v2  uksouth        3
-Standard_DC4s_v2  uksouth        3
-Standard_DC8_v2   CentralUSEUAP
-Standard_DC1s_v2  CentralUSEUAP
-Standard_DC2s_v2  CentralUSEUAP
-Standard_DC4s_v2  CentralUSEUAP
 ```
 
 Чтобы получить более подробную информацию об указанных выше размерах, выполните следующую команду:
 
 ```azurecli-interactive
-az vm list-skus 
-    --size dc 
+az vm list-skus `
+    --size dc `
     --query "[?family=='standardDCSv2Family']"
 ```
 ### <a name="dedicated-host-requirements"></a>Требования к выделенному узлу
@@ -101,17 +78,17 @@ az vm list-skus
 
 Конфиденциальные вычисления в Azure в настоящее время не поддерживают избыточность в пределах зоны с использованием Зон доступности. Если вам нужны конфиденциальные вычисления с максимальным уровнем доступности и избыточности, используйте [группы доступности](../virtual-machines/windows/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy). В силу аппаратных ограничений группы доступности для экземпляров конфиденциальных вычислений могут содержать не более 10 доменов обновления. 
 
-## <a name="deploying-via-an-azure-resource-manager-template"></a>Развертывание из шаблона Azure Resource Manager 
+## <a name="deployment-with-azure-resource-manager-arm-template"></a>Развертывание с помощью шаблона Azure Resource Manager (ARM)
 
 Azure Resource Manager — это служба развертывания и управления для Azure. Она обеспечивает уровень управления, позволяющий создавать, обновлять и удалять ресурсы в подписке Azure. Вы можете использовать ее функции управления, такие как управление доступом, блокировка и добавление тегов, чтобы защитить и упорядочить ресурсы после развертывания.
 
-Дополнительные сведения о шаблонах Azure Resource Manager см. в статье [Шаблоны Azure Resource Manager](../azure-resource-manager/templates/overview.md).
+Дополнительные сведения о шаблонах ARM см. в разделе [Общие сведения о шаблоны развертывания](../azure-resource-manager/templates/overview.md).
 
-Чтобы развернуть виртуальную машину серии DCsv2 из шаблона Azure Resource Manager, следует использовать [ресурс виртуальной машины](../virtual-machines/windows/template-description.md). Убедитесь, что вы используете правильные значения для параметров **vmSize** и **imageReference**.
+Чтобы развернуть виртуальную машину серии DCsv2 в шаблоне ARM, вы будете использовать [ресурс виртуальной машины](../virtual-machines/windows/template-description.md). Убедитесь, что вы используете правильные значения для параметров **vmSize** и **imageReference**.
 
 ### <a name="vm-size"></a>Размер виртуальной машины
 
-Укажите один из следующих размеров в шаблоне Azure Resource Manager для ресурса виртуальной машины. Эта строка присваивается параметру **vmSize** в разделе **properties**.
+Укажите один из следующих размеров в шаблоне ARM в ресурсе виртуальной машины. Эта строка присваивается параметру **vmSize** в разделе **properties**.
 
 ```json
   [
@@ -122,7 +99,7 @@ Azure Resource Manager — это служба развертывания и у
       ],
 ```
 
-### <a name="gen2-os-image"></a>Образ операционной системы 2-го поколения
+### <a name="gen2-os-image"></a>Образ ОС Gen2
 
 Также в разделе **properties** необходимо указать ссылку на образ в параметре **storageProfile**. Укажите *только один* из следующих образов в параметре **imageReference**.
 
@@ -153,7 +130,7 @@ Azure Resource Manager — это служба развертывания и у
       }
 ```
 
-## <a name="next-steps"></a>Next Steps 
+## <a name="next-steps"></a>Дальнейшие шаги 
 
 Из этой статьи вы узнали, какие условия и конфигурации потребуются для создания виртуальной машины для конфиденциальных вычислений. Теперь вы можете перейти в Microsoft Azure Marketplace и развернуть виртуальную машину серии DCsv2.
 

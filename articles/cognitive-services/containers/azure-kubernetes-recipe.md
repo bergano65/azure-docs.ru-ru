@@ -10,22 +10,22 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 24e04e166c13f787f756c97716e2bf0143eecbdb
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: b53476bcb05d6e91b157c24795c963c04e6f4bb4
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87128579"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88244499"
 ---
 # <a name="deploy-the-text-analytics-language-detection-container-to-azure-kubernetes-service"></a>Развертывание контейнера обнаружения языка Анализ текста в службе Kubernetes Azure
 
 Узнайте, как развертывать контейнер распознавания языка. В статье описано, как создавать локальные контейнеры Docker, отправлять их в закрытый реестр контейнеров и запускать в кластере Kubernetes, а также тестировать в веб-браузере.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Для выполнения этой процедуры необходимо установить и запустить несколько средств локально. Не используйте Azure CloudShell.
 
-* Используйте подписку Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* Используйте подписку Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services), прежде чем начинать работу.
 * [Git](https://git-scm.com/downloads) для вашей операционной системы, чтобы клонировать [пример](https://github.com/Azure-Samples/cognitive-services-containers-samples) для этой процедуры.
 * [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 * [Модуль Docker](https://www.docker.com/products/docker-engine), для которого нужно проверить работоспособность Docker CLI в окне консоли.
@@ -311,19 +311,19 @@ ms.locfileid: "87128579"
 
 1. Измените строки развертывания интерфейса распознавания языка в файле `language.yml`, используя данные из следующей таблицы, чтобы добавить имена образов реестров контейнеров, секрет клиента и параметры анализа текста.
 
-    Параметры развертывания интерфейса распознавания языка|Назначение|
+    Параметры развертывания интерфейса распознавания языка|Цель|
     |--|--|
-    |Строка 32<br> Свойство `image`|Расположение образа интерфейса в Реестре контейнеров<br>`<container-registry-name>.azurecr.io/language-frontend:v1`|
-    |Строка 44<br> Свойство `name`|Секрет Реестра контейнера для образа, который указан в параметре `<client-secret>` в предыдущем разделе.|
+    |Строка 32<br> Свойство`image`|Расположение образа интерфейса в Реестре контейнеров<br>`<container-registry-name>.azurecr.io/language-frontend:v1`|
+    |Строка 44<br> Свойство`name`|Секрет Реестра контейнера для образа, который указан в параметре `<client-secret>` в предыдущем разделе.|
 
 1. Измените строки развертывания распознавания языка в файле `language.yml`, используя данные из следующей таблицы, чтобы добавить имена образов реестров контейнеров, секрет клиента и параметры анализа текста.
 
-    |Параметры развертывания распознавания языка|Назначение|
+    |Параметры развертывания распознавания языка|Цель|
     |--|--|
-    |Строка 78<br> Свойство `image`|Расположение образа распознавания языка в Реестре контейнеров<br>`<container-registry-name>.azurecr.io/language:1.1.006770001-amd64-preview`|
-    |Строка 95<br> Свойство `name`|Секрет Реестра контейнера для образа, который указан в параметре `<client-secret>` в предыдущем разделе.|
-    |Строка 91<br> Свойство `apiKey`|Ключ ресурса анализа текста|
-    |Строка 92<br> Свойство `billing`|Конечная точка выставления счетов для ресурса анализа текста.<br>`https://westus.api.cognitive.microsoft.com/text/analytics/v2.1`|
+    |Строка 78<br> Свойство`image`|Расположение образа распознавания языка в Реестре контейнеров<br>`<container-registry-name>.azurecr.io/language:1.1.006770001-amd64-preview`|
+    |Строка 95<br> Свойство`name`|Секрет Реестра контейнера для образа, который указан в параметре `<client-secret>` в предыдущем разделе.|
+    |Строка 91<br> Свойство`apiKey`|Ключ ресурса анализа текста|
+    |Строка 92<br> Свойство`billing`|Конечная точка выставления счетов для ресурса анализа текста.<br>`https://westus.api.cognitive.microsoft.com/text/analytics/v2.1`|
 
     Параметр **apiKey** и **конечная точка выставления счетов** задаются в определении оркестрации Kubernetes, поэтому контейнеру веб-сайта не нужно знать их значения или передавать их в запросе. Контейнер веб-сайта обращается к контейнеру распознавания языка по имени оркестратора `language`.
 
@@ -401,7 +401,7 @@ az group delete --name cogserv-container-rg
 
 * [kubectl для пользователей Docker](https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Контейнеры Cognitive Services](../cognitive-services-container-support.md)

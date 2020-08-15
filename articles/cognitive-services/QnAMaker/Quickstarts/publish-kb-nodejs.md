@@ -5,12 +5,12 @@ ms.date: 02/08/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27, devx-track-javascript
 ms.topic: how-to
-ms.openlocfilehash: 18ccec5332e3751a86225ab087a1f68b0577cf96
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 447b8a07f6bbda42be4def96ee8f1244fa752526
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406101"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245593"
 ---
 # <a name="quickstart-qna-maker-rest-apis-for-nodejs"></a>Краткое руководство. QnA Maker интерфейсы API для Node.js
 
@@ -31,7 +31,7 @@ ms.locfileid: "87406101"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 * Текущая версия [Node.js](https://nodejs.org).
 * У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ и конечную точку (включая имя ресурса), щелкните **Быстрый запуск** для ресурса на портале Azure.
 
@@ -88,7 +88,7 @@ const request = require("requestretry");
 
 Задайте следующие значения среды:
 
-* `QNAMAKER_RESOURCE_KEY`— **Ключ** — это строка из 32 символов, которая доступна в портал Azure на QnA Maker ресурсе на странице **быстрого запуска** . Это не то же самое, что ключ конечной точки прогнозирования.
+* `QNAMAKER_RESOURCE_KEY` — **Ключ** — это строка из 32 символов, которая доступна в портал Azure на QnA Maker ресурсе на странице **быстрого запуска** . Это не то же самое, что ключ конечной точки прогнозирования.
 * `QNAMAKER_AUTHORING_ENDPOINT`. Конечная точка разработки (в формате `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com`) содержит **имя ресурса**. Это не тот же URL-адрес, который используется для запроса конечной точки прогнозирования.
 
 [!code-javascript[Add Azure resources from environment variables](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/rest-api/rest-api.js?name=authorization)]

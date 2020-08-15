@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/11/2019
 author: shganesh-dev
 ms.author: shganesh
-ms.openlocfilehash: 2bd38bc7a499aa9178d49f54e27a88a38206e521
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 5b688d64641f6dd8779d699bcd1d646e40b19b87
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87317575"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245678"
 ---
 # <a name="downloads-dashboard-in-commercial-marketplace-analytics"></a>Панель мониторинга загрузок в коммерческой аналитике Marketplace
 
@@ -25,9 +25,7 @@ ms.locfileid: "87317575"
 
 ## <a name="downloads-dashboard"></a>Панель мониторинга скачиваний
 
-Панель мониторинга **загрузки** в меню **анализ** отображает запросы на загрузку, содержащую более 1000 строк данных о клиентах или заказах.
-
-При запросе загрузки с более чем 1000 строками данных вы получите всплывающее уведомление и сообщение электронной почты со ссылкой на панель мониторинга **загрузки** . Эти загружаемые данные будут доступны в течение 30 дней, а затем удалены.
+Панель мониторинга **загрузки** в меню **анализ** отображает запросы на загрузку, содержащую более 1000 строк данных о клиентах или заказах. Эти загружаемые данные будут доступны в течение 30 дней, а затем удалены.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

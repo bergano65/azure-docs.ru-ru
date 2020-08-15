@@ -5,16 +5,21 @@ author: sajayantony
 ms.topic: article
 ms.date: 03/18/2020
 ms.author: sajaya
-ms.openlocfilehash: 1c2330f1ba71e2a72a1a44df7af6444181f5f9ea
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 02facedda206a5621cabe62a07520303635dc3ff
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836400"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245372"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о Реестре контейнеров Azure
 
 В этой статье рассматриваются часто задаваемые вопросы и известные проблемы Реестра контейнеров Azure.
+
+Рекомендации по устранению неполадок в реестре см. в следующих разделах:
+* [Устранение неполадок при входе в реестр](container-registry-troubleshoot-login.md)
+* [Устранение проблем с сетью с помощью реестра](container-registry-troubleshoot-access.md)
+* [Устранение неполадок с производительностью реестра](container-registry-troubleshoot-performance.md)
 
 ## <a name="resource-management"></a>Управление ресурсами
 

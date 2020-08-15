@@ -3,18 +3,23 @@ title: Проверка работоспособности реестра
 description: Узнайте, как выполнить команду быстрой диагностики для выявления распространенных проблем при использовании реестра контейнеров Azure, включая настройку локального DOCKER и подключение к реестру.
 ms.topic: article
 ms.date: 07/02/2019
-ms.openlocfilehash: ea4432c9e92c4a0380517e39678814e2d1cb3bfc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f27a99818260553cbd7ba26158db0064c145a21f
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74456408"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245389"
 ---
 # <a name="check-the-health-of-an-azure-container-registry"></a>Проверка работоспособности реестра контейнеров Azure
 
 При использовании реестра контейнеров Azure иногда могут возникать проблемы. Например, вы не можете извлечь образ контейнера из-за проблемы с DOCKER в локальной среде. Или сетевая ошибка может препятствовать подключению к реестру. 
 
 В качестве первого шага диагностики выполните команду [AZ контроля доступа проверки на работоспособность][az-acr-check-health] , чтобы получить сведения о работоспособности среды и при необходимости доступ к целевому реестру. Эта команда доступна в Azure CLI версии 2.0.67 или более поздней. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli].
+
+Дополнительные рекомендации по устранению неполадок в реестре см. в следующих статьях:
+* [Устранение неполадок при входе в реестр](container-registry-troubleshoot-login.md)
+* [Устранение проблем с сетью с помощью реестра](container-registry-troubleshoot-access.md)
+* [Устранение неполадок с производительностью реестра](container-registry-troubleshoot-performance.md)
 
 ## <a name="run-az-acr-check-health"></a>Выполните команду AZ контроля доступа (проверка работоспособности)
 
@@ -33,7 +38,7 @@ az acr check-health
 
 ### <a name="check-the-environment-and-a-target-registry"></a>Проверка среды и целевого реестра
 
-Чтобы проверить доступ к реестру, а также выполнить проверку локальной среды, передайте имя целевого реестра. Пример:
+Чтобы проверить доступ к реестру, а также выполнить проверку локальной среды, передайте имя целевого реестра. Пример.
 
 ```azurecli
 az acr check-health --name myregistry
@@ -53,7 +58,7 @@ az acr check-health --ignore-errors
 az acr check-health --name myregistry --ignore-errors
 ```      
 
-Пример результатов выполнения:
+Образец вывода:
 
 ```console
 $ az acr check-health --name myregistry --ignore-errors --yes

@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: how-to
 ms.date: 02/20/2020
-ms.openlocfilehash: d1e11ffcb96bc233604464e90edb7dd42578bf08
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: a473085f9c94ca42a75d01b342d60cc33836b096
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87132710"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88244845"
 ---
 # <a name="analyze-your-learning-loop-with-an-offline-evaluation"></a>Анализ цикла обучения с помощью автономной оценки
 
@@ -23,14 +23,14 @@ ms.locfileid: "87132710"
 
 Дополнительные сведения см. в разделе [Автономные оценки](concepts-offline-evaluation.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * Настроенный цикл персонализации
 * Цикл персонализации должен иметь репрезентативный объем данных — в качестве примерную мы рекомендуем по крайней мере 50 000 событий в своих журналах для осмысленных результатов оценки. При необходимости ранее экспортированные файлы _политики обучения_ можно сравнить и протестировать в одном и том же процессе оценивания.
 
 ## <a name="run-an-offline-evaluation"></a>Выполнение автономной оценки
 
-1. В [портал Azure](https://azure.microsoft.com/free/)выберите ресурс персонализации.
+1. В [портал Azure](https://azure.microsoft.com/free/cognitive-services)выберите ресурс персонализации.
 1. В портал Azure перейдите к разделу **оценки** и выберите **создать оценку**.
     ![В портал Azure перейдите к разделу * * оценки * * и выберите * * создать ознакомительную версию * *.](./media/offline-evaluation/create-new-offline-evaluation.png)
 1. Задайте следующие значения.
@@ -57,6 +57,6 @@ ms.locfileid: "87132710"
 
 1. Нажмите кнопку **Применить** , чтобы применить политику, которая повышает эффективность модели для данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте больше о [работе ознакомительных версий в автономном режиме](concepts-offline-evaluation.md).

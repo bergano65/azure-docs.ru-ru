@@ -10,12 +10,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 458cda927a6a123fcd9962efc6ab705e13f43286
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 740311226a662ea3d3f8bba3ee5156e14f74516b
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80878788"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88244301"
 ---
 # <a name="use-docker-compose-to-deploy-multiple-containers"></a>Развертывание нескольких контейнеров с помощью Docker Compose
 
@@ -25,11 +25,11 @@ ms.locfileid: "80878788"
 
 Может оказаться полезным управлять несколькими образами контейнеров на одном хост-компьютере. В этой статье мы будем объединять контейнеры для чтения и распознавания форм.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для этой процедуры требуется несколько средств, которые необходимо установить и запустить локально:
 
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services), прежде чем начать работу.
 * [Подсистема DOCKER](https://www.docker.com/products/docker-engine). Убедитесь, что интерфейс командной строки DOCKER работает в окне консоли.
 * Ресурс Azure с правильной ценовой категорией. Для этого контейнера работает только Следующая ценовая категория:
   * **Компьютерное зрениеный** ресурс только для ценовой категории F0 или Standard.
@@ -176,7 +176,7 @@ IMAGE ID            REPOSITORY                                                  
 
 ![Контейнер распознавателя форм](media/form-recognizer-swagger-page.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Контейнеры Cognitive Services](../cognitive-services-container-support.md)

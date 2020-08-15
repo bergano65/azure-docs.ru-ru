@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff0a1fb386776a3ab1a3b7689c69dea7dc717d1e
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: afc9a32c4f0fa5b4b6a2f6c0ec56bbc35b6dde68
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213780"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88244504"
 ---
 # <a name="configure-the-expiration-policy-for-microsoft-365-groups"></a>Настройка политики срока действия для групп Microsoft 365
 
@@ -79,7 +79,7 @@ ms.locfileid: "88213780"
 
 3. На странице **срок действия** можно выполнить следующие действия.
 
-    - Задать время существования группы в днях. Можно выбрать одно из предустановленных значений или задать пользовательское значение (должно быть не менее 31 дня).
+    - Задать время существования группы в днях. Можно выбрать одно из предустановленных значений или пользовательское значение (должно быть 30 дней или более).
     - Указать адрес электронной почты, на который должны отправляться уведомления об обновлении и истечении срока действия, если у группы нет владельца.
     - Выберите, какие Microsoft 365 группы истекает срок действия. Можно задать срок действия для:
       - **Все** Группы Microsoft 365

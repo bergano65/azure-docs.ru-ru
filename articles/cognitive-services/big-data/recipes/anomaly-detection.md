@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: marhamil
 ms.custom: devx-track-python
-ms.openlocfilehash: b29fa17c21b2cdb2e764c905af3819142d8c341e
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 823d61d94913122fc279e81698933b7e648dd114
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87844071"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88244352"
 ---
 # <a name="recipe-predictive-maintenance-with-the-cognitive-services-for-big-data"></a>Рецепт: диагностическое обслуживание с помощью Cognitive Services для больших данных
 
@@ -30,7 +30,7 @@ ms.locfileid: "87844071"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 * [Рабочая область Azure синапсе](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace) , настроенная с [пулом Spark](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-apache-spark-pool)
 
 ## <a name="setup"></a>Настройка
@@ -39,7 +39,7 @@ ms.locfileid: "87844071"
 
 Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для переводчика с помощью [портал Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli). Кроме того, вы можете сделать следующее:
 
-- Просмотр существующего ресурса в [портал Azure](https://portal.azure.com/).
+- Просмотр существующего ресурса в  [портал Azure](https://portal.azure.com/).
 
 Запишите конечную точку и ключ для этого ресурса, и это будет необходимо в этом руководством.
 

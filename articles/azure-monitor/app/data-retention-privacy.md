@@ -4,12 +4,12 @@ description: Заявление о политике хранении и конф
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 772777c48c8d16197cd8a73586f6549837d7d080
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 1b1a1e370d55ad58bf1468c2e8b2381b62707b6a
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372405"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245950"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Сбор, хранение и хранение данных в Application Insights
 
@@ -94,9 +94,6 @@ ms.locfileid: "87372405"
 ## <a name="where-is-the-data-held"></a>Где хранятся данные?
 * Расположение можно выбрать при создании нового ресурса Application Insights. Дополнительные сведения о доступности Application Insights для каждого региона см. [здесь](https://azure.microsoft.com/global-infrastructure/services/?products=all).
 
-#### <a name="does-that-mean-my-app-has-to-be-hosted-in-the-usa-europe-or-southeast-asia"></a>Значит ли это, что мое приложение должно размещаться в США, Европе или Юго-Восточной Азии?
-* Нет. Ваше приложение может выполняться где угодно, будь то ваш собственный локальный узел или облако.
-
 ## <a name="how-secure-is-my-data"></a>Насколько защищены мои данные?
 Application Insights — это служба Azure. Политики безопасности описаны в [техническом документе Azure о безопасности, конфиденциальности и соответствии требованиям](https://go.microsoft.com/fwlink/?linkid=392408).
 
@@ -178,7 +175,7 @@ services.AddSingleton(typeof(ITelemetryChannel), new ServerTelemetryChannel () {
 
 Буферы телеметрии можно отключить, задав [`enableSessionStorageBuffer`](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/legacy/JavaScript/JavaScriptSDK.Interfaces/IConfig.ts#L31) для значение `false` . Когда хранилище сеанса отключено, в качестве постоянного хранилища используется локальный массив. Поскольку пакет SDK для JavaScript выполняется на клиентском устройстве, он имеет доступ к этому расположению в средствах разработчика браузера.
 
-### <a name="opencensus-python"></a>Опенценсус Python
+### <a name="opencensus-python"></a>Python для OpenCensus
 
 По умолчанию пакет SDK для Опенценсус Python использует папку текущего пользователя `%username%/.opencensus/.azure/` . Разрешение на доступ к этой папке дано только текущему пользователю и администраторам. (См. статью [Реализация](https://github.com/census-instrumentation/opencensus-python/blob/master/contrib/opencensus-ext-azure/opencensus/ext/azure/common/storage.py) здесь.) Папка с сохраненными данными будет называться после файла Python, который создал данные телеметрии.
 
@@ -214,7 +211,7 @@ AzureLogHandler(
 | Windows Server 2012–2016 | Поддерживается и включена по умолчанию. | Проверка того, что все еще используются [параметры по умолчанию](/windows-server/security/tls/tls-registry-settings) |
 | Windows 7 с пакетом обновления 1 и Windows Server 2008 R2 с пакетом обновления 1 | Поддерживается, но не включена по умолчанию. | Информацию о том, как ее включить, см. на странице [Transport Layer Security (TLS) registry settings](/windows-server/security/tls/tls-registry-settings) (Параметры реестра TLS).  |
 | Windows Server 2008 с пакетом обновления 2 (SP2) | Для поддержки протокола TLS 1.2 требуется обновление. | См. статью об [обновлении для добавления поддержки TLS 1.2 в Windows Server 2008 с пакетом обновления 2](https://support.microsoft.com/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows-server-2008-s). |
-|Windows Vista | Не поддерживается. | Н/Д
+|Windows Vista | Не поддерживается. | Недоступно
 
 ### <a name="check-what-version-of-openssl-your-linux-distribution-is-running"></a>Проверка версии OpenSSL, используемой дистрибутивом Linux
 
@@ -251,12 +248,12 @@ openssl s_client -connect bing.com:443 -tls1_2
 | [Добавление пакета SDK для Application Insights в веб-проект .NET][greenbrown] |ServerContext<br/>Выводимые<br/>Счетчики производительности<br/>Requests<br/>**Исключения**<br/>Сеанс<br/>пользователи |
 | [Установка монитора состояния на сервере IIS][redfield] |Зависимости<br/>ServerContext<br/>Выводимые<br/>Счетчики производительности |
 | [Добавление пакета SDK для Application Insights в веб-приложение Java][java] |ServerContext<br/>Выводимые<br/>Запрос<br/>Сеанс<br/>пользователи |
-| [Добавление пакета SDK для JavaScript на веб-страницу][client] |ClientContext <br/>Выводимые<br/>Страница<br/>ClientPerf<br/>Ajax |
+| [Добавление пакета SDK для JavaScript на веб-страницу][client] |ClientContext <br/>Выводимые<br/>Page<br/>ClientPerf<br/>Ajax |
 | [Определение свойств по умолчанию][apiproperties] |**Свойства** всех стандартных и настраиваемых событий |
 | [Вызов TrackMetric][api] |Числовые значения<br/>**Свойства** |
-| [Вызов Track*][api] |Имя события.<br/>**Свойства** |
+| [Вызов Track*][api] |Имя события<br/>**Свойства** |
 | [Вызов TrackException][api] |**Исключения**<br/>Дамп стека<br/>**Свойства** |
-| Пакету SDK не может собрать данные. Пример: <br/> не удается получить доступ к счетчикам производительности;<br/> порождается исключение в инициализаторе телеметрии. |Диагностика SDK |
+| Пакету SDK не может собрать данные. Пример. <br/> не удается получить доступ к счетчикам производительности;<br/> порождается исключение в инициализаторе телеметрии. |Диагностика SDK |
 
 Сведения о [пакетах SDK для других платформ][platforms] можно получить в соответствующей документации.
 
@@ -277,7 +274,7 @@ openssl s_client -connect bing.com:443 -tls1_2
 | Ajax |Вызовы HTTP от веб-страницы на сервер |
 | Requests |URL-адрес, длительность, код ответа |
 | Зависимости |Тип (SQL, HTTP,...), строка подключения или URI, синхронизация/асинхронная, длительность, успешно, инструкция SQL (с монитор состояния) |
-| **Исключения** |Тип, **сообщение**, стеки вызовов, исходный файл, номер строки,`thread id` |
+| **Исключения** |Тип, **сообщение**, стеки вызовов, исходный файл, номер строки, `thread id` |
 | Сбои |`Process id`, `parent process id` , `crash thread id` ; исправление приложения, `id` , сборка;  тип исключения, адрес, причина; скрытые символы и регистры, двоичные начальные и конечные адреса, имя двоичного файла и путь, тип ЦП |
 | Трассировка |**Сообщение** и уровень серьезности |
 | Счетчики производительности |Время процессора, объем доступной памяти, частота запросов, скорость исключения, байтов исключительного пользования процесса, скорость ввода-вывода, длительность запроса, длина очереди запросов |
