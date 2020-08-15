@@ -7,12 +7,12 @@ ms.date: 02/23/2020
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: 0bdc9451f0dbc32e14197cde48a3613196b864c0
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: e0670aeb3a41506ef302364c6eeaff332520abc5
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88037139"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245440"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Часто задаваемые вопросы о службе файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предоставляет полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого [протокола SMB](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Общие ресурсы службы файлов Azure можно одновременно подключить к облачным или локальным развертываниям Windows, Linux и macOS. Вы также можете кэшировать общие файловые ресурсы Azure на компьютерах под управлением Windows Server с помощью функции "Синхронизация файлов Azure", чтобы получить быстрый доступ из расположения, где используются данные.
@@ -77,13 +77,14 @@ ms.locfileid: "88037139"
     > [!NOTE]
     > Нельзя создавать общие файловые ресурсы Azure из учетных записей хранения только для больших двоичных объектов или учетных записей хранения уровня *Премиум* общего назначения (GPv1 или GPv2). Стандартные общие файловые ресурсы Azure должны создаваться только в учетных записях общего назначения уровня *Стандартный*, а общие файловые ресурсы Azure уровня "Премиум" должны создаваться только в учетных записях хранения FileStorage. Учетные записи хранения общего назначения уровня *Премиум* (GPv1 и GPv2) предназначены только для страничных BLOB-объектов класса "Премиум". 
 
+* <a id="file-locking"></a>
+  **Поддерживает ли служба "файлы Azure" блокировку файлов?**  
+    Да, Файлы Azure полностью поддерживают блокировку файлов в стиле SMB/Windows, [см. сведения](https://docs.microsoft.com/rest/api/storageservices/managing-file-locks).
+
 * <a id="give-us-feedback"></a>
   **Очень хотелось бы, чтобы в службу файлов Azure была включена отдельная функция. Это возможно?**  
     Рабочая группа службы файлов Azure готова рассмотреть все предложения и отзывы в отношении своей работы. Проголосуйте за вариант, который вам понравился, на странице, посвященной [оптимизации службы хранилища Azure](https://feedback.azure.com/forums/217298-storage/category/180670-files). Мы заинтересованы в разработке новых полезных функций.
 
-  **Поддерживает ли служба файлов Azure блокировку файлов?**  
-    Да, Файлы Azure полностью поддерживают блокировку файлов в стиле SMB/Windows, [см. сведения](https://docs.microsoft.com/rest/api/storageservices/managing-file-locks). 
-    
 ## <a name="azure-file-sync"></a>Служба синхронизации файлов Azure
 
 * <a id="afs-region-availability"></a>
@@ -208,6 +209,13 @@ ms.locfileid: "88037139"
 **Какие политики соответствия данных поддерживаются службой файлов Azure?**  
 
    В основе работы службы файлов Azure лежит та же архитектура хранилища, которая используется и для других служб хранилища в службе хранилища Azure. К этой службе применяются те же политики соответствия данных. Дополнительные сведения о соответствии данных в службе хранилища Azure см. в разделах [Предложения для соответствия требованиям в службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-compliance-offerings) и [Центр управления безопасностью Майкрософт](https://microsoft.com/trustcenter/default.aspx).
+
+* <a id="file-auditing"></a>
+**Как выполнять аудит доступа к файлам и изменения в службе "файлы Azure"?**
+
+  Существуют два варианта, которые предоставляют функции аудита для службы файлов Azure.
+  - Если пользователи обращаются к файловому ресурсу Azure напрямую, можно использовать [журналы службы хранилища Azure (Предварительная версия)](https://docs.microsoft.com/azure/storage/common/monitor-storage?tabs=azure-powershell#logs-in-azure-monitor-preview) для наблюдения за изменениями файлов и доступом пользователей. Эти журналы можно использовать для устранения неполадок, и запросы записываются в журнал наиболее эффективно.
+  - Если пользователи обращаются к файловому ресурсу Azure через Windows Server с установленным агентом Синхронизация файлов Azure, используйте [политику аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/apply-a-basic-audit-policy-on-a-file-or-folder) или сторонний продукт, чтобы отслеживать изменения файлов и доступ пользователей на Windows Server. 
    
 ### <a name="ad-ds--azure-ad-ds-authentication"></a>AD DS & проверки подлинности AD DS Azure
 * <a id="ad-support-devices"></a>
@@ -274,7 +282,6 @@ ms.locfileid: "88037139"
 **Существуют ли интерфейсы API-интерфейсов RESTFUL для поддержки Get/Set/Copy Directory/File ACL Windows?**
 
     Да, мы поддерживаем API-интерфейсы REST, которые получают, устанавливают или копируют списки ACL NTFS для каталогов или файлов при использовании API REST [2019-07-07](https://docs.microsoft.com/rest/api/storageservices/versioning-for-the-azure-storage-services#version-2019-07-07) (или более поздней версии). Мы также поддерживаем сохранение списков ACL Windows в инструментах на основе RESTFUL: [AzCopy v 10.4 +](https://github.com/Azure/azure-storage-azcopy/releases).
-
 
 ## <a name="on-premises-access"></a>Локальный доступ
 

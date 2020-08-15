@@ -1,14 +1,9 @@
 ---
 title: 'SAP в Azure: руководство по планированию и реализации'
 description: SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению
-services: virtual-machines-linux,virtual-machines-windows
-documentationcenter: ''
 author: MSSedusch
 manager: juergent
-editor: ''
 tags: azure-resource-manager
-keywords: ''
-ms.assetid: d7c59cc1-b2d0-4d90-9126-628f9c7a5538
 ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
@@ -16,12 +11,12 @@ ms.workload: infrastructure-services
 ms.date: 06/23/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5cd335d34a67cc5a102bde11366813c53770266e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fdce2890de1594635e9302260dc4036cb7c58707
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87036341"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245525"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению
 
@@ -259,7 +254,7 @@ ms.locfileid: "87036341"
 [virtual-machines-Az-versus-azuresm]:virtual-machines-linux-compare-deployment-models.md
 [virtual-machines-windows-classic-configure-oracle-data-guard]:../../virtual-machines-windows-classic-configure-oracle-data-guard.md
 [virtual-machines-linux-cli-deploy-templates]:../../linux/cli-deploy-templates.md
-[virtual-machines-deploy-rmtemplates-powershell]:../../virtual-machines-windows-ps-manage.md
+[virtual-machines-deploy-rmtemplates-powershell]:../../virtual-machines/windows/index.yml
 [virtual-machines-linux-agent-user-guide]:../../extensions/agent-linux.md
 [virtual-machines-linux-agent-user-guide-command-line-options]:../../extensions/agent-windows.md#command-line-options
 [virtual-machines-linux-capture-image]:../../linux/capture-image.md
@@ -550,7 +545,7 @@ Azure предлагает различные типы виртуальных м
 
 
 #### <a name="azure-persisted-storage-types"></a>Типы материализованных хранилищ Azure
-Azure предлагает целый ряд сохраненных вариантов хранения, которые можно использовать для рабочей нагрузки SAP и конкретных компонентов стека SAP. Дополнительные сведения см. в статье Документирование [хранилища Azure для рабочих нагрузок SAP](./planning-guide-storage.md).
+Azure предлагает целый ряд сохраненных вариантов хранения, которые можно использовать для рабочей нагрузки SAP и конкретных компонентов стека SAP. Дополнительные сведения см. в статье Документирование  [хранилища Azure для рабочих нагрузок SAP](./planning-guide-storage.md).
 
 
 ### <a name="microsoft-azure-networking"></a><a name="61678387-8868-435d-9f8c-450b2424f5bd"></a>Сеть Microsoft Azure
@@ -1262,7 +1257,7 @@ sudo service waagent restart
 
 #### <a name="configuration-of-the-sap-system-and-sap-gui-connectivity-over-the-internet"></a>Настройка подключения к системе SAP и графическому пользовательскому интерфейсу SAP через Интернет
 
-Дополнительные сведения см. в этой статье:<https://blogs.msdn.com/b/saponsqlserver/archive/2014/06/24/sap-gui-connection-closed-when-connecting-to-sap-system-in-azure.aspx>
+Дополнительные сведения см. в этой статье: <https://blogs.msdn.com/b/saponsqlserver/archive/2014/06/24/sap-gui-connection-closed-when-connecting-to-sap-system-in-azure.aspx>
 
 #### <a name="changing-firewall-settings-within-vm"></a>Изменение параметров брандмауэра на виртуальной машине
 
@@ -1572,7 +1567,7 @@ az vm disk attach --resource-group $rgName --vm-name SAPERPDemo --size-gb 1023 -
 | --- | --- | --- | --- | --- |
 | Диспетчер |sapdp`<nn>` см. * |3201 |3200 - 3299 |Диспетчер SAP, который используется графическим пользовательским интерфейсом SAP для Windows и Java |
 | Сервер сообщений |sapms`<sid`> см. ** |3600 |свободный sapms`<anySID`> |sid = идентификатор SAP-System-ID |
-| Шлюз |sapgw`<nn`> см. * |3301 |free |Шлюз SAP, используемый для взаимодействия CPIC и RFC |
+| Шлюз |sapgw`<nn`> см. * |3301 |свободный |Шлюз SAP, используемый для взаимодействия CPIC и RFC |
 | Маршрутизатор SAP |sapdp99 |3299 |свободный |Только имена службы CI (центрального экземпляра) можно заменить в файле /etc/services произвольными значениями после установки. |
 
 *) nn = номер экземпляра SAP
@@ -1607,7 +1602,7 @@ az vm disk attach --resource-group $rgName --vm-name SAPERPDemo --size-gb 1023 -
 > ![Linux][Logo_Linux] Linux
 >
 > * Как и для Windows, просто выполните стандартную процедуру установки сетевого принтера.
-> * Просто следуйте указаниям о том, как добавить принтер, приведенным в общедоступных руководствах по Linux для [SUSE](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_y2_hw_print.html) или [Red Hat и Oracle Linux](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Printer_Configuration.html).
+> * Просто следуйте указаниям о том, как добавить принтер, приведенным в общедоступных руководствах по Linux для [SUSE](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_y2_hw_print.html) или [Red Hat и Oracle Linux](https://access.redhat.com/documentation/red_hat_enterprise_linux/6/html/deployment_guide/sec-printer_configuration).
 >
 >
 
@@ -1953,7 +1948,7 @@ SAProuter позволяет осуществлять взаимодействи
 В зависимости от выбранной конфигурации SAP (двух- или трехуровневая) у вас может возникнуть необходимость в резервном копировании. Вам могут потребоваться резервные копии содержимого виртуальной машины и базы данных. Резервное копирование в СУБД должно выполняться средствами самой базы данных. Подробное описание для разных баз данных можно найти в [руководстве по СУБД][dbms-guide]. С другой стороны, резервные копии данных SAP, включая содержимое базы данных, можно создавать в автономном режиме (описано в этом разделе) или оперативном (описано в следующем разделе).
 
 Автономное резервное копирование предполагает завершение работы виртуальной машины на портале Azure с последующим копированием базового диска ВМ и всех подключенных к ней дисков. Таким образом для ВМ и связанных с ней дисков создается резервная копия на определенный момент времени. Резервные копии рекомендуется копировать в другую учетную запись хранения Azure. Сведения о том, как это сделать, см. в разделе документа [Копирование дисков между учетными записями хранения Azure][planning-guide-5.4.2].
-Завершить работу можно не только с помощью портала Azure, но и с помощью PowerShell или интерфейса командной строки, как описано здесь: <https://azure.microsoft.com/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/>.
+
 
 Восстановление предыдущего состояния заключается в удалении базовой виртуальной машины, ее исходных дисков и подключенных дисков с последующим копированием сохраненных дисков в исходную учетную запись хранения или группу ресурсов для управляемых дисков и повторным развертыванием системы.
 В этой статье приводится пример создания сценария для этого процесса в PowerShell: <http://www.westerndevs.com/azure-snapshots/>.
