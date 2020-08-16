@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: how-to
 ms.date: 05/20/2020
 ms.author: v-grpr
-ms.openlocfilehash: 81fc8de7e5a70ebb95e06a8e362cda41f8bfe1aa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 95c0a884b335920df9803a9b468ab522646b26a1
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84945024"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88258756"
 ---
 # <a name="use-self-managed-shipping-for-azure-data-box-disk-in-the-azure-portal"></a>Использование функции самоуправляемой доставки для Дисков Azure Data Box на портале Azure
 
@@ -28,6 +28,7 @@ ms.locfileid: "84945024"
 * Япония
 * Сингапур
 * Южная Корея
+* Южно-Африканская Республика
 * Индия (Предварительная версия)
 
 ## <a name="use-self-managed-shipping"></a>Использование самоуправляемой доставки

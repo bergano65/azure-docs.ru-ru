@@ -13,22 +13,22 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: 95b514999d7c38140bd3dd275b8ba103ee9af20e
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 3055d8c31307cfacad575d892db0ed812a03a9e4
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86519251"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88258626"
 ---
 # <a name="feature-coverage-for-machines"></a>Покрытие компонентов для компьютеров
 
 На двух вкладках ниже показаны функции центра безопасности Azure, доступные для виртуальных машин и серверов Windows и Linux.
 
-## <a name="supported-features-for-virtual-machines-and-servers"></a>Поддерживаемые функции для виртуальных машин и серверов<a name="vm-server-features"></a>
+## <a name="supported-features-for-virtual-machines-and-servers"></a>Поддерживаемые функции для виртуальных машин и серверов <a name="vm-server-features"></a>
 
 ### <a name="windows-machines"></a>[**Компьютеры Windows**](#tab/features-windows)
 
-|**Компонент**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не относящиеся к Azure**|**Цены**
+|**Возможность**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не относящиеся к Azure**|**Цены**
 |----|:----:|:----:|:----:|:----:|
 |[Интеграция ATP в защитнике Майкрософт](security-center-wdatp.md)|✔</br>(в поддерживаемых версиях)|✔</br>(в поддерживаемых версиях)|✔|Standard|
 |[Аналитика поведения виртуальных машин (и оповещения системы безопасности)](threat-protection.md)|✔|✔|✔|Standard|
@@ -39,20 +39,20 @@ ms.locfileid: "86519251"
 |[Мониторинг целостности файлов](security-center-file-integrity-monitoring.md)|✔|✔|✔|Standard|
 |[Адаптивные элементы управления приложениями](security-center-adaptive-application.md)|✔|-|✔|Standard|
 |[Сетевая схема](security-center-network-recommendations.md#network-map)|✔|✔|-|Standard|
-|[Адаптивное усиление защиты сети](security-center-adaptive-network-hardening.md)|✔|-|-|Standard|
+|[Адаптивная защита сети](security-center-adaptive-network-hardening.md)|✔|-|-|Standard|
 |[& отчетов панели мониторинга соответствия нормативным требованиям](security-center-compliance-dashboard.md)|✔|✔|✔|Standard|
 |Рекомендации и защита от угроз в контейнерах IaaS, размещенных в DOCKER|-|-|-|Standard|
 |Оценка отсутствующих исправлений ОС|✔|✔|✔|Azure: Бесплатная<br><br>Не в Azure: Стандартный|
 |Оценка ненастроек безопасности|✔|✔|✔|Azure: Бесплатная<br><br>Не в Azure: Стандартный|
 |[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|✔|✔|✔|Azure: Бесплатная<br><br>Не в Azure: Стандартный|
-|Оценка шифрования диска|✔|✔|-|Бесплатный|
-|Оценка уязвимостей сторонних производителей|✔|-|-|Бесплатный|
-|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Бесплатный|
+|Оценка шифрования диска|✔|✔|-|Служба предоставляется бесплатно.|
+|Оценка уязвимостей сторонних производителей|✔|-|-|Служба предоставляется бесплатно.|
+|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Служба предоставляется бесплатно.|
 
 
 ### <a name="linux-machines"></a>[**Компьютеры Linux**](#tab/features-linux)
 
-|**Компонент**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не относящиеся к Azure**|**Цены**
+|**Возможность**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не относящиеся к Azure**|**Цены**
 |----|:----:|:----:|:----:|:----:|
 |[Интеграция ATP в защитнике Майкрософт](security-center-wdatp.md)|-|-|-|Standard|
 |[Аналитика поведения виртуальных машин (и оповещения системы безопасности)](security-center-alerts-iaas.md)|✔</br>(в поддерживаемых версиях)|✔</br>(в поддерживаемых версиях)|✔|Standard|
@@ -63,15 +63,15 @@ ms.locfileid: "86519251"
 |[Мониторинг целостности файлов](security-center-file-integrity-monitoring.md)|✔|✔|✔|Standard|
 |[Адаптивные элементы управления приложениями](security-center-adaptive-application.md)|✔|-|✔|Standard|
 |[Сетевая схема](security-center-network-recommendations.md#network-map)|✔|✔|-|Standard|
-|[Адаптивное усиление защиты сети](security-center-adaptive-network-hardening.md)|✔|-|-|Standard|
+|[Адаптивная защита сети](security-center-adaptive-network-hardening.md)|✔|-|-|Standard|
 |[& отчетов панели мониторинга соответствия нормативным требованиям](security-center-compliance-dashboard.md)|✔|✔|✔|Standard|
 |Рекомендации и защита от угроз в контейнерах IaaS, размещенных в DOCKER|✔|✔|✔|Standard|
 |Оценка отсутствующих исправлений ОС|✔|✔|✔|Azure: Бесплатная<br><br>Не в Azure: Стандартный|
 |Оценка ненастроек безопасности|✔|✔|✔|Azure: Бесплатная<br><br>Не в Azure: Стандартный|
-|[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|-|-|-|Бесплатный|
-|Оценка шифрования диска|✔|✔|-|Бесплатный|
-|Оценка уязвимостей сторонних производителей|✔|-|-|Бесплатный|
-|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Бесплатный|
+|[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|-|-|-|Служба предоставляется бесплатно.|
+|Оценка шифрования диска|✔|✔|-|Служба предоставляется бесплатно.|
+|Оценка уязвимостей сторонних производителей|✔|-|-|Служба предоставляется бесплатно.|
+|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Служба предоставляется бесплатно.|
 
 --- 
 
@@ -80,7 +80,7 @@ ms.locfileid: "86519251"
 >Чтобы поэкспериментировать с функциями, которые доступны только в ценовой категории "Стандартный", пользователи уровня "бесплатный" могут зарегистрироваться на 30-дневную пробную версию. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/security-center/).
 
 
-## <a name="supported-endpoint-protection-solutions"></a>Поддерживаемые решения для защиты конечных точек<a name="endpoint-supported"></a>
+## <a name="supported-endpoint-protection-solutions"></a>Поддерживаемые решения для защиты конечных точек <a name="endpoint-supported"></a>
 
 В таблице ниже приведена матрица условий:
 
@@ -91,13 +91,13 @@ ms.locfileid: "86519251"
 
 | Endpoint Protection| Платформы | Установка центра безопасности | Обнаружение центра безопасности |
 |------|------|-----|-----|
-| Защитник Windows (антивредоносное ПО Майкрософт)| Windows Server 2016| Нет, встроен в ОС| Да |
+| Защитник Windows (антивредоносное ПО Майкрософт)| Windows Server 2016 или более поздней версии| Нет, встроен в ОС| Да |
 | System Center Endpoint Protection (антивредоносное ПО Майкрософт) | Windows Server 2012 R2, 2012, 2008 R2 (см. примечание ниже) | Через расширение | Да |
 | Trend Micro — глубокая безопасность | Семейство Windows Server  | Нет | Да |
 | Symantec v12.1.1100+| Семейство Windows Server  | Нет | Да |
 | McAfee v10+ | Семейство Windows Server  | Нет | Да |
-| McAfee v10+ | Семейство серверов Linux  | Нет | Да**\*** |
-| Sophos V9 +| Семейство серверов Linux  | Нет | Да**\***  |
+| McAfee v10+ | Семейство серверов Linux  | Нет | Да **\*** |
+| Sophos V9 +| Семейство серверов Linux  | Нет | Да  **\***  |
 
  **\*** Состояние покрытия и поддерживающие данные в настоящее время доступны только в рабочей области Log Analytics, связанной с защищенными подписками. Он не отражается на портале Центра безопасности Azure.
 
@@ -105,7 +105,7 @@ ms.locfileid: "86519251"
 > При обнаружении System Center Endpoint Protection (SCEP) на виртуальной машине Windows Server 2008 R2 необходимо установить SCEP после PowerShell (версия 3.0 или более поздняя).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [Центр безопасности собирает данные и агент log Analytics](security-center-enable-data-collection.md).
 - Узнайте [, как центр безопасности управляет и защищает данные](security-center-data-security.md).

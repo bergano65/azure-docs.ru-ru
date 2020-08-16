@@ -2,13 +2,13 @@
 title: Заметки о выпуске для Application Insights | Документация Майкрософт
 description: Добавление маркеров развертывания или сборки для диаграмм обозревателя метрик в Application Insights.
 ms.topic: conceptual
-ms.date: 07/01/2019
-ms.openlocfilehash: 8e9e0cb49343524e8a45831566cf802b1c8c5d9b
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.date: 08/14/2020
+ms.openlocfilehash: e21981f134f6a78109d70b1edf6d61e204b64e12
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320669"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88258407"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Заметки к диаграммам метрик в Application Insights
 
@@ -69,6 +69,10 @@ ms.locfileid: "87320669"
    
 1. Выберите **сохранить** в главном окне шаблона выпуска, чтобы сохранить шаблон.
 
+
+   > [!NOTE]
+   > Ограничения для ключей API описаны в документации по [ограничениям скорости REST API](https://dev.applicationinsights.io/documentation/Authorization/Rate-limits).
+
 ## <a name="view-annotations"></a>Просмотр заметок
 
 
@@ -113,7 +117,7 @@ ms.locfileid: "87320669"
 
 Можно изменить скрипт, например, чтобы создать заметки в прошлом.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание рабочих элементов](./diagnostic-search.md#create-work-item)
 * [Автоматизация с помощью PowerShell](./powershell.md)

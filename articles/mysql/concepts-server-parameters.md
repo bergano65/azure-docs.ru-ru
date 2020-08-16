@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/25/2020
-ms.openlocfilehash: de1345fca418118e88929870cd2f4007dd36b3a4
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: e7ca86d0146f05d5171d5eae18aac81d75122bcc
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87835992"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88258543"
 ---
 # <a name="server-parameters-in-azure-database-for-mysql"></a>Параметры сервера в базе данных Azure для MySQL
 
@@ -98,7 +98,7 @@ MySQL традиционно назначает поток для каждого
 ### <a name="innodb_file_per_table"></a>innodb_file_per_table
 
 > [!NOTE]
-> `innodb_file_per_table`можно обновить только в общего назначения и ценовой категории, оптимизированные для памяти.
+> `innodb_file_per_table` можно обновить только в общего назначения и ценовой категории, оптимизированные для памяти.
 
 MySQL хранит таблицу InnoDB в разных табличных пространствах в зависимости от конфигурации, указанной при создании таблицы. [Табличное пространство системы](https://dev.mysql.com/doc/refman/5.7/en/innodb-system-tablespace.html) — это область хранения для словаря данных InnoDB. [Табличное пространство file-per-table](https://dev.mysql.com/doc/refman/5.7/en/innodb-file-per-table-tablespaces.html) содержит данные и индексы для одной таблицы InnoDB и хранится в файловой системе в собственном файле данных. Это поведение контролируется серверным параметром `innodb_file_per_table`. Если задать для `innodb_file_per_table` значение `OFF`, InnoDB создаст таблицы в системном табличном пространстве. В противном случае InnoDB создает таблицы в табличных пространствах file-per-table.
 
@@ -213,6 +213,9 @@ Lower_case_table_name по умолчанию имеет значение 1, и 
 
 Этот параметр можно задать на уровне сеанса с помощью `init_connect` . Чтобы задать **innodb_strict_mode** на уровне сеанса, см. [параметр](https://docs.microsoft.com/azure/mysql/howto-server-parameters#setting-parameters-not-listed)параметра, которого нет в списке.
 
+> [!NOTE]
+> Если у вас есть сервер реплики чтения, установка **INNODB_STRICT_MODE** Off на уровне сеанса на главном сервере приведет к прерыванию репликации. Мы рекомендуем оставить параметру значение OFF, если у вас есть реплики Read.
+
 ### <a name="sort_buffer_size"></a>sort_buffer_size
 
 Чтобы узнать больше об этом параметре, ознакомьтесь с документацией по [MySQL](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_sort_buffer_size).
@@ -271,7 +274,7 @@ Lower_case_table_name по умолчанию имеет значение 1, и 
 
 Другие переменные, не указанные здесь, устанавливаются в значения по умолчанию для стандартных значений MySQL. Значения по умолчанию см. в документации по MySQL для версий [8,0](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html), [5,7](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html)и [5,6](https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html) . 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [настроить параметры сервера с помощью портал Azure](./howto-server-parameters.md)
 - Узнайте, как [настроить параметры сервера с помощью Azure CLI](./howto-configure-server-parameters-using-cli.md)

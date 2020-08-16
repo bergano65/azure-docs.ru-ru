@@ -3,12 +3,12 @@ title: Выбор архитектуры для развертывания Appli
 description: Отправка телеметрии к различным ресурсам для меток разработки, тестирования и эксплуатации.
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: 4f539862432fcdc67632e91caadf71d6584fbc3e
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 264cbe35e7af50577b345d686b639e47760f428d
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420572"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88258728"
 ---
 # <a name="how-many-application-insights-resources-should-i-deploy"></a>Выбор количества ресурсов Application Insights для развертывания
 
@@ -41,7 +41,7 @@ ms.locfileid: "87420572"
 
 ## <a name="dynamic-instrumentation-key"></a><a name="dynamic-ikey"></a> Динамический ключ инструментирования
 
-Чтобы упростить изменение ключа инструментирования при перемещении кода между этапами производства, задавайте его в коде, а не в файле конфигурации.
+Чтобы упростить изменение iKey по мере перемещения кода между стадиями производства, следует динамически ссылаться на ключ в коде вместо использования жестко закодированного или статического значения.
 
 Задайте ключ в методе инициализации, таком как global.aspx.cs, в службе ASP.NET:
 

@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 07/29/2020
+ms.date: 08/14/2020
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: ef42dbb4cad1d40a35af28845baa402763acfc9b
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 6cf9f7a005a80ab34e05ee293c20209e9d0b3f01
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88119629"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88258590"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-authorization-code-flow"></a>Поток кода авторизации OAuth 2.0 и платформа удостоверений Майкрософт
 
@@ -60,13 +60,15 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &response_mode=query
 &scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
 &state=12345
+&code_challenge=YTFjNjI1OWYzMzA3MTI4ZDY2Njg5M2RkNmVjNDE5YmEyZGRhOGYyM2IzNjdmZWFhMTQ1ODg3NDcxY2Nl
+&code_challenge_method=S256
 ```
 
 > [!TIP]
 > Чтобы выполнить этот запрос, щелкните ссылку ниже! После входа браузер будет перенаправлен по адресу `https://localhost/myapp/`, при этом в адресной строке будет указано `code`.
 > <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=query&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&state=12345" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
 
-| Параметр    | Обязательный/необязательный | Описание |
+| Параметр    | Обязательный или необязательный | Описание |
 |--------------|-------------|--------------|
 | `tenant`    | обязательно    | Значение `{tenant}` в пути запроса можно использовать для того, чтобы контролировать, кто может входить в приложение. Допустимые значения: `common`, `organizations`, `consumers`, а также идентификаторы клиента. Дополнительные сведения см. в [описании протоколов](active-directory-v2-protocols.md#endpoints).  |
 | `client_id`   | обязательно    | **Идентификатор приложения (клиента)** , назначенный вашему приложению функцией [Регистрация приложений портала Azure](https://go.microsoft.com/fwlink/?linkid=2083908).  |
@@ -79,7 +81,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 | `login_hint`  | необязательный    | Можно применять для предварительного заполнения поля имени пользователя или адреса электронной почты на странице входа пользователя (если имя пользователя известно заранее). Зачастую этот параметр используется в приложениях при повторной проверке подлинности. При этом имя пользователя извлекается во время предыдущего входа с помощью утверждения `preferred_username`.   |
 | `domain_hint`  | необязательный    | Если указан этот параметр, пропускается процесс обнаружения на основе электронной почты, который нужно проходить на странице входа в приложение версии 2.0. Это несколько упрощает взаимодействие с пользователем (например, отправляя их к поставщику федеративных удостоверений.) Обычно этот параметр применяется в приложениях при повторной аутентификации. Для этого значение утверждения `tid` извлекается из предыдущего сеанса входа. Если значение утверждения `tid` — `9188040d-6c67-4c5b-b112-36a304b66dad`, следует использовать `domain_hint=consumers`. Или используйте `domain_hint=organizations`.  |
 | `code_challenge`  | рекомендованный/обязательный | Используется, чтобы защитить разрешения кода авторизации с помощью ключа проверки для обмена кодом (PKCE). Является обязательным, если указан параметр `code_challenge_method`. Дополнительные сведения см. в описании [PKCE RFC](https://tools.ietf.org/html/rfc7636). Теперь это рекомендуется для всех типов приложений — собственных приложений, одностраничных приложений и конфиденциальных клиентов, таких как веб-приложения. |
-| `code_challenge_method` | рекомендованный/обязательный | Метод, используемый для кодирования `code_verifier` в параметре `code_challenge`. Может использоваться одно из следующих значений:<br/><br/>- `plain` <br/>- `S256`<br/><br/>Если этот параметр не указан, для `code_challenge` принимается формат открытого текста, если задано значение `code_challenge`. Платформа удостоверений Майкрософт поддерживает как `plain`, так и `S256`. Дополнительные сведения см. в описании [PKCE RFC](https://tools.ietf.org/html/rfc7636). Это необходимо для [одностраничных приложений, использующих поток кода авторизации](reference-third-party-cookies-spas.md).|
+| `code_challenge_method` | рекомендованный/обязательный | Метод, используемый для кодирования `code_verifier` в параметре `code_challenge`. Это *должно* быть `S256` , но спецификация позволяет использовать, `plain` Если по какой бы причине клиент не поддерживает SHA256. <br/><br/>Если этот параметр не указан, для `code_challenge` принимается формат открытого текста, если задано значение `code_challenge`. Платформа удостоверений Майкрософт поддерживает как `plain`, так и `S256`. Дополнительные сведения см. в описании [PKCE RFC](https://tools.ietf.org/html/rfc7636). Это необходимо для [одностраничных приложений, использующих поток кода авторизации](reference-third-party-cookies-spas.md).|
 
 
 На текущем этапе пользователю придется ввести учетные данные и завершить проверку подлинности. Конечная точка платформы удостоверений Майкрософт также проверяет, согласился ли пользователь предоставить разрешения, указанные в параметре запроса `scope`. Если пользователь не предоставил какие-либо из этих разрешений, конечная точка запросит их у пользователя. Подробные сведения о [разрешениях, согласии на предоставление и мультитенантных приложениях можно найти здесь](v2-permissions-and-consent.md).
@@ -150,13 +152,14 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &code=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq3n8b2JRLk4OxVXr...
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &grant_type=authorization_code
+&code_verifier=ThisIsntRandomButItNeedsToBe43CharactersLong 
 &client_secret=JqQX2PNo9bpM0uEihUPzyrh    // NOTE: Only required for web apps. This secret needs to be URL-Encoded.
 ```
 
 > [!TIP]
 > Попытайтесь выполнить этот запрос в Postman. (Не забудьте заменить `code`.) [![Попробуйте выполнить этот запрос в Postman](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d).
 
-| Параметр  | Обязательный/необязательный | Описание     |
+| Параметр  | Обязательный или необязательный | Описание     |
 |------------|-------------------|----------------|
 | `tenant`   | обязательно   | Значение `{tenant}` в пути запроса можно использовать для того, чтобы контролировать, кто может входить в приложение. Допустимые значения: `common`, `organizations`, `consumers`, а также идентификаторы клиента. Дополнительные сведения см. в [описании протоколов](active-directory-v2-protocols.md#endpoints).  |
 | `client_id` | обязательно  | Идентификатор приложения (клиента), назначенный вашему приложению на странице [регистрации приложений на портале Azure](https://go.microsoft.com/fwlink/?linkid=2083908). |
@@ -169,7 +172,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 ### <a name="successful-response"></a>Успешный ответ
 
-Успешный ответ маркера выглядит следующим образом:
+Успешный ответ на запрос маркера будет выглядеть следующим образом:
 
 ```json
 {
@@ -288,7 +291,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 #### <a name="successful-response"></a>Успешный ответ
 
-Успешный ответ маркера выглядит следующим образом:
+Успешный ответ на запрос маркера будет выглядеть следующим образом:
 
 ```json
 {

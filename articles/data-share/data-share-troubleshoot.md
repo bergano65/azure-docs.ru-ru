@@ -6,13 +6,13 @@ author: jifems
 ms.author: jife
 ms.service: data-share
 ms.topic: troubleshooting
-ms.date: 07/30/2020
-ms.openlocfilehash: 0fb2f9dd156d18705308b41ef8d6b015b3b6d71b
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.date: 08/14/2020
+ms.openlocfilehash: c68c9dc961475d6916b1f00e7d4f596bfd8c77dd
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534453"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88257810"
 ---
 # <a name="troubleshoot-common-issues-in-azure-data-share"></a>Устранение распространенных неполадок в общей папке данных Azure 
 
@@ -34,7 +34,7 @@ ms.locfileid: "87534453"
     1. Найдите **файл Microsoft.**
     1. Щелкните **Зарегистрировать**. 
 
-    Для выполнения этих действий потребуется [роль участника Azure](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) . 
+    Для выполнения этих действий вам потребуется [роль участника Azure](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) в подписке Azure. 
 
 * **Приглашение отправляется в псевдоним электронной почты вместо адреса электронной почты для входа в Azure.** Если вы зарегистрировали службу общего доступа к данным Azure или уже создали ресурс общего ресурса в клиенте Azure, но не видите это приглашение, это может быть вызвано тем, что поставщик указал псевдоним электронной почты в качестве получателя вместо адреса электронной почты для входа в Azure. Обратитесь к поставщику данных и убедитесь, что он отправил приглашение на адрес электронной почты для входа в Azure, а не ваш псевдоним электронной почты.
 

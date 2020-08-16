@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/13/2020
 ms.author: b-juche
-ms.openlocfilehash: 8ed9f6565da55d3ffbe522bbdf404265c487f67c
-ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
+ms.openlocfilehash: 79ad95179f4ad6d332a848e59ca341b8a9f90b1f
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88225620"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88258232"
 ---
 # <a name="solution-architectures-using-azure-netapp-files"></a>Архитектура решений, использующих Azure NetApp Files
 В этой статье содержатся ссылки на рекомендации, которые помогут вам понять архитектуру решения для использования Azure NetApp Files.  
@@ -85,7 +85,7 @@ ms.locfileid: "88225620"
 
 ### <a name="windows-virtual-desktop"></a>Виртуальный рабочий стол Windows
 
-* [Использование виртуального рабочего стола Windows с Azure NetApp Files](solutions-windows-virtual-desktop.md)
+* [Преимущества использования Azure NetApp Files с виртуальным рабочим столом Windows](solutions-windows-virtual-desktop.md)
 * [Варианты хранения для контейнеров профилей Фслогикс в виртуальном рабочем столе Windows](https://docs.microsoft.com/azure/virtual-desktop/store-fslogix-profile#azure-platform-details)
 * [Создание контейнера профиля Фслогикс для пула узлов с помощью Azure NetApp Files](https://docs.microsoft.com/azure/virtual-desktop/create-fslogix-profile-container)
 * [Виртуальный рабочий стол Windows в масштабе предприятия](https://docs.microsoft.com/azure/architecture/example-scenario/wvd/windows-virtual-desktop)

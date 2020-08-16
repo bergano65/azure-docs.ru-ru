@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/3/2019
 ms.author: Zhchia
-ms.openlocfilehash: 3a2e4bbff1274a2473ac961b8355ca4193dcc69f
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 52700df5c2977f33c988fcb34cdc3d67844d1d49
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87924909"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88257567"
 ---
 # <a name="tutorial-configure-zoom-for-automatic-user-provisioning"></a>Учебник. Настройка масштабирования для автоматической подготовки пользователей
 
@@ -50,7 +50,7 @@ ms.locfileid: "87924909"
 
 ## <a name="step-2-configure-zoom-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка масштабирования для поддержки подготовки с помощью Azure AD
 
-1. Войдите в [консоль администрирования масштабирования](https://zoom.us/signin). В области навигации слева перейдите к **расширенному > увеличить масштаб для разработчиков** .
+1. Войдите в [консоль администрирования масштабирования](https://zoom.us/signin). В области навигации слева перейдите к **расширенной > App Marketplace** .
 
     ![Интеграция с масштабом](media/zoom-provisioning-tutorial/zoom01.png)
 
