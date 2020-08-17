@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 3/5/2020
 ms.custom: devx-track-java
 ms.author: lcozzens
-ms.openlocfilehash: a2864d610d71c6b3a86c131dabb3c0b9ed138bec
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 653fcb6f6590fd503a97800ec8196025cf14a3b9
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327928"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121567"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-a-java-spring-app"></a>Руководство по использованию динамической конфигурации в приложении Java Spring
 
@@ -36,7 +36,7 @@ ms.locfileid: "87327928"
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>spring-cloud-azure-appconfiguration-config-web</artifactId>
-    <version>1.1.2</version>
+    <version>1.1.5</version>
 </dependency>
 ```
 
@@ -46,11 +46,33 @@ ms.locfileid: "87327928"
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>spring-cloud-azure-appconfiguration-config-web</artifactId>
-    <version>1.2.2</version>
+    <version>1.2.7</version>
 </dependency>
 ```
 
-Сохраните файл, а затем выполните сборку и запустите приложение обычным образом.
+## <a name="run-and-test-the-app-locally"></a>Локальный запуск и проверка приложения
+
+1. Создайте приложение Spring Boot с помощью Maven и запустите его.
+
+    ```shell
+    mvn clean package
+    mvn spring-boot:run
+    ```
+
+1. В браузере перейдите по адресу `http://localhost:8080`.  Вы увидите сообщение, связанное с ключом. 
+
+    Вы также можете использовать инструмент *curl* для проверки приложения, например следующим образом: 
+    
+    ```cmd
+    curl -X GET http://localhost:8080/
+    ```
+
+1. Чтобы проверить динамическую конфигурацию, откройте портал Конфигурации приложений Azure, связанный с вашим приложением. Выберите **Обозреватель конфигураций**и обновите значение отображаемого ключа, например следующим образом:
+    | Клавиши | Значение |
+    |---|---|
+    | application/config.message | Hello - Updated |
+
+1. Обновите страницу браузера, чтобы просмотреть новое отображаемое сообщение.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

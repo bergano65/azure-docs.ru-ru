@@ -1,6 +1,6 @@
 ---
 title: Учебник по заказу Azure Data Box | Документация Майкрософт
-description: Изучите предварительные условия развертывания и порядок заказа Azure Data Box
+description: Из этого руководства вы узнаете о гибридном решении Azure Data Box, которое позволяет импортировать локальные данные в Azure. Здесь также описано, как заказать Azure Data Box.
 services: databox
 author: priestlg
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 07/21/2020
 ms.author: v-grpr
-ms.openlocfilehash: fd841dee5f3a845d793255f5e13b416fb1add4f4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 9f742af1a3c9ede4857e329697eb959a5a51dc95
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87007389"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926371"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Руководство по Заказ Azure Data Box
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: aae1797f7f1a252a4f094ee9f1b079fb60ba72f3
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 0407046dcafb0dcc1872d5083669e09b378a75cd
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87131758"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87827390"
 ---
 # <a name="build-out-an-end-to-end-solution"></a>Создание комплексного решения
 
@@ -95,6 +95,20 @@ Query
 
 В этом разделе вы опубликуете предварительно созданное приложение-функцию и назначите ему удостоверение Azure Active Directory (Azure AD), чтобы оно могло получить доступ к Azure Digital Twins. После выполнения этих действий вы сможете использовать функции, которые содержатся в данном приложении-функции, при изучении остальных разделов этого учебника. 
 
+Вернитесь в окно Visual Studio, где открыт проект _**AdtE2ESample**_, приложение-функция находится в файле проекта _**SampleFunctionsApp**_. Это можно увидеть на панели *обозревателя решений*.
+
+### <a name="update-dependencies"></a>Обновление зависимостей
+
+Перед публикацией приложения рекомендуется убедиться в актуальности зависимостей и проверить, что у вас установлена последняя версия всех включенных пакетов.
+
+На панели *обозреватель решений* разверните узел *SampleFunctionsApp > Зависимости*. Щелкните правой кнопкой мыши *Пакеты* и выберите *Управление пакетами NuGet…* .
+
+:::image type="content" source="media/tutorial-end-to-end/update-dependencies-1.png" alt-text="Visual Studio: управление пакетами NuGet для проекта SampleFunctionsApp" border="false":::
+
+Откроется диспетчер пакетов NuGet. Выберите вкладку *Обновления* и при наличии пакетов, которые необходимо обновить, установите флажок *Выбрать все пакеты*. Затем выберите *Обновить*.
+
+:::image type="content" source="media/tutorial-end-to-end/update-dependencies-2.png" alt-text="Visual Studio: выбор обновления всех пакетов в диспетчере пакетов NuGet":::
+
 ### <a name="publish-the-app"></a>Публикация приложения
 
 Вернитесь в окно Visual Studio, где открыт проект _**AdtE2ESample**_, в области *Обозреватель решений* щелкните правой кнопкой мыши файл проекта _**SampleFunctionsApp**_ и выберите пункт **Опубликовать**.
@@ -134,19 +148,21 @@ Query
 :::image type="content" source="media/tutorial-end-to-end/publish-azure-function-6.png" alt-text="Публикация функции Azure в Visual Studio: публикация":::
 
 > [!NOTE]
-> Может появиться следующее всплывающее окно: :::image type="content" source="media/tutorial-end-to-end/publish-azure-function-7.png" alt-text="Публикация функции Azure в Visual Studio: учетные данные для публикации" border="false":::
-> В таком случае выберите **Пытаться извлечь учетные данные из Azure** и нажмите кнопку **Сохранить**.
+> Если увидите следующее всплывающее окно, выполните указанные ниже действия: :::image type="content" source="media/tutorial-end-to-end/publish-azure-function-7.png" alt-text="Публикация функции Azure в Visual Studio: учетные данные для публикации" border="false":::
+> Выберите **Attempt to retrieve credentials from Azure** (Пытаться извлечь учетные данные из Azure) и нажмите кнопку **Сохранить**.
 >
-> Если вы видите предупреждение о том, что *ваша версия среды выполнения функций не соответствует версии, работающей в Azure*, следуйте инструкциям на экране, чтобы выполнить обновление до последней версии среды выполнения Функций Azure. Эта проблема может возникать, если вы используете более раннюю версию Visual Studio, чем та, которая рекомендована в разделе *Необходимые компоненты* в начале этого руководства.
+> Если вы видите предупреждение о том, что необходимо *обновить версию Функции Azure* или что *ваша версия среды выполнения функций не соответствует версии, работающей в Azure*, выполните следующие действия:
+>
+> Следуйте инструкциям на экране, чтобы выполнить обновление до последней версии среды выполнения Функций Azure. Эта проблема может возникать, если вы используете более раннюю версию Visual Studio, чем та, которая рекомендована в разделе *Необходимые компоненты* в начале этого руководства.
 
 ### <a name="assign-permissions-to-the-function-app"></a>Назначение разрешений для приложения-функции
 
-Чтобы разрешить приложению-функции доступ к Azure Digital Twins, необходимо настроить параметр приложения, назначить приложению управляемое системой удостоверение Azure AD и предоставить этому удостоверению права доступа *владельца* в экземпляре Azure Digital Twins.
+Чтобы разрешить приложению-функции доступ к Azure Digital Twins, необходимо настроить параметр приложения, назначить приложению управляемое системой удостоверение Azure AD и предоставить этому удостоверению роль *владельца Azure Digital Twins (предварительная версия)* в экземпляре Azure Digital Twins. Эта роль необходима для любого пользователя или функции, которым потребуется выполнять множество действий на плоскости данных в экземпляре. Дополнительные сведения о назначениях ролей и безопасности см. в статье [*Основные понятия. Безопасность для решений Azure Digital Twins*](concepts-security.md).
 
-В Azure Cloud Shell установите параметр приложения, который будет использоваться вашим приложением-функцией для обращения к экземпляру цифровых двойников, с помощью следующей команды.
+В Azure Cloud Shell установите параметр приложения, который будет использоваться вашим приложением-функцией для обращения к экземпляру Azure Digital Twins, с помощью следующей команды.
 
 ```azurecli-interactive
-az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=<your-digital-twin-instance-URL>"
+az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=<your-Azure-Digital-Twins-instance-URL>"
 ```
 
 С помощью следующей команды создайте управляемое системой удостоверение. Запишите значение поля *principalId* в выходных данных команды.
@@ -155,7 +171,7 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(function-app)-name>
 ```
 
-Используйте это значение *principalId* в следующей команде, чтобы назначить удостоверению приложения-функции роль *владельца* для своего экземпляра Azure Digital Twins:
+Используйте значение *principalId* из выходных данных в следующей команде, чтобы назначить удостоверению приложения-функции роль *владельца Azure Digital Twins (предварительная версия)* для своего экземпляра Azure Digital Twins:
 
 ```azurecli
 az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Owner (Preview)"
@@ -339,7 +355,7 @@ az dt endpoint create eventgrid --dt-name <your-Azure-Digital-Twins-instance> --
 az dt endpoint show --dt-name <your-Azure-Digital-Twins-instance> --endpoint-name <your-Azure-Digital-Twins-endpoint> 
 ```
 
-Найдите поле `provisioningState` в выходных данных и убедитесь, что оно имеет значение "Succeeded".
+Найдите поле `provisioningState` в выходных данных и убедитесь, что оно имеет значение "Succeeded". Если отображается значение Provisioning (Подготовка), конечная точка все еще создается. В этом случае подождите несколько секунд и выполните команду еще раз, чтобы убедиться, что она успешно завершена.
 
 :::image type="content" source="media/tutorial-end-to-end/output-endpoints.png" alt-text="Результат запроса конечной точки, показывающий конечную точку с параметром provisioningState, имеющим значение Succeeded":::
 
@@ -354,6 +370,9 @@ az dt route create --dt-name <your-Azure-Digital-Twins-instance> --endpoint-name
 ```
 
 Выходные данные этой команды содержат сведения о созданном маршруте.
+
+>[!NOTE]
+>Конечные точки (из предыдущего шага) должны завершить подготовку до настройки маршрута события, в котором они используются. Если создание маршрута завершается сбоем из-за неготовности конечных точек, подождите несколько минут и повторите попытку.
 
 #### <a name="connect-the-function-to-event-grid"></a>Подключение функции к Сетке событий
 

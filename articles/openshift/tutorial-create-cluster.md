@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 04/24/2020
-ms.openlocfilehash: be04b690add70468335ac694e3be54fa55a94249
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: 9a393e29c4b5b2faa48cbcd273c7bc7a46169ba3
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475657"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87904196"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-4-cluster"></a>Руководство по созданию кластера Azure Red Hat OpenShift 4
 
@@ -49,9 +49,9 @@ az provider register -n Microsoft.RedHatOpenShift --wait
 
    Вам потребуется войти в учетную запись Red Hat или создать учетную запись Red Hat с помощью рабочего адреса электронной почты и принять условия.
 
-2. **Щелкните "Download pull secret" (Скачать секрет для извлечения).**
+2. Перейдите на страницу [**продукта OpenShift**](https://developers.redhat.com/products/codeready-containers), если вы создаете кластер впервые. После регистрации перейдите на [**страницу диспетчера кластеров Red Hat OpenShift**](https://cloud.redhat.com/openshift/) и щелкните **Download pull secret** (Скачать секрет для извлечения), чтобы скачать секрет для использования с кластером АRO.
 
-Сохраненный файл `pull-secret.txt` должен находиться в безопасном месте — он будет использоваться при каждом создании кластера.
+Сохраните файл `pull-secret.txt` в безопасном месте. Этот файл будет использоваться при каждом создании кластера, если вам потребуется создать кластер, включающий примеры или операторы для партнеров Red Hat или сертифицированных партнеров.
 
 При выполнении команды `az aro create` вы можете ссылаться на секрет для извлечения, используя параметр `--pull-secret @pull-secret.txt`. Выполните `az aro create` из каталога, в котором был сохранен файл `pull-secret.txt`. В противном случае измените `@pull-secret.txt` на `@<path-to-my-pull-secret-file>`.
 

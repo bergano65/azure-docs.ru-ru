@@ -1,6 +1,6 @@
 ---
 title: Пример скрипта Azure PowerShell. Резервное копирование и восстановление службы | Документация Майкрософт
-description: Пример скрипта Azure PowerShell. Резервное копирование и восстановление службы
+description: Узнайте, как выполнить резервное копирование и восстановление экземпляра службы "Управление API". Ознакомьтесь с примером скрипта и дополнительными ресурсами.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -12,16 +12,16 @@ ms.topic: sample
 ms.date: 11/16/2017
 ms.author: apimpm
 ms.custom: mvc
-ms.openlocfilehash: 1c56aefb7b30026d1676e8a782fe2f6d394bd1ca
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d80a63b1a52d1ed7750d1a025eb8f4cd9f254a94
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87008988"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87851108"
 ---
 # <a name="backup-and-restore-service"></a>Резервное копирование и восстановление службы
 
-Пример в этом разделе демонстрирует, как выполнить резервное копирование и восстановление экземпляра службы управления API. 
+В примере скрипта в этой статье показано, как выполнить резервное копирование и восстановление экземпляра службы "Управление API". 
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

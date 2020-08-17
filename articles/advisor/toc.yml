@@ -19,15 +19,15 @@
       href: advisor-get-started.md
 - name: Практические руководства
   items:
-    - name: Повышение уровня надежности приложения Azure
+    - name: надежность;
       href: advisor-high-availability-recommendations.md
-    - name: Повышение уровня безопасности ресурсов
+    - name: Безопасность
       href: advisor-security-recommendations.md
-    - name: Повышение производительности приложений Azure
+    - name: Уровень производительности
       href: advisor-performance-recommendations.md
-    - name: Сокращение затрат на службы
+    - name: Оптимизация затрат
       href: advisor-cost-recommendations.md
-    - name: Достижение максимальной эффективности операционных процессов
+    - name: эффективность работы;
       href: advisor-operational-excellence-recommendations.md
     - name: Настройка рекомендаций
       href: view-recommendations.md
@@ -35,6 +35,8 @@
       href: permissions.md
     - name: Настройка оповещений для рекомендаций
       href: advisor-alerts-portal.md
+    - name: Настройка сводки рекомендаций
+      href: advisor-recommendations-digest.md
     - name: Групповое исправление для рекомендаций
       href: advisor-quick-fix.md
     - name: Данные Помощника в Azure Resource Graph

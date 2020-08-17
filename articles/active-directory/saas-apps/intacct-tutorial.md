@@ -11,17 +11,16 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/12/2019
+ms.date: 08/05/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d05e48cdaf75af5acb09713679d3aa21450b433
-ms.sourcegitcommit: 5504d5a88896c692303b9c676a7d2860f36394c1
+ms.openlocfilehash: a7e81b636690ced9baafc79de110f78c7258c36e
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84509378"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056331"
 ---
 # <a name="tutorial-integrate-sage-intacct-with-azure-active-directory"></a>Руководство по интеграции Sage Intacct с Azure Active Directory
 
@@ -45,6 +44,7 @@ ms.locfileid: "84509378"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Sage Intacct поддерживает единый вход, инициированный **поставщиком удостоверений**.
+* После настройки Sage Intacct вы можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="adding-sage-intacct-from-the-gallery"></a>Добавление Sage Intacct из коллекции
 
@@ -57,7 +57,7 @@ ms.locfileid: "84509378"
 1. В разделе **Добавление из коллекции** в поле поиска введите **Sage Intacct**.
 1. Выберите **Sage Intacct** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-sage-intacct"></a>Настройка и проверка единого входа в Azure AD для Sage Intacct
+## <a name="configure-and-test-azure-ad-sso-for-sage-intacct"></a>Настройка и проверка единого входа Azure AD для Sage Intacct
 
 Настройте и проверьте единый вход Azure AD в Sage Intacct с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Sage Intacct.
 
@@ -227,3 +227,4 @@ ms.locfileid: "84509378"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

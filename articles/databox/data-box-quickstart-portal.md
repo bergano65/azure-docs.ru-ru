@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство по Microsoft Azure Data Box | Документация Майкрософт
-description: Сведения о быстром развертывании Azure Data Box на портале Azure
+description: Из этого краткого руководства вы узнаете, как развернуть Azure Data Box с помощью портала Azure для выполнения заказа на импорт. Настройте Azure Data Box и скопируйте данные для их отправки в Azure.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: dd429dadcbe67f0ac91da19d6606626b39f34ef5
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 2ee9d1edefb0e248d0eba13e2d0b9f1c651fdd42
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86201096"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87924518"
 ---
 # <a name="get-started-with-azure-data-box-to-import-data-into-azure"></a>Начало работы с Azure Data Box для импорта данных в Azure
 

@@ -9,13 +9,13 @@ ms.topic: tutorial
 author: sdgilley
 ms.author: sgilley
 ms.date: 02/10/2020
-ms.custom: tracking-python
-ms.openlocfilehash: 8ba6141bddd60c2bdc2fdf17845e8f470dd6ef55
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.custom: devx-track-python
+ms.openlocfilehash: ff23a42d9b96b8411d8b2f82ab8303e2a8a69953
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86520533"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87852724"
 ---
 # <a name="tutorial-get-started-creating-your-first-ml-experiment-with-the-python-sdk"></a>Руководство по Начало работы по созданию эксперимента Машинного обучения с помощью пакета SDK для Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -97,7 +97,7 @@ ms.locfileid: "86520533"
         + имя должно начинаться с буквы (не цифры или тире);
         + если в имени используется символ "-", за ним должна следовать хотя бы одна буква. Пример Test-, test-0, test-01 являются недопустимыми, а test-a0, test-0a — допустимыми экземплярами.
 
-    1.  Из доступных вариантов выберите размер виртуальной машины.
+    1.  Из доступных вариантов выберите размер виртуальной машины. При работе с учебниками рекомендуется использовать виртуальную машину по умолчанию.
 
     1. Щелкните **Создать**. Настройка виртуальной машины может занять около 5 минут.
 

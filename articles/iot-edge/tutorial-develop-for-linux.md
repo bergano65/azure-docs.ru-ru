@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: c6cdde3ae63a2f816db7a978557f72b4b60d2677
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.openlocfilehash: 7ec61bf4db949649c993fad4a3255b55626cb259
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87439130"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056233"
 ---
 # <a name="tutorial-develop-iot-edge-modules-for-linux-devices"></a>Руководство по Разработка модулей IoT Edge для устройств Linux
 
@@ -151,6 +151,9 @@ ms.locfileid: "87439130"
 ### <a name="provide-your-registry-credentials-to-the-iot-edge-agent"></a>Предоставление учетных данных реестра агенту IoT Edge
 
 Файл среды хранит учетные данные для реестра контейнеров и совместно использует их со средой выполнения IoT Edge. Среде выполнения нужны эти учетные данные, чтобы извлечь образы контейнеров на устройство IoT Edge.
+
+>[!NOTE]
+>Если вы не заменили значение **localhost:5000** на значение сервера входа из реестра контейнеров Azure, на шаге [**Создание шаблона проекта**](#create-a-project-template) файл **.env** и раздел registryCredentials в манифесте развертывания будут отсутствовать. 
 
 Расширение IoT Edge пытается извлечь учетные данные реестра контейнеров из Azure и заполнить их в файле среды. Проверьте, включены ли ваши учетные данные. В противном случае добавьте их:
 

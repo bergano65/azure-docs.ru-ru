@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: tutorial
 ms.date: 07/01/2020
 ms.author: pafarley
-ms.openlocfilehash: 16869ab3a1961879cfcda1eaa383073cd2309a01
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 981c6f6bb2b0eb597b32ce8e428ef0aa7d19929b
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87433446"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88003363"
 ---
 # <a name="tutorial-create-a-form-processing-app-with-ai-builder"></a>Руководство по созданию приложения для обработки форм с помощью AI Builder
 
@@ -33,7 +33,7 @@ ms.locfileid: "87433446"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Набор по меньшей мере из пяти форм одного типа для использования при обучении и тестировании. Советы и варианты для объединения данных в набор для обучения см. в статье [Создание набора данных для обучения для пользовательской модели](./build-training-data-set.md). При работе с этим кратким руководством можно использовать файлы в папке **Train** из [примера набора данных](https://go.microsoft.com/fwlink/?linkid=2128080).
-* Лицензия Power Apps или Power Automate — см. [руководство по лицензированию](https://go.microsoft.com/fwlink/?linkid=2085130). Лицензия должна включать [Dataflex Pro](https://powerplatform.microsoft.com/en-us/common-data-service/).
+* Лицензия Power Apps или Power Automate — см. [руководство по лицензированию](https://go.microsoft.com/fwlink/?linkid=2085130). Лицензия должна включать [Common Data Service](https://powerplatform.microsoft.com/en-us/common-data-service/).
 * [Надстройка или пробная версия](https://go.microsoft.com/fwlink/?LinkId=2113956&clcid=0x409) AI Builder.
 
 

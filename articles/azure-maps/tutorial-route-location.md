@@ -1,6 +1,6 @@
 ---
 title: Руководство по Поиск маршрута к местоположению | Microsoft Azure Maps
-description: В этом руководстве показано, как отобразить маршрут к местоположению (точку интереса) на карте с помощью службы построения маршрутов в Microsoft Azure Maps.
+description: Сведения о том, как найти маршрут к точке интереса. Узнайте, как задать координаты адреса и отправить в службу маршрутов Azure Maps запрос на получение маршрута к точке.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 01/14/2020
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc, devx-track-javascript
-ms.openlocfilehash: d6a526e23be47c9e05de0c9064bdb4095a49d132
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 0ff604e920ca3e0708fc21a1cadfe61646f4e30b
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87287411"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037581"
 ---
 # <a name="tutorial-route-to-a-point-of-interest-using-azure-maps"></a>Руководство по Поиск маршрута к точке интереса с помощью службы "Карты Azure"
 
@@ -227,4 +227,4 @@ ms.locfileid: "87287411"
 В следующем руководстве показано, как создать запрос на поиск маршрута с такими ограничениями, как вид транспорта или тип груза, а затем отобразить несколько маршрутов на одной карте.
 
 > [!div class="nextstepaction"]
-> [Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"](./tutorial-prioritized-routes.md)
+> [Поиск маршрутов для различных способов перемещения](./tutorial-prioritized-routes.md)

@@ -1,6 +1,6 @@
 ---
 title: Пример скрипта Azure PowerShell. Добавление пользователя | Документация Майкрософт
-description: Пример скрипта Azure PowerShell. Добавление пользователя
+description: Сведения о том, как добавить пользователя в службу "Управление API" и как получить ключ подписки. Ознакомьтесь с примером скрипта и дополнительными ресурсами.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -12,12 +12,12 @@ ms.topic: sample
 ms.date: 11/16/2017
 ms.author: apimpm
 ms.custom: mvc
-ms.openlocfilehash: 2cfbfdfc4374d528159e9e026016a0583a1a9ac9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0573097d9821b8cf14573f2e5c5291461c2c7ed7
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87009073"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87843884"
 ---
 # <a name="add-a-user"></a>Добавление пользователей
 

@@ -1,6 +1,6 @@
 ---
 title: Передача данных с помощью службы "Шлюз Azure Data Box" | Документация Майкрософт
-description: Узнайте, как добавлять общие папки на устройстве Шлюза Data Box и подключаться к ним.
+description: Узнайте, как добавить общие папки в Шлюз Azure Data Box и подключиться к ним, чтобы обеспечить передачу данных с устройства Шлюза Data Box в Azure.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 03/08/2019
 ms.author: alkohli
-ms.openlocfilehash: 4817db0ce9723f46ceac4f4720915a9bfddcf915
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.openlocfilehash: 6db2d8fa6e957a63a4410f17b09a9f106bfba6e6
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82561715"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87923481"
 ---
 # <a name="tutorial-transfer-data-with-azure-data-box-gateway"></a>Руководство по передаче данных с помощью Шлюза Azure Data Box
 

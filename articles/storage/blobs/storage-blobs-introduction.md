@@ -1,7 +1,7 @@
 ---
 title: Общие сведения о хранилище BLOB-объектов
 titleSuffix: Azure Storage
-description: Хранилище BLOB-объектов Azure позволяет хранить большие объемы неструктурированных данных объектов, например текстовых или двоичных данных. Хранилище BLOB-объектов Azure обеспечивает высокую масштабируемость и доступность. Клиенты могут обращаться к объектам данных в хранилище BLOB-объектов из PowerShell или Azure CLI, а также программно, с помощью клиентских библиотек службы хранилища Azure, или посредством REST.
+description: Используйте Хранилище BLOB-объектов для хранения больших объемов неструктурированных данных объектов, например текстовых или двоичных данных. Хранилище BLOB-объектов Azure обеспечивает высокую масштабируемость и доступность.
 services: storage
 author: tamram
 ms.service: storage
@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 06/24/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 0d05e85a06ae1e893d5d7faa7e5389da78ad6389
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 55059f4edea19a1e559ea1ad99d9e7e60756cc96
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85559521"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836383"
 ---
 # <a name="introduction-to-azure-blob-storage"></a>Общие сведения о хранилище BLOB-объектов Azure
 

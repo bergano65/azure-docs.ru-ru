@@ -1,6 +1,6 @@
 ---
-title: Пример для CLI. Копирование моментального снимка управляемых дисков в подписку
-description: Пример сценария Azure CLI. Копирование (или перемещение) моментального снимка управляемого диска в ту же или другую подписку с помощью CLI
+title: Пример для CLI. Копирование моментального снимка управляемых дисков в подписку на виртуальной машине Linux
+description: Пример сценария Azure CLI. Копирование (или перемещение) моментального снимка управляемого диска в ту же или другую подписку с помощью CLI на виртуальной машине Linux
 services: virtual-machines-linux
 documentationcenter: storage
 author: ramankumarlive
@@ -15,14 +15,14 @@ ms.workload: infrastructure
 ms.date: 05/19/2017
 ms.author: ramankum
 ms.custom: mvc
-ms.openlocfilehash: c17773da09b51e135e855002de7b35628c21508f
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 637c8c3a2f6ba90a7a16fa375d99a7463be71270
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86509769"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056097"
 ---
-# <a name="copy-snapshot-of-a-managed-disk-to-same-or-different-subscription-with-cli"></a>Копирование моментального снимка управляемого диска в ту же или другую подписку с помощью интерфейса командной строки
+# <a name="copy-snapshot-of-a-managed-disk-to-same-or-different-subscription-with-cli-on-a-linux-vm"></a>Копирование моментального снимка управляемого диска в ту же или другую подписку с помощью интерфейса командной строки на виртуальную машину Linux
 
 Этот сценарий копирует моментальный снимок управляемого диска в ту же или другую подписку. Используйте этот скрипт в следующих сценариях:
 

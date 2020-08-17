@@ -21,7 +21,7 @@ ms.locfileid: "88210531"
 
 [!INCLUDE [storage-check-out-samples-all](../../../includes/storage-check-out-samples-all.md)]
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 В этом руководстве показано, как реализовать типичные сценарии с использованием службы очередей Microsoft Azure. Примеры написаны с использованием интерфейса API Node.js. Здесь описаны такие сценарии, как **вставка**, **просмотр**, **получение** и **удаление** сообщений очереди, а также **создание и удаление очередей**.
 
 > [!IMPORTANT]
@@ -327,7 +327,7 @@ queueSvc.getQueueAcl('myqueue', function(error, result, response) {
 queueSAS = queueSvc.generateSharedAccessSignature('myqueue', { Id: 'user2' });
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
 * Посетите [блог команды разработчиков службы хранилища Azure][Azure Storage Team Blog].

@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 04/20/2020
+ms.date: 07/14/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e16fdaed8ce7e73718569652e88e66844850175
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 79e23f516fe31b4a21232f75286540e6c0d9019d
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87416602"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87923019"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amazon-web-services-aws"></a>Руководство по Интеграция единого входа Azure Active Directory с Amazon Web Services (AWS)
 
@@ -81,7 +81,7 @@ ms.locfileid: "87416602"
 1. В разделе **Добавление из коллекции** в поле поиска введите **Amazon Web Services (AWS)** .
 1. Выберите **Amazon Web Services (AWS)** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-amazon-web-services-aws"></a>Настройка и проверка единого входа Azure AD для Amazon Web Services (AWS)
+## <a name="configure-and-test-azure-ad-sso-for-amazon-web-services-aws"></a>Настройка и проверка единого входа Azure AD для Amazon Web Services (AWS)
 
 Настройте и проверьте единый вход Azure AD в Amazon Web Services (AWS) с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем во Amazon Web Services (AWS).
 
@@ -133,7 +133,7 @@ ms.locfileid: "87416602"
 
 1. В разделе **Сертификат SAML для подписи** найдите **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
-    ![Ссылка для скачивания сертификата](common/metadataxml.png)
+    ![Ссылка для скачивания сертификата](./media/amazon-web-service-tutorial/certificate.png)
 
 1. Требуемые URL-адреса можно скопировать из раздела **Настройка Amazon Web Services (AWS)** .
 

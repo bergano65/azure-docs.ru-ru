@@ -1,14 +1,14 @@
 ---
 title: Автономное резервное копирование для Data Protection Manager (DPM) и Microsoft Azure Backup Server (MABS) — предыдущие версии
-description: С Azure Backup можно отправить данные из сети с помощью службы импорта и экспорта Azure. В этой статье описывается рабочий процесс автономного резервного копирования для DPM и Azure Backup Server.
+description: С Azure Backup можно отправить данные из сети с помощью службы импорта и экспорта Azure. В этой статье описывается рабочий процесс автономного резервного копирования для предыдущих версий DPM и Azure Backup Server.
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 128051210984a55620be60a5965a7067e74de7c7
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: e986baaf6ac2943bd210761ff2194eacdee5984a
+ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186951"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88261928"
 ---
 # <a name="offline-backup-workflow-for-dpm-and-azure-backup-server-previous-versions"></a>Рабочий процесс автономного резервного копирования для DPM и Azure Backup Server (предыдущие версии)
 
@@ -48,7 +48,7 @@ ms.locfileid: "86186951"
 >[!NOTE]
 >Подписки Azure CSP не поддерживаются для автономного заполнения DPM 2019 RTM и более ранних версий, а также MABS v3 RTM и более ранние версии. Оперативное резервное копирование по сети по-прежнему поддерживается.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед запуском рабочего процесса автономного резервного копирования убедитесь, что выполнены следующие предварительные требования:
 
@@ -281,6 +281,6 @@ ms.locfileid: "86186951"
 
 При следующем запланированном резервном копировании Azure Backup выполнит добавочное резервное копирование поверх начальной резервной копии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Вопросы о рабочем процессе службы импорта и экспорта Azure см. в статье [Использование службы импорт и экспорт Microsoft Azure для перемещения данных в хранилище BLOB-объектов](../storage/common/storage-import-export-service.md).

@@ -17,13 +17,13 @@ ms.locfileid: "88235251"
 ---
 # <a name="get-started-with-storage-explorer"></a>Начало работы с Обозревателем службы хранилища
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 Обозреватель службы хранилища Microsoft Azure — это изолированное приложение, которое упрощает работу с данными из Cлужбы хранилища Azure на платформе Windows, macOS и Linux. В этой статье вы узнаете о нескольких способах подключения к учетным записям хранения Azure и управления ими.
 
 ![Обозреватель службы хранилища Microsoft Azure][0]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 # <a name="windows"></a>[Windows](#tab/windows)
 

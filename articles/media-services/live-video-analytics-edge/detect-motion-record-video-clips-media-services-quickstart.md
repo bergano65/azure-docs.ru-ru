@@ -3,12 +3,12 @@ title: Запись видео в Службы мультимедиа Azure пр
 description: В этом кратком руководстве показано, как использовать Аналитику видеотрансляции в IoT Edge для обнаружения движения во время видеотрансляции и записи видеороликов в Службы мультимедиа Azure.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: 24bf958c7a6af25d64d8c2884b9fa259c67e39c3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 972b85c00aa29cc39dafd03b9945e489680dd9a5
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87074400"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88067684"
 ---
 # <a name="quickstart-detect-motion-record-video-to-media-services"></a>Краткое руководство. Запись видео в Cлужбы мультимедиа при обнаружении движения
 
@@ -29,13 +29,13 @@ ms.locfileid: "87074400"
 
 В рамках описанных выше действий по настройке ресурсов Azure (короткое) видео с изображением стоянки автомашин будет скопировано на виртуальную машину Linux в Azure, используемую в качестве устройства IoT Edge. Этот видеофайл будет использован для имитации прямой трансляции во время работы с этим руководством.
 
-Можно использовать приложение, например [проигрыватель VLC](https://www.videolan.org/vlc/): запустите его, нажмите клавиши Control+N и вставьте [эту](https://lvamedia.blob.core.windows.net/public/lots_015.mkv) ссылку на видео с изображением стоянки автомашин, чтобы начать воспроизведение. Примерно на 5-секундной отметке белый автомобиль движется по стоянке.
+Можно использовать приложение, например [проигрыватель VLC](https://www.videolan.org/vlc/): запустите его, нажмите клавиши `Ctrl+N` и вставьте [ссылку на пример видео с изображением стоянки автомашин](https://lvamedia.blob.core.windows.net/public/lots_015.mkv), чтобы начать воспроизведение. Примерно на 5-секундной отметке белый автомобиль движется по стоянке.
 
 Выполняя указанные ниже действия, вы будете использовать Аналитику видеотрансляции в IoT Edge для обнаружения движения автомобиля и записи видеоролика, начиная с 5-секундной отметки. Приведенная ниже схема является визуальным представлением общего потока.
 
 ![Запись видео на основе событий в активы на основе событий движения](./media/quickstarts/topology.png)
 
-## <a name="use-direct-methods"></a>Использование прямых методов
+## <a name="use-direct-method-calls"></a>Использование вызовов прямых методов
 
 С помощью модуля можно анализировать потоки видеотрансляции, вызывая его прямые методы. Ознакомитесь со статьей [Прямые методы для Аналитики видеотрансляции в IoT Edge](direct-methods.md), чтобы узнать о всех прямых методах, обеспечиваемых модулем. 
 
@@ -46,35 +46,35 @@ ms.locfileid: "87074400"
 1. Вы увидите всплывающее поле ввода в верхней средней части окна Visual Studio Code. Введите GraphTopologyList в поле ввода и нажмите клавишу ВВОД.
 1. Затем скопируйте и вставьте приведенные ниже полезные данные JSON в поле редактирования и нажмите клавишу ВВОД.
     
-    ```
-    {
-        "@apiVersion" : "1.0"
-    }
-    ```
+```
+{
+    "@apiVersion" : "1.0"
+}
+```
 
-    Через несколько секунд появится окно вывода во всплывающем окне Visual Studio Code со следующим ответом:
+Через несколько секунд появится окно вывода во всплывающем окне Visual Studio Code со следующим ответом:
     
-    ```
-    [DirectMethod] Invoking Direct Method [GraphTopologyList] to [lva-sample-device/lvaEdge] ...
-    [DirectMethod] Response from [lva-sample-device/lvaEdge]:
-    {
-      "status": 200,
-      "payload": {
-        "value": []
-      }
-    }
-    ```
+```
+[DirectMethod] Invoking Direct Method [GraphTopologyList] to [lva-sample-device/lvaEdge] ...
+[DirectMethod] Response from [lva-sample-device/lvaEdge]:
+{
+  "status": 200,
+  "payload": {
+    "value": []
+  }
+}
+```
     
-    Должен появится указанный выше ответ, так как топологии графов не были созданы.
+Должен появится указанный выше ответ, так как топологии графов не были созданы.
 
 ### <a name="invoke-graphtopologyset"></a>Вызов GraphTopologySet
 
-С помощью шагов, описанных для вызова GraphTopologyList, можно вызвать GraphTopologySet, чтобы задать [топологию графа](media-graph-concept.md#media-graph-topologies-and-instances), используя в качестве полезных данных следующий формат JSON. Будет создана топология графа под именем EVRtoAssetsOnMotionDetecion.
+С помощью шагов, описанных для вызова GraphTopologyList, можно вызвать GraphTopologySet, чтобы задать [топологию графа](media-graph-concept.md#media-graph-topologies-and-instances), используя в качестве полезных данных следующий формат JSON. Будет создана топология графа под именем EVRtoAssetsOnMotionDetection.
 
 ```
 {
     "@apiVersion": "1.0",
-    "name": "EVRtoAssetsOnMotionDetecion",
+    "name": "EVRtoAssetsOnMotionDetection",
     "properties": {
       "description": "Event-based video recording to Assets based on motion events",
       "parameters": [
@@ -195,7 +195,7 @@ ms.locfileid: "87074400"
       "createdAt": "2020-05-12T22:05:31.603Z",
       "lastModifiedAt": "2020-05-12T22:05:31.603Z"
     },
-    "name": "EVRtoAssetsOnMotionDetecion",
+    "name": "EVRtoAssetsOnMotionDetection",
     "properties": {
       "description": "Event-based video recording to assets based on motion events",
       "parameters": [
@@ -312,7 +312,7 @@ ms.locfileid: "87074400"
 
 * Снова вызовите GraphTopologySet и убедитесь, что возвращен код состояния 200. Код состояния 200 указывает, что существующая топология графа успешно обновлена.
 * Снова вызовите GraphTopologySet, но измените строку описания. Убедитесь, что код состояния в ответе — 200, а описание обновлено до нового значения.
-* Вызовите GraphTopologyList, как описано в предыдущем разделе, и убедитесь, что теперь в возвращенных полезных данных отображается топология графа EVRtoAssetsOnMotionDetecion.
+* Вызовите GraphTopologyList, как описано в предыдущем разделе, и убедитесь, что теперь в возвращенных полезных данных отображается топология графа EVRtoAssetsOnMotionDetection.
 
 ### <a name="invoke-graphtopologyget"></a>Вызов GraphTopologyGet
 
@@ -321,7 +321,7 @@ ms.locfileid: "87074400"
 
 {
     "@apiVersion" : "1.0",
-    "name" : "EVRtoAssetsOnMotionDetecion"
+    "name" : "EVRtoAssetsOnMotionDetection"
 }
 ```
 
@@ -337,7 +337,7 @@ ms.locfileid: "87074400"
       "createdAt": "2020-05-12T22:05:31.603Z",
       "lastModifiedAt": "2020-05-12T22:05:31.603Z"
     },
-    "name": "EVRtoAssetsOnMotionDetecion",
+    "name": "EVRtoAssetsOnMotionDetection",
     "properties": {
       "description": "Event-based video recording to Assets based on motion events",
       "parameters": [
@@ -466,7 +466,7 @@ ms.locfileid: "87074400"
     "@apiVersion" : "1.0",
     "name" : "Sample-Graph-2",
     "properties" : {
-        "topologyName" : "EVRtoAssetsOnMotionDetecion",
+        "topologyName" : "EVRtoAssetsOnMotionDetection",
         "description" : "Sample graph description",
         "parameters" : [
             { "name" : "rtspUrl", "value" : "rtsp://rtspsim:554/media/lots_015.mkv" }
@@ -477,7 +477,7 @@ ms.locfileid: "87074400"
 
 Следует отметить следующее.
 
-* В полезных данных выше указано имя топологии графа (EVRtoAssetsOnMotionDetecion), для которой необходимо создать экземпляр графа.
+* В полезных данных выше указано имя топологии графа (EVRtoAssetsOnMotionDetection), для которой необходимо создать экземпляр графа.
 * Полезные данные содержат значение для параметра rtspUrl, для которого отсутствует значение по умолчанию в полезных данных топологии.
 
 Через несколько секунд в окне вывода отобразится следующий ответ:
@@ -496,7 +496,7 @@ ms.locfileid: "87074400"
     "properties": {
       "state": "Inactive",
       "description": "Sample graph description",
-      "topologyName": "EVRtoAssetsOnMotionDetecion",
+      "topologyName": "EVRtoAssetsOnMotionDetection",
       "parameters": [
         {
           "name": "rtspUrl",
@@ -531,13 +531,13 @@ ms.locfileid: "87074400"
     
     Через несколько секунд появится окно вывода со следующим сообщением:
 
-    ```
-    [IoTHubMonitor] Start monitoring message arrived in built-in endpoint for all devices ...
-    [IoTHubMonitor] Created partition receiver [0] for consumerGroup [$Default]
-    [IoTHubMonitor] Created partition receiver [1] for consumerGroup [$Default]
-    [IoTHubMonitor] Created partition receiver [2] for consumerGroup [$Default]
-    [IoTHubMonitor] Created partition receiver [3] for consumerGroup [$Default]
-    ```
+```
+[IoTHubMonitor] Start monitoring message arrived in built-in endpoint for all devices ...
+[IoTHubMonitor] Created partition receiver [0] for consumerGroup [$Default]
+[IoTHubMonitor] Created partition receiver [1] for consumerGroup [$Default]
+[IoTHubMonitor] Created partition receiver [2] for consumerGroup [$Default]
+[IoTHubMonitor] Created partition receiver [3] for consumerGroup [$Default]
+```
 
 ### <a name="invoke-graphinstanceactivate"></a>Вызов GraphInstanceActivate
 
@@ -590,7 +590,7 @@ ms.locfileid: "87074400"
     "properties": {
       "state": "Active",
       "description": "Sample graph description",
-      "topologyName": "EVRtoAssetsOnMotionDetecion",
+      "topologyName": "EVRtoAssetsOnMotionDetection",
       "parameters": [
         {
           "name": "rtspUrl",
@@ -738,7 +738,7 @@ ms.locfileid: "87074400"
 
 Если вы продолжите выполнение экземпляра графа, симулятор RTSP достигнет конца видеофайла и остановится либо отключится. Затем узел источника RTSP снова подключится к симулятору, и процесс повторится.
     
-## <a name="invoke-additional-direct-methods-to-clean-up"></a>Вызов дополнительных прямых методов для очистки
+## <a name="invoke-additional-direct-method-calls-to-clean-up"></a>Вызов дополнительных прямых методов для очистки
 
 Теперь вызовем прямые методы для деактивации и удаления экземпляра графа (в указанном порядке).
 
@@ -801,7 +801,7 @@ ms.locfileid: "87074400"
 ```
 {
     "@apiVersion" : "1.0",
-    "name" : "EVRtoAssetsOnMotionDetecion"
+    "name" : "EVRtoAssetsOnMotionDetection"
 }
 ```
 

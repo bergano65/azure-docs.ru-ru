@@ -1,23 +1,23 @@
 ---
 title: Краткое руководство по управлению общими файловыми ресурсами Azure с помощью портала Azure
-description: Используйте это краткое руководство, чтобы узнать, как управлять службой файлов Azure с помощью портала Azure.
+description: Узнайте, как создать общие папки Azure и управлять ими с помощью портала Azure. Сведения о том, как создать учетную запись хранения и общую папку Azure, а также как использовать эту папку.
 author: roygara
 ms.service: storage
 ms.topic: quickstart
 ms.date: 10/18/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: fef3daf6e9e535736002e309e3d27491364dc553
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: f68d9f620b686ab20e93584bdd7c024d8a943577
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "71260287"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88036544"
 ---
 # <a name="quickstart-create-and-manage-azure-file-shares-with-the-azure-portal"></a>Краткое руководство: создание общих файловых ресурсов Azure и управление ими с помощью портала Azure 
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Файловые ресурсы Azure можно подключить в Windows, Linux и macOS. В этом руководстве рассматриваются основы работы с файловыми ресурсами Azure с помощью [портала Azure](https://portal.azure.com/).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 [!INCLUDE [storage-files-create-storage-account-portal](../../../includes/storage-files-create-storage-account-portal.md)]

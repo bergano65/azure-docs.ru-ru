@@ -1,14 +1,14 @@
 ---
 title: Краткое руководство. Первый запрос PowerShell
 description: В этом кратком руководстве вы выполняете шаги по включению модуля Resource Graph для Azure PowerShell и выполнению первого запроса.
-ms.date: 05/20/2020
+ms.date: 08/10/2020
 ms.topic: quickstart
-ms.openlocfilehash: e98ca5974ba46d4d908cfe6dd8c04d3f6ba33a2a
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 4cc7eb524060f2a797077f38321ae9ce6c9cf267
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83872007"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056420"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-azure-powershell"></a>Краткое руководство. Выполните первый запрос графика ресурсов с помощью Azure PowerShell
 

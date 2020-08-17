@@ -10,12 +10,12 @@ author: vijetajo
 ms.author: vijetaj
 ms.topic: overview
 ms.date: 05/08/2018
-ms.openlocfilehash: 03fdbf6979db3249d1322a3025b48de81b953ae1
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: b1357c9bb125cb881ac4aa6dd31c9dcaf53954f0
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82856215"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87919945"
 ---
 # <a name="data-science-virtual-machine-based-team-analytics-and-ai-environment"></a>Командная среда аналитики и искусственного интеллекта на базе виртуальной машины для обработки и анализа данных 
 [Виртуальная машина для обработки и анализа данных](overview.md) (DSVM) предоставляет среду с широкими возможностями на платформе Azure с предварительно созданным программным обеспечением для задач искусственного интеллекта и аналитики данных.
@@ -40,7 +40,7 @@ ms.locfileid: "82856215"
 * [Безопасность сети](https://docs.microsoft.com/azure/security/fundamentals/network-security)
 * [Мониторинг](https://docs.microsoft.com/azure/virtual-machines/windows/monitor) и [управление](https://docs.microsoft.com/azure/virtual-machines/windows/maintenance-and-updates)
 * [Ведение журналов и аудит](https://docs.microsoft.com/azure/security/fundamentals/log-audit)
-* [Контроль доступа на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview)
+* [Управление доступом Azure на основе ролей (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview)
 * [Настройка и применение политик](../../governance/policy/overview.md)
 * [Защита от вредоносных программ](https://docs.microsoft.com/azure/security/fundamentals/antimalware)
 * [Шифрование](https://docs.microsoft.com/azure/virtual-machines/windows/disk-encryption-overview)

@@ -57,7 +57,9 @@
           href: export-import-provisioning-configuration.md
     - name: Устранение неполадок при подготовке приложений
       items:
-        - name: Устранение неполадок с подготовкой приложений
+        - name: Известные проблемы
+          href: known-issues.md
+        - name: Устранение неполадок с конфигурацией
           href: application-provisioning-config-problem.md
         - name: Состояние карантина
           href: application-provisioning-quarantine-status.md

@@ -1,23 +1,23 @@
 ---
 title: Краткое руководство Azure. Создание большого двоичного объекта в хранилище объектов с помощью PHP | Документация Майкрософт
-description: Краткие сведения о передаче объектов в хранилище BLOB-объектов Azure и обратно с помощью PHP
+description: Узнайте, как передавать объекты в Хранилище BLOB-объектов Azure и обратно с помощью PHP. Вы также сможете отправлять, скачивать и выводить блочные BLOB-объекты в контейнере в Хранилище BLOB-объектов Azure.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.date: 11/14/2018
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 0453d7465479fb1410d1436cc3fa53914633ece5
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: a19ff153ea0625a14401770de690dcfddeb74d88
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "68726388"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87835754"
 ---
 #  <a name="transfer-objects-tofrom-azure-blob-storage-using-php"></a>Передача объектов в хранилище BLOB-объектов Azure и обратно с помощью PHP
 Из этого краткого руководства вы узнаете, как использовать PHP для передачи, скачивания и перечисления блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
 
@@ -166,7 +166,7 @@ This is the content of the blob uploaded: Hello Azure!
 
 ### <a name="get-the-content-of-your-blobs"></a>Получение содержимого больших двоичных объектов
 
-Получите содержимое больших двоичных объектов с помощью метода **getBlob()** . Следующий код отображает содержимое большого двоичного объекта, который мы передали в предыдущем разделе.
+Получите содержимое больших двоичных объектов с помощью метода **getBlob()**. Следующий код отображает содержимое большого двоичного объекта, который мы передали в предыдущем разделе.
 
 ```PHP
     $blob = $blobClient->getBlob($containerName, $fileToUpload);

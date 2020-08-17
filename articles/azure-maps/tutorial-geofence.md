@@ -1,20 +1,20 @@
 ---
 title: Руководство по Создание геозоны и отслеживание устройств в Microsoft Azure Maps
-description: Сведения о настройке геозоны и отслеживании устройств относительно геозоны с помощью службы пространственных данных Microsoft Azure Maps.
+description: Сведения о настройке геозоны. Узнайте, как отслеживать положение устройств относительно геозон, с помощью пространственной службы Azure Maps.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 7/15/2020
+ms.date: 8/11/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 775d98b992f2bca4441c868873ceaeb2389db81a
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: b88d9132ec1548c9d94fc418af35b55ac2836e96
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86517398"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121244"
 ---
 # <a name="tutorial-set-up-a-geofence-by-using-azure-maps"></a>Руководство по Настройка геозоны с использованием Azure Maps
 

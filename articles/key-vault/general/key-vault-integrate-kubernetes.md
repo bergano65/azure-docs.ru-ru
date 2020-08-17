@@ -6,12 +6,12 @@ ms.author: t-trtr
 ms.service: key-vault
 ms.topic: tutorial
 ms.date: 06/04/2020
-ms.openlocfilehash: 7acdee98e5e433567a3d177400ee4e7043d0895c
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: e70ee75344a939ea1632df3549d796617c7596af
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85921573"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87902003"
 ---
 # <a name="tutorial-configure-and-run-the-azure-key-vault-provider-for-the-secrets-store-csi-driver-on-kubernetes"></a>Руководство по настройке и запуску поставщика Azure Key Vault для драйвера CSI хранилища секретов в Kubernetes
 
@@ -71,7 +71,7 @@ az ad sp create-for-rbac --name contosoServicePrincipal --skip-assignment
     ```azurecli
     az aks upgrade --kubernetes-version 1.16.9 --name contosoAKSCluster --resource-group contosoResourceGroup
     ```
-1. Отобразите метаданные созданного кластера AKS с помощью приведенной ниже команды. Скопируйте значения **principalId**, **clientId**, **subscriptionId** и **nodeResourceGroup** для последующего использования.
+1. Отобразите метаданные созданного кластера AKS с помощью приведенной ниже команды. Скопируйте значения **principalId**, **clientId**, **subscriptionId** и **nodeResourceGroup** для последующего использования. Если кластер ASK не был создан с включенными управляемыми удостоверениями, **principalId** и **clientId** будут иметь значение NULL. 
 
     ```azurecli
     az aks show --name contosoAKSCluster --resource-group contosoResourceGroup
@@ -166,7 +166,7 @@ spec:
 
 ### <a name="assign-a-service-principal"></a>Назначение субъекта-службы
 
-Если вы используете субъект-службу, предоставьте ей разрешения на доступ к хранилищу ключей и извлечение секретов. Назначьте роль *Читатель* и предоставьте субъекту-службе разрешение *получать* секреты из хранилища ключей, выполнив следующие действия:
+Если вы используете субъект-службу, предоставьте ей разрешения на доступ к хранилищу ключей и извлечение секретов. Назначьте роль *Читатель* и предоставьте субъекту-службе разрешение *получать* секреты из хранилища ключей, выполнив следующую команду:
 
 1. Назначьте субъект-службу имеющемуся хранилищу ключей. Параметр **$AZURE _CLIENT_ID** — это значение **appId**, скопированное после создания субъекта-службы.
     ```azurecli
@@ -204,10 +204,10 @@ az ad sp credential reset --name contosoServicePrincipal --credential-descriptio
 
 При использовании управляемых удостоверений назначьте определенные роли созданному кластеру AKS. 
 
-1. Чтобы создать, вывести или прочесть назначаемое пользователем управляемое удостоверение, кластеру AKS необходимо назначить роль [участника управляемого удостоверения](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#managed-identity-contributor). Убедитесь, что **$clientId** является идентификатором клиента кластера Kubernetes.
+1. Чтобы создать, вывести или прочесть назначаемое пользователем управляемое удостоверение, кластеру AKS необходимо назначить роль [оператора управляемого удостоверения](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#managed-identity-operator). Убедитесь, что **$clientId** является идентификатором клиента кластера Kubernetes. Для этой области он будет указан в службе подписки Azure, а именно в группе ресурсов узла, которая была создана при создании кластера AKS. Эта область гарантирует, что назначенные ниже роли применяются только к ресурсам в такой группе. 
 
     ```azurecli
-    az role assignment create --role "Managed Identity Contributor" --assignee $clientId --scope /subscriptions/$SUBID/resourcegroups/$NODE_RESOURCE_GROUP
+    az role assignment create --role "Managed Identity Operator" --assignee $clientId --scope /subscriptions/$SUBID/resourcegroups/$NODE_RESOURCE_GROUP
     
     az role assignment create --role "Virtual Machine Contributor" --assignee $clientId --scope /subscriptions/$SUBID/resourcegroups/$NODE_RESOURCE_GROUP
     ```

@@ -1,6 +1,6 @@
 ---
 title: Пример скрипта Azure PowerShell. Настройка VPN-подключения "сеть — сеть" | Документы Microsoft
-description: Настройка VPN-подключения "сеть — сеть".
+description: С помощью PowerShell вы можете создать VPN-шлюз на основе маршрутов и настроить свое VPN-устройство на добавление подключений между сайтами.
 services: vpn-gateway
 documentationcenter: vpn-gateway
 author: kumudD
@@ -9,12 +9,12 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 04/30/2018
 ms.author: alzam
-ms.openlocfilehash: e55cbcbd27d9a2b6307f570d5e2bca37eba3e1e1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fab1f4862cd1f2907d9bdc9f989fe24f1730002c
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86998516"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88032447"
 ---
 # <a name="create-a-vpn-gateway-and-add-a-site-to-site-connection-using-powershell"></a>Создание VPN-шлюза и добавление подключения типа "сеть — сеть" с помощью PowerShell
 

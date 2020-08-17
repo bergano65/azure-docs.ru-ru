@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91b1be75b06b4281ee5d03675d9d33db00a5aaf7
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 783a61c8e2b6c60b81e31d7771d3237c93be92a8
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "70013799"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88055600"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-darwinbox"></a>Руководство по интеграции единого входа Azure Active Directory с Darwinbox
 
@@ -30,7 +30,6 @@ ms.locfileid: "70013799"
 * Контроль доступа к Darwinbox с помощью Azure AD.
 * Включение автоматического входа пользователей в Darwinbox с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
-
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -39,6 +38,9 @@ ms.locfileid: "70013799"
 
 * Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Darwinbox с поддержкой единого входа.
+> [!NOTE]
+> Эту интеграцию также можно использовать в облачной среде Azure AD для государственных организаций США. Это приложение можно найти в коллекции облачных приложений с поддержкой Azure AD для государственных организаций США и настроить таким же образом, как и в общедоступном облаке.
+
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -83,12 +85,12 @@ ms.locfileid: "70013799"
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.darwinbox.in/`.
+   1. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.darwinbox.in/`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.darwinbox.in/adfs/module.php/saml/sp/metadata.php/<CUSTOMID>`.
+   1. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.darwinbox.in/adfs/module.php/saml/sp/metadata.php/<CUSTOMID>`.
 
-    > [!NOTE]
-    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки Darwinbox](https://darwinbox.com/contact-us.php). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+      > [!NOTE]
+      > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки Darwinbox](https://darwinbox.com/contact-us.php). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
@@ -141,6 +143,28 @@ ms.locfileid: "70013799"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Darwinbox на Панели доступа, вы автоматически войдете в приложение Darwinbox, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+
+## <a name="test-sso-for-darwinbox-mobile"></a>Проверка единого входа для Darwinbox (на мобильных устройствах)
+
+1. Откройте мобильное приложение Darwinbox. Щелкните **Enter Organization URL** (Ввести URL-адрес организации), введите URL-адрес своей организации в текстовое поле и нажмите кнопку со стрелкой.
+
+    ![Мобильное приложение Darwinbox](media/darwinbox-tutorial/DarwinboxMobile01.jpg)
+
+1. Если у вас несколько доменов, щелкните свой домен.
+
+    ![Мобильное приложение Darwinbox](media/darwinbox-tutorial/DarwinboxMobile02.jpg)
+
+1. Введите адрес электронной почты Azure AD в приложение Darwinbox и нажмите **Далее**.
+
+    ![Мобильное приложение Darwinbox](media/darwinbox-tutorial/DarwinboxMobile03.jpg)
+
+1. Введите пароль Azure AD в приложение Darwinbox и нажмите **Войти**.
+
+    ![Мобильное приложение Darwinbox](media/darwinbox-tutorial/DarwinboxMobile04.jpg)
+
+1. Наконец, после успешного входа на сайт отобразится домашняя страница приложения.
+
+    ![Мобильное приложение Darwinbox](media/darwinbox-tutorial/DarwinboxMobile05.jpg)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

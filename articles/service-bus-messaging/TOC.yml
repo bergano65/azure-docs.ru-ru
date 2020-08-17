@@ -44,6 +44,8 @@
           items:
             - name: Портал Azure
               href: service-bus-quickstart-topics-subscriptions-portal.md
+            - name: Azure CLI
+              href: service-bus-tutorial-topics-subscriptions-cli.md
             - name: Шаблон ARM
               href: service-bus-resource-manager-namespace-topic.md
         - name: Шаблон "публикация/подписка" для обмена сообщениями
@@ -62,12 +64,8 @@
               href: service-bus-ruby-how-to-use-topics-subscriptions.md
 - name: Учебники
   items:
-    - name: Обновление инвентаризации с помощью PowerShell
-      href: service-bus-tutorial-topics-subscriptions-powershell.md
-    - name: Обновление инвентаризации с помощью портала
+    - name: Обновление инвентаризации
       href: service-bus-tutorial-topics-subscriptions-portal.md
-    - name: Обновление инвентаризации с помощью CLI
-      href: service-bus-tutorial-topics-subscriptions-cli.md
     - name: Реагирование на события с помощью службы "Сетка событий"
       href: service-bus-to-event-grid-integration-example.md
 - name: Примеры

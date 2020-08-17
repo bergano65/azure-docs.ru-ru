@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 07/17/2020
+ms.date: 07/29/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ce816b74c12333477203cce690c955d5aaf1cda
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3a197c879e4c091c9b421c194e1f6a50b91d24bb
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87093695"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88007397"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-egress"></a>Руководство по интеграции единого входа Azure Active Directory с Egress
 
@@ -45,7 +45,7 @@ ms.locfileid: "87093695"
 
 * Egress поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
 * Egress поддерживает **JIT**-подготовку пользователей.
-* После настройки Egress вы сможете применить управление сеансами, чтобы в реальном времени защищать конфиденциальные данные организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+* После настройки Egress вы можете применить функцию управления сеансом, которая в реальном времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="adding-egress-from-the-gallery"></a>Добавление Egress из коллекции
 
@@ -130,7 +130,7 @@ ms.locfileid: "87093695"
 
 1. На следующей странице выполните приведенные ниже шаги.
 
-    ![Конфигурация Egress](./media/egress-tutorial/configure1.PNG)
+    ![Конфигурация Egress](./media/egress-tutorial/configure-1.PNG)
 
     а. В меню слева щелкните **SSO Configuration** (Конфигурация единого входа).
 
@@ -150,11 +150,11 @@ ms.locfileid: "87093695"
 
 1. Щелкните **Invite Users** (Пригласить пользователей) в меню слева, а затем выберите **Invite Single User** (Пригласить одного пользователя), чтобы добавить пользователя.
 
-    ![Создание тестового пользователя Egress](./media/egress-tutorial/createuser1.PNG)
+    ![Создание тестового пользователя Egress](./media/egress-tutorial/create-user-1.PNG)
 
 1. Введите данные в обязательные поля и щелкните **Invite** (Пригласить).
 
-    ![Создание тестового пользователя Egress](./media/egress-tutorial/createuser2.PNG)
+    ![Создание тестового пользователя Egress](./media/egress-tutorial/create-user-2.PNG)
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

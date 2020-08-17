@@ -10,12 +10,12 @@ ms.reviewer: sgilley
 author: revodavid
 ms.author: davidsmi
 ms.date: 02/07/2020
-ms.openlocfilehash: 53b1c22e93c342373cae2bbb14958f4810a79630
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: bb2a7d8ef55e993726b185e5652c8dff9e96b23e
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092326"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056369"
 ---
 # <a name="tutorial-use-r-to-create-a-machine-learning-model-preview"></a>Руководство по созданию модели машинного обучения с помощью R (предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -102,22 +102,15 @@ ms.locfileid: "87092326"
 * Создание удаленного целевого объекта вычислений для использования в обучении
 
 ### <a name="install-required-packages"></a>Установка необходимых пакетов
-
- * Установите последнюю версию, скачав ее в CRAN,
-
-    ```R
-    # install the latest version from CRAN
-    install.packages("azuremlsdk")
-    azuremlsdk::install_azureml(envname = 'r-reticulate')
-    ```
+В вычислительном экземпляре уже установлена последняя версия пакета SDK R из CRAN. Если вы хотите установить версию для разработки из GitHub, а не получить последние исправления ошибок, выполните следующую команду:
     
-* или версию для разработки, доступную на сайте GitHub.
+```R
+remotes::install_github('https://github.com/Azure/azureml-sdk-for-r')
+azuremlsdk::install_azureml()
+```
 
-    ```R
-    # or install the development version from GitHub
-    remotes::install_github('https://github.com/Azure/azureml-sdk-for-r')
-    azuremlsdk::install_azureml(envname = 'r-reticulate')
-    ```
+> [!WARNING]
+> В процессе установки при появлении запроса `Would you like to install Miniconda? [Y/n]:`, выберите ответ `n`, так как в вычислительном экземпляре уже установлено решение Anaconda и установка Miniconda не требуется.
 
 Теперь установите пакет **azuremlsdk**.
 

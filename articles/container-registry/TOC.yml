@@ -148,6 +148,12 @@
         - name: Диагностика
           expanded: false
           items:
+            - name: Устранение неполадок с входом
+              href: container-registry-troubleshoot-login.md
+            - name: Устранение неполадок с сетью
+              href: container-registry-troubleshoot-access.md
+            - name: Устранение проблем с производительностью реестра
+              href: container-registry-troubleshoot-performance.md
             - name: Обнаружение распространенных проблем
               href: container-registry-check-health.md
             - name: ВОПРОСЫ И ОТВЕТЫ

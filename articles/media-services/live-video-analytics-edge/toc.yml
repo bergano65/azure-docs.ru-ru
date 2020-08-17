@@ -30,6 +30,11 @@
       href: event-based-video-recording-tutorial.md
     - name: 'Воспроизведение записей, сделанных в течение нескольких дней'
       href: playback-multi-day-recordings-tutorial.md
+    - name: Анализ видеотрансляций
+      items:
+        - name: Использование OVMS через расширение HTTP
+          displayName: 'intel, OpenVINO'
+          href: use-intel-openvino-tutorial.md
 - name: Примеры
   items:
     - name: "Аналитика видеотрансляции в IoT Edge\_— примеры для C#"

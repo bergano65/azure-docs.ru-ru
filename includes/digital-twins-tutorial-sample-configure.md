@@ -5,12 +5,12 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 5/25/2020
 ms.author: baanders
-ms.openlocfilehash: ad9eb95c9e3a21cd33a367cc864a4d791888afb9
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 3b68df1b3fc2f03d7659205fe03fdae09ecc3f7a
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87124576"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87827373"
 ---
 ## <a name="configure-the-sample-project"></a>Настройка примера проекта
 
@@ -18,7 +18,7 @@ ms.locfileid: "87124576"
 
 Перейдите к скачанному файлу на компьютере и распакуйте его.
 
-В распакованной папке перейдите в раздел _AdtSampleApp/_ . Откройте _**AdtE2ESample.sln**_ в Visual Studio 2019. 
+В распакованной папке перейдите во вложенную папку _AdtSampleApp_. Откройте _**AdtE2ESample.sln**_ в Visual Studio 2019. 
 
 В Visual Studio используйте панель *Обозреватель решений*, чтобы создать копию файла _SampleClientApp > **serviceConfig.json.TEMPLATE**_ (для копирования и вставки можно использовать меню, выбираемые правой кнопкой мыши). Переименуйте копию *serviceConfig.json*. Это будет предварительно заданный файл JSON с необходимыми переменными конфигурации для запуска проекта.
 
@@ -31,6 +31,8 @@ ms.locfileid: "87124576"
   "instanceUrl": "https://<your-Azure-Digital-Twins-instance-hostName>"
 }
 ```
+
+
 
 Сохраните файл и закройте его. 
 

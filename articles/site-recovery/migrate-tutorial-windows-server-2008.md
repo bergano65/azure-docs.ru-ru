@@ -1,6 +1,6 @@
 ---
-title: Перенос серверов Windows Server 2008 в Azure с помощью службы Azure Site Recovery
-description: В этой статье описан процесс переноса локальных компьютеров Windows Server 2008 в Azure с помощью службы Azure Site Recovery.
+title: Перенос серверов Windows Server 2008 в Azure с помощью службы "Миграция Azure" или Azure Site Recovery
+description: В этой статье описан процесс переноса локальных компьютеров Windows Server 2008 в Azure и приводятся рекомендации по использованию Миграции Azure.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 8d672c1113f265f9fbbabc7caed8df071f548f2a
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: d8cd8bf2e1a29b122fb4bac7a12454f102183fe3
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87503826"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87845567"
 ---
 # <a name="migrate-servers-running-windows-server-2008-to-azure"></a>Перенос серверов под управлением Windows Server 2008 в Azure
 
@@ -31,9 +31,11 @@ ms.locfileid: "87503826"
 
 ## <a name="migrate-with-azure-migrate"></a>Миграция с помощью службы "Миграция Azure"
 
-Мы рекомендуем перенести компьютеры в Azure с помощью службы [Миграция Azure](../migrate/migrate-services-overview.md). Миграция Azure предоставляет единый центр для оценки и миграции локальных компьютеров в Azure, использования Миграции Azure, других служб Azure и инструментов сторонних производителей. Azure Site Recovery следует использовать только для аварийного восстановления, а не для миграции.
+Мы рекомендуем перенести компьютеры в Azure с помощью службы [Миграция Azure](../migrate/migrate-services-overview.md). 
 
-Миграция Azure поддерживает миграцию серверов под управлением Windows Server 2008.
+- Миграция Azure специально предназначена для переноса серверов.
+- Миграция Azure — это центр управления для обнаружения, оценки и переноса локальных компьютеров в Azure. Azure Site Recovery следует использовать только для аварийного восстановления, а не для миграции.
+- Миграция Azure поддерживает миграцию серверов под управлением Windows Server 2008.
 
 
 ## <a name="migrate-with-site-recovery"></a>Миграция с помощью Site Recovery

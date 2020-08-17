@@ -1,6 +1,6 @@
 ---
 title: Руководство по копированию данных на Диск Azure Data Box | Документация Майкрософт
-description: Используйте это руководство, чтобы узнать, как скопировать данные на диск Azure Data Box
+description: Из этого руководства вы узнаете, как копировать данные с главного компьютера на Диск Azure Data Box, а затем создавать контрольные суммы для проверки целостности данных.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: ff57a67d5e6d617d6d51c924161f586f90f92c3c
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: d33f53ef3d6ea0ef6a3040a82ec17b3089075949
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86231545"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927119"
 ---
 ::: zone target="docs"
 

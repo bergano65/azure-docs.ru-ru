@@ -1,6 +1,6 @@
 ---
 title: Руководство по передаче данных в общие папки с помощью Azure Stack Edge | Документация Майкрософт
-description: Узнайте, как добавлять общие папки на устройстве Azure Stack Edge и подключаться к ним.
+description: Из этого руководства вы узнаете, как добавить общие папки на устройство Azure Stack Edge и подключиться к ним, чтобы обеспечить передачу данных с этого устройства в Azure.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/21/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to add and connect to shares on Azure Stack Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: e62d746be92583abead1c3edb93900068b123838
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.openlocfilehash: fc47497eeceff20e8357195226c2d44cea64fa88
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82565102"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926116"
 ---
 # <a name="tutorial-transfer-data-with-azure-stack-edge"></a>Руководство по передаче данных с помощью Azure Stack Edge
 

@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 03/27/2020
+ms.date: 08/04/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46c48d6f7d751e6d767921fad21e6213c6b1203b
-ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.openlocfilehash: dcb3522898a40dc79e8465af813633015568f1c8
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "80384030"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88033874"
 ---
 # <a name="tutorial-integrate-atlassian-cloud-with-azure-active-directory"></a>Руководство по Интеграция Atlassian Cloud с Azure Active Directory
 
@@ -40,13 +40,17 @@ ms.locfileid: "80384030"
 * подписка Atlassian Cloud с поддержкой единого входа.
 * Чтобы включить язык разметки заявлений системы безопасности (SAML) для продуктов компании Atlassian Cloud, потребуется настроить Atlassian Access. Дополнительные сведения об [Atlassian Access]( https://www.atlassian.com/enterprise/cloud/identity-manager).
 
+> [!NOTE]
+> Эту интеграцию также можно использовать в облачной среде Azure AD для государственных организаций США. Это приложение можно найти в коллекции облачных приложений с поддержкой Azure AD для государственных организаций США и настроить таким же образом, как и в общедоступном облаке.
+
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде. 
 
 * Atlassian Cloud поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
 * Atlassian Cloud поддерживает [автоматическую подготовку пользователей и ее отмену](atlassian-cloud-provisioning-tutorial.md).
-* После настройки Atlassian Cloud можно применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+* После настройки Atlassian Cloud вы сможете применить функцию управления сеансом, которая в реальном времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+
 ## <a name="adding-atlassian-cloud-from-the-gallery"></a>Добавление Atlassian Cloud из коллекции
 
 Чтобы настроить интеграцию Atlassian Cloud с Azure AD, необходимо добавить Atlassian Cloud из коллекции в список управляемых приложений SaaS.
@@ -58,69 +62,129 @@ ms.locfileid: "80384030"
 1. В разделе **Добавление из коллекции** в поле поиска введите **Atlassian Cloud**.
 1. Выберите **Atlassian Cloud** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
+## <a name="configure-and-test-azure-ad-sso"></a>Настройка и проверка единого входа Azure AD
 
 Настройте и проверьте единый вход Azure AD в Atlassian Cloud с помощью тестового пользователя **B.Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Atlassian Cloud.
 
 Чтобы настроить и проверить единый вход Azure AD в Atlassian Cloud, выполните действия в следующих стандартных блоках.
 
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
-    * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
-    * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
-1. **[Настройка единого входа в Atlassian Cloud](#configure-atlassian-cloud-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-    * **[Создание тестового пользователя Atlassian Cloud](#create-atlassian-cloud-test-user)** требуется, чтобы в Atlassian Cloud существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Настройка единого входа для Atlassian Cloud в Azure AD](#configure-azure-ad-sso)** нужна для того, чтобы ваши пользователи могли использовать единый вход SAML на основе Azure AD для Atlassian Cloud.
+    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Создание тестового пользователя Atlassian Cloud](#create-atlassian-cloud-test-user)** требуется, чтобы в Atlassian Cloud существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
 1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Atlassian Cloud** найдите раздел **Управление** и выберите **Единый вход**.
+1. Перед началом работы откройте экземпляр продукта Atlassian, а затем скопируйте и сохраните URL-адрес экземпляра.
+   > [!NOTE]
+   > Этот URL-адрес имеет формат `https://<instancename>.atlassian.net`.
+
+   ![Изображение](./media/atlassian-cloud-tutorial/get-atlassian-instance-name.png)
+
+1. Откройте [портал администрирования Atlassian](https://admin.atlassian.com/) и щелкните имя организации.
+
+   ![Изображение](./media/atlassian-cloud-tutorial/click-on-organization-in-atlassian-access.png)
+
+1. Перед настройкой единого входа необходимо проверить домен. Дополнительные сведения см. в документе по [проверке домена Atlassian](https://confluence.atlassian.com/cloud/domain-verification-873871234.html).
+1. На странице портала администрирования Atlassian щелкните **Security** (Безопасность) на панели слева.
+
+   ![Изображение](./media/atlassian-cloud-tutorial/click-on-security-in-atlassian-access.png)
+
+1. На странице системы безопасности портала администрирования Atlassian выберите **SAML single sign on** (Единый вход SAML) на панели слева.
+
+   ![Изображение](./media/atlassian-cloud-tutorial/click-on-saml-sso-in-atlassian-access-security.png)
+
+1. Щелкните **Add SAML Configuration** (Добавить конфигурацию SAML) и оставьте эту страницу открытой.
+
+   ![Изображение](./media/atlassian-cloud-tutorial/saml-configuration-in-atlassian-access-security-saml-sso.png)
+
+   ![Изображение](./media/atlassian-cloud-tutorial/add-saml-configuration.png)
+
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Atlassian Cloud** найдите раздел **Управление** и выберите **Настроить единый вход**.
+
+   ![Изображение](./media/atlassian-cloud-tutorial/set-up-sso.png)
+
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
-1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
+   ![Изображение](./media/atlassian-cloud-tutorial/saml-in-azure.png)
 
-1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
+1. На странице **Настройка единого входа с помощью SAML** прокрутите содержимое вниз до элемента **Настройка Atlassian Cloud**.
+   
+   а. Щелкните **URL-адреса настройки**.
 
-    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://auth.atlassian.com/saml/<unique ID>`.
+   ![Изображение](./media/atlassian-cloud-tutorial/configuration-urls.png)
+   
+   b. Скопируйте значение в поле **Идентификатор Azure AD** на портале Azure, затем вставьте его в текстовое поле **Identity Provider Entity ID** (Идентификатор сущности поставщика удостоверений) на портале Atlassian.
+   
+   c. Скопируйте значение в поле **URL-адрес входа** на портале Azure, затем вставьте его в текстовое поле **Identity Provider SSO URL** (URL-адрес единого входа поставщика удостоверений) на портале Atlassian.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://auth.atlassian.com/login/callback?connection=saml-<unique ID>`.
+   ![Изображение](./media/atlassian-cloud-tutorial/configuration-urls-azure.png)
 
-    c. Щелкните **Задать дополнительные URL-адреса**.
-
-    d. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<instancename>.atlassian.net`.
-
-    > [!NOTE]
-    > Приведенные выше значения используются только для примера. Замените их фактическими значениями идентификатора и URL-адреса ответа. Вы получите эти значения при **настройке SAML для Atlassian Cloud**, которая описана далее в разделе **Настройка единого входа в Atlassian Cloud**.
-
-1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
-
-    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<instancename>.atlassian.net`.
-
-    > [!NOTE]
-    > Значение URL-адреса входа приведено только для примера. Вставьте значение из экземпляра, который используется для входа на портал администрирования Atlassian Cloud.
-
-    ![Настройка единого входа](./media/atlassian-cloud-tutorial/tutorial-atlassiancloud-10.png)
-
-1. Приложение Atlassian Cloud ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, в котором **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Atlassian Cloud ожидает сопоставления **nameidentifier** с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Edit** (Изменить).
-
-    ![Изображение](common/edit-attribute.png)
+   ![Изображение](./media/atlassian-cloud-tutorial/entity-id-and-ss.png)
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
-    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
+   ![Изображение](./media/atlassian-cloud-tutorial/certificate.png)
 
-1. Скопируйте требуемый URL-адрес из раздела **Настройка Atlassian Cloud**.
+   ![Изображение](./media/atlassian-cloud-tutorial/certificate-1.png)
 
-    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+1. Нажмите **Add/Save** (Добавить или сохранить) в разделе настройки SAML на портале Atlassian.
 
-    а. URL-адрес входа.
+1. Если вы предпочитаете настроить для приложения единый вход, инициируемый **поставщиком удостоверений**, внесите соответствующие изменения в раздел **Базовая конфигурация SAML** на странице **Настройка единого входа с помощью SAML** в Azure, а затем откройте страницу **SAML single sign-on** (Единый вход SAML) на портале администрирования Atlassian.
 
-    b. Идентификатор Azure AD
+   а. Скопируйте **идентификатор сущности поставщика службы** на портале Atlassian, затем вставьте его в поле **Идентификатор (сущности)** в Azure и укажите его в качестве значения по умолчанию.
+   
+   b. Скопируйте **URL-адрес службы потребителя утверждений поставщика удостоверений** на сайте Atlassian, затем вставьте его в поле **URL-адрес ответа (URL-адрес службы обработчика утверждений)** в Azure и укажите его в качестве значения по умолчанию.
+   
+   c. Скопируйте **URL-адрес экземпляра**, полученный на шаге 1, и вставьте его в поле **Состояние ретранслятора** в Azure.
 
-    c. URL-адрес выхода.
+   ![Изображение](./media/atlassian-cloud-tutorial/copy-urls.png)
 
+   ![Изображение](./media/atlassian-cloud-tutorial/edit-button.png)
+
+   ![Изображение](./media/atlassian-cloud-tutorial/urls.png)
+   
+1. Если вы хотите настроить для приложения режим **инициации поставщиком удостоверений**, внесите соответствующие изменения в раздел **Базовая конфигурация SAML** на странице **Настройка единого входа с помощью SAML** в Azure. Скопируйте **URL-адрес экземпляра**, полученный на шаге 1, и вставьте его в поле **URL-адрес выхода** в Azure.
+
+   ![Изображение](./media/atlassian-cloud-tutorial/edit-button.png)
+
+   ![Изображение](./media/atlassian-cloud-tutorial/sign-on-URL.png)
+   
+1. Приложение Atlassian Cloud ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. Чтобы изменить сопоставление атрибутов, щелкните значок **Изменить**. 
+
+   ![Изображение](./media/atlassian-cloud-tutorial/default-attributes.png)
+   
+   1. Сопоставление атрибутов для клиента Azure AD с лицензией Office 365
+      
+      а. Щелкните **Уникальный идентификатор пользователя (ID)** для утверждения.
+
+      ![Изображение](./media/atlassian-cloud-tutorial/user-attributes-and-claims.png)
+      
+      b. Atlassian Cloud ожидает, что значение **nameidentifier** (**уникальный идентификатор пользователя**) будет сопоставляться с электронной почтой пользователя (**user.email**). Измените параметр **Атрибут источника**, указав значение **user.mail**. Сохраните изменения в утверждении.
+
+      ![Изображение](./media/atlassian-cloud-tutorial/unique-user-identifier.png)
+      
+      c. Окончательные сопоставления атрибутов должны выглядеть следующим образом.
+
+      ![Изображение](common/default-attributes.png)
+      
+   1. Сопоставление атрибутов для клиента Azure AD без лицензии Office 365 
+
+      а. Щелкните утверждение **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** .
+
+      ![Изображение](./media/atlassian-cloud-tutorial/email-address.png)
+         
+      b. Платформа Azure не заполняет атрибут **user.mail** для пользователей, созданных в клиентах Azure AD без лицензий Office 365, а адрес электронной почты для таких пользователей сохраняет в атрибуте **userprincipalname**. Atlassian Cloud ожидает, что значение **nameidentifier** (**уникальный идентификатор пользователя**) будет сопоставляться с электронной почтой пользователя (**user.userprincipalname**).  Измените параметр **Атрибут источника**, указав значение **user.userprincipalname**. Сохраните изменения в утверждении.
+
+      ![Изображение](./media/atlassian-cloud-tutorial/set-email.png)
+         
+      c. Окончательные сопоставления атрибутов должны выглядеть следующим образом.
+
+      ![Изображение](common/default-attributes.png)
+     
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
 В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
@@ -145,52 +209,11 @@ ms.locfileid: "80384030"
 
 1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
+    ![Ссылка "Добавить пользователя"](./media/atlassian-cloud-tutorial/add-assign-user.png)
 
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-
-## <a name="configure-atlassian-cloud-sso"></a>Настройка единого входа в Atlassian Cloud
-
-1. Для автоматизации настройки в Atlassian Cloud необходимо установить **Расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
-
-    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
-
-1. После добавления расширения в браузере щелкните **Настроить Atlassian Cloud**, чтобы перейти к приложению Atlassian Cloud. После этого укажите учетные данные администратора для входа в Atlassian Cloud. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–7.
-
-    ![Настройка конфигурации](common/setup-sso.png)
-
-1. Если необходимо вручную настроить Atlassian Cloud, откройте новое окно веб-браузера, зайдите на сайт компании Atlassian Cloud в роли администратора и выполните следующие шаги.
-
-1. Перед настройкой единого входа необходимо проверить домен. Дополнительные сведения см. в документе по [проверке домена Atlassian](https://confluence.atlassian.com/cloud/domain-verification-873871234.html).
-
-1. В левой области выберите **Security** (Безопасность)  > **SAML single sign-on** (Единый вход SAML). Подпишитесь на Atlassian Identity Manager.
-
-    ![Настройка единого входа](./media/atlassian-cloud-tutorial/tutorial-atlassiancloud-11.png)
-
-1. В окне**Add SAML configuration** (Добавление конфигурации SAML) выполните следующее.
-
-    ![Настройка единого входа](./media/atlassian-cloud-tutorial/tutorial-atlassiancloud-12.png)
-
-    а. В поле **Identity provider Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте **идентификатор Azure AD**, скопированный на портале Azure.
-
-    b. В поле **Identity provider SSO URL** (URL-адрес единого входа поставщика удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
-
-    c. Откройте сертификат, скачанный с портала Azure в TXT-файле, скопируйте значения (без строк *Begin Certificate* и *End Certificate*) и вставьте их в поле **Public X509 certificate** (Общий сертификат X509).
-
-    d. Щелкните **Сохранить конфигурацию**.
-
-1. Чтобы убедиться, что вы настроили правильные URL-адреса, обновите параметры Azure AD, выполнив следующее.
-
-    ![Настройка единого входа](./media/atlassian-cloud-tutorial/tutorial-atlassiancloud-13.png)
-
-    а. В окне SAML скопируйте **идентификатор удостоверения поставщика услуг** и вставьте его в поле **Идентификатор** на портале Azure в разделе **Базовая конфигурация SAML** для Atlassian Cloud.
-
-    b. В окне SAML скопируйте **URL-адрес службы обработчика утверждений поставщика службы** и вставьте его в поле **URL-адрес ответа** на портале Azure в разделе **Базовая конфигурация SAML** для Atlassian Cloud. URL-адрес для входа является URL-адресом клиента приложения Atlassian Cloud.
-
-    > [!NOTE]
-    > Если вы уже давно являетесь клиентом, после обновления значений **идентификатора удостоверений поставщика услуг** и **URL-адреса службы обработчика утверждений** на портале Azure выберите **Yes, update configuration** (Да, обновить конфигурацию). Если вы — новый клиент, этот шаг можно пропустить.
 
 ### <a name="create-atlassian-cloud-test-user"></a>Создание тестового пользователя в Atlassian Cloud
 
@@ -226,7 +249,5 @@ ms.locfileid: "80384030"
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Попробуйте Atlassian Cloud с Azure AD](https://aad.portal.azure.com/)
-
-- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 
 - [Как защитить Atlassian Cloud с помощью функции управления настройками условного доступа](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

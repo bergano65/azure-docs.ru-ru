@@ -1,6 +1,6 @@
 ---
 title: Импорт SOAP API и преобразование в REST с помощью портала Azure | Документация Майкрософт
-description: Сведения о том, как импортировать SOAP API и преобразовать его в REST с помощью службы управления API.
+description: Узнайте, как импортировать API SOAP, преобразовать его в REST с помощью службы "Управление API", а затем протестировать API на портале Azure и портале разработчика.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/22/2017
 ms.author: apimpm
-ms.openlocfilehash: a2bec6401ae3ac53f46e92e9be38abf57a92163d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a87f4d0748d14ab995f75279b6a192f350165d6f
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74108103"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87843833"
 ---
 # <a name="import-a-soap-api-and-convert-to-rest"></a>Импорт SOAP API и преобразование в REST
 

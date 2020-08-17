@@ -43,6 +43,8 @@
               href: solutions-benefits-azure-netapp-files-oracle-database.md
             - name: Преимущества использования Azure NetApp Files для автоматизации работы с электронными макетами
               href: solutions-benefits-azure-netapp-files-electronic-design-automation.md
+            - name: Использование Виртуального рабочего стола Windows с Azure NetApp Files
+              href: solutions-windows-virtual-desktop.md
     - name: Вопросы и ответы об Azure NetApp Files
       href: azure-netapp-files-faqs.md
 - name: Практические руководства
@@ -61,16 +63,24 @@
           href: azure-netapp-files-create-volumes.md
         - name: Настройка домена по умолчанию NFSv4.1
           href: azure-netapp-files-configure-nfsv41-domain.md
+        - name: Настройка шифрования Kerberos для NFSv4.1
+          href: configure-kerberos-encryption.md
+        - name: Настройка клиента NFS для Azure NetApp Files
+          href: configure-nfs-clients.md
         - name: Настройка политики экспорта для тома NFS
           href: azure-netapp-files-configure-export-policy.md
     - name: Создание тома SMB
       href: azure-netapp-files-create-volumes-smb.md
+    - name: Создание тома с двумя протоколами
+      href: create-volumes-dual-protocol.md
     - name: Подключение или отключение тома для виртуальных машин Windows или Linux
       href: azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md
     - name: Управление моментальными снимками
       href: azure-netapp-files-manage-snapshots.md
     - name: Изменение размера пула емкости или тома
       href: azure-netapp-files-resize-capacity-pools-or-volumes.md
+    - name: Динамическое изменение уровня обслуживания тома
+      href: dynamic-change-volume-service-level.md
     - name: Разработка
       items:
         - name: REST API

@@ -2,15 +2,15 @@
 title: Создание шаблона — Visual Studio Code
 description: Используйте Visual Studio Code и расширение средств Azure Resource Manager для работы с шаблонами Resource Manager.
 author: neilpeterson
-ms.date: 04/17/2020
+ms.date: 08/09/2020
 ms.topic: quickstart
 ms.author: nepeters
-ms.openlocfilehash: 06e7d3f291d32cecdcbf4d1f22ff9976d8970109
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5375fedcd05aefa5d23ee872325373ce631d43bb
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87040520"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88034993"
 ---
 # <a name="quickstart-create-azure-resource-manager-templates-with-visual-studio-code"></a>Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code
 
@@ -26,7 +26,7 @@ ms.locfileid: "87040520"
 
 Выберите `arm!`, чтобы создать шаблон для развертывания группы ресурсов Azure.
 
-![Изображение, отображающее формирование шаблонов Azure Resource Manager](./media/quickstart-create-templates-use-visual-studio-code/1.png)
+![Изображение с демонстрацией фрагментов для формирования шаблонов Azure Resource Manager](./media/quickstart-create-templates-use-visual-studio-code/1.png)
 
 В этом фрагменте кода создаются стандартные блоки для шаблона Resource Manager.
 
@@ -68,7 +68,7 @@ ms.locfileid: "87040520"
 
 Теперь создайте параметр и воспользуйтесь им, чтобы указать имя учетной записи хранения.
 
-Поместите курсор в блок параметров, добавьте символ возврата каретки, введите `par`, а затем выберите фрагмент кода `arm-param-value`. В шаблон будет добавлен универсальный параметр.
+Поместите курсор в блок параметров, добавьте символ возврата каретки, введите `"`, а затем выберите фрагмент кода `new-parameter`. В шаблон будет добавлен универсальный параметр.
 
 ![Изображение, отображающее параметр, добавляемый в шаблон Resource Manager](./media/quickstart-create-templates-use-visual-studio-code/9.png)
 

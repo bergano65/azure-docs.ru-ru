@@ -11,13 +11,13 @@ ms.topic: quickstart
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 05/29/2020
-ms.openlocfilehash: 497de36d63a909d2c53374482dfe09d1f19dfded
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/10/2020
+ms.openlocfilehash: ed0ad6c5597d63c411eeb323cf00dcb7f044f667
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87033125"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88067823"
 ---
 # <a name="quickstart-use-net-and-c-in-visual-studio-to-connect-to-and-query-a-database-in-azure-sql-database-or-azure-sql-managed-instance"></a>Краткое руководство. Использование .NET и C# в Visual Studio для подключения к базе данных в службе "База данных SQL Azure" или Управляемом экземпляре SQL Azure и отправке запросов.
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -62,7 +62,7 @@ ms.locfileid: "87033125"
 
 ## <a name="create-code-to-query-the-database-in-azure-sql-database"></a>Создание кода для запроса к базе данных в службе "База данных SQL Azure"
 
-1. В Visual Studio выберите **Файл** > **Создать** > **Проект**. 
+1. В Visual Studio создайте новый проект. 
    
 1. В диалоговом окне **Новый проект** выберите **Visual C#** , а затем — **Консольное приложение (.NET Framework)** .
    
@@ -70,9 +70,9 @@ ms.locfileid: "87033125"
    
 1. Выберите **Проект** > **Управление пакетами NuGet**. 
    
-1. В **диспетчер пакетов NuGet** выберите вкладку **Обзор**, а затем найдите и выберите **System.Data.SqlClient**.
+1. В **диспетчере пакетов NuGet** выберите вкладку **Обзор**, а затем найдите и выберите **Microsoft.Data.SqlClient**.
    
-1. На странице **System.Data.SqlClient** щелкните **Установить**. 
+1. На странице **Microsoft.Data.SqlClient** щелкните **Установить**. 
    - При выводе запроса нажмите кнопку **ОК**, чтобы продолжить установку. 
    - Если откроется окно **Прием условий лицензионного соглашения**, выберите **Я принимаю**.
    
@@ -85,7 +85,7 @@ ms.locfileid: "87033125"
    
    ```csharp
    using System;
-   using System.Data.SqlClient;
+   using Microsoft.Data.SqlClient;
    using System.Text;
    
    namespace sqltest

@@ -10,12 +10,12 @@ ms.topic: overview
 ms.date: 05/28/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 15b96a8bb5460064d6f50f81809f7e3850b30a4c
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 9d4e709b2a844db9d0be55de2630ce799edb01ff
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281928"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87921679"
 ---
 # <a name="technical-and-feature-overview-of-azure-active-directory-b2c"></a>Обзор технических возможностей и функций Azure Active Directory B2C
 
@@ -262,7 +262,4 @@ Azure AD B2C позволяет выяснить, когда пользоват�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Итак, вы получили более глубокое представление о технических возможностях и функциях Azure Active Directory B2C. Теперь переходите к работе со службой, для начала создав клиент B2C:
-
-> [!div class="nextstepaction"]
-> [Руководство. Создание клиента Azure Active Directory B2C](tutorial-create-tenant.md).
+Итак, вы получили более глубокое представление о технических возможностях и функциях Azure Active Directory B2C. Теперь переходите к [учебнику по созданию арендатора Azure Active Directory B2C](tutorial-create-tenant.md).

@@ -7,12 +7,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 06/19/2020
 ms.author: banders
-ms.openlocfilehash: 925a69f1f3a408e50cb9dc1d03cb5c1cf673ef41
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 7db0a5bd4697c99c071d685903dfc394c2b49f25
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86102690"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87835805"
 ---
 # <a name="transfer-azure-subscriptions-between-subscribers-and-csps"></a>Перенос подписок Azure между подписчиками и CSP
 
@@ -32,7 +32,7 @@ ms.locfileid: "86102690"
 1. Убедитесь, что исходная и целевая подписки CSP находятся в одном арендаторе Azure Active Directory (Azure AD).  
     Арендатор Azure AD для подписки Azure CSP изменить нельзя. Вместо этого необходимо добавить исходную подписку или связать ее с клиентом Azure AD CSP. Дополнительные сведения см. в статье [Связывание или добавление подписки Azure в клиент Azure Active Directory](../../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
     > [!IMPORTANT]
-    > - При связывании подписки с другим каталогом Azure AD пользователи, которым назначены роли с помощью [управления доступом на основе ролей](../../role-based-access-control/role-assignments-portal.md) теряют доступ. Администраторы классической подписки, включая администратора служб и соадминистраторов, также теряют доступ.
+    > - При связывании подписки с другим каталогом Azure AD пользователи, которым назначены роли с помощью [управления доступом Azure на основе ролей (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md) теряют доступ. Администраторы классической подписки, включая администратора служб и соадминистраторов, также теряют доступ.
     > - Назначения политик также удаляются из подписки, если подписка связана с другим каталогом.
 1. Учетная запись пользователя, используемая для перемещения, должна иметь [RBAC](add-change-subscription-administrator.md) доступ владельца для обеих подписок.
 1. Прежде чем начать, [проверьте](/rest/api/resources/resources/validatemoveresources), могут ли перемещаться ресурсы Azure из исходной подписки в целевую.  

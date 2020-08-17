@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
 ms.topic: overview
-ms.date: 07/28/2020
+ms.date: 08/10/2020
 ms.author: victorh
-ms.openlocfilehash: 748adbcc719df2cdcf734f308bd4b083e9ca6ec0
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 8cca982e291d5d4caf7856e0d807515511c41dc8
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372371"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88055043"
 ---
 # <a name="azure-firewall-manager-deployment-overview"></a>Общие сведения о развертывании Диспетчера брандмауэра Azure
 
@@ -65,6 +65,8 @@ ms.locfileid: "87372371"
 > - Для каждой виртуальной глобальной сети на регион не может быть больше одного концентратора. Но при необходимости можно добавить несколько виртуальных глобальных сетей в этом регионе.
 > - Не допускается перекрытие пространств IP-адресов для концентраторов в виртуальной глобальной сети.
 > - Подключения к концентратору виртуальной сети должны находиться в том же регионе, что и сам концентратор.
+>
+> Дополнительные сведения об известных проблемах см. в разделе [Общие сведения о Диспетчере брандмауэра Azure](overview.md#known-issues).
 
 ## <a name="convert-virtual-networks"></a>Преобразование виртуальных сетей
 

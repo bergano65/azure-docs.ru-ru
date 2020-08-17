@@ -3,12 +3,12 @@ title: Краткое руководство по Azure. Создание кон
 description: В этом кратком руководстве показано, как создать концентратор событий с помощью портала Azure и как затем отправлять и получать данные используя .NET Standard.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: 9ca71dbb1a82e3fd9fe241e197b0bcbbfec2dcb8
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: bc9190bba6b21e59f10f51bd0eb7da2426f6d1b4
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85323137"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87902122"
 ---
 # <a name="quickstart-create-an-event-hub-using-azure-portal"></a>Краткое руководство. Создание концентратора событий с помощью портала Azure
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
@@ -20,7 +20,7 @@ ms.locfileid: "85323137"
 В рамках этого краткого руководства вам потребуются:
 
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
-- [Visual Studio 2019](https://www.visualstudio.com/vs) или более поздней версии.
+- [Visual Studio 2019](https://www.visualstudio.com/vs) или более поздней версии.
 - [Пакет SDK для .NET Standard](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов

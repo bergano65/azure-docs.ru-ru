@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Создание большого двоичного объекта с помощью Обозревателя службы хранилища Azure
 titleSuffix: Azure Storage
-description: В этом кратком руководстве описано, как использовать Обозреватель службы хранилища Azure для создания контейнера и большого двоичного объекта, скачивания большого двоичного объекта на локальный компьютер и просмотра всех больших двоичных объектов в контейнере.
+description: Сведения о том, как использовать Обозреватель службы хранилища Azure для создания контейнера и большого двоичного объекта, скачивания большого двоичного объекта на локальный компьютер и просмотра всех больших двоичных объектов в контейнере.
 services: storage
 author: tamram
 ms.service: storage
@@ -9,12 +9,12 @@ ms.subservice: blobs
 ms.topic: quickstart
 ms.date: 12/04/2019
 ms.author: tamram
-ms.openlocfilehash: 3ed0885152b15ef365d0e02c198b684bedd2f95b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f8768a1b2542eb0461ef0c50c96e22c80eced57a
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87083656"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836468"
 ---
 # <a name="quickstart-use-azure-storage-explorer-to-create-a-blob"></a>Краткое руководство. Создание большого двоичного объекта с помощью Обозревателя службы хранилища Azure
 

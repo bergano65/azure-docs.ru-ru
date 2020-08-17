@@ -5,13 +5,13 @@ author: djpmsft
 ms.author: daperlov
 ms.service: data-factory
 ms.topic: tutorial
-ms.date: 05/25/2020
-ms.openlocfilehash: 87bfd505edcb394bafd70a975b5b3d6bde341cb9
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.date: 08/11/2020
+ms.openlocfilehash: 809011df3c8cd6dbc1ee2a2129a261102adb43c0
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83848905"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88067857"
 ---
 # <a name="mapping-data-flow-video-tutorials"></a>Видеоматериалы по потоку данных для сопоставления
 
@@ -36,6 +36,8 @@ ms.locfileid: "83848905"
 [Monitor and manage mapping data flow performance](https://www.youtube.com/watch?v=fktIWdJiqTk) (Мониторинг и управление производительностью потока данных для сопоставления)
 
 [Расчет времени для измерения производительности](http://youtu.be/6CSbWm4lRhw?hd=1)
+
+[Отладка рабочих процессов для потоков данных](https://youtu.be/y3suL7UsWVw)
 
 ## <a name="transformation-overviews"></a>Обзоры преобразований
 
@@ -118,6 +120,8 @@ ms.locfileid: "83848905"
 [Dynamically optimize data flow cluster size at runtime](https://www.youtube.com/watch?v=jWSkJdtiJNM) (Динамическая оптимизация размера кластера потока данных во время выполнения)
 
 [Оптимизация времени запуска для потоков данных ](https://www.youtube.com/watch?v=VT_2ZV3a7Fc)
+
+[Среды выполнения Azure Integration Runtime для потоков данных](https://mssqldude.wordpress.com/)
 
 ## <a name="mapping-data-flow-scenarios"></a>Сценарии потоков данных для сопоставления
 

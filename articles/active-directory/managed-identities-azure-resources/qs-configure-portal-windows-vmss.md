@@ -1,5 +1,5 @@
 ---
-title: Настройка управляемых удостоверений в Azure VMSS — Azure AD
+title: Настройка управляемых удостоверений в Масштабируемых наборах виртуальных машин Azure — Azure AD
 description: Пошаговые инструкции по настройке управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью портала Azure.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 02/20/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39e2d72ba63633d7c5d3da3094cfa00e076513af
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d05ee1be18b315c63ccf9d564ea95391a163826e
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85609118"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87924501"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-virtual-machine-scale-set-using-the-azure-portal"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью портала Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "85609118"
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md).
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
-- Для выполнения операций управления, описанных в этой статье, учетной записи требуются следующие назначения управления доступом на основе ролей Azure:
+- Для выполнения операций управления, описанных в этой статье, учетной записи нужно назначить следующие роли Azure:
 
     > [!NOTE]
     > Дополнительные назначения ролей в каталоге Azure AD не требуются.
@@ -102,8 +102,6 @@ ms.locfileid: "85609118"
    ![Удаление удостоверения, назначаемого пользователем, из масштабируемого набора виртуальных машин](./media/msi-qs-configure-portal-windows-vm/remove-user-assigned-identity-vmss-screenshot.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - С помощью портала Azure предоставьте управляемому удостоверению масштабируемого набора виртуальных машин Azure [доступ к другому ресурсу Azure](howto-assign-access-portal.md).
-
-

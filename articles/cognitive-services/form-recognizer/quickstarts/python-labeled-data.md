@@ -9,13 +9,13 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 05/27/2020
 ms.author: pafarley
-ms.custom: tracking-python
-ms.openlocfilehash: b177063d4e50a310534ffa4c04557543c3354249
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.custom: devx-track-python
+ms.openlocfilehash: 63b636a132e0fef806bb2d27a9dcbec5505f76a0
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86028085"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87904672"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-rest-api-and-python"></a>Обучение модели Распознавателя документов по примерам с метками с помощью REST API и Python
 
@@ -27,7 +27,7 @@ ms.locfileid: "86028085"
 
 Для работы с этим кратким руководством требуется следующее:
 - Среда [Python](https://www.python.org/downloads/), если вы хотите выполнить этот пример кода локально.
-- Минимум шесть документов одного типа. Вы будете использовать эти данные для обучения модели и тестирования формы. Для работы с этим кратким руководством вы можете использовать [пример набора данных](https://go.microsoft.com/fwlink/?linkid=2090451). Передайте файлы для обучения в корневой каталог контейнера хранилища BLOB-объектов в учетной записи хранения Azure.
+- Минимум шесть документов одного типа. Вы будете использовать эти данные для обучения модели и тестирования формы. Для работы с этим кратким руководством вы можете использовать [пример набора данных](https://go.microsoft.com/fwlink/?linkid=2090451). Передайте файлы для обучения в корневой каталог контейнера Хранилища BLOB-объектов в учетной записи хранения Azure со стандартным уровнем производительности.
 
 > [!NOTE]
 > В этом кратком руководстве используются удаленные документы, доступ к которым осуществляется по URL-адресу. Если вы хотите использовать локальные файлы, ознакомьтесь со [справочной документацией](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/TrainCustomModelAsync).

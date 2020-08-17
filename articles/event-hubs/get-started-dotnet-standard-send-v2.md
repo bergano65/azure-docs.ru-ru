@@ -3,12 +3,12 @@ title: Отправка и получение событий через Цент
 description: В этой статье объясняется, как создать приложение .NET Core, которое отправляет события в Центры событий Azure или получает из них события с помощью последней версии пакета Azure.Messaging.EventHubs.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: 9e7f40b0312798667b63c6cf5d02772307dbc2b9
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 292e6e36337f565100c25d655882e60fa2a0bb6d
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86537145"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080061"
 ---
 # <a name="send-events-to-and-receive-events-from-azure-event-hubs---net-azuremessagingeventhubs"></a>Отправка событий в Центры событий Azure и их получение оттуда — .NET (Azure.Messaging.EventHubs) 
 В этом кратком руководстве показано, как отправлять события в концентратор событий и получать их из него с помощью библиотеки .NET **Azure.Messaging.EventHubs**. 

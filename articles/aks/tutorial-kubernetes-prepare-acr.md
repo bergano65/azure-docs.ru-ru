@@ -5,12 +5,12 @@ services: container-service
 ms.topic: tutorial
 ms.date: 12/19/2018
 ms.custom: mvc
-ms.openlocfilehash: 991123b4373332503eff242315e1596a091473c1
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 197e5c7bed569e67376f9c28fe0d2e050016cce8
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86243670"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87922410"
 ---
 # <a name="tutorial-deploy-and-use-azure-container-registry"></a>Руководство. Развертывание Реестра контейнеров Azure и его использование
 
@@ -60,9 +60,12 @@ az acr login --name <acrName>
 
 Чтобы просмотреть список сохраненных образов, используйте команду [docker images][docker-images]:
 
-```
+```azurecli
 $ docker images
+```
+В выходных данных команды выше приведен список текущих локальных образов:
 
+```
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
 azure-vote-front             latest              4675398c9172        13 minutes ago      694MB
 redis                        latest              a1b99da73d05        7 days ago          106MB
@@ -83,11 +86,15 @@ az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginSe
 docker tag azure-vote-front <acrLoginServer>/azure-vote-front:v1
 ```
 
-Чтобы убедиться, что теги применены, запустите команду [docker images][docker-images] еще раз. Образ помечен адресом экземпляра ACR и номером версии.
+Чтобы убедиться, что теги применены, запустите команду [docker images][docker-images] еще раз. 
+
+```azurecli
+$ docker images
+```
+
+Образ помечен адресом экземпляра ACR и номером версии.
 
 ```
-$ docker images
-
 REPOSITORY                                           TAG           IMAGE ID            CREATED             SIZE
 azure-vote-front                                     latest        eaf2b9c57e5e        8 minutes ago       716 MB
 mycontainerregistry.azurecr.io/azure-vote-front      v1            eaf2b9c57e5e        8 minutes ago       716 MB
@@ -139,7 +146,7 @@ v1
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы создали Реестр контейнеров Azure и отправили образ для использования в кластере AKS. Вы ознакомились с выполнением следующих задач:
+В этом руководстве вы создали Реестр контейнеров Azure и отправили образ для использования в кластере AKS. Вы научились выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * создание экземпляра Реестра контейнеров Azure;
@@ -150,7 +157,7 @@ v1
 Перейдите к следующему руководству, чтобы узнать, как развертывать кластер Kubernetes в Azure.
 
 > [!div class="nextstepaction"]
-> [Развертывание кластера Kubernetes в службе контейнеров Azure][aks-tutorial-deploy-cluster]
+> [Развертывание кластера Kubernetes][aks-tutorial-deploy-cluster]
 
 <!-- LINKS - external -->
 [docker-images]: https://docs.docker.com/engine/reference/commandline/images/

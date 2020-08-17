@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 04/14/2020
+ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: ba121400368f37c4a562a9c34e209c59d15b173c
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 01a5714cb78959a982ad73deb401edbafeebe8f9
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81404106"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87834462"
 ---
 # <a name="quickstart-how-to-build-an-object-detector-with-custom-vision"></a>Краткое руководство. Построение средств обнаружения объектов с помощью Пользовательского визуального распознавания
 
@@ -55,6 +55,7 @@ ms.locfileid: "81404106"
     |---|---|
     |__Общие сведения__| Рассчитан на самые разные задачи обнаружения объектов. Если не подходит ни один из других доменов или вы не уверены, какой домен выбрать, выбирайте Generic. |
     |__Логотип__|Оптимизировано для поиска марочных логотипов в изображениях.|
+    |__Продукты на полках__|Оптимизировано для обнаружения и классификации продуктов на полках.|
     |__Домены Compact__| Оптимизированы для ограничений обнаружения объектов в режиме реального времени на мобильных устройствах. Модели, созданные доменами Compact, можно экспортировать для локального запуска.|
 
 1. И наконец, щелкните __Create project__ (Создать проект).

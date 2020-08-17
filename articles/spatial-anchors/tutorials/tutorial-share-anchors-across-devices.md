@@ -5,15 +5,15 @@ author: ramonarguelles
 manager: vriveras
 services: azure-spatial-anchors
 ms.author: rgarcia
-ms.date: 02/24/2019
+ms.date: 07/31/2020
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 3b377f87bdba40c90cb3af6caef2c089d7b7de49
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 12a15a2d0cd45207b4adefc7315e48c6d642c0f7
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77615494"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810189"
 ---
 # <a name="tutorial-share-azure-spatial-anchors-across-sessions-and-devices"></a>Руководство по Совместное использование Пространственных привязок Azure между сеансами и устройствами
 
@@ -34,7 +34,7 @@ ms.locfileid: "77615494"
 
 [!INCLUDE [Share Anchors Sample Prerequisites](../../../includes/spatial-anchors-share-sample-prereqs.md)]
 
-Хотя в этом руководстве рассматривается приложение Unity и веб-приложение ASP.NET Core, они представлены лишь в качестве примера того, как можно совместно использовать идентификаторы пространственных привязок Azure на других устройствах. Вы можете использовать другие языки и серверные технологии в тех же целях. Веб-приложение ASP.NET Core, используемое в этом руководстве, зависит от пакета SDK.NET Core 2.2. Оно отлично работает в обычных веб-приложениях Azure (для Windows), но в настоящее время не работает в веб-приложениях Azure для Linux.
+Хотя в этом руководстве рассматривается приложение Unity и веб-приложение ASP.NET Core, они представлены лишь в качестве примера того, как можно совместно использовать идентификаторы пространственных привязок Azure на других устройствах. Вы можете использовать другие языки и серверные технологии в тех же целях.
 
 [!INCLUDE [Create Spatial Anchors resource](../../../includes/spatial-anchors-get-started-create-resource.md)]
 
@@ -56,7 +56,7 @@ ms.locfileid: "77615494"
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 
-Перейдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a> и войдите в свою подписку.
+Перейдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a> и войдите в подписку Azure.
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -76,25 +76,19 @@ ms.locfileid: "77615494"
 
 | Параметр | Рекомендуемое значение | Описание |
 |-|-|-|
-|План обслуживания приложения| MySharingServicePlan | Имя плана службы приложений. |
+|План службы приложений| MySharingServicePlan | Имя плана службы приложений. |
 | Расположение | западная часть США | Центр обработки данных, где размещается веб-приложение. |
-| Размер | Free | [Ценовая категория](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), которая определяет возможности размещения. |
+| Размер | Бесплатный | [Ценовая категория](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), которая определяет возможности размещения. |
 
 Щелкните **ОК**.
 
-Откройте Visual Studio Code, а затем откройте проект в папке `Sharing\SharingServiceSample`. Выполните действия в <a href="https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-vscode?view=aspnetcore-2.2#open-it-with-visual-studio-code" target="_blank">этом руководстве</a>, чтобы развернуть службу общего доступа с помощью Visual Studio Code. Вы можете выполнить шаги, начиная с раздела "Открыть в Visual Studio Code". Не создавайте еще один проект MVC, как описано в предыдущем шаге, поскольку у вас уже есть проект, который нужно развернуть и опубликовать — SharingServiceSample.
+Откройте Visual Studio Code, а затем откройте проект в папке `Sharing\SharingServiceSample`. Выполните действия в <a href="https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-vscode?view=aspnetcore-2.2#open-it-with-visual-studio-code" target="_blank">этом руководстве</a>, чтобы развернуть службу общего доступа с помощью Visual Studio Code. Вы можете выполнить шаги, начиная с раздела "Открыть в Visual Studio Code". Не создавайте еще один проект ASP.NET, как описано в предыдущем шаге, поскольку у вас уже есть проект, который нужно развернуть и опубликовать — SharingServiceSample.
 
 ---
 
 ## <a name="deploy-the-sample-app"></a>Развертывание примера приложения
 
 [!INCLUDE [Run Share Anchors Sample](../../../includes/spatial-anchors-run-share-sample.md)]
-
-## <a name="troubleshooting"></a>Устранение неполадок
-
-### <a name="unity-20193"></a>Unity 2019.3
-
-Из-за критических изменений сейчас Unity 2019.3 не поддерживается. Используйте Unity 2019.1 или 2019.2.
 
 [!INCLUDE [Clean-up section](../../../includes/clean-up-section-portal.md)]
 

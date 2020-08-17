@@ -2,19 +2,19 @@
 title: Как использовать обратимое удаление в Azure Key Vault с помощью PowerShell
 description: Примеры использования обратимого удаления с фрагментами кода для PowerShell.
 services: key-vault
-author: msmbaldwin
-manager: rkarlin
+author: ShaneBala-keyvault
+manager: ravijan
 ms.service: key-vault
 ms.subservice: general
 ms.topic: tutorial
-ms.date: 08/12/2019
-ms.author: mbaldwin
-ms.openlocfilehash: 9b9a7a5b3d92833a0f24f6bc646b19110dcfd66a
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.date: 08/11/2020
+ms.author: sudbalas
+ms.openlocfilehash: 55e4bd20b6cc17a5cbad620d3a404d6ada41b81a
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386084"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88136479"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-powershell"></a>Как использовать обратимое удаление в Key Vault с помощью PowerShell
 
@@ -67,11 +67,7 @@ Set-AzResource -resourceid $resource.ResourceId -Properties $resource.Properties
 
 ### <a name="new-key-vault"></a>Новое хранилище ключей
 
-Обратимое удаление для нового хранилища ключей включается во время создания путем добавления флага --enable-soft-delete в команду create.
-
-```powershell
-New-AzKeyVault -Name "ContosoVault" -ResourceGroupName "ContosoRG" -Location "westus" -EnableSoftDelete
-```
+Обратимое удаление по умолчанию включено автоматически для всех хранилищ ключей. После 31 декабря 2020 г. вы больше не сможете отключить обратимое удаление в хранилищах ключей. 
 
 ### <a name="verify-soft-delete-enablement"></a>Проверка включения обратимого удаления
 

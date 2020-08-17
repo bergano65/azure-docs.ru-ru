@@ -1,7 +1,7 @@
 ---
 title: Руководство по копированию в хранилище BLOB-объектов с помощью REST API
 titleSuffix: Azure Data Box
-description: Узнайте, как копировать данные в хранилище BLOB-объектов Azure Data Box с помощью REST API
+description: Из этого учебника вы узнаете, как подключиться к Хранилищу BLOB-объектов Azure Data Box с помощью интерфейсов REST API по протоколам HTTP или HTTPS, а также как затем скопировать данные из Azure Data Box.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 07/02/2020
 ms.author: alkohli
-ms.openlocfilehash: 50c4daabe3dc980937f52db7e56cd778890b84d8
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 71f966cd62ffd2c735259dcfa98b9b97f87d9a19
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85960692"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926201"
 ---
 # <a name="tutorial-use-rest-apis-to-copy-data-to-azure-data-box-blob-storage"></a>Руководство по использованию REST API для копирования данных в хранилище BLOB-объектов Azure Data Box  
 

@@ -1,20 +1,20 @@
 ---
 title: Руководство по отправке Диска Azure Data Box обратно | Документация Майкрософт
-description: В этом руководстве описано, как отправить диск Azure Data Box в Майкрософт
+description: В этом учебнике описан процесс возврата Диска Azure Data Box. Инструкции по возврату будут отличаться в зависимости от региона.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 07/16/2020
+ms.date: 07/21/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 62ab110a24bbf6b93f7f019c829222ca666ecfaf
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 692ddbf1e17e316bdcee6c34062ffa51ef278bc7
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87039469"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87923787"
 ---
 ::: zone target="docs"
 
@@ -85,7 +85,7 @@ ms.locfileid: "87039469"
 
 1. Используйте предоставленную этикетку возврата и убедитесь, что на ней указан код TAU (ссылочный номер). Если предоставленная этикетка отгрузки отсутствует или у вас возникли другие проблемы, отправьте сообщение электронной почты на адрес [операционного отдела Data Box (Азия)](mailto:adbo@microsoft.com). Укажите название заказа в теме письма и опишите возникшую проблему.
 2. Прикрепите этикетку на коробку.
-3. Закажите через Интернет возврат по ссылке https://mydhl.express.dhl/au/en/schedule-pickup.html#/schedule-pickup#label-reference. 
+3. Закажите через Интернет возврат по ссылке https://mydhl.express.dhl/au/en/schedule-pickup.html#/schedule-pickup#label-reference.
 
 ### <a name="japan"></a>[Япония](#tab/in-japan)
 
@@ -138,7 +138,7 @@ ms.locfileid: "87039469"
 
     ```
     To: kadcustcare@singpost.com
-    Subject: Microsoft Azure Pick-up - XZ00001234567
+    Subject: Microsoft Azure Pickup - XZ00001234567
     Body:
      a.    Requestor name
      b.    Requestor contact number
@@ -155,6 +155,32 @@ ms.locfileid: "87039469"
    Если у вас возникнут какие-либо проблемы, пожалуйста, свяжитесь с операционным отделом Data Box (Азия) по адресу adbo@microsoft.com. Укажите имя задания в заголовке субъекта и обнаруженной ошибке.
 
 3. Передайте курьеру.
+
+### <a name="south-africa"></a>[ЮАР](#tab/in-sa)
+
+Если вы возвращаете устройство в ЮАР, выполните приведенные ниже действия.
+
+1. Прикрепите предоставленную этикетку отгрузки на коробку. Эта этикетка содержит номер для отслеживания. Если этикетка отгрузки отсутствует, ее можно скачать в разделе **Обзор > Скачать транспортную этикетку**.
+
+2. Запечатайте коробку для транспортировки и убедитесь, что этикетка обратной доставки отображается.
+
+3. Чтобы заказать отправку с помощью DHL, выполните следующие действия:
+
+    * Обратитесь в службу поддержки клиентов по телефону +27(0) 11 9213600, выберите вариант 1, а затем укажите номер накладной.
+    * Чтобы запланировать отправку, звонок необходимо совершить до 14:00 по южноафриканскому времени (ZA).  
+    * Отправьте электронное письмо по адресу [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com), чтобы организовать отправку, используя следующий шаблон:
+
+    ```output
+    To: Priority.Support@dhl.com
+    Subject:Pickup request for Microsoft Azure
+    Body:  Need pick up for the below shipment
+    *  DHL tracking number (reference number/waybill number)
+    *  Requested pickup date：yyyy/mm/dd; time: HH MM
+    ```
+
+    * Кроме того, вы можете запланировать доставку пакета в ближайшую точку обслуживания DHL.
+
+4. При возникновении проблем отправьте на адрес [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) сообщение электронной почты с их описанием, указав номер накладной в строке "Тема:". Вы можете также позвонить по телефону +27(0)119213902.
 
 ### <a name="china"></a>[Китай](#tab/in-china)
 
@@ -231,7 +257,3 @@ ms.locfileid: "87039469"
 > [Проверка отправки данных из Диска Azure Data Box](./data-box-disk-deploy-upload-verify.md)
 
 ::: zone-end
-
-
-
-

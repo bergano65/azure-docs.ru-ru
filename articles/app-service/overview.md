@@ -3,18 +3,18 @@ title: Обзор
 description: Узнайте, как служба приложений Azure помогает разрабатывать и размещать веб-приложения.
 ms.assetid: 94af2caf-a2ec-4415-a097-f60694b860b3
 ms.topic: overview
-ms.date: 04/30/2020
+ms.date: 07/06/2020
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 619b5f16f5a913a4ec9bb1ebe2e7060fcac28d7d
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 56bba25cea909ac6455462b41c9eeae997c25bc1
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421813"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88079626"
 ---
 # <a name="app-service-overview"></a>Обзор Службы приложений Azure
 
-*Служба приложений Azure* — это служба на базе HTTP для размещения веб-приложений, интерфейсов REST API и серверной части мобильных решений. Вы можете выполнять разработку на привычном языке: .NET, .NET Core, Java, Ruby, Node.js, PHP или Python. Приложения работают и с легкостью масштабируются в средах Windows и Linux. Сведения о средах Linux см. в статье [Вводные сведения о службе приложений Azure на платформе Linux](containers/app-service-linux-intro.md). 
+*Служба приложений Azure* — это служба на базе HTTP для размещения веб-приложений, интерфейсов REST API и серверной части мобильных решений. Вы можете выполнять разработку на привычном языке: .NET, .NET Core, Java, Ruby, Node.js, PHP или Python. Приложения без затруднений работают и масштабируются в средах на основе Windows и [Linux](#app-service-on-linux).
 
 В службе приложений реализованы не только возможности Microsoft Azure для приложения, включая функции обеспечения безопасности, балансировки нагрузки, автоматического масштабирования и автоматизированного управления. Вы также можете воспользоваться такими преимуществами DevOps, как непрерывное развертывание из Azure DevOps, GitHub, Docker Hub и других источников, управление пакетами, а также возможность использования промежуточных сред, личного домена и TLS/SSL-сертификатов. 
 
@@ -26,10 +26,11 @@ ms.locfileid: "87421813"
 
 * **Поддержка нескольких языков и платформ**. Служба приложений полностью поддерживает ASP.NET, ASP.NET Core, Java, Ruby, Node.js, PHP и Python. Кроме того, вы можете запускать [PowerShell и другие скрипты или исполняемые файлы](webjobs-create.md) в качестве фоновых служб.
 * **Управляемая рабочая среда** — Служба приложений автоматически [устанавливает исправления и обеспечивает обслуживание ОС и языковых платформ](overview-patch-os-runtime.md). Сфокусируйтесь на написании эффективных приложений и предоставьте Azure управление платформой.
+* **Контейнеризация и Docker** — преобразите для Docker свое приложение и разместите пользовательский контейнер Windows или Linux в Службе приложений. Запуск приложений с несколькими контейнерами с помощью Docker Compose. Используйте свои навыки работы с Docker непосредственно в Службе приложений.
 * **Оптимизация DevOps** — Настройка [непрерывной интеграции и непрерывного развертывания](deploy-continuous-deployment.md) с помощью Azure DevOps, GitHub, BitBucket, Docker Hub или Реестра контейнеров Azure. Повышайте уровень обновлений с помощью [тестовых и промежуточных сред](deploy-staging-slots.md). Управляйте приложениями в службе приложений с помощью оболочки [Azure PowerShell](/powershell/azure/) или [кроссплатформенного интерфейса командной строки (CLI)](/cli/azure/install-azure-cli).
 * **Высокодоступное глобальное масштабирование.** [Увеличивайте](manage-scale-up.md) либо [уменьшайте](../monitoring-and-diagnostics/insights-how-to-scale.md) размер вручную или автоматически. Храните приложения в любом месте глобальной инфраструктуры центра обработки данных. При этом [соглашение об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/app-service/) гарантирует высокую доступность.
 * **Подключение к платформам SaaS и локальным данным.** Доступно более 50 [соединителей](../connectors/apis-list.md) для корпоративных систем (например, SAP), служб SaaS (например, Salesforce) и популярных интернет-служб (например, Facebook). Получайте доступ к локальным данным с помощью [гибридных подключений](app-service-hybrid-connections.md) и [виртуальных сетей Azure](web-sites-integrate-with-vnet.md).
-* **Безопасность и соответствие требованиям.** Служба приложений совместима со стандартами [ISO, SOC и PCI](https://www.microsoft.com/en-us/trustcenter). Выполняйте аутентификацию пользователей с помощью [Azure Active Directory](configure-authentication-provider-aad.md) или входа в учетные записи социальных сетей ([Google](configure-authentication-provider-google.md), [Facebook](configure-authentication-provider-facebook.md), [Twitter](configure-authentication-provider-twitter.md) и [Microsoft](configure-authentication-provider-microsoft.md)). Создавайте [ограничения IP-адресов](app-service-ip-restrictions.md) и [управляйте удостоверениями службы](overview-managed-identity.md).
+* **Безопасность и соответствие требованиям.** Служба приложений совместима со стандартами [ISO, SOC и PCI](https://www.microsoft.com/en-us/trustcenter). Выполняйте аутентификацию пользователей с помощью [Azure Active Directory](configure-authentication-provider-aad.md), [Google](configure-authentication-provider-google.md), [Facebook](configure-authentication-provider-facebook.md), [Twitter](configure-authentication-provider-twitter.md) или [учетной записи Майкрософт](configure-authentication-provider-microsoft.md). Создавайте [ограничения IP-адресов](app-service-ip-restrictions.md) и [управляйте удостоверениями службы](overview-managed-identity.md).
 * **Шаблоны приложений.** Вы можете выбрать любой шаблон приложения из обширного списка в [Azure Marketplace](https://azure.microsoft.com/marketplace/), например WordPress, Joomla и Drupal.
 * **Интеграция с Visual Studio и Visual Studio Code.** Выделенные инструменты в Visual Studio и Visual Studio Code упрощают создание, развертывание и отладку приложений.
 * **Функции API и мобильных приложений.** Служба приложений обеспечивает полную поддержку CORS для работы с RESTful API. Также она упрощает использование мобильных приложений, обеспечивая аутентификацию, автономную синхронизацию данных, отправку push-уведомлений и многое другое.
@@ -37,30 +38,49 @@ ms.locfileid: "87421813"
 
 Помимо Службы приложений, Azure предлагает и другие службы, которые можно использовать для размещения веб-сайтов и веб-приложений. В большинстве случаев оптимальным вариантом является служба приложений.  Для реализации архитектуры микрослужб рекомендуется использовать [службу Azure Spring-Cloud](/azure/spring-cloud/) или [Service Fabric](https://azure.microsoft.com/documentation/services/service-fabric).  Если вам требуется дополнительный контроль над виртуальными машинами, на которых выполняется ваш код, рекомендуется использовать [Виртуальные машины Azure](https://azure.microsoft.com/documentation/services/virtual-machines/). Дополнительные сведения о выборе между этими службами Azure см. в статье [Сравнение службы приложений Azure, виртуальных машин, Service Fabric и облачных служб](overview-compare.md).
 
+## <a name="app-service-on-linux"></a>Служба приложений в Linux
+
+Служба приложений также позволяет клиентам размещать веб-приложения из поддерживаемых стеков приложений изначально в Linux. Она также может запускать пользовательские контейнеры Linux (также известные как Веб-приложение для контейнеров).
+
+### <a name="built-in-languages-and-frameworks"></a>Встроенная поддержка нескольких языков и платформ
+
+Служба приложений в Linux поддерживает ряд встроенных образов, характерных для конкретного языка. Просто разверните код. Поддерживаемые языки включают в себя: Node.js, Java (JRE 8 и JRE 11), PHP, Python, .NET Core и Ruby. Выполните [`az webapp list-runtimes --linux`](https://docs.microsoft.com/cli/azure/webapp?view=azure-cli-latest#az-webapp-list-runtimes), чтобы просмотреть поддерживаемые языки и версии. Если среда выполнения, необходимая для приложения, не поддерживается во встроенных образах, ее можно развернуть с помощью пользовательского контейнера.
+
+### <a name="limitations"></a>Ограничения
+
+- Служба приложений в Linux не поддерживается для ценовой категории [Общий](https://azure.microsoft.com/pricing/details/app-service/plans/). 
+- В одном плане Службы приложений нельзя смешивать приложения Windows и Linux.  
+- Приложения Windows и Linux, размещенные в одном регионе, не могут находиться в одной и той же группе ресурсов.
+- На портале Azure отображаются только те функции, которые уже доступны для приложений Linux. Когда функции включены, они активируются на портале.
+- При развертывании на встроенных образах код и содержимое выделяются томом хранилища для веб-содержимого, которое поддерживается службой хранилища Microsoft Azure. Задержка диска в этом томе выше и более изменчива, чем задержка файловой системы контейнера. Приложения, для которых требуется частый доступ только для чтения к файлам содержимого, могут воспользоваться параметром настраиваемого контейнера, при котором файлы помещаются в файловую систему контейнера, а не в том содержимого.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Создайте первое веб-приложение.
 
 > [!div class="nextstepaction"]
-> [ASP.NET Core](app-service-web-get-started-dotnet.md)
+> [ASP.NET Core (в Windows или Linux)](quickstart-dotnetcore.md)
 
 > [!div class="nextstepaction"]
-> [ASP.NET](app-service-web-get-started-dotnet-framework.md)
+> [ASP.NET (в Windows)](quickstart-dotnet-framework.md)
 
 > [!div class="nextstepaction"]
-> [PHP](app-service-web-get-started-php.md)
+> [PHP (в Windows или Linux)](quickstart-php.md)
 
 > [!div class="nextstepaction"]
-> [Ruby (в Linux)](containers/quickstart-ruby.md)
+> [Ruby (в Linux)](quickstart-ruby.md)
 
 > [!div class="nextstepaction"]
-> [Node.js](app-service-web-get-started-nodejs.md)
+> [Node.js (в Windows или Linux)](quickstart-nodejs.md)
 
 > [!div class="nextstepaction"]
-> [Java](app-service-web-get-started-java.md)
+> [Java (в Windows или Linux)](quickstart-java.md)
 
 > [!div class="nextstepaction"]
-> [Python (в Linux)](containers/quickstart-python.md)
+> [Python (в Linux)](quickstart-python.md)
 
 > [!div class="nextstepaction"]
-> [HTML](app-service-web-get-started-html.md)
+> [HTML (в Windows или Linux)](quickstart-html.md)
+
+> [!div class="nextstepaction"]
+> [Пользовательский контейнер (Windows или Linux)](tutorial-custom-container.md)

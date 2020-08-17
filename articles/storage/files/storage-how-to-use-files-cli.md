@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство по управлению файловыми ресурсами Azure с помощью Azure CLI
-description: Используйте это краткое руководство, чтобы узнать, как управлять файловыми ресурсами Azure с помощью Azure CLI.
+description: Из этого краткого руководства вы узнаете, как управлять службой "Файлы Azure" с помощью Azure CLI. Создайте группу ресурсов и учетную запись хранения, а затем создайте и используйте общую папку Azure.
 author: roygara
 ms.service: storage
 ms.topic: quickstart
@@ -8,17 +8,17 @@ ms.date: 10/26/2018
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0d9d0bad982a12e3b96bdbe4f680f2501b33ec67
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 149481f9cae535fa53f94a876e1f52e813b3838b
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87495781"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88034589"
 ---
 # <a name="quickstart-create-and-manage-azure-file-shares-using-azure-cli"></a>Краткое руководство: создание файловых ресурсов Azure и управление ими с помощью Azure CLI
 В этом руководстве рассматриваются основы работы с [файловыми ресурсами Azure](storage-files-introduction.md) с помощью Azure CLI. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие файловые ресурсы Azure поддерживают отраслевой протокол SMB и позволяют совместно использовать файлы на нескольких компьютерах, а также в нескольких приложениях и экземплярах. 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 

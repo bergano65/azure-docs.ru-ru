@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/05/2018
 ms.author: sharadag
-ms.openlocfilehash: 56a2246b4f1da51d9b18a34279eff04264530ef5
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 770353f893762f0f35d744fe1e7a5e4de4a671ce
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82160091"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87808802"
 ---
 # <a name="tutorial-configure-https-on-a-front-door-custom-domain"></a>Руководство по Настройка протокола HTTPS на личном домене Front Door
 
@@ -68,6 +68,9 @@ ms.locfileid: "82160091"
 4. Нажмите кнопку «Сохранить».
 
 5. Перейдите к [проверке домена](#validate-the-domain).
+
+> [!NOTE]
+> К сертификатам, управляемым AFD, применяется ограничение DigiCert на 64 символа. При превышении такого ограничения проверка завершится сбоем.
 
 
 ### <a name="option-2-use-your-own-certificate"></a>Вариант 2. использование собственного сертификата;

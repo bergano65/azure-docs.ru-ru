@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание таблицы службы хранилища Azure на портале Azure
-description: В этом кратком руководстве описано, как создать таблицу Хранилища таблиц службы хранилища Azure на портале Azure.
+description: В этом кратком руководстве описано, как использовать службу таблиц на портале Azure для создания таблицы службы хранилища Azure. Также вы узнаете, как создать учетную запись хранения Azure.
 services: storage
 author: MarkMcGeeAtAquent
 ms.service: storage
@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 12/02/2019
 ms.author: sngun
 ms.subservice: tables
-ms.openlocfilehash: 63495206ffffc57a895a9ec1efc88410a02ea097
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 3117a1ff24dd0a2a91768844bea41670ced8ff90
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75979949"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88033535"
 ---
 # <a name="quickstart-create-an-azure-storage-table-in-the-azure-portal"></a>Краткое руководство. Создание таблицы службы хранилища Azure на портале Azure 
 
@@ -21,7 +21,7 @@ ms.locfileid: "75979949"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством сначала создайте учетную запись хранения Azure на [портале Azure](https://portal.azure.com/#create/Microsoft.StorageAccount-ARM). Инструкции по созданию учетной записи хранения см. в статье [Создайте учетную запись хранения](../common/storage-account-create.md).
 

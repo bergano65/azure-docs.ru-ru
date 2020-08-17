@@ -1,18 +1,18 @@
 ---
-title: Создание Базы данных Azure для MariaDB с помощью шаблона Resource Manager
-description: В этой статье показано, как создать сервер Базы данных Azure для MariaDB с помощью шаблона Azure Resource Manager.
+title: Краткое руководство. Создание Базы данных Azure для MariaDB с помощью шаблона ARM
+description: В этом кратком руководстве показано, как создать сервер Базы данных Azure для MariaDB с помощью шаблона Azure Resource Manager.
 author: mgblythe
 ms.service: mariadb
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mblythe
 ms.date: 05/14/2020
-ms.openlocfilehash: fd560658a20a5b58d582332a88bf031d0e56ac91
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: cc79002adef4555a7a159238b7087ba7c20be7a1
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134106"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88120275"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-mariadb-server"></a>Краткое руководство. Создание сервера Базы данных Azure для MariaDB с помощью шаблона Resource Manager
 

@@ -1,6 +1,6 @@
 ---
-title: Настройка управляемых удостоверений на виртуальной машине Azure с помощью службы "остальное — Azure AD"
-description: Пошаговые инструкции по настройке системных и назначенных пользователем управляемых удостоверений на виртуальной машине Azure с помощью функции "перелистывание" для выполнения вызовов REST API.
+title: Настройка управляемых удостоверений на виртуальной машине Azure с помощью REST — Azure AD
+description: Пошаговые инструкции по настройке управляемых удостоверений, назначаемых системой и назначаемых пользователем, на виртуальной машине Azure с использованием CURL для выполнения вызовов REST API.
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -15,25 +15,25 @@ ms.workload: identity
 ms.date: 06/25/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c967e32836586c39131069407fc4808a5f91ae9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9db22c6876294c9ffba33eab3d27900bf294e886
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85609137"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87873846"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-rest-api-calls"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью вызовов REST API
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 
-Управляемые удостоверения для ресурсов Azure предоставляют службы Azure с автоматически управляемым удостоверением системы в Azure Active Directory. Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде. 
+Функция управляемых удостоверений для ресурсов Azure предоставляет службам Azure автоматически управляемые системные удостоверения в Azure Active Directory. Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде. 
 
 В этой статье вы узнаете, как выполнять приведенные ниже операции с управляемыми удостоверениями для ресурсов Azure на виртуальной машине Azure, используя CURL для выполнения вызовов к конечной точке REST Azure Resource Manager.
 
 - Включение и отключение управляемого удостоверения, назначаемого системой, на виртуальной машине Azure
 - Добавление и удаление управляемого удостоверения, назначаемого пользователем, в виртуальной машине Azure
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#managed-identity-types)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -49,7 +49,7 @@ ms.locfileid: "85609137"
 
 ### <a name="enable-system-assigned-managed-identity-during-creation-of-an-azure-vm"></a>Включение управляемого удостоверения, назначаемого системой, во время создания виртуальной машины Azure
 
-Чтобы создать виртуальную машину Azure с включенным системой управляемого удостоверения, вашей учетной записи требуется назначение роли [участника виртуальной машины](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) .  Назначать другие роли в каталоге Azure AD не требуется.
+Чтобы создать виртуальную машину Azure с включенным управляемым удостоверением, назначаемым системой, вашей учетной записи должна быть назначена роль [Участник виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).  Назначать другие роли в каталоге Azure AD не требуется.
 
 1. Создайте [группу ресурсов](../../azure-resource-manager/management/overview.md#terminology) с помощью параметра [az group create](/cli/azure/group/#az-group-create), чтобы сохранить и развернуть виртуальную машину и связанные с ней ресурсы. Если вы уже создали группу ресурсов, которую можно использовать, этот шаг можно пропустить:
 
@@ -84,7 +84,7 @@ ms.locfileid: "85609137"
    |Заголовок запроса  |Описание  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        | 
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        | 
    
    **Текст запроса**
 
@@ -162,7 +162,7 @@ ms.locfileid: "85609137"
    > Чтобы предотвратить удаление существующих управляемых удостоверений, назначаемых пользователем, для виртуальной машины, нужно получить список этих удостоверений с помощью следующей команды CURL: `curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>/providers/Microsoft.Compute/virtualMachines/<VM NAME>?api-version=2018-06-01' -H "Authorization: Bearer <ACCESS TOKEN>"`. Если для виртуальной машины заданы управляемые удостоверения, назначаемые пользователем, как указано в значении `identity` в ответе, перейдите к шагу 3, где описано, как сохранить управляемые удостоверения, назначаемые пользователем, при включении на виртуальной машине управляемого удостоверения, назначаемого системой.
 
    ```bash
-   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"SystemAssigned"}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
+   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"SystemAssigned"}}' -H "Content-Type: application/json" -H "Authorization:Bearer <ACCESS TOKEN>"
    ```
 
    ```HTTP
@@ -173,7 +173,7 @@ ms.locfileid: "85609137"
    |Заголовок запроса  |Описание  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        | 
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        | 
    
    **Текст запроса**
     
@@ -194,7 +194,7 @@ ms.locfileid: "85609137"
    **API версии 2018-06-01**
 
    ```bash
-   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"SystemAssigned, UserAssigned", "userAssignedIdentities":{"/subscriptions/<<SUBSCRIPTION ID>>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1":{},"/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID2":{}}}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
+   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"SystemAssigned, UserAssigned", "userAssignedIdentities":{"/subscriptions/<<SUBSCRIPTION ID>>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1":{},"/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID2":{}}}}' -H "Content-Type: application/json" -H "Authorization:Bearer <ACCESS TOKEN>"
    ```
 
    ```HTTP
@@ -205,7 +205,7 @@ ms.locfileid: "85609137"
    |Заголовок запроса  |Описание  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        | 
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        | 
 
    **Текст запроса**
 
@@ -228,7 +228,7 @@ ms.locfileid: "85609137"
    **API версии 2017-12-01**
 
    ```bash
-   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2017-12-01' -X PATCH -d '{"identity":{"type":"SystemAssigned, UserAssigned", "identityIds":["/subscriptions/<<SUBSCRIPTION ID>>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1","/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID2"]}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
+   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2017-12-01' -X PATCH -d '{"identity":{"type":"SystemAssigned, UserAssigned", "identityIds":["/subscriptions/<<SUBSCRIPTION ID>>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1","/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID2"]}}' -H "Content-Type: application/json" -H "Authorization:Bearer <ACCESS TOKEN>"
    ```
 
    ```HTTP
@@ -240,7 +240,7 @@ ms.locfileid: "85609137"
    |Заголовок запроса  |Описание  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        | 
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        | 
 
    **Текст запроса**
 
@@ -272,7 +272,7 @@ ms.locfileid: "85609137"
    > Чтобы предотвратить удаление существующих управляемых удостоверений, назначаемых пользователем, для виртуальной машины, нужно получить список этих удостоверений с помощью следующей команды CURL: `curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>/providers/Microsoft.Compute/virtualMachines/<VM NAME>?api-version=2018-06-01' -H "Authorization: Bearer <ACCESS TOKEN>"`. Если для виртуальной машины заданы управляемые удостоверения, назначаемые пользователем, как указано в значении `identity` в ответе, перейдите к шагу 3, где описано, как сохранить управляемые удостоверения, назначаемые пользователем, при отключении на виртуальной машине управляемого удостоверения, назначаемого системой.
 
    ```bash
-   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"None"}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
+   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"None"}}' -H "Content-Type: application/json" -H "Authorization:Bearer <ACCESS TOKEN>"
    ```
 
    ```HTTP
@@ -283,7 +283,7 @@ ms.locfileid: "85609137"
    |Заголовок запроса  |Описание  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        | 
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        | 
 
    **Текст запроса**
 
@@ -323,7 +323,7 @@ ms.locfileid: "85609137"
    az account get-access-token
    ``` 
 
-4. Создайте управляемое пользователем удостоверение с помощью инструкций, приведенных здесь: [Создание управляемого удостоверения, назначенного пользователем](how-to-manage-ua-identity-rest.md#create-a-user-assigned-managed-identity).
+4. Создайте пользовательское удостоверение, как описано в разделе [Создание управляемого удостоверения, назначаемого пользователем](how-to-manage-ua-identity-rest.md#create-a-user-assigned-managed-identity).
 
 5. Создайте виртуальную машину, используя CURL для вызова конечной точки REST Azure Resource Manager. Приведенный ниже пример создает в группе ресурсов *myResourceGroup* виртуальную машину *myVM* с управляемым удостоверением, назначаемым пользователем, `ID1` в соответствии со значением `"identity":{"type":"UserAssigned"}` в тексте запроса. Замените `<ACCESS TOKEN>` значением, полученным на предыдущем шаге при запросе маркера доступа носителя, а вместо `<SUBSCRIPTION ID>` укажите значение, подходящее для вашей среды.
  
@@ -342,7 +342,7 @@ ms.locfileid: "85609137"
    |Заголовок запроса  |Описание  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        | 
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        | 
 
    **Текст запроса**
 
@@ -423,7 +423,7 @@ ms.locfileid: "85609137"
    |Заголовок запроса  |Описание  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        | 
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        | 
 
    **Текст запроса**
 
@@ -513,18 +513,18 @@ ms.locfileid: "85609137"
 
    |Заголовок запроса  |Описание  |
    |---------|---------|
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.
 
-    Если для виртуальной машины назначены управляемые удостоверения, назначенные пользователю или системе, как указано в `identity` значении в ответе, перейдите к шагу 5, в котором показано, как хранить назначенное системой управляемое удостоверение при добавлении управляемого пользователем удостоверения на виртуальной машине.
+    Если для виртуальной машины заданы управляемые удостоверения, назначаемые пользователем или назначаемые системой, как указано в значении `identity` в ответе, перейдите к шагу 5, где описано, как сохранить управляемое удостоверение, назначаемое системой, при добавлении в виртуальную машину управляемого удостоверения, назначаемого пользователем.
 
 4. Если для виртуальной машины не заданы какие-либо управляемые удостоверения, назначаемые пользователем, используйте приведенную ниже команду CURL для вызова конечной точки REST Azure Resource Manager, чтобы назначить виртуальной машине первое управляемое удостоверение, назначаемое пользователем.
 
-   В следующем примере назначенное пользователем управляемое удостоверение назначается `ID1` виртуальной машине с именем *myVM* в группе ресурсов *myResourceGroup*.  Замените `<ACCESS TOKEN>` значением, полученным на предыдущем шаге при запросе маркера доступа носителя, а вместо `<SUBSCRIPTION ID>` укажите значение, подходящее для вашей среды.
+   Следующий пример задает управляемое удостоверение, назначаемое пользователем `ID1` для виртуальной машины *myVM* в группе ресурсов *myResourceGroup*.  Замените `<ACCESS TOKEN>` значением, полученным на предыдущем шаге при запросе маркера доступа носителя, а вместо `<SUBSCRIPTION ID>` укажите значение, подходящее для вашей среды.
 
    **API версии 2018-06-01**
 
    ```bash
-   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"UserAssigned", "userAssignedIdentities":{"/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1":{}}}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
+   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"UserAssigned", "userAssignedIdentities":{"/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1":{}}}}' -H "Content-Type: application/json" -H "Authorization:Bearer <ACCESS TOKEN>"
    ```
 
    ```HTTP
@@ -535,7 +535,7 @@ ms.locfileid: "85609137"
    |Заголовок запроса  |Описание  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        |
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        |
  
    **Текст запроса**
 
@@ -555,7 +555,7 @@ ms.locfileid: "85609137"
    **API версии 2017-12-01**
 
    ```bash
-   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2017-12-01' -X PATCH -d '{"identity":{"type":"userAssigned", "identityIds":["/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1"]}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
+   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2017-12-01' -X PATCH -d '{"identity":{"type":"userAssigned", "identityIds":["/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1"]}}' -H "Content-Type: application/json" -H "Authorization:Bearer <ACCESS TOKEN>"
    ```
 
    ```HTTP
@@ -567,7 +567,7 @@ ms.locfileid: "85609137"
    |Заголовок запроса  |Описание  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        | 
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        | 
 
    **Текст запроса**
 
@@ -591,7 +591,7 @@ ms.locfileid: "85609137"
    Например, если для виртуальной машины заданы управляемое удостоверение, назначаемое системой, и управляемое удостоверение, назначаемое пользователем, `ID1` и вы хотите добавить для него управляемое удостоверение, назначаемое пользователем, `ID2`, сделайте следующее.
 
    ```bash
-   curl  'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"SystemAssigned, UserAssigned", "userAssignedIdentities":{"/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1":{},"/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID2":{}}}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
+   curl  'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"SystemAssigned, UserAssigned", "userAssignedIdentities":{"/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1":{},"/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID2":{}}}}' -H "Content-Type: application/json" -H "Authorization:Bearer <ACCESS TOKEN>"
    ```
 
    ```HTTP
@@ -603,7 +603,7 @@ ms.locfileid: "85609137"
    |Заголовок запроса  |Описание  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        | 
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        | 
 
    **Текст запроса**
 
@@ -630,7 +630,7 @@ ms.locfileid: "85609137"
    Например, если для виртуальной машины заданы управляемое удостоверение, назначаемое системой, и управляемое удостоверение, назначаемое пользователем, `ID1` и вы хотите добавить для него управляемое удостоверение, назначаемое пользователем, `ID2`, сделайте следующее. 
 
    ```bash
-   curl  'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2017-12-01' -X PATCH -d '{"identity":{"type":"SystemAssigned,UserAssigned", "identityIds":["/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1","/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID2"]}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
+   curl  'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2017-12-01' -X PATCH -d '{"identity":{"type":"SystemAssigned,UserAssigned", "identityIds":["/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1","/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID2"]}}' -H "Content-Type: application/json" -H "Authorization:Bearer <ACCESS TOKEN>"
    ```
 
    ```HTTP
@@ -642,7 +642,7 @@ ms.locfileid: "85609137"
    |Заголовок запроса  |Описание  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        | 
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        | 
 
    **Текст запроса**
 
@@ -683,7 +683,7 @@ ms.locfileid: "85609137"
    |Заголовок запроса  |Описание  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.
  
    Если у вас есть управляемые удостоверения, назначенные виртуальной машине, они перечислены в значении `identity` в ответе.
 
@@ -694,7 +694,7 @@ ms.locfileid: "85609137"
    К управляемому удостоверению, назначаемому пользователем, которое требуется удалить, необходимо добавить `null`.
 
    ```bash
-   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"SystemAssigned, UserAssigned", "userAssignedIdentities":{"/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID2":null}}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
+   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"SystemAssigned, UserAssigned", "userAssignedIdentities":{"/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID2":null}}}' -H "Content-Type: application/json" -H "Authorization:Bearer <ACCESS TOKEN>"
    ```
 
    ```HTTP
@@ -706,7 +706,7 @@ ms.locfileid: "85609137"
    |Заголовок запроса  |Описание  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        | 
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        | 
 
    **Текст запроса**
 
@@ -726,7 +726,7 @@ ms.locfileid: "85609137"
    В массиве `identityIds` оставьте только те управляемые удостоверения, назначаемые пользователем, которые вы хотите сохранить.
 
    ```bash
-   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2017-12-01' -X PATCH -d '{"identity":{"type":"SystemAssigned, UserAssigned", "identityIds":["/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1"]}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
+   curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2017-12-01' -X PATCH -d '{"identity":{"type":"SystemAssigned, UserAssigned", "identityIds":["/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1"]}}' -H "Content-Type: application/json" -H "Authorization:Bearer <ACCESS TOKEN>"
    ```
 
    ```HTTP
@@ -738,7 +738,7 @@ ms.locfileid: "85609137"
    |Заголовок запроса  |Описание  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-   |*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        | 
+   |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        | 
 
    **Текст запроса**
 
@@ -756,7 +756,7 @@ ms.locfileid: "85609137"
 Если у виртуальной машины есть управляемые удостоверения, назначаемые системой и назначаемые пользователем, вы можете удалить все управляемые удостоверения, назначаемые пользователем, переключившись на использование только управляемого удостоверения, назначаемого системой, с помощью следующей команды.
 
 ```bash
-curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"SystemAssigned"}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
+curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"SystemAssigned"}}' -H "Content-Type: application/json" -H "Authorization:Bearer <ACCESS TOKEN>"
 ```
 
 ```HTTP
@@ -768,7 +768,7 @@ PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroup
 |Заголовок запроса  |Описание  |
 |---------|---------|
 |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-|*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`. | 
+|*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. | 
 
 **Текст запроса**
 
@@ -795,7 +795,7 @@ PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroup
 |Заголовок запроса  |Описание  |
 |---------|---------|
 |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
-|*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.| 
+|*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.| 
 
 **Текст запроса**
 
@@ -807,7 +807,7 @@ PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroup
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о создании и удалении управляемых удостоверений, назначаемых пользователем, а также получении их списка с помощью REST:
 

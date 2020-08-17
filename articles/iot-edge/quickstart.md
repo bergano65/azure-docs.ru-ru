@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 748e31499a4aa8f1ddd2cea4e918b688426338fa
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: 73d9eed757acb4c58052a34811c490a70d306995
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87117255"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88061495"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-windows-device"></a>Краткое руководство. Развертывание модуля IoT Edge на виртуальном устройстве с Windows
 
@@ -65,7 +65,9 @@ ms.locfileid: "87117255"
   az vm create --resource-group IoTEdgeResources --name EdgeVM --image MicrosoftWindowsDesktop:Windows-10:rs5-pro:latest --admin-username azureuser --admin-password {password} --size Standard_DS1_v2
   ```
 
-  Создание и запуск виртуальной машины может занять несколько минут. Затем вы можете загрузить RDP-файл, который будет использоваться при подключении к виртуальной машине:
+  Создание и запуск виртуальной машины может занять несколько минут.
+
+  После запуска виртуальной машины вы можете скачать RDP-файл, который будет использоваться при подключении к виртуальной машине:
 
   1. Перейдите к новой виртуальной машине Windows на портале Azure.
   1. Выберите **Подключиться**.
@@ -74,6 +76,8 @@ ms.locfileid: "87117255"
   Откройте этот файл, используя подключение к удаленному рабочему столу, чтобы подключиться к виртуальной машине Windows, указав имя и пароль администратора, заданные в команде `az vm create`.
 
 > [!NOTE]
+> Виртуальная машина Windows запускается с Windows версии 1809 (сборка 17763), которая является последней версией [сборки Windows с долгосрочной поддержкой](https://docs.microsoft.com/windows/release-information/). По умолчанию Windows автоматически проверяет наличие обновлений каждые 22 часа. После проверки виртуальной машины Windows устанавливает обновление, несовместимое с IoT Edge для Windows, что предотвращает дальнейшее использование IoT Edge для компонентов Windows. Мы рекомендуем ограничить использование виртуальной машины 22 часами или [временно приостановить службу обновления Windows](https://support.microsoft.com/help/4028233/windows-10-manage-updates).
+>
 > Для простоты в этом кратком руководстве используется виртуальная машина Windows для настольных систем. Сведения об общедоступных версиях ОС Windows для рабочих сценариев см. в статье [Azure IoT Edge supported systems](support.md) (Системы, поддерживаемые в Azure IoT Edge).
 >
 > Если вы готовы к настройке собственного устройства Windows для IoT Edge, в том числе устройства с IoT Core, выполните инструкции из статьи об [установке среды выполнения Azure IoT Edge в Windows](how-to-install-iot-edge-windows.md).

@@ -531,6 +531,8 @@
               items:
                 - name: Использование пустых граничных узлов
                   href: ./hdinsight-apps-use-edge-node.md
+                - name: Использование граничных узлов для масштабирования HiveServer2
+                  href: ./hdinsight-apps-install-hiveserver2.md
         - name: Диагностика
           items:
             - name: Распространенные проблемы

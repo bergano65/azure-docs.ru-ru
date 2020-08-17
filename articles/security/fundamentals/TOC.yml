@@ -78,12 +78,16 @@
   items:
     - name: Шифрование и обеспечение защиты данных
       href: encryption-overview.md
+    - name: Двойное шифрование
+      href: double-encryption.md
     - name: Шифрование дисков
       items:
         - name: Рекомендации
           href: data-encryption-best-practices.md
         - name: Шифрование неактивных данных
           href: encryption-atrest.md
+        - name: Модели шифрования данных
+          href: encryption-models.md
         - name: Шифрование дисков Azure для виртуальных машин
           href: azure-disk-encryption-vms-vmss.md
     - name: Безопасность базы данных

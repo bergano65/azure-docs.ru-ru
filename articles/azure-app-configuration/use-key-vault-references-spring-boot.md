@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 12/16/2019
 ms.author: lcozzens
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: 31aaa0134ffe34d0424868221f01b68b64e4b088
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 5977aced8354694a631cce05bf6d6b913ea79118
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87371164"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121601"
 ---
 # <a name="tutorial-use-key-vault-references-in-a-java-spring-app"></a>Руководство по Использование ссылок Key Vault в приложении Java Spring
 
@@ -102,7 +102,7 @@ ms.locfileid: "87371164"
 
     Эта операция возвращает ряд пар "ключ — значение".
 
-    ```console
+    ```json
     {
     "clientId": "7da18cae-779c-41fc-992e-0527854c6583",
     "clientSecret": "b421b443-1669-4cd7-b5b1-394d5c945002",
@@ -118,31 +118,51 @@ ms.locfileid: "87371164"
 
 1. Выполните следующую команду, чтобы предоставить субъекту-службе доступ к хранилищу ключей:
 
-    ```console
+    ```azurecli
     az keyvault set-policy -n <your-unique-keyvault-name> --spn <clientId-of-your-service-principal> --secret-permissions delete get
     ```
 
 1. Выполните следующую команду, чтобы получить идентификатор объекта, затем добавьте его в Конфигурацию приложений.
 
-    ```console
+    ```azurecli
     az ad sp show --id <clientId-of-your-service-principal>
     az role assignment create --role "App Configuration Data Reader" --assignee-object-id <objectId-of-your-service-principal> --resource-group <your-resource-group>
     ```
 
-1. Создайте следующие переменные среды, используя значения для субъекта-службы, которые были показаны на предыдущем шаге.
+1. Создайте переменные среды **AZURE_CLIENT_ID**, **AZURE_CLIENT_SECRET** и **AZURE_TENANT_ID**. Для этого используйте значения для субъекта-службы, которые были показаны на предыдущих шагах. В командной строке выполните следующие команды и перезапустите командную строку, чтобы изменения вступили в силу:
 
-    * **AZURE_CLIENT_ID**: *clientId*
-    * **AZURE_CLIENT_SECRET**: *clientSecret*
-    * **AZURE_TENANT_ID**: *tenantId*
+    ```cmd
+    setx AZURE_CLIENT_ID "clientId"
+    setx AZURE_CLIENT_SECRET "clientSecret"
+    setx AZURE_TENANT_ID "tenantId"
+    ```
+
+    Если вы используете Windows PowerShell, выполните следующую команду:
+
+    ```azurepowershell
+    $Env:AZURE_CLIENT_ID = "clientId"
+    $Env:AZURE_CLIENT_SECRET = "clientSecret"
+    $Env:AZURE_TENANT_ID = "tenantId"
+    ```
+
+    Если вы используете macOS или Linux, выполните следующую команду:
+
+    ```cmd
+    export AZURE_CLIENT_ID ='clientId'
+    export AZURE_CLIENT_SECRET ='clientSecret'
+    export AZURE_TENANT_ID ='tenantId'
+    ```
+
 
 > [!NOTE]
 > Эти учетные данные Key Vault используются только в вашем приложении.  Приложение выполняет проверку подлинности напрямую с Key Vault, используя эти учетные данные без привлечения службы "Конфигурация приложений".  Key Vault обеспечивает проверку подлинности как для приложения, так и для службы "Конфигурация приложений" без общего доступа или предоставления ключей.
 
 ## <a name="update-your-code-to-use-a-key-vault-reference"></a>Обновление кода для использования ссылки Key Vault
 
-1. Создайте переменную среды с именем **APP_CONFIGURATION_ENDPOINT**. Задайте в качестве значения конечную точку хранилища Конфигурации приложения. Конечную точку можно найти в колонке **Ключи доступа** на портале Azure.
+1. Создайте переменную среды с именем **APP_CONFIGURATION_ENDPOINT**. Задайте в качестве значения конечную точку хранилища Конфигурации приложений. Конечную точку можно найти в колонке **Ключи доступа** на портале Azure. Перезапустите командную строку, чтобы изменение вступило в силу. 
 
-1. Откройте *bootstrap.properties* в папке *resources*. Обновите этот файл, чтобы использовать конечную точку Конфигурации приложения, а не строку подключения.
+
+1. Откройте *bootstrap.properties* в папке *resources*. Обновите этот файл, чтобы использовать значение **APP_CONFIGURATION_ENDPOINT**. Удалите все ссылки на строку подключения в этом файле. 
 
     ```properties
     spring.cloud.azure.appconfiguration.stores[0].endpoint= ${APP_CONFIGURATION_ENDPOINT}
@@ -218,7 +238,7 @@ ms.locfileid: "87371164"
     }
     ```
 
-1. Создайте файл в каталоге ресурсов META-INF с именем *spring.factories* и добавьте его.
+1. Создайте файл в каталоге ресурсов META-INF с именем *spring.factories* и добавьте приведенный ниже код.
 
     ```factories
     org.springframework.cloud.bootstrap.BootstrapConfiguration=\

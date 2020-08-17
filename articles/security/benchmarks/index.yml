@@ -13,12 +13,12 @@ metadata:
   ms.author: mbaldwin
   manager: rkarlin
   ms.date: 12/23/2019
-  ms.openlocfilehash: 7cebc4fb6e676470b46a52cf1ea62e0990e708e9
-  ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+  ms.openlocfilehash: 705757e3021ff7421dd88e3a2661b1b51f3f927a
+  ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/30/2020
-  ms.locfileid: "82607761"
+  ms.lasthandoff: 08/14/2020
+  ms.locfileid: "88213555"
 landingContent:
 - title: Общие средства о тестировании производительности системы безопасности Azure
   linkLists:
@@ -28,7 +28,13 @@ landingContent:
       url: introduction.md
     - text: Обзор элементов управления безопасностью Azure
       url: overview.md
-- title: Средства управления безопасностью
+    - text: Разделение ответственности в облаке
+      url: ../fundamentals/shared-responsibility.md
+    - text: Центр безопасности Azure
+      url: ../../security-center/index.yml
+    - text: Основы обеспечения безопасности в Azure
+      url: ../fundamentals/index.yml
+- title: Элементы управления тестов производительности системы безопасности Azure
   linkLists:
   - linkListType: overview
     links:
@@ -44,13 +50,95 @@ landingContent:
       url: security-control-vulnerability-management.md
     - text: Подробнее
       url: security-control-inventory-asset-management.md
-- title: Дополнительные сведения о системе безопасности Azure
+- title: Базовые показатели защиты вычислений
   linkLists:
-  - linkListType: learn
+  - linkListType: overview
     links:
-    - text: Основы обеспечения безопасности в Azure
-      url: ../fundamentals/index.yml
-    - text: Разделение ответственности в облаке
-      url: ../fundamentals/shared-responsibility.md
-    - text: Центр безопасности Azure
-      url: ../../security-center/index.yml
+    - text: Виртуальные машины Linux
+      url: ../../virtual-machines/linux/security-baseline.md
+    - text: Виртуальные машины Windows
+      url: ../../virtual-machines/windows/security-baseline.md
+    - text: Масштабируемые наборы виртуальных машин
+      url: ../../virtual-machine-scale-sets/security-baseline.md
+    - text: Пакетная служба
+      url: ../../batch/security-baseline.md
+    - text: Функции Azure
+      url: ../../azure-functions/security-baseline.md
+- title: Базовые показатели защиты контейнеров
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Экземпляры контейнеров
+      url: ../../container-instances/security-baseline.md
+    - text: Реестр контейнеров
+      url: ../../container-registry/security-baseline.md
+    - text: Service Fabric
+      url: ../../service-fabric/security-baseline.md
+- title: Базовые показатели защиты Analytics
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Data Explorer
+      url: /azure/data-explorer/security-baseline
+    - text: Data Lake Analytics
+      url: ../../data-lake-analytics/security-baseline.md
+    - text: Databricks
+      url: ../../azure-databricks/security-baseline.md
+    - text: Фабрика данных
+      url: ../../data-factory/security-baseline.md
+    - text: HDInsight
+      url: ../../hdinsight/security-baseline.md
+- title: Базовые показатели защиты баз данных
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Кэш Azure для Redis
+      url: ../../azure-cache-for-redis/security-baseline.md
+    - text: База данных Azure для MariaDB
+      url: ../../mariadb/security-baseline.md
+    - text: База данных Azure для MySQL
+      url: ../../mysql/security-baseline.md
+    - text: База данных Azure для PostgreSQL
+      url: ../../postgresql/security-baseline.md
+    - text: База данных SQL Azure
+      url: ../../sql-database/security-baseline.md
+- title: Базовые показатели защиты сети
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Шлюз приложений
+      url: ../../application-gateway/security-baseline.md
+    - text: Защита от атак DDoS
+      url: ../fundamentals/ddos-protection-security-baseline.md
+    - text: Azure ExpressRoute
+      url: ../../expressroute/security-baseline.md
+    - text: Брандмауэр Azure
+      url: ../../firewall/security-baseline.md
+    - text: Наблюдатель за сетями
+      url: ../../network-watcher/security-baseline.md
+- title: Базовые конфигурации безопасности
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Key Vault
+      url: ../../key-vault/security-baseline.md
+    - text: Центр безопасности
+      url: ../../security-center/security-baseline.md
+    - text: Защищенное хранилище клиента
+      url: ../fundamentals/customer-lockbox-security-baseline.md
+    - text: Политика Azure
+      url: ../../governance/policy/concepts/azure-security-benchmark-baseline.md
+- title: Управление и интеграция
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Автоматизация
+      url: ../../automation/security-baseline.md
+    - text: Backup
+      url: ../../backup/security-baseline.md
+    - text: Управление API
+      url: ../../api-management/security-baseline.md
+    - text: Сетка событий
+      url: ../../event-hubs/security-baseline.md
+    - text: Logic Apps
+      url: ../../logic-apps/security-baseline.md

@@ -1,20 +1,16 @@
 ---
 title: Обзор Azure Arc для серверов (предварительная версия)
 description: Узнайте, как использовать Azure Arc для серверов, чтобы управлять компьютерами, размещенными вне Azure, как в облаке Azure.
-services: azure-arc
-ms.service: azure-arc
-ms.subservice: azure-arc-servers
-author: mgoedtel
-ms.author: magoedte
 keywords: служба автоматизации Azure, DSC, PowerShell, настройка требуемого состояния, управление обновлениями, отслеживание изменений, инвентаризация, модули runbook, Python, графический, гибридный
-ms.date: 03/24/2020
+ms.custom: references_regions
+ms.date: 08/06/2020
 ms.topic: overview
-ms.openlocfilehash: e775945526a5453085946ed4eea2a2e19761ba78
-ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
+ms.openlocfilehash: f11eedaf5f70cb24fa6c1588b7f26b2eed4734ce
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85482196"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121805"
 ---
 # <a name="what-is-azure-arc-for-servers-preview"></a>Что такое Azure Arc для серверов (предварительная версия)?
 
@@ -28,10 +24,15 @@ ms.locfileid: "85482196"
 
 ## <a name="supported-scenarios"></a>Поддерживаемые сценарии
 
-Служба Azure Arc для серверов (предварительная версия) поддерживает следующие сценарии для подключенных компьютеров:
+При подключении компьютера к Azure Arc для серверов (предварительная версия) появляется возможность выполнять следующие задачи управления конфигурацией:
 
 - Назначение [конфигураций гостевых политик Azure](../../governance/policy/concepts/guest-configuration.md) с помощью того же интерфейса, что и для назначения политики для виртуальных машин Azure.
-- Данные журнала, собранные агентом Log Analytics, сохраняются в рабочей области Log Analytics, в которой зарегистрирована виртуальная машина. Данные, полученные с гибридной виртуальной машины, теперь содержат связанные свойства, такие как идентификатор ресурса, который можно использовать для реализации поддержки доступа к журналу[resource-context](../../azure-monitor/platform/design-logs-deployment.md#access-mode).
+
+- Мониторинг производительности операционной системы на виртуальной машине подключенного компьютера и обнаружение компонентов приложения для мониторинга их процессов и зависимостей от других ресурсов, с которыми взаимодействует приложение, с помощью [Azure Monitor для виртуальных машин](../../azure-monitor/insights/vminsights-overview.md).
+
+- Упрощение развертывания с помощью других служб Azure, таких как служба State Configuration службы автоматизации Azure и рабочая область Log Analytics Azure Monitor, с использованием поддерживаемых [расширений виртуальных машин Azure](manage-vm-extensions.md) для компьютеров, которые работают не под управлением Azure Windows или Linux. Сюда входит выполнение конфигурации пост-развертывания или установки программного обеспечения с помощью Расширения пользовательских сценариев.
+
+Данные журнала, сохраняемые рабочей областью Log Analytics, которые такая область собрала с гибридной виртуальной машины, теперь содержат связанные свойства, такие как идентификатор ресурса. Их можно использовать для реализации поддержки доступа к журналу [resource-context](../../azure-monitor/platform/design-logs-deployment.md#access-mode).
 
 ## <a name="supported-regions"></a>Поддерживаемые регионы
 

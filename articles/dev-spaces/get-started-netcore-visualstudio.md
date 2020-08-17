@@ -7,12 +7,12 @@ ms.date: 07/09/2018
 ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio для отладки и быстрого выполнения итерации приложения .NET Core в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 1ce2647e89915dd581b0b5ad9fc75a9f2fe840de
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 436ef1b83bd23c78aed6e793e237423110ca6bc6
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87499115"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88077709"
 ---
 # <a name="create-a-kubernetes-dev-space-visual-studio-and-net-core-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Visual Studio и .NET Core в Azure Dev Spaces
 
@@ -179,8 +179,10 @@ Azure Dev Spaces — это не просто среда выполнения к
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+Узнайте больше о принципах работы Azure Dev Spaces.
+
 > [!div class="nextstepaction"]
-> [Узнайте больше о разработке с использованием нескольких служб](multi-service-netcore-visualstudio.md)
+> [Принцип работы Azure Dev Spaces](how-dev-spaces-works.md)
 
 
 [supported-regions]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service

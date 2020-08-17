@@ -10,15 +10,19 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 11/21/2019
-ms.openlocfilehash: 680f8394ad1d10a564033ae5a2b9f59063589f73
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: d89bc33b0ddd0793a3c55dbd64bef9678bd723e7
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87532532"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87920149"
 ---
 # <a name="tutorial-configure-transactional-replication-between-azure-sql-managed-instance-and-sql-server"></a>Руководство по Настройка репликации транзакций между Управляемым экземпляром SQL Azure и SQL Server
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
+
+Репликация транзакций позволяет вам реплицировать данные из одной базы данных в другую, размещенную на SQL Server или на [Управляемом экземпляре SQL Azure](sql-managed-instance-paas-overview.md). Управляемый экземпляр SQL может быть издателем, распространителем или подписчиком в топологии репликации. Сведения о доступных конфигурациях см. [здесь](replication-transactional-overview.md#common-configurations). 
+
+В настоящее время репликация транзакций предоставляется в общедоступной предварительной версии Управляемого экземпляра SQL. 
 
 В этом руководстве описано следующее:
 
@@ -30,11 +34,11 @@ ms.locfileid: "87532532"
 
 ![Репликация между издателем управляемого экземпляра, распространителем управляемого экземпляра и подписчиком SQL Server](./media/replication-two-instances-and-sql-server-configure-tutorial/sqlmi-to-sql-replication.png)
 
-Это руководство предназначено для опытных пользователей. Предполагается, что пользователь знаком с процедурами развертывания и подключения для управляемых экземпляров и виртуальных машин SQL Server в Azure. Поэтому некоторые шаги в этом руководстве описаны поверхностно.
+Это руководство предназначено для опытных пользователей. Предполагается, что пользователь знаком с процедурами развертывания и подключения для управляемых экземпляров и виртуальных машин SQL Server в Azure. 
 
-Дополнительные сведения см. в [обзорной статье об Управляемом экземпляре SQL Azure](sql-managed-instance-paas-overview.md) и [статье о репликации транзакций SQL](replication-transactional-overview.md).
 
-См. сведения о том, как [настроить репликацию между издателем управляемого экземпляра и подписчиком управляемого экземпляра](replication-between-two-instances-configure-tutorial.md).
+> [!NOTE]
+> В этой статье описывается использование [репликации транзакций](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) в Управляемом экземпляре SQL Azure. Она не связана с [группами отработки отказа](https://docs.microsoft.com/azure/sql-database/sql-database-auto-failover-group), которые представляют собой функцию Управляемого экземпляра SQL Azure, позволяющую создавать полные, доступные для чтения реплики отдельных экземпляров. При настройке [репликации транзакций с группами отработки отказа](replication-transactional-overview.md#with-failover-groups) следует учитывать дополнительные факторы.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -405,7 +409,7 @@ INSERT INTO ReplTest (ID, c1) VALUES (15, 'pub')
 
 Полный список способов защиты базы данных приведен в статье [Что такое Управляемый экземпляр SQL Azure?](sql-managed-instance-paas-overview.md#advanced-security-and-compliance). Рассматриваются следующие средства безопасности:
 
-- [Аудит Управляемого экземпляра SQL](auditing-configure.md)
+- [Аудит управляемого экземпляра SQL](auditing-configure.md)
 - [Always Encrypted](/sql/relational-databases/security/encryption/always-encrypted-database-engine)
 - [Обнаружение угроз](threat-detection-configure.md)
 - [Динамическое маскирование данных](/sql/relational-databases/security/dynamic-data-masking)

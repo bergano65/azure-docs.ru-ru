@@ -1,6 +1,6 @@
 ---
 title: Изменение API с помощью портала Azure | Документация Майкрософт
-description: В этом руководстве показано, как изменить API с помощью службы управления API.
+description: Сведения о том, как изменить API с помощью службы "Управление API" (APIM). Добавление, удаление или переименование операций в экземпляре APIM или изменение Swagger API.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/08/2017
 ms.author: apimpm
-ms.openlocfilehash: 6be36493fabce07838991c789e111e918a9a826d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8d3f476f4a6ecf05d63223f3ba2c2b5173e1d0bf
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "70072159"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905165"
 ---
 # <a name="edit-an-api"></a>Изменение API
 
@@ -26,7 +26,7 @@ ms.locfileid: "70072159"
 + Это можно сделать, используя добавление, удаление и переименование в экземпляре службы управления API. 
 + Вы можете изменить Swagger API.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 + [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
 + [Импорт и публикация первого API](import-and-publish.md)

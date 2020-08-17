@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/19/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 3c33e2152fc120d406886d89adda26603126a8ba
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 2a0751f12f33a36d9e0003977bcf40b66d715615
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87483558"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87986956"
 ---
 # <a name="access-external-storage-in-synapse-sql-on-demand"></a>Доступ к внешнему хранилищу в Synapse SQL (по запросу)
 
@@ -25,11 +25,7 @@ ms.locfileid: "87483558"
 
 Пользователь может использовать [разные методы аутентификации](develop-storage-files-storage-access-control.md), такие как сквозная аутентификация Azure AD (по умолчанию для участников Azure AD) и аутентификация SAS (по умолчанию для участников SQL).
 
-## <a name="openrowset"></a>OPENROWSET
-
-С помощью функции [OPENROWSET](develop-openrowset.md) пользователь может считывать файлы из службы хранилища Azure.
-
-### <a name="query-files-using-openrowset"></a>Запрашивание файлов с помощью OPENROWSET
+## <a name="query-files-using-openrowset"></a>Запрашивание файлов с помощью OPENROWSET
 
 С помощью функции OPENROWSET пользователи могут запрашивать внешние файлы в службе хранилища Azure, если у них есть доступ к хранилищу. Пользователь, подключенный к конечной точке Synapse SQL по запросу, должен использовать следующий запрос для чтения содержимого файлов в службе хранилища Azure:
 
@@ -40,8 +36,10 @@ SELECT * FROM
 
 Пользователь может получить доступ к хранилищу на основе следующих правил доступа:
 
-- Пользователь Azure AD — OPENROWSET будет использовать удостоверение Azure AD вызывающей стороны для обращения к службе хранилища Azure или хранилищу с анонимным доступом.
-- Пользователь SQL — OPENROWSET будет обращаться к хранилищу с анонимным доступом.
+- Пользователь Azure AD — `OPENROWSET` будет использовать удостоверение Azure AD вызывающей стороны для обращения к службе хранилища Azure или хранилищу с анонимным доступом.
+- Пользователь SQL — `OPENROWSET` будет обращаться к хранилищу с помощью анонимного доступа или выполнять олицетворение с помощью маркера SAS или управляемого удостоверения рабочей области.
+
+### <a name="impersonation"></a>[Олицетворение](#tab/impersonation)
 
 Субъекты SQL также могут использовать OPENROWSET для непосредственного запрашивания файлов, защищенных маркерами SAS или управляемым удостоверением рабочей области. Если пользователь SQL выполняет эту функцию, опытный пользователь с разрешением `ALTER ANY CREDENTIAL` должен создать учетные данные уровня сервера, соответствующие URL-адресу в функции (с использованием имени хранилища и контейнера) и предоставить разрешения REFERENCES для этих учетных данных вызывающему объекту функции OPENROWSET.
 
@@ -56,10 +54,17 @@ GRANT REFERENCES CREDENTIAL::[https://<storage_account>.dfs.core.windows.net/<co
 
 Если учетные данные уровня сервера, которые соответствуют URL-адресу, отсутствуют или у пользователя SQL нет разрешения REFERENCES для этих учетных данных, будет возвращена ошибка. Субъекты SQL не поддерживают олицетворение с помощью некоторых удостоверений Azure AD.
 
+### <a name="direct-access"></a>[Прямой доступ](#tab/direct-access)
+
+Дополнительная настройка для предоставления пользователям Azure AD доступа к файлам с помощью удостоверений не требуется.
+Получить доступ к службе хранилища Azure, разрешающей анонимный доступ, может любой пользователь (дополнительная настройка не требуется).
+
+---
+
 > [!NOTE]
 > Эта версия OPENROWSET предназначена для быстрого и удобного просмотра данных с использованием аутентификации по умолчанию. Чтобы работать с олицетворением или управляемым удостоверением, используйте OPENROWSET с DATASOURCE, как описано в следующем разделе.
 
-### <a name="query-data-sources-using-openrowset"></a>Обращение к источникам данных с помощью OPENROWSET
+## <a name="query-data-sources-using-openrowset"></a>Обращение к источникам данных с помощью OPENROWSET
 
 С помощью функции OPENROWSET пользователь может запрашивать файлы, размещенные во внешнем источнике данных:
 
@@ -70,9 +75,18 @@ SELECT * FROM
  FORMAT= 'parquet') as rows
 ```
 
-Опытным пользователям с разрешением CONTROL DATABASE нужно создать учетные данные уровня базы данных (DATABASE SCOPED CREDENTIAL) для обращения к хранилищу и внешнему источнику данных (EXTERNAL DATA SOURCE) с определением используемых URL-адреса источника данных и учетных данных:
+У пользователя, выполняющего этот запрос, должен быть доступ к файлам. Если пользователи не могут напрямую обращаться к файлам с помощью [удостоверений Azure AD](develop-storage-files-storage-access-control.md?tabs=user-identity) или [анонимного доступа](develop-storage-files-storage-access-control.md?tabs=public-access), их нужно олицетворить с помощью [маркера SAS](develop-storage-files-storage-access-control.md?tabs=shared-access-signature) или [управляемого удостоверения рабочей области](develop-storage-files-storage-access-control.md?tabs=managed-identity).
+
+### <a name="impersonation"></a>[Олицетворение](#tab/impersonation)
+
+`DATABASE SCOPED CREDENTIAL` определяют способ доступа к файлам в указанном источнике данных (сейчас это SAS и управляемое удостоверение). Опытным пользователям с разрешением `CONTROL DATABASE` нужно создать `DATABASE SCOPED CREDENTIAL` для обращения к хранилищу и `EXTERNAL DATA SOURCE` с определением используемых URL-адреса источника данных и учетных данных:
 
 ```sql
+EXECUTE AS somepoweruser;
+
+-- Create MASTER KEY if it doesn't exists in database
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'some very strong password';
+
 CREATE DATABASE SCOPED CREDENTIAL AccessAzureInvoices
  WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
  SECRET = '******srt=sco&amp;sp=rwac&amp;se=2017-02-01T00:55:34Z&amp;st=201********' ;
@@ -82,16 +96,14 @@ CREATE EXTERNAL DATA SOURCE MyAzureInvoices
  CREDENTIAL = AccessAzureInvoices) ;
 ```
 
-Учетные данные уровня базы данных определяют способ доступа к файлам в указанном источнике данных (сейчас это SAS и управляемое удостоверение).
-
 Вызывающий объект должен иметь одно из следующих разрешений для выполнения функции OPENROWSET:
 
 - Одно из разрешений на выполнение функции OPENROWSET:
   - `ADMINISTER BULK OPERATIONS` позволяет выполнить вход для выполнения функции OPENROWSET.
   - `ADMINISTER DATABASE BULK OPERATIONS` позволяет пользователю базы данных выполнить функцию OPENROWSET.
-- REFERENCES DATABASE SCOPED CREDENTIAL для учетных данных, указанных в EXTERNAL DATA SOURCE.
+- `REFERENCES DATABASE SCOPED CREDENTIAL` для учетных данных, на которые указывает ссылка в `EXTERNAL DATA SOURCE`.
 
-#### <a name="access-anonymous-data-sources"></a>Доступ к анонимным источникам данных
+### <a name="direct-access"></a>[Прямой доступ](#tab/direct-access)
 
 Пользователь может создать внешний источник данных без учетных данных со ссылкой на хранилище с открытым доступом ИЛИ использовать сквозную аутентификацию Azure AD.
 
@@ -99,7 +111,7 @@ CREATE EXTERNAL DATA SOURCE MyAzureInvoices
 CREATE EXTERNAL DATA SOURCE MyAzureInvoices
  WITH ( LOCATION = 'https://<storage_account>.dfs.core.windows.net/<container>/<path>') ;
 ```
-
+---
 ## <a name="external-table"></a>EXTERNAL TABLE
 
 Пользователь с разрешениями на чтение таблицы может обращаться к внешним файлам с помощью внешней таблицы (EXTERNAL TABLE), созданной на основе набора папок и файлов службы хранилища Azure.
@@ -117,9 +129,18 @@ FILE_FORMAT = TextFileFormat
 ) ;
 ```
 
-Пользователям с разрешением CONTROL DATABASE нужно создать учетные данные уровня базы данных (DATABASE SCOPED CREDENTIAL) для обращения к хранилищу и внешнему источнику данных (EXTERNAL DATA SOURCE) с определением используемых URL-адреса источника данных и учетных данных:
+Пользователь, считывающий данные из этой таблицы, должен иметь доступ к файлам. Если пользователи не могут напрямую обращаться к файлам с помощью [удостоверений Azure AD](develop-storage-files-storage-access-control.md?tabs=user-identity) или [анонимного доступа](develop-storage-files-storage-access-control.md?tabs=public-access), их нужно олицетворить с помощью [маркера SAS](develop-storage-files-storage-access-control.md?tabs=shared-access-signature) или [управляемого удостоверения рабочей области](develop-storage-files-storage-access-control.md?tabs=managed-identity).
+
+### <a name="impersonation"></a>[Олицетворение](#tab/impersonation)
+
+Учетные данные уровня базы данных определяют способ доступа к файлам в указанном источнике данных. Пользователям с разрешением CONTROL DATABASE нужно создать учетные данные уровня базы данных (DATABASE SCOPED CREDENTIAL) для обращения к хранилищу и внешнему источнику данных (EXTERNAL DATA SOURCE) с определением используемых URL-адреса источника данных и учетных данных:
 
 ```sql
+EXECUTE AS somepoweruser;
+
+-- Create MASTER KEY if it doesn't exists in database
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'some very strong password';
+
 CREATE DATABASE SCOPED CREDENTIAL cred
  WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
  SECRET = '******srt=sco&sp=rwac&se=2017-02-01T00:55:34Z&st=201********' ;
@@ -130,7 +151,15 @@ CREATE EXTERNAL DATA SOURCE AzureDataLakeStore
  ) ;
 ```
 
-Учетные данные уровня базы данных определяют способ доступа к файлам в указанном источнике данных.
+### <a name="direct-access"></a>[Прямой доступ](#tab/direct-access)
+
+Пользователь может создать внешний источник данных без учетных данных со ссылкой на хранилище с открытым доступом ИЛИ использовать сквозную аутентификацию Azure AD.
+
+```sql
+CREATE EXTERNAL DATA SOURCE MyAzureInvoices
+ WITH ( LOCATION = 'https://<storage_account>.dfs.core.windows.net/<container>/<path>') ;
+```
+---
 
 ### <a name="read-external-files-with-external-table"></a>Считывание внешних файлов с помощью EXTERNAL TABLE
 
@@ -167,14 +196,14 @@ FROM dbo.DimProductsExternal
 
 - [Запрашивание CSV-файлов](query-single-csv-file.md)
 
-- [Запрашивание папок и нескольких файлов](query-folders-multiple-csv-files.md)
-
-- [Запрашивание конкретных файлов](query-specific-files.md)
-
 - [Запрашивание файлов Parquet](query-parquet-files.md)
 
-- [Запрашивание вложенных типов](query-parquet-nested-types.md)
-
 - [Запрашивание JSON-файлов](query-json-files.md)
+
+- [Запрашивание папок и нескольких файлов](query-folders-multiple-csv-files.md)
+
+- [Использование метаданных файла в запросах](query-specific-files.md)
+
+- [Запрашивание вложенных типов](query-parquet-nested-types.md)
 
 - [Создание и использование представлений](create-use-views.md)

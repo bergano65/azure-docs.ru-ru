@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Поиск интерактивной карты с помощью службы Azure Maps
-description: Узнайте, как создать демонстрационное веб-приложение для интерактивного поиска на карте с помощью веб-пакета SDK для Microsoft Azure Maps.
+description: Сведения о создании интерактивных карт с возможностью поиска. Узнайте, как создать учетную запись Azure Maps, получить первичный ключ и использовать веб-пакет SDK для настройки приложений карт.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 7/10/2020
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: bb6c5ee48e22e0c913e7fc6150d3986af805a08f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fa5cab35416f2629d39ec04803f90fae1a2e5f6d
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87004628"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88031053"
 ---
 # <a name="quickstart-create-an-interactive-search-map-with-azure-maps"></a>Краткое руководство. Создание карты с интерактивным поиском с помощью службы Azure Maps
 

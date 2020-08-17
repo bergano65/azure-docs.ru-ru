@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34bdd8561b30358e3cb5c9a64ed4405ba8d94588
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: db496ac504a48398ef7ab656cc5a6a890f882bab
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73160141"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905488"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-proofpoint-on-demand"></a>Руководство. Интеграция Azure Active Directory с Proofpoint on Demand
 
@@ -41,6 +41,9 @@ ms.locfileid: "73160141"
 
 * подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Proofpoint on Demand с поддержкой единого входа.
+
+> [!NOTE]
+> Если вы используете многофакторную проверку подлинности или аутентификацию без пароля в Azure AD, отключите значение AuthnContext в запросе SAML. В противном случае Azure AD выдаст ошибку при несовпадении AuthnContext и не отправит маркер обратно в приложение.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -100,7 +103,7 @@ ms.locfileid: "73160141"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 

@@ -2,19 +2,19 @@
 title: Azure Key Vault — использование обратимого удаления с помощью CLI
 description: Примеры использования обратимого удаления с фрагментами кода для интерфейса командной строки.
 services: key-vault
-author: msmbaldwin
-manager: rkarlin
+author: ShaneBala-keyvault
+manager: ravijan
 ms.service: key-vault
 ms.subservice: general
 ms.topic: tutorial
-ms.date: 08/12/2019
-ms.author: mbaldwin
-ms.openlocfilehash: 7023a2301b6b6137f7a0485523c68f21d72d67a9
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.date: 08/11/2020
+ms.author: sudbalas
+ms.openlocfilehash: 8f32fcc319c3bffd9089d894c5376268227a0151
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87385744"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88135935"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки
 
@@ -58,11 +58,7 @@ az keyvault update -n ContosoVault --enable-soft-delete true
 
 ### <a name="new-key-vault"></a>Новое хранилище ключей
 
-Обратимое удаление для нового хранилища ключей включается во время создания путем добавления флага --enable-soft-delete в команду create.
-
-```azurecli
-az keyvault create --name ContosoVault --resource-group ContosoRG --enable-soft-delete true --location westus
-```
+Обратимое удаление по умолчанию включено автоматически для всех хранилищ ключей. После 31 декабря 2020 г. вы больше не сможете создать хранилище ключей без включенного обратимого удаления.
 
 ### <a name="verify-soft-delete-enablement"></a>Проверка включения обратимого удаления
 

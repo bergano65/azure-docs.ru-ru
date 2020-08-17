@@ -287,8 +287,10 @@
       items:
         - name: Обзор
           href: offline-backup-overview.md
-        - name: Автономное резервное копирование с помощью Azure Data Box
+        - name: Автономное резервное копирование с помощью Azure Data Box (MARS)
           href: offline-backup-azure-data-box.md
+        - name: Автономное резервное копирование с помощью Azure Data Box (DPM/MABS)
+          href: offline-backup-azure-data-box-dpm-mabs.md
         - name: Автономное резервное копирование с помощью импорта и экспорта (MARS)
           href: backup-azure-backup-import-export.md
         - name: Автономное резервное копирование с помощью импорта и экспорта (DPM/MABS)

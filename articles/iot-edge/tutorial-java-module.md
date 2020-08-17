@@ -12,12 +12,12 @@ ms.custom:
 - mvc
 - mqtt
 - devx-track-java
-ms.openlocfilehash: 86c2bc86a4eeea8b04c4f22c20edade2eac2a811
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.openlocfilehash: ef4b42b56ea3e9e73de6d5bc793b2f1b206f34f3
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87439031"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87829991"
 ---
 # <a name="tutorial-develop-a-java-iot-edge-module-for-linux-devices"></a>Руководство по Разработка модуля IoT Edge на языке Java для устройств Linux
 
@@ -62,7 +62,7 @@ ms.locfileid: "87439031"
 * [Maven](https://maven.apache.org/)
 
    >[!TIP]
-   >Переменные среды для Java и Maven будут добавлены в ходе установки. Вам потребуется перезапустить все терминалы Visual Studio Code, экземпляры PowerShell или командной строки, которые были открыты на момент добавления таких переменных среды. Это позволит гарантировать правильную обработку команд Java и Maven такими средствами.
+   >В процессе установки Java и Maven в систему добавляются переменные среды. После завершения установки перезапустите все открытые терминалы Visual Studio Code, PowerShell или экземпляры командной строки. Это позволит гарантировать правильную обработку команд Java и Maven такими средствами.
 
 ## <a name="create-a-module-project"></a>Создание проекта модуля
 

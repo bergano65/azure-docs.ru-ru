@@ -1,6 +1,6 @@
 ---
 title: Руководство по распаковке, подключению и разблокировке Диска Azure Data Box | Документация Майкрософт
-description: Используйте это руководство, чтобы узнать, как настроить диск Azure Data Box
+description: Из этого руководства вы узнаете, как распаковать Диск Azure Data Box, подключиться к дискам, получить ключ доступа и разблокировать диски на клиентах Windows и Linux.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/04/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 1fbd99e8233b068efda4d0fb87e87788f49835cf
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 570653d620c5e314db9e6a0bc56d731f8acf9296
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79214366"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87925657"
 ---
 ::: zone target="docs"
 

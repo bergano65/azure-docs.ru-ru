@@ -1,17 +1,17 @@
 ---
 title: Краткое руководство. Создание реестра на портале
-description: Быстрый способ изучить создание частного реестра Docker в Реестре контейнеров Azure на портале Azure.
+description: Быстрый способ изучить создание частного реестра контейнеров Azure с помощью портала Azure.
 ms.topic: quickstart
-ms.date: 06/11/2020
+ms.date: 08/04/2020
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 82f9a6b02832b718d5b4e7b662c590f1992af595
-ms.sourcegitcommit: 4ac596f284a239a9b3d8ed42f89ed546290f4128
+ms.openlocfilehash: ace1030923ea226376369941badafafa662d25ce
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84752866"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88031830"
 ---
-# <a name="quickstart-create-a-private-container-registry-using-the-azure-portal"></a>Краткое руководство. Создание частного реестра контейнеров с помощью портала Azure
+# <a name="quickstart-create-an-azure-container-registry-using-the-azure-portal"></a>Краткое руководство. Создание реестра контейнеров Azure с помощью портала Azure
 
 Реестр контейнеров Azure — это частный реестр Docker в Azure, где можно хранить частные образы и связанные артефакты контейнеров Docker и управлять ими. В этом кратком руководстве вы создадите реестр контейнеров с помощью портала Azure. Затем используйте команды Docker, чтобы отправить образ контейнера в реестр, после чего извлеките образ из контейнера и запустите его.
 
@@ -41,14 +41,20 @@ ms.locfileid: "84752866"
 
 :::image type="content" source="media/container-registry-get-started-portal/qs-portal-05.png" alt-text="Страница обзора реестра контейнеров на портале":::
 
-Запишите значение **сервера входа**. Это значение используется в следующих шагах при отправке и извлечении изображения с помощью Docker.
+Запишите имя реестра и значение **сервера входа**. Эти значения используются в следующих шагах при отправке и извлечении образов с помощью Docker.
 
 ## <a name="log-in-to-registry"></a>Вход в раздел реестра
 
-Перед отправкой и извлечением образов контейнеров необходимо войти в экземпляр реестра. [Войдите в Azure CLI][get-started-with-azure-cli] на локальном компьютере, а затем выполните команду [az acr login][az-acr-login]. (При входе с помощью Azure CLI укажите только имя реестра. Не добавляйте суффикс "azurecr.io".)
+Перед отправкой и извлечением образов контейнеров необходимо войти в экземпляр реестра. [Войдите в Azure CLI][get-started-with-azure-cli] на локальном компьютере, а затем выполните команду [az acr login][az-acr-login]. (При входе с помощью Azure CLI укажите только имя реестра. Не включайте суффикс домена azurecr.io.)
 
 ```azurecli
 az acr login --name <registry-name>
+```
+
+Пример
+
+```azurecli
+az acr login --name mycontainerregistry
 ```
 
 По завершении команда возвращает `Login Succeeded`. 

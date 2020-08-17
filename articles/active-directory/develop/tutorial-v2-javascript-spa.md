@@ -1,6 +1,7 @@
 ---
-title: Руководство по работе с одностраничным приложением JavaScript — платформа удостоверений Майкрософт | Azure
-description: Узнайте, как одностраничные приложения JavaScript могут вызывать API, которым требуются маркеры доступа от конечной точки Azure Active Directory версии 2.0.
+title: Руководство. Одностраничное приложение JavaScript | Azure
+titleSuffix: Microsoft identity platform
+description: Из этого руководства вы узнаете, как одностраничные приложения JavaScript могут вызывать API, для которого требуются маркеры доступа, выданные платформой удостоверений Майкрософт.
 services: active-directory
 author: navyasric
 manager: CelesteDG
@@ -8,15 +9,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 03/20/2019
+ms.date: 08/06/2020
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, devx-track-javascript
-ms.openlocfilehash: 745132284ee48270b46b6bd2f785d8bec19404fb
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 71516104ce5711f716b6af9d37ba96b431749fa3
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87129684"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118201"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)
 
@@ -25,8 +26,8 @@ ms.locfileid: "87129684"
 - Получение маркера доступа
 - вызвать API Microsoft Graph и другие API, которым требуются маркеры доступа от *конечной точки платформы удостоверений Майкрософт*.
 
->[!NOTE]
-> Если вы не знакомы с работой платформы удостоверений Майкрософт, рекомендуем начать со статьи [Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript](quickstart-v2-javascript.md).
+>[!TIP]
+> В этом учебнике используется MSAL.js версии 1.x, в которой можно использовать только поток с неявным предоставлением разрешения для одностраничных приложений. Мы рекомендуем использовать для всех новых приложений [MSAL.js версии 2.x и поток кода авторизации с поддержкой PKCE и CORS](tutorial-v2-javascript-auth-code.md).
 
 ## <a name="how-the-sample-app-generated-by-this-guide-works"></a>Как работает пример приложения, созданный в этом руководстве
 
@@ -322,7 +323,7 @@ ms.locfileid: "87129684"
 
  Где:
  - *\<Enter_the_Application_Id_Here>*  — это **идентификатор приложения (клиента)** для зарегистрированного приложения.
- - *\<Enter_the_Cloud_Instance_Id_Here>* представляет экземпляр облака Azure. Для основного или глобального облака Azure просто введите *https://login.microsoftonline.com* . Сведения для **национальных** облаков (например, Китая) см. в [этой статье](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud).
+ - *\<Enter_the_Cloud_Instance_Id_Here>* представляет экземпляр облака Azure. Для основного или глобального облака Azure просто введите *https://login.microsoftonline.com* . Сведения для **национальных** облаков (например, Китая) см. в [этой статье](./authentication-national-cloud.md).
  - *\<Enter_the_Tenant_info_here>* может иметь несколько значений:
    - Если приложение поддерживает *учетные записи только в этом каталоге организации*, замените это значение **идентификатором клиента** или **именем клиента** (например, *contoso.microsoft.com*).
    - Если ваше приложение поддерживает *учетные записи в любом каталоге организации*, замените это значение на **organizations**.
@@ -446,7 +447,7 @@ ms.locfileid: "87129684"
    ```
 
    Где:
-   - *\<Enter_the_Graph_Endpoint_Here>*  — экземпляр API MS Graph. Для глобальной конечной точки API Microsoft Graph просто замените эту строку на `https://graph.microsoft.com`. Сведения о национальных облачных развертываниях см. [здесь](https://docs.microsoft.com/graph/deployments).
+   - *\<Enter_the_Graph_Endpoint_Here>*  — экземпляр API MS Graph. Для глобальной конечной точки API Microsoft Graph просто замените эту строку на `https://graph.microsoft.com`. Сведения о национальных облачных развертываниях см. [здесь](/graph/deployments).
 
 1. Затем создайте JS-файл с именем `graph.js` для вызова REST к API Microsoft Graph и добавьте следующий код:
 

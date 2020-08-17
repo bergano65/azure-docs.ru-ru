@@ -5,12 +5,12 @@ author: dkkapur
 ms.author: dekapur
 ms.date: 10/1/2018
 ms.topic: overview
-ms.openlocfilehash: e64cc158a18e604cbd022be5c91350c95258272c
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: b7061a178a3f5a9d126afab3fc1f9aa77d5cc050
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86257810"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927034"
 ---
 # <a name="what-is-service-fabric-mesh"></a>Что такое Сетка Service Fabric?
 
@@ -42,7 +42,7 @@ ms.locfileid: "86257810"
 
 - Развертывание и управление приложениями без явной подготовки к работе и управления инфраструктурой.  Сетка Service Fabric подготавливает к работе, обновляет, исправляет и поддерживает базовую инфраструктуру.
 - Настройте непрерывную интеграцию с помощью встроенного инструментария, чтобы легко упаковывать и развертывать приложения.
-- Используйте все возможности ресурсов Azure Resource Manager. К примерам этих возможностей относятся журнал аудита и [управление доступом на основе ролей](../role-based-access-control/overview.md). Все ресурсы, развертываемые в службе Сетки Service Fabric в Azure, — это ресурсы Azure Resource Manager. К этим ресурсам относятся приложения, службы, секреты и т. д.
+- Используйте все возможности ресурсов Azure Resource Manager. К примерам этих возможностей относятся журнал аудита и [управление доступом Azure на основе ролей (Azure RBAC)](../role-based-access-control/overview.md). Все ресурсы, развертываемые в службе Сетки Service Fabric в Azure, — это ресурсы Azure Resource Manager. К этим ресурсам относятся приложения, службы, секреты и т. д.
 - Развертывание и управление ресурсами с помощью [портала Azure](https://portal.azure.com), шаблонов Resource Manager, библиотек Azure CLI или PowerShell.
 - Настройте оперативный мониторинг и оповещение с помощью [Application Insights](/azure/application-insights/) (или выбранного средства) для сбора операционных и диагностических трассировок с платформы.
 - Получите доступ к информации о диагностике приложения из модели приложения, используя [Application Insights](/azure/application-insights/) или выбранное средство.

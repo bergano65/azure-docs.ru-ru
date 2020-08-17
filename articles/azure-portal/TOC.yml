@@ -27,20 +27,16 @@
       href: azure-portal-dashboards-create-programmatically.md
 - name: Практические руководства
   items:
-    - name: Задание настроек для портала Azure
+    - name: Управление параметрами и предпочтениями портала Azure
       href: set-preferences.md
-    - name: Настройка параметров времени ожидания активности для всех пользователей
-      href: admin-timeout.md
-    - name: Включение режима высокой контрастности или изменение темы
-      href: azure-portal-change-theme-high-contrast.md
     - name: 'Добавление, удаление и сортировка избранного'
       href: azure-portal-add-remove-sort-favorites.md
-    - name: Создание панелей мониторинга Azure и предоставление общего доступа к ним
-      href: azure-portal-dashboards.md
-    - name: Использование пользовательской плитки с поддержкой Markdown
-      href: azure-portal-markdown-tile.md
-    - name: Экспорт или удаление параметров пользователя
-      href: azure-portal-export-delete-settings.md
+    - name: Создание панелей мониторинга Azure
+      items:
+        - name: Создание панелей мониторинга Azure и предоставление общего доступа к ним
+          href: azure-portal-dashboards.md
+        - name: Использование пользовательской плитки с поддержкой Markdown
+          href: azure-portal-markdown-tile.md
     - name: Серия видеоинструкций по работе с порталом Azure
       href: azure-portal-video-series.md
     - name: Создание запросов на поддержку и управление ими

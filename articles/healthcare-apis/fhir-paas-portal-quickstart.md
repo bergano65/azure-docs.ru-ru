@@ -2,18 +2,18 @@
 title: Краткое руководство. Развертывание Azure API для FHIR с помощью портала Azure
 description: В этом кратком руководстве показано, как развернуть и настроить параметры Azure API для FHIR в Azure с помощью портала Azure.
 services: healthcare-apis
-author: hansenms
+author: matjazl
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: quickstart
-ms.date: 02/07/2019
-ms.author: mihansen
-ms.openlocfilehash: e729597e9d83c4e6096fe52b577b052d94ca4799
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.date: 03/15/2020
+ms.author: matjazl
+ms.openlocfilehash: 8c0448d31cd89e2ca969b81361b30bac3f9610e9
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "84820023"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87851942"
 ---
 # <a name="quickstart-deploy-azure-api-for-fhir-using-azure-portal"></a>Краткое руководство. Развертывание Azure API для FHIR с помощью портала Azure
 
@@ -31,34 +31,31 @@ ms.locfileid: "84820023"
 
 Чтобы найти Azure API для FHIR, введите FHIR в поле поиска:
 
-![Поиск интерфейсов API для здравоохранения](media/quickstart-paas-portal/portal-search-healthcare-apis.png)
+:::image type="content" source="media/quickstart-paas-portal/portal-search-healthcare-apis.png" alt-text="Поиск интерфейсов API для здравоохранения":::
 
 ## <a name="create-azure-api-for-fhir-account"></a>Создание учетной записи Azure API для FHIR
 
 Чтобы создать учетную запись Azure API для FHIR, выберите **Создать**.
 
-![Создание учетной записи Azure API для FHIR](media/quickstart-paas-portal/portal-create-healthcare-apis.png)
+:::image type="content" source="media/quickstart-paas-portal/portal-create-healthcare-apis.png" alt-text="Создание учетной записи Azure API для FHIR":::
 
 ## <a name="enter-account-details"></a>Ввод данных для учетной записи
 
 Выберите существующую группу ресурсов или создайте новую, выберите имя учетной записи и щелкните **Просмотр и создание**:
 
-![Сведения о новом API для здравоохранения](media/quickstart-paas-portal/portal-new-healthcareapi-details.png)
+:::image type="content" source="media/quickstart-paas-portal/portal-new-healthcareapi-details.png" alt-text="Сведения о новом API для здравоохранения":::
 
 Подтвердите создание и дождитесь, пока завершится развертывание API для FHIR.
 
-## <a name="additional-settings"></a>Дополнительные параметры
+## <a name="additional-settings-optional"></a>Дополнительные параметры (необязательно)
 
-Щелкните **Далее: дополнительные параметры**, чтобы указать центр, аудиторию, идентификаторы объектов удостоверений, которым будет разрешен доступ к этому Azure API для FHIR, включить SMART для FHIR, если потребуется, и настроить пропускную способность для базы данных:
+Вы также можете щелкнуть **Далее: Дополнительные параметры**, чтобы просмотреть параметры аутентификации. Конфигурация по умолчанию для Azure API для FHIR включает [использование Azure RBAC для назначения ролей плоскости данных](configure-azure-rbac.md). При настройке в этом режиме параметру "Центр авторизации" для службы FHIR будет задано значение арендатора Azure Active Directory подписки:
 
-- **Центр.** В качестве центра проверки подлинности для службы вы можете указать клиент Azure AD, который отличается от текущего, в который вы выполнили вход.
-- **Аудитория.** Мы рекомендуем сохранить предлагаемый по умолчанию вариант для аудитории, а именно URL-адрес сервера FHIR. Но здесь вы можете изменить это значение. Аудитория обозначает получателя, для которого предназначен маркер. В этом контексте он должен иметь значение, представляющее сам интерфейс API для FHIR.
-- **Allowed object IDs** (Допустимые идентификаторы объектов). Вы можете указать идентификаторы объектов удостоверений, которым нужно разрешить доступ к этому Azure API для FHIR. Дополнительные сведения о поиске идентификаторов объектов для пользователей и субъектов-служб см. в руководстве [Поиск идентификаторов объектов удостоверений](find-identity-object-ids.md).  
-- **Прокси-сервер SMART on FHIR** Вы можете включить прокси SMART on FHIR. Дополнительные сведения о настройке прокси SMART on FHIR см. в учебнике [Прокси SMART on FHIR для Azure API для FHIR](https://docs.microsoft.com/azure/healthcare-apis/use-smart-on-fhir-proxy).  
-- **Provisioned throughput (RU/s)** (Подготовленная пропускная способность, единиц запросов в секунду). Здесь можно указать параметры пропускной способности для базы данных, которую использует Azure API для FHIR. Этот параметр также можно изменить позже в колонке базы данных. Дополнительные сведения см. на странице [настройки параметров базы данных](configure-database.md).
+:::image type="content" source="media/rbac/confirm-azure-rbac-mode-create.png" alt-text="Параметры аутентификации по умолчанию":::
 
+Обратите внимание, что поле для ввода допустимых идентификаторов объектов неактивно, так как для настройки назначений ролей в этом случае используется Azure RBAC.
 
-![Настройка разрешенных идентификаторов объектов](media/quickstart-paas-portal/configure-audience.png)
+Если вы хотите настроить службу FHIR для использования внешнего или дополнительного арендатора Azure Active Directory, можно изменить центр авторизации и ввести идентификаторы объектов для пользователя и групп, которым должен быть разрешен доступ к серверу. Дополнительные сведения см. в руководстве о [локальной настройке RBAC](configure-local-rbac.md).
 
 ## <a name="fetch-fhir-api-capability-statement"></a>Получение инструкции возможностей API для FHIR
 
@@ -70,7 +67,7 @@ ms.locfileid: "84820023"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве показано, как развернуть Azure API для FHIR в своей подписке. Чтобы задать дополнительные параметры в Azure API для FHIR, см. соответствующее руководство.
+В этом кратком руководстве показано, как развернуть Azure API для FHIR в своей подписке. Чтобы задать дополнительные параметры в Azure API для FHIR, см. соответствующее руководство.
 
 >[!div class="nextstepaction"]
->[Дополнительные параметры в Azure API для FHIR](azure-api-for-fhir-additional-settings.md)
+>[Дополнительные параметры в Azure API для FHIR](azure-api-for-fhir-additional-settings.md)

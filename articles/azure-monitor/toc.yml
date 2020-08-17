@@ -147,7 +147,7 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: видны узлы
+    - name: Предупреждения
       items:
         - name: Обзор
           href: platform/alerts-overview.md
@@ -494,6 +494,8 @@
               href: platform/alerts-metric.md
             - name: Использование динамических порогов
               href: platform/alerts-dynamic-thresholds.md
+            - name: Отдельные предупреждения для нескольких временных рядов
+              href: platform/alerts-metric-multiple-time-series-single-rule.md
             - name: Оповещения метрик для журналов
               href: platform/alerts-metric-logs.md
             - name: Шаблон Resource Manager

@@ -1,6 +1,6 @@
 ---
 title: Руководство. Заказ Azure Data Box Heavy | Документация Майкрософт
-description: Изучите предварительные условия развертывания и порядок заказа Azure Data Box Heavy
+description: Из этого руководства вы узнаете о гибридном решении Azure Data Box Heavy, которое позволяет импортировать локальные данные в Azure. Здесь также описано, как заказать Data Box Heavy.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 91d78975106299c3b3a6df6d8dee05f337dd339a
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 9b2b97f11c1493deca9b79907e894efbb7b9c456
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83742989"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87920999"
 ---
 # <a name="tutorial-order-azure-data-box-heavy"></a>Руководство по Заказ Azure Data Box Heavy
 

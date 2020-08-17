@@ -1,5 +1,5 @@
 ---
-title: Управление приложениями с помощью Azure Active Directory | Документация Майкрософт
+title: Общие сведения об управлении приложениями в Azure Active Directory
 description: Общие сведения об использовании Azure Active Directory (AD) в качестве Системы управления идентификацией и доступом (IAM) для облачных и локальных приложений.
 services: active-directory
 author: kenwith
@@ -12,12 +12,12 @@ ms.date: 07/01/2020
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28b04828bc778a2b9076c9ea1970ce80f231fbe3
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: dafd3d7805924d92354c3de6ded50f17598f80f6
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386016"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88078076"
 ---
 # <a name="what-is-application-management"></a>Что такое управление приложениями?
 

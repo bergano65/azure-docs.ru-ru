@@ -11,17 +11,17 @@ author: johnpaulkee
 ms.author: joke
 ms.reviwer: sstein
 ms.date: 03/13/2019
-ms.openlocfilehash: 093214241757bdc3973d88d5a0e6f3157c6178c7
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: 84f3bbc01d7161dd6d7002102cc006dfae3ce3e4
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85251137"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118167"
 ---
 # <a name="create-an-elastic-job-agent-using-powershell"></a>Создание агента заданий обработки эластичных баз данных с помощью PowerShell
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-[Задания обработки эластичных баз данных](job-automation-overview.md#elastic-database-jobs-preview) позволяют выполнять скрипты Transact-SQL (T-SQL) в нескольких базах данных одновременно.
+[Задания обработки эластичных баз данных (предварительная версия)](job-automation-overview.md#elastic-database-jobs-preview) позволяют выполнять скрипты Transact-SQL (T-SQL) в нескольких базах данных одновременно.
 
 В рамках этого учебника вы узнаете о задачах, необходимых для выполнения запроса в нескольких базах данных:
 

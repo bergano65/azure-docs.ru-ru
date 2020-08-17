@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: sample
 ms.date: 05/18/2020
 ms.subservice: ''
-ms.openlocfilehash: 4446eef481e8370f7457311f6eae6ce40f9e6727
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ab869fc8577d4d1934be96404ded5a2051237bbf
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86539267"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87922734"
 ---
 # <a name="resource-manager-template-samples-for-azure-monitor"></a>Примеры шаблонов Resource Manager для службы Azure Monitor
 
@@ -49,7 +49,7 @@ az deployment group create \
 - видны узлы
   - [Правила генерации оповещений журнала](resource-manager-alerts-log.md) — оповещения от запросов журналов и журнала действий Azure.
   - [Правила генерации оповещений метрик](resource-manager-alerts-metric.md) — оповещения от метрик с использованием разных типов логики.
-- Application Insights — ожидается в ближайшее время.
+- [Application Insights](resource-manager-app-resource.md)
 - [Параметры диагностики](resource-manager-diagnostic-settings.md) — создание параметров диагностики для пересылки журналов и метрик от разных типов ресурсов.
 - [Запросы журнала](resource-manager-log-queries.md) — создание сохраненных запросов к журналу в рабочей области Log Analytics.
 - [Рабочая область Log Analytics](resource-manager-workspace.md) — создание рабочей области Log Analytics и настройка коллекции разных источников данных из агента Log Analytics.

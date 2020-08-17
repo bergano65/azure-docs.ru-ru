@@ -6,16 +6,74 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 07/08/2020
-ms.openlocfilehash: b36469a89c7bae39ae3c2d62792c2ccde0fcfda9
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 10d4cb8160d0bf9111903b193574e9e820ded221
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87799333"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87827747"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 
 В этой статье приводятся списки новых или значительно измененных статей об Azure Monitor. Он будет обновляться в первую неделю каждого месяца, чтобы включать в себя обновления статей за предыдущий месяц.
+
+## <a name="july-2020"></a>Июль 2020 г.
+
+### <a name="general"></a>Общие сведения
+- [Развертывание Azure Monitor](deploy-scale.md) — реструктуризация содержимого подключения Azure Monitor для виртуальных машин.
+- [Использование Приватного канала Azure для безопасного подключения сетей к Azure Monitor](platform/private-link-security.md) — добавлен раздел об ограничениях.
+
+### <a name="alerts"></a>видны узлы
+- [Правила действий для оповещений Azure Monitor](platform/alerts-action-rules.md) — добавлены процессы CLI.
+- [Создание групп действий и управление ими на портале Azure](platform/action-groups.md) — обновлено с учетом изменений в пользовательском интерфейсе.
+- [Сохраненные запросы в Log Analytics Azure Monitor](log-query/saved-queries.md) — новая статья.
+- [Устранение неполадок, связанных с оповещениями журналов в Azure Monitor,](platform/alerts-troubleshoot-log.md) — добавлен раздел о квоте правила генерации оповещений.
+- [Устранение неполадок с оповещениями о метриках Azure](platform/alerts-troubleshoot-metric.md) — добавлен раздел о правиле генерации оповещений для пользовательской метрики, которая еще не выдается.
+- [Сведения о работе оповещений о метриках в Azure Monitor](platform/alerts-metric-overview.md) — добавлены рекомендации по выбору степени детализации агрегации.
+
+### <a name="application-insights"></a>Application Insights
+- [Заметки о выпуске расширения веб-приложения Azure — Application Insights](app/web-app-extension-release-notes.md) — новая статья.
+- [Примеры шаблонов Resource Manager для ресурсов Application Insights](samples/resource-manager-app-resource.md) — новая статья.
+- [Устранение неполадок с помощью Azure Application Insights Profiler](app/profiler-troubleshooting.md) — добавлено примечание об ошибке при запуске профилировщика для приложений ASP.NET Core в Службе приложений Azure. 
+
+### <a name="containers"></a>Контейнеры
+- [Оповещения журнала от Azure Monitor для контейнеров](insights/container-insights-log-alerts.md) — новая статья.
+- [Оповещения о метриках от Azure Monitor для контейнеров](insights/container-insights-metric-alerts.md) — новая статья.
+
+### <a name="logs"></a>Журналы
+- [Ключ Azure Monitor, управляемый клиентом](platform/customer-managed-keys.md) — добавлено сообщение об ошибке и раздел с конфигурацией CMK для запросов.
+- [API сборщика данных HTTP в Azure Monitor](platform/data-collector-api.md) — добавлен пример на языке Python 3.
+- [Оптимизация запросов журналов в Azure Monitor](log-query/query-optimization.md) — добавлен раздел о том, как избежать множественных проверок данных при использовании вложенных запросов.
+- [Руководство. Начало работы с запросами Log Analytics](log-query/get-started-portal.md) — добавлено видео.
+
+### <a name="platform-logs"></a>Журналы платформы
+- [Создание параметров диагностики для отправки журналов платформы и метрик в различные места назначения](platform/diagnostic-settings.md) — добавлено видео.
+- [Примеры шаблонов Resource Manager для службы Azure Monitor](samples/resource-manager-samples.md) — добавлен пример ARM с типом назначения журналов. 
+
+### <a name="solutions"></a>Решения
+- [Решения для мониторинга в Azure Monitor](insights/solutions.md) — добавлены процессы CLI.
+- [Решение для управления Office 365 в Azure](insights/solution-office-365.md) — изменена дата прекращения поддержки.
+
+### <a name="virtual-machines"></a>Виртуальные машины
+
+Новые и измененные статьи, посвященные реструктуризации содержимого Azure Monitor для виртуальных машин
+
+- [Общие сведения об Azure Monitor для виртуальных машин](insights/vminsights-overview.md)
+- [Настройка рабочей области Log Analytics для Azure Monitor для виртуальных машин](insights/vminsights-configure-workspace.md)
+- [Подключение компьютеров Linux к Azure Monitor](platform/agent-linux.md)
+- [Включение Azure Monitor для гибридной среды](insights/vminsights-enable-hybrid.md)
+- [Включение Azure Monitor для одной виртуальной машины или масштабируемого набора виртуальных машин на портале Azure](insights/vminsights-enable-portal.md)
+- [Включение Azure Monitor для виртуальных машин с помощью Политики Azure](insights/vminsights-enable-at-scale-policy.md)
+- [Общие сведения о включении Azure Monitor для виртуальных машин](insights/vminsights-enable-overview.md)
+- [Включение Azure Monitor для виртуальных машин с помощью PowerShell](insights/vminsights-enable-powershell.md)
+- [Включение Azure Monitor для виртуальных машин с помощью шаблонов Resource Manager](insights/vminsights-enable-resource-manager.md)
+- [Включение Azure Monitor для виртуальных машин с помощью PowerShell или шаблонов](insights/vminsights-enable-at-scale-powershell.md)
+
+
+### <a name="visualizations"></a>Визуализации
+- [Обновление визуализаций на панели мониторинга Log Analytics](log-query/dashboard-upgrade.md) — обновлена частота обновления.
+- [Визуализация данных из Azure Monitor](visualizations.md) — добавлено видео.
+
 
 ## <a name="june-2020"></a>Июнь 2020 г.
 
@@ -66,7 +124,8 @@ ms.locfileid: "87799333"
 - [Отправка журнала действий Azure в рабочую область Log Analytics с помощью портала Azure](learn/quick-collect-activity-log-portal.md) — новая статья.
 - [Отправка журнала действий Azure в рабочую область Log Analytics с помощью шаблона Azure Resource Manager](learn/quick-collect-activity-log-arm.md) — новая статья.
 
-#### <a name="new-and-updated-articles-from-restructure-and-consolidation-of-platform-log-content"></a>Новые и измененные статьи, посвященные реструктуризации и консолидации содержимого журнала платформы
+Новые и измененные статьи, посвященные реструктуризации и консолидации содержимого журнала платформы
+
 - [Архивация журналов ресурсов Azure в учетной записи хранения](./platform/resource-logs.md#send-to-azure-storage)
 - [Схема событий журнала действий Azure](platform/activity-log-schema.md)
 - [Журнал действий Azure](platform/activity-log.md)
@@ -84,7 +143,7 @@ ms.locfileid: "87799333"
 - [Просмотр событий в журнале действий Azure (Azure Monitor)](./platform/activity-log.md#view-the-activity-log)
 
 ### <a name="virtual-machines"></a>Виртуальные машины
-- [Включение Azure Monitor для виртуальных машин на портале Azure](insights/vminsights-enable-single-vm.md) — добавлены сведения об Azure Arc.
+- [Включение Azure Monitor для виртуальных машин на портале Azure](./insights/vminsights-enable-portal.md) — добавлены сведения об Azure Arc.
 - [Общие сведения о включении Azure Monitor для виртуальных машин](insights/vminsights-enable-overview.md) — добавлены сведения об Azure Arc.
 - [Общие сведения об Azure Monitor для виртуальных машин](insights/vminsights-overview.md) — добавлены сведения об Azure Arc.
 
@@ -293,7 +352,7 @@ ms.locfileid: "87799333"
 
 - [Общие сведения об Azure Monitor для виртуальных машин](insights/vminsights-overview.md)
 - [Azure Monitor для виртуальных машин (GA): вопросы и ответы](insights/vminsights-ga-release-faq.md) 
-- [Включение Azure Monitor для виртуальных машин с помощью Политики Azure](insights/vminsights-enable-at-scale-policy.md) 
+- [Включение Azure Monitor для виртуальных машин с помощью Политики Azure](./insights/vminsights-enable-policy.md) 
 - [Создание диаграммы производительности с помощью службы "Azure Monitor для виртуальных машин"](insights/vminsights-performance.md)
 - [Как запрашивать журналы из Azure Monitor для виртуальных машин](insights/vminsights-log-search.md)
 - [Просмотр зависимостей приложений с помощью службы "Azure Monitor для виртуальных машин"](insights/vminsights-maps.md) 

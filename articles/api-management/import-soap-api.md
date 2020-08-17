@@ -1,6 +1,6 @@
 ---
 title: Импорт SOAP API с помощью портала Azure | Документация Майкрософт
-description: Сведения об импорте SOAP API с помощью службы управления API.
+description: Сведения о том, как импортировать стандартное XML-представление SOAP API, а также о проверке API на портале Azure и портале разработчиков.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/22/2020
 ms.author: apimpm
-ms.openlocfilehash: 7b1fd34824bec9641edc94ce278fa21a1b57b2c0
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 583179c4678b43bef25174835ec2701d571b37b6
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82202746"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905656"
 ---
 # <a name="import-soap-api"></a>импорт SOAP API;
 
