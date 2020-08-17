@@ -7,13 +7,13 @@ author: kromerm
 manager: anandsub
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 04/27/2020
-ms.openlocfilehash: 2edd5b661240b6156cf8a02059b2b9a668c402f3
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.date: 08/16/2020
+ms.openlocfilehash: 0a691b562ebf030712eb0c13a688ea9a52fdb164
+ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83829126"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88263475"
 ---
 # <a name="troubleshoot-data-flows-in-azure-data-factory"></a>Устранение неполадок с потоками данных в Фабрике данных Azure
 
@@ -70,6 +70,13 @@ ms.locfileid: "83829126"
 - **Причины**. Это ошибка серверной службы. Вы можете повторить операцию, а также перезапустить сеанс отладки.
 - **Рекомендация**. Если повторная попытка и перезапуск не помогли устранить проблему, обратитесь в службу поддержки.
 
+### <a name="error-code-debug-data-preview-no-output-data-on-join"></a>Код ошибки: Отладочные данные предварительный просмотр не выходные данные при соединении
+
+- **Сообщение**: существует большое количество значений NULL или отсутствующих значений, которые могут быть вызваны тем, что вычислено слишком мало строк. Попробуйте обновить ограничение для строк отладки и обновить данные.
+- **Причины**: условие объединения не соответствует ни одной строке или привело к большому ЧИСЛУ значений NULL при предварительном просмотре данных.
+- **Рекомендация**: перейдите в раздел Параметры отладки и увеличьте число строк в пределах исходной строки. Убедитесь, что выбрано и Azure IR с большим количеством кластеров потоков данных для обработки дополнительных данных.
+
+
 ## <a name="general-troubleshooting-guidance"></a>Общие рекомендации по устранению неполадок
 
 1. Проверьте состояние подключений к набору данных. В каждом преобразовании источника и приемника проверьте связанную службу для каждого набора данных, который вы используете, и протестируйте соединения.
@@ -78,10 +85,10 @@ ms.locfileid: "83829126"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами.
-*  [Блог о Фабрике данных](https://azure.microsoft.com/blog/tag/azure-data-factory/)
+Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
+*  [Блог о Фабрике данных](https://techcommunity.microsoft.com/t5/azure-data-factory/bg-p/AzureDataFactoryBlog)
 *  [Запросы на добавление функции в Фабрику данных](https://feedback.azure.com/forums/270578-data-factory)
-*  [Видео по Azure](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
+*  [Видео по Azure](https://www.youtube.com/channel/UC2S0k7NeLcEm5_IhHUwpN0g/videos)
 *  [Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)](https://docs.microsoft.com/answers/topics/azure-data-factory.html)
 *  [Форум Stack Overflow по Фабрике данных](https://stackoverflow.com/questions/tagged/azure-data-factory)
 *  [Сведения о Фабрике данных в Twitter](https://twitter.com/hashtag/DataFactory)
