@@ -1,14 +1,14 @@
 ---
 title: Создание запрашиваемых виртуальных машин и управление ими в Azure DevTest Labs | Документация Майкрософт
-description: Узнайте, как добавить запрашиваемую виртуальную машину в лабораторию в Azure DevTest Labs
+description: Узнайте, как с помощью портал Azure добавить запрашиваемую виртуальную машину в Azure DevTest Labs и просмотреть следующие процессы, чтобы запрашивать или отменять запрос виртуальной машины.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 7a4e465f0ba6c592f173a0c48aadd51f3e12ea07
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1fe949d7104fe6437087e77c403cc0d921ebd025
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85481312"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270985"
 ---
 # <a name="create-and-manage-claimable-vms-in-azure-devtest-labs"></a>Создание запрашиваемой виртуальной машины и управление ею в лаборатории Azure DevTest Labs
 Добавление запрашиваемой виртуальной машины в лабораторию аналогично [добавлению стандартной виртуальной машины](devtest-lab-add-vm.md). Оно выполняется *на базе*[пользовательского образа](devtest-lab-create-template.md), [формулы](devtest-lab-manage-formulas.md) или [образа Marketplace](devtest-lab-configure-marketplace-images.md). В этой статье описывается добавление запрашиваемой виртуальной машины в лабораторию в DevTest Labs с помощью портала Azure, а также действия пользователя для резервирования или освобождения виртуальной машины.
@@ -86,6 +86,6 @@ ms.locfileid: "85481312"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * После создания виртуальной машины вы можете подключиться к ней, выбрав **Подключиться** на соответствующей панели управления.
 * Изучите [коллекцию шаблонов быстрого запуска DevTest Labs Azure Resource Manager](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).

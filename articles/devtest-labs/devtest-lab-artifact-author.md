@@ -1,14 +1,14 @@
 ---
 title: Создание пользовательских артефактов для виртуальной машины DevTest Labs | Документация Майкрософт
-description: Узнайте, как создавать собственные артефакты, которые можно использовать с помощью решения Azure DevTest Labs.
+description: Узнайте, как создавать артефакты для использования с Azure DevTest Labs для развертывания и настройки приложений после подготовки виртуальной машины.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 775908749f52c71eeaf97eef25e3787f9b6794fc
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: 85acfcc3811e671e58fadab08a23951778e1323d
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85857016"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270688"
 ---
 # <a name="create-custom-artifacts-for-your-devtest-labs-virtual-machine"></a>Создание пользовательских артефактов для виртуальной машины DevTest Labs
 
@@ -44,7 +44,7 @@ ms.locfileid: "85857016"
   }
 ```
 
-| Имя элемента | Обязательно? | Описание: |
+| Имя элемента | Необходим? | Описание |
 | --- | --- | --- |
 | $schema |Нет |Расположение файла схемы JSON, позволяющего проверять подлинность файла определения. |
 | title |Да |Имя артефакта отображается в лаборатории. |
@@ -69,7 +69,7 @@ ms.locfileid: "85857016"
   }
 ```
 
-| Имя элемента | Обязательно? | Описание |
+| Имя элемента | Необходим? | Описание |
 | --- | --- | --- |
 | type |Да |Тип значения параметра. Ниже приведен список допустимых типов. |
 | displayName |Да |Имя параметра, отображаемое для пользователя в лаборатории. |
@@ -144,9 +144,9 @@ ms.locfileid: "85857016"
       ![Пример папки артефакта](./media/devtest-lab-artifact-author/git-repo.png)
 5. Если вы используете свой репозиторий для хранения артефактов, добавьте репозиторий артефактов в лабораторию, как описано в руководстве по [добавлению репозитория Git для хранения артефактов и шаблонов](devtest-lab-add-artifact-repo.md).
 
-## <a name="related-articles"></a>Похожие статьи
+## <a name="related-articles"></a>Связанные статьи
 * [Диагностика сбоев артефактов на виртуальной машине Azure DevTest Labs](devtest-lab-troubleshoot-artifact-failure.md)
 * [Join a VM to existing AD Domain using ARM template in Azure Dev Test Lab](https://www.visualstudiogeeks.com/blog/DevOps/Join-a-VM-to-existing-AD-domain-using-ARM-template-AzureDevTestLabs) (Присоединение виртуальной машины к имеющемуся домену AD с помощью шаблона ARM в Azure DevTest Labs)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [добавить репозиторий артефактов Git в лабораторию](devtest-lab-add-artifact-repo.md).

@@ -1,18 +1,18 @@
 ---
 title: 'Создание узла Azure бастиона: портал'
-description: Из этой статьи вы узнаете, как создать узел бастиона для Azure с помощью портала.
+description: В этой статье вы узнаете, как создать узел бастиона для Azure, который обеспечивает подключение RDP или SSH ко всем виртуальным машинам в виртуальной сети.
 services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: how-to
 ms.date: 04/24/2020
 ms.author: cherylmc
-ms.openlocfilehash: d18d520419e77a225431d9c2a395f62411656537
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1e0bc9a17a12afac6d91867b19aba0f90b7f6edb
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84744278"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270756"
 ---
 # <a name="create-an-azure-bastion-host-using-the-portal"></a>Создание узла бастиона Azure с помощью портала
 
@@ -30,7 +30,7 @@ ms.locfileid: "84744278"
 
 Этот раздел поможет вам создать новый ресурс Azure бастиона из портал Azure.
 
-1. На **домашней странице** или в меню [портала Azure](https://portal.azure.com) щелкните **Создать ресурс**.
+1. В меню [портала Microsoft Azure](https://portal.azure.com) или на **домашней** странице выберите **Создать ресурс**.
 
 1. На **новой** странице в поле *Поиск в Marketplace* введите **бастиона**, а затем нажмите клавишу **Ввод** , чтобы получить результаты поиска.
 
@@ -59,7 +59,7 @@ ms.locfileid: "84744278"
 1. На странице **Создание бастиона** нажмите кнопку **создать**.
 1. Вы увидите сообщение о том, что развертывание выполняется. Состояние будет отображаться на этой странице при создании ресурсов. Создание и развертывание ресурса бастиона занимает около 5 минут.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в статье [вопросы и ответы по бастиона](bastion-faq.md) .
 
