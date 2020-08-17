@@ -1,14 +1,14 @@
 ---
 title: Добавление виртуальной машины в лабораторию в Azure DevTest Labs | Документация Майкрософт
-description: Узнайте, как добавить виртуальную машину в лабораторию в Azure DevTest Labs
+description: Узнайте, как использовать портал Azure для добавления виртуальной машины в лабораторию в Azure DevTest Labs. Можно выбрать базу, которая является пользовательским изображением или формулой.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: a872fdaa3d7d5b2cf5aff17ea15d07604dc287b3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c61e6e685a52ac3658cb9b9ca37f64fc51f3ce1e
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85483964"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270722"
 ---
 # <a name="add-a-vm-to-a-lab-in-azure-devtest-labs"></a>Добавление виртуальной машины в лабораторию в Azure DevTest Labs
 Если вы уже [создали свою первую виртуальную машину](tutorial-create-custom-lab.md#add-a-vm-to-the-lab), скорее всего, вы использовали предварительно загруженный [образ Мarketplace](devtest-lab-configure-marketplace-images.md). Теперь, если вы хотите добавить в лабораторию больше виртуальных машин, вы также можно использовать *базовый образ* — [пользовательский образа](devtest-lab-create-template.md) или [формулу](devtest-lab-manage-formulas.md). В данном руководстве описывается добавление виртуальной машины в лабораторию в DevTest Labs с помощью портала Azure.
@@ -108,7 +108,7 @@ ms.locfileid: "85483964"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * После создания виртуальной машины к ней можно подключиться, щелкнув **Подключиться** в области виртуальной машины.
 * Узнайте, как [создавать пользовательские артефакты для виртуальной машины DevTest Labs](devtest-lab-artifact-author.md).
 * Изучите [коллекцию шаблонов быстрого запуска DevTest Labs Azure Resource Manager](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).

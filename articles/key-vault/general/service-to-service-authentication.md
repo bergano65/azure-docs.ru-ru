@@ -9,17 +9,17 @@ ms.date: 08/08/2020
 ms.topic: conceptual
 ms.service: key-vault
 ms.subservice: general
-ms.openlocfilehash: d48e9ac71ba12ecd2eaadb8ba333f5440c68af4b
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 56ada47e46d788ca77f65e354836e19f4d3969d2
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88034793"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272762"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET
 
 > [!NOTE]
-> **Microsoft. Azure. Services. AppAuthentication** больше не рекомендуется использовать с новым пакетом SDK Key Vault. Она заменена на WIT-новую библиотеку удостоверений Azure **дефаултазурекредентиалс** , доступную для .NET, Java, TypeScript и Python, и должна использоваться для всех новых разработок. Дополнительные сведения можно найти здесь: [Проверка подлинности и пакет Azure SDK](https://devblogs.microsoft.com/azure-sdk/authentication-and-the-azure-sdk/).
+> **Microsoft. Azure. Services. AppAuthentication** больше не рекомендуется использовать с новым пакетом SDK Key Vault. Он заменяется новой библиотекой удостоверений Azure **дефаултазурекредентиалс** , доступной для .NET, Java, TypeScript и Python, и должна использоваться для всех новых разработок. Дополнительные сведения можно найти здесь: [Проверка подлинности и пакет Azure SDK](https://devblogs.microsoft.com/azure-sdk/authentication-and-the-azure-sdk/).
 
 Для проверки подлинности в Azure Key Vault требуются учетные данные Azure Active Directory (Azure AD), либо общий секрет, либо сертификат.
 
@@ -110,7 +110,7 @@ ms.locfileid: "88034793"
 
 Когда служба вызывает службы Azure, можно выполнить предыдущие действия, так как службы Azure предоставляют доступ пользователям и приложениям.
 
-При создании службы, которая вызывает пользовательскую службу, выполните проверку подлинности среды локальной разработки с помощью учетных данных клиента Azure AD. Существует два варианта.
+При создании службы, которая вызывает пользовательскую службу, выполните проверку подлинности среды локальной разработки с помощью учетных данных клиента Azure AD. Имеются две возможности:
 
 - Войдите в Azure, используя субъект-службу:
 
@@ -210,7 +210,7 @@ ms.locfileid: "88034793"
     az ad sp create-for-rbac --keyvault <keyvaultname> --cert <certificatename> --create-cert --skip-assignment
     ```
 
-    Идентификатор сертификата будет URL-адресом в формате`https://<keyvaultname>.vault.azure.net/secrets/<certificatename>`
+    Идентификатор сертификата будет URL-адресом в формате `https://<keyvaultname>.vault.azure.net/secrets/<certificatename>`
 
 1. Замените `{KeyVaultCertificateSecretIdentifier}` в этой строке подключения на идентификатор сертификата:
 
@@ -237,12 +237,12 @@ ms.locfileid: "88034793"
 
 | Параметр строки подключения | Сценарий | Комментарии|
 |:--------------------------------|:------------------------|:----------------------------|
-| `RunAs=Developer; DeveloperTool=AzureCli` | Локальная разработка | `AzureServiceTokenProvider`использует Azure CLI для получения токена. |
-| `RunAs=Developer; DeveloperTool=VisualStudio` | Локальная разработка | `AzureServiceTokenProvider`использует Visual Studio для получения токена. |
-| `RunAs=CurrentUser` | Локальная разработка | Не поддерживается в .NET Core. `AzureServiceTokenProvider`использует встроенную проверку подлинности Azure AD для получения токена. |
-| `RunAs=App` | [Управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/index.yml) | `AzureServiceTokenProvider`использует управляемое удостоверение для получения токена. |
-| `RunAs=App;AppId={ClientId of user-assigned identity}` | [Удостоверение, назначенное пользователем для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) | `AzureServiceTokenProvider`использует назначенное пользователем удостоверение для получения токена. |
-| `RunAs=App;AppId={TestAppId};KeyVaultCertificateSecretIdentifier={KeyVaultCertificateSecretIdentifier}` | Проверка подлинности настраиваемых служб | `KeyVaultCertificateSecretIdentifier`Идентификатор секрета сертификата. |
+| `RunAs=Developer; DeveloperTool=AzureCli` | Локальная разработка | `AzureServiceTokenProvider` использует Azure CLI для получения токена. |
+| `RunAs=Developer; DeveloperTool=VisualStudio` | Локальная разработка | `AzureServiceTokenProvider` использует Visual Studio для получения токена. |
+| `RunAs=CurrentUser` | Локальная разработка | Не поддерживается в .NET Core. `AzureServiceTokenProvider` использует встроенную проверку подлинности Azure AD для получения токена. |
+| `RunAs=App` | [Управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/index.yml) | `AzureServiceTokenProvider` использует управляемое удостоверение для получения токена. |
+| `RunAs=App;AppId={ClientId of user-assigned identity}` | [Удостоверение, назначенное пользователем для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) | `AzureServiceTokenProvider` использует назначенное пользователем удостоверение для получения токена. |
+| `RunAs=App;AppId={TestAppId};KeyVaultCertificateSecretIdentifier={KeyVaultCertificateSecretIdentifier}` | Проверка подлинности настраиваемых служб | `KeyVaultCertificateSecretIdentifier` Идентификатор секрета сертификата. |
 | `RunAs=App;AppId={AppId};TenantId={TenantId};CertificateThumbprint={Thumbprint};CertificateStoreLocation={LocalMachine or CurrentUser}`| Субъект-служба | `AzureServiceTokenProvider` использует сертификат для получения токена из Azure AD. |
 | `RunAs=App;AppId={AppId};TenantId={TenantId};CertificateSubjectName={Subject};CertificateStoreLocation={LocalMachine or CurrentUser}` | Субъект-служба | `AzureServiceTokenProvider` использует сертификат для получения токена из Azure AD.|
 | `RunAs=App;AppId={AppId};TenantId={TenantId};AppKey={ClientSecret}` | Субъект-служба |`AzureServiceTokenProvider` использует секрет для получения токена из Azure AD. |

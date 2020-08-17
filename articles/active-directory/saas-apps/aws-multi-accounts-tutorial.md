@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 04/16/2020
+ms.date: 08/07/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51be98654950ba290fa83f77eccdae4d6f549891
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b6857fba86aebbcfd7b20326e4a4a268467e4fc3
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81603830"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272473"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-amazon-web-services-aws-legacy-tutorial"></a>Учебник. Интеграция Azure Active Directory с Amazon Web Services (AWS) (руководство по устаревшей версии)
 
@@ -49,7 +49,7 @@ ms.locfileid: "81603830"
 
 * Все учетные записи AWS будут использовать один и тот же XML-файл метаданных федерации, и во время смены сертификата будет непросто одновременно обновить сертификат для всех учетных записей AWS.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Amazon Web Services, вам потребуется следующее:
 
@@ -69,7 +69,7 @@ ms.locfileid: "81603830"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Amazon Web Services (AWS) поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
-* После настройки Amazon Web Services (AWS) можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+* После настройки Amazon Web Services (AWS) можно принудительно применить управление сеансом, защищающее утечка и несанкционированного доступа конфиденциальные данные вашей организации в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-amazon-web-services-aws-from-the-gallery"></a>Добавление Amazon Web Services из коллекции
 
@@ -86,7 +86,7 @@ ms.locfileid: "81603830"
 
     ![Amazon Web Services (AWS) в списке результатов](./media/aws-multi-accounts-tutorial/tutorial-amazonwebservices-properties.png)
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
+## <a name="configure-and-test-azure-ad-sso"></a>Настройка и проверка единого входа Azure AD
 
 В этом разделе описана настройка и проверка единого входа Azure AD в Amazon Web Services (AWS) с использованием тестового пользователя Britta Simon.
 
@@ -120,7 +120,7 @@ ms.locfileid: "81603830"
 
 4. В разделе **Базовая конфигурация SAML** пользователю не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure, и нажмите кнопку **сохранить**.
 
-5. Приложение Amazon Web Services (AWS) ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **User Attributes & Claims** (Атрибуты пользователя и утверждения) на странице интеграции приложения. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML) нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **User Attributes & Claims** (Атрибуты пользователя и утверждения).
+5. Приложение Amazon Web Services (AWS) ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **User Attributes & Claims** (Атрибуты пользователя и утверждения) на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **изменить** , чтобы открыть диалоговое окно **атрибуты пользователя & утверждения** .
 
     ![Изображение](common/edit-attribute.png)
 
@@ -277,7 +277,7 @@ ms.locfileid: "81603830"
 
     ![Диалоговое окно "обозреватель Microsoft Graph"](./media/aws-multi-accounts-tutorial/graph-explorer-new1.png)
 
-    е) В полученном списке субъектов-служб найдите ту, в которую нужно внести изменения. Также для поиска приложений в списке субъектов-служб можно использовать сочетание клавиш CTRL+F. Для получения соответствующего субъекта-службы можно использовать следующий запрос, используя **идентификатор объекта** , скопированный на странице свойств Azure AD.
+    е) В полученном списке субъектов-служб найдите ту, в которую нужно внести изменения. Также для поиска приложений в списке субъектов-служб можно использовать сочетание клавиш CTRL+F. Вы можете использовать следующий запрос, используя **идентификатор объекта субъекта-службы** , скопированный на странице свойств Azure AD, чтобы получить соответствующий субъект службы.
 
     `https://graph.microsoft.com/beta/servicePrincipals/<objectID>`.
 

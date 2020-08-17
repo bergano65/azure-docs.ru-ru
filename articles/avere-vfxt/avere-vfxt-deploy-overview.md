@@ -1,17 +1,17 @@
 ---
 title: Общие сведения о развертывании Avere vFXT для Azure
-description: Общие сведения о развертывании Avere vFXT для Azure
+description: Узнайте, как развернуть Авере Вфкст для кластера Azure с помощью этого обзора. Связанные статьи содержат конкретные инструкции по развертыванию.
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: rohogue
-ms.openlocfilehash: 78140fea74272dff6056bebfbd44ed9d55b0e1db
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4c63fdf2164dd4dce12912669eec29c79755cc2a
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76153689"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88271232"
 ---
 <!-- filename is linked to in the marketplace template, make sure it gets a redirect if we rename it -->
 
@@ -74,6 +74,6 @@ ms.locfileid: "76153689"
 
    Если необходимо переместить данные рабочего набора в новый контейнер больших двоичных объектов или другую серверную систему хранения, следуйте инструкциям в разделе [Перемещение данных в кластер вфкст](avere-vfxt-data-ingest.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Продолжайте [подготовку к созданию Авере вфкст](avere-vfxt-prereqs.md) для выполнения необходимых задач.

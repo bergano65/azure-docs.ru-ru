@@ -1,17 +1,17 @@
 ---
 title: Получение поддержки для Avere vFXT для Azure
-description: Объяснение открытия запросов в службу поддержки, касающихся Avere vFXT для Azure
+description: Узнайте, как устранить проблемы, которые могут возникнуть при развертывании или использовании Авере Вфкст для Azure, создав запрос в службу поддержки с помощью портал Azure.
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: rohogue
-ms.openlocfilehash: b3c604003f78a150067875fb2064ab5eca0600db
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 522d29505d7d10f5f6d97136f270f07a63053d19
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85847349"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88271113"
 ---
 # <a name="get-help-with-your-system"></a>Получение помощи по работе с системой
 

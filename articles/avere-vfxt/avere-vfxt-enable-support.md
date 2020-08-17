@@ -1,17 +1,17 @@
 ---
 title: Включение поддержки Avere vFXT для Azure
-description: Как включить отправку данных для службы поддержки из Avere vFXT для Azure
+description: Узнайте, как включить автоматическую отправку данных поддержки о кластере из Авере Вфкст для Azure, чтобы обеспечить поддержку клиентов.
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: how-to
 ms.date: 12/14/2019
 ms.author: rohogue
-ms.openlocfilehash: fc86cca1b73eb58a038a0a6da109e86b995709c9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 93b99aa624a21d9312297e4279b1dcf053c79ae3
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85505483"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272734"
 ---
 # <a name="enable-support-uploads"></a>Включение отправки данных для службы поддержки
 
@@ -40,7 +40,7 @@ ms.locfileid: "85505483"
 
    ![Снимок экрана, на котором показана страница поддерживаемых параметров с заполненным разделом Secure Proactive Support (SPS) (Безопасная проактивная поддержка)](media/avere-vfxt-support-sps.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если необходимо добавить локальную или существующую облачную систему хранения в кластер, следуйте инструкциям в разделе [Настройка хранилища](avere-vfxt-add-storage.md).
 

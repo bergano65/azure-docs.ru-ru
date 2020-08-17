@@ -1,17 +1,17 @@
 ---
 title: Развертывание Avere vFXT для Azure
-description: Шаги по развертыванию кластера Avere vFXT в Azure
+description: Узнайте, как использовать мастер развертывания, доступный в Azure Marketplace, для развертывания кластера с помощью Авере Вфкст для Azure.
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: how-to
 ms.date: 01/13/2020
 ms.author: rohogue
-ms.openlocfilehash: 4c42abdbfaf5c867a9d8d4cbc6b4519a86adaac0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 31d12466186bb7f66197218fbb9675888a35fef3
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85505653"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272779"
 ---
 # <a name="deploy-the-vfxt-cluster"></a>Развертывание кластера vFXT
 
@@ -155,7 +155,7 @@ ms.locfileid: "85505653"
 
    ![Страница выходных значений со значениями SSHSTRING, RESOURCE_GROUP, LOCATION, NETWORK_RESOURCE_GROUP, NETWORK, SUBNET, SUBNET_ID, VSERVER_IPs и MGMT_IP в полях с метками](media/avere-vfxt-outputs-values.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда кластер работает и вы узнаете его IP-адрес управления, [подключитесь к средству настройки кластера](avere-vfxt-cluster-gui.md).
 

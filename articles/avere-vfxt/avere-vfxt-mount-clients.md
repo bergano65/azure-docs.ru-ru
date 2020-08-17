@@ -1,17 +1,17 @@
 ---
 title: Подключение кластера Avere vFXT в Azure
-description: Сведения о подключении клиентов к Avere vFXT для Azure.
+description: Сведения о подключении клиентов к кластеру Вфкст в Авере Вфкст для Azure и о балансировке нагрузки клиентского трафика между узлами кластера.
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: how-to
 ms.date: 12/16/2019
 ms.author: rohogue
-ms.openlocfilehash: e8850162847f2dd416b0951a797e2eb0cd7d55d2
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 44a4e1293bc4c5a54e1e345d5cf95ba307a7b120
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86229573"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272577"
 ---
 # <a name="mount-the-avere-vfxt-cluster"></a>Подключение кластера Avere vFXT
 
@@ -76,7 +76,7 @@ function mount_round_robin() {
 
 Путь к vserver представляет собой комбинацию его *IP-адреса* и пути к *соединению по пространству имен*. Соединение по пространству имен является виртуальным путем, определенным при добавлении системы хранения.
 
-Если кластер создан с хранилищем BLOB-объектов, путь к этому контейнеру будет иметь значение`/msazure`
+Если кластер создан с хранилищем BLOB-объектов, путь к этому контейнеру будет иметь значение `/msazure`
 
 Например, ``mount 10.0.0.12:/msazure /mnt/vfxt``.
 
