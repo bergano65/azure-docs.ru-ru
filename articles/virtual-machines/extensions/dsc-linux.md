@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: a1a166d12ef753a7a6fc7225d0467ead08514f99
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 59b05fcd7fbaf9b0fd9b4083c884edadb4bfef4e
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876722"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88505586"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft. OSTCExtensions. Дскфорлинукс)
 
@@ -40,10 +40,11 @@ ms.locfileid: "87876722"
 ### <a name="operating-system"></a>Операционная система
 
 Для узлов под управлением Linux расширение DSC для Linux поддерживает все дистрибутивы Linux, перечисленные в [документации по DSC PowerShell](/powershell/scripting/dsc/getting-started/lnxgettingstarted).
- 
+
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
-Для расширения Дскфорлинукс требуется, чтобы Целевая виртуальная машина была подключена к Интернету. Например, для расширения Register требуется подключение к службе автоматизации. Для других действий, таких как извлечение, извлечение, требуется подключение к службе хранилища Azure и GitHub. Это зависит от параметров, предоставленных клиентом.
+Для расширения Дскфорлинукс требуется, чтобы Целевая виртуальная машина была подключена к Интернету. Например, для расширения Register требуется подключение к службе автоматизации.
+Для других действий, таких как извлечение, извлечение, требуется подключение к службе хранилища Azure и GitHub. Это зависит от параметров, предоставленных клиентом.
 
 ## <a name="extension-schema"></a>Схема расширения
 
@@ -55,13 +56,13 @@ ms.locfileid: "87876722"
 * `ResourceName`— (необязательно, строка) имя пользовательского модуля ресурсов.
 * `ExtensionAction` (необязательный, строчный): указывает, что делает расширения. Допустимые значения: Register, Push, Pull, install и Remove. Если он не указан, по умолчанию он считается действием Push.
 * `NodeConfigurationName`: (необязательный, строка) имя конфигурации узла, которую необходимо применить.
-* `RefreshFrequencyMins`: (необязательный, int) указывает периодичность (в минутах), с которой DSC пытается получить конфигурацию с опрашивающего сервера. 
+* `RefreshFrequencyMins`: (необязательный, int) указывает периодичность (в минутах), с которой DSC пытается получить конфигурацию с опрашивающего сервера.
        Если конфигурация на опрашивающем сервере отличается от текущей на целевом узле, она копируется в ожидающее хранилище и применяется.
 * `ConfigurationMode` (необязательный, строчный): указывает, каким образом DSC следует применить конфигурацию. Допустимые значения: ApplyOnly, ApplyAndMonitor и ApplyAndAutoCorrect.
 * `ConfigurationModeFrequencyMins` (необязательный, целочисленный): указывает интервал (в минутах), с которым DSC проверяет, что конфигурация находится в требуемом состоянии.
 
 > [!NOTE]
-> Если вы используете более раннюю версию, чем 2,3, параметр Mode будет таким же, как и Екстенсионактион. Похоже, что режим является перегруженным термином. Чтобы избежать путаницы, Екстенсионактион используется в версии 2,3. Для обеспечения обратной совместимости, расширение поддерживает как mode, так и ExtensionAction. 
+> Если вы используете более раннюю версию, чем 2,3, параметр Mode будет таким же, как и Екстенсионактион. Похоже, что режим является перегруженным термином. Чтобы избежать путаницы, Екстенсионактион используется в версии 2,3. Для обеспечения обратной совместимости, расширение поддерживает как mode, так и ExtensionAction.
 >
 
 ### <a name="protected-configuration"></a>Защищенная конфигурация
@@ -269,7 +270,7 @@ $publicConfig = '{
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 
-Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Шаблоны идеально подходят при развертывании одной или нескольких виртуальных машин, для которых требуется настройка после развертывания, например для адаптации к службе автоматизации Azure. 
+Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Шаблоны идеально подходят при развертывании одной или нескольких виртуальных машин, для которых требуется настройка после развертывания, например для адаптации к службе автоматизации Azure.
 
 Пример шаблона Resource Manager — [201-dsc-linux-azure-storage-on-ubuntu](https://github.com/Azure/azure-quickstart-templates/tree/master/201-dsc-linux-azure-storage-on-ubuntu) и [201-dsc-linux-public-storage-on-ubuntu](https://github.com/Azure/azure-quickstart-templates/tree/master/201-dsc-linux-public-storage-on-ubuntu).
 
@@ -323,13 +324,13 @@ DSCForLinux Microsoft.OSTCExtensions <version> \
 
 Вы можете войти в учетную запись Azure в режиме управления службами Azure, выполнив команду:
 
-```powershell>
+```powershell
 Add-AzureAccount
 ```
 
 И разверните расширение Дскфорлинукс, выполнив команду:
 
-```powershell>
+```powershell
 $vmname = '<vm-name>'
 $vm = Get-AzureVM -ServiceName $vmname -Name $vmname
 $extensionName = 'DSCForLinux'
@@ -362,7 +363,7 @@ Set-AzureVMExtension -ExtensionName $extensionName -VM $vm -Publisher $publisher
 
 Вы можете войти в учетную запись Azure в Azure Resource Managerном режиме, выполнив команду:
 
-```powershell>
+```powershell
 Login-AzAccount
 ```
 
@@ -370,7 +371,7 @@ Login-AzAccount
 
 Расширение Дскфорлинукс можно развернуть, выполнив команду:
 
-```powershell>
+```powershell
 $rgName = '<resource-group-name>'
 $vmName = '<vm-name>'
 $location = '< location>'

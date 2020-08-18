@@ -13,12 +13,12 @@ ms.date: 11/19/2019
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: a0677603f02b429c269c0f93ef348b2b1d717a9f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c757f3e067aeac5d8145ca47b2eac145daba574
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82689765"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272456"
 ---
 # <a name="microsoft-identity-platform-and-the-oauth-20-device-authorization-grant-flow"></a>Платформа удостоверений Майкрософт и поток предоставления авторизации устройства OAuth 2,0
 
@@ -53,9 +53,9 @@ scope=user.read%20openid%20profile
 
 | Параметр | Условие | Описание |
 | --- | --- | --- |
-| `tenant` | Обязательный | Может быть "/Common",/консумерс или/организатионс.  Он также может быть клиентом каталога, для которого требуется запросить разрешение, в формате GUID или понятном имени.  |
+| `tenant` | Обязательно | Может быть "/Common",/консумерс или/организатионс.  Он также может быть клиентом каталога, для которого требуется запросить разрешение, в формате GUID или понятном имени.  |
 | `client_id` | Обязательно | **Идентификатор приложения (клиента)** , назначенный вашему приложению функцией [Регистрация приложений портала Azure](https://go.microsoft.com/fwlink/?linkid=2083908). |
-| `scope` | Рекомендуется | Разделенный пробелами список [областей](v2-permissions-and-consent.md) , для которого необходимо согласие пользователя.  |
+| `scope` | Обязательно | Разделенный пробелами список [областей](v2-permissions-and-consent.md) , для которого необходимо согласие пользователя.  |
 
 ### <a name="device-authorization-response"></a>Ответ на запрос авторизации устройства
 
@@ -92,7 +92,7 @@ device_code: GMMhmHCXhWEzkobqIHGG_EnNYYsAkukHspeYUk9E8...
 
 | Параметр | Обязательно | Описание|
 | -------- | -------- | ---------- |
-| `tenant`  | Обязательный | Один и тот же псевдоним клиента или клиента, используемый в первоначальном запросе. |
+| `tenant`  | Обязательно | Один и тот же псевдоним клиента или клиента, используемый в первоначальном запросе. |
 | `grant_type` | Обязательно | Должен содержать значение `urn:ietf:params:oauth:grant-type:device_code`.|
 | `client_id`  | Обязательно | Должен соответствовать `client_id`, используемому в первоначальном запросе. |
 | `device_code`| Обязательно | `device_code`, возвращаемый в запросе авторизации устройства.  |

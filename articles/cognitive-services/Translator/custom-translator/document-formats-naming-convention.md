@@ -1,20 +1,20 @@
 ---
 title: Форматы документов и соглашения об именовании — Custom Translator
 titleSuffix: Azure Cognitive Services
-description: Руководство по форматам документов и соглашениям об именовании в Custom Translator. Эта концепция помогает лучше управлять именованием документов, избегая конфликтов имен.
+description: Руководство по форматам документов и соглашениям об именовании в Custom Translator. Эта концепция позволяет лучше управлять именами документов и избежать конфликтов имен.
 author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
-ms.date: 05/26/2020
+ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: e976b59c0128adef6536e78985e7cf89d256062c
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: 46a19cd4396e598a74f9099727ac80d44c0a44f5
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83992714"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88507252"
 ---
 # <a name="document-formats-and-naming-convention-guidance"></a>Руководство по форматам документов и соглашениям об именовании
 
@@ -47,7 +47,7 @@ ms.locfileid: "83992714"
 
 {имя документа}\_{код языка}, где {имя документа} — имя документа, {код языка} — идентификатор LanguageID ISO (два символа), указывающий, что документ содержит предложения на этом языке. Перед кодом языка должен присутствовать символ подчеркивания (_).
 
-Например, чтобы отправить два параллельных документа в ZIP-файл для системы на испанском языке, файлы должны называться "data_en" и "data_es".
+Например, чтобы отправить два параллельных документа в ZIP-файле для системы перевода с английского на испанский, они должны называться data_en и data_es соответственно.
 
 Файлы памяти перевода (TMX, XLF, XLIFF, LCL, XLSX) не должны соответствовать соглашению об именовании для определенного языка.  
 

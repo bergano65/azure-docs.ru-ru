@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/03/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7f2b1031659864ae338bb0aa320c048ea23c21f3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 385086bd46145be717ee5a14a10f889ec811e17e
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80681705"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88505657"
 ---
 # <a name="rendering-modes"></a>Режимы отрисовки
 
@@ -50,7 +50,7 @@ ms.locfileid: "80681705"
 
 ## <a name="setting-the-render-mode"></a>Установка режима рендеринга
 
-Режим рендеринга, используемый на виртуальной машине для удаленной подготовки к просмотру, задается при `AzureSession.ConnectToRuntime` помощи `ConnectToRuntimeParams` .
+Режим рендеринга, используемый на удаленном сервере отрисовки, задается при `AzureSession.ConnectToRuntime` помощи `ConnectToRuntimeParams` .
 
 ```cs
 async void ExampleConnect(AzureSession session)
@@ -71,7 +71,7 @@ async void ExampleConnect(AzureSession session)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Активных](../concepts/sessions.md)
+* [Сеансы](../concepts/sessions.md)
 * [Компонент переопределения иерархического состояния](../overview/features/override-hierarchical-state.md)

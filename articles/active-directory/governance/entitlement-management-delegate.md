@@ -16,12 +16,12 @@ ms.date: 07/22/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa18b55884a22f6c64f1c08bd5be8a71b265029a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a01f945496d2f0bc81a108c5e58c89587c1c4e38
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87034389"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88505484"
 ---
 # <a name="delegation-and-roles-in-azure-ad-entitlement-management"></a>Делегирование и роли в управлении назначениями Azure AD
 
@@ -116,21 +116,24 @@ ms.locfileid: "87034389"
 
 ## <a name="required-roles-to-add-resources-to-a-catalog"></a>Роли, необходимые для добавления ресурсов в каталог
 
-Глобальный администратор может добавлять или удалять любые группы (созданные в облаке группы безопасности или группы Office 365, созданные в облаке), приложения или сайты SharePoint Online в каталоге. Администратор пользователей может добавлять или удалять любые группы или приложения в каталоге.
+Глобальный администратор может добавлять или удалять любые группы (созданные в облаке группы безопасности или группы Office 365, созданные в облаке), приложения или сайты SharePoint Online в каталоге. Администратор пользователей может добавлять или удалять любые группы или приложения в каталоге, кроме группы, настроенной как назначаемая роли каталога.
 
 Для пользователя, который не является глобальным администратором или администратором, для добавления групп, приложений или сайтов SharePoint Online в каталог этот пользователь должен иметь роль каталога Azure AD *и права управления* правами владельца каталога. В следующей таблице перечислены сочетания ролей, необходимые для добавления ресурсов в каталог. Чтобы удалить ресурсы из каталога, необходимо иметь одни и те же роли.
 
 | Роль каталога Azure AD | Роль управления назначениями | Можно добавить группу безопасности | Можно добавить группу Office 365 | Можно добавить приложение | Можно добавить сайт SharePoint Online |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| [Глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md) | н/д |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Администратор пользователей](../users-groups-roles/directory-assign-admin-roles.md) | н/д |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
+| [Глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md) | Недоступно |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Администратор пользователей](../users-groups-roles/directory-assign-admin-roles.md) | Недоступно |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Администратор Intune](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога | :heavy_check_mark: | :heavy_check_mark: |  |  |
 | [Администратор Exchange](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  | :heavy_check_mark: |  |  |
 | [Администратор служб Team Services](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  | :heavy_check_mark: |  |  |
 | [Администратор SharePoint](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  | :heavy_check_mark: |  | :heavy_check_mark: |
-| [Администратор приложения](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  |  | :heavy_check_mark: |  |
+| [администратор приложений;](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  |  | :heavy_check_mark: |  |
 | [Администратор облачных приложений](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  |  | :heavy_check_mark: |  |
 | Пользователь | Владелец каталога | Только если владелец группы | Только если владелец группы | Только если владелец приложения |  |
+
+> [!NOTE]
+> Если пользователь добавляет группу безопасности или группу Office 365, эта группа не может быть назначена ролью. Если пользователь добавляет группу, которая является назначаемой с помощью роли при создании пакета доступа, они также должны быть владельцами этой группы, назначаемой ролью. Дополнительные сведения см. [в статье Создание назначаемой роли группы в Azure Active Directory](../users-groups-roles/roles-groups-create-eligible.md).
 
 Чтобы определить минимально привилегированную роль для задачи, можно также ссылаться на [роли администратора по задаче администрирования в Azure Active Directory](../users-groups-roles/roles-delegate-by-task.md#entitlement-management).
 

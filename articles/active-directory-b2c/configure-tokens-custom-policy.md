@@ -11,18 +11,18 @@ ms.topic: how-to
 ms.date: 05/07/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 3a35662a3f21aec1306b7b6994e7a08f9cbd467e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9f3cd5c3280308f6da15a52361857fa02567d595
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85389536"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88505467"
 ---
 # <a name="manage-sso-and-token-customization-using-custom-policies-in-azure-active-directory-b2c"></a>Управление единым входом и настройкой токенов с помощью пользовательских политик в Azure Active Directory B2C
 
 В этой статье содержатся сведения об управлении конфигурациями маркеров, сеансов и единого входа (SSO) с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C).
 
-## <a name="jtw-token-lifetimes-and-claims-configuration"></a>Время существования токена JTW и конфигурация утверждений
+## <a name="jwt-token-lifetimes-and-claims-configuration"></a>Время существования маркера JWT и конфигурация утверждений
 
 Чтобы изменить настройки времени существования токенов, добавьте элемент [ClaimsProviders](claimsproviders.md) в файл проверяющей стороны политики, которую следует изменить.  Элемент **ClaimsProviders** является дочерним элементом [TrustFrameworkPolicy](trustframeworkpolicy.md).
 
@@ -88,7 +88,7 @@ ms.locfileid: "85389536"
     <OutputClaim ClaimTypeReferenceId="sub" />
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [Azure AD B2C сеансе](session-overview.md).
 - Узнайте, как [настроить поведение сеанса в пользовательских политиках](session-behavior-custom-policy.md).

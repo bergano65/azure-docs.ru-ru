@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.author: memildin
-ms.openlocfilehash: d049538653ea345935d40bd965afd7d2453b2aa2
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: 69f439e102edc53207e44d63cb29396f64f59e0e
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88041992"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272507"
 ---
 # <a name="threat-protection-in-azure-security-center"></a>Защита от угроз с помощью Центра безопасности Azure
 
@@ -110,7 +110,7 @@ ms.locfileid: "88041992"
 
 
 
-## <a name="threat-protection-for-containers"></a>Защита от угроз для контейнеров<a name="azure-containers"></a>
+## <a name="threat-protection-for-containers"></a>Защита от угроз для контейнеров <a name="azure-containers"></a>
 
 ### <a name="availability"></a>Доступность
 
@@ -230,7 +230,6 @@ ms.locfileid: "88041992"
 
 Список оповещений на уровне сети Azure см. в [справочной таблице оповещений](alerts-reference.md#alerts-azurenetlayer).
 
-Сведения о том, как Центр безопасности может использовать связанные с сетью сигналы для применения защиты от угроз, см. в статье [Эвристические обнаружения DNS в Центре безопасности](https://azure.microsoft.com/blog/heuristic-dns-detections-in-azure-security-center/).
 
 
 

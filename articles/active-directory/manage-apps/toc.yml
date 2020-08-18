@@ -91,16 +91,6 @@
           href: application-proxy-high-availability-load-balancing.md
         - name: Сравнение решений для удаленного доступа
           href: application-proxy-migration.md
-    - name: Вывод приложения на рынок
-      items:
-        - name: Включение единого входа для мультитенантного приложения
-          href: isv-sso-content.md
-        - name: Создание клиента Azure для мультитенантного приложения
-          href: isv-tenant-multi-tenant-app.md
-        - name: Выбор федерации нескольких клиентов
-          href: isv-choose-multi-tenant-federation.md
-        - name: Создание документации для мультитенантного приложения
-          href: isv-create-sso-documentation.md
 - name: Практические руководства
   expanded: false
   items:

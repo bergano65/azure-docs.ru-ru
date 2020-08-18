@@ -5,12 +5,12 @@ ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: devx-track-csharp, 80e4ff38-5174-43
-ms.openlocfilehash: 18263f9e77961fb4c169559f221ab94eb4a38840
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: bbdc05d2b5a770791bb81f26a71b9dc3eb7523d5
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88207445"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88505722"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -164,6 +164,9 @@ Azure Functions Core Tools в настоящее время зависит от 
 ```
 func init MyFunctionProj
 ```
+
+>[!IMPORTANT]
+> Java использует Maven архетипа для создания проекта локальных функций вместе с первой функцией, активируемой HTTP. Для создания проекта Java используйте следующую команду: `mvn archetype:generate -DarchetypeGroupId=com.microsoft.azure -DarchetypeArtifactId=azure-functions-archetype` . Пример использования Maven архетипа см. в [кратком руководстве по использованию командной строки](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-java).  
 
 Когда вы указываете имя проекта, то создается и инициализируется новая папка с этим именем. В противном случае инициализируется текущая папка.  
 В версии 3. x/2. x при выполнении команды необходимо выбрать среду выполнения для проекта. 
@@ -334,6 +337,14 @@ func new --template "Queue Trigger" --name QueueTriggerJS
 ```
 func start --build
 ```
+
+# <a name="java"></a>[Java](#tab/java)
+
+```
+mvn clean package 
+mvn azure-functions:run
+```
+
 # <a name="javascript"></a>[JavaScript](#tab/node)
 
 ```
@@ -505,6 +516,9 @@ Azure Functions Core Tools поддерживает два типа развер
 func azure functionapp publish <FunctionAppName>
 ```
 
+>[!IMPORTANT]
+> Java использует Maven для публикации локального проекта в Azure. Для публикации в Azure используйте следующую команду: `mvn azure-functions:deploy` . Ресурсы Azure создаются во время первоначального развертывания.
+
 Эта команда публикует в существующее приложение-функцию в Azure. При попытке публикации в `<FunctionAppName>` , который не существует в вашей подписке, возникает ошибка. Чтобы узнать, как создать приложение-функцию из командной строки или из окна терминала, используя Azure CLI, см. статью [Создание приложения-функции для выполнения без сервера](./scripts/functions-cli-create-serverless.md). По умолчанию эта команда использует [удаленную сборку](functions-deployment-technologies.md#remote-build) и развертывает приложение для [запуска из пакета развертывания](run-functions-from-deployment-package.md). Чтобы отключить этот рекомендуемый режим развертывания, используйте `--nozip` параметр.
 
 >[!IMPORTANT]
@@ -528,7 +542,7 @@ func azure functionapp publish <FunctionAppName>
 | **`--nozip`** | Выключает режим по умолчанию `Run-From-Package`. |
 | **`--build-native-deps`** | Пропускает создание папки. Wheels при публикации приложений функции Python. |
 | **`--build`**, **`-b`** | Выполняет действие сборки при развертывании в приложении-функции Linux. Принимает: `remote` и `local` . |
-| **`--additional-packages`** | Создает список пакетов установки при создании собственных зависимостей. Например, так: `python3-dev libevent-dev`. |
+| **`--additional-packages`** | Создает список пакетов установки при создании собственных зависимостей. Например: `python3-dev libevent-dev`. |
 | **`--force`** | Пропускает проверку, выполняемую до публикации, в определенных сценариях. |
 | **`--csx`** | Публикует проект скрипта C# (CSX). |
 | **`--no-build`** | Проект не создан во время публикации. Для Python `pip install` не выполняется. |
@@ -574,7 +588,7 @@ func deploy
 Для этого типа журналов потоковой передачи требуется включить интеграцию Application Insights для приложения функции.   
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как разрабатывать, тестировать и публиковать функции Azure с помощью Azure Functions Core Tools [модуль обучения майкрософт](/learn/modules/develop-test-deploy-azure-functions-with-core-tools/) Azure functions Core Tools является [открытым исходным кодом и размещается на GitHub](https://github.com/azure/azure-functions-cli).  
 Чтобы зарегистрировать ошибку или отправить запрос на функцию, [откройте вопрос на GitHub](https://github.com/azure/azure-functions-cli/issues).
@@ -585,5 +599,5 @@ func deploy
 [Портал Azure]: https://portal.azure.com 
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows
 [`FUNCTIONS_WORKER_RUNTIME`]: functions-app-settings.md#functions_worker_runtime
-[AzureWebJobsStorage]: functions-app-settings.md#azurewebjobsstorage
+[`AzureWebJobsStorage`]: functions-app-settings.md#azurewebjobsstorage
 [пакеты расширений]: functions-bindings-register.md#extension-bundles

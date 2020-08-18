@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 09/26/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6e217540b1dd3744da855c71e0add289dd1c9e18
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: e73bc3791ceb75685275af99f888136315c6e50d
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87831062"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88505565"
 ---
 # <a name="sql-server-azure-virtual-machines-dbms-deployment-for-sap-netweaver"></a>SAP NetWeaver на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server
 
@@ -355,7 +355,7 @@ ms.locfileid: "87831062"
 
 
 ### <a name="special-for-m-series-vms"></a>Особенности виртуальных машин серии M
-Для виртуальных машин Azure серии M задержку записи в журналы транзакций можно уменьшить с помощью ряда возможностей (по сравнению с производительностью хранилища Azure класса Premium), доступных при использовании ускорителя записи Azure. Таким образом, ускоритель записи Azure следует развертывать для виртуальных жестких дисков, образующих том для журналов транзакций SQL Server. Дополнительные сведения см. в документе об [ускорителе записи](../../windows/how-to-enable-write-accelerator.md).
+Для виртуальных машин Azure серии M задержку записи в журналы транзакций можно уменьшить с помощью ряда возможностей (по сравнению с производительностью хранилища Azure класса Premium), доступных при использовании ускорителя записи Azure. Таким образом, ускоритель записи Azure следует развертывать для виртуальных жестких дисков, образующих том для журналов транзакций SQL Server. Дополнительные сведения см. в документе об [ускорителе записи](../../how-to-enable-write-accelerator.md).
   
 
 ### <a name="formatting-the-disks"></a>Форматирование дисков

@@ -418,7 +418,7 @@
         - name: Общие сведения о переносе
           href: migration-classic-resource-manager-overview.md
         - name: Подробный обзор миграции
-          href: migration-classic-resource-manager-deep-dive.md
+          href: ../migration-classic-resource-manager-deep-dive.md
         - name: Планирование миграции
           href: migration-classic-resource-manager-plan.md
         - name: Миграция с помощью интерфейса командной строки
@@ -428,7 +428,7 @@
         - name: 'Средства миграции, созданные сообществом'
           href: ../windows/migration-classic-resource-manager-community-tools.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: ВОПРОСЫ И ОТВЕТЫ
-          href: migration-classic-resource-manager-faq.md
+          href: ../migration-classic-resource-manager-faq.md
     - name: Использование образов
       displayName: 'SIG, AMI, image'
       items:
@@ -954,7 +954,7 @@
           href: detach-disk.md
         - name: Развертывание дисков с помощью шаблона ARM
           displayName: 'Azure Resource Manager, ARM'
-          href: using-managed-disks-template-deployments.md
+          href: ../using-managed-disks-template-deployments.md
         - name: Включение общих дисков
           href: disks-shared-enable.md
         - name: "Отправка VHD-файла на диск\_— CLI"
@@ -1004,7 +1004,7 @@
         - name: Производительность
           items:
             - name: Использование ускорителя записи
-              href: how-to-enable-write-accelerator.md
+              href: ../how-to-enable-write-accelerator.md
             - name: Использование дисков (цен. категория "Ультра")
               href: disks-enable-ultra-ssd.md
             - name: Тест производительности диска

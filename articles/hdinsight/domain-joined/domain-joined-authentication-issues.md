@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 11/08/2019
-ms.openlocfilehash: 26eec9cdd327ceb51e72deb1d6f40d585ce368fb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 218850feea8b0e22b8e11695a3aa3c69173f1ab7
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75896140"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88504931"
 ---
 # <a name="authentication-issues-in-azure-hdinsight"></a>Проблемы проверки подлинности в Azure HDInsight
 
@@ -24,7 +24,7 @@ ms.locfileid: "75896140"
 
 ## <a name="invalid_grant-or-unauthorized_client-50126"></a>invalid_grant или unauthorized_client, 50126
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Сбой входа для федеративных пользователей с кодом ошибки 50126 (вход выполнен успешно для пользователей облака). Сообщение об ошибке выглядит следующим образом:
 
@@ -32,7 +32,7 @@ ms.locfileid: "75896140"
 Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_description":"AADSTS70002: Error validating credentials. AADSTS50126: Invalid username or password\r\nTrace ID: 09cc9b95-4354-46b7-91f1-efd92665ae00\r\n Correlation ID: 4209bedf-f195-4486-b486-95a15b70fbe4\r\nTimestamp: 2019-01-28 17:49:58Z","error_codes":[70002,50126], "timestamp":"2019-01-28 17:49:58Z","trace_id":"09cc9b95-4354-46b7-91f1-efd92665ae00","correlation_id":"4209bedf-f195-4486-b486-95a15b70fbe4"}
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Код ошибки Azure AD 50126 означает, что `AllowCloudPasswordValidation` политика не была задана клиентом.
 
@@ -44,7 +44,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ## <a name="invalid_grant-or-unauthorized_client-50034"></a>invalid_grant или unauthorized_client, 50034
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Сбой входа с кодом ошибки 50034. Сообщение об ошибке выглядит следующим образом:
 
@@ -52,7 +52,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 {"error":"invalid_grant","error_description":"AADSTS50034: The user account Microsoft.AzureAD.Telemetry.Diagnostics.PII does not exist in the 0c349e3f-1ac3-4610-8599-9db831cbaf62 directory. To sign into this application, the account must be added to the directory.\r\nTrace ID: bbb819b2-4c6f-4745-854d-0b72006d6800\r\nCorrelation ID: b009c737-ee52-43b2-83fd-706061a72b41\r\nTimestamp: 2019-04-29 15:52:16Z", "error_codes":[50034],"timestamp":"2019-04-29 15:52:16Z","trace_id":"bbb819b2-4c6f-4745-854d-0b72006d6800", "correlation_id":"b009c737-ee52-43b2-83fd-706061a72b41"}
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Неверное имя пользователя (не существует). Пользователь не использует то же имя пользователя, которое используется в портал Azure.
 
@@ -64,7 +64,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ## <a name="invalid_grant-or-unauthorized_client-50053"></a>invalid_grant или unauthorized_client, 50053
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Учетная запись пользователя заблокирована, код ошибки 50053. Сообщение об ошибке выглядит следующим образом:
 
@@ -72,7 +72,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 {"error":"unauthorized_client","error_description":"AADSTS50053: You've tried to sign in too many times with an incorrect user ID or password.\r\nTrace ID: 844ac5d8-8160-4dee-90ce-6d8c9443d400\r\nCorrelation ID: 23fe8867-0e8f-4e56-8764-0cdc7c61c325\r\nTimestamp: 2019-06-06 09:47:23Z","error_codes":[50053],"timestamp":"2019-06-06 09:47:23Z","trace_id":"844ac5d8-8160-4dee-90ce-6d8c9443d400","correlation_id":"23fe8867-0e8f-4e56-8764-0cdc7c61c325"}
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Слишком много попыток входа с неверным паролем.
 
@@ -84,7 +84,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ## <a name="invalid_grant-or-unauthorized_client-50053"></a>invalid_grant или unauthorized_client, 50053
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Срок действия пароля истек, код ошибки 50053. Сообщение об ошибке выглядит следующим образом:
 
@@ -92,7 +92,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 {"error":"user_password_expired","error_description":"AADSTS50055: Password is expired.\r\nTrace ID: 241a7a47-e59f-42d8-9263-fbb7c1d51e00\r\nCorrelation ID: c7fe4a42-67e4-4acd-9fb6-f4fb6db76d6a\r\nTimestamp: 2019-06-06 17:29:37Z","error_codes":[50055],"timestamp":"2019-06-06 17:29:37Z","trace_id":"241a7a47-e59f-42d8-9263-fbb7c1d51e00","correlation_id":"c7fe4a42-67e4-4acd-9fb6-f4fb6db76d6a","suberror":"user_password_expired","password_change_url":"https://portal.microsoftonline.com/ChangePassword.aspx"}
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Срок действия пароля истек.
 
@@ -104,11 +104,11 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ## <a name="interaction_required"></a>interaction_required
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Получение сообщения об ошибке `interaction_required` .
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Политика условного доступа или MFA применяется к пользователю. Так как интерактивная проверка подлинности еще не поддерживается, пользователь или кластер необходимо исключить из процедуры MFA или условного доступа. Если вы решили исключить кластер (политика исключения на основе IP-адреса), убедитесь, что Active Directory `ServiceEndpoints` включена для этой виртуальной сети.
 
@@ -120,11 +120,11 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ## <a name="sign-in-denied"></a>Вход запрещен
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Вход запрещен.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Чтобы перейти к этому этапу, проверка подлинности OAuth не является проблемой, но используется проверка подлинности Kerberos. Если этот кластер поддерживается ADLS, то вход в OAuth выполнен до попытки проверки подлинности Kerberos. В кластерах WASB попытки входа OAuth не предпринимались. Для хэшей паролей с ошибками Kerberos может быть не синхронизирована, учетная запись пользователя заблокирована в Azure AD DS и т. д. Хэши паролей синхронизируются, только когда пользователь изменяет пароль. При создании экземпляра AD DS Azure начнется синхронизация паролей, измененных после создания. Он не задним числом синхронизацию паролей, которые были заданы до его порождения.
 
@@ -138,17 +138,17 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ## <a name="kinit-fails"></a>Сбой kinit
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Сбой kinit.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Возможны разные варианты.
 
 ### <a name="resolution"></a>Решение
 
-Для успешности kinit вам нужно знать `sAMAccountName` (это короткое имя учетной записи без области). `sAMAccountName`обычно является префиксом учетной записи (например, Бобом в `bob@contoso.com` ). Для некоторых пользователей это может отличаться. Вам потребуется возможность просмотра и поиска в каталоге для изучения `sAMAccountName` .
+Для успешности kinit вам нужно знать `sAMAccountName` (это короткое имя учетной записи без области). `sAMAccountName` обычно является префиксом учетной записи (например, Бобом в `bob@contoso.com` ). Для некоторых пользователей это может отличаться. Вам потребуется возможность просмотра и поиска в каталоге для изучения `sAMAccountName` .
 
 Способы поиска `sAMAccountName` :
 
@@ -164,11 +164,11 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ## <a name="kinit-fails-with-preauthentication-failure"></a>Сбой kinit с ошибкой предварительной проверки подлинности
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Kinit завершается сбоем с `Preauthentication` ошибкой.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Неправильное имя пользователя или пароль.
 
@@ -180,11 +180,11 @@ Kinit завершается сбоем с `Preauthentication` ошибкой.
 
 ## <a name="job--hdfs-command-fails-due-to-tokennotfoundexception"></a>Сбой команды задания или HDFS из-за Токеннотфаундексцептион
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Сбой команды задания или HDFS из-за ошибки `TokenNotFoundException` .
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Необходимый маркер доступа OAuth не найден для завершения задания или команды. Драйвер ADLS/АБФС попытается получить маркер доступа OAuth из службы учетных данных перед выполнением запросов к хранилищу. Этот маркер регистрируется при входе на портал Ambari с помощью того же пользователя.
 
@@ -196,11 +196,11 @@ Kinit завершается сбоем с `Preauthentication` ошибкой.
 
 ## <a name="error-fetching-access-token"></a>Ошибка при выборке маркера доступа
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Пользователь получает сообщение об ошибке `Error fetching access token` .
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта ошибка возникает периодически, когда пользователи пытаются получить доступ к ADLS 2-го поколения с помощью списков ACL, и срок действия маркера Kerberos истек.
 
@@ -208,7 +208,7 @@ Kinit завершается сбоем с `Preauthentication` ошибкой.
 
 * Для Azure Data Lake Storage 1-го поколения очистите кэш браузера и снова войдите в Ambari.
 
-* Для Azure Data Lake Storage 2-го поколения выполните `/usr/lib/hdinsight-common/scripts/RegisterKerbWithOauth.sh <upn>` для пользователя, от имени которого пользователь пытается выполнить вход.
+* Для Azure Data Lake Storage 2-го поколения выполните `/usr/lib/hdinsight-common/scripts/RegisterKerbTicketAndOAuth.sh <upn>` для пользователя, от имени которого пользователь пытается выполнить вход.
 
 ---
 

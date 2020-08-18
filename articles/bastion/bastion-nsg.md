@@ -1,24 +1,24 @@
 ---
 title: Работа с виртуальными машинами и группы безопасности сети в Azure бастиона
-description: В этой статье описывается, как внедрить NSG Access с помощью Azure бастиона
+description: Группы безопасности сети можно использовать с Azure бастиона. Сведения о подсетях, необходимых для этой конфигурации.
 services: bastion
 author: charwen
 ms.service: bastion
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: charwen
-ms.openlocfilehash: 1fc261c31a1190536f3128ed6472d9ca76dfce7e
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 563c12f91e9553f802d4cf26519da0550880dfcd
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86112219"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270535"
 ---
 # <a name="working-with-nsg-access-and-azure-bastion"></a>Работа с NSG Access и Azure бастиона
 
 При работе с Azure бастиона можно использовать группы безопасности сети (группы безопасности сети). Дополнительные сведения см. в разделе [группы безопасности](../virtual-network/security-overview.md).
 
-:::image type="content" source="./media/bastion-nsg/figure-1.png" alt-text="NSG":::
+:::image type="content" source="./media/bastion-nsg/figure-1.png" alt-text="Группа безопасности сети (NSG)":::
 
 На этой схеме:
 
@@ -42,7 +42,7 @@ Azure бастиона развертывается специально для 
    * **Входящий трафик из плоскости управления бастиона Azure:** Для подключения плоскости управления включите порт 443 для входящего трафика из тега службы **гатевайманажер** . Это позволяет плоскости управления, то есть, диспетчером шлюзов взаимодействовать с Azure бастиона.
 
 
-   :::image type="content" source="./media/bastion-nsg/inbound.png" alt-text="Входящие":::
+   :::image type="content" source="./media/bastion-nsg/inbound.png" alt-text="Входящий трафик":::
 
 * **Исходящий трафик:**
 
