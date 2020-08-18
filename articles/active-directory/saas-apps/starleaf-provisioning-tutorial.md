@@ -2,25 +2,21 @@
 title: Руководство. Настройка Старлеаф для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в Старлеаф.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: na
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2019
 ms.author: zhchia
-ms.openlocfilehash: 74e37bda28bed3ecd2c842c4659bcff3cb86eb6a
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 68484d2047e09dc82d44e15e86b13c4c54c49b03
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87920693"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88533815"
 ---
 # <a name="tutorial-configure-starleaf-for-automatic-user-provisioning"></a>Учебник. Настройка Старлеаф для автоматической подготовки пользователей
 
@@ -58,7 +54,7 @@ ms.locfileid: "87920693"
 
     ![Старлеаф добавить SCIM](media/starleaf-provisioning-tutorial/image00.png)
 
-2. Выберите **тип** для Microsoft Azure Active Directory. Введите подходящее имя в списке **имя**. Щелкните **Применить**.
+2. Выберите **тип** для Microsoft Azure Active Directory. Введите подходящее имя в списке **имя**. Нажмите кнопку **Применить**.
 
     ![Старлеаф добавить SCIM](media/starleaf-provisioning-tutorial/image01.png)
 
@@ -115,7 +111,7 @@ ms.locfileid: "87920693"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите кнопку **Сохранить**.
+7. Нажмите **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с старлеаф**.
 

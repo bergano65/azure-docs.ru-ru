@@ -3,23 +3,19 @@ title: Руководство по настройке входящей подг�
 description: Узнайте, как настроить входящую подготовку из SuccessFactors.
 services: active-directory
 author: cmmdesai
-documentationcenter: na
-manager: jodadzie
-ms.assetid: 1ff90231-1312-463e-8949-7d976e433fc3
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 08/05/2020
 ms.author: chmutali
-ms.openlocfilehash: 95c46550570d579af7ab8107686ad20838a3a62e
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: c03459a86f521cafd792b9bf86b2b6b46bf3da9c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87809958"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88534111"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-active-directory-user-provisioning"></a>Руководство. Настройка SAP SuccessFactors для Active Directory подготовки пользователей 
 Цель этого учебника — продемонстрировать шаги, которые необходимо выполнить, чтобы подготовить пользователей из SuccessFactors Employee Central к Active Directory (AD) и Azure AD с дополнительным адресом электронной почты для SuccessFactors. 

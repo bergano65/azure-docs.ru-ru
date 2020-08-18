@@ -7,18 +7,18 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 07/15/2020
-ms.openlocfilehash: 5bc8955f9eb9db837b3243b8a2937d80a4d38e2e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f2752e5ab2bf7c2926ec9e2c0e4929eab91ed377
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87100407"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88530976"
 ---
 # <a name="configure-virtual-network-service-endpoint-policies-for-azure-hdinsight"></a>Настройка политик конечной точки службы виртуальной сети для Azure HDInsight
 
 В этой статье содержатся сведения о том, как реализовать политики конечной точки службы в виртуальных сетях с помощью Azure HDInsight.
 
-## <a name="background"></a>Фон
+## <a name="background"></a>Историческая справка
 
 Azure HDInsight позволяет создавать кластеры в собственной виртуальной сети. Если необходимо разрешить исходящий трафик из виртуальной сети в другие службы Azure, такие как учетные записи хранения, можно создать [политики конечной точки службы](../virtual-network/virtual-network-service-endpoint-policies-overview.md). Однако политики конечной точки службы, созданные с помощью портал Azure, позволяют создавать только политику для одной учетной записи, всех учетных записей в подписке или всех учетных записей в группе ресурсов.
 
@@ -91,7 +91,7 @@ Azure HDInsight позволяет создавать кластеры в соб
 
     Если вы предпочитаете настроить политику конечной точки службы с помощью PowerShell, используйте следующий фрагмент кода.
     
-    ```json
+    ```powershell
     #Script to assign SEP 
     $subscriptionId = "<subscription id>"
     $rgName = "<resource group name>"

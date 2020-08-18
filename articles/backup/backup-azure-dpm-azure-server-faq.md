@@ -4,12 +4,12 @@ description: В этой статье вы найдете ответы на ча
 ms.reviewer: srinathv
 ms.topic: conceptual
 ms.date: 07/05/2019
-ms.openlocfilehash: 35957a1e8a3d6c3d9be06d9d44dbcd47efa0e6ee
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b2994e250c37d707eee5428e83c151728f83a1ab
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74173155"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88522935"
 ---
 # <a name="azure-backup-server-and-dpm---faq"></a>Azure Backup Server и DPM — часто задаваемые вопросы
 
@@ -37,6 +37,10 @@ ms.locfileid: "74173155"
 
 Для серверов DPM с источниками данных, которые защищены в облаке (с помощью накопительного пакета обновления более ранней версии, чем 7 (UR7)), необходимо подождать по крайней мере один день после установки пакета UR7 и последней версии агента Microsoft Azure Backup. После этого можно **добавить внешний сервер DPM**. В этот период выполняется загрузка метаданных в группы защиты DPM в Azure. Метаданные загружаются в группы защиты при первом выполнении задания, запланированного на ночное время.
 
+### <a name="are-there-recommendations-for-configuring-exclusions-for-antivirus-software"></a>Существуют ли рекомендации по настройке исключений для антивирусного по?
+
+Да, рекомендуется настроить исключение антивирусной программы. Сведения об исключениях для DPM см. в статье [Запуск антивирусного по на сервере DPM](https://docs.microsoft.com/system-center/dpm/run-antivirus-server?view=sc-dpm-2019). Сведения об исключениях для MABS см. в статье [Настройка антивирусной программы для сервера MABS](backup-azure-mabs-troubleshoot.md#configure-antivirus-for-mabs-server).
+
 ## <a name="vmware-and-hyper-v-backup"></a>Резервное копирование виртуальных машин VMware и Hyper-V
 
 ### <a name="can-i-back-up-vmware-vcenter-servers-to-azure"></a>Можно ли выполнять резервное копирование серверов VMware vCenter в облако Azure?
@@ -63,7 +67,7 @@ ms.locfileid: "74173155"
 
 Так как базы данных SharePoint настраиваются в SQL AlwaysOn, их нельзя изменить, не удалив группу доступности. В связи с этим DPM не может восстанавливать базы данных в исходное расположение. Вы можете восстановить базу данных SQL Server в другой экземпляр SQL Server.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 См. другие статьи с вопросами и ответами:
 

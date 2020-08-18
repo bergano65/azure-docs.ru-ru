@@ -10,18 +10,18 @@ ms.subservice: content-moderator
 ms.topic: how-to
 ms.date: 05/18/2020
 ms.author: pafarley
-ms.openlocfilehash: 081f512fd421bf46a86f3789eadd75e178e1b6f5
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: e1054edbece83804b8e49394f979dbaaf0b99917
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83685309"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88516594"
 ---
 # <a name="analyze-video-content-for-objectionable-material-in-c"></a>Анализ содержимого видео для выявления нежелательного содержимого в C#
 
 В этой статье содержатся сведения и примеры кода, которые помогут вам приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) для сканирования содержимого на выявление видео для взрослых или непристойного характера.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/), прежде чем начинать работу. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 - Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/)
@@ -120,7 +120,7 @@ private static readonly string CONTENT_MODERATOR_PRESET_FILE = "preset.json";
 
 Если вы хотите использовать локальный видеофайл (простейший случай), добавьте его в проект и введите его путь как значение `INPUT_FILE` (относительные пути относятся к каталогу выполнения).
 
-Вам также необходимо создать файл _preset.json_ в текущем каталоге и использовать его для указания номера версии. Пример:
+Вам также необходимо создать файл _preset.json_ в текущем каталоге и использовать его для указания номера версии. Например:
 
 ```JSON
 {

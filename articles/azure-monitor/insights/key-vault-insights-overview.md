@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 04/13/2019
-ms.openlocfilehash: 7b52a1ee67c22fb3bded49a80d35305bdf612f10
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: c669946ab76fcaeaaa6fd681f521408643c5a63c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86498963"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88531265"
 ---
 # <a name="monitoring-your-key-vault-service-with-azure-monitor-for-key-vault-preview"></a>Мониторинг службы Key Vault с помощью Azure Monitor для Key Vault (предварительная версия)
 Azure Monitor для Key Vault (предварительная версия) обеспечивает комплексный мониторинг хранилищ ключей в едином представлении запросов Key Vault, производительности, сбоев и задержки.
@@ -45,7 +45,7 @@ Azure Monitor для Key Vault объединяет журналы и метри
 
 В Azure Monitor можно просматривать сведения о запросах, задержках и сбоях из нескольких хранилищ ключей в подписке, а также выявлять проблемы производительности и сценарии регулирования.
 
-Чтобы получить данные об использовании и операциях ваших учетных записей хранения во всех подписках, выполните следующие действия.
+Чтобы просмотреть сведения об использовании и операциях хранилища ключей во всех подписках, выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 

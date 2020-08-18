@@ -3,23 +3,19 @@ title: Руководство. Настройка обратной записи 
 description: Узнайте, как настроить обратную запись атрибута в SAP SuccessFactors из Azure AD.
 services: active-directory
 author: cmmdesai
-documentationcenter: na
-manager: jodadzie
-ms.assetid: ad255bd4-9e50-43a1-a92b-359215868b6b
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 08/05/2020
 ms.author: chmutali
-ms.openlocfilehash: f150d6abf2ac6a423a99d3347df9bf0adc9b294b
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 4b048053a553176f73b5bd199bcb6e28bc74cc6c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87809938"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88534002"
 ---
 # <a name="tutorial-configure-attribute-write-back-from-azure-ad-to-sap-successfactors"></a>Руководство. Настройка атрибута обратной записи из Azure AD в SAP SuccessFactors
 Цель этого учебника — продемонстрировать действия, которые необходимо выполнить с помощью атрибутов обратной записи из Azure AD в службу SAP SuccessFactors Employee Central. 
@@ -151,7 +147,7 @@ ms.locfileid: "87809938"
 1. В окне POST щелкните многоточие (...), связанный с коллекцией SuccessFactors, и добавьте "новый запрос", именуемый "получение типов электронной почты", как показано ниже. 
 
    > [!div class="mx-imgBorder"]
-   > ![Отправить запрос по электронной почте](./media/sap-successfactors-inbound-provisioning/postman-email-request.png)
+   > ![Отправить запрос по электронной почте ](./media/sap-successfactors-inbound-provisioning/postman-email-request.png)
 
 1. Откройте панель запроса "получение типа электронной почты". 
 1. В поле получить URL-адрес добавьте следующий URL-адрес, заменив `successFactorsAPITenantName` его клиентом API для экземпляра SuccessFactors. 
@@ -250,7 +246,7 @@ ms.locfileid: "87809938"
 
 1. В таблице сопоставление в разделе **сопоставления атрибутов** можно сопоставить следующие Azure Active Directory атрибуты с SuccessFactors. В следующей таблице приведены инструкции по сопоставлению атрибутов обратной записи. 
 
-   | \# | Атрибут Azure AD | Атрибут SuccessFactors | Примечания |
+   | \# | Атрибут Azure AD | Атрибут SuccessFactors | Комментарии |
    |--|--|--|--|
    | 1 | employeeId | персонидекстернал | По умолчанию этот атрибут является соответствующим идентификатором. Вместо employeeId можно использовать любой другой атрибут Azure AD, который может хранить значение, равное Персонидекстернал в SuccessFactors.    |
    | 2 | mail | email | Источник атрибута адреса электронной почты. В целях тестирования можно сопоставлять userPrincipalName с электронной почтой. |

@@ -8,12 +8,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: d2deb59b5a10177b1a6e57046c013ec9dac0fb06
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5056f453580ef3e4549a0d8ee5b59e893d8c56bf
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87010807"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88522297"
 ---
 # <a name="key-vault-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Key Vault для Linux
 
@@ -73,9 +73,9 @@ ms.locfileid: "87010807"
 > 
 > Это связано с тем, что путь `/secrets` возвращает полный сертификат, включая закрытый ключ, а путь `/certificates` — нет. Дополнительные сведения о сертификатах можно найти в статье [Сертификаты Key Vault](../../key-vault/general/about-keys-secrets-certificates.md).
 
-> [!NOTE]
-> Свойство "authenticationSettings" необязательно для сценариев, если у виртуальной машины несколько назначенных удостоверений.
-> Это позволяет использовать задающего удостоверения для проверки подлинности в Key Vault.
+> [!IMPORTANT]
+> Свойство "authenticationSettings" **требуется** только для виртуальных машин с **назначенными пользователем удостоверениями**.
+> В нем указывается удостоверение, используемое для проверки подлинности в Key Vault.
 
 
 ### <a name="property-values"></a>Значения свойств

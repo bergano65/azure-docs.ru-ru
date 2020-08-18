@@ -3,23 +3,19 @@ title: Учебник. Настройка обратной записи Workday 
 description: Узнайте, как настроить обратную запись атрибутов из Azure AD в Workday.
 services: active-directory
 author: cmmdesai
-documentationcenter: na
-manager: daveba
-ms.assetid: ad255bd4-9e50-43a1-a92b-359215867b6b
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
-ms.openlocfilehash: 1d76fb96676ad49ce28ff4ef0d6c4fbc84636638
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 324d3a21e1694d243f03beca28ac8376bedffa4d
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84026475"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88526836"
 ---
 # <a name="tutorial-configure-attribute-writeback-from-azure-ad-to-workday"></a>Руководство. Настройка обратной записи атрибутов из Azure AD в Workday
 Цель этого руководства — продемонстрировать шаги, которые необходимо выполнить для обратной записи атрибутов из Azure AD в Workday. Приложение подготовки обратной записи Workday поддерживает назначение значений следующим атрибутам Workday:

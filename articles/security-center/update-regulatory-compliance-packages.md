@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 6ba0be3a6fba35e413270dd6770f5d3f47586b5e
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 28b6a70297efb8d8237f085e1f5b08dbb6a09072
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873322"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88522612"
 ---
 # <a name="customizing-the-set-of-standards-in-your-regulatory-compliance-dashboard"></a>Настройка набора стандартов на панели мониторинга соответствия нормативным требованиям
 
@@ -73,6 +73,8 @@ ms.locfileid: "83873322"
     - **Canada PBMM**
     
     ![Добавление пакетов соответствия нормативным требованиям на панель мониторинга соответствия нормативным требованиям в Центре безопасности](./media/update-regulatory-compliance-packages/dynamic-regulatory-compliance-additional-standards.png)
+
+1. Выберите **Добавить** и введите все необходимые сведения для конкретной инициативы, например область, параметры и исправление.
 
 1. На боковой панели Центра безопасности снова выберите **Соответствие нормативным требованиям**, чтобы вернуться к панели мониторинга соответствия нормативным требованиям.
     * Новый стандарт появится в списке отраслевых и нормативных требований. 

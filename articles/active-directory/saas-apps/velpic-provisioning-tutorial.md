@@ -2,26 +2,21 @@
 title: Руководство. Настройка Velpic для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в Velpic.
 services: active-directory
-documentationcenter: ''
 author: zhchia
 writer: zhchia
-manager: beatrizd-msft
-ms.assetid: d4ca2365-6729-48f7-bb7f-c0f5ffe740a3
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: zhchia
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b7a6c2c9b7ecb0b160f7481d95f7682f3f7a109
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fbed4b888c48a518d9f10a91ff0494aa7bdc1843
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77064127"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88532370"
 ---
 # <a name="tutorial-configuring-velpic-for-automatic-user-provisioning"></a>Учебник. Настройка Velpic для автоматической подготовки пользователей
 
@@ -79,7 +74,7 @@ ms.locfileid: "77064127"
 
 7. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок ниже.
 
-8. Нажмите кнопку **Сохранить**.
+8. Нажмите **Сохранить**.
 
 9. В разделе сопоставления выберите **синхронизировать Azure Active Directory пользователей с Velpic**.
 
@@ -87,7 +82,7 @@ ms.locfileid: "77064127"
 
 11. Чтобы включить службу подготовки Azure AD для Velpic, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
 
-12. Нажмите кнопку **Сохранить**.
+12. Нажмите **Сохранить**.
 
 После этого начнется начальная синхронизация всех пользователей и групп, назначенных Velpic в разделе "пользователи и группы". Обратите внимание, что начальная синхронизация будет занимать больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов о подготовке, в которых зафиксированы все действия, выполняемые службой подготовки.
 

@@ -2,25 +2,21 @@
 title: Руководство. Настройка RFPIO для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в RFPIO.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: 54419db4-47d5-4fb4-ab74-7b0b28afb11b
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 6ae423305b39c1335b5db1cd893d5f817be1929b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 963f89c99d71afbebbe122e3c7d8b3227dc4a8be
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77060870"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88518415"
 ---
 # <a name="tutorial-configure-rfpio-for-automatic-user-provisioning"></a>Учебник. Настройка RFPIO для автоматической подготовки пользователей
 
@@ -94,7 +90,7 @@ ms.locfileid: "77060870"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **RFPIO**, выберите **RFPIO** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **RFPIO**, выберите **RFPIO** на панели результатов и нажмите кнопку    **добавить** , чтобы добавить это приложение.
 
     ![RFPIO в списке результатов](common/search-new-app.png)
 
@@ -131,7 +127,7 @@ ms.locfileid: "77060870"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите кнопку **Сохранить**.
+7. Нажмите **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с RFPIO**.
 

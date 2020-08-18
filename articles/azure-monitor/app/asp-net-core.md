@@ -3,12 +3,12 @@ title: Application Insights Azure для ASP.NET Core приложений | Д�
 description: Отслеживайте доступность, производительность и использование веб-приложений ASP.NET Core.
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.openlocfilehash: 99d2a85e96aff650573e142368a136886945dcb0
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.openlocfilehash: 81d7ab38080aac941bce1f5d1dd17145f8075036
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88270926"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88518090"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для ASP.NET Core приложений
 
@@ -36,6 +36,8 @@ ms.locfileid: "88270926"
 - Допустимый ключ инструментирования Application Insights. Этот ключ необходим для отправки любых данных телеметрии в Application Insights. Если необходимо создать новый Application Insights ресурс для получения ключа инструментирования, см. раздел [Создание ресурса Application Insights](./create-new-resource.md).
 
 ## <a name="enable-application-insights-server-side-telemetry-visual-studio"></a>Включение телеметрии на стороне сервера Application Insights (Visual Studio)
+
+Для Visual Studio для Mac используйте инструкции, указанные [вручную](#enable-application-insights-server-side-telemetry-no-visual-studio). Эта процедура поддерживается только в версии Windows Visual Studio.
 
 1. Откройте проект в Visual Studio.
 
@@ -463,7 +465,7 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 Последние обновления и исправления ошибок см. [в заметках о выпуске](./release-notes.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Изучите потоки пользователей](./usage-flows.md) , чтобы понять, как пользователи переходят через приложение.
 * [Настройте сбор моментальных снимков](./snapshot-debugger.md) для просмотра состояния исходного кода и переменных в момент возникновения исключения.

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 04/27/2020
+ms.date: 08/17/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d709bf02f1cb504121e52f88385d0f6c074b24a0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bb5383ee7930cb3d54593f71a709c033d3850889
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85203594"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88521218"
 ---
 # <a name="define-a-technical-profile-for-a-saml-token-issuer-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля для издателя токенов SAML в пользовательской политике Azure Active Directory B2C
 
@@ -57,6 +57,7 @@ ms.locfileid: "85203594"
 | attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | IssuerUri | Нет | Имя издателя, которое отображается в ответе SAML. Значение должно совпадать с именем, настроенным в приложении проверяющей стороны. |
+| XmlSignatureAlgorithm | Нет | Метод, который Azure AD B2C использует для подписания утверждения SAML. Возможные значения: `Sha256`, `Sha384`, `Sha512` или `Sha1`. Настройте алгоритм подписи на обеих сторонах, используя одно и то же значение. Используйте только тот алгоритм, который поддерживается вашим сертификатом. Сведения о настройке ответа SAML см. в статье [метаданные SAML проверяющей](relyingparty.md#metadata) стороны.|
 
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 
@@ -76,15 +77,4 @@ ms.locfileid: "85203594"
 Пример использования технического профиля издателя SAML см. в следующей статье:
 
 - [Регистрация приложения SAML в Azure AD B2C](connect-with-saml-service-providers.md)
-
-
-
-
-
-
-
-
-
-
-
 
