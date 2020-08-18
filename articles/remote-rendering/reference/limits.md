@@ -5,12 +5,12 @@ author: erscorms
 ms.author: erscor
 ms.date: 02/11/2020
 ms.topic: reference
-ms.openlocfilehash: 17f98f452764abdc8458cdc38661d464ecb0a60d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5c4c6be7c8a6287c5a8ec6a60121751ff9fc0dc9
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84808550"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509233"
 ---
 # <a name="limitations"></a>Ограничения
 
@@ -26,7 +26,7 @@ ms.locfileid: "84808550"
 * Общее допустимое количество объектов одного типа (Entity, CutPlaneComponent и т. д.): 16 777 215
 * Общее допустимое количество активных сечений: 8.
 
-## <a name="geometry"></a>Geometry
+## <a name="geometry"></a>Геометрия
 
 * Общее допустимое количество материалов в ресурсе: 65 535.
 * Максимальная размерность одной текстуры: 16 384 x 16 384. Более крупные исходные текстуры будут масштабироваться по процессу преобразования.
@@ -35,12 +35,12 @@ ms.locfileid: "84808550"
 
 Допустимое количество многоугольников для всех загруженных моделей зависит от размера виртуальной машины, обрабатывающей [REST API управления сеансами](../how-tos/session-rest-api.md#create-a-session).
 
-| Размер виртуальной машины | Максимальное число многоугольников |
+| Размер сервера | Максимальное число многоугольников |
 |:--------|:------------------|
 |standard| 20 млн |
 |Премиум| без ограничений |
 
-Более подробные сведения об этом ограничении см. в разделе [Размер виртуальной машины](../reference/vm-sizes.md) .
+Более подробные сведения об этом ограничении см. в разделе " [Размер сервера](../reference/vm-sizes.md) ".
 
 ## <a name="platform-limitations"></a>Ограничения платформы
 

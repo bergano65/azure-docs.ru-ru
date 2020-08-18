@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 12/04/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 34b7f4bc55fc8e33b7d66f53e6f2fc241801f965
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: ad6bbc1d3c20659441b8b062898526471f4d713a
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87827424"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88510238"
 ---
 # <a name="considerations-for-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure
 [1114181]:https://launchpad.support.sap.com/#/notes/1114181
@@ -221,7 +221,7 @@ Azure обеспечивает квоту на количество операц
 
 Для хранилища класса Premium рекомендуется использовать параметр **Read caching for data files** (Кэширование чтения файлов данных) базы данных SAP и выбрать **No caching for the disks of log file(s)** (Без кэширования дисков файлов журнала).
 
-Для виртуальных машин серии M рекомендуется использовать ускоритель записи Azure для развертывания СУБД. Дополнительные сведения об ускорителе записи Azure, его ограничениях и развертывании см. в статье [Включение ускорителя записи](../../windows/how-to-enable-write-accelerator.md).
+Для виртуальных машин серии M рекомендуется использовать ускоритель записи Azure для развертывания СУБД. Дополнительные сведения об ускорителе записи Azure, его ограничениях и развертывании см. в статье [Включение ускорителя записи](../../how-to-enable-write-accelerator.md).
 
 
 ### <a name="azure-nonpersistent-disks"></a>Временные диски Azure

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 12/09/2018
 ms.author: mavane
 ms.custom: seodec18
-ms.openlocfilehash: f7295515b75ba7e26454f8b6ce6e0d660657ec4e
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 9355482c26cabb96fc6292bab5d542f36aec6a8c
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86055245"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509762"
 ---
 # <a name="develop-arm-templates-for-cloud-consistency"></a>Разработка шаблонов ARM для согласованности в облаке
 
@@ -487,7 +487,7 @@ Azure предоставляет широкий выбор образов вир
 az vm image list -all
 ```
 
-Тот же список можно получить с помощью командлета Azure PowerShell [Get-AzureRmVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher), указав расположение с помощью параметра `-Location`. Пример:
+Тот же список можно получить с помощью командлета Azure PowerShell [Get-AzureRmVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher), указав расположение с помощью параметра `-Location`. Например:
 
 ```azurepowershell-interactive
 Get-AzureRmVMImagePublisher -Location "West Europe" | Get-AzureRmVMImageOffer | Get-AzureRmVMImageSku | Get-AzureRmVMImage
@@ -570,7 +570,7 @@ Get-AzureRmVMSize -Location "West Europe"
 }
 ```
 
-Аналогичные изменения также применяются к [дискам данных](../../virtual-machines/windows/using-managed-disks-template-deployments.md).
+Аналогичные изменения также применяются к [дискам данных](../../virtual-machines/using-managed-disks-template-deployments.md).
 
 ### <a name="verify-that-vm-extensions-are-available-in-azure-stack"></a>Проверка доступности расширений виртуальной машины в Azure Stack
 
@@ -590,7 +590,7 @@ Get-AzureRmVMSize -Location "West Europe"
 az vm extension image list --location myLocation
 ```
 
-Вы также можете выполнить командлет Azure PowerShell [Get-AzureRmVmImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) и использовать `-Location` для указания расположения образа виртуальной машины. Пример:
+Вы также можете выполнить командлет Azure PowerShell [Get-AzureRmVmImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) и использовать `-Location` для указания расположения образа виртуальной машины. Например:
 
 ```azurepowershell-interactive
 Get-AzureRmVmImagePublisher -Location myLocation | Get-AzureRmVMExtensionImageType | Get-AzureRmVMExtensionImage | Select Type, Version
@@ -665,7 +665,7 @@ Get-AzureRmVMExtensionImage -Location myLocation -PublisherName Microsoft.PowerS
 * Имейте в виду, что некоторые тесты могут выполняться без подключения к Azure Resource Manager. Другие, такие как тестирование развертывания шаблона, требуют выполнения некоторых действий со стороны Resource Manager, которые не могут происходить в автономном режиме.
 * Тестирование шаблона развертывания с использованием API проверки не тождественно фактическому развертыванию. Кроме того, даже при развертывании шаблона из локального файла все ссылки на вложенные шаблоны в шаблоне извлекаются Resource Manager напрямую, а артефакты, на которые ссылаются расширения виртуальной машины, извлекаются агентом виртуальной машины, работающим на развернутой виртуальной машине.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Рекомендации по использованию шаблона Azure Resource Manager](/azure-stack/user/azure-stack-develop-templates)
 * [Рекомендации по использованию шаблонов ARM](template-syntax.md)

@@ -1,5 +1,5 @@
 ---
-title: Azure Active Directory субъекта-службы с помощью Azure SQL
+title: Субъект-служба Azure Active Directory с SQL Azure
 description: Приложения Azure AD (субъекты-службы) поддерживают создание пользователей Azure AD в базе данных SQL Azure, Управляемый экземпляр Azure SQL и Azure синапсе Analytics.
 ms.service: sql-db-mi
 ms.subservice: security
@@ -8,15 +8,15 @@ ms.topic: conceptual
 author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
-ms.date: 07/27/2020
-ms.openlocfilehash: bfe609dc480dcdb71f162ca1bfd383a27257fedc
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.date: 08/17/2020
+ms.openlocfilehash: d8268ebf89bed6b67919e77576118343b58edb6c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321706"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88516628"
 ---
-# <a name="azure-active-directory-service-principal-with-azure-sql"></a>Azure Active Directory субъекта-службы с помощью Azure SQL
+# <a name="azure-active-directory-service-principal-with-azure-sql"></a>Субъект-служба Azure Active Directory с SQL Azure
 
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
@@ -67,7 +67,7 @@ ms.locfileid: "87321706"
     Set-AzSqlServer -ResourceGroupName <resource group> -ServerName <Server name> -AssignIdentity
     ```
 
-    Дополнительные сведения см. в описании команды [Set-азсклсервер](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserver) .
+    Дополнительные сведения см. в описании команды [Set-AzSqlServer](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserver).
 
     - Чтобы проверить, назначено ли удостоверение сервера серверу, выполните команду Get-Азсклсервер.
 
@@ -80,6 +80,8 @@ ms.locfileid: "87321706"
 
 > [!IMPORTANT]
 > Шаги 1 и 2 должны выполняться в указанном порядке. Сначала создайте или назначьте удостоверение сервера, а затем предоставьте разрешение на [**чтение каталога**](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers) . Пропуск одного из этих шагов или и того и другого приведет к ошибке выполнения во время создания объекта Azure AD в Azure SQL от имени приложения Azure AD. Пошаговые инструкции по созданию пользователя Azure AD от имени приложения Azure AD см. в статье [учебник. Создание пользователей Azure AD с помощью приложений Azure AD](authentication-aad-service-principal-tutorial.md).
+>
+> В **общедоступной предварительной версии**роль " **читатели каталога** " можно назначить группе в Azure AD. Владельцы групп могут добавить управляемое удостоверение в качестве члена этой группы, что позволит пользователям без прав администратора **глобального администратора** или **привилегированных ролей** предоставить роль **читателей каталога** . Дополнительные сведения об этой функции см. [в разделе роль читателей каталога в Azure Active Directory для Azure SQL](authentication-aad-directory-readers-role.md).
 
 ## <a name="troubleshooting-and-limitations-for-public-preview"></a>Устранение неполадок и ограничения для общедоступной предварительной версии
 
@@ -94,11 +96,11 @@ ms.locfileid: "87321706"
     - Если вы хотите использовать портал Azure для SQL Управляемый экземпляр, чтобы задать администратора Azure AD, можно решить эту проблему, создав группу Azure AD. Затем добавьте субъект-службу (приложение Azure AD) в эту группу и задайте эту группу в качестве администратора Azure AD для Управляемый экземпляр SQL.
     - Настройка субъекта-службы (приложения Azure AD) в качестве администратора Azure AD для базы данных SQL и Azure синапсе поддерживается с помощью команд портал Azure, [PowerShell](authentication-aad-configure.md?tabs=azure-powershell#powershell-for-sql-database-and-azure-synapse)и [CLI](authentication-aad-configure.md?tabs=azure-cli#powershell-for-sql-database-and-azure-synapse) .
 - Использование приложения Azure AD с субъектом-службой из другого клиента Azure AD завершится ошибкой при доступе к базе данных SQL или Управляемый экземпляр SQL, созданной в другом клиенте. Субъект-служба, назначенный этому приложению, должен принадлежать тому же клиенту, что и логический сервер SQL или Управляемый экземпляр.
-- [AZ. SQL 2.9.0](https://www.powershellgallery.com/packages/Az.Sql/2.9.0) Module или более поздней версии требуется при использовании PowerShell для настройки отдельного приложения Azure AD в качестве администратора Azure AD для SQL Azure. Убедитесь, что вы выполнили обновление до последней версии модуля.
+- Для настройки отдельного приложения Azure AD в качестве администратора Azure AD для SQL Azure с помощью PowerShell необходим модуль [Az.Sql 2.9.0](https://www.powershellgallery.com/packages/Az.Sql/2.9.0) или более поздней версии. Убедитесь, что используется последняя версия модуля.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание пользователей Azure AD с помощью приложений Azure AD](authentication-aad-service-principal-tutorial.md)
+> [Руководство по созданию пользователей Azure AD с помощью приложений Azure AD](authentication-aad-service-principal-tutorial.md)
 
 

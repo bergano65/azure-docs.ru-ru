@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/12/2010
 ms.topic: how-to
-ms.openlocfilehash: c43ed412116d0cb30f7d06ba65467fd529f367ac
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dcff550b5411ac00dc54d2103278812f32f56543
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85552692"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509983"
 ---
 # <a name="use-the-azure-frontend-apis-for-authentication"></a>Использование внешних API Azure для проверки подлинности
 
@@ -64,7 +64,7 @@ struct AzureFrontendAccountInfo
 
 Каждый открытый или созданный класс ```AzureSession``` сохраняет ссылку на интерфейс, который его создал. Чтобы корректно завершить работу, необходимо освободить все сеансы, а затем внешний интерфейс.
 
-Освобождение сеанса не приводит к остановке работы виртуальной машины в Azure, поэтому нужно явным образом вызвать `AzureSession.StopAsync`.
+Отмена выделения сеанса не приведет к прерыванию сервера в Azure, `AzureSession.StopAsync` его необходимо вызвать явным образом.
 
 Когда сеанс будет создан и его состояние получит значение "Готов", станет возможным подключение к удаленной среде выполнения отрисовки с помощью `AzureSession.ConnectToRuntime`.
 

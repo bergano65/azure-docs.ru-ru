@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 08/10/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a3c22a46d22ef4eb717eb686fa295c820c78c934
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: f3402f4ff719752cca6e1d7a4aeeb3b7e12c3e28
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067262"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88511148"
 ---
 # <a name="sap-workloads-on-azure-planning-and-deployment-checklist"></a>Рабочие нагрузки SAP в Azure: контрольный список для планирования и развертывания
 
@@ -114,7 +114,7 @@ ms.locfileid: "88067262"
         - Как правило, использование [дисков Azure HDD (цен. Категория "Стандартный")](../../windows/disks-types.md#standard-hdd)не рекомендуется.
         - Используйте [хранилище Azure класса Premium](../../windows/disks-types.md#premium-ssd) для любых ВИРТУАЛЬНЫХ машин СУБД с учетом производительности.
         - Используйте [управляемые диски Azure](https://azure.microsoft.com/services/managed-disks/).
-        - Использование Ускоритель записи Azure для дисков журналов СУБД серии M. Учитывайте Ускоритель записи ограничения и использование, как описано в [ускоритель записи](../../linux/how-to-enable-write-accelerator.md).
+        - Использование Ускоритель записи Azure для дисков журналов СУБД серии M. Учитывайте Ускоритель записи ограничения и использование, как описано в [ускоритель записи](../../how-to-enable-write-accelerator.md).
         - Для различных типов СУБД ознакомьтесь с [общей документацией по связанной с SAP СУБД](./dbms_guide_general.md) и документацией, относящейся к СУБД, на которую указывает универсальный документ.
         - Дополнительные сведения о SAP HANA см. [в статье конфигурации и операции SAP HANA инфраструктуры в Azure](./hana-vm-operations.md).
         - Никогда не подключайте диски данных Azure к виртуальной машине Linux Azure через идентификатор устройства. Вместо этого используйте универсальный уникальный идентификатор (UUID). Будьте внимательны, например, при использовании графических средств для подключения дисков данных Azure. Дважды проверьте записи в/etc/fstab, чтобы убедиться, что для подключения дисков используется UUID. Дополнительные сведения можно найти в [этой статье](../../linux/attach-disk-portal.md#connect-to-the-linux-vm-to-mount-the-new-disk).

@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: article
-ms.openlocfilehash: 46560f067e020236031487677ad4f48a9560d4e1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4e65655f1809c6badc50e39a2a5e932516ef99d2
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80681250"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509847"
 ---
 # <a name="use-the-session-management-rest-api"></a>Использование REST API управления сеансами
 
@@ -71,15 +71,15 @@ $token = $response.AccessToken;
 
 **Текст запроса:**
 
-* Макслеасетиме (TimeSpan) — значение времени ожидания, когда виртуальная машина будет списана автоматически
+* Макслеасетиме (TimeSpan) — значение времени ожидания, когда сеанс будет списан автоматически
 * модели (массив): URL-адреса контейнеров ресурсов для предварительной загрузки
-* Размер (строка): размер виртуальной машины (**"Стандартный"** или **"Премиум"**). См. конкретные [ограничения по размеру виртуальной машины](../reference/limits.md#overall-number-of-polygons).
+* Размер (строка): Размер сервера для настройки ([**"Стандартный"**](../reference/vm-sizes.md) или [**"Премиум"**](../reference/vm-sizes.md)). См. раздел определенные [ограничения размера](../reference/limits.md#overall-number-of-polygons).
 
 **Правляют**
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 202 | -sessionId: GUID | Успех |
+| 202 | -sessionId: GUID | Успешно |
 
 ### <a name="example-script-create-a-session"></a>Пример сценария. Создание сеанса
 
@@ -130,7 +130,7 @@ $sessionId = "d31bddca-dab7-498e-9bc9-7594bc12862f"
 
 **Текст запроса:**
 
-* Макслеасетиме (TimeSpan) — значение времени ожидания, когда виртуальная машина будет списана автоматически
+* Макслеасетиме (TimeSpan) — значение времени ожидания, когда сеанс будет списан автоматически
 
 **Правляют**
 
@@ -258,7 +258,7 @@ RawContentLength  : 60
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 204 | | Успех |
+| 204 | | Успешно |
 
 ### <a name="example-script-stop-a-session"></a>Пример скрипта. Завершение сеанса
 

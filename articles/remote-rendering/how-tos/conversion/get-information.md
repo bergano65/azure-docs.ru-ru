@@ -5,12 +5,12 @@ author: malcolmtyrrell
 ms.author: matyrr
 ms.date: 03/05/2020
 ms.topic: how-to
-ms.openlocfilehash: 722d3e218272202074820db442ab1592042c7011
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f5c38ac88503416b37b720a091c9e46d819a3146
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84805005"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509303"
 ---
 # <a name="get-information-about-a-converted-model"></a>Получение сведений о преобразованной модели
 
@@ -100,7 +100,7 @@ ms.locfileid: "84805005"
 В этом разделе содержатся сведения об исходной сцене. Часто возникают различия между значениями в этом разделе и эквивалентными значениями в средстве, которое создало исходную модель. Такие различия ожидаемы, поскольку модель изменяется во время экспорта и преобразования.
 
 * `numMeshes`: Количество частей сетки, где каждая часть может ссылаться на один материал.
-* `numFaces`: Общее число _треугольников_ во всей модели. Обратите внимание, что при преобразовании сетка будет триангуляцией. Это значение влияет на предел многоугольника в [стандартном размере виртуальной машины отрисовки](../../reference/vm-sizes.md#how-the-renderer-evaluates-the-number-of-polygons).
+* `numFaces`: Общее число _треугольников_ во всей модели. Обратите внимание, что при преобразовании сетка будет триангуляцией. Это число влияет на пределы многоугольников в [стандартном размере сервера отрисовки](../../reference/vm-sizes.md#how-the-renderer-evaluates-the-number-of-polygons).
 * `numVertices`: Общее количество вершин во всей модели.
 * `numMaterial`: Общее количество материалов во всей модели.
 * `numFacesSmallestMesh`: Число треугольников в наименьшей сетке модели.

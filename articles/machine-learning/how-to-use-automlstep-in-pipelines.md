@@ -11,12 +11,12 @@ manager: cgronlun
 ms.date: 06/15/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 20a85c17ccd4167b29e167c55df1bd8a8cc4d56e
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.openlocfilehash: c2fc0b0bc1b59bcb3fa4a84235135d9b8ff1fc27
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88185661"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88510255"
 ---
 # <a name="use-automated-ml-in-an-azure-machine-learning-pipeline-in-python"></a>Использование автоматизированного ML в конвейере Машинное обучение Azure в Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "88185661"
 
 Предпочтительный способ первоначального перемещения данных _в_ конвейер машинного обучения — с `Dataset` объектами. Для перемещения данных _между_ шагами предпочтительным способом является `PipelineData` объекты. Для использования с `AutoMLStep` `PipelineData` объект должен быть преобразован в `PipelineOutputTabularDataset` объект. Дополнительные сведения см. [в статье входные и выходные данные из конвейеров ML](how-to-move-data-in-out-of-pipelines.md).
 
-`AutoMLStep`Объект настраивается с помощью `AutoMLConfig` объекта. `AutoMLConfig`является гибким классом, как описано в разделе [Настройка автоматизированных экспериментов машинного обучения в Python](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train#configure-your-experiment-settings). 
+`AutoMLStep`Объект настраивается с помощью `AutoMLConfig` объекта. `AutoMLConfig` является гибким классом, как описано в разделе [Настройка автоматизированных экспериментов машинного обучения в Python](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train#configure-your-experiment-settings). 
 
 `Pipeline`Выполняется в `Experiment` . Конвейер `Run` имеет для каждого этапа дочерний элемент `StepRun` . Выходные данные автоматизированного ML `StepRun` — это обучающие показатели и модель с наивысшей производительностью.
 
@@ -250,7 +250,7 @@ dataprep_step = PythonScriptStep(
 
 Настройка автоматического этапа конвейера ML выполняется с помощью `AutoMLConfig` класса. Этот гибкий класс описан в статье [Настройка автоматизированных экспериментов машинного обучения в Python](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train). Входные и выходные данные являются единственными аспектами настройки, требующими особого внимания в конвейере машинного обучения. Ниже подробно рассматриваются входные и выходные данные для `AutoMLConfig` в конвейерах. Помимо данных, преимуществом конвейеров машинного обучения является возможность использования различных целевых объектов вычислений для различных этапов. Вы можете использовать более мощный вариант `ComputeTarget` только для автоматизированного процесса машинного обучения. Это так же просто, как назначение более мощным `RunConfiguration` для `AutoMLConfig` `run_configuration` параметра объекта.
 
-### <a name="send-data-to-automlstep"></a>Отправить данные в`AutoMLStep`
+### <a name="send-data-to-automlstep"></a>Отправить данные в `AutoMLStep`
 
 В конвейере машинного обучения входные данные должны быть `Dataset` объектом. Самый эффективный способ — предоставить входные данные в виде `PipelineOutputTabularDataset` объектов. Вы создаете объект этого типа с параметром `parse_parquet_files()` или `parse_delimited_files()` в `PipelineOutputFileDataset` , например, `prepped_data_path` объектом.
 
@@ -273,10 +273,10 @@ prepped_data = Dataset.get_by_name(ws, 'Data_prepared')
 | Метод | Преимущества и недостатки | 
 |-|-|
 |`PipelineOutputTabularDataset`| Более высокая производительность | 
-|| Естественный маршрут от`PipelineData` | 
+|| Естественный маршрут от `PipelineData` | 
 || Данные не сохраняются после выполнения конвейера |
 || [Записная книжка с `PipelineOutputTabularDataset` методом](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/nyc-taxi-data-regression-model-building/nyc-taxi-data-regression-model-building.ipynb) |
-| Буферизаци`Dataset` | Снижение производительности. |
+| Буферизаци `Dataset` | Снижение производительности. |
 | | Может создаваться различными способами. | 
 | | Данные сохраняются и видны во всей рабочей области |
 | | [Записная книжка с зарегистрированным `Dataset` методом](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/continuous-retraining/auto-ml-continuous-retraining.ipynb)
@@ -337,17 +337,17 @@ train_step = AutoMLStep(name='AutoML_Classification',
 
 `automl_settings`Словарь передается в `AutoMLConfig` конструктор как кваргс. Другие параметры не являются сложными:
 
-- `task`для этого примера задано значение `classification` . Другие допустимые значения — `regression` и.`forecasting`
-- `path`и `debug_log` Опишите путь к проекту и локальный файл, в который будут записываться отладочные данные 
-- `compute_target`ранее определено `compute_target` , что в этом примере является недорогым компьютером на основе ЦП. Если вы используете средства глубокого обучения Аутомл, необходимо изменить целевой объект вычислений так, чтобы он был основан на GPU
+- `task` для этого примера задано значение `classification` . Другие допустимые значения — `regression` и. `forecasting`
+- `path` и `debug_log` Опишите путь к проекту и локальный файл, в который будут записываться отладочные данные 
+- `compute_target` ранее определено `compute_target` , что в этом примере является недорогым компьютером на основе ЦП. Если вы используете средства глубокого обучения Аутомл, необходимо изменить целевой объект вычислений так, чтобы он был основан на GPU
 - Параметру `featurization` задается значение `auto`. Дополнительные сведения см. в разделе [Data Добавление признаков](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train#data-featurization) документа автоматической настройки ml. 
-- `training_data`задается для `PipelineOutputTabularDataset` объектов, сделанных из выходных файлов этапа подготовки данных 
-- `label_column_name`Указывает, какой столбец нам нужен для прогнозирования 
+- `training_data` задается для `PipelineOutputTabularDataset` объектов, сделанных из выходных файлов этапа подготовки данных 
+- `label_column_name` Указывает, какой столбец нам нужен для прогнозирования 
 
 `AutoMLStep`Сам по себе принимает `AutoMLConfig` и имеет, как выходные данные, `PipelineData` объекты, созданные для хранения метрик и данных модели. 
 
 >[!Important]
-> Необходимо задать `enable_default_model_output` и, `enable_default_metrics_output` Если `False` не используется `AutoMLStep` .
+> Необходимо задать `enable_default_model_output` и, `enable_default_metrics_output` `True` только если используется  `AutoMLStepRun` .
 
 В этом примере автоматизированный процесс машинного обучения выполнит перекрестные проверки на `training_data` . Число перекрестных проверок можно контролировать с помощью `n_cross_validations` аргумента. Если вы уже разделили обучающие данные как часть шагов подготовки данных, вы можете задать собственное значение `validation_data` `Dataset` .
 

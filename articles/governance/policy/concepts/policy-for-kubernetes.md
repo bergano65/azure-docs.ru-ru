@@ -3,12 +3,12 @@ title: Предварительная версия — знакомство с �
 description: Узнайте, как Политика Azure использует Rego и Open Policy Agent для управления кластерами, работающими под управлением Kubernetes в Azure или в локальной среде. Это ознакомительная версия функции.
 ms.date: 08/07/2020
 ms.topic: conceptual
-ms.openlocfilehash: dc81d22677eeab16ae06e782c5ae47c121af04c6
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: e9da5caf13994e1c198345958feec43867c0b5f5
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88003501"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509881"
 ---
 # <a name="understand-azure-policy-for-kubernetes-clusters-preview"></a>Общие сведения о службе "Политика Azure" для кластеров Kubernetes (предварительная версия)
 
@@ -73,19 +73,19 @@ ms.locfileid: "88003501"
 
      ```azurecli-interactive
      # Log in first with az login if you're not using Cloud Shell
-   
+
      # Provider register: Register the Azure Kubernetes Service provider
      az provider register --namespace Microsoft.ContainerService
-   
+
      # Provider register: Register the Azure Policy provider
      az provider register --namespace Microsoft.PolicyInsights
-   
+
      # Feature register: enables installing the add-on
      az feature register --namespace Microsoft.ContainerService --name AKS-AzurePolicyAutoApprove
-     
+
      # Use the following to confirm the feature has registered
      az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AKS-AzurePolicyAutoApprove')].   {Name:name,State:properties.state}"
-     
+
      # Once the above shows 'Registered' run the following to propagate the update
      az provider register -n Microsoft.ContainerService
      ```
@@ -135,7 +135,7 @@ ms.locfileid: "88003501"
      <a name="migrate-from-v1"></a>
      > [!NOTE]
      > Если кнопка **Включить надстройку** неактивна, подписка еще не добавлена в предварительную версию. Если кнопка **отключить надстройку** включена и отображается сообщение предупреждение о миграции версии 2, то надстройка v1 установлена и должна быть удалена до назначения определений политики v2. _Устаревшая_ надстройка v1 будет автоматически заменена надстройкой v2, начиная с 24 августа 2020. После этого необходимо назначить новые версии v2 определений политик. Чтобы выполнить обновление сейчас, выполните следующие действия.
-     > 
+     >
      > 1. Проверьте, установлена надстройка v1 в кластере AKS. для этого откройте страницу **политики (Предварительная версия)** в кластере AKS и убедитесь, что в текущем кластере используется надстройка политики Azure v1... Сообщение.
      > 1. [Удалите надстройку](#remove-the-add-on-from-aks).
      > 1. Нажмите кнопку **включить надстройку** , чтобы установить версию v2 надстройки.
@@ -185,16 +185,16 @@ kubectl get pods -n gatekeeper-system
 
      ```azurecli-interactive
      # Log in first with az login if you're not using Cloud Shell
-     
+
      # Provider register: Register the Azure Policy provider
      az provider register --namespace 'Microsoft.PolicyInsights'
      ```
 
    - Azure PowerShell
-   
+
      ```azurepowershell-interactive
      # Log in first with Connect-AzAccount if you're not using Cloud Shell
-   
+
      # Provider register: Register the Azure Policy provider
      Register-AzResourceProvider -ProviderNamespace 'Microsoft.PolicyInsights'
      ```
@@ -205,7 +205,7 @@ kubectl get pods -n gatekeeper-system
 
 1. Кластер Kubernetes поддерживает Azure Arc. Дополнительные сведения см. в [подключение кластера Kubernetes к Azure Arc](../../../azure-arc/kubernetes/connect-cluster.md).
 
-1. Получите полный идентификатор ресурса Azure для кластера Kubernetes с поддержкой Azure Arc. 
+1. Получите полный идентификатор ресурса Azure для кластера Kubernetes с поддержкой Azure Arc.
 
 1. Откройте порты для надстройки. Надстройка политики Azure использует эти домены и порты для выборки определений и назначений политик, а также для создания отчетов о соответствии кластера, возвращаемых Политике Azure.
 
@@ -226,7 +226,7 @@ kubectl get pods -n gatekeeper-system
 
    - Azure PowerShell
 
-     ```azure powershell-interactive
+     ```azurepowershell-interactive
      $sp = New-AzADServicePrincipal -Role "Policy Insights Data Writer (Preview)" -Scope "/subscriptions/<subscriptionId>/resourceGroups/<rg>/providers/Microsoft.Kubernetes/connectedClusters/<clusterName>"
 
      @{ appId=$sp.ApplicationId;password=[System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($sp.Secret));tenant=(Get-AzContext).Tenant.Id } | ConvertTo-Json
@@ -289,16 +289,16 @@ kubectl get pods -n gatekeeper-system
 
      ```azurecli-interactive
      # Log in first with az login if you're not using Cloud Shell
-     
+
      # Provider register: Register the Azure Policy provider
      az provider register --namespace 'Microsoft.PolicyInsights'
      ```
 
    - Azure PowerShell
-   
+
      ```azurepowershell-interactive
      # Log in first with Connect-AzAccount if you're not using Cloud Shell
-   
+
      # Provider register: Register the Azure Policy provider
      Register-AzResourceProvider -ProviderNamespace 'Microsoft.PolicyInsights'
      ```
@@ -310,7 +310,7 @@ kubectl get pods -n gatekeeper-system
      ```bash
      # Get the kube-apiserver pod name
      kubectl get pods -n kube-system
-   
+
      # Find the aadClientID value
      kubectl exec <kube-apiserver pod name> -n kube-system cat /etc/kubernetes/azure.json
      ```
@@ -393,21 +393,20 @@ kubectl get pods -n gatekeeper-system
 
 1. Задайте в качестве **Области** группу управления, подписку или группу ресурсов кластера Kubernetes, к которым будет применяться назначение политики.
 
-   > [!NOTE]    
+   > [!NOTE]
    > При назначении политики Azure для определения Kubernetes **Область** должна включать ресурс кластера. Для кластера Обработчика AKS **Область** должна быть группой ресурсов кластера.
 
-1. Присвойте назначению политики **Имя** и **Описание**, по которым его можно будет легко отличить.    
+1. Присвойте назначению политики **Имя** и **Описание**, по которым его можно будет легко отличить.
 
-1. Задайте для [Принудительного применения политики](./assignment-structure.md#enforcement-mode) одно из значений    
-   ниже.   
+1. Задайте для [политики принудительное применение](./assignment-structure.md#enforcement-mode) одного из следующих значений.
 
-   - **Включено** — принудительно применить политику в кластере. Запросы на допуск Kubernetes с нарушениями отклоняются.    
+   - **Включено** — принудительно применить политику в кластере. Запросы на допуск Kubernetes с нарушениями отклоняются.
 
    - **Отключено** — не выполнять принудительного применения политики в кластере. Запросы на допуск Kubernetes с нарушениями не отклоняются. Результаты оценки соответствия по-прежнему доступны. При развертывании новых определений политик в работающих кластерах параметр _Отключено_ может оказаться полезным для тестирования определений политик, так как запросы на допуск с нарушениями не будут отклоняться.
 
-1. Выберите **Далее**. 
+1. Выберите **Далее**.
 
-1. Установка **значений параметра** 
+1. Установка **значений параметра**
 
    - Чтобы исключить пространства имен Kubernetes из оценки политики, укажите список пространств имен в параметре **Исключения пространства имен**. Рекомендуется исключить следующие пространства имен: _kube-system_, _gatekeeper-system_ и _azure-arc_.
 

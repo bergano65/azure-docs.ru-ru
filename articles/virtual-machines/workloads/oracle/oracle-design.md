@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogardle
-ms.openlocfilehash: 78eedb9bd4f12644a1bc992d0786a43b8af767a9
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 0dd787916159637ce92a29a5d4baa1ffe7a09ba4
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86507936"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88510017"
 ---
 # <a name="design-and-implement-an-oracle-database-in-azure"></a>Разработка базы данных Oracle и ее реализация в Azure
 
@@ -187,7 +187,7 @@ SQL> @?/rdbms/admin/awrrpt.sql
 - Используйте сжатие данных для сокращения числа операций ввода-вывода (для данных и индексов).
 - Используйте отдельные диски данных для журналов повторяемых операций, а также табличного пространства system, temp и undo.
 - Не размещайте файлы приложений на дисках операционной системы по умолчанию (/dev/sda). Эти диски не оптимизированы для быстрой загрузки виртуальной машины и не могут обеспечить высокую производительность приложений.
-- При использовании виртуальных машин серии M в хранилище класса Premium включите [ускоритель записи](../../linux/how-to-enable-write-accelerator.md) на диске журналы повтора.
+- При использовании виртуальных машин серии M в хранилище класса Premium включите [ускоритель записи](../../how-to-enable-write-accelerator.md) на диске журналы повтора.
 
 ### <a name="disk-cache-settings"></a>Настройки кэша дисков.
 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
 ms.custom: has-adal-ref
-ms.openlocfilehash: a7d83c327eb1c37478c0c2e5725136d43a91a009
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 271d3c0ca44c500a6fd8ee50ed5f1698e46cd511
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87061210"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88510272"
 ---
 # <a name="ingest-historical-telemetry-data"></a>Прием архивных данных телеметрии
 
@@ -42,9 +42,9 @@ ms.locfileid: "87061210"
 
 2. **Если вы используете Фармбеатс версии 1.2.7 или более поздней, пропустите шаги a, b и c и перейдите к шагу 3.** Чтобы проверить версию Фармбеатс, выберите значок **Параметры** в правом верхнем углу пользовательского интерфейса фармбеатс.
 
-      А.  Переход к **Azure Active Directory**  >  **Регистрация приложений**
+      а.  Переход к **Azure Active Directory**  >  **Регистрация приложений**
 
-      Б. Выберите **регистрацию приложения** , созданную в рамках развертывания фармбеатс. Имя будет совпадать с именем Фармбеатс датахуб.
+      b. Выберите **регистрацию приложения** , созданную в рамках развертывания фармбеатс. Имя будет совпадать с именем Фармбеатс датахуб.
 
       c. Выберите **открыть API** > выберите **добавить клиентское приложение** и введите **04B07795-8ddb-461a-bbEE-02f9e1bf7b46** и установите флажок **авторизовать область**. Это предоставит доступ к Azure CLI (Cloud Shell), чтобы выполнить следующие действия.
 
@@ -58,13 +58,13 @@ ms.locfileid: "87061210"
 
 5. Перейдите к домашнему каталогу.
 
-    ```azurepowershell-interactive 
+    ```azurepowershell-interactive
     cd
     ```
-    
+
 6. Выполните следующую команду. Он подключает учетную запись с проверкой подлинности для использования в запросах Azure AD.
 
-    ```azurepowershell-interactive 
+    ```azurepowershell-interactive
     Connect-AzureAD
     ```
 
@@ -78,7 +78,7 @@ ms.locfileid: "87061210"
 
 8. Выполните следующий сценарий. Сценарий запрашивает идентификатор клиента, который можно получить на **Azure Active Directory**  >  странице**обзора** Azure Active Directory.
 
-    ```azurepowershell-interactive 
+    ```azurepowershell-interactive
 
     ./generatePartnerCredentials.ps1
 
@@ -148,7 +148,7 @@ ms.locfileid: "87061210"
 
 Чтобы выполнить запрос API, необходимо объединить метод HTTP (POST), URL-адрес службы API и URI для запроса, отправки данных в запрос, создания или удаления запроса. Затем добавьте один или несколько заголовков HTTP-запроса. URL-адрес службы API — это конечная точка API, то есть URL-адрес Датахуб (https:// \<yourdatahub> . azurewebsites.NET).
 
-### <a name="authentication"></a>Проверка подлинности
+### <a name="authentication"></a>Аутентификация
 
 Фармбеатс Датахуб использует проверку подлинности носителя, для которой требуются следующие учетные данные, созданные в предыдущем разделе.
 
@@ -427,7 +427,7 @@ write_client.stop()
 }
 ```
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="cant-view-telemetry-data-after-ingesting-historicalstreaming-data-from-your-sensors"></a>Не удается просмотреть данные телеметрии после приема исторических и потоковых данных от датчиков
 

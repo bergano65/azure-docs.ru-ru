@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: eecfebc90c28b650af0cef4ee0e4ddc227af0e8c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ac79e1eb5c4f7448dc17804cd8aac3cba582497e
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84711499"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509949"
 ---
 # <a name="reserve-public-ipv6-address-prefix"></a>Зарезервируйте префикс общедоступного IPv6-адреса
 Протокол IPv6 для виртуальной сети Azure (VNet) позволяет размещать приложения на платформе Azure с поддержкой адресации IPv6 и IPv4 как в виртуальной сети, так и с доступом в Интернет и из него. Помимо резервирования отдельных IPv6-адресов, можно зарезервировать непрерывные диапазоны IPv6-адресов Azure (называемых префиксом IP) для использования. В этой статье описывается создание общедоступных IP-адресов IPv6 и диапазонов адресов с помощью Azure PowerShell и CLI.
@@ -29,7 +29,7 @@ ms.locfileid: "84711499"
 
 Вы можете создать один зарезервированный (статический) общедоступный IP-адрес IPv6, используя Azure PowerShell с параметром [New-азпублиЦипаддресс](/powershell/module/az.network/new-azpublicipaddress) следующим образом:
 
-```azurepowershell  
+```azurepowershell
  $myOwnIPv6Address = New-AzPublicIpAddress `
  -name PIPv6_WestUS `
  -ResourceGroup MyRG `
@@ -42,7 +42,7 @@ ms.locfileid: "84711499"
 ### <a name="using-azure-cli"></a>Использование Azure CLI
 
  Вы можете создать один зарезервированный (статический) общедоступный IP-адрес IPv6 Azure CLI с помощью команды [AZ Network public-IP Create](/cli/azure/network/public-ip) , как показано ниже.
-  
+
 ```azurecli
  az network public-ip create \
  --name dsPublicIP_v6 \
@@ -55,12 +55,12 @@ ms.locfileid: "84711499"
 
 ## <a name="create-a-reserved-ipv6-prefix-range"></a>Создание зарезервированного префикса IPv6 (диапазон)
 
-Чтобы зарезервировать префикс IPv6, добавьте семейство IP-адресов IPv6 в ту же команду, которая использовалась для создания префиксов IPv4. Следующие команды создают префикс размера/125 (8 адресов IPv6).  
+Чтобы зарезервировать префикс IPv6, добавьте семейство IP-адресов IPv6 в ту же команду, которая использовалась для создания префиксов IPv4. Следующие команды создают префикс размера/125 (8 адресов IPv6).
 
 ### <a name="using-azure-powershell"></a>Использование Azure PowerShell
 
 Вы можете создать общедоступный IPv6-адрес, используя Azure CLI с помощью команды [AZ Network public-IP Create](/powershell/module/az.network/new-azpublicipprefix) , как показано ниже.
-```azurepowershell  
+```azurepowershell
  $myOwnIPv6Prefix = New-AzPublicIpPrefix `
  -name IPv6PrefixWestUS `
  -ResourceGroupName MyRG `
@@ -74,7 +74,7 @@ ms.locfileid: "84711499"
 
 Общедоступный IPv6-адрес можно создать с помощью Azure CLI следующим образом.
 
-```azurecli  
+```azurecli
 az network public-ip prefix create \
 --name IPv6PrefixWestUS \
 --resource-group MyRG \
@@ -89,7 +89,7 @@ az network public-ip prefix create \
 
  Вы создадите статический общедоступный IP-адрес IPv6 из зарезервированного префикса, добавив `-PublicIpPrefix` аргумент при создании общедоступного IP-адреса с помощью Azure PowerShell. В следующем примере предполагается, что префикс был создан и сохранен в переменной PowerShell с именем: *$MyOwnIPv 6prefix*.
 
-```azurepowershell:  
+```azurepowershell
  $MyIPv6PublicIPFromMyReservedPrefix = New-AzPublicIpAddress \
  -name PIPv6_fromPrefix `
  -ResourceGroup DsStdLb04 `
@@ -101,10 +101,10 @@ az network public-ip prefix create \
 ```
 
 ### <a name="using-azure-cli"></a>Использование Azure CLI
- 
+
 В следующем примере предполагается, что префикс был создан и сохранен в переменной CLI с именем: *IPv6PrefixWestUS*.
 
-```azurecli 
+```azurecli
 az network public-ip create \
 --name dsPublicIP_v6 \
 --resource-group UpgradeInPlace_CLI_RG1 \
@@ -115,6 +115,6 @@ az network public-ip create \
 --public-ip-prefix  IPv6PrefixWestUS
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения об [префиксе IPv6-адреса](ipv6-public-ip-address-prefix.md).
 - Дополнительные сведения об [IPv6-адресах](ipv6-overview.md).

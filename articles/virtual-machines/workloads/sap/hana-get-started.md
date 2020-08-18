@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/19/2020
 ms.author: juergent
-ms.openlocfilehash: ec63d08b164a3ed767a7622a9829beaf73e65ef3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f2a62cb08fcce6597f02c080231f5e1808794054
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87042329"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509966"
 ---
 # <a name="installation-of-sap-hana-on-azure-virtual-machines"></a>Установка SAP HANA на виртуальных машинах Azure
 ## <a name="introduction"></a>Введение
@@ -29,7 +29,7 @@ ms.locfileid: "87042329"
 > [!NOTE]
 > Это руководство описывает развертывание SAP HANA на виртуальных машинах Azure. Сведения о развертывании SAP HANA в крупных экземплярах HANA см. в [статье Установка и настройка SAP HANA (крупные экземпляры) в Azure](./hana-installation.md).
  
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 Кроме того, в этом руководство предполагается, что вы знакомы с:
 * SAP HANA и SAP NetWeaver и их локальная установка.
 * Установка и работа SAP HANA и экземпляров приложений SAP в Azure.
@@ -72,7 +72,7 @@ ms.locfileid: "87042329"
     -  [Примечание о поддержке SAP #2382421 — оптимизация конфигурации сети на уровне HANA и ОС](https://launchpad.support.sap.com/#/notes/2382421)
 
 1. Выберите тип хранилища Azure для SAP HANA. На этом шаге необходимо выбрать структуру хранилища для SAP HANA установки. Вы будете использовать подключенные диски Azure или собственные общие ресурсы Azure NFS. Типы хранилища Azure, которые можно использовать, и комбинации различных типов хранилища Azure, которые могут использоваться, описаны в [SAP HANA конфигурациях хранилища виртуальных машин Azure](./hana-vm-operations-storage.md). Задавайте конфигурации, задокументированные в качестве отправной точки. Для непроизводственных систем можно настроить более низкую пропускную способность или операции ввода-вывода. В производственных целях может потребоваться дополнительная настройка пропускной способности и операций ввода-вывода в секунду.
-2. Убедитесь, что вы настроили [ускоритель записи Azure](../../linux/how-to-enable-write-accelerator.md) для томов, которые содержат журналы транзакций СУБД, или журналы повторяемых операций при использовании виртуальных машин серии M или Mv2. Помните об ограничениях Ускоритель записи, как описано в статье.
+2. Убедитесь, что вы настроили [ускоритель записи Azure](../../how-to-enable-write-accelerator.md) для томов, которые содержат журналы транзакций СУБД, или журналы повторяемых операций при использовании виртуальных машин серии M или Mv2. Помните об ограничениях Ускоритель записи, как описано в статье.
 2. Проверьте, включена ли поддержка [ускорения в Azure](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/) для виртуальных машин, которые развернуты.
 
 > [!NOTE]

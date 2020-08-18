@@ -1,16 +1,16 @@
 ---
-title: Устранение неполадок
+title: Диагностика
 description: Сведения об устранении неполадок для Удаленной отрисовки Azure
 author: florianborn71
 ms.author: flborn
 ms.date: 02/25/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: 2cb143e08e3901b1d0ab7181df68f06887069012
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f2c5b6ef0792e418d873d84341a0fffc356c799e
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85563273"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509286"
 ---
 # <a name="troubleshoot"></a>Диагностика
 
@@ -105,7 +105,7 @@ ms.locfileid: "85563273"
 
 **Модель превышает ограничения выбранной виртуальной машины, в частности максимальное количество полигонов:**
 
-Ознакомьтесь с [ограничениями на конкретные размеры виртуальных машин](../reference/limits.md#overall-number-of-polygons).
+См. [ограничения на конкретные размеры сервера](../reference/limits.md#overall-number-of-polygons).
 
 **Модель не находится внутри фрустум камеры:**
 
@@ -148,7 +148,7 @@ ms.locfileid: "85563273"
 
 ## <a name="checkerboard-pattern-is-rendered-after-model-loading"></a>Шаблон шахматной доски отображается после загрузки модели
 
-Если отображаемое изображение выглядит следующим образом: ![ шахматная доска, модуль подготовки отчетов обращается к ](../reference/media/checkerboard.png) [пределам многоугольников для стандартного размера виртуальной машины](../reference/vm-sizes.md). Чтобы устранить эту проблемы, переключитесь на размер **виртуальной машины Premium** или сократите количество видимых многоугольников.
+Если отображаемое изображение выглядит следующим образом: ![ шахматная доска, модуль подготовки отчетов обращается к ](../reference/media/checkerboard.png) [пределам многоугольников для стандартного размера конфигурации](../reference/vm-sizes.md). Чтобы устранить эту проблемы, переключитесь на размер конфигурации **Premium** или сократите количество видимых многоугольников.
 
 ## <a name="the-rendered-image-in-unity-is-upside-down"></a>Визуализированный образ в Unity является перевернутым
 

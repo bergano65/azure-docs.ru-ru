@@ -16,12 +16,12 @@ ms.date: 11/27/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9618e02f54fbb2a3b92771761c5fcf700d126b5c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 47973a8444de64dc5c2bb75b5f0d65d1e6d35f6e
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84698773"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509095"
 ---
 # <a name="topologies-for-azure-ad-connect"></a>Топологии для Azure AD Connect
 В этой статье описываются различные локальные топологии и топологии Active Directory Azure (Azure AD), в которых служба синхронизации Azure AD Connect используется в качестве основного решения интеграции. Здесь описываются и поддерживаемые, и неподдерживаемые конфигурации.
@@ -29,7 +29,7 @@ ms.locfileid: "84698773"
 
 Ниже приведены условные обозначения для изображений в статье.
 
-| Описание: | Символ |
+| Описание | Символ |
 | --- | --- |
 | Локальный лес Active Directory |![Локальный лес Active Directory](./media/plan-connect-topologies/LegendAD1.png) |
 | Локальная служба Active Directory с фильтрацией импорта |![Active Directory с фильтрацией импорта](./media/plan-connect-topologies/LegendAD2.png) |
@@ -37,7 +37,7 @@ ms.locfileid: "84698773"
 | Промежуточный режим сервера синхронизации Azure AD Connect |![Промежуточный режим сервера синхронизации Azure AD Connect](./media/plan-connect-topologies/LegendSync2.png) |
 | GALSync с Forefront Identity Manager (FIM) 2010 или Microsoft Identity Manager (MIM) 2016 |![GALSync с FIM 2010 или MIM 2016](./media/plan-connect-topologies/LegendSync3.png) |
 | Сервер синхронизации Azure AD Connect, подробно |![Сервер синхронизации Azure AD Connect, подробно](./media/plan-connect-topologies/LegendSync4.png) |
-| Azure AD |![Azure Active Directory](./media/plan-connect-topologies/LegendAAD.png) |
+| Azure AD |![Azure Active Directory](./media/plan-connect-topologies/LegendAAD.png) |
 | Неподдерживаемый сценарий |![Неподдерживаемый сценарий](./media/plan-connect-topologies/LegendUnsupported.png) |
 
 
@@ -192,7 +192,12 @@ Azure AD Connect поддерживает установку второго се
 
 Для синхронизации пользователей (с помощью GALSync) между двумя организациями Exchange можно локально использовать FIM 2010 или MIM 2016. Пользователи из одной организации будут отображаться в другой организации как внешние пользователи или контакты. Затем эти локальные экземпляры Active Directory можно синхронизировать с их собственными клиентами Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+### <a name="using-unauthorized-clients-to-access-the-azure-ad-connect-backend"></a>Использование неавторизованных клиентов для доступа к Azure AD Connect серверной части
+![Использование неавторизованных клиентов для доступа к Azure AD Connect серверной части](./media/plan-connect-topologies/other-client-unsupported.png)
+
+Сервер Azure Active Directory Connect взаимодействует с Azure Active Directory через серверную часть Azure Active Directory Connect. Единственным программным обеспечением, которое можно использовать для взаимодействия с этой серверной частью, является Azure Active Directory Connect. Не поддерживается обмен данными с Azure Active Directory Connect серверной частью с помощью любого другого программного обеспечения или метода. 
+
+## <a name="next-steps"></a>Дальнейшие действия
 Больше об установке Azure AD Connect для этих сценариев можно узнать в статье [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md).
 
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .

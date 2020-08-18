@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 64c7db4223fcb703272749b0bf8d5b1583fbb818
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: 919db9338917a9c2bedd7806eb251a2e5ef6187b
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87987330"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88510000"
 ---
 # <a name="manage-azure-digital-twins-models"></a>Управление моделями цифровых двойников Azure
 
@@ -160,7 +160,7 @@ Pageable<ModelData> pmd3 = client.GetModels(null, true);
 Pageable<ModelData> pmd4 = client.GetModels(new string[] { modelId }, true);
 ```
 
-Вызовы API для получения моделей все возвращаемые `ModelData` объекты. `ModelData`содержит метаданные о модели, хранящейся в экземпляре Azure Digital двойников, например имя, ДТМИ и дату создания модели. `ModelData`Объект также может включать саму модель. В зависимости от параметров можно использовать вызовы получения для получения только метаданных (что бывает полезно в сценариях, где требуется отобразить список доступных средств, например) или всю модель.
+Вызовы API для получения моделей все возвращаемые `ModelData` объекты. `ModelData` содержит метаданные о модели, хранящейся в экземпляре Azure Digital двойников, например имя, ДТМИ и дату создания модели. `ModelData`Объект также может включать саму модель. В зависимости от параметров можно использовать вызовы получения для получения только метаданных (что бывает полезно в сценариях, где требуется отобразить список доступных средств, например) или всю модель.
 
 `RetrieveModelWithDependencies`Вызов возвращает не только запрошенную модель, но и все модели, от которых зависит запрошенная модель.
 
@@ -174,7 +174,7 @@ Pageable<ModelData> pmd4 = client.GetModels(new string[] { modelId }, true);
 
 Это отдельные функции, которые не влияют друг на друга, хотя они могут использоваться совместно для постепенного удаления модели. 
 
-### <a name="decommissioning"></a>Списание
+#### <a name="decommissioning"></a>Списание
 
 Ниже приведен код для списания модели.
 

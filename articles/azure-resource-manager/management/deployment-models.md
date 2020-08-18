@@ -3,12 +3,12 @@ title: Развертывание с помощью Azure Resource Manager и к
 description: Описывает различия между моделью развертывания диспетчера ресурсов и классической моделью развертывания (или моделью управления службами).
 ms.topic: conceptual
 ms.date: 02/06/2020
-ms.openlocfilehash: 9e44128da9b6e180bd2857f4574c0b384fdffef2
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: d9c1a27efc1f474e25d0ed164d106e8f64ba3e96
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057574"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88511411"
 ---
 # <a name="azure-resource-manager-vs-classic-deployment-understand-deployment-models-and-the-state-of-your-resources"></a>Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов
 
@@ -101,7 +101,7 @@ SRP: поставщик ресурсов хранилища, CRP: поставщ
 
 В следующей таблице описаны изменения во взаимодействии поставщиков вычислительных, сетевых ресурсов и ресурсов хранения:
 
-| Item | Классическая | Resource Manager |
+| Элемент | Классическая | Resource Manager |
 | --- | --- | --- |
 | Облачная служба для виртуальных машин |Облачная служба представляла собой контейнер для хранения виртуальных машин, которым требовались доступность использования на платформе и балансировка нагрузки. |Облачная служба больше не является объектом, необходимым для создания виртуальной машины в новой модели. |
 | Виртуальные сети |Создание виртуальной сети для виртуальной машины является необязательным. Если она включена, виртуальную сеть нельзя развернуть с помощью диспетчер ресурсов. |Для виртуальной машины необходима виртуальная сеть, развернутая с помощью Resource Manager. |
@@ -122,7 +122,7 @@ SRP: поставщик ресурсов хранилища, CRP: поставщ
 
 Если вы готовы к переносу ресурсов из классического развертывания в развертывание диспетчер ресурсов, см. следующие материалы:
 
-1. [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](../../virtual-machines/windows/migration-classic-resource-manager-deep-dive.md)
+1. [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](../../virtual-machines/migration-classic-resource-manager-deep-dive.md)
 2. [Поддерживаемый платформой перенос ресурсов IaaS из классической модели в модель Azure Resource Manager](../../virtual-machines/windows/migration-classic-resource-manager-overview.md)
 3. [Перенос ресурсов IaaS из классической модели в модель Azure Resource Manager с помощью Azure PowerShell](../../virtual-machines/windows/migration-classic-resource-manager-ps.md)
 4. [Перенос ресурсов IaaS из классического развертывания в развертывание с помощью Azure Resource Manager с использованием Azure CLI](../../virtual-machines/linux/migration-classic-resource-manager-cli.md)
@@ -149,6 +149,6 @@ SRP: поставщик ресурсов хранилища, CRP: поставщ
 
 Полный набор начальных шаблонов можно найти в [Azure Resource Manager шаблонах](https://azure.microsoft.com/documentation/templates/)быстрого запуска.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Команды для развертывания шаблонов см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../templates/deploy-powershell.md).

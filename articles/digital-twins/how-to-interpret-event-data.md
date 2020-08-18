@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 3bb4d70b4c4f3f9edc525ffe5973bca633ddd1be
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: d32ad29bf652cad62a5950859ebff0366e09fc6f
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87800421"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88510034"
 ---
 # <a name="understand-event-data"></a>Общие сведения о событиях
 
@@ -105,9 +105,9 @@ ms.locfileid: "87800421"
 
 | Имя | Значение |
 | --- | --- |
-| `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id`уникален для каждого отдельного события. |
+| `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id` уникален для каждого отдельного события. |
 | `source` | Имя центра Интернета вещей или экземпляра Azure Digital двойников, например *myhub.Azure-Devices.NET* или *mydigitaltwins.westus2.azuredigitaltwins.NET* |
-| `specversion` | 1.0 |
+| `specversion` | *1.0*<br>Сообщение соответствует данной версии спецификации Клаудевентс. |
 | `type` | `Microsoft.DigitalTwins.Twin.Create`<br>`Microsoft.DigitalTwins.Twin.Delete` |
 | `datacontenttype` | `application/json` |
 | `subject` | Идентификатор цифрового двойника |
@@ -191,12 +191,12 @@ ms.locfileid: "87800421"
 
 | Имя    | Значение |
 | --- | --- |
-| `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id`уникален для каждого отдельного события |
+| `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id` уникален для каждого отдельного события |
 | `source` | Имя экземпляра Azure Digital двойников, например *mydigitaltwins.westus2.azuredigitaltwins.NET* |
-| `specversion` | 1.0 |
+| `specversion` | *1.0*<br>Сообщение соответствует данной версии спецификации Клаудевентс. |
 | `type` | `Microsoft.DigitalTwins.Relationship.Create`<br>`Microsoft.DigitalTwins.Relationship.Update`<br>`Microsoft.DigitalTwins.Relationship.Delete`
 |`datacontenttype`| `application/json` |
-| `subject` | ИДЕНТИФИКАТОР связи, например`<twinID>/relationships/<relationshipID>` |
+| `subject` | ИДЕНТИФИКАТОР связи, например `<twinID>/relationships/<relationshipID>` |
 | `time` | Отметка времени для выполнения операции в связи |
 | `traceparent` | Контекст трассировки W3C для события |
 
@@ -247,9 +247,9 @@ ms.locfileid: "87800421"
 
 | Имя    | Значение |
 | --- | --- |
-| `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id`уникален для каждого отдельного события |
+| `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id` уникален для каждого отдельного события |
 | `source` | Имя центра Интернета вещей или экземпляра Azure Digital двойников, например *myhub.Azure-Devices.NET* или *mydigitaltwins.westus2.azuredigitaltwins.NET*
-| `specversion` | 1.0 |
+| `specversion` | *1.0*<br>Сообщение соответствует данной версии спецификации Клаудевентс. |
 | `type` | `Microsoft.DigitalTwins.Twin.Update` |
 | `datacontenttype` | `application/json` |
 | `subject` | Идентификатор цифрового двойника |
@@ -297,7 +297,7 @@ ms.locfileid: "87800421"
   }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 См. раздел Создание конечных точек и маршрутов для доставки событий.
 * [*Руководство. Управление конечными точками и маршрутами*](how-to-manage-routes-apis-cli.md)
