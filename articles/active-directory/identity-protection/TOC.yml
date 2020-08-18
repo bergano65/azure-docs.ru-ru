@@ -2,7 +2,7 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: "Сведения о службе \"Защита идентификации Azure\_AD\""
+    - name: Общие сведения о защите идентификации
       href: overview-identity-protection.md
 - name: Основные понятия
   expanded: false

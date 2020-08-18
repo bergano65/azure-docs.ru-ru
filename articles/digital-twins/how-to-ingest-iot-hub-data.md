@@ -243,7 +243,7 @@ az dt twin query -q "select * from digitaltwins" -n {digital_twins_instance_name
 
 Чтобы увидеть изменение значения, повторно выполните команду запроса выше.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте о поступлении и исходящих данных в Azure Digital двойников:
 * [*Основные понятия: интеграция с другими службами*](concepts-integration.md)

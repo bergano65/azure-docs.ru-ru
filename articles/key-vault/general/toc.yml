@@ -138,6 +138,8 @@
           href: move-region.md
 - name: Справочник
   items:
+    - name: Клиентские библиотеки
+      href: client-libraries.md
     - name: "Коды ошибок REST API\_— Azure Key Vault"
       href: rest-error-codes.md
     - name: Распространенные параметры и заголовки

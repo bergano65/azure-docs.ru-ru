@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 3e452cd548738e5f211899d3a6a676f883d800ce
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 04f0c3c63d00ea49bf43f00f256266599a73d6c0
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77132053"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88508810"
 ---
 # <a name="get-drone-imagery-from-drone-partners"></a>Получение образов помощью Дронов от партнеров помощью Дронов
 
@@ -53,9 +53,9 @@ ms.locfileid: "77132053"
 5. Перейдите в каталог, в который были отправлены файлы. По умолчанию они передаются в корневой каталог по имени пользователя.
 6. Выполните следующий скрипт:
 
-    ```azurepowershell-interactive 
+    ```azurepowershell-interactive
 
-    ./generateCredentials.ps1   
+    ./generateCredentials.ps1
 
     ```
 
@@ -89,6 +89,6 @@ ms.locfileid: "77132053"
 
   ![Раздел Maps](./media/get-drone-imagery-from-drone-partner/view-drone-maps-1.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как использовать [API](rest-api-in-azure-farmbeats.md) фармбеатс датахуб для получения образов помощью дронов.

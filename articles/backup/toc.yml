@@ -146,7 +146,11 @@
         - name: Обзор
           href: backup-azure-sql-database.md
         - name: Резервное копирование
-          href: backup-sql-server-database-azure-vms.md
+          items:
+            - name: Резервное копирование нескольких виртуальных машин SQL Server из хранилища
+              href: backup-sql-server-database-azure-vms.md
+            - name: Резервное копирование нескольких виртуальных машин SQL Server из области виртуальных машин
+              href: backup-sql-server-vm-from-vm-pane.md
         - name: Восстановить
           href: restore-sql-database-azure-vm.md
         - name: Управление

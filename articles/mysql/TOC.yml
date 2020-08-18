@@ -138,6 +138,8 @@
           href: concepts-server-parameters.md
     - name: Разработка
       items:
+        - name: Рекомендации по работе с приложениями
+          href: app-development-best-practices.md
         - name: Совместимость драйверов и инструментов
           href: concepts-compatibility.md
         - name: Разработка приложений

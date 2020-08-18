@@ -71,7 +71,7 @@ async void ExampleConnect(AzureSession session)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сеансы](../concepts/sessions.md)
 * [Компонент переопределения иерархического состояния](../overview/features/override-hierarchical-state.md)
