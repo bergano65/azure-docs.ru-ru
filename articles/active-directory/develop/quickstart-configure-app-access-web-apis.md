@@ -13,12 +13,12 @@ ms.date: 08/05/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: lenalepa, aragra, sureshja
-ms.openlocfilehash: 800b399e73be032cfd9d2849b004018aa9d9031f
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 87c21587567ffe3462e4b702985114ac10454886
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88120870"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140808"
 ---
 # <a name="quickstart-configure-a-client-application-to-access-a-web-api"></a>Краткое руководство. Настройка клиентского приложения для доступа к веб-API
 
@@ -148,7 +148,7 @@ ms.locfileid: "88120870"
 
 ## <a name="add-permissions-to-access-web-apis"></a>Добавление разрешений для доступа к веб-API
 
-[Разрешение API Graph на вход в систему и чтение профиля пользователя](https://developer.microsoft.com/graph/docs/concepts/permissions_reference#user-permissions) будет выбрано по умолчанию. Для каждого веб-API вы можете выбрать один из [двух типов разрешений](developer-glossary.md#permissions).
+[Разрешение API Graph на вход в систему и чтение профиля пользователя](/graph/permissions-reference#user-permissions) будет выбрано по умолчанию. Для каждого веб-API вы можете выбрать один из [двух типов разрешений](developer-glossary.md#permissions).
 
 * **Разрешения приложения.** Ваше клиентское приложение будет обращаться к веб-API от своего имени без контекста пользователя. Для таких разрешений требуется согласие администратора. Это разрешение недоступно для настольных и мобильных клиентских приложений.
 * **Делегированные разрешения.** Вашему приложению требуется доступ к веб-API от лица выполнившего вход пользователя, но с ограничением доступа по выбранному разрешению. Этот тип разрешения может быть предоставлен пользователем, если только для разрешения не требуется согласие администратора.

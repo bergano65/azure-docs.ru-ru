@@ -6,12 +6,12 @@ ms.topic: overview
 description: Сведения о предоставлении в Azure Dev Spaces интерфейса быстрой последовательной разработки Kubernetes для команд, которые работают с кластерами Службы Azure Kubernetes.
 keywords: Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 691845cd888e4d24c1144f2805402a3baf14a86e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ad884d5e054f23269b238b791e250c732d70a9b8
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87006970"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88210646"
 ---
 # <a name="what-is-azure-dev-spaces"></a>Что такое Azure Dev Spaces?
 
@@ -42,8 +42,10 @@ Azure Dev Spaces поддерживается только кластерами 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше о быстрой последовательной разработке для команд с помощью Azure Dev Spaces, ознакомившись с [кратким руководством по командной разработке][team-development-quickstart].
+Узнайте больше о принципах работы Azure Dev Spaces.
+
+> [!div class="nextstepaction"]
+> [Принцип работы Azure Dev Spaces](how-dev-spaces-works.md)
 
 [how-dev-spaces-works]: how-dev-spaces-works.md
 [supported-regions]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service
-[team-development-quickstart]: quickstart-team-development.md

@@ -9,11 +9,11 @@ ms.date: 01/15/2019
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: 46ab75f161692dd048c19698af7027d0e0622b37
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "67446033"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "82506427"
 ---
 Можно сохранить созданные ресурсы и повторно использовать их при выполнении задач в следующей рекомендуемой статье, если вы планируете перейти к ней.
 
