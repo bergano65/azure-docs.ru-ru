@@ -58,10 +58,10 @@
               href: connect-azure-security-center.md
             - name: Центр безопасности Azure для Интернета вещей
               href: connect-asc-iot.md
+            - name: Брандмауэр веб-приложения Azure (WAF)
+              href: connect-azure-waf.md
             - name: Сервер доменных имен
               href: connect-dns.md
-            - name: Брандмауэр веб-приложения Azure
-              href: connect-azure-waf.md
             - name: Брандмауэр Windows
               href: connect-windows-firewall.md
             - name: События безопасности Windows
