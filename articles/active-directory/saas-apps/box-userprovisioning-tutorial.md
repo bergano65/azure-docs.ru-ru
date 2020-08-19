@@ -2,25 +2,20 @@
 title: Руководство по настройке Box для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Box.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.assetid: 1c959595-6e57-4954-9c0d-67ba03ee212b
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0be9298e56cf2e5c816c45fcb7e84eb20c11ef4d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 76c0f4f021646b4cbf1a09559e085176353a4a3c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87018185"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88525618"
 ---
 # <a name="tutorial-configure-box-for-automatic-user-provisioning"></a>Руководство по настройке Box для автоматической подготовки пользователей
 
@@ -29,7 +24,7 @@ ms.locfileid: "87018185"
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Box, вам потребуется:
 

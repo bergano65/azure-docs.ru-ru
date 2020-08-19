@@ -1,5 +1,5 @@
 ---
-title: Создание файлового ресурса Azure
+title: создать файловый ресурс Azure;
 titleSuffix: Azure Files
 description: Как создать файловый ресурс Azure с помощью портал Azure, PowerShell или Azure CLI.
 author: roygara
@@ -8,15 +8,15 @@ ms.topic: how-to
 ms.date: 2/22/2020
 ms.author: rogarana
 ms.subservice: files
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: a642aa9735c4360c11d50cf475e5de63259c55df
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-azurecli, references_regions
+ms.openlocfilehash: aaba608ba80a751c40cd300dee80f673897c22a8
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87495715"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88525655"
 ---
-# <a name="create-an-azure-file-share"></a>Создание файлового ресурса Azure
+# <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
 Чтобы создать файловый ресурс Azure, необходимо ответить на три вопроса о том, как она будет использоваться:
 
 - **Каковы требования к производительности для файлового ресурса Azure?**  
@@ -230,7 +230,61 @@ az storage share create \
 > [!Note]  
 > Имя общей папки должно состоять из символов в нижнем регистре. Полные сведения об именовании файловых ресурсов и файлов см. в разделе [именование и ссылки на общие папки, каталоги, файлы и метаданные](https://msdn.microsoft.com/library/azure/dn167011.aspx).
 
-## <a name="next-steps"></a>Дальнейшие действия
+### <a name="create-a-hot-or-cool-file-share"></a>Создание "горячего" или "холодного" файлового ресурса
+Общая папка в **учетной записи хранения общего назначения версии 2 (GPv2)** может содержать оптимизированные, горячий или интересные файловые ресурсы (или их сочетание). Оптимизированные для транзакции общие ресурсы доступны во всех регионах Azure, но горячие и интересные файловые ресурсы доступны только [в подмножестве регионов](storage-files-planning.md#storage-tiers). Вы можете создать горячую или замечательную файловую папку с помощью модуля Azure PowerShell предварительной версии или Azure CLI. 
+
+# <a name="portal"></a>[Портал](#tab/azure-portal)
+Портал Azure пока не поддерживает создание горячих и холодного файловых ресурсов, а также перемещение существующих оптимизированных для них файловых ресурсов. Ознакомьтесь с инструкциями по созданию общей папки с помощью PowerShell или Azure CLI.
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+```PowerShell
+# Update the Azure storage module to use the preview version. You may need to close and 
+# reopen PowerShell before running this command. If you are running PowerShell 5.1, ensure 
+# the following:
+# - Run the below cmdlets as an administrator.
+# - Have PowerShellGet 2.2.3 or later. Uncomment the following line to check.
+# Get-Module -ListAvailable -Name PowerShellGet
+Remove-Module -Name Az.Storage -ErrorAction SilentlyContinue
+Uninstall-Module -Name Az.Storage
+Install-Module -Name Az.Storage -RequiredVersion "2.1.1-preview" -AllowClobber -AllowPrerelease 
+
+# Assuming $resourceGroupName and $storageAccountName from earlier in this document have already
+# been populated. The access tier parameter may be TransactionOptimized, Hot, or Cool for GPv2 
+# storage accounts. Standard tiers are only available in standard storage accounts. 
+$shareName = "myhotshare"
+
+New-AzRmStorageShare `
+    -ResourceGroupName $resourceGroupName `
+    -StorageAccountName $storageAccountName `
+    -Name $shareName `
+    -AccessTier Hot
+
+# You can also change an existing share's tier.
+Update-AzRmStorageShare `
+    -ResourceGroupName $resourceGroupName `
+    -StorageAccountName $storageAccountName `
+    -Name $shareName `
+    -AccessTier Cool
+```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+Функции создания или перемещения общей папки на конкретный уровень доступны в последнем Azure CLI обновления. Обновление Azure CLI зависит от используемого дистрибутива операционной системы или Linux. Инструкции по обновлению Azure CLI в системе см. в разделе [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+
+```bash
+# Assuming $resourceGroupName and $storageAccountName from earlier in this document have already
+# been populated. The access tier parameter may be TransactionOptimized, Hot, or Cool for GPv2
+# storage accounts. Standard tiers are only available in standard storage accounts.
+shareName="myhotshare"
+
+az storage share-rm create \
+    --resource-group $resourceGroupName \
+    --storage-account $storageAccountName \
+    --name $shareName \
+    --access-tier "Hot"
+```
+---
+
+## <a name="next-steps"></a>Следующие шаги
 - [Спланируйте развертывание файлов Azure](storage-files-planning.md) или [запланируйте развертывание синхронизация файлов Azure](storage-sync-files-planning.md). 
 - [Обзор сетевых](storage-files-networking-overview.md)возможностей.
 - Подключите и подключите общую папку в [Windows](storage-how-to-use-files-windows.md), [macOS](storage-how-to-use-files-mac.md)и [Linux](storage-how-to-use-files-linux.md).
