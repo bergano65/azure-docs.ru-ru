@@ -22,6 +22,9 @@
     - name: "Создание устойчивой функции\_— Python"
       displayName: 'get started, chaining'
       href: quickstart-python-vscode.md
+    - name: "Создание устойчивой функции\_— PowerShell"
+      displayName: 'get started, chaining'
+      href: quickstart-powershell-vscode.md
 - name: Учебники
   items:
     - name: Цепочка функций

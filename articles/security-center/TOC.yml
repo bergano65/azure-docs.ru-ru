@@ -151,6 +151,8 @@
           href: workflow-automation.md
         - name: Экспорт рекомендаций
           href: continuous-export.md
+    - name: Управление ресурсами с помощью инвентаризации активов
+      href: asset-inventory.md
     - name: Интеграция с другими средствами и службами
       items:
         - name: Интеграция с Windows Admin Center

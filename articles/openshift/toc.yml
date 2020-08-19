@@ -79,6 +79,8 @@
   items:
     - name: "Сеть в кластерах Azure Red Hat OpenShift\_4"
       href: concepts-networking.md
+    - name: Миграция из Azure Red Hat OpenShift 3.11 в Azure Red Hat OpenShift 4
+      href: migration.md
 - name: Справочник
   items:
     - name: Интерфейс командной строки Azure Red Hat OpenShift

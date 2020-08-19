@@ -11,12 +11,12 @@ metadata:
   author: memildin
   ms.author: memildin
   ms.date: 11/04/2019
-  ms.openlocfilehash: 13a7ca317630a5a1b0606fa0d2e2022f065fbd4d
-  ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+  ms.openlocfilehash: fa0ef29a1ae9e7fa7fbb1798927b01383f891c29
+  ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 06/24/2020
-  ms.locfileid: "85317187"
+  ms.lasthandoff: 08/17/2020
+  ms.locfileid: "88262098"
 landingContent:
 - title: Сведения о центре безопасности
   linkLists:
@@ -32,13 +32,13 @@ landingContent:
     links:
     - text: Заметки о выпуске для Центра безопасности
       url: release-notes.md
-    - text: Расширенная защита данных для виртуальных машин SQL
-      url: security-center-iaas-advanced-data.md
-    - text: Правила подавления оповещений
-      url: alerts-suppression-rules.md
+    - text: Управление ресурсами с помощью инвентаризации активов
+      url: asset-inventory.md
+    - text: Адаптивные элементы управления приложениями
+      url: security-center-adaptive-application.md
     - text: Полные описания новых элементов управления безопасностью
       url: secure-score-security-controls.md#security-controls-and-their-recommendations
-    - text: Новый API-интерфейс оценки безопасности
+    - text: API оценки безопасности
       url: secure-score-security-controls.md#getting-your-secure-score-from-the-rest-api
 - title: Начало работы
   linkLists:

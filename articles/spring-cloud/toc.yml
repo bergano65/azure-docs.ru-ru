@@ -47,6 +47,8 @@
       href: ./policy-samples.md
 - name: Основные понятия
   items:
+    - name: Общие сведения о приложении и развертывании
+      href: spring-cloud-concept-understand-app-and-deployment.md
     - name: Сведения о квотах и ограничениях
       href: spring-cloud-quotas.md
     - name: Общие сведения о метриках

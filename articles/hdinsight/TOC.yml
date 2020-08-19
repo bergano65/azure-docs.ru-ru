@@ -356,6 +356,8 @@
               href: ./set-up-pyspark-interactive-environment.md
         - name: Разработка
           items:
+            - name: Оптимизация запросов с помощью SparkCruise
+              href: ./spark/spark-cruise.md
             - name: Использование интерактивной оболочки Apache Spark
               href: ./spark/apache-spark-shell.md
             - name: Работа с удаленными заданиями с помощью Apache Livy
