@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
-ms.date: 07/27/2020
-ms.openlocfilehash: f98e540a6764869f1d37edfbb0f00bf8d1cc2198
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.date: 08/17/2020
+ms.openlocfilehash: 3eb1a4cbfcf62617796af6a26cb4688b734eb617
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87499183"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551847"
 ---
 # <a name="configure-and-manage-azure-ad-authentication-with-azure-sql"></a>Настройка аутентификации Azure AD и управление ею с помощью Azure SQL
 
@@ -71,7 +71,9 @@ ms.locfileid: "87499183"
 ## <a name="provision-azure-ad-admin-sql-managed-instance"></a>Инициализация администратора Azure AD (Управляемый экземпляр SQL)
 
 > [!IMPORTANT]
-> Выполните следующие действия, только если вы подготавливаете Управляемый экземпляр Azure SQL. Эта операция может выполняться только глобально/администратором или администратором привилегированных ролей в Azure AD. Ниже описывается процесс предоставления разрешений пользователям, имеющим разные привилегии в каталоге.
+> Выполните следующие действия, только если вы подготавливаете Управляемый экземпляр Azure SQL. Эта операция может выполняться только глобально/администратором или администратором привилегированных ролей в Azure AD.
+>
+> В **общедоступной предварительной версии**роль " **читатели каталога** " можно назначить группе в Azure AD. Владельцы групп могут добавить удостоверение управляемого экземпляра в качестве члена этой группы, что позволит вам подготавливать администратора Azure AD для Управляемый экземпляр SQL. Дополнительные сведения об этой функции см. [в разделе роль читателей каталога в Azure Active Directory для Azure SQL](authentication-aad-directory-readers-role.md).
 
 Управляемый экземпляр SQL требуются разрешения на чтение Azure AD для успешного выполнения таких задач, как проверка подлинности пользователей с помощью членства в группе безопасности или создание новых пользователей. Чтобы это работало, необходимо предоставить разрешение SQL Управляемый экземпляр на чтение Azure AD. Это можно сделать с помощью портал Azure или PowerShell.
 
@@ -519,7 +521,7 @@ conn.Open();
 Ниже приведены инструкции для подключения с помощью sqlcmd версии 13.1, доступной в [Центре загрузки](https://www.microsoft.com/download/details.aspx?id=53591).
 
 > [!NOTE]
-> `sqlcmd`команда не `-G` работает с системными удостоверениями и требует входа субъекта-пользователя.
+> `sqlcmd` команда не `-G` работает с системными удостоверениями и требует входа субъекта-пользователя.
 
 ```cmd
 sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net -G  
@@ -528,7 +530,7 @@ sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net -U bob@contoso.com -P MyA
 
 ## <a name="troubleshoot-azure-ad-authentication"></a>Устранение неполадок проверки подлинности Azure AD
 
-Руководство по устранению неполадок с аутентификацией Azure AD можно найти в следующем блоге:<https://techcommunity.microsoft.com/t5/azure-sql-database/troubleshooting-problems-related-to-azure-ad-authentication-with/ba-p/1062991>
+Руководство по устранению неполадок с аутентификацией Azure AD можно найти в следующем блоге: <https://techcommunity.microsoft.com/t5/azure-sql-database/troubleshooting-problems-related-to-azure-ad-authentication-with/ba-p/1062991>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

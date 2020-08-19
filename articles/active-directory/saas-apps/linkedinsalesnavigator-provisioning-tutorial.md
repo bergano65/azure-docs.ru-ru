@@ -2,25 +2,20 @@
 title: Учебник. подготовка пользователей — LinkedIn Sales Navigator, Azure AD
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в LinkedIn Sales Navigator.
 services: active-directory
-documentationcenter: ''
 author: ArvindHarinder1
 manager: CelesteDG
-ms.assetid: d4ca2365-6729-48f7-bb7f-c0f5ffe740a3
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: arvinh
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48b9f2dc64d1d3ddd8253a253dcab8ef972032f9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ef87a1c7163825fcee8f4a27408719839d8a6d43
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81869746"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549710"
 ---
 # <a name="tutorial-configure-linkedin-sales-navigator-for-automatic-user-provisioning"></a>Руководство по настройке LinkedIn Sales Navigator для автоматической подготовки пользователей
 
@@ -107,7 +102,7 @@ ms.locfileid: "81869746"
 
 12. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок ниже.
 
-13. Нажмите кнопку **Сохранить**.
+13. Нажмите **Сохранить**.
 
 14. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей и групп, которые будут синхронизированы из Azure AD в LinkedIn Sales Navigator. Обратите внимание, что атрибуты, которые выбраны в качестве свойств **сопоставления**, будут использоваться для сопоставления учетных записей пользователей и групп для операций обновления в LinkedIn Sales Navigator. Нажмите кнопку "Сохранить", чтобы подтвердить все изменения.
 
@@ -115,7 +110,7 @@ ms.locfileid: "81869746"
 
 15. Чтобы включить службу подготовки Azure AD для LinkedIn Sales Navigator, в разделе **Параметры** установите переключатель **Состояние подготовки** в положение **Включено**.
 
-16. Нажмите кнопку **Сохранить**.
+16. Нажмите **Сохранить**.
 
 После этого будет запущена начальная синхронизация всех пользователей и групп, назначенных в разделе "Пользователи и группы" LinkedIn Sales Navigator. Обратите внимание, что начальная синхронизация будет занимать больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход синхронизации и с помощью ссылок просматривать журналы действий, в которых описаны все действия, выполняемые службой подготовки в отношении приложения LinkedIn Sales Navigator.
 

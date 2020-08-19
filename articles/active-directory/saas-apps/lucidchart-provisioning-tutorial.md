@@ -2,25 +2,21 @@
 title: Руководство. Настройка LucidChart для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как автоматически подготавливать и отзывать учетные записи пользователей из Azure AD в LucidChart.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: d4ca2365-6729-48f7-bb7f-c0f5ffe740a3
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/13/2020
 ms.author: Zhchia
-ms.openlocfilehash: 25fe315e7d1af2e301e761c755470d2e3c24db1c
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 88c14ef916847b84f881e8da2deda7835df37ffb
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87927017"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550292"
 ---
 # <a name="tutorial-configure-lucidchart-for-automatic-user-provisioning"></a>Учебник. Настройка LucidChart для автоматической подготовки пользователей
 
@@ -98,7 +94,7 @@ ms.locfileid: "87927017"
 
     ![Вкладка "Подготовка"](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите значение **токена носителя** , полученное ранее в поле **секретный токен** . Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к LucidChart. Если подключение не выполняется, убедитесь, что у учетной записи LucidChart есть разрешения администратора, и повторите попытку.
+5. В разделе **учетные данные администратора** введите значение **токена носителя**  , полученное ранее в поле **секретный токен** . Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к LucidChart. Если подключение не выполняется, убедитесь, что у учетной записи LucidChart есть разрешения администратора, и повторите попытку.
 
       ![Подготовка](./media/Lucidchart-provisioning-tutorial/lucidchart1.png)
 
@@ -125,7 +121,7 @@ ms.locfileid: "87927017"
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|
-   |urn: IETF: params: scim: схемы: Extension: LucidChart: 1.0: пользователь: canEdit|Логическое|
+   |urn: IETF: params: scim: схемы: Extension: LucidChart: 1.0: пользователь: canEdit|Логическое значение|
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с LucidChart**.
 

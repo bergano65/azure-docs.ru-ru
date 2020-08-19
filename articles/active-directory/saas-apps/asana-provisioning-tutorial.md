@@ -2,26 +2,21 @@
 title: Учебник. подготовка пользователей для asana — Azure AD
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Asana.
 services: active-directory
-documentationcenter: ''
 author: ArvindHarinder1
 manager: CelesteDG
-ms.assetid: 0b38ee73-168b-42cb-bd8b-9c5e5126d648
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: arvinh
-ms.reviewer: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: abeac030db419f7fb7d561df5dcd407684f20ca2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.reviewer: celested
+ms.openlocfilehash: 11e0606568fdaad20f996a7ae20a622576acea15
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77058937"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549472"
 ---
 # <a name="tutorial-configure-asana-for-automatic-user-provisioning"></a>Руководство по настройке Asana для автоматической подготовки пользователей
 
@@ -85,7 +80,7 @@ Azure AD использует концепцию, называемую *назн
 
 1. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки. Установите флажок под полем.
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 1. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с asana**.
 
@@ -93,7 +88,7 @@ Azure AD использует концепцию, называемую *назн
 
 1. Чтобы включить службу подготовки Azure AD для Asana, в разделе **Параметры** измените значение параметра **Состояние подготовки** на **Включено**.
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 После этого запустится начальная синхронизация всех пользователей, назначенных для Asana в разделе **Пользователи**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. Чтобы отслеживать ход выполнения и переходить по ссылкам для просмотра журналов действий по подготовке, используйте раздел **Сведения о синхронизации**. В журналах аудита зафиксированы все действия, выполняемые службой подготовки в приложении Asana.
 

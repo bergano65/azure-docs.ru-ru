@@ -2,25 +2,21 @@
 title: Руководство. Настройка Fuze для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в Fuze.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: 34718201-4f0e-4260-9af0-b3b70a1e8265
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: b552b175074262d961e455a2b46727d0fa656b45
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 08fe2cd87200e1a22f36ab01b58c6cf82fd1f007
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87920489"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550829"
 ---
 # <a name="tutorial-configure-fuze-for-automatic-user-provisioning"></a>Учебник. Настройка Fuze для автоматической подготовки пользователей
 
@@ -108,7 +104,7 @@ ms.locfileid: "87920489"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите кнопку **Сохранить**.
+7. Нажмите **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Fuze**.
 

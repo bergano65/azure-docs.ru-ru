@@ -2,25 +2,20 @@
 title: Учебник. подготовка пользователей для GitHub — Azure AD
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в GitHub.
 services: active-directory
-documentationcenter: ''
 author: ArvindHarinder1
 manager: CelesteDG
-ms.assetid: d4ca2365-6729-48f7-bb7f-c0f5ffe740a3
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: arvinh
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82f7252f2d9cdd2c54fae593d8463bfe84bd6ce2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cfcf68b1e00e9f3333a8cd1fdb21ec71712f0e95
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77057657"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550676"
 ---
 # <a name="tutorial-configure-github-for-automatic-user-provisioning"></a>Руководство по настройке GitHub для автоматической подготовки пользователей
 
@@ -83,7 +78,7 @@ ms.locfileid: "77057657"
 
 8. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок "Отправить уведомление по электронной почте при сбое".
 
-9. Нажмите кнопку **Сохранить**.
+9. Нажмите **Сохранить**.
 
 10. В разделе "Сопоставления" выберите **Synchronize Azure Active Directory Users to GitHub** (Синхронизировать пользователей Azure Active Directory с GitHub).
 
@@ -91,7 +86,7 @@ ms.locfileid: "77057657"
 
 12. Чтобы включить службу подготовки Azure AD для GitHub, в разделе **Параметры** измените значение параметра **Состояние подготовки** на **Включено**.
 
-13. Нажмите кнопку **Сохранить**.
+13. Нажмите **Сохранить**.
 
 После этого начнется начальная синхронизация всех пользователей и (или) групп, назначенных в GitHub в разделе "Пользователи и группы". Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра журналов действий по подготовке, в которых зафиксированы все действия, выполняемые службой подготовки.
 

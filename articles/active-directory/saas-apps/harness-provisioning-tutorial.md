@@ -2,25 +2,21 @@
 title: Учебник. Настройка программы для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отмены предоставления учетных записей пользователей для работы.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: 0cdb970b-440b-4e7c-9118-2f03baab6a20
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/29/2019
 ms.author: Zhchia
-ms.openlocfilehash: 518d86fff04a23f1c1e63c44c53485b99f30637d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 56a865de8cb1be079f4935ef2a8f840f10589b26
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77057844"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550016"
 ---
 # <a name="tutorial-configure-harness-for-automatic-user-provisioning"></a>Учебник. Настройка программы для автоматической подготовки пользователей
 
@@ -31,7 +27,7 @@ ms.locfileid: "77057844"
 >
 > Сейчас этот соединитель доступен в режиме предварительной версии. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этой статье, предполагается, что у вас уже есть следующие необходимые компоненты.
 
@@ -82,7 +78,7 @@ ms.locfileid: "77057844"
 
 Перед настройкой программы для автоматической подготовки пользователей с помощью Azure AD необходимо добавить программу из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
-1. На [портале Azure](https://portal.azure.com) в области слева щелкните **Azure Active Directory**.
+1. В [портал Azure](https://portal.azure.com)в левой области выберите **Azure Active Directory**.
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
@@ -138,7 +134,7 @@ ms.locfileid: "77057844"
 
     ![Поле "E-mail Notification"](common/provisioning-notification-email.png)
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 1. В разделе **сопоставления**выберите **синхронизировать Azure Active Directory пользователей с**ними.
 

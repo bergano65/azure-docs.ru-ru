@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 08/06/2020
-ms.openlocfilehash: 25378cc0510260a6ccd0a0bdb162b145cbae5c8e
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.date: 08/18/2020
+ms.openlocfilehash: 542f9a95e4a124cb8b369dfc670fc85cd7e2a9d4
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87847879"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88553229"
 ---
 # <a name="copy-data-to-or-from-azure-data-lake-storage-gen1-using-azure-data-factory"></a>Копирование данных в Azure Data Lake Storage 1-го поколения и из него с помощью Фабрики данных Azure
 
@@ -91,7 +91,7 @@ ms.locfileid: "87847879"
 | servicePrincipalId | Укажите идентификатора клиента приложения. | Да |
 | servicePrincipalKey | Укажите ключ приложения. Пометьте это поле как `SecureString`, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | tenant | Укажите сведения о клиенте, такие как доменное имя или идентификатор клиента, в котором находится приложение. Эти сведения можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Да |
-| азуреклаудтипе | Для проверки подлинности субъекта-службы укажите тип облачной среды Azure, в которой зарегистрировано приложение AAD. <br/> Допустимые значения: **азурепублик**, **AzureChina**, **AzureUsGovernment**и **азурежермани**. По умолчанию используется облачная среда фабрики данных. | Нет |
+| азуреклаудтипе | Для проверки подлинности субъекта-службы укажите тип облачной среды Azure, в которой зарегистрировано приложение Azure Active Directory. <br/> Допустимые значения: **азурепублик**, **AzureChina**, **AzureUsGovernment**и **азурежермани**. По умолчанию используется облачная среда фабрики данных. | Нет |
 
 **Пример**.
 
@@ -264,7 +264,7 @@ ms.locfileid: "87847879"
 
 ### <a name="azure-data-lake-store-as-sink"></a>Azure Data Lake Store в качестве приемника
 
-[!INCLUDE [data-factory-v2-file-formats](../../includes/data-factory-v2-file-formats.md)] 
+[!INCLUDE [data-factory-v2-file-sink-formats](../../includes/data-factory-v2-file-sink-formats.md)]
 
 Ниже перечислены свойства, которые поддерживаются для Azure Data Lake Storage 1-го поколения в настройках `storeSettings` в приемнике копирования на основе формата.
 
@@ -315,7 +315,7 @@ ms.locfileid: "87847879"
 
 | Пример исходной структуры | Конфигурация ADF | Результат |
 |:--- |:--- |:--- |
-|root<br/>&nbsp;&nbsp;&nbsp;&nbsp;конкретного<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;политике<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file2.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;ax.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;bx.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;ц<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file4.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;cx.csv| **В наборе данных:**<br>— Путь к папке: `root`<br><br>**В источнике действия копирования:**<br>— Список после:`a`<br>— Список перед:`b`| После этого будут скопированы следующие файлы:<br><br>root<br/>&nbsp;&nbsp;&nbsp;&nbsp;политике<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file2.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;ax.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file3.csv |
+|root<br/>&nbsp;&nbsp;&nbsp;&nbsp;конкретного<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;политике<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file2.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;ax.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;bx.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;ц<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file4.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;cx.csv| **В наборе данных:**<br>— Путь к папке: `root`<br><br>**В источнике действия копирования:**<br>— Список после: `a`<br>— Список перед: `b`| После этого будут скопированы следующие файлы:<br><br>root<br/>&nbsp;&nbsp;&nbsp;&nbsp;политике<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file2.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;ax.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file3.csv |
 
 ### <a name="folder-and-file-filter-examples"></a>Примеры фильтров папок и файлов
 
@@ -367,7 +367,7 @@ ms.locfileid: "87847879"
 * [JSON](format-json.md#mapping-data-flow-properties)
 * [Parquet](format-parquet.md#mapping-data-flow-properties)
 
-Конкретные параметры форматирования находятся в документации по этому формату. Дополнительные сведения см. в статье [Преобразование источника в преобразование потока данных сопоставления](data-flow-source.md) и [приемника в потоке данных сопоставления](data-flow-sink.md).
+Параметры, относящиеся к формату, находятся в документации по этому формату. Дополнительные сведения см. в статье [Преобразование источника в преобразование потока данных сопоставления](data-flow-source.md) и [приемника в потоке данных сопоставления](data-flow-sink.md).
 
 ### <a name="source-transformation"></a>Преобразование источника
 

@@ -2,25 +2,21 @@
 title: Руководство. Настройка Ипрова для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в Ипрова.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: 4edba747-242d-4795-9539-649f33af4c13
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/29/2019
 ms.author: Zhchia
-ms.openlocfilehash: 799713c237d8a528b7e458da1e26695484ca1080
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 1d0f5c974b19b83cdd2fdab832ae0cac0dab9d9a
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87923175"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88552872"
 ---
 # <a name="tutorial-configure-iprova-for-automatic-user-provisioning"></a>Учебник. Настройка Ипрова для автоматической подготовки пользователей
 
@@ -114,7 +110,7 @@ ms.locfileid: "87923175"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите кнопку **Сохранить**.
+7. Нажмите **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с ипрова**.
 
