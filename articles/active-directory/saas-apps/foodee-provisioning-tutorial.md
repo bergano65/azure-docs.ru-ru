@@ -2,25 +2,21 @@
 title: Руководство. Настройка пищи для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отмены предоставления учетных записей пользователей для пищи.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: fb48deae-4653-448a-ba2f-90258edab3a7
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 08/30/2019
 ms.author: Zhchia
-ms.openlocfilehash: 2195056ec66550063aba5ce5e2b977b51a6dc5e3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 40549fa8880fb4dc4d29046b0037621610f0b130
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77057832"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88544189"
 ---
 # <a name="tutorial-configure-foodee-for-automatic-user-provisioning"></a>Учебник. Настройка пищи для автоматической подготовки пользователей
 
@@ -31,7 +27,7 @@ ms.locfileid: "77057832"
 >
 > Сейчас этот соединитель доступен в режиме предварительной версии. Дополнительные сведения о функциях Azure "условия использования" для предварительной версии функций см. в статье дополнительные [условия использования для предварительного просмотра Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом учебнике предполагается, что выполнены следующие предварительные требования:
 
@@ -75,7 +71,7 @@ Azure AD использует концепцию, называемую *назн
 
 Чтобы добавить Food из коллекции приложений Azure AD, выполните следующие действия.
 
-1. На [портале Azure](https://portal.azure.com) в области слева щелкните **Azure Active Directory**.
+1. В [портал Azure](https://portal.azure.com)в левой области выберите **Azure Active Directory**.
 
     ![Команда Azure Active Directory](common/select-azuread.png)
 
@@ -130,7 +126,7 @@ Azure AD использует концепцию, называемую *назн
 
     ![Текстовое поле для уведомления по электронной почте](common/provisioning-notification-email.png)
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 1. В разделе **сопоставления**выберите **синхронизировать Azure Active Directory пользователей с Food**.
 

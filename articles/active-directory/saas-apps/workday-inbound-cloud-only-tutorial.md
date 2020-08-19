@@ -3,23 +3,19 @@ title: Учебник. Настройка входящей передачи Work
 description: Узнайте, как настроить входящую подготовку из Workday в Azure AD.
 services: active-directory
 author: cmmdesai
-documentationcenter: na
-manager: daveba
-ms.assetid: fac4f61e-d942-4429-a297-9ba74db95077
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
-ms.openlocfilehash: 6fb80af84379a1a0bc174a7318c8150a98bea95e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 69c3246c910a83d889151d6ad749e1be86340e8c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84026505"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88540972"
 ---
 # <a name="tutorial-configure-workday-to-azure-ad-user-provisioning"></a>Руководство по настройке рабочего дня для подготовки пользователей в Azure AD
 Цель этого руководства — продемонстрировать шаги, которые необходимо выполнить, чтобы подготавливать рабочие данные рабочих ролей из Workday в Azure Active Directory. 
@@ -125,7 +121,7 @@ ms.locfileid: "84026505"
 
       > [!NOTE]
      > Если в URL-адресе не указаны сведения о версии, приложение использует Workday Web Services (WWS) v 21.1 и никакие изменения не требуются для выражений API XPATH по умолчанию, поставляемых с приложением. Чтобы использовать определенную версию API WWS, укажите номер версии в URL-адресе <br>
-     > Пример: `https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v34.0` <br>
+     > Например, `https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v34.0`. <br>
      > <br> Если вы используете WWS API v 30,0 +, прежде чем включать задание подготовки, обновите **выражения API XPath** в разделе **сопоставление атрибутов — > дополнительные параметры-> изменить список атрибутов для Workday** , обратившись к разделу [Управление конфигурацией](workday-inbound-tutorial.md#managing-your-configuration) и [ссылкой на атрибут workday](../app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30).  
 
    * **Электронная почта для уведомлений** — введите адрес электронной почты и установите флажок "send email if failure occurs" (Отправлять по электронной почте в случае сбоя).
@@ -210,7 +206,7 @@ ms.locfileid: "84026505"
    > [!div class="mx-imgBorder"]
    > ![Индикатор выполнения подготовки](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о поддерживаемых атрибутах Workday для входящей подготовки](../app-provisioning/workday-attribute-reference.md)
 * [Узнайте, как настроить обратную запись Workday](workday-writeback-tutorial.md)

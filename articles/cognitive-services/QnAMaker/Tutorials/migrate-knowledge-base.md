@@ -3,12 +3,12 @@ title: Перенос баз знаний с помощью QnA Maker
 description: Чтобы перенести базу знаний, необходимо экспортировать одну базы знаний, а затем импортировать ее в другую базу знаний.
 ms.topic: how-to
 ms.date: 03/25/2020
-ms.openlocfilehash: e2d6c1795b816d3b7ac046ea4055402b9107e20b
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: 4148431ebb4de288ac517c7c006a925e36c5f460
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84343094"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88542927"
 ---
 # <a name="migrate-a-knowledge-base-using-export-import"></a>Миграция базы знаний с помощью экспорта и импорта
 
@@ -22,7 +22,7 @@ ms.locfileid: "84343094"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Перед началом работы создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Перед началом работы создайте [бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
 * Настройте новую [службу QnA Maker](../How-To/set-up-qnamaker-service-azure.md).
 
 ## <a name="migrate-a-knowledge-base-from-qna-maker"></a>Перенос базы знаний из QnA Maker
@@ -52,7 +52,7 @@ ms.locfileid: "84343094"
 
 Процесс миграции программным путем можно получить с помощью следующих интерфейсов API:
 
-**Экспортировать**
+**Экспорт**
 
 * [Скачать API базы знаний](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/download)
 

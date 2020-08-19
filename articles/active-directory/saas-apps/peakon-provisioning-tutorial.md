@@ -2,25 +2,21 @@
 title: Руководство. Настройка автоматической подготовки пользователей Пеакон с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в Пеакон.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: na
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2019
 ms.author: zhchia
-ms.openlocfilehash: 0a67dc8069ee71305a47bd5d2a724a61cec234a0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b16ca0c396e2c406677af351cf6b1de2a3499353
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77063413"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88543680"
 ---
 # <a name="tutorial-configure-peakon-for-automatic-user-provisioning"></a>Учебник. Настройка Пеакон для автоматической подготовки пользователей
 
@@ -30,7 +26,7 @@ ms.locfileid: "77063413"
 >  В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
 >
 > Сейчас этот соединитель доступен в режиме предварительной версии. Дополнительные сведения об общих условиях использования продуктов в предварительной версии см. в документе [Дополнительные условия использования Предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом учебнике, предполагается, что у вас уже есть следующие необходимые компоненты.
 
@@ -123,7 +119,7 @@ ms.locfileid: "77063413"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-8. Нажмите кнопку **Сохранить**.
+8. Нажмите **Сохранить**.
 
 9. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с пеакон**.
 
@@ -133,7 +129,7 @@ ms.locfileid: "77063413"
 
     ![Атрибуты пользователя пеакон](media/Peakon-provisioning-tutorial/Peakon-user-attributes.png)
 
-12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями в [руководстве по фильтрации областей](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями в       [руководстве по фильтрации областей](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
     
     ![Область действия подготовки](common/provisioning-scope.png)
 

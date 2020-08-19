@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 10/24/2019
 ms.author: pafarley
-ms.openlocfilehash: e650529f3adb998ce683354565acdeb3928b50c3
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 6a020163347babfc68ac9aab0514352a35f5831c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72931754"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88542944"
 ---
 # <a name="moderate-with-custom-image-lists-in-c"></a>Модерация с помощью настраиваемых списков изображений на C#
 
@@ -34,7 +34,7 @@ ms.locfileid: "72931754"
 
 Консольное приложение для этого руководством имитирует некоторые задачи, которые можно выполнить с помощью API списка изображений.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/), прежде чем начинать работу. 
 
 ## <a name="sign-up-for-content-moderator-services"></a>Регистрация в службах Content Moderator
 
@@ -72,7 +72,7 @@ using System.Threading;
 
 ### <a name="create-the-content-moderator-client"></a>Создание клиента Content Moderator
 
-Добавьте следующий фрагмент кода, чтобы создать клиент Content Moderator для своей подписки. Обновите `AzureEndpoint` поля `CMSubscriptionKey` и, указав значения URL-адреса конечной точки и ключа подписки. Их можно найти на вкладке **Быстрый запуск** ресурса в портал Azure.
+Добавьте следующий фрагмент кода, чтобы создать клиент Content Moderator для своей подписки. Обновите `AzureEndpoint` поля и, `CMSubscriptionKey` указав значения URL-адреса конечной точки и ключа подписки. Их можно найти на вкладке **Быстрый запуск** ресурса в портал Azure.
 
 ```csharp
 /// <summary>
@@ -1078,6 +1078,6 @@ Response:
 []
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для выполнения инструкций из этого и других кратких руководств по Content Moderator для .NET и приступите к интеграции.

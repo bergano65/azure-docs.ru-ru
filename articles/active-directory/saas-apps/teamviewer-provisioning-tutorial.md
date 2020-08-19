@@ -2,25 +2,21 @@
 title: Руководство. Настройка TeamViewer для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как автоматически подготавливать и отзывать учетные записи пользователей из Azure AD в TeamViewer.
 services: active-directory
-documentationcenter: ''
 author: Zhchia
 writer: Zhchia
-manager: beatrizd
-ms.assetid: 73dd5494-f572-42bb-9071-d599361b9bd7
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/27/2020
 ms.author: Zhchia
-ms.openlocfilehash: cd455f3149fea4240d393d69b2e39b9247edc0a3
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 7cb83b53b6516de58c99859f3a0d4c9122b78322
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87920290"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88542179"
 ---
 # <a name="tutorial-configure-teamviewer-for-automatic-user-provisioning"></a>Руководство. Настройка TeamViewer для автоматической подготовки пользователей
 
@@ -101,7 +97,7 @@ ms.locfileid: "87920290"
 
     ![Вкладка "Подготовка"](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите `ttps://webapi.teamviewer.com/scim/v2` в поле **URL-адрес домика** и введите созданный ранее маркер скрипта в **секретном токене**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к TeamViewer. В случае сбоя подключения убедитесь, что у учетной записи TeamViewer есть разрешения администратора, и повторите попытку.
+5. В разделе **учетные данные администратора** введите `ttps://webapi.teamviewer.com/scim/v2`  в поле **URL-адрес домика** и введите созданный ранее маркер скрипта в **секретном токене**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к TeamViewer. В случае сбоя подключения убедитесь, что у учетной записи TeamViewer есть разрешения администратора, и повторите попытку.
 
     ![Подготовка](./media/teamViewer-provisioning-tutorial/provisioning.png)
 

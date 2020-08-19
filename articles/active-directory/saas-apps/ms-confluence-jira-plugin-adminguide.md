@@ -2,25 +2,21 @@
 title: Руководство администратора для Atlassian JIRA и Confluence в Azure Active Directory | Документация Майкрософт
 description: Руководство администратора по использованию Atlassian JIRA и Confluence в Azure Active Directory (Azure AD).
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: joflore
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2018
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5884685f12c4697558a008287f446e52e5105d3b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 07bd9353f08e9440e495dfa92c608b4d6f70f5cf
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87016791"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88543988"
 ---
 # <a name="atlassian-jira-and-confluence-admin-guide-for-azure-active-directory"></a>Atlassian JIRA и Confluence в руководстве администратора для Azure Active Directory
 
@@ -28,7 +24,7 @@ ms.locfileid: "87016791"
 
 Подключаемый модуль единого входа Azure Active Directory (Azure AD) позволяет пользователям использовать рабочую или учебную учетную запись для входа в Atlassian Jira и продукты Confluence на основе сервера. Этот модуль реализует единый вход на основе SAML 2.0.
 
-## <a name="how-it-works"></a>Принципы работы
+## <a name="how-it-works"></a>Принцип работы
 
 При входе в приложение Atlassian Jira или Confluence пользователи видят кнопку **Login with Azure AD** (Войти с помощью Azure AD) на странице входа. Если они нажмут эту кнопку, им потребуется выполнить вход с помощью страницы для входа в Azure AD организации (то есть их рабочей или учебной учетной записи).
 
@@ -54,7 +50,7 @@ ms.locfileid: "87016791"
 * Приложения Jira или Confluence также доступны вне сети компании.
 * Подключаемый модуль работает только с локальными версиями Jira и Confluence.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать установку подключаемого модуля, убедитесь в выполнении следующих требований.
 
@@ -139,7 +135,7 @@ ms.locfileid: "87016791"
 
 * **Enable Single Signout** (Включение единого выхода). Позволяет выбрать, нужно ли выходить из Azure AD, когда пользователь выходит из системы Jira или Confluence.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 * **Получено несколько ошибок сертификата**. Войдите в Azure AD и удалите несколько сертификатов, которые доступны для приложения. Оставьте только один сертификат.
 

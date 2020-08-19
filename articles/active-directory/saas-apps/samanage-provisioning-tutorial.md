@@ -2,25 +2,21 @@
 title: Руководство по настройке Samanage для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как автоматически подготавливать и отзывать учетные записи пользователей из Azure AD в Samanage.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: 62d0392f-37d4-436e-9aff-22f4e5b83623
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/13/2020
 ms.author: Zhchia
-ms.openlocfilehash: 76b40ad0fd7403479ee7cec81e19bbb22213512d
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 21a3c81d9a24cc63d3fc77c95c94df1e9113d292
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87925181"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88543454"
 ---
 # <a name="tutorial-configure-samanage-for-automatic-user-provisioning"></a>Руководство по настройке Samanage для автоматической подготовки пользователей
 В этом руководстве описываются действия, которые необходимо выполнить в Samanage и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. При настройке Azure AD автоматически подготавливает и отменяет подготовку пользователей и групп для [Samanage](https://www.samanage.com/pricing/) с помощью службы подготовки Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
