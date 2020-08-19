@@ -4,15 +4,15 @@ description: Узнайте, как использовать внедрение 
 author: craigshoemaker
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.date: 09/05/2019
+ms.date: 08/15/2020
 ms.author: cshoe
 ms.reviewer: jehollan
-ms.openlocfilehash: ee3caef30c573763db56f89aa4900aa62b8a436a
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 4919dc8f08a745a029eb6c3755f8cfc9c39f827f
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88206107"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88603866"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в Функциях Azure .NET
 
@@ -226,10 +226,10 @@ public class MyOptions
 
 ```csharp
 builder.Services.AddOptions<MyOptions>()
-                .Configure<IConfiguration>((settings, configuration) =>
-                                           {
-                                                configuration.GetSection("MyOptions").Bind(settings);
-                                           });
+    .Configure<IConfiguration>((settings, configuration) =>
+    {
+        configuration.GetSection("MyOptions").Bind(settings);
+    });
 ```
 
 Вызов `Bind` копирует значения, которые соответствуют именам свойств из конфигурации, в пользовательский экземпляр. Экземпляр параметров теперь доступен в контейнере IoC для внедрения в функцию.
@@ -253,8 +253,57 @@ public class HttpTrigger
 
 Дополнительные сведения о работе с параметрами см. в [Шаблон параметров в ASP.NET Core](/aspnet/core/fundamentals/configuration/options).
 
-> [!WARNING]
-> Не пытайтесь считывать значения из таких файлов, как *local.settings.json* или *appsettings.{environment}.json*, в плане потребления. Значения, считываемые из этих файлов, связанных с триггерами, недоступны при масштабировании приложения, так как инфраструктура размещения не имеет доступа к сведениям о конфигурации, так как контроллер масштабирования создает новые экземпляры приложения.
+### <a name="customizing-configuration-sources"></a>Настройка источников конфигурации
+
+> [!NOTE]
+> Настройка источника конфигурации доступна начиная с версии узла "функции Azure" 2.0.14192.0 и 3.0.14191.0.
+
+Чтобы указать дополнительные источники конфигурации, переопределите `ConfigureAppConfiguration` метод в классе приложения функции `StartUp` .
+
+В следующем примере добавляются значения конфигурации из базового и необязательного файла параметров приложения для конкретной среды.
+
+```csharp
+using System.IO;
+using Microsoft.Azure.Functions.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
+[assembly: FunctionsStartup(typeof(MyNamespace.Startup))]
+
+namespace MyNamespace
+{
+    public class Startup : FunctionsStartup
+    {
+        public override void ConfigureAppConfiguration(IFunctionsConfigurationBuilder builder)
+        {
+            FunctionsHostBuilderContext context = builder.GetContext();
+
+            builder.ConfigurationBuilder
+                .AddJsonFile(Path.Combine(context.ApplicationRootPath, "appsettings.json"), optional: true, reloadOnChange: false)
+                .AddJsonFile(Path.Combine(context.ApplicationRootPath, $"appsettings.{context.EnvironmentName}.json"), optional: true, reloadOnChange: false);
+        }
+    }
+}
+```
+
+Добавьте поставщики конфигурации в `ConfigurationBuilder` свойство объекта `IFunctionsConfigurationBuilder` . Дополнительные сведения об использовании поставщиков конфигурации см. [в разделе Configuration in ASP.NET Core](/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1#configuration-providers).
+
+Объект `FunctionsHostBuilderContext` получен из `IFunctionsConfigurationBuilder.GetContext()` . Используйте этот контекст, чтобы получить имя текущей среды и разрешить расположение файлов конфигурации в папке приложения функции.
+
+По умолчанию файлы конфигурации, такие как *appsettings.js* , не копируются автоматически в выходную папку приложения функции. Обновите *CSPROJ* файл в соответствии с приведенным ниже образцом, чтобы убедиться, что файлы скопированы.
+
+```xml
+<None Update="appsettings.json">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>      
+</None>
+<None Update="appsettings.Development.json">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+</None>
+```
+
+> [!IMPORTANT]
+> Для приложений функций, выполняющихся в планах потребления или Premium, изменение значений конфигурации, используемых в триггерах, может привести к ошибкам масштабирования. Любые изменения этих свойств `FunctionsStartup` класса приводят к ошибке запуска приложения-функции.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

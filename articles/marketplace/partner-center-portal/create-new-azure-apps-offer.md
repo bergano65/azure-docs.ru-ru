@@ -7,12 +7,12 @@ ms.topic: article
 author: AarathiN
 ms.author: aarathin
 ms.date: 07/14/2020
-ms.openlocfilehash: 420ca9ff6a3ccc0e0bb76887e777f05dd955e97b
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: f62483880d2572b6487c87bbd73e0dd7033238d3
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88166694"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606168"
 ---
 # <a name="create-an-azure-application-offer"></a>Создание предложения приложения Azure
 
@@ -103,7 +103,7 @@ ms.locfileid: "88166694"
 ## <a name="create-a-new-offer"></a>Создание нового предложения
 
 >[!NOTE]
->После публикации предложения изменения, внесенные в него в Центре партнеров, отображаются на витрине только после повторной публикации. Если вы внесли в предложение изменения, обязательно опубликуйте его повторно.
+>После публикации предложения изменения, внесенные в него в центре партнеров, не будут отображаться в Интернет-магазинах до повторной публикации предложения. Если вы внесли в предложение изменения, обязательно опубликуйте его повторно.
 
 1. Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard/home).
 

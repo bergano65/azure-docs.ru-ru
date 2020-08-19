@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: navits09
 ms.author: navits
 ms.date: 06/17/2020
-ms.openlocfilehash: 000413267d09f5f51ffdb50ccc5aeaab78a18b5e
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 159cdef6b2c831e8c20d7249334bebac4f2061c5
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036663"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606130"
 ---
 # <a name="create-a-dynamics-365-for-customer-engagement--powerapps-offer"></a>Создание предложения Dynamics 365 for Customer Engagement & PowerApps
 
@@ -29,7 +29,7 @@ ms.locfileid: "88036663"
     ![Отображается меню навигации слева.](./media/new-offer-dynamics-365-customer-engagement-powerapps.png)
 
 > [!NOTE]
-> После публикации предложения изменения, внесенные в него в Центре партнеров, отображаются на витрине только после повторной публикации. Если вы внесли изменения, обязательно выполните повторную публикацию.
+> После публикации предложения изменения, внесенные в него в центре партнеров, отображаются только в Интернет-магазинах после повторной публикации предложения. Если вы внесли изменения, обязательно выполните повторную публикацию.
 
 ## <a name="new-offer"></a>Новое предложение
 

@@ -136,6 +136,10 @@
       items:
         - name: Журналы и метрики
           href: logs-metrics.md
+    - name: Приватный канал
+      items:
+        - name: Настройка подключения к Приватному каналу
+          href: howto-private-link.md
 - name: Справочник
   items:
     - name: Azure PowerShell

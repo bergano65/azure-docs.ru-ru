@@ -6,6 +6,11 @@
       href: overview.md
     - name: Поддерживаемые хранилища данных
       href: supported-data-stores.md
+- name: Краткие руководства
+  items:
+    - name: Создание общего ресурса данных с помощью шаблона ARM
+      displayName: Resource Manager
+      href: share-your-data-arm.md
 - name: Учебники
   expanded: true
   items:

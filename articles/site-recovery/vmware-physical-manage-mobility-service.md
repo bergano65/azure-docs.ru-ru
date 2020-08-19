@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
-ms.openlocfilehash: ff77d6cad60b459b1fe6a4f83641c7aebe204dfa
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: e65fecb70b7e3adf009396c0daa00fc50b81b519
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87460105"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88604530"
 ---
 # <a name="manage-the-mobility-agent"></a>Управление агентом службы "Мобильность" 
 
@@ -26,12 +26,13 @@ ms.locfileid: "87460105"
 ## <a name="update-mobility-service-from-azure-portal"></a>Обновление службы Mobility Service с портал Azure
 
 1. Прежде чем приступать к обновлению службы Mobility Service на защищенных компьютерах, убедитесь, что серверы конфигурации, обработки масштабирования и все основные целевые серверы, входящие в состав вашего развертывания, обновлены.
-2. На портале откройте хранилище и выберите **Реплицированные элементы**.
-3. Если сервер конфигурации последней версии, отобразится уведомление: "Доступно обновление для агента репликации Site Recovery. Щелкните, чтобы установить его."
+    1. Начиная с [версии 9,36](https://support.microsoft.com/help/4578241/) , для SuSE Linux Enterprise Server 11 SP4 убедитесь, что [на сервере конфигурации и на сервере обработки масштабирования доступен](vmware-physical-mobility-service-overview.md#download-latest-mobility-agent-installer-for-suse-11-sp3-server)последний установщик.
+1. На портале откройте хранилище и выберите **Реплицированные элементы**.
+1. Если сервер конфигурации последней версии, отобразится уведомление: "Доступно обновление для агента репликации Site Recovery. Щелкните, чтобы установить его."
 
      ![Окно "Реплицированные элементы"](./media/vmware-azure-install-mobility-service/replicated-item-notif.png)
 
-4. Щелкните уведомление и в разделе **Обновление агента** выберите компьютеры, на которых нужно обновить службу Mobility Service. Затем нажмите кнопку **ОК**.
+4. Щелкните уведомление и в разделе **Обновление агента** выберите компьютеры, на которых нужно обновить службу Mobility Service. Нажмите кнопку **ОК**.
 
      ![Список виртуальных машин "Реплицированные элементы"](./media/vmware-azure-install-mobility-service/update-okpng.png)
 

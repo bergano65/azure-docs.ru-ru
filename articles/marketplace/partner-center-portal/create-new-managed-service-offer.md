@@ -7,12 +7,12 @@ ms.topic: how-to
 author: Microsoft-BradleyWright
 ms.author: brwrigh
 ms.date: 08/07/2020
-ms.openlocfilehash: 4d2a884bd6fd4cb62aa7cae5f3e53b865082fde8
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 75c604df2f44e9c732fa9c2ce2093237e4e484a4
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88166609"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606057"
 ---
 # <a name="create-a-managed-service-offer"></a>Создание предложения управляемой службы
 
@@ -29,7 +29,7 @@ ms.locfileid: "88166609"
     ![Отображается меню навигации слева.](./media/new-offer-managed-service.png)
 
 >[!NOTE]
->После публикации предложения изменения, внесенные в него в Центре партнеров, отображаются на витрине только после повторной публикации. Если вы внесли изменения, обязательно выполните повторную публикацию.
+>После публикации предложения изменения, внесенные в него в центре партнеров, отображаются только в Интернет-магазинах после повторной публикации предложения. Если вы внесли изменения, обязательно выполните повторную публикацию.
 
 ## <a name="new-offer"></a>Новое предложение
 

@@ -1,4 +1,4 @@
-- name: Размеры виртуальной машины
+- name: Размеры серверов
   href: vm-sizes.md
 - name: Сопоставление материалов для форматов модели
   href: material-mapping.md

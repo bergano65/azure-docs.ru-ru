@@ -74,10 +74,10 @@
       href: ./sql/tutorial-connect-power-bi-desktop.md
     - name: Data Scientist
       items:
-        - name: Прогнозирование суммы чаевых за такси в Нью-Йорке
+        - name: Выполнение эксперимента регрессии с помощью Azure AutoML
+          href: ./spark/apache-spark-azure-machine-learning-tutorial.md
+        - name: Создание модели классификации с помощью Apache Spark MLlib
           href: ./spark/apache-spark-machine-learning-mllib-notebook.md
-        - name: Расширение Apache Spark с помощью дополнительных библиотек
-          href: ./spark/apache-spark-azure-portal-add-libraries.md
     - name: Аналитик данных
       items:
         - name: Использование SQL по запросу для анализа и Synapse Studio для визуализации
@@ -202,8 +202,6 @@
               href: ./spark/apache-spark-overview.md
             - name: Основные понятия Apache Spark
               href: ./spark/apache-spark-concepts.md
-            - name: Поддержка языка и библиотеки среды выполнения
-              href: ./spark/apache-spark-version-support.md
             - name: Сведения о Delta Lake
               href: ./spark/apache-spark-what-is-delta-lake.md
             - name: Производительность Apache Spark
@@ -212,6 +210,12 @@
               href: ./spark/apache-spark-autoscale.md
         - name: Разработка
           items:
+            - name: Библиотеки
+              items:
+                - name: Добавление библиотек и управление ими
+                  href: ./spark/apache-spark-azure-portal-add-libraries.md
+                - name: Поддержка языка и библиотеки среды выполнения
+                  href: ./spark/apache-spark-version-support.md
             - name: Записные книжки Azure Synapse Studio
               href: ./spark/apache-spark-development-using-notebooks.md
             - name: .NET для Apache Spark

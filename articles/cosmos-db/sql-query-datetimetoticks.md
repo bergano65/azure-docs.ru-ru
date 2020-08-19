@@ -4,20 +4,20 @@ description: Дополнительные сведения о функции SQL
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 08/14/2020
+ms.date: 08/18/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: a6fcff691ee5278ed0a9e1c132f8ecebbee9431c
-ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
+ms.openlocfilehash: 2e2c9e8f2bf0d4760bf030fb19a90737cdb54525
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88227245"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88605135"
 ---
 # <a name="datetimetoticks-azure-cosmos-db"></a>Датетиметотиккс (Azure Cosmos DB)
 
-Преобразует указанный DateTime в такты. Один такт представляет 100 наносекунд или 1 10-миллион секунды.
-  
+Преобразует указанный DateTime в такты. Один такт представляет 100 наносекунд или 1 10-миллион секунды. 
+
 ## <a name="syntax"></a>Синтаксис
   
 ```sql
@@ -31,9 +31,9 @@ DateTimeToTicks (<DateTime>)
 
 ## <a name="return-types"></a>Типы возвращаемых данных
 
-Возвращает положительное целое значение.
+Возвращает числовое значение со знаком, текущее число 100-наносекундных тактов, прошедшее с момента создания эпохи UNIX. Иными словами, Датетиметотиккс возвращает число тактов 100-наносекундных импульсов, истекших с 00:00:00 четверг, 1 января 1970.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 Датетимедатетиметотиккс возвращает, `undefined` Если дата и время не являются допустимыми ISO 8601 DateTime
 

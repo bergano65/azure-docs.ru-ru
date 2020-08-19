@@ -121,6 +121,8 @@
           href: howto-create-custom-analytics.md
         - name: Визуализация данных в Power BI
           href: howto-connect-powerbi.md
+        - name: Настройка и использование отправки файлов
+          href: howto-configure-file-uploads.md
     - name: Администрирование
       items:
         - name: Управление приложением

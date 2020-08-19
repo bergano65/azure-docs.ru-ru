@@ -28,6 +28,12 @@
               href: connect-nodejs.md
             - name: Java
               href: connect-java.md
+            - name: Java с JDBC Spring Data
+              href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-postgresql?toc=/azure/postgresql/toc.json&bc=/azure/bread/toc.json
+            - name: Java с JPA Spring Data
+              href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-postgresql?toc=/azure/postgresql/toc.json&bc=/azure/bread/toc.json
+            - name: Java с R2DBC Spring Data
+              href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-postgresql?toc=/azure/postgresql/toc.json&bc=/azure/bread/toc.json
             - name: Ruby
               href: connect-ruby.md
             - name: PHP
@@ -38,7 +44,7 @@
               href: connect-go.md
     - name: Гипермасштабирование (Citus)
       items:
-        - name: Создание базы данных с помощью портала
+        - name: Создание группы серверов с помощью портала
           href: quickstart-create-hyperscale-portal.md
 - name: Учебники
   items:
@@ -153,10 +159,14 @@
               href: concepts-aks.md
             - name: Java
               items:
+                - name: Использование Java и JDBC
+                  href: connect-java.md
                 - name: Настройка JDBC Spring Data
-                  href: /java/azure/spring-framework/configure-spring-data-jdbc-with-azure-postgresql
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-postgresql?toc=/azure/postgresql/toc.json&bc=/azure/bread/toc.json
                 - name: Настройка JPA Spring Data
-                  href: /java/azure/spring-framework/configure-spring-data-jpa-with-azure-postgresql
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-postgresql?toc=/azure/postgresql/toc.json&bc=/azure/bread/toc.json
+                - name: Настройка R2DBC Spring Data
+                  href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-postgresl?toc=/azure/postgresql/toc.json&bc=/azure/bread/toc.json
         - name: Репликация
           items:
             - name: Реплики чтения

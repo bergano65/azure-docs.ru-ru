@@ -24,6 +24,8 @@
       href: classroom-labs-fundamentals.md
     - name: Ограничения емкости
       href: capacity-limits.md
+    - name: Управление затратами на лаборатории
+      href: cost-management-guide.md
     - name: Сценарии
       items:
         - name: Использование Службы лабораторий для проведения учебных занятий
@@ -66,7 +68,7 @@
           href: how-to-manage-lab-accounts.md
         - name: Управление лабораториями в учетной записи лаборатории
           href: manage-labs.md
-        - name: Настройка автоматического завершения работы виртуальных машин
+        - name: Настройка автозавершения работы виртуальных машин для учетной записи лаборатории
           href: how-to-configure-lab-accounts.md
         - name: Добавление создателя лаборатории
           href: add-lab-creator.md
@@ -86,8 +88,6 @@
           href: specify-marketplace-images.md
         - name: Указание сведений о поддержке (владелец учетной записи лаборатории)
           href: lab-account-owner-support-information.md
-        - name: Управление затратами на лаборатории
-          href: cost-management-guide.md
     - name: Создание и настройка лабораторий для аудитории (преподаватель)
       items:
         - name: Создание и администрирование лабораторий для аудитории
@@ -106,7 +106,7 @@
           href: how-to-use-shared-image-gallery.md
         - name: Включение соединения с удаленным рабочим столом для Linux
           href: how-to-enable-remote-desktop-linux.md
-        - name: Включение автоматического завершения работы при отключении
+        - name: Настройка автозавершения работы виртуальных машин для лаборатории
           href: how-to-enable-shutdown-disconnect.md
         - name: Включение вложенной виртуализации в шаблоне виртуальной машины
           items:

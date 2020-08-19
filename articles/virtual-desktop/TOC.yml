@@ -116,6 +116,14 @@
       href: faq.md
     - name: "Windows\_10 Корпоративная с поддержкой нескольких сеансов: часто задаваемые вопросы"
       href: windows-10-multisession-faq.md
+    - name: Подключение приложений MSIX
+      items:
+        - name: Что такое подключение приложений MSIX?
+          href: what-is-app-attach.md
+        - name: Глоссарий
+          href: app-attach-glossary.md
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: app-attach-faq.md
     - name: Расположения данных
       href: data-locations.md
 - name: Диагностика
@@ -150,6 +158,8 @@
       href: /windows-server/remote/remote-desktop-services/virtual-machine-recs?context=/azure/virtual-desktop/context/context
     - name: интерфейс командной строки Azure (CLI)
       href: /cli/azure/ext/desktopvirtualization/?view=azure-cli-latest
+    - name: Примеры сценариев Azure
+      href: /azure/architecture/example-scenario/wvd/windows-virtual-desktop
 - name: Ресурсы
   items:
     - name: PowerShell

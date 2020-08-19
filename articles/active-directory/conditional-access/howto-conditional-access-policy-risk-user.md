@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a015f7dd58bae328a8c18e3de3202c0ca615c9cf
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 916ff4a5e6afd68106d70f386436723c24574df1
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86034921"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88605586"
 ---
 # <a name="conditional-access-user-risk-based-conditional-access"></a>Условный доступ: условный доступ на основе рисков для пользователей
 
@@ -29,7 +29,7 @@ ms.locfileid: "86034921"
 1. Войдите на **портал Azure** с учетными данными глобального администратора, администратора безопасности или администратора условного доступа.
 1. Выберите **Azure Active Directory** > **Безопасность** > **Условный доступ**.
 1. Выберите **Новая политика**.
-1. Присвойте политике имя. Мы рекомендуем организациям присваивать политикам понятные имена.
+1. Присвойте политике имя. Мы рекомендуем организациям присваивать политикам понятные имена. Для получения дополнительных сведений [Задайте стандарты именования для политик](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access#set-naming-standards-for-your-policies).
 1. В разделе **Назначения** выберите **Пользователи и группы**.
    1. В разделе **Включить** выберите **Все пользователи**.
    1. В разделе **Исключить** выберите **Пользователи и группы**, а затем выберите учетные записи для аварийного доступа или для обхода стандартной системы контроля доступа в вашей организации. 
@@ -60,7 +60,7 @@ ms.locfileid: "86034921"
 
 [Распространенные политики условного доступа](concept-conditional-access-policy-common.md)
 
-[Условный доступ на основе риска входа](howto-conditional-access-policy-risk.md)
+[Условный доступ на основе рисков при входе](howto-conditional-access-policy-risk.md)
 
 [Определение влияния условного доступа в режиме "только отчет"](howto-conditional-access-report-only.md)
 

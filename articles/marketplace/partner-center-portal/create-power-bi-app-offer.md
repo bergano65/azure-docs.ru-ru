@@ -7,14 +7,14 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: 4705919f9c6c11678984c016716fe38cb6191557
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 5b9752107aac1f90a67fb7c87a14492a74a124aa
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88030774"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88604628"
 ---
-# <a name="create-a-power-bi-app-offer"></a>Создание предложения для Power BI приложения
+# <a name="create-a-power-bi-app-offer"></a>Создание предложения приложения Power BI
 
 В этой статье описывается порядок создания и публикации предложения приложения Power BI в Microsoft [AppSource](https://appsource.microsoft.com/).
 
@@ -29,7 +29,7 @@ ms.locfileid: "88030774"
    ![Отображается меню навигации слева.](./media/new-offer-power-bi-app.png)
 
 > [!NOTE]
-> Изменения, внесенные в предложение после его публикации в Центре партнеров, отображаются на витрине только после повторной публикации. Если вы внесли изменения, обязательно выполните повторную публикацию.
+> После публикации предложения изменения, внесенные в него в центре партнеров, отображаются только в Интернет-магазинах после повторной публикации предложения. Если вы внесли изменения, обязательно выполните повторную публикацию.
 
 > [!IMPORTANT]
 > Если параметр **Приложения службы Power BI** не отображается или не включен, учетная запись не имеет разрешения на создание предложения этого типа. Убедитесь, что соблюдены все [требования](create-power-bi-app-overview.md) для этого типа предложения, включая регистрацию для учетной записи разработчика.

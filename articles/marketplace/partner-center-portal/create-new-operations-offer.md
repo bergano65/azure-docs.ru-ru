@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: navits09
 ms.author: navits
 ms.date: 06/17/2020
-ms.openlocfilehash: 553fd4e49d274fcf4c25356764182d54b91149e4
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: bdce311efbe7e41e09a3be76562c6be752a4b5c1
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036646"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606101"
 ---
 # <a name="create-a-dynamics-365-for-operations-offer"></a>Создание предложения Dynamics 365 for Operations
 
@@ -32,7 +32,7 @@ ms.locfileid: "88036646"
     ![Отображается меню навигации слева.](./media/new-offer-dynamics-365-operations.png)
 
 > [!NOTE]
-> После публикации предложения изменения, внесенные в него в Центре партнеров, отображаются на витрине только после повторной публикации. Если вы внесли в изменения, обязательно выполните повторную публикацию.
+> После публикации предложения изменения, внесенные в него в центре партнеров, отображаются только в Интернет-магазинах после повторной публикации предложения. Если вы внесли в изменения, обязательно выполните повторную публикацию.
 
 ## <a name="new-offer"></a>Новое предложение
 

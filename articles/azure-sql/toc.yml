@@ -65,6 +65,8 @@
                   href: database/sql-vulnerability-assessment.md
                 - name: Правила оценки уязвимостей
                   href: database/sql-database-vulnerability-assessment-rules.md
+                - name: Хранение результатов проверок уязвимостей в хранилище
+                  href: database/sql-database-vulnerability-assessment-storage.md
             - name: 'Имена для входа, учетные записи пользователей, роли и разрешения'
               href: database/logins-create-manage.md
             - name: Аутентификация Azure AD
@@ -80,6 +82,8 @@
                   href: database/conditional-access-configure.md
                 - name: Субъекты-службы (приложения)
                   href: database/authentication-aad-service-principal.md
+                - name: Роль "Читатели каталогов"
+                  href: database/authentication-aad-directory-readers-role.md
             - name: Прозрачное шифрование данных (TDE)
               items:
                 - name: Обзор
@@ -143,12 +147,14 @@
               href: database/long-term-backup-retention-configure.md
         - name: Безопасность
           items:
-            - name: Создание гостевых пользователей Azure AD и предоставление им прав администратора Azure AD
-              href: database/authentication-aad-guest-users.md
+            - name: Аутентификация Azure AD
+              items:
+                - name: Создание гостевых пользователей Azure AD и предоставление им прав администратора Azure AD
+                  href: database/authentication-aad-guest-users.md
+                - name: Назначение группам роли "Читатели каталогов"
+                  href: database/authentication-aad-directory-readers-role-tutorial.md
             - name: Настройка BYOK для TDE
               href: database/transparent-data-encryption-byok-configure.md
-            - name: Хранение результатов проверок уязвимостей в хранилище
-              href: database/sql-database-vulnerability-assessment-storage.md
             - name: Always Encrypted
               items:
                 - name: Использование Azure Key Vault
@@ -207,12 +213,14 @@
               href: 'https://docs.microsoft.com/sql/relational-databases/clr-integration/common-language-runtime-integration-overview?toc=/azure/azure-sql/toc.json'
             - name: Java
               items:
+                - name: Использование Java и JDBC
+                  href: database/connect-query-java.md
                 - name: Использование JDBC Spring Data
-                  href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json&bc=/azure/bread/toc.json
                 - name: Использование JPA Spring Data
-                  href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-sql-server?toc=/azure/azure-sql/toc.json&bc=/azure/bread/toc.json
                 - name: Использование R2DBC Spring Data
-                  href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                  href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json&bc=/azure/bread/toc.json
 - name: База данных SQL (SQL DB)
   items:
     - name: Документация
@@ -402,11 +410,11 @@
                 - name: Java
                   href: database/connect-query-java.md
                 - name: Java с JDBC Spring Data
-                  href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json&bc=/azure/bread/toc.json
                 - name: Java с JPA Spring Data
-                  href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-sql-server?toc=/azure/azure-sql/toc.json&bc=/azure/bread/toc.json
                 - name: Java с R2DBC Spring Data
-                  href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                  href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json&bc=/azure/bread/toc.json
                 - name: Node.js
                   href: database/connect-query-nodejs.md
                 - name: PHP
