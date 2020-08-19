@@ -2,25 +2,21 @@
 title: Учебник. Настройка динамического сигнала для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в динамический сигнал.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: na
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 2ec91d42dff8f3a1fc4b036aa1c3ec77faf6a0fc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4d578e089edbd99f8a0d37d805c297b42f60b3f4
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77058048"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88555670"
 ---
 # <a name="tutorial-configure-dynamic-signal-for-automatic-user-provisioning"></a>Учебник. Настройка динамического сигнала для автоматической подготовки пользователей
 
@@ -118,7 +114,7 @@ ms.locfileid: "77058048"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-9. Нажмите кнопку **Сохранить**.
+9. Нажмите **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с динамическим сигналом**.
 

@@ -2,25 +2,21 @@
 title: Руководство. Настройка Druva для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в Druva.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: a276c004-9f71-4efc-8cca-1f615760249f
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 3d1bb0bcbc0df98d7a884004cf96fe9810589185
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4d29b1301f66f2834c974bdcd2675cf1a672c742
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77058116"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88555722"
 ---
 # <a name="tutorial-configure-druva-for-automatic-user-provisioning"></a>Учебник. Настройка Druva для автоматической подготовки пользователей
 
@@ -127,7 +123,7 @@ ms.locfileid: "77058116"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите кнопку **Сохранить**.
+7. Нажмите **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Druva**.
 

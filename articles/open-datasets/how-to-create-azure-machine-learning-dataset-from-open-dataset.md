@@ -8,12 +8,12 @@ ms.author: nibaccam
 author: nibaccam
 ms.date: 08/05/2020
 ms.custom: how-to, tracking-python
-ms.openlocfilehash: 54408b20ebba60de2e1a696e5bd9b06f55e860ba
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 96eeafd7e434e2c3a42311999fcd4979531df2aa
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88513229"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88584885"
 ---
 # <a name="create-azure-machine-learning-datasets-from-azure-open-datasets"></a>Создание наборов данных Машинное обучение Azure из открытых наборов данных Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -75,7 +75,7 @@ tabular_dataset = MNIST.get_tabular_dataset()
 file_dataset = MNIST.get_file_dataset()
 ```
 
-В этом примере `opendatasets` класс диабета доступен только в качестве `TabularDataset` , поэтому используется `get_tabular_dataset()`
+В этом примере `opendatasets` класс диабета доступен только в качестве `TabularDataset` , поэтому используется `get_tabular_dataset()` .
 
 ```python
 
@@ -98,7 +98,7 @@ titanic_ds = titanic_ds.register(workspace=workspace,
 
 ## <a name="create-datasets-with-the-studio"></a>Создание наборов данных с помощью студии
 
-Наборы данных можно также создавать из открытых наборов данных с помощью [машинное обучение Azure Studio](https://ml.azure.com), Объединенного веб-интерфейса, включающего в себя средства машинного обучения, для выполнения сценариев обработки и анализа данных на основе всех уровней навыков.
+Вы также можете создавать Машинное обучение Azure наборы данных из открытых наборов данных Azure с помощью [машинное обучение Azure Studio](https://ml.azure.com), Объединенного веб-интерфейса, включающего средства машинного обучения, для выполнения сценариев обработки и анализа данных для специалистов по обработке и анализу и обработке данных на всех уровнях навыков.
 
 > [!Note]
 > Наборы данных, созданные с помощью Машинное обучение Azure Studio, автоматически регистрируются в рабочей области.
@@ -111,7 +111,7 @@ titanic_ds = titanic_ds.register(workspace=workspace,
 
     ![Выбор набора данных](./media/how-to-create-dataset-from-open-dataset/open-datasets-2.png)
 
-1. Выберите имя, под которым будет зарегистрирован набор данных, и при необходимости отфильтруйте данные с помощью доступных фильтров. В этом случае для набора данных " **общедоступные праздники** " вы фильтруете период времени в один год и код страны только в США. Нажмите кнопку **создания**.
+1. Выберите имя, под которым будет зарегистрирован набор данных, и при необходимости отфильтруйте данные с помощью доступных фильтров. В этом случае для набора данных " **общедоступные праздники** " вы фильтруете период времени в один год и код страны только в США. Подробные сведения о данных, такие как, описания полей и диапазоны дат, см. в [каталоге открытых наборов данных Azure](https://azure.microsoft.com/services/op[en-datasets/catalog/) . Нажмите кнопку **создания**.
 
     ![Установка параметров набора данных и создание набора данных](./media/how-to-create-dataset-from-open-dataset/open-datasets-3.png)
 

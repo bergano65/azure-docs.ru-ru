@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 06/11/2020
-ms.openlocfilehash: 3a628a70d8ce62827f79c1f7e16d2826be8d80f5
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 1dd38f0360a4471124497d8357481283cd98383c
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87827254"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88566307"
 ---
 # <a name="connectors-for-azure-logic-apps"></a>Соединители для Azure Logic Apps
 
@@ -407,6 +407,10 @@ Logic Apps предоставляет эти соединители предпр
 ## <a name="block-creating-connections"></a>Блокировать создание подключений
 
 Если ваша организация не разрешается подключаться к конкретным ресурсам с помощью соединителей в Azure Logic Apps, можно [заблокировать возможность создания этих подключений](../logic-apps/block-connections-connectors.md) для конкретных соединителей в рабочих процессах приложения логики с помощью [политики Azure](../governance/policy/overview.md). Дополнительные сведения см. [в разделе Блокирование подключений, созданных конкретными соединителями в Azure Logic Apps](../logic-apps/block-connections-connectors.md).
+
+## <a name="get-ready-for-deployment"></a>Подготовка к развертыванию
+
+Хотя подключения создаются в приложении логики, подключения представляют собой отдельные ресурсы Azure с собственными определениями ресурсов. Чтобы просмотреть эти определения ресурсов подключения, можно [проверить группу ресурсов для приложения логики с помощью портал Azure](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md#view-resource-definitions) или [скачать приложение логики из Azure в Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md). это самый простой способ создать допустимый параметризованный шаблон приложения логики, который в основном готов к развертыванию.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

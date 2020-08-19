@@ -4,12 +4,12 @@ description: Симптомы, причины и способы устранен
 ms.topic: troubleshooting
 ms.date: 07/05/2019
 ms.service: backup
-ms.openlocfilehash: 99982af7f16431ac5b1c2c4a0e419d647d3d2ca0
-ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
+ms.openlocfilehash: 53c0ede07040e782b683e8ff4b0b08e6fe0a9caf
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88262863"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88585566"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -57,7 +57,7 @@ Azure Backup использует расширение моментальных 
   - `C:\Packages\Plugins\Microsoft.Azure.RecoveryServices.VMSnapshot`
   - `C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.RecoveryServices.VMSnapshot`
 
-- **Проверьте, требуется ли доступ к сети**: пакеты расширений загружаются из репозитория расширений службы хранилища Azure, а передачи состояния расширения публикуются в службе хранилища Azure. [Подробнее](../virtual-machines/extensions/features-windows.md#network-access).
+- **Проверьте, требуется ли доступ к сети**: пакеты расширений загружаются из репозитория расширений службы хранилища Azure, а передачи состояния расширения публикуются в службе хранилища Azure. [Подробнее.](../virtual-machines/extensions/features-windows.md#network-access)
   - Если вы используете неподдерживаемую версию агента, необходимо разрешить исходящий доступ от виртуальной машины к службе хранилище Azure в том же регионе.
   - Если вы заблокировали доступ к `168.63.129.16` с помощью гостевого брандмауэра или прокси-сервера, расширения будут завершаться сбоем независимо от указанного выше. Требуются порты 80, 443 и 32526, [Дополнительные сведения](../virtual-machines/extensions/features-windows.md#network-access).
 
@@ -65,7 +65,7 @@ Azure Backup использует расширение моментальных 
 
 - **Убедитесь, что служба модуля записи VSS запущена и работает**. чтобы [устранить неполадки модуля записи VSS](backup-azure-vms-troubleshoot.md#extensionfailedvsswriterinbadstate---snapshot-operation-failed-because-vss-writers-were-in-a-bad-state), выполните следующие действия.
 - Следуйте рекомендациям по **резервному копированию**. Ознакомьтесь с рекомендациями [по включению резервного копирования виртуальных машин Azure](backup-azure-vms-introduction.md#best-practices).
-- **Ознакомьтесь с рекомендациями для зашифрованных дисков**. Если вы включаете резервное копирование для виртуальных машин с зашифрованным диском, убедитесь, что вы указали все необходимые разрешения. Дополнительные сведения см. в статье [резервное копирование и восстановление зашифрованной виртуальной машины Azure](backup-azure-vms-encryption.md#encryption-support).
+- **Ознакомьтесь с рекомендациями для зашифрованных дисков**. Если вы включаете резервное копирование для виртуальных машин с зашифрованным диском, убедитесь, что вы указали все необходимые разрешения. Дополнительные сведения см. в статье [резервное копирование и восстановление зашифрованной виртуальной машины Azure](backup-azure-vms-encryption.md).
 
 ## <a name="usererrorguestagentstatusunavailable---vm-agent-unable-to-communicate-with-azure-backup"></a><a name="UserErrorGuestAgentStatusUnavailable-vm-agent-unable-to-communicate-with-azure-backup"></a>UserErrorGuestAgentStatusUnavailable — агенту виртуальной машины не удается установить связь со службой Azure Backup
 

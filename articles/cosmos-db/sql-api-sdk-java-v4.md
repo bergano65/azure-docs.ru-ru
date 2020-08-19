@@ -6,15 +6,15 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 08/05/2020
+ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 0d1845c06c1f0373ffd4be43c104889a7327c3ac
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: af0964dceca8b862d0008d878045203983a96bda
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88035779"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88586221"
 ---
 # <a name="azure-cosmos-db-java-sdk-v4-for-core-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Java версии 4 для API-интерфейса Core (SQL)
 > [!div class="op_single_selector"]
@@ -26,7 +26,8 @@ ms.locfileid: "88035779"
 > * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
 > * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
-> * [Spring Data](sql-api-sdk-java-spring.md)
+> * [Пружинные данные v2](sql-api-sdk-java-spring-v2.md)
+> * [Пружинные данные v3](sql-api-sdk-java-spring-v3.md)
 > * [Соединитель Spark](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
 > * [REST](/rest/api/cosmos-db/)
@@ -70,7 +71,7 @@ ms.locfileid: "88035779"
 ### <a name="440-beta1-unreleased"></a>4.4.0-Beta. 1 (не выпущено)
 
 ### <a name="430-2020-07-29"></a>4.3.0 (2020-07-29)
-#### <a name="new-features"></a>Новые функции
+#### <a name="new-features"></a>новые функции;
 * Обновлена версия библиотеки реактора-Core до `3.3.8.RELEASE` . 
 * Обновлена версия библиотеки реактора-NETTY до `0.9.10.RELEASE` . 
 * Версия библиотеки NETTY обновлена до версии `4.1.51.Final` . 
@@ -90,7 +91,7 @@ ms.locfileid: "88035779"
 * Исправлена проблема с `.single()` оператором, вызывающий срабатывание цепочки реактора в случае возникновения исключения "не найдено". 
 
 ### <a name="420-2020-07-14"></a>4.2.0 (2020-07-14)
-#### <a name="new-features"></a>Новые функции
+#### <a name="new-features"></a>новые функции;
 * Добавлен API с поддержкой регистрации скриптов в `CosmosStoredProcedureRequestOptions` .
 * `DirectConnectionConfig`По умолчанию изменено `idleEndpointTimeout` на 1 ч, а по умолчанию — `connectTimeout` на 5S.
 #### <a name="key-bug-fixes"></a>Исправления основных ошибок
@@ -102,7 +103,7 @@ ms.locfileid: "88035779"
 * Исправлена проблема с обработкой отмененных запросов в режиме прямого подключения, вызывающих `onErrorDropped` вызов реактора. 
 
 ### <a name="410-2020-06-25"></a>4.1.0 (2020-06-25)
-#### <a name="new-features"></a>Новые функции
+#### <a name="new-features"></a>новые функции;
 * Добавлена поддержка `GROUP BY` запроса.
 * Увеличено значение по умолчанию Максконнектионсперендпоинт до 130 в Директконнектионконфиг.
 * Увеличено значение по умолчанию Максрекуестсперконнектион до 30 в Директконнектионконфиг.
@@ -112,7 +113,7 @@ ms.locfileid: "88035779"
 * Исправлено исключение пустого указателя в диспетчере запросов в Рнтбдклиентчаннелпул.
 
 ### <a name="401-2020-06-10"></a>4.0.1 (2020-06-10)
-#### <a name="new-features"></a>Новые функции
+#### <a name="new-features"></a>новые функции;
 * `QueryRequestOptions` переименован в `CosmosQueryRequestOptions`.
 * Обновлен `ChangeFeedProcessorBuilder` шаблон построителя.
 * Добавлены `CosmosPermissionProperties` новые интерфейсы API имени контейнера и дочерних ресурсов.
@@ -143,10 +144,10 @@ ms.locfileid: "88035779"
 * Переименованный `preferredLocations`  &  `multipleWriteLocations` API в `preferredRegions`  &  `multipleWriteRegions` . 
 * Обновлен `reactor-core` до версии 3.3.5. Release, `reactor-netty` до 0.9.7. Release & `netty` до 4.1.49. Final. 
 * Добавлена поддержка `analyticalStoreTimeToLive` в пакете SDK.     
-* `CosmosClientException`расширяет `AzureException` . 
+* `CosmosClientException` расширяет `AzureException` . 
 * Удалены `maxItemCount`  &  `requestContinuationToken` API из `FeedOptions` вместо этого с помощью `byPage()` интерфейсов API из `CosmosPagedFlux`  &  `CosmosPagedIterable` .
 * Появилось `CosmosPermissionProperties` в общедоступной области для `Permission` API-интерфейсов.
-* Удаленный `SqlParameterList` тип & заменен на`List`
+* Удаленный `SqlParameterList` тип & заменен на `List`
 * Исправлено несколько утечек памяти в прямом TCP-клиенте. 
 * Добавлена поддержка `DISTINCT` запросов. 
 * Внешние зависимости удалены `fasterxml.uuid, guava, commons-io, commons-collection4, commons-text` .  
@@ -154,14 +155,14 @@ ms.locfileid: "88035779"
 * Обновлен NETTY до 4.1.45. Final & проект реактора до 3.3.3 версии.
 * Обновлены общедоступные контракты RESTful для `Final` классов.
 * Добавлена поддержка расширенной диагностики для операций с точками.
-* Пакет обновлен до`com.azure.cosmos`
+* Пакет обновлен до `com.azure.cosmos`
 * Добавлен `models` пакет для контрактов Model/RESTful
 * Добавлен `utils` пакет для `CosmosPagedFlux`  &  `CosmosPagedIterable` типов. 
 * Обновлены общедоступные API для использования в `Duration` пакете SDK.
 * Добавлены все контракты RESTful в `models` пакет.
 * Аргумент `RetryOptions` переименован в `ThrottlingRetryOptions`.
 * Добавлены `CosmosPagedFlux`  &  `CosmosPagedIterable` типы разбивки на страницы для API запросов. 
-* Добавлена поддержка совместного использования Транспортклиент в нескольких экземплярах Космосклиентс с помощью нового API в`CosmosClientBuilder#connectionSharingAcrossClientsEnabled(true)`
+* Добавлена поддержка совместного использования Транспортклиент в нескольких экземплярах Космосклиентс с помощью нового API в `CosmosClientBuilder#connectionSharingAcrossClientsEnabled(true)`
 * Оптимизации запросов путем удаления двойной сериализации и десериализации. 
 * Оптимизации заголовков ответов путем удаления ненужных копий. 
 * Оптимизированная `ByteBuffer` сериализация и десериализация путем удаления промежуточных экземпляров строк.
@@ -171,8 +172,8 @@ ms.locfileid: "88035779"
 * Исправлена проблема с анализом результатов запроса в случае упорядочения значений по запросам. 
 * Устранены проблемы утечки сокетов с прямым клиентом TCP.
 * Исправлена `orderByQuery` Ошибка токена продолжения.
-* `ChangeFeedProcessor`Исправление ошибки для обработки разбиений секций &, когда раздел не найден.
-* `ChangeFeedProcessor`Исправление ошибки при синхронизации обновлений аренды в разных потоках.
+* `ChangeFeedProcessor` Исправление ошибки для обработки разбиений секций &, когда раздел не найден.
+* `ChangeFeedProcessor` Исправление ошибки при синхронизации обновлений аренды в разных потоках.
 * Исправлено состояние гонки, вызывающее `ArrayIndexOutOfBound` исключение в сторереадер
 
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ

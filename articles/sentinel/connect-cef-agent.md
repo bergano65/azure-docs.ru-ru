@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/19/2020
 ms.author: yelevin
-ms.openlocfilehash: 832bf1dd06d550f82090a336bc4cceac8cd8a9be
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a7d7c7b7236841835866ccb7786e7e4eab767c1f
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87038194"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88565593"
 ---
 # <a name="step-1-deploy-the-log-forwarder"></a>Шаг 1. Развертывание сервера пересылки журналов
 
@@ -33,7 +33,7 @@ ms.locfileid: "87038194"
     - Прослушивание сообщений системного журнала в решениях безопасности через TCP-порт 514
     - Пересылка только тех сообщений, которые он идентифицирует как CEF агенту Log Analytics на localhost с помощью TCP-порта 25226
  
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Необходимо иметь повышенные разрешения (sudo) на назначенном компьютере Linux.
 - На компьютере Linux должна быть установлена Python.<br>Используйте `python -version` команду для проверки.
@@ -48,6 +48,16 @@ ms.locfileid: "87038194"
      `sudo wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py&&sudo python cef_installer.py [WorkspaceID] [Workspace Primary Key]`
 
 1. Во время выполнения скрипта убедитесь, что не получены сообщения об ошибках и предупреждения.
+
+> [!NOTE]
+> **Использование одного компьютера для пересылки обычных системных syslog *и* сообщений CEF**
+>
+> Если вы планируете использовать этот компьютер сервера пересылки журналов для пересылки [сообщений Syslog](connect-syslog.md) , а также CEF, то во избежание дублирования событий в таблицы syslog и CommonSecurityLog:
+>
+> 1. На каждом исходном компьютере, который отправляет журналы серверу пересылки в формате CEF, необходимо изменить файл конфигурации syslog, чтобы удалить средства, которые используются для отправки сообщений CEF. Таким образом, средства, отправляемые в CEF, не будут отправляться в syslog. Подробные инструкции по выполнению этой задачи см. в статье [Настройка системного журнала в агенте Linux](../azure-monitor/platform/data-sources-syslog.md#configure-syslog-on-linux-agent) .
+>
+> 1. На этих компьютерах необходимо выполнить следующую команду, чтобы отключить синхронизацию агента с конфигурацией syslog в Azure Sentinel. Это гарантирует, что изменение конфигурации, сделанное на предыдущем шаге, не перезаписывается.<br>
+> `sudo su omsagent -c 'python /opt/microsoft/omsconfig/Scripts/OMS_MetaConfigHelper.py --disable'`
 
 Перейдите к [шагу 2. Настройка решения безопасности для пересылки сообщений CEF](connect-cef-solution-config.md) .
 

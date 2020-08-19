@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 06/25/2020
+ms.date: 08/18/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 91360776c50ce514985ad36242606223becbd933
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 29e82a67b85356cfc15e806bb331330b3f272a04
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86230882"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88584970"
 ---
 # <a name="custom-email-verification-with-mailjet"></a>Пользовательская проверка электронной почты с помощью Маилжет
 
@@ -162,7 +162,7 @@ ms.locfileid: "86230882"
     1. В поле **Тема**введите значение по умолчанию для параметра тема. Маилжет использует это значение, если API не содержит параметр subject.
     1. В поле **имя**введите название вашей компании.
     1. В поле **адрес**выберите свой адрес электронной почты.
-    1. Нажмите **Сохранить**.
+    1. Щелкните **Сохранить**.
 1. В правом верхнем углу выберите **сохранить & опубликовать**, а затем **Да, опубликовать изменения**
 1. Запишите **идентификатор шаблона** , созданного для использования на более позднем шаге. Этот идентификатор указывается при [добавлении преобразования «утверждения](#add-the-claims-transformation)».
 
@@ -233,6 +233,9 @@ ms.locfileid: "86230882"
 ```XML
 <ContentDefinitions>
  <ContentDefinition Id="api.localaccountsignup">
+    <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:2.0.0</DataUri>
+  </ContentDefinition>
+  <ContentDefinition Id="api.localaccountpasswordreset">
     <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:2.0.0</DataUri>
   </ContentDefinition>
 </ContentDefinitions>
@@ -360,7 +363,7 @@ ms.locfileid: "86230882"
 
 ## <a name="make-a-reference-to-the-displaycontrol"></a>Создание ссылки на тип элемента
 
-На последнем шаге добавьте ссылку на созданный тип элемента. `LocalAccountSignUpWithLogonEmail`Если вы использовали более раннюю версию Azure AD B2C политики, замените имеющийся самоподтвержденный технический профиль следующим. В этом техническом профиле используется `DisplayClaims` ссылка на элемент конфигурации.
+На последнем шаге добавьте ссылку на созданный тип элемента. Замените существующие `LocalAccountSignUpWithLogonEmail` и `LocalAccountDiscoveryUsingEmailAddress` самостоятельно утвержденные технические профили следующим. Если использовалась более ранняя версия политики Azure AD B2C. Эти технические профили используют `DisplayClaims` ссылку на элемент конфигурации.
 
 Дополнительные сведения см. в разделе [самостоятельно утвержденный технический профиль](restful-technical-profile.md) и [тип](display-controls.md)элемента.
 
@@ -369,22 +372,13 @@ ms.locfileid: "86230882"
   <DisplayName>Local Account</DisplayName>
   <TechnicalProfiles>
     <TechnicalProfile Id="LocalAccountSignUpWithLogonEmail">
-      <DisplayName>Email signup</DisplayName>
-      <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.SelfAssertedAttributeProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
       <Metadata>
-        <Item Key="IpAddressClaimReferenceId">IpAddress</Item>
-        <Item Key="ContentDefinitionReferenceId">api.localaccountsignup</Item>
-        <Item Key="language.button_continue">Create</Item>
-        
         <!--OTP validation error messages-->
         <Item Key="UserMessageIfSessionDoesNotExist">You have exceed the maximum time allowed.</Item>
         <Item Key="UserMessageIfMaxRetryAttempted">You have exceed the number of retries allowed.</Item>
         <Item Key="UserMessageIfInvalidCode">You have entered the wrong code.</Item>
         <Item Key="UserMessageIfSessionConflict">Cannot verify the code, please try again later.</Item>
       </Metadata>
-      <InputClaims>
-        <InputClaim ClaimTypeReferenceId="email" />
-      </InputClaims>
       <DisplayClaims>
         <DisplayClaim DisplayControlReferenceId="emailVerificationControl" />
         <DisplayClaim ClaimTypeReferenceId="displayName" Required="true" />
@@ -393,17 +387,18 @@ ms.locfileid: "86230882"
         <DisplayClaim ClaimTypeReferenceId="newPassword" Required="true" />
         <DisplayClaim ClaimTypeReferenceId="reenterPassword" Required="true" />
       </DisplayClaims>
-      <OutputClaims>
-        <OutputClaim ClaimTypeReferenceId="email" Required="true" />
-        <OutputClaim ClaimTypeReferenceId="objectId" />
-        <OutputClaim ClaimTypeReferenceId="executed-SelfAsserted-Input" DefaultValue="true" />
-        <OutputClaim ClaimTypeReferenceId="authenticationSource" />
-        <OutputClaim ClaimTypeReferenceId="newUser" />
-      </OutputClaims>
-      <ValidationTechnicalProfiles>
-        <ValidationTechnicalProfile ReferenceId="AAD-UserWriteUsingLogonEmail" />
-      </ValidationTechnicalProfiles>
-      <UseTechnicalProfileForSessionManagement ReferenceId="SM-AAD" />
+    </TechnicalProfile>
+    <TechnicalProfile Id="LocalAccountDiscoveryUsingEmailAddress">
+      <Metadata>
+        <!--OTP validation error messages-->
+        <Item Key="UserMessageIfSessionDoesNotExist">You have exceed the maximum time allowed.</Item>
+        <Item Key="UserMessageIfMaxRetryAttempted">You have exceed the number of retries allowed.</Item>
+        <Item Key="UserMessageIfInvalidCode">You have entered the wrong code.</Item>
+        <Item Key="UserMessageIfSessionConflict">Cannot verify the code, please try again later.</Item>
+      </Metadata>
+      <DisplayClaims>
+        <DisplayClaim DisplayControlReferenceId="emailVerificationControl" />
+      </DisplayClaims>
     </TechnicalProfile>
   </TechnicalProfiles>
 </ClaimsProvider>
@@ -459,7 +454,7 @@ ms.locfileid: "86230882"
         <SupportedLanguage>en</SupportedLanguage>
         <SupportedLanguage>es</SupportedLanguage>
       </SupportedLanguages>
-      <LocalizedResources Id="api.localaccountsignup.en">
+      <LocalizedResources Id="api.custom-email.en">
         <LocalizedStrings>
           <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_subject">Contoso account email verification code</LocalizedString>
           <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_message">Thanks for validating the account</LocalizedString>
@@ -468,7 +463,7 @@ ms.locfileid: "86230882"
         </LocalizedStrings>
         </LocalizedStrings>
       </LocalizedResources>
-      <LocalizedResources Id="api.localaccountsignup.es">
+      <LocalizedResources Id="api.custom-email.es">
         <LocalizedStrings>
           <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_subject">Código de verificación del correo electrónico de la cuenta de Contoso</LocalizedString>
           <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_message">Gracias por comprobar la cuenta de </LocalizedString>
@@ -482,16 +477,25 @@ ms.locfileid: "86230882"
 1. Добавьте ссылки на элементы LocalizedResources, обновив элемент [ContentDefinitions](contentdefinitions.md) .
 
     ```xml
-    <ContentDefinition Id="api.localaccountsignup">
-      <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:2.0.0</DataUri>
-      <LocalizedResourcesReferences MergeBehavior="Prepend">
-        <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountsignup.en" />
-        <LocalizedResourcesReference Language="es" LocalizedResourcesReferenceId="api.localaccountsignup.es" />
-      </LocalizedResourcesReferences>
-    </ContentDefinition>
+    <ContentDefinitions>
+      <ContentDefinition Id="api.localaccountsignup">
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:2.0.0</DataUri>
+        <LocalizedResourcesReferences MergeBehavior="Prepend">
+          <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.custom-email.en" />
+          <LocalizedResourcesReference Language="es" LocalizedResourcesReferenceId="api.custom-email.es" />
+        </LocalizedResourcesReferences>
+      </ContentDefinition>
+      <ContentDefinition Id="api.localaccountpasswordreset">
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:2.0.0</DataUri>
+        <LocalizedResourcesReferences MergeBehavior="Prepend">
+          <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.custom-email.en" />
+          <LocalizedResourcesReference Language="es" LocalizedResourcesReferenceId="api.custom-email.es" />
+        </LocalizedResourcesReferences>
+      </ContentDefinition>
+    </ContentDefinitions>
     ```
 
-1. Наконец, добавьте следующее преобразование входных утверждений в технический профиль Локалаккаунтсигнупвислогонемаил.
+1. Наконец, добавьте следующее преобразование входных утверждений `LocalAccountSignUpWithLogonEmail` в `LocalAccountDiscoveryUsingEmailAddress` технические профили и.
 
     ```xml
     <InputClaimsTransformations>

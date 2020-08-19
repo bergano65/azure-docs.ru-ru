@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
 ms.date: 08/11/2020
-ms.openlocfilehash: c7b4cf688d02ebbcb099f116c0eb7b4ebe7c6074
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: a53ac9387664aafc218f13834e0499fde417d87d
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88212415"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88566086"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -159,7 +159,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 Перед включением этой проверки подлинности ознакомьтесь с приведенными ниже замечаниями.
 
-* Входящий вызов приложения логики может использовать только одну схему авторизации: Azure AD OAuth или [подписанные URL-адреса (SAS)](#sas). Для маркеров OAuth поддерживаются только схемы авторизации [типа носителя](../active-directory/develop/active-directory-v2-protocols.md#tokens) , которые поддерживаются только для триггера запроса.
+* Входящий вызов приложения логики может использовать только одну схему авторизации: Azure AD OAuth или [подписанные URL-адреса (SAS)](#sas). Использование одной схемы не отменяет другую, но одновременное использование обоих способов приводит к ошибке, так как служба не знает, какую схему выбрать. Для маркеров OAuth поддерживаются только схемы авторизации [типа носителя](../active-directory/develop/active-directory-v2-protocols.md#tokens) , которые поддерживаются только для триггера запроса.
 
 * Приложение логики ограничено максимальным количеством политик авторизации. Каждая политика авторизации также имеет максимальное количество [утверждений](../active-directory/develop/developer-glossary.md#claim). Дополнительные сведения см. в статье [Ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#authentication-limits).
 
@@ -1020,7 +1020,7 @@ Authorization: OAuth realm="Photos",
 * [Изоляция в общедоступном облаке Azure](../security/fundamentals/isolation-choices.md)
 * [Безопасность для приложений IaaS с высоким уровнем безопасности в Azure](/azure/architecture/reference-architectures/n-tier/high-security-iaas)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Базовый план безопасности Azure для Azure Logic Apps](../logic-apps/security-baseline.md)
 * [Автоматизация развертывания для Azure Logic Apps](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)

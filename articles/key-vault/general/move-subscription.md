@@ -7,16 +7,16 @@ manager: ravijan
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/05/2020
 ms.author: sudbalas
 Customer intent: As a key vault administrator, I want to move my vault to another subscription.
-ms.openlocfilehash: b95cecdc5470e50830371b7a6556f9526dae7591
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d37fae18cd2f3e3bfad647cc176253dc6bb101ab
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87100533"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88585790"
 ---
 # <a name="moving-an-azure-key-vault-to-another-subscription"></a>Перемещение Azure Key Vault в другую подписку
 
@@ -51,7 +51,7 @@ ms.locfileid: "87100533"
 
 Перейдите на страницу политики Azure на портал Azure и просмотрите назначения политик для текущей подписки, а также подписку, на которую вы перемещаетесь, и убедитесь в отсутствии несоответствий.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Уровень участника доступа или выше текущей подписки, в которой существует хранилище ключей.
 * Доступ на уровне участника или более высокий уровень к подписке, в которую необходимо переместить хранилище ключей.

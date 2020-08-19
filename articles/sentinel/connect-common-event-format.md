@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/26/2019
 ms.author: yelevin
-ms.openlocfilehash: 34091e0c9f18cb87a240054f534f474710eb421d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b7f03c11b53c6dc61fad6b916e7c08086917b416
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85563926"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88565746"
 ---
 # <a name="connect-your-external-solution-using-common-event-format"></a>Подключение внешнего решения с помощью общего формата событий
 
@@ -33,7 +33,7 @@ ms.locfileid: "85563926"
 > [!NOTE] 
 > Данные хранятся в географическом расположении рабочей области, в которой выполняется Sentinel-метка Azure.
 
-Чтобы установить это подключение, необходимо развернуть агент на выделенном компьютере Linux (виртуальную машину или локально) для поддержки взаимодействия между устройством и Azure Sentinel. На следующей схеме описывается настройка в событии виртуальной машины Linux в Azure.
+Чтобы установить это подключение, необходимо развернуть агент на выделенном компьютере Linux (виртуальную машину или локальную) для поддержки взаимодействия между устройством и Sentinel-метками Azure. На следующей схеме описывается настройка в событии виртуальной машины Linux в Azure.
 
  ![CEF в Azure](./media/connect-cef/cef-syslog-azure.png)
 
@@ -42,17 +42,17 @@ ms.locfileid: "85563926"
  ![CEF в локальной среде](./media/connect-cef/cef-syslog-onprem.png)
 
 
-## <a name="security-considerations"></a>Вопросы безопасности
+## <a name="security-considerations"></a>Замечания по безопасности
 
 Обязательно настройте безопасность компьютера в соответствии с политикой безопасности вашей организации. Например, можно настроить сеть для согласования с политикой безопасности корпоративной сети и изменить порты и протоколы в управляющей программе в соответствии с вашими требованиями. Для улучшения конфигурации безопасности компьютера можно использовать следующие инструкции:  [безопасная виртуальная машина в Azure](../virtual-machines/linux/security-policy.md), рекомендации [по сетевой безопасности](../security/fundamentals/network-best-practices.md).
 
 Чтобы использовать TLS-связь между решением безопасности и компьютером syslog, необходимо настроить управляющую программу syslog (rsyslog или syslog-ng) для обмена данными в TLS: [шифрование трафика syslog с помощью TLS — rsyslog](https://www.rsyslog.com/doc/v8-stable/tutorials/tls_cert_summary.html), [Шифрование сообщений журнала с помощью TLS – syslog-ng](https://support.oneidentity.com/technical-documents/syslog-ng-open-source-edition/3.22/administration-guide/60#TOPIC-1209298).
 
  
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Убедитесь, что компьютер Linux, используемый в качестве прокси-сервера, работает под управлением одной из следующих операционных систем:
 
-- 64-разрядная версия
+- 64-разрядная
   - CentOS 6 и 7
   - Amazon Linux 2017.09
   - Oracle Linux 6 и 7
@@ -60,7 +60,7 @@ ms.locfileid: "85563926"
   - Debian GNU/Linux 8 и 9
   - Ubuntu Linux 14.04 LTS, 16.04 LTS и 18.04 LTS
   - SUSE Linux Enterprise Server 12
-- 32-разрядная версия
+- 32-битная
    - CentOS 6
    - Oracle Linux 6
    - Red Hat Enterprise Linux Server 6
@@ -83,7 +83,7 @@ ms.locfileid: "85563926"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

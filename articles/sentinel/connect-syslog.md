@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: 27c1ad4907b0b16ce6830a6fe787b78f6129eadd
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 7670d00a2dd25961a51d18c50c102e0f92b30975
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322845"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88566154"
 ---
 # <a name="collect-data-from-linux-based-sources-using-syslog"></a>Получение данных из источников на основе Linux с помощью системного журнала
 
@@ -86,6 +86,8 @@ ms.locfileid: "87322845"
 1. Вы можете использовать параметры запроса, описанные в разделе [Использование функций в Azure Monitor запросов журналов](../azure-monitor/log-query/functions.md) для анализа сообщений системного журнала. Затем можно сохранить запрос как новую функцию Log Analytics и использовать ее в качестве нового типа данных.
 
 > [!NOTE]
+> **Использование одного компьютера для пересылки обычных системных syslog *и* сообщений CEF**
+>
 >
 > Вы можете использовать имеющийся [компьютер сервера пересылки журналов CEF](connect-cef-agent.md) для накопления и пересылки журналов из простых источников syslog. Однако необходимо выполнить следующие действия, чтобы избежать отправки событий в обоих форматах в Azure Sentinel, так как это приведет к дублированию событий.
 >

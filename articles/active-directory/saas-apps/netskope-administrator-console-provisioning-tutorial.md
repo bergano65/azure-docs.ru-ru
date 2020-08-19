@@ -2,25 +2,21 @@
 title: Руководство. Настройка консоль администратора Нетскопе для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в консоль администратора Нетскопе.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: e99f0e0f-28d0-43c6-a52b-df873fb9d551
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2019
 ms.author: Zhchia
-ms.openlocfilehash: eaee8e3305572d696e52c3879be2e2b9924bc93f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cef356619d437d53d94c8f5d3be67cf6ac95501c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77061315"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88554561"
 ---
 # <a name="tutorial-configure-netskope-administrator-console-for-automatic-user-provisioning"></a>Учебник. Настройка консоль администратора Нетскопе для автоматической подготовки пользователей
 
@@ -132,7 +128,7 @@ ms.locfileid: "77061315"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите кнопку **Сохранить**.
+7. Нажмите **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с нетскопе консоль администратора**.
 

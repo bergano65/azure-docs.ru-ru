@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 08/17/2020
 ms.author: inhenkel
 ms.custom: CLI
-ms.openlocfilehash: d8d156dda71c0f5e9bcc1663dd820e5195b7f72d
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
-ms.translationtype: HT
+ms.openlocfilehash: 313c8ea9046deea953b4143f1a0264f81da38764
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/18/2020
-ms.locfileid: "88539155"
+ms.locfileid: "88602337"
 ---
 <!-- ### Create a storage account -->
 
@@ -19,13 +19,9 @@ ms.locfileid: "88539155"
 У вас должна быть одна **первичная** учетная запись хранения, и у вас может быть любое количество **вторичных** учетных записей хранения, связанных с учетной записью служб мультимедиа. Службы мультимедиа поддерживают учетные записи **общего назначения версии 2** (GPv2) или **общего назначения версии 1** (GPv1). Учетные записи, предназначенные только для большого двоичного объекта, нельзя использовать в качестве **основных**. Дополнительные сведения об учетных записях хранения см. в статье [Варианты учетной записи хранения Azure](../../../storage/common/storage-account-overview.md). 
 
 В этом примере мы создадим учетную запись общего назначения версии 2 c LRS категории "Стандартный". Если вы хотите поэкспериментировать с учетными записями хранения, используйте `--sku Standard_LRS`. Тем не менее при выборе номера SKU для рабочей среды следует рассмотреть `--sku Standard_RAGRS`, который предоставляет географическую репликацию для обеспечения непрерывности бизнес-процессов. Дополнительные сведения см. в статье об [учетных записях хранения](/cli/azure/storage/account?view=azure-cli-latest).
- 
+
 Следующая команда создает учетную запись хранения, которая будет связана с учетной записью Служб мультимедиа. В приведенном ниже скрипте `storageaccountforams` можно заменить своим значением. `amsResourceGroup` должно совпадать со значением, которое вы присвоили группе ресурсов на предыдущем шаге. Длина имени учетной записи хранения должна быть меньше 24.
 
 ```azurecli
-az storage account create --name storageaccountforams \  
-  --kind StorageV2 \
-  --sku Standard_LRS \
-  -l westus2 \
-  -g amsResourceGroup
+az storage account create --name storageaccountforams --kind StorageV2 --sku Standard_LRS -l westus2 -g amsResourceGroup
 ```
