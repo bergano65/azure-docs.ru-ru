@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/28/2020
 ms.author: memildin
-ms.openlocfilehash: f159d2cdc48b144d0c75c62cd8a7ba6667424243
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: e0085ef5213853a1577ec039d5e360114aa7c64e
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86043875"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88566273"
 ---
 # <a name="advanced-data-security-for-sql-machines-preview"></a>Расширенная защита данных для компьютеров SQL (Предварительная версия)
 
@@ -72,7 +72,7 @@ ms.locfileid: "86043875"
 
     [![Страница цен на центр безопасности с дополнительными пакетами](media/security-center-advanced-iaas-data/sql-servers-on-vms-in-pricing-small.png)](media/security-center-advanced-iaas-data/sql-servers-on-vms-in-pricing-large.png#lightbox)
 
-    Расширенная защита данных для серверов SQL Server на компьютерах будет включена на всех серверах SQL Server, подключенных к выбранной рабочей области. Защита будет полностью активна после первой перезагрузки SQL Server. 
+    Расширенная защита данных для серверов SQL Server на компьютерах будет включена на всех серверах SQL Server, подключенных к выбранной рабочей области. Защита будет полностью активна после первого перезапуска экземпляра SQL Server.
 
     >[!TIP] 
     > Чтобы создать новую рабочую область, следуйте инструкциям в разделе [создание log Analytics рабочей области](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace).
@@ -127,7 +127,7 @@ ms.locfileid: "86043875"
     [Дополнительные сведения об управлении оповещениями и реагировании на них](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Связанные материалы см. в следующей статье:
 

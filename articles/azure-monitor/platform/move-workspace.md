@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/13/2019
-ms.openlocfilehash: e0ecfd3acb6a8a1d40e006aef1bbf63eae0e1ff4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d3937eaa5017ed66641d886ecd45e812f7070b83
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84770804"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88566290"
 ---
 # <a name="move-a-log-analytics-workspace-to-different-subscription-or-resource-group"></a>Перемещение рабочей области Log Analytics в другую подписку или группу ресурсов
 
@@ -39,7 +39,10 @@ ms.locfileid: "84770804"
 - Центр безопасности Azure
 
 >[!IMPORTANT]
-> - После включения в рабочей области Azure Sentinel **сейчас не поддерживает** перемещение этой рабочей области в другие группы ресурсов или подписки. Если вам нужно переместить рабочую область, обратитесь в [службу поддержки Azure Sentinel](mailto:AzureSentinel@microsoft.com).
+> **Клиенты Azure Sentinel:**
+> - После развертывания в рабочей области Azure Sentinel в **настоящее время не поддерживает** перемещение этой рабочей области в другие группы ресурсов или подписки. 
+>
+>   Если Рабочая область уже перемещена, отключите все активные правила в разделе **аналитика** и снова включите их через пять минут. Однако в большинстве случаев это должно быть эффективным, но для перебора оно не поддерживается и не имеет собственного риска.
 
 ### <a name="delete-solutions-in-azure-portal"></a>Удаление решений в портал Azure
 Используйте следующую процедуру, чтобы удалить решения с помощью портал Azure:
@@ -106,5 +109,5 @@ Move-AzResource -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000
 > После операции перемещения удаленные решения и ссылки на учетную запись службы автоматизации необходимо перенастроить, чтобы восстановить предыдущее состояние рабочей области.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Список ресурсов, которые поддерживают перемещение, см. в разделе [Поддержка операций перемещения для ресурсов](../../azure-resource-manager/management/move-support-resources.md).

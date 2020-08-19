@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/28/2020
 ms.author: yelevin
-ms.openlocfilehash: 7dded3b938444198e72d6eb87476f571dd3f4d78
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: b48ff1043ae8128a5cbfdcbba0548d89b5af2624
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836774"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88565848"
 ---
 # <a name="permissions-in-azure-sentinel"></a>Разрешения в Azure Sentinel
 
@@ -59,6 +59,10 @@ Azure Sentinel использует [Управление доступом на
 - Подключение источников данных к Sentinel Azure
 
     Чтобы добавить **соединители данных**для пользователя, необходимо назначить пользователю разрешения на запись в рабочей области "Sentinel" Azure. Кроме того, обратите внимание на необходимые дополнительные разрешения для каждого соединителя, перечисленные на соответствующей странице соединителя.
+
+- Гостевые пользователи, назначающий инциденты
+
+    Если гостевой пользователь должен иметь возможность назначать инциденты, то в дополнение к роли респондента-метки Azure пользователю также должна быть назначена роль [модуля чтения каталога](../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers). Обратите внимание, что эта роль *не* является РОЛЬЮ Azure RBAC, но имеет роль **Azure Active Directory** и эта роль назначена по умолчанию для обычных пользователей (не являющихся гостевыми). 
 
 Параллельное сравнение см. в [таблице ниже](#roles-and-allowed-actions).
 

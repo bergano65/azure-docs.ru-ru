@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: d32ad29bf652cad62a5950859ebff0366e09fc6f
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 10b74f7b795df2cf8c19d044fce44da3f798af7a
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88510034"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88587639"
 ---
 # <a name="understand-event-data"></a>Общие сведения о событиях
 
@@ -30,7 +30,7 @@ ms.locfileid: "88510034"
 
 Заголовки сообщений уведомлений представлены парами "ключ-значение". В зависимости от используемого протокола (MQTT, AMQP или HTTP) заголовки сообщений будут сериализованы по-разному. В этом разделе рассматриваются общие сведения о заголовках для сообщений об уведомлениях, независимо от выбранного протокола и сериализации.
 
-Некоторые уведомления соответствуют стандарту Клаудевентс. Клаудевентс соответствие выглядит следующим образом.
+Некоторые уведомления соответствуют стандарту [клаудевентс](https://cloudevents.io/) . Клаудевентс соответствие выглядит следующим образом.
 * Уведомления, созданные на устройствах, продолжают следовать существующим спецификациям для уведомлений.
 * Уведомления, обработанные и выпущенные центром Интернета вещей, продолжают следовать существующим спецификациям для уведомления, за исключением случаев, когда центр Интернета вещей выбирает поддержку Клаудевентс, например с помощью службы "Сетка событий".
 * Уведомления, созданные из [Digital двойников](concepts-twins-graph.md) с [моделью](concepts-models.md) , соответствуют клаудевентс
@@ -107,7 +107,7 @@ ms.locfileid: "88510034"
 | --- | --- |
 | `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id` уникален для каждого отдельного события. |
 | `source` | Имя центра Интернета вещей или экземпляра Azure Digital двойников, например *myhub.Azure-Devices.NET* или *mydigitaltwins.westus2.azuredigitaltwins.NET* |
-| `specversion` | *1.0*<br>Сообщение соответствует данной версии спецификации Клаудевентс. |
+| `specversion` | *1,0*<br>Сообщение соответствует данной версии [спецификации клаудевентс](https://github.com/cloudevents/spec). |
 | `type` | `Microsoft.DigitalTwins.Twin.Create`<br>`Microsoft.DigitalTwins.Twin.Delete` |
 | `datacontenttype` | `application/json` |
 | `subject` | Идентификатор цифрового двойника |
@@ -193,7 +193,7 @@ ms.locfileid: "88510034"
 | --- | --- |
 | `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id` уникален для каждого отдельного события |
 | `source` | Имя экземпляра Azure Digital двойников, например *mydigitaltwins.westus2.azuredigitaltwins.NET* |
-| `specversion` | *1.0*<br>Сообщение соответствует данной версии спецификации Клаудевентс. |
+| `specversion` | *1,0*<br>Сообщение соответствует данной версии [спецификации клаудевентс](https://github.com/cloudevents/spec). |
 | `type` | `Microsoft.DigitalTwins.Relationship.Create`<br>`Microsoft.DigitalTwins.Relationship.Update`<br>`Microsoft.DigitalTwins.Relationship.Delete`
 |`datacontenttype`| `application/json` |
 | `subject` | ИДЕНТИФИКАТОР связи, например `<twinID>/relationships/<relationshipID>` |
@@ -249,7 +249,7 @@ ms.locfileid: "88510034"
 | --- | --- |
 | `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id` уникален для каждого отдельного события |
 | `source` | Имя центра Интернета вещей или экземпляра Azure Digital двойников, например *myhub.Azure-Devices.NET* или *mydigitaltwins.westus2.azuredigitaltwins.NET*
-| `specversion` | *1.0*<br>Сообщение соответствует данной версии спецификации Клаудевентс. |
+| `specversion` | *1,0*<br>Сообщение соответствует данной версии [спецификации клаудевентс](https://github.com/cloudevents/spec). |
 | `type` | `Microsoft.DigitalTwins.Twin.Update` |
 | `datacontenttype` | `application/json` |
 | `subject` | Идентификатор цифрового двойника |
@@ -297,7 +297,7 @@ ms.locfileid: "88510034"
   }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. раздел Создание конечных точек и маршрутов для доставки событий.
 * [*Руководство. Управление конечными точками и маршрутами*](how-to-manage-routes-apis-cli.md)

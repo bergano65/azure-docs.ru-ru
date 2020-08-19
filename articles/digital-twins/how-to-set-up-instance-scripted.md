@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 82ddba67a6bd9fcc56b74c3f830663228feb945b
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 86597521f762237b5c4bc9a7a5268d7dae1303b4
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009704"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88588004"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-scripted"></a>Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)
 
@@ -110,6 +110,8 @@ ms.locfileid: "88009704"
 
 > [!NOTE]
 > Помните, что сценарий в настоящее время назначает эту требуемую роль тому же пользователю, который запускает скрипт из Cloud Shell. Если вам нужно назначить эту роль другому пользователю, который будет управлять экземпляром, это можно сделать сейчас с помощью портал Azure ([инструкции](how-to-set-up-instance-portal.md#set-up-user-access-permissions)) или CLI ([инструкции](how-to-set-up-instance-cli.md#set-up-user-access-permissions)).
+>
+> Можно также использовать портал или CLI для повторного назначения ролей, если возникли проблемы с установкой сценариев.
 
 ### <a name="verify-app-registration"></a>Проверка регистрации приложения
 

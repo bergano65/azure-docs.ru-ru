@@ -2,25 +2,21 @@
 title: Руководство. Настройка программного обеспечения Officespace Software для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в программном обеспечении Officespace Software.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: f832a0a6-ad0a-453f-a747-9cd717e11181
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/02/2019
 ms.author: Zhchia
-ms.openlocfilehash: 3d472b300400cf230773ba01f3f4362988c34e81
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ab2fd7f78373f9fee349e59c374088f67f165339
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77063431"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88554210"
 ---
 # <a name="tutorial-configure-officespace-software-for-automatic-user-provisioning"></a>Учебник. Настройка программного обеспечения Officespace Software для автоматической подготовки пользователей
 
@@ -121,7 +117,7 @@ ms.locfileid: "77063431"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите кнопку **Сохранить**.
+7. Нажмите **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с officespace Software Software**.
 

@@ -2,25 +2,21 @@
 title: Руководство. Настройка федеративного каталога для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в федеративный каталог.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: na
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2019
 ms.author: zhchia
-ms.openlocfilehash: 910aaac84dacb75cd76772a0bc2960d9bfa8bb70
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c083b0ca7fa506bb951a9ef27d2af04d61482eda
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77057950"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88555172"
 ---
 # <a name="tutorial-configure-federated-directory-for-automatic-user-provisioning"></a>Учебник. Настройка федеративного каталога для автоматической подготовки пользователей
 
@@ -146,7 +142,7 @@ ms.locfileid: "77057950"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-9. Нажмите кнопку **Сохранить**.
+9. Нажмите **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с федеративным каталогом**.
 

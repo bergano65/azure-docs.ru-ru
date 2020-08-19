@@ -1,20 +1,20 @@
 ---
 title: Пакет SDK, интерфейс API SQL и ресурсы для Python (Azure Cosmos DB)
 description: Сведения о пакете SDK и интерфейсах API SQL для Python, включая даты выхода и прекращения использования, а также изменения, внесенные в каждую версию пакета SDK для Azure Cosmos DB на Python.
-author: anfeldma-ms
+author: Rodrigossz
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: python
 ms.topic: reference
-ms.date: 08/05/2020
+ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-python
-ms.openlocfilehash: 44d9521e9d02195cb1d4ff61fd519f31ce9c0018
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: e9f9daea2c0d570efb81603784ee730b11668426
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876263"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88585990"
 ---
 # <a name="azure-cosmos-db-python-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK для Azure Cosmos DB на Python для API SQL. Заметки о выпуске и материалы
 
@@ -27,7 +27,8 @@ ms.locfileid: "87876263"
 > * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
 > * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
-> * [Spring Data](sql-api-sdk-java-spring.md)
+> * [Пружинные данные v2](sql-api-sdk-java-spring-v2.md)
+> * [Пружинные данные v3](sql-api-sdk-java-spring-v3.md)
 > * [Соединитель Spark](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
 > * [REST](/rest/api/cosmos-db/)
@@ -45,6 +46,20 @@ ms.locfileid: "87876263"
 |**Текущая поддерживаемая платформа**|[Python 2.7](https://www.python.org/downloads/) и [Python 3.5.3+](https://www.python.org/downloads/)|
 
 ## <a name="release-history"></a>История выпусков
+
+### <a name="410-2020-08-10"></a>4.1.0 (2020-08-10)
+
+- Добавлено предупреждение об устаревании для режима отложенной индексации. Серверная часть больше не разрешает создавать контейнеры в этом режиме и настраивает их в соответствии с ними.
+
+**Новые функции**
+- Добавлена возможность задать срок жизни аналитического хранилища при создании нового контейнера.
+
+**Исправления ошибок**
+- Исправлена поддержка диктс в качестве входных данных для интерфейсов API get_client.
+- Исправлена совместимость с Python 2/3 в итераторах запросов.
+- Исправлена ошибка подсказки типа (проблема #12570).
+- Исправлена ошибка, когда заголовки параметров не были добавлены в функцию upsert_item. #11791 проблемы @aalapatirvbd . Спасибо.
+- Исправлена ошибка, возникающая при использовании нестрокового идентификатора в элементе. Теперь он создает Типиррор, а не Аттрибутиррор (выдача #11793).
 
 ### <a name="400"></a>4.0.0
 

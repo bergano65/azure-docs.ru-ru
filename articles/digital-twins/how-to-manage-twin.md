@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/10/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 8e0f0b37dd429578194c18e5a9a1f063b74fb693
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 9f140594ef18df7f9a6a3b919998962c966cde76
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88506539"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88587605"
 ---
 # <a name="manage-digital-twins"></a>Управление цифровыми двойниками
 
@@ -37,18 +37,22 @@ await client.CreateDigitalTwinAsync("myNewTwinID", initData);
 
 При необходимости можно указать начальные значения для всех свойств цифрового двойника. 
 
-Значения модели и начальных свойств предоставляются с помощью `initData` параметра, который представляет собой строку JSON, содержащую соответствующие данные.
+Значения модели и начальных свойств предоставляются с помощью `initData` параметра, который представляет собой строку JSON, содержащую соответствующие данные. Чтобы получить дополнительные сведения о структурировании этого объекта, перейдите к следующему разделу.
 
 > [!TIP]
 > После создания или обновления двойника может возникнуть задержка до 10 секунд, прежде чем изменения будут отражены в [запросах](how-to-query-graph.md). В `GetDigitalTwin` API (описанном [Далее в этой статье](#get-data-for-a-digital-twin)) Эта задержка не возникает, поэтому используйте вызов API вместо запроса, чтобы увидеть недавно созданный двойников, если требуется мгновенный ответ. 
 
-### <a name="initialize-properties"></a>Инициализация свойств
+### <a name="initialize-model-and-properties"></a>Инициализация модели и свойств
 
-API создания двойника принимает объект, который можно сериализовать в допустимое описание JSON свойств двойника. Описание формата JSON для двойника см. [*в статье основные понятия: Digital двойников и двойника Graph*](concepts-twins-graph.md) .
+API создания двойника принимает объект, который сериализуется в допустимое описание JSON свойств двойника. Описание формата JSON для двойника см. [*в статье основные понятия: Digital двойников и двойника Graph*](concepts-twins-graph.md) . 
+
+Сначала необходимо создать объект данных, который будет представлять двойника и данные его свойств. Затем можно использовать `JsonSerializer` для передачи сериализованной версии этого объекта в вызов API для `initdata` параметра.
 
 Вы можете создать объект параметра либо вручную, либо с помощью предоставленного вспомогательного класса. Ниже приведен пример каждого из них.
 
 #### <a name="create-twins-using-manually-created-data"></a>Создание двойников с помощью данных, созданных вручную
+
+Без использования каких-либо настраиваемых вспомогательных классов можно представить свойства двойника в `Dictionary<string, object>` , где `string` — это имя свойства, а `object` — объект, представляющий свойство и его значение.
 
 ```csharp
 // Define the model type for the twin to be created
@@ -68,6 +72,8 @@ client.CreateDigitalTwin("myNewRoomID", JsonSerializer.Serialize<Dictionary<stri
 
 #### <a name="create-twins-with-the-helper-class"></a>Создание двойников с помощью вспомогательного класса
 
+Вспомогательный класс служб `BasicDigitalTwin` позволяет более точно хранить поля свойств в объекте "двойника". Вы по-прежнему можете создать список свойств с помощью `Dictionary<string, object>` , который затем можно добавить в объект двойника в качестве `CustomProperties` непосредственного объекта.
+
 ```csharp
 BasicDigitalTwin twin = new BasicDigitalTwin();
 twin.Metadata = new DigitalTwinMetadata();
@@ -80,6 +86,13 @@ twin.CustomProperties = props;
 
 client.CreateDigitalTwin("myNewRoomID", JsonSerializer.Serialize<BasicDigitalTwin>(twin));
 ```
+
+>[!NOTE]
+> `BasicDigitalTwin` объекты поступают с `Id` полем. Это поле можно оставить пустым, но если добавить значение идентификатора, оно должно соответствовать параметру идентификатора, переданному в `CreateDigitalTwin` вызов. В приведенном выше примере это будет выглядеть следующим образом:
+>
+>```csharp
+>twin.Id = "myNewRoomID";
+>```
 
 ## <a name="get-data-for-a-digital-twin"></a>Получение данных для цифрового двойника
 
@@ -367,7 +380,7 @@ async Task FindAndDeleteIncomingRelationshipsAsync(string dtId)
 
 Двойников также можно управлять с помощью цифрового интерфейса командной строки Azure двойников. Команды можно найти в [*этом пошаговом окне. Используйте интерфейс командной строки Azure Digital двойников*](how-to-use-cli.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как создавать связи между цифровым двойников и управлять ими:
 * [*Руководство. Управление графом двойника с помощью связей*](how-to-manage-graph.md)
