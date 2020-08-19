@@ -4,24 +4,24 @@ description: Узнайте, как развернуть кластер Service 
 ms.topic: conceptual
 ms.date: 02/14/2019
 ms.custom: mvc
-ms.openlocfilehash: 14e029622f17e8aae392cc55ba4418b3971a5ad2
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: c4b71328ce59284f8870407c9492d24afe9acd8a
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86260226"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88586926"
 ---
 # <a name="deploy-a-linux-service-fabric-cluster-into-an-azure-virtual-network"></a>Развертывание кластера Service Fabric на платформе Linux в виртуальной сети Azure
 
 Из этой статьи вы узнаете как развернуть кластер Service Fabric на платформе Linux в [виртуальную сеть Azure](../virtual-network/virtual-networks-overview.md) с помощью Azure CLI и шаблона. После окончания этого учебника у вас будет кластер в облаке, в который можно разворачивать приложения. Создание кластера Windows с помощью PowerShell описывается в разделе [Развертывание безопасного кластера Service Fabric на платформе Windows в виртуальной сети Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Установка [Service Fabric CLI](service-fabric-cli.md)
-* Установка [Azure CLI](/cli/azure/install-azure-cli)
+* Установите [Azure CLI](/cli/azure/install-azure-cli).
 * Чтобы узнать об основных понятиях кластеров, прочитайте статью [Общие сведения о кластерах Service Fabric в Azure](service-fabric-azure-clusters-overview.md).
 * [Спланируйте и подготовьте](service-fabric-cluster-azure-deployment-preparation.md) развертывание рабочего кластера.
 
@@ -41,7 +41,12 @@ ms.locfileid: "86260226"
 * [AzureDeploy.jsна][template2]
 * [AzureDeploy.Parameters.jsна][parameters2]
 
-Разница между двумя шаблонами — атрибут **вмимажеску** , для которого задано значение "18,04-LTS", а **typeHandlerVersion** каждого узла устанавливается в 1,1.
+Для Ubuntu 18,04 LTS разница между двумя шаблонами 
+* для атрибута **вмимажеску** устанавливается значение "18,04-LTS".
+* для каждого **typeHandlerVersion** узла устанавливается значение 1,1.
+* Ресурс Microsoft. ServiceFabric/Clusters
+   - для **apiVersion** задано значение "2019-03-01" или выше
+   - Свойство **образ виртуальной машины** , для которого задано значение "Ubuntu18_04"
 
 Этот шаблон позволяет развернуть безопасный кластер семи виртуальных машин и трех типов узлов в виртуальную сеть.  Другие примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates). [AzureDeploy.jsдля][template] развертывает числовые ресурсы, включая следующие.
 

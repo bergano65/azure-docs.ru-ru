@@ -8,12 +8,12 @@ ms.date: 4/22/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 1eebacefa2e91970263c301de4ff160ea7c9f2eb
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 008d5f22a48fdd31c90e63643adc94b26a975ca2
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420351"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589373"
 ---
 # <a name="write-client-app-authentication-code"></a>Запись кода проверки подлинности клиентского приложения
 
@@ -34,8 +34,8 @@ ms.locfileid: "87420351"
 ## <a name="authentication-and-client-creation-net-c-sdk"></a>Проверка подлинности и создание клиентов: пакет SDK для .NET (C#)
 
 Во-первых, включите в проект следующие пакеты, чтобы использовать пакет SDK для .NET и средства проверки подлинности для этого руководства:
-* `Azure.DigitalTwins.Core`(версия `1.0.0-preview.2` )
-* `Azure.Identity`
+* `Azure.DigitalTwins.Core` (версия `1.0.0-preview.2` )
+* `Azure.Identity` (версия `1.1.1` )
 
 В зависимости от выбранных вами средств можно включить пакеты с помощью диспетчера пакетов Visual Studio или `dotnet` средства командной строки. 
 

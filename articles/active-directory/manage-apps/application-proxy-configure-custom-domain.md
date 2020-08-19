@@ -1,27 +1,22 @@
 ---
-title: Личные домены в прокси приложения Azure AD | Документация Майкрософт
+title: Пользовательские домены в Azure AD Application Proxy
 description: Настройка личных доменов и управление ими в прокси приложения Azure AD.
 services: active-directory
-documentationcenter: ''
 author: kenwith
 manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: how-to
 ms.date: 10/24/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.custom: it-pro
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 646a32509921709711b208c263ac6b077555eac5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6688875385d34fcbece964d43827c6d62ae7ced4
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84764916"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88587775"
 ---
 # <a name="configure-custom-domains-with-azure-ad-application-proxy"></a>Настройка личных доменов с помощью прокси приложения Azure AD.
 
@@ -91,11 +86,11 @@ ms.locfileid: "84764916"
    
    ![Выбор личного домена](./media/application-proxy-configure-custom-domain/application-proxy.png)
    
-6. Если у домена уже есть сертификат, то поле **Сертификат** отображает сведения об этом сертификате. В ином случае выберите поле **Сертификат**. 
+6. Если у домена уже есть сертификат, то поле **Сертификат** отображает сведения об этом сертификате. В ином случае выберите поле **Сертификат**.
    
    ![Щелкните, чтобы передать сертификат.](./media/application-proxy-configure-custom-domain/certificate.png)
    
-7. На странице **SSL-сертификат** перейдите к файлу сертификата PFX и выберите его. Введите пароль для сертификата и выберите **Отправить сертификат**. Дополнительные сведения о сертификатах см. в разделе [Сертификаты для личных доменов](#certificates-for-custom-domains).
+7. На странице **SSL-сертификат** перейдите к файлу сертификата PFX и выберите его. Введите пароль для сертификата и выберите **Отправить сертификат**. Дополнительные сведения о сертификатах см. в разделе [Сертификаты для личных доменов](#certificates-for-custom-domains). Если сертификат недействителен или возникла проблема с паролем, появится сообщение об ошибке. В [разделе часто задаваемые вопросы о прокси приложения](application-proxy-faq.md#application-configuration) содержатся некоторые действия по устранению неполадок.
    
    ![Загрузка сертификата](./media/application-proxy-configure-custom-domain/ssl-certificate.png)
    
@@ -126,7 +121,7 @@ ms.locfileid: "84764916"
 
 Необходимо использовать PFX-сертификат, чтобы обеспечить включение всех необходимых промежуточных сертификатов. Сертификат должен включать закрытый ключ.
 
-На методы подписки сертификатов нет никаких ограничений. Поддерживаются шифрование на основе эллиптических кривых (ECC), альтернативное имя субъекта (SAN) и другие стандартные типы сертификатов. 
+Поддерживаются наиболее распространенные методы подписи сертификатов, такие как альтернативное имя субъекта (SAN). 
 
 Можно использовать шаблон сертификата, если он соответствует внешнему URL-адресу. Для [приложений с подстановочными знаками необходимо использовать шаблоны сертификатов](application-proxy-wildcard.md). Если вы хотите также использовать сертификат для доступа к поддоменам, необходимо добавить подстановочные знаки поддоменов в качестве альтернативных имен субъектов в том же сертификате. Например, сертификат для *\*.adventure-works.com* не будет работать для *\*.apps.adventure-works.com*, если не добавить *\*.apps.adventure-works.com* в качестве альтернативного имени субъекта. 
 

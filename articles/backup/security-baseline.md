@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: d0a6b6561b5d0995d7794993608a4991b1da2718
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 72c038bda88ecc9b7518f1f764a41bd4c49f52c6
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810145"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589424"
 ---
 # <a name="azure-security-baseline-for-backup"></a>Базовые показатели безопасности Azure для резервного копирования
 
@@ -902,7 +902,7 @@ Azure Backup предоставляет три встроенных роли д�
 
 - [Как создать резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
 
-- [Общие сведения о шифровании в Azure Backup](./backup-encryption.md#encryption-of-backup-data-using-customer-managed-keys)
+- [Общие сведения о шифровании в Azure Backup](./backup-encryption.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

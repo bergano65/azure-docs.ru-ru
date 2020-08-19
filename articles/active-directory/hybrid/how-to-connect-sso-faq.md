@@ -16,12 +16,12 @@ ms.date: 10/07/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f621ed1342928b7f05fc8b84bfc2fceadf494fb5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ea5c3e0ffc000d3d239e87e9771d1b49d98fd206
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87019737"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589050"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-frequently-asked-questions"></a>Простой единый вход Azure Active Directory: Часто задаваемые вопросы
 
@@ -104,7 +104,7 @@ ms.locfileid: "87019737"
    2. Вызовите процедуру `Update-AzureADSSOForest -OnPremCredentials $creds`. Эта команда обновляет ключ расшифровки Kerberos для компьютерной учетной записи `AZUREADSSO` в этом лесу AD и обновляет его в Azure AD.
    
    >[!NOTE]
-   >Если вы не являетесь администратором домена и вам были назначены разрешения администратора домена, следует вызвать метод`Update-AzureADSSOForest -OnPremCredentials $creds -PreserveCustomPermissionsOnDesktopSsoAccount`
+   >Если вы не являетесь администратором домена и вам были назначены разрешения администратора домена, следует вызвать метод `Update-AzureADSSOForest -OnPremCredentials $creds -PreserveCustomPermissionsOnDesktopSsoAccount`
    
    3. Повторите предыдущие шаги для каждого леса AD, где настроена эта функция.
 
@@ -135,6 +135,8 @@ ms.locfileid: "87019737"
    3. Импортируйте модуль PowerShell для простого единого входа с помощью следующей команды: `Import-Module .\AzureADSSO.psd1`.
    4. Откройте PowerShell от имени администратора. В PowerShell вызовите `New-AzureADSSOAuthenticationContext`. Появится всплывающее окно для ввода учетных данных глобального администратора клиента.
    5. Вызовите процедуру `Enable-AzureADSSO -Enable $false`.
+   
+   На этом этапе простой единый вход отключен, но домены останутся настроенными на тот случай, если вы хотите включить простой единый вход. Если вы хотите полностью удалить домены из полной конфигурации единого входа, вызовите следующий командлет после выполнения шага 5 выше: `Disable-AzureADSSOForest -DomainFqdn <fqdn>` .
 
    >[!IMPORTANT]
    >Отключение простого единого входа с помощью PowerShell не изменит состояние в Azure AD Connect. Простой единый вход будет отображаться включенным на странице **Изменение параметров входа пользователя**.

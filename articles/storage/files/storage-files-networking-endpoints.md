@@ -8,12 +8,12 @@ ms.date: 08/17/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: c144442ecd93ca87683179adef496a5d68cce98e
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 1c48c48ef438f99f3b144c3300cb2415e4d387e7
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88525903"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88586687"
 ---
 # <a name="configuring-azure-files-network-endpoints"></a>Настройка сетевых конечных точек Файлов Azure
 
@@ -136,7 +136,7 @@ Address: 192.168.0.5
 
 #### <a name="disable-access-to-the-public-endpoint"></a>Отключение доступа к общедоступной конечной точке
 
-Если доступ к общедоступной конечной точке отключен, к учетной записи хранения можно обращаться только через частные конечные точки. Даже допустимые запросы к общедоступной конечной точке учетной записи хранения будут отклоняться. 
+Если доступ к общедоступной конечной точке отключен, к учетной записи хранения можно обращаться только через частные конечные точки. В противном случае допустимые запросы к общедоступной конечной точке учетной записи хранения будут отклонены, если они не относятся [к специально разрешенному источнику](#restrict-access-to-the-public-endpoint-to-specific-virtual-networks). 
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 [!INCLUDE [storage-files-networking-endpoints-public-disable-portal](../../../includes/storage-files-networking-endpoints-public-disable-portal.md)]

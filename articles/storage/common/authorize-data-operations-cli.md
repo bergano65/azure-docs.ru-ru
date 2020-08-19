@@ -1,24 +1,24 @@
 ---
-title: Выполнение команд Azure CLI с учетными данными Azure AD для доступа к данным BLOB-объектов или очередей
+title: Выберите способ авторизации доступа к данным BLOB-объектов или очередей с помощью Azure CLI
 titleSuffix: Azure Storage
 description: Укажите, как авторизовать операции с данными большого двоичного объекта или очереди с помощью Azure CLI. Вы можете авторизовать операции с данными с помощью учетных данных Azure AD, ключа доступа к учетной записи или маркера подписанного URL-доступа (SAS).
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 08/12/2020
+ms.date: 08/18/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 5ab346af1516c29b1638811217b779e11f120043
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.openlocfilehash: a089ffb7631ded7bd36a4eee5fb862ced3fd2ad0
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88183400"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589068"
 ---
-# <a name="run-azure-cli-commands-with-azure-ad-credentials-to-access-blob-or-queue-data"></a>Выполнение команд Azure CLI с учетными данными Azure AD для доступа к данным BLOB-объектов или очередей
+# <a name="choose-how-to-authorize-access-to-blob-or-queue-data-with-azure-cli"></a>Выберите способ авторизации доступа к данным BLOB-объектов или очередей с помощью Azure CLI
 
 Служба хранилища Azure предоставляет расширения для Azure CLI, которые позволяют указать, как вы хотите авторизовать операции с данными BLOB-объектов или очередей. Авторизовать операции с данными можно следующими способами.
 

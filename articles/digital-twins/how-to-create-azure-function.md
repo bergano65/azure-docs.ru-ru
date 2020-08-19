@@ -7,12 +7,12 @@ ms.author: cschorm
 ms.date: 3/17/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 3e284bc76da9ca40341d72f772aa7ee947a11638
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: d9f9957209c6df91185059085f57636a16a3961c
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87124312"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589407"
 ---
 # <a name="connect-azure-functions-apps-for-processing-data"></a>Подключение приложений функций Azure для обработки данных
 
@@ -83,8 +83,8 @@ namespace FunctionSample
 ### <a name="add-the-azure-digital-twins-sdk-to-your-azure-function-app"></a>Добавление пакета SDK для цифрового двойников Azure в приложение функции Azure
 
 Приложение-функция взаимодействует с Azure Digital двойников, используя [клиентскую библиотеку Azure IOT Digital двойника для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core). Чтобы использовать пакет SDK, необходимо включить в проект следующие пакеты:
-* `Azure.DigitalTwins.Core`(версия `1.0.0-preview.2` )
-* `Azure.Identity`
+* `Azure.DigitalTwins.Core` (версия `1.0.0-preview.2` )
+* `Azure.Identity` (версия `1.1.1` )
 
 Для правильной настройки конвейера пакета SDK Azure для функций Azure также потребуется:
 * `Azure.Net.Http`

@@ -3,12 +3,12 @@ title: Обзор средств безопасности
 description: Узнайте о средствах безопасности в Azure Backup, которые помогут защитить данные резервных копий и соблюсти корпоративные требования к безопасности.
 ms.topic: conceptual
 ms.date: 03/12/2020
-ms.openlocfilehash: 944ef2e86ad8e56501692b29d0958bc4fc19bf0a
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 8a63585635f578f55b274c3257807fc731eacc47
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319309"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589390"
 ---
 # <a name="overview-of-security-features-in-azure-backup"></a>Общие сведения о средствах безопасности в Azure Backup
 
@@ -48,9 +48,9 @@ Azure Backup предоставляет несколько встроенных 
 
 * В Azure данные, передаваемые между службой хранилища Azure и хранилищем, [защищаются по протоколу HTTPS](backup-support-matrix.md#network-traffic-to-azure). Эти данные остаются в магистральной сети Azure.
 
-* Данные архивации автоматически шифруются с помощью [ключей, управляемых корпорацией Майкрософт](backup-encryption.md#encryption-of-backup-data-using-platform-managed-keys), и для их включения не нужно предпринимать никаких явных действий. Вы также можете зашифровать резервные копии данных с помощью [управляемых клиентом ключей](encryption-at-rest-with-cmk.md) , хранящихся в Azure Key Vault. Оно применяется ко всем рабочим нагрузкам, для которых выполняется резервное копирование в хранилище Служб восстановления.
+* Резервные копии данных автоматически шифруются с помощью [ключей, управляемых платформой](backup-encryption.md), и для их включения не нужно предпринимать никаких явных действий. Вы также можете зашифровать резервные копии данных с помощью [управляемых клиентом ключей](encryption-at-rest-with-cmk.md) , хранящихся в Azure Key Vault. Оно применяется ко всем рабочим нагрузкам, для которых выполняется резервное копирование в хранилище Служб восстановления.
 
-* Azure Backup поддерживает резервное копирование и восстановление виртуальных машин Azure с дисками ОС и данных, зашифрованными с помощью [шифрования дисков Azure (ADE)](backup-encryption.md#backup-of-vms-encrypted-using-ade) и [виртуальных машин с зашифрованными дисками CMK](backup-encryption.md#backup-of-managed-disk-vms-encrypted-using-customer-managed-keys). Дополнительные сведения см. в [статье о зашифрованных виртуальных машинах Azure и Azure Backup](./backup-azure-vms-encryption.md).
+* Azure Backup поддерживает резервное копирование и восстановление виртуальных машин Azure с дисками ОС и данных, зашифрованными с помощью [шифрования дисков Azure (ADE)](backup-azure-vms-encryption.md#encryption-support-using-ade) и [виртуальных машин с зашифрованными дисками CMK](backup-azure-vms-encryption.md#encryption-using-customer-managed-keys). Дополнительные сведения см. в [статье о зашифрованных виртуальных машинах Azure и Azure Backup](./backup-azure-vms-encryption.md).
 
 * При резервном копировании данных с локальных серверов с помощью агента MARS данные шифруются с помощью парольной фразы перед отправкой Azure Backup и расшифровываться только после загрузки из Azure Backup. Дополнительные сведения о [функциях безопасности для защиты гибридных резервных копий см. в](#security-features-to-help-protect-hybrid-backups)этой статье.
 

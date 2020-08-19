@@ -8,12 +8,12 @@ ms.date: 05/28/2020
 ms.author: rogarana
 ms.subservice: files
 services: storage
-ms.openlocfilehash: f432c544d8632a548c397b63ffa8066f63424f67
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 2d2a000879a95f86a6cdda3324add5b692476eee
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86528389"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88590121"
 ---
 # <a name="enable-soft-delete-on-azure-file-shares"></a>Включение обратимого удаления — общие папки Azure
 
@@ -22,6 +22,8 @@ ms.locfileid: "86528389"
 В следующих разделах показано, как включить обратимое удаление для общих папок Azure в существующей учетной записи хранения.
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
+
+## <a name="getting-started"></a>Начало работы
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 1. Перейдите к своей учетной записи хранения и выберите **Обратимое удаление** в разделе **Служба файлов**.
@@ -33,7 +35,13 @@ ms.locfileid: "86528389"
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Командлеты обратимого удаления доступны в версии "более" – Preview "модуля AZ. Storage. Чтобы включить обратимое удаление, нужно обновить свойства службы клиента файлов. В следующем примере включено обратимое удаление для всех общих папок в учетной записи хранения:
+## <a name="prerequisite"></a>Предварительное требование
+
+Командлеты обратимого удаления в настоящее время доступны только в [версиях для](https://www.powershellgallery.com/packages/Az.Storage/2.1.1-preview) программного обеспечения AZ. Storage. [2.3.1-preview](https://www.powershellgallery.com/packages/Az.Storage/2.3.1-preview) 
+
+## <a name="getting-started"></a>Начало работы
+
+Чтобы включить обратимое удаление, нужно обновить свойства службы клиента файлов. В следующем примере включено обратимое удаление для всех общих папок в учетной записи хранения:
 
 ```azurepowershell-interactive
 $rgName = "yourResourceGroupName"

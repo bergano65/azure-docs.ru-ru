@@ -1,6 +1,6 @@
 ---
 title: Рекомендации по конфигурации приложений Azure | Документация Майкрософт
-description: Узнайте, как лучше использовать конфигурацию приложений Azure
+description: Ознакомьтесь с рекомендациями при использовании конфигурации приложений Azure. В число рассматриваемых тем входят группирования ключей, присвоить значения ключей, начальная загрузка конфигурации приложения и многое другое.
 services: azure-app-configuration
 documentationcenter: ''
 author: lisaguthrie
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: lcozzens
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: d97626d5eed96a3debb41c86f6dab6fbaf1953cd
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: d532b8aab87840f4b6ad90daedba743597f4fe43
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88206684"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88588064"
 ---
 # <a name="azure-app-configuration-best-practices"></a>Рекомендации по настройке приложений Azure
 
@@ -91,6 +91,6 @@ configBuilder.AddAzureAppConfiguration(options => {
 
 Конфигурация приложения — Региональная служба. Для приложений с разными конфигурациями на регион хранение этих конфигураций в одном экземпляре может создать единую точку отказа. Лучшим вариантом может быть развертывание одного экземпляра конфигурации приложения для каждого региона в нескольких регионах. Это может помочь при работе с региональными аварийным восстановлением, производительностью и системой безопасности. Настройка по регионам также повышает задержку и использует разделенные квоты регулирования, так как регулирование выполняется для каждого экземпляра. Чтобы применить устранение аварийного восстановления, можно использовать [несколько хранилищ конфигураций](./concept-disaster-recovery.md). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Ключи и значения](./concept-key-value.md)

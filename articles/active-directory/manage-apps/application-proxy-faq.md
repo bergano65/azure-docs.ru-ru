@@ -2,25 +2,21 @@
 title: Часто задаваемые вопросы об Azure AD Application Proxy | Документация Майкрософт
 description: Ознакомьтесь с ответами на часто задаваемые вопросы об использовании AD Application Proxy Azure для публикации внутренних локальных приложений для удаленных пользователей.
 services: active-directory
-documentationcenter: ''
 author: kenwith
 manager: celestedg
-ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: reference
 ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 78a0cb6217d8c1d25f08801066a970d6bc94e1b0
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: edf51dad768e8d8b5ea5dc6c1eff88f43f0f6b70
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88042111"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589169"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
@@ -89,7 +85,16 @@ ms.locfileid: "88042111"
     ```
 
 
-## <a name="application-configuration"></a>Конфигурация приложений
+## <a name="application-configuration"></a>Настройка приложения
+
+### <a name="i-am-receiving-an-error-about-an-invalid-certificate-or-possible-wrong-password"></a>Я получаю сообщение об ошибке: Недопустимый сертификат или возможный неверный пароль
+
+После передачи SSL-сертификата вы получите сообщение "Недопустимый сертификат, возможно, неверный пароль" на портале.
+
+Ниже приведены некоторые советы по устранению этой ошибки.
+- Проверьте наличие проблем с сертификатом. Установите его на локальном компьютере. Если проблемы не возникают, сертификат является хорошим.
+- Убедитесь, что пароль не содержит специальных символов. Для тестирования пароль должен содержать только символы 0-9, A – Z и A – z.
+- Если сертификат был создан с помощью поставщика хранилища ключей программного обеспечения Майкрософт, необходимо использовать алгоритм RSA.
 
 ### <a name="what-is-the-length-of-the-default-and-long-back-end-timeout-can-the-timeout-be-extended"></a>Какова длина значения по умолчанию и времени ожидания серверной части "Long"? Можно ли увеличить время ожидания?
 
@@ -120,7 +125,7 @@ ms.locfileid: "88042111"
 
 Проверку подлинности NTLM нельзя использовать в качестве метода предварительной проверки подлинности или единого входа. Проверка подлинности NTLM может использоваться только в том случае, если ее можно согласовать непосредственно между клиентом и опубликованным веб-приложением. Использование проверки подлинности NTLM обычно приводит к отображению запроса на вход в браузере.
 
-## <a name="pass-through-authentication"></a>Сквозная проверка подлинности
+## <a name="pass-through-authentication"></a>Сквозная аутентификация
 
 ### <a name="can-i-use-conditional-access-policies-for-applications-published-with-pass-through-authentication"></a>Можно ли использовать политики условного доступа для приложений, опубликованных с помощью сквозной проверки подлинности?
 

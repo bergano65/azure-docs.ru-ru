@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/12/2020
 ms.author: memildin
-ms.openlocfilehash: a635f32c5e5f1132d70fb503058267c8b33beb7c
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.openlocfilehash: dbd040bf7caf3dbe9ed9820bf189bc1f74475c09
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88272066"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88586900"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -35,6 +35,7 @@ ms.locfileid: "88272066"
 Обновления в августе включают:
 
 - [Инвентаризация активов — новое мощное представление безопасности активов](#asset-inventory---powerful-new-view-of-the-security-posture-of-your-assets)
+- [Добавлена поддержка Azure Active Directory параметров безопасности по умолчанию (для многофакторной проверки подлинности).](#added-support-for-azure-active-directory-security-defaults-for-multi-factor-authentication)
 - [Добавлена рекомендация субъектов-служб](#service-principals-recommendation-added)
 - [Оценка уязвимостей на виртуальных машинах. рекомендации и политики объединены](#vulnerability-assessment-on-vms---recommendations-and-policies-consolidated)
 
@@ -50,11 +51,27 @@ ms.locfileid: "88272066"
 Дополнительные сведения об [инвентаризации активов](asset-inventory.md).
 
 
+### <a name="added-support-for-azure-active-directory-security-defaults-for-multi-factor-authentication"></a>Добавлена поддержка Azure Active Directory параметров безопасности по умолчанию (для многофакторной проверки подлинности).
+
+Центр безопасности добавил полную поддержку [параметров безопасности по умолчанию](https://docs.microsoft.com/azure/active-directory/fundamentals/concept-fundamentals-security-defaults)— бесплатная защита идентификации Майкрософт.
+
+Параметры безопасности по умолчанию обеспечивают предварительно настроенные настройки безопасности удостоверений для защиты Организации от распространенных атак, связанных с идентификацией. Параметры безопасности по умолчанию уже защищают более 5 000 000 клиентов в целом; 50 000 клиенты также защищаются центром безопасности.
+
+Центр безопасности теперь предоставляет рекомендации по безопасности, если она определяет подписку Azure без включенных по умолчанию параметров безопасности. До настоящего момента Центр безопасности рекомендует включить многофакторную проверку подлинности с помощью условного доступа, который является частью лицензии Azure Active Directory (AD) Premium. Для клиентов, использующих Azure AD бесплатно, рекомендуется включить параметры безопасности по умолчанию. 
+
+Наша цель — порекомендовать большему числу клиентов защищать облачные среды с помощью MFA, а также снизить одну из самых высоких рисков, которые наиболее эффективны с учетом их [безопасности](https://docs.microsoft.com/azure/security-center/secure-score-security-controls).
+
+Дополнительные сведения о параметрах [безопасности по умолчанию](https://docs.microsoft.com/azure/active-directory/fundamentals/concept-fundamentals-security-defaults).
+
+
 ### <a name="service-principals-recommendation-added"></a>Добавлена рекомендация субъектов-служб
 
-Новая рекомендация для клиентов центра безопасности, использующих сертификаты управления для управления подписками.
+Добавлена новая рекомендация, которая рекомендует клиентам центра безопасности, использующим сертификаты управления, управлять подписками, переключаться на субъекты-службы.
 
 Рекомендуется использовать **субъекты-службы для защиты подписок, а не сертификатов управления** . рекомендации по использованию субъектов-служб или Azure Resource Manager для более безопасного управления подписками. 
+
+Дополнительные сведения об [объектах приложений и субъектов-служб см. в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object).
+
 
 ### <a name="vulnerability-assessment-on-vms---recommendations-and-policies-consolidated"></a>Оценка уязвимостей на виртуальных машинах. рекомендации и политики объединены
 

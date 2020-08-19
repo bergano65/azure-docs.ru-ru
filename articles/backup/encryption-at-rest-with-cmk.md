@@ -3,12 +3,12 @@ title: Шифрование данных резервных копий с пом
 description: Узнайте, как Azure Backup позволяет шифровать данные резервных копий с помощью ключей, управляемых клиентом (CMK).
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: 1586a40d115a591c474c3bc8c1fed5448eb90bcd
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: dfed3f983867568befc77d7dbc81cdde70eef9ed
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87388005"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589611"
 ---
 # <a name="encryption-of-backup-data-using-customer-managed-keys"></a>Шифрование данных резервных копий с помощью управляемых клиентом ключей
 
@@ -39,7 +39,7 @@ Azure Backup позволяет зашифровать данные резерв
 
 - В настоящее время эта функция настраивается только в портал Azure.
 
-[!INCLUDE [How to create a Recovery Services vault](../../includes/backup-create-rs-vault.md)]
+Если вы еще не создали и не настроили хранилище служб восстановления, то можете [прочитать здесь](backup-create-rs-vault.md).
 
 ## <a name="configuring-a-vault-to-encrypt-using-customer-managed-keys"></a>Настройка хранилища для шифрования с помощью управляемых клиентом ключей
 
@@ -160,7 +160,7 @@ Azure Backup использует управляемое системой удо
 
         ![Выбор ключа из хранилища ключей](./media/encryption-at-rest-with-cmk/key-vault.png)
 
-1. Выберите команду **Сохранить**.
+1. Нажмите **Сохранить**.
 
 1. **Отслеживание хода обновления ключа шифрования:** Ход выполнения назначения ключа можно отслеживать с помощью **журнала действий** в хранилище служб восстановления. Состояние должно скоро изменится на " **успех**". Теперь ваше хранилище будет шифровать все данные с указанным ключом в качестве KEK.
 

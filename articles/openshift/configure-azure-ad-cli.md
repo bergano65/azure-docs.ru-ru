@@ -8,16 +8,16 @@ author: sabbour
 ms.author: asabbour
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
-ms.openlocfilehash: 45da3034891e5a82fb8423adb6bcd5e867f9d4e2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 393185d2167e18df3f8c1319e7367efbc437de1a
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82205005"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88590342"
 ---
 # <a name="configure-azure-active-directory-authentication-for-an-azure-red-hat-openshift-4-cluster-cli"></a>Настройка проверки подлинности Azure Active Directory для кластера Azure Red Hat OpenShift 4 (CLI)
 
-Если вы решили установить и использовать CLI локально, для работы с этой статьей требуется Azure CLI версии 2.0.75 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать CLI локально, для работы с этой статьей требуется Azure CLI версии 2.6.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 Получите URL-адреса, относящиеся к конкретному кластеру, которые будут использоваться для настройки приложения Azure Active Directory.
 
@@ -160,7 +160,7 @@ oc login $apiServer -u kubeadmin -p <kubeadmin password>
 oc create secret generic openid-client-secret-azuread \
   --namespace openshift-config \
   --from-literal=clientSecret=<ClientSecret>
-```    
+```
 
 Создайте файл **oidc. YAML** , чтобы настроить проверку подлинности OpenShift openid connect в Azure Active Directory. Замените **\<AppID>** и **\<TenantId>** значениями, полученными ранее.
 
@@ -177,20 +177,20 @@ spec:
     type: OpenID
     openID:
       clientID: <AppId>
-      clientSecret: 
+      clientSecret:
         name: openid-client-secret-azuread
-      extraScopes: 
+      extraScopes:
       - email
       - profile
-      extraAuthorizeParameters: 
+      extraAuthorizeParameters:
         include_granted_scopes: "true"
       claims:
-        preferredUsername: 
+        preferredUsername:
         - email
         - upn
-        name: 
+        name:
         - name
-        email: 
+        email:
         - email
       issuer: https://login.microsoftonline.com/<TenantId>
 EOF
