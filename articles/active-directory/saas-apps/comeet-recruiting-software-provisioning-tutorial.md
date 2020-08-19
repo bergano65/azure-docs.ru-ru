@@ -2,25 +2,21 @@
 title: Учебник. Настройка сопоставлений по найму персонала для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в сопоставлении с программным обеспечением для подбора персонала.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: na
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: jeedes
-ms.openlocfilehash: f427fb75cfaeda79b037c327992e4ad482a7e689
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5165c3f03d51403a978ad3574306bc27d931e1d7
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77058344"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88536899"
 ---
 # <a name="tutorial-configure-comeet-recruiting-software-for-automatic-user-provisioning"></a>Учебник. Настройка сопоставлений по найму сотрудников для автоматической подготовки пользователей
 
@@ -102,7 +98,7 @@ ms.locfileid: "77058344"
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **маркер секрета** учетной записи по сопоставлению набора сотрудников, как описано в шаге 6.
 
-6. В [консоли администрирования по сопоставлению по найму](https://app.comeet.co/)выберите пункт **Параметры > > проверка подлинности > Microsoft Azure**и скопируйте **маркер секрета для значения вашей компании** в поле **секретный токен** в Azure AD.
+6. В [консоли администрирования по сопоставлению по найму](https://app.comeet.co/)выберите пункт  **Параметры > > проверка подлинности > Microsoft Azure**и скопируйте **маркер секрета для значения вашей компании** в поле **секретный токен** в Azure AD.
 
     ![Сопоставленная подготовка программного обеспечения для подбора персонала](./media/comeet-recruiting-software-provisioning-tutorial/secret-token-1.png)
 
@@ -114,7 +110,7 @@ ms.locfileid: "77058344"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-9. Нажмите кнопку **Сохранить**.
+9. Нажмите **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с сопоставленными**.
 
