@@ -1,14 +1,14 @@
 ---
 title: Соответствие нормативным требованиям в определениях инициатив
 description: Описание использования определения инициативы для групповых политик с учетом нормативных требований, таких как управление доступом, управление конфигурацией и другие.
-ms.date: 05/11/2020
+ms.date: 08/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3bcc876cf8fd608d700e39bda11c94395beace80
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 296febc1aad62d06c8e9dfcf4f285b16cacf0a40
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84205905"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88544627"
 ---
 # <a name="regulatory-compliance-in-azure-policy"></a>Соответствие нормативным требованиям в политике Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "84205905"
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. [структуру определения инициативы](./initiative-definition-structure.md)
 - См. другие [примеры шаблонов для службы Политика Azure](../samples/index.md).

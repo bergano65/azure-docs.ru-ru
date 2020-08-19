@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: d0c6488f9a75bbf9ba6775138edeed9c4a397abf
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 7a0fd4178df92cc9102456c1fa2ae4e8927337e4
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87552226"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88547330"
 ---
 # <a name="enable-logging-in-azure-ml-training-runs"></a>Включение ведения журнала в учебных запусках МАШИНного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -42,12 +42,6 @@ ms.locfileid: "87552226"
 ## <a name="interactive-logging-session"></a>Интерактивный сеанс ведения журнала
 
 Интерактивные сеансы ведения журнала обычно используются в средах записных книжек. Метод [эксперимент. start_logging ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment(class)?view=azure-ml-py#start-logging--args----kwargs-) запускает интерактивный сеанс ведения журнала. Все метрики, регистрируемые во время сеанса, добавляются в запись Run в эксперименте. Метод [Run. Complete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#complete--set-status-true-) завершает сеансы и помечает выполнение как завершенное.
-
-В следующем фрагменте кода используется интерактивный сеанс ведения журнала для ведения журнала параметров обучения и метрик производительности с помощью метода [Run. log ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#log-name--value--description----) . Он также передает обученную модель в указанное расположение выходных данных.
-
-[!notebook-python[] (~/MachineLearningNotebooks/how-to-use-azureml/training/train-within-notebook/train-within-notebook.ipynb?name=create_experiment)]
-
-Полный пример записной книжки, в которой используется интерактивное ведение журнала, см. [в разделе Обучение модели в записной книжке](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-within-notebook/train-within-notebook.ipynb).
 
 ## <a name="scriptrunconfig-logs"></a>Журналы Скриптрунконфиг
 

@@ -2,25 +2,21 @@
 title: Учебник. Настройка матрицы приоритетов для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в матрице приоритетов.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: a4598a99-3c98-4c14-86c2-95cc562e2439
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/08/2019
 ms.author: Zhchia
-ms.openlocfilehash: 80ffaba6713027d216958e0be2cd4ae35a8d2d70
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bca751c55182df99e87ff1651de534985d9b5e76
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77063447"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88548996"
 ---
 # <a name="tutorial-configure-priority-matrix-for-automatic-user-provisioning"></a>Учебник. Настройка матрицы приоритетов для автоматической подготовки пользователей
 
@@ -132,7 +128,7 @@ ms.locfileid: "77063447"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите кнопку **Сохранить**.
+7. Нажмите **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с приоритетной матрицей**.
 

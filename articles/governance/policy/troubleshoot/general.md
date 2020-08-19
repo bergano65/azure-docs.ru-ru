@@ -1,14 +1,14 @@
 ---
 title: Устранение распространенных ошибок
 description: Узнайте, как устранять неполадки при создании определений политик, различных пакетах SDK и надстройки для Kubernetes.
-ms.date: 05/22/2020
+ms.date: 08/17/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: 6d23a148521506adf0c0fc16913a32aab5eb7a30
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: d4ede1703df922196c89a4c1ca4f37cbc95a6297
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86135573"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545545"
 ---
 # <a name="troubleshoot-errors-using-azure-policy"></a>Устранение ошибок с помощью политики Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "86135573"
 
 ### <a name="scenario-alias-not-found"></a>Сценарий: псевдоним не найден
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Политика Azure использует [псевдонимы](../concepts/definition-structure.md#aliases) для соотнесения со свойствами Azure Resource Manager.
 
@@ -40,7 +40,7 @@ ms.locfileid: "86135573"
 
 ### <a name="scenario-evaluation-details-not-up-to-date"></a>Сценарий: сведения об оценке не обновлены
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Ресурс находится в состоянии "не запущено" или сведения о соответствии не являются актуальными.
 
@@ -54,7 +54,7 @@ ms.locfileid: "86135573"
 
 ### <a name="scenario-evaluation-not-as-expected"></a>Сценарий: вычисление не так, как ожидалось
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Ресурс не находится в состоянии оценки ( _соответствует_ или _не соответствует требованиям_), ожидаемому для этого ресурса.
 
@@ -71,7 +71,7 @@ ms.locfileid: "86135573"
 
 ### <a name="scenario-enforcement-not-as-expected"></a>Сценарий: принудительное применение не так, как ожидалось
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Ресурс, который должен обрабатываться политикой Azure, не содержит записей в [журнале действий Azure](../../../azure-monitor/platform/platform-logs-overview.md).
 
@@ -85,7 +85,7 @@ ms.locfileid: "86135573"
 
 ### <a name="scenario-denied-by-azure-policy"></a>Сценарий: отклонено политикой Azure
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Для создания или обновления ресурса отказано.
 
@@ -101,7 +101,7 @@ ms.locfileid: "86135573"
 
 ### <a name="scenario-policy-supported-functions-processed-by-template"></a>Сценарий: Поддерживаемые функцией политики функции, обрабатываемые шаблоном
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Политика Azure поддерживает несколько Azure Resource Manager функций и функций шаблона (шаблона ARM), которые доступны только в определении политики. Диспетчер ресурсов обрабатывает эти функции как часть развертывания, а не как часть определения политики.
 
@@ -117,7 +117,7 @@ ms.locfileid: "86135573"
 
 ### <a name="scenario-install-using-helm-chart-fails-on-password"></a>Сценарий: Установка с использованием диаграммы Helm завершается сбоем при пароле
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 `helm install azure-policy-addon`Команда завершается с одним из следующих сообщений:
 
@@ -134,7 +134,7 @@ ms.locfileid: "86135573"
 
 ### <a name="scenario-install-using-helm-chart-fails-as-name-already-exists"></a>Сценарий: Установка с использованием диаграммы Helm не выполняется, так как имя уже существует
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 `helm install azure-policy-addon`Команда завершается со следующим сообщением:
 

@@ -2,25 +2,21 @@
 title: Руководство. Настройка бета-версии Zscaler для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в бета-версии Zscaler.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd-msft
-ms.assetid: 83db6b8d-503b-48f3-b918-f9fba1369d53
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 505cd7a3350c937885f0f03268ef326a4f784258
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 71b40fe903e5a837046b9b29f62ef4875e3139e5
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77062751"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545924"
 ---
 # <a name="tutorial-configure-zscaler-beta-for-automatic-user-provisioning"></a>Руководство. Настройка бета-версии Zscaler для автоматической подготовки пользователей
 
@@ -31,7 +27,7 @@ ms.locfileid: "77062751"
 >
 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
@@ -113,7 +109,7 @@ ms.locfileid: "77062751"
 
     ![Подготовка бета-версии Zscaler](./media/zscaler-beta-provisioning-tutorial/secret-token-2.png)
 
-    Выберите **включить подготовку на основе scim** , чтобы получить **базовый URL-адрес** и **токен носителя**, а затем сохраните параметры. Скопируйте **базовый URL-адрес** в **URL-адрес клиента**и **токен носителя** в **секретный токен** в портал Azure.
+    Выберите **включить подготовку на основе scim** , чтобы получить **базовый URL-адрес** и **токен носителя**, а затем сохраните параметры. Скопируйте **базовый URL-адрес** в **URL-адрес клиента**и **токен носителя**  в **секретный токен** в портал Azure.
 
 7. После заполнения полей, показанных на шаге 5, нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к бета-версии Zscaler. Если подключение не выполняется, убедитесь, что у учетной записи Zscaler Beta есть разрешения администратора, и повторите попытку.
 
@@ -123,7 +119,7 @@ ms.locfileid: "77062751"
 
     ![Подготовка бета-версии Zscaler](./media/zscaler-beta-provisioning-tutorial/notification.png)
 
-9. Нажмите кнопку **Сохранить**.
+9. Нажмите **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Zscaler Beta**.
 

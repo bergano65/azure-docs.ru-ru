@@ -2,25 +2,21 @@
 title: Руководство по настройке "Снежинка" для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в снежинки.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: f9ce85f4-0992-4bc6-8276-4b2efbce8dcb
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 7c43d3dd0c8a0d9f6d31d8e379fd195adfd7873f
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 7fbf7743eb1c037a364e1004fc3be30db6777bb0
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87925419"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546650"
 ---
 # <a name="tutorial-configure-snowflake-for-automatic-user-provisioning"></a>Учебник. Настройка снежинки для автоматической подготовки пользователей
 
@@ -111,7 +107,7 @@ ms.locfileid: "87925419"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-8. Нажмите кнопку **Сохранить**.
+8. Нажмите **Сохранить**.
 
 9. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с снежинкой**.
 

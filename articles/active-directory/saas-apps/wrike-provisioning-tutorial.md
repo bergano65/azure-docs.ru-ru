@@ -2,25 +2,21 @@
 title: Руководство. Настройка Врике для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отмены предоставления учетных записей пользователей в Врике.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: na
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 08/26/2019
 ms.author: Zhchia
-ms.openlocfilehash: 5dd4f5ac6152c22b5e2a84ecc0774672bcd5590b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e3ec25504decca0747c8a853bb88ab3e7a10966a
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77064200"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546327"
 ---
 # <a name="tutorial-configure-wrike-for-automatic-user-provisioning"></a>Учебник. Настройка Врике для автоматической подготовки пользователей
 
@@ -62,7 +58,7 @@ ms.locfileid: "77064200"
 
 2.  Перейдите в **Azure AD** и выберите его.
 
-    ![Azure AD](media/Wrike-provisioning-tutorial/Capture01.png)
+    ![Azure AD](media/Wrike-provisioning-tutorial/Capture01.png)
 
 3.  Выберите SCIM. Скопируйте **базовый URL-адрес**.
 
@@ -137,7 +133,7 @@ ms.locfileid: "77064200"
 
     ![Уведомление по электронной почте](common/provisioning-notification-email.png)
 
-8. Нажмите кнопку **Сохранить**.
+8. Щелкните **Сохранить**.
 
 9. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с врике**.
 

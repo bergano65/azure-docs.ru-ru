@@ -2,25 +2,20 @@
 title: Учебник. Интеграция Azure Active Directory с Jobscience | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Jobscience.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.assetid: 77282dcc-bbe2-4728-953d-adb4ab6a713b
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23d2694aa4936090367cf881379f81911ae70f9d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0de47cc12c461e47d8703861a99d11e7ee72d581
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81870538"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88547075"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jobscience"></a>Руководство. Интеграция Azure Active Directory с Jobscience
 
@@ -34,7 +29,7 @@ ms.locfileid: "81870538"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Jobscience, вам потребуется:
 
@@ -113,7 +108,7 @@ ms.locfileid: "81870538"
 
     ![Настройка единого входа](./media/jobscience-tutorial/tutorial_jobscience_url.png)
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `http://<company name>.my.salesforce.com`.
+    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:.  `http://<company name>.my.salesforce.com`
     
     > [!NOTE] 
     > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Данное значение можно получить у [группы поддержки клиентов Jobscience](http://www.jobscience.com/support) или из профиля единого входа, который вы создадите. Это описано далее в этом руководстве. 
@@ -134,7 +129,7 @@ ms.locfileid: "81870538"
 
 1. Перейдите в раздел **Настройка**.
    
-   ![Установка](./media/jobscience-tutorial/IC784358.png "Установка")
+   ![Установка](./media/jobscience-tutorial/IC784358.png "Настройка")
 
 1. В области навигации слева в разделе **Administer** (Администрирование) щелкните **Domain Management** (Управление доменами), чтобы развернуть соответствующий раздел, а затем щелкните **My Domain** (Мой домен), чтобы открыть страницу **My Domain** (Мой домен). 
    
@@ -154,13 +149,13 @@ ms.locfileid: "81870538"
     
     а. Выберите **SAML включен**.
 
-    b. Нажмите кнопку **New** (Создать).
+    b. Нажмите кнопку **Создать**.
 
 1. В диалоговом окне **изменения параметров единого входа SAML** выполните следующие действия.
     
     ![Параметры единого входа SAML](./media/jobscience-tutorial/ic784365.png "Параметры единого входа SAML")
     
-    а. В текстовом поле **Имя** введите выбранное имя для конфигурации.
+    а. В текстовом поле **Имя** введите имя конфигурации.
 
     b. В текстовое поле **Issuer** (Издатель) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
@@ -245,7 +240,7 @@ ms.locfileid: "81870538"
 
 1. Перейдите в раздел "Настройка".
    
-   ![Установка](./media/jobscience-tutorial/ic784358.png "Установка")
+   ![Установка](./media/jobscience-tutorial/ic784358.png "Настройка")
 1. Выберите **Manage Users \> Users** (Управление пользователями > Пользователи).
    
    ![Пользователи](./media/jobscience-tutorial/ic784369.png "Пользователи")
@@ -268,7 +263,7 @@ ms.locfileid: "81870538"
 
    е) В текстовом поле **Nick Name** (Псевдоним) укажите псевдоним пользователя, например Simon.
 
-   ж. Нажмите кнопку **Сохранить**.
+   ж. Выберите команду **Сохранить**.
 
     
 > [!NOTE]

@@ -2,25 +2,21 @@
 title: Руководство. Настройка частного доступа Zscaler (ZPA) для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в Zscaler закрытый доступ (ZPA).
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: ee9128c3-ff02-4739-8c51-0693d8451742
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/07/2019
 ms.author: Zhchia
-ms.openlocfilehash: 609d2726eaaaeb49210e19f000bcc2faef1de5d7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c605efe60e279ca3f5f14055e39bf95dc677542b
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77064161"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545846"
 ---
 # <a name="tutorial-configure-zscaler-private-access-zpa-for-automatic-user-provisioning"></a>Руководство. Настройка частного доступа Zscaler (ZPA) для автоматической подготовки пользователей
 
@@ -129,7 +125,7 @@ ms.locfileid: "77064161"
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. Из списка приложений выберите **Zscaler Private Access (ZPA)**.
+2. Из списка приложений выберите **Zscaler Private Access (ZPA)** .
 
     ![Ссылка на Zscaler Private Access (ZPA) в списке "Приложения"](common/all-applications.png)
 
@@ -149,7 +145,7 @@ ms.locfileid: "77064161"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите кнопку **Сохранить**.
+7. Нажмите **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Zscaler закрытым доступом (ZPA)**.
 

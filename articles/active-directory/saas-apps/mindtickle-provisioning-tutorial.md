@@ -2,25 +2,21 @@
 title: Руководство. Настройка Миндтиккле для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в Миндтиккле.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: fb48deae-4653-448a-ba2f-90258edab3a7
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/23/2019
 ms.author: Zhchia
-ms.openlocfilehash: 6ae7b6ac9c6feb539e4da3627ebbabd3c5b628fb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3cac57e0f205da7a39447ddd48810b8fd120ab58
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77061244"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549069"
 ---
 # <a name="tutorial-configure-mindtickle-for-automatic-user-provisioning"></a>Учебник. Настройка Миндтиккле для автоматической подготовки пользователей
 
@@ -57,7 +53,7 @@ ms.locfileid: "77061244"
 Перед настройкой Миндтиккле для автоматической подготовки пользователей с помощью Azure AD необходимо включить подготовку SCIM для Миндтиккле.
 
 
-1.  Обратитесь в службу [поддержки миндтиккле](mailto:help@mindtickle.com) , чтобы получить маркер JWT, необходимый для настройки подготовки scim.
+1.  Обратитесь в службу  [поддержки миндтиккле](mailto:help@mindtickle.com) , чтобы получить маркер JWT, необходимый для настройки подготовки scim.
 
 
 ## <a name="add-mindtickle-from-the-gallery"></a>Добавление Миндтиккле из коллекции
@@ -115,7 +111,7 @@ ms.locfileid: "77061244"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите кнопку **Сохранить**.
+7. Нажмите **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с миндтиккле**.
 

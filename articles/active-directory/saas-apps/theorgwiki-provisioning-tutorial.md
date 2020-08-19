@@ -2,25 +2,21 @@
 title: Руководство. Настройка Сеоргвики для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в Сеоргвики.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: 5eb2096e-f7b6-4a56-a814-0f3d0e788063
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 2b0b11ae89e1f0d150b84f49b04a8badcb44e82c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5959ccd2699ef1162779a4a1d90ab6bb8af1bbbf
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77063158"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88544855"
 ---
 # <a name="tutorial-configure-theorgwiki-for-automatic-user-provisioning"></a>Учебник. Настройка Сеоргвики для автоматической подготовки пользователей
 
@@ -69,7 +65,7 @@ ms.locfileid: "77063158"
 
     ![Сеоргвики добавить SCIM](media/theorgwiki-provisioning-tutorial/serviceaccount.png)
 
-4. Щелкните **+ учетная запись службы**. В разделе **тип учетной записи службы**выберите **токен на основе маркеров**. Нажмите кнопку **Сохранить**.
+4. Щелкните **+ учетная запись службы**. В разделе **тип учетной записи службы**выберите **токен на основе маркеров**. Нажмите **Сохранить**.
 
     ![Сеоргвики добавить SCIM](media/theorgwiki-provisioning-tutorial/auth.png)
 
@@ -138,7 +134,7 @@ ms.locfileid: "77063158"
 
 5. В разделе **учетные данные администратора** введите `https://<TheOrgWiki Subdomain        value>.theorgwiki.com/api/v2/scim/v2/` **URL-адрес клиента**. 
 
-    Пример: `https://test1.theorgwiki.com/api/v2/scim/v2/`
+    Например, `https://test1.theorgwiki.com/api/v2/scim/v2/`.
 
 > [!NOTE]
 > **Значение поддомена** можно задать только во время первоначального процесса регистрации для сеоргвики.
@@ -151,7 +147,7 @@ ms.locfileid: "77063158"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-8. Нажмите кнопку **Сохранить**.
+8. Нажмите **Сохранить**.
 
 9. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с сеоргвики**.
 

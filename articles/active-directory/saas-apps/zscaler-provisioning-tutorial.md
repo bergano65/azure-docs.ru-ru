@@ -2,25 +2,21 @@
 title: Руководство. Настройка Zscaler для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в Zscaler.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd-msft
-ms.assetid: 31f67481-360d-4471-88c9-1cc9bdafee24
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 8add1f57b566d746d464c1ca165938fc112a9784
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a3424a42e86b47d4103dd41ca143b5bc7be3796a
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77062717"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545936"
 ---
 # <a name="tutorial-configure-zscaler-for-automatic-user-provisioning"></a>Учебник. Настройка Zscaler для автоматической подготовки пользователей
 
@@ -30,7 +26,7 @@ ms.locfileid: "77062717"
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../active-directory-saas-app-provisioning.md).
 >
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
@@ -112,7 +108,7 @@ ms.locfileid: "77062717"
 
     ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/secret-token-2.png)
 
-    Выберите **включить подготовку на основе scim** , чтобы получить **базовый URL-адрес** и **токен носителя**, а затем сохраните параметры. Скопируйте **базовый URL-адрес** в **URL-адрес клиента**и **токен носителя** в **секретный токен** в портал Azure.
+    Выберите **включить подготовку на основе scim** , чтобы получить **базовый URL-адрес** и **токен носителя**, а затем сохраните параметры. Скопируйте **базовый URL-адрес** в **URL-адрес клиента**и **токен носителя**  в **секретный токен** в портал Azure.
 
 7. После заполнения полей, показанных на шаге 5, нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Zscaler. Если подключение не выполняется, убедитесь, что у учетной записи Zscaler есть разрешения администратора, и повторите попытку.
 
@@ -122,7 +118,7 @@ ms.locfileid: "77062717"
 
     ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/notification.png)
 
-9. Нажмите кнопку **Сохранить**.
+9. Нажмите **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Zscaler**.
 

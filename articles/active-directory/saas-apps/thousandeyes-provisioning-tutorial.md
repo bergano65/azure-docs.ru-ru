@@ -2,25 +2,20 @@
 title: Учебник. подготовка пользователей для ThousandEyes — Azure AD
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в ThousandEyes.
 services: active-directory
-documentationcenter: ''
 author: ArvindHarinder1
 manager: CelesteDG
-ms.assetid: d4ca2365-6729-48f7-bb7f-c0f5ffe740a3
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: arvinh
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d87cffce636146eac3e557670ffc4fb2fc34ae38
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a009361267a364f04237716f3623921c892e2708
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77062886"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546429"
 ---
 # <a name="tutorial-configure-thousandeyes-for-automatic-user-provisioning"></a>Руководство по настройке ThousandEyes для автоматической подготовки пользователей
 
@@ -78,7 +73,7 @@ ms.locfileid: "77062886"
 
 7. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок "Отправить уведомление по электронной почте при сбое".
 
-8. Нажмите кнопку **Сохранить**.
+8. Нажмите **Сохранить**.
 
 9. В разделе "Сопоставления" выберите **Synchronize Azure Active Directory Users to ThousandEyes** (Синхронизировать пользователей Azure Active Directory с ThousandEyes).
 
@@ -86,7 +81,7 @@ ms.locfileid: "77062886"
 
 11. Чтобы включить службу подготовки Azure AD для ThousandEyes, измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
 
-12. Нажмите кнопку **Сохранить**.
+12. Нажмите **Сохранить**.
 
 После этого начнется начальная синхронизация всех пользователей и (или) групп, назначенных в ThousandEyes в разделе "Пользователи и группы". Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра журналов действий по подготовке, в которых зафиксированы все действия, выполняемые службой подготовки.
 

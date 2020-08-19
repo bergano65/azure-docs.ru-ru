@@ -8,12 +8,12 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: d66ef8f142a72bfdea2dcf3eeb996b18173de04d
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 18ca9244f818fa745725f13d79a23c1a232e01ed
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86502968"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545392"
 ---
 # <a name="key-vault-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Key Vault для Windows
 
@@ -25,7 +25,7 @@ ms.locfileid: "86502968"
 
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012
+- Windows Server 2012
 
 ### <a name="supported-certificate-content-types"></a>Поддерживаемые типы содержимого сертификатов
 
@@ -73,9 +73,9 @@ ms.locfileid: "86502968"
 > 
 > Это связано с тем, что путь `/secrets` возвращает полный сертификат, включая закрытый ключ, а путь `/certificates` — нет. Дополнительные сведения о сертификатах можно найти в статье [Сертификаты Key Vault](../../key-vault/general/about-keys-secrets-certificates.md).
 
-> [!NOTE]
-> Свойство "authenticationSettings" необязательно для сценариев, если у виртуальной машины несколько назначенных удостоверений.
-> Это позволяет использовать задающего удостоверения для проверки подлинности в Key Vault.
+> [!IMPORTANT]
+> Свойство "authenticationSettings" **требуется** только для виртуальных машин с **назначенными пользователем удостоверениями**.
+> В нем указывается удостоверение, используемое для проверки подлинности в Key Vault.
 
 
 ### <a name="property-values"></a>Значения свойств

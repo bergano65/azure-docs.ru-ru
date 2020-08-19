@@ -8,15 +8,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 06/23/2020
+ms.date: 08/17/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 61401fc15f6f1003f6969787854fad65bfb6a5ab
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 87c8b160a0b8791d13976be975090d16e68ea82f
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/18/2020
-ms.locfileid: "88511241"
+ms.locfileid: "88547415"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению
 
@@ -766,6 +766,8 @@ Microsoft Azure предусматривает несколько способо
 #### <a name="moving-a-vm-from-on-premises-to-azure-with-a-non-generalized-disk"></a><a name="4d175f1b-7353-4137-9d2f-817683c26e53"></a>Перемещение виртуальной машины из локальной среды в Azure с помощью специализированного диска
 
 Предположим, вы хотите переместить определенную систему SAP из локальной среды в Azure. Для этого можно передать в Azure виртуальный жесткий диск, который содержит ОС и двоичные файлы SAP и СУБД, а также дополнительные виртуальные жесткие диски с файлами данных и журналов СУБД. В отличие от описанного ниже [сценария 2][planning-guide-5.1.2], вы сохраните на виртуальной машине Azure те же имя узла, идентификатор безопасности SAP и учетные записи пользователей SAP, которые были настроены в локальной среде. В этом случае создание универсального образа не требуется. В разделе [Подготовка виртуальной машины к перемещению из локальной среды в Azure с помощью специализированного диска][planning-guide-5.2.1] этого документа описываются действия по подготовке и передаче в Azure специализированных виртуальных машин или виртуальных жестких дисков. Прочтите раздел [Сценарий 3. Перемещение локальной виртуальной машины с помощью специализированного виртуального жесткого диска Azure с SAP][deployment-guide-3.4] в [руководстве по развертыванию][deployment-guide], где приводятся пошаговые инструкции для развертывания такого образа в Azure.
+
+Другой вариант, который мы не будем обсуждать подробно в этом разделе, использует Azure Site Recovery для репликации серверов приложений SAP NetWeaver и центральных служб SAP NetWeaver в Azure. Не рекомендуется использовать Azure Site Recovery для уровня базы данных и вместо этого использовать механизмы репликации, относящиеся к базам данных, например репликацию системы HANA. Дополнительные сведения см. в разделе [Защита SAP](https://docs.microsoft.com/azure/site-recovery/site-recovery-workload#protect-sap) в статье [об аварийном восстановлении для локальных приложений](https://docs.microsoft.com/azure/site-recovery/site-recovery-workload) .
 
 #### <a name="deploying-a-vm-with-a-customer-specific-image"></a><a name="e18f7839-c0e2-4385-b1e6-4538453a285c"></a>Развертывание виртуальной машины с помощью пользовательского образа
 
