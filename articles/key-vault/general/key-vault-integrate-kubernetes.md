@@ -1,17 +1,17 @@
 ---
 title: Интеграция Azure Key Vault с Kubernetes
 description: В рамках этого учебника вы получите доступ к секретам Azure Key Vault с помощью драйвера интерфейса хранилища контейнера (CSI) хранилища секретов, а затем подключитесь к объектам pod Kubernetes.
-author: taytran0
-ms.author: t-trtr
+author: rkarlin
+ms.author: rkarlin
 ms.service: key-vault
 ms.topic: tutorial
 ms.date: 06/04/2020
-ms.openlocfilehash: e70ee75344a939ea1632df3549d796617c7596af
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 9a13ede1c9dcd23b829d08ed9e3c6fc10248e191
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87902003"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88510051"
 ---
 # <a name="tutorial-configure-and-run-the-azure-key-vault-provider-for-the-secrets-store-csi-driver-on-kubernetes"></a>Руководство по настройке и запуску поставщика Azure Key Vault для драйвера CSI хранилища секретов в Kubernetes
 
@@ -241,7 +241,7 @@ kubectl apply -f secretProviderClass.yaml
 ### <a name="use-a-service-principal"></a>Использование субъекта-службы
 
 Если вы используете субъект-службу, выполните следующую команду, чтобы развернуть Kubernetes объекты pod с помощью SecretProviderClass и зашифрованных учетных данных, настроенных ранее. Шаблоны развертывания
-* [Для Linux.](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/examples/nginx-pod-secrets-store-inline-volume-secretproviderclass.yaml)
+* [Для Linux.](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/examples/nginx-pod-inline-volume-service-principal.yaml)
 * [Для Windows.](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/examples/windows-pod-secrets-store-inline-volume-secret-providerclass.yaml)
 
 ```azurecli

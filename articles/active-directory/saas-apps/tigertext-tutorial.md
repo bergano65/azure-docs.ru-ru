@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с TigerText Secure Messenger | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и TigerText Secure Messenger.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 03f1e128-5bcb-4e49-b6a3-fe22eedc6d5e
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
-ms.openlocfilehash: ea3bda1dd51a7c3a2e5e3f8b669d7138898f1595
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 9dff60767e923bad1322b689acd98e69eb9c2ac6
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67088676"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88517002"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tigertext-secure-messenger"></a>Руководство по интеграции Azure Active Directory с TigerText Secure Messenger
 
@@ -148,7 +144,7 @@ TigerText Secure Messenger поддерживает единый вход, ин�
 
     1. В поле **Имя** введите **BrittaSimon**.
   
-    1. В поле **Имя пользователя** введите **BrittaSimon\@\<домен_вашей_компании>.\<доменная_зона>** . Например **BrittaSimon\@contoso.com**.
+    1. В поле **Имя пользователя** введите **BrittaSimon\@\<yourcompanydomain>.\<extension>** Например **BrittaSimon\@contoso.com**.
 
     1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 

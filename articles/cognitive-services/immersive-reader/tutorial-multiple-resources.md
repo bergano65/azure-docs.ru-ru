@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 01/14/2020
 ms.author: skamal
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 214d6d614fcc54a532766854f2e72ac45dbfa8ad
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 1abd1052c33346d949809d7c35a99ef97bde2c03
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87407206"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88516288"
 ---
 # <a name="tutorial-integrate-multiple-immersive-reader-resources"></a>Руководство. Интеграция нескольких ресурсов иммерсивного средства чтения
 
@@ -25,7 +25,7 @@ ms.locfileid: "87407206"
 > * Создание нескольких ресурсов иммерсивного средства чтения в существующей группе ресурсов
 > * Запуск иммерсивного средства чтения с помощью нескольких ресурсов
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
