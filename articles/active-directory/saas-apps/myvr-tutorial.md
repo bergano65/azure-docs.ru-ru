@@ -2,26 +2,21 @@
 title: Руководство по интеграции единого входа Azure Active Directory с MyVR | Документация Майкрософт
 description: Из этой статьи вы узнаете, как настроить единый вход между Azure Active Directory и MyVR.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: b1b4bbc7-cdac-447c-83a3-bcb869159255
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/31/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f0c699f2a3d043e0e5a9c2fd463de289b016cdd
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: eee277ca689044d9f009f201de4105557fef7138
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75530125"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88552471"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-myvr"></a>Руководство по интеграции единого входа Azure Active Directory с MyVR
 

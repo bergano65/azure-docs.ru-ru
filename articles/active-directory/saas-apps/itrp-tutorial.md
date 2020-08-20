@@ -2,25 +2,21 @@
 title: Руководство по Интеграция Azure Active Directory с ITRP | Документация Майкрософт
 description: Из этого руководства вы узнаете, как настроить единый вход Azure Active Directory в ITRP.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: e09716a3-4200-4853-9414-2390e6c10d98
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: c4d0f753e23e42b1064fec3f56957dfe97c30ca4
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: d7a7c4f7d9a9ba2ef574519a41aae3dd6e28e4fb
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81261199"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88552804"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-itrp"></a>Руководство по Интеграция Azure Active Directory с ITRP
 
@@ -179,7 +175,7 @@ ms.locfileid: "81261199"
 
     1. В поле **Имя** введите **BrittaSimon**.
   
-    1. В поле **Имя пользователя** введите **BrittaSimon @\<ваш_домен>.\<доменная_зона>** . (Например, BrittaSimon@contoso.com).
+    1. В поле **Имя пользователя** введите **BrittaSimon@\<yourcompanydomain>.\<extension>** . (Например, BrittaSimon@contoso.com).
 
     1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 

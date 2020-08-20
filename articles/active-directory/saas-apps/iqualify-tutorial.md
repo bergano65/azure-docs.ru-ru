@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с iQualify LMS | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении iQualify LMS.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 8a3caaff-dd8d-4afd-badf-a0fd60db3d2c
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: a1db4784eb63df14b7e7971d0273512ba657df96
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8bf74994a07d69bbe53ec9a7e18f08b4232298bd
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68944988"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88552957"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-iqualify-lms"></a>Руководство по интеграции Azure Active Directory с iQualify LMS
 

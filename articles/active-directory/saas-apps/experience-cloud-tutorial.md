@@ -2,25 +2,21 @@
 title: Руководство по Интеграция единого входа Azure Active Directory с Experience Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Experience Cloud.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 011e98ba-c452-40e1-983c-936f6a77ae2e
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 02/10/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 21428738873f60d2173df53f5b9f1d108ee5eff4
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: e5285b4944072e329610285f2c771eb05faafd7a
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85798729"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88555232"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-experience-cloud"></a>Руководство по интеграции единого входа Azure Active Directory с Experience Cloud
 

@@ -2,25 +2,21 @@
 title: Руководство по Интеграция Azure Active Directory с Palo Alto Networks (пользовательский интерфейс администратора) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Palo Alto Networks (пользовательский интерфейс администратора).
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: a826eaec-15af-4c85-8855-8a3374d1efb9
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/12/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbfa16223484928dda1004011d2e92295edd8b89
-ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
+ms.openlocfilehash: 8bd41034d6d4cfa444ae4c0711fd46cb2924d009
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85297263"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88554095"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks---admin-ui"></a>Руководство по Интеграция Azure Active Directory с Palo Alto Networks (пользовательский интерфейс администратора)
 

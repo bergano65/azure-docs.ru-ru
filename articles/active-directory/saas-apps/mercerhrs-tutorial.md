@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с Mercer BenefitsCentral (MBC) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Mercer BenefitsCentral (MBC).
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 3788b28c-49aa-4208-9acd-630362008e89
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
-ms.openlocfilehash: 7cc49d41a3ae5777dae87c1730f8119a9e5b58e9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 06d29d428b3d117a08e0b3bf766123bd64be3d78
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73160668"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88554759"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mercer-benefitscentral-mbc"></a>Руководство по интеграции Azure Active Directory с Mercer BenefitsCentral (MBC)
 

@@ -2,26 +2,21 @@
 title: Руководство по Интеграция Azure Active Directory с Perceptyx | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Active Directory в Perceptyx.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 3b542350-0d2a-4213-90a2-b08225a51d86
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 06/14/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4fba95add63a0784712b4c5b0d3989ae7b987ffb
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 837c1c1a3bac064ddc808c7c083fcaa56e60f210
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67112876"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88553892"
 ---
 # <a name="tutorial-integrate-perceptyx-with-azure-active-directory"></a>Руководство по Интеграция Perceptyx с Azure Active Directory
 
