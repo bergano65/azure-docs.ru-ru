@@ -2,13 +2,13 @@
 title: Настройка общего доступа к реестру
 description: Настройте правила IP-адресов, чтобы разрешить доступ к реестру контейнеров Azure из выбранных общедоступных IP-адресов или диапазонов адресов.
 ms.topic: article
-ms.date: 05/19/2020
-ms.openlocfilehash: 967f27c05301ff339765706d0b3088ffcbaed1f2
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.date: 08/17/2020
+ms.openlocfilehash: 0fbca1ec2734bf8275e12249f63ab134837fea12
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86523831"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88660931"
 ---
 # <a name="configure-public-ip-network-rules"></a>Настройка сетевых правил для общедоступных IP-адресов
 
@@ -61,12 +61,12 @@ az acr network-rule add \
 
 При желании вы можете совсем отключить общедоступную конечную точку для реестра. Отключение общедоступной конечной точки переопределяет все конфигурации брандмауэра. Например, вы можете отключить общий доступ к реестру, защищенному в виртуальной сети, с помощью [Приватного канала](container-registry-private-link.md).
 
+> [!NOTE]
+> Если реестр настроен в виртуальной сети с [конечной точкой службы](container-registry-vnet.md), отключение доступа к общедоступной конечной точке реестра также приведет к отключению доступа к реестру в виртуальной сети.
+
 ### <a name="disable-public-access---cli"></a>Отключение общего доступа (интерфейс командной строки)
 
-Чтобы отключить общий доступ с помощью Azure CLI, выполните команду [az acr update][az-acr-update] и задайте для `--public-network-enabled` значение `false`. 
-
-> [!NOTE]
-> Для использования аргумента `public-network-enabled` нужна версия Azure CLI не ниже 2.6.0. 
+Чтобы отключить общий доступ с помощью Azure CLI, воспользуйтесь командой [az acr update][az-acr-update] и задайте для `--public-network-enabled` значение `false`. Для использования аргумента `public-network-enabled` нужна версия Azure CLI не ниже 2.6.0. 
 
 ```azurecli
 az acr update --name myContainerRegistry --public-network-enabled false
@@ -74,7 +74,7 @@ az acr update --name myContainerRegistry --public-network-enabled false
 
 ### <a name="disable-public-access---portal"></a>Отключение общего доступа (портал)
 
-1. На портале перейдите к нужному реестру контейнеров, затем выберите **Параметры > Сеть**.
+1. На портале перейдите к нужному реестру контейнеров, затем выберите **Параметры > Сеть**.
 1. На вкладке **Открытый доступ** выберите для параметра **Разрешение доступа из общедоступных сетей** значение **Отключено**. Затем нажмите кнопку **Save** (Сохранить).
 
 ![Отключение общего доступа][acr-access-disabled]
@@ -102,7 +102,7 @@ az acr update --name myContainerRegistry --public-network-enabled true
 
 ![Общий доступ из всех сетей][acr-access-all-networks]
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 Если задано правило общедоступной сети или запрещен общий доступ к реестру, попытки входа в реестр из неразрешенной общедоступной сети завершатся сбоем. Клиентский доступ через прокси-сервер HTTPS также завершится ошибкой, если не задано правило доступа для прокси-сервера. Вы увидите сообщение об ошибке, аналогичное `Error response from daemon: login attempt failed with status: 403 Forbidden` или `Looks like you don't have access to registry` .
 

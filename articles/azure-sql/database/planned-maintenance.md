@@ -11,12 +11,12 @@ author: aamalvea
 ms.author: aamalvea
 ms.reviewer: carlrab
 ms.date: 01/30/2019
-ms.openlocfilehash: 5bdc3eb8c118c19f90ce1fd92ac5ee156719dacd
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: f0bda1f4b9894b1ea5a68f44a728f715676d500e
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85987225"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661152"
 ---
 # <a name="plan-for-azure-maintenance-events-in-azure-sql-database-and-azure-sql-managed-instance"></a>Планирование событий обслуживания Azure в базе данных SQL Azure и Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "85987225"
 
 Если в базе данных возникают ошибки входа в систему, Проверьте текущее состояние в окне [работоспособность ресурсов](../../service-health/resource-health-overview.md#get-started) в [портал Azure](https://portal.azure.com) . Раздел "Работоспособность ресурсов" содержит причину простоя для каждого события (если она доступна).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [работоспособность ресурсов](resource-health-to-troubleshoot-connectivity.md) для базы данных SQL azure и управляемый экземпляр SQL Azure.
 - Дополнительные сведения о логике повторных попыток см. в разделе [логика повторных попыток для временных ошибок](troubleshoot-common-connectivity-issues.md#retry-logic-for-transient-errors).

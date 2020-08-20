@@ -5,14 +5,14 @@ author: harelbr
 ms.author: harelbr
 services: monitoring
 ms.topic: conceptual
-ms.date: 8/16/2020
+ms.date: 8/20/2020
 ms.subservice: alerts
-ms.openlocfilehash: 877134fb1d4417c04da3bf6a96267b413389ecb2
-ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
+ms.openlocfilehash: 05586f95de03b09b95eb589812935970126b12f2
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2020
-ms.locfileid: "88258456"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661322"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Поддерживаемые ресурсы для оповещений метрик в Azure Monitor
 
@@ -44,7 +44,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.ClassicStorage/storageAccounts/queueServices | Да | Нет | |
 |Microsoft.ClassicStorage/storageAccounts/tableServices | Да | Нет | |
 |Microsoft.CognitiveServices/accounts | Да | Нет | [Cognitive Services](./metrics-supported.md#microsoftcognitiveservicesaccounts) |
-|Microsoft.Compute/virtualMachines | Да | Да | [Виртуальные машины](./metrics-supported.md#microsoftcomputevirtualmachines) |
+|Microsoft.Compute/virtualMachines | Да | Да<sup>1</sup> | [Виртуальные машины](./metrics-supported.md#microsoftcomputevirtualmachines) |
 |Microsoft.Compute/virtualMachineScaleSets; | Да | Нет |[Масштабируемые наборы виртуальных машин](./metrics-supported.md#microsoftcomputevirtualmachinescalesets) |
 |Microsoft.ContainerInstance/containerGroups | Да| Нет | [Группы контейнеров](./metrics-supported.md#microsoftcontainerinstancecontainergroups) |
 |Microsoft.ContainerRegistry/registries | Нет | Нет | [Реестры контейнеров](./metrics-supported.md#microsoftcontainerregistryregistries) |
@@ -112,6 +112,8 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.Web/sites | Да | Нет | [Службы приложений](./metrics-supported.md#microsoftwebsites-excluding-functions) и [Функции](./metrics-supported.md#microsoftwebsites-functions)|
 |Microsoft.Web/sites/slots | Да | Нет | [Слоты Службы приложений](./metrics-supported.md#microsoftwebsitesslots)|
 
+<sup>1</sup> поддерживается только для метрик платформы (не пользовательских метрик)
+
 ## <a name="payload-schema"></a>Схема полезных данных
 
 > [!NOTE]
@@ -171,7 +173,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Получите дополнительные сведения об [интерфейсе оповещений](./alerts-overview.md).
 * Ознакомьтесь со сведениями об [оповещениях журналов в Azure](./alerts-unified-log.md).

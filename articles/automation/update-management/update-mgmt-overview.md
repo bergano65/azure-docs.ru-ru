@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 07/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: ea568acdf356064dc603d30ffba7df3c02bde621
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 0fd416c844ac93ffb77eded98448b2e93e9acd30
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87450464"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88660914"
 ---
 # <a name="update-management-overview"></a>Общие сведения о службе "Управление обновлениями"
 
@@ -180,7 +180,7 @@ ms.locfileid: "87450464"
 
 * Управление обновлениями выполняет сканирование на каждом компьютере с Linux каждый час.
 
-Средний показатель использования данных журналами Azure Monitor для компьютера с Управлением обновлениями — примерно 25 МБ в месяц. Это приблизительное значение, которое может отличаться в зависимости от среды. Рекомендуется выполнять мониторинг среды, чтобы отслеживать точное использование. Дополнительные сведения об анализе использования данных см. в статье [Управление использованием и затратами](../../azure-monitor/platform/manage-cost-storage.md).
+Средний показатель использования данных журналами Azure Monitor для компьютера с Управлением обновлениями — примерно 25 МБ в месяц. Это приблизительное значение, которое может отличаться в зависимости от среды. Рекомендуется выполнять мониторинг среды, чтобы отслеживать точное использование. Дополнительные сведения об анализе Azure Monitor использовании данных журнала см. в разделе [Управление использованием и стоимостью](../../azure-monitor/platform/manage-cost-storage.md).
 
 ## <a name="network-planning"></a><a name="ports"></a>Планирование сети
 

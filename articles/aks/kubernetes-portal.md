@@ -6,12 +6,12 @@ author: laurenhughes
 ms.topic: article
 ms.date: 08/11/2020
 ms.author: lahugh
-ms.openlocfilehash: 109192efa19605af003dcfb30592c865ce7495b5
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.openlocfilehash: 4a0acf284475f3c9119f3b9d012debad656b1faa
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88136989"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661356"
 ---
 # <a name="access-kubernetes-resources-from-the-azure-portal-preview"></a>Доступ к ресурсам Kubernetes из портал Azure (Предварительная версия)
 
@@ -19,9 +19,12 @@ ms.locfileid: "88136989"
 
 Представление ресурсов Kubernetes из портал Azure заменяет [надстройку панели мониторинга AKS][kubernetes-dashboard], которая задается для устаревания.
 
+>[!NOTE]
+>В настоящее время капабилти не поддерживается в [частных кластерах службы Kubernetes Azure](https://docs.microsoft.com/azure/aks/private-clusters).
+
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для просмотра ресурсов Kubernetes в портал Azure требуется кластер AKS. Поддерживается любой кластер, но при использовании интеграции Azure Active Directory (Azure AD) кластер должен использовать [интеграцию Azure AD, управляемую AKS][aks-managed-aad]. Если кластер использует устаревшую версию Azure AD, вы можете обновить кластер на портале или с помощью [Azure CLI][cli-aad-upgrade].
 
@@ -64,7 +67,7 @@ ms.locfileid: "88136989"
 >[!WARNING]
 > Выполнять прямые изменения рабочей среды через пользовательский интерфейс или CLI не рекомендуется, вы должны использовать [рекомендации по непрерывной интеграции (CI) и непрерывному развертыванию (CD)](kubernetes-action.md). Возможности управления Kubernetes портала Azure и редактор YAML созданы для обучения и создания новых развертываний в параметрах разработки и тестирования.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 В этом разделе рассматриваются распространенные проблемы и действия по устранению неполадок.
 
@@ -78,7 +81,7 @@ ms.locfileid: "88136989"
 
 :::image type="content" source="media/kubernetes-portal/enable-resource-view.png" alt-text="Портал Azure сообщение, чтобы включить представление ресурсов Kubernetes." lightbox="media/kubernetes-portal/enable-resource-view.png":::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье показано, как получить доступ к ресурсам Kubernetes для кластера AKS. Дополнительные сведения о ресурсах кластера и файлах YAML, доступ к которым осуществляется с помощью средства просмотра ресурсов Kubernetes, см. в разделе [развертывания и манифесты YAML][deployments] .
 

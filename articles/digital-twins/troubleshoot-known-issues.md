@@ -6,12 +6,12 @@ ms.author: baanders
 ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
-ms.openlocfilehash: 9130a3248e881c9d4e2c9bfe9017f43198d50f51
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 0c008061d2d4fafa96eda934d5026c92839a0bdb
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88590172"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661492"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Известные проблемы в службе Digital двойников
 
@@ -69,9 +69,9 @@ ms.locfileid: "88590172"
 
 ### <a name="possible-causes"></a>Возможные причины
 
-Это несовместимость между Azure Digital двойников и последней версией библиотеки Azure. Identity, версия **1.2.0**. 
+Это связано с открытой проблемой с последней версией библиотеки Azure. Identity (версия **1.2.0**): [*не удалось выполнить проверку подлинности при использовании интерактивебровсеркредентиал*](https://github.com/Azure/azure-sdk-for-net/issues/13940).
 
-Эта проблема возникает при использовании версии **1.2.0** в приложении или при добавлении библиотеки в проект без указания версии (так же, как по умолчанию используется последняя версия).
+Эта проблема возникает при использовании версии **1.2.0** в приложении Digital двойников или при добавлении библиотеки в проект без указания версии (так же, как по умолчанию используется последняя версия).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

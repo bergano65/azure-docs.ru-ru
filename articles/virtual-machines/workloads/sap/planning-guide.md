@@ -11,12 +11,12 @@ ms.workload: infrastructure-services
 ms.date: 08/17/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: de3b0ed309863a09003b1ff7709481d763163e07
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: f2bf360d9b09be4db84d0ff00b1a777fe8b188ea
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/20/2020
-ms.locfileid: "88652208"
+ms.locfileid: "88661339"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению
 
@@ -1803,7 +1803,7 @@ SAProuter позволяет осуществлять взаимодействи
 * События запланированного обслуживания — это периодические обновления, осуществляемые корпорацией Майкрософт на базовой платформе Azure для улучшения общей надежности, производительности и безопасности инфраструктуры платформы, на которой работают ваши виртуальные машины.
 * События незапланированного обслуживания происходят в тех случаях, когда в оборудовании или физической инфраструктуре, на основе которых работает виртуальная машина, происходит какая-либо ошибка. Это могут быть сбои локальной сети или локальных жестких дисков, а также другие ошибки на уровне стойки. При выявлении такой ошибки платформа Azure автоматически выполнит перенос вашей виртуальной машины с неработоспособного физического сервера, где она размещена, на исправный. Это происходит редко, но также может быть причиной перезагрузки вашей виртуальной машины.
 
-Дополнительные сведения можно найти в этой документации: <https://azure.microsoft.com/documentation/articles/virtual-machines-manage-availability>.
+Дополнительные сведения см. [в статье доступность виртуальных машин Windows в Azure](../../windows/manage-availability.md) и [доступность виртуальных машин Linux в Azure](../../linux/manage-availability.md).
 
 #### <a name="azure-storage-redundancy"></a>Избыточность хранилища Azure
 
@@ -1811,7 +1811,7 @@ SAProuter позволяет осуществлять взаимодействи
 
 Так как в хранилище Azure по умолчанию хранятся три образа данных, использовать RAID5 или RAID1 на нескольких дисках Azure не требуется.
 
-Дополнительные сведения можно найти в этой статье: <https://azure.microsoft.com/documentation/articles/storage-redundancy/>.
+Дополнительные сведения см. в статье [избыточность службы хранилища Azure](../../../storage/common/storage-redundancy.md).
 
 #### <a name="utilizing-azure-infrastructure-vm-restart-to-achieve-higher-availability-of-sap-applications"></a>Использование перезапуска виртуальной машины в инфраструктуре Azure для повышения доступности приложений SAP
 

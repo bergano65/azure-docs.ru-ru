@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 08/19/2020
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 2de2680ccd0ecf385598080747e80eed5ead3bc8
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 6316bcc91bb381facb4f77b2d8dbd8b22f9ed387
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/20/2020
-ms.locfileid: "88652871"
+ms.locfileid: "88660101"
 ---
 # <a name="known-issues-with-h-series-and-n-series-vms"></a>Известные проблемы с виртуальными машинами серий H и N
 
@@ -35,10 +35,6 @@ ms.locfileid: "88652871"
 ## <a name="qp0-access-restriction"></a>Ограничение доступа qp0
 
 Чтобы предотвратить доступ к оборудованию низкого уровня, что может привести к уязвимостям безопасности, пара очередей 0 недоступна для гостевых виртуальных машин. Это должно влиять только на действия, обычно связанные с администрированием сетевого адаптера ConnectX-5, и на выполнение некоторых диагностических проверок InfiniBand, таких как ибдиагнет, но не сами приложения конечных пользователей.
-
-## <a name="ud-transport"></a>Транспорт обновления
-
-При запуске серии ХБ-and HC не поддерживают динамически подключенный транспорт (ДКТ). Поддержка ДКТ будет реализована с течением времени. Поддерживаются транспорты с надежным подключением (RC) и ненадежными датаграммами (обновления).
 
 ## <a name="gss-proxy"></a>Прокси-сервер GSS
 

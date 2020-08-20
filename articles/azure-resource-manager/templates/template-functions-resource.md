@@ -3,12 +3,12 @@ title: Функции шаблонов — ресурсы
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения значений ресурсов.
 ms.topic: conceptual
 ms.date: 06/18/2020
-ms.openlocfilehash: 89241558164505573e098bdf580af6542c6095c5
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 7f485d258074959c4a0a17449c65c38fa9648502
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372388"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661407"
 ---
 # <a name="resource-functions-for-arm-templates"></a>Функции ресурсов для шаблонов ARM
 
@@ -166,8 +166,8 @@ Resource Manager предоставляет следующие функции д
 | Microsoft.DevTestLab/labs/schedules | [ListApplicable](/rest/api/dtl/schedules/listapplicable) |
 | Microsoft.DevTestLab/labs/users/serviceFabrics | [ListApplicableSchedules](/rest/api/dtl/servicefabrics/listapplicableschedules) |
 | Microsoft.DevTestLab/labs/virtualMachines | [ListApplicableSchedules](/rest/api/dtl/virtualmachines/listapplicableschedules) |
-| Microsoft.DocumentDB/databaseAccounts | [listConnectionStrings](/rest/api/cosmos-db-resource-provider/databaseaccounts/listconnectionstrings) |
-| Microsoft.DocumentDB/databaseAccounts | [listKeys](/rest/api/cosmos-db-resource-provider/databaseaccounts/listkeys) |
+| Microsoft.DocumentDB/databaseAccounts | [listConnectionStrings](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/databaseaccounts/listconnectionstrings) |
+| Microsoft.DocumentDB/databaseAccounts | [listKeys](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/databaseaccounts/listkeys) |
 | Microsoft.DomainRegistration | [listDomainRecommendations](/rest/api/appservice/domains/listrecommendations) |
 | Microsoft.DomainRegistration/topLevelDomains | [listAgreements](/rest/api/appservice/topleveldomains/listagreements) |
 | Microsoft.EventGrid/domains | [listKeys](/rest/api/eventgrid/version2020-06-01/domains/listsharedaccesskeys) |
@@ -458,7 +458,7 @@ Resource Manager предоставляет следующие функции д
 
 Нельзя использовать функцию reference для задания значения свойства `count` в цикле копирования. Можно использовать для задания других свойств в цикле. Функция reference заблокирована для свойства count, так как это свойство должно быть определено до разрешения функции reference.
 
-Чтобы использовать функцию Reference или любую функцию List * в разделе Outputs вложенного шаблона, необходимо задать для параметра значение, ```expressionEvaluationOptions``` чтобы использовать [внутреннюю оценку области](linked-templates.md#expression-evaluation-scope-in-nested-templates) , или использовать ссылку вместо вложенного шаблона.
+Чтобы использовать функцию Reference или любую функцию List * в разделе Outputs вложенного шаблона, необходимо задать для параметра значение,  ```expressionEvaluationOptions``` чтобы использовать [внутреннюю оценку области](linked-templates.md#expression-evaluation-scope-in-nested-templates) , или использовать ссылку вместо вложенного шаблона.
 
 При использовании функции **reference** в ресурсе, который развернут условно, функция вычисляется, даже если ресурс не развернут.  Если функция **reference** ссылается на несуществующий ресурс, возникает ошибка. Используйте функцию **if**, чтобы убедиться, что функция вычисляется только при развернутом ресурсе. Пример шаблона, который использует функции if и reference с условно развернутым ресурсом, см. в описании [функции if](template-functions-logical.md#if).
 
@@ -728,7 +728,7 @@ Resource Manager предоставляет следующие функции д
 | имя_группы_ресурсов |Нет |строка |Значение по умолчанию — текущая группа ресурсов. Укажите это значение, если нужно получить ресурс из другой группы ресурсов. Это значение предоставляется только при развертывании в области действия группы ресурсов. |
 | тип_ресурса |Да |строка |Тип ресурса, включая пространство имен поставщика ресурсов. |
 | имя_ресурса1 |Да |строка |Имя ресурса. |
-| имя_ресурса2 |нет |строка |Следующий сегмент имени ресурса, если он необходим. |
+| имя_ресурса2 |Нет |строка |Следующий сегмент имени ресурса, если он необходим. |
 
 Продолжайте добавлять имена ресурсов в качестве параметров, если тип ресурса включает больше сегментов.
 
@@ -918,12 +918,12 @@ Resource Manager предоставляет следующие функции д
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | Описание |
+| Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | subscriptionId |Нет |строка (в формате GUID) |Значение по умолчанию — текущая подписка. Укажите это значение, если нужно получить ресурс из другой подписки. |
 | тип_ресурса |Да |строка |Тип ресурса, включая пространство имен поставщика ресурсов. |
 | имя_ресурса1 |Да |строка |Имя ресурса. |
-| имя_ресурса2 |нет |строка |Следующий сегмент имени ресурса, если он необходим. |
+| имя_ресурса2 |Нет |строка |Следующий сегмент имени ресурса, если он необходим. |
 
 Продолжайте добавлять имена ресурсов в качестве параметров, если тип ресурса включает больше сегментов.
 
@@ -1000,11 +1000,11 @@ Resource Manager предоставляет следующие функции д
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | Описание |
+| Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | тип_ресурса |Да |строка |Тип ресурса, включая пространство имен поставщика ресурсов. |
 | имя_ресурса1 |Да |строка |Имя ресурса. |
-| имя_ресурса2 |нет |строка |Следующий сегмент имени ресурса, если он необходим. |
+| имя_ресурса2 |Нет |строка |Следующий сегмент имени ресурса, если он необходим. |
 
 Продолжайте добавлять имена ресурсов в качестве параметров, если тип ресурса включает больше сегментов.
 

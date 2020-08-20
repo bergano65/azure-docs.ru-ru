@@ -2,17 +2,17 @@
 title: Роли и разрешения Azure
 description: Используйте управление доступом на основе ролей Azure (Azure RBAC) и управление удостоверениями и доступом (IAM), чтобы обеспечить детальные разрешения для ресурсов в реестре контейнеров Azure.
 ms.topic: article
-ms.date: 12/02/2019
-ms.openlocfilehash: 23a9c08162c03d4b34ed289d650fddcd7413ed08
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.date: 08/17/2020
+ms.openlocfilehash: b8562d3e33cd49082d4ba4d8567d5f0c816070b0
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87920081"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661390"
 ---
 # <a name="azure-container-registry-roles-and-permissions"></a>Роли и разрешения реестра контейнеров Azure
 
-Служба реестра контейнеров Azure поддерживает набор [встроенных ролей Azure](../role-based-access-control/built-in-roles.md) , которые предоставляют различные уровни разрешений для реестра контейнеров Azure. Используйте [Управление доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/index.yml) , чтобы назначить определенные разрешения пользователям, субъектам-службам или другим удостоверениям, которые должны взаимодействовать с реестром. 
+Служба реестра контейнеров Azure поддерживает набор [встроенных ролей Azure](../role-based-access-control/built-in-roles.md) , которые предоставляют различные уровни разрешений для реестра контейнеров Azure. Используйте [Управление доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/index.yml) , чтобы назначить определенные разрешения пользователям, субъектам-службам или другим удостоверениям, которые должны взаимодействовать с реестром. Можно также определить [пользовательские роли](#custom-roles) с детализированными разрешениями для различных операций в реестре.
 
 | Роль или разрешение       | [Доступ к Resource Manager](#access-resource-manager) | [Создание и удаление реестра](#create-and-delete-registry) | [Отправка образа](#push-image) | [Получение образа](#pull-image) | [Удаление данных образа](#delete-image-data) | [Изменение политик](#change-policies) |   [Подписывание образов](#sign-images)  |
 | ---------| --------- | --------- | --------- | --------- | --------- | --------- | --------- |
@@ -70,7 +70,7 @@ ms.locfileid: "87920081"
 
 ## <a name="custom-roles"></a>Пользовательские роли
 
-Как и в случае с другими ресурсами Azure, вы можете создавать собственные [пользовательские роли](../role-based-access-control/custom-roles.md) с детализированными разрешениями для реестра контейнеров Azure. Затем назначьте пользовательские роли пользователям, субъектам-службам или другим удостоверениям, которые должны взаимодействовать с реестром. 
+Как и в случае с другими ресурсами Azure, вы можете создавать [пользовательские роли](../role-based-access-control/custom-roles.md) с детализированными разрешениями для реестра контейнеров Azure. Затем назначьте пользовательские роли пользователям, субъектам-службам или другим удостоверениям, которые должны взаимодействовать с реестром. 
 
 Чтобы определить, какие разрешения следует применить к пользовательской роли, ознакомьтесь со списком [действий](../role-based-access-control/resource-provider-operations.md#microsoftcontainerregistry)Microsoft. ContainerRegistry, просмотрите список разрешенных действий [встроенных ролей записи контроля](../role-based-access-control/built-in-roles.md)доступа или выполните следующую команду:
 
@@ -82,6 +82,36 @@ az provider operation show --namespace Microsoft.ContainerRegistry
 
 > [!IMPORTANT]
 > В пользовательской роли реестр контейнеров Azure в настоящее время не поддерживает подстановочные знаки, такие как `Microsoft.ContainerRegistry/*` или `Microsoft.ContainerRegistry/registries/*` , которые предоставляют доступ ко всем соответствующим действиям. Укажите в роли все необходимые действия по отдельности.
+
+### <a name="example-custom-role-to-import-images"></a>Пример. настраиваемая роль для импорта изображений
+
+Например, следующий код JSON определяет минимальные действия для пользовательской роли, позволяющей [импортировать изображения](container-registry-import-images.md) в реестр.
+
+```json
+{
+   "assignableScopes": [
+     "/subscriptions/<optional, but you can limit the visibility to one or more subscriptions>"
+   ],
+   "description": "Can import images to registry",
+   "Name": "AcrImport",
+   "permissions": [
+     {
+       "actions": [
+         "Microsoft.ContainerRegistry/registries/push/write",
+         "Microsoft.ContainerRegistry/registries/pull/read",
+         "Microsoft.ContainerRegistry/registries/read",
+         "Microsoft.ContainerRegistry/registries/importImage/action"
+       ],
+       "dataActions": [],
+       "notActions": [],
+       "notDataActions": []
+     }
+   ],
+   "roleType": "CustomRole"
+ }
+```
+
+Чтобы создать или обновить настраиваемую роль с помощью описания JSON, используйте [Azure CLI](../role-based-access-control/custom-roles-cli.md), [Azure Resource Manager шаблон](../role-based-access-control/custom-roles-template.md), [Azure PowerShell](../role-based-access-control/custom-roles-powershell.md)или другие инструменты Azure. Добавление или удаление назначений ролей для пользовательской роли аналогично управлению назначениями ролей для встроенных ролей Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

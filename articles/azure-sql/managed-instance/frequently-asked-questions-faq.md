@@ -1,5 +1,5 @@
 ---
-title: Вопросы и ответы
+title: Часто задаваемые вопросы
 titleSuffix: Azure SQL Managed Instance
 description: SQL Azure Управляемый экземпляр часто задаваемые вопросы
 services: sql-database
@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab
 ms.date: 03/17/2020
-ms.openlocfilehash: 5f42079d271a933cb9a722c7e33e6f646f7c4d1b
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: fe779ebf8bb041fb90b8eb38a9469a783127ffd3
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88210499"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661424"
 ---
 # <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>SQL Azure Управляемый экземпляр часто задаваемые вопросы
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -223,12 +223,15 @@ ms.locfileid: "88210499"
 Нет, хранилище резервных копий не вычитается из пространства хранилища управляемого экземпляра. Хранилище резервных копий не зависит от места хранения экземпляров и не ограничивается размером. Хранилище резервных копий ограничено периодом времени, в течение которого будет храниться резервная копия баз данных экземпляра, настраиваемая до 35 дней. Дополнительные сведения см. в разделе [Автоматическое резервное копирование](../database/automated-backups-overview.md).
 
 **Как увидеть, когда на управляемом экземпляре выполняются автоматические резервные копии?**
+
 Сведения о том, как выполнять автоматическое резервное копирование на Управляемый экземпляр, см. в разделе [как отвести автоматическое резервное копирование для управляемый экземпляр SQL Azure](https://techcommunity.microsoft.com/t5/azure-database-support-blog/lesson-learned-128-how-to-track-the-automated-backup-for-an/ba-p/1442355).
 
 **Поддерживается ли резервное копирование по запросу?**
+
 Да, можно создать полную резервную копию только для копирования в хранилище BLOB-объектов Azure, но это будет restorable только в Управляемый экземпляр. Дополнительные сведения см. в разделе [резервное копирование только для копирования](https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server?view=sql-server-ver15). Однако резервное копирование только для копирования невозможно, если база данных шифруется с помощью TDE, управляемых службой, так как сертификат, используемый для шифрования, недоступен. В таком случае используйте функцию восстановления до точки во времени, чтобы переместить базу данных в другой Управляемый экземпляр SQL, или переключитесь на ключ, управляемый клиентом.
 
 **Является ли собственное восстановление (из BAK-файлов) Управляемый экземпляр поддерживается?**
+
 Да, оно поддерживается и доступно для SQL Server 2005 и более поздних версий.  Чтобы использовать собственное восстановление, передайте файл BAK в хранилище BLOB-объектов Azure и выполните команды T-SQL. Дополнительные сведения см. [в разделе Native Restore from URL](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-migrate#native-restore-from-url).
 
 ## <a name="business-continuity"></a>Непрерывность бизнес-процессов
@@ -503,6 +506,14 @@ ALTER LOGIN <login_name> WITH CHECK_EXPIRATION = OFF;
 ```
 
 (замените "Test" на требуемое имя для входа и настройте параметры политики и срока действия).
+
+
+## <a name="service-updates"></a>Обновления службы
+
+**Что такое событие планового обслуживания для Управляемый экземпляр SQL?**
+
+См. статью [планирование событий обслуживания Azure в управляемый экземпляр SQL](https://docs.microsoft.com/azure/azure-sql/database/planned-maintenance). 
+
 
 ## <a name="azure-feedback-and-support"></a>Отзывы и поддержка Azure
 

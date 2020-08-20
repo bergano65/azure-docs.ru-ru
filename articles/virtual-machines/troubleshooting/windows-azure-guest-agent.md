@@ -11,12 +11,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/07/2020
 ms.author: genli
-ms.openlocfilehash: c3295365859ad3291a95b616cccc6fa265237a01
-ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
+ms.openlocfilehash: 38bf652ccefe98c2bd0fb28e8018d41df21651dc
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88264046"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88659472"
 ---
 # <a name="troubleshooting-windows-azure-guest-agent"></a>Устранение неполадок гостевого агента Windows Azure
 
@@ -102,7 +102,7 @@ ms.locfileid: "88264046"
 
 1. Переместите все папки с именами Packages или нулевое в СТАРую папку.
 
-1. Скачайте и установите последнюю версию пакета установки агента [отсюда](https://go.microsoft.comfwlink/?linkid=394789&clcid=0x409). Чтобы выполнить установку, необходимо иметь права администратора.
+1. Скачайте и установите последнюю версию пакета установки агента [отсюда](https://go.microsoft.com/fwlink/?linkid=394789&clcid=0x409). Чтобы выполнить установку, необходимо иметь права администратора.
 
 1. Установите Гостевой агент с помощью следующей команды:
 
@@ -234,6 +234,6 @@ at Microsoft.WindowsAzure.GuestAgent.AgentCore.AgentService.<>c__DisplayClass2.<
 
 Адаптер замыкания на себя Npcap, вероятно, устанавливается с помощью WireShark. Попробуйте отключить его, а затем проверьте, устранена ли проблема.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для дальнейшей диагностики проблемы "Гостевой агент Windows Azure не работает" [обратитесь в службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).

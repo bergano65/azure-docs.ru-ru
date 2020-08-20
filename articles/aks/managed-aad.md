@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 07/27/2020
 ms.author: thomasge
-ms.openlocfilehash: afc20052680e7f3e5b7d3a6b7320b7ca3b10dbd5
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: fd13fbc3b1ada0a9e974742d36bd231e3caf6ef6
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87799863"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661067"
 ---
 # <a name="aks-managed-azure-active-directory-integration"></a>Интеграция Azure Active Directory с управляемым AKS
 
@@ -20,7 +20,7 @@ ms.locfileid: "87799863"
 
 Администраторы кластера могут настроить Kubernetes управления доступом на основе ролей (RBAC) на основе удостоверения пользователя или членства в группе каталогов. Кластеры AKS проходят аутентификацию Azure AD с помощью OpenID Connect. OpenID Connect представляет собой уровень идентификации на основе протокола OAuth 2.0. Дополнительные сведения о OpenID Connect Connect см. в [документации по Open ID Connect][open-id-connect].
 
-Дополнительные сведения о потоке интеграции AAD см. в [документации по основным понятиям интеграции Azure Active Directory](concepts-identity.md#azure-active-directory-integration).
+Дополнительные сведения о потоке интеграции Azure AD см. в [документации по основным понятиям интеграции Azure Active Directory](concepts-identity.md#azure-active-directory-integration).
 
 ## <a name="region-availability"></a>Доступность по регионам
 
@@ -32,10 +32,10 @@ ms.locfileid: "87799863"
 ## <a name="limitations"></a>Ограничения 
 
 * Невозможно отключить управляемую AKS интеграцию Azure AD
-* кластеры, не поддерживающие RBAC, не поддерживаются для интеграции с AKS, управляемой AAD
-* Изменение клиента Azure AD, связанного с интеграцией AAD, управляемой AKS, не поддерживается
+* кластеры, не поддерживающие RBAC, не поддерживаются для интеграции Azure AD, управляемой AKS.
+* Изменение клиента Azure AD, связанного с интеграцией Azure AD, управляемой AKS, не поддерживается
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Azure CLI версии 2.9.0 или более поздней.
 * Kubectl с минимальной версией [1,18](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.18.md#v1180)
@@ -53,7 +53,7 @@ kubectl version --client
 Используйте [эти инструкции](https://kubernetes.io/docs/tasks/tools/install-kubectl/) для других операционных систем.
 
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Для кластера требуется группа Azure AD. Эта группа необходима в качестве группы администраторов кластера для предоставления разрешений администратора кластера. Вы можете использовать существующую группу Azure AD или создать новую. Запишите идентификатор объекта вашей группы Azure AD.
 
@@ -139,6 +139,31 @@ aks-nodepool1-15306047-2   Ready    agent   102m   v1.15.10
 az aks get-credentials --resource-group myResourceGroup --name myManagedCluster --admin
 ```
 
+## <a name="enable-aks-managed-azure-ad-integration-on-your-existing-cluster"></a>Включение управляемой AKS интеграции Azure AD в имеющемся кластере
+
+Вы можете включить управляемую AKS интеграцию Azure AD в существующем кластере с поддержкой RBAC. Убедитесь, что Группа администраторов настроена для сохранения доступа к кластеру.
+
+```azurecli-interactive
+az aks update -g MyResourceGroup -n MyManagedCluster --enable-aad --aad-admin-group-object-ids <id-1> [--aad-tenant-id <id>]
+```
+
+Успешная активация кластера Azure AD, управляемого AKS, содержит следующий раздел в тексте ответа.
+
+```output
+"AADProfile": {
+    "adminGroupObjectIds": [
+      "5d24****-****-****-****-****afa27aed"
+    ],
+    "clientAppId": null,
+    "managed": true,
+    "serverAppId": null,
+    "serverAppSecret": null,
+    "tenantId": "72f9****-****-****-****-****d011db47"
+  }
+```
+
+Скачайте учетные данные пользователя еще раз, чтобы получить доступ к кластеру, выполнив действия, описанные [здесь][access-cluster].
+
 ## <a name="upgrading-to-aks-managed-azure-ad-integration"></a>Обновление до управляемой AKS интеграции Azure AD
 
 Если кластер использует устаревшую интеграцию Azure AD, вы можете выполнить обновление до управляемой AKS интеграции Azure AD.
@@ -168,13 +193,13 @@ az aks update -g myResourceGroup -n myManagedCluster --enable-aad --aad-admin-gr
 
 Существуют некоторые неинтерактивные сценарии, например конвейеры непрерывной интеграции, которые в настоящее время недоступны в kubectl. Вы можете использовать [`kubelogin`](https://github.com/Azure/kubelogin) для доступа к кластеру с неинтерактивным входом субъекта-службы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об [интеграции с Azure RBAC для авторизации Kubernetes][azure-rbac-integration]
 * Сведения об [интеграции Azure AD с KUBERNETES RBAC][azure-ad-rbac].
 * Используйте [кубелогин](https://github.com/Azure/kubelogin) для доступа к функциям для проверки подлинности Azure, которые недоступны в kubectl.
 * Узнайте больше о [концепциях идентификации AKS и Kubernetes][aks-concepts-identity].
-* Используйте [шаблоны Azure Resource Manager (ARM)][aks-arm-template] для создания кластеров с поддержкой Azure AD, управляемых AKS.
+* Используйте [шаблоны Azure Resource Manager (ARM) ][aks-arm-template] для создания кластеров с поддержкой Azure AD, управляемых AKS.
 
 <!-- LINKS - external -->
 [kubernetes-webhook]:https://kubernetes.io/docs/reference/access-authn-authz/authentication/#webhook-token-authentication

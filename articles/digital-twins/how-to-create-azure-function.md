@@ -7,12 +7,12 @@ ms.author: cschorm
 ms.date: 3/17/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: d9f9957209c6df91185059085f57636a16a3961c
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: ab013a310997f43d1019d849e87c0cf1b0d151ee
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88589407"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661101"
 ---
 # <a name="connect-azure-functions-apps-for-processing-data"></a>Подключение приложений функций Azure для обработки данных
 
@@ -95,8 +95,8 @@ namespace FunctionSample
 Добавьте следующие операторы using в функцию Azure.
 
 ```csharp
-using Azure.Identity;
 using Azure.DigitalTwins.Core;
+using Azure.Identity;
 using System.Net.Http;
 using Azure.Core.Pipeline;
 ```
@@ -157,7 +157,7 @@ namespace FunctionSample
 az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(function-app)-name>
 ```
 
-Используйте это значение *principalId* в следующей команде, чтобы назначить удостоверению приложения-функции роль *владельца* для своего экземпляра Azure Digital Twins:
+Используйте значение *principalId* в следующей команде, чтобы назначить удостоверение приложения-функции для роли *владельца Azure Digital двойников (Предварительная версия)* для вашего экземпляра Digital двойников Azure. Это предоставит приложению функции в экземпляре разрешение на выполнение действий плоскости данных.
 
 ```azurecli
 az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Owner (Preview)"

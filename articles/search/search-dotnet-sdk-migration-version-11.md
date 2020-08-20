@@ -8,13 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 08/05/2020
-ms.openlocfilehash: 390376216700b760e96c2348b1ad61bb4561aad2
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.date: 08/20/2020
+ms.openlocfilehash: 83208ec792f40661861dd558ac2c1a1521c1d7fb
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88211517"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88660975"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-11"></a>Обновление до Azure Когнитивный поиск .NET SDK версии 11
 
@@ -147,9 +147,18 @@ ms.locfileid: "88211517"
    using Azure.Search.Documents.Models;
    ```
 
-1. Замените [сеарчкредентиалс](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchcredentials) на [азурекэйкредентиал](https://docs.microsoft.com/dotnet/api/azure.azurekeycredential).
+1. Пересмотр кода проверки подлинности клиента. В предыдущих версиях вы использовали свойства клиентского объекта для задания ключа API (например, свойства [SearchServiceClient. Credentials](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient.credentials) ). В текущей версии используйте класс [азурекэйкредентиал](https://docs.microsoft.com/dotnet/api/azure.azurekeycredential) для передачи ключа в качестве учетных данных, чтобы при необходимости можно было обновить ключ API, не создавая новые клиентские объекты.
 
-1. Обновление клиентских ссылок для объектов, связанных с индексатором. Если используются индексаторы, источники данных или навыков, измените ссылки клиента на [сеарчиндексерклиент](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.searchindexerclient). Этот клиент впервые помещается в версии 11 и не имеет предшествующей задачи.
+   Свойства клиента были упрощены `Endpoint` , `ServiceName` и `IndexName` (где это уместно). В следующем примере используется класс [URI](https://docs.microsoft.com/dotnet/api/system.uri) системы для предоставления конечной точки и класса [среды](https://docs.microsoft.com//dotnet/api/system.environment) для считывания значения ключа:
+
+   ```csharp
+   Uri endpoint = new Uri(Environment.GetEnvironmentVariable("SEARCH_ENDPOINT"));
+   AzureKeyCredential credential = new AzureKeyCredential(
+      Environment.GetEnvironmentVariable("SEARCH_API_KEY"));
+   SearchIndexClient indexClient = new SearchIndexClient(endpoint, credential);
+   ```
+
+1. Добавление новых клиентских ссылок для объектов, связанных с индексатором. Если используются индексаторы, источники данных или навыков, измените ссылки клиента на [сеарчиндексерклиент](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.searchindexerclient). Этот клиент впервые помещается в версии 11 и не имеет предшествующей задачи.
 
 1. Обновление клиентских ссылок для запросов и импорта данных. Экземпляры [SearchIndexClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchindexclient) должны быть изменены на [сеарчклиент](https://docs.microsoft.com/dotnet/api/azure.search.documents.searchclient). Чтобы избежать путаницы с именами, убедитесь, что все экземпляры перехватываются перед переходом к следующему шагу.
 
@@ -173,7 +182,7 @@ ms.locfileid: "88211517"
 
 + [Упорядоченные результаты](search-query-odata-orderby.md) для значений NULL были изменены в этой версии, и значения NULL появлялись первыми, если сортировка имеет значение `asc` и последний `desc` . Если вы написали код, который обрабатывает, как сортируются значения NULL, следует проверить и, возможно, удалить этот код, если он больше не нужен.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 + [Azure.Search.Docпакет ументс](https://www.nuget.org/packages/Azure.Search.Documents/)
 + [Примеры на GitHub](https://github.com/azure/azure-sdk-for-net/tree/Azure.Search.Documents_11.0.0/sdk/search/Azure.Search.Documents/samples)
