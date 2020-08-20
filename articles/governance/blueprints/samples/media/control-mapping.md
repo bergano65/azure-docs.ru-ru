@@ -1,14 +1,14 @@
 ---
 title: Элементы управления примера схемы Media
 description: Сопоставление элементов управления на примере схемы Media. Каждый элемент управления сопоставляется с одной или несколькими политиками Azure, которые помогают выполнять оценку.
-ms.date: 02/24/2020
+ms.date: 08/13/2020
 ms.topic: sample
-ms.openlocfilehash: bdc4ef65c6d61a9d4217d7873bb29bd787842e71
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 4101b9030425c22b8806870d467581521870d639
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "78201741"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88208467"
 ---
 # <a name="control-mapping-of-the-media-blueprint-sample"></a>Сопоставление элементов управления на примере схемы Media
 
@@ -31,7 +31,7 @@ ms.locfileid: "78201741"
 
 ### <a name="ac-18---shared-account-access-is-prohibited"></a>AC-1.8. Доступ к общей учетной записи запрещен
 
-- Из пространства имен служебной шины должны быть удалены все правила авторизации, за исключением RootManageSharedAccessKey
+- Из пространства имен служебной шины должны быть удалены все правила авторизации за исключением RootManageSharedAccessKey
 
 ### <a name="ac-19--system-must-restrict-access-to-authorized-users"></a>AC-1.9. Система должна предоставлять доступ только полномочным пользователям.
 
@@ -174,7 +174,7 @@ ms.locfileid: "78201741"
 
 - \[Предварительная версия.\] Развертывание требуемых компонентов для аудита конфигураций виртуальных машин с Windows в разделе "Свойства брандмауэра Windows"
 
-## <a name="security-planning"></a>Планирование мер по обеспечению безопасности
+## <a name="security-planning"></a>Планирование безопасности
 
 ### <a name="sp-113--threats-must-be-identified-that-could-negatively-impact-the-confidentiality-integrity-or-availability-of-company-information-and-content-along-with-the-likelihood-of-their-occurrence"></a>SP-11.3. Необходимо отслеживать угрозы, которые могут негативно повлиять на конфиденциальность, целостность или доступность информации и содержимого Организации, а также определять вероятность их возникновения.
 
@@ -236,7 +236,7 @@ ms.locfileid: "78201741"
 Вы ознакомились с сопоставлением элементов управления для примера схемы Media. Дополнительные сведения см. в следующих статьях:
 
 > [!div class="next step action"]
-> [Схема Media — обзор](./control-mapping.md)
+> [Схема Media — сопоставление элементов управления](./control-mapping.md)
 > [Схема Media — этапы развертывания](./deploy.md)
 
 Дополнительные статьи о схемах и способах их использования:

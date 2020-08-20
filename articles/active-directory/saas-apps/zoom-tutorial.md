@@ -2,26 +2,21 @@
 title: Руководство по Интеграция единого входа Azure Active Directory с Zoom | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Zoom.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 0ebdab6c-83a8-4737-a86a-974f37269c31
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f9d727154adf0a2099d7a9144c109cef9c91238
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d257935aa3e9ad54b64b0f416119931661809172
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "70743969"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545970"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-zoom"></a>Руководство по Интеграция единого входа Azure Active Directory с Zoom
 
@@ -87,6 +82,8 @@ ms.locfileid: "70743969"
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `<companyname>.zoom.us`.
 
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<companyname>.zoom.us`.
+
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Zoom](https://support.zoom.us/hc/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -138,15 +135,15 @@ ms.locfileid: "70743969"
 
 1. В другом окне браузера войдите на свой корпоративный сайт Zoom с правами администратора.
 
-2. Выберите вкладку **Единый вход** .
+2. Перейдите на вкладку **Единый вход**.
 
-    ![Вкладка Single Sign-On (Единый вход)](./media/zoom-tutorial/ic784700.png "Единый вход")
+    ![Вкладка Single Sign-On (Единый вход)](./media/zoom-tutorial/zoom-sso1.png "Единый вход")
 
-3. Откройте вкладку **Security Control** (Контроль безопасности) и перейдите к параметрам **единого входа**.
+3. Перейдите на вкладку **Управление безопасностью**, а затем перейдите к **параметрам единого входа**.
 
 4. В разделе "Единый вход" выполните следующие действия:
 
-    ![Раздел Single Sign-On (Единый вход)](./media/zoom-tutorial/ic784701.png "Единый вход")
+    ![Раздел Single Sign-On (Единый вход)](./media/zoom-tutorial/zoom-sso2.png "Единый вход")
 
     а. В текстовое поле **Sign-in page URL** (URL-адрес страницы входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
@@ -162,11 +159,11 @@ ms.locfileid: "70743969"
 
     ![Кнопка копирования конечной точки](./media/zoom-tutorial/endpoint1.png)
 
-    д) Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат поставщика удостоверений** .
+    д) Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена и вставьте его в текстовое поле **Сертификат поставщика удостоверений**.
 
     е) В текстовое поле **Issuer** (Издатель) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure. 
 
-    ж. Выберите команду **Сохранить**.
+    ж. Щелкните **Сохранить изменения**.
 
     > [!NOTE]
     > Дополнительные сведения см. в документации по приложению Zoom [https://zoomus.zendesk.com/hc/articles/115005887566](https://zoomus.zendesk.com/hc/articles/115005887566).

@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с TargetProcess | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и TargetProcess.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 7cb91628-e758-480d-a233-7a3caaaff50d
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 60cd043c34ba2aee365c59feb38cc9dd02d45746
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d5b0be147b8aa25e6c737d423eaf4a8a23cde083
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67089043"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546548"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-targetprocess"></a>Руководство. Интеграция Azure Active Directory с TargetProcess
 
@@ -70,7 +66,7 @@ ms.locfileid: "67089043"
 
      ![TargetProcess в списке результатов](common/search-new-app.png)
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
+## <a name="configure-and-test-azure-ad-sso"></a>Настройка и проверка единого входа Azure AD
 
 В этом разделе описана настройка и проверка единого входа Azure AD в TargetProcess с использованием тестового пользователя **Britta Simon**.
 Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в TargetProcess.
@@ -133,25 +129,27 @@ ms.locfileid: "67089043"
 
     ![image](./media/target-process-tutorial/install_extension.png)
 
-2. После добавления расширения в браузере щелкните **Установка TargetProcess**, чтобы перейти к приложению TargetProcess. После этого укажите учетные данные администратора для входа в TargetProcess. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–7.
+1. После добавления расширения в браузере щелкните **Установка TargetProcess**, чтобы перейти к приложению TargetProcess. После этого укажите учетные данные администратора для входа в TargetProcess. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–7.
+
+    ![Настройка конфигурации](common/setup-sso.png)
 
     **Если вы хотите настроить приложение вручную, выполните следующие действия:**
 
-3. Войдите в приложение TargetProcess с правами администратора.
+1. Войдите в приложение TargetProcess с правами администратора.
 
-4. В верхнем меню щелкните **Настройка**.
+1. В меню в верхней части страницы щелкните **Установка**.
 
     ![Настройка](./media/target-process-tutorial/tutorial_target_process_05.png)
 
-5. Перейдите на вкладку **Settings** (Параметры).
+1. Перейдите на вкладку **Settings** (Параметры).
 
-    ![Настройки](./media/target-process-tutorial/tutorial_target_process_06.png)
+    ![Параметры](./media/target-process-tutorial/tutorial_target_process_06.png)
 
-6. Щелкните вкладку **Single Sign-on** (Единый вход).
+1. Щелкните вкладку **Single Sign-on** (Единый вход).
 
     ![Щелчок "Single Sign-on" (Единый вход)](./media/target-process-tutorial/tutorial_target_process_07.png)
 
-7. В диалоговом окне "Параметры единого входа" выполните следующие действия.
+1. В диалоговом окне "Параметры единого входа" выполните следующие действия.
 
     ![Настройка единого входа](./media/target-process-tutorial/tutorial_target_process_08.png)
 

@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с Creatio | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Creatio.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 052db91d-ccff-4098-8ae3-2f76eca9053
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/16/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: feffefbc9da15dc074d69549446b471984e4422d
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 0fe0dd43a59b0fb23a3a74509841402880b6fd69
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82183370"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88548163"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-creatio"></a>Руководство по интеграции единого входа Azure Active Directory с Creatio
 

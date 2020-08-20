@@ -2,25 +2,21 @@
 title: Руководство по настройке Zscaler Three для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Zscaler Three.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd-msft
-ms.assetid: 385a1153-0f47-4e41-8f44-da1b49d7629e
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 177bc34162c2b5e4dadc54e1166c5f6061068bae
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b7cb55b5d14208128c894a007d13f4e73fc54b3b
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77064110"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545812"
 ---
 # <a name="tutorial-configure-zscaler-three-for-automatic-user-provisioning"></a>Руководство по настройке Zscaler Three для автоматической подготовки пользователей
 

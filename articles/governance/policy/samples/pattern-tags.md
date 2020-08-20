@@ -1,14 +1,14 @@
 ---
 title: Шаблон. Использование тегов в определении политики
 description: Этот шаблон Политики Azure содержит примеры добавления параметризованных тегов или наследования тегов из группы ресурсов в определении политики.
-ms.date: 05/20/2020
+ms.date: 08/17/2020
 ms.topic: sample
-ms.openlocfilehash: b71a21fadfc8dec3da2feabbce127303174a95d3
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 3016fc7889f68fd13e993c67ca645a4af055c651
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83704348"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545562"
 ---
 # <a name="azure-policy-pattern-tags"></a>Шаблон Политики Azure: теги
 

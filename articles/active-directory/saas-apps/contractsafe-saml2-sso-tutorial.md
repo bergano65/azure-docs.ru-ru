@@ -2,25 +2,21 @@
 title: Руководство по Интеграция единого входа Azure Active Directory с ContractSafe Saml2 SSO | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и ContractSafe Saml2 SSO.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 9d8c9eba-6a90-4c8f-b387-a6ead4af00af
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 12/20/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ab2dc71f39164988e0d229fc994548a00447986
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 9459d13e8943f7e9177d2ad493873257f46f6649
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77185618"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88544401"
 ---
 # <a name="tutorial-integrate-azure-active-directory-single-sign-on-sso-with-contractsafe-saml2-sso"></a>Руководство по Интеграция единого входа Azure Active Directory с ContractSafe Saml2 SSO
 

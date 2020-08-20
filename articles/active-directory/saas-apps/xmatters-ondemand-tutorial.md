@@ -2,25 +2,21 @@
 title: Руководство по Интеграция Azure Active Directory с xMatters OnDemand | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в xMatters OnDemand.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: ca0633db-4f95-432e-b3db-0168193b5ce9
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
-ms.openlocfilehash: ada0977dafeba546e84b22c6c61efecce1511dc7
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 9e84be9cbc6aa50f4beb3ed333b47459b15fbcc1
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170162"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546293"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-xmatters-ondemand"></a>Руководство по Интеграция Azure Active Directory с xMatters OnDemand
 

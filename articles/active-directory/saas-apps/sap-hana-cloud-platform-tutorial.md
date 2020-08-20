@@ -2,26 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с SAP Cloud Platform | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SAP Cloud Platform.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: bd398225-8bd8-4697-9a44-af6e6679113a
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/17/2018
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2972af3c94768cc21b53bbf5376826940aee639a
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: c2738e1a6168440adee79ebaa599a313600153a4
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86168870"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546769"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform"></a>Руководство по интеграции Azure Active Directory с SAP Cloud Platform
 

@@ -2,26 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с Jobbadmin | Документы Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Jobbadmin.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: c5208b0d-66a3-49ed-9aad-70d21f54aee0
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b21013da7748d133b924b9869bc6f532a3f59cb9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 50303d8f137652fec89f52c9be5e68864eec5523
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73155228"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88547143"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jobbadmin"></a>Руководство по интеграции Azure Active Directory с Jobbadmin
 

@@ -2,26 +2,21 @@
 title: Руководство по интеграции единого входа Azure Active Directory с In Case of Crisis (мобильное приложение) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении In Case of Crisis (мобильное приложение).
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 6afa98e9-a123-4cbb-add6-afcefc1242e5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/04/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83bff484e4ca3a1579067501be134d71da72abfa
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 75e75a2fe8c81ae928617149018ac2afaab07faa
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72271864"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545154"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-in-case-of-crisis---mobile"></a>Руководство по интеграции единого входа Azure Active Directory с In Case of Crisis (мобильное приложение)
 
