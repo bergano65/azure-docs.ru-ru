@@ -2,25 +2,21 @@
 title: Руководство по интеграции единого входа Azure Active Directory с приложением "Платформа IamIP для пациентов" | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и приложением "Платформа IamIP для пациентов".
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 8d5b4fc1-e8fd-4418-a369-189272fef80d
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 02/10/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7d487aaf7ba4aaf666962cf91ca86d46115055b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1a2139b7a0f7d51b6c759a98c93c5250666f15a9
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78190744"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88525162"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-iamip-patent-platform"></a>Руководство по интеграции единого входа Azure Active Directory с приложением "Платформа IamIP для пациентов"
 
@@ -121,7 +117,7 @@ ms.locfileid: "78190744"
 1. В верхней части экрана выберите **Новый пользователь**.
 1. В свойствах **пользователя** выполните следующие действия:
    1. В поле **Имя** введите **B.Simon**.  
-   1. В поле **Имя пользователя** введите \<имя_пользователя>@\<домен_компании>.\<расширение>. Например, `B.Simon@contoso.com`.
+   1. В поле **Имя пользователя** введите \<username>@\<companydomain>.\<extension> Например, `B.Simon@contoso.com`.
    1. Выберите **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
    1. Нажмите кнопку **создания**.
 

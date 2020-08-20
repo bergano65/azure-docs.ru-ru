@@ -2,26 +2,21 @@
 title: Руководство по Интеграция единого входа Azure Active Directory с Alibaba Cloud Service (единый вход на основе ролей) | Документация Майкрософт
 description: Из этой статьи вы узнаете, как настроить единый вход Azure Active Directory в Alibaba Cloud Service (единый вход на основе ролей).
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 3667841e-acfc-4490-acf5-80d9ca3e71e8
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/13/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e22bec224d185d0306f2b0032aef929f627c910e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 0e9ccb3f4308a1a75a715a16ab4c1a2887b0a915
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77367935"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88522089"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-alibaba-cloud-service-role-based-sso"></a>Руководство по Интеграция единого входа Azure Active Directory с Alibaba Cloud Service (единый вход на основе ролей)
 

@@ -2,26 +2,21 @@
 title: Руководство по интеграции единого входа Azure Active Directory с Watch by Colors | Документация Майкрософт
 description: Из этой статьи вы узнаете, как настроить единый вход между Azure Active Directory и Watch by Colors.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 586a029c-fb8d-4233-b280-103b9ba7102d
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/09/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d8fdc8ba2337a3be49a4645e48a45120fb0ccec
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 79fd6c5212b2ad956259f2cfbfb36ec3e7e92844
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72026092"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88523823"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-watch-by-colors"></a>Руководство по Интеграция единого входа Azure Active Directory с Watch by Colors
 

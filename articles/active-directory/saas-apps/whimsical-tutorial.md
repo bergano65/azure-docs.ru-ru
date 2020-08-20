@@ -2,25 +2,21 @@
 title: Руководство по интеграции единого входа Azure Active Directory с Whimsical | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Whimsical.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 3a1bab37-e0a8-4710-a927-b80bea80d9f5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 05/15/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c16f83be4cd10f53705633b9c4f4eb522c8408e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ee5fe4a856e75e9833b9d69dd24efd932f760a91
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87058153"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88523342"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-whimsical"></a>Руководство по интеграции единого входа Azure Active Directory с Whimsical
 
