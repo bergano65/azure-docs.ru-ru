@@ -1,32 +1,32 @@
 ---
 title: Сравнение Microsoft AppSource и Azure Marketplace
-description: В этой статье объясняются различия между магазинами Microsoft для коммерческого рынка — Microsoft AppSource и Azure Marketplace.
+description: В этой статье объясняются различия между Интернет-магазинами Microsoft для коммерческих рынков — Microsoft AppSource и Azure Marketplace.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 04/14/2020
-ms.openlocfilehash: fc0a03871ee3191f24a886cc1b9d7f90e8d54b62
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 10560d1407d4e9f899578d6d4eb9cdf9b7fe7dc9
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86121815"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607465"
 ---
 # <a name="comparing-microsoft-appsource-and-azure-marketplace"></a>Сравнение Microsoft AppSource и Azure Marketplace
 
-В состав коммерческого рынка Майкрософт входит [Microsoft AppSource](https://appsource.microsoft.com) и [Azure Marketplace](https://azuremarketplace.microsoft.com). Каждый магазин обслуживает уникальные клиентские требования и различные целевые аудитории, поэтому вы можете убедиться, что ваше решение или служба доступны для нужных клиентов.
+В состав коммерческого рынка Майкрософт входит [Microsoft AppSource](https://appsource.microsoft.com) и [Azure Marketplace](https://azuremarketplace.microsoft.com). Каждое Интернет-магазин выполняет уникальные требования клиентов и различные целевые аудитории, поэтому вы можете убедиться, что ваше решение или служба доступны для нужных клиентов.
 
-## <a name="understanding-the-differences-between-storefronts"></a>Понимание различий между онлайн-магазинами
+## <a name="understanding-the-differences-between-online-stores"></a>Основные сведения о различиях между Интернет-магазинами
 
-Чтобы выбрать магазин, сначала укажите целевую аудиторию для вашего предложения. Если вы ориентируетесь на аудиторию в нескольких онлайн-магазинах, достаточно выполнить однократную публикацию.
+Чтобы выбрать Интернет-магазин, сначала укажите целевую аудиторию для вашего предложения. Если вы нацелены на аудитории в нескольких Интернет-магазинах, вы можете опубликовать один раз для продажи в нескольких магазинах.
 
 | Azure Marketplace | AppSource |
 |:--- |:--- |
 | ИТ-специалисты и разработчики | Бизнес-пользователи и лица, принимающие решения |
 
-В следующей таблице описываются преимущества использования онлайн-магазина:
+В следующей таблице описаны преимущества использования Интернет-магазина.
 
 | Преимущества | Azure Marketplace | AppSource |
 |:--- |:--- | :--- |

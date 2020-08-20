@@ -7,14 +7,14 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 06/17/2020
-ms.openlocfilehash: 4b1c2ea437168d00823bc5527eaeda33db6ae733
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 9196bea663d037f269316dc108f99d3f2c282ec7
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88166745"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606362"
 ---
-# <a name="create-an-azure-container-offer-in-azure-marketplace"></a>Создание предложения контейнера Azure в Azure Marketplace
+# <a name="create-an-azure-container-offer-in-azure-marketplace"></a>Создание предложения контейнера Azure в Azure Marketplace
 
 В этой статье описывается, как создать и опубликовать предложение контейнера для Azure Marketplace. Сначала [создайте учетную запись на коммерческой платформе в Центре партнеров](create-account.md), если вы еще этого не сделали. Убедитесь, что ваша учетная запись зарегистрирована в программе коммерческой платформы.
 
@@ -29,7 +29,7 @@ ms.locfileid: "88166745"
    ![Показано меню навигации слева.](./media/new-offer-azure-container.png)
 
 > [!TIP]
-> Изменения, внесенные в предложение после его публикации в Центре партнеров, отображаются на витрине только после повторной публикации. Если вы внесли изменения, обязательно выполните повторную публикацию.
+> После публикации предложения изменения, внесенные в него в центре партнеров, отображаются только в Интернет-магазинах после повторной публикации предложения. Если вы внесли изменения, обязательно выполните повторную публикацию.
 
 ### <a name="offer-id-and-alias"></a>Идентификатор и псевдоним предложения
 

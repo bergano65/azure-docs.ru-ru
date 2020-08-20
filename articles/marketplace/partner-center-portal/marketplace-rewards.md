@@ -8,12 +8,12 @@ ms.topic: article
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: 25a164fc8709d7c9f6249336ece34bd8a5378f23
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 702486a0728a7394d8d8febffc11b11bc113a030
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87496021"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606760"
 ---
 # <a name="marketplace-rewards"></a>Marketplace Rewards
 
@@ -27,7 +27,7 @@ ms.locfileid: "87496021"
 
 Для партнеров с предложениями типа "транзакция": по мере роста ваших продаж с выставлением счета через платформу marketplace вы будете получать все больше преимуществ на каждом уровне.
 
-Минимальное требование для публикации предложений в онлайн-магазинах — наличие ИД MPN, так что эти преимущества доступны всем партнерам независимо от их типа или статуса компетенции MPN. Каждый партнер может расширить свой бизнес, используя marketplace в качестве платформы.
+Минимальные требования к публикации в Интернет-магазинах — MPNID, поэтому эти преимущества доступны всем партнерам независимо от состояния компетенции MPN или типа партнера. Каждый партнер может расширить свой бизнес, используя marketplace в качестве платформы.
 
 С нашей поддержкой вы сумеете разобраться с доступными ресурсами и внедрить рекомендации, с которыми вы также можете [ознакомиться самостоятельно](https://partner.microsoft.com/asset/collection/azure-marketplace-and-appsource-publisher-toolkit#/).
 

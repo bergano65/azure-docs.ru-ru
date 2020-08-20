@@ -4,15 +4,15 @@ description: Дополнительные сведения о функции SQL
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 07/09/2020
+ms.date: 08/19/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 9c35f83ce7a9a478f706e9ed560d884d9bf5e508
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: c1e0a8d69edab0c01005268ee49c23625236f03a
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86261292"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606919"
 ---
 # <a name="getcurrenttimestamp-azure-cosmos-db"></a>Жеткурренттиместамп (Azure Cosmos DB)
 
@@ -26,13 +26,13 @@ GetCurrentTimestamp ()
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
-  Возвращает числовое значение, текущее число миллисекунд, истекших с момента, прошедших с версии в 00:00:00 четверг, 1 января 1970.
+Возвращает числовое значение со знаком, равное текущему количеству миллисекунд, прошедших с момента выпуска UNIX, т. е. количество миллисекунд, истекших с 00:00:00 в четверг, 1 января 1970.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
-  Жеткурренттиместамп () является недетерминированной функцией.
-  
-  Возвращаемый результат — UTC (всемирное время).
+Жеткурренттиместамп () является недетерминированной функцией. Возвращаемый результат — UTC (всемирное время).
+
+Эта системная функция не будет использовать индекс.
 
 ## <a name="examples"></a>Примеры
   

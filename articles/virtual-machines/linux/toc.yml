@@ -797,7 +797,7 @@
                       href: ../../azure-monitor/platform/data-sources-custom-logs.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
                     - name: Пользовательские поля
                       href: ../../azure-monitor/platform/custom-fields.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
-            - name: Диагностика
+            - name: Устранение неполадок
               items:
                 - name: Расширение службы анализа журналов для виртуальной машины
                   href: ../../azure-monitor/platform/vmext-troubleshoot.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
@@ -894,6 +894,8 @@
           href: docker-compose-quickstart.md
     - name: Запуск приложений
       items:
+        - name: Red Hat
+          href: ../workloads/redhat/overview.md
         - name: Cloud Foundry
           href: ../../cloudfoundry/index.yml
         - name: Cassandra

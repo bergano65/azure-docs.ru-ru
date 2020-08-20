@@ -2,7 +2,7 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Сведения о Бастионе Azure
+    - name: Что такое Бастион Azure
       href: bastion-overview.md
 - name: Краткие руководства
   items:

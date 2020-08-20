@@ -7,14 +7,14 @@ ms.service: expressroute
 ms.topic: overview
 ms.date: 09/18/2019
 ms.author: mialdrid
-ms.openlocfilehash: d2f31be5e7ece32fb1e0f6d9a2e482688d46eeb3
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 2fda31b97314347f52b0cd1bbe9e1b54d01af807
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75770957"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607112"
 ---
-# <a name="expressroute-overview"></a>Обзор ExpressRoute
+# <a name="what-is-azure-expressroute"></a>Что такое Azure ExpressRoute?
 ExpressRoute позволяет переносить локальные сети в Microsoft Cloud по частному подключению, которое обеспечивается поставщиком услуг подключения. ExpressRoute позволяет устанавливать подключения к облачным службам Майкрософт, таким как Microsoft Azure и Office 365.
 
 Это может быть подключение типа "любой к любому" (IP VPN), подключение Ethernet типа "точка-точка" или виртуальное кросс-подключение через поставщика услуг подключения на совместно используемом сервере. Подключения ExpressRoute не проходят через общедоступный Интернет. Это обеспечивает повышенный уровень безопасности, надежности и быстродействия подключений ExpressRoute и сопоставимый уровень задержек по сравнению с типовыми подключениями через Интернет. Сведения о том, как подключить сеть к облаку Майкрософт с помощью ExpressRoute, см. в статье [Модели подключения ExpressRoute](expressroute-connectivity-models.md).

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/11/2019
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: 164a0e295179bb0c1e8d7da6b43d8e07a4e9f4e9
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 4c5d8b438764fa9aa3838b2225c63d412afc519b
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87304417"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606806"
 ---
 # <a name="common-questions-about-saas-fulfillment-apis"></a>Часто задаваемые вопросы о API-интерфейсах выполнения SaaS
 
@@ -63,13 +63,13 @@ ms.locfileid: "87304417"
 >[!Note]
 >Вы можете заблокировать переход на более раннюю версию, если не хотите поддерживать определенные пути преобразования.
 
-Приведенная ниже последовательность фиксирует поток при изменении плана клиентом Azure в интерфейсе SaaS:
+Приведенная ниже последовательность фиксирует поток, когда клиент Azure изменяет план в интерфейсе SaaS:
 
 ![Поток изменения плана клиента](media/saas-metering-service-integration-flow-b.png)
 
-Приведенная ниже последовательность фиксирует поток при изменении плана клиентом Azure в витрине Microsoft.
+Приведенная ниже последовательность охватывает поток, когда клиент Azure изменяет план в Интернет-магазине Майкрософт:
 
-![Поток изменений плана витрины клиента](media/saas-metering-service-integration-flow-c.png)
+![Поток изменения плана Интернет-магазина клиента](media/saas-metering-service-integration-flow-c.png)
 
 ### <a name="how-can-the-azure-user-unsubscribe-from-the-plan-associated-with-azure-subscription"></a>Как пользователь Azure может отменить подписку на план, связанный с подпиской Azure?
 
@@ -79,9 +79,9 @@ ms.locfileid: "87304417"
 
 ![Клиент отменяет подписывание в интерфейсе SaaS](media/saas-metering-service-integration-flow-d.png)
 
-Приведенная ниже последовательность фиксирует поток при отмене подписки пользователя Azure в витрине Майкрософт:
+Приведенная ниже последовательность фиксирует поток при отмене подписки пользователя Azure в Интернет-магазине Майкрософт:
 
-![Клиент отменяет подписывание в витрине Майкрософт](media/saas-metering-service-integration-flow-e.png)
+![Клиент отменяет подписывание в Интернет-магазине Майкрософт](media/saas-metering-service-integration-flow-e.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

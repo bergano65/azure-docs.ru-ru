@@ -3,7 +3,7 @@ title: Пример скрипта Azure CLI. Отправка файла в к�
 description: В этой статье показано, как использовать скрипт Azure CLI для передачи локального файла в контейнер хранилища.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -12,15 +12,15 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 05/01/2019
-ms.author: juliako
+ms.date: 08/18/2020
+ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 5a28cabfbc5cbba906a8c16451de801818b3fbed
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: d2441aba7c7b83b379a9c80192fe72736ecebab8
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87489968"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606651"
 ---
 # <a name="azure-cli-example-upload-a-local-file-to-a-container"></a>Пример для Azure CLI: Отправка локального файла в контейнер
 
@@ -29,7 +29,6 @@ ms.locfileid: "87489968"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Создание учетной записи Служб мультимедиа](./create-account-howto.md).
-* Изучите, как [управлять активами](manage-asset-concept.md).
 
 [!INCLUDE [media-services-cli-instructions.md](../../../includes/media-services-cli-instructions.md)]
 

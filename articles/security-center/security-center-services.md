@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: 3055d8c31307cfacad575d892db0ed812a03a9e4
-ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
+ms.openlocfilehash: 489f0138caa54105cced9c9ef4e8846657d84717
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2020
-ms.locfileid: "88258626"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607127"
 ---
 # <a name="feature-coverage-for-machines"></a>Покрытие компонентов для компьютеров
 
@@ -28,7 +28,7 @@ ms.locfileid: "88258626"
 
 ### <a name="windows-machines"></a>[**Компьютеры Windows**](#tab/features-windows)
 
-|**Возможность**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не относящиеся к Azure**|**Цены**
+|**Компонент**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не относящиеся к Azure**|**Цены**
 |----|:----:|:----:|:----:|:----:|
 |[Интеграция ATP в защитнике Майкрософт](security-center-wdatp.md)|✔</br>(в поддерживаемых версиях)|✔</br>(в поддерживаемых версиях)|✔|Standard|
 |[Аналитика поведения виртуальных машин (и оповещения системы безопасности)](threat-protection.md)|✔|✔|✔|Standard|
@@ -52,7 +52,7 @@ ms.locfileid: "88258626"
 
 ### <a name="linux-machines"></a>[**Компьютеры Linux**](#tab/features-linux)
 
-|**Возможность**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не относящиеся к Azure**|**Цены**
+|**Компонент**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не относящиеся к Azure**|**Цены**
 |----|:----:|:----:|:----:|:----:|
 |[Интеграция ATP в защитнике Майкрософт](security-center-wdatp.md)|-|-|-|Standard|
 |[Аналитика поведения виртуальных машин (и оповещения системы безопасности)](security-center-alerts-iaas.md)|✔</br>(в поддерживаемых версиях)|✔</br>(в поддерживаемых версиях)|✔|Standard|
@@ -91,7 +91,7 @@ ms.locfileid: "88258626"
 
 | Endpoint Protection| Платформы | Установка центра безопасности | Обнаружение центра безопасности |
 |------|------|-----|-----|
-| Защитник Windows (антивредоносное ПО Майкрософт)| Windows Server 2016 или более поздней версии| Нет, встроен в ОС| Да |
+| Антивирусная программа Microsoft Defender| Windows Server 2016 или более поздней версии| Нет, встроен в ОС| Да |
 | System Center Endpoint Protection (антивредоносное ПО Майкрософт) | Windows Server 2012 R2, 2012, 2008 R2 (см. примечание ниже) | Через расширение | Да |
 | Trend Micro — глубокая безопасность | Семейство Windows Server  | Нет | Да |
 | Symantec v12.1.1100+| Семейство Windows Server  | Нет | Да |
@@ -105,7 +105,7 @@ ms.locfileid: "88258626"
 > При обнаружении System Center Endpoint Protection (SCEP) на виртуальной машине Windows Server 2008 R2 необходимо установить SCEP после PowerShell (версия 3.0 или более поздняя).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [Центр безопасности собирает данные и агент log Analytics](security-center-enable-data-collection.md).
 - Узнайте [, как центр безопасности управляет и защищает данные](security-center-data-security.md).

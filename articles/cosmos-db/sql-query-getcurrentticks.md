@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 08/14/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: 6b3cd5ab5849c33172e4a629c79fb792b82f1255
-ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
+ms.openlocfilehash: 2ca76d75edba6688dbe93f11a51a0ad67942677a
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88227368"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606947"
 ---
 # <a name="getcurrentticks-azure-cosmos-db"></a>Жеткурренттиккс (Azure Cosmos DB)
 
-Возвращает текущие дату и время, измеряемые в тактах.
+Возвращает число 100-наносекундных тактов, истекших с 00:00:00 четверг, 1 января 1970.
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -26,9 +26,11 @@ GetCurrentTicks ()
 
 ## <a name="return-types"></a>Типы возвращаемых данных
 
-Возвращает положительное целое значение.
+Возвращает числовое значение со знаком, текущее число 100-наносекундных тактов, прошедшее с момента создания эпохи UNIX. Иными словами, Жеткурренттиккс возвращает число импульсов 100 наносекунд, истекших с 00:00:00 четверг, 1 января 1970.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
+
+Жеткурренттиккс () является недетерминированной функцией. Возвращаемый результат — UTC (всемирное время).
 
 Эта системная функция не будет использовать индекс.
 

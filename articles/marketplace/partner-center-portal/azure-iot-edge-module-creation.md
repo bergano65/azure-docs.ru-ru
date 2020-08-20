@@ -7,12 +7,12 @@ ms.topic: how-to
 author: keferna
 ms.author: keferna
 ms.date: 08/07/2020
-ms.openlocfilehash: 38e51f8bc66e8c47807a9b265ade3f196745db26
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 2584d10a73f183958e3b7010255979cc47bc2cd9
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88167187"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606351"
 ---
 # <a name="create-an-iot-edge-module-offer"></a>Создание предложения модуля IoT Edge
 
@@ -27,7 +27,7 @@ ms.locfileid: "88167187"
     ![Показано меню навигации слева.](./media/new-offer-iot-edge.png)
 
 > [!IMPORTANT]
-> Изменения, внесенные в предложение после его публикации в Центре партнеров, отображаются на витрине только после повторной публикации. Если вы внесли изменения, обязательно выполните повторную публикацию.
+> После публикации предложения изменения, внесенные в него в центре партнеров, отображаются только в Интернет-магазинах после повторной публикации предложения. Если вы внесли изменения, обязательно выполните повторную публикацию.
 
 ### <a name="offer-id-and-alias"></a>Идентификатор и псевдоним предложения
 

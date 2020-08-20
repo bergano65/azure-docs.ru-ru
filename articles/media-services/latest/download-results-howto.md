@@ -3,30 +3,26 @@ title: Скачивание результатов задания с помощ�
 description: В этой статье показано, как скачать результаты задания.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.date: 03/04/2020
-ms.author: juliako
-ms.openlocfilehash: bae7104eaded8c2ed153bc141faf7eba0bb86bae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: inhenkel
+ms.openlocfilehash: 0a2e4d1ac5cf0945ab75e58bb42d23d10d6c89aa
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80346288"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607247"
 ---
 # <a name="download-the-results-of-a-job"></a>Скачать результаты задания
 
 В службах мультимедиа Azure при обработке видео (например, кодирование или анализ) необходимо создать выходной [ресурс](assets-concept.md) для хранения результатов [задания](transforms-jobs-concept.md). Затем эти результаты можно загрузить в локальную папку с помощью службы мультимедиа и API-интерфейсов хранилища. 
 
 В этой статье показано, как загрузить результаты с помощью пакетов SDK для Java и .NET.
-
-## <a name="prerequisites"></a>Предварительные требования 
-
-Изучите, как [управлять активами](manage-asset-concept.md).
 
 ## <a name="java"></a>Java
 
