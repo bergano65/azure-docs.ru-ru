@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/13/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: dee74c787f6546494d12ea582eab383fbd99079d
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 186839425e6ab2fb5430a82650615425bb93d51a
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876909"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88651766"
 ---
 # <a name="train-models-with-azure-machine-learning"></a>Обучение моделей с помощью Машинного обучения Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "87876909"
 * [Руководство. Создание конвейеров Машинного обучения Azure для пакетной оценки](tutorial-pipeline-batch-scoring-classification.md)
 * [Примеры. Примеры Jupyter Notebook для конвейеров машинного обучения](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines)
 * [Примеры. Конвейер с автоматизированным машинным обучением](https://aka.ms/pl-automl)
-* [Примеры. Конвейер с оценщиками](https://aka.ms/pl-estimator)
+* [Примеры. Конвейер с оценщиками](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-how-to-use-estimatorstep.ipynb)
 
 ### <a name="understand-what-happens-when-you-submit-a-training-job"></a>Общие сведения о том, что происходит при отправке учебного задания
 
@@ -108,7 +108,7 @@ ms.locfileid: "87876909"
     1. Если он не найден, система создает новый образ (который будет кэшироваться и зарегистрирован в записи контроля доступа рабочей области).
 1. Скачивание ZIP-файла проекта во временное хранилище на кластерном узле
 1. Распаковка файла проекта
-1. Выполненный узел вычислений`python <entry script> <arguments>`
+1. Выполненный узел вычислений `python <entry script> <arguments>`
 1. Сохранение журналов, файлов моделей и других файлов, записанных в `./outputs` учетную запись хранения, связанную с рабочей областью
 1. Уменьшение масштаба вычислений, включая удаление временного хранилища 
 

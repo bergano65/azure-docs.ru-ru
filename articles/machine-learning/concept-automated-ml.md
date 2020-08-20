@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 author: cartacioS
 ms.author: sacartac
 ms.date: 04/22/2020
-ms.openlocfilehash: 8d94acabb434d0e722e352de46197a86e994e145
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 081da2b3f6fbe97ebce21940d7e0ca8978793b15
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87290027"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88652106"
 ---
 # <a name="what-is-automated-machine-learning-automl"></a>Что такое автоматизированное машинное обучение (AutoML)?
 
@@ -202,8 +202,6 @@ ms.locfileid: "87290027"
 * Прогнозное обслуживание для сотен нефтяных скважин
 * Адаптация возможностей для отдельных пользователей
 
-Дополнительные сведения см. в разделе [Акселератор решений для многих моделей](https://aka.ms/many-models) на сайте GitHub.
-
 ## <a name="automl-in-azure-machine-learning"></a>Использование AutoML в Машинном обучении Azure
 
 Машинное обучение Azure предлагает два варианта взаимодействия с автоматизированным ML.
@@ -279,7 +277,7 @@ ms.locfileid: "87290027"
 
  + **Сведения о низком или недоступном коде**см. в [руководстве по созданию автоматизированных моделей классификации ML с помощью машинное обучение Azure Studio](tutorial-first-experiment-automated-ml.md).
 
-В статье приводятся дополнительные сведения о возможностях, предоставляемых Аутомл. например следующие. 
+В статье приводятся дополнительные сведения о возможностях, предоставляемых Аутомл. Например, 
 
 + Настройка параметров для экспериментов автоматического обучения
     + В Студии машинного обучения Azure выполните [эти инструкции](how-to-use-automated-ml-for-ml-models.md). 

@@ -3,12 +3,12 @@ title: Новые возможности в Microsoft Azure Backup Server
 description: Microsoft Azure Backup Server предоставляет расширенные возможности резервного копирования для защиты виртуальных машин, файлов и папок, рабочих нагрузок и т. д.
 ms.topic: conceptual
 ms.date: 05/24/2020
-ms.openlocfilehash: a3ff38d9371ee9b95666ce638d0a6dc4b8822e20
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.openlocfilehash: a88b2926141092a9a1aeca988646aa3b69330f90
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88190847"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648757"
 ---
 # <a name="whats-new-in-microsoft-azure-backup-server-mabs"></a>Новые возможности Microsoft Azure Backup Server (MABS)
 
@@ -114,7 +114,7 @@ MABS V3 можно установить с помощью SQL 2017 как баз
 
 ### <a name="windows-server-2019-support"></a>Поддержка Windows Server 2019
 
-MABS V3 можно установить в Windows Server 2019. Чтобы использовать MABS V3 с WS2019, можно обновить ОС до версии WS2019 до установки или обновления до MABS версии 3 или можно обновить операционную систему после установки и обновления версии 3 в WS2016.
+MABS V3 можно установить в Windows Server 2019. Чтобы использовать MABS v3 с WS2019, можно либо обновить операционную систему до WS2019 перед установкой или обновлением до версии MABS v3, либо обновить ОС после установки или обновления V3 на WS2016.
 
 MABS V3 — это полный выпуск, который можно установить непосредственно в Windows Server 2016, Windows Server 2019 или его можно обновить с MABS V2. Прежде чем установить Backup Server версии 3 или выполнить обновление до этой версии, ознакомьтесь с необходимыми для установки компонентами.
 Дополнительные сведения о действиях установки и обновления в MABS можно найти [здесь](./backup-azure-microsoft-azure-backup.md#software-package).
@@ -123,7 +123,7 @@ MABS V3 — это полный выпуск, который можно уста
 >
 > База кода MABS такая же, как и в System Center Data Protection Manager. MABS V3 эквивалентен Data Protection Manager 1807. MABS v3 UR1 эквивалентна Data Protection Manager 2019 UR1.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как подготовить сервер или обеспечить защиту рабочей нагрузки:
 

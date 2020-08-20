@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 7a0fd4178df92cc9102456c1fa2ae4e8927337e4
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: f49a66fc6e233658b228b7ad9bacdaa23917afef
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547330"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648740"
 ---
 # <a name="enable-logging-in-azure-ml-training-runs"></a>Включение ведения журнала в учебных запусках МАШИНного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -70,8 +70,6 @@ run = exp.submit(src, show_output=True)
 run.wait_for_completion(show_output=True)
 ```
 
-Полный пример записной книжки, в которой используются журналы Скриптрунконфигс, см. в разделе [обучение модели локально](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-on-local/train-on-local.ipynb).
-
 ## <a name="native-python-logging"></a>Собственное ведение журнала Python
 
 Некоторые журналы в пакете SDK могут содержать ошибку, которая дает указание установить уровень ведения журнала в значение DEBUG. Чтобы изменить уровень ведения журнала, добавьте в скрипт приведенный ниже код.
@@ -88,9 +86,7 @@ logging.basicConfig(level=logging.DEBUG)
 Сведения о регистрации метрик в Машинное обучение Azureном конструкторе (Предварительная версия) см. в разделе [запись метрик в конструкторе (Предварительная версия)](how-to-track-designer-experiments.md) .
 
 ## <a name="example-notebooks"></a>Примеры записных книжек
-Основные понятия, описанные в этой статье, демонстрируют следующие записные книжки:
-* [how-to-use-azureml/training/train-within-notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-within-notebook)
-* [how-to-use-azureml/training/train-on-local](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-on-local)
+В следующей записной книжке показаны понятия, описанные в этой статье.
 * [how-to-use-azureml/track-and-monitor-experiments/logging-api](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/track-and-monitor-experiments/logging-api)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]

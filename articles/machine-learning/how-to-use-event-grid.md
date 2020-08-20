@@ -11,12 +11,12 @@ ms.author: shipatel
 author: shivp950
 ms.reviewer: larryfr
 ms.date: 05/11/2020
-ms.openlocfilehash: 3b6f115e27b5cf956a524bd1a610797c689b5d6c
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 464d945708fba83877fe6cef9ec1b64ec444bd95
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319496"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650423"
 ---
 # <a name="trigger-applications-processes-or-cicd-workflows-based-on-azure-machine-learning-events-preview"></a>Активация приложений, процессов или процессов CI/CD на основе событий Машинное обучение Azure (Предварительная версия)
 
@@ -199,7 +199,7 @@ az eventgrid event-subscription create --name {eventGridFilterName} \
 
 Перед началом работы выполните следующие действия.
 
-* Настройте монитор набора данных для [обнаружения смещения данных]( https://aka.ms/datadrift) в рабочей области.
+* Настройте монитор набора данных для [обнаружения смещения данных](how-to-monitor-datasets.md) в рабочей области.
 * Создайте опубликованный [конвейер Фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/).
 
 В этом примере простой конвейер Фабрики данных используется для копирования файлов в хранилище BLOB-объектов и запуска опубликованного конвейера Машинного обучения. Дополнительные сведения об этом сценарии см. в [Этап Машинного обучения в Фабрике данных Azure.](https://docs.microsoft.com/azure/data-factory/transform-data-machine-learning-service)

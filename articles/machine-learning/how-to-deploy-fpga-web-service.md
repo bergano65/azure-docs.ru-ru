@@ -11,12 +11,12 @@ author: jpe316
 ms.date: 06/03/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, devx-track-python
-ms.openlocfilehash: 0c78245a64fa9bcb7faef2c07973d1d7b5080e76
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 263038ee1be8b31d493282cd920f386132420156
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87843102"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648791"
 ---
 # <a name="what-are-field-programmable-gate-arrays-fpga-and-how-to-deploy"></a>Что такое программируемые массивы вентиля (FPGA) и как развернуть
 
@@ -30,7 +30,7 @@ ms.locfileid: "87843102"
 
 ![Схема сравнения Машинное обучение Azure FPGA](./media/how-to-deploy-fpga-web-service/azure-machine-learning-fpga-comparison.png)
 
-|Процессор| Сокращение |Описание:|
+|Процессор| Сокращение |Описание|
 |---|:-------:|------|
 |Микросхемы приложений|ASIC|Пользовательские микросхемы, такие как процессор TensorFlow (TPU) от Google, предоставляют повышенную эффективность. Их нельзя настраивать повторно в случае изменения требований.|
 |Программируемые пользователем вентильные матрицы|FPGA|ППВМ (например те, что доступны в Azure) обеспечивают производительность, близкую к микросхемам ASIC. Они также гибкие и поддерживают перенастройку для реализации новой логики.|
@@ -92,7 +92,7 @@ FPGA доступны в следующих регионах Azure:
 ### <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Если у вас ее нет, вам нужно будет создать учетную запись с [оплатой по мере](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) использования (свободные учетные записи Azure не подходят для квоты FPGA).
-- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest);
+- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 - Квота FPGA. Используйте Azure CLI, чтобы проверить, есть ли у вас квота:
 
     ```azurecli-interactive
@@ -163,7 +163,7 @@ FPGA доступны в следующих регионах Azure:
    print(feature_tensor.shape)
    ```
 
-1. Добавьте классификатор. Этот классификатор обучен с помощью набора данных ImageNet.  Примеры для перемещения обучения и обучения с помощью настраиваемых весов доступны в наборе [примеров записных книжек](https://aka.ms/aml-notebooks).
+1. Добавьте классификатор. Этот классификатор обучен с помощью набора данных ImageNet.  Примеры для перемещения обучения и обучения с помощью настраиваемых весов доступны в наборе [примеров записных книжек](https://github.com/Azure/MachineLearningNotebooks).
 
    ```python
    classifier_output = model_graph.get_default_classifier(feature_tensor)
@@ -401,11 +401,11 @@ registered_model.delete()
 converted_model.delete()
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с этими записными книжками, видео и блогами:
 
-+ Несколько [примеров записных книжек](https://aka.ms/aml-accel-models-notebooks)
++ Несколько [примеров записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/accelerated-models)
 + Сведения о защите веб-служб FPGA см. в документе [Защита веб-служб](how-to-secure-web-service.md) .
 + [Масштабирование оборудования: ML в масштабе на основе Azure + FPGA: сборка 2018 (видео)](https://channel9.msdn.com/events/Build/2018/BRK3202)
 + [Внутренние параметры настраиваемого облака на основе FPGA Microsoft (видео)](https://channel9.msdn.com/Events/Build/2017/B8063)

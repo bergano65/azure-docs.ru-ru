@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 08099ede82f8ebd9c1cd6e585a16800ee1626f65
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 3452641b336308ddf46349064345b154e55aa53c
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88508793"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88649165"
 ---
 # <a name="get-sensor-data-from-sensor-partners"></a>Получение данных датчика от партнеров датчиков
 
@@ -87,6 +87,10 @@ Azure Фармбеатс помогает перенести потоковые 
     ./generatePartnerCredentials.ps1
 
     ```
+
+> [!NOTE]
+> 1. Имя конечной точки API Датахуб должно быть в нижнем регистре.
+> 2. Если вы копируете URL-адрес имени веб-сайта фармбеатс для конечной точки API Датахуб, убедитесь в отсутствии замыкающей косой черты (/).
 
 9. Следуйте инструкциям на экране, чтобы записать значения для **конечных точек API**, **идентификаторов** **клиента, идентификаторов**клиентов, **секретов клиента**и **строки подключения EventHub**.
 

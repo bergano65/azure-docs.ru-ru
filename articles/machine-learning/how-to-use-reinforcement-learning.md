@@ -10,12 +10,12 @@ author: peterclu
 ms.date: 05/05/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 0a043bf79818480e045fb1f82640639fd7dcb232
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: b5ad09925c4a81dd09bd1ddf171ffccb8413b12b
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87847641"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650831"
 ---
 # <a name="reinforcement-learning-preview-with-azure-machine-learning"></a>Обучение с подкреплением (предварительная версия) в Машинном обучении Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "87847641"
 > * Отправка эксперимента для запуска выполнения
 > * Просмотр результатов
 
-В основе этой статьи лежит [пример RLlib Pong](https://aka.ms/azureml-rl-pong), который можно найти в [репозитории GitHub](https://aka.ms/azureml-rl-notebooks) в записной книжке Машинного обучения Azure.
+В основе этой статьи лежит [пример RLlib Pong](https://aka.ms/azureml-rl-pong), который можно найти в [репозитории GitHub](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/reinforcement-learning/README.md) в записной книжке Машинного обучения Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -433,4 +433,4 @@ run.wait_for_completion()
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы узнали, как обучить агент обучения с подкреплением с помощью агента обучения IMPALA. Дополнительные примеры см. в [репозитории GitHub в разделе обучения с подкреплением в Машинном обучении Azure ](https://aka.ms/azureml-rl-notebooks).
+В этой статье вы узнали, как обучить агент обучения с подкреплением с помощью агента обучения IMPALA. Дополнительные примеры см. в [репозитории GitHub в разделе обучения с подкреплением в Машинном обучении Azure ](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/reinforcement-learning/README.md).

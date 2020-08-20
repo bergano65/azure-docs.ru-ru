@@ -4,12 +4,12 @@ description: Инструкции по перемещению хранилища
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.custom: references_regions
-ms.openlocfilehash: fbbe914b3e567a1a136d735fc52965524bc17b67
-ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
+ms.openlocfilehash: 4751a6068904ef03a4d30d322a285e4074476b70
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88612577"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650919"
 ---
 # <a name="move-a-recovery-services-vault-across-azure-subscriptions-and-resource-groups"></a>Перемещение хранилища служб восстановления между подписками Azure и группами ресурсов
 
@@ -141,7 +141,7 @@ az resource move --destination-group <destinationResourceGroupName> --ids <Vault
 ## <a name="post-migration"></a>Действия после перемещения
 
 1. Задайте или проверьте элементы управления доступом для групп ресурсов.  
-2. После завершения перемещения для хранилища необходимо еще раз настроить отчеты службы Backup и функцию мониторинга. Во время операции перемещения будет утеряна предыдущая конфигурация.
+2. После завершения перемещения необходимо снова настроить функцию создания отчетов и мониторинга резервного копирования для хранилища. Во время операции перемещения будет утеряна предыдущая конфигурация.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

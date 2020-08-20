@@ -12,12 +12,12 @@ ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: acd030d8108ef3983be29fe85de6d7b3caf620af
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: b20612756050ae2e9d39f59d049b8c097e3b8010
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87849341"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88651222"
 ---
 # <a name="train-with-datasets-in-azure-machine-learning"></a>Обучение с наборами данных в Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -90,7 +90,7 @@ titanic_ds = Dataset.Tabular.from_delimited_files(path=web_path)
 
 * Каталог скрипта для скриптов. Все файлы в этом каталоге передаются в узел кластера для выполнения.
 * Сценарий обучения, *train_titanic. Корректировка*.
-* Входной набор данных для обучения, `titanic_ds` . `as_named_input()`требуется, чтобы на входной набор данных можно было ссылаться по назначенному имени `titanic` в скрипте обучения. 
+* Входной набор данных для обучения, `titanic_ds` . `as_named_input()` требуется, чтобы на входной набор данных можно было ссылаться по назначенному имени `titanic` в скрипте обучения. 
 * Целевой объект вычислений для эксперимента.
 * Определение окружения для эксперимента.
 
@@ -115,7 +115,7 @@ experiment_run.wait_for_completion(show_output=True)
 
 ### <a name="create-a-filedataset"></a>Создание FileDataset
 
-В следующем примере создается незарегистрированный Филедатасет из URL-адресов. Дополнительные сведения о [создании наборов данных](https://aka.ms/azureml/howto/createdatasets) из других источников.
+В следующем примере создается незарегистрированный Филедатасет из URL-адресов. Дополнительные сведения о [создании наборов данных](how-to-create-register-datasets.md) из других источников.
 
 ```Python
 from azureml.core.dataset import Dataset
@@ -201,7 +201,7 @@ y_test = load_data(y_test, True).reshape(-1)
 
 Если сценарий обрабатывает все файлы, на которые ссылается набор данных, а вычислительный диск может соответствовать полному набору данных, то скачивание рекомендуется, чтобы избежать издержек, связанных с потоковой передачей данных из служб хранилища. Если размер данных превышает размер диска вычислений, загрузка невозможна. В этом сценарии рекомендуется монтирование, так как только файлы данных, используемые скриптом, загружаются во время обработки.
 
-Следующий код подключается `dataset` к каталогу Temp по адресу`mounted_path`
+Следующий код подключается `dataset` к каталогу Temp по адресу `mounted_path`
 
 ```python
 import tempfile

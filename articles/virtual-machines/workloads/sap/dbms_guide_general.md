@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 12/04/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ad6bbc1d3c20659441b8b062898526471f4d713a
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 15c0368b2d0bd85f6fee65ffa2c9d6776d07f162
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88510238"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650621"
 ---
 # <a name="considerations-for-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure
 [1114181]:https://launchpad.support.sap.com/#/notes/1114181
@@ -111,10 +111,7 @@ ms.locfileid: "88510238"
 ## <a name="storage-structure-of-a-vm-for-rdbms-deployments"></a><a name="65fa79d6-a85f-47ee-890b-22e794f51a64"></a>Структура хранилища виртуальной машины для развертывания реляционной СУБД
 Прежде чем вы продолжите чтение, ознакомьтесь с информацией в [этом разделе][deployment-guide-3] [руководства по развертыванию][deployment-guide]. Необходимо ознакомиться с различными сериями виртуальных машин и отличиями между хранилищами классов Standard и Premium. 
 
-Сведения о службе хранилища Azure для виртуальных машин Azure см. в следующих статьях:
-
-- [Статья с общими сведениями об управляемых дисках для ВМ Azure в Windows](../../windows/managed-disks-overview.md).
-- [Статья с общими сведениями об управляемых дисках для ВМ Azure в Linux](../../linux/managed-disks-overview.md).
+Дополнительные сведения о службе хранилища Azure для виртуальных машин Azure см. в статье [Введение в управляемые диски для виртуальных машин Azure](../../managed-disks-overview.md).
 
 В базовой конфигурации мы обычно рекомендуем структуру развертывания, в которой операционная система, СУБД и двоичные файлы SAP отделены от файлов базы данных. Рекомендуется, чтобы в системах SAP на виртуальных машинах Azure были установлены виртуальные жесткие диски (или физические диски) с операционной системой, исполняемыми файлами СУБД и исполняемыми файлами SAP. 
 

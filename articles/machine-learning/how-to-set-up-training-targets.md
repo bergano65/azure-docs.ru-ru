@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/08/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 093f86f0373791326cf4658bdab7179fbca1307d
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: e0cb9492f6e0b52cb0816d16be5d67d3b92cfe56
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87849664"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88651409"
 ---
 # <a name="set-up-and-use-compute-targets-for-model-training"></a>Настройка и использование целевых объектов вычислений для обучения моделей 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -127,7 +127,7 @@ ms.locfileid: "87849664"
 
 Теперь, после подключения вычислительной среды и настройки запуска, следующий шаг — [отправить запрос на запуск обучения](#submit).
 
- ### <a name="lower-your-compute-cluster-cost"></a><a id="low-pri-vm"></a>Снижение стоимости вычислений в кластере
+ ### <a name="lower-your-compute-cluster-cost"></a><a id="low-pri-vm"></a> Снижение стоимости вычислений в кластере
 
 Вы также можете использовать [виртуальные машины с низким приоритетом](concept-plan-manage-cost.md#low-pri-vm) для выполнения некоторых или всех рабочих нагрузок. Эти виртуальные машины не обеспечены гарантиями доступности и могут быть замещены при использовании. Замещенное задание перезапускается, а не возобновляется. 
 
@@ -180,8 +180,6 @@ ms.locfileid: "87849664"
      
     run = experiment.submit(config=src)
     ```
-
-Дополнительные команды, полезные для вычислительных экземпляров, см. в разделе Записная книжка Training [-On-компутеинстанце](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-on-computeinstance/train-on-computeinstance.ipynb). Эта записная книжка также доступна в папке **Samples** в студии *обучения/обучения-on-компутеинстанце*.
 
 Теперь, когда вы присоединяете вычисление и настроили выполнение, следующим шагом является [Отправка обучающего запуска](#submit) .
 

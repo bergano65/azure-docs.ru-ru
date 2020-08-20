@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 08/10/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f3402f4ff719752cca6e1d7a4aeeb3b7e12c3e28
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: f195d4096baaa1d6a03b4b6c7c589ccef8fbd036
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88511148"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88651732"
 ---
 # <a name="sap-workloads-on-azure-planning-and-deployment-checklist"></a>Рабочие нагрузки SAP в Azure: контрольный список для планирования и развертывания
 
@@ -110,9 +110,9 @@ ms.locfileid: "88511148"
            -  [Размеры виртуальных машин Linux в Azure](../../sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Важно учитывать *максимальную пропускную способность некэшированного диска* для определения размера.
    2. "Память".
         - Проверьте документ [типы хранилища Azure для рабочей нагрузки SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide-storage) .
-        - Как минимум, используйте [хранилище Azure SSD (цен. Категория "Стандартный")](../../windows/disks-types.md#standard-ssd) для виртуальных машин, представляющих уровни приложений SAP, и для развертывания СУБД без учета производительности.
-        - Как правило, использование [дисков Azure HDD (цен. Категория "Стандартный")](../../windows/disks-types.md#standard-hdd)не рекомендуется.
-        - Используйте [хранилище Azure класса Premium](../../windows/disks-types.md#premium-ssd) для любых ВИРТУАЛЬНЫХ машин СУБД с учетом производительности.
+        - Как минимум, используйте [хранилище Azure SSD (цен. Категория "Стандартный")](../../disks-types.md#standard-ssd) для виртуальных машин, представляющих уровни приложений SAP, и для развертывания СУБД без учета производительности.
+        - Как правило, использование [дисков Azure HDD (цен. Категория "Стандартный")](../../disks-types.md#standard-hdd)не рекомендуется.
+        - Используйте [хранилище Azure класса Premium](../../disks-types.md#premium-ssd) для любых ВИРТУАЛЬНЫХ машин СУБД с учетом производительности.
         - Используйте [управляемые диски Azure](https://azure.microsoft.com/services/managed-disks/).
         - Использование Ускоритель записи Azure для дисков журналов СУБД серии M. Учитывайте Ускоритель записи ограничения и использование, как описано в [ускоритель записи](../../how-to-enable-write-accelerator.md).
         - Для различных типов СУБД ознакомьтесь с [общей документацией по связанной с SAP СУБД](./dbms_guide_general.md) и документацией, относящейся к СУБД, на которую указывает универсальный документ.

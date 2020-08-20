@@ -9,19 +9,19 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 6/8/2020
-ms.openlocfilehash: aa7e773cb45ea23d0e091ce12cc8488114ddfbdf
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 94c47369d7b638640fab1971801177103779e896
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837063"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648944"
 ---
 # <a name="ev4-and-esv4-series"></a>Серии Ev4 и Esv4
 
 Серия Ev4 и Esv4 на &reg; &reg; процессорах Intel Xeon Platinum 8272CL (Cascade Lake) в конфигурации с технологией Hyper-Threading идеально подходит для различных корпоративных приложений с большим объемом памяти и функций до 504GiB ОЗУ.
 
 > [!NOTE]
-> Часто задаваемые вопросы см. в статье [размеры виртуальных машин Azure без локального временного диска](azure-vms-no-temp-disk.md).
+> Часто задаваемые вопросы см. в статье  [размеры виртуальных машин Azure без локального временного диска](azure-vms-no-temp-disk.md).
 
 ## <a name="ev4-series"></a>Серия Ev4
 
@@ -97,7 +97,7 @@ ACU: 195-210
 
 Калькулятор цен: [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
 
-Дополнительные сведения о типах дисков: [типы дисков](./linux/disks-types.md#ultra-disk)
+Дополнительные сведения о типах дисков: [типы дисков](./disks-types.md#ultra-disk)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
