@@ -125,20 +125,26 @@
           href: partition-data.md
         - name: Ключ искусственного раздела
           href: synthetic-partition-keys.md
-    - name: Подготовленная пропускная способность
+    - name: Capacity
       items:
         - name: Единицы запросов
           displayName: 'RUs, RU'
           href: request-units.md
-        - name: Введение в подготовленную пропускную способность
-          displayName: 'request units, RUs, RU, limits, database throughput, shared throughput, container throughput'
-          href: set-throughput.md
-        - name: Подготовка автомасштабируемой пропускной способности
-          href: provision-throughput-autoscale.md
-        - name: Выбор между автомасштабируемой и стандартной (масштабируемой вручную) пропускной способностью
-          href: how-to-choose-offer.md
-        - name: Вопросы и ответы об автомасштабировании
-          href: autoscale-faq.md
+        - name: Подготовленная пропускная способность
+          items:
+            - name: Введение в подготовленную пропускную способность
+              displayName: 'request units, RUs, RU, limits, database throughput, shared throughput, container throughput'
+              href: set-throughput.md
+            - name: Подготовка автомасштабируемой пропускной способности
+              href: provision-throughput-autoscale.md
+            - name: Выбор между автомасштабируемой и стандартной (масштабируемой вручную) пропускной способностью
+              href: how-to-choose-offer.md
+            - name: Вопросы и ответы об автомасштабировании
+              href: autoscale-faq.md
+        - name: Бессерверные приложения
+          href: serverless.md
+        - name: Выбор между подготовленной пропускной способностью и бессерверным режимом
+          href: throughput-serverless.md
     - name: SQL-запрос
       items:
         - name: Начало работы
@@ -238,6 +244,9 @@
                     - name: DateTimeToTicks
                       displayName: 'DateTimeToTicks, date time to ticks, date and time functions, datetime, ticks'
                       href: sql-query-datetimetoticks.md
+                    - name: DateTimeToTimestamp
+                      displayName: 'DateTimeToTimestamp, date time to timestamp, date and time functions, datetime, timestamp'
+                      href: sql-query-datetimetotimestamp.md
                     - name: GetCurrentDateTime
                       displayName: 'GetCurrentDateTime, get current date time, date and time functions, datetime'
                       href: sql-query-getcurrentdatetime.md
@@ -247,6 +256,12 @@
                     - name: GetCurrentTimestamp
                       displayName: 'GetCurrentTimestamp, get current timestamp, timestamp, date and time functions, datetime'
                       href: sql-query-getcurrenttimestamp.md
+                    - name: TicksToDateTime
+                      displayName: 'TicksToDateTime, ticks to date time, date and time functions, datetime, ticks'
+                      href: sql-query-tickstodatetime.md
+                    - name: TimestampToDateTime
+                      displayName: 'TimestampToDateTime, timestamp to date time, date and time functions, datetime, timestamp'
+                      href: sql-query-timestamptodatetime.md
                 - name: Математические функции
                   items:
                     - name: Математические функции
@@ -953,26 +968,28 @@
           href: how-to-manage-conflicts.md
         - name: Преобразование формата токена сеанса
           href: how-to-convert-session-token.md
-    - name: Подготовленная пропускная способность
+    - name: Capacity
       items:
-        - name: Подготовка стандартной (масштабируемой вручную) пропускной способности в контейнере
-          displayName: 'request units, RUs, RU, collection level'
-          href: how-to-provision-container-throughput.md
-        - name: Подготовка стандартной (масштабируемой вручную) пропускной способности в базе данных
-          displayName: 'request units, RUs, RU, shared throughput, database level'
-          href: how-to-provision-database-throughput.md
-        - name: Подготовка автомасштабируемой пропускной способности в базе данных или контейнере
-          displayName: 'request units, RUs, RU, shared throughput, database level, collection level, autoscale'
-          href: how-to-provision-autoscale-throughput.md
-        - name: Оценка единиц запросов в секунду с помощью планировщика ресурсов Cosmos
-          displayName: 'request units, RUs, RU, capacity'
-          href: estimate-ru-with-capacity-planner.md
         - name: Поиск сведений о расходуемых единицах запросов
           displayName: 'request units, RUs, RU, charge, consumption'
           href: find-request-unit-charge.md
-        - name: Масштабирование с использованием таймера в Функциях Azure
-          displayName: 'request units, RUs, RU, timer'
-          href: scale-on-schedule.md
+        - name: Подготовленная пропускная способность
+          items:
+            - name: Подготовка стандартной (масштабируемой вручную) пропускной способности в контейнере
+              displayName: 'request units, RUs, RU, collection level'
+              href: how-to-provision-container-throughput.md
+            - name: Подготовка стандартной (масштабируемой вручную) пропускной способности в базе данных
+              displayName: 'request units, RUs, RU, shared throughput, database level'
+              href: how-to-provision-database-throughput.md
+            - name: Подготовка автомасштабируемой пропускной способности в базе данных или контейнере
+              displayName: 'request units, RUs, RU, shared throughput, database level, collection level, autoscale'
+              href: how-to-provision-autoscale-throughput.md
+            - name: Оценка единиц запросов в секунду с помощью планировщика ресурсов Cosmos
+              displayName: 'request units, RUs, RU, capacity'
+              href: estimate-ru-with-capacity-planner.md
+            - name: Масштабирование с использованием таймера в Функциях Azure
+              displayName: 'request units, RUs, RU, timer'
+              href: scale-on-schedule.md
     - name: Работа с контейнерами и элементами
       items:
         - name: "Работа с данными Cosmos\_DB"

@@ -1,27 +1,26 @@
 ---
-title: Пример PowerShell. вывод расширенных сведений о приложениях прокси приложения
-description: Пример PowerShell, в котором перечислены все приложения прокси приложения Azure Active Directory (Azure AD), а также идентификатор приложения (AppId), имя (DisplayName), внешний URL-адрес (Екстерналурл), внутренний URL-адрес (InternalUrl) и тип проверки подлинности (Екстерналаусентикатионтипе).
+title: Пример PowerShell. Вывод расширенных сведений о приложениях Application Proxy
+description: Пример скрипта PowerShell, который выводит список всех приложений Azure Active Directory (Azure AD) Application Proxy, а также сведения об идентификаторах приложений (AppId), именах (DisplayName), внешних URL-адресах (ExternalUrl), внутренних URL-адресах (InternalUrl) и типе аутентификации (ExternalAuthenticationType).
 services: active-directory
-author: msmimart
+author: kenwith
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: sample
 ms.date: 12/05/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: japere
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f58de8c081dbb0323a2d9638777e29d879172072
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: 8994abc61e27a9d7c7097aacab92282f0c47c989
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75482144"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88506951"
 ---
-# <a name="get-all-application-proxy-apps-and-list-extended-information"></a>Получение всех приложений прокси приложения и перечисление расширенных сведений
+# <a name="get-all-application-proxy-apps-and-list-extended-information"></a>Получение сведений о приложениях Application Proxy и вывод расширенной информации
 
-В этом примере сценария PowerShell выводятся сведения обо всех приложениях прокси приложения Azure Active Directory (Azure AD), включая идентификатор приложения (AppId), имя (DisplayName), внешний URL-адрес (Екстерналурл), внутренний URL-адрес (InternalUrl) и тип проверки подлинности (Екстерналаусентикатионтипе).
+Этот пример скрипта PowerShell выводит сведения обо всех приложениях Azure Active Directory (Azure AD) Application Proxy, в том числе данные об идентификаторах приложений (AppId), именах (DisplayName), внешних URL-адресах (ExternalUrl), внутренних URL-адресах (InternalUrl) и типе аутентификации (ExternalAuthenticationType).
 
 [!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
 
@@ -29,7 +28,7 @@ ms.locfileid: "75482144"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../../includes/cloud-shell-try-it.md)]
 
-Для работы с этим образцом требуется [AzureAD v2 PowerShell для модуля Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) (AzureAD) или [AzureAD v2 PowerShell для предварительной версии модуля Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview).
+Для работы с этим примером требуется [модуль Azure AD PowerShell (версии 2) для Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) (AzureAD) или [предварительная версия модуля Azure AD PowerShell (версии 2) для Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview).
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -39,12 +38,12 @@ ms.locfileid: "75482144"
 
 | Get-Help | Примечания |
 |---|---|
-|[Get-AzureADServicePrincipal](https://docs.microsoft.com/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) | Возвращает субъект-службу. |
-|[Get-AzureADApplication](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplication?view=azureadps-2.0) | Возвращает приложение Azure AD. |
-|[Get-AzureADApplicationProxyApplication](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplicationproxyapplication?view=azureadps-2.0) | Извлекает приложение, настроенное для прокси приложения в Azure AD. |
+|[Get-AzureADServicePrincipal](https://docs.microsoft.com/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) | Получает субъект-службу. |
+|[Get-AzureADApplication](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplication?view=azureadps-2.0) | Получает приложение Azure AD. |
+|[Get-AzureADApplicationProxyApplication](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplicationproxyapplication?view=azureadps-2.0) | Извлекает приложение, настроенное для Application Proxy в Azure AD. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о модуле Azure AD PowerShell см. в статье [Общие сведения о модуле Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0).
+Дополнительные сведения о модуле Azure AD PowerShell см. в этом [обзоре](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0).
 
-Другие примеры PowerShell для прокси приложения см. в статье [примеры Azure AD PowerShell для AD application proxy Azure](../application-proxy-powershell-samples.md).
+См. другие [примеры Azure AD PowerShell для Azure AD Application Proxy](../application-proxy-powershell-samples.md).

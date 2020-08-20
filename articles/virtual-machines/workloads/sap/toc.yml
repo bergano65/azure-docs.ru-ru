@@ -291,6 +291,8 @@
       href: azure-monitor-overview.md
     - name: Поставщики Azure Monitor для решений SAP
       href: azure-monitor-providers.md
+    - name: Настройка Azure Monitor для решений SAP
+      href: azure-monitor-sap-quickstart.md
     - name: 'Вопросы и ответы, касающиеся Azure Monitor для решений SAP'
       href: azure-monitor-faq.md
 - name: Справочник

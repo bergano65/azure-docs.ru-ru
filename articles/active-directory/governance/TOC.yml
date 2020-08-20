@@ -86,6 +86,8 @@
               href: entitlement-management-request-access.md
     - name: Проверки доступа
       items:
+        - name: Планирование развертывания для проверки доступа
+          href: deploy-access-reviews.md
         - name: Пакеты для доступа
           items:
             - name: Создание проверки доступа

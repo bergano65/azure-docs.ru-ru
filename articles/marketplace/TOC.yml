@@ -8,7 +8,7 @@
     - name: 'Коммерческая платформа: общие сведения и преимущества'
       href: ./marketplace-publishers-guide.md
       items:
-        - name: Два онлайн-магазина на одной площадке Marketplace
+        - name: Два онлайн-магазина на одной площадке
           href: ./comparing-appsource-azure-marketplace.md
         - name: Варианты публикации и рекомендации
           href: ./determine-your-listing-type.md

@@ -168,6 +168,8 @@
       href: troubleshoot-appliance-discovery.md
     - name: Устранение неполадок с визуализацией оценок и зависимостей
       href: troubleshoot-assessment.md
+    - name: Устранение неполадок с репликацией при переносе VMware без агента
+      href: troubleshoot-changed-block-tracking-replication.md
 - name: Ресурсы
   items:
     - name: Миграция с помощью Cloud Adoption Framework

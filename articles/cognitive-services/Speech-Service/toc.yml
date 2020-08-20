@@ -20,10 +20,8 @@
       href: index-speech-to-text.yml
     - name: Обзор
       items:
-        - name: Что такое преобразование речи в текст в реальном времени?
+        - name: Что такое преобразование речи в текст?
           href: speech-to-text.md
-        - name: Что такое пакетное преобразование речи в текст?
-          href: batch-transcription.md
         - name: Основы распознавания речи
           href: speech-to-text-basics.md
     - name: Краткие руководства
@@ -53,6 +51,8 @@
           href: how-to-select-audio-input-devices.md
         - name: Использование автоматического определения исходного языка
           href: how-to-automatic-language-detection.md
+        - name: Использование API пакетного транскрибирования
+          href: batch-transcription.md
     - name: Учебники
       items:
         - name: Повышение точности с помощью моделей клиентов

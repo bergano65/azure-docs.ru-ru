@@ -58,8 +58,10 @@
               href: set-up-mabs-for-avs.md
             - name: Создание резервной копии виртуальных машин AVS с помощью Backup Server
               href: backup-avs-vms-with-mabs.md
-        - name: Шлюз приложений в AVS
+        - name: Шлюз приложений с AVS
           href: protect-avs-web-apps-with-app-gateway.md
+        - name: Диспетчер трафика с AVS
+          href: deploy-traffic-manager-to-balance-avs-workloads.md
     - name: Решения VMware
       items:
         - name: Настройка vRealize Operations для AVS
