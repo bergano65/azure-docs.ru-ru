@@ -2,7 +2,7 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Общие сведения о Виртуальной глобальной сети
+    - name: Что такое Виртуальная глобальная сеть?
       href: virtual-wan-about.md
     - name: Architecture
       items:

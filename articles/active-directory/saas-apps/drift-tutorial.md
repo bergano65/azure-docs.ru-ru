@@ -2,26 +2,21 @@
 title: Руководство по интеграции единого входа Azure Active Directory с Drift | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Drift.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 39dcbb95-c192-448c-86a1-cedede1c0972
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/17/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0cd749ef66ee62f6d89d949cef7ce800bc46d59a
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 056b20325b58db74feced67e88157c798214ae70
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72554353"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88555779"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-drift"></a>Руководство по интеграции единого входа Azure Active Directory с Drift
 

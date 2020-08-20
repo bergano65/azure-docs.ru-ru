@@ -5,12 +5,12 @@ author: christophermanthei
 ms.author: chmant
 ms.date: 03/20/2020
 ms.topic: quickstart
-ms.openlocfilehash: dc566d2702fb24ef551e4900bed7b828d2597383
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 6e1a6cb583c0d310cc7ce73995224c42bb84784d
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85557071"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88566171"
 ---
 # <a name="quickstart-deploy-unity-sample-to-desktop"></a>Краткое руководство. Развертывание примера Unity на рабочем столе
 
@@ -58,9 +58,6 @@ ms.locfileid: "85557071"
 1. Для отладчика выберите режим **Local Machine** (Локальный компьютер).
   ![Конфигурация решения](./media/unity-deploy-config-pc.png)
 1. Выполните сборку решения (клавиша F7).
-
-> [!WARNING]
-> Необходимо выбрать **x86**, так как архитектура **UWP/x64** сейчас не поддерживается (см.[ограничения платформы](../reference/limits.md#platform-limitations)).
 
 ## <a name="launch-the-sample-project"></a>Запуск примера проекта
 

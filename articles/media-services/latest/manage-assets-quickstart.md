@@ -3,12 +3,15 @@ title: Отправка, кодирование и потоковая перед
 description: В этом кратком руководстве показано, как использовать портал для отправки, кодирования и выполнения потоковой передачи содержимого с помощью Служб мультимедиа Azure.
 ms.topic: quickstart
 ms.date: 06/08/2020
-ms.openlocfilehash: bab13b7b878f8992ac5523b9902054a42a3dc769
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+author: IngridAtMicrosoft
+ms.author: inhenkel
+manager: femila
+ms.openlocfilehash: 7aebc6e52ec7fac97c6f1e8fb9b30cc63b74e860
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053355"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88605673"
 ---
 # <a name="quickstart-upload-encode-and-stream-content-with-portal"></a>Краткое руководство. Отправка, кодирование и потоковая передача содержимого с помощью портала
 
@@ -28,7 +31,6 @@ ms.locfileid: "87053355"
 
   * [Передача в облако и хранение](storage-account-concept.md)
   * [Концепция ресурсов](assets-concept.md)
-  * [Управление ресурсами](manage-asset-concept.md)
 * После отправки в ресурс (входной ресурс) файл мультимедиа высокого качества можно обработать (закодировать или проанализировать). Обработанное содержимое переходит в другой ресурс (выходной ресурс). 
     * [Закодируйте](encoding-concept.md) отправленный файл в формат, пригодный для воспроизведения в разных браузерах и на различных устройствах.
     * [Проанализируйте](analyzing-video-audio-files-concept.md) отправленный файл. 

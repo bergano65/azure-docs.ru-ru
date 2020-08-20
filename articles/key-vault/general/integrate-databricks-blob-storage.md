@@ -1,17 +1,17 @@
 ---
 title: Получение доступа к Хранилищу BLOB-объектов Azure с помощью Azure Databricks и Azure Key Vault
 description: Из этого руководства вы узнаете, как получить доступ к Хранилищу BLOB-объектов Azure из Azure Databricks с использованием секретов, которые хранятся в Azure Key Vault.
-author: taytran0
-ms.author: t-trtr
+author: msmbaldwin
+ms.author: mbaldwin
 ms.service: key-vault
 ms.topic: tutorial
 ms.date: 06/16/2020
-ms.openlocfilehash: 50ea93dea62b6e4e333e58550b2750897c7e0a77
-ms.sourcegitcommit: 55b2bbbd47809b98c50709256885998af8b7d0c5
+ms.openlocfilehash: bb574bb3dd000682090c6c3f861e885761753e19
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84988286"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88588523"
 ---
 # <a name="tutorial-access-azure-blob-storage-using-azure-databricks-and-azure-key-vault"></a>Руководство по Получение доступа к Хранилищу BLOB-объектов Azure с помощью Azure Databricks и Azure Key Vault
 
