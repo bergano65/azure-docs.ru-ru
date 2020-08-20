@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15d519e1cede27b3626d715c48790af620589e43
-ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
+ms.openlocfilehash: 1ab69e3f4ca89e2069ff25470773e597009ec238
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83757610"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88641081"
 ---
 # <a name="plan-an-azure-multi-factor-authentication-deployment"></a>Планирование развертывания Многофакторной идентификации Azure
 
@@ -108,6 +108,9 @@ ms.locfileid: "83757610"
 ## <a name="plan-authentication-methods"></a>Планирование методов проверки подлинности
 
 Администраторы могут выбрать [методы проверки подлинности](../authentication/concept-authentication-methods.md), которые они хотят сделать доступными для пользователей. Важно обеспечить несколько методов проверки подлинности, чтобы пользователи имели доступ к резервному методу, если основной метод проверки подлинности окажется недоступен. Администраторы могут включить следующие методы:
+
+> [!TIP]
+> Корпорация Майкрософт рекомендует использовать мобильное приложение в качестве основного метода многофакторной идентификации Azure для обеспечения лучшей безопасности и удобства работы пользователей.
 
 ### <a name="notification-through-mobile-app"></a>Уведомление в мобильном приложении
 

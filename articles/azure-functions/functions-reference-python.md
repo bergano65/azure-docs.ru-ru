@@ -4,12 +4,12 @@ description: Сведения о разработке функций на язы
 ms.topic: article
 ms.date: 12/13/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 776355ce981ba5cc2a24bfe473da2f55427eadf6
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: f9b81a7263dc9a1bdae9fd881519ac734da2c6bc
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87850752"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88642203"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
@@ -87,7 +87,6 @@ def main(req: azure.functions.HttpRequest) -> str:
 * *requirements.txt*: содержит список пакетов, которые должны быть установлены при публикации в Azure.
 * *host.json*: содержит параметры глобальной конфигурации, влияющие на все функции в приложении-функции. Этот файл не публикуется в Azure. При локальном запуске поддерживаются не все параметры. Дополнительные сведения см. в разделе [host.json](functions-host-json.md).
 * *.funcignore*: (необязательно) объявляет файлы, которые не должны публиковаться в Azure.
-* *.gitignore*: (необязательно) объявляет файлы, исключаемые из репозитория Git, например local.settings.json.
 * *Dockerfile*: (необязательно) используется при публикации проекта в [настраиваемом контейнере](functions-create-function-linux-custom-image.md).
 
 У каждой функции есть собственный файл кода и файл конфигурации привязки.

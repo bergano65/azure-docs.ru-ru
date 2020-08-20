@@ -5,12 +5,12 @@ ms.devlang: php
 ms.topic: article
 ms.date: 06/02/2020
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 306afb2bfba7c222798bbfd1bef334387b6f9771
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 440815d7d24cde9708c214bf407a2dd9206a1706
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080085"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88642050"
 ---
 # <a name="configure-a-php-app-for-azure-app-service"></a>Настройка приложения PHP для службы приложений Azure
 
@@ -276,8 +276,8 @@ az resource update --name web --resource-group <group-name> --namespace Microsof
 В Службе приложений [завершение SSL-запросов](https://wikipedia.org/wiki/TLS_termination_proxy) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логика вашего приложения проверяет, зашифрованы ли пользовательские запросы, проверяйте заголовок `X-Forwarded-Proto`.
 
 ```php
-if (isset($_SERVER['X-Forwarded-Proto']) && $_SERVER['X-Forwarded-Proto'] === 'https') {
-  // Do something when HTTPS is used
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+// Do something when HTTPS is used
 }
 ```
 
@@ -295,7 +295,7 @@ if (isset($_SERVER['X-Forwarded-Proto']) && $_SERVER['X-Forwarded-Proto'] === 'h
 
 ::: zone pivot="platform-windows"  
 
-Чтобы настроить директивы PHP_INI_USER, PHP_INI_PERDIR и PHP_INI_ALL (см. [директивыphp.ini](https://www.php.net/manual/ini.list.php)), добавьте `.user.ini` файл в корневой каталог приложения.
+Чтобы настроить директивы PHP_INI_USER, PHP_INI_PERDIR и PHP_INI_ALL (см. [ директивыphp.ini](https://www.php.net/manual/ini.list.php)), добавьте `.user.ini` файл в корневой каталог приложения.
 
 Добавьте параметры конфигурации в файл `.user.ini`, используя тот же синтаксис, что и для файла `php.ini`. Например, чтобы включить параметр `display_errors` и установить для параметра `upload_max_filesize` значение 10 МБ, в файле `.user.ini` будет указан следующий текст.
 

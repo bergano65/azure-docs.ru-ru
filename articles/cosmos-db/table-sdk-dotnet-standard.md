@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/18/2019
-ms.openlocfilehash: 097868c0f6c64ad8b58dce365a2232bb02b786e2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: de173d6dc25610cd397cd719fe4c1c9db33a02f6
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84168205"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88641846"
 ---
 # <a name="azure-cosmos-db-table-net-standard-api-download-and-release-notes"></a>API таблиц Azure Cosmos DB и .NET Standard. Скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -27,7 +27,7 @@ ms.locfileid: "84168205"
 |   |   |
 |---|---|
 |**Скачивание пакета SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table)|
-|**Пример**|[Пример Cosmos DB API таблиц .NET](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started)|
+|**Образец**|[Пример Cosmos DB API таблиц .NET](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started)|
 |**Краткое руководство**|[Краткое руководство](create-table-dotnet.md)|
 |**Руководство**|[Руководство](tutorial-develop-table-dotnet.md)|
 |**Текущая поддерживаемая платформа**|[Microsoft .NET Standard 2.0](https://www.nuget.org/packages/NETStandard.Library)|
@@ -42,6 +42,14 @@ ms.locfileid: "84168205"
 ## <a name="release-notes-for-100-series"></a>Заметки о выпуске для серии 1.0.0
 Серия 1.0.0 использует зависимость от [Microsoft.Azure.Docументдб. Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/).
 
+### <a name="108"></a><a name="1.0.8"></a>1.0.8
+* Добавление поддержки для установки свойства TTL, если это cosmosdb конечная точка 
+* Учитывать политику повтора после истечения времени ожидания и отмены задачи
+* Исправлено исключение отмененной задачи в приложениях ASP .NET
+* Исправление хранилища таблиц Azure, полученного из дополнительного режима расположения только для конечной точки
+* Обновить `Microsoft.Azure.DocumentDB.Core` версию зависимости до 2.11.2, которая исправляет периодическое исключение пустой ссылки
+* Обновите `Odata.Core` версию зависимости до 7.6.4, которая устраняет конфликт совместимости с оболочкой Azure.
+
 ### <a name="107"></a><a name="1.0.7"></a>1.0.7
 * Повышение производительности путем настройки уровня трассировки по умолчанию для пакета SDK таблицы на SourceLevels. Off, который можно использовать с помощью app.config
 
@@ -49,18 +57,18 @@ ms.locfileid: "84168205"
 * Познакомьтесь с новой конфигурацией в разделе Таблеклиентконфигуратион, чтобы использовать исполнитель RESTful для взаимодействия с Cosmos DB API таблиц
 
 ### <a name="105-preview"></a><a name="1.0.5-preview"></a>1.0.5 — Предварительная версия
-* Исправленные ошибки
+* Исправления ошибок
 
 ### <a name="104"></a><a name="1.0.4"></a>1.0.4
-* Исправленные ошибки
+* Исправления ошибок
 * Укажите параметр Хттпклиенттимеаут для Рестексекуторконфигуратион.
 
 ### <a name="104-preview"></a><a name="1.0.4-preview"></a>1.0.4 — Предварительная версия
-* Исправленные ошибки
+* Исправления ошибок
 * Укажите параметр Хттпклиенттимеаут для Рестексекуторконфигуратион.
 
 ### <a name="101"></a><a name="1.0.1"></a>1.0.1
-* Исправленные ошибки
+* Исправления ошибок
 
 ### <a name="100"></a><a name="1.0.0"></a>1.0.0
 * Выпуск общедоступной версии

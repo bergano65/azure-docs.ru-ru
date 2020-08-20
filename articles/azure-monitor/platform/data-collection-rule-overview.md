@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 08/10/2020
-ms.openlocfilehash: af5324373359cea643a3e31b6bb94e614ddb7e36
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.date: 08/19/2020
+ms.openlocfilehash: 32993ba41a612ccf0f02a242ed610feab2fac78f
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88083183"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88640741"
 ---
 # <a name="data-collection-rules-in-azure-monitor-preview"></a>Правила сбора данных в Azure Monitor (Предварительная версия)
 Правила сбора данных (ДКР) определяют данные, поступающие в Azure Monitor, и указывают, куда должны отправляться или храниться эти данные. В этой статье приводятся общие сведения о правилах сбора данных, включая их содержимое и структуру, а также способах создания и работы с ними.
@@ -68,7 +68,7 @@ ms.locfileid: "88083183"
 В настоящее время существует два доступных метода для создания ДКР:
 
 - [Используйте портал Azure](data-collection-rule-azure-monitor-agent.md) , чтобы создать правило сбора данных и связать его с одной или несколькими виртуальными машинами.
-- Непосредственно измените правило сбора данных в JSON и отправьте его с помощью REST API.
+- Непосредственно измените правило сбора данных в JSON и [отправьте его с помощью REST API](https://docs.microsoft.com/rest/api/monitor/datacollectionrules).
 
 ## <a name="sample-data-collection-rule"></a>Правило сбора образцов данных
 Приведенное ниже правило сбора образцов данных предназначено для виртуальных машин с агентом управления Azure и содержит следующие сведения.

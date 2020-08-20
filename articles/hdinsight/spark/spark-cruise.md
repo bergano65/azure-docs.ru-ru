@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 07/27/2020
-ms.openlocfilehash: f26addda79d57a055f7b431968319138d499ef18
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.openlocfilehash: d5417bfcfbaa183c34808d9017d5863506429a81
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88272944"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88642288"
 ---
 # <a name="sparkcruise-on-azure-hdinsight"></a>Спарккруисе в Azure HDInsight
 
@@ -146,8 +146,9 @@ drwxr-xr-x   - root root          0 2020-07-24 17:21 /peregrine/views/9409467400
 sudo /opt/peregrine/analyze/peregrine.sh clean
 ```
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
+* [Используйте записную книжку "аналитика рабочей нагрузки", чтобы определить преимущества Спарккруисе](https://github.com/Azure-Samples/azure-sparkcruise-samples/tree/main/SparkCruise)
 * [Повышение производительности Apache Spark рабочих нагрузок с помощью кэша ввода-вывода Azure HDInsight](apache-spark-improve-performance-iocache.md)
 * [Оптимизация заданий Apache Spark в Azure HDInsight](./apache-spark-perf.md)
 * [Спарккруисе: повторное вычисление Хандсфри в Spark](https://people.cs.umass.edu/~aroy/sparkcruise-vldb19.pdf)

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: tyleonha
 ms.reviewer: glenga
-ms.openlocfilehash: 51edbc18a929f4f954fb1a582a417bc1600d1a6f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: dc5bfacf470980a5d38832ec6299c8ff1426ee05
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87082993"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88642237"
 ---
 # <a name="debug-powershell-azure-functions-locally"></a>Локальная отладка функций Azure PowerShell
 
@@ -129,7 +129,7 @@ PowerShell Core устанавливается параллельно с Windows
 * Присоедините отладчик PowerShell к пространству выполнения PowerShell в среде выполнения функций.
 
 >[!NOTE]
-> Необходимо убедиться, что Псворкеринпрокконкурренциуппербаунд имеет значение 1, чтобы обеспечить правильную работу по отладке в Visual Studio Code. Этот тип используется по умолчанию.
+> Необходимо убедиться, что Псворкеринпрокконкурренциуппербаунд имеет значение 1, чтобы обеспечить правильную работу по отладке в Visual Studio Code. Это значение по умолчанию.
 
 После запуска приложения-функции вам потребуется отдельная консоль PowerShell для вызова функции, активируемой HTTP.
 
@@ -235,13 +235,23 @@ At /Path/To/PSFunctionApp/HttpTriggerFunction/run.ps1:13 char:1
 
 При отладке кода функций учитывайте следующие моменты.
 
-### <a name="breakall-might-cause-your-debugger-to-break-in-an-unexpected-place"></a>`BreakAll`может привести к сбою отладчика в непредвиденном месте
+### <a name="breakall-might-cause-your-debugger-to-break-in-an-unexpected-place"></a>`BreakAll` может привести к сбою отладчика в непредвиденном месте
 
 Расширение PowerShell использует `Debug-Runspace` , которое, в свою очередь, зависит от `BreakAll` функции PowerShell. Эта функция указывает, что PowerShell должен останавливаться на первой выполняемой команде. Такое поведение дает возможность задавать точки останова в отлаживаемом пространстве выполнения.
 
 Среда выполнения функций Azure выполняет несколько команд до фактического вызова `run.ps1` скрипта, поэтому отладчик может завершить работу в `Microsoft.Azure.Functions.PowerShellWorker.psm1` или `Microsoft.Azure.Functions.PowerShellWorker.psd1` .
 
 Если это произойдет, выполните `continue` команду или, `c` чтобы пропустить эту точку останова. Затем вы останавливается в ожидаемой точке останова.
+
+## <a name="troubleshooting"></a>Устранение неполадок
+
+При возникновении трудностей во время отладки необходимо проверить следующее:
+
+| Проверить | Действие |
+|------|------|
+| Запустите `func --version` из терминала. Если появляется сообщение об ошибке, которое `func` не удается найти, то основные средства (func.exe) могут отсутствовать в локальной `path` переменной.| [Переустановите основные инструменты](functions-run-local.md#v2).|  
+| В Visual Studio Code терминалу по умолчанию необходим доступ к func.exe. Убедитесь, что вы не используете терминал по умолчанию, на котором не установлены основные средства, например подсистема Windows для Linux (WSL).  | Задайте оболочку по умолчанию в Visual Studio Code либо PowerShell 7 (рекомендуется), либо Windows PowerShell 5,1.|
+  
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

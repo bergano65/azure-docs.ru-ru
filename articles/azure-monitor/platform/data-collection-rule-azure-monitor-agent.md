@@ -4,13 +4,13 @@ description: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 08/10/2020
-ms.openlocfilehash: 3cd2ed692f3a34223675da69efd92e78c2ba9504
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.date: 08/19/2020
+ms.openlocfilehash: 97ba976c841e192646ebb484fe4d004556e34c54
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88083192"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88640843"
 ---
 # <a name="configure-data-collection-for-the-azure-monitor-agent-preview"></a>Настройка сбора данных для агента Azure Monitor (Предварительная версия)
 Правила сбора данных (ДКР) определяют данные, поступающие в Azure Monitor, и указывают, куда они должны отправляться. В этой статье описывается создание правила сбора данных для сбора данных из виртуальных машин с помощью агента Azure Monitor.
@@ -48,7 +48,7 @@ ms.locfileid: "88083192"
 [![Базовый источник данных](media/azure-monitor-agent/data-collection-rule-data-source-basic.png)](media/azure-monitor-agent/data-collection-rule-data-source-basic.png#lightbox)
 
 
-Чтобы указать другие журналы и счетчики производительности, выберите **Пользовательский**. Затем можно указать [XPath](https://www.w3schools.com/xml/xpath_syntax.asp) для всех конкретных значений, которые необходимо получить. Примеры см. в разделе [Sample ДКР](data-collection-rule-overview.md#sample-data-collection-rule) .
+Чтобы указать другие журналы и счетчики производительности, выберите **Пользовательский**. Затем можно указать [XPath ](https://www.w3schools.com/xml/xpath_syntax.asp) для всех конкретных значений, которые необходимо получить. Примеры см. в разделе [Sample ДКР](data-collection-rule-overview.md#sample-data-collection-rule) .
 
 [![Пользовательский источник данных](media/azure-monitor-agent/data-collection-rule-data-source-custom.png)](media/azure-monitor-agent/data-collection-rule-data-source-custom.png#lightbox)
 
@@ -61,6 +61,11 @@ ms.locfileid: "88083192"
 > [!NOTE]
 > После создания правила сбора данных и связей может потребоваться до 5 минут для отправки данных в назначения.
 
+## <a name="createusingrestapi"></a>Создание с помощью REST API
+Выполните следующие действия, чтобы создать ДКР и связи с помощью REST API. 
+1.Вручную создайте файл ДКР, используя формат JSON, показанный в [примере ДКР](data-collection-rule-overview.md#sample-data-collection-rule).
+2.Создайте правило с помощью [REST API](https://docs.microsoft.com/rest/api/monitor/datacollectionrules/create#examples).
+3.Создайте ассоциацию для каждой виртуальной машины в правиле сбора данных с помощью [REST API](https://docs.microsoft.com/rest/api/monitor/datacollectionruleassociations/create#examples).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef1ffb5ec0b39c5331afbc55d99268d9a3997e62
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: efd98cab50c3239d3202e6feabe18f45a4240293
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84764457"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88641183"
 ---
 # <a name="compare-remote-access-solutions"></a>Сравнение решений для удаленного доступа
 
@@ -32,7 +32,7 @@ ms.locfileid: "84764457"
 
 В таблице ниже приведено сравнение продуктов Threat Management Gateway (TMG), Unified Access Gateway (UAG), прокси-службы веб-приложения (WAP) и прокси-службы Azure AD (AP).
 
-| Компонент | TMG | UAG | WAP | AP |
+| Функция | TMG | UAG | WAP | Доступности и устойчивости к разделению сети |
 | ------- | --- | --- | --- | --- |
 | Проверка подлинности на основе сертификата | Да | Да | - | - |
 | Выборочная публикация браузерных приложений | Да | Да | Да | Да |
@@ -59,9 +59,9 @@ ms.locfileid: "84764457"
    - Такие функции, как условный доступ и многофакторная идентификация, легко включить
 - Без компонентов в сети периметра
 - Отсутствие необходимости во входящих соединениях
-- Единая панель доступа для пользователей всех приложений, включая O365, интегрированные с Azure AD приложения SaaS и веб-приложения локальной среды. 
+- Одна страница "Мои приложения", к которой пользователи могут переходить для всех своих приложений, включая Office 365, интегрированные приложения SaaS Azure AD и локальные веб-приложения. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обеспечение безопасного удаленного доступа к локальным приложениям с помощью службы приложений Azure AD](application-proxy.md)

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/27/2020
 ms.author: kenwith
 ms.reviewer: arvinh,luleon
-ms.openlocfilehash: d4f00061664340681b365eddfa1a742795f96d99
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 262c3a7c8a668ef25d092b5d523743e0ece89cc3
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88164688"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88641149"
 ---
 # <a name="using-azure-ad-for-applications-not-listed-in-the-app-gallery"></a>Использование Azure AD для приложений, не перечисленных в коллекции приложений
 
@@ -31,7 +31,7 @@ ms.locfileid: "88164688"
 - самостоятельная интеграция любого приложения, которое совместимо с поставщиками удостоверений [SAML (язык разметки заявлений системы безопасности) 2.0](https://wikipedia.org/wiki/SAML_2.0) (инициированная поставщиком услуг или поставщиком удостоверений);
 - самостоятельная интеграция любого веб-приложения, где есть HTML-страница входа, с использованием функции [единого входа на основе пароля](sso-options.md#password-based-sso)
 - самостоятельное подключение приложений, которые используют протокол [SCIM (System for Cross-domain Identity Management) для подготовки пользователей](../app-provisioning/use-scim-to-provision-users-and-groups.md);
-- Возможность добавлять ссылки на любые приложения в [Средство запуска приложений Office 365](https://www.microsoft.com/microsoft-365/blog/2014/10/16/organize-office-365-new-app-launcher-2/) или [Панель доступа Azure AD](sso-options.md#linked-sign-on).
+- Возможность добавления ссылок в любое приложение в средстве [запуска приложений Office 365](https://www.microsoft.com/microsoft-365/blog/2014/10/16/organize-office-365-new-app-launcher-2/) или " [Мои приложения](sso-options.md#linked-sign-on) "
 
 Если вы ищете руководство для разработчиков о том, как интегрировать пользовательские приложения с Azure AD, см. статью [сценарии проверки подлинности в Azure AD](../develop/authentication-scenarios.md). При разработке приложения, использующего современный протокол, например [OpenId Connect/OAuth](../develop/active-directory-v2-protocols.md), для аутентификации пользователей, вы можете зарегистрировать его на платформе удостоверений Майкрософт, используя функцию [Регистрация приложений](../develop/quickstart-register-app.md) на портале Azure.
 

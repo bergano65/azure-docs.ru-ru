@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: article
 ms.date: 04/23/2020
 ms.author: cshoe
-ms.openlocfilehash: fd7b0be967c7a0bbc605c51408448917b5222d36
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 37f79d717b7ea0e26717e7b51f9e66b908b96521
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83121820"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88640975"
 ---
 # <a name="manually-run-a-non-http-triggered-function"></a>Запуск функции, не активируемой HTTP-запросом, вручную
 
@@ -37,7 +37,7 @@ ms.locfileid: "83121820"
 
 ## <a name="get-the-functions-master-key"></a>Получение главного ключа функции
 
-1. Перейдите к функции в портал Azure и выберите **функции ключи**. Затем выберите функциональную клавишу, которую необходимо скопировать. 
+1. Перейдите к приложению функции в [портал Azure](https://portal.azure.com), выберите **ключи приложения**, а затем — `_master` ключ. 
 
     :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-functions-master-key.png" alt-text="Нахождение копируемого главного ключа." border="true":::
 
@@ -50,7 +50,7 @@ ms.locfileid: "83121820"
     :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-function-log.png" alt-text="Просмотрите журналы, чтобы просмотреть результаты тестирования главного ключа." border="true":::
 
 > [!CAUTION]  
-> Главный ключ предоставляет высокий уровень разрешений в приложении-функции, поэтому никогда не передавайте этот ключ третьим лицам и не включайте его в состав приложения.
+> Главный ключ предоставляет высокий уровень разрешений в приложении-функции, поэтому никогда не передавайте этот ключ третьим лицам и не включайте его в состав приложения. Ключ должен быть отправлен только в конечную точку HTTPS.
 
 ## <a name="call-the-function"></a>Вызов функции
 
@@ -79,7 +79,7 @@ ms.locfileid: "83121820"
 
     :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-functions-master-key-logs.png" alt-text="Просмотрите журналы, чтобы просмотреть результаты тестирования главного ключа." border="true":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Методика тестирования кода с помощью Функций Azure](./functions-test-a-function.md)
 - [Локальная отладка триггера Сетки событий для функций Azure](./functions-debug-event-grid-trigger-local.md)

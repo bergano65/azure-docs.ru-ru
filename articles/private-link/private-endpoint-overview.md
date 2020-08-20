@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: allensu
-ms.openlocfilehash: 1566de36d6176568b148fde965bb7d3051e6b500
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 7456402605328592d4f5677767bcd985941173ec
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543475"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88639840"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
@@ -47,6 +47,7 @@ ms.locfileid: "87543475"
  
 - В одной виртуальной сети можно создать несколько частных конечных точек для одних и тех же или разных подсетей. Количество частных конечных точек, которые можно создать в рамках подписки, ограничено. Дополнительные сведения см. в разделе  [Ограничения сети](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#networking-limits).
 
+- Подписка из ресурса частной связи также должна быть зарегистрирована в поставщике ресурсов micosoft. Network. Дополнительные сведения см. в статье [поставщики ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types).
 
  
 ## <a name="private-link-resource"></a>Ресурс Приватного канала 
@@ -132,9 +133,9 @@ ms.locfileid: "87543475"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Создание частной конечной точки для базы данных SQL с помощью портала](create-private-endpoint-portal.md)
-- [Создание частной конечной точки для базы данных SQL с помощью PowerShell](create-private-endpoint-powershell.md)
-- [Создание частной конечной точки для базы данных SQL с помощью интерфейса командной строки](create-private-endpoint-cli.md)
+- [Создание частной конечной точки для базы данных SQL с помощью портала ](create-private-endpoint-portal.md)
+- [Создание частной конечной точки для базы данных SQL с помощью PowerShell ](create-private-endpoint-powershell.md)
+- [Создание частной конечной точки для базы данных SQL с помощью интерфейса командной строки ](create-private-endpoint-cli.md)
 - [Создание частной конечной точки для учетной записи хранения, используя портал ](create-private-endpoint-storage-portal.md)
 - [Создание частной конечной точки для учетной записи Azure Cosmos с помощью портала](../cosmos-db/how-to-configure-private-endpoints.md)
 - [Create your own Private Link service using Azure PowerShel](create-private-link-service-powershell.md) (Создание собственного Приватного канала с помощью Azure PowerShell)

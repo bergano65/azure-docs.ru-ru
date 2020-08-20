@@ -10,16 +10,14 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/12/2020
 ms.author: trbye
-ms.openlocfilehash: b1e84f9acb439324317ed2f0d11ed06eb3e43ad8
-ms.sourcegitcommit: f01c2142af7e90679f4c6b60d03ea16b4abf1b97
+ms.openlocfilehash: 90a5ec8c58865c3aa1b210db51b9ffeb7169d641
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84678075"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88640418"
 ---
 # <a name="what-is-speech-to-text"></a>Что такое преобразование речи в текст?
-
-[!INCLUDE [TLS 1.2 enforcement](../../../includes/cognitive-services-tls-announcement.md)]
 
 Преобразование речи в текст из речевой службы, известной также как распознавание речи, позволяет подсчитать звуковые потоки в режиме реального времени в текст. Приложения, средства и устройства могут использовать, отображать и предпринимать действия над этим текстом в качестве входных данных команды. Эта служба работает с помощью той же технологии распознавания, которую корпорация Майкрософт использует для Кортаны и продуктов Office. Он легко работает с предложениями <a href="./speech-translation.md" target="_blank">службы <span class="docon docon-navigate-external x-hidden-focus"></span> перевода и преобразования</a> <a href="./text-to-speech.md" target="_blank">текста в речь <span class="docon docon-navigate-external x-hidden-focus"></span> </a> . Полный список доступных языков для перевода речи в текст см. в разделе [Поддерживаемые языки](language-support.md#speech-to-text).
 
@@ -30,6 +28,8 @@ ms.locfileid: "84678075"
 > [!NOTE]
 > Распознавание речи Bing списано 15 октября 2019 г. Если приложения, средства или продукты используют Распознавание речи Bing API, мы создали руководства, которые помогут вам перейти на службу распознавания речи.
 > - [Миграция с Распознавание речи Bing в службу речи](how-to-migrate-from-bing-speech.md)
+
+[!INCLUDE [TLS 1.2 enforcement](../../../includes/cognitive-services-tls-announcement.md)]
 
 ## <a name="get-started-with-speech-to-text"></a>Начало работы с речью в текст
 
@@ -58,6 +58,10 @@ ms.locfileid: "84678075"
 ## <a name="customization"></a>Настройка
 
 Помимо стандартной модели речевой службы, можно создавать пользовательские модели. Настройка помогает преодолеть барьеры распознавания речи, такие как стиль речи, словарь и фоновый шум, см. [пользовательское распознавание речи](how-to-custom-speech.md). Параметры настройки зависят от языка и языкового стандарта. см. раздел [Поддерживаемые языки](supported-languages.md) для проверки поддержки.
+
+## <a name="batch-transcription"></a>Пакетное транскрибирование
+
+Запись пакетов — это набор REST API операций, позволяющих транскрипция большой объем аудио в хранилище. Вы можете указывать на звуковые файлы с помощью URI подписанного URL-кода (SAS) и асинхронно получать результаты транскрипции. Дополнительные сведения об использовании API [-](batch-transcription.md) интерфейса для записи пакетов см. в этой статье.
 
 [!INCLUDE [speech-reference-doc-links](includes/speech-reference-doc-links.md)]
 

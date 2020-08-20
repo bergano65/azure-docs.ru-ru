@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: rwaller
-ms.openlocfilehash: 972eb3f9983004ec7dbb3cb0df7bb3c59bdc9122
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 66a2fde47f71536661431959b957246e28c81d6a
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86042020"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88639819"
 ---
 # <a name="create-an-immersive-reader-resource-and-configure-azure-active-directory-authentication"></a>Создание иммерсивного ресурса чтения и Настройка проверки подлинности Azure Active Directory
 
@@ -44,7 +44,8 @@ ms.locfileid: "86042020"
         [Parameter(Mandatory=$true)] [String] $ResourceGroupLocation,
         [Parameter(Mandatory=$true)] [String] $AADAppDisplayName="ImmersiveReaderAAD",
         [Parameter(Mandatory=$true)] [String] $AADAppIdentifierUri,
-        [Parameter(Mandatory=$true)] [String] $AADAppClientSecret
+        [Parameter(Mandatory=$true)] [String] $AADAppClientSecret,
+        [Parameter(Mandatory=$true)] [String] $AADAppClientSecretExpiration
     )
     {
         $unused = ''
@@ -93,12 +94,13 @@ ms.locfileid: "86042020"
         $clientId = az ad app show --id $AADAppIdentifierUri --query "appId" -o tsv
         if (-not $clientId) {
             Write-Host "Creating new Azure Active Directory app"
-            $clientId = az ad app create --password $AADAppClientSecret --display-name $AADAppDisplayName --identifier-uris $AADAppIdentifierUri --query "appId" -o tsv
+            $clientId = az ad app create --password $AADAppClientSecret --end-date "$AADAppClientSecretExpiration" --display-name $AADAppDisplayName --identifier-uris $AADAppIdentifierUri --query "appId" -o tsv
 
             if (-not $clientId) {
                 throw "Error: Failed to create Azure Active Directory app"
             }
-            Write-Host "Azure Active Directory app created successfully"
+            Write-Host "Azure Active Directory app created successfully."
+            Write-Host "NOTE: To manage your Active Directory app client secrets after this Immersive Reader Resource has been created please visit https://portal.azure.com and go to Home -> Azure Active Directory -> App Registrations -> $AADAppDisplayName -> Certificates and Secrets blade -> Client Secrets section" -ForegroundColor Yellow
         }
 
         # Create a service principal if it doesn't already exist
@@ -155,6 +157,7 @@ ms.locfileid: "86042020"
       -AADAppDisplayName '<AAD_APP_DISPLAY_NAME>' `
       -AADAppIdentifierUri '<AAD_APP_IDENTIFIER_URI>' `
       -AADAppClientSecret '<AAD_APP_CLIENT_SECRET>'
+      -AADAppClientSecretExpiration '<AAD_APP_CLIENT_SECRET_Expiration>'
     ```
 
     | Параметр | Комментарии |
@@ -168,7 +171,12 @@ ms.locfileid: "86042020"
     | ResourceGroupLocation |Если группа ресурсов не существует, необходимо указать расположение, в котором будет создана группа. Чтобы найти список расположений, выполните команду `az account list-locations` . Используйте свойство *Name* (без пробелов) возвращаемого результата. Этот параметр является необязательным, если группа ресурсов уже существует. |
     | аадаппдисплайнаме |Отображаемое имя Azure Active Directory приложения. Если существующее приложение Azure AD не найдено, будет создано новое имя с таким именем. Этот параметр является необязательным, если приложение Azure AD уже существует. |
     | аадаппидентифиерури |Универсальный код ресурса (URI) для приложения Azure AD. Если существующее приложение Azure AD не найдено, будет создан новый объект с этим URI. Например, `https://immersivereaderaad-mycompany`. |
-    | аадаппклиентсекрет |Созданный пароль, который будет использоваться позже для проверки подлинности при получении маркера для запуска иммерсивное средство чтения. Длина пароля должна составлять не менее 16 символов, содержать по крайней мере один специальный символ и содержать по крайней мере один числовой символ. |
+    | аадаппклиентсекрет |Созданный пароль, который будет использоваться позже для проверки подлинности при получении маркера для запуска иммерсивное средство чтения. Длина пароля должна составлять не менее 16 символов, содержать по крайней мере один специальный символ и содержать по крайней мере один числовой символ. Чтобы управлять секретами клиента приложения Azure AD после создания этого ресурса, посетите страницу https://portal.azure.com Home-> Azure Active Directory-> регистрация приложений-> `[AADAppDisplayName]` -> сертификаты и секреты колонка — > секреты клиента (как показано на снимке экрана "Управление секретами приложения Azure AD"). |
+    | аадаппклиентсекретекспиратион |Дата или время, после которых `[AADAppClientSecret]` истекает срок действия (например, "2020-12-31T11:59:59 + 00:00" или "2020-12-31"). |
+
+    Управление секретами приложения Azure AD
+
+    ![Колонка сертификатов и секретов портала Azure](./media/client-secrets-blade.png)
 
 1. Скопируйте выходные данные JSON в текстовый файл для последующего использования. Полученный результат должен выглядеть примерно так:
 
@@ -181,11 +189,11 @@ ms.locfileid: "86042020"
     }
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с [кратким руководством для разработчиков Node.js](./quickstarts/client-libraries.md?pivots=programming-language-nodejs), чтобы узнать другие возможности пакета SDK иммерсивного средства чтения при использовании Node.js
-* Ознакомьтесь с [руководством по Android](./tutorial-android.md) , чтобы узнать, что еще можно сделать с помощью пакета SDK для иммерсивное средство чтения с использованием Java или Котлин для Android.
-* Ознакомьтесь с [руководством по iOS](./tutorial-ios.md) , чтобы узнать, что еще можно сделать с помощью пакета SDK для иммерсивное средство чтения, используя SWIFT для iOS.
+* Ознакомьтесь с [руководством для разработчиков Android](./tutorial-android.md), чтобы узнать о других возможностях пакета SDK иммерсивного средства чтения при использовании Java или Kotlin для Android.
+* Ознакомьтесь с [руководством для разработчиков iOS](./tutorial-ios.md), чтобы узнать о других возможностях пакета SDK иммерсивного средства чтения при использовании Swift для iOS.
 * Ознакомьтесь с [руководством для разработчиков Python](./tutorial-python.md), чтобы узнать другие возможности пакета SDK иммерсивного средства чтения при использовании Python.
 * Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [справочнике по этому пакету](./reference.md).
 

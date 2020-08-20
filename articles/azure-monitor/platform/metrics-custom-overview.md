@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 06/01/2020
 ms.subservice: metrics
-ms.openlocfilehash: ca697fe0174a62532f3fa9ffbc5b3fcfc0c06ad7
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 73c9b2bf8cf88ca5e8576c451c9d9ac5f0eae8a3
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321281"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88639908"
 ---
 # <a name="custom-metrics-in-azure-monitor-preview"></a>Пользовательские метрики в Azure Monitor (Предварительная версия)
 
@@ -26,6 +26,7 @@ Azure Monitor настраиваемые метрики актуальны в о
 
 Пользовательские метрики можно отправлять в Azure Monitor несколькими способами.
 - Инструментировать приложения с помощью пакета SDK Application Insights и отправить пользовательские данные телеметрии в Azure Monitor. 
+- Установите агент Azure Monitor (Предварительная версия) на [виртуальной машине Windows или Linux Azure](azure-monitor-agent-overview.md) и используйте [правило сбора данных](data-collection-rule-azure-monitor-agent.md) для отправки счетчиков производительности в Azure Monitor метрики.
 - Установить расширения Диагностики Azure для Windows из [виртуальной машины Azure](collect-custom-metrics-guestos-resource-manager-vm.md), [масштабируемого набора виртуальных машин](collect-custom-metrics-guestos-resource-manager-vmss.md), [классической виртуальной машины](collect-custom-metrics-guestos-vm-classic.md) или [классических облачных служб](collect-custom-metrics-guestos-vm-cloud-service-classic.md) и отправить счетчики производительности в Azure Monitor. 
 - Установить [агент InfluxData Telegraf](collect-custom-metrics-linux-telegraf.md) на виртуальной машине Linux Azure и отправить метрики с помощью подключаемого модуля выходных данных Azure Monitor.
 - Отправляйте пользовательские метрики [непосредственно в Azure Monitor REST API](./metrics-store-custom-rest-api.md), `https://<azureregion>.monitoring.azure.com/<AzureResourceID>/metrics` .
@@ -53,7 +54,7 @@ Azure Monitor настраиваемые метрики актуальны в о
 > [!TIP]  
 > Когда для создания настраиваемых метрик вы запрашиваете маркер Azure AD, убедитесь, что он запрашивает аудиторию или ресурс, которые совпадают с `https://monitoring.azure.com/`. Убедитесь, что адрес содержит завершающую косую черту (/).
 
-### <a name="subject"></a>Субъект
+### <a name="subject"></a>Тема
 Это свойство содержит ИД ресурса Azure, для которого предоставляется пользовательская метрика. Эти сведения будут закодированы в URL-адресе совершаемого вызова API. Каждый API может отправлять значения метрик для одного ресурса Azure.
 
 > [!NOTE]  
@@ -68,7 +69,7 @@ Azure Monitor настраиваемые метрики актуальны в о
 >
 >
 
-### <a name="timestamp"></a>Timestamp
+### <a name="timestamp"></a>Отметка времени
 Каждая точка данных, отправляемая в Azure Monitor, должна быть отмечена временной меткой. Эта метка времени содержит дату и время измерения или получения метрики. Azure Monitor принимает данные метрик с метками времени до 20 минут назад и до 5 минут вперед. Метка времени должна быть в формате ISO 8601.
 
 ### <a name="namespace"></a>Пространство имен
@@ -195,8 +196,8 @@ Azure Monitor настраиваемые метрики актуальны в о
 |Центрально-южная часть США| HTTPS: \/ /southcentralus.Monitoring.Azure.com |
 |Центральная часть США      | HTTPS: \/ /centralus.Monitoring.Azure.com |
 |Центральная Канада | HTTPS: \/ /canadacentral.Monitoring.Azure.com |
-|East US| HTTPS: \/ /eastus.Monitoring.Azure.com |
-|Восточная часть США 2 | HTTPS: \/ /eastus2.Monitoring.Azure.com |
+|Восточная часть США| HTTPS: \/ /eastus.Monitoring.Azure.com |
+|восточная часть США 2 | HTTPS: \/ /eastus2.Monitoring.Azure.com |
 | **Европа** | |
 |Северная Европа    | HTTPS: \/ /northeurope.Monitoring.Azure.com |
 |Западная Европа     | HTTPS: \/ /westeurope.Monitoring.Azure.com |
@@ -207,8 +208,8 @@ Azure Monitor настраиваемые метрики актуальны в о
 | **Азия** | |
 |Центральная Индия | HTTPS: \/ /centralindia.Monitoring.Azure.com |
 |Восточная Австралия | HTTPS: \/ /australiaeast.Monitoring.Azure.com |
-|Japan East | HTTPS: \/ /japaneast.Monitoring.Azure.com |
-|Southeast Asia  | HTTPS: \/ /SoutheastAsia.Monitoring.Azure.com |
+|Восточная Япония | HTTPS: \/ /japaneast.Monitoring.Azure.com |
+|Юго-Восточная Азия  | HTTPS: \/ /SoutheastAsia.Monitoring.Azure.com |
 |Восточная Азия | HTTPS: \/ /eastasia.Monitoring.Azure.com |
 |Республика Корея, центральный регион   | HTTPS: \/ /koreacentral.Monitoring.Azure.com |
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 05/31/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 68ccf3518a7011c0c39003d8e447a4e1d233fd91
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: ce159bc61a1f21c52b8d182c1248ba1d436462da
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88164586"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88640520"
 ---
 # <a name="using-azure-ad-application-proxy-to-publish-on-premises-apps-for-remote-users"></a>Использование Azure AD Application Proxy для публикации локальных приложений для удаленных пользователей
 
@@ -76,7 +76,7 @@ Application Proxy — это служба Azure AD, которую можно н
 
 Данная функция содержит следующие компоненты: служба Application Proxy, которая выполняется в облаке, соединитель Application Proxy, который является упрощенным агентом, выполняемым на локальном сервере, и служба Azure AD, которая является поставщиком удостоверений. Все три компонента взаимодействуют, обеспечивая единый вход пользователей для доступа к локальным веб-приложениям.
 
-После входа в систему внешние пользователи могут получить доступ к локальным веб-приложениям с помощью привычного URL-адреса или [панели доступа MyApps](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access) со своих компьютеров или устройств Mac или iOS. Например, Application Proxy поддерживает удаленный доступ и единый вход для приложений "Удаленный рабочий стол", сайтов SharePoint, Tableau, Qlik, Outlook в Интернете и бизнес-приложений (LOB).
+После входа внешние пользователи могут получить доступ к локальным веб-приложениям с помощью привычного URL-адреса или [моих приложений](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access) с настольных компьютеров или устройств iOS/Mac. Например, Application Proxy поддерживает удаленный доступ и единый вход для приложений "Удаленный рабочий стол", сайтов SharePoint, Tableau, Qlik, Outlook в Интернете и бизнес-приложений (LOB).
 
 ![Архитектура Azure AD Application Proxy](media/what-is-application-proxy/azure-ad-application-proxy-architecture.png)
 

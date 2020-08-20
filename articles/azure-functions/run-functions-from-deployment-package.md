@@ -3,12 +3,12 @@ title: Запуск функций Azure из пакета
 description: Настройте запуск функций в среде выполнения Функций Azure путем подключения файла пакета развертывания, содержащего файлы проекта приложения-функции.
 ms.topic: conceptual
 ms.date: 07/15/2019
-ms.openlocfilehash: 6a2633550c9bcbdc59baf99f79559655afbb9b74
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: b2d90cf78263b30b4315199cf1c543186a435f17
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88214239"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88639891"
 ---
 # <a name="run-your-azure-functions-from-a-package-file"></a>Запуск функций Azure из файла пакета
 
@@ -51,6 +51,9 @@ ms.locfileid: "88214239"
 
 [Развертывание из ZIP-файла][Zip deployment for Azure Functions] — это функция Службы приложений Azure, которая позволяет развертывать проект приложения-функции в каталог `wwwroot`. Проект упакован как ZIP-файл развертывания. Те же API можно использовать для развертывания пакета в папку `d:\home\data\SitePackages`. Если для параметра приложения `WEBSITE_RUN_FROM_PACKAGE` задано значение `1`, API-интерфейсы развертывания из ZIP-файла копируют пакет в папку `d:\home\data\SitePackages`, а не извлекают файлы в `d:\home\site\wwwroot`. Также создается файл `packagename.txt`. После перезагрузки пакет монтируется в `wwwroot` виде файловой системы, предназначенной только для чтения. Дополнительные сведения о развертывании из ZIP-файла см. в статье [Непрерывное развертывание Функций Azure из ZIP-файла](deployment-zip-push.md).
 
+> [!NOTE]
+> Когда происходит развертывание, запускается перезапуск приложения-функции. Перед перезапуском все существующие функции могут завершаться или исполняться. Дополнительные сведения см. в разделе [варианты поведения развертывания](functions-deployment-technologies.md#deployment-behaviors).
+
 ## <a name="adding-the-website_run_from_package-setting"></a>Добавление параметра WEBSITE_RUN_FROM_PACKAGE
 
 [!INCLUDE [Function app settings](../../includes/functions-app-settings.md)]
@@ -64,7 +67,7 @@ ms.locfileid: "88214239"
 - Для повышения производительности холодного запуска используйте параметр local ZIP ( `WEBSITE_RUN_FROM_PACKAGE` = 1).
 - Выполнение из пакета несовместимо с параметром настройки развертывания ( `SCM_DO_BUILD_DURING_DEPLOYMENT=true` ). во время развертывания шаг сборки будет пропущен.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Непрерывное развертывание для Функций Azure](functions-continuous-deployment.md)

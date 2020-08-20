@@ -8,22 +8,25 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 05/09/2016
 ms.author: markscu
-ms.openlocfilehash: a3f3dbd74ef74f091ca923f8c09680c6913ac300
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c2561a6dc3ad8c0af1c266b3822a80c76f45c174
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87074236"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88639687"
 ---
 # <a name="create-matlab-distributed-computing-server-clusters-on-azure-vms"></a>Создание кластеров MATLAB Distributed Computing Server на виртуальных машинах Azure
 Используя виртуальные машины Microsoft Azure, вы можете создать один или несколько кластеров MATLAB Distributed Computing Server, в которых можно запускать параллельные рабочие нагрузки MATLAB для ресурсоемких вычислений. Установите программное обеспечение MATLAB Distributed Computing Server на виртуальную машину для использования в качестве базового образа. Затем примените шаблон быстрого запуска Azure или сценарий Azure PowerShell (доступный на [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/matlab-cluster)) для развертывания кластера и управления им. После развертывания подключитесь к кластеру, чтобы запустить рабочие нагрузки.
+
+> [!IMPORTANT]
+> Поскольку эта статья написана, теперь существует официальная поддержка использования приложений MATLAB в Azure. Рекомендуется использовать эти более новые возможности вместо шаблонов и сценариев, упоминаемых в этой статье. Выполните поиск в [Azure Marketplace](https://azuremarketplace.microsoft.com/) по запросу "MATLAB"; Дополнительные сведения о выполнении приложений MATLAB в Azure доступны в [MathWorks](https://www.mathworks.com/solutions/cloud.html#public-cloud).
 
 ## <a name="about-matlab-and-matlab-distributed-computing-server"></a>О MATLAB и MATLAB Distributed Computing Server
 Платформа [MATLAB](https://www.mathworks.com/products/matlab/) оптимизирована для решения инженерных и научных задач. Пользователи MATLAB, работающие с задачами крупномасштабной симуляции и обработки данных, могут задействовать продукты MathWorks для параллельных вычислений, чтобы ускорить рабочие нагрузки с ресурсоемкими вычислениями, используя преимущества вычислительных кластеров и служб Grid. [Parallel Computing Toolbox](https://www.mathworks.com/products/parallel-computing/) позволяет пользователям MATLAB параллелизировать приложения и задействовать преимущества многоядерных процессоров, графических процессоров и вычислительных кластеров. [MATLAB Distributed Computing Server](https://www.mathworks.com/products/distriben/) позволяет пользователям MATLAB задействовать множество компьютеров в вычислительном кластере.
 
 Используя виртуальные машины Azure, можно создавать кластеры MATLAB Distributed Computing Server, в которых доступны те же механизмы для отправки параллельных рабочих нагрузок, что и в локальных кластерах. Такими рабочими нагрузками могут быть интерактивные задания, пакетные задания, независимые задачи и взаимодействующие задачи. Использование Azure в сочетании с платформой MATLAB имеет множество преимуществ по сравнению с подготовкой и использованием традиционного локального оборудования. Среди этих преимуществ: поддержка широкого диапазона размеров виртуальных машин, возможность создавать кластеры по требованию для оплаты только тех вычислительных ресурсов, которые используются, а также возможность тестировать модели в масштабе.  
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 * **Клиентский компьютер** — необходим клиентский компьютер на базе Windows для обмена данными с Azure и кластером MATLAB Distributed Computing Server после развертывания.
 * **Azure PowerShell** — ознакомьтесь с разделом [Установка и настройка Azure PowerShell](/powershell/azure/) , чтобы установить этот компонент на клиентском компьютере.
 * **Подписка Azure** — если ее нет, можно за пару минут создать [бесплатную учетную запись](https://azure.microsoft.com/free/) . Для больших кластеров можно использовать подписку с оплатой по мере использования или другие варианты приобретения.
