@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: bcefe19183ea5f511ce8255914b3ea8edd4306e8
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: e2c1b9bb8d8fa1e7b82bebfa31963be19d9024af
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837097"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648502"
 ---
 # <a name="memory-optimized-dv2-and-dsv2-series"></a>Оптимизированные для памяти Dv2 и серии Dsv2
 
@@ -66,7 +66,7 @@ ACU: 210–250<sup>1</sup>
 | Standard_DS15_v2 <sup>2</sup> | 20 | 140 | 280 | 64 | 80000/640 (720) | 64000/960 | 8|25000 <sup>4</sup> |
 
 <sup>1</sup> Максимальная возможная пропускная способность дисков (в операциях ввода-вывода в секунду или Мбит/с) виртуальных машин серии DSv2 может быть ограничена из-за количества, размера и чередования подключенных дисков.  Дополнительные сведения см. в статье [Хранилище Azure класса Premium. Проектирование для обеспечения высокой производительности](./windows/premium-storage-performance.md).
-<sup>2</sup> экземпляр изолирован от оборудования Intel Haswell и предназначен для одного клиента.  
+<sup>2</sup>  экземпляр изолирован от оборудования Intel Haswell и предназначен для одного клиента.  
 <sup>3</sup> Список доступных размеров ядер ограничен.  
 <sup>4</sup> 25 000 Мбит/с с ускоренной работой в сети.
 
@@ -83,7 +83,7 @@ ACU: 210–250<sup>1</sup>
 
 Калькулятор цен: [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
 
-Дополнительные сведения о типах дисков: [типы дисков](./linux/disks-types.md#ultra-disk)
+Дополнительные сведения о типах дисков: [типы дисков](./disks-types.md#ultra-disk)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

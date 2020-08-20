@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: dfb10e3f8386b4ab022d419d356f841a9ea7ea66
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: ede5b84620217e472d930d86eaebfaad2397ca6b
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87825673"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648434"
 ---
 # <a name="dv2-and-dsv2-series"></a>Серии Dv2 и DSv2
 
@@ -75,7 +75,7 @@ ACU: 210–250
 
 Калькулятор цен: [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
 
-Дополнительные сведения о типах дисков: [типы дисков](./linux/disks-types.md#ultra-disk)
+Дополнительные сведения о типах дисков: [типы дисков](./disks-types.md#ultra-disk)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

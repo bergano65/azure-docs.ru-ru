@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 31bc9a5f38d50318f858a4d7169391e9d2e5e610
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 775b296185f9f0f0e967ada2688e24158f36360e
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87848736"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648366"
 ---
 # <a name="eav4-and-easv4-series"></a>Серии Eav4 и Easv4
 
@@ -83,7 +83,7 @@ ACU: 230-260
 
 Калькулятор цен: [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
 
-Дополнительные сведения о типах дисков: [типы дисков](./linux/disks-types.md#ultra-disk)
+Дополнительные сведения о типах дисков: [типы дисков](./disks-types.md#ultra-disk)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

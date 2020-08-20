@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/26/2020
 ms.author: iainfou
-ms.openlocfilehash: 837ca3afaf014c41fded09fa8342eed1c13e5dcf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 93dcc1202c08be905cf08513f38e79a8a7674e01
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84734934"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650134"
 ---
 # <a name="benefits-of-migration-from-the-classic-to-resource-manager-deployment-model-in-azure-active-directory-domain-services"></a>Преимущества перехода с классической модели на модель развертывания диспетчер ресурсов в доменных службах Azure Active Directory
 
@@ -48,7 +48,7 @@ Azure Active Directory доменных служб (Azure AD DS) позволя�
 
 Управляемые домены, использующие модель развертывания диспетчер ресурсов, помогут вам оставаться в курсе последних новых функций. Новые функции недоступны для управляемых доменов, использующих классическую модель развертывания.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе, см. статью [перенос доменных служб Azure AD из классической модели виртуальной сети в Диспетчер ресурсов][howto-migrate].
 
@@ -63,4 +63,4 @@ Azure Active Directory доменных служб (Azure AD DS) позволя�
 [availability-zones]: ../availability-zones/az-overview.md
 [howto-migrate]: migrate-from-classic-vnet.md
 [attributes]: synchronization.md#attribute-synchronization-and-mapping-to-azure-ad-ds
-[managed-disks]: ../virtual-machines/windows/managed-disks-overview.md
+[managed-disks]: ../virtual-machines/managed-disks-overview.md

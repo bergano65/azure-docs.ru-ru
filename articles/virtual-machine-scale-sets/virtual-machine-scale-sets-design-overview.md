@@ -10,12 +10,12 @@ ms.subservice: management
 ms.date: 06/25/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 5aad73db2f01cec8c1c8b0144d29c105b6e8ae0e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 99dc7a2350631f662e1c993908f7ef56e4f9a194
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87080511"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648570"
 ---
 # <a name="design-considerations-for-scale-sets"></a>Рекомендации по проектированию масштабируемых наборов
 В этой статье рассматриваются вопросы проектирования масштабируемых наборов виртуальных машин. Сведения о том, что такое масштабируемые наборы виртуальных машин, см. в статье [Обзор масштабируемых наборов виртуальных машин](./overview.md).
@@ -42,7 +42,7 @@ ms.locfileid: "87080511"
 ## <a name="storage"></a>Память
 
 ### <a name="scale-sets-with-azure-managed-disks"></a>Масштабируемые наборы с компонентом "Управляемые диски" Azure
-Вместо обычных учетных записей хранения Azure для создания масштабируемых наборов можно использовать [компонент "Управляемые диски" Azure](../virtual-machines/windows/managed-disks-overview.md). Компонент "Управляемые диски" обеспечивает следующие преимущества:
+Вместо обычных учетных записей хранения Azure для создания масштабируемых наборов можно использовать [компонент "Управляемые диски" Azure](../virtual-machines/managed-disks-overview.md). Компонент "Управляемые диски" обеспечивает следующие преимущества:
 - Вам не нужно заранее создавать набор учетных записей хранения Azure для виртуальных машин из масштабируемого набора.
 - Вы можете определить [подключенные диски данных](virtual-machine-scale-sets-attached-disks.md) для виртуальных машин в масштабируемом наборе.
 - Масштабируемые наборы можно настроить для [поддержки до 1000 виртуальных машин в наборе](virtual-machine-scale-sets-placement-groups.md). 

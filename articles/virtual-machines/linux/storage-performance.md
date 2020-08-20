@@ -10,14 +10,14 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/05/2019
 ms.author: joelpell
-ms.openlocfilehash: 520754c08fc9bf89949739987b41974eccdcd29d
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: cd9e539e01e8e11d866186552ab3b8dde7e03f91
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87292148"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654775"
 ---
-# <a name="optimize-performance-on-the-lsv2-series-virtual-machines"></a>Оптимизация производительности виртуальных машин серии Lsv2
+# <a name="optimize-performance-on-the-lsv2-series-linux-virtual-machines"></a>Оптимизация производительности виртуальных машин Linux серии Lsv2
 
 Виртуальные машины серии Lsv2 поддерживают разнообразные рабочие нагрузки, требующие высокой скорости ввода-вывода и пропускной способности локального хранилища для самых разных применений и отраслей.  Серия Lsv2 идеально подходит для больших данных, баз данных SQL и NoSQL, хранилищ и больших транзакционных баз данных, в том числе Cassandra, MongoDB, Cloudera и Redis.
 
@@ -83,7 +83,7 @@ ms.locfileid: "87292148"
 - Виртуальная машина становится неработоспособной и должна переместиться на другой узел из-за проблемы с оборудованием.
 - Некоторые операции планового обслуживания, требующие повторного выделения виртуальной машины на другом узле для обслуживания.
 
-Дополнительные сведения о вариантах резервного копирования данных в локальном хранилище см. в статье [Резервное копирование и аварийное восстановление для дисков IaaS Azure](backup-and-disaster-recovery-for-azure-iaas-disks.md).
+Дополнительные сведения о вариантах резервного копирования данных в локальном хранилище см. в статье [Резервное копирование и аварийное восстановление для дисков IaaS Azure](../backup-and-disaster-recovery-for-azure-iaas-disks.md).
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 

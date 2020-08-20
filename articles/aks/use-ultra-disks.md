@@ -4,23 +4,23 @@ description: Узнайте, как включить и настроить Ultra
 services: container-service
 ms.topic: article
 ms.date: 07/10/2020
-ms.openlocfilehash: f74da764f5a0b021199782dbad03e6e95cceb7f2
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: 6ad739a128839eac4d664ffb6f9e3b2fcd07f2d9
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87986837"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650185"
 ---
 # <a name="use-azure-ultra-disks-on-azure-kubernetes-service-preview"></a>Использование Azure Ultra Disks в службе Kubernetes Azure (Предварительная версия)
 
-[Диски Azure "Ultra](../virtual-machines/linux/disks-enable-ultra-ssd.md) " обеспечивают высокую пропускную способность, высокую скорость операций ввода-вывода и постоянную задержку на диске для приложений с отслеживанием состояния. Одним из основных преимуществ использования Ultra Disks является возможность динамического изменения производительности SSD вместе с рабочими нагрузками без необходимости перезапуска узлов агента. Ultra Disks подходит для рабочих нагрузок, интенсивно использующих данные.
+[Диски Azure "Ultra](../virtual-machines/disks-enable-ultra-ssd.md) " обеспечивают высокую пропускную способность, высокую скорость операций ввода-вывода и постоянную задержку на диске для приложений с отслеживанием состояния. Одним из основных преимуществ использования Ultra Disks является возможность динамического изменения производительности SSD вместе с рабочими нагрузками без необходимости перезапуска узлов агента. Ultra Disks подходит для рабочих нагрузок, интенсивно использующих данные.
 
-## <a name="before-you-begin"></a>Подготовка
+## <a name="before-you-begin"></a>Перед началом
 
 Этот компонент можно задать только при создании кластера или во время создания пула узлов.
 
 > [!IMPORTANT]
-> Для дисков Azure Ultra требуются нодепулс, развернутые в зонах доступности и регионах, которые поддерживают эти диски, а также только определенные серии виртуальных машин. См. [**область и ограничения для Ultra дисков уровня "Глобальный**](../virtual-machines/linux/disks-enable-ultra-ssd.md#ga-scope-and-limitations)".
+> Для дисков Azure Ultra требуются нодепулс, развернутые в зонах доступности и регионах, которые поддерживают эти диски, а также только определенные серии виртуальных машин. См. [**область и ограничения для Ultra дисков уровня "Глобальный**](../virtual-machines/disks-enable-ultra-ssd.md#ga-scope-and-limitations)".
 
 ### <a name="prerequisites"></a>Предварительные требования
 
@@ -64,7 +64,7 @@ az extension update --name aks-preview
 ``` 
 
 ### <a name="limitations"></a>Ограничения
-- См. [ **область и ограничения для Ultra дисков уровня "Глобальный** "](../virtual-machines/linux/disks-enable-ultra-ssd.md#ga-scope-and-limitations)
+- См. [ **область и ограничения для Ultra дисков уровня "Глобальный** "](../virtual-machines/disks-enable-ultra-ssd.md#ga-scope-and-limitations)
 - Поддерживаемый диапазон размера для Ultra Disks — от 100 до 1500
 
 ## <a name="create-a-new-cluster-that-can-use-ultra-disks"></a>Создание нового кластера, который может использовать Ultra Disks
@@ -226,7 +226,7 @@ Events:
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о Ultra Disks см. [в статье Использование Ultra дисков Azure](../virtual-machines/linux/disks-enable-ultra-ssd.md).
+- Дополнительные сведения о Ultra Disks см. [в статье Использование Ultra дисков Azure](../virtual-machines/disks-enable-ultra-ssd.md).
 - Дополнительные сведения о рекомендациях по хранению см. в статье рекомендации [по хранению и резервному копированию в службе Azure Kubernetes Service (AKS)][operator-best-practices-storage] .
 
 <!-- LINKS - external -->
@@ -240,7 +240,7 @@ Events:
 <!-- LINKS - internal -->
 [azure-disk-volume]: azure-disk-volume.md
 [azure-files-pvc]: azure-files-dynamic-pv.md
-[premium-storage]: ../virtual-machines/windows/disks-types.md
+[premium-storage]: ../virtual-machines/disks-types.md
 [az-disk-list]: /cli/azure/disk#az-disk-list
 [az-snapshot-create]: /cli/azure/snapshot#az-snapshot-create
 [az-disk-create]: /cli/azure/disk#az-disk-create

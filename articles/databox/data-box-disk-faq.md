@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: conceptual
 ms.date: 08/29/2019
 ms.author: alkohli
-ms.openlocfilehash: 8a0b3a91d9af119191717aa63a2dedf0797159fd
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 3d4b51445e0859fe90a81eecb95625d41009b6eb
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83745795"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88649420"
 ---
 # <a name="azure-data-box-disk-frequently-asked-questions"></a>Диск Azure Data Box Часто задаваемые вопросы
 
@@ -58,6 +58,23 @@ A. В режиме предварительной версии Диск Data Box
 
 ### <a name="q-will-my-data-box-disk-cross-countryregion-borders-during-shipping"></a>У. Будет ли мой Диск Data Box пересекать границы страны или региона во время доставки?
 A. Пересылка Диска Data Box осуществляется в пределах страны или региона получателя. Следовательно, он не будет пересекать международные границы. Единственное исключение — заказы в пределах Европейского союза (ЕС), когда диски могут перемещаться между разными странами или регионами ЕС.
+
+### <a name="q-how-can-i-import-my-on-premises-source-data-in-one-countryregion-to-an-azure-region-in-a-different-countryregion"></a>У. Как импортировать локальные исходные данные в одной стране или регионе в регион Azure в другой стране или регионе?
+A. Диск Data Box поддерживает прием данных только в пределах одного региона (границы торговли). Во всех остальных случаях может потребоваться выполнить дополнительные действия. 
+
+Например, если у вас есть локальные данные в Канаде, которые вы хотели бы переместить в учетную запись хранения WestUS Azure, это можно сделать следующим образом:
+
+### <a name="option-1"></a>Вариант 1. 
+
+Отправьте [поддерживаемый диск](https://docs.microsoft.com/azure/storage/common/storage-import-export-requirements?toc=/azure/storage/blobs/toc.json#supported-disks) , содержащий данные, с помощью [службы импорта и экспорта Azure](https://docs.microsoft.com/azure/storage/common/storage-import-export-service) из исходного расположения в Канаде в центр обработки данных Azure WestUS.
+
+### <a name="option-2"></a>Вариант 2.
+
+1. Закажите Диск Data Box в Канаде, выбрав учетную запись хранения, например Кананда Central. SSD-диски поставляются из центра обработки данных Azure в Канаде по адресу доставки (в Канаде), предоставленном при создании заказа.
+
+2. После копирования данных с локального сервера на диски верните их в центр обработки данных Azure в Канаде, используя предоставленные корпорацией Майкрософт метки возврата. Данные, представленные в Диск Data Box, затем передаются в целевую учетную запись хранения в регионе Azure для Канады, выбранном во время создания заказа.
+
+3. Затем можно использовать такой инструмент, как AzCopy, для копирования данных в учетную запись хранения в WestUS. На этом этапе взимается плата за использование [стандартного хранилища](https://azure.microsoft.com/pricing/details/storage/) и [пропускной способности](https://azure.microsoft.com/pricing/details/bandwidth/) , которая не включается в диск Data Box выставления счетов.
 
 ### <a name="q-whom-should-i-contact-if-i-encounter-any-issues--with-data-box-disks"></a>У. С кем следует связаться при возникновении проблем с дисками Data Box?
 A. При любых проблемах с Data Box Disks обратитесь в [службу поддержки Майкрософт](https://docs.microsoft.com/azure/databox/data-box-disk-contact-microsoft-support).

@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: ayshak
-ms.openlocfilehash: 81bfde964fa993b69bc464214dab0810a8f2bfe5
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: a5a3887efe9b8f19608fac63216ca53576d9ec3f
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87832592"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654741"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>Размеры виртуальных машин Azure серии B с накапливаемыми ресурсами
 
@@ -58,7 +58,7 @@ ms.locfileid: "87832592"
 
 ![Диаграмма данных о почасовом трафике](./media/b-series-burstable/office-workload.png)
 
-| Сценарий | Time | Загрузка ЦП (%) | Накоплено кредитов<sup>1</sup> | Доступные кредиты |
+| Сценарий | время; | Загрузка ЦП (%) | Накоплено кредитов<sup>1</sup> | Доступные кредиты |
 | --- | --- | --- | --- | --- |
 | Развертывание B16ms | Развертывание | Развертывание  | 480 (первоначальные кредиты) | 480 |
 | Нет трафика | 0:00 | 0 | 162 | 642 |
@@ -88,7 +88,7 @@ ms.locfileid: "87832592"
 
 <sup>1</sup> накопленные или кредитовые Кредиты, использованные в час, эквивалентны: `((Base CPU perf of VM - CPU Usage) / 100) * 60 minutes` .  
 
-Для D16s_v3 с 16 виртуальных ЦП и 64 гиб объемом памяти Почасовая ставка составляет $0,936 в час (ежемесячная $673,92) и для B16ms с 16 виртуальных ЦП и 64 гиб Memory ставка составляет $0,794 в час (ежемесячный $547,86). <b>Это приводит к экономии на 15%!</b>
+Для D16s_v3 с 16 виртуальных ЦП и 64 гиб объемом памяти Почасовая ставка составляет $0,936 в час (ежемесячная $673,92) и для B16ms с 16 виртуальных ЦП и 64 гиб Memory ставка составляет $0,794 в час (ежемесячный $547,86). <b> Это приводит к экономии на 15%!</b>
 
 ## <a name="q--a"></a>Вопросы и ответы
 
@@ -149,7 +149,7 @@ ms.locfileid: "87832592"
 
 Калькулятор цен: [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)
 
-Дополнительные сведения о типах дисков: [типы дисков](./linux/disks-types.md#ultra-disk)
+Дополнительные сведения о типах дисков: [типы дисков](./disks-types.md#ultra-disk)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

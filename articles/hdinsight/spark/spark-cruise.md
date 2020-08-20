@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 07/27/2020
-ms.openlocfilehash: d5417bfcfbaa183c34808d9017d5863506429a81
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: 1a73b4707f83d6a23dffc20d95aa7b8a0fa465b3
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/20/2020
-ms.locfileid: "88642288"
+ms.locfileid: "88649063"
 ---
 # <a name="sparkcruise-on-azure-hdinsight"></a>Спарккруисе в Azure HDInsight
 
@@ -58,7 +58,7 @@ ms.locfileid: "88642288"
     sudo /opt/peregrine/analyze/peregrine.sh show
     ```
 
-`analyze`Команда анализирует планы запросов и создает табличное представление рабочей нагрузки. Затем `views` команда определяет общие выражения вложенного плана и выбирает интересные выражения вложенного плана для будущей материализации и повторного использования. Выходные данные — это файл обратной связи, содержащий заметки для будущих запросов Spark SQL. 
+`analyze`Команда анализирует планы запросов и создает табличное представление рабочей нагрузки. Эту таблицу рабочей нагрузки можно запросить с помощью записной книжки *ворклоадинсигхтс* , входящей в репозиторий [HDInsight спарккруисе Samples](https://github.com/Azure-Samples/azure-sparkcruise-samples) . Затем `views` команда определяет общие выражения вложенного плана и выбирает интересные выражения вложенного плана для будущей материализации и повторного использования. Выходные данные — это файл обратной связи, содержащий заметки для будущих запросов Spark SQL. 
 
 `show`Команда отображает выходные данные, как в следующем тексте:
 
