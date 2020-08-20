@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с Workrite | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Workrite.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 2a5c2956-a011-4d5c-877b-80679b6587b5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 026ad76fa82a28ca3e7f29de2e656994b9cad634
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 16c5d518809ed2490cfa41351d6ff9d9abbd70f0
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67086768"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88526888"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workrite"></a>Руководство. Интеграция Azure Active Directory с Workrite
 
