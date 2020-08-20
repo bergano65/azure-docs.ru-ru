@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 12/14/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: bd8177f6fd8e40e9c4ea37bc7ead910806efbad2
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 75f8a1f42c5d5702fdb4a588b0829636c30f80a6
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88504948"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654622"
 ---
 # <a name="azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Развертывание СУБД на Виртуальных машинах Azure для рабочей нагрузки SAP
 
@@ -247,7 +247,7 @@ ms.locfileid: "88504948"
 [storage-azure-cli-copy-blobs]:../../../storage/common/storage-azure-cli.md#copy-blobs
 [storage-introduction]:../../../storage/common/storage-introduction.md
 [storage-powershell-guide-full-copy-vhd]:../../../storage/common/storage-powershell-guide-full.md#how-to-copy-blobs-from-one-storage-container-to-another
-[storage-premium-storage-preview-portal]:../../windows/disks-types.md
+[storage-premium-storage-preview-portal]:../../disks-types.md
 [storage-redundancy]:../../../storage/common/storage-redundancy.md
 [storage-scalability-targets]:../../../storage/common/scalability-targets-standard-accounts.md
 [storage-use-azcopy]:../../../storage/common/storage-use-azcopy.md
@@ -353,9 +353,9 @@ Windows и Oracle Linux являются единственными операц
 Чтобы определить правильный объем пространства для временных файлов, можно проверить размеры временных файлов в существующих системах.
 
 ### <a name="storage-configuration"></a>Конфигурация хранилища
-Поддерживается только один экземпляр Oracle, использующий диски, отформатированные в NTFS. Все файлы базы данных должны храниться в файловой системе NTFS на Управляемых дисках (рекомендуемый вариант) или на виртуальных жестких дисках. Эти виртуальные жесткие диски должны быть подключены к виртуальной машине Azure и созданы на основе [хранилища страничных BLOB-объектов Azure](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs) или [Управляемых дисков Azure](../../windows/managed-disks-overview.md). 
+Поддерживается только один экземпляр Oracle, использующий диски, отформатированные в NTFS. Все файлы базы данных должны храниться в файловой системе NTFS на Управляемых дисках (рекомендуемый вариант) или на виртуальных жестких дисках. Эти виртуальные жесткие диски должны быть подключены к виртуальной машине Azure и созданы на основе [хранилища страничных BLOB-объектов Azure](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs) или [Управляемых дисков Azure](../../managed-disks-overview.md). 
 
-Мы настоятельно рекомендуем использовать [Управляемые диски Azure](../../windows/managed-disks-overview.md), а для развертываний Oracle Database — [диски SSD ценовой категории "Премиум"](../../windows/disks-types.md).
+Мы настоятельно рекомендуем использовать [Управляемые диски Azure](../../managed-disks-overview.md), а для развертываний Oracle Database — [диски SSD ценовой категории "Премиум"](../../disks-types.md).
 
 Сетевые диски и удаленные общие ресурсы, включая файловые службы Azure, не поддерживаются для файлов Oracle Database. Дополнительные сведения см. в разделе:
 
@@ -442,11 +442,11 @@ Windows и Oracle Linux являются единственными операц
 
 ### <a name="storage-configuration"></a>Конфигурация хранилища
 
-Файловые системы ext4, xfs и Oracle ASM поддерживаются для файлов Oracle Database в Azure. Все файлы базы данных должны храниться на виртуальных жестких дисках или Управляемых дисках с этими файловыми системами. Эти виртуальные жесткие диски должны быть подключены к виртуальной машине Azure и созданы на основе [хранилища страничных BLOB-объектов Azure](<https://docs.microsoft.com/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs>) или [Управляемых дисков Azure](../../windows/managed-disks-overview.md).
+Файловые системы ext4, xfs и Oracle ASM поддерживаются для файлов Oracle Database в Azure. Все файлы базы данных должны храниться на виртуальных жестких дисках или Управляемых дисках с этими файловыми системами. Эти виртуальные жесткие диски должны быть подключены к виртуальной машине Azure и созданы на основе [хранилища страничных BLOB-объектов Azure](<https://docs.microsoft.com/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs>) или [Управляемых дисков Azure](../../managed-disks-overview.md).
 
 Ядра UEK Oracle Linux требуют UEK версии не меньше 4 для поддержки [дисков SSD Azure ценовой категории "Премиум"](../../windows/premium-storage-performance.md#disk-caching).
 
-Настоятельно рекомендуем использовать [Управляемые диски Azure](../../windows/managed-disks-overview.md). Также для развертываний Oracle Database настоятельно рекомендуется использовать [диски SSD Azure ценовой категории "Премиум"](../../windows/disks-types.md).
+Настоятельно рекомендуем использовать [Управляемые диски Azure](../../managed-disks-overview.md). Также для развертываний Oracle Database настоятельно рекомендуется использовать [диски SSD Azure ценовой категории "Премиум"](../../disks-types.md).
 
 Сетевые диски и удаленные общие ресурсы, включая файловые службы Azure, не поддерживаются для файлов Oracle Database. Дополнительные сведения см. в следующих разделах: 
 

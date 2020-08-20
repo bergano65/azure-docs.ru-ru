@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/04/2020
 ms.author: radeltch
-ms.openlocfilehash: a8503f701a36d7197f85f2c86e37272ccf1cab48
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: 5ba5ebcb68ed206bab038f0a892e24834ddb0f22
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87760725"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653432"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver-on-red-hat-enterprise-linux-with-azure-netapp-files-for-sap-applications"></a>Высокая доступность виртуальных машин Azure для SAP NetWeaver на Red Hat Enterprise Linux с Azure NetApp Files для приложений SAP
 
@@ -80,7 +80,7 @@ ms.locfileid: "87760725"
   * [Администрирование надстройки для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_administration/index)
   * [Справочник по надстройке для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_reference/index)
   * [Настройка ASCS/ERS для SAP Netweaver с автономными ресурсами в RHEL 7.5](https://access.redhat.com/articles/3569681)
-  * [Настройка SAP S/4HANA ASCS/ERS с автономным сервером очереди 2 (ENSA2) в Pacemaker на RHEL](https://access.redhat.com/articles/3974941)
+  * [Настройка SAP S/4HANA ASCS/ERS с автономным сервером очереди 2 (ENSA2) в Pacemaker на RHEL ](https://access.redhat.com/articles/3974941)
 * Документация по RHEL для Azure:
   * [Политики поддержки для кластеров высокой доступности RHEL — виртуальные машины Microsoft Azure как члены кластера](https://access.redhat.com/articles/3131341)
   * [Установка и настройка кластера высокой доступности Red Hat Enterprise Linux 7.4 (и более поздних версий) в Microsoft Azure](https://access.redhat.com/articles/3252491)
@@ -156,7 +156,7 @@ SAP NetWeaver требует общее хранилище для каталог
    6. Volume SAP<b>Оценка качества</b> (NFS://192.168.24.5/usrsap<b>Оценка качества</b>/усрсап<b>Оценка качества</b>PAS)
    7. Volume SAP<b>Оценка качества</b> (NFS://192.168.24.5/usrsap<b>Оценка качества</b>/усрсап<b>Оценка качества</b>AAS)
   
-В этом примере мы использовали Azure NetApp Files для всех файловых систем SAP NetWeaver, чтобы продемонстрировать использование этой службы. Файловые системы SAP, которые не нужно подключать через NFS, можно также развернуть как [хранилище дисков Azure](../../windows/disks-types.md#premium-ssd). В этом примере <b>a-e</b> должен быть в Azure NetApp Files, а <b>f-g</b> (т. е. /usr/sap/<b>QAS</b>/D<b>02</b>, /usr/sap/<b>QAS</b>/D<b>03</b>) можно развернуть в качестве хранилища дисков Azure. 
+В этом примере мы использовали Azure NetApp Files для всех файловых систем SAP NetWeaver, чтобы продемонстрировать использование этой службы. Файловые системы SAP, которые не нужно подключать через NFS, можно также развернуть как [хранилище дисков Azure](../../disks-types.md#premium-ssd). В этом примере <b>a-e</b> должен быть в Azure NetApp Files, а <b>f-g</b> (т. е. /usr/sap/<b>QAS</b>/D<b>02</b>, /usr/sap/<b>QAS</b>/D<b>03</b>) можно развернуть в качестве хранилища дисков Azure. 
 
 ### <a name="important-considerations"></a>Важные сведения
 

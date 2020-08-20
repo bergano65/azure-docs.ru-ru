@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 08/14/2020
 ms.custom: seodec18
-ms.openlocfilehash: 19c21f1e95127d064d90d5c6915b4dd67871adaa
-ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
+ms.openlocfilehash: 075bf78599602b1b92f3cec01fe5dfb92b5321cc
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88263492"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654452"
 ---
 # <a name="query-data-from-the-azure-time-series-insights-gen2-environment-using-c-sharp"></a>Запрос данных из среды Gen2 "аналитика временных рядов Azure" с помощью языка C диезом
 
@@ -71,7 +71,7 @@ ms.locfileid: "88263492"
 
 ## <a name="c-sample-code"></a>Пример кода C#
 
-Пример кода C# можно найти по адресу [кшарпкуери-example](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/gen2-sample/csharp-tsi-gen2-sample) .
+Чтобы получить доступ к образцу кода C#, обратитесь к репозиторию " [аналитика временных рядов Azure](https://github.com/Azure-Samples/Azure-Time-Series-Insights/blob/master/gen1-sample/csharp-tsi-gen1-sample/Program.cs) ". 
 
 > [!NOTE]
 >

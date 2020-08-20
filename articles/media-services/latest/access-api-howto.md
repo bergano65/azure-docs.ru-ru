@@ -3,7 +3,7 @@ title: Начало работы с проверкой подлинности Az
 description: Узнайте, как получить доступ к проверке подлинности Azure Active Directory (Azure AD) для работы с API служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.date: 05/21/2020
-ms.author: juliako
-ms.openlocfilehash: a039e1d4442490d3747a302754d521f1f3402bcf
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.author: inhenkel
+ms.openlocfilehash: 9528efb0ce7dd9df57db21ccdcf19e54a969d2e4
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88035813"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654843"
 ---
 # <a name="get-credentials-to-access-media-services-api"></a>Получение учетных данных для доступа к API служб мультимедиа  
 
@@ -38,9 +38,9 @@ ms.locfileid: "88035813"
 - Учетная запись Azure. Если у вас нет учетной записи Azure, начните с получения [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/). 
 - Учетная запись служб мультимедиа. Дополнительные сведения см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](create-account-howto.md).
 
-## <a name="use-the-azure-portal"></a>Использование портала Azure
+## <a name="portal"></a>[Портал](#tab/portal/)
 
-### <a name="api-access"></a>Доступ через API 
+### <a name="api-access"></a>Доступ через API
 
 Страница **доступа к API** позволяет выбрать метод проверки подлинности, который будет использоваться для подключения к API. На этой странице также приведены значения, необходимые для подключения к API.
 
@@ -70,7 +70,7 @@ ms.locfileid: "88035813"
 
 Скопируйте учетные данные для подключения пользовательского приложения из раздела **Подключение к API служб мультимедиа**. Можно получить текстовые значения или скопировать блоки JSON или XML.
 
-[!INCLUDE [media-services-cli-instructions](../../../includes/media-services-cli-instructions.md)]
+## <a name="cli"></a>[CLI](#tab/cli/)
 
 [!INCLUDE [media-services-v3-cli-access-api-include](../../../includes/media-services-v3-cli-access-api-include.md)]
 

@@ -5,15 +5,15 @@ author: laurenhughes
 ms.author: lahugh
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 07/13/2020
-ms.openlocfilehash: 040f4378e01c3696b9a74bfcc27230503828f19a
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.date: 08/17/2020
+ms.openlocfilehash: 154558a2aa679dddad395225088ea891ecea8ebc
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87562793"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654282"
 ---
-# <a name="preview---azure-kubernetes-service-aks-node-image-upgrades"></a>Предварительная версия — обновления образа узла службы Azure Kubernetes Service (AKS)
+# <a name="azure-kubernetes-service-aks-node-image-upgrade"></a>Обновление образа узла службы Azure Kubernetes Service (AKS)
 
 AKS поддерживает обновление образов на узле, так что вы будете в курсе последних обновлений операционной системы и среды выполнения. AKS предоставляет один новый образ в неделю с последними обновлениями, поэтому рекомендуется регулярно обновлять образы узла для получения последних компонентов, включая обновления Linux или Windows. В этой статье показано, как обновить образы узлов кластера AKS, а также как обновить образы пула узлов без обновления версии Kubernetes.
 
@@ -21,23 +21,9 @@ AKS поддерживает обновление образов на узле, 
 
 Сведения об обновлении версии Kubernetes для кластера см. в статье [Обновление кластера AKS][upgrade-cluster].
 
-## <a name="register-the-node-image-upgrade-preview-feature"></a>Регистрация функции предварительной версии обновления образа узла
+## <a name="install-the-aks-cli-extension"></a>Установка расширения CLI AKS
 
-Чтобы использовать функцию обновления образа узла в период действия предварительной версии, необходимо зарегистрировать эту функцию.
-
-```azurecli
-# Register the preview feature
-az feature register --namespace "Microsoft.ContainerService" --name "NodeImageUpgradePreview"
-```
-
-Регистрация для завершения регистрации займет несколько минут. Чтобы убедиться, что компонент зарегистрирован, используйте следующую команду:
-
-```azurecli
-# Verify the feature is registered:
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/NodeImageUpgradePreview')].{Name:name,State:properties.state}"
-```
-
-На этапе предварительной версии для использования обновления образа узла требуется расширение CLI *AKS-Preview* . Используйте команду [AZ Extension Add][az-extension-add] , а затем проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] .
+Перед выпуском следующей основной версии интерфейса командной строки требуется расширение CLI *AKS-Preview* , чтобы использовать обновление образа узла. Используйте команду [AZ Extension Add][az-extension-add] , а затем проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] .
 
 ```azurecli
 # Install the aks-preview extension
@@ -46,12 +32,6 @@ az extension add --name aks-preview
 # Update the extension to make sure you have the latest version installed
 az extension update --name aks-preview
 ```
-
-Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register):
-
-```azurecli
-az provider register --namespace Microsoft.ContainerService
-```  
 
 ## <a name="upgrade-all-nodes-in-all-node-pools"></a>Обновление всех узлов во всех пулах узлов
 

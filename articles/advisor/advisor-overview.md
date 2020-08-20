@@ -3,12 +3,12 @@ title: Общие сведения об Azure Advisor
 description: Использование Azure Advisor для оптимизации развернутых служб Azure.
 ms.topic: article
 ms.date: 02/01/2019
-ms.openlocfilehash: 17b68e220b7011dee2cc8fca440d58d980c28e6d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 27e49fa28e7b02b873ca145d514920784689b407
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87057683"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654027"
 ---
 # <a name="introduction-to-azure-advisor"></a>Общие сведения об Azure Advisor
 
@@ -55,7 +55,7 @@ ms.locfileid: "87057683"
 
 ### <a name="what-resources-does-advisor-provide-recommendations-for"></a>Для каких ресурсов Advisor предоставляет рекомендации?
 
-Advisor предоставляет рекомендации для шлюза приложений, служб приложений, групп доступности, кэша Azure, фабрики данных Azure, базы данных Azure для MySQL, базы данных Azure для PostgreSQL, базы данных Azure для MariaDB, Azure ExpressRoute, Azure Cosmos DB, общедоступных IP-адресов Azure, хранилища данных SQL, серверов SQL, учетных записей хранения, профилей диспетчера трафика и виртуальных машин.
+Advisor предоставляет рекомендации для шлюза приложений, служб приложений, групп доступности, кэша Azure, фабрики данных Azure, базы данных Azure для MySQL, базы данных Azure для PostgreSQL, базы данных Azure для MariaDB, Azure ExpressRoute, Azure Cosmos DB, общедоступных IP-адресов Azure, аналитики синапсе Azure, серверов SQL, учетных записей хранения, профилей диспетчера трафика и виртуальных машин.
 
 Помощник Azure также включает рекомендации из [центра безопасности Azure](../security-center/security-center-recommendations.md) , которые могут включать рекомендации для дополнительных типов ресурсов.
 

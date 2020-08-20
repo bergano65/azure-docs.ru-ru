@@ -3,12 +3,12 @@ title: Цены на Azure Backup
 description: Узнайте, как оценить затраты на бюджетирование Azure Backup цены.
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.openlocfilehash: cdb3dc756e1ee7e32453acd7246952c84abebaf7
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 03ec0076d3089562ddaace6db413fb3f1ba949a6
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88035762"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654537"
 ---
 # <a name="azure-backup-pricing"></a>Цены на Azure Backup
 

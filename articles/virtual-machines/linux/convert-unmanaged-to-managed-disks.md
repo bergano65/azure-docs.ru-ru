@@ -7,16 +7,16 @@ ms.topic: how-to
 ms.date: 12/15/2017
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 072b0e3bcf4da8e2c71082a549d42d105c06ea8d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5695e866b0b6182d7b46b3206a7d8e672d49ab5c
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84659800"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654435"
 ---
 # <a name="convert-a-linux-virtual-machine-from-unmanaged-disks-to-managed-disks"></a>Переключение виртуальной машины Linux с неуправляемых дисков на управляемые диски
 
-При наличии виртуальных машин Linux, использующих неуправляемые диски, их можно преобразовать для использования [Управляемых дисков Azure](../linux/managed-disks-overview.md). При этом преобразуются диск операционной системы и все подключенные диски данных.
+При наличии виртуальных машин Linux, использующих неуправляемые диски, их можно преобразовать для использования [Управляемых дисков Azure](../managed-disks-overview.md). При этом преобразуются диск операционной системы и все подключенные диски данных.
 
 В этой статье показано, как преобразовать виртуальные машины с помощью Azure CLI. Если нужно установить или обновить интерфейс командной строки Azure, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
 
@@ -102,6 +102,6 @@ ms.locfileid: "84659800"
 
 Виртуальная машина будет остановлена и перезапущена после завершения миграции.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о вариантах хранения см. в статье [Общие сведения о управляемых дисках Azure](../windows/managed-disks-overview.md).
+Дополнительные сведения о вариантах хранения см. в статье [Общие сведения о управляемых дисках Azure](../managed-disks-overview.md).

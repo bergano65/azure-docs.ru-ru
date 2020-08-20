@@ -3,12 +3,12 @@ title: Резервное копирование файловых ресурсо
 description: Узнайте, как использовать REST API для резервного копирования файловых ресурсов Azure в хранилище служб восстановления.
 ms.topic: conceptual
 ms.date: 02/16/2020
-ms.openlocfilehash: f48ebbd20d6775fe61c3e3dbb07e8f71af41635a
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: bf737dfa366796c4a392ec3d00609134978057ac
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036748"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654146"
 ---
 # <a name="backup-azure-file-share-using-azure-backup-via-rest-api"></a>Резервное копирование файлового ресурса Azure с помощью Azure Backup через API-интерфейс.
 
@@ -40,7 +40,7 @@ POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/
 
 URI Post имеет `{subscriptionId}` Параметры, `{vaultName}` , `{vaultresourceGroupName}` и `{fabricName}` . В нашем примере значения для различных параметров будут выглядеть следующим образом:
 
-- `{fabricName}`является *Azure*
+- `{fabricName}` является *Azure*
 
 - `{vaultName}`*азурефилесваулт*
 
@@ -54,13 +54,13 @@ URI Post имеет `{subscriptionId}` Параметры, `{vaultName}` , `{vau
 POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/refreshContainers?api-version=2016-12-01&$filter=backupManagementType eq 'AzureStorage'
 ```
 
-#### <a name="responses"></a>Ответы
+#### <a name="responses-to-the-refresh-operation"></a>Ответы на операцию обновления
 
 Операция обновления — это [асинхронная операция](../azure-resource-manager/management/async-operations.md). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
 Он возвращает два ответа: 202 (принято) при создании другой операции и 200 (ОК) после завершения этой операции.
 
-##### <a name="example-responses"></a>Примеры ответов
+##### <a name="example-responses-to-the-refresh-operation"></a>Примеры ответов на операцию обновления
 
 После отправления запроса *POST* возвращается ответ 202 (принято).
 
@@ -421,7 +421,7 @@ x-ms-routing-request-id  : CENTRALUSEUAP:20200127T105412Z:b55527fa-f473-4f09-b16
 Date : Mon, 27 Jan 2020 10:54:12 GMT
 ```
 
-Затем отследите итоговую операцию с помощью заголовка Location или Azure-AsyncOperation с командой *Get* .
+Затем отследите итоговую операцию с помощью заголовка Location или Azure-AsyncOperation с командой  *Get* .
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupOperations/c3a52d1d-0853-4211-8141-477c65740264?api-version=2016-12-01
@@ -487,13 +487,13 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 }
 ```
 
-### <a name="responses"></a>Ответы
+### <a name="responses-to-the-on-demand-backup-operation"></a>Ответы на операцию резервного копирования по запросу
 
 Активация резервного копирования по запросу — это [асинхронная операция](../azure-resource-manager/management/async-operations.md). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
 Он возвращает два ответа: 202 (принято) при создании другой операции и 200 (ОК) после завершения этой операции.
 
-### <a name="example-responses"></a>Примеры ответов
+### <a name="example-responses-to-the-on-demand-backup-operation"></a>Пример ответов на операцию резервного копирования по запросу
 
 После отправки запроса *POST* для выполнения резервного копирования по запросу будет получен первоначальный ответ 202 (принято) с заголовками location или Azure-AsyncOperation.
 
@@ -516,7 +516,7 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 'Content-Length': '0'
 ```
 
-Затем отследите итоговую операцию с помощью заголовка Location или Azure-AsyncOperation с командой *Get* .
+Затем отследите итоговую операцию с помощью заголовка Location или Azure-AsyncOperation с командой  *Get* .
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupOperations/dc62d524-427a-4093-968d-e951c0a0726e?api-version=2016-12-01

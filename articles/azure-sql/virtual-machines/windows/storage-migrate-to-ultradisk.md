@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 07/09/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: f5a2205ec835fb630933dd85b4b0e5846ae864cb
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 42738ff71432284a156d0dfbb1f6cf160cbf4032
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86236188"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653259"
 ---
 # <a name="migrate-log-disk-to-ultra-disk"></a>Перенос диска журнала на диск Ultra
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "86236188"
 
 Подключите SSD (цен. категория "Ультра") к виртуальной машине после включения совместимости ултрадиск на виртуальной машине. 
 
-Поддержка Ultra Disk поддерживается для подмножества размеров и регионов виртуальных машин. Прежде чем продолжать, проверьте, что виртуальная машина находится в регионе, зоне и размере, поддерживающем Ultra Disk. Вы можете [определить и проверить размер и регион виртуальной машины](../../../virtual-machines/windows/disks-enable-ultra-ssd.md#determine-vm-size-and-region-availability) с помощью Azure CLI или PowerShell. 
+Поддержка Ultra Disk поддерживается для подмножества размеров и регионов виртуальных машин. Прежде чем продолжать, проверьте, что виртуальная машина находится в регионе, зоне и размере, поддерживающем Ultra Disk. Вы можете [определить и проверить размер и регион виртуальной машины](../../../virtual-machines/disks-enable-ultra-ssd.md#determine-vm-size-and-region-availability) с помощью Azure CLI или PowerShell. 
 
 ### <a name="enable-compatibility"></a>Включить совместимость
 
@@ -50,15 +50,15 @@ ms.locfileid: "86236188"
 
 1. Выберите **Да** , чтобы **включить совместимость с Ultra Disk**. 
 
-   :::image type="content" source="../../../../includes/media/virtual-machines-disks-getting-started-ultra-ssd/ultra-options-yes-enable.png" alt-text="Выберите дополнительные параметры для дисков в разделе Параметры в портал Azure":::
+   :::image type="content" source="../../../virtual-machines/media/virtual-machines-disks-getting-started-ultra-ssd/ultra-options-yes-enable.png" alt-text="Выберите дополнительные параметры для дисков в разделе Параметры в портал Azure":::
 
-1. Нажмите **Сохранить**. 
+1. Щелкните **Сохранить**. 
 
 
 
 ### <a name="attach-disk"></a>Подключение диска
 
-Используйте портал Azure, чтобы подключить к виртуальной машине Ultra Disk. Дополнительные сведения см. [в статье подключение к Ultra Disk](../../../virtual-machines/windows/disks-enable-ultra-ssd.md#attach-an-ultra-disk-using-the-azure-portal) .
+Используйте портал Azure, чтобы подключить к виртуальной машине Ultra Disk. Дополнительные сведения см. [в статье подключение к Ultra Disk](../../../virtual-machines/disks-enable-ultra-ssd.md#attach-an-ultra-disk-using-the-azure-portal) .
 
 После подключения диска запустите виртуальную машину еще раз, используя портал Azure. 
 
@@ -85,7 +85,7 @@ ms.locfileid: "86236188"
 1. Создайте папку (или несколько папок), которая будет использоваться для файла журнала. 
 1. Щелкните правой кнопкой мыши папку и выберите команду **Свойства**.
 1. На вкладке **Безопасность** предоставьте полный доступ к учетной записи службы SQL Server. 
-1. Нажмите кнопку **ОК** , чтобы сохранить параметры. 
+1. Нажмите кнопку **ОК**  , чтобы сохранить параметры. 
 1. Повторите эти действия для каждой папки корневого уровня, в которой планируется использовать данные SQL. 
 
 ### <a name="use-new-log-drive"></a>Использовать новый диск журнала 

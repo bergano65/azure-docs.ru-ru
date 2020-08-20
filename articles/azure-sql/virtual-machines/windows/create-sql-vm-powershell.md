@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 2a25625e085ee07a2dc036fd40f70e6b0376b42a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5c4a43d113df09d88e8b93028c68dcf04f718fad
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87003888"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654010"
 ---
 # <a name="how-to-use-azure-powershell-to-provision-sql-server-on-azure-virtual-machines"></a>Использование Azure PowerShell для инициализации SQL Server на виртуальных машинах Azure
 
@@ -60,7 +60,7 @@ $ResourceGroupName = "sqlvm2"
 
 Определите учетную запись хранения и тип хранилища для виртуальной машины.
 
-Измените нужным образом, а затем выполните следующий командлет, чтобы инициализировать эти переменные. Для производственных рабочих нагрузок рекомендуются [SSD (цен. категория "Премиум")](../../../virtual-machines/windows/disks-types.md#premium-ssd).
+Измените нужным образом, а затем выполните следующий командлет, чтобы инициализировать эти переменные. Для производственных рабочих нагрузок рекомендуются [SSD (цен. категория "Премиум")](../../../virtual-machines/disks-types.md#premium-ssd).
 
 ```powershell
 $StorageName = $ResourceGroupName + "storage"

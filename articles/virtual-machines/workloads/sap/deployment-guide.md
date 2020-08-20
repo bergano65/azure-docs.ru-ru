@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/16/2020
 ms.author: sedusch
-ms.openlocfilehash: dbcb39641f35ad0f997db30b320826764a08bff1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6b66db639e0b22a7e0c45486465a1fa395aba33d
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87082262"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653517"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Развертывание виртуальных машин Azure для SAP NetWeaver
 
@@ -133,7 +133,7 @@ ms.locfileid: "87082262"
 [deployment-guide-contact-support]:deployment-guide.md#3ba34cfc-c9bb-4648-9c3c-88e8b9130ca2 (Устранение неполадок расширения Azure для SAP — обратитесь в службу поддержки)
 [deployment-guide-run-the-script]:deployment-guide.md#0d2847ad-865d-4a4c-a405-f9b7baaa00c7 (Устранение неполадок расширения Azure для SAP — запуск скрипта установки)
 [deployment-guide-redeploy-after-sysprep]:deployment-guide.md#2cd61f22-187d-42ed-bb8c-def0c983d756 (Устранение неполадок расширения Azure для SAP — повторное развертывание после Sysprep)
-[deployment-guide-fix-internet-connection]:deployment-guide.md#e92bc57d-80d9-4a2b-a2f4-16713a22ad89 (Устранение неполадок расширения Azure для SAP — Исправление подключения к Интернету)
+[deployment-guide-fix-internet-connection]:deployment-guide.md#e92bc57d-80d9-4a2b-a2f4-16713a22ad89 ( Устранение неполадок расширения Azure для SAP — Исправление подключения к Интернету)
 
 
 [deployment-guide-configure-monitoring-scenario-1]:deployment-guide.md#ec323ac3-1de9-4c3a-b770-4ff701def65b (Настройка расширения виртуальной машины)
@@ -256,7 +256,7 @@ ms.locfileid: "87082262"
 [storage-azure-cli-copy-blobs]:../../../storage/common/storage-azure-cli.md#copy-blobs
 [storage-introduction]:../../../storage/common/storage-introduction.md
 [storage-powershell-guide-full-copy-vhd]:../../../storage/common/storage-powershell-guide-full.md#how-to-copy-blobs-from-one-storage-container-to-another
-[storage-premium-storage-preview-portal]:../../windows/disks-types.md
+[storage-premium-storage-preview-portal]:../../disks-types.md
 [storage-redundancy]:../../../storage/common/storage-redundancy.md
 [storage-scalability-targets]:../../../storage/common/scalability-targets-standard-accounts.md
 [storage-use-azcopy]:../../../storage/common/storage-use-azcopy.md
@@ -1059,14 +1059,14 @@ az --version
 
 1. Чтобы включить управляемое удостоверение для виртуальной машины, выполните действия, описанные в статье [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLIной][qs-configure-cli-windows-vm] статьи. Назначенные пользователем управляемые удостоверения не поддерживаются расширением виртуальной машины для SAP. Однако можно включить и то, и другое, назначенное системой и назначенное пользователю удостоверение.
 
-   Пример.
+   Пример
    ```azurecli
    az vm identity assign -g <resource-group-name> -n <vm name>
    ```
 
 1. Назначьте управляемому удостоверению доступ к группе ресурсов виртуальной машины или ко всем сетевым интерфейсам, управляемым дискам и самой виртуальной машине, как описано в статье [назначение управляемого удостоверения доступ к ресурсу с помощью Azure CLI][howto-assign-access-cli]
 
-    Пример.
+    Пример
 
     ```azurecli
     spID=$(az resource show -g <resource-group-name> -n <vm name> --query identity.principalId --out tsv --resource-type Microsoft.Compute/virtualMachines)
@@ -1147,7 +1147,7 @@ az --version
 
 1. Проверьте выходные данные расширения Azure для SAP.
 
-   а.  Выполните команду `more /var/lib/AzureEnhancedMonitor/PerfCounters`.
+   а.  Выполнить `more /var/lib/AzureEnhancedMonitor/PerfCounters`
 
    **Ожидаемый результат**: возвращается список счетчиков производительности. Файл не должен быть пустым.
 
@@ -1163,7 +1163,7 @@ az --version
 
 1. Проверьте, установлен и запущен ли каталог waagent.
 
-   а.  Выполните команду `sudo ls -al /var/lib/waagent/`.
+   а.  Выполнить `sudo ls -al /var/lib/waagent/`
 
      **Ожидаемый результат**: должно отобразиться содержимое каталога waagent.
 
@@ -1173,7 +1173,7 @@ az --version
 
 1. Проверьте, установлено и запущено ли расширение Azure для SAP.
 
-   а.  Выполните команду `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-*/'`.
+   а.  Выполнить `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-*/'`
 
    **Ожидаемый результат**: список содержимого каталога расширения Azure для SAP.
 
@@ -1183,7 +1183,7 @@ az --version
 
 1. Установите агент SAP Host Agent, как описано в примечании к SAP [1031096], и проверьте выходные данные `saposcol`.
 
-   а.  Выполните команду `/usr/sap/hostctrl/exe/saposcol -d`.
+   а.  Выполнить `/usr/sap/hostctrl/exe/saposcol -d`
 
    b.  Выполнить `dump ccm`
 
@@ -1203,7 +1203,7 @@ az --version
 #### <a name="run-the-readiness-check-on-a-windows-vm"></a>Проверка готовности на виртуальной машине Windows
 
 1. Войдите в виртуальную машину Azure (учетная запись администратора не требуется).
-1. Откройте веб-браузер и перейдите по адресуhttp://127.0.0.1:11812/azure4sap/metrics
+1. Откройте веб-браузер и перейдите по адресу http://127.0.0.1:11812/azure4sap/metrics
 1. Браузер должен отобразить или скачать XML-файл, содержащий данные мониторинга виртуальной машины. Если это не так, убедитесь, что расширение Azure для SAP установлено.
 
 ##### <a name="check-the-content-of-the-xml-file"></a>Проверка содержимого XML-файла
@@ -1228,7 +1228,7 @@ XML-файл, к которому можно получить доступ, http
 
 1. Проверьте, установлен и запущен ли каталог waagent.
 
-   а.  Выполните команду `sudo ls -al /var/lib/waagent/`.
+   а.  Выполнить `sudo ls -al /var/lib/waagent/`
 
      **Ожидаемый результат**: должно отобразиться содержимое каталога waagent.
 
@@ -1238,7 +1238,7 @@ XML-файл, к которому можно получить доступ, http
 
 1. Проверьте, установлено и запущено ли расширение Azure для SAP.
 
-   а.  Выполните команду `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.AzureCAT.AzureEnhancedMonitoring.MonitorX64Linux-*/'`.
+   а.  Выполнить `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.AzureCAT.AzureEnhancedMonitoring.MonitorX64Linux-*/'`
 
    **Ожидаемый результат**: список содержимого каталога расширения Azure для SAP.
 
@@ -1248,7 +1248,7 @@ XML-файл, к которому можно получить доступ, http
 
 1. Установите агент SAP Host Agent, как описано в примечании к SAP [1031096], и проверьте выходные данные `saposcol`.
 
-   а.  Выполните команду `/usr/sap/hostctrl/exe/saposcol -d`.
+   а.  Выполнить `/usr/sap/hostctrl/exe/saposcol -d`
 
    b.  Выполнить `dump ccm`
 

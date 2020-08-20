@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure
 ms.date: 06/29/2020
 ms.author: genli
-ms.openlocfilehash: a843a42de6fc1e6cd8ef788552ab4a8ac17b4e25
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 23f31e8d36d6ba615b21a4043c7d39716fc6d89a
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86999060"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653500"
 ---
 # <a name="vhd-is-not-supported-when-you-create-a-virtual-machine-in-azure"></a>Виртуальный жесткий диск не поддерживается при создании виртуальной машины в Azure
 
@@ -62,7 +62,6 @@ ErrorMessage: The specified cookie value in VHD footer indicates that disk 'disk
 
 Продолжение проблемы может указывать на поврежденный виртуальный жесткий диск. В этом случае рекомендуется перестроить виртуальный жесткий диск с нуля.
 
-См. сведения в следующих статьях:
+Дополнительные сведения см. в следующей статье:
 
-- [О виртуальных жестких дисках Windows](../windows/managed-disks-overview.md)
-- [О виртуальных жестких дисках Linux](../linux/managed-disks-overview.md)
+- [О виртуальных жестких дисках](../managed-disks-overview.md)

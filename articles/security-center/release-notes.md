@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/12/2020
 ms.author: memildin
-ms.openlocfilehash: dbd040bf7caf3dbe9ed9820bf189bc1f74475c09
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 7bec65867373293ff06a2295f08a05db6ffaa480
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88586900"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653840"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -38,6 +38,7 @@ ms.locfileid: "88586900"
 - [Добавлена поддержка Azure Active Directory параметров безопасности по умолчанию (для многофакторной проверки подлинности).](#added-support-for-azure-active-directory-security-defaults-for-multi-factor-authentication)
 - [Добавлена рекомендация субъектов-служб](#service-principals-recommendation-added)
 - [Оценка уязвимостей на виртуальных машинах. рекомендации и политики объединены](#vulnerability-assessment-on-vms---recommendations-and-policies-consolidated)
+- [Новые политики безопасности AKS, добавленные в инициативу ASC_default — для использования только пользователями закрытой предварительной версии](#new-aks-security-policies-added-to-asc_default-initiative--for-use-by-private-preview-customers-only)
 
 
 ### <a name="asset-inventory---powerful-new-view-of-the-security-posture-of-your-assets"></a>Инвентаризация активов — новое мощное представление безопасности активов
@@ -59,7 +60,7 @@ ms.locfileid: "88586900"
 
 Центр безопасности теперь предоставляет рекомендации по безопасности, если она определяет подписку Azure без включенных по умолчанию параметров безопасности. До настоящего момента Центр безопасности рекомендует включить многофакторную проверку подлинности с помощью условного доступа, который является частью лицензии Azure Active Directory (AD) Premium. Для клиентов, использующих Azure AD бесплатно, рекомендуется включить параметры безопасности по умолчанию. 
 
-Наша цель — порекомендовать большему числу клиентов защищать облачные среды с помощью MFA, а также снизить одну из самых высоких рисков, которые наиболее эффективны с учетом их [безопасности](https://docs.microsoft.com/azure/security-center/secure-score-security-controls).
+Наша цель — порекомендовать большему числу клиентов защищать свои облачные среды с помощью MFA и снизить одну из самых высоких рисков, которые также наиболее эффективны для [оценки безопасности](https://docs.microsoft.com/azure/security-center/secure-score-security-controls).
 
 Дополнительные сведения о параметрах [безопасности по умолчанию](https://docs.microsoft.com/azure/active-directory/fundamentals/concept-fundamentals-security-defaults).
 
@@ -126,6 +127,17 @@ ms.locfileid: "88586900"
 |[**Оценка уязвимостей должна быть включена на виртуальных машинах**](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f501541f7-f7e7-4cd6-868c-4190fdad3ac9)<br>Идентификатор политики: 501541f7-f7e7-4cd6-868c-4190fdad3ac9 |Встроенные + BYOL|
 ||||
 
+
+### <a name="new-aks-security-policies-added-to-asc_default-initiative--for-use-by-private-preview-customers-only"></a>Новые политики безопасности AKS, добавленные в инициативу ASC_default — для использования только пользователями закрытой предварительной версии
+
+Чтобы обеспечить безопасность рабочих нагрузок Kubernetes по умолчанию, центр безопасности добавляет политики уровня Kubernetes и рекомендации по усилению защиты, включая параметры безопасности с управлением допуском Kubernetes.
+
+На раннем этапе этого проекта содержится закрытая Предварительная версия и добавление новых политик (отключенных по умолчанию) в инициативу ASC_default.
+
+Вы можете спокойно проигнорировать эти политики, и это не повлияет на вашу среду. Если вы хотите включить их, зарегистрируйтесь для использования предварительной версии по адресу https://aka.ms/SecurityPrP и выберите один из следующих вариантов:
+
+1. **Единственная Предварительная версия** — присоединение только к этой частной предварительной версии. В качестве предварительной версии следует явно присвоить параметру "ASC непрерывное сканирование", чтобы присоединиться.
+1. **Текущая программа** — для добавления в этот и будущих частных предварительных версиях. Вам потребуется пройти профиль и соглашение о конфиденциальности.
 
 
 ## <a name="july-2020"></a>Июль 2020 г.

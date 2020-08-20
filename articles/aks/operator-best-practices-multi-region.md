@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: thfalgou
 ms.custom: fasttrack-edit
-ms.openlocfilehash: efa4ca24dadb2fb5d347d79de20eebfacc9a58e0
-ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
+ms.openlocfilehash: 110a25fca0b0e764650665635dbe545de7a350cd
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88142185"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654002"
 ---
 # <a name="best-practices-for-business-continuity-and-disaster-recovery-in-azure-kubernetes-service-aks"></a>Рекомендации по обеспечению непрерывности бизнес-процессов и аварийного восстановления в Службе Azure Kubernetes (AKS)
 
 При управлении кластерами в Службе Azure Kubernetes (AKS) время бесперебойной работы приложений является важным аспектом. По умолчанию AKS обеспечивает высокий уровень доступности с помощью нескольких узлов в [масштабируемом наборе виртуальных машин (VMSS)](../virtual-machine-scale-sets/overview.md). Но эти несколько узлов не защищают систему от сбоя региона. Чтобы максимально увеличить время работы, планируйте непрерывность бизнес-процессов и подготовьте аварийное восстановление.
 
-Эта статья посвящена планированию непрерывности бизнес-процессов и аварийного восстановления в AKS. Вы научитесь:
+Эта статья посвящена планированию непрерывности бизнес-процессов и аварийного восстановления в AKS. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Спланируйте кластеры AKS в нескольких регионах.
@@ -122,7 +122,7 @@ ms.locfileid: "88142185"
 Если вы используете управляемые диски Azure, вы можете выбрать решения для репликации и аварийного восстановления, такие как:
 
 * [Велеро в Azure](https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure/blob/master/README.md)
-* [Azure Site Recovery](https://azure.microsoft.com/blog/asr-managed-disks-between-azure-regions/)
+* [Azure Backup](../backup/backup-overview.md)
 
 ### <a name="application-based-asynchronous-replication"></a>асинхронная репликация на основе приложений;
 

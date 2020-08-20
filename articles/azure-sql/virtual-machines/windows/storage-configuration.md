@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 12/26/2019
 ms.author: mathoma
-ms.openlocfilehash: 21609e38625d0911476c85a9d6e518f5ff7e9e61
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: de0402febe94e50877367dc37d448a4a13893f93
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84667375"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653348"
 ---
 # <a name="storage-configuration-for-sql-server-vms"></a>Настройка хранилища для виртуальных машин SQL Server
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "84667375"
 
 * быть подготовлена с помощью [коллекции образов SQL Server](sql-server-on-azure-vm-iaas-what-is-overview.md#payasyougo);
 * использовать [модель развертывания с помощью Resource Manager](../../../azure-resource-manager/management/deployment-models.md);
-* использовать [твердотельные накопители класса Premium](../../../virtual-machines/windows/disks-types.md).
+* использовать [твердотельные накопители класса Premium](../../../virtual-machines/disks-types.md).
 
 ## <a name="new-vms"></a>Новые виртуальные машины
 
@@ -115,7 +115,7 @@ ms.locfileid: "84667375"
 В этом разделе содержится ссылка на изменения конфигурации хранилища, которые автоматически выполняет Azure во время SQL Server подготовки или настройки виртуальной машины в портал Azure.
 
 * Azure настраивает пул носителей из хранилища, выбранного на виртуальной машине. В следующем разделе этой статьи приведены сведения о конфигурации пула носителей.
-* При автоматической настройке хранилища всегда используются диски данных P30 [на базе твердотельных накопителей класса Premium](../../../virtual-machines/windows/disks-types.md). Следовательно, между выбранным числом терабайт и количеством дисков, прикрепленных к виртуальной машине, существует полноценное сопоставление.
+* При автоматической настройке хранилища всегда используются диски данных P30 [на базе твердотельных накопителей класса Premium](../../../virtual-machines/disks-types.md). Следовательно, между выбранным числом терабайт и количеством дисков, прикрепленных к виртуальной машине, существует полноценное сопоставление.
 
 Сведения о ценах см. на странице [Цены на хранилища Azure](https://azure.microsoft.com/pricing/details/storage) на вкладке **Хранилище дисков**.
 

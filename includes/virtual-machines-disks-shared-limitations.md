@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: virtual-machines
 author: roygara
@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 07/14/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: f6175a797b14077cafacaca1f2fd48f36e945d9e
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 4a204be0730a0ce4edcd2e343364ed8fc724430e
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87425164"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88655072"
 ---
 Включение общих дисков доступно только для подмножества типов дисков. В настоящее время общие диски разрешены только для Ultra дисков и твердотельных накопителей уровня "Премиум". Для каждого управляемого диска с включенными общими дисками действуют следующие ограничения, упорядоченные по типу диска:
 
 ### <a name="ultra-disks"></a>Диски категории "Ультра"
 
-У дисков Ultra есть отдельный список ограничений, не связанных с общими дисками. Сведения об ограничениях для Ultra Disk см. в статье [Использование Ultra дисков Azure](../articles/virtual-machines/linux/disks-enable-ultra-ssd.md).
+У дисков Ultra есть отдельный список ограничений, не связанных с общими дисками. Сведения об ограничениях для Ultra Disk см. в статье [Использование Ultra дисков Azure](../articles/virtual-machines/disks-enable-ultra-ssd.md).
 
 При совместном использовании Ultra Disks они имеют следующие дополнительные ограничения.
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/17/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 37d9cf0b0ac7145e389f9fc768ff0b593b27ae1a
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 93c97c70a65be40b5801b202ba277b8f86ad1566
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88515303"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88655185"
 ---
 ## <a name="limitations"></a>Ограничения
 
@@ -137,7 +137,7 @@ New-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'mySharedDisk' -Disk $
 После развертывания общего диска с помощью его `maxShares>1` можно подключить к одной или нескольким виртуальным машинам.
 
 > [!NOTE]
-> При развертывании Ultra Disk убедитесь, что он соответствует необходимым требованиям. Дополнительные сведения см. в разделе [PowerShell](../articles/virtual-machines/windows/disks-enable-ultra-ssd.md#enable-ultra-disk-compatibility-on-an-existing-vm-1) или [CLI](../articles/virtual-machines/linux/disks-enable-ultra-ssd.md#enable-ultra-disk-compatibility-on-an-existing-vm) в статье о Ultra Disk.
+> При развертывании Ultra Disk убедитесь, что он соответствует необходимым требованиям. Дополнительные сведения см. в разделе [PowerShell](../articles/virtual-machines/disks-enable-ultra-ssd.md#enable-ultra-disk-compatibility-on-an-existing-vm-1) или [CLI](../articles/virtual-machines/disks-enable-ultra-ssd.md#enable-ultra-disk-compatibility-on-an-existing-vm) в статье о Ultra Disk.
 
 ```azurepowershell-interactive
 
@@ -196,7 +196,7 @@ PR_EXCLUSIVE_ACCESS_ALL_REGISTRANTS
 Кроме того, при использовании PR_RESERVE, PR_REGISTER_AND_IGNORE, PR_REGISTER_KEY, PR_PREEMPT_RESERVATION, PR_CLEAR_RESERVATION или PR_RELEASE-RESERVATION необходимо указать постоянный ключ-резервирование.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы предпочитаете использовать шаблоны Azure Resource Manager для развертывания диска, доступны следующие примеры шаблонов:
 - [SSD ценовой категории "Премиум"](https://aka.ms/SharedPremiumDiskARMtemplate)

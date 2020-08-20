@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 8a5374bf15798fd7e53f0d93e69f2f40a2d57b94
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: e5862daa21f8bf0075bb1dee567cbe887ec32d72
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87533824"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653279"
 ---
 # <a name="failover-cluster-instances-with-sql-server-on-azure-virtual-machines"></a>Экземпляры отказоустойчивого кластера с SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -40,25 +40,25 @@ SQL Server на виртуальных машинах Azure использует
 Дополнительные сведения см. в статье рекомендации [по кворуму с помощью SQL Server виртуальных машин в Azure](hadr-cluster-best-practices.md#quorum). 
 
 
-## <a name="storage"></a>Хранение
+## <a name="storage"></a>Память
 
 В традиционных локальных кластеризованных средах отказоустойчивый кластер Windows использует сеть хранения данных (SAN), доступную для обоих узлов в качестве общего хранилища. SQL Server файлы размещаются в общем хранилище, и только активный узел может одновременно получить доступ к файлам. 
 
 SQL Server на виртуальных машинах Azure предлагает различные варианты в качестве решения общего хранилища для развертывания экземпляров отказоустойчивого кластера SQL Server. 
 
-||[Общие диски Azure](../../../virtual-machines/windows/disks-shared.md)|[Общие файловые ресурсы уровня "Премиум"](../../../storage/files/storage-how-to-create-premium-fileshare.md) |[Локальные дисковые пространства (S2D)](/windows-server/storage/storage-spaces/storage-spaces-direct-overview)|
+||[Общие диски Azure](../../../virtual-machines/windows/disks-shared.md)|[Общие папки ценовой категории "Премиум"](../../../storage/files/storage-how-to-create-premium-fileshare.md) |[Локальные дисковые пространства (S2D)](/windows-server/storage/storage-spaces/storage-spaces-direct-overview)|
 |---------|---------|---------|---------|
-|**Минимальная версия ОС**| Все |Windows Server 2012|Windows Server 2016|
+|**Минимальная версия ОС**| Все |Windows Server 2012|Windows Server 2016|
 |**Минимальная версия SQL Server**|Все|SQL Server 2012|SQL Server 2016|
 |**Поддерживаемая доступность виртуальной машины** |Группы доступности с группами размещения с учетом расположения |Группы доступности и зоны доступности|Группы доступности |
-|**Поддержка FileStream**|да|Нет|да |
-|**Кэш больших двоичных объектов Azure**|Нет|Нет|да|
+|**Поддержка FileStream**|Да|Нет|Да |
+|**Кэш больших двоичных объектов Azure**|Нет|Нет|Да|
 
 В оставшейся части этого раздела перечислены преимущества и ограничения для каждого из вариантов хранения, доступных для SQL Server на виртуальных машинах Azure. 
 
 ### <a name="azure-shared-disks"></a>Общие диски Azure
 
-[Общие диски Azure](../../../virtual-machines/windows/disks-shared.md) — это функция [управляемых дисков Azure](../../../virtual-machines/windows/managed-disks-overview.md). Отказоустойчивая кластеризация Windows Server поддерживает использование общих дисков Azure с экземпляром отказоустойчивого кластера. 
+[Общие диски Azure](../../../virtual-machines/windows/disks-shared.md) — это функция [управляемых дисков Azure](../../../virtual-machines/managed-disks-overview.md). Отказоустойчивая кластеризация Windows Server поддерживает использование общих дисков Azure с экземпляром отказоустойчивого кластера. 
 
 **Поддерживаемая ОС**: все   
 **Поддерживаемая версия SQL**: все     
@@ -78,7 +78,7 @@ SQL Server на виртуальных машинах Azure предлагает
  
 Чтобы приступить к работе, см. статью [SQL Server экземпляр отказоустойчивого кластера с общими дисками Azure](failover-cluster-instance-azure-shared-disks-manually-configure.md). 
 
-### <a name="storage-spaces-direct"></a>Локальные дисковые пространства
+### <a name="storage-spaces-direct"></a>Дисковые пространства прямого подключения
 
 [Локальные дисковые пространства](/windows-server/storage/storage-spaces/storage-spaces-direct-overview) является компонентом Windows Server, который поддерживается отказоустойчивой кластеризацией на виртуальных машинах Azure. Она предоставляет программную виртуальную сеть SAN.
 
@@ -166,7 +166,7 @@ SQL Server на виртуальных машинах Azure предлагает
 
 Ознакомьтесь с рекомендациями по [конфигурации кластера](hadr-cluster-best-practices.md)и [Подготовьте виртуальную машину SQL Server для FCI](failover-cluster-instance-prepare-vm.md). 
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения см. в разделе: 
 
 - [технологии кластера под управлением Windows](/windows-server/failover-clustering/failover-clustering-overview);   
 - [Экземпляры отказоустойчивого кластера SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)
