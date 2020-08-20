@@ -4,12 +4,12 @@ description: В этом кратком руководстве показано,
 ms.topic: quickstart
 ms.date: 06/18/2020
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 76d0587c68ac46253dbd937c661b06bdb8c495c8
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 4085ec5aaff75f33fc7a87708693084831ff5d8d
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87404092"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88246294"
 ---
 Клиентская библиотека QnA Maker для Node.js:
 
@@ -28,7 +28,7 @@ ms.locfileid: "87404092"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 * Текущая версия [Node.js](https://nodejs.org).
 * Получив подписку Azure, создайте [ресурс QnA Maker](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesQnAMaker) на портале Azure, чтобы получить ключ разработки и ресурс. После развертывания ресурса выберите элемент **Перейти к ресурсу**.
     * Для подключения приложения к API QnA Maker потребуется ключ и имя созданного ресурса. Ключ и имя ресурса вы вставите в приведенный ниже код на следующих шагах в рамках этого краткого руководства.

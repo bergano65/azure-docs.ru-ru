@@ -10,18 +10,18 @@ ms.topic: include
 ms.date: 05/08/2020
 ms.author: pafarley
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a8b49beb463b4e9e19ee98baaef911e6dff15631
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 17b0ede8d917ea24bf6fa6fbcda49b1860ef83b9
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87405469"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88246226"
 ---
 [Справочная документация](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/formrecognizer/ai-form-recognizer/) | [Пакет (npm)](https://www.npmjs.com/package/@azure/ai-form-recognizer) | [Примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 * Набор данных для обучения в хранилище BLOB-объектов Azure. Советы и варианты для объединения данных для обучения см. в статье о [создании обучающего набора данных для пользовательской модели](../../build-training-data-set.md). При работе с этим кратким руководством можно использовать файлы в папке **Train** из [примера набора данных](https://go.microsoft.com/fwlink/?linkid=2090451).
 * Текущая версия [Node.js](https://nodejs.org/)
 

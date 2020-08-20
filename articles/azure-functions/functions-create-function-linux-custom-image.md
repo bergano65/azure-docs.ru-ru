@@ -3,14 +3,14 @@ title: Создание Функций Azure на Linux с помощью пол
 description: Узнайте, как создавать функции Azure под управлением пользовательского образа Linux.
 ms.date: 03/30/2020
 ms.topic: tutorial
-ms.custom: mvc, devx-track-python
+ms.custom: devx-track-csharp, mvc, devx-track-python
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 43ca0a01cd56d63113824eccd6d9c37b225d4134
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: efe1706f2ea97c3eadab8deade7e13123af17752
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87852588"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225671"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-container"></a>Создание функции на Linux с помощью пользовательского контейнера
 
@@ -496,7 +496,7 @@ SSH обеспечивает безопасный обмен данными ме
 1. Еще раз выполните команду `docker build` в корневой папке и обновите версию в теге до `v1.0.1`. Как и ранее, замените `<docker_id>` идентификатором учетной записи Docker Hub.
 
     ```
-    docker build --tag <docker_id>/azurefunctionsimage:v1.0.1
+    docker build --tag <docker_id>/azurefunctionsimage:v1.0.1 .
     ```
     
 1. Отправьте обновленный образ обратно в репозиторий с помощью `docker push`.

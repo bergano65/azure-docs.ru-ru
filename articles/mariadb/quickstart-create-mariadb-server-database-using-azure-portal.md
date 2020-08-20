@@ -7,14 +7,14 @@ ms.service: mariadb
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 3/19/2020
-ms.openlocfilehash: 698220a7f81dc5fb9d70d2aa65e96dfa199af444
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: e5801f46745b3fda28af19c11e323b9497ebe98a
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80063834"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185253"
 ---
-# <a name="create-an-azure-database-for-mariadb-server-by-using-the-azure-portal"></a>Создание сервера Базы данных Azure для MariaDB с помощью портала Azure
+# <a name="quickstart-create-an-azure-database-for-mariadb-server-by-using-the-azure-portal"></a>Краткое руководство. Создание сервера Базы данных Azure для MariaDB с помощью портала Azure
 
 База данных Azure для MariaDB — это управляемая служба, которая позволяет запускать, администрировать и масштабировать высокодоступные базы данных MariaDB в облаке. В этом кратком руководстве описывается, как за пять минут создать сервер Базы данных Azure для MariaDB с помощью портала Azure.  
 

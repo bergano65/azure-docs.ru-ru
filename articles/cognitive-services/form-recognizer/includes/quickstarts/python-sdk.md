@@ -9,18 +9,18 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 06/15/2020
 ms.author: pafarley
-ms.openlocfilehash: 3300bd53be36e34ff32267605352d6f80923724e
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 4d2beeb93922d826ca57d7ea1c3fecc69166b266
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86277778"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88246109"
 ---
 [Справочная документация](https://docs.microsoft.com/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/azure/ai/formrecognizer) | [Пакет (PyPi)](https://pypi.org/project/azure-ai-formrecognizer/) | [Примеры](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 * Набор данных для обучения в хранилище BLOB-объектов Azure. Советы и варианты для объединения данных для обучения см. в статье о [создании обучающего набора данных для пользовательской модели](../../build-training-data-set.md). При работе с этим кратким руководством можно использовать файлы в папке **Train** из [примера набора данных](https://go.microsoft.com/fwlink/?linkid=2090451).
 * [Python 2.7, 3.5 или более поздней версии](https://www.python.org/)
 

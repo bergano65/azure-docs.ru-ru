@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: tutorial
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: 68dd2ae09c5d6ad5e510fb3beb532b235f83fc8d
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: f350aae32909de2b9be4384d921f7507a158f6ff
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87834700"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243859"
 ---
 # <a name="tutorial-use-computer-vision-to-generate-image-metadata-in-azure-storage"></a>Руководство по Создание метаданных изображений в службе хранилища Azure с помощью API компьютерного зрения
 
@@ -31,7 +31,7 @@ ms.locfileid: "87834700"
 > * Прикрепление метаданных к изображениям, размещенным в службе хранилища Azure.
 > * Проверка метаданных изображения с помощью Обозревателя службы хранилища Azure.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу. 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services), прежде чем начинать работу. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 

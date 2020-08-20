@@ -10,14 +10,14 @@ ms.subservice: anomaly-detector
 ms.topic: quickstart
 ms.date: 06/30/2020
 ms.author: aahi
-ms.openlocfilehash: 585731212fa31be2757d5b5d4c4e0a2ef1212ca8
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 86742568d8f0c7c951d872e7df23b8ce1cb0920f
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85980228"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88244233"
 ---
-# <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-c"></a>Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и C# 
+# <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-c"></a>Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и C#
 
 Используйте это краткое руководство, чтобы узнать, как начать использовать две модели API Детектора аномалий для обнаружения аномалий в данных временных рядов. Это приложение C# отправляет два запроса API, содержащие данные временных рядов в формате JSON, и получает ответы.
 
@@ -30,13 +30,13 @@ ms.locfileid: "85980228"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 - Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAnomalyDetector"  title="Создание ресурса Детектора аномалий"  target="_blank">созданию ресурса Детектора аномалий <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. Дождитесь, пока закончится развертывание, и нажмите кнопку **Перейти к ресурсу**.
     - Для подключения приложения к API "Детектор аномалий" потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
     Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
 - Любой выпуск [Visual Studio 2017 или более поздней версии](https://visualstudio.microsoft.com/downloads/)
 - Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet. Чтобы установить Newtonsoft.Json в качестве пакета NuGet в Visual Studio, сделайте следующее.
-    
+
     1. Щелкните правой кнопкой мыши имя проекта в **обозревателе решений**.
     2. Выберите **Manage NuGet Packages...** (Управление пакетами NuGet...).
     3. Найдите пакет *Newtonsoft.Json* и установите его.
@@ -49,7 +49,7 @@ ms.locfileid: "85980228"
 
 ## <a name="create-a-new-application"></a>Создание приложения
 
-1. В Visual Studio создайте новое консольное решение и добавьте следующие пакеты. 
+1. В Visual Studio создайте новое консольное решение и добавьте следующие пакеты.
 
     [!code-csharp[using statements](~/samples-anomaly-detector/quickstarts/csharp-detect-anomalies.cs?name=usingStatements)]
 
@@ -60,7 +60,7 @@ ms.locfileid: "85980228"
     |------------------------------------|--------------------------------------------------|
     | Пакетное обнаружение                    | `/anomalydetector/v1.0/timeseries/entire/detect` |
     | Обнаружение в последней точке данных | `/anomalydetector/v1.0/timeseries/last/detect`   |
-        
+
     [!code-csharp[initial variables for endpoint, key and data file](~/samples-anomaly-detector/quickstarts/csharp-detect-anomalies.cs?name=vars)]
 
 ## <a name="create-a-function-to-send-requests"></a>Создание функции для отправки запросов
@@ -79,7 +79,7 @@ ms.locfileid: "85980228"
 
 2. Десериализируйте объект JSON и выведите его в консоль.
 
-3. Если ответ содержит поле `code`, выведите код ошибки и сообщение об ошибке. 
+3. Если ответ содержит поле `code`, выведите код ошибки и сообщение об ошибке.
 
 4. В противном случае найдите положения аномалий в наборе данных. Поле `isAnomaly` ответа содержит массив логических значений, каждое из которых указывает, является ли точка данных аномалией. Преобразуйте его в строковый массив с помощью функции `ToObject<bool[]>()` объекта ответа. Пройдите по массиву, а затем выведите перечень всех `true` значений. Эти значения соответствуют индексу аномальных точек данных, если они были найдены.
 
@@ -93,10 +93,10 @@ ms.locfileid: "85980228"
 2. Десериализируйте объект JSON и выведите его в консоль.
 
     [!code-csharp[Detect anomalies latest](~/samples-anomaly-detector/quickstarts/csharp-detect-anomalies.cs?name=detectAnomaliesLatest)]
- 
+
 ## <a name="load-your-time-series-data-and-send-the-request"></a>Загрузка данных временных рядов и отправка запроса
 
-1. В методе main приложения загрузите данные временного ряда в формате JSON с помощью `File.ReadAllText()`. 
+1. В методе main приложения загрузите данные временного ряда в формате JSON с помощью `File.ReadAllText()`.
 
 2. Вызовите функции обнаружения аномалий, созданные ранее. Чтобы после выполнения приложения оставить консоль открытой, используйте `System.Console.ReadKey()`.
 

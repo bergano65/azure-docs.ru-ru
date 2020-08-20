@@ -5,14 +5,14 @@ author: amberbhargava
 tags: billing
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 07/13/2020
+ms.date: 08/14/2020
 ms.author: banders
-ms.openlocfilehash: 57f77e5cb39da18414ef4287e9306733f403e005
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: a92298fa3ba4de123cd89404855df15e38692aa8
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86523576"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88244811"
 ---
 # <a name="complete-enterprise-agreement-tasks-in-your-billing-account-for-a-microsoft-customer-agreement"></a>Выполнение задач для Соглашения Enterprise в учетной записи выставления счетов для Клиентского соглашения Майкрософт
 

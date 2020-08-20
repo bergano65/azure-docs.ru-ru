@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: 5d325ac8da43f020f4ab39244d2e6a7dc6ed72b7
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: a6ae9d8975c36e7ffa8e3eadf880b4685390c5fc
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86156496"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88246507"
 ---
 Начните использовать клиентскую библиотеку Автозаполнения Bing для .NET. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.
 
@@ -23,7 +23,7 @@ ms.locfileid: "86156496"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте [ее бесплатно](https://azure.microsoft.com/free/).
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте [ее бесплатно](https://azure.microsoft.com/free/cognitive-services).
 * Текущая версия [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).
 
 [!INCLUDE [cognitive-services-bing-autosuggest-signup-requirements](~/includes/cognitive-services-bing-autosuggest-signup-requirements.md)]
@@ -31,12 +31,12 @@ ms.locfileid: "86156496"
 ## <a name="create-environment-variables"></a>Создание переменных среды
 
 >[!NOTE]
-> Конечные точки для ресурсов, созданных после 1 июля 2019 г., поддерживают пользовательский формат поддомена, показанный ниже. Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) (Пользовательские имена поддоменов для Cognitive Services). 
+> Конечные точки для ресурсов, созданных после 1 июля 2019 г., поддерживают пользовательский формат поддомена, показанный ниже. Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) (Пользовательские имена поддоменов для Cognitive Services).
 
 Используя ключ и конечную точку из созданного ресурса, создайте две переменные среды для проверки подлинности:
 <!-- replace the below variable names with the names expected in the code sample.-->
 * `AUTOSUGGEST_SUBSCRIPTION_KEY`: ключ ресурса для аутентификации запросов.
-* `AUTOSUGGEST_ENDPOINT`: конечная точка ресурса для отправки запросов API. Результат будет выглядеть так: `https://<your-custom-subdomain>.api.cognitive.microsoft.com`. 
+* `AUTOSUGGEST_ENDPOINT`: конечная точка ресурса для отправки запросов API. Результат будет выглядеть так: `https://<your-custom-subdomain>.api.cognitive.microsoft.com`.
 
 Используйте инструкции для своей операционной системы.
 <!-- replace the below endpoint and key examples -->
@@ -72,9 +72,9 @@ export AUTOSUGGEST_ENDPOINT=<replace-with-your-autosuggest-api-endpoint>
 
 ## <a name="create-a-new-c-application"></a>Создание нового приложения C#
 
-Создайте консольное приложение .NET Core на C# в предпочитаемой интегрированной среде разработки или редакторе. 
+Создайте консольное приложение .NET Core на C# в предпочитаемой интегрированной среде разработки или редакторе.
 
-В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем `bing-autosuggest-quickstart`. Эта команда создает простой проект "Hello World" на языке C# с одним файлом исходного кода: *program.cs*. 
+В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем `bing-autosuggest-quickstart`. Эта команда создает простой проект "Hello World" на языке C# с одним файлом исходного кода: *program.cs*.
 
 ```console
 dotnet new console -n bing-autosuggest-quickstart
@@ -86,7 +86,7 @@ dotnet new console -n bing-autosuggest-quickstart
 dotnet build
 ```
 
-Выходные данные сборки не должны содержать предупреждений или ошибок. 
+Выходные данные сборки не должны содержать предупреждений или ошибок.
 
 ```console
 ...

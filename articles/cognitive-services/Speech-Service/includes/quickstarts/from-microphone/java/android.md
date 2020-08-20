@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 11/05/2019
 ms.author: wolfma
-ms.openlocfilehash: 2641464e52b80c59b6c6b5a123ad1605c1d41495
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 5832920ec491ce9d99219a7a423fcf0e38ba62cc
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81275059"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88226340"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -58,7 +58,7 @@ ms.locfileid: "81275059"
 
 1. В том же файле замените строку `YourSubscriptionKey` своим ключом подписки.
 
-1. Кроме того, найдите строку `YourServiceRegion` и замените ее **идентификатором региона** из [региона](https://aka.ms/speech/sdkregion), связанного с вашей подпиской. Например, используйте `westus` для подписки с бесплатной пробной версией.
+1. Кроме того, найдите строку `YourServiceRegion` и замените ее **идентификатором региона** из [региона](https://aka.ms/speech/sdkregion), связанного с вашей подпиской.
 
 ## <a name="build-and-run-the-app"></a>Создание и запуск приложения
 

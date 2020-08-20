@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 06/30/2020
 ms.author: aahi
 ms.custom: devx-track-python
-ms.openlocfilehash: daee5a921e25dc74d6e869ca3feb6c66d8c4ce7d
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 38c2b3cdf40f1924a36ffd84d9dc5f9b2f7f319d
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87851037"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245712"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-python"></a>Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и Python
 
@@ -31,7 +31,7 @@ ms.locfileid: "87851037"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 - Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAnomalyDetector"  title="Создание ресурса Детектора аномалий"  target="_blank">созданию ресурса Детектора аномалий <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. Дождитесь, пока закончится развертывание, и нажмите кнопку **Перейти к ресурсу**.
     - Для подключения приложения к API "Детектор аномалий" потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
     Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
@@ -85,7 +85,7 @@ ms.locfileid: "87851037"
 
 ## <a name="detect-the-anomaly-status-of-the-latest-data-point"></a>Обнаружение состояний аномалии последней точки данных
 
-1. Чтобы определить, является ли последняя точка данных аномалией, создайте метод `detect_latest()`. С помощью конечной точки, URL-адреса, ключа подписки и данных JSON вызовите метод `send_request()`. 
+1. Чтобы определить, является ли последняя точка данных аномалией, создайте метод `detect_latest()`. С помощью конечной точки, URL-адреса, ключа подписки и данных JSON вызовите метод `send_request()`.
 
 2. Чтобы отформатировать `json.dumps()`, вызовите его в результате и выведите его в консоль.
 

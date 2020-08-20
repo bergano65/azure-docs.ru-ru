@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 06/30/2020
 ms.author: aahi
 ms.custom: devx-track-javascript
-ms.openlocfilehash: cb9a674890330ba83b6e7fe754ecd83eda4031bb
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 836582003c4b4bd47d2b90b845ae414210d16edd
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406013"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88246418"
 ---
 Приступите к работе с клиентской библиотекой Детектора аномалий для JavaScript. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. Служба Детектора аномалий позволяет находить аномалии в данных временных рядов, автоматически применяя для них наиболее подходящие модели, независимо от отрасли, сценария или объема данных.
 
@@ -27,7 +27,7 @@ ms.locfileid: "87406013"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 * Текущая версия [Node.js](https://nodejs.org/)
 * Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAnomalyDetector"  title="Создание ресурса Детектора аномалий"  target="_blank">созданию ресурса Детектора аномалий <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. Дождитесь, пока закончится развертывание, и нажмите кнопку **Перейти к ресурсу**.
     * Для подключения приложения к API "Детектор аномалий" потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.

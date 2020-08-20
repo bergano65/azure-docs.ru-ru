@@ -11,16 +11,16 @@ ms.subservice: anomaly-detector
 ms.topic: tutorial
 ms.date: 03/05/2020
 ms.author: aahi
-ms.openlocfilehash: b8263e0445f7997469ba9165decbaccfa9ed2d6e
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 95ab400d645a2a2761e39c191cdb85e49e1c7a27
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027853"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245610"
 ---
 # <a name="tutorial-anomaly-detection-on-streaming-data-using-azure-databricks"></a>Руководство по Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks
 
-[Azure Databricks](https://azure.microsoft.com/services/databricks/) — это быстрая и удобная служба аналитики на базе Apache Spark с возможностью совместной работы. API Детектора аномалий является частью служб Azure Cognitive Services. Он предоставляет способ мониторинга данных временных рядов. В этом учебнике показано, как выполнить обнаружение аномалий при потоковой передаче данных практически в реальном времени с помощью Azure Databricks. Вы примете данные Twitter с помощью Центров событий Azure и импортируете их в Azure Databricks с помощью соединителя Центров событий Spark. После этого вы используете API для обнаружения аномалий в данных потоковой передачи. 
+[Azure Databricks](https://azure.microsoft.com/services/databricks/) — это быстрая и удобная служба аналитики на базе Apache Spark с возможностью совместной работы. API Детектора аномалий является частью служб Azure Cognitive Services. Он предоставляет способ мониторинга данных временных рядов. В этом учебнике показано, как выполнить обнаружение аномалий при потоковой передаче данных практически в реальном времени с помощью Azure Databricks. Вы примете данные Twitter с помощью Центров событий Azure и импортируете их в Azure Databricks с помощью соединителя Центров событий Spark. После этого вы используете API для обнаружения аномалий в данных потоковой передачи.
 
 На следующем рисунке показан поток в приложении.
 
@@ -41,9 +41,9 @@ ms.locfileid: "86027853"
 
 > [!Note]
 > * В этом учебнике представлен подход к реализации рекомендуемой [архитектуры решения](https://azure.microsoft.com/solutions/architecture/anomaly-detector-process/) для API Детектора аномалий.
-> * Для выполнения действий, описанных в этом руководстве, будет не достаточно подписки уровня "Бесплатный" (`F0`) для API "Детектор аномалий" или Azure Databricks. 
+> * Для выполнения действий, описанных в этом руководстве, будет не достаточно подписки уровня "Бесплатный" (`F0`) для API "Детектор аномалий" или Azure Databricks.
 
-Создайте [подписку Azure](https://azure.microsoft.com/free/), если у вас ее нет.
+Создайте [подписку Azure](https://azure.microsoft.com/free/cognitive-services), если у вас ее нет.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -51,7 +51,7 @@ ms.locfileid: "86027853"
 
 - [Строка подключения](../../../event-hubs/event-hubs-get-connection-string.md) для получения доступа к пространству имен Центров событий. Строка подключения должна иметь формат:
 
-    `Endpoint=sb://<namespace>.servicebus.windows.net/;SharedAccessKeyName=<key name>;SharedAccessKey=<key value>`. 
+    `Endpoint=sb://<namespace>.servicebus.windows.net/;SharedAccessKeyName=<key name>;SharedAccessKey=<key value>`.
 
 - Имя политики общего доступа и ключ политики для Центров событий.
 
@@ -78,7 +78,7 @@ ms.locfileid: "86027853"
 
     Нажмите кнопку **создания**.
 
-4. Создание рабочей области займет несколько минут. 
+4. Создание рабочей области займет несколько минут.
 
 ## <a name="create-a-spark-cluster-in-databricks"></a>Создание кластера Spark в Databricks
 
@@ -98,7 +98,7 @@ ms.locfileid: "86027853"
    * В рамках этой статьи создайте кластер со средой выполнения **5.2**. НЕ выбирайте среду выполнения **5.3**.
    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of inactivity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
 
-     Выберите **Create cluster** (Создать кластер). 
+     Выберите **Create cluster** (Создать кластер).
 4. Создание кластера занимает несколько минут. После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
 
 ## <a name="create-a-twitter-application"></a>Создание приложения Twitter
@@ -285,7 +285,7 @@ while (!finished) {
       maxStatusId = Math.max(status.getId(), maxStatusId)
     }
   }
-  
+
   if (lowestStatusId == Long.MaxValue) {
     preMaxStatusId = maxStatusId
   }
@@ -325,7 +325,7 @@ pool.shutdown()
 
 В записной книжке **AnalyzeTweetsFromEventHub** вставьте следующий код и замените заполнители значениями созданного ранее ресурса "Детектор аномалий". Эта записная книжка считывает твиты, переданные ранее в Центры событий с помощью записной книжки **SendTweetsToEventHub**.
 
-Сначала создайте клиента для вызова Детектора аномалий. 
+Сначала создайте клиента для вызова Детектора аномалий.
 ```scala
 
 //
@@ -451,25 +451,25 @@ import scala.collection.immutable.ListMap
 
 class AnomalyDetectorAggregationFunction extends UserDefinedAggregateFunction {
   override def inputSchema: StructType = new StructType().add("timestamp", TimestampType).add("value", FloatType)
-  
+
   override def bufferSchema: StructType = new StructType().add("point", MapType(TimestampType, FloatType))
-  
+
   override def dataType: DataType = BooleanType
-  
+
   override def deterministic: Boolean = false
-  
+
   override def initialize(buffer: MutableAggregationBuffer): Unit = {
     buffer(0) = Map()
   }
-  
+
   override def update(buffer: MutableAggregationBuffer, input: Row): Unit = {
     buffer(0) = buffer.getAs[Map[java.sql.Timestamp, Float]](0) + (input.getTimestamp(0) -> input.getFloat(1))
   }
-  
+
   override def merge(buffer1: MutableAggregationBuffer, buffer2: Row): Unit = {
     buffer1(0) = buffer1.getAs[Map[java.sql.Timestamp, Float]](0) ++ buffer2.getAs[Map[java.sql.Timestamp, Float]](0)
   }
-  
+
   override def evaluate(buffer: Row): Any = {
     val points = buffer.getAs[Map[java.sql.Timestamp, Float]](0)
     if (points.size > 12) {
@@ -478,19 +478,19 @@ class AnomalyDetectorAggregationFunction extends UserDefinedAggregateFunction {
       sorted_points.keys.foreach {
         key => detect_points = detect_points :+ new Point(key, sorted_points(key))
       }
-      
-      
+
+
       // 0.25 is maxAnomalyRatio. It represents 25%, max anomaly ratio in a time series.
       // 95 is the sensitivity of the algorithms.
       // Check Anomaly detector API reference (https://aka.ms/anomaly-detector-rest-api-ref)
-      
+
       val series: Series = new Series(detect_points.toArray, 0.25, 95, "hourly")
       val response: Option[AnomalySingleResponse] = AnomalyDetector.detectLatestPoint(series)
       if (!response.isEmpty) {
         return response.get.isAnomaly
       }
     }
-    
+
     return None
   }
 }
@@ -562,7 +562,7 @@ display(msgStream)
 // Aggregate Metric Count by Hour
 //
 
-// If you want to change granularity, change the groupBy window. 
+// If you want to change granularity, change the groupBy window.
 val groupStream = msgStream.groupBy(window($"timestamp", "1 hour"))
   .agg(avg("favorite").alias("average"))
   .withColumn("groupTime", $"window.start")
@@ -584,7 +584,8 @@ groupTime                       average
 
 ```
 
-Затем выведите агрегированный результат выходных данных в Delta. Так как для обнаружения аномалий требуется большое окно журнала, мы используем Delta для сохранения данных журнала для точки, для которой требуется выполнить обнаружение. Замените [Placeholder: table name] на полное созданное имя таблицы Delta (например, tweets). Замените [Placeholder: folder name for checkpoints] на строковое значение, которое каждый раз уникально при выполнении этого кода (например, etl-from-eventhub-20190605).
+Затем выведите агрегированный результат выходных данных в Delta. Так как для обнаружения аномалий требуется большое окно журнала, мы используем Delta для сохранения данных журнала для точки, для которой требуется выполнить обнаружение.
+Замените [Placeholder: table name] на полное созданное имя таблицы Delta (например, tweets). Замените [Placeholder: folder name for checkpoints] на строковое значение, которое каждый раз уникально при выполнении этого кода (например, etl-from-eventhub-20190605).
 Чтобы узнать больше о Delta Lake в Azure Databricks, ознакомьтесь с руководством [здесь](https://docs.azuredatabricks.net/delta/index.html).
 
 
@@ -615,7 +616,7 @@ twitterData.show(200, false)
 
 display(twitterData)
 ```
-Выходные данные будут выглядеть так: 
+Выходные данные будут выглядеть так:
 ```
 groupTime                       average
 2019-04-08T01:00:00.000+0000    25.6
@@ -628,7 +629,8 @@ groupTime                       average
 
 ```
 
-Теперь агрегированные данные временных рядов непрерывно поступают в Delta. Затем вы можете запланировать почасовое задание для обнаружения аномалий последней точки. Замените [Placeholder: table name] на то же имя таблицы Delta, которое выбрано выше.
+Теперь агрегированные данные временных рядов непрерывно поступают в Delta. Затем вы можете запланировать почасовое задание для обнаружения аномалий последней точки.
+Замените [Placeholder: table name] на то же имя таблицы Delta, которое выбрано выше.
 
 ```scala
 //
@@ -667,7 +669,7 @@ spark.udf.register("anomalydetect", new AnomalyDetectorAggregationFunction)
 val adResult = spark.sql("SELECT '" + endTime.toString + "' as datetime, anomalydetect(groupTime, average) as anomaly FROM series")
 adResult.show()
 ```
-Результат будет выглядеть так: 
+Результат будет выглядеть так:
 
 ```
 +--------------------+-------+
@@ -678,7 +680,7 @@ adResult.show()
 ```
 
 Вот и все! С помощью Azure Databricks вы успешно выполнили потоковую передачу данных в Центры событий Azure, использовали данные потока в соединителе Центров событий Azure и выполнили обнаружение аномалий в потоковых данных практически в реальном времени.
-Хотя в этом учебнике используется почасовая степень детализации, вы всегда можете изменить степень детализации для соответствия вашим потребностям. 
+Хотя в этом учебнике используется почасовая степень детализации, вы всегда можете изменить степень детализации для соответствия вашим потребностям.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -690,7 +692,7 @@ adResult.show()
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы узнали, как с помощью Azure Databricks выполнить потоковую передачу данных в Центры событий Azure с последующим чтением данных потоковой передачи из Центров событий в реальном времени. Перейдите к следующему учебнику, чтобы узнать, как вызвать API Детектора аномалий и визуализировать аномалии с помощью Power BI Desktop. 
+В этом руководстве вы узнали, как с помощью Azure Databricks выполнить потоковую передачу данных в Центры событий Azure с последующим чтением данных потоковой передачи из Центров событий в реальном времени. Перейдите к следующему учебнику, чтобы узнать, как вызвать API Детектора аномалий и визуализировать аномалии с помощью Power BI Desktop.
 
 > [!div class="nextstepaction"]
 >[Пакетное обнаружение аномалий с помощью Power BI Desktop](batch-anomaly-detection-powerbi.md)

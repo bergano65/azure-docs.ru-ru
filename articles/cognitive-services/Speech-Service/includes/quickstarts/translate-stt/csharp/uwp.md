@@ -9,12 +9,12 @@ ms.subservice: speech-service
 ms.date: 04/04/2020
 ms.author: jhakulin
 ms.topic: include
-ms.openlocfilehash: 08da79afa14d883c6fe21ead7b3bca5f1aac5538
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: cdc1bfcc7c2ea0cc51fe830c5218cf10cae7d990
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87771149"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88226354"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -42,7 +42,7 @@ ms.locfileid: "87771149"
 
 1. В обработчике `SpeechTranslationFromMicrophone_ButtonClicked` этого файла найдите строку `YourSubscriptionKey` и замените ее своим ключом подписки.
 
-1. В обработчике `SpeechTranslationFromMicrophone_ButtonClicked` найдите строку `YourServiceRegion` и замените ее названием [региона](~/articles/cognitive-services/Speech-Service/regions.md), связанного с вашей подпиской. (Например, используйте `westus` для подписки с бесплатной пробной версией.)
+1. В обработчике `SpeechTranslationFromMicrophone_ButtonClicked` найдите строку `YourServiceRegion` и замените ее названием [региона](~/articles/cognitive-services/Speech-Service/regions.md), связанного с вашей подпиской.
 
 1. В строке меню выберите **Файл** > **Сохранить все**, чтобы сохранить изменения.
 

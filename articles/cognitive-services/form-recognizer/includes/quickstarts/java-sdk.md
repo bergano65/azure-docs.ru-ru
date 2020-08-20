@@ -10,18 +10,18 @@ ms.topic: include
 ms.date: 06/15/2020
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: 0cfdf3d7fe22d5e7e580e4147b9df430f451f9a5
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 8e96a666ece7fea64df59c9ed51944534c96bd6b
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87375465"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88246315"
 ---
 [Справочная документация](https://docs.microsoft.com/java/api/overview/azure/ai-formrecognizer-readme-pre?view=azure-java-preview) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.azure/azure-ai-formrecognizer) | [Примеры](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 * Набор данных для обучения в хранилище BLOB-объектов Azure. Советы и варианты для объединения данных для обучения см. в статье о [создании обучающего набора данных для пользовательской модели](../../build-training-data-set.md). При работе с этим кратким руководством можно использовать файлы в папке **Train** из [примера набора данных](https://go.microsoft.com/fwlink/?linkid=2090451).
 * Текущая версия [пакета средств разработки Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 * [Средство сборки Gradle](https://gradle.org/install/) или другой диспетчер зависимостей.

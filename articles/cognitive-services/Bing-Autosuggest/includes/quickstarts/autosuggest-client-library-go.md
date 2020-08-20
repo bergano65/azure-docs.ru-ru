@@ -8,14 +8,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: ee897a22ceda4378ea9dba4579d5108a2ddf0b0d
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: c0129ff25f1df492ab6eba9f49add18d5321a3e8
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86156727"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88246295"
 ---
-Эта статья поможет вам начать работу с клиентской библиотекой Автозаполнения Bing для Go. Здесь приведены действия по установке библиотеки и тестированию примеров кода для выполнения базовых задач. 
+Эта статья поможет вам начать работу с клиентской библиотекой Автозаполнения Bing для Go. Здесь приведены действия по установке библиотеки и тестированию примеров кода для выполнения базовых задач.
 
 Используйте клиентскую библиотеку Автозаполнения Bing для Go, чтобы получать варианты поиска на основе частей строк запросов.
 
@@ -23,7 +23,7 @@ ms.locfileid: "86156727"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте [ее бесплатно](https://azure.microsoft.com/free/).
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте [ее бесплатно](https://azure.microsoft.com/free/cognitive-services).
 * Последняя версия [Go](https://golang.org/dl/).
 
 Начните использовать клиентскую библиотеку Автозаполнения Bing, создав ресурс Azure. Выберите ниже ресурс подходящего типа.
@@ -33,12 +33,12 @@ ms.locfileid: "86156727"
 ## <a name="create-environment-variables"></a>Создание переменных среды
 
 >[!NOTE]
-> Конечные точки для ресурсов, созданных после 1 июля 2019 г., поддерживают пользовательский формат поддомена, показанный ниже. Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) (Пользовательские имена поддоменов для Cognitive Services). 
+> Конечные точки для ресурсов, созданных после 1 июля 2019 г., поддерживают пользовательский формат поддомена, показанный ниже. Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) (Пользовательские имена поддоменов для Cognitive Services).
 
 Используя ключ и конечную точку из созданного ресурса, создайте две переменные среды для проверки подлинности:
 <!-- replace the below variable names with the names expected in the code sample.-->
 * `AUTOSUGGEST_SUBSCRIPTION_KEY`: ключ ресурса для аутентификации запросов.
-* `AUTOSUGGEST_ENDPOINT`: конечная точка ресурса для отправки запросов API. Она должна выглядеть так: `https://<your-custom-subdomain>.api.cognitive.microsoft.com`. 
+* `AUTOSUGGEST_ENDPOINT`: конечная точка ресурса для отправки запросов API. Она должна выглядеть так: `https://<your-custom-subdomain>.api.cognitive.microsoft.com`.
 
 Используйте инструкции для своей операционной системы.
 <!-- replace the below endpoint and key examples -->
@@ -74,7 +74,7 @@ export AUTOSUGGEST_ENDPOINT=<replace-with-your-autosuggest-api-endpoint>
 
 ## <a name="create-a-new-go-project"></a>Создание проекта Go
 
-В окне консоли (cmd, PowerShell, терминал или Bash) создайте новую рабочую область для проекта Go и перейдите в нее. Рабочая область будет содержать три папки: 
+В окне консоли (cmd, PowerShell, терминал или Bash) создайте новую рабочую область для проекта Go и перейдите в нее. Рабочая область будет содержать три папки:
 
 * **src** — этот каталог содержит исходный код и пакеты. Все пакеты, установленные с помощью команды `go get`, будут находиться именно здесь;
 * **pkg**: этот каталог содержит скомпилированные объекты пакета Go. Все эти файлы имеют расширение `.a`;
@@ -92,7 +92,7 @@ $ cd my-app
 
 ## <a name="install-the-client-library-for-go"></a>Установка клиентской библиотеки для Go
 
-Теперь установите клиентскую библиотеку для Go: 
+Теперь установите клиентскую библиотеку для Go:
 
 ```bash
 $ go get -u <library-location-or-url>
@@ -154,10 +154,10 @@ func main() {
 
 ### <a name="authenticate-the-client"></a>Аутентификация клиента
 
-> [!NOTE] 
+> [!NOTE]
 > В этом кратком руководстве предполагается, что вы уже [создали переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа Автозаполнения Bing, который называется `BING_AUTOSUGGEST_SUBSCRIPTION_KEY`, и конечной точки `BING_AUTOSUGGEST_ENDPOINT`.
 
-В функции `main()` создайте экземпляр клиента с использованием конечной точки и ключа. 
+В функции `main()` создайте экземпляр клиента с использованием конечной точки и ключа.
 
 ```go
 // Get the context, which is required by the SDK methods.

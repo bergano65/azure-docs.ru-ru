@@ -11,12 +11,12 @@ ms.date: 06/05/2020
 ms.author: ajburnle
 ms.custom: it-pro, seodec18, seo-update-azuread-jan, contperfq4
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd63e82788856624c3babe078de52e698f190ce0
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 91e89f274615e75fec818ec9e3ecf785aa6e804f
+ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87796631"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88262964"
 ---
 # <a name="what-is-azure-active-directory"></a>Что такое Azure Active Directory
 
@@ -26,7 +26,7 @@ Azure Active Directory (Azure AD) — это облачная служба уп
 
 - во внутренних ресурсах, таких как приложения в корпоративной сети и интрасети, а также в любых облачных приложениях, разработанных вашей организацией. Дополнительные сведения о создании клиента для организации см. в разделе [Краткое руководство. Создание клиента в Azure Active Directory](active-directory-access-create-new-tenant.md).
 
-Сведения о различиях между Azure AD и доменными службами Active Directory см. в разделе [Сравнение Active Directory с Azure Active Directory](active-directory-compare-azure-ad-to-ad.md). Лучше понять базовые службы идентификации в Azure, Azure AD и Office 365 можно с помощью различных постеров о [Microsoft Cloud для корпоративных архитекторов](https://docs.microsoft.com/office365/enterprise/microsoft-cloud-it-architecture-resources#identity).
+Сведения о различиях между Azure AD и доменными службами Active Directory см. в разделе [Сравнение Active Directory с Azure Active Directory](active-directory-compare-azure-ad-to-ad.md). Лучше понять базовые службы идентификации в Azure, Azure AD и Office 365 можно с помощью различных постеров о [Microsoft Cloud для корпоративных архитекторов](https://docs.microsoft.com/microsoft-365/solutions/cloud-architecture-models?view=o365-worldwide).
 
 ## <a name="who-uses-azure-ad"></a>Кто использует Azure AD
 

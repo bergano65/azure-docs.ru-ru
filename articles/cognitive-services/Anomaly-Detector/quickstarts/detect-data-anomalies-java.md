@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 06/30/2020
 ms.custom: devx-track-java
 ms.author: aahi
-ms.openlocfilehash: 42edf9cd1687314f2ef168969791cb39f43851d3
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: e8fdc703b094ace83e70b736c1eb0d15c461adba
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87323695"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243876"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-java"></a>Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и Java
 
@@ -31,7 +31,7 @@ ms.locfileid: "87323695"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 - Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAnomalyDetector"  title="Создание ресурса Детектора аномалий"  target="_blank">созданию ресурса Детектора аномалий <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. Дождитесь, пока закончится развертывание, и нажмите кнопку **Перейти к ресурсу**.
     - Для подключения приложения к API "Детектор аномалий" потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
     Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
@@ -47,7 +47,7 @@ ms.locfileid: "87323695"
 ## <a name="create-a-new-application"></a>Создание приложения
 
 1. Создайте проект Java и импортируйте следующие библиотеки.
-    
+
     [!code-java[Import statements](~/samples-anomaly-detector/quickstarts/java-detect-anomalies.java?name=imports)]
 
 2. Создайте переменные для ключа подписки и конечной точки. Далее приведены универсальные коды ресурса (URI), которые можно использовать для обнаружения аномалий. Для создания URL-адресов запроса API они будут добавлены в конечную точку службы позднее.

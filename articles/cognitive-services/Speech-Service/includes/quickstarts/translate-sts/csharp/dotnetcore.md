@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 04/04/2020
 ms.author: erhopf
-ms.openlocfilehash: 6d125afd9903482bc987d80e0cef58a9e883b0f9
-ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
+ms.openlocfilehash: 1fd96226778e13d59d4b500c2f9730c0c6dd6e2b
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2020
-ms.locfileid: "80671500"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88226168"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -116,7 +116,7 @@ ms.locfileid: "80671500"
 
 1. В том же файле замените строку `YourSubscriptionKey` своим ключом подписки.
 
-1. Замените строку `YourServiceRegion` значением [региона](~/articles/cognitive-services/Speech-Service/regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
+1. Замените строку `YourServiceRegion` на [регион](~/articles/cognitive-services/Speech-Service/regions.md), связанный с вашей подпиской.
 
 1. В строке меню выберите **Файл** > **Сохранить все**.
 

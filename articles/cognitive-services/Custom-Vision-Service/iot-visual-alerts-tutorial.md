@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: tutorial
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: 5016191bb4f647c0bbfa71144bb4b4b554b080f4
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 5582056f1bae2dbeb69a7d05044f055ff1394bd5
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87834343"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88244675"
 ---
 # <a name="tutorial-use-custom-vision-with-an-iot-device-to-report-visual-states"></a>Руководство по использованию Пользовательского визуального распознавания с устройством Интернета вещей для сообщения о визуальных состояниях
 
@@ -31,7 +31,7 @@ ms.locfileid: "87834343"
 > * Использовать приложение, чтобы обучить проект "Пользовательское визуальное распознавание".
 > * Использовать приложение для оценки новых изображений в режиме реального времени и отправки результатов в Azure.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу. 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services), прежде чем начинать работу. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 

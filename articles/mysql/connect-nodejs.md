@@ -1,5 +1,5 @@
 ---
-title: Подключение к Базе данных Azure для MySQL с помощью Node.js
+title: Краткое руководство. Подключение к Базе данных Azure для MySQL с помощью Node.js
 description: В этом кратком руководстве представлены примеры кода Node.js, которые можно использовать для подключения к базе данных Azure для MySQL и запроса данных из нее.
 author: ajlam
 ms.author: andrela
@@ -8,12 +8,12 @@ ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-t
 ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 5/26/2020
-ms.openlocfilehash: 9d3e2d744c4800c06503483c6e7270ad1ca60e2c
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 1f8f4dee2ed1e6dc5cdf6985c1149db0dcaed7c2
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423190"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185933"
 ---
 # <a name="quickstart-use-nodejs-to-connect-and-query-data-in-azure-database-for-mysql"></a>Краткое руководство. Подключение и запрос данных с помощью Node.js в Базе данных Azure для MySQL
 
@@ -33,7 +33,7 @@ ms.locfileid: "87423190"
 
 В зависимости от используемой платформы выполните инструкции из соответствующего раздела, чтобы установить [Node.js](https://nodejs.org). Используйте npm, чтобы установить пакет [mysql](https://www.npmjs.com/package/mysql) и его зависимости в папку проекта.
 
-### <a name="windows"></a>**Windows**
+### <a name="windows"></a>Windows
 
 1. Войдите на [страницу скачиваемых файлов Node.js](https://nodejs.org/en/download/) и выберите нужный установщик Windows.
 2. Создайте папку локального проекта, например `nodejsmysql`. 
@@ -48,7 +48,7 @@ ms.locfileid: "87423190"
 
 5. Проверьте установку, просмотрев текст вывода `npm list`. Номера версии могут отличаться, когда будут выпущены новые обновления.
 
-### <a name="linux-ubuntu"></a>**Linux (Ubuntu)**
+### <a name="linux-ubuntu"></a>Linux (Ubuntu)
 
 1. Чтобы установить **Node.js** и **NPM** (диспетчер пакетов для Node.js), выполните следующую команду:
 
@@ -66,7 +66,7 @@ ms.locfileid: "87423190"
    ```
 3. Проверьте установку, просмотрев текст вывода npm list. Номера версии могут отличаться, когда будут выпущены новые обновления.
 
-### <a name="mac-os"></a>**Mac OS**
+### <a name="mac-os"></a>MacOS
 
 1. Чтобы установить **brew** (простой в использовании диспетчер пакетов для Mac OS X) и **Node.js**, выполните следующую команду:
 

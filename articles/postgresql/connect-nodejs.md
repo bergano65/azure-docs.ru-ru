@@ -1,5 +1,5 @@
 ---
-title: Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Node.js
+title: Краткое руководство. Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Node.js
 description: В этом кратком руководстве представлен пример кода Node.js, который можно использовать для подключения к службе "База данных Azure для PostgreSQL — отдельный сервер" и запроса данных из нее.
 author: rachel-msft
 ms.author: raagyema
@@ -13,12 +13,12 @@ ms.custom:
 ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 5/6/2019
-ms.openlocfilehash: c3157bb3e643c8aea4653f7cf12390938ae44d5a
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 10c7abf7349a3b2419e81459866920f20c3af6f7
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423258"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88182737"
 ---
 # <a name="quickstart-use-nodejs-to-connect-and-query-data-in-azure-database-for-postgresql---single-server"></a>Краткое руководство. Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" и выполнение запроса данных с помощью Node.js
 

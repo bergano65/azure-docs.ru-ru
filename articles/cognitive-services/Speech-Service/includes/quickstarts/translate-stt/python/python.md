@@ -9,12 +9,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 12/09/2019
 ms.author: chlandsi
-ms.openlocfilehash: e869a6581ac29ac234c075d258b59dbd45045ee2
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 0d8128d02409072b2c43fb2c0de3766e7c8ed63d
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78925287"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88226387"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -76,7 +76,7 @@ ms.locfileid: "78925287"
 
 1. В том же файле замените строку `YourSubscriptionKey` своим ключом подписки.
 
-1. Замените строку `YourServiceRegion` значением [региона](../../../../regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
+1. Замените строку `YourServiceRegion` на [регион](../../../../regions.md), связанный с вашей подпиской.
 
 1. Сохраните внесенные изменения в `quickstart.py`.
 

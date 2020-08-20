@@ -8,18 +8,18 @@ ms.subservice: personalizer
 ms.topic: include
 ms.custom: include file
 ms.date: 07/30/2020
-ms.openlocfilehash: e17316d1a17ff36c0a0adf38148ef87c9714e355
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: aab4a59a35b098589adb462f2f0d6385802a9875
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87461154"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88246531"
 ---
 [Справочная документация](https://docs.microsoft.com/python/api/azure-cognitiveservices-personalizer/azure.cognitiveservices.personalizer?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-personalizer) | [Пакет (pypi)](https://pypi.org/project/azure-cognitiveservices-personalizer/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/python/Personalizer)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 * [Python 3.x](https://www.python.org/)
 
 ## <a name="using-this-quickstart"></a>Использование этого краткого руководства
