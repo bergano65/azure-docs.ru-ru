@@ -2,26 +2,21 @@
 title: Руководство по Интеграция Azure Active Directory с Clarizen | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Clarizen.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 28acce3e-22a0-4a37-8b66-6e518d777350
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/21/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b34e6087f3a6e7f3cc0f46c53d4fe903838d210
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4e312c70e8d1630c1e8d1bb9a893b338383c7966
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73158599"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88520725"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clarizen"></a>Руководство по Интеграция Azure Active Directory с Clarizen
 

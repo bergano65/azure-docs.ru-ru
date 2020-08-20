@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с InTime | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в InTime.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: d4e2c6e1-ae5d-4d2c-8ffc-1b24534d376a
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 9183928100d1e184435910ee11571da798a5dcf9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 06559039f31464e7d393a7b0fb0fd8a90da21e32
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67099899"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88519943"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-intime"></a>Руководство по интеграции Azure Active Directory с InTime
 
