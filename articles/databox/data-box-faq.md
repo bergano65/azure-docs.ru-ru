@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 07/15/2020
 ms.author: alkohli
-ms.openlocfilehash: 3024c79b6295762636518e3f77d506ad45f73682
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7d300252893a72ef6296e941f5a573a67807779f
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87090762"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88652582"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Azure Data Box. Часто задаваемые вопросы
 
@@ -56,6 +56,18 @@ A.  Сведения о доступности Data Box в разных стра
 
 ### <a name="q-which-regions-can-i-store-data-in-with-data-box"></a>У. В каких регионах можно сохранять данные с помощью Data Box?
 A. Data Box поддерживается во всех регионах США, Западной и Северной Европы, во Франции, в Великобритании, Японии, Австралии и Канаде. Дополнительные сведения см. в разделе [Регионы доступности](data-box-overview.md#region-availability).
+
+### <a name="q-how-can-i-import-my-on-premises-source-data-to-an-azure-region-in-a-different-countryregion-or-export-data-from-an-azure-region-in-one-country-to-a-different-countryregion"></a>У. Как импортировать локальные исходные данные в регион Azure в другой стране или регионе или экспортировать данные из региона Azure в одной стране в другую страну или регион?
+
+Data Box поддерживает прием данных или исходящий трафик только в той же стране или регионе, что и их назначение, и не будет пересекать международные границы. Единственное исключение — заказы в Европейского союза (ЕС), где поля данных могут поставляться в любую страну или регион ЕС.
+
+Например, в сценарии импорта при наличии локальных данных в Канаде, которые нужно переместить в учетную запись хранения WestUS Azure, можно сделать это следующим образом:
+
+1. Закажите Data Box в Канаде, выбрав учетную запись хранения в Кананда. Устройство поставляется из центра обработки данных Azure в Канаде в адрес доставки (в Канаде), предоставленный при создании заказа.
+
+2. После завершения копирования локальной копии данных в Data Box верните устройство в центр обработки данных Azure в Канаде. Данные, представленные в Data Box, затем передаются в целевую учетную запись хранения в регионе Azure для Канады, выбранном во время создания заказа.
+
+3. Затем можно использовать такой инструмент, как AzCopy, для копирования данных в учетную запись хранения в WestUS. На этом этапе взимается плата за использование [стандартного хранилища](https://azure.microsoft.com/pricing/details/storage/) и [пропускной способности](https://azure.microsoft.com/pricing/details/bandwidth/) , которая не включается в Data Box выставления счетов.
 
 ### <a name="q-whom-should-i-contact-if-i-encounter-any-issues-with-data-box"></a>У. С кем мне связаться, если возникнут проблемы с Data Box?
 A. При любых проблемах с Data Box обратитесь в [службу поддержки Майкрософт](data-box-disk-contact-microsoft-support.md).

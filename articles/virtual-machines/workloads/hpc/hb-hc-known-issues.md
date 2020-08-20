@@ -10,18 +10,19 @@ tags: azure-resource-manager
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 08/19/2020
 ms.author: amverma
-ms.openlocfilehash: e85ae50321b9aa034f6a6d2cadcc329a24dafa62
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.reviewer: cynthn
+ms.openlocfilehash: 2de2680ccd0ecf385598080747e80eed5ead3bc8
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86500024"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88652871"
 ---
-# <a name="known-issues-with-hb-series-and-hc-series-vms"></a>Известные проблемы с виртуальными машинами серий HB и HC
+# <a name="known-issues-with-h-series-and-n-series-vms"></a>Известные проблемы с виртуальными машинами серий H и N
 
-Эта статья содержит наиболее распространенные проблемы и решения при использовании виртуальных машин серии ХБ и HC.
+Эта статья содержит наиболее распространенные проблемы и решения при использовании виртуальных машин серии [H](../../sizes-hpc.md) и [N](../../sizes-gpu.md) .
 
 ## <a name="dram-on-hb-series"></a>DRAM в серии ХБ
 
@@ -87,6 +88,15 @@ echo 3 > /proc/sys/vm/drop_caches [cleans page-cache and slab objects]
 
 Это предупреждение можно игнорировать. Это связано с известным ограничением низкоуровневой оболочки Azure, которое будет решаться с течением времени.
 
+
+## <a name="infiniband-driver-installation-on-infiniband-enabled-n-series-vm-sizes"></a>Установка драйвера InfiniBand на виртуальных машинах серии N с поддержкой InfiniBand
+
+NC24r_v3 и ND40r_v2 включены в SR-IOV, а в NC24r и NC24r_v2 не включены SR-IOV. [Ниже](../../sizes-hpc.md#rdma-capable-instances)приведены некоторые сведения о разветвления.
+InfiniBand (геодоступность) можно настроить на размерах виртуальных машин с поддержкой SR-IOV с помощью драйверов ОФЕД, в то время как размер виртуальных машин не на основе SR-IOV требует наличия драйверов ND. Эта поддержка в [CentOS-HPC вмис](configure.md)доступна соответствующим образом. Для Ubuntu см. [инструкции](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351) по установке драйверов ОФЕД и ND, как описано в [документах](enable-infiniband.md#vm-images-with-infiniband-drivers).
+
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Подробнее о [высокопроизводительных вычислениях](/azure/architecture/topics/high-performance-computing/) в Azure.
+- Дополнительные сведения об оптимальной настройке рабочих нагрузок для производительности и масштабируемости см. в статье с обзором виртуальных машин серии [HB](hb-series-overview.md) и [HC](hc-series-overview.md).
+- Ознакомьтесь с последними объявлениями и некоторыми примерами HPC, а также результатами в [блогах технического сообщества службы вычислений](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+- Сведения о более высоком уровне архитектурного представления выполнения рабочих нагрузок HPC см. в статье [Высокопроизводительные вычисления (HPC) в Azure](/azure/architecture/topics/high-performance-computing/).

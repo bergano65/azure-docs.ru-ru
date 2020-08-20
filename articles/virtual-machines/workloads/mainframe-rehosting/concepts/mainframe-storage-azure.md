@@ -6,12 +6,12 @@ ms.author: larryme
 ms.date: 04/02/2019
 ms.topic: article
 ms.service: storage
-ms.openlocfilehash: 7f83d798bbffeb232b45701beee828114ad3db7d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 639764c9cae5e27e90a55da00b246807e49d2a20
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87042589"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88652854"
 ---
 # <a name="move-mainframe-storage-to-azure"></a>Перемещение хранилища мэйнфреймов в Azure
 
@@ -45,13 +45,13 @@ Azure предоставляет функции и емкость хранили
 
 Корпорация Майкрософт предлагает петабайтов хранилище для приложений, размещенных в Azure, и вы можете использовать несколько вариантов хранения. Эти диапазоны из хранилища SSD позволяют обеспечить высокую производительность хранилища BLOB-объектов с низкими затратами для массового хранения и архивов. Кроме того, Azure предоставляет параметр избыточности данных для хранения — что требует больше усилий для настройки в среде мэйнфрейма.
 
-Служба хранилища Azure доступна как [диски Azure](../../../windows/managed-disks-overview.md), службы [файлов Azure](../../../../storage/files/storage-files-introduction.md)и [большие двоичные объекты Azure](../../../../storage/blobs/storage-blobs-overview.md) , как показано в следующей таблице. Узнайте больше о [том, когда использовать каждый из них](../../../../storage/common/storage-introduction.md).
+Служба хранилища Azure доступна как [диски Azure](../../../managed-disks-overview.md), службы [файлов Azure](../../../../storage/files/storage-files-introduction.md)и [большие двоичные объекты Azure](../../../../storage/blobs/storage-blobs-overview.md) , как показано в следующей таблице. Узнайте больше о [том, когда использовать каждый из них](../../../../storage/common/storage-introduction.md).
 
 <!-- markdownlint-disable MD033 -->
 
 <table>
 <thead>
-    <tr><th>Type</th><th>Описание</th><th>Используйте, если хотите:</th></tr>
+    <tr><th>Тип</th><th>Описание</th><th>Используйте, если хотите:</th></tr>
 </thead>
 <tbody>
 <tr><td>Файлы Azure
@@ -108,7 +108,7 @@ Azure предоставляет функции и емкость хранили
 - [Повторное размещение мэйнфреймов на виртуальных машинах Azure](../overview.md)
 - [Перемещение вычислений мэйнфреймов в Azure](mainframe-compute-Azure.md)
 - [Выбор между большими двоичными объектами Azure, службой файлов Azure и дисками Azure](../../../../storage/common/storage-introduction.md)
-- [SSD (цен. категория "Стандартный") управляемых дисков для рабочих нагрузок виртуальных машин Azure](../../../windows/disks-types.md#standard-ssd)
+- [SSD (цен. категория "Стандартный") управляемых дисков для рабочих нагрузок виртуальных машин Azure](../../../disks-types.md#standard-ssd)
 
 ### <a name="ibm-resources"></a>Ресурсы по IBM
 
