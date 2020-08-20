@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 2f4647f4e13677d9136ce7fdb090e809943cdf0d
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: fd50e649257ba8849f49cd3aae85e3228b9eb94c
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88206703"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88612220"
 ---
 # <a name="azure-table-storage-bindings-for-azure-functions"></a>Привязки хранилища таблиц Azure для службы "Функции Azure"
 
@@ -100,7 +100,7 @@ public class TableStorage
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
-using Microsoft.WindowsAzure.Storage.Table;
+using Microsoft.Azure.Cosmos.Table;
 using System;
 using System.Threading.Tasks;
 
@@ -228,8 +228,8 @@ public class Person
 В коде скрипта C# добавляется ссылка на пакет SDK для службы хранилища Azure, чтобы тип сущности мог быть производным от `TableEntity`.
 
 ```csharp
-#r "Microsoft.WindowsAzure.Storage"
-using Microsoft.WindowsAzure.Storage.Table;
+#r "Microsoft.Azure.Cosmos"
+using Microsoft.Azure.Cosmos.Table;
 using Microsoft.Extensions.Logging;
 
 public static void Run(string myQueueItem, IQueryable<Person> tableBinding, ILogger log)
@@ -273,8 +273,8 @@ public class Person : TableEntity
 ```
 
 ```csharp
-#r "Microsoft.WindowsAzure.Storage"
-using Microsoft.WindowsAzure.Storage.Table;
+#r "Microsoft.Azure.Cosmos"
+using Microsoft.Azure.Cosmos.Table;
 using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
@@ -561,10 +561,10 @@ public Person[] get(
 |**direction** | Недоступно | Нужно задать значение `in`. Это свойство задается автоматически при создании привязки на портале Azure. |
 |**name** | Недоступно | Имя переменной, представляющей таблицу или сущность в коде функции. | 
 |**tableName** | **TableName** | Имя таблицы.| 
-|**partitionKey** | **PartitionKey** |Необязательный параметр. Ключ раздела сущности таблицы, которую нужно считать. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
-|**rowKey** |**RowKey** | Необязательный параметр. Ключ строки сущности таблицы, которую нужно считать. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
-|**take** |**Take** | Необязательный параметр. Максимальное количество считываемых сущностей в JavaScript. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
-|**Фильтрация** |**Filter** | Необязательный параметр. Выражение фильтра OData для входных данных таблицы в JavaScript. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
+|**partitionKey** | **PartitionKey** |Необязательный элемент. Ключ раздела сущности таблицы, которую нужно считать. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
+|**rowKey** |**RowKey** | Необязательный элемент. Ключ строки сущности таблицы, которую нужно считать. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
+|**take** |**Take** | Необязательный элемент. Максимальное количество считываемых сущностей в JavaScript. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
+|**filter** |**Filter** | Необязательный элемент. Выражение фильтра OData для входных данных таблицы в JavaScript. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
 |**connection**; |**Соединение** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Параметр может быть именем предопределенного параметра приложения "AzureWebJobs" или именем строки подключения. Например, если имя параметра — "Азуревебжобсмистораже", можно указать "MyStorage" здесь. Среда выполнения функций будет автоматически искать параметр приложения с именем «Азуревебжобсмистораже». Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
@@ -992,7 +992,7 @@ public static MyPoco TableOutput(
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка | Ссылка |
+| Привязка | Справочник |
 |---|---|
 | Таблица | [Коды ошибок таблицы](/rest/api/storageservices/fileservices/table-service-error-codes) |
 | Большой двоичный объект, таблица, очередь | [Коды ошибок хранилища](/rest/api/storageservices/fileservices/common-rest-api-error-codes) |

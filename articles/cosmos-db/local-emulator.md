@@ -5,13 +5,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 author: markjbrown
 ms.author: mjbrown
-ms.date: 01/31/2020
-ms.openlocfilehash: 87fe128a79413af024d72726d936b85db3f9ef52
-ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
+ms.date: 08/19/2020
+ms.openlocfilehash: 40c32226f0e79e66db45d0c32614eaa4c5b543f9
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88225977"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607537"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде
 
@@ -35,12 +35,13 @@ ms.locfileid: "88225977"
 
 * Сейчас обозреватель данных в эмуляторе поддерживает только клиенты для API SQL. Представление обозревателя данных и операции для таких API Azure Cosmos DB, как MongoDB, таблиц, Graph и Cassandra, поддерживаются не полностью.
 * Эмулятор Azure Cosmos поддерживает только одну предопределенную учетную запись и известный главный ключ. Повторное создание ключа в эмуляторе Azure Cosmos невозможно, но вы можете изменить ключ по умолчанию с помощью параметра командной строки.
+* Эмулятор Azure Cosmos поддерживает учетную запись Azure Cosmos в режиме [подготовленной пропускной способности](set-throughput.md) . Сейчас она не поддерживает учетную запись Azure Cosmos в режиме без [сервера](serverless.md) .
 * Эмулятор Azure Cosmos не поддерживает масштабирование и не может работать с большим числом контейнеров.
 * Эмулятор Azure Cosmos не поддерживает разные [уровни согласованности Azure Cosmos DB](consistency-levels.md).
 * Эмулятор Azure Cosmos не поддерживает [репликацию между несколькими регионами](distribute-data-globally.md).
 * Локальная версия эмулятора Azure Cosmos может не всегда отражать свежие изменения в службе Azure Cosmos DB. Поэтому, чтобы точно оценить необходимую пропускную способность для приложения (в единицах запроса), используйте [планировщик ресурсов Azure Cosmos DB](https://www.documentdb.com/capacityplanner).
 * Если вы используете эмулятор Azure Cosmos, по умолчанию можно создать до 25 контейнеров фиксированного размера (только пакеты SDK для Azure Cosmos DB) или 5 контейнеров неограниченного размера (эмулятор Azure Cosmos). Дополнительные сведения об изменении этого значения см. в разделе [Изменение количества коллекций](#set-partitioncount).
-* Максимальный размер свойства идентификатора, который поддерживает эмулятор, составляет 254 символа.
+* Эмулятор поддерживает максимальный размер свойства идентификатора (254 символов).
 
 ## <a name="system-requirements"></a>Требования к системе
 

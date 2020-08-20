@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: kgremban
-ms.openlocfilehash: 8a4579e092bbc4fd58954f1ce1f1dad3a8ddbbba
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c3a23e0c2546da55f977d589eb38607994d3902b
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80133163"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88611795"
 ---
 # <a name="use-iot-edge-on-windows-to-run-linux-containers"></a>Использование IoT Edge в Windows для запуска контейнеров Linux
 
@@ -34,7 +34,7 @@ ms.locfileid: "80133163"
 
 Azure IoT Edge с контейнерами Linux могут работать в любой версии Windows, удовлетворяющей [требованиям для настольных систем DOCKER](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install) .
 
-Если вы хотите установить IoT Edge на виртуальной машине, включите вложенную виртуализацию и выделите не менее 2 ГБ памяти. Включение вложенной виртуализации отличается в зависимости от используемой низкоуровневой оболочки. Для виртуальных машин Hyper-V версии 2 вложенная виртуализация включена по умолчанию. Для VMWare существует переключатель, позволяющий включить эту функцию на виртуальной машине.
+Если вы хотите установить IoT Edge на виртуальной машине, включите вложенную виртуализацию и выделите не менее 2 ГБ памяти. Включение вложенной виртуализации отличается в зависимости от используемой низкоуровневой оболочки. Для виртуальных машин Hyper-V версии 2 вложенная виртуализация включена по умолчанию. Для VMware существует переключатель, позволяющий включить эту функцию на виртуальной машине.
 
 ### <a name="prepare-the-container-engine"></a>Подготовка подсистемы контейнеров
 
@@ -88,7 +88,7 @@ Azure IoT Edge с контейнерами Linux могут работать в 
 
 6. При появлении запроса введите строку подключения устройства, полученную на шаге 1. Строка подключения устройства связывает физическое устройство с ИДЕНТИФИКАТОРом устройства в центре Интернета вещей.
 
-   Строка подключения устройства имеет следующий формат и не должна содержать кавычки:`HostName={IoT hub name}.azure-devices.net;DeviceId={device name};SharedAccessKey={key}`
+   Строка подключения устройства имеет следующий формат и не должна содержать кавычки: `HostName={IoT hub name}.azure-devices.net;DeviceId={device name};SharedAccessKey={key}`
 
 ## <a name="verify-successful-installation"></a>Проверка установки
 

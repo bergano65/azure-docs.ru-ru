@@ -7,12 +7,12 @@ ms.custom: devx-track-csharp
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: 08cf736e533486b765f3b1a1173fcfe06c03306f
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: ded612fb79001adf2ada1a289603bc8a7561d38f
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88212861"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88612492"
 ---
 # <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK для Веб-заданий Azure для фоновой обработки на основе событий
 
@@ -188,7 +188,7 @@ ms.locfileid: "88212861"
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-Эмулятор службы хранилища Azure, работающий локально, не обладает всеми возможностями, необходимыми пакету SDK WebJobs. Поэтому в этом разделе вы создадите учетную запись хранения в Azure и настроите ее использование в проекте. Если у вас уже есть учетная запись хранения, перейдите сразу к шагу 6.
+Эмулятор хранения Azure, запущенный локально, не имеет всех функций, необходимых для пакета SDK веб-заданий. Поэтому в этом разделе вы создадите учетную запись хранения в Azure и настроите ее использование в проекте. Если у вас уже есть учетная запись хранения, перейдите сразу к шагу 6.
 
 1. В Visual Studio откройте **обозреватель сервера** и войдите в Azure. Щелкните правой кнопкой мыши узел **Azure** и выберите команду **Connect to Microsoft Azure Subscription** (Подключение к подписке Microsoft Azure).
 

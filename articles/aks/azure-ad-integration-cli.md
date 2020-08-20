@@ -6,12 +6,12 @@ author: TomGeske
 ms.topic: article
 ms.date: 07/20/2020
 ms.author: thomasge
-ms.openlocfilehash: dfcbf214c374f449a04139ce7bf4fbb6853ed524
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: ab25ec5406c75316aaa1ee8efd0192dc0207ad79
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88006865"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88612424"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli-legacy"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI (прежних версий)
 
@@ -27,6 +27,7 @@ ms.locfileid: "88006865"
 ## <a name="the-following-limitations-apply"></a>Действительны следующие ограничения.
 
 - Azure AD можно включить только в кластере с поддержкой RBAC.
+- Устаревшую интеграцию Azure AD можно включить только во время создания кластера.
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -176,7 +177,7 @@ az ad signed-in-user show --query userPrincipalName -o tsv
 > [!IMPORTANT]
 > Если пользователь, которому вы предоставляете привязку RBAC для, находится в том же клиенте Azure AD, назначьте разрешения на основе *userPrincipalName*. Если пользователь находится в другом клиенте Azure AD, вместо него следует запрашивать и использовать свойство *ObjectID* .
 
-Создайте манифест YAML с именем `basic-azure-ad-binding.yaml` и вставьте следующее содержимое. В последней строке замените *userPrincipalName_or_objectId* на выходные данные имени участника-пользователя или идентификатора объекта из предыдущей команды:
+Создайте манифест YAML с именем `basic-azure-ad-binding.yaml` и вставьте следующее содержимое. В последней строке замените *userPrincipalName_or_objectId*  на выходные данные имени участника-пользователя или идентификатора объекта из предыдущей команды:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -244,7 +245,7 @@ error: You must be logged in to the server (Unauthorized)
 
 * Вы определили соответствующий идентификатор объекта или имя участника-пользователя в зависимости от того, находится ли учетная запись пользователя в том же клиенте Azure AD или нет.
 * Пользователь не может быть членом более чем 200 групп.
-* Секрет, определенный в регистрации приложения для сервера, соответствует значению, заданному с помощью`--aad-server-app-secret`
+* Секрет, определенный в регистрации приложения для сервера, соответствует значению, заданному с помощью `--aad-server-app-secret`
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

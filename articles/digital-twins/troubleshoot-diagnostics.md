@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/28/2020
 ms.topic: troubleshooting
 ms.service: digital-twins
-ms.openlocfilehash: d47bb7cc868c5733c6e36290f097fec783764cd3
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 5091edbf9138cb8ff03df193dcbeed692aaf13e3
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88003586"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88612407"
 ---
 # <a name="troubleshooting-azure-digital-twins-diagnostics-logging"></a>Устранение неполадок в Azure Digital двойников: ведение журнала диагностики
 
@@ -88,7 +88,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
 | адтевентраутесоператион | Microsoft. Дигиталтвинс/евентраутес/запись | API добавления маршрутов событий |
 |  | Microsoft. Дигиталтвинс/евентраутес/Read | Маршруты событий получают интерфейсы API идентификаторов и списков |
 |  | Microsoft. Дигиталтвинс/евентраутес/Delete | API удаления маршрутов событий |
-|  | Microsoft. Дигиталтвинс/евентраутес/действие | Выход из события в службу конечной точки (не вызов API) |
+|  | Microsoft. Дигиталтвинс/евентраутес/действие | Сбой при попытке публикации событий в службе конечной точки (не вызове API) |
 | адтдигиталтвинсоператион | Microsoft. Дигиталтвинс/дигиталтвинс/запись | Цифровой двойников Добавление, Добавление связи, обновление, обновление компонента |
 |  | Microsoft. Дигиталтвинс/дигиталтвинс/Read | Digital двойников получает по идентификатору, получение компонента, получение отношения по идентификатору, список входящих отношений, список отношений |
 |  | Microsoft. Дигиталтвинс/дигиталтвинс/Delete | Цифровые двойников удаление, удаление связи |

@@ -3,12 +3,12 @@ title: Резервное копирование и восстановление
 description: В этой статье описывается, как выполнять резервное копирование и восстановление зашифрованных виртуальных машин Azure с помощью службы Azure Backup.
 ms.topic: conceptual
 ms.date: 08/18/2020
-ms.openlocfilehash: 304196f6b517c353cb4fc142129fa4d3007a1d9c
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 74658f695387a776fe12cef97887075ae0bc161d
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/19/2020
-ms.locfileid: "88585340"
+ms.locfileid: "88611302"
 ---
 # <a name="back-up-and-restore-encrypted-azure-virtual-machines"></a>Резервное копирование и восстановление зашифрованных виртуальных машин Azure
 
@@ -69,7 +69,7 @@ Azure Backup можете выполнять резервное копирова
 1. В качестве **цели резервного копирования**  >  **, где выполняется рабочая нагрузка?** выберите **Azure**.
 1. В **поле что вы хотите создать резервную копию?** выберите **Виртуальная машина**. Затем выберите **резервное копирование**.
 
-      ![Колонка сценариев](./media/backup-azure-vms-encryption/select-backup-goal-one.png)
+      ![Область сценариев](./media/backup-azure-vms-encryption/select-backup-goal-one.png)
 
 1. В поле **Политика архивации**  >  **выберите Политика архивации**выберите политику, которую нужно связать с хранилищем. Нажмите кнопку **ОК**.
     - Политика архивации определяет время создания резервных копий и время их хранения.

@@ -3,12 +3,12 @@ title: Настройка устройства "миграция Azure" в Azure
 description: Узнайте, как настроить устройство для миграции Azure в Azure для государственных организаций.
 ms.topic: article
 ms.date: 04/16/2020
-ms.openlocfilehash: f0ebc882646b5ff3f62ddddf91cffc85cb5e0da6
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 993c25d7b2c580df47b61c836b885ed6379e8640
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86109983"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88612271"
 ---
 # <a name="set-up-an-appliance-in-azure-government"></a>Настройка устройства в Azure для государственных организаций 
 
@@ -60,7 +60,7 @@ ms.locfileid: "86109983"
 
 - Устанавливает агенты и веб-приложение.
 - Устанавливает роли Windows, включая службу активации Windows, IIS и интегрированную среду сценариев PowerShell.
-- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее](https://www.microsoft.com/download/details.aspx?id=7435).
+- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее.](https://www.microsoft.com/download/details.aspx?id=7435)
 - Обновляет раздел реестра (HKLM) с постоянными параметрами для службы "миграция Azure".
 - Создает файлы журналов и конфигурации следующим образом:
     - **Файлы конфигурации**:%програмдата%\микрософт азуре\конфиг
@@ -71,7 +71,7 @@ ms.locfileid: "86109983"
 1. Извлеките сжатый ZIP-файл в папку на компьютере, на котором будет размещено устройство. Убедитесь, что скрипт не выполняется на виртуальной машине в существующем устройстве Миграции Azure.
 2. Запустите PowerShell на компьютере с привилегиями администратора (с повышенными правами).
 3. Измените каталог PowerShell на папку, содержащую содержимое, извлеченное из скачанного ZIP-файла.
-4. Выполните **AzureMigrateInstaller.ps1**скрипта следующим образом:``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-VMWare-USGov>AzureMigrateInstaller.ps1 ```
+4. Выполните **AzureMigrateInstaller.ps1**скрипта следующим образом: ``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-VMWare-USGov>AzureMigrateInstaller.ps1 ```
 5. После успешного выполнения скрипта запускается веб-приложение устройства, которое позволяет настроить устройство. При возникновении проблем просмотрите журналы скриптов в файла c:\ProgramData\Microsoft Азуре\логс\ AzureMigrateScenarioInstaller_<em>timestamp</em>. log.
 
 ### <a name="verify-access"></a>Проверка доступа
@@ -113,7 +113,7 @@ ms.locfileid: "86109983"
 
 - Устанавливает агенты и веб-приложение.
 - Устанавливает роли Windows, включая службу активации Windows, IIS и интегрированную среду сценариев PowerShell.
-- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее](https://www.microsoft.com/download/details.aspx?id=7435).
+- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее.](https://www.microsoft.com/download/details.aspx?id=7435)
 - Обновляет раздел реестра (HKLM) с постоянными параметрами для службы "миграция Azure".
 - Создает файлы журналов и конфигурации следующим образом:
     - **Файлы конфигурации**:%програмдата%\микрософт азуре\конфиг
@@ -124,7 +124,7 @@ ms.locfileid: "86109983"
 1. Извлеките сжатый ZIP-файл в папку на компьютере, на котором будет размещено устройство. Убедитесь, что скрипт не выполняется на виртуальной машине в существующем устройстве Миграции Azure.
 2. Запустите PowerShell на компьютере с привилегиями администратора (с повышенными правами).
 3. Измените каталог PowerShell на папку, содержащую содержимое, извлеченное из скачанного ZIP-файла.
-4. Выполните **AzureMigrateInstaller.ps1**скрипта следующим образом:``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-HyperV-USGov>AzureMigrateInstaller.ps1 ``` 
+4. Выполните **AzureMigrateInstaller.ps1**скрипта следующим образом: ``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-HyperV-USGov>AzureMigrateInstaller.ps1 ``` 
 5. После успешного выполнения скрипта запускается веб-приложение устройства, которое позволяет настроить устройство. При возникновении проблем просмотрите журналы скриптов в файла c:\ProgramData\Microsoft Азуре\логс\ AzureMigrateScenarioInstaller_<em>timestamp</em>. log.
 
 ### <a name="verify-access"></a>Проверка доступа
@@ -165,7 +165,7 @@ ms.locfileid: "86109983"
 
 - Устанавливает агенты и веб-приложение.
 - Устанавливает роли Windows, включая службу активации Windows, IIS и интегрированную среду сценариев PowerShell.
-- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее](https://www.microsoft.com/download/details.aspx?id=7435).
+- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее.](https://www.microsoft.com/download/details.aspx?id=7435)
 - Обновляет раздел реестра (HKLM) с постоянными параметрами для службы "миграция Azure".
 - Создает файлы журналов и конфигурации следующим образом:
     - **Файлы конфигурации**:%програмдата%\микрософт азуре\конфиг
@@ -176,7 +176,7 @@ ms.locfileid: "86109983"
 1. Извлеките сжатый ZIP-файл в папку на компьютере, на котором будет размещено устройство. Убедитесь, что скрипт не выполняется на виртуальной машине в существующем устройстве Миграции Azure.
 2. Запустите PowerShell на компьютере с привилегиями администратора (с повышенными правами).
 3. Измените каталог PowerShell на папку, содержащую содержимое, извлеченное из скачанного ZIP-файла.
-4. Выполните **AzureMigrateInstaller.ps1**скрипта следующим образом:``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-Server-USGov>AzureMigrateInstaller.ps1 ```
+4. Выполните **AzureMigrateInstaller.ps1**скрипта следующим образом: ``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-Server-USGov>AzureMigrateInstaller.ps1 ```
 5. После успешного выполнения скрипта запускается веб-приложение устройства, которое позволяет настроить устройство. При возникновении проблем просмотрите журналы скриптов в файла c:\ProgramData\Microsoft Азуре\логс\ AzureMigrateScenarioInstaller_<em>timestamp</em>. log.
 
 ### <a name="verify-access"></a>Проверка доступа
