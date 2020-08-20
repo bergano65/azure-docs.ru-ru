@@ -2,25 +2,21 @@
 title: Руководство по Интеграция единого входа Azure Active Directory с приложением "Управление доступом в соответствии с требованиями Greenlight" | Документация Майкрософт
 description: Сведения о настройке единого входа для Azure Active Directory и приложения "Управление доступом в соответствии с требованиями Greenlight".
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 47a80d88-d921-4fae-8c05-818662c396f5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/03/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 85fb972027170871cad62133965c7dc43d6374a3
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 291d9de822ebb4d4f134be3788b84a3f8aded301
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78968444"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551495"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-greenlight-compliant-access-management"></a>Руководство по Интеграция единого входа Azure Active Directory с приложением "Управление доступом в соответствии с требованиями Greenlight"
 

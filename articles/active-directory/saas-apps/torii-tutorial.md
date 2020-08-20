@@ -2,25 +2,21 @@
 title: Руководство по интеграции единого входа Azure Active Directory с Torii | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Torii.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: f4827170-023b-4ad3-b6f2-70ed9cedaeef
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 05/06/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ccd9b1bebd1ac702d9b4e89db6f8a3e5e363ffab
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: 0295b70e4290ccae78c25e6741fc6cd61fdc0aa2
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82983966"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551971"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-torii"></a>Руководство по интеграции единого входа Azure Active Directory с Torii
 

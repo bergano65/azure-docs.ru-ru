@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с Insignia SAML SSO | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Insignia SAML SSO.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 828c981c-c3dd-4eb2-8699-0f732baa43f6
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: c7b62a65d3f0b3b4006c55f5323b1feb69cca9f1
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: 9d3463e04f06e02f8d27e633a10c22069ad9b57f
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85799859"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550424"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insignia-saml-sso"></a>Руководство по интеграции Azure Active Directory с Insignia SAML SSO
 
@@ -116,7 +112,7 @@ ms.locfileid: "85799859"
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<customername>.insigniailsusa.com/<uniqueid>`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Insignia SAML SSO](https://www.insigniasoftware.com/insignia/Techsupport.aspx). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Insignia SAML SSO](http://www.insigniasoftware.com/insignia/Techsupport.aspx). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -134,7 +130,7 @@ ms.locfileid: "85799859"
 
 ### <a name="configure-insignia-saml-sso-single-sign-on"></a>Настройка единого входа в Insignia SAML SSO
 
-Чтобы настроить единый вход на стороне **Insignia SAML SSO**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Insignia SAML SSO](https://www.insigniasoftware.com/insignia/Techsupport.aspx). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Insignia SAML SSO**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Insignia SAML SSO](http://www.insigniasoftware.com/insignia/Techsupport.aspx). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -189,7 +185,7 @@ ms.locfileid: "85799859"
 
 ### <a name="create-insignia-saml-sso-test-user"></a>Создание тестового пользователя Insignia SAML SSO
 
-В этом разделе описано, как создать пользователя Britta Simon в Insignia SAML SSO. Обратитесь к  [группе поддержки Insignia SAML SSO](https://www.insigniasoftware.com/insignia/Techsupport.aspx), чтобы добавить пользователей на платформу Insignia SAML SSO. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в Insignia SAML SSO. Обратитесь к  [группе поддержки Insignia SAML SSO](http://www.insigniasoftware.com/insignia/Techsupport.aspx), чтобы добавить пользователей на платформу Insignia SAML SSO. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

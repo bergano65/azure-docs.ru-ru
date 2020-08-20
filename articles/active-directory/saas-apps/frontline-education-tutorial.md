@@ -2,26 +2,21 @@
 title: Руководство по Интеграция Azure Active Directory с Frontline Education | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Frontline Education.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: eccef90b-b175-4fcf-9071-77292a005d16
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 08/09/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 230c2007ba92000dc2791747213ad38bb437d7b0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 2cb53e6235f701aa74d72dfa276948a1ad89e289
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68975903"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550891"
 ---
 # <a name="tutorial-integrate-frontline-education-with-azure-active-directory"></a>Руководство по Интеграция Frontline Education с Azure Active Directory
 

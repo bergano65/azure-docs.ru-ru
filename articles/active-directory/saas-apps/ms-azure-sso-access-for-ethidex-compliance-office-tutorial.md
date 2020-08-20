@@ -2,26 +2,21 @@
 title: Руководство по Интеграция единого входа Azure Active Directory с доступом к Microsoft Azure с единым входом для Ethidex Compliance Office™ | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory для доступа к Microsoft Azure с единым входом для Ethidex Compliance Office™
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 58b2e70f-d1dd-47b6-b91f-f77581df01c6
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/06/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 00cbb5ff4b9354d0d1702161460b2646669f34c2
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: cee76d78e934931e6f2d0ff6787d755717ea8b0b
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "70844371"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549030"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-ms-azure-sso-access-for-ethidex-compliance-office"></a>Руководство по Интеграция единого входа Azure Active Directory с доступом к Microsoft Azure с единым входом для Ethidex Compliance Office™
 

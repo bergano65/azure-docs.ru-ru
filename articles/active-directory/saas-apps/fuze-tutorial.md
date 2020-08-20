@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с Fuze | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Fuze.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 9780b4bf-1fd1-48c1-9ceb-f750225ae08a
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
-ms.openlocfilehash: 546e0d53630b1dba8447fe1004e92545f9c8f324
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e57b9f4bf4fdd28b342bb1612e5d59d52d08cfc9
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73155402"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550890"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-fuze"></a>Руководство по интеграции Azure Active Directory с Fuze
 

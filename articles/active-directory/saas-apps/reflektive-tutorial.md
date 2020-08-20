@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с Reflektive | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Reflektive.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 799a08b9-1ce6-46d1-9064-aa9f36f6604e
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 76ded60421c1f6d39328ec88e964876e3eb64d78
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 70ad4bfdfda0def4fba2778725fcfc4e81e72a5b
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86169057"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88548861"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-reflektive"></a>Руководство по интеграции Azure Active Directory с Reflektive
 

@@ -10,18 +10,18 @@ ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: 01a5714cb78959a982ad73deb401edbafeebe8f9
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 57fb91e9ead98f6c52fd3f659f4aa12692816297
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87834462"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549553"
 ---
 # <a name="quickstart-how-to-build-an-object-detector-with-custom-vision"></a>Краткое руководство. Построение средств обнаружения объектов с помощью Пользовательского визуального распознавания
 
 В этом кратком руководстве объясняется, как разработать средства обнаружения объектов на веб-сайте Пользовательского визуального распознавания. Создав модель средства обнаружения объектов, вы сможете обнаруживать объекты с помощью Пользовательского визуального распознавания.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

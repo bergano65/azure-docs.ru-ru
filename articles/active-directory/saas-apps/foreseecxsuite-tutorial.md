@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с ForeSee CX Suite | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ForeSee CX Suite.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 5f4b7830-6186-4d17-b77b-504d4192bfde
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
-ms.openlocfilehash: c78fa8ec470f04bcd88ab403249f77a65120c707
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: fb0ed4a48eaef2168791abbaf94fb8991fa14132
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67550403"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551117"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-foresee-cx-suite"></a>Руководство по интеграции Azure Active Directory с ForeSee CX Suite
 
@@ -119,7 +115,7 @@ ms.locfileid: "67550403"
 
     а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://cxsuite.foresee.com/`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: https:\//www.okta.com/saml2/service-provider/\<уникальный_ИД>
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: https:\//www.okta.com/saml2/service-provider/\<UniqueID>.
 
     > [!Note]
     > Если значение поля **Идентификатор** автоматически не заполняется, введите его вручную в указанном выше формате. Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Для получения этого значения обратитесь в [группу поддержки клиентов ForeSee CX Suite](mailto:support@foresee.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

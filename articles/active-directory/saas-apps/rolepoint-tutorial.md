@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с RolePoint | Документация Майкрософт
 description: Из этого руководства вы узнаете, как настроить единый вход Azure Active Directory в RolePoint.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 68d37f40-15da-45f5-a9e1-d53f78e786d1
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 0b6fd17d2f8577532778733866260f43e9ac7685
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 235010cbcdde326cf17643cec81f3b6fcb1eea59
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67092735"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88548775"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rolepoint"></a>Руководство по интеграции Azure Active Directory с RolePoint
 
@@ -152,7 +148,7 @@ ms.locfileid: "67092735"
 
     1. В поле **Имя** введите **BrittaSimon**.
   
-    1. В поле **Имя пользователя** введите **BrittaSimon @\<ваш_домен>.\<доменная_зона>** . (Например, BrittaSimon@contoso.com).
+    1. В поле **Имя пользователя** введите **BrittaSimon@\<yourcompanydomain>.\<extension>** . (Например, BrittaSimon@contoso.com).
 
     1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
