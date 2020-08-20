@@ -2,26 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с бизнес-приложением с включенным токеном SAML 1.1 | Документация Майкрософт
 description: Подробные сведения о настройке единого входа Azure Active Directory в бизнес-приложение с включенным токеном SAML 1.1.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: ced1d88d-0e48-40d5-9aea-ef991cd9d270
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/24/2018
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6de8906f15b170511c5548eeaf13173bd39a2734
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 51c794d3e121b06f7eafc7f59f1fb8912e9d1f08
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73160061"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88543437"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-11-token-enabled-lob-app"></a>Руководство по интеграции Azure Active Directory с бизнес-приложением с включенным токеном SAML 1.1
 

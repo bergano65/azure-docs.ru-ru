@@ -2,25 +2,21 @@
 title: Учебник. Интеграция Azure Active Directory с Skillport | Документы Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Skillport.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 4df349b2-a73f-4b88-a077-ec0fbfc26527
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 09ccb9f095e58d8fa22ec3d119853c729f0c7026
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: cceb0a98cc35a41d1d46b798c9caf08fae2e3748
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67090575"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88543097"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skillport"></a>Руководство по интеграции Azure Active Directory с Skillport
 
@@ -139,7 +135,7 @@ ms.locfileid: "67090575"
 
 ### <a name="configure-skillport-single-sign-on"></a>Настройка единого входа в Skillport
 
-Чтобы настроить единый вход со стороны **Skillport**, нужно отправить в [группу поддержки Skillport](https://www.skillsoft.com/contact.asp) скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход со стороны **Skillport**, нужно отправить в [группу поддержки Skillport](https://www.skillsoft.com/about/contact-us) скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -194,7 +190,7 @@ ms.locfileid: "67090575"
 
 ### <a name="create-skillport-test-user"></a>Создание тестового пользователя Skillport
 
-Чтобы создать тестового пользователя Skillport, обратитесь в [службу поддержки Skillport](https://www.skillsoft.com/contact.asp), так как они поддерживают различные бизнес-сценарии в соответствии с требованиями пользователей. Специалисты выполнят настройку после обсуждения с пользователями.
+Чтобы создать тестового пользователя Skillport, обратитесь в [службу поддержки Skillport](https://www.skillsoft.com/about/contact-us), так как они поддерживают различные бизнес-сценарии в соответствии с требованиями пользователей. Специалисты выполнят настройку после обсуждения с пользователями.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

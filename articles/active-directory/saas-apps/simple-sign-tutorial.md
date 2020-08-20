@@ -2,26 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с Simple Sign | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory для приложения Simple Sign.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 3d95ba39-54bb-4280-b3d1-c61dfc509119
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f175573d7be7f5b82f27762892b4e687548b183
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 0ba3772eabada89e34e45d35606900c5ef587b3f
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67090855"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88543080"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-simple-sign"></a>Руководство по интеграции Azure Active Directory с Simple Sign
 

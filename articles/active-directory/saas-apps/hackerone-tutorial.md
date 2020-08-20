@@ -2,26 +2,21 @@
 title: Учебник. Интеграция Azure Active Directory с HackerOne | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в HackerOne.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 229d1efb-b6a5-4df8-9839-5d551487db4e
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: effd0593384190eb1a1cf261305dd61818c3d0b0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 530ef271091afc3e646d375ea471d8c48f0f8651
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76120841"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88544202"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hackerone"></a>Учебник. Интеграция Azure Active Directory с HackerOn
 

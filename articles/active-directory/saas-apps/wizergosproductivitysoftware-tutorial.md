@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с Wizergos Productivity Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Wizergos Productivity Software.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: acc04396-13c5-4c24-ab9a-30fbc9234ebd
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: b6491013cb35f2473eff6c2019fe2a80dd9e9b08
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 2d5bcb52b1feb7ea8202aa354793ebf975ed4f19
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67086987"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88541486"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wizergos-productivity-software"></a>Руководство. Интеграция Azure Active Directory с Wizergos Productivity Software
 

@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с консолью Oracle Cloud Infrastructure Console | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Oracle Cloud Infrastructure Console.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: CelesteDG
 ms.reviewer: celested
-ms.assetid: f045fe19-11f8-4ccf-a3eb-8495fdc8716f
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64cae5812a380725d612d27190042797542ee255
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d4a478c402346e33a4f27ff2a363de75285b435b
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76289107"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88543845"
 ---
 # <a name="tutorial-integrate-oracle-cloud-infrastructure-console-with-azure-active-directory"></a>Руководство по интеграции консоли Oracle Cloud Infrastructure Console с Azure Active Directory
 
