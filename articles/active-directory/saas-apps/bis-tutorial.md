@@ -2,26 +2,21 @@
 title: Руководство по Интеграция единого входа Azure Active Directory с BIS | Документация Майкрософт
 description: Из этой статьи вы узнаете, как настроить единый вход между Azure Active Directory и BIS.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 419849ac-8398-4e8b-9509-a90158824e03
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/17/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bc442bd48de3b75d43206a1f111b1e26c4608ed
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: cc7c591711866dffe9f0c3ae0d6da41e67d6b7ee
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "71174440"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88536906"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-bis"></a>Руководство по Интеграция единого входа Azure Active Directory с BIS
 
