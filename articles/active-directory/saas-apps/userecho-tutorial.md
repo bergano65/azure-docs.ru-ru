@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с UserEcho | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении UserEcho.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: bedd916b-8f69-4b50-9b8d-56f4ee3bd3ed
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
-ms.openlocfilehash: 59d61eda7002fe46cf99fac63822b2333b2d64b5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6708fcbe6f756a92984ee8aa48c181e1103f2046
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67087768"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88532897"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-userecho"></a>Руководство. Интеграция Azure Active Directory с UserEcho
 
