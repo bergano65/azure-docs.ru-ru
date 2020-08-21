@@ -131,7 +131,7 @@ ms.locfileid: "88212908"
 
 1. Выберите приложение-функцию, затем щелкните **Управление API** в меню слева и выберите **Создать** в разделе **Управление API**.
 
-    :::image type="content" source="media/functions-openapi-definition/select-all-settings-openapi.png" alt-text="Выбор раздела "Управление API"":::
+    :::image type="content" source="media/functions-openapi-definition/select-all-settings-openapi.png" alt-text="Выбор раздела Управление API":::
 
 
 1. В разделе "Управление API" настройте параметры, как указано в следующей таблице:
