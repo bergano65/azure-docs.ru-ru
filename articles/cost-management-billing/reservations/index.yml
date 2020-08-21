@@ -5,17 +5,18 @@ metadata:
   title: Экономия средств за счет использования резервирований Azure
   description: Узнайте, как с помощью резервирования Azure вы можете сэкономить деньги, забронировав использование виртуальной машины, хранилища BLOB-объектов Azure или Azure Data Lake Storage 2-го поколения, вычислительной мощности Базы данных SQL, пропускной способности Azure Cosmos DB и других ресурсов Azure на один или три года.
   ms.service: cost-management-billing
+  ms.subservice: reservations
   ms.topic: landing-page
   ms.collection: collection
   author: bandersmsft
   ms.author: banders
   ms.date: 04/30/2020
-  ms.openlocfilehash: 4706c13d6c9e354c6c7ca382f724a7b1094bdda3
-  ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+  ms.openlocfilehash: d8c7e7eee6307ce48e89cb5ade65d7dbff0f42d4
+  ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 07/09/2020
-  ms.locfileid: "86207121"
+  ms.lasthandoff: 08/20/2020
+  ms.locfileid: "88684700"
 landingContent:
 - title: Приобретение резервирований
   linkLists:

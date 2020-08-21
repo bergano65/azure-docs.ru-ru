@@ -283,7 +283,7 @@
             - name: Обозреватель данных
               href: /azure/data-explorer/pricing-reserved-capacity
             - name: Хранилище дисков
-              href: ../virtual-machines/linux/disks-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
+              href: ../virtual-machines/disks-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
             - name: Выделенный узел
               href: ../virtual-machines/prepay-dedicated-hosts-reserved-instances.md?toc=/azure/cost-management-billing/toc.json
             - name: Планы программного обеспечения

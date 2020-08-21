@@ -638,10 +638,12 @@
     - name: Национальные облака
       displayName: 'fairfax,mooncake,compliant,secret,compliance,government,government cloud,dod,china'
       href: sovereign-clouds.md
-    - name: Цены и ограничения
+    - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/#cognitive-services'
+    - name: Квоты и ограничения
+      href: speech-services-quotas-and-limits.md
     - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Шифрование

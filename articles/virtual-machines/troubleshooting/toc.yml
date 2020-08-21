@@ -193,7 +193,7 @@
 - name: Проблемы с управлением виртуальными дисками
   items:
     - name: Обзор
-      href: ../windows/managed-disks-overview.md
+      href: ../managed-disks-overview.md
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: ../windows/faq-for-disks.md
     - name: Ошибки при удалении ресурсов хранилища

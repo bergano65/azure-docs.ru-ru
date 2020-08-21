@@ -222,7 +222,7 @@
             - name: Серия Mv2
               href: ../mv2-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Ограниченное число виртуальных ЦП
-              href: constrained-vcpu.md
+              href: ../constrained-vcpu.md
         - name: Оптимизированные для операций в хранилище
           items:
             - name: Обзор
@@ -279,7 +279,7 @@
             - name: Основные сведения о резервировании в Azure
               href: ../../cost-management-billing/reservations/save-compute-costs-reservations.md?toc=/azure/virtual-machines/windows/toc.json
             - name: Гибкость размера экземпляра виртуальной машины
-              href: reserved-vm-instance-size-flexibility.md
+              href: ../reserved-vm-instance-size-flexibility.md
         - name: Точечные виртуальные машины
           displayName: 'pre-empt, preempt'
           href: spot-vms.md
@@ -305,7 +305,7 @@
             - name: Основные сведения о резервировании в Azure
               href: ../../cost-management-billing/reservations/save-compute-costs-reservations.md
             - name: Гибкость размера экземпляра виртуальной машины
-              href: reserved-vm-instance-size-flexibility.md
+              href: ../reserved-vm-instance-size-flexibility.md
     - name: Выделенные узлы
       href: dedicated-hosts.md
     - name: Обслуживание и обновления
@@ -313,21 +313,21 @@
     - name: Хранилище дисков
       items:
         - name: Общие сведения об управляемых дисках
-          href: managed-disks-overview.md
+          href: ../managed-disks-overview.md
         - name: Выбор типа диска для виртуальных машин IaaS
-          href: disks-types.md
+          href: ../disks-types.md
         - name: Шифрование
           href: disk-encryption.md
         - name: Резервирования Хранилища дисков
           href: ../../cost-management-billing/reservations/understand-disk-reservations.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
         - name: Проектирование для обеспечения высокой производительности
-          href: premium-storage-performance.md
+          href: ../premium-storage-performance.md
         - name: Всплеск активности диска
           href: disk-bursting.md
         - name: Целевые показатели масштабируемости для дисков
           href: disk-scalability-targets.md
         - name: Резервное копирование и аварийное восстановление дисков
-          href: backup-and-disaster-recovery-for-azure-iaas-disks.md
+          href: ../backup-and-disaster-recovery-for-azure-iaas-disks.md
         - name: Общие диски
           href: disks-shared.md
         - name: Временные диски ОС
@@ -341,7 +341,7 @@
     - name: Безопасность
       items:
         - name: Безопасность и политика
-          href: security-policy.md
+          href: ../security-policy.md
         - name: Шифрование дисков Azure
           href: disk-encryption-overview.md
         - name: Элементы управления безопасностью службы "Политика Azure"
@@ -855,7 +855,7 @@
           displayName: Azure Resource Manager
           href: ../using-managed-disks-template-deployments.md
         - name: Включение общих дисков
-          href: disks-shared-enable.md
+          href: ../disks-shared-enable.md
         - name: "Отправка VHD на диск\_— PowerShell"
           href: disks-upload-vhd-to-managed-disk-powershell.md
         - name: 'Безопасный импорт и экспорт диска: портал'
@@ -863,11 +863,11 @@
         - name: Изменение размера диска
           href: expand-os-disk.md
         - name: Использование Обозревателя службы хранилища для управления дисками
-          href: disks-use-storage-explorer-managed-disks.md
+          href: ../disks-use-storage-explorer-managed-disks.md
         - name: Моментальный снимок диска
           href: snapshot-copy-managed-disk.md
         - name: Зарезервировать Хранилище дисков
-          href: disks-reserved-capacity.md
+          href: ../disks-reserved-capacity.md
         - name: "Создание добавочного моментального снимка\_— PowerShell"
           href: disks-incremental-snapshots.md
         - name: "Создание добавочного моментального снимка\_— портал"
@@ -903,7 +903,7 @@
             - name: Включение ускорителя записи
               href: ../how-to-enable-write-accelerator.md
             - name: Использование дисков (цен. категория "Ультра")
-              href: disks-enable-ultra-ssd.md
+              href: ../disks-enable-ultra-ssd.md
             - name: Тест производительности диска
               href: disks-benchmarks.md
         - name: "Обнаружение неприсоединенных дисков\_— PowerShell"

@@ -239,7 +239,7 @@
             - name: Серия Mv2
               href: ../mv2-series.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: Ограниченное число виртуальных ЦП
-              href: constrained-vcpu.md
+              href: ../constrained-vcpu.md
         - name: Оптимизированные для операций в хранилище
           items:
             - name: Обзор
@@ -294,7 +294,7 @@
             - name: Основные сведения о резервировании в Azure
               href: ../../cost-management-billing/reservations/save-compute-costs-reservations.md?toc=/azure/virtual-machines/linux/toc.json
             - name: Гибкость размера экземпляра виртуальной машины
-              href: reserved-vm-instance-size-flexibility.md
+              href: ../reserved-vm-instance-size-flexibility.md
         - name: Точечные виртуальные машины
           displayName: 'pre-empt, preempt'
           href: spot-vms.md
@@ -317,7 +317,7 @@
             - name: Основные сведения о резервировании в Azure
               href: ../../cost-management-billing/reservations/save-compute-costs-reservations.md
             - name: Гибкость размера экземпляра виртуальной машины
-              href: reserved-vm-instance-size-flexibility.md
+              href: ../reserved-vm-instance-size-flexibility.md
         - name: Результаты теста производительности
           href: compute-benchmark-scores.md
     - name: Рекомендуемые дистрибутивы
@@ -329,21 +329,21 @@
     - name: Хранилище дисков
       items:
         - name: Общие сведения об управляемых дисках
-          href: managed-disks-overview.md
+          href: ../managed-disks-overview.md
         - name: Выбор типа диска для виртуальных машин IaaS
-          href: disks-types.md
+          href: ../disks-types.md
         - name: Шифрование
           href: disk-encryption.md
         - name: Резервирования Хранилища дисков
           href: ../../cost-management-billing/reservations/understand-disk-reservations.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
         - name: Проектирование для обеспечения высокой производительности
-          href: premium-storage-performance.md
+          href: ../premium-storage-performance.md
         - name: Всплеск активности диска
           href: disk-bursting.md
         - name: Целевые показатели масштабируемости для дисков
           href: disk-scalability-targets.md
         - name: Резервное копирование и аварийное восстановление дисков
-          href: backup-and-disaster-recovery-for-azure-iaas-disks.md
+          href: ../backup-and-disaster-recovery-for-azure-iaas-disks.md
         - name: Общие диски
           href: disks-shared.md
         - name: Временные диски ОС
@@ -357,7 +357,7 @@
     - name: Безопасность
       items:
         - name: Безопасность и политика
-          href: security-policy.md
+          href: ../security-policy.md
         - name: Шифрование дисков Azure
           href: disk-encryption-overview.md
         - name: Элементы управления безопасностью службы "Политика Azure"
@@ -797,7 +797,7 @@
                       href: ../../azure-monitor/platform/data-sources-custom-logs.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
                     - name: Пользовательские поля
                       href: ../../azure-monitor/platform/custom-fields.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
-            - name: Устранение неполадок
+            - name: Диагностика
               items:
                 - name: Расширение службы анализа журналов для виртуальной машины
                   href: ../../azure-monitor/platform/vmext-troubleshoot.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
@@ -958,7 +958,7 @@
           displayName: 'Azure Resource Manager, ARM'
           href: ../using-managed-disks-template-deployments.md
         - name: Включение общих дисков
-          href: disks-shared-enable.md
+          href: ../disks-shared-enable.md
         - name: "Отправка VHD-файла на диск\_— CLI"
           href: disks-upload-vhd-to-managed-disk-cli.md
         - name: 'Безопасный импорт и экспорт диска: CLI'
@@ -968,11 +968,11 @@
         - name: Изменение размера диска
           href: expand-disks.md
         - name: Использование Обозревателя службы хранилища для управления дисками
-          href: disks-use-storage-explorer-managed-disks.md
+          href: ../disks-use-storage-explorer-managed-disks.md
         - name: Моментальный снимок диска
           href: snapshot-copy-managed-disk.md
         - name: Зарезервировать Хранилище дисков
-          href: disks-reserved-capacity.md
+          href: ../disks-reserved-capacity.md
         - name: "Создание добавочного моментального снимка\_— CLI"
           href: disks-incremental-snapshots.md
         - name: "Создание добавочного моментального снимка\_— портал"
@@ -1008,7 +1008,7 @@
             - name: Использование ускорителя записи
               href: ../how-to-enable-write-accelerator.md
             - name: Использование дисков (цен. категория "Ультра")
-              href: disks-enable-ultra-ssd.md
+              href: ../disks-enable-ultra-ssd.md
             - name: Тест производительности диска
               href: disks-benchmarks.md
             - name: Оптимизация производительности

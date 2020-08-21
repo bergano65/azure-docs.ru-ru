@@ -482,16 +482,12 @@
           href: platform/autoscale-resource-log-schema.md
     - name: видны узлы
       items:
-        - name: Правила генерации оповещений приложения
-          items:
-            - name: Доступность
-              href: app/monitor-web-app-availability.md
-            - name: Оповещения о метриках
-              href: ./platform/alerts-log.md
         - name: Правила генерации оповещений метрик
           items:
             - name: Управление оповещениями метрик
               href: platform/alerts-metric.md
+            - name: Доступность
+              href: app/monitor-web-app-availability.md
             - name: Использование динамических порогов
               href: platform/alerts-dynamic-thresholds.md
             - name: Отдельные предупреждения для нескольких временных рядов
