@@ -61,7 +61,7 @@ ms.locfileid: "88684523"
 
 * **Поток трафика решения "из локальной среды в Azure VMware"**
 
-  :::image type="content" source="media/hub-spoke/on-prem-to-avs-traffic-flow.png" alt-text="Поток трафика решения "из локальной среды в Azure VMware"" border="false":::
+  :::image type="content" source="media/hub-spoke/on-prem-to-avs-traffic-flow.png" alt-text="Поток трафика решения из локальной среды в Azure VMware" border="false":::
 
 
 * **Поток трафика виртуальной сети Azure VMware к концентратору**
