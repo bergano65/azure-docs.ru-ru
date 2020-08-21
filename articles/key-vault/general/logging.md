@@ -1,21 +1,21 @@
 ---
 title: Ведение журнала Azure Key Vault | Документация Майкрософт
-description: Это руководство поможет вам приступить к работе с журналами хранилища ключей Azure.
+description: Сведения о том, как отслеживать доступ к хранилищам ключей, включив функцию ведения журнала Azure Key Vault, которая сохраняет информацию в указанной учетной записи хранения Azure.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 9c5b07d402219907337a590e1131691fb1e24cc2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e9507525dc2c52f584bd7883a12da401b5999f50
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87090592"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88585922"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала Azure Key Vault
 

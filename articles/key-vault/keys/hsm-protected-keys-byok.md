@@ -1,68 +1,68 @@
 ---
-title: Создание ключей, защищенных с АППАРАТным модулем безопасности & — BYOK — Azure Key Vault
-description: В этой статье содержатся сведения о планировании, создании и переносе собственных ключей, защищенных АППАРАТным модулем безопасности, для использования с Azure Key Vault. Также называется BYOK.
+title: Создание ключей, защищенных модулем HSM, и их передача — создание собственных ключей — Azure Key Vault
+description: Данная статья поможет вам подготовить и создать ваши собственные ключи, защищенные модулем HSM, и передать их в Azure Key Vault. Этот подход также известен как создание собственных ключей (BYOK).
 services: key-vault
 author: amitbapat
 manager: devtiw
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: keys
-ms.topic: conceptual
+ms.topic: tutorial
 ms.date: 05/29/2020
 ms.author: ambapat
-ms.openlocfilehash: 4df934f38a8fb657fa4a8de5922d96197a3d02cc
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
-ms.translationtype: MT
+ms.openlocfilehash: 1869ec9b617a7451ec42fa9d092ea3bb5834f9e8
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87061099"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88585480"
 ---
-# <a name="import-hsm-protected-keys-to-key-vault-byok"></a>Импорт ключей, защищенных HSM, в Key Vault (BYOK)
+# <a name="import-hsm-protected-keys-to-key-vault-byok"></a>Импорт защищенных модулем HSM ключей в Key Vault (BYOK)
 
-Для добавленной гарантии при использовании Azure Key Vault можно импортировать или создать ключ в аппаратном модуле безопасности (HSM). ключ никогда не покидает границу HSM. Этот сценарий часто именуется *собственным ключом* (BYOK). Key Vault использует семейство nCipher nShield HSM (проверенный FIPS 140-2 уровня 2) для защиты ключей.
+Чтобы обеспечить более высокий уровень защиты при работе с Azure Key Vault, можно импортировать ключи или создать их в аппаратных модулях безопасности (HSM). Ключи никогда не покидают их пределы. Этот сценарий обычно называется *созданием собственных ключей* (BYOK). Для защиты ключей Key Vault использует семейство модулей HSM nCipher nShield (проверенных по стандарту FIPS 140-2 уровня 2).
 
-Используйте сведения в этой статье для планирования, создания и перемещения собственных ключей, защищенных АППАРАТным модулем безопасности, для использования с Azure Key Vault.
+Информация в этой статье поможет вам подготовить и создать ваши собственные ключи, защищенные модулем HSM, и передать их в Azure Key Vault.
 
 > [!NOTE]
-> Эта функция недоступна для Azure для Китая в Китае. 
+> Эта функция недоступна в Azure для Китая (21Vianet). 
 > 
-> Этот метод импорта доступен только для [поддерживаемых HSM](#supported-hsms). 
+> Этот метод импорта доступен только для [поддерживаемых модулей HSM](#supported-hsms). 
 
-Дополнительные сведения и руководство по началу работы с Key Vault (включая создание хранилища ключей для ключей, защищенных АППАРАТным модулем безопасности) см. в разделе [что такое Azure Key Vault?](../general/overview.md).
+Дополнительные сведения и руководство по началу работы с Key Vault (в том числе по созданию хранилища ключей для ключей, защищенных модулем HSM) приведены в статье [Об Azure Key Vault](../general/overview.md).
 
 ## <a name="overview"></a>Обзор
 
-Ниже представлен обзор этого процесса. Конкретные действия, которые необходимо выполнить, описаны далее в этой статье.
+Ниже представлен обзор этого процесса. Конкретные действия, которые необходимо для этого выполнить, описаны далее в этой статье.
 
-* В Key Vault создайте ключ (который называется *ключом обмена ключами* (KEK)). KEK должен быть ключом RSA-HSM, который имеет только `import` операцию key. Только Key Vault SKU уровня "Премиум" поддерживает ключи RSA-HSM.
+* В Key Vault создайте ключ (который называется *ключом обмена ключами* (KEK)). KEK должен быть ключом RSA-HSM, с которым можно выполнять только операцию `import`. Ключи RSA-HSM поддерживает только Key Vault с номером SKU ценовой категории "Премиум".
 * Скачайте открытый ключ KEK в виде PEM-файла.
-* Перенесите открытый ключ KEK на автономный компьютер, подключенный к локальному HSM.
-* В автономном компьютере используйте средство BYOK, предоставленное поставщиком HSM, для создания файла BYOK. 
-* Целевой ключ шифруется с помощью KEK, который остается зашифрованным до тех пор, пока он не будет передан в Key Vault HSM. Локальный модуль HSM остается только в зашифрованной версии ключа.
-* KEK, созданный в Key Vault HSM, не может быть экспортирован. HSM принудительно применяет правило, не имеющее четкой версии KEK, за пределами Key Vault HSM.
-* KEK должен находиться в том же хранилище ключей, в котором будет импортирован целевой ключ.
-* Когда файл BYOK отправляется в Key Vault, Key Vault HSM использует закрытый ключ KEK для расшифровки материала целевого ключа и его импорта в качестве ключа HSM. Эта операция выполняется полностью в Key Vault HSM. Целевой ключ всегда остается на границе защиты HSM.
+* Перенесите открытый ключ KEK на автономный компьютер, подключенный к локальному модулю HSM.
+* На автономном компьютере используйте средство BYOK, предоставленное поставщиком HSM, для создания файла BYOK. 
+* Целевой ключ шифруется с помощью KEK и остается зашифрованным до тех пор, пока не будет передан в модуль HSM Key Vault. Локальный модуль HSM покидает только зашифрованная версия ключа.
+* Ключ KEK, созданный в HSM Key Vault, экспортировать невозможно. HSM принудительно применяет правило, согласно которому за пределами HSM Key Vault не должно быть незашифрованной версии KEK.
+* Ключ KEK должен находиться в том же хранилище ключей, в которое будет импортирован целевой ключ.
+* Когда файл BYOK отправляется в Key Vault, HSM Key Vault использует закрытый ключ KEK для расшифровки материала целевого ключа и его импорта в качестве ключа HSM. Эта операция выполняется полностью в HSM Key Vault. Целевой ключ всегда остается под защитой HSM.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В следующей таблице перечислены предварительные требования для использования BYOK в Azure Key Vault.
 
 | Требование | Дополнительные сведения |
 | --- | --- |
-| Подписка Azure |Чтобы создать хранилище ключей в Azure Key Vault, требуется подписка Azure. [Зарегистрируйтесь для получения бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/). |
-| SKU Key Vault Premium для импорта ключей, защищенных АППАРАТным модулем безопасности |Дополнительные сведения об уровнях служб и возможностях в Azure Key Vault см. в разделе [цены на Key Vault](https://azure.microsoft.com/pricing/details/key-vault/). |
-| HSM из списка поддерживаемых HSM и средств BYOK и инструкций, предоставленных поставщиком HSM. | Необходимо иметь разрешения для HSM и базовые знания о том, как использовать HSM. См. раздел [Supported HSM](#supported-hsms). |
-| Azure CLI версии 2.1.0 или более поздней | Подробнее см. статью [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).|
+| Подписка Azure |Для создания хранилища ключей в Azure Key Vault требуется подписка Azure. [Зарегистрируйтесь для получения бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/). |
+| Key Vault с номером SKU ценовой категории "Премиум" для импорта ключей, защищенных модулем HSM |Дополнительные сведения об уровнях служб и возможностях Azure Key Vault см. на странице [Цены на Key Vault](https://azure.microsoft.com/pricing/details/key-vault/). |
+| HSM из списка поддерживаемых HSM, средство BYOK и инструкции, предоставленные поставщиком HSM | Необходимо иметь разрешения для модуля HSM и базовые знания о том, как им пользоваться. Просмотрите список [поддерживаемых модулей HSM](#supported-hsms). |
+| Azure CLI версии 2.1.0 или более поздней | Подробнее см. статью [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).|
 
-## <a name="supported-hsms"></a>Поддерживаемые HSM
+## <a name="supported-hsms"></a>Поддерживаемые модули HSM
 
-|Имя поставщика|Тип поставщика|Поддерживаемые модели HSM|Дополнительные сведения|
+|Имя поставщика|Тип поставщика|Поддерживаемые модели модуля HSM|Дополнительные сведения|
 |---|---|---|---|
-|nCipher|Производителя<br/>HSM как услуга|<ul><li>Семейство HSM nShield</li><li>nShield как услуга</ul>|[nCipher New BYOK Tool и документация](https://www.ncipher.com/products/key-management/cloud-microsoft-azure)|
-|Thales|Изготовитель|<ul><li>Семейство HSM 7 Luna с встроенным по версии 7,3 или более поздней</li></ul>| [Средство и документация по Luna BYOK](https://supportportal.thalesgroup.com/csm?id=kb_article_view&sys_kb_id=3892db6ddb8fc45005c9143b0b961987&sysparm_article=KB0021016)|
-|фортаникс|Производителя<br/>HSM как услуга|<ul><li>Служба управления ключами для самостоятельной защиты (СДКМС)</li><li>Equinix Смарткэй</li></ul>|[Экспорт ключей СДКМС в поставщики облачных служб для BYOK-Azure Key Vault](https://support.fortanix.com/hc/en-us/articles/360040071192-Exporting-SDKMS-keys-to-Cloud-Providers-for-BYOK-Azure-Key-Vault)|
-|Драйвер|Изготовитель|Все Ликуидсекурити HSM с<ul><li>Версия встроенного по 2.0.4 или более поздняя</li><li>Встроенное по версии 3,2 или более поздней</li></ul>|[Средство и документация по BYOK Marvell](https://www.marvell.com/products/security-solutions/nitrox-hs-adapters/exporting-marvell-hsm-keys-to-cloud-azure-key-vault.html)|
-|криптомасик|ISV (система управления ключами предприятия)|Несколько торговых марок и моделей HSM, включая<ul><li>nCipher</li><li>Thales</li><li>утимако</li></ul>Дополнительные [сведения см. на сайте криптомасик](https://www.cryptomathic.com/azurebyok)|[Средство и документация по криптомасик BYOK](https://www.cryptomathic.com/azurebyok)|
+|nCipher|Производитель,<br/>HSM как услуга|<ul><li>Семейство модулей HSM nShield</li><li>nShield как услуга</ul>|[Новое средство BYOK и документация для nCipher](https://www.ncipher.com/products/key-management/cloud-microsoft-azure)|
+|Thales|Изготовитель|<ul><li>Семейство HSM 7 Luna со встроенным ПО версии 7.3 или более поздней</li></ul>| [Новое средство BYOK и документация для Luna](https://supportportal.thalesgroup.com/csm?id=kb_article_view&sys_kb_id=3892db6ddb8fc45005c9143b0b961987&sysparm_article=KB0021016)|
+|Fortanix|Производитель,<br/>HSM как услуга|<ul><li>Служба управления ключами для самостоятельной защиты (SDKMS)</li><li>Equinix SmartKey</li></ul>|[Экспорт ключей SDKMS в поставщики облачных служб для BYOK — Azure Key Vault](https://support.fortanix.com/hc/en-us/articles/360040071192-Exporting-SDKMS-keys-to-Cloud-Providers-for-BYOK-Azure-Key-Vault)|
+|Marvell|Изготовитель|Все модули HSM LiquidSecurity со<ul><li>встроенным ПО версии 2.0.4 или более поздней</li><li>встроенным ПО версии 3.2 или более новой</li></ul>|[Новое средство BYOK и документация для Marvell](https://www.marvell.com/products/security-solutions/nitrox-hs-adapters/exporting-marvell-hsm-keys-to-cloud-azure-key-vault.html)|
+|Cryptomathic|ISV (Enterprise Key Management System)|Несколько торговых марок и моделей HSM, в том числе<ul><li>nCipher</li><li>Thales</li><li>Utimaco</li></ul>Дополнительные сведения см. на [сайте Cryptomathic](https://www.cryptomathic.com/azurebyok).|[Новое средство BYOK и документация для Cryptomathic](https://www.cryptomathic.com/azurebyok)|
 
 
 
@@ -70,70 +70,70 @@ ms.locfileid: "87061099"
 
 |Имя раздела|Тип ключа|Размер ключа|Исходный домен|Описание|
 |---|---|---|---|---|
-|Ключ обмена ключами (KEK)|RSA| 2 048-разрядный<br />3 072-разрядный<br />4 096-разрядный|Azure Key Vault HSM|Пара ключей RSA с защитой HSM, созданная в Azure Key Vault|
-|Целевой ключ|RSA|2 048-разрядный<br />3 072-разрядный<br />4 096-разрядный|HSM поставщика|Ключ для передачи в модуль HSM Azure Key Vault|
+|Ключ обмена ключами (KEK)|RSA| 2048-разрядный<br />3072-разрядный<br />4096-разрядный|HSM Azure Key Vault|Защищенная HSM пара ключей RSA, созданная в Azure Key Vault|
+|Целевой ключ|RSA|2048-разрядный<br />3072-разрядный<br />4096-разрядный|HSM от поставщика|Ключ для передачи в модуль HSM Azure Key Vault|
 
-## <a name="generate-and-transfer-your-key-to-the-key-vault-hsm"></a>Создайте и перенесите ключ в модуль HSM Key Vault.
+## <a name="generate-and-transfer-your-key-to-the-key-vault-hsm"></a>Создание ключа и его передача в модуль HSM Key Vault
 
-Чтобы создать и переместить ключ в Key Vault HSM:
+Чтобы создать ключ и передать его в модуль HSM Key Vault, выполните приведенные ниже действия.
 
 * [Шаг 1. Создание KEK](#step-1-generate-a-kek)
-* [Шаг 2. скачивание открытого ключа KEK](#step-2-download-the-kek-public-key)
-* [Шаг 3. Создание и подготовка ключа для перемещения](#step-3-generate-and-prepare-your-key-for-transfer)
-* [Шаг 4. Перенос ключа в Azure Key Vault](#step-4-transfer-your-key-to-azure-key-vault)
+* [Шаг 2. Скачивание открытого ключа KEK](#step-2-download-the-kek-public-key)
+* [Шаг 3. Создание ключа и подготовка его к передаче](#step-3-generate-and-prepare-your-key-for-transfer)
+* [Шаг 4. Передача ключа в Azure Key Vault](#step-4-transfer-your-key-to-azure-key-vault)
 
-### <a name="step-1-generate-a-kek"></a>Шаг 1. Создание KEK
+### <a name="step-1-generate-a-kek"></a>Шаг 1. Создание KEK
 
-KEK — это ключ RSA, который создается в Key Vault HSM. KEK используется для шифрования ключа, который необходимо импортировать ( *целевой* ключ).
+KEK — это ключ RSA, который создается в HSM Key Vault. KEK используется для шифрования ключа, который необходимо импортировать (*целевого* ключа).
 
-KEK должен быть следующим:
-- Ключ RSA-HSM (2 048-bit, 3 072-bit; или 4 096-bit);
-- Создано в том же хранилище ключей, в котором планируется импортировать целевой ключ
-- Создан с разрешенными операциями ключей, для которых задано значение`import`
+Ключ KEK должен:
+- быть ключом RSA-HSM (2048-, 3072- или 4096-разрядным);
+- создаваться в том же хранилище ключей, в которое планируется импортировать целевой ключ;
+- поддерживать только операцию `import`.
 
 > [!NOTE]
-> KEK должен иметь "import" в качестве единственной допустимой операции ключа. "import" является взаимоисключающим с другими операциями с ключами.
+> Единственной допустимой операцией с ключом KEK должна быть операция "import", которая является взаимоисключающей с любыми другими операциями с ключами.
 
-Используйте команду [AZ keyvault Key Create](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-create) , чтобы создать KEK с ключевыми операциями, для которых задано значение `import` . Запишите идентификатор ключа ( `kid` ), возвращаемый из следующей команды. (Вы будете использовать `kid` значение на [шаге 3](#step-3-generate-and-prepare-your-key-for-transfer).)
+С помощью команды [az keyvault key create](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-create) создайте ключ KEK, для которого в качестве операции с ключами задана операция `import`. Запишите идентификатор ключа (`kid`), возвращаемый следующей командой. (Вы будете использовать значение `kid` на [шаге 3](#step-3-generate-and-prepare-your-key-for-transfer).)
 
 ```azurecli
 az keyvault key create --kty RSA-HSM --size 4096 --name KEKforBYOK --ops import --vault-name ContosoKeyVaultHSM
 ```
 
-### <a name="step-2-download-the-kek-public-key"></a>Шаг 2. скачивание открытого ключа KEK
+### <a name="step-2-download-the-kek-public-key"></a>Шаг 2. Скачивание открытого ключа KEK
 
-Чтобы скачать открытый ключ KEK в PEM-файл, выполните команду [AZ keyvault Key download](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-download) . Импортируемый целевой ключ шифруется с помощью открытого ключа KEK.
+Чтобы скачать открытый ключ KEK в PEM-файл, используйте команду [az keyvault key download](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-download). Импортируемый целевой ключ шифруется с помощью открытого ключа KEK.
 
 ```azurecli
 az keyvault key download --name KEKforBYOK --vault-name ContosoKeyVaultHSM --file KEKforBYOK.publickey.pem
 ```
 
-Перенесите файл Кекфорбйок. publickey. pem на автономный компьютер. Этот файл потребуется на следующем шаге.
+Перенесите файл KEKforBYOK.publickey.pem на автономный компьютер. Он потребуется для выполнения следующего шага.
 
-### <a name="step-3-generate-and-prepare-your-key-for-transfer"></a>Шаг 3. Создание и подготовка ключа для перемещения
+### <a name="step-3-generate-and-prepare-your-key-for-transfer"></a>Шаг 3. Создание ключа и подготовка его к передаче
 
-Чтобы скачать и установить средство BYOK, обратитесь к документации поставщика HSM. Следуйте инструкциям поставщика HSM, чтобы создать целевой ключ, а затем создайте пакет для перемещения ключа (файл BYOK). Средство BYOK будет использовать `kid` из файла из [шага 1](#step-1-generate-a-kek) и кекфорбйок. publickey. pem, скачанного на [шаге 2](#step-2-download-the-kek-public-key) , чтобы создать зашифрованный целевой ключ в файле BYOK.
+Сведения о том, как скачать и установить средство BYOK, см. в документации поставщика HSM. Следуйте инструкциям поставщика HSM, чтобы создать целевой ключ, а затем создайте пакет для перемещения ключа (файл BYOK). Средство BYOK будет использовать значение `kid`, полученное на [шаге 1](#step-1-generate-a-kek), и файл KEKforBYOK.publickey.pem, скачанный на [шаге 2](#step-2-download-the-kek-public-key), для создания зашифрованного целевого ключа в файле BYOK.
 
 Перенесите файл BYOK на подключенный компьютер.
 
 > [!NOTE] 
-> Импорт RSA 1 024-разрядных ключей не поддерживается. В настоящее время импорт ключа эллиптической кривой (EC) не поддерживается.
+> Импорт 1024-разрядных ключей RSA не поддерживается. В настоящее время импорт ключа эклиптической кривой (EC) не поддерживается.
 > 
-> **Известная ошибка**. Импорт целевого ключа RSA 4000 из Luna HSM поддерживается только при использовании встроенного по 7.4.0 или более поздней версии.
+> **Известная проблема**. Импорт целевого 4096-разрядного ключа RSA из модулей HSM Luna поддерживается только при использовании встроенного ПО версии 7.4.0 или более поздней.
 
-### <a name="step-4-transfer-your-key-to-azure-key-vault"></a>Шаг 4. Перенос ключа в Azure Key Vault
+### <a name="step-4-transfer-your-key-to-azure-key-vault"></a>Шаг 4. Передача ключа в Azure Key Vault
 
-Чтобы завершить импорт ключа, перенесите пакет обмена ключами (BYOK-файл) с отключенного компьютера на компьютер, подключенный к Интернету. Используйте команду [AZ keyvault Key Import](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-import) , чтобы передать файл BYOK в модуль HSM Key Vault.
+Чтобы завершить импорт ключа, перенесите пакет обмена ключами (файл BYOK) с отключенного компьютера на компьютер, подключенный к Интернету. Чтобы передать файл BYOK в HSM Key Vault, используйте команду [az keyvault key import](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-import).
 
 ```azurecli
 az keyvault key import --vault-name ContosoKeyVaultHSM --name ContosoFirstHSMkey --byok-file KeyTransferPackage-ContosoFirstHSMkey.byok
 ```
 
-Если отправка прошла успешно, Azure CLI отображает свойства импортированного ключа.
+Если отправка прошла успешно, в Azure CLI отобразятся свойства импортированного ключа.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь ключ, защищенный с помощью аппаратного модуля безопасности, можно использовать в хранилище ключей. Дополнительные сведения см. в [этой цене и сравнении характеристик](https://azure.microsoft.com/pricing/details/key-vault/).
+Теперь ключ, защищенный с помощью аппаратного модуля безопасности, можно использовать в хранилище ключей. Дополнительные сведения см. на [этой странице цен и сравнения характеристик](https://azure.microsoft.com/pricing/details/key-vault/).
 
 
 

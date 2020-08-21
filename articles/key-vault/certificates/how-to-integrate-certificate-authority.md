@@ -7,15 +7,15 @@ manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: certificates
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 06/02/2020
 ms.author: sebansal
-ms.openlocfilehash: 7627625a917a8f652da62d4197368f023ad8c110
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 01383acad9f221e376f814ecf99794eb0431d0cd
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964504"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88588931"
 ---
 # <a name="integrating-key-vault-with-digicert-certificate-authority"></a>Интеграция Key Vault с центром сертификации DigiCert
 
@@ -105,7 +105,7 @@ New-AzKeyVault -Name 'Contoso-Vaultname' -ResourceGroupName 'ContosoResourceGrou
 
 ```azurepowershell-interactive
 $accountId = "myDigiCertCertCentralAccountID"
-$org = New-AzureKeyVaultCertificateOrganizationDetails -Id OrganizationIDfromDigiCertAccount
+$org = New-AzKeyVaultCertificateOrganizationDetails -Id OrganizationIDfromDigiCertAccount
 $secureApiKey = ConvertTo-SecureString DigiCertCertCentralAPIKey -AsPlainText –Force
 $issuerName = "DigiCertCA"
 ```
@@ -131,6 +131,16 @@ Add-AzKeyVaultCertificate -VaultName "Contoso-Vaultname" -Name "ExampleCertifica
  ![Свойства сертификатов](../media/certificates/how-to-integrate-certificate-authority/certificate-operation-select.png)
 
 Дополнительные сведения о работе с сертификатами см. в [справочнике по работе с Azure Key Vault с помощью REST API](/rest/api/keyvault). Сведения об установке разрешений см. в статьях [Vaults — Create Or Update](/rest/api/keyvault/vaults/createorupdate) (Хранилища. Создание или обновление) и [Vaults — Update Access Policy](/rest/api/keyvault/vaults/updateaccesspolicy) (Хранилища. Обновление политики доступа).
+
+## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+
+- Можно ли создать групповой сертификат DigiCert посредством KeyVault? 
+   Да. Это зависит от того, как настроена учетная запись DigiCert.
+- Если мы хотим создать сертификат EV, что нужно указать? 
+   При создании сертификата выберите "Расширенная конфигурация политики", а затем укажите тип сертификата. Поддерживаемые значения: OV-SSL, EV-SSL.
+- Существует ли задержка при создании сертификата DigiCert посредством интеграции по сравнению с получением сертификата напрямую через DigiCert?
+   Нет. При создании сертификата задержка может возникнуть в процессе проверки, так как она зависит от процесса DigiCert.
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

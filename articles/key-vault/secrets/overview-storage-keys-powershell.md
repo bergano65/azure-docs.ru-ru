@@ -1,73 +1,73 @@
 ---
 title: 'Версия PowerShell: учетная запись хранения, управляемая с помощью Azure Key Vault'
-description: Функция управляемой учетной записи хранения обеспечивает тесную интеграцию между Azure Key Vault и учетной записью хранения Azure.
-ms.topic: conceptual
+description: Функция управляемой учетной записи хранения обеспечивает простую интеграцию между Azure Key Vault и учетной записью хранения Azure.
+ms.topic: tutorial
 ms.service: key-vault
 ms.subservice: secrets
 author: msmbaldwin
 ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/10/2019
-ms.openlocfilehash: 87dc1ccb887638226607a1e398c7532de8d2c94f
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
-ms.translationtype: MT
+ms.openlocfilehash: 8e8479179aa74f2fb2ead41dec28d247de9657c3
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534538"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88585106"
 ---
-# <a name="manage-storage-account-keys-with-key-vault-and-azure-powershell"></a>Управление ключами учетной записи хранения с помощью Key Vault и Azure PowerShell
+# <a name="manage-storage-account-keys-with-key-vault-and-azure-powershell"></a>Управление ключами учетной записи хранения с помощью Key Vault и Azure PowerShell
 
-Учетная запись хранения Azure использует учетные данные, состоящие из имени учетной записи и ключа. Ключ создается автоматически и используется как пароль, а не как криптографический ключ. Key Vault управляет ключами учетной записи хранения путем периодического повторного создания их в учетной записи хранения и предоставляет маркеры подписанного общего доступа для делегированного доступа к ресурсам в вашей учетной записи хранения.
+Учетная запись хранения Azure использует учетные данные, состоящие из имени учетной записи и ключа. Ключ генерируется автоматически и служит скорее паролем, чем криптографическим ключом. Key Vault управляет ключами учетной записи хранения, периодически создавая их заново в учетной записи хранения, и предоставляет маркеры подписанного URL-адреса в случае делегированного доступа к ресурсам в учетной записи хранения.
 
-Вы можете использовать функцию ключа управляемой учетной записи хранения Key Vault, чтобы перечислить ключи (синхронизировать) с помощью учетной записи хранения Azure, а также периодически создавать их (циклически переключать). Вы можете управлять ключами как для учетных записей хранения, так и для классических учетных записей хранения.
+С помощью функции ключа управляемой учетной записи хранения Key Vault можно перечислять (синхронизировать) ключи с учетными записями хранения Azure и периодически повторно создавать (заменять) ключи. Вы можете управлять ключами как для учетных записей хранения, так и для классических учетных записей хранения.
 
-При использовании функции ключа управляемой учетной записи хранения учитывайте следующие моменты.
+При использовании функции ключей для управляемой учетной записи хранения следует учитывать следующие моменты:
 
-- Значения ключа никогда не возвращаются в ответ на вызывающий объект.
-- Ключи учетной записи хранения должны управлять только Key Vault. Не управляйте ключами самостоятельно и Избегайте конфликтов с Key Vault процессами.
-- Только один объект Key Vault должен управлять ключами учетной записи хранения. Не разрешать управление ключами из нескольких объектов.
-- Вы можете запросить Key Vault управления учетной записью хранения с помощью субъекта-пользователя, но не с субъектом-службой.
-- Повторное создание ключей с помощью только Key Vault. Не создавайте повторно ключи своей учетной записи хранения вручную.
+- Значения ключей никогда не возвращаются в ответе вызывающему объекту.
+- Управлять ключами учетной записи хранения должно только решение Key Vault. Не управляйте ключами самостоятельно и избегайте конфликтов с процессами Key Vault.
+- Управлять ключами учетной записи хранения должен только один объект Key Vault. Не разрешайте управление ключами из нескольких объектов.
+- По запросу можно настроить хранилище Key Vault так, чтобы оно управляло учетной записью хранения с помощью субъекта-пользователя, а не субъекта-службы.
+- Создавайте ключи повторно только с помощью Key Vault. Не создавайте повторно ключи своей учетной записи хранения вручную.
 
-Мы рекомендуем использовать интеграцию службы хранилища Azure с Azure Active Directory (Azure AD), облачной службой управления удостоверениями и доступом Майкрософт. Интеграция Azure AD доступна для [больших двоичных объектов и очередей Azure](../../storage/common/storage-auth-aad.md), а также предоставляет доступ на основе маркеров OAuth2 к службе хранилища Azure (как Azure Key Vault).
+Мы рекомендуем использовать интеграцию службы хранилища Azure с Azure Active Directory (Azure AD), облачной службой корпорации Майкрософт для управления удостоверениями и доступом. Интеграция с Azure AD доступна для [BLOB-объектов и очередей Azure](../../storage/common/storage-auth-aad.md). Она обеспечивает доступ к службе хранилища Azure на основе токенов OAuth2 (точно так же, как Azure Key Vault).
 
-Azure AD позволяет проверять подлинность клиентского приложения с помощью удостоверения приложения или пользователя, а не учетных данных учетной записи хранения. Вы можете использовать [управляемое удостоверение Azure AD](/azure/active-directory/managed-identities-azure-resources/) при запуске в Azure. Управляемые удостоверения изменяют необходимость проверки подлинности клиента и сохраняют учетные данные в приложении или вместе с ним.
+Azure AD позволяет проверять подлинность клиентского приложения, используя удостоверение приложения или пользователя вместо учетных данных учетной записи хранения. Вы можете использовать [управляемое удостоверение Azure AD](/azure/active-directory/managed-identities-azure-resources/) при запуске в Azure. Управляемые удостоверения устраняют необходимость проверки подлинности клиента и хранения учетных данных в приложении или вместе с ним.
 
-Azure AD использует управление доступом на основе ролей (RBAC) для управления авторизацией, которая также поддерживается Key Vault.
+Для управления авторизацией, которая также поддерживается Key Vault, Azure AD использует управление доступом на основе ролей (RBAC).
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="service-principal-application-id"></a>Идентификатор приложения субъекта-службы
 
-Клиент Azure AD предоставляет каждому зарегистрированному приложению субъект- [службу](/azure/active-directory/develop/developer-glossary#service-principal-object). Субъект-служба выступает в качестве идентификатора приложения, который используется во время настройки авторизации для доступа к другим ресурсам Azure через RBAC.
+Арендатор Azure AD предоставляет каждому зарегистрированному приложению [субъект-службу](/azure/active-directory/develop/developer-glossary#service-principal-object). Субъект-служба выступает в качестве идентификатора приложения, который используется во время настройки авторизации для доступа к другим ресурсам Azure с использованием RBAC.
 
-Key Vault — это приложение Майкрософт, которое предварительно зарегистрировано во всех клиентах Azure AD. Key Vault регистрируется в одном и том же ИДЕНТИФИКАТОРе приложения в каждом облаке Azure.
+Key Vault — это приложение Майкрософт, которое предварительно зарегистрировано во всех клиентах Azure AD. Key Vault регистрируется с одним и тем же идентификатором приложения в каждом облаке Azure.
 
-| Клиенты | Облако | Идентификатор приложения |
+| Клиенты | Cloud | Идентификатор приложения |
 | --- | --- | --- |
-| Azure AD | Azure для государственных организаций | `7e7c393b-45d0-48b1-a35e-2905ddf8183c` |
-| Azure AD | общедоступный пиринг Azure; | `cfa8b339-82a2-471a-a3c9-0fc0be7a4093` |
+| Azure AD | Azure для государственных организаций | `7e7c393b-45d0-48b1-a35e-2905ddf8183c` |
+| Azure AD | общедоступный пиринг Azure; | `cfa8b339-82a2-471a-a3c9-0fc0be7a4093` |
 | Другое  | Любой | `cfa8b339-82a2-471a-a3c9-0fc0be7a4093` |
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством необходимо сначала выполнить следующие действия.
+Для работы с этим руководством сначала вам следует выполнить перечисленные ниже действия.
 
 - [Установите модуль Azure PowerShell](/powershell/azure/install-az-ps?view=azps-2.6.0).
-- [Создание хранилища ключей](quick-create-powershell.md)
-- [Создайте учетную запись хранения Azure](../../storage/common/storage-account-create.md?tabs=azure-powershell). Имя учетной записи хранения должно содержать только строчные буквы и цифры. Длина имени должна составлять от 3 до 24 символов.
+- [Создайте хранилище ключей.](quick-create-powershell.md)
+- [Создайте учетную запись хранения Azure](../../storage/common/storage-account-create.md?tabs=azure-powershell). В имени учетной записи хранения должны использоваться только строчные буквы и цифры. Имя должно содержать от 3 до 24 знаков.
       
 
 ## <a name="manage-storage-account-keys"></a>Управление ключами учетной записи хранения
 
 ### <a name="connect-to-your-azure-account"></a>Подключение к учетной записи Azure
 
-Проверьте подлинность сеанса PowerShell с помощью командлета [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) . 
+Проверьте подлинность сеанса PowerShell с помощью командлета [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0). 
 
 ```azurepowershell-interactive
 Connect-AzAccount
 ```
-Если у вас несколько подписок Azure, их можно перечислить с помощью командлета [Get-азсубскриптион](/powershell/module/az.accounts/get-azsubscription?view=azps-2.5.0) и указать подписку, которую вы хотите использовать с командлетом [Set-азконтекст](/powershell/module/az.accounts/set-azcontext?view=azps-2.5.0) . 
+Если у вас несколько подписок Azure, можно перечислить их с помощью командлета [Get-AzSubscription](/powershell/module/az.accounts/get-azsubscription?view=azps-2.5.0) и указать подписку, которую необходимо использовать, с помощью командлета [Set-AzContext](/powershell/module/az.accounts/set-azcontext?view=azps-2.5.0). 
 
 ```azurepowershell-interactive
 Set-AzContext -SubscriptionId <subscriptionId>
@@ -75,9 +75,9 @@ Set-AzContext -SubscriptionId <subscriptionId>
 
 ### <a name="set-variables"></a>Задание переменных
 
-Сначала задайте переменные, которые будут использоваться командлетами PowerShell, как описано ниже. Не забудьте обновить <YourResourceGroupName> <YourStorageAccountName> заполнители, и, <YourKeyVaultName> а также присвоить параметру $keyVaultSpAppId значение `cfa8b339-82a2-471a-a3c9-0fc0be7a4093` (как указано в [идентификаторе приложения субъекта-службы](#service-principal-application-id)выше).
+Сначала задайте переменные, которые будут использоваться командлетами PowerShell на последующих этапах. Не забудьте обновить заполнители <YourResourceGroupName>, <YourStorageAccountName> и <YourKeyVaultName>, а также задать для $keyVaultSpAppId значение `cfa8b339-82a2-471a-a3c9-0fc0be7a4093` (как указано выше в разделе [Идентификатор приложения субъекта-службы](#service-principal-application-id)).
 
-Мы также будем Azure PowerShell использовать командлеты [Get-азконтекст](/powershell/module/az.accounts/get-azcontext?view=azps-2.6.0) и [Get-АЗСТОРАЖЕАККАУНТ](/powershell/module/az.storage/get-azstorageaccount?view=azps-2.6.0) для получения идентификатора пользователя и контекста учетной записи хранения Azure.
+Мы также будем использовать командлеты Azure PowerShell [Get-AzContext](/powershell/module/az.accounts/get-azcontext?view=azps-2.6.0) и [Get-AzStorageAccount](/powershell/module/az.storage/get-azstorageaccount?view=azps-2.6.0), чтобы получить идентификатор пользователя и контекст учетной записи хранения Azure.
 
 ```azurepowershell-interactive
 $resourceGroupName = <YourResourceGroupName>
@@ -94,14 +94,14 @@ $storageAccount = Get-AzStorageAccount -ResourceGroupName $resourceGroupName -St
 
 ```
 >[!Note]
-> Для классической учетной записи хранения используйте "основной" и "дополнительный" для $storageAccountKey <br>
-> Используйте "Get-Азресаурце-Name" Классиксторажеаккаунтнаме "-ResourceGroupName $resourceGroupName" вместо Оф'жет-Азсторажеаккаунт "для классической учетной записи хранения
+> Для классической учетной записи хранения в качестве значения $storageAccountKey используйте "primary" и "secondary". <br>
+> Вместо "Get-AzStorageAccount" для классической учетной записи хранения используйте "Get-AzResource -Name "ClassicStorageAccountName" -ResourceGroupName $resourceGroupName".
 
-### <a name="give-key-vault-access-to-your-storage-account"></a>Предоставление Key Vault доступа к учетной записи хранения
+### <a name="give-key-vault-access-to-your-storage-account"></a>Предоставление доступа Key Vault к учетной записи хранения
 
-Прежде чем приложение Key Vault сможет получить доступ к ключам учетной записи хранения и возможность управления ими, вы должны авторизовать его доступ к вашей учетной записи хранения. Приложению Key Vault нужны разрешения для *перечисления* и *повторного создания* ключей для учетной записи хранения. Эти разрешения включены с помощью встроенной [роли службы оператора ключа учетной записи хранения](/azure/role-based-access-control/built-in-roles#storage-account-key-operator-service-role)роли Azure. 
+Прежде чем приложение Key Vault сможет получить доступ к ключам учетной записи хранения и возможность управления ими, вы должны авторизовать его доступ к вашей учетной записи хранения. Приложению Key Vault нужны разрешения для *перечисления* и *повторного создания* ключей для учетной записи хранения. Эти разрешения включаются с помощью встроенной роли Azure [Роль службы оператора ключей учетных записей хранения](/azure/role-based-access-control/built-in-roles#storage-account-key-operator-service-role). 
 
-Назначьте эту роль субъекту-службе Key Vault, ограничивая область до учетной записи хранения с помощью командлета Azure PowerShell [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment?view=azps-2.6.0) .
+Назначьте эту роль субъекту-службе Key Vault, ограничив область учетной записью хранения с помощью командлета Azure PowerShell [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment?view=azps-2.6.0).
 
 ```azurepowershell-interactive
 # Assign Azure role "Storage Account Key Operator Service Role" to Key Vault, limiting the access scope to your storage account. For a classic storage account, use "Classic Storage Account Key Operator Service Role." 
@@ -126,7 +126,7 @@ CanDelegate        : False
 
 ### <a name="give-your-user-account-permission-to-managed-storage-accounts"></a>Предоставление разрешения учетной записи пользователя для управляемых учетных записей хранения
 
-Используйте командлет Azure PowerShell [Set-азкэйваултакцессполици](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy?view=azps-2.6.0) , чтобы обновить политику доступа Key Vault и предоставить учетной записи хранения разрешения на доступ к ней.
+Используйте командлет Azure PowerShell [Set-AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy?view=azps-2.6.0), чтобы обновить политику доступа Key Vault и предоставить разрешения учетной записи хранения учетной записи пользователя.
 
 ```azurepowershell-interactive
 # Give your user principal access to all storage account permissions, on your Key Vault instance
@@ -138,7 +138,7 @@ Set-AzKeyVaultAccessPolicy -VaultName $keyVaultName -UserPrincipalName $userId -
 
 ### <a name="add-a-managed-storage-account-to-your-key-vault-instance"></a>Добавление управляемой учетной записи хранения к экземпляру Key Vault
 
-Используйте командлет Azure PowerShell [Add-азкэйваултманажедсторажеаккаунт](/powershell/module/az.keyvault/add-azkeyvaultmanagedstorageaccount?view=azps-2.6.0) , чтобы создать управляемую учетную запись хранения в экземпляре Key Vault. Переключатель `-DisableAutoRegenerateKey` НЕ указывает на повторное создание ключей учетной записи хранения.
+Используйте командлет Azure PowerShell [Add-AzKeyVaultManagedStorageAccount](/powershell/module/az.keyvault/add-azkeyvaultmanagedstorageaccount?view=azps-2.6.0), чтобы создать управляемую учетную запись хранения в экземпляре Key Vault. Переключатель `-DisableAutoRegenerateKey` НЕ указывает на повторное создание ключей учетной записи хранения.
 
 ```azurepowershell-interactive
 # Add your storage account to your Key Vault's managed storage accounts
@@ -164,7 +164,7 @@ Tags                :
 
 ### <a name="enable-key-regeneration"></a>Включение повторного создания ключа
 
-Чтобы периодически Key Vault повторно создать ключи учетной записи хранения, можно использовать командлет Azure PowerShell [Add-азкэйваултманажедсторажеаккаунт](/powershell/module/az.keyvault/add-azkeyvaultmanagedstorageaccount?view=azps-2.6.0) , чтобы задать период повторного создания. В этом примере мы устанавливаем период повторного создания в три дня. Когда вы намерены время смены, Key Vault повторно создает ключ, который неактивен, а затем устанавливает вновь созданный ключ как активный. Только один из ключей используется для выпусков маркеров SAS в один момент времени. Это активный ключ.
+Чтобы хранилище Key Vault периодически повторно создавало ключи учетной записи хранения, можно использовать командлет Azure PowerShell [Add-AzKeyVaultManagedStorageAccount](/powershell/module/az.keyvault/add-azkeyvaultmanagedstorageaccount?view=azps-2.6.0), задающий период повторного создания. В этом примере задан трехдневный период повторного создания. Когда настанет время замены, Key Vault повторно создаст ключ. Сначала он будет неактивен, но затем Key Vault задаст его в качестве активного. В любой момент времени для выпусков маркеров SAS используется только один ключ. Именно он и является активным.
 
 ```azurepowershell-interactive
 $regenPeriod = [System.Timespan]::FromDays(3)
@@ -188,22 +188,22 @@ Updated             : 11/19/2018 11:54:47 PM
 Tags                : 
 ```
 
-## <a name="shared-access-signature-tokens"></a>Токены подписи общего доступа
+## <a name="shared-access-signature-tokens"></a>Маркер подписанного URL-адреса
 
-Вы также можете попросить Key Vault создать маркеры подписи общего доступа. Подпись общего доступа обеспечивает делегированный доступ к ресурсам в вашей учетной записи хранения. Вы можете предоставить клиентам доступ к ресурсам в вашей учетной записи хранения без предоставления общего доступа к ключам учетной записи. Подписанный URL-доступ обеспечивает безопасный способ предоставления общего доступа к ресурсам хранилища без ущерба для ключей учетной записи.
+Key Vault также может создавать маркеры подписанного URL-адреса. Подпись общего доступа обеспечивает делегированный доступ к ресурсам в вашей учетной записи хранения. Вы можете предоставить клиентам доступ к ресурсам в учетной записи хранения, не предоставляя общий доступ к ключам учетной записи. Подписанный URL-адрес обеспечивает возможность безопасно предоставлять общий доступ к ресурсам хранилища, не раскрывая ключи учетной записи.
 
-Команды в этом разделе выполняются в следующих действиях.
+С помощью команд в этом разделе можно выполнить следующие действия:
 
-- Задайте определение подписанного URL для общего доступа. 
-- Создание маркера подписанного URL-имени учетной записи для служб BLOB-объектов, файлов, таблиц и очередей. Маркер создается для служб типов ресурсов, контейнеров и объектов. Маркер создается со всеми разрешениями, по протоколу HTTPS и с указанными датами начала и окончания.
-- Задайте определение подписанного общего доступа к хранилищу Key Vault в хранилище. Определение содержит универсальный код ресурса (URI) шаблона созданного маркера подписи общего доступа. Определение имеет тип подписанного общего доступа `account` и является допустимым в течение N дней.
-- Убедитесь, что подписанный URL-доступ сохранен в хранилище ключей в качестве секрета.
+- Задать определение подписанного URL-адреса учетной записи. 
+- Создать маркер подписанного URL-адреса учетной записи для служб BLOB-объектов, файлов, таблиц и очередей. Токен создается для служб, контейнеров и объектов типов ресурсов по протоколу HTTPS со всеми разрешениями и заданными датами начала и окончания.
+- Задать в хранилище определение подписанного URL-адреса управляемого хранилища Key Vault. Определение содержит шаблон универсального кода ресурса (URI) созданного маркера подписанного URL-адреса. Этот подписанный URL-адрес относится к типу `account` и действителен в течение N дней.
+- Убедиться, что подписанный URL-адрес сохранен в хранилище ключей в качестве секрета.
 - 
 ### <a name="set-variables"></a>Задание переменных
 
-Сначала задайте переменные, которые будут использоваться командлетами PowerShell, как описано ниже. Не забудьте обновить <YourStorageAccountName> <YourKeyVaultName> заполнители и.
+Сначала задайте переменные, которые будут использоваться командлетами PowerShell на последующих этапах. Не забудьте обновить заполнители <YourStorageAccountName> и <YourKeyVaultName>.
 
-Мы также будем использовать командлеты [New-азсторажеконтекст](/powershell/module/az.storage/new-azstoragecontext?view=azps-2.6.0) Azure PowerShell, чтобы получить контекст учетной записи хранения Azure.
+Мы также будем использовать командлет Azure PowerShell [New-AzStorageContext](/powershell/module/az.storage/new-azstoragecontext?view=azps-2.6.0), чтобы получить идентификатор пользователя и контекст учетной записи хранения Azure.
 
 ```azurepowershell-interactive
 $storageAccountName = <YourStorageAccountName>
@@ -212,9 +212,9 @@ $keyVaultName = <YourKeyVaultName>
 $storageContext = New-AzStorageContext -StorageAccountName $storageAccountName -Protocol Https -StorageAccountKey Key1 #(or "Primary" for Classic Storage Account)
 ```
 
-### <a name="create-a-shared-access-signature-token"></a>Создание маркера подписи общего доступа
+### <a name="create-a-shared-access-signature-token"></a>Создание маркера подписанного URL-адреса
 
-Создайте определение подписи общего доступа с помощью командлетов Azure PowerShell [New-азсторажеаккаунтсастокен](/powershell/module/az.storage/new-azstorageaccountsastoken?view=azps-2.6.0) .
+Маркер подписанного URL-адреса можно создать с помощью командлета Azure PowerShell [New-AzStorageAccountSASToken](/powershell/module/az.storage/new-azstorageaccountsastoken?view=azps-2.6.0).
  
 ```azurepowershell-interactive
 $start = [System.DateTime]::Now.AddDays(-1)
@@ -222,25 +222,25 @@ $end = [System.DateTime]::Now.AddMonths(1)
 
 $sasToken = New-AzStorageAccountSasToken -Service blob,file,Table,Queue -ResourceType Service,Container,Object -Permission "racwdlup" -Protocol HttpsOnly -StartTime $start -ExpiryTime $end -Context $storageContext
 ```
-Значение $sasToken будет выглядеть примерно так.
+Значение $sasToken будет аналогичным этому.
 
 ```console
 ?sv=2018-11-09&sig=5GWqHFkEOtM7W9alOgoXSCOJO%2B55qJr4J7tHQjCId9S%3D&spr=https&st=2019-09-18T18%3A25%3A00Z&se=2019-10-19T18%3A25%3A00Z&srt=sco&ss=bfqt&sp=racupwdl
 ```
 
-### <a name="generate-a-shared-access-signature-definition"></a>Создание определения подписи общего доступа
+### <a name="generate-a-shared-access-signature-definition"></a>Создание определения подписанного URL-адреса
 
-Для создания определения подписанного URL-доступа используйте командлет Azure PowerShell [Set-азкэйваултманажедсторажесасдефинитион](/powershell/module/az.keyvault/set-azkeyvaultmanagedstoragesasdefinition?view=azps-2.6.0) .  Можно указать имя для `-Name` параметра.
+Чтобы создать определение подписанного URL-адреса, используйте командлет Azure PowerShell [Set-AzKeyVaultManagedStorageSasDefinition](/powershell/module/az.keyvault/set-azkeyvaultmanagedstoragesasdefinition?view=azps-2.6.0).  С помощью параметра `-Name` можно задать выбранное имя.
 
 ```azurepowershell-interactive
 Set-AzKeyVaultManagedStorageSasDefinition -AccountName $storageAccountName -VaultName $keyVaultName -Name <YourSASDefinitionName> -TemplateUri $sasToken -SasType 'account' -ValidityPeriod ([System.Timespan]::FromDays(30))
 ```
 
-### <a name="verify-the-shared-access-signature-definition"></a>Проверка определения подписи общего доступа
+### <a name="verify-the-shared-access-signature-definition"></a>Проверка определения подписанного URL-адреса
 
-Чтобы убедиться, что определение подписанного URL-доступа сохранено в хранилище ключей, воспользуйтесь командлетом Azure PowerShell [Get-азкэйваултсекрет](/powershell/module/az.keyvault/get-azkeyvaultsecret?view=azps-2.6.0) .
+Убедиться в том, что определение подписанного URL-адреса сохранено в хранилище ключей, можно с помощью командлета Azure PowerShell [Get-AzKeyVaultSecret](/powershell/module/az.keyvault/get-azkeyvaultsecret?view=azps-2.6.0).
 
-Сначала найдите определение подписи общего доступа в хранилище ключей.
+Сначала найдите определение подписанного URL-адреса в хранилище ключей.
 
 ```azurepowershell-interactive
 Get-AzKeyVaultSecret -VaultName <YourKeyVaultName>
@@ -256,7 +256,7 @@ Content Type : application/vnd.ms-sastoken-storage
 Tags         :
 ```
 
-Теперь можно использовать командлет [Get-азкэйваултсекрет](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-show) и `Name` свойство Secret для просмотра содержимого этого секрета.
+Теперь можно воспользоваться командлетом [Get-AzKeyVaultSecret](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-show) и свойством `Name` секрета для просмотра содержимого этого секрета.
 
 ```azurepowershell-interactive
 $secret = Get-AzKeyVaultSecret -VaultName <YourKeyVaultName> -Name <SecretName>
@@ -264,7 +264,7 @@ $secret = Get-AzKeyVaultSecret -VaultName <YourKeyVaultName> -Name <SecretName>
 Write-Host $secret.SecretValueText
 ```
 
-В выходных данных этой команды будет показана строка определения SAS.
+В выходных данных этой команды будет отображаться строка определения SAS.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

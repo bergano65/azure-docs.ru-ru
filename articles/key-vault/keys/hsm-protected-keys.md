@@ -1,5 +1,5 @@
 ---
-title: Создание ключей, защищенных с АППАРАТным модулем безопасности & — Azure Key Vault
+title: Создание ключей, защищенных модулем HSM, и их передача — Azure Key Vault
 description: Данная статья поможет вам подготовить и создать ваши собственные ключи, защищенные аппаратным модулем безопасности, а затем передать их в хранилище ключей Azure. Также известные как собственные ключи или BYOK.
 services: key-vault
 author: amitbapat
@@ -7,40 +7,40 @@ manager: devtiw
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: keys
-ms.topic: conceptual
+ms.topic: tutorial
 ms.date: 05/29/2020
 ms.author: ambapat
-ms.openlocfilehash: ce59fadfcdbb38327ce603197400e9317202d651
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
-ms.translationtype: MT
+ms.openlocfilehash: 76b10dbd9b6d801d93cd5d9704531eb1a6de36a5
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87061090"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88585498"
 ---
 # <a name="import-hsm-protected-keys-to-key-vault"></a>Импорт защищенных модулем HSM ключей в Key Vault
 
-Чтобы обеспечить более высокий уровень защиты при работе с хранилищем ключей Azure, можно импортировать ключи или создать их в аппаратных модулях безопасности (ключи никогда не покидают их пределы). Такой сценарий с использованием собственного ключа часто называется *BYOK*. Azure Key Vault использует семейство nCipher nShield HSM (проверенный FIPS 140-2 уровня 2) для защиты ключей.
+Чтобы обеспечить более высокий уровень защиты при работе с хранилищем ключей Azure, можно импортировать ключи или создать их в аппаратных модулях безопасности (ключи никогда не покидают их пределы). Такой сценарий с использованием собственного ключа часто называется *BYOK*. Для защиты ключей Azure Key Vault использует семейство модулей HSM nCipher nShield (проверенных по стандарту FIPS 140-2 уровня 2).
 
-Эта функция недоступна для Azure для Китая в Китае.
+Эта функция недоступна в Azure для Китая (21Vianet).
 
 > [!NOTE]
 > Дополнительные сведения о хранилище ключей Azure см. в статье [Что такое хранилище ключей Azure?](../general/overview.md)  
 > Указания по началу работы, включая создание хранилища для ключей, защищенных модулем HSM, см. в [этой статье](../general/overview.md).
 
-## <a name="supported-hsms"></a>Поддерживаемые HSM
+## <a name="supported-hsms"></a>Поддерживаемые модули HSM
 
-Передача ключей, защищенных АППАРАТным модулем безопасности, в Key Vault поддерживается с помощью двух различных методов в зависимости от используемого HSM. Используйте приведенную ниже таблицу, чтобы определить, какой метод следует использовать для создания HSM, а затем перенесите собственные ключи с защитой HSM для использования с Azure Key Vault. 
+В зависимости от используемого HSM поддерживается два различных метода передачи ключей, защищенных модулем HSM, в Key Vault. Используйте приведенную ниже таблицу, чтобы определить, какой метод создания следует применять в модулях HSM, а затем перенесите собственные ключи, защищенные модулем HSM, для использования с Azure Key Vault. 
 
-|Имя поставщика|Тип поставщика|Поддерживаемые модели HSM|Поддерживаемый метод обмена ключами HSM|
+|Имя поставщика|Тип поставщика|Поддерживаемые модели модуля HSM|Поддерживаемый метод переноса ключа HSM|
 |---|---|---|---|
-|[nCipher](https://www.ncipher.com/products/key-management/cloud-microsoft-azure)|Производителя<br/>HSM как услуга|<ul><li>Семейство HSM nShield</li><li>nShield как услуга</ul>|**Метод 1.** [nCipher BYOK](hsm-protected-keys-ncipher.md) (с надежной аттестацией для импорта ключей и проверки HSM)<br/>**Метод 2.** [использование нового метода BYOK](hsm-protected-keys-byok.md) |
-|Thales|Изготовитель|<ul><li>Семейство HSM 7 Luna с встроенным по версии 7,3 или более поздней</li></ul>| [Использовать новый метод BYOK](hsm-protected-keys-byok.md)|
-|фортаникс|Производителя<br/>HSM как услуга|<ul><li>Служба управления ключами для самостоятельной защиты (СДКМС)</li><li>Equinix Смарткэй</li></ul>|[Использовать новый метод BYOK](hsm-protected-keys-byok.md)|
-|Драйвер|Изготовитель|Все Ликуидсекурити HSM с<ul><li>Версия встроенного по 2.0.4 или более поздняя</li><li>Встроенное по версии 3,2 или более поздней</li></ul>|[Использовать новый метод BYOK](hsm-protected-keys-byok.md)|
-|криптомасик|ISV (система управления ключами предприятия)|Несколько торговых марок и моделей HSM, включая<ul><li>nCipher</li><li>Thales</li><li>утимако</li></ul>Дополнительные [сведения см. на сайте криптомасик](https://www.cryptomathic.com/azurebyok)|[Использовать новый метод BYOK](hsm-protected-keys-byok.md)|
+|[nCipher](https://www.ncipher.com/products/key-management/cloud-microsoft-azure)|Производитель,<br/>HSM как услуга|<ul><li>Семейство модулей HSM nShield</li><li>nShield как услуга</ul>|**Метод 1.** [BYOK nCipher](hsm-protected-keys-ncipher.md) (с надежной аттестацией для импорта ключей и проверкой HSM)<br/>**Метод 2.** [Использование нового метода BYOK](hsm-protected-keys-byok.md) |
+|Thales|Изготовитель|<ul><li>Семейство HSM 7 Luna со встроенным ПО версии 7.3 или более поздней</li></ul>| [Использование нового метода BYOK](hsm-protected-keys-byok.md)|
+|Fortanix|Производитель,<br/>HSM как услуга|<ul><li>Служба управления ключами для самостоятельной защиты (SDKMS)</li><li>Equinix SmartKey</li></ul>|[Использование нового метода BYOK](hsm-protected-keys-byok.md)|
+|Marvell|Изготовитель|Все модули HSM LiquidSecurity со<ul><li>встроенным ПО версии 2.0.4 или более поздней</li><li>встроенным ПО версии 3.2 или более новой</li></ul>|[Использование нового метода BYOK](hsm-protected-keys-byok.md)|
+|Cryptomathic|ISV (Enterprise Key Management System)|Несколько торговых марок и моделей HSM, в том числе<ul><li>nCipher</li><li>Thales</li><li>Utimaco</li></ul>Дополнительные сведения см. на [сайте Cryptomathic](https://www.cryptomathic.com/azurebyok).|[Использование нового метода BYOK](hsm-protected-keys-byok.md)|
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Следуйте [Key Vault](../general/best-practices.md) рекомендациям по обеспечению безопасности, устойчивости и мониторинга ключей.
-* Полное описание нового метода BYOK см. в [спецификации BYOK](https://docs.microsoft.com/azure/key-vault/keys/byok-specification) .
+* Следуйте [рекомендациям Key Vault](../general/best-practices.md) для обеспечения безопасности, устойчивости и мониторинга ключей.
+* Полное описание нового метода BYOK см. в [спецификации BYOK](https://docs.microsoft.com/azure/key-vault/keys/byok-specification).

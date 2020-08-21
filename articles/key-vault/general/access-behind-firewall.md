@@ -1,21 +1,21 @@
 ---
 title: Доступ к хранилищу ключей под защитой брандмауэра —Azure Key Vault | Документация Майкрософт
-description: Сведения о получении доступа к хранилищу ключей Azure из приложения, защищенного брандмауэром.
+description: Сведения о портах, узлах или IP-адресах, которые нужно открыть, чтобы разрешить доступ к хранилищу ключей клиентскому приложению хранилища ключей за брандмауэром.
 services: key-vault
 author: amitbapat
 manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 08/12/2019
 ms.author: ambapat
-ms.openlocfilehash: db5c35db271f84a88fdc03f4f0178ee1c35f727e
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 1ab5ae7bf9f1d13458e3bbeeec564fe642eb3303
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83834328"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88588734"
 ---
 # <a name="access-azure-key-vault-behind-a-firewall"></a>Доступ к хранилищу ключей Azure из-за брандмауэра
 

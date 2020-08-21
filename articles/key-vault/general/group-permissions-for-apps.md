@@ -1,21 +1,21 @@
 ---
 title: Предоставление приложениям разрешений на доступ к хранилищу ключей Azure — Azure Key Vault | Документация Майкрософт
-description: Узнайте, как нескольким приложениям предоставить разрешение на доступ к хранилищу ключей
+description: Сведения о том, как вручную зарегистрировать субъект-службу и предоставить доступ к Azure Key Vault с помощью политики управления доступом, которая в некоторых случаях является обязательной.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 09/27/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 8369c507ee7a9e11969c17bbaac7c6e31892e196
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: d0607b1adb76fd32ce9f4dc9ebede92c7aa96862
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406271"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88588784"
 ---
 # <a name="provide-key-vault-authentication-with-an-access-control-policy"></a>Обеспечение проверки подлинности Azure Key Vault с помощью политики управления доступом
 
