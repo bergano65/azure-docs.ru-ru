@@ -65,7 +65,7 @@ ms.locfileid: "88716628"
     
     По умолчанию выбран параметр **Выбранные сети** . Если на этой странице не добавлено по крайней мере одно правило брандмауэра IP или виртуальная сеть, доступ к этому пространству имен можно получить через общедоступный Интернет (с помощью ключа доступа).
 
-    :::image type="content" source="./media/service-bus-ip-filtering/default-networking-page.png" alt-text="Страница "Сетевые подключения" — по умолчанию" lightbox="./media/service-bus-ip-filtering/default-networking-page.png":::
+    :::image type="content" source="./media/service-bus-ip-filtering/default-networking-page.png" alt-text="Страница Сетевые подключения — по умолчанию" lightbox="./media/service-bus-ip-filtering/default-networking-page.png":::
     
     Если выбран параметр **все сети** , пространство имен служебной шины принимает подключения с любого IP-адреса (с помощью ключа доступа). То есть, такое значение параметра по умолчанию равноценно правилу, которое принимает диапазон IP-адресов 0.0.0.0/0. 
 
