@@ -2,13 +2,13 @@
 title: Концепция. Интеграция развертывания решения Azure VMware в центральную и периферийную архитектуру
 description: Ознакомьтесь с рекомендациями по интеграции развертывания решения Azure VMware в существующую или новую архитектуру, а также в новой и периферийной архитектурах в Azure.
 ms.topic: conceptual
-ms.date: 06/23/2020
-ms.openlocfilehash: a1ba75369a1d6f19ca7ae1f36107170f219f72d0
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.date: 08/20/2020
+ms.openlocfilehash: deb2756f7e83250ff58836098dc4954ec482fbda
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/20/2020
-ms.locfileid: "88649590"
+ms.locfileid: "88684523"
 ---
 # <a name="integrate-azure-vmware-solution-in-a-hub-and-spoke-architecture"></a>Интеграция решения Azure VMware в центральную и периферийную архитектуру
 
@@ -28,10 +28,7 @@ ms.locfileid: "88649590"
 
 На схеме показан пример развертывания на основе концентратора и периферийного сервера в Azure, подключенного к локальной среде и решению VMware для Azure через ExpressRoute.
 
-:::image type="content" source="./media/hub-spoke/avs-hub-and-spoke-deployment.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании":::
-
-
-
+:::image type="content" source="./media/hub-spoke/avs-hub-and-spoke-deployment.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false":::
 
 Архитектура имеет следующие основные компоненты:
 
@@ -64,12 +61,12 @@ ms.locfileid: "88649590"
 
 * **Поток трафика решения "из локальной среды в Azure VMware"**
 
-  :::image type="content" source="media/hub-spoke/on-prem-to-avs-traffic-flow.png" alt-text="Поток трафика решения "из локальной среды в Azure VMware"":::
+  :::image type="content" source="media/hub-spoke/on-prem-to-avs-traffic-flow.png" alt-text="Поток трафика решения "из локальной среды в Azure VMware"" border="false":::
 
 
 * **Поток трафика виртуальной сети Azure VMware к концентратору**
 
-  :::image type="content" source="media/hub-spoke/avs-to-hub-vnet-traffic-flow.png" alt-text="Поток трафика виртуальной сети Azure VMware к концентратору":::
+  :::image type="content" source="media/hub-spoke/avs-to-hub-vnet-traffic-flow.png" alt-text="Поток трафика виртуальной сети Azure VMware к концентратору" border="false":::
 
 
 Дополнительные сведения о сети решения Azure VMware и понятиях взаимодействия см. в [документации по продукту VMware для Azure](./concepts-networking.md).
@@ -97,7 +94,7 @@ ms.locfileid: "88649590"
 
 Шлюзы приложений Azure версии v1 и v2 были протестированы с веб-приложениями, которые работают на виртуальных машинах Azure VMware в качестве серверного пула. Шлюз приложений в настоящее время является единственным поддерживаемым методом предоставления веб-приложений, выполняющихся на виртуальных машинах Azure VMware в Интернете. Он также может безопасно предоставлять приложения внутренним пользователям.
 
-:::image type="content" source="media/hub-spoke/avs-second-level-traffic-segmentation.png" alt-text="Второй уровень сегментации трафика с помощью групп безопасности сети":::
+:::image type="content" source="media/hub-spoke/avs-second-level-traffic-segmentation.png" alt-text="Второй уровень сегментации трафика с помощью групп безопасности сети" border="false":::
 
 
 ### <a name="jumpbox-and-azure-bastion"></a>Jumpbox и Azure бастиона
@@ -110,7 +107,7 @@ ms.locfileid: "88649590"
 > Не предоставляйте общедоступный IP-адрес виртуальной машине Jumpbox или предоставляйте к общедоступному Интернету порт 3389/TCP. 
 
 
-:::image type="content" source="media/hub-spoke/azure-bastion-hub-vnet.png" alt-text="Виртуальная сеть центра бастиона Azure":::
+:::image type="content" source="media/hub-spoke/azure-bastion-hub-vnet.png" alt-text="Виртуальная сеть центра бастиона Azure" border="false":::
 
 
 ## <a name="azure-dns-resolution-considerations"></a>Рекомендации по разрешению Azure DNS

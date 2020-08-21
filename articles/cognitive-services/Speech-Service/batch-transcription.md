@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/18/2020
+ms.date: 08/20/2020
 ms.author: wolfma
-ms.openlocfilehash: 519a9cdac678e8852bef9bd66e3fbb98278cbb3b
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.openlocfilehash: b30a314977755b94bdcfdf7526d1b9ae61fcf100
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/20/2020
-ms.locfileid: "88660880"
+ms.locfileid: "88689751"
 ---
 # <a name="how-to-use-batch-transcription"></a>Использование записи пакетов
 
@@ -174,7 +174,7 @@ API-интерфейс для транскрипции пакетов подде
 
 ### <a name="storage"></a>Память
 
-Запись пакетов может читать звук из URI Интернета, а также читать звук или записывать записи с помощью [хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview).
+Запись пакетов может читать звук из общедоступного URI Интернета, а также читать звук или записывать записи с помощью URI SAS с [хранилищем BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview).
 
 ## <a name="batch-transcription-result"></a>Результат транскрипции пакета
 
@@ -243,7 +243,7 @@ API-интерфейс для транскрипции пакетов подде
 }
 ```
 
-Результат содержит следующие формы:
+Результат содержит следующие поля:
 
 :::row:::
    :::column span="1":::
@@ -309,7 +309,8 @@ API-интерфейс для транскрипции пакетов подде
 
 ## <a name="best-practices"></a>Рекомендации
 
-Служба транскрипции пакетов может работать с большим количеством отправленных транскрипций. Вы можете запросить состояние ваших транскрипций, используя `GET` для [получения транскрипции](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/GetTranscriptions). Регулярно вызывайте функцию [транскрипции удаления](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/DeleteTranscription) из службы после получения результатов. В качестве альтернативы можно задать `timeToLive` для свойства разумное значение, чтобы обеспечить окончательное удаление результатов.
+Служба транскрипции пакетов может работать с большим количеством отправленных транскрипций. Вы можете запросить состояние транскрипций с помощью [получения](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/GetTranscriptions)сведений о них.
+Регулярно вызывайте функцию [транскрипции удаления](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/DeleteTranscription) из службы после получения результатов. Кроме того `timeToLive` , задайте свойство, чтобы обеспечить окончательное удаление результатов.
 
 ## <a name="sample-code"></a>Образец кода
 

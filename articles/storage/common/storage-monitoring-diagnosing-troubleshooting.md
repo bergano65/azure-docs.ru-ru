@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring
-ms.openlocfilehash: 7af711ebe21c46663ecd8e803b0f636c34c362ee
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 110d39791b3779a30e6541e77c0c6062cd51144c
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87076052"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88688561"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -468,7 +468,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 | Источник | Уровень детализации | Уровень детализации | Идентификатор запроса клиента | Operation Text |
 | --- | --- | --- | --- | --- |
 | Microsoft.Azure.Storage |Сведения |3 |85d077ab -… |Начинается выполнение операции с расположением «Основное» в режиме расположения PrimaryOnly. |
-| Microsoft.Azure.Storage |Сведения |3 |85d077ab -… |Отправка синхронного запроса к <https://domemaildist.blob.core.windows.netazureimblobcontainer/blobCreatedViaSAS.txt?sv=2014-02-14&sr=c&si=mypolicy&sig=OFnd4Rd7z01fIvh%2BmcR6zbudIH2F5Ikm%2FyhNYZEmJNQ%3D&api-version=2014-02-14> |
+| Microsoft.Azure.Storage |Сведения |3 |85d077ab -… |Отправка синхронного запроса к <https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#Synchronous_request> |
 | Microsoft.Azure.Storage |Сведения |3 |85d077ab -… |Waiting for response (Ожидание ответа). |
 | Microsoft.Azure.Storage |Предупреждение |2 |85d077ab -… |При ожидании ответа возникло исключение: Удаленный сервер вернул ошибку: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
 | Microsoft.Azure.Storage |Сведения |3 |85d077ab -… |Response received. Код состояния = 403; идентификатор запроса = 9d67c64a-64ed-4b0d-9515-3b14bbcdc63d; Content-MD5 = ; ETag = . |

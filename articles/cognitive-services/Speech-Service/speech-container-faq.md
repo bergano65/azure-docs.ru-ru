@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/24/2020
 ms.author: aahi
-ms.openlocfilehash: e6b90e17c96f7636fa509e31354f9413b312803f
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 10a75d19b7fb134b8e7498c422742e00f6475da5
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87289021"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88690210"
 ---
 # <a name="speech-service-containers-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о контейнерах речевых служб
 
@@ -95,7 +95,7 @@ Cannot find Scan4_llvm__mcpu_skylake_avx512 in cache, using JIT...
 <b>Почему пунктуация в транскрипции отсутствует?</b>
 </summary>
 
-**Ответ.** `speech_recognition_language=<YOUR_LANGUAGE>`Должен быть явно настроен в запросе, если они используют клиента.
+**Ответ.** `speech_recognition_language=<YOUR_LANGUAGE>` Должен быть явно настроен в запросе, если они используют клиента.
 
 Пример:
 
@@ -305,7 +305,7 @@ WebSocket
 - Углекислые утверждения срабатывают в сборках выпуска (завершение процесса).
 
 Чтобы решить проблему, переключитесь на использование непрерывного распознавания в коде или (быстрее) подключитесь либо к интерактивным, либо к непрерывным конечным точкам в контейнере.
-Для кода задайте для конечной точки значение <узел: порт>/Speech/Recognition/Interactive/cognitiveservices/v1.
+Для кода задайте для конечной точки значение `host:port` /Speech/Recognition/Interactive/cognitiveservices/v1.
 
 Различные режимы см. в разделе речевые режимы. см. ниже:
 
@@ -559,7 +559,7 @@ auto result = synthesizer->SpeakTextAsync("{{{text2}}}").get();
 
 В C# для включения диктовки вызовите `SpeechConfig.EnableDictation()` функцию.
 
-### <a name="fromendpoint-apis"></a>`FromEndpoint`Интерфейсы
+### <a name="fromendpoint-apis"></a>`FromEndpoint` Интерфейсы
 | Язык | Сведения об API |
 |----------|:------------|
 | C++ | <a href="https://docs.microsoft.com/en-us/cpp/cognitive-services/speech/speechconfig#fromendpoint" target="_blank">`SpeechConfig::FromEndpoint` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
@@ -579,7 +579,7 @@ auto result = synthesizer->SpeakTextAsync("{{{text2}}}").get();
 
 **Ответ.** Есть новый `FromHost` API. Это не приводит к замене или изменению существующих интерфейсов API. Он просто добавляет альтернативный способ создания конфигурации речи с помощью пользовательского узла.
 
-### <a name="fromhost-apis"></a>`FromHost`Интерфейсы
+### <a name="fromhost-apis"></a>`FromHost` Интерфейсы
 
 | Язык | Сведения об API |
 |--|:-|
@@ -597,8 +597,8 @@ auto result = synthesizer->SpeakTextAsync("{{{text2}}}").get();
 - Если контейнер работает на удаленном сервере, используйте имя узла или IPv4-адрес этого сервера.
 
 Примеры параметров узла для преобразования речи в текст:
-- `ws://localhost:5000`— небезопасное подключение к локальному контейнеру через порт 5000
-- `ws://some.host.com:5000`— небезопасное подключение к контейнеру, выполняющемуся на удаленном сервере;
+- `ws://localhost:5000` — небезопасное подключение к локальному контейнеру через порт 5000
+- `ws://some.host.com:5000` — небезопасное подключение к контейнеру, выполняющемуся на удаленном сервере;
 
 Примеры Python, приведенные выше, но используйте `host` параметр вместо `endpoint` :
 

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/22/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 2a69bc40090e74ad5885c2576c040693f90d5d03
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5c2fb330149d3e6530e7cb0fc3350d5db3fa24cf
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87097773"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88683884"
 ---
 # <a name="tutorial-for-configuring-experian-with-azure-active-directory-b2c"></a>Руководство по настройке Experian с помощью Azure Active Directory B2C
 
@@ -36,7 +36,7 @@ ms.locfileid: "87097773"
 - Страна или регион
 - номер телефона;
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы приступить к работе, вам потребуется:
 
@@ -129,7 +129,7 @@ ms.locfileid: "87097773"
 | {your_tenant_extensions_app_objectid}                  | Идентификатор объекта приложения хранилища вашего клиента                                   | 01234567-89ab-cdef-0123-456789abcdef         |
 | {your_api_username_key_name}                           | Имя созданного [здесь](#part-4---create-api-policy-keys) ключа имени пользователя             | B2C \_ 1A \_ рестапиусернаме                     |
 | {your_api_password_key_name}                           | Имя созданного [здесь](#part-4---create-api-policy-keys) ключа пароля             | B2C \_ 1A \_ рестапипассворд                     |
-| {your_app_service_URL}                                 | URL-адрес настроенной службы приложений                                             | <https://yourapp.azurewebsites.net>          |
+| {your_app_service_URL}                                 | URL-адрес настроенной службы приложений                                             | `https://yourapp.azurewebsites.net`          |
 
 ### <a name="part-6---configure-the-azure-ad-b2c-policy"></a>Часть 6. Настройка политики Azure AD B2C
 
@@ -149,9 +149,9 @@ ms.locfileid: "87097773"
 
 3. Выберите **запустить поток пользователя** и выберите параметры:
 
-   А. **Приложение**: выберите зарегистрированное приложение (пример — JWT)
+   а. **Приложение**: выберите зарегистрированное приложение (пример — JWT)
 
-   Б. **URL-адрес ответа**: выберите **URL-адрес перенаправления**
+   b. **URL-адрес ответа**: выберите **URL-адрес перенаправления**
 
    c. Выберите **Выполнить поток пользователя**.
 

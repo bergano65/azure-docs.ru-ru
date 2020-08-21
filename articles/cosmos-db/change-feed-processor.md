@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/13/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 8353b7290f0e0073faf93b4ea23bcc0ba50bb89e
-ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+ms.openlocfilehash: faf46a90a04e35eb041deb31913980575b1e0d28
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88236477"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88688051"
 ---
 # <a name="change-feed-processor-in-azure-cosmos-db"></a>Обработчик канала изменений в Azure Cosmos DB
 
@@ -100,8 +100,8 @@ ms.locfileid: "88236477"
 Обработчик веб-канала изменений может размещаться на любой платформе, поддерживающей длительные процессы или задачи:
 
 * Непрерывно выполняющееся [веб-задание Azure](https://docs.microsoft.com/learn/modules/run-web-app-background-task-with-webjobs/).
-* Процесс на [виртуальной машине Azure](https://docs.microsoft.com/azure/architecture/best-practices/background-jobs.md#azure-virtual-machines).
-* Фоновое задание в [службе Azure Kubernetes](https://docs.microsoft.com/azure/architecture/best-practices/background-jobs.md#azure-kubernetes-service).
+* Процесс на [виртуальной машине Azure](https://docs.microsoft.com/azure/architecture/best-practices/background-jobs#azure-virtual-machines).
+* Фоновое задание в [службе Azure Kubernetes](https://docs.microsoft.com/azure/architecture/best-practices/background-jobs#azure-kubernetes-service).
 * [Размещенная служба ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/host/hosted-services).
 
 Хотя обработчик веб-каналов изменений может работать в средах с кратковременным временем существования, поскольку контейнер аренды сохраняет состояние, цикл запуска и окончания этих сред будет добавлять задержку к получению уведомлений (из-за издержек при запуске процессора при каждом запуске среды).

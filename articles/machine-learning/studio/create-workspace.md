@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 12/07/2017
-ms.openlocfilehash: 89c79f668da3ff924dbb7f27574260118003655f
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: c283ef2f6eb28dca7ca5bc5e391ef30465c65dc0
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87433235"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691281"
 ---
 # <a name="create-and-share-an-machine-learning-studio-classic-workspace"></a>Создание и совместное использование рабочей области Машинное обучение Studio (классическая модель)
 
-**применимо к:** ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
+**ПРИМЕНИМО К:** ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
 
 Чтобы использовать Машинное обучение Azure Studio (классическая модель), необходимо иметь рабочую область Машинное обучение Studio (классическая). Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
 
@@ -70,7 +70,7 @@ ms.locfileid: "87433235"
 
 
 ## <a name="share-an-azure-machine-learning-studio-classic-workspace"></a>Предоставление общего доступа к рабочей области Машинное обучение Azure Studio (классическая модель)
-После создания рабочей области Машинное обучение Studio (классической) можно пригласить пользователей в рабочую область, чтобы предоставить общий доступ к рабочей области и всем его экспериментам, наборам данных, записным книжкам и т. д. Вы можете добавить пользователей одной из двух ролей:
+После создания рабочей области Машинное обучение Studio (классической) можно пригласить пользователей в рабочую область, чтобы предоставить общий доступ к рабочей области и всем его экспериментам, наборам данных и т. д. Вы можете добавить пользователей одной из двух ролей:
 
 * **Пользователь.** Пользователь рабочей области может создавать, открывать, изменять и удалять наборы данных, эксперименты и т. д. в рабочей области.
 * **Владелец.** Владелец может приглашать и удалять пользователей рабочей области, а также управлять доступными пользователям действиями.
@@ -82,7 +82,7 @@ ms.locfileid: "87433235"
 
 ### <a name="to-share-a-studio-classic-workspace"></a>Предоставление общего доступа к рабочей области Studio (классической)
 
-1. Войдите в Машинное обучение Studio (классическая модель) в[https://studio.azureml.net/Home](https://studio.azureml.net/Home)
+1. Войдите в Машинное обучение Studio (классическая модель) в [https://studio.azureml.net/Home](https://studio.azureml.net/Home)
 
 2. На панели слева щелкните **Параметры**.
 

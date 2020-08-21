@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 08/12/2020
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: cea08022b992395862fcf75e0592efd54c805a98
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: bbec605f25c2e74178bdb5c28d0a7995e4e265f1
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/20/2020
-ms.locfileid: "88649131"
+ms.locfileid: "88690397"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
@@ -157,7 +157,7 @@ ms.locfileid: "88649131"
 
 | Необязательный параметр запроса | Описание | Версия |
 | --- |  --- | --- |
-| `timeout=<timeout>` | Время ожидания на стороне сервера для выполнения HTTP-запроса. Применяется только к API [получения событий среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) и [получения агрегатов среды](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api#get-environment-aggregates-api). Значение времени ожидания должно быть в формате длительности ISO 8601 (например, `"PT20S"`) и должно находиться в диапазоне `1-30 s`. Значение по умолчанию: `30 s`. | Поколение 1 |
+| `timeout=<timeout>` | Время ожидания на стороне сервера для выполнения HTTP-запроса. Применяется только к API [получения событий среды](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/getavailability) и [получения агрегатов среды](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api#get-environment-aggregates-api). Значение времени ожидания должно быть в формате длительности ISO 8601 (например, `"PT20S"`) и должно находиться в диапазоне `1-30 s`. Значение по умолчанию: `30 s`. | Поколение 1 |
 | `storeType=<storeType>` | Для сред Gen2 с включенным горячим хранилищем запрос можно выполнить либо в, `WarmStore` либо в `ColdStore` . Этот параметр в запросе определяет, в каком хранилище должен выполняться запрос. Если этот параметр не определен, запрос будет выполнен в холодном хранилище. Чтобы запросить теплое хранилище, параметру **storeType** следует присвоить значение `WarmStore`. Если этот параметр не определен, запрос будет выполнен для холодного хранилища. | Поколение 2 |
 
 ## <a name="next-steps"></a>Дальнейшие действия

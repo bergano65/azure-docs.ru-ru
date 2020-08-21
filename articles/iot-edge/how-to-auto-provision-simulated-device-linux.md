@@ -8,12 +8,12 @@ ms.date: 6/30/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: cb1511736b993032df8ca52fac01243f1feafdf4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3bc9344459802f4bb4268093d905a051525d78dc
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092394"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88684462"
 ---
 # <a name="create-and-provision-an-iot-edge-device-with-a-tpm-on-linux"></a>Создание и предоставление устройства IoT Edge с помощью доверенного платформенного модуля в Linux
 
@@ -31,7 +31,7 @@ ms.locfileid: "87092394"
 >
 > Если вы используете физическое устройство, можно перейти к разделу [Получение сведений о подготовке из физического устройства](#retrieve-provisioning-information-from-a-physical-device) этой статьи.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Компьютер для разработки с ОС Windows с [включенным Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v). В этой статье используется виртуальная машина Ubuntu Server, запущенная в Windows 10.
 * Действующий Центр Интернета вещей.
@@ -61,7 +61,7 @@ ms.locfileid: "87092394"
 
 ### <a name="create-virtual-machine"></a>Создание виртуальной машины
 
-1. Скачайте и сохраните локально файл образа диска для виртуальной машины. Например, [Ubuntu server 18,04](http://releases.ubuntu.com/18.04.4/). Сведения о поддерживаемых операционных системах для IoT Edge устройств см. в разделе [Azure IOT Edge Поддерживаемые системы](support.md).
+1. Скачайте и сохраните локально файл образа диска для виртуальной машины. Например, [Ubuntu server 18,04](http://releases.ubuntu.com/18.04/). Сведения о поддерживаемых операционных системах для IoT Edge устройств см. в разделе [Azure IOT Edge Поддерживаемые системы](support.md).
 
 2. В диспетчере Hyper-V выберите **действие**  >  **создать**  >  **Виртуальная машина** в меню **действия** .
 

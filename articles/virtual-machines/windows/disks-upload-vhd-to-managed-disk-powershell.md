@@ -8,18 +8,18 @@ ms.topic: how-to
 ms.service: virtual-machines
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: 4cc00ecb3810b1499f52ea9f3a0c110e92c75dff
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ec765e2eb635449140d60ee98762e35aea12fe44
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87009618"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88689615"
 ---
 # <a name="upload-a-vhd-to-azure-or-copy-a-managed-disk-to-another-region---azure-powershell"></a>Отправка VHD в Azure или копирование управляемого диска в другой регион — Azure PowerShell
 
 [!INCLUDE [disks-upload-vhd-to-disk-intro](../../../includes/disks-upload-vhd-to-disk-intro.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Скачайте последнюю [версию AzCopy V10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
 - [Установите модуль Azure PowerShell](/powershell/azure/install-Az-ps).
@@ -28,7 +28,7 @@ ms.locfileid: "87009618"
 
 ## <a name="getting-started"></a>Начало работы
 
-Если вы предпочитаете отправлять диски через графический интерфейс, это можно сделать с помощью Обозреватель службы хранилища Azure. Дополнительные сведения см. в статье [использование обозреватель службы хранилища Azure для управления управляемыми дисками Azure](disks-use-storage-explorer-managed-disks.md) .
+Если вы предпочитаете отправлять диски через графический интерфейс, это можно сделать с помощью Обозреватель службы хранилища Azure. Дополнительные сведения см. в статье [использование обозреватель службы хранилища Azure для управления управляемыми дисками Azure](../disks-use-storage-explorer-managed-disks.md) .
 
 Чтобы отправить VHD в Azure, необходимо создать пустой управляемый диск, настроенный для этого процесса отправки. Прежде чем создать его, необходимо ознакомиться с дополнительными сведениями об этих дисках.
 

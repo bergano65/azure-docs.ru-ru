@@ -10,12 +10,12 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: reference
 ms.date: 12/16/2019
-ms.openlocfilehash: f0673732bd657b237ed0f4b4db276b8bf9a3a2b5
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 95fb9798bc62236d785c911ec75db8d6e11f6e97
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424381"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88685720"
 ---
 # <a name="azure-key-vault-rest-api-error-codes"></a>Коды ошибок Azure Key Vault REST API
  
@@ -89,7 +89,7 @@ Content-Length: 31
 
 В этом маркере можно увидеть много важных частей:
 
-- AUD (аудитория) — ресурс токена. Обратите внимание, что это <https://vault.azure.net> . Этот токен не будет работать ни для одного ресурса, который явно не соответствует этому значению, например Graph.
+- AUD (аудитория) — ресурс токена. Обратите внимание, что это `https://vault.azure.net` . Этот токен не будет работать ни для одного ресурса, который явно не соответствует этому значению, например Graph.
 - IAT (выдана в): число тактов с начала эпохи, когда был выдан маркер.
 - NBF (не ранее): число тактов с начала эпохи, когда этот маркер станет действительным.
 - EXP (срок действия). число тактов с начала эпохи после истечения срока действия маркера.

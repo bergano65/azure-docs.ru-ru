@@ -16,12 +16,12 @@ ms.date: 06/25/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0754c8e2be62c0a5568e97e7e5cf4376fb3c593
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: d1f77d6189e5b32ca771d17ae9902341bcaa1871
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88210907"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88688136"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure Active Directory (Azure AD) Connect.
@@ -73,6 +73,7 @@ Azure AD Connect сервер должен рассматриваться как
 - Ограничьте административный доступ к серверу Azure AD Connect только администраторам домена или другим жестко управляемым группам безопасности.
 - Создайте [выделенную учетную запись для всех сотрудников с привилегированным доступом](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access). Администраторы не должны просматривать веб-узел, проверять электронную почту и выполнять повседневные задачи по повышению производительности с помощью учетных записей с высоким уровнем привилегий.
 - Следуйте инструкциям, приведенным в статье [Защита привилегированного доступа](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access). 
+- Запретите использование проверки подлинности NTLM на сервере AADConnect. Вот несколько способов сделать это: [ограничения NTLM на сервере AADConnect](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-outgoing-ntlm-traffic-to-remote-servers) и [ограничения NTLM в домене](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-ntlm-authentication-in-this-domain) .
 - Убедитесь, что у каждого компьютера есть уникальный пароль локального администратора. Дополнительные сведения см. в статье [решение "пароль локального администратора" (Lap)](https://support.microsoft.com/help/3062591/microsoft-security-advisory-local-administrator-password-solution-laps) , позволяющее настроить уникальные случайные пароли на каждой рабочей станции и сервере для хранения их в Active Directory, защищенных ACL. Только допустимые, авторизованные пользователи могут читать или запрашивать сброс паролей учетной записи локального администратора. Вы можете получить Lap для использования на рабочих станциях и серверах из [центра загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=46899#:~:text=The%20%22Local%20Administrator%20Password%20Solution,it%20or%20request%20its%20reset.). Дополнительные рекомендации по работе с рабочей средой с Lap и привилегированным доступом (лапы) можно найти в статье [эксплуатационные стандарты на основе принципа чистого источника](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#operational-standards-based-on-clean-source-principle). 
 - Реализуйте выделенные [рабочие станции привилегированного доступа](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations) для всех сотрудников, имеющих привилегированный доступ к информационным системам вашей организации. 
 - Следуйте этим [дополнительным рекомендациям](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface) , чтобы уменьшить уязвимую область Active Directoryной среды.
@@ -131,14 +132,14 @@ Azure AD Connect сервер должен рассматриваться как
 Дополнительные сведения см. в разделе MSDN об [элементе прокси по умолчанию](https://msdn.microsoft.com/library/kd3cf2ex.aspx).
 В случае проблем с подключением изучите статью [Устранение неполадок подключения в Azure AD Connect](tshoot-connect-connectivity.md).
 
-### <a name="other"></a>Другой
+### <a name="other"></a>Другое
 Необязательно. Используйте тестовую учетную запись пользователя для проверки синхронизации.
 
 ## <a name="component-prerequisites"></a>Предварительные требования к компонентам
 ### <a name="powershell-and-net-framework"></a>PowerShell и .NET Framework
 Работа Azure AD Connect основана на Microsoft PowerShell и .NET Framework 4.5.1. На сервере должна быть установлена эта или более поздняя версия. В зависимости от версии Windows Server выполните следующие действия.
 
-* Windows Server 2012 R2
+* Windows Server 2012 R2
   * Microsoft PowerShell устанавливается по умолчанию. Никаких действий не требуется.
   * Платформа .NET Framework 4.5.1 и более поздних версий распространяется через Центр обновления Windows. Убедитесь, что установлены последние обновления для Windows Server на панели управления.
 * Windows Server 2012

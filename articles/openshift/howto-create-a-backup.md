@@ -8,12 +8,12 @@ author: troy0820
 ms.author: b-trconn
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
-ms.openlocfilehash: 40a915531aa58567b17a774a15504dc92770479f
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 046cd30c0f93a468287c73573a3d18f4ba66221b
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854337"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88690227"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-cluster-application-backup"></a>Создание резервной копии приложения кластера Azure Red Hat OpenShift 4
 
@@ -29,7 +29,7 @@ ms.locfileid: "87854337"
 
 ### <a name="install-velero"></a>Установка Велеро
 
-Чтобы [установить](https://velero.io/docs/master/basic-install/) велеро в системе, следуйте рекомендациям по работе с операционной системой.
+Чтобы [установить](https://velero.io/docs/main/basic-install/) велеро в системе, следуйте рекомендациям по работе с операционной системой.
 
 ### <a name="set-up-azure-storage-account-and-blob-container"></a>Настройка учетной записи хранения Azure и контейнера больших двоичных объектов
 
@@ -120,9 +120,9 @@ oc get backups -n velero <name of backup> -o yaml
 
 Будет выводиться успешная резервная копия `phase:Completed` , и объекты будут находиться в контейнере в учетной записи хранения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье была создана резервная копия приложения кластера Azure Red Hat OpenShift 4. Вы ознакомились с выполнением следующих задач:
+В этой статье была создана резервная копия приложения кластера Azure Red Hat OpenShift 4. Вы научились выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание резервной копии приложения кластера OpenShift v4 с помощью Велеро

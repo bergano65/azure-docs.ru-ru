@@ -5,12 +5,12 @@ description: Узнайте, как динамически создать пос
 services: container-service
 ms.topic: article
 ms.date: 07/10/2020
-ms.openlocfilehash: 3d01b2c2098dcbe896ecaa7f854d91477eba2cab
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 06aad076836c0f6fdc59c4ed5d0116231080d15c
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/20/2020
-ms.locfileid: "88648774"
+ms.locfileid: "88683612"
 ---
 # <a name="dynamically-create-and-use-a-persistent-volume-with-azure-disks-in-azure-kubernetes-service-aks"></a>Динамическое создание и использование постоянного тома с дисками Azure в службе Azure Kubernetes (AKS)
 
@@ -40,7 +40,7 @@ ms.locfileid: "88648774"
     
 Если вы используете один из классов хранения по умолчанию, вы не сможете обновить размер тома после создания класса хранения. Чтобы иметь возможность обновить размер тома после создания класса хранения, добавьте строку `allowVolumeExpansion: true` в один из классов хранения по умолчанию или создайте собственный класс хранилища. Обратите внимание, что не поддерживается уменьшение размера PVC (во избежание потери данных). Существующий класс хранения можно изменить с помощью `kubectl edit sc` команды. 
 
-Например, если вы хотите использовать диск размером 4 Тиб, необходимо создать класс хранения, который определяет, `cachingmode: None` так как [кэширование дисков не поддерживается для дисков 4 Тиб и больше](../virtual-machines/windows/premium-storage-performance.md#disk-caching).
+Например, если вы хотите использовать диск размером 4 Тиб, необходимо создать класс хранения, который определяет, `cachingmode: None` так как [кэширование дисков не поддерживается для дисков 4 Тиб и больше](../virtual-machines/premium-storage-performance.md#disk-caching).
 
 Дополнительные сведения о классах хранения и создании собственного класса хранения см. [в статье Параметры хранилища для приложений в AKS][storage-class-concepts].
 

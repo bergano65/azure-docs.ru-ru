@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
 ms.custom: devx-track-javascript
-ms.openlocfilehash: ae98f74092c3955a54c0817082e8f29c1b251237
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 3394882574f94e4a1af3aa942f3b0bd87be55368
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87533399"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88690091"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>Улучшение синтеза с помощью языка разметки речи (SSML)
 
@@ -46,7 +46,7 @@ ms.locfileid: "87533399"
 
 ## <a name="create-an-ssml-document"></a>Создание документа SSML
 
-`speak`является корневым элементом и является **обязательным** для всех документов SSML. `speak`Элемент содержит важную информацию, например версию, язык и определение словаря разметки.
+`speak` является корневым элементом и является **обязательным** для всех документов SSML. `speak`Элемент содержит важную информацию, например версию, язык и определение словаря разметки.
 
 **Синтаксис**
 
@@ -56,7 +56,7 @@ ms.locfileid: "87533399"
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `version` | Указывает версию спецификации SSML, используемую для интерпретации разметки документа. Текущая версия — 1,0. | Обязательно |
 | `xml:lang` | Указывает язык корневого документа. Значение может содержать символы в нижнем регистре, двухбуквенный код языка (например, `en` ), языковой код и страну или регион в верхнем регистре (например, `en-US` ). | Обязательно |
@@ -76,7 +76,7 @@ ms.locfileid: "87533399"
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `name` | Определяет голос, используемый для вывода текста в речь. Полный список поддерживаемых голосов см. в разделе [Поддержка языков](language-support.md#text-to-speech). | Обязательный |
 
@@ -99,7 +99,7 @@ ms.locfileid: "87533399"
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `name` | Определяет голос, используемый для вывода текста в речь. Полный список поддерживаемых голосов см. в разделе [Поддержка языков](language-support.md#text-to-speech). | Обязательно |
 
@@ -112,7 +112,7 @@ ms.locfileid: "87533399"
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Дополнительные сведения см. в статье <a href="https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.setproperty?view=azure-dotnet" target="_blank"> `SetProperty` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.setproperty?view=azure-dotnet" target="_blank"> `SetProperty` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```csharp
 speechConfig.SetProperty(
@@ -121,7 +121,7 @@ speechConfig.SetProperty(
 
 # <a name="c"></a>[C++](#tab/cpp)
 
-Дополнительные сведения см. в статье <a href="https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#setproperty" target="_blank"> `SetProperty` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#setproperty" target="_blank"> `SetProperty` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```cpp
 speechConfig->SetProperty(
@@ -130,7 +130,7 @@ speechConfig->SetProperty(
 
 # <a name="java"></a>[Java](#tab/java)
 
-Дополнительные сведения см. в статье <a href="https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setproperty?view=azure-java-stable#com_microsoft_cognitiveservices_speech_SpeechConfig_setProperty_String_String_" target="_blank"> `setProperty` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setproperty?view=azure-java-stable#com_microsoft_cognitiveservices_speech_SpeechConfig_setProperty_String_String_" target="_blank"> `setProperty` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```java
 speechConfig.setProperty(
@@ -139,7 +139,7 @@ speechConfig.setProperty(
 
 # <a name="python"></a>[Python](#tab/python)
 
-Дополнительные сведения см. в статье <a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python#set-property-by-name-property-name--str--value--str-" target="_blank"> `set_property_by_name` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python#set-property-by-name-property-name--str--value--str-" target="_blank"> `set_property_by_name` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```python
 speech_config.set_property_by_name(
@@ -148,7 +148,7 @@ speech_config.set_property_by_name(
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Дополнительные сведения см. в статье <a href="https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest#setproperty-string--string-" target="_blank"> `setProperty` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest#setproperty-string--string-" target="_blank"> `setProperty` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```javascript
 speechConfig.setProperty(
@@ -157,7 +157,7 @@ speechConfig.setProperty(
 
 # <a name="objective-c"></a>[Objective-C](#tab/objectivec)
 
-Дополнительные сведения см. в статье <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```objectivec
 [speechConfig setPropertyTo:@"false" byName:@"SpeechServiceResponse_Synthesis_WordBoundaryEnabled"];
@@ -165,7 +165,7 @@ speechConfig.setProperty(
 
 # <a name="swift"></a>[Swift](#tab/swift)
 
-Дополнительные сведения см. в статье <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```swift
 speechConfig!.setPropertyTo(
@@ -192,7 +192,7 @@ speechConfig!.setPropertyTo(
 > [!IMPORTANT]
 > Настройки стилей речи будут работать только с нейронными голосовыми данными.
 
-По умолчанию в службе преобразования текста в речь используется нейтральный стиль для стандартных и нейронных голосов. С помощью нейронных голосов можно настроить стиль речи для выражения различных эмоции, таких как чирфулнесс, сопереживание и приходом, или оптимизировать голос для различных сценариев, таких как пользовательская служба, невскастинг и голосового помощника, используя элемент <мсттс: Express-AS>. Это необязательный элемент, уникальный для службы распознавания речи.
+По умолчанию в службе преобразования текста в речь используется нейтральный стиль для стандартных и нейронных голосов. Используя нейронные голоса, вы можете настроить стиль речи для выражения различных эмоции, таких как чирфулнесс, сопереживание и приходом, или оптимизировать голос для различных сценариев, таких как пользовательская служба, невскастинг и голосового помощника, с помощью  `mstts:express-as`   элемента. Это необязательный элемент, уникальный для службы распознавания речи.
 
 В настоящее время для этих нейронных голосов поддерживаются настройки стиля речи:
 * `en-US-AriaNeural`
@@ -209,7 +209,7 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `style` | Задает стиль речи. В настоящее время стиль речи зависит от голоса. | Требуется при настройке стиля речи для нейронной речи. Если используется `mstts:express-as` , необходимо указать стиль. Если указано недопустимое значение, этот элемент будет проигнорирован. |
 
@@ -260,10 +260,10 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `strength` | Задает относительную продолжительность паузы, используя одно из следующих значений:<ul><li>нет</li><li>x-слабый</li><li>безопасные</li><li>Средний (по умолчанию)</li><li>надежный</li><li>строгость x</li></ul> | Необязательно |
-| `time` | Задает абсолютную длительность паузы в секундах или миллисекундах. Примеры допустимых значений — `2s` и.`500` | Необязательно |
+| `time` | Задает абсолютную длительность паузы в секундах или миллисекундах. Примеры допустимых значений — `2s` и. `500` | Необязательно |
 
 | Сложность                      | Описание |
 |-------------------------------|-------------|
@@ -330,7 +330,7 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `alphabet` | Указывает фонетический алфавит, используемый при создании транскрипции строки в `ph` атрибуте. Строка, указывающая букву алфавита, должна быть указана в строчных буквах. Ниже приведены возможные алфавиты, которые можно указать.<ul><li>`ipa`&ndash; <a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet" target="_blank">Международный фонетический <span class="docon docon-navigate-external x-hidden-focus"></span> алфавит</a></li><li>`sapi`&ndash; [Фонетический алфавит речевой службы](speech-ssml-phonetic-sets.md)</li><li>`ups`&ndash; <a href="https://documentation.help/Microsoft-Speech-Platform-SDK-11/17509a49-cae7-41f5-b61d-07beaae872ea.htm" target="_blank">Универсальный набор телефонов</a></li></ul><br>Алфавит применяется только к `phoneme` элементу в элементе.. | Необязательно |
 | `ph` | Строка, содержащая телефоны, задающих произношение слова в `phoneme` элементе. Если указанная строка содержит нераспознаваемые телефоны, служба преобразования текста в речь (TTS) отклоняет весь документ SSML и не выдает ни одного из речевых выходных данных, указанных в документе. | Требуется при использовании фонемы. |
@@ -376,9 +376,9 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание                               | Обязательный или необязательный |
+| attribute | Описание                               | Обязательный или необязательный |
 |-----------|-------------------------------------------|---------------------|
-| `uri`     | Адрес внешнего документа областей. | Обязательный элемент.           |
+| `uri`     | Адрес внешнего документа областей. | Обязательный.           |
 
 **Использование**
 
@@ -491,14 +491,14 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
-| `pitch` | Указывает шаг по базовому плану для текста. Вы можете выразить тон следующим образом:<ul><li>Абсолютное значение, выраженное в виде числа, за которым следует "Гц" (герц). Например, 600 Гц.</li><li>Относительное значение, выраженное в виде числа, начинающегося с "+" или "-" и заканчивающееся на "Гц" или "St", которое указывает величину изменения высоты. Например: + 80 Гц или-2st. "St" означает, что единица изменения — полтона, то есть половина тона (половина шага) на стандартной диатоник шкале.</li><li>Значение константы:<ul><li>x-низкий</li><li>low</li><li>средняя</li><li>high</li><li>x-высокий</li><li>значение по умолчанию</li></ul></li></ul>. | Необязательно |
+| `pitch` | Указывает шаг по базовому плану для текста. Вы можете выразить тон следующим образом:<ul><li>Абсолютное значение, выраженное в виде числа, за которым следует "Гц" (герц). Например, 600 Гц.</li><li>Относительное значение, выраженное в виде числа, начинающегося с "+" или "-" и заканчивающееся на "Гц" или "St", которое указывает величину изменения высоты. Например: + 80 Гц или-2st. "St" означает, что единица изменения — полтона, то есть половина тона (половина шага) на стандартной диатоник шкале.</li><li>Значение константы:<ul><li>x-низкий</li><li>low</li><li>средняя</li><li>high</li><li>x-высокий</li><li>default</li></ul></li></ul>. | Необязательно |
 | `contour` |Профиль теперь поддерживает как нейронные, так и стандартные голоса. Контур представляет изменения по шагам. Эти изменения представлены в виде массива целевых объектов в определенные позиции времени в выходных данных речи. Каждый целевой объект определяется набором пар параметров. Пример: <br/><br/>`<prosody contour="(0%,+20Hz) (10%,-2st) (40%,+10Hz)">`<br/><br/>Первое значение в каждом наборе параметров указывает расположение изменения высоты в процентах от длительности текста. Второе значение задает величину, которую нужно увеличить или уменьшить, используя относительное значение или значение перечисления для высоты (см `pitch` .). | Необязательно |
 | `range` | Значение, представляющее диапазон высоты для текста. `range`Для описания можно использовать те же абсолютные значения, относительные значения или значения перечисления `pitch` . | Необязательно |
-| `rate` | Указывает интенсивность речи текста. Вы можете выразить `rate` следующим образом:<ul><li>Относительное значение, выраженное в виде числа, которое выступает в качестве множителя по умолчанию. Например, значение *1* приводит к отсутствию изменений в скорости. Значение *0,5* приводит к половине скорости. Значение *3* приводит к утраиваетсяу скорости.</li><li>Значение константы:<ul><li>x-замедляют</li><li>медленный</li><li>средняя</li><li>быстрая</li><li>x-Fast</li><li>значение по умолчанию</li></ul></li></ul> | Необязательно |
+| `rate` | Указывает интенсивность речи текста. Вы можете выразить `rate` следующим образом:<ul><li>Относительное значение, выраженное в виде числа, которое выступает в качестве множителя по умолчанию. Например, значение *1* приводит к отсутствию изменений в скорости. Значение *0,5* приводит к половине скорости. Значение *3* приводит к утраиваетсяу скорости.</li><li>Значение константы:<ul><li>x-замедляют</li><li>медленный</li><li>средняя</li><li>быстрая</li><li>x-Fast</li><li>default</li></ul></li></ul> | Необязательно |
 | `duration` | Период времени, в течение которого служба синтеза речи (TTS) считывает текст в секундах или миллисекундах. Например, *2S* или *1800ms*. | Необязательно |
-| `volume` | Указывает уровень громкости речи. Том можно выразить следующим образом:<ul><li>Абсолютное значение, выраженное в виде числа в *диапазоне от 0,0* до 100,0, от самого дальнего к *громкости*. Например, 75. Значение по умолчанию — 100,0.</li><li>Относительное значение, выраженное в виде числа с префиксом "+" или "-", которое указывает количество изменений в томе. Например, + 10 или-5,5.</li><li>Значение константы:<ul><li>silent</li><li>x — Soft</li><li>мягкий</li><li>средняя</li><li>сделать</li><li>x-вслух</li><li>значение по умолчанию</li></ul></li></ul> | Необязательно |
+| `volume` | Указывает уровень громкости речи. Том можно выразить следующим образом:<ul><li>Абсолютное значение, выраженное в виде числа в *диапазоне от 0,0* до 100,0, от самого дальнего к *громкости*. Например, 75. Значение по умолчанию — 100,0.</li><li>Относительное значение, выраженное в виде числа с префиксом "+" или "-", которое указывает количество изменений в томе. Например, + 10 или-5,5.</li><li>Значение константы:<ul><li>silent</li><li>x — Soft</li><li>мягкий</li><li>средняя</li><li>сделать</li><li>x-вслух</li><li>default</li></ul></li></ul> | Необязательно |
 
 ### <a name="change-speaking-rate"></a>Изменение скорости речи
 
@@ -564,7 +564,7 @@ speechConfig!.setPropertyTo(
 ```
 ## <a name="say-as-element"></a>элемент "скажем как"
 
-`say-as`— Необязательный элемент, который указывает тип содержимого (например, число или дату) текста элемента. Это дает рекомендации подсистеме синтеза речи о том, как произносится текст.
+`say-as` — Необязательный элемент, который указывает тип содержимого (например, число или дату) текста элемента. Это дает рекомендации подсистеме синтеза речи о том, как произносится текст.
 
 **Синтаксис**
 
@@ -574,7 +574,7 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `interpret-as` | Указывает тип содержимого текста элемента. Список типов см. в таблице ниже. | Обязательно |
 | `format` | Предоставляет дополнительные сведения о точном форматировании текста элемента для типов содержимого, которые могут иметь неоднозначные форматы. SSML определяет форматы для типов содержимого, которые их используют (см. таблицу ниже). | Необязательно |
@@ -617,7 +617,7 @@ speechConfig!.setPropertyTo(
 
 ## <a name="add-recorded-audio"></a>Добавить записанный звук
 
-`audio`— Это необязательный элемент, позволяющий вставлять звук MP3 в документ SSML. Тело элемента audio может содержать обычный текст или SSML разметку, которые говорят, если звуковой файл недоступен или воспроизводится. Кроме того, `audio` элемент может содержать текст и следующие элементы: `audio` , `break` , `p` , `s` , `phoneme` , `prosody` , `say-as` и `sub` .
+`audio` — Это необязательный элемент, позволяющий вставлять звук MP3 в документ SSML. Тело элемента audio может содержать обычный текст или SSML разметку, которые говорят, если звуковой файл недоступен или воспроизводится. Кроме того, `audio` элемент может содержать текст и следующие элементы: `audio` , `break` , `p` , `s` , `phoneme` , `prosody` , `say-as` и `sub` .
 
 Все аудио, входящие в документ SSML, должны соответствовать следующим требованиям:
 
@@ -636,7 +636,7 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание                                   | Обязательный или необязательный                                        |
+| attribute | Описание                                   | Обязательный или необязательный                                        |
 |-----------|-----------------------------------------------|------------------------------------------------------------|
 | `src`     | Указывает расположение или URL-адрес звукового файла. | Требуется при использовании элемента audio в документе SSML. |
 
@@ -672,7 +672,7 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `src` | Указывает расположение или URL-адрес фонового звукового файла. | Требуется при использовании фонового звука в документе SSML. |
 | `volume` | Указывает громкость фонового звукового файла. **Допустимые значения**: `0` в `100` включительно. Значение по умолчанию — `1`. | Необязательно |

@@ -3,12 +3,12 @@ title: Заметки о выпуске Live Video Analytics в IoT Edge. Azure
 description: В этом разделе содержатся заметки о выпуске Live Video Analytics на IoT Edge выпусках, улучшениях, исправлениях ошибок и известных проблемах.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: 28260728532d9db52b8d36488c2e456bd11803ea
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c18977807d8cdca264a27d7fcff37aec7a61eb55
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091785"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88690657"
 ---
 # <a name="live-video-analytics-on-iot-edge-release-notes"></a>Заметки о выпуске Live Video Analytics в IoT Edge
 
@@ -21,12 +21,34 @@ ms.locfileid: "87091785"
 * Исправления ошибок
 * Нерекомендуемые функции.
 
+## <a name="august-19-2020"></a>19 августа 2020 г.
+
+Этот тег выпуска для обновления 2020 августа:
+
+```
+mcr.microsoft.com/media/live-video-analytics:1.0.3
+```
+
+> [!NOTE]
+> В кратком руководстве и учебниках в манифестах развертывания используется тег 1 (Live-Video-Analytics: 1). Поэтому простое повторное развертывание таких манифестов должно обновить модуль на пограничном > устройствах.
+
+## <a name="new-features"></a>новые функции; 
+
+* Теперь вы можете получить высокую производительность передачи содержимого данных между интерактивной аналитикой видео на IoT Edge и пользовательским расширением с помощью gRPC Framework. Чтобы приступить к [работе, см](analyze-live-video-use-your-grpc-model-quickstart.md) . раздел.
+* Обновлено Расширенное региональное развертывание для аналитики в реальном времени и только облачная служба.  
+* Интерактивная аналитика видео теперь доступна в 25 дополнительных регионах по всему миру. Ниже приведен [список](https://azure.microsoft.com/global-infrastructure/services/?products=media-services) всех доступных регионов.  
+* Также обновлена [Настройка](https://aka.ms/lva-edge/setup-resources-for-samples) для быстрого запуска. 
+
+## <a name="bug-fixes"></a>Исправления ошибок 
+
+Нет 
+
 ## <a name="july-13-2020"></a>13 июля 2020 г.
 
 Этот тег выпуска для обновления за Июль 2020:
 
 ```
-     mcr.microsoft.com/media/live-video-analytics:1.0.2
+mcr.microsoft.com/media/live-video-analytics:1.0.2
 ```
 
 > [!NOTE]

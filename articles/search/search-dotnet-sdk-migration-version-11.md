@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 08/20/2020
-ms.openlocfilehash: 83208ec792f40661861dd558ac2c1a1521c1d7fb
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.openlocfilehash: 6880706300597e925267dae1230a87d17cd5c028
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/20/2020
-ms.locfileid: "88660975"
+ms.locfileid: "88688357"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-11"></a>Обновление до Azure Когнитивный поиск .NET SDK версии 11
 
@@ -28,6 +28,9 @@ ms.locfileid: "88660975"
 + Новое имя пакета: `Azure.Search.Documents` вместо `Microsoft.Azure.Search` .
 + Три клиента вместо двух: `SearchClient` , `SearchIndexClient` , `SearchIndexerClient`
 + Различия в именовании в диапазоне API и небольших структурных отличий, упрощающих некоторые задачи
+
+> [!NOTE]
+> См. [**Журнал изменений**](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/CHANGELOG.md) с детализированным списком изменений в пакете SDK для .NET версии 11.
 
 ## <a name="package-and-library-consolidation"></a>Консолидация пакетов и библиотек
 
@@ -114,19 +117,23 @@ ms.locfileid: "88660975"
 
 Версия 11 предназначена для [службы поиска 2020-06-30](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/search/data-plane/Azure.Search/preview/2020-06-30/searchservice.json). Поскольку версия 11 также является новой клиентской библиотекой, созданной с нуля, большая часть усилий по разработке посвящена эквивалентности версии 10, а некоторые REST API функции все еще находятся в состоянии ожидания.
 
-Версия 11 полностью поддерживает следующие объекты и операции:
+Версия 11,0 полностью поддерживает следующие объекты и операции:
 
 + Создание и управление индексами
 + Создание и управление картой синонимов
 + Все типы запросов и синтаксис (за исключением геопространственных фильтров)
 + Объекты и операции индексатора для индексирования источников данных Azure, включая источники данных и навыков
 
+Версия 11,1 добавляет следующее:
+
++ [Фиелдбуилдер](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.fieldbuilder) (добавлено в 11,1)
++ [Свойство сериализатора](https://docs.microsoft.com/dotnet/api/azure.search.documents.searchclientoptions.serializer) (добавленное в 11,1) для поддержки пользовательской сериализации
+
 ### <a name="pending-features"></a>Ожидающие функции
 
-Следующие функции версии 10 пока недоступны в версии 11. Если вы используете эти функции, отключитесь от миграции, пока они не будут поддерживаться.
+Следующие функции версии 10 пока недоступны в версии 11. Если вам нужны эти функции, отключите миграцию до тех пор, пока они не будут поддерживаться.
 
 + Геопространственные типы
-+ [Фиелдбуилдер](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.fieldbuilder) (хотя [это решение](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/tests/Samples/FieldBuilder/FieldBuilder.cs)можно использовать).
 + [Хранилище знаний](knowledge-store-concept-intro.md)
 
 <a name="UpgradeSteps"></a>
@@ -176,7 +183,7 @@ ms.locfileid: "88660975"
 
 Учитывая изменения в библиотеках и API, обновление до версии 11 не является тривиальной задачей и является критическим изменением в том смысле, что ваш код больше не будет обратно совместим с версией 10 и более ранними версиями. Подробное рассмотрение различий см. в [журнале изменений](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/CHANGELOG.md) для `Azure.Search.Documents` .
 
-В плане версий службы переход с 10 на 11 вносит следующие изменения в поведение: 
+В плане обновлений версий служб, в которых изменения кода в версии 11 связаны с существующими функциями (а не только с рефакторингом API), вы обнаружите следующие изменения в работе:
 
 + [Алгоритм ранжирования BM25](index-ranking-similarity.md) заменяет предыдущий алгоритм ранжирования на новую технологию. Новые службы будут использовать этот алгоритм автоматически. Для существующих служб необходимо задать параметры для использования нового алгоритма.
 
