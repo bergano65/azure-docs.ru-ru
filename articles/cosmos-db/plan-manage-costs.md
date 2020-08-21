@@ -93,7 +93,7 @@ Azure Cosmos DB поддерживает два типа режимов емко
 
 1. Чтобы уменьшить затраты на одну службу, например Azure Cosmos DB, щелкните **Добавить фильтр** , а затем выберите **имя службы**. Затем выберите **Azure Cosmos DB** из списка. Ниже приведен пример, показывающий затраты только на Azure Cosmos DB:
  
-   :::image type="content" source="./media/plan-manage-costs/cost-analysis-pane.png" alt-text="Мониторинг затрат с помощью панели "анализ затрат"":::
+   :::image type="content" source="./media/plan-manage-costs/cost-analysis-pane.png" alt-text="Мониторинг затрат с помощью панели анализ затрат":::
 
 В предыдущем примере отображаются текущие затраты на Azure Cosmos DB для месяца февраля. Диаграммы также содержат Azure Cosmos DB затраты по расположению и группе ресурсов.
 
