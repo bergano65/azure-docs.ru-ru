@@ -11,19 +11,19 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acf7f89ab7c84d74dcd6e3dff2c2c688da1cefea
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d70fe8a1fbaee285843bfd76ad2a8076df96b49b
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85550627"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717971"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-with-azure-active-directory-preview"></a>Включение входа с использованием ключа безопасности без пароля для устройств Windows 10 с Azure Active Directory (Предварительная версия)
 
 В этом документе рассматривается включение проверки подлинности без пароля на основе ключа безопасности FIDO2 на устройствах Windows 10. В конце этой статьи вы сможете войти в Azure AD и гибридные устройства Windows 10, присоединенные к Azure AD, с помощью ключа безопасности FIDO2.
 
 > [!NOTE]
-> Ключи безопасности FIDO2 — это общедоступная Предварительная версия функции Azure Active Directory. Дополнительные сведения о предварительных версиях см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Ключи безопасности FIDO2 — это общедоступная Предварительная версия функции Azure Active Directory. Дополнительные сведения о предварительных версиях см. в разделе Дополнительные  [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="requirements"></a>Requirements (Требования)
 
@@ -37,7 +37,7 @@ ms.locfileid: "85550627"
 | Для [гибридных устройств, присоединенных к Azure AD](../devices/concept-azure-ad-join-hybrid.md) , требуется Windows 10 версии 2004 или более поздней. |   | X |
 | Полностью исправленные контроллеры домена Windows Server 2016/2019. |   | X |
 | [Azure AD Connect](../hybrid/how-to-connect-install-roadmap.md#install-azure-ad-connect) версии 1.4.32.0 или более поздней |   | X |
-| [Microsoft Intune](https://docs.microsoft.com/intune/fundamentals/what-is-intune) (необязательно) | X | X |
+| [Microsoft Intune](/intune/fundamentals/what-is-intune) (необязательно) | X | X |
 | Пакет подготовки (необязательно) | X | X |
 | Групповая политика (необязательно) |   | X |
 
@@ -93,14 +93,14 @@ ms.locfileid: "85550627"
 1. Настройте новый профиль со следующими параметрами:
    - Имя: ключи безопасности для входа в Windows
    - Описание: Включение использования ключей безопасности FIDO во время входа Windows
-   - Платформа: Windows 10 и более поздних версий.
+   - Платформа. Windows 10 и более поздней версии
    - Тип профиля: настраиваемый
    - Настраиваемые параметры OMA-URI:
       - Имя: включить ключи безопасности FIDO для входа в Windows
       - OMA-URI:./девице/вендор/мсфт/пасспортфорворк/секуритикэй/усесекуритикэйфорсигнин
       - Тип данных: целое число
       - Значение: 1
-1. Эту политику можно назначать определенным пользователям, устройствам или группам. Дополнительные сведения см. [в разделе Назначение профилей пользователей и устройств в Microsoft Intune](https://docs.microsoft.com/intune/device-profile-assign).
+1. Эту политику можно назначать определенным пользователям, устройствам или группам. Дополнительные сведения см. [в разделе Назначение профилей пользователей и устройств в Microsoft Intune](/intune/device-profile-assign).
 
 ![Создание настраиваемой политики конфигурации устройств Intune](./media/howto-authentication-passwordless-security-key/intune-custom-profile.png)
 
@@ -122,10 +122,10 @@ ms.locfileid: "85550627"
 1. Запишите или измените путь в окнах **Сборка** в разделе **Выбор места сохранения пакета подготовки** и нажмите кнопку **Далее**.
 1. Выберите **Сборка** на странице **Построение пакета подготовки** .
 1. Сохраните два созданных файла (*ppkg* и *Cat*) в расположении, где их можно будет применить к компьютерам позже.
-1. Чтобы применить созданный пакет подготовки, см. статью [Применение пакета подготовки](https://docs.microsoft.com/windows/configuration/provisioning-packages/provisioning-apply-package).
+1. Чтобы применить созданный пакет подготовки, см. статью [Применение пакета подготовки](/windows/configuration/provisioning-packages/provisioning-apply-package).
 
 > [!NOTE]
-> Устройства под управлением Windows 10 версии 1809 также должны включать режим общего компьютера (*енаблешаредпкмоде*). Дополнительные сведения о включении этой функции см. в разделе [Настройка общего или ГОСТЕВОГО компьютера с Windows 10](https://docs.microsoft.com/windows/configuration/set-up-shared-or-guest-pc).
+> Устройства под управлением Windows 10 версии 1809 также должны включать режим общего компьютера (*енаблешаредпкмоде*). Дополнительные сведения о включении этой функции см. в разделе [Настройка общего или ГОСТЕВОГО компьютера с Windows 10](/windows/configuration/set-up-shared-or-guest-pc).
 
 ### <a name="enable-with-group-policy"></a>Включить с помощью групповая политика
 
@@ -158,7 +158,7 @@ ms.locfileid: "85550627"
    - Подкатегория: FIDO
 1. Для записи журналов используйте параметр, чтобы **повторно создать мою проблему**
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Разрешение доступа к локальным ресурсам для Azure AD и гибридных устройств, присоединенных к Azure AD](howto-authentication-passwordless-security-key-on-premises.md)
 

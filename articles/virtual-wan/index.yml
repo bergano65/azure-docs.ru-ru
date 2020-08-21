@@ -9,13 +9,13 @@ metadata:
   ms.topic: landing-page
   author: cherylmc
   ms.author: cherylmc
-  ms.date: 05/08/2020
-  ms.openlocfilehash: 14336a28630e7a62a19e2b3a51934950cf12e2f8
-  ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+  ms.date: 08/19/2020
+  ms.openlocfilehash: 1a0a64864c4e8229b4a0f2211af06920fc1e73cc
+  ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 06/30/2020
-  ms.locfileid: "85564039"
+  ms.lasthandoff: 08/20/2020
+  ms.locfileid: "88654554"
 landingContent:
 - title: Общие сведения о Виртуальной глобальной сети
   linkLists:
@@ -39,24 +39,60 @@ landingContent:
       url: virtual-wan-expressroute-portal.md
     - text: Создание пользовательского VPN-подключения (точка — сеть)
       url: virtual-wan-point-to-site-portal.md
-  - linkListType: how-to-guide
-    links:
-    - text: Настройка автоматизации партнеров Виртуальной глобальной сети
-      url: virtual-wan-configure-automation-providers.md
   - linkListType: concept
     links:
     - text: Политики по умолчанию для подключения IPsec
       url: virtual-wan-ipsec.md
+    - text: Руководства по службе автоматизации для партнеров Виртуальной глобальной сети
+      url: virtual-wan-configure-automation-providers.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание сетевого виртуального модуля в концентраторе
+      url: how-to-nva-hub.md
+    - text: Настройка использования IPsec через ExpressRoute для Виртуальной глобальной сети
+      url: vpn-over-expressroute.md
+    - text: Подключение VPN-шлюза к Виртуальной глобальной сети
+      url: connect-virtual-network-gateway-vwan.md
 - title: Architecture
   linkLists:
   - linkListType: concept
     links:
     - text: Переход на Виртуальную глобальную сеть
       url: migrate-from-hub-spoke-topology.md
+  - linkListType: architecture
+    links:
     - text: Архитектура глобальной транзитной сети
       url: virtual-wan-global-transit-network-architecture.md
     - text: Архитектура подключения SD-WAN
       url: sd-wan-connectivity-architecture.md
+- title: Маршрутизация
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Сведения о маршрутизации виртуальных концентраторов
+      url: about-virtual-hub-routing.md
+    - text: 'Сценарий: перенаправление трафика через сетевой виртуальный модуль'
+      url: scenario-route-through-nva.md
+    - text: 'Сценарий: подключение "любой к любому"'
+      url: scenario-any-to-any.md
+    - text: 'Сценарий: изоляция виртуальных сетей'
+      url: scenario-isolate-vnets.md
+    - text: 'Сценарий: виртуальные сети с общими службами'
+      url: scenario-shared-services-vnet.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка маршрутизации для виртуального концентратора
+      url: how-to-virtual-hub-routing.md
+- title: Наблюдение
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Мониторинг с помощью аналитики Azure Monitor
+      url: azure-monitor-insights.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка журналов и метрик Azure Monitor
+      url: azure-monitor-insights.md
 - title: Справочник
   linkLists:
   - linkListType: reference

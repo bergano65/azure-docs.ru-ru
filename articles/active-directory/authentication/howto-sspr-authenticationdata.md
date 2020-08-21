@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 116fa2a4c71fc8ebc67387cf02090bbd664b862a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 22037468c47de45513351e1d6126d3f3e5fccadc
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87035389"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717801"
 ---
 # <a name="pre-populate-user-authentication-contact-information-for-azure-active-directory-self-service-password-reset-sspr"></a>Предварительное заполнение контактных данных для проверки подлинности пользователя для Azure Active Directory самостоятельного сброса пароля (SSPR)
 
@@ -38,7 +38,7 @@ ms.locfileid: "87035389"
 
 Если вы используете параметры по умолчанию в Azure AD Connect, то для заполнения контактной информации для проверки подлинности для SSPR будут выполнены следующие сопоставления:
 
-| Локальная служба Active Directory | Azure AD     |
+| Локальная служба Active Directory | Azure AD     |
 |------------------------------|--------------|
 | TelephoneNumber              | Рабочий телефон |
 | mobile                       | Мобильный телефон |
@@ -88,7 +88,7 @@ ms.locfileid: "87035389"
 
 ### <a name="use-powershell-version-1"></a>Использование PowerShell версии 1
 
-Чтобы приступить к работе, [скачайте и установите модуль Azure AD PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx#bkmk_installmodule). После установки выполните следующие действия, чтобы настроить каждое поле.
+Чтобы приступить к работе, [скачайте и установите модуль Azure AD PowerShell](/previous-versions/azure/jj151815(v=azure.100)#bkmk_installmodule). После установки выполните следующие действия, чтобы настроить каждое поле.
 
 #### <a name="set-the-authentication-data-with-powershell-version-1"></a>Настройка данных проверки подлинности с помощью PowerShell версии 1
 
@@ -126,7 +126,7 @@ Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthentic
 
 ### <a name="use-powershell-version-2"></a>Использование PowerShell версии 2
 
-Чтобы приступить к работе, [скачайте и установите модуль PowerShell для Azure AD версии 2](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0).
+Чтобы приступить к работе, [скачайте и установите модуль PowerShell для Azure AD версии 2](/powershell/module/azuread/?view=azureadps-2.0).
 
 Чтобы быстро установить из последних версий PowerShell, поддерживающих `Install-Module` , выполните следующие команды. В первой строке проверяется, установлен ли модуль.
 
@@ -162,7 +162,7 @@ Get-AzureADUser -ObjectID user@domain.com | select TelephoneNumber
 Get-AzureADUser | select DisplayName,UserPrincipalName,otherMails,Mobile,TelephoneNumber | Format-Table
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После того как контактные данные для проверки подлинности предварительно заполнены для пользователей, следуйте указаниям в следующем руководстве по включению самостоятельного сброса пароля.
 

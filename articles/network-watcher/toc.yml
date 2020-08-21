@@ -61,6 +61,12 @@
           href: connection-monitor-preview-create-using-portal.md
         - name: Использование ARMClient
           href: connection-monitor-preview-create-using-arm-client.md
+    - name: Миграция в Монитор подключений (предварительная версия)
+      items:
+        - name: Из Монитора производительности сети
+          href: migrate-to-connection-monitor-preview-from-network-performance-monitor.md
+        - name: Из Монитора подключений
+          href: migrate-to-connection-monitor-preview-from-connection-monitor.md
     - name: Диагностика проблем с сетью виртуальных машин
       items:
         - name: Установка расширения виртуальной машины

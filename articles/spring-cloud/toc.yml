@@ -40,6 +40,8 @@
       href: /azure/jenkins/tutorial-jenkins-deploy-cli-spring-cloud-service
     - name: Использование управляемого удостоверения для подключения Key Vault к приложению Azure Spring Cloud
       href: spring-cloud-tutorial-managed-identities-key-vault.md
+    - name: Развертывание Azure Spring Cloud в виртуальной сети
+      href: spring-cloud-tutorial-deploy-in-azure-virtual-network.md
 - name: Примеры
   items:
     - name: Встроенные компоненты Политики Azure

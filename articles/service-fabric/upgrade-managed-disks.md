@@ -3,12 +3,12 @@ title: Обновление узлов кластера для использо�
 description: Вот как можно обновить существующий кластер Service Fabric, чтобы использовать управляемые диски Azure с минимальным временем простоя кластера.
 ms.topic: how-to
 ms.date: 4/07/2020
-ms.openlocfilehash: 74b4ec803229ceb0168da6540fcbda685f0df16e
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 152bdaea121e65de8332fcde8543b8158ff11714
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88653704"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717529"
 ---
 # <a name="upgrade-cluster-nodes-to-use-azure-managed-disks"></a>Обновление узлов кластера для использования управляемых дисков Azure
 
@@ -365,7 +365,7 @@ foreach($name in $nodeNames){
 
 Вы узнаете, как выполнять следующие задачи:
 
-* [Масштабирование типа первичного узла кластера Service Fabric](service-fabric-scale-up-node-type.md)
+* [Масштабирование типа первичного узла кластера Service Fabric](service-fabric-scale-up-primary-node-type.md)
 
 * [Преобразование шаблона масштабируемого набора для использования управляемых дисков](../virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md.md)
 

@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10d49331f08a83eb48c232ced2c565935eb2abd4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b5f8d08f0814ec69719c002ea9efd39bb38b7d16
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87051212"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88718022"
 ---
 # <a name="how-it-works-azure-multi-factor-authentication"></a>Как это работает: служба Многофакторной идентификации Azure
 
@@ -59,11 +59,11 @@ ms.locfileid: "87051212"
 
 ![Обзорная схема защиты процесса входа с помощью условного доступа](media/tutorial-enable-azure-mfa/conditional-access-overview.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о лицензировании см. в статье [функции и лицензии для службы многофакторной идентификации Azure](concept-mfa-licensing.md).
 
 Чтобы увидеть MFA в действии, включите многофакторную идентификацию Azure для набора тестовых пользователей в следующем учебнике:
 
 > [!div class="nextstepaction"]
-> [Включение многофакторной проверки подлинности в Azure](tutorial-mfa-applications.md)
+> [Включение многофакторной проверки подлинности в Azure](./tutorial-enable-azure-mfa.md)

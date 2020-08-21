@@ -36,10 +36,6 @@
           href: virtual-wan-locations-partners.md
         - name: Рекомендации по автоматизации для партнеров
           href: virtual-wan-configure-automation-providers.md
-    - name: Основные сведения о ценах
-      href: pricing-concepts.md
-    - name: Сведения об NVA в виртуальном концентраторе
-      href: about-nva-hub.md
     - name: Маршрутизация
       items:
         - name: Сведения о маршрутизации виртуальных концентраторов
@@ -54,15 +50,15 @@
               href: scenario-isolate-vnets-custom.md
             - name: Виртуальные сети с общими службами
               href: scenario-shared-services-vnet.md
-            - name: Маршрутизация через NVA
+            - name: Маршрутизация через сетевой виртуальный модуль
               href: scenario-route-through-nva.md
-            - name: Пользовательская маршрутизация через NVA (предварительная версия)
+            - name: Маршрутизация через сетевой виртуальный модуль (пользовательская)
               href: scenario-route-through-nvas-custom.md
             - name: "Брандмауэр Azure\_— пользовательская конфигурация"
               href: scenario-route-between-vnets-firewall.md
     - name: Наблюдение
       items:
-        - name: Сведения об аналитике Azure Monitor для Виртуальной глобальной сети (предварительная версия)
+        - name: Сведения об аналитике Azure Monitor для Виртуальной глобальной сети
           href: azure-monitor-insights.md
     - name: "Подключение типа сайт\_— сайт"
       items:
@@ -70,11 +66,15 @@
           href: virtual-wan-ipsec.md
         - name: "Несколько линий связи от поставщика услуг Интернета\_— выбор пути передачи данных Azure"
           href: path-selection-multiple-links.md
+    - name: Основные сведения о ценах
+      href: pricing-concepts.md
+    - name: Сведения об NVA в виртуальном концентраторе
+      href: about-nva-hub.md
 - name: Практические руководства
   items:
     - name: Обновление номера SKU Виртуальной глобальной сети
       href: upgrade-virtual-wan.md
-    - name: Создание NVA в виртуальном концентраторе (предварительная версия)
+    - name: Создание сетевого виртуального модуля в виртуальном концентраторе
       href: How-to-nva-hub.md
     - name: ExpressRoute
       items:
@@ -154,14 +154,18 @@
   items:
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: virtual-wan-faq.md
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=networking'
-    - name: Блог
-      href: 'https://azure.microsoft.com/blog/topics/networking'
-    - name: Ограничения подписки и службы
-      href: ../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-wan%2ftoc.json
+    - name: Объявления об обновлении
+      href: 'https://azure.microsoft.com/updates/?category=networking&query=VIRTUAL%20WAN'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/virtual-wan'
+    - name: Ограничения подписки и службы
+      href: ../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-wan%2ftoc.json
+    - name: 'Сети: стратегия использования'
+      href: 'https://azure.microsoft.com/roadmap/?category=networking'
+    - name: Блог о сетях
+      href: 'https://azure.microsoft.com/blog/topics/networking'
+    - name: 'Сети: объявления об обновлении'
+      href: 'https://azure.microsoft.com/updates/?category=networking'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Соглашение об уровне обслуживания
