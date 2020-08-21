@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ed6587cab1e90c9b4bd4ceffa64c77fa5d8de574
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: c261ea174f37de51a8fbd5b36aeb40c26d44e6a9
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88005709"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691400"
 ---
 # <a name="deploy-a-windows-virtual-desktop-classic-management-tool-with-an-azure-resource-manager-template"></a>Развертывание средства управления виртуальным рабочим столом Windows (классическая модель) с помощью шаблона Azure Resource Manager
 
@@ -83,7 +83,7 @@ ms.locfileid: "88005709"
 
 Как только вы решите, какого пользователя будете использовать для предоставления согласия, выполните приведенные ниже инструкции, чтобы предоставить согласие на использование средства:
 
-1. Перейдите к ресурсам Azure, выберите ресурс служб приложений Azure с именем, указанным в шаблоне (например, Apr3UX), и перейдите по URL-адресу, связанному с ним. Например, <https://rdmimgmtweb-210520190304.azurewebsites.net> .
+1. Перейдите к ресурсам Azure, выберите ресурс служб приложений Azure с именем, указанным в шаблоне (например, Apr3UX), и перейдите по URL-адресу, связанному с ним. Например,  `https://rdmimgmtweb-210520190304.azurewebsites.net` .
 2. Войдите в систему с помощью соответствующей учетной записи пользователя Azure Active Directory.
 3. Если вы прошли проверку подлинности в качестве глобального администратора, можете установить флажок **Согласие от имени вашей организации**. Выберите **Принять**, чтобы предоставить согласие.
 

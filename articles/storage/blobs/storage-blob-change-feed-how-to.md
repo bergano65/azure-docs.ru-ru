@@ -3,17 +3,17 @@ title: Обработка канала изменений в хранилище 
 description: Узнайте, как обрабатывать журналы веб-каналов изменений в клиентском приложении .NET.
 author: normesta
 ms.author: normesta
-ms.date: 11/04/2019
+ms.date: 06/18/2020
 ms.topic: article
 ms.service: storage
 ms.subservice: blobs
 ms.reviewer: sadodd
-ms.openlocfilehash: 75995eeb3f8255cb4c60d5be267f9c343edfea89
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dedf1174e00f5bb75822fb720a592af86121ec2d
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74111857"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691434"
 ---
 # <a name="process-change-feed-in-azure-blob-storage-preview"></a>Обработка канала изменений в хранилище BLOB-объектов Azure (Предварительная версия)
 
@@ -26,349 +26,195 @@ ms.locfileid: "74111857"
 
 ## <a name="get-the-blob-change-feed-processor-library"></a>Получение библиотеки обработчика канала изменений больших двоичных объектов
 
-1. В Visual Studio добавьте URL-адрес `https://azuresdkartifacts.blob.core.windows.net/azuresdkpartnerdrops/index.json` в источники пакетов NuGet. 
+1. Откройте командное окно (например, Windows PowerShell).
+2. В каталоге проекта установите пакет NuGet **Azure. Storage. blobs. пр** .
 
-   Сведения о том, как это сделать, см. в разделе [Источники пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#package-sources).
-
-2. В диспетчере пакетов NuGet найдите пакет **Microsoft. Azure. Storage. пр** и установите его в свой проект. 
-
-   Инструкции см. в разделе [Поиск и установка пакета](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#find-and-install-a-package).
-
-## <a name="connect-to-the-storage-account"></a>Подключение к учетной записи хранения
-
-Проанализируйте строку подключения, вызвав метод [CloudStorageAccount. TryParse](/dotnet/api/microsoft.azure.storage.cloudstorageaccount.tryparse) . 
-
-Затем создайте объект, который представляет хранилище BLOB-объектов в вашей учетной записи хранения, вызвав метод [CloudStorageAccount. креатеклаудблобклиент](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.blobaccountextensions.createcloudblobclient) .
-
-```cs
-public bool GetBlobClient(ref CloudBlobClient cloudBlobClient, string storageConnectionString)
-{
-    if (CloudStorageAccount.TryParse
-        (storageConnectionString, out CloudStorageAccount storageAccount))
-        {
-            cloudBlobClient = storageAccount.CreateCloudBlobClient();
-
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-}
+```console
+dotnet add package Azure.Storage.Blobs.ChangeFeed --source https://azuresdkartifacts.blob.core.windows.net/azure-sdk-for-net/index.json --version 12.0.0-dev.20200604.2
 ```
-
-## <a name="initialize-the-change-feed"></a>Инициализация веб-канала изменений
-
-Добавьте в начало файла кода приведенные ниже операторы using. 
-
-```csharp
-using Avro.Generic;
-using ChangeFeedClient;
-```
-
-Затем создайте экземпляр класса **пр** , вызвав метод **жетконтаинерреференце** . Передайте имя контейнера веб-канала изменений.
-
-```csharp
-public async Task<ChangeFeed> GetChangeFeed(CloudBlobClient cloudBlobClient)
-{
-    CloudBlobContainer changeFeedContainer =
-        cloudBlobClient.GetContainerReference("$blobchangefeed");
-
-    ChangeFeed changeFeed = new ChangeFeed(changeFeedContainer);
-    await changeFeed.InitializeAsync();
-
-    return changeFeed;
-}
-```
-
-## <a name="reading-records"></a>Чтение записей
+## <a name="read-records"></a>Чтение записей
 
 > [!NOTE]
 > Веб-канал изменений является неизменяемой сущностью и доступна только для чтения в вашей учетной записи хранения. Любое количество приложений может одновременно считывать и обрабатывать канал изменений, а также независимо от их удобства. Записи не удаляются из веб-канала изменений, когда приложение считывает их. Состояние чтения или итерации каждого потребляемого модуля чтения является независимым и поддерживается только приложением.
 
-Самый простой способ считать записи — создать экземпляр класса **чанжефидреадер** . 
-
-В этом примере выполняется перебор всех записей в веб-канале изменений, а затем на консоль выводятся несколько значений из каждой записи. 
+Этот пример выполняет перебор всех записей в веб-канале изменений, добавляет их в список, а затем возвращает этот список вызывающему объекту.
  
 ```csharp
-public async Task ProcessRecords(ChangeFeed changeFeed)
+public async Task<List<BlobChangeFeedEvent>> ChangeFeedAsync(string connectionString)
 {
-    ChangeFeedReader processor = await changeFeed.CreateChangeFeedReaderAsync();
+    // Get a new blob service client.
+    BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
 
-    ChangeFeedRecord currentRecord = null;
-    do
+    // Get a new change feed client.
+    BlobChangeFeedClient changeFeedClient = blobServiceClient.GetChangeFeedClient();
+
+    List<BlobChangeFeedEvent> changeFeedEvents = new List<BlobChangeFeedEvent>();
+
+    // Get all the events in the change feed. 
+    await foreach (BlobChangeFeedEvent changeFeedEvent in changeFeedClient.GetChangesAsync())
     {
-        currentRecord = await processor.GetNextItemAsync();
+        changeFeedEvents.Add(changeFeedEvent);
+    }
 
-        if (currentRecord != null)
-        {
-            string subject = currentRecord.record["subject"].ToString();
-            string eventType = ((GenericEnum)currentRecord.record["eventType"]).Value;
-            string api = ((GenericEnum)((GenericRecord)currentRecord.record["data"])["api"]).Value;
-
-            Console.WriteLine("Subject: " + subject + "\n" +
-                "Event Type: " + eventType + "\n" +
-                "Api: " + api);
-        }
-
-    } while (currentRecord != null);
+    return changeFeedEvents;
 }
 ```
 
-## <a name="resuming-reading-records-from-a-saved-position"></a>Возобновление чтения записей из сохраненной должности
-
-Вы можете сохранить свое расположение чтения в веб-канале изменений и возобновить итерацию записей в будущем. Состояние итерации веб-канала изменений можно сохранить в любое время с помощью метода **чанжефидреадер. сериализестате ()** . Состояние представляет собой **строку** , и приложение может сохранить это состояние в зависимости от структуры приложения (например, в базе данных или файле).
+В этом примере на консоль выводятся несколько значений из каждой записи в списке. 
 
 ```csharp
-    string currentReadState = processor.SerializeState();
+public void showEventData(List<BlobChangeFeedEvent> changeFeedEvents)
+{
+    foreach (BlobChangeFeedEvent changeFeedEvent in changeFeedEvents)
+    {
+        string subject = changeFeedEvent.Subject;
+        string eventType = changeFeedEvent.EventType.ToString();
+        string api = changeFeedEvent.EventData.Api;
+
+        Console.WriteLine("Subject: " + subject + "\n" +
+        "Event Type: " + eventType + "\n" +
+        "Api: " + api);
+    }
+}
 ```
 
-Можно продолжить итерацию записей из последнего состояния, создав **чанжефидреадер** с помощью метода **креатечанжефидреадерфромпоинтерасинк** .
+## <a name="resume-reading-records-from-a-saved-position"></a>Возобновление чтения записей из сохраненной должности
+
+Вы можете сохранить свое расположение чтения в веб-канале изменений, а затем возобновить итерацию записей в будущем. Чтобы сохранить позицию чтения, можно получить курсор веб-канала изменений. Курсор является **строкой** , и приложение может сохранить эту строку любым способом, который имеет смысл в проектировании приложения (например, в файл или базу данных).
+
+В этом примере выполняется перебор всех записей в веб-канале изменений, их добавление в список и сохранение курсора. Список и курсор возвращаются вызывающему. 
 
 ```csharp
-public async Task ProcessRecordsFromLastPosition(ChangeFeed changeFeed, string lastReadState)
+public async Task<(string, List<BlobChangeFeedEvent>)> ChangeFeedResumeWithCursorAsync
+    (string connectionString,  string cursor)
 {
-    ChangeFeedReader processor = await changeFeed.CreateChangeFeedReaderFromPointerAsync(lastReadState);
+    // Get a new blob service client.
+    BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
 
-    ChangeFeedRecord currentRecord = null;
-    do
+    // Get a new change feed client.
+    BlobChangeFeedClient changeFeedClient = blobServiceClient.GetChangeFeedClient();
+    List<BlobChangeFeedEvent> changeFeedEvents = new List<BlobChangeFeedEvent>();
+
+    IAsyncEnumerator<Page<BlobChangeFeedEvent>> enumerator = changeFeedClient
+        .GetChangesAsync(continuation: cursor)
+        .AsPages(pageSizeHint: 10)
+        .GetAsyncEnumerator();
+
+    await enumerator.MoveNextAsync();
+
+    foreach (BlobChangeFeedEvent changeFeedEvent in enumerator.Current.Values)
     {
-        currentRecord = await processor.GetNextItemAsync();
-
-        if (currentRecord != null)
-        {
-            string subject = currentRecord.record["subject"].ToString();
-            string eventType = ((GenericEnum)currentRecord.record["eventType"]).Value;
-            string api = ((GenericEnum)((GenericRecord)currentRecord.record["data"])["api"]).Value;
-
-            Console.WriteLine("Subject: " + subject + "\n" +
-                "Event Type: " + eventType + "\n" +
-                "Api: " + api);
-        }
-
-    } while (currentRecord != null);
+    
+        changeFeedEvents.Add(changeFeedEvent);             
+    }
+    
+    // Update the change feed cursor.  The cursor is not required to get each page of events,
+    // it is intended to be saved and used to resume iterating at a later date.
+    cursor = enumerator.Current.ContinuationToken;
+    return (cursor, changeFeedEvents);
 }
-
 ```
 
 ## <a name="stream-processing-of-records"></a>Потоковая обработка записей
 
-Вы можете обрабатывать записи веб-канала изменений по мере их поступления. См. [спецификации](storage-blob-change-feed.md#specifications).
+Вы можете обрабатывать записи веб-канала изменений по мере их поступления. См. [спецификации](storage-blob-change-feed.md#specifications). Мы рекомендуем опрашивать изменения каждый час.
+
+В этом примере периодически опрашивается на наличие изменений.  Если записи изменений существуют, этот код обрабатывает эти записи и сохраняет курсор веб-канала изменений. Таким образом, если процесс был остановлен, а затем снова запущен, приложение может использовать курсор для возобновления обработки записей, в которых он остался последним. В этом примере курсор сохраняется в файле конфигурации локального приложения, но приложение может сохранить его в любой форме, которая наиболее подходит для вашего сценария. 
 
 ```csharp
-public async Task ProcessRecordsStream(ChangeFeed changeFeed, int waitTimeMs)
+public async Task ChangeFeedStreamAsync
+    (string connectionString, int waitTimeMs, string cursor)
 {
-    ChangeFeedReader processor = await changeFeed.CreateChangeFeedReaderAsync();
+    // Get a new blob service client.
+    BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
 
-    ChangeFeedRecord currentRecord = null;
-    while (true)
-    {
-        do
-        {
-            currentRecord = await processor.GetNextItemAsync();
-
-            if (currentRecord != null)
-            {
-                string subject = currentRecord.record["subject"].ToString();
-                string eventType = ((GenericEnum)currentRecord.record["eventType"]).Value;
-                string api = ((GenericEnum)((GenericRecord)currentRecord.record["data"])["api"]).Value;
-
-                Console.WriteLine("Subject: " + subject + "\n" +
-                    "Event Type: " + eventType + "\n" +
-                    "Api: " + api);
-            }
-
-        } while (currentRecord != null);
-
-        await Task.Delay(waitTimeMs);
-    }
-}
-```
-
-## <a name="reading-records-within-a-time-range"></a>Чтение записей в диапазоне времени
-
-Канал изменений организован в почасовые сегменты на основе времени события изменения. См. [спецификации](storage-blob-change-feed.md#specifications). Вы можете читать записи из сегментов веб-канала изменений, которые попадают в указанный диапазон времени.
-
-В этом примере получается время начала всех сегментов. Затем он проходит по этому списку, пока время начала не выходит за пределы времени последнего потребляемого сегмента или за время окончания требуемого диапазона. 
-
-### <a name="selecting-segments-for-a-time-range"></a>Выбор сегментов для диапазона времени
-
-```csharp
-public async Task<List<DateTimeOffset>> GetChangeFeedSegmentRefsForTimeRange
-    (ChangeFeed changeFeed, DateTimeOffset startTime, DateTimeOffset endTime)
-{
-    List<DateTimeOffset> result = new List<DateTimeOffset>();
-
-    DateTimeOffset stAdj = startTime.AddMinutes(-15);
-    DateTimeOffset enAdj = endTime.AddMinutes(15);
-
-    DateTimeOffset lastConsumable = (DateTimeOffset)changeFeed.LastConsumable;
-
-    List<DateTimeOffset> segments = 
-        (await changeFeed.ListAvailableSegmentTimesAsync()).ToList();
-
-    foreach (var segmentStart in segments)
-    {
-        if (lastConsumable.CompareTo(segmentStart) < 0)
-        {
-            break;
-        }
-
-        if (enAdj.CompareTo(segmentStart) < 0)
-        {
-            break;
-        }
-
-        DateTimeOffset segmentEnd = segmentStart.AddMinutes(60);
-
-        bool overlaps = stAdj.CompareTo(segmentEnd) < 0 && 
-            segmentStart.CompareTo(enAdj) < 0;
-
-        if (overlaps)
-        {
-            result.Add(segmentStart);
-        }
-    }
-
-    return result;
-}
-```
-
-### <a name="reading-records-in-a-segment"></a>Чтение записей в сегменте
-
-Можно считывать записи из отдельных сегментов или диапазонов сегментов.
-
-```csharp
-public async Task ProcessRecordsInSegment(ChangeFeed changeFeed, DateTimeOffset segmentOffset)
-{
-    ChangeFeedSegment segment = new ChangeFeedSegment(segmentOffset, changeFeed);
-    await segment.InitializeAsync();
-
-    ChangeFeedSegmentReader processor = await segment.CreateChangeFeedSegmentReaderAsync();
-
-    ChangeFeedRecord currentRecord = null;
-    do
-    {
-        currentRecord = await processor.GetNextItemAsync();
-
-        if (currentRecord != null)
-        {
-            string subject = currentRecord.record["subject"].ToString();
-            string eventType = ((GenericEnum)currentRecord.record["eventType"]).Value;
-            string api = ((GenericEnum)((GenericRecord)currentRecord.record["data"])["api"]).Value;
-
-            Console.WriteLine("Subject: " + subject + "\n" +
-                "Event Type: " + eventType + "\n" +
-                "Api: " + api);
-        }
-
-    } while (currentRecord != null);
-}
-```
-
-## <a name="read-records-starting-from-a-time"></a>Чтение записей, начиная с времени
-
-Можно считывать записи веб-канала изменений из начального сегмента до конца. Как и при чтении записей в диапазоне времени, можно перечислить сегменты и выбрать сегмент для начала итерации.
-
-В этом примере получается значение [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?view=netframework-4.8) первого сегмента для обработки.
-
-```csharp
-public async Task<DateTimeOffset> GetChangeFeedSegmentRefAfterTime
-    (ChangeFeed changeFeed, DateTimeOffset timestamp)
-{
-    DateTimeOffset result = new DateTimeOffset();
-
-    DateTimeOffset lastConsumable = (DateTimeOffset)changeFeed.LastConsumable;
-    DateTimeOffset lastConsumableEnd = lastConsumable.AddMinutes(60);
-
-    DateTimeOffset timestampAdj = timestamp.AddMinutes(-15);
-
-    if (lastConsumableEnd.CompareTo(timestampAdj) < 0)
-    {
-        return result;
-    }
-
-    List<DateTimeOffset> segments = (await changeFeed.ListAvailableSegmentTimesAsync()).ToList();
-    foreach (var segmentStart in segments)
-    {
-        DateTimeOffset segmentEnd = segmentStart.AddMinutes(60);
-        if (timestampAdj.CompareTo(segmentEnd) <= 0)
-        {
-            result = segmentStart;
-            break;
-        }
-    }
-
-    return result;
-}
-```
-
-В этом примере выполняется обработка записей веб-канала изменений, начиная с [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?view=netframework-4.8) начального сегмента.
-
-```csharp
-public async Task ProcessRecordsStartingFromSegment(ChangeFeed changeFeed, DateTimeOffset segmentStart)
-{
-    TimeSpan waitTime = new TimeSpan(60 * 1000);
-
-    ChangeFeedSegment segment = new ChangeFeedSegment(segmentStart, changeFeed);
-
-    await segment.InitializeAsync();
+    // Get a new change feed client.
+    BlobChangeFeedClient changeFeedClient = blobServiceClient.GetChangeFeedClient();
 
     while (true)
     {
-        while (!await IsSegmentConsumableAsync(changeFeed, segment))
+        IAsyncEnumerator<Page<BlobChangeFeedEvent>> enumerator = changeFeedClient
+        .GetChangesAsync(continuation: cursor).AsPages().GetAsyncEnumerator();
+
+        while (true) 
         {
-            await Task.Delay(waitTime);
-        }
+            var result = await enumerator.MoveNextAsync();
 
-        ChangeFeedSegmentReader reader = await segment.CreateChangeFeedSegmentReaderAsync();
-
-        do
-        {
-            await reader.CheckForFinalizationAsync();
-
-            ChangeFeedRecord currentItem = null;
-            do
+            if (result)
             {
-                currentItem = await reader.GetNextItemAsync();
-                if (currentItem != null)
+                foreach (BlobChangeFeedEvent changeFeedEvent in enumerator.Current.Values)
                 {
-                    string subject = currentItem.record["subject"].ToString();
-                    string eventType = ((GenericEnum)currentItem.record["eventType"]).Value;
-                    string api = ((GenericEnum)((GenericRecord)currentItem.record["data"])["api"]).Value;
+                    string subject = changeFeedEvent.Subject;
+                    string eventType = changeFeedEvent.EventType.ToString();
+                    string api = changeFeedEvent.EventData.Api;
 
                     Console.WriteLine("Subject: " + subject + "\n" +
                         "Event Type: " + eventType + "\n" +
                         "Api: " + api);
                 }
-            } while (currentItem != null);
-
-            if (segment.timeWindowStatus != ChangefeedSegmentStatus.Finalized)
-            {
-                await Task.Delay(waitTime);
+            
+                // helper method to save cursor. 
+                SaveCursor(enumerator.Current.ContinuationToken);
             }
-        } while (segment.timeWindowStatus != ChangefeedSegmentStatus.Finalized);
+            else
+            {
+                break;
+            }
 
-        segment = await segment.GetNextSegmentAsync(); // TODO: What if next window doesn't yet exist?
-        await segment.InitializeAsync(); // Should update status, shard list.
+        }
+        await Task.Delay(waitTimeMs);
     }
+
 }
 
-private async Task<bool> IsSegmentConsumableAsync(ChangeFeed changeFeed, ChangeFeedSegment segment)
+public void SaveCursor(string cursor)
 {
-    if (changeFeed.LastConsumable >= segment.startTime)
-    {
-        return true;
-    }
-    await changeFeed.InitializeAsync();
-    return changeFeed.LastConsumable >= segment.startTime;
+    System.Configuration.Configuration config = 
+        ConfigurationManager.OpenExeConfiguration
+        (ConfigurationUserLevel.None);
+
+    config.AppSettings.Settings.Clear();
+    config.AppSettings.Settings.Add("Cursor", cursor);
+    config.Save(ConfigurationSaveMode.Modified);
 }
 ```
 
->[!TIP]
-> Сегмент может иметь журналы веб-канала изменений в одном или нескольких *чункфилепас*. В случае нескольких *чункфилепас* система внутренним образом разделяет записи на несколько сегментов, чтобы управлять пропускной способностью публикации. Гарантируется, что каждая секция сегмента будет содержать изменения взаимоисключающих больших двоичных объектов и может обрабатываться независимо, без нарушения порядка. Класс **чанжефидсегментшардреадер** можно использовать для перебора записей на уровне сегментов, если это наиболее эффективно для вашего сценария.
+## <a name="reading-records-within-a-time-range"></a>Чтение записей в диапазоне времени
 
-## <a name="next-steps"></a>Дальнейшие шаги
+Можно читать записи, попадающие в заданный диапазон времени. В этом примере выполняется итерация всех записей в веб-канале изменений, которые находятся в диапазоне от 3:00 марта 2 2017 г. и 2:00 AM 7 2019, добавляет их в список, а затем возвращает этот список вызывающему объекту.
+
+### <a name="selecting-segments-for-a-time-range"></a>Выбор сегментов для диапазона времени
+
+```csharp
+public async Task<List<BlobChangeFeedEvent>> ChangeFeedBetweenDatesAsync(string connectionString)
+{
+    // Get a new blob service client.
+    BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
+
+    // Get a new change feed client.
+    BlobChangeFeedClient changeFeedClient = blobServiceClient.GetChangeFeedClient();
+    List<BlobChangeFeedEvent> changeFeedEvents = new List<BlobChangeFeedEvent>();
+
+    // Create the start and end time.  The change feed client will round start time down to
+    // the nearest hour, and round endTime up to the next hour if you provide DateTimeOffsets
+    // with minutes and seconds.
+    DateTimeOffset startTime = new DateTimeOffset(2017, 3, 2, 15, 0, 0, TimeSpan.Zero);
+    DateTimeOffset endTime = new DateTimeOffset(2020, 10, 7, 2, 0, 0, TimeSpan.Zero);
+
+    // You can also provide just a start or end time.
+    await foreach (BlobChangeFeedEvent changeFeedEvent in changeFeedClient.GetChangesAsync(
+        start: startTime,
+        end: endTime))
+    {
+        changeFeedEvents.Add(changeFeedEvent);
+    }
+
+    return changeFeedEvents;
+}
+```
+
+Предоставленное время начала округляется вниз до ближайшего часа, а время окончания округляется до ближайшего часа. Возможно, пользователи увидят события, произошедшие до времени начала и после времени окончания. Также возможно, что некоторые события, происходящие между временем начала и окончания, не будут отображаться. Это связано с тем, что события могут записываться в течение часа, предшествующего времени начала, или в течение часа после времени окончания.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о журналах веб-канала изменений. См. [веб-канал изменений в хранилище BLOB-объектов Azure (Предварительная версия)](storage-blob-change-feed.md)

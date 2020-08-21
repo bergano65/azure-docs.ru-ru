@@ -8,12 +8,12 @@ ms.date: 06/15/2020
 ms.topic: how-to
 ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: 8656f0396aff7f20c867a5fae3d929236a3aa0d5
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: c7eb50caa4e7f0505809da64dd0309c6e0b8709f
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86510452"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691349"
 ---
 # <a name="upload-a-vhd-to-azure-or-copy-a-managed-disk-to-another-region---azure-cli"></a>Отправка VHD в Azure или копирование управляемого диска в другой регион — Azure CLI
 
@@ -28,7 +28,7 @@ ms.locfileid: "86510452"
 
 ## <a name="getting-started"></a>Начало работы
 
-Если вы предпочитаете отправлять диски через графический интерфейс, это можно сделать с помощью Обозреватель службы хранилища Azure. Дополнительные сведения см. в статье [использование обозреватель службы хранилища Azure для управления управляемыми дисками Azure](disks-use-storage-explorer-managed-disks.md) .
+Если вы предпочитаете отправлять диски через графический интерфейс, это можно сделать с помощью Обозреватель службы хранилища Azure. Дополнительные сведения см. в статье [использование обозреватель службы хранилища Azure для управления управляемыми дисками Azure](../disks-use-storage-explorer-managed-disks.md) .
 
 Чтобы отправить VHD в Azure, необходимо создать пустой управляемый диск, настроенный для этого процесса отправки. Прежде чем создать его, необходимо ознакомиться с дополнительными сведениями об этих дисках.
 

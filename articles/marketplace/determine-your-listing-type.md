@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 07/30/2020
-ms.openlocfilehash: 1b0846c68f6860b5c7dac9e93808088dac4f6a05
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: 4a27ace4e45d00a2fbb35b9e0e3e9b7c03383681
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88607429"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705883"
 ---
 # <a name="determine-your-publishing-option"></a>Выбор варианта публикации
 
@@ -47,9 +47,9 @@ ms.locfileid: "88607429"
 
 &#42;&#42; Предложения Microsoft 365 можно устанавливать бесплатно и монетизировать через предложение SaaS в формате службы лицензирования. Дополнительные сведения см. в статье [Монетизация надстройки Office 365 через коммерческую платформу Майкрософт](/office/dev/store/monetize-addins-through-microsoft-commercial-marketplace).
 
-## <a name="choose-a-call-to-action"></a>Выбор вызова действия
+## <a name="choose-a-listing-option"></a>Выбор параметра перечисления
 
-Предлагаемые варианты публикации обеспечивают дифференцированное привлечение клиентов, кроме того, они дают вам доступ к единой базе потенциальных клиентов и [преимуществам коммерческой платформы](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits). Обратите внимание на призывы к действию, которые соответствуют разным вариантам публикации.
+Доступные варианты перечисления предлагают дифференцированное взаимодействие с клиентами, предоставляя вам доступ к преимуществам совместного использования и [коммерческого рынка](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits). Обратите внимание на параметры листинга, соответствующие параметру публикации:
 
 | **Вариант публикации**    | **Описание**  |
 | :------------------- | :-------------------|

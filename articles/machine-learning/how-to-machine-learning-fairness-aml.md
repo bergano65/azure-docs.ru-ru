@@ -11,12 +11,12 @@ ms.reviewer: luquinta
 ms.date: 07/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: ec0c39bad8a7c12822e5ebf5cd4a958aa8653050
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: a0f06c2db0a5bf196ae610efadd85ef1df8defe8
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87844649"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691315"
 ---
 # <a name="use-azure-machine-learning-with-the-fairlearn-open-source-package-to-assess-the-fairness-of-ml-models-preview"></a>Использование Машинное обучение Azure с пакетом с открытым исходным кодом Фаирлеарн для оценки распределения моделей машинного обучения (Предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "87844649"
 
 ## <a name="azure-machine-learning-fairness-sdk"></a>Пакет SDK для Машинное обучение Azure равноправия 
 
-Пакет SDK для Машинное обучение Azure равноправии `azureml-contrib-fairness` интегрирует пакет Python с открытым кодом ( [фаирлеарн](http://fairlearn.github.io)) в машинное обучение Azure. Чтобы узнать больше об интеграции Фаирлеарн в Машинное обучение Azure, ознакомьтесь с этими [примерами записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/contrib/fairness). Дополнительные сведения о Фаирлеарн см. в [примере руководств](https://fairlearn.github.io/auto_examples/notebooks/index.html) и [примерах записных книжек](https://github.com/fairlearn/fairlearn/tree/master/notebooks). 
+Пакет SDK для Машинное обучение Azure равноправии `azureml-contrib-fairness` интегрирует пакет Python с открытым кодом ( [фаирлеарн](http://fairlearn.github.io)) в машинное обучение Azure. Чтобы узнать больше об интеграции Фаирлеарн в Машинное обучение Azure, ознакомьтесь с этими [примерами записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/contrib/fairness). Дополнительные сведения о Фаирлеарн см. в [примере руководств](https://fairlearn.github.io/auto_examples/) и [примерах записных книжек](https://github.com/fairlearn/fairlearn/tree/master/notebooks). 
 
 Для установки пакетов и используйте следующие команды `azureml-contrib-fairness` `fairlearn` :
 ```bash
@@ -321,7 +321,7 @@ pip install fairlearn==0.4.6
 [![Панель мониторинга Фаирлеарн для сравнения моделей](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png)](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png#lightbox)
     
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о равномерном использовании модели](concept-fairness-ml.md)
 

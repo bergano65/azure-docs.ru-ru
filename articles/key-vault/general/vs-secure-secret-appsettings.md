@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 07/17/2019
 ms.author: cawa
-ms.openlocfilehash: f20a40603916e703d6f3cfc13ee2d165675f3ca2
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: df2c626de39ff4482a4dc69fa5a514fc92002ccb
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88588506"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705866"
 ---
 # <a name="securely-save-secret-application-settings-for-a-web-application"></a>Безопасное хранение секретных параметров веб-приложения
 
@@ -101,35 +101,22 @@ ms.locfileid: "88588506"
 ### <a name="save-secret-settings-in-a-secret-file-that-is-outside-of-source-control-folder"></a>Хранение секретных параметров в файле секрета за пределами папки системы управления версиями
 Используйте следующую процедуру, если вы создаете упрощенный прототип и не хотите подготавливать ресурсы Azure.
 
-1. Установите следующий пакет NuGet в своем проекте.
-    ```
-    Microsoft.Configuration.ConfigurationBuilders.Base
-    ```
+1. Щелкните правой кнопкой мыши проект и выберите пункт **Управление секретами пользователя**. При этом будет установлен пакет NuGet **Microsoft.Configuration.Configуратионбуилдерс. усерсекретс** , создан файл для сохранения параметров секрета за пределами web.configного файла и добавлен раздел **конфигбуилдерс** в файл web.config.
 
-2. Создайте файл следующего вида. Сохраните его за пределами папки проекта.
+2. Установите параметры секрета в корневом элементе. Ниже приведен пример
 
     ```xml
+    <?xml version="1.0" encoding="utf-8"?>
     <root>
-        <secrets ver="1.0">
-            <secret name="secret1" value="foo_one" />
-            <secret name="secret2" value="foo_two" />
-        </secrets>
+      <secrets ver="1.0">
+        <secret name="secret" value="foo"/>
+        <secret name="secret1" value="foo_one" />
+        <secret name="secret2" value="foo_two" />
+      </secrets>
     </root>
     ```
 
-3. Определите файл секрета как построитель конфигурации в файле Web.config. Поместите этот раздел перед разделом *appSettings*.
-
-    ```xml
-    <configBuilders>
-        <builders>
-            <add name="Secrets"
-                 secretsFile="C:\Users\AppData\MyWebApplication1\secret.xml" type="Microsoft.Configuration.ConfigurationBuilders.UserSecretsConfigBuilder,
-                    Microsoft.Configuration.ConfigurationBuilders, Version=1.0.0.0, Culture=neutral" />
-        </builders>
-    </configBuilders>
-    ```
-
-4. Укажите в разделе appSettings, что используется построитель конфигурации секрета. Убедитесь в наличии записи для параметра секрета с фиктивным значением.
+3. Укажите в разделе appSettings, что используется построитель конфигурации секрета. Убедитесь в наличии записи для параметра секрета с фиктивным значением.
 
     ```xml
         <appSettings configBuilders="Secrets">
@@ -148,20 +135,18 @@ ms.locfileid: "88588506"
 
 1. Установите следующий пакет NuGet в своем проекте.
    ```
-   Microsoft.Configuration.ConfigurationBuilders.UserSecrets
+   Microsoft.Configuration.ConfigurationBuilders.Azure
    ```
 
-2. Определите Key Vault построитель конфигурации в Web.config. Добавьте этот раздел перед разделом *appSettings* . Замените имя Key Vault на *vaultName*, если ваше хранилище размещено в общедоступном облаке Azure, или укажите полный универсальный код ресурса (URI), если вы используете независимое облако.
+2. Определите Key Vault построитель конфигурации в Web.config. Добавьте этот раздел перед разделом *appSettings* . Замените *vaultName* именем KEY Vault, если key Vault в глобальной среде Azure, или полный URI, если вы используете независимых Cloud.
 
     ```xml
-    <configSections>
-        <section name="configBuilders" type="System.Configuration.ConfigurationBuildersSection, System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" restartOnExternalChanges="false" requirePermission="false" />
-    </configSections>
-    <configBuilders>
+     <configBuilders>
         <builders>
-            <add name="AzureKeyVault" vaultName="Test911" type="Microsoft.Configuration.ConfigurationBuilders.AzureKeyVaultConfigBuilder, ConfigurationBuilders, Version=1.0.0.0, Culture=neutral" />
+            <add name="Secrets" userSecretsId="695823c3-6921-4458-b60b-2b82bbd39b8d" type="Microsoft.Configuration.ConfigurationBuilders.UserSecretsConfigBuilder, Microsoft.Configuration.ConfigurationBuilders.UserSecrets, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+            <add name="AzureKeyVault" vaultName="[VaultName]" type="Microsoft.Configuration.ConfigurationBuilders.AzureKeyVaultConfigBuilder, Microsoft.Configuration.ConfigurationBuilders.Azure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
         </builders>
-    </configBuilders>
+      </configBuilders>
     ```
 3. Укажите в разделе appSettings, что используется построитель конфигурации Key Vault. Проверьте наличие записи для секретного параметра с пустым значением.
 

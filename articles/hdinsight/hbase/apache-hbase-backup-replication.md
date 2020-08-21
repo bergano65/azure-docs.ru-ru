@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/19/2019
-ms.openlocfilehash: b1830ddef44ef33d19c953622951779632e33e71
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 5a3760956dfe9a713d344fd6684d75ea240ab7de
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86076748"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705730"
 ---
 # <a name="set-up-backup-and-replication-for-apache-hbase-and-apache-phoenix-on-hdinsight"></a>Настройка резервного копирования и репликации Apache HBase и Apache Phoenix в HDInsight
 
@@ -213,7 +213,13 @@ hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -snapshot <snapshotName> -
 hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -snapshot 'Snapshot1' -copy-to 'wasbs://secondcluster@myaccount.blob.core.windows.net/hbase'
 ```
 
-После экспорта моментального снимка подключитесь к головному узлу целевого кластера по протоколу SSH и восстановите этот моментальный снимок с помощью команды restore_snapshot, как описано выше.
+Если у вас нет дополнительной учетной записи хранения Azure, присоединенной к исходному кластеру, или если ваш исходный кластер является локальным (или не HDI кластером), при попытке доступа к учетной записи хранения кластера HDI могут возникнуть проблемы с авторизацией. Чтобы устранить эту проблему, укажите ключ для учетной записи хранения в качестве параметра командной строки, как показано в следующем примере. Ключ можно получить в учетной записи хранения в портал Azure.
+
+```console
+hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -Dfs.azure.account.key.myaccount.blob.core.windows.net=mykey -snapshot 'Snapshot1' -copy-to 'wasbs://secondcluster@myaccount.blob.core.windows.net/hbase'
+```
+
+После экспорта моментального снимка подключитесь к головному узлу целевого кластера по протоколу SSH и восстановите моментальный снимок с помощью `restore_snapshot` команды, как описано выше.
 
 Моментальные снимки предоставляют полную резервную копию таблицы на момент выполнения команды `snapshot`. Моментальные снимки не предоставляют возможность выполнять добавочные моментальные снимки по времени Windows, а также указывать подмножества семейств столбцов для включения в моментальный снимок.
 
@@ -236,7 +242,7 @@ hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -snapshot 'Snapshot1' -cop
 
 Чтобы включить репликацию в HDInsight, примените действие скрипта к выполняющемуся исходному кластеру HDInsight. Пошаговые инструкции по включению репликации в кластере или настройке репликации в образцах кластеров, созданных в виртуальных сетях с помощью шаблонов Azure Resource Manager, см. в статье о [Настройке репликации Apache HBase](apache-hbase-replication.md). Эта статья также содержит инструкции по включению репликации метаданных Phoenix.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка репликации Apache HBase](apache-hbase-replication.md)
 * [Работа с программой импорта и экспорта HBase](https://blogs.msdn.microsoft.com/data_otaku/2016/12/21/working-with-the-hbase-import-and-export-utility/)

@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4cb24a89d19abb753e2be704dbad7fd5b2ddcad
-ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+ms.openlocfilehash: 64fc4e1192a1ec33b1d13c38d66e9aab5cbe256b
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88236562"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705628"
 ---
 # <a name="bulk-create-users-in-azure-active-directory"></a>Массовое создание пользователей в Azure Active Directory
 
@@ -35,7 +35,7 @@ Azure Active Directory (Azure AD) поддерживает операции м�
 ![Электронная таблица для отправки и сноски, объясняющие цель и значения для каждой строки и столбца](./media/users-bulk-add/create-template-example.png)
 
 > [!WARNING]
-> При попытке добавить только одну запись в шаблон CSV необходимо сохранить строку 3 и добавить новую запись в строку 4. 
+> Если вы добавляете только одну запись с помощью шаблона CSV, необходимо сохранить строку 3 и добавить новую запись в строку 4.
 
 ### <a name="csv-template-structure"></a>Структура шаблона CSV
 

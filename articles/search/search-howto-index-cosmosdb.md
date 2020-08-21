@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
-ms.openlocfilehash: 180bb78b66bc04e7c3d2aaf68a3dd6d30cfb671c
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 1a7f2983b65c3568ae07e4bcd9d21b7dbd3435a9
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86496559"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705357"
 ---
 # <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>How to index Cosmos DB data using an indexer in Azure Cognitive Search (Индексирование данных Cosmos DB с помощью индексатора в службе "Когнитивный поиск Azure") 
 
@@ -71,7 +71,9 @@ ms.locfileid: "86496559"
 
 + **Name** — это имя объекта источника данных. После создания вы можете выбрать его для других рабочих нагрузок.
 
-+ **Cosmos DB учетная запись** должна быть основной или вторичной строкой подключения от Cosmos DB с помощью `AccountEndpoint` и `AccountKey` . Для MongoDB Collections добавьте **типа API = MongoDB** в конец строки подключения и отделите его от строки подключения точкой с запятой. Для API Gremlin и API Cassandra используйте инструкции для [REST API](#cosmosdb-indexer-rest).
++ **Cosmos DB учетная запись** должна быть основной или вторичной строкой подключения из Cosmos DB в следующем формате: `AccountEndpoint=https://<Cosmos DB account name>.documents.azure.com;AccountKey=<Cosmos DB auth key>;` .
+    + Для **коллекций MongoDB** версии 3,2 и 3,6 для учетной записи Cosmos DB в портал Azure используется следующий формат: `AccountEndpoint=https://<Cosmos DB account name>.documents.azure.com;AccountKey=<Cosmos DB auth key>;ApiKind=MongoDb`
+    + Чтобы получить доступ к предварительной версии и сведения о том, как отформатировать учетные данные, для **графов Gremlin и таблиц Cassandra**Зарегистрируйте [предварительную версию для создания условного индексатора](https://aka.ms/azure-cognitive-search/indexer-preview) .
 
 + **База данных** — это существующая база данных из учетной записи. 
 
@@ -180,10 +182,10 @@ ms.locfileid: "86496559"
 |---------|-------------|
 | **name** | Обязательный элемент. Введите любое имя для представления вашего объекта источника данных. |
 |**type**| Обязательный элемент. Этот параметр должен содержать значение `cosmosdb`. |
-|**credentials** | Обязательный элемент. Должна быть Cosmos DB строкой подключения.<br/>Для коллекций SQL строки подключения имеют следующий формат:`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/><br/>Для MongoDB Collections добавьте **типа API = MongoDB** в строку подключения:<br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/><br/>Для графов Gremlin и таблиц Cassandra зарегистрируйтесь для [предварительной версии индексатора](https://aka.ms/azure-cognitive-search/indexer-preview), чтобы получить доступ к предварительной версии и сведениям о том, как отформатировать учетные данные.<br/><br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если указать номер порта, Когнитивный поиск Azure не сможет индексировать базу данных Azure Cosmos DB.|
+|**credentials** | Обязательный элемент. Должна быть Cosmos DB строкой подключения.<br/><br/>Для **коллекций SQL**строки подключения имеют следующий формат: `AccountEndpoint=https://<Cosmos DB account name>.documents.azure.com;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/><br/>Для **коллекций MongoDB** версии 3,2 и 3,6 для строки подключения используется следующий формат: `AccountEndpoint=https://<Cosmos DB account name>.documents.azure.com;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/><br/>Чтобы получить доступ к предварительной версии и сведения о том, как отформатировать учетные данные, для **графов Gremlin и таблиц Cassandra**Зарегистрируйте [предварительную версию для создания условного индексатора](https://aka.ms/azure-cognitive-search/indexer-preview) .<br/><br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если указать номер порта, Когнитивный поиск Azure не сможет индексировать базу данных Azure Cosmos DB.|
 | **container** | В данной вкладке содержатся следующие элементы. <br/>**name**. Обязательный элемент. Укажите идентификатор коллекции базы данных, которая будет индексироваться.<br/>**query**. Необязательный параметр. Можно указать запрос на сведение произвольного документа JSON в неструктурированную схему, индексируемую Когнитивным поиском Azure.<br/>Для API MongoDB, Gremlin и Cassandra запросы не поддерживаются. |
 | **dataChangeDetectionPolicy** | (рекомендуется). Ознакомьтесь с разделом [Индексация измененных документов](#DataChangeDetectionPolicy).|
-|**dataDeletionDetectionPolicy** | Необязательный параметр. Ознакомьтесь с разделом [удаленных документов](#DataDeletionDetectionPolicy).|
+|**dataDeletionDetectionPolicy** | Необязательный элемент. Ознакомьтесь с разделом [удаленных документов](#DataDeletionDetectionPolicy).|
 
 ### <a name="using-queries-to-shape-indexed-data"></a>Использование запросов для формирования индексированных данных
 Вы можете указать SQL-запрос для преобразования вложенных свойств или массивов в плоскую структуру, проецирования свойств JSON, а также для фильтрации данных, подлежащих индексированию. 
@@ -269,11 +271,11 @@ SELECT c.id, c.userId, tag, c._ts FROM c JOIN tag IN c.tags WHERE c._ts >= @High
 | Bool |Edm.Boolean, Edm.String |
 | Числа, которые выглядят как целые числа |Edm.Int32, Edm.Int64, Edm.String |
 | Числа, которые выглядят как числа с плавающей запятой |Edm.Double, Edm.String |
-| Строка |Edm.String |
+| Строковый |Edm.String |
 | Массивы типов-примитивов, например [a, b, c] |Collection(Edm.String) |
 | Строки, которые выглядят как даты |Edm.DateTimeOffset, Edm.String |
 | Геообъекты JSON, например { "тип": "Точка", "координаты": [ долгота, широта ] } |Edm.GeographyPoint |
-| Другие объекты JSON |Недоступно |
+| Другие объекты JSON |н/д |
 
 ### <a name="4---configure-and-run-the-indexer"></a>4. Настройка и запуск индексатора
 

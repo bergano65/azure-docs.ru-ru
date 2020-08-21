@@ -9,12 +9,12 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 12/04/2019
-ms.openlocfilehash: 764e4c33182499b922499c798d57fd05d8859742
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: MT
+ms.openlocfilehash: 6ddff84de6b8ffd5bc8f7c7dcaa7cb4df3d71f81
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83673396"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88703192"
 ---
 **Целевые объекты вычислений могут использоваться повторно для разных заданий обучения**. Например, после присоединения удаленной виртуальной машины к рабочей области ее можно повторно использовать для нескольких заданий.  В конвейерах машинного обучения используйте правильный [шаг конвейера](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps?view=azure-ml-py) для каждого целевого объекта вычислений.
 
@@ -22,7 +22,7 @@ ms.locfileid: "83673396"
 |----|:----:|:----:|:----:|
 |[Локальный компьютер](../articles/machine-learning/how-to-set-up-training-targets.md#local)| да | &nbsp; | &nbsp; |
 |[Вычислительный кластер Машинного обучения Azure](../articles/machine-learning/how-to-set-up-training-targets.md#amlcompute)| да + <br/>настройка&nbsp;гиперпараметров | да | да |
-|[Вычислительная операция Машинного обучения Azure](../articles/machine-learning/concept-compute-instance.md) | да + <br/>Настройка гиперпараметров | да |  |
+|[Вычислительная операция Машинного обучения Azure](../articles/machine-learning/how-to-set-up-training-targets.md#instance) | да + <br/>Настройка гиперпараметров | да |  |
 |[Удаленная виртуальная машина](../articles/machine-learning/how-to-set-up-training-targets.md#vm) | да + <br/>Настройка гиперпараметров | да | &nbsp; |
 |[Azure&nbsp;Databricks](../articles/machine-learning/how-to-create-your-first-pipeline.md#databricks)| да (только в локальном режиме SDK) | да | &nbsp; |
 |[Azure Data Lake Analytics](../articles/machine-learning/how-to-create-your-first-pipeline.md#adla) | &nbsp; | да | &nbsp; |

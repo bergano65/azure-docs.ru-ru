@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: digital-twins
 ms.service: digital-twins
@@ -9,12 +9,12 @@ author: deepakpalled
 ms.author: dpalled
 manager: diviso
 ms.custom: include file
-ms.openlocfilehash: 1e07f56bc2e820b325414e124c7825c1d356ca26
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1aff5780aa5f4cf21d862a5cee3b140179dac03c
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87046411"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88703595"
 ---
 Ниже приведено краткое описание ключевых ограничений в Gen1 временных рядов Azure.
 
@@ -60,4 +60,4 @@ ms.locfileid: "87046411"
 
 ### <a name="api-limits"></a>Ограничения API
 
-Ограничения REST API для Gen1 Azure Time Series Insights указаны в [справочной документации по REST API](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#limits).
+Ограничения REST API для Gen1 Azure Time Series Insights указаны в [справочной документации по REST API](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/getavailability).

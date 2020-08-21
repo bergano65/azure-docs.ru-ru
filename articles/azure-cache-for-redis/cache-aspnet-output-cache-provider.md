@@ -7,12 +7,12 @@ ms.service: cache
 ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.date: 04/22/2018
-ms.openlocfilehash: 0c60eb8618568d01af9ec6ad0e3d00fe1332b766
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: cb986f1e0172c4a44381b2f9cf043025cb5abe8a
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213020"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705033"
 ---
 # <a name="aspnet-output-cache-provider-for-azure-cache-for-redis"></a>Поставщик кэша вывода ASP.NET для кэша Azure для Redis
 
@@ -57,7 +57,7 @@ Install-Package Microsoft.Web.RedisOutputCacheProvider
 | *хост* | строка | localhost | IP-адрес или имя узла сервера Redis |
 | *port* | положительное целое число | 6379 (без TLS/SSL)<br/>6380 (TLS/SSL) | Порт сервера Redis |
 | *accessKey* | строка | "" | Пароль сервера Redis, если включена авторизация Redis. Значение по умолчанию — пустая строка, что означает, что поставщик состояний сеанса не будет использовать пароль при подключении к серверу Redis. **Если сервер Redis находится в общедоступной сети, такой как кэш Redis для Azure, обязательно включите авторизацию Redis для повышения безопасности и обеспечьте безопасный пароль.** |
-| *технологию* | Логическое | **false** | Следует ли подключаться к серверу Redis по протоколу TLS. По умолчанию это значение равно **false** , так как Redis не поддерживает TLS из поля. **Если вы используете кэш Redis для Azure, который поддерживает протокол SSL, установите значение true для повышения безопасности.**<br/><br/>Порт, отличный от TLS, по умолчанию отключен для новых кэшей. Укажите **true** для этого параметра, чтобы использовать порт TLS. Дополнительные сведения о включении порта без TLS см. в разделе [порты доступа](cache-configure.md#access-ports) статьи [Настройка кэша](cache-configure.md) . |
+| *технологию* | Логическое | **false** | Следует ли подключаться к серверу Redis по протоколу TLS. По умолчанию это значение равно **false** , так как Redis не поддерживает TLS из поля. **Если вы используете кэш Redis для Azure, который поддерживает протокол SSL, установите значение true для повышения безопасности.**<br/><br/>Порт, отличный от TLS, по умолчанию отключен для новых кэшей. Укажите **значение true** для этого параметра, чтобы использовать порт, отличный от TLS. Дополнительные сведения о включении порта без TLS см. в разделе [порты доступа](cache-configure.md#access-ports) статьи [Настройка кэша](cache-configure.md) . |
 | *датабасеиднумбер* | положительное целое число | 0 | *Этот атрибут можно указать только с помощью web.config или AppSettings.*<br/><br/>Укажите, какую базу данных Redis использовать. |
 | *коннектионтимеаутинмиллисекондс* | положительное целое число | Предоставлено StackExchange. Redis | Используется для задания *ConnectTimeout* при создании StackExchange. Redis. ConnectionMultiplexer. |
 | *оператионтимеаутинмиллисекондс* | положительное целое число | Предоставлено StackExchange. Redis | Используется для задания *SyncTimeout* при создании StackExchange. Redis. ConnectionMultiplexer. |
@@ -204,6 +204,6 @@ namespace MyCompany.Redis
 * [Apache Ignite](https://apacheignite-net.readme.io/docs/aspnet-output-caching)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Посетите страницу [ASP.NET Session State Provider for Azure Cache for Redis](cache-aspnet-session-state-provider.md) (Поставщик состояний сеансов ASP.NET для кэша Azure для Redis).

@@ -3,14 +3,14 @@ title: 'Обзор Устойчивые функции версий: функц�
 description: Дополнительные сведения о Устойчивые функции версиях.
 author: cgillum
 ms.topic: conceptual
-ms.date: 10/30/2019
+ms.date: 08/20/2020
 ms.author: azfuncdf
-ms.openlocfilehash: 1dc58bc7c758330c0333a5359622c4e54bb95026
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4c8a536086e426a2d83d26538f9d0efe1ea63eb4
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87024730"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705798"
 ---
 # <a name="durable-functions-versions-overview"></a>Обзор версий Устойчивые функции
 
@@ -44,7 +44,29 @@ ms.locfileid: "87024730"
 
 ### <a name="upgrade-the-extension"></a>Обновление расширения
 
-Установите версию 2. x [расширения привязок устойчивые функции](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) в проекте. Дополнительные сведения см. в разделе [Регистрация расширений привязки функций Azure](../functions-bindings-register.md) .
+Установите последнюю версию версии 2. x расширения привязок Устойчивые функции в проекте.
+
+#### <a name="javascript-and-python"></a>JavaScript и Python
+
+Устойчивые функции 2. x доступен в версии 2. x [пакета расширений функций Azure](../functions-bindings-register.md#extension-bundles).
+
+Чтобы обновить версию пакета расширений в проекте, откройте host.jsна и обновите раздел, `extensionBundle` чтобы использовать версию 2. x ( `[2.*, 3.0.0)` ).
+
+```json
+{
+    "version": "2.0",
+    "extensionBundle": {
+        "id": "Microsoft.Azure.Functions.ExtensionBundle",
+        "version": "[2.*, 3.0.0)"
+    }
+}
+```
+
+#### <a name="net"></a>.NET
+
+Обновите проект .NET, чтобы использовать последнюю версию [расширения привязок устойчивые функции](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask).
+
+Дополнительные сведения см. в разделе [Регистрация расширений привязки функций Azure](../functions-bindings-register.md#local-csharp) .
 
 ### <a name="update-your-code"></a>Обновление кода
 
@@ -54,9 +76,9 @@ ms.locfileid: "87024730"
 
 Устойчивые функции 2. x использует новую host.jsсхемы. Основные изменения из 1. x включают:
 
-* `"storageProvider"`(и `"azureStorage"` подраздела) для конфигурации, относящейся к хранилищу.
-* `"tracing"`для настройки трассировки и ведения журнала.
-* `"notifications"`(и `"eventGrid"` подраздела) для конфигурации уведомлений сетки событий.
+* `"storageProvider"` (и `"azureStorage"` подраздела) для конфигурации, относящейся к хранилищу.
+* `"tracing"` для настройки трассировки и ведения журнала.
+* `"notifications"` (и `"eventGrid"` подраздела) для конфигурации уведомлений сетки событий.
 
 Дополнительные сведения см. в [Устойчивые функции host.jsсправочной документации](durable-functions-bindings.md#durable-functions-2-0-host-json) .
 
@@ -72,7 +94,7 @@ ms.locfileid: "87024730"
 
 | 1.x | 2.x |
 |----------|----------|
-| `DurableOrchestrationClientBase` | `IDurableOrchestrationClient` или `IDurableClient` |
+| `DurableOrchestrationClientBase` | `IDurableOrchestrationClient` либо `IDurableClient` |
 | `DurableOrchestrationContext` или `DurableOrchestrationContextBase` | `IDurableOrchestrationContext` |
 | `DurableActivityContext` или `DurableActivityContextBase` | `IDurableActivityContext` |
 | `OrchestrationClientAttribute` | `DurableClientAttribute` |

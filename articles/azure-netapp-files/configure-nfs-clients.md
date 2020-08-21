@@ -14,16 +14,16 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 08/19/2020
 ms.author: b-juche
-ms.openlocfilehash: 4a54858f4a09cd62bb555a6df2c12efa2290dd69
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 20cbc9b33e567ffe306aae694bb835d95c2d861e
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88653177"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88704983"
 ---
 # <a name="configure-an-nfs-client-for-azure-netapp-files"></a>Настройка клиента NFS для Azure NetApp Files
 
-Для использования с Azure NetApp Files доступен широкий спектр дистрибутивов Linux. В этой статье описываются конфигурации для двух наиболее часто используемых сред: RHEL 8 и Ubuntu 18,04. Конфигурация клиента NFS, описанная в этой статье, является частью программы установки при [настройке шифрования нфсв 4.1 Kerberos](configure-kerberos-encryption.md) или [создании тома с двумя протоколами](create-volumes-dual-protocol.md).  
+Конфигурация клиента NFS, описанная в этой статье, является частью программы установки при [настройке шифрования нфсв 4.1 Kerberos](configure-kerberos-encryption.md) или [создании тома с двумя протоколами](create-volumes-dual-protocol.md). Для использования с Azure NetApp Files доступен широкий спектр дистрибутивов Linux. В этой статье описываются конфигурации для двух наиболее часто используемых сред: RHEL 8 и Ubuntu 18,04. 
 
 Независимо от используемой версии Linux требуются следующие конфигурации:
 * Настройте NTP-клиент, чтобы избежать проблем с отклонением во времени.

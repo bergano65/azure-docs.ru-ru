@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 02/22/2019
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 8d57b4499f3f1b2f22c14cc912e81b709ec4054c
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: d1e7c90e558a6834a169b528d2e8c2f96af377b0
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86500333"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705703"
 ---
 # <a name="find-and-delete-unattached-azure-managed-and-unmanaged-disks"></a>Поиск и удаление неподключенных управляемых и неуправляемых дисков Azure
 
@@ -52,14 +52,14 @@ foreach ($md in $managedDisks) {
 Неуправляемые диски — это VHD-файлы, которые хранятся в [учетных записях хранения Azure](../../storage/common/storage-account-overview.md) как [страничные BLOB-объекты](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs#about-page-blobs). В следующем скрипте показано, как с помощью свойства **LeaseStatus** найти неподключенные неуправляемые диски (страничные BLOB-объекты). Если неуправляемый диск подключен к виртуальной машине, свойство **LeaseStatus** имеет значение **Locked**. Если неуправляемый диск не подключен к виртуальной машине, свойство **LeaseStatus** имеет значение **Unlocked**. Сценарий проверяет все неуправляемые диски во всех учетных записях хранения Azure в подписке Azure. Когда скрипт находит неуправляемый диск со значением свойства **LeaseStatus** равным **Unlocked**, он определяет, что диск не подключен.
 
 >[!IMPORTANT]
->Сначала запустите скрипт, установив для переменной **deleteUnattachedVHDs** значение 0. Это действие позволяет найти и просмотреть все неподключенные неуправляемые виртуальные жесткие диски.
+>Сначала запустите скрипт, задав для переменной **deleteunattachedvhds значение** значение `$false` . Это действие позволяет найти и просмотреть все неподключенные неуправляемые виртуальные жесткие диски.
 >
->После просмотра всех неподключенных дисков запустите скрипт еще раз и установите для переменной **deleteUnattachedVHDs** значение 1. Это действие позволяет удалить все неподключенные неуправляемые виртуальные жесткие диски.
+>После просмотра всех неподключенных дисков снова запустите сценарий и задайте для переменной **deleteunattachedvhds значение** значение `$true` . Это действие позволяет удалить все неподключенные неуправляемые виртуальные жесткие диски.
 
 ```azurepowershell-interactive
-# Set deleteUnattachedVHDs=1 if you want to delete unattached VHDs
-# Set deleteUnattachedVHDs=0 if you want to see the Uri of the unattached VHDs
-$deleteUnattachedVHDs=0
+# Set deleteUnattachedVHDs=$true if you want to delete unattached VHDs
+# Set deleteUnattachedVHDs=$false if you want to see the Uri of the unattached VHDs
+$deleteUnattachedVHDs=$false
 $storageAccounts = Get-AzStorageAccount
 foreach($storageAccount in $storageAccounts){
     $storageKey = (Get-AzStorageAccountKey -ResourceGroupName $storageAccount.ResourceGroupName -Name $storageAccount.StorageAccountName)[0].Value
@@ -71,7 +71,7 @@ foreach($storageAccount in $storageAccounts){
         $blobs | Where-Object {$_.BlobType -eq 'PageBlob' -and $_.Name.EndsWith('.vhd')} | ForEach-Object { 
             #If a Page blob is not attached as disk then LeaseStatus will be unlocked
             if($_.ICloudBlob.Properties.LeaseStatus -eq 'Unlocked'){
-                    if($deleteUnattachedVHDs -eq 1){
+                    if($deleteUnattachedVHDs){
                         Write-Host "Deleting unattached VHD with Uri: $($_.ICloudBlob.Uri.AbsoluteUri)"
                         $_ | Remove-AzStorageBlob -Force
                         Write-Host "Deleted unattached VHD with Uri: $($_.ICloudBlob.Uri.AbsoluteUri)"

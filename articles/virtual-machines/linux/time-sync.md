@@ -10,14 +10,14 @@ ms.service: virtual-machines-linux
 ms.topic: how-to
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 09/17/2018
+ms.date: 08/20/2020
 ms.author: cynthn
-ms.openlocfilehash: 4214fca9e295dc7716d8e2c069f52c719aa74697
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 8a122a36b14bd3c5f4912387dc98585cb89ab53b
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87292103"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705646"
 ---
 # <a name="time-sync-for-linux-vms-in-azure"></a>Синхронизация времени для виртуальных машин Linux в Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "87292103"
 - Основным источником является NTP; время получается с NTP-сервера. Например, образы Ubuntu 16.04 LTS из Marketplace используют сервер **ntp.ubuntu.com**.
 - Дополнительным источником является служба VMICTimeSync, которая служит для передачи времени узла виртуальным машинам и корректировки после приостановки виртуальных машин для обслуживания. Для поддержания точного времени узлы Azure используют принадлежащие Майкрософт устройства Stratum 1.
 
-В более новых дистрибутивах Linux служба VMICTimeSync использует протокол PTP, однако в более ранних дистрибутивах он может не поддерживаться, и для получения времени от узла применяется NTP.
+В более новых дистрибутивах Linux служба Вмиктимесинк предоставляет источник часов аппаратного таймера (PTP), но более ранние дистрибутивы могут не предоставлять этот источник часов и возвращаться на NTP для получения времени от узла.
 
 Чтобы проверить правильность синхронизации NTP, выполните команду `ntpq -p`.
 
@@ -112,9 +112,9 @@ root        391      2  0 17:52 ?        00:00:00 [hv_balloon]
 ```
 
 
-### <a name="check-for-ptp"></a>Проверка PTP
+### <a name="check-for-ptp-clock-source"></a>Проверка источника таймера PTP
 
-В более новых версиях Linux в рамках поставщика VMICTimeSync доступен источник времени PTP. В более ранних версиях Red Hat Enterprise Linux или CentOS 7.x можно скачать [службы интеграции Linux](https://github.com/LIS/lis-next) и использовать их для установки обновленного драйвера. При использовании PTP устройство Linux имеет формат /dev/ptp*x*. 
+В более новых версиях Linux в рамках поставщика VMICTimeSync доступен источник времени PTP. В более ранних версиях Red Hat Enterprise Linux или CentOS 7.x можно скачать [службы интеграции Linux](https://github.com/LIS/lis-next) и использовать их для установки обновленного драйвера. Когда источник таймера PTP доступен, устройство Linux будет иметь вид/Дев/ПТП*x*. 
 
 Проверьте доступные источники времени PTP.
 
