@@ -205,7 +205,7 @@ Exiting after 300 second(s), or 10 message(s) have been parsed (whichever happen
 tatype 'double'. Data '56'. All dates/times/datetimes/durations must be ISO 8601 compliant.
 ```
 
-:::image type="content" source="media/troubleshoot-connection/raw-data-view.png" alt-text="Снимок экрана представления "необработанные данные"":::
+:::image type="content" source="media/troubleshoot-connection/raw-data-view.png" alt-text="Снимок экрана представления необработанные данные":::
 
 ### <a name="interpreting-terminal-output"></a>Анализ выходных данных терминала
 
