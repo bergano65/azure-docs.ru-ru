@@ -28,7 +28,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
 
 2. Выберите **параметры диагностики** в меню и **добавьте параметр диагностики**.
 
-    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings.png" alt-text="Снимок экрана со страницей параметров диагностики и кнопкой "Добавить"":::
+    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings.png" alt-text="Снимок экрана со страницей параметров диагностики и кнопкой Добавить":::
 
 3. На следующей странице введите следующие значения:
      * **Имя параметра диагностики**: задайте имя для параметров диагностики.
@@ -49,7 +49,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
     
 4. Сохраните новые настройки. 
 
-    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings-details.png" alt-text="Снимок экрана со страницей параметров диагностики и кнопкой "Добавить"":::
+    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings-details.png" alt-text="Снимок экрана со страницей параметров диагностики и кнопкой Добавить":::
 
 Новые параметры вступят в силу в течение 10 минут. После этого журналы отобразятся на настроенном целевом объекте на странице **параметры диагностики** для вашего экземпляра. 
 
