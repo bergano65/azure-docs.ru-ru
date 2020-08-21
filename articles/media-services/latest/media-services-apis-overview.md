@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 10/21/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 703c08cd5a884c8bfdd027b4ecf457c9e954a2dc
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: dcec4d0bc93433c768faf10e4520131aeecc5e77
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87043405"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719195"
 ---
 # <a name="develop-with-media-services-v3-apis"></a>Разработка с помощью API Служб мультимедиа версии 3
 
@@ -86,7 +86,7 @@ API Служб мультимедиа требует, чтобы у пользо
 
 Операции, для которых в [файлах Swagger](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2018-07-01/streamingservice.json) для Служб мультимедиа Azure указан атрибут `x-ms-long-running-operation`, считаются длительными. 
 
-Сведения об отслеживании асинхронных операций в Azure см. в [этой статье](../../azure-resource-manager/management/async-operations.md#monitor-status-of-operation).
+Сведения об отслеживании асинхронных операций в Azure см. в [этой статье](../../azure-resource-manager/management/async-operations.md).
 
 Службы мультимедиа используют следующие длительные операции:
 

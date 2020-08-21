@@ -17,11 +17,27 @@
     - name: Запись видео в Cлужбы мультимедиа при обнаружении движения
       href: detect-motion-record-video-clips-media-services-quickstart.md
     - name: Создание событий при обнаружении движения
-      href: detect-motion-emit-events-quickstart.md
+      items:
+        - name: Использование вызовов прямых методов
+          displayName: 'detect motion, emit events'
+          href: detect-motion-emit-events-quickstart.md
     - name: Запись видео на пограничные устройства при обнаружении движения
-      href: detect-motion-record-video-clips-edge-devices-quickstart.md
-    - name: Запуск Аналитики видеотрансляции с помощью собственной модели
-      href: use-your-model-quickstart.md
+      items:
+        - name: Использование вызовов прямых методов
+          displayName: 'detect motion, record video on edge devices'
+          href: detect-motion-record-video-clips-edge-devices-quickstart.md
+    - name: Анализ видеотрансляции с помощью собственной модели
+      items:
+        - name: с расширением HTTP
+          items:
+            - name: Использование вызовов прямых методов
+              displayName: 'analyze, your own model, http'
+              href: use-your-model-quickstart.md
+        - name: с расширением gRPC
+          items:
+            - name: Использование вызовов прямых методов
+              displayName: 'analyze, your own model, grpc'
+              href: analyze-live-video-use-your-grpc-model-quickstart.md
 - name: Учебники
   items:
     - name: Непрерывная запись видео
@@ -37,12 +53,16 @@
           href: use-intel-openvino-tutorial.md
 - name: Примеры
   items:
-    - name: "Аналитика видеотрансляции в IoT Edge\_— примеры для C#"
+    - name: Примеры прямых методов C#
       href: 'https://github.com/Azure-Samples/live-video-analytics-iot-edge-csharp'
+    - name: Примеры прямых методов Python
+      href: 'https://github.com/Azure-Samples/live-video-analytics-iot-edge-python'
 - name: Основные понятия
   items:
     - name: Граф мультимедиа
       href: media-graph-concept.md
+    - name: Расширение графа мультимедиа
+      href: media-graph-extension-concept.md
     - name: Запись видео
       href: video-recording-concept.md
     - name: Воспроизведение видео
@@ -67,14 +87,18 @@
       href: playback-recordings-how-to.md
     - name: Управление политикой записи
       href: manage-recording-policy-how-to.md
-    - name: Анализ видеотрансляции с помощью предпочитаемого средства ИИ
-      href: analyze-with-ai-your-choice-how-to.md
     - name: Вызов прямых методов с помощью портала
       href: use-azure-portal-to-invoke-direct-methods.md
     - name: Диагностика
       href: troubleshoot-how-to.md
 - name: Справочник
   items:
+    - name: Контракт данных HTTP
+      href: http-data-contract.md
+    - name: Контракт данных gRPC
+      href: grpc-data-contract.md
+    - name: Схема метаданных вывода
+      href: inference-metadata-schema.md
     - name: Прямые методы
       href: direct-methods.md
     - name: Схема конфигурации двойника модуля

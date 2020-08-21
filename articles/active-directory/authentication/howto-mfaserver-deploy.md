@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc4bd817fda762e62e791542aea2df65deb0dae3
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 763c02cca954f7bcd3f9763bfe45f3954dacf0a7
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88054057"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719450"
 ---
 # <a name="getting-started-with-the-azure-multi-factor-authentication-server"></a>Приступая к работе с сервером Многофакторной идентификации Azure
 
@@ -37,10 +37,10 @@ ms.locfileid: "88054057"
 
 | Пользователи | ОЗУ |
 | ----- | --- |
-| 1–10 000 | 4 ГБ |
-| 10 001–50 000 | 8 ГБ |
+| 1–10 000 | 4 Гб |
+| 10 001–50 000 | 8 Гб |
 | 50 001–100 000 | 12 ГБ |
-| 100 000–200 001 | 16 ГБ |
+| 100 000–200 001 | 16 Гб |
 | 200 001+ | 32 ГБ |
 
 Следует ли настроить несколько серверов для обеспечения высокого уровня доступности или балансировки нагрузки? Существует несколько способов настройки этой конфигурации с помощью сервера многофакторной идентификации Azure. Сервер многофакторной идентификации Azure, который устанавливается первым, становится главным. Все дополнительные серверы становятся подчиненными и автоматически синхронизируют данные о пользователях и конфигурации с главным сервером. Позже вы можете настроить один сервер-источник, а остальные использовать в качестве серверов резервного копирования или же настроить балансировку нагрузки между серверами.
@@ -51,10 +51,10 @@ ms.locfileid: "88054057"
 
 Убедитесь, что сервер, используемый для Многофакторной идентификации Azure, соответствует следующим требованиям:
 
-| Требования к серверу Многофакторной идентификации Azure | Описание |
+| Требования к серверу Многофакторной идентификации Azure | Описание: |
 |:--- |:--- |
 | Оборудование |<li>200 МБ места на жестком диске</li><li>32- или 64-разрядный процессор</li><li>Не менее 1 ГБ ОЗУ</li> |
-| Программное обеспечение |<li>Windows Server 2016</li><li>Windows Server 2012 R2</li><li>Windows Server 2012</li><li>Windows Server 2008/R2 (только с [ЕСУ](https://docs.microsoft.com/lifecycle/faq/extended-security-updates) )</li><li>Windows 10</li><li>Windows 8.1, все выпуски</li><li>Windows 8, все выпуски</li><li>Windows 7, все выпуски (только с [ЕСУ](https://docs.microsoft.com/lifecycle/faq/extended-security-updates) )</li><li>Microsoft .NET Framework 4.0</li><li>IIS 7.0 или более поздняя версия, если вы устанавливаете SDK для пользовательского портала или веб-службы</li> |
+| Программное обеспечение |<li>Windows Server 2016</li><li>Windows Server 2012 R2</li><li>Windows Server 2012</li><li>Windows Server 2008/R2 (только с [ЕСУ](https://docs.microsoft.com/lifecycle/faq/extended-security-updates) )</li><li>быть под управлением ОС Windows 10;</li><li>Windows 8.1, все выпуски</li><li>Windows 8, все выпуски</li><li>Windows 7, все выпуски (только с [ЕСУ](https://docs.microsoft.com/lifecycle/faq/extended-security-updates) )</li><li>Microsoft .NET Framework 4.0</li><li>IIS 7.0 или более поздняя версия, если вы устанавливаете SDK для пользовательского портала или веб-службы</li> |
 | Разрешения | Учетная запись администратора домена или администратора предприятия для регистрации в Active Directory |
 
 ### <a name="azure-mfa-server-components"></a>Компоненты сервера Azure MFA
@@ -209,9 +209,9 @@ ms.locfileid: "88054057"
 
 ## <a name="managing-the-tlsssl-protocols-and-cipher-suites"></a>Управление протоколами TLS и SSL, а также комплектами шифров
 
-После установки сервера MFA 8.x или более поздней версии (либо обновления до этой версии) рекомендуется отключить или удалить прежние, менее надежные комплекты шифров (если они не требуются в организации). Соответствующие инструкции см. в статье, посвященной [управлению протоколами SSL и TLS, а также комплектами шифров для AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs).
+После установки сервера MFA 8.x или более поздней версии (либо обновления до этой версии) рекомендуется отключить или удалить прежние, менее надежные комплекты шифров (если они не требуются в организации). Соответствующие инструкции см. в статье, посвященной [управлению протоколами SSL и TLS, а также комплектами шифров для AD FS](/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Установка и настройка [пользовательского портала](howto-mfaserver-deploy-userportal.md) для самообслуживания пользователей.
 - Установите и настройте сервер Azure MFA со [службой федерации Active Directory](multi-factor-authentication-get-started-adfs.md), [проверкой подлинности RADIUS](howto-mfaserver-dir-radius.md) или [проверкой подлинности LDAP](howto-mfaserver-dir-ldap.md).

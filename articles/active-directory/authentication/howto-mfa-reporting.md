@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8584ca84efc889afebe6758e254bda845912316
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: c550576a5bd762d3333aa8a533ee6106369193c3
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87418242"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719518"
 ---
 # <a name="use-the-sign-ins-report-to-review-azure-multi-factor-authentication-events"></a>Использование отчета о событиях входа для просмотра событий многофакторной проверки подлинности Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "87418242"
 
 ## <a name="powershell-reporting-on-users-registered-for-mfa"></a>Отчеты PowerShell для пользователей, зарегистрированных для MFA
 
-Сначала убедитесь, что у вас установлен модуль PowerShell [MSOnline v1](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-1.0).
+Сначала убедитесь, что у вас установлен модуль PowerShell [MSOnline v1](/powershell/azure/active-directory/overview?view=azureadps-1.0).
 
 Определите пользователей, зарегистрированных для многофакторной проверки подлинности с помощью Powershell: Этот набор команд исключает отключенных пользователей, так как эти учетные записи не могут пройти проверку подлинности в Azure AD:
 
@@ -145,8 +145,8 @@ Get-MsolUser -All | Select-Object @{N='UserPrincipalName';E={$_.UserPrincipalNam
 | FAILED_INVALID_EXTENSION | Недопустимый добавочный номер | Добавочный номер содержит недопустимые символы.  Можно вводить только цифры, запятые, знаки "*" и "#".  Допускается использование префикса @. |
 | FAILED_FRAUD_CODE_ENTERED | Код защиты от мошенничества введен | Пользователь решил сообщить о мошенничестве во время вызова, что привело к отказу в проверке подлинности и блокировке телефонного номера.| 
 | FAILED_SERVER_ERROR | Не удалось сделать вызов | Службе многофакторной проверки подлинности не удалось сделать вызов. |
-| FAILED_SMS_NOT_SENT | Не удалось отправить SMS | Не удалось отправить SMS. В проверке подлинности отказано. |
-| FAILED_SMS_OTP_INCORRECT | SMS: неверный OTP | Пользователь указал одноразовый пароль (OTP), не соответствующий паролю из полученного текстового сообщения. В проверке подлинности отказано. |
+| FAILED_SMS_NOT_SENT | Не удалось отправить SMS | Не удалось отправить SMS.  В проверке подлинности отказано. |
+| FAILED_SMS_OTP_INCORRECT | SMS: неверный OTP | Пользователь указал одноразовый пароль (OTP), не соответствующий паролю из полученного текстового сообщения.  В проверке подлинности отказано. |
 | FAILED_SMS_OTP_PIN_INCORRECT | SMS: неверный OTP + ПИН-код | Пользователь указал неверный одноразовый пароль (OTP) и (или) неверный ПИН-код.  В проверке подлинности отказано. |
 | FAILED_SMS_MAX_OTP_RETRY_REACHED | Превышено допустимое число попыток ввода одноразового пароля | Пользователь превысил максимальное число попыток одноразового пароля (OTP). |
 | FAILED_PHONE_APP_DENIED | Мобильное приложение отклонено | Пользователь отклонил проверку подлинности в мобильном приложении, нажав кнопку "Отклонить". |

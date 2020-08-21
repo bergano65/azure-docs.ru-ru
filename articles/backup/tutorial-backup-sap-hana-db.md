@@ -3,12 +3,12 @@ title: Учебник по резервному копированию баз д
 description: Из этого учебника вы узнаете, как выполнять резервное копирование баз данных SAP HANA, запущенных на виртуальной машине Azure, в хранилище Служб восстановления для Azure Backup.
 ms.topic: tutorial
 ms.date: 02/24/2020
-ms.openlocfilehash: e892bf2b943d35728b15a9354308e149af2e478e
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 3903630a657c2cf8a0b39f3e4c8fc22456097941
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810213"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88611829"
 ---
 # <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm"></a>Руководство по резервному копированию баз данных SAP HANA на виртуальной машине Azure
 

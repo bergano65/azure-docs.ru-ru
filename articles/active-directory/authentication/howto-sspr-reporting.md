@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e3425407fdb131fb1499b2cd085fbe6d427804a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 9c8557457e3a1dc7d0ed1e50da3070360b1fd76f
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87035304"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717733"
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Параметры отчетов для управления паролями Azure AD
 
@@ -53,7 +53,7 @@ ms.locfileid: "87035304"
 
 ### <a name="combined-registration"></a>Объединенная регистрация
 
-Если включена [Объединенная регистрация](https://docs.microsoft.com/azure/active-directory/authentication/concept-registration-mfa-sspr-combined), сведения о действиях пользователей в журналах аудита будут найдены в разделе **Security**  >  **методы проверки подлинности**безопасности.
+Если включена [Объединенная регистрация](./concept-registration-mfa-sspr-combined.md), сведения о действиях пользователей в журналах аудита будут найдены в разделе **Security**  >  **методы проверки подлинности**безопасности.
 
 ## <a name="description-of-the-report-columns-in-the-azure-portal"></a>Описание столбцов отчета на портале Azure
 
@@ -179,7 +179,7 @@ ms.locfileid: "87035304"
 * [Какие данные используются для SSPR и какие сведения нужно указывать для пользователей](howto-sspr-authenticationdata.md)
 * [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods)
 * [Параметры политики для SSPR](concept-sspr-policy.md)
-* [Что такое обратная запись паролей и каково ее назначение](howto-sspr-writeback.md)
+* [Что такое обратная запись паролей и каково ее назначение](./tutorial-enable-sspr-writeback.md)
 * [Обзор всех параметров SSPR и их значение](concept-sspr-howitworks.md)
 * [Как устранить неполадки самостоятельного сброса пароля](active-directory-passwords-troubleshoot.md)
 * [Вопросы, не вошедшие в другие статьи](active-directory-passwords-faq.md)

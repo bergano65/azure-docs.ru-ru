@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 553d6f716bbb6e98aa64ef07cb80d2d6cba370b6
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.openlocfilehash: 8a8b53af6e23b2dd0ff011a6bfbf99a1da427063
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82561533"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88611642"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-data-box-gateway"></a>Руководство по Подготовка Шлюза Azure Data Box к развертыванию
 
@@ -138,7 +138,7 @@ ms.locfileid: "82561533"
 2. На плитке **Скачать образ** выберите образ виртуального устройства, соответствующий операционной системе сервера узла, используемого для подготовки виртуальной машины. Размер файла образа составляет около 5,6 ГБ.
    
    * [VHDX для Hyper-V в Windows Server 2012 R2 и более поздней версии](https://aka.ms/dbe-vhdx-2012).
-   * [VMDK для VMWare ESXi 6.0, 6.5 или 6.7](https://aka.ms/dbe-vmdk).
+   * [VMDK для VMware ESXi 6.0, 6.5 или 6.7](https://aka.ms/dbe-vmdk).
 
     ![Скачивание образа виртуального устройства Шлюза Data Box](media/data-box-gateway-deploy-prep/data-box-gateway-download-image.png)
 

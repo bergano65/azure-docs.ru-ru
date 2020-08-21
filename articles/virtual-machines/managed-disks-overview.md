@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/24/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: db2ee7adac19da7f7f5e1c6f60394d94dbf29ad5
-ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
+ms.openlocfilehash: ad7101bb61324db033f57bb25c068e1ba625ef8c
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/21/2020
-ms.locfileid: "88705220"
+ms.locfileid: "88718073"
 ---
 # <a name="introduction-to-azure-managed-disks"></a>Общие сведения об управляемых дисках Azure
 
@@ -95,7 +95,7 @@ ms.locfileid: "88705220"
 
 ### <a name="temporary-disk"></a>Временный диск
 
-Большинство виртуальных машин содержит временный диск, который не является управляемым диском. Он выступает в качестве временного хранилища для приложений и процессов и предназначен только для хранения данных, таких как страничные файлы или файлы подкачки. Данные на временном диске могут быть потеряны во время [обслуживания](../articles/virtual-machines/windows/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#understand-vm-reboots---maintenance-vs-downtime) или при [повторном развертывании виртуальной машины](../articles/virtual-machines/troubleshooting/redeploy-to-new-node-windows.md?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json). Во время стандартной корректной перезагрузки виртуальной машины данные на временном диске сохраняются. Дополнительные сведения о виртуальных машинах без временного диска см. [в разделе размеры виртуальных машин Azure без локального временного диска](../articles/virtual-machines/azure-vms-no-temp-disk.md) .
+Большинство виртуальных машин содержат временный диск, который не является управляемым диском. Временный диск обеспечивает краткосрочное хранение приложений и процессов. оно предназначено только для хранения данных, таких как страницы или файлы подкачки. Данные на временном диске могут быть потеряны во время [обслуживания](~/articles/virtual-machines/windows/manage-availability.md?toc=/azure/virtual-machines/windows/toc.json#understand-vm-reboots---maintenance-vs-downtime) или при [повторном развертывании виртуальной машины](~/articles/virtual-machines/troubleshooting/redeploy-to-new-node-windows.md?toc=/azure/virtual-machines/windows/toc.json). При успешной стандартной перезагрузке виртуальной машины данные на временном диске будут сохранены. Дополнительные сведения о виртуальных машинах без временных дисков см. [в разделе размеры виртуальных машин Azure без локального временного диска](~/articles/virtual-machines/azure-vms-no-temp-disk.md) .
 
 В виртуальных машинах Azure Linux временный обычно диск отмечен как /dev/sdb, а в виртуальных машинах Windows — как D:. Временный диск не шифруется с помощью шифрования на стороне сервера, если только вы не включили шифрование на узле.
 

@@ -3,12 +3,12 @@ title: Интеграция Azure Relay со службой "Приватный 
 description: Сведения о том, как интегрировать Azure Relay со службой "Приватный канал Azure"
 ms.date: 06/23/2020
 ms.topic: article
-ms.openlocfilehash: a113e52b892a25fd2b12a18d73df443d9a9866f2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e5c35f9333378a5f0b87956e8a916491d51e3cb3
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85317310"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719433"
 ---
 # <a name="integrate-azure-relay-with-azure-private-link-preview"></a>Интеграция Azure Relay со службой "Приватный канал Azure" (предварительная версия)
 **Приватный канал** Azure обеспечивает доступ к службам Azure (например, к Azure Relay, Служебной шине Azure, Центрам событий Azure, службе хранилища Azure и Azure Cosmos DB), а также размещенным в Azure службам клиентов или партнеров через частную конечную точку в виртуальной сети. Дополнительные сведения см. в статье [What is Azure Private Link? (Preview)](../private-link/private-link-overview.md) (Что такое Приватный канал Azure (предварительная версия)?)
@@ -207,7 +207,7 @@ $privateEndpoint = New-AzPrivateEndpoint -ResourceGroupName $rgName  `
 3. Вы увидите, что состояние изменилось на **Отключено**. Затем конечная точка исчезнет из списка. 
 
 ## <a name="validate-that-the-private-link-connection-works"></a>Проверка работоспособности подключения Приватного канала
-Нужно проверить, что ресурсы в той же подсети частной конечной точки подключаются к пространству имен Azure Relay по его частному IP-адресу.
+Необходимо проверить, что ресурсы в виртуальной сети частной конечной точки подключаются к пространству имен Azure Relay по его частному IP-адресу.
 
 Для этого создайте виртуальную машину, выполнив действия, описанные в статье [Краткое руководство. Создание виртуальной машины Windows на портале Azure](../virtual-machines/windows/quick-create-portal.md).
 

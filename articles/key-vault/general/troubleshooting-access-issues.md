@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.openlocfilehash: f31782fb4e91b72f51d6f0550fe9010cba7ca3d6
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 270e5ba1879b229fbe9f5e6c8692bd8b4e9eebc7
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88585463"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88688646"
 ---
 # <a name="troubleshooting-azure-key-vault-access-policy-issues"></a>Устранение проблем с политикой доступа к хранилищу ключей Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "88585463"
 После начала масштабирования службы количество запросов, отправленных в хранилище ключей, будет возрастать. Это может увеличить задержку запросов и в крайних случаях привести к их регулированию, что повлияет на производительность службы. Вы можете отслеживать метрики производительности хранилища ключей и получать оповещения по конкретным пороговым значениям. Пошаговые инструкции по настройке мониторинга см. в [этой статье](https://docs.microsoft.com/azure/key-vault/general/alert).
 
 ### <a name="how-can-i-assign-access-control-per-key-vault-object"></a>Как можно назначить управление доступом для каждого объекта хранилища ключей? 
-Сведения о доступности функции управления доступом для каждого секрета, ключа, сертификата см [здесь](https://feedback.azure.com/forums/906355-azure-key-vault/suggestions/.32213176-per-secret-key-certificate-access-control).
+Сведения о доступности функции управления доступом для каждого секрета, ключа, сертификата см [здесь](https://feedback.azure.com/forums/906355-azure-key-vault/suggestions/32213176-per-secret-key-certificate-access-control).
 
 ### <a name="how-can-i-provide-key-vault-authenticate-using-access-control-policy"></a>Как обеспечить проверку подлинности хранилища ключей с помощью политики управления доступом?
 Самый простой способ проверить подлинность облачного приложения в Key Vault — с помощью управляемых удостоверений. Дополнительные сведения см. в статье об [использовании управляемого удостоверения Службы приложений для доступа к Azure Key Vault]( https://docs.microsoft.com/azure/key-vault/general/managed-identity).

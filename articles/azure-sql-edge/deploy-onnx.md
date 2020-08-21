@@ -2,19 +2,18 @@
 title: Развертывание и создание прогнозов с помощью ONNX
 description: Узнайте, как обучить модель, преобразовать ее в ONNX, развернуть в Azure SQL (Предварительная версия) или Управляемый экземпляр Azure SQL (Предварительная версия), а затем запустить машинный прогноз на основе данных с помощью переданной модели ONNX.
 keywords: Развертывание SQL для пограничных вычислений
-services: sql-edge
-ms.service: sql-edge
-ms.subservice: machine-learning
+ms.prod: sql
+ms.technology: machine-learning
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
 ms.date: 07/14/2020
-ms.openlocfilehash: fe1e4a195903803d3103da5f350de30a016e614b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: eeb50f682c8b3b225c6574b5276722b79465a511
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87085019"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88718787"
 ---
 # <a name="deploy-and-make-predictions-with-an-onnx-model"></a>Развертывание и создание прогнозов с помощью модели ONNX
 
@@ -34,7 +33,7 @@ ms.locfileid: "87085019"
   1. Щелкните **Управление пакетами** .
   1. На вкладке **установленные** найдите следующие пакеты Python в списке установленных пакетов. Если какой либо из этих пакетов не установлен, выберите вкладку **Добавить новую** , найдите пакет и нажмите кнопку **установить**.
      - **scikit-learn**;
-     - **numpy**
+     - **NumPy**
      - **оннксмлтулс**
      - **оннксрунтиме**
      - **pyodbc**

@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 053b052abf6f23c385dc7447639aa40b6c2c58a1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f75c08f0a390e798435b70bbe2409ec4a9732214
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81680182"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717172"
 ---
 # <a name="authentication-methods-usage--insights-preview"></a>Использование методов проверки подлинности & Insights (Предварительная версия)
 
@@ -65,7 +65,7 @@ ms.locfileid: "81680182"
 
 В отчете сведения о регистрации отображаются следующие сведения для каждого пользователя:
 
-- name
+- Имя
 - Имя пользователя
 - Состояние регистрации (все, зарегистрировано, не зарегистрировано)
 - Включенное состояние (все, включено, не включено)
@@ -80,7 +80,7 @@ ms.locfileid: "81680182"
 
 В отчете о сбросе отображаются события регистрации и сброса за последние 30 дней, включая:
 
-- name
+- Имя
 - Имя пользователя
 - Функция (все, регистрация, сброс)
 - Метод проверки подлинности (уведомление приложения, код приложения, телефонный звонок, вызов Office, SMS, электронная почта, контрольные вопросы)
@@ -96,8 +96,8 @@ ms.locfileid: "81680182"
 
 В настоящее время отчет не может быть отфильтрован для исключения внешних пользователей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Работа с API отчетов по использованию методов проверки подлинности](https://docs.microsoft.com/graph/api/resources/authenticationmethods-usage-insights-overview?view=graph-rest-beta)
+- [Работа с API отчетов по использованию методов проверки подлинности](/graph/api/resources/authenticationmethods-usage-insights-overview?view=graph-rest-beta)
 - [Выбор методов проверки подлинности для Организации](concept-authentication-methods.md)
 - [Объединенные возможности регистрации](concept-registration-mfa-sspr-combined.md)

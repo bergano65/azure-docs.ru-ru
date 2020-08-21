@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d949f4b10bc6b7b592556d78edfcf02a05ec7144
-ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
+ms.openlocfilehash: 433cfa3789aa37f4145982da97719526c0abfc47
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88565780"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719501"
 ---
 # <a name="enable-per-user-azure-multi-factor-authentication-to-secure-sign-in-events"></a>Включение Многофакторной идентификации Azure для отдельных пользователей для защиты событий входа
 
@@ -76,7 +76,7 @@ ms.locfileid: "88565780"
 
 1. Подтвердите свой выбор во всплывающем окне, которое откроется.
 
-После включения уведомите пользователей по электронной почте. Сообщите пользователям о том, что при следующем входе в систему им будет показан запрос на регистрацию. Кроме того, если ваша организация использует небраузерные приложения, не поддерживающие современную аутентификацию, потребуется создать пароли приложений. Чтобы помочь пользователям начать работу, изучите [руководство пользователя по Многофакторной идентификации Azure](../user-help/multi-factor-authentication-end-user.md).
+После включения уведомите пользователей по электронной почте. Сообщите пользователям о том, что при следующем входе в систему им будет показан запрос на регистрацию. Кроме того, если ваша организация использует небраузерные приложения, не поддерживающие современную аутентификацию, потребуется создать пароли приложений. Чтобы помочь пользователям начать работу, изучите [руководство пользователя по Многофакторной идентификации Azure](../user-help/multi-factor-authentication-end-user-first-time.md).
 
 ## <a name="change-state-using-powershell"></a>Изменение состояния с помощью PowerShell
 

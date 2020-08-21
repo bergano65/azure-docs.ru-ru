@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: how-to
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 3bb8f0e809ae1acbec1479c20e24c90fd81905d4
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: c7c4e1cc854fdd2fbf03d2274992bbc4a3bb93af
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85212451"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717903"
 ---
 # <a name="deploy-the-sample-labeling-tool"></a>Развертывание примера средства создания меток
 
@@ -70,14 +70,27 @@ ms.locfileid: "85212451"
 
 6. Теперь настроим контейнер DOCKER. Все поля являются обязательными, если не указано иное.
 
+    # <a name="v20"></a>[Версия 2.0](#tab/v2-0)  
    * Параметры — выберите **один контейнер**
    * Источник образа — выберите **частный реестр** 
-   * URL-адрес сервера — установите значение`https://mcr.microsoft.com`
+   * URL-адрес сервера — установите значение `https://mcr.microsoft.com`
    * Username (необязательно) — создайте имя пользователя. 
    * Пароль (необязательно). Создайте защищенный пароль, который вы помните.
-   * Изображение и тег. Задайте для этого свойства значение`mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:latest`
+   * Изображение и тег. Задайте для этого свойства значение `mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:latest`
    * Непрерывное развертывание — задайте значение **On** , если вы хотите получить автоматические обновления, когда команда разработчиков вносит изменения в пример средства создания меток.
-   * Команда запуска — задает значение`./run.sh eula=accept`
+   * Команда запуска — задает значение `./run.sh eula=accept`
+
+    # <a name="v21-preview"></a>[Предварительная версия версии 2.1](#tab/v2-1) 
+   * Параметры — выберите **один контейнер**
+   * Источник образа — выберите **частный реестр** 
+   * URL-адрес сервера — установите значение `https://mcr.microsoft.com`
+   * Username (необязательно) — создайте имя пользователя. 
+   * Пароль (необязательно). Создайте защищенный пароль, который вы помните.
+   * Изображение и тег. Задайте для этого свойства значение `mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:2.1.012970002-amd64-preview`
+   * Непрерывное развертывание — задайте значение **On** , если вы хотите получить автоматические обновления, когда команда разработчиков вносит изменения в пример средства создания меток.
+   * Команда запуска — задает значение `./run.sh eula=accept`
+    
+    ---
 
    > [!div class="mx-imgBorder"]
    > ![Настройка Docker](./media/quickstarts/formre-configure-docker.png)
@@ -93,13 +106,15 @@ ms.locfileid: "85212451"
 
 Есть несколько вещей, которые необходимо знать об этой команде:
 
-* `DNS_NAME_LABEL=aci-demo-$RANDOM`Создает случайное DNS-имя. 
+* `DNS_NAME_LABEL=aci-demo-$RANDOM` Создает случайное DNS-имя. 
 * В этом примере предполагается, что у вас есть группа ресурсов, которую можно использовать для создания ресурса. Замените `<resource_group_name>` допустимой группой ресурсов, связанной с вашей подпиской. 
 * Необходимо указать, где вы хотите создать ресурс. Замените на `<region name>` нужный регион для веб-приложения. 
 * Эта команда автоматически принимает условия лицензионного соглашения.
 
 В Azure CLI выполните следующую команду, чтобы создать ресурс веб-приложения для примера средства создания меток. 
 
+
+# <a name="v20"></a>[Версия 2.0](#tab/v2-0)   
 ```azurecli
 DNS_NAME_LABEL=aci-demo-$RANDOM
 
@@ -113,7 +128,24 @@ az container create \
   --cpu 2 \
   --memory 8 \
   --command-line "./run.sh eula=accept"
+``` 
+# <a name="v21-preview"></a>[Предварительная версия версии 2.1](#tab/v2-1)    
+```azurecli
+DNS_NAME_LABEL=aci-demo-$RANDOM
+
+az container create \
+  --resource-group <resource_group_name> \
+  --name <name> \
+  --image mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:2.1.012970002-amd64-preview \
+  --ports 3000 \
+  --dns-name-label $DNS_NAME_LABEL \
+  --location <region name> \
+  --cpu 2 \
+  --memory 8 \
+  --command-line "./run.sh eula=accept"
 ```
+
+---
 
 ### <a name="connect-to-azure-ad-for-authorization"></a>Подключение к Azure AD для авторизации
 

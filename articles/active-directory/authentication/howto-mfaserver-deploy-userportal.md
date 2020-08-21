@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8b7d3945adaf75949ef36b50a5e56a02fde1548
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: c88a54661e8fee2dd7c3b4dc34336d44a6803090
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83680915"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719467"
 ---
 # <a name="user-portal-for-the-azure-multi-factor-authentication-server"></a>Пользовательский портал для сервера Многофакторной идентификации Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "83680915"
 3. Завершите установку с использованием значений по умолчанию, если не нужно изменять их по какой-то причине.
 4. Привяжите TLS/SSL-сертификат к сайту на сервере IIS.
 
-Если у вас есть вопросы о настройке TLS/SSL-сертификата на сервере IIS, ознакомьтесь со статьей [Как настроить SSL-сертификат на сервере IIS 7](https://docs.microsoft.com/iis/manage/configuring-security/how-to-set-up-ssl-on-iis).
+Если у вас есть вопросы о настройке TLS/SSL-сертификата на сервере IIS, ознакомьтесь со статьей [Как настроить SSL-сертификат на сервере IIS 7](/iis/manage/configuring-security/how-to-set-up-ssl-on-iis).
 
 Пакет SDK веб-службы должен быть защищен TLS/SSL-сертификатом. Для этой цели подходит самозаверяющий сертификат. Импортируйте сертификат в хранилище "Доверенные корневые центры сертификации" для учетной записи локального компьютера на веб-сервере пользовательского портала, чтобы этот сертификат считался доверенным при подключении TLS.
 
@@ -73,7 +73,7 @@ ms.locfileid: "83680915"
 
 ![Установка пользовательского портала сервера MFA](./media/howto-mfaserver-deploy-userportal/install.png)
 
-Если у вас есть вопросы о настройке TLS/SSL-сертификата на сервере IIS, ознакомьтесь со статьей [Как настроить SSL-сертификат на сервере IIS 7](https://docs.microsoft.com/iis/manage/configuring-security/how-to-set-up-ssl-on-iis).
+Если у вас есть вопросы о настройке TLS/SSL-сертификата на сервере IIS, ознакомьтесь со статьей [Как настроить SSL-сертификат на сервере IIS 7](/iis/manage/configuring-security/how-to-set-up-ssl-on-iis).
 
 ## <a name="deploy-the-user-portal-on-a-separate-server"></a>Развертывание пользовательского портала на отдельном сервере
 
@@ -110,7 +110,7 @@ ms.locfileid: "83680915"
 
 6. Откройте веб-браузер на любом компьютере и перейдите по URL-адресу, на котором установлен пользовательский портал (например, `https://mfa.contoso.com/MultiFactorAuth`). Убедитесь, что не отображаются предупреждения или ошибки сертификата.
 
-Если у вас есть вопросы о настройке TLS/SSL-сертификата на сервере IIS, ознакомьтесь со статьей [Как настроить SSL-сертификат на сервере IIS 7](https://docs.microsoft.com/iis/manage/configuring-security/how-to-set-up-ssl-on-iis).
+Если у вас есть вопросы о настройке TLS/SSL-сертификата на сервере IIS, ознакомьтесь со статьей [Как настроить SSL-сертификат на сервере IIS 7](/iis/manage/configuring-security/how-to-set-up-ssl-on-iis).
 
 ## <a name="configure-user-portal-settings-in-the-azure-multi-factor-authentication-server"></a>Настройка параметров пользовательского портала на сервере Многофакторной идентификации Azure
 

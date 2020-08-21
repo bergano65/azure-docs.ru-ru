@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: azfuncdf
-ms.openlocfilehash: 4c8a536086e426a2d83d26538f9d0efe1ea63eb4
-ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
+ms.openlocfilehash: d6662259494bba5747e01c4574186e9030112247
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/21/2020
-ms.locfileid: "88705798"
+ms.locfileid: "88719416"
 ---
 # <a name="durable-functions-versions-overview"></a>Обзор версий Устойчивые функции
 
@@ -46,7 +46,7 @@ ms.locfileid: "88705798"
 
 Установите последнюю версию версии 2. x расширения привязок Устойчивые функции в проекте.
 
-#### <a name="javascript-and-python"></a>JavaScript и Python
+#### <a name="javascript-python-and-powershell"></a>JavaScript, Python и PowerShell
 
 Устойчивые функции 2. x доступен в версии 2. x [пакета расширений функций Azure](../functions-bindings-register.md#extension-bundles).
 

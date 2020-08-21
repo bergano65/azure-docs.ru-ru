@@ -39,6 +39,8 @@
       href: security-center-enable-data-collection.md
     - name: Настройка уведомлений по электронной почте
       href: security-center-provide-security-contact-details.md
+    - name: Создание автоматического ответа на оповещение с помощью шаблона ARM
+      href: quickstart-automation-alert.md
 - name: Учебники
   items:
     - name: Руководство по планированию и эксплуатации

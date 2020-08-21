@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 08/11/2020
-ms.openlocfilehash: a53ac9387664aafc218f13834e0499fde417d87d
-ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
+ms.date: 08/20/2020
+ms.openlocfilehash: 883eede5296f3f280bf30c9a459c02a9243f9081
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88566086"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719535"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -725,7 +725,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 * Добавление проверки подлинности к исходящим запросам.
 
-  При работе с триггером или действием на основе HTTP, выполняющими исходящие вызовы, такие как HTTP, HTTP + Swagger или веб-перехватчик, можно добавить проверку подлинности в запрос, отправляемый приложением логики. Например, можно выбрать следующие типы проверки подлинности.
+  При использовании триггера или действия на основе HTTP, выполняющего исходящие вызовы, например HTTP, можно добавить проверку подлинности в запрос, отправляемый приложением логики. Например, можно выбрать следующие типы проверки подлинности.
 
   * [обычная проверка подлинности](#basic-authentication)
 
@@ -786,13 +786,13 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 В этой таблице указаны типы проверки подлинности, доступные в триггерах и действиях, в которых можно выбрать тип проверки подлинности:
 
-| Authentication type (Тип проверки подлинности) | Поддерживаемые триггеры и действия |
+| Тип проверки подлинности | Поддерживаемые триггеры и действия |
 |---------------------|--------------------------------|
 | [Основной](#basic-authentication) | Управление API Azure, службы приложений Azure, HTTP, HTTP + Swagger, веб-перехватчик HTTP |
 | [Сертификат клиента](#client-certificate-authentication) | Управление API Azure, службы приложений Azure, HTTP, HTTP + Swagger, веб-перехватчик HTTP |
 | [Active Directory OAuth](#azure-active-directory-oauth-authentication) | Управление API Azure, службы приложений Azure, функции Azure, HTTP, HTTP + Swagger, веб-перехватчик HTTP |
 | [Raw](#raw-authentication) | Управление API Azure, службы приложений Azure, функции Azure, HTTP, HTTP + Swagger, веб-перехватчик HTTP |
-| [Управляемое удостоверение](#managed-identity-authentication) | Управление API Azure, службы приложений Azure, функции Azure, HTTP, HTTP + Swagger, веб-перехватчик HTTP |
+| [Управляемое удостоверение](#managed-identity-authentication) | Управление API Azure, службы приложений Azure, функции Azure, HTTP |
 |||
 
 <a name="basic-authentication"></a>

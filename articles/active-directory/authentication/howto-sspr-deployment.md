@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a56f7248d5782b63befc55c4215360e0f5cb52b2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c9f59c7bb9b3977bdff7e3fd1ab78ed6fa2e412
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84338572"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717750"
 ---
 # <a name="plan-an-azure-active-directory-self-service-password-reset-deployment"></a>Планирование развертывания самостоятельного сброса пароля Azure Active Directory
 
@@ -30,7 +30,7 @@ ms.locfileid: "84338572"
 SSPR отличается следующими основными преимуществами:
 
 * Возможности самообслуживания позволяют конечным пользователям сбрасывать свои пароли с истекшим или неистекшим сроком действия, не обращаясь к администратору или в службу технической поддержки за помощью.
-* [Компонент обратной записи паролей](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback) позволяет управлять локальными паролями и устранять блокировку учетных записей в облаке.
+* [Компонент обратной записи паролей](./concept-sspr-writeback.md) позволяет управлять локальными паролями и устранять блокировку учетных записей в облаке.
 * Отчеты по операциям управления паролями позволяют администраторам лучше понять ситуацию с регистрацией и сбросом паролей в организации.
 
 В этом руководстве по развертыванию показано, как спланировать и затем протестировать развертывание SSPR.
@@ -42,7 +42,7 @@ SSPR отличается следующими основными преимущ
 
 ## <a name="learn-about-sspr"></a>Подробнее об SSPR
 
-Узнайте подробнее об SSPR. Ознакомьтесь с разделом [Как это работает. Самостоятельный сброс пароля](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks).
+Узнайте подробнее об SSPR. Ознакомьтесь с разделом [Как это работает. Самостоятельный сброс пароля](./concept-sspr-howitworks.md).
 
 ### <a name="key-benefits"></a>Основные преимущества
 
@@ -60,7 +60,7 @@ SSPR отличается следующими основными преимущ
 
 Azure Active Directory лицензируется отдельно для каждого пользователя. Это означает, что каждому пользователю требуется соответствующая лицензия для работы с функциями, которые они используют. Для SSPR рекомендуется групповое лицензирование. 
 
-Сравнение выпусков и функции для выбора группового или индивидуального лицензирование см. в разделе [Требования к лицензированию самостоятельного сброса пароля в Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-licensing).
+Сравнение выпусков и функции для выбора группового или индивидуального лицензирование см. в разделе [Требования к лицензированию самостоятельного сброса пароля в Azure AD](./concept-sspr-licensing.md).
 
 Дополнительные сведения о расценках см. в разделе [Цены Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
@@ -83,10 +83,10 @@ Azure Active Directory лицензируется отдельно для каж
 | Онлайн-курсы|[Управление удостоверениями в Microsoft Azure Active Directory](https://www.pluralsight.com/courses/microsoft-azure-active-directory-managing-identities). Используйте SSPR для предоставления пользователям современного и защищенного процесса управления паролями. См. раздел "[Управление пользователями и группами Azure Active Directory](https://app.pluralsight.com/library/courses/microsoft-azure-active-directory-managing-identities/table-of-contents)". |
 |Платные курсы Pluralsight |[Проблемы управления удостоверениями и доступом](https://www.pluralsight.com/courses/identity-access-management-issues). Узнайте подробнее о проблемах IAM и безопасности, которые следует учитывать в вашей организации. См. раздел "Другие методы проверки подлинности".|
 | |[Начало работы с пакетом Microsoft Enterprise Mobility Suite](https://www.pluralsight.com/courses/microsoft-enterprise-mobility-suite-getting-started). Ознакомьтесь с рекомендациями по расширению локальных ресурсов в облаке способом, обеспечивающим проверку подлинности, авторизацию, шифрование и защищенную мобильную среду. См. раздел "Настройка дополнительных функций Microsoft Azure Active Directory Premium".
-|Учебники |[Выполнение пилотного развертывания самостоятельного сброса пароля Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-sspr-pilot) |
-| |[Руководство. Включение компонента обратной записи паролей](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-writeback) |
-| |[Сброс пароля Azure AD на экране входа Windows 10](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-sspr-windows) |
-| ВОПРОСЫ И ОТВЕТЫ|[Вопросы и ответы об управлении паролями](https://docs.microsoft.com/azure/active-directory/authentication/active-directory-passwords-faq) |
+|Учебники |[Выполнение пилотного развертывания самостоятельного сброса пароля Azure AD](./tutorial-enable-sspr.md) |
+| |[Руководство. Включение компонента обратной записи паролей](./tutorial-enable-sspr-writeback.md) |
+| |[Сброс пароля Azure AD на экране входа Windows 10](./howto-sspr-windows.md) |
+| ВОПРОСЫ И ОТВЕТЫ|[Вопросы и ответы об управлении паролями](./active-directory-passwords-faq.md) |
 
 
 ### <a name="solution-architecture"></a>Архитектура решения
@@ -103,7 +103,7 @@ Azure Active Directory лицензируется отдельно для каж
 
 * Для гибридных пользователей SSPR записывает пароль в локальную среду Active Directory посредством службы Azure AD Connect. 
 
-Примечание. Для пользователей, у которых отключена [синхронизация хэша паролей (PHS)](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-phs), SSPR хранит пароли только в локальной среде Active Directory.
+Примечание. Для пользователей, у которых отключена [синхронизация хэша паролей (PHS)](../hybrid/whatis-phs.md), SSPR хранит пароли только в локальной среде Active Directory.
 
 ### <a name="best-practices"></a>Рекомендации
 
@@ -141,9 +141,9 @@ Azure Active Directory лицензируется отдельно для каж
 
 ### <a name="plan-a-pilot"></a>Планирование пилотного проекта
 
-Разработку первоначальной конфигурации SSPR рекомендуется выполнять в тестовой среде. Начните с пилотной группы, включив SSPR для подмножества пользователей в организации. Ознакомьтесь с [рекомендациями по пилотным проектам](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-deployment-plans).
+Разработку первоначальной конфигурации SSPR рекомендуется выполнять в тестовой среде. Начните с пилотной группы, включив SSPR для подмножества пользователей в организации. Ознакомьтесь с [рекомендациями по пилотным проектам](../fundamentals/active-directory-deployment-plans.md).
 
-Сведения о том, как создать группу, см. в статье [Создание группы и добавление в нее пользователей в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-groups-create-azure-portal). 
+Сведения о том, как создать группу, см. в статье [Создание группы и добавление в нее пользователей в Azure Active Directory](../fundamentals/active-directory-groups-create-azure-portal.md). 
 
 ## <a name="plan-configuration"></a>Планирование конфигурации
 
@@ -172,7 +172,7 @@ Azure Active Directory лицензируется отдельно для каж
 
 ### <a name="authentication-methods"></a>Методы проверки подлинности
 
-Если включена функция SSPR, пользователи смогут сбросить пароль, только если у них есть необходимые данные для методов проверки подлинности, которые включил администратор. К таким методам относятся телефон, уведомление приложения Microsoft Authenticator, контрольные вопросы и т. д. Дополнительные сведения см. в разделе [Какие методы проверки подлинности доступны?](https://docs.microsoft.com/azure/active-directory/authentication/concept-authentication-methods).
+Если включена функция SSPR, пользователи смогут сбросить пароль, только если у них есть необходимые данные для методов проверки подлинности, которые включил администратор. К таким методам относятся телефон, уведомление приложения Microsoft Authenticator, контрольные вопросы и т. д. Дополнительные сведения см. в разделе [Какие методы проверки подлинности доступны?](./concept-authentication-methods.md).
 
 Мы рекомендуем использовать следующие параметры метода проверки подлинности:
 
@@ -180,7 +180,7 @@ Azure Active Directory лицензируется отдельно для каж
 
 * Для параметра **Число требуемых способов сброса** укажите соответствующий уровень для своей организации. Один метод обеспечивает большее удобство, тогда так два метода позволят повысить уровень защиты. 
 
-Примечание. У пользователя должны быть настроены методы проверки подлинности в разделе [Политики и ограничения для паролей в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-policy).
+Примечание. У пользователя должны быть настроены методы проверки подлинности в разделе [Политики и ограничения для паролей в Azure Active Directory](./concept-sspr-policy.md).
 
 ### <a name="registration-settings"></a>Параметры регистрации
 
@@ -196,11 +196,11 @@ Azure Active Directory лицензируется отдельно для каж
 
 Крайне важно указать адрес электронной почты или URL-адрес службы технической поддержки, чтобы пользователи, у которых возникли проблемы, могли немедленно получить помощь. Задайте для этого параметра общий адрес электронной почты службы поддержки или веб-страницу, которые знакомы пользователям. 
 
-Подробнее см. в разделе [Настройка функции самостоятельного сброса пароля в Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-customization).
+Подробнее см. в разделе [Настройка функции самостоятельного сброса пароля в Azure AD](./howto-sspr-customization.md).
 
 ### <a name="password-writeback"></a>Обратная запись паролей
 
-**Компонент обратной записи паролей** — это функция [Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-hybrid-identity). С ее помощью можно записывать сведения об операциях сброса паролей, выполненных в облаке, в имеющийся локальный каталог в режиме реального времени. Дополнительные сведения см. в разделе [Что такое компонент обратной записи паролей?](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback)
+**Компонент обратной записи паролей** — это функция [Azure AD Connect](../hybrid/whatis-hybrid-identity.md). С ее помощью можно записывать сведения об операциях сброса паролей, выполненных в облаке, в имеющийся локальный каталог в режиме реального времени. Дополнительные сведения см. в разделе [Что такое компонент обратной записи паролей?](./concept-sspr-writeback.md)
 
 Рекомендуются следующие настройки:
 
@@ -220,7 +220,7 @@ Azure Active Directory лицензируется отдельно для каж
 
 ### <a name="environments-with-multiple-identity-management-systems"></a>Среды с несколькими системами управления удостоверениями
 
-В некоторых средах имеется несколько систем управления удостоверениями. Для локальных диспетчеров удостоверений, таких как Oracle AM и SiteMinder, требуется синхронизация с AD для паролей. Это можно сделать с помощью такого средства, как служба уведомлений о смене паролей (PCNS) с Microsoft Identity Manager (MIM). Сведения об этом более сложном сценарии см. в статье [Развертывание службы уведомлений о смене паролей MIM на контроллере домена](https://docs.microsoft.com/microsoft-identity-manager/deploying-mim-password-change-notification-service-on-domain-controller).
+В некоторых средах имеется несколько систем управления удостоверениями. Для локальных диспетчеров удостоверений, таких как Oracle AM и SiteMinder, требуется синхронизация с AD для паролей. Это можно сделать с помощью такого средства, как служба уведомлений о смене паролей (PCNS) с Microsoft Identity Manager (MIM). Сведения об этом более сложном сценарии см. в статье [Развертывание службы уведомлений о смене паролей MIM на контроллере домена](/microsoft-identity-manager/deploying-mim-password-change-notification-service-on-domain-controller).
 
 ## <a name="plan-testing-and-support"></a>Планирование тестирования и поддержки
 
@@ -228,7 +228,7 @@ Azure Active Directory лицензируется отдельно для каж
 
 ### <a name="plan-testing"></a>Планирование тестирования
 
-Чтобы убедиться, что развертывание работает должным образом, спланируйте набор тестовых случаев для проверки реализации. Для оценки тестовых случаев необходим тестовый пользователь без прав администратора с паролем. Инструкции по добавлению пользователя см. в статье [Добавление или удаление пользователей в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/add-users-azure-active-directory).
+Чтобы убедиться, что развертывание работает должным образом, спланируйте набор тестовых случаев для проверки реализации. Для оценки тестовых случаев необходим тестовый пользователь без прав администратора с паролем. Инструкции по добавлению пользователя см. в статье [Добавление или удаление пользователей в Azure Active Directory](../fundamentals/add-users-azure-active-directory.md).
 
 В следующей таблице содержатся полезные сценарии тестирования, которые можно использовать для документирования ожидаемых результатов в организациях на основе политик.
 <br>
@@ -246,7 +246,7 @@ Azure Active Directory лицензируется отдельно для каж
 | Сброс пароля пользователя на экране блокировки устройства Windows 10, присоединенного к среде Azure AD или гибридной среде Azure AD| Пользователь может сбросить пароль |
 | Данные о регистрации и использовании SSPR доступны администраторам почти в реальном времени| Доступно через журналы аудита |
 
-Вы также можете ознакомиться с руководством [Выполнение пилотного развертывания самостоятельного сброса пароля Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-sspr-pilot). В нем описано включение пилотного развертывания SSPR в организации и тестирование его с помощью учетной записи без прав администратора.
+Вы также можете ознакомиться с руководством [Выполнение пилотного развертывания самостоятельного сброса пароля Azure AD](./tutorial-enable-sspr.md). В нем описано включение пилотного развертывания SSPR в организации и тестирование его с помощью учетной записи без прав администратора.
 
 ### <a name="plan-support"></a>Планирование поддержки
 
@@ -289,20 +289,20 @@ Azure Active Directory лицензируется отдельно для каж
 
 **Теперь все готово для развертывания SSPR!**
 
-Пошаговые инструкции по настройке следующих параметров см. в разделе [Включение самостоятельного сброса пароля](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-sspr-pilot#enable-self-service-password-reset).
+Пошаговые инструкции по настройке следующих параметров см. в разделе [Включение самостоятельного сброса пароля](./tutorial-enable-sspr.md#enable-self-service-password-reset).
 
-1. [Методы аутентификации](https://docs.microsoft.com/azure/active-directory/authentication/concept-authentication-methods)
+1. [Методы аутентификации](./concept-authentication-methods.md)
 
-1. [Параметры регистрации](https://docs.microsoft.com/azure/active-directory/authentication/concept-registration-mfa-sspr-combined)
+1. [Параметры регистрации](./concept-registration-mfa-sspr-combined.md)
 
 1. [Параметры уведомлений](#notifications-settings)
 
-1. [Параметры настройки](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-customization)
+1. [Параметры настройки](./howto-sspr-customization.md)
 
-1. [Интеграция с локальной средой](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-writeback)
+1. [Интеграция с локальной средой](./tutorial-enable-sspr-writeback.md)
 
 ### <a name="enable-sspr-in-windows"></a>Включение SSPR в Windows
-На компьютерах под управлением Windows 7, 8, 8.1 и 10 можно [разрешить пользователям сбрасывать пароль на экране входа в Windows](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-windows).
+На компьютерах под управлением Windows 7, 8, 8.1 и 10 можно [разрешить пользователям сбрасывать пароль на экране входа в Windows](./howto-sspr-windows.md).
 
 ## <a name="manage-sspr"></a>Управление SSPR
 
@@ -310,41 +310,41 @@ Azure AD может предоставить дополнительные све
 
 ### <a name="password-management-activity-reports"></a>Отчеты о действиях по управлению паролями 
 
-Для измерения эффективности SSPR можно использовать готовые отчеты на портале Azure. При наличии соответствующей лицензии можно также создавать пользовательские запросы. Дополнительные сведения см. в статье [Создание отчетов об управлении паролями в Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-reporting).
+Для измерения эффективности SSPR можно использовать готовые отчеты на портале Azure. При наличии соответствующей лицензии можно также создавать пользовательские запросы. Дополнительные сведения см. в статье [Создание отчетов об управлении паролями в Azure AD](./howto-sspr-reporting.md).
 
 > [!NOTE]
->  Вы должны иметь права [глобального администратора](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) и указать, что эти данные необходимо собирать для вашей организации. Чтобы дать согласие, необходимо по крайней мере один раз посетить вкладку "Отчеты" или просмотреть журналы аудита на портале Azure. До этого момента данные не будут собираться для вашей организации.
+>  Вы должны иметь права [глобального администратора](../users-groups-roles/directory-assign-admin-roles.md) и указать, что эти данные необходимо собирать для вашей организации. Чтобы дать согласие, необходимо по крайней мере один раз посетить вкладку "Отчеты" или просмотреть журналы аудита на портале Azure. До этого момента данные не будут собираться для вашей организации.
 
-Журналы аудита для регистрации и сброса пароля доступны в течение 30 дней. Если сведения об аудите безопасности в вашей организации хранятся более длительный период, необходимо экспортировать и использовать журналы в средстве SIEM, например [Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-active-directory), Splunk или ArcSight.
+Журналы аудита для регистрации и сброса пароля доступны в течение 30 дней. Если сведения об аудите безопасности в вашей организации хранятся более длительный период, необходимо экспортировать и использовать журналы в средстве SIEM, например [Azure Sentinel](../../sentinel/connect-azure-active-directory.md), Splunk или ArcSight.
 
 ![Снимок экрана: создание отчетов о SSPR](./media/howto-sspr-deployment/sspr-reporting.png)
 
 ### <a name="authentication-methods--usage-and-insights"></a>Методы проверки подлинности — использование и аналитика
 
-[Использование и аналитика](https://docs.microsoft.com/azure/active-directory/authentication/howto-authentication-methods-usage-insights) позволяют понять, насколько эффективно в вашей организации работают методы проверки подлинности для таких функций, как Azure MFA и SSPR. С помощью этой возможности создания отчетов ваша организация может получить понимание того, какие методы регистрируются и как их использовать.
+[Использование и аналитика](./howto-authentication-methods-usage-insights.md) позволяют понять, насколько эффективно в вашей организации работают методы проверки подлинности для таких функций, как Azure MFA и SSPR. С помощью этой возможности создания отчетов ваша организация может получить понимание того, какие методы регистрируются и как их использовать.
 
 ### <a name="troubleshoot"></a>Диагностика
 
-* См. статью [Устранение неполадок самостоятельного сброса пароля](https://docs.microsoft.com/azure/active-directory/authentication/active-directory-passwords-troubleshoot) 
+* См. статью [Устранение неполадок самостоятельного сброса пароля](./active-directory-passwords-troubleshoot.md) 
 
-* См. [вопросы и ответы об управлении паролями](https://docs.microsoft.com/azure/active-directory/authentication/active-directory-passwords-faq) 
+* См. [вопросы и ответы об управлении паролями](./active-directory-passwords-faq.md) 
 
 ### <a name="helpful-documentation"></a>Полезная документация
 
-* [Какие методы проверки подлинности доступны?](https://docs.microsoft.com/azure/active-directory/authentication/concept-authentication-methods)
+* [Какие методы проверки подлинности доступны?](./concept-authentication-methods.md)
 
-* [Принцип работы. Самостоятельный сброс пароля в Azure AD для ИТ-специалистов](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks)
+* [Принцип работы. Самостоятельный сброс пароля в Azure AD для ИТ-специалистов](./concept-sspr-howitworks.md)
 
-* [Настройка функции самостоятельного сброса пароля в Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-customization)
+* [Настройка функции самостоятельного сброса пароля в Azure AD](./howto-sspr-customization.md)
 
-* [Политики и ограничения для паролей в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-policy)
+* [Политики и ограничения для паролей в Azure Active Directory](./concept-sspr-policy.md)
 
-* [Что такое компонент обратной записи паролей?](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback)
+* [Что такое обратная запись паролей?](./concept-sspr-writeback.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы приступить к развертыванию SSPR, обратитесь к статье [Включение самостоятельного сброса пароля Azure AD](tutorial-enable-sspr.md)
 
-* [Реализуйте защиту паролей Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/concept-password-ban-bad)
+* [Реализуйте защиту паролей Azure AD](./concept-password-ban-bad.md)
 
-* [Реализуйте функцию Azure AD Smart Lockout](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-smart-lockout)
+* [Реализуйте функцию Azure AD Smart Lockout](./howto-password-smart-lockout.md)

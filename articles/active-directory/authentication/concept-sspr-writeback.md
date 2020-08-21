@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f76073a1ed98dcc51cf7e14219beca914b5b77a4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3959fc7df78a5c1f255f7551a018eec6b7279eb1
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87027603"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717444"
 ---
 # <a name="how-does-self-service-password-reset-writeback-work-in-azure-active-directory"></a>Как работает самостоятельная обратная запись паролей в Azure Active Directory?
 
@@ -47,7 +47,7 @@ ms.locfileid: "87027603"
 Чтобы приступить к работе с обратной записью SSPR, ознакомьтесь со следующим руководством.
 
 > [!div class="nextstepaction"]
-> [Руководство. Включение обратной записи при самостоятельном сбросе пароля (SSPR)](tutorial-enable-writeback.md)
+> [Руководство. Включение обратной записи при самостоятельном сбросе пароля (SSPR)](./tutorial-enable-sspr-writeback.md)
 
 ## <a name="how-password-writeback-works"></a>Как работает обратная запись паролей
 
@@ -140,7 +140,7 @@ ms.locfileid: "87027603"
    * все самостоятельные принудительные операции изменения пароля администратора (например, из-за окончания срока действия пароля);
    * все самостоятельные операции сброса пароля администратора, выполняемые на [портале сброса пароля](https://passwordreset.microsoftonline.com);
    * все операции сброса пароля конечного пользователя, инициируемые администратором на [портале Azure](https://portal.azure.com);
-   * все операции сброса пароля конечного пользователя, инициируемые администратором через [API Microsoft Graph (бета-версия)](https://docs.microsoft.com/graph/api/passwordauthenticationmethod-resetpassword?view=graph-rest-beta&tabs=http).
+   * все операции сброса пароля конечного пользователя, инициируемые администратором через [API Microsoft Graph (бета-версия)](/graph/api/passwordauthenticationmethod-resetpassword?tabs=http&view=graph-rest-beta).
 
 ## <a name="unsupported-writeback-operations"></a>Неподдерживаемые операции обратной записи
 
@@ -149,7 +149,7 @@ ms.locfileid: "87027603"
 * **Неподдерживаемые операции пользователей:**
    * все операции сброса пароля пользователя с помощью PowerShell версии 1, PowerShell версии 2 или API Microsoft Graph.
 * **Неподдерживаемые операции администрирования:**
-   * все операции сброса пароля пользователя, инициируемые администратором с помощью PowerShell версии 1 и версии 2 или API Microsoft Graph (поддерживается [бета-версия API Microsoft Graph](https://docs.microsoft.com/graph/api/passwordauthenticationmethod-resetpassword?view=graph-rest-beta&tabs=http)).
+   * все операции сброса пароля пользователя, инициируемые администратором с помощью PowerShell версии 1 и версии 2 или API Microsoft Graph (поддерживается [бета-версия API Microsoft Graph](/graph/api/passwordauthenticationmethod-resetpassword?tabs=http&view=graph-rest-beta)).
    * все операции сброса пароля конечного пользователя, инициируемые администратором из [центра администрирования Microsoft 365](https://admin.microsoft.com).
    * Никакой администратор не может использовать средство сброса пароля, чтобы сбросить свой пароль для обратной записи.
 
@@ -161,4 +161,4 @@ ms.locfileid: "87027603"
 Чтобы приступить к работе с обратной записью SSPR, ознакомьтесь со следующим руководством.
 
 > [!div class="nextstepaction"]
-> [Руководство. Включение обратной записи при самостоятельном сбросе пароля (SSPR)](tutorial-enable-writeback.md)
+> [Руководство. Включение обратной записи при самостоятельном сбросе пароля (SSPR)](./tutorial-enable-sspr-writeback.md)

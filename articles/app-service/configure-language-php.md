@@ -5,12 +5,12 @@ ms.devlang: php
 ms.topic: article
 ms.date: 06/02/2020
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 440815d7d24cde9708c214bf407a2dd9206a1706
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: c510d6f1cc2aa4a7e71f64e0c296e14a9896614e
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88642050"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717988"
 ---
 # <a name="configure-a-php-app-for-azure-app-service"></a>Настройка приложения PHP для службы приложений Azure
 
@@ -119,7 +119,7 @@ fi
 
 Если вы хотите, чтобы служба приложений выполняла популярные средства автоматизации во время развертывания, например grunt, Bower или gulp, необходимо предоставить [Пользовательский скрипт развертывания](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script). Служба приложений запускает этот скрипт при развертывании с помощью Git или при [развертывании ZIP](deploy-zip.md) с включенной автоматизацией сборок. 
 
-Чтобы разрешить репозиторию запускать эти средства, необходимо добавить их в зависимости в *package.js.* Пример:
+Чтобы разрешить репозиторию запускать эти средства, необходимо добавить их в зависимости в *package.js.* Пример.
 
 ```json
 "dependencies": {
@@ -408,15 +408,15 @@ echo "expose_php = Off" >> ini/setting.ini
 
 Чтобы включить дополнительные расширения, выполните следующие действия.
 
-Добавьте каталог `bin` в корневой каталог приложения и поместите в него файлы с расширением `.so` (например, *mongodb.so*). Убедитесь, что расширения совместимы с версией PHP в Azure, а также с VC9 и непотокобезопасного кода (nts).
+Добавьте `bin` каталог в корневой каталог приложения и вставьте `.dll` в него файлы расширения (например, *mongodb.dll*). Убедитесь, что расширения совместимы с версией PHP в Azure, а также с VC9 и непотокобезопасного кода (nts).
 
 Примените изменения.
 
 Выполните действия, описанные в разделе [Настройка директив PHP_INI_SYSTEM](#customize-php_ini_system-directives), добавьте расширения в пользовательский файл *.ini* с директивами [extension](https://www.php.net/manual/ini.core.php#ini.extension) или [zend_extension](https://www.php.net/manual/ini.core.php#ini.zend-extension).
 
 ```
-extension=d:\home\site\wwwroot\bin\mongodb.so
-zend_extension=d:\home\site\wwwroot\bin\xdebug.so
+extension=d:\home\site\wwwroot\bin\mongodb.dll
+zend_extension=d:\home\site\wwwroot\bin\xdebug.dll
 ```
 
 Чтобы изменения вступили в силу, перезапустите приложение.

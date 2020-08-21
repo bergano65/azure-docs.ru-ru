@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
 ms.date: 07/31/2020
-ms.openlocfilehash: 5aa6b3717925146607f3785ad5ea5fb940e8c236
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: b3919cbbe0ba7a796a21ae566afb8e2d9fa784db
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87503411"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88716679"
 ---
 # <a name="transform-json-and-xml-using-liquid-templates-as-maps-in-azure-logic-apps"></a>Преобразование JSON и XML с помощью шаблонов жидкостей в виде карт в Azure Logic Apps
 
@@ -39,7 +39,7 @@ ms.locfileid: "87503411"
 * Основные сведения о [языке шаблона жидкости](https://shopify.github.io/liquid/)
 
   > [!NOTE]
-  > Действие **преобразование JSON в JSON-жидкость** следует за [реализацией DotLiquid для жидкостьа](https://github.com/dotliquid/dotliquid), которая отличается в конкретных случаях от [реализации Shopify для жидкостей](https://shopify.github.io/liquid). Дополнительные сведения см. в разделе [рекомендации по шаблонам жидкости](#template-considerations).
+  > Действие **преобразование JSON в JSON-жидкость** следует за [реализацией DotLiquid для жидкостьа](https://github.com/dotliquid/dotliquid), которая отличается в конкретных случаях от [реализации Shopify для жидкостей](https://shopify.github.io/liquid). Дополнительные сведения см. в разделе [рекомендации по шаблонам жидкости](#liquid-template-considerations).
 
 ## <a name="create-the-template"></a>Создание шаблона
 
@@ -88,7 +88,7 @@ ms.locfileid: "87503411"
 
    | Свойство | Значение | Описание |
    |----------|-------|-------------|
-   | **Name** | `JsonToJsonTemplate` | Это имя сопоставления, в нашем примере это "JsontoJsonTemplate" |
+   | **имя**; | `JsonToJsonTemplate` | Это имя сопоставления, в нашем примере это "JsontoJsonTemplate" |
    | **Тип сопоставления** | **liquid** | Обозначает тип сопоставления. Для преобразования JSON в JSON следует выбрать **Liquid**. |
    | **Схема** | `SimpleJsonToJsonTemplate.liquid` | Это существующий файл шаблона или сопоставления Liquid, который будет использован для преобразования. В нашем примере это SimpleJsonToJsonTemplate.liquid. Чтобы найти этот файл, используйте средство выбора файлов. Ограничения размера карт см. в разделе [ограничения и конфигурация](../logic-apps/logic-apps-limits-and-config.md#artifact-capacity-limits). |
    |||

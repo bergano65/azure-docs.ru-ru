@@ -141,7 +141,7 @@
           href: uptime-sla.md
         - name: Использование групп размещения близкого взаимодействия (предварительная версия)
           href: reduce-latency-ppg.md
-        - name: Обновление образа узла (предварительная версия)
+        - name: Обновление образа узла
           href: node-image-upgrade.md
         - name: Обновления ОС узла процесса
           href: node-updates-kured.md

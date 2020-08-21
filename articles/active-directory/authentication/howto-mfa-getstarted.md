@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ab69e3f4ca89e2069ff25470773e597009ec238
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: 4fc459e63dd48adb49ab916c368b68cc3a1ccbaf
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88641081"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717036"
 ---
 # <a name="plan-an-azure-multi-factor-authentication-deployment"></a>Планирование развертывания Многофакторной идентификации Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "88641081"
 
 Политики условного доступа требуют регистрации, при этом незарегистрированные пользователи должны завершить регистрацию при первом входе в систему, что важно для безопасности.
 
-[Защита идентификации Azure AD](../identity-protection/howto-configure-risk-policies.md) влияет на политики регистрации и автоматического обнаружения рисков и на политики исправления в процессе Многофакторной идентификации Azure. Можно создавать политики для принудительного изменения пароля при возникновении угрозы компрометации идентификатора или при необходимости использования MFA, когда вход считается рискованным для следующих [событий](../reports-monitoring/concept-risk-events.md).
+[Защита идентификации Azure AD](../identity-protection/howto-identity-protection-configure-risk-policies.md) влияет на политики регистрации и автоматического обнаружения рисков и на политики исправления в процессе Многофакторной идентификации Azure. Можно создавать политики для принудительного изменения пароля при возникновении угрозы компрометации идентификатора или при необходимости использования MFA, когда вход считается рискованным для следующих [событий](../identity-protection/overview-identity-protection.md).
 
 * Утерянные учетные данные
 * Попытки входа с анонимных IP-адресов
@@ -151,7 +151,7 @@ ms.locfileid: "88641081"
 
 ### <a name="registration-with-identity-protection"></a>Регистрация с помощью Защиты идентификации
 
-Если в вашей организации используется Защита идентификации Azure Active Directory, [настройте политику регистрации с MFA](../identity-protection/howto-mfa-policy.md), чтобы запрашивать у пользователей регистрацию при следующем входе в интерактивном режиме.
+Если в вашей организации используется Защита идентификации Azure Active Directory, [настройте политику регистрации с MFA](../identity-protection/howto-identity-protection-configure-mfa-policy.md), чтобы запрашивать у пользователей регистрацию при следующем входе в интерактивном режиме.
 
 ### <a name="registration-without-identity-protection"></a>Регистрация без Защиты идентификации
 
@@ -165,7 +165,7 @@ ms.locfileid: "88641081"
 2. С помощью условного доступа активируйте многофакторную проверку подлинности для этой группы при доступе ко всем ресурсам.
 3. Периодически пересматривайте членство в группе и удаляйте из группы зарегистрированных пользователей.
 
-Зарегистрированных и незарегистрированных пользователей Azure MFA можно определить с помощью команд PowerShell, которые используют [модуль MSOnline PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-msonlinev1?view=azureadps-1.0).
+Зарегистрированных и незарегистрированных пользователей Azure MFA можно определить с помощью команд PowerShell, которые используют [модуль MSOnline PowerShell](/powershell/azure/active-directory/install-msonlinev1?view=azureadps-1.0).
 
 #### <a name="identify-registered-users"></a>Определение зарегистрированных пользователей
 
@@ -281,7 +281,7 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 
 #### <a name="implementing-your-nps-server"></a>Реализация сервера NPS
 
-Если вы развернули и уже используете экземпляр сервера NPS, дальнейшие действия см. в статье [Интеграция существующей инфраструктуры NPS с Многофакторной идентификацией Azure](howto-mfa-nps-extension.md). Если вы настраиваете сервер NPS в первый раз, см. инструкции в статье [Сервер политики сети (NPS)](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top). Инструкции по устранению неполадок см. в статье [Устранение ошибок, связанных с расширением NPS для многофакторной проверки подлинности Azure](howto-mfa-nps-extension-errors.md).
+Если вы развернули и уже используете экземпляр сервера NPS, дальнейшие действия см. в статье [Интеграция существующей инфраструктуры NPS с Многофакторной идентификацией Azure](howto-mfa-nps-extension.md). Если вы настраиваете сервер NPS в первый раз, см. инструкции в статье [Сервер политики сети (NPS)](/windows-server/networking/technologies/nps/nps-top). Инструкции по устранению неполадок см. в статье [Устранение ошибок, связанных с расширением NPS для многофакторной проверки подлинности Azure](howto-mfa-nps-extension-errors.md).
 
 #### <a name="prepare-nps-for-users-that-arent-enrolled-for-mfa"></a>Подготовка NPS к входу пользователей, не зарегистрированных для MFA
 
@@ -325,7 +325,7 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 
 На каждом сервере AD FS в хранилище локального компьютера будет существовать самозаверяющий сертификат Azure MFA с именем OU=Microsoft AD FS Azure MFA, который содержит дату истечения срока действия сертификата. Проверьте срок действия этого сертификата на каждом сервере AD FS, чтобы определить дату истечения срока.
 
-Если срок действия сертификатов скоро истечет, [создайте и проверьте новый сертификат MFA на каждом](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa#configure-the-ad-fs-servers) сервере AD FS.
+Если срок действия сертификатов скоро истечет, [создайте и проверьте новый сертификат MFA на каждом](/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa#configure-the-ad-fs-servers) сервере AD FS.
 
 В указанном ниже руководстве описано, как управлять сертификатами Azure MFA на серверах AD FS. При настройке AD FS с помощью Azure MFA сертификаты, созданные с помощью командлета PowerShell для `New-AdfsAzureMfaTenantCertificate`, действительны в течение двух лет. Продлите и установите продленные сертификаты до истечения срока их действия, чтобы избежать прерываний в работе службы MFA.
 
@@ -336,7 +336,7 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 1. Соблюдайте необходимые условия:
    1. Разверните [Azure AD Connect](../hybrid/whatis-hybrid-identity.md) для любых гибридных сценариев.
    1. Разверните [прокси приложения Azure AD](../manage-apps/application-proxy.md) для любых локальных приложений, опубликованных для доступа к облаку.
-   1. Разверните [NPS](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top) для любой проверки подлинности RADIUS.
+   1. Разверните [NPS](/windows-server/networking/technologies/nps/nps-top) для любой проверки подлинности RADIUS.
    1. Убедитесь, что пользователи выполнили обновление до поддерживаемых версий Microsoft Office с включенной современной проверкой подлинности.
 1. Настройте выбранные [методы проверки подлинности](#choose-verification-options).
 1. Определите [именованные сетевые расположения](../conditional-access/location-condition.md#named-locations).
@@ -344,7 +344,7 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 1. Настройте [политики условного доступа](#create-conditional-access-policy).
 1. Настройте политику регистрации с MFA:
    1. [Сочетание MFA и SSPR](howto-registration-mfa-sspr-combined.md).
-   1. С [Защитой идентификации](../identity-protection/howto-mfa-policy.md).
+   1. С [Защитой идентификации](../identity-protection/howto-identity-protection-configure-mfa-policy.md).
 1. Проинформируйте пользователей и пригласите пользователей для регистрации на [https://aka.ms/mfasetup](https://aka.ms/mfasetup).
 1. [Следите за теми, кто зарегистрирован](#identify-non-registered-users).
 

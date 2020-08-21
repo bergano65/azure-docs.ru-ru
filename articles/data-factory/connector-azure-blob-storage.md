@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/18/2020
-ms.openlocfilehash: e9561c0b54d256d5f24dc02c6f46d84821b9708c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 489d05f19fe9fafd4c32f988e9b0b90f95c0b5b2
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88548452"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88718347"
 ---
 # <a name="copy-and-transform-data-in-azure-blob-storage-by-using-azure-data-factory"></a>Копирование данных в хранилище больших двоичных объектов Azure и обратно с помощью фабрики данных Azure
 
@@ -165,7 +165,7 @@ ms.locfileid: "88548452"
         "typeProperties": {
             "sasUri": {
                 "type": "SecureString",
-                "value": "<SAS URI of the Azure Storage resource e.g. https://<accountname>.blob.core.windows.net/?sv=<storage version>&amp;st=<start time>&amp;se=<expire time>&amp;sr=<resource>&amp;sp=<permissions>&amp;sip=<ip range>&amp;spr=<protocol>&amp;sig=<signature>>"
+                "value": "<SAS URI of the Azure Storage resource e.g. https://<accountname>.blob.core.windows.net/?sv=<storage version>&st=<start time>&se=<expire time>&sr=<resource>&sp=<permissions>&sip=<ip range>&spr=<protocol>&sig=<signature>>"
             }
         },
         "connectVia": {
@@ -194,7 +194,7 @@ ms.locfileid: "88548452"
                     "referenceName": "<Azure Key Vault linked service name>", 
                     "type": "LinkedServiceReference" 
                 }, 
-                "secretName": "<secretName>" 
+                "secretName": "<secretName with value of SAS token e.g. ?sv=<storage version>&st=<start time>&se=<expire time>&sr=<resource>&sp=<permissions>&sip=<ip range>&spr=<protocol>&sig=<signature>>" 
             }
         },
         "connectVia": {
@@ -515,7 +515,7 @@ ms.locfileid: "88548452"
 При преобразовании данных в сопоставление потоков данных можно читать и записывать файлы из хранилища BLOB-объектов Azure в следующих форматах:
 * [Avro](format-avro.md#mapping-data-flow-properties)
 * [Текст с разделителями](format-delimited-text.md#mapping-data-flow-properties)
-* [Изменений](format-delta.md#mapping-data-flow-properties)
+* [Разностная версия](format-delta.md#mapping-data-flow-properties)
 * [Excel](format-excel.md#mapping-data-flow-properties)
 * [JSON](format-json.md#mapping-data-flow-properties)
 * [Parquet](format-parquet.md#mapping-data-flow-properties)

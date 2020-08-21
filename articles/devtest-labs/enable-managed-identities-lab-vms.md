@@ -3,12 +3,12 @@ title: Включение управляемых удостоверений на
 description: В этой статье показано, как владелец лаборатории может включить управляемые пользователем удостоверения на виртуальных машинах лаборатории.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 886dc3b541c624d9f7a300fbbe696e1d2e143641
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b4bf2900acebaeecd5cbc4cb65635aee6de87dda
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85476008"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717644"
 ---
 # <a name="enable-user-assigned-managed-identities-on-lab-virtual-machines-in-azure-devtest-labs"></a>Включение назначенных пользователем управляемых удостоверений на виртуальных машинах лаборатории в Azure DevTest Labs
 Как владелец лаборатории вы можете включить управляемые пользователем удостоверения на виртуальных машинах лаборатории в Azure DevTest Labs.
@@ -25,14 +25,16 @@ ms.locfileid: "85476008"
 
 1. [Создание управляемого удостоверения, назначенного пользователем в подписке](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md#create-a-user-assigned-managed-identity)
 1. Перейдите на страницу **Конфигурация и политики** для своей лаборатории.
-2. В меню слева выберите **Идентификация (Предварительная версия)** .
-3. Перейдите на вкладку **Виртуальная машина** .
-4. Нажмите кнопку **Добавить** , чтобы выбрать существующее удостоверение из предварительно заполненного раскрывающегося списка. 
+1. В меню слева выберите **Идентификация (Предварительная версия)** .
+1. Перейдите на вкладку **Виртуальная машина** .
+1. Нажмите кнопку **Добавить** , чтобы выбрать существующее удостоверение из предварительно заполненного раскрывающегося списка. 
 
-    ![Кнопка "добавить удостоверение"](./media/enable-managed-identities-lab-vms/add-identity-button.png)
-5. Выберите существующее **удостоверение, управляемое пользователем** , из раскрывающегося списка и нажмите кнопку **ОК**. 
+    > [!div class="mx-imgBorder"]
+    > ![Кнопка "добавить удостоверение"](./media/enable-managed-identities-lab-vms/add-identity-button.png)
+1. Выберите существующее **удостоверение, управляемое пользователем** , из раскрывающегося списка и нажмите кнопку **ОК**. 
 
-    ![Добавить удостоверение](./media/enable-managed-identities-lab-vms/add-identity.png)
+    > [!div class="mx-imgBorder"]
+    > ![Добавить удостоверение](./media/enable-managed-identities-lab-vms/add-identity.png)
 
 ## <a name="use-api"></a>Использовать API
 

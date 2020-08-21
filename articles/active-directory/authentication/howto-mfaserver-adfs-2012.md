@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2777675d915d99b8c0e3c2a123b24ab60d41f672
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8143149332a4a493a9a4d8d4a0d403420b87f75a
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80653355"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719484"
 ---
 # <a name="configure-azure-multi-factor-authentication-server-to-work-with-ad-fs-in-windows-server"></a>Настройка сервера Многофакторной идентификации Azure для работы с AD FS на платформе Windows Server
 
@@ -84,7 +84,7 @@ ms.locfileid: "80653355"
 Чтобы изменить файл MultiFactorAuthenticationAdfsAdapter.config, выполните следующие действия.
 
 1. Задайте для узла **UseWebServiceSdk** значение **true**.  
-2. В поле **WebServiceSdkUrl** укажите URL-адрес пакета SDK веб-службы многофакторной проверки подлинности. Например: *https:\/\/contoso.com/\<certificatename>/MultiFactorAuthWebServiceSdk/PfWsSdk.asmx*, где *\<certificatename>*  — имя вашего сертификата.  
+2. В поле **WebServiceSdkUrl** укажите URL-адрес пакета SDK веб-службы многофакторной проверки подлинности. Например: *https: \/ \/ contoso.com/ \<certificatename> /MultiFactorAuthWebServiceSdk/PfWsSdk.asmx*, где *\<certificatename>* — имя вашего сертификата.  
 3. Измените скрипт Register-MultiFactorAuthenticationAdfsAdapter.ps1. Для этого добавьте `-ConfigurationFilePath &lt;path&gt;` в конец команды `Register-AdfsAuthenticationProvider`, где *&lt;path&gt;*  — это полный путь к файлу MultiFactorAuthenticationAdfsAdapter.config.
 
 ### <a name="configure-the-web-service-sdk-with-a-username-and-password"></a>Настройка пакета SDK веб-службы с помощью имени пользователя и пароля
@@ -98,7 +98,7 @@ ms.locfileid: "80653355"
 
 Если вы не хотите использовать имя пользователя и пароль для настройки пакета SDK веб-службы, выполните следующие действия для настройки с помощью сертификата клиента.
 
-1. Получите в центре сертификации сертификат клиента для сервера, на котором запущен пакет SDK веб-службы. Дополнительные сведения см. в статье [о получении сертификатов клиента](https://technet.microsoft.com/library/cc770328.aspx).  
+1. Получите в центре сертификации сертификат клиента для сервера, на котором запущен пакет SDK веб-службы. Дополнительные сведения см. в статье [о получении сертификатов клиента](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770328(v=ws.10)).  
 2. Импортируйте сертификат клиента в хранилище личных сертификатов локального компьютера на сервере, на котором запущен пакет SDK веб-службы. Убедитесь, что открытый сертификат центра сертификации находится в хранилище доверенных корневых сертификатов.  
 3. Экспортируйте открытый и закрытый ключи сертификата клиента в PFX-файл.  
 4. Экспортируйте открытый ключ в формате Base64 в CER-файл.  

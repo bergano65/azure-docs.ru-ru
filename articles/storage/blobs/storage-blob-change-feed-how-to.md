@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: storage
 ms.subservice: blobs
 ms.reviewer: sadodd
-ms.openlocfilehash: dedf1174e00f5bb75822fb720a592af86121ec2d
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: baed9ef099ed818fa0967c7a3e7ab61fb4921f75
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88691434"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719314"
 ---
 # <a name="process-change-feed-in-azure-blob-storage-preview"></a>Обработка канала изменений в хранилище BLOB-объектов Azure (Предварительная версия)
 
@@ -22,15 +22,16 @@ ms.locfileid: "88691434"
 Дополнительные сведения о канале изменений см. [в статье канал изменений в хранилище BLOB-объектов Azure (Предварительная версия)](storage-blob-change-feed.md).
 
 > [!NOTE]
-> Веб-канал изменений находится в общедоступной предварительной версии и доступен в регионах **westcentralus** и **westus2** . Дополнительные сведения об этой функции вместе с известными проблемами и ограничениями см. [в статье поддержка веб-канала изменений в хранилище BLOB-объектов Azure](storage-blob-change-feed.md). Библиотека обработчика веб-канала изменений может быть изменена между сейчас и когда эта библиотека становится общедоступной.
+> Веб-канал изменений находится в общедоступной предварительной версии и доступен в ограниченных регионах. Дополнительные сведения об этой функции вместе с известными проблемами и ограничениями см. [в статье поддержка веб-канала изменений в хранилище BLOB-объектов Azure](storage-blob-change-feed.md). Библиотека обработчика веб-канала изменений может быть изменена между сейчас и когда эта библиотека становится общедоступной.
 
 ## <a name="get-the-blob-change-feed-processor-library"></a>Получение библиотеки обработчика канала изменений больших двоичных объектов
 
 1. Откройте командное окно (например, Windows PowerShell).
-2. В каталоге проекта установите пакет NuGet **Azure. Storage. blobs. пр** .
+2. В каталоге проекта установите [пакет NuGet **Azure. Storage. blobs. пр** ](https://www.nuget.org/packages/Azure.Storage.Blobs.ChangeFeed/).
 
 ```console
-dotnet add package Azure.Storage.Blobs.ChangeFeed --source https://azuresdkartifacts.blob.core.windows.net/azure-sdk-for-net/index.json --version 12.0.0-dev.20200604.2
+dotnet add package Azure.Storage.Blobs --version 12.5.1
+dotnet add package Azure.Storage.Blobs.ChangeFeed --version 12.0.0-preview.4
 ```
 ## <a name="read-records"></a>Чтение записей
 
@@ -117,7 +118,7 @@ public async Task<(string, List<BlobChangeFeedEvent>)> ChangeFeedResumeWithCurso
 
 ## <a name="stream-processing-of-records"></a>Потоковая обработка записей
 
-Вы можете обрабатывать записи веб-канала изменений по мере их поступления. См. [спецификации](storage-blob-change-feed.md#specifications). Мы рекомендуем опрашивать изменения каждый час.
+Можно выбрать обработку записей веб-канала изменений по мере их фиксации в веб-канале изменений. См. [спецификации](storage-blob-change-feed.md#specifications). События изменения публикуются в веб-канале изменений в среднем в 60 секунд. Мы рекомендуем опрашивать новые изменения с учетом этого периода при указании интервала опроса.
 
 В этом примере периодически опрашивается на наличие изменений.  Если записи изменений существуют, этот код обрабатывает эти записи и сохраняет курсор веб-канала изменений. Таким образом, если процесс был остановлен, а затем снова запущен, приложение может использовать курсор для возобновления обработки записей, в которых он остался последним. В этом примере курсор сохраняется в файле конфигурации локального приложения, но приложение может сохранить его в любой форме, которая наиболее подходит для вашего сценария. 
 
@@ -181,7 +182,7 @@ public void SaveCursor(string cursor)
 
 ## <a name="reading-records-within-a-time-range"></a>Чтение записей в диапазоне времени
 
-Можно читать записи, попадающие в заданный диапазон времени. В этом примере выполняется итерация всех записей в веб-канале изменений, которые находятся в диапазоне от 3:00 марта 2 2017 г. и 2:00 AM 7 2019, добавляет их в список, а затем возвращает этот список вызывающему объекту.
+Можно читать записи, попадающие в заданный диапазон времени. В этом примере выполняется итерация всех записей в веб-канале изменений, которые находятся в диапазоне от 3:00 марта 2 2020 г. и 2:00 AM 7 2020, добавляет их в список, а затем возвращает этот список вызывающему объекту.
 
 ### <a name="selecting-segments-for-a-time-range"></a>Выбор сегментов для диапазона времени
 
@@ -198,8 +199,8 @@ public async Task<List<BlobChangeFeedEvent>> ChangeFeedBetweenDatesAsync(string 
     // Create the start and end time.  The change feed client will round start time down to
     // the nearest hour, and round endTime up to the next hour if you provide DateTimeOffsets
     // with minutes and seconds.
-    DateTimeOffset startTime = new DateTimeOffset(2017, 3, 2, 15, 0, 0, TimeSpan.Zero);
-    DateTimeOffset endTime = new DateTimeOffset(2020, 10, 7, 2, 0, 0, TimeSpan.Zero);
+    DateTimeOffset startTime = new DateTimeOffset(2020, 3, 2, 15, 0, 0, TimeSpan.Zero);
+    DateTimeOffset endTime = new DateTimeOffset(2020, 8, 7, 2, 0, 0, TimeSpan.Zero);
 
     // You can also provide just a start or end time.
     await foreach (BlobChangeFeedEvent changeFeedEvent in changeFeedClient.GetChangesAsync(
@@ -215,6 +216,6 @@ public async Task<List<BlobChangeFeedEvent>> ChangeFeedBetweenDatesAsync(string 
 
 Предоставленное время начала округляется вниз до ближайшего часа, а время окончания округляется до ближайшего часа. Возможно, пользователи увидят события, произошедшие до времени начала и после времени окончания. Также возможно, что некоторые события, происходящие между временем начала и окончания, не будут отображаться. Это связано с тем, что события могут записываться в течение часа, предшествующего времени начала, или в течение часа после времени окончания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о журналах веб-канала изменений. См. [веб-канал изменений в хранилище BLOB-объектов Azure (Предварительная версия)](storage-blob-change-feed.md)

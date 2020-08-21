@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 6a292201796ccb08f684d2c44a3cee71442edbfe
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: f991e38c184fe44f63af63809deb14eda22f8f4c
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85848677"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88716730"
 ---
 # <a name="resolve-error-messages-from-the-nps-extension-for-azure-multi-factor-authentication"></a>Устранение ошибок, связанных с расширением NPS для Многофакторной идентификации Azure.
 
@@ -43,7 +43,7 @@ ms.locfileid: "85848677"
 | Код ошибки | Сообщение об ошибке | Действия по устранению неполадок |
 | ---------- | ------------- | --------------------- |
 | **ALTERNATE_LOGIN_ID_ERROR** | Ошибка. Сбой поиска userObjectSid. | Убедитесь, что такой пользователь существует в экземпляре локальной службы Active Directory. Если вы используете отношения доверия между лесами, [обратитесь в службу поддержки](#contact-microsoft-support) для получения дополнительных сведений. |
-| **ALTERNATE_LOGIN_ID_ERROR** | Ошибка. Сбой поиска альтернативного имени пользователя. | Убедитесь, что для значения реестра LDAP_ALTERNATE_LOGINID_ATTRIBUTE указан [допустимый атрибут Active Directory](https://msdn.microsoft.com/library/ms675090(v=vs.85).aspx). <br><br> Если для LDAP_FORCE_GLOBAL_CATALOG задано значение True, а LDAP_LOOKUP_FORESTS имеет непустое значение, проверьте, настроен ли глобальный каталог и добавлен ли к нему атрибут AlternateLoginId. <br><br> Если LDAP_LOOKUP_FORESTS имеет непустое значение, убедитесь, что это значение правильно. Если указано несколько имен леса, такие имена должны быть разделены точками с запятой без пробелов. <br><br> Если с помощью этих шагов не удалось устранить проблему, обратитесь в [службу поддержки](#contact-microsoft-support) для получения дополнительных сведений. |
+| **ALTERNATE_LOGIN_ID_ERROR** | Ошибка. Сбой поиска альтернативного имени пользователя. | Убедитесь, что для значения реестра LDAP_ALTERNATE_LOGINID_ATTRIBUTE указан [допустимый атрибут Active Directory](/windows/win32/adschema/attributes-all). <br><br> Если для LDAP_FORCE_GLOBAL_CATALOG задано значение True, а LDAP_LOOKUP_FORESTS имеет непустое значение, проверьте, настроен ли глобальный каталог и добавлен ли к нему атрибут AlternateLoginId. <br><br> Если LDAP_LOOKUP_FORESTS имеет непустое значение, убедитесь, что это значение правильно. Если указано несколько имен леса, такие имена должны быть разделены точками с запятой без пробелов. <br><br> Если с помощью этих шагов не удалось устранить проблему, обратитесь в [службу поддержки](#contact-microsoft-support) для получения дополнительных сведений. |
 | **ALTERNATE_LOGIN_ID_ERROR** | Ошибка. Пустое значение альтернативного имени пользователя. | Убедитесь, что атрибут AlternateLoginId настроен для пользователя. |
 
 ## <a name="errors-your-users-may-encounter"></a>Ошибки, с которыми могут столкнуться пользователи
@@ -91,7 +91,7 @@ ms.locfileid: "85848677"
 | **версионнотсуппортед** |  |
 | **MFAPinNotSetup** |  |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="troubleshoot-user-accounts"></a>Устранение неполадок, связанных с учетными данными пользователей
 
@@ -99,7 +99,7 @@ ms.locfileid: "85848677"
 
 ### <a name="health-check-script"></a>Скрипт проверки работоспособности
 
-[Скрипт проверки работоспособности расширения NPS Azure MFA](https://docs.microsoft.com/samples/azure-samples/azure-mfa-nps-extension-health-check/azure-mfa-nps-extension-health-check/) выполняет базовую проверку работоспособности при устранении неполадок расширения NPS. Запустите сценарий и выберите вариант 3.
+[Скрипт проверки работоспособности расширения NPS Azure MFA](/samples/azure-samples/azure-mfa-nps-extension-health-check/azure-mfa-nps-extension-health-check/) выполняет базовую проверку работоспособности при устранении неполадок расширения NPS. Запустите сценарий и выберите вариант 3.
 
 ### <a name="contact-microsoft-support"></a>Обратиться в службу поддержки Майкрософт
 
