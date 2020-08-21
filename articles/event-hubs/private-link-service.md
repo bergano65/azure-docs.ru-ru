@@ -58,14 +58,14 @@ ms.locfileid: "88716797"
     > [!NOTE]
     > Вкладка " **сеть** " отображается только для **стандартных** или **выделенных** пространств имен. 
 
-    :::image type="content" source="./media/private-link-service/selected-networks-page.png" alt-text="Вкладка "сети" — параметр "выбранные сети"" lightbox="./media/private-link-service/selected-networks-page.png":::    
+    :::image type="content" source="./media/private-link-service/selected-networks-page.png" alt-text="Вкладка сети — параметр выбранные сети" lightbox="./media/private-link-service/selected-networks-page.png":::    
 
     > [!NOTE]
     > По умолчанию выбран параметр **Выбранные сети** . Если не указать правило брандмауэра IP-адресов или добавить виртуальную сеть, доступ к пространству имен можно получить через общедоступный Интернет. 
 1. Выберите вкладку **Подключения к частным конечным точкам** в верхней части страницы. 
 1. Нажмите кнопку **+ Частная конечная точка** в верхней части страницы.
 
-    :::image type="content" source="./media/private-link-service/private-link-service-3.png" alt-text="Страница "сеть" — Вкладка "подключения частной конечной точки" — Добавление ссылки на частную конечную точку":::
+    :::image type="content" source="./media/private-link-service/private-link-service-3.png" alt-text="Страница сеть — Вкладка подключения частной конечной точки — Добавление ссылки на частную конечную точку":::
 7. На странице **Базовые** выполните следующие действия. 
     1. Выберите **подписку Azure**, в которой нужно создать частную конечную точку. 
     2. Выберите **группу ресурсов** для ресурса частной конечной точки.
