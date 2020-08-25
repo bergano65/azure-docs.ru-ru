@@ -149,7 +149,7 @@ ms.locfileid: "88684581"
 
 1. Щелкните вкладку **Сборка**, чтобы настроить статическую выходную папку.
 
-      :::image type="content" source="media/deploy-nuxtjs/build-tab.png" alt-text="Вкладка "Сборка"":::
+      :::image type="content" source="media/deploy-nuxtjs/build-tab.png" alt-text="Вкладка Сборка":::
 
 1. Введите **dist** в текстовом поле *расположения артефакта приложения*.
 
