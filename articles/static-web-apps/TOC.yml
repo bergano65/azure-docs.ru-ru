@@ -8,7 +8,14 @@
   expanded: true
   items:
     - name: Создание первого статического веб-приложения
-      href: getting-started.md
+      expanded: true
+      items:
+        - name: Visual Studio Code
+          href: getting-started.md
+        - name: Портал Azure
+          href: get-started-portal.md
+        - name: Azure CLI
+          href: get-started-cli.md
 - name: Основные понятия
   items:
     - name: Поддержка API с помощью Функций Azure

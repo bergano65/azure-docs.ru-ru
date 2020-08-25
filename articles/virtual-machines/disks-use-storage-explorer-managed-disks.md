@@ -7,12 +7,12 @@ ms.date: 09/25/2019
 ms.topic: how-to
 ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: 658defef93a7dffe9a0d707e128ab5d5ef382849
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 9dfce7b76eed5bfc9f4979c0e3041b6c65c28422
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88701638"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88749378"
 ---
 # <a name="use-azure-storage-explorer-to-manage-azure-managed-disks"></a>Использование Обозреватель службы хранилища Azure для управления управляемыми дисками Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "88701638"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этой статьи потребуется следующее:
-- подписка Azure;
+- Подписка Azure
 - Один или несколько управляемых дисков Azure
 - Последняя версия [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/)
 
@@ -132,6 +132,6 @@ ms.locfileid: "88701638"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 
-Узнайте, как [создать виртуальную машину из виртуального жесткого диска с помощью портал Azure](./windows/create-vm-specialized-portal.md).
+Узнайте, как [создать виртуальную машину из виртуального жесткого диска с помощью портал Azure](windows/create-vm-specialized-portal.md).
 
-Узнайте, как [подключить управляемый диск данных к виртуальной машине Windows с помощью портал Azure](./windows/attach-managed-disk-portal.md).
+Узнайте, как [подключить управляемый диск данных к виртуальной машине Windows с помощью портал Azure](windows/attach-managed-disk-portal.md).

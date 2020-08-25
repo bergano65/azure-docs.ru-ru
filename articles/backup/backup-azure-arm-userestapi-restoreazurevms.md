@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как управл
 ms.topic: conceptual
 ms.date: 09/12/2018
 ms.assetid: b8487516-7ac5-4435-9680-674d9ecf5642
-ms.openlocfilehash: aabf687fb1f21473c7239d3fab26819b2ea2bea6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: add4bdeaa202c244ce2e0e83f999f29afdca5c28
+ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87079304"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88761480"
 ---
 # <a name="restore-azure-virtual-machines-using-rest-api"></a>Восстановление виртуальных машин Azure с помощью REST API
 
@@ -25,15 +25,15 @@ ms.locfileid: "87079304"
 GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints?api-version=2019-05-13
 ```
 
-`{containerName}` и `{protectedItemName}` созданы [здесь](backup-azure-arm-userestapi-backupazurevms.md#example-responses-1). Значение параметра `{fabricName}` — Azure.
+`{containerName}` и `{protectedItemName}` созданы [здесь](backup-azure-arm-userestapi-backupazurevms.md#example-responses-to-get-operation). Значение параметра `{fabricName}` — Azure.
 
 URI *GET* имеет все необходимые параметры. Необходимость для дополнительного текста запроса отсутствует.
 
 ### <a name="responses"></a>Ответы
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |   [RecoveryPointResourceList](/rest/api/backup/recoverypoints/list#recoverypointresourcelist)      |       ОК  |
+|200 ОК     |   [RecoveryPointResourceList](/rest/api/backup/recoverypoints/list#recoverypointresourcelist)      |       OK  |
 
 #### <a name="example-response"></a>Пример ответа
 
@@ -117,7 +117,7 @@ X-Powered-By: ASP.NET
 
 ## <a name="restore-disks"></a>Восстановление дисков
 
-Если необходимо настроить создание виртуальной машины на основе данных резервной копии, можно просто восстановить диски в выбранной учетной записи хранения и создать виртуальную машину на основе этих дисков в соответствии с их требованиями. Учетная запись хранения должна располагаться в том же регионе, что и хранилище служб восстановления, и не должна быть избыточной в пределах зоны. Диски, а также конфигурация виртуальной машины, для которой создана резервная копия ("vmconfig.jsв"), будут храниться в указанной учетной записи хранения.
+Если необходимо настроить создание виртуальной машины на основе данных резервной копии, можно просто восстановить диски в выбранной учетной записи хранения и создать виртуальную машину на основе этих дисков в соответствии с их требованиями. Учетная запись хранения должна находиться в том же регионе, что и хранилище служб восстановления, и не должна быть избыточной в пределах зоны. Диски, а также конфигурация виртуальной машины, для которой создана резервная копия ("vmconfig.jsв"), будут храниться в указанной учетной записи хранения.
 
 Активация восстановления дисков — это запрос *POST*. Дополнительные сведения об операции восстановления дисков см. [в этой статье](/rest/api/backup/restores/trigger).
 
@@ -125,13 +125,13 @@ X-Powered-By: ASP.NET
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/restore?api-version=2019-05-13
 ```
 
-`{containerName}` и `{protectedItemName}` созданы [здесь](backup-azure-arm-userestapi-backupazurevms.md#example-responses-1). `{fabricName}` — это Azure, а `{recoveryPointId}` — это поле `{name}` точки восстановления, которое упоминалось [выше](#example-response).
+`{containerName}` и `{protectedItemName}` созданы [здесь](backup-azure-arm-userestapi-backupazurevms.md#example-responses-to-get-operation). `{fabricName}` — это Azure, а `{recoveryPointId}` — это поле `{name}` точки восстановления, которое упоминалось [выше](#example-response).
 
 ### <a name="create-request-body"></a>Создание текста запроса
 
 Чтобы инициировать восстановление диска из резервной копии виртуальной машины Azure, выполните компоненты текста запроса.
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |properties     | [IaaSVMRestoreRequest](/rest/api/backup/restores/trigger#iaasvmrestorerequest)        |    RestoreRequestResourceProperties     |
 
@@ -165,7 +165,7 @@ POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |202 — принято     |         |     Принято    |
 
