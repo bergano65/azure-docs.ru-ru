@@ -4,15 +4,15 @@ description: Узнайте, как настроить политики упра
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 10/31/2019
+ms.date: 08/24/2020
 ms.author: mjbrown
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 36afc42844203436313f2a5b15975746f2acd349
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 69c39d2478ed7d488c1209c2c7e16c241c59bcef
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87494361"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88814184"
 ---
 # <a name="configure-ip-firewall-in-azure-cosmos-db"></a>Настройка брандмауэра IP-адресов в Azure Cosmos DB
 
@@ -52,7 +52,7 @@ ms.locfileid: "87494361"
 
 Если вы выполняете доступ к учетной записи Azure Cosmos DB из служб, которые не предоставляют статический IP-адрес (например, Azure Stream Analytics и "Функции Azure"), вы все равно можете использовать брандмауэр IP-адресов для ограничения доступа. Вы можете включить доступ из других источников в Azure, выбрав параметр **принять подключения из центров обработки данных Azure** , как показано на следующем снимке экрана:
 
-:::image type="content" source="./media/how-to-configure-firewall/enable-azure-services.png" alt-text="Снимок экрана, показывающий, как открыть страницу "Брандмауэр" на портале Azure":::
+:::image type="content" source="./media/how-to-configure-firewall/enable-azure-services.png" alt-text="Снимок экрана, показывающий, как принимать подключения из центров обработки данных Azure":::
 
 При включении этого параметра IP-адрес `0.0.0.0` добавляется в список разрешенных IP-адресов. `0.0.0.0`IP-адрес позволяет ограничивать запросы учетной записи Azure Cosmos DB из диапазона IP-адресов центра обработки данных Azure. Этот параметр неприменим для получения доступа к учетной записи Azure Cosmos DB из других диапазонов IP-адресов.
 
@@ -65,7 +65,7 @@ ms.locfileid: "87494361"
 
 Портал автоматически определяет IP-адрес клиента. Это может быть IP-адрес клиента вашего компьютера или сетевого шлюза. Удалите этот IP-адрес, прежде чем переносить рабочие нагрузки в рабочую среду.
 
-Чтобы добавить текущий IP-адрес в список IP-адресов, выберите **Добавить мой текущий IP-адрес**. Нажмите кнопку **Сохранить**.
+Чтобы добавить текущий IP-адрес в список IP-адресов, выберите **Добавить мой текущий IP-адрес**. Затем нажмите кнопку **Save** (Сохранить).
 
 :::image type="content" source="./media/how-to-configure-firewall/enable-current-ip.png" alt-text="Снимок экрана, показывающий, как настроить параметры брандмауэра текущего IP-адреса":::
 
@@ -95,7 +95,44 @@ IP-адреса для виртуальных машин можно узнать
 
 ## <a name="configure-an-ip-firewall-by-using-a-resource-manager-template"></a><a id="configure-ip-firewall-arm"></a>Настройка брандмауэра IP-адресов с помощью шаблона Resource Manager
 
-Чтобы настроить контроль доступа к учетной записи Azure Cosmos DB, обязательно укажите в шаблоне Resource Manager атрибут **ipRangeFilter** со списком диапазонов разрешеннных IP-адресов. При настройке брандмауэра для IP-адресов в уже развернутой учетной записи Cosmos убедитесь, что массив `locations` соответствует ей. Вы не можете одновременно изменять массив `locations` и другие свойства. Дополнительные сведения и примеры шаблонов Azure Resource Manager для Azure Cosmos DB см. в [Azure Resource Manager шаблонах для Azure Cosmos DB](resource-manager-samples.md)
+Чтобы настроить контроль доступа к учетной записи Azure Cosmos DB, убедитесь, что в шаблоне диспетчер ресурсов указано свойство **ипрулес** с массивом допустимых диапазонов IP-адресов. При настройке брандмауэра для IP-адресов в уже развернутой учетной записи Cosmos убедитесь, что массив `locations` соответствует ей. Вы не можете одновременно изменять массив `locations` и другие свойства. Дополнительные сведения и примеры шаблонов Azure Resource Manager для Azure Cosmos DB см. в [Azure Resource Manager шаблонах для Azure Cosmos DB](resource-manager-samples.md)
+
+> [!IMPORTANT]
+> Свойство **ипрулес** было введено с API версии 2020-04-01. В предыдущих версиях вместо этого было предоставлено свойство **ipRangeFilter** , которое представляет собой список IP-адресов, разделенных запятыми.
+
+В приведенном ниже примере показано, как свойство **ипрулес** предоставляется в API версии 2020-04-01 или более поздней.
+
+```json
+{
+  "type": "Microsoft.DocumentDB/databaseAccounts",
+  "name": "[variables('accountName')]",
+  "apiVersion": "2020-04-01",
+  "location": "[parameters('location')]",
+  "kind": "GlobalDocumentDB",
+  "properties": {
+    "consistencyPolicy": "[variables('consistencyPolicy')[parameters('defaultConsistencyLevel')]]",
+    "locations": "[variables('locations')]",
+    "databaseAccountOfferType": "Standard",
+    "enableAutomaticFailover": "[parameters('automaticFailover')]",
+    "ipRules": [
+      {
+        "ipAddressOrRange": "40.76.54.131"
+      },
+      {
+        "ipAddressOrRange": "52.176.6.30"
+      },
+      {
+        "ipAddressOrRange": "52.169.50.45"
+      },
+      {
+        "ipAddressOrRange": "52.187.184.26"
+      }
+    ]
+  }
+}
+```
+
+Ниже приведен тот же пример для любой версии API, более ранней, чем 2020-04-01:
 
 ```json
 {
@@ -141,7 +178,7 @@ az cosmosdb create \
 # Create a Cosmos DB account with default values and IP Firewall enabled
 $resourceGroupName = "myResourceGroup"
 $accountName = "mycosmosaccount"
-$ipRangeFilter = "192.168.221.17,183.240.196.255,40.76.54.131"
+$ipRules = @("192.168.221.17","183.240.196.255","40.76.54.131")
 
 $locations = @(
     @{ "locationName"="West US 2"; "failoverPriority"=0; "isZoneRedundant"=False },
@@ -152,11 +189,11 @@ $locations = @(
 $CosmosDBProperties = @{
     "databaseAccountOfferType"="Standard";
     "locations"=$locations;
-    "ipRangeFilter"=$ipRangeFilter
+    "ipRules"=$ipRules
 }
 
 New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
-    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
+    -ApiVersion "2020-04-01" -ResourceGroupName $resourceGroupName `
     -Name $accountName -PropertyObject $CosmosDBProperties
 ```
 
@@ -179,6 +216,10 @@ New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 ### <a name="requests-from-a-subnet-with-a-service-endpoint-for-azure-cosmos-db-enabled"></a>Запросы из подсети, в которой включена конечная точка службы для Azure Cosmos DB
 
 Запросы из подсети виртуальной сети, в которой включена конечная точка службы для Azure Cosmos DB, передают в учетную запись Azure Cosmos DB идентификаторы виртуальной сети и подсети. Такие запросы не имеют общедоступного IP-адреса источника, поэтому они отклоняются фильтрами IP-адресов. Чтобы разрешить доступ из определенных подсетей в виртуальных сетях, добавьте список управления доступом, как описано в руководстве по [настройке доступа на основе подсети и виртуальной сети для учетной записи Azure Cosmos DB](how-to-configure-vnet-service-endpoint.md). Применение правил брандмауэра может занять до 15 минут после изменения.
+
+### <a name="private-ip-addresses-in-list-of-allowed-addresses"></a>Частные IP-адреса в списке разрешенных адресов
+
+Создание или обновление учетной записи Azure Cosmos со списком разрешенных адресов, содержащих частные IP-адреса, завершится ошибкой. Убедитесь, что в списке не указан частный IP-адрес.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
