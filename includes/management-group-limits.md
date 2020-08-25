@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 author: tfitzmac
 ms.service: governance
@@ -7,21 +7,21 @@ ms.topic: include
 ms.date: 03/26/2020
 ms.author: tomfitz
 ms.custom: include file
-ms.openlocfilehash: 9b2bf8763d175bca028be1fcceda921e87eb5b23
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: 204ca121045d1bd53fd507acc7ea9691bfeac12e
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80334615"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88748783"
 ---
 | Ресурс | Ограничение |
 | --- | --- |
-| Группы управления на каталог | 10 000 |
+| Группы управления на арендатор Azure AD | 10 000 |
 | Подписки на группу управления | Без ограничений. |
-| Уровни иерархии групп управления | Корневой уровень плюс 6 уровня<sup>1</sup> |
-| Непосредственная родительская группа управления для каждой группы управления | Один |
-| [Развертывания на уровне группы управления](../articles/azure-resource-manager/templates/deploy-to-management-group.md) на расположение | 800<sup>2</sup> |
+| Уровни иерархии групп управления | Корневой уровень плюс 6 уровней<sup>1</sup> |
+| Непосредственная родительская группа управления на группу управления | Один |
+| [Развертывания уровня группы управления](../articles/azure-resource-manager/templates/deploy-to-management-group.md) на расположение | 800<sup>2</sup> |
 
-<sup>1</sup> 6 уровней не включают уровень подписки.
+<sup>1</sup> 6 уровней не включают уровень подписки.
 
-<sup>2</sup> Если достигнут предел в 800 развертывания, удалите из журнала развертывания, которые больше не нужны. Чтобы удалить развертывания на уровне группы управления, используйте командлет [Remove-азманажементграупдеплоймент](/powershell/module/az.resources/Remove-AzManagementGroupDeployment) или [AZ Deployment mg Delete](/cli/azure/deployment/mg?view=azure-cli-latest#az-deployment-mg-delete).
+<sup>2</sup> Если вы достигли предела в 800 развертываний, удалите из журнала те развертывания, которые больше не нужны. Чтобы удалить развертывания уровня группы управления, выполните [Remove-AzManagementGroupDeployment](/powershell/module/az.resources/Remove-AzManagementGroupDeployment) или [az deployment mg delete](/cli/azure/deployment/mg?view=azure-cli-latest#az-deployment-mg-delete).

@@ -9,12 +9,12 @@ ms.topic: overview
 ms.custom: sqldbrb=1
 ms.reviewer: vanto
 ms.date: 03/09/2020
-ms.openlocfilehash: 730109a096b352b6d179693293128b465e0be83f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5fcc50670973c361d830e4e6bbf2ce26101b8582
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87063260"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213371"
 ---
 # <a name="azure-private-link-for-azure-sql-database-and-azure-synapse-analytics"></a>Приватный канал Azure для базы данных SQL Azure и Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -175,9 +175,9 @@ where session_id=@@SPID
 - [Канал ExpressRoute](../../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md)
 
 
-## <a name="connecting-from-azure-synapse-analytics-to-azure-storage-using-polybase"></a>Подключение из Azure Synapse Analytics к службе хранилища Azure с помощью Polybase
+## <a name="connecting-from-azure-synapse-analytics-to-azure-storage-using-polybase-and-the-copy-statement"></a>Подключение из Azure Synapse Analytics к службе хранилища Azure с помощью Polybase и инструкции COPY
 
-PolyBase часто используют для загрузки данных в Azure Synapse Analytics из учетных записей службы хранилища Azure. Если учетная запись службы хранилища Azure, из которой загружаются данные, предоставляет доступ только к набору подсетей виртуальной сети через частные конечные точки, конечные точки службы или брандмауэры на основе IP-адресов, подключение из PolyBase к учетной записи будет прервано. Чтобы обеспечить возможность импорта и экспорта PolyBase в хранилище Azure Synapse Analytics, подключенное к службе хранилища Azure, которая прикреплена к виртуальной сети, выполните действия, описанные [здесь](vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). 
+PolyBase и инструкцию COPY часто используют для загрузки данных в Azure Synapse Analytics из учетных записей службы хранилища Azure. Если учетная запись службы хранилища Azure, из которой загружаются данные, предоставляет доступ только к набору подсетей виртуальной сети через частные конечные точки, конечные точки службы или брандмауэры на основе IP-адресов, подключение из PolyBase и инструкции COPY к учетной записи будет прервано. Чтобы обеспечить возможность импорта и экспорта в хранилище Azure Synapse Analytics, подключенное к службе хранилища Azure, которая прикреплена к виртуальной сети, выполните действия, описанные [здесь](vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

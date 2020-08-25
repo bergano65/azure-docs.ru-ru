@@ -1,20 +1,20 @@
 ---
 title: Примеры Python для API SQL в Azure Cosmos DB
 description: Примеры Python на сайте GitHub, позволяющие выполнять общие задачи в Azure Cosmos DB, в том числе операции CRUD.
-author: SnehaGunda
+author: Rodrigossz
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: python
 ms.topic: sample
-ms.date: 05/20/2020
-ms.author: sngun
+ms.date: 08/11/2020
+ms.author: rosouz
 ms.custom: devx-track-python
-ms.openlocfilehash: 6602d757e210837aadadd431b27bb7cf76f06715
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 34257281470f051f3d385aa729ca5a4f3591e61c
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87873353"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88586256"
 ---
 # <a name="azure-cosmos-db-python-examples"></a>Примеры Python для Azure Cosmos DB
 
@@ -33,16 +33,19 @@ ms.locfileid: "87873353"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
-
-- Вы можете [активировать преимущества подписчика Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio): в вашей подписке Visual Studio каждый месяц зачисляются деньги на счет, которые можно использовать для оплаты служб Azure.
-
-[!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
-
-Вам также необходим [пакет SDK для Python](sql-api-sdk-python.md).
-
-   > [!NOTE]
-   > Каждый пример является самодостаточным, он устанавливается самостоятельно и выполняет необходимую очистку после удаления. В примерах выполняется несколько вызовов к `CosmosClient.CreateContainer`. При этом каждый раз на подписку выставляется счет за один час использования. Дополнительные сведения о выставлении счетов в Azure Cosmos DB см. на [странице цен на Azure Cosmos DB](https://azure.microsoft.com/pricing/details/cosmos-db/).
+- Учетная запись Cosmos DB. Возможные варианты:
+    * С активной подпиской Azure:
+        * [Создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free) или используйте существующую подписку. 
+        * [Ежемесячный кредит Visual Studio.](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers)
+        * [Бесплатный уровень Azure Cosmos DB.](https://docs.microsoft.com/azure/cosmos-db/optimize-dev-test#azure-cosmos-db-free-tier)
+    * Без активной подписки Azure:
+        * [Попробуйте Azure Cosmos DB бесплатно](https://azure.microsoft.com/try/cosmosdb/) — тестовая среда, доступная в течение 30 дней.
+        * [Эмулятор Azure Cosmos DB](https://aka.ms/cosmosdb-emulator) 
+- [Python 2.7, 3.5.3 или более поздней версии](https://www.python.org/downloads/) с исполняемым файлом `python` в `PATH`.
+- [Visual Studio Code](https://code.visualstudio.com/).
+- [Расширение Python для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python#overview).
+- [Git](https://www.git-scm.com/downloads). 
+- [Пакет SDK API SQL Azure Cosmos DB для Python.](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cosmos/azure-cosmos)
 
 ## <a name="database-examples"></a>Примеры баз данных
 

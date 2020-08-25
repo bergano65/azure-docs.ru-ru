@@ -2,25 +2,21 @@
 title: Руководство по интеграции единого входа Azure Active Directory с Freshservice | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Freshservice.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 3dd22b1f-445d-45c6-8eda-30207eb9a1a8
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 07/29/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06b52ec552434f74c56333d1afe00cde2a285418
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 9e53881d5b28b61cd220b14e02c411db53d19d36
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905437"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551006"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-freshservice"></a>Руководство по интеграции единого входа Azure Active Directory с приложением Freshservice
 
@@ -60,7 +56,7 @@ ms.locfileid: "87905437"
 1. В разделе **Добавление из коллекции** в поле поиска введите **Freshservice**.
 1. Выберите **Freshservice** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-freshservice"></a>Настройка и проверка единого входа в Azure AD для Freshservice
+## <a name="configure-and-test-azure-ad-sso-for-freshservice"></a>Настройка и проверка единого входа Azure AD для Freshservice
 
 Настройте и проверьте единый вход Azure AD в Freshservice с использованием тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем во Freshservice.
 
@@ -132,7 +128,15 @@ ms.locfileid: "87905437"
 
 ## <a name="configure-freshservice-sso"></a>Настройка единого входа во Freshservice
 
-1. Откройте новое окно веб-браузера и войдите на корпоративный сайт Freshservice с правами администратора.
+1. Чтобы автоматизировать настройку во Freshservice, необходимо установить **расширение браузера My Apps Secure Sign-in Extension**, щелкнув **Установить расширение**.
+
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+1. Чтобы перейти к приложению Freshservice после добавления расширения в браузер, щелкните **Настройка Freshservice**. После этого укажите учетные данные администратора для входа во Freshservice. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–6.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+1. Чтобы настроить Freshservice вручную, войдите на веб-сайт Freshservice своей компании с правами администратора.
 
 1. В меню слева щелкните **Admin** (Администратор) и выберите **Helpdesk Security** (Безопасность службы поддержки) в разделе **General Settings** (Общие параметры).
 

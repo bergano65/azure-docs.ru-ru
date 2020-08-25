@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 08/09/2020
-ms.openlocfilehash: 82a66d88b3c7c3492e7cb90116ff8ff8e61ca1b0
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.date: 08/21/2020
+ms.openlocfilehash: ba3c7304b0ce52cb720a9e2ac7ae6cf1b5ffeeea
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036595"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88751472"
 ---
 # <a name="azure-hdinsight-release-notes"></a>Заметки о выпуске Azure HDInsight
 
@@ -27,7 +27,7 @@ Azure HDInsight является одной из самых популярных
 
 Этот выпуск относится только к HDInsight 4,0. Выпуск HDInsight предоставляется для разных регионов на протяжении нескольких дней. Указанная здесь дата выпуска обозначает дату выпуска для первого из регионов. Если вы не видите приведенных ниже изменений, дождитесь выхода выпуска в вашем регионе в течение нескольких дней.
 
-## <a name="new-features"></a>Новые функции
+## <a name="new-features"></a>новые функции;
 ### <a name="support-for-sparkcruise"></a>Поддержка Спарккруисе
 Спарккруисе — это система автоматического вычисления повторного использования для Spark. Он выбирает общие части выражения для материализации на основе рабочей нагрузки прошлых запросов. Спарккруисе обрабатывает эти части выражения в процессе обработки запросов, и повторное использование вычислений применяется автоматически в фоновом режиме. Вы можете воспользоваться преимуществами Спарккруисе, не внося никаких изменений в код Spark.
  
@@ -72,3 +72,7 @@ HDInsight постоянно повышает надежность и произ
 
 ## <a name="component-version-change"></a>Изменение версий компонентов
 В этом выпуска не вносилось изменений в версии компонентов. Текущие версии компонентов для HDInsight 4,0 и HDInsight 3,6 можно найти в [этом документе](https://docs.microsoft.com/azure/hdinsight/hdinsight-component-versioning#apache-hadoop-components-available-with-different-hdinsight-versions).
+
+## <a name="known-issues"></a>Известные проблемы
+
+При попытке создать кластер Azure HDInsight из портал Azure и использования открытого ключа проверки подлинности SSH пользователи столкнулись с ошибкой при нажатии кнопки " **Просмотр и создание**". Ошибка на портале: "не должно содержать три последовательных символа из имени пользователя SSH". Эта проблема решена; Однако при возникновении этой ошибки решение создает кластер с шаблоном ARM. 

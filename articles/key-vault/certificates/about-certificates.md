@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: overview
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 74007f5d10d58cf9680d4531304098cabe9b6d8b
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: 38ae6bec99498440d7bf7e68e2d5c397e696192a
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87115678"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88604898"
 ---
 # <a name="about-azure-key-vault-certificates"></a>Сведения о сертификатах Azure Key Vault
 
@@ -84,7 +84,8 @@ ms.locfileid: "87115678"
 В целом политика сертификата содержит приведенные ниже элементы (их определения можно найти [здесь](https://docs.microsoft.com/powershell/module/az.keyvault/set-azkeyvaultcertificatepolicy?view=azps-4.4.0)).  
 
 -   Свойства сертификата X509 Содержит имя субъекта, альтернативные имена субъекта и другие свойства, используемые для создания запроса на сертификат X509.  
--   Свойства ключей. Это поля типа ключа, длины ключа, доступности для экспорта и повторного использования ключа. Эти поля инструктируют хранилище ключей о том, как создать ключ.  
+-   Свойства ключей. Это поля типа ключа, длины ключа, доступности для экспорта и повторного использования ключа. Эти поля инструктируют хранилище ключей о том, как создать ключ. 
+     - Поддерживаемые типы ключей: RSA, RSA-HSM, EC, EC-HSM, oct (перечислены [здесь](https://docs.microsoft.com/rest/api/keyvault/createcertificate/createcertificate#jsonwebkeytype)). 
 -   Свойства секрета. Это такие свойства, как тип содержимого адресуемого секрета для создания значения секрета, а также для извлечения сертификата в качестве секрета.  
 -   Действия на протяжении времени существования. Это соответствующие действия для сертификата Key Vault. Каждое такое действие содержит:  
 

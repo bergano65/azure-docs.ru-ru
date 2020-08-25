@@ -2,25 +2,21 @@
 title: Руководство по Интеграция единого входа Azure Active Directory с Azure AD SAML Toolkit | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Azure AD SAML Toolkit.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 3f4348e7-c34e-43c7-926e-f1b26ffacf6d
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/24/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d2681c09030ff0f36938d7a09e1d1b2e9aa645c
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: aa37cef84bb1d2cb92f2bb0e4a227c5be60fa345
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82166316"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88543420"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-azure-ad-saml-toolkit"></a>Руководство по Интеграция единого входа Azure Active Directory с Azure AD SAML Toolkit
 
@@ -161,7 +157,7 @@ ms.locfileid: "82166316"
 
 ### <a name="create-azure-ad-saml-toolkit-test-user"></a>Создание тестового пользователя Azure AD SAML Toolkit
 
-В этом разделе описано, как в приложении Azure AD SAML Toolkit создать пользователя B.Simon. Azure AD SAML Toolkit поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Azure AD SAML Toolkit, он создается после выполнения аутентификации.
+В этом разделе описано, как в приложении Azure AD SAML Toolkit создать пользователя B.Simon. Для этого нужно зарегистрировать нового пользователя в приложении и указать сведения о нем. 
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

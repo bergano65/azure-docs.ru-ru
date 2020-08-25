@@ -1,18 +1,18 @@
 ---
-title: Создание Базы данных Azure для MySQL с помощью шаблона ARM
-description: В этой статье описано, как создать сервер Базы данных Azure для MySQL, интегрированный с виртуальной сетью, с помощью шаблона Azure Resource Manager.
+title: Краткое руководство. Создание Базы данных Azure для MySQL с помощью шаблона Resource Manager
+description: В этом кратком руководстве описано, как создать сервер Базы данных Azure для MySQL, интегрированный с виртуальной сетью, с помощью шаблона Azure Resource Manager.
 author: mgblythe
 ms.service: mysql
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mblythe
 ms.date: 05/19/2020
-ms.openlocfilehash: 72ace8a94d16b79f756c83393db2b39a1c0df714
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: ed908c4711812302fffac2e1ce59d2196426b74c
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134854"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185865"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-mysql-server"></a>Краткое руководство. Создание сервера базы данных Azure для MySQL с помощью шаблона Resource Manager
 

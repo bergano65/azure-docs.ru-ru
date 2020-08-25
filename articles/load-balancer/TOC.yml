@@ -134,8 +134,10 @@
           href: load-balancer-troubleshoot.md
         - name: Устранение стандартных ошибок развертывания
           href: load-balancer-common-deployment-errors.md
-        - name: Устранение распространенных проблем с исходящим подключением
+        - name: Устранение распространенных неполадок с исходящим подключением
           href: troubleshoot-outbound-connection.md
+        - name: Устранение неполадок с работоспособностью ресурсов и доступностью входящего трафика
+          href: troubleshoot-rhc.md
 - name: Справочник
   items:
     - name: Примеры кода

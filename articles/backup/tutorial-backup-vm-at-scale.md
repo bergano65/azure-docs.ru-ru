@@ -4,12 +4,12 @@ description: В этом руководстве вы узнаете, как со
 ms.date: 07/26/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 7a8849bba51939a0c40cba81925e1b4b4a6e3826
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: ed91105488b812131d3a908c509998c955cec299
+ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372558"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88263424"
 ---
 # <a name="use-azure-portal-to-back-up-multiple-virtual-machines"></a>Архивация нескольких виртуальных машин с помощью портала Azure
 
@@ -156,7 +156,7 @@ ms.locfileid: "87372558"
 
 1. На панели мониторинга **myRecoveryServicesVault** щелкните **3** в разделе **Backup Items** (Элементы резервного копирования), чтобы открыть соответствующее меню.
 
-    ![Архивные элементы](./media/tutorial-backup-vm-at-scale/tutorial-vm-back-up-now.png)
+    ![Открытие меню элементов резервного копирования](./media/tutorial-backup-vm-at-scale/tutorial-vm-back-up-now.png)
 
 1. В меню **Backup Items** (Элементы резервного копирования) щелкните **Виртуальная машина Azure**, чтобы открыть список виртуальных машин, связанных с этим хранилищем.
 
@@ -185,7 +185,7 @@ ms.locfileid: "87372558"
 
 1. Когда в хранилище не останется элементов, щелкните **Удалить**.
 
-    ![Нажатие кнопки "Прекратить резервное копирование" для удаления хранилища](./media/tutorial-backup-vm-at-scale/deleting-the-vault.png)
+    ![Выбор команды удаления](./media/tutorial-backup-vm-at-scale/deleting-the-vault.png)
 
     После удаления хранилища вы вернетесь к списку хранилищ Служб восстановления.
 

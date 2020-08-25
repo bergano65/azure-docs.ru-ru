@@ -1,14 +1,14 @@
-- name: Решение Azure VMware (AVS)
+- name: Решение Azure VMware
   href: index.yml
 - name: Обзор
   items:
-    - name: О решении Azure VMware (AVS)
+    - name: О Решении Azure VMware
       href: introduction.md
 - name: Учебники
   items:
     - name: 1. Планирование сети
       href: tutorial-network-checklist.md
-    - name: 2. Создание частного облака AVS
+    - name: 2. Создание частного облака
       href: tutorial-create-private-cloud.md
     - name: 3. Настройка сети
       href: tutorial-configure-networking.md
@@ -38,7 +38,7 @@
       href: concepts-upgrades.md
 - name: Практические руководства
   items:
-    - name: Оценка миграции AVS
+    - name: Оценка миграции
       href: ../migrate/how-to-create-azure-vmware-solution-assessment.md?context=/azure/migrate/context/migrate-context.json
     - name: Настройка HCX
       href: hybrid-cloud-extension-installation.md
@@ -52,19 +52,19 @@
           href: concepts-api-management.md
         - name: Звездообразная модель
           href: concepts-avs-hub-and-spoke-integration.md
-        - name: "Azure Backup\_Server для AVS"
+        - name: Azure Backup Server
           items:
-            - name: Настройка Backup Server для AVS
+            - name: Настройка Backup Server
               href: set-up-mabs-for-avs.md
-            - name: Создание резервной копии виртуальных машин AVS с помощью Backup Server
+            - name: Резервное копирование виртуальных машин частного облака с помощью Backup Server
               href: backup-avs-vms-with-mabs.md
-        - name: Шлюз приложений с AVS
+        - name: Шлюз приложений
           href: protect-avs-web-apps-with-app-gateway.md
         - name: Диспетчер трафика с AVS
           href: deploy-traffic-manager-to-balance-avs-workloads.md
     - name: Решения VMware
       items:
-        - name: Настройка vRealize Operations для AVS
+        - name: Настройка vRealize Operations
           href: vrealize-operations-for-avs.md
 - name: Справочник
   items: null
@@ -72,7 +72,7 @@
   items:
     - name: Устранение неполадок
       items:
-        - name: Получение справки по сбоям при развертывании или подготовке AVS
+        - name: Получение справки по сбоям при развертывании или подготовке
           href: fix-deployment-provisioning-failures.md
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: faq.md

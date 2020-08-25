@@ -3,15 +3,15 @@ author: areddish
 ms.custom: devx-track-java
 ms.author: areddish
 ms.service: cognitive-services
-ms.date: 04/14/2020
-ms.openlocfilehash: 383df0d9f3c8fef01d5185be1cf69fe203ba11a2
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.date: 08/17/2020
+ms.openlocfilehash: a822ab52024a801f4443a9dd864b4b96ec52d000
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87375556"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88511341"
 ---
-В этой статье показано, как с помощью пакета SDK Пользовательского визуального распознавания для Java создать модель обнаружения объекта. Создав проект, вы можете добавить регионы с тегами, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Java.
+В этой статье показано, как приступить к работе с клиентской библиотекой Пользовательского визуального распознавания в Java и создать модель обнаружения объекта. Создав проект, вы можете добавить регионы с тегами, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Java.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -20,11 +20,11 @@ ms.locfileid: "87375556"
 - Установленный [Maven](https://maven.apache.org/).
 - [!INCLUDE [create-resources](../../includes/create-resources.md)]
 
-## <a name="get-the-custom-vision-sdk-and-sample-code"></a>Получение пакета SDK для Пользовательской службы визуального распознавания и примеров кода
+## <a name="get-the-custom-vision-client-library-and-sample-code"></a>Клиентская библиотека Пользовательского визуального распознавания и пример кода
 
 Чтобы написать приложение Java, которое использует Пользовательскую службу визуального распознавания, вам потребуются пакеты Пользовательской службы визуального распознавания Maven. Эти пакеты включены в скачиваемый пример проекта, но будут доступны по отдельности здесь.
 
-Пакет SDK для Пользовательской службы визуального распознавания можно найти в репозитории maven central:
+Клиентскую библиотеку Пользовательского визуального распознавания можно найти в репозитории Maven:
 - [Пакет SDK для обучения](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-customvision-training)
 - [Пакет SDK для прогнозирования](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-customvision-prediction)
 

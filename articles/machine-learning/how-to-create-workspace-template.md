@@ -10,12 +10,12 @@ ms.custom: how-to, devx-track-azurecli
 ms.author: larryfr
 author: Blackmist
 ms.date: 07/27/2020
-ms.openlocfilehash: 6d1042ea21308dd0f82165c288824aaef000e36d
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.openlocfilehash: 05a45a2a8aeabae2b160701020e5deb89fb3aa81
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88192334"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88751711"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Создание рабочей области для Машинного обучения Azure с помощью шаблона Azure Resource Manager
 
@@ -165,158 +165,50 @@ New-AzResourceGroupDeployment `
 
 > [!IMPORTANT]
 > Чтобы использовать этот шаблон, ваша подписка должна соответствовать некоторым дополнительным требованиям.
->
-> * Приложение __Машинное обучение Azure__ должно быть __участником__ для подписки Azure.
 > * Должен существовать хранилище Azure Key Vault с ключом шифрования.
-> * Должна существовать политика доступа к Azure Key Vault, которая предоставляет права на __получение__, __упаковку__ и __распаковку__ приложению __Azure Cosmos DB__.
 > * Хранилище Azure Key Vault должно размещаться в том же регионе, где вы намерены создать рабочую область Машинного обучения Azure.
+> * Необходимо указать идентификатор Azure Key Vault и универсальный код ресурса (URI) ключа шифрования.
 
-Чтобы __добавить приложение Машинного обучения Azure в качестве участника__, используйте следующие команды:
+__Чтобы получить значения__ для параметров `cmk_keyvault` (идентификатор Key Vault) и `resource_cmk_uri` (URI ключа), которые нужны в этом шаблоне, выполните следующие действия.    
 
-1. Войдите в учетную запись Azure и получите идентификатор подписки. Эта подписка должна быть той же, которая содержит рабочую область Машинного обучения Azure.  
+1. Чтобы получить идентификатор Key Vault, используйте следующую команду:  
 
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)   
 
-    ```azurecli
-    az account list --query '[].[name,id]' --output tsv
-    ```
+    ```azurecli 
+    az keyvault show --name <keyvault-name> --query 'id' --output tsv   
+    ``` 
 
-    > [!TIP]
-    > Чтобы выбрать другую подписку, укажите имя или идентификатор этой подписки с помощью команды `az account set -s <subscription name or ID>`. См. дополнительные сведения о [выборе нужной подписки при использовании нескольких подписок Azure](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). 
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell) 
 
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
-
-    ```azurepowershell
-    Get-AzSubscription
-    ```
-
-    > [!TIP]
-    > Чтобы выбрать другую подписку, укажите имя или идентификатор этой подписки с помощью команды `Az-SetContext -SubscriptionId <subscription ID>`. См. дополнительные сведения о [выборе нужной подписки при использовании нескольких подписок Azure](https://docs.microsoft.com/powershell/azure/manage-subscriptions-azureps?view=azps-4.3.0).
-
-    ---
-
-1. Чтобы получить идентификатор объекта для приложения Машинного обучения Azure, выполните приведенную ниже команду. Это значение может быть разным для каждой подписки Azure.
-
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
-
-    ```azurecli
-    az ad sp list --display-name "Azure Machine Learning" --query '[].[appDisplayName,objectId]' --output tsv
-    ```
-
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
-
-    ```azurepowershell
-    Get-AzADServicePrincipal --DisplayName "Azure Machine Learning" | select-object DisplayName, Id
-    ```
-
-    ---
-    Эта команда возвращает глобально уникальный идентификатор объекта.
-
-1. Чтобы добавить идентификатор объекта в подписку в качестве участника, используйте приведенную ниже команду. Замените на `<object-ID>` идентификатор объекта субъекта-службы. Замените `<subscription-ID>` именем или идентификатором подписки Azure.
-
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
-
-    ```azurecli
-    az role assignment create --role 'Contributor' --assignee-object-id <object-ID> --subscription <subscription-ID>
-    ```
-
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
-
-    ```azurepowershell
-    New-AzRoleAssignment --ObjectId <object-ID> --RoleDefinitionName "Contributor" -Scope /subscriptions/<subscription-ID>
-    ```
-
-    ---
-
-1. Чтобы создать ключ в существующем Azure Key Vault, используйте одну из следующих команд. Замените `<keyvault-name>` именем хранилища ключей. Замените на `<key-name>` имя, используемое для ключа:
-
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
-
-    ```azurecli
-    az keyvault key create --vault-name <keyvault-name> --name <key-name> --protection software
-    ```
-
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
-
-    ```azurepowershell
-    Add-AzKeyVaultKey -VaultName <keyvault-name> -Name <key-name> -Destination 'Software'
-    ```
+    ```azurepowershell  
+    Get-AzureRMKeyVault -VaultName '<keyvault-name>'    
+    ``` 
     --- 
 
-__Чтобы добавить политику доступа к хранилищу ключей, выполните следующие команды:__
+    Эта команда возвращает значение следующего вида: `/subscriptions/{subscription-guid}/resourceGroups/<resource-group-name>/providers/Microsoft.KeyVault/vaults/<keyvault-name>`.  
 
-1. Чтобы получить идентификатор объекта для приложения Azure Cosmos DB, выполните приведенную ниже команду. Это значение может быть разным для каждой подписки Azure.
+1. Чтобы получить значение URI для управляемого клиентом ключа, используйте следующую команду:    
 
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)   
 
-    ```azurecli
-    az ad sp list --display-name "Azure Cosmos DB" --query '[].[appDisplayName,objectId]' --output tsv
-    ```
+    ```azurecli 
+    az keyvault key show --vault-name <keyvault-name> --name <key-name> --query 'key.kid' --output tsv  
+    ``` 
 
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell) 
 
-    ```azurepowershell
-    Get-AzADServicePrincipal --DisplayName "Azure Cosmos DB" | select-object DisplayName, Id
-    ```
-    ---
+    ```azurepowershell  
+    Get-AzureKeyVaultKey -VaultName '<keyvault-name>' -KeyName '<key-name>' 
+    ``` 
+    --- 
 
-    Эта команда возвращает глобально уникальный идентификатор объекта. Сохранить его для последующего использования
+    Эта команда возвращает значение следующего вида: `https://mykeyvault.vault.azure.net/keys/mykey/{guid}`. 
 
-1. Чтобы установить политику, используйте приведенную ниже команду. Замените `<keyvault-name>` именем в существующего хранилища Azure Key Vault. Замените `<object-ID>` значением GUID из предыдущего шага.
-
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
-
-    ```azurecli
-    az keyvault set-policy --name <keyvault-name> --object-id <object-ID> --key-permissions get unwrapKey wrapKey
-    ```
-
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
-    
-    ```azurepowershell
-    Set-AzKeyVaultAccessPolicy -VaultName <keyvault-name> -ObjectId <object-ID> -PermissionsToKeys get, unwrapKey, wrapKey
-    ```
-    ---    
-
-__Чтобы получить значения__ для параметров `cmk_keyvault` (идентификатор Key Vault) и `resource_cmk_uri` (URI ключа), которые нужны в этом шаблоне, выполните следующие действия.
-
-1. Чтобы получить идентификатор Key Vault, используйте следующую команду:
-
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
-
-    ```azurecli
-    az keyvault show --name <keyvault-name> --query 'id' --output tsv
-    ```
-
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
-
-    ```azurepowershell
-    Get-AzureRMKeyVault -VaultName '<keyvault-name>'
-    ```
-    ---
-
-    Эта команда возвращает значение следующего вида: `/subscriptions/{subscription-guid}/resourceGroups/<resource-group-name>/providers/Microsoft.KeyVault/vaults/<keyvault-name>`.
-
-1. Чтобы получить значение URI для управляемого клиентом ключа, используйте следующую команду:
-
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
-
-    ```azurecli
-    az keyvault key show --vault-name <keyvault-name> --name <key-name> --query 'key.kid' --output tsv
-    ```
-
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
-
-    ```azurepowershell
-    Get-AzureKeyVaultKey -VaultName '<keyvault-name>' -KeyName '<key-name>'
-    ```
-    ---
-
-    Эта команда возвращает значение следующего вида: `https://mykeyvault.vault.azure.net/keys/mykey/{guid}`.
-
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > После создания рабочей области вы не сможете изменить параметры для конфиденциальных данных, шифрования, идентификатора хранилища ключей или идентификаторов ключей. Чтобы изменить эти значения, придется создать новую рабочую область с новыми значениями.
 
-После успешного выполнения описанных выше действий разверните шаблон, как обычно. Чтобы включить использование управляемых пользователем ключей, задайте следующие параметры:
+Чтобы включить использование управляемых клиентом ключей, задайте следующие параметры при развертывании шаблона.
 
 * **Encryption_status** **включить**.
 * **cmk_keyvault** значение, `cmk_keyvault` полученное на предыдущих шагах.

@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
-ms.date: 07/27/2020
-ms.openlocfilehash: 10d1fe9e47b7a3bf2d921f86703d5ae6d067813c
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.date: 08/17/2020
+ms.openlocfilehash: 61cb5384fd4d935ef4038c18b391b5da5fbc96b1
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87293517"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88516696"
 ---
 # <a name="tutorial-create-azure-ad-users-using-azure-ad-applications"></a>Руководство по созданию пользователей Azure AD с помощью приложений Azure AD
 
@@ -94,6 +94,8 @@ ms.locfileid: "87293517"
 
 > [!NOTE] 
 > Этот скрипт должен выполняться `Global Administrator` или `Privileged Roles Administrator` Azure AD.
+>
+> В **общедоступной предварительной версии** вы можете назначить роль `Directory Readers` группе в Azure AD. Владельцы групп могут добавить управляемое удостоверение в качестве члена этой группы, что позволит обойти потребность в правах уровня `Global Administrator` или `Privileged Roles Administrator` для назначения роли `Directory Readers`. Дополнительные сведения об этой функции см. в статье [Роль "Читатели каталогов" в Azure Active Directory для Azure SQL](authentication-aad-directory-readers-role.md).
 
 - Замените `<TenantId>` на `TenantId`, собранный ранее.
 - Замените `<server name>` именем логического сервера SQL. Если имя сервера `myserver.database.windows.net`, замените `<server name>` на `myserver`.
@@ -304,3 +306,4 @@ else
 - [Проверка подлинности субъекта-службы Azure AD в базе данных SQL — пример кода](https://techcommunity.microsoft.com/t5/azure-sql-database/azure-ad-service-principal-authentication-to-sql-db-code-sample/ba-p/481467)
 - [Application and service principal objects in Azure Active Directory](../../active-directory/develop/app-objects-and-service-principals.md) (Объекты приложения и субъекта-службы в Azure Active Directory)
 - [Создание субъекта-службы Azure с помощью Azure PowerShell](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps)
+- [Роль "Читатели каталогов" в Azure Active Directory для Azure SQL](authentication-aad-directory-readers-role.md)

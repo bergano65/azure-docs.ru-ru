@@ -1,7 +1,7 @@
 ---
 title: Обновление до API Компьютерного зрения версии 3.0
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как обновить API Компьютерного зрения с версии 2.0 или 2.1 до версии 3.0.
+description: Узнайте, как обновить API чтения для Компьютерного зрения с версии 2.0 или 2.1 до версии 3.0.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,16 +11,16 @@ ms.topic: sample
 ms.date: 08/11/2020
 ms.author: pafarley
 ROBOTS: NOINDEX
-ms.openlocfilehash: 16add0dce88d0f809dc291d3c9de33e1a853f257
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.openlocfilehash: 6e695fcfacac19ca82273d84d049bdb2afe14b54
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88136580"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88214189"
 ---
-# <a name="upgrade-to-v30-of-computer-vision-api-from-v20-and-v21"></a>Обновление API Компьютерного зрения с версии 2.0 или 2.1 до версии 3.0.
+# <a name="upgrade-to-computer-vision-v30-read-api-from-v20v21"></a>Обновление API чтения для Компьютерного зрения с версии 2.0 или 2.1 до версии 3.0
 
-В этом руководство показано, как пользователям REST API нужно изменить существующий код для миграции с API Компьютерного зрения версии 2.0 или 2.1 на версию 3.0. 
+В этом руководстве показано, как обновить код REST API Компьютерного зрения версии 2.0 или 2.1 до API операций чтения версии 3.0. 
 
 ## <a name="upgrade-batch-read-file-to-read"></a>Обновление с `Batch Read File` до `Read`
 

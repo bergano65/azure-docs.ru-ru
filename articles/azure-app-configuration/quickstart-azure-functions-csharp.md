@@ -1,18 +1,19 @@
 ---
 title: Краткое руководство по использованию службы "Конфигурация приложений Azure" с решением "Функции Azure"| Документация Майкрософт
-description: Краткое руководство по использованию службы "Конфигурация приложений Azure" с решением "Функции Azure".
+description: В этом кратком руководстве показано, как создать приложение Функций Azure с помощью службы "Конфигурация приложений Azure"и языка C#. Создание и подключение к хранилищу Конфигурации приложений. Локальное тестирование функции.
 services: azure-app-configuration
 author: lisaguthrie
 ms.service: azure-app-configuration
+ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 1/9/2019
 ms.author: lcozzens
-ms.openlocfilehash: 2f6efdad7ab0685e58d2edd73bc36b758e8dbae2
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: e15c83504ee0eebb925c122d0efd4896e7b55916
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80245503"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88590291"
 ---
 # <a name="quickstart-create-an-azure-functions-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения Функций Azure с использованием службы "Конфигурация приложений Azure"
 
@@ -22,7 +23,7 @@ ms.locfileid: "80245503"
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Visual Studio 2019](https://visualstudio.microsoft.com/vs) с рабочей нагрузкой **разработки Azure**.
-- [Инструменты Функций Azure](../azure-functions/functions-develop-vs.md#check-your-tools-version)
+- [Средства функций Azure](../azure-functions/functions-develop-vs.md#check-your-tools-version)
 
 ## <a name="create-an-app-configuration-store"></a>Создание хранилища Конфигурации приложений
 
@@ -103,13 +104,13 @@ ms.locfileid: "80245503"
         export ConnectionString='connection-string-of-your-app-configuration-store'
     ```
 
-2. Чтобы проверить работу функции, нажмите клавишу F5. Если будет предложено, примите запрос от Visual Studio на скачивание и установку **основных инструментов решения "Функции Azure" (CLI)** . Кроме того, возможно, вам понадобиться включить исключение брандмауэра, чтобы инструменты могли обрабатывать HTTP-запросы.
+2. Чтобы проверить работу функции, нажмите клавишу F5. Если будет предложено, примите запрос от Visual Studio на скачивание и установку **основных инструментов решения "Функции Azure" (CLI)**. Кроме того, возможно, вам понадобиться включить исключение брандмауэра, чтобы инструменты могли обрабатывать HTTP-запросы.
 
 3. Скопируйте URL-адрес функции из выходных данных среды выполнения функций Azure.
 
     ![Отладки рассматриваемой в этом кратком руководстве функции в VS](./media/quickstarts/function-visual-studio-debugging.png)
 
-4. Вставьте URL-адрес запроса в адресную строку браузера. На изображении ниже показан ответ в браузере на локальный запрос GET, возвращаемый функцией.
+4. Вставьте URL-адрес для HTTP-запроса в адресной строке браузера. На изображении ниже показан ответ в браузере на локальный запрос GET, возвращаемый функцией.
 
     ![Локальный запуск рассматриваемой в этом кратком руководстве функции](./media/quickstarts/dotnet-core-function-launch-local.png)
 

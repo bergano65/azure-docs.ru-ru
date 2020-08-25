@@ -1,23 +1,23 @@
 ---
-title: Встроенные определения политик для Azure Arc для серверов
-description: Здесь приведены встроенные определения политик в Политике Azure для Azure Arc для серверов. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
+title: Встроенные определения политик для серверов с поддержкой Azure Arc
+description: Здесь приведены встроенные определения политик в службе "Политика Azure" для серверов с поддержкой Azure Arc (предварительная версия). Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
 ms.date: 07/10/2020
 ms.topic: sample
 ms.custom: subject-policy-samples
-ms.openlocfilehash: 988a383d5b7f7e9dac411205d530a7caf7b8f3dd
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 8d430e741e2cdf2ed562f4a2b2a14cc64d4e5d99
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121788"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88211277"
 ---
-# <a name="azure-policy-built-in-definitions-for-azure-arc-for-servers"></a>Встроенные определения в Политике Azure для Azure Arc для серверов
+# <a name="azure-policy-built-in-definitions-for-azure-arc-enabled-servers-preview"></a>Встроенные определения политик в службе "Политика Azure" для серверов с поддержкой Azure Arc (предварительная версия)
 
-Эта страница представляет собой индекс встроенных определений политик в [Политике Azure](../../governance/policy/overview.md) для Azure Arc для серверов. Дополнительные встроенные компоненты Политики Azure для других служб см. в статье [Встроенные определения Политики Azure](../../governance/policy/samples/built-in-policies.md).
+Эта страница представляет собой индекс встроенных определений политик в [Политике Azure](../../governance/policy/overview.md) для серверов с поддержкой Azure Arc (предварительная версия). Дополнительные встроенные компоненты Политики Azure для других служб см. в статье [Встроенные определения Политики Azure](../../governance/policy/samples/built-in-policies.md).
 
 Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **Версия**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
 
-## <a name="azure-arc-for-servers"></a>Azure Arc для серверов
+## <a name="azure-arc-enabled-servers-preview"></a>Серверы с поддержкой Azure Arc (предварительная версия)
 
 [!INCLUDE [azure-policy-samples-rp-arcserver](../../../includes/policy/samples/byrp/microsoft.hybridcompute.md)]
 

@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/12/2020
 ms.topic: sample
-ms.openlocfilehash: 831f09ecf7550a847c483fbe1678f1e4c3cecb61
-ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
+ms.openlocfilehash: 07055025eff9ab81c7321624daed9b4a6e993a60
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85052288"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88506517"
 ---
 # <a name="example-powershell-scripts"></a>Примеры скриптов PowerShell
 
@@ -26,21 +26,21 @@ ms.locfileid: "85052288"
 Для выполнения примеров скриптов требуется действующая оболочка [Azure PowerShell](https://docs.microsoft.com/powershell/azure/).
 
 1. Чтобы установить Azure PowerShell, выполните следующие действия.
-    1. Откройте консоль PowerShell с правами администратора.
+    1. Откройте окно PowerShell с правами администратора.
     1. Выполните `Install-Module -Name Az -AllowClobber`.
 
 1. Если при выполнении скриптов будут возникать ошибки, проверьте правильность [политики выполнения](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6).
-    1. Откройте консоль PowerShell с правами администратора.
+    1. Откройте окно PowerShell с правами администратора.
     1. Выполните `Set-ExecutionPolicy -ExecutionPolicy Unrestricted`.
 
 1. [Подготовьте учетную запись хранения Azure](../how-tos/conversion/blob-storage.md#prepare-azure-storage-accounts)
 
 1. Войдите в подписку, которая содержит учетную запись Удаленной отрисовки Azure.
-    1. Откройте PowerShell.
+    1. Откройте окно PowerShell.
     1. Выполните `Connect-AzAccount` и следуйте инструкциям на экране.
 
-> [!NOTE]
-> Если в организации есть несколько подписок, может потребоваться указать аргументы SubscriptionId и Tenant. Подробные сведения см. в [документации по Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount).
+    > [!NOTE]
+    > Если в организации есть несколько подписок, может потребоваться указать аргументы SubscriptionId и Tenant. Подробные сведения см. в [документации по Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount).
 
 1. Скачайте папку *Scripts* из [репозитория Удаленной отрисовки Azure на сайте GithHub](https://github.com/Azure/azure-remote-rendering).
 
@@ -86,9 +86,9 @@ ms.locfileid: "85052288"
 
 ### <a name="renderingsessionsettings"></a>renderingSessionSettings
 
-Эта структура должна быть заполнена, если вы намерены выполнять **RenderingSession.ps1**.
+Эта структура должна быть заполнена, если вы намерены выполнять **RenderingSession.ps1**:
 
-- **vmSize.** Определяет размер виртуальной машины. Выберите *standard* или *premium*. Завершайте сеансы отрисовки, когда они становятся не нужны.
+- **vmSize.** Определяет размер виртуальной машины. Выберите [*standard*](../reference/vm-sizes.md) или [*premium*](../reference/vm-sizes.md). Завершайте сеансы отрисовки, когда они становятся не нужны.
 - **maxLeaseTime.** Прогнозируемая продолжительность аренды виртуальной машины. По истечении срока действия аренды работа виртуальной машины будет прекращена. Срок аренды можно продлить позже (как описано ниже).
 
 ### <a name="assetconversionsettings"></a>assetConversionSettings
@@ -192,7 +192,7 @@ ms.locfileid: "85052288"
 1. Отправьте все файлы, содержащиеся в `assetConversionSettings.modelLocation`, во входной контейнер больших двоичных объектов для заданного пути `inputFolderPath`.
 1. Вызовите [REST API преобразования модели](../how-tos/conversion/conversion-rest-api.md), чтобы начать [преобразование модели](../how-tos/conversion/model-conversion.md).
 1. Состояние преобразования будет опрашиваться, пока преобразование не завершится (успешно или с ошибкой).
-1. Выведите сведения о расположении преобразованного файла (учетная запись хранения, контейнер выходных данных, путь к файлу в контейнере).
+1. Будут выведены сведения о расположении преобразованного файла (учетная запись хранения, контейнер выходных данных, путь к файлу в контейнере).
 
 ### <a name="access-to-storage-via-shared-access-signatures"></a>Доступ к хранилищу через подписанные URL-адреса
 

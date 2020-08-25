@@ -62,8 +62,14 @@
           href: use-key-vault-references-dotnet-core.md
         - name: Spring Boot
           href: use-key-vault-references-spring-boot.md
-    - name: Интеграция с конвейером CI/CD
-      href: integrate-ci-cd-pipeline.md
+    - name: Интеграция конвейера CI/CD
+      items:
+        - name: Отправка с помощью Azure Pipelines
+          href: push-kv-devops-pipeline.md
+        - name: Отправка с помощью GitHub Actions
+          href: concept-github-action.md
+        - name: Сборка проекта с использованием экспортированной конфигурации
+          href: integrate-ci-cd-pipeline.md
     - name: Интеграция с развертыванием Kubernetes с помощью Helm
       href: integrate-kubernetes-deployment-helm.md
 - name: Примеры
@@ -81,8 +87,6 @@
       href: concept-point-time-snapshot.md
     - name: Управление функциями
       href: concept-feature-management.md
-    - name: Синхронизация с помощью GitHub Actions
-      href: concept-github-action.md
     - name: Обработка событий
       href: concept-app-configuration-event.md
     - name: Безопасность

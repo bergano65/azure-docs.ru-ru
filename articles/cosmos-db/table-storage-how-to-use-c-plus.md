@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 10/07/2019
 author: sakash279
 ms.author: akshanka
-ms.openlocfilehash: e6d61e329ba91f53b11ace4d258b35950e188dcb
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3d38fa2afe35976283e5129eab7d7f8ef3a1103b
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76771217"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88236494"
 ---
 # <a name="how-to-use-azure-table-storage-and-azure-cosmos-db-table-api-with-c"></a>Как использовать хранилище таблиц Azure и API таблиц Azure Cosmos DB в C++
 
@@ -91,14 +91,14 @@ const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=ht
 
 Используйте имя учетной записи Azure Cosmos DB для `<your_cosmos_db_account>`. Введите первичный ключ для `<your_cosmos_db_account_key>`. Введите конечную точку, указанную на [портале Azure](https://portal.azure.com) для `<your_cosmos_db_endpoint>`.
 
-Чтобы протестировать приложение на локальном компьютере с Windows, можно использовать эмулятор хранения Azure, устанавливаемый с пакетом [Azure SDK](https://azure.microsoft.com/downloads/). Эмулятор хранения — это служебная программа, моделирующая службы больших двоичных объектов, очередей и таблиц, которые доступны в Azure на локальном компьютере разработки. В следующем примере показано, как объявить статическое поле для размещения строки подключения для эмулятора локального хранилища:  
+Чтобы протестировать приложение на локальном компьютере с Windows, можно использовать Эмулятор службы хранилища Azure, устанавливаемый с пакетом [Azure SDK](https://azure.microsoft.com/downloads/). Эмулятор службы хранилища — это служебная программа, моделирующая службы больших двоичных объектов, очередей и таблиц, которые доступны в Azure на локальном компьютере разработки. В следующем примере показано, как объявить статическое поле для размещения строки подключения для эмулятора локального хранилища:  
 
 ```cpp
 // Define the connection string with Azure storage emulator.
 const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  
 ```
 
-Чтобы запустить эмулятор хранения Azure с рабочего стола Windows, нажмите кнопку **Пуск** или клавишу Windows. Введите и запустите *эмулятор хранения Microsoft Azure*. Дополнительные сведения см. в руководстве по [использованию эмулятора хранения Azure для разработки и тестирования](../storage/common/storage-use-emulator.md).
+Чтобы запустить Эмулятор службы хранилища Azure с рабочего стола Windows, нажмите кнопку **Пуск** или клавишу Windows. Введите и запустите *эмулятор хранения Microsoft Azure*. Дополнительные сведения см. в статье [Использование Эмулятора службы хранилища Azure для разработки и тестирования](../storage/common/storage-use-emulator.md).
 
 ### <a name="retrieve-your-connection-string"></a>Получить строку подключения
 

@@ -4,25 +4,25 @@ ms.service: azure-resource-manager
 ms.topic: include
 ms.date: 02/24/2020
 ms.author: tomfitz
-ms.openlocfilehash: 33a63280f6973d2c5e29db29f7a6f3fc68c57c77
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: f0ab7c2efc499c43245680e56a7e5ca1b5261397
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84424765"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88748845"
 ---
 | Ресурс | Ограничение |
 | --- | --- |
-| Ресурсов на [группу ресурсов](../articles/azure-resource-manager/management/overview.md#resource-groups) | Ресурсы не ограничиваются группой ресурсов. Вместо этого они ограничиваются типом ресурса в группе ресурсов. См. следующую строку. |
-| Ресурсов на группу ресурсов на каждый тип ресурсов |800-некоторые типы ресурсов могут превышать ограничение 800. См. [ресурсы, не ограниченные 800 экземплярами на группу ресурсов](../articles/azure-resource-manager/management/resources-without-resource-group-limit.md). |
+| Ресурсы на [группу ресурсов](../articles/azure-resource-manager/management/overview.md#resource-groups) | Ресурсы ограничиваются не группой ресурсов, а типом ресурса в этой группе ресурсов. См. следующую строку. |
+| Ресурсы на группу ресурсов для каждого типа ресурса |800 (некоторые типы ресурсов могут превышать это ограничение). См. статью [Ресурсы без ограничения в 800 экземпляров на группу ресурсов](../articles/azure-resource-manager/management/resources-without-resource-group-limit.md). |
 | Развертываний на группу ресурсов в журнале развертывания |800<sup>1</sup> |
 | Ресурсов в развертывании |800 |
-| Блокировок управления на уникальную область |20 |
+| Блокировки управления на уникальную [область](../articles/azure-resource-manager/management/overview.md#understand-scope)  |20 |
 | Число тегов на ресурс или группу ресурсов |50 |
 | Длина ключа тега |512 |
 | Длина значения тега |256 |
 
-<sup>1</sup> Начиная с июня 2020 развертывания будут автоматически удалены из журнала, так как вы приближаетесь к ограничению. Удаление записи из журнала развертывания не влияет на развернутые ресурсы. Дополнительные сведения см. [в разделе Автоматическое удаление из журнала развертывания](../articles/azure-resource-manager/templates/deployment-history-deletions.md).
+<sup>1</sup> Начиная с июня 2020 года развертывания будут автоматически удаляться из журнала, так как вы приближаетесь к ограничению. Удаление записи из журнала развертывания не влияет на развернутые ресурсы. См. статью [Автоматическое удаление из журнала развертывания](../articles/azure-resource-manager/templates/deployment-history-deletions.md).
 
 #### <a name="template-limits"></a>Ограничения шаблонов
 
@@ -37,4 +37,4 @@ ms.locfileid: "84424765"
 | Размер шаблона |4 МБ |
 | Размер файла параметров |64 КБ |
 
-Некоторые ограничения можно превысить, используя вложенные шаблоны. Дополнительные сведения см. в статье [Использование связанных шаблонов при развертывании ресурсов Azure](../articles/azure-resource-manager/templates/linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](../articles/azure-resource-manager/resource-manager-objects-as-parameters.md).
+Некоторые ограничения можно превысить, используя вложенные шаблоны. См. статью [Использование связанных и вложенных шаблонов при развертывании ресурсов Azure](../articles/azure-resource-manager/templates/linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](../articles/azure-resource-manager/resource-manager-objects-as-parameters.md).

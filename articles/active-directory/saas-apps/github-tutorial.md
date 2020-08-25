@@ -2,25 +2,21 @@
 title: Руководство по Интеграция Azure Active Directory с GitHub | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и GitHub.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: 8761f5ca-c57c-4a7e-bf14-ac0421bd3b5e
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 06/17/2020
+ms.date: 08/07/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 718d51c94d05e8e18f2b254b5e81e346a67205a1
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.openlocfilehash: 7153a1279785cfe79d23b2b5ba843ec9f5cd4965
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87170536"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550751"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-github"></a>Руководство по Интеграция единого входа Azure Active Directory с GitHub
 
@@ -45,7 +41,7 @@ ms.locfileid: "87170536"
 * GitHub поддерживает единый вход инициированного **пакета обновления**.
 
 * GitHub поддерживает [**автоматическую** подготовку пользователей](github-provisioning-tutorial.md) (приглашения организации).
-* После настройки GitHub можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+* После настройки GitHub вы можете применить функцию управления сеансом, которая в режиме реального времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-github-from-the-gallery"></a>Добавление GitHub из коллекции
 
@@ -139,7 +135,13 @@ ms.locfileid: "87170536"
 
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+    ![Роль пользователя](./media/github-tutorial/user-role.png)
+
+    > [!NOTE]
+    > Параметр **Выбор роли** станет недоступен, а выбранному пользователю будет назначена роль по умолчанию "Пользователь".
+
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ## <a name="configure-github-sso"></a>Настройка единого входа для GitHub
 
@@ -147,11 +149,11 @@ ms.locfileid: "87170536"
 
 2. Перейдите к разделу **Параметры** и щелкните **Безопасность**.
 
-    ![Настройки](./media/github-tutorial/tutorial_github_config_github_03.png)
+    ![Настройки](./media/github-tutorial/security.png)
 
 3. Установите флажок **Enable SAML authentication** (Включить проверку подлинности SAML). После этого появятся поля конфигурации единого входа. Выполните следующие действия:
 
-    ![Настройки](./media/github-tutorial/tutorial_github_config_github_13.png)
+    ![Настройки](./media/github-tutorial/saml-sso.png)
 
     а. Скопируйте значение **URL-адреса для единого входа** и вставьте его в текстовое поле **URL-адрес для входа** в разделе **Базовая конфигурация SAML** на портале Azure.
     
@@ -159,7 +161,7 @@ ms.locfileid: "87170536"
 
 4. Задайте значения в следующих полях:
 
-    ![Настройки](./media/github-tutorial/tutorial_github_config_github_051.png)
+    ![Настройки](./media/github-tutorial/configure.png)
 
     а. В текстовое поле **Sign on URL** (URL-адрес входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
@@ -175,7 +177,7 @@ ms.locfileid: "87170536"
 
 5. Щелкните **Test SAML configuration** (Проверка конфигурации SAML), чтобы убедиться в отсутствии сбоев проверки при выполнении единого входа.
 
-    ![Настройки](./media/github-tutorial/tutorial_github_config_github_06.png)
+    ![Настройки](./media/github-tutorial/test.png)
 
 6. Щелкните **Сохранить**.
 
@@ -192,21 +194,21 @@ ms.locfileid: "87170536"
 
 2. Выберите параметр **Пользователи**.
 
-    ![Пользователи](./media/github-tutorial/tutorial_github_config_github_08.png "Люди")
+    ![Пользователи](./media/github-tutorial/people.png "Люди")
 
 3. Нажмите **Invite member** (Пригласить участника).
 
-    ![Приглашение пользователей](./media/github-tutorial/tutorial_github_config_github_09.png "Пригласить пользователей")
+    ![Приглашение пользователей](./media/github-tutorial/invite-member.png "Пригласить пользователей")
 
 4. На странице диалогового окна **Invite member** (Приглашение участников) сделайте следующее.
 
     а. В текстовом поле **Электронная почта** введите адрес электронной почты учетной записи Britta Simon.
 
-    ![Приглашение пользователей](./media/github-tutorial/tutorial_github_config_github_10.png "Приглашение пользователей")
+    ![Приглашение пользователей](./media/github-tutorial/email-box.png "Приглашение пользователей")
 
     b. Щелкните **Send Invitation** (Отправить приглашение).
 
-    ![Приглашение пользователей](./media/github-tutorial/tutorial_github_config_github_11.png "Приглашение пользователей")
+    ![Приглашение пользователей](./media/github-tutorial/send-invitation.png "Приглашение пользователей")
 
     > [!NOTE]
     > Владелец учетной записи Azure Active Directory получит по электронной почте сообщение со ссылкой для активации учетной записи.

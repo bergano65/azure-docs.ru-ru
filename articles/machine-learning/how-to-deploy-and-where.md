@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 07/08/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 67a66ae94508a8d7f54d6112de95fa65a8fd5f09
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.openlocfilehash: d7502414f6476cafcc85bbefd28a4ec463f62099
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88185423"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88751685"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -76,7 +76,7 @@ ws = Workspace.from_config(path=".file-path/ws_config.json")
 ---
 
 
-## <a name="register-your-model"></a><a id="registermodel"></a>Регистрация модели
+## <a name="register-your-model"></a><a id="registermodel"></a> Регистрация модели
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
@@ -218,12 +218,12 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 
 name: project_environment
 dependencies:
-    - python=3.6.2
-    - scikit-learn=0.20.0
-    - pip:
-        # You must list azureml-defaults as a pip dependency
-    - azureml-defaults>=1.0.45
-    - inference-schema[numpy-support]
+- python=3.6.2
+- scikit-learn=0.22.1
+- pip:
+ # You must list azureml-defaults as a pip dependency
+ - azureml-defaults>=1.0.45
+ - inference-schema[numpy-support]
 ```
 
 > [!IMPORTANT]
@@ -357,12 +357,12 @@ print(service.state)
 | Работоспособно | Служба работоспособна, и доступна конечная точка. | Да |
 
 
-### <a name="batch-inference"></a><a id="azuremlcompute"></a>Вывод пакета
+### <a name="batch-inference"></a><a id="azuremlcompute"></a> Вывод пакета
 Машинное обучение Azure целевые объекты вычислений создаются и управляются с помощью Машинное обучение Azure. Их можно использовать для прогнозирования пакетной службы из Машинное обучение Azure конвейеров.
 
 Пошаговое руководство по выводу пакетов с помощью Машинное обучение Azure COMPUTE см. [в разделе Выполнение пакетных прогнозов](tutorial-pipeline-batch-scoring-classification.md).
 
-### <a name="iot-edge-inference"></a><a id="iotedge"></a>Вывод IoT Edge
+### <a name="iot-edge-inference"></a><a id="iotedge"></a> Вывод IoT Edge
 Поддержка развертывания на границе доступна в предварительной версии. Дополнительные сведения см. в разделе [развертывание машинное обучение Azure как модуля IOT Edge](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-machine-learning).
 
 ## <a name="delete-resources"></a>Удаление ресурсов
@@ -371,7 +371,7 @@ print(service.state)
 
 Чтобы удалить развернутую WebService, используйте `az ml service <name of webservice>` .
 
-Чтобы удалить зарегистрированную модель из рабочей области, используйте`az ml model delete <model id>`
+Чтобы удалить зарегистрированную модель из рабочей области, используйте `az ml model delete <model id>`
 
 Узнайте больше об [удалении WebService](/cli/azure/ext/azure-cli-ml/ml/service#ext-azure-cli-ml-az-ml-service-delete) и [удалении модели](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-delete).
 

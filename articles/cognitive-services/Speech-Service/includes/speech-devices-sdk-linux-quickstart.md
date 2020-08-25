@@ -5,18 +5,18 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 02/20/2020
 ms.author: trbye
-ms.openlocfilehash: cc44b587bfa3b65b551df46bef025b461c8f6849
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: aee6e6d8ca505bfdcfd4a51e4693779f44b2b0c0
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87375041"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88226543"
 ---
 В этом кратком руководстве вы узнаете, как использовать пакет SDK для речевых устройств в Linux для создания устройства с поддержкой речевых функций или его использования в качестве устройства для [транскрибирования бесед](../conversation-transcription-service.md). Сейчас поддерживается только [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/).
 
 Приложение создается с использованием пакета SDK для службы "Речь" и интегрированной среды разработки Eclipse Java (версия 4) в 64-разрядной версии ОС Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9, RHEL 7/8, CentOS 7/8). Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
 
-Для этого руководства требуется [учетная запись Azure Cognitive Services](../get-started.md) и ресурс службы "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
+Для этого руководства требуется [учетная запись Azure Cognitive Services](../get-started.md) и ресурс службы "Речь". 
 
 Исходный код [примера приложения](https://aka.ms/sdsdk-download-JRE) входит в состав пакета SDK для речевых устройств. Он также [доступен на веб-сайте GitHub](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK).
 

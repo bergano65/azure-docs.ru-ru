@@ -5,14 +5,14 @@ keywords: служба приложений, служба приложений A
 ms.assetid: dc446e0e-0958-48ea-8d99-441d2b947a7c
 ms.devlang: nodejs
 ms.topic: tutorial
-ms.date: 04/27/2020
+ms.date: 08/13/2020
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 96a947a20a17c4dc08851824a392143ce162f186
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: c301876a57b3be4a112c7df2706bf17389a5af44
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543573"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88190078"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Руководство по Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure
 
@@ -125,11 +125,11 @@ ms.locfileid: "87543573"
 
 #### <a name="create-the-cname-record"></a>Создание записи CNAME
 
-Сопоставьте поддомен с доменным именем приложения по умолчанию (`<app_name>.azurewebsites.net`, где `<app_name>` — это имя приложения). Чтобы создать сопоставление CNAME для поддомена `www`, создайте две записи:
+Сопоставьте поддомен с доменным именем приложения по умолчанию (`<app-name>.azurewebsites.net`, где `<app-name>` — это имя приложения). Чтобы создать сопоставление CNAME для поддомена `www`, создайте две записи:
 
 | Тип записи | Узел | Значение | Комментарии |
 | - | - | - |
-| CNAME | `www` | `<app_name>.azurewebsites.net` | Само сопоставление домена. |
+| CNAME | `www` | `<app-name>.azurewebsites.net` | Само сопоставление домена. |
 | TXT | `asuid.www` | [Идентификатор проверки, полученный ранее](#get-domain-verification-id) | Служба приложений обращается к записи в формате TXT `asuid.<subdomain>`, чтобы проверить владение личным доменом. |
 
 После добавления записей CNAME и TXT страница управления записями DNS выглядит так:
@@ -210,7 +210,7 @@ ms.locfileid: "87543573"
 > | Тип записи | Узел | Значение |
 > | - | - | - |
 > | Объект | `www` | IP-адрес из раздела [Копирование IP-адреса приложения](#info). |
-> | TXT | `asuid.www` | `<app_name>.azurewebsites.net` |
+> | TXT | `asuid.www` | `<app-name>.azurewebsites.net` |
 >
 
 После добавления этих записей страница управления записями DNS выглядит так:
@@ -262,9 +262,14 @@ ms.locfileid: "87543573"
 
 #### <a name="create-the-cname-record"></a>Создание записи CNAME
 
-Добавьте запись CNAME для сопоставления имени с подстановочными знаками с доменным именем приложения по умолчанию (`<app_name>.azurewebsites.net`).
+Сопоставьте имя с подстановочными знаками `*` с доменным именем приложения по умолчанию (`<app-name>.azurewebsites.net`, где `<app-name>` — это имя приложения). Чтобы сопоставить имя с подстановочными знаками, создайте две записи:
 
-Для примера домена `*.contoso.com` запись CNAME сопоставит имя `*` с `<app_name>.azurewebsites.net`.
+| Тип записи | Узел | Значение | Комментарии |
+| - | - | - |
+| CNAME | `*` | `<app-name>.azurewebsites.net` | Само сопоставление домена. |
+| TXT | `asuid` | [Идентификатор проверки, полученный ранее](#get-domain-verification-id) | Служба приложений обращается к записи в формате TXT `asuid`, чтобы проверить владение личным доменом. |
+
+Для примера домена `*.contoso.com` запись CNAME сопоставит имя `*` с `<app-name>.azurewebsites.net`.
 
 После добавления записи CNAME страница управления записями DNS выглядит так:
 
@@ -272,7 +277,7 @@ ms.locfileid: "87543573"
 
 #### <a name="enable-the-cname-record-mapping-in-the-app"></a>Включение сопоставления записи CNAME в приложении
 
-Теперь вы можете добавить любой дочерний домен, соответствующий имени с подстановочными знаками в приложении (например, `sub1.contoso.com` и `sub2.contoso.com` соответствует `*.contoso.com`).
+Теперь вы можете добавить любой дочерний домен, соответствующий имени с подстановочными знаками в приложении (например, как `sub1.contoso.com`, так и `sub2.contoso.com` соответствует `*.contoso.com`).
 
 В левой области навигации страницы приложения на портале Azure выберите **Личные домены**.
 
@@ -342,7 +347,7 @@ ms.locfileid: "87543573"
 
 ```bash 
 az webapp config hostname add \
-    --webapp-name <app_name> \
+    --webapp-name <app-name> \
     --resource-group <resource_group_name> \
     --hostname <fully_qualified_domain_name>
 ``` 
@@ -357,9 +362,9 @@ az webapp config hostname add \
 
 ```powershell  
 Set-AzWebApp `
-    -Name <app_name> `
+    -Name <app-name> `
     -ResourceGroupName <resource_group_name> ` 
-    -HostNames @("<fully_qualified_domain_name>","<app_name>.azurewebsites.net")
+    -HostNames @("<fully_qualified_domain_name>","<app-name>.azurewebsites.net")
 ```
 
 Дополнительные сведения см. в статье [Назначение пользовательского домена веб-приложению](scripts/powershell-configure-custom-domain.md).

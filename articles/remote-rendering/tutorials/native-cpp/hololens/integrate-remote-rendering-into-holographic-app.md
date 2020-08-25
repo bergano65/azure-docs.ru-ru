@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 05/04/2020
 ms.topic: tutorial
-ms.openlocfilehash: fff032d37fa0746695736e0dbdde73c6bcaade4b
-ms.sourcegitcommit: 74ba70139781ed854d3ad898a9c65ef70c0ba99b
+ms.openlocfilehash: a786baf70dfd9063c635fd27d43d198b3bd89bfb
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85445684"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272133"
 ---
 # <a name="tutorial-integrate-remote-rendering-into-a-hololens-holographic-app"></a>Руководство по Интеграция Удаленной отрисовки в голографическом приложении HoloLens
 
@@ -99,14 +99,15 @@ if (context.As(&contextMultithread) == S_OK)
 #include <AzureRemoteRendering.h>
 ```
 
-Добавьте также эту дополнительную директиву `include` в файл HolographicAppMain.cpp:
+Добавьте также эти дополнительные директивы `include` в файл HolographicAppMain.cpp:
 
 ```cpp
 #include <AzureRemoteRendering.inl>
 #include <RemoteRenderingExtensions.h>
+#include <windows.perception.spatial.h>
 ```
 
-Для простоты кода мы определяем следующий ярлык пространства имен в начале файла HolographicAppMain.h после директивы `include`:
+Для простоты кода мы определяем следующий ярлык пространства имен в начале файла HolographicAppMain.h после директив `include`:
 
 ```cpp
 namespace RR = Microsoft::Azure::RemoteRendering;
@@ -297,7 +298,7 @@ namespace HolographicApp
         bool m_modelLoadTriggered = false;
         float m_modelLoadingProgress = 0.f;
         bool m_modelLoadFinished = false;
-
+        bool m_needsCoordinateSystemUpdate = true;
     }
 ```
 
@@ -420,9 +421,13 @@ void HolographicAppMain::OnConnectionStatusChanged(RR::ConnectionStatus status, 
 
 ### <a name="per-frame-update"></a>Покадровое обновление
 
-Для клиента необходимо отсчитывать по одному такту на каждый такт моделирования. Класс `HolographicApp1Main` предоставляет хороший обработчик для покадровых обновлений. Кроме того, необходимо выполнить опрос, чтобы проверить, перешел ли сеанс в состояние `Ready`. Если подключение установлено, можно начинать загрузку модели с помощью `StartModelLoading`.
+Нам необходимо обновлять клиент по одному разу для каждого такта моделирования и выполнять ряд дополнительных операций обновления состояния. Функция `HolographicAppMain::Update` предоставляет хороший обработчик для покадровых обновлений.
 
-Добавьте в тело функции `HolographicApp1Main::Update` следующий код:
+#### <a name="state-machine-update"></a>Обновление конечного автомата
+
+Нам необходимо выполнить опрос, чтобы проверить, перешел ли сеанс в состояние `Ready`. Если подключение установлено, можно начинать загрузку модели с помощью `StartModelLoading`.
+
+Добавьте в тело функции `HolographicAppMain::Update` следующий код:
 
 ```cpp
 // Updates the application state once per frame.
@@ -485,9 +490,57 @@ HolographicFrame HolographicAppMain::Update()
         }
     }
 
+    if (m_needsCoordinateSystemUpdate && m_stationaryReferenceFrame && m_graphicsBinding)
+    {
+        // Set the coordinate system once. This must be called again whenever the coordinate system changes.
+        winrt::com_ptr<ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem> ptr{ m_stationaryReferenceFrame.CoordinateSystem().as<ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem>() };
+        m_graphicsBinding->UpdateUserCoordinateSystem(ptr.get());
+        m_needsCoordinateSystemUpdate = false;
+    }
+
     // Rest of the body:
     ...
 }
+```
+
+#### <a name="coordinate-system-update"></a>Обновление системы координат
+
+Нам необходимо согласовать систему координат с той, которая используется службой отрисовки. Для доступа к системе координат, которую необходимо использовать, требуется кадр `m_stationaryReferenceFrame`, созданный в конце функции `HolographicAppMain::OnHolographicDisplayIsAvailableChanged`.
+
+Данная система координат обычно не изменяется, поэтому это однократная инициализация. Если же приложение изменит систему координат, ее необходимо вызвать снова.
+
+Приведенный выше код задает систему координат в функции `Update` один раз и только при наличии эталонной системы координат и подключенного сеанса.
+
+#### <a name="camera-update"></a>Обновление камеры
+
+Нам необходимо обновить отсекающие плоскости камеры, чтобы обеспечить синхронизацию серверной и локальной камер. Это можно сделать в самом конце функции `Update`:
+
+```cpp
+    ...
+    if (m_isConnected)
+    {
+        // Any near/far plane values of your choosing.
+        constexpr float fNear = 0.1f;
+        constexpr float fFar = 10.0f;
+        for (HolographicCameraPose const& cameraPose : prediction.CameraPoses())
+        {
+            // Set near and far to the holographic camera as normal
+            cameraPose.HolographicCamera().SetNearPlaneDistance(fNear);
+            cameraPose.HolographicCamera().SetFarPlaneDistance(fFar);
+        }
+
+        // The API to inform the server always requires near < far. Depth buffer data will be converted locally to match what is set on the HolographicCamera.
+        auto settings = *m_api->CameraSettings();
+        settings->NearPlane(std::min(fNear, fFar));
+        settings->FarPlane(std::max(fNear, fFar));
+        settings->EnableDepth(true);
+    }
+
+    // The holographic frame will be used to get up-to-date view and projection matrices and
+    // to present the swap chain.
+    return holographicFrame;
+}
+
 ```
 
 ### <a name="rendering"></a>Отрисовка

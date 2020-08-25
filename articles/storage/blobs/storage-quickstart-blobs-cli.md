@@ -7,15 +7,15 @@ author: tamram
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.date: 06/04/2020
+ms.date: 08/17/2020
 ms.author: tamram
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: eca67c4a5a942e6cd06f67cac868905da0e1f533
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 55cbf0a304bbf13d47fefad0981c0143c101bbb0
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87535150"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88520776"
 ---
 # <a name="quickstart-create-download-and-list-blobs-with-azure-cli"></a>Краткое руководство. Создание, скачивание и составление списка больших двоичных объектов с помощью Azure CLI
 
@@ -78,20 +78,28 @@ az storage account create \
 
 ## <a name="create-a-container"></a>Создание контейнера
 
-Большие двоичные объекты всегда отправляются в контейнер. Вы можете упорядочивать группы больших двоичных объектов в контейнеры аналогично организации файлов в папках на компьютере. Создайте контейнер для хранения больших двоичных объектов с помощью команды [az storage container create](/cli/azure/storage/container). 
+Большие двоичные объекты всегда отправляются в контейнер. Вы можете упорядочивать группы больших двоичных объектов в контейнеры аналогично организации файлов в папках на компьютере. Создайте контейнер для хранения больших двоичных объектов с помощью команды [az storage container create](/cli/azure/storage/container).
 
 В следующем примере учетная запись Azure AD используется для авторизации операции создания контейнера. Прежде чем создавать контейнер, назначьте себе роль [Участник данных в хранилище BLOB-объектов](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor). Даже если вы являетесь владельцем учетной записи, вам потребуются явные разрешения для выполнения операций с данными в учетной записи хранения. Дополнительные сведения о назначении ролей Azure см. в разделе [Использование Azure CLI для назначения роли Azure для доступа](../common/storage-auth-aad-rbac-cli.md?toc=/azure/storage/blobs/toc.json).  
-
-Вы также можете использовать ключ учетной записи хранения, чтобы авторизовать операцию создания контейнера. Дополнительные сведения об авторизации операций с данными с помощью Azure CLI см. в статье [Авторизация доступа к данным большого двоичного объекта или очереди с помощью Azure CLI](../common/authorize-data-operations-cli.md?toc=/azure/storage/blobs/toc.json).
 
 Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
 ```azurecli
+az ad signed-in-user show --query objectId -o tsv | az role assignment create \
+    --role "Storage Blob Data Contributor" \
+    --assignee @- \
+    --scope "/subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>"
+
 az storage container create \
     --account-name <storage-account> \
     --name <container> \
     --auth-mode login
 ```
+
+> [!IMPORTANT]
+> Назначение ролей Azure может занимать несколько минут.
+
+Вы также можете использовать ключ учетной записи хранения, чтобы авторизовать операцию создания контейнера. Дополнительные сведения об авторизации операций с данными с помощью Azure CLI см. в статье [Авторизация доступа к данным большого двоичного объекта или очереди с помощью Azure CLI](../common/authorize-data-operations-cli.md?toc=/azure/storage/blobs/toc.json).
 
 ## <a name="upload-a-blob"></a>Передача больших двоичных объектов
 

@@ -5,18 +5,18 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 02/20/2020
 ms.author: trbye
-ms.openlocfilehash: 259fc503b0de6c05196a7cb8096f828080705be8
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: d2160a5cd38fcd24c3af5d32ccbbbee8ac723b2f
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87375228"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88226111"
 ---
 В этом кратком руководстве вы узнаете, как использовать пакет Speech Devices SDK для Windows для создания устройства с поддержкой речевых функций или его использования в качестве устройства [Транскрипция диалога](../conversation-transcription-service.md) (Conversation Transcription). Для транскрибирования бесед поддерживается только [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/). Для других речевых функций используются линейные микрофонные решетки, обеспечивающие геометрию микрофонной решетки.
 
 Приложение создается с использованием пакета SDK для распознавания речи и интегрированной среды разработки Eclipse Java (версия 4) в 64-разрядной версии Windows. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
 
-Для этого руководства требуется [учетная запись Azure Cognitive Services](../get-started.md) и ресурс службы "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
+Для этого руководства требуется [учетная запись Azure Cognitive Services](../get-started.md) и ресурс службы "Речь".
 
 Исходный код [примера приложения](https://aka.ms/sdsdk-download-JRE) входит в состав пакета SDK для речевых устройств. Он также [доступен на веб-сайте GitHub](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK).
 

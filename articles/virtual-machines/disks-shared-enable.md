@@ -4,16 +4,16 @@ description: Настройка управляемого диска Azure с о�
 author: roygara
 ms.service: virtual-machines
 ms.topic: how-to
-ms.date: 07/30/2020
+ms.date: 08/21/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: f6b34cd93dcfabee2974bea5cf57258527df94d7
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: ad70aa1d044649a0ca61060fff9880d4ef1e34c1
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88701657"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88752041"
 ---
 # <a name="enable-shared-disk"></a>Включить общий диск
 
@@ -21,21 +21,21 @@ ms.locfileid: "88701657"
 
 Если вы ищете основные сведения об управляемых дисках с включенными общими дисками, см. следующие разделы:
 
-* Для Linux: [Общие диски Azure](./linux/disks-shared.md)
+* Для Linux: [Общие диски Azure](linux/disks-shared.md)
 
-* Для Windows: [Общие диски Azure](./windows/disks-shared.md)
+* Для Windows: [Общие диски Azure](windows/disks-shared.md)
 
 ## <a name="limitations"></a>Ограничения
 
-[!INCLUDE [virtual-machines-disks-shared-limitations](~/includes/virtual-machines-disks-shared-limitations.md)]
+[!INCLUDE [virtual-machines-disks-shared-limitations](../../includes/virtual-machines-disks-shared-limitations.md)]
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
-Общие диски поддерживают несколько операционных систем. Поддерживаемые операционные системы см. в разделах, посвященных [ОС Windows](~/articles/virtual-machines/windows/disks-shared.md#windows) и [Linux](~/articles/virtual-machines/linux/disks-shared.md#linux) .
+Общие диски поддерживают несколько операционных систем. Поддерживаемые операционные системы см. в разделах, посвященных [ОС Windows](windows/disks-shared.md#windows) и [Linux](linux/disks-shared.md#linux) .
 
 ## <a name="disk-sizes"></a>Размеры диска
 
-[!INCLUDE [virtual-machines-disks-shared-sizes](~/includes/virtual-machines-disks-shared-sizes.md)]
+[!INCLUDE [virtual-machines-disks-shared-sizes](../../includes/virtual-machines-disks-shared-sizes.md)]
 
 ## <a name="deploy-shared-disks"></a>Развертывание общих дисков
 
@@ -147,7 +147,7 @@ New-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'mySharedDisk' -Disk $
 После развертывания общего диска с помощью его `maxShares>1` можно подключить к одной или нескольким виртуальным машинам.
 
 > [!NOTE]
-> При развертывании Ultra Disk убедитесь, что он соответствует необходимым требованиям. Дополнительные сведения см. в разделе [PowerShell](~/articles/virtual-machines/windows/disks-enable-ultra-ssd.md#enable-ultra-disk-compatibility-on-an-existing-vm-1) или [CLI](~/articles/virtual-machines/linux/disks-enable-ultra-ssd.md#enable-ultra-disk-compatibility-on-an-existing-vm) в статье о Ultra Disk.
+> При развертывании Ultra Disk убедитесь, что он соответствует необходимым требованиям. Дополнительные сведения см. в разделе [PowerShell](disks-enable-ultra-ssd.md#enable-ultra-disk-compatibility-on-an-existing-vm-1) или [CLI](disks-enable-ultra-ssd.md#enable-ultra-disk-compatibility-on-an-existing-vm) в статье о Ultra Disk.
 
 ```azurepowershell-interactive
 

@@ -1,6 +1,6 @@
 ---
 title: Примеры шаблонов Azure Resource Manager для Azure Front Door
-description: Примеры шаблонов Azure Resource Manager для службы Azure Front Door
+description: Ознакомьтесь с примерами шаблонов Resource Manager для Azure Front Door, в том числе шаблонами для создания базовой конфигурации Front Door и настройки ограничения скорости для Front Door.
 services: frontdoor
 documentationcenter: ''
 author: sharad4u
@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/04/2020
 ms.author: sharadag
-ms.openlocfilehash: 47db565288d1bfe1f98c58536e726eb7ec55d0a9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 14f9cb33ce298b97ead0f6d7fbec0ad77e79a1ee
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084642"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88182193"
 ---
 # <a name="azure-resource-manager-deployment-model-templates-for-front-door"></a>Шаблоны модели развертывания Azure Resource Manager для Front Door
 

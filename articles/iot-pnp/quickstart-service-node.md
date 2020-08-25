@@ -3,17 +3,17 @@ title: Взаимодействие с устройством IoT Plug and Play 
 description: Подключение к устройству IoT Plug and Play (предварительная версия), подключенному к решению Интернета вещей Azure, а также взаимодействие с ним с помощью Node.js.
 author: elhorton
 ms.author: elhorton
-ms.date: 07/13/2020
+ms.date: 08/11/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc, devx-track-javascript
-ms.openlocfilehash: 511a61fb1069ce10e94e24ecd3ba6d60470ca40f
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: fd65dcc9ce0be07daa5848a0ac583cf795150e47
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424449"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88184760"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-preview-device-thats-connected-to-your-solution-nodejs"></a>Краткое руководство. Взаимодействие с устройством IoT Plug and Play (предварительная версия), подключенным к решению (Node.js)
 
@@ -33,12 +33,6 @@ ms.locfileid: "87424449"
 node --version
 ```
 
-[Установите пакет SDK службы Node с поддержкой IoT Plug and Play](https://www.npmjs.com/package/azure-iot-digitaltwins-service), выполнив следующую команду.
-
-```cmd/sh
-npm i azure-iot-digitaltwins-service
-```
-
 [!INCLUDE [iot-pnp-prepare-iot-hub.md](../../includes/iot-pnp-prepare-iot-hub.md)]
 
 Выполните следующую команду, чтобы получить _строку подключения к Центру Интернета вещей_ для вашего концентратора. Запишите эту строку подключения. Вы будете использовать ее позже при работе с этим кратким руководством.
@@ -53,15 +47,19 @@ az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
 az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --device-id <YourDeviceID> --output
 ```
 
+### <a name="clone-the-sdk-repository-with-the-sample-code"></a>Клонирование репозитория пакета SDK с помощью примера кода
+
+Пакет SDK службы предоставляется в режиме предварительной версии, поэтому эти примеры нужно клонировать из [ветви предварительной версии пакета SDK для Node](https://github.com/Azure/azure-iot-sdk-node/tree/pnp-preview-refresh). Откройте окно терминала в любой папке. С помощью следующей команды клонируйте ветвь **pnp-preview-refresh** репозитория [пакета SDK Microsoft Azure IoT для Node.js](https://github.com/Azure/azure-iot-sdk-node) на сайте GitHub:
+
+```cmd/sh
+git clone https://github.com/Azure/azure-iot-sdk-node -b pnp-preview-refresh
+```
+
 ## <a name="run-the-sample-device"></a>Запуск примера устройства
 
 С помощью этого краткого руководства вы сможете использовать пример термостата, написанный на Node.js, как устройство IoT Plug and Play. Чтобы запустить пример устройства, сделайте следующее:
 
-1. Откройте окно терминала в любой папке. С помощью следующей команды клонируйте репозиторий [пакетов SDK Интернета вещей Microsoft Azure для Node.js](https://github.com/Azure/azure-iot-sdk-node) с сайта GitHub в следующее расположение.
-
-    ```cmd/sh
-    git clone https://github.com/Azure/azure-iot-sdk-node
-    ```
+1. Откройте окно терминала и перейдите в локальную папку, содержащую пакет SDK Microsoft Azure IoT для Node.js, клонированный из репозитория GitHub.
 
 1. Это окно терминала используется в качестве терминала **устройства**. Перейдите в папку клонированного репозитория, а затем в папку */azure-iot-sdk-node/device/samples/pnp*. Установите все зависимости, выполнив следующую команду:
 
@@ -90,10 +88,10 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 1. Откройте другое окно терминала, которое будет терминалом **службы**. Пакет SDK службы предоставляется в режиме предварительной версии, поэтому эти примеры нужно клонировать из [ветви предварительной версии пакета SDK для Node](https://github.com/Azure/azure-iot-sdk-node/tree/pnp-preview-refresh).
 
     ```cmd/sh
-    git clone https://github.com/Azure/azure-iot-sdk-node -b public-preview-pnp
+    git clone https://github.com/Azure/azure-iot-sdk-node -b pnp-preview-refresh
     ```
 
-1. Перейдите в папку клонированного репозитория, а затем в папку */azure-iot-samples-node/digital-twins/samples/service/javascript*. Установите все зависимости, выполнив следующую команду:
+1. Перейдите в папку клонированного репозитория, а затем в папку */azure-iot-sdk-node/digitaltwins/samples/service/javascript*. Установите все зависимости, выполнив следующую команду:
 
     ```cmd/sh
     npm install
@@ -144,14 +142,14 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 
 ### <a name="update-a-writable-property"></a>Обновление доступного для записи свойства
 
-1. Откройте файл *update_digital_twin_property.js* в любом редакторе кода.
+1. Откройте файл *update_digital_twin.js* в любом редакторе кода.
 
 1. Изучите пример кода. Вы увидите, как создать обновление в формате JSON для изменения свойств цифрового двойника устройства. В этом примере код изменяет значение температуры термостата на 42.
 
     ```javascript
     const patch = [{
         op: 'add',
-        path: 'targetTemperature',
+        path: '/targetTemperature',
         value: '42'
       }]
     ```
@@ -159,43 +157,23 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 1. В терминале **службы** с помощью следующей команды запустите следующий пример для обновления свойства.
 
     ```cmd/sh
-    node update_digital_twin_property.js
-    ```
-
-1. В выходных данных терминала **службы** содержатся обновленные сведения об устройстве. Перейдите к компоненту `thermostat1` и убедитесь, что `targetTemperature` теперь имеет значение 42.
-
-    ```json
-    "modelId": "dtmi:com:example:Thermostat;1",
-        "version": 12,
-        "properties": {
-            "desired": {
-                "targetTemperature": "42",
-                "$metadata": {
-                    "$lastUpdated": "2020-07-09T13:55:50.7976985Z",
-                    "$lastUpdatedVersion": 5,
-                    "targetTemperature": {
-                        "$lastUpdated": "2020-07-09T13:55:50.7976985Z",
-                        "$lastUpdatedVersion": 5
-                    }
-                },
-                "$version": 5
-            },
-            "reported": {
-                "serialNumber": "123abc",
-                "maxTempSinceLastReboot": 32.279942997143785,
-                "targetTemperature": {
-                    "value": "42",
-                    "ac": 200,
-                    "ad": "Successfully executed patch for targetTemperature",
-                    "av": 2
-                },
+    node update_digital_twin.js
     ```
 
 1. В терминале **устройства** вы увидите, что устройство успешно получило обновление.
 
     ```cmd/sh
-    Received an update for targetTemperature: 42
+    The following properties will be updated for root interface:
+    {
+      targetTemperature: {
+        value: 42,
+        ac: 200,
+        ad: 'Successfully executed patch for targetTemperature',
+        av: 2
+      }
+    }
     updated the property
+    Properties have been reported for component
     ```
 
 1. В терминале **службы** выполните следующую команду, чтобы убедиться, что свойство обновлено.
@@ -207,15 +185,7 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 1. В терминале **службы** вы увидите ответ от цифрового двойника, где в компоненте `thermostat1` отображается обновленное значение температуры. Устройству может потребоваться некоторое время, чтобы завершить обновление. Повторяйте этот шаг, пока устройство не завершит обновление свойства.
 
     ```json
-    "$model": "dtmi:com:example:Thermostat;1",
-    "targetTemperature": {
-      "desiredValue": 42,
-      "desiredVersion": 4,
-      "ackVersion": 4,
-      "ackCode": 200,
-      "ackDescription": "Successfully executed patch for targetTemperature",
-      "lastUpdateTime": "2020-07-09T13:55:30.5062641Z"
-    }
+    targetTemperature: 42,
     ```
 
 ### <a name="invoke-a-command"></a>Вызов команды
@@ -225,6 +195,8 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 1. Перейдите к терминалу **службы**. Чтобы запустить пример для вызова команды, используйте следующую команду:
 
     ```cmd/sh
+    set IOTHUB_COMMAND_NAME=getMaxMinReport
+    set IOTHUB_COMMAND_PAYLOAD=commandpayload
     node invoke_command.js
     ```
 
@@ -245,7 +217,7 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 1. В терминале **устройства** вы увидите, что команда успешно подтверждена.
 
     ```cmd/sh
-    MaxMinReport [object Object]
+    MaxMinReport commandpayload
     Response to method 'getMaxMinReport' sent successfully.
     ```
 

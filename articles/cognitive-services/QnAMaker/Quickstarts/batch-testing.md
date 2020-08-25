@@ -3,12 +3,12 @@ title: Краткое руководство. Тестирование базы 
 description: Используйте средство пакетного тестирования QnA Maker для тестирования баз знаний в ресурсе QnA Maker с использованием ожидаемых ответов, оценок достоверности и многоэтапных запросов.
 ms.topic: tutorial
 ms.date: 05/26/2020
-ms.openlocfilehash: 01c767a6fbea5061f644052234f7462857dd342b
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: bcee98678212a3bc233c36a831f6bcde7e6ae550
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84337739"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88531075"
 ---
 # <a name="quickstart-test-knowledge-base-with-batch-questions-and-expected-answers"></a>Краткое руководство. Тестирование базы знаний с использованием пакетных вопросов и ожидаемых ответов
 
@@ -16,7 +16,7 @@ ms.locfileid: "84337739"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
 * [Создайте новую службу QnA Maker](create-publish-knowledge-base.md) или используйте существующую, в которой применяется английский язык.
 * Скачайте [файл `.docx` с многоэтапным запросом](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/multi-turn.docx).
 * Скачайте [средство пакетного тестирования](https://aka.ms/qnamakerbatchtestingtool) и извлеките исполняемый файл из файла `.zip`.
@@ -61,7 +61,7 @@ ms.locfileid: "84337739"
 
 ## <a name="create-batch-test-file-with-question-ids"></a>Создание файла пакетного теста с идентификаторами вопросов
 
-Чтобы использовать средство пакетного тестирования, создайте в текстовом редакторе файл с именем `batch-test-data-1.tsv`. Этот файл должен содержать следующие столбцы с разделением знаками табуляции.
+Чтобы использовать средство пакетного тестирования, создайте в текстовом редакторе файл с именем `batch-test-data-1.tsv`. Этот файл должен быть в формате UTF-8 и содержать следующие столбцы, разделенные знаками табуляции.
 
 |Поля входного файла с разделением знаками табуляции|Примечания|Пример|
 |--|--|--|

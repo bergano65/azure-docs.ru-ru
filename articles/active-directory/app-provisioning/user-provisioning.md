@@ -1,5 +1,5 @@
 ---
-title: Автоматическая подготовка пользователей для приложений SaaS в Azure AD
+title: Что представляет собой автоматическая подготовка пользователей для приложений SaaS в Azure AD
 description: Общие сведения об использовании Azure AD для автоматической подготовки, отзыва и постоянного обновления учетных записей пользователей в нескольких приложениях SaaS сторонних разработчиков.
 services: active-directory
 author: kenwith
@@ -11,14 +11,14 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: kenwith
 ms.reviewer: arvinh, celested
-ms.openlocfilehash: 7f09bb42f529164ef0f5062ef801ddc7ecfef85c
-ms.sourcegitcommit: 52d2f06ecec82977a1463d54a9000a68ff26b572
+ms.openlocfilehash: b6eb571c7c37a628d11f07b4e1b207e38830250b
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84781096"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235406"
 ---
-# <a name="automate-user-provisioning-and-deprovisioning-to-applications-with-azure-ad"></a>Автоматическая подготовка пользователей и ее отмена для приложений SaaS в Azure Active Directory
+# <a name="what-is-automated-saas-app-user-provisioning-in-azure-ad"></a>Что представляет собой автоматическая подготовка пользователей для приложений SaaS в Azure AD?
 
 В Azure Active Directory (Azure AD) термин **подготовка приложений** относится к автоматическому созданию удостоверений и ролей пользователей в облачных ([SaaS](https://azure.microsoft.com/overview/what-is-saas/)) приложениях, к которым пользователям требуется доступ. Кроме создания удостоверений пользователей, автоматическая подготовка включает в себя обслуживание и удаление удостоверений пользователей по мере изменения их статуса или ролей. Типичные сценарии включают подготовку пользователя Azure AD к таким приложениям, как [Dropbox](../saas-apps/dropboxforbusiness-provisioning-tutorial.md), [Salesforce](../saas-apps/salesforce-provisioning-tutorial.md), [ServiceNow](../saas-apps/servicenow-provisioning-tutorial.md), и других.
 
@@ -59,7 +59,7 @@ Azure AD предлагает предварительно интегриров
 
    ![Логотип Salesforce](./media/user-provisioning/gallery-app-logos.png)
 
-   Если вы хотите запросить новое приложение для подготовки, можно [запросить интеграцию вашего приложения с нашей коллекцией приложений](../develop/howto-app-gallery-listing.md). Для запроса на подготовку пользователя требуется, чтобы приложение имело конечную точку, совместимую с SCIM. Обратитесь к поставщику приложения с просьбой следовать стандарту SCIM, чтобы мы могли быстро встроить приложение в нашу платформу.
+   Если вы хотите запросить новое приложение для подготовки, можно [запросить интеграцию вашего приложения с нашей коллекцией приложений](../azuread-dev/howto-app-gallery-listing.md). Для запроса на подготовку пользователя требуется, чтобы приложение имело конечную точку, совместимую с SCIM. Обратитесь к поставщику приложения с просьбой следовать стандарту SCIM, чтобы мы могли быстро встроить приложение в нашу платформу.
 
 * **Подключение приложений с поддержкой SCIM 2.0** Сведения об универсальных способах подключения приложений, реализующих API-интерфейсы управления пользователями на основе SCIM 2.0, см. в статье [Создание конечной точки SCIM и настройка подготовки пользователей](use-scim-to-provision-users-and-groups.md).
 
@@ -94,11 +94,8 @@ Azure AD предлагает предварительно интегриров
 Для других приложений, поддерживающих SCIM 2.0, выполните действия, описанные в статье [Создание конечной точки SCIM подготовки пользователей](use-scim-to-provision-users-and-groups.md).
 
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Список руководств по интеграции приложений SaaS с Azure Active Directory](../saas-apps/tutorial-list.md)
 - [Настройка сопоставления атрибутов для подготовки пользователей](customize-application-attributes.md)
-- [Запись выражений для сопоставления атрибутов](../app-provisioning/functions-for-customizing-application-data.md)
-- [Фильтры области для подготовки пользователей](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)
-- [Создание конечной точки SCIM и настройка подготовки пользователей](use-scim-to-provision-users-and-groups.md)
-- [Общие сведения об API синхронизации Azure AD](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/synchronization-overview)
+- [Фильтры области для подготовки пользователей](define-conditional-rules-for-provisioning-user-accounts.md)

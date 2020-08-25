@@ -2,26 +2,21 @@
 title: Руководство по Интеграция Azure Active Directory со Sectigo Certificate Manager | Документация Майкрософт
 description: Из этой статьи вы узнаете, как настроить единый вход Azure Active Directory в Sectigo Certificate Manager.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 62cd6987-3373-4b58-b1ff-589f4a3d70a9
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0447a8dd464363ae7e076dde2520565005d7c0a5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d68e5335fff0341d8808e581061519977e1bb517
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67588234"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88543284"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sectigo-certificate-manager"></a>Руководство по Интеграция Azure Active Directory со Sectigo Certificate Manager
 
@@ -162,7 +157,7 @@ Sectigo Certificate Manager поддерживает следующие функ
 
     1. В поле **Имя** введите **BrittaSimon**.
   
-    1. В поле **Имя пользователя** введите значение **brittasimon\@\<домен_вашей_компании>.\<доменная_зона>\>** . Например, **brittasimon\@contoso.com**.
+    1. В поле **Имя пользователя** введите **brittasimon\@\<your-company-domain>.\<extension\>** . Например, **brittasimon\@contoso.com**.
 
     1. Установите флажок **Показать пароль**. Запишите значение, которое отображается в поле **Пароль**.
 

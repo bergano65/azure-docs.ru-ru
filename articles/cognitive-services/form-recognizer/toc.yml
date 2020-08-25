@@ -34,6 +34,10 @@
               href: quickstarts/curl-receipts.md
             - name: Python
               href: quickstarts/python-receipts.md
+        - name: Использование предварительно созданной модели визитной карточки
+          items:
+            - name: Python
+              href: quickstarts/python-business-cards.md
         - name: Получение сведений о структуре текста
           items:
             - name: Python
@@ -44,6 +48,12 @@
       href: 'https://docs.microsoft.com/azure/search/cognitive-search-custom-skill-form'
     - name: "Использование Распознавателя документов с AI\_Builder"
       href: tutorial-ai-builder.md
+- name: Основные понятия
+  items:
+    - name: Receipts
+      href: concept-receipts.md
+    - name: Визитные карточки
+      href: concept-business-cards.md
 - name: Практические руководства
   items:
     - name: Создание набора данных для обучения
@@ -64,6 +74,8 @@
       href: disaster-recovery.md
 - name: Справочник
   items:
+    - name: API Распознавателя документов версии 2.1 (предварительная версия)
+      href: 'https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeBusinessCardAsync'
     - name: API Распознавателя документов версии 2.0
       href: 'https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm'
     - name: Пакеты SDK

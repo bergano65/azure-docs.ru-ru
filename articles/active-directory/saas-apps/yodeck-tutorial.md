@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с Yodeck | Документы Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Yodeck.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: b2c8dccb-eeb0-4f4d-a24d-8320631ce819
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
-ms.openlocfilehash: af0748f36e8d2299921f987c517f7a4923bd0d55
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8eed884ed9d957ede4ae9fc192ae5a8e501b652e
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67086478"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546242"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-yodeck"></a>Учебник. Интеграция Azure Active Directory с Yodeck
 
@@ -119,13 +115,23 @@ ms.locfileid: "67086478"
 
 ### <a name="configure-yodeck-single-sign-on"></a>Настройка единого входа в Yodeck
 
+1. Для автоматизации настройки в **Yodeck** необходимо установить **Расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
+
+    ![Изображение](./media/target-process-tutorial/install_extension.png)
+
+1. Чтобы перейти к приложению Yodeck после добавления расширения в браузер, щелкните **Настройка Yodeck**. После этого укажите учетные данные администратора для входа в Yodeck. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–5.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+    **Если вы хотите настроить приложение вручную, выполните следующие действия:**
+
 1. В другом окне веб-браузера войдите на свой корпоративный сайт Yodeck в качестве администратора.
 
-2. Щелкните форму **Параметры пользователя** в правом верхнем углу страницы и выберите **Параметры учетной записи**.
+1. Щелкните форму **Параметры пользователя** в правом верхнем углу страницы и выберите **Параметры учетной записи**.
 
     ![Настройка Yodeck](./media/yodeck-tutorial/configure1.png)
 
-3. Выберите **SAML** и выполните следующие действия.
+1. Выберите **SAML** и выполните следующие действия.
 
     ![Настройка Yodeck](./media/yodeck-tutorial/configure2.png)
 
@@ -203,7 +209,7 @@ ms.locfileid: "67086478"
 
     ![Добавление сотрудника](./media/yodeck-tutorial/user2.png)
 
-4. На странице диалогового окна **Сведения о пользователе** выполните следующие действия.
+4. На диалоговой странице **Сведения о пользователе** выполните указанные ниже действия.
 
     ![Добавление сотрудника](./media/yodeck-tutorial/user3.png)
 

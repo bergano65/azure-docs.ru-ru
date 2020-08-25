@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 6738f598275e91ce8a811c3ef6bcc6d5dc84e0bd
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: bbc06b657525880f22bd5fb38e902f906d438c9c
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089504"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88565916"
 ---
 # <a name="quickstart-building-your-first-static-web-app"></a>Краткое руководство. Создание первого статического веб-приложения
 
@@ -98,7 +98,7 @@ ms.locfileid: "87089504"
 :::image type="content" source="media/getting-started/next-build-button.png" alt-text="Кнопка следующей сборки":::
 
 > [!NOTE]
->  Если вы не видите какие-либо репозитории, вам может потребоваться авторизовать Статические веб-приложения Azure на сайте GitHub. Перейдите к своему репозиторию GitHub и выберите **Параметры > Приложения > Авторизованные приложения OAuth**. Выберите **Azure Static Web Apps** (Статические веб-приложения Azure), а затем — **Предоставление права**. Чтобы предоставить разрешения для репозиториев организации, необходимо быть владельцем организации.
+>  Если вы не видите какие-либо репозитории, вам может потребоваться авторизовать Статические веб-приложения Azure на сайте GitHub. Перейдите на [домашнюю страницу GitHub](https://github.com) и щелкните на значок своей учетной записи, чтобы открыть раскрывающееся меню. Выберите **Settings** (Параметры), **Applications (Приложения) > Authorized OAuth Apps (Авторизованные приложения OAuth) > Azure Static Web Apps (Статические веб-приложения Azure)** , **Grant** (Предоставить). Чтобы предоставить разрешения для репозиториев организации, необходимо быть владельцем организации.
 
 ### <a name="build"></a>Сборка
 

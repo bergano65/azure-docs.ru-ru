@@ -1,5 +1,5 @@
 ---
-title: Подключение к Базе данных Azure для MySQL с помощью Python
+title: Краткое руководство. Подключение к Базе данных Azure для MySQL с помощью Python
 description: В этом кратком руководстве представлены примеры кода Python, которые можно использовать для подключения к базе данных Azure для MySQL и запроса данных из нее.
 author: ajlam
 ms.author: andrela
@@ -11,14 +11,14 @@ ms.custom:
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 5/26/2020
-ms.openlocfilehash: 8d417fdc604fa132e3ada5380b9e0a1f7326af04
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 32603514db76ceba4f1d9f8873c99b2e8a97eddf
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87843238"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185916"
 ---
-# <a name="quickstart-use-python-to-connect-and-query-data-with-azure-database-for-mysql"></a>Краткое руководство. Использование Python для подключения к данным и отправки запросов к ним с помощью Базы данных Azure для MySQL
+# <a name="quickstart-use-python-to-connect-and-query-data-in-azure-database-for-mysql"></a>Краткое руководство. Подключение к Базе данных Azure для MySQL и запрос данных с помощью Python
 
 Из этого краткого руководства вы узнаете, как подключиться к Базе данных Azure для MySQL с использованием Python. Также вы узнаете, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных на платформах Windows, Mac и Ubuntu Linux. 
 

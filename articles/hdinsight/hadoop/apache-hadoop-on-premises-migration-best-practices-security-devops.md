@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/19/2019
-ms.openlocfilehash: d190d3f133c4b12b58dade878dc66755c25e1ed8
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 99c5ff39820b652a33ab670e63ca709f8747c4cf
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86078380"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88751285"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---security-and-devops-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по обеспечению безопасности и операциям DevOps
 
@@ -44,7 +44,7 @@ ms.locfileid: "86078380"
 
     |Параметр |Описание |
     |---|---|
-    |Доменное имя|доменное имя, связанное с Azure AD DS.|
+    |Имя домена|доменное имя, связанное с Azure AD DS.|
     |Имя пользователя домена|учетная запись службы в управляемом домене Azure AD DS в контроллере домена, созданная в предыдущем разделе, например `hdiadmin@contoso.onmicrosoft.com`. Этот пользователь домена станет администратором этого кластера HDInsight.|
     |Пароль домена|пароль учетной записи службы.|
     |Подразделение|уникальное имя подразделения, которое необходимо использовать с кластером HDInsight, например `OU=HDInsightOU,DC=contoso,DC=onmicrosoft,DC=com`. Если это подразделение не существует, кластер HDInsight пытается создать подразделение с использованием привилегий учетной записи службы.|
@@ -83,9 +83,9 @@ ms.locfileid: "86078380"
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Что такое виртуальная сеть Azure?](../../virtual-network/virtual-networks-overview.md)
+- [Обзор виртуальных сетей Azure](../../virtual-network/virtual-networks-overview.md)
 - [Группы безопасности](../../virtual-network/security-overview.md)
-- [Пиринговая связь между виртуальными сетями Azure](../../virtual-network/virtual-network-peering-overview.md)
+- [Пиринг между виртуальными сетями Azure](../../virtual-network/virtual-network-peering-overview.md)
 - [Руководство по безопасности службы хранилища Azure](../../storage/blobs/security-recommendations.md)
 - [Шифрование службы хранилища Azure для неактивных данных](../../storage/common/storage-service-encryption.md)
 
@@ -112,8 +112,6 @@ ms.locfileid: "86078380"
 
 ## <a name="patch-cluster-operating-systems"></a>Исправление операционных систем кластера
 
-Являясь управляемой службой Hadoop, HDInsight отвечает за обновление путем частичной замены ОС виртуальных машин, используемых в кластерах HDInsight.
-
 Дополнительные сведения см. в статье [исправление ОС для HDInsight](../hdinsight-os-patching.md).
 
 ## <a name="post-migration"></a>Действия после миграции
@@ -122,6 +120,6 @@ ms.locfileid: "86078380"
 2. **Выполнение тестов**. Выполните функциональные тесты и тесты производительности в итеративном режиме.
 3. **Оптимизация**. Устраните любые проблемы с производительностью на основе вышеуказанных результатов тестов, а затем выполните повторное тестирование для подтверждения повышения производительности.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Сведения об HDInsight 4.0](https://docs.microsoft.com/azure/hdinsight/hadoop/apache-hadoop-introduction).

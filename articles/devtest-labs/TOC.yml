@@ -83,6 +83,8 @@
           href: devtest-lab-internal-support-message.md
         - name: Определение политик и расписаний
           href: devtest-lab-set-lab-policy.md
+        - name: "Настройка удостоверения лаборатории\_"
+          href: configure-lab-identity.md
         - name: Настройка лаборатории для использования шлюза удаленных рабочих столов
           href: configure-lab-remote-desktop-gateway.md
         - name: Публикация объявлений в лаборатории
@@ -95,8 +97,6 @@
           href: devtest-lab-auto-startup-vm.md
         - name: Масштабирование лаборатории
           href: devtest-lab-scale-lab.md
-        - name: Включение управляемых удостоверений для виртуальных машин лабораторий
-          href: enable-managed-identities-lab-vms.md
         - name: Управление резервными копиями виртуальной машины
           items:
             - name: Настройка образов Azure Marketplace
@@ -131,9 +131,9 @@
           items:
             - name: Портал Azure
               href: devtest-lab-add-vm.md
-            - name: Azure PowerShell;
+            - name: Azure PowerShell
               href: devtest-lab-vm-powershell.md
-            - name: Azure CLI;
+            - name: Azure CLI
               href: devtest-lab-vmcli.md
             - name: Шаблон Resource Manager
               href: devtest-lab-use-resource-manager-template.md
@@ -167,6 +167,8 @@
           href: start-machines-use-automation-runbooks.md
         - name: Импорт виртуальных машин между лабораториями
           href: import-virtual-machines-from-another-lab.md
+        - name: Включение управляемых удостоверений для виртуальных машин лабораторий
+          href: enable-managed-identities-lab-vms.md
     - name: Использование сред в лаборатории
       items:
         - name: Создание среды

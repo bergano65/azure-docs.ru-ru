@@ -9,12 +9,12 @@ ms.subservice: personalizer
 ms.topic: tutorial
 ms.date: 04/27/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 3aa45050286888dd8ae1d26d96c8ed02da197326
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 0cf2aa504fd7a36a55740b3a59eeb3759e67f469
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876739"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509915"
 ---
 # <a name="tutorial-use-personalizer-in-azure-notebook"></a>Руководство по Использование Персонализатора в Azure Notebook
 
@@ -623,7 +623,7 @@ Coffee count 4
 
 ## <a name="validate-new-learning-policy"></a>Проверка новой политики обучения
 
-Вернитесь к записной книжке Azure и повторите тот же цикл, но на этот раз по 2000 итераций. Время от времени обновляйте диаграмму метрик на портале Azure, чтобы отслеживать количество вызовов службы. Когда счетчик отобразит приблизительно 4000 вызовов (вызов оценки и вызов вознаграждения для каждой итерации цикла), процесс завершится.
+Вернитесь к файлу Записных книжек Azure и повторите тот же цикл, но на этот раз по 2000 итераций. Время от времени обновляйте диаграмму метрик на портале Azure, чтобы отслеживать количество вызовов службы. Когда счетчик отобразит приблизительно 4000 вызовов (вызов оценки и вызов вознаграждения для каждой итерации цикла), процесс завершится.
 
 ```python
 # max iterations

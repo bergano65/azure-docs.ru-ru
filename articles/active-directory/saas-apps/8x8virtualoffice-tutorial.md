@@ -2,25 +2,21 @@
 title: Руководство по Интеграция единого входа Azure Active Directory с 8x8 | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и 8x8.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: b34a6edf-e745-4aec-b0b2-7337473d64c5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 02/20/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c81e63a073882dea3a7aea32d5e9f4d3d5c48f7
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 52b45bf7457a81b605df91e63a7c6ad539309dd8
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87018656"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88538660"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-8x8"></a>Руководство по Интеграция единого входа Azure Active Directory с 8x8
 
@@ -48,7 +44,7 @@ ms.locfileid: "87018656"
 
 * 8x8 поддерживает вход, инициированный **поставщиком услуг или поставщиком удостоверений**.
 
-* После настройки 8x8 можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+* После настройки 8x8 вы можете применить управление сеансами, которое защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
 > [!NOTE]
 > Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
@@ -64,7 +60,7 @@ ms.locfileid: "87018656"
 1. В разделе **Добавление из коллекции** в поле поиска введите **8x8**.
 1. Выберите **8x8** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-8x8"></a>Настройка и проверка единого входа Azure AD для 8x8
+## <a name="configure-and-test-azure-ad-sso-for-8x8"></a>Настройка и проверка единого входа Azure AD для 8x8
 
 Настройте и проверьте единый вход Azure AD в 8x8 с помощью тестового пользователя **B.Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в 8x8.
 
@@ -139,7 +135,15 @@ ms.locfileid: "87018656"
 
 ### <a name="configure-8x8-configuration-manager"></a>Настройка с помощью 8x8 Configuration Manager
 
-1. Войдите в [8x8 Configuration Manager](https://vo-cm.8x8.com/).
+1. Для автоматизации настройки в 8x8 необходимо установить **расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
+
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+1. Чтобы перейти к приложению 8x8 после добавления расширения в браузер, щелкните **Настройка 8x8**. После этого укажите учетные данные администратора для входа в 8x8. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–6.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+1. Если вы хотите настроить 8x8 вручную, войдите в [Configuration Manager](https://vo-cm.8x8.com/) 8x8 с правами администратора.
 
 1. На домашней странице щелкните **Identity Management** (Управление идентификаторами).
 

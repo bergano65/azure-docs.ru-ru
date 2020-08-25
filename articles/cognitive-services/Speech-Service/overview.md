@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: overview
 ms.date: 06/25/2020
 ms.author: trbye
-ms.openlocfilehash: 43efc770f3a3b29a1b0fc214d2927c8c153dff96
-ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
+ms.openlocfilehash: 82099172a933496f015ae8fc575c1919a879e1f9
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85391644"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167748"
 ---
 # <a name="what-is-the-speech-service"></a>Что собой представляет служба "Речь"
 
-Служба "Речь" — это средства преобразования речи в текст, текста в речь и перевода речи, предоставляемые в рамках одной подписки Azure. Используя пакет [SDK для распознавания речи](speech-sdk-reference.md), [пакет SDK для речевых устройств](https://aka.ms/sdsdk-quickstart) или [REST API](rest-apis.md), можно легко добавлять в свои приложения, инструменты и устройства функции для работы с речью.
+Служба "Речь" — это средства преобразования речи в текст, текста в речь и перевода речи, предоставляемые в рамках одной подписки Azure. Используя [интерфейс командной строки службы "Речь"](spx-overview.md), [пакет SDK для распознавания речи](speech-sdk-reference.md), [пакет SDK для речевых устройств](https://aka.ms/sdsdk-quickstart), [Speech Studio](https://speech.microsoft.com/) или [REST API](rest-apis.md), можно легко добавлять в свои приложения, инструменты и устройства функции для работы с речью.
 
 > [!IMPORTANT]
 > В службе "Речь" заменены API "Распознавание речи Bing" и служба "Перевод речи". Указания по миграции см. в разделе _Практические руководства > Миграция_.

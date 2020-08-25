@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с Uberflip | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Uberflip.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 754b1f5b-6694-4fd6-9e1e-9fad769c64db
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: d20c05e6ec5a413b81ede9cb4906de2595967115
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8936c2150c32a22877f9b56736ecc4b8f3424b32
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80048478"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88533186"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-uberflip"></a>Руководство. Интеграция Azure Active Directory с Uberflip
 
@@ -153,7 +149,7 @@ Uberflip поддерживает следующие функции:
 
     1. В поле **Имя** введите **BSimon**.
   
-    1. В поле **Имя пользователя** введите **BSimon\@\<домен_вашей_компании>.\<доменная_зона>** . Например, **BSimon\@contoso.com**.
+    1. В поле **Имя пользователя** введите **BSimon\@\<yourcompanydomain>.\<extension>** . Например, **BSimon\@contoso.com**.
 
     1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 

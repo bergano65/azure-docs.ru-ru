@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: c24989c73aa4343fea2b719a5b1e8c63c06af010
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 0d4c5a33f52799ea4da9c7c23fbace94e800660b
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87835635"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589475"
 ---
 # <a name="linux-virtual-machines-in-azure"></a>Виртуальные машины Linux в Azure
 
@@ -51,6 +51,10 @@ ms.locfileid: "87835635"
 | Azure PowerShell |Используйте команду [Get-AzLocation](/powershell/module/az.resources/get-azlocation). |
 | REST API |Используйте операцию [вывода списка расположений](/rest/api/resources/subscriptions). |
 | Azure CLI |Используйте операцию [az account list-locations](/cli/azure/account?view=azure-cli-latest). |
+
+### <a name="singapore-data-residency"></a>Размещение данных в Сингапуре
+
+В Azure функция хранения данных клиентов в одном регионе в настоящее время доступна только для региона "Юго-Восточная Азия (Сингапур)" в Азиатско-Тихоокеанском географическом регионе. Для всех других регионов данные клиента хранятся в геообъектах. Дополнительные сведения см. на [этой странице](https://azuredatacentermap.azurewebsites.net/).
 
 ## <a name="availability"></a>Доступность
 В рамках отраслевого соглашения об уровне обслуживания Azure мы объявили о поддержке одного экземпляра виртуальной машины с гарантированной доступностью в течение 99,9 % времени при условии его развертывания с использованием хранилища класса Premium для всех дисков.  Чтобы обеспечить соответствие соглашению об уровне обслуживания с гарантированной доступностью виртуальных машин в течение 99,95 % времени, вам так или иначе нужно развернуть две или несколько виртуальных машин для выполнения рабочих нагрузок в рамках группы доступности. В группе доступности виртуальные машины распределяются по несколькими доменам сбоя в центрах обработки данных Azure, а также развертываются на узлах с разными периодами обслуживания. В полном [соглашении об уровне обслуживания Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/) поясняется гарантированная доступность Azure в целом.

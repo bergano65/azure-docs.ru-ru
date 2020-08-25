@@ -7,12 +7,12 @@ ms.topic: sample
 author: cjgronlund
 ms.author: cgronlun
 ms.date: 05/06/2020
-ms.openlocfilehash: a25f0ddeb35aaf880682780fd61bcbc3cedbad08
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: c24363caac1db8dd8ce21b690ef989b2beb97f2d
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82930324"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88506062"
 ---
 # <a name="example-jupyter-notebooks-show-how-to-enrich-data-with-open-datasets"></a>Примеры записных книжек Jupyter демонстрируют, как обогащать данные с помощью открытых наборов данных 
 Примеры записных книжек Jupyter для открытых наборов данных Azure демонстрируют, как загружать отрытые наборы данных и обогащать с их помощью демонстрационные данные. Для обработки данных используются такие техники, как Apache Spark и Pandas.
@@ -42,4 +42,5 @@ ms.locfileid: "82930324"
 
 * [Руководство. Создание регрессионной модели с помощью автоматизированного машинного обучения и открытого набора данных](/azure/machine-learning/tutorial-auto-train-models?context=azure/open-datasets/context/open-datasets-context)
 * [Пакет SDK для Python для открытых наборов данных](/python/api/azureml-opendatasets/azureml.opendatasets?view=azure-ml-py)
-* [Каталог открытых наборов данных Azure](https://azure.microsoft.com/services/open-datasets/catalog/)
+* [Каталог Открытых наборов данных Azure](https://azure.microsoft.com/services/open-datasets/catalog/)
+* [Создание набора данных Машинного обучения Azure из Открытых наборов данных](how-to-create-azure-machine-learning-dataset-from-open-dataset.md)

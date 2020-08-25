@@ -8,19 +8,41 @@
       displayName: release notes
       href: release-notes.md
 - name: Краткие руководства
-  expanded: true
   items:
-    - name: Трансляция с помощью портала и Wirecast
-      displayName: 'live, event, portal, wirecast'
-      href: live-events-wirecast-quickstart.md
-    - name: Трансляция с помощью портала и OBS
-      displayName: 'live, event, portal, obs'
-      href: live-events-obs-quickstart.md
-    - name: 'Отправка, кодирование и потоковая передача содержимого с помощью портала'
-      href: manage-assets-quickstart.md
-    - name: Шифрование содержимого с помощью портала
-      displayName: 'protect, drm, aes'
-      href: encrypt-content-quickstart.md
+    - name: Настройка среды
+      items:
+        - name: Поиск подписки Azure
+          href: how-to-set-azure-subscription.md
+        - name: Создание учетной записи служб мультимедиа
+          href: create-account-howto.md
+        - name: Доступ к API
+          href: access-api-howto.md
+        - name: Настройка Azure Cloud Shell
+          href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+        - name: Разработка с использованием REST
+          items:
+            - name: Подключение с помощью Postman
+              href: media-rest-apis-with-postman.md
+        - name: Разработка с использованием пакетов SDK
+          items:
+            - name: Подключение с помощью Java
+              href: configure-connect-java-howto.md
+            - name: Подключение с помощью .NET
+              href: configure-connect-dotnet-howto.md
+            - name: Подключение с помощью Node.js
+              href: configure-connect-nodejs-howto.md
+            - name: Подключение с помощью Python
+              href: configure-connect-python-howto.md
+    - name: Пробное использование Служб мультимедиа на портале Azure
+      items:
+        - name: Трансляция с помощью портала и Wirecast
+          href: live-events-wirecast-quickstart.md
+        - name: Трансляция с помощью портала и OBS
+          href: live-events-obs-quickstart.md
+        - name: 'Отправка, кодирование и потоковая передача содержимого с помощью портала'
+          href: manage-assets-quickstart.md
+        - name: Шифрование содержимого с помощью портала
+          href: encrypt-content-quickstart.md
 - name: Учебники
   items:
     - name: Кодирование размещенных удаленно файлов и потоковая передача видео
@@ -56,6 +78,7 @@
     - name: Примеры REST для Служб мультимедиа версии 3
       href: 'https://github.com/Azure-Samples/media-services-v3-rest-postman'
 - name: Основные понятия
+  expanded: true
   items:
     - name: Обзор
       href: concepts-overview.md
@@ -207,6 +230,8 @@
               href: live-event-error-codes.md
             - name: Коды ошибок задания
               href: job-error-codes.md
+        - name: Сброс данных учетной записи
+          href: cli-reset-account-credentials.md
     - name: Миграция из версии 2 в версию 3
       items:
         - name: Сравнение версий 2 и 3
@@ -217,70 +242,30 @@
           displayName: naming
 - name: Практические руководства
   items:
-    - name: Начало работы
-      items:
-        - name: Поиск подписки Azure
-          href: how-to-set-azure-subscription.md
-        - name: Создание учетной записи служб мультимедиа
-          href: create-account-howto.md
-          displayName: 'portal, cli, storage'
-        - name: Доступ к API
-          displayName: 'portal, cli'
-          href: access-api-howto.md
-        - name: Разработка с использованием REST
-          items:
-            - name: Подключение с помощью Postman
-              href: media-rest-apis-with-postman.md
-        - name: Разработка с использованием пакетов SDK
-          items:
-            - name: Подключение с помощью Java
-              href: configure-connect-java-howto.md
-            - name: Подключение с помощью .NET
-              href: configure-connect-dotnet-howto.md
-            - name: Подключение с помощью Node.js
-              href: configure-connect-nodejs-howto.md
-            - name: Подключение с помощью Python
-              href: configure-connect-python-howto.md
-        - name: Сброс данных учетной записи
-          href: cli-reset-account-credentials.md
-    - name: Создание ресурсов и управление ими
+    - name: Создание ресурсов и отправка носителя
       items:
         - name: Создание ресурса
           href: how-to-create-asset.md
-    - name: Передача содержимого
-      items:
-        - name: С URL-адреса HTTPS
-          displayName: upload
-          href: job-input-from-http-how-to.md
-        - name: Из локального файла
-          items:
-            - name: С помощью .NET
-              displayName: upload
-              href: job-input-from-local-file-how-to.md
-            - name: С помощью REST
-              displayName: upload
-              href: upload-files-rest-how-to.md
-            - name: С помощью CLI
-              href: cli-upload-file-asset.md
+        - name: Отправка носителя
+          href: how-to-upload-media.md
     - name: Создание преобразований и заданий
       items:
         - name: Создание преобразований
           href: cli-create-transform.md
         - name: Создание заданий
           href: cli-create-jobs.md
+        - name: Создание входных данных задания с помощью локального файла и .NET
+          displayName: upload
+          href: job-input-from-local-file-how-to.md
         - name: Задания с несколькими результатами преобразования
           href: job-multiple-transform-outputs.md
     - name: Кодирование контента
       items:
         - name: URL-адрес HTTPS в качестве входных данных для задания
-          displayName: 'encode, encoding'
           href: job-input-from-http-how-to.md
         - name: Локальный файл в качестве входных данных для задания
-          displayName: 'encode, encoding'
           href: job-input-from-local-file-how-to.md
         - name: Кодирование с помощью пользовательского преобразования
-        - name: Масштабирование зарезервированных единиц мультимедиа
-          href: media-reserved-units-cli-how-to.md
           items:
             - name: С помощью .NET
               displayName: 'encode, encoding, custom, transform'
@@ -299,6 +284,8 @@
               href: custom-preset-rest-howto.md
             - name: Создание эскизов с помощью REST
               href: media-services-generate-thumbnails-rest.md
+            - name: Масштабирование зарезервированных единиц мультимедиа
+              href: media-reserved-units-cli-how-to.md
         - name: Создание субклипа из видео
           items:
             - name: С помощью .NET

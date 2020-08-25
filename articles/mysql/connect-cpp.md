@@ -1,5 +1,5 @@
 ---
-title: Подключение к Базе данных Azure для MySQL с помощью C++
+title: Краткое руководство. Подключение к Базе данных Azure для MySQL с помощью C++
 description: В этом кратком руководстве представлен пример кода C++, который можно использовать для подключения к базе данных Azure для MySQL и запроса данных из нее.
 author: ajlam
 ms.author: andrela
@@ -8,17 +8,19 @@ ms.custom: mvc
 ms.devlang: cpp
 ms.topic: quickstart
 ms.date: 5/26/2020
-ms.openlocfilehash: a8c922912cae72e1b4344d4d970ec9f3b4949d9f
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 6aa550a9c3f58fc7101e632bcd56800b27efc84e
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83871516"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185984"
 ---
-# <a name="azure-database-for-mysql-use-connectorc-to-connect-and-query-data"></a>База данных Azure для MySQL: подключение и запрос данных с помощью Connector/C++
+# <a name="quickstart-use-connectorc-to-connect-and-query-data-in-azure-database-for-mysql"></a>Краткое руководство. Подключение к Базе данных Azure для MySQL и запрос данных с помощью Connector/C++
+
 В этом кратком руководстве объясняется, как подключиться к базе данных Azure для MySQL с помощью приложения C++. Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этом разделе предполагается, что у вас уже есть опыт разработки на C++ и вы только начали работу с Базой данных Azure для MySQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 В качестве отправной точки в этом кратком руководстве используются ресурсы, созданные в соответствии со следующими руководствами:
 - [Create an Azure Database for MySQL server using Azure portal](./quickstart-create-mysql-server-database-using-azure-portal.md) (Создание базы данных Azure для сервера MySQL с помощью портала Azure)
 - [Краткое руководство. Создание сервера базы данных Azure для MySQL с помощью Azure CLI](./quickstart-create-mysql-server-database-using-azure-cli.md)

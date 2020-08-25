@@ -150,41 +150,45 @@
       href: concept-ml-pipelines.md
     - name: Готовность к работе и безопасность в масштабах предприятия
       items:
+        - name: Общие сведения об обеспечении безопасности на уровне предприятия
+          displayName: authorization authentication encryption aad azure active directory
+          href: concept-enterprise-security.md
         - name: Базовые средства безопасности
           href: security-baseline.md
-        - name: Системы безопасности и управления корпоративного уровня
+        - name: управление удостоверениями и доступом;
           items:
-            - name: Общие сведения об обеспечении безопасности на уровне предприятия
-              displayName: authorization authentication encryption aad azure active directory
-              href: concept-enterprise-security.md
+            - name: Настройка проверки подлинности
+              displayName: 'authentication, auth, oauth'
+              href: how-to-setup-authentication.md
             - name: управление пользователями и ролями;
               href: how-to-assign-roles.md
+            - name: "Использование удостоверений Azure\_AD в развертываниях AKS"
+              href: how-to-use-azure-ad-identity.md
+        - name: Безопасность сети
+          items:
             - name: Использование виртуальных сетей
               displayName: 'vnet, blob'
               href: how-to-enable-virtual-network.md
             - name: Использование Приватного канала
               displayName: private endpoint
               href: how-to-configure-private-link.md
-            - name: Защита веб-служб с помощью TLS
-              displayName: ssl
+            - name: Настройка безопасных веб-служб
+              displayName: 'ssl, tls'
               href: how-to-secure-web-service.md
+            - name: Настройка брандмауэра
+              href: how-to-access-azureml-behind-firewall.md
+        - name: Защита данных
+          items:
             - name: Повышения устойчивости
               displayName: 'high availability, disaster recovery'
               href: how-to-high-availability-machine-learning.md
-            - name: "Использование удостоверений Azure\_AD в развертываниях AKS"
-              href: how-to-use-azure-ad-identity.md
             - name: Повторное создание ключей доступа к хранилищу
               href: how-to-change-storage-access-key.md
-            - name: Использование Брандмауэра Azure
-              href: how-to-access-azureml-behind-firewall.md
-            - name: Написание безопасного кода
-              href: concept-secure-code-best-practice.md
-              displayName: security threat
-        - name: Настройка проверки подлинности
-          displayName: 'authentication, auth, oauth'
-          href: how-to-setup-authentication.md
         - name: Мониторинг Машинного обучения Azure
           href: monitor-azure-machine-learning.md
+        - name: Написание безопасного кода
+          href: concept-secure-code-best-practice.md
+          displayName: security threat
     - name: Ответственный подход к машинному обучению
       items:
         - name: Общие сведения об ответственном подходе к машинному обучению

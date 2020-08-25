@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: fb8687c091e8c34ad1fbae2a50981327b3994b6e
-ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
+ms.openlocfilehash: 9bd4c7f17ec1a75e54ca857325cdbb7bf3358511
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85051941"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88234709"
 ---
 # <a name="what-is-conditional-access"></a>Что собой представляет условный доступ
 
@@ -38,7 +38,8 @@ ms.locfileid: "85051941"
 
 ![Поток процесса концептуального условного доступа](./media/overview/conditional-access-overview-how-it-works.png)
 
-Политики условного доступа применяются после того, как пользователь прошел однофакторную аутентификацию. Условный доступ не предназначен в качестве первой линии защиты организации для таких сценариев, как атаки типа "отказ в обслуживании" (DoS), но может использовать сигналы этих событий для определения доступа.
+> [!IMPORTANT]
+> Политики условного доступа применяются после того, как пользователь прошел однофакторную аутентификацию. Условный доступ не может служить первой линией защиты организации для таких сценариев, как атаки типа "отказ в обслуживании" (DoS), но может использовать сигналы этих событий для определения доступа.
 
 ## <a name="common-signals"></a>Общие сигналы
 

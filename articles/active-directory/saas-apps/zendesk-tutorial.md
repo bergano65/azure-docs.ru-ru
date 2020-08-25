@@ -2,25 +2,21 @@
 title: Руководство по Интеграция Azure Active Directory с Zendesk | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Zendesk.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: 9d7c91e5-78f5-4016-862f-0f3242b00680
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 03/26/2020
+ms.date: 08/13/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f70e7067a78b439d3dcaf0b83460296cad7b4485
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: c7d452803d15bab77df8e85a861de914a5ed08d5
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80585802"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546075"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-zendesk"></a>Руководство по Интеграция единого входа Azure Active Directory с Zendesk
 
@@ -143,13 +139,21 @@ ms.locfileid: "80585802"
 
 ## <a name="configure-zendesk-sso"></a>Настройка единого входа Zendesk
 
+1. Для автоматизации настройки в **Zendesk** необходимо установить **расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
+
+    ![Изображение](./media/target-process-tutorial/install_extension.png)
+
+1. Чтобы перейти к приложению Zendesk после добавления расширения в браузере, щелкните **Настройка Zendesk**. После этого укажите учетные данные администратора для входа в Zendesk. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–6.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
 1. Если необходимо вручную настроить Zendesk, откройте новое окно веб-браузера, зайдите на сайт компании Zendesk с правами администратора и выполните следующие действия.
 
-2. Щелкните **Администратор**.
+1. Щелкните **Администратор**.
 
-3. В области навигации слева щелкните **Settings** (Параметры), а затем щелкните **Security** (Безопасность).
+1. В области навигации слева щелкните **Settings** (Параметры), а затем щелкните **Security** (Безопасность).
 
-4. На странице **Безопасность** сделайте следующее:
+1. На странице **Безопасность** сделайте следующее:
 
     ![Безопасность](./media/zendesk-tutorial/ic773089.png "Безопасность")
 

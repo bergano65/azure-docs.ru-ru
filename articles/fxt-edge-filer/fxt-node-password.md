@@ -1,17 +1,17 @@
 ---
 title: Руководство по Инициализация оборудования Azure FXT Edge Filer
-description: Настройка исходного пароля на узлах Azure FXT Edge Filer
+description: Узнайте, как подключиться к аппаратному узлу и установить пароль для узлов Azure FXT Edge Filer.
 author: ekpgh
 ms.author: rohogue
 ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
-ms.openlocfilehash: 8cb5f639deb0630575c46db30efe70ad967324a8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4fae7795cdd61e3eb465285163bcd6c0dd9f7db2
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75550897"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88184930"
 ---
 # <a name="tutorial-set-hardware-passwords"></a>Руководство по Настройка паролей для оборудования
 

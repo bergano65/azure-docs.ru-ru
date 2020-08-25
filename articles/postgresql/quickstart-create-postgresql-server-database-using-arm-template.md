@@ -1,18 +1,18 @@
 ---
-title: Создание Базы данных Azure для PostgreSQL с помощью шаблона ARM
-description: В этой статье показано, как создать сервер Базы данных Azure для PostgreSQL с помощью шаблона Azure Resource Manager.
+title: Краткое руководство. Создание Базы данных Azure для PostgreSQL с помощью шаблона Resource Manager
+description: В этой статье показано, как создать отдельный сервер Базы данных Azure для PostgreSQL с помощью шаблона Azure Resource Manager.
 author: mgblythe
 ms.service: postgresql
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mblythe
 ms.date: 05/14/2020
-ms.openlocfilehash: 5bdcbe620e88700c5607162cd2471f6b2c3e7532
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 00e8910627690d4713a7a86a56262519610c2392
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86132837"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88183859"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-postgresql---single-server"></a>Краткое руководство. Создание Базы данных Azure для PostgreSQL с помощью шаблона ARM (отдельный сервер)
 

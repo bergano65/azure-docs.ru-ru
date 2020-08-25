@@ -1,5 +1,5 @@
 ---
-title: Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Ruby
+title: Краткое руководство. Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Ruby
 description: В этом кратком руководстве представлен пример кода Ruby, который можно использовать для подключения к службе "База данных Azure для PostgreSQL — отдельный сервер" и запроса данных из нее.
 author: rachel-msft
 ms.author: raagyema
@@ -8,14 +8,15 @@ ms.custom: mvc
 ms.devlang: ruby
 ms.topic: quickstart
 ms.date: 5/6/2019
-ms.openlocfilehash: 5dd4cfe9bee0db6f14f736c79fe91770641008fb
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 98814060fb9ae669fc4e9a90fcda6319bbfaeacf
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74766911"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88182550"
 ---
-# <a name="azure-database-for-postgresql---single-server-use-ruby-to-connect-and-query-data"></a>База данных Azure для PostgreSQL — отдельный сервер: подключение и запрос данных с помощью Ruby
+# <a name="quickstart-use-ruby-to-connect-and-query-data-in-azure-database-for-postgresql---single-server"></a>Краткое руководство. Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" и выполнение запроса данных с помощью Ruby
+
 В этом кратком руководстве описывается, как подключиться к базе данных Azure для PostgreSQL с помощью приложения [Ruby](https://www.ruby-lang.org). Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на Ruby и вы только начали работу с базой данных Azure для PostgreSQL.
 
 ## <a name="prerequisites"></a>Предварительные требования

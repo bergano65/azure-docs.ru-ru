@@ -1,35 +1,39 @@
 ---
-title: Краткое руководство Azure по выполнению пакетного задания с помощью CLI
-description: Быстро научитесь выполнять пакетное задание с помощью Azure CLI. Создание ресурсов Azure и управление ими из командной строки или с помощью скриптов.
+title: Краткое руководство. Выполнение первого пакетного задания с помощью Azure CLI
+description: Быстро научитесь создавать учетную запись пакетной службы и выполнять пакетное задание с помощью Azure CLI.
 ms.topic: quickstart
-ms.date: 07/03/2018
+ms.date: 08/13/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 4c56695180f8f07384f31b750cec03f9d14fb9da
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 8824d4485167955dd1b928bc57381b2e6b672c5d
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87504166"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213095"
 ---
 # <a name="quickstart-run-your-first-batch-job-with-the-azure-cli"></a>Краткое руководство. Выполнение пакетного задания с помощью Azure CLI
 
-Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом кратком руководстве показано, как использовать Azure CLI для создания учетной записи пакетной службы, *пула* вычислительных узлов (виртуальных машин) и *заданий*, выполняющих *задачи* в пуле. Каждый образец задачи запускает основную команду на одном из узлов пула. Выполняя действия из этого краткого руководства, вы изучите основные понятия пакетной службы и сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе.
+Начните работу с пакетной службой Azure, чтобы с помощью Azure CLI создать учетную запись пакетной службы, пул вычислительных узлов (виртуальных машин) и задание, выполняющее задачи в пуле. Каждый образец задачи запускает основную команду на одном из узлов пула.
 
-[!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
+Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. Выполняя действия из этого краткого руководства, вы изучите основные понятия пакетной службы и сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
+
+- Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.20 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.20 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). 
-
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. 
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
-В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus2*.
+Следующий пример создает группу ресурсов с именем *QuickstartBatch-rg* в расположении *eastus2*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az group create \
-    --name myResourceGroup \
+    --name QuickstartBatch-rg \
     --location eastus2
 ```
 
@@ -39,7 +43,7 @@ az group create \
 
 ```azurecli-interactive
 az storage account create \
-    --resource-group myResourceGroup \
+    --resource-group QuickstartBatch-rg \
     --name mystorageaccount \
     --location eastus2 \
     --sku Standard_LRS
@@ -49,22 +53,22 @@ az storage account create \
 
 Создайте учетную запись пакетной службы с помощью команды [az batch account create](/cli/azure/batch/account#az-batch-account-create). Для создания вычислительных ресурсов (пулов вычислительных узлов) и пакетных заданий необходима учетная запись.
 
-В следующем примере создается учетная запись пакетной службы с именем *mybatchaccount* в группе ресурсов *myResourceGroup*. Она связывается с созданной учетной записью хранения.  
+Следующий пример создает учетную запись пакетной службы с именем *mybatchaccount* в группе ресурсов *QuickstartBatch-rg*. Она связывается с созданной учетной записью хранения.  
 
-```azurecli-interactive 
+```azurecli-interactive
 az batch account create \
     --name mybatchaccount \
     --storage-account mystorageaccount \
-    --resource-group myResourceGroup \
+    --resource-group QuickstartBatch-rg \
     --location eastus2
 ```
 
 Для создания пулов вычислений и заданий, а также управления ими необходимо выполнить проверку подлинности с помощью пакетной службы. Войдите в учетную запись с помощью команды [az batch account login](/cli/azure/batch/account#az-batch-account-login). После входа ваши команды `az batch` используют контекст учетной записи.
 
-```azurecli-interactive 
+```azurecli-interactive
 az batch account login \
     --name mybatchaccount \
-    --resource-group myResourceGroup \
+    --resource-group QuickstartBatch-rg \
     --shared-key-auth
 ```
 
@@ -77,7 +81,7 @@ az batch pool create \
     --id mypool --vm-size Standard_A1_v2 \
     --target-dedicated-nodes 2 \
     --image canonical:ubuntuserver:16.04-LTS \
-    --node-agent-sku-id "batch.node.ubuntu 16.04" 
+    --node-agent-sku-id "batch.node.ubuntu 16.04"
 ```
 
 В пакетной службе сразу же создается пул, но для выделения и запуска вычислительных узлов понадобится несколько минут. В течение этого времени пул находится в состоянии `resizing`. Чтобы увидеть состояние пула, выполните команду [az batch pool show](/cli/azure/batch/pool#az-batch-pool-show). Эта команда отображает все свойства пула, и вы можете запрашивать определенные свойства. С помощью следующей команды можно получить сведения о состоянии распределения пула:
@@ -87,13 +91,13 @@ az batch pool show --pool-id mypool \
     --query "allocationState"
 ```
 
-Для создания задания и задач при изменении состояния пула выполните следующие шаги. Пул готов к выполнению задач, если состояние распределения — `steady` и все узлы работают. 
+Для создания задания и задач при изменении состояния пула выполните следующие шаги. Пул готов к выполнению задач, если состояние распределения — `steady` и все узлы работают.
 
 ## <a name="create-a-job"></a>Создание задания
 
-Получив пул, создайте задание, которое будет выполняться в нем.  Пакетное задание — это логическая группа для одной или нескольких задач. Задание включает в себя параметры, общие для задач (например, приоритет и пул для запуска задач). Создайте пакетное задание, используя команду [az batch job create](/cli/azure/batch/job#az-batch-job-create). В следующем примере создается задание *myjob* в пуле *mypool*. Изначально у задания нет задач.
+Получив пул, создайте задание, которое будет выполняться в нем. Пакетное задание — это логическая группа для одной или нескольких задач. Задание включает в себя параметры, общие для задач (например, приоритет и пул для запуска задач). Создайте пакетное задание, используя команду [az batch job create](/cli/azure/batch/job#az-batch-job-create). В следующем примере создается задание *myjob* в пуле *mypool*. Изначально у задания нет задач.
 
-```azurecli-interactive 
+```azurecli-interactive
 az batch job create \
     --id myjob \
     --pool-id mypool
@@ -105,7 +109,7 @@ az batch job create \
 
 Следующий сценарий Bash создает 4 параллельных задачи (с *mytask1* до *mytask4*).
 
-```azurecli-interactive 
+```azurecli-interactive
 for i in {1..4}
 do
    az batch task create \
@@ -123,7 +127,7 @@ done
 
 Просмотреть состояние пакетных задач можно с помощью команды [az batch task show](/cli/azure/batch/task#az-batch-task-show). В следующем примере показаны подробные сведения о задаче *mytask1*, выполняемой на одном из узлов пула.
 
-```azurecli-interactive 
+```azurecli-interactive
 az batch task show \
     --job-id myjob \
     --task-id mytask1
@@ -133,9 +137,9 @@ az batch task show \
 
 ## <a name="view-task-output"></a>Просмотр выходных данных задачи
 
-Чтобы получить список файлов, созданных задачей на вычислительном узле, используйте команду [az batch task file list](/cli/azure/batch/task). Следующая команда создает список файлов, созданных при выполнении задачи *mytask1*: 
+Чтобы получить список файлов, созданных задачей на вычислительном узле, используйте команду [az batch task file list](/cli/azure/batch/task). Следующая команда создает список файлов, созданных при выполнении задачи *mytask1*:
 
-```azurecli-interactive 
+```azurecli-interactive
 az batch task file list \
     --job-id myjob \
     --task-id mytask1 \
@@ -154,7 +158,7 @@ stderr.txt  https://mybatchaccount.eastus2.batch.azure.com/jobs/myjob/tasks/myta
 
 ```
 
-Чтобы скачать один из выходных файлов в локальный каталог, используйте команду [az batch task file download](/cli/azure/batch/task). В этом примере выходные данные задачи находятся в файле `stdout.txt`. 
+Чтобы скачать один из выходных файлов в локальный каталог, используйте команду [az batch task file download](/cli/azure/batch/task). В этом примере выходные данные задачи находятся в файле `stdout.txt`.
 
 ```azurecli-interactive
 az batch task file download \
@@ -183,10 +187,12 @@ AZ_BATCH_TASK_ID=mytask1
 AZ_BATCH_ACCOUNT_NAME=mybatchaccount
 AZ_BATCH_TASK_USER_IDENTITY=PoolNonAdmin
 ```
+
 ## <a name="clean-up-resources"></a>Очистка ресурсов
+
 Если вы хотите продолжить изучение примеров и руководств по пакетной службе, используйте учетную запись пакетной службы и связанную учетную запись хранения, созданную при выполнении инструкций в этом кратком руководстве. Плата за использование самой пакетной службы не взимается.
 
-Но если во время работы узлов используются пулы, плата взимается, даже если задания не запланированы. Если пул больше не нужен, удалите его, используя команду [az batch pool delete](/cli/azure/batch/pool#az-batch-pool-delete). При удалении пула удаляются все выходные данные задачи на узлах. 
+Но если во время работы узлов используются пулы, плата взимается, даже если задания не запланированы. Если пул больше не нужен, удалите его, используя команду [az batch pool delete](/cli/azure/batch/pool#az-batch-pool-delete). При удалении пула удаляются все выходные данные задачи на узлах.
 
 ```azurecli-interactive
 az batch pool delete --pool-id mypool
@@ -194,14 +200,13 @@ az batch pool delete --pool-id mypool
 
 Вы можете удалить ставшие ненужными группу ресурсов, учетную запись пакетной службы, пулы и все связанные с ними ресурсы, выполнив команду [az group delete](/cli/azure/group#az-group-delete). Удалите ресурсы следующим образом:
 
-```azurecli-interactive 
-az group delete --name myResourceGroup
+```azurecli-interactive
+az group delete --name QuickstartBatch-rg
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы создали учетную запись и пул пакетной службы, а также пакетное задание. Это задание запустило образцы задач, и вы просмотрели выходные данные на одном узле. Изучив основные понятия пакетной службы, вы сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе. Чтобы узнать больше о пакетной службе Azure, изучите следующие руководства. 
-
+В этом кратком руководстве вы создали учетную запись и пул пакетной службы, а также пакетное задание. Это задание запустило образцы задач, и вы просмотрели выходные данные на одном узле. Изучив основные понятия пакетной службы, вы сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе. Чтобы узнать больше о пакетной службе Azure, изучите следующие руководства.
 
 > [!div class="nextstepaction"]
 > [Руководства по пакетной службе Azure](./tutorial-parallel-dotnet.md)

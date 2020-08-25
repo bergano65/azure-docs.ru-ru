@@ -2,26 +2,21 @@
 title: Руководство по интеграции единого входа Azure Active Directory со SAP Fiori | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SAP Fiori.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 77ad13bf-e56b-4063-97d0-c82a19da9d56
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/05/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 917ba9274276fec5d01a40bdf7219e8d4fee1395
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4d2f6766fa32beb9cebaa8f77c04f6865e15e14d
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78897758"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88543400"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sap-fiori"></a>Руководство по Интеграции единого входа Azure Active Directory с SAP Fiori
 
@@ -126,7 +121,7 @@ ms.locfileid: "78897758"
 1. В поле **Имя поставщика** замените **T01122** на **http:\//T01122**, а затем выберите **Сохранить**.
 
     > [!NOTE]
-    > По умолчанию имя поставщика имеет формат \<sid>\<клиент>. Azure AD ожидает имя в формате \<протокол>://\<имя>. Мы рекомендуем использовать имя поставщика в формате https\://\<sid>\<клиент>, чтобы в Azure AD можно было настроить несколько ядер ABAP SAP Fiori.
+    > По умолчанию имя поставщика имеет формат \<sid>\<client>. Azure AD ожидает имя в формате \<protocol>://\<name>. Мы рекомендуем использовать имя поставщика в формате https\://\<sid>\<client>, чтобы в Azure AD можно было настроить несколько ядер ABAP SAP Fiori.
 
     ![Обновленное имя поставщика на странице "SAML 2.0 Configuration of ABAP System T01/122" (Настройка SAML 2.0 системы ABAP T01/122) в SAP](./media/sapfiori-tutorial/tutorial-sapnetweaver-providername.png)
 

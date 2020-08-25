@@ -10,16 +10,19 @@ ms.date: 08/01/2020
 ms.author: jafreebe
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 8289b21da5009459d2eb7ddc8d26b549f0920317
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 274228ea5aa9ac9de9725176c8b6221ee9e9542e
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88084110"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88182703"
 ---
 # <a name="quickstart-create-a-java-app-on-azure-app-service"></a>Краткое руководство. Создание приложения Java в Службе приложений Azure
 
 [Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.  В этом кратком руководстве показано, как использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) с [подключаемым модулем веб-приложения Azure для Maven](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin), чтобы развернуть файл веб-архива (WAR) Java.
+
+> [!NOTE]
+> В этой статье мы работаем только с приложениями Java, которые упакованы в WAR-файлы. Подключаемый модуль также поддерживает веб-приложения JAR. См. руководство по [развертыванию файла JAR Java SE в Службе приложений в Linux](https://docs.microsoft.com/java/azure/spring-framework/deploy-spring-boot-java-app-with-maven-plugin?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
 
 > [!NOTE]
 > То же самое можно выполнить с помощью популярных интегрированных сред разработки, например IntelliJ и Eclipse. См. подробнее об [Azure Toolkit for IntelliJ](/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app) и [Azure Toolkit for Eclipse](/azure/developer/java/toolkit-for-eclipse/create-hello-world-web-app).
@@ -53,12 +56,12 @@ cd helloworld
 mvn com.microsoft.azure:azure-webapp-maven-plugin:1.9.1:config
 ```
 
-::: zone pivot="platform-windows"  
+::: zone pivot="platform-windows" 
 Вам будет предложено выбрать: 
 * **ОС (по умолчанию: `linux`);**
 * **версию Java (по умолчанию: `1.8`);**
 * **веб-контейнер (по умолчанию: `tomcat 8.5`).** 
-
+ 
 Обязательно введите **`2`** , чтобы выбрать ОС **Windows** на первом шаге. Для других настроек можно сохранить значения по умолчанию, нажав клавишу **ВВОД**. Наконец, нажмите **`Y`** при появлении запроса **Confirm (Y/N)** (Подтвердить (Д/Н)), чтобы завершить настройку.
 
 Пример процесса выглядит следующим образом.
@@ -137,6 +140,13 @@ Confirm (Y/N)? :
 ```
 ::: zone-end
 ::: zone pivot="platform-linux"  
+
+Вам будет предложено выбрать: 
+* **ОС (по умолчанию: `linux`);**
+* **версию Java (по умолчанию: `Java 8`);**
+* **веб-контейнер (по умолчанию: `Tomcat 8.5`).** 
+
+Для всех остальных настроек можно сохранить значения по умолчанию, нажав клавишу **ВВОД**. Наконец, нажмите **`Y`** при появлении запроса **Confirm (Y/N)** (Подтвердить (Д/Н)), чтобы завершить настройку.
 Пример процесса выглядит следующим образом.
 
 ```cmd
@@ -174,16 +184,7 @@ Confirm (Y/N)? : Y
 ```
 ::: zone-end
 
-> [!NOTE]
-> В этой статье мы работаем только с приложениями Java, которые упакованы в WAR-файлы. Подключаемый модуль также поддерживает веб-приложения JAR. См. руководство по [развертыванию файла JAR Java SE в Службе приложений в Linux](https://docs.microsoft.com/java/azure/spring-framework/deploy-spring-boot-java-app-with-maven-plugin?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
-
-Откройте файл `pom.xml`, чтобы просмотреть обновленную конфигурацию.
-
-```bash
-code pom.xml
-```
-
-При необходимости вы можете изменить другие параметры Службы приложений непосредственно в POM-файле. Некоторые из них перечислены ниже.
+При необходимости вы можете изменить другие параметры Службы приложений непосредственно в `pom.xml`. Некоторые из них перечислены ниже.
 
  Свойство | Обязательно | Описание | Версия
 ---|---|---|---
@@ -195,11 +196,8 @@ code pom.xml
 `<runtime>` | Да | Конфигурация среды выполнения. Дополнительные сведения см. [здесь](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme). | Версия 0.1.0 и выше
 `<deployment>` | Да | Конфигурация развертывания. Дополнительные сведения см. [здесь](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme). | Версия 0.1.0 и выше
 
-::: zone pivot="platform-windows"
 Запишите значения `<appName>` и `<resourceGroup>`(`helloworld-1590394316693` и `helloworld-1590394316693-rg` соответственно в демонстрации), так как они понадобятся позже.
-::: zone-end
-::: zone pivot="platform-linux"
-::: zone-end
+
 > [!div class="nextstepaction"]
 > [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=quickstart-java&step=config)
 
@@ -216,21 +214,11 @@ az login
 mvn package azure-webapp:deploy
 ```
 
-::: zone pivot="platform-windows"
 После завершения развертывания ваше приложение будет готово к работе по адресу `http://<appName>.azurewebsites.net/`(`http://helloworld-1590394316693.azurewebsites.net` в демонстрации). Откройте URL-адрес в своем локальном веб-браузере. Вы должны увидеть следующее:
 
-![Приложение, работающее в Службе приложений Azure](./media/app-service-web-get-started-java/java-hello-world-in-browser-azure-app-service.png)
+![Приложение, работающее в Службе приложений Azure](./media/quickstart-java/java-hello-world-in-browser-azure-app-service.png)
 
-**Поздравляем!** Вы развернули свое первое приложение Java в Службе приложений на платформе Windows.
-
-[!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
-::: zone-end
-::: zone pivot="platform-linux"
-По завершению развертывания перейдите к развернутому приложению, используя следующий URL-адрес в своем веб-браузере, например `http://<webapp>.azurewebsites.net`. 
-
-![Приложение, работающее в Службе приложений Azure](media/quickstart-java/java-hello-world-in-browser-azure-app-service.png)
-
-**Поздравляем!** Вы развернули свое первое приложение Java в службе приложений на платформе Linux.
+**Поздравляем!** Вы развернули свое первое приложение Java в службе приложений.
 
 > [!div class="nextstepaction"]
 > [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=app-service-linux-quickstart&step=deploy)
@@ -244,19 +232,6 @@ az group delete --name <your resource group name; for example: helloworld-155840
 ```
 
 Ее выполнение может занять до минуты.
-::: zone-end
-
-После завершения развертывания ваше приложение будет готово к работе по адресу `http://<appName>.azurewebsites.net/`(`http://helloworld-1590394316693.azurewebsites.net` в демонстрации). Откройте URL-адрес в своем локальном веб-браузере. Вы должны увидеть следующее:
-
-![Приложение, работающее в Службе приложений Azure](./media/quickstart-java/java-hello-world-in-browser-azure-app-service.png)
-
-**Поздравляем!** Вы развернули свое первое приложение Java в службе приложений.
-
-> [!div class="nextstepaction"]
-> [У меня есть проблема](https://www.research.net/r/javae2e?quickstart-java&step=deploy)
-
-[!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]

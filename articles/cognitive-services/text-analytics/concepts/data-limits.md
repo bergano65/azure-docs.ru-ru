@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: overview
-ms.date: 04/27/2020
+ms.date: 08/14/2020
 ms.author: aahi
 ms.reviewer: chtufts
-ms.openlocfilehash: 0dc79132ae75be511b53bf272e578ff0ce7a7775
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: 068c2dc698e9f0b6d6f2f6486dff863c1343b178
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87986820"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88258286"
 ---
 # <a name="data-and-rate-limits-for-the-text-analytics-api"></a>Ограничения данных и частоты для использования API "Анализ текста"
 <a name="data-limits"></a>
@@ -31,8 +31,8 @@ ms.locfileid: "87986820"
 
 | Ограничение | Значение |
 |------------------------|---------------|
-| Максимальный размер одного документа | 5 120 символов, измеряемых [StringInfo.LengthInTextElements](https://docs.microsoft.com/dotnet/api/system.globalization.stringinfo.lengthintextelements). |
-| Максимальный размер всего запроса | 1 МБ |
+| Максимальный размер одного документа | 5 120 символов, измеряемых [StringInfo.LengthInTextElements](https://docs.microsoft.com/dotnet/api/system.globalization.stringinfo.lengthintextelements). Это также относится к API "Анализ текста" для контейнерной службы для сферы здравоохранения. |
+| Максимальный размер всего запроса | 1 МБ, Это также относится к API "Анализ текста" для контейнерной службы для сферы здравоохранения. |
 
 Максимальное число документов, которые можно отправить в одном запросе, зависит от используемой версии и возможностей API.
 
@@ -48,7 +48,7 @@ ms.locfileid: "87986820"
 | Извлечение ключевых фраз | 10 |
 | Распознавание именованных сущностей | 5 |
 | Связывание сущностей | 5 |
-
+| API "Анализ текста" для контейнерной службы для сферы здравоохранения | 1000 |
 #### <a name="version-2"></a>[Версия 2](#tab/version-2)
 
 | Компонент | Максимальное число документов на один запрос | 
@@ -63,7 +63,7 @@ ms.locfileid: "87986820"
 
 ## <a name="rate-limits"></a>Ограничения скорости
 
-Ограничение частоты зависит от [ценовой категории](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/). Эти ограничения одинаковы для обеих версий API.
+Ограничение частоты зависит от [ценовой категории](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/). Эти ограничения одинаковы для обеих версий API. Эти ограничения частоты не применяются к API "Анализ текста" для контейнерной службы для сферы здравоохранения, для которой не заданы такие ограничения.
 
 | Уровень          | Число запросов в секунду | Число запросов в минуту |
 |---------------|---------------------|---------------------|

@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 03/12/2020
 ms.author: cgillum
 ms.reviewer: azfuncdf
-ms.openlocfilehash: 8fd670104a04229ed688b365de89e2ffc22b5429
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: adf58b667d17393fc905fbf31261530fce88d9f8
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87499387"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272354"
 ---
 # <a name="what-are-durable-functions"></a>Что такое Устойчивые функции?
 
@@ -25,6 +25,7 @@ ms.locfileid: "87499387"
 * **JavaScript**: поддерживается только для версии 2.x среды выполнения Функций Azure. Требуется расширение устойчивых функций версии 1.7.0 или более поздней версии. 
 * **Python.** Требуется расширение Устойчивых функций 1.8.5 или более поздней версии. 
 * **F#** : предварительно скомпилированные библиотеки классов и сценарий F#. Сценарий F# (.fsx) поддерживается только в среде выполнения Функций Azure версии 1.x.
+* **PowerShell**: поддержка Устойчивых функций в настоящее время предоставляется в общедоступной предварительной версии. Поддерживается только для версии 3.x среды выполнения Функций Azure и PowerShell 7. Требуется расширение Устойчивых функций версии 2.2.2 или более поздней. В настоящее время поддерживаются только следующие шаблоны: [Цепочка функций](#chaining), [Развертывание и объединение](#fan-in-out), [Асинхронные API-интерфейсы HTTP](#async-http).
 
 Целью устойчивых функций является поддержка всех [языков Функций Azure](../supported-languages.md). См. [здесь](https://github.com/Azure/azure-functions-durable-extension/issues) список проблем Устойчивых функций для получения последних сведений о состоянии работы для поддержки дополнительных языков.
 
@@ -119,6 +120,19 @@ main = df.Orchestrator.create(orchestrator_function)
 > [!NOTE]
 > Объект `context` в Python представляет контекст оркестрации. Получите доступ к основному контексту Функций Azure, используя свойство `function_context` в контексте оркестрации.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+```PowerShell
+param($Context)
+
+$X = Invoke-ActivityFunction -FunctionName 'F1'
+$Y = Invoke-ActivityFunction -FunctionName 'F2' -Input $X
+$Z = Invoke-ActivityFunction -FunctionName 'F3' -Input $Y
+Invoke-ActivityFunction -FunctionName 'F4' -Input $Z
+```
+
+Вы можете использовать команду `Invoke-ActivityFunction` для вызова других функций по имени, передачи параметров и возврата выходных данных функции. Каждый раз, когда код вызывает `Invoke-ActivityFunction` без параметра `NoWait`, среда Устойчивых функций создает контрольные точки выполнения текущего экземпляра функции. Если процесс или виртуальная машина перезапускается во время выполнения, экземпляр функции возобновляется из предыдущего вызова `Invoke-ActivityFunction`. Этот процесс описан в следующем разделе Шаблон 2: развертывание и объединение.
+
 ---
 
 ### <a name="pattern-2-fan-outfan-in"></a><a name="fan-in-out"></a>Шаблон 2. Развертывание и объединение
@@ -211,6 +225,30 @@ main = df.Orchestrator.create(orchestrator_function)
 Процесс развертывания распределяется по нескольким экземплярам функции `F2`. И отслеживается с использованием динамического списка задач. `context.task_all` API вызывается для ожидания завершения всех вызванных функций. Затем выходные данные функции `F2` агрегируются из списка динамических задач и передаются функции `F3`.
 
 Автоматическое создание контрольных точек, которое происходит при вызове `yield` к `context.task_all`, гарантирует, что возможный сбой или перезагрузка во время выполнения не потребуют перезапуска уже завершенной задачи.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+```PowerShell
+param($Context)
+
+# Get a list of work items to process in parallel.
+$WorkBatch = Invoke-ActivityFunction -FunctionName 'F1'
+
+$ParallelTasks =
+    foreach ($WorkItem in $WorkBatch) {
+        Invoke-ActivityFunction -FunctionName 'F2' -Input $WorkItem -NoWait
+    }
+
+$Outputs = Wait-ActivityFunction -Task $ParallelTasks
+
+# Aggregate all outputs and send the result to F3.
+$Total = ($Outputs | Measure-Object -Sum).Sum
+Invoke-ActivityFunction -FunctionName 'F3' -Input $Total
+```
+
+Процесс развертывания распределяется по нескольким экземплярам функции `F2`. Обратите внимание, что параметр `NoWait` при вызове функции `F2` позволяет оркестратору продолжать вызов `F2` без завершения действия. И отслеживается с использованием динамического списка задач. Команда `Wait-ActivityFunction` вызывается для ожидания завершения всех вызванных функций. Затем выходные данные функции `F2` агрегируются из списка динамических задач и передаются функции `F3`.
+
+Автоматическое создание контрольных точек, которое происходит при вызове `Wait-ActivityFunction`, гарантирует, что возможный сбой или перезагрузка во время выполнения не потребуют перезапуска уже завершенной задачи.
 
 ---
 
@@ -357,6 +395,10 @@ def orchestrator_function(context: df.DurableOrchestrationContext):
 main = df.Orchestrator.create(orchestrator_function)
 ```
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Монитор в настоящее время не поддерживается в PowerShell.
+
 ---
 
 При получении запроса создается экземпляр оркестрации для указанного идентификатора события. Экземпляр выполняет опрос состояния, пока не выполнится условие или не произойдет выход из цикла. Для управления интервалом опроса используется устойчивый таймер. После этого можно перейти к другим задачам или завершить оркестрацию. Когда `nextCheck` превышает `expiryTime`, монитор останавливается.
@@ -455,6 +497,10 @@ main = df.Orchestrator.create(orchestrator_function)
 
 Для создания устойчивого таймера вызовите `context.create_timer`. Уведомление получает `context.wait_for_external_event`. Затем `context.task_any` вызывается для того, чтобы решить, следует ли ускорить процесс (сначала истечет время ожидания) или утвердить процесс (утверждение получено до истечения времени ожидания).
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Участие пользователя в настоящее время не поддерживается в PowerShell.
+
 ---
 
 Внешний клиент может доставить уведомление о событии в функцию оркестратора, находящуюся в состоянии ожидания, через [встроенные интерфейсы API HTTP](durable-functions-http-api.md#raise-event):
@@ -501,6 +547,10 @@ async def main(client: str):
     is_approved = True
     await durable_client.raise_event(instance_id, "ApprovalEvent", is_approved)
 ```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Участие пользователя в настоящее время не поддерживается в PowerShell.
 
 ---
 
@@ -583,6 +633,10 @@ module.exports = df.entity(function(context) {
 
 В настоящее время в Python не поддерживаются устойчивые сущности.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Устойчивые сущности в настоящее время не поддерживаются в PowerShell.
+
 ---
 
 Клиенты могут поставить в очередь *операции* (называемые также "сигнализацией") для функции сущности, использующей [привязку клиента сущности](durable-functions-bindings.md#entity-client).
@@ -622,6 +676,10 @@ module.exports = async function (context) {
 # <a name="python"></a>[Python](#tab/python)
 
 В настоящее время в Python не поддерживаются устойчивые сущности.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Устойчивые сущности в настоящее время не поддерживаются в PowerShell.
 
 ---
 

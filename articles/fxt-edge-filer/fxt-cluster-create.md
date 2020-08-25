@@ -1,17 +1,17 @@
 ---
 title: Руководство по Создание кластера кэша Azure FXT Edge Filer
-description: Создание гибридного хранилища кластера кэша с помощью Azure FXT Edge Filer
+description: Узнайте, как создать гибридное хранилище кластера кэша с помощью Azure FXT Edge Filer и выполнить вход в панель управления кластером для настройки параметров кластера.
 author: ekpgh
 ms.author: rohogue
 ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 07/01/2019
-ms.openlocfilehash: bfe1d1aeeac55039acf0c7eb295001277be9cd2e
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: 7a471868bac8f5e0623942c0cc1dc4af4e3881e7
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84693079"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185355"
 ---
 # <a name="tutorial-create-the-azure-fxt-edge-filer-cluster"></a>Руководство по Создание кластера Azure FXT Edge Filer
 

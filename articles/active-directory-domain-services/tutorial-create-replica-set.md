@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/16/2020
 ms.author: iainfou
-ms.openlocfilehash: 69bb61012082404dfd6488b5e0606e5966c2fcef
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 6f166cdcb5f3764d7b264fdb4ebc082ece4c798b
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87504655"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245100"
 ---
 # <a name="tutorial-create-and-use-replica-sets-for-resiliency-or-geolocation-in-azure-active-directory-domain-services-preview"></a>Руководство по созданию и использованию наборов реплик для обеспечения устойчивости или поддержки геолокации в доменных службах Azure Active Directory (предварительная версия)
 
@@ -42,11 +42,11 @@ ms.locfileid: "87504655"
     * Если у вас еще нет подписки Azure, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
-* Управляемый домен Azure AD DS, созданный с использованием наборов реплик и настроенный в клиенте Azure AD.
+* Управляемый домен Azure AD DS, созданный с использованием модели развертывания с помощью Azure Resource Manager и настроенный в клиенте Azure AD.
     * При необходимости [создайте и настройте управляемый домен доменных служб Azure Active Directory][tutorial-create-instance].
 
     > [!IMPORTANT]
-    > Убедитесь, что вы создали управляемый домен с использованием наборов реплик. Существующие управляемые домены, созданные до выпуска этой предварительной версии, не поддерживают наборы реплик. Для управляемого домена также необходимо использовать как минимум SKU уровня *Корпоративный*. При необходимости [измените номер SKU для управляемого домена][howto-change-sku].
+    > Управляемые домены, созданные с помощью классической модели развертывания, не могут использовать наборы реплик. Для управляемого домена также необходимо использовать как минимум SKU уровня *Корпоративный*. При необходимости [измените номер SKU для управляемого домена][howto-change-sku].
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 

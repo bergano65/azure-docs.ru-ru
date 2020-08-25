@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: ae76fab6359675a87ad252a08ebb199bf724f129
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.openlocfilehash: fd297ec5cfb7831a438fc51e72e3c2fc163eff49
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87439367"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88271283"
 ---
 # <a name="tutorial-deploy-azure-machine-learning-as-an-iot-edge-module-preview"></a>Руководство по Развертывание службы "Машинное обучение Azure" в качестве модуля IoT Edge (предварительная версия)
 
@@ -49,7 +49,7 @@ ms.locfileid: "87439367"
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) ценовой категории "Бесплатный" или "Стандартный" в Azure.
 * Рабочая область машинного обучения Azure. Следуйте инструкциям, описанным в статье [Краткое руководство. Начало работы со Службой машинного обучения Azure с помощью портала Azure](../machine-learning/tutorial-1st-experiment-sdk-setup.md), чтобы создать область и узнать, как ее использовать.
-  * Запишите имя рабочей области, группу ресурсов и идентификатор подписки. Все эти значения доступны в колонке обзора рабочей области на портале Azure. Эти значения понадобятся вам при дальнейшей работе с учебником для подключения записной книжки Azure к ресурсам рабочей области.
+  * Запишите имя рабочей области, группу ресурсов и идентификатор подписки. Все эти значения доступны в колонке обзора рабочей области на портале Azure. Эти значения понадобятся вам при дальнейшей работе с учебником для подключения файла Записных книжек Azure к ресурсам рабочей области.
 
 ## <a name="create-and-deploy-azure-machine-learning-module"></a>Создание и развертывание модуля Машинного обучения Azure
 

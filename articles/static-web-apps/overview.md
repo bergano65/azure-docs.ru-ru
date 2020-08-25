@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: overview
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 47140bccc8c2a1b69f083502d031a9db6d21294e
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 884aa18b1a29b1c4f1bbf1159a5d48870529c72b
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87835788"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88565712"
 ---
 # <a name="what-is-azure-static-web-apps-preview"></a>Что такое Статические веб-приложения Azure (предварительная версия)?
 
@@ -35,7 +35,7 @@ ms.locfileid: "87835788"
 - **Прямая интеграция с GitHub**, при которой изменения в репозитории активируют операции сборки и развертывания.
 - **Глобальное распределение** статического содержимого, благодаря которому содержимое находится ближе к пользователям.
 - **Бесплатные SSL-сертификаты**, которые обновляются автоматически.
-- **Личные домены**\*, обеспечивающие фирменную настройку приложения.
+- **Личные домены**, обеспечивающие фирменную настройку приложения.
 - **Простая модель безопасности** с использованием обратного прокси-сервера при вызове интерфейсов API, для которых не требуется конфигурация CORS.
 - **Интеграция поставщиков проверки подлинности** с Azure Active Directory, Facebook, Google, GitHub и Twitter.
 - **Настраиваемые определения ролей авторизации** и назначения.
@@ -44,11 +44,9 @@ ms.locfileid: "87835788"
 
 ## <a name="what-you-can-do-with-static-web-apps"></a>Возможности использования статических веб-приложений
 
-- **Создание современных приложений JavaScript** с использованием платформ и библиотек, например [Angular](getting-started.md#tabpanel_CeZOj-G++Q_angular), [React](getting-started.md#tabpanel_CeZOj-G++Q_react), [Svelte](https://docs.microsoft.com/learn/modules/publish-app-service-static-web-app-api/), [Vue](getting-started.md#tabpanel_CeZOj-G++Q_vue) с серверной частью [Функций Azure](apis.md).
+- **Создание современных приложений JavaScript** с использованием платформ и библиотек, например [Angular](getting-started.md?tabs=angular), [React](getting-started.md?tabs=react), [Svelte](https://docs.microsoft.com/learn/modules/publish-app-service-static-web-app-api/), [Vue](getting-started.md?tabs=react) с серверной частью [Функций Azure](apis.md).
 - **Публикация статических сайтов** с использованием таких платформ, как [Gatsby](publish-gatsby.md), [Hugo](publish-hugo.md), [VuePress](publish-vuepress.md).
 - **Развертывайте веб-приложений** с помощью таких платформ, как [Next.js](deploy-nextjs.md) и [Nuxt.js](deploy-nuxtjs.md).
-
-\* Регистрация вершинных доменов в предварительной версии не поддерживается.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

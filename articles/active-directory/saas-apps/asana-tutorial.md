@@ -2,26 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с Asana | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Asana.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: 837e38fe-8f55-475c-87f4-6394dc1fee2b
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5531a7c1a95e472239c639e3307623fc4ccedd37
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: dd2c02f25584fd32acd32277a1dd2300c6a98e73
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73157869"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549557"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-asana"></a>Руководство. Интеграция Azure Active Directory с Asana
 
@@ -128,7 +123,7 @@ ms.locfileid: "73157869"
 
 ### <a name="configure-asana-single-sign-on"></a>Настройка единого входа в Asana
 
-1. В другом окне браузера войдите в приложение Asana. Чтобы настроить единый вход в Asana, перейдите к параметрам рабочей области, щелкнув имя рабочей области в правом верхнем углу экрана. Щелкните элемент **\<your workspace name\> Settings** (Параметры <имя_рабочей_области>).
+1. В другом окне браузера войдите в приложение Asana. Чтобы настроить единый вход в Asana, перейдите к параметрам рабочей области, щелкнув имя рабочей области в правом верхнем углу экрана. Затем щелкните **Параметры \<your workspace name\>** .
 
     ![Параметры единого входа Asana](./media/asana-tutorial/tutorial_asana_09.png)
 

@@ -366,6 +366,8 @@
           href: ssh.md
         - name: Средства оценки производительности Linux
           href: troubleshoot-linux.md
+        - name: Проверка событий Работоспособности ресурсов (предварительная версия)
+          href: aks-resource-health.md
 - name: Справочник
   items:
     - name: Azure CLI

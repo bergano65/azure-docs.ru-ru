@@ -2,26 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с Keeper Password Manager & Digital Vault | Документы Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Keeper Password Manager & Digital Vault.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: e1a98f6a-2dae-4734-bdbf-4fba742a61d2
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/02/2019
+ms.date: 08/07/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71fecbe924c1511c247ff846d3b2a39d309ecf0d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: c6bd0c130e860a5700256a54c081cc046219b41a
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73159899"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546752"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-keeper-password-manager--digital-vault"></a>Руководство по интеграции Azure Active Directory с Keeper Password Manager & Digital Vault
 
@@ -50,69 +45,57 @@ ms.locfileid: "73159899"
 
 * Keeper Password Manager & Digital Vault поддерживает **JIT-** подготовку пользователей.
 
+* После настройки Keeper Password Manager & Digital Vault вы можете применить управление сеансами, которое в реальном времени защищает конфиденциальные данные вашей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+
 ## <a name="adding-keeper-password-manager--digital-vault-from-the-gallery"></a>Добавление Keeper Password Manager & Digital Vault из коллекции
 
 Чтобы настроить интеграцию Keeper Password Manager & Digital Vault с Azure AD, необходимо добавить Keeper Password Manager & Digital Vault из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Keeper Password Manager & Digital Vault из коллекции, выполните следующие действия.**
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. В области навигации слева выберите службу **Azure Active Directory**.
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. В разделе **Добавить из коллекции** в поле поиска введите **Keeper Password Manager & Digital Vault**.
+1. На панели результатов выберите **Keeper Password Manager & Digital Vault**, а затем добавьте приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
+## <a name="configure-and-test-azure-ad-sso-for-keeper-password-manager--digital-vault"></a>Настройка и проверка единого входа Azure AD для Keeper Password Manager & Digital Vault
 
-    ![Кнопка Azure Active Directory](common/select-azuread.png)
+Настройте и проверьте единый вход Azure AD в Keeper Password Manager & Digital Vault с помощью тестового пользователя **B. Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем AAD и соответствующим пользователем в Keeper Password Manager & Digital Vault.
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+Чтобы настроить и проверить единый вход Azure AD в Keeper Password Manager & Digital Vault, выполните действия в следующих стандартных блоках:
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
 
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+    * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 
-    ![Кнопка "Создать приложение"](common/add-new-app.png)
+1. **[Настройка единого входа в Keeper Password Manager & Digital Vault](#configure-keeper-password-manager--digital-vault-sso)** необходима, чтобы задать параметры единого входа на стороне приложения.
+    * **[Создание тестового пользователя Keeper Password Manager & Digital Vault](#create-keeper-password-manager--digital-vault-test-user)** требуется для создания в Keeper Password Manager & Digital Vault пользователя Britta Simon, связанного с соответствующим представлением в Azure AD.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
-4. В поле поиска введите **Keeper Password Manager & Digital Vault**, на панели результатов выберите **Keeper Password Manager & Digital Vault** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
-     ![Keeper Password Manager & Digital Vault в списке результатов](common/search-new-app.png)
+Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Keeper Password Manager & Digital Vault** найдите раздел **Управление** и выберите **Единый вход**.
+1. На странице **Выбрать метод единого входа** выберите **SAML**.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Keeper Password Manager & Digital Vault с использованием тестового пользователя **Britta Simon**.
-Для работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Keeper Password Manager & Digital Vault.
-
-Чтобы настроить и проверить единый вход Azure AD в Keeper Password Manager & Digital Vault, вам потребуется выполнить действия в следующих стандартных блоках:
-
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **Настройка единого входа в Keeper Password Manager & Digital Vault** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя Keeper Password Manager & Digital Vault](#create-keeper-password-manager--digital-vault-test-user)** требуется для создания в Keeper Password Manager & Digital Vault пользователя Britta Simon, связанного с соответствующим представлением в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
-
-В этом разделе описано включение единого входа Azure AD на портале Azure.
-
-Чтобы настроить единый вход Azure AD в Keeper Password Manager & Digital Vault, выполните следующие действия:
-
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Keeper Password Manager & Digital Vault** выберите **Единый вход**.
-
-    ![Ссылка "Настройка единого входа"](common/select-sso.png)
-
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
-
-    ![Режим выбора единого входа](common/select-saml-option.png)
-
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
-
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    ![Сведения о едином входе на домен и URL-адреса Keeper Password Manager & Digital Vault](common/sp-identifier-reply.png)
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: .
+    * Для **единого входа в облако**: `https://keepersecurity.com/api/rest/sso/saml/sso/<CLOUD_INSTANCE_ID>`
+    * Для **локального единого входа**: `https://<KEEPER_FQDN>/sso-connect/saml/login`
 
-    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://{SSO CONNECT SERVER}/sso-connect/saml/login`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
+    * Для **единого входа в облако**: `https://keepersecurity.com/api/rest/sso/saml/<CLOUD_INSTANCE_ID>`
+    * Для **локального единого входа**: `https://<KEEPER_FQDN>/sso-connect`
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://{SSO CONNECT SERVER}/sso-connect`.
-
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://{SSO CONNECT SERVER}/sso-connect/saml/sso`.
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: .
+    * Для **единого входа в облако**: `https://keepersecurity.com/api/rest/sso/saml/sso/<CLOUD_INSTANCE_ID>`
+    * Для **локального единого входа**: `https://<KEEPER_FQDN>/sso-connect/saml/sso`
 
     > [!NOTE]
     > Эти значения приведены для примера. Вместо них необходимо указать фактические значения URL-адреса входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Keeper Password Manager & Digital Vault](https://keepersecurity.com/contact.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -125,72 +108,46 @@ ms.locfileid: "73159899"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а. URL-адрес входа.
-
-    b. Идентификатор Azure AD.
-
-    c. URL-адрес выхода.
-
-### <a name="configure-keeper-password-manager--digital-vault-single-sign-on"></a>Настройка единого входа на Keeper Password Manager & Digital Vault
-
-Чтобы настроить единый вход на стороне **Keeper Password Manager & Digital Vault**, выполните инструкции в [Руководстве по поддержке Keeper](https://keepersecurity.com/assets/pdf/KeeperSSOConnect_v11.pdf).
-
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
-
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
-
-2. В верхней части экрана выберите **Новый пользователь**.
-
-    ![Кнопка "Новый пользователь"](common/new-user.png)
-
-3. В разделе свойств пользователя сделайте следующее:
-
-    ![Диалоговое окно "Пользователь"](common/user-properties.png)
-
-    а. В поле **Имя** введите **BrittaSimon**.
-  
-    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
-    Например BrittaSimon@contoso.com.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
-
-    d. Нажмите кнопку **Создать**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. В верхней части экрана выберите **Новый пользователь**.
+1. В разделе **Свойства пользователя** выполните следующие действия.
+   1. В поле **Имя** введите `B.Simon`.  
+   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
+   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+   1. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как позволить пользователю Britta Simon использовать единый вход Azure, предоставив ему доступ к Keeper Password Manager & Digital Vault.
+В этом разделе описано, как позволить пользователю B. Simon использовать единый вход Azure, предоставив ему доступ к Keeper Password Manager & Digital Vault.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Keeper Password Manager & Digital Vault**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. В списке приложений выберите **Keeper Password Manager & Digital Vault**.
+1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-2. В списке приложений выберите **Keeper Password Manager & Digital Vault**.
+1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Keeper Password Manager & Digital Vault в списке приложений](common/all-applications.png)
+    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+## <a name="configure-keeper-password-manager--digital-vault-sso"></a>Настройка единого входа в Keeper Password Manager & Digital Vault
 
-    ![Область "Добавление назначения"](common/add-assign-user.png)
-
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
-
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
-
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+Чтобы настроить единый вход на стороне **Keeper Password Manager & Digital Vault**, выполните инструкции в [Руководстве по поддержке Keeper](https://docs.keeper.io/sso-connect-guide/).
 
 ### <a name="create-keeper-password-manager--digital-vault-test-user"></a>Создание тестового пользователя Keeper Password Manager & Digital Vault
 
 Чтобы пользователи Azure AD могли выполнять вход в Keeper Password Manager & Digital Vault, они должны быть подготовлены в Keeper Password Manager & Digital Vault. Приложение поддерживает JIT-подготовку пользователей, поэтому после аутентификации пользователи будут созданы в приложении автоматически. Если вы хотите настроить пользователей вручную, обратитесь в [службу поддержки Keeper](https://keepersecurity.com/contact.html).
 
-### <a name="test-single-sign-on"></a>Проверка единого входа
+## <a name="test-sso"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
@@ -204,3 +161,6 @@ ms.locfileid: "73159899"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
+- [Попробуйте использовать Keeper Password Manager & Digital Vault с Azure AD](https://aad.portal.azure.com/)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

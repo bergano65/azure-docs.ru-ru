@@ -2,25 +2,21 @@
 title: Руководство по интеграции единого входа Azure Active Directory с Chatwork | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Chatwork.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 0982ee1d-7ae2-415b-9e47-cfc72e1885ca
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 07/21/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 368b87a4abd5b55a807f7184c3a56876169b2517
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: fdf9e16e5578f794d01671d391f3568eae6555cc
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87293547"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88586262"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-chatwork"></a>Руководство по интеграции единого входа Azure Active Directory с Chatwork
 
@@ -87,7 +83,9 @@ ms.locfileid: "87293547"
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://www.chatwork.com/s/<TENANT_NAME>`.
 
     > [!NOTE]
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь к [группе поддержки Chatwork](mailto:info@support.chatwork.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Это значение приведено для примера. Укажите в качестве значения частный URL-адрес для входа, который вы настроили после шага **Настройка единого входа в Chatwork**.
+
+1. Приложение Chatwork ожидает, что значение атрибута **Уникальный идентификатор пользователя** будет соответствовать адресу электронной почты, зарегистрированному в Chatwork. Этот атрибут по умолчанию сопоставляется с **user.principalname**. Если principalname отличается от адреса электронной почты, выполните сопоставление **уникального идентификатора пользователя** с **user.mail**.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
@@ -129,11 +127,11 @@ ms.locfileid: "87293547"
 
 ## <a name="configure-chatwork-sso"></a>Настройка единого входа в Chatwork
 
-Чтобы настроить единый вход на стороне **Chatwork**, нужно отправить скачанный **Сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Chatwork](mailto:info@support.chatwork.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне приложения **Chatwork**, изучите [руководство администратора Chatwork](https://download.chatwork.com/Chatwork_AdminGuide.pdf) и настройте параметр Chatwork.
 
 ### <a name="create-chatwork-test-user"></a>Создание тестового пользователя приложения Chatwork
 
-В этом разделе описано, как создать пользователя B. Simon в приложении Chatwork. Чтобы добавить пользователей на платформу Chatwork, обратитесь в  [группу поддержки Chatwork](mailto:info@support.chatwork.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя B. Simon в приложении Chatwork. Изучите [руководство администратора Chatwork](https://download.chatwork.com/Chatwork_AdminGuide.pdf) и добавьте пользователя на платформу Chatwork.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

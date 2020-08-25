@@ -2,26 +2,21 @@
 title: Учебник. Интеграция Azure Active Directory с Kontiki | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Kontiki.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 8d5e5413-da4c-40d8-b1d0-f03ecfef030b
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: bfb154bce34b2ceda99b82c7ca3534b8a8ee0a1f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: cb652cfdae0ce785d6a076b8b1592d9f700b3383
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67098489"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549982"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kontiki"></a>Руководство. Интеграция Azure Active Directory с Kontiki
 
@@ -143,7 +138,7 @@ Kontiki поддерживает следующие функции:
 
     1. В поле **Имя** введите **BrittaSimon**.
   
-    1. В поле **Имя пользователя** введите **brittasimon\@\<домен_вашей_компании>.\<доменная_зона>** . Например, **brittasimon\@contoso.com**.
+    1. В поле **Имя пользователя** введите **brittasimon\@\<your-company-domain>.\<extension>** . Например, **brittasimon\@contoso.com**.
 
     1. Установите флажок **Показать пароль**. Запишите значение, которое отображается в поле **Пароль**.
 

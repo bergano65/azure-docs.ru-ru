@@ -10,13 +10,13 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
-ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 22bf7e85a48e0d138bfdbca82cf032287d982899
-ms.sourcegitcommit: 61d92af1d24510c0cc80afb1aebdc46180997c69
+ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
+ms.openlocfilehash: 0fc31fd397f8206f7c6f0509dd03495631dde609
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85339597"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88165640"
 ---
 # <a name="quickstart-call-an-aspnet-web-api-protected-by-microsoft-identity-platform"></a>Краткое руководство. Вызов веб-API ASP.NET, защищенного с помощью платформы удостоверений Майкрософт
 
@@ -80,15 +80,16 @@ ms.locfileid: "85339597"
 1. Откройте решение в Visual Studio, а затем откройте файл **Web.config** в корневом каталоге проекта **TodoListService**.
 1. Замените значение параметра `ida:ClientId` на **идентификатор клиента (идентификатор приложения)** из приложения, которое вы только что зарегистрировали на портале регистрации приложений.
 
-### <a name="add-the-new-scope-to-the-todolistclients-appconfig"></a>Добавление новой области в файл app.config *TodoListClient*
+### <a name="add-the-new-scope-to-the-todolistclients-appconfig"></a>Добавление новой области в файл app.config проекта *TodoListClient*
 
-1. Откройте файл **app.config**, расположенный в корневой папке проекта **TodoListClient**, а затем вставьте **идентификатор приложения** из приложения, которое вы только что зарегистрировали для *TodoListService*, в параметр `TodoListServiceScope`, заменив строку `{Enter the Application ID of your TodoListService from the app registration portal}`.
+* Откройте файл **app.config**, расположенный в корневой папке проекта **TodoListClient**, а затем вставьте **идентификатор приложения** из приложения, которое вы только что зарегистрировали для *TodoListService*, в параметр `TodoListServiceScope`, заменив строку `{Enter the Application ID of your TodoListService from the app registration portal}`.
 
-   > Примечание. Убедитесь, что используется следующий формат:
-   >
-   > `api://{TodoListService-Application-ID}/access_as_user`
-   >
-   >(где {TodoListService-Application-ID} — это GUID, представляющий идентификатор приложения для TodoListService).
+  > [!NOTE]
+  > Убедитесь, что используется следующий формат:
+  >
+  > `api://{TodoListService-Application-ID}/access_as_user`
+  >
+  >(где {TodoListService-Application-ID} — это GUID, представляющий идентификатор приложения для TodoListService).
 
 ## <a name="register-the-client-app-todolistclient"></a>Регистрация клиентского приложения (TodoListClient)
 
@@ -102,15 +103,28 @@ ms.locfileid: "85339597"
    - В разделе **Имя** введите понятное имя приложения, которое будет отображаться пользователям приложения, например `NativeClient-DotNet-TodoListClient`.
    - Измените значение параметра **Поддерживаемые типы учетных записей** на **Учетные записи в любом каталоге организации**.
    - Выберите **Зарегистрировать**, чтобы создать приложение.
-1. На странице обзора приложения выберите раздел **Проверка подлинности**.
-   - В разделе **URI перенаправления** | **Предлагаемые URI перенаправления для общедоступных клиентов (мобильные устройства, компьютеры)** выберите **https://login.microsoftonline.com/common/oauth2/nativeclient** .
-   - Щелкните **Сохранить**.
+   
+   > [!NOTE]
+   > Для проекта *TodoListClient* в файле **app.config** для `ida:Tenant` используется значение по умолчанию `common`.
+   >
+   > `common` означает, что вы можете войти с помощью рабочей или учебной учетной записи или личной учетной записи Майкрософт (так как в выбрали параметр **Учетные записи в любом каталоге организации**).
+   >
+   > `organizations` означает, что вы можете войти с помощью рабочей или учебной учетной записи.
+   >
+   > `consumers` означает, что вы можете войти только с помощью личной учетной записи Майкрософт.
+   >
+   
+1. На странице обзора приложения выберите раздел **Аутентификация**.
+   1. В разделе **Конфигурации платформ** нажмите кнопку **Добавить платформу**.
+   1. Для параметра **Мобильные и классические приложения** выберите значение **Мобильные и классические приложения**.
+   1. Для параметра **URI перенаправления** установите флажок **https://login.microsoftonline.com/common/oauth2/nativeclient** .
+   1. Нажмите кнопку **Настроить**.   
 1. Выберите раздел **Разрешения API**.
-   - Нажмите кнопку **Добавить разрешение**.
-   - Выберите вкладку **Мои API**.
-   - В списке API выберите `AppModelv2-NativeClient-DotNet-TodoListService API` или имя, введенное для веб-API.
-   - Установите разрешение **access_as_user**, если оно еще не установлено. При необходимости используйте поле поиска.
-   - Нажмите кнопку **Добавить разрешения**.
+   1. Нажмите кнопку **Add a permission** (Добавить разрешение).
+   1. Выберите вкладку **Мои API**.
+   1. В списке API выберите `AppModelv2-NativeClient-DotNet-TodoListService API` или имя, введенное для веб-API.
+   1. Установите разрешение **access_as_user**, если оно еще не установлено. При необходимости используйте поле поиска.
+   1. Нажмите кнопку **Add permissions** (Добавить разрешения).
 
 ### <a name="configure-your-todolistclient-project"></a>Настройка проекта *TodoListClient*
 

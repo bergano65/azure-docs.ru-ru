@@ -32,6 +32,8 @@
           href: tutorial-micro-fulfillment-center.md
     - name: 'Видеоаналитика: распознавание объектов и движения'
       items:
+        - name: 0. Развертывание приложения для распознавания объектов и движения
+          href: tutorial-video-analytics-deploy.md
         - name: "1.\_Создание приложения для видеоаналитики"
           href: tutorial-video-analytics-create-app.md
         - name: "2.\_Настройка устройства IoT Edge"
@@ -64,8 +66,6 @@
       href: ../core/concepts-app-templates.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
 - name: Практические руководства
   items:
-    - name: Развертывание приложения для распознавания объектов и движения
-      href: howto-deploy-video-analytics-template.md
     - name: Подключение устройств
       items:
         - name: Подготовка и подключение Rigado Cascade 500
