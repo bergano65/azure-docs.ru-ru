@@ -23,7 +23,7 @@ ms.locfileid: "85115050"
    
 3. На странице **New** (Новый) выберите **Базы данных** > **Azure Cosmos DB**.
    
-   :::image type="content" source="./media/cosmos-db-create-dbaccount-table/create-nosql-db-databases-json-tutorial-1.png" alt-text="Область "Базы данных" на портале Azure":::
+   :::image type="content" source="./media/cosmos-db-create-dbaccount-table/create-nosql-db-databases-json-tutorial-1.png" alt-text="Область Базы данных на портале Azure":::
    
 3. На странице **Создание учетной записи Azure Cosmos DB** введите параметры для новой учетной записи Azure Cosmos DB. 
  
@@ -39,9 +39,9 @@ ms.locfileid: "85115050"
 
 5. Выберите **Просмотр и создание**. После завершения проверки нажмите **Создать**, чтобы создать учетную запись. 
  
-   :::image type="content" source="./media/cosmos-db-create-dbaccount-table/azure-cosmos-db-create-new-account.png" alt-text="Страница "Новая учетная запись" для Azure Cosmos DB":::
+   :::image type="content" source="./media/cosmos-db-create-dbaccount-table/azure-cosmos-db-create-new-account.png" alt-text="Страница Новая учетная запись для Azure Cosmos DB":::
 
 6. Создание учетной записи занимает несколько минут. Вы увидите сообщение **Развертывание выполняется**. Дождитесь завершения развертывания, а затем нажмите кнопку **Перейти к ресурсу**.
 
-    :::image type="content" source="./media/cosmos-db-create-dbaccount-table/azure-cosmos-db-account-created.png" alt-text="Область "Уведомления" на портале Azure":::
+    :::image type="content" source="./media/cosmos-db-create-dbaccount-table/azure-cosmos-db-account-created.png" alt-text="Область Уведомления на портале Azure":::
 
