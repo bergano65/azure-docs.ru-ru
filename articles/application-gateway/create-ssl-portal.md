@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 07/24/2020
+ms.date: 08/14/2020
 ms.author: victorh
-ms.openlocfilehash: baadd52a931a28e1502fe0da2286d541db9face4
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 0d0522dd2f206e02ad8b63b13a9537c049232db2
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87290117"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245746"
 ---
 # <a name="tutorial-configure-an-application-gateway-with-tls-termination-using-the-azure-portal"></a>Руководство по Настройка шлюза приложений с завершением TSL-запросов с помощью портала Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "87290117"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+## <a name="prerequisites"></a>Предварительные требования
 
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
@@ -259,6 +259,10 @@ Export-PfxCertificate `
     На экране отобразится защищенный веб-сайт IIS, как в показано следующем примере:
 
     ![Тестирование базового URL-адреса в шлюзе приложений](./media/create-ssl-portal/application-gateway-iistest.png)
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если группа ресурсов и связанные с ней ресурсы вам больше не нужны, их можно удалить. Для этого выберите группу ресурсов и щелкните **Удалить группу ресурсов**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

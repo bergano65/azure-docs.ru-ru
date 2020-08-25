@@ -2,26 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с ArcGIS Enterprise | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory и ArcGIS Enterprise.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: 24809e9d-a4aa-4504-95a9-e4fcf484f431
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/28/2018
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57eda7e1d5ffedf7d5b867bfa7a59850fbadaf99
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: a544a98b3a9d5c2d30f95240325e91018d2f40c9
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905029"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549622"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-arcgis-enterprise"></a>Руководство по интеграции Azure Active Directory с ArcGIS Enterprise
 
@@ -48,8 +43,6 @@ ms.locfileid: "87905029"
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
-
-
 
 * ArcGIS Enterprise поддерживает единый вход инициированного **пакета обновления и выдающей точки распространения**.
 * ArcGIS Enterprise поддерживает **JIT**-подготовку пользователей.
@@ -132,21 +125,30 @@ ms.locfileid: "87905029"
 
 ### <a name="configure-arcgis-enterprise-single-sign-on"></a>Настройка единого входа в ArcGIS Enterprise
 
-1. В другом окне веб-браузера войдите на корпоративный сайт ArcGIS Enterprise в качестве администратора.
+1. Для автоматизации настройки в ArcGIS Enterprise необходимо установить **расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
 
-2. Выберите **Organization > Edit Settings** (Организация > Изменить параметры).
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+1. Чтобы перейти к приложению ArcGIS Enterprise после добавления расширения в браузер, щелкните **Настройка ArcGIS Enterprise**. После этого укажите учетные данные администратора для входа в ArcGIS Enterprise. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–7.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+1. Если вы хотите вручную настроить ArcGIS Enterprise, выполните вход на веб-сайте ArcGIS Enterprise своей компании с правами администратора.
+
+
+1. Выберите **Organization > Edit Settings** (Организация > Изменить параметры).
 
     ![Настройка ArcGIS Enterprise](./media/arcgisenterprise-tutorial/configure1.png)
 
-3. Выберите вкладку **Security** (Безопасность).
+1. Выберите вкладку **Security** (Безопасность).
 
     ![Настройка ArcGIS Enterprise](./media/arcgisenterprise-tutorial/configure2.png)
 
-4. Прокрутите вниз до раздела **Enterprise Logins via SAML** (Корпоративный вход через SAML) и выберите **Set Enterprise Login** (Настроить корпоративный вход).
+1. Прокрутите вниз до раздела **Enterprise Logins via SAML** (Корпоративный вход через SAML) и выберите **Set Enterprise Login** (Настроить корпоративный вход).
 
     ![Настройка ArcGIS Enterprise](./media/arcgisenterprise-tutorial/configure3.png)
 
-5. В разделе **Set Identity Provider** (Назначение поставщика удостоверений) выполните следующие действия:
+1. В разделе **Set Identity Provider** (Назначение поставщика удостоверений) выполните следующие действия:
 
     ![Настройка ArcGIS Enterprise](./media/arcgisenterprise-tutorial/configure4.png)
 

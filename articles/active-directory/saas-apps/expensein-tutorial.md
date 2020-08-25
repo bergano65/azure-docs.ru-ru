@@ -2,25 +2,21 @@
 title: Руководство по Интеграция Azure Active Directory с ExpenseIn | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении ExpenseIn.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: CelesteDG
 ms.reviewer: celested
-ms.assetid: 6ac8053b-a216-45d8-bf5e-ecd37d808e57
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 07/17/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 377499b1dd263398e1be42379f8db60e8a0477f9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7d0b0a6c935182737a7f207b7c7831fefcd491ea
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87017522"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88555326"
 ---
 # <a name="tutorial-integrate-expensein-with-azure-active-directory"></a>Руководство по Интеграция ExpenseIn с Azure Active Directory
 
@@ -127,7 +123,15 @@ ms.locfileid: "87017522"
 
 ## <a name="configure-expensein-sso"></a>Настройка единого входа в ExpenseIn
 
-1. Откройте новое окно веб-браузера и войдите на свой корпоративный сайт ExpenseIn с правами администратора.
+1. Чтобы автоматизировать настройку в ExpenseIn, необходимо установить **расширение браузера My Apps Secure Sign-in Extension**, щелкнув **Установить расширение**.
+
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+1. Чтобы перейти к приложению ExpenseIn после добавления расширения в браузер, щелкните **Настройка ExpenseIn**. После этого укажите учетные данные администратора для входа в ExpenseIn. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–5.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+1. Чтобы настроить ExpenseIn вручную, войдите на веб-сайт ExpenseIn своей компании с правами администратора.
 
 1. Щелкните **Admin** (Администратор) вверху, выберите **Single Sign-on** (Единый вход) и щелкните **Add provider** (Добавить поставщика).
 

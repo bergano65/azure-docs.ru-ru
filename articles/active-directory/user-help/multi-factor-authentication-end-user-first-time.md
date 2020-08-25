@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: end-user-help
 ms.date: 05/28/2020
 ms.author: curtand
-ms.openlocfilehash: fc95e988b3f89402967cdbedd06c4b945a99f99a
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
-ms.translationtype: HT
+ms.openlocfilehash: e5b07f8f7ae766d110c87a495a3e1623b815e526
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84266259"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88795989"
 ---
 # <a name="what-is-the-additional-verification-page"></a>Что такое страница дополнительной проверки?
 
@@ -33,7 +33,7 @@ ms.locfileid: "84266259"
 Двухфакторная проверка подлинности значительно снижает шанс того, что хакер сможет притвориться вами: даже если он узнал ваш пароль, у него вряд ли есть ваше устройство.
 
 >[!Important]
->Если вы являетесь администратором, который ищет сведения о том, как включить двухфакторную проверку подлинности для ваших сотрудников или других пользователей см. [Документация по аутентификации Azure Active Directory](https://docs.microsoft.com/azure/active-directory/authentication/). Эта статья предназначена для пользователей, пытающихся использовать двухфакторную проверку подлинности с рабочей или учебной учетной записью (например, alain@contoso.com).
+>Если вы являетесь администратором, который ищет сведения о том, как включить двухфакторную проверку подлинности для ваших сотрудников или других пользователей см. [Документация по аутентификации Azure Active Directory](../authentication/index.yml). Эта статья предназначена для пользователей, пытающихся использовать двухфакторную проверку подлинности с рабочей или учебной учетной записью (например, alain@contoso.com).
 
 ## <a name="who-decides-if-you-use-this-feature"></a>Кто решает, будете ли вы использовать эту функцию
 

@@ -8,12 +8,12 @@ ms.date: 6/30/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: dca903591c5d6805108d55163aaedc2435d9297e
-ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
+ms.openlocfilehash: 718f4c0b41400ae2e35b88820b2d4154dab23111
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85610086"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272830"
 ---
 # <a name="tutorial-send-data-via-transparent-gateway"></a>Руководство по отправке данных через прозрачный шлюз
 
@@ -225,7 +225,7 @@ ms.locfileid: "85610086"
 
 1. Удалите группы ресурсов, созданные для хранения виртуальной машины разработки, виртуальной машины IoT Edge, Центра Интернета вещей, учетной записи хранения, службы рабочей области машинного обучения (и созданные ресурсы: реестр контейнеров, Application Insights, хранилище ключей, учетная запись хранения).
 
-1. Удалите проект машинного обучения в [записных книжках Azure](https://notebooks.azure.com).
+1. Удалите проект машинного обучения в [Записных книжках Azure](https://notebooks.azure.com).
 
 1. Если вы клонировали репозиторий локально, закройте какие-либо окна PowerShell или VS Code, ссылающиеся на локальный репозиторий, а затем удалите каталог репозитория.
 

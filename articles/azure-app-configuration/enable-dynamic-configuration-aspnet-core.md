@@ -14,13 +14,13 @@ ms.devlang: csharp
 ms.topic: tutorial
 ms.date: 02/24/2019
 ms.author: lcozzens
-ms.custom: mvc
-ms.openlocfilehash: 5ac09aae724cf7481245ba9e898b52945b394cae
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.custom: devx-track-csharp, mvc
+ms.openlocfilehash: 217c564a6bdb340ec15262c1eaf54a75bbffc833
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85856523"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88585022"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-aspnet-core-app"></a>Руководство. Использование динамической конфигурации в приложении ASP.NET Core
 
@@ -57,6 +57,9 @@ ASP.NET Core имеет подключаемую систему конфигур
 1. В поле **Ключ** введите *TestApp:Settings:Sentinel*. В поле **Значение** введите 1. Оставьте поля **Метка** и **Тип содержимого** пустыми.
 
 1. Нажмите кнопку **Применить**.
+
+    > [!NOTE]
+    > Если вы не используете ключ Sentinel, необходимо вручную зарегистрировать каждый ключ, который вы хотите отслеживать.
 
 ## <a name="reload-data-from-app-configuration"></a>Перезагрузка данных из App Configuration
 
@@ -149,7 +152,7 @@ ASP.NET Core имеет подключаемую систему конфигур
     }
     ```
 
-    #### <a name="net-core-3x"></a>[.NET Core 3.x](#tab/core3x)
+    #### <a name="net-core-3x"></a>[.NET Core 3.x](#tab/core3x)
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -159,6 +162,9 @@ ASP.NET Core имеет подключаемую систему конфигур
     }
     ```
     ---
+
+    > [!TIP]
+    > Дополнительные сведения о шаблоне параметров, используемых при чтении значений конфигурации, см. в статье  [Шаблон параметров в ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1).
 
 4. Обновите метод `Configure`, добавив ПО промежуточного слоя `UseAzureAppConfiguration`, чтобы обновлять зарегистрированные для обновления параметры конфигурации, в то время как веб-приложение ASP.NET Core продолжает получать запросы.
 

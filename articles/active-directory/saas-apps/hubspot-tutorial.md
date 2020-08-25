@@ -2,26 +2,21 @@
 title: Руководство по Интеграция Azure Active Directory с HubSpot | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и HubSpot.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 57343ccd-53ea-4e62-9e54-dee2a9562ed5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4b235426a7029abb9bb79ba56e582cccc3b14a6
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 51e27526b10bcdd74d6e2bffb8bf620d7b022aac
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68944446"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551478"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hubspot"></a>Руководство по Интеграция Azure Active Directory с HubSpot
 
@@ -106,9 +101,9 @@ HubSpot поддерживает следующие функции:
 
 1. Чтобы настроить *режим, инициируемый поставщиком удостоверений*, в области **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    1. В поле **Идентификатор** введите URL-адрес в следующем формате: https:\//api.hubspot.com/login-api/v1/saml/login?portalId=\<ИДЕНТИФИКАТОР_КЛИЕНТА\>.
+    1. В поле **Идентификатор** введите URL-адрес в формате https:\//api.hubspot.com/login-api/v1/saml/login?portalId=\<CUSTOMER ID\>.
 
-    1. В поле **URL-адрес ответа** введите URL-адрес в следующем формате: https:\//api.hubspot.com/login-api/v1/saml/acs?portalId=\<ИДЕНТИФИКАТОР_КЛИЕНТА\>.
+    1. В поле **URL-адрес ответа** введите URL-адрес в формате https:\//api.hubspot.com/login-api/v1/saml/acs?portalId=\<CUSTOMER ID\>.
 
     ![Сведения о домене и URL-адресах единого входа для HubSpot](common/idp-intiated.png)
 
@@ -183,7 +178,7 @@ HubSpot поддерживает следующие функции:
 
     1. В поле **Имя** введите **BrittaSimon**.
   
-    1. В поле **Имя пользователя** введите значение **brittasimon\@\<домен_вашей_компании>.\<доменная_зона>\>** . Например, **brittasimon\@contoso.com**.
+    1. В поле **Имя пользователя** введите **brittasimon\@\<your-company-domain>.\<extension\>** . Например, **brittasimon\@contoso.com**.
 
     1. Установите флажок **Показать пароль**. Запишите значение, которое отображается в поле **Пароль**.
 

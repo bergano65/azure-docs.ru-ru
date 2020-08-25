@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: end-user-help
 ms.date: 01/15/2020
 ms.author: curtand
-ms.openlocfilehash: 60c2b3ed1f367dc5c501a51ed52440f7d9d3ed6b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: HT
+ms.openlocfilehash: 7d630fac1f848e691ddb96dc47596a2e9927309f
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83741188"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799440"
 ---
 # <a name="what-is-the-microsoft-authenticator-app"></a>Что такое приложение Microsoft Authenticator?
 
@@ -33,7 +33,7 @@ ms.locfileid: "83741188"
 > [!Important]
 > Приложение Microsoft Authenticator работает с любой учетной записью, которая использует двухфакторную проверку подлинности и поддерживает стандарты одноразовых паролей с ограниченным сроком действия (TOTP).
 >
->Эта статья предназначена для пользователей, пытающихся загрузить и использовать приложение Microsoft Authenticator в качестве метода проверки безопасности. Если вы администратор, которому нужна информация о том, как включить безпарольный вход с помощью приложения Authenticator для ваших сотрудников и других целей, см. [Включение входа без пароля с помощью приложения Microsoft Authenticator (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/authentication/howto-authentication-passwordless-phone).
+>Эта статья предназначена для пользователей, пытающихся загрузить и использовать приложение Microsoft Authenticator в качестве метода проверки безопасности. Если вы администратор, которому нужна информация о том, как включить безпарольный вход с помощью приложения Authenticator для ваших сотрудников и других целей, см. [Включение входа без пароля с помощью приложения Microsoft Authenticator (Предварительная версия)](../authentication/howto-authentication-passwordless-phone.md).
 
 ## <a name="terminology"></a>Терминология
 

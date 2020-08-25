@@ -2,26 +2,21 @@
 title: Руководство по Интеграция Azure Active Directory с Palo Alto Networks (Captive Portal) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Palo Alto Networks (Captive Portal).
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: 67a0b476-2305-4157-8658-2ec3625850d5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/25/2018
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f926741bde3bdcc69cb4ea30f54daca79606047e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1dad0ecc80302ae6b48d420664723a3a03fc9ea5
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73160162"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88554031"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks-captive-portal"></a>Руководство по Интеграция Azure Active Directory с Palo Alto Networks (Captive Portal)
 
@@ -159,7 +154,7 @@ Palo Alto Networks (Captive Portal) поддерживает следующие 
 
     1. В поле **Имя** введите **BrittaSimon**.
   
-    2. В поле **Имя пользователя** введите **BrittaSimon@\@\<домен_вашей_компании\>** . Например **BrittaSimon\@contoso.com**.
+    2. В поле **Имя пользователя** введите **BrittaSimon\@\<your_company_domain\>** . Например **BrittaSimon\@contoso.com**.
 
     3. В поле **Пароль** введите пароль. Мы рекомендуем сохранить введенный пароль. Вы можете выбрать флажок **Показать пароль** для отображения пароля.
 

@@ -2,7 +2,7 @@
 title: Динамическая упаковка в Службах мультимедиа Azure версии 3
 titleSuffix: Azure Media Services
 description: В этой статье представлены общие сведения о технологии динамической упаковки в Службах мультимедиа Azure.
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 services: media-services
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 07/31/2020
-ms.author: juliako
-ms.openlocfilehash: 032a3c719610d658ec32492033a04a610117643d
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.date: 08/18/2020
+ms.author: inhenkel
+ms.openlocfilehash: 8a5d52f2705a04c290f1122335430c12db8d294c
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87489781"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88604577"
 ---
 # <a name="dynamic-packaging-in-media-services-v3"></a>Динамическая упаковка в Службах мультимедиа версии 3
 
@@ -80,8 +80,10 @@ ms.locfileid: "87489781"
 
 Далее описаны этапы обычного рабочего процесса потоковой передачи в Службах мультимедиа, при котором динамическая упаковка используется с кодировщиком (цен. категория "Стандартный") в Службах мультимедиа Azure.
 
-1. Отправка входного файла, например в формате QuickTime/MOV или MXF. Этот файл также называется мезонинным или исходным. Список поддерживаемых форматов см. в статье [Standard Encoder formats and codecs](media-encoder-standard-formats.md) (Форматы и кодеки кодировщика ценовой категории "Стандартный").
+1. [Отправьте входной файл](job-input-from-http-how-to.md) например MP4, QuickTime, MOV или другого поддерживаемого формата. Этот файл также называется мезонинным или исходным. Список поддерживаемых форматов см. в статье [Standard Encoder formats and codecs](media-encoder-standard-formats.md) (Форматы и кодеки кодировщика ценовой категории "Стандартный").
 1. [Закодируйте](#encode-to-adaptive-bitrate-mp4s) мезонинный файл в набор MP4-файлов с адаптивной скоростью в формате H.264 или AAC.
+
+    Если у вас уже есть закодированные файлы и требуется только скопировать их и выполнить потоковую передачу, используйте API [CopyVideo](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#copyvideo) и [CopyAudio](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#copyaudio). В результате будет создан MP4-файл с манифестом потоковой передачи (ISM-файл).
 1. Опубликуйте выходной ресурс, который содержит набор MP4-файлов с адаптивной скоростью. Публикация выполняется путем создания [указателя потоковой передачи](streaming-locators-concept.md).
 1. Создайте URL-адреса, которые предназначены для различных форматов (HLS, MPEG-DASH и Smooth Streaming). *Конечная точка потоковой передачи* возьмет на себя выдачу надлежащего манифеста и обработку запросов для всех форматов.
     

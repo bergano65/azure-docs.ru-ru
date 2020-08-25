@@ -9,21 +9,21 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: quickstart
-ms.date: 11/08/2019
+ms.date: 08/13/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4253f5bd702abd061cf1cddd4badd68c9cd5d475
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.openlocfilehash: e5b54af39401ba8c3fede4c9ad80ec8edc963b1d
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82582835"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213678"
 ---
 # <a name="quickstart-naming-policy-for-groups-in-azure-active-directory"></a>Краткое руководство. Политика именования для групп в Azure Active Directory
 
-В этом кратком руководстве объясняется, как настроить политику именования в организации Azure Active Directory (Azure AD) для созданных пользователем групп Office 365, чтобы отсортировать и найти группы организации. Например, политику именования можно использовать, чтобы:
+В этом кратком руководстве объясняется, как настроить политику именования в организации Azure Active Directory (Azure AD) для созданных пользователем групп Microsoft 365, чтобы отсортировать и найти группы организации. Например, политику именования можно использовать, чтобы:
 
 * Указать функцию группы, членство, географический регион или создателя группы.
 * Помочь классифицировать группы в адресной книге.

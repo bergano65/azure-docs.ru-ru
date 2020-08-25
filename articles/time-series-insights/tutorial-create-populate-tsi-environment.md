@@ -7,14 +7,14 @@ ms.author: dpalled
 manager: diviso
 ms.service: time-series-insights
 ms.topic: tutorial
-ms.date: 06/30/2020
+ms.date: 08/14/2020
 ms.custom: seodec18
-ms.openlocfilehash: 9f74be239bee1d6da3dfdb516c4fc410669e338d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 36687f6394ef03a3fceb70c73601680dd262d90c
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87020657"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245406"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-gen1-environment"></a>Руководство по созданию среды 1-го поколения службы "Аналитика временных рядов Azure"
 
@@ -37,13 +37,13 @@ ms.locfileid: "87020657"
 
 ## <a name="review-video"></a>Просмотр видео
 
-### <a name="learn-how-to-use-an-azure-iot-solution-accelerator-to-generate-data-and-get-started-with-azure-time-series-insights-br"></a>Узнайте, как с помощью акселератора решений Интернета вещей Azure создать данные и приступить к работе с Аналитикой временных рядов Azure. </br>
+Узнайте, как с помощью акселератора решений Интернета вещей Azure создать данные и приступить к работе с Аналитикой временных рядов Azure.
 
 > [!VIDEO https://www.youtube.com/embed/6ehNf6AJkFo]
 
 ## <a name="overview"></a>Обзор
 
-Среда Аналитики временных рядов Azure собирает и хранит данные устройств. После сохранения к данным можно применять запросы и анализ с помощью [обозревателя Аналитики временных рядов Azure](time-series-quickstart.md) и [API запросов Аналитики временных рядов Azure](/rest/api/time-series-insights/ga-query-api).
+Среда Аналитики временных рядов Azure собирает и хранит данные устройств. После сохранения к данным можно применять запросы и анализ с помощью [обозревателя Аналитики временных рядов Azure](time-series-quickstart.md) и [API запросов Аналитики временных рядов Azure](/rest/api/time-series-insights/gen1-query-api).
 
 Центр Интернета вещей Azure представляет собой источник события, к которому все устройства (имитированные или физические) в этом учебнике подключаются для защищенной передачи данных в облако Azure.
 
@@ -98,7 +98,7 @@ ms.locfileid: "87020657"
 
    Параметр|Описание
    ---|---
-   **Имя среды** | Выберите уникальное имя для среды Аналитики временных рядов Azure. Это имя используется в обозревателе Аналитики временных рядов Azure и [интерфейсах API запросов](https://docs.microsoft.com/rest/api/time-series-insights/ga-query).
+   **Имя среды** | Выберите уникальное имя для среды Аналитики временных рядов Azure. Это имя используется в обозревателе Аналитики временных рядов Azure и [интерфейсах API запросов](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query).
    **Подписка** | Подписки служат контейнерами для ресурсов Azure. Выберите подписку для создания среды Аналитики временных рядов Azure.
    **Группа ресурсов** | Группа ресурсов Azure служит контейнером для ресурсов Azure. Выберите имеющуюся группу ресурсов для ресурсов среды Аналитики временных рядов Azure или создайте новую.
    **Расположение** | Выберите регион для центра обработки данных для среды Аналитики временных рядов Azure. Чтобы избежать дополнительной задержки, создайте среду Аналитики временных рядов Azure в одном регионе с остальными ресурсами Интернета вещей.

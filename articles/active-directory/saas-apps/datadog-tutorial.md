@@ -2,25 +2,21 @@
 title: Руководство по интеграции единого входа Azure Active Directory с Datadog | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Datadog.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: b7845bdd-7bcd-4888-84fd-2551345054ee
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 03/12/2020
+ms.date: 08/13/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7329c042618623806f28aacf5282e1ab6c718c5f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d3bb0ad5305ccba412a403352405711be8f183a2
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79472289"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88555945"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-datadog"></a>Руководство по интеграции единого входа Azure Active Directory с Datadog
 
@@ -44,7 +40,7 @@ ms.locfileid: "79472289"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Datadog поддерживает вход, инициированный **поставщиком служб или поставщиком удостоверений**.
-* После настройки Datadog можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+* После настройки Datadog вы можете применить функцию управления сеансом, которая в режиме реального времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 
 ## <a name="adding-datadog-from-the-gallery"></a>Добавление Datadog из коллекции
@@ -59,7 +55,7 @@ ms.locfileid: "79472289"
 1. Выберите **Datadog** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-datadog"></a>Настройка и проверка единого входа Azure AD для Datadog
+## <a name="configure-and-test-azure-ad-sso-for-datadog"></a>Настройка и проверка единого входа Azure AD для Datadog
 
 Настройте и проверьте единый вход Azure AD в Datadog с использованием тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Datadog.
 
@@ -89,7 +85,7 @@ ms.locfileid: "79472289"
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://app.datadoghq.com/account/login/id/<CUSTOM_IDENTIFIER>`.
 
     > [!NOTE]
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь к [группе поддержки клиентов Datadog](mailto:xuefwu@microsoft.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь к [группе поддержки клиентов Datadog](mailto:support@datadoghq.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. Выберите команду **Сохранить**.
 
@@ -134,11 +130,11 @@ ms.locfileid: "79472289"
 
 ## <a name="configure-datadog-sso"></a>Настройка единого входа Datadog
 
-Чтобы настроить единый вход на стороне **Datadog**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Datadog](mailto:xuefwu@microsoft.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Datadog**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Datadog](mailto:support@datadoghq.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-datadog-test-user"></a>Создание тестового пользователя Datadog
 
-В этом разделе описано, как создать пользователя B.Simon в приложении Datadog. Обратитесь в [службу поддержки Datadog](mailto:xuefwu@microsoft.com), чтобы добавить пользователей на платформу Datadog.
+В этом разделе описано, как создать пользователя B.Simon в приложении Datadog. Обратитесь в [службу поддержки Datadog](mailto:support@datadoghq.com), чтобы добавить пользователей на платформу Datadog.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

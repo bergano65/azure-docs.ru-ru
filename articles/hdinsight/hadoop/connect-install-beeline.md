@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
-ms.custom: seoapr2020
+ms.custom: contperfq1
 ms.date: 05/27/2020
-ms.openlocfilehash: e93d750dd2feaa70692ab1077ee4333c835417db
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 5495e6c6392ba2e824a0a70717bd19747db9b754
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86076782"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88754962"
 ---
 # <a name="connect-to-apache-beeline-on-hdinsight-or-install-it-locally"></a>Подключитесь к Apache Beeline в HDInsight или установите его локально
 
@@ -146,7 +146,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
 1. Дополнительные уточнение файла bashrc. Необходимо будет задать путь, по которому будут распакованы архивы. Если используется [подсистема Windows для Linux](https://docs.microsoft.com/windows/wsl/install-win10)и вы следовали инструкциям в точности, путь будет иметь вид `/mnt/c/Users/user/` , где `user` — это имя пользователя.
 
-    1. Откройте файл:`nano ~/.bashrc`
+    1. Откройте файл: `nano ~/.bashrc`
 
     1. Измените приведенные ниже команды, указав соответствующий путь, а затем введите их в конце файла bashrc:
 
@@ -162,7 +162,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
 1. Проверьте подключение. Используйте формат подключения [через общедоступные или частные конечные точки](#over-public-or-private-endpoints)выше.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Примеры использования клиента Beeline с Apache Hive см. в статье [использование Apache Beeline с Apache Hive](apache-hadoop-use-hive-beeline.md)
 * Дополнительные общие сведения о Hive в HDInsight см. в статье [использование Apache Hive с Apache Hadoop в hdinsight](hdinsight-use-hive.md) .

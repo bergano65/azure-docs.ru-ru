@@ -1,17 +1,17 @@
 ---
 title: Что такое служба конфигурации приложений Azure?
-description: Описание службы конфигурации приложений Azure.
+description: Познакомьтесь со службой "Конфигурация приложений Azure". Узнайте о ее преимуществах и способах использования.
 author: lisaguthrie
 ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: overview
 ms.date: 02/19/2020
-ms.openlocfilehash: 1f1cec68813d33e7fa19a414a30adfc9a41df91f
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: f38b8de37e84cd8a65c5a5caadf8d3b6b71ce455
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77523481"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88587078"
 ---
 # <a name="what-is-azure-app-configuration"></a>Что такое служба конфигурации приложений Azure?
 
@@ -51,7 +51,7 @@ ms.locfileid: "77523481"
 
 Самый простой способ добавить хранилище Конфигурации приложений в приложение — через клиентскую библиотеку, предоставленную Майкрософт. В зависимости от выбранного языка и платформы для подключения к приложению доступны следующие методы.
 
-| Язык программирования и платформа | Как подключиться |
+| Язык программирования и платформа | Способы подключения |
 |---|---|
 | .NET Core и ASP.NET Core | Поставщик службы конфигурации приложений для .NET Core |
 | .NET Framework и ASP.NET | Построитель службы конфигурации приложений для .NET |

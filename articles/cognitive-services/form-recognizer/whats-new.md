@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: pafarley
-ms.openlocfilehash: 3a48511c896a3e4c677c35ca3069ff236761c444
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.openlocfilehash: b3485ebbdf9cf428b09364b73197220e02e9ffa8
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88724138"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88751075"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Новые возможности Распознавателя документов
 
@@ -30,7 +30,7 @@ ms.locfileid: "88724138"
 - **Ссылка на REST API доступна** — просмотрите [Справочник по версии 2.1-Preview. 1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeBusinessCardAsync) 
 - Поддерживаются **новые языки, кроме английского**, теперь поддерживаются следующие языки: для `Layout` и `Train Custom Model` : Английский (EN), китайский (упрощенное письмо) (zh-zh), Нидерландский (NL), французский (fr), немецкий (немецкий), итальянский (ИТ), португальский (PT) и испанский (ES).
 - **Обнаружение метки флажка/выделения** — распознаватель форм поддерживает обнаружение и извлечение меток выделения, таких как флажки и переключатели. Метки выделения извлекаются в `Layout` , и теперь можно также пометить и обучить метки, `Train Custom Model`  -  _Train with Labels_ чтобы извлечь пары "ключ — значение" для меток выбора. 
-- **Создание модели** позволяет составить несколько моделей и вызывать их с одним идентификатором модели. При отправке документа для анализа с идентификатором составной модели сначала выполняется шаг классификации для его направления в правильную пользовательскую модель. Создание модели доступно для `Train Custom Model`  -  _обучения с метками_.
+- **Создание модели** позволяет составить несколько моделей и вызывать их с одним идентификатором модели. При отправке документа для анализа с ИДЕНТИФИКАТОРом составной модели сначала выполняется шаг классификации для его направления в правильную пользовательскую модель. Создание модели доступно для `Train Custom Model`  -  _обучения с метками_.
 - **Имя модели** добавьте понятное имя в пользовательские модели для упрощения управления и отслеживания.
 - **Новая предварительно созданная модель для визитных карточек** для извлечения общих полей на английском и языковом визитных карточках.
 - **Новые языковые стандарты для предварительно созданных поступлений** в дополнение к EN-US теперь поддерживаются для EN-Au, en-CA, EN-GB, ru-in.
@@ -50,8 +50,10 @@ ms.locfileid: "88724138"
 ## <a name="july-2020"></a>Июль 2020 г.
 
 ### <a name="new-features"></a>новые функции;
+
 * **доступна ссылка на версии 2.0** Ознакомьтесь со [справочником по API версии 2.0](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm) и обновленными пакетами SDK для [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/ai.formrecognizer-readme-pre?view=azure-dotnet), [Python](https://docs.microsoft.com/python/api/overview/azure/?view=azure-python), [Java](https://docs.microsoft.com/java/api/overview/azure/ai-formrecognizer-readme-pre?view=azure-java-preview)и [JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/?view=azure-node-latest).
 * Улучшения **таблиц и улучшений извлечения** включают улучшения точности и улучшения извлечения таблиц, в частности, возможность изучения заголовков и структур таблиц в _пользовательском обучении без меток_. 
+
 * **Поддержка валюты** Обнаружение и извлечение символов глобальной валюты.
 * **Azure gov** Средство распознавания форм теперь также доступно в Azure gov.
 * **Улучшенные функции безопасности**: 
@@ -76,8 +78,8 @@ ms.locfileid: "88724138"
 * **Поддержка пакета SDK для API распознавателя форм (общедоступная Предварительная версия 2.0** ) В этом месяце мы расширили поддержку службы, включив в нее предварительную версию пакета SDK для выпуска распознавателя версии 2.0 (Предварительная версия). Воспользуйтесь приведенными ниже ссылками, чтобы начать работу с выбранным языком: 
    * [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/ai.formrecognizer-readme-pre?view=azure-dotnet)
    * [пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/ai-formrecognizer-readme-pre?view=azure-java-preview)
-   * [Пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/?view=azure-python)
-   * [Пакет SDK для JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/?view=azure-node-latest)
+   * [Пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ai-formrecognizer-readme-pre?view=azure-python-preview)
+   * [Пакет SDK для JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/ai-form-recognizer-readme-pre?view=azure-node-preview)
 
   Новый пакет SDK поддерживает все функции REST API версии 2.0 для распознавателя форм. Например, можно обучить модель с метками или без них, а также извлечь текст, пары "ключ-значение" и таблицы из форм, извлечь данные из чеков с помощью предварительно построенной службы получения и извлечь текст и таблицы со службой макета из документов. Вы можете поделиться своими отзывами о [пакетах SDK в форме отзывов SDK](https://aka.ms/FR_SDK_v1_feedback).
  

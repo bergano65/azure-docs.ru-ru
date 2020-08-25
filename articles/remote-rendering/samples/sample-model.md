@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/29/2020
 ms.topic: sample
-ms.openlocfilehash: 0c28d36c7934fbbac0ddd11562c8dc237b0360ee
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: 8e5dcb6c9dfa08efc0889fcab779d6cb333d2330
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80678495"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88507541"
 ---
 # <a name="sample-models"></a>Примеры моделей
 
@@ -26,7 +26,7 @@ ms.locfileid: "80678495"
 
 | Имя | Значение |
 |-----------|:-----------|
-| [Требуемый размер виртуальной машины](../how-tos/session-rest-api.md#create-a-session) | standard |
+| [Требуемый размер сервера](../how-tos/session-rest-api.md#create-a-session) | standard |
 | Количество треугольников | 18,7 млн |
 | Количество подвижных деталей | 2073 |
 | Количество материалов | 94 |

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 18acbd94fa3d717fc20b9e1020b9bf7c6db7744d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b00fe7a515d1d27ce9be2ab62a96c719d5e045a5
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78302922"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798590"
 ---
 # <a name="stringtoarray-azure-cosmos-db"></a>Стрингтоаррай (Azure Cosmos DB)
  Возвращает выражение, преобразованное в массив. Если выражение не может быть преобразовано, возвращает значение undefine.  
@@ -32,8 +32,8 @@ StringToArray(<str_expr>)
   
   Возвращает выражение массива или значение undefine. 
   
-## <a name="remarks"></a>Комментарии
-  Вложенные строковые значения должны быть записаны с двойными кавычками, чтобы быть допустимыми JSON. Дополнительные сведения о формате JSON см. в разделе [JSON.org](https://json.org/)
+## <a name="remarks"></a>Remarks
+  Вложенные строковые значения должны быть записаны с двойными кавычками, чтобы быть допустимыми JSON. Дополнительные сведения о формате JSON см. в разделе [JSON.org](https://json.org/). Эта системная функция не будет использовать индекс.
   
 ## <a name="examples"></a>Примеры
   
@@ -90,10 +90,6 @@ SELECT
 ```json
 [{}]
 ```
-
-## <a name="remarks"></a>Remarks
-
-Эта системная функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

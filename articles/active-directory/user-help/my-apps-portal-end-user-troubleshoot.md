@@ -12,12 +12,12 @@ ms.date: 03/21/2019
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: ed1f06e4747492c43d19a00c1091b2b4d7f7050f
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: c5d1b08944417493d175de23c7738db58f1c7bd3
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83741885"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798012"
 ---
 # <a name="troubleshoot-problems-with-the-my-apps-portal"></a>Устранение неполадок с порталом "Мои приложения"
 
@@ -51,7 +51,7 @@ ms.locfileid: "83741885"
 
 - Убедитесь, что используется правильный пароль и срок его действия не истек. Дополнительные сведения см. в статье [Сброс пароля к рабочей или учебной учетной записи](active-directory-passwords-update-your-own-password.md).
 
-- Убедитесь, что сведения для проверки актуальны и точны. Дополнительные сведения см. в статьях [Что такое страница дополнительной проверки?](multi-factor-authentication-end-user.md) и [Изменение информации и методов использования сведений для защиты](security-info-add-update-methods-overview.md).
+- Убедитесь, что сведения для проверки актуальны и точны. Дополнительные сведения см. в статьях [Что такое страница дополнительной проверки?](./multi-factor-authentication-end-user-first-time.md) и [Изменение информации и методов использования сведений для защиты](./security-info-setup-auth-app.md).
 
 - Добавьте URL-адрес портала **Мои приложения** в значение параметра **Свойства Интернета > Безопасность > Надежные узлы**.
 
@@ -75,7 +75,7 @@ ms.locfileid: "83741885"
 
 - Убедитесь, что используется правильный пароль и срок его действия не истек. Дополнительные сведения см. в статье [Сброс пароля к рабочей или учебной учетной записи](active-directory-passwords-update-your-own-password.md).
 
-- Убедитесь, что сведения для проверки актуальны и точны. Дополнительные сведения см. в статьях [Что такое страница дополнительной проверки?](multi-factor-authentication-end-user.md) и [Изменение информации и методов использования сведений для защиты](security-info-add-update-methods-overview.md).
+- Убедитесь, что сведения для проверки актуальны и точны. Дополнительные сведения см. в статьях [Что такое страница дополнительной проверки?](./multi-factor-authentication-end-user-first-time.md) и [Изменение информации и методов использования сведений для защиты](./security-info-setup-auth-app.md).
 
 - Очистите кэш в браузере и повторите попытку входа.
 

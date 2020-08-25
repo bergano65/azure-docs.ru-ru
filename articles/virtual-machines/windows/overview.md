@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 1d2675a55133d405041be6e309e0cc4d1596084e
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 4e955a51906f160264fc4e81f263fe7677be91de
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87835495"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589628"
 ---
 # <a name="windows-virtual-machines-in-azure"></a>Виртуальные машины Windows в Azure
 
@@ -51,6 +51,10 @@ ms.locfileid: "87835495"
 | Azure PowerShell |Используйте команду [Get-AzLocation](/powershell/module/az.resources/get-azlocation). |
 | REST API |Используйте операцию [вывода списка расположений](/rest/api/resources/subscriptions). |
 | Azure CLI |Используйте операцию [az account list-locations](/cli/azure/account?view=azure-cli-latest). |
+
+### <a name="singapore-data-residency"></a>Размещение данных в Сингапуре
+
+В Azure функция хранения данных клиентов в одном регионе в настоящее время доступна только для региона "Юго-Восточная Азия (Сингапур)" в Азиатско-Тихоокеанском географическом регионе. Для всех других регионов данные клиента хранятся в геообъектах. Дополнительные сведения см. на [этой странице](https://azuredatacentermap.azurewebsites.net/).
 
 ## <a name="availability"></a>Доступность
 В рамках отраслевого соглашения об уровне обслуживания Azure мы объявили о поддержке одного экземпляра виртуальной машины с гарантированной доступностью в течение 99,9 % времени при условии его развертывания с использованием хранилища класса Premium для всех дисков.  Чтобы обеспечить соответствие соглашению об уровне обслуживания с гарантированной доступностью виртуальных машин в течение 99,95 % времени, вам так или иначе нужно развернуть две или несколько виртуальных машин для выполнения рабочих нагрузок в рамках группы доступности. В группе доступности виртуальные машины распределяются по несколькими доменам сбоя в центрах обработки данных Azure, а также развертываются на узлах с разными периодами обслуживания. В полном [соглашении об уровне обслуживания Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/) поясняется гарантированная доступность Azure в целом.
@@ -97,9 +101,9 @@ Azure предоставляет множество [образов из Marketp
 | [Группа ресурсов](../../azure-resource-manager/management/overview.md) |Да |Виртуальная машина должна входить в группу ресурсов. |
 | [Учетная запись хранения](../../storage/common/storage-account-create.md) |Да |Виртуальной машине требуется учетная запись хранения для хранения виртуальных жестких дисков. |
 | [Виртуальная сеть](../../virtual-network/virtual-networks-overview.md) |Да |Виртуальная машина должна быть подключена к виртуальной сети. |
-| [Общедоступный IP-адрес](../../virtual-network/public-ip-addresses.md) |нет |Для удаленного доступа к виртуальной машине ей можно назначить общедоступный IP-адрес. |
+| [Общедоступный IP-адрес](../../virtual-network/public-ip-addresses.md) |Нет |Для удаленного доступа к виртуальной машине ей можно назначить общедоступный IP-адрес. |
 | [Сетевой интерфейс](../../virtual-network/virtual-network-network-interface.md) |Да |Для обмена данными в сети виртуальной машине нужен сетевой интерфейс. |
-| [Диски данных](attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |нет |Виртуальная машина может содержать диски данных для расширения объема ресурсов хранения. |
+| [Диски данных](attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |Нет |Виртуальная машина может содержать диски данных для расширения объема ресурсов хранения. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

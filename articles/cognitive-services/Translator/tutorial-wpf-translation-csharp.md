@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: tutorial
 ms.date: 05/26/2020
 ms.author: swmachan
-ms.openlocfilehash: f80d22adc432a81fcc88391e71ed7540399fa559
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: 70550b61354c23889836b48be6f09475569ecd52
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83995740"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589662"
 ---
 # <a name="tutorial-create-a-translation-app-with-wpf"></a>Руководство по Создание приложения для перевода текста с помощью WPF
 
@@ -40,7 +40,7 @@ ms.locfileid: "83995740"
 | Служба | Компонент | Описание |
 |---------|---------|-------------|
 | API перевода | [Get Languages](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages) | Получение полного списка поддерживаемых языков для перевода текста. |
-| API перевода | [Translate](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate) | Перевод текста более чем на 60 языков. |
+| API перевода | [Translate](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate) | Перевод текста более чем на 70 языков. |
 | API перевода | [Detect](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect) | Определение языка исходного текста. Для определения используется показатель достоверности. |
 | API Проверки орфографии Bing | [Spell Check](https://docs.microsoft.com/rest/api/cognitiveservices/bing-spell-check-api-v7-reference) | Исправление орфографических ошибок для повышения точности перевода. |
 
@@ -263,7 +263,7 @@ ms.locfileid: "83995740"
 
 ## <a name="get-supported-languages"></a>Получение сведений о поддерживаемых языках
 
-API Переводчика сейчас поддерживает более 60 языков. Так как со временем будет добавлена поддержка новых языков, вместо того чтобы задавать список в коде приложения, рекомендуем вызвать ресурс "Языки" Переводчика.
+Переводчик сейчас поддерживает более 70 языков. Так как со временем будет добавлена поддержка новых языков, вместо того чтобы задавать список в коде приложения, рекомендуем вызвать ресурс "Языки" Переводчика.
 
 В рамках этого раздела мы создадим запрос `GET` к ресурсу языков на получение списка языков, доступных для перевода.
 

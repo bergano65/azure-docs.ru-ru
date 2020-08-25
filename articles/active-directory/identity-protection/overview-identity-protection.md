@@ -5,20 +5,21 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: overview
-ms.date: 03/17/2020
+ms.date: 08/15/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
+ms.custom: contperfq1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80873b2e2655e7cedbafb526d0fe757eaa282312
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 39c9522362ca6710fae5dee5d831e63cc36a3950
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87019617"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509116"
 ---
-# <a name="what-is-azure-active-directory-identity-protection"></a>Что такое защита идентификации Azure Active Directory?
+# <a name="what-is-identity-protection"></a>Общие сведения о защите идентификации
 
 Защита идентификации — это средство, которое позволяет организациям выполнять три основных задачи:
 
@@ -68,6 +69,12 @@ ms.locfileid: "87019617"
 - Обнаружение рисков
 
 Дополнительные сведения можно найти в статье [How To: Investigate risk](howto-identity-protection-investigate-risk.md) (Сведения об изучении рисков).
+
+### <a name="risk-levels"></a>Уровни риска
+
+Защита идентификации разделяет риски на три уровня: низкий, средний и высокий. 
+
+Хотя корпорация Майкрософт не предоставляет конкретные сведения о том, как вычисляется риск, мы будем считать, что каждый уровень обуславливает большую уверенность в том, что пользователь или вход скомпрометированы. Например, один экземпляр незнакомых свойств входа пользователя может не нести такую же угрозу, как утечка учетных данных другого пользователя.
 
 ## <a name="exporting-risk-data"></a>Экспорт данных о рисках
 

@@ -4,15 +4,15 @@ description: Учебник по выполнению скриптов Python в
 author: mammask
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 07/29/2020
+ms.date: 08/12/2020
 ms.author: komammas
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 9b58aa06b67f01cf9ce0b30cef0326185124306c
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: f4c71cffe00faa6dd8cc440c59f94b8c2d60f712
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87853319"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185117"
 ---
 # <a name="tutorial-run-python-scripts-through-azure-data-factory-using-azure-batch"></a>Руководство по Выполнение скриптов Python с помощью Фабрики данных Azure в пакетной службе Azure
 
@@ -67,8 +67,7 @@ ms.locfileid: "87853319"
 1. Войдите в Обозреватель службы хранилища с помощью своих учетных данных Azure.
 1. Используя учетную запись хранения, связанную с вашей учетной записью Пакетной службы, создайте два контейнера больших двоичных объектов (один для входных файлов, а другой для выходных), выполнив шаги, описанные в разделе о [создании контейнера больших двоичных объектов](../vs-azure-tools-storage-explorer-blobs.md#create-a-blob-container).
     * В этом примере мы будем вызывать наш входной (`input`) и выходной (`output`) контейнеры.
-1. Передайте `main.py` и [`iris.csv`](https://www.kaggle.com/uciml/iris/version/2#Iris.csv) во входной контейнер `input` с помощью Обозревателя службы хранилища, выполнив действия из статьи [Управление большими двоичными объектами в контейнере](../vs-azure-tools-storage-explorer-blobs.md#managing-blobs-in-a-blob-container).
-
+1. Передайте [`iris.csv`](https://www.kaggle.com/uciml/iris/version/2#Iris.csv) во входной контейнер `input` с помощью Обозревателя службы хранилища, выполнив инструкции из раздела [Управление большими двоичными объектами в контейнере](../vs-azure-tools-storage-explorer-blobs.md#managing-blobs-in-a-blob-container).
 
 ## <a name="develop-a-script-in-python"></a>Разработка скрипта на языке Python
 

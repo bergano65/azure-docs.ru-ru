@@ -1,18 +1,18 @@
 ---
 title: Бастион Azure | Документация Майкрософт
-description: Дополнительные сведения о Бастионе Azure
+description: Познакомьтесь со службой "Бастион Azure", обеспечивающей безопасное и бесперебойное подключение RDP или SSH к виртуальным машинам и защищающей порты RDP и SSH от внешних проникновений.
 services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: overview
 ms.date: 01/31/2020
 ms.author: cherylmc
-ms.openlocfilehash: 299a69675eed1ba958c6d13cf447407450df2abb
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.openlocfilehash: 8b27a7c2fd03ed0a80f1775465f1f1bbb44f0202
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80411128"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270348"
 ---
 # <a name="what-is-azure-bastion"></a>Что такое Бастион Azure
 

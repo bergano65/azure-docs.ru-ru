@@ -2,26 +2,21 @@
 title: Руководство по Интеграция единого входа Azure Active Directory с Maxient Conduct Manager Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Maxient Conduct Manager Software.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 85e71b76-cac3-4ce6-a35f-796d2cb7bdb5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/18/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09399f59e61ded49fef5a2388900b7b478111119
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.openlocfilehash: dd6872fd8dca3f29b61c6f1dffb5f219abac5cb8
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83847214"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88518898"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-maxient-conduct-manager-software"></a>Руководство по Интеграция единого входа Azure Active Directory с Maxient Conduct Manager Software
 
@@ -113,7 +108,7 @@ ms.locfileid: "83847214"
 
 ## <a name="test-with-maxient"></a>Тестирование в Maxient 
 
-Если специалист по реализации или представитель группы поддержки Maxient еще не создал запрос в службу поддержки, отправьте электронное письмо на адрес [support@maxient.com](mailto:support@maxient.com) с темой "Campus Based Authentication/Azure Setup — \<\<название учебного заведения\>\>". В тексте сообщения укажите **URL-адрес метаданных федерации приложений**. Сотрудник Maxient отправит в ответе тестовую ссылку, чтобы проверить правильность выпускаемых атрибутов.  
+Если вы не создавали запрос в службу поддержки Maxient, отправьте электронное письмо на адрес [support@maxient.com](mailto:support@maxient.com) с темой "Campus Based Authentication/Azure Setup — \<\<School Name\>\>". В тексте сообщения укажите **URL-адрес метаданных федерации приложений**. Сотрудник Maxient отправит в ответе тестовую ссылку, чтобы проверить правильность выпускаемых атрибутов.  
     
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

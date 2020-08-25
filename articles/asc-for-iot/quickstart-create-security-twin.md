@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/08/2019
 ms.author: mlottner
-ms.openlocfilehash: e9c4470ea16f1840274a6fa8613822b20d6772b3
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 7b867f5bcbbdc5deab2d67f356df69ee870c21f3
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81310866"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88142253"
 ---
 # <a name="quickstart-create-an-azureiotsecurity-module-twin"></a>Краткое руководство. Создание двойника модуля azureiotsecurity
 
@@ -76,7 +76,7 @@ ms.locfileid: "81310866"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В следующей стать описано, как настраивать оповещения.
+Чтобы узнать, как изучать рекомендации по обеспечению безопасности, перейдите к следующей статье.
 
 > [!div class="nextstepaction"]
-> [Configure custom alerts](quickstart-create-custom-alerts.md) (Настройка оповещений)
+> [Изучение рекомендаций по обеспечению безопасности](quickstart-investigate-security-recommendations.md)

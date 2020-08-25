@@ -23,7 +23,7 @@
             - name: Виртуальная машина для обработки и анализа данных
               href: ../../machine-learning/data-science-virtual-machine/dsvm-tutorial-resource-manager.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Машинное обучение
-              href: ../../machine-learning/tutorial-resource-manager-workspace.md?toc=/azure/azure-resource-manager/templates/toc.json
+              href: ../../machine-learning/how-to-create-workspace-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Analytics
           items:
             - name: Службы Analysis Services
@@ -219,7 +219,7 @@
       items:
         - name: Использование справочника по шаблонам
           href: template-tutorial-use-template-reference.md
-        - name: Развертывание нескольких экземпляров
+        - name: Создание нескольких экземпляров
           displayName: 'iteration,copy'
           href: template-tutorial-create-multiple-instances.md
         - name: Настройка развертывания ресурсов по порядку

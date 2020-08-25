@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 06/06/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: c896e617346c9bab598044cedfc475b471466cd0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b89b3e2cf799e1aa182f7005d92e2c91ce4b76ce
+ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86998856"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88263084"
 ---
 # <a name="tutorial-create-and-manage-windows-vms-with-azure-powershell"></a>Руководство по Создание виртуальных машин Windows и управление ими с помощью Azure PowerShell
 
@@ -261,6 +261,8 @@ Status
 ------
 PowerState/running
 ```
+
+Чтобы узнать рабочее состояние всех виртуальных машин в подписке, используйте [API "Виртуальные машины — показать все"](https://docs.microsoft.com/rest/api/compute/virtualmachines/listall) с параметром **statusOnly**, которому задано значение *true*.
 
 ## <a name="management-tasks"></a>Задачи управления
 

@@ -2,25 +2,21 @@
 title: Руководство по Интеграция Azure Active Directory с Atlassian Cloud | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в приложении Atlassian Cloud.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: CelesteDG
 ms.reviewer: celested
-ms.assetid: 729b8eb6-efc4-47fb-9f34-8998ca2c9545
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 08/04/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: dcb3522898a40dc79e8465af813633015568f1c8
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: ca75aea393e4850eb302cb03914296d7c1eaa951
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88033874"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88517658"
 ---
 # <a name="tutorial-integrate-atlassian-cloud-with-azure-active-directory"></a>Руководство по Интеграция Atlassian Cloud с Azure Active Directory
 
@@ -77,6 +73,16 @@ ms.locfileid: "88033874"
 ### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
+
+1. Для автоматизации настройки в Atlassian Cloud необходимо установить **Расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
+
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+1. После добавления расширения в браузере щелкните **Настроить Atlassian Cloud**, чтобы перейти к приложению Atlassian Cloud. После этого укажите учетные данные администратора для входа в Atlassian Cloud. Расширение браузера автоматически настроит приложение.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+1. Если необходимо вручную настроить Atlassian Cloud, выполните вход на веб-сайте Atlassian Cloud своей компании с правами администратора и выполните следующие действия.
 
 1. Перед началом работы откройте экземпляр продукта Atlassian, а затем скопируйте и сохраните URL-адрес экземпляра.
    > [!NOTE]

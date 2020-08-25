@@ -4,17 +4,17 @@ description: Служба хранилища Azure защищает данные
 services: storage
 author: tamram
 ms.service: storage
-ms.date: 07/16/2020
+ms.date: 08/21/2020
 ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 002eeaedf4ae479408cd1ba0c7a373d8a2661cdc
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a5e7060b31a936bd54dc0a1f084f823beb076044
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089402"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88756815"
 ---
 # <a name="azure-storage-encryption-for-data-at-rest"></a>Шифрование службы хранилища Azure для неактивных данных
 
@@ -46,10 +46,10 @@ ms.locfileid: "87089402"
 | Параметр управления ключами | Ключи, управляемые Майкрософт | Ключи, управляемые клиентом | Ключи, предоставляемые клиентом |
 |--|--|--|--|
 | Операции шифрования и расшифровки | Azure | Azure | Azure |
-| Поддерживаемые службы хранилища Azure | Все | Хранилище BLOB-объектов, файлы Azure<sup>1, 2</sup> | Хранилище BLOB-объектов |
+| Поддерживаемые службы хранилища Azure | All | Хранилище BLOB-объектов, файлы Azure<sup>1, 2</sup> | Хранилище BLOB-объектов |
 | Хранилище ключей | Хранилище ключей (Майкрософт) | Azure Key Vault | Собственное хранилище ключей клиента |
 | Ответственность за смену ключей | Microsoft | Customer | Customer |
-| Управление ключами | Майкрософт | Customer | Customer |
+| Управление ключами | пиринг Майкрософт. | Customer | Customer |
 
 <sup>1</sup> сведения о создании учетной записи, поддерживающей использование управляемых клиентом ключей с хранилищем очередей, см. в разделе [Создание учетной записи, которая поддерживает управляемые клиентом ключи для очередей](account-encryption-key-create.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json).<br />
 <sup>2</sup> дополнительные сведения о создании учетной записи, поддерживающей использование управляемых клиентом ключей с хранилищем таблиц, см. в разделе [Создание учетной записи, которая поддерживает управляемые клиентом ключи для таблиц](account-encryption-key-create.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json).

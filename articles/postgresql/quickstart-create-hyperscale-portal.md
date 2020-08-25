@@ -1,5 +1,5 @@
 ---
-title: Создание распределенных таблиц — Гипермасштабирование (Цитус) — База данных Azure для PostgreSQL
+title: 'Краткое руководство: создание серверной группы — Гипермасштабирование (Citus) — База данных Azure для PostgreSQL'
 description: Краткое руководство по созданию распределенных таблиц и выполнению к ним запросов с помощью Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)".
 author: jonels-msft
 ms.author: jonels
@@ -7,15 +7,15 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.custom: mvc
 ms.topic: quickstart
-ms.date: 05/14/2019
-ms.openlocfilehash: 6e03b8f89ec22b74ad7dd14d9225c11fde78ec7f
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.date: 08/17/2020
+ms.openlocfilehash: 977082b7f9055b90ee5c93913154934741d93772
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88135629"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88547704"
 ---
-# <a name="quickstart-create-an-azure-database-for-postgresql---hyperscale-citus-in-the-azure-portal"></a>Краткое руководство. Создание Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)" на портале Azure
+# <a name="quickstart-create-a-hyperscale-citus-server-group-in-the-azure-portal"></a>Краткое руководство. Создание серверной группы Гипермасштабирования (Citus) на портале Azure
 
 База данных Azure для PostgreSQL — это управляемая служба, с помощью которой можно запускать и масштабировать базы данных PostgreSQL высокой доступности, а также управлять ими в облаке. Из этого краткого руководства вы узнаете, как создать серверную группу Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)" на портале Azure. Вы узнаете о распределении данных — сегментировании таблиц по узлам, приеме данных и выполнении запросов на нескольких узлах.
 

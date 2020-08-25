@@ -1,17 +1,17 @@
 ---
 title: Руководство по Добавление узлов в кластер Azure FXT Edge Filer
-description: Добавление узлов в кэш хранилища Azure FXT Edge Filer
+description: Узнайте, как добавить узлы кластера в кэш хранилища Azure FXT Edge Filer и включить высокий уровень доступности.
 author: ekpgh
 ms.author: rohogue
 ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
-ms.openlocfilehash: 6251fe8f88b7db25e3c09898540e07754d72fb0d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5b62927930212fc7e59fc4329a29ceecbe2815e5
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75551953"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185338"
 ---
 # <a name="tutorial-add-cluster-nodes-to-an-azure-fxt-edge-filer-cluster"></a>Руководство по Добавление узлов кластера в Azure FXT Edge Filer
 

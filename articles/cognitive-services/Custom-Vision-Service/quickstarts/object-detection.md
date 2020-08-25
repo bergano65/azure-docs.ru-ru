@@ -1,20 +1,20 @@
 ---
-title: Краткое руководство. Создание функции обнаружения объектов с помощью пакета SDK для службы "Пользовательское визуальное распознавание"
-description: Краткое руководство. Создайте проект, добавьте теги, отправьте изображения, обучите свой проект и найдите объекты с помощью пакета SDK для службы "Пользовательское визуальное распознавание".
+title: Краткое руководство. Создание функции обнаружения объектов с помощью клиентской библиотеки для службы "Пользовательское визуальное распознавание"
+description: Краткое руководство. Создайте проект, добавьте теги, отправьте изображения, обучите свой проект и найдите объекты с помощью клиентской библиотеки для службы "Пользовательское визуальное распознавание".
 author: PatrickFarley
 ms.author: pafarley
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 04/27/2020
+ms.date: 08/17/2020
 ms.custom: devx-track-python, devx-track-javascript
 zone_pivot_groups: programming-languages-set-one
-ms.openlocfilehash: 9febd3a242834a930beae5130a33d230e9e83b6b
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: c6b40fe7abe0b7ad4b6993b55206eabc5b4681d0
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87875972"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88511318"
 ---
 # <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-sdk"></a>Краткое руководство. Создание проекта для обнаружения объектов с помощью пакета SDK для службы "Пользовательское визуальное распознавание"
 

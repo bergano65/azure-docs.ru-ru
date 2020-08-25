@@ -7,12 +7,12 @@ ms.date: 01/30/2020
 ms.topic: how-to
 ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: d041bfe1187c48e5544e8933763eaf45a507a424
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 9a6a56491a327d5d4eafc2c05dc2b54b137096b8
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88701645"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88752060"
 ---
 # <a name="reduce-costs-with-azure-disks-reservation"></a>Сокращение расходов с помощью резервирования дисков Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "88701645"
 Например, предположим, что вы резервируете один диск P40, который имеет 2 Тиб подготовленной емкости хранилища. Также предположим, что вы выделили только два диска P30. Резервирование P40 в этом случае не учитывает потребление P30 и оплачивается тариф по мере использования на дисках P30.
 <br/>
 <br/>
-[!INCLUDE [disk-storage-premium-ssd-sizes](~/includes/disk-storage-premium-ssd-sizes.md)]
+[!INCLUDE [disk-storage-premium-ssd-sizes](../../includes/disk-storage-premium-ssd-sizes.md)]
 
 ## <a name="purchase-considerations"></a>Вопросы, связанные с приобретением
 
@@ -55,7 +55,7 @@ ms.locfileid: "88701645"
 
 ## <a name="buy-a-disk-reservation"></a>Приобретение резервирования диска
 
-Вы можете приобрести Хранилище дисков Azure резервирования с помощью [портал Azure](https://portal.azure.com/). Вы можете платить за резервирование перед или с ежемесячными платежами. Дополнительные сведения о приобретении с ежемесячными платежами см. [в разделе покупка резервирования с ежемесячными платежами](~/articles/cost-management-billing/reservations/monthly-payments-reservations.md).
+Вы можете приобрести Хранилище дисков Azure резервирования с помощью [портал Azure](https://portal.azure.com/). Вы можете платить за резервирование перед или с ежемесячными платежами. Дополнительные сведения о приобретении с ежемесячными платежами см. [в разделе покупка резервирования с ежемесячными платежами](../cost-management-billing/reservations/prepare-buy-reservation.md#buy-reservations-with-monthly-payments).
 
 Чтобы приобрести зарезервированную емкость, выполните следующие действия.
 
@@ -103,5 +103,5 @@ ms.locfileid: "88701645"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Основные сведения о резервировании в Azure](~/articles/cost-management-billing/reservations/save-compute-costs-reservations.md)
-- [Общие сведения о применении скидки на резервирование в службе "Хранилище дисков Azure"](~/articles/cost-management-billing/reservations/understand-disk-reservations.md)
+- [Основные сведения о резервировании в Azure](../cost-management-billing/reservations/save-compute-costs-reservations.md)
+- [Общие сведения о применении скидки на резервирование в службе "Хранилище дисков Azure"](../cost-management-billing/reservations/understand-disk-reservations.md)

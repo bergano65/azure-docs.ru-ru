@@ -2,25 +2,21 @@
 title: Руководство по интеграции Azure Active Directory с Pega Systems | Документация Майкрософт
 description: Из этого руководства вы узнаете, как настроить единый вход между Azure Active Directory и Pega Systems.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 31acf80f-1f4b-41f1-956f-a9fbae77ee69
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: bd54466e054055ff84cd5bb2b28c5cc074ac0017
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3dd09770ef5f747f008090368c35b1f274374c5f
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72026801"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549081"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pega-systems"></a>Руководство по интеграции Azure Active Directory с Pega Systems
 
@@ -234,7 +230,7 @@ ms.locfileid: "72026801"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon @\<ваш_домен.\<доменная_зона>** . (Например, BrittaSimon@contoso.com).
+    b. В поле **Имя пользователя** введите **brittasimon@\<yourcompanydomain>.\<extension>** . (Например, BrittaSimon@contoso.com).
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 

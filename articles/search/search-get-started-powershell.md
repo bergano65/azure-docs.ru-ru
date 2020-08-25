@@ -8,13 +8,13 @@ ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.devlang: rest-api
-ms.date: 02/10/2020
-ms.openlocfilehash: eb7dcc0956cd9ce214ad3894aa8cc2b99beed942
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.date: 08/17/2020
+ms.openlocfilehash: b74deaecd1a71fec14e31f0a6aca2fed34361d76
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86519819"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88506011"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-powershell-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в PowerShell с помощью REST API
 > [!div class="op_single_selector"]
@@ -25,7 +25,7 @@ ms.locfileid: "86519819"
 > * [Портал](search-get-started-portal.md)
 > 
 
-Эта статья поможет вам создать, загрузить и запросить индекс службы "Когнитивный поиск Azure" с помощью PowerShell и [REST API службы "Когнитивный поиск Azure"](https://docs.microsoft.com/rest/api/searchservice/). Здесь содержатся сведения о выполнении команд PowerShell в интерактивном режиме. Вы также можете [скачать и запустить сценарий PowerShell](https://github.com/Azure-Samples/azure-search-powershell-samples/tree/master/Quickstart), выполняющий те же операции.
+Эта статья поможет вам создать, загрузить и запросить индекс службы "Когнитивный поиск Azure" с помощью PowerShell и [REST API службы "Когнитивный поиск Azure"](https://docs.microsoft.com/rest/api/searchservice/). Здесь содержатся сведения о выполнении команд PowerShell в интерактивном режиме. Вы также можете [скачать и запустить скрипт PowerShell](https://github.com/Azure-Samples/azure-search-powershell-samples/tree/master/Quickstart), выполняющий те же операции.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -89,7 +89,7 @@ ms.locfileid: "86519819"
 
 Обязательные элементы индекса включают в себя имя и коллекцию полей. Коллекция полей определяет структуру *документа*. Каждое поле имеет имя, тип и атрибуты, которые определяют его использование (например, обладает ли оно возможностью полнотекстового поиска, можно ли его отфильтровать или извлечь из результатов поиска). В индексе одно из полей типа `Edm.String` должно быть назначено в качестве *ключа* для идентификации документа.
 
-Этот индекс называется hotels-quickstart и содержит приведенные ниже определения полей. Это подмножество более крупного [индекса Hotels](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/hotels/Hotels_IndexDefinition.JSON), используемого в рамках других пошаговых руководств. В этом руководстве мы его сократили.
+Этот индекс называется hotels-quickstart и содержит приведенные ниже определения полей. Это подмножество более крупного [индекса Hotels](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/hotels/Hotels_IndexDefinition.JSON), используемого в других статьях. В этом кратком руководстве определения полей были усечены для краткости.
 
 1. Вставьте этот пример в PowerShell, чтобы создать объект **$body**, содержащий схему индекса.
 
@@ -319,7 +319,7 @@ ms.locfileid: "86519819"
 
 В рамках этого раздела мы покажем, как создать запрос в индекс с помощью [API поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents).
 
-Обязательно используйте одинарные кавычки при поиске $urls. Строки запроса содержат символы **$** . Если вся строка заключена в одинарные кавычки, их нельзя использовать.
+Обязательно используйте одинарные кавычки при поиске $urls. Строки запроса содержат символы **$** . Их можно использовать, если вся строка заключена в одинарные кавычки.
 
 1. Задайте в качестве конечной точки коллекцию документов *hotels-quickstart* и добавьте параметр **search** для передачи в строку запроса. 
   
@@ -378,7 +378,7 @@ ms.locfileid: "86519819"
 $url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quickstart/docs?api-version=2020-06-30&search=restaurant wifi&$count=true&$select=HotelName,Description,Tags'
 
 # Query example 2 
-# Apply a filter to the index to find hotels rated 4 or highter
+# Apply a filter to the index to find hotels rated 4 or higher
 # Returns the HotelName and Rating. Two documents match.
 $url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quickstart/docs?api-version=2020-06-30&search=*&$filter=Rating gt 4&$select=HotelName,Rating'
 

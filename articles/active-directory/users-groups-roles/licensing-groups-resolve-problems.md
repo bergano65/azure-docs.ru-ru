@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 79552c099adfa94f3515ff1b9c78103cb82830a1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f0d7703af48ba33edea81ca45516191266a79fa4
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85611294"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799559"
 ---
 # <a name="identify-and-resolve-license-assignment-problems-for-a-group-in-azure-active-directory"></a>Определение и устранение проблем назначения лицензий для группы в Azure Active Directory
 
@@ -107,7 +107,7 @@ ms.locfileid: "85611294"
 > ```
 > Get-Recipient -ResultSize unlimited | where {$_.EmailAddresses -match "user@contoso.onmicrosoft.com"} | fL Name, RecipientType,emailaddresses
 > ```
-> Дополнительные сведения об этой проблеме см. в статье [Сообщение об ошибке "< адрес > адрес прокси-сервера уже используется" в Exchange Online](https://support.microsoft.com/help/3042584/-proxy-address-address-is-already-being-used-error-message-in-exchange-online). В статье [Подключение к Exchange Online PowerShell](https://technet.microsoft.com/library/jj984289.aspx) содержатся сведения о подключении к Exchange Online с помощью удаленного сеанса PowerShell.
+> Дополнительные сведения об этой проблеме см. в статье [Сообщение об ошибке "< адрес > адрес прокси-сервера уже используется" в Exchange Online](https://support.microsoft.com/help/3042584/-proxy-address-address-is-already-being-used-error-message-in-exchange-online). В статье [Подключение к Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps) содержатся сведения о подключении к Exchange Online с помощью удаленного сеанса PowerShell.
 
 После устранения проблем с прокси-адресами для соответствующих пользователей повторно выполните обработку лицензий для группы, чтобы проверить, что лицензии можно применять.
 
@@ -173,7 +173,7 @@ Microsoft Workplace Analytics является надстройкой. Она с
 
 К примеру, устранив для пользователя проблему продублированного адреса прокси-сервера, необходимо активировать обработку пользователя. Для повторной обработки пользователя перейдите в область пользователя, откройте **Лицензии**, а потом нажмите кнопку **Повторная обработка** на панели инструментов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы получить дополнительные сведения о сценариях управления лицензиями с помощью групп, см. ссылки ниже.
 

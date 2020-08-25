@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 07/29/2020
 ms.author: curtand
-ms.openlocfilehash: da00d77138eb3ff737c26d7fa52ab0bb56ec6ae4
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
-ms.translationtype: HT
+ms.openlocfilehash: 95947a9350f19f0f0ff45b7c65e14729b66f26cf
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87422422"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798165"
 ---
 # <a name="what-is-the-my-account-portal"></a>Что представляет собой портал "Моя учетная запись"?
 
@@ -33,11 +33,11 @@ ms.locfileid: "87422422"
 ![Страница "Обзор" портала "Моя учетная запись"](media/my-account-portal/my-account-portal-overview.png)
 
 >[!Important]
->Эта статья предназначена для пользователей, пытающихся получить доступ к порталу "Моя учетная запись" для обновления сведений для защиты, сведений об устройстве, пароле, подключенных организациях, языковых параметрах, конфиденциальности или предыдущем входе в систему. Если вы являетесь администратором, который ищет сведения о том, как включить проверку подлинности и другие функции Azure Active Directory (Azure AD) для сотрудников и других целей, см. [документацию по Azure AD для администраторов](https://docs.microsoft.com/azure/active-directory/).
+>Эта статья предназначена для пользователей, пытающихся получить доступ к порталу "Моя учетная запись" для обновления сведений для защиты, сведений об устройстве, пароле, подключенных организациях, языковых параметрах, конфиденциальности или предыдущем входе в систему. Если вы являетесь администратором, который ищет сведения о том, как включить проверку подлинности и другие функции Azure Active Directory (Azure AD) для сотрудников и других целей, см. [документацию по Azure AD для администраторов](../index.yml).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Выбор просмотра [сведений для защиты](user-help-security-info-overview.md) или управления ими
+- Выбор просмотра [сведений для защиты](./security-info-setup-signin.md) или управления ими
 
 - Просмотр подключенных [устройств](my-account-portal-devices-page.md) или управление ими
 
