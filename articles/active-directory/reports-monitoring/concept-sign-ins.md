@@ -17,12 +17,12 @@ ms.date: 03/24/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81daa7696c645c1353cdd5e6d3cbca90ac4f03da
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 6440e71eade32bfea4ed19448fd2f2007b519cc8
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87388124"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816088"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -47,11 +47,7 @@ ms.locfileid: "87388124"
 
 ### <a name="what-azure-ad-license-do-you-need-to-access-sign-in-activity"></a>Какие лицензии Azure AD требуются для доступа к действию входа?
 
-- Отчет о действиях входа доступен во [всех выпусках Azure AD](reference-reports-data-retention.md#how-long-does-azure-ad-store-the-data).
-
-- Если вы хотите получить доступ к данным входа с помощью API, клиент должен иметь связанную с ним лицензию [Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md) .
-
-
+Отчет о действиях входа доступен во [всех выпусках Azure AD](reference-reports-data-retention.md#how-long-does-azure-ad-store-the-data) , и его также можно получить с помощью API Microsoft Graph.
 
 ## <a name="sign-ins-report"></a>Отчет о входе
 
@@ -146,7 +142,7 @@ ms.locfileid: "87388124"
 ![Фильтр клиентского приложения](./media/concept-sign-ins/client-app-filter.png)
 
 
-|name|Современная проверка подлинности|Описание|
+|Имя|Современная проверка подлинности|Описание|
 |---|:-:|---|
 |SMTP с проверкой подлинности| |Используется клиентом POP и IMAP для отправки сообщений электронной почты.|
 |Ошибоч| |Используется клиентами Outlook и EAS для поиска почтовых ящиков в Exchange Online и подключения к ним.|
@@ -198,7 +194,7 @@ ms.locfileid: "87388124"
 
 Щелкните " **скачать** ", чтобы создать CSV-файл или формат JSON для последних 250 000 записей. Начните с [загрузки данных входа,](quickstart-download-sign-in-report.md) если вы хотите работать с ним за пределами портал Azure.  
 
-![Загрузить](./media/concept-sign-ins/71.png "Скачивание")
+![Загрузить](./media/concept-sign-ins/71.png "Скачать")
 
 > [!IMPORTANT]
 > На число записей, которые можно скачать, влияют особенности [политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).  
@@ -230,11 +226,11 @@ Azure AD и портал Azure предоставляют дополнитель
 
 Щелкнув элемент, вы получите более подробную информацию об операции входа:
 
-- ИД пользователя
+- Идентификатор пользователя.
 - Пользователь
 - Имя пользователя
-- Идентификатор приложения
-- Развертывание
+- Идентификатор приложения
+- Приложение
 - Клиент
 - Расположение
 - IP-адрес

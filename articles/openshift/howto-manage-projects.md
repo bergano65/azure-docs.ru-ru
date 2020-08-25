@@ -8,14 +8,14 @@ ms.author: gwallace
 ms.date: 07/19/2019
 ms.topic: conceptual
 ms.service: container-service
-ms.openlocfilehash: d4f53238951784a74e6e3fc8a73d1f112ce75608
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 35474df96254b158a39b6d913171c553bf30aea4
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79139119"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816445"
 ---
-# <a name="manage-projects-templates-image-streams-in-an-azure-red-hat-openshift-cluster"></a>Управление проектами, шаблонами, потоками изображений в кластере Azure Red Hat OpenShift 
+# <a name="manage-projects-templates-image-streams-in-an-azure-red-hat-openshift-cluster"></a>Управление проектами, шаблонами, потоками изображений в кластере Azure Red Hat OpenShift
 
 В платформе контейнера OpenShift проекты используются для группирования и изоляции связанных объектов. Администратор может предоставить разработчикам доступ к конкретным проектам, позволить им создавать собственные проекты и предоставлять им административные права для отдельных проектов.
 
@@ -25,7 +25,7 @@ ms.locfileid: "79139119"
 
 При отправке запроса проекта API заменяет следующие параметры в шаблоне:
 
-| Параметр               | Описание:                                    |
+| Параметр               | Описание                                    |
 | ----------------------- | ---------------------------------------------- |
 | PROJECT_NAME            | Имя проекта. Обязательный.             |
 | PROJECT_DISPLAYNAME     | Отображаемое имя проекта. Значение может быть пустым. |
@@ -45,7 +45,7 @@ ms.locfileid: "79139119"
    oc edit template project-request -n openshift
    ```
 
-3. Удалите шаблон проекта по умолчанию из процесса обновления Azure Red Hat OpenShift (АТО), добавив следующую аннотацию:`openshift.io/reconcile-protect: "true"`
+3. Удалите шаблон проекта по умолчанию из процесса обновления Azure Red Hat OpenShift (АТО), добавив следующую аннотацию: `openshift.io/reconcile-protect: "true"`
 
    ```
    ...
@@ -112,7 +112,7 @@ ms.locfileid: "79139119"
    oc edit namespace openshift
    ```
 
-3. Удалите `openshift` пространство имен из процесса обновления АТО, добавив следующую аннотацию:`openshift.io/reconcile-protect: "true"`
+3. Удалите `openshift` пространство имен из процесса обновления АТО, добавив следующую аннотацию: `openshift.io/reconcile-protect: "true"`
 
    ```
    ...
@@ -124,7 +124,7 @@ ms.locfileid: "79139119"
 
    Любой отдельный объект в `openshift` пространстве имен можно удалить из процесса обновления, добавив `openshift.io/reconcile-protect: "true"` к нему заметку.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Воспользуйтесь руководством.
 > [!div class="nextstepaction"]

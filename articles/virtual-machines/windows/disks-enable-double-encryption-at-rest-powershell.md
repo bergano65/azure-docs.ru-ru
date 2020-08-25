@@ -2,20 +2,20 @@
 title: Azure PowerShell-включить двойное шифрование на управляемых дисках RESTful
 description: Включите двойное шифрование неактивных данных для управляемых дисков с помощью Azure PowerShell.
 author: roygara
-ms.date: 07/10/2020
+ms.date: 08/24/2020
 ms.topic: how-to
 ms.author: rogarana
 ms.service: virtual-machines-windows
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 5e70d434fcb297ff39b32a83b89a86e85fe9564f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6cb0bf9ae12169f9431cf221431f442b5870d932
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87088450"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816513"
 ---
-# <a name="azure-powershell---enable-double-encryption-at-rest-on-your-managed-disks"></a>Azure PowerShell-включить двойное шифрование неактивных на управляемых дисках
+# <a name="use-the-azure-powershell-module-to-enable-double-encryption-at-rest-for-managed-disks"></a>Использование модуля Azure PowerShell для включения двойного шифрования неактивных компонентов для управляемых дисков
 
 Хранилище дисков Azure поддерживает двойное шифрование при хранении для управляемых дисков. Концептуальные сведения о двойном шифровании неактивных данных и других типах шифрования дисков см. в разделе [двойное шифрование при](disk-encryption.md#double-encryption-at-rest) хранении статьи о шифровании диска.
 
@@ -23,7 +23,7 @@ ms.locfileid: "87088450"
 
 [!INCLUDE [virtual-machines-disks-double-encryption-at-rest-regions](../../../includes/virtual-machines-disks-double-encryption-at-rest-regions.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Установите последнюю [версию Azure PowerShell](/powershell/azure/install-az-ps)и войдите в учетную запись Azure с помощью [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount?view=azps-4.3.0).
 

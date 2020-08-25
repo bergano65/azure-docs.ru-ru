@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.topic: how-to
 ms.date: 8/12/2020
 ms.author: JenCook
-ms.openlocfilehash: 8996673cf8f01334e3dcd35aab8544643bd37360
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: d46354b18d5c3317cc1ed67d839feb26b7b6b5d0
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802228"
+ms.locfileid: "88815850"
 ---
 # <a name="how-to-run-an-application-with-fortanix-enclave-manager"></a>Как запустить приложение с помощью Фортаникс анклава Manager 
 
@@ -46,7 +46,6 @@ ms.locfileid: "88802228"
 1. Вход в [ФОРТАНИКС EM](https://fortanix.com)
 1. Перейдите на страницу **учетные записи** и выберите **Добавить учетную запись** , чтобы создать новую учетную запись. 
     
-[!div class="mx-imgBorder"]
 ![Создание учетной записи](media/how-to-fortanix-enclave-manager/create-account.png)
 
 1. После создания учетной записи нажмите **кнопку Выбрать** , чтобы выбрать только что созданную учетную запись. Теперь мы можем начать регистрацию вычислений и создания приложений. 
@@ -74,7 +73,7 @@ ms.locfileid: "88802228"
     - **Центр DOCKER**: [https://hub.docker.com/u/fortanix](https://hub.docker.com/u/fortanix)
     - **Приложение**: фортаникс/Python-Flask
 
-        Выполните следующую команду:
+        Выполните следующую команду.
          ```bash
             sudo docker run fortanix/python-flask
          ```

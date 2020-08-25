@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 07/28/2020
-ms.openlocfilehash: 0cb2eed0895c10f649facaa184a5f9f9ea158aa5
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 722d33e76b6009a44811dfcb8a3238b042ec6918
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87551988"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816887"
 ---
 # <a name="configure-azure-sql-edge-preview"></a>Настройка SQL для пограничных вычислений (предварительная версия)
 
@@ -157,6 +157,60 @@ chown -R 10001:0 <database file dir>
   - Обновите параметры создания контейнера, чтобы указать `*"User": "user_name | user_id*` пару "ключ-значение" в разделе Параметры создания контейнера. Замените user_name или user_id на фактическое user_name или user_id с узла DOCKER. 
   - Измените разрешения для тома каталога или подключения.
 
+## <a name="persist-your-data"></a> Сохранение данных
+
+Изменения конфигурации SQL Azure и файлы базы данных сохраняются в контейнере, даже если контейнер перезапускается с помощью `docker stop` и `docker start` . Однако если удалить контейнер с помощью `docker rm` , все в контейнере будет удалено, включая Azure SQL Server и базы данных. В следующем разделе описывается, как можно использовать **тома данных** для сохранения файлов базы данных даже в случае удаления связанных контейнеров.
+
+> [!IMPORTANT]
+> Для Azure SQL ребро важно понимать, как сохранять данные в DOCKER. Помимо этого раздела, мы также рекомендуем вам ознакомиться с информацией об [управлении данными в контейнерах Docker](https://docs.docker.com/engine/tutorials/dockervolumes/) в документации по Docker.
+
+### <a name="mount-a-host-directory-as-data-volume"></a>Подключение каталога узла в качестве тома данных
+
+Первый способ состоит в подключении каталога на вашем узле в качестве тома данных для контейнера. Для этого используйте команду `docker run` с флагом `-v <host directory>:/var/opt/mssql`. Такой подход позволяет восстанавливать данные в перерывах между выполнениями контейнера.
+
+```bash
+docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=<YourStrong!Passw0rd>' -p 1433:1433 -v <host directory>/data:/var/opt/mssql/data -v <host directory>/log:/var/opt/mssql/log -v <host directory>/secrets:/var/opt/mssql/secrets -d mcr.microsoft.com/azure-sql-edge-developer
+```
+
+```PowerShell
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<YourStrong!Passw0rd>" -p 1433:1433 -v <host directory>/data:/var/opt/mssql/data -v <host directory>/log:/var/opt/mssql/log -v <host directory>/secrets:/var/opt/mssql/secrets -d mcr.microsoft.com/azure-sql-edge-developer
+```
+
+Кроме того, этот способ позволяет предоставлять общий доступ к файлам на узле и просматривать их за пределами Docker.
+
+> [!IMPORTANT]
+> Сопоставление томов узла для **Docker в Windows** в настоящее время не поддерживает сопоставление полного каталога `/var/opt/mssql`. Однако можно сопоставить подкаталог, например `/var/opt/mssql/data`, с хост-компьютером.
+
+> [!IMPORTANT]
+> Сопоставление томов узла для **DOCKER на Mac** с помощью образа Azure SQL не поддерживается. Вместо этого следует использовать контейнеры томов данных. Это ограничение относится только к каталогу `/var/opt/mssql`. Операции чтения из подключенного каталога осуществляются в нормальном режиме. Например, вы можете подключить каталог узла с помощью команды -v на Mac и восстановить резервную копию из файла с расширением BAK, который находится на узле.
+
+### <a name="use-data-volume-containers"></a>Использование контейнеров томов данных
+
+Второй способ подразумевает использование контейнеров томов данных. Чтобы создать контейнер тома данных, укажите имя тома вместо каталога узла с параметром `-v`. В следующем примере создается общий том данных с именем **sqlvolume**.
+
+```bash
+docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=<YourStrong!Passw0rd>' -p 1433:1433 -v sqlvolume:/var/opt/mssql -d mcr.microsoft.com/azure-sql-edge-developer
+```
+
+```PowerShell
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<YourStrong!Passw0rd>" -p 1433:1433 -v sqlvolume:/var/opt/mssql -d mcr.microsoft.com/azure-sql-edge-developer
+```
+
+> [!NOTE]
+> Этот способ неявного создания тома данных в рамках команды выполнения не работает в старых версиях Docker. В таком случае следует явно выполнить действия, которые описываются в разделе [Создание и подключение контейнера тома данных](https://docs.docker.com/engine/tutorials/dockervolumes/#creating-and-mounting-a-data-volume-container) документации по Docker.
+
+Даже если вы остановите и удалите этот контейнер, том данных будет сохранен. Вы сможете просмотреть его с помощью команды `docker volume ls`.
+
+```bash
+docker volume ls
+```
+
+Если затем создать другой контейнер с тем же именем тома, новый контейнер будет использовать те же данные Azure SQL, которые содержатся в томе.
+
+Чтобы удалить контейнер тома данных, воспользуйтесь командой `docker volume rm`.
+
+> [!WARNING]
+> Если удалить контейнер томов данных, все данные Azure SQL в контейнере будут удалены *без возможности восстановления* .
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

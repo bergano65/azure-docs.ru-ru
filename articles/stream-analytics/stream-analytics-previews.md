@@ -6,13 +6,13 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 05/08/2020
-ms.openlocfilehash: 7391fbccaf7983a070d80da64a2908333280420b
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.date: 8/07/2020
+ms.openlocfilehash: e11d5b14bdf6b134fefea79a1f709ec73499bd20
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83609007"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815714"
 ---
 # <a name="azure-stream-analytics-preview-features"></a>Предварительная версия функций Azure Stream Analytics
 
@@ -24,16 +24,15 @@ ms.locfileid: "83609007"
 
 ### <a name="authenticate-to-sql-database-output-with-managed-identities"></a>Проверка подлинности в выходных данных Базы данных SQL с управляемыми удостоверениями
 
-Azure Stream Analytics поддерживает [проверку подлинности управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) для приемников выходных данных Базы данных SQL Azure. Управляемые удостоверения устраняют ограничения методов проверки подлинности на основе пользователя, например, необходимость повторной проверки подлинности в связи с изменением пароля или истечением срока действия пользовательского токена, которое происходит каждые 90 дней. При устранении необходимости в ручной проверке подлинности ваши развертывания Stream Analytics можно полностью автоматизировать.
+Azure Stream Analytics поддерживает [проверку подлинности управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) для приемников выходных данных Базы данных SQL Azure. Управляемые удостоверения устраняют ограничения методов проверки подлинности на основе пользователей, например необходимость повторной проверки подлинности из-за изменения пароля. 
 
 ### <a name="output-to-azure-synapse-analytics"></a>Вывод в Azure Synapse Analytics
 
 Задания Azure Stream Analytics могут выводиться в таблицу пула SQL в [Azure Synapse Analytics](https://azure.microsoft.com/services/synapse-analytics) и обрабатывать пропускную способность до 200 МБ/сек. Это удовлетворяет самые ресурсоемкие требования аналитики в режиме реального времени и обработку данных по горячим путям для таких рабочих нагрузок, как составление отчетов и панель мониторинга.  
 
+### <a name="real-time-high-performance-scoring-with-custom-ml-models-managed-by-azure-machine-learning"></a>Высокопроизводительная оценка в режиме реального времени с помощью пользовательских моделей ML, управляемых Машинным обучением Azure.
 
-### <a name="online-scaling"></a>Оперативное масштабирование
-
-При использовании оперативного масштабирования вам не нужно прекращать работу, если необходимо изменить распределение единицы хранения. Вы можете увеличить или уменьшить емкость единицы для выполняющегося задания, не прерывая его. Это основано на клиентской системе долгосрочных критически важных конвейеров, которые сегодня предлагает Stream Analytics. Дополнительные сведения см. в разделе [Настройка единиц потоковой передачи Azure Stream Analytics](stream-analytics-streaming-unit-consumption.md#configure-stream-analytics-streaming-units-sus).
+Azure Stream Analytics поддерживает высокопроизводительную оценку в режиме реального времени, используя предварительно подготовленные модели Машинного обучения, управляемые Машинным обучением Azure и размещенные в Службе Azure Kubernetes Service (AKS) или Экземплярах контейнеров Azure (ACI), используя рабочий процесс, не требующий написания кода. [Регистрация](https://aka.ms/asapreview1) для предварительной версии
 
 ### <a name="c-custom-de-serializers"></a>Пользовательские десериализаторы на C#
 Разработчики могут использовать возможности Azure Stream Analytics для обработки данных в Protobuf, XML или любом другом пользовательском формате. Вы можете реализовать [пользовательские десериализаторы](custom-deserializer-examples.md) на C#, которые затем можно использовать для десериализации событий, получаемых Azure Stream Analytics.
@@ -42,33 +41,22 @@ Azure Stream Analytics поддерживает [проверку подлинн
 
 Разработчики, создающие модули Stream Analytics в облаке или IoT Edge, могут записывать или повторно использовать пользовательские функции C# и вызывать их непосредственно в запросе через [пользовательские функции](stream-analytics-edge-csharp-udf-methods.md).
 
-
 ### <a name="debug-query-steps-in-visual-studio"></a>Отладка шагов запроса в Visual Studio
 
 Вы можете легко просмотреть промежуточный набор строк на диаграмме данных при локальном тестировании в инструментах Azure Stream Analytics для Visual Studio. 
-
-### <a name="local-testing-with-live-data-in-visual-studio-code"></a>Локальное тестирование с фактическими данными в Visual Studio Code
-
-Перед отправкой задания в Azure вы можете протестировать ваши запросы на предмет наличия данных на локальном компьютере в режиме реального времени. Каждая тестовая итерация занимает в среднем менее двух-трех секунд, что делает процесс разработки очень эффективным.
-
-### <a name="visual-studio-code-for-azure-stream-analytics"></a>Visual Studio Code для Azure Stream Analytics
-
-Задания Azure Stream Analytics можно создать в Visual Studio Code. Дополнительные сведения см. в [руководстве по началу работы в VS Code](https://docs.microsoft.com/azure/stream-analytics/quick-create-vs-code).
-
-
-### <a name="real-time-high-performance-scoring-with-custom-ml-models-managed-by-azure-machine-learning"></a>Высокопроизводительная оценка в режиме реального времени с помощью пользовательских моделей ML, управляемых Машинным обучением Azure.
-
-Azure Stream Analytics поддерживает высокопроизводительную оценку в режиме реального времени, используя предварительно подготовленные модели Машинного обучения, управляемые Машинным обучением Azure и размещенные в Службе Azure Kubernetes Service (AKS) или Экземплярах контейнеров Azure (ACI), используя рабочий процесс, не требующий написания кода. [Регистрация](https://aka.ms/asapreview1) для предварительной версии
 
 
 ### <a name="live-data-testing-in-visual-studio"></a>Динамическое тестирование данных в Visual Studio
 
 Инструменты Visual Studio для Azure Stream Analytics усовершенствуют локальный компонент тестирования, который позволяет тестировать запросы к событиям прямой трансляции из облачных источников, таких как Концентратор событий или центр Интернета вещей. Дополнительные сведения см. в статье [Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)](stream-analytics-live-data-local-testing.md).
 
+### <a name="visual-studio-code-for-azure-stream-analytics"></a>Visual Studio Code для Azure Stream Analytics
 
-### <a name="net-user-defined-functions-on-iot-edge"></a>Определяемые пользователем функции .NET в IoT Edge
+Задания Azure Stream Analytics можно создать в Visual Studio Code. Дополнительные сведения см. в [руководстве по началу работы в VS Code](https://docs.microsoft.com/azure/stream-analytics/quick-create-vs-code).
 
-С помощью стандартных функций .NET, определяемых пользователем, можно выполнить код .NET Standard как часть конвейера потоковой передачи. Можно создать простые классы C# или импортировать полный проект и библиотеки. В Visual Studio поддерживается полная разработка и отладка интерфейса. Дополнительные сведения см. в статье [Разработка пользовательских функций .NET Standard для заданий Edge в Azure Stream Analytics (предварительная версия)](stream-analytics-edge-csharp-udf-methods.md).
+### <a name="local-testing-with-live-data-in-visual-studio-code"></a>Локальное тестирование с фактическими данными в Visual Studio Code
+
+Перед отправкой задания в Azure вы можете протестировать ваши запросы на предмет наличия данных на локальном компьютере в режиме реального времени. Каждая тестовая итерация занимает в среднем менее двух-трех секунд, что делает процесс разработки очень эффективным.
 
 ## <a name="other-previews"></a>Другие предварительные версии
 

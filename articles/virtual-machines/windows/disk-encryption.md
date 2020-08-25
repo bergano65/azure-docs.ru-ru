@@ -8,14 +8,14 @@ ms.author: rogarana
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 413ca677bc778069b92def043bf35ab7bb87b038
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 6174fbeb45c23c0ff04597305c6f65aef05bd26e
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448924"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815595"
 ---
-# <a name="server-side-encryption-of-azure-disk-storage"></a>Шифрование Хранилище дисков Azure на стороне сервера
+# <a name="server-side-encryption-of-azure-disk-storage-for-powershell"></a>Шифрование Хранилище дисков Azure на стороне сервера для PowerShell
 
 Шифрование на стороне сервера (SSE) защищает данные и помогает соблюсти корпоративные обязательства по обеспечению безопасности и соответствия. SSE автоматически шифрует данные, хранящиеся на управляемых дисках Azure (диски операционной системы и дисков данных), по умолчанию при сохранении их в облаке. 
 
@@ -84,8 +84,8 @@ ms.locfileid: "87448924"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Включите сквозное шифрование с использованием шифрования на узле с помощью [PowerShell](disks-enable-host-based-encryption-powershell.md) или [портал Azure](disks-enable-host-based-encryption-portal.md).
-- Включите двойное шифрование при неактивных дисках для управляемых дисков с помощью [PowerShell](disks-enable-double-encryption-at-rest-powershell.md) или [портал Azure](disks-enable-double-encryption-at-rest-portal.md).
-- Включите управляемые пользователем ключи для управляемых дисков с помощью [PowerShell](disks-enable-customer-managed-keys-powershell.md) или [портал Azure](disks-enable-customer-managed-keys-portal.md).
+- Включите сквозное шифрование с использованием шифрования на узле с помощью [PowerShell](disks-enable-host-based-encryption-powershell.md) или [портал Azure](../disks-enable-host-based-encryption-portal.md).
+- Включите двойное шифрование при неактивных дисках для управляемых дисков с помощью [PowerShell](disks-enable-double-encryption-at-rest-powershell.md) или [портал Azure](../disks-enable-double-encryption-at-rest-portal.md).
+- Включите управляемые пользователем ключи для управляемых дисков с помощью [PowerShell](disks-enable-customer-managed-keys-powershell.md) или [портал Azure](../disks-enable-customer-managed-keys-portal.md).
 - [Изучите шаблоны Azure Resource Manager для создания зашифрованных дисков с помощью управляемых клиентом ключей](https://github.com/ramankumarlive/manageddiskscmkpreview)
 - [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md)

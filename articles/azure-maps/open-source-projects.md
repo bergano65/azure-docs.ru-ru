@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 5782f07167f72be2ea7b148ad1b0a61d8cb710e2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f24a04db9317083fb47c0956174e649b5bd7ae10
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77048894"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815697"
 ---
 # <a name="azure-maps-community---open-source-projects"></a>Azure Maps сообщество — проекты с открытым исходным кодом
 
@@ -22,16 +22,41 @@ ms.locfileid: "77048894"
 
 Ниже перечислены некоторые из наиболее популярных Azure Maps проектов с открытым исходным кодом и примеров.
 
-| Имя проекта | Описание: |
+**Боты**
+
+| Имя проекта | Описание |
+|-|-|
+| [Платформа Bot — навык интереса](https://github.com/microsoft/botframework-solutions/tree/488093ac2fddf16096171f6a926315aa45e199e7/skills/csharp/pointofinterestskill) | Навык по интересам предоставляет виртуальному помощнику достопримечательности связанные возможности, используя Azure Maps со службой Azure Bot и Bot Framework. |
+| [Расположение BotBuilder](https://github.com/Microsoft/BotBuilder-Location) | Элемент управления выбор расположения с открытым исходным кодом для платформы Microsoft Bot на платформе службы Bing Maps. |
+
+**Открытие модулей веб-пакета SDK**
+
+Ниже приведен список проектов с открытым исходным кодом, расширяющих возможности веб-пакета SDK для Azure Maps.
+
+| Имя проекта | Описание |
+|-|-|
+| [Модуль анимации Azure Maps](https://github.com/Azure-Samples/azure-maps-animations)| Обширная библиотека анимации для использования с веб-пакетом SDK для Azure Maps. |
+| [Модуль пользовательского интерфейса Azure Maps Services](https://github.com/Azure-Samples/azure-maps-services-ui) | Набор элементов управления веб-ИНТЕРФЕЙСов, которые служат оболочкой для служб Azure Maps RESTFUL. |
+
+**Примеры**
+
+| Имя проекта | Описание |
 |-|-|
 | [Примеры кода Azure Maps](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Коллекция примеров кода для использования Azure Maps в веб-приложениях. |
 | [Azure Maps примеры кода gov Cloud](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Коллекция примеров кода для использования Azure Maps в облаке Azure для государственных организаций. |
 | [Примеры Azure Active Directory & Azure Maps](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples) | Коллекция примеров, демонстрирующих использование Azure Active Directory с Azure Maps. | 
-| [Реализация пространственной аналитики Интернета вещей с помощью Azure Maps](https://github.com/Azure-Samples/iothub-to-azure-maps-geofencing) | Отслеживание и сбор важных событий по определенному пространству и времени является типичным сценарием для Интернета вещей. |
 | [Примеры Jupyter Notebook Azure Maps](https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook) | Коллекция примеров Python, использующих службы Azure Maps RESTFUL. |
-| [Платформа Bot — навык интереса](https://github.com/microsoft/botframework-solutions/tree/488093ac2fddf16096171f6a926315aa45e199e7/skills/csharp/pointofinterestskill) | Навык по интересам предоставляет виртуальному помощнику возможности, связанные с достопримечательности, с помощью Azure Maps со службой Azure Bot и Bot Framework. |
+| [Удаленное управление IoT Azure Maps .NET UWP](https://github.com/Azure-Samples/azure-maps-dotnet-webgl-uwp-iot-remote-control) | Это пример приложения, в котором показано, как создать карту с удаленным управлением с помощью Azure Maps и служб центра Интернета вещей. |
+| [Реализация пространственной аналитики Интернета вещей с помощью Azure Maps](https://github.com/Azure-Samples/iothub-to-azure-maps-geofencing) | Отслеживание и сбор важных событий по определенному пространству и времени является типичным сценарием для Интернета вещей. |
 
-Более длинный список, включающий созданные сообщества проекты с открытым кодом, доступен [здесь](https://github.com/microsoft/Maps/blob/master/AzureMaps.md) .
+**Средства и ресурсы**
+
+| Имя проекта | Описание |
+|-|-|
+| [Azure Maps документы](https://github.com/MicrosoftDocs/azure-docs/tree/master/articles/azure-maps) | Источник для всей документации по Azure Location Based Services. |
+| [Средства создателя Azure Maps](https://github.com/Azure-Samples/AzureMapsCreator) | Средства Python для средств создателя Azure Maps. |
+
+Более длинный список проектов с открытым исходным кодом для Azure Maps, включающий проекты, созданные сообществом, можно найти [здесь](https://github.com/microsoft/Maps/blob/master/AzureMaps.md) .
 
 ## <a name="supportability-of-open-source-projects"></a>Поддержка проектов с открытым исходным кодом
 
@@ -44,7 +69,7 @@ ms.locfileid: "77048894"
 - Azure Maps проекты с открытым исходным кодом и примеры не являются продуктом, поэтому они не поддерживаются поддержка Premier или другими официальными каналами поддержки.
 - Azure Maps проекты с открытым исходным кодом и примеры поддерживаются аналогично другим проектам с открытым исходным кодом, осуществляемым корпорацией Майкрософт вместе со службой поддержки сообщества.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Найдите другие проекты Azure Maps с открытым кодом.
 

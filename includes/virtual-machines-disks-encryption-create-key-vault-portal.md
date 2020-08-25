@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: virtual-machines
 author: roygara
@@ -8,21 +8,21 @@ ms.topic: include
 ms.date: 03/23/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 2d4ab180818e597afa86a4cfdf73c6948d44e630
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: a967777b65c06cf23239a47e8e691fb3a29231b4
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87132468"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815476"
 ---
 При настройке ключей, управляемых клиентом, для дисков потребуется создавать ресурсы в определенном порядке, если это делается в первый раз. Сначала необходимо создать и настроить Azure Key Vault.
 
 ## <a name="set-up-your-azure-key-vault"></a>Настройка хранилища ключей Azure
 
-1. Войдите на [портал Microsoft Azure](https://aka.ms/diskencryptionupdates).
+1. Войдите на [портал Azure](https://aka.ms/diskencryptionupdates).
 1. Найдите и выберите **хранилища ключей**.
 
-    [![server-side-encryption-key-vault-portal-search.png](media/virtual-machines-disk-encryption-portal/server-side-encryption-key-vault-portal-search.png)](media/virtual-machines-disk-encryption-portal/sever-side-encryption-key-vault-portal-search-expanded.png#lightbox)
+    [![Снимок экрана портал Azure с развернутым диалоговым окном поиска.](./media/virtual-machines-disk-encryption-portal/server-side-encryption-key-vault-portal-search.png)](./media/virtual-machines-disk-encryption-portal/sever-side-encryption-key-vault-portal-search-expanded.png#lightbox)
 
     > [!IMPORTANT]
     > Для успешности развертывания хранилище ключей Azure, набор шифрования диска, виртуальная машина, диски и моментальные снимки должны находиться в одном регионе и подписке.
@@ -36,25 +36,25 @@ ms.locfileid: "87132468"
 
 1. Выберите **Проверка + создать**, проверьте выбранные параметры и нажмите кнопку **создать**.
 
-    ![Снимок экрана интерфейса создания Azure Key Vault. Отображение конкретных значений, создаваемых вами](media/virtual-machines-disk-encryption-portal/server-side-encryption-create-a-key-vault.png)
+    ![Снимок экрана интерфейса создания Azure Key Vault. Отображение конкретных значений, создаваемых вами](./media/virtual-machines-disk-encryption-portal/server-side-encryption-create-a-key-vault.png)
 
 1. Когда хранилище ключей завершит развертывание, выберите его.
 1. В разделе **Параметры**выберите **ключи** .
 1. Выберите **Создать или импортировать**.
 
-    ![Снимок экрана: область параметров Key Vault ресурсов. Отображает кнопку Создать/импортировать в параметрах.](media/virtual-machines-disk-encryption-portal/sever-side-encryption-key-vault-generate-settings.png)
+    ![Снимок экрана: область параметров Key Vault ресурсов. Отображает кнопку Создать/импортировать в параметрах.](./media/virtual-machines-disk-encryption-portal/sever-side-encryption-key-vault-generate-settings.png)
 
 1. Оставьте для параметра **тип ключа** значение **RSA** , а для параметра **размер ключа RSA** — значение **2048**.
 1. Заполните остальные выбранные параметры и нажмите кнопку **создать**.
 
-    ![Снимок экрана: колонка "Создание ключа", которая отображается после выбора кнопки "создать/импортировать"](media/virtual-machines-disk-encryption-portal/server-side-encryption-create-a-key-generate.png)
+    ![Снимок экрана: колонка "Создание ключа", которая отображается после выбора кнопки "создать/импортировать"](./media/virtual-machines-disk-encryption-portal/server-side-encryption-create-a-key-generate.png)
 
 ## <a name="set-up-your-disk-encryption-set"></a>Настройка набора шифрования дисков
 
 1. Найдите **наборы шифрования дисков** и выберите их.
 1. В колонке **наборы шифрования дисков** выберите **+ Добавить**.
 
-    ![Снимок экрана: основной экран портала шифрования дисков. Выделение кнопки "Добавить"](media/virtual-machines-disk-encryption-portal/sever-side-encryption-create-disk-encryption-set.png)
+    ![Снимок экрана: основной экран портала шифрования дисков. Выделение кнопки "Добавить"](./media/virtual-machines-disk-encryption-portal/sever-side-encryption-create-disk-encryption-set.png)
 
 1. Выберите группу ресурсов, укажите имя набора шифрования и выберите тот же регион, что и для хранилища ключей.
 1. Для параметра **тип шифрования** выберите **Шифрование неактивных ключей с помощью управляемого клиентом ключа**.
@@ -67,12 +67,12 @@ ms.locfileid: "87132468"
 1. Нажмите кнопку **Выбрать**.
 1. Выберите **проверить и создать** , а затем **создать**.
 
-    ![Снимок экрана: колонка создания шифрования диска. Отображение подписки, группы ресурсов, имени набора шифрования диска, региона и хранилища ключей и ключа.](media/virtual-machines-disk-encryption-portal/server-side-encryption-disk-set-blade.png)
+    ![Снимок экрана: колонка создания шифрования диска. Отображение подписки, группы ресурсов, имени набора шифрования диска, региона и хранилища ключей и ключа.](./media/virtual-machines-disk-encryption-portal/server-side-encryption-disk-set-blade.png)
 
 1. Откройте набор шифрования дисков после завершения создания и выберите оповещение, которое появится.
 
-    ![Снимок экрана всплывающего окна оповещения: "чтобы связать диск, изображение или моментальный снимок с набором шифрования диска, необходимо предоставить разрешения для хранилища ключей". Выберите это оповещение, чтобы продолжить](media/virtual-machines-disk-encryption-portal/server-side-encryption-disk-encryption-set-alert-fix.png)
+    ![Снимок экрана всплывающего окна оповещения: "чтобы связать диск, изображение или моментальный снимок с набором шифрования диска, необходимо предоставить разрешения для хранилища ключей". Выберите это оповещение, чтобы продолжить](./media/virtual-machines-disk-encryption-portal/server-side-encryption-disk-encryption-set-alert-fix.png)
 
     Два уведомления должны быть установлены и выполнены. Это позволяет использовать набор шифрования дисков в хранилище ключей.
 
-    ![Снимок экрана с успешными разрешениями и назначением ролей для хранилища ключей.](media/virtual-machines-disk-encryption-portal/disk-encryption-notification-success.png)
+    ![Снимок экрана с успешными разрешениями и назначением ролей для хранилища ключей.](./media/virtual-machines-disk-encryption-portal/disk-encryption-notification-success.png)

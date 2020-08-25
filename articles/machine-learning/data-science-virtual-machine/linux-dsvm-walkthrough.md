@@ -8,19 +8,17 @@ ms.subservice: data-science-vm
 author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
-ms.date: 04/02/2020
-ms.openlocfilehash: ed552a57e51ce9249f84bab6bb72bfe783e43edb
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 07/17/2020
+ms.openlocfilehash: ca3cfa44bd4f757c6fbb0dd2c84d7a843f9bff36
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87078114"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816224"
 ---
-# <a name="data-science-with-a-linux-data-science-virtual-machine-in-azure"></a>Обработка и анализ данных с помощью Виртуальной машины для обработки и анализа данных с Linux в Azure
+# <a name="data-science-with-an-ubuntu-data-science-virtual-machine-in-azure"></a>Обработка и анализ данных с помощью виртуальной машины Ubuntu для обработки и анализа данных в Azure
 
-В этом пошаговом руководстве объясняется, как выполнять ряд распространенных задач обработки и анализа данных с помощью Виртуальной машины для обработки и анализа данных (DSVM) с Linux. DSVM с Linux — это доступный в Azure образ виртуальной машины, на которой предварительно установлен ряд инструментов, обычно используемых для анализа данных и машинного обучения. Основные программные компоненты описаны в статье по [подготовке Виртуальной машины для обработки и анализа данных с Linux](linux-dsvm-intro.md). Образ DSVM позволяет за считаные минуты приступить к обработке и анализу данных без установки и настройки всех инструментов по отдельности. Вы можете легко масштабировать DSVM по мере необходимости и останавливать ее, когда она не используется. DSVM — это гибкий и экономичный ресурс.
-
-Рассматриваемые здесь задачи обработки и анализа данных следует выполнять после шагов, описанных в статье [Что такое процесс обработки и анализа данных группы?](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/overview). Процесс обработки и анализа данных группы представляет собой системный подход, позволяющий группам специалистов, работающих с данными, эффективно взаимодействовать друг с другом в течение всего жизненного цикла создания интеллектуальных приложений. Кроме того, этот процесс может служить итеративной платформой для обработки и анализа данных, которую можно использовать самостоятельно.
+В этом пошаговом руководстве показано, как выполнить несколько общих задач обработки и анализа данных с помощью виртуальной машины Ubuntu для обработки и анализа данных (DSVM). Ubuntu DSVM — это образ виртуальной машины, доступный в Azure и предустановленный с набором средств, которые обычно используются для анализа данных и машинного обучения. Ключевые компоненты программного обеспечения подготавливаются [к работе при подготовке виртуальной машины Ubuntu для обработки и анализа данных](./dsvm-ubuntu-intro.md). Образ DSVM позволяет за считаные минуты приступить к обработке и анализу данных без установки и настройки всех инструментов по отдельности. Вы можете легко масштабировать DSVM по мере необходимости и останавливать ее, когда она не используется. DSVM — это гибкий и экономичный ресурс.
 
 В этом пошаговом руководстве мы анализируем набор данных [spambase](https://archive.ics.uci.edu/ml/datasets/spambase). Spambase — это набор сообщений электронной почты, которые отмечены как спам или обычная почта (не спам). Spambase также содержит ряд статистических данных по содержимому сообщений электронной почты. К статистике мы вернемся в этом пошаговом руководстве несколько позже.
 
@@ -29,10 +27,10 @@ ms.locfileid: "87078114"
 Чтобы использовать DSVM с Linux, вам потребуются перечисленные ниже компоненты.
 
 * **Подписка Azure**. Сведения о том, как получить подписку Azure, см. на странице [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/free/).
-* [**Виртуальная машина для обработки и анализа данных с Linux**](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.ubuntu-1804). Дополнительные сведения см. в статье по [подготовке Виртуальной машины для обработки и анализа данных с Linux](linux-dsvm-intro.md).
-* Клиент [**X2Go**](https://wiki.x2go.org/doku.php), установленный на компьютере, и открытый сеанс XFCE. Дополнительные сведения см. в статье по [установке и настройке клиента X2Go](dsvm-ubuntu-intro.md#x2go).
+
+* [**Виртуальная машина Ubuntu**](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.ubuntu-1804)для обработки и анализа данных. Сведения о подготовке виртуальной машины см. [в статье Подготовка виртуальной машины Ubuntu для обработки и анализа данных](linux-dsvm-intro.md).
+* Клиент [**X2Go**](https://wiki.x2go.org/doku.php), установленный на компьютере, и открытый сеанс XFCE. Дополнительные сведения см. в статье по [установке и настройке клиента X2Go](linux-dsvm-intro.md#x2go).
 * Для более плавной прокрутки в веб-браузере Firefox в DSVM переключите флаг `gfx.xrender.enabled` в режим `about:config`. [Подробнее](https://www.reddit.com/r/firefox/comments/4nfmvp/ff_47_unbearable_slow_over_remote_x11/). Рекомендуется также задать для параметра `mousewheel.enable_pixel_scrolling` значение `False`. [Подробнее](https://support.mozilla.org/questions/981140).
-* **Учетная запись Машинного обучения Azure**. Если у вас ее еще нет, зарегистрируйте новую учетную запись на [домашней странице Машинного обучения Azure](https://azure.microsoft.com/free/services/machine-learning//).
 
 ## <a name="download-the-spambase-dataset"></a>Скачивание набора данных spambase
 
@@ -228,7 +226,7 @@ accuracy
 * JupyterHub;
 * Rattle;
 * PostgreSQL и SQuirreL SQL;
-* хранилище данных SQL Server.
+* Azure Synapse Analytics (ранее — Хранилище данных SQL)
 
 ### <a name="xgboost"></a>XGBoost;
 
@@ -286,31 +284,6 @@ clf = svm.SVC()
 clf.fit(X, y)
 ```
 
-Чтобы опубликовать модель в службе "Машинное обучение Azure", выполните следующие действия.
-
-```Python
-# Publish the model.
-workspace_id = "<workspace-id>"
-workspace_token = "<workspace-token>"
-from azureml import services
-@services.publish(workspace_id, workspace_token)
-@services.types(char_freq_dollar = float, word_freq_remove = float, word_freq_hp = float)
-@services.returns(int) # 0 or 1
-def predictSpam(char_freq_dollar, word_freq_remove, word_freq_hp):
-    inputArray = [char_freq_dollar, word_freq_remove, word_freq_hp]
-    return clf.predict(inputArray)
-
-# Get some info about the resulting model.
-predictSpam.service.url
-predictSpam.service.api_key
-
-# Call the model
-predictSpam.service(1, 1, 1)
-```
-
-> [!NOTE]
-> Этот параметр доступен только для файлов Python 2.7. В Python 3.5 он еще не поддерживается. Для запуска используйте **/anaconda/bin/python2.7**.
-
 ### <a name="jupyterhub"></a>JupyterHub
 
 Дистрибутив Anaconda на DSVM для обработки и анализа данных поставляется с Jupyter Notebook, кроссплатформенной средой для совместного использования кода Python, R или Julia и анализа. Доступ к Jupyter Notebook можно получить через JupyterHub. Войдите в систему, используя имя пользователя и пароль локального Linux в https:// \<DSVM DNS name or IP address\> : 8000/. Все файлы конфигурации JupyterHub находятся в каталоге /etc/jupyterhub.
@@ -334,7 +307,6 @@ predictSpam.service(1, 1, 1)
 
 * Примеры записных книжек Python:
   * [IntroToJupyterPython.ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Data-Science-Virtual-Machine/Samples/Notebooks/IntroToJupyterPython.ipynb)
-  * [IrisClassifierPyMLWebService](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Data-Science-Virtual-Machine/Samples/Notebooks/IrisClassifierPyMLWebService.ipynb)
 * Пример записной книжки R:
   * [IntroTutorialinR](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Data-Science-Virtual-Machine/Samples/Notebooks/IntroTutorialinR.ipynb) 
 
@@ -532,9 +504,9 @@ SELECT * from data order by word_freq_3d desc;
 
 Если вы хотите выполнять задачи машинного обучения с данными, хранящимися в базе данных PostgreSQL, рекомендуем воспользоваться [MADlib](https://madlib.incubator.apache.org/).
 
-### <a name="sql-data-warehouse"></a>Хранилище данных SQL
+### <a name="azure-synapse-analytics-formerly-sql-dw"></a>Azure Synapse Analytics (ранее — Хранилище данных SQL)
 
-Хранилище данных SQL Azure — это развернутая в облаке база данных с поддержкой горизонтального увеличения масштаба, которая может обрабатывать большие объемы реляционных и нереляционных данных. Дополнительные сведения см. в статье [Что такое хранилище данных SQL Azure?](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md)
+Azure синапсе Analytics — это облачная масштабируемая база данных, которая может обрабатывать большие объемы данных, как реляционные, так и нереляционные. Дополнительные сведения см. в статье [что такое Azure синапсе Analytics?](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md)
 
 Чтобы подключиться к хранилищу данных и создать таблицу, выполните следующую команду из командной строки:
 
@@ -567,8 +539,4 @@ GO
 
 Запрос можно также выполнить с помощью SQuirreL SQL. Выполните действия, аналогичные PostgreSQL, с помощью драйвера JDBC SQL Server. Драйвер JDBC находится в папке /usr/share/java/jdbcdrivers/sqljdbc42.jar.
 
-## <a name="next-steps"></a>Дальнейшие действия
 
-Обзор статей с пошаговыми руководствами по задачам, которые входят в процесс обработки и анализа данных в Azure, см. в статье [Что такое процесс обработки и анализа данных группы?](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/overview).
-
-В статье [Пошаговые руководства по процессу обработки и анализа данных](../team-data-science-process/walkthroughs.md) описаны пошаговые руководства, которые демонстрируют этапы процесса обработки и анализа данных группы для конкретных сценариев. В пошаговых руководствах также показано, как объединить облачные и локальные инструменты и службы в единый рабочий процесс или конвейер, чтобы создать интеллектуальное приложение.

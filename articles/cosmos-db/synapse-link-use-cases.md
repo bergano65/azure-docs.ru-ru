@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: ramkris
-ms.openlocfilehash: 493a2b0d0aab47c2e38648ec8f6be75685dfd7ec
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3a522a5a5945fe7a4b63dc759077d744f951a76f
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85119500"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88814422"
 ---
 # <a name="azure-synapse-link-for-azure-cosmos-db-near-real-time-analytics-use-cases"></a>Azure Synapse Link для Azure Cosmos DB: Варианты использования аналитики почти в реальном времени
 
@@ -34,7 +34,7 @@ ms.locfileid: "85119500"
 
 В следующей архитектуре показано использование Azure Cosmos DB в качестве собственной операционной базы данных в облаке и Synapse Link в службе анализа цепочек поставок.
 
-:::image type="content" source="./media/synapse-link-use-cases/supply-chain-analytics.png" alt-text="Ссылка на Azure синапсе для Azure Cosmos DB в аналитике цепочки поставок" border="false":::
+:::image type="content" source="./media/synapse-link-use-cases/supply-chain-analytics.png" alt-text="Ссылка на Azure синапсе для Azure Cosmos DB в аналитике цепочки поставок " border="false":::
 
 Благодаря архитектуре, показанной выше, вы можете получить следующие варианты использования с Synapse Link для Azure Cosmos DB:
 
@@ -52,9 +52,9 @@ ms.locfileid: "85119500"
 
   Synapse Link для Azure Cosmos DB позволяет выполнять сложные сценарии бизнес-аналитики и отчетности.
 
-  * Операционные данные из аналитического хранилища Azure Cosmos DB можно запрашивать с помощью собственной интеграции с Synapse SQL Server и удобного языка выражений T-SQL.
+  * Запрашивать операционные данные из Azure Cosmos DBного аналитического хранилища с помощью собственной интеграции с синапсе SQL Server и полным выразительностью языка T-SQL.
 
-  * Моделирование и публикация автоматического обновления панелей мониторинга бизнес-аналитики с Azure Cosmos DB с помощью поддержки бессерверного Synapse SQL для привычных средств бизнес-аналитики. Например, Azure Analysis Services, Power BI Premium и т. д.
+  * Моделирование и публикация автоматического обновления панелей мониторинга бизнес-аналитики с Azure Cosmos DB с помощью синапсе поддержки SQL Server для привычных средств бизнес-аналитики. Например, Azure Analysis Services, Power BI Premium и т. д.
 
 Ниже приведены некоторые рекомендации по интеграции данных для пакетной и потоковой передачи данных в Azure Cosmos DB.
 

@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 43359b66ba747dba7b3294d022a2c1aa2a3e624c
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: 7af4264860f8d9950515cd5302f03822e7cbac39
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84233245"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816870"
 ---
 # <a name="deploy-azure-sql-edge-preview"></a>Развертывание SQL Azure для пограничных вычислений (предварительная версия) 
 
@@ -114,9 +114,114 @@ Azure Marketplace — это интернет-магазин приложени
 12. Щелкните **Далее**.
 13. Щелкните **Отправить**.
 
-Из этого краткого руководства вы узнали, как развернуть модуль SQL для пограничных вычислений на устройстве IoT Edge.
+## <a name="connect-to-azure-sql-edge"></a>Подключение к службе SQL Azure для пограничных вычислений
+
+В следующих шагах для подключения к Azure SQL Server необходимо использовать программу командной строки Azure SQL ( **sqlcmd**) в контейнере.
+
+> [!NOTE]
+> Средство sqlcmd недоступно в ARM64 версии контейнеров SQL.
+
+1. Выполните команду `docker exec -it`, чтобы запустить интерактивную оболочку bash внутри запущенного контейнера. В следующем примере `azuresqledge` используется имя, заданное `Name` параметром модуля IOT Edge.
+
+   ```bash
+   sudo docker exec -it azuresqledge "bash"
+   ```
+
+2. После входа в контейнер подключитесь локально с помощью sqlcmd. Средство sqlcmd не включено в путь по умолчанию, поэтому необходимо указать полный путь.
+
+   ```bash
+   /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "<YourNewStrong@Passw0rd>"
+   ```
+
+   > [!TIP]
+   > Вы можете опустить пароль в командной строке. В этом случае вы получите приглашение для его ввода.
+
+3. Если все сработает должным образом, вы перейдете к приглашению команды **sqlcmd**: `1>`.
+
+## <a name="create-and-query-data"></a>Создание и запрос данных
+
+В следующих разделах приведено пошаговое руководство по созданию базы данных, добавлению данных и запуску простого запроса с использованием **sqlcmd** и Transact-SQL.
+
+### <a name="create-a-new-database"></a>Создание базы данных
+
+Выполните следующие шаги, чтобы создать базу данных `TestDB`.
+
+1. В приглашении команды **sqlcmd** вставьте следующую команду Transact-SQL, чтобы создать тестовую базу данных:
+
+   ```sql
+   CREATE DATABASE TestDB
+   Go
+   ```
+
+2. В следующей строке напишите запрос, который должен вернуть имена всех баз данных на сервере:
+
+   ```sql
+   SELECT Name from sys.Databases
+   Go
+   ```
+
+### <a name="insert-data"></a>Добавление данных
+
+Теперь создайте таблицу `Inventory` и вставьте две новых строки.
+
+1. В приглашении команды **sqlcmd** переключите контекст на новую базу данных `TestDB`:
+
+   ```sql
+   USE TestDB
+   ```
+
+2. Создайте таблицу `Inventory`:
+
+   ```sql
+   CREATE TABLE Inventory (id INT, name NVARCHAR(50), quantity INT)
+   ```
+
+3. Вставьте данные в новую таблицу:
+
+   ```sql
+   INSERT INTO Inventory VALUES (1, 'banana', 150); INSERT INTO Inventory VALUES (2, 'orange', 154);
+   ```
+
+4. Введите `GO`, чтобы выполнить предыдущие команды:
+
+   ```sql
+   GO
+   ```
+
+### <a name="select-data"></a>Выбор данных
+
+Теперь выполните запрос, чтобы вернуть данные из таблицы `Inventory`.
+
+1. В приглашении команды **sqlcmd** введите запрос, который должен вернуть из таблицы `Inventory` строки, где количество превышает 152:
+
+   ```sql
+   SELECT * FROM Inventory WHERE quantity > 152;
+   ```
+
+2. Выполните команду:
+
+   ```sql
+   GO
+   ```
+
+### <a name="exit-the-sqlcmd-command-prompt"></a>Выход из приглашения команды sqlcmd
+
+1. Чтобы завершить сеанс **sqlcmd**, введите `QUIT`:
+
+   ```sql
+   QUIT
+   ```
+
+2. Чтобы выйти из интерактивной командной строки в контейнере, введите команду `exit`. Контейнер продолжит работать после выхода из интерактивной оболочки bash.
+
+## <a name="connect-from-outside-the-container"></a> Подключение из-за пределов контейнера
+
+Вы можете подключать и выполнять запросы SQL к экземпляру SQL Azure с помощью любого внешнего средства Linux, Windows или macOS, поддерживающего подключения SQL. Дополнительные сведения о подключении к контейнеру SQL с границей извне см. в статье [подключение и запрос SQL Azure](https://docs.microsoft.com/azure/azure-sql-edge/connect).
+
+Из этого краткого руководства вы узнали, как развернуть модуль SQL для пограничных вычислений на устройстве IoT Edge. 
 
 ## <a name="next-steps"></a>Next Steps
 
 - [Машинное обучение и искусственный интеллект с использованием ONNX в SQL для пограничных вычислений](onnx-overview.md)
 - [Создание комплексного решения для Интернета вещей с использованием SQL для пограничных вычислений на основе IoT Edge](tutorial-deploy-azure-resources.md).
+- [Потоковая передача данных в Azure SQL ребро](stream-data.md)

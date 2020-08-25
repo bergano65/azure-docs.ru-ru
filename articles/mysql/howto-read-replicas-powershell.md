@@ -5,14 +5,14 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
-ms.date: 6/10/2020
+ms.date: 8/24/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: e99d378b49596ac208f7235a4d1d8b2b1c8c5310
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: c85af0f4078010fa5b6a1d116b3bfda942c0490c
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87498792"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816938"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-powershell"></a>Создание реплик чтения и управление ими в базе данных Azure для MySQL с помощью PowerShell
 
@@ -30,7 +30,7 @@ ms.locfileid: "87498792"
 - [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-powershell.md)
 
 > [!IMPORTANT]
-> Так как модуль PowerShell Az.MySql предоставляется в режиме предварительной версии, его нужно установить отдельно от модуля Az с помощью команды `Install-Module -Name Az.MySql -AllowPrerelease`.
+> Так как модуль Az.MySql PowerShell предоставляется в режиме предварительной версии, его нужно установить отдельно от модуля Az PowerShell с помощью следующей команды: `Install-Module -Name Az.MySql -AllowPrerelease`.
 > Как только модуль PowerShell Az.MySql станет общедоступным, он будет включен в один из будущих выпусков Az PowerShell и встроен в Azure Cloud Shell.
 
 Если вы решили использовать PowerShell локально, подключитесь к учетной записи Azure с помощью командлета [Connect-азаккаунт](/powershell/module/az.accounts/Connect-AzAccount) .
@@ -49,21 +49,21 @@ ms.locfileid: "87498792"
 
 ```azurepowershell-interactive
 Get-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
-  New-AzMySqlServerReplica -Name mydemoreplicaserver -ResourceGroupName myresourcegroup
+  New-AzMySqlReplica -Name mydemoreplicaserver -ResourceGroupName myresourcegroup
 ```
 
-Для команды `New-AzMySqlServerReplica` обязательны указанные ниже параметры.
+Для команды `New-AzMySqlReplica` обязательны указанные ниже параметры.
 
 | Параметр | Пример значения | Описание  |
 | --- | --- | --- |
 | ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой создается сервер реплики.  |
-| name | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
+| Имя | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
 
 Чтобы создать реплику чтения между регионами, используйте параметр **Location** . В следующем примере создается реплика в регионе " **Западная часть США** ".
 
 ```azurepowershell-interactive
 Get-AzMySqlServer -Name mrdemoserver -ResourceGroupName myresourcegroup |
-  New-AzMySqlServerReplica -Name mydemoreplicaserver -ResourceGroupName myresourcegroup -Location westus
+  New-AzMySqlReplica -Name mydemoreplicaserver -ResourceGroupName myresourcegroup -Location westus
 ```
 
 Дополнительные сведения о том, в каких регионах можно создать реплику, см. в статье [об основных понятиях реплики чтения](concepts-read-replicas.md).

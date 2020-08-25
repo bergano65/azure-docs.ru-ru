@@ -3,16 +3,16 @@ title: Как отключить мониторинг кластера Azure Red
 description: В этой статье описывается, как можно отключить мониторинг кластера OpenShift для Azure Red Hat с помощью Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 04/24/2020
-ms.openlocfilehash: 26c8a574894e117694545508174d0ce7d0f0f5ed
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6ed92cd4cda1f3b5d43cc605d7224236528b94bf
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091221"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815442"
 ---
-# <a name="how-to-stop-monitoring-your-azure-red-hat-openshift-v3-cluster"></a>Как отключить мониторинг кластера Azure Red Hat OpenShift v3
+# <a name="how-to-stop-monitoring-your-azure-red-hat-openshift-v3-cluster"></a>Как отключить мониторинг кластера Azure Red Hat OpenShift v3 
 
-После включения мониторинга кластера Azure Red Hat OpenShift версии 3. x можно отключить мониторинг кластера с Azure Monitor для контейнеров, если вы решите, что вы больше не хотите его отслеживать. В этой статье показано, как это сделать с помощью предоставленного шаблона Azure Resource Manager.  
+После включения мониторинга кластера Azure Red Hat OpenShift версии 3. x можно отключить мониторинг кластера с Azure Monitor для контейнеров, если вы решите, что вы больше не хотите его отслеживать. В этой статье показано, как это сделать с помощью предоставленного шаблона Azure Resource Manager. 
 
 ## <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
 

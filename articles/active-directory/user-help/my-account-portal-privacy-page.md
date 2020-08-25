@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 10/28/2019
 ms.author: curtand
-ms.openlocfilehash: ec050f3dfd2537f8cffde353772d61c32cb9d676
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 5104783aff5684471819ecf04e965670fff2798b
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87422384"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798148"
 ---
 # <a name="view-how-your-organization-uses-your-privacy-related-data"></a>Просмотр сведений о том, как ваша организация использует ваши данные о конфиденциальности
 
@@ -42,7 +42,7 @@ ms.locfileid: "87422384"
 
 После просмотра сведений о том, как ваша организация использует ваши данные, можно:
 
-- просмотреть [сведения для защиты](user-help-security-info-overview.md) или управлять ими;
+- просмотреть [сведения для защиты](./security-info-setup-signin.md) или управлять ими;
 
 - просматривать подключенные [устройства](my-account-portal-devices-page.md) или управлять ими;
 
@@ -50,6 +50,6 @@ ms.locfileid: "87422384"
 
 - просматривать сведения о [действиях входа](my-account-portal-sign-ins-page.md);
 
-- Изменение [параметров портала моей учетной записи](my-account-portal-settings.md)
+- Изменение [параметров портала "Моя учетная запись"](my-account-portal-settings.md)
 
 - Также можно просмотреть сведения о контактных лицах и конфиденциальности, связанные с Microsoft Office, на странице ["Безопасность и конфиденциальность" портала Office](https://portal.office.com/account/#security).

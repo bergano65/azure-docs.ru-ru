@@ -4,18 +4,18 @@ description: Используйте шифрование на узле, чтоб
 author: roygara
 ms.service: virtual-machines
 ms.topic: how-to
-ms.date: 07/10/2020
+ms.date: 08/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 9f61835887c26e41b3338286065df4ca9d05f513
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ff56654981ef69648b1fa7ad11a8681c887289f6
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87029014"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816972"
 ---
-# <a name="enable-end-to-end-encryption-using-encryption-at-host---azure-cli"></a>Включение сквозного шифрования с помощью шифрования на узле Azure CLI
+# <a name="use-the-azure-cli-to-enable-end-to-end-encryption-using-encryption-at-host"></a>Использование Azure CLI для включения сквозного шифрования с помощью шифрования на узле
 
 При включении шифрования на узле данные, хранящиеся на узле виртуальной машины, шифруются в неактивных потоках и передаются в зашифрованном виде в службу хранилища. Концептуальные сведения о шифровании на узле, а также о других типах шифрования управляемых дисков см. [в статье шифрование на основе шифрования узла для данных виртуальной машины](disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data).
 
@@ -33,7 +33,7 @@ ms.locfileid: "87029014"
 
 Размеры виртуальных машин также можно найти программно. Чтобы узнать, как получить их программно, ознакомьтесь с разделом [Поиск поддерживаемых размеров виртуальных машин](#finding-supported-vm-sizes) .
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы иметь возможность использовать шифрование на узле для виртуальных машин или масштабируемых наборов виртуальных машин, необходимо включить эту функцию в подписке. Отправьте сообщение электронной почты encryptionAtHost@microsoft.com с идентификаторами подписки, чтобы включить функцию для ваших подписок.
 

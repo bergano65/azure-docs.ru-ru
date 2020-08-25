@@ -7,12 +7,12 @@ ms.author: dobett
 ms.date: 08/13/2020
 ms.topic: troubleshooting
 ms.service: iot-central
-ms.openlocfilehash: 98d7566d5e9339ea2ac5d81d91f1d9f8ace5b0f4
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: 4c95c5eccb5ff804adeae94074136c6242678127
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88719670"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816071"
 ---
 # <a name="troubleshoot-why-data-from-your-devices-isnt-showing-up-in-azure-iot-central"></a>Устранение неполадок, почему данные с устройств не отображаются в Azure IoT Central
 
@@ -57,7 +57,7 @@ az set account --subscription <your-subscription-id>
 Чтобы отслеживать данные телеметрии, отправляемые устройством, используйте следующую команду:
 
 ```cmd/bash
-az iot central app monitor-events -n <app-id> -d <device-name>
+az iot central app monitor-events --app-id <app-id> --device-id <device-name>
 ```
 
 Если устройство успешно подключено к IoT Central, вы увидите результат, аналогичный приведенному ниже:
@@ -82,7 +82,7 @@ Filtering on device: device-001
 Для мониторинга обновлений свойств устройство обменивается данными с IoT Central используйте следующую команду предварительной версии:
 
 ```cmd/bash
-az iot central app monitor-properties -n <app-id> -d <device-name>
+az iot central app monitor-properties --app-id <app-id> --device-id <device-name>
 ```
 
 Если устройство успешно отправляет обновления свойств, вы увидите результат, аналогичный приведенному ниже:
@@ -108,7 +108,7 @@ rocessorArchitecture': 'ARM', 'swVersion': '1.0.0'}
 Если данные не отображаются на мониторе, проверьте состояние подготовки устройства, выполнив следующую команду:
 
 ```cmd/bash
-az iot central app device registration-info -n <app-id> -d <device-id>
+az iot central app device registration-info --app-id <app-id> --device-id <device-name>
 ```
 
 В следующих выходных данных показан пример устройства, для которого заблокировано подключение:
@@ -133,7 +133,7 @@ https://aka.ms/iotcentral-docs-dps-SAS",
 
 | Состояние подготовки устройства | Описание | Возможное устранение рисков |
 | - | - | - |
-| Подготовлено | Не удается немедленно распознать ошибку. | Н/Д |
+| Подготовлено | Не удается немедленно распознать ошибку. | Недоступно |
 | Зарегистрировано | Устройство еще не подключено к IoT Central. | Проверьте журналы устройств на наличие проблем с подключением. |
 | Блокировано | Устройству запрещено подключаться к IoT Central. | Устройству запрещено подключаться к IoT Central приложению. Разблокируйте устройство в IoT Central и повторите попытку. Дополнительные сведения см. в разделе [блочные устройства](concepts-get-connected.md#device-status-values). |
 | Неутвержденные | Устройство не утверждено. | Устройство не утверждено для подключения к IoT Central приложению. Утвердите устройство в IoT Central и повторите попытку. Дополнительные сведения см. в разделе [утверждение устройств](concepts-get-connected.md#connect-without-registering-devices) . |
@@ -178,13 +178,13 @@ https://aka.ms/iotcentral-docs-dps-SAS",
 - Чтобы проверить данные телеметрии, используйте команду Предварительный просмотр:
 
     ```cmd/bash
-    az iot central app validate-messages -n <app-id> -d <device-name>
+    az iot central app validate-messages --app-id <app-id> --device-id <device-name>
     ```
 
 - Чтобы проверить обновления свойств, используйте команду Предварительный просмотр
 
     ```cmd/bash
-    az iot central app validate-properties -n <app-id> -d <device-name>
+    az iot central app validate-properties --app-id <app-id> --device-id <device-name>
     ```
 
 - Если вы предпочитаете использовать графический интерфейс пользователя, используйте IoT Central представление **необработанных данных** , чтобы определить, не моделируется ли что-либо. Представление " **необработанные данные** " не обнаруживает, отправляет ли устройство неверно сформированный код JSON.
@@ -205,7 +205,7 @@ Exiting after 300 second(s), or 10 message(s) have been parsed (whichever happen
 tatype 'double'. Data '56'. All dates/times/datetimes/durations must be ISO 8601 compliant.
 ```
 
-:::image type="content" source="media/troubleshoot-connection/raw-data-view.png" alt-text="Снимок экрана представления необработанные данные":::
+:::image type="content" source="media/troubleshoot-connection/raw-data-view.png" alt-text="Снимок экрана представления "необработанные данные"":::
 
 ### <a name="interpreting-terminal-output"></a>Анализ выходных данных терминала
 

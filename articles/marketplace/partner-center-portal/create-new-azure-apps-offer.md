@@ -7,12 +7,12 @@ ms.topic: article
 author: AarathiN
 ms.author: aarathin
 ms.date: 07/14/2020
-ms.openlocfilehash: f62483880d2572b6487c87bbd73e0dd7033238d3
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: 071d3fc972e99d61a226492350b7eee146584df6
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88606168"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815677"
 ---
 # <a name="create-an-azure-application-offer"></a>Создание предложения приложения Azure
 
@@ -197,7 +197,7 @@ ms.locfileid: "88606168"
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
-1. Title
+1. Заголовок
 2. Описание
 3. Полезные ссылки
 4. Снимки экрана
@@ -249,16 +249,17 @@ ms.locfileid: "88606168"
 
 #### <a name="store-logos"></a>Логотипы магазина
 
-Предоставьте PNG-файлы логотипа вашего предложения в следующих трех размерах.
+Укажите PNG-файл для логотипа **крупного** размера. Центр партнеров будет использовать его для создания **небольшой** и **средней** эмблемы. При необходимости можно заменить их другими изображениями позже.
 
-- **Малый** (48 x 48)
-- **Средний** (90 x 90)
-- **Крупный** (216 x 216)
-- **Широкий** (255 x 115)
+- **Крупный** (от 216 x 216 до 350 x 350 ПКС, требуется)
+- **Средний** (90 x 90 ПКС, необязательно)
+- **Малый** (48 x 48 ПКС, необязательно)
 
-Все три логотипа являются обязательными и используются в разных местах в листинге.
+Эти логотипы используются в разных местах в списке:
 
 [!INCLUDE [logos-azure-marketplace-only](../includes/logos-azure-marketplace-only.md)]
+
+[!INCLUDE [Logo tips](../includes/graphics-suggestions.md)]
 
 #### <a name="screenshots"></a>Снимки экрана
 

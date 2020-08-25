@@ -8,17 +8,17 @@ ms.service: active-directory
 ms.subservice: azuread-dev
 ms.topic: how-to
 ms.workload: identity
-ms.date: 12/06/2019
+ms.date: 08/20/2020
 ms.author: ryanwi
 ms.reviewer: jeedes
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: dcb8f709bc75fdf9fe80ee26497acb78cc023327
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 662bda03fc2d389ed316bd2c7141d5e6a30cef1a
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88116348"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88814648"
 ---
 # <a name="list-your-application-in-the-azure-active-directory-application-gallery"></a>Добавление приложения в коллекцию приложений Azure Active Directory
 
@@ -35,7 +35,7 @@ ms.locfileid: "88116348"
 - Нашим общим клиентам предлагается пошаговое руководство по настройке.
 - Клиенты, использующие систему для управления идентификаторами в разных доменах ([scim](https://techcommunity.microsoft.com/t5/Identity-Standards-Blog/Provisioning-with-SCIM-getting-started/ba-p/880010)), могут использовать подготовку для одного и того же приложения.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Для федеративных приложений (Open ID и SAML/WS-подача) приложение должно поддерживать модель SaaS (программное обеспечение как услуга) для получения списка в коллекции приложений Azure AD. Приложения из коллекции предприятия должны поддерживать несколько пользовательских конфигураций, а не конкретных клиентов.
 - Для Open ID Connect приложение должно быть многоклиентским, а [инфраструктура согласия Azure AD](../develop/consent-framework.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json) должна быть правильно реализована для приложения. Пользователь может отправить запрос на вход в общую конечную точку, чтобы любой клиент мог предоставить согласие для приложения. Доступом пользователей можно управлять на основе идентификатора клиента и имени участника-пользователя, которые передаются в маркере.
@@ -45,7 +45,7 @@ ms.locfileid: "88116348"
 
 **Как получить Azure AD для разработчиков?**
 
-Вы можете получить бесплатную тестовую учетную запись со всеми функциями Azure AD уровня "Премиум" (90 дней) бесплатно и продлить до тех пор, пока разработка работает с ней:https://docs.microsoft.com/office/developer-program/office-365-developer-program
+Вы можете получить бесплатную тестовую учетную запись со всеми функциями Azure AD уровня "Премиум" (90 дней) бесплатно и продлить до тех пор, пока разработка работает с ней: https://docs.microsoft.com/office/developer-program/office-365-developer-program
 
 ## <a name="submit-the-request-in-the-portal"></a>Отправка запроса на портале
 
@@ -113,7 +113,7 @@ ms.locfileid: "88116348"
 
 ![Перечисление приложения единого входа с помощью пароля в коллекции](./media/howto-app-gallery-listing/passwordsso.png)
 
-* Если вы хотите добавить приложение в список в коллекции с помощью единого входа с использованием пароля, выберите параметр **единый вход с паролем** , как показано ниже.
+* Если вы хотите добавить приложение в список в коллекции с помощью единого входа, выберите **пароль SSO (имя пользователя & пароль)** , как показано ниже.
 * Если у вас возникли проблемы с доступом, обратитесь к [группе интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>).
 
 ## <a name="request-for-user-provisioning"></a>Запрос на подготовку пользователей

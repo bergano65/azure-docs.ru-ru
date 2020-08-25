@@ -3,14 +3,14 @@ title: Настройка Azure Red Hat OpenShift v3. x с Azure Monitor для 
 description: В этой статье описывается настройка мониторинга кластера Kubernetes с Azure Monitor, размещенных в Azure Red Hat OpenShift версии 3 и выше.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: aac70ccc40da15318dd2dece17e429bb091e1860
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: e462fb25672fa1912f7bb24efad4ea9a6d27d078
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87317983"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816649"
 ---
-# <a name="configure-azure-red-hat-openshift-v3-with-azure-monitor-for-containers"></a>Настройка Azure Red Hat OpenShift v3 с Azure Monitor для контейнеров
+# <a name="configure-azure-red-hat-openshift-v3-with-azure-monitor-for-containers"></a>Настройка Azure Red Hat OpenShift v3 с Azure Monitor для контейнеров 
 
 Azure Monitor для контейнеров предоставляет широкие возможности мониторинга для кластеров подсистемы Azure Kubernetes Service (AKS) и AKS. В этой статье описывается, как включить мониторинг кластеров Kubernetes, размещенных в [Azure Red Hat OpenShift](../../openshift/intro-openshift.md) версии 3 и последней поддерживаемой версии 3, для обеспечения аналогичного процесса мониторинга.
 

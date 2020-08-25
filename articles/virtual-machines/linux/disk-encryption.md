@@ -1,6 +1,6 @@
 ---
 title: Шифрование управляемых дисков Azure на стороне сервера — Azure CLI
-description: Служба хранилища Azure защищает ваши данные путем шифрования неактивных данных перед их сохранением в кластерах хранилища. Для шифрования управляемых дисков можно использовать ключи, управляемые корпорацией Майкрософт, или ключи, управляемые клиентом, для управления шифрованием своими собственными ключами.
+description: Служба хранилища Azure защищает ваши данные путем шифрования неактивных данных перед их сохранением в кластерах хранилища. Вы можете использовать ключи, управляемые клиентом, для управления шифрованием с помощью собственных ключей, или же вы можете полагаться на ключи, управляемые корпорацией Майкрософт, для шифрования управляемых дисков.
 author: roygara
 ms.date: 07/10/2020
 ms.topic: conceptual
@@ -8,12 +8,12 @@ ms.author: rogarana
 ms.service: virtual-machines-linux
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: e0a1f97cc7467d115ecc8462a301e45f90d73818
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: e541fd90f0cb9c8f0e2763f16541824c5a7b3000
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87449159"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816904"
 ---
 # <a name="server-side-encryption-of-azure-disk-storage"></a>Шифрование Хранилище дисков Azure на стороне сервера
 
@@ -80,7 +80,7 @@ ms.locfileid: "87449159"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Включите сквозное шифрование с помощью шифрования на узле с интерфейсом [командной строки](disks-enable-host-based-encryption-cli.md) или [портал Azure](disks-enable-host-based-encryption-portal.md).
-- Включите двойное шифрование при неактивных дисках для управляемых дисков с помощью [интерфейса командной строки](disks-enable-double-encryption-at-rest-cli.md) или [портал Azure](disks-enable-double-encryption-at-rest-portal.md).
-- Включите управляемые пользователем ключи для управляемых дисков с помощью [интерфейса командной строки](disks-enable-customer-managed-keys-cli.md) или [портал Azure](disks-enable-customer-managed-keys-portal.md).
+- Включите сквозное шифрование с помощью шифрования на узле с интерфейсом [командной строки](disks-enable-host-based-encryption-cli.md) или [портал Azure](../disks-enable-host-based-encryption-portal.md).
+- Включите двойное шифрование при неактивных дисках для управляемых дисков с помощью [интерфейса командной строки](disks-enable-double-encryption-at-rest-cli.md) или [портал Azure](../disks-enable-double-encryption-at-rest-portal.md).
+- Включите управляемые пользователем ключи для управляемых дисков с помощью [интерфейса командной строки](disks-enable-customer-managed-keys-cli.md) или [портал Azure](../disks-enable-customer-managed-keys-portal.md).
 - [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md)

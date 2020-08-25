@@ -7,13 +7,13 @@ ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive,hdiseo17may2017
-ms.date: 11/19/2019
-ms.openlocfilehash: 39179c9b6d02d810561485f6a4af0102711ad0ef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/24/2020
+ms.openlocfilehash: cae8647d970020a22d59dc49b058d43fe28dd00c
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82186640"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816462"
 ---
 # <a name="azure-hdinsight-cluster-creation-errors"></a>Azure HDInsight: ошибки создания кластера
 
@@ -24,19 +24,17 @@ ms.locfileid: "82186640"
 
 ## <a name="error-codedeploymentdocument-csmdocument_2_0-failed-the-validation"></a>Код ошибки: Деплойментдокумент "CsmDocument_2_0" не прошел проверку
 
-### <a name="error"></a>Ошибка
+**Ошибка**: "не удается получить доступ к расположению действия скрипта: \<SCRIPT ACTION URL\> "
 
-"Не удается получить доступ к расположению действия сценария: \<SCRIPT ACTION URL\> "
-
-#### <a name="error-message"></a>Сообщение об ошибке
+### <a name="error-message-1"></a>Сообщение об ошибке 1
 
 "Удаленный сервер вернул ошибку: (404) не найден".
 
-### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Служба HDInsight не может получить доступ к URL-адресу действия скрипта, указанному в составе запроса на создание кластера. Служба получает предыдущее сообщение об ошибке при попытке доступа к действию скрипта.
 
-### <a name="resolution"></a>Решение
+#### <a name="resolution"></a>Решение
 
 - Для URL-адреса HTTP или HTTPS проверьте URL-адрес, выполнив попытку перехода к нему из окна браузера режиме инкогнито.
 - Для URL-адреса WASB убедитесь, что сценарий существует в учетной записи хранения, которую вы передаете в запросе. Также убедитесь, что ключ хранилища для этой учетной записи хранения указан правильно.
@@ -44,37 +42,29 @@ ms.locfileid: "82186640"
 
 ---
 
-## <a name="error-codedeploymentdocument-csmdocument_2_0-failed-the-validation"></a>Код ошибки: Деплойментдокумент "CsmDocument_2_0" не прошел проверку
-
-### <a name="error"></a>Ошибка
-
-"Не удается получить доступ к расположению действия сценария: \<SCRIPT_ACTION_URL\> "
-
-#### <a name="error-message"></a>Сообщение об ошибке
+### <a name="error-message-2"></a>Сообщение об ошибке 2
 
 "Указанный URI сценария \<SCRIPT_URI\> находится в ADLS, но этот кластер не имеет субъекта хранилища Data Lake Store"
 
-### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Служба HDInsight не может получить доступ к URL-адресу действия скрипта, указанному в составе запроса на создание кластера. Служба получает предыдущее сообщение об ошибке при попытке доступа к действию скрипта.
 
-### <a name="resolution"></a>Решение
+#### <a name="resolution"></a>Решение
 
 Добавьте соответствующую учетную запись Azure Data Lake Storage Gen 1 в кластер. Также добавьте субъект-службу, которая обращается к учетной записи Data Lake Storage Gen 1 к кластеру.
 
 ---
 
-## <a name="error-code-deploymentdocument-csmdocument_2_0-failed-the-validation"></a>Код ошибки: Деплойментдокумент "CsmDocument_2_0" не прошел проверку
-
-### <a name="error"></a>Ошибка
+### <a name="error-message-3"></a>Сообщение об ошибке 3
 
 "Размер виртуальной машины", \<CUSTOMER_SPECIFIED_VM_SIZE\> указанный в запросе, недопустим или не поддерживается для роли " \<ROLE\> ". Допустимые значения: \<VALID_VM_SIZE_FOR_ROLE\> .
 
-### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Указанный размер виртуальной машины недопустим для этой роли. Эта ошибка может возникать из-за того, что значение размера виртуальной машины не работает должным образом или не подходит для роли компьютера.
 
-### <a name="resolution"></a>Решение
+#### <a name="resolution"></a>Решение
 
 В сообщении об ошибке перечислены допустимые значения размера виртуальной машины. Выберите одно из этих значений и повторите запрос на создание кластера.
 
@@ -86,7 +76,7 @@ ms.locfileid: "82186640"
 
 "VirtualNetworkId является недопустимым. VirtualNetworkId ' \<USER_VIRTUALNETWORKID\> ' * '
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Значение **VirtualNetworkId** , указанное во время создания кластера, имеет неправильный формат.
 
@@ -110,7 +100,7 @@ ms.locfileid: "82186640"
 
 "Сбой развертывания кластера из-за ошибки в действии пользовательского скрипта. Действия, завершившиеся сбоем: \<SCRIPT_NAME\> . для дальнейшей отладки ошибки перейдите в пользовательский интерфейс Ambari. "
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Пользовательский скрипт, указанный во время запроса на создание кластера, выполняется после успешного развертывания кластера. Этот код ошибки указывает на ошибку, возник во время выполнения пользовательского скрипта с именем \<SCRIPT_NAME\> .
 
@@ -126,7 +116,7 @@ ms.locfileid: "82186640"
 
 " \<META_STORE_TYPE\> Версия схемы хранилище метаданных \<METASTORE_MAJOR_VERSION\> в базе данных \<DATABASE_NAME\> несовместима с версией кластера \<CLUSTER_VERSION\> "
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Настраиваемый хранилище метаданных несовместим с выбранной версией кластера HDInsight. В настоящее время кластеры HDInsight 4,0 поддерживают только хранилище метаданных версии 3,0 и более поздних версий, а кластеры HDInsight 3,6 не поддерживают хранилище метаданных версии 3,0 и выше.
 
@@ -142,7 +132,7 @@ ms.locfileid: "82186640"
 
 "Не удалось подключиться к конечной точке управления кластера для выполнения операции масштабирования. Убедитесь, что правила сетевой безопасности не блокируют внешний доступ к кластеру, и что доступ к пользовательскому интерфейсу диспетчера кластеров (Ambari) возможен успешно».
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Правило брандмауэра в группе безопасности сети (NSG) блокирует обмен данными в кластере с критически важными службами работоспособности и управления Azure.
 
@@ -163,7 +153,7 @@ ms.locfileid: "82186640"
 
 "У управляемого удостоверения нет разрешений на учетную запись хранения. Убедитесь, что роль "владелец данных BLOB-объекта хранилища" назначена управляемому удостоверению для учетной записи хранения. Хранилище:/Subscriptions/ \<Subscription ID\> /ResourceGroups/ \< Resource Group Name\> /Провидерс/Микрософт.стораже/сторажеаккаунтс/ \<Storage Account Name\> , управляемое удостоверение:/Subscriptions/ \<Subscription ID\> /resourceGroups// \< Resource Group Name\> /провидерс/Микрософт.манажедидентити/усерассигнедидентитиес/ \<User Managed Identity Name\> "
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Не предоставлены разрешения, необходимые для управления удостоверениями. Управляемое удостоверение, назначенное пользователем, не имеет роли участника хранилища BLOB-объектов в учетной записи хранения Azure Data Lake Storage 2-го поколения.
 
@@ -184,7 +174,7 @@ ms.locfileid: "82186640"
 
 "Правила безопасности в группе безопасности сети/Subscriptions/ \<SubscriptionID\> /resourceGroups/<имя группы ресурсов \> по умолчанию/поставщики/Microsoft. Network/networkSecurityGroups/ \<Network Security Group Name\> настроены с подсетью/Subscriptions/ \<SubscriptionID\> /resourceGroups/ \<Resource Group name\> РГ-вестеуропе-внет-ТомТом-дефаулт/providers/Microsoft. Network/virtualNetworks/ \<Virtual Network Name\> /субнетс/не \<Subnet Name\> разрешают обязательное входящее и/или исходящее подключение. Дополнительные сведения см. в [Подплане плана виртуальной сети для Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-plan-virtual-network-deployment)или обратитесь в службу поддержки ".
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Если группы безопасности сети или определяемые пользователем маршруты (определяемые пользователем маршруты) управляют входящим трафиком к кластеру HDInsight, убедитесь, что кластер может взаимодействовать с критически важными службами работоспособности и управления Azure.
 
@@ -204,7 +194,7 @@ ms.locfileid: "82186640"
 
 "Программе установки кластера не удалось установить компоненты на одном или нескольких узлах. Повторите запрос ".
 
-### <a name="cause"></a>Причина: 
+### <a name="cause"></a>Причина 
 
 Как правило, эта ошибка возникает в случае временной проблемы или сбоя Azure.
 
@@ -220,7 +210,7 @@ ms.locfileid: "82186640"
 
 Не удалось подключиться к конечной точке управления кластера. Повторите попытку позже.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Службе HDInsight не удается подключиться к кластеру при попытке создать кластер
 
@@ -230,9 +220,9 @@ ms.locfileid: "82186640"
 
 ---
 
-## <a name="error-code-deployments-failed-due-to-policy-violation-resource-resource-uri-was-disallowed-by-policy-policy-identifiers-policyassignmentnamepolicy-name-idprovidersmicrosoftmanagementmanagementgroupsmanagement-group-name-providersmicrosoftauthorizationpolicyassignmentspolicy-namepolicydefinition-policy-definition"></a>Код ошибки: не удалось выполнить развертывание из-за нарушения политики: "ресурс" <Resource URI> "запрещен политикой. Идентификаторы политик: "[{" Полициассигнмент ": {" имя ":" <Policy Name> "," ID ":" <Management Group Name> поставщики/providers/Microsoft.Management/managementGroups//Microsoft. Authorization/полициассигнментс/ <Policy Name> "}," полицидефинитион ":<Policy Definition>
+## <a name="error-code-deployments-failed-due-to-policy-violation-resource-resource-uri-was-disallowed-by-policy-policy-identifiers-policyassignmentnamepolicy-name-idprovidersmicrosoftmanagementmanagementgroupsmanagement-group-name-providersmicrosoftauthorizationpolicyassignmentspolicy-namepolicydefinition-policy-definition"></a>Код ошибки: не удалось выполнить развертывание из-за нарушения политики: "ресурс" <Resource URI> "запрещен политикой. Идентификаторы политик: "[{" Полициассигнмент ": {" имя ":" <Policy Name> "," ID ":" <Management Group Name> поставщики/providers/Microsoft.Management/managementGroups//Microsoft. Authorization/полициассигнментс/ <Policy Name> "}," полицидефинитион ": <Policy Definition>
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Политики Azure на основе подписки могут запрещать создание общедоступных IP-адресов. Для создания кластера HDInsight требуется два общедоступных IP-адреса.
 

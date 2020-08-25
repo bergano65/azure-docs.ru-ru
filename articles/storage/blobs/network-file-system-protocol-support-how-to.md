@@ -9,12 +9,12 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: 985fbc70f15c0806c45ae43d62995590e10b1bb2
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 09206b8189f03a37f8bd7d073238609a3f1bd3ad
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/25/2020
-ms.locfileid: "88798930"
+ms.locfileid: "88816105"
 ---
 # <a name="mount-blob-storage-by-using-the-network-file-system-nfs-30-protocol-preview"></a>Подключение хранилища BLOB-объектов с помощью протокола NFS 3,0 (Предварительная версия)
 
@@ -109,11 +109,11 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 
 |Инструменты|Пакеты SDK|
 |---|---|
-|[Обозреватель службы хранилища Azure](data-lake-storage-explorer.md#create-a-container)|[.NET](data-lake-storage-directory-file-acl-dotnet.md#create-a-container)|
+|[Портал Azure](https://portal.azure.com)|[.NET](data-lake-storage-directory-file-acl-dotnet.md#create-a-container)|
 |[AzCopy](../common/storage-use-azcopy-blobs.md#create-a-container)|[Java](data-lake-storage-directory-file-acl-java.md#create-a-container)|
 |[PowerShell](data-lake-storage-directory-file-acl-powershell.md#create-a-container)|[Python](data-lake-storage-directory-file-acl-python.md#create-a-container)|
-|[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container);|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
-|[Портал Azure](https://portal.azure.com)|[REST](https://docs.microsoft.com/rest/api/storageservices/create-container)|
+|[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container)|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
+||[REST](https://docs.microsoft.com/rest/api/storageservices/create-container)|
 
 ## <a name="step-7-mount-the-container"></a>Шаг 7. Подключение контейнера
 
@@ -172,7 +172,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 |`Access denied by server while mounting`|Убедитесь, что клиент работает в поддерживаемой подсети. См. раздел [Поддерживаемые сетевые расположения](network-file-system-protocol-support.md#supported-network-connections).|
 |`No such file or directory`| Убедитесь, что подключенный контейнер был создан после того, как подтвердилась регистрация этой возможности. См. [Шаг 2. Убедитесь, что компонент зарегистрирован](#step-2-verify-that-the-feature-is-registered). Кроме того, обязательно введите команду mount и ее параметры непосредственно в терминале. Если вы скопируете любую часть этой команды в терминал из другого приложения, скрытые символы в скопированных данных могут вызвать ошибку.|
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 [Поддержка протокола NFS 3,0 в хранилище BLOB-объектов Azure (Предварительная версия)](network-file-system-protocol-support.md)
 

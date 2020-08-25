@@ -7,12 +7,12 @@ ms.topic: how-to
 author: emuench
 ms.author: mingshen
 ms.date: 08/07/2020
-ms.openlocfilehash: 3e8822462cd7989f6bc1f051b3868d6241f591b1
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 33b3dcdc4fbcf08114f6ba6d63bb949250380d63
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88166711"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816530"
 ---
 # <a name="create-an-azure-virtual-machine-offer-on-azure-marketplace"></a>Создание предложения виртуальной машины Azure в Azure Marketplace
 
@@ -249,16 +249,17 @@ ms.locfileid: "88166711"
 
 #### <a name="azure-marketplace-logos"></a>Логотипы для Azure Marketplace
 
-Предоставьте PNG-файлы логотипа вашего предложения в следующих четырех разрешениях.
+Укажите PNG-файл для логотипа **крупного** размера. Центр партнеров будет использовать его для создания **небольшой** и **средней** эмблемы. При необходимости можно заменить их другими изображениями позже.
 
-- **Маленькое** (48 &times; 48 пикселей)
-- **Среднее** (90 &times; 90 пикселей)
-- **Большое** (216 &times; 216 пикселей)
-- **Широкое** (255 &times; 115 пикселей)
+- **Крупный** (от 216 x 216 до 350 x 350 ПКС, требуется)
+- **Средний** (90 x 90 ПКС, необязательно)
+- **Малый** (48 x 48 ПКС, необязательно)
 
-Все четыре логотипа обязательны и будут отображаться в различных листингах Azure Marketplace.
+Эти логотипы используются в разных местах в списке:
 
 [!INCLUDE [logos-azure-marketplace-only](../includes/logos-azure-marketplace-only.md)]
+
+[!INCLUDE [Logo tips](../includes/graphics-suggestions.md)]
 
 #### <a name="screenshots"></a>Снимки экрана
 
@@ -535,7 +536,7 @@ ms.locfileid: "88166711"
 #### <a name="call-out-descriptions"></a>Описания вызова
 
 1. Крупный логотип
-2. Price
+2. Цена
 3. Категории
 4. Terms and conditions (Условия)
 5. Адрес политики конфиденциальности (ссылка)

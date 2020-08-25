@@ -7,12 +7,12 @@ ms.topic: how-to
 author: keferna
 ms.author: keferna
 ms.date: 08/07/2020
-ms.openlocfilehash: 2584d10a73f183958e3b7010255979cc47bc2cd9
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: dc1e8bfa9b747b9933762af1b6a5b59cf8cd98de
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88606351"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815782"
 ---
 # <a name="create-an-iot-edge-module-offer"></a>Создание предложения модуля IoT Edge
 
@@ -201,16 +201,17 @@ ms.locfileid: "88606351"
 
 #### <a name="store-logos"></a>Логотипы магазина
 
-Предоставьте PNG-файлы логотипа вашего предложения следующих четырех размеров:
+Укажите PNG-файл для логотипа **крупного** размера. Центр партнеров будет использовать его для создания **небольшой** и **средней** эмблемы. При необходимости можно заменить их другими изображениями позже.
 
-- **малый (48 x 48)** ;
-- **средний (90 x 90)** ;
-- **крупный (216 x 216)** ;
-- **широкий (255 x 115)** .
+- **Крупный** (от 216 x 216 до 350 x 350 ПКС, требуется)
+- **Средний** (90 x 90 ПКС, необязательно)
+- **Малый** (48 x 48 ПКС, необязательно)
 
-Все четыре логотипа являются обязательными и используются в разных местах описания на Marketplace.
+Эти логотипы используются в разных местах в списке:
 
 [!INCLUDE [logos-azure-marketplace-only](../includes/logos-azure-marketplace-only.md)]
+
+[!INCLUDE [Logo tips](../includes/graphics-suggestions.md)]
 
 #### <a name="screenshots-optional"></a>Снимки экрана (необязательно)
 

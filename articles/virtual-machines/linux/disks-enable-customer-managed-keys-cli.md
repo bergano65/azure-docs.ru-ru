@@ -2,19 +2,19 @@
 title: Azure CLI. Включение управляемых пользователем ключей с помощью управляемых дисков SSE
 description: Включите управляемые пользователем ключи на управляемых дисках с помощью Azure CLI.
 author: roygara
-ms.date: 07/10/2020
+ms.date: 08/24/2020
 ms.topic: how-to
 ms.author: rogarana
 ms.service: virtual-machines-linux
 ms.subservice: disks
-ms.openlocfilehash: cd1855a4ce2d394559db28448d9f1c9a01b4bd08
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 2acc95190454de2ffdd81a05a6e6cf166a9a6549
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86236157"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88814146"
 ---
-# <a name="azure-cli---enable-customer-managed-keys-with-server-side-encryption---managed-disks"></a>Azure CLI — включить управляемые клиентом ключи с помощью управляемых дисков с шифрованием на стороне сервера
+# <a name="use-the-azure-cli-to-enable-server-side-encryption-with-customer-managed-keys-for-managed-disks"></a>Использование Azure CLI для включения шифрования на стороне сервера с помощью управляемых клиентом ключей для управляемых дисков
 
 Хранилище дисков Azure позволяет управлять собственными ключами при использовании шифрования на стороне сервера (SSE) для управляемых дисков, если вы решили. Основные сведения о SSE с управляемыми клиентами ключами, а также о других типах шифрования дисков см. в разделе " [ключи, управляемые клиентом](disk-encryption.md#customer-managed-keys) " статьи о шифровании дисков.
 

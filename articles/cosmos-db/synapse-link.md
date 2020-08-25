@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 9e8dd4b7d7e6f0de1f3ce19238e4ab1e3cf958e1
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: f200fe96478e15e938899d294ecd5491d6a03206
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88034184"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88814396"
 ---
 # <a name="what-is-azure-synapse-link-for-azure-cosmos-db-preview"></a>Что такое Azure Synapse Link для Azure Cosmos DB (предварительная версия)?
 
@@ -75,7 +75,7 @@ Synapse Link объединяет аналитическое хранилище 
 
 ### <a name="integration-with-azure-synapse-analytics"></a><a id="synapse-link-integration"></a>Интеграция с Azure Synapse Analytics
 
-С помощью Synapse Link теперь можно подключаться непосредственно к контейнерам Azure Cosmos DB из Azure Synapse Analytics и обращаться к аналитическому хранилищу без отдельных соединителей. Azure Synapse Analytics в настоящее время поддерживает Synapse Link с [Synapse Apache Spark](../synapse-analytics/spark/apache-spark-concepts.md) и [бессерверной средой Synapse SQL](../synapse-analytics/sql/on-demand-workspace-overview.md).
+С помощью Synapse Link теперь можно подключаться непосредственно к контейнерам Azure Cosmos DB из Azure Synapse Analytics и обращаться к аналитическому хранилищу без отдельных соединителей. Azure синапсе Analytics сейчас поддерживает ссылку синапсе с [синапсе Apache Spark](../synapse-analytics/spark/apache-spark-concepts.md) и [синапсе SQL Server](../synapse-analytics/sql/on-demand-workspace-overview.md).
 
 Данные из аналитического хранилища Azure Cosmos DB можно запрашивать одновременно, при этом взаимодействие выполняется с разным временем выполнения аналитики, поддерживаемой Azure Synapse Analytics. Для анализа операционных данных не требуются дополнительные преобразования данных. Вы можете запрашивать и анализировать данные аналитического хранилища с помощью следующих средств.
 

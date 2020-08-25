@@ -11,12 +11,12 @@ ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.openlocfilehash: 7c12cfc21668a13586d94089a7049f6f0d6066d7
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 4de682bd315eef100bdbf8dd24faa128c5b8c2a1
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87336928"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815816"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Непрерывные интеграция и поставка в Фабрике данных Azure
 
@@ -113,7 +113,7 @@ ms.locfileid: "87336928"
     h. В поле **Режим развертывания** выберите **Добавочные**.
 
     > [!WARNING]
-    > При выборе **полного** **режима развертывания** существующие ресурсы могут быть удалены, в том числе ресурсы в целевой группе ресурсов, которые не определены в шаблоне Resource Manager.
+    > В режиме полного развертывания ресурсы, которые существуют в группе ресурсов, но не указаны в новом шаблоне диспетчер ресурсов, будут **удалены**. Дополнительные сведения см. в разделе [режимы развертывания Azure Resource Manager](../azure-resource-manager/templates/deployment-modes.md) .
 
     ![Рабочее развертывание Фабрики данных](media/continuous-integration-deployment/continuous-integration-image9.png)
 

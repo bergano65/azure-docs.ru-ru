@@ -11,13 +11,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 08/18/2020
-ms.openlocfilehash: 8ec950ddabd3844618c878471d2e1391979e2056
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.date: 08/25/2020
+ms.openlocfilehash: a03a141a4140ca4ac000a8e2afb8dd8f45d40662
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88521379"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816627"
 ---
 # <a name="copy-data-from-and-to-the-sftp-server-by-using-azure-data-factory"></a>Копирование данных с сервера SFTP и обратно на него с помощью фабрики данных Azure
 
@@ -112,7 +112,7 @@ ms.locfileid: "88521379"
 | userName | Пользователь, у которого есть доступ к серверу SFTP. |Да |
 | privateKeyPath | Укажите абсолютный путь к файлу закрытого ключа, к которому может получить доступ среда выполнения интеграции. Это применимо только в том случае, если саморазмещаемый тип среды выполнения интеграции указан в "connectVia". | Укажите `privateKeyPath` или `privateKeyContent`.  |
 | privateKeyContent | Содержимое закрытого ключа SSH в кодировке Base64. Закрытый ключ SSH должен быть в формате OpenSSH. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [сослаться на секрет, хранящийся в хранилище ключей Azure](store-credentials-in-key-vault.md). | Укажите `privateKeyPath` или `privateKeyContent`. |
-| passPhrase | Чтобы расшифровать закрытый ключ с помощью парольной фразы, введите фразу Pass/Password. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [сослаться на секрет, хранящийся в хранилище ключей Azure](store-credentials-in-key-vault.md). | Да, если файл закрытого ключа защищен парольной фразой. |
+| passPhrase | Укажите фразу или пароль для расшифровки закрытого ключа, если файл ключа или содержимое ключа защищено парольной фразой. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [сослаться на секрет, хранящийся в хранилище ключей Azure](store-credentials-in-key-vault.md). | Да, если файл закрытого ключа или содержимое ключа защищено парольной фразой. |
 
 > [!NOTE]
 > Соединитель SFTP поддерживает ключ OpenSSH RSA/DSA. Убедитесь, что содержимое файла ключа начинается с "-----BEGIN [RSA/DSA] закрытый ключ-----". Если файл закрытого ключа является файлом PPK, используйте средство «выведение» для преобразования из PPK в формат OpenSSH. 

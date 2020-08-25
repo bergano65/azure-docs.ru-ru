@@ -7,15 +7,15 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: article
 ms.date: 09/25/2019
-ms.openlocfilehash: ae9a421a165d6c8bda688819c5233ae5bb1a8562
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 38686ba35285159d7a27724b5402a6b6e2f3a696
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79139102"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815527"
 ---
 # <a name="azure-red-hat-openshift-customer-administrator-role"></a>Роль администратора клиента Azure Red Hat OpenShift
-
+ 
 Вы являетесь администратором кластера Azure Red Hat OpenShift. Ваша учетная запись обладает повышенными разрешениями и доступом ко всем создаваемым пользователями проектам.
 
 Если с учетной записью связана роль авторизации "клиент-Администратор-кластер", она может автоматически управлять проектом.
@@ -37,11 +37,11 @@ ms.locfileid: "79139102"
 
 ## <a name="confirm-membership-in-the-customer-administrator-role"></a>Подтверждение членства в роли "Администратор клиента"
 
-Чтобы подтвердить членство в группе администраторов клиентов, попробуйте использовать команды интерфейса командной строки OpenShift `oc get nodes` или `oc projects` . `oc get nodes`отобразит список узлов, если у вас есть роль "клиент-Администратор-кластер" и ошибка разрешения, если у вас только роль "клиент-Администратор-проект". `oc projects`Отображает все проекты в кластере, а не только проекты, в которых вы работаете.
+Чтобы подтвердить членство в группе администраторов клиентов, попробуйте использовать команды интерфейса командной строки OpenShift `oc get nodes` или `oc projects` . `oc get nodes` отобразит список узлов, если у вас есть роль "клиент-Администратор-кластер" и ошибка разрешения, если у вас только роль "клиент-Администратор-проект". `oc projects` Отображает все проекты в кластере, а не только проекты, в которых вы работаете.
 
 Для дальнейшего изучения ролей и разрешений в кластере можно использовать [`oc policy who-can <verb> <resource>`](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_rbac.html#managing-role-bindings) команду.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Настройте роль "клиент-Администратор-кластер кластера":
 > [!div class="nextstepaction"]
