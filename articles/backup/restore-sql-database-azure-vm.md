@@ -3,12 +3,12 @@ title: Восстановление баз данных SQL Server на вирт
 description: В этой статье описывается, как восстановить SQL Server базы данных, работающие на виртуальной машине Azure и резервные копии которых Azure Backup.
 ms.topic: conceptual
 ms.date: 05/22/2019
-ms.openlocfilehash: 97cf8a7d7fcae0e31dde14e045b222c5899dbb02
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 682540e498c7531777032b5375f0105c03ce4ec6
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87921152"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826562"
 ---
 # <a name="restore-sql-server-databases-on-azure-vms"></a>Восстановление баз данных SQL Server на виртуальных машинах Azure
 
@@ -23,7 +23,7 @@ Azure Backup можете восстановить базы данных SQL Ser
 - Восстановление до определенной даты или времени (во второй) с помощью резервных копий журнала транзакций. Azure Backup автоматически определяет соответствующую полную разностную резервную копию и цепочку резервных копий журналов, которые требуются для восстановления в зависимости от выбранного времени.
 - Восстановление определенной полной или разностной резервной копии для восстановления до определенной точки восстановления.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Перед восстановлением базы данных обратите внимание на следующее.
 
@@ -126,11 +126,11 @@ Azure Backup можете восстановить базы данных SQL Ser
     >
     >- Выполните команду `PsExec -s cmd` , чтобы войти в оболочку NT AUTHORITY\SYSTEM
     >   - Выполните команду `cmdkey /add:<storageacct>.file.core.windows.net /user:AZURE\<storageacct> /pass:<storagekey>`.
-    >   - Проверка доступа с помощью`dir \\<storageacct>.file.core.windows.net\<filesharename>`
+    >   - Проверка доступа с помощью `dir \\<storageacct>.file.core.windows.net\<filesharename>`
     >- Запуск восстановления в качестве файлов из хранилища архивации в `\\<storageacct>.file.core.windows.net\<filesharename>` качестве пути<BR>
     Вы можете загрузить PsExec со страницы [Sysinternals](/sysinternals/downloads/psexec) .
 
-1. Нажмите кнопку **OK**.
+1. Нажмите кнопку **ОК**.
 
     ![Выберите восстановить как файлы](./media/backup-azure-sql-database/restore-as-files.png)
 
@@ -165,7 +165,7 @@ Azure Backup можете восстановить базы данных SQL Ser
 
 ### <a name="restore-databases-with-large-number-of-files"></a>Восстановление баз данных с большим количеством файлов
 
-Если общий размер строки файлов в базе данных превышает [определенный предел](backup-sql-server-azure-troubleshoot.md#size-limit-for-files), Azure Backup сохраняет список файлов базы данных в другом компоненте, который не позволяет задать целевой путь восстановления во время операции восстановления. Файлы будут восстановлены по пути SQL по умолчанию.
+Если общий размер строки файлов в базе данных превышает [определенный предел](backup-sql-server-azure-troubleshoot.md#size-limit-for-files), Azure Backup сохраняет список файлов базы данных в другом компоненте, чтобы не задавать целевой путь восстановления во время операции восстановления. Файлы будут восстановлены по пути SQL по умолчанию.
 
   ![Восстановление базы данных с большим размером файла](./media/backup-azure-sql-database/restore-large-files.jpg)
 

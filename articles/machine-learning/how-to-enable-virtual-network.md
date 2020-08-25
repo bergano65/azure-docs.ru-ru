@@ -11,12 +11,12 @@ author: aashishb
 ms.date: 07/07/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, tracking-python
-ms.openlocfilehash: 9f92e703dd45e893a3dfdd8a4c1d6aa3e9b8e96e
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 0a7a5f21ee868da2b9c3a6c7dc8bb5968531d0d0
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88506521"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88824208"
 ---
 # <a name="network-isolation-during-training--inference-with-private-virtual-networks"></a>Сетевая изоляция во время обучения & вывода с частными виртуальными сетями
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -366,6 +366,12 @@ validate=False)
         az network list-service-tags -l "East US 2" --query "values[?starts_with(id, 'Batch')] | [?properties.region=='eastus2']"
         az network list-service-tags -l "East US 2" --query "values[?starts_with(id, 'AzureMachineLearning')] | [?properties.region=='eastus2']"
         ```
+
+        > [!TIP]
+        > Если вы используете регионы US-Виргиния, US-Китая или Китае-Восток-2, эти команды не возвращают никаких IP-адресов. Вместо этого воспользуйтесь одной из следующих ссылок, чтобы скачать список IP-адресов:
+        >
+        > * [Диапазоны IP-адресов и теги службы Azure для Azure для государственных организаций](https://www.microsoft.com/download/details.aspx?id=57063)
+        > * [Диапазоны IP-адресов и теги службы Azure для Китая в Azure](https://www.microsoft.com//download/details.aspx?id=57062)
     
     При добавлении определяемого пользователем маршрута укажите маршрут для каждого связанного префикса IP-адреса пакетной службы, а также задайте для параметра__Тип следующего прыжка__ значение __Интернет__. На следующем изображении показан пример этого UDR на портале Azure.
 

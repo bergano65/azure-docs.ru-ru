@@ -3,12 +3,12 @@ title: Восстановление файлов Azure с помощью PowerSh
 description: Из этой статьи вы узнаете, как восстановить файлы Azure с помощью службы Azure Backup и PowerShell.
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: 23de6e1e352a1b72d1435fc65d6a59ab37d838b0
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 60c9848e12de80bcafe4553a9e8f3e27e8876d41
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86538553"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826503"
 ---
 # <a name="restore-azure-files-with-powershell"></a>Восстановление файлов Azure с помощью PowerShell
 
@@ -17,7 +17,7 @@ ms.locfileid: "86538553"
 Можно восстановить весь файловый ресурс или отдельные файлы в общей папке. Можно выполнить восстановление в исходное расположение или в другое расположение.
 
 > [!WARNING]
-> Убедитесь, что версия PS обновлена до минимальной версии для "az. RecoveryServices 2.6.0" для резервных копий AFS. Дополнительные сведения см. [в разделе](backup-azure-afs-automation.md#important-notice-backup-item-identification) Структурирование требований к этому изменению.
+> Убедитесь, что версия PowerShell обновлена до минимальной версии "az. RecoveryServices 2.6.0" для резервных копий AFS. Дополнительные сведения см. [в разделе](backup-azure-afs-automation.md#important-notice-backup-item-identification) Структурирование требований к этому изменению.
 
 >[!NOTE]
 >Azure Backup теперь поддерживает восстановление нескольких файлов или папок в исходное или альтернативное расположение с помощью PowerShell. Обратитесь к [этому разделу](#restore-multiple-files-or-folders-to-original-or-alternate-location) документа, чтобы узнать, как это делать.

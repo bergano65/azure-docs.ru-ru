@@ -3,12 +3,12 @@ title: Матрица поддержки MABS & System Center DPM
 description: В этой статье приводится сводка Azure Backup поддержки при использовании Microsoft Azure Backup Server (MABS) или System Center DPM для резервного копирования локальных и ресурсов виртуальной машины Azure.
 ms.date: 02/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: 34b15ea0752bf013d2b1e5c3a7434ff009e2d80a
-ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
+ms.openlocfilehash: 26d9e3012749298a781cd611866bc6d0a6596979
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88761344"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88825228"
 ---
 # <a name="support-matrix-for-backup-with-microsoft-azure-backup-server-or-system-center-dpm"></a>Таблица поддержки для резервного копирования с помощью Microsoft Azure Backup Server или System Center DPM
 
@@ -76,7 +76,7 @@ Azure Backup может выполнять резервное копирован
 **DPM в локальной среде** | Физический сервер или виртуальная машина Hyper-V: System Center 2012 SP1 или более поздней версии.<br/><br/> Виртуальная машина VMware: System Center 2012 R2 с обновлением 5 или более поздней версии.
 
 >[!NOTE]
->Установка Azure Backup Server на сервере Windows Server Core или Microsoft Hyper-V Server не поддерживается.
+>Установка Azure Backup Server не поддерживается на сервере Windows Server Core или Microsoft Hyper-V Server.
 
 ## <a name="management-support"></a>Поддержка управления
 

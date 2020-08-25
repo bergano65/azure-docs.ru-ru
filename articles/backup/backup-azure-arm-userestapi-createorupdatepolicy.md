@@ -4,12 +4,12 @@ description: В этой статье вы узнаете, как создава
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.assetid: 5ffc4115-0ae5-4b85-a18c-8a942f6d4870
-ms.openlocfilehash: 2fa35ed5e03ad174407e4c82fb5d4bbe69ee8131
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 6a045ff1653c58a3a583b6c64941fff26f480861
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86497817"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826398"
 ---
 # <a name="create-azure-recovery-services-backup-policies-using-rest-api"></a>Создание политик резервного копирования Служб восстановления Azure с помощью REST API
 
@@ -137,7 +137,7 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Он возвращает два ответа: 202 (принято) при создании другой операции, а затем 200 (ОК) после завершения этой операции.
 
-|Название  |Тип  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |200 ОК     |    [ProtectionPolicyResource](/rest/api/backup/protectionpolicies/createorupdate#protectionpolicyresource)     |  ОК       |
 |202 — принято     |         |     Принято    |

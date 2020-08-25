@@ -3,12 +3,12 @@ title: Настройка параметров диагностики храни
 description: Настройка параметров диагностики Log Analytics для всех хранилищ в заданной области с помощью политики Azure
 ms.topic: conceptual
 ms.date: 02/14/2020
-ms.openlocfilehash: 58ef8af56bb3f44664ffaec6a17bab5f5e92808e
-ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
+ms.openlocfilehash: dabf9798ba80600d638318304c8ef3c7e40d7ecf
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88612509"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88824055"
 ---
 # <a name="configure-vault-diagnostics-settings-at-scale"></a>Настройка параметров диагностики хранилища в масштабе
 
@@ -82,7 +82,7 @@ ms.locfileid: "88612509"
 >
 > Обратите внимание, что задача исправления **не** будет завершаться ошибкой, если для параметра "Диагностика" в качестве назначения выбрана только установите azurebackupreport с параметром "Рабочая область X", так как в этом случае перекрытие между событиями, включенными существующим параметром, и событиями, включенными параметром, созданным задачей "исправление", не произойдет.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения об использовании отчетов резервного копирования](./configure-reports.md)
 * [Дополнительные сведения о политике Azure](../governance/policy/index.yml)

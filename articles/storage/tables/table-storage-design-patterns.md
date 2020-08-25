@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/08/2019
 ms.author: tamram
 ms.subservice: tables
-ms.openlocfilehash: 32904044cf6dcecf19b1a78eb4236dc02555bb86
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 8a50aa02a2ba7187c8221c046fcabb7f4a6473fa
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88034203"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826690"
 ---
 # <a name="table-design-patterns"></a>Шаблоны для разработки таблиц
 В этой статье приводится описание некоторых шаблонов, которые подходят для использования с решениями для службы таблиц. Кроме того, вы увидите практическое решение ряда проблем и сможете выбрать компромиссный вариант из предлагаемых в других статьях о разработке для хранилища таблиц. На следующей схеме показаны связи между различными шаблонами.  
@@ -310,7 +310,7 @@ ms.locfileid: "88034203"
 
 В следующем примере показан процесс извлечения всех отчетных данных по конкретному сотруднику (например, сотрудник 000123 из отдела продаж).  
 
-$filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 'empid_000124')&$select=RowKey,Manager Rating,Peer Rating,Comments  
+$filter = (PartitionKey EQ "Sales") и (RowKey GE "empid_000123") и (RowKey lt "000123_2012") &$select = RowKey, рейтинг менеджера, рейтинг одноранговых узлов, комментарии  
 
 ### <a name="issues-and-considerations"></a>Проблемы и рекомендации
 При принятии решения о реализации этого шаблона необходимо учитывать следующие моменты.  

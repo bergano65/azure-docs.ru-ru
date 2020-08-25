@@ -3,12 +3,12 @@ title: Использование PowerShell для архивации Windows S
 description: Из этой статьи вы узнаете, как использовать PowerShell для настройки Azure Backup в Windows Server или на клиенте Windows, а также управлять резервным копированием и восстановлением.
 ms.topic: conceptual
 ms.date: 12/2/2019
-ms.openlocfilehash: d0ae5165fc13193737ec75cf06060123ca4a13d4
-ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
+ms.openlocfilehash: 8e9b2f0adc2cdd4e0d17f618b516486d8ca9f8a8
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2020
-ms.locfileid: "88757002"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826333"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell
 
@@ -42,7 +42,7 @@ ms.locfileid: "88757002"
     New-AzRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "WestUS"
     ```
 
-4. Укажите тип избыточности хранилища, который будет использоваться. можно использовать [локально избыточное хранилище (LRS)](../storage/common/storage-redundancy.md) или [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy.md). В следующем примере показан параметр **-BackupStorageRedundancy** для *testvault задано* имеет значение **геоизбыточность**.
+4. Укажите необходимый тип избыточности хранилища: Можно использовать [локально избыточное хранилище (LRS)](../storage/common/storage-redundancy.md) или [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy.md). В следующем примере показан параметр **-BackupStorageRedundancy** для *testvault задано* имеет значение **геоизбыточность**.
 
    > [!TIP]
    > Для многих командлетов службы архивации Azure требуется объект хранилища служб восстановления в качестве входных данных. По этой причине объект хранилища служб восстановления резервных копий удобно хранить в переменной.
@@ -56,7 +56,7 @@ ms.locfileid: "88757002"
 
 ## <a name="view-the-vaults-in-a-subscription"></a>Просмотр хранилищ в подписке
 
-Чтобы получить список всех хранилищ в текущей подписке, используйте командлет **Get-AzRecoveryServicesVault**. С помощью этой команды можно проверить, создано ли новое хранилище, или узнать, какие хранилища доступны в подписке.
+Чтобы получить список всех хранилищ в текущей подписке, используйте командлет **Get- AzRecoveryServicesVault**. С помощью этой команды можно проверить, создано ли новое хранилище, или узнать, какие хранилища доступны в подписке.
 
 Выполнив команду **Get-AzRecoveryServicesVault**, вы получите список всех хранилищ в подписке.
 
@@ -177,7 +177,7 @@ Machine registration succeeded.
 ```
 
 > [!IMPORTANT]
-> Не используйте относительные пути для указания файла с учетными данными хранилища. Укажите абсолютный путь в качестве входных данных командлета.
+> Не используйте относительные пути для указания файла учетных данных хранилища. Укажите абсолютный путь в качестве входных данных командлета.
 >
 >
 

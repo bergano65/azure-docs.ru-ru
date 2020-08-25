@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 07/15/2020
 ms.author: alkohli
-ms.openlocfilehash: 7d300252893a72ef6296e941f5a573a67807779f
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: c6b524fb76c623273c60d39f4102500664c487cb
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88652582"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88823987"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Azure Data Box. Часто задаваемые вопросы
 
@@ -57,7 +57,7 @@ A.  Сведения о доступности Data Box в разных стра
 ### <a name="q-which-regions-can-i-store-data-in-with-data-box"></a>У. В каких регионах можно сохранять данные с помощью Data Box?
 A. Data Box поддерживается во всех регионах США, Западной и Северной Европы, во Франции, в Великобритании, Японии, Австралии и Канаде. Дополнительные сведения см. в разделе [Регионы доступности](data-box-overview.md#region-availability).
 
-### <a name="q-how-can-i-import-my-on-premises-source-data-to-an-azure-region-in-a-different-countryregion-or-export-data-from-an-azure-region-in-one-country-to-a-different-countryregion"></a>У. Как импортировать локальные исходные данные в регион Azure в другой стране или регионе или экспортировать данные из региона Azure в одной стране в другую страну или регион?
+### <a name="q-how-can-i-import-source-data-at-my-location-in-a-particular-country-to-an-azure-region-in-a-different-countryregion-or-export-data-from-an-azure-region-in-one-country-to-a-different-countryregion"></a>У. Как импортировать исходные данные в моем расположении в определенной стране в регион Azure в другой стране или регионе или экспортировать данные из региона Azure в одной стране в другую страну или регион?
 
 Data Box поддерживает прием данных или исходящий трафик только в той же стране или регионе, что и их назначение, и не будет пересекать международные границы. Единственное исключение — заказы в Европейского союза (ЕС), где поля данных могут поставляться в любую страну или регион ЕС.
 

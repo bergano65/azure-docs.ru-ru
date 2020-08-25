@@ -4,12 +4,12 @@ description: Узнайте, как обратимое удаление вирт
 ms.topic: conceptual
 ms.date: 04/30/2020
 ms.custom: references_regions
-ms.openlocfilehash: 19de26024a6a31a213130ec419132fd7dd8134a0
-ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+ms.openlocfilehash: 90d55e8ed6c831adf4efaf0663d191697177ea63
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88763700"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826486"
 ---
 # <a name="soft-delete-for-virtual-machines"></a>Обратимое удаление виртуальных машин
 
@@ -38,7 +38,7 @@ ms.locfileid: "88763700"
    ![Снимок экрана портал Azure, виртуальная машина в состоянии обратимого удаления](./media/backup-azure-security-feature-cloud/vm-soft-delete.png)
 
    > [!NOTE]
-   > Если в хранилище имеются обратимо удаленные элементы резервного копирования, хранилище нельзя будет удалить в это время. Попробуйте удалить хранилище после окончательного удаления архивных элементов, и в хранилище не останется ни одного элемента в состоянии обратимого удаления.
+   > Если в хранилище имеются обратимо удаленные элементы резервного копирования, хранилище нельзя будет удалить в это время. Попробуйте удалить хранилище после окончательного удаления архивных элементов, после чего в хранилище не останется элементов с обратимым удалением.
 
 4. Чтобы восстановить обратимо удаленную виртуальную машину, необходимо сначала отменить ее удаление. Чтобы отменить удаление, выберите обратимо удаленную виртуальную машину, а затем выберите пункт **Удалить**.
 
@@ -62,13 +62,13 @@ ms.locfileid: "88763700"
 ## <a name="soft-delete-for-vms-using-azure-powershell"></a>Обратимое удаление для виртуальных машин с помощью Azure PowerShell
 
 > [!IMPORTANT]
-> Версия AZ. RecoveryServices, необходимая для использования обратимого удаления с помощью Azure PS, — это min 2.2.0. Используйте ```Install-Module -Name Az.RecoveryServices -Force``` для получения последней версии.
+> Версия AZ. RecoveryServices, необходимая для использования обратимого удаления с помощью Azure PowerShell, является минимальной 2.2.0. Используйте ```Install-Module -Name Az.RecoveryServices -Force``` для получения последней версии.
 
 Как описано выше для портал Azure, последовательность шагов при использовании Azure PowerShell также одинакова.
 
 ### <a name="delete-the-backup-item-using-azure-powershell"></a>Удаление элемента резервного копирования с помощью Azure PowerShell
 
-Удалите элемент резервного копирования с помощью командлета [Disable-азрековерисервицесбаккуппротектион](/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection) PS.
+Удалите элемент резервного копирования с помощью командлета PowerShell [Disable-азрековерисервицесбаккуппротектион](/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection) .
 
 ```powershell
 Disable-AzRecoveryServicesBackupProtection -Item $myBkpItem -RemoveRecoveryPoints -VaultId $myVaultID -Force
@@ -95,7 +95,7 @@ VM;iaasvmcontainerv2;selfhostrg;AppVM1    AzureVM             iaasvmcontainerv2;
 $myBkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureVM -WorkloadType AzureVM -VaultId $myVaultID -Name AppVM1
 ```
 
-Затем выполните операцию отмены удаления с помощью командлета [Undo-азрековерисервицесбаккупитемделетион](/powershell/module/az.recoveryservices/undo-azrecoveryservicesbackupitemdeletion) PS.
+Затем выполните операцию отмены удаления с помощью командлета PowerShell [Undo-азрековерисервицесбаккупитемделетион](/powershell/module/az.recoveryservices/undo-azrecoveryservicesbackupitemdeletion) .
 
 ```powershell
 Undo-AzRecoveryServicesBackupItemDeletion -Item $myBKpItem -VaultId $myVaultID -Force

@@ -4,12 +4,12 @@ description: В этой статье содержатся сведения об
 ms.topic: conceptual
 ms.date: 06/03/2020
 ms.asset: 0c4127f2-d936-48ef-b430-a9198e425d81
-ms.openlocfilehash: 1f4900bb129ee67cd75d2b793f4179e3135569a6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 26d30a56b3117642678f98ba3e7927c27bfd6a69
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87032567"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826622"
 ---
 # <a name="release-notes-for-microsoft-azure-backup-server"></a>Заметки о выпуске Microsoft Azure Backup Server
 
@@ -78,10 +78,10 @@ ms.locfileid: "87032567"
 **Обходное решение**. чтобы заменить RDL-файлы, выполните следующие действия:
 
 1. На компьютере MABS откройте веб-портал SQL Reporting Services URL.
-1. В URL-адресе Web Portal папка DPMReports представлена в формате**`DPMReports_<GUID>`**
+1. В URL-адресе Web Portal папка DPMReports представлена в формате **`DPMReports_<GUID>`**
 
     >[!NOTE]
-    >Всегда существует только одна папка с этим соглашением об именовании. Если MABS обновляется с предыдущей версии, также может существовать другая старая папка, но ее нельзя будет открыть.
+    >Всегда существует только одна папка с этим соглашением об именовании. Если MABS обновляется с предыдущей версии, может также существовать другая старая папка, но ее нельзя будет открыть.
 
     ![Папка DPMReports](./media/backup-mabs-release-notes-v3/dpm-reports-folder.png)
 
@@ -95,13 +95,13 @@ ms.locfileid: "87032567"
 
 1. На новой странице выберите параметр **заменить** , чтобы заменить файлы последними файлами отчетов.
 
-    Последние файлы отчетов можно найти по пути`<MABS Installation Directory>\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin\DpmReports`
+    Последние файлы отчетов можно найти по пути `<MABS Installation Directory>\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin\DpmReports`
 
     Пример: `C:\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin\DpmReports`
 
     ![Замена файлов последними файлами отчетов](./media/backup-mabs-release-notes-v3/replace-files.png)
 
-    После замены файлов убедитесь, что **имя** и **Описание** не повреждены и не являются пустыми.
+    После замены файлов убедитесь, что поля **Имя** и **Описание** не затронуты и не являются пустыми.
 
 1. После замены файлов перезапустите службы MABS и используйте файлы отчетов.
 

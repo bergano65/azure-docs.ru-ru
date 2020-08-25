@@ -3,12 +3,12 @@ title: Общие сведения о резервном копировании 
 description: Узнайте, как создавать резервные копии файловых ресурсов Azure в хранилище служб восстановления.
 ms.topic: conceptual
 ms.date: 03/05/2020
-ms.openlocfilehash: c57537519888138698e9add1a687e0018d330cfa
-ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
+ms.openlocfilehash: 1c44d406519c8c0d9fb71b5e94bcb6bcaa1a7253
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2020
-ms.locfileid: "88757886"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88823886"
 ---
 # <a name="about-azure-file-share-backup"></a>Общие сведения о резервном копировании файлового ресурса Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "88757886"
 * **Оповещения и отчеты**. Вы можете настроить оповещения для сбоев резервного копирования и восстановления и использовать решение для создания отчетов, предоставляемое Azure Backup, для получения сведений о резервных копиях в общих папках.
 * **Защита от случайного удаления файловых ресурсов**. Azure Backup включает [функцию обратимого удаления](../storage/files/storage-files-prevent-file-share-deletion.md) на уровне учетной записи хранения с периодом хранения, равным 14 дням. Даже если вредоносный субъект удаляет общую папку, содержимое общей папки и точки восстановления (моментальные снимки) сохраняются в течение настраиваемого срока хранения, что позволяет успешно и полностью восстановить содержимое источника и моментальные снимки без потери данных.
 
-## <a name="architecture"></a>Architecture
+## <a name="architecture"></a>Архитектура
 
 ![Архитектура резервного копирования файлового ресурса Azure](./media/azure-file-share-backup-overview/azure-file-shares-backup-architecture.png)
 

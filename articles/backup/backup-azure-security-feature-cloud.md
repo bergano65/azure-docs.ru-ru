@@ -3,12 +3,12 @@ title: Обратимое удаление для Azure Backup
 description: Узнайте, как использовать функции безопасности в Azure Backup, чтобы сделать резервные копии более безопасными.
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.openlocfilehash: b3ccd944ce1f6a30b4441c205a83e71374e7aff2
-ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+ms.openlocfilehash: d791b76698330cd14c56f01cf5da62c8a64bec29
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88763445"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826979"
 ---
 # <a name="soft-delete-for-azure-backup"></a>Обратимое удаление для Azure Backup
 
@@ -44,9 +44,9 @@ ms.locfileid: "88763445"
 ### <a name="disabling-soft-delete-using-azure-powershell"></a>Отключение обратимого удаления с помощью Azure PowerShell
 
 > [!IMPORTANT]
-> Версия AZ. RecoveryServices, необходимая для использования обратимого удаления с помощью Azure PS, — это min 2.2.0. Используйте ```Install-Module -Name Az.RecoveryServices -Force``` для получения последней версии.
+> Версия AZ. RecoveryServices, необходимая для использования обратимого удаления с помощью Azure PowerShell, является минимальной 2.2.0. Используйте ```Install-Module -Name Az.RecoveryServices -Force``` для получения последней версии.
 
-Чтобы отключить, используйте командлет [Set-азрековерисервицесваултбаккуппроперти](/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) PS.
+Чтобы отключить, используйте командлет PowerShell [Set-азрековерисервицесваултбаккуппроперти](/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) .
 
 ```powershell
 Set-AzRecoveryServicesVaultProperty -VaultId $myVaultID -SoftDeleteFeatureState Disable

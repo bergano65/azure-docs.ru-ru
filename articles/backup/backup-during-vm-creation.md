@@ -3,12 +3,12 @@ title: Включение резервного копирования при с�
 description: В этой статье описано, как включить резервное копирование при создании виртуальной машины Azure с Azure Backup.
 ms.topic: conceptual
 ms.date: 06/13/2019
-ms.openlocfilehash: c744f6aa2bef6d3d6800aa6b6dc077915fc5205b
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 8612061ca21b4609600f5b9822ca4f6fe3b673f1
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88586704"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88825959"
 ---
 # <a name="enable-backup-when-you-create-an-azure-vm"></a>Включение резервного копирования при создании виртуальной машины Azure
 

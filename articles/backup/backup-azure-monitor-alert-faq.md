@@ -4,12 +4,12 @@ description: В этой статье содержатся ответы на ч�
 ms.reviewer: srinathv
 ms.topic: conceptual
 ms.date: 07/08/2019
-ms.openlocfilehash: 28645311328a2e2054851af6bacf07927eaa88aa
-ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
+ms.openlocfilehash: 2112a439585e6b111614e728dbc4a1a5eb4ee3d2
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88761123"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88827177"
 ---
 # <a name="azure-backup-monitoring-alert---faq"></a>Оповещение мониторинга Azure Backup — часто задаваемые вопросы
 

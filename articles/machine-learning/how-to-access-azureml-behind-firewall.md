@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 07/17/2020
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 990a2d5279c796f354055328e6968ea705ea10b2
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 7d270ac9a6597645c5a98b6af77d19021ef00329
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87873642"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88827432"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром для Машинное обучение Azure
 
@@ -52,11 +52,12 @@ ms.locfileid: "87873642"
 | **\*. instances.azureml.net** | Машинное обучение Azureные экземпляры вычислений |
 | **\*. instances.azureml.ms** | Машинное обучение Azureные экземпляры вычислений, когда в рабочей области включена частная ссылка |
 | **windows.net** | хранилище BLOB-объектов Azure |
-| **vault.azure.net** | Хранилище ключей Azure; |
+| **vault.azure.net** | Azure Key Vault |
 | **azurecr.io** | Реестр контейнеров Azure |
 | **mcr.microsoft.com** | Реестр контейнеров Microsoft для базовых образов DOCKER |
 | **your-acr-server-name.azurecr.io** | Требуется только в том случае, если реестр контейнеров Azure находится за виртуальной сетью. В этой конфигурации частная ссылка создается из среды Майкрософт в экземпляр записи контроля доступа в подписке. Используйте имя сервера записи контроля доступа для рабочей области Машинное обучение Azure. |
 | **\*. notebooks.azure.net** | Требуется для записных книжек в Машинное обучение Azure Studio. |
+| **graph.windows.net** | Требуется для записных книжек |
 
 ## <a name="python-hosts"></a>Узлы Python
 
@@ -78,6 +79,15 @@ ms.locfileid: "87873642"
 | **Имя узла** | **Назначение** |
 | ---- | ---- |
 | **cloud.r-project.org** | Используется при установке пакетов CRAN. |
+
+## <a name="azure-government-region"></a>Регион Azure для государственных организаций
+
+Необходимые URL-адреса для регионов Azure для государственных организаций.
+
+| **Имя узла** | **Назначение** |
+| ---- | ---- |
+| **usgovarizona.api.ml.azure.us** | Регион США |
+| **usgovvirginia.api.ml.azure.us** | Регион US-Виргиния |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

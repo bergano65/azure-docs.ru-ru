@@ -3,12 +3,12 @@ title: Автономное резервное копирование для Dat
 description: С Azure Backup можно отправить данные из сети с помощью службы импорта и экспорта Azure. В этой статье описывается рабочий процесс автономного резервного копирования для предыдущих версий DPM и Azure Backup Server.
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: e986baaf6ac2943bd210761ff2194eacdee5984a
-ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
+ms.openlocfilehash: 45518607b96848dc211c1a787ecfa85432cd842e
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88261928"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826605"
 ---
 # <a name="offline-backup-workflow-for-dpm-and-azure-backup-server-previous-versions"></a>Рабочий процесс автономного резервного копирования для DPM и Azure Backup Server (предыдущие версии)
 
@@ -46,9 +46,9 @@ ms.locfileid: "88261928"
 > * Резервное копирование всех рабочих нагрузок и файлов с помощью MABS.
 
 >[!NOTE]
->Подписки Azure CSP не поддерживаются для автономного заполнения DPM 2019 RTM и более ранних версий, а также MABS v3 RTM и более ранние версии. Оперативное резервное копирование по сети по-прежнему поддерживается.
+>Подписки Azure CSP не поддерживаются для использования с автономным заполнением для DPM 2019 RTM и более ранних версий, а также MABS v3 RTM и более ранних версий. Оперативное резервное копирование по сети по-прежнему поддерживается.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Перед запуском рабочего процесса автономного резервного копирования убедитесь, что выполнены следующие предварительные требования:
 
@@ -87,7 +87,7 @@ ms.locfileid: "88261928"
 * Средство *AzureOfflineBackupCertGen.exe* создает файл *OfflineApplicationParams.xml* . Скопируйте этот файл на сервер с помощью MABS или DPM.
 * Установите [последнюю версию агента Mars](https://aka.ms/azurebackup_agent) на экземпляре DPM или на сервере Azure Backup.
 * Зарегистрируйте сервер в Azure.
-* Выполните следующую команду:
+* Выполните следующую команду.
 
     ```cmd
     AzureOfflineBackupCertGen.exe AddRegistryEntries SubscriptionId:<subscriptionid> xmlfilepath:<path of the OfflineApplicationParams.xml file>  storageaccountname:<storageaccountname to be used for offline backup>
@@ -121,7 +121,7 @@ ms.locfileid: "88261928"
     >[!NOTE]
     > Чтобы найти идентификатор пользователя Azure, выполните одно из следующих действий.
     >
-    >* В PowerShell, подключенном к Azure, выполните `Get-AzureRmADUser -UserPrincipalName "Account Holder's email as appears in the portal"` команду.
+    >* В PowerShell, подключенном к Azure, выполните команду `Get-AzureRmADUser -UserPrincipalName "Account Holder's email as appears in the portal"`.
     >* Перейдите к пути реестра `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\DbgSettings\OnlineBackup; Name: CurrentUserId;` .
 
 1. Щелкните правой кнопкой мыши строку, добавленную на предыдущем шаге, и выберите пункт **изменить**. В поле значение укажите отпечаток сертификата, экспортированного на шаге 7. Нажмите кнопку **ОК**.
@@ -183,7 +183,7 @@ ms.locfileid: "88261928"
      > [!IMPORTANT]
      > Если исходный компьютер является виртуальной машиной, обязательно используйте другой физический сервер или клиентский компьютер в качестве компьютера копирования.
 
-1. Откройте командную строку с повышенными привилегиями на компьютере копирования с каталогом служебной программы *AzureOfflineBackupDiskPrep* в качестве текущего каталога. Выполните следующую команду:
+1. Откройте командную строку с повышенными привилегиями на компьютере копирования с каталогом служебной программы *AzureOfflineBackupDiskPrep* в качестве текущего каталога. Выполните следующую команду.
 
     `*.\AzureOfflineBackupDiskPrep.exe*   s:<*Staging Location Path*>   [p:<*Path to AzurePublishSettingsFile*>]`
 
@@ -281,6 +281,6 @@ ms.locfileid: "88261928"
 
 При следующем запланированном резервном копировании Azure Backup выполнит добавочное резервное копирование поверх начальной резервной копии.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Вопросы о рабочем процессе службы импорта и экспорта Azure см. в статье [Использование службы импорт и экспорт Microsoft Azure для перемещения данных в хранилище BLOB-объектов](../storage/common/storage-import-export-service.md).

@@ -3,12 +3,12 @@ title: Восстановление Key Vault ключа & секрета для
 description: Узнайте, как восстановить ключ и секрет хранилища ключей в службе архивации Azure с помощью PowerShell
 ms.topic: conceptual
 ms.date: 08/28/2017
-ms.openlocfilehash: 2323ca17dad214d3797b65285e8c79c4140ce240
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 456ce18f253ffa02cd6b13826a7839f18beecba7
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88649556"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88827092"
 ---
 # <a name="restore-key-vault-key-and-secret-for-encrypted-vms-using-azure-backup"></a>Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы архивации Azure
 
@@ -16,7 +16,7 @@ ms.locfileid: "88649556"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * **Резервная копия зашифрованных виртуальных машин** — выполнять резервное копирование зашифрованных виртуальных машин Azure нужно с помощью службы архивации Azure. Дополнительные сведения о резервном копировании зашифрованных виртуальных машин Azure см. в статье [Управление резервным копированием и восстановлением виртуальных машин Azure с помощью PowerShell](backup-azure-vms-automation.md) .
 * **Настроенное хранилище ключей Azure** — убедитесь, что хранилище ключей, в которое нужно восстановить ключи и секреты, существует. Дополнительные сведения об управлении хранилищем ключей см. в статье [Начало работы с Azure Key Vault](../key-vault/general/overview.md) .
@@ -92,7 +92,7 @@ Restore-AzureKeyVaultSecret -VaultName '<target_key_vault_name>' -InputFile $sec
 
 > [!NOTE]
 >
-> * Значение для $secretname можно получить, обратившись к выходным данным $encryptionObject. Осдисккэйандсекретдетаилс. SecretUrl и используя текст после секретов/, например, URL-адрес выходных данных — `https://keyvaultname.vault.azure.net/secrets/B3284AAA-DAAA-4AAA-B393-60CAA848AAAA/xx000000xx0849999f3xx30000003163` и имя секрета — b3284aaa-daaa-4AAA-b393-60caa848aaaa.
+> * Значение для $secretname можно получить, обратившись к выходным данным $encryptionObject. Осдисккэйандсекретдетаилс. SecretUrl и используя текст после секретов/, например, URL-адрес выходного секрета — `https://keyvaultname.vault.azure.net/secrets/B3284AAA-DAAA-4AAA-B393-60CAA848AAAA/xx000000xx0849999f3xx30000003163` и имя секрета — b3284aaa-daaa-4AAA-b393-60caa848aaaa.
 > * Значение тега Diskencryptionkeyfilename совпадает с совпадает с именем секрета.
 >
 >
@@ -128,7 +128,7 @@ Set-AzureKeyVaultSecret -VaultName '<target_key_vault_name>' -Name $secretname -
 
 > [!NOTE]
 >
-> * Значение переменной $secretname можно получить из выходных данных параметра $rp1.KeyAndSecretDetails.SecretUrl, используя текст после secrets/. Например, выходной URL-адрес секрета — `https://keyvaultname.vault.azure.net/secrets/B3284AAA-DAAA-4AAA-B393-60CAA848AAAA/xx000000xx0849999f3xx30000003163`, а имя секрета — B3284AAA-DAAA-4AAA-B393-60CAA848AAAA.
+> * Значение для $secretname можно получить, обратившись к выходным данным $rp 1. Кэйандсекретдетаилс. SecretUrl и использование текста после секретов/, например, URL-адрес выходного секрета —, `https://keyvaultname.vault.azure.net/secrets/B3284AAA-DAAA-4AAA-B393-60CAA848AAAA/xx000000xx0849999f3xx30000003163` а имя секрета — b3284aaa-daaa-4AAA-b393-60caa848aaaa.
 > * Значение тега DiskEncryptionKeyFileName совпадает с именем секрета.
 > * Значение для DiskEncryptionKeyEncryptionKeyURL можно получить из хранилища ключей после восстановления ключей с помощью командлета [Get-AzureKeyVaultKey](/powershell/module/azurerm.keyvault/get-azurekeyvaultkey).
 >

@@ -3,12 +3,12 @@ title: Частные конечные точки
 description: Изучите процесс создания частных конечных точек для Azure Backup и сценариев, в которых использование частных конечных точек помогает обеспечить безопасность ресурсов.
 ms.topic: conceptual
 ms.date: 05/07/2020
-ms.openlocfilehash: bbb59439677f6c7297aabbecbafeb04327f482b5
-ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+ms.openlocfilehash: 5c2c994b48fb2b950afb67f5c8b6d3c4f7d01e39
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88762918"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826656"
 ---
 # <a name="private-endpoints-for-azure-backup"></a>Частные конечные точки для Azure Backup
 
@@ -60,7 +60,7 @@ Azure Backup позволяет безопасно выполнять резер
 1. Создается **идентификатор объекта** , который является управляемым удостоверением хранилища.
 
     >[!NOTE]
-    >После включения управляемое удостоверение не должно быть отключено (даже временно). Отключение управляемого удостоверения может привести к несовместимости поведения.
+    >После включения управляемое удостоверение **не** должно быть отключено (даже временно). Отключение управляемого удостоверения может привести к несовместимости поведения.
 
 ## <a name="dns-changes"></a>Изменения DNS
 
@@ -105,7 +105,7 @@ Azure Backup позволяет безопасно выполнять резер
 
 | **Зона**                                                     | **Служба** | **Сведения о подписке и группе ресурсов**                  |
 | ------------------------------------------------------------ | ----------- | ------------------------------------------------------------ |
-| `privatelink.<geo>.backup.windowsazure.com`  <br><br>   **Примечание**. в этом случае *Geo* ссылается на код региона. Например, *вкус* и *Ne* for Западная Центральная часть США и Северная Европа соответственно. | Резервное копирование      | **Подписка**: то же, где необходимо создать закрытую конечную точку  **RG**: любой RG в подписке. |
+| `privatelink.<geo>.backup.windowsazure.com`  <br><br>   **Примечание**. в этом случае *Geo* ссылается на код региона. Например, *вкус* и *Ne* for Западная Центральная часть США и Северная Европа соответственно. | Backup      | **Подписка**: то же, где необходимо создать закрытую конечную точку  **RG**: любой RG в подписке. |
 
 Коды регионов см. в [этом списке](https://download.microsoft.com/download/1/2/6/126a410b-0e06-45ed-b2df-84f353034fa1/AzureRegionCodesList.docx) .
 
@@ -220,7 +220,7 @@ Azure Backup позволяет безопасно выполнять резер
 
 1. Перейдите в корневую папку (например,). `cd /home/user`
 
-1. Выполните следующий скрипт:
+1. Выполните следующий сценарий:
 
     ```azurepowershell
     ./dnszonerecordcreation.ps1 -Subscription <SubscriptionId> -VaultPEName <VaultPE Name> -VaultPEResourceGroup <Vault PE RG> -DNSResourceGroup <Private DNS RG> -Privatezone <privatednszone>
@@ -413,7 +413,7 @@ PrivateEndpointSubnetContributorRoleDef.jsна
 
 1. Перейдите в корневую папку (например,). `cd /home/user`
 
-1. Выполните следующий скрипт:
+1. Выполните следующий сценарий:
 
     ```azurepowershell
     ./VaultMsiPrereqScript.ps1 -subscription <subscription-Id> -vaultPEResourceGroup <vaultPERG> -vaultPESubnetResourceGroup <subnetRG> -vaultMsiName <msiName>
@@ -497,7 +497,7 @@ $privateEndpoint = New-AzPrivateEndpoint `
 
 | **Зона**                                                     | **Служба** |
 | ------------------------------------------------------------ | ----------- |
-| `privatelink.<geo>.backup.windowsazure.com`      | Резервное копирование      |
+| `privatelink.<geo>.backup.windowsazure.com`      | Backup      |
 | `privatelink.blob.core.windows.net`                            | BLOB-объект        |
 | `privatelink.queue.core.windows.net`                           | Очередь       |
 
@@ -543,7 +543,7 @@ $privateEndpoint = New-AzPrivateEndpoint `
 
     ![Добавьте запись для полного доменного имени и частного IP-адреса в качестве записи типа для служба очередей](./media/private-endpoints/add-type-a-record-for-queue.png)
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 У. Можно ли создать частную конечную точку для существующего резервного хранилища?<br>
 A. Нет, частные конечные точки можно создавать только для новых резервных хранилищ. Поэтому хранилище не должно иметь каких-либо элементов, защищенных в нем. На самом деле, перед созданием частных конечных точек не попытается защитить какие бы то ни было элементы в хранилище.

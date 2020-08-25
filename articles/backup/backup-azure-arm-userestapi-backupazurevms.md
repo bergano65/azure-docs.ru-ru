@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как настра
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
-ms.openlocfilehash: 89bf2df0b5b9279053ca8258e6d21b00e2789557
-ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+ms.openlocfilehash: a0ad08e9fd750166f8df82a1b3a36cecd8f12f27
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88762884"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826418"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Резервное копирование виртуальных машин Azure с помощью службы Azure Backup и REST API
 
@@ -106,7 +106,7 @@ URI *GET* имеет все необходимые параметры. Для э
 
 |Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     | [WorkloadProtectableItemResourceList](/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       OK |
+|200 ОК     | [WorkloadProtectableItemResourceList](/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       ОК |
 
 #### <a name="example-responses-to-get-operation"></a>Примеры ответов для получения операции
 
@@ -210,7 +210,7 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 |Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |    [ProtectedItemResource](/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  OK       |
+|200 ОК     |    [ProtectedItemResource](/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  ОК       |
 |202 — принято     |         |     Принято    |
 
 ##### <a name="example-responses-to-create-protected-item-operation"></a>Примеры ответов для операции создания защищенного элемента
@@ -302,7 +302,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 #### <a name="example-request-body-for-on-demand-backup"></a>Пример текста запроса для резервного копирования по запросу
 
-Следующий текст запроса определяет свойства, необходимые для активации резервного копирования для защищенного элемента. Если срок хранения не указан, он будет составлять 30 дней с момента активации задания резервного копирования.
+Следующий текст запроса определяет свойства, необходимые для активации резервного копирования для защищенного элемента. Если срок хранения не указан, он будет храниться в течение 30 дней с момента запуска задания резервного копирования.
 
 ```json
 {
@@ -445,7 +445,7 @@ DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-00000
 |202 — принято     |         |     Принято    |
 
 > [!IMPORTANT]
-> Для защиты от случайных сценариев удаления существует [функция обратимого удаления, доступная](use-restapi-update-vault-properties.md#soft-delete-state) для хранилища служб восстановления. Если состояние "обратимое удаление" хранилища имеет значение "включено", то операция удаления не будет немедленно удалять данные. Он будет храниться в течение 14 дней, а затем окончательно очищен. За этот период за 14 дней клиент не будет оплатить за использование хранилища. Чтобы отменить операцию удаления, ознакомьтесь с [разделом Отмена и удаление](#undo-the-deletion).
+> Для защиты от случайных сценариев удаления существует [функция обратимого удаления, доступная](use-restapi-update-vault-properties.md#soft-delete-state) для хранилища служб восстановления. Если для состояния обратимого удаления хранилища задано значение включено, то операция удаления не будет немедленно удалять данные. Он будет храниться в течение 14 дней, а затем окончательно очищен. За этот период за 14 дней не будет заряжена стоимость хранилища. Чтобы отменить операцию удаления, ознакомьтесь с [разделом Отмена и удаление](#undo-the-deletion).
 
 ### <a name="undo-the-deletion"></a>Отменить удаление
 

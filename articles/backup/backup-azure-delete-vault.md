@@ -3,12 +3,12 @@ title: Удаление хранилища Службы восстановлен
 description: Из этой статьи вы узнаете, как удалить зависимости, а затем удалить хранилище служб восстановления Azure Backup.
 ms.topic: conceptual
 ms.date: 06/04/2020
-ms.openlocfilehash: a7e922069f567a0b907c2f2cd28fe09de040cdee
-ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
+ms.openlocfilehash: c0b75d147abba45a745f811de5e4b8ac45088bd8
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2020
-ms.locfileid: "88757223"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826741"
 ---
 # <a name="delete-an-azure-backup-recovery-services-vault"></a>Удаление хранилища служб восстановления Azure Backup
 
