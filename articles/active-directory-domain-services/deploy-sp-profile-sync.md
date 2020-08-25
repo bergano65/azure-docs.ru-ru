@@ -11,16 +11,16 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/09/2020
 ms.author: iainfou
-ms.openlocfilehash: 9a65065a6f3cbc7264a8efb9bcf128b06897aacf
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: aa66f7150e5c3ac4560d7f97cb73b1effb8eec89
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86220275"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88749639"
 ---
 # <a name="configure-azure-active-directory-domain-services-to-support-user-profile-synchronization-for-sharepoint-server"></a>Настройка доменных служб Azure Active Directory для поддержки синхронизации профилей пользователей для SharePoint Server
 
-Сервер SharePoint содержит службу для синхронизации профилей пользователей. Эта функция позволяет хранить профили пользователей в центральном расположении и быть доступными на нескольких сайтах и фермах SharePoint. Чтобы настроить службу профилей пользователей SharePoint Server, необходимо предоставить соответствующие разрешения в управляемом домене доменных служб Azure Active Directory (Azure AD DS). Дополнительные сведения см. [в статье Синхронизация профилей пользователей в SharePoint Server](https://technet.microsoft.com/library/hh296982.aspx).
+Сервер SharePoint содержит службу для синхронизации профилей пользователей. Эта функция позволяет хранить профили пользователей в центральном расположении и быть доступными на нескольких сайтах и фермах SharePoint. Чтобы настроить службу профилей пользователей SharePoint Server, необходимо предоставить соответствующие разрешения в управляемом домене доменных служб Azure Active Directory (Azure AD DS). Дополнительные сведения см. [в статье Синхронизация профилей пользователей в SharePoint Server](/SharePoint/administration/user-profile-service-administration).
 
 В этой статье показано, как настроить AD DS Azure, чтобы разрешить службу синхронизации профилей пользователей SharePoint Server.
 
@@ -71,7 +71,7 @@ ms.locfileid: "86220275"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. [в разделе Предоставление разрешений домен Active Directory Services для синхронизации профилей в SharePoint Server](https://technet.microsoft.com/library/hh296982.aspx) .
+Дополнительные сведения см. [в статье Управление синхронизацией профилей пользователей в SharePoint Server](/SharePoint/administration/manage-profile-synchronization).
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ../active-directory/fundamentals/sign-up-organization.md

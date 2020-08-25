@@ -2,18 +2,18 @@
 title: Самоуправляемая доставка Диска Microsoft Azure Data Box | Документация Майкрософт
 description: Описание процесса самоуправляемой доставки Дисков Azure Data Box
 services: databox
-author: priestlg
+author: twooley
 ms.service: databox
 ms.subservice: disk
 ms.topic: how-to
 ms.date: 05/20/2020
-ms.author: v-grpr
-ms.openlocfilehash: 95c0a884b335920df9803a9b468ab522646b26a1
-ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
+ms.author: twooley
+ms.openlocfilehash: f3292e2088397e332323bec71f9a5965eddd0fe0
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2020
-ms.locfileid: "88258756"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783235"
 ---
 # <a name="use-self-managed-shipping-for-azure-data-box-disk-in-the-azure-portal"></a>Использование функции самоуправляемой доставки для Дисков Azure Data Box на портале Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "88258756"
 * Япония
 * Сингапур
 * Южная Корея
-* Южно-Африканская Республика
+* ЮАР
 * Индия (Предварительная версия)
 
 ## <a name="use-self-managed-shipping"></a>Использование самоуправляемой доставки

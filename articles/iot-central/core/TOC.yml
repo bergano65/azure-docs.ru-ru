@@ -163,6 +163,10 @@
               href: howto-manage-preferences.md
             - name: Переключение чата в реальном времени
               href: howto-show-hide-chat.md
+    - name: Диагностика
+      items: null
+      '-name': Device connections
+      href: troubleshoot-connection.md
 - name: Справочник
   items:
     - name: Azure CLI
