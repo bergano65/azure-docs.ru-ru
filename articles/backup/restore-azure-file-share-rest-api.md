@@ -3,12 +3,12 @@ title: Восстановление файловых ресурсов Azure с �
 description: Узнайте, как использовать REST API для восстановления файловых ресурсов Azure или отдельных файлов из точки восстановления, созданной с помощью Azure Backup
 ms.topic: conceptual
 ms.date: 02/17/2020
-ms.openlocfilehash: 3a1f2999fa1b50507fd3d1b6f21f508ec9f82841
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 60c73caa5db684e38b94b4d5786f2fd24aa65d08
+ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86538162"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88761803"
 ---
 # <a name="restore-azure-file-shares-using-rest-api"></a>Восстановление файловых ресурсов Azure с помощью REST API
 
@@ -64,7 +64,7 @@ URI GET имеет все необходимые параметры. Нет не
 GET https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48af3d1/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/protectionContainers/StorageContainer;storage;azurefiles;afsaccount/protectedItems/AzureFileShare;azurefiles/recoveryPoints?api-version=2019-05-13
 ```
 
-### <a name="example-response"></a>Пример ответа
+### <a name="example-response-for-fetch-recovery-points"></a>Пример ответа для выборки точек восстановления
 
 После отправки URI GET возвращается ответ 200:
 
@@ -168,7 +168,7 @@ POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48a
 
 ### <a name="restore-to-original-location"></a>Восстановить в исходном месте
 
-#### <a name="request-body-example"></a>Пример текста запроса
+#### <a name="request-body-example-for-restore-to-original-location"></a>Пример текста запроса для восстановления в исходное расположение
 
 Следующий текст запроса определяет свойства, необходимые для активации восстановления файлового ресурса Azure:
 
@@ -192,7 +192,7 @@ POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48a
 * **имя**: общая папка в целевой учетной записи хранения, в которую восстанавливается резервное содержимое.
 * **targetFolderPath**: папка в общей папке, в которую восстанавливаются данные.
 
-#### <a name="request-body-example"></a>Пример текста запроса
+#### <a name="request-body-example-for-restore-to-alternate-location"></a>Пример текста запроса для восстановления в альтернативное расположение
 
 Следующий текст запроса восстанавливает общую папку *azurefiles* в учетной записи хранения *афсаккаунт* в общую папку *azurefiles1* в учетной записи хранения *afaccount1* .
 
@@ -366,7 +366,7 @@ POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/
 POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48af3d1/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/protectionContainers/StorageContainer;storage;azurefiles;afsaccount/protectedItems/AzureFileShare%3Bazurefiles/recoveryPoints/932886657837421071/restore?api-version=2019-05-13'
 ```
 
-### <a name="create-request-body"></a>Создание текста запроса
+### <a name="create-request-body-for-item-level-recovery-using-rest-api"></a>Создание текста запроса для восстановления на уровне элемента с помощью REST API
 
 Чтобы активировать восстановление для файлового ресурса Azure, необходимо выполнить следующие компоненты текста запроса:
 
@@ -376,7 +376,7 @@ POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48a
 
 Полный список определений текста запроса и другие сведения см. в [REST API документе восстановление триггера](/rest/api/backup/restores/trigger#request-body).
 
-### <a name="restore-to-original-location"></a>Восстановить в исходном месте
+### <a name="restore-to-original-location-for-item-level-recovery-using-rest-api"></a>Восстановление в исходное расположение для восстановления на уровне элементов с помощью REST API
 
 Следующий текст запроса заключается в восстановлении файла *Restoretest.txt* в общей папке *azurefiles* в учетной записи хранения *афсаккаунт* .
 
@@ -402,7 +402,7 @@ POST https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48a
 }
 ```
 
-### <a name="restore-to-alternate-location"></a>Восстановление в альтернативном расположении
+### <a name="restore-to-alternate-location-for-item-level-recovery-using-rest-api"></a>Восстановление в альтернативное расположение для восстановления на уровне элементов с помощью REST API
 
 Следующий текст запроса заключается в восстановлении файла *Restoretest.txt* в общей папке *azurefiles* в учетной записи хранения *афсаккаунт* в папку *ресторедата* в общей папке *azurefiles1* в учетной записи хранения *afaccount1* .
 

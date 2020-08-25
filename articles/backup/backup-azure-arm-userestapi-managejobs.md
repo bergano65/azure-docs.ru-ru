@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как отслеж
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b234533e-ac51-4482-9452-d97444f98b38
-ms.openlocfilehash: c8dbd6fd7add58f8458c21fc65381a52ff3306d2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b9f69b8815cc8d508d5a10dda82803581216a4eb
+ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87079321"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88761633"
 ---
 # <a name="track-backup-and-restore-jobs-using-rest-api"></a>Отслеживание заданий резервного копирования и восстановления с помощью REST API
 
@@ -17,7 +17,7 @@ Azure Backup служба активирует задания, выполняе�
 
 ## <a name="fetch-job-information-from-operations"></a>Получение информации о задании из операций
 
-Операция, такая как активация резервного копирования, будет всегда возвращать jobID. Например: окончательный ответ [триггера REST API операции резервного копирования](backup-azure-arm-userestapi-backupazurevms.md#example-responses-3) выглядит следующим образом:
+Операция, такая как активация резервного копирования, будет всегда возвращать jobID. Например: окончательный ответ [триггера REST API операции резервного копирования](backup-azure-arm-userestapi-backupazurevms.md#example-responses-for-on-demand-backup) выглядит следующим образом:
 
 ```http
 {
@@ -45,9 +45,9 @@ GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 ### <a name="response"></a>Ответ
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     | [JobResource](/rest/api/backup/jobdetails/get#jobresource)        | ОК        |
+|200 ОК     | [JobResource](/rest/api/backup/jobdetails/get#jobresource)        | OK        |
 
 #### <a name="example-response"></a>Пример ответа
 

@@ -43,7 +43,7 @@
         - name: Лицензии
           href: concept-mfa-licensing.md
         - name: MFA для Office 365
-          href: 'https://docs.microsoft.com/office365/admin/security-and-compliance/set-up-multi-factor-authentication?view=o365-worldwide'
+          href: /office365/admin/security-and-compliance/set-up-multi-factor-authentication?view=o365-worldwide
         - name: ВОПРОСЫ И ОТВЕТЫ
           href: multi-factor-authentication-faq.md
     - name: Проверка подлинности без пароля
@@ -87,7 +87,7 @@
         - name: Федерация Active Directory
           items:
             - name: Адаптер AD FS для Windows Server 2016
-              href: 'https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa'
+              href: /windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa
             - name: Службы федерации
               href: multi-factor-authentication-get-started-adfs.md
             - name: Использование AD FS
@@ -119,7 +119,7 @@
         - name: Вход без пароля с помощью телефона
           href: howto-authentication-passwordless-phone.md
         - name: Windows Hello для бизнеса
-          href: 'https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification'
+          href: /windows/security/identity-protection/hello-for-business/hello-identity-verification
     - name: Регистрация сведений о безопасности
       items:
         - name: Включение объединенной регистрации
@@ -220,7 +220,7 @@
 - name: Справочник
   items:
     - name: Руководство пользователя MFA
-      href: ./end-user/current/multi-factor-authentication-end-user.md
+      href: ../user-help/multi-factor-authentication-end-user-first-time.md
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=active-directory'
     - name: Командлеты Azure PowerShell
@@ -234,7 +234,7 @@
     - name: Форум отзывов и предложений по Azure
       href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-active-directory.html'
+      href: /answers/topics/azure-active-directory.html
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/active-directory/'
     - name: Обновления службы

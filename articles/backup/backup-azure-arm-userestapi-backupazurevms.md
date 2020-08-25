@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как настра
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
-ms.openlocfilehash: 595291549b4d181967ea168d0dc71bc7e2237a67
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 48b5a8c596ec5b23d2962acb9c1f95a1d5aafbc0
+ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86514209"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88761684"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Резервное копирование виртуальных машин Azure с помощью службы Azure Backup и REST API
 
@@ -35,7 +35,7 @@ POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/
 POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/Microsoft.RecoveryServices/vaults/testVault/backupFabrics/Azure/refreshContainers?api-version=2016-12-01
 ```
 
-#### <a name="responses"></a>Ответы
+#### <a name="responses-to-refresh-operation"></a>Ответы на операцию обновления
 
 Операция обновления — это [асинхронная операция](../azure-resource-manager/management/async-operations.md). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
@@ -46,7 +46,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 |204 No Content (содержимое отсутствует)     |         |  ОК (без содержимого, которое возвращаются)      |
 |202 — принято     |         |     Принято    |
 
-##### <a name="example-responses"></a>Примеры ответов
+##### <a name="example-responses-to-refresh-operation"></a>Примеры ответов для операции обновления
 
 После отправления запроса *POST* возвращается ответ 202 (принято).
 
@@ -92,7 +92,7 @@ X-Powered-By: ASP.NET
 
 ### <a name="selecting-the-relevant-azure-vm"></a>Выбор нужной виртуальной машины Azure
 
- Вы можете убедиться, что кэширование выполнено, [отобразив список всех защищаемых элементов](/rest/api/backup/backupprotectableitems/list) в пределах подписки. Затем в ответе найдите нужную виртуальную машину. [Ответ этой операции](#example-responses-1) также содержит сведения о том, как службы восстановления ИДЕНТИФИЦИРУют виртуальную машину.  Ознакомившись с этой процедурой, вы можете пропустить этот шаг и перейти непосредственно к [включению защиты](#enabling-protection-for-the-azure-vm).
+ Вы можете убедиться, что кэширование выполнено, [отобразив список всех защищаемых элементов](/rest/api/backup/backupprotectableitems/list) в пределах подписки. Затем в ответе найдите нужную виртуальную машину. [Ответ этой операции](#example-responses-to-get-operation) также содержит сведения о том, как службы восстановления ИДЕНТИФИЦИРУют виртуальную машину.  Ознакомившись с этой процедурой, вы можете пропустить этот шаг и перейти непосредственно к [включению защиты](#enabling-protection-for-the-azure-vm).
 
 Это можно сделать с помощью операции *GET*.
 
@@ -102,13 +102,13 @@ GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 URI *GET* имеет все необходимые параметры. Для этой операции текст запроса также не требуется.
 
-#### <a name="responses"></a><a name="responses-1"></a>Ответы
+#### <a name="responses-to-get-operation"></a>Ответы на операцию получения
 
 |Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     | [WorkloadProtectableItemResourceList](/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       ОК |
+|200 ОК     | [WorkloadProtectableItemResourceList](/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       OK |
 
-#### <a name="example-responses"></a><a name="example-responses-1"></a>Примеры ответов
+#### <a name="example-responses-to-get-operation"></a>Примеры ответов для получения операции
 
 После отправки запроса *GET* возвращается ответ 200 (OK).
 
@@ -200,9 +200,9 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 }
 ```
 
-`{sourceResourceId}` и `{virtualMachineId}` — это использованные ранее параметры [ответа со списком защищаемых элементов](#example-responses-1).
+`{sourceResourceId}` и `{virtualMachineId}` — это использованные ранее параметры [ответа со списком защищаемых элементов](#example-responses-to-get-operation).
 
-#### <a name="responses"></a>Ответы
+#### <a name="responses-to-create-protected-item-operation"></a>Ответы для операции создания защищенного элемента
 
 Создание защищенного элемента — это [асинхронная операция](../azure-resource-manager/management/async-operations.md). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
@@ -210,10 +210,10 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 |Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |    [ProtectedItemResource](/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  ОК       |
+|200 ОК     |    [ProtectedItemResource](/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  OK       |
 |202 — принято     |         |     Принято    |
 
-##### <a name="example-responses"></a>Примеры ответов
+##### <a name="example-responses-to-create-protected-item-operation"></a>Примеры ответов для операции создания защищенного элемента
 
 После отправки запроса *PUT* для создания или обновления защищенного элемента будет получен первоначальный ответ 202 (принято) с заголовками location или Azure-AsyncOperation.
 
@@ -284,13 +284,13 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/backup?api-version=2016-12-01
 ```
 
-Значения параметров `{containerName}` и `{protectedItemName}` соответствуют указанным [выше](#responses-1). Значение параметра `{fabricName}` — Azure. В нашем примере мы получим следующее:
+Значения параметров `{containerName}` и `{protectedItemName}` соответствуют указанным [выше](#responses-to-get-operation). Значение параметра `{fabricName}` — Azure. В нашем примере мы получим следующее:
 
 ```http
 POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/Microsoft.RecoveryServices/vaults/testVault/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;testRG;testVM/protectedItems/vm;iaasvmcontainerv2;testRG;testVM/backup?api-version=2016-12-01
 ```
 
-### <a name="create-the-request-body"></a>Создание текста запроса
+### <a name="create-the-request-body-for-on-demand-backup"></a>Создание текста запроса для резервного копирования по запросу
 
 Чтобы активировать резервное копирование по запросу, используйте компоненты текста запроса.
 
@@ -300,7 +300,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Полный список определений в тексте запроса и другие сведения см. в [документации по активации резервного копирования для защищенных элементов для REST API](/rest/api/backup/backups/trigger#request-body).
 
-#### <a name="example-request-body"></a>Примеры текста запроса
+#### <a name="example-request-body-for-on-demand-backup"></a>Пример текста запроса для резервного копирования по запросу
 
 Следующий текст запроса определяет свойства, необходимые для активации резервного копирования для защищенного элемента. Если срок хранения не указан, он будет составлять 30 дней с момента активации задания резервного копирования.
 
@@ -313,7 +313,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 }
 ```
 
-### <a name="responses"></a>Ответы
+### <a name="responses-for-on-demand-backup"></a>Ответы на резервное копирование по запросу
 
 Активация резервного копирования по запросу — это [асинхронная операция](../azure-resource-manager/management/async-operations.md). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
@@ -323,7 +323,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 |---------|---------|---------|
 |202 — принято     |         |     Принято    |
 
-#### <a name="example-responses"></a><a name="example-responses-3"></a>Примеры ответов
+#### <a name="example-responses-for-on-demand-backup"></a>Примеры ответов для резервного копирования по запросу
 
 После отправки запроса *POST* для выполнения резервного копирования по запросу будет получен первоначальный ответ 202 (принято) с заголовками location или Azure-AsyncOperation.
 
@@ -399,7 +399,7 @@ X-Powered-By: ASP.NET
 }
 ```
 
-Как уже упоминалось, ответ будет в таком же формате, как и при [включении защиты](#responses-2).
+Как уже упоминалось, ответ будет в таком же формате, как и при [включении защиты](#responses-to-create-protected-item-operation).
 
 ### <a name="stop-protection-but-retain-existing-data"></a>Снятие защиты с сохранением существующих данных
 
@@ -415,7 +415,7 @@ X-Powered-By: ASP.NET
 }
 ```
 
-Ответ будет в том же формате, что и при [активации резервного копирования по запросу](#example-responses-3). Итоговое задание должно отслеживаться, как описано в [документации по мониторингу заданий для REST API](backup-azure-arm-userestapi-managejobs.md#tracking-the-job).
+Ответ будет в том же формате, что и при [активации резервного копирования по запросу](#example-responses-for-on-demand-backup). Итоговое задание должно отслеживаться, как описано в [документации по мониторингу заданий для REST API](backup-azure-arm-userestapi-managejobs.md#tracking-the-job).
 
 ### <a name="stop-protection-and-delete-data"></a>Снятие защиты и удаление данных
 
@@ -427,13 +427,13 @@ X-Powered-By: ASP.NET
 DELETE https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}?api-version=2019-05-13
 ```
 
-Значения параметров `{containerName}` и `{protectedItemName}` соответствуют указанным [выше](#responses-1). Значение параметра `{fabricName}` — Azure. В нашем примере мы получим следующее:
+Значения параметров `{containerName}` и `{protectedItemName}` соответствуют указанным [выше](#responses-to-get-operation). Значение параметра `{fabricName}` — Azure. В нашем примере мы получим следующее:
 
 ```http
 DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/Microsoft.RecoveryServices/vaults/testVault/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;testRG;testVM/protectedItems/vm;iaasvmcontainerv2;testRG;testVM?api-version=2019-05-13
 ```
 
-#### <a name="responses"></a><a name="responses-2"></a>Ответы
+#### <a name="responses-for-delete-protection"></a>Ответы для защиты при удалении
 
 *DELETE* — это [асинхронная операция](../azure-resource-manager/management/async-operations.md). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
@@ -451,7 +451,7 @@ DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-00000
 
 Отмена случайного удаления аналогична созданию элемента резервного копирования. После отмены удаления элемент сохраняется, но последующие резервные копии не запускаются.
 
-Отмена удаления — это операция *размещения* , которая очень похожа на [изменение политики](#changing-the-policy-of-protection) и/или [Включение защиты](#enabling-protection-for-the-azure-vm). Просто укажите намерение отменить удаление с помощью переменной *исрехидрате* в [тексте запроса](#example-request-body) и отправьте запрос. Например, чтобы отменить удаление для testVM, следует использовать следующий текст запроса.
+Отмена удаления — это операция *размещения* , которая очень похожа на [изменение политики](#changing-the-policy-of-protection) и/или [Включение защиты](#enabling-protection-for-the-azure-vm). Просто укажите намерение отменить удаление с помощью переменной *исрехидрате*  в [тексте запроса](#example-request-body) и отправьте запрос. Например, чтобы отменить удаление для testVM, следует использовать следующий текст запроса.
 
 ```http
 {
@@ -464,7 +464,7 @@ DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-00000
 }
 ```
 
-Ответ будет в том же формате, что и при [активации резервного копирования по запросу](#example-responses-3). Итоговое задание должно отслеживаться, как описано в [документации по мониторингу заданий для REST API](backup-azure-arm-userestapi-managejobs.md#tracking-the-job).
+Ответ будет в том же формате, что и при [активации резервного копирования по запросу](#example-responses-for-on-demand-backup). Итоговое задание должно отслеживаться, как описано в [документации по мониторингу заданий для REST API](backup-azure-arm-userestapi-managejobs.md#tracking-the-job).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

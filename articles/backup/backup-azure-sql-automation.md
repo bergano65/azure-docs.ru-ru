@@ -4,12 +4,12 @@ description: Резервное копирование и восстановле
 ms.topic: conceptual
 ms.date: 03/15/2019
 ms.assetid: 57854626-91f9-4677-b6a2-5d12b6a866e1
-ms.openlocfilehash: a5b62b05c36afac078ccc7aeb7ed0e7259072fc1
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 6bd119b743ad83bcab9f92d386a5091593f6a5c0
+ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86513801"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88761327"
 ---
 # <a name="back-up-and-restore-sql-databases-in-azure-vms-with-powershell"></a>Резервное копирование и восстановление баз данных SQL на виртуальных машинах Azure с помощью PowerShell
 
@@ -522,6 +522,7 @@ master           ConfigureBackup      Completed            3/18/2019 8:00:21 PM 
 ```powershell
 Set-AzRecoveryServicesBackupProtectionPolicy -Policy $Pol -SchedulePolicy $SchPol -RetentionPolicy $RetPol
 ```
+
 Проверьте задания резервного копирования после того, как прошло некоторое время, чтобы отвестися от сбоев. Если это так, необходимо устранить проблемы. Затем повторно выполните команду изменения политики с параметром **фиксфоринконсистентитемс** , чтобы повторить изменение политики для всех элементов резервного копирования, для которых операция завершилась сбоем.
 
 ```powershell

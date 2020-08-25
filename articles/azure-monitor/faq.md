@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/15/2020
-ms.openlocfilehash: bd575eb5f646b749b431516670c64c764f4d4c9c
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: a78e1b9cc1d9ca8a815fdb586287983020232fd1
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87828512"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782946"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor: вопросы и ответы
 
@@ -80,6 +80,10 @@ Azure Monitor собирает данные из различных источн
 
 ### <a name="how-do-i-retrieve-log-data"></a>Как извлечь данные журналов?
 Все данные из рабочей области Log Analytics извлекаются с помощью запросов к журналам, написанных на языке запросов Kusto (KQL). Вы можете создавать собственные запросы или использовать решения для мониторинга и службы аналитики, в которых есть готовые запросы к журналам для определенного приложения или службы. См. статью [Общие сведения о запросах к журналам в Azure Monitor](log-query/log-query-overview.md).
+
+### <a name="can-i-delete-data-from-a-log-analytics-workspace"></a>Можно ли удалить данные из рабочей области Log Analytics?
+Данные удаляются из рабочей области в соответствии с сроком [хранения](platform/manage-cost-storage.md#change-the-data-retention-period). Вы можете удалить определенные данные в соответствии с требованиями к конфиденциальности или соответствию. Дополнительные сведения см. [в разделе Экспорт и удаление закрытых данных](platform/personal-data-mgmt.md#how-to-export-and-delete-private-data) .
+
 
 ### <a name="what-is-a-log-analytics-workspace"></a>Что такое рабочая область Log Analytics?
 Все данные журналов, собранные Azure Monitor, сохраняются в рабочей области Log Analytics. Рабочая область по сути является контейнером, в который собираются данные журналов из разных источников. Вы можете использовать одну рабочую область Log Analytics для всех данных мониторинга или создать несколько, если в этом есть потребность. См. статью [Разработка развертывания журналов Azure Monitor](platform/design-logs-deployment.md).
