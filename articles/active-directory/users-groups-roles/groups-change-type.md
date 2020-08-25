@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 05bcf589e685d0a35a58bb1e8069a6ce3699b61c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e6ee5af5d7489835f125319050d291a89ab252a6
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84728390"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797128"
 ---
 # <a name="change-static-group-membership-to-dynamic-in-azure-active-directory"></a>Изменение статического типа членства в группах на динамический в Azure Active Directory
 
@@ -33,7 +33,7 @@ ms.locfileid: "84728390"
 ## <a name="change-the-membership-type-for-a-group"></a>Изменение типа членства для группы
 
 1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com) с помощью учетной записи глобального администратора или администратора пользователей в вашей организации Azure AD.
-2. Выберите **группы**.
+2. Выберите **Группы**.
 3. В списке **Все группы** откройте группу, которую нужно изменить.
 4. Выберите **Свойства**.
 5. На странице **Свойства** группы в зависимости от требуемого типа членства выберите для параметра **Тип членства** значение "Assigned (static)" (Назначаемое (статическое)), "Динамический пользователь" или "Динамическое устройство". Для динамического членства можно использовать конструктор правил, чтобы выбрать параметры простого правила или самостоятельно создать правило членства. 
@@ -57,7 +57,7 @@ ms.locfileid: "84728390"
 ## <a name="change-membership-type-for-a-group-powershell"></a>Изменение типа членства для группы (PowerShell)
 
 > [!NOTE]
-> Для изменения свойств динамической группы потребуется использовать командлеты **предварительной версии** [PowerShell версии 2 для Azure AD](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0). Можно установить предварительную версию из [коллекции PowerShell](https://www.powershellgallery.com/packages/AzureADPreview).
+> Для изменения свойств динамической группы потребуется использовать командлеты **предварительной версии** [PowerShell версии 2 для Azure AD](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0). Можно установить предварительную версию из [коллекции PowerShell](https://www.powershellgallery.com/packages/AzureADPreview).
 
 Ниже приведен пример функций, которые переключают управление членством для существующей группы. В этом примере управление свойством GroupTypes осуществляется аккуратно и сохранены все его существующие значения, вне зависимости от использования динамического членства.
 

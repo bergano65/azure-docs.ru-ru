@@ -13,12 +13,12 @@ ms.date: 08/20/2020
 ms.author: curtand
 ms.reviewer: kexia
 metadata ms.custom: contperfq1
-ms.openlocfilehash: b21b2a9f2d2bd483ed48a4c30b504908bb54a101
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.openlocfilehash: 61ba06054e86d544ae4ab1edbdef8d86667ef3b2
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88661443"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88796584"
 ---
 # <a name="common-problems-with-two-factor-verification-and-your-work-or-school-account"></a>Общие проблемы с двухфакторной проверкой рабочей или учебной учетной записи
 
@@ -33,7 +33,7 @@ ms.locfileid: "88661443"
 2FV более безопасен, чем просто пароль, так как для 2FV требуется что-то, _что вам_ _известно_ . Ваш физический телефон не имеет хакеров.
 
 >[!Important]
->Администраторы могут найти дополнительные сведения о том, как настроить и контролировать среду Azure AD, в [документации по Azure AD](https://docs.microsoft.com/azure/active-directory).
+>Администраторы могут найти дополнительные сведения о том, как настроить и контролировать среду Azure AD, в [документации по Azure AD](../index.yml).
 
 Это содержимое предназначено для помощи с рабочей или учебной учетной записью, которая является учетной записью, предоставленной вашей организацией (например, dritan@contoso.com ). Если у вас возникли проблемы с двухфакторной проверкой подлинности на персональном учетная запись Майкрософт, то есть учетная запись, настроенная для себя (например, danielle@outlook.com ), см. статью [Включение или отключение двухфакторной проверки подлинности для учетная запись Майкрософт](https://support.microsoft.com/help/4028586/microsoft-account-turning-two-step-verification-on-or-off).
 

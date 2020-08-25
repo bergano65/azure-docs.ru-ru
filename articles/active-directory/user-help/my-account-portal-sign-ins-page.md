@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 08/03/2020
 ms.author: curtand
-ms.openlocfilehash: 1816170da0fb6e5120f8cec6b6dda68d2ea1c678
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: d9023579b6627e9dab9feac8dfaccd94dc9f5c12
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543234"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798131"
 ---
 # <a name="view-and-search-your-recent-sign-in-activity-from-the-my-sign-ins-page"></a>Просмотр и поиск недавних событий входа на странице «Мои входы»
 
@@ -72,7 +72,7 @@ ms.locfileid: "87543234"
 
 После просмотра недавних действий входа вы можете:
 
-- просмотреть [сведения для защиты](user-help-security-info-overview.md) или управлять ими;
+- просмотреть [сведения для защиты](./security-info-setup-signin.md) или управлять ими;
 
 - просматривать подключенные [устройства](my-account-portal-devices-page.md) или управлять ими;
 

@@ -11,12 +11,12 @@ ms.date: 09/05/2019
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 6cd81031f27d772912383fa050e0f946bf9964c0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 454e205904b3623bdb5adc906465f01abd77092a
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85204665"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88795615"
 ---
 # <a name="performance-tuning-with-ordered-clustered-columnstore-index"></a>Performance tuning with result set caching (Настройка производительности с помощью упорядоченного кластеризованного индекса columnstore)  
 
@@ -48,6 +48,9 @@ ORDER BY o.name, pnp.distribution_id, cls.min_data_id
 
 
 ```
+
+>[!TIP]
+> Для повышения производительности в синапсе SQL рассмотрите возможность использования представления **sys. pdw_permanent_table_mappings** вместо **sys. pdw_table_mappings** в постоянных пользовательских таблицах. Дополнительные сведения см. в разделе **[sys. pdw_permanent_table_mappings &#40;&#41;Transact-SQL ](/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql?view=azure-sqldw-latest)** .
 
 > [!NOTE] 
 > В упорядоченной таблице CCI новые данные, полученные в результате выполнения одного и того же пакета DML или операций загрузки данных, сортируются в пределах этого пакета, поэтому в таблице не существует глобальной сортировки по всем данным.  Пользователи могут перестроить упорядоченный объект CCI для сортировки всех данных в таблице.  В синапсе SQL перестроение индекса columnstore является автономной операцией.  Для секционированной таблицы перестроение выполняется по одной секции за раз.  Данные в перестроенной секции находятся в автономном режиме и недоступны до завершения перестроения для этого раздела. 

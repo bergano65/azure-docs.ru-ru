@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 07/18/2019
 ms.author: curtand
-ms.openlocfilehash: 91138f104c787148042b187f4cf59a60bc1448d3
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: c056e439deac71417ff14dcfc3f2c3c95db41946
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83744417"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797672"
 ---
 # <a name="set-up-a-security-key-as-your-verification-method"></a>Настройка ключа безопасности в качестве метода проверки
 
@@ -158,13 +158,13 @@ ms.locfileid: "83744417"
 
 ## <a name="additional-security-info-methods"></a>Дополнительные методы в сведениях для защиты
 
-Чтобы зарегистрировать ключ безопасности, необходимо зарегистрировать по крайней мере один дополнительный метод проверки безопасности. Дополнительные сведения см. на странице [Раздел "Обзор"](security-info-add-update-methods-overview.md). 
+Чтобы зарегистрировать ключ безопасности, необходимо зарегистрировать по крайней мере один дополнительный метод проверки безопасности. Дополнительные сведения см. на странице [Раздел "Обзор"](./security-info-setup-auth-app.md). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о методах проверки без пароля см. в статье блога [Microsoft Azure AD начинает публичный просмотр предварительной версии ключей безопасности FIDO2 для входа в систему без пароля](https://www.onmsft.com/news/microsofts-azure-ad-begins-public-preview-of-fido2-security-keys-enabling-passwordless-logins) или прочтите статьи [Что такое приложение Microsoft Authenticator?](user-help-auth-app-overview.md) и [Обзор Windows Hello](https://www.microsoft.com/windows/windows-hello).
 
-- Для получения более подробных сведений о [Безопасных ключах, совместимых с Майкрософт](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/microsoft-compatible-security-key).
+- Для получения более подробных сведений о [Безопасных ключах, совместимых с Майкрософт](/windows/security/identity-protection/hello-for-business/microsoft-compatible-security-key).
 
 - Если вы забыли свой пароль, сбросьте его на [портале сброса пароля](https://passwordreset.microsoftonline.com/) или выполните действия, описанные в статье о [сбросе пароля рабочей или учебной учетной записи](active-directory-passwords-update-your-own-password.md).
 

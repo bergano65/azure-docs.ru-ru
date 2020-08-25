@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 04/15/2020
-ms.openlocfilehash: 168d343ea4582d8c19a577cedadf6f1bc3c39971
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: f7a4997117c8730b767f245050caa3f3157fb6fd
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88607361"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88750241"
 ---
 # <a name="iot-edge-modules"></a>Модули IoT Edge
 
@@ -76,6 +76,5 @@ Marketplace в настоящее время поддерживает **бесп
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Сведения](https://azuremarketplace.microsoft.com/sell) о коммерческом рынке.
-- [Создайте IoT Edge модульное предложение] в центре партнеров.
 - [Войдите в Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership), чтобы создать или завершить свое предложение.
-- Прочтите статью [Создание, настройка и публикация предложения модуля IoT Edge в Azure Marketplace](./partner-center-portal/azure-iot-edge-module-creation.md). Из нее вы узнаете, как опубликовать свой модуль IoT Edge.
+- [Создание предложения модуля IOT Edge](./partner-center-portal/azure-iot-edge-module-creation.md) в центре партнеров.

@@ -2,20 +2,20 @@
 title: Развертывание экземпляра контейнера по действию GitHub
 description: Настройка действия GitHub, которое автоматизирует шаги по сборке, принудительной отправке и развертыванию образа контейнера в службе "экземпляры контейнеров Azure"
 ms.topic: article
-ms.date: 03/18/2020
+ms.date: 08/20/2020
 ms.custom: ''
-ms.openlocfilehash: fab0eff04d86428a7e3eba730373da72c903b0ff
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8da72d3911797e8e3a4551f2af100afb0d7ea0fb
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84744006"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88755013"
 ---
 # <a name="configure-a-github-action-to-create-a-container-instance"></a>Настройка действия GitHub для создания экземпляра контейнера
 
 [Действия GitHub](https://help.github.com/actions/getting-started-with-github-actions/about-github-actions) — это набор функций в GitHub для автоматизации рабочих процессов разработки программного обеспечения в том же месте, где вы храните код и работаете над запросами на вытягивание и проблемами.
 
-Чтобы автоматизировать развертывание контейнера в службе "экземпляры контейнеров Azure", используйте действие GitHub " [развернуть в Azure Container](https://github.com/azure/aci-deploy) ". Это действие позволяет задать свойства для экземпляра контейнера, аналогичные тем, которые находятся в команде [AZ Container Create][az-container-create] .
+Чтобы автоматизировать развертывание одного контейнера в службе "экземпляры контейнеров Azure", используйте действие GitHub " [развернуть в Azure Container](https://github.com/azure/aci-deploy) ". Это действие позволяет задать свойства для экземпляра контейнера, аналогичные тем, которые находятся в команде [AZ Container Create][az-container-create] .
 
 В этой статье показано, как настроить рабочий процесс в репозитории GitHub, который выполняет следующие действия:
 
@@ -25,13 +25,13 @@ ms.locfileid: "84744006"
 
 В этой статье показано два способа настройки рабочего процесса.
 
-* Настройте рабочий процесс самостоятельно в репозитории GitHub с помощью действия развертывание в службе "экземпляры контейнеров Azure" и других действий.  
-* Используйте `az container app up` команду в расширении [Deploy to Azure](https://github.com/Azure/deploy-to-azure-cli-extension) в Azure CLI. Эта команда упрощает создание рабочего процесса GitHub и этапов развертывания.
+* [Настройка рабочего процесса GitHub](#configure-github-workflow) . Создайте рабочий процесс в репозитории GitHub с помощью действия "развернуть в службе" экземпляры контейнеров Azure "и других действий.  
+* [Использование расширения CLI](#use-deploy-to-azure-extension) — используйте `az container app up` команду в расширении [Deploy to Azure](https://github.com/Azure/deploy-to-azure-cli-extension) в Azure CLI. Эта команда упрощает создание рабочего процесса GitHub и этапов развертывания.
 
 > [!IMPORTANT]
 > Действие GitHub для службы "экземпляры контейнеров Azure" сейчас находится на этапе предварительной версии. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Учетная запись GitHub** . Создайте учетную запись, https://github.com если она еще не создана.
 * **Azure CLI** — для выполнения Azure CLI действий можно использовать Azure Cloud Shell или локальную установку Azure CLI. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
@@ -39,7 +39,7 @@ ms.locfileid: "84744006"
 
 ## <a name="set-up-repo"></a>Настройка репозитория
 
-* В примерах, приведенных в этой статье, используйте GitHub для разветвления следующего репозитория:https://github.com/Azure-Samples/acr-build-helloworld-node
+* В примерах, приведенных в этой статье, используйте GitHub для разветвления следующего репозитория: https://github.com/Azure-Samples/acr-build-helloworld-node
 
   Этот репозиторий содержит Dockerfile и исходные файлы для создания образа контейнера для небольшого веб-приложения.
 
@@ -91,7 +91,7 @@ az ad sp create-for-rbac \
 
 ### <a name="update-service-principal-for-registry-authentication"></a>Обновление субъекта-службы для проверки подлинности реестра
 
-Обновите учетные данные субъекта-службы Azure, чтобы разрешить принудительную установку и включение разрешений в реестре контейнеров. Этот шаг позволяет рабочему процессу GitHub использовать субъект-службу для [проверки подлинности в реестре контейнеров](../container-registry/container-registry-auth-service-principal.md). 
+Обновите учетные данные субъекта-службы Azure, чтобы разрешить принудительный и опрашивающий доступ к реестру контейнеров. Этот шаг позволяет рабочему процессу GitHub использовать субъект-службу для [проверки подлинности в реестре контейнеров](../container-registry/container-registry-auth-service-principal.md) и отправки и извлечения образа DOCKER. 
 
 Получите идентификатор ресурса реестра контейнеров. Замените имя реестра в следующей команде [AZ запись контроля][az-acr-show] доступа:
 
@@ -118,8 +118,8 @@ az role assignment create \
 
 |Секрет  |Значение  |
 |---------|---------|
-|`AZURE_CREDENTIALS`     | Весь вывод JSON из создания субъекта-службы |
-|`REGISTRY_LOGIN_SERVER`   | Имя сервера входа в реестр (все строчные буквы). Пример: *myregistry.Azure.CR.IO*        |
+|`AZURE_CREDENTIALS`     | Все выходные данные JSON шага создания субъекта-службы |
+|`REGISTRY_LOGIN_SERVER`   | Имя сервера входа в реестр (все строчные буквы). Пример: *myregistry.azurecr.IO*        |
 |`REGISTRY_USERNAME`     |  `clientId`Из выходных данных JSON при создании субъекта-службы       |
 |`REGISTRY_PASSWORD`     |  `clientSecret`Из выходных данных JSON при создании субъекта-службы |
 | `RESOURCE_GROUP` | Имя группы ресурсов, использованной для определения субъекта-службы. |
@@ -177,9 +177,9 @@ jobs:
 
 ![Просмотр хода выполнения рабочего процесса](./media/container-instances-github-action/github-action-progress.png)
 
-Сведения о просмотре состояния и результатах каждого шага в рабочем процессе см. в разделе [Управление запуском рабочего процесса](https://help.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run) .
+Сведения о просмотре состояния и результатах каждого шага в рабочем процессе см. в разделе [Управление запуском рабочего процесса](https://help.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run) . Если рабочий процесс не завершен, см. раздел [Просмотр журналов для диагностики сбоев](https://docs.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run#viewing-logs-to-diagnose-failures).
 
-По завершении рабочего процесса получите сведения об экземпляре контейнера с именем *ACI-SampleApp* , выполнив команду [AZ Container показывать][az-container-show] . Замените имя группы ресурсов: 
+Когда рабочий процесс завершится успешно, получите сведения об экземпляре контейнера с именем *ACI-SampleApp* , выполнив команду [AZ Container показывать][az-container-show] . Замените имя группы ресурсов: 
 
 ```azurecli
 az container show \
@@ -209,7 +209,7 @@ aci-action01.westus.azurecontainer.io  Succeeded
 
 ### <a name="additional-prerequisite"></a>Дополнительное необходимое условие
 
-В дополнение к настройке [предварительных требований](#prerequisites) и [репозитория](#set-up-repo) для этого сценария необходимо установить **расширение Deploy в Azure** для Azure CLI.
+В дополнение к настройке [предварительных требований](#prerequisites) и [репозитория](#set-up-repo) для этого сценария необходимо установить  **расширение Deploy в Azure** для Azure CLI.
 
 Выполните команду [AZ Extension Add][az-extension-add] , чтобы установить расширение:
 
@@ -225,7 +225,7 @@ az extension add \
 Чтобы выполнить команду [AZ Container App up][az-container-app-up] , укажите минимум:
 
 * Имя реестра контейнеров Azure, например *myregistry*
-* URL-адрес репозитория GitHub, например`https://github.com/<your-GitHub-Id>/acr-build-helloworld-node`
+* URL-адрес репозитория GitHub, например `https://github.com/<your-GitHub-Id>/acr-build-helloworld-node`
 
 Пример команды:
 
@@ -237,7 +237,7 @@ az container app up \
 
 ### <a name="command-progress"></a>Ход выполнения команд
 
-* При появлении запроса укажите учетные данные GitHub или предоставьте [личный маркер доступа GitHub](https://help.github.com/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) (PAT), который содержит *репозиторий* и области *пользователя* для проверки подлинности в реестре. При предоставлении учетных данных GitHub команда создает PAT.
+* При появлении запроса укажите учетные данные GitHub или предоставьте [личный маркер доступа GitHub](https://help.github.com/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) (PAT), который содержит *репозиторий* и области *пользователей* для проверки подлинности в учетной записи GitHub. При предоставлении учетных данных GitHub команда создает PAT. Следуйте дополнительным запросам, чтобы настроить рабочий процесс.
 
 * Команда создает секреты репозитория для рабочего процесса:
 
@@ -258,11 +258,29 @@ Workflow succeeded
 Your app is deployed at:  http://acr-build-helloworld-node.eastus.azurecontainer.io:8080/
 ```
 
+Чтобы просмотреть состояние рабочего процесса и результаты каждого шага в пользовательском интерфейсе GitHub, см. раздел [Управление запуском рабочего процесса](https://help.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run).
+
 ### <a name="validate-workflow"></a>Проверка рабочего процесса
 
-Рабочий процесс развертывает экземпляр контейнера Azure с базовым именем репозитория GitHub, в данном случае записью записи *контроля доступа — Build-HelloWorld-node*. В браузере можно перейти по ссылке, предоставленной для просмотра работающего веб-приложения. Если приложение прослушивает порт, отличный от 8080, укажите его в URL-адресе.
+Рабочий процесс развертывает экземпляр контейнера Azure с базовым именем репозитория GitHub, в данном случае записью записи *контроля доступа — Build-HelloWorld-node*. Когда рабочий процесс завершится успешно, получите сведения об экземпляре контейнера с именем "запись *контроля доступа — сборка-HelloWorld-узел* ", выполнив команду [AZ Container показывать][az-container-show] . Замените имя группы ресурсов: 
 
-Чтобы просмотреть состояние рабочего процесса и результаты каждого шага в пользовательском интерфейсе GitHub, см. раздел [Управление запуском рабочего процесса](https://help.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run).
+```azurecli
+az container show \
+  --resource-group <resource-group-name> \
+  --name acr-build-helloworld-node \
+  --query "{FQDN:ipAddress.fqdn,ProvisioningState:provisioningState}" \
+  --output table
+```
+
+Она выводит выходные данные следующего вида:
+
+```console
+FQDN                                                   ProvisioningState
+---------------------------------                      -------------------
+acr-build-helloworld-node.westus.azurecontainer.io     Succeeded
+```
+
+После подготовки экземпляра перейдите к полному доменному имени контейнера в браузере, чтобы просмотреть работающее веб-приложение.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -281,7 +299,7 @@ az group delete \
   --name <resource-group-name>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Обзор [GitHub Marketplace](https://github.com/marketplace?type=actions) для получения дополнительных действий по автоматизации рабочего процесса разработки
 

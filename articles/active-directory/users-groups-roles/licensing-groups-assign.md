@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0524e8756e86771ab555eaa853e3955fe69c8549
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c7e8beb8d694b0ee155e3707faef34dff6d56eb3
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84727659"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797757"
 ---
 # <a name="assign-licenses-to-users-by-group-membership-in-azure-active-directory"></a>Назначение лицензий пользователям в соответствии с членством в группах в Azure Active Directory
 
@@ -93,13 +93,13 @@ ms.locfileid: "84727659"
 
 1. Чтобы устранить этот конфликт, удалите пользователя из группы **Пользователи киоска**. После того как служба Azure AD обработает изменение, лицензии группы **Отдел кадров** будут назначены правильно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о наборе функций для назначения лицензий с помощью групп см. в следующих статьях:
 
-- [Group-based licensing basics in Azure Active Directory](/azure/active-directory/fundamentals/active-directory-licensing-whatis-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context) (Основы группового лицензирования в Azure Active Directory)
+- [Group-based licensing basics in Azure Active Directory](../fundamentals/active-directory-licensing-whatis-azure-portal.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context) (Основы группового лицензирования в Azure Active Directory)
 - [Поиск и устранение проблем лицензирования группы в Azure Active Directory](licensing-groups-resolve-problems.md)
 - [Как перевести отдельных лицензированных пользователей на групповое лицензирование в Azure Active Directory](licensing-groups-migrate-users.md)
 - [Как безопасно перевести пользователей с отдельных лицензий продуктов с использованием группового лицензирования](licensing-groups-change-licenses.md)
-- [Дополнительные сценарии лицензирования на основе группы в Azure Active Directory](../active-directory-licensing-group-advanced.md)
+- [Дополнительные сценарии лицензирования на основе группы в Azure Active Directory](./licensing-group-advanced.md)
 - [Примеры PowerShell для группового лицензирования в Azure AD](licensing-ps-examples.md)

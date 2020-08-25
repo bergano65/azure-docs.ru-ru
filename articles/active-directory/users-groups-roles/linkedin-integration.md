@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c5058e24ee0817ebcc6c5761f7b9e22d1a14203
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 08d6b12f897b8b7efb150b11ae4b3f5e2440f7c8
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84727200"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797995"
 ---
 # <a name="integrate-linkedin-account-connections-in-azure-active-directory"></a>Интеграция подключений учетных записей LinkedIn в Azure Active Directory
 
@@ -33,7 +33,7 @@ ms.locfileid: "84727200"
 > * По умолчанию этот параметр отключен для организаций Azure AD, подготовленных в Германии. Обратите внимание, что этот параметр недоступен для клиентов, использующих Microsoft Cloud Germany.
 > * По умолчанию этот параметр отключен для организаций, подготовленных во Франции.
 >
-> После включения подключений к учетной записи LinkedIn в Организации подключения учетной записи работают после согласия пользователей с доступом к данным компании от их имени. Сведения о параметре согласия пользователя см. [в разделе Удаление доступа пользователя к приложению](https://docs.microsoft.com/azure/active-directory/application-access-assignment-how-to-remove-assignment).
+> После включения подключений к учетной записи LinkedIn в Организации подключения учетной записи работают после согласия пользователей с доступом к данным компании от их имени. Сведения о параметре согласия пользователя см. [в разделе Удаление доступа пользователя к приложению](../manage-apps/methods-for-removing-user-access.md).
 
 ## <a name="enable-linkedin-account-connections-in-the-azure-portal"></a>Включение подключений к учетной записи LinkedIn в портал Azure
 
@@ -71,7 +71,7 @@ ms.locfileid: "84727200"
 1. Создайте CSV-файл для пользователей, которые выбраны для подключений к учетной записи LinkedIn.
 1. Войдите в Microsoft 365 с помощью учетной записи администратора.
 1. Запустите PowerShell.
-1. Установите модуль Azure AD, выполнив`Install-Module AzureAD`
+1. Установите модуль Azure AD, выполнив `Install-Module AzureAD`
 1. Выполните следующий скрипт:
 
   ``` PowerShell
@@ -94,14 +94,14 @@ ms.locfileid: "84727200"
 1. Создайте объект Групповая политика со следующим параметром: **Конфигурация пользователя**  >  **Административные шаблоны**  >  **Microsoft Office 2016**  >  **различные**  >  **функции показа LinkedIn в приложениях Office**.
 1. Выберите **Включено** или **Отключено**.
   
-   Область | Действие
+   Состояние | Действие
    ------ | ------
    **Enabled** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 включен. Пользователи в вашей организации могут использовать функции LinkedIn в приложениях Office 2016.
    **Отключено** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 отключен, и пользователи не могут изменить это. Пользователи в вашей организации не могут использовать функции LinkedIn в приложениях Office 2016.
 
 Эта групповая политика касается только приложений Office 2016 для локальных компьютеров. Если пользователи отключают LinkedIn в приложениях Office 2016, они по-прежнему смогут просматривать функции LinkedIn в Office 365.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Согласие пользователя и общий доступ к данным для LinkedIn](linkedin-user-consent.md)
 

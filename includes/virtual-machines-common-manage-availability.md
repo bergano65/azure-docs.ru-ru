@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 2c8f2d95e7e06f2fff3d8344a3fffa5b19648ede
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: d7f7b0eb2c49e4abba9e12e09d70e321cc6c06f4
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88655294"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88760610"
 ---
 ## <a name="understand-vm-reboots---maintenance-vs-downtime"></a>Общие сведения о перезагрузках виртуальной машины. Обслуживание и простой
 Есть три сценария, которые могут повлиять на работу виртуальной машины в Azure: незапланированное техническое обслуживание, незапланированный простой и запланированное техническое обслуживание.
@@ -34,7 +34,7 @@ ms.locfileid: "88655294"
 * [Использование управляемых дисков для виртуальных машин в группе доступности]
 * [Использование запланированных событий для упреждающего реагирования на события, влияющие на виртуальные машины](../articles/virtual-machines/linux/scheduled-events.md)
 * [Настройка каждого уровня приложений в отдельных группах доступности]
-* [Объединение балансировщика нагрузки с группами доступности]
+* [Объединение подсистемы балансировки нагрузки с зонами или группами доступности]
 * [Используйте зоны доступности, чтобы обеспечить защиту от сбоев на уровне центра обработки данных]
 
 ## <a name="use-availability-zones-to-protect-from-datacenter-level-failures"></a>Используйте зоны доступности, чтобы обеспечить защиту от сбоев на уровне центра обработки данных
@@ -110,7 +110,7 @@ az vm list-skus --resource-type availabilitySets --query '[?name==`Aligned`].{Lo
 
 <!-- Link references -->
 [Настройка нескольких виртуальных машин в группе доступности для обеспечения избыточности]: #configure-multiple-virtual-machines-in-an-availability-set-for-redundancy
-[Объединение балансировщика нагрузки с группами доступности]: #combine-a-load-balancer-with-availability-zones-or-sets
+[Объединение подсистемы балансировки нагрузки с зонами или группами доступности]: #combine-a-load-balancer-with-availability-zones-or-sets
 [Avoid single instance virtual machines in availability sets]: #avoid-single-instance-virtual-machines-in-availability-sets
 [Использование управляемых дисков для виртуальных машин в группе доступности]: #use-managed-disks-for-vms-in-an-availability-set
 [Используйте зоны доступности, чтобы обеспечить защиту от сбоев на уровне центра обработки данных]: #use-availability-zones-to-protect-from-datacenter-level-failures

@@ -3,12 +3,12 @@ title: Обратимое удаление для Azure Backup
 description: Узнайте, как использовать функции безопасности в Azure Backup, чтобы сделать резервные копии более безопасными.
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.openlocfilehash: 79df345858d89d032b826a0fa8b677195a785df2
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: b3ccd944ce1f6a30b4441c205a83e71374e7aff2
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86538842"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88763445"
 ---
 # <a name="soft-delete-for-azure-backup"></a>Обратимое удаление для Azure Backup
 
@@ -69,7 +69,7 @@ SoftDeleteFeatureState : Disabled
 
 ### <a name="using-azure-portal"></a>Использование портала Azure
 
-Выполните следующие действия.
+Выполните следующие действия:
 
 1. Выполните действия по [отключению обратимого удаления](#enabling-and-disabling-soft-delete).
 
@@ -136,7 +136,7 @@ AppVM1           DeleteBackupData     Completed            12/5/2019 12:44:15 PM
 
 Если элементы были удалены до отключения обратимого удаления, они будут находиться в состоянии обратимого удаления. Чтобы немедленно удалить их, операция удаления должна быть отменена, а затем снова выполнена.
 
-1. Сначала отмените операции удаления, выполнив описанные [здесь](backup-azure-arm-userestapi-backupazurevms.md#undo-the-stop-protection-and-delete-data)действия.
+1. Сначала отмените операции удаления, выполнив описанные [здесь](backup-azure-arm-userestapi-backupazurevms.md#undo-the-deletion)действия.
 2. Затем отключите функцию обратимого удаления с помощью REST API, выполнив описанные [здесь](use-restapi-update-vault-properties.md#update-soft-delete-state-using-rest-api)действия.
 3. Затем удалите резервные копии с помощью REST API, как описано [здесь](backup-azure-arm-userestapi-backupazurevms.md#stop-protection-and-delete-data).
 

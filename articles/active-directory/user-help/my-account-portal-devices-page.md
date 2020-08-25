@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 07/29/2020
 ms.author: curtand
-ms.openlocfilehash: e150143e726c75d96372b11fb3d451f0dc9956bc
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 784ee418c3713cce53d7e99e30fd445e75d144da
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87422490"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798216"
 ---
 # <a name="manage-your-connected-devices-from-the-devices-page"></a>Управление подключенными устройствами на странице "Устройства"
 
@@ -27,7 +27,7 @@ ms.locfileid: "87422490"
 - Отключить устройства, которые не используются, потеряны или украдены.
 
 >[!Important]
->Эта статья предназначена для пользователей, пытающихся обновить сведения об устройствах, подключенных к рабочей или учебной учетной записи. Если вы являетесь администратором и вам нужны сведения об управлении устройствами для своих сотрудников и других целей, обратитесь к статье [Документация по удостоверениям устройств](https://docs.microsoft.com/azure/active-directory/devices/index).
+>Эта статья предназначена для пользователей, пытающихся обновить сведения об устройствах, подключенных к рабочей или учебной учетной записи. Если вы являетесь администратором и вам нужны сведения об управлении устройствами для своих сотрудников и других целей, обратитесь к статье [Документация по удостоверениям устройств](../devices/index.yml).
 
 ## <a name="view-your-connected-devices"></a>Обзор подключенных устройств
 
@@ -68,7 +68,7 @@ ms.locfileid: "87422490"
 
 После просмотра сведений о подключенных устройствах вы можете:
 
-- просматривать [сведения для защиты](user-help-security-info-overview.md) или управлять ими;
+- просматривать [сведения для защиты](./security-info-setup-signin.md) или управлять ими;
 
 - просматривать свои [организации](my-account-portal-organizations-page.md) и управлять ими;
 
@@ -76,7 +76,7 @@ ms.locfileid: "87422490"
 
 - ознакомиться с тем, как ваша организация [использует ваши данные, связанные с конфиденциальностью](my-account-portal-privacy-page.md).
 
-- Изменение [параметров портала моей учетной записи](my-account-portal-settings.md)
+- Изменение [параметров портала "Моя учетная запись"](my-account-portal-settings.md)
 
 ## <a name="related-office-content"></a>Связанное содержимое Office
 

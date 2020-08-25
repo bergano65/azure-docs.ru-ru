@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: 805be8d5c9ab4f6316251adbb9bce3e99f4fa01d
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: b9e33ba8d9610067cb9e844477ec273391fbdb0b
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086676"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88751727"
 ---
 # <a name="configure-network-virtual-appliance-in-azure-hdinsight"></a>Настройка сетевого виртуального устройства в Azure HDInsight
 
@@ -47,7 +47,7 @@ ms.locfileid: "86086676"
 ### <a name="fqdn-httphttps-dependencies"></a>Зависимости FQDN протокола HTTP/HTTPS
 
 > [!Important]
-> Приведенный ниже список содержит лишь несколько наиболее важных полных доменных имен. Полный список полных доменных имен (в основном служба хранилища Azure и служебная шина Azure) можно получить для настройки NVA [в этом файле](https://github.com/Azure-Samples/hdinsight-fqdn-lists/blob/master/HDInsightFQDNTags.json). Эти зависимости используются операциями плоскости управления HDInsight для успешного создания кластера.
+> Приведенный ниже список содержит несколько полных доменных имен, которые могут потребоваться для исправления операционной системы и системы безопасности, а также проверки сертификатов после создания кластера и в течение всего времени существования кластерных операций. Чтобы настроить NVA [в этом файле](https://github.com/Azure-Samples/hdinsight-fqdn-lists/blob/master/HDInsightFQDNTags.json), можно получить список зависимостей FQDN (в основном служба хранилища Azure и служебная шина Azure). Эти зависимости используются поставщиком ресурсов HDInsight (RP) для успешного создания кластеров и управления ими. К ним относятся журналы телеметрии и диагностики, подготовка метаданных, связанные с кластером конфигурации, сценарии, шаблоны ARM и т. д. Список зависимостей FQDN может измениться при выпуске будущих обновлений Хдингишт.
 
 | **Конечная точка**                                                          |
 |---|
@@ -56,7 +56,7 @@ ms.locfileid: "86086676"
 | ocsp.msocsp.com:80                                                    |
 | ocsp.digicert.com:80                                                  |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Ограничение исходящего трафика с помощью брандмауэра](./hdinsight-restrict-outbound-traffic.md)
 * [Архитектура виртуальной сети Azure HDInsight](hdinsight-virtual-network-architecture.md)
