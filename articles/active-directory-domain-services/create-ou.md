@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: e0188a35289c22da784ca856c80212638052a609
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 1e3546239dfcfd4c6ef23ad16f3340f34f958901
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86040288"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723220"
 ---
 # <a name="create-an-organizational-unit-ou-in-an-azure-active-directory-domain-services-managed-domain"></a>Создание подразделения в управляемом домене доменных служб Azure Active Directory
 
@@ -85,12 +85,12 @@ ms.locfileid: "86040288"
 
     ![Настраиваемое подразделение, доступное для использования в центр администрирования Active Directory](./media/create-ou/create-ou-done.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании средств администрирования или создании и использовании учетных записей служб см. в следующих статьях:
 
-* [Центр администрирования Active Directory: приступая к работе](https://technet.microsoft.com/library/dd560651.aspx)
-* [Пошаговое руководство по использованию учетных записей служб](https://technet.microsoft.com/library/dd548356.aspx)
+* [Центр администрирования Active Directory: приступая к работе](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560651(v=ws.10))
+* [Пошаговое руководство по использованию учетных записей служб](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10))
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ../active-directory/fundamentals/sign-up-organization.md

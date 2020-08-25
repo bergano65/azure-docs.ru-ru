@@ -3,12 +3,12 @@ title: Заметки о выпуске Live Video Analytics в IoT Edge. Azure
 description: В этом разделе содержатся заметки о выпуске Live Video Analytics на IoT Edge выпусках, улучшениях, исправлениях ошибок и известных проблемах.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: c18977807d8cdca264a27d7fcff37aec7a61eb55
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: bad21297c5174c107a8eb03da0e2ed57ee7355d3
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88690657"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88750215"
 ---
 # <a name="live-video-analytics-on-iot-edge-release-notes"></a>Заметки о выпуске Live Video Analytics в IoT Edge
 
@@ -37,11 +37,12 @@ mcr.microsoft.com/media/live-video-analytics:1.0.3
 * Теперь вы можете получить высокую производительность передачи содержимого данных между интерактивной аналитикой видео на IoT Edge и пользовательским расширением с помощью gRPC Framework. Чтобы приступить к [работе, см](analyze-live-video-use-your-grpc-model-quickstart.md) . раздел.
 * Обновлено Расширенное региональное развертывание для аналитики в реальном времени и только облачная служба.  
 * Интерактивная аналитика видео теперь доступна в 25 дополнительных регионах по всему миру. Ниже приведен [список](https://azure.microsoft.com/global-infrastructure/services/?products=media-services) всех доступных регионов.  
-* Также обновлена [Настройка](https://aka.ms/lva-edge/setup-resources-for-samples) для быстрого запуска. 
+* [Настройка](https://aka.ms/lva-edge/setup-resources-for-samples) для быстрого запуска была обновлена и поддерживает новые регионы.
+    * Нет вызова действий для тех, кто уже настроил ресурсы.
 
 ## <a name="bug-fixes"></a>Исправления ошибок 
 
-Нет 
+* Снятие использования устаревшего расширения Azure в скрипте настройки
 
 ## <a name="july-13-2020"></a>13 июля 2020 г.
 

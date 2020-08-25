@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Устранение распространенных проблем с кластерами Kubernetes с поддержкой Arc.
 keywords: Kubernetes, Arc, Azure, контейнеры
-ms.openlocfilehash: 1527f8d4ca06c2deaf4ce18b73bfdb515dcadc63
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.openlocfilehash: 404516778255409d56dd5c3a7d1fd96711cc981f
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83725590"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723679"
 ---
 # <a name="azure-arc-enabled-kubernetes-troubleshooting-preview"></a>Устранение неполадок Kubernetes с поддержкой Azure Arc (предварительная версия)
 
@@ -69,9 +69,9 @@ pod/metrics-agent-58b765c8db-n5l7k              2/2     Running  0       16h
 pod/resource-sync-agent-5cf85976c7-522p5        3/3     Running  0       16h
 ```
 
-Для всех объектов pod значение параметра `STATUS` должно отображаться как `Running`, а значение параметра `READY` — либо `3/3`, либо `2/2`. Получите журналы и описания объектов pod, которые возвращают `Error` или `CrashLoopBackOff`.
+Для всех объектов pod значение параметра `STATUS` должно отображаться как `Running`, а значение параметра `READY` — либо `3/3`, либо `2/2`. Получите журналы и описания объектов pod, которые возвращают `Error` или `CrashLoopBackOff`. Если какая-либо из этих модулей повреждена, `Pending` это может быть вызвано нехваткой ресурсов на узлах кластера. При увеличении [масштаба кластера](https://kubernetes.io/docs/tasks/administer-cluster/cluster-management/#resizing-a-cluster) эти модули могут переходить в `Running` состояние.
 
-## <a name="unable-to-connect-my-kubernetes-cluster-to-azure"></a>Не удается подключить кластер Kubernetes к Azure
+## <a name="connecting-kubernetes-clusters-to-azure-arc"></a>Подключение кластеров Kubernetes к службе "Дуга Azure"
 
 Для подключения кластеров к Azure требуется доступ к подписке Azure и доступ `cluster-admin` к целевому кластеру. Если кластер недоступен или у него недостаточно разрешений, подключение завершится сбоем.
 
@@ -99,8 +99,6 @@ $ az connectedk8s connect --resource-group AzureArc --name AzureArcCluster
 Command group 'connectedk8s' is in preview. It may be changed/removed in a future release.
 Ensure that you have the latest helm version installed before proceeding to avoid unexpected errors.
 This operation might take a while...
-
-There was a problem with connect-agent deployment. Please run 'kubectl -n azure-arc logs -l app.kubernetes.io/component=connect-agent -c connect-agent' to debug the error.
 ```
 
 ## <a name="configuration-management"></a>Управление конфигурацией
@@ -158,4 +156,11 @@ kind: List
 metadata:
   resourceVersion: ""
   selfLink: ""
+```
+## <a name="monitoring"></a>Наблюдение
+
+Azure Monitor для контейнеров требуется, чтобы его демон был запущен в привилегированном режиме. Чтобы успешно настроить канонический Kubernetes кластер для мониторинга, выполните следующую команду:
+
+```console
+juju config kubernetes-worker allow-privileged=true
 ```

@@ -10,18 +10,18 @@ ms.date: 10/01/2019
 ms.author: tamram
 ms.reviewer: ozge
 ms.subservice: common
-ms.openlocfilehash: d43df68f48273b03fa9bde9633b487d69c0834ed
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 29bec00916f4cc3683dae5b6d3065e02a3cbe10f
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905386"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88724172"
 ---
 # <a name="call-rest-api-operations-with-shared-key-authorization"></a>Вызов REST API операций с авторизацией общего ключа
 
 В этой статье показано, как вызывать интерфейсы API службы хранилища Azure, в том числе как сформировать заголовок авторизации. Она написана с точки зрения разработчика, который ничего не знает о других частях и не имеет представления о том, как выполнить вызов RESTFUL. После того как вы узнаете, как вызвать операцию RESTFUL, можно использовать эти знания для использования любых других операций службы хранилища Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Пример приложения перечисляет контейнеры больших двоичных объектов для учетной записи хранения. Чтобы выполнить код, описанный в этой статье, необходимо следующее.
 
@@ -65,7 +65,7 @@ git clone https://github.com/Azure-Samples/storage-dotnet-rest-api-with-auth.git
 
 **Метод запроса**: Get. Эта команда является методом HTTP, который вы указываете как свойство объекта запроса. Другие значения для этой команды включают в себя: HEAD, PUT и DELETE, в зависимости от API, который вы вызываете.
 
-**URI запроса**: `https://myaccount.blob.core.windows.net/?comp=list` .URI запроса создается из конечной точки учетной записи хранения BLOB-объектов `http://myaccount.blob.core.windows.net` и строки ресурса `/?comp=list` .
+**URI запроса**: `https://myaccount.blob.core.windows.net/?comp=list` .URI запроса создается из конечной точки учетной записи хранения BLOB-объектов `https://myaccount.blob.core.windows.net` и строки ресурса `/?comp=list` .
 
 [Параметры URI](/rest/api/storageservices/List-Containers2#uri-parameters): существуют дополнительные параметры запроса, которые вы можете использовать при вызове ListContainers. Некоторыми из этих параметров являются *timeout* для вызова (в секундах) и *prefix*, который используется для фильтрации.
 
@@ -563,11 +563,11 @@ Content-Length: 1135
 </EnumerationResults>
 ```
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 В этой статье вы узнали, как выполнить запрос к хранилищу BLOB-объектов REST API. С помощью запроса можно получить список контейнеров или список больших двоичных объектов в контейнере. Вы узнали, как создать подпись авторизации для вызова REST API и как использовать ее в запросе RESTFUL. Наконец, вы узнали, как проверить ответ.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [REST API службы BLOB-объектов](/rest/api/storageservices/blob-service-rest-api)
 - [REST API файловой службы](/rest/api/storageservices/file-service-rest-api)

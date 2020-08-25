@@ -9,12 +9,12 @@ ms.author: mlearned
 description: Подключение к Azure Arc кластера Kubernetes, который поддерживает Azure Arc
 keywords: Kubernetes, Arc, Azure, K8s, контейнеры
 ms.custom: references_regions
-ms.openlocfilehash: 761263a4cb8c83475142c2afcc39695bb84d46cd
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: eb3921d3ab2090b6bac54c9b68e9def3949ed4b5
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080496"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723747"
 ---
 # <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Подключение кластера Kubernetes с поддержкой Azure Arc (предварительная версия)
 
@@ -72,6 +72,7 @@ ms.locfileid: "88080496"
 | `https://github.com`, git://github.com                                                                         | Примеры репозиториев GitOps размещаются на сайте GitHub. Агенту конфигурации требуется подключение к конечной точке Git, которую вы укажете в настройках. |
 | `https://login.microsoftonline.com`                                                                            | Требуется для извлечения и обновления маркеров Azure Resource Manager.                                                                                    |
 | `https://azurearcfork8s.azurecr.io`                                                                            | Требуется агентам Azure Arc для извлечения образов контейнеров.                                                                  |
+| `https://eus.his.arc.azure.com`, `https://weu.his.arc.azure.com`                                                                            |  Требуется для извлечения назначенных системой сертификатов управляемых удостоверений                                                                  |
 
 ## <a name="register-the-two-providers-for-azure-arc-enabled-kubernetes"></a>Регистрация двух поставщиков для Kubernetes с поддержкой Azure Arc:
 
@@ -174,7 +175,7 @@ AzureArcTest1  eastus      AzureArcTest
 
 ## <a name="connect-using-an-outbound-proxy-server"></a>Подключение с использованием исходящего прокси-сервера
 
-Если кластер находится за исходящим прокси-сервером, Azure CLI и для агентов Kubernetes должны маршрутизировать запросы через исходящий прокси-сервер. Следующая конфигурация помогает добиться этого:
+Если кластер находится за исходящим прокси-сервером, Azure CLI и для агентов Kubernetes должны маршрутизировать запросы через исходящий прокси-сервер. Следующая конфигурация включает следующие параметры:
 
 1. Проверьте версию расширения, `connectedk8s` установленную на компьютере, выполнив следующую команду:
 
@@ -182,7 +183,7 @@ AzureArcTest1  eastus      AzureArcTest
     az -v
     ```
 
-    `connectedk8s`Для установки агентов с исходящим прокси-сервером требуется версия расширения >= 0.2.3. Если на компьютере установлена версия < 0.2.3, выполните [инструкции по обновлению](#before-you-begin) , чтобы получить последнюю версию расширения на компьютере.
+    `connectedk8s`Для настройки агентов с исходящим прокси-сервером требуется расширение version >= 0.2.3. Если на компьютере установлена версия < 0.2.3, выполните [инструкции по обновлению](#before-you-begin) , чтобы получить последнюю версию расширения на компьютере.
 
 2. Задайте переменные среды, необходимые для Azure CLI:
 

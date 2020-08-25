@@ -3,12 +3,12 @@ title: Матрица поддержки MABS & System Center DPM
 description: В этой статье приводится сводка Azure Backup поддержки при использовании Microsoft Azure Backup Server (MABS) или System Center DPM для резервного копирования локальных и ресурсов виртуальной машины Azure.
 ms.date: 02/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: 4ed4452cf8f1f44e90cfc991c2b1d13d30dddcd2
-ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
+ms.openlocfilehash: 34b15ea0752bf013d2b1e5c3a7434ff009e2d80a
+ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88612781"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88761344"
 ---
 # <a name="support-matrix-for-backup-with-microsoft-azure-backup-server-or-system-center-dpm"></a>Таблица поддержки для резервного копирования с помощью Microsoft Azure Backup Server или System Center DPM
 
@@ -85,7 +85,7 @@ Azure Backup может выполнять резервное копирован
 **Установка** | Установите DPM/MABS на одноцелевом компьютере.<br/><br/> Не устанавливайте DPM/MABS на контроллере домена на компьютере с установленной ролью сервера приложений на компьютере под управлением Microsoft Exchange Server или System Center Operations Manager или на узле кластера.<br/><br/> [Проверьте все системные требования DPM](/system-center/dpm/prepare-environment-for-dpm#dpm-server).
 **Домен** | DPM/MABS должен быть присоединен к домену. Сначала установите, а затем присоедините DPM или MABS к домену. Перемещение DPM или MABS в новый домен после развертывания не поддерживается.
 **Память** | Современное хранилище резервных копий (MBS) поддерживается в DPM 2016/MABS v2 и более поздних версиях. MBS недоступно для MABS версии 1.
-**Обновление MABS** | Вы можете напрямую установить MABS версии 3 или же обновить MABS версии 2. [Подробнее.](backup-azure-microsoft-azure-backup.md#upgrade-mabs)
+**Обновление MABS** | Вы можете напрямую установить MABS версии 3 или же обновить MABS версии 2. [Подробнее](backup-azure-microsoft-azure-backup.md#upgrade-mabs).
 **Перемещение MABS** | Перемещение MABS на новый сервер с сохранением хранилища доступно при использовании MBS.<br/><br/> Имена исходного и нового серверов должны совпадать. Нельзя изменить имя, если вы хотите сохранить тот же пул хранилищ и использовать одну и ту же базу данных MABS для хранения точек восстановления данных.<br/><br/> Так как вам потребуется восстановить базу данных MABS, нужно создать ее резервную копию.
 
 ## <a name="mabs-support-on-azure-stack"></a>Поддержка MABS в Azure Stack
