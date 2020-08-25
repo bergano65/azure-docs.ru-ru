@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.date: 08/01/2016
 ms.author: bwren
 ms.subservice: diagnostic-extension
-ms.openlocfilehash: 17430330d068fb55b45f073afecb8ba348286cb5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9e16d77c36f382e72d5e9902b07afbbec50b6876
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77472678"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723262"
 ---
 # <a name="store-and-view-diagnostic-data-in-azure-storage"></a>Хранение и просмотр диагностических данных в службе хранилища Azure
-Диагностические данные не хранятся долго. Для длительного хранения их необходимо переместить в эмулятор хранения Microsoft Azure или в хранилище Azure. Поместив данные в хранилище, вы можете просматривать их с помощью одного из нескольких доступных средств.
+Диагностические данные хранятся без возможности восстановления, если они не переносятся в эмулятор хранения Microsoft Azure или в службу хранилища Azure. Поместив данные в хранилище, вы можете просматривать их с помощью одного из нескольких доступных средств.
 
 ## <a name="specify-a-storage-account"></a>Определение учетной записи хранения
 Укажите учетную запись хранения, которая будет использоваться, в файле ServiceConfiguration.cscfg. Сведения об учетной записи определяются в виде строки подключения в параметре конфигурации. В следующем примере приведена строка подключения по умолчанию, созданная для нового проекта облачной службы в Visual Studio.
@@ -77,7 +77,7 @@ ms.locfileid: "77472678"
 * [Обозреватель службы хранилища Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) — это автономное приложение, которое упрощает работу с данными из службы хранилища Azure на платформе Windows, OSX и Linux.
 * [Azure Management Studio](https://www.cerebrata.com/products/azure-management-studio/introduction) содержит диспетчер диагностики Azure, который позволяет просматривать и скачивать данные диагностики, которые собирают выполняемые в Azure приложения, а также управлять этими данными.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 [Трассировка потока в приложении облачных служб с помощью системы диагностики Azure](../cloud-services/cloud-services-dotnet-diagnostics-trace-flow.md)
 
 

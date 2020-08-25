@@ -11,12 +11,12 @@ ms.topic: end-user-help
 ms.date: 06/03/2020
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: b13de16b2080d28d3b779921456cfb20d99f0af9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3148f8ba84674c79764d0fc69acdbc02e7a12dc4
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84416025"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798998"
 ---
 # <a name="back-up-and-recover-account-credentials-using-the-microsoft-authenticator-app"></a>Резервное копирование и восстановление учетных данных с использованием приложения Microsoft Authenticator
 
@@ -100,7 +100,7 @@ ms.locfileid: "84416025"
     :::image type="content" source="media/user-help-auth-app-backup-recovery/work-or-school-recovery-qr-code.png" alt-text="Средство проверки подлинности представляет одноразовый пароль в качестве кода проверки" border="true":::
 
 >[!NOTE]
->Дополнительные сведения о QR-кодах и о том, где их получить, см. в статье [Начало работы с приложение Microsoft Authenticator](https://docs.microsoft.com/azure/active-directory/user-help/user-help-auth-app-download-install) или [Настройка использования приложения проверки подлинности в сведениях для защиты](https://docs.microsoft.com/azure/active-directory/user-help/security-info-setup-auth-app) (в зависимости от того, включил ли администратор сведения о безопасности).
+>Дополнительные сведения о QR-кодах и о том, где их получить, см. в статье [Начало работы с приложение Microsoft Authenticator](./user-help-auth-app-download-install.md) или [Настройка использования приложения проверки подлинности в сведениях для защиты](./security-info-setup-auth-app.md) (в зависимости от того, включил ли администратор сведения о безопасности).
 >
 >Если вы настраиваете приложение Microsoft Authenticator впервые, вы можете получить запрос на разрешение приложению получить доступ к камере (iOS) или разрешить приложению делать снимки и записывать видео (Android). Необходимо выбрать параметр **Разрешить**, чтобы приложение Authenticator могло получить доступ к камере для получения изображения QR-кода на следующем шаге. Если вы не разрешите использование камеры, вы все равно сможете настроить Приложение Authenticator, однако вам нужно будет добавить информацию о коде вручную. Сведения о том, как добавить код вручную, см. в разделе [Добавление учетной записи в приложение вручную](user-help-auth-app-add-account-manual.md).
 
@@ -130,4 +130,4 @@ ms.locfileid: "84416025"
 
 - [Часто задаваемые вопросы о приложении Microsoft Authenticator](user-help-auth-app-faq.md)
 
-- [Многофакторная идентификация](https://docs.microsoft.com/azure/multi-factor-authentication/)
+- [Многофакторная идентификация](/azure/multi-factor-authentication/)

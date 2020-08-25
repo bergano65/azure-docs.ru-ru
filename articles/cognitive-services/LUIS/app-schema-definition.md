@@ -2,13 +2,13 @@
 title: Определение схемы приложения
 description: Приложение LUIS представляется в `.json` или, а также `.lu` включает все объекты, сущности, пример фразы продолжительностью, функции и параметры.
 ms.topic: reference
-ms.date: 05/05/2020
-ms.openlocfilehash: dbbeb4eacbe8e07cf080b3a1527ca39c2b9a5991
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.date: 08/22/2020
+ms.openlocfilehash: 816a6c50129f37a55ab3dba72319358e832a6b8b
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684358"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88756794"
 ---
 # <a name="app-schema-definition"></a>Определение схемы приложения
 
@@ -55,12 +55,30 @@ ms.locfileid: "83684358"
   "tokenizerVersion": "1.0.0",
   "patternAnyEntities": [],
   "regex_entities": [],
-  "phraselists": [],
+  "phraselists": [
+  ],
   "regex_features": [],
   "patterns": [],
   "settings": []
 }
 ```
+
+| element                  | Комментировать                              |
+|--------------------------|--------------------------------------|
+| "иерархии": [],     | Не рекомендуется, использовать [сущности машинного обучения](luis-concept-entity-types.md).   |
+| "Composite": [],        | Не рекомендуется, использовать [сущности машинного обучения](luis-concept-entity-types.md). Ссылка на [составной объект](reference-entity-composite.md) . |
+| "Клоседлистс": [],       | [Список](reference-entity-list.md) ссылок на сущности в основном используется в качестве компонентов для сущностей.    |
+| "versionId": "0,1",      | Версия приложения LUIS.|
+| "Name": "example-App",   | Имя приложения LUIS. |
+| "DESC": "",              | Необязательное описание приложения LUIS.  |
+| "Culture": "en-US",      | [Язык](luis-language-support.md) приложения, который влияет на базовые функции, такие как предварительно подготовленные сущности, машинное обучение и лексический анализатор.  |
+| "Токенизерверсион": "1.0.0", | [Разметчика](luis-language-support.md#tokenization)  |
+| "Паттернанентитиес": [],   | [Сущность Pattern.any](reference-entity-pattern-any.md)    |
+| "regex_entities": [],    |  [Сущность регулярного выражения](reference-entity-regular-expression.md)   |
+| "фраселистс": [],       |  [Списки фраз (функция)](luis-concept-feature.md#create-a-phrase-list-for-a-concept)   |
+| "regex_features": [],    |  Не рекомендуется, использовать [сущности машинного обучения](luis-concept-entity-types.md). |
+| "Patterns": [],          |  [Шаблоны улучшают точность прогнозов](luis-concept-patterns.md) с помощью [синтаксиса шаблона](reference-pattern-syntax.md)   |
+| "Параметры": []           | [Параметры приложения](luis-reference-application-settings.md)|
 
 ## <a name="version-6x"></a>Версия 6. x
 
@@ -124,6 +142,6 @@ ms.locfileid: "83684358"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Переход к [API-интерфейсам разработки версии 3](luis-migration-authoring-entities.md)

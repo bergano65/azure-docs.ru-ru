@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78bed4f5c600bfa0218f924dc4444119e9729e28
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 355f0127829b709d82127fb340381830793c93ff
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87798755"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783558"
 ---
 # <a name="view-add-and-remove-assignments-for-an-access-package-in-azure-ad-entitlement-management"></a>Просмотр, Добавление и удаление назначений для пакета Access в управлении назначением Azure AD
 
@@ -58,7 +58,7 @@ ms.locfileid: "87798755"
 
 ### <a name="viewing-assignments-programmatically"></a>Просмотр назначений программными средствами
 
-Назначения в пакете Access также можно получить с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызвать API для [перечисления акцесспаккажеассигнментс](https://docs.microsoft.com/graph/api/accesspackageassignment-list?view=graph-rest-beta).
+Назначения в пакете Access также можно получить с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызвать API для [перечисления акцесспаккажеассигнментс](/graph/api/accesspackageassignment-list?view=graph-rest-beta).
 
 ## <a name="directly-assign-a-user"></a>Непосредственное назначение пользователя
 
@@ -90,7 +90,7 @@ ms.locfileid: "87798755"
 
 ### <a name="directly-assigning-users-programmatically"></a>Прямое назначение пользователей программным способом
 
-Можно также напрямую назначить пользователя пакету доступа с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызывать API для [создания акцесспаккажеассигнментрекуест](https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-post?view=graph-rest-beta).
+Можно также напрямую назначить пользователя пакету доступа с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызывать API для [создания акцесспаккажеассигнментрекуест](/graph/api/accesspackageassignmentrequest-post?view=graph-rest-beta).
 
 ## <a name="remove-an-assignment"></a>Удаление назначения
 

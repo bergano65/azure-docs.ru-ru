@@ -10,18 +10,18 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/09/2020
 ms.author: iainfou
-ms.openlocfilehash: 2760f0d91f7ed1066b0020c4aedc7572af095cfb
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 42364e791711258e42883bdfcd658ba2c45ecd28
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86220326"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723152"
 ---
 # <a name="azure-active-directory-domain-services-deployment-and-management-for-azure-cloud-solution-providers"></a>Azure Active Directory развертывания и управления доменными службами для поставщиков облачных решений Azure
 
 Поставщики облачных решений Azure (CSP) — это программа для партнеров Майкрософт, которая предоставляет канал лицензии для различных облачных служб Майкрософт. Azure CSP дает партнерам возможность управлять продажами и выставлением счетов, обеспечивать поддержку по выставлению счетов и техническую поддержку и быть единственным непосредственным контактом клиентов. Кроме того, Azure CSP предоставляет полный набор инструментов, включая портал самообслуживания и сопутствующие интерфейсы API. Эти инструменты позволяют партнерам CSP легко подготавливать ресурсы Azure и управлять ими, а также выставлять счета для клиентов и их подписок.
 
-[Портал центра партнеров](https://docs.microsoft.com/azure/cloud-solution-provider/overview/partner-center-overview) является точкой входа для всех партнеров Azure CSP и предоставляет широкие возможности управления клиентами, автоматическую обработку и многое другое. Партнеры Azure CSP могут использовать возможности Центра партнеров с помощью пользовательского веб-интерфейса или с помощью PowerShell и различных вызовов API.
+[Портал центра партнеров](/azure/cloud-solution-provider/overview/partner-center-overview) является точкой входа для всех партнеров Azure CSP и предоставляет широкие возможности управления клиентами, автоматическую обработку и многое другое. Партнеры Azure CSP могут использовать возможности Центра партнеров с помощью пользовательского веб-интерфейса или с помощью PowerShell и различных вызовов API.
 
 На приведенной ниже схеме показан общий принцип работы модели CSP. Здесь у Contoso есть клиент Azure Active Directory (Azure AD). Она является партнером CSP, и служба Azure CSP развертывает ресурсы в ее подписке Azure CSP и управляет ими. У компании Contoso также могут быть обычные (прямые) подписки Azure, счета за которые выставляются непосредственно этой компании.
 
@@ -33,7 +33,7 @@ ms.locfileid: "86220326"
 
 Когда партнер CSP подготавливает подписку Azure CSP для компании Contoso, их группе агентов администрирования назначается роль владельца для этой подписки. В результате агенты администрирования партнера CSP получают необходимые привилегии для подготовки ресурсов Azure, таких как виртуальные машины, виртуальные сети и доменные службы Azure AD, от имени компании Contoso.
 
-Дополнительные сведения см. в [обзоре Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview).
+Дополнительные сведения см. в [обзоре Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-overview).
 
 ## <a name="benefits-of-using-azure-ad-ds-in-an-azure-csp-subscription"></a>Преимущества использования AD DS Azure в подписке Azure CSP
 

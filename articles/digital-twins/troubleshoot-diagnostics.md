@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/28/2020
 ms.topic: troubleshooting
 ms.service: digital-twins
-ms.openlocfilehash: 5091edbf9138cb8ff03df193dcbeed692aaf13e3
-ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
+ms.openlocfilehash: fc397b6d6beb719e11dc3959bbcf4d75c08a8dda
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88612407"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723934"
 ---
 # <a name="troubleshooting-azure-digital-twins-diagnostics-logging"></a>Устранение неполадок в Azure Digital двойников: ведение журнала диагностики
 
@@ -28,7 +28,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
 
 2. Выберите **параметры диагностики** в меню и **добавьте параметр диагностики**.
 
-    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings.png" alt-text="Снимок экрана со страницей параметров диагностики и кнопкой Добавить":::
+    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings.png" alt-text="Снимок экрана со страницей параметров диагностики и кнопкой "Добавить"":::
 
 3. На следующей странице введите следующие значения:
      * **Имя параметра диагностики**: задайте имя для параметров диагностики.
@@ -49,7 +49,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
     
 4. Сохраните новые настройки. 
 
-    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings-details.png" alt-text="Снимок экрана со страницей параметров диагностики и кнопкой Добавить":::
+    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings-details.png" alt-text="Снимок экрана со страницей параметров диагностики, в которой пользователь заполнил имя параметра диагностики и внес некоторые флажки для сведений о категории и сведений о назначении. Кнопка сохранить выделена.":::
 
 Новые параметры вступят в силу в течение 10 минут. После этого журналы отобразятся на настроенном целевом объекте на странице **параметры диагностики** для вашего экземпляра. 
 
@@ -86,13 +86,142 @@ Azure Digital двойников собирает [метрики](troubleshoot-
 |  | Microsoft. Дигиталтвинс/Models/Action | Добавление API цифровых двойника моделей |
 | адткуерйоператион | Microsoft. Дигиталтвинс/запрос/действие | API двойников запросов |
 | адтевентраутесоператион | Microsoft. Дигиталтвинс/евентраутес/запись | API добавления маршрутов событий |
-|  | Microsoft. Дигиталтвинс/евентраутес/Read | Маршруты событий получают интерфейсы API идентификаторов и списков |
+|  | Microsoft. Дигиталтвинс/евентраутес/Read | Маршруты событий получают интерфейсы API ИДЕНТИФИКАТОРов и списков |
 |  | Microsoft. Дигиталтвинс/евентраутес/Delete | API удаления маршрутов событий |
 |  | Microsoft. Дигиталтвинс/евентраутес/действие | Сбой при попытке публикации событий в службе конечной точки (не вызове API) |
 | адтдигиталтвинсоператион | Microsoft. Дигиталтвинс/дигиталтвинс/запись | Цифровой двойников Добавление, Добавление связи, обновление, обновление компонента |
-|  | Microsoft. Дигиталтвинс/дигиталтвинс/Read | Digital двойников получает по идентификатору, получение компонента, получение отношения по идентификатору, список входящих отношений, список отношений |
+|  | Microsoft. Дигиталтвинс/дигиталтвинс/Read | Digital двойников получает по ИДЕНТИФИКАТОРу, получение компонента, получение отношения по ИДЕНТИФИКАТОРу, список входящих отношений, список отношений |
 |  | Microsoft. Дигиталтвинс/дигиталтвинс/Delete | Цифровые двойников удаление, удаление связи |
 |  | Microsoft. Дигиталтвинс/дигиталтвинс/действие | Отправка данных телеметрии компонента Digital двойников, отправка данных телеметрии |
+
+## <a name="log-schemas"></a>Схемы журналов 
+
+Каждая категория журнала имеет схему, определяющую, как сообщается о событиях в этой категории. Каждая отдельная запись журнала хранится в виде текста и форматируется как большой двоичный объект JSON. Поля в журнале и примеры тела JSON приведены для каждого типа журнала ниже. 
+
+`ADTDigitalTwinsOperation`, `ADTModelsOperation` и `ADTQueryOperation` используют последовательную схему журнала API; `ADTEventRoutesOperation` имеет собственную отдельную схему.
+
+### <a name="api-log-schemas"></a>Схемы журналов API
+
+Эта схема журнала является постоянной для `ADTDigitalTwinsOperation` , `ADTModelsOperation` и `ADTQueryOperation` . Он содержит сведения, относящиеся к вызовам API для экземпляра Digital двойников Azure.
+
+Ниже приведены описания полей и свойств для журналов API.
+
+| Имя поля | Тип данных | Описание |
+|-----|------|-------------|
+| `Time` | Дата и время | Дата и время возникновения этого события в формате UTC |
+| `ResourceID` | Строка | Идентификатор ресурса Azure Resource Manager для ресурса, в котором произошло событие |
+| `OperationName` | Строка  | Тип действия, выполняемого во время события |
+| `OperationVersion` | Строка | Версия API, использованная во время события |
+| `Category` | Строка | Тип выдаваемый ресурса |
+| `ResultType` | Строка | Результат события |
+| `ResultSignature` | Строка | Код состояния HTTP для события |
+| `ResultDescription` | Строка | Дополнительные сведения о событии |
+| `DurationMs` | Строка | Время, затраченное на выполнение события в миллисекундах |
+| `CallerIpAddress` | Строка | Маскированный исходный IP-адрес для события |
+| `CorrelationId` | Guid | Клиент предоставил уникальный идентификатор для события |
+| `Level` | Строка | Серьезность ведения журнала события |
+| `Location` | Строка | Регион, в котором произошло событие |
+| `RequestUri` | URI | Конечная точка, используемая во время события |
+
+Ниже приведены примеры фрагментов JSON для этих типов журналов.
+
+#### <a name="adtdigitaltwinsoperation"></a>адтдигиталтвинсоператион
+
+```json
+{
+  "time": "2020-03-14T21:11:14.9918922Z",
+  "resourceId": "/SUBSCRIPTIONS/BBED119E-28B8-454D-B25E-C990C9430C8F/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.DIGITALTWINS/DIGITALTWINSINSTANCES/MYINSTANCENAME",
+  "operationName": "Microsoft.DigitalTwins/digitaltwins/write",
+  "operationVersion": "2020-05-31-preview",
+  "category": "DigitalTwinOperation",
+  "resultType": "Success",
+  "resultSignature": "200",
+  "resultDescription": "",
+  "durationMs": "314",
+  "callerIpAddress": "13.68.244.*",
+  "correlationId": "2f6a8e64-94aa-492a-bc31-16b9f0b16ab3",
+  "level": "4",
+  "location": "southcentralus",
+  "uri": "https://myinstancename.api.scus.digitaltwins.azure.net/digitaltwins/factory-58d81613-2e54-4faa-a930-d980e6e2a884?api-version=2020-05-31-preview"
+}
+```
+
+#### <a name="adtmodelsoperation"></a>адтмоделсоператион
+
+```json
+{
+  "time": "2020-10-29T21:12:24.2337302Z",
+  "resourceId": "/SUBSCRIPTIONS/BBED119E-28B8-454D-B25E-C990C9430C8F/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.DIGITALTWINS/DIGITALTWINSINSTANCES/MYINSTANCENAME",
+  "operationName": "Microsoft.DigitalTwins/models/write",
+  "operationVersion": "2020-05-31-preview",
+  "category": "ModelsOperation",
+  "resultType": "Success",
+  "resultSignature": "201",
+  "resultDescription": "",
+  "durationMs": "935",
+  "callerIpAddress": "13.68.244.*",
+  "correlationId": "9dcb71ea-bb6f-46f2-ab70-78b80db76882",
+  "level": "4",
+  "location": "southcentralus",
+  "uri": "https://myinstancename.api.scus.digitaltwins.azure.net/Models?api-version=2020-05-31-preview",
+}
+```
+
+#### <a name="adtqueryoperation"></a>адткуерйоператион
+
+```json
+{
+  "time": "2020-12-04T21:11:44.1690031Z",
+  "resourceId": "/SUBSCRIPTIONS/BBED119E-28B8-454D-B25E-C990C9430C8F/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.DIGITALTWINS/DIGITALTWINSINSTANCES/MYINSTANCENAME",
+  "operationName": "Microsoft.DigitalTwins/query/action",
+  "operationVersion": "2020-05-31-preview",
+  "category": "QueryOperation",
+  "resultType": "Success",
+  "resultSignature": "200",
+  "resultDescription": "",
+  "durationMs": "255",
+  "callerIpAddress": "13.68.244.*",
+  "correlationId": "1ee2b6e9-3af4-4873-8c7c-1a698b9ac334",
+  "level": "4",
+  "location": "southcentralus",
+  "uri": "https://myinstancename.api.scus.digitaltwins.azure.net/query?api-version=2020-05-31-preview",
+}
+```
+
+### <a name="egress-log-schemas"></a>Схемы исходящего журнала
+
+Это схема для `ADTEventRoutesOperation` журналов. Они содержат подробные сведения об исключениях и операциях API, связанных с конечными точками исходящего трафика, подключенными к экземпляру Digital двойников Azure.
+
+|Имя поля | Тип данных | Описание |
+|-----|------|-------------|
+| `Time` | Дата и время | Дата и время возникновения этого события в формате UTC |
+| `ResourceId` | Строка | Идентификатор ресурса Azure Resource Manager для ресурса, в котором произошло событие |
+| `OperationName` | Строка  | Тип действия, выполняемого во время события |
+| `Category` | Строка | Тип выдаваемый ресурса |
+| `ResultDescription` | Строка | Дополнительные сведения о событии |
+| `Level` | Строка | Серьезность ведения журнала события |
+| `Location` | Строка | Регион, в котором произошло событие |
+| `EndpointName` | Строка | Имя конечной точки исходящего трафика, созданной в Azure Digital двойников |
+
+Ниже приведены примеры фрагментов JSON для этих типов журналов.
+
+#### <a name="adteventroutesoperation"></a>адтевентраутесоператион
+
+```json
+{
+  "time": "2020-11-05T22:18:38.0708705Z",
+  "resourceId": "/SUBSCRIPTIONS/BBED119E-28B8-454D-B25E-C990C9430C8F/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.DIGITALTWINS/DIGITALTWINSINSTANCES/MYINSTANCENAME",
+  "operationName": "Microsoft.DigitalTwins/eventroutes/action",
+  "category": "EventRoutesOperation",
+  "resultDescription": "Unable to send EventGrid message to [my-event-grid.westus-1.eventgrid.azure.net] for event Id [f6f45831-55d0-408b-8366-058e81ca6089].",
+  "correlationId": "7f73ab45-14c0-491f-a834-0827dbbf7f8e",
+  "level": "3",
+  "location": "southcentralus",
+  "properties": {
+    "endpointName": "endpointEventGridInvalidKey"
+  }
+}
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

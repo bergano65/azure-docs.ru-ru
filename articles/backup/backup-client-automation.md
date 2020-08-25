@@ -3,12 +3,12 @@ title: Использование PowerShell для архивации Windows S
 description: Из этой статьи вы узнаете, как использовать PowerShell для настройки Azure Backup в Windows Server или на клиенте Windows, а также управлять резервным копированием и восстановлением.
 ms.topic: conceptual
 ms.date: 12/2/2019
-ms.openlocfilehash: 0deccc49b82d4a8b81889c35174c3efa81b6d74d
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: d0ae5165fc13193737ec75cf06060123ca4a13d4
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87564033"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757002"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell
 
@@ -20,7 +20,7 @@ ms.locfileid: "87564033"
 
 Для начала работы [установите последнюю версию PowerShell](/powershell/azure/install-az-ps).
 
-## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
+## <a name="create-a-recovery-services-vault"></a>Создание хранилища Служб восстановления
 
 Чтобы создать хранилище служб восстановления, выполните описанные ниже действия. Хранилище служб восстановления отличается от хранилища службы архивации.
 

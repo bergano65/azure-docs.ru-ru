@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как обнови
 ms.topic: conceptual
 ms.date: 12/06/2019
 ms.assetid: 9aafa5a0-1e57-4644-bf79-97124db27aa2
-ms.openlocfilehash: 1f0fee505443b15ba2ea97710efc220ef05df738
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: c3f964032d10988bf7ae615eb64d3b56b99a7747
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86513121"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757308"
 ---
 # <a name="update-azure-recovery-services-vault-configurations-using-rest-api"></a>Обновление конфигураций хранилища служб восстановления Azure с помощью REST API
 
@@ -43,9 +43,9 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Успешный ответ для операции GET показан ниже:
 
-|Название  |Тип  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |   [баккупресаурцеваултконфиг](/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
+|200 ОК     |   [баккупресаурцеваултконфиг](/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | OK        |
 
 ##### <a name="example-response"></a>Пример ответа
 
@@ -103,15 +103,15 @@ PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-0000000
 }
 ```
 
-#### <a name="responses"></a>Ответы
+#### <a name="responses-for-the-patch-operation"></a>Ответы на операцию исправления
 
 Успешный ответ для операции PATCH показан ниже:
 
-|Название  |Тип  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |   [баккупресаурцеваултконфиг](/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
+|200 ОК     |   [баккупресаурцеваултконфиг](/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | OK        |
 
-##### <a name="example-response"></a>Пример ответа
+##### <a name="example-response-for-the-patch-operation"></a>Пример ответа для операции исправления
 
 После отправки запроса PATCH возвращается ответ 200 (успех).
 

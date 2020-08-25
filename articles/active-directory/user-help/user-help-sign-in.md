@@ -12,12 +12,12 @@ ms.topic: end-user-help
 ms.date: 07/18/2019
 ms.author: curtand
 ms.custom: user-help
-ms.openlocfilehash: c7e2b522d475a49f694a8cb57bf57f62900948b0
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 42ced6632ebfa56af8fe13a02f531b9835e13df3
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83743188"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799389"
 ---
 # <a name="sign-in-using-two-step-verification-or-security-info"></a>Вход с помощью двухфакторной проверки подлинности или сведений для защиты
 
@@ -90,9 +90,9 @@ ms.locfileid: "83743188"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительную информацию о сведениях для защиты см. в [этой статье](user-help-security-info-overview.md).
+- Дополнительную информацию о сведениях для защиты см. в [этой статье](./security-info-setup-signin.md).
 
-- Узнайте больше о двухфакторной проверке подлинности в разделе [Обзор двухфакторной проверки подлинности](user-help-two-step-verification-overview.md).
+- Узнайте больше о двухфакторной проверке подлинности в разделе [Обзор двухфакторной проверки подлинности](./multi-factor-authentication-end-user-first-time.md).
 
 - Если вы забыли свой пароль, его можно сбросить на [этом портале](https://passwordreset.microsoftonline.com/).
 

@@ -2,24 +2,24 @@
 title: Использование портал Azure для устранения проблем с порядком пограничных Azure Stack | Документация Майкрософт
 description: Описывает, как устранять неполадки, связанные с порядком Azure Stack.
 services: databox
-author: priestlg
+author: twooley
 ms.service: databox
 ms.subservice: edge
 ms.topic: troubleshooting
 ms.date: 08/11/2020
-ms.author: v-grpr
-ms.openlocfilehash: d403fb0da27e3f91e00f3fd8a2fbea77e915898b
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.author: twooley
+ms.openlocfilehash: 226274c52610e24c305400d77dc7737d32c2b722
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88136957"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88784000"
 ---
 # <a name="troubleshoot-your-azure-stack-edge-ordering-issues"></a>Устранение проблем с порядком пограничных Azure Stack
 
 В этой статье описывается, как устранять неполадки, связанные с порядком Azure Stack.
 
-В этом руководстве вы узнаете, как:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 >
@@ -73,6 +73,6 @@ ms.locfileid: "88136957"
 
 **Предлагаемое решение:** Эта ошибка возникает из-за существующей политики Azure, блокирующей создание ресурсов. Политики Azure задаются системным администратором организации для обеспечения соответствия при использовании или создании ресурсов Azure. Если любая такая политика блокирует Azure Stack создания ресурса ребра, обратитесь к системному администратору, чтобы изменить политику Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о том, как [устранять неполадки Azure Stack пограничных проблем](azure-stack-edge-troubleshoot.md).

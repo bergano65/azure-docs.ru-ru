@@ -13,12 +13,12 @@ ms.date: 10/10/2018
 ms.author: curtand
 ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: b76e84f6ae2449347604ab823fde5b74d5c68f07
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: df3941c895ce67862eb53b8e96bc7a6d53c1ed02
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83740995"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799423"
 ---
 # <a name="possible-fixes-for-the-you-cant-get-there-from-here-error-message"></a>Возможные исправления для сообщения об отказе в доступе
 
@@ -68,6 +68,6 @@ ms.locfileid: "83740995"
 - **Зарегистрировать личное устройство для работы.** Регистрация персонального устройства (в роли которого может выступать телефон или планшет) в сети организации. После регистрации устройства с него можно получать доступ к ограниченным ресурсам организации. Дополнительные сведения и пошаговые инструкции см. в статье [Регистрация персонального устройства в сети организации](user-help-register-device-on-network.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Что такое портал MyApps?](active-directory-saas-access-panel-introduction.md)
+- [Что такое портал MyApps?](./my-apps-portal-end-user-access.md)
 
 - [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md)

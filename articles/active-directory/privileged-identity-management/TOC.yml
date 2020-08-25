@@ -126,10 +126,10 @@
 - name: Справочник
   items:
     - name: API Graph
-      href: 'https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/azure_ad_overview'
+      href: /graph/api/resources/azure-ad-overview?view=graph-rest-1.0
     - name: "Интерфейс командной строки Azure\_AD"
-      href: 'https://docs.microsoft.com/cli/azure/ad'
+      href: /cli/azure/ad
     - name: "Azure\_AD PowerShell для Graph"
-      href: 'https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0'
+      href: /powershell/azure/active-directory/install-adv2?view=azureadps-2.0
     - name: "Ограничения службы Azure\_AD"
       href: ../users-groups-roles/directory-service-limits-restrictions.md

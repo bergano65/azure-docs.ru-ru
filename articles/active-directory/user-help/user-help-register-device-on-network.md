@@ -13,12 +13,12 @@ ms.date: 01/04/2019
 ms.author: curtand
 ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: 68d7b06aa6473a99422d8cfb51f6e3a465933a0f
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: b59ebe0bdab66a5ce6bdb1eefe6d9ae4b47bba0c
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83747389"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799406"
 ---
 # <a name="register-your-personal-device-on-your-organizations-network"></a>Регистрация персонального устройства в сети организации
 Регистрация персонального устройства (в роли которого может выступать телефон или планшет) в сети организации. После регистрации устройства с него можно получать доступ к ограниченным ресурсам организации.
@@ -31,9 +31,9 @@ ms.locfileid: "83747389"
 
 - ОС Windows зарегистрирует устройство в сети организации.
 
-- В зависимости от выбранных организацией параметров может появиться запрос на настройку двухэтапной проверки подлинности с применением [Многофакторной идентификации](multi-factor-authentication-end-user-first-time.md) или метода на основе [сведений для защиты](user-help-security-info-overview.md).
+- В зависимости от выбранных организацией параметров может появиться запрос на настройку двухэтапной проверки подлинности с применением [Многофакторной идентификации](multi-factor-authentication-end-user-first-time.md) или метода на основе [сведений для защиты](./security-info-setup-signin.md).
 
-- В зависимости от выбранных организацией параметров вы можете быть автоматически зарегистрированы в службе управления мобильными устройствами, например в Microsoft Intune. Дополнительные сведения о регистрации в Microsoft Intune см. в статье [Регистрация устройства в Intune](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-all).
+- В зависимости от выбранных организацией параметров вы можете быть автоматически зарегистрированы в службе управления мобильными устройствами, например в Microsoft Intune. Дополнительные сведения о регистрации в Microsoft Intune см. в статье [Регистрация устройства в Intune](/intune-user-help/enroll-your-device-in-intune-all).
 
 - Чтобы завершить процесс входа, понадобятся имя и пароль к рабочей или учебной учетной записи.
 
@@ -70,6 +70,3 @@ ms.locfileid: "83747389"
 После регистрации персонального устройства в сети организации доступ к большинству ресурсов будет открыт.
 
 - Если организации требуется, чтобы вы подключили рабочее устройство, см. статью [Join your work device to your organization's network](user-help-join-device-on-network.md) (Подключение рабочего устройства к сети организации).
-
-
-

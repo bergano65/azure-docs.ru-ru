@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16a9c8ddfbc2c2a45067080dc68a759de226591b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d0b8e107fb377a30b35f0941b89c490e11fc458c
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85339566"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783541"
 ---
 # <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Создание каталога ресурсов и управление им в управлении назначением Azure AD
 
@@ -53,7 +53,7 @@ ms.locfileid: "85339566"
 
 ### <a name="creating-a-catalog-programmatically"></a>Создание каталога программным способом
 
-Вы также можете создать каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызывать API для [создания акцесспаккажекаталог](https://docs.microsoft.com/graph/api/accesspackagecatalog-post?view=graph-rest-beta).
+Вы также можете создать каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызывать API для [создания акцесспаккажекаталог](/graph/api/accesspackagecatalog-post?view=graph-rest-beta).
 
 ## <a name="add-resources-to-a-catalog"></a>Добавление ресурсов в каталог
 
@@ -83,7 +83,7 @@ ms.locfileid: "85339566"
 
 ### <a name="adding-a-resource-to-a-catalog-programmatically"></a>Программное добавление ресурса в каталог
 
-Вы также можете добавить ресурс в каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли, каталог и владелец ресурса с приложением, имеющим делегированное `EntitlementManagement.ReadWrite.All` разрешение, может вызывать API для [создания акцесспаккажересаурцерекуест](https://docs.microsoft.com/graph/api/accesspackageresourcerequest-post?view=graph-rest-beta).
+Вы также можете добавить ресурс в каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли, каталог и владелец ресурса с приложением, имеющим делегированное `EntitlementManagement.ReadWrite.All` разрешение, может вызывать API для [создания акцесспаккажересаурцерекуест](/graph/api/accesspackageresourcerequest-post?view=graph-rest-beta).
 
 ## <a name="remove-resources-from-a-catalog"></a>Удаление ресурсов из каталога
 
@@ -137,7 +137,7 @@ ms.locfileid: "85339566"
 
     ![Изменить параметры каталога](./media/entitlement-management-shared/catalog-edit.png)
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ## <a name="delete-a-catalog"></a>Удаление каталога
 
@@ -155,8 +155,8 @@ ms.locfileid: "85339566"
 
 ### <a name="deleting-a-catalog-programmatically"></a>Удаление каталога программным способом
 
-Также можно удалить каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызвать API для [удаления акцесспаккажекаталог](https://docs.microsoft.com/graph/api/accesspackagecatalog-delete?view=graph-rest-beta).
+Также можно удалить каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызвать API для [удаления акцесспаккажекаталог](/graph/api/accesspackagecatalog-delete?view=graph-rest-beta).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Делегирование управления доступом для доступа к диспетчерам пакетов](entitlement-management-delegate-managers.md)

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 8ecdcf6f44409f3b72d4a8040be348d4a6f9a863
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c62fbe1621e396ab938327d5159ed8ca8fb84fbf
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738198"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88756866"
 ---
 # <a name="configuring-network-security-group-flow-logs-with-azure-cli"></a>Настройка журналов потоков для групп безопасности сети с помощью Azure CLI
 
@@ -44,9 +44,9 @@ az provider register --namespace Microsoft.Insights
 Команда для включения журналов потоков показана в следующем примере.
 
 ```azurecli
-az network watcher flow-log configure --resource-group resourceGroupName --enabled true --nsg nsgName --storage-account storageAccountName
+az network watcher flow-log create --resource-group resourceGroupName --enabled true --nsg nsgName --storage-account storageAccountName --location location
 # Configure 
-az network watcher flow-log configure --resource-group resourceGroupName --enabled true --nsg nsgName --storage-account storageAccountName  --format JSON --log-version 2
+az network watcher flow-log create --resource-group resourceGroupName --enabled true --nsg nsgName --storage-account storageAccountName --location location --format JSON --log-version 2
 ```
 
 В указанной учетной записи хранения не может быть настроенных сетевых правил, ограничивающих доступ к сети только службами Майкрософт или конкретными виртуальными сетями. Учетная запись хранения может быть в той же подписке Azure, что и NSG, для которой включается журнал потока, или в другой подписке Azure. Если используются разные подписки, они должны быть связаны с одним клиентом Azure Active Directory. Используемая учетная запись для каждой подписки должна иметь [необходимые разрешения](required-rbac-permissions.md). 
@@ -72,7 +72,7 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Узнайте, как [визуализировать сведения журналов потоков группы безопасности сети с помощью PowerBI](network-watcher-visualize-nsg-flow-logs-power-bi.md).
 

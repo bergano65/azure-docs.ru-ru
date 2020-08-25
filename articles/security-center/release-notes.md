@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/12/2020
 ms.author: memildin
-ms.openlocfilehash: 7bec65867373293ff06a2295f08a05db6ffaa480
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: c7df035aec199953bdf9a6bd56262af70a5a77e7
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88653840"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723968"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "88653840"
 
 ### <a name="asset-inventory---powerful-new-view-of-the-security-posture-of-your-assets"></a>Инвентаризация активов — новое мощное представление безопасности активов
 
-Инвентаризация активов центра безопасности позволяет просмотреть сведения о безопасности ресурсов, подключенных к центру безопасности.
+Инвентаризация активов центра безопасности (в настоящее время доступна в предварительной версии) позволяет просмотреть уровень безопасности ресурсов, подключенных к центру безопасности.
 
 Центр безопасности периодически анализирует состояние безопасности ресурсов Azure и выявляет потенциальные уязвимости системы безопасности. Затем он предоставляет рекомендации по исправлению этих уязвимостей. Если какие – либо ресурсы имеют необработанные рекомендации, они будут отображаться в инвентаризации.
 
@@ -107,7 +107,7 @@ ms.locfileid: "88653840"
 ||||
 
 
-|Политика|Область|
+|Policy (Политика)|Область|
 |----|:----|
 |**На виртуальных машинах должна быть включена оценка уязвимостей**<br>Идентификатор политики: 501541f7-f7e7-4cd6-868c-4190fdad3ac9|Встроено|
 |**Уязвимости следует устранять с помощью решения для оценки уязвимостей**<br>Идентификатор политики: 760a85ff-6162-42b3-8d70-698e268f648c|BYOL|
@@ -122,7 +122,7 @@ ms.locfileid: "88653840"
 |**Исправление уязвимостей на виртуальных машинах**<br>Ключ: 1195afff-c881-495e-9bc5-1486211ae03f|Встроенные + BYOL|
 ||||
 
-|Политика|Область|
+|Policy (Политика)|Область|
 |----|:----|
 |[**Оценка уязвимостей должна быть включена на виртуальных машинах**](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f501541f7-f7e7-4cd6-868c-4190fdad3ac9)<br>Идентификатор политики: 501541f7-f7e7-4cd6-868c-4190fdad3ac9 |Встроенные + BYOL|
 ||||
@@ -326,7 +326,7 @@ ms.locfileid: "88653840"
 Политики можно найти в политике Azure:
 
 
-|Цель  |Политика  |Идентификатор политики  |
+|Цель  |Policy (Политика)  |Идентификатор политики  |
 |---------|---------|---------|
 |Непрерывный экспорт в концентратор событий|[Развертывание экспортированных данных в концентраторе событий для оповещений и рекомендаций Центра безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fcdfcce10-4578-4ecd-9703-530938e4abcb)|cdfcce10-4578-4ecd-9703-530938e4abcb|
 |Непрерывный экспорт в рабочую область Log Analytics|[Развертывание экспортированных данных в рабочей области Log Analytics для оповещений и рекомендаций Центра безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fffb6f416-7bd2-4488-8828-56585fef2be9)|ffb6f416-7bd2-4488-8828-56585fef2be9|
@@ -359,7 +359,7 @@ ms.locfileid: "88653840"
 Политики можно найти в политике Azure:
 
 
-| Политика                                                                                                                                                                                                                                                                | Идентификатор политики                            |
+| Policy (Политика)                                                                                                                                                                                                                                                                | Идентификатор политики                            |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
 | [На серверах Базы данных SQL Azure должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f7fe3b40f-802b-4cdd-8bd4-fd799c948cc2)     | 7fe3b40f-802b-4cdd-8bd4-fd799c948cc2 |
 | [Для серверов SQL на компьютерах должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f6581d072-105e-4418-827f-bd446d56421b) | 6581d072-105e-4418-827f-bd446d56421b |

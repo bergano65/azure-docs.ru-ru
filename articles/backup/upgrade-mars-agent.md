@@ -3,12 +3,12 @@ title: Обновление агента Службы восстановлени
 description: Узнайте, как обновить агент Службы восстановления Microsoft Azure (MARS).
 ms.topic: conceptual
 ms.date: 03/03/2020
-ms.openlocfilehash: 49daf438b855d19961519d93b6c3ec535de4756f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 782975583547bb5b51c3816d815ae1129c979509
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78672895"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757342"
 ---
 # <a name="upgrade-the-microsoft-azure-recovery-services-mars-agent"></a>Обновление агента Службы восстановления Microsoft Azure (MARS)
 
@@ -71,9 +71,9 @@ ms.locfileid: "78672895"
 
     ![Мастер обновления агента Службы восстановления Microsoft Azure](./media/upgrade-mars-agent/agent-upgrade-wizard.png)
 
-1. Нажмите кнопку **Далее**.
+1. Щелкните **Далее**.
 
-1. Нажмите кнопку **Обновить**.
+1. Щелкните **Обновить**.
 
     ![Установка агента Службы восстановления Microsoft Azure](./media/upgrade-mars-agent/upgrade-installation.png)
 
@@ -91,6 +91,6 @@ ms.locfileid: "78672895"
 
 Повторите описанные выше действия для всех серверов DPM в вашей среде.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [выполнять резервное копирование компьютеров Windows с помощью агента MARS Azure Backup](backup-windows-with-mars-agent.md)
