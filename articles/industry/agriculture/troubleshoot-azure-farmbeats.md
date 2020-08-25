@@ -5,16 +5,16 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 110fef2dcb4c1581d49fcb776276ebd9c4ae2235
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: c66d3d6fd3ee0bcba01db61183f40cd3ccf3f39d
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86497069"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797944"
 ---
 # <a name="troubleshoot-azure-farmbeats"></a>Устранение неполадок в Azure FarmBeats
 
-В этой статье приводятся решения по устранению распространенных проблем Azure FarmBeats. Для получения дополнительной помощи обращайтесь на наш [форум поддержки](https://social.msdn.microsoft.com/Forums/home?forum=ProjectFarmBeats) или по адресу farmbeatssupport@microsoft.com.
+В этой статье приводятся решения по устранению распространенных проблем Azure FarmBeats. Для получения дополнительной помощи обратитесь к нашему [&форуму поддержки](https://aka.ms/farmbeatssupport) или отправьте нам письмо по адресу farmbeatssupport@microsoft.com .
 
 > [!NOTE]
   > Если вы установили FarmBeats в течение апреля и задания завершаются сбоем с пустым сообщением об ошибке, возможно, вашей установке не выделена квота пакетной службы для назначения приоритета поддержки для критически важных организаций по охране здоровья и безопасности. Дополнительные сведения см. в [этом разделе](https://azure.microsoft.com/blog/update-2-on-microsoft-cloud-services-continuity/) . Для успешного выполнения заданий потребуется отправить запрос на выделение виртуальных машин для учетной записи пакетной службы.

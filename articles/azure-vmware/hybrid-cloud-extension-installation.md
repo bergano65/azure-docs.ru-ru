@@ -1,18 +1,18 @@
 ---
 title: Установка Hybrid Cloud Extension (HCX)
-description: Установите решение VMware Hybrid Cloud Extension (HCX) для своего частного облака, использующего решение Azure VMware (AVS)
+description: Настройка решения гибридного облака VMware (ХККС) для частного облака решения Azure VMware
 ms.topic: how-to
 ms.date: 07/15/2020
-ms.openlocfilehash: 84388c3ec53d9067df2580aabb21ca5885d154b8
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: fb8497af33b364c1d2ab475233bd2a83ef1befad
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87904999"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88752322"
 ---
 # <a name="install-hcx-for-azure-vmware-solution"></a>Установка HCX для решения Azure VMware
 
-В этой статье мы рассмотрим процедуры настройки решения гибридного облака VMWare (ХККС) для частного облака решения Azure VMWare (AVS). ХККС позволяет выполнять миграцию рабочих нагрузок VMware в облако и другие подключенные сайты через различные встроенные ХККС Поддерживаемые типы миграции.
+В этой статье мы рассмотрим процедуры настройки решения гибридного облака VMWare (ХККС) для частного облака решения Azure VMWare. ХККС позволяет выполнять миграцию рабочих нагрузок VMware в облако и другие подключенные сайты через различные встроенные ХККС Поддерживаемые типы миграции.
 
 ХККС Advanced, установка по умолчанию, поддерживает до трех подключений к сайту (локально или из облака в облако). Если требуется более трех подключений к сайту, клиенты могут включить надстройку ХККС Enterprise через поддержку, которая в настоящее время доступна в предварительной версии. HCX Enterprise по сравнению с общедоступным решением (GA) будет стоить клиентам дополнительных расходов, но обеспечит [дополнительные функции](https://cloud.vmware.com/community/2019/08/08/introducing-hcx-enterprise/).
 
@@ -31,16 +31,16 @@ ms.locfileid: "87904999"
 
 ## <a name="before-you-begin"></a>Перед началом
     
-* Ознакомьтесь с основными [сериями руководств](tutorial-network-checklist.md)по определению программного обеспечения AVS для центра обработки данных (SDDC).
+* Ознакомьтесь с основными [сериями руководств](tutorial-network-checklist.md)по решению Azure VMware по определению программного обеспечения центра обработки данных (SDDC).
 * Ознакомьтесь со справочной [документацией по VMware хккс](https://docs.vmware.com/en/VMware-HCX/index.html) , включая руководство пользователя хккс.
 * Ознакомьтесь с документами VMware [Миграция виртуальных машин с помощью VMware хккс](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-D0CD0CC6-3802-42C9-9718-6DA5FEC246C6.html?hWord=N4IghgNiBcIBIGEAaACAtgSwOYCcwBcMB7AOxAF8g).
 * При необходимости ознакомьтесь с [замечаниями по развертыванию VMware хккс](https://docs.vmware.com/en/VMware-HCX/services/install-checklist/GUID-C0A0E820-D5D0-4A3D-AD8E-EEAA3229F325.html).
 * При желании просмотрите связанные материалы VMware по HCX, такие как [ряд блогов](https://blogs.vmware.com/vsphere/2019/10/cloud-migration-series-part-2.html) VMware vSphere по HCX. 
-* Отправьте запрос на активацию AVS ХККС Enterprise через каналы поддержки AVS.
+* Запросите решение Azure VMware ХККС Enterprise Activation с помощью каналов поддержки решений VMware для Azure.
 
-Изменение размера рабочих нагрузок для ресурсов вычислений и хранилища — важный шаг планирования при подготовке к использованию решения ХККС для частного облака AVS. Разрешать шаг изменения размера как часть первоначального планирования окружения частного облака. 
+Изменение размера рабочих нагрузок для ресурсов вычислений и хранилища — важный шаг планирования при подготовке к использованию решения ХККС для решения Azure VMware для частного облака. Разрешать шаг изменения размера как часть первоначального планирования окружения частного облака. 
 
-Вы также можете масштабировать рабочие нагрузки, выполнив оценку AVS на портале службы "миграция Azure" ( https://docs.microsoft.com/azure/migrate/how-to-create-azure-vmware-solution-assessment) .
+Вы также можете масштабировать рабочие нагрузки, выполнив оценку решения Azure VMware на портале службы "миграция Azure" ( https://docs.microsoft.com/azure/migrate/how-to-create-azure-vmware-solution-assessment) .
 
 ## <a name="software-version-requirements"></a>Требования к версиям программного обеспечения
 
@@ -53,11 +53,11 @@ ms.locfileid: "87904999"
 | NSX    | Для сетевого расширения ХККС логических коммутаторов в источнике: Нсксв 6.2 + или НСКС-T 2.4 +   | NSXv 6.2+ или NSX-T 2.4+<br/><br/>Для маршрутизации с близостью ХККС: Нсксв 6.4 + (маршрутизация с Близкостью не поддерживается с НСКС-T) |
 | vCloud Director   | Не требуется — на исходном сайте отсутствует взаимодействие с vCloud Director | При интеграции целевой среды с vCloud Director минимальное значение — 9.1.0.2.  |
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Global Reach ExpressRoute следует настроить между локальной средой и каналами ExpressRoute AVS SDDC.
+* Global Reach ExpressRoute должны быть настроены между локальной средой и каналами Azure VMware для решения "виртуальные каналы ExpressRoute".
 
-* Между локальной средой и SDDC AVS должны быть открыты все необходимые порты (см. [документацию VMware HCX](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-E456F078-22BE-494B-8E4B-076EF33A9CF4.html)).
+* Все необходимые порты должны быть открыты между локальной средой и решением Azure VMware (см. [документацию по VMware хккс](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-E456F078-22BE-494B-8E4B-076EF33A9CF4.html)).
 
 * Один IP-адрес для ХККС Manager в локальной среде и минимум два IP-адреса для устройства Interconnect (IX) и сетевого расширения (NE).
 
@@ -67,27 +67,27 @@ ms.locfileid: "87904999"
 
 ## <a name="deploy-the-vmware-hcx-ova-on-premises"></a>Развертывание OVA-файла VMware HCX в локальной среде
 
-1. Войдите в AVS SDDC vCenter и выберите **HCX**.
+1. Войдите в решение Azure VMware с SDDC vCenter и выберите **хккс**.
 
-    ![Выбор HCX в AVS vCenter](./media/hybrid-cloud-extension-installation/avs-vsphere-client.png)
+   :::image type="content" source="media/hybrid-cloud-extension-installation/avs-vsphere-client.png" alt-text="Войдите в решение Azure VMware с SDDC vCenter и выберите ХККС.":::
 
 1. В разделе **Администрирование**выберите **обновления системы** и щелкните **ссылку Запросить скачивание** , чтобы скачать файл VMware хккс OVA.
 
-    ![Получение обновлений системы](./media/hybrid-cloud-extension-installation/administration-updates.png)
+   :::image type="content" source="media/hybrid-cloud-extension-installation/administration-updates.png" alt-text="В разделе Администрирование выберите обновления системы и щелкните ссылку Запросить скачивание, чтобы скачать файл VMware ХККС OVA.":::
 
 1. Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.  
 
-    ![Выбор шаблона OVF](./media/hybrid-cloud-extension-installation/select-template.png)
+   :::image type="content" source="media/hybrid-cloud-extension-installation/select-template.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. Выберите имя и расположение, а затем выберите ресурс или кластер, где требуется развернуть HCX. Затем просмотрите сведения и необходимые ресурсы.  
 
-    ![Просмотр сведений о шаблоне](./media/hybrid-cloud-extension-installation/configure-template.png)
+   :::image type="content" source="media/hybrid-cloud-extension-installation/configure-template.png" alt-text=" Выберите имя и расположение, а затем выберите ресурс или кластер, в котором необходимо развернуть ХККС. Затем просмотрите сведения и необходимые ресурсы.":::
 
 1. Просмотрите условия лицензии и, если вы с ними согласны, выберите нужное хранилище и сеть. Выберите **Далее**.
 
 1. В разделе **Настройка шаблона** введите все необходимые сведения. 
 
-    ![Настройка шаблона](./media/hybrid-cloud-extension-installation/customize-template.png)  
+   :::image type="content" source="media/hybrid-cloud-extension-installation/customize-template.png" alt-text="В окне Настройка шаблона введите все необходимые сведения.":::
 
 1. Нажмите кнопку **Далее**, проверьте конфигурацию, а затем нажмите кнопку **Готово**, чтобы развернуть OVA-файл HCX.
 
@@ -102,42 +102,42 @@ ms.locfileid: "87904999"
 
 1. В разделе **Лицензирование** введите свой **расширенный ключ HCX**.  
 
-    ![Ввод ключа HCX](./media/hybrid-cloud-extension-installation/hcx-key.png)  
+   :::image type="content" source="media/hybrid-cloud-extension-installation/hcx-key.png" alt-text="В разделе Лицензирование введите дополнительный ключ ХККС.":::
     
     > [!NOTE]
     > HCX Manager должен иметь открытый доступ к Интернету или настроенный прокси-сервер.
 
 1. В **vCenter**при необходимости измените сведения о vCenter.
 
-    ![Настройка vCenter](./media/hybrid-cloud-extension-installation/configure-vcenter.png)
+   :::image type="content" source="media/hybrid-cloud-extension-installation/configure-vcenter.png" alt-text="В vCenter при необходимости измените сведения о vCenter.":::
 
 1. При необходимости измените расположение центра обработки данных в разделе **Расположение центра обработки данных**.
 
-    ![Расположение базы данных](./media/hybrid-cloud-extension-installation/system-location.png)
+   :::image type="content" source="media/hybrid-cloud-extension-installation/system-location.png" alt-text="При необходимости в расположении центра обработки данных измените расположение центра обработки данных.":::
 
 ## <a name="configure-hcx"></a>Настройка HCX 
 
 1. Войдите в локальную службу vCenter и в разделе **Главная**выберите **хккс**.
 
-    ![HCX в VCenter](./media/hybrid-cloud-extension-installation/hcx-vcenter.png)
+   :::image type="content" source="media/hybrid-cloud-extension-installation/hcx-vcenter.png" alt-text="Войдите в локальную службу vCenter и в разделе Главная выберите ХККС.":::
 
 1. В разделе **инфраструктура**выберите **Связывание сайтов**  >  **Добавить Связывание сайтов**.
 
-    ![Добавление сопряжения сайта](./media/hybrid-cloud-extension-installation/site-pairing.png)
+   :::image type="content" source="media/hybrid-cloud-extension-installation/site-pairing.png" alt-text="В разделе Инфраструктура выберите Связывание сайтов > добавить Связывание сайтов.":::
 
-1. Введите URL-адрес или IP-адрес удаленного ХККС, имя пользователя и пароль AVS cloudadmin, а затем нажмите кнопку **подключить**.
+1. Введите URL-адрес удаленного ХККС или IP-адрес, Azure VMware cloudadmin имя пользователя и пароль, а затем нажмите кнопку **подключить**.
 
    Система показывает подключенный сайт.
-   
-    ![Подключение к сайту](./media/hybrid-cloud-extension-installation/site-connection.png)
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/site-connection.png" alt-text="Система показывает подключенный сайт.":::
 
 1. В разделе **Infrastructure (инфраструктура**) выберите **Interconnect**  >  **межсайтовая служба**соединения  >  **Сетевые профили**  >  **создать сетевой профиль**.
 
-    ![Создание сетевого профиля](./media/hybrid-cloud-extension-installation/create-network-profile.png)
+   :::image type="content" source="media/hybrid-cloud-extension-installation/create-network-profile.png" alt-text="В разделе Инфраструктура выберите Interconnect > сеть многосайтовых услуг > сетевые профили > создать сетевой профиль.":::
 
 1. Для нового сетевого профиля введите ХККС IX и NE диапазоны IP-адресов (для IX и NE устройства требуется минимум два IP-адреса).
-    
-   ![Ввод диапазонов IP-адресов](./media/hybrid-cloud-extension-installation/enter-address-ranges.png)
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/enter-address-ranges.png" alt-text="Для нового сетевого профиля введите ХККС IX и NE диапазоны IP-адресов (для IX и NE устройства требуется минимум два IP-адреса).":::
   
    > [!NOTE]
    > Устройство сетевого расширения (HCX-NE) имеет отношение "один к одному" с распределенным виртуальным коммутатором (DVS).  
@@ -146,136 +146,136 @@ ms.locfileid: "87904999"
 
 1. Введите имя вычислительного профиля и нажмите кнопку **Продолжить**.  
 
-    ![Создание вычислительного профиля](./media/hybrid-cloud-extension-installation/create-compute-profile.png)
+   :::image type="content" source="media/hybrid-cloud-extension-installation/create-compute-profile.png" alt-text="Введите имя профиля вычислений и нажмите кнопку продолжить.":::
 
 1. Выберите службы для включения, такие как миграция, расширение сети или аварийное восстановление, а затем нажмите кнопку **продолжить**.
 
-    ![Выбор служб](./media/hybrid-cloud-extension-installation/select-services.png)
+   :::image type="content" source="media/hybrid-cloud-extension-installation/select-services.png" alt-text="Выберите службы для включения, такие как миграция, расширение сети или аварийное восстановление, а затем нажмите кнопку продолжить.":::
 
 1. В разделе **Выбор ресурсов служб** выберите ресурсы служб, для которых должны быть включены выбранные службы HCX. Выберите **Continue** (Продолжить).
-    
-   ![Выбор ресурсов служб](./media/hybrid-cloud-extension-installation/select-service-resources.png)
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/select-service-resources.png" alt-text="В окне Выбор ресурсов службы выберите один или несколько ресурсов службы, для которых должны быть включены выбранные службы ХККС. Нажмите кнопку продолжить.":::
   
    > [!NOTE]
    > Выберите конкретные кластеры, в которые назначены исходные виртуальные машины для миграции с использованием HCX.
 
 1. Выберите **Хранилище данных** и нажмите **Продолжить**. 
       
-    Выберите вычислительные ресурсы и ресурсы хранилища для развертывания устройств HCX Interconnect. Когда выбрано несколько ресурсов, HCX использует первый выбранный ресурс, пока его емкость не будет исчерпана.  
-    
-    ![Выбор ресурсов для развертывания](./media/hybrid-cloud-extension-installation/deployment-resources.png)
+   Выберите вычислительные ресурсы и ресурсы хранилища для развертывания устройств HCX Interconnect. Когда выбрано несколько ресурсов, HCX использует первый выбранный ресурс, пока его емкость не будет исчерпана.  
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/deployment-resources.png" alt-text="Выберите каждый ресурс вычислений и хранилища для развертывания устройств ХККС Interconnect. Если выбрано несколько ресурсов, ХККС использует первый выбранный ресурс, пока его емкость не будет исчерпана.":::
 
 1. Выберите сетевой профиль управления, созданный в разделе **Сетевые профили**, и нажмите **Продолжить**.  
       
-    Выберите сетевой профиль, через который можно получить доступ к интерфейсу управления vCenter и узлам ESXi. Если вы еще не определили такой сетевой профиль, его можно создать здесь.  
-    
-    ![Выбор сетевого профиля управления](./media/hybrid-cloud-extension-installation/management-network-profile.png)
+   Выберите сетевой профиль, через который можно получить доступ к интерфейсу управления vCenter и узлам ESXi. Если вы еще не определили такой сетевой профиль, его можно создать здесь.  
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/management-network-profile.png" alt-text="Выберите сетевой профиль, через который можно достичь интерфейса управления vCenter и узлов ESXi. Если вы еще не определили такой сетевой профиль, его можно создать здесь.":::
 
 1. Выберите **Сетевой канал исходящей связи** и нажмите **Продолжить**.
       
-    Выберите один или несколько сетевых профилей, чтобы обеспечить одно из следующих условий.  
-    * По этой сети можно обращаться к устройствам Interconnect.  
-    * По этой сети удаленные устройства могут обращаться к устройствам Interconnect.  
+   Выберите один или несколько сетевых профилей, чтобы обеспечить одно из следующих условий.  
+   * По этой сети можно обращаться к устройствам Interconnect.  
+   * По этой сети удаленные устройства могут обращаться к устройствам Interconnect.  
     
-    Если у вас есть сети с соединениями "точка-точка", такие как сети прямого соединения, которые не используются совместно несколькими сайтами, этот шаг можно пропустить, так как вычислительные профили совместно используются несколькими сайтами. В таких случаях сетевые профили канала исходящей связи могут быть переопределены и заданы во время создания сетки службы межсоединения.  
-    
-    ![Выбор сетевого профиля канала исходящей связи](./media/hybrid-cloud-extension-installation/uplink-network-profile.png)
+   Если у вас есть сети с соединениями "точка-точка", такие как сети прямого соединения, которые не используются совместно несколькими сайтами, этот шаг можно пропустить, так как вычислительные профили совместно используются несколькими сайтами. В таких случаях сетевые профили канала исходящей связи могут быть переопределены и заданы во время создания сетки службы межсоединения.  
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/uplink-network-profile.png" alt-text="Выберите сеть исходящей связи и нажмите кнопку продолжить.":::
 
 1. Выберите **Сетевой профиль vMotion** и нажмите **Продолжить**.
       
    Выберите сетевой профиль, через который будет доступен интерфейс vMotion узлов ESXi. Если вы еще не определили такой сетевой профиль, его можно создать здесь. Если сеть vMotion отсутствует, выберите **сетевой профиль управления**.  
-    
-   ![Выбор сетевого профиля vMotion](./media/hybrid-cloud-extension-installation/vmotion-network-profile.png)
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/vmotion-network-profile.png" alt-text="Выберите пункт "профиль сети vMotion" и нажмите кнопку продолжить.":::
 
 1. В поле **выберите сетевой профиль для репликации vSphere**выберите профиль сети, vSphere интерфейс репликации узлов ESXi, а затем нажмите кнопку **продолжить**.
       
    В большинстве случаев этот профиль совпадает с сетевым профилем управления.  
-    
-   ![Выбор сетевого профиля репликации vSphere](./media/hybrid-cloud-extension-installation/vsphere-replication-network-profile.png)
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/vsphere-replication-network-profile.png" alt-text="В поле выберите сетевой профиль для репликации vSphere выберите профиль сети, vSphere интерфейс репликации узлов ESXi, а затем нажмите кнопку продолжить.":::
 
 1. В окне **Выбор распределенных коммутаторов для сетевых расширений**выберите Программа DVS, в которой находятся сети, на которых будут интегрированы и подключены виртуальные машины.  Выберите пункт **Продолжить**.  
-      
-    ![Выбор распределенных виртуальных коммутаторов](./media/hybrid-cloud-extension-installation/distributed-switches.png)
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/distributed-switches.png" alt-text="В окне Выбор распределенных коммутаторов для сетевых расширений выберите Программа DVS, в которой находятся сети, на которых будут интегрированы и подключены виртуальные машины.  Нажмите кнопку продолжить.":::
 
 1. Проверьте правила подключения и нажмите кнопку **продолжить**.  
 
-    ![Создание вычислительного профиля](./media/hybrid-cloud-extension-installation/complete-compute-profile.png)
+   :::image type="content" source="media/hybrid-cloud-extension-installation/complete-compute-profile.png" alt-text="Проверьте правила подключения и нажмите кнопку продолжить.":::
 
 1.  Нажмите **Готово**, чтобы создать вычислительный профиль.
 
 ## <a name="configure-network-uplink"></a>Настройка сетевого канала исходящей связи
 
-Теперь настройте изменение сетевого профиля в AVS SDDC для сетевого канала исходящей связи.
+Теперь настройте изменение сетевого профиля в Azure VMware решение SDDC для сетевой исходящей связи.
 
-1. Войдите в SDDC НСКС-T, чтобы создать логический коммутатор, или используйте существующий логический коммутатор, который можно использовать для сетевой исходящей связи между локальной средой и AVS SDDC.
+1. Войдите в SDDC НСКС-T, чтобы создать логический коммутатор, или используйте существующий логический коммутатор, который можно использовать для сетевой исходящей связи между локальной средой и Azure VMware Solution SDDC.
 
-1. Создайте сетевой профиль для исходящей связи ХККС в AVS SDDC, который можно использовать для связи между локальным и AVS SDDC.  
-    
-   ![Создание сетевого профиля для канала исходящей связи](./media/hybrid-cloud-extension-installation/network-profile-uplink.png)
+1. Создайте сетевой профиль для исходящей связи ХККС в решении Azure VMware, которое можно использовать для подключения из локальной среды к Azure VMware.  
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/network-profile-uplink.png" alt-text="Создайте сетевой профиль для исходящей связи ХККС в решении Azure VMware, которое можно использовать для подключения из локальной среды к Azure VMware.":::
 
 1. Введите имя для сетевого профиля и по крайней мере 4–5 свободных IP-адресов, исходя из необходимого расширения сети L2.  
-    
-   ![Настройка сетевого профиля для канала исходящей связи](./media/hybrid-cloud-extension-installation/configure-uplink-profile.png)
 
-1. Нажмите **Создать** для завершения конфигурации AVS SDDC
+   :::image type="content" source="media/hybrid-cloud-extension-installation/configure-uplink-profile.png" alt-text="Введите имя для сетевого профиля и по крайней мере 4–5 свободных IP-адресов, исходя из необходимого расширения сети L2.":::
+
+1. Щелкните " **создать** ", чтобы завершить настройку решения Azure VMware
 
 ## <a name="configure-service-mesh"></a>Настройка сетки службы
 
-Теперь настройте сетку службы между локальной средой и AVS SDDC.
+Теперь настройте сетевую связь между локальной средой и решением VMware для Azure.
 
-1. Войдите в AVS SDDC vCenter и выберите **HCX**.
+1. Войдите в решение Azure VMware с SDDC vCenter и выберите **хккс**.
 
 2. В разделе **инфраструктура**выберите **Interconnect**  >  **Сетка службы**Interconnect  >  **создать сеть службы** , чтобы настроить сеть и профили вычислений, созданные на предыдущих шагах.    
-      
-    ![Настройка сетки службы](./media/hybrid-cloud-extension-installation/configure-service-mesh.png)
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/configure-service-mesh.png" alt-text="В разделе Infrastructure (инфраструктура) выберите Interconnect > Service Network > создать сеть службы для настройки сети и профилей вычислений, созданных на предыдущих шагах.":::
 
 3. Выберите парные сайты, чтобы включить гибридные возможности, и нажмите кнопку **продолжить**.   
-    
-    ![Выбор сопряженных сайтов](./media/hybrid-cloud-extension-installation/select-paired-sites.png)
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/select-paired-sites.png" alt-text="Выберите парные сайты, чтобы включить гибридные возможности, и нажмите кнопку продолжить.":::
 
 4. Выберите исходные и удаленные профили вычислений, чтобы включить службы гибридной среды, и нажмите кнопку **продолжить**.
       
-    Параметры определяют ресурсы, на которых виртуальные машины могут использовать службы ХККС Services.  
-      
-    ![Включение служб гибридной среды](./media/hybrid-cloud-extension-installation/enable-hybridity.png)
+   Параметры определяют ресурсы, на которых виртуальные машины могут использовать службы ХККС Services.  
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/enable-hybridity.png" alt-text="Параметры определяют ресурсы, на которых виртуальные машины могут использовать службы ХККС Services.":::
 
 5. Выберите службы для включения и нажмите кнопку **продолжить**.  
-      
-    ![Выбор служб HCX](./media/hybrid-cloud-extension-installation/hcx-services.png)
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/hcx-services.png" alt-text="Выберите службы для включения и нажмите кнопку продолжить.":::
 
 6. В разделе **Расширенная конфигурация — переопределение сетевых профилей каналов исходящей связи** нажмите **Продолжить**.  
       
-    Сетевые профили исходящей связи используются для подключения к сети, через которую можно связаться с устройствами связи удаленного сайта.  
-      
-    ![Переопределение профилей каналов исходящей связи](./media/hybrid-cloud-extension-installation/override-uplink-profiles.png)
+   Сетевые профили исходящей связи используются для подключения к сети, через которую можно связаться с устройствами связи удаленного сайта.  
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/override-uplink-profiles.png" alt-text="Сетевые профили исходящей связи используются для подключения к сети, через которую можно связаться с устройствами связи удаленного сайта.":::
 
 7. Выберите **настройка Scale Out устройства расширения сети**. 
-      
-    ![Горизонтальное масштабирование сетевого расширения](./media/hybrid-cloud-extension-installation/network-extension-scale-out.png)
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/network-extension-scale-out.png" alt-text="Выберите Настройка Scale Out устройства расширения сети.":::
 
 8. Введите количество устройств, соответствующее количеству коммутаторов DVS.  
-      
-    ![Настройка количества устройств](./media/hybrid-cloud-extension-installation/appliance-scale.png)
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/appliance-scale.png" alt-text="Введите количество устройств, соответствующее количеству коммутаторов DVS.":::
 
 9. Выберите **продолжить** , чтобы пропустить.  
-      
-    ![Настройка проектирования трафика](./media/hybrid-cloud-extension-installation/traffic-engineering.png)
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/traffic-engineering.png" alt-text="Выберите продолжить, чтобы пропустить.":::
 
 10. Проверьте предварительную версию топологии и нажмите **Продолжить**. 
 
 11. Введите понятное имя для этой сети службы и нажмите кнопку **"Готово"** для завершения.  
-      
-    ![Завершение сетки службы](./media/hybrid-cloud-extension-installation/complete-service-mesh.png)
 
-    Сетка службы развернута и настроена.  
-      
-    ![Развернутая сетка службы](./media/hybrid-cloud-extension-installation/deployed-service-mesh.png)
+   :::image type="content" source="media/hybrid-cloud-extension-installation/complete-service-mesh.png" alt-text="Полная сеть службы":::
+
+   Сетка службы развернута и настроена.  
+
+   :::image type="content" source="media/hybrid-cloud-extension-installation/deployed-service-mesh.png" alt-text="Развернутая сетка службы":::
 
 ## <a name="check-appliance-status"></a>Проверка состояния устройств
 Чтобы проверить состояние устройства, выберите **Межсоединение** > **Устройства**. 
-      
-![Состояние устройства](./media/hybrid-cloud-extension-installation/appliance-status.png)
+
+:::image type="content" source="media/hybrid-cloud-extension-installation/appliance-status.png" alt-text="Проверьте состояние устройства.":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если **состояние туннеля** имеет значение **UP** и отображается зеленым, все готово к миграции и защите виртуальных машин AVS с помощью HCX. См. [документацию по VMware HCX](https://docs.vmware.com/en/VMware-HCX/index.html) и раздел [Миграция виртуальных машин с помощью VMware HCX](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-D0CD0CC6-3802-42C9-9718-6DA5FEC246C6.html?hWord=N4IghgNiBcIBIGEAaACAtgSwOYCcwBcMB7AOxAF8g) в технической документации VMware.
+Когда **состояние туннеля** для соединения устройства — " **вверх** " и "зеленый", вы можете перенести и защитить виртуальные машины Azure VMware с помощью хккс. См. [документацию по VMware HCX](https://docs.vmware.com/en/VMware-HCX/index.html) и раздел [Миграция виртуальных машин с помощью VMware HCX](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-D0CD0CC6-3802-42C9-9718-6DA5FEC246C6.html?hWord=N4IghgNiBcIBIGEAaACAtgSwOYCcwBcMB7AOxAF8g) в технической документации VMware.

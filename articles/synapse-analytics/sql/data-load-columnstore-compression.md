@@ -11,12 +11,12 @@ ms.date: 04/15/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 4496b74f162bfaeda7205963cbbe7e355db841f5
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: fa3bee706049bbeaed0a01cb4f3f5c0422050fa2
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87503911"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797587"
 ---
 # <a name="maximize-rowgroup-quality-for-columnstore-index-performance"></a>Максимальное качество группы строк для производительности индекса columnstore
 
@@ -68,6 +68,9 @@ JOIN    sys.[dm_pdw_nodes_db_column_store_row_group_physical_stats] rg      ON  
 select *
 from cte;
 ```
+
+>[!TIP]
+> Для повышения производительности в синапсе SQL рассмотрите возможность использования представления **sys. pdw_permanent_table_mappings** вместо **sys. pdw_table_mappings** в постоянных пользовательских таблицах. Дополнительные сведения см. в разделе **[sys. pdw_permanent_table_mappings &#40;&#41;Transact-SQL ](/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql?view=azure-sqldw-latest)** .
 
 Параметр trim_reason_desc сообщает, была ли усечена группа строк (trim_reason_desc = NO_TRIM означает, что усечения не было и качество группы строк является оптимальным). Ниже перечислены причины, указывающие на преждевременное усечение групп строк.
 

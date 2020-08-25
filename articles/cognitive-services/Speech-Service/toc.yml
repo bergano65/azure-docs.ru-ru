@@ -3,10 +3,8 @@
 - name: Обзор
   expanded: true
   items:
-    - name: Что собой представляет служба "Речь"
+    - name: Обзор службы "Речь"
       href: overview.md
-    - name: Бесплатная пробная подписка на службу "Речь"
-      href: get-started.md
     - name: Поддержка языков и голоса
       displayName: 'languages,locales,voice,gender,language code,locale,locale code,neural voice,standard voice'
       href: language-support.md

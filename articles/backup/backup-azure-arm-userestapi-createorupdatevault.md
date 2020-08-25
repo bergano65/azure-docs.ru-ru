@@ -4,16 +4,16 @@ description: Из этой статьи вы узнаете, как управл
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.assetid: e54750b4-4518-4262-8f23-ca2f0c7c0439
-ms.openlocfilehash: 0170bda1ca956efe971695e34dc0d14b68eb109a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c4aa88399bfbdd7814864170d9861a7b7d14dc58
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87079338"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757257"
 ---
-# <a name="create-azure-recovery-services-vault-using-rest-api"></a>Создание хранилища Служб восстановления Azure с помощью REST API
+# <a name="create-azure-recovery-services-vault-using-rest-api"></a>Создание хранилища служб восстановления Azure с помощью REST API
 
-Шаги по созданию хранилища Служб восстановления Azure с помощью REST API описаны в [этой документации](/rest/api/recoveryservices/vaults/createorupdate). Этот документ содержит справочные сведения по созданию хранилища с именем "testVault" в регионе "Западная часть США".
+Инструкции по созданию хранилища служб восстановления Azure с помощью REST API приведены в документации по [созданию REST API в хранилище](/rest/api/recoveryservices/vaults/createorupdate) . Этот документ содержит справочные сведения по созданию хранилища с именем "testVault" в регионе "Западная часть США".
 
 Для создания или обновления хранилища Служб восстановления Azure используйте следующую операцию *PUT*.
 
@@ -30,7 +30,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 | Заголовок запроса   | Описание |
 |------------------|-----------------|
 | *Content-Type:*  | Обязательный элемент. Задайте значение `application/json`. |
-| *Authorization:* | Обязательный элемент. Задайте допустимый  [маркер доступа](/rest/api/azure/#authorization-code-grant-interactive-clients)`Bearer`. |
+| *Authorization:* | Обязательный элемент. Задайте допустимый [маркер доступа](/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
 
 Дополнительные сведения по созданию запросов см. в разделе [Components of a REST API request/response](/rest/api/azure/#components-of-a-rest-api-requestresponse) (Компоненты запроса или ответа REST API).
 
@@ -38,7 +38,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Для создания текста запроса используются следующие общие определения.
 
-|Имя  |Обязательно  |Type  |Описание  |
+|Имя  |Обязательно  |Тип  |Описание  |
 |---------|---------|---------|---------|
 |eTag     |         |   Строка      |  Необязательный eTag       |
 |location     |  true       |Строка         |   Расположение ресурса      |
@@ -66,9 +66,9 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Есть два успешных ответа для операции по созданию или обновлению хранилища Служб восстановления:
 
-|Название  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |   [Хранилище](/rest/api/recoveryservices/vaults/createorupdate#vault)      | ОК        |
+|200 ОК     |   [Хранилище](/rest/api/recoveryservices/vaults/createorupdate#vault)      | OK        |
 |201 Создано     | [Хранилище](/rest/api/recoveryservices/vaults/createorupdate#vault)        |   Создание      |
 
 Дополнительные сведения об ответах REST API можно узнать в разделе [Process the response message](/rest/api/azure/#process-the-response-message) (Обработка ответного сообщения).

@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9fb3113b02d20355e3ac9ede593bf8fc4136461
-ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
+ms.openlocfilehash: 0ed286cf2b11429d5f0f56b3a85f173c2a39bc81
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88705968"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799304"
 ---
 # <a name="configure-the-expiration-policy-for-microsoft-365-groups"></a>Настройка политики срока действия для групп Microsoft 365
 
@@ -110,7 +110,7 @@ ms.locfileid: "88705968"
 
 ## <a name="how-to-retrieve-microsoft-365-group-expiration-date"></a>Получение даты истечения срока действия группы Microsoft 365
 
-В дополнение к панели доступа, где пользователи могут просматривать сведения о группе, включая дату окончания срока действия и дату последнего продления, дату окончания срока действия Microsoft 365 группы можно получить из Microsoft Graph REST API бета-версии. expirationDateTime в качестве свойства группы включено в бета-версии Microsoft Graph. Его можно получить с помощью запроса GET. Дополнительные сведения см. в [этом примере](https://docs.microsoft.com/graph/api/group-get?view=graph-rest-beta#example).
+В дополнение к панели доступа, где пользователи могут просматривать сведения о группе, включая дату окончания срока действия и дату последнего продления, дату окончания срока действия Microsoft 365 группы можно получить из Microsoft Graph REST API бета-версии. expirationDateTime в качестве свойства группы включено в бета-версии Microsoft Graph. Его можно получить с помощью запроса GET. Дополнительные сведения см. в [этом примере](/graph/api/group-get?view=graph-rest-beta#example).
 
 > [!NOTE]
 > Чтобы управлять членством в группах на панели доступа, параметр "ограничить доступ к группам на панели доступа" должен иметь значение "нет" в группе Azure Active Directory группы "Общие".
@@ -172,7 +172,7 @@ ms.locfileid: "88705968"
    Remove-AzureADMSGroupLifecyclePolicy -Id "26fcc232-d1c3-4375-b68d-15c296f1f077"
    ```
   
-Приведенные ниже командлеты можно использовать для более точной настройки политики. Дополнительные сведения см. в [документации по PowerShell](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&branch=master#groups).
+Приведенные ниже командлеты можно использовать для более точной настройки политики. Дополнительные сведения см. в [документации по PowerShell](/powershell/module/azuread/?branch=master&view=azureadps-2.0-preview#groups).
 
 - Get-AzureADMSGroupLifecyclePolicy
 - New-AzureADMSGroupLifecyclePolicy

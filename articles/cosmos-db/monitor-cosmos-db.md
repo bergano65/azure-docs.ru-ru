@@ -5,15 +5,15 @@ author: bwren
 services: cosmos-db
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 07/22/2020
+ms.date: 08/24/2020
 ms.author: bwren
 ms.custom: subject-monitoring
-ms.openlocfilehash: 9c2a87f3d70d3873771b3a59114b424efffe4fb9
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 12bf87e16bf4506f2015dd75fb360f8de8399902
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87130194"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797825"
 ---
 # <a name="monitoring-azure-cosmos-db"></a>Мониторинг Azure Cosmos DB
 
@@ -56,15 +56,15 @@ Azure Cosmos DB создает данные мониторинга с помощ
 > [!NOTE]
 > При создании контейнеров следите за тем, чтобы не создать два контейнера с одинаковыми именами, но в разных регистрах. Причина в том, что некоторые компоненты платформы Azure не учитывают регистр. Это может привести к путанице или конфликтам в данных телеметрии и действиях с контейнерами с такими именами.
 
-## <a name="monitor-data-collected-from-azure-cosmos-db-portal"></a><a id="monitoring-from-azure-cosmos-db"></a>Мониторинг данных, собранных с Azure Cosmos DB портала
+## <a name="monitor-data-collected-from-azure-cosmos-db-portal"></a><a id="monitoring-from-azure-cosmos-db"></a> Мониторинг данных, собранных с Azure Cosmos DB портала
 
 Azure Cosmos DB собирает данные мониторинга тех же типов, что и другие ресурсы Azure, которые описаны в разделе [Мониторинг ресурсов Azure с помощью Azure Monitor](../azure-monitor/insights/monitor-azure-resource.md#monitoring-data). Подробную справку по журналам и метрикам, создаваемым Azure Cosmos DB, см. в [справочнике по данным мониторинга Azure Cosmos DB](monitor-cosmos-db-reference.md).
 
 На странице **Обзор** на портале Azure приводится сводка использования каждой базы данных Azure Cosmos, включая количество запросов и стоимость в час. Это полезная информация, которая, однако, представляет собой лишь небольшую часть доступных данных мониторинга. Некоторые из этих данных собираются автоматически и доступны для анализа сразу же после создания базы данных, но для сбора дополнительных данных требуется настройка.
 
-:::image type="content" source="media/monitor-cosmos-db/overview-page.png" alt-text="Страница Обзор":::
+:::image type="content" source="media/monitor-cosmos-db/overview-page.png" alt-text="Страница "Обзор"":::
 
-## <a name="analyzing-metric-data"></a><a id="analyze-metric-data"></a>Анализ данных метрик
+## <a name="analyzing-metric-data"></a><a id="analyze-metric-data"></a> Анализ данных метрик
 
 Azure Cosmos DB предоставляет пользовательский интерфейс для работы с метриками. Подробные сведения об использовании этого интерфейса и анализе различных сценариев Azure Cosmos DB см. в статье о [мониторинге и отладке метрик Azure Cosmos DB в Azure Monitor](cosmos-db-azure-monitor-metrics.md).
 
@@ -102,9 +102,9 @@ Azure Cosmos DB предоставляет пользовательский ин
 
 Метрики можно группировать с помощью параметра **Применить разделение**. Например, можно сгруппировать единицы запросов по типу операции и просмотреть граф для всех операций сразу, как показано на следующем рисунке:
 
-:::image type="content" source="./media/monitor-cosmos-db/apply-metrics-splitting.png" alt-text="Добавление фильтра Применить разделение":::
+:::image type="content" source="./media/monitor-cosmos-db/apply-metrics-splitting.png" alt-text="Добавление фильтра "Применить разделение"":::
 
-## <a name="analyzing-log-data"></a><a id="analyze-log-data"></a>Анализ данных журнала
+## <a name="analyzing-log-data"></a><a id="analyze-log-data"></a> Анализ данных журнала
 
 Данные в журналах Azure Monitor хранятся в таблицах, каждая из которых имеет собственный набор уникальных свойств. Azure Cosmos DB сохраняет данные в указанных ниже таблицах.
 
@@ -147,7 +147,7 @@ Azure Cosmos DB предоставляет пользовательский ин
     | summarize count() by Resource
     ```
 
-## <a name="monitor-azure-cosmos-db-programmatically"></a><a id="monitor-cosmosdb-programmatically"></a>Программное отслеживание Azure Cosmos DB
+## <a name="monitor-azure-cosmos-db-programmatically"></a><a id="monitor-cosmosdb-programmatically"></a> Программное отслеживание Azure Cosmos DB
 
 Доступные на портале метрики уровня учетной записи, такие как данные об использовании хранилища учетной записи и общее число запросов, недоступны через API-интерфейсы SQL. Тем не менее, можно получить данные об использовании на уровне коллекции с помощью API SQL. Чтобы получить данных на уровне коллекции, выполните следующие действия:
 
@@ -158,14 +158,16 @@ Azure Cosmos DB предоставляет пользовательский ин
 Чтобы получить дополнительные метрики, используйте [пакет SDK для Azure Monitor](https://www.nuget.org/packages/Microsoft.Azure.Insights). Доступные определения метрик можно получить с помощью следующего вызова.
 
 ```http
-https://management.azure.com/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroup}/providers/Microsoft.DocumentDb/databaseAccounts/{DocumentDBAccountName}/metricDefinitions?api-version=2015-04-08
+https://management.azure.com/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroup}/providers/Microsoft.DocumentDb/databaseAccounts/{DocumentDBAccountName}/providers/microsoft.insights/metricDefinitions?api-version=2018-01-01
 ```
 
-В запросах для извлечения отдельных метрик используется следующий формат.
+Чтобы получить отдельные метрики, используйте следующий формат:
 
 ```http
-https://management.azure.com/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroup}/providers/Microsoft.DocumentDb/databaseAccounts/{DocumentDBAccountName}/metrics?api-version=2015-04-08&$filter=%28name.value%20eq%20%27Total%20Requests%27%29%20and%20timeGrain%20eq%20duration%27PT5M%27%20and%20startTime%20eq%202016-06-03T03%3A26%3A00.0000000Z%20and%20endTime%20eq%202016-06-10T03%3A26%3A00.0000000Z
+https://management.azure.com/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroup}/providers/Microsoft.DocumentDb/databaseAccounts/{DocumentDBAccountName}/providers/microsoft.insights/metrics?timespan={StartTime}/{EndTime}&interval={AggregationInterval}&metricnames={MetricName}&aggregation={AggregationType}&`$filter={Filter}&api-version=2018-01-01
 ```
+
+Дополнительные сведения см. в статье [REST API мониторинга Azure](../azure-monitor/platform/rest-api-walkthrough.md) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

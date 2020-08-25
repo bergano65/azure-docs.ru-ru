@@ -13,12 +13,12 @@ ms.date: 05/08/2020
 ms.author: curtand
 ms.reviewer: sahenry
 ms.custom: oldportal;it-pro;
-ms.openlocfilehash: dc4e71f4283d78c2b241441810a8c1313f002152
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: da358ecb126dda21d18120bbe698fec234c85e4f
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85850909"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798964"
 ---
 # <a name="manage-your-users-with-my-staff-preview"></a>Управляйте своими пользователями с помощью моих сотрудников (Предварительная версия)
 
@@ -64,7 +64,7 @@ ms.locfileid: "85850909"
 
 Вы можете защитить портал моего персонала с помощью политики условного доступа Azure AD. Используйте его для таких задач, как требовать многофакторную проверку подлинности, прежде чем обращаться к моему персоналу.
 
-Настоятельно рекомендуется защищать сотрудников с помощью [политик условного доступа Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/). Чтобы применить политику условного доступа к моему персоналу, необходимо вручную создать субъект-службу моего персонала с помощью PowerShell.
+Настоятельно рекомендуется защищать сотрудников с помощью [политик условного доступа Azure AD](../conditional-access/index.yml). Чтобы применить политику условного доступа к моему персоналу, необходимо вручную создать субъект-службу моего персонала с помощью PowerShell.
 
 ### <a name="apply-a-conditional-access-policy-to-my-staff"></a>Применение политики условного доступа к моим сотрудникам
 
@@ -119,7 +119,7 @@ ms.locfileid: "85850909"
 - [Привилегированный администратор проверки подлинности](directory-assign-admin-roles.md#privileged-authentication-administrator)
 - [Глобальный администратор](directory-assign-admin-roles.md#global-administrator--company-administrator)
 
-## <a name="search"></a>Найти
+## <a name="search"></a>Поиск
 
 С помощью панели поиска в моем персонале вы можете выполнять поиск по Au и пользователям в Организации. Можно выполнять поиск по всем Австралия и пользователям в Организации, но вы можете вносить изменения только для тех пользователей, которые находятся в AU, для которых предоставлены разрешения администратора.
 
@@ -129,7 +129,7 @@ ms.locfileid: "85850909"
 
 Вы можете просматривать журналы аудита для действий, выполненных в моем персонале на портале Azure Active Directory. Если журнал аудита был создан действием, выполненным в моем персонале, вы увидите, что это указано в разделе Дополнительные сведения в событии аудита.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Моя документация](../user-help/my-staff-team-manager.md) 
  для пользователя [Документация по административным единицам](directory-administrative-units.md)

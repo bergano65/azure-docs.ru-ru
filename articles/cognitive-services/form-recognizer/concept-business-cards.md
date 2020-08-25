@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 1c9e40738d70b6fbb9fed267a6a047d8330023b7
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 2fc87f08b30d648ec38d2b93e96a32d125b856be
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88749299"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757920"
 ---
 # <a name="business-card-concepts"></a>Основные понятия визитной карточки
 
@@ -391,9 +391,8 @@ API-интерфейс визитной карточки также работа
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Чтобы приступить к работе, следуйте инструкциям краткого руководства 
-- [Краткое руководство по API для визитных карточек](./quickstarts/python-business-cards.md)
-- Дополнительные сведения о [распознавателе форм REST API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer/api)
+- Ознакомьтесь с кратким руководством по началу работы с [API Python для визитных карточек](./quickstarts/python-business-cards.md)
+- Дополнительные сведения о [распознавателе форм REST API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeBusinessCardAsync)
 - Дополнительные сведения о [распознавателе форм](overview.md)
 
 

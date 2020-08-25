@@ -1,21 +1,21 @@
 ---
 title: Добавление диска данных в виртуальную машину Linux с помощью Azure CLI
 description: Узнайте, как добавить постоянный диск данных в виртуальную машину Linux с помощью Azure CLI.
-author: roygara
-manager: twooley
+author: cynthn
 ms.service: virtual-machines-linux
 ms.topic: how-to
-ms.date: 06/13/2018
-ms.author: rogarana
+ms.date: 08/20/2020
+ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 1791d33627f04f69d10916c8ff0a154f7d8b967b
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 9d04e28c4af462719644deca4c4aa0e3aa94fa16
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86502832"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757733"
 ---
 # <a name="add-a-disk-to-a-linux-vm"></a>Добавление диска к виртуальной машине Linux
+
 Из этой статьи вы узнаете, как добавить в виртуальную машину постоянный диск, на котором можно хранить данные. Эти данные сохранятся даже после повторной подготовки виртуальной машины (например, в ходе обслуживания или изменения размера).
 
 
@@ -42,131 +42,74 @@ diskId=$(az disk show -g myResourceGroup -n myDataDisk --query 'id' -o tsv)
 az vm disk attach -g myResourceGroup --vm-name myVM --name $diskId
 ```
 
-## <a name="connect-to-the-linux-vm-to-mount-the-new-disk"></a>Подключение к виртуальной машине Linux для подключения нового диска
+## <a name="format-and-mount-the-disk"></a>Форматирование и подключение диска
 
-Чтобы разбить диск на разделы, отформатировать и подключить новый диск к виртуальной машине Linux, подключитесь к своей виртуальной машине по протоколу SSH. Дополнительные сведения см. в статье [Как использовать SSH с Linux в Azure](mac-create-ssh-keys.md). В следующем примере выполняется подключение к виртуальной машине с помощью общедоступной записи DNS *mypublicdns.westus.cloudapp.azure.com* и имени пользователя *azureuser*:
+Чтобы разбить диск на разделы, отформатировать и подключить новый диск к виртуальной машине Linux, подключитесь к своей виртуальной машине по протоколу SSH. Дополнительные сведения см. в статье [Как использовать SSH с Linux в Azure](mac-create-ssh-keys.md). В следующем примере подключается к виртуальной машине с общедоступным IP-адресом *10.123.123.25* с именем пользователя *azureuser*:
 
 ```bash
-ssh azureuser@mypublicdns.westus.cloudapp.azure.com
+ssh azureuser@10.123.123.25
 ```
 
-После подключения к виртуальной машине можно подключить диск. Сначала найдите диск, используя `dmesg` (для обнаружения нового диска можно использовать и другой способ). В следующем примере используется команда dmesg для фильтрации по дискам *SCSI*:
+### <a name="find-the-disk"></a>Поиск диска
+
+После подключения к виртуальной машине необходимо найти диск. В этом примере мы используем `lsblk` для перечисления дисков. 
 
 ```bash
-dmesg | grep SCSI
+lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
 ```
 
 Вы должны увидеть результат, аналогичный приведенному ниже.
 
 ```bash
-[    0.294784] SCSI subsystem initialized
-[    0.573458] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
-[    7.110271] sd 2:0:0:0: [sda] Attached SCSI disk
-[    8.079653] sd 3:0:1:0: [sdb] Attached SCSI disk
-[ 1828.162306] sd 5:0:0:0: [sdc] Attached SCSI disk
+sda     0:0:0:0      30G
+├─sda1             29.9G /
+├─sda14               4M
+└─sda15             106M /boot/efi
+sdb     1:0:1:0      14G
+└─sdb1               14G /mnt
+sdc     3:0:0:0      50G
 ```
+
+Здесь `sdc` — это диск, который нам нужен, так как он 50G. Если вы не уверены, на каком диске основан только размер, перейдите на страницу виртуальной машины на портале, выберите **диски**и проверьте номер LUN для диска в разделе **диски данных**. 
+
+
+### <a name="format-the-disk"></a>Форматирование диска
+
+Отформатируйте диск с помощью `parted` , если размер диска равен 2 тебибитес (тиб) или больше, необходимо использовать секционирование GPT, если оно находится в 2TiB, то можно использовать секционирование MBR или GPT. 
 
 > [!NOTE]
-> Рекомендуется использовать актуальные версии fdisk или Parted, доступные для вашего дистрибутива.
+> Рекомендуется использовать последнюю версию `parted` , доступную для дистрибутив.
+> Если размер диска равен 2 тебибитес (тиб) или больше, необходимо использовать секционирование GPT. Если размер диска составляет 2 Тиб, можно использовать секционирование MBR или GPT.  
 
-В данном примере *sdc* — это диск, который нам нужен. Создайте разделы на диске с помощью `parted`. Если размер диска составляет 2 ТиБ или больше, необходимо использовать формат разделов GPT. Если размер диска не превышает 2 ТиБ, можно использовать формат разделов MBR или GPT. Если вы используете секционирование MBR, можно использовать `fdisk`. Установите этот диск как основной диск для раздела 1 и примите остальные значения по умолчанию. В следующем примере запускается процесс `fdisk` в */dev/sdc*:
 
-```bash
-sudo fdisk /dev/sdc
-```
-
-Используйте команду `n`, чтобы добавить новый раздел. В этом примере мы выбираем `p` для основного раздела и принимаем остальные значения по умолчанию. Результат будет выглядеть примерно так:
+В следующем примере используется `parted` On `/dev/sdc` , где первый диск данных обычно находится на большинстве виртуальных машин. Замените на `sdc` правильный параметр для диска. Мы также используем форматирование в файловой системе [XFS](https://xfs.wiki.kernel.org/) .
 
 ```bash
-Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
-Building a new DOS disklabel with disk identifier 0x2a59b123.
-Changes will remain in memory only, until you decide to write them.
-After that, of course, the previous content won't be recoverable.
-
-Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
-
-Command (m for help): n
-Partition type:
-   p   primary (0 primary, 0 extended, 4 free)
-   e   extended
-Select (default p): p
-Partition number (1-4, default 1): 1
-First sector (2048-10485759, default 2048):
-Using default value 2048
-Last sector, +sectors or +size{K,M,G} (2048-10485759, default 10485759):
-Using default value 10485759
+sudo parted /dev/sdc --script mklabel gpt mkpart xfspart xfs 0% 100%
+sudo mkfs.xfs /dev/sdc1
+sudo partprobe /dev/sdc1
 ```
 
-Распечатайте таблицу разделов, введя `p`, а затем используйте `w`, чтобы записать таблицу на диск и выйти. Результат должен выглядеть примерно следующим образом:
+Используйте [`partprobe`](https://linux.die.net/man/8/partprobe) программу, чтобы убедиться в том, что ядро осведомлено о новом разделе и файловой системе. Невозможность использования `partprobe` может привести к тому, что команды blkid или лслбк не возвращали UUID для новой файловой системы немедленно.
 
-```bash
-Command (m for help): p
 
-Disk /dev/sdc: 5368 MB, 5368709120 bytes
-255 heads, 63 sectors/track, 652 cylinders, total 10485760 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk identifier: 0x2a59b123
+### <a name="mount-the-disk"></a>Подключение диска
 
-   Device Boot      Start         End      Blocks   Id  System
-/dev/sdc1            2048    10485759     5241856   83  Linux
-
-Command (m for help): w
-The partition table has been altered!
-
-Calling ioctl() to re-read partition table.
-Syncing disks.
-```
-Используйте приведенную ниже команду, чтобы обновить ядро:
-```
-partprobe 
-```
-
-Теперь запишите файловую систему в раздел, выполнив команду `mkfs`. Укажите тип файловой системы и имя устройства. В следующем примере создается файловая система *ext4* в разделе */dev/sdc1*, созданном на предыдущем шаге:
-
-```bash
-sudo mkfs -t ext4 /dev/sdc1
-```
-
-Вы должны увидеть результат, аналогичный приведенному ниже.
-
-```bash
-mke2fs 1.42.9 (4-Feb-2014)
-Discarding device blocks: done
-Filesystem label=
-OS type: Linux
-Block size=4096 (log=2)
-Fragment size=4096 (log=2)
-Stride=0 blocks, Stripe width=0 blocks
-327680 inodes, 1310464 blocks
-65523 blocks (5.00%) reserved for the super user
-First data block=0
-Maximum filesystem blocks=1342177280
-40 block groups
-32768 blocks per group, 32768 fragments per group
-8192 inodes per group
-Superblock backups stored on blocks:
-    32768, 98304, 163840, 229376, 294912, 819200, 884736
-Allocating group tables: done
-Writing inode tables: done
-Creating journal (32768 blocks): done
-Writing superblocks and filesystem accounting information: done
-```
-
-Теперь создайте каталог для подключения файловой системы, используя `mkdir`. В следующем примере создается каталог в */datadrive*:
+Теперь создайте каталог для подключения файловой системы, используя `mkdir`. В следующем примере создается каталог в `/datadrive` :
 
 ```bash
 sudo mkdir /datadrive
 ```
 
-Используйте `mount`, чтобы затем подключить файловую систему. В следующем примере раздел */dev/sdc1* подключается к точке подключения */datadrive*:
+Используйте `mount`, чтобы затем подключить файловую систему. В следующем примере секция подключается `/dev/sdc1` к `/datadrive` точке подключения:
 
 ```bash
 sudo mount /dev/sdc1 /datadrive
 ```
 
-Чтобы обеспечить автоматическое повторное подключение диска после перезагрузки, его необходимо добавить в файл */etc/fstab*. Также для ссылки на диск настоятельно рекомендуется использовать в файле */etc/fstab* идентификатор UUID (глобальный уникальный идентификатор), а не просто имя устройства (например, */dev/sdc1*). Если операционная система обнаруживает ошибку диска во время загрузки, использование UUID позволяет избежать подключения ошибочного диска в это расположение. Остальные диски с данными затем получают те же идентификаторы устройств. Чтобы найти UUID нового диска, используйте служебную программу `blkid`:
+### <a name="persist-the-mount"></a>Сохранение подключения
+
+Чтобы обеспечить автоматическое повторное подключение диска после перезагрузки, его необходимо добавить в файл */etc/fstab*. Также настоятельно рекомендуется использовать UUID (универсальный уникальный идентификатор) в */etc/fstab* для ссылки на диск, а не только на имя устройства (например, */dev/sdc1*). Если операционная система обнаруживает ошибку диска во время загрузки, использование UUID позволяет избежать подключения ошибочного диска в это расположение. Остальные диски с данными затем получают те же идентификаторы устройств. Чтобы найти UUID нового диска, используйте служебную программу `blkid`:
 
 ```bash
 sudo blkid
@@ -186,14 +129,16 @@ sudo blkid
 Затем откройте файл */etc/fstab* в текстовом редакторе, как показано ниже:
 
 ```bash
-sudo vi /etc/fstab
+sudo nano /etc/fstab
 ```
 
-В этом примере используйте значение UUID для устройства */dev/sdc1*, созданного на предыдущих шагах, и точку подключения */datadrive*. Добавьте следующую строку в конец файла */etc/fstab* :
+В этом примере используйте значение UUID для `/dev/sdc1` устройства, созданного на предыдущих шагах, и точку подключения `/datadrive` . Добавьте следующую строку в конец `/etc/fstab` файла:
 
 ```bash
 UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults,nofail   1   2
 ```
+
+В этом примере мы используем редактор Nano, поэтому по завершении редактирования файла используйте `Ctrl+O` для записи файла и `Ctrl+X` выхода из редактора.
 
 > [!NOTE]
 > Если вы позднее удалите диск данных без редактирования файла fstab, виртуальная машина может не загрузиться. Большинство дистрибутивов поддерживает параметры fstab *nofail* и (или) *nobootwait*. Эти параметры позволяют системе загружаться, даже если диск не подключится во время загрузки. Дополнительные сведения об этих параметрах см. в документации дистрибутива.

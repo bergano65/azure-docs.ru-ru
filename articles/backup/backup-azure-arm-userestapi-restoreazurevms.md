@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как управл
 ms.topic: conceptual
 ms.date: 09/12/2018
 ms.assetid: b8487516-7ac5-4435-9680-674d9ecf5642
-ms.openlocfilehash: add4bdeaa202c244ce2e0e83f999f29afdca5c28
-ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
+ms.openlocfilehash: eef30808dddfb20d01fcb6e25a88b9a64e4445d8
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/24/2020
-ms.locfileid: "88761480"
+ms.locfileid: "88763547"
 ---
 # <a name="restore-azure-virtual-machines-using-rest-api"></a>Восстановление виртуальных машин Azure с помощью REST API
 
@@ -115,11 +115,16 @@ X-Powered-By: ASP.NET
 
 Точка восстановления определяется с помощью ответа `{name}` выше.
 
-## <a name="restore-disks"></a>Восстановление дисков
+## <a name="restore-operations"></a>Операции восстановления
 
-Если необходимо настроить создание виртуальной машины на основе данных резервной копии, можно просто восстановить диски в выбранной учетной записи хранения и создать виртуальную машину на основе этих дисков в соответствии с их требованиями. Учетная запись хранения должна находиться в том же регионе, что и хранилище служб восстановления, и не должна быть избыточной в пределах зоны. Диски, а также конфигурация виртуальной машины, для которой создана резервная копия ("vmconfig.jsв"), будут храниться в указанной учетной записи хранения.
+Выбрав [соответствующую точку восстановления](#select-recovery-point), перейдите к активации операции восстановления.
 
-Активация восстановления дисков — это запрос *POST*. Дополнительные сведения об операции восстановления дисков см. [в этой статье](/rest/api/backup/restores/trigger).
+***Все операции восстановления в элементе Backup выполняются с помощью того же API-интерфейса *POST* . Только изменения текста запроса с помощью сценариев восстановления.***
+
+> [!IMPORTANT]
+> [Здесь](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#restore-options)приводятся все сведения о различных параметрах восстановления и их зависимостях. Прежде чем приступить к активации этих операций, ознакомьтесь с разработкой.
+
+Активация операций восстановления является запросом *POST* . Дополнительные сведения об API см. в [REST API "триггер Restore"](/rest/api/backup/restores/trigger).
 
 ```http
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/restore?api-version=2019-05-13
@@ -127,41 +132,15 @@ POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/
 
 `{containerName}` и `{protectedItemName}` созданы [здесь](backup-azure-arm-userestapi-backupazurevms.md#example-responses-to-get-operation). `{fabricName}` — это Azure, а `{recoveryPointId}` — это поле `{name}` точки восстановления, которое упоминалось [выше](#example-response).
 
-### <a name="create-request-body"></a>Создание текста запроса
+После получения точки восстановления необходимо создать текст запроса для соответствующего сценария восстановления. В следующих разделах приводится краткое описание текста запроса для каждого сценария.
 
-Чтобы инициировать восстановление диска из резервной копии виртуальной машины Azure, выполните компоненты текста запроса.
+- [Восстановление дисков](#restore-disks)
+- [Замена дисков](#replace-disks-in-a-backed-up-virtual-machine)
+- [Восстановление в качестве новой виртуальной машины](#restore-as-another-virtual-machine)
 
-|Имя  |Тип  |Описание  |
-|---------|---------|---------|
-|properties     | [IaaSVMRestoreRequest](/rest/api/backup/restores/trigger#iaasvmrestorerequest)        |    RestoreRequestResourceProperties     |
+### <a name="restore-response"></a>Ответ на восстановление
 
-Полный список определений в тексте запроса и другие сведения см. в [документации REST API о запуске восстановления](/rest/api/backup/restores/trigger#request-body).
-
-#### <a name="example-request"></a>Пример запроса
-
-Следующий текст запроса определяет свойства, необходимые для запуска восстановления диска.
-
-```json
-{
-  "properties": {
-    "objectType": "IaasVMRestoreRequest",
-    "recoveryPointId": "20982486783671",
-    "recoveryType": "RestoreDisks",
-    "sourceResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachines/testVM",
-    "storageAccountId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testRG/providers/Microsoft.Storage/storageAccounts/testAccount",
-    "region": "westus",
-    "createNewCloudService": false,
-    "originalStorageAccountOption": false,
-    "encryptionDetails": {
-      "encryptionEnabled": false
-    }
-  }
-}
-```
-
-### <a name="response"></a>Ответ
-
-Активация восстановления диска является [асинхронной операцией](../azure-resource-manager/management/async-operations.md). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
+Активация любой операции восстановления является [асинхронной операцией](../azure-resource-manager/management/async-operations.md). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
@@ -227,15 +206,90 @@ X-Powered-By: ASP.NET
 }
 ```
 
-Так как задание резервного копирования — это длительная операция, оно должно отслеживаться, как описано в [документе REST API о мониторинге заданий](backup-azure-arm-userestapi-managejobs.md#tracking-the-job).
+Так как задание восстановления является длительной операцией, его следует отслеживать, как описано в статье [мониторинг заданий с помощью REST API документа](backup-azure-arm-userestapi-managejobs.md#tracking-the-job).
 
-После завершения долго выполняющегося задания диски и конфигурации из резервной копии виртуальной машины (VMConfig.json) будут присутствовать в указанной учетной записи хранения.
+### <a name="restore-disks"></a>Восстановление дисков
 
-## <a name="restore-as-another-virtual-machine"></a>Восстановление в качестве другой виртуальной машины
+Если необходимо настроить создание виртуальной машины на основе данных резервной копии, можно просто восстановить диски в выбранной учетной записи хранения и создать виртуальную машину на основе этих дисков в соответствии с их требованиями. Учетная запись хранения должна находиться в том же регионе, что и хранилище служб восстановления, и не должна быть избыточной в пределах зоны. Диски, а также конфигурация виртуальной машины, для которой создана резервная копия ("vmconfig.jsв"), будут храниться в указанной учетной записи хранения. Как упоминалось [выше](#restore-operations), соответствующий текст запроса для восстановления дисков приведен ниже.
 
-[Выберите точку восстановления](#select-recovery-point) и создайте текст запроса как указано ниже, чтобы создать другую виртуальную машину Azure с данными из точки восстановления.
+#### <a name="create-request-body"></a>Создание текста запроса
 
-Следующий текст запроса определяет свойства, необходимые для запуска восстановления виртуальной машины.
+Чтобы инициировать восстановление диска из резервной копии виртуальной машины Azure, выполните компоненты текста запроса.
+
+|Имя  |Тип  |Описание  |
+|---------|---------|---------|
+|properties     | [IaaSVMRestoreRequest](/rest/api/backup/restores/trigger#iaasvmrestorerequest)        |    RestoreRequestResourceProperties     |
+
+Полный список определений в тексте запроса и другие сведения см. в [документации REST API о запуске восстановления](/rest/api/backup/restores/trigger#request-body).
+
+##### <a name="example-request"></a>Пример запроса
+
+Следующий текст запроса определяет свойства, необходимые для запуска восстановления диска.
+
+```json
+{
+  "properties": {
+    "objectType": "IaasVMRestoreRequest",
+    "recoveryPointId": "20982486783671",
+    "recoveryType": "RestoreDisks",
+    "sourceResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachines/testVM",
+    "storageAccountId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testRG/providers/Microsoft.Storage/storageAccounts/testAccount",
+    "region": "westus",
+    "createNewCloudService": false,
+    "originalStorageAccountOption": false,
+    "encryptionDetails": {
+      "encryptionEnabled": false
+    }
+  }
+}
+```
+
+После того как вы отправите ответ, как описано [выше](#responses), и полное задание выполнено, диски и Конфигурация виртуальной машины ("VMConfig.jsна") будут присутствовать в указанной учетной записи хранения.
+
+### <a name="replace-disks-in-a-backed-up-virtual-machine"></a>Замена дисков в резервной виртуальной машине
+
+При восстановлении дисков из точки восстановления диски заменяют текущие диски резервной копии виртуальной машины дисками из точки восстановления. Как упоминалось [выше](#restore-operations), соответствующий текст запроса для замены дисков приведен ниже.
+
+#### <a name="create-request-body"></a>Создание текста запроса
+
+Чтобы активировать замену дисков из резервной копии виртуальной машины Azure, ниже приведены компоненты текста запроса.
+
+|Имя  |Тип  |Описание  |
+|---------|---------|---------|
+|properties     | [IaaSVMRestoreRequest](/rest/api/backup/restores/trigger#iaasvmrestorerequest)        |    RestoreRequestResourceProperties     |
+
+Полный список определений в тексте запроса и другие сведения см. в [документации REST API о запуске восстановления](/rest/api/backup/restores/trigger#request-body).
+
+#### <a name="example-request"></a>Пример запроса
+
+Следующий текст запроса определяет свойства, необходимые для запуска восстановления диска.
+
+```json
+{
+    "properties": {
+        "objectType": "IaasVMRestoreRequest",
+        "recoveryPointId": "20982486783671",
+        "recoveryType": "OriginalLocation",
+        "sourceResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachines/testVM",
+        "storageAccountId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testRG/providers/Microsoft.Storage/storageAccounts/testAccount",  
+        "region": "westus",
+        "createNewCloudService": false,
+        "originalStorageAccountOption": false,
+        "affinityGroup": "",
+        "diskEncryptionSetId": null,
+        "subnetId": null,
+        "targetDomainNameId": null,
+        "targetResourceGroupId": null,
+        "targetVirtualMachineId": null,
+        "virtualNetworkId": null
+     }
+}
+
+```
+
+### <a name="restore-as-another-virtual-machine"></a>Восстановление в качестве другой виртуальной машины
+
+Как упоминалось [выше](#restore-operations), в следующем тексте запроса определяются свойства, необходимые для запуска восстановления виртуальной машины.
 
 ```json
 {
@@ -271,7 +325,7 @@ X-Powered-By: ASP.NET
 }
 ```
 
-Для восстановления дисков ответы должны обрабатываться так же, как [описано выше](#response).
+Для восстановления дисков ответы должны обрабатываться так же, как [описано выше](#responses).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

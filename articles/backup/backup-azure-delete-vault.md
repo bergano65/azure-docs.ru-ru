@@ -3,12 +3,12 @@ title: Удаление хранилища Службы восстановлен
 description: Из этой статьи вы узнаете, как удалить зависимости, а затем удалить хранилище служб восстановления Azure Backup.
 ms.topic: conceptual
 ms.date: 06/04/2020
-ms.openlocfilehash: ffe8005ed6c2583763a10ba515ff19f0ef62ae0d
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: a7e922069f567a0b907c2f2cd28fe09de040cdee
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88652837"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757223"
 ---
 # <a name="delete-an-azure-backup-recovery-services-vault"></a>Удаление хранилища служб восстановления Azure Backup
 
@@ -357,13 +357,13 @@ ms.locfileid: "88652837"
 1. Выполните следующую команду, используя идентификатор подписки, имя группы ресурсов и имя хранилища. Если у вас нет зависимостей, хранилище удаляется при выполнении следующей команды:
 
    ```azurepowershell
-   ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<recovery services vault name>?api-version=2015-03-15
+   ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<Recovery Services vault name>?api-version=2015-03-15
    ```
 
 2. Если хранилище не пусто, вы получите следующее сообщение об ошибке: *хранилище не может быть удалено, так как в этом хранилище есть ресурсы.* Чтобы удалить защищенный элемент или контейнер в хранилище, выполните следующую команду:
 
    ```azurepowershell
-   ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<recovery services vault name>/registeredIdentities/<container name>?api-version=2016-06-01
+   ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<Recovery Services vault name>/registeredIdentities/<container name>?api-version=2016-06-01
    ```
 
 3. В портал Azure убедитесь, что хранилище удалено.

@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 05/31/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: f9e4fdb0fe8872c505bbbbb10da11d8fb74a22b3
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 322a3b4e8d362d1b751b2c016e6f7cf904f11d7e
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87927221"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88752336"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Устранение неполадок службы файлов Azure в Windows
 
@@ -364,6 +364,16 @@ Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGrou
 ### <a name="solution"></a>Решение
 
 Рекомендуется использовать [средство icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls) для настройки разрешений на уровне каталога или файла в качестве обходного пути. 
+
+## <a name="errors-when-running-join-azstorageaccountforauth-cmdlet"></a>Ошибки при выполнении командлета Join-Азсторажеаккаунтфораус
+
+### <a name="error-the-directory-service-was-unable-to-allocate-a-relative-identifier"></a>Ошибка: "службе каталогов не удалось выделить относительный идентификатор"
+
+Эта идентичное может возникать, если контроллер домена, содержащий роль FSMO хозяина RID, недоступен или был удален из домена и восстановлен из резервной копии.  Убедитесь, что все контроллеры домена работают и доступны.
+
+### <a name="error-cannot-bind-positional-parameters-because-no-names-were-given"></a>Ошибка: "Не удается привязать позиционные параметры, поскольку имена не предоставлены"
+
+Эта ошибка чаще всего активируется при синтаксической ошибке в команде Join-AzStorageAccountforAuth.  Проверьте правильность написания или синтаксических ошибок в команде и убедитесь, что установлена последняя версия модуля Азфилешибрид ( https://github.com/Azure-Samples/azure-files-samples/releases) установлен.  
 
 ## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

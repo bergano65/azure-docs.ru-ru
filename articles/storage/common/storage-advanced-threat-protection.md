@@ -7,15 +7,15 @@ author: tamram
 ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 08/21/2020
 ms.author: tamram
 ms.reviewer: ozgun
-ms.openlocfilehash: 3069ee020d5f127eb0bdb8cbaf251cd3f3cef8d9
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: e037607d1f86e6df4d3f5b12e29ba8fde447ebc9
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86118428"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757937"
 ---
 # <a name="configure-advanced-threat-protection-for-azure-storage"></a>Настройка расширенной защиты от угроз для службы хранилища Azure
 
@@ -32,6 +32,17 @@ ms.locfileid: "86118428"
 Учетные записи с иерархическими пространствами имен, включенными для Data Lake Storage, поддерживают транзакции с использованием API-интерфейсов хранилища BLOB-объектов Azure и Data Lake Storage API. Файловые ресурсы Azure поддерживают транзакции по протоколу SMB.
 
 Сведения о ценах, включая бесплатную пробную версию на 30 дней, см. на [странице цен на центр безопасности Azure](https://azure.microsoft.com/pricing/details/security-center/).
+
+В следующем списке приведены сводные сведения о доступности Advanced Threat Protection для службы хранилища Azure.
+
+- Состояние выпуска:
+  - [Хранилище BLOB-объектов](https://azure.microsoft.com/services/storage/blobs/) (общая доступность)
+  - Службы [файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) (Предварительная версия поддерживает транзакции SMB и RESTful)
+  - Azure Data Lake Storage 2-го поколения (предварительная версия)
+- Облако.<br>
+    ✔ коммерческие облака;<br>
+    ✔ US Gov<br>
+    ✘ Китая gov, другие gov
 
 ## <a name="set-up-advanced-threat-protection"></a>Настройка расширенной защиты от угроз
 
@@ -51,7 +62,7 @@ ms.locfileid: "86118428"
 1. В разделе **Выбор ценовой категории по типу ресурса** в строке **учетные записи хранения** щелкните **включено** или **отключено**.
 
     ![Включение ATP в центре безопасности](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-pricing2.png)
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ### <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -107,7 +118,7 @@ ms.locfileid: "86118428"
 При возникновении аномальных операций с хранилищем вы получите уведомление по электронной почте с информацией о подозрительном событии безопасности. Вы получите следующие сведения о событии:
 
 * Характер аномалии
-* имя учетной записи хранения.
+* Имя учетной записи хранения.
 * Время события
 * Тип хранилища
 * Возможные причины

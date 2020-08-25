@@ -3,12 +3,12 @@ title: Обратимое удаление для SQL Server на виртуал
 description: Узнайте, как обратимое удаление для SQL Server на виртуальной машине Azure и SAP HANA в рабочих нагрузках виртуальных машин Azure делает резервные копии более безопасными.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: c0eaedea2d5428376befaade42f87348cf84e7bc
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: bf9cc2551d85c1bc663db2f9e61e2ea6895f1d23
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86538196"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757478"
 ---
 # <a name="soft-delete-for-sql-server-in-azure-vm-and-sap-hana-in-azure-vm-workloads"></a>Обратимое удаление для SQL Server на виртуальной машине Azure и SAP HANA в рабочих нагрузках виртуальных машин Azure
 

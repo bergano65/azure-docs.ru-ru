@@ -3,12 +3,12 @@ title: Автоматическое включение резервного ко
 description: Статья, в которой описывается, как использовать политику Azure для автоматического включения резервного копирования для всех виртуальных машин, созданных в данной области.
 ms.topic: conceptual
 ms.date: 11/08/2019
-ms.openlocfilehash: 19985ebc51fe713ee0392800e2791ea1891ff3cd
-ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
+ms.openlocfilehash: fd54c25899bc1e58a753821d2c7c2df8ff213865
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88612679"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88763598"
 ---
 # <a name="auto-enable-backup-on-vm-creation-using-azure-policy"></a>Автоматическое включение резервного копирования при создании виртуальной машины с использованием Политики Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "88612679"
 
 ## <a name="using-the-built-in-policy"></a>Использование встроенной политики
 
-Чтобы назначить политику для требуемой области, выполните следующие действия.
+Чтобы назначить политику для требуемой области, выполните следующие действия:
 
 1. Войдите в портал Azure и перейдите на панель мониторинга **политики** .
 1. В меню слева выберите **определения** , чтобы получить список всех встроенных политик в ресурсах Azure.

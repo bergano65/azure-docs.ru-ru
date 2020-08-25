@@ -10,12 +10,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9cb1b4d33a538b48ca1519d66f6602d902033c3e
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 3bf180c2b70a686879082888e45e67936cdbec67
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87494831"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799236"
 ---
 # <a name="design-tables-using-synapse-sql"></a>Разработка таблиц с помощью синапсе SQL
 
@@ -28,21 +28,21 @@ ms.locfileid: "87494831"
 | Раздел                                                        | Пул SQL | Использование SQL по запросу |
 | ------------------------------------------------------------ | ------------------ | ----------------------- |
 | [Определение категории таблицы](#determine-table-category)        | Да                | Нет                      |
-| [имена схем;](#schema-names)                                | да                | да                     |
+| [имена схем;](#schema-names)                                | Да                | Да                     |
 | [Имена таблиц](#table-names)                                  | Да                | Нет                      |
 | [Сохраняемость таблицы](#table-persistence)                      | Да                | Нет                      |
 | [Обычная таблица](#regular-table)                              | Да                | Нет                      |
-| [Временная таблица](#temporary-table)                          | да                | да                     |
-| [Внешняя таблица](#external-table)                            | да                | да                     |
-| [Типы данных](#data-types)                                    | да                | да                     |
+| [Временная таблица](#temporary-table)                          | Да                | Да                     |
+| [Внешняя таблица](#external-table)                            | Да                | Да                     |
+| [Типы данных](#data-types)                                    | Да                | Да                     |
 | [Распределенные таблицы](#distributed-tables)                    | Да                | Нет                      |
 | [Таблицы с хэш-распределением](#hash-distributed-tables)          | Да                | Нет                      |
 | [Реплицированные таблицы](#replicated-tables)                      | Да                | Нет                      |
 | [Таблицы с распределением методом циклического перебора](#round-robin-tables)                    | Да                | Нет                      |
 | [Общие методы распределения для таблиц](#common-distribution-methods-for-tables) | Да                | Нет                      |
-| [Секции](#partitions)                                    | да                | да                     |
+| [Секции](#partitions)                                    | Да                | Да                     |
 | [Индексы columnstore](#columnstore-indexes)                  | Да                | Нет                      |
-| [Статистика](#statistics)                                    | да                | да                     |
+| [Статистика](#statistics)                                    | Да                | Да                     |
 | [Первичный ключ и уникальный ключ](#primary-key-and-unique-key)    | Да                | Нет                      |
 | [Команды для создания таблиц](#commands-for-creating-tables) | Да                | Нет                      |
 | [Согласование исходных данных с хранилищем данных](#align-source-data-with-the-data-warehouse) | Да                | Нет                      |
@@ -228,7 +228,7 @@ ORDER BY
 Пул SQL поддерживает многие, но не все функции таблиц, предлагаемые другими базами данных.  В следующем списке показаны некоторые функции таблиц, которые не поддерживаются в пуле SQL.
 
 - Внешний ключ, проверка [ограничений таблицы](/sql/t-sql/statements/alter-table-table-constraint-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
-- [Вычисленные столбцы](/sql/t-sql/statements/alter-table-computed-column-definition-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [Вычисляемые столбцы](/sql/t-sql/statements/alter-table-computed-column-definition-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [Индексированные представления](/sql/relational-databases/views/create-indexed-views?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [Последовательность](/sql/t-sql/statements/create-sequence-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [Разреженные столбцы](/sql/relational-databases/tables/use-sparse-columns?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
@@ -360,6 +360,9 @@ SELECT *
 FROM size
 ;
 ```
+
+>[!TIP]
+> Для повышения производительности в синапсе SQL рассмотрите возможность использования представления **sys. pdw_permanent_table_mappings** вместо **sys. pdw_table_mappings** в постоянных пользовательских таблицах. Дополнительные сведения см. в разделе **[sys. pdw_permanent_table_mappings &#40;&#41;Transact-SQL ](/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql?view=azure-sqldw-latest)** .
 
 ### <a name="table-space-summary"></a>Сводка табличного пространства
 

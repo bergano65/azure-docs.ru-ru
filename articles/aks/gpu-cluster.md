@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 08/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: d19bfac318ab2ed20d021e10b43b691b525ba897
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 27c284ff7e806c9f194005ed26c05e99c4697083
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88749142"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757648"
 ---
 # <a name="use-gpus-for-compute-intensive-workloads-on-azure-kubernetes-service-aks"></a>Использование процессоров GPU для интенсивных вычислительных рабочих нагрузок в Службе Azure Kubernetes (AKS)
 
@@ -158,12 +158,12 @@ az extension add --name aks-preview
 az extension update --name aks-preview
 ```
 
-### <a name="use-the-aks-specialized-gpu-image-on-new-clusters-preview"></a>Использование специализированного образа GPU AKS в новых кластерах (Предварительная версия)
+### <a name="use-the-aks-specialized-gpu-image-on-new-clusters-preview"></a>Использование специализированного образа GPU AKS в новых кластерах (Предварительная версия)    
 
 Настройте кластер для использования специализированного образа GPU AKS при создании кластера. Используйте `--aks-custom-headers` флаг для узлов агента GPU в новом кластере, чтобы использовать специализированный образ GPU AKS.
 
 ```azure-cli
-az aks create --name myAKSCluster --resource-group myResourceGroup --node-vm-size Standard_NC6s_v2 --node-count 1 --aks-custom-headers UseGPUDedicatedVHD=true
+az aks create --name myAKSCluster --resource-group myResourceGroup --node-vm-size Standard_NC6 --node-count 1 --aks-custom-headers UseGPUDedicatedVHD=true
 ```
 
 Если вы хотите создать кластер с помощью обычных образов AKS, это можно сделать, опустив пользовательский `--aks-custom-headers` тег. Вы также можете добавить дополнительные специализированные пулы узлов GPU в соответствии с разрядом.
@@ -178,6 +178,12 @@ az aks nodepool add --name gpu --cluster-name myAKSCluster --resource-group myRe
 ```
 
 Если вы хотите создать пул узлов с помощью обычных образов AKS, это можно сделать, опустив пользовательский `--aks-custom-headers` тег. 
+
+> [!NOTE]
+> Если номер SKU GPU требует виртуальных машин поколения 2, можно создать:
+> ```azure-cli
+> az aks nodepool add --name gpu --cluster-name myAKSCluster --resource-group myResourceGroup --node-vm-size Standard_NC6s_v2 --node-count 1 --aks-custom-headers UseGPUDedicatedVHD=true,usegen2vm=true
+> ```
 
 ## <a name="confirm-that-gpus-are-schedulable"></a>Подтверждение того, что процессоры GPU доступны для планирования
 

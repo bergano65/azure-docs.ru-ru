@@ -4,12 +4,12 @@ description: Найдите ответы на часто задаваемые в
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 2781646e548f4f530b26ca41466f158597e817d9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a5fdbb78f6d700d14c2458a8d87a4b0f9a971207
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87090983"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88762850"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Часто задаваемые вопросы о SQL Server базах данных, работающих в резервной копии виртуальной машины Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "87090983"
  Хотя этот метод помогает в том, что приложение резервного копирования использует большое количество ресурсов, SQL Server [Resource Governor](/sql/relational-databases/resource-governor/resource-governor) является более универсальным способом указания ограничений на объем ресурсов ЦП, физических операций ввода-вывода и памяти, которые могут использоваться входящими запросами приложения.
 
 > [!NOTE]
-> В UX вы по-прежнему можете запланировать столько резервных копий в любой момент времени, однако они будут обрабатываться в скользящем окне, скажем, 5, в соответствии с приведенным выше примером.
+> В UX вы по-прежнему можете запланировать столько резервных копий в любое заданное время. Однако они будут обработаны в скользящем окне, скажем, 5, в соответствии с приведенным выше примером.
 
 ## <a name="can-i-run-a-full-backup-from-a-secondary-replica"></a>Можно ли запустить полное резервное копирование из вторичной реплики?
 

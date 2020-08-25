@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 06/09/2020
 ms.author: rolyon
-ms.openlocfilehash: a93901bd95d57b29aeb1464652737a77a1a84376
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 343f6b7a78ca98615d512d31d7ac1c10d9de8f10
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84792002"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799338"
 ---
 # <a name="elevate-access-to-manage-all-azure-subscriptions-and-management-groups"></a>Повышение прав доступа для управления всеми подписками Azure и группами управления
 
@@ -144,6 +144,22 @@ CanDelegate        : False
     ```
 
 ## <a name="azure-cli"></a>Azure CLI
+
+### <a name="elevate-access-for-a-global-administrator"></a>Повышение прав доступа глобального администратора
+
+Выполните следующие основные действия, чтобы повысить уровень доступа для глобального администратора с помощью Azure CLI.
+
+1. Используйте команду [AZ RESTful](/cli/azure/reference-index?view=azure-cli-latest#az-rest) , чтобы вызвать `elevateAccess` конечную точку, которая предоставляет роль администратора доступа пользователей в корневой области ( `/` ).
+
+    ```azurecli
+    az rest --method post --url "/providers/Microsoft.Authorization/elevateAccess?api-version=2016-07-01"
+    ```
+
+1. Внесите необходимые изменения при повышенном доступе.
+
+    Сведения о назначении ролей см. [в статье Добавление и удаление назначений ролей Azure с помощью Azure CLI](role-assignments-cli.md).
+
+1. Выполните действия, описанные в следующем разделе, чтобы удалить доступ с повышенными правами.
 
 ### <a name="list-role-assignment-at-root-scope-"></a>Вывод списка назначений ролей в корневой области (/)
 
@@ -311,7 +327,7 @@ az role assignment list --role "User Access Administrator" --scope "/"
     DELETE https://management.azure.com/providers/Microsoft.Authorization/roleAssignments/11111111-1111-1111-1111-111111111111?api-version=2015-07-01
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о различных ролях](rbac-and-directory-admin-roles.md)
 - [Добавление или удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)

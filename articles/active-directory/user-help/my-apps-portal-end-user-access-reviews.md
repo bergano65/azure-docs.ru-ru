@@ -12,12 +12,12 @@ ms.date: 02/03/2020
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: 3b529c8112683281148751091ee93dd12ae73b4a
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: dbe05f264b0fca6c1a5e8e7d944d94a6bed55392
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83741925"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798029"
 ---
 # <a name="perform-an-access-review-from-the-my-apps-portal"></a>Выполнение проверки доступа на портале "Мои приложения"
 
@@ -28,7 +28,7 @@ ms.locfileid: "83741925"
 [!INCLUDE [preview-notice](../../../includes/active-directory-end-user-my-apps-portal.md)]
 
 >[!Important]
->Эти материалы предназначены для пользователей портала **Мои приложения**. Администраторы могут найти дополнительные сведения о настройке облачных приложений и управлении ими в [документации по управлению приложениями](https://docs.microsoft.com/azure/active-directory/manage-apps).
+>Эти материалы предназначены для пользователей портала **Мои приложения**. Администраторы могут найти дополнительные сведения о настройке облачных приложений и управлении ими в [документации по управлению приложениями](../manage-apps/index.yml).
 
 ## <a name="manage-access-reviews"></a>Управление проверками доступа
 
@@ -58,7 +58,7 @@ ms.locfileid: "83741925"
     ![Страница "Проверка доступа" с подробными сведениями](media/my-apps-portal/my-apps-portal-perform-access-reviews-page.png)
 
     >[!Note]
-    >Если вы являетесь администратором и можете просмотреть доступ своей организации к группам и приложениям, вы увидите другую страницу. Дополнительные сведения о проверке групп или приложений для организации см. в статье [Проверка доступа к группам или приложениям в проверке доступа Azure AD](https://docs.microsoft.com/azure/active-directory/governance/perform-access-review).
+    >Если вы являетесь администратором и можете просмотреть доступ своей организации к группам и приложениям, вы увидите другую страницу. Дополнительные сведения о проверке групп или приложений для организации см. в статье [Проверка доступа к группам или приложениям в проверке доступа Azure AD](../governance/perform-access-review.md).
 
 6. Выберите **Да** для сохранения доступа или **Нет** для удаления доступа.
 
