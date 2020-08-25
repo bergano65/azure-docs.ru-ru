@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce3a97678dea7e7b26caa3b1b091b023eca1a555
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e2da67b9996156f136aa2eddb8aa3d2b1777a554
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87015703"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88794563"
 ---
 # <a name="azure-active-directory-version-2-cmdlets-for-group-management"></a>Командлеты Azure Active Directory версии 2 для управления группами
 
@@ -134,7 +134,7 @@ ms.locfileid: "87015703"
 ```
 
 > [!NOTE]
-> Командлеты Azure AD PowerShell используют стандарт запросов OData. Дополнительные сведения см. в разделе **$filter** статьи [OData system query options using the OData endpoint](https://msdn.microsoft.com/library/gg309461.aspx#BKMK_filter) (Параметры системных запросов OData с использованием конечной точки OData).
+> Командлеты Azure AD PowerShell используют стандарт запросов OData. Дополнительные сведения см. в разделе **$filter** статьи [OData system query options using the OData endpoint](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)#BKMK_filter) (Параметры системных запросов OData с использованием конечной точки OData).
 
 ## <a name="create-groups"></a>Создание групп
 
@@ -322,7 +322,7 @@ ms.locfileid: "87015703"
 * postmaster
 * root
 * secure
-* безопасность
+* security
 * ssl-admin
 * webmaster
 

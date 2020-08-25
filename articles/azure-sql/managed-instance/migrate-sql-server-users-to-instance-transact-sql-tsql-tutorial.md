@@ -11,10 +11,10 @@ ms.author: mireks
 ms.reviewer: vanto
 ms.date: 10/30/2019
 ms.openlocfilehash: f2dd34ab7c6ee5be26836e4abb86960605ee44ee
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
+ms.lasthandoff: 08/22/2020
 ms.locfileid: "84708690"
 ---
 # <a name="tutorial-migrate-windows-users-and-groups-in-a-sql-server-instance-to-azure-sql-managed-instance-using-t-sql-ddl-syntax"></a>Руководство по переносу пользователей и групп Windows, настроенных для экземпляра SQL Server, в управляемый экземпляр SQL Azure с использованием синтаксиса T-SQL DDL

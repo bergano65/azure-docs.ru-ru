@@ -14,12 +14,12 @@ ms.subservice: pim
 ms.date: 11/08/2019
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d1c9255de6b9f449a89a994cb3286139daa28ea9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 24b7845ec66a85e6ced4f1df9caec409a94016bf
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87034105"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782606"
 ---
 # <a name="use-azure-custom-roles-in-privileged-identity-management"></a>Использование пользовательских ролей Azure в управление привилегированными пользователями
 
@@ -31,7 +31,7 @@ ms.locfileid: "87034105"
 
 ## <a name="create-the-custom-role"></a>Создание настраиваемой роли
 
-Чтобы создать настраиваемую роль для ресурса, выполните действия, описанные в разделе [пользовательские роли Azure](../role-based-access-control-custom-roles.md).
+Чтобы создать настраиваемую роль для ресурса, выполните действия, описанные в разделе [пользовательские роли Azure](../../role-based-access-control/custom-roles.md).
 
 После создания настраиваемой роли присвойте ей описательное имя, чтобы легко определять, какие из встроенных ролей нужно дублировать.
 

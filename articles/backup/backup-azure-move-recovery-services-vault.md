@@ -4,12 +4,12 @@ description: Инструкции по перемещению хранилища
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.custom: references_regions
-ms.openlocfilehash: 4751a6068904ef03a4d30d322a285e4074476b70
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: b4de4c58e6a6551fa7c27db9755bb02a11700721
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88650919"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88755744"
 ---
 # <a name="move-a-recovery-services-vault-across-azure-subscriptions-and-resource-groups"></a>Перемещение хранилища служб восстановления между подписками Azure и группами ресурсов
 
@@ -50,12 +50,12 @@ ms.locfileid: "88650919"
 
 ## <a name="use-azure-portal-to-move-recovery-services-vault-to-different-resource-group"></a>Использование портал Azure для перемещения хранилища служб восстановления в другую группу ресурсов
 
-Для перемещения хранилища Служб восстановления и его связанных ресурсов в другую группу ресурсов выполните следующие инструкции.
+Чтобы переместить хранилище служб восстановления и связанные с ним ресурсы в другую группу ресурсов, выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 2. Откройте список **Хранилища служб восстановления** и выберите хранилище, которое нужно переместить. Открытая панель мониторинга хранилища выглядит, как показано на следующем рисунке.
 
-   ![Открытое хранилище Служб восстановления](./media/backup-azure-move-recovery-services/open-recover-service-vault.png)
+   ![Открыть хранилище служб восстановления](./media/backup-azure-move-recovery-services/open-recover-service-vault.png)
 
    Если вы не видите сведения о **Essentials** для своего хранилища, щелкните значок раскрывающегося списка. Раздел "Основное" будет развернут, и вы увидите основную информацию о хранилище.
 
@@ -84,7 +84,7 @@ ms.locfileid: "88650919"
 1. Войдите на [портал Azure](https://portal.azure.com/).
 2. Откройте список "Хранилища служб восстановления" и выберите хранилище, которое нужно переместить. Открытая панель мониторинга хранилища выглядит, как показано на следующем рисунке.
 
-    ![Открытое хранилище Служб восстановления](./media/backup-azure-move-recovery-services/open-recover-service-vault.png)
+    ![Открыть хранилище служб восстановления](./media/backup-azure-move-recovery-services/open-recover-service-vault.png)
 
     Если вы не видите сведения о **Essentials** для своего хранилища, щелкните значок раскрывающегося списка. Раздел "Основное" будет развернут, и вы увидите основную информацию о хранилище.
 

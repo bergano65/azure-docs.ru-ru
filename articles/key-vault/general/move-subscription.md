@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 05/05/2020
 ms.author: sudbalas
 Customer intent: As a key vault administrator, I want to move my vault to another subscription.
-ms.openlocfilehash: d37fae18cd2f3e3bfad647cc176253dc6bb101ab
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: b37b327a535b716bbce845cd5883e58ec5379c48
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88585790"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782725"
 ---
 # <a name="moving-an-azure-key-vault-to-another-subscription"></a>Перемещение Azure Key Vault в другую подписку
 
@@ -59,7 +59,9 @@ ms.locfileid: "88585790"
 
 ## <a name="procedure"></a>Процедура
 
-### <a name="initial-steps-moving-key-vault"></a>Начальные шаги (перемещение Key Vault)
+Если же: 
+
+### <a name="moving-key-vault-to-a-new-subscription-within-the-same-tenant"></a>Перемещение Key Vault в новую подписку в пределах того же клиента
 
 1. Войдите на портал Azure.
 2. Перейдите в хранилище ключей.
@@ -70,9 +72,9 @@ ms.locfileid: "88585790"
 7. Подтверждение предупреждения о перемещении ресурсов
 8. Нажатие кнопки "ОК"
 
-### <a name="additional-steps-post-move"></a>Дополнительные действия (после перемещения)
+### <a name="additional-steps-if-you-moved-key-vault-to-a-subscription-in-a-new-tenant"></a>Дополнительные действия при перемещении хранилища ключей в подписку в новом клиенте
 
-Теперь, когда хранилище ключей перемещено в новую подписку, необходимо обновить идентификатор клиента и удалить старые политики доступа. Ниже приведены руководства для этих шагов в PowerShell и Azure CLI.
+Если вы переместили хранилище ключей в подписку в новом клиенте, необходимо вручную обновить идентификатор клиента и удалить старые политики доступа. Ниже приведены руководства для этих шагов в PowerShell и Azure CLI. Если вы используете PowerShell, вам может потребоваться выполнить команду Clear-Азконтекст, описанную ниже, чтобы просмотреть ресурсы за пределами текущей выбранной области. 
 
 ```azurepowershell
 Select-AzSubscription -SubscriptionId <your-subscriptionId>                # Select your Azure Subscription
