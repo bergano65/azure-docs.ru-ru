@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19bf54e6289472fe36dbf6b029f959545a65d1c8
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: e83560caa6f4147252fd4c55767888e7c0ad632b
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87796614"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783405"
 ---
 # <a name="common-scenarios-in-azure-ad-entitlement-management"></a>Распространенные сценарии в управлении назначениями Azure AD
 
@@ -154,9 +154,9 @@ ms.locfileid: "87796614"
 
 ## <a name="programmatic-administration"></a>Программное администрирование
 
-Вы также можете управлять пакетами доступа, каталогами, политиками, запросами и назначениями с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызывать [API управления](https://docs.microsoft.com/graph/api/resources/entitlementmanagement-root?view=graph-rest-beta)назначением.
+Вы также можете управлять пакетами доступа, каталогами, политиками, запросами и назначениями с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызывать [API управления](/graph/api/resources/entitlementmanagement-root?view=graph-rest-beta)назначением.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Делегирование и роли](entitlement-management-delegate.md)
 - [Обработка запросов и уведомления по электронной почте](entitlement-management-process.md)

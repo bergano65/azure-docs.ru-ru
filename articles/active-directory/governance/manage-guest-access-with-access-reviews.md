@@ -16,24 +16,24 @@ ms.date: 07/22/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66f8020ec2561bf06716db0720a7ec4292f36eb3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 77c560ffd01fe6d0b93e18b963574136c086fdc4
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87034128"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783201"
 ---
 # <a name="manage-guest-access-with-azure-ad-access-reviews"></a>Управление гостевым доступом с помощью проверок доступа Azure AD
 
 
-С помощью [функции Azure AD B2B](../b2b/what-is-b2b.md) Azure Active Directory (Azure AD) вы можете легко обеспечить совместную работу в пределах организации. [Администраторы](../b2b/add-users-administrator.md) или [другие пользователи](../b2b/what-is-b2b.md) могут пригласить гостевых пользователей из других клиентов. Эта возможность также касается и удостоверений социальных сетей, например учетных записей Майкрософт.
+С помощью [функции Azure AD B2B](../external-identities/what-is-b2b.md) Azure Active Directory (Azure AD) вы можете легко обеспечить совместную работу в пределах организации. [Администраторы](../external-identities/add-users-administrator.md) или [другие пользователи](../external-identities/what-is-b2b.md) могут пригласить гостевых пользователей из других клиентов. Эта возможность также касается и удостоверений социальных сетей, например учетных записей Майкрософт.
 
 Вы также можете быстро предоставить соответствующий доступ гостевым пользователям. Для этого предложите самими гостям или руководителю пройти проверку доступа и повторно сертифицировать (или подтвердить) права доступа гостевого пользователя. Рецензенты могут предоставить пользователю входные данные для непрерывного доступа. Это зависит от предложений Azure AD. По завершении проверки доступа можно внести изменения и отозвать разрешение на доступ для гостей, которым он больше не нужен.
 
 > [!NOTE]
 > В этой статье рассматривается проверка доступа гостевых пользователей. Если вы хотите проверять доступ всех пользователей, а не только гостей, то ознакомьтесь с разделом [Управление пользовательским доступом с помощью проверок доступа Azure AD](manage-user-access-with-access-reviews.md). Если вы хотите просмотреть членство пользователей в административных ролях, например Глобальный администратор, см. статью [Запуск проверки доступа в Azure AD privileged Identity Management](../privileged-identity-management/pim-how-to-start-security-review.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Azure AD Premium P2
 
@@ -120,10 +120,3 @@ Azure AD обеспечивает несколько сценариев пров
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание проверки доступа групп или приложений](create-access-review.md)
-
-
-
-
-
-
-

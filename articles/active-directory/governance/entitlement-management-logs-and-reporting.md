@@ -16,12 +16,12 @@ ms.date: 06/17/2020
 ms.author: barclayn
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4756ced858210f86bb8e979705db99a563441490
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 89d6379f3fa41036836288ed5c75fbdaad0031da
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85078189"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783829"
 ---
 # <a name="archive-logs-and-reporting-on-azure-ad-entitlement-management-in-azure-monitor"></a>Архивируйте журналы и создавайте отчеты в управлении правами Azure AD в Azure Monitor
 
@@ -59,7 +59,7 @@ Azure AD хранит события аудита в журнале аудит�
 
 ## <a name="view-events-for-an-access-package"></a>Просмотр событий для пакета доступа  
 
-Чтобы просмотреть события для пакета доступа, необходимо иметь доступ к базовой рабочей области Azure Monitor (Дополнительные сведения см. в статье [Управление доступом к данным журнала и рабочим областям в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-azure-permissions)) и в одной из следующих ролей: 
+Чтобы просмотреть события для пакета доступа, необходимо иметь доступ к базовой рабочей области Azure Monitor (Дополнительные сведения см. в статье [Управление доступом к данным журнала и рабочим областям в Azure Monitor](../../azure-monitor/platform/manage-access.md#manage-access-using-azure-permissions)) и в одной из следующих ролей: 
 
 - Глобальный администратор.  
 - администратор безопасности;  
@@ -170,7 +170,7 @@ $wks | ft CustomerId, Name
 
 ### <a name="send-the-query-to-the-log-analytics-workspace"></a>Отправьте запрос в рабочую область Log Analytics
 Наконец, после определения рабочей области можно использовать [Invoke-AzOperationalInsightsQuery](/powershell/module/az.operationalinsights/Invoke-AzOperationalInsightsQuery?view=azps-3.3.0
-), чтобы отправить запрос Kusto в эту рабочую область. Эти запросы написаны на [языке запросов Kusto](https://docs.microsoft.com/azure/kusto/query/).
+), чтобы отправить запрос Kusto в эту рабочую область. Эти запросы написаны на [языке запросов Kusto](/azure/kusto/query/).
  
 Например, можно получить диапазон дат записей событий аудита из рабочей области Log Analytics, используя командлеты PowerShell для отправки запроса:
  
@@ -189,5 +189,4 @@ $bResponse.Results |ft
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия:
-- [Создавайте интерактивные отчеты с книгами Azure Monitor](../../azure-monitor/platform/workbooks-overview.md) 
-
+- [Создавайте интерактивные отчеты с книгами Azure Monitor](../../azure-monitor/platform/workbooks-overview.md)

@@ -10,12 +10,12 @@ ms.date: 07/29/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: e7bb996b3d42e2db2b4fa65d050ec1cb6a935bc6
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 2439bec08c16ce109b271844dc72b8fd2569aa07
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87533382"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88755914"
 ---
 # <a name="enforce-a-minimum-required-version-of-transport-layer-security-tls-for-requests-to-a-storage-account"></a>Принудительная минимальная требуемая версия протокола TLS для запросов к учетной записи хранения
 
@@ -338,6 +338,10 @@ resources
 На следующем рисунке показана ошибка, возникающая при попытке создать учетную запись хранения с минимальной версией TLS, установленной на TLS 1,0 (значение по умолчанию для новой учетной записи), если для политики с применением Deny требуется, чтобы минимальная версия TLS была настроена на TLS 1,2.
 
 :::image type="content" source="media/transport-layer-security-configure-minimum-version/deny-policy-error.png" alt-text="Снимок экрана, показывающий ошибку, возникающую при создании учетной записи хранения с нарушением политики":::
+
+## <a name="network-considerations"></a>Рекомендации по сети
+
+Когда клиент отправляет запрос в учетную запись хранения, он сначала устанавливает соединение с общедоступной конечной точкой учетной записи хранения перед обработкой любых запросов. Параметр минимальной версии TLS проверяется после установки соединения. Если в запросе используется более ранняя версия TLS, чем задано параметром, соединение будет продолжаться успешно, но запрос в конечном итоге завершится ошибкой. Дополнительные сведения о общедоступных конечных точках для службы хранилища Azure см. в разделе [синтаксис URI ресурсов](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#resource-uri-syntax).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

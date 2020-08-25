@@ -16,12 +16,12 @@ ms.date: 08/14/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1cccab009ddd5624fcc98ad6f871fe40d9540823
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: bb74fae150d4c8e5dda6978c272d358bdec6ca25
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88604064"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783609"
 ---
 # <a name="planning-azure-active-directory-access-reviews-deployment"></a>Планирование развертывания Azure Active Directoryных проверок доступа
 
@@ -180,7 +180,7 @@ ms.locfileid: "88604064"
 
 * [Приложения, интегрированные с Azure AD для единого входа](../manage-apps/what-is-application-management.md) (например, SaaS, Бизнес).
 
-* [Членство](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-manage-groups?context=azure/active-directory/users-groups-roles/context/ugr-context) в группах (синхронизировано с Azure AD или создано в Azure AD или Office 365, включая Microsoft Teams).
+* [Членство](../fundamentals/active-directory-manage-groups.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context) в группах (синхронизировано с Azure AD или создано в Azure AD или Office 365, включая Microsoft Teams).
 
 * [Доступ к пакету](/entitlement-management-overview.md) , который группирует ресурсы (группы, приложения и сайты) в один пакет для управления доступом.
 
@@ -389,7 +389,7 @@ ms.locfileid: "88604064"
 
 ## <a name="plan-review-of-azure-ad-and-azure-resource-roles"></a>Оценка плана ролей ресурсов Azure AD и Azure
 
-[Управление привилегированными пользователями (PIM)](../privileged-identity-management/pim-configure.md) упрощает управление привилегированным доступом к ресурсам в Azure AD предприятиям. Это позволяет значительно сократить список привилегированных ролей в [Azure AD](../users-groups-roles/directory-assign-admin-roles.md) и [ресурсах Azure](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles) , а также повысить общую безопасность каталога.
+[Управление привилегированными пользователями (PIM)](../privileged-identity-management/pim-configure.md) упрощает управление привилегированным доступом к ресурсам в Azure AD предприятиям. Это позволяет значительно сократить список привилегированных ролей в [Azure AD](../users-groups-roles/directory-assign-admin-roles.md) и [ресурсах Azure](../../role-based-access-control/built-in-roles.md) , а также повысить общую безопасность каталога.
 
 Проверки доступа позволяют проверяющим проверить, все ли пользователи должны быть в роли. Так же как и проверки доступа для пакетов Access, проверки ролей и ресурсов Azure AD интегрированы в пользовательский интерфейс PIM администратора. Рекомендуется регулярно просматривать следующие назначения ролей:
 
@@ -419,7 +419,7 @@ ms.locfileid: "88604064"
 
 Чтобы снизить риск устаревшего доступа, администраторы могут включить периодические проверки пользователей, которые имеют активные назначения для пакета Access. Следуйте инструкциям по ссылке ниже:
 
-| Статьи с инструкциями| Описание |
+| Статьи с инструкциями| Описание: |
 | - | - |
 | [Создание проверок доступа](entitlement-management-access-reviews-create.md)| Включение проверок пакета Access. |
 | [Выполнение проверок доступа](/entitlement-management-access-reviews-review-access.md)| Выполнение проверок доступа для других пользователей, назначенных пакету Access. |
@@ -433,7 +433,7 @@ ms.locfileid: "88604064"
 
 Потребности в доступе к группам и приложениям для сотрудников и гостей, вероятно, меняются со временем. Чтобы снизить риск, связанный с устаревшими назначениями доступа, администраторы могут создавать проверки доступа для членов группы или доступа к приложениям. Следуйте инструкциям по ссылке ниже:
 
-| Статьи с инструкциями| Описание |
+| Статьи с инструкциями| Описание: |
 | - | - |
 | [Создание проверок доступа](create-access-review.md)| Создайте один или несколько проверок доступа для членов группы или доступа к приложению. |
 | [Выполнение проверок доступа](perform-access-review.md)| Выполните проверку доступа для членов группы или пользователей с доступом к приложению. |
@@ -450,11 +450,11 @@ ms.locfileid: "88604064"
 
 Следуйте инструкциям по ссылкам ниже:
 
-| Статьи с инструкциями | Описание |
+| Статьи с инструкциями | Описание: |
 | - | - |
- [Создание проверок доступа](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-how-to-start-security-review?toc=/azure/active-directory/governance/toc.json)| Создание проверок доступа для привилегированных ролей Azure AD в PIM |
-| [Самостоятельное изучение доступа](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-how-to-perform-security-review?toc=/azure/active-directory/governance/toc.json)| Если вам назначена роль администратора, Утвердите или отклоните доступ к вашей роли |
-| [Завершение проверки доступа](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-how-to-complete-review?toc=/azure/active-directory/governance/toc.json)| Просмотр проверки доступа и применение результатов |
+ [Создание проверок доступа](../privileged-identity-management/pim-how-to-start-security-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json)| Создание проверок доступа для привилегированных ролей Azure AD в PIM |
+| [Самостоятельное изучение доступа](../privileged-identity-management/pim-how-to-perform-security-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json)| Если вам назначена роль администратора, Утвердите или отклоните доступ к вашей роли |
+| [Завершение проверки доступа](../privileged-identity-management/pim-how-to-complete-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json)| Просмотр проверки доступа и применение результатов |
 
 
 ### <a name="review-azure-resource-roles"></a>Проверка ролей ресурсов Azure
@@ -465,16 +465,16 @@ ms.locfileid: "88604064"
 
 Следуйте инструкциям по ссылкам ниже:
 
-| Статьи с инструкциями| Описание |
+| Статьи с инструкциями| Описание: |
 | - | -|
-| [Создание проверок доступа](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-resource-roles-start-access-review?toc=/azure/active-directory/governance/toc.json)| Создание проверок доступа для привилегированных ролей ресурсов Azure в PIM |
-| [Самостоятельное изучение доступа](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-resource-roles-perform-access-review?toc=/azure/active-directory/governance/toc.json)| Если вам назначена роль администратора, Утвердите или отклоните доступ к вашей роли |
-| [Завершение проверки доступа](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-resource-roles-complete-access-review?toc=/azure/active-directory/governance/toc.json)| Просмотр проверки доступа и применение результатов |
+| [Создание проверок доступа](../privileged-identity-management/pim-resource-roles-start-access-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json)| Создание проверок доступа для привилегированных ролей ресурсов Azure в PIM |
+| [Самостоятельное изучение доступа](../privileged-identity-management/pim-resource-roles-perform-access-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json)| Если вам назначена роль администратора, Утвердите или отклоните доступ к вашей роли |
+| [Завершение проверки доступа](../privileged-identity-management/pim-resource-roles-complete-access-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json)| Просмотр проверки доступа и применение результатов |
 
 
 ## <a name="use-the-access-reviews-api"></a>Использование API проверок доступа
 
-Для взаимодействия с видимыми ресурсами и управления ими см. раздел [методы API Graph](https://docs.microsoft.com/graph/api/resources/accessreviews-root?view=graph-rest-beta) и [проверки авторизации разрешений для ролей и приложений](https://docs.microsoft.com/graph/api/resources/accessreviews-root?view=graph-rest-beta) . Методы проверки доступа в API Microsoft Graph доступны для контекстов приложения и пользователя. При выполнении скриптов в контексте приложения учетной записи, используемой для запуска API (субъекта-службы), необходимо предоставить разрешение "Акцессревиев. Read. ALL" для запроса на проверку доступа к данным.
+Для взаимодействия с видимыми ресурсами и управления ими см. раздел [методы API Graph](/graph/api/resources/accessreviews-root?view=graph-rest-beta) и [проверки авторизации разрешений для ролей и приложений](/graph/api/resources/accessreviews-root?view=graph-rest-beta) . Методы проверки доступа в API Microsoft Graph доступны для контекстов приложения и пользователя. При выполнении скриптов в контексте приложения учетной записи, используемой для запуска API (субъекта-службы), необходимо предоставить разрешение "Акцессревиев. Read. ALL" для запроса на проверку доступа к данным.
 
 Популярные задачи проверки доступа для автоматизации использования API Graph для проверок доступа:
 
@@ -519,4 +519,3 @@ ms.locfileid: "88604064"
 
 * [Что такое Azure AD Privileged Identity Management?](../privileged-identity-management/pim-configure.md)
 
- 

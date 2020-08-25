@@ -2,17 +2,17 @@
 title: Установить обновление на устройство серии Шлюз Azure Data Box | Документация Майкрософт
 description: Описывает, как применять обновления с помощью портал Azure и локального веб-интерфейса для устройств Шлюз Azure Data Box Series.
 services: databox
-author: priestlg
+author: twooley
 ms.service: databox
 ms.topic: article
 ms.date: 06/30/2020
-ms.author: v-grpr
-ms.openlocfilehash: 4c17488a875484b2d3dc0e7e8e1045ce8ea75cf0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: twooley
+ms.openlocfilehash: 3972aecf70a664980e8279152eb001915ae1bb53
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85802324"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783881"
 ---
 # <a name="update-your-azure-data-box-gateway"></a>Обновление Шлюз Azure Data Box
 
@@ -63,7 +63,7 @@ ms.locfileid: "85802324"
 
     ![Версия программного обеспечения после обновления](./media/data-box-gateway-apply-updates/portal-apply-update-10a.png)
 
-    Если выбрана загрузка только обновлений, выберите уведомление, чтобы открыть колонку **обновления устройства** . Выберите пункт **Установить**.
+    Если выбрана загрузка только обновлений, выберите уведомление, чтобы открыть колонку **обновления устройства** . Нажмите кнопку **Установить**.
   
     ![Версия программного обеспечения после обновления](./media/data-box-gateway-apply-updates/portal-apply-update-11a.png)
 
@@ -116,7 +116,7 @@ ms.locfileid: "85802324"
 
    ![Поиск в каталоге](./media/data-box-gateway-apply-updates/download-update-2.png)
 
-3. Выберите **Скачать**. Существует один файл для загрузки с именем *SoftwareUpdatePackage.exe* , соответствующий обновлению программного обеспечения устройства. Скачайте файл в папку в локальной системе. Эту папку также можно скопировать в сетевую папку, доступную с вашего устройства.
+3. Выберите **Загрузить**. Существует один файл для загрузки с именем *SoftwareUpdatePackage.exe* , соответствующий обновлению программного обеспечения устройства. Скачайте файл в папку в локальной системе. Эту папку также можно скопировать в сетевую папку, доступную с вашего устройства.
 
    ![Поиск в каталоге](./media/data-box-gateway-apply-updates/download-update-3.png)
 
@@ -152,6 +152,6 @@ ms.locfileid: "85802324"
 
    ![обновление устройства](./media/data-box-gateway-apply-updates/local-ui-update-6.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об [администрировании шлюз Azure Data Box](data-box-gateway-manage-users.md).

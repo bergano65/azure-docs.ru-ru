@@ -15,12 +15,12 @@ ms.date: 08/18/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1be8a714d57d0f84b195c9f3846964aa2bf2525b
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: c2b3a838e52bb0b9f3a3be7195bd528c08e499c0
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88605089"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783660"
 ---
 # <a name="create-an-access-review-of-groups-and-applications-in-azure-ad-access-reviews"></a>Создание проверки доступа для групп и приложений в проверках доступа Azure AD
 
@@ -158,7 +158,7 @@ ms.locfileid: "88605089"
 
 ## <a name="create-reviews-via-apis"></a>Создание проверок через API
 
-Проверки доступа можно также создать с помощью API. Все действия по управлению проверками доступа для групп и пользователей приложений, которые выполняются на портале Azure, доступны и через API Microsoft Graph. Дополнительные сведения см. в [справочнике по API проверок доступа Azure AD](https://docs.microsoft.com/graph/api/resources/accessreviews-root?view=graph-rest-beta). Пример кода см. в разделе [Пример получения проверок доступа Azure AD с помощью Microsoft Graph](https://techcommunity.microsoft.com/t5/Azure-Active-Directory/Example-of-retrieving-Azure-AD-access-reviews-via-Microsoft/m-p/236096).
+Проверки доступа можно также создать с помощью API. Все действия по управлению проверками доступа для групп и пользователей приложений, которые выполняются на портале Azure, доступны и через API Microsoft Graph. Дополнительные сведения см. в [справочнике по API проверок доступа Azure AD](/graph/api/resources/accessreviews-root?view=graph-rest-beta). Пример кода см. в разделе [Пример получения проверок доступа Azure AD с помощью Microsoft Graph](https://techcommunity.microsoft.com/t5/Azure-Active-Directory/Example-of-retrieving-Azure-AD-access-reviews-via-Microsoft/m-p/236096).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

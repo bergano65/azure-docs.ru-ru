@@ -14,18 +14,18 @@ ms.date: 01/02/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea3e307df95fe4cb18986ed8e68a7f3381c5fbe7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: HT
+ms.openlocfilehash: 95b0b026b75b9b77c94451245ac4f18d487fc2e4
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84742905"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783524"
 ---
 # <a name="microsoft-graph-apis-for-privileged-identity-management-preview"></a>API-интерфейсы Microsoft Graph для управления привилегированными пользователями (предварительная версия)
 
-Вы можете выполнить задачи управления привилегированными пользователями с помощью [интерфейсов API Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/overview) для Azure Active Directory. В этой статье описаны принципы, которые важно учесть при использовании API-интерфейсов Microsoft Graph для управления привилегированными пользователями.
+Вы можете выполнить задачи управления привилегированными пользователями с помощью [интерфейсов API Microsoft Graph](/graph/overview) для Azure Active Directory. В этой статье описаны принципы, которые важно учесть при использовании API-интерфейсов Microsoft Graph для управления привилегированными пользователями.
 
-Дополнительные сведения об API-интерфейсах Microsoft Graph см. в [справочнике по Azure AD Privileged Identity Management API](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/privilegedidentitymanagement_root).
+Дополнительные сведения об API-интерфейсах Microsoft Graph см. в [справочнике по Azure AD Privileged Identity Management API](/graph/api/resources/privilegedidentitymanagement-root?view=graph-rest-beta).
 
 > [!IMPORTANT]
 > API-интерфейсы бета-версии в Microsoft Graph доступны в предварительной версии и могут быть изменены. Использование этих API для приложений в рабочей среде не поддерживается.
@@ -61,4 +61,4 @@ ms.locfileid: "84742905"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Справочник по API Azure AD Privileged Identity Management](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/privilegedidentitymanagement_root)
+- [Справочник по API Azure AD Privileged Identity Management](/graph/api/resources/privilegedidentitymanagement-root?view=graph-rest-beta)
