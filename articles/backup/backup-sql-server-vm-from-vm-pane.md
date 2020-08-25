@@ -3,12 +3,12 @@ title: Резервное копирование SQL Server виртуально
 description: Из этой статьи вы узнаете, как выполнять резервное копирование SQL Server баз данных на виртуальных машинах Azure из области ВМ.
 ms.topic: conceptual
 ms.date: 08/13/2020
-ms.openlocfilehash: d7cdf0a04acc57341200b363da4d012f04fe3454
-ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
+ms.openlocfilehash: 3d44c856d264c784d07b8301fa5605affddd7c02
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2020
-ms.locfileid: "88755251"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88827483"
 ---
 # <a name="back-up-a-sql-server-from-the-vm-pane"></a>Резервное копирование SQL Server из области ВМ
 

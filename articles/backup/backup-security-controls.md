@@ -3,12 +3,12 @@ title: Средства управления безопасностью
 description: Сведения об элементах управления безопасностью, используемых в службе Azure Backup. Эти элементы управления помогают службе предотвращать, обнаруживать и отвечать на уязвимости системы безопасности.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 4a59ab0edeeba480475ac593d2721f95c7b5f48a
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: e69053d4646207b34e8df31b949410994c967303
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87371725"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88827296"
 ---
 # <a name="security-controls-for-azure-backup"></a>Элементы управления безопасностью для Azure Backup
 

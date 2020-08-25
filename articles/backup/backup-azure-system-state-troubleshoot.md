@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как устран
 ms.reviewer: srinathv
 ms.topic: troubleshooting
 ms.date: 07/22/2019
-ms.openlocfilehash: add54955def7df31f8e1688f56382067343616fe
-ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+ms.openlocfilehash: 56593176e705176b87cf955eb116909c1912e723
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88763394"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88824276"
 ---
 # <a name="troubleshoot-system-state-backup"></a>Устранение неполадок резервного копирования состояния системы
 
@@ -37,10 +37,10 @@ ms.locfileid: "88763394"
 
 ### <a name="limitation"></a>Ограничение
 
-- Корпорация Майкрософт не рекомендует выполнять восстановление на другое оборудование с помощью функции восстановления состояния системы.
+- Корпорация Майкрософт не рекомендует выполнить восстановление на другое оборудование с помощью восстановления состояния системы.
 - Резервное копирование состояния системы в настоящее время поддерживает "Локальные" серверы Windows. Эта функция недоступна для виртуальных машин Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Перед устранением неполадок с резервным копированием состояния системы с Azure Backup выполните следующие проверки готовности к установке.  
 
