@@ -4,12 +4,12 @@ description: Узнайте, как обратимое удаление вирт
 ms.topic: conceptual
 ms.date: 04/30/2020
 ms.custom: references_regions
-ms.openlocfilehash: e447db2c3f862d2f577a9e7d8767946375abf4e0
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 19de26024a6a31a213130ec419132fd7dd8134a0
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86503546"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88763700"
 ---
 # <a name="soft-delete-for-virtual-machines"></a>Обратимое удаление виртуальных машин
 
@@ -110,7 +110,7 @@ AppVM1           Undelete             Completed            12/5/2019 12:47:28 PM
 ## <a name="soft-delete-for-vms-using-rest-api"></a>Обратимое удаление для виртуальных машин с помощью REST API
 
 - Удалите резервные копии с помощью REST API, как описано [здесь](backup-azure-arm-userestapi-backupazurevms.md#stop-protection-and-delete-data).
-- Если пользователь хочет отменить эти операции удаления, см. действия, описанные [здесь](backup-azure-arm-userestapi-backupazurevms.md#undo-the-stop-protection-and-delete-data).
+- Если пользователь хочет отменить эти операции удаления, см. действия, описанные [здесь](backup-azure-arm-userestapi-backupazurevms.md#undo-the-deletion).
 
 ## <a name="how-to-disable-soft-delete"></a>Как отключить обратимое удаление
 

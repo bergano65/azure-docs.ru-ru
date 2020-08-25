@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как устран
 ms.reviewer: srinathv
 ms.topic: troubleshooting
 ms.date: 07/22/2019
-ms.openlocfilehash: e588ce4e3458634be32a7129b40906c98fc02ac0
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: add54955def7df31f8e1688f56382067343616fe
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86513857"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88763394"
 ---
 # <a name="troubleshoot-system-state-backup"></a>Устранение неполадок резервного копирования состояния системы
 
@@ -17,7 +17,7 @@ ms.locfileid: "86513857"
 
 ## <a name="basic-troubleshooting"></a>Базовое устранение неполадок
 
-Прежде чем начать устранение неполадок с резервным копированием состояния системы, рекомендуется выполнить приведенную ниже проверку.
+Перед началом устранения неполадок резервного копирования состояния системы рекомендуется выполнить следующие шаги проверки.
 
 - [Убедитесь, что используется последняя версия агента служб восстановления Microsoft Azure (MARS)](https://go.microsoft.com/fwlink/?linkid=229525&clcid=0x409)
 - [Убедитесь, что между агентом служб восстановления Microsoft Azure и Azure установлено сетевое подключение](./backup-azure-mars-troubleshoot.md#the-microsoft-azure-recovery-service-agent-was-unable-to-connect-to-microsoft-azure-backup)
@@ -77,20 +77,20 @@ Get-WindowsFeature Windows-Server-Backup
 3. Выберите сервер из пула серверов и нажмите кнопку **Далее**. В роли сервера Оставьте выбор по умолчанию и нажмите кнопку **Далее**.
 4. Выберите **Cистема архивации данных Windows Server** на вкладке " **компоненты** " и нажмите кнопку **Далее**.
 
-    ![features](./media/backup-azure-system-state-troubleshoot/features.png)
+    ![Выбор окна "компоненты"](./media/backup-azure-system-state-troubleshoot/features.png)
 
 5. На вкладке **Подтверждение** нажмите кнопку **установить** , чтобы начать процесс установки.
 6. На вкладке **результаты** отобразится компонент Cистема архивации данных Windows Server успешно установлен на сервере Windows Server.
 
-    ![result](./media/backup-azure-system-state-troubleshoot/results.jpg)
+    ![Результаты установки](./media/backup-azure-system-state-troubleshoot/results.jpg)
 
 ### <a name="system-volume-information-permission"></a>Разрешение "сведения о системном томе"
 
-Убедитесь, что локальная система имеет полный контроль над папкой **сведений о системном томе** , расположенной в томе, где установлена ОС Windows. Обычно это **К:\систем сведения о томе**. Система архивации данных Windows Server может завершиться ошибкой, если указанные выше разрешения заданы неправильно
+Убедитесь, что локальная система имеет полный контроль над папкой **сведений о системном томе** , расположенной в томе, где установлена ОС Windows. Обычно это **К:\систем сведения о томе**. Система архивации данных Windows Server может завершиться ошибкой, если указанные выше разрешения заданы неправильно.
 
 ### <a name="dependent-services"></a>Зависимые службы
 
-Убедитесь, что следующие службы находятся в состоянии выполняется:
+Убедитесь, что указанные ниже службы находятся в состоянии выполняется:
 
 **имя службы**; | **Тип запуска**
 --- | ---

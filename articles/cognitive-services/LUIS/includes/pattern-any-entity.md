@@ -11,10 +11,10 @@ ms.date: 02/14/2020
 ms.topic: include
 ms.author: diberry
 ms.openlocfilehash: 8901f107ca2af609059670a0b31184080849d2b6
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 08/22/2020
 ms.locfileid: "87374716"
 ---
 Сущность Pattern.any позволяет найти данные произвольной формы, в которых формулировка сущности затрудняет определение ее окончание из остальной части высказывания.

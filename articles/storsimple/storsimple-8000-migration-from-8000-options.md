@@ -2,17 +2,17 @@
 title: Варианты переноса данных с устройств StorSimple 8000
 description: Содержит общие сведения о параметрах переноса данных из StorSimple 8000 Series.
 services: storsimple
-author: priestlg
+author: twooley
 ms.service: storsimple
 ms.topic: how-to
 ms.date: 03/25/2020
-ms.author: v-grpr
-ms.openlocfilehash: 39c78e1dc579f74207ba828f2f6a49ad44dd4a43
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: twooley
+ms.openlocfilehash: 92ab570b3e06d67d7986a8103e9622e95eb57e7e
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85514709"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783915"
 ---
 # <a name="options-to-migrate-data-from-storsimple-8000-series"></a>Параметры для переноса данных из серии StorSimple 8000
 
@@ -25,7 +25,7 @@ ms.locfileid: "85514709"
 
 У клиентов, использующих серии StorSimple 8000, есть варианты Azure или сторонние параметры.
 
-### <a name="azure-options"></a>Варианты с использованием Azure
+### <a name="azure-options"></a>Параметры Azure
 
 #### <a name="migrate-to-azure-file-sync"></a>Миграция в службу "Синхронизация файлов Azure"
 
@@ -109,6 +109,6 @@ A. При использовании Синхронизация файлов Azu
 
 A. Время переноса данных зависит от объема данных и выбранного варианта обновления.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Перенос данных из серии StorSimple 8000 в Синхронизация файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-migration-storsimple-8000)

@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 05/14/2020
-ms.openlocfilehash: b2e77049d121a11a45a096017f18f1345f6c6884
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/21/2020
+ms.openlocfilehash: 37f0a8d1f70fa96db505973d097febabe99ab7a8
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85374854"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88749181"
 ---
 # <a name="azure-hdinsight-40-overview"></a>Обзор Azure HDInsight 4.0
 
@@ -92,7 +92,7 @@ Apache Oozie 4.3.1 входит в состав HDI 4.0 со следующим�
 * HDInsight 4.0 не поддерживает MapReduce для Apache Hive. Вместо этого используйте Apache Tez. Узнайте больше об [Apache Tez](https://tez.apache.org/).
 * HDInsight 4.0 не поддерживает Apache Storm.
 * HDInsight 4,0 не поддерживает тип кластера служб ML.
-* В HDInsight 4.0 больше не используется представление Hive.
+* Представление Hive доступно только в кластерах HDInsight 4,0 с номером версии, превышающим или равным 4,1. Этот номер версии доступен в Ambari Admin-> версии.
 * Интерпретатор оболочки в Apache Zeppelin не поддерживается в кластерах Spark и Interactive Query.
 * Вы не можете *запретить* использование LLAP в кластере Spark LLAP. LLAP можно только выключить.
 * Azure Data Lake Storage 2-го поколения не поддерживает сохранение записных книжек Jupyter в кластере Spark.

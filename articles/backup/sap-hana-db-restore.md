@@ -3,12 +3,12 @@ title: Восстановление баз данных SAP HANA на вирту
 description: Из этой статьи вы узнаете, как восстановить SAP HANA базы данных, работающие на виртуальных машинах Azure.
 ms.topic: conceptual
 ms.date: 11/7/2019
-ms.openlocfilehash: c62ea68683355fc703a5258e6e5fa0f3795f7e34
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 41ee95fc65ed7bdf79388089e27c6d6249132bfd
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86503597"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88763292"
 ---
 # <a name="restore-sap-hana-databases-on-azure-vms"></a>Восстановление баз данных SAP HANA на виртуальных машинах Azure
 
@@ -112,7 +112,7 @@ ms.locfileid: "86503597"
     > Восстановление отдельная база данных контейнера (SDC) должно удовлетворять этим [проверкам](backup-azure-sap-hana-database-troubleshoot.md#single-container-database-sdc-restore).
 
 1. Если применимо, выберите **Перезаписать, если база данных с таким именем уже существует в выбранном экземпляре Hana**.
-1. Щелкните **ОК**.
+1. Нажмите кнопку **ОК**.
 
     ![Конфигурация восстановления — последний экран](media/sap-hana-db-restore/restore-configuration-last.png)
 
@@ -175,7 +175,7 @@ ms.locfileid: "86503597"
 
         В приведенной выше команде:
 
-        * `<DataFileDir>` — папка, содержащая полные резервные копии;
+        * `<DataFileDir>` — папка, содержащая полные резервные копии.
         * `<LogFilesDir>` — папка, содержащая резервные копии журналов;
         * `<PathToPlaceCatalogFile>` — папка, в которой должен быть размещен созданный файл каталога.
 
@@ -194,7 +194,7 @@ ms.locfileid: "86503597"
         * `<DatabaseName>` — имя новой или существующей базы данных, которую необходимо восстановить.
         * `<Timestamp>` — точная метка времени для восстановления до точки во времени.
         * `<DatabaseName@HostName>` — имя базы данных, резервная копия которой используется для восстановления, и имя **узла** или сервера SAP HANA, на котором находится эта база данных. Параметр `USING SOURCE <DatabaseName@HostName>` определяет, что резервная копия данных (используемая для восстановления) относится к базе данных с другим идентификатором безопасности или именем, отличающимся от целевого компьютера SAP HANA. Поэтому для восстановления на том же сервере HANA, с которого выполняется резервное копирование, не требуется указывать.
-        * `<PathToGeneratedCatalogInStep3>`— Путь к файлу каталога, созданному на **шаге C**
+        * `<PathToGeneratedCatalogInStep3>` — Путь к файлу каталога, созданному на **шаге C**
         * `<DataFileDir>` — папка, содержащая полные резервные копии.
         * `<LogFilesDir>` — папка, содержащая резервные копии журналов.
         * `<BackupIdFromJsonFile>`— **BackupId** , извлеченный на **шаге C** .

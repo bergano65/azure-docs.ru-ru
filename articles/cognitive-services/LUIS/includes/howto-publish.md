@@ -11,10 +11,10 @@ ms.subservice: language-understanding
 ms.topic: include
 ms.author: diberry
 ms.openlocfilehash: 0e00845684ab44b94b3c6823452e85c967cb9e3c
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 08/22/2020
 ms.locfileid: "87336382"
 ---
 Чтобы получать результаты прогнозирования LUIS в чат-боте или другом приложении, необходимо опубликовать приложение в конечной точке прогнозирования.

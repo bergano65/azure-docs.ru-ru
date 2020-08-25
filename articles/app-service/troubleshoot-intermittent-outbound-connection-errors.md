@@ -6,13 +6,13 @@ manager: barbkess
 ms.topic: troubleshooting
 ms.date: 07/24/2020
 ms.author: ramakoni
-ms.custom: security-recommendations
-ms.openlocfilehash: 5e1f2108c5607917c77330f362952f960e57e03a
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.custom: security-recommendations,fasttrack-edit
+ms.openlocfilehash: 39073169fbc4558492a47f78f0840a0e314b3ee8
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87447917"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88763564"
 ---
 # <a name="troubleshooting-intermittent-outbound-connection-errors-in-azure-app-service"></a>Устранение нерегулярных ошибок исходящих подключений в службе приложений Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "87447917"
 Обеспечение активности HTTP
 
 * [agentkeepalive](https://www.npmjs.com/package/agentkeepalive)
-* [Документация поNode.js 13.9.0 v](https://nodejs.org/api/http.html)
+* [ Документация поNode.js 13.9.0 v](https://nodejs.org/api/http.html)
 
 #### <a name="java"></a>Java
 
@@ -120,13 +120,13 @@ ms.locfileid: "87447917"
 * [Нагрузочный тест](https://docs.microsoft.com/azure/devops/test/load-test/app-service-web-app-performance-test) должен имитировать реальные данные на постоянной скорости передачи. Тестирование приложений и функций при реальной интенсивной нагрузке позволяет заранее определить и устранить проблемы нехватки портов SNAT.
 * Убедитесь, что серверные службы могут быстро возвращать ответы. Для устранения проблем с производительностью базы данных SQL Azure ознакомьтесь [с разрешениями устранение проблем производительности базы данных SQL Azure с Intelligent Insights](https://docs.microsoft.com/azure/sql-database/sql-database-intelligent-insights-troubleshoot-performance#recommended-troubleshooting-flow).
 * Масштабирование плана службы приложений до большего количества экземпляров. Дополнительные сведения о масштабировании см. в статье [Увеличение масштаба приложения в Azure](https://docs.microsoft.com/azure/app-service/manage-scale-up). Каждому рабочему экземпляру в плане службы приложений выделяется несколько портов SNAT. Если вы разбиваете использование в нескольких экземплярах, вы можете получить использование порта SNAT на экземпляр ниже рекомендуемого ограничения в 100 исходящих подключений на уникальную конечную точку.
-* Рассмотрите возможность перехода на [Среда службы приложений (ASE)](https://docs.microsoft.com/azure/app-service/environment/using-an-ase), где вам выделяется один исходящий IP-адрес, а ограничения для подключений и портов SNAT значительно выше.
+* Рассмотрите возможность перехода на [Среда службы приложений (ASE)](https://docs.microsoft.com/azure/app-service/environment/using-an-ase), где вам выделяется один исходящий IP-адрес, а ограничения для подключений и портов SNAT значительно выше. В ASE количество портов SNAT на экземпляре основано на таблице предварительного [распределения балансировщика нагрузки Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections#snatporttable) , поэтому, например, ASE с 1-50 рабочих экземпляров имеет более 1024 предварительно выделенных портов на экземпляр, в то время как в ASE с 51-100 рабочих экземпляров 512 предварительно выделенные порты на экземпляр.
 
 Избежание исходящих TCP-ограничений проще в решении, так как ограничения задаются размером рабочего процесса. Вы можете увидеть ограничения в ["песочнице" с числовыми пределами межвм — TCP-подключения](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox#cross-vm-numerical-limits)
 
 |Имя ограничения|Описание|Малый (a1)|Средний (a2)|Крупный (A3)|Изолированный уровень (ASE)|
 |---|---|---|---|---|---|
-|Соединения|Число подключений для всей виртуальной машины|1920|3968|8064|16 000|
+|Соединения|Число подключений для всей виртуальной машины|1920|3968|8064|16 000|
 
 Чтобы избежать исходящих ограничений TCP, можно либо увеличить размер рабочих процессов, либо горизонтально масштабировать.
 
@@ -158,7 +158,7 @@ TCP-подключения и порты SNAT не связаны напряму
 
 |Имя ограничения|Описание|Малый (a1)|Средний (a2)|Крупный (A3)|Изолированный уровень (ASE)|
 |---|---|---|---|---|---|
-|Соединения|Число подключений для всей виртуальной машины|1920|3968|8064|16 000|
+|Соединения|Число подключений для всей виртуальной машины|1920|3968|8064|16 000|
 
 ### <a name="webjobs-and-database-connections"></a>Веб-задания и подключения к базе данных
  

@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/20/2020
 ms.openlocfilehash: 7d91348b727c1c43f010ec9f60ae9abd33978ce8
-ms.sourcegitcommit: 635114a0f07a2de310b34720856dd074aaf4f9cd
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
+ms.lasthandoff: 08/22/2020
 ms.locfileid: "85257522"
 ---
 # <a name="tutorial-add-faceted-navigation-using-the-net-sdk"></a>Руководство по Добавление фасетной навигации с помощью пакета SDK для .NET

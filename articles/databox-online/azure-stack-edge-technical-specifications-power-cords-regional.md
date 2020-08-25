@@ -2,18 +2,18 @@
 title: Технические характеристики кабеля питания Microsoft Azure Stack Edge на основе расположения | Документация Майкрософт
 description: Узнайте о технических характеристиках кабелей питания Azure Stack Edge.
 services: databox
-author: priestlg
+author: twooley
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
 ms.date: 04/16/2020
-ms.author: v-grpr
-ms.openlocfilehash: 2fb28bcb1edb9a18b4d1628e211f87f2c772ef80
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.author: twooley
+ms.openlocfilehash: 8248f0a8e003351449186638fd4914c6b6fe4bed
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83663252"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783983"
 ---
 # <a name="azure-stack-edge-power-cord-specifications"></a>Характеристики кабелей питания Azure Stack Edge
 
@@ -50,7 +50,7 @@ ms.locfileid: "83663252"
 |Китай|250|10|RVV300/500 3X0.75|GB 2099.1|C13|2000|
 |Колумбия|125|10|SVE 18/3|NEMA 5-15P|C13|1830|
 |Коста-Рика|125|10|SVE 18/3|NEMA 5-15P|C13|1830|
-|Республика Кот д'Ивуар|250|10|H05Z1Z1 3x0.75|CEE 7|C13|1830|
+|Кот д'Ивуар (Берег слоновой кости)|250|10|H05Z1Z1 3x0.75|CEE 7|C13|1830|
 |Хорватия|250|10|H05Z1Z1 3x0.75|CEE 7|C13|1830|
 |Кипр|250|5|H05VV-F 3x0.75|BS1363 SS145/A|C13|1800|
 |Чешская Республика|250|10|H05Z1Z1 3x0.75|CEE 7|C13|1830|
@@ -91,7 +91,7 @@ ms.locfileid: "83663252"
 |Литва|250|10|H05Z1Z1 3x0.75|CEE 7|C13|1830|
 |Люксембург|250|10|H05Z1Z1 3x0.75|CEE 7|C13|1830|
 |Специальный административный регион Макао|2250|5|H05VV-F 3x0.75|BS 1363 / SS145/A|C13|1800|
-|Северная Македония|250|10|H05Z1Z1 3x0.75|CEE 7|C13|1830|
+|Бывшая югославская Республика Македония|250|10|H05Z1Z1 3x0.75|CEE 7|C13|1830|
 |Малайзия|250|5|H05VV-F 3x0.75|BS 1363 / SS145/A|C13|1800|
 |Мальта|250|5|H05VV-F 3x0.75|BS 1363 / SS145/A|C13|1800|
 |Маврикий|250|5|H05VV-F 3x0.75|BS 1363 / SS145/A|C13|1800|

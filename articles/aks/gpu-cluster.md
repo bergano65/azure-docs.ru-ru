@@ -3,13 +3,15 @@ title: Использование GPU в службе Azure Kubernetes (AKS)
 description: Узнайте, как использовать GPU для ресурсоемких вычислений или интенсивных графических рабочих нагрузок в Службе Azure Kubernetes (AKS).
 services: container-service
 ms.topic: article
-ms.date: 03/27/2020
-ms.openlocfilehash: ed655a6809f2932bbe8e85fb1cd9fd7996cf7647
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.date: 08/21/2020
+ms.author: jpalma
+author: palma21
+ms.openlocfilehash: d19bfac318ab2ed20d021e10b43b691b525ba897
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213185"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88749142"
 ---
 # <a name="use-gpus-for-compute-intensive-workloads-on-azure-kubernetes-service-aks"></a>Использование процессоров GPU для интенсивных вычислительных рабочих нагрузок в Службе Azure Kubernetes (AKS)
 
@@ -20,7 +22,7 @@ ms.locfileid: "88213185"
 
 В настоящее время использование пулов узлов с поддержкой GPU доступно только для пулов узлов Linux.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что у вас есть кластер AKS с узлами, поддерживающими процессоры GPU. Кластер AKS должен работать на платформе Kubernetes 1.10 или более поздней версии. Если вам нужен кластер AKS, соответствующий этим требованиям, обратитесь к первой части этой статьи, чтобы [создать кластер AKS](#create-an-aks-cluster).
 
@@ -117,6 +119,65 @@ $ kubectl apply -f nvidia-device-plugin-ds.yaml
 
 daemonset "nvidia-device-plugin" created
 ```
+
+## <a name="use-the-aks-specialized-gpu-image-preview"></a>Использование специализированного образа GPU AKS (Предварительная версия)
+
+В качестве альтернативы этим шагам AKS предоставляет полностью настроенный образ AKS, который уже содержит [подключаемый модуль устройства NVIDIA для Kubernetes][nvidia-github].
+
+> [!WARNING]
+> Не следует вручную устанавливать набор управляющих программ подключаемого модуля устройства NVIDIA для кластеров с помощью нового специализированного образа GPU AKS.
+
+
+Зарегистрируйте компонент `GPUDedicatedVHDPreview`:
+
+```azurecli
+az feature register --name GPUDedicatedVHDPreview --namespace Microsoft.ContainerService
+```
+
+Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list):
+
+```azurecli
+az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/GPUDedicatedVHDPreview')].{Name:name,State:properties.state}"
+```
+
+Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register):
+
+```azurecli
+az provider register --namespace Microsoft.ContainerService
+```
+
+Чтобы установить расширение CLI AKS-Preview, используйте следующие Azure CLI команды:
+
+```azurecli
+az extension add --name aks-preview
+```
+
+Чтобы обновить расширение CLI AKS-Preview, используйте следующие Azure CLI команды:
+
+```azurecli
+az extension update --name aks-preview
+```
+
+### <a name="use-the-aks-specialized-gpu-image-on-new-clusters-preview"></a>Использование специализированного образа GPU AKS в новых кластерах (Предварительная версия)
+
+Настройте кластер для использования специализированного образа GPU AKS при создании кластера. Используйте `--aks-custom-headers` флаг для узлов агента GPU в новом кластере, чтобы использовать специализированный образ GPU AKS.
+
+```azure-cli
+az aks create --name myAKSCluster --resource-group myResourceGroup --node-vm-size Standard_NC6s_v2 --node-count 1 --aks-custom-headers UseGPUDedicatedVHD=true
+```
+
+Если вы хотите создать кластер с помощью обычных образов AKS, это можно сделать, опустив пользовательский `--aks-custom-headers` тег. Вы также можете добавить дополнительные специализированные пулы узлов GPU в соответствии с разрядом.
+
+
+### <a name="use-the-aks-specialized-gpu-image-on-existing-clusters-preview"></a>Использование специализированного образа GPU AKS в существующих кластерах (Предварительная версия)
+
+Настройте новый пул узлов для использования специализированного образа GPU AKS. Используйте `--aks-custom-headers` флаг флага для узлов агента GPU в новом пуле узлов, чтобы использовать специализированный образ GPU AKS.
+
+```azure-cli
+az aks nodepool add --name gpu --cluster-name myAKSCluster --resource-group myResourceGroup --node-vm-size Standard_NC6 --node-count 1 --aks-custom-headers UseGPUDedicatedVHD=true
+```
+
+Если вы хотите создать пул узлов с помощью обычных образов AKS, это можно сделать, опустив пользовательский `--aks-custom-headers` тег. 
 
 ## <a name="confirm-that-gpus-are-schedulable"></a>Подтверждение того, что процессоры GPU доступны для планирования
 
@@ -327,7 +388,7 @@ Adding run metadata for 499
 kubectl delete jobs samples-tf-mnist-demo
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы выполнять задания Apache Spark, ознакомьтесь с разделом [Запуск заданий Apache Spark в AKS][aks-spark].
 

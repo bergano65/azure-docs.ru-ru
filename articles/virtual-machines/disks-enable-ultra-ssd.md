@@ -8,12 +8,12 @@ ms.date: 05/11/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: cdfee2d75d662ce9aae6b40525d907ce7ab0e2c3
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 4f49d4e78cd58d16627a0b6fda1957baa9f1f085
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88658233"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88752083"
 ---
 # <a name="using-azure-ultra-disks"></a>Использование Ultra дисков Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "88658233"
 
 ## <a name="ga-scope-and-limitations"></a>Область и ограничения общедоступного уровня
 
-[!INCLUDE [managed-disks-ultra-disks-GA-scope-and-limitations](~/includes/managed-disks-ultra-disks-GA-scope-and-limitations.md)]
+[!INCLUDE [managed-disks-ultra-disks-GA-scope-and-limitations](../../includes/managed-disks-ultra-disks-GA-scope-and-limitations.md)]
 
 ## <a name="determine-vm-size-and-region-availability"></a>Определение размера виртуальной машины и доступности регионов
 
@@ -164,7 +164,7 @@ UltraSSDAvailable                            True
 
 ![ultra-options-yes-enable.png](media/virtual-machines-disks-getting-started-ultra-ssd/ultra-options-yes-enable.png)
 
-- Щелкните **Сохранить**.
+- Нажмите кнопку **Сохранить**.
 - Выберите **Добавить диск данных** , а затем в раскрывающемся списке **имя** выберите **создать диск**.
 
 ![create-and-attach-new-ultra-disk.png](media/virtual-machines-disks-getting-started-ultra-ssd/create-and-attach-new-ultra-disk.png)
@@ -190,7 +190,7 @@ Ultra Disks предлагает уникальную возможность, п
 ![selecting-ultra-disk-to-modify.png](media/virtual-machines-disks-getting-started-ultra-ssd/selecting-ultra-disk-to-modify.png)
 
 - Выберите **Конфигурация** и внесите необходимые изменения.
-- Щелкните **Сохранить**.
+- Нажмите кнопку **Сохранить**.
 
 ![configuring-ultra-disk-performance-and-size.png](media/virtual-machines-disks-getting-started-ultra-ssd/configuring-ultra-disk-performance-and-size.png)
 
@@ -347,4 +347,4 @@ Update-AzDisk -ResourceGroupName $resourceGroup -DiskName $diskName -DiskUpdate 
 ```
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. статью [Использование Azure Ultra Disks в службе Kubernetes Azure (Предварительная версия)](/azure/aks/use-ultra-disks).
+См. статью [Использование Azure Ultra Disks в службе Kubernetes Azure (Предварительная версия)](../aks/use-ultra-disks.md).
