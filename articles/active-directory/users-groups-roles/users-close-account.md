@@ -13,12 +13,12 @@ ms.author: rolyon
 ms.reviewer: ''
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1bbc1644294a471bbb704d10c5f684d7404eae95
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 87e03214e2a00a16064763f35f38bdd3ea0e6123
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85374582"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798335"
 ---
 # <a name="close-your-work-or-school-account-in-an-unmanaged-azure-ad-organization"></a>Закрытие рабочей или учебной учетной записи в неуправляемой Организации Azure AD
 
@@ -28,13 +28,13 @@ ms.locfileid: "85374582"
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Прежде чем можно будет закрыть учетную запись, необходимо подтвердить следующие элементы:
 
-* Убедитесь, что вы являетесь пользователем неуправляемой Организации Azure AD. Вы не можете закрыть учетную запись, если вы принадлежите к управляемой организации. Если вы принадлежите к управляемой организации и хотите закрыть учетную запись, обратитесь к администратору. Сведения о том, как определить, принадлежит ли вы к неуправляемой Организации, см. [в разделе Удаление пользователя из неуправляемого клиента](https://docs.microsoft.com/flow/gdpr-dsr-delete#delete-the-user-from-unmanaged-tenant).
+* Убедитесь, что вы являетесь пользователем неуправляемой Организации Azure AD. Вы не можете закрыть учетную запись, если вы принадлежите к управляемой организации. Если вы принадлежите к управляемой организации и хотите закрыть учетную запись, обратитесь к администратору. Сведения о том, как определить, принадлежит ли вы к неуправляемой Организации, см. [в разделе Удаление пользователя из неуправляемого клиента](/flow/gdpr-dsr-delete#delete-the-user-from-unmanaged-tenant).
 
-* Сохраните все данные, которые нужно сохранить. Сведения о том, как отправить запрос на экспорт, см. в разделе [доступ к журналам, созданным системой, и их экспорт для неуправляемых клиентов](https://docs.microsoft.com/power-platform/admin/powerapps-gdpr-dsr-guide-systemlogs#accessing-and-exporting-system-generated-logs-for-unmanaged-tenants).
+* Сохраните все данные, которые нужно сохранить. Сведения о том, как отправить запрос на экспорт, см. в разделе [доступ к журналам, созданным системой, и их экспорт для неуправляемых клиентов](/power-platform/admin/powerapps-gdpr-dsr-guide-systemlogs#accessing-and-exporting-system-generated-logs-for-unmanaged-tenants).
 
 > [!WARNING]
 > Закрытие учетной записи необратимо. При закрытии учетной записи все личные данные будут удалены. У вас больше не будет доступа к вашей учетной записи и данным, связанным с вашей учетной записью.
@@ -53,8 +53,8 @@ ms.locfileid: "85374582"
 
     ![Мои запросы к данным — подтвердить закрытие](./media/users-close-account/confirm-close.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое самостоятельная регистрация для Azure Active Directory?](directory-self-service-signup.md)
-- [Удаление пользователя из неуправляемого клиента](https://docs.microsoft.com/flow/gdpr-dsr-delete#delete-the-user-from-unmanaged-tenant)
-- [Доступ к системным журналам для неуправляемых клиентов и их экспорт](https://docs.microsoft.com/power-platform/admin/powerapps-gdpr-dsr-guide-systemlogs#accessing-and-exporting-system-generated-logs-for-unmanaged-tenants)
+- [Удаление пользователя из неуправляемого клиента](/flow/gdpr-dsr-delete#delete-the-user-from-unmanaged-tenant)
+- [Доступ к системным журналам для неуправляемых клиентов и их экспорт](/power-platform/admin/powerapps-gdpr-dsr-guide-systemlogs#accessing-and-exporting-system-generated-logs-for-unmanaged-tenants)

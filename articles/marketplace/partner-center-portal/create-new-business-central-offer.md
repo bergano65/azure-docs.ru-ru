@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: navits09
 ms.author: navits
 ms.date: 08/07/2020
-ms.openlocfilehash: 0d00f779031ec294523c861a4e9868f7cbbe790d
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: 4226f9cc45589b8c555d3d54918e31a04acbfc6b
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88606148"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88817057"
 ---
 # <a name="create-a-dynamics-365-business-central-offer"></a>Создание предложения Dynamics 365 Business Central
 
@@ -182,16 +182,16 @@ ms.locfileid: "88606148"
 
 ### <a name="marketplace-images"></a>Образы Marketplace
 
-Предоставьте логотипы и изображения для вашего предложения. Все изображения должны быть в формате PNG. 
+Укажите PNG-файл для логотипа **крупного** размера. Центр партнеров будет использовать его для создания **небольшого** логотипа. При необходимости можно заменить его другим изображением позже.
 
-[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
+- **Крупный** (от 216 x 216 до 350 x 350 ПКС, требуется)
+- **Малый** (48 x 48 ПКС, необязательно)
 
-Отправьте логотип предложения в двух размерах:
-
-* **Малый** (48 x 48 пикселей)
-* **Крупный** (216 x 216 пикселей)
+Эти логотипы используются в разных местах в списке:
 
 [!INCLUDE [logos-appsource-only](../includes/logos-appsource-only.md)]
+
+[!INCLUDE [Logo tips](../includes/graphics-suggestions.md)]
 
 >[!NOTE]
 >Если при отправке файлов возникнет проблема, убедитесь, что ваша локальная сеть не блокирует службу `https://upload.xboxlive.com`, которую использует Центр партнеров.
@@ -202,7 +202,7 @@ ms.locfileid: "88606148"
 
 #### <a name="videos"></a>Видео
 
-При необходимости можно добавить до пяти видеороликов, демонстрирующих ваше предложение. Они должны размещаться на YouTube и (или) Vimeo. Для каждого из них введите имя, URL-адрес и эскиз (1280 x 720 пикселей).
+При необходимости можно добавить до пяти видеороликов, демонстрирующих ваше предложение. Эти видео должны размещаться на YouTube и (или) Vimeo. Для каждого из них введите имя, URL-адрес и эскиз (1280 x 720 пикселей).
 
 #### <a name="additional-marketplace-listing-resources"></a>Дополнительные ресурсы для листинга на Marketplace
 

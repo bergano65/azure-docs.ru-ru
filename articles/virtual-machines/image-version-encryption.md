@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 08/11/2020
 ms.author: cynthn
-ms.openlocfilehash: 0d2b840b401dc90b332f91c93a9eda03d6643432
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.openlocfilehash: 21e6dc5a975f43456a077559eebafd975cea66a1
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88245559"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816496"
 ---
 # <a name="preview-use-customer-managed-keys-for-encrypting-images"></a>Предварительный просмотр: Использование управляемых клиентом ключей для шифрования образов
 
@@ -23,13 +23,13 @@ ms.locfileid: "88245559"
 
 Для шифрования на стороне сервера с помощью управляемых клиентом ключей используется Azure Key Vault. Вы можете либо импортировать [ключи RSA](../key-vault/keys/hsm-protected-keys.md) в Key Vault, либо создать новые ключи RSA в Azure Key Vault.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что у вас уже есть набор шифрования дисков для использования в вашем образе.
 
-- Сведения об использовании только управляемого клиентом ключа см. в разделе **Включение управляемых клиентом ключей с шифрованием на стороне сервера** с помощью [портал Azure](./windows/disks-enable-customer-managed-keys-portal.md) или [PowerShell](./windows/disks-enable-customer-managed-keys-powershell.md#set-up-your-azure-key-vault-and-diskencryptionset).
+- Сведения об использовании только управляемого клиентом ключа см. в разделе **Включение управляемых клиентом ключей с шифрованием на стороне сервера** с помощью [портал Azure](./disks-enable-customer-managed-keys-portal.md) или [PowerShell](./windows/disks-enable-customer-managed-keys-powershell.md#set-up-your-azure-key-vault-and-diskencryptionset).
 
-- Чтобы использовать управляемые платформой и управляемые клиентом ключи (для двойного шифрования), см. статью **Включение двойного шифрования при** хранении с помощью [портал Azure](./windows/disks-enable-double-encryption-at-rest-portal.md) или [PowerShell](./windows/disks-enable-double-encryption-at-rest-powershell.md).
+- Чтобы использовать управляемые платформой и управляемые клиентом ключи (для двойного шифрования), см. статью **Включение двойного шифрования при** хранении с помощью [портал Azure](./disks-enable-double-encryption-at-rest-portal.md) или [PowerShell](./windows/disks-enable-double-encryption-at-rest-powershell.md).
     > [!IMPORTANT]
     > Эту ссылку необходимо использовать [https://aka.ms/diskencryptionupdates](https://aka.ms/diskencryptionupdates) для доступа к портал Azure. Двойное шифрование неактивных компонентов в настоящее время не отображается в общедоступной портал Azure без использования ссылки.
 

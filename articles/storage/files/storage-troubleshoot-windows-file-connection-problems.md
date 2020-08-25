@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 05/31/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 322a3b4e8d362d1b751b2c016e6f7cf904f11d7e
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: e9384dd3865b106488dc8ec303b060736f23ded7
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88752336"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797791"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Устранение неполадок службы файлов Azure в Windows
 
@@ -369,7 +369,7 @@ Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGrou
 
 ### <a name="error-the-directory-service-was-unable-to-allocate-a-relative-identifier"></a>Ошибка: "службе каталогов не удалось выделить относительный идентификатор"
 
-Эта идентичное может возникать, если контроллер домена, содержащий роль FSMO хозяина RID, недоступен или был удален из домена и восстановлен из резервной копии.  Убедитесь, что все контроллеры домена работают и доступны.
+Эта ошибка может возникать, если контроллер домена, на котором находится роль FSMO хозяина RID, недоступен или был удален из домена и восстановлен из резервной копии.  Убедитесь, что все контроллеры домена работают и доступны.
 
 ### <a name="error-cannot-bind-positional-parameters-because-no-names-were-given"></a>Ошибка: "Не удается привязать позиционные параметры, поскольку имена не предоставлены"
 
