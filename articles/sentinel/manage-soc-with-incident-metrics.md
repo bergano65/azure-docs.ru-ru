@@ -84,7 +84,7 @@ SecurityIncident
 
 :::image type="content" source="./media/manage-soc-with-incident-metrics/security-incidents-workbooks-gallery.png" alt-text="Коллекция книг инцидентов безопасности":::
 
-:::image type="content" source="./media/manage-soc-with-incident-metrics/security-operations-workbook-1.png" alt-text="Книга "инциденты безопасности" завершена":::
+:::image type="content" source="./media/manage-soc-with-incident-metrics/security-operations-workbook-1.png" alt-text="Книга инциденты безопасности завершена":::
 
 Шаблон можно использовать для создания собственных настраиваемых книг, соответствующих вашим потребностям.
 
