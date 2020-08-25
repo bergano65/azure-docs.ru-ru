@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 04/15/2020
-ms.openlocfilehash: 1081865a2e138af38ba171197719f08dedf6ffdb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 07a8c26f7fc314680c51270ebafe03d4e3a84757
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81408938"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88749853"
 ---
 # <a name="managed-identities-in-azure-hdinsight"></a>Управляемые удостоверения в Azure HDInsight
 
@@ -25,7 +25,9 @@ ms.locfileid: "81408938"
 
 ## <a name="hdinsight-managed-identity-implementation"></a>Реализация управляемого удостоверения HDInsight
 
-В Azure HDInsight управляемые удостоверения подготавливаются на каждом узле кластера. Однако эти компоненты удостоверений можно использовать только в службе HDInsight. В настоящее время нет поддерживаемого метода для создания маркеров доступа с помощью управляемых удостоверений, установленных на узлах кластера HDInsight. Для некоторых служб Azure управляемые удостоверения реализуются с помощью конечной точки, которую можно использовать для получения маркеров доступа. Используйте маркеры для взаимодействия с другими службами Azure самостоятельно.
+В Azure HDInsight управляемые удостоверения можно использовать только в службе HDInsight для внутренних компонентов. В настоящее время нет поддерживаемого метода для создания маркеров доступа с помощью управляемых удостоверений, установленных на узлах кластера HDInsight для доступа к внешним службам. Для некоторых служб Azure, таких как расчетные виртуальные машины, управляемые удостоверения реализуются с помощью конечной точки, которую можно использовать для получения маркеров доступа. Эта конечная точка сейчас недоступна на узлах HDInsight.
+
+Если необходимо выполнить начальную загрузку приложений, чтобы избежать помещения секретов и паролей в задания аналитики (например, задания SCALA), можно диструбте собственные сертификаты в узлы кластера с помощью действий сценария, а затем использовать этот сертификат для получение маркера доступа (например, для доступа к Azure KeyVault).
 
 ## <a name="create-a-managed-identity"></a>Создание управляемого удостоверения
 
@@ -33,8 +35,8 @@ ms.locfileid: "81408938"
 
 * [Портал Azure](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)
 * [Azure PowerShell](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md)
-* [Azure Resource Manager](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-arm.md)
-* [Azure CLI](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md)
+* [Azure Resource Manager](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-arm.md)
+* [Azure CLI](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md)
 
 Оставшиеся шаги по настройке управляемого удостоверения зависят от сценария, в котором он будет использоваться.
 
@@ -46,7 +48,7 @@ ms.locfileid: "81408938"
 * [Пакет безопасности корпоративного уровня](domain-joined/apache-domain-joined-configure-using-azure-adds.md#create-and-authorize-a-managed-identity)
 * [Шифрование управляемых клиентом ключей](disk-encryption.md)
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 ### <a name="what-happens-if-i-delete-the-managed-identity-after-the-cluster-creation"></a>Что произойдет, если удалить управляемое удостоверение после создания кластера?
 

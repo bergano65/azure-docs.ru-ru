@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: a17764984e33e4312b9d81a5743d851dc14b5c05
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 24928ec4117b321cfec7177fdad40f2a3ab7a1f4
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87492162"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88722727"
 ---
 # <a name="tutorial-create-an-outbound-forest-trust-to-an-on-premises-domain-in-azure-active-directory-domain-services"></a>Руководство по Создание исходящего доверия леса для локального домена в доменных службах Azure Active Directory
 
@@ -128,7 +128,7 @@ ms.locfileid: "87492162"
 
 У вас должна быть виртуальная машина Windows Server, присоединенная к управляемому домену. Используйте эту виртуальную машину для тестирования того, что локальный пользователь может пройти проверку подлинности на виртуальной машине. При необходимости [создайте виртуальную машину Windows и присоедините ее к управляемому домену][join-windows-vm].
 
-1. Подключитесь к виртуальной машине Windows Server, присоединенной к лесу ресурсов Azure AD DS, используя [Бастион Azure](https://docs.microsoft.com/azure/bastion/bastion-overview) и учетные данные администратора Azure AD DS.
+1. Подключитесь к виртуальной машине Windows Server, присоединенной к лесу ресурсов Azure AD DS, используя [Бастион Azure](../bastion/bastion-overview.md) и учетные данные администратора Azure AD DS.
 1. Откройте командную строку и выполните команду `whoami`, чтобы просмотреть различающееся имя пользователя, проходящего проверку подлинности:
 
     ```console
@@ -150,7 +150,7 @@ ms.locfileid: "87492162"
 
 #### <a name="enable-file-and-printer-sharing"></a>Предоставление совместного доступа к файлам и принтерам
 
-1. Подключитесь к виртуальной машине Windows Server, присоединенной к лесу ресурсов Azure AD DS, используя [Бастион Azure](https://docs.microsoft.com/azure/bastion/bastion-overview) и учетные данные администратора Azure AD DS.
+1. Подключитесь к виртуальной машине Windows Server, присоединенной к лесу ресурсов Azure AD DS, используя [Бастион Azure](../bastion/bastion-overview.md) и учетные данные администратора Azure AD DS.
 
 1. Откройте **Параметры Windows**, затем найдите и откройте страницу **Центр управления сетями и общим доступом**.
 1. Щелкните **Изменить дополнительные параметры общего доступа**.

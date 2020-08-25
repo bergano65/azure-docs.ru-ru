@@ -12,17 +12,17 @@ ms.topic: end-user-help
 ms.date: 05/31/2020
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: d4053d4979861146705489dc02e628f03f3c4d85
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5aac6c0b903a3b2adf481a2c63847272122ce2d7
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84266225"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798981"
 ---
 # <a name="download-and-install-the-microsoft-authenticator-app"></a>Скачивание и установка приложения Microsoft Authenticator
 
 >[!Important]
->Эти материалы предназначены для пользователей. Если вы являетесь администратором, дополнительные сведения о том, как настроить среду Azure Active Directory (Azure AD) и управлять ею в [административной документации для Azure Active Directory](https://docs.microsoft.com/azure/active-directory), можно найти в этой статье.
+>Эти материалы предназначены для пользователей. Если вы являетесь администратором, дополнительные сведения о том, как настроить среду Azure Active Directory (Azure AD) и управлять ею в [административной документации для Azure Active Directory](../index.yml), можно найти в этой статье.
 >
 > Если у вас возникли проблемы при входе в учетную запись, ознакомьтесь со статьей [Не удается войти в учетную запись Майкрософт](https://support.microsoft.com/help/12429).  Кроме того, вы можете получить дополнительные сведения о том, что делать, когда вы получаете сообщение ["это учетная запись Майкрософт не существует"](https://support.microsoft.com/help/13811) при попытке войти в учетная запись Майкрософт.
 

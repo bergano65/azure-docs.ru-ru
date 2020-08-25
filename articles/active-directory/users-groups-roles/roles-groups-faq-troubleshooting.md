@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 84bf041f64a2f85f3aa3eada1dc1955c93dc034a
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: a3f2a23da5baa3a5d1955b10d18411fcedc3acd1
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88208189"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798301"
 ---
 # <a name="troubleshooting-roles-assigned-to-cloud-groups"></a>Устранение неполадок ролей, назначенных облачным группам
 
@@ -40,8 +40,8 @@ ms.locfileid: "88208189"
 
 Ответ **.** Пользователь может быть владельцем группы, назначаемой ролью. Мы защищаем владельцами назначаемых ролями групп, чтобы избежать повышения привилегий. Например, если группе Contoso_Security_Admins назначена роль администратора безопасности, где Боб — владелец группы, а Алиса — администратор паролей в Организации. Если эта защита не была установлена, Алиса может сбросить учетные данные Боба и получить удостоверение. После этого Алиса может добавить себя или любого сотрудника в группу Contoso_Security_Admins группу, чтобы стать администратором безопасности в Организации. Чтобы узнать, является ли пользователь владельцем группы, получите список собственных объектов этого пользователя и проверьте, имеет ли группа Исассигнаблетороле значение true. Если да, то этот пользователь защищен, и поведение будет соблюдаться при проектировании. Сведения о том, как получить собственные объекты, см. в этих документах:
 
-- [Get-AzureADUserOwnedObject](https://docs.microsoft.com/powershell/module/azuread/get-azureaduserownedobject?view=azureadps-2.0)  
-- [OwnedObjects списка](https://docs.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0&tabs=http)
+- [Get-AzureADUserOwnedObject](/powershell/module/azuread/get-azureaduserownedobject?view=azureadps-2.0)  
+- [OwnedObjects списка](/graph/api/user-list-ownedobjects?tabs=http&view=graph-rest-1.0)
 
 **Вопрос.** Можно ли создать проверку доступа к группам, которые могут быть назначены ролям Azure AD (в частности, группам со свойством Исассигнаблетороле, имеющим значение true)?  
 
@@ -98,7 +98,7 @@ ms.locfileid: "88208189"
 
 Ответ **.** При назначении роли существующей группы существующий владелец группы может добавить других членов в эту группу, не зная, что эти члены будут иметь роль. Так как назначаемые роли группы являются мощными, мы предоставляем множество ограничений для их защиты. Вы не хотите вносить изменения в группу, которая будет удивительной для пользователя, управляющего группой.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Использование облачных групп для управления назначениями ролей](roles-groups-concept.md)
 - [Создание группы с назначением роли](roles-groups-create-eligible.md)

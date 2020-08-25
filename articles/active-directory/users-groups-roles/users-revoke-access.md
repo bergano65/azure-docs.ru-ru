@@ -13,12 +13,12 @@ ms.reviewer: krbain
 ms.date: 07/15/2020
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbb2ad8e6d37190d0473f3f9f4af7738edd3b27f
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: 1cc4a29c9d4b5ae93df81de5b77cb6355947813d
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475215"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798420"
 ---
 # <a name="revoke-user-access-in-azure-active-directory"></a>Отозвать доступ пользователей в Azure Active Directory
 
@@ -38,7 +38,7 @@ ms.locfileid: "87475215"
 
 Затем Azure AD переоценивает политики авторизации. Если пользователь все еще является полномочным, Azure AD выдает новый маркер доступа и маркер обновления.
 
-Маркеры доступа могут представлять проблему безопасности, если доступ должен быть отозван в течение времени, меньшего времени существования маркера, что обычно занимает около часа. По этой причине корпорация Майкрософт активно работает над обеспечением [непрерывного доступа](https://docs.microsoft.com/azure/active-directory/fundamentals/concept-fundamentals-continuous-access-evaluation) к приложениям Office 365, что помогает обеспечить недействительность маркеров доступа практически в реальном времени.  
+Маркеры доступа могут представлять проблему безопасности, если доступ должен быть отозван в течение времени, меньшего времени существования маркера, что обычно занимает около часа. По этой причине корпорация Майкрософт активно работает над обеспечением [непрерывного доступа](../fundamentals/concept-fundamentals-continuous-access-evaluation.md) к приложениям Office 365, что помогает обеспечить недействительность маркеров доступа практически в реальном времени.  
 
 ## <a name="session-tokens-cookies"></a>Токены сеансов (файлы cookie)
 
@@ -60,13 +60,13 @@ ms.locfileid: "87475215"
 
 В качестве администратора в Active Directory подключитесь к локальной сети, откройте PowerShell и выполните следующие действия.
 
-1. Отключите пользователя в Active Directory. Дополнительные сведения см. в разделе [Disable-адаккаунт](https://docs.microsoft.com/powershell/module/addsadministration/disable-adaccount?view=win10-ps).
+1. Отключите пользователя в Active Directory. Дополнительные сведения см. в разделе [Disable-адаккаунт](/powershell/module/addsadministration/disable-adaccount?view=win10-ps).
 
     ```PowerShell
     Disable-ADAccount -Identity johndoe  
     ```
 
-1. Дважды сбросьте пароль пользователя в Active Directory. Обратитесь к командлету [Set-адаккаунтпассворд](https://docs.microsoft.com/powershell/module/addsadministration/set-adaccountpassword?view=win10-ps).
+1. Дважды сбросьте пароль пользователя в Active Directory. Обратитесь к командлету [Set-адаккаунтпассворд](/powershell/module/addsadministration/set-adaccountpassword?view=win10-ps).
 
     > [!NOTE]
     > Изменение пароля пользователя в два раза заключается в снижении риска передаваемого хэша, особенно при наличии задержек в локальной репликации паролей. Если вы можете безопасно предположить, что эта учетная запись не скомпрометирована, вы можете сбросить пароль только один раз.
@@ -83,18 +83,18 @@ ms.locfileid: "87475215"
 
 В качестве администратора в Azure Active Directory откройте PowerShell, выполните ``Connect-AzureAD`` и выполните следующие действия.
 
-1. Отключите пользователя в Azure AD. Обратитесь к командлету [Set-AzureADUser](https://docs.microsoft.com/powershell/module/azuread/Set-AzureADUser?view=azureadps-2.0).
+1. Отключите пользователя в Azure AD. Обратитесь к командлету [Set-AzureADUser](/powershell/module/azuread/Set-AzureADUser?view=azureadps-2.0).
 
     ```PowerShell
     Set-AzureADUser -ObjectId johndoe@contoso.com -AccountEnabled $false
     ```
-1. Отозвать маркеры обновления Azure AD пользователя. Дополнительные сведения см. в разделе [REVOKE-азуреадусераллрефрештокен](https://docs.microsoft.com/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0).
+1. Отозвать маркеры обновления Azure AD пользователя. Дополнительные сведения см. в разделе [REVOKE-азуреадусераллрефрештокен](/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0).
 
     ```PowerShell
     Revoke-AzureADUserAllRefreshToken -ObjectId johndoe@contoso.com
     ```
 
-1. Отключите устройства пользователя. См. статью [Get-азуреадусеррегистереддевице](https://docs.microsoft.com/powershell/module/azuread/get-azureaduserregistereddevice?view=azureadps-2.0).
+1. Отключите устройства пользователя. См. статью [Get-азуреадусеррегистереддевице](/powershell/module/azuread/get-azureaduserregistereddevice?view=azureadps-2.0).
 
     ```PowerShell
     Get-AzureADUserRegisteredDevice -ObjectId johndoe@contoso.com | Set-AzureADDevice -AccountEnabled $false
@@ -102,9 +102,9 @@ ms.locfileid: "87475215"
 
 ## <a name="optional-steps"></a>Другие возможные шаги
 
-- [Очистка корпоративных данных из приложений, управляемых Intune](https://docs.microsoft.com/mem/intune/apps/apps-selective-wipe).
+- [Очистка корпоративных данных из приложений, управляемых Intune](/mem/intune/apps/apps-selective-wipe).
 
-- [Для очистки корпоративных устройств необходимо сбросить параметры устройства до заводских настроек по умолчанию](https://docs.microsoft.com/mem/intune/remote-actions/devices-wipe).
+- [Для очистки корпоративных устройств необходимо сбросить параметры устройства до заводских настроек по умолчанию](/mem/intune/remote-actions/devices-wipe).
 
 > [!NOTE]
 > Данные на устройстве невозможно восстановить после очистки.

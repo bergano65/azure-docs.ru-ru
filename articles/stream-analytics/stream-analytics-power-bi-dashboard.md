@@ -6,13 +6,13 @@ ms.author: jeanb
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
-ms.date: 03/05/2019
-ms.openlocfilehash: 4d0ee48a42814ab2c4229c5f8f239aa1a1c28544
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.date: 8/6/2020
+ms.openlocfilehash: 5b5840c1b668e9a509f58d7edf65175f621d9e4c
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87314226"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88794306"
 ---
 # <a name="stream-analytics-and-power-bi-a-real-time-analytics-dashboard-for-streaming-data"></a>Stream Analytics и Power BI: панель мониторинга аналитики для потоковой передачи данных в режиме реального времени
 
@@ -39,7 +39,10 @@ Azure Stream Analytics позволяет воспользоваться одн�
 
 2. В разделе **Топология задания** в меню слева выберите **Выходные данные**. Нажмите **+ Добавить** и в раскрывающемся меню выберите **Power BI**.
 
-3. Выберите **+ Добавить** > **Power BI**. Затем заполните форму следующими сведениями и нажмите кнопку **Авторизовать**:
+3. Выберите **+ Добавить** > **Power BI**. Затем заполните форму следующими сведениями и выберите **авторизовать** , чтобы использовать собственное удостоверение пользователя для подключения к Power BI (маркер действителен в течение 90 дней). 
+
+>[!NOTE]
+>Для рабочих заданий рекомендуется подключиться, чтобы [использовать управляемое удостоверение для проверки подлинности задания Azure Stream Analytics для Power BI](https://docs.microsoft.com/azure/stream-analytics/powerbi-output-managed-identity).
 
    |**Параметр**  |**Рекомендуемое значение**  |
    |---------|---------|
@@ -230,3 +233,4 @@ Azure Stream Analytics позволяет воспользоваться одн�
 * [Выходные данные Stream Analytics](stream-analytics-define-outputs.md)
 * [Azure Stream Analytics query language reference](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Azure Stream Analytics).
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+* [Используйте управляемое удостоверение для проверки подлинности задания Azure Stream Analytics для Power BI](https://docs.microsoft.com/azure/stream-analytics/powerbi-output-managed-identity)

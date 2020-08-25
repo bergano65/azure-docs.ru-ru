@@ -2,18 +2,18 @@
 title: Заметки о выпуске Azure Stack & Шлюз Azure Data Box 2007 | Документация Майкрософт
 description: Описание критических открытых проблем и способов их устранения для Azure Stack пограничных и Шлюз Data Box запуска выпуска 2007.
 services: databox
-author: priestlg
+author: twooley
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
 ms.date: 07/14/2020
-ms.author: v-grpr
-ms.openlocfilehash: 4964454a5636120840fbdb5f3fbdd3aee30d8e74
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.author: twooley
+ms.openlocfilehash: f9a08cda1466dbe284a0ac3c0e34b109be236883
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86532308"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783932"
 ---
 # <a name="azure-stack-edge-and-azure-data-box-gateway-2007-release-notes"></a>Заметки о выпуске Azure Stack и Шлюз Azure Data Box 2007
 

@@ -9,12 +9,12 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: cb3cb41b46c2def4f99af7f1811e4ff96dff7070
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 985fbc70f15c0806c45ae43d62995590e10b1bb2
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88167034"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798930"
 ---
 # <a name="mount-blob-storage-by-using-the-network-file-system-nfs-30-protocol-preview"></a>Подключение хранилища BLOB-объектов с помощью протокола NFS 3,0 (Предварительная версия)
 
@@ -98,8 +98,8 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 |Репликация|Локально избыточное хранилище (LRS)|
 |Метод подключения|Общедоступная конечная точка (выбранные сети) или частная конечная точка|
 |Требуется безопасная передача данных|Выключено|
-|Иерархическое пространство имен|Активировано|
-|NFS V3|Активировано|
+|Иерархическое пространство имен|Включено|
+|NFS V3|Включено|
 
 Можно принять значения по умолчанию для всех остальных параметров. 
 
@@ -112,7 +112,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 |[Обозреватель службы хранилища Azure](data-lake-storage-explorer.md#create-a-container)|[.NET](data-lake-storage-directory-file-acl-dotnet.md#create-a-container)|
 |[AzCopy](../common/storage-use-azcopy-blobs.md#create-a-container)|[Java](data-lake-storage-directory-file-acl-java.md#create-a-container)|
 |[PowerShell](data-lake-storage-directory-file-acl-powershell.md#create-a-container)|[Python](data-lake-storage-directory-file-acl-python.md#create-a-container)|
-|[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container)|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
+|[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container);|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
 |[Портал Azure](https://portal.azure.com)|[REST](https://docs.microsoft.com/rest/api/storageservices/create-container)|
 
 ## <a name="step-7-mount-the-container"></a>Шаг 7. Подключение контейнера
@@ -153,6 +153,15 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
    - Замените `<storage-account-name>` заполнитель, который отображается в этой команде, именем вашей учетной записи хранения.  
 
    - Замените `<container-name>` заполнитель именем своего контейнера.
+
+3. Если требуются разрешения на запись, может потребоваться изменить UID и GID по умолчанию, используемые Windows для подключения к общей папке. Для этого выполните следующие команды PowerShell от имени администратора:
+
+   ```
+   New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default -Name AnonymousUid -PropertyType DWord -Value 0
+   New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default -Name AnonymousGid -PropertyType DWord -Value 0
+   ```
+   
+   - Перезапустите службу клиента NFS или перезагрузите сервер после внесения этого изменения.
 
 ---
 

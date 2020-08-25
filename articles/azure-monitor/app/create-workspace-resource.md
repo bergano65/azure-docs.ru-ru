@@ -4,13 +4,13 @@ description: Узнайте, что нужно сделать, чтобы исп
 author: mrbullwinkle
 ms.author: mbullwin
 ms.topic: conceptual
-ms.date: 05/18/2020
-ms.openlocfilehash: 186d4c510b58e06fcb0b823ca0d5770a2684196e
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.date: 08/24/2020
+ms.openlocfilehash: d6d6731ae087604e0a53a6721bb76dfba5fbf40c
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87824993"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783847"
 ---
 # <a name="workspace-based-application-insights-resources-preview"></a>Ресурсы рабочей области Application Insights (предварительная версия)
 
@@ -27,7 +27,7 @@ ms.locfileid: "87824993"
 
 Если у вас еще нет рабочей области Log Analytics, [обратитесь к документации по созданию рабочей области Log Analytics](../learn/quick-create-workspace.md).
 
-Для общедоступной предварительной версии **ресурсы рабочей области в настоящее время доступны только в западной части США 2, восточной части США и центрально-южной части США.**
+**Ресурсы на основе рабочей области в настоящее время доступны во всех коммерческих регионах и в Azure для государственных организаций**
 
 После создания ресурса информация о соответствующей рабочей области отобразится в области **Обзор**.
 
@@ -184,6 +184,14 @@ az monitor app-insights component create --app demoApp --location eastus --kind 
 }
 
 ```
+
+## <a name="new-capabilities"></a>Новые возможности
+
+Application Insights на основе рабочей области позволяет использовать преимущества всех новейших возможностей Azure Monitor включая:
+
+* [Ключи, управляемые клиентом (CMK)](../platform/customer-managed-keys.md) , обеспечивают шифрование неактивных данных с ключами шифрования, к которым у вас есть доступ.
+* [Приватный канал Azure](../platform/private-link-security.md) позволяет безопасно связать службы Azure PaaS с виртуальной сетью с помощью частных конечных точек.
+* [Приведите свое хранилище (BYOS) для профайлера и snapshot Debugger](./profiler-bring-your-own-storage.md) предоставляет полный контроль над политикой шифрования неактивных данных, политикой управления жизненным циклом и сетевым доступом для всех связанных с Application Insights Profiler и snapshot Debugger. 
 
 ## <a name="modifying-the-associated-workspace"></a>Изменение связанной рабочей области
 

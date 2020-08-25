@@ -2,17 +2,17 @@
 title: Написание кода для клиентского приложения
 titleSuffix: Azure Digital Twins
 description: Руководство по написанию минимального объема кода для клиентского приложения с помощью пакета SDK для .NET (C# ).
-author: cschormann
-ms.author: cschorm
+author: baanders
+ms.author: baanders
 ms.date: 05/05/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: d063418bb8e78bf306dda8fc558bb0e3005dbd0a
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 52a22dd215769208b60f180b576ae5763d67eade
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88584902"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723475"
 ---
 # <a name="coding-with-the-azure-digital-twins-apis"></a>Написание кода с помощью API Azure Digital Twins
 

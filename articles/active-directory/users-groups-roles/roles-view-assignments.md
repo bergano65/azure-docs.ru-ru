@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 20e566a450768fca81e29692f7c8d2da3ccf5201
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fb64a84388a370e77f39369f78c3086ec1cd00ec
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84731568"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798352"
 ---
 # <a name="view-custom-role-assignments-in-azure-active-directory"></a>Просмотр пользовательских назначений ролей в Azure Active Directory
 
@@ -39,7 +39,7 @@ ms.locfileid: "84731568"
 
 ## <a name="view-role-assignments-using-azure-ad-powershell"></a>Просмотр назначений ролей с помощью Azure AD PowerShell
 
-В этом разделе описывается Просмотр назначений роли в масштабе всей Организации. В этой статье используется модуль [Azure Active Directory PowerShell версии 2](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#directory_roles) . Для просмотра назначений области с одним приложением с помощью PowerShell можно использовать командлеты в этой службе для [назначения пользовательских ролей](roles-assign-powershell.md).
+В этом разделе описывается Просмотр назначений роли в масштабе всей Организации. В этой статье используется модуль [Azure Active Directory PowerShell версии 2](/powershell/module/azuread/?view=azureadps-2.0#directory_roles) . Для просмотра назначений области с одним приложением с помощью PowerShell можно использовать командлеты в этой службе для [назначения пользовательских ролей](roles-assign-powershell.md).
 
 ### <a name="prepare-powershell"></a>Подготовка PowerShell
 

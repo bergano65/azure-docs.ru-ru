@@ -1,14 +1,14 @@
 ---
 title: Основные сведения о языке запросов
 description: Описание таблиц Resource Graph и доступных типов данных, операторов и функций Kusto, которые можно использовать с Azure Resource Graph.
-ms.date: 08/03/2020
+ms.date: 08/21/2020
 ms.topic: conceptual
-ms.openlocfilehash: b59811ecd877b9b2e22a43c00329ed7d02dfb97d
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: ea274c349c968852b77f3c3f2d39637f91484335
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87541827"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723440"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -93,7 +93,7 @@ Resources
 
 ## <a name="supported-kql-language-elements"></a>Поддерживаемые элементы языка KQL
 
-Resource Graph поддерживает все [типы данных](/azure/kusto/query/scalar-data-types/), [скалярные функции](/azure/kusto/query/scalarfunctions), [скалярные операторы](/azure/kusto/query/binoperators) и [агрегатные функции](/azure/kusto/query/any-aggfunction) KQL. Resource Graph поддерживает определенные [табличные операторы](/azure/kusto/query/queries), некоторые из которых имеют разное поведение.
+Граф ресурсов поддерживает подмножество [типов данных](/azure/kusto/query/scalar-data-types/)ККЛ, [скалярных функций](/azure/kusto/query/scalarfunctions), [скалярных операторов](/azure/kusto/query/binoperators)и [агрегатных функций](/azure/kusto/query/any-aggfunction). Resource Graph поддерживает определенные [табличные операторы](/azure/kusto/query/queries), некоторые из которых имеют разное поведение.
 
 ### <a name="supported-tabulartop-level-operators"></a>Поддерживаемые табличные операторы и операторы верхнего уровня
 
@@ -124,7 +124,7 @@ Resource Graph поддерживает все [типы данных](/azure/ku
 В REST API и всех других пакетах SDK список подписок, которые должны включать ресурсы из, должен быть явно определен как часть запроса.
 
 В качестве **предварительной**версии REST API версия `2020-04-01-preview` добавляет свойство в область запроса в [группу управления](../../management-groups/overview.md). Этот API предварительной версии также делает свойство подписки необязательным. Если ни Группа управления, ни список подписок не определены, областью запроса будут все ресурсы, доступ к которым может получить пользователь, прошедший проверку подлинности. Новое `managementGroupId` свойство принимает идентификатор группы управления, который отличается от имени группы управления.
-Если `managementGroupId` указан параметр, включаются ресурсы из первой 5000 подписки в или в указанной иерархии группы управления. `managementGroupId`нельзя использовать в то же время, что и `subscriptions` .
+Если `managementGroupId` указан параметр, включаются ресурсы из первой 5000 подписки в или в указанной иерархии группы управления. `managementGroupId` нельзя использовать в то же время, что и `subscriptions` .
 
 Пример. запрос всех ресурсов в иерархии группы управления с именем "Моя группа управления" с ИДЕНТИФИКАТОРом "Мимг".
 

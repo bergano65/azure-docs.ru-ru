@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e8cba89abd65844d238120726572481457f27cb
-ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
+ms.openlocfilehash: 28125ff55fe6ab3e68d56dc26a074d0498c2b413
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88706172"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798437"
 ---
 # <a name="restrict-guest-access-permissions-preview-in-azure-active-directory"></a>Ограничение разрешений гостевого доступа (Предварительная версия) в Azure Active Directory
 
@@ -50,11 +50,11 @@ Azure Active Directory (Azure AD) позволяет ограничить воз
 
     ![Страница параметров внешней совместной работы Azure AD](./media/users-restrict-guest-permissions/external-collaboration-settings.png)
 
-1. Щелкните **Сохранить**. Изменения могут вступить в силу для гостевых пользователей до 15 минут.
+1. Нажмите кнопку **Сохранить**. Изменения могут вступить в силу для гостевых пользователей до 15 минут.
 
 ## <a name="update-with-the-microsoft-graph-api"></a>Обновление с помощью Microsoft Graph API
 
-Мы добавили новый API Microsoft Graph для настройки разрешений гостя в Организации Azure AD. Для назначения любого уровня разрешений можно выполнить следующие вызовы API. Значение для Гуестусерролеид, которое используется здесь, показывает наиболее ограниченный параметр гостевого пользователя. Дополнительные сведения об использовании Microsoft Graph для установки разрешений гостя см. в разделе [тип ресурса authorizationPolicy](https://docs.microsoft.com/graph/api/resources/authorizationpolicy).
+Мы добавили новый API Microsoft Graph для настройки разрешений гостя в Организации Azure AD. Для назначения любого уровня разрешений можно выполнить следующие вызовы API. Значение для Гуестусерролеид, которое используется здесь, показывает наиболее ограниченный параметр гостевого пользователя. Дополнительные сведения об использовании Microsoft Graph для установки разрешений гостя см. в разделе [тип ресурса authorizationPolicy](/graph/api/resources/authorizationpolicy).
 
 ### <a name="configuring-for-the-first-time"></a>Настройка в первый раз
 
@@ -168,5 +168,5 @@ PS C:\WINDOWS\system32> Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о существующих разрешениях гостя в Azure AD см. [в разделе что такое разрешения пользователя по умолчанию в Azure Active Directory?](../fundamentals/users-default-permissions.md).
-- Дополнительные сведения о методах API Microsoft Graph, позволяющих ограничивать гостевой доступ, см. в разделе [тип ресурса authorizationPolicy](https://docs.microsoft.com/graph/api/resources/authorizationpolicy).
+- Дополнительные сведения о методах API Microsoft Graph, позволяющих ограничивать гостевой доступ, см. в разделе [тип ресурса authorizationPolicy](/graph/api/resources/authorizationpolicy).
 - Сведения об отмене доступа для пользователя см. в статье [отзыв доступа пользователей в Azure AD](users-revoke-access.md).

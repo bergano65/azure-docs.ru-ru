@@ -16,12 +16,12 @@ ms.date: 06/17/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64a619843f781fa24bfdc2a339e67fdb49b1bff1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: def74cccb3ad2c45a18210cc9d5a0d7ff0ba76f6
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85078840"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783694"
 ---
 # <a name="use-azure-ad-access-reviews-to-manage-users-excluded-from-conditional-access-policies"></a>Использование проверок доступа Azure AD для управления пользователями, которые исключены из политик условного доступа
 
@@ -144,7 +144,7 @@ ms.locfileid: "85078840"
     ![Создание панели проверки доступа для примера 2](./media/conditional-access-exclusion/create-access-review-2.png)
 
 >[!IMPORTANT] 
->Если у вас много групп исключений, а значит, есть необходимость создавать много проверок доступа, вы можете выполнять эти действия программным способом через API-интерфейс в бета-версии конечной точки Microsoft Graph. Чтобы воспользоваться этими возможностями, изучите [документацию по API проверки доступа AAD](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/accessreviews_root) и [примеры проверок доступа для AAD через Microsoft Graph](https://techcommunity.microsoft.com/t5/Azure-Active-Directory/Example-of-retrieving-Azure-AD-access-reviews-via-Microsoft/td-p/236096).
+>Если у вас много групп исключений, а значит, есть необходимость создавать много проверок доступа, вы можете выполнять эти действия программным способом через API-интерфейс в бета-версии конечной точки Microsoft Graph. Чтобы воспользоваться этими возможностями, изучите [документацию по API проверки доступа AAD](/graph/api/resources/accessreviews-root?view=graph-rest-beta) и [примеры проверок доступа для AAD через Microsoft Graph](https://techcommunity.microsoft.com/t5/Azure-Active-Directory/Example-of-retrieving-Azure-AD-access-reviews-via-Microsoft/td-p/236096).
 
 ## <a name="access-review-results-and-audit-logs"></a>Результаты проверки доступа и журналы аудита
 

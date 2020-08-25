@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64f5c88de72bcd241f0cd42d338acbe707de6f34
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: a80dafda39c0b37b1a7477b93d7f649fa1beeade
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87798789"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783643"
 ---
 # <a name="create-a-new-access-package-in-azure-ad-entitlement-management"></a>Создание нового пакета Access в управлении назначением Azure AD
 
@@ -67,7 +67,7 @@ ms.locfileid: "87798789"
    
     ![Управление правами на портале Azure](./media/entitlement-management-shared/access-packages-list.png)
 
-## <a name="basics"></a>Основные сведения
+## <a name="basics"></a>Основы
 
 На вкладке " **основы** " Присвойте пакету доступа имя и укажите каталог для создания пакета доступа в.
 
@@ -83,7 +83,7 @@ ms.locfileid: "87798789"
 
     Создаваемый пакет Access и все ресурсы, включенные в него, будут добавлены в новый каталог. Вы также можете добавить дополнительных владельцев каталога позже.
 
-1. Нажмите кнопку **Далее**.
+1. Щелкните **Далее**.
 
 ## <a name="resource-roles"></a>Роли ресурсов
 
@@ -105,7 +105,7 @@ ms.locfileid: "87798789"
 
     ![Доступ к пакету — Выбор роли ресурсов](./media/entitlement-management-access-package-create/resource-roles-role.png)
 
-1. Нажмите кнопку **Далее**.
+1. Щелкните **Далее**.
 
 ## <a name="requests"></a>Requests
 
@@ -119,7 +119,7 @@ ms.locfileid: "87798789"
 
 [!INCLUDE [Entitlement management lifecycle policy](../../../includes/active-directory-entitlement-management-lifecycle-policy.md)]
 
-## <a name="review--create"></a>Просмотр и создание
+## <a name="review--create"></a>Отзыв и создание
 
 На вкладке " **Проверка и создание** " можно просмотреть параметры и проверить наличие ошибок проверки.
 
@@ -135,11 +135,11 @@ ms.locfileid: "87798789"
 
 Пакет Access также можно создать с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызывать API для
 
-1. [Перечислите акцесспаккажересаурцес в каталоге](https://docs.microsoft.com/graph/api/accesspackagecatalog-list-accesspackageresources?view=graph-rest-beta) и [Создайте акцесспаккажересаурцерекуест](https://docs.microsoft.com/graph/api/accesspackageresourcerequest-post?view=graph-rest-beta) для всех ресурсов, которые еще не находятся в каталоге.
-1. [Перечислите акцесспаккажересаурцеролес](https://docs.microsoft.com/graph/api/accesspackagecatalog-list-accesspackageresourceroles?view=graph-rest-beta) каждого Акцесспаккажересаурце в акцесспаккажекаталог. Этот список ролей будет использоваться для выбора роли при последующем создании Акцесспаккажересаурцеролескопе.
-1. [Создайте акцесспаккаже](https://docs.microsoft.com/graph/api/accesspackage-post?view=graph-rest-beta).
-1. [Создайте акцесспаккажеассигнментполици](https://docs.microsoft.com/graph/api/accesspackageassignmentpolicy-post?view=graph-rest-beta).
-1. [Создайте акцесспаккажересаурцеролескопе](https://docs.microsoft.com/graph/api/accesspackage-post-accesspackageresourcerolescopes?view=graph-rest-beta) для каждой роли ресурса, необходимой для пакета доступа.
+1. [Перечислите акцесспаккажересаурцес в каталоге](/graph/api/accesspackagecatalog-list-accesspackageresources?view=graph-rest-beta) и [Создайте акцесспаккажересаурцерекуест](/graph/api/accesspackageresourcerequest-post?view=graph-rest-beta) для всех ресурсов, которые еще не находятся в каталоге.
+1. [Перечислите акцесспаккажересаурцеролес](/graph/api/accesspackagecatalog-list-accesspackageresourceroles?view=graph-rest-beta) каждого Акцесспаккажересаурце в акцесспаккажекаталог. Этот список ролей будет использоваться для выбора роли при последующем создании Акцесспаккажересаурцеролескопе.
+1. [Создайте акцесспаккаже](/graph/api/accesspackage-post?view=graph-rest-beta).
+1. [Создайте акцесспаккажеассигнментполици](/graph/api/accesspackageassignmentpolicy-post?view=graph-rest-beta).
+1. [Создайте акцесспаккажересаурцеролескопе](/graph/api/accesspackage-post-accesspackageresourcerolescopes?view=graph-rest-beta) для каждой роли ресурса, необходимой для пакета доступа.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

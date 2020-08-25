@@ -3,12 +3,12 @@ title: Устранение неполадок агента Azure Backup
 description: Из этой статьи вы узнаете, как устранить неполадки установки и регистрации агента Azure Backup.
 ms.topic: troubleshooting
 ms.date: 07/15/2019
-ms.openlocfilehash: 1afe437239ec7015bf3bbc195cf0b90e75698142
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: 64996737a18add8ca1bee25e32929f1d602f9018
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87564118"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88763513"
 ---
 # <a name="troubleshoot-the-microsoft-azure-recovery-services-mars-agent"></a>Устранение неполадок агента Службы восстановления Microsoft Azure (MARS)
 
@@ -222,9 +222,9 @@ Set-ExecutionPolicy Unrestricted
 
 Операция резервного копирования может завершиться ошибкой, если папка кэша (также называемая временной папкой) неправильно настроена, отсутствуют необходимые компоненты или доступ ограничен.
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения операций агента MARS с целью успешности папки кэша необходимо соблюдать указанные ниже требования.
+Для выполнения операций агента MARS с целью успешности папки кэша необходимо соблюдать следующие требования.
 
 - [Убедитесь, что от 5% до 10% свободного места на диске доступно во временной папке.](backup-azure-file-folder-backup-faq.md#whats-the-minimum-size-requirement-for-the-cache-folder)
 - [Убедитесь, что расположение временной папки является допустимым и доступным](backup-azure-file-folder-backup-faq.md#how-to-check-if-scratch-folder-is-valid-and-accessible)
@@ -245,8 +245,8 @@ Set-ExecutionPolicy Unrestricted
 
 Если на сервере установлено антивирусное программное обеспечение, добавьте необходимые правила исключения в антивирусную проверку для следующих файлов и папок:  
 
-- Вспомогательная папка. Его расположение по умолчанию —`C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch`
-- Папка Bin в папке`C:\Program Files\Microsoft Azure Recovery Services Agent\Bin`
+- Вспомогательная папка. Его расположение по умолчанию — `C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch`
+- Папка Bin в папке `C:\Program Files\Microsoft Azure Recovery Services Agent\Bin`
 - CBengine.exe.
 - CSC.exe
 
@@ -258,25 +258,25 @@ Set-ExecutionPolicy Unrestricted
 
 Сообщение об ошибке | Рекомендуемое действие
 --|--
-Агенту Службы восстановления Microsoft Azure не удалось получить доступ к контрольной сумме резервной копии, хранящейся в вспомогательном расположении. | Чтобы устранить эту проблему, выполните приведенные ниже действия и перезапустите сервер. <br/> - [Проверьте наличие антивирусной программы или других процессов, блокирующих файлы вспомогательного расположения.](#another-process-or-antivirus-software-blocking-access-to-cache-folder)<br/> - [Проверьте, является ли вспомогательное расположение допустимым и доступным для агента MARS.](backup-azure-file-folder-backup-faq.md#how-to-check-if-scratch-folder-is-valid-and-accessible)
+Агенту Службы восстановления Microsoft Azure не удалось получить доступ к контрольной сумме резервной копии, хранящейся в вспомогательном расположении. | Чтобы устранить эту проблему, выполните следующие действия и перезапустите сервер. <br/> - [Проверьте наличие антивирусной программы или других процессов, блокирующих файлы вспомогательного расположения.](#another-process-or-antivirus-software-blocking-access-to-cache-folder)<br/> - [Проверьте, является ли вспомогательное расположение допустимым и доступным для агента MARS.](backup-azure-file-folder-backup-faq.md#how-to-check-if-scratch-folder-is-valid-and-accessible)
 
 ### <a name="salvhdinitializationerror"></a>SalVhdInitializationError
 
 Сообщение об ошибке | Рекомендуемое действие
 --|--
-Агенту Службы восстановления Microsoft Azure не удалось получить доступ к вспомогательному расположению для инициализации VHD. | Чтобы устранить эту проблему, выполните приведенные ниже действия и перезапустите сервер. <br/> - [Проверьте, блокирует ли антивирусные или другие процессы файлы вспомогательного расположения.](#another-process-or-antivirus-software-blocking-access-to-cache-folder)<br/> - [Проверьте, является ли вспомогательное расположение допустимым и доступным для агента MARS.](backup-azure-file-folder-backup-faq.md#how-to-check-if-scratch-folder-is-valid-and-accessible)
+Агенту Службы восстановления Microsoft Azure не удалось получить доступ к вспомогательному расположению для инициализации VHD. | Чтобы устранить эту проблему, выполните следующие действия и перезапустите сервер. <br/> - [Проверьте, блокирует ли антивирусные или другие процессы файлы вспомогательного расположения.](#another-process-or-antivirus-software-blocking-access-to-cache-folder)<br/> - [Проверьте, является ли вспомогательное расположение допустимым и доступным для агента MARS.](backup-azure-file-folder-backup-faq.md#how-to-check-if-scratch-folder-is-valid-and-accessible)
 
 ### <a name="sallowdiskspace"></a>салловдискспаце
 
 Сообщение об ошибке | Рекомендуемое действие
 --|--
-Сбой резервного копирования из-за нехватки места в томе, где находится вспомогательная папка | Чтобы устранить эту проблему, выполните указанные ниже шаги и повторите операцию.<br/>- [Убедитесь, что агент MARS является последним](https://go.microsoft.com/fwlink/?linkid=229525&clcid=0x409)<br/> - [Проверка и устранение проблем с хранилищем, влияющих на рабочую область резервного копирования](#prerequisites)
+Сбой резервного копирования из-за нехватки места в томе, где находится вспомогательная папка | Чтобы устранить эту проблему, проверьте следующие шаги и повторите операцию.<br/>- [Убедитесь, что агент MARS является последним](https://go.microsoft.com/fwlink/?linkid=229525&clcid=0x409)<br/> - [Проверка и устранение проблем с хранилищем, влияющих на рабочую область резервного копирования](#prerequisites)
 
 ### <a name="salbitmaperror"></a>SalBitmapError
 
 Сообщение об ошибке | Рекомендуемое действие
 --|--
-Не удалось найти изменения в файле. Это может быть вызвано разными причинами. Повторите операцию. | Чтобы устранить эту проблему, выполните указанные ниже шаги и повторите операцию.<br/> - [Убедитесь, что агент MARS является последним](https://go.microsoft.com/fwlink/?linkid=229525&clcid=0x409) <br/> - [Проверка и устранение проблем с хранилищем, влияющих на рабочую область резервного копирования](#prerequisites)
+Не удалось найти изменения в файле. Это может быть вызвано разными причинами. Повторите операцию. | Чтобы устранить эту проблему, проверьте следующие шаги и повторите операцию.<br/> - [Убедитесь, что агент MARS является последним](https://go.microsoft.com/fwlink/?linkid=229525&clcid=0x409) <br/> - [Проверка и устранение проблем с хранилищем, влияющих на рабочую область резервного копирования](#prerequisites)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

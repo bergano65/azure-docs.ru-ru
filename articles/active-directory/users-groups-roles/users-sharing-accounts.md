@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: jeffsta
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38b474d4b454c61b83bfb1d62230930a0b569b1d
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: ba22720901cf4b7505d8d5b5295ca4e0c271953f
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88164229"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798403"
 ---
 # <a name="sharing-accounts-with-azure-ad"></a>Совместное использование учетных записей в Azure AD
 
@@ -59,7 +59,7 @@ Azure AD поддерживает общие учетные записи для 
 * Агент единого входа по паролю
 * [Назначение группы](groups-self-service-management.md)
 * Приложения с пользовательским паролем
-* [Панели мониторинга и отчеты об использовании приложения](../active-directory-passwords-get-insights.md)
+* [Панели мониторинга и отчеты об использовании приложения](../authentication/howto-sspr-reporting.md)
 * Порталы доступа для пользователей
 * [Прокси приложения](../manage-apps/application-proxy.md)
 * [Active Directory Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureActiveDirectory)
@@ -72,10 +72,10 @@ Azure AD поддерживает общие учетные записи для 
 * настройте приложение для единого входа по паролю;
 * Выполните [назначение на основе групп](groups-saasapps.md) и выберите способ ввода общих учетных данных.
 
-Можно также сделать свою общую учетную запись более безопасной с помощью службы Многофакторной идентификации (MFA) (ознакомьтесь с дополнительными сведениями о [защите приложений с помощью Azure AD](../authentication/concept-mfa-whichversion.md)). Кроме того, можно делегировать возможность управления доступом к приложению с помощью функции управления группами в компоненте [самообслуживания Azure AD](groups-self-service-management.md).
+Можно также сделать свою общую учетную запись более безопасной с помощью службы Многофакторной идентификации (MFA) (ознакомьтесь с дополнительными сведениями о [защите приложений с помощью Azure AD](../authentication/concept-mfa-howitworks.md)). Кроме того, можно делегировать возможность управления доступом к приложению с помощью функции управления группами в компоненте [самообслуживания Azure AD](groups-self-service-management.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление приложениями в Azure Active Directory](../manage-apps/what-is-application-management.md)
-* [Защита приложений с помощью условного доступа](../active-directory-conditional-access-azure-portal.md)
+* [Защита приложений с помощью условного доступа](../conditional-access/overview.md)
 * [Самостоятельное управление группами/SSAA](groups-self-service-management.md)

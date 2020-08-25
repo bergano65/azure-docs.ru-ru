@@ -2,15 +2,15 @@
 title: Обзор спецификаций шаблонов
 description: Описание способов создания спецификаций шаблонов и предоставления к ним общего доступа другим пользователям в Организации.
 ms.topic: conceptual
-ms.date: 08/06/2020
+ms.date: 08/24/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: f5151550b9f23ba63380688f53325f8976f14a51
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: a88e799d2298cb21b5196f5aa143e5453c0447c0
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87921884"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783796"
 ---
 # <a name="azure-resource-manager-template-specs-preview"></a>Спецификации шаблонов Azure Resource Manager (Предварительная версия)
 
@@ -37,32 +37,32 @@ ms.locfileid: "87921884"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "storageAccountType": {
-            "type": "string",
-            "defaultValue": "Standard_LRS",
-            "allowedValues": [
-                "Standard_LRS",
-                "Standard_GRS",
-                "Standard_ZRS",
-                "Premium_LRS"
-            ]
-        }
-    },
-    "resources": [
-        {
-            "type": "Microsoft.Storage/storageAccounts",
-            "apiVersion": "2019-06-01",
-            "name": "[concat('store', uniquestring(resourceGroup().id))]",
-            "location": "[resourceGroup().location]",
-            "kind": "StorageV2",
-            "sku": {
-                "name": "[parameters('storageAccountType')]"
-            }
-        }
-    ]
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageAccountType": {
+      "type": "string",
+      "defaultValue": "Standard_LRS",
+      "allowedValues": [
+        "Standard_LRS",
+        "Standard_GRS",
+        "Standard_ZRS",
+        "Premium_LRS"
+      ]
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2019-06-01",
+      "name": "[concat('store', uniquestring(resourceGroup().id))]",
+      "location": "[resourceGroup().location]",
+      "kind": "StorageV2",
+      "sku": {
+        "name": "[parameters('storageAccountType')]"
+      }
+    }
+  ]
 }
 ```
 
@@ -70,21 +70,59 @@ ms.locfileid: "87921884"
 
 Создайте шаблонную спецификацию с помощью:
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
 ```azurepowershell
-New-AzTemplateSpec -Name storageSpec -Version 1.0 -ResourceGroupName templateSpecsRg -TemplateJsonFile ./mainTemplate.json
+New-AzTemplateSpec -Name storageSpec -Version 1.0 -ResourceGroupName templateSpecsRg -Location westus2 -TemplateJsonFile ./mainTemplate.json
 ```
 
+# <a name="cli"></a>[CLI](#tab/azure-cli)
+
+```azurecli
+az template-specs create \
+  --name storageSpec \
+  --version "1.0" \
+  --resource-group templateSpecRG \
+  --location "westus2" \
+  --template-file "./mainTemplate.json"
+```
+
+---
+
 Вы можете просмотреть все спецификации шаблонов в подписке с помощью:
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 Get-AzTemplateSpec
 ```
 
+# <a name="cli"></a>[CLI](#tab/azure-cli)
+
+```azurecli
+az template-specs list
+```
+
+---
+
 Сведения о спецификации шаблона, включая ее версии, можно просмотреть с помощью:
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 Get-AzTemplateSpec -ResourceGroupName templateSpecsRG -Name storageSpec
 ```
+
+# <a name="cli"></a>[CLI](#tab/azure-cli)
+
+```azurecli
+az template-specs show \
+    --name storageSpec \
+    --resource-group templateSpecRG \
+    --version "1.0"
+```
+
+---
 
 ## <a name="deploy-template-spec"></a>Развертывание спецификации шаблона
 
@@ -98,7 +136,9 @@ Get-AzTemplateSpec -ResourceGroupName templateSpecsRG -Name storageSpec
 
 Обратите внимание, что идентификатор ресурса включает номер версии для спецификации шаблона.
 
-Например, вы развертываете спецификацию шаблона с помощью следующей команды PowerShell.
+Например, вы развертываете спецификацию шаблона с помощью следующей команды.
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 $id = "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/templateSpecsRG/providers/Microsoft.Resources/templateSpecs/storageSpec/versions/1.0"
@@ -108,15 +148,41 @@ New-AzResourceGroupDeployment `
   -ResourceGroupName demoRG
 ```
 
+# <a name="cli"></a>[CLI](#tab/azure-cli)
+
+```azurecli
+id = "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/templateSpecsRG/providers/Microsoft.Resources/templateSpecs/storageSpec/versions/1.0"
+
+az deployment group create \
+  --resource-group demoRG \
+  --template-spec $id
+```
+
+---
+
 На практике обычно выполняется `Get-AzTemplateSpec` , чтобы получить идентификатор спецификации шаблона, которую требуется развернуть.
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 $id = (Get-AzTemplateSpec -Name storageSpec -ResourceGroupName templateSpecsRg -Version 1.0).Version.Id
 
 New-AzResourceGroupDeployment `
-  -TemplateSpecId $id `
-  -ResourceGroupName demoRG
+  -ResourceGroupName demoRG `
+  -TemplateSpecId $id
 ```
+
+# <a name="cli"></a>[CLI](#tab/azure-cli)
+
+```azurecli
+id = $(az template-specs show --name storageSpec --resource-group templateSpecRG --version "1.0" --query "id")
+
+az deployment group create \
+  --resource-group demoRG \
+  --template-spec $id
+```
+
+---
 
 ## <a name="parameters"></a>Параметры
 
@@ -124,12 +190,25 @@ New-AzResourceGroupDeployment `
 
 Чтобы передать параметр встроенным, используйте:
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
 ```azurepowershell
 New-AzResourceGroupDeployment `
   -TemplateSpecId $id `
   -ResourceGroupName demoRG `
   -StorageAccountType Standard_GRS
 ```
+
+# <a name="cli"></a>[CLI](#tab/azure-cli)
+
+```azurecli
+az deployment group create \
+  --resource-group demoRG \
+  --template-spec $id \
+  --parameters storageAccountType='Standard_GRS'
+```
+
+---
 
 Чтобы создать локальный файл параметров, используйте:
 
@@ -147,12 +226,25 @@ New-AzResourceGroupDeployment `
 
 И передайте этот файл параметров с помощью:
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
 ```azurepowershell
 New-AzResourceGroupDeployment `
   -TemplateSpecId $id `
   -ResourceGroupName demoRG `
   -TemplateParameterFile ./mainTemplate.parameters.json
 ```
+
+# <a name="cli"></a>[CLI](#tab/azure-cli)
+
+```azurecli
+az deployment group create \
+  --resource-group demoRG \
+  --template-spec $id \
+  --parameters "./mainTemplate.parameters.json"
+```
+
+---
 
 ## <a name="create-a-template-spec-with-linked-templates"></a>Создание спецификации шаблона со связанными шаблонами
 
@@ -162,35 +254,34 @@ New-AzResourceGroupDeployment `
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    ...
-    "resources": [
-        {
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2020-06-01",
-            ...
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "relativePath": "artifacts/webapp.json"
-                }
-            }
-        },
-        {
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2020-06-01",
-            ...
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "relativePath": "artifacts/database.json"
-                }
-            }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  ...
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-06-01",
+      ...
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "relativePath": "artifacts/webapp.json"
         }
-    ],
-    "outputs": {}
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-06-01",
+      ...
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "relativePath": "artifacts/database.json"
+        }
+      }
+    }
+  ],
+  "outputs": {}
 }
-
 ```
 
 При выполнении команды PowerShell или CLI для создания спецификации шаблона в предыдущем примере команда находит три файла: основной шаблон, шаблон веб-приложения ( `webapp.json` ) и шаблон базы данных ( `database.json` ), а затем упаковывает их в спецификацию шаблона.
@@ -207,35 +298,35 @@ New-AzResourceGroupDeployment `
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    ...
-    "resources": [
-        {
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2020-06-01",
-            "name": "networkingDeployment",
-            ...
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "id": "[resourceId('templateSpecsRG', 'Microsoft.Resources/templateSpecs/versions', 'networkingSpec', '1.0')]"
-                }
-            }
-        },
-        {
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2020-06-01",
-            "name": "storageDeployment",
-            ...
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "id": "[resourceId('templateSpecsRG', 'Microsoft.Resources/templateSpecs/versions', 'storageSpec', '1.0')]"
-                }
-            }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  ...
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-06-01",
+      "name": "networkingDeployment",
+      ...
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "id": "[resourceId('templateSpecsRG', 'Microsoft.Resources/templateSpecs/versions', 'networkingSpec', '1.0')]"
         }
-    ],
-    "outputs": {}
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-06-01",
+      "name": "storageDeployment",
+      ...
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "id": "[resourceId('templateSpecsRG', 'Microsoft.Resources/templateSpecs/versions', 'storageSpec', '1.0')]"
+        }
+      }
+    }
+  ],
+  "outputs": {}
 }
 ```
 

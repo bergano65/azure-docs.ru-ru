@@ -4,12 +4,12 @@ description: Узнайте, как выполнить резервное коп
 ms.reviewer: kasinh
 ms.topic: conceptual
 ms.date: 01/31/2019
-ms.openlocfilehash: 2d547b1d86b95a4f90d3faaa2f676c7cc37255d3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c9d54bb8e9875bcd622c5ce5343dc6f8baa3f2be
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091136"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88763581"
 ---
 # <a name="back-up-an-exchange-server-to-azure-backup-with-system-center-2012-r2-dpm"></a>Резервное копирование Exchange Server в службу архивации Azure с помощью System Center 2012 R2 DPM
 
@@ -24,7 +24,7 @@ ms.locfileid: "87091136"
 >
 >
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем продолжить, выполните все [предварительные требования](backup-azure-dpm-introduction.md#prerequisites-and-limitations) по использованию Microsoft Azure Backup для защиты рабочих нагрузок. Список предварительных требований:
 
@@ -32,7 +32,7 @@ ms.locfileid: "87091136"
 * Учетные данные агента и хранилища должны быть загружены на сервер DPM.
 * Агент должен быть установлен на сервере DPM.
 * Для регистрации сервера DPM должны использоваться учетные данные хранилища.
-* Если необходимо защитить Exchange 2016, обновите Data Protection Manager до версии DPM 2012 R2 с накопительным пакетом 9 или более поздней версии.
+* Если вы защищаете Exchange 2016, выполните обновление до DPM 2012 R2 UR9 или более поздней версии.
 
 ## <a name="dpm-protection-agent"></a>Агент защиты DPM
 
@@ -83,10 +83,10 @@ ms.locfileid: "87091136"
 11. Проверьте, есть ли на диске свободное место, и нажмите кнопку **Далее**.
 12. Выберите время создания сервером DPM начальной репликации и нажмите кнопку **Далее**.
 13. Выберите параметры проверки согласованности и нажмите кнопку **Далее**.
-14. Выберите базу данных для резервного копирования в Azure и нажмите кнопку **Далее**. Например.
+14. Выберите базу данных для резервного копирования в Azure и нажмите кнопку **Далее**. Пример:
 
     ![Выбор оперативной защиты данных](./media/backup-azure-backup-exchange-server/specify-online-protection-data.png)
-15. Определите расписание для **службы архивации Azure** и нажмите кнопку **Далее**. Например.
+15. Определите расписание для **службы архивации Azure** и нажмите кнопку **Далее**. Пример:
 
     ![Выбор расписания оперативного резервного копирования](./media/backup-azure-backup-exchange-server/specify-online-backup-schedule.png)
 
@@ -101,7 +101,7 @@ ms.locfileid: "87091136"
 
     ![Выбор политики оперативного хранения](./media/backup-azure-backup-exchange-server/specify-online-retention-policy.png)
 18. Проверьте параметры и щелкните **Создать группу**.
-19. Щелкните **Закрыть**.
+19. Нажмите кнопку **Закрыть**.
 
 ## <a name="recover-the-exchange-database"></a>Восстановление базы данных Exchange
 

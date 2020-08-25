@@ -3,12 +3,12 @@ title: Настройка автоматического завершения р
 description: В этой статье описывается, как настроить автоматическое завершение работы виртуальных машин в учетной записи лаборатории.
 ms.topic: article
 ms.date: 08/17/2020
-ms.openlocfilehash: 8dbc54ad14530006b56bf336d9d78e7d59843485
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: 8647aed0e66993b8a7b8e5c0a42c8ceabbb1fb9e
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88603906"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798454"
 ---
 # <a name="configure-automatic-shutdown-of-vms-for-a-lab-account"></a>Настройка автоматического завершения работы виртуальных машин для учетной записи лаборатории
 
@@ -18,7 +18,7 @@ ms.locfileid: "88603906"
 - Автоматически завершать работу виртуальных машин при отключении пользователей (Windows & Linux).
 - Автоматическое завершение работы виртуальных машин, которые запущены, но не подключаются пользователями.
 
-Ознакомьтесь с дополнительными сведениями о функциях автоматического завершения работы в разделе [Параметры автоматического завершения работы](cost-management-guide.md#maximize-cost-control-with-auto-shutdown-settings) .
+Ознакомьтесь с дополнительными сведениями о функциях автоматического завершения работы в разделе [Параметры автоматического завершения работы](cost-management-guide.md#automatic-shutdown-settings-for-cost-control) .
 
 ## <a name="enable-automatic-shutdown"></a>Включение автоматического завершения работы
 

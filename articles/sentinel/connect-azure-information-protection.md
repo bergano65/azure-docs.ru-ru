@@ -10,12 +10,12 @@ ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: yelevin
-ms.openlocfilehash: f06f8d3450f8907aa1be34b738565ac55e5e3d2d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 160912ef53b5c079d026c5d16230f49eadf66366
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85559129"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88794437"
 ---
 # <a name="connect-data-from-azure-information-protection"></a>Подключение данных из Azure Information Protection
 
@@ -35,7 +35,7 @@ ms.locfileid: "85559129"
     
     При изменении рабочей области новые данные отчетов для Azure Information Protection будут храниться в рабочей области, используемой для Sentinel Azure, а исторические данные недоступны для Azure Sentinel. Кроме того, если предыдущая рабочая область настроена для пользовательских запросов, предупреждений или интерфейсов API, их необходимо перенастроить для рабочей области "Sentinel" Azure, если вы хотите использовать их для Azure Information Protection. Для клиентов и служб, использующих Azure Information Protection, перенастройка не требуется.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Одна из следующих ролей администратора Azure AD для клиента: 
     - Администратор Azure Information Protection
@@ -57,19 +57,21 @@ ms.locfileid: "85559129"
 
 Используйте следующие инструкции, если вы не настроили рабочую область Log Analytics для Azure Information Protection или вам нужно изменить рабочую область, в которой хранятся данные журнала Azure Information Protection.
 
-1. В Azure Sentinel выберите **соединители данных**, а затем **Azure Information Protection (Предварительная версия)**.
+1. В Azure Sentinel выберите **соединители данных**  >  **Azure Information Protection (Предварительная версия)**.
 
 2. Выберите **открыть страницу соединителя**.
 
-3. В колонке **Настройка аналитики (Предварительная версия)** выберите рабочую область, которую вы используете в Azure Sentinel. Если выбрать другую рабочую область, данные отчетов из Azure Information Protection будут недоступны для Azure Sentinel.
+3. В разделе **Конфигурация**выберите **подключить Azure Information Protection журналы**.
 
-4. Выбрав рабочую область, нажмите кнопку **ОК** , после чего **состояние** соединителя должно измениться на **подключено**.
+4. В колонке **Настройка аналитики (Предварительная версия)** выберите рабочую область, используемую в настоящее время для Azure Sentinel. При выборе другой рабочей области данные отчетов из Azure Information Protection недоступны для Azure Sentinel.
 
-5. Данные отчетов из Azure Information Protection хранятся в таблице **InformationProtectionLogs_CL** в выбранной рабочей области. 
+5. После выбора рабочей области нажмите кнопку **ОК**. **Состояние** соединителя изменится на **подключено**.
+
+6. Данные отчетов из Azure Information Protection хранятся в таблице **InformationProtectionLogs_CL** в выбранной рабочей области. 
     
     Чтобы использовать соответствующую схему в Azure Monitor для этих данных отчетов, выполните поиск по запросу **информатионпротектионевентс**. Сведения об этих функциях событий см. в разделе [Справочник по понятным схемам функций событий](https://docs.microsoft.com/azure/information-protection/reports-aip#friendly-schema-reference-for-event-functions) статьи Azure Information Protection.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали, как подключить Azure Information Protection к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

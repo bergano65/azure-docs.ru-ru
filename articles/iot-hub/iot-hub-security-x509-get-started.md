@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: e9fd4308f89873183e4f5f57cee56887ce181fae
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: d7bf31f7b16fa987bb9c710835d1a3aff8214604
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87307290"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783269"
 ---
 # <a name="set-up-x509-security-in-your-azure-iot-hub"></a>Настройка сертификата безопасности X.509 в Центре Интернета вещей Azure
 
@@ -49,6 +49,9 @@ ms.locfileid: "87307290"
 ## <a name="register-x509-ca-certificates-to-your-iot-hub"></a>Регистрация сертификата ЦС X.509 в Центре Интернета вещей
 
 Ниже описано, как добавить новый центр сертификации в Центр Интернета вещей с помощью портала.
+
+> [!NOTE]
+> Максимальное число сертификатов ЦС X. 509, которые могут быть зарегистрированы в центре Интернета вещей, составляет 25. Дополнительные сведения см. в статье [квоты и регулирование для центра Интернета вещей Azure](iot-hub-devguide-quotas-throttling.md).
 
 1. В портал Azure перейдите в центр Интернета вещей и выберите **Параметры**  >  **Сертификаты** для концентратора.
 
@@ -98,7 +101,7 @@ ms.locfileid: "87307290"
 
 1. В обозреватель решений щелкните правой кнопкой мыши проект **SimulateX509Device** , а затем выберите пункт **Управление пакетами NuGet**.
 
-1. В **диспетчере пакетов NuGet**нажмите кнопку **Обзор** и найдите и выберите **Microsoft. Azure. Devices. Client**. Выберите пункт **Установить**.
+1. В **диспетчере пакетов NuGet**нажмите кнопку **Обзор** и найдите и выберите **Microsoft. Azure. Devices. Client**. Нажмите кнопку **Установить**.
 
    ![Добавление пакета NuGet SDK устройства в Visual Studio](./media/iot-hub-security-x509-get-started/device-sdk-nuget.png)
 

@@ -262,6 +262,8 @@
           href: howto-read-replicas-powershell.md
     - name: Диагностика
       items:
+        - name: Устранение неполадок при распространенных ошибках
+          href: howto-troubleshoot-common-errors.md
         - name: Устранение ошибок подключения
           href: howto-troubleshoot-common-connection-issues.md
         - name: Решение проблем с производительностью запросов
