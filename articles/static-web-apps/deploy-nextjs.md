@@ -165,7 +165,7 @@ ms.locfileid: "88684598"
 
 1. Щелкните вкладку **Сборка**, чтобы настроить статическую выходную папку.
 
-   :::image type="content" source="media/deploy-nextjs/build-tab.png" alt-text="Вкладка "Сборка"":::
+   :::image type="content" source="media/deploy-nextjs/build-tab.png" alt-text="Вкладка Сборка":::
 
 2. Введите **out** в текстовом поле *App artifact location* (Расположение артефакта приложения).
 
