@@ -76,7 +76,7 @@ ms.locfileid: "88565916"
 
 Для начала настройте новое приложение и свяжите его с репозиторием GitHub.
 
-:::image type="content" source="media/getting-started/basics-tab.png" alt-text="Вкладка "Основные сведения"":::
+:::image type="content" source="media/getting-started/basics-tab.png" alt-text="Вкладка Основные сведения":::
 
 - Выберите _подписку Azure_.
 - Выберите или создайте _группу ресурсов_.
@@ -132,7 +132,7 @@ ms.locfileid: "88565916"
 
 Нажмите кнопку **Просмотр и создание**.
 
-:::image type="content" source="media/getting-started/review-create.png" alt-text="Кнопка "Просмотр и создание"":::
+:::image type="content" source="media/getting-started/review-create.png" alt-text="Кнопка Просмотр и создание":::
 
 Чтобы изменить эти значения после создания приложения, поправьте [файл рабочего процесса](github-actions-workflow.md).
 
@@ -142,11 +142,11 @@ ms.locfileid: "88565916"
 
 Нажмите кнопку **Создать**.
 
-:::image type="content" source="media/getting-started/create-button.png" alt-text="Кнопка "Создать"":::
+:::image type="content" source="media/getting-started/create-button.png" alt-text="Кнопка Создать":::
 
 После создания ресурса нажмите кнопку **Перейти к ресурсу**.
 
-:::image type="content" source="media/getting-started/resource-button.png" alt-text="Кнопка "Перейти к ресурсу"":::
+:::image type="content" source="media/getting-started/resource-button.png" alt-text="Кнопка Перейти к ресурсу":::
 
 ## <a name="view-the-website"></a>Просмотр веб-сайта
 
