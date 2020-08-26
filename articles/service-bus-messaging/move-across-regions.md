@@ -51,7 +51,7 @@ ms.locfileid: "88861068"
     :::image type="content" source="./media/move-across-regions/new-template-deployment.png" alt-text="Развертывание нового шаблона":::    
 1. На странице **шаблоны развертывания** выберите **создать**.
 
-    :::image type="content" source="./media/move-across-regions/template-deployment-create-button.png" alt-text="Новое развертывание шаблона — кнопка "создать"":::        
+    :::image type="content" source="./media/move-across-regions/template-deployment-create-button.png" alt-text="Новое развертывание шаблона — кнопка создать":::        
 1. На странице **Настраиваемое развертывание** выберите **создать собственный шаблон в редакторе**.
 
     :::image type="content" source="./media/move-across-regions/build-template-link.png" alt-text="Создание собственного шаблона в ссылке редактора":::            
@@ -74,7 +74,7 @@ ms.locfileid: "88861068"
 ## <a name="verify"></a>Проверка
 1. После успешного развертывания выберите **Переход к группе ресурсов**.
 
-    :::image type="content" source="./media/move-across-regions/resource-group-navigation-link.png" alt-text="Ссылка "переход к группе ресурсов"":::    
+    :::image type="content" source="./media/move-across-regions/resource-group-navigation-link.png" alt-text="Ссылка переход к группе ресурсов":::    
 1. На странице **Группа ресурсов** выберите пространство имен служебной шины. 
 
     :::image type="content" source="./media/move-across-regions/select-namespace.png" alt-text="Выбор пространства имен служебной шины":::    
