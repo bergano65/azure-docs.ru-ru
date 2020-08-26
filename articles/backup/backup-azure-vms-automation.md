@@ -3,12 +3,12 @@ title: Резервное копирование и восстановление
 description: В этой статье описывается, как выполнять резервное копирование и восстановление виртуальных машин Azure с использованием Azure Backup с помощью PowerShell.
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: f5d2e10213970ce6f9d1f9c77ff8f7f4c36c3547
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: f34dc0b5ce4b230b3bc2408bd011180cb855cf17
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88826452"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892411"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Резервное копирование и восстановление виртуальных машин Azure с помощью PowerShell
 
@@ -104,7 +104,7 @@ ms.locfileid: "88826452"
     ```
 
    > [!TIP]
-   > Для многих командлетов службы архивации Azure требуется объект хранилища служб восстановления в качестве входных данных. По этой причине объект хранилища служб восстановления резервных копий удобно хранить в переменной.
+   > Для многих командлетов службы архивации Azure требуется объект хранилища служб восстановления в качестве входных данных. Поэтому в переменной удобно хранить объект хранилища служб восстановления резервных копий.
    >
    >
 
@@ -228,7 +228,7 @@ NewPolicy           AzureVM            AzureVM              4/24/2016 1:30:00 AM
 После определения политики защиты по-прежнему необходимо включить политику для элемента. Используйте [Enable-азрековерисервицесбаккуппротектион](/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection) , чтобы включить защиту. Защита включается для двух объектов: элемента и политики. После того как политика сопоставится с хранилищем, рабочий процесс архивации будет активироваться по времени, определенному в политике расписания.
 
 > [!IMPORTANT]
-> При использовании PowerShell для одновременного включения резервного копирования нескольких виртуальных машин убедитесь, что с одной политикой не связано более 100 виртуальных машин. Это [рекомендуемый метод](./backup-azure-vm-backup-faq.md#is-there-a-limit-on-number-of-vms-that-can-beassociated-with-the-same-backup-policy). В настоящее время клиент PowerShell не блокируется явно, если имеется более 100 виртуальных машин, но проверка планируется добавить в будущем.
+> При использовании PowerShell для одновременного включения резервного копирования нескольких виртуальных машин убедитесь, что с одной политикой не связано более 100 виртуальных машин. Это [рекомендуемый метод](./backup-azure-vm-backup-faq.md#is-there-a-limit-on-number-of-vms-that-can-beassociated-with-the-same-backup-policy). В настоящее время клиент PowerShell не блокируется явным образом при наличии более чем 100 виртуальных машин, но в будущем эта проверка планируется добавить.
 
 В следующих примерах включается защита для элемента V2VM с помощью политики NewPolicy. Примеры отличаются в зависимости от того, зашифрована ли виртуальная машина и какой у нее тип шифрования.
 
@@ -256,7 +256,7 @@ Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGro
 ```
 
 > [!NOTE]
-> Если вы используете облако Azure для государственных организаций, используйте значение ff281ffe-705c-4f53-9f37-a40e6f2c68f3 в командлете [Set-азкэйваултакцессполици](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) .
+> Если вы используете облако Azure для государственных организаций, используйте значение `ff281ffe-705c-4f53-9f37-a40e6f2c68f3` параметра "перестройка **ServicePrincipalName** " в командлете [Set-азкэйваултакцессполици](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) .
 >
 
 ## <a name="monitoring-a-backup-job"></a>Наблюдение за выполнением задания резервного копирования
@@ -294,7 +294,7 @@ Wait-AzRecoveryServicesBackupJob -Job $joblist[0] -Timeout 43200 -VaultId $targe
 
 ````powershell
 $SchPol = Get-AzRecoveryServicesBackupSchedulePolicyObject -WorkloadType "AzureVM"
-$UtcTime = Get-Date -Date "2019-03-20 01:00:00Z" (This is the time that the customer wants to start the backup)
+$UtcTime = Get-Date -Date "2019-03-20 01:00:00Z" (This is the time that you want to start the backup)
 $UtcTime = $UtcTime.ToUniversalTime()
 $SchPol.ScheduleRunTimes[0] = $UtcTime
 $pol = Get-AzRecoveryServicesBackupProtectionPolicy -Name "NewPolicy" -VaultId $targetVault.ID
@@ -323,7 +323,7 @@ $bkpPol.SnapshotRetentionInDays=7
 Set-AzRecoveryServicesBackupProtectionPolicy -policy $bkpPol -VaultId $targetVault.ID
 ````
 
-Значение по умолчанию равно 2, пользователь может задать значение не меньше 1 и не больше 5. Для политик еженедельного резервного копирования точка имеет значение 5 и не может быть изменена.
+Значение по умолчанию будет равно 2. Можно задать значение не менее 1 и не более 5. Для политик еженедельного резервного копирования точка имеет значение 5 и не может быть изменена.
 
 #### <a name="creating-azure-backup-resource-group-during-snapshot-retention"></a>Создание Azure Backup группы ресурсов во время хранения моментального снимка
 
@@ -365,7 +365,7 @@ V2VM              Backup              InProgress          4/23/2016             
 
 ### <a name="change-policy-for-backup-items"></a>Изменение политики для элементов архивации
 
-Пользователь может изменить существующую политику или изменить политику резервного элемента с Policy1 на Policy2. Чтобы переключить политики для архивированного элемента, извлеките соответствующую политику и элемент резервного копирования и используйте команду [Enable-азрековерисервицес](/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection) с элементом Backup в качестве параметра.
+Можно изменить существующую политику или изменить политику резервного элемента с Policy1 на Policy2. Чтобы переключить политики для архивированного элемента, извлеките соответствующую политику и элемент резервного копирования и используйте команду [Enable-азрековерисервицес](/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection) с элементом Backup в качестве параметра.
 
 ````powershell
 $TargetPol1 = Get-AzRecoveryServicesBackupProtectionPolicy -Name <PolicyName> -VaultId $targetVault.ID
@@ -481,7 +481,7 @@ $restorejob
 Укажите дополнительный параметр **TargetResourceGroupName** для указания группы ресурсов, в которой будут восстановлены управляемые диски.
 
 > [!IMPORTANT]
-> Настоятельно рекомендуется использовать параметр **TargetResourceGroupName** для восстановления управляемых дисков, поскольку это приведет к значительному повышению производительности. Если этот параметр не указан, вы не сможете воспользоваться функцией мгновенного восстановления, и операция восстановления будет выполняться медленнее. Если целью является восстановление управляемых дисков в виде неуправляемых дисков, не следует указывать этот параметр и сделать намерением ясно, предоставив `-RestoreAsUnmanagedDisks` параметр. `-RestoreAsUnmanagedDisks`Параметр доступен в Azure PowerShell 3.7.0/назад. В будущих версиях будет обязательно указывать один из этих параметров для правильного восстановления.
+> Настоятельно рекомендуется использовать параметр **TargetResourceGroupName** для восстановления управляемых дисков, так как это приводит к значительному улучшению производительности. Если этот параметр не указан, вы не сможете воспользоваться функцией мгновенного восстановления, и операция восстановления будет выполняться медленнее. Если целью является восстановление управляемых дисков в виде неуправляемых дисков, не следует указывать этот параметр и сделать намерением ясно, предоставив `-RestoreAsUnmanagedDisks` параметр. `-RestoreAsUnmanagedDisks`Параметр доступен в Azure PowerShell 3.7.0/назад. В будущих версиях будет обязательно указывать один из этих параметров для правильного восстановления.
 >
 >
 
@@ -544,7 +544,7 @@ $details = Get-AzRecoveryServicesBackupJobDetails -Job $restorejob -VaultId $tar
    $templateBlobURI = $properties["Template Blob Uri"]
 ```
 
-Шаблон не доступен напрямую, так как он находится в учетной записи хранения клиента и в заданном контейнере. Для доступа к этому шаблону требуется полный URL-адрес (вместе с временным маркером SAS).
+Этот шаблон недоступен напрямую, так как он находится в учетной записи хранения клиента, в указанном контейнере. Для доступа к этому шаблону требуется полный URL-адрес (вместе с временным маркером SAS).
 
 1. Сначала извлеките имя шаблона из Темплатеблобури. Этот формат упоминается ниже. Для извлечения окончательного имени шаблона из этого URL-адреса можно использовать операцию разбиения в PowerShell.
 
@@ -880,6 +880,6 @@ Windows e3632984e51f496 V2VM_wus2_8287309959960546283_451516692429_cbd6061f7fc54
 Disable-AzRecoveryServicesBackupRPMountScript -RecoveryPoint $rp[0] -VaultId $targetVault.ID
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы предпочитаете использовать PowerShell для взаимодействия с ресурсами Azure, см. статью [Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell](backup-client-automation.md). Сведения об управлении резервными копиями DPM см. в статье [Развертывание службы архивации для DPM и управление ею](backup-dpm-automation.md).

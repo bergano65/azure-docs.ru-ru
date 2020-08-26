@@ -1,18 +1,18 @@
 ---
-title: Пространство этапа
+title: Промежуточное пространство
 description: Описывает параметры промежуточного пространства и варианты использования
 author: christophermanthei
 ms.author: chmant
 ms.date: 03/07/2020
 ms.topic: article
-ms.openlocfilehash: b67294c503e513290b474e0059771a73ad526a6a
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: ac0aa821875acb300e31e31ef3afe6492524cb7b
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86189452"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892700"
 ---
-# <a name="stage-space"></a>Пространство этапа
+# <a name="stage-space"></a>Промежуточное пространство
 
 При запуске программы ARR на устройстве, предоставляющем данные для отслеживания головного устройства, такие как HoloLens 2, Главная ячейка отправляется как пользовательскому приложению, так и серверу. Пространство, в котором определено головное преобразование, называется *пространством этапа*.
 
@@ -45,11 +45,11 @@ void ChangeStageSpace(AzureSession session)
 ```cpp
 void ChangeStageSpace(ApiHandle<AzureSession> session)
 {
-    ApiHandle<StageSpaceSettings> settings = *session->Actions()->StageSpaceSettings();
+    ApiHandle<StageSpaceSettings> settings = session->Actions()->GetStageSpaceSettings();
 
     // Set position and rotation to the world-space transform of the stage space.
-    settings->Position({0, 0, 0});
-    settings->Rotation({0, 0, 0, 1});
+    settings->SetPosition({0, 0, 0});
+    settings->SetRotation({0, 0, 0, 1});
 }
 ```
 
@@ -57,7 +57,7 @@ void ChangeStageSpace(ApiHandle<AzureSession> session)
 
 Интеграция Unity предоставляет скрипт с именем **стажеспаце** , который можно добавить к родительскому GameObjectу камеры. После этого скрипт позаботится о настройке источника пространства этапа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Графическая привязка](../../concepts/graphics-bindings.md)
 * [Перепроецирование на позднем этапе](late-stage-reprojection.md)

@@ -4,12 +4,12 @@ description: Сведения об управлении резервными к�
 ms.reviewer: srinathv
 ms.topic: conceptual
 ms.date: 10/07/2019
-ms.openlocfilehash: b6f6d9ca94b2fda54c9f9aa8048660af450e0d31
-ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
+ms.openlocfilehash: b46303bdb7fc6c39aafd3046a4bcbc5e0ba75766
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2020
-ms.locfileid: "88757172"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88893074"
 ---
 # <a name="manage-microsoft-azure-recovery-services-mars-agent-backups-by-using-the-azure-backup-service"></a>Управление резервными копиями агента Службы восстановления Microsoft Azure (MARS) с помощью службы Azure Backup
 
@@ -190,7 +190,7 @@ ms.locfileid: "88757172"
   1. Запустите клиент MARS, чтобы продлить срок хранения в соответствии с вашими требованиями.
 - Вновь восстановленный компьютер, защищенный с помощью MARS, по прежнему будет создавать резервные копии.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о поддерживаемых сценариях и ограничениях см. в [матрице поддержки для агента Mars](./backup-support-matrix-mars-agent.md).
 - Дополнительные сведения о [способе хранения политики резервного копирования по запросу](backup-windows-with-mars-agent.md#set-up-on-demand-backup-policy-retention-behavior).

@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 093f4f3cd54f1e4638a0fbcd161a2af4fecba5da
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: 276b6cc8038a7ac8e0ddd27a3c3eb7c87f05ed1b
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475793"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88795904"
 ---
 # <a name="administrative-units-management-in-azure-active-directory-preview"></a>Управление административными единицами в Azure Active Directory (предварительная версия)
 
@@ -47,8 +47,8 @@ ms.locfileid: "87475793"
 В предварительной версии административными единицами можно управлять с помощью портала Azure, командлетов и скриптов PowerShell или Microsoft Graph. С дополнительными сведениями можно ознакомиться в нашей документации:
 
 - [Создание, удаление, заполнение и добавление ролей в административных единицах](roles-admin-units-manage.md). Полное практическое руководство.
-- [Работа с административными единицами](https://docs.microsoft.com/powershell/azure/active-directory/working-with-administrative-units?view=azureadps-2.0). Инструкции по работе с административными единицами с использованием PowerShell.
-- [Поддержка Graph для административных единиц](https://docs.microsoft.com/graph/api/resources/administrativeunit?view=graph-rest-beta). Подробная документация по Microsoft Graph для административных единиц.
+- [Работа с административными единицами](/powershell/azure/active-directory/working-with-administrative-units?view=azureadps-2.0). Инструкции по работе с административными единицами с использованием PowerShell.
+- [Поддержка Graph для административных единиц](/graph/api/resources/administrativeunit?view=graph-rest-beta). Подробная документация по Microsoft Graph для административных единиц.
 
 ### <a name="planning-your-administrative-units"></a>Планирование административных единиц
 

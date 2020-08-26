@@ -4,12 +4,12 @@ description: Резервное копирование и восстановле
 ms.topic: conceptual
 ms.date: 03/15/2019
 ms.assetid: 57854626-91f9-4677-b6a2-5d12b6a866e1
-ms.openlocfilehash: 46583a0a26c86a0f77b115178fb53592977aef09
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: 1fe3af3b2a12cf6fdfc0e71d36d36046858c50af
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88826894"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892428"
 ---
 # <a name="back-up-and-restore-sql-databases-in-azure-vms-with-powershell"></a>Резервное копирование и восстановление баз данных SQL на виртуальных машинах Azure с помощью PowerShell
 
@@ -44,7 +44,7 @@ ms.locfileid: "88826894"
 
 Настройте PowerShell следующим образом.
 
-1. [Скачайте последнюю версию Az PowerShell](/powershell/azure/install-az-PowerShell). Минимальная требуемая версия — 1.5.0.
+1. [Скачайте последнюю версию Az PowerShell](/powershell/azure/install-az-ps). Минимальная требуемая версия — 1.5.0.
 
 2. Найдите командлеты PowerShell Azure Backup с помощью следующей команды:
 
@@ -203,7 +203,7 @@ Register-AzRecoveryServicesBackupContainer -ResourceId $myVM.ID -BackupManagemen
 Команда вернет "контейнер резервной копии" этого ресурса, а состояние будет "зарегистрировано"
 
 > [!NOTE]
-> Если параметр Force не задан, появится запрос на подтверждение с текстом "отключить защиту для этого контейнера". Проигнорируйте этот текст и скажите "Y" для подтверждения. Это известная проблема, и мы работаем над удалением текста и требованием параметра Force.
+> Если параметр Force не указан, появится запрос на подтверждение с текстом "отключить защиту для этого контейнера". Проигнорируйте этот текст и скажите "Y" для подтверждения. Это известная проблема, и мы работаем над удалением текста и требованием параметра Force.
 
 ### <a name="fetching-sql-dbs"></a>Получение баз данных SQL
 
@@ -237,7 +237,7 @@ master           ConfigureBackup      Completed            3/18/2019 6:00:21 PM 
 
 ### <a name="fetching-new-sql-dbs"></a>Получение новых баз данных SQL
 
-После регистрации компьютера служба Backup Service выберет сведения о доступных баз данных. Если пользователь добавляет экземпляры SQL баз данных/SQL в зарегистрированный компьютер позже, необходимо вручную запустить службу резервного копирования для выполнения нового запроса, чтобы получить все незащищенные баз данных (включая вновь добавленные). Используйте командлет PowerShell [Initialize-азрековерисервицесбаккупитем](/powershell/module/az.recoveryservices/initialize-azrecoveryservicesbackupprotectableitem) на ВИРТУАЛЬНОЙ машине SQL для выполнения нового запроса. Команда ожидает завершения операции. Позже используйте командлет PowerShell [Get-азрековерисервицесбаккуппротектаблеитем](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupprotectableitem) , чтобы получить список последних незащищенных компонентов SQL.
+После регистрации компьютера служба Backup Service выберет сведения о доступных баз данных. Если экземпляры SQL баз данных или SQL Server в дальнейшем добавляются на зарегистрированный компьютер, необходимо вручную запустить службу резервного копирования, чтобы выполнить новый запрос, чтобы получить **все** незащищенные баз данных (включая вновь добавленные). Используйте командлет PowerShell [Initialize-азрековерисервицесбаккупитем](/powershell/module/az.recoveryservices/initialize-azrecoveryservicesbackupprotectableitem) на ВИРТУАЛЬНОЙ машине SQL для выполнения нового запроса. Команда ожидает завершения операции. Позже используйте командлет PowerShell [Get-азрековерисервицесбаккуппротектаблеитем](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupprotectableitem) , чтобы получить список последних незащищенных компонентов SQL.
 
 ```powershell
 $SQLContainer = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVMAppContainer -FriendlyName <VM name> -VaultId $targetvault.ID
@@ -278,7 +278,7 @@ $bkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureWorkload 
 
 ### <a name="fetch-the-relevant-restore-time"></a>Получение соответствующего времени восстановления
 
-Как описано выше, пользователь может восстановить резервную копию базы данных SQL в полную или разностную копию **или** на момент времени в журнале.
+Как описано выше, можно восстановить резервную копию базы данных SQL в полную или разностную копию **или** на момент времени в журнале.
 
 #### <a name="fetch-distinct-recovery-points"></a>Получение уникальных точек восстановления
 
@@ -307,7 +307,7 @@ $FullRP = Get-AzRecoveryServicesBackupRecoveryPoint -Item $bkpItem -VaultId $tar
 
 #### <a name="fetch-point-in-time-recovery-point"></a>Получение точки восстановления до точки во времени
 
-Если пользователь хочет восстановить базу данных на определенный момент времени, используйте командлет PowerShell [Get-азрековерисервицесбаккупрековерилогчаин](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackuprecoverylogchain) . Командлет возвращает список дат, представляющих время начала и окончания неразрывной непрерывной цепочки журналов для этого элемента резервного копирования SQL. Требуемый момент времени должен находиться в пределах этого диапазона.
+Если вы хотите восстановить базу данных на определенный момент времени, используйте командлет PowerShell [Get-азрековерисервицесбаккупрековерилогчаин](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackuprecoverylogchain) . Командлет возвращает список дат, представляющих время начала и окончания неразрывной непрерывной цепочки журналов для этого элемента резервного копирования SQL. Требуемый момент времени должен находиться в пределах этого диапазона.
 
 ```powershell
 Get-AzRecoveryServicesBackupRecoveryLogChain -Item $bkpItem -Item -VaultId $targetVault.ID
@@ -321,7 +321,7 @@ ItemName                       StartTime                      EndTime
 SQLDataBase;MSSQLSERVER;azu... 3/18/2019 8:09:35 PM           3/19/2019 12:08:32 PM
 ```
 
-Приведенные выше выходные данные означают, что пользователь может выполнить восстановление на любой момент времени между отображаемым временем начала и временем окончания. Время задаются в формате UTC. Создайте любые точки во времени в PowerShell, которые находятся в диапазоне, показанном выше.
+Приведенные выше выходные данные означают, что можно выполнить восстановление на любой момент времени между отображаемым временем начала и временем окончания. Время задаются в формате UTC. Создайте любые точки во времени в PowerShell, которые находятся в диапазоне, показанном выше.
 
 > [!NOTE]
 > Если для восстановления выбран параметр точка входа в систему, не нужно указывать начальную точку, то есть полное резервное копирование, из которого восстанавливается база данных. Azure Backup служба позаботится о плане восстановления, то есть о том, какую полную резервную копию следует выбрать, какие резервные копии журналов следует применить и т. д.
@@ -479,7 +479,7 @@ MSSQLSERVER/m... Restore              InProgress           3/17/2019 10:02:45 AM
 
 ### <a name="on-demand-backup"></a>Резервное копирование по запросу
 
-После включения резервного копирования для базы данных пользователь может также активировать резервное копирование базы данных по запросу с помощью командлета PowerShell [BACKUP-азрековерисервицесбаккупитем](/powershell/module/az.recoveryservices/backup-azrecoveryservicesbackupitem) . В следующем примере запускается полная резервная копия в базе данных SQL с включенным сжатием, а полная резервная копия должна храниться в течение 60 дней.
+После включения резервного копирования для базы данных можно также активировать резервное копирование базы данных по запросу с помощью командлета PowerShell [BACKUP-азрековерисервицесбаккупитем](/powershell/module/az.recoveryservices/backup-azrecoveryservicesbackupitem) . В следующем примере запускается полная резервная копия в базе данных SQL с включенным сжатием, а полная резервная копия должна храниться в течение 60 дней.
 
 ```powershell
 $bkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureWorkload -WorkloadType MSSQL -Name "<backup item name>" -VaultId $targetVault.ID
@@ -499,7 +499,7 @@ MSSQLSERVER/m... Backup               InProgress           3/18/2019 8:41:27 PM 
 
 ### <a name="change-policy-for-backup-items"></a>Изменение политики для элементов архивации
 
-Пользователь может изменить политику резервного элемента с Policy1 на Policy2. Чтобы переключить политики для архивированного элемента, извлеките соответствующую политику и элемент резервного копирования и используйте команду [Enable-азрековерисервицес](/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection) с элементом Backup в качестве параметра.
+Политику архивированного элемента можно изменить с *Policy1* на *Policy2*. Чтобы переключить политики для архивированного элемента, извлеките соответствующую политику и элемент резервного копирования и используйте команду [Enable-азрековерисервицес](/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection) с элементом Backup в качестве параметра.
 
 ```powershell
 $TargetPol1 = Get-AzRecoveryServicesBackupProtectionPolicy -Name <PolicyName>
@@ -545,7 +545,7 @@ Register-AzRecoveryServicesBackupContainer -Container $SQLContainer -BackupManag
 
 #### <a name="retain-data"></a>Сохранение данных
 
-Если пользователь желает отключить защиту, он может использовать командлет PowerShell [Disable-азрековерисервицесбаккуппротектион](/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection) . Это приведет к отмене запланированных резервных копий, но данные будут сохранены до тех пор, пока не будет храниться неограниченное время.
+Если вы хотите отключить защиту, можно использовать командлет PowerShell [Disable-азрековерисервицесбаккуппротектион](/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection) . Это приведет к отмене запланированных резервных копий, но данные будут сохранены до тех пор, пока не будет храниться неограниченное время.
 
 ```powershell
 $bkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureWorkload -WorkloadType MSSQL -Name "<backup item name>" -VaultId $targetVault.ID
@@ -562,7 +562,7 @@ Disable-AzRecoveryServicesBackupProtection -Item $bkpItem -VaultId $targetVault.
 
 #### <a name="disable-auto-protection"></a>Отключить автоматическую защиту
 
-Если для SQLInstance была настроена автозащита, пользователь может отключить ее с помощью командлета PowerShell [Disable-азрековерисервицесбаккупаутопротектион](/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupautoprotection) .
+Если для SQLInstance была настроена автозащита, ее можно отключить с помощью командлета PowerShell [Disable-азрековерисервицесбаккупаутопротектион](/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupautoprotection) .
 
 ```powershell
 $SQLInstance = Get-AzRecoveryServicesBackupProtectableItem -workloadType MSSQL -ItemType SQLInstance -VaultId $targetVault.ID -Name "<Protectable Item name>" -ServerName "<Server Name>"
@@ -571,7 +571,7 @@ Disable-AzRecoveryServicesBackupAutoProtection -InputItem $SQLInstance -BackupMa
 
 #### <a name="unregister-sql-vm"></a>Отмена регистрации виртуальной машины SQL
 
-Если все баз данных SQL Server [больше не защищены и данные резервного копирования не существуют](#delete-backup-data), пользователь может отменить регистрацию ВИРТУАЛЬНОЙ машины SQL из этого хранилища. Только пользователь может защищать баз данных в другом хранилище. Чтобы отменить регистрацию виртуальной машины SQL, используйте командлет PowerShell [Unregister-азрековерисервицесбаккупконтаинер](/powershell/module/az.recoveryservices/unregister-azrecoveryservicesbackupcontainer) .
+Если все баз данных SQL Server [больше не защищены и данные резервного копирования не существуют](#delete-backup-data), можно отменить регистрацию ВИРТУАЛЬНОЙ машины SQL из этого хранилища. Только после этого вы можете защитить баз данных в другом хранилище. Чтобы отменить регистрацию виртуальной машины SQL, используйте командлет PowerShell [Unregister-азрековерисервицесбаккупконтаинер](/powershell/module/az.recoveryservices/unregister-azrecoveryservicesbackupcontainer) .
 
 ```powershell
 $SQLContainer = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVMAppContainer -FriendlyName <VM name> -VaultId $targetvault.ID
@@ -600,7 +600,7 @@ Get-AzRecoveryServicesBackupJob -Status InProgress -BackupManagementType AzureWo
 
 Для групп доступности SQL Always On убедитесь, что [зарегистрированы все узлы](#registering-the-sql-vm) группы доступности (AG). После завершения регистрации для всех узлов объект группы доступности SQL логически создается в разделе защищаемые элементы. Базы данных в группе доступности SQL будут перечислены как "SQLDatabase". Узлы будут отображаться как автономные экземпляры, а базы данных SQL по умолчанию в них будут перечислены также как базы данных SQL.
 
-Например, предположим, что в группе доступности SQL есть два узла: "SQL-Server-0" и "SQL-Server-1" и 1 база данных SQL AG. Как только эти узлы будут зарегистрированы, если пользователь [выведет список защищаемых элементов](#fetching-sql-dbs), в нем будут перечислены следующие компоненты.
+Например, предположим, что в группе доступности SQL есть два узла: *SQL-Server-0* и *SQL-Server-1* и 1 база данных SQL AG. После регистрации этих узлов при [перечислении защищаемых элементов](#fetching-sql-dbs)в нем перечисляются следующие компоненты.
 
 * Объект SQL AG — защищаемый тип элемента как SQLAvailabilityGroup
 * Тип защищаемого элемента базы данных SQL AG в виде SQLDatabase

@@ -3,12 +3,12 @@ title: Средства управления безопасностью
 description: Сведения об элементах управления безопасностью, используемых в службе Azure Backup. Эти элементы управления помогают службе предотвращать, обнаруживать и отвечать на уязвимости системы безопасности.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: e69053d4646207b34e8df31b949410994c967303
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: ce1ca0a79476e4985569c677b58892fad91866a5
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88827296"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892968"
 ---
 # <a name="security-controls-for-azure-backup"></a>Элементы управления безопасностью для Azure Backup
 
@@ -29,15 +29,15 @@ ms.locfileid: "88827296"
 
 | Управление безопасностью | Да/нет | Примечания| Документация
 |---|---|--|--|
-| Поддержка мониторинга Azure (log Analytics, App Insights и т. д.)| Да | Log Analytics поддерживается через журналы ресурсов. Дополнительные сведения см. в статье [мониторинг Azure Backup защищенных рабочих нагрузок с помощью log Analytics](https://azure.microsoft.com/blog/monitor-all-azure-backup-protected-workloads-using-log-analytics/). |  |
+| Поддержка мониторинга Azure (например, log Analytics, App Insights)| Да | Log Analytics поддерживается через журналы ресурсов. Дополнительные сведения см. в статье [мониторинг Azure Backup защищенных рабочих нагрузок с помощью log Analytics](https://azure.microsoft.com/blog/monitor-all-azure-backup-protected-workloads-using-log-analytics/). |  |
 | Ведение журнала и аудит в плоскости управления и управления| Да | Все действия, активированные клиентом на портале Azure, регистрируются в журналах действий. |  |
 | Ведение журнала и аудит в плоскости данных| Нет | К плоскости данных Azure Backup невозможно обратиться напрямую.  |  |
 
-## <a name="identity"></a>Идентификация
+## <a name="identity"></a>Удостоверение
 
 | Управление безопасностью | Да/нет | Примечания| Документация
 |---|---|--|--|
-| Аутентификация| Да | Аутентификация выполняется с помощью Azure Active Directory. |  |
+| Проверка подлинности| Да | Аутентификация выполняется с помощью Azure Active Directory. |  |
 | Авторизация| Да | Используются созданные клиентом и встроенные роли Azure. Дополнительные сведения см. [в статье Использование управления доступом на основе ролей для управления Azure Backup точек восстановления](./backup-rbac-rs-vault.md). |  |
 
 ## <a name="data-protection"></a>Защита данных
@@ -56,6 +56,6 @@ ms.locfileid: "88827296"
 |---|---|--|--|
 | Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Да|  |  |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../security/fundamentals/security-controls.md).

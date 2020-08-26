@@ -5,12 +5,12 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/14/2020
 ms.topic: quickstart
-ms.openlocfilehash: d6acc16780179654975d63ab2c0b04caf141510c
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 3eec935d0a25f9510cd9a2f6e00b7ac22756e697
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85557052"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88796805"
 ---
 # <a name="quickstart-deploy-unity-sample-to-hololens"></a>Краткое руководство. Развертывание примера Unity в HoloLens
 
@@ -44,7 +44,7 @@ ms.locfileid: "85557052"
 1. Измените конфигурацию на **Выпуск** и **ARM64**
 1. Для отладчика выберите режим **Remote Machine**\ (Удаленный компьютер).
     ![Конфигурация решения](media/unity-deploy-config.png)
-1. Выполнение сборки решения (клавиша F7)
+1. Построение решения
 1. Для проекта "Быстрый запуск" перейдите в раздел *Свойства > Отладка*
     1. Убедитесь, что конфигурация *Выпуска* активна
     1. Установите для пункта *Отладчик для запуска* значение **Удаленный компьютер**

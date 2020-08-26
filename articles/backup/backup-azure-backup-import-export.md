@@ -4,12 +4,12 @@ description: Узнайте, как можно использовать Azure Ba
 ms.reviewer: saurse
 ms.topic: conceptual
 ms.date: 05/17/2018
-ms.openlocfilehash: e5761f56106989084f12b80620ffc417b781965d
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: f3cf44a34babab79d135923db040630a1c8e3dfe
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86187835"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892020"
 ---
 # <a name="offline-backup-workflow-in-azure-backup"></a>Автономное резервное копирование в Azure Backup
 
@@ -102,7 +102,7 @@ ms.locfileid: "86187835"
 
 1. Завершите рабочий процесс. В консоли агента Azure Backup выберите пункт **Архивировать сейчас**.
 
-    ![Создать резервную копию сейчас](./media/backup-azure-backup-import-export/backupnow.png)
+    ![Мгновенная архивация](./media/backup-azure-backup-import-export/backupnow.png)
 
 1. На странице **Подтверждение** мастера нажмите кнопку **создать резервную копию**. Начальная резервная копия записывается в промежуточное расположение в процессе установки.
 
@@ -129,7 +129,7 @@ ms.locfileid: "86187835"
      > [!IMPORTANT]
      > Если исходный компьютер является виртуальной машиной, то копирующий компьютер должен быть физическим сервером или клиентским компьютером, отличным от исходного компьютера.
 
-1. Откройте командную строку с повышенными привилегиями на компьютере копирования с каталогом служебной программы *AzureOfflineBackupDiskPrep* в качестве текущего каталога. Выполните следующую команду:
+1. Откройте командную строку с повышенными привилегиями на компьютере копирования с каталогом служебной программы *AzureOfflineBackupDiskPrep* в качестве текущего каталога. Выполните следующую команду.
 
     ```.\AzureOfflineBackupDiskPrep.exe s:<Staging Location Path>```
 
@@ -216,6 +216,6 @@ ms.locfileid: "86187835"
 
 После завершения начальной архивации можно безопасно удалить данные, импортированные в контейнер хранилища Azure, и данные резервных копий в промежуточном расположении.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Вопросы о рабочем процессе службы импорта и экспорта Azure см. в статье [Использование службы импорт и экспорт Microsoft Azure для перемещения данных в хранилище BLOB-объектов](../storage/common/storage-import-export-service.md).

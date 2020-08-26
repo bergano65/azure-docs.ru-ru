@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/30/2020
 ms.author: mlottner
-ms.openlocfilehash: 4dd7ca8f926862487b9505731c0662e68ee3d7c0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1c646c750cb54228211fadb0a4f6733d495e9219
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81311280"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892071"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Развертывание модуля безопасности на устройстве IoT Edge
 
@@ -47,7 +47,7 @@ ms.locfileid: "81311280"
     - Проверьте, активен ли аудит, выполнив следующую команду:
 
     `sudo systemctl status auditd`<br>
-    - Ожидаемый ответ:`active (running)`
+    - Ожидаемый ответ: `active (running)`
 
 ### <a name="deployment-using-azure-portal"></a>Развертывание с помощью портал Azure
 
@@ -93,11 +93,23 @@ ms.locfileid: "81311280"
 
 1. На вкладке **module двойника Settings (параметры модуля** ) добавьте следующую конфигурацию:
 
-    ``` json
-      "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration"
-    ```
+   Свойство двойника модуля:
+   
+   ``` json
+     "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration"
+   ```
 
-1. Нажмите кнопку **Обновить**.
+   Содержимое свойства двойника модуля: 
+
+   ```json
+     {
+
+     }
+   ```
+    
+   Дополнительные сведения о настройке агента см. в разделе [Настройка агентов безопасности](https://docs.microsoft.com/azure/asc-for-iot/how-to-agent-configuration).
+
+1. Выберите **Обновить**.
 
 #### <a name="step-2-runtime-settings"></a>Шаг 2. параметры среды выполнения
 
@@ -129,9 +141,9 @@ ms.locfileid: "81311280"
     }
     ```
 
-1. Щелкните **Сохранить**.
+1. Нажмите **Сохранить**.
 
-1. Выберите **Далее**.
+1. Щелкните **Далее**.
 
 #### <a name="step-3-specify-routes"></a>Шаг 3. Указание маршрутов
 
@@ -147,7 +159,7 @@ ms.locfileid: "81311280"
     "ASCForIoTRoute": "FROM /messages/modules/azureiotsecurity/* INTO $upstream"
     ```
 
-1. Выберите **Далее**.
+1. Щелкните **Далее**.
 
 #### <a name="step-4-review-deployment"></a>Шаг 4. Проверка развертывания
 
@@ -168,8 +180,8 @@ ms.locfileid: "81311280"
    | Имя | IMAGE |
    | --- | --- |
    | азуреиотсекурити | mcr.microsoft.com/ascforiot/azureiotsecurity:1.0.2 |
-   | edgeHub | mcr.microsoft.com/azureiotedge-hub:1.0.8.3 |
-   | edgeAgent | mcr.microsoft.com/azureiotedge-agent:1.0.1 |
+   | edgeHub; | mcr.microsoft.com/azureiotedge-hub:1.0.8.3 |
+   | edgeAgent; | mcr.microsoft.com/azureiotedge-agent:1.0.1 |
 
    Если минимальный необходимый контейнер отсутствует, проверьте, соответствует ли манифест развертывания IoT Edge рекомендуемым параметрам. Дополнительные сведения см. в разделе [Развертывание модуля IOT Edge](#deployment-using-azure-portal).
 
@@ -181,7 +193,7 @@ ms.locfileid: "81311280"
 
 1. Для получения более подробных журналов добавьте следующую переменную среды в развертывание модуля **азуреиотсекурити** : `logLevel=Debug` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы узнать больше о параметрах конфигурации, перейдите к руководству по настройке модуля.
 > [!div class="nextstepaction"]

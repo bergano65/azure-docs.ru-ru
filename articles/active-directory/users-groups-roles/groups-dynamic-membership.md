@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8dda8c742a0aafe7ec3f46a0a9dbf0abd4a516b4
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: f36e5d8974caea0eecff7e0b399b6aab5d200664
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213802"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797111"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -341,13 +341,13 @@ device.objectId -ne null
 
 ## <a name="extension-properties-and-custom-extension-properties"></a>Свойства расширения и пользовательские свойства расширения
 
-В правилах динамического членства поддерживаются атрибуты расширения и пользовательские свойства расширения в виде строковых свойств. [Атрибуты расширения](https://docs.microsoft.com/graph/api/resources/onpremisesextensionattributes?view=graph-rest-1.0) синхронизируются из локального каталога Windows Server AD и принимают формат ExtensionAttributeX, где X равно 1–15. Вот пример правила, которое использует в качестве свойства атрибут расширения:
+В правилах динамического членства поддерживаются атрибуты расширения и пользовательские свойства расширения в виде строковых свойств. [Атрибуты расширения](/graph/api/resources/onpremisesextensionattributes?view=graph-rest-1.0) синхронизируются из локального каталога Windows Server AD и принимают формат ExtensionAttributeX, где X равно 1–15. Вот пример правила, которое использует в качестве свойства атрибут расширения:
 
 ```
 (user.extensionAttribute15 -eq "Marketing")
 ```
 
-[Пользовательские свойства расширения](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-feature-directory-extensions) синхронизируются из локальной службы Windows Server AD или из подключенного приложения SaaS и имеют формат `user.extension_[GUID]_[Attribute]`, где:
+[Пользовательские свойства расширения](../hybrid/how-to-connect-sync-feature-directory-extensions.md) синхронизируются из локальной службы Windows Server AD или из подключенного приложения SaaS и имеют формат `user.extension_[GUID]_[Attribute]`, где:
 
 * [GUID] — уникальный идентификатор Azure AD для приложения, которое создало это свойство в Azure AD;
 * [Attribute] — имя свойства, с которым оно было создано.
@@ -393,7 +393,7 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
  systemLabels | Любая строка, соответствующая свойству устройства Intune, для добавления тегов устройств в Modern Workplace. | (device.systemLabels -contains "M365Managed")
 
 > [!Note]  
-> При создании динамических групп для устройств необходимо указать для атрибута deviceOwnership значение Company (Организация). В Intune этому значению соответствует тип владения устройством Corporate (Корпоративное). Дополнительные сведения см. в разделе [OwnerTypes](https://docs.microsoft.com/intune/reports-ref-devices#ownertypes). 
+> При создании динамических групп для устройств необходимо указать для атрибута deviceOwnership значение Company (Организация). В Intune этому значению соответствует тип владения устройством Corporate (Корпоративное). Дополнительные сведения см. в разделе [OwnerTypes](/intune/reports-ref-devices#ownertypes). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

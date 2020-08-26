@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 1a7511ed0e7bb1d9032331efa87f0d61a99cf5dc
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: e8d11c2122a21b67620987ad9ef74efc99eeb98b
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88065239"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654503"
 ---
 # <a name="quickstart-create-an-internal-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>Краткое руководство. Создание внутренней подсистемы балансировки нагрузки с помощью портала Azure для распределения нагрузки между виртуальными машинами
 
@@ -36,7 +36,7 @@ ms.locfileid: "88065239"
 
 ---
 
-# <a name="option-1-default-create-a-internal-load-balancer-standard-sku"></a>[Вариант 1 (по умолчанию). Создание внутренней подсистемы балансировки нагрузки (ценовая категория "Стандартный")](#tab/option-1-create-internal-load-balancer-standard)
+# <a name="standard-sku"></a>[**SKU "Стандартный"** ](#tab/option-1-create-internal-load-balancer-standard)
 
 >[!NOTE]
 >Для производственных рабочих нагрузок рекомендуется использовать подсистему балансировки нагрузки ценовой категории "Стандартный".  Дополнительные сведения о доступных ценовых категориях см. в статье **[Номера SKU для Azure Load Balancer](skus.md)** .
@@ -280,7 +280,7 @@ ms.locfileid: "88065239"
     | Группа безопасности сети | Выберите существующий вариант **myNSG**.|
 
 
-# <a name="option-2-create-a-internal-load-balancer-basic-sku"></a>[Вариант 2. Создание внутренней подсистемы балансировки нагрузки (ценовая категория "Базовый")](#tab/option-1-create-internal-load-balancer-basic)
+# <a name="basic-sku"></a>[**SKU "Базовый"** ](#tab/option-1-create-internal-load-balancer-basic)
 
 >[!NOTE]
 >Для производственных рабочих нагрузок рекомендуется использовать подсистему балансировки нагрузки ценовой категории "Стандартный".  Дополнительные сведения о доступных ценовых категориях см. в статье **[Номера SKU для Azure Load Balancer](skus.md)** .

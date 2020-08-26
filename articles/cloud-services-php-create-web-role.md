@@ -13,12 +13,12 @@ ms.devlang: PHP
 ms.topic: article
 ms.date: 04/11/2018
 ms.author: msangapu
-ms.openlocfilehash: fd04c6315a5a6915159c0cbb6a9640ae0695ed73
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: 1bf0ea35c51b063a7720a1542a23a49fbcdbc557
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87117239"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892989"
 ---
 # <a name="create-php-web-and-worker-roles"></a>Создание веб-ролей и рабочих ролей PHP
 
@@ -153,7 +153,7 @@ PS C:\myProject> Add-AzurePHPWorkerRole roleName
 
 ## <a name="run-your-application-in-the-compute-and-storage-emulators"></a>Запуск приложения в эмуляторах вычисления и хранения
 
-Эмуляторы Azure представляют собой локальную среду, в которой можно тестировать приложения Azure перед их развертыванием в облаке. Существует несколько различий между эмуляторами и средой Azure. Чтобы разобраться в них, ознакомьтесь со статьей [Использование эмулятора хранения Azure для разработки и тестирования](storage/common/storage-use-emulator.md).
+Эмуляторы Azure представляют собой локальную среду, в которой можно тестировать приложения Azure перед их развертыванием в облаке. Существует несколько различий между эмуляторами и средой Azure. Чтобы лучше понять это, см. статью [использование эмулятора хранения Azure для разработки и тестирования](storage/common/storage-use-emulator.md).
 
 Обратите внимание, что для использования эмулятора вычислений следует установить PHP локально. Эмулятор вычислений будет использовать локальную установку PHP для запуска приложения.
 
@@ -184,7 +184,7 @@ PS C:\MyProject> Stop-AzureEmulator
 
 Чтобы опубликовать приложение, сначала импортируйте параметры публикации с помощью командлета [Import-AzurePublishSettingsFile](/powershell/module/servicemanagement/azure.service/import-azurepublishsettingsfile) . После этого опубликуйте приложение, используя командлет [Publish-AzureServiceProject](/powershell/module/servicemanagement/azure.service/publish-azureserviceproject) . Подробнее о входе: [Установка и настройка Azure PowerShell](/powershell/azure/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительную информацию можно найти в [Центре разработчика PHP](https://azure.microsoft.com/develop/php/).
 

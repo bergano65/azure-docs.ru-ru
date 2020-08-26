@@ -17,12 +17,12 @@ ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.custom: contperfq1
-ms.openlocfilehash: 956e61894113b4728760de519ad49be71ed184cc
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: c69a5e153377eee86eaf0c43d6c982dee2938ddf
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88604998"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783677"
 ---
 # <a name="what-are-azure-ad-access-reviews"></a>Что собой представляют проверки доступа Azure AD?
 
@@ -81,7 +81,7 @@ Azure AD позволяет работать вместе с коллегами
 
 Лицензии Azure AD Premium P2 **не** требуются для пользователей с ролями глобального администратора или администратора пользователей, которые настраивают проверки доступа и параметры или применяют решения из проверок.
 
-Каждая платная лицензия Azure AD Premium P2, которая присваивается пользователям из вашей организации, позволяет пригласить с помощью Azure Active Directory B2B до пяти гостевых пользователей в пределах квоты внешних пользователей. Эти гостевые пользователи также могут использовать функции Azure AD Premium P2. Дополнительные сведения см. в статье [Руководство по лицензированию службы совместной работы Azure Active Directory B2B](../b2b/licensing-guidance.md).
+Каждая платная лицензия Azure AD Premium P2, которая присваивается пользователям из вашей организации, позволяет пригласить с помощью Azure Active Directory B2B до пяти гостевых пользователей в пределах квоты внешних пользователей. Эти гостевые пользователи также могут использовать функции Azure AD Premium P2. Дополнительные сведения см. в статье [Руководство по лицензированию службы совместной работы Azure Active Directory B2B](../external-identities/licensing-guidance.md).
 
 Дополнительные сведения о лицензиях см. в статье [Назначение или удаление лицензий с помощью портала Azure Active Directory](../fundamentals/license-users-groups.md).
 
