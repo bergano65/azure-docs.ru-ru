@@ -41,6 +41,10 @@
           href: tutorial-alias-rr.md
 - name: Основные понятия
   items:
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Общедоступное имя DNS
       items:
         - name: Зоны и записи

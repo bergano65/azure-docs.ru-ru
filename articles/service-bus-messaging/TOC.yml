@@ -117,6 +117,8 @@
           href: network-security.md
 - name: Практические руководства
   items:
+    - name: Перемещение между регионами
+      href: move-across-regions.md
     - name: Миграция из API Azure Service Manager (классическая модель) в API Resource Manager
       href: deprecate-service-bus-management.md
     - name: Создание пространства имен

@@ -297,7 +297,7 @@
               href: ../reserved-vm-instance-size-flexibility.md
         - name: Точечные виртуальные машины
           displayName: 'pre-empt, preempt'
-          href: spot-vms.md
+          href: ../spot-vms.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Виртуальные машины Azure без временных дисков
           href: ../azure-vms-no-temp-disk.md
         - name: Соглашения об именовании для размеров виртуальных машин Azure
@@ -984,15 +984,15 @@
             - name: "Активация шифрования в узле\_— CLI"
               href: disks-enable-host-based-encryption-cli.md
             - name: 'Активация шифрования в узле: портал'
-              href: disks-enable-host-based-encryption-portal.md
+              href: ../disks-enable-host-based-encryption-portal.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: "Активация управляемых клиентом ключей\_— CLI"
               href: disks-enable-customer-managed-keys-cli.md
             - name: "Активация управляемых клиентом ключей\_— портал"
-              href: disks-enable-customer-managed-keys-portal.md
+              href: ../disks-enable-customer-managed-keys-portal.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: 'Активация шифрования неактивных данных: CLI'
               href: disks-enable-double-encryption-at-rest-cli.md
             - name: 'Активация шифрования неактивных данных: портал'
-              href: disks-enable-double-encryption-at-rest-portal.md
+              href: ../disks-enable-double-encryption-at-rest-portal.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Миграция и преобразование
           items:
             - name: Миграция в хранилище ценовой категории "Премиум" с помощью Azure Site Recovery
@@ -1024,7 +1024,7 @@
         - name: Использование хранилища файлов
           href: mount-azure-file-storage-on-linux-using-smb.md
         - name: Часто задаваемые вопросы о дисках
-          href: faq-for-disks.md
+          href: ../faq-for-disks.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Управление сетями
       items:
         - name: Создание виртуальной сети

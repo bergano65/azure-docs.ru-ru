@@ -510,6 +510,8 @@
           href: unique-keys.md
         - name: Управление транзакциями и оптимистической блокировкой
           href: database-transactions-optimistic-concurrency.md
+        - name: Вложения
+          href: attachments.md
     - name: Канал изменений
       items:
         - name: Общие сведения о канале изменений

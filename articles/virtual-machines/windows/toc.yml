@@ -282,7 +282,7 @@
               href: ../reserved-vm-instance-size-flexibility.md
         - name: Точечные виртуальные машины
           displayName: 'pre-empt, preempt'
-          href: spot-vms.md
+          href: ../spot-vms.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Виртуальные машины Azure без временных дисков
           href: ../azure-vms-no-temp-disk.md
         - name: Соглашения об именовании для размеров виртуальных машин Azure
@@ -879,15 +879,15 @@
             - name: 'Активация шифрования в узле: PowerShell'
               href: disks-enable-host-based-encryption-powershell.md
             - name: 'Активация шифрования в узле: портал'
-              href: disks-enable-host-based-encryption-portal.md
+              href: ../disks-enable-host-based-encryption-portal.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: "Включение управляемых клиентом ключей\_— PowerShell"
               href: disks-enable-customer-managed-keys-powershell.md
             - name: "Включение управляемых клиентом ключей\_— портал"
-              href: disks-enable-customer-managed-keys-portal.md
+              href: ../disks-enable-customer-managed-keys-portal.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Включение двойного шифрования неактивных данных
               href: disks-enable-double-encryption-at-rest-powershell.md
             - name: 'Активация шифрования неактивных данных: портал'
-              href: disks-enable-double-encryption-at-rest-portal.md
+              href: ../disks-enable-double-encryption-at-rest-portal.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Миграция и преобразование
           items:
             - name: Переход между хранилищами ценовых категорий "Стандартный" и "Премиум" для дисков
@@ -911,7 +911,7 @@
         - name: "Обнаружение неприсоединенных дисков\_— портал"
           href: ../disks-find-unattached-portal.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Часто задаваемые вопросы о дисках
-          href: faq-for-disks.md
+          href: ../faq-for-disks.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Управление сетями
       href: ps-common-network-ref.md
       items:
