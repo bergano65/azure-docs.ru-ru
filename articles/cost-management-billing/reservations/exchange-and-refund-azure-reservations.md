@@ -3,15 +3,16 @@ title: Самостоятельный обмен и возмещение сре�
 description: Узнайте, как можно обменять Azure Reserved Virtual Machine Instances или вернуть деньги за них. Для обмена или возврата денег вам нужны права владельца в заказе на резервирование.
 author: yashesvi
 ms.service: cost-management-billing
+ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: f1323d21ee59386220a35cc31b17cab3441f0e0d
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 553652832f3f4ce84a0a141455551e4977215184
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87457640"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88684428"
 ---
 # <a name="self-service-exchanges-and-refunds-for-azure-reservations"></a>Самостоятельный обмен и возмещение средств для резервирований Azure
 

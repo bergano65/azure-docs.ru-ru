@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 06/23/2020
 ms.author: spelluru
 ms.custom: devx-track-javascript
-ms.openlocfilehash: fafdf18a3593f7ec444e9970d99807cbfe0cb13d
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: bbb0f530d95c78b8b5da178ee1544830ac3f7132
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080632"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88660602"
 ---
 # <a name="quickstart-how-to-use-service-bus-topics-and-subscriptions-with-nodejs-and-the-azureservice-bus-package"></a>Краткое руководство. Использование разделов и подписок служебной шины с Node.js и пакетом azure/service-bus
 Из этого учебника вы узнаете, как написать программу Node.js для отправки сообщений в раздел служебной шины и получения сообщений из подписки служебной шины с помощью нового пакета [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus). Этот пакет использует более быстрый [протокол AMQP 1.0](service-bus-amqp-overview.md) вместо [интерфейсов REST API для служебной шины](/rest/api/servicebus/service-bus-runtime-rest), как в старом пакете [azure-sb](https://www.npmjs.com/package/azure-sb). Примеры кода написаны на JavaScript.
@@ -86,7 +86,7 @@ npm install @azure/service-bus
 Взаимодействие с подпиской служебной шины начинается с создания экземпляра класса [ServiceBusClient](/javascript/api/@azure/service-bus/servicebusclient) и применения его для создания экземпляра класса [SubscriptionClient](/javascript/api/@azure/service-bus/subscriptionclient). Получив клиент подписки, вы сможете создать приемник и использовать его методы [receiveMessages](/javascript/api/@azure/service-bus/receiver#receivemessages-number--undefined---number-) и [registerMessageHandler](/javascript/api/@azure/service-bus/receiver#registermessagehandler-onmessage--onerror--messagehandleroptions-) для получения сообщений.
 
 1. Откройте редактор, например [Visual Studio Code](https://code.visualstudio.com/).
-2. Создайте файл с именем `recieve.js` и вставьте в него приведенный ниже код. Этот код пытается получить из указанной подписки 10 сообщений. Реальное число полученных сообщений будет зависеть от количества доступных в подписке сообщений и задержки сети.
+2. Создайте файл с именем `receive.js` и вставьте в него приведенный ниже код. Этот код пытается получить из указанной подписки 10 сообщений. Реальное число полученных сообщений будет зависеть от количества доступных в подписке сообщений и задержки сети.
 
     ```javascript
     const { ServiceBusClient, ReceiveMode } = require("@azure/service-bus"); 
@@ -117,7 +117,7 @@ npm install @azure/service-bus
     });
     ```
 3. Введите строку подключения, имена раздела и подписки в приведенный выше код.
-4. Затем в окне командной строки выполните команду `node receiveMessages.js`, которая запускает этот файл.
+4. Затем в окне командной строки выполните команду `node receive.js`, которая запускает этот файл.
 
 Поздравляем! Вы получили сообщения из подписки служебной шины.
 

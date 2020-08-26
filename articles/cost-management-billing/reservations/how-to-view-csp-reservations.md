@@ -2,17 +2,18 @@
 title: Просмотр резервирований Azure в рамках программы "Поставщик облачных решений"
 description: Сведения о том, как просматривать резервирования Azure в рамках программы "Поставщик облачных решений".
 ms.service: cost-management-billing
+ms.subservice: reservations
 author: bandersmsft
 ms.reviewer: yashesvi
 ms.topic: how-to
 ms.date: 07/29/2020
 ms.author: banders
-ms.openlocfilehash: fde33640505c225167700215f32cb3243acc5196
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 9b4f3375f3d334b21a0f7d169fec9025cd911857
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424939"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88684394"
 ---
 # <a name="view-azure-reservations-as-a-cloud-solution-provider-csp"></a>Просмотр резервирований Azure в рамках программы "Поставщик облачных решений" (CSP)
 

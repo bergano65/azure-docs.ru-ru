@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d52384f04fd8a2a2bc3c42af713378ad15d01c42
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.openlocfilehash: 3ec578370d32664e36ffcc4bd075c3f6a3ed68ab
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88192710"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88795359"
 ---
 # <a name="what-is-self-service-sign-up-for-azure-active-directory"></a>Что такое самостоятельная регистрация для Azure Active Directory?
 
@@ -64,7 +64,7 @@ ms.locfileid: "88192710"
 Дополнительные сведения о пробных подписках на Flow и PowerApps см. в следующих статьях:
 
 * [Как запретить имеющимся пользователям начать работу с Power BI?](https://support.office.com/article/Power-BI-in-your-Organization-d7941332-8aec-4e5e-87e8-92073ce73dc5#bkmk_preventjoining)
-* [Вопросы и ответы об использовании Flow в организации](https://docs.microsoft.com/flow/organization-q-and-a)
+* [Вопросы и ответы об использовании Flow в организации](/flow/organization-q-and-a)
 
 ### <a name="how-do-the-controls-work-together"></a>Как совместно использовать эти элементы управления?
 Эти два параметра можно использовать совместно для избирательного управления самостоятельной регистрацией. Например, следующая команда позволит пользователям выполнять самостоятельную регистрацию, но только если у этих пользователей уже есть учетная запись в Azure AD (иными словами, пользователи, которым нужно создать проверенную с помощью электронной почты учетную запись, не смогут выполнить самостоятельную регистрацию).

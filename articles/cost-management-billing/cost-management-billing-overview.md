@@ -4,16 +4,17 @@ description: Функции службы "Управление затратам�
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 07/29/2020
+ms.date: 08/20/2020
 ms.topic: overview
 ms.service: cost-management-billing
+ms.subservice: common
 ms.custom: ''
-ms.openlocfilehash: 76121dd8126922de2843e430a4e01cae1c7c0d53
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 7f4585d7199b44c82df9a03ea3244885da72d2fa
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87413006"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88685176"
 ---
 # <a name="what-is-azure-cost-management--billing"></a>Что собой представляет служба "Управление затратами и выставление счетов Azure"?
 
