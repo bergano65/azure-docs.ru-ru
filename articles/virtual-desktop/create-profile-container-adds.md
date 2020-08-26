@@ -6,18 +6,18 @@ ms.topic: how-to
 ms.date: 04/10/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 91f5ef4a5065079f0fe385b92af2a1c4bfa5ee84
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: ea834ed874f3011d95f8b924df860576f72bc4ee
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88007715"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88825619"
 ---
 # <a name="create-a-profile-container-with-azure-files-and-azure-ad-ds"></a>Создание контейнера профиля с помощью службы файлов Azure и Azure AD DS
 
 В этой статье показано, как создать контейнер профиля Фслогикс с помощью службы файлов Azure и Azure Active Directory доменных служб (AD DS).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 В этой статье предполагается, что вы уже настроили экземпляр AD DS Azure. Если у вас еще нет, выполните инструкции в разделе [Создание базового управляемого домена](../active-directory-domain-services/tutorial-create-instance.md) , а затем вернитесь сюда.
 
@@ -71,7 +71,7 @@ ms.locfileid: "88007715"
 
 6. Выберите имя или адрес электронной почты для удостоверения целевой Azure Active Directory.
 
-7. Нажмите кнопку **Сохранить**.
+7. Щелкните **Сохранить**.
 
 ## <a name="get-the-storage-account-access-key"></a>Получение ключа доступа к учетной записи хранения
 
@@ -96,7 +96,7 @@ ms.locfileid: "88007715"
 
 6. Войдя на виртуальную машину, запустите командную строку от имени администратора.
 
-7. Выполните следующую команду:
+7. Выполните следующую команду.
 
      ```cmd
      net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> <storage-account-key> /user:Azure\<storage-account-name>
@@ -107,25 +107,31 @@ ms.locfileid: "88007715"
     - Замените `<share-name>` именем созданной ранее общей папки.
     - Замените `<storage-account-key>` ключом учетной записи хранения из Azure.
 
-    Например:
+    Пример:
 
      ```cmd
      net use y: \\fsprofile.file.core.windows.net\share HDZQRoFP2BBmoYQ=(truncated)= /user:Azure\fsprofile)
      ```
 
-8. Выполните следующую команду, чтобы предоставить пользователю полный доступ к общей папке службы файлов Azure.
+8. Выполните следующие команды, чтобы разрешить пользователям виртуальных рабочих столов Windows создавать собственные контейнеры профилей, блокируя доступ к контейнерам профилей других пользователей.
 
      ```cmd
-     icacls <mounted-drive-letter>: /grant <user-email>:(f)
+     icacls <mounted-drive-letter>: /grant <user-email>:(M)
+     icacls <mounted-drive-letter>: /grant "Creator Owner":(OI)(CI)(IO)(M)
+     icacls <mounted-drive-letter>: /remove "Authenticated Users"
+     icacls <mounted-drive-letter>: /remove "Builtin\Users"
      ```
 
-    - Замените `<mounted-drive-letter>` буквой диска, который будет использоваться пользователем.
-    - Замените `<user-email>` именем участника-пользователя, который будет использовать этот профиль для доступа к виртуальным машинам узла сеансов.
+    - Замените `<mounted-drive-letter>` буквой диска, который использовался для подключения накопителя.
+    - Замените `<user-email>` именем участника-пользователя или группы Active Directory, которая содержит пользователей, которым потребуется доступ к общей папке.
 
-    Например:
+    Пример:
 
      ```cmd
-     icacls y: /grant john.doe@contoso.com:(f)
+     icacls <mounted-drive-letter>: /grant john.doe@contoso.com:(M)
+     icacls <mounted-drive-letter>: /grant "Creator Owner":(OI)(CI)(IO)(M)
+     icacls <mounted-drive-letter>: /remove "Authenticated Users"
+     icacls <mounted-drive-letter>: /remove "Builtin\Users"
      ```
 
 ## <a name="create-a-profile-container"></a>Создание контейнера профилей
@@ -140,7 +146,7 @@ ms.locfileid: "88007715"
 
 3. После запуска программы установки установите флажок **я принимаю условия лицензии.** Если применимо, укажите новый ключ.
 
-4. Выберите пункт **Установить**.
+4. Нажмите кнопку **Установить**.
 
 5. Откройте **диск C**, а затем последовательно выберите **Program Files**  >  **фслогикс**  >  **Apps** (программы), чтобы убедиться, что агент фслогикс установлен правильно.
 
@@ -200,7 +206,7 @@ ms.locfileid: "88007715"
 
     Как и в предыдущих командлетах, обязательно замените `<your-wvd-tenant>` , `<wvd-pool>` и `<user-principal>` соответствующими значениями.
 
-    Например:
+    Пример:
 
      ```powershell
      $pool1 = "contoso"
