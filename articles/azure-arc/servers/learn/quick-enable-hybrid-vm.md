@@ -53,7 +53,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
 
 1. Запустите службу Azure Arc на портале Azure, щелкнув **Все службы**, а затем выполнив поиск и выбрав **Компьютеры — Azure Arc**.
 
-    :::image type="content" source="./media/quick-enable-hybrid-vm/search-machines.png" alt-text="Поиск серверов с поддержкой Arc в разделе "Все службы"" border="false":::
+    :::image type="content" source="./media/quick-enable-hybrid-vm/search-machines.png" alt-text="Поиск серверов с поддержкой Arc в разделе Все службы" border="false":::
 
 1. На странице **Компьютеры — Azure Arc** щелкните **Добавить** в левом верхнем углу или **Create machine - Azure Arc** (Создать компьютер — Azure Arc) в нижней части средней области.
 
