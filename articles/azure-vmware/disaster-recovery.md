@@ -48,7 +48,7 @@ VMware ХККС предоставляет различные операции, 
 
 В открывшемся окне выберите источник и удаленные сайты. в этом случае удаленный сайт в этом случае должен быть частным облаком решения Azure VMware.
 
-:::image type="content" source="./media/disaster-recovery/protect-virtual-machines.png" alt-text="окно "Защита виртуальных машин"" border="true":::
+:::image type="content" source="./media/disaster-recovery/protect-virtual-machines.png" alt-text="окно Защита виртуальных машин" border="true":::
 
 При необходимости выберите параметры репликации по умолчанию.
 
@@ -101,7 +101,7 @@ VMware ХККС предоставляет различные операции, 
 
 В новом окне выберите параметры для теста. Выберите моментальный снимок, который вы хотите использовать для проверки различных состояний виртуальной машины.
 
-:::image type="content" source="./media/disaster-recovery/choose-snapshot.png" alt-text="выберите моментальный снимок и нажмите кнопку "тест"" border="true":::
+:::image type="content" source="./media/disaster-recovery/choose-snapshot.png" alt-text="выберите моментальный снимок и нажмите кнопку тест" border="true":::
 
 После нажатия кнопки " **тест**" начнется операция восстановления.
 
