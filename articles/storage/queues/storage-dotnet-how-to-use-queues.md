@@ -8,14 +8,16 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
-ms.openlocfilehash: 11fa99acda5f1c8edac3026961c426257bb74d92
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 5b8b127391401b956088ddb099d1853700e6f120
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88853675"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88871315"
 ---
 # <a name="get-started-with-azure-queue-storage-using-net"></a>Приступая к работе с хранилищем очередей Azure с помощью .NET
+
+[!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
 ## <a name="overview"></a>Обзор
 
@@ -27,7 +29,7 @@ ms.locfileid: "88853675"
 
 **Предполагаемое время выполнения:** 45 минут.
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные условия
 
 - [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 - [Общая клиентская библиотека службы хранилища Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/)
@@ -154,8 +156,6 @@ ms.locfileid: "88853675"
 ```
 
 ### <a name="add-using-directives"></a>Добавление директив using
-
-[!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
 Добавьте в верхнюю часть файла `Program.cs` следующие директивы `using`:
 
@@ -491,7 +491,7 @@ queue.Delete();
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 

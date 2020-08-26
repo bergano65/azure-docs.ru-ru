@@ -210,14 +210,14 @@
           href: storage-dotnet-how-to-use-queues.md
         - name: Java
           href: storage-java-how-to-use-queue-storage.md
+        - name: Python
+          href: storage-python-how-to-use-queue-storage.md
         - name: Node.js
           href: storage-nodejs-how-to-use-queues.md
         - name: C++
           href: storage-c-plus-plus-how-to-use-queues.md
         - name: PHP
           href: storage-php-how-to-use-queues.md
-        - name: Python
-          href: storage-python-how-to-use-queue-storage.md
         - name: Ruby
           href: storage-ruby-how-to-use-queue-storage.md
     - name: Управление очередями
@@ -253,12 +253,12 @@
           href: ../common/storage-explorer-troubleshooting.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
         - name: Специальные возможности Обозревателя службы хранилища
           href: ../../vs-azure-tools-storage-explorer-accessibility.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
-    - name: Форум службы хранилища Azure
+    - name: Служба хранилища Azure в Microsoft Q&A
       href: 'https://docs.microsoft.com/answers/topics/azure-queue-storage.html'
     - name: Служба хранилища Azure на форуме Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/windows-azure-storage'
-    - name: Цены на службу хранилища Azure
-      href: 'https://azure.microsoft.com/pricing/details/storage/'
+    - name: Цены на Хранилище очередей
+      href: 'https://azure.microsoft.com/pricing/details/storage/queues/'
     - name: Калькулятор цен Azure
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Видео

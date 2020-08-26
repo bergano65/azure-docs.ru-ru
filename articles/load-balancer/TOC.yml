@@ -16,6 +16,8 @@
       href: quickstart-load-balancer-standard-public-template.md
     - name: "Создание внутренней подсистемы балансировки нагрузки\_— портал"
       href: quickstart-load-balancer-standard-internal-portal.md
+    - name: "Создание внутренней подсистемы балансировки нагрузки\_— Azure\_CLI"
+      href: quickstart-load-balancer-standard-internal-cli.md
   expanded: true
 - name: Учебники
   items:

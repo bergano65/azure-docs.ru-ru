@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/18/2019
-ms.openlocfilehash: 6281e729c2663666cd61f22b2697edd61bbf88f5
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: b760ad03318b3c31b39b6470251847150dc5a70a
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86040798"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88869428"
 ---
 # <a name="azure-stream-analytics-output-to-azure-sql-database"></a>Вывод данных Azure Stream Analytics в базу данных SQL Azure
 
@@ -52,6 +52,6 @@ ms.locfileid: "86040798"
 
 Другой такой сценарий происходит при записи в некластеризованный индекс columnstore (NCCI), где небольшие операции вставки могут создать слишком много сегментов, что может вызвать сбой индекса. В этом случае рекомендуется использовать кластеризованный индекс columnstore.
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 Таким образом, если использовать функцию секционирования выходных данных в Azure Stream Analytics для выходных данных SQL, согласованная параллелизация задания с секционированной таблицей в SQL Azure может обеспечить значительные усовершенствования пропускной способности. Использование службы "Фабрика данных Azure" для оркестрации перемещения данных из таблицы в памяти в таблицы на диске позволяет достичь значительного увеличения пропускной способности. Если это целесообразно, повышение плотности сообщений также может быть важным фактором для улучшения общей пропускной способности.

@@ -1,0 +1,51 @@
+- name: Документация по серверам с поддержкой Azure Arc
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Сведения о серверах с поддержкой Azure Arc?
+      href: overview.md
+- name: Краткие руководства
+  items:
+    - name: Включение агента серверов с поддержкой Arc
+      href: ./learn/quick-enable-hybrid-vm.md
+- name: Учебники
+  items:
+    - name: Назначение политики для оценки соответствия
+      href: ./learn/tutorial-assign-policy-portal.md
+    - name: Мониторинг компьютера
+      href: ./learn/tutorial-enable-vm-insights.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      items:
+        - name: Серверы с поддержкой Arc
+          href: policy-samples.md
+- name: Основные понятия
+  items:
+    - name: Безопасность
+      items:
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: security-controls-policy.md
+- name: Практические руководства
+  items:
+    - name: Подключение к Azure Arc
+      items:
+        - name: Общие сведения об агенте Connected Machine
+          href: agent-overview.md
+        - name: Подключение компьютеров к Azure Arc на портале Azure
+          href: onboard-portal.md
+        - name: Подключение компьютеров в большом масштабе с помощью субъекта-службы
+          href: onboard-service-principal.md
+        - name: Подключение компьютеров к Azure Arc с помощью PowerShell DSC
+          href: onboard-dsc.md
+    - name: Управление
+      items:
+        - name: Использование расширений виртуальной машины Azure и управление ими
+          href: manage-vm-extensions.md
+        - name: Управление агентом
+          href: manage-agent.md
+    - name: Устранение неполадок
+      items:
+        - name: Проблемы с подключением агента
+          href: troubleshoot-agent-onboard.md

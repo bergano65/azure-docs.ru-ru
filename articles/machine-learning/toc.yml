@@ -509,6 +509,8 @@
       href: monitor-resource-reference.md
     - name: Справочник по конвейеру машинного обучения YAML
       href: reference-pipeline-yaml.md
+    - name: Равенство национальных облаков
+      href: reference-machine-learning-cloud-parity.md
 - name: Ресурсы
   items:
     - name: Заметки о выпуске

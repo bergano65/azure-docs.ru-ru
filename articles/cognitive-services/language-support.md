@@ -1,5 +1,5 @@
 ---
-title: Языковая поддержка
+title: Поддержка языков
 titleSuffix: Azure Cognitive Services
 description: Azure Cognitive Services позволяет создавать приложения, которые видят, слышат, понимают пользователя и говорят с ним. Эти службы поддерживают более трех десятков языков, предоставляя пользователям возможность общения с вашим приложением естественным образом.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 50c6d3ff6e1e8b979b3544c423a15ae8e1e42f6f
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: dba43c9e9b214a1ad077a2a15bdf014e057bb04e
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83592157"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88869887"
 ---
 # <a name="natural-language-support-for-azure-cognitive-services"></a>Поддержка естественного языка в Azure Cognitive Services
 
@@ -24,11 +24,11 @@ Azure Cognitive Services позволяет создавать приложен�
 Эти Cognitive Services не зависят от языка и не имеют ограничений, основанных на языке человека.
 
 * [Детектор аномалий (предварительная версия)](./anomaly-detector/index.yml)
-* [Custom Vision](./Custom-Vision-Service/index.yml)
+* [Пользовательское визуальное распознавание](./Custom-Vision-Service/index.yml)
 * [Распознавание лиц](./face/index.yml)
 * [Персонализатор](./personalizer/index.yml)
 
-## <a name="vision"></a>Концепция
+## <a name="vision"></a>Компьютерное зрение
 
 * [Компьютерное зрение](./computer-vision/language-support.md)
 * [Распознаватель документов (предварительная версия)](./form-recognizer/language-support.md)
@@ -37,11 +37,11 @@ Azure Cognitive Services позволяет создавать приложен�
 
 ## <a name="language"></a>Язык
 
-* [Иммерсивное средство чтения (предварительная версия)](./immersive-reader/language-support.md)
+* [Иммерсивное средство чтения](./immersive-reader/language-support.md)
 * [Распознавание речи (LUIS)](./luis/luis-supported-languages.md)
 * [QnA Maker](./qnamaker/overview/languages-supported.md)
 * [Анализ текста](./text-analytics/text-analytics-supported-languages.md)
-* [API перевода](./translator/languages.md)
+* [Переводчик](./translator/languages.md)
 
 ## <a name="speech"></a>Речь
 

@@ -1,0 +1,36 @@
+- name: Документация по Kubernetes с поддержкой Azure Arc
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Сведения о Kubernetes с поддержкой Arc
+      href: overview.md
+- name: Примеры
+  items:
+    - name: Встроенные политики службы "Политика Azure"
+      items:
+        - name: Kubernetes с поддержкой Arc
+          href: policy-samples.md
+- name: Практические руководства
+  items:
+    - name: Подключение к Azure Arc
+      items:
+        - name: Подключение кластера
+          href: connect-cluster.md
+        - name: Подключение субъекта-службы
+          href: create-onboarding-service-principal.md
+    - name: Управление
+      items:
+        - name: Развертывание конфигураций с использованием GitOps
+          href: use-gitops-connected-cluster.md
+        - name: Развертывание диаграмм Helm с использованием GitOps
+          href: use-gitops-with-helm.md
+        - name: Принудительное применение GitOps с помощью службы "Политика Azure"
+          href: use-azure-policy.md
+        - name: Мониторинг с использованием Azure Monitor для контейнеров
+          href: ../../azure-monitor/insights/container-insights-enable-arc-enabled-clusters.md?toc=/azure/azure-arc/kubernetes/toc.yml
+        - name: Применение политик управления допуском с помощью службы "Политика Azure"
+          href: ../../governance/policy/concepts/policy-for-kubernetes.md?toc=/azure/azure-arc/kubernetes/toc.yml
+        - name: Развертывание рабочих нагрузок для Интернета вещей
+          href: deploy-azure-iot-edge-workloads.md
+    - name: Устранение неполадок
+      href: Troubleshooting.md

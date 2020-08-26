@@ -44,12 +44,18 @@
       href: vm-do-ten-things.md
     - name: Использование виртуальной машины Linux для обработки и анализа данных
       href: linux-dsvm-walkthrough.md
-    - name: Создание автомасштабируемого пула виртуальных машин для обработки и анализа данных
-      href: dsvm-pools.md
-    - name: Интеграция с Active Directory
-      href: dsvm-common-identity.md
-    - name: Защита учетных данных для доступа к ресурсам
-      href: dsvm-secure-access-keys.md
+    - name: Интеграция с Машинным обучением Azure
+      items:
+        - name: Отслеживание экспериментов
+          href: how-to-track-experiments.md
+    - name: Руководство для предприятий
+      items:
+        - name: Создание автомасштабируемого пула виртуальных машин для обработки и анализа данных
+          href: dsvm-pools.md
+        - name: Интеграция с Active Directory
+          href: dsvm-common-identity.md
+        - name: Защита учетных данных для доступа к ресурсам
+          href: dsvm-secure-access-keys.md
 - name: Ресурсы
   items:
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)

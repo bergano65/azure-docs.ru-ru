@@ -11,12 +11,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: 685d337f9e6448f44d34a980ed884026d8a0a168
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 641ac1f6a2cc98e48694c42ec1531f679621640d
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86525421"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88869224"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Red Hat Update Infrastructure для предоставляемых по запросу виртуальных машин Red Hat Enterprise Linux в Azure
  [Red Hat Update Infrastructure](https://access.redhat.com/products/red-hat-update-infrastructure) (RHUI) позволяет поставщикам облачных служб (например, Azure) создавать зеркальные копии размещенного с помощью Red Hat содержимого репозитория, создавать пользовательские репозитории с содержимым для Azure и предоставлять пользовательским виртуальным машинам доступ к этому содержимому.
@@ -49,7 +49,7 @@ ms.locfileid: "86525421"
 
 ### <a name="images-connected-to-non-eus-repositories"></a>Образы, связанные с репозиториями без поддержки EUS
 
-Если вы подготовили к работе виртуальную машину на основе образа RHEL, который связан с репозиторием без поддержки EUS, при запуске `sudo yum update` он будет обновлен до следующей дополнительной версии RHEL. Например, если вы подготовили виртуальную машину на основе образа RHEL 7.4 (с оплатой по мере использования) и выполнили команду `sudo yum update`, то виртуальная машина обновится до версии RHEL 7.7 (последний дополнительный номер версии в семействе RHEL7).
+Если вы подготовили к работе виртуальную машину на основе образа RHEL, который связан с репозиторием без поддержки EUS, при запуске `sudo yum update` он будет обновлен до следующей дополнительной версии RHEL. Например, если вы подготавливаете виртуальную машину из образа RHEL 7,4 и запуститее `sudo yum update` , то в итоге появится виртуальная машина RHEL 7,8 (последняя дополнительная версия в семействе RHEL7).
 
 Для образов, связанных с репозиториями без поддержки EUS, в SKU отсутствует дополнительный номер версии. SKU является третьим элементом URN (полного имени образа). Например, все следующие образы связаны с репозиториями без поддержки EUS:
 

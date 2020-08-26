@@ -1,0 +1,38 @@
+### YamlMime:Landing
+title: Kubernetes с поддержкой Azure Arc (предварительная версия)
+summary: Узнайте, как управлять кластерами Kubernetes с помощью Azure Arc
+metadata:
+  title: Kubernetes с поддержкой Azure Arc
+  description: Узнайте, как управлять локальными компьютерами в Azure
+  author: 
+  ms.service: azure-arc
+  ms.topic: landing-page
+  ms.date: 06/26/2020
+  ms.author: 
+  ms.openlocfilehash: 7c643d10971d93a3c6194bc7390d2271c1ed561b
+  ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/24/2020
+  ms.locfileid: "88763771"
+landingContent:
+- title: Подключение кластеров Kubernetes к Azure с помощью Azure Arc
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что представляет собой Azure Arc с поддержкой Kubernetes?
+      url: overview.md
+  - linkListType: quickstart
+    links:
+    - text: Подключение кластера
+      url: connect-cluster.md
+  - linkListType: how-to-guide
+    links:
+    - text: Развертывание конфигураций с использованием GitOps
+      url: use-gitops-connected-cluster.md
+    - text: Развертывание диаграмм Helm с использованием GitOps
+      url: use-gitops-with-helm.md
+    - text: Принудительное применение GitOps с помощью службы "Политика Azure"
+      url: use-azure-policy.md
+    - text: Развертывание рабочих нагрузок Azure IoT Edge
+      url: deploy-azure-iot-edge-workloads.md

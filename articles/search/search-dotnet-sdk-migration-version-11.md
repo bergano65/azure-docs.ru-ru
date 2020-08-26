@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 08/20/2020
-ms.openlocfilehash: 6880706300597e925267dae1230a87d17cd5c028
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 5dd061309447dd6037d2dd664e7c5db2c7df38cc
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88688357"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88870210"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-11"></a>Обновление до Azure Когнитивный поиск .NET SDK версии 11
 
@@ -80,7 +80,7 @@ ms.locfileid: "88688357"
 | [стандардтокенизер](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.standardtokenizer) | [Луценестандардтокенизер](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.lucenestandardtokenizer) (также `StandardTokenizerV2` `LuceneStandardTokenizerV2` ) |
 | [токенинфо](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.tokeninfo) | [анализедтокенинфо](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.analyzedtokeninfo) |
 | [Разметчика](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.tokenizer) | [Лексикалтокенизер](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.lexicaltokenizer) (также `TokenizerName` `LexicalTokenizerName` ) |
-| [SynonymMap. Format](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.synonymmap.format) | Нет. Удалите ссылки на `Format` . |
+| [SynonymMap. Format](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.synonymmap.format) | Отсутствует. Удалите ссылки на `Format` . |
 
 Определения полей упрощаются: [сеарчаблефиелд](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchablefield), [симплефиелд](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.simplefield), [Комплексфиелд](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.complexfield) — это новые интерфейсы API для создания определений полей.
 
@@ -154,6 +154,8 @@ ms.locfileid: "88688357"
    using Azure.Search.Documents.Models;
    ```
 
+1. Для классов, требующих сериализации JSON, замените `using Newtonsoft.Json` на `using System.Text.Json.Serialization` .
+
 1. Пересмотр кода проверки подлинности клиента. В предыдущих версиях вы использовали свойства клиентского объекта для задания ключа API (например, свойства [SearchServiceClient. Credentials](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient.credentials) ). В текущей версии используйте класс [азурекэйкредентиал](https://docs.microsoft.com/dotnet/api/azure.azurekeycredential) для передачи ключа в качестве учетных данных, чтобы при необходимости можно было обновить ключ API, не создавая новые клиентские объекты.
 
    Свойства клиента были упрощены `Endpoint` , `ServiceName` и `IndexName` (где это уместно). В следующем примере используется класс [URI](https://docs.microsoft.com/dotnet/api/system.uri) системы для предоставления конечной точки и класса [среды](https://docs.microsoft.com//dotnet/api/system.environment) для считывания значения ключа:
@@ -189,7 +191,7 @@ ms.locfileid: "88688357"
 
 + [Упорядоченные результаты](search-query-odata-orderby.md) для значений NULL были изменены в этой версии, и значения NULL появлялись первыми, если сортировка имеет значение `asc` и последний `desc` . Если вы написали код, который обрабатывает, как сортируются значения NULL, следует проверить и, возможно, удалить этот код, если он больше не нужен.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 + [Azure.Search.Docпакет ументс](https://www.nuget.org/packages/Azure.Search.Documents/)
 + [Примеры на GitHub](https://github.com/azure/azure-sdk-for-net/tree/Azure.Search.Documents_11.0.0/sdk/search/Azure.Search.Documents/samples)

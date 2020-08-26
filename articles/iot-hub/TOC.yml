@@ -53,6 +53,9 @@
           href: quickstart-device-streams-proxy-nodejs.md
         - name: C
           href: quickstart-device-streams-proxy-c.md
+    - name: Автоматическая маршрутизация сообщений с помощью шаблона ARM
+      displayName: Resource Manager
+      href: horizontal-arm-route-messages.md
 - name: Учебники
   items:
     - name: Маршрутизация сообщений

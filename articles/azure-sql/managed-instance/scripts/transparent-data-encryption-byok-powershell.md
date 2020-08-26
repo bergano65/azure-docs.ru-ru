@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: MladjoA
 ms.author: mlandzic
 ms.reviewer: vanto, carlrab
-ms.date: 11/05/2019
-ms.openlocfilehash: 34d91b23b0383f4128b7f03619ad0e2b07496f33
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/25/2020
+ms.openlocfilehash: c812dfa0be3e5ced40b7f347639aeb2540b75351
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87014156"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88871536"
 ---
 # <a name="transparent-data-encryption-in-sql-managed-instance-using-your-own-key-from-azure-key-vault"></a>прозрачное шифрование данных в SQL Управляемый экземпляр с помощью собственного ключа из Azure Key Vault
 
@@ -25,7 +25,7 @@ ms.locfileid: "87014156"
 
 Этот пример сценария PowerShell настраивает прозрачное шифрование данных (TDE) с помощью ключа, управляемого клиентом, для Управляемый экземпляр SQL Azure, используя ключ из Azure Key Vault. Это часто называется сценарием "BYOK" с собственным ключом для TDE. Дополнительные сведения см. в статье [прозрачное шифрование данных Azure SQL с ключом, управляемым клиентом](../../database/transparent-data-encryption-byok-overview.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - управляемый экземпляр. См. раздел [Использование PowerShell для создания управляемого экземпляра](create-configure-managed-instance-powershell.md).
 
@@ -39,7 +39,7 @@ ms.locfileid: "87014156"
 
 Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="sample-scripts"></a>Примеры сценариев
+## <a name="sample-scripts"></a>Примеры сценариев 
 
 [!code-powershell-interactive[main](../../../../powershell_scripts/sql-database/transparent-data-encryption/setup-tde-byok-sqlmi.ps1 "Set up BYOK TDE for SQL Managed Instance")]
 

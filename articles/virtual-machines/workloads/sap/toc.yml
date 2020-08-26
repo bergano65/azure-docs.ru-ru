@@ -228,6 +228,8 @@
         - name: Использование нескольких SID в SAP
           items:
             - name: Использование Windows с общим диском для экземпляра (A)SCS
+              href: sap-ascs-ha-multi-sid-wsfc-azure-shared-disk.md
+            - name: Использование Windows с общим диском для экземпляра (A)SCS
               href: sap-ascs-ha-multi-sid-wsfc-shared-disk.md
             - name: Использование Windows с общей папкой SOFS для экземпляра (A)SCS
               href: sap-ascs-ha-multi-sid-wsfc-file-share.md

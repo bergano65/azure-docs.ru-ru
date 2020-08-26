@@ -192,3 +192,5 @@
       href: web-service-input-output.md
 - name: Ошибки модуля и устранение неполадок
   href: designer-error-codes.md
+- name: Синтаксис поискового запроса графа
+  href: graph-search-syntax.md

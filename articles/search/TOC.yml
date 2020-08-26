@@ -155,7 +155,7 @@
           href: search-howto-large-index.md
         - name: Обработка одновременных обновлений
           href: search-howto-concurrency.md
-    - name: Прием данных Azure
+    - name: Прием данных только для Azure
       items:
         - name: Настройка индексаторов
           href: search-indexer-overview.md
@@ -203,7 +203,7 @@
               href: search-howto-managed-identities-cosmos-db.md
             - name: База данных SQL
               href: search-howto-managed-identities-sql.md
-    - name: Прием данных с помощью ИИ
+    - name: Использование навыков (ИИ)
       items:
         - name: Вложение ресурса Cognitive Services
           href: cognitive-search-attach-cognitive-services.md
@@ -215,7 +215,7 @@
               href: cognitive-search-concept-annotations-syntax.md
             - name: Сопоставление с полями индекса
               href: cognitive-search-output-field-mapping.md
-            - name: Извлечение информации из изображений
+            - name: Обработка файлов изображений
               href: cognitive-search-concept-image-scenarios.md
             - name: Обогащение кэша (добавочное)
               href: search-howto-incremental-index.md

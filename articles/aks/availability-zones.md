@@ -5,12 +5,12 @@ services: container-service
 ms.custom: fasttrack-edit, references_regions
 ms.topic: article
 ms.date: 08/13/2020
-ms.openlocfilehash: 6bca57f799681a9f51b983da6f565bb465da8814
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: f24351c5f77e6c00365497d5e6deeefea8271cb9
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88214258"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88871417"
 ---
 # <a name="create-an-azure-kubernetes-service-aks-cluster-that-uses-availability-zones"></a>Создание кластера Службы Azure Kubernetes (AKS), который использует зоны доступности
 
@@ -28,6 +28,7 @@ ms.locfileid: "88214258"
 
 В настоящее время кластеры AKS можно создавать с помощью зон доступности в следующих регионах.
 
+* Восточная Австралия
 * Центральная часть США
 * восточная часть США 2
 * Восточная часть США

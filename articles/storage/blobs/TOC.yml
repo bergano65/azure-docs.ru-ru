@@ -572,12 +572,14 @@
               href: ../common/storage-explorer-support-policy-lifecycle.md
             - name: Специальные возможности Обозревателя службы хранилища
               href: ../../vs-azure-tools-storage-explorer-accessibility.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Форум службы хранилища Azure
+        - name: Служба хранилища Azure в Microsoft Q&A
           href: 'https://docs.microsoft.com/answers/topics/azure-blob-storage.html'
         - name: Служба хранилища Azure на форуме Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/windows-azure-storage'
-        - name: Цены на хранилище BLOB-объектов
+        - name: Цены на блочные BLOB-объекты
           href: 'https://azure.microsoft.com/pricing/details/storage/blobs/'
+        - name: Цены на страничные BLOB-объекты
+          href: 'https://azure.microsoft.com/pricing/details/storage/page-blobs/'
         - name: Калькулятор цен Azure
           href: 'https://azure.microsoft.com/pricing/calculator/'
         - name: Видео
