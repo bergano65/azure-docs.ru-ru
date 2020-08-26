@@ -34,7 +34,7 @@ ms.locfileid: "88750431"
 
 1. На странице **Добавление кластера** с помощью ползунка выберите нужное количество узлов. Щелкните **Сохранить**.
 
-   :::image type="content" source="./media/tutorial-scale-private-cloud/ss3-configure-new-cluster.png" alt-text="На странице "Добавление кластера" с помощью ползунка выберите нужное количество узлов. Щелкните "Сохранить"." border="true":::
+   :::image type="content" source="./media/tutorial-scale-private-cloud/ss3-configure-new-cluster.png" alt-text="На странице Добавление кластера с помощью ползунка выберите нужное количество узлов. Щелкните Сохранить." border="true":::
 
    Начнется развертывание нового кластера.
 
@@ -46,7 +46,7 @@ ms.locfileid: "88750431"
 
 1. На странице **Изменение кластера** с помощью ползунка выберите нужное количество узлов. Щелкните **Сохранить**.
 
-   :::image type="content" source="./media/tutorial-scale-private-cloud/ss5-scale-cluster.png" alt-text="На странице "Изменение кластера" с помощью ползунка выберите нужное количество узлов. Щелкните "Сохранить"." border="true":::
+   :::image type="content" source="./media/tutorial-scale-private-cloud/ss5-scale-cluster.png" alt-text="На странице Изменение кластера с помощью ползунка выберите нужное количество узлов. Щелкните Сохранить." border="true":::
 
    Будет начато добавление узлов в кластер.
 
