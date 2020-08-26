@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: overview
 ms.custom: hdinsightactive
 ms.date: 02/25/2020
-ms.openlocfilehash: 92f56f3b405470bc8ae0e9ebab2450ddc31b3c6a
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 8c22ff3cc79d326da09c44167519adbea48b5643
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77672180"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88651341"
 ---
 # <a name="what-is-apache-kafka-in-azure-hdinsight"></a>Общие сведения об Apache Kafka в Azure HDInsight
 
@@ -27,7 +27,7 @@ ms.locfileid: "77672180"
 
 * В качестве резервного хранилища для Kafka используются управляемые диски Azure. Управляемые диски могут обеспечить до 16 ТБ хранилища для каждого брокера Kafka. См. сведения о [настройке числа управляемых дисков и повышении степени масштабируемости для Apache Kafka в HDInsight](apache-kafka-scalability.md).
 
-    См. дополнительные сведения об [управляемых дисках Azure](../../virtual-machines/windows/managed-disks-overview.md).
+    См. дополнительные сведения об [управляемых дисках Azure](../../virtual-machines/managed-disks-overview.md).
 
 * Служба Kafka была разработана для одномерной стойки. Azure разделяет стойку на два измерения — домены обновления (UD) и домены сбоя (FD). Корпорация Майкрософт предоставляет инструменты, которые могут выполнять перераспределение секций и реплик Kafka в доменах обновления и доменах сбоя.
 

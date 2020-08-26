@@ -3,18 +3,18 @@ title: Автономная архивация с Azure Data Box для DPM и M
 description: Вы можете использовать Azure Data Box для заполнения начальных резервных копий данных в автономном режиме из DPM и MABS.
 ms.topic: conceptual
 ms.date: 08/12/2020
-ms.openlocfilehash: 974be6d337c3376d10e09ba6211f7804c2c8cada
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: 33515cdd943f3816328bfd77d831288c5ee0a608
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88824565"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88890031"
 ---
 # <a name="offline-seeding-using-azure-data-box-for-dpm-and-mabs-preview"></a>Автономное заполнение с помощью Azure Data Box для DPM и MABS (Предварительная версия)
 
 > [!NOTE]
 > Эта функция применима к Data Protection Manager (DPM) 2019 UR2 и более поздних версий.<br><br>
-> Сейчас эта функция доступна в предварительной версии для Microsoft Azure Backup Server (MABS). Если вы хотите использовать Azure Data Box для автономного заполнения с помощью MABS, обратитесь к нам по адресу [systemcenterfeedback@microsoft.com](mailto:systemcenterfeedback@microsoft.com) .
+> Сейчас эта функция доступна в предварительной версии для Microsoft Azure Backup Server (MABS). Если вы заинтересованы в использовании Azure Data Box для автономного заполнения с помощью MABS, обратитесь к нам по адресу [systemcenterfeedback@microsoft.com](mailto:systemcenterfeedback@microsoft.com) .
 
 В этой статье объясняется, как можно использовать Azure Data Box для заполнения начальных резервных копий данных в автономном режиме из DPM и MABS в хранилище служб восстановления Azure.
 
@@ -149,7 +149,7 @@ ms.locfileid: "88824565"
           — Azure.Storage       *4.6.1*.<br>
      >  - Приложение Azure AD регистрируется как *AzureOfflineBackup_\<object GUID of the user>* .
 
-13. Выберите верный заказ Data Box, для которого был распакован, подключен и разблокирован диск Data Box. Выберите **Далее**.
+13. Выберите верный заказ Data Box, для которого был распакован, подключен и разблокирован диск Data Box. Щелкните **Далее**.
 
     ![Выбор Data Box](./media/offline-backup-azure-data-box-dpm-mabs/select-databox.png)
 
@@ -165,7 +165,7 @@ ms.locfileid: "88824565"
     > Например, если путь к диску — `\\mydomain\myserver\disk1\` и *disk1* содержит каталог с именем *PageBlob*, то путь, который должен быть указан в мастере сервера DPM/MABS, — это `\\mydomain\myserver\disk1\` .
     > Если [настраивается устройство Azure Data Box 100 ТБ](https://docs.microsoft.com/azure/backup/offline-backup-azure-data-box#setup-azure-data-box), укажите следующий сетевой путь к устройству `\\<DeviceIPAddress>\<StorageAccountName>_PageBlob`.
 
-15. Выберите **Далее**. На странице **Сводка** проверьте параметры и нажмите кнопку **создать группу**.
+15. Щелкните **Далее**. На странице **Сводка** проверьте параметры и нажмите кнопку **создать группу**.
 
     ![Обнаружение Data Box](./media/offline-backup-azure-data-box-dpm-mabs/detect-databox.png)
 

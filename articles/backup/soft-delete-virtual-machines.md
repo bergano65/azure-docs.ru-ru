@@ -4,12 +4,12 @@ description: Узнайте, как обратимое удаление вирт
 ms.topic: conceptual
 ms.date: 04/30/2020
 ms.custom: references_regions
-ms.openlocfilehash: 90d55e8ed6c831adf4efaf0663d191697177ea63
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: a79f2bf77bcc184db8ac61b51107c1bb4a2a989d
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88826486"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88889832"
 ---
 # <a name="soft-delete-for-virtual-machines"></a>Обратимое удаление виртуальных машин
 
@@ -110,13 +110,13 @@ AppVM1           Undelete             Completed            12/5/2019 12:47:28 PM
 ## <a name="soft-delete-for-vms-using-rest-api"></a>Обратимое удаление для виртуальных машин с помощью REST API
 
 - Удалите резервные копии с помощью REST API, как описано [здесь](backup-azure-arm-userestapi-backupazurevms.md#stop-protection-and-delete-data).
-- Если пользователь хочет отменить эти операции удаления, см. действия, описанные [здесь](backup-azure-arm-userestapi-backupazurevms.md#undo-the-deletion).
+- Если вы хотите отменить эти операции удаления, см. действия, описанные [здесь](backup-azure-arm-userestapi-backupazurevms.md#undo-the-deletion).
 
 ## <a name="how-to-disable-soft-delete"></a>Как отключить обратимое удаление
 
 Отключение этой функции не рекомендуется. Единственное обстоятельство, когда следует отключать обратимое удаление, — это планирование перемещения защищенных элементов в новое хранилище и не может ждать 14 дней, необходимых перед удалением и повторной защитой (например, в тестовой среде). Инструкции по отключению обратимого удаления см. в разделе [Включение и отключение обратимого удаления](backup-azure-security-feature-cloud.md#enabling-and-disabling-soft-delete).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [часто задаваемыми вопросами](backup-azure-security-feature-cloud.md#frequently-asked-questions) об обратимом удалении
 - Ознакомьтесь со всеми [функциями безопасности в Azure Backup](security-overview.md)

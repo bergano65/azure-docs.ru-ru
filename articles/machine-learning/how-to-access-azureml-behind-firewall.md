@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 07/17/2020
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 7d270ac9a6597645c5a98b6af77d19021ef00329
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: 581feff516e0f0cd820c94290d4aaa729cc4d3a4
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88827432"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88889946"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром для Машинное обучение Azure
 
@@ -24,9 +24,9 @@ ms.locfileid: "88827432"
 
 Хотя сведения в этом документе основаны на использовании [брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md), вы можете использовать его с другими продуктами брандмауэра. Если у вас есть вопросы о том, как разрешить обмен данными через брандмауэр, обратитесь к документации по используемому брандмауэру.
 
-## <a name="network-rules"></a>Правила сети
+## <a name="application-rules"></a>Правила приложений
 
-В брандмауэре Создайте Сетевое правило, разрешающее входящий и исходящий трафик адресов в этой статье.
+В брандмауэре создайте _правило приложения_ , разрешающее входящий и исходящий трафик адресов в этой статье.
 
 > [!TIP]
 > При добавлении правила сети задайте для __протокола__ значение Any, а для портов — `*` .

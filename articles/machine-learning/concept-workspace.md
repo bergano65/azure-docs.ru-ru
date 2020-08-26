@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 07/08/2020
-ms.openlocfilehash: 53f151c63c85e958aad3bd0eaf16c50294bf250f
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 437c2b8e42ed5128cc716eee23b8702ec012b481
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87287235"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88890920"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Что такое рабочая область Машинного обучения Azure?
 
@@ -49,10 +49,10 @@ ms.locfileid: "87287235"
 
 > [!IMPORTANT]
 > Средства, отмеченные ниже (Предварительная версия), сейчас доступны в общедоступной предварительной версии.
-> Предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 + В Интернете:
-    + [Машинное обучение Azure Studio](https://ml.azure.com) 
+    + [Машинное обучение Azure Studio ](https://ml.azure.com) 
     + [Конструктор машинное обучение Azure (Предварительная версия)](concept-designer.md) доступен только в рабочих областях [Enterprise Edition](overview-what-is-azure-ml.md#sku) .
 + В любой среде Python с [пакетом SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
 + В любой среде R с [машинное обучение Azureным пакетом SDK для r (Предварительная версия)](https://azure.github.io/azureml-sdk-for-r/reference/index.html).
@@ -87,9 +87,9 @@ ms.locfileid: "87287235"
 > [!WARNING]
 > Перемещение рабочей области Машинного обучения Azure в другую подписку или перемещение главной подписки на новый клиент не поддерживается. Это может привести к ошибкам.
 
-## <a name="create-a-workspace"></a><a name='create-workspace'></a>Создание рабочей области
+## <a name="create-a-workspace"></a><a name='create-workspace'></a> Создание рабочей области
 
-При создании рабочей области вы решаете, следует ли создавать ее с помощью [выпуска Basic или Enterprise Edition](overview-what-is-azure-ml.md#sku). Этот выпуск определяет функции, доступные в рабочей области. Помимо прочего, Enterprise Edition предоставляет доступ к [конструктору машинное обучение Azure](concept-designer.md) и версии Studio для создания [автоматических экспериментов машинного обучения](tutorial-first-experiment-automated-ml.md).  Дополнительную информацию и сведения о ценах см. на странице [цен на машинное обучение Azure](https://azure.microsoft.com/pricing/details/machine-learning/).
+При создании рабочей области вы решаете, следует ли создавать ее с помощью [выпуска Basic или Enterprise Edition](overview-what-is-azure-ml.md#sku). Этот выпуск определяет функции, доступные в рабочей области. Помимо прочего, Enterprise Edition предоставляет доступ к [конструктору машинное обучение Azure](concept-designer.md) и версии Studio для создания [автоматических экспериментов машинного обучения](tutorial-first-experiment-automated-ml.md).  Дополнительные сведения и сведения о ценах см. на странице [цен на машинное обучение Azure](https://azure.microsoft.com/pricing/details/machine-learning/).
 
 Существует несколько способов создания рабочей области.  
 
@@ -101,11 +101,11 @@ ms.locfileid: "87287235"
 > [!NOTE]
 > В имени рабочей области не учитывается регистр.
 
-## <a name="upgrade-to-enterprise-edition"></a><a name="upgrade"></a>Обновление до выпуска Enterprise Edition
+## <a name="upgrade-to-enterprise-edition"></a><a name="upgrade"></a> Обновление до выпуска Enterprise Edition
 
 Вы можете [Обновить рабочую область с уровня "базовый" до выпуска Enterprise](how-to-manage-workspace.md#upgrade) с помощью портал Azure. Рабочую область Enterprise Edition нельзя понизить до рабочей области Basic Edition. 
 
-## <a name="associated-resources"></a><a name="resources"></a>Связанные ресурсы
+## <a name="associated-resources"></a><a name="resources"></a> Связанные ресурсы
 
 При создании новой рабочей области она автоматически создает несколько ресурсов Azure, которые используются в рабочей области:
 
@@ -117,8 +117,16 @@ ms.locfileid: "87287235"
 > [!NOTE]
 > В дополнение к созданию версий можно также использовать имеющиеся службы Azure.
 
+### <a name="azure-storage-account"></a>Учетная запись хранения Azure.
+
+Учетная запись хранения Azure, созданная по умолчанию с рабочей областью, — это учетная запись общего назначения версии 1. Вы можете обновить его до общего назначения версии 2 после создания рабочей области, выполнив действия, описанные в статье [обновление до учетной записи хранения общего назначения версии 2](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade) .
+
 > [!IMPORTANT]
-> Если вы хотите использовать существующую учетную запись хранения Azure, она не может быть учетной записью Premium (Premium_LRS и Premium_GRS). Он также не может иметь иерархическое пространство имен (используется с Azure Data Lake Storage 2-го поколения). Ни хранилище класса Premium, ни иерархическое пространство имен не поддерживаются в учетной записи хранения _по умолчанию_ рабочей области. Вы можете использовать хранилище класса Premium или иерархическое пространство имен с учетными записями хранения, _отличными от стандартных_ .
+> Не включайте иерархическое пространство имен в учетной записи хранения после обновления до общего назначения версии 2.
+
+Если вы хотите использовать существующую учетную запись хранения Azure, она не может быть учетной записью Premium (Premium_LRS и Premium_GRS). Он также не может иметь иерархическое пространство имен (используется с Azure Data Lake Storage 2-го поколения). Ни хранилище класса Premium, ни иерархическое пространство имен не поддерживаются в учетной записи хранения _по умолчанию_ рабочей области. Вы можете использовать хранилище класса Premium или иерархическое пространство имен с учетными записями хранения, _отличными от стандартных_ .
+
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как управл
 ms.topic: conceptual
 ms.date: 09/12/2018
 ms.assetid: b8487516-7ac5-4435-9680-674d9ecf5642
-ms.openlocfilehash: 03815cd9956e323583d6d66097e0eeaa3d492f44
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: 2588ca87e2dc2209fbaa5eae411fe5895d5f5669
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88826368"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88889657"
 ---
 # <a name="restore-azure-virtual-machines-using-rest-api"></a>Восстановление виртуальных машин Azure с помощью REST API
 
@@ -19,7 +19,7 @@ ms.locfileid: "88826368"
 
 ## <a name="select-recovery-point"></a>Выбор точки восстановления
 
-Доступные точки восстановления архивируемого элемента можно перечислить при помощи [перечисления точек восстановления REST API](/rest/api/backup/recoverypoints/list). Это простая операция *GET* со всеми нужными значениями.
+Доступные точки восстановления архивируемого элемента можно перечислить при помощи [перечисления точек восстановления REST API](/rest/api/backup/recoverypoints/list). Это простая операция *Get* со всеми соответствующими значениями.
 
 ```http
 GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints?api-version=2019-05-13
@@ -327,7 +327,7 @@ X-Powered-By: ASP.NET
 
 Для восстановления дисков ответы должны обрабатываться так же, как [описано выше](#responses).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о REST API Azure Backup с использованием API REST см. в следующих документах:
 

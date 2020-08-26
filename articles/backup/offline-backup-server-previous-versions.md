@@ -3,12 +3,12 @@ title: Автономное резервное копирование для Dat
 description: С Azure Backup можно отправить данные из сети с помощью службы импорта и экспорта Azure. В этой статье описывается рабочий процесс автономного резервного копирования для предыдущих версий DPM и Azure Backup Server.
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 45518607b96848dc211c1a787ecfa85432cd842e
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: b747fd3c682dc1caf7312ba7279470a1e6b38bd5
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88826605"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88890099"
 ---
 # <a name="offline-backup-workflow-for-dpm-and-azure-backup-server-previous-versions"></a>Рабочий процесс автономного резервного копирования для DPM и Azure Backup Server (предыдущие версии)
 
@@ -48,7 +48,7 @@ ms.locfileid: "88826605"
 >[!NOTE]
 >Подписки Azure CSP не поддерживаются для использования с автономным заполнением для DPM 2019 RTM и более ранних версий, а также MABS v3 RTM и более ранних версий. Оперативное резервное копирование по сети по-прежнему поддерживается.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед запуском рабочего процесса автономного резервного копирования убедитесь, что выполнены следующие предварительные требования:
 
@@ -281,6 +281,6 @@ ms.locfileid: "88826605"
 
 При следующем запланированном резервном копировании Azure Backup выполнит добавочное резервное копирование поверх начальной резервной копии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Вопросы о рабочем процессе службы импорта и экспорта Azure см. в статье [Использование службы импорт и экспорт Microsoft Azure для перемещения данных в хранилище BLOB-объектов](../storage/common/storage-import-export-service.md).

@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 01061ce1099588029410531793279572d112f382
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 53ccd610c6f0f36d4ab04efbada2070a22975023
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87850361"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650117"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -43,7 +43,7 @@ ms.locfileid: "87850361"
 Служба "Машинное обучение Microsoft Azure" предоставляет разработчикам и специалистам по обработке и анализу данных все средства, необходимые для рабочих процессов машинного обучения, в том числе:
 + [Конструктор Машинного обучения Azure](tutorial-designer-automobile-price-train-score.md) (предварительная версия). Перетащите модули, чтобы создать эксперименты, а затем разверните конвейеры.
 
-+ Записные книжки Jupyter. Используйте наши [примеры записных книжек](https://aka.ms/aml-notebooks) или создайте свои записные книжки, чтобы использовать для машинного обучения наши примеры для <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK для Python</a>. 
++ Записные книжки Jupyter. Используйте наши [примеры записных книжек](https://github.com/Azure/MachineLearningNotebooks) или создайте свои записные книжки, чтобы использовать для машинного обучения наши примеры для <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK для Python</a>. 
 
 + Скрипты R или записные книжки, в которых используется <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">пакет SDK для R</a> для написания собственного кода, или модули R в конструкторе.
 
@@ -88,7 +88,7 @@ ms.locfileid: "87850361"
 ## <a name="mlops-deploy--lifecycle-management"></a>MLOps: развертывание и управление жизненным циклом
 Имея подходящую модель, вы легко сможете использовать ее в веб-службе, устройстве Интернета вещей или в Power BI. См. дополнительные сведения о [развертывании](how-to-deploy-and-where.md).
 
-Для управления развернутыми моделями можно использовать [пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk), [Студию машинного обучения Azure](https://ml.azure.com) или [CLI машинного обучения](reference-azure-machine-learning-cli.md).
+Для управления развернутыми моделями можно использовать [пакет SDK Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py), [Студию машинного обучения Azure](https://ml.azure.com) или [CLI машинного обучения](reference-azure-machine-learning-cli.md).
 
 Эти модели могут использоваться, а также они могут возвращать прогнозы [в реальном времени](how-to-consume-web-service.md) или [асинхронно](how-to-use-parallel-run-step.md) на больших объемах данных.
 
