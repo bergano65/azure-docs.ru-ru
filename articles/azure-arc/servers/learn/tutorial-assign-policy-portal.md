@@ -31,7 +31,7 @@ ms.locfileid: "88213233"
 
 1. Выберите **Назначения** на странице службы Политики Azure слева. Назначение — это политика, которая назначена в рамках определенной области.
 
-   :::image type="content" source="./media/tutorial-assign-policy-portal/select-assignment.png" alt-text="Выбор страницы "Назначения" на странице обзора политики" border="false":::
+   :::image type="content" source="./media/tutorial-assign-policy-portal/select-assignment.png" alt-text="Выбор страницы Назначения на странице обзора политики" border="false":::
 
 1. Выберите **Назначить политику** в верхней части страницы **Policy — Assignments** (Политика — назначения).
 
