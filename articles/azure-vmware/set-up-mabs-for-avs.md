@@ -56,7 +56,7 @@ Azure Backup Server может хранить данные резервной к
 
 Azure Backup Server развертывается как виртуальная машина Azure "инфраструктура как услуга" (IaaS) для защиты виртуальных машин Azure VMware.
 
-:::image type="content" source="media/avs-backup/deploy-mabs-avs-diagram.png" alt-text="Azure Backup Server развертывается как виртуальная машина Azure "инфраструктура как услуга" (IaaS) для защиты виртуальных машин Azure VMware." border="false":::
+:::image type="content" source="media/avs-backup/deploy-mabs-avs-diagram.png" alt-text="Azure Backup Server развертывается как виртуальная машина Azure инфраструктура как услуга (IaaS) для защиты виртуальных машин Azure VMware." border="false":::
 
 ## <a name="prerequisites-for-the-azure-backup-server-environment"></a>Предварительные требования для среды Azure Backup Server
 
