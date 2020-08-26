@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/29/2019
 ms.author: erhopf
-ms.openlocfilehash: dc5e251fee00ee22edb2261c1abd8404714834ba
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: b5a3ec1d6e33c08b460088c9aeb4fd18f6bf29ff
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "78668509"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88864721"
 ---
 ## <a name="authentication"></a>Аутентификация
 
@@ -32,7 +32,7 @@ ms.locfileid: "78668509"
 
 Чтобы получить маркер доступа, необходимо отправить запрос в конечную точку `issueToken`, используя заголовок `Ocp-Apim-Subscription-Key` и ключ подписки.
 
-`issueToken` Конечная точка имеет следующий формат:
+`issueToken`Конечная точка имеет следующий формат:
 
 ```http
 https://<REGION_IDENTIFIER>.api.cognitive.microsoft.com/sts/v1.0/issueToken
@@ -82,7 +82,7 @@ $OAuthToken
 cURL — это программа командной строки, доступная в Linux (и в подсистеме Windows для Linux). Эта команда cURL показывает, как получить маркер доступа. Замените `YOUR_SUBSCRIPTION_KEY` своим ключом подписки на службу распознавания речи. Обязательно используйте правильную конечную точку для региона, который соответствует вашей подписке. В этом примере используется конечная точка для западной части США.
 
 ```console
-curl -v -X POST
+curl -v -X POST \
  "https://westus.api.cognitive.microsoft.com/sts/v1.0/issueToken" \
  -H "Content-type: application/x-www-form-urlencoded" \
  -H "Content-Length: 0" \

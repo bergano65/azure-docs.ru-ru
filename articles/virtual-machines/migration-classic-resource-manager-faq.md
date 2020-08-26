@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: 3d8c5d408ef2b958ca7d3454f23ce2c52fb1d1be
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 0f9a8a1c4631fc667d0dd31ae62f7d57aefccc90
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88513214"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855843"
 ---
 # <a name="frequently-asked-questions-about-classic-to-azure-resource-manager-migration"></a>Часто задаваемые вопросы о миграции из классической модели в модель Azure Resource Manager
 
@@ -70,7 +70,7 @@ ms.locfileid: "88513214"
 
 ## <a name="do-i-have-to-buy-another-express-route-circuit-if-i-have-to-use-iaas-under-resource-manager"></a>Нужно ли приобретать еще один канал ExpressRoute, если нужно использовать ресурсы IaaS в модели Resource Manager? 
 
-Нет. Мы недавно включили [перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](~/articles/expressroute/expressroute-move.md). Поэтому при наличии существующего канала ExpressRoute не нужно приобретать еще один.
+Нет. Мы недавно включили [перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](../expressroute/expressroute-move.md). Поэтому при наличии существующего канала ExpressRoute не нужно приобретать еще один.
 
 ## <a name="what-if-i-had-configured-role-based-access-control-policies-for-my-classic-iaas-resources"></a>Что произойдет, если для классических ресурсов IaaS настроено управление доступом на основе ролей? 
 
@@ -93,7 +93,7 @@ ms.locfileid: "88513214"
 1. Удалите расширение резервного копирования или создания моментальных снимков с виртуальной машины.
 2. Теперь эту виртуальную машину можно перевести из классического режима в режим Resource Manager. Сведения о сети и хранилище, связанные с виртуальной машиной, также следует перенести в режим Resource Manager.
 
-Кроме того, если вы хотите создать резервную копию перенесенной виртуальной машины, перейдите к колонке управления виртуальной машины, чтобы [включить резервное копирование](~/articles/backup/quick-backup-vm-portal.md#enable-backup-on-a-vm).
+Кроме того, если вы хотите создать резервную копию перенесенной виртуальной машины, перейдите к колонке управления виртуальной машины, чтобы [включить резервное копирование](../backup/quick-backup-vm-portal.md#enable-backup-on-a-vm).
 
 ## <a name="can-i-validate-my-subscription-or-resources-to-see-if-theyre-capable-of-migration"></a>Можно ли проверить подписку или ресурсы, чтобы узнать, подходят ли они для миграции? 
 
@@ -113,7 +113,7 @@ ms.locfileid: "88513214"
 
 ## <a name="can-i-migrate-expressroute-circuits-used-across-subscriptions-with-authorization-links"></a>Можно ли перенести каналы ExpressRoute, используемые в подписках со ссылками авторизации? 
 
-Каналы ExpressRoute, использующие ссылки авторизации между подписками, невозможно перенести автоматически без простоев. У нас есть рекомендации о том, как их можно перенести вручную. Дополнительные сведения см. в статье [Перенос каналов ExpressRoute и связанных виртуальных сетей из классической модели развертывания на модель Resource Manager](~/articles/expressroute/expressroute-migration-classic-resource-manager.md).
+Каналы ExpressRoute, использующие ссылки авторизации между подписками, невозможно перенести автоматически без простоев. У нас есть рекомендации о том, как их можно перенести вручную. Дополнительные сведения см. в статье [Перенос каналов ExpressRoute и связанных виртуальных сетей из классической модели развертывания на модель Resource Manager](../expressroute/expressroute-migration-classic-resource-manager.md).
 
 ## <a name="i-got-the-message-vm-is-reporting-the-overall-agent-status-as-not-ready-hence-the-vm-cannot-be-migrated-ensure-that-the-vm-agent-is-reporting-overall-agent-status-as-ready-or-vm-contains-extension-whose-status-is-not-being-reported-from-the-vm-hence-this-vm-cannot-be-migrated"></a>Получено сообщение *"VM is reporting the overall agent status as Not Ready. Hence, the VM cannot be migrated. Добейтесь того, чтобы сообщаемое агентом виртуальной машины общее состояние имело значение "Готов"."* или *"VM contains Extension whose Status is not being reported from the VM. Hence, this VM cannot be migrated"* (Виртуальная машина содержит расширение, о состоянии которого она не сообщает. Поэтому виртуальную машину нельзя перенести).
 

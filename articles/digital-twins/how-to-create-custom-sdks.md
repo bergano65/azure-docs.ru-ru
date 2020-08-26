@@ -8,12 +8,12 @@ ms.date: 4/24/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a93e0b6d29bb10e5e71f48134916cac9cd563fb2
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 3cf14ce3e8ef9b1d783191fe6c01c5e311d57786
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420045"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855947"
 ---
 # <a name="create-custom-sdks-for-azure-digital-twins-using-autorest"></a>Создание настраиваемых пакетов SDK для Azure Digital двойников с помощью функции автоотдыха
 
@@ -41,10 +41,10 @@ npm install -g autorest@2.0.4413
 Чтобы выполнить автооставшуюся в файле Swagger Azure Digital двойников, выполните следующие действия.
 1. Скопируйте файл Swagger Azure Digital двойников и соответствующую папку примеров в рабочий каталог.
 2. Используйте окно командной строки, чтобы перейти к рабочему каталогу.
-3. Выполните команду "автооставшаяся" с помощью следующей команды. Замените `<language>` заполнитель выбранным языком: `--python` , `--java` , `--go` и т. д. (Полный список параметров можно найти в [файле сведений об авторелизе](https://github.com/Azure/autorest).)
+3. Выполните команду "автооставшаяся" с помощью следующей команды. Замените `<language>` заполнитель выбранным языком: `python` , `java` , `go` и т. д. (Полный список параметров можно найти в [файле сведений об авторелизе](https://github.com/Azure/autorest).)
 
 ```cmd/sh
-autorest --input-file=adtApiSwagger.json --<language> --output-folder=ADTApi --add-credentials --azure-arm --namespace=ADTApi
+autorest --input-file=digitaltwins.json --<language> --output-folder=ADTApi --add-credentials --azure-arm --namespace=ADTApi
 ```
 
 В результате вы увидите новую папку с именем *адтапи* в рабочем каталоге. Создаваемые файлы SDK будут иметь пространство имен *адтапи*. Вы по-прежнему будете использовать это пространство имен с помощью остальных примеров использования в этой статье.
@@ -57,7 +57,7 @@ autorest --input-file=adtApiSwagger.json --<language> --output-folder=ADTApi --a
 
 В этом разделе приводятся инструкции по созданию пакета SDK в виде библиотеки классов, которая является собственным проектом и может быть включена в другие проекты. Эти действия зависят от **Visual Studio** (вы можете установить последнюю версию отсюда [).](https://visualstudio.microsoft.com/downloads/)
 
-Вот что нужно сделать.
+Ниже приведены инструкции.
 
 1. Создание нового решения Visual Studio для библиотеки классов
 2. Использовать *адтапи* в качестве имени проекта
@@ -83,7 +83,7 @@ autorest --input-file=adtApiSwagger.json --<language> --output-folder=ADTApi --a
 
 ## <a name="general-guidelines-for-generated-sdks"></a>Общие рекомендации для созданных пакетов SDK
 
-В этом разделе содержатся общие сведения о и рекомендациях по использованию созданного пакета SDK.
+В этом разделе содержатся общие сведения и рекомендации по использованию созданного пакета SDK.
 
 ### <a name="synchronous-and-asynchronous-calls"></a>Синхронные и асинхронные вызовы
 

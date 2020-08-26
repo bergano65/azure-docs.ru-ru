@@ -8,12 +8,12 @@ ms.date: 4/22/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 008d5f22a48fdd31c90e63643adc94b26a975ca2
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 00219dbebb8e84c21b9e5b84cf71309c63fc518e
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88589373"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855965"
 ---
 # <a name="write-client-app-authentication-code"></a>Запись кода проверки подлинности клиентского приложения
 
@@ -25,7 +25,7 @@ ms.locfileid: "88589373"
 
 Дополнительные сведения об API и пакетах SDK для Azure Digital двойников см. в статье [*Использование интерфейсов API и пакетов SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Сначала выполните действия по настройке, описанные в разделе [*инструкции. Настройка экземпляра и аутентификации*](how-to-set-up-instance-scripted.md). Это обеспечит наличие экземпляра Azure Digital двойников, у пользователя есть разрешения на доступ, и вы настроили разрешения для клиентских приложений. После выполнения всех этих настроек вы сможете писать код клиентского приложения.
 
@@ -39,18 +39,19 @@ ms.locfileid: "88589373"
 
 В зависимости от выбранных вами средств можно включить пакеты с помощью диспетчера пакетов Visual Studio или `dotnet` средства командной строки. 
 
-Для проверки подлинности с помощью пакета SDK для .NET используйте один из методов получения учетных данных, определенных в библиотеке [Azure. Identity](https://docs.microsoft.com/dotnet/api/azure.identity?view=azure-dotnet) .
-
-Ниже приведены два наиболее часто используемых: 
-* [Интерактивебровсеркредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet). Этот метод предназначен для интерактивных приложений и позволяет открыть веб-браузер для проверки подлинности.
-* [Манажедидентитикредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.managedidentitycredential?view=azure-dotnet). Этот метод прекрасно работает в тех случаях, когда вам требуются [управляемые удостоверения (MSI)](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview), например при работе с функциями Azure. 
-
 Вам также потребуются следующие операторы using:
 
 ```csharp
 using Azure.Identity;
 using Azure.DigitalTwins.Core;
 ```
+Для проверки подлинности с помощью пакета SDK для .NET используйте один из методов получения учетных данных, определенных в библиотеке [Azure. Identity](https://docs.microsoft.com/dotnet/api/azure.identity?view=azure-dotnet) . Ниже приведены два, которые часто используются (даже вместе в одном приложении):
+
+* [Интерактивебровсеркредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet) предназначен для интерактивных приложений и может использоваться для создания клиента SDK с проверкой подлинности
+* [Манажедидентитикредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.managedidentitycredential?view=azure-dotnet) работает отлично в тех случаях, когда вам требуются управляемые удостоверения (MSI), и он является хорошим кандидатом для работы с функциями Azure.
+
+### <a name="interactivebrowsercredential-method"></a>Метод Интерактивебровсеркредентиал
+Метод [интерактивебровсеркредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet) предназначен для интерактивных приложений и позволяет открыть веб-браузер для проверки подлинности.
 
 Чтобы использовать учетные данные интерактивного браузера для создания клиента пакета SDK с проверкой подлинности, добавьте следующий код:
 
@@ -79,6 +80,8 @@ try
 >[!NOTE]
 > Хотя идентификатор клиента, идентификатор клиента и URL-адрес экземпляра можно разместить непосредственно в коде, как показано выше, рекомендуется заставить код получать эти значения из файла конфигурации или переменной среды.
 
+### <a name="managedidentitycredential-method"></a>Метод Манажедидентитикредентиал
+ Метод [манажедидентитикредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.managedidentitycredential?view=azure-dotnet) работает отлично в тех случаях, когда вам требуются [управляемые удостоверения (MSI)](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview), например при работе с функциями Azure.
 В функции Azure можно использовать учетные данные управляемого удостоверения следующим образом:
 
 ```csharp
@@ -101,7 +104,7 @@ client = new DigitalTwinsClient(new Uri(adtInstanceUrl), cred, opts);
 
 В этом разделе объясняется, как выполнить проверку подлинности в этом случае.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Обязательные условия
 
 Во-первых, необходимо выполнить действия по созданию настраиваемого пакета SDK с помощью функции автозаполнения, выполнив действия, описанные в разделе [*инструкции. Создание настраиваемых пакетов SDK для Azure Digital двойников с*](how-to-create-custom-sdks.md)назначением.
 

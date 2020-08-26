@@ -7,12 +7,12 @@ ms.date: 07/16/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: ef221ea068f2786a4a84f20a29e80dd7176f06c6
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 9e6d13fedbfa495448164c1354868e12992dd71c
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87337421"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88856041"
 ---
 # <a name="iot-plug-and-play-preview-developer-guide"></a>Предварительная версия для разработчиков IoT Plug and Play
 
@@ -54,6 +54,16 @@ DeviceClient.CreateFromConnectionString(
 |Java|1.14.0|
 |Узел|1.17.0|
 |Python|2.1.4|
+
+## <a name="dps-payload"></a>Полезные данные DP
+
+Устройства, использующие [службу подготовки устройств (DPS)](/iot-dps/) , могут включать в себя `modelId` для использования в процессе подготовки с помощью следующих полезных данных JSON.
+
+```json
+{
+    "modelId" : "dtmi:com:example:Thermostat;1"
+}
+```
 
 ## <a name="implement-telemetry-properties-and-commands"></a>Реализация телеметрии, свойств и команд
 
@@ -417,7 +427,7 @@ POST /digitalTwins/t-123/components/Thermostat/commands/restart
 
 Теперь, когда вы узнали о моделировании устройств, ниже приведены некоторые дополнительные ресурсы.
 
-- [Язык определения цифровых двойников (ДТДЛ)](https://github.com/Azure/opendigitaltwins-dtdl)
+- [Язык определения цифровых двойников (DTDL)](https://github.com/Azure/opendigitaltwins-dtdl)
 - [Пакет SDK для устройств для C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
 - [REST API IoT](https://docs.microsoft.com/rest/api/iothub/device)
 - [Компоненты модели](./concepts-components.md)

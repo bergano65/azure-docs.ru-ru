@@ -7,12 +7,12 @@ ms.date: 07/10/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 126673391b49f884a51521d462060c425a314667
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: ef29be53e776c4c185ac8430b3340c53ca85d855
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475674"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88856054"
 ---
 # <a name="iot-plug-and-play-conventions"></a>Соглашения IoT Plug and Play
 
@@ -127,10 +127,10 @@ ms.locfileid: "87475674"
 
 Устройство должно подтвердить, что оно получило свойство, отправив сообщаемое свойство. Сообщаемое свойство должно включать:
 
-- `value`— значение, полученное устройством.
-- `ac`— код подтверждения, использующий код состояния HTTP.
-- `av`— Версия подтверждения, относящаяся к `$version` требуемому свойству.
-- `ad`— Необязательное описание подтверждения.
+- `value` — фактическое значение свойства (обычно полученное значение, однако устройство может принять решение о другом значении).
+- `ac` — код подтверждения, использующий код состояния HTTP.
+- `av` — Версия подтверждения, относящаяся к `$version` требуемому свойству.
+- `ad` — Необязательное описание подтверждения.
 
 ### <a name="sample-no-component-writable-property"></a>Пример свойства, доступного для записи без компонента
 
@@ -261,7 +261,7 @@ ms.locfileid: "87475674"
 
 Теперь, когда вы узнали о соглашениях IoT Plug and Play, ниже приведены некоторые дополнительные ресурсы.
 
-- [Язык определения цифровых двойников (ДТДЛ)](https://github.com/Azure/opendigitaltwins-dtdl)
+- [Язык определения цифровых двойников (DTDL)](https://github.com/Azure/opendigitaltwins-dtdl)
 - [Пакет SDK для устройств для C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
 - [REST API IoT](https://docs.microsoft.com/rest/api/iothub/device)
 - [Компоненты модели](./concepts-components.md)

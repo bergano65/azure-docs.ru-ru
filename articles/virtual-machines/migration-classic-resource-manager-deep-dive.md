@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: 6f633a585e4fa6ebd12e8d12408847b5ee758855
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: da75e1d6208db5adf5f0f63d2a5525fc651513b0
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88513204"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855923"
 ---
 # <a name="technical-deep-dive-on-platform-supported-migration-from-classic-to-azure-resource-manager"></a>Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager
 
@@ -33,7 +33,7 @@ ms.locfileid: "88513204"
 
 В классической модели развертывания и стеках Resource Manager используется одна и та же плоскость данных. Разница в том, что в процессе переноса Майкрософт преобразует представление ресурсов из классической модели развертывания в представление в стеке Resource Manager. Поэтому для управлениями ресурсами в стеке Resource Manager необходимо использовать новые средства, API-интерфейсы и пакеты SDK.
 
-![Схема, показывающая различие между плоскостью управления и плоскостью данных](~/articles/virtual-machines/media/virtual-machines-windows-migration-classic-resource-manager/data-control-plane.png)
+![Схема, показывающая различие между плоскостью управления и плоскостью данных](media/virtual-machines-windows-migration-classic-resource-manager/data-control-plane.png)
 
 
 > [!NOTE]
@@ -52,7 +52,7 @@ ms.locfileid: "88513204"
 
 Ниже представлен рабочий процесс переноса:
 
-![Схема с этапами миграции](~/articles/virtual-machines/windows/media/migration-classic-resource-manager/migration-workflow.png)
+![Схема с этапами миграции](windows/media/migration-classic-resource-manager/migration-workflow.png)
 
 > [!NOTE]
 > Все операции, описанные в следующих разделах, являются идемпотентными. Если вы столкнетесь с какой-либо проблемой, не связанной с неподдерживаемой функцией или ошибкой конфигурации, повторите подготовку, прервите или зафиксируйте текущую операцию. Платформа Azure попытается повторить действие.
@@ -94,17 +94,17 @@ ms.locfileid: "88513204"
 После завершения подготовки можно будет визуализировать ресурсы в классической модели развертывания и в модели развертывания с помощью Resource Manager. Для каждой облачной службы в классической модели развертывания платформа Azure создает имя группы ресурсов по шаблону `cloud-service-name>-Migrated`.
 
 > [!NOTE]
-> Нельзя выбрать имя группы ресурсов, созданной для перенесенных ресурсов (то есть -Migrated). Но после завершения переноса можно использовать функцию Azure Resource Manager для перемещения ресурсов в нужную группу ресурсов. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](~/articles/resource-group-move-resources.md).
+> Нельзя выбрать имя группы ресурсов, созданной для перенесенных ресурсов (то есть -Migrated). Но после завершения переноса можно использовать функцию Azure Resource Manager для перемещения ресурсов в нужную группу ресурсов. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/management/move-resource-group-and-subscription.md).
 
 Ниже приведены два снимка экрана, на которых показан результат успешной операции подготовки. На первом показана группа ресурсов, содержащая исходную облачную службу. На втором — группа ресурсов -Migrated, содержащая эквивалентные ресурсы Azure Resource Manager.
 
-![Снимок экрана исходной облачной службы](~/articles/virtual-machines/windows/media/migration-classic-resource-manager/portal-classic.png)
+![Снимок экрана исходной облачной службы](windows/media/migration-classic-resource-manager/portal-classic.png)
 
-![Снимок экрана операции подготовки ресурсов Azure Resource Manager](~/articles/virtual-machines/windows/media/migration-classic-resource-manager/portal-arm.png)
+![Снимок экрана операции подготовки ресурсов Azure Resource Manager](windows/media/migration-classic-resource-manager/portal-arm.png)
 
 Ниже представлена фактическая схема ресурсов после завершения этапа подготовки. Обратите внимание, что в плоскости данных используется один и тот же ресурс. Он представлен в плоскости управления в классической модели развертывания и в плоскости управления в модели развертывания с помощью Resource Manager.
 
-![Схема этапа подготовки](~/articles/virtual-machines/windows/media/migration-classic-resource-manager/behind-the-scenes-prepare.png)
+![Схема этапа подготовки](windows/media/migration-classic-resource-manager/behind-the-scenes-prepare.png)
 
 > [!NOTE]
 > Виртуальные машины, не входящие в виртуальную сеть в классической модели развертывания, на этом этапе переноса останавливаются, и их распределение отменяется.
@@ -124,7 +124,7 @@ ms.locfileid: "88513204"
 ### <a name="abort"></a>Прерывание
 Это необязательный шаг, который позволяет отменить изменения в классической модели развертывания и прервать миграцию. Эта операция удаляет метаданные Resource Manager для ресурсов, созданные на этапе подготовки. 
 
-![Схема этапа прерывания](~/articles/virtual-machines/windows/media/migration-classic-resource-manager/behind-the-scenes-abort.png)
+![Схема этапа прерывания](windows/media/migration-classic-resource-manager/behind-the-scenes-abort.png)
 
 
 > [!NOTE]
@@ -139,13 +139,13 @@ ms.locfileid: "88513204"
 >
 >
 
-![Схема этапа фиксации](~/articles/virtual-machines/windows/media/migration-classic-resource-manager/behind-the-scenes-commit.png)
+![Схема этапа фиксации](windows/media/migration-classic-resource-manager/behind-the-scenes-commit.png)
 
 ## <a name="migration-flowchart"></a>Блок-схема миграции
 
 Ниже представлена блок-схема, на которой показано, как выполнить перенос:
 
-![Screenshot that shows the migration steps](~/articles/virtual-machines/windows/media/migration-classic-resource-manager/migration-flow.png)
+![Screenshot that shows the migration steps](windows/media/migration-classic-resource-manager/migration-flow.png)
 
 ## <a name="translation-of-the-classic-deployment-model-to-resource-manager-resources"></a>Преобразование ресурсов классической модели развертывания в ресурсы модели развертывания с помощью Resource Manager
 В таблице ниже представлены ресурсы в классической модели развертывания и в модели развертывания с помощью Resource Manager. Остальные функции и ресурсы в настоящий момент не поддерживаются.

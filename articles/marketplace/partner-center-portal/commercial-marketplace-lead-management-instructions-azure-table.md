@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: keferna
 ms.author: keferna
-ms.date: 03/30/2020
-ms.openlocfilehash: 485da8549175af8813a9d0c3052d1e77f336e619
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.date: 08/25/2020
+ms.openlocfilehash: db2bae9d9e1c9658937e725a04d919743ff9999e
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86120846"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855781"
 ---
 # <a name="use-azure-table-storage-to-manage-commercial-marketplace-leads"></a>Использование хранилища таблиц Azure для управления потенциальными клиентами на Marketplace для коммерческих клиентов
 
@@ -28,19 +28,19 @@ ms.locfileid: "86120846"
     1. На панели **Новый** выберите **Хранилище**. Справа отображается список **Рекомендуемое**.
     1. Выберите **Учетная запись хранения**, чтобы приступить к созданию учетной записи. Следуйте [инструкциям](../../storage/common/storage-quickstart-create-account.md?tabs=azure-portal) по созданию учетной записи хранения.
 
-        ![Шаги по созданию учетной записи хранения Azure](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-create.png)
+        :::image type="content" source="media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-create.png" alt-text="Действия по созданию учетной записи хранения Azure.":::
 
         Дополнительные сведения об учетных записях хранения см. в [кратком руководстве](../../storage/index.yml). Дополнительные сведения о ценах на службу хранилища см. на странице [Обзор цен на хранилище Azure](https://azure.microsoft.com/pricing/details/storage/).
 
-1. Дождитесь подготовки вашей учетной записи хранения. Этот процесс займет несколько минут. 
+1. Дождитесь подготовки вашей учетной записи хранения. Этот процесс займет несколько минут.
 
 ## <a name="create-a-table-in-your-storage-account"></a>Создание таблицы в учетной записи хранения
 
-1. На **главной** странице портала Microsoft Azure выберите **Смотреть все ресурсы**, чтобы получить доступ к учетной записи хранения. Можно также выбрать **Все ресурсы** в строке меню слева на портале Microsoft Azure.
+1. На **домашней** странице портал Azure выберите **Просмотреть все ресурсы** , чтобы получить доступ к вашей учетной записи хранения. Можно также выбрать **Все ресурсы** в строке меню слева на портале Microsoft Azure.
 
-    ![Доступ к учетной записи хранения Azure](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-access.png)
+    :::image type="content" source="media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-access.png" alt-text="Доступ к учетной записи хранения Azure.":::
 
-1. На панели учетной записи хранения выберите **Ключи доступа** и скопируйте значение в поле **Строка подключения** для ключа. Сохраните это значение, так как это значение **строки подключения учетной записи хранения**, которое потребуется указать на портале публикации, чтобы получать потенциальных клиентов для своего предложения на Azure Marketplace. 
+1. На панели учетной записи хранения выберите **Ключи доступа** и скопируйте значение в поле **Строка подключения** для ключа. Сохраните это значение, так как это значение **строки подключения учетной записи хранения**, которое потребуется указать на портале публикации, чтобы получать потенциальных клиентов для своего предложения на Azure Marketplace.
 
     Вот пример строки подключения.
 
@@ -48,13 +48,14 @@ ms.locfileid: "86120846"
     DefaultEndpointsProtocol=https;AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.screens.net
     ```
 
-    ![Ключ к хранилищу Azure](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-keys.png)
+    :::image type="content" source="media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-keys.png" alt-text="Ключ службы хранилища Azure.":::
+
 
 1. В области своей учетной записи хранения выберите **Таблицы** и нажмите **+ Таблица**, чтобы создать таблицу. Введите имя таблицы и нажмите кнопку **ОК**. Сохраните это значение, так как оно понадобится, если вы хотите настроить поток для получения уведомлений по электронной почте при получении потенциальных клиентов.
 
     ![Таблицы Azure](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-tables.png)
 
-    Вы можете использовать [Обозреватель службы хранилища Microsoft Azure](https://archive.codeplex.com/?p=azurestorageexplorer) или любое другое средство для просмотра данных в таблице хранилища. Данные также можно экспортировать в таблицу Azure. 
+    Вы можете использовать [Обозреватель службы хранилища Microsoft Azure](https://archive.codeplex.com/?p=azurestorageexplorer) или любое другое средство для просмотра данных в таблице хранилища. Данные также можно экспортировать в таблицу Azure.
 
 ## <a name="optional-use-power-automate-to-get-lead-notifications"></a>(Дополнительно.) Использование Power Automate для получения уведомлений о потенциальных клиентах
 
@@ -66,7 +67,7 @@ ms.locfileid: "86120846"
 
 1. Выполните вход в учетную запись Power Automate.
 1. На панели слева выберите **Мои потоки**.
-1. На верхней панели выберите **+ Создать**. 
+1. На верхней панели выберите **+ Создать**.
 1. В раскрывающемся списке выберите **+ По расписанию — с «нуля»** .
 
    ![Мои потоки + По расписанию — с «нуля»](./media/commercial-marketplace-lead-management-instructions-azure-table/ms-flow-scheduled-from-blank.png)
@@ -90,7 +91,7 @@ ms.locfileid: "86120846"
 
     ![Настройка интервала получения времени в прошлом](./media/commercial-marketplace-lead-management-instructions-azure-table/ms-flow-getpast-time.png)
 
-   >[!TIP] 
+   >[!TIP]
    >Чтобы убедиться в правильности каждого шага, можно в любое время проверить поток. Чтобы проверить ваш поток, выберите **Средство проверки потоков**  в строке меню **Поток**.
 
    В следующих инструкциях описывается, как установить подключение к таблице и настроить логику обработки новых потенциальных клиентов.
@@ -123,7 +124,7 @@ ms.locfileid: "86120846"
 
 1. В окне **Условие** нажмите **Выбрать значение**. Затем во всплывающем окне выберите **Выражение**.
 
-1. Вставьте `length(body('Get_entities')?['value'])` в поле **fx**. Нажмите **ОК** для добавления этой функции. 
+1. Вставьте `length(body('Get_entities')?['value'])` в поле **fx**. Нажмите **ОК** для добавления этой функции.
 
 1. Чтобы завершить настройку условия:
     1. Из раскрывающегося списка выберите **больше**.
@@ -134,7 +135,7 @@ ms.locfileid: "86120846"
    Выполнив следующие шаги, вы зададите действие, которое будет выполняться в зависимости от значения условия.
 
    * Если условие возвращает **Если «нет»** , ничего не происходит.
-   * Если условие возвращает **Если "да"** , активируется действие подключения к учетной записи Office 365 для отправки сообщения электронной почты. 
+   * Если условие возвращает **Если "да"** , активируется действие подключения к учетной записи Office 365 для отправки сообщения электронной почты.
 
 1. Выберите **Добавить действие** в разделе **Если «да»** .
 

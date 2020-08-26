@@ -9,14 +9,14 @@ manager: dviso
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 08/25/2020
 ms.custom: seodec18
-ms.openlocfilehash: 149d1eab696ae8419bed79cd2cdc0b066c32060c
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 35a2be5c9f418bc423ae56c456db0062677a33c2
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86531935"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88856115"
 ---
 # <a name="grant-data-access-to-an-environment"></a>Предоставление доступа к данным в среде
 
@@ -64,7 +64,7 @@ ms.locfileid: "86531935"
 
 Выполните следующие действия, чтобы предоставить гостевой доступ к среде "аналитика временных рядов Azure" пользователю Azure AD из другого клиента.
 
-1. Перейдите в портал Azure, щелкните **Azure Active Directory**, прокрутите вниз на вкладке **Обзор** , а затем выберите **гостевой пользователь**.
+1. Перейдите в портал Azure, щелкните  **Azure Active Directory**, прокрутите вниз на вкладке **Обзор** , а затем выберите **гостевой пользователь**.
 
     [![Выберите политики доступа к данным, а затем — приглашение.](media/data-access/data-access-invite-another-aad-tenant.png)](media/data-access/data-access-invite-another-aad-tenant.png#lightbox)
 
@@ -106,7 +106,7 @@ ms.locfileid: "86531935"
 
 1. Администратор [совместно использует URL-адрес среды](time-series-insights-parameterized-urls.md) со своей гостевой учетной записью.
 
-1. После входа гостевого пользователя на адрес электронной почты, который использовался для приглашения, и принятия приглашения, они будут направлены на портал Azure. 
+1. После входа гостевого пользователя на адрес электронной почты, который использовался для приглашения, и принятия приглашения, они будут направлены на портал Azure.
 
 1. Теперь гостевой компьютер может получить доступ к общей среде, используя URL-адрес среды, предоставленный администратором. Они могут ввести этот URL-адрес в свой браузер для немедленного доступа.
 
@@ -114,14 +114,14 @@ ms.locfileid: "86531935"
 
     [![Выбор аватара на insights.azure.com](media/data-access/data-access-select-tenant-and-instance.png)](media/data-access/data-access-select-tenant-and-instance.png#lightbox)
 
+    После того как гостевой пользователь выберет клиента администратора, у него будет возможность выбрать общую среду Azure Time Series Insights.
 
-    После того как гостевой пользователь выберет клиента администратора, у него будет возможность выбрать общую среду Azure Time Series Insights. 
-    
     Теперь у них есть все возможности, связанные с ролью, которую вы указали на **шаге 5**.
 
     [![Пользователь-гость выбирает клиент Azure из раскрывающегося списка](media/data-access/data-access-all-capabilities.png)](media/data-access/data-access-all-capabilities.png#lightbox)
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * Шаги [проверки подлинности и авторизации](time-series-insights-authentication-and-authorization.md) для Azure Active Directory регистрации приложений.
 
-* Просматривайте [свою среду в обозревателе Gen2 "аналитика временных рядов Azure"](./time-series-insights-update-explorer.md).
+* Просматривайте [свою среду в ОБОЗРЕВАТЕЛЕ TSI "аналитика временных рядов Azure"](./time-series-insights-update-explorer.md).
