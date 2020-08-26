@@ -34,13 +34,13 @@ ms.locfileid: "88213160"
 
 1. Запустите службу Azure Arc на портале Azure, щелкнув **Все службы**, а затем выполнив поиск и выбрав **Компьютеры — Azure Arc**.
 
-    :::image type="content" source="./media/quick-enable-hybrid-vm/search-machines.png" alt-text="Поиск серверов с поддержкой Arc в разделе "Все службы"" border="false":::
+    :::image type="content" source="./media/quick-enable-hybrid-vm/search-machines.png" alt-text="Поиск серверов с поддержкой Arc в разделе Все службы" border="false":::
 
 1. На странице **Компьютеры — Azure Arc** выберите подключенный компьютер, созданный при изучении [краткого руководства](quick-enable-hybrid-vm.md).
 
 1. На левой панели в разделе **Мониторинг** выберите **Аналитические сведения**, а затем **Включить**.
 
-    :::image type="content" source="./media/tutorial-enable-vm-insights/insights-option.png" alt-text="Выбор параметра "Аналитические сведения" в меню слева" border="false":::
+    :::image type="content" source="./media/tutorial-enable-vm-insights/insights-option.png" alt-text="Выбор параметра Аналитические сведения в меню слева" border="false":::
 
 1. На странице **Переход на Insights** в Azure Monitor вам будет предложено создать рабочую область. Для работы с этим учебником мы не рекомендуем выбирать имеющуюся рабочую область Log Analytics. Подтвердите вариант по умолчанию — рабочую область с уникальным именем в том же регионе, где расположен зарегистрированный подключенный компьютер. Это рабочая область создана и настроена для вас.
 
