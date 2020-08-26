@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 07/30/2020
+ms.date: 08/25/2020
 ms.author: victorh
-ms.openlocfilehash: 6e90a8bc0998b43a84658958215e4b7977f8fdd0
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 1a35d9c48dd46d5d220699589f4ed758d21feca8
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87461312"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88854283"
 ---
 # <a name="use-fqdn-filtering-in-network-rules-preview"></a>Использование фильтрации FQDN в правилах сети (Предварительная версия)
 
@@ -21,6 +21,9 @@ ms.locfileid: "87461312"
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Полное доменное имя (FQDN) представляет доменное имя узла или IP-адреса. Полные доменные имена можно использовать в правилах сети на основе разрешения DNS в брандмауэре Azure и политике брандмауэра. Эта возможность позволяет фильтровать исходящий трафик по любому протоколу TCP/UDP (включая NTP, SSH, RDP и т. д.). Необходимо включить DNS-прокси для использования полных доменных имен в правилах сети. Дополнительные сведения см. в разделе [параметры DNS брандмауэра Azure (Предварительная версия)](dns-settings.md).
+
+> [!NOTE]
+> Фильтрация FQDN не поддерживает подстановочные знаки.
 
 ## <a name="how-it-works"></a>Принцип работы
 

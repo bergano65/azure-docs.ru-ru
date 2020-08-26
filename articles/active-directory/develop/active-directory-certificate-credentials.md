@@ -13,16 +13,16 @@ ms.date: 08/12/2020
 ms.author: hirsin
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 06f15257148342879a164005a8f4fb302c539e67
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 6330621aac78d5e9df52f2cd3ad9c3968bb0120d
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88163668"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88853384"
 ---
 # <a name="microsoft-identity-platform-application-authentication-certificate-credentials"></a>Учетные данные сертификата проверки подлинности приложения платформы удостоверений Майкрософт
 
-Платформа Microsoft Identity позволяет приложению использовать собственные учетные данные для проверки подлинности, например, в потоке [предоставления учетных данных клиента](v2-oauth2-client-creds-grant-flow.md) OAuth 2,0 и потоке "от [имени](v2-oauth2-on-behalf-of-flow.md) " (OBO).
+Платформа Microsoft Identity позволяет приложению использовать собственные учетные данные для проверки подлинности, например, в потоке  [предоставления учетных данных клиента](v2-oauth2-client-creds-grant-flow.md) OAuth 2,0 и потоке "от [имени](v2-oauth2-on-behalf-of-flow.md) " (OBO).
 
 Одним из форм учетных данных, которые приложение может использовать для проверки подлинности, является утверждение [JSON Web Token](./security-tokens.md#json-web-tokens-jwts-and-claims) (JWT), подписанное с помощью сертификата, которому принадлежит приложение.
 
@@ -36,13 +36,13 @@ ms.locfileid: "88163668"
 | --- | --- |
 | `alg` | Должен иметь значение **RS256** |
 | `typ` | Должен иметь значение **JWT** |
-| `x5t` | Хэш сертификата X. 509 (также известный как *отпечаток*SHA-1 сертификата) кодируется как строковое значение Base64. Например, если получен хэш сертификата X. 509 `84E05C1D98BCE3A5421D225B140B36E86A3D5534` , `x5t` утверждение будет иметь значение `hOBcHZi846VCHSJbFAs26Go9VTQ` . |
+| `x5t` | Хэш сертификата X. 509 (также известный как *отпечаток*SHA-1) кодируется в шестнадцатеричное представление в виде строкового значения Base64. Например, если получен хэш сертификата X. 509 `84E05C1D98BCE3A5421D225B140B36E86A3D5534` (HEX), `x5t` утверждение будет иметь значение `hOBcHZi846VCHSJbFAs26Go9VTQ=` (Base64). |
 
 ### <a name="claims-payload"></a>Утверждения (полезные данные)
 
 | Параметр |  Remarks |
 | --- | --- |
-| `aud` | Аудитория: должна быть`https://login.microsoftonline.com/<your-tenant-id>/oauth2/token` |
+| `aud` | Аудитория: должна быть `https://login.microsoftonline.com/<your-tenant-id>/oauth2/token` |
 | `exp` | Дата окончания срока действия. Дата истечения срока действия маркера. Время представлено как количество секунд с 1 января 1970 года (1970-01-01T0:0:0Z) в формате UTC до истечения срока действия маркера. Рекомендуется использовать короткий срок действия-10 минут в течение одного часа.|
 | `iss` | Issuer: должен быть client_id (*идентификатор приложения (клиента)* службы клиента) |
 | `jti` | GUID: идентификатор JWT. |
@@ -103,8 +103,8 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 
 Получив сертификат, необходимо вычислить следующие значения:
 
-- `$base64Thumbprint`— Значение хэша сертификата в кодировке Base64
-- `$base64Value`— Значение необработанных данных сертификата в кодировке Base64
+- `$base64Thumbprint` — Значение хэша сертификата в кодировке Base64
+- `$base64Value` — Значение необработанных данных сертификата в кодировке Base64
 
 Также необходимо предоставить идентификатор GUID для определения ключа в манифесте приложения (`$keyId`).
 

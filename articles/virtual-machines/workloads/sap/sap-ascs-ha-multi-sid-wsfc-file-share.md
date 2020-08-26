@@ -13,19 +13,19 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 02/03/2019
+ms.date: 08/24/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: acf60138aaecd914b30a020fdead292eb0ef1473
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5a356e96b82e6fbe855d0b474dcb6b1f59c98333
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87035984"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855215"
 ---
 # <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-file-share-on-azure"></a>Обеспечение высокого уровня доступности экземпляра ASCS/SCS с несколькими ИД безопасности с помощью отказоустойчивой кластеризации Windows Server и файлового ресурса в Azure
 
-> ![Windows][Logo_Windows] Windows
+> ![ОС Windows][Logo_Windows] Windows
 >
 
 Можно управлять несколькими виртуальными IP-адресами с помощью [внутренней подсистемы балансировки нагрузки Azure][load-balancer-multivip-overview]. 
@@ -61,6 +61,7 @@ _**Рис. 1.** Экземпляр SAP ASCS/SCS и SOFS, развернутые 
 > * Другие общие файловые ресурсы глобальных узлов SAP, относящиеся к разным идентификаторам безопасности SAP, должны совместно использовать один кластер SOFS.
 > * Для каждого идентификатора безопасности системы управления базами данных (СУБД) должен быть выделен кластер WSFC.
 > * Серверы приложений SAP, связанные с одним ИД безопасности системы SAP, должны размещаться на выделенных виртуальных машинах.
+> * Не поддерживается сочетание сервера репликации очереди 1 и постановки в очередь сервера репликации 2 в одном кластере.  
 
 ## <a name="sap-ascsscs-multi-sid-architecture-with-file-share"></a>Архитектура SAP ASCS/SCS с несколькими идентификаторами безопасности и файловым ресурсом
 

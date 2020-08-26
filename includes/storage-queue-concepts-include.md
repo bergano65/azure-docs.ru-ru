@@ -2,15 +2,15 @@
 author: tamram
 ms.service: storage
 ms.topic: include
-ms.date: 10/26/2018
+ms.date: 08/21/2020
 ms.author: tamram
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 23b93f507ef6abe19a0202b28afa31d28490b2b3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3aa21fb99ac5ab24674bf5d4b62fd3fca98de632
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80151113"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88853664"
 ---
 ## <a name="what-is-queue-storage"></a>Что такое хранилище очередей?
 
@@ -22,13 +22,11 @@ ms.locfileid: "80151113"
 
 ![Компоненты служба очередей Azure](./media/storage-queue-concepts-include/azure-queue-service-components.png)
 
-* **Формат URL-адреса:** Для адресации очередей используется следующий формат URL-адреса: http:// `<storage account>` . Queue.Core.Windows.NET/`<queue>`
-  
-    Следующий URL-адрес позволяет обратиться к очереди на схеме:  
-  
-    `http://myaccount.queue.core.windows.net/incoming-orders`
-
 * **Учетная запись хранения:** Весь доступ к службе хранилища Azure осуществляется через учетную запись хранения. См. сведения об [учетных записях хранения](../articles/storage/common/storage-account-overview.md).
 * **Очередь**. Очередь содержит набор сообщений. Все сообщения должны находиться в очереди. Обратите внимание: имя очереди должно содержать только строчные символы. Дополнительные сведения см. в статье о [присвоении имен очередям и метаданным](https://msdn.microsoft.com/library/azure/dd179349.aspx).
 * **Сообщение.** Сообщение в любом формате размером до 64 КБ. Сообщение может оставаться в очереди не более 7 дней. Начиная с версии 2017-07-29, максимальный срок жизни может быть задан любым положительным числом или значением -1, свидетельствующим о том, что срок жизни сообщения неограничен. Если этот параметр не указан, срок жизни по умолчанию составляет семь дней.
+* **Формат URL-адреса:** Для адресации очередей используется следующий формат URL-адреса: http:// `<storage account>` . Queue.Core.Windows.NET/`<queue>`
 
+    Следующий URL-адрес позволяет обратиться к очереди на схеме:
+
+    `http://myaccount.queue.core.windows.net/incoming-orders`

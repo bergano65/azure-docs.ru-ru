@@ -10,15 +10,15 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.workload: identity
 ms.topic: how-to
-ms.date: 08/06/2020
+ms.date: 08/25/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
-ms.openlocfilehash: d518dcf833a49e32d72938a31da412d53cc40037
-ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
+ms.openlocfilehash: 1cd2b7550d47ecc92f8ca7f5531fab923e13930c
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88141539"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88853362"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Руководство. Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)
 
@@ -143,7 +143,6 @@ ms.locfileid: "88141539"
 | onprem_sid |
 | openid2_id |
 | password |
-| platf |
 | polids |
 | pop_jwk |
 | preferred_username |
@@ -248,11 +247,11 @@ ms.locfileid: "88141539"
 
 **Описание.** Это свойство определяет, включен ли набор базовых утверждений в токены, на которые распространяется эта политика.
 
-- Если задано значение True, все утверждения в наборе базовых утверждений добавляются в токены, на которые распространяется эта политика. 
+- Если задано значение True, все утверждения в наборе базовых утверждений добавляются в токены, на которые распространяется эта политика.
 - Если задано значение False, утверждения в наборе базовых утверждений не добавляются в токены, если только они не добавлены по отдельности в свойстве схемы утверждения этой же политики.
 
-> [!NOTE] 
-> Утверждения из набора основных утверждений имеются в каждом токене, независимо от политики. 
+> [!NOTE]
+> Утверждения из набора основных утверждений имеются в каждом токене, независимо от политики.
 
 ### <a name="claims-schema"></a>Схема утверждений
 
@@ -267,14 +266,14 @@ ms.locfileid: "88141539"
 
 **Значение:** элемент "Значение" определяет статическое значение в качестве данных для добавления в утверждение.
 
-**Пара "источник-идентификатор":** элементы Source и ID определяют, где находится источник данных в утверждении.  
+**Пара "источник-идентификатор":** элементы Source и ID определяют, где находится источник данных в утверждении.
 
 **Пара Source/ExtensionID:** Элементы source и ExtensionID определяют атрибут расширения схемы каталога, в котором источником данных в утверждении является источник. Дополнительные сведения см. [в разделе Использование атрибутов расширения схемы каталогов в заявках](active-directory-schema-extensions.md).
 
-Для элемента "Источник" необходимо задать одно из следующих значений. 
+Для элемента "Источник" необходимо задать одно из следующих значений.
 
-- "user": данные в утверждении являются свойством объекта "User". 
-- "application": данные в утверждении являются свойством субъекта-службы приложения (клиента). 
+- "user": данные в утверждении являются свойством объекта "User".
+- "application": данные в утверждении являются свойством субъекта-службы приложения (клиента).
 - "resource": данные в утверждении являются свойством субъекта-службы ресурса.
 - "audience": данные в утверждении — это свойство субъекта-службы, который является аудиторией токена (либо клиент, либо субъект-служба ресурса).
 - "company": данные в утверждении являются свойством объекта Company в клиенте ресурса.
@@ -349,7 +348,7 @@ ms.locfileid: "88141539"
 
 **Строка.** ClaimsTransformation
 
-**Тип данных**: большой двоичный объект JSON с одной или несколькими записями преобразования. 
+**Тип данных**: большой двоичный объект JSON с одной или несколькими записями преобразования.
 
 **Описание.** Это свойство используется для применения общих преобразований источника данных, для создания выходных данных для утверждений, указанных в схеме утверждений.
 
@@ -368,7 +367,7 @@ ms.locfileid: "88141539"
 
 **InputClaims:** элемент InputClaims используется для передачи данных из записи схемы утверждения в преобразование. Он имеет два атрибута: **ClaimTypeReferenceId** и **TransformationClaimType**.
 
-- **ClaimTypeReferenceId** соединяется с элементом ID записи схемы утверждения для поиска соответствующего входного утверждения. 
+- **ClaimTypeReferenceId** соединяется с элементом ID записи схемы утверждения для поиска соответствующего входного утверждения.
 - **TransformationClaimType** используется для предоставления уникального имени для этих входных данных. Это имя должно соответствовать одному из ожидаемых входных данных для метода преобразования.
 
 **InputParameters:** элемент InputParameters используется для передачи значения константы в преобразование. Он имеет два атрибута: **Value** и **ID**.
@@ -420,7 +419,7 @@ ms.locfileid: "88141539"
 
 Чтобы политика сопоставления утверждений вступила в силу, объекту субъекта-службы необходимо назначить пользовательский ключ подписывания. Это гарантирует подтверждение того, что токены были изменены создателем политики сопоставления утверждений и защищают приложения от политик сопоставления утверждений, созданных злоумышленниками. Чтобы добавить пользовательский ключ подписывания, можно использовать командлет `new-azureadapplicationkeycredential` Azure PowerShell, чтобы создать учетные данные симметричного ключа для объекта приложения. Дополнительные сведения об этом командлете Azure PowerShell см. в [New-AzureADApplicationKeyCredential](/powerShell/module/Azuread/New-AzureADApplicationKeyCredential?view=azureadps-2.0).
 
-Приложения с включенным сопоставлением утверждений должны проверять ключи подписывания маркеров, добавляя `appid={client_id}` к их [запросам метаданных](v2-protocols-oidc.md#fetch-the-openid-connect-metadata-document). Ниже указан формат документа метаданных OpenID Connect, который следует использовать. 
+Приложения с включенным сопоставлением утверждений должны проверять ключи подписывания маркеров, добавляя `appid={client_id}` к их [запросам метаданных](v2-protocols-oidc.md#fetch-the-openid-connect-metadata-document). Ниже указан формат документа метаданных OpenID Connect, который следует использовать.
 
 ```
 https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid={client-id}
@@ -464,20 +463,20 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 В этом примере мы создадим политику, которая удаляет набор базовых утверждений из токенов, выданных связанным субъектам-службам.
 
 1. Создайте политику сопоставления утверждений. Эта политика, связанная с определенными субъектами-службами, удаляет из токенов набор базовых утверждений.
-   1. Чтобы создать политику, выполните следующую команду: 
-    
+   1. Чтобы создать политику, выполните следующую команду:
+
       ``` powershell
       New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"false"}}') -DisplayName "OmitBasicClaims" -Type "ClaimsMappingPolicy"
       ```
    2. Чтобы просмотреть созданную политику и получить ее идентификатор объекта, выполните следующую команду:
-    
+
       ``` powershell
       Get-AzureADPolicy
       ```
 1. Назначьте политику для субъекта-службы. Вам потребуется также получить идентификатор объекта субъекта-службы.
    1. Чтобы просмотреть список всех субъектов-служб в организации, можно [запросить API Microsoft Graph](/graph/traverse-the-graph). Или открыть [Проводник Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer) и войти в учетную запись Azure AD.
-   2. Получив идентификатор объекта субъекта-службы, выполните следующую команду:  
-     
+   2. Получив идентификатор объекта субъекта-службы, выполните следующую команду:
+
       ``` powershell
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```
@@ -487,21 +486,21 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 В этом примере мы создадим политику, которая добавляет элементы EmployeeID и TenantCountry в токены, выданные связанным субъектам-службам. Элемент EmployeeID добавляется как тип утверждения имени в токены SAML и JWT. Элемент TenantCountry добавляется как тип утверждения страны/региона в токены SAML и JWT. В этом примере мы продолжаем включать набор базовых утверждений в токены.
 
 1. Создайте политику сопоставления утверждений. Эта политика, связанная с субъектами-службами, добавляет утверждения EmployeeID и TenantCountry в токены.
-   1. Чтобы создать политику, выполните следующую команду:  
-     
+   1. Чтобы создать политику, выполните следующую команду:
+
       ``` powershell
       New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema": [{"Source":"user","ID":"employeeid","SamlClaimType":"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/employeeid","JwtClaimType":"name"},{"Source":"company","ID":"tenantcountry","SamlClaimType":"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/country","JwtClaimType":"country"}]}}') -DisplayName "ExtraClaimsExample" -Type "ClaimsMappingPolicy"
       ```
-    
+
    2. Чтобы просмотреть созданную политику и получить ее идентификатор объекта, выполните следующую команду:
-     
-      ``` powershell  
+
+      ``` powershell
       Get-AzureADPolicy
       ```
-1. Назначьте политику для субъекта-службы. Вам потребуется также получить идентификатор объекта субъекта-службы. 
+1. Назначьте политику для субъекта-службы. Вам потребуется также получить идентификатор объекта субъекта-службы.
    1. Чтобы просмотреть список всех субъектов-служб в организации, можно [запросить API Microsoft Graph](/graph/traverse-the-graph). Или открыть [Проводник Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer) и войти в учетную запись Azure AD.
-   2. Получив идентификатор объекта субъекта-службы, выполните следующую команду:  
-     
+   2. Получив идентификатор объекта субъекта-службы, выполните следующую команду:
+
       ``` powershell
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```
@@ -512,20 +511,20 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 
 1. Создайте политику сопоставления утверждений. Эта политика, связанная с субъектами-службами, добавляет утверждения EmployeeID и TenantCountry в токены.
    1. Чтобы создать политику, выполните следующую команду:
-     
+
       ``` powershell
       New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema":[{"Source":"user","ID":"extensionattribute1"},{"Source":"transformation","ID":"DataJoin","TransformationId":"JoinTheData","JwtClaimType":"JoinedData"}],"ClaimsTransformations":[{"ID":"JoinTheData","TransformationMethod":"Join","InputClaims":[{"ClaimTypeReferenceId":"extensionattribute1","TransformationClaimType":"string1"}], "InputParameters": [{"ID":"string2","Value":"sandbox"},{"ID":"separator","Value":"."}],"OutputClaims":[{"ClaimTypeReferenceId":"DataJoin","TransformationClaimType":"outputClaim"}]}]}}') -DisplayName "TransformClaimsExample" -Type "ClaimsMappingPolicy"
       ```
-    
-   2. Чтобы просмотреть созданную политику и получить ее идентификатор объекта, выполните следующую команду: 
-     
+
+   2. Чтобы просмотреть созданную политику и получить ее идентификатор объекта, выполните следующую команду:
+
       ``` powershell
       Get-AzureADPolicy
       ```
-1. Назначьте политику для субъекта-службы. Вам потребуется также получить идентификатор объекта субъекта-службы. 
+1. Назначьте политику для субъекта-службы. Вам потребуется также получить идентификатор объекта субъекта-службы.
    1. Чтобы просмотреть список всех субъектов-служб в организации, можно [запросить API Microsoft Graph](/graph/traverse-the-graph). Или открыть [Проводник Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer) и войти в учетную запись Azure AD.
-   2. Получив идентификатор объекта субъекта-службы, выполните следующую команду: 
-     
+   2. Получив идентификатор объекта субъекта-службы, выполните следующую команду:
+
       ``` powershell
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```

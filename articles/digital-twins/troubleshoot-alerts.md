@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/28/2020
 ms.topic: troubleshooting
 ms.service: digital-twins
-ms.openlocfilehash: 1b296cd942e36817da2832467ab603ebd833f825
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: ded2f54379e60e8e3fc26d9c2166930a6f953078
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87910379"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88854854"
 ---
 # <a name="troubleshooting-azure-digital-twins-alerts"></a>Устранение неполадок в Azure Digital двойников: оповещения
 
@@ -28,13 +28,17 @@ Azure Digital двойников собирает [метрики](troubleshoot-
 
 2. Выберите **оповещения** в меню, а затем **+ новое правило генерации оповещений**.
 
-    :::image type="content" source="media/troubleshoot-alerts/alerts-pre.png" alt-text="Снимок экрана, показывающий страницу предупреждений и добавляемую кнопку. Оповещения еще не настроены" lightbox="media/troubleshoot-alerts/alerts-pre.png":::
-
 3. На следующей странице *Создание правила генерации оповещений* можно следовать инструкциям, чтобы определить условия, действия для запуска и сведения о предупреждениях.     
-    * Сведения об **области** должны автоматически заполняться сведениями об экземпляре.
-    * Вы определите **условия** и сведения о **группе действий** для настройки триггеров и ответов оповещений.
+    * Сведения об **области** должны автоматически заполняться сведениями об экземпляре
+    * Вы определите **условия** и сведения о **группах действий** для настройки триггеров и ответов оповещений.
+    * В разделе **сведения о правиле оповещения** введите имя и описание _правила генерации оповещений_ _(необязательно)_. Если вы хотите, чтобы оповещение стало активным сразу после создания, можно установить флажок _включить правило генерации оповещений при создании_ .
+    * На основе некоторых условий и действий, которые вы добавляете, необходимо выбрать параметр _сохранить правило оповещения в группе ресурсов_ и _серьезность_ из соответствующих раскрывающихся списков.
 
-    :::image type="content" source="media/troubleshoot-alerts/create-alert-rule.png" alt-text="Снимок экрана, показывающий страницу создания правила генерации оповещений с разделами для области, условия и группы действий" lightbox="media/troubleshoot-alerts/create-alert-rule.png":::
+4. Нажмите кнопку _создать правило генерации оповещений_ , чтобы создать правило генерации оповещений.
+
+:::image type="content" source="media/troubleshoot-alerts/create-alert-rule.png" alt-text="Снимок экрана, показывающий страницу создания правила генерации оповещений с разделами для области, условия и группы действий" lightbox="media/troubleshoot-alerts/create-alert-rule.png":::
+
+:::image type="content" source="media/troubleshoot-alerts/alert-rule-details.png" alt-text="Снимок экрана, показывающий раздел сведений о правиле оповещений при создании правила генерации оповещений" lightbox="media/troubleshoot-alerts/alert-rule-details.png":::
 
 Пошаговое руководство по заполнению этих полей см. [*в разделе Обзор оповещений в Microsoft Azure*](../azure-monitor/platform/alerts-overview.md). Ниже приведены некоторые примеры того, как будут выглядеть шаги для Azure Digital двойников.
 
@@ -51,7 +55,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
 :::image type="content" source="media/troubleshoot-alerts/alerts-post.png" alt-text="Снимок экрана, показывающий страницу предупреждений и добавляемую кнопку. Настроено одно оповещение" lightbox="media/troubleshoot-alerts/alerts-post.png":::
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о предупреждениях с Azure Monitor см. [*в разделе Обзор оповещений в Microsoft Azure*](../azure-monitor/platform/alerts-overview.md).
 * Сведения о метриках цифровых двойников Azure см. в разделе [*Устранение неполадок: Просмотр метрик с помощью Azure Monitor*](troubleshoot-metrics.md).

@@ -13,12 +13,12 @@ ms.date: 09/12/2019
 ms.author: shoatman
 ms.custom: aaddev
 ms.reviewer: shoatman
-ms.openlocfilehash: 3de252b22d7b33e45c3b45e2b6c05e4b33df663d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f5950347fff380fcfbaa89834407ff5f497a9719
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87027059"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88854917"
 ---
 # <a name="android-microsoft-authentication-library-configuration-file"></a>Файл конфигурации библиотеки проверки подлинности Майкрософт для Android
 
@@ -35,8 +35,8 @@ ms.locfileid: "87027059"
 | `client_id` | Строка | Да | Идентификатор клиента приложения на [странице регистрации приложения](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) |
 | `redirect_uri`   | Строка | Да | URI перенаправления приложения со [страницы регистрации приложения](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) |
 | `authorities` | Список\<Authority> | Нет | Список органов, необходимых для приложения |
-| `authorization_user_agent` | Аусоризатионажент (enum) | Нет | Возможные значения: `DEFAULT` , `BROWSER` ,`WEBVIEW` |
-| `http` | HttpConfiguration | Нет | Настройка `HttpUrlConnection` `connect_timeout` и`read_timeout` |
+| `authorization_user_agent` | Аусоризатионажент (enum) | Нет | Возможные значения: `DEFAULT` , `BROWSER` , `WEBVIEW` |
+| `http` | HttpConfiguration | Нет | Настройка `HttpUrlConnection` `connect_timeout` и `read_timeout` |
 | `logging` | логгингконфигуратион | Нет | Задает уровень детализации журнала. К дополнительным конфигурациям относятся: `pii_enabled` , принимающее логическое значение, и `log_level` , принимающее `ERROR` ,, `WARNING` `INFO` или `VERBOSE` . |
 
 ### <a name="client_id"></a>client_id
@@ -58,7 +58,7 @@ URI перенаправления, зарегистрированный при 
     "audience": {
         "type": "AzureADandPersonalMicrosoftAccount"
     },
-    "default": true // Indicates that this is the default to use if not provided as part of the acquireToken or acquireTokenSilent call
+    "default": true // Indicates that this is the default to use if not provided as part of the acquireToken call
 },
 // Example AzureAD My Organization
 {
@@ -86,9 +86,9 @@ URI перенаправления, зарегистрированный при 
 
 #### <a name="map-aad-authority--audience-to-microsoft-identity-platform-endpoints"></a>Сопоставление центра AAD & аудитории с конечными точками платформы удостоверений Майкрософт
 
-| Type | Аудитория | Tenant ID | Authority_Url | Результирующая конечная точка | Примечания |
+| Тип | Аудитория | Tenant ID | Authority_Url | Результирующая конечная точка | Примечания |
 |------|------------|------------|----------------|----------------------|---------|
-| AAD | AzureADandPersonalMicrosoftAccount | | | `https://login.microsoftonline.com/common` | `common`псевдоним клиента для учетной записи. Например, определенного клиента Azure Active Directory или учетная запись Майкрософт системы. |
+| AAD | AzureADandPersonalMicrosoftAccount | | | `https://login.microsoftonline.com/common` | `common` псевдоним клиента для учетной записи. Например, определенного клиента Azure Active Directory или учетная запись Майкрософт системы. |
 | AAD | AzureADMyOrg | contoso.com | | `https://login.microsoftonline.com/contoso.com` | Только учетные записи, имеющиеся в contoso.com, могут получить маркер. В качестве идентификатора клиента может использоваться любой проверенный домен или идентификатор GUID клиента. |
 | AAD | AzureADMultipleOrgs | | | `https://login.microsoftonline.com/organizations` | С этой конечной точкой можно использовать только учетные записи Azure Active Directory. Учетные записи Майкрософт могут быть членами организаций. Чтобы получить маркер с помощью учетная запись Майкрософт для ресурса в Организации, укажите клиент Организации, из которого требуется получить маркер. |
 | AAD | PersonalMicrosoftAccount | | | `https://login.microsoftonline.com/consumers` | Только учетные записи Майкрософт могут использовать эту конечную точку. |
@@ -103,16 +103,16 @@ URI перенаправления, зарегистрированный при 
 
 | Свойство | Тип данных  | Обязательно | Примечания |
 |-----------|-------------|-----------|--------|
-| `type` | Строка | Да | Отражает аудиторию или тип учетной записи, для которой предназначено приложение. Возможные значения: `AAD` ,`B2C` |
+| `type` | Строка | Да | Отражает аудиторию или тип учетной записи, для которой предназначено приложение. Возможные значения: `AAD` , `B2C` |
 | `audience` | Объект | Нет | Применяется только при типе = `AAD` . Указывает удостоверение, для которого предназначено ваше приложение. Использовать значение из регистрации приложения |
 | `authority_url` | Строка | Да | Требуется только при типе = `B2C` . Указывает URL-адрес центра или политику, которые должно использовать приложение  |
-| `default` | boolean | Да | `"default":true`Если указан один или несколько центров сертификации, необходимо указать один из них. |
+| `default` | Логическое | Да | `"default":true`Если указан один или несколько центров сертификации, необходимо указать один из них. |
 
 #### <a name="audience-properties"></a>Свойства аудитории
 
 | Свойство | Тип данных  | Обязательно | Примечания |
 |-----------|-------------|------------|-------|
-| `type` | Строка | Да | Указывает аудиторию, для которой нужно назначить приложение. Возможные значения: `AzureADandPersonalMicrosoftAccount` , `PersonalMicrosoftAccount` , `AzureADMultipleOrgs` ,`AzureADMyOrg` |
+| `type` | Строка | Да | Указывает аудиторию, для которой нужно назначить приложение. Возможные значения: `AzureADandPersonalMicrosoftAccount` , `PersonalMicrosoftAccount` , `AzureADMultipleOrgs` , `AzureADMyOrg` |
 | `tenant_id` | Строка | Да | Требуется, только если `"type":"AzureADMyOrg"` . Необязательно для других `type` значений. Это может быть домен клиента `contoso.com` , например, или идентификатор клиента, например. `72f988bf-86f1-41af-91ab-2d7cd011db46` ) |
 
 ### <a name="authorization_user_agent"></a>authorization_user_agent
@@ -143,15 +143,15 @@ URI перенаправления, зарегистрированный при 
 | `connect_timeout` | int | Нет | Время в миллисекундах |
 | `read_timeout` | int | Нет | Время в миллисекундах |
 
-### <a name="logging"></a>Ведение журналов
+### <a name="logging"></a>Ведение журнала
 
 Для ведения журнала используются следующие глобальные параметры.
 
 | Свойство | Тип данных  | Обязательно | Примечания |
 | ----------|-------------|-----------|---------|
-| `pii_enabled`  | boolean | Нет | Следует ли выдавать персональные данные |
+| `pii_enabled`  | Логическое | Нет | Следует ли выдавать персональные данные |
 | `log_level`   | Строка | Нет | Журнал вывода сообщений. Поддерживаемые уровни ведения журнала: `ERROR` ,, `WARNING` `INFO` и `VERBOSE` . |
-| `logcat_enabled` | boolean | Нет | Следует ли выводить журнал Cat в дополнение к интерфейсу ведения журнала |
+| `logcat_enabled` | Логическое | Нет | Следует ли выводить журнал Cat в дополнение к интерфейсу ведения журнала |
 
 ### <a name="account_mode"></a>account_mode
 

@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 08/11/2020
-ms.openlocfilehash: 56328500c1c220a04b3e2219c145ad5db0e07ff7
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: c066931cece60d14767b86254020ea5ba4bad1be
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/25/2020
-ms.locfileid: "88817865"
+ms.locfileid: "88854498"
 ---
 # <a name="support-lifecycle-for-azure-red-hat-openshift-4"></a>Жизненный цикл поддержки для Azure Red Hat OpenShift 4
 
@@ -97,9 +97,9 @@ Azure Red Hat OpenShift 4 поддерживает только стабильн
 
 |Версия OCP|Вышестоящий выпуск|Общая доступность Azure Red Hat OpenShift|Завершение срока службы|
 |-|-|-|-|
-|4.3|23 января 2020 г.|28 апреля 2020 г.|2 августа 2020 г.|
-|4.4.|5 мая, 2020|29 июля 2020 г.|4.6 (общедоступная версия)|
-|4,5|13 июля 2020 г.|28 сентября 2020 г.|4,7 ДЖ
+|4.3|Февраль 2020 г.|Май 2020 г.|Август 2020 г.|
+|4.4.|Май 2020 г.|Август 2020 г.|4.6 (общедоступная версия)|
+|4,5|Июль 2020 г.|Октябрь 2020 г.|4,7 ДЖ
 |4,6|* Раннее Q4, 2020|* Позднее Q4, 2020|4,8 ДЖ|
 
 \*_Подтверждение ожидающей вышестоящей даты выпуска._

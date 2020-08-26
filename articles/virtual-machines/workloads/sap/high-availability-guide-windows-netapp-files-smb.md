@@ -13,14 +13,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 10/29/2019
+ms.date: 08/12/2020
 ms.author: radeltch
-ms.openlocfilehash: b8b19b5bbb327c55b4f4103a133e77e73f0ae4bc
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: cd974377637f535383c4e099ac408bea88f887a4
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87088263"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88853112"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-windows-with-azure-netapp-filessmb-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure в Windows с Azure NetApp Files (SMB) для приложений SAP
 
@@ -101,7 +101,7 @@ ms.locfileid: "87088263"
 
 Общая папка для центральных служб SAP в этой эталонной архитектуре предлагается Azure NetApp Files:
 
-![Архитектура высокой доступности SAP ASCS/SCS с общим ресурсом SMB](./media/virtual-machines-shared-sap-high-availability-guide/high-availability-windows-azure-netapp-files-smb-detail.png)
+![Архитектура высокой доступности SAP ASCS/SCS со сведениями общего ресурса SMB](./media/virtual-machines-shared-sap-high-availability-guide/high-availability-windows-azure-netapp-files-smb-detail.png)
 
 ## <a name="create-and-mount-smb-volume-for-azure-netapp-files"></a>Создание и подключение тома SMB для Azure NetApp Files
 
@@ -112,8 +112,8 @@ ms.locfileid: "87088263"
 3. Настройте пул ресурсов, следуя инструкциям в разделе [Настройка пула ресурсов](../../../azure-netapp-files/azure-netapp-files-set-up-capacity-pool.md) .
 4. Azure NetApp Files ресурсы должны находиться в делегированной подсети. Следуйте инструкциям в разделе [Делегирование подсети, чтобы Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-delegate-subnet.md) создать делегированную подсеть.  
 
-> [!IMPORTANT]
-> Перед созданием тома SMB необходимо создать подключения Active Directory. Ознакомьтесь с [требованиями к Active Directoryным подключениям](../../../azure-netapp-files/azure-netapp-files-create-volumes-smb.md#requirements-for-active-directory-connections).  
+   > [!IMPORTANT]
+   > Перед созданием тома SMB необходимо создать подключения Active Directory. Ознакомьтесь с [требованиями к Active Directoryным подключениям](../../../azure-netapp-files/azure-netapp-files-create-volumes-smb.md#requirements-for-active-directory-connections).  
 
 5. Создайте подключение Active Directory, как описано в разделе [Создание подключения Active Directory](../../../azure-netapp-files/azure-netapp-files-create-volumes-smb.md#create-an-active-directory-connection) .  
 6. Создайте SMB Azure NetApp Files том SMB, следуя инструкциям в разделе [Добавление тома SMB](../../../azure-netapp-files/azure-netapp-files-create-volumes-smb.md#add-an-smb-volume) .  
@@ -124,15 +124,11 @@ ms.locfileid: "87088263"
 
 ## <a name="prepare-the-infrastructure-for-sap-ha-by-using-a-windows-failover-cluster"></a>Подготовка инфраструктуры для SAP высокого уровня доступности с помощью отказоустойчивого кластера Windows 
 
-1. [Задание требуемых IP-адресов DNS](./sap-high-availability-infrastructure-wsfc-shared-disk.md#b22d7b3b-4343-40ff-a319-097e13f62f9e)  
-2. [Задайте статические IP-адреса для виртуальных машин SAP](./sap-high-availability-infrastructure-wsfc-shared-disk.md#84c019fe-8c58-4dac-9e54-173efd4b2c30).
-3. [Задайте статический IP-адрес для внутреннего балансировщика нагрузки Azure](./sap-high-availability-infrastructure-wsfc-shared-disk.md#7a8f3e9b-0624-4051-9e41-b73fff816a9e).
-4. [Задайте правила балансировки нагрузки ASCS/SCS по умолчанию для внутренней подсистемы балансировки нагрузки Azure](./sap-high-availability-infrastructure-wsfc-shared-disk.md#f19bd997-154d-4583-a46e-7f5a69d0153c).
-5. [Измените правила балансировки нагрузки ASCS/SCS по умолчанию для внутреннего балансировщика нагрузки Azure](./sap-high-availability-infrastructure-wsfc-shared-disk.md#fe0bd8b5-2b43-45e3-8295-80bee5415716).
-6. [Добавление виртуальных машин Windows в домен](./sap-high-availability-infrastructure-wsfc-shared-disk.md#e69e9a34-4601-47a3-a41c-d2e11c626c0c).
-7. [Добавление записей реестра на обоих узлах кластера экземпляра SAP ASCS/SCS](./sap-high-availability-infrastructure-wsfc-shared-disk.md#661035b2-4d0f-4d31-86f8-dc0a50d78158)
-8. [Настройка отказоустойчивого кластера Windows Server для экземпляра SAP ASCS/SCS](./sap-high-availability-infrastructure-wsfc-shared-disk.md#0d67f090-7928-43e0-8772-5ccbf8f59aab)
-9. При использовании Windows Server 2016 рекомендуется настроить [Azure Cloud следящий](/windows-server/failover-clustering/deploy-cloud-witness).
+1. [Задайте правила балансировки нагрузки ASCS/SCS для внутреннего балансировщика нагрузки Azure](./sap-high-availability-infrastructure-wsfc-shared-disk.md#fe0bd8b5-2b43-45e3-8295-80bee5415716).
+2. [Добавление виртуальных машин Windows в домен](./sap-high-availability-infrastructure-wsfc-shared-disk.md#e69e9a34-4601-47a3-a41c-d2e11c626c0c).
+3. [Добавление записей реестра на обоих узлах кластера экземпляра SAP ASCS/SCS](./sap-high-availability-infrastructure-wsfc-shared-disk.md#661035b2-4d0f-4d31-86f8-dc0a50d78158)
+4. [Настройка отказоустойчивого кластера Windows Server для экземпляра SAP ASCS/SCS](./sap-high-availability-infrastructure-wsfc-shared-disk.md#0d67f090-7928-43e0-8772-5ccbf8f59aab)
+5. При использовании Windows Server 2016 рекомендуется настроить [Azure Cloud следящий](/windows-server/failover-clustering/deploy-cloud-witness).
 
 
 ## <a name="install-sap-ascs-instance-on-both-nodes"></a>Установка экземпляра SAP ASCS на обоих узлах
@@ -152,11 +148,11 @@ ms.locfileid: "87088263"
 2. Выберите **кластер общих** папок в качестве конфигурации общего ресурса кластера в SWPM.  
 3. При появлении запроса на шаге **Параметры кластера системы SAP**введите имя узла для Azure NetApp Files общего ресурса SMB, который вы уже создали как **имя узла общего файлового ресурса**.  В этом примере имя узла общего ресурса SMB — **анфсмб-9562**. 
 
-> [!IMPORTANT]
-> Если средство проверки готовности к установке SWPM показывает, что условие функции непрерывной доступности не выполнено, его можно устранить, следуя инструкциям в разделе [отложенные сообщения об ошибках при попытке доступа к общей папке, которая больше не существует в Windows](https://support.microsoft.com/help/2820470/delayed-error-message-when-you-try-to-access-a-shared-folder-that-no-l).  
+   > [!IMPORTANT]
+   > Если средство проверки готовности к установке SWPM показывает, что условие функции непрерывной доступности не выполнено, его можно устранить, следуя инструкциям в разделе [отложенные сообщения об ошибках при попытке доступа к общей папке, которая больше не существует в Windows](https://support.microsoft.com/help/2820470/delayed-error-message-when-you-try-to-access-a-shared-folder-that-no-l).  
 
-> [!TIP]
-> Если средство проверки готовности к установке SWPM отображает условие размера подкачки не выполнено, можно изменить размер подкачки, перейдя к Мой компьютер>свойства системы>параметры производительности> расширенный> виртуальной памяти> изменения.  
+   > [!TIP]
+   > Если средство проверки готовности к установке SWPM отображает условие размера подкачки не выполнено, можно изменить размер подкачки, перейдя к Мой компьютер>свойства системы>параметры производительности> расширенный> виртуальной памяти> изменения.  
 
 4. Настройте ресурс кластера SAP, `SAP-SID-IP` порт пробы, с помощью PowerShell. Выполните эту настройку на одном из узлов кластера SAP ASCS/SCS, как описано в разделе [Настройка порта пробы](./sap-high-availability-installation-wsfc-shared-disk.md#10822f4f-32e7-4871-b63a-9b86c76ce761).
 

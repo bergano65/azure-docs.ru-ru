@@ -8,12 +8,12 @@ ms.date: 05/11/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 4f49d4e78cd58d16627a0b6fda1957baa9f1f085
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 4c005bc49780edcb7f322455e37163e78d87619f
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88752083"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88852687"
 ---
 # <a name="using-azure-ultra-disks"></a>Использование Ultra дисков Azure
 
@@ -128,7 +128,7 @@ UltraSSDAvailable                            True
 
 ## <a name="deploy-an-ultra-disk-using-the-azure-portal"></a>Развертывание Ultra Disk с помощью портал Azure
 
-В этом разделе описывается развертывание виртуальной машины, оснащенной диском Ultra, в качестве диска данных. Предполагается, что вы знакомы с развертыванием виртуальной машины. Если этого не сделать, ознакомьтесь с нашим [кратким руководством по созданию виртуальной машины Windows на портал Azure](~/articles/virtual-machines/windows/quick-create-portal.md).
+В этом разделе описывается развертывание виртуальной машины, оснащенной диском Ultra, в качестве диска данных. Предполагается, что вы знакомы с развертыванием виртуальной машины. Если этого не сделать, ознакомьтесь с нашим [кратким руководством по созданию виртуальной машины Windows на портал Azure](./windows/quick-create-portal.md).
 
 - Войдите в [портал Azure](https://portal.azure.com/) и перейдите к разделу развертывание виртуальной машины (ВМ).
 - Обязательно выберите [поддерживаемый размер и регион виртуальной машины](#ga-scope-and-limitations).
@@ -164,7 +164,7 @@ UltraSSDAvailable                            True
 
 ![ultra-options-yes-enable.png](media/virtual-machines-disks-getting-started-ultra-ssd/ultra-options-yes-enable.png)
 
-- Нажмите кнопку **Сохранить**.
+- Щелкните **Сохранить**.
 - Выберите **Добавить диск данных** , а затем в раскрывающемся списке **имя** выберите **создать диск**.
 
 ![create-and-attach-new-ultra-disk.png](media/virtual-machines-disks-getting-started-ultra-ssd/create-and-attach-new-ultra-disk.png)
@@ -190,7 +190,7 @@ Ultra Disks предлагает уникальную возможность, п
 ![selecting-ultra-disk-to-modify.png](media/virtual-machines-disks-getting-started-ultra-ssd/selecting-ultra-disk-to-modify.png)
 
 - Выберите **Конфигурация** и внесите необходимые изменения.
-- Нажмите кнопку **Сохранить**.
+- Щелкните **Сохранить**.
 
 ![configuring-ultra-disk-performance-and-size.png](media/virtual-machines-disks-getting-started-ultra-ssd/configuring-ultra-disk-performance-and-size.png)
 

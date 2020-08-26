@@ -12,14 +12,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 04/22/2020
+ms.date: 08/25/2020
 ms.assetid: 3cd520fd-eaf7-4ef9-b4d3-4827057e5028
-ms.openlocfilehash: 944abc62f25473ea52836af7dc1fdcd1e16d9269
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 15ece836e172b8316222ea606ca638650795d5d7
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82120786"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88852593"
 ---
 # <a name="issues-using-vm-extensions-in-python-3-enabled-linux-azure-virtual-machines-systems"></a>Проблемы с использованием расширений виртуальной машины в системах на виртуальных машинах Linux с поддержкой Python 3
 
@@ -28,7 +28,7 @@ ms.locfileid: "82120786"
 >
 > Перед установкой **Python 2. x** в рабочей среде рассмотрите вопрос долгосрочной поддержки Python 2. x, в частности их возможности получения обновлений для системы безопасности. Как продукты, включая некоторые из упомянутых расширений, обновляются с поддержкой **python 3,8** , следует прекратить использование Python 2. x.
 
-Некоторые дистрибутивы Linux перешли на Python 3,8 и удалили устаревшую `/usr/bin/python` точку входа для Python. Этот переход влияет на встроенное автоматическое развертывание определенных расширений виртуальной машины (ВМ) со следующими условиями:
+Некоторые дистрибутивы Linux перешли на Python 3,8 и удалили устаревшую `/usr/bin/python` точку входа для Python. Этот переход влияет на встроенное автоматизированное развертывание определенных расширений виртуальной машины с помощью следующих двух условий:
 
 - Расширения, которые все еще переходят в поддержку Python 3. x
 - Расширения, использующие устаревшую `/usr/bin/python` точку входа
@@ -43,50 +43,52 @@ ms.locfileid: "82120786"
 
 ## <a name="resolution"></a>Решение
 
-Перед развертыванием расширений в известных сценариях, описанных выше в сводке, учитывайте следующие общие рекомендации.
+Рассмотрите эти общие рекомендации перед развертыванием расширений в сценариях, которые описаны ранее в сводке.
 
-1.  Перед развертыванием расширения возобновите `/usr/bin/python` символьную ссылку с помощью предоставляемого поставщиком дистрибутива Linux метода.
+1. Перед развертыванием расширения возобновите `/usr/bin/python` символьную ссылку с помощью предоставляемого поставщиком дистрибутива Linux метода.
 
-    - Например, для **Python 2,7**используйте:`sudo apt update && sudo apt install python-is-python2`
+   - Например, для **Python 2,7**используйте: `sudo apt update && sudo apt install python-is-python2`
 
-2.  Если вы уже развернули экземпляр, в котором возникла эта проблема, используйте функцию **запуска команды** в **колонке виртуальной машины** для выполнения указанных выше команд. Переход на Python 3,8 не влияет на само расширение выполнения команды.
+1. Эта рекомендация предназначена для клиентов Azure и не поддерживается в Azure Stack:
 
-3.  Если вы развертываете новый экземпляр и вам нужно задать расширение во время подготовки, используйте пользовательские данные **Cloud-init** для установки пакетов, упомянутых выше.
+   - Если вы уже развернули экземпляр, в котором возникла эта проблема, используйте функцию запуска команды в колонке виртуальной машины для выполнения указанных выше команд. Переход на Python 3,8 не влияет на само расширение выполнения команды.
 
-    Например, для Python 2,7:
+1. Если вы развертываете новый экземпляр и вам нужно задать расширение во время подготовки, используйте пользовательские данные **Cloud-init** для установки пакетов, упомянутых выше.
 
-    ```
-    # create cloud-init config
-    cat > cloudinitConfig.json <<EOF
-    #cloud-config
-    package_update: true
+   Например, для Python 2,7:
+
+   ```python
+   # create cloud-init config
+   cat > cloudinitConfig.json <<EOF
+   #cloud-config
+   package_update: true
     
-    runcmd:
-    - sudo apt update
-    - sudo apt install python-is-python2 
-    EOF
-    
-    # create VM
-    az vm create \
-        --resource-group <resourceGroupName> \
-        --name <vmName> \
-        --image <Ubuntu 20.04 Image URN> \
-        --admin-username azadmin \
-        --ssh-key-value "<sshPubKey>" \
-        --custom-data ./cloudinitConfig.json
-    ```
+   runcmd:
+   - sudo apt update
+   - sudo apt install python-is-python2 
+   EOF
 
-4.  Если администраторы политики Организации определяют, что расширения не должны развертываться на виртуальных машинах, можно отключить поддержку расширения во время подготовки.
+   # create VM
+   az vm create \
+       --resource-group <resourceGroupName> \
+       --name <vmName> \
+       --image <Ubuntu 20.04 Image URN> \
+       --admin-username azadmin \
+       --ssh-key-value "<sshPubKey>" \
+       --custom-data ./cloudinitConfig.json
+   ```
 
-    - REST API
+1. Если администраторы политики Организации определяют, что расширения не должны развертываться на виртуальных машинах, можно отключить поддержку расширения во время подготовки.
 
-      Отключение и Включение расширений при развертывании виртуальной машины с помощью этого свойства:
+   - REST API
 
-      ```
-        "osProfile": {
-          "allowExtensionOperations": false
-        },
-      ```
+     Отключение и Включение расширений при развертывании виртуальной машины с помощью этого свойства:
+
+     ```python
+       "osProfile": {
+         "allowExtensionOperations": false
+       },
+     ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

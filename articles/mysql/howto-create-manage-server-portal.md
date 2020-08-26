@@ -6,20 +6,23 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: d2fba3666e4e35c4f8492b0017f859c0bb80a160
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: dfca1eb2eebe4418880be9da67e250bbc6e380a9
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86120608"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88852182"
 ---
 # <a name="manage-an-azure-database-for-mysql-server-using-the-azure-portal"></a>Управление базой данных Azure для сервера MySQL с помощью портал Azure
+
 В этой статье показано, как управлять базой данных Azure для серверов MySQL. Задачи управления включают в себя вычисление и масштабирование хранилища, сброс пароля администратора и Просмотр сведений о сервере.
 
-## <a name="sign-in"></a>Войти
+## <a name="sign-in"></a>Вход
+
 Войдите на [портал Azure](https://portal.azure.com).
 
 ## <a name="create-a-server"></a>Создание сервера
+
 Ознакомьтесь с [кратким](quickstart-create-mysql-server-database-using-azure-portal.md) руководством, чтобы узнать, как создать и приступить к работе с сервером базы данных Azure для MySQL.
 
 ## <a name="scale-compute-and-storage"></a>Масштабирование вычислений и хранилища
@@ -28,19 +31,18 @@ ms.locfileid: "86120608"
 
 ### <a name="scale-between-general-purpose-and-memory-optimized-tiers"></a>Масштабирование между уровнями общего назначения и оптимизированной для памяти
 
-Можно масштабировать из общего назначения в оптимизированную для памяти и наоборот. Переход на базовый уровень и с него после создания сервера не поддерживается. 
+Можно масштабировать из общего назначения в оптимизированную для памяти и наоборот. Переход на базовый уровень и с него после создания сервера не поддерживается.
 
 1. Выберите сервер в портал Azure. Выберите **ценовую категорию**, расположенную в разделе **Параметры** .
 
-2. Выберите **общего назначения** или **оптимизировать память**в зависимости от того, что вы масштабируете. 
+2. Выберите **общего назначения** или **оптимизировать память**в зависимости от того, что вы масштабируете.
 
-    ![изменение ценовой категории](./media/howto-create-manage-server-portal/change-pricing-tier.png)
+   ![Снимок экрана портал Azure для выбора уровня "базовый", "общего назначения" или "оптимизировано для памяти" в базе данных Azure для MySQL](./media/howto-create-manage-server-portal/change-pricing-tier.png)
 
-    > [!NOTE]
-    > Изменение уровней приводит к перезапуску сервера.
+   > [!NOTE]
+   > Изменение уровней приводит к перезапуску сервера.
 
-4. Нажмите кнопку **ОК** , чтобы сохранить изменения.
-
+3. Нажмите кнопку **ОК** , чтобы сохранить изменения.
 
 ### <a name="scale-vcores-up-or-down"></a>Масштабирование виртуальных ядер вверх или вниз
 
@@ -48,13 +50,12 @@ ms.locfileid: "86120608"
 
 2. Измените параметр **Виртуальное ядро**, переместив ползунок на нужное значение.
 
-    ![Масштабирование вычислений](./media/howto-create-manage-server-portal/scaling-compute.png)
+    ![Снимок экрана портал Azure выбор параметра Виртуальное ядро в базе данных Azure для MySQL](./media/howto-create-manage-server-portal/scaling-compute.png)
 
     > [!NOTE]
     > Масштабирование виртуальных ядер приводит к перезапуску сервера.
 
 3. Нажмите кнопку **ОК** , чтобы сохранить изменения.
-
 
 ### <a name="scale-storage-up"></a>Масштабирование хранилища
 
@@ -62,46 +63,45 @@ ms.locfileid: "86120608"
 
 2. Измените параметр **хранилища** , переместив ползунок вверх до нужного значения.
 
-    ![Масштабирование хранилища](./media/howto-create-manage-server-portal/scaling-storage.png)
+   ![Снимок экрана портал Azure выбор масштаба хранилища в базе данных Azure для MySQL](./media/howto-create-manage-server-portal/scaling-storage.png)
 
-    > [!NOTE]
-    > Невозможно масштабировать хранилище.
+   > [!NOTE]
+   > Невозможно масштабировать хранилище.
 
 3. Нажмите кнопку **ОК** , чтобы сохранить изменения.
 
-
 ## <a name="update-admin-password"></a>Обновление пароля администратора
+
 Пароль роли администратора можно изменить с помощью портал Azure.
 
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Сброс пароля**.
 
-   ![общие сведения](./media/howto-create-manage-server-portal/overview-reset-password.png)
+   ![Снимок экрана портал Azure сброс пароля в базе данных Azure для MySQL](./media/howto-create-manage-server-portal/overview-reset-password.png)
 
 2. Введите новый пароль и подтвердите его. В текстовом поле будет предложено ввести требования к сложности пароля.
 
-   ![Сброс пароля](./media/howto-create-manage-server-portal/reset-password.png)
+   ![Снимок экрана портал Azure сброса пароля и сохранения в базе данных Azure для MySQL](./media/howto-create-manage-server-portal/reset-password.png)
 
 3. Нажмите кнопку **ОК** , чтобы сохранить новый пароль.
 
-
 ## <a name="delete-a-server"></a>Удаление сервера
 
-Вы можете удалить сервер, если он больше не нужен. 
+Вы можете удалить сервер, если он больше не нужен.
 
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Удалить**.
 
-    ![удалить](./media/howto-create-manage-server-portal/overview-delete.png)
+   ![Снимок экрана портал Azure для удаления сервера в базе данных Azure для MySQL](./media/howto-create-manage-server-portal/overview-delete.png)
 
 2. Введите имя сервера в поле ввода, чтобы убедиться, что это сервер, который требуется удалить.
 
-    ![Подтверждение удаления](./media/howto-create-manage-server-portal/confirm-delete.png)
+   ![Снимок экрана портал Azure для подтверждения удаления сервера в базе данных Azure для MySQL](./media/howto-create-manage-server-portal/confirm-delete.png)
 
-    > [!NOTE]
-    > Удаление сервера необратимо.
+   > [!NOTE]
+   > Удаление сервера необратимо.
 
 3. Выберите команду **Удалить**.
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
+
 - Сведения о [резервном копировании и восстановлении сервера](howto-restore-server-portal.md)
 - Сведения о [параметрах настройки и мониторинга в службе "база данных Azure для MySQL](concepts-monitoring.md) "

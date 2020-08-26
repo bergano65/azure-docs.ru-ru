@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.author: aahi
-ms.openlocfilehash: 1a5f7dcd37a970d5e039ebc38f1059839424ff68
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.openlocfilehash: 06c36b3f3939c8804149448ecb770a22d658fcbf
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88192024"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88854729"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
@@ -28,6 +28,7 @@ API анализа текста обновляется на постоянной
 * Версия модели `2020-07-01` для v3 `/keyphrases` , `/pii` а также `/languages` конечные точки, которые добавляют:
     * Дополнительные [категории сущностей](named-entity-types.md?tabs=personal) для государственных организаций и страны для распознавания именованных сущностей.
 * Теперь будет возвращена ошибка HTTP 400 для запросов API V3, превышающих [пределы](concepts/data-limits.md)опубликованных данных. 
+* Конечные точки, которые возвращают смещение, теперь поддерживают необязательный `stringIndexType` параметр, который корректирует возвращаемые `offset` `length` значения и в соответствии с поддерживаемой [схемой индексов строк](concepts/text-offsets.md).
 
 ### <a name="text-analytics-for-health-container-august-updates"></a>Анализ текста обновлений для контейнера работоспособности за Август
 
@@ -146,7 +147,7 @@ API анализа текста v3 теперь общедоступен со с
 
 * Распознавание следующих типов сущностей личных сведений (только на английском языке):
     * Модель Person
-    * Организация
+    * План
     * Возраст в качестве подтипа по количеству
     * Дата в качестве подтипа в разделе DateTime
     * Адрес электронной почты 
@@ -187,9 +188,9 @@ API анализа текста v3 теперь общедоступен со с
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о анализ тональности v3](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Что такое API "Анализ текста"?](overview.md)  
+* [Что такое API анализа текста?](overview.md)  
 * [Примеры пользовательских сценариев](text-analytics-user-scenarios.md)
 * [Пример. Как определить тональность с помощью Анализа текста](how-tos/text-analytics-how-to-sentiment-analysis.md)
 * [Пример. Как определить язык с помощью Анализа текста](how-tos/text-analytics-how-to-language-detection.md)

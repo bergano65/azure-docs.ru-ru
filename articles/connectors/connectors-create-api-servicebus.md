@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: conceptual
 ms.date: 07/31/2020
 tags: connectors
-ms.openlocfilehash: d02467fddcce77340b9845fe084bf5a2fb8b01f3
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 13732c6d31f19dfb2548154feb8336a1dff3a529
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/25/2020
-ms.locfileid: "88815749"
+ms.locfileid: "88853290"
 ---
 # <a name="exchange-messages-in-the-cloud-by-using-azure-logic-apps-and-azure-service-bus"></a>Обмен сообщениями в облаке с помощью Azure Logic Apps и служебной шины Azure
 
@@ -85,23 +85,23 @@ ms.locfileid: "88815749"
 
    1. Укажите имя для подключения и выберите нужное пространство имен служебной шины.
 
-      ![Создание подключения к служебной шине, часть 1](./media/connectors-create-api-azure-service-bus/create-service-bus-connection-trigger-1.png)
+      ![Снимок экрана, показывающий имя подключения и выбор пространства имен служебной шины](./media/connectors-create-api-azure-service-bus/create-service-bus-connection-trigger-1.png)
 
       Чтобы вместо этого ввести строку подключения вручную, выберите **вручную ввести сведения о подключении**. Если у вас нет строки подключения, узнайте, [как ее найти](#permissions-connection-string).
 
    1. Выберите политику служебной шины и нажмите кнопку **создать**.
 
-      ![Создание подключения к служебной шине, часть 2](./media/connectors-create-api-azure-service-bus/create-service-bus-connection-trigger-2.png)
+      ![Снимок экрана, на котором показано, как выбрать политику служебной шины](./media/connectors-create-api-azure-service-bus/create-service-bus-connection-trigger-2.png)
 
    1. Выберите нужную сущность обмена сообщениями, например очередь или раздел. В этом примере выберите свою очередь служебной шины.
    
-      ![Выбор очереди служебной шины](./media/connectors-create-api-azure-service-bus/service-bus-select-queue-trigger.png)
+      ![Снимок экрана, на котором показано, как выбрать очередь служебной шины](./media/connectors-create-api-azure-service-bus/service-bus-select-queue-trigger.png)
 
 1. Укажите необходимые сведения для выбранного триггера. Чтобы добавить другие доступные свойства к действию, откройте список **Добавить новый параметр** и выберите нужные свойства.
 
    Для триггера этого примера выберите интервал опроса и частоту проверки очереди.
 
-   ![Настройка интервала опроса](./media/connectors-create-api-azure-service-bus/service-bus-trigger-details.png)
+   ![Снимок экрана, на котором показан параметр интервала опроса триггера служебной шины](./media/connectors-create-api-azure-service-bus/service-bus-trigger-details.png)
 
    Дополнительные сведения о доступных триггерах и свойствах см. на [странице справочника](/connectors/servicebus/)по соединителю.
 
@@ -123,29 +123,29 @@ ms.locfileid: "88815749"
 
    В этом примере выберите действие **Отправить сообщение** .
 
-   ![Выбор действия служебной шины](./media/connectors-create-api-azure-service-bus/select-service-bus-send-message-action.png) 
+   ![Снимок экрана, на котором показано, как выбрать действие служебной шины](./media/connectors-create-api-azure-service-bus/select-service-bus-send-message-action.png) 
 
 1. Если ваше действие подключается к пространству имен служебной шины в первый раз, выполните следующие действия, когда конструктор приложений логики запросит сведения о подключении.
 
    1. Укажите имя для подключения и выберите нужное пространство имен служебной шины.
 
-      ![Создание подключения к служебной шине, часть 1](./media/connectors-create-api-azure-service-bus/create-service-bus-connection-action-1.png)
+      ![Снимок экрана, показывающий имя подключения и выбор пространства имен служебной шины](./media/connectors-create-api-azure-service-bus/create-service-bus-connection-action-1.png)
 
       Чтобы вместо этого ввести строку подключения вручную, выберите **вручную ввести сведения о подключении**. Если у вас нет строки подключения, узнайте, [как ее найти](#permissions-connection-string).
 
    1. Выберите политику служебной шины и нажмите кнопку **создать**.
 
-      ![Создание подключения к служебной шине, часть 2](./media/connectors-create-api-azure-service-bus/create-service-bus-connection-action-2.png)
+      ![Снимок экрана, на котором показано, как выбрать политику служебной шины и нажать кнопку "создать"](./media/connectors-create-api-azure-service-bus/create-service-bus-connection-action-2.png)
 
    1. Выберите нужную сущность обмена сообщениями, например очередь или раздел. В этом примере выберите свою очередь служебной шины.
 
-      ![Выбор очереди служебной шины](./media/connectors-create-api-azure-service-bus/service-bus-select-queue-action.png)
+      ![Снимок экрана, на котором показано, как выбрать очередь служебной шины](./media/connectors-create-api-azure-service-bus/service-bus-select-queue-action.png)
 
 1. Укажите необходимые сведения для выбранного действия. Чтобы добавить другие доступные свойства к действию, откройте список **Добавить новый параметр** и выберите нужные свойства.
 
    Например, выберите свойства **содержимое** и **тип содержимого** , чтобы добавить их в действие. Затем укажите содержимое сообщения, которое необходимо отправить.
 
-   ![Указание содержимого сообщения и сведений](./media/connectors-create-api-azure-service-bus/service-bus-send-message-details.png)
+   ![Снимок экрана, показывающий тип содержимого сообщения и сведения](./media/connectors-create-api-azure-service-bus/service-bus-send-message-details.png)
 
    Дополнительные сведения о доступных действиях и их свойствах см. на [странице справочника](/connectors/servicebus/)по соединителю.
 

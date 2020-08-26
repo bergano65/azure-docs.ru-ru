@@ -2,17 +2,20 @@
 title: Безопасное развертывание шаблона с маркером SAS
 description: Развертывание ресурсов в Azure с помощью шаблона Azure Resource Manager, защищенного маркером SAS. Показывает Azure PowerShell и Azure CLI.
 ms.topic: conceptual
-ms.date: 08/14/2019
-ms.openlocfilehash: 42eaae316d4fd0575102323933f849a3058228a6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/25/2020
+ms.openlocfilehash: 8b35e82da8ebca98ec9fe1fb7441612bf61fb142
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80156401"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855658"
 ---
 # <a name="deploy-private-arm-template-with-sas-token"></a>Развертывание закрытого шаблона ARM с маркером SAS
 
-Если шаблон Azure Resource Manager (ARM) находится в учетной записи хранения, можно ограничить доступ к шаблону, чтобы не предоставлять его открытым. Доступ к защищенному шаблону осуществляется путем создания маркера подписанного URL-адрес (SAS) для шаблона и предоставления маркера во время развертывания. В этой статье объясняется, как использовать Azure PowerShell или Azure CLI для развертывания шаблона с маркером SAS.
+Если шаблон Azure Resource Manager (шаблон ARM) находится в учетной записи хранения, можно ограничить доступ к шаблону, чтобы не предоставлять его открытым. Доступ к защищенному шаблону осуществляется путем создания маркера подписанного URL-адрес (SAS) для шаблона и предоставления маркера во время развертывания. В этой статье объясняется, как использовать Azure PowerShell или Azure CLI для развертывания шаблона с маркером SAS.
+
+> [!IMPORTANT]
+> Вместо защиты шаблона с помощью маркера SAS рассмотрите возможность использования [спецификаций шаблонов](template-specs.md). С помощью спецификаций шаблонов можно предоставить общий доступ к шаблонам другим пользователям в Организации и управлять доступом к шаблонам с помощью Azure RBAC.
 
 ## <a name="create-storage-account-with-secured-container"></a>Создание учетной записи хранения с защищенным контейнером
 
@@ -110,6 +113,8 @@ New-AzResourceGroupDeployment `
 ```
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Следующий пример работает с окружением Bash в Cloud Shell. В других средах может потребоваться другой синтаксис для создания срока действия маркера SAS.
 
 ```azurecli-interactive
 expiretime=$(date -u -d '30 minutes' +%Y-%m-%dT%H:%MZ)

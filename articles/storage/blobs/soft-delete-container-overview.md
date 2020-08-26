@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 08/10/2020
+ms.date: 08/25/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: references_regions
-ms.openlocfilehash: 47582f941c314933baf378478b1380cb8316935b
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 60c7ac6a86c963a4a133f06ba6d9d602cb9090d0
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88066616"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88854541"
 ---
 # <a name="soft-delete-for-containers-preview"></a>Обратимое удаление для контейнеров (Предварительная версия)
 
@@ -27,8 +27,8 @@ ms.locfileid: "88066616"
 - Обратимое удаление BLOB-объектов для защиты от случайного удаления или перезаписи отдельного большого двоичного объекта. Сведения о включении обратимого удаления BLOB-объектов см. в статье [обратимое удаление для больших двоичных объектов](soft-delete-blob-overview.md).
 - Управление версиями BLOB-объектов (Предварительная версия) для автоматического обслуживания предыдущих версий большого двоичного объекта. Если управление версиями BLOB-объектов включено, можно восстановить более раннюю версию большого двоичного объекта, чтобы восстановить данные, если они ошибочно изменены или удалены. Сведения о включении управления версиями BLOB-объектов см. в разделе [Включение управления версиями BLOB-объектов и управление ими](versioning-enable.md).
 
-> [!IMPORTANT]
-> Чтобы предотвратить случайное удаление учетной записи хранения, Настройте блокировку **CannotDelete** для ресурса учетной записи хранения. Дополнительные сведения о блокировке ресурсов Azure см. [в разделе Блокировка ресурсов для предотвращения непредвиденных изменений](../../azure-resource-manager/management/lock-resources.md).
+> [!WARNING]
+> Удаление учетной записи хранения невозможно отменить. Обратимое удаление не защищает от удаления учетной записи хранения. Чтобы предотвратить случайное удаление учетной записи хранения, Настройте блокировку **CannotDelete** для ресурса учетной записи хранения. Дополнительные сведения о блокировке ресурсов Azure см. [в разделе Блокировка ресурсов для предотвращения непредвиденных изменений](../../azure-resource-manager/management/lock-resources.md).
 
 ## <a name="how-container-soft-delete-works"></a>Как работает обратимое удаление контейнера
 
@@ -122,5 +122,5 @@ az feature show --namespace Microsoft.Storage --name ContainerSoftDelete
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка обратимого удаления контейнера](soft-delete-container-enable.md)
-- [Обратимое удаление больших двоичных объектов](soft-delete-blob-overview.md)
+- [Обратимое удаление для больших двоичных объектов](soft-delete-blob-overview.md)
 - [Управление версиями BLOB-объектов (предварительная версия)](versioning-overview.md)

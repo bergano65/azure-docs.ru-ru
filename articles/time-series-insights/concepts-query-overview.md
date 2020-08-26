@@ -8,18 +8,18 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 08/12/2020
+ms.date: 08/25/2020
 ms.custom: seodec18
-ms.openlocfilehash: 61c969bc0c0ac9731ae35e445b82db633c3c5191
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: cbf1c678307d76361e6083f4e2231fb9e48a112f
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88163175"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855154"
 ---
 # <a name="querying-data-from-azure-time-series-insights-gen2"></a>Запрос данных из Gen2 службы "аналитика временных рядов Azure"
 
-Gen2 "аналитика временных рядов Azure" позволяет выполнять запросы данных о событиях и метаданных, хранящихся в среде, через API-интерфейсы общедоступной поверхности. Эти API-интерфейсы также используются в [обозревателе Gen2 "аналитика временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-explorer)".
+Gen2 "аналитика временных рядов Azure" позволяет выполнять запросы данных о событиях и метаданных, хранящихся в среде, через API-интерфейсы общедоступной поверхности. Эти API-интерфейсы также используются в [ОБОЗРЕВАТЕЛЕ TSI "аналитика временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-explorer)".
 
 В Gen2 "аналитика временных рядов Azure" доступны три основные категории API:
 
@@ -73,4 +73,4 @@ Gen2 "аналитика временных рядов Azure" используе
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о различных переменных, которые могут быть определены в [модели временных рядов](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-tsm).
-* Узнайте больше о том, как запрашивать данные из [обозревателя "аналитика временных рядов Azure Gen2](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-explorer)".
+* Узнайте больше о том, как запрашивать данные из [обозревателя "аналитика временных рядов Azure TSI](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-explorer)".

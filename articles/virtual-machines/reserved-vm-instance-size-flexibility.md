@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 08/03/2018
 ms.author: manshuk
-ms.openlocfilehash: 05119a6f9af935a0f4a2887eae53f3d5bdb1a482
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 381023a0650b078a74c01ff7b698aebacb256147
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88658281"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855509"
 ---
 # <a name="virtual-machine-size-flexibility-with-reserved-vm-instances"></a>Гибкость размеров виртуальных машин при использовании зарезервированных экземпляров виртуальных машин
 
-При покупке зарезервированного экземпляра виртуальной машины можно выбрать оптимизацию для гибкости размера экземпляра или приоритета емкости. Дополнительные сведения о настройке и изменении параметров оптимизации для зарезервированных экземпляров виртуальных машин см. [в разделе Изменение параметра оптимизации для зарезервированных экземпляров виртуальных машин](~/articles/cost-management-billing/reservations/manage-reserved-vm-instance.md#change-optimize-setting-for-reserved-vm-instances).
+При покупке зарезервированного экземпляра виртуальной машины можно выбрать оптимизацию для гибкости размера экземпляра или приоритета емкости. Дополнительные сведения о настройке и изменении параметров оптимизации для зарезервированных экземпляров виртуальных машин см. [в разделе Изменение параметра оптимизации для зарезервированных экземпляров виртуальных машин](../cost-management-billing/reservations/manage-reserved-vm-instance.md#change-optimize-setting-for-reserved-vm-instances).
 
 При использовании зарезервированного экземпляра виртуальной машины, оптимизированного для гибкости размера экземпляра, приобретаемое резервирование можно применить к размерам виртуальных машин в одной группе гибкости размера экземпляра. Например, если вы приобретаете резервирование для размера виртуальной машины, указанного в серии DSv2, например Standard_DS5_v2, скидка на резервирование может применяться к четырем размерам, перечисленным в этой группе гибкости размера экземпляра:
 
@@ -52,4 +52,4 @@ ms.locfileid: "88658281"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в статье [что такое резервирование Azure](~/articles/cost-management-billing/reservations/save-compute-costs-reservations.md).
+Дополнительные сведения см. в статье [что такое резервирование Azure](../cost-management-billing/reservations/save-compute-costs-reservations.md).

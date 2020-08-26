@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
-ms.openlocfilehash: b0415542d737fa2ab926eb572855dce5ef81690e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 11fa99acda5f1c8edac3026961c426257bb74d92
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84808838"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88853675"
 ---
 # <a name="get-started-with-azure-queue-storage-using-net"></a>Приступая к работе с хранилищем очередей Azure с помощью .NET
 
@@ -27,7 +27,7 @@ ms.locfileid: "84808838"
 
 **Предполагаемое время выполнения:** 45 минут.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Обязательные условия
 
 - [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 - [Общая клиентская библиотека службы хранилища Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/)
@@ -49,7 +49,7 @@ ms.locfileid: "84808838"
 
 1. Выберите **файл**  >  **создать**  >  **проект**
 2. Выбор **платформ**  >  **Windows**
-3. Выберите **Консольное приложение (.NET Framework)**.
+3. Выбор **консольного приложения (.NET Framework)**
 4. Щелкните **Далее**.
 5. В поле **имя проекта** введите имя приложения.
 6. Нажмите кнопку **Создать**
@@ -69,7 +69,7 @@ ms.locfileid: "84808838"
 - [Библиотека очередей службы хранилища Azure для .NET](https://www.nuget.org/packages/Azure.Storage.Queues/): Этот пакет позволяет работать с служба очередей хранилища Azure для хранения сообщений, к которым клиент может получить доступ.
 - [Библиотека Configuration Manager для .NET](https://www.nuget.org/packages/System.Configuration.ConfigurationManager/): Этот пакет предоставляет доступ к файлам конфигурации для клиентских приложений.
 
-Для получения этих пакетов можно использовать NuGet. Выполните следующие действия.
+Для получения этих пакетов можно использовать NuGet. Выполните следующие действия:
 
 1. Щелкните правой кнопкой мыши проект в **Обозреватель решений**и выберите **Управление пакетами NuGet**.
 1. Нажмите кнопку **Обзор** .
@@ -84,7 +84,7 @@ ms.locfileid: "84808838"
 - [Библиотека очереди служба хранилища Microsoft Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Queue/): Эта клиентская библиотека позволяет работать с Служба хранилища Microsoft Azure служба очередей для хранения сообщений, доступ к которым может получить клиент.
 - [Библиотека Microsoft Azure Configuration Manager для .NET](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/) — этот пакет предоставляет класс для анализа строки подключения в файле конфигурации независимо от среды выполнения приложения.
 
-Для получения этих пакетов можно использовать NuGet. Выполните следующие действия.
+Для получения этих пакетов можно использовать NuGet. Выполните следующие действия:
 
 1. Щелкните правой кнопкой мыши проект в **Обозреватель решений**и выберите **Управление пакетами NuGet**.
 1. Нажмите кнопку **Обзор** .
@@ -154,6 +154,8 @@ ms.locfileid: "84808838"
 ```
 
 ### <a name="add-using-directives"></a>Добавление директив using
+
+[!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
 Добавьте в верхнюю часть файла `Program.cs` следующие директивы `using`:
 
@@ -489,7 +491,7 @@ queue.Delete();
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 

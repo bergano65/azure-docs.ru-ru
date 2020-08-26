@@ -6,20 +6,23 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 11/20/2019
-ms.openlocfilehash: d6cdef248663504a674f47eea2a8031b643f68a0
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 908a61a00f0e33016074a6f985271ac94157fdf4
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86102401"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88854998"
 ---
 # <a name="manage-an-azure-database-for-postgresql-server-using-the-azure-portal"></a>Управление базой данных Azure для сервера PostgreSQL с помощью портал Azure
+
 В этой статье показано, как управлять базой данных Azure для серверов PostgreSQL. Задачи управления включают в себя вычисление и масштабирование хранилища, сброс пароля администратора и Просмотр сведений о сервере.
 
-## <a name="sign-in"></a>Войти
+## <a name="sign-in"></a>Вход
+
 Войдите на [портал Azure](https://portal.azure.com).
 
 ## <a name="create-a-server"></a>Создание сервера
+
 Чтобы узнать, как создать и начать работу с сервером базы данных Azure для PostgreSQL, ознакомьтесь с [кратким](quickstart-create-server-database-portal.md) руководством.
 
 ## <a name="scale-compute-and-storage"></a>Масштабирование вычислений и хранилища
@@ -28,19 +31,18 @@ ms.locfileid: "86102401"
 
 ### <a name="scale-between-general-purpose-and-memory-optimized-tiers"></a>Масштабирование между уровнями общего назначения и оптимизированной для памяти
 
-Можно масштабировать из общего назначения в оптимизированную для памяти и наоборот. Переход на базовый уровень и с него после создания сервера не поддерживается. 
+Можно масштабировать из общего назначения в оптимизированную для памяти и наоборот. Переход на базовый уровень и с него после создания сервера не поддерживается.
 
 1. Выберите сервер в портал Azure. Выберите **ценовую категорию**, расположенную в разделе **Параметры** .
 
-2. Выберите **общего назначения** или **оптимизировать память**в зависимости от того, что вы масштабируете. 
+2. Выберите **общего назначения** или **оптимизировать память**в зависимости от того, что вы масштабируете.
 
-    ![изменение ценовой категории](./media/howto-create-manage-server-portal/change-pricing-tier.png)
+   ![Снимок экрана портал Azure для выбора уровня "базовый", "общего назначения" или "оптимизировано для памяти" в базе данных Azure для PostgreSQL](./media/howto-create-manage-server-portal/change-pricing-tier.png)
 
-    > [!NOTE]
-    > Изменение уровней приводит к перезапуску сервера.
+   > [!NOTE]
+   > Изменение уровней приводит к перезапуску сервера.
 
-4. Нажмите кнопку **ОК** , чтобы сохранить изменения.
-
+3. Нажмите кнопку **ОК** , чтобы сохранить изменения.
 
 ### <a name="scale-vcores-up-or-down"></a>Масштабирование виртуальных ядер вверх или вниз
 
@@ -48,13 +50,12 @@ ms.locfileid: "86102401"
 
 2. Измените параметр **Виртуальное ядро**, переместив ползунок на нужное значение.
 
-    ![Масштабирование вычислений](./media/howto-create-manage-server-portal/scaling-compute.png)
+   ![Снимок экрана портал Azure выбор параметра Виртуальное ядро в базе данных Azure для PostgreSQL](./media/howto-create-manage-server-portal/scaling-compute.png)
 
-    > [!NOTE]
-    > Масштабирование виртуальных ядер приводит к перезапуску сервера.
+   > [!NOTE]
+   > Масштабирование виртуальных ядер приводит к перезапуску сервера.
 
 3. Нажмите кнопку **ОК** , чтобы сохранить изменения.
-
 
 ### <a name="scale-storage-up"></a>Масштабирование хранилища
 
@@ -62,27 +63,26 @@ ms.locfileid: "86102401"
 
 2. Измените параметр **хранилища** , переместив ползунок вверх до нужного значения.
 
-    ![Масштабирование хранилища](./media/howto-create-manage-server-portal/scaling-storage.png)
+   ![Снимок экрана портал Azure выбор масштаба хранилища в базе данных Azure для PostgreSQL](./media/howto-create-manage-server-portal/scaling-storage.png)
 
-    > [!NOTE]
-    > Невозможно масштабировать хранилище.
+   > [!NOTE]
+   > Невозможно масштабировать хранилище.
 
 3. Нажмите кнопку **ОК** , чтобы сохранить изменения.
 
-
 ## <a name="update-admin-password"></a>Обновление пароля администратора
+
 Пароль роли администратора можно изменить с помощью портал Azure.
 
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Сброс пароля**.
 
-   ![общие сведения](./media/howto-create-manage-server-portal/overview-reset-password.png)
+   ![Снимок экрана портал Azure сброс пароля в базе данных Azure для PostgreSQL](./media/howto-create-manage-server-portal/overview-reset-password.png)
 
 2. Введите новый пароль и подтвердите его. В текстовом поле будет предложено ввести требования к сложности пароля.
 
-   ![Сброс пароля](./media/howto-create-manage-server-portal/reset-password.png)
+   ![Снимок экрана портал Azure сброс пароля и сохранение в базе данных Azure для PostgreSQL](./media/howto-create-manage-server-portal/reset-password.png)
 
 3. Нажмите кнопку **ОК** , чтобы сохранить новый пароль.
-
 
 ## <a name="delete-a-server"></a>Удаление сервера
 
@@ -90,18 +90,18 @@ ms.locfileid: "86102401"
 
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Удалить**.
 
-    ![удалить](./media/howto-create-manage-server-portal/overview-delete.png)
+   ![Снимок экрана портал Azure для удаления сервера в базе данных Azure для PostgreSQL](./media/howto-create-manage-server-portal/overview-delete.png)
 
 2. Введите имя сервера в поле ввода, чтобы убедиться, что это сервер, который требуется удалить.
 
-    ![Подтверждение удаления](./media/howto-create-manage-server-portal/confirm-delete.png)
+   ![Снимок экрана портал Azure для подтверждения удаления сервера в базе данных Azure для PostgreSQL](./media/howto-create-manage-server-portal/confirm-delete.png)
 
-    > [!NOTE]
-    > Удаление сервера необратимо.
+   > [!NOTE]
+   > Удаление сервера необратимо.
 
 3. Выберите команду **Удалить**.
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
+
 - Сведения о [резервном копировании и восстановлении сервера](howto-restore-server-portal.md)
 - Сведения о [параметрах настройки и мониторинга в базе данных Azure для PostgreSQL](concepts-monitoring.md)

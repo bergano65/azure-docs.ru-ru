@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 06/12/2020
-ms.openlocfilehash: 9ee0fbd69c0004306b67cbff0aca3b257d905eeb
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: cbba0dd5341ad148831ac3b1f94685bf2beddd5a
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87541130"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855263"
 ---
 # <a name="deploy-a-model-to-azure-container-instances"></a>Развертывание веб-служб в Экземплярах контейнеров Azure.
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "87541130"
 > [!IMPORTANT]
 > Перед развертыванием в веб-службе настоятельно рекомендуется выполнить отладку локально. Дополнительные сведения см. в статье [Локальная отладка](https://docs.microsoft.com/azure/machine-learning/how-to-troubleshoot-deployment#debug-locally) .
 >
-> Вы также можете ознакомиться с разМашинное обучение Azure — [развертывание в локальную записную книжку](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/deploy-to-local)
+> Вы также можете ознакомиться со статьей о Машинном обучении Azure: [Развертывание в локальный Notebook](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/deploy-to-local)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -43,9 +43,9 @@ ms.locfileid: "87541130"
 
 - В фрагментах кода __Python__ в этой статье предполагается, что установлены следующие переменные:
 
-    * `ws`— Укажите рабочую область.
-    * `model`— Укажите вашу зарегистрированную модель.
-    * `inference_config`— Задайте в качестве конфигурации вывода для модели.
+    * `ws` — Укажите рабочую область.
+    * `model` — Укажите вашу зарегистрированную модель.
+    * `inference_config` — Задайте в качестве конфигурации вывода для модели.
 
     Дополнительные сведения об установке этих переменных см. в разделе [как и где развертываются модели](how-to-deploy-and-where.md).
 
@@ -56,8 +56,9 @@ ms.locfileid: "87541130"
 Чтобы развернуть модель в службе "экземпляры контейнеров Azure", создайте __конфигурацию развертывания__ , которая описывает требуемые ресурсы вычислений. Например, число ядер и память. Также необходима __Конфигурация вывода__, описывающая среду, необходимую для размещения модели и веб-службы. Дополнительные сведения о создании конфигурации вывода см. в разделе [как и где развертываются модели](how-to-deploy-and-where.md).
 
 > [!NOTE]
-> * ACI подходит только для небольших моделей <размер 1 ГБ. 
-> * Мы рекомендуем использовать один узел AKS для разработки и тестирования больших моделей.
+> * ACI подходит только для небольших моделей, размер которых меньше 1 ГБ. 
+> * Мы рекомендуем использовать AKS с одним узлом для разработки и тестирования больших моделей.
+> * Число развертываемых моделей ограничено до 1 000 моделей на развертывание (для каждого контейнера). 
 
 ### <a name="using-the-sdk"></a>Использование пакета SDK
 
@@ -97,7 +98,7 @@ az ml model deploy -m mymodel:1 -n myservice -ic inferenceconfig.json -dc deploy
 > Вам не нужно создавать контейнер ACI для предварительного тестирования. Контейнеры ACI создаются по мере необходимости.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
