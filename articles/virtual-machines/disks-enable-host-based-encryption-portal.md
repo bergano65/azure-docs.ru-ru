@@ -58,12 +58,12 @@ ms.locfileid: "88817908"
 1. Создайте новую виртуальную машину, выберите соответствующий регион и поддерживаемый размер виртуальной машины.
 1. Заполните остальные значения в колонке **Основная** , а затем перейдите к колонке **диски** .
 
-    :::image type="content" source="media/virtual-machines-disks-encryption-at-host-portal/disks-encryption-at-host-basic-blade.png" alt-text="Снимок экрана: колонка "основы создания виртуальной машины", "регион" и "размер V M" выделены.":::
+    :::image type="content" source="media/virtual-machines-disks-encryption-at-host-portal/disks-encryption-at-host-basic-blade.png" alt-text="Снимок экрана: колонка основы создания виртуальной машины, регион и размер V M выделены.":::
 
 1. В колонке **диски** выберите **Да** для **шифрования на узле**.
 1. Сделайте оставшиеся варианты выбора нужным образом.
 
-    :::image type="content" source="media/virtual-machines-disks-encryption-at-host-portal/disks-encryption-at-host-disk-blade.png" alt-text="Снимок экрана: колонка "диски создания виртуальной машины", "шифрование на узле" выделена.":::
+    :::image type="content" source="media/virtual-machines-disks-encryption-at-host-portal/disks-encryption-at-host-disk-blade.png" alt-text="Снимок экрана: колонка диски создания виртуальной машины, шифрование на узле выделена.":::
 
 1. Завершите процесс развертывания виртуальной машины, чтобы выбрать параметры, соответствующие вашей среде.
 
