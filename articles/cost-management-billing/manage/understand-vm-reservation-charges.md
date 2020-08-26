@@ -3,15 +3,16 @@ title: Сведения о скидках на Azure Reserved VM Instances
 description: Узнайте, как скидка на зарезервированные экземпляры применяется к работающим виртуальным машинам.
 author: yashesvi
 ms.service: cost-management-billing
+ms.subservice: reservations
 ms.topic: conceptual
-ms.date: 08/13/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: ddf232dbe6c6ff61f685e2910286188fb92e1f17
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.openlocfilehash: dd21faa07426c80bb3a95dbd1b6d4ee93f783881
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88192223"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88686451"
 ---
 # <a name="how-the-azure-reservation-discount-is-applied-to-virtual-machines"></a>Применения скидки на резервирование Azure к виртуальным машинам
 
@@ -93,7 +94,7 @@ ms.locfileid: "88192223"
 
 Проверьте значение *ConsumedService* в данных об использовании, чтобы определить, подходит ли использование для скидки на резервирование.
 
-Дополнительные сведения о гибкости размера экземпляров см. в статье [Гибкость размеров виртуальных машин при использовании зарезервированных экземпляров виртуальных машин](../../virtual-machines/windows/reserved-vm-instance-size-flexibility.md).
+Дополнительные сведения о гибкости размера экземпляров см. в статье [Гибкость размеров виртуальных машин при использовании зарезервированных экземпляров виртуальных машин](../../virtual-machines/reserved-vm-instance-size-flexibility.md).
 
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами

@@ -3,12 +3,12 @@ title: Управление резервным копированием файл
 description: Узнайте, как использовать REST API для управления и мониторинга файловых ресурсов Azure, резервное копирование которых выполняется Azure Backup.
 ms.topic: conceptual
 ms.date: 02/17/2020
-ms.openlocfilehash: c4d1ee187fd1c45dfd043b28c0d4b3d5935f50e1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5e2823472c6a7bdd6b3f9819db3079d7efa78c4e
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87073254"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892853"
 ---
 # <a name="manage-azure-file-share-backup-with-rest-api"></a>Управление резервным копированием файловых ресурсов Azure с помощью REST API
 
@@ -46,7 +46,7 @@ ms.locfileid: "87073254"
 GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupJobs/{jobName}?api-version=2019-05-13
 ```
 
-{JobName} — это "jobId", упомянутый выше. Ответ всегда равен "200 ОК" с полем **состояния** , указывающим состояние задания. После «Completed» или «Комплетедвисварнингс» раздел **екстендединфо** отображает дополнительные сведения о задании.
+{JobName} — это "jobId", упомянутый выше. Ответ всегда равен "200 ОК" с полем **состояния** , указывающим состояние задания. После завершения работы или "Комплетедвисварнингс" в разделе **екстендединфо** раскрываются дополнительные сведения о задании.
 
 ```http
 GET https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48af3d1/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupJobs/e2ca2cf4-2eb9-4d4b-b16a-8e592d2a658b?api-version=2019-05-13'
@@ -54,7 +54,7 @@ GET https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48af
 
 #### <a name="response"></a>Ответ
 
-Имя  | Type  |  Описание
+Имя  | Тип  |  Описание
 --- | --- | ----
 200 ОК |  JobResource  | ОК
 
@@ -209,6 +209,6 @@ DELETE https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f4
 Удаление защиты является асинхронной операцией. Операция создает другую операцию, которую необходимо отслеживаниь отдельно.
 Он возвращает два ответа: 202 (принято) при создании другой операции и 204 (неполное содержимое) после завершения этой операции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как [устранять неполадки при настройке резервного копирования для файловых ресурсов Azure](troubleshoot-azure-files.md).
