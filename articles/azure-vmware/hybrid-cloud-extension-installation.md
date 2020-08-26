@@ -185,7 +185,7 @@ ms.locfileid: "88752322"
       
    Выберите сетевой профиль, через который будет доступен интерфейс vMotion узлов ESXi. Если вы еще не определили такой сетевой профиль, его можно создать здесь. Если сеть vMotion отсутствует, выберите **сетевой профиль управления**.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/vmotion-network-profile.png" alt-text="Выберите пункт "профиль сети vMotion" и нажмите кнопку продолжить.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/vmotion-network-profile.png" alt-text="Выберите пункт профиль сети vMotion и нажмите кнопку продолжить.":::
 
 1. В поле **выберите сетевой профиль для репликации vSphere**выберите профиль сети, vSphere интерфейс репликации узлов ESXi, а затем нажмите кнопку **продолжить**.
       
