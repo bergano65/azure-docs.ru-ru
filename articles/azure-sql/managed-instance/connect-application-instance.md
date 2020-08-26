@@ -12,12 +12,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab, vanto
 ms.date: 11/09/2018
-ms.openlocfilehash: a5d002532adb043fa5196231964d5b6e2c81417c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a04f4879bbd06c2fa6c1af921d7adafdef9417d6
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84706381"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88871451"
 ---
 # <a name="connect-your-application-to-azure-sql-managed-instance"></a>Connect your application to Azure SQL Managed Instance (Подключение приложения к управляемому экземпляру SQL Azure)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "84706381"
 
 Существует два варианта подключения виртуальных сетей.
 
-- [Пиринг VPN Azure](../../virtual-network/virtual-network-peering-overview.md)
+- [Пиринг виртуальной сети Azure](../../virtual-network/virtual-network-peering-overview.md)
 - VPN-шлюз между виртуальными сетями ([портал Azure](../../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md), [PowerShell](../../vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md), [Azure CLI](../../vpn-gateway/vpn-gateway-howto-vnet-vnet-cli.md)).
 
 Пиринг предпочтительнее, так как он использует магистральную сеть Майкрософт, поэтому с точки зрения подключения нет заметных различий в задержке между виртуальными машинами в одноранговой виртуальной сети и в той же виртуальной сети. Пиринг виртуальных сетей ограничен сетями в одном регионе.  
@@ -63,7 +63,7 @@ ms.locfileid: "84706381"
 
 ## <a name="connect-the-developer-box"></a>Подключение к полю разработчика
 
-Можно также подключить поле разработчика к SQL Управляемый экземпляр. Доступ к Управляемый экземпляр SQL можно получить только по частному IP-адресу, поэтому для доступа к нему из окна разработчика необходимо сначала установить соединение между полем разработчика и виртуальной сетью SQL Управляемый экземпляр. Для этого настройте подключение типа "точка — сеть" к виртуальной сети с помощью собственной проверки подлинности на основе сертификата Azure. Дополнительные сведения см. в статье [Настройка подключения типа "точка — сеть" для подключения к Azure SQL управляемый экземпляр с локального компьютера](point-to-site-p2s-configure.md).
+Можно также подключить поле разработчика к SQL Управляемый экземпляр. Доступ к Управляемый экземпляр SQL можно получить только по частному IP-адресу, поэтому для доступа к нему из окна разработчика необходимо сначала установить соединение между полем разработчика и виртуальной сетью SQL Управляемый экземпляр. Для этого настройте подключение типа "точка — сеть" к виртуальной сети с помощью собственной проверки подлинности на основе сертификата Azure. Дополнительные сведения см. в статье  [Настройка подключения типа "точка — сеть" для подключения к Azure SQL управляемый экземпляр с локального компьютера](point-to-site-p2s-configure.md).
 
 ## <a name="connect-with-vnet-peering"></a>Подключение с помощью пиринга виртуальной сети
 

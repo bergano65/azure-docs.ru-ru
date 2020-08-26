@@ -1,0 +1,32 @@
+### YamlMime:Landing
+title: Серверы Azure Arc (предварительная версия)
+summary: Серверы Azure Arc
+metadata:
+  title: Серверы Azure Arc
+  description: Узнайте, как управлять локальными компьютерами в Azure
+  author: mgoedtel
+  ms.service: azure-arc
+  ms.topic: landing-page
+  ms.date: 06/26/2020
+  ms.author: magoedte
+  ms.openlocfilehash: 9080f5bb770f5cb86284b5816c340a614843038c
+  ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/24/2020
+  ms.locfileid: "88763819"
+landingContent:
+- title: Подключение компьютеров к Azure с помощью серверов с поддержкой Azure Arc
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое серверы с поддержкой Azure Arc?
+      url: overview.md
+  - linkListType: quickstart
+    links:
+    - text: Подключение компьютеров к Azure Arc на портале Azure
+      url: onboard-portal.md
+    - text: Подключение компьютеров в большом масштабе с помощью субъекта-службы
+      url: onboard-service-principal.md
+    - text: Подключение компьютеров к Azure с помощью PowerShell DSC
+      url: onboard-dsc.md

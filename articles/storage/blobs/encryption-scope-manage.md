@@ -4,23 +4,25 @@ description: Узнайте, как создать область шифрова
 services: storage
 author: tamram
 ms.service: storage
-ms.date: 08/04/2020
+ms.date: 08/25/2020
 ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: d4dd3f3ced8aac6852fe8516a4a5cadca2ebdc49
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: 32b46d21228bcd84fc3da11cc6ed42c740fece39
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87564152"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88870261"
 ---
 # <a name="create-and-manage-encryption-scopes-preview"></a>Создание и управление областями шифрования (Предварительная версия)
 
-Области шифрования (Предварительная версия) позволяют управлять шифрованием на уровне отдельного большого двоичного объекта или контейнера. Область шифрования изолирует данные большого двоичного объекта в безопасном анклава в учетной записи хранения. Области шифрования можно использовать для создания безопасных границ между данными, которые находятся в одной учетной записи хранения, но принадлежат разным клиентам. Дополнительные сведения об областях шифрования см. в статье [области шифрования для хранилища BLOB-объектов (Предварительная версия)](../common/storage-service-encryption.md#encryption-scopes-for-blob-storage-preview).
+Области шифрования (Предварительная версия) позволяют управлять шифрованием на уровне отдельного большого двоичного объекта или контейнера. Область шифрования изолирует данные большого двоичного объекта в безопасном анклаве в учетной записи хранения. Области шифрования можно использовать для создания безопасных границ между данными, которые находятся в одной учетной записи хранения, но принадлежат разным клиентам. Дополнительные сведения об областях шифрования см. в статье [области шифрования для хранилища BLOB-объектов (Предварительная версия)](../common/storage-service-encryption.md#encryption-scopes-for-blob-storage-preview).
 
 В этой статье показано, как создать область шифрования. В нем также показано, как указать область шифрования при создании большого двоичного объекта или контейнера.
+
+[!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 ## <a name="create-an-encryption-scope"></a>Создание области шифрования
 
@@ -393,7 +395,7 @@ az storage account encryption-scope update \
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Шифрование службы хранилища Azure для неактивных данных](../common/storage-service-encryption.md)
 - [Использование управляемых клиентом ключей с Azure Key Vault для управления шифрованием службы хранилища Azure](../common/encryption-customer-managed-keys.md)

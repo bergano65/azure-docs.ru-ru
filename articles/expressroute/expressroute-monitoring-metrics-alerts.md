@@ -5,14 +5,14 @@ services: expressroute
 author: mialdrid
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 08/22/2019
+ms.date: 08/25/2020
 ms.author: cherylmc
-ms.openlocfilehash: b3c42901b4ef503a6099b49db84012521a7eba9f
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 6f3bd5392457f05caa8704e7e1de5b4155b28794
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88654571"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88871359"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Мониторинг, метрики и оповещения в ExpressRoute
 
@@ -29,6 +29,7 @@ ms.locfileid: "88654571"
 После выбора метрики будет применено агрегирование по умолчанию. При необходимости можно применить разделение, которое будет показывать метрику с разными измерениями.
 
 ### <a name="available-metrics"></a>Доступные показатели
+
 |**Метрика**|**Категория**|**Измерения (s)**|**Функции**|
 | --- | --- | --- | --- |
 |Доступность ARP|Доступность|<ui><li>Одноранговый (основной или дополнительный маршрутизатор ExpressRoute)</ui></li><ui><li> Тип пиринга (частный, общедоступный/Майкрософт)</ui></li>|ExpressRoute|
@@ -41,8 +42,8 @@ ms.locfileid: "88654571"
 |GlobalReachBitsOutPerSecond|Трафик|<ui><li>Скэйная цепь (ключ службы)</ui></li>|Global Reach|
 |AdminState|Физическое подключение|Ссылка|ExpressRoute Direct|
 |LineProtocol|Физическое подключение|Ссылка|ExpressRoute Direct|
-|RxLightLevel|Физическое подключение|<ui><li>Ссылка</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
-|TxLightLevel|Физическое подключение|<ui><li>Ссылка</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
+|RxLightLevel|Физическое подключение|<ui><li>Ссылку</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
+|TxLightLevel|Физическое подключение|<ui><li>Ссылку</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
 >[!NOTE]
 >Использование *глобалглобалреачбитсинперсеконд* и *глобалглобалреачбитсаутперсеконд* будет видимым, только если установлено хотя бы одно Global REACH соединение.
 >
@@ -53,101 +54,111 @@ ms.locfileid: "88654571"
 
 Вы можете просматривать метрики для всех узлов в заданном канале ExpressRoute.
 
-![метрики канала](./media/expressroute-monitoring-metrics-alerts/ermetricspeering.jpg)
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/ermetricspeering.jpg" alt-text="метрики канала":::
 
 ### <a name="bits-in-and-out---metrics-per-peering"></a>Количество входных и исходящих битов в метрики на пиринг
 
 Доступны метрики по частному и общедоступному пирингу, а также пирингу Майкрософт в бит/с.
 
-![метрики пиринга](./media/expressroute-monitoring-metrics-alerts/erpeeringmetrics.jpg) 
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/erpeeringmetrics.jpg" alt-text="метрики на пиринг":::
 
 ### <a name="bgp-availability---split-by-peer"></a>Доступность BGP — разделение по узлу  
 
 Вы можете просмотреть сведения о доступности BGP в режиме реального времени для пиринга и одноранговых узлов (основной и дополнительный маршрутизаторы ExpressRoute). На этой панели мониторинга показан основной сеанс BGP для частного пиринга и второй сеанс BGP для частного пиринга. 
 
-![Доступность BGP на узел](./media/expressroute-monitoring-metrics-alerts/erBgpAvailabilityMetrics.jpg) 
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/erBgpAvailabilityMetrics.jpg" alt-text="Доступность BGP на узел":::
 
 ### <a name="arp-availability---split-by-peering"></a>Доступность ARP — разделение по пиринга  
 
 Вы можете просмотреть сведения о доступности [ARP](https://docs.microsoft.com/azure/expressroute/expressroute-troubleshooting-arp-resource-manager) в режиме реального времени для пиринга и одноранговых узлов (основной и дополнительный маршрутизаторы ExpressRoute). На этой панели мониторинга показан сеанс ARP частного пиринга по обоим одноранговым узлам, но для пиринга Майкрософт между одноранговыми узлами завершается. По умолчанию для обоих узлов использовалась статистическая обработка (среднее значение).  
 
-![Доступность ARP на одноранговый узел](./media/expressroute-monitoring-metrics-alerts/erArpAvailabilityMetrics.jpg) 
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/erArpAvailabilityMetrics.jpg" alt-text="Доступность ARP на одноранговый узел":::
 
 ## <a name="expressroute-direct-metrics"></a>Непосредственные метрики ExpressRoute
 
 ### <a name="admin-state---split-by-link"></a>Состояние администратора — разбиение по каналу
+
 Вы можете просмотреть состояние администратора для каждой ссылки на пару прямых портов ExpressRoute.
 
-![состояние прямого администратора ER](./media/expressroute-monitoring-metrics-alerts/adminstate-per-link.jpg)
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/adminstate-per-link.jpg" alt-text="Состояние прямого администратора ER":::
 
 ### <a name="bits-in-per-second---split-by-link"></a>Число битов в секунду — разбиение по каналу
-Можно просмотреть биты в секунду для обеих ссылок в паре прямых портов ExpressRoute. 
 
-![число прямых бит в секунду для ER](./media/expressroute-monitoring-metrics-alerts/bits-in-per-second-per-link.jpg)
+Можно просмотреть биты в секунду для обеих ссылок в паре прямых портов ExpressRoute.
+
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/bits-in-per-second-per-link.jpg" alt-text="Число прямых бит в секунду для ER":::
 
 ### <a name="bits-out-per-second---split-by-link"></a>Биты за секунду — разбиение по каналу
-Кроме того, можно просмотреть биты в секунду для обеих ссылок в паре прямых портов ExpressRoute. 
 
-![непосредственных бит ER в секунду](./media/expressroute-monitoring-metrics-alerts/bits-out-per-second-per-link.jpg)
+Кроме того, можно просмотреть биты в секунду для обеих ссылок в паре прямых портов ExpressRoute.
+
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/bits-out-per-second-per-link.jpg" alt-text="Непосредственных бит ER в секунду":::
 
 ### <a name="line-protocol---split-by-link"></a>Протокол строки — разбиение по каналу
+
 Протокол Line можно просмотреть по каждой ссылке на пару прямых портов ExpressRoute.
 
-![Протокол прямой строки ER](./media/expressroute-monitoring-metrics-alerts/line-protocol-per-link.jpg)
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/line-protocol-per-link.jpg" alt-text="Протокол прямой строки ER":::
 
 ### <a name="rx-light-level---split-by-link"></a>Уровень источника RX — разбиение по каналу
+
 Для каждого порта можно просмотреть уровень падения на RX (уровень освещения, который **получает**прямой порт ExpressRoute). Работоспособные уровни освещения обычно находятся в диапазоне от-10 до 0 dBm.
 
-![непосредственный уровень RX прямой строки ER](./media/expressroute-monitoring-metrics-alerts/rxlight-level-per-link.jpg)
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/rxlight-level-per-link.jpg" alt-text="Непосредственный уровень RX прямой строки ER":::
 
 ### <a name="tx-light-level---split-by-link"></a>Уровень источника TX — разбиение по каналу
+
 Для каждого порта можно просмотреть уровень источника TX (уровень падения, который **передает**прямой порт ExpressRoute). Работоспособные уровни интенсивности TX обычно находятся в диапазоне от-10 до 0 dBm.
 
-![непосредственный уровень RX прямой строки ER](./media/expressroute-monitoring-metrics-alerts/txlight-level-per-link.jpg)
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/txlight-level-per-link.jpg" alt-text="Неяркий уровень TX прямой строки ER":::
 
 ## <a name="expressroute-virtual-network-gateway-metrics"></a>Метрики шлюза виртуальной сети ExpressRoute
 
 ### <a name="cpu-utilization---split-instance"></a>Использование ЦП — разделение экземпляра
+
 Можно просмотреть использование ЦП экземплярами шлюза.
 
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/cpu-split.jpg" alt-text="Разделение ЦП":::
+
 ### <a name="packets-per-second---split-by-instance"></a>Пакетов в секунду — разделение по экземпляру
+
 Можно просмотреть пакеты в секунду, проходящие через шлюз.
+
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/pps-split.jpg" alt-text="Пакетов в секунду — разделение":::
 
 ## <a name="expressroute-gateway-connections-in-bitsseconds"></a>Подключения шлюза ExpressRoute в бит/с
 
-![подключения шлюза](./media/expressroute-monitoring-metrics-alerts/erconnections.jpg )
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/erconnections.jpg" alt-text="подключения шлюза":::
 
 ## <a name="alerts-for-expressroute-gateway-connections"></a>Оповещения для подключений шлюза ExpressRoute
 
-1. Чтобы настроить оповещения, перейдите к **Azure Monitor** и щелкните **Оповещения**.
+1. Чтобы настроить оповещения, перейдите в раздел **Azure Monitor**, а затем выберите **оповещения**.
 
-   ![оповещения](./media/expressroute-monitoring-metrics-alerts/eralertshowto.jpg)
-
+   :::image type="content" source="./media/expressroute-monitoring-metrics-alerts/eralertshowto.jpg" alt-text="Предупреждения":::
 2. Щелкните **+Select Target** (Выбрать целевой объект) и выберите ресурс подключения шлюза ExpressRoute.
 
-   ![target]( ./media/expressroute-monitoring-metrics-alerts/alerthowto2.jpg)
+   :::image type="content" source="./media/expressroute-monitoring-metrics-alerts/alerthowto2.jpg" alt-text="target":::
 3. Указание сведений для оповещения.
 
-   ![группа действий](./media/expressroute-monitoring-metrics-alerts/alerthowto3.jpg)
-
+   :::image type="content" source="./media/expressroute-monitoring-metrics-alerts/alerthowto3.jpg" alt-text="Группа действий":::
 4. Указание сведений для группы действий, добавление группы действий.
 
-   ![добавить группу действий](./media/expressroute-monitoring-metrics-alerts/actiongroup.png)
+   :::image type="content" source="./media/expressroute-monitoring-metrics-alerts/actiongroup.png" alt-text="Добавить группу действий":::
 
 ## <a name="alerts-based-on-each-peering"></a>Оповещения для каждого пиринга
 
- ![что](./media/expressroute-monitoring-metrics-alerts/basedpeering.jpg)
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/basedpeering.jpg" alt-text="Каждый пиринг":::
 
 ## <a name="configure-alerts-for-activity-logs-on-circuits"></a>Настройка оповещений для журналов действий каналов
 
 В раскрывающемся списке **Критерии оповещения** можно выбрать **Журнал действий** для определенного типа сигнала и указать сигнал.
 
-  ![другое](./media/expressroute-monitoring-metrics-alerts/alertshowto6activitylog.jpg)
+:::image type="content" source="./media/expressroute-monitoring-metrics-alerts/alertshowto6activitylog.jpg" alt-text="журналы действий":::
   
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Настройте подключение ExpressRoute.
   
-  * [Создание и изменение канала](expressroute-howto-circuit-arm.md)
-  * [Создание и изменение конфигурации пиринга](expressroute-howto-routing-arm.md)
-  * [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md)
+* [Создание и изменение канала](expressroute-howto-circuit-arm.md)
+* [Создание и изменение конфигурации пиринга](expressroute-howto-routing-arm.md)
+* [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md)

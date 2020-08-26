@@ -9,16 +9,18 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
-ms.openlocfilehash: 78e2bd80b689394b654a85ea913c618c08120091
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 9c2f8ea55f99ac893dca0fa380729b7cc866812e
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88854003"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88871295"
 ---
 # <a name="how-to-use-queue-storage-from-java"></a>Использование хранилища очередей из Java
 
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
+
+## <a name="overview"></a>Обзор
 
 В этом руководство показано, как выполнять код для распространенных сценариев с помощью службы хранилища очередей Azure. Примеры написаны на Java и используют [пакет SDK службы хранилища Azure для Java][Azure Storage SDK for Java]. К таким сценариям относятся **Вставка**, **Просмотр**, **Получение**и **Удаление** сообщений очереди. Также рассматривается код для **создания** и **удаления** очередей. Дополнительные сведения об очередях см. в разделе [Дальнейшие действия](#next-steps).
 
@@ -594,7 +596,7 @@ catch (Exception e)
 
 [!INCLUDE [storage-check-out-samples-java](../../../includes/storage-check-out-samples-java.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 

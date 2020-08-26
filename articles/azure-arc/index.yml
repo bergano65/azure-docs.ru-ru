@@ -1,68 +1,87 @@
-### YamlMime:Landing
-title: Azure Arc
-summary: В Azure Arc добавлена поддержка возможностей Azure Resource Manager для серверов Linux и Windows, а также возможность использовать кластеры Kubernetes в любой инфраструктуре в локальной среде, в нескольких облаках и на пограничных устройствах. Кроме того, Azure Arc позволяет клиентам запускать службы данных Azure в любом расположении. При этом предоставляются преимущества облачных инноваций, включая постоянно поддерживаемые в актуальном состоянии средства работы с данными, развертывание за считаные секунды (а не часы) и динамическую масштабируемость в любой инфраструктуре.
+### YamlMime:Hub
+title: Документация по Azure Arc
+summary: Упрощайте сложные и распределенные среды в локальных, пограничных и многооблачных решениях.
+brand: azure
 metadata:
   title: Azure Arc
-  description: Узнайте, как управлять локальными компьютерами в Azure
-  author: mgoedtel
+  description: Узнайте, как развертывать ресурсы в сложных и распределенных средах в локальных, пограничных и многооблачных решениях. Azure Arc позволяет развертывать службы Azure в любом расположении и расширяет возможности управления Azure до любой инфраструктуры.
   ms.service: azure-arc
-  ms.topic: landing-page
-  ms.date: 08/13/2020
+  ms.topic: hub-page
+  author: MGoedtel
   ms.author: magoedte
-  ms.openlocfilehash: afb1dd4986220bcf3f244532a730faf6b80e6074
-  ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+  ms.date: 08/21/2020
+  ms.openlocfilehash: 961d8b892841f2d8761053279f053afe3b859798
+  ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/14/2020
-  ms.locfileid: "88212771"
-landingContent:
-- title: Сведения об Azure Arc
-  linkLists:
-  - linkListType: overview
+  ms.lasthandoff: 08/24/2020
+  ms.locfileid: "88763352"
+highlightedContent:
+  items:
+  - title: Серверы с поддержкой Azure Arc (предварительная версия)
+    itemType: overview
+    url: ./servers/overview.md
+  - title: Kubernetes с поддержкой Azure Arc (предварительная версия)
+    itemType: overview
+    url: ./kubernetes/overview.md
+  - title: Сведения об Azure Arc
+    itemType: overview
+    url: https://azure.microsoft.com/en-us/services/azure-arc
+productDirectory:
+  title: Службы с поддержкой Azure Arc
+  summary: Узнайте, как запускать службы где угодно.
+  items:
+  - title: Серверы с поддержкой Azure Arc
+    imageSrc: ./media/manage-450-machines-azure-arc.svg
     links:
-    - text: Что такое Azure Arc
-      url: https://aka.ms/Azure-Arc-Info
-- title: Подключение компьютеров к Azure с помощью серверов с поддержкой Azure Arc
-  linkLists:
-  - linkListType: overview
+    - url: ./servers/onboard-portal.md
+      text: Подключение компьютеров к Azure Arc на портале Azure
+    - url: ./servers/onboard-service-principal.md
+      text: Подключение компьютеров в большом масштабе с помощью субъекта-службы
+    - url: ./servers/onboard-dsc.md
+      text: Подключение компьютеров к Azure с помощью PowerShell DSC
+    - url: ./servers/index.yml
+      text: Еще...
+  - title: Azure Arc с поддержкой Kubernetes
+    imageSrc: ./media/containers-101-kubernetes-services.svg
     links:
-    - text: Что такое серверы с поддержкой Azure Arc?
-      url: ./servers/overview.md
-  - linkListType: quickstart
+    - url: ./kubernetes/connect-cluster.md
+      text: Подключение кластера
+    - url: ./kubernetes/use-gitops-connected-cluster.md
+      text: Развертывание конфигураций с использованием GitOps
+    - url: ./kubernetes/index.yml
+      text: Еще...
+conceptualContent:
+  title: Начало работы
+  items:
+  - title: Серверы с поддержкой Azure Arc (предварительная версия)
     links:
-    - text: Включение агента серверов с поддержкой Arc
-      url: ./servers/learn/quick-enable-hybrid-vm.md
-  - linkListType: how-to-guide
+    - url: ./servers/learn/quick-enable-hybrid-vm.md
+      itemType: get-started
+      text: Включение агента серверов с поддержкой Arc
+    - url: ./servers/learn/tutorial-enable-vm-insights.md
+      itemType: tutorial
+      text: Мониторинг гибридного компьютера с помощью Azure Monitor для виртуальных машин
+    - url: ./servers/policy-samples.md
+      itemType: learn
+      text: Применение политик управления допуском с помощью службы "Политика Azure"
+    - url: ./servers/manage-vm-extensions.md
+      itemType: how-to-guide
+      text: Использование расширений виртуальной машины Azure и управление ими
+  - title: Kubernetes с поддержкой Azure Arc (предварительная версия)
     links:
-    - text: Подключение компьютеров к Azure Arc на портале Azure
-      url: ./servers/onboard-portal.md
-    - text: Подключение компьютеров в большом масштабе с помощью субъекта-службы
-      url: ./servers/onboard-service-principal.md
-    - text: Подключение компьютеров к Azure с помощью PowerShell DSC
-      url: ./servers/onboard-dsc.md
-    - text: Использование расширений виртуальной машины Azure и управление ими
-      url: ./servers/manage-vm-extensions.md
-- title: Подключение кластеров Kubernetes к Azure с помощью Azure Arc
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: Что представляет собой Azure Arc с поддержкой Kubernetes?
-      url: ./kubernetes/overview.md
-  - linkListType: quickstart
-    links:
-    - text: Подключение кластера
-      url: ./kubernetes/connect-cluster.md
-  - linkListType: how-to-guide
-    links:
-    - text: Развертывание конфигураций с использованием GitOps
-      url: ./kubernetes/use-gitops-connected-cluster.md
-    - text: Развертывание диаграмм Helm с использованием GitOps
-      url: ./kubernetes/use-gitops-with-helm.md
-    - text: Принудительное применение GitOps с помощью службы "Политика Azure"
-      url: ./kubernetes/use-azure-policy.md
-    - text: Мониторинг с использованием Azure Monitor для контейнеров
-      url: ../azure-monitor/insights/container-insights-enable-arc-enabled-clusters.md?toc=/azure/azure-arc/toc.json
-    - text: Применение политик управления допуском с помощью службы "Политика Azure"
-      url: ../governance/policy/concepts/policy-for-kubernetes.md?toc=/azure/azure-arc/toc.json
-    - text: Развертывание рабочих нагрузок Azure IoT Edge
-      url: ./kubernetes/deploy-azure-iot-edge-workloads.md
+    - url: ./kubernetes/use-gitops-with-helm.md
+      itemType: deploy
+      text: Развертывание диаграмм Helm с использованием GitOps
+    - url: ./kubernetes/use-azure-policy.md
+      itemType: how-to-guide
+      text: Принудительное применение GitOps с помощью службы "Политика Azure"
+    - url: ../azure-monitor/insights/container-insights-enable-arc-enabled-clusters.md?toc=/azure/azure-arc/toc.json
+      itemType: tutorial
+      text: Мониторинг с использованием Azure Monitor для контейнеров
+    - url: ../governance/policy/concepts/policy-for-kubernetes.md?toc=/azure/azure-arc/toc.json
+      itemType: learn
+      text: Применение политик управления допуском с помощью службы "Политика Azure"
+    - url: ./kubernetes/deploy-azure-iot-edge-workloads.md
+      itemType: deploy
+      text: Развертывание рабочих нагрузок Azure IoT Edge

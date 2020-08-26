@@ -11,12 +11,12 @@ author: ajetasin
 ms.author: ajetasi
 ms.reviewer: sstein
 ms.date: 11/04/2019
-ms.openlocfilehash: 90d3507a8867ad3556891f6001f0e15ebda8c4f4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 945e9019d75f9597d89a63c9322cbd4a8d502f15
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84345365"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88869870"
 ---
 # <a name="stream-data-into-azure-sql-database-using-azure-stream-analytics-integration-preview"></a>Потоковая передача данных в базу данных SQL Azure с помощью интеграции Azure Stream Analytics (Предварительная версия)
 
@@ -31,7 +31,7 @@ ms.locfileid: "84345365"
 - Дополнительная простота в использовании данных для предварительного просмотра: Просмотр входящих данных из источника событий (концентратора событий или центра IoT) в контексте выбранной таблицы.
 
 > [!IMPORTANT]
-> Azure Stream Analytics задание может выводить данные в базу данных SQL Azure, Управляемый экземпляр SQL Azure или Azure синапсе Analytics (ранее — хранилище данных SQL Azure). Дополнительные сведения см. в разделе [выходные данные](../../stream-analytics/stream-analytics-define-outputs.md#sql-database).
+> Azure Stream Analytics задание может выводить данные в базу данных SQL Azure, Управляемый экземпляр SQL Azure или Azure синапсе Analytics (ранее — хранилище данных SQL Azure). Дополнительные сведения см. в разделе [выходные данные](../../stream-analytics/sql-database-output.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -50,7 +50,7 @@ ms.locfileid: "84345365"
 
 3. Чтобы начать передачу данных потоковой передачи в эту базу данных, выберите **создать** и укажите имя для задания потоковой передачи, а затем нажмите кнопку **Далее: вход**.
 
-    ![Создание задания Stream Analytics](./media/stream-data-stream-analytics-integration/create-job.png)
+    ![Основные сведения о настройке Stream Analytics заданий](./media/stream-data-stream-analytics-integration/create-job.png)
 
 4. Введите сведения об источнике событий, а затем нажмите кнопку **Далее: выходные данные**.
 
@@ -64,7 +64,7 @@ ms.locfileid: "84345365"
 
       Рекомендуется создать группу потребителей и политику для каждого нового задания Azure Stream Analytics, которое вы создадите здесь. Группы потребителей допускают только пять одновременных средств чтения, поэтому для каждого задания выделяется выделенная группа потребителей, что позволяет избежать ошибок, которые могут возникнуть из-за превышения этого ограничения. Выделенная политика позволяет поворачивать ключ или отзывать разрешения без влияния на другие ресурсы.
 
-     ![Создание задания Stream Analytics](./media/stream-data-stream-analytics-integration/create-job-output.png)
+     ![Настройка выходных данных задания Stream Analytics](./media/stream-data-stream-analytics-integration/create-job-output.png)
 
 5. Выберите таблицу, в которую необходимо передавать данные потоковой передачи. После этого нажмите кнопку **создать**.
 
@@ -124,6 +124,6 @@ ms.locfileid: "84345365"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Документация по Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/)
+- [Документация по Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/)
 - [Шаблоны решений Azure Stream Analytics](../../stream-analytics/stream-analytics-solution-patterns.md)
  
