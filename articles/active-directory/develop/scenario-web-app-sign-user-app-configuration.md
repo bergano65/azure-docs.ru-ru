@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 30b90b89300d6ca63255a000c7a6f7723f648056
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 64b38d0e776a0e3dab155704dcc368cc738c278e
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88118776"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855427"
 ---
 # <a name="web-app-that-signs-in-users-code-configuration"></a>Веб-приложение, которое входит в систему пользователей: конфигурация кода
 
@@ -132,7 +132,7 @@ ms.locfileid: "88118776"
 }
 ```
 
-В портал Azure идентификаторы URI ответа, которые необходимо зарегистрировать на странице **проверки подлинности** для вашего приложения, должны соответствовать этим URL-адресам. Для двух предыдущих файлов конфигурации они бы были `https://localhost:44321/signin-oidc` . Причина в том, что `applicationUrl` это `http://localhost:3110` , но `sslPort` указано (44321). `CallbackPath`имеет `/signin-oidc` , как определено в `appsettings.json` .
+В портал Azure идентификаторы URI ответа, которые необходимо зарегистрировать на странице **проверки подлинности** для вашего приложения, должны соответствовать этим URL-адресам. Для двух предыдущих файлов конфигурации они бы были `https://localhost:44321/signin-oidc` . Причина в том, что `applicationUrl` это `http://localhost:3110` , но `sslPort` указано (44321). `CallbackPath` имеет `/signin-oidc` , как определено в `appsettings.json` .
 
 Таким же образом URI выхода будет иметь значение `https://localhost:44321/signout-oidc` .
 
@@ -225,7 +225,7 @@ SESSION_TYPE = "filesystem"  # So the token cache will be stored in a server-sid
 
 1. Добавьте в проект пакеты NuGet [Microsoft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) и [Microsoft. Identity. Web. UI](https://www.nuget.org/packages/Microsoft.Identity.Web.UI) . Удалите пакет NuGet Microsoft. AspNetCore. Authentication. AzureAD. UI, если он имеется.
 
-2. Обновите код в `ConfigureServices` , чтобы он использовал `AddMicrosoftWebAppAuthentication` методы и `AddMicrosoftIdentityUI` .
+2. Обновите код в `ConfigureServices` , чтобы он использовал `AddMicrosoftIdentityWebAppAuthentication` методы и `AddMicrosoftIdentityUI` .
 
    ```c#
    public class Startup
@@ -234,7 +234,7 @@ SESSION_TYPE = "filesystem"  # So the token cache will be stored in a server-sid
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-     services.AddMicrosoftWebAppAuthentication(Configuration, "AzureAd");
+     services.AddMicrosoftIdentityWebAppAuthentication(Configuration, "AzureAd");
 
      services.AddRazorPages().AddMvcOptions(options =>
      {
@@ -245,7 +245,7 @@ SESSION_TYPE = "filesystem"  # So the token cache will be stored in a server-sid
      }).AddMicrosoftIdentityUI();
     ```
 
-3. В `Configure` методе в *Startup.CS*включите проверку подлинности с помощью вызова`app.UseAuthentication();`
+3. В `Configure` методе в *Startup.CS*включите проверку подлинности с помощью вызова `app.UseAuthentication();`
 
    ```c#
    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -259,20 +259,20 @@ SESSION_TYPE = "filesystem"  # So the token cache will be stored in a server-sid
    ```
 
 В приведенном выше коде:
-- `AddMicrosoftWebAppAuthentication`Метод расширения определен в **Microsoft. Identity. Web**. Им
+- `AddMicrosoftIdentityWebAppAuthentication`Метод расширения определен в **Microsoft. Identity. Web**. Им
   - Добавляет службу проверки подлинности.
   - Настраивает параметры для чтения файла конфигурации (здесь из раздела "AzureAD").
   - Настраивает параметры OpenID Connect Connect, чтобы центр сертификации был конечной точкой платформы Microsoft Identity.
   - Проверяет издателя маркера.
   - Гарантирует, что утверждения, соответствующие имени, сопоставляются с `preferred_username` утверждением в маркере идентификации.
 
-- В дополнение к объекту конфигурации можно указать имя раздела конфигурации при вызове `AddMicrosoftWebAppAuthentication` . По умолчанию это `AzureAd` .
+- В дополнение к объекту конфигурации можно указать имя раздела конфигурации при вызове `AddMicrosoftIdentityWebAppAuthentication` . По умолчанию это `AzureAd` .
 
-- `AddMicrosoftWebAppAuthentication`имеет другие параметры для расширенных сценариев. Например, трассировка событий по промежуточного слоя OpenID Connect позволяет устранить неполадки в веб-приложении, если проверка подлинности не работает. При установке необязательного параметра `subscribeToOpenIdConnectMiddlewareDiagnosticsEvents` `true` будет показано, как обрабатывается информация по по промежуточного слоя ASP.NET Core по мере продвижения от HTTP-ответа к удостоверению пользователя в `HttpContext.User` .
+- `AddMicrosoftIdentityWebAppAuthentication` имеет другие параметры для расширенных сценариев. Например, трассировка событий по промежуточного слоя OpenID Connect позволяет устранить неполадки в веб-приложении, если проверка подлинности не работает. При установке необязательного параметра `subscribeToOpenIdConnectMiddlewareDiagnosticsEvents` `true` будет показано, как обрабатывается информация по по промежуточного слоя ASP.NET Core по мере продвижения от HTTP-ответа к удостоверению пользователя в `HttpContext.User` .
 
 - `AddMicrosoftIdentityUI`Метод расширения определен в **Microsoft. Identity. Web. UI**. Он предоставляет контроллер по умолчанию для управления входом и выходом.
 
-Дополнительные сведения о том, как Microsoft. Identity. Web позволяет создавать веб-приложения, можно найти в<https://aka.ms/ms-id-web/webapp>
+Дополнительные сведения о том, как Microsoft. Identity. Web позволяет создавать веб-приложения, можно найти в <https://aka.ms/ms-id-web/webapp>
 
 > [!WARNING]
 > В настоящее время Microsoft. Identity. Web не поддерживает сценарий использования **отдельных учетных записей пользователей** (хранение учетных записей пользователей в приложении) при использовании Azure AD как и внешнего поставщика входа. Дополнительные сведения см. в [статье AzureAD/Microsoft-Identity-Web # 133](https://github.com/AzureAD/microsoft-identity-web/issues/133)

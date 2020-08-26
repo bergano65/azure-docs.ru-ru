@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, contperfq1
 ms.date: 08/20/2020
-ms.openlocfilehash: f423ae957d11248b16a180e22647d6566157b7be
-ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
+ms.openlocfilehash: 3a6ecc44791602ea074ebdd1fdf4e11393e10a4b
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88782844"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88852161"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Автоматическое обучение прогнозной модели временных рядов
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "88782844"
 * настройка отдельных параметров временных рядов в объекте [`AutoMLConfig`](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig);
 * выполнение прогнозов с данными временных рядов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Для этой статьи требуется: 
 
@@ -178,6 +178,7 @@ featurization_config.add_transformer_params('Imputer', ['INCOME'], {"strategy": 
 |`enable_dnn`|[Включить прогнозирование DNN]().||
 |`time_series_id_column_names`|Имена столбцов, используемые для уникальной идентификации временных рядов в данных, имеющих несколько строк с одинаковой отметкой времени. Если идентификаторы временных рядов не определены, предполагается, что набор данных является одним временным набором. Дополнительные сведения об одиночном временном ряде см. на странице [energy_demand_notebook](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand).||
 |`target_lags`|Число строк для запаздывания целевых значений на основе периодичности данных. Запаздывание представляется в виде списка или одного целого числа. Запаздывание следует использовать, когда связь между независимыми и зависимыми переменными не согласованна или не коррелирует по умолчанию. ||
+|`feature_lags`| Функции, которые следует задержать, будут автоматически приняты при установке автоматического ML, если задано значение `target_lags` `feature_lags` `auto` . Включение функции "задержка" может помочь повысить точность. Функция отключения по умолчанию отключена. ||
 |`target_rolling_window_size`|Число *n* предыдущих периодов, которые следует использовать для получения прогнозируемых значений (меньше или равно размеру набора для обучения). Если этот параметр не задан, *n* принимается равным полному размеру набора для обучения. Этот параметр следует задавать в том случае, если при обучении модели нужно учитывать только определенный объем данных за предыдущие периоды. Дополнительные сведения о [целевом агрегате для последовательного окна](#target-rolling-window-aggregation).||
 
 
