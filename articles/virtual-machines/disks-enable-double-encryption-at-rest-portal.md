@@ -39,7 +39,7 @@ ms.locfileid: "88817921"
 
 1. Щелкните **+ Добавить**.
 
-    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-add-disk-encryption-set.png" alt-text="Снимок экрана: колонка "набор шифрования диска", "+ Добавить".":::
+    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-add-disk-encryption-set.png" alt-text="Снимок экрана: колонка набор шифрования диска, "+ Добавить".":::
 
 1. Выберите один из поддерживаемых регионов.
 1. В качестве **типа шифрования**выберите **двойное шифрование с управляемыми платформой ключами и управляемыми клиентом ключи**.
@@ -73,7 +73,7 @@ ms.locfileid: "88817921"
 1. Выберите набор шифрования дисков.
 1. Щелкните **Save** (Сохранить).
 
-    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-enable-disk-blade.png" alt-text="Снимок экрана колонки "шифрование" для управляемого диска выделено упомянутый тип шифрования.":::
+    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-enable-disk-blade.png" alt-text="Снимок экрана колонки шифрование для управляемого диска выделено упомянутый тип шифрования.":::
 
 Теперь вы включили двойное шифрование неактивных на управляемом диске.
 
