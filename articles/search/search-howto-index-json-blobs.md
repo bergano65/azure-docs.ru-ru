@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
-ms.openlocfilehash: cdf71f939d6e5e1ada0ba141dce3bcba9d7d9b01
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 6a5a3634f1d5ddc7af2af2e27c2b1d7c8ce9a2af
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86529800"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88917998"
 ---
 # <a name="how-to-index-json-blobs-using-a-blob-indexer-in-azure-cognitive-search"></a>Индексация больших двоичных объектов JSON с помощью индексатора больших двоичных объектов в Azure Когнитивный поиск
 
@@ -37,7 +37,7 @@ ms.locfileid: "86529800"
 
 ### <a name="1---prepare-source-data"></a>1. Подготовка исходных данных
 
-[Войдите в портал Azure](https://portal.azure.com/) и [создайте контейнер больших двоичных объектов](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal) , который будет содержать ваши данные. Для общего уровня доступа можно задать любое из его допустимых значений.
+[Войдите в портал Azure](https://portal.azure.com/) и [создайте контейнер больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-portal.md) , который будет содержать ваши данные. Для общего уровня доступа можно задать любое из его допустимых значений.
 
 Для получения данных в мастере **импорта данных** потребуется имя учетной записи хранения, имя контейнера и ключ доступа.
 
@@ -77,7 +77,7 @@ ms.locfileid: "86529800"
 
 Можно выполнить групповое выделение атрибутов, установив флажок в верхней части столбца атрибута. Выберите возможность **извлечения** и **поиска** для каждого поля, которое должно быть возвращено клиентскому приложению и которое подлежит обработке полнотекстового поиска. Вы заметите, что целые числа не являются полным текстом или нечеткими для поиска (числа оцениваются буквально и часто используются в фильтрах).
 
-Дополнительные сведения см. в описании [атрибутов индекса](https://docs.microsoft.com/rest/api/searchservice/create-index#bkmk_indexAttrib) и [языковых анализаторов](https://docs.microsoft.com/rest/api/searchservice/language-support) . 
+Дополнительные сведения см. в описании [атрибутов индекса](/rest/api/searchservice/create-index#bkmk_indexAttrib) и [языковых анализаторов](/rest/api/searchservice/language-support) . 
 
 Просмотрите выбранные параметры. После запуска мастера создаются структуры физических данных и вы не сможете изменить эти поля без удаления и повторного создания всех объектов.
 
@@ -110,9 +110,9 @@ ms.locfileid: "86529800"
 
 Для индексации JSON на основе кода используйте [POST](search-get-started-postman.md) и REST API для создания этих объектов:
 
-+ [номер](https://docs.microsoft.com/rest/api/searchservice/create-index)
-+ [Источник данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source)
-+ [индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
++ [index](/rest/api/searchservice/create-index)
++ [Источник данных](/rest/api/searchservice/create-data-source)
++ [индексатора](/rest/api/searchservice/create-indexer)
 
 Порядок операций требует создания и вызова объектов в этом порядке. В отличие от рабочего процесса портала, для реализации кода требуется доступный индекс для приема документов JSON, отправленных через запрос на **Создание индексатора** .
 
@@ -120,9 +120,9 @@ ms.locfileid: "86529800"
 
 | Документ JSON | parsingMode | Описание | Доступность |
 |--------------|-------------|--------------|--------------|
-| Один на большой двоичный объект | `json` | Анализирует большие двоичные объекты JSON как отдельный блок текста. Каждый большой двоичный объект JSON преобразуется в один документ Azure Когнитивный поиск. | Общедоступно в [интерфейсе API и в](https://docs.microsoft.com/rest/api/searchservice/indexer-operations) пакете SDK для [.NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexer) . |
-| Несколько на большой двоичный объект | `jsonArray` | Анализирует массив JSON в большом двоичном объекте, где каждый элемент массива преобразуется в отдельный документ Azure Когнитивный поиск.  | Общедоступно в [интерфейсе API и в](https://docs.microsoft.com/rest/api/searchservice/indexer-operations) пакете SDK для [.NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexer) . |
-| Несколько на большой двоичный объект | `jsonLines` | Анализирует большой двоичный объект, который содержит несколько сущностей JSON ("Array"), разделенных новой строкой, где каждая сущность превращается в отдельный документ Azure Когнитивный поиск. | Общедоступно в [интерфейсе API и в](https://docs.microsoft.com/rest/api/searchservice/indexer-operations) пакете SDK для [.NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexer) . |
+| Один на большой двоичный объект | `json` | Анализирует большие двоичные объекты JSON как отдельный блок текста. Каждый большой двоичный объект JSON преобразуется в один документ Azure Когнитивный поиск. | Общедоступно в [интерфейсе API и в](/rest/api/searchservice/indexer-operations) пакете SDK для [.NET](/dotnet/api/microsoft.azure.search.models.indexer) . |
+| Несколько на большой двоичный объект | `jsonArray` | Анализирует массив JSON в большом двоичном объекте, где каждый элемент массива преобразуется в отдельный документ Azure Когнитивный поиск.  | Общедоступно в [интерфейсе API и в](/rest/api/searchservice/indexer-operations) пакете SDK для [.NET](/dotnet/api/microsoft.azure.search.models.indexer) . |
+| Несколько на большой двоичный объект | `jsonLines` | Анализирует большой двоичный объект, который содержит несколько сущностей JSON ("Array"), разделенных новой строкой, где каждая сущность превращается в отдельный документ Azure Когнитивный поиск. | Общедоступно в [интерфейсе API и в](/rest/api/searchservice/indexer-operations) пакете SDK для [.NET](/dotnet/api/microsoft.azure.search.models.indexer) . |
 
 ### <a name="1---assemble-inputs-for-the-request"></a>1. формирование входных данных для запроса
 
@@ -168,7 +168,7 @@ ms.locfileid: "86529800"
 
 В индексе хранится контент, поддерживающий поиск, в Когнитивный поиск Azure. Чтобы создать индекс, предоставьте схему, которая задает поля в документе, атрибуты и другие компоненты, которые определяют процедуру поиска. Если вы создаете индекс, который имеет те же имена полей и типы данных в качестве источника, индексатор будет сопоставлять поля источника и назначения и вам не придется явным образом сопоставлять эти поля.
 
-В следующем примере показан запрос [Создать индекс](https://docs.microsoft.com/rest/api/searchservice/create-index). У индекса будет доступное для поиска поле `content` для хранения текста, извлеченного из больших двоичных объектов:   
+В следующем примере показан запрос [Создать индекс](/rest/api/searchservice/create-index). У индекса будет доступное для поиска поле `content` для хранения текста, извлеченного из больших двоичных объектов:   
 
 ```http
     POST https://[service name].search.windows.net/indexes?api-version=2020-06-30
@@ -280,10 +280,10 @@ ms.locfileid: "86529800"
 
 Пакет SDK для .NET полностью использует четность с REST API. Мы рекомендуем прочитать предыдущий раздел о REST API, чтобы ознакомиться с концепциями, рабочим процессом и требованиями. Используйте следующую справочную документацию по .NET API для реализации индексатора JSON в управляемом коде.
 
-+ [microsoft.azure.search.models.datasource](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasource?view=azure-dotnet)
-+ [microsoft.azure.search.models.datasourcetype](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasourcetype?view=azure-dotnet) 
-+ [microsoft.azure.search.models.index](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.index?view=azure-dotnet) 
-+ [microsoft.azure.search.models.indexer](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexer?view=azure-dotnet)
++ [microsoft.azure.search.models.datasource](/dotnet/api/microsoft.azure.search.models.datasource?view=azure-dotnet)
++ [microsoft.azure.search.models.datasourcetype](/dotnet/api/microsoft.azure.search.models.datasourcetype?view=azure-dotnet) 
++ [microsoft.azure.search.models.index](/dotnet/api/microsoft.azure.search.models.index?view=azure-dotnet) 
++ [microsoft.azure.search.models.indexer](/dotnet/api/microsoft.azure.search.models.indexer?view=azure-dotnet)
 
 <a name="parsing-modes"></a>
 
@@ -291,7 +291,7 @@ ms.locfileid: "86529800"
 
 Большие двоичные объекты JSON могут полагаться на несколько форм. Параметр **parsingMode** индексатора JSON определяет способ синтаксического анализа и структурирования содержимого больших двоичных объектов JSON в индексе Azure когнитивный Поиск:
 
-| parsingMode | Описание |
+| parsingMode | Description |
 |-------------|-------------|
 | `json`  | Индексировать каждый BLOB-объект как отдельный документ. Это значение по умолчанию. |
 | `jsonArray` | Выберите этот режим, если большие двоичные объекты состоят из массивов JSON, и каждый элемент массива должен стать отдельным документом в Когнитивный поиск Azure. |
@@ -453,7 +453,7 @@ ms.locfileid: "86529800"
 >
 >
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 + [Indexers in Azure Cognitive Search](search-indexer-overview.md) (Индексаторы в службе "Когнитивный поиск Azure")
 + [Индексирование хранилища BLOB-объектов Azure с помощью Azure Когнитивный поиск](search-howto-index-json-blobs.md)

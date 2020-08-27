@@ -3,18 +3,18 @@ title: Azure Data Lake Storage 2-го поколения пакета SDK для
 description: Использование Python для управления каталогами и файлами и списками управления доступом к каталогам (ACL) в учетных записях хранения, в которых включено иерархическое пространство имен (HNS).
 author: normesta
 ms.service: storage
-ms.date: 04/10/2020
+ms.date: 08/26/2020
 ms.author: normesta
 ms.topic: how-to
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
 ms.custom: devx-track-python
-ms.openlocfilehash: 762f616a27338750973e843a999b36a22171fbcd
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 3056e167a7482cb2967a68bbf1cd40e4bad49093
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87847607"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923846"
 ---
 # <a name="use-python-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование Python для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
@@ -332,6 +332,10 @@ def list_directory_contents():
     except Exception as e:
      print(e) 
 ```
+
+## <a name="set-an-acl-recursively-preview"></a>Рекурсивное задание списка ACL (Предварительная версия)
+
+Можно рекурсивно добавлять, обновлять и удалять списки управления доступом для существующих дочерних элементов родительского каталога без необходимости вносить эти изменения отдельно для каждого дочернего элемента. Дополнительные сведения см. в разделе [Настройка списков управления доступом (ACL) рекурсивно для Azure Data Lake Storage 2-го поколения](recursive-access-control-lists.md).
 
 ## <a name="see-also"></a>См. также
 

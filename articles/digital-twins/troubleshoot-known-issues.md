@@ -6,12 +6,12 @@ ms.author: baanders
 ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
-ms.openlocfilehash: 0c008061d2d4fafa96eda934d5026c92839a0bdb
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.openlocfilehash: 01d962db45a58781ca5f2ba494de16ad420b0807
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88661492"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88921075"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Известные проблемы в службе Digital двойников
 
@@ -51,7 +51,9 @@ ms.locfileid: "88661492"
 
 ## <a name="issue-with-interactive-browser-authentication"></a>Проблемы с интерактивной проверкой подлинности браузера
 
-При написании кода проверки подлинности в приложениях Azure Digital двойников с помощью последней версии (версия **1.2.0**) **библиотеки [Azure. Identity](https://docs.microsoft.com/dotnet/api/azure.identity?view=azure-dotnet) **могут возникнуть проблемы с методом [интерактивебровсеркредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet) .
+При написании кода проверки подлинности в приложениях Azure Digital двойников с помощью версии **1.2.0** **библиотеки [Azure. Identity](https://docs.microsoft.com/dotnet/api/azure.identity?view=azure-dotnet) **могут возникнуть проблемы с методом [интерактивебровсеркредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet) .
+
+Это не последняя версия библиотеки. Последняя версия — **1.2.2**.
 
 Затронутый метод используется в следующих статьях: 
 * [*Руководство. Написание кода для клиентского приложения*](tutorial-code.md)
@@ -62,10 +64,7 @@ ms.locfileid: "88661492"
 
 ### <a name="troubleshooting-steps"></a>Действия по устранению неполадок
 
-Чтобы устранить эту проблему, приложения должны явно использовать Azure. Identity версии **1.1.1**. В этой версии библиотеки браузер должен загружаться и проходить проверку подлинности должным образом.
-
->[!NOTE]
-> Нет необходимости добавлять библиотеку без указания какой-либо версии, так как по умолчанию все равно будет иметь последнюю **1.2.0**. Необходимо явно указать версию **1.1.1** .
+Чтобы устранить эту проблему, обновите приложения, чтобы использовать Azure. Identity версии **1.2.2**. В этой версии библиотеки браузер должен загружаться и проходить проверку подлинности должным образом.
 
 ### <a name="possible-causes"></a>Возможные причины
 

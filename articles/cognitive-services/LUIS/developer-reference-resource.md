@@ -3,13 +3,13 @@ title: Ресурсы для разработчиков — Language Understandi
 description: Пакеты SDK, API-интерфейсы RESTFUL, CLI, помогают разрабатывать приложения Language Understanding (LUIS) на языке программирования. Управляйте ресурсами Azure и прогнозами LUIS.
 ms.topic: reference
 ms.date: 05/19/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 01cbaf5a7e8eb733680381da21a7b1f9aa5c2cea
-ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 759111ee7e77ce00fec3762b1a20494c2771ef8f
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88236001"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88931205"
 ---
 # <a name="sdk-rest-and-cli-developer-resources-for-language-understanding-luis"></a>Ресурсы для разработчиков SDK, RESTFUL и CLI для Language Understanding (LUIS)
 
@@ -70,9 +70,9 @@ ms.locfileid: "88236001"
 |Параметр|Цель|
 |--|--|
 |`your-resource-name`|Имя ресурса Azure|
-|`q` либо `query`|Текст фразы, отправляемый из клиентского приложения, такого как чат-бот|
+|`q` или `query`|Текст фразы, отправляемый из клиентского приложения, такого как чат-бот|
 |`version`|имя версии с 10 символами|
-|`slot`| `production` либо `staging`|
+|`slot`| `production` или `staging`|
 
 ### <a name="rest-query-string-parameters"></a>Параметры строки запроса RESTFUL
 
@@ -86,11 +86,11 @@ ms.locfileid: "88236001"
 
 |Язык |Справочная документация|Пакет|Краткие руководства|
 |--|--|--|--|
-|C#|[Разработка](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.luis.authoring?view=azure-dotnet)</br>[Прогнозирование](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.luis.runtime?view=azure-dotnet)|[Создание NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)<br>[Прогнозирование NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/)|[Разработка](quickstart-sdk.md?pivots=programming-language-csharp)<br>[Прогнозирование запросов](quickstart-sdk.md?pivots=programming-language-csharp)|
+|C#|[Разработка](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.luis.authoring?view=azure-dotnet)</br>[Прогнозирующее](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.luis.runtime?view=azure-dotnet)|[Создание NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)<br>[Прогнозирование NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/)|[Разработка](quickstart-sdk.md?pivots=programming-language-csharp)<br>[Прогнозирование запросов](quickstart-sdk.md?pivots=programming-language-csharp)|
 |Go|[Создание и прогнозирование](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.0/luis)|[Пакет SDK](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v2.0/luis)||
 |Java|[Создание и прогнозирование](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/languageunderstanding?view=azure-java-stable)|[Создание Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-authoring)<br>[Прогноз Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-runtime)|
-|JavaScript|[Разработка](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-authoring/?view=azure-node-latest)<br>[Прогнозирование](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-runtime/?view=azure-node-latest)|[Создание NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)<br>[Прогноз NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime)|[Разработка](quickstart-sdk.md?pivots=programming-language-javascript)<br>[Прогнозирование](quickstart-sdk.md?pivots=programming-language-javascript)|
-|Python|[Создание и прогнозирование](quickstart-sdk.md?pivots=programming-language-python)|[PIP](https://pypi.org/project/azure-cognitiveservices-language-luis/)|[Разработка](quickstart-sdk.md?pivots=programming-language-python)<br>[Прогнозирование](quickstart-sdk.md?pivots=programming-language-python)|
+|JavaScript|[Разработка](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-authoring/?view=azure-node-latest)<br>[Прогнозирующее](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-runtime/?view=azure-node-latest)|[Создание NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)<br>[Прогноз NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime)|[Разработка](quickstart-sdk.md?pivots=programming-language-javascript)<br>[Прогнозирующее](quickstart-sdk.md?pivots=programming-language-javascript)|
+|Python|[Создание и прогнозирование](quickstart-sdk.md?pivots=programming-language-python)|[PIP](https://pypi.org/project/azure-cognitiveservices-language-luis/)|[Разработка](quickstart-sdk.md?pivots=programming-language-python)<br>[Прогнозирующее](quickstart-sdk.md?pivots=programming-language-python)|
 
 
 ### <a name="containers"></a>Контейнеры
@@ -125,7 +125,7 @@ Language Understanding предоставляет возможность упр�
 * [Эмулятор Bot Framework](https://github.com/Microsoft/BotFramework-Emulator/releases) — классическое приложение, позволяющее Bot-разработчикам тестировать и отлаживать программы-роботы, созданные с помощью пакета SDK для Bot Framework.
 * [Композитор Framework Composer](https://github.com/microsoft/BotFramework-Composer/blob/stable/README.md) — интегрированное средство разработки для разработчиков и групп могут, предназначенное для создания программы-роботы и общения с помощью платформы Microsoft Bot Framework
 * [Примеры для платформы Bot](https://github.com/microsoft/botbuilder-samples) в #C, JavaScript, TypeScript и Python
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об общих [кодах ошибок HTTP](luis-reference-response-codes.md)
 * [Справочная документация](https://docs.microsoft.com/azure/index) по всем API и пакетам SDK

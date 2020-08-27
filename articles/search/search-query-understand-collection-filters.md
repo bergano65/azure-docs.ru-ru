@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 861e011c4bd368a274998859170e78cf444400a8
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 6af0f2b5221a737687578e939c14cecf3be14509
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206177"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932922"
 ---
 # <a name="understanding-odata-collection-filters-in-azure-cognitive-search"></a>Основные сведения о фильтрах коллекции OData в Azure Когнитивный поиск
 
@@ -88,14 +88,14 @@ ms.locfileid: "86206177"
 
 Как `Rooms/Type` хранится для полнотекстового поиска:
 
-| Термин в`Rooms/Type` | Идентификаторы документов |
+| Термин в `Rooms/Type` | Идентификаторы документов |
 | --- | --- |
 | Обучающий | 1, 2 |
 | standard | 1 |
 
 Как `Rooms/Description` хранится для полнотекстового поиска:
 
-| Термин в`Rooms/Description` | Идентификаторы документов |
+| Термин в `Rooms/Description` | Идентификаторы документов |
 | --- | --- |
 | кауртярд | 2 |
 | city | 1 |
@@ -180,9 +180,9 @@ ms.locfileid: "86206177"
 > [!NOTE]
 > Хотя подробные сведения выходят за рамки этого документа, эти же принципы расширяются на [тесты расстояния и пересечения для коллекций геопространственных точек](search-query-odata-geo-spatial-functions.md) . Именно поэтому в `any` :
 >
-> - `geo.intersects`не может быть отрицанием
-> - `geo.distance`необходимо сравнить с помощью `lt` или`le`
-> - выражения должны быть объединены с `or` , а не`and`
+> - `geo.intersects` не может быть отрицанием
+> - `geo.distance` необходимо сравнить с помощью `lt` или `le`
+> - выражения должны быть объединены с `or` , а не `and`
 >
 > Правила обратной стороны применяются для `all` .
 
@@ -204,4 +204,4 @@ ms.locfileid: "86206177"
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
 - [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
-- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](/rest/api/searchservice/Search-Documents)

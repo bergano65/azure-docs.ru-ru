@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: trbye
-ms.openlocfilehash: 47448a97c89b1feddfc43da300cb53fd65eaff05
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 2806ce18cc9febfdf15d48052d301da48b3c226f
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056658"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934469"
 ---
 # <a name="tutorial-voice-enable-your-bot-using-the-speech-sdk"></a>Учебник. Включение программы-робота с помощью речевого пакета SDK
 
@@ -68,7 +69,7 @@ ms.locfileid: "88056658"
 
 В клиентском приложении, которое вы создадите в этом руководстве, используется несколько служб Azure. Чтобы сократить время приема-передачи для ответов от программы-робота, необходимо убедиться, что эти службы расположены в одном регионе Azure. В этом разделе вы создадите группу ресурсов в регионе " **Западная часть США** ". Эта группа ресурсов будет использоваться при создании отдельных ресурсов для Bot Framework, канала речевого перевода строки и службы распознавания речи.
 
-1. <a href="https://ms.portal.azure.com/#create/Microsoft.ResourceGroup" target="_blank">Создание группы ресурсов<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+1. <a href="https://ms.portal.azure.com/#create/Microsoft.ResourceGroup" target="_blank">Создание группы ресурсов <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 1. Вам будет предложено ввести некоторые сведения:
    * Установите **бесплатную пробную версию** **подписки** (можно также использовать существующую подписку).
    * Введите имя **группы ресурсов**. Рекомендуется **спичечоботтуториал-ResourceGroup**.
@@ -94,7 +95,7 @@ ms.locfileid: "88056658"
 
 Чтобы создать речевой ресурс, выполните следующие инструкции:
 
-1. <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">Создание ресурса службы речи<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+1. <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">Создание ресурса службы речи <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 4. Вам будет предложено ввести некоторые сведения:
    * Присвойте ресурсу **имя**. Рекомендуем **спичечоботтуториал-речь**
    * Убедитесь, что для **подписки**выбрана **Бесплатная пробная версия** .
@@ -108,13 +109,13 @@ ms.locfileid: "88056658"
 
 | Имя | Тип  | Расположение |
 |------|-------|----------|
-| Спичечоботтуториал — речь | Cognitive Services | западная часть США |
+| Спичечоботтуториал — речь | Службы Cognitive Services | западная часть США |
 
 ### <a name="create-an-azure-app-service-plan"></a>Создание плана службы приложений Azure
 
 Следующим шагом является создание плана службы приложений. План службы приложений определяет набор вычислительных ресурсов, на которых выполняется веб-приложение.
 
-1. <a href="https://ms.portal.azure.com/#create/Microsoft.AppServicePlanCreate" target="_blank">Создание плана службы приложений Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+1. <a href="https://ms.portal.azure.com/#create/Microsoft.AppServicePlanCreate" target="_blank">Создание плана службы приложений Azure <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 4. Вам будет предложено ввести некоторые сведения:
    * Установите **бесплатную пробную версию** **подписки** (можно также использовать существующую подписку).
    * В качестве **группы ресурсов**выберите **спичечоботтуториал-ResourceGroup**.
@@ -130,7 +131,7 @@ ms.locfileid: "88056658"
 | Имя | Тип  | Расположение |
 |------|-------|----------|
 | Спичечоботтуториал — AppServicePlan | План службы приложений | западная часть США |
-| Спичечоботтуториал — речь | Cognitive Services | западная часть США |
+| Спичечоботтуториал — речь | Службы Cognitive Services | западная часть США |
 
 ## <a name="build-an-echo-bot"></a>Создание эхо-робота
 
@@ -166,7 +167,7 @@ ms.locfileid: "88056658"
 1. Установка [эмулятора Bot Framework](https://github.com/Microsoft/BotFramework-Emulator/releases/latest) версии 4.3.0 или более поздней
 2. Запустите эмулятор Bot Framework и откройте программу Bot:
    * **Файл**  ->  **Откройте Bot**.
-3. Введите URL-адрес для Bot. Пример:
+3. Введите URL-адрес для Bot. Например:
 
    ```
    http://localhost:3978/api/messages
@@ -216,7 +217,7 @@ ms.locfileid: "88056658"
 |------|-------|----------|
 | EchoBot20190805125647 | Служба приложений | западная часть США |
 | Спичечоботтуториал — AppServicePlan | План службы приложений | западная часть США |
-| Спичечоботтуториал — речь | Cognitive Services | западная часть США |
+| Спичечоботтуториал — речь | Службы Cognitive Services | западная часть США |
 
 ## <a name="enable-web-sockets"></a>Включение протокола WebSocket
 
@@ -235,7 +236,7 @@ ms.locfileid: "88056658"
 
 Теперь, когда вы создали службу приложений Azure для размещения программы Bot, следующим шагом является создание **регистрации каналов Bot**. Создание регистрации канала является необходимым условием для регистрации программы-робота с каналами ленты, включая прямой канал речи. Если вы хотите узнать больше о том, как программы-роботы использовать каналы, см. статью [Подключение канала Bot к каналам](https://docs.microsoft.com/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0).
 
-1. <a href="https://ms.portal.azure.com/#create/Microsoft.BotServiceConnectivityGalleryPackage" target="_blank">Создание регистрации каналов Azure Bot<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+1. <a href="https://ms.portal.azure.com/#create/Microsoft.BotServiceConnectivityGalleryPackage" target="_blank">Создание регистрации каналов Azure Bot <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 2. Вам будет предложено ввести некоторые сведения:
    * В качестве **маркера Bot**введите **спичечоботтуториал-ботрегистратион-# # # #** и замените **####** вашим выбором. Обратите внимание, что маркер Bot должен быть глобально уникальным. При вводе маркера Bot, но при получении сообщения об ошибке _запрошенный идентификатор Bot недоступен_, а затем выбирается другое число. В приведенных ниже примерах мы использовали 8726
    * В качестве **подписки**выберите **Бесплатная пробная версия**.
@@ -254,7 +255,7 @@ ms.locfileid: "88056658"
 | EchoBot20190805125647 | Служба приложений | западная часть США |
 | Спичечоботтуториал — AppServicePlan | План службы приложений | западная часть США |
 | Спичечоботтуториал-Ботрегистратион-8726 | Регистрация каналов Bot | Глобальный |
-| Спичечоботтуториал — речь | Cognitive Services | западная часть США |
+| Спичечоботтуториал — речь | Службы Cognitive Services | западная часть США |
 
 > [!IMPORTANT]
 > В ресурсе регистрации каналов Bot будет показан глобальный регион, даже если вы выбрали "Западная часть США". Это ожидаемое поведение.
@@ -329,14 +330,14 @@ ms.locfileid: "88056658"
 |Ошибка (Коннектионфаилуре): соединение было закрыто удаленным узлом. Код ошибки: 1002. Сведения об ошибке: сервер вернул код состояния "503", когда ожидался код состояния "101" | Убедитесь, что [установлен флажок "включить конечную точку потоковой передачи"](#register-the-direct-line-speech-channel) и/или [переключаемые **веб-сокеты** ](#enable-web-sockets) .<br>Убедитесь, что служба приложений Azure запущена. Если это так, попробуйте перезапустить службу приложений.|
 |Ошибка (Коннектионфаилуре): соединение было закрыто удаленным узлом. Код ошибки: 1011. Сведения об ошибке: код состояния ответа не указывает на успешное выполнение: 500 (InternalServerError)| Ваш Bot указал нейронный голос [в поле](https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md#speak) выходного действия, но регион Azure, связанный с ключом подписки на речь, не поддерживает нейронные голоса. См. раздел [Стандартные и нейронные голоса](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#standard-and-neural-voices).|
 
-Если эта ошибка не устранена в таблице, см. раздел ["помощники для голоса": часто задаваемые вопросы](faq-voice-assistants.md). Если после выполнения всех действий, описанных в этом руководстве, по-прежнему не удается устранить проблему, введите новую проблему на [странице GitHub для голоса](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/issues).
+Если эта ошибка не устранена в таблице, см. раздел ["помощники для голоса": часто задаваемые вопросы](faq-voice-assistants.md). Если после выполнения всех действий, описанных в этом руководстве, по-прежнему не удается устранить проблему, введите новую проблему на  [странице GitHub для голоса](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/issues).
 
 #### <a name="a-note-on-connection-time-out"></a>Примечание об истечении времени ожидания подключения
 
 Если вы подключены к Bot и никакие действия не происходили за последние 5 минут, служба автоматически закроет соединение WebSocket с клиентом и с помощью программы-робота. Это сделано намеренно. На нижней панели появится сообщение: *"активное подключение превышено, но готово к повторному подключению по запросу"*. Не нужно нажимать кнопку "повторное подключение". просто нажмите кнопку "микрофон" и начните говорить, вводите текстовое сообщение или скажите ключевое слово (если оно включено). Соединение будет автоматически восстановлено.  
 ### <a name="view-bot-activities"></a>Просмотр действий программы-робота
 
-Каждый Bot отправляет и получает сообщения о **действиях** . В окне **Журнал действий** клиента Windows Voice Assistant Вы увидите журналы с метками времени с каждым действием, полученным клиентом от Bot. Вы также можете просмотреть действия, отправленные клиентом в Bot с помощью [`DialogServiceConnector.SendActivityAsync`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.sendactivityasync) метода. При выборе элемента журнала отображаются сведения о связанном действии в формате JSON.
+Каждый Bot отправляет и получает сообщения о **действиях** . В окне **Журнал действий** клиента Windows Voice Assistant Вы увидите журналы с метками времени с каждым действием, полученным клиентом от Bot. Вы также можете просмотреть действия, отправленные клиентом в Bot с помощью [`DialogServiceConnector.SendActivityAsync`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.sendactivityasync)  метода. При выборе элемента журнала отображаются сведения о связанном действии в формате JSON.
 
 Ниже приведен пример JSON действия, полученного клиентом.
 
@@ -379,8 +380,8 @@ ms.locfileid: "88056658"
 ### <a name="view-client-source-code-for-calls-to-the-speech-sdk"></a>Просмотр исходного кода клиента для вызовов пакета SDK для распознавания речи
 
 Клиент помощника по Windows Voice использует пакет NuGet [Microsoft. CognitiveServices. Speech](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/), который содержит РЕЧЕВОЙ пакет SDK. Хорошим местом для начала рассмотрения примера кода является метод Инитспичконнектор () в файле [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs) , который создает эти два объекта SDK для речи:
-- [`DialogServiceConfig`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconfig)— Для параметров конфигурации (например, ключа подписки на речь, региона ключей);
-- [`DialogServiceConnector`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.-ctor)— Управление подключением канала и событиями клиентской подписки для обработки распознанных речевых ответов и сообщений Bot.
+- [`DialogServiceConfig`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconfig) — Для параметров конфигурации (например, ключа подписки на речь, региона ключей);
+- [`DialogServiceConnector`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.-ctor) — Управление подключением канала и событиями клиентской подписки для обработки распознанных речевых ответов и сообщений Bot.
 
 ## <a name="add-custom-keyword-activation"></a>Добавить активацию настраиваемого ключевого слова
 
@@ -411,8 +412,8 @@ ms.locfileid: "88056658"
 
 В исходном коде клиента помощника Windows Voice просмотрите эти файлы, чтобы просмотреть код, используемый для включения обнаружения ключевых слов:
 
-1. [`VoiceAssistantClient\Models.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/Models.cs)включает вызов метода Speech SDK [`KeywordRecognitionModel.fromFile()`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/keywordrecognitionmodel?view=azure-node-latest#fromfile-string-) , который используется для создания экземпляра модели из локального файла на диске.
-1. [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs)включает в себя вызов метода Speech SDK [`DialogServiceConnector.StartKeywordRecognitionAsync()`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.startkeywordrecognitionasync) , который активирует непрерывное обнаружение ключевых слов.
+1. [`VoiceAssistantClient\Models.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/Models.cs) включает вызов метода Speech SDK [`KeywordRecognitionModel.fromFile()`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/keywordrecognitionmodel?view=azure-node-latest#fromfile-string-) , который используется для создания экземпляра модели из локального файла на диске.
+1. [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs) включает в себя вызов метода Speech SDK [`DialogServiceConnector.StartKeywordRecognitionAsync()`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.startkeywordrecognitionasync) , который активирует непрерывное обнаружение ключевых слов.
 
 ## <a name="optional-change-the-language-and-bot-voice"></a>Используемых Изменение языка и Bot-голоса
 

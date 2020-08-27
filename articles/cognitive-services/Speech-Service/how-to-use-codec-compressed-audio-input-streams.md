@@ -10,13 +10,14 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: amishu
+ms.custom: devx-track-csharp
 zone_pivot_groups: programming-languages-set-twenty-two
-ms.openlocfilehash: 14f87dff680fb72654d1d3e20fe2f0516f9709aa
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 4585538e552e73f8f7a4b7b105153a9d26eeb4c4
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282755"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934108"
 ---
 # <a name="use-codec-compressed-audio-input-with-the-speech-sdk"></a>Использование сжатых звуковых данных кодека с помощью пакета SDK для распознавания речи
 
@@ -64,7 +65,7 @@ ms.locfileid: "87282755"
 [!INCLUDE [prerequisites](includes/how-to/compressed-audio-input/python/examples.md)]
 ::: zone-end
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Узнайте, как распознать речь](quickstarts/speech-to-text-from-microphone.md)

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 7f2eb7cff5d8fe77a56117a0be57f0edb86889a9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 75932acb740eeff6f95180cf2eaa332ad0f5fb6a
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85562298"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923081"
 ---
 # <a name="filters-in-azure-cognitive-search"></a>Фильтры в Когнитивный поиск Azure 
 
@@ -61,7 +61,7 @@ ms.locfileid: "85562298"
 Фильтрация выполняется в сочетании с поиском, определяющим, какие документы следует включить в подчиненную обработку для получения документа и оценки релевантности. При связывании со строкой поиска фильтр эффективно сокращает набор отзывов последующей операции поиска. При использовании отдельно (например, когда строка запроса пуста, где `search=*`), критерием фильтра являются только входные данные. 
 
 ## <a name="defining-filters"></a>Определение фильтров
-Фильтры — это выражения OData, сформулированные с помощью [подмножества синтаксиса OData версии 4, поддерживаемого в когнитивный Поиск Azure](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search). 
+Фильтры — это выражения OData, сформулированные с помощью [подмножества синтаксиса OData версии 4, поддерживаемого в когнитивный Поиск Azure](/rest/api/searchservice/odata-expression-syntax-for-azure-search). 
 
 Можно указать один фильтр для каждой операции **поиска** , но сам фильтр может включать несколько полей, несколько условий, а при использовании функции **Match** — несколько выражений полнотекстового поиска. В выражении фильтра из нескольких частей можно указать предикаты в любом порядке (в соответствии с правилами приоритета операторов). Попытка поставить предикаты в определенной последовательности не даст значительного прироста производительности.
 
@@ -95,7 +95,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 ## <a name="filter-usage-patterns"></a>Шаблоны использования фильтров
 
-В следующих примерах показаны несколько шаблонов использования для сценариев фильтрации. Дополнительные примеры можно найти в разделе [Примеры OData](https://docs.microsoft.com/azure/search/search-query-odata-filter#examples).
+В следующих примерах показаны несколько шаблонов использования для сценариев фильтрации. Дополнительные примеры можно найти в разделе [Примеры OData](./search-query-odata-filter.md#examples).
 
 + Автономный параметр **$filter** без строки запроса полезен, когда выражение фильтра может полностью определить интересующие документы. Без строки запроса не выполняется лексический или лингвистический анализ, нет оценки и рейтинга. Обратите внимание, что строка поиска — это просто звездочка, что означает "сопоставить все документы".
 
@@ -135,9 +135,9 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 ## <a name="field-requirements-for-filtering"></a>Требования к полям для фильтрации
 
-В REST API фильтрация по умолчанию включена *для* простых полей. Фильтруемые поля увеличивают размер индекса. Не забудьте установить `"filterable": false` для полей, которые вы не планируете фактически использовать в фильтре. Дополнительные сведения о параметрах для определения полей см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индекса (REST API службы "Поиск Azure")).
+В REST API фильтрация по умолчанию включена *для* простых полей. Фильтруемые поля увеличивают размер индекса. Не забудьте установить `"filterable": false` для полей, которые вы не планируете фактически использовать в фильтре. Дополнительные сведения о параметрах для определения полей см. в статье [Create Index (Azure Search Service REST API)](/rest/api/searchservice/create-index) (Создание индекса (REST API службы "Поиск Azure")).
 
-В пакете SDK для .NET фильтруемые поля *отключены* по умолчанию. Можно сделать фильтр для поля, задав для свойства- [фильтра](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.isfilterable?view=azure-dotnet) соответствующего объекта [поля](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field?view=azure-dotnet) значение `true` . Это также можно сделать декларативно с помощью атрибута с [фильтрацией](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.isfilterableattribute). В приведенном ниже примере атрибут задается для `BaseRate` Свойства класса Model, который сопоставляется с определением индекса.
+В пакете SDK для .NET фильтруемые поля *отключены* по умолчанию. Можно сделать фильтр для поля, задав для свойства- [фильтра](/dotnet/api/microsoft.azure.search.models.field.isfilterable?view=azure-dotnet) соответствующего объекта [поля](/dotnet/api/microsoft.azure.search.models.field?view=azure-dotnet) значение `true` . Это также можно сделать декларативно с помощью атрибута с [фильтрацией](/dotnet/api/microsoft.azure.search.isfilterableattribute). В приведенном ниже примере атрибут задается для `BaseRate` Свойства класса Model, который сопоставляется с определением индекса.
 
 ```csharp
     [IsFilterable, IsSortable, IsFacetable]
@@ -168,7 +168,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 Документы, содержащие числовые поля (цена, размер, SKU, идентификатор), предоставляют эти значения в результатах поиска, если поле отмечено `retrievable`. Суть в том, что полнотекстовый поиск не применим к числовым типам полей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сначала попробуйте использовать **обозреватель поиска** на портале, чтобы отправить запросы с параметрами **$filter**. [Пример индекса выборки недвижимости](search-get-started-portal.md) предоставляет полезные результаты для следующих отфильтрованных запросов при их вставке в строку поиска:
 
@@ -193,12 +193,12 @@ search=John Leclerc&$count=true&$select=source,city,postCode,baths,beds&$filter=
 search=John Leclerc&$count=true&$select=source,city,postCode,baths,beds&$filter=city gt 'Seattle'
 ```
 
-Дополнительные примеры можно найти в разделе [Примеры OData](https://docs.microsoft.com/azure/search/search-query-odata-filter#examples).
+Дополнительные примеры можно найти в разделе [Примеры OData](./search-query-odata-filter.md#examples).
 
 ## <a name="see-also"></a>См. также
 
 + [How full text search works in Azure Cognitive Search](search-lucene-query-architecture.md) (Как выполняется полнотекстовый поиск в Когнитивном поиске Azure)
-+ [Поиск документов REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents)
-+ [Простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
-+ [Синтаксис запросов Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)
-+ [Поддерживаемые типы данных](https://docs.microsoft.com/rest/api/searchservice/supported-data-types)
++ [Поиск документов REST API](/rest/api/searchservice/search-documents)
++ [Простой синтаксис запросов](/rest/api/searchservice/simple-query-syntax-in-azure-search)
++ [Синтаксис запросов Lucene](/rest/api/searchservice/lucene-query-syntax-in-azure-search)
++ [Поддерживаемые типы данных](/rest/api/searchservice/supported-data-types)

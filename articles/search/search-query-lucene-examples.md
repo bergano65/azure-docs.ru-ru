@@ -9,12 +9,12 @@ tags: Lucene query analyzer syntax
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: c344d7bd7007dfbea366ea597ec622e35bf1e2eb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9d3f8208af9d5997f5a9e025a54b54b5b035fb85
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85561767"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934979"
 ---
 # <a name="use-the-full-lucene-search-syntax-advanced-queries-in-azure-cognitive-search"></a>Использование полного синтаксиса поиска Lucene (расширенные запросы в Azure Когнитивный поиск)
 
@@ -50,9 +50,9 @@ ms.locfileid: "85561767"
 
 URL-адрес содержит следующие элементы.
 
-+ **`https://azs-playground.search.windows.net/`**— это служба поиска "песочницы", поддерживаемая командой разработчиков Когнитивный поиск Azure. 
++ **`https://azs-playground.search.windows.net/`** — это служба поиска "песочницы", поддерживаемая командой разработчиков Когнитивный поиск Azure. 
 + **`indexes/nycjobs/`** Индекс заданий Нью в коллекции индексов этой службы. Имя службы и индекс должны быть указаны в запросе.
-+ **`docs`**— Это коллекция Documents, содержащая все содержимое, доступное для поиска. Значение api-key в заголовке запроса подходит только для операций чтения, нацеленных на эту коллекцию документов.
++ **`docs`** — Это коллекция Documents, содержащая все содержимое, доступное для поиска. Значение api-key в заголовке запроса подходит только для операций чтения, нацеленных на эту коллекцию документов.
 + **`api-version=2020-06-30`** Задает версию API, которая является обязательным параметром при каждом запросе.
 + **`search=*`** Строка запроса, которая в исходном запросе имеет значение null, возвращает первые 50 результатов (по умолчанию).
 
@@ -147,7 +147,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 
 Если требуется, чтобы обе строки вычислить как единую сущность, необходимо поместить несколько строк в кавычки, как в этом случае искать два различных расположения в `state` поле. Кроме того, оператор должен быть указан в верхнем регистре, как в случае с NOT и AND.
 
-Поле, указанное в **fieldname: сеарчекспрессион** , должно быть полем с возможностью поиска. Дополнительные сведения об использовании атрибутов индекса в определениях полей см. в статье [Создание индекса (REST API когнитивный Поиск Azure)](https://docs.microsoft.com/rest/api/searchservice/create-index) .
+Поле, указанное в **fieldname: сеарчекспрессион** , должно быть полем с возможностью поиска. Дополнительные сведения об использовании атрибутов индекса в определениях полей см. в статье [Создание индекса (REST API когнитивный Поиск Azure)](/rest/api/searchservice/create-index) .
 
 > [!NOTE]
 > В приведенном выше примере не нужно использовать `searchFields` параметр, так как в каждой части запроса указано явное имя поля. Тем не менее можно по-прежнему использовать `searchFields` параметр, если требуется выполнить запрос, в котором часть частей ограничена определенным полем, а остальное может быть применено к нескольким полям. Например, запрос `search=business_title:(senior NOT junior) AND external&searchFields=posting_type` будет сопоставляться `senior NOT junior` только с `business_title` полем, тогда как он будет сопоставляться с `posting_type` полем external. Имя поля, указанное в **fieldname: сеарчекспрессион** , всегда имеет приоритет над `searchFields` параметром, поэтому в этом примере не нужно включать `business_title` в `searchFields` параметр.
@@ -256,7 +256,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
   ![Запрос регулярных выражений](media/search-query-lucene-examples/regex.png)
 
 > [!Note]
-> Запросы с регулярными выражениями не [анализируются](https://docs.microsoft.com/azure/search/search-lucene-query-architecture#stage-2-lexical-analysis). Единственное преобразование для неполных терминов запроса — преобразование в нижний регистр.
+> Запросы с регулярными выражениями не [анализируются](./search-lucene-query-architecture.md#stage-2-lexical-analysis). Единственное преобразование для неполных терминов запроса — преобразование в нижний регистр.
 >
 
 ## <a name="example-7-wildcard-search"></a>Пример 7. Поиск с использованием подстановочных знаков
@@ -278,18 +278,18 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
   ![Запрос с подстановочным знаком](media/search-query-lucene-examples/wildcard.png)
 
 > [!Note]
-> Запросы с подстановочными знаками не [анализируются](https://docs.microsoft.com/azure/search/search-lucene-query-architecture#stage-2-lexical-analysis). Единственное преобразование для неполных терминов запроса — преобразование в нижний регистр.
+> Запросы с подстановочными знаками не [анализируются](./search-lucene-query-architecture.md#stage-2-lexical-analysis). Единственное преобразование для неполных терминов запроса — преобразование в нижний регистр.
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Попробуйте указать средство синтаксического анализа запросов Lucene в коде. Чтобы узнать о том, как настроить запросы поиска для .NET и REST API, воспользуйтесь приведенными ссылками. В этих ссылках используется простой синтаксис по умолчанию, поэтому потребуется применить полученные из этой статьи знания, чтобы задать **queryType**.
 
-* [Запрос индекса с помощью пакета SDK для .NET](search-query-dotnet.md)
-* [Запрос индекса с помощью REST API](search-create-index-rest-api.md)
+* [Запрос индекса с помощью пакета SDK для .NET](./search-get-started-dotnet.md)
+* [Запрос индекса с помощью REST API](./search-get-started-powershell.md)
 
 Дополнительные справочные материалы по синтаксису, архитектуре запросов и примеры можно найти по следующим ссылкам:
 
 + [Примеры запросов с использованием простого синтаксиса](search-query-simple-examples.md)
 + [How full text search works in Azure Cognitive Search](search-lucene-query-architecture.md) (Как выполняется полнотекстовый поиск в Когнитивном поиске Azure)
-+ [Простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
-+ [Полный синтаксис запросов Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)
++ [Простой синтаксис запросов](/rest/api/searchservice/simple-query-syntax-in-azure-search)
++ [Полный синтаксис запросов Lucene](/rest/api/searchservice/lucene-query-syntax-in-azure-search)

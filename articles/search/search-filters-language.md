@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/22/2020
-ms.openlocfilehash: 3bd0f01193b1e6579d60b581b43ad71ebb6001e3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 49a12203c833fc817b1898e6179d7f812d0a994e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084200"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923115"
 ---
 # <a name="how-to-filter-by-language-in-azure-cognitive-search"></a>Как фильтровать по языку в Azure Когнитивный поиск 
 
@@ -37,11 +37,11 @@ ms.locfileid: "87084200"
   ![Снимок экрана, показывающий экран "поля" в примере с недвижимостью. Группа полей выделяется, чтобы указать, как назначения анализатора языка соответствуют языкам выделенных полей.](./media/search-filters-language/lang-fields.png)
 
 > [!Note]
-> Примеры кода, показывающие определения полей с помощью анализаторов языков, см. в разделе [Определение индекса службы поиска Azure](https://docs.microsoft.com/azure/search/search-create-index-dotnet) и [Определение индекса службы поиска Azure с помощью JSON-содержимого правильного формата](search-create-index-rest-api.md).
+> Примеры кода, показывающие определения полей с помощью анализаторов языков, см. в разделе [Определение индекса службы поиска Azure](./search-get-started-dotnet.md) и [Определение индекса службы поиска Azure с помощью JSON-содержимого правильного формата](./search-get-started-powershell.md).
 
 ## <a name="build-and-load-an-index"></a>Построение и загрузка индекса
 
-Промежуточным (и, возможно, очевидным) шагом является [сборка и заполнение индекса](https://docs.microsoft.com/azure/search/search-create-index-dotnet) перед формулировкой запроса. Здесь мы упомянем этот шаг для полноты картины. Один из способов определить доступность индекса — это проверить список индексов на [портале](https://portal.azure.com).
+Промежуточным (и, возможно, очевидным) шагом является [сборка и заполнение индекса](./search-get-started-dotnet.md) перед формулировкой запроса. Здесь мы упомянем этот шаг для полноты картины. Один из способов определить доступность индекса — это проверить список индексов на [портале](https://portal.azure.com).
 
 ## <a name="constrain-the-query-and-trim-results"></a>Ограничение запроса и усечение результатов
 
@@ -60,10 +60,9 @@ parameters =
 > [!Note]
 > Хотя в запросе нет $filter аргумента, этот вариант использования строго связан с концепциями фильтров, поэтому он представлен как сценарий фильтрации.
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 + [Фильтры в Когнитивный поиск Azure](search-filters.md)
-+ [Языковые анализаторы](https://docs.microsoft.com/rest/api/searchservice/language-support)
++ [Языковые анализаторы](/rest/api/searchservice/language-support)
 + [How full text search works in Azure Cognitive Search](search-lucene-query-architecture.md) (Как выполняется полнотекстовый поиск в Когнитивном поиске Azure)
-+ [Поиск документов REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents)
-
++ [Поиск документов REST API](/rest/api/searchservice/search-documents)

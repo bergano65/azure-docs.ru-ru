@@ -9,19 +9,19 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 9fb43a0d39beacf02a6949228eaa32a719164987
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cd6b64f118460a115963ed0bf105641d80334348
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85552240"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934996"
 ---
 # <a name="morelikethis-preview-in-azure-cognitive-search"></a>moreLikeThis (Предварительная версия) в Azure Когнитивный поиск
 
 > [!IMPORTANT] 
 > Эта функция сейчас доступна в виде общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Эта функция доступна в [REST API версии 2020-06-30-Preview](search-api-preview.md) . В настоящее время нет поддержки портала или пакета SDK для .NET.
 
-`moreLikeThis=[key]`параметр запроса в [API поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents) , который находит документы, аналогичные документу, указанному ключом документа. При обработке поискового запроса с параметром `moreLikeThis` создается запрос с условиями поиска, извлеченными из заданного документа, которые лучше всего описывают этот документ. Затем созданный запрос используется для создания поискового запроса. По умолчанию учитываются содержимое всех полей, доступных для поиска, за вычетом полей с ограниченным доступом, заданных с помощью `searchFields` параметра. Параметр `moreLikeThis` нельзя использовать с параметром поиска `search=[string]`.
+`moreLikeThis=[key]` параметр запроса в [API поиска документов](/rest/api/searchservice/search-documents) , который находит документы, аналогичные документу, указанному ключом документа. При обработке поискового запроса с параметром `moreLikeThis` создается запрос с условиями поиска, извлеченными из заданного документа, которые лучше всего описывают этот документ. Затем созданный запрос используется для создания поискового запроса. По умолчанию учитываются содержимое всех полей, доступных для поиска, за вычетом полей с ограниченным доступом, заданных с помощью `searchFields` параметра. Параметр `moreLikeThis` нельзя использовать с параметром поиска `search=[string]`.
 
 По умолчанию учитываются содержимое всех полей верхнего уровня, поддерживающих поиск. Если вместо этого нужно указать конкретные поля, можно использовать `searchFields` параметр. 
 
@@ -52,7 +52,7 @@ POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30-Preview
 
 ### <a name="apply-filters"></a>Применение фильтров
 
-`MoreLikeThis`можно сочетать с другими общими параметрами запроса, такими как `$filter` . Например, запрос может быть ограничен только гостиницами, категория которых равна "бюджет" и где оценка выше 3,5:
+`MoreLikeThis` можно сочетать с другими общими параметрами запроса, такими как `$filter` . Например, запрос может быть ограничен только гостиницами, категория которых равна "бюджет" и где оценка выше 3,5:
 
 ```
 GET /indexes/hotels-sample-index/docs?moreLikeThis=20&searchFields=Description&$filter=(Category eq 'Budget' and Rating gt 3.5)&api-version=2020-06-30-Preview
@@ -66,7 +66,7 @@ GET /indexes/hotels-sample-index/docs?moreLikeThis=20&searchFields=Description&$
 GET /indexes/hotels-sample-index/docs?moreLikeThis=20&searchFields=Description&$filter=(Category eq 'Budget' and Rating gt 3.5)&$top=3&$select=HotelId,HotelName,Rating&api-version=2020-06-30-Preview
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для экспериментов с этой функцией можно использовать любое средство веб-тестирования.  Мы рекомендуем использовать POST в этом упражнении.
 

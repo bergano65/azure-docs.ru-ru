@@ -7,15 +7,16 @@ author: tgore03
 manager: carmonm
 ms.service: cloud-services
 ms.devlang: dotnet
+ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: tagore
-ms.openlocfilehash: ac843ec2084cd019ec9d3bc90f6c8bbcb5c34279
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 0d00db9909f05028b55505400d0810b00e0114c0
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88590359"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932548"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
@@ -50,9 +51,9 @@ ms.locfileid: "88590359"
 Инструкции учебника работают со следующими продуктами:
 
 * Visual Studio 2013
-* Visual Studio 2015
+* Visual Studio 2015
 * Visual Studio 2017
-* Visual Studio 2019
+* Visual Studio 2019
 
 Если у вас нет ни одного из этих продуктов, Visual Studio может быть установлен автоматически при установке пакета SDK для Azure.
 
@@ -69,7 +70,7 @@ ms.locfileid: "88590359"
 
 ## <a name="download-and-run-the-completed-solution"></a>Загрузка и запуск готового решения
 1. Загрузите и распакуйте [готовое решение](https://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4).
-2. Запустите среду Visual Studio.
+2. Запустите Visual Studio.
 3. В меню **Файл** выберите **Открыть проект**, перейдите к папке, куда вы скачали решение, а затем откройте файл решения.
 4. Чтобы построить решение, нажмите CTRL+SHIFT+B.
 
@@ -326,7 +327,7 @@ ms.locfileid: "88590359"
 2. В диалоговом окне **Создание проекта** в области слева разверните раздел **Visual C#**, выберите шаблоны **Облако** и шаблон **Облачная служба Azure**.
 3. Присвойте проекту имя ContosoAdsCloudService и нажмите кнопку **ОК**.
 
-    ![Создание проекта](./media/cloud-services-dotnet-get-started/newproject.png)
+    ![Создать проект](./media/cloud-services-dotnet-get-started/newproject.png)
 4. В диалоговом окне **Новая облачная служба Azure** добавьте веб-роль и рабочую роль. Присвойте веб-роли имя ContosoAdsWeb, а рабочей роли — ContosoAdsWorker. (Используйте значок карандаша на правой панели для изменения имен ролей по умолчанию.)
 
     ![Проект новой облачной службы](./media/cloud-services-dotnet-get-started/newcsproj.png)

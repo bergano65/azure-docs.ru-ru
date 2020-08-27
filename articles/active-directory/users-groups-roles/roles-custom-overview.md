@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ce2ea7bed7da5226868afcf4d284ba893f2208a
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 915098130c7a8462bc0e009be04a61b5b0a7985d
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87828665"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88795598"
 ---
 # <a name="custom-administrator-roles-in-azure-active-directory-preview"></a>Настраиваемые роли администратора в Azure Active Directory (предварительная версия)
 
@@ -46,7 +46,7 @@ ms.locfileid: "87828665"
 
 1. В зависимости от ситуации Azure AD выполняет одно из следующих действий.
 
-    - Оценивает членство пользователя в ролях на основе [утверждения wids](https://docs.microsoft.com/azure/active-directory/develop/access-tokens) в маркере доступа пользователя.
+    - Оценивает членство пользователя в ролях на основе [утверждения wids](../develop/access-tokens.md) в маркере доступа пользователя.
     - Извлекает все назначения ролей пользователя, применимые (напрямую или через членство в группе) к ресурсу, с которым выполняется действие.
 
 1. Azure AD определяет, разрешено ли действие в вызове API для имеющихся у пользователя ролей для данного ресурса.

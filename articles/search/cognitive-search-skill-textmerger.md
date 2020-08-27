@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: f713eb71d375a3388c4b238656355595354b9806
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b364655f26c6ac29c14d387d69d7b4277d6aeb86
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84982022"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924645"
 ---
 #   <a name="text-merge-cognitive-skill"></a>Когнитивный навык объединения текста
 
@@ -31,8 +31,8 @@ Microsoft.Skills.Text.MergeSkill
 
 | Имя параметра     | Описание |
 |--------------------|-------------|
-| `insertPreTag`    | Строка, которая должна быть включена перед каждой вставкой. Значение по умолчанию — `" "`. Чтобы исключить пробел, задайте значение `""`.  |
-| `insertPostTag`   | Строка, которая должна быть включена после каждой вставки. Значение по умолчанию — `" "`. Чтобы исключить пробел, задайте значение `""`.  |
+| `insertPreTag`    | Строка, которая должна быть включена перед каждой вставкой. Значение по умолчанию — `" "`. Чтобы исключить пробел, задайте значение `""`.  |
+| `insertPostTag`   | Строка, которая должна быть включена после каждой вставки. Значение по умолчанию — `" "`. Чтобы исключить пробел, задайте значение `""`.  |
 
 
 ##  <a name="sample-input"></a>Пример ввода
@@ -75,7 +75,7 @@ Microsoft.Skills.Text.MergeSkill
 
 Распространенным вариантом использования объединения текста является возможность объединить текстовое представление изображений (текст из навыка OCR или заголовок изображения) с полем содержимого документа. 
 
-В следующем примере набора навыков используется умение OCR для извлечения текста из изображений, встроенных в документ. Затем создается поле *merged_text*, содержащее как исходный, так и обработанный OCR текст из каждого изображения. Дополнительные сведения о навыке OCR см. [здесь](https://docs.microsoft.com/azure/search/cognitive-search-skill-ocr).
+В следующем примере набора навыков используется умение OCR для извлечения текста из изображений, встроенных в документ. Затем создается поле *merged_text*, содержащее как исходный, так и обработанный OCR текст из каждого изображения. Дополнительные сведения о навыке OCR см. [здесь](./cognitive-search-skill-ocr.md).
 
 ```json
 {
@@ -148,4 +148,4 @@ Microsoft.Skills.Text.MergeSkill
 
 + [Встроенные навыки](cognitive-search-predefined-skills.md)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
-+ [Создание индексатора — REST](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
++ [Создание индексатора — REST](/rest/api/searchservice/create-indexer)

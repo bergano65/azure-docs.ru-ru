@@ -97,6 +97,6 @@ while (invalidItemsIterator.HasMoreResults)
 1. [Восстановите](https://docs.microsoft.com/azure/cosmos-db/online-backup-and-restore#backup-retention-period) родительский ресурс или повторно создайте ресурсы.
 1. Создайте новый ресурс для замены удаленного ресурса.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Диагностика и устранение неполадок](troubleshoot-dot-net-sdk.md) при использовании пакета SDK для Azure Cosmos DB .NET.
 * Ознакомьтесь с рекомендациями по производительности для [.NET v3](performance-tips-dotnet-sdk-v3-sql.md) и [.NET v2](performance-tips.md).
