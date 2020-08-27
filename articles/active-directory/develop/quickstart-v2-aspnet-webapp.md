@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 297c2354e8a56b681230bfe2cedd0d49ddbb5b82
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 97a040ec166894197520b2e3a6dfc720262b7f1c
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88165725"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691298"
 ---
 # <a name="quickstart-add-microsoft-identity-platform-sign-in-to-an-aspnet-web-app"></a>Краткое руководство. Добавление функции входа платформы Microsoft Identity в веб-приложение ASP.NET
 В этом кратком руководстве вы на конкретном примере кода изучите, как веб-приложение ASP.NET позволяет войти в личные учетные записи (hotmail.com, outlook.com и т. д.), а также рабочие и учебные учетные записи из любого экземпляра Azure Active Directory (Azure AD).  (Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).)
@@ -159,7 +159,7 @@ public void Configuration(IAppBuilder app)
 > |Where  | Описание |
 > |---------|---------|
 > | `ClientId`     | Идентификатор приложения, зарегистрированного на портале Azure |
-> | `Authority`    | Конечная точка STS для проверки подлинности пользователей. Обычно это <https://login.microsoftonline.com/{tenant}/v2.0> для общедоступного облака, где {tenant} — имя вашего клиента, идентификатор клиента или *common* для ссылки на общую конечную точку (используется для мультитенантных приложений). |
+> | `Authority`    | Конечная точка STS для проверки подлинности пользователей. Обычно это `https://login.microsoftonline.com/{tenant}/v2.0` для общедоступного облака, где {tenant} — имя вашего клиента, идентификатор клиента или *common* для ссылки на общую конечную точку (используется для мультитенантных приложений). |
 > | `RedirectUri`  | URL-адрес, куда пользователи переходят после проверки подлинности на конечной точке платформы удостоверений Майкрософт |
 > | `PostLogoutRedirectUri`     | URL-адрес, куда пользователи переходят после выхода |
 > | `Scope`     | Список запрашиваемых областей, разделенных пробелами |

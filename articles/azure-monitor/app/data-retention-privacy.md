@@ -3,13 +3,13 @@ title: Хранилища и хранение данных в Azure Application 
 description: Заявление о политике хранении и конфиденциальности
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 1b1a1e370d55ad58bf1468c2e8b2381b62707b6a
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: f6fa42d6cc20c4d26caa7f571f13bb3917b2c7c5
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88245950"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88929335"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Сбор, хранение и хранение данных в Application Insights
 
@@ -210,8 +210,8 @@ AzureLogHandler(
 | Windows 8.0–10 | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](/windows-server/security/tls/tls-registry-settings).  |
 | Windows Server 2012–2016 | Поддерживается и включена по умолчанию. | Проверка того, что все еще используются [параметры по умолчанию](/windows-server/security/tls/tls-registry-settings) |
 | Windows 7 с пакетом обновления 1 и Windows Server 2008 R2 с пакетом обновления 1 | Поддерживается, но не включена по умолчанию. | Информацию о том, как ее включить, см. на странице [Transport Layer Security (TLS) registry settings](/windows-server/security/tls/tls-registry-settings) (Параметры реестра TLS).  |
-| Windows Server 2008 с пакетом обновления 2 (SP2) | Для поддержки протокола TLS 1.2 требуется обновление. | См. статью об [обновлении для добавления поддержки TLS 1.2 в Windows Server 2008 с пакетом обновления 2](https://support.microsoft.com/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows-server-2008-s). |
-|Windows Vista | Не поддерживается. | Недоступно
+| Windows Server 2008 с пакетом обновления 2 (SP2) | Для поддержки протокола TLS 1.2 требуется обновление. | См. статью об [обновлении для добавления поддержки TLS 1.2 в Windows Server 2008 с пакетом обновления 2](https://support.microsoft.com/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows-server-2008-s). |
+|Windows Vista | Не поддерживается. | н/д
 
 ### <a name="check-what-version-of-openssl-your-linux-distribution-is-running"></a>Проверка версии OpenSSL, используемой дистрибутивом Linux
 
@@ -248,12 +248,12 @@ openssl s_client -connect bing.com:443 -tls1_2
 | [Добавление пакета SDK для Application Insights в веб-проект .NET][greenbrown] |ServerContext<br/>Выводимые<br/>Счетчики производительности<br/>Requests<br/>**Исключения**<br/>Сеанс<br/>пользователи |
 | [Установка монитора состояния на сервере IIS][redfield] |Зависимости<br/>ServerContext<br/>Выводимые<br/>Счетчики производительности |
 | [Добавление пакета SDK для Application Insights в веб-приложение Java][java] |ServerContext<br/>Выводимые<br/>Запрос<br/>Сеанс<br/>пользователи |
-| [Добавление пакета SDK для JavaScript на веб-страницу][client] |ClientContext <br/>Выводимые<br/>Page<br/>ClientPerf<br/>Ajax |
+| [Добавление пакета SDK для JavaScript на веб-страницу][client] |ClientContext <br/>Выводимые<br/>Страница<br/>ClientPerf<br/>Ajax |
 | [Определение свойств по умолчанию][apiproperties] |**Свойства** всех стандартных и настраиваемых событий |
 | [Вызов TrackMetric][api] |Числовые значения<br/>**Свойства** |
 | [Вызов Track*][api] |Имя события<br/>**Свойства** |
 | [Вызов TrackException][api] |**Исключения**<br/>Дамп стека<br/>**Свойства** |
-| Пакету SDK не может собрать данные. Пример. <br/> не удается получить доступ к счетчикам производительности;<br/> порождается исключение в инициализаторе телеметрии. |Диагностика SDK |
+| Пакету SDK не может собрать данные. Например: <br/> не удается получить доступ к счетчикам производительности;<br/> порождается исключение в инициализаторе телеметрии. |Диагностика SDK |
 
 Сведения о [пакетах SDK для других платформ][platforms] можно получить в соответствующей документации.
 

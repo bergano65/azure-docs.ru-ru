@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: overview
 ms.date: 03/24/2020
-ms.openlocfilehash: 0dff28d5bfb2623a7362dc9b8aeb0840ac4e1e49
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 22f0b7af7434288bea45e6edcf4868dcffe526db
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87430101"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88690724"
 ---
 # <a name="what-is-machine-learning-studio-classic"></a>Что такое Студия машинного обучения (классическая)?
 
@@ -29,7 +29,7 @@ ms.locfileid: "87430101"
 
 ## <a name="the-machine-learning-studio-classic--interactive-workspace"></a>Интерактивная рабочая область Студии машинного обучения (классической)
 
-[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
+
 
 Для разработки модели прогнозной аналитики обычно используются данные из одного или нескольких источников. Для получения набора результатов эти данные преобразовываются и анализируются с помощью различных операций и статистических функций. Такая разработка модели — это итеративный процесс. Путем изменения разных функций и их параметров выполняется сведение результатов, пока не будет получена подготовленная и эффективная модель.
 
